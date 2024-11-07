@@ -78,7 +78,7 @@ module.exports = function (app) {
     if (!unsubscribeId) {
       req.flash(
         'info',
-        'We we unable to process this request, please check and try again'
+        'We were unable to process this request, please check and try again'
       );
       res.redirect(origin);
     }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Spacer, FullWidthRow } from '../helpers';
+import { Spacer } from '@freecodecamp/ui';
+import { FullWidthRow } from '../helpers';
+
 import SoundSettings from '../../components/settings/sound';
 import KeyboardShortcutsSettings from '../../components/settings/keyboard-shortcuts';
 import ScrollbarWidthSettings from '../../components/settings/scrollbar-width';
@@ -22,7 +24,7 @@ const MiscSettings = ({
 
   return (
     <>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <FullWidthRow>
         <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
         <KeyboardShortcutsSettings

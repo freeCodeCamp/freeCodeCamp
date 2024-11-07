@@ -1,11 +1,12 @@
 {
   "name": "Build a Sentence Analyzer",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-sentence-analyzer",
-  "order": 170,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "66e2d680e129e1423116a541",
@@ -40,6 +41,5 @@
       "title": "Step 8"
     }
   ],
-  "helpCategory": "JavaScript",
-  "blockType": "workshop"
+  "helpCategory": "JavaScript"
 }

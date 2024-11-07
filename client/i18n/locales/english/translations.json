@@ -7,6 +7,7 @@
     "first-lesson": "Go to the first lesson",
     "close": "Close",
     "edit": "Edit",
+    "copy": "Copy",
     "view": "View",
     "view-code": "View Code",
     "view-project": "View Project",
@@ -95,6 +96,8 @@
     "exit": "Exit",
     "finish-exam": "Finish the exam",
     "finish": "Finish",
+    "exit-quiz": "Exit the quiz",
+    "finish-quiz": "Finish the quiz",
     "submit-exam-results": "Submit my results",
     "verify-trophy": "Verify Trophy",
     "link-account": "Link Account",
@@ -518,7 +521,15 @@
       "correct-answer": "Correct!",
       "incorrect-answer": "Incorrect.",
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
-      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct."
+      "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct.",
+      "finish-modal-header": "Finish Quiz",
+      "finish-modal-body": "Are you sure you want to finish the quiz? You will not be able to change any answers.",
+      "finish-modal-yes": "Yes, I am finished",
+      "finish-modal-no": "No, I would like to continue the quiz",
+      "exit-modal-header": "Exit Quiz",
+      "exit-modal-body": "Are you sure you want to leave the quiz? You will lose any progress you have made.",
+      "exit-modal-yes": "Yes, I want to leave the quiz",
+      "exit-modal-no": "No, I would like to continue the quiz"
     },
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
@@ -1057,8 +1068,8 @@
       "a2-english-for-developers": "A2 English for Developers Certification",
       "B1 English for Developers": "B1 English for Developers",
       "b1-english-for-developers": "B1 English for Developers Certification",
-      "Front End Development": "Front End Development",
-      "front-end-development-v9": "Front End Development Certification",
+      "Full Stack Developer": "Full Stack Developer",
+      "full-stack-developer-v9": "Certified Full Stack Developer",
       "Legacy Front End": "Legacy Front End",
       "legacy-front-end": "Legacy Front End Certification",
       "Legacy Back End": "Legacy Back End",
@@ -1110,6 +1121,16 @@
     "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
     "no-thanks": "No thanks, I would like to keep my token",
     "yes-please": "Yes please, I would like to delete my token"
+  },
+  "exam-token": {
+    "exam-token": "Exam Token",
+    "note": "Your exam token is a secret key that allows you to access exams. Do not share this token with anyone.",
+    "invalidation": "If you generate a new token, your old token will be invalidated.",
+    "generate-exam-token": "Generate Exam Token",
+    "error": "There was an error generating your token, please try again in a moment.",
+    "your-exam-token": "Your Exam Token is: {{token}}",
+    "copied": "Token copied to clipboard",
+    "copy-error": "Error copying token to clipboard"
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",
