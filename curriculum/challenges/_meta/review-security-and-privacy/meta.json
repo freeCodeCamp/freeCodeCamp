@@ -1,0 +1,12 @@
+{
+  "name": "Security and Privacy Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "review-security-and-privacy",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6724e6548eec94290a26f410", "title": "Security and Privacy Review" }
+  ],
+  "helpCategory": "Backend Development"
+}
