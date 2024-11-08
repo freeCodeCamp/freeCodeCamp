@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Spacer } from '@freecodecamp/ui';
+import { Button, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow } from '../helpers';
 import ThemeSettings, { ThemeProps } from '../../components/settings/theme';
 import SoundSettings from '../../components/settings/sound';
@@ -11,15 +11,19 @@ type MiscSettingsProps = ThemeProps & {
   currentTheme: string;
   keyboardShortcuts: boolean;
   sound: boolean;
+  editorLayout: boolean | null;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   toggleNightMode: () => void;
   toggleSoundMode: (sound: boolean) => void;
+  resetEditorLayout: () => void;
 };
 
 const MiscSettings = ({
   currentTheme,
   keyboardShortcuts,
   sound,
+  editorLayout,
+  resetEditorLayout,
   toggleKeyboardShortcuts,
   toggleNightMode,
   toggleSoundMode
@@ -41,6 +45,18 @@ const MiscSettings = ({
           explain={t('settings.shortcuts-explained')?.toString()}
         />
         <ScrollbarWidthSettings />
+        <label htmlFor='reset-layout-btn'>
+          {t('settings.reset-editor-layout-tooltip')}
+        </label>
+        <Spacer size='xs' />
+        <Button
+          onClick={resetEditorLayout}
+          id='reset-layout-btn'
+          disabled={!editorLayout}
+          aria-disabled={!editorLayout}
+        >
+          {t('settings.reset-editor-layout')}
+        </Button>
       </FullWidthRow>
     </>
   );

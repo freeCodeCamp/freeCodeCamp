@@ -238,6 +238,8 @@
     "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
     "sound-volume": "Campfire Volume:",
     "scrollbar-width": "Editor Scrollbar Width",
+    "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
+    "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
@@ -891,6 +893,7 @@
     "invalid-update-flag": "You are attempting to access forbidden resources. Please request assistance on https://forum.freecodecamp.org if this is a valid request.",
     "generate-exam-error": "An error occurred trying to generate your exam.",
     "cert-not-found": "The certification {{certSlug}} does not exist.",
+    "reset-editor-layout": "Your editor layout has been reset.",
     "ms": {
       "transcript": {
         "link-err-1": "Please include a Microsoft transcript URL in the request.",

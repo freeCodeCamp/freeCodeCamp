@@ -35,7 +35,8 @@ import {
   updateMySound,
   updateMyTheme,
   updateMyKeyboardShortcuts,
-  verifyCert
+  verifyCert,
+  resetMyEditorLayout
 } from '../redux/settings/actions';
 
 const { apiLocation } = envData;
@@ -47,6 +48,7 @@ type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
   navigate: (location: string) => void;
   showLoading: boolean;
   toggleSoundMode: (sound: boolean) => void;
+  resetEditorLayout: () => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   updateIsHonest: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
@@ -80,6 +82,7 @@ const mapDispatchToProps = {
   updateIsHonest: updateMyHonesty,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
     updateMyQuincyEmail({ sendQuincyEmail }),
+  resetEditorLayout: () => resetMyEditorLayout(),
   verifyCert
 };
 
@@ -91,6 +94,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     toggleNightMode,
     toggleSoundMode,
     toggleKeyboardShortcuts,
+    resetEditorLayout,
     user: {
       completedChallenges,
       email,
@@ -140,6 +144,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     return <Loader fullScreen={true} />;
   }
   const sound = (store.get('fcc-sound') as boolean) ?? false;
+  const editorLayout = (store.get('challenge-layout') as boolean) ?? false;
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
@@ -161,6 +166,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             currentTheme={theme}
             keyboardShortcuts={keyboardShortcuts}
             sound={sound}
+            editorLayout={editorLayout}
+            resetEditorLayout={resetEditorLayout}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
             toggleNightMode={toggleNightMode}
             toggleSoundMode={toggleSoundMode}
