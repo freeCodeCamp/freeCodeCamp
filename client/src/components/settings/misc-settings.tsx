@@ -52,6 +52,7 @@ const MiscSettings = ({
         <Button
           onClick={resetEditorLayout}
           id='reset-layout-btn'
+          data-playwright-test-label='reset-layout-btn'
           disabled={!editorLayout}
           aria-disabled={!editorLayout}
         >
