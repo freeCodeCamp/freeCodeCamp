@@ -7,8 +7,9 @@ export const moduleCompleted = {
   }),
   response: {
     200: Type.Object({
+      alreadyCompleted: Type.Boolean(),
       completedDate: Type.Number(),
-      alreadyCompleted: Type.Boolean()
+      points: Type.Number()
     }),
     400: Type.Object({
       type: Type.Literal('error'),

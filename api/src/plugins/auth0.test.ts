@@ -324,6 +324,7 @@ describe('auth0 plugin', () => {
         acceptedPrivacyTerms: false,
         completedChallenges: [],
         completedExams: [],
+        completedModules: [],
         currentChallengeId: '',
         donationEmails: [],
         email,

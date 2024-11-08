@@ -35,8 +35,8 @@ type PartiallyCompletedChallenge {
 }
 
 type CompletedModule {
-  id              String
-  completedDate   Float
+  id            String
+  completedDate Float
 }
 
 type Portfolio {
@@ -81,7 +81,7 @@ model user {
   acceptedPrivacyTerms         Boolean
   completedChallenges          CompletedChallenge[]
   completedExams               CompletedExam[] // Undefined
-  completedModules             String[] // Undefined
+  completedModules             CompletedModule[] // Undefined
   currentChallengeId           String?
   donationEmails               String[] // Undefined | String[] (only possible for built in Types like String)
   email                        String

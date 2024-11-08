@@ -1,7 +1,6 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { uniqBy } from 'lodash';
-import { CompletedModule } from '@prisma/client';
 
+import { ProgressTimestamp, getPoints } from '../../utils/progress';
 import * as schemas from '../../schemas';
 
 /**
@@ -11,7 +10,7 @@ import * as schemas from '../../schemas';
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
  * @param done The callback to signal that the plugin is ready.
  */
-export const challengeRoutes: FastifyPluginCallbackTypebox = (
+export const moduleRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
   done
@@ -45,38 +44,40 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       });
 
-      const alreadyCompleted = user.completedModules.find(
-        ({ id: existingId }) => existingId === id
+      const alreadyCompletedModule = user.completedModules.find(
+        ({ id: moduleId }) => moduleId === id
       );
 
-      if (alreadyCompleted) {
+      if (alreadyCompletedModule) {
+        return {
+          alreadyCompleted: true,
+          completedDate: alreadyCompletedModule.completedDate,
+          points: getPoints(user.progressTimestamps as ProgressTimestamp[])
+        };
       }
 
-      const progressTimestamp = user.progressTimestamps as
-        | ProgressTimestamp[]
-        | null;
-      const points = getPoints(progressTimestamp);
-
-      const completedModule: CompletedModule = {
+      const completedModule = {
         id,
         completedDate: Date.now()
       };
 
+      const newProgressTimestamps = [
+        ...(user.progressTimestamps as ProgressTimestamp[]),
+        completedModule.completedDate
+      ];
+
       await fastify.prisma.user.update({
         where: { id: user.id },
         data: {
-          completedModules: userCompletedChallenges,
-          progressTimestamps: [
-            ...progressTimestamp,
-            completedModule.completedDate
-          ]
+          completedModules: [...user.completedModules, completedModule],
+          progressTimestamps: newProgressTimestamps
         }
       });
 
       return {
-        alreadyCompleted,
+        alreadyCompleted: false,
         completedDate: completedModule.completedDate,
-        points: alreadyCompleted ? points : points + 1
+        points: getPoints(newProgressTimestamps)
       };
     }
   );
