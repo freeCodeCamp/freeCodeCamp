@@ -67,8 +67,17 @@ test.describe('Add Portfolio Item', () => {
     );
     await page
       .getByLabel(translations.settings.labels.image)
-      .fill('http://helloworld.com/image.png');
+      .fill(
+        'https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png'
+      );
     await expect(page.getByTestId('image-validation')).toBeHidden();
+
+    await page
+      .getByLabel(translations.settings.labels.image)
+      .fill('https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.pn');
+    await expect(page.getByTestId('image-validation')).toContainText(
+      'URL must link directly to an image file'
+    );
   });
 
   test('The description has validation', async ({ page }) => {
