@@ -185,29 +185,6 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     return { state: 'success', message: '' };
   }
 
-  getImageURLFormatValidation(image: string): ProfileValidation {
-    const { t } = this.props;
-
-    if (!image) {
-      return {
-        state: 'success',
-        message: ''
-      };
-    }
-
-    if (!isURL(image, { require_protocol: true })) {
-      return {
-        state: 'error',
-        message: t('validation.use-valid-url')
-      };
-    }
-
-    return {
-      state: 'success',
-      message: ''
-    };
-  }
-
   async validateImageLoad(image: string): Promise<ProfileValidation> {
     return new Promise(resolve => {
       this.validationImage.src = encodeURI(image);
@@ -254,7 +231,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     const { state: descriptionState, message: descriptionMessage } =
       this.getDescriptionValidation(description);
     const { state: imageState, message: imageMessage } =
-      this.getImageURLFormatValidation(image);
+      this.getUrlValidation(image);
 
     const pristine = this.isFormPristine(id);
 
