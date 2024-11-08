@@ -63,7 +63,7 @@ test.describe('Add Portfolio Item', () => {
   test('The image has validation', async ({ page }) => {
     await page.getByLabel(translations.settings.labels.image).fill('T');
     await expect(page.getByTestId('image-validation')).toContainText(
-      'URL must link directly to an image file'
+      'Please use a valid URL'
     );
     await page
       .getByLabel(translations.settings.labels.image)
