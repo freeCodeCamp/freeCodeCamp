@@ -160,7 +160,6 @@
       ],
       "cta": "Start Learning Now (it's free)"
     },
-
     "certification-heading": "Earn free verified certifications in:",
     "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
     "learn-english-heading": "Learn English for Developers:",
@@ -781,6 +780,7 @@
     "heart": "Heart",
     "initial": "Initial",
     "input-reset": "Clear search terms",
+    "input-search": "Submit search terms",
     "info": "Intro Information",
     "spacer": "Spacer",
     "toggle": "Toggle Checkmark",
