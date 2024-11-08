@@ -1148,7 +1148,35 @@ const duplicatedProjectIds = [
   // Nth Fibonacci Number
 
   // FCC Authors Page
-
+  '641d9a19bff38d34d5a5edb8',
+  '641da3c6b6fbd742bff6ee40',
+  '641da42481d90c4314c99e94',
+  '641da465273051435d332b15',
+  '641da4b16937be43ba24c63d',
+  '641da51a9810e74411262fcc',
+  '641da5462576784453146ec2',
+  '641da5abaac81844a54adb03',
+  '641da5dd6cd6db44f58b7787',
+  '641da615af82bf454215a992',
+  '641da6570acf7545931ce477',
+  '641da6dcb6e4c9463d54c75b',
+  '641da7071d0d45467cd59977',
+  '641da73b09e7f046c758e0ed',
+  '641da791d0c34a472b8d15b6',
+  '641da7bfbc7f0f477438ad8a',
+  '641da803d9892447d059804e',
+  '641da836581c254815f785fe',
+  '641da86294fd9f485d3c2bf0',
+  '641da895fb7ec648a5bdf19c',
+  '641da8db2a036048ebe6999e',
+  '641da97c987a514959ada414',
+  '641da9aceb788e49a73ebcc9',
+  '641da9ea9b847a49fe6ee9b6',
+  '641daa5ea050f24a7cade6e6',
+  '641daa8c2c3e364ac3650b37',
+  '641daabed8d0584b1150c953',
+  '641daae5e18eae4b562633e4',
+  '641dab13c1b6f14b9828e6b1',
   // Weather App
 
   // Forum Leaderboard
@@ -1206,48 +1234,6 @@ const duplicatedProjectIds = [
   '602da04c22201c65d2a019f4',
 
   /*** Back End JavaScript ***/
-
-  // Managing Packages with NPM
-  '587d7fb3367417b2b2512bfb',
-  '587d7fb3367417b2b2512bfc',
-  '587d7fb4367417b2b2512bfd',
-  '587d7fb4367417b2b2512bfe',
-  '587d7fb4367417b2b2512bff',
-  '587d7fb4367417b2b2512c00',
-  '587d7fb5367417b2b2512c01',
-  '587d7fb5367417b2b2512c02',
-  '587d7fb5367417b2b2512c03',
-  '587d7fb5367417b2b2512c04',
-
-  // Basic Node and Express
-  '5a8b073d06fa14fcfde687aa',
-  '587d7fb0367417b2b2512bed',
-  '587d7fb0367417b2b2512bee',
-  '587d7fb0367417b2b2512bef',
-  '587d7fb0367417b2b2512bf0',
-  '587d7fb1367417b2b2512bf1',
-  '587d7fb1367417b2b2512bf2',
-  '587d7fb1367417b2b2512bf3',
-  '587d7fb1367417b2b2512bf4',
-  '587d7fb2367417b2b2512bf5',
-  '587d7fb2367417b2b2512bf6',
-  '587d7fb2367417b2b2512bf7',
-  '587d7fb2367417b2b2512bf8',
-
-  // Timestamp Microservice
-  'bd7158d8c443edefaeb5bdef',
-
-  // Request Header Parser Microservice
-  'bd7158d8c443edefaeb5bdff',
-
-  // URL Shortener Microservice
-  'bd7158d8c443edefaeb5bd0e',
-
-  // Exercise Tracker
-  '5a8b073d06fa14fcfde687aa',
-
-  // File Metadata Microservice
-  'bd7158d8c443edefaeb5bd0f',
 
   /*** Legacy Only ***/
 
