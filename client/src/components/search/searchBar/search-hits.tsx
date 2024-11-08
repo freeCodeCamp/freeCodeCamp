@@ -43,7 +43,7 @@ function SearchHits({
         }
       }
     }
-  ]
+  ];
   const allHits: Hit[] =
     results?.hits && results?.query ? [...results.hits, ...footer] : [];
 
