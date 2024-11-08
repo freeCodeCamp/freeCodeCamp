@@ -1,6 +1,6 @@
 ---
 id: 672ab82c1a9bbd0e3aabc39d
-title: How to Effectively Work With Your Keyboard, Mouse, and Other Pointing Devices
+title: How Can You Effectively Work With Your Keyboard, Mouse, and Other Pointing Devices
 challengeType: 11
 videoId: nVAaxZ34khk
 dashedName: how-to-effectively-work-with-your-keyboard-mouse-and-other-pointing-devices
