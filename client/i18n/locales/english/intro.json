@@ -1572,6 +1572,12 @@
         "intro": [
           "This course will provide you with ways to explain things to other people while assisting them."
         ]
+      },
+      "a2-english-for-developers-certification-exam": {
+        "title": "A2 English for Developers Certification Exam",
+        "intro": [
+          "This exam is required to claim the A2 English for Developers Certification."
+        ]
       }
     }
   },
@@ -1764,7 +1770,12 @@
           "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
         ]
       },
-      "evdc": { "title": "11", "intro": [] },
+      "lecture-importance-of-semantic-html": {
+        "title": "Importance of Semantic HTML",
+        "intro": [
+          "In these lecture videos, you will learn about semantic HTML and the importance of using it."
+        ]
+      },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
@@ -1791,7 +1802,12 @@
           "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
         ]
       },
-      "cfgp": { "title": "16", "intro": [] },
+      "lecture-working-with-forms": {
+        "title": "Working with Forms",
+        "intro": [
+          "In these lecture videos, you will learn about working with forms in HTML."
+        ]
+      },
       "workshop-hotel-feedback-form": {
         "title": "Build a Hotel Feedback Form",
         "intro": [
@@ -1806,7 +1822,10 @@
           "This lab will give you the opportunity to practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
         ]
       },
-      "wgot": { "title": "19", "intro": [] },
+      "lecture-working-with-tables": {
+        "title": "Working with Tables",
+        "intro": ["In these lecture videos, you will learn about HTML tables."]
+      },
       "workshop-final-exams-table": {
         "title": "Build a Final Exams Table",
         "intro": [
@@ -1820,7 +1839,12 @@
           "This lab will give you an opportunity to practice working with the different table components like the <code>Table Head</code>, <code>Table Row</code> and <code>Table Data Cell</code> elements."
         ]
       },
-      "rsve": { "title": "22", "intro": [] },
+      "lecture-working-with-html-tools": {
+        "title": "Working with HTML Tools",
+        "intro": [
+          "In these lecture videos, you will learn about working with HTML tools."
+        ]
+      },
       "review-html-tables-and-forms": {
         "title": "HTML Tables and Forms Review",
         "intro": [
@@ -1834,7 +1858,12 @@
           "The following quiz will test your knowledge of HTML tables and forms."
         ]
       },
-      "ghoc": { "title": "25", "intro": [] },
+      "lecture-importance-of-accessibility-and-good-html-structure": {
+        "title": "Importance of Accessibility and Good HTML Structure",
+        "intro": [
+          "In these lecture videos, you will learn about importance of accessibility and using good HTML structure."
+        ]
+      },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
         "intro": ["In this lab, you will create an accessible checkout page."]
@@ -1993,7 +2022,8 @@
       "review-css-colors": {
         "title": "CSS Colors Review",
         "intro": [
-          "Review the CSS Colors concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on CSS colors, you first need to review.",
+          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, <code>hex codes</code>, and more."
         ]
       },
       "quiz-css-colors": {
@@ -2018,7 +2048,8 @@
       "review-styling-forms": {
         "title": "Styling Forms Review",
         "intro": [
-          "Review the Styling Forms concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on styling forms, you first need to review.",
+          "Open up this page to review how to style form inputs, working with <code>appearance: none</code> and more."
         ]
       },
       "quiz-styling-forms": {
@@ -2070,7 +2101,8 @@
       "review-css-flexbox": {
         "title": "CSS Flexbox Review",
         "intro": [
-          "Review the CSS Flexbox concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on CSS Flexbox concepts, you first need to review.",
+          "Open up this page to review concepts like the <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> properties and more."
         ]
       },
       "quiz-css-flexbox": {
@@ -2096,7 +2128,8 @@
       "review-css-typography": {
         "title": "CSS Typography Review",
         "intro": [
-          "Review the CSS Typography concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the fundamentals of typography, you first need to review.",
+          "Open up this page to review concepts like web safe fonts, the <code>font-family</code> property and more."
         ]
       },
       "quiz-css-typography": {
@@ -2274,9 +2307,9 @@
         ]
       },
       "review-css-animations": {
-        "title": "CSS Amimations Review",
+        "title": "CSS Animations Review",
         "intro": [
-          "Review the CSS Amimations concepts to prepare for the upcoming quiz."
+          "Review the CSS Animations concepts to prepare for the upcoming quiz."
         ]
       },
       "quiz-css-animations": {
@@ -2798,7 +2831,13 @@
         ]
       },
       "mjbe": { "title": "251", "intro": [] },
-      "byqx": { "title": "252", "intro": [] },
+      "workshop-fcc-authors-page": {
+        "title": "Build an fCC Authors Page",
+        "intro": [
+          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
+          "In this workshop you will practice how to use the fetch method, dynamically update the DOM to display the fetched data and paginate your data so you can load results in batches."
+        ]
+      },
       "alda": { "title": "253", "intro": [] },
       "cvaf": { "title": "254", "intro": [] },
       "review-asynchronous-javascript": {
@@ -3165,62 +3204,12 @@
         ]
       },
       "qjov": { "title": "368", "intro": [] },
-      "workshop-npm-packages": {
-        "title": "Managing Packages with npm",
-        "intro": [
-          "npm (Node Package Manager), is a command line tool to install, create, and share packages of JavaScript code written for Node.js. There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or fetching data from an API.",
-          "In this workshop, you'll learn the basics of using npm, including how to work with the <code>package.json</code> file and how to manage your installed dependencies."
-        ]
-      },
       "hjku": { "title": "370", "intro": [] },
-      "workshop-node-and-express": {
-        "title": "Basic Node and Express",
-        "intro": [
-          "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
-          "In the last set of courses you learned to install and manage packages from npm, which are collections of smaller modules. These packages can help you build larger, more complex applications.",
-          "Express is a lightweight web application framework, and is one of the most popular packages on npm. Express makes it much easier to create a server and handle routing for your application, which handles things like directing people to the correct page when they visit a certain endpoint like <pre>/blog</pre>.",
-          "In this course, you'll learn the basics of Node and Express including how to create a server, serve different files, and handle different requests from the browser."
-        ]
-      },
-      "lab-timestamp-microservice": {
-        "title": "Build a Timestamp Microservice",
-        "intro": ["In this lab you will build a timestamp microservice"]
-      },
-      "lab-request-header-parser-microservice": {
-        "title": "Build a Request Header Parser Microservice",
-        "intro": [
-          "In this lab, you will build a request header parser microservice"
-        ]
-      },
-      "lab-url-shortener-microservice": {
-        "title": "Build a URL Shortener Microservice",
-        "intro": ["In this lab, you will build a URL Shortener Microservice"]
-      },
-      "lab-exercise-tracker": {
-        "title": "Build an Exercise Tracker",
-        "intro": ["In this lab, you will build an exercise tracker"]
-      },
-      "lab-file-metadata-microservice": {
-        "title": "Build a File Metadata Microservice",
-        "intro": ["For this lab you will build a file metadata microservice"]
-      },
       "kegi": { "title": "377", "intro": [] },
-      "quiz-backend-javascript": {
-        "title": "Backend JavaScript Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on Backend JavaScript."
-        ]
-      },
       "vnfu": { "title": "379", "intro": [] },
       "rlli": { "title": "380", "intro": [] },
       "rjpv": { "title": "381", "intro": [] },
       "xbri": { "title": "382", "intro": [] },
-      "quiz-tooling-and-deployment": {
-        "title": "Tooling and Deployment Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of tooling and deployment"
-        ]
-      },
       "nkjt": { "title": "384", "intro": [] },
       "pgjj": { "title": "385", "intro": [] },
       "exom": { "title": "386", "intro": [] },
