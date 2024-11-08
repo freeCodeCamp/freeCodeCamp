@@ -2152,7 +2152,8 @@
       "review-css-accessibility": {
         "title": "CSS Accessibility Review",
         "intro": [
-          "Review the CSS Accessibility concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on CSS and accessibility, you first need to review.",
+          "Open up this page to review concepts like color contrast tools and accessibility best practices."
         ]
       },
       "quiz-css-accessibility": {
