@@ -34,16 +34,16 @@ function SearchHits({
       __position: 8,
       objectID: `footer-${query}`,
       query: query,
-      url: noHits ? null : `${searchUrl}?query=${encodeURIComponent(query)}`,
+      url: noHits ? '' : `${searchUrl}?query=${encodeURIComponent(query)}`,
       _highlightResult: {
         query: {
           value: `${t('search.see-results', { searchQuery: query })}`,
-          matchLevel: 'none',
+          matchLevel: 'none' as const,
           matchedWords: []
         }
       }
     }
-  ] as Hit[];
+  ]
   const allHits: Hit[] =
     results?.hits && results?.query ? [...results.hits, ...footer] : [];
 
