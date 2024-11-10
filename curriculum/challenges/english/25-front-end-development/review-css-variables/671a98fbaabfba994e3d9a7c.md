@@ -54,12 +54,14 @@ body {
 
 ```css
 @property --gradient-angle {
-  syntax: '<angle>';
+  syntax: "<angle>";
   inherits: false;
   initial-value: 0deg;
 }
 
 .gradient-box {
+  width: 100px;
+  height: 100px;
   background: linear-gradient(var(--gradient-angle), red, blue);
   transition: --gradient-angle 0.5s;
 }
