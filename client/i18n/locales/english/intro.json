@@ -2278,7 +2278,8 @@
       "review-css-grid": {
         "title": "CSS Grid Review",
         "intro": [
-          "Review the CSS Grid concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the fundamentals of CSS Grid, you first need to review.",
+          "Open up this page to review how to work with the different CSS Grid properties like <code>grid-template-columns</code>, <code>grid-gap</code> and more."
         ]
       },
       "quiz-css-grid": {
