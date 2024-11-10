@@ -84,7 +84,11 @@
     "playwright:watch": "playwright test --ui"
   },
   "dependencies": {
-    "dotenv": "16.4.5"
+    "dotenv": "16.4.5",
+    "punycode": "^2.3.1",
+    "readdirp": "3.6.0",
+    "remark-directive": "1.0.1",
+    "remark-frontmatter": "3.0.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.23.3",
@@ -133,5 +137,6 @@
     "typescript": "5.4.5",
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
-  }
+  },
+  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
 }

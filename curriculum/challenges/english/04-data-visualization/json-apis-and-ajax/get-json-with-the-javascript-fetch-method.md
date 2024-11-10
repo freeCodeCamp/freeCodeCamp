@@ -10,7 +10,7 @@ dashedName: get-json-with-the-javascript-fetch-method
 
 Another way to request external data is to use the JavaScript `fetch()` method. It is equivalent to `XMLHttpRequest`, but the syntax is considered easier to understand.
 
-Here is the code for making a GET request to `/json/cats.json`
+Here is the code for making a GET request to `/json/cats.json` (You don't need specify to `GET` method since it is the default HTTP method for `fetch`)
 
 ```js
 
