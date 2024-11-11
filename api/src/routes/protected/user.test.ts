@@ -16,6 +16,11 @@ import {
   createSuperRequest
 } from '../../../jest.utils';
 import { JWT_SECRET } from '../../utils/env';
+import {
+  clearEnvExam,
+  seedEnvExam,
+  seedEnvExamAttempt
+} from '../../../__mocks__/env-exam';
 import { getMsTranscriptApiUrl } from './user';
 
 const mockedFetch = jest.fn();
@@ -342,6 +347,10 @@ describe('userRoutes', () => {
     });
 
     describe('/account/delete', () => {
+      beforeEach(async () => {
+        await seedEnvExam();
+        await seedEnvExamAttempt();
+      });
       afterEach(async () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
           where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
@@ -349,6 +358,7 @@ describe('userRoutes', () => {
         await fastifyTestInstance.prisma.msUsername.deleteMany({
           where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
         });
+        await clearEnvExam();
       });
 
       test('POST returns 200 status code with empty object', async () => {
@@ -403,6 +413,18 @@ describe('userRoutes', () => {
           ])
         );
         expect(setCookie).toHaveLength(3);
+      });
+
+      test("POST deletes all the user's exam attempts", async () => {
+        const examAttempts =
+          await fastifyTestInstance.prisma.envExamAttempt.findMany();
+        expect(examAttempts).toHaveLength(1);
+
+        await superPost('/account/delete');
+
+        const examAttemptsAfter =
+          await fastifyTestInstance.prisma.envExamAttempt.findMany();
+        expect(examAttemptsAfter).toHaveLength(0);
       });
     });
 

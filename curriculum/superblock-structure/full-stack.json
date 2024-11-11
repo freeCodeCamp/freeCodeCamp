@@ -21,6 +21,7 @@
         {
           "dashedName": "semantic-html",
           "blocks": [
+            { "dashedName": "lecture-importance-of-semantic-html" },
             { "dashedName": "workshop-blog-page" },
             { "dashedName": "lab-event-hub" },
             { "dashedName": "review-semantic-html" },
@@ -30,10 +31,13 @@
         {
           "dashedName": "html-forms-and-tables",
           "blocks": [
+            { "dashedName": "lecture-working-with-forms" },
             { "dashedName": "workshop-hotel-feedback-form" },
             { "dashedName": "lab-survey-form" },
+            { "dashedName": "lecture-working-with-tables" },
             { "dashedName": "workshop-final-exams-table" },
             { "dashedName": "lab-book-catalog-table" },
+            { "dashedName": "lecture-working-with-html-tools" },
             { "dashedName": "review-html-tables-and-forms" },
             { "dashedName": "quiz-html-tables-and-forms" }
           ]
@@ -41,6 +45,9 @@
         {
           "dashedName": "html-and-accessibility",
           "blocks": [
+            {
+              "dashedName": "lecture-importance-of-accessibility-and-good-html-structure"
+            },
             { "dashedName": "lab-checkout-page" },
             { "dashedName": "review-html-accessibility" },
             { "dashedName": "quiz-html-accessibility" }
@@ -58,6 +65,11 @@
         {
           "dashedName": "computer-basics",
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-computer-internet-and-tooling-basics"
+            },
+            { "dashedName": "lecture-working-with-file-systems" },
+            { "dashedName": "lecture-browsing-the-web-effectively" },
             { "dashedName": "review-computer-basics" },
             { "dashedName": "quiz-computer-basics" }
           ]
@@ -65,11 +77,17 @@
         {
           "dashedName": "basic-css",
           "blocks": [
+            { "dashedName": "lecture-what-is-css" },
             { "dashedName": "workshop-cafe-menu" },
             { "dashedName": "lab-business-card" },
+            {
+              "dashedName": "lecture-css-specificity-the-cascade-algorithm-and-inheritance"
+            },
             { "dashedName": "review-basic-css" },
             { "dashedName": "quiz-basic-css" },
+            { "dashedName": "lecture-styling-lists-and-links" },
             { "dashedName": "lab-stylized-to-do-list" },
+            { "dashedName": "lecture-working-with-backgrounds-and-borders" },
             { "dashedName": "review-css-backgrounds-and-borders" },
             { "dashedName": "quiz-css-backgrounds-and-borders" }
           ]
@@ -77,6 +95,9 @@
         {
           "dashedName": "design-for-developers",
           "blocks": [
+            { "dashedName": "lecture-user-interface-design-fundamentals" },
+            { "dashedName": "lecture-user-centered-design" },
+            { "dashedName": "lecture-common-design-tools" },
             { "dashedName": "review-design-fundamentals" },
             { "dashedName": "quiz-design-fundamentals" }
           ]
@@ -84,6 +105,9 @@
         {
           "dashedName": "absolute-and-relative-units",
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-relative-and-absolute-units"
+            },
             { "dashedName": "lab-event-flyer-page" },
             { "dashedName": "review-css-relative-and-absolute-units" },
             { "dashedName": "quiz-css-relative-and-absolute-units" }
@@ -92,6 +116,9 @@
         {
           "dashedName": "pseudo-classes-and-elements",
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css"
+            },
             { "dashedName": "lab-job-application-form" },
             { "dashedName": "review-css-pseudo-classes" },
             { "dashedName": "quiz-css-pseudo-classes" }
@@ -100,6 +127,7 @@
         {
           "dashedName": "css-colors",
           "blocks": [
+            { "dashedName": "lecture-working-with-colors-in-css" },
             { "dashedName": "workshop-colored-markers" },
             { "dashedName": "review-css-colors" },
             { "dashedName": "quiz-css-colors" }
@@ -108,6 +136,7 @@
         {
           "dashedName": "styling-forms",
           "blocks": [
+            { "dashedName": "lecture-best-practices-for-styling-forms" },
             { "dashedName": "workshop-registration-form" },
             { "dashedName": "lab-contact-form" },
             { "dashedName": "review-styling-forms" },
@@ -117,6 +146,9 @@
         {
           "dashedName": "css-box-model",
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-css-transforms-overflow-and-filters"
+            },
             { "dashedName": "workshop-rothko-painting" },
             { "dashedName": "lab-confidential-email-page" },
             { "dashedName": "review-css-layout-and-effects" },
@@ -126,6 +158,7 @@
         {
           "dashedName": "css-flexbox",
           "blocks": [
+            { "dashedName": "lecture-working-with-css-flexbox" },
             { "dashedName": "workshop-flexbox-photo-gallery" },
             { "dashedName": "lab-page-of-playing-cards" },
             { "dashedName": "review-css-flexbox" },
@@ -135,6 +168,7 @@
         {
           "dashedName": "css-typography",
           "blocks": [
+            { "dashedName": "lecture-working-with-css-fonts" },
             { "dashedName": "workshop-nutritional-label" },
             { "dashedName": "lab-newspaper-article" },
             { "dashedName": "review-css-typography" },
@@ -144,6 +178,9 @@
         {
           "dashedName": "css-and-accessibility",
           "blocks": [
+            {
+              "dashedName": "lecture-best-practices-for-accessibility-and-css"
+            },
             { "dashedName": "workshop-accessibility-quiz" },
             { "dashedName": "lab-tribute-page" },
             { "dashedName": "review-css-accessibility" },
@@ -153,6 +190,7 @@
         {
           "dashedName": "attribute-selectors",
           "blocks": [
+            { "dashedName": "lecture-working-with-attribute-selectors" },
             { "dashedName": "workshop-balance-sheet" },
             { "dashedName": "lab-book-inventory-app" },
             { "dashedName": "review-css-attribute-selectors" },
@@ -162,6 +200,9 @@
         {
           "dashedName": "css-positioning",
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-how-to-work-with-floats-and-positioning-in-css"
+            },
             { "dashedName": "workshop-cat-painting" },
             { "dashedName": "lab-house-painting" },
             { "dashedName": "review-css-positioning" },
@@ -171,6 +212,9 @@
         {
           "dashedName": "responsive-design",
           "blocks": [
+            {
+              "dashedName": "lecture-best-practices-for-responsive-web-design"
+            },
             { "dashedName": "workshop-piano" },
             { "dashedName": "lab-technical-documentation-page" },
             { "dashedName": "review-responsive-web-design" },
@@ -180,6 +224,7 @@
         {
           "dashedName": "css-variables",
           "blocks": [
+            { "dashedName": "lecture-working-with-css-variables" },
             { "dashedName": "workshop-city-skyline" },
             { "dashedName": "lab-availability-table" },
             { "dashedName": "review-css-variables" },
@@ -189,7 +234,9 @@
         {
           "dashedName": "css-grid",
           "blocks": [
+            { "dashedName": "lecture-working-with-css-grid" },
             { "dashedName": "workshop-magazine" },
+            { "dashedName": "lecture-debugging-css" },
             { "dashedName": "lab-product-landing-page" },
             { "dashedName": "review-css-grid" },
             { "dashedName": "quiz-css-grid" }
@@ -198,6 +245,7 @@
         {
           "dashedName": "css-animations",
           "blocks": [
+            { "dashedName": "lecture-animations-and-accessibility" },
             { "dashedName": "lab-moon-orbit" },
             { "dashedName": "workshop-flappy-penguin" },
             { "dashedName": "lab-personal-portfolio" },
@@ -395,6 +443,7 @@
         {
           "dashedName": "asynchronous-javascript",
           "blocks": [
+            { "dashedName": "workshop-fcc-authors-page" },
             { "dashedName": "quiz-javascript-object-oriented-programming" },
             { "dashedName": "lab-stack-class" },
             { "dashedName": "lab-linked-list-class" },
@@ -539,16 +588,7 @@
           "dashedName": "security-and-privacy",
           "blocks": [
             { "dashedName": "review-security-and-privacy" },
-            { "dashedName": "quiz-security-and-privacy" },
-            { "dashedName": "workshop-npm-packages" },
-            { "dashedName": "lab-timestamp-microservice" },
-            { "dashedName": "workshop-node-and-express" },
-            { "dashedName": "lab-request-header-parser-microservice" },
-            { "dashedName": "lab-url-shortener-microservice" },
-            { "dashedName": "lab-exercise-tracker" },
-            { "dashedName": "lab-file-metadata-microservice" },
-            { "dashedName": "quiz-backend-javascript" },
-            { "dashedName": "quiz-tooling-and-deployment" }
+            { "dashedName": "quiz-security-and-privacy" }
           ]
         }
       ]
