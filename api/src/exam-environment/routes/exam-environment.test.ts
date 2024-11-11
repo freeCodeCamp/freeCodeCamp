@@ -42,6 +42,10 @@ describe('/exam-environment/', () => {
         res.body.examEnvironmentAuthorizationToken;
     });
 
+    afterAll(async () => {
+      await mock.clearEnvExam();
+    });
+
     describe('POST /exam-environment/exam/attempt', () => {
       afterEach(async () => {
         await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
