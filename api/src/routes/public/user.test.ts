@@ -69,6 +69,8 @@ const testUserData: Prisma.userCreateInput = {
   ],
   partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   completedExams: [],
+  completedModules: [],
+  completedChapters: [],
   githubProfile: 'github.com/foobar',
   website: 'https://www.freecodecamp.org',
   donationEmails: ['an@add.ress'],
@@ -175,6 +177,8 @@ const publicUserData = {
     }
   ],
   completedExams: testUserData.completedExams,
+  completedModules: testUserData.completedModules,
+  completedChapters: testUserData.completedChapters,
   completedSurveys: [], // TODO: add surveys
   githubProfile: testUserData.githubProfile,
   is2018DataVisCert: testUserData.is2018DataVisCert,

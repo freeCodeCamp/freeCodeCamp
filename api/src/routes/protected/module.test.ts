@@ -132,7 +132,7 @@ describe('moduleRoutes', () => {
       setCookies = res.get('Set-Cookie');
     });
 
-    const endpoints: { path: string; method: 'POST' | 'GET' }[] = [
+    const endpoints: { path: string; method: 'POST' }[] = [
       { path: '/module-completed', method: 'POST' }
     ];
 

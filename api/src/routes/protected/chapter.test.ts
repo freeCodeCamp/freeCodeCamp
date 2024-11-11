@@ -130,7 +130,7 @@ describe('chapterRoutes', () => {
       setCookies = res.get('Set-Cookie');
     });
 
-    const endpoints: { path: string; method: 'POST' | 'GET' }[] = [
+    const endpoints: { path: string; method: 'POST' }[] = [
       { path: '/chapter-completed', method: 'POST' }
     ];
 
