@@ -2333,7 +2333,8 @@
       "review-responsive-web-design": {
         "title": "Responsive Web Design Review",
         "intro": [
-          "Review the Responsive Web Design concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the fundamentals of responsive design, you first need to review.",
+          "Open up this page to review concepts like media queries, media breakpoints and mobile first approach design."
         ]
       },
       "quiz-responsive-web-design": {
