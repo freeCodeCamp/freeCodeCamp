@@ -325,6 +325,7 @@ describe('auth0 plugin', () => {
         completedChallenges: [],
         completedExams: [],
         completedModules: [],
+        completedChapters: [],
         currentChallengeId: '',
         donationEmails: [],
         email,

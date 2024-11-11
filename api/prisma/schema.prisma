@@ -39,6 +39,11 @@ type CompletedModule {
   completedDate Float
 }
 
+type CompletedChapter {
+  id            String
+  completedDate Float
+}
+
 type Portfolio {
   description String
   id          String
@@ -82,6 +87,7 @@ model user {
   completedChallenges          CompletedChallenge[]
   completedExams               CompletedExam[] // Undefined
   completedModules             CompletedModule[] // Undefined
+  completedChapters            CompletedChapter[] // Undefined
   currentChallengeId           String?
   donationEmails               String[] // Undefined | String[] (only possible for built in Types like String)
   email                        String

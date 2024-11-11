@@ -11,6 +11,7 @@ export { msTrophyChallengeCompleted } from './schemas/challenge/ms-trophy-challe
 export { projectCompleted } from './schemas/challenge/project-completed';
 export { saveChallenge } from './schemas/challenge/save-challenge';
 export { moduleCompleted } from './schemas/module/module-completed';
+export { chapterCompleted } from './schemas/chapter/chapter-completed';
 export { deprecatedEndpoints } from './schemas/deprecated';
 export { addDonation } from './schemas/donate/add-donation';
 export { chargeStripeCard } from './schemas/donate/charge-stripe-card';

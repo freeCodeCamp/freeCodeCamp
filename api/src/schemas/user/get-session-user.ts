@@ -47,6 +47,12 @@ export const getSessionUser = {
               completedDate: Type.Number()
             })
           ),
+          completedChapters: Type.Array(
+            Type.Object({
+              id: Type.String(),
+              completedDate: Type.Number()
+            })
+          ),
           completedChallengeCount: Type.Number(),
           currentChallengeId: Type.String(),
           email: Type.String(),
