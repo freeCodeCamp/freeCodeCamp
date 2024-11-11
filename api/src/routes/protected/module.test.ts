@@ -5,8 +5,11 @@ import {
   createSuperRequest
 } from '../../../jest.utils';
 
+const MOCK_DATE = new Date('2024-11-08').getTime();
+
 describe('moduleRoutes', () => {
   setupServer();
+
   describe('Authenticated user', () => {
     let setCookies: string[];
     let superPost: ReturnType<typeof createSuperRequest>;
@@ -31,6 +34,17 @@ describe('moduleRoutes', () => {
       });
 
       describe('handling', () => {
+        beforeAll(() => {
+          jest.useFakeTimers({
+            doNotFake: ['nextTick']
+          });
+          jest.setSystemTime(MOCK_DATE);
+        });
+
+        afterAll(() => {
+          jest.useRealTimers();
+        });
+
         beforeEach(async () => {
           const now = Date.now();
 
@@ -62,18 +76,18 @@ describe('moduleRoutes', () => {
           expect(user.completedModules).toMatchObject([
             {
               id: 'basic-html',
-              completedDate: expect.any(Number)
+              completedDate: MOCK_DATE
             },
             {
               id: 'semantic-html',
-              completedDate: expect.any(Number)
+              completedDate: MOCK_DATE
             }
           ]);
 
           expect(res.body).toStrictEqual({
             alreadyCompleted: false,
             points: 2,
-            completedDate: expect.any(Number)
+            completedDate: MOCK_DATE
           });
 
           expect(res.statusCode).toBe(200);
@@ -93,14 +107,14 @@ describe('moduleRoutes', () => {
           expect(user.completedModules).toMatchObject([
             {
               id: 'basic-html',
-              completedDate: expect.any(Number)
+              completedDate: MOCK_DATE
             }
           ]);
 
           expect(res.body).toStrictEqual({
             alreadyCompleted: true,
             points: 1,
-            completedDate: expect.any(Number)
+            completedDate: MOCK_DATE
           });
 
           expect(res.statusCode).toBe(200);

@@ -5,8 +5,11 @@ import {
   createSuperRequest
 } from '../../../jest.utils';
 
+const MOCK_DATE = new Date('2024-11-08').getTime();
+
 describe('chapterRoutes', () => {
   setupServer();
+
   describe('Authenticated user', () => {
     let setCookies: string[];
     let superPost: ReturnType<typeof createSuperRequest>;
@@ -31,19 +34,28 @@ describe('chapterRoutes', () => {
       });
 
       describe('handling', () => {
-        beforeEach(async () => {
-          const now = Date.now();
+        beforeAll(() => {
+          jest.useFakeTimers({
+            doNotFake: ['nextTick']
+          });
+          jest.setSystemTime(MOCK_DATE);
+        });
 
+        afterAll(() => {
+          jest.useRealTimers();
+        });
+
+        beforeEach(async () => {
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
             data: {
               completedChapters: [
                 {
                   id: 'html',
-                  completedDate: now
+                  completedDate: MOCK_DATE
                 }
               ],
-              progressTimestamps: [now]
+              progressTimestamps: [MOCK_DATE]
             }
           });
         });
@@ -62,18 +74,18 @@ describe('chapterRoutes', () => {
           expect(user.completedChapters).toMatchObject([
             {
               id: 'html',
-              completedDate: expect.any(Number)
+              completedDate: MOCK_DATE
             },
             {
               id: 'css',
-              completedDate: expect.any(Number)
+              completedDate: MOCK_DATE
             }
           ]);
 
           expect(res.body).toStrictEqual({
             alreadyCompleted: false,
             points: 2,
-            completedDate: expect.any(Number)
+            completedDate: MOCK_DATE
           });
 
           expect(res.statusCode).toBe(200);
@@ -93,14 +105,14 @@ describe('chapterRoutes', () => {
           expect(user.completedChapters).toMatchObject([
             {
               id: 'html',
-              completedDate: expect.any(Number)
+              completedDate: MOCK_DATE
             }
           ]);
 
           expect(res.body).toStrictEqual({
             alreadyCompleted: true,
             points: 1,
-            completedDate: expect.any(Number)
+            completedDate: MOCK_DATE
           });
 
           expect(res.statusCode).toBe(200);
