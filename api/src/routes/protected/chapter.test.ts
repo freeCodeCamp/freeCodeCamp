@@ -60,7 +60,7 @@ describe('chapterRoutes', () => {
           });
         });
 
-        test('POST handles new completed chapter', async () => {
+        test('POST handles newly completed chapter', async () => {
           const res = await superPost('/chapter-completed').send({
             id: 'css'
           });

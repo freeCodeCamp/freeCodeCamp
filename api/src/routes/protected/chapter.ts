@@ -4,7 +4,7 @@ import { ProgressTimestamp, getPoints } from '../../utils/progress';
 import * as schemas from '../../schemas';
 
 /**
- * Plugin for the challenge submission endpoints.
+ * Plugin for the chapter submission endpoints.
  *
  * @param fastify The Fastify instance.
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.

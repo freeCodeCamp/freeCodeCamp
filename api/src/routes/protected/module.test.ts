@@ -62,7 +62,7 @@ describe('moduleRoutes', () => {
           });
         });
 
-        test('POST handles new completed module', async () => {
+        test('POST handles newly completed module', async () => {
           const res = await superPost('/module-completed').send({
             id: 'semantic-html'
           });
