@@ -5,6 +5,6 @@
   "isUpcomingChange": true,
   "dashedName": "lecture-working-with-strings-in-javascript",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "672d2654f78cbf20e0ba4501", "title": "Step 1" }],
+  "challengeOrder": [{ "id": "672d2654f78cbf20e0ba4501", "title": "What Is Bracket Notation, and How Do You Access Characters from a String?" }],
   "helpCategory": "JavaScript"
 }
