@@ -372,6 +372,7 @@
         {
           "dashedName": "basic-regex",
           "blocks": [
+            { "dashedName": "lab-markdown-to-html-converter" },
             { "dashedName": "lab-regex-sandbox" },
             { "dashedName": "review-javascript-regular-expressions" },
             { "dashedName": "quiz-javascript-regular-expressions" }
@@ -380,6 +381,7 @@
         {
           "dashedName": "form-validation",
           "blocks": [
+            { "dashedName": "workshop-calorie-counter" },
             { "dashedName": "review-form-validation-with-javascript" },
             { "dashedName": "quiz-form-validation-with-javascript" }
           ]
@@ -406,6 +408,7 @@
         {
           "dashedName": "localstorage-and-crud-operations",
           "blocks": [
+            { "dashedName": "workshop-todo-app" },
             { "dashedName": "lab-bookmark-manager-app" },
             { "dashedName": "review-local-storage-and-crud" },
             { "dashedName": "quiz-local-storage-and-crud" }
