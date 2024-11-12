@@ -24,6 +24,33 @@ Be sure to write your code to account for collisions!
 
 # --hints--
 
+The `hash` function should be valid. 
+
+```js
+let calls = 0;
+const ourHash = string => {
+  calls++;
+  let hashCode = 0;
+  for (let i = 0; i < string.length; i++) {
+    hashCode += string.charCodeAt(i);
+  }
+  return hashCode;
+};
+
+assert.strictEqual(hash('yek'),ourHash('yek'));
+
+assert.strictEqual(hash('key'),ourHash('key'));
+assert.strictEqual(hash('key1'),ourHash('key1'));
+assert.strictEqual(hash('key2'),ourHash('key2'));
+assert.strictEqual(hash('key3'),ourHash('key3'));
+
+assert.strictEqual(hash('1key'),ourHash('1key'));
+assert.strictEqual(hash('ke1y'),ourHash('ke1y'));
+assert.strictEqual(hash('altKey'),ourHash('altKey'));
+
+assert.strictEqual(called,calls); 
+```
+
 The `HashTable` data structure should exist.
 
 ```js
