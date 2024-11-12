@@ -36,11 +36,6 @@ const video = path.resolve(
   '../../src/templates/Challenges/video/show.tsx'
 );
 
-const odin = path.resolve(
-  __dirname,
-  '../../src/templates/Challenges/odin/show.tsx'
-);
-
 const exam = path.resolve(
   __dirname,
   '../../src/templates/Challenges/exam/show.tsx'
@@ -69,7 +64,6 @@ const views = {
   quiz,
   video,
   codeAlly,
-  odin,
   exam,
   msTrophy,
   fillInTheBlank,
