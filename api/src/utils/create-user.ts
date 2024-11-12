@@ -14,8 +14,6 @@ const nanoid = customAlphabet(nanoidCharSet, 21);
 export const createResetProperties = () => ({
   completedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
   completedExams: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
-  completedModules: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
-  completedChapters: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
   currentChallengeId: '',
   is2018DataVisCert: false,
   is2018FullStackCert: false,
