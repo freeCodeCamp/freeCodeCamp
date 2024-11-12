@@ -5,7 +5,8 @@ import {
   createSuperRequest
 } from '../../../jest.utils';
 
-const MOCK_DATE = new Date('2024-11-08').getTime();
+const EXISTING_COMPLETED_DATE = new Date('2024-11-08').getTime();
+const DATE_NOW = Date.now();
 
 describe('moduleRoutes', () => {
   setupServer();
@@ -38,7 +39,7 @@ describe('moduleRoutes', () => {
           jest.useFakeTimers({
             doNotFake: ['nextTick']
           });
-          jest.setSystemTime(MOCK_DATE);
+          jest.setSystemTime(DATE_NOW);
         });
 
         afterAll(() => {
@@ -46,18 +47,16 @@ describe('moduleRoutes', () => {
         });
 
         beforeEach(async () => {
-          const now = Date.now();
-
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
             data: {
               completedModules: [
                 {
                   id: 'basic-html',
-                  completedDate: now
+                  completedDate: EXISTING_COMPLETED_DATE
                 }
               ],
-              progressTimestamps: [now]
+              progressTimestamps: [EXISTING_COMPLETED_DATE]
             }
           });
         });
@@ -76,18 +75,18 @@ describe('moduleRoutes', () => {
           expect(user.completedModules).toMatchObject([
             {
               id: 'basic-html',
-              completedDate: MOCK_DATE
+              completedDate: EXISTING_COMPLETED_DATE
             },
             {
               id: 'semantic-html',
-              completedDate: MOCK_DATE
+              completedDate: DATE_NOW
             }
           ]);
 
           expect(res.body).toStrictEqual({
             alreadyCompleted: false,
             points: 2,
-            completedDate: MOCK_DATE
+            completedDate: DATE_NOW
           });
 
           expect(res.statusCode).toBe(200);
@@ -107,14 +106,14 @@ describe('moduleRoutes', () => {
           expect(user.completedModules).toMatchObject([
             {
               id: 'basic-html',
-              completedDate: MOCK_DATE
+              completedDate: EXISTING_COMPLETED_DATE
             }
           ]);
 
           expect(res.body).toStrictEqual({
             alreadyCompleted: true,
             points: 1,
-            completedDate: MOCK_DATE
+            completedDate: EXISTING_COMPLETED_DATE
           });
 
           expect(res.statusCode).toBe(200);
