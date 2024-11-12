@@ -5,6 +5,15 @@
   "isUpcomingChange": true,
   "dashedName": "lecture-understanding-the-event-object-and-event-delegation",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "6732a06aed1b095f57b0bb82", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "6732a06aed1b095f57b0bb82",
+      "title": "What Is the Change Event, and How Does It Work?"
+    },
+    {
+      "id": "67338e93b75977a344cf6d40",
+      "title": "How Do Event Bubbling, and Event Delegation Work?"
+    }
+  ],
   "helpCategory": "JavaScript"
 }
