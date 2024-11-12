@@ -402,7 +402,10 @@
         },
         {
           "dashedName": "maps-sets-and-json",
-          "blocks": [{ "dashedName": "review-javascript-maps-sets-and-json" }]
+          "blocks": [
+            { "dashedName": "workshop-plant-nursery-catalog" },
+            { "dashedName": "review-javascript-maps-sets-and-json" }
+          ]
         },
         {
           "dashedName": "localstorage-and-crud-operations",

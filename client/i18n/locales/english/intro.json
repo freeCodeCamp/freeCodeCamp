@@ -2848,7 +2848,12 @@
         ]
       },
       "pehm": { "title": "225", "intro": [] },
-      "cvsw": { "title": "226", "intro": [] },
+      "workshop-plant-nursery-catalog": {
+        "title": "Build a Plant Nursery Catalog",
+        "intro": [
+          "In this workshop, you will practice maps and sets by building a plant nursery catalog in JavaScript."
+        ]
+      },
       "cvs1": { "title": "227", "intro": [] },
       "review-javascript-maps-sets-and-json": {
         "title": "JavaScript Maps, Sets, and JSON Review",
