@@ -1,0 +1,10 @@
+{
+  "name": "Working with Dates",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-dates",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "6733aafb9c0802f66cc1e056", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

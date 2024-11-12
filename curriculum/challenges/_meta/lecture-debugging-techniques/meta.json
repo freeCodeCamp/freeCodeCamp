@@ -1,0 +1,10 @@
+{
+  "name": "Debugging Techniques",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-debugging-techniques",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "6733aa9b006d29f4d11307a5", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Working with Regular Expressions",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-regular-expressions",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "6733aad43b3ebff588a26fb5", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}
