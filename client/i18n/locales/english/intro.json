@@ -2302,7 +2302,8 @@
       "review-css-positioning": {
         "title": "CSS Positioning Review",
         "intro": [
-          "Review the CSS Positioning concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the fundamentals of CSS positioning concepts, you first need to review.",
+          "Open up this page to review concepts like floats, relative positioning, absolute positioning and more."
         ]
       },
       "quiz-css-positioning": {
