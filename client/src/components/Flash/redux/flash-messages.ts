@@ -36,6 +36,7 @@ export enum FlashMessages {
   MsTrophyErr6 = 'flash.ms.trophy.err-6',
   MsTrophyVerified = 'flash.ms.trophy.verified',
   NameNeeded = 'flash.name-needed',
+  NetworkIssue = 'Network issue occurred' ,
   None = '',
   NotEligible = 'flash.not-eligible',
   NotHonest = 'flash.not-honest',
