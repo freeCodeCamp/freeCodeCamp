@@ -32,28 +32,29 @@ Try giving your form, which now has the `id` attribute of `cat-photo-form`, a gr
 Your `form` element should have the id of `cat-photo-form`.
 
 ```js
-assert($('form').attr('id') === 'cat-photo-form');
+assert.strictEqual(document.querySelector('form').getAttribute('id'), 'cat-photo-form');
 ```
 
 Your `form` element should have the `background-color` of green.
 
 ```js
-assert($('#cat-photo-form').css('background-color') === 'rgb(0, 128, 0)');
+const catPhotoForm = document.querySelector('#cat-photo-form');
+const backgroundColor = window.getComputedStyle(catPhotoForm)['background-color'];
+assert.strictEqual(backgroundColor,'rgb(0, 128, 0)');
 ```
 
 Your `form` element should have an `id` attribute.
 
 ```js
-assert(
-  code.match(/<form.*cat-photo-form.*>/gi) &&
-    code.match(/<form.*cat-photo-form.*>/gi).length > 0
-);
+assert.match(code,/<form.*cat-photo-form.*>/gi);
+assert.strictEqual(code.match(/<form.*cat-photo-form.*>/gi).length,1)
 ```
 
 You should not give your `form` any `class` or `style` attributes.
 
 ```js
-assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi));
+assert.notMatch(code,/<form.*style.*>/gi);
+assert.notMatch(code,/<form.*class.*>/gi);
 ```
 
 # --seed--

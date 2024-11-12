@@ -30,7 +30,7 @@ Give your `form` element the id `cat-photo-form`.
 Your `form` element should have the id of `cat-photo-form`.
 
 ```js
-assert($('form').attr('id') === 'cat-photo-form');
+assert.strictEqual(document.querySelector('form').getAttribute('id') ,'cat-photo-form');
 ```
 
 # --seed--

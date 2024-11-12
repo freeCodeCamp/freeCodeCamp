@@ -26,7 +26,7 @@ Inside the same `<style>` tag that contains your `red-text` class, create an ent
 Between the `style` tags, give the `p` elements `font-size` of `16px`. Browser and Text zoom should be at 100%.
 
 ```js
-assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i));
+assert.match(code,/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i);
 ```
 
 # --seed--

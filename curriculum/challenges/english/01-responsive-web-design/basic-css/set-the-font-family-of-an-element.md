@@ -28,12 +28,9 @@ Make all of your `p` elements use the `monospace` font.
 Your `p` elements should use the font `monospace`.
 
 ```js
-assert(
-  $('p')
-    .not('.red-text')
-    .css('font-family')
-    .match(/monospace/i)
-);
+const notRed = document.querySelector('p:not(.red-text)');
+const fontFamily = window.getComputedStyle(notRed)['font-family']; 
+assert.match(fontFamily,/monospace/i);
 ```
 
 # --seed--

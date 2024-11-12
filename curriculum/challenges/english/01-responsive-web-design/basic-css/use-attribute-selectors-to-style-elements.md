@@ -30,43 +30,29 @@ Using the `type` attribute selector, try to give the checkboxes in CatPhotoApp a
 The `type` attribute selector should be used to select the checkboxes.
 
 ```js
-assert(
-  code.match(
-    /<style>[\s\S]*?\[\s*?type\s*?=\s*?("|')checkbox\1\s*?\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi
-  )
-);
+assert.match(code,/<style>[\s\S]*?\[\s*?type\s*?=\s*?("|')checkbox\1\s*?\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi);
 ```
 
 The top margins of the checkboxes should be 10px.
 
 ```js
-assert(
-  (function () {
-    var count = 0;
-    $("[type='checkbox']").each(function () {
-      if ($(this).css('marginTop') === '10px') {
-        count++;
-      }
-    });
-    return count === 3;
-  })()
-);
+const checkboxes = document.querySelectorAll("[type='checkbox']");
+checkboxes.forEach(function(checkbox)
+{
+  const marginTop = window.getComputedStyle(checkbox)['margin-top']; 
+  assert.strictEqual(marginTop,'10px');
+});
 ```
 
 The bottom margins of the checkboxes should be 15px.
 
 ```js
-assert(
-  (function () {
-    var count = 0;
-    $("[type='checkbox']").each(function () {
-      if ($(this).css('marginBottom') === '15px') {
-        count++;
-      }
-    });
-    return count === 3;
-  })()
-);
+const checkboxes = document.querySelectorAll("[type='checkbox']");
+checkboxes.forEach(function(checkbox)
+{
+  const marginTop = window.getComputedStyle(checkbox)['margin-bottom']; 
+  assert.strictEqual(marginTop,'15px');
+});
 ```
 
 # --seed--

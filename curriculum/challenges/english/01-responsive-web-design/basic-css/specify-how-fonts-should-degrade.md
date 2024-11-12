@@ -36,33 +36,27 @@ In the last challenge, you imported the `Lobster` font using the `link` tag. Now
 Your h2 element should use the font `Lobster`.
 
 ```js
-assert(
-  $('h2')
-    .css('font-family')
-    .match(/^"?lobster/i)
-);
+const h2Element = document.querySelector('h2');
+const fontFamily = window.getComputedStyle(h2Element)['font-family']; 
+assert.match(fontFamily,/^"?lobster/i);
 ```
 
 Your h2 element should degrade to the font `monospace` when `Lobster` is not available.
 
 ```js
-assert(
-  /\s*h2\s*\{\s*font-family\s*\:\s*(\'|"|)Lobster\1\s*,\s*monospace\s*;?\s*\}/gi.test(
-    code
-  )
-);
+assert.match(code,/\s*h2\s*\{\s*font-family\s*\:\s*(\'|"|)Lobster\1\s*,\s*monospace\s*;?\s*\}/gi);
 ```
 
 You should comment out your call to Google for the `Lobster` font by putting `<!--` in front of it.
 
 ```js
-assert(new RegExp('<!--[^fc]', 'gi').test(code));
+assert.match(code,/<!--[^fc]/gi);
 ```
 
 You should close your comment by adding `-->`.
 
 ```js
-assert(new RegExp('[^fc]-->', 'gi').test(code));
+assert.match(code,/[^fc]-->/gi);
 ```
 
 # --seed--

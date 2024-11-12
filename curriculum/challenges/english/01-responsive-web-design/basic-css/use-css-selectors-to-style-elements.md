@@ -43,39 +43,38 @@ Delete your `h2` element's style attribute, and instead create a CSS `style` blo
 The `style` attribute should be removed from your `h2` element.
 
 ```js
-assert(!$('h2').attr('style'));
+assert.notExists(document.querySelector('h2').getAttribute('style'));
 ```
 
 You should create a `style` element.
 
 ```js
-assert($('style') && $('style').length >= 1);
+assert.exists(document.querySelector('style:not(.fcc-hide-header)'));
+assert.isAtLeast(document.querySelectorAll('style:not(.fcc-hide-header)').length,1);
 ```
 
 Your `h2` element should be blue.
 
 ```js
-assert($('h2').css('color') === 'rgb(0, 0, 255)');
+const h2Element = document.querySelector('h2');
+const color = window.getComputedStyle(h2Element)['color']; 
+assert.strictEqual(color,'rgb(0, 0, 255)');
 ```
 
 Your stylesheet `h2` declaration should be valid with a semicolon and closing brace.
 
 ```js
-assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g));
+assert.match(code,/h2\s*\{\s*color\s*:.*;\s*\}/g);
 ```
 
 All your `style` elements should be valid and have closing tags.
 
 ```js
-assert(
-  code.match(/<\/style>/g) &&
-    code.match(/<\/style>/g).length ===
-      (
-        code.match(
-          /<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g
-        ) || []
-      ).length
-);
+assert.match(code,/<\/style>/g);
+
+const closingElementLength = code.match(/<\/style>/g).length;
+const openingElementsLength = (code.match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g) || []).length;
+assert.strictEqual(closingElementLength,openingElementsLength);
 ```
 
 # --seed--

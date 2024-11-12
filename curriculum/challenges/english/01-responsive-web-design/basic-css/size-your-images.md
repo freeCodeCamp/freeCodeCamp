@@ -29,19 +29,18 @@ Create a class called `smaller-image` and use it to resize the image so that it'
 Your `img` element should have the class `smaller-image`.
 
 ```js
-assert(
-  $("img[src='https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg']").attr('class')
-    .trim().split(/\s+/g).includes('smaller-image')
-);
+const relaxingCatImage = document.querySelector("img[src='https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg']");
+const catImageClass = relaxingCatImage.getAttribute('class').trim().split(/\s+/g);
+assert.include(catImageClass,'smaller-image');
 ```
 
 Your image should be 100 pixels wide.
 
 ```js
-assert(
-  $('img').width() < 200 &&
-    code.match(/\.smaller-image\s*{\s*width\s*:\s*100px\s*(;\s*}|})/i)
-);
+const image = document.querySelector('img');
+const width = image.getBoundingClientRect().width;
+assert.isBelow(width,200); 
+assert.match(code,/\.smaller-image\s*{\s*width\s*:\s*100px\s*(;\s*}|})/i);
 ```
 
 # --seed--

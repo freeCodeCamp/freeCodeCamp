@@ -26,61 +26,53 @@ Finally, give your `body` element the font-family of `monospace` by adding `font
 You should create an `h1` element.
 
 ```js
-assert($('h1').length > 0);
+assert.isAtLeast(document.querySelectorAll('h1').length,1);
 ```
 
 Your `h1` element should have the text `Hello World`.
 
 ```js
-assert(
-  $('h1').length > 0 &&
-    $('h1')
-      .text()
-      .match(/hello world/i)
-);
+assert.match(document.querySelector('h1').textContent,/hello world/i);
 ```
 
 Your `h1` element should have a closing tag.
 
 ```js
-assert(
-  code.match(/<\/h1>/g) &&
-    code.match(/<h1/g) &&
-    code.match(/<\/h1>/g).length === code.match(/<h1/g).length
-);
+assert.match(code,/<\/h1>/g);
+assert.match(code,/<h1/g);
+assert.strictEqual(code.match(/<\/h1>/g).length,code.match(/<h1/g).length);
 ```
 
 Your `body` element should have the `color` property of `green`.
 
 ```js
-assert($('body').css('color') === 'rgb(0, 128, 0)');
+const bodyElement = document.querySelector('body');
+const color = window.getComputedStyle(bodyElement)['color']; 
+assert.strictEqual(color,'rgb(0, 128, 0)');
 ```
 
 Your `body` element should have the `font-family` property of `monospace`.
 
 ```js
-assert(
-  $('body')
-    .css('font-family')
-    .match(/monospace/i)
-);
+const bodyElement = document.querySelector('body');
+const fontFamily = window.getComputedStyle(bodyElement)['font-family'];
+assert.match(fontFamily,/monospace/i);
 ```
 
 Your `h1` element should inherit the font `monospace` from your `body` element.
 
 ```js
-assert(
-  $('h1').length > 0 &&
-    $('h1')
-      .css('font-family')
-      .match(/monospace/i)
-);
+const h1Element = document.querySelector('h1');
+const fontFamily = window.getComputedStyle(h1Element)['font-family'];
+assert.match(fontFamily,/monospace/i);
 ```
 
 Your `h1` element should inherit the color `green` from your `body` element.
 
 ```js
-assert($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)');
+const h1Element = document.querySelector('h1');
+const color = window.getComputedStyle(h1Element)['color'];
+assert.strictEqual(color,'rgb(0, 128, 0)');
 ```
 
 # --seed--

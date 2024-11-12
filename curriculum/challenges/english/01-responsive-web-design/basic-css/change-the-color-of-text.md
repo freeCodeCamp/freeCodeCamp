@@ -32,19 +32,19 @@ Change your `h2` element's style so that its text color is red.
 Your `h2` element should have a `style` declaration.
 
 ```js
-assert($('h2').attr('style'));
+assert.exists(document.querySelector('h2').getAttribute('style'));
 ```
 
 Your `h2` element should have color set to `red`.
 
 ```js
-assert($('h2')[0].style.color === 'red');
+assert.strictEqual(document.querySelector('h2').style.color,'red');
 ```
 
 Your `style` declaration should end with a `;` .
 
 ```js
-assert($('h2').attr('style') && $('h2').attr('style').endsWith(';'));
+assert.isTrue(document.querySelector('h2').getAttribute('style').endsWith(';'));
 ```
 
 # --seed--
