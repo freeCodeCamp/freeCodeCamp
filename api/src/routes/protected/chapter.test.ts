@@ -55,8 +55,7 @@ describe('chapterRoutes', () => {
                   id: 'html',
                   completedDate: EXISTING_COMPLETED_DATE
                 }
-              ],
-              progressTimestamps: [EXISTING_COMPLETED_DATE]
+              ]
             }
           });
         });
@@ -69,8 +68,6 @@ describe('chapterRoutes', () => {
           const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { email: 'foo@bar.com' }
           });
-
-          expect(user.progressTimestamps).toHaveLength(2);
 
           expect(user.completedChapters).toMatchObject([
             {
@@ -85,7 +82,6 @@ describe('chapterRoutes', () => {
 
           expect(res.body).toStrictEqual({
             alreadyCompleted: false,
-            points: 2,
             completedDate: DATE_NOW
           });
 
@@ -101,8 +97,6 @@ describe('chapterRoutes', () => {
             where: { email: 'foo@bar.com' }
           });
 
-          expect(user.progressTimestamps).toHaveLength(1);
-
           expect(user.completedChapters).toMatchObject([
             {
               id: 'html',
@@ -112,7 +106,6 @@ describe('chapterRoutes', () => {
 
           expect(res.body).toStrictEqual({
             alreadyCompleted: true,
-            points: 1,
             completedDate: EXISTING_COMPLETED_DATE
           });
 

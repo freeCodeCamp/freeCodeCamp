@@ -8,8 +8,7 @@ export const chapterCompleted = {
   response: {
     200: Type.Object({
       alreadyCompleted: Type.Boolean(),
-      completedDate: Type.Number(),
-      points: Type.Number()
+      completedDate: Type.Number()
     }),
     400: Type.Object({
       type: Type.Literal('error'),

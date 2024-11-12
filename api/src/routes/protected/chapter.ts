@@ -1,6 +1,5 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import { ProgressTimestamp, getPoints } from '../../utils/progress';
 import * as schemas from '../../schemas';
 
 /**
@@ -51,8 +50,7 @@ export const chapterRoutes: FastifyPluginCallbackTypebox = (
       if (alreadyCompletedChapter) {
         return {
           alreadyCompleted: true,
-          completedDate: alreadyCompletedChapter.completedDate,
-          points: getPoints(user.progressTimestamps as ProgressTimestamp[])
+          completedDate: alreadyCompletedChapter.completedDate
         };
       }
 
@@ -61,23 +59,16 @@ export const chapterRoutes: FastifyPluginCallbackTypebox = (
         completedDate: Date.now()
       };
 
-      const newProgressTimestamps = [
-        ...(user.progressTimestamps as ProgressTimestamp[]),
-        completedChapter.completedDate
-      ];
-
       await fastify.prisma.user.update({
         where: { id: user.id },
         data: {
-          completedChapters: [...user.completedChapters, completedChapter],
-          progressTimestamps: newProgressTimestamps
+          completedChapters: [...user.completedChapters, completedChapter]
         }
       });
 
       return {
         alreadyCompleted: false,
-        completedDate: completedChapter.completedDate,
-        points: getPoints(newProgressTimestamps)
+        completedDate: completedChapter.completedDate
       };
     }
   );

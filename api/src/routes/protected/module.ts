@@ -1,6 +1,5 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import { ProgressTimestamp, getPoints } from '../../utils/progress';
 import * as schemas from '../../schemas';
 
 /**
@@ -51,8 +50,7 @@ export const moduleRoutes: FastifyPluginCallbackTypebox = (
       if (alreadyCompletedModule) {
         return {
           alreadyCompleted: true,
-          completedDate: alreadyCompletedModule.completedDate,
-          points: getPoints(user.progressTimestamps as ProgressTimestamp[])
+          completedDate: alreadyCompletedModule.completedDate
         };
       }
 
@@ -61,23 +59,16 @@ export const moduleRoutes: FastifyPluginCallbackTypebox = (
         completedDate: Date.now()
       };
 
-      const newProgressTimestamps = [
-        ...(user.progressTimestamps as ProgressTimestamp[]),
-        completedModule.completedDate
-      ];
-
       await fastify.prisma.user.update({
         where: { id: user.id },
         data: {
-          completedModules: [...user.completedModules, completedModule],
-          progressTimestamps: newProgressTimestamps
+          completedModules: [...user.completedModules, completedModule]
         }
       });
 
       return {
         alreadyCompleted: false,
-        completedDate: completedModule.completedDate,
-        points: getPoints(newProgressTimestamps)
+        completedDate: completedModule.completedDate
       };
     }
   );

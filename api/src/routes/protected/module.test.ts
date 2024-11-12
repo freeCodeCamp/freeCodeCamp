@@ -70,8 +70,6 @@ describe('moduleRoutes', () => {
             where: { email: 'foo@bar.com' }
           });
 
-          expect(user.progressTimestamps).toHaveLength(2);
-
           expect(user.completedModules).toMatchObject([
             {
               id: 'basic-html',
@@ -85,7 +83,6 @@ describe('moduleRoutes', () => {
 
           expect(res.body).toStrictEqual({
             alreadyCompleted: false,
-            points: 2,
             completedDate: DATE_NOW
           });
 
@@ -101,8 +98,6 @@ describe('moduleRoutes', () => {
             where: { email: 'foo@bar.com' }
           });
 
-          expect(user.progressTimestamps).toHaveLength(1);
-
           expect(user.completedModules).toMatchObject([
             {
               id: 'basic-html',
@@ -112,7 +107,6 @@ describe('moduleRoutes', () => {
 
           expect(res.body).toStrictEqual({
             alreadyCompleted: true,
-            points: 1,
             completedDate: EXISTING_COMPLETED_DATE
           });
 
