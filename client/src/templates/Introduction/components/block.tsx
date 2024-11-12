@@ -140,61 +140,58 @@ class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript
      */
     const LegacyChallengeListBlock = (
-      <>
-        {' '}
-        <ScrollableAnchor id={block}>
-          <div className={`block ${isExpanded ? 'open' : ''}`}>
-            <div className='block-header'>
-              <h3 className='big-block-title'>{blockTitle}</h3>
-              {blockType && <BlockLabel blockType={blockType} />}
-              {!isAudited && (
-                <div className='block-cta-wrapper'>
-                  <Link
-                    className='block-title-translation-cta'
-                    to={t('links:help-translate-link-url')}
-                  >
-                    {t('misc.translation-pending')}
-                  </Link>
-                </div>
-              )}
-            </div>
-            <BlockIntros intros={blockIntroArr} />
-            <button
-              aria-expanded={isExpanded}
-              className='map-title'
-              onClick={() => {
-                this.handleBlockClick();
-              }}
-            >
-              <Caret />
-              <div className='course-title'>
-                {`${isExpanded ? collapseText : expandText}`}{' '}
-                <span className='sr-only'>{blockTitle}</span>
+      <ScrollableAnchor id={block}>
+        <div className={`block ${isExpanded ? 'open' : ''}`}>
+          <div className='block-header'>
+            <h3 className='big-block-title'>{blockTitle}</h3>
+            {blockType && <BlockLabel blockType={blockType} />}
+            {!isAudited && (
+              <div className='block-cta-wrapper'>
+                <Link
+                  className='block-title-translation-cta'
+                  to={t('links:help-translate-link-url')}
+                >
+                  {t('misc.translation-pending')}
+                </Link>
               </div>
-              <div className='map-title-completed course-title'>
-                <CheckMark isCompleted={isBlockCompleted} />
-                <span
-                  aria-hidden='true'
-                  className='map-completed-count'
-                >{`${completedCount}/${challengesWithCompleted.length}`}</span>
-                <span className='sr-only'>
-                  ,{' '}
-                  {t('learn.challenges-completed', {
-                    completedCount,
-                    totalChallenges: challengesWithCompleted.length
-                  })}
-                </span>
-              </div>
-            </button>
-            {isExpanded && (
-              <Challenges
-                challengesWithCompleted={challengesWithCompleted}
-                isProjectBlock={isProjectBlock}
-              />
             )}
           </div>
-        </ScrollableAnchor>
-      </>
+          <BlockIntros intros={blockIntroArr} />
+          <button
+            aria-expanded={isExpanded}
+            className='map-title'
+            onClick={() => {
+              this.handleBlockClick();
+            }}
+          >
+            <Caret />
+            <div className='course-title'>
+              {`${isExpanded ? collapseText : expandText}`}{' '}
+              <span className='sr-only'>{blockTitle}</span>
+            </div>
+            <div className='map-title-completed course-title'>
+              <CheckMark isCompleted={isBlockCompleted} />
+              <span
+                aria-hidden='true'
+                className='map-completed-count'
+              >{`${completedCount}/${challengesWithCompleted.length}`}</span>
+              <span className='sr-only'>
+                ,{' '}
+                {t('learn.challenges-completed', {
+                  completedCount,
+                  totalChallenges: challengesWithCompleted.length
+                })}
+              </span>
+            </div>
+          </button>
+          {isExpanded && (
+            <Challenges
+              challengesWithCompleted={challengesWithCompleted}
+              isProjectBlock={isProjectBlock}
+            />
+          )}
+        </div>
+      </ScrollableAnchor>
     );
 
     /**
@@ -203,31 +200,29 @@ class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#javascript-algorithms-and-data-structures-projects
      */
     const ProjectListBlock = (
-      <>
-        <ScrollableAnchor id={block}>
-          <div className='block'>
-            <div className='block-header'>
-              <h3 className='big-block-title'>{blockTitle}</h3>
-              {blockType && <BlockLabel blockType={blockType} />}
-              {!isAudited && (
-                <div className='block-cta-wrapper'>
-                  <Link
-                    className='block-title-translation-cta'
-                    to={t('links:help-translate-link-url')}
-                  >
-                    {t('misc.translation-pending')}
-                  </Link>
-                </div>
-              )}
-            </div>
-            <BlockIntros intros={blockIntroArr} />
-            <Challenges
-              challengesWithCompleted={challengesWithCompleted}
-              isProjectBlock={isProjectBlock}
-            />
+      <ScrollableAnchor id={block}>
+        <div className='block'>
+          <div className='block-header'>
+            <h3 className='big-block-title'>{blockTitle}</h3>
+            {blockType && <BlockLabel blockType={blockType} />}
+            {!isAudited && (
+              <div className='block-cta-wrapper'>
+                <Link
+                  className='block-title-translation-cta'
+                  to={t('links:help-translate-link-url')}
+                >
+                  {t('misc.translation-pending')}
+                </Link>
+              </div>
+            )}
           </div>
-        </ScrollableAnchor>
-      </>
+          <BlockIntros intros={blockIntroArr} />
+          <Challenges
+            challengesWithCompleted={challengesWithCompleted}
+            isProjectBlock={isProjectBlock}
+          />
+        </div>
+      </ScrollableAnchor>
     );
 
     /**
@@ -236,45 +231,42 @@ class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-html-by-building-a-cat-photo-app
      */
     const ChallengeGridBlock = (
-      <>
-        {' '}
-        <ScrollableAnchor id={block}>
-          <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
-            <BlockHeader
-              blockDashed={block}
-              blockTitle={blockTitle}
-              blockType={blockType}
-              completedCount={completedCount}
-              courseCompletionStatus={courseCompletionStatus()}
-              handleClick={this.handleBlockClick}
-              isCompleted={isBlockCompleted}
-              isExpanded={isExpanded}
-              percentageCompleted={percentageCompleted}
-            />
-            {!isAudited && (
-              <div className='tags-wrapper'>
-                <Link
-                  className='cert-tag'
-                  to={t('links:help-translate-link-url')}
-                >
-                  {t('misc.translation-pending')}
-                </Link>
-              </div>
-            )}
-            {isExpanded && (
-              <div id={`${block}-panel`}>
-                <BlockIntros intros={blockIntroArr} />
-                <Challenges
-                  challengesWithCompleted={challengesWithCompleted}
-                  isProjectBlock={isProjectBlock}
-                  isGridMap={true}
-                  blockTitle={blockTitle}
-                />
-              </div>
-            )}
-          </div>
-        </ScrollableAnchor>
-      </>
+      <ScrollableAnchor id={block}>
+        <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
+          <BlockHeader
+            blockDashed={block}
+            blockTitle={blockTitle}
+            blockType={blockType}
+            completedCount={completedCount}
+            courseCompletionStatus={courseCompletionStatus()}
+            handleClick={this.handleBlockClick}
+            isCompleted={isBlockCompleted}
+            isExpanded={isExpanded}
+            percentageCompleted={percentageCompleted}
+          />
+          {!isAudited && (
+            <div className='tags-wrapper'>
+              <Link
+                className='cert-tag'
+                to={t('links:help-translate-link-url')}
+              >
+                {t('misc.translation-pending')}
+              </Link>
+            </div>
+          )}
+          {isExpanded && (
+            <div id={`${block}-panel`}>
+              <BlockIntros intros={blockIntroArr} />
+              <Challenges
+                challengesWithCompleted={challengesWithCompleted}
+                isProjectBlock={isProjectBlock}
+                isGridMap={true}
+                blockTitle={blockTitle}
+              />
+            </div>
+          )}
+        </div>
+      </ScrollableAnchor>
     );
 
     /**
