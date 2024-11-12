@@ -2273,7 +2273,8 @@
       "review-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Review",
         "intro": [
-          "Review the CSS Attribute Selectors concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the fundamentals of CSS attribute selectors, you first need to review.",
+          "Open up this page to review concepts like how to work with different attribute selectors that target links with the <code>href</code> and <code>title</code> attributes."
         ]
       },
       "quiz-css-attribute-selectors": {
