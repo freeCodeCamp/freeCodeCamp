@@ -1,0 +1,10 @@
+{
+  "name": "Working with Higher Order Functions and Callbacks",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-higher-order-functions-and-callbacks",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67329ffd75010f5ddeb4ea13", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

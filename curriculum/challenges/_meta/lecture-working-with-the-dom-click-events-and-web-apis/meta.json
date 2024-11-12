@@ -1,0 +1,10 @@
+{
+  "name": "Working with the DOM, Click Events, and Web APIs",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-the-dom-click-events-and-web-apis",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "6732a0472f52015e511f8e58", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

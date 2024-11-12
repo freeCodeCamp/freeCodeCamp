@@ -1,0 +1,10 @@
+{
+  "name": "Working with Objects",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-objects",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67329f737126b75bcb949e13", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

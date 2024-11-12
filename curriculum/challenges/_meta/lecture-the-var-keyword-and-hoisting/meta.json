@@ -1,0 +1,10 @@
+{
+  "name": "The var Keyword and Hoisting",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-the-var-keyword-and-hoisting",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67329fbcfaf5ff5cdaa38a42", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

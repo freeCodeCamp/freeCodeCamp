@@ -1,0 +1,10 @@
+{
+  "name": "Working with Loops",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-loops",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67329f7f3d1bd75c17896c66", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

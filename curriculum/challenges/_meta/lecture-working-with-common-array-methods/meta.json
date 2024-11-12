@@ -1,0 +1,10 @@
+{
+  "name": "Working with Common Array Methods",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-common-array-methods",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67329f64e0ef5c5b7388158d", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

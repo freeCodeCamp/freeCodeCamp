@@ -2629,7 +2629,12 @@
           "Test what you've learned in this quiz on JavaScript Functions."
         ]
       },
-      "mexq": { "title": "157", "intro": [] },
+      "lecture-working-with-arrays": {
+        "title": "Working with Arrays",
+        "intro": [
+          "In these lecture videos, you will learn about working with JavaScript arrays."
+        ]
+      },
       "workshop-shopping-list": {
         "title": "Build a Shopping List",
         "intro": [
@@ -2643,7 +2648,12 @@
           "In this lab, you will review working with arrays and random numbers by building a lunch picker program."
         ]
       },
-      "mokm": { "title": "160", "intro": [] },
+      "lecture-working-with-common-array-methods": {
+        "title": "Working with Common Array Methods",
+        "intro": [
+          "In these lecture videos, you will learn about common array methods."
+        ]
+      },
       "review-javascript-arrays": {
         "title": "JavaScript Arrays Review",
         "intro": [
@@ -2654,7 +2664,12 @@
         "title": "JavaScript Arrays Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Arrays."]
       },
-      "dvnt": { "title": "163", "intro": [] },
+      "lecture-working-with-objects": {
+        "title": "Working with Objects",
+        "intro": [
+          "In these lecture videos, you will learn about working with objects in JavaScript."
+        ]
+      },
       "workshop-recipe-tracker": {
         "title": "Build a Recipe Tracker",
         "intro": [
@@ -2677,7 +2692,12 @@
           "Test what you've learned in this quiz on JavaScript Objects."
         ]
       },
-      "kgtw": { "title": "168", "intro": [] },
+      "lecture-working-with-loops": {
+        "title": "Working with Loops",
+        "intro": [
+          "In these lecture videos, you will learn about working with loops in JavaScript."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Build a Sentence Analyzer",
         "intro": [
@@ -2698,7 +2718,12 @@
         "title": "JavaScript Loops Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Loops."]
       },
-      "hjtr": { "title": "173", "intro": [] },
+      "lecture-understanding-core-javascript-fundamentals": {
+        "title": "Understanding Core JavaScript Fundamentals",
+        "intro": [
+          "In these lecture videos, you will learn more about core JavaScript fundamentals."
+        ]
+      },
       "lab-pyramid-generator": {
         "title": "Build a Pyramid Generator",
         "intro": ["In this lab you will build a pyramid generator."]
@@ -2707,14 +2732,24 @@
         "title": "Build a Gradebook App",
         "intro": ["For this lab, you will create a gradebook app."]
       },
-      "epfc": { "title": "176", "intro": [] },
+      "lecture-the-var-keyword-and-hoisting": {
+        "title": "The var Keyword and Hoisting",
+        "intro": [
+          "In these lecture videos, you will learn about the var keyword and hoisting in JavaScript."
+        ]
+      },
       "lab-inventory-management-program": {
         "title": "Build an Inventory Management Program",
         "intro": [
           "For this lab, you will build an inventory management program using JavaScript."
         ]
       },
-      "fbbn": { "title": "178", "intro": [] },
+      "lecture-understanding-modules-imports-and-exports": {
+        "title": "Understanding Modules, Imports, and Exports",
+        "intro": [
+          "In these lecture videos, you will learn about modules, imports, and exports in JavaScript."
+        ]
+      },
       "lnmg": { "title": "179", "intro": [] },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
@@ -2728,7 +2763,12 @@
           "Test what you've learned in this quiz on JavaScript Fundamentals Quiz."
         ]
       },
-      "plic": { "title": "182", "intro": [] },
+      "lecture-working-with-higher-order-functions-and-callbacks": {
+        "title": "Working with Higher Order Functions and Callbacks",
+        "intro": [
+          "In these lecture videos, you will learn about working with higher order functions and callbacks."
+        ]
+      },
       "vjmm": { "title": "183", "intro": [] },
       "bxtv": { "title": "184", "intro": [] },
       "review-javascript-higher-order-functions": {
@@ -2743,7 +2783,12 @@
           "Test what you've learned in this quiz on JavaScript Higher Order Functions."
         ]
       },
-      "esfh": { "title": "187", "intro": [] },
+      "lecture-working-with-the-dom-click-events-and-web-apis": {
+        "title": "Working with the DOM, Click Events, and Web APIs",
+        "intro": [
+          "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using Javascript."
+        ]
+      },
       "gibb": { "title": "188", "intro": [] },
       "lab-favorite-icon-toggler": {
         "title": "Build a Favorite Icon Toggler",
@@ -2763,7 +2808,12 @@
           "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript Quiz."
         ]
       },
-      "ubpx": { "title": "192", "intro": [] },
+      "lecture-understanding-the-event-object-and-event-delegation": {
+        "title": "Understanding the Event Object and Event Delegation",
+        "intro": [
+          "In these lecture videos, you will learn about the event object and event delegation."
+        ]
+      },
       "lbyi": { "title": "193", "intro": [] },
       "lab-real-time-counter": {
         "title": "Build a Real Time Counter",

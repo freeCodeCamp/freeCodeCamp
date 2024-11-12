@@ -1,0 +1,10 @@
+{
+  "name": "Working with Arrays",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-arrays",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67329f508a6ec45b046700b3", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}
