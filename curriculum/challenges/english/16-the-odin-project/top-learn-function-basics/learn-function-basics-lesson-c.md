@@ -46,6 +46,8 @@ function myFunction() {
   let x = 20;
   console.log(x);
 }
+
+myFunction();
 ```
 
 ## --answers--

@@ -76,7 +76,7 @@ const getQuizChallengeTemplate = (
 
 # --description--
 
-Answer all of the questions below correctly to pass the quiz.
+To pass the quiz, you must correctly answer at least 17 of the 20 of the questions below.
 
 # --quizzes--
 
@@ -598,7 +598,7 @@ const getMultipleChoiceChallengeTemplate = (
 
 ${options.title} description.
 
-# --question--
+# --questions--
 
 ## --text--
 
@@ -608,13 +608,33 @@ ${options.title} question?
 
 Answer 1
 
+### --feedback--
+
+Include feedback for answer 1 here, but remove these last four lines if this is the correct answer.
+
 ---
 
 Answer 2
 
+### --feedback--
+
+Include feedback for answer 2 here, but remove these last four lines if this is the correct answer.
+
 ---
 
 Answer 3
+
+### --feedback--
+
+Include feedback for answer 3 here, but remove these last four lines if this is the correct answer.
+
+---
+
+Answer 4
+
+### --feedback--
+
+Include feedback for answer 4 here, but remove these last four lines if this is the correct answer.
 
 ## --video-solution--
 

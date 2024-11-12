@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
-import { Hit } from 'react-instantsearch-core';
-import { SearchBox } from 'react-instantsearch-dom';
+import { SearchBox } from 'react-instantsearch';
 import { connect } from 'react-redux';
 import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -14,15 +13,14 @@ import {
   isSearchDropdownEnabledSelector,
   isSearchBarFocusedSelector,
   toggleSearchDropdown,
-  toggleSearchFocused,
-  updateSearchQuery
+  toggleSearchFocused
 } from '../redux';
 import WithInstantSearch from '../with-instant-search';
-
-import SearchHits from './search-hits';
+import type { Hit } from './types';
 
 import './searchbar-base.css';
 import './searchbar.css';
+import SearchHits from './search-hits';
 
 const searchUrl = searchPageUrl;
 const mapStateToProps = createSelector(
@@ -35,16 +33,12 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
-  bindActionCreators(
-    { toggleSearchDropdown, toggleSearchFocused, updateSearchQuery },
-    dispatch
-  );
+  bindActionCreators({ toggleSearchDropdown, toggleSearchFocused }, dispatch);
 
 export type SearchBarProps = {
   innerRef?: React.RefObject<HTMLDivElement>;
   toggleSearchDropdown: typeof toggleSearchDropdown;
   toggleSearchFocused: typeof toggleSearchFocused;
-  updateSearchQuery: typeof updateSearchQuery;
   isDropdownEnabled?: boolean;
   isSearchFocused?: boolean;
   t: TFunction;
@@ -115,7 +109,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
     query?: string
   ): boolean | void => {
     e.preventDefault();
-    const { toggleSearchDropdown, updateSearchQuery } = this.props;
+    const { toggleSearchDropdown } = this.props;
     const { index, hits } = this.state;
     const selectedHit = hits[index];
 
@@ -128,7 +122,6 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
       // Set query to value in search bar if enter is pressed
       query = (e.currentTarget?.children?.[0] as HTMLInputElement).value;
     }
-    updateSearchQuery(query);
 
     //clear input value
     const searchInput = e.currentTarget?.children?.[0] as HTMLInputElement;
@@ -151,13 +144,18 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
 
   handleMouseEnter = (e: React.SyntheticEvent<HTMLElement, Event>): void => {
     e.persist();
-    const hoveredText = e.currentTarget.innerText;
 
     this.setState(({ hits }) => {
       const hitsTitles = hits.map(hit => hit.title);
-      const hoveredIndex = hitsTitles.indexOf(hoveredText);
 
-      return { index: hoveredIndex };
+      if (e.target instanceof HTMLElement) {
+        const targetText = e.target.textContent;
+        const hoveredIndex = targetText ? hitsTitles.indexOf(targetText) : -1;
+
+        return { index: hoveredIndex };
+      }
+
+      return { index: -1 };
     });
   };
 
@@ -201,6 +199,12 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
   render(): JSX.Element {
     const { isDropdownEnabled, isSearchFocused, innerRef, t } = this.props;
     const { index } = this.state;
+    // TODO: Refactor this fallback when all translation files are synced
+    const searchPlaceholder = t('search-bar:placeholder').startsWith(
+      'search.placeholder.'
+    )
+      ? t('search.placeholder')
+      : t('search-bar:placeholder');
 
     return (
       <WithInstantSearch>
@@ -214,25 +218,23 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
               <ObserveKeys except={['Space']}>
                 <SearchBox
                   data-playwright-test-label='header-search'
-                  focusShortcuts={['83', '191']}
-                  onChange={this.handleChange}
                   onSubmit={e => {
                     this.handleSearch(e);
                   }}
-                  showLoadingIndicator={false}
+                  onInput={this.handleChange}
                   translations={{
-                    submitTitle: t('icons.magnifier'),
-                    resetTitle: t('icons.input-reset'),
-                    placeholder: t('search.placeholder')
+                    submitButtonTitle: t('icons.input-search'),
+                    resetButtonTitle: t('icons.input-reset')
                   }}
+                  placeholder={searchPlaceholder}
                   onFocus={this.handleFocus}
                 />
               </ObserveKeys>
               {isDropdownEnabled && isSearchFocused && (
                 <SearchHits
-                  handleHits={this.handleHits}
                   handleMouseEnter={this.handleMouseEnter}
                   handleMouseLeave={this.handleMouseLeave}
+                  handleHits={this.handleHits}
                   selectedIndex={index}
                 />
               )}

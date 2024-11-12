@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Alert } from '@freecodecamp/ui';
+import { Alert, Spacer } from '@freecodecamp/ui';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { SuperBlockIcon } from '../../../assets/icons/superblock-icon';
-import { Spacer, Link } from '../../../components/helpers';
+import { Link } from '../../../components/helpers';
 
 interface SuperBlockIntroProps {
   superBlock: SuperBlocks;
@@ -74,9 +74,9 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
       <h1 id='content-start' className='text-center big-heading'>
         {i18nSuperBlock}
       </h1>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <SuperBlockIcon className='cert-header-icon' superBlock={superBlock} />
-      <Spacer size='medium' />
+      <Spacer size='m' />
       {superBlockIntroText.map((str, i) => (
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}

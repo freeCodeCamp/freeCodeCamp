@@ -51,7 +51,6 @@ import {
   attemptsSelector,
   canFocusEditorSelector,
   challengeMetaSelector,
-  consoleOutputSelector,
   challengeTestsSelector,
   isResettingSelector,
   isProjectPreviewModalOpenSelector,
@@ -93,7 +92,6 @@ export interface EditorProps {
   isUsingKeyboardInTablist: boolean;
   openHelpModal: () => void;
   openResetModal: () => void;
-  output: string[];
   resizeProps: ResizeProps;
   saveChallenge: () => void;
   sendRenderTime: (renderTime: number) => void;
@@ -135,7 +133,6 @@ const mapStateToProps = createSelector(
   attemptsSelector,
   canFocusEditorSelector,
   challengeMetaSelector,
-  consoleOutputSelector,
   isDonationModalOpenSelector,
   isProjectPreviewModalOpenSelector,
   isResettingSelector,
@@ -147,13 +144,12 @@ const mapStateToProps = createSelector(
     attempts: number,
     canFocus: boolean,
     { challengeType }: { challengeType: number },
-    output: string[],
     open,
     previewOpen: boolean,
     isResetting: boolean,
     isSignedIn: boolean,
     { theme }: { theme: Themes },
-    tests: [{ text: string; testString: string }],
+    tests: [{ text: string; testString: string; message?: string }],
     isChallengeCompleted: boolean
   ) => ({
     attempts,
@@ -162,7 +158,6 @@ const mapStateToProps = createSelector(
     previewOpen,
     isResetting,
     isSignedIn,
-    output,
     theme,
     tests,
     isChallengeCompleted
@@ -1280,6 +1275,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         ? 'vs-custom'
         : editorSystemTheme;
 
+  const firstFailedTest = props.tests.find(test => !!test.err);
+
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>
@@ -1297,7 +1294,7 @@ const Editor = (props: EditorProps): JSX.Element => {
             openHelpModal={props.openHelpModal}
             openResetModal={props.openResetModal}
             tryToExecuteChallenge={tryToExecuteChallenge}
-            hint={props.output[1]}
+            hint={firstFailedTest?.message}
             testsLength={props.tests.length}
             attempts={attemptsRef.current}
             challengeIsCompleted={challengeIsComplete()}
