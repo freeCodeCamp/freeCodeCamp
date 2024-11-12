@@ -31,7 +31,7 @@ export const moduleRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async req => {
-      const { id } = req.body;
+      const { id: moduleId } = req.body;
       const userId = req.user?.id;
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
@@ -44,7 +44,7 @@ export const moduleRoutes: FastifyPluginCallbackTypebox = (
       });
 
       const alreadyCompletedModule = user.completedModules.find(
-        ({ id: moduleId }) => moduleId === id
+        ({ id }) => moduleId === id
       );
 
       if (alreadyCompletedModule) {
@@ -55,7 +55,7 @@ export const moduleRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const completedModule = {
-        id,
+        id: moduleId,
         completedDate: Date.now()
       };
 

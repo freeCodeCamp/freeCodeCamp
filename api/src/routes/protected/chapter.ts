@@ -31,7 +31,7 @@ export const chapterRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async req => {
-      const { id } = req.body;
+      const { id: chapterId } = req.body;
       const userId = req.user?.id;
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
@@ -44,7 +44,7 @@ export const chapterRoutes: FastifyPluginCallbackTypebox = (
       });
 
       const alreadyCompletedChapter = user.completedChapters.find(
-        ({ id: chapterId }) => chapterId === id
+        ({ id }) => chapterId === id
       );
 
       if (alreadyCompletedChapter) {
@@ -55,7 +55,7 @@ export const chapterRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const completedChapter = {
-        id,
+        id: chapterId,
         completedDate: Date.now()
       };
 
