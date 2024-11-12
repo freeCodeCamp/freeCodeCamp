@@ -471,8 +471,8 @@ importers:
         specifier: 1.1.0
         version: 1.1.0(react@16.14.0)
       '@freecodecamp/ui':
-        specifier: 3.0.0
-        version: 3.0.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+        specifier: 3.1.0
+        version: 3.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       '@growthbook/growthbook-react':
         specifier: 0.20.0
         version: 0.20.0(react@16.14.0)
@@ -3087,8 +3087,8 @@ packages:
     peerDependencies:
       react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
 
-  '@freecodecamp/ui@3.0.0':
-    resolution: {integrity: sha512-/Gqw8YLYgpugIJctyGuqTjN+Tp9zT4o126rbct9bISdgiCH0+qFkbksGoH/B2lVyFzHg8/Pl1i5t2jvuxMT19Q==}
+  '@freecodecamp/ui@3.1.0':
+    resolution: {integrity: sha512-V92HKnOyfGXFDDBqKm2yYILTJIuxWOxSiBLZ4d4kULJXlCSHW8pqsALHw6dsQj6LCTTuUBabQNIwD9RHsHq+yg==}
     engines: {node: '>=20', pnpm: '9'}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
@@ -17009,7 +17009,7 @@ snapshots:
       prop-types: 15.8.1
       react: 16.14.0
 
-  '@freecodecamp/ui@3.0.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
+  '@freecodecamp/ui@3.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
     dependencies:
       '@fortawesome/fontawesome-svg-core': 6.6.0
       '@fortawesome/free-solid-svg-icons': 6.6.0
