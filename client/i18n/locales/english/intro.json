@@ -2776,9 +2776,14 @@
           "Test what you've learned in this quiz on Debugging JavaScript."
         ]
       },
-      "dqth": { "title": "205", "intro": [] },
-      "ilop": { "title": "206", "intro": [] },
-      "qrer": { "title": "207", "intro": [] },
+      "ilop": { "title": "205", "intro": [] },
+      "dqth": { "title": "206", "intro": [] },
+      "lab-markdown-to-html-converter": {
+        "title": "Build a Markdown to HTML Converter",
+        "intro": [
+          "For this lab, you will build a Markdown to HTML converter using JavaScript."
+        ]
+      },
       "lab-regex-sandbox": {
         "title": "Build a RegEx Sandbox",
         "intro": ["In this lab you will build a regex sandbox."]
