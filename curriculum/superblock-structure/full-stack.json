@@ -381,6 +381,7 @@
         {
           "dashedName": "form-validation",
           "blocks": [
+            { "dashedName": "workshop-calorie-counter" },
             { "dashedName": "review-form-validation-with-javascript" },
             { "dashedName": "quiz-form-validation-with-javascript" }
           ]

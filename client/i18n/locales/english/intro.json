@@ -2803,7 +2803,13 @@
         ]
       },
       "zalp": { "title": "211", "intro": [] },
-      "hhvp": { "title": "212", "intro": [] },
+      "workshop-calorie-counter": {
+        "title": "Build a Calorie Counter",
+        "intro": [
+          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter workshop, you'll practice how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
+          "You'll also practice basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
+        ]
+      },
       "egkv": { "title": "213", "intro": [] },
       "review-form-validation-with-javascript": {
         "title": "Form Validation with JavaScript Review",
