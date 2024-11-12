@@ -183,8 +183,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.B1English
   ],
   [Languages.German]: [
     SuperBlocks.RelationalDb,

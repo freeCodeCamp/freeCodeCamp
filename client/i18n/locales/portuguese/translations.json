@@ -96,6 +96,8 @@
     "exit": "Sair",
     "finish-exam": "Finalizar o exame",
     "finish": "Finalizar",
+    "exit-quiz": "Sair do questionário",
+    "finish-quiz": "Finalizar o questionário",
     "submit-exam-results": "Enviar meus resultados",
     "verify-trophy": "Verificar troféu",
     "link-account": "Vincular conta",
@@ -518,7 +520,15 @@
       "correct-answer": "Correto!",
       "incorrect-answer": "Incorreto.",
       "unanswered-questions": "As seguintes perguntas não foram respondidas: {{ unansweredQuestions }}. Você precisa responder a todas as perguntas.",
-      "have-n-correct-questions": "Você acertou {{ correctAnswerCount }} de {{ total }} perguntas."
+      "have-n-correct-questions": "Você acertou {{ correctAnswerCount }} de {{ total }} perguntas.",
+      "finish-modal-header": "Terminar o questionário",
+      "finish-modal-body": "Tem certeza de que deseja finalizar o questionário? Você não será capaz de alterar respostas depois disso.",
+      "finish-modal-yes": "Sim, eu terminei",
+      "finish-modal-no": "Não, quero continuar no questionário",
+      "exit-modal-header": "Sair do questionário",
+      "exit-modal-body": "Tem certeza de que deseja sair do questionário? Você perderá todo o progresso que já fez.",
+      "exit-modal-yes": "Sim, quero sair do questionário",
+      "exit-modal-no": "Não, quero continuar no questionário"
     },
     "exam": {
       "qualified": "Parabéns! Você completou todos os requisitos para se qualificar para o exame.",
@@ -770,6 +780,7 @@
     "heart": "Coração",
     "initial": "Inicial",
     "input-reset": "Limpar termos de pesquisa",
+    "input-search": "Submit search terms",
     "info": "Informações introdutórias",
     "spacer": "Espaçador",
     "toggle": "Alternar marcação",
