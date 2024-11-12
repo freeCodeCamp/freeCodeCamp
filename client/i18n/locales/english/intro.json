@@ -2671,7 +2671,7 @@
         ]
       },
       "fbbn": { "title": "178", "intro": [] },
-      "lab-js-functions": {
+      "lab-password-generator": {
         "title": "Build a Password Generator App",
         "intro": ["In this lab, you'll build a password generator app."]
       },
