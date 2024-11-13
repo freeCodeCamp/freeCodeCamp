@@ -148,7 +148,11 @@ const schema = Joi.object()
     challengeType: Joi.number().min(0).max(24).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
-    dashedName: Joi.string().regex(slugRE),
+    dashedName: Joi.when('superBlock', {
+      is: [SuperBlocks.FullStackDeveloper],
+      then: Joi.string().valid(Joi.ref('id')).required(),
+      otherwise: Joi.string().regex(slugRE)
+    }),
     demoType: Joi.string().valid('onClick', 'onLoad'),
     description: Joi.when('challengeType', {
       is: [
