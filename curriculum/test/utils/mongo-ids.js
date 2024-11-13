@@ -1223,29 +1223,9 @@ const duplicatedProjectIds = [
 
   // Number Sorter Project
 
-  // Quick Sort Algorithm
-  '587d825a367417b2b2512c89',
-
-  // Roman Numeral Converter
-  '657bdc8ba322aae1eac38390',
-
   // Dice Game Project
 
-  // Telephone Number Validator
-  '657bdcb9a322aae1eac38391',
-
-  // Cash Register
-  'aa2e6f85cab2ab736c9a9b24',
-
   // Shopping Cart
-
-  // Stacks
-  '587d8250367417b2b2512c5f',
-
-  // Depth-first Search
-  '587d825d367417b2b2512c96',
-
-  // Nth Fibonacci Number
 
   // FCC Authors Page
   '641d9a19bff38d34d5a5edb8',
@@ -1280,9 +1260,6 @@ const duplicatedProjectIds = [
   // Weather App
 
   // Forum Leaderboard
-
-  // Pokemon Search
-  '6555c1d3e11a1574434cf8b5',
 
   /*** Front End Libraries ***/
 

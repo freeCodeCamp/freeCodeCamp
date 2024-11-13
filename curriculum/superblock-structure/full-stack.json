@@ -471,14 +471,6 @@
         {
           "dashedName": "functional-programming",
           "blocks": [
-            { "dashedName": "lab-quicksort-algorithm" },
-            { "dashedName": "quiz-searching-and-sorting-algorithms" },
-            { "dashedName": "lab-roman-numeral-converter" },
-            { "dashedName": "lab-telephone-number-validator" },
-            { "dashedName": "lab-cash-register" },
-            {
-              "dashedName": "quiz-javascript-problem-solving-and-algorithmic-thinking"
-            },
             { "dashedName": "review-javascript-functional-programming" },
             { "dashedName": "quiz-javascript-functional-programming" }
           ]
@@ -487,16 +479,6 @@
           "dashedName": "asynchronous-javascript",
           "blocks": [
             { "dashedName": "workshop-fcc-authors-page" },
-            { "dashedName": "quiz-javascript-object-oriented-programming" },
-            { "dashedName": "lab-stack-class" },
-            { "dashedName": "lab-linked-list-class" },
-            { "dashedName": "lab-hash-table-class" },
-            { "dashedName": "quiz-javascript-data-structures" },
-            { "dashedName": "lab-depth-first-search" },
-            { "dashedName": "quiz-graphs-and-trees" },
-            { "dashedName": "lab-nth-fibonacci-number-generator" },
-            { "dashedName": "quiz-dynamic-programming" },
-            { "dashedName": "lab-pokemon-search-app" },
             { "dashedName": "review-asynchronous-javascript" },
             { "dashedName": "quiz-asynchronous-javascript" }
           ]
@@ -513,10 +495,7 @@
       "modules": [
         {
           "dashedName": "react-fundamentals",
-          "blocks": [
-            { "dashedName": "quiz-web-standards" },
-            { "dashedName": "quiz-react-basics" }
-          ]
+          "blocks": [{ "dashedName": "quiz-react-basics" }]
         },
         {
           "dashedName": "react-state-hooks-and-routing",
@@ -621,18 +600,6 @@
         {
           "dashedName": "review-relational-databases",
           "blocks": [{ "dashedName": "review-relational-databases" }]
-        }
-      ]
-    },
-    {
-      "dashedName": "security-and-privacy",
-      "modules": [
-        {
-          "dashedName": "security-and-privacy",
-          "blocks": [
-            { "dashedName": "review-security-and-privacy" },
-            { "dashedName": "quiz-security-and-privacy" }
-          ]
         }
       ]
     },
