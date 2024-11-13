@@ -471,8 +471,8 @@ importers:
         specifier: 1.1.0
         version: 1.1.0(react@16.14.0)
       '@freecodecamp/ui':
-        specifier: 2.1.0
-        version: 2.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+        specifier: 3.1.0
+        version: 3.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       '@growthbook/growthbook-react':
         specifier: 0.20.0
         version: 0.20.0(react@16.14.0)
@@ -560,6 +560,9 @@ importers:
       i18next:
         specifier: 22.5.1
         version: 22.5.1
+      instantsearch.js:
+        specifier: 4.75.3
+        version: 4.75.3(algoliasearch@4.22.1)
       lodash:
         specifier: 4.17.21
         version: 4.17.21
@@ -620,12 +623,12 @@ importers:
       react-i18next:
         specifier: 12.3.1
         version: 12.3.1(i18next@22.5.1)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+      react-instantsearch:
+        specifier: 7.13.6
+        version: 7.13.6(algoliasearch@4.22.1)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       react-instantsearch-core:
-        specifier: 6.40.4
-        version: 6.40.4(algoliasearch@4.22.1)(react@16.14.0)
-      react-instantsearch-dom:
-        specifier: 6.40.4
-        version: 6.40.4(algoliasearch@4.22.1)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+        specifier: 7.13.6
+        version: 7.13.6(algoliasearch@4.22.1)(react@16.14.0)
       react-monaco-editor:
         specifier: 0.40.0
         version: 0.40.0(@types/react@16.14.56)(react@16.14.0)
@@ -747,12 +750,6 @@ importers:
       '@types/react-helmet':
         specifier: 6.1.11
         version: 6.1.11
-      '@types/react-instantsearch-core':
-        specifier: 6.26.10
-        version: 6.26.10
-      '@types/react-instantsearch-dom':
-        specifier: 6.12.8
-        version: 6.12.8
       '@types/react-redux':
         specifier: 7.1.33
         version: 7.1.33
@@ -3093,8 +3090,8 @@ packages:
     peerDependencies:
       react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
 
-  '@freecodecamp/ui@2.1.0':
-    resolution: {integrity: sha512-KL9QVvBlVjkls9BWTpsxNQdp88OmR+x9qE/jNvKcGRByFVsLXbAblb1cRcz8YXPPdB4vpImMT8Q3baxZTHn28Q==}
+  '@freecodecamp/ui@3.1.0':
+    resolution: {integrity: sha512-V92HKnOyfGXFDDBqKm2yYILTJIuxWOxSiBLZ4d4kULJXlCSHW8pqsALHw6dsQj6LCTTuUBabQNIwD9RHsHq+yg==}
     engines: {node: '>=20', pnpm: '9'}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
@@ -3574,6 +3571,15 @@ packages:
       '@types/react':
         optional: true
 
+  '@radix-ui/react-context@1.1.1':
+    resolution: {integrity: sha512-UASk9zi+crv9WteK/NU4PLvOoL3OuE6BWVKNF6hPRBtYBDXQ2u5iu3O59zUlJiTVvkyuycnqrztsHVJwcK9K+Q==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
   '@radix-ui/react-direction@1.1.0':
     resolution: {integrity: sha512-BUuBvgThEiAXh2DWu93XsT+a3aWrGqolGlqqw5VU1kG7p/ZH2cuDlM1sRLNnY3QcBS69UIz2mcKhMxDsdewhjg==}
     peerDependencies:
@@ -3592,8 +3598,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@radix-ui/react-presence@1.1.0':
-    resolution: {integrity: sha512-Gq6wuRN/asf9H/E/VzdKoUtT8GC9PQc9z40/vEr0VCJ4u5XvvhWIrSsCB6vD2/cH7ugTdSfYq9fLJCcM00acrQ==}
+  '@radix-ui/react-presence@1.1.1':
+    resolution: {integrity: sha512-IeFXVi4YS1K0wVZzXNrbaaUvIJ3qdY+/Ih4eHFhWA9SwGR9UDX7Ck8abvL57C4cv3wwMvUE0OG69Qc3NCcTe/A==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -3640,8 +3646,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@radix-ui/react-tabs@1.1.0':
-    resolution: {integrity: sha512-bZgOKB/LtZIij75FSuPzyEti/XBhJH52ExgtdVqjCIh+Nx/FW+LhnbXtbCzIi34ccyMsyOja8T0thCzoHFXNKA==}
+  '@radix-ui/react-tabs@1.1.1':
+    resolution: {integrity: sha512-3GBUDmP2DvzmtYLMsHmpA1GtR46ZDZ+OreXM/N+kkQJOPIgytFWWTfDQmBQKBvaFS0Vno0FktdbVzN28KGrMdw==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -4118,6 +4124,9 @@ packages:
   '@types/debug@4.1.9':
     resolution: {integrity: sha512-8Hz50m2eoS56ldRlepxSBa6PWEVCtzUo/92HgLc2qTMnotJNIm7xP+UZhyWoYsyOdd5dxZ+NZLb24rsKyFs2ow==}
 
+  '@types/dom-speech-recognition@0.0.1':
+    resolution: {integrity: sha512-udCxb8DvjcDKfk1WTBzDsxFbLgYxmQGKrE/ricoMqHRNjSlSUCcamVTA5lIQqzY10mY5qCY0QDwBfFEwhfoDPw==}
+
   '@types/enzyme-adapter-react-16@1.0.9':
     resolution: {integrity: sha512-z24MMxGtUL8HhXdye3tWzjp+19QTsABqLaX2oOZpxMPHRJgLfahQmOeTTrEBQd9ogW20+UmPBXD9j+XOasFHvw==}
 
@@ -4169,11 +4178,17 @@ packages:
   '@types/glob@8.1.0':
     resolution: {integrity: sha512-IO+MJPVhoqz+28h1qLAcBEH2+xHMK6MTyHJc7MTnnYb6wsoLR29POVGJ7LycmVXIqyy/4/2ShP5sUwTXuOwb/w==}
 
+  '@types/google.maps@3.58.1':
+    resolution: {integrity: sha512-X9QTSvGJ0nCfMzYOnaVs/k6/4L+7F5uCS+4iUmkLEls6J9S/Phv+m/i3mDeyc49ZBgwab3EFO1HEoBY7k98EGQ==}
+
   '@types/graceful-fs@4.1.7':
     resolution: {integrity: sha512-MhzcwU8aUygZroVwL2jeYk6JisJrPl/oov/gsgGCue9mkgl9wjGbzReYQClxiUgFDnib9FuHqTndccKeZKxTRw==}
 
   '@types/hast@2.3.6':
     resolution: {integrity: sha512-47rJE80oqPmFdVDCD7IheXBrVdwuBgsYwoczFvKmwfo2Mzsnt+V9OONsYauFmICb6lQPpCuXYJWejBNs4pDJRg==}
+
+  '@types/hogan.js@3.0.5':
+    resolution: {integrity: sha512-/uRaY3HGPWyLqOyhgvW9Aa43BNnLZrNeQxl2p8wqId4UHMfPKolSB+U7BlZyO1ng7MkLnyEAItsBzCG0SDhqrA==}
 
   '@types/hoist-non-react-statics@3.3.2':
     resolution: {integrity: sha512-YIQtIg4PKr7ZyqNPZObpxfHsHEmuB8dXCxd6qVcGuQVDK2bpsF7bYNnBJ4Nn7giuACZg+WewExgrtAJ3XnA4Xw==}
@@ -4327,12 +4342,6 @@ packages:
 
   '@types/react-helmet@6.1.11':
     resolution: {integrity: sha512-0QcdGLddTERotCXo3VFlUSWO3ztraw8nZ6e3zJSgG7apwV5xt+pJUS8ewPBqT4NYB1optGLprNQzFleIY84u/g==}
-
-  '@types/react-instantsearch-core@6.26.10':
-    resolution: {integrity: sha512-izn21BqXtO3GA5Tx3x7SP6kfk1GJppkVdowuenKIOUj1sCJ3VHwoggsqVWv1DYVcsS8wydjR8Ra91XtI2a12rw==}
-
-  '@types/react-instantsearch-dom@6.12.8':
-    resolution: {integrity: sha512-LKrV3yqtar29TqkG76sfw7k6s95BXRvESKIarNiniXdC+6pioZ23KOx71WJNnwiWbHfeyeSILsKStwDpVWry4A==}
 
   '@types/react-redux@7.1.33':
     resolution: {integrity: sha512-NF8m5AjWCkert+fosDsN3hAlHzpjSiXlVy9EgQEmLoBhaNXbmyeGs/aj5dQzKuF+/q+S7JQagorGDW8pJ28Hmg==}
@@ -4815,13 +4824,8 @@ packages:
   ajv@8.12.0:
     resolution: {integrity: sha512-sRu1kpcO9yLtYxBKvqfTeh9KzZEwO3STyX1HT+4CaDzC6HpTGYhIhPIzj9XuKU7KYDwnaeh5hcOwjy1QuJzBPA==}
 
-  algoliasearch-helper@3.14.0:
-    resolution: {integrity: sha512-gXDXzsSS0YANn5dHr71CUXOo84cN4azhHKUbg71vAWnH+1JBiR4jf7to3t3JHXknXkbV0F7f055vUSBKrltHLQ==}
-    peerDependencies:
-      algoliasearch: '>= 3.1 < 6'
-
-  algoliasearch-helper@3.14.2:
-    resolution: {integrity: sha512-FjDSrjvQvJT/SKMW74nPgFpsoPUwZCzGbCqbp8HhBFfSk/OvNFxzCaCmuO0p7AWeLy1gD+muFwQEkBwcl5H4pg==}
+  algoliasearch-helper@3.22.5:
+    resolution: {integrity: sha512-lWvhdnc+aKOKx8jyA3bsdEgHzm/sglC4cYdMG4xSQyRiPLJVJtH/IVYZG3Hp6PkTEhQqhyVYkeP9z2IlcHJsWw==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
 
@@ -7981,6 +7985,10 @@ packages:
   hmac-drbg@1.0.1:
     resolution: {integrity: sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg==}
 
+  hogan.js@3.0.2:
+    resolution: {integrity: sha512-RqGs4wavGYJWE07t35JQccByczmNUXQT0E12ZYV1VKYu5UiAU9lsos/yBAcf840+zrUQQxgVduCR5/B8nNtibg==}
+    hasBin: true
+
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
 
@@ -8001,6 +8009,9 @@ packages:
   hsts@2.2.0:
     resolution: {integrity: sha512-ToaTnQ2TbJkochoVcdXYm4HOCliNozlviNsg+X2XQLQvZNI/kCHR9rZxVYpJB3UPcHz80PgxRyWQ7PdU1r+VBQ==}
     engines: {node: '>=4.0.0'}
+
+  htm@3.1.1:
+    resolution: {integrity: sha512-983Vyg8NwUE7JkZ6NmOqpCZ+sh1bKv2iYTlUkzlWmA5JD2acKoxd4KVxbMmxX/85mtfdnDmTFoNKcg5DGAvxNQ==}
 
   html-element-map@1.3.1:
     resolution: {integrity: sha512-6XMlxrAFX4UEEGxctfFnmrFaaZFNf9i5fNuV5wZ3WWQ4FVaNP1aX1LkX9j2mfEx1NpjeE/rL3nmgEn23GdFmrg==}
@@ -8256,6 +8267,14 @@ packages:
   insert-module-globals@7.2.1:
     resolution: {integrity: sha512-ufS5Qq9RZN+Bu899eA9QCAYThY+gGW7oRkmb0vC93Vlyu/CFGcH0OYPEjVkDXA5FEbTt1+VWzdoOD3Ny9N+8tg==}
     hasBin: true
+
+  instantsearch-ui-components@0.9.0:
+    resolution: {integrity: sha512-ugQ+XdPx3i3Sxu+woRo6tPE0Fz/kWd4KblTUfZD1TZZBsm/8qFvcbg5dVBDvXX9v7ntoyugXCzC/XCZMzrSkig==}
+
+  instantsearch.js@4.75.3:
+    resolution: {integrity: sha512-WVVWlqR3XDqJjrEt4+kQXudrdxWIhkxzUhwxFnccB/RdsMvVHp+N6bIcVSIMGyRo/rGfGZ5Rki2E++iGwOljtA==}
+    peerDependencies:
+      algoliasearch: '>= 3.1 < 6'
 
   internal-slot@1.0.5:
     resolution: {integrity: sha512-Y+R5hJrzs52QCG2laLn4udYVnxsfny9CpOhNhUvk/SSSVyF6T27FzRbF0sroPidSu3X8oEAkOn2K804mjpt6UQ==}
@@ -9886,6 +9905,10 @@ packages:
   mkdirp-classic@0.5.3:
     resolution: {integrity: sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==}
 
+  mkdirp@0.3.0:
+    resolution: {integrity: sha512-OHsdUcVAQ6pOtg5JYWpCBo9W/GySVuwvP9hueRMW7UqshC0tbfzLv8wjySTPm3tfUZ/21CE9E1pJagOA91Pxew==}
+    deprecated: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+
   mkdirp@0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
     hasBin: true
@@ -10929,6 +10952,9 @@ packages:
     resolution: {integrity: sha512-u5U8qYpBCpN13BsiEB0CbR1Hhh4Gc0zLFuedrHJKMctHCHAGrMdG0PRM/KErzAL3CU6/eckEtmHNB3x6e3c0vA==}
     engines: {node: ^10 || ^12 || >=14}
 
+  preact@10.24.3:
+    resolution: {integrity: sha512-Z2dPnBnMUfyQfSQ+GBdsGa16hz35YmLmtTLhM169uW944hYL6xzTYkJjC07j+Wosz733pMWx0fgON3JNw1jJQA==}
+
   prebuild-install@7.1.1:
     resolution: {integrity: sha512-jAXscXWMcCK8GgCoHOfIr0ODh5ai8mj63L2nWrjuAgXE6tDyYGnx4/8o/rCgU+B4JSyZBKbeZqzhtwtC3ovxjw==}
     engines: {node: '>=10'}
@@ -11254,19 +11280,18 @@ packages:
       react-native:
         optional: true
 
-  react-instantsearch-core@6.40.4:
-    resolution: {integrity: sha512-sEOgRU2MKL8edO85sNHvKlZ5yq9OFw++CDsEqYpHJvbWLE/2J2N49XAUY90kior09I2kBkbgowBbov+Py1AubQ==}
+  react-instantsearch-core@7.13.6:
+    resolution: {integrity: sha512-ZFSGnhbqI8OF7Pi1MYkSFBJxd9A5qFJkb7y6Xd6sUm98xu6D4U4P6uvxPucihPwgTTj8YwTGe/lwcDIYPGqXNw==}
     peerDependencies:
-      algoliasearch: '>= 3.1 < 5'
-      react: '>= 16.3.0 < 19'
+      algoliasearch: '>= 3.1 < 6'
+      react: '>= 16.8.0 < 19'
 
-  react-instantsearch-dom@6.40.4:
-    resolution: {integrity: sha512-Oy8EKEOg/dfTE8tHc7GZRlzUdbZY4Mxas1x2OtvSNui+YAbIWafIf1g98iOGyVTB2qI5WH91YyUJTLPNfLrs6Q==}
-    deprecated: package has moved to react-instantsearch
+  react-instantsearch@7.13.6:
+    resolution: {integrity: sha512-uEnNPbasXTDHMpmH6/P0EszrSPCzKyLgxHxj7+z8J3+RYsG2Ed7gG25mD5HlNLnH4ca8p9W+ZQE2f/R3M8GK6w==}
     peerDependencies:
-      algoliasearch: '>= 3.1 < 5'
-      react: '>= 16.3.0 < 19'
-      react-dom: '>= 16.3.0 < 19'
+      algoliasearch: '>= 3.1 < 6'
+      react: '>= 16.8.0 < 19'
+      react-dom: '>= 16.8.0 < 19'
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -11797,6 +11822,9 @@ packages:
   schema-utils@3.3.0:
     resolution: {integrity: sha512-pN/yOAvcC+5rQ5nERGuwrjLlYvLTbCibnZ1I7B1LaiAz9BRBlE9GMgE/eqV30P7aJQUf7Ddimy/RsbYO/GrVGg==}
     engines: {node: '>= 10.13.0'}
+
+  search-insights@2.17.2:
+    resolution: {integrity: sha512-zFNpOpUO+tY2D85KrxJ+aqwnIfdEGi06UH2+xEb+Bp9Mwznmauqc9djbnBibJO5mpfUPPa8st6Sx65+vbeO45g==}
 
   section-matter@1.0.0:
     resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
@@ -13102,6 +13130,11 @@ packages:
 
   urlpattern-polyfill@10.0.0:
     resolution: {integrity: sha512-H/A06tKD7sS1O1X2SshBVeA5FLycRpjqiBeqGKmBwBDBy28EnRjORxTNe269KSSr5un5qyWi1iL61wLxpd+ZOg==}
+
+  use-sync-external-store@1.2.2:
+    resolution: {integrity: sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
   use@3.1.1:
     resolution: {integrity: sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==}
@@ -16979,13 +17012,13 @@ snapshots:
       prop-types: 15.8.1
       react: 16.14.0
 
-  '@freecodecamp/ui@2.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
+  '@freecodecamp/ui@3.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
     dependencies:
       '@fortawesome/fontawesome-svg-core': 6.6.0
       '@fortawesome/free-solid-svg-icons': 6.6.0
       '@fortawesome/react-fontawesome': 0.2.2(@fortawesome/fontawesome-svg-core@6.6.0)(react@16.14.0)
       '@headlessui/react': 1.7.19(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
-      '@radix-ui/react-tabs': 1.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+      '@radix-ui/react-tabs': 1.1.1(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       babel-plugin-prismjs: 2.1.0(prismjs@1.29.0)
       prismjs: 1.29.0
       react: 16.14.0
@@ -17598,6 +17631,12 @@ snapshots:
     optionalDependencies:
       '@types/react': 16.14.56
 
+  '@radix-ui/react-context@1.1.1(@types/react@16.14.56)(react@16.14.0)':
+    dependencies:
+      react: 16.14.0
+    optionalDependencies:
+      '@types/react': 16.14.56
+
   '@radix-ui/react-direction@1.1.0(@types/react@16.14.56)(react@16.14.0)':
     dependencies:
       react: 16.14.0
@@ -17611,7 +17650,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 16.14.56
 
-  '@radix-ui/react-presence@1.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
+  '@radix-ui/react-presence@1.1.1(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
     dependencies:
       '@radix-ui/react-compose-refs': 1.1.0(@types/react@16.14.56)(react@16.14.0)
       '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@16.14.56)(react@16.14.0)
@@ -17654,13 +17693,13 @@ snapshots:
     optionalDependencies:
       '@types/react': 16.14.56
 
-  '@radix-ui/react-tabs@1.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
+  '@radix-ui/react-tabs@1.1.1(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
     dependencies:
       '@radix-ui/primitive': 1.1.0
-      '@radix-ui/react-context': 1.1.0(@types/react@16.14.56)(react@16.14.0)
+      '@radix-ui/react-context': 1.1.1(@types/react@16.14.56)(react@16.14.0)
       '@radix-ui/react-direction': 1.1.0(@types/react@16.14.56)(react@16.14.0)
       '@radix-ui/react-id': 1.1.0(@types/react@16.14.56)(react@16.14.0)
-      '@radix-ui/react-presence': 1.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+      '@radix-ui/react-presence': 1.1.1(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       '@radix-ui/react-primitive': 2.0.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       '@radix-ui/react-roving-focus': 1.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       '@radix-ui/react-use-controllable-state': 1.1.0(@types/react@16.14.56)(react@16.14.0)
@@ -18300,6 +18339,8 @@ snapshots:
     dependencies:
       '@types/ms': 0.7.32
 
+  '@types/dom-speech-recognition@0.0.1': {}
+
   '@types/enzyme-adapter-react-16@1.0.9':
     dependencies:
       '@types/enzyme': 3.10.18
@@ -18380,6 +18421,8 @@ snapshots:
       '@types/minimatch': 5.1.2
       '@types/node': 20.12.8
 
+  '@types/google.maps@3.58.1': {}
+
   '@types/graceful-fs@4.1.7':
     dependencies:
       '@types/node': 20.12.8
@@ -18387,6 +18430,8 @@ snapshots:
   '@types/hast@2.3.6':
     dependencies:
       '@types/unist': 2.0.8
+
+  '@types/hogan.js@3.0.5': {}
 
   '@types/hoist-non-react-statics@3.3.2':
     dependencies:
@@ -18543,17 +18588,6 @@ snapshots:
   '@types/react-helmet@6.1.11':
     dependencies:
       '@types/react': 16.14.56
-
-  '@types/react-instantsearch-core@6.26.10':
-    dependencies:
-      '@types/react': 16.14.56
-      algoliasearch: 4.22.1
-      algoliasearch-helper: 3.14.2(algoliasearch@4.22.1)
-
-  '@types/react-instantsearch-dom@6.12.8':
-    dependencies:
-      '@types/react': 16.14.56
-      '@types/react-instantsearch-core': 6.26.10
 
   '@types/react-redux@7.1.33':
     dependencies:
@@ -19170,12 +19204,7 @@ snapshots:
       require-from-string: 2.0.2
       uri-js: 4.4.1
 
-  algoliasearch-helper@3.14.0(algoliasearch@4.22.1):
-    dependencies:
-      '@algolia/events': 4.0.1
-      algoliasearch: 4.22.1
-
-  algoliasearch-helper@3.14.2(algoliasearch@4.22.1):
+  algoliasearch-helper@3.22.5(algoliasearch@4.22.1):
     dependencies:
       '@algolia/events': 4.0.1
       algoliasearch: 4.22.1
@@ -23748,6 +23777,11 @@ snapshots:
       minimalistic-assert: 1.0.1
       minimalistic-crypto-utils: 1.0.1
 
+  hogan.js@3.0.2:
+    dependencies:
+      mkdirp: 0.3.0
+      nopt: 1.0.10
+
   hoist-non-react-statics@3.3.2:
     dependencies:
       react-is: 16.13.1
@@ -23767,6 +23801,8 @@ snapshots:
   hsts@2.2.0:
     dependencies:
       depd: 2.0.0
+
+  htm@3.1.1: {}
 
   html-element-map@1.3.1:
     dependencies:
@@ -24064,6 +24100,26 @@ snapshots:
       through2: 2.0.5
       undeclared-identifiers: 1.1.3
       xtend: 4.0.2
+
+  instantsearch-ui-components@0.9.0:
+    dependencies:
+      '@babel/runtime': 7.23.9
+
+  instantsearch.js@4.75.3(algoliasearch@4.22.1):
+    dependencies:
+      '@algolia/events': 4.0.1
+      '@types/dom-speech-recognition': 0.0.1
+      '@types/google.maps': 3.58.1
+      '@types/hogan.js': 3.0.5
+      '@types/qs': 6.9.8
+      algoliasearch: 4.22.1
+      algoliasearch-helper: 3.22.5(algoliasearch@4.22.1)
+      hogan.js: 3.0.2
+      htm: 3.1.1
+      instantsearch-ui-components: 0.9.0
+      preact: 10.24.3
+      qs: 6.5.3
+      search-insights: 2.17.2
 
   internal-slot@1.0.5:
     dependencies:
@@ -26343,6 +26399,8 @@ snapshots:
 
   mkdirp-classic@0.5.3: {}
 
+  mkdirp@0.3.0: {}
+
   mkdirp@0.5.6:
     dependencies:
       minimist: 1.2.8
@@ -27447,6 +27505,8 @@ snapshots:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
+  preact@10.24.3: {}
+
   prebuild-install@7.1.1:
     dependencies:
       detect-libc: 2.0.2
@@ -27841,26 +27901,24 @@ snapshots:
     optionalDependencies:
       react-dom: 16.14.0(react@16.14.0)
 
-  react-instantsearch-core@6.40.4(algoliasearch@4.22.1)(react@16.14.0):
+  react-instantsearch-core@7.13.6(algoliasearch@4.22.1)(react@16.14.0):
     dependencies:
       '@babel/runtime': 7.23.9
       algoliasearch: 4.22.1
-      algoliasearch-helper: 3.14.0(algoliasearch@4.22.1)
-      prop-types: 15.8.1
+      algoliasearch-helper: 3.22.5(algoliasearch@4.22.1)
+      instantsearch.js: 4.75.3(algoliasearch@4.22.1)
       react: 16.14.0
-      react-fast-compare: 3.2.2
+      use-sync-external-store: 1.2.2(react@16.14.0)
 
-  react-instantsearch-dom@6.40.4(algoliasearch@4.22.1)(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
+  react-instantsearch@7.13.6(algoliasearch@4.22.1)(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
     dependencies:
       '@babel/runtime': 7.23.9
       algoliasearch: 4.22.1
-      algoliasearch-helper: 3.14.0(algoliasearch@4.22.1)
-      classnames: 2.3.2
-      prop-types: 15.8.1
+      instantsearch-ui-components: 0.9.0
+      instantsearch.js: 4.75.3(algoliasearch@4.22.1)
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
-      react-fast-compare: 3.2.2
-      react-instantsearch-core: 6.40.4(algoliasearch@4.22.1)(react@16.14.0)
+      react-instantsearch-core: 7.13.6(algoliasearch@4.22.1)(react@16.14.0)
 
   react-is@16.13.1: {}
 
@@ -28517,6 +28575,8 @@ snapshots:
       '@types/json-schema': 7.0.13
       ajv: 6.12.6
       ajv-keywords: 3.5.2(ajv@6.12.6)
+
+  search-insights@2.17.2: {}
 
   section-matter@1.0.0:
     dependencies:
@@ -30137,6 +30197,10 @@ snapshots:
       qs: 6.11.2
 
   urlpattern-polyfill@10.0.0: {}
+
+  use-sync-external-store@1.2.2(react@16.14.0):
+    dependencies:
+      react: 16.14.0
 
   use@3.1.1: {}
 
