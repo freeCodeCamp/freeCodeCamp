@@ -471,8 +471,6 @@ class Block extends Component<BlockProps> {
     return (
       <>
         {blockRenderer()}
-        {/* TODO: Remove this rendering logic. 
-            Instead, add a class name to the blocks that need empty space, and apply a bottom margin to it. */}
         {isGridBlock && !isProjectBlock ? null : <Spacer size='m' />}
       </>
     );
