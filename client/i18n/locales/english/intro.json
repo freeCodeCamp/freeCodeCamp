@@ -1706,7 +1706,12 @@
       "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
     ],
     "blocks": {
-      "efpl": { "title": "0", "intro": [] },
+      "lecture-welcome-to-freecodecamp": {
+        "title": "Welcome to freeCodeCamp",
+        "intro": [
+          "Watch these videos to learn what freeCodeCamp is, and how millions of people have learned to code and gotten developer jobs using it."
+        ]
+      },
       "lecture-what-is-html": {
         "title": "What is HTML?",
         "intro": [
