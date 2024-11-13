@@ -5,6 +5,15 @@
   "isUpcomingChange": true,
   "dashedName": "lecture-understanding-functional-programming",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "6733b0451d6be0065430b418", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "6733b0451d6be0065430b418",
+      "title": "What Is Functional Programming?"
+    },
+    {
+      "id": "6734061fe116df617a564a37",
+      "title": "What Is Currying, and How Does It Work?"
+    }
+  ],
   "helpCategory": "JavaScript"
 }
