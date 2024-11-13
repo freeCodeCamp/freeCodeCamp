@@ -246,6 +246,7 @@
           "dashedName": "css-animations",
           "blocks": [
             { "dashedName": "lecture-animations-and-accessibility" },
+            { "dashedName": "workshop-ferris-wheel" },
             { "dashedName": "lab-moon-orbit" },
             { "dashedName": "workshop-flappy-penguin" },
             { "dashedName": "lab-personal-portfolio" },

@@ -2417,7 +2417,13 @@
           "In these lecture videos, you will learn about animations and accessibility."
         ]
       },
-      "dpaq": { "title": "120", "intro": [] },
+      "workshop-ferris-wheel": {
+        "title": "Build an Animated Ferris Wheel",
+        "intro": [
+          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
+          "In this workshop, you'll build a Ferris wheel. You'll practice how to use CSS to animate elements, transform them, and adjust their speed."
+        ]
+      },
       "lab-moon-orbit": {
         "title": "Build a Moon Orbit",
         "intro": [
