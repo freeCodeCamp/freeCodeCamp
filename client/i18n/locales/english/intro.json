@@ -3091,10 +3091,20 @@
         ]
       },
       "kagw": { "title": "258", "intro": [] },
-      "mbib": { "title": "259", "intro": [] },
+      "lecture-introduction-to-javascript-libraries-and-frameworks": {
+        "title": "Introduction to JavaScript Libraries and Frameworks",
+        "intro": [
+          "In these lecture videos, you will get an introduction to JavaScript libraries and frameworks."
+        ]
+      },
       "oxiv": { "title": "260", "intro": [] },
       "fjvx": { "title": "261", "intro": [] },
-      "nixz": { "title": "262", "intro": [] },
+      "lecture-working-with-data-in-react": {
+        "title": "Working with Data in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with data in React."
+        ]
+      },
       "cdfr": { "title": "263", "intro": [] },
       "bgtd": { "title": "264", "intro": [] },
       "ascd": { "title": "265", "intro": [] },

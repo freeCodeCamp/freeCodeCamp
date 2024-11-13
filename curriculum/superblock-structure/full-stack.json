@@ -507,7 +507,13 @@
       "modules": [
         {
           "dashedName": "react-fundamentals",
-          "blocks": [{ "dashedName": "quiz-react-basics" }]
+          "blocks": [
+            {
+              "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks"
+            },
+            { "dashedName": "lecture-working-with-data-in-react" },
+            { "dashedName": "quiz-react-basics" }
+          ]
         },
         {
           "dashedName": "react-state-hooks-and-routing",

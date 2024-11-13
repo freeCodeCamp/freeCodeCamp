@@ -1,0 +1,10 @@
+{
+  "name": "Introduction to JavaScript Libraries and Frameworks",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "6734e3a9cc78faaf4248d335", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}
