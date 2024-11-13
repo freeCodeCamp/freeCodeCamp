@@ -1889,9 +1889,24 @@
         ]
       },
       "qpra": { "title": "30", "intro": [] },
-      "joim": { "title": "31", "intro": [] },
-      "gvtb": { "title": "32", "intro": [] },
-      "cqhu": { "title": "33", "intro": [] },
+      "lecture-understanding-computer-internet-and-tooling-basics": {
+        "title": "Understanding Computer, Internet, and Tooling Basics",
+        "intro": [
+          "In these lecture videos, you will learn about computer, internet, and tooling basics."
+        ]
+      },
+      "lecture-working-with-file-systems": {
+        "title": "Working with File Systems",
+        "intro": [
+          "In these lecture videos, you will learn about working with file systems."
+        ]
+      },
+      "lecture-browsing-the-web-effectively": {
+        "title": "Browsing the Web Effectively",
+        "intro": [
+          "In these lecture videos, you will learn how to browse the web effectively."
+        ]
+      },
       "review-computer-basics": {
         "title": "Computer Basics Review",
         "intro": [
@@ -1905,7 +1920,10 @@
           "Test what you've learned in this quiz of basic computer knowledge."
         ]
       },
-      "dxpc": { "title": "36", "intro": [] },
+      "lecture-what-is-css": {
+        "title": "What Is CSS?",
+        "intro": ["In these lecture videos, you will learn what CSS is."]
+      },
       "workshop-cafe-menu": {
         "title": "Design a Cafe Menu",
         "intro": [
@@ -1919,7 +1937,12 @@
           "In this lab, you'll create a business card and style it using CSS."
         ]
       },
-      "gnuk": { "title": "39", "intro": [] },
+      "lecture-css-specificity-the-cascade-algorithm-and-inheritance": {
+        "title": "CSS Specificity, the Cascade Algorithm, and Inheritance",
+        "intro": [
+          "In these lecture videos, you will learn about CSS specificity, the cascade algorithm, and inheritance."
+        ]
+      },
       "review-basic-css": {
         "title": "Basic CSS Review",
         "intro": [
@@ -1933,14 +1956,24 @@
           "Test what you've learned in this quiz of basic CSS knowledge."
         ]
       },
-      "sdul": { "title": "42", "intro": [] },
+      "lecture-styling-lists-and-links": {
+        "title": "Styling Lists and Links",
+        "intro": [
+          "In these lecture videos, you will learn about styling lists and links."
+        ]
+      },
       "lab-stylized-to-do-list": {
         "title": "Build a Stylized To-Do List",
         "intro": [
           "In this lab, you'll build a To-Do list and apply different styles to the links"
         ]
       },
-      "humj": { "title": "44", "intro": [] },
+      "lecture-working-with-backgrounds-and-borders": {
+        "title": "Working with Backgrounds and Borders",
+        "intro": [
+          "In these lecture videos, you will learn about working with backgrounds and borders."
+        ]
+      },
       "pahx": { "title": "45", "intro": [] },
       "review-css-backgrounds-and-borders": {
         "title": "CSS Backgrounds and Borders Review",
@@ -1955,9 +1988,24 @@
           "Test what you've learned in this quiz of backgrounds and borders in CSS."
         ]
       },
-      "ljmt": { "title": "48", "intro": [] },
-      "lxpk": { "title": "49", "intro": [] },
-      "lzqy": { "title": "50", "intro": [] },
+      "lecture-user-interface-design-fundamentals": {
+        "title": "User Interface Design Fundamentals",
+        "intro": [
+          "In these lecture videos, you will learn about user interface design fundamentals."
+        ]
+      },
+      "lecture-user-centered-design": {
+        "title": "User-Centered Design",
+        "intro": [
+          "In these lecture videos, you will learn about user-centered design."
+        ]
+      },
+      "lecture-common-design-tools": {
+        "title": "Common Design Tools",
+        "intro": [
+          "In these lecture videos, you will learn about common design tools."
+        ]
+      },
       "review-design-fundamentals": {
         "title": "Design Fundamentals Review",
         "intro": [
@@ -1971,7 +2019,12 @@
           "Test what you've learned in this quiz of UI design fundamentals."
         ]
       },
-      "bgrw": { "title": "53", "intro": [] },
+      "lecture-working-with-relative-and-absolute-units": {
+        "title": "Working with Relative and Absolute Units",
+        "intro": [
+          "In these lecture videos, you will learn about working with relative and absolute units."
+        ]
+      },
       "lab-event-flyer-page": {
         "title": "Build an Event Flyer Page",
         "intro": [
@@ -1991,8 +2044,13 @@
           "Test what you've learned in this quiz of relative and absolute units in CSS."
         ]
       },
+      "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css": {
+        "title": "Working with Pseudo-Classes and Pseudo-Elements in CSS",
+        "intro": [
+          "In these lecture videos, you will learn about working with pseudo-classes and pseudo-elements in CSS."
+        ]
+      },
       "ohhu": { "title": "58", "intro": [] },
-      "syga": { "title": "59", "intro": [] },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
         "intro": [
@@ -2010,6 +2068,12 @@
         "title": "CSS Pseudo-classes Quiz",
         "intro": [
           "Test what you've learned in this quiz of pseudo-classes in CSS."
+        ]
+      },
+      "lecture-working-with-colors-in-css": {
+        "title": "Working with Colors in CSS",
+        "intro": [
+          "In these lecture videos, you will learn about working with colors in CSS."
         ]
       },
       "workshop-colored-markers": {
@@ -2030,6 +2094,12 @@
         "title": "CSS Colors Quiz",
         "intro": [
           "Test what you've learned in this quiz of using colors in CSS."
+        ]
+      },
+      "lecture-best-practices-for-styling-forms": {
+        "title": "Best Practices for Styling Forms",
+        "intro": [
+          "In these lecture videos, you will learn about the best practices for styling forms."
         ]
       },
       "workshop-registration-form": {
@@ -2058,7 +2128,12 @@
           "Test what you've learned in this quiz of how to style forms using CSS."
         ]
       },
-      "woza": { "title": "72", "intro": [] },
+      "lecture-working-with-css-transforms-overflow-and-filters": {
+        "title": "Working with CSS Transforms, Overflow, and Filters",
+        "intro": [
+          "In these lecture videos, you will learn about working with CSS transforms, overflow, and filters."
+        ]
+      },
       "workshop-rothko-painting": {
         "title": "Design a Rothko Painting",
         "intro": [
@@ -2075,7 +2150,8 @@
       "review-css-layout-and-effects": {
         "title": "CSS Layouts and Effects Review",
         "intro": [
-          "Review the CSS Layouts and Effects concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on CSS Layouts and Effects, you first need to review.",
+          "Open up this page to review concepts like the <code>transform</code> property, the box model, the <code>overflow</code> property and more."
         ]
       },
       "quiz-css-layout-and-effects": {
@@ -2084,7 +2160,12 @@
           "Test what you've learned in this quiz of the box model, transforms, filters, and overflow in CSS."
         ]
       },
-      "ujaf": { "title": "77", "intro": [] },
+      "lecture-working-with-css-flexbox": {
+        "title": "Working with CSS Flexbox",
+        "intro": [
+          "In these lecture videos, you will learn about working with CSS flexbox."
+        ]
+      },
       "workshop-flexbox-photo-gallery": {
         "title": "Build a Flexbox Photo Gallery",
         "intro": [
@@ -2111,7 +2192,12 @@
           "Test what you've learned in this quiz of using flexbox in CSS."
         ]
       },
-      "ujcf": { "title": "82", "intro": [] },
+      "lecture-working-with-css-fonts": {
+        "title": "Working with CSS Fonts",
+        "intro": [
+          "In these lecture videos, you will learn about working with CSS fonts."
+        ]
+      },
       "workshop-nutritional-label": {
         "title": "Build a Nutritional Label",
         "intro": [
@@ -2135,6 +2221,12 @@
       "quiz-css-typography": {
         "title": "CSS Typography Quiz",
         "intro": ["Test what you've learned in this quiz of typography in CSS."]
+      },
+      "lecture-best-practices-for-accessibility-and-css": {
+        "title": "Best Practices for Accessibility and CSS",
+        "intro": [
+          "In these lecture videos, you will learn about best practices for accessibility in CSS."
+        ]
       },
       "workshop-accessibility-quiz": {
         "title": "Build a Quiz Webpage",
@@ -2161,7 +2253,12 @@
           "Test what you've learned in this quiz of making your webpage accessible with CSS."
         ]
       },
-      "haje": { "title": "92", "intro": [] },
+      "lecture-working-with-attribute-selectors": {
+        "title": "Working with Attribute Selectors",
+        "intro": [
+          "In these lecture videos, you will learn about working with attribute selectors."
+        ]
+      },
       "workshop-balance-sheet": {
         "title": "Build a Balance Sheet",
         "intro": [
@@ -2176,7 +2273,8 @@
       "review-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Review",
         "intro": [
-          "Review the CSS Attribute Selectors concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the fundamentals of CSS attribute selectors, you first need to review.",
+          "Open up this page to review concepts like how to work with different attribute selectors that target links with the <code>href</code> and <code>title</code> attributes."
         ]
       },
       "quiz-css-attribute-selectors": {
@@ -2185,12 +2283,17 @@
           "Test what you've learned in this quiz of using attribute selectors in CSS."
         ]
       },
-      "rxzq": { "title": "97", "intro": [] },
+      "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
+        "title": "Understanding How to Work with Floats and Positioning in CSS",
+        "intro": [
+          "In these lecture videos, you will learn about how to work with floats and positioning in CSS."
+        ]
+      },
       "workshop-cat-painting": {
         "title": "Build a Cat Painting",
         "intro": [
           "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
-          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the <code>z-index</code> property, and the <code>transform</code> property."
         ]
       },
       "lab-house-painting": {
@@ -2200,7 +2303,8 @@
       "review-css-positioning": {
         "title": "CSS Positioning Review",
         "intro": [
-          "Review the CSS Positioning concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the fundamentals of CSS positioning concepts, you first need to review.",
+          "Open up this page to review concepts like floats, relative positioning, absolute positioning and more."
         ]
       },
       "quiz-css-positioning": {
@@ -2209,7 +2313,12 @@
           "Test what you've learned in this quiz of how positioning works in CSS."
         ]
       },
-      "jkdu": { "title": "102", "intro": [] },
+      "lecture-best-practices-for-responsive-web-design": {
+        "title": "Best Practices for Responsive Web Design",
+        "intro": [
+          "In these lecture videos, you will learn about the best practices for responsive web design."
+        ]
+      },
       "workshop-piano": {
         "title": "Design a Piano",
         "intro": [
@@ -2226,7 +2335,8 @@
       "review-responsive-web-design": {
         "title": "Responsive Web Design Review",
         "intro": [
-          "Review the Responsive Web Design concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the fundamentals of responsive design, you first need to review.",
+          "Open up this page to review concepts like media queries, media breakpoints and mobile first approach design."
         ]
       },
       "quiz-responsive-web-design": {
@@ -2235,7 +2345,12 @@
           "Test what you've learned in this quiz of making your webpage responsive."
         ]
       },
-      "vlov": { "title": "107", "intro": [] },
+      "lecture-working-with-css-variables": {
+        "title": "Working with CSS Variables",
+        "intro": [
+          "In these lecture videos, you will learn about working with CSS variables."
+        ]
+      },
       "workshop-city-skyline": {
         "title": "Build a City Skyline",
         "intro": [
@@ -2250,7 +2365,8 @@
       "review-css-variables": {
         "title": "CSS Variables Review",
         "intro": [
-          "Review the CSS Variables concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the fundamentals of CSS variables, you first need to review.",
+          "Open up this page to review how to work with CSS custom properties(CSS variables) and the <code>@property</code> rule."
         ]
       },
       "quiz-css-variables": {
@@ -2259,7 +2375,12 @@
           "Test what you've learned in this quiz of how using variables in CSS."
         ]
       },
-      "nsia": { "title": "112", "intro": [] },
+      "lecture-working-with-css-grid": {
+        "title": "Working with CSS Grid",
+        "intro": [
+          "In these lecture videos, you will learn about working with CSS grid."
+        ]
+      },
       "workshop-magazine": {
         "title": "Build a Magazine",
         "intro": [
@@ -2268,7 +2389,12 @@
         ]
       },
       "ogko": { "title": "114", "intro": [] },
-      "harp": { "title": "115", "intro": [] },
+      "lecture-debugging-css": {
+        "title": "Debugging CSS",
+        "intro": [
+          "In these lecture videos, you will learn about debugging CSS."
+        ]
+      },
       "lab-product-landing-page": {
         "title": "Build a Product Landing Page",
         "intro": [
@@ -2285,8 +2411,19 @@
         "title": "CSS Grid Quiz",
         "intro": ["Test what you've learned in this quiz of using grid in CSS."]
       },
-      "dora": { "title": "119", "intro": [] },
-      "dpaq": { "title": "120", "intro": [] },
+      "lecture-animations-and-accessibility": {
+        "title": "Animations and Accessibility",
+        "intro": [
+          "In these lecture videos, you will learn about animations and accessibility."
+        ]
+      },
+      "workshop-ferris-wheel": {
+        "title": "Build an Animated Ferris Wheel",
+        "intro": [
+          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
+          "In this workshop, you'll build a Ferris wheel. You'll practice how to use CSS to animate elements, transform them, and adjust their speed."
+        ]
+      },
       "lab-moon-orbit": {
         "title": "Build a Moon Orbit",
         "intro": [
@@ -2307,9 +2444,9 @@
         ]
       },
       "review-css-animations": {
-        "title": "CSS Amimations Review",
+        "title": "CSS Animations Review",
         "intro": [
-          "Review the CSS Amimations concepts to prepare for the upcoming quiz."
+          "Review the CSS Animations concepts to prepare for the upcoming quiz."
         ]
       },
       "quiz-css-animations": {
@@ -2323,9 +2460,18 @@
         "intro": ["Review the CSS concepts to prepare for the upcoming exam."]
       },
       "wvjx": { "title": "127", "intro": [] },
-      "uquz": { "title": "128", "intro": [] },
-      "kdgd": { "title": "129", "intro": [] },
-      "wryp": { "title": "130", "intro": [] },
+      "lecture-working-with-code-editors-and-ides": {
+        "title": "Working with Code Editors and IDE's",
+        "intro": [
+          "In these lecture videos, you will learn about working with code editors and IDE's."
+        ]
+      },
+      "lecture-introduction-to-javascript": {
+        "title": "Introduction to JavaScript",
+        "intro": [
+          "In these lecture videos, you will get a basic introduction to JavaScript."
+        ]
+      },
       "workshop-greeting-bot": {
         "title": "Build a Greeting Bot",
         "intro": [
@@ -2339,7 +2485,12 @@
           "In this lab, you will practice working with JavaScript variables and strings by building a trivia bot."
         ]
       },
-      "dthi": { "title": "132", "intro": [] },
+      "lecture-working-with-data-types": {
+        "title": "Working with Data Types",
+        "intro": [
+          "In these lecture videos, you will learn about data types in JavaScript."
+        ]
+      },
       "review-javascript-variables-and-data-types": {
         "title": "JavaScript Variables and Data Types Review",
         "intro": [
@@ -2352,7 +2503,12 @@
           "Test what you've learned in this quiz on JavaScript Variables and Data Types."
         ]
       },
-      "hoec": { "title": "135", "intro": [] },
+      "lecture-working-with-strings-in-javascript": {
+        "title": "Working with Strings in JavaScript",
+        "intro": [
+          "In these lecture videos, you will learn about working with strings in JavaScript."
+        ]
+      },
       "workshop-teacher-chatbot": {
         "title": "Build a Teacher Chatbot",
         "intro": [
@@ -2360,7 +2516,12 @@
           "You will learn how to work with template literals, and the <code>indexOf</code> method."
         ]
       },
-      "axgb": { "title": "137", "intro": [] },
+      "lecture-working-with-common-string-methods": {
+        "title": "Working with Common String Methods",
+        "intro": [
+          "In these lecture videos, you will learn about common String methods."
+        ]
+      },
       "review-javascript-strings": {
         "title": "JavaScript Strings Review",
         "intro": [
@@ -2373,7 +2534,12 @@
           "Test what you've learned in this quiz on JavaScript Strings."
         ]
       },
-      "hxwa": { "title": "140", "intro": [] },
+      "lecture-working-with-numbers-booleans-and-the-math-object": {
+        "title": "Working with Numbers, Booleans, and the Math Object",
+        "intro": [
+          "In these lecture videos, you will learn about numbers, booleans, and the Math Object."
+        ]
+      },
       "workshop-mathbot": {
         "title": "Build a Mathbot",
         "intro": [
@@ -2386,7 +2552,12 @@
           "In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes."
         ]
       },
-      "wfyg": { "title": "143", "intro": [] },
+      "lecture-working-with-numbers-and-common-number-methods": {
+        "title": "Working with Numbers and Common Number Methods",
+        "intro": [
+          "In these lecture videos, you will learn about numbers and common Number methods."
+        ]
+      },
       "review-javascript-math": {
         "title": "JavaScript Math Review",
         "intro": [
@@ -2397,7 +2568,12 @@
         "title": "JavaScript Math Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Math."]
       },
-      "hafd": { "title": "146", "intro": [] },
+      "lecture-understanding-comparisons-and-conditionals": {
+        "title": "Understanding Comparisons and Conditionals",
+        "intro": [
+          "In these lecture videos, you will learn about comparisons and conditionals."
+        ]
+      },
       "review-javascript-comparisons-and-conditionals": {
         "title": "JavaScript Comparisons and Conditionals Review",
         "intro": [
@@ -2410,7 +2586,12 @@
           "Test what you've learned in this quiz on JavaScript Comparisons and Conditionals."
         ]
       },
-      "tsdq": { "title": "149", "intro": [] },
+      "lecture-working-with-functions": {
+        "title": "Working with Functions",
+        "intro": [
+          "In these lecture videos, you will learn about working with functions."
+        ]
+      },
       "workshop-calculator": {
         "title": "Build a Calculator",
         "intro": [
@@ -2454,7 +2635,12 @@
           "Test what you've learned in this quiz on JavaScript Functions."
         ]
       },
-      "mexq": { "title": "157", "intro": [] },
+      "lecture-working-with-arrays": {
+        "title": "Working with Arrays",
+        "intro": [
+          "In these lecture videos, you will learn about working with JavaScript arrays."
+        ]
+      },
       "workshop-shopping-list": {
         "title": "Build a Shopping List",
         "intro": [
@@ -2468,7 +2654,12 @@
           "In this lab, you will review working with arrays and random numbers by building a lunch picker program."
         ]
       },
-      "mokm": { "title": "160", "intro": [] },
+      "lecture-working-with-common-array-methods": {
+        "title": "Working with Common Array Methods",
+        "intro": [
+          "In these lecture videos, you will learn about common array methods."
+        ]
+      },
       "review-javascript-arrays": {
         "title": "JavaScript Arrays Review",
         "intro": [
@@ -2479,7 +2670,12 @@
         "title": "JavaScript Arrays Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Arrays."]
       },
-      "dvnt": { "title": "163", "intro": [] },
+      "lecture-working-with-objects": {
+        "title": "Working with Objects",
+        "intro": [
+          "In these lecture videos, you will learn about working with objects in JavaScript."
+        ]
+      },
       "workshop-recipe-tracker": {
         "title": "Build a Recipe Tracker",
         "intro": [
@@ -2502,7 +2698,12 @@
           "Test what you've learned in this quiz on JavaScript Objects."
         ]
       },
-      "kgtw": { "title": "168", "intro": [] },
+      "lecture-working-with-loops": {
+        "title": "Working with Loops",
+        "intro": [
+          "In these lecture videos, you will learn about working with loops in JavaScript."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Build a Sentence Analyzer",
         "intro": [
@@ -2523,7 +2724,12 @@
         "title": "JavaScript Loops Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Loops."]
       },
-      "hjtr": { "title": "173", "intro": [] },
+      "lecture-understanding-core-javascript-fundamentals": {
+        "title": "Understanding Core JavaScript Fundamentals",
+        "intro": [
+          "In these lecture videos, you will learn more about core JavaScript fundamentals."
+        ]
+      },
       "lab-pyramid-generator": {
         "title": "Build a Pyramid Generator",
         "intro": ["In this lab you will build a pyramid generator."]
@@ -2532,14 +2738,24 @@
         "title": "Build a Gradebook App",
         "intro": ["For this lab, you will create a gradebook app."]
       },
-      "epfc": { "title": "176", "intro": [] },
+      "lecture-the-var-keyword-and-hoisting": {
+        "title": "The var Keyword and Hoisting",
+        "intro": [
+          "In these lecture videos, you will learn about the var keyword and hoisting in JavaScript."
+        ]
+      },
       "lab-inventory-management-program": {
         "title": "Build an Inventory Management Program",
         "intro": [
           "For this lab, you will build an inventory management program using JavaScript."
         ]
       },
-      "fbbn": { "title": "178", "intro": [] },
+      "lecture-understanding-modules-imports-and-exports": {
+        "title": "Understanding Modules, Imports, and Exports",
+        "intro": [
+          "In these lecture videos, you will learn about modules, imports, and exports in JavaScript."
+        ]
+      },
       "lnmg": { "title": "179", "intro": [] },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
@@ -2553,7 +2769,12 @@
           "Test what you've learned in this quiz on JavaScript Fundamentals Quiz."
         ]
       },
-      "plic": { "title": "182", "intro": [] },
+      "lecture-working-with-higher-order-functions-and-callbacks": {
+        "title": "Working with Higher Order Functions and Callbacks",
+        "intro": [
+          "In these lecture videos, you will learn about working with higher order functions and callbacks."
+        ]
+      },
       "vjmm": { "title": "183", "intro": [] },
       "bxtv": { "title": "184", "intro": [] },
       "review-javascript-higher-order-functions": {
@@ -2568,7 +2789,12 @@
           "Test what you've learned in this quiz on JavaScript Higher Order Functions."
         ]
       },
-      "esfh": { "title": "187", "intro": [] },
+      "lecture-working-with-the-dom-click-events-and-web-apis": {
+        "title": "Working with the DOM, Click Events, and Web APIs",
+        "intro": [
+          "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using Javascript."
+        ]
+      },
       "gibb": { "title": "188", "intro": [] },
       "lab-favorite-icon-toggler": {
         "title": "Build a Favorite Icon Toggler",
@@ -2588,7 +2814,12 @@
           "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript Quiz."
         ]
       },
-      "ubpx": { "title": "192", "intro": [] },
+      "lecture-understanding-the-event-object-and-event-delegation": {
+        "title": "Understanding the Event Object and Event Delegation",
+        "intro": [
+          "In these lecture videos, you will learn about the event object and event delegation."
+        ]
+      },
       "lbyi": { "title": "193", "intro": [] },
       "lab-real-time-counter": {
         "title": "Build a Real Time Counter",
@@ -2647,9 +2878,14 @@
           "Test what you've learned in this quiz on Debugging JavaScript."
         ]
       },
-      "dqth": { "title": "205", "intro": [] },
-      "ilop": { "title": "206", "intro": [] },
-      "qrer": { "title": "207", "intro": [] },
+      "ilop": { "title": "205", "intro": [] },
+      "dqth": { "title": "206", "intro": [] },
+      "lab-markdown-to-html-converter": {
+        "title": "Build a Markdown to HTML Converter",
+        "intro": [
+          "For this lab, you will build a Markdown to HTML converter using JavaScript."
+        ]
+      },
       "lab-regex-sandbox": {
         "title": "Build a RegEx Sandbox",
         "intro": ["In this lab you will build a regex sandbox."]
@@ -2667,7 +2903,13 @@
         ]
       },
       "zalp": { "title": "211", "intro": [] },
-      "hhvp": { "title": "212", "intro": [] },
+      "workshop-calorie-counter": {
+        "title": "Build a Calorie Counter",
+        "intro": [
+          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter workshop, you'll practice how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
+          "You'll also practice basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
+        ]
+      },
       "egkv": { "title": "213", "intro": [] },
       "review-form-validation-with-javascript": {
         "title": "Form Validation with JavaScript Review",
@@ -2724,7 +2966,13 @@
       },
       "cvs3": { "title": "229", "intro": [] },
       "fgbp": { "title": "230", "intro": [] },
-      "fgb1": { "title": "231", "intro": [] },
+      "workshop-todo-app": {
+        "title": "Build a Todo App using Local Storage",
+        "intro": [
+          "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
+          "In this workshop, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
+        ]
+      },
       "lab-bookmark-manager-app": {
         "title": "Build a Bookmark Manager App",
         "intro": ["For this lab, you will build a bookmark manager app."]
