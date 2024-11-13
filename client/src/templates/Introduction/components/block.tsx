@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Spacer } from '@freecodecamp/ui';
 
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import envData from '../../../../config/env.json';
@@ -200,7 +201,7 @@ class Block extends Component<BlockProps> {
      */
     const ProjectListBlock = (
       <ScrollableAnchor id={block}>
-        <div className='block project-list-block'>
+        <div className='block'>
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
             {blockType && <BlockLabel blockType={blockType} />}
@@ -467,7 +468,12 @@ class Block extends Component<BlockProps> {
         return LegacyChallengeGridBlock;
     };
 
-    return <>{blockRenderer()}</>;
+    return (
+      <>
+        {blockRenderer()}
+        {isGridBlock && !isProjectBlock ? null : <Spacer size='m' />}
+      </>
+    );
   }
 }
 

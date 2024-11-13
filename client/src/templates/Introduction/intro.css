@@ -599,10 +599,6 @@ a.map-grid-item.challenge-completed {
   background: var(--primary-background);
 }
 
-.project-list-block {
-  margin-bottom: 30px;
-}
-
 .challenge-grid-block .challenge-grid-block-panel {
   /* Add some space between panel content and the top edge of the container.
     The value (18px) is the same value `.map-challenges-grid` uses
