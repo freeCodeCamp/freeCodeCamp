@@ -83,6 +83,11 @@ interface SignIn {
   event: 'sign_in';
 }
 
+interface SignOut {
+  event: 'sign_out';
+  user_id: undefined;
+}
+
 export type GAevent =
   | DonationViewEvent
   | DonationEvent
@@ -92,6 +97,7 @@ export type GAevent =
   | ExperimentViewEvent
   | ChallengeFailedEvent
   | UserData
+  | SignOut
   | SignIn;
 
 export default function callGA(payload: GAevent) {
