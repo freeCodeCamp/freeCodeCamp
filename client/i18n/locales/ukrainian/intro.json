@@ -1892,17 +1892,23 @@
         "title": "30",
         "intro": []
       },
-      "joim": {
-        "title": "31",
-        "intro": []
+      "lecture-understanding-computer-internet-and-tooling-basics": {
+        "title": "Основи комп’ютера, інтернету та інструментів",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про комп’ютер, інтернет та різні інструменти."
+        ]
       },
-      "gvtb": {
-        "title": "32",
-        "intro": []
+      "lecture-working-with-file-systems": {
+        "title": "Робота з файловими системами",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати з файловими системами."
+        ]
       },
-      "cqhu": {
-        "title": "33",
-        "intro": []
+      "lecture-browsing-the-web-effectively": {
+        "title": "Ефективне користування мережею",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як ефективно працювати з мережею."
+        ]
       },
       "review-computer-basics": {
         "title": "Повторення основ комп’ютера",
@@ -1915,9 +1921,9 @@
         "title": "Тест «Основи комп’ютера»",
         "intro": ["Перевірте, що ви дізнались про основи комп'ютера."]
       },
-      "dxpc": {
-        "title": "36",
-        "intro": []
+      "lecture-what-is-css": {
+        "title": "Що таке CSS?",
+        "intro": ["У цих відеолекціях ви дізнаєтесь про CSS."]
       },
       "workshop-cafe-menu": {
         "title": "Розробіть меню для кафе",
@@ -1932,9 +1938,11 @@
           "У цій лабораторній роботі ви створите візитівку та стилізуєте її за допомогою CSS."
         ]
       },
-      "gnuk": {
-        "title": "39",
-        "intro": []
+      "lecture-css-specificity-the-cascade-algorithm-and-inheritance": {
+        "title": "Специфічність, алгоритм каскаду та успадкування в CSS",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про специфічність, алгоритм каскаду та успадкування в CSS."
+        ]
       },
       "review-basic-css": {
         "title": "Повторення основ CSS",
@@ -1947,9 +1955,11 @@
         "title": "Тест «Основи CSS»",
         "intro": ["Перевірте, що ви дізнались про основи CSS."]
       },
-      "sdul": {
-        "title": "42",
-        "intro": []
+      "lecture-styling-lists-and-links": {
+        "title": "Стилізація списків і посилань",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про стилізацію списків і посилань."
+        ]
       },
       "lab-stylized-to-do-list": {
         "title": "Створіть стилізований список справ",
@@ -1957,9 +1967,11 @@
           "У цій лабораторній роботі ви створите список справ, які потрібно виконати, та застосуєте різні стилі до посилань."
         ]
       },
-      "humj": {
-        "title": "44",
-        "intro": []
+      "lecture-working-with-backgrounds-and-borders": {
+        "title": "Робота з фоном і кордоном",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати з фоном і кордоном."
+        ]
       },
       "pahx": {
         "title": "45",
@@ -1976,17 +1988,23 @@
         "title": "Тест «Фони та кордони в CSS»",
         "intro": ["Перевірте, що ви дізнались про фони та кордони в CSS."]
       },
-      "ljmt": {
-        "title": "48",
-        "intro": []
+      "lecture-user-interface-design-fundamentals": {
+        "title": "Основи UI дизайну",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про основи дизайну інтерфейсу користувача."
+        ]
       },
-      "lxpk": {
-        "title": "49",
-        "intro": []
+      "lecture-user-centered-design": {
+        "title": "Дизайн, орієнтований на користувача",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про дизайн, орієнтований на користувача."
+        ]
       },
-      "lzqy": {
-        "title": "50",
-        "intro": []
+      "lecture-common-design-tools": {
+        "title": "Поширені інструменти дизайну",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про поширені інструменти дизайну."
+        ]
       },
       "review-design-fundamentals": {
         "title": "Повторення основ дизайну",
@@ -1999,9 +2017,11 @@
         "title": "Тест «Основи дизайну»",
         "intro": ["Перевірте, що ви дізнались про основи дизайну UI."]
       },
-      "bgrw": {
-        "title": "53",
-        "intro": []
+      "lecture-working-with-relative-and-absolute-units": {
+        "title": "Робота з відносними й абсолютними одиницями",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати з відносними й абсолютними одиницями."
+        ]
       },
       "lab-event-flyer-page": {
         "title": "Створіть запрошення на подію",
@@ -2022,12 +2042,14 @@
           "Перевірте, що ви дізнались про відносні та абсолютні одиниці в CSS."
         ]
       },
+      "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css": {
+        "title": "Робота з псевдокласами та псевдоелементами в CSS",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати з псевдокласами й псевдоелементами в CSS."
+        ]
+      },
       "ohhu": {
         "title": "58",
-        "intro": []
-      },
-      "syga": {
-        "title": "59",
         "intro": []
       },
       "lab-job-application-form": {
@@ -2046,6 +2068,12 @@
       "quiz-css-pseudo-classes": {
         "title": "Тест «Псевдокласи в CSS»",
         "intro": ["Перевірте, що ви дізнались про псевдокласи в CSS."]
+      },
+      "lecture-working-with-colors-in-css": {
+        "title": "Робота з кольорами в CSS",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати з кольорами в CSS."
+        ]
       },
       "workshop-colored-markers": {
         "title": "Створіть набір кольорових маркерів",
@@ -2067,6 +2095,12 @@
       "quiz-css-colors": {
         "title": "Тест «Кольори в CSS»",
         "intro": ["Перевірте, що ви дізнались про використання кольорів у CSS."]
+      },
+      "lecture-best-practices-for-styling-forms": {
+        "title": "Найкращі практики стилізації форм",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про найкращі практики стилізації форм."
+        ]
       },
       "workshop-registration-form": {
         "title": "Створіть реєстраційну форму",
@@ -2094,9 +2128,11 @@
           "Перевірте, що ви дізнались про стилізацію форм за допомогою CSS."
         ]
       },
-      "woza": {
-        "title": "72",
-        "intro": []
+      "lecture-working-with-css-transforms-overflow-and-filters": {
+        "title": "Робота з трансформаціями, переповненням і ефектами в CSS",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати з трансформаціями, переповненням і ефектами в CSS."
+        ]
       },
       "workshop-rothko-painting": {
         "title": "Створіть картину Ротко",
@@ -2114,7 +2150,8 @@
       "review-css-layout-and-effects": {
         "title": "Повторення макетів та ефектів у CSS",
         "intro": [
-          "Пригадайте поняття з теми «Макети та ефекти в CSS», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Макети та ефекти в CSS», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати властивість <code>transform</code>, блокову модель, властивість <code>overflow</code> та багато іншого."
         ]
       },
       "quiz-css-layout-and-effects": {
@@ -2123,9 +2160,11 @@
           "Перевірте, що ви дізнались про блокову модель, трансформації, фільтри та переповнення в CSS."
         ]
       },
-      "ujaf": {
-        "title": "77",
-        "intro": []
+      "lecture-working-with-css-flexbox": {
+        "title": "Робота з CSS Flexbox",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати з CSS flexbox."
+        ]
       },
       "workshop-flexbox-photo-gallery": {
         "title": "Створіть фотогалерею із Flexbox",
@@ -2151,9 +2190,11 @@
         "title": "Тест «CSS Flexbox»",
         "intro": ["Перевірте, що ви дізнались про flexbox у CSS."]
       },
-      "ujcf": {
-        "title": "82",
-        "intro": []
+      "lecture-working-with-css-fonts": {
+        "title": "Робота з шрифтами в CSS",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати з шрифтами в CSS."
+        ]
       },
       "workshop-nutritional-label": {
         "title": "Створіть харчову етикетку",
@@ -2178,6 +2219,12 @@
       "quiz-css-typography": {
         "title": "Тест «Типографія в CSS»",
         "intro": ["Перевірте, що ви дізнались про типографію в CSS."]
+      },
+      "lecture-best-practices-for-accessibility-and-css": {
+        "title": "Найкращі практики доступності й CSS",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про найкращі практики доступності в CSS."
+        ]
       },
       "workshop-accessibility-quiz": {
         "title": "Створіть сторінку з вікториною",
@@ -2204,9 +2251,11 @@
           "Перевірте, що ви дізнались про доступність вебсторінок за допомогою CSS."
         ]
       },
-      "haje": {
-        "title": "92",
-        "intro": []
+      "lecture-working-with-attribute-selectors": {
+        "title": "Робота з селекторами атрибутів",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати з селекторами атрибутів."
+        ]
       },
       "workshop-balance-sheet": {
         "title": "Створіть бухгалтерський баланс",
@@ -2224,16 +2273,19 @@
       "review-css-attribute-selectors": {
         "title": "Повторення селекторів атрибутів у CSS",
         "intro": [
-          "Пригадайте поняття з теми «Селектори атрибутів у CSS», щоб підготуватись до тесту."
+          "Before you are quizzed on the fundamentals of CSS attribute selectors, you first need to review.",
+          "Open up this page to review concepts like how to work with different attribute selectors that target links with the <code>href</code> and <code>title</code> attributes."
         ]
       },
       "quiz-css-attribute-selectors": {
         "title": "Тест «Селектори атрибутів у CSS»",
         "intro": ["Перевірте, що ви дізнались про селектори атрибутів у CSS."]
       },
-      "rxzq": {
-        "title": "97",
-        "intro": []
+      "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
+        "title": "Робота з вирівнюванням й позиціюванням в CSS",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати з вирівнюванням й позиціюванням у CSS."
+        ]
       },
       "workshop-cat-painting": {
         "title": "Створіть малюнок кота",
@@ -2251,16 +2303,19 @@
       "review-css-positioning": {
         "title": "Повторення позиціювання в CSS",
         "intro": [
-          "Пригадайте поняття з теми «Позиціювання в CSS», щоб підготуватись до тесту."
+          "Before you are quizzed on the fundamentals of CSS positioning concepts, you first need to review.",
+          "Open up this page to review concepts like floats, relative positioning, absolute positioning and more."
         ]
       },
       "quiz-css-positioning": {
         "title": "Тест «Позиціювання в CSS»",
         "intro": ["Перевірте, що ви дізнались про позиціювання в CSS."]
       },
-      "jkdu": {
-        "title": "102",
-        "intro": []
+      "lecture-best-practices-for-responsive-web-design": {
+        "title": "Найкращі практики адаптивного вебдизайну",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про найкращі практики адаптивного вебдизайну."
+        ]
       },
       "workshop-piano": {
         "title": "Розробіть піаніно",
@@ -2278,16 +2333,19 @@
       "review-responsive-web-design": {
         "title": "Повторення адаптивного вебдизайну",
         "intro": [
-          "Пригадайте поняття з теми «Адаптивний вебдизайн», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Адаптивний вебдизайн», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати медіазапити, точки зупинки та принцип mobile first."
         ]
       },
       "quiz-responsive-web-design": {
         "title": "Тест «Адаптивний вебдизайн»",
         "intro": ["Перевірте, що ви дізнались про адаптацію вебсторінок."]
       },
-      "vlov": {
-        "title": "107",
-        "intro": []
+      "lecture-working-with-css-variables": {
+        "title": "Робота зі змінними в CSS",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати зі змінними в CSS."
+        ]
       },
       "workshop-city-skyline": {
         "title": "Створіть панораму міста",
@@ -2305,16 +2363,19 @@
       "review-css-variables": {
         "title": "Повторення змінних в CSS",
         "intro": [
-          "Пригадайте поняття з теми «Змінні в CSS», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Змінні в CSS», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з власними CSS-властивостями (CSS-змінними) та директивою <code>@property</code>."
         ]
       },
       "quiz-css-variables": {
         "title": "Тест «Змінні в CSS»",
         "intro": ["Перевірте, що ви дізнались про використання змінних в CSS."]
       },
-      "nsia": {
-        "title": "112",
-        "intro": []
+      "lecture-working-with-css-grid": {
+        "title": "Робота з сіткою в CSS",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати з сіткою в CSS."
+        ]
       },
       "workshop-magazine": {
         "title": "Створіть журнал",
@@ -2327,9 +2388,9 @@
         "title": "114",
         "intro": []
       },
-      "harp": {
-        "title": "115",
-        "intro": []
+      "lecture-debugging-css": {
+        "title": "Налагодження CSS",
+        "intro": ["У цих відеолекціях ви дізнаєтесь про налагодження CSS."]
       },
       "lab-product-landing-page": {
         "title": "Створіть посадкову сторінку продукту",
@@ -2347,9 +2408,11 @@
         "title": "Тест «Сітка в CSS»",
         "intro": ["Перевірте, що ви дізнались про використання сітки в CSS."]
       },
-      "dora": {
-        "title": "119",
-        "intro": []
+      "lecture-animations-and-accessibility": {
+        "title": "Анімація та доступність",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про анімацію та доступність."
+        ]
       },
       "dpaq": {
         "title": "120",
@@ -2392,17 +2455,17 @@
         "title": "127",
         "intro": []
       },
-      "uquz": {
-        "title": "128",
-        "intro": []
+      "lecture-working-with-code-editors-and-ides": {
+        "title": "Working with Code Editors and IDE's",
+        "intro": [
+          "In these lecture videos, you will learn about working with code editors and IDE's."
+        ]
       },
-      "kdgd": {
-        "title": "129",
-        "intro": []
-      },
-      "wryp": {
-        "title": "130",
-        "intro": []
+      "lecture-introduction-to-javascript": {
+        "title": "Introduction to JavaScript",
+        "intro": [
+          "In these lecture videos, you will get a basic introduction to JavaScript."
+        ]
       },
       "workshop-greeting-bot": {
         "title": "Створіть вітального бота",
@@ -2417,9 +2480,11 @@
           "У цій лабораторній роботі ви попрактикуєтесь працювати зі змінними та рядками JavaScript, створивши бот з вікториною."
         ]
       },
-      "dthi": {
-        "title": "132",
-        "intro": []
+      "lecture-working-with-data-types": {
+        "title": "Working with Data Types",
+        "intro": [
+          "In these lecture videos, you will learn about data types in JavaScript."
+        ]
       },
       "review-javascript-variables-and-data-types": {
         "title": "Повторення змінних та типів даних в JavaScript",
@@ -2433,9 +2498,11 @@
           "Перевірте, що ви дізнались про змінні та типи даних в JavaScript."
         ]
       },
-      "hoec": {
-        "title": "135",
-        "intro": []
+      "lecture-working-with-strings-in-javascript": {
+        "title": "Working with Strings in JavaScript",
+        "intro": [
+          "In these lecture videos, you will learn about working with strings in JavaScript."
+        ]
       },
       "workshop-teacher-chatbot": {
         "title": "Створіть вчителя-бота",
@@ -2444,9 +2511,11 @@
           "Ви навчитеся працювати з шаблонними літерами та методом <code>indexOf</code>."
         ]
       },
-      "axgb": {
-        "title": "137",
-        "intro": []
+      "lecture-working-with-common-string-methods": {
+        "title": "Working with Common String Methods",
+        "intro": [
+          "In these lecture videos, you will learn about common String methods."
+        ]
       },
       "review-javascript-strings": {
         "title": "Повторення рядків у JavaScript",
@@ -2458,9 +2527,11 @@
         "title": "Тест «Рядки в JavaScript»",
         "intro": ["Перевірте, що ви дізнались про рядки в JavaScript."]
       },
-      "hxwa": {
-        "title": "140",
-        "intro": []
+      "lecture-working-with-numbers-booleans-and-the-math-object": {
+        "title": "Working with Numbers, Booleans, and the Math Object",
+        "intro": [
+          "In these lecture videos, you will learn about numbers, booleans, and the Math Object."
+        ]
       },
       "workshop-mathbot": {
         "title": "Створіть математичний бот",
@@ -2474,9 +2545,11 @@
           "У цій лабораторній роботі ви створите генератор передбачень, де користувач випадково обиратиме передбачення зі всіх доступних."
         ]
       },
-      "wfyg": {
-        "title": "143",
-        "intro": []
+      "lecture-working-with-numbers-and-common-number-methods": {
+        "title": "Working with Numbers and Common Number Methods",
+        "intro": [
+          "In these lecture videos, you will learn about numbers and common Number methods."
+        ]
       },
       "review-javascript-math": {
         "title": "Повторення математики в JavaScript",
@@ -2488,9 +2561,11 @@
         "title": "Тест «Математика в JavaScript»",
         "intro": ["Перевірте, що ви дізнались про математику в JavaScript."]
       },
-      "hafd": {
-        "title": "146",
-        "intro": []
+      "lecture-understanding-comparisons-and-conditionals": {
+        "title": "Understanding Comparisons and Conditionals",
+        "intro": [
+          "In these lecture videos, you will learn about comparisons and conditionals."
+        ]
       },
       "review-javascript-comparisons-and-conditionals": {
         "title": "Повторення порівняння та умов у JavaScript",
@@ -2504,9 +2579,11 @@
           "Перевірте, що ви дізнались про порівняння та умови в JavaScript."
         ]
       },
-      "tsdq": {
-        "title": "149",
-        "intro": []
+      "lecture-working-with-functions": {
+        "title": "Working with Functions",
+        "intro": [
+          "In these lecture videos, you will learn about working with functions."
+        ]
       },
       "workshop-calculator": {
         "title": "Створіть калькулятор",
@@ -2790,17 +2867,19 @@
         "title": "Тест «Налагодження JavaScript»",
         "intro": ["Перевірте, що ви дізнались про налагодження JavaScript."]
       },
-      "dqth": {
+      "ilop": {
         "title": "205",
         "intro": []
       },
-      "ilop": {
+      "dqth": {
         "title": "206",
         "intro": []
       },
-      "qrer": {
-        "title": "207",
-        "intro": []
+      "lab-markdown-to-html-converter": {
+        "title": "Створіть конвертер з markdown у HTML",
+        "intro": [
+          "У цій лабораторній роботі ви створите конвертер з markdown у HTML за допомогою JavaScript."
+        ]
       },
       "lab-regex-sandbox": {
         "title": "Створіть пісочницю для регулярних виразів",
@@ -2824,9 +2903,12 @@
         "title": "211",
         "intro": []
       },
-      "hhvp": {
-        "title": "212",
-        "intro": []
+      "workshop-calorie-counter": {
+        "title": "Build a Calorie Counter",
+        "intro": [
+          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter workshop, you'll practice how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
+          "You'll also practice basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
+        ]
       },
       "egkv": {
         "title": "213",
@@ -2912,9 +2994,12 @@
         "title": "230",
         "intro": []
       },
-      "fgb1": {
-        "title": "231",
-        "intro": []
+      "workshop-todo-app": {
+        "title": "Build a Todo App using Local Storage",
+        "intro": [
+          "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
+          "In this workshop, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
+        ]
       },
       "lab-bookmark-manager-app": {
         "title": "Створіть менеджера закладок",
