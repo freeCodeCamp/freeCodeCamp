@@ -1,12 +1,13 @@
 import { Location } from '@reach/router';
 import type { WindowLocation } from '@reach/router';
+import type { SearchOptions } from 'instantsearch.js';
 import algoliasearch from 'algoliasearch/lite';
 import React, { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
-import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import { connect } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { createSelector } from 'reselect';
+import { Configure, InstantSearch } from 'react-instantsearch';
 import { algoliaAppId, algoliaAPIKey } from '../../../config/env.json';
 import { newsIndex } from '../../utils/algolia-locale-setup';
 
@@ -22,8 +23,25 @@ const searchClient =
   algoliaAppId && algoliaAPIKey
     ? algoliasearch(algoliaAppId, algoliaAPIKey)
     : {
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
-        search: () => {}
+        // When Algolia is not configured, the client will still render,
+        // the result query is returned to the search component as a mock
+        //(mainly for testing without relying on Playwright fuffill route as
+        // there is no request made without a key).
+        search: (
+          request: Array<{ indexName: string; params: SearchOptions }>
+        ) => {
+          return Promise.resolve({
+            results: [
+              {
+                hits: [],
+                query: request[0].params?.query === 'test' ? 'test' : '',
+                params:
+                  'highlightPostTag=__%2Fais-highlight__&highlightPreTag=__ais-highlight__&hitsPerPage=5&query=sdefpuhsdfpiouhdsfgp',
+                index: 'news'
+              }
+            ]
+          });
+        }
       };
 
 const mapStateToProps = createSelector(
@@ -81,22 +99,23 @@ function InstantSearchRoot({
   }, []);
 
   const propsQuery = query;
-  function onSearchStateChange({ query }: { query: string | undefined }): void {
-    if (propsQuery === query || typeof query === 'undefined') {
+  function onSearchStateChange(query: string | undefined): void {
+    if (propsQuery === query) {
       return;
     }
-    updateSearchQuery(query);
+    updateSearchQuery(query ?? '');
   }
 
   const hitsPerPage = isSmallHeight ? 8 : 5;
   return (
     <InstantSearch
       indexName={newsIndex}
-      onSearchStateChange={onSearchStateChange}
+      onStateChange={({ uiState }) => {
+        onSearchStateChange(uiState.news?.query);
+      }}
       searchClient={searchClient}
-      searchState={{ query }}
     >
-      <Configure hitsPerPage={hitsPerPage} />
+      <Configure hitsPerPage={hitsPerPage} query={propsQuery} />
       {children}
     </InstantSearch>
   );
