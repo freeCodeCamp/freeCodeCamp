@@ -412,6 +412,7 @@
         {
           "dashedName": "basic-regex",
           "blocks": [
+            { "dashedName": "workshop-spam-filter" },
             { "dashedName": "lab-markdown-to-html-converter" },
             { "dashedName": "lab-regex-sandbox" },
             { "dashedName": "review-javascript-regular-expressions" },

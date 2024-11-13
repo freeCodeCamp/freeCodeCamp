@@ -2880,7 +2880,13 @@
         ]
       },
       "ilop": { "title": "205", "intro": [] },
-      "dqth": { "title": "206", "intro": [] },
+      "workshop-spam-filter": {
+        "title": "Build a Spam Filter",
+        "intro": [
+          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
+          "In this workshop, you'll use capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
+        ]
+      },
       "lab-markdown-to-html-converter": {
         "title": "Build a Markdown to HTML Converter",
         "intro": [
