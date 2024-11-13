@@ -902,6 +902,35 @@ const duplicatedProjectIds = [
   '587d78af367417b2b2512b04',
 
   // Ferris Wheel
+  '6140c7e645d8e905819f1dd4',
+  '6140c9d35015ae0ba0c250e8',
+  '6140cbeec34e970dfe75e710',
+  '6140cd32d018ed0f600eefce',
+  '617ace7d831f9c16a569b38a',
+  '6140cdebd39d6a101e747529',
+  '6140cfc08ca9c5128c3e6478',
+  '6140d0069049f5139d78da40',
+  '6140d10d50636e14695013b2',
+  '6140d1a351e88f159ed54fca',
+  '6140d263016325162fd076fe',
+  '6140d2b687a2cd17bac5730c',
+  '6140d36b8b747718b50d4b7a',
+  '6140d3dc359b371b1a21d783',
+  '6140d4bc9db3c81c51a09ab7',
+  '6140d94b5fab7f1d73c9bedb',
+  '6140dc5e13d0c81e7496f182',
+  '6140dd77e0bc5a1f70bd7466',
+  '6140de31b1f5b420410728ff',
+  '6140df547f09402144e40b92',
+  '6140e0d875ec16262f26432b',
+  '6140f4b5c1555a2960de1e5f',
+  '614100d7d335bb2a5ff74f1f',
+  '61410126fa3a6d2b3cda502e',
+  '6141019eadec6d2c6c6f007b',
+  '6141026ec9882f2d39dcf2b8',
+  '6169ab1aaeb4cd1174def700',
+  '6169b1357fcb701bb5efc619',
+  '6169b284950e171d8d0bb16a',
 
   // Penguin
   '619665c9abd72906f3ad30f9',
@@ -1013,10 +1042,214 @@ const duplicatedProjectIds = [
 
   /*** JavaScript ***/
 
+  // Local Storage ToDo App
+
+  '64e4e4c4ec263b62ae7bf54d',
+  '64e4e6c86954de67a3e44ee3',
+  '64e4e6fe78b5aa67ef2fc3e7',
+  '64e4e7241f52bb682eeb8211',
+  '64e4e74d0fb4f0687bf4145d',
+  '64e4e78a7ea4a168de4e6a38',
+  '64e4e7bbedb22d6939001ad3',
+  '64e4eaaa9070a66aecbfe603',
+  '64e4ebc7eabc5a6babd479cd',
+  '64e4ecd7735a566c9266a338',
+  '64e4eec13546c06d61a63d59',
+  '660d86150a52ced178d567f3',
+  '660d8ca387f989d6b25a3343',
+  '660d8d7bb2424cd7cdf90ec1',
+  '660d90b0ec1ef7da914c5e65',
+  '660d936a55565add0a27199b',
+  '660d9535e86fd2deb351aeb9',
+  '650300a25b6f72964ab8aca6',
+  '64ec89ee549ecf802de2b3e2',
+  '660d9cb6cc6415e6ca0509d8',
+  '64ec8f717b261e824d82d6a5',
+  '64ec9145e424d8835a4e0f28',
+  '64ec9282cd547785258cecf2',
+  '64ec9343769e8f85c1e17e05',
+  '64ec94f0de20c086e09b0fc3',
+  '64ec959a76336c8767f5cd4d',
+  '65099dbd8f137d58e5c0ff16',
+  '64ec96761156a187ed32b274',
+  '64ec9b10356c2d8aa05d9ce1',
+  '64ec9c55fdeef78bacd2fc3b',
+  '64fac365aeb8ad70b69b366f',
+  '64fac4d1773e7a719b1254de',
+  '64fac6a497811572b338e5e5',
+  '64faca774fd9fd74bc084cc9',
+  '64facf6180824876f70a2e86',
+  '64fad07f43a101779cb8692a',
+  '64fad9cd2eeb1e7ca2ca8c8b',
+  '64fadae4f2d51b7d5d8b98d8',
+  '64fadff23375f27ff06c6d40',
+  '64faf0418e828c0114a558a7',
+  '64fae068bcdc9c805bd8399e',
+  '64faedcd16a1e985c4c2dc94',
+  '64faf65b22ad8d07df9be14d',
+  '64faf874364ec308f875f636',
+  '64fafac95328110a69bcb75f',
+  '64fb0fa0968f2b113b2d90e9',
+  '64fb1061ca838611ed6a7d6b',
+  '64fb1321e189a6136d200f77',
+  '64fb1436adef3e145b4c3501',
+  '64fb14d890415c14f93069ce',
+  '64fb154a7c48cd159924bb18',
+  '64fb1c4dc0feb219149a7c7d',
+  '64fb285637fa1e1c222033e3',
+  '64fb29348a60361ccd45c1e2',
+  '64fefebad99209211ec30537',
+  '64ff0313700dad264d19dfe4',
+  '64ff04cc33779427a6412449',
+  '64ff068e0426eb288874ed79',
+  '64ff23daf176a92de95f24dc',
+  '64ff24b80431f62ec6b93f65',
+  '65003986d17d1e1865b269c0',
+  '650046832f92c01a35834bca',
+  '650048b0764f9c1b798200e2',
+  '65004ba581d03d1d5628b41c',
+  '6632420f81f3cc554a5e540b',
+  '66ad0f178ed5791ed898fe56',
+  '671682cd6d7aa95f0078f35f',
+  '67168a7243b6396cb69c1bdf',
+
   // Rock, Paper, Scissors Game
+
+  // Spam Filter
+  '641cd18eb67c661d8a9e11f3',
+  '641cd91d28bebe226f765d86',
+  '641cdefa704f232675ed98aa',
+  '641cdf57c3f7ee276e1d9b32',
+  '641ce03dfeca10293e05dad7',
+  '641ce3065c50e62f97406973',
+  '641ce3dcd0aec8309fbc9971',
+  '641ceed81533263283835c3d',
+  '641cf198ec366c33d6504854',
+  '6421f6f59d665615c9e94d8a',
+  '6421f98f4999d1179ce37cb4',
+  '642205fa6376c818f78bb24e',
+  '642206e054eef81b5e3092ed',
+  '642208bc4d44701c6fd6f65e',
+  '64220e8cb589f61e625bf453',
+  '64220fb017c57d20612de8b8',
+  '66bb6467b4b7381178420970',
+  '64221007887f38213fa57827',
+  '642213bf8d38b0227ed6ab0b',
+  '64233094a1293c079b5b0996',
+  '6423322e71f8d108608005cb',
+  '6423331f0527840934183aba',
+  '642335220b7d830a69eb59fb',
+  '642335d232d7690b2d67dbaf',
+  '64233d08f234a310e73f9496',
+  '642344dc9390c712080432c7',
+  '64234598ef08dd13114edae5',
+  '6423462975f33b14056583de',
+  '6423472aeed932150e8984b6',
+  '64234797d84734163088961a',
+  '6423491485db5e1786dd6434',
+  '642349b5b7bae31af21cd5f8',
 
   // Palindrome Checker
   '657bdc55a322aae1eac3838f',
+
+  // Calorie Counter
+  '5ddb965c65d27e1512d44d9a',
+  '63b606f09a14cc1781aea1fb',
+  '63b6075a62883218d282504c',
+  '63b607af6fcdb119aae9b16a',
+  '63b60821c855d01b1eda3c0b',
+  '63b6088bb56e2d1cac364043',
+  '63b608ebf40c871d960fc004',
+  '63b60a140bf5a321d50a7315',
+  '63b60aaaa65f8922bfce6b7e',
+  '63b60af1a0b9f7238a9dd294',
+  '63b60c09c5039f25a3b2dda9',
+  '63b60ca38c897f2721b27959',
+  '63b60cfaca25bb27edd40f62',
+  '63b60d3c5048302906962231',
+  '63b613f367584d2a5d041b7d',
+  '63b61490e633a22b4593e62f',
+  '63b614e6a1f7fe2cef6312dc',
+  '63b6152e6aff882db819fc1e',
+  '63bf461011fca327d3b60fa8',
+  '63bf47fd40599f29827f484d',
+  '63bf492b6dfb292a79f0e675',
+  '63bf4bfe9de3852be51c8f86',
+  '63bf4d351e06432ce9bf3627',
+  '63bf511b85b6082e54dc1573',
+  '6603ac77cd4899599a98a1fe',
+  '6603aeb33cbbbd5bbbc79b2e',
+  '6603b0bcba0eb95e5256b1e2',
+  '63bf5230bccd1c2f5c13e1ce',
+  '63bf598a4c807930a13a1a27',
+  '63bf5a518d54f63181ab639a',
+  '63bf5a92fd148d3264d5322b',
+  '63bf5adfe2981b332eb007b6',
+  '63bf5bcfebff0734593fad19',
+  '63bf5c438f523a359769106c',
+  '660404511dbf1b90eb23b617',
+  '6604080b66ff6e942d8225b1',
+  '66040ae710de0e96c26a0201',
+  '670ea2c4f42def724c77e3c7',
+  '63bf5cf03b50bf36cfbe94ea',
+  '63c1dfbd56c71e278800010c',
+  '63c1e0af28078f2dfad9eb3e',
+  '63c1e1965a898d302e0af4e3',
+  '63c1e5b4b3c8a031def3bd65',
+  '63c1e704ee12703347625900',
+  '63c2164c0df38a382062c4af',
+  '63c216da562fbb3957b9cb2c',
+  '63c2171c1e5b6e3aa51768d0',
+  '63c21774193de43bbc6a769f',
+  '63c217ccd939053ce4fa16d6',
+  '63c21839f56eaf3ef4e027c4',
+  '63c2187f55eb0f400269568f',
+  '63c218c028c56a411b2a379a',
+  '63c21dea919c8e4adb0df8e8',
+  '63c2194dce265f429300c8b1',
+  '63c21c17fa8fd6447ff0389d',
+  '63c21cd2c34541469f5700a9',
+  '63c21d4f48267a47c2946788',
+  '63c8ab51214c8c1f1b9a49f7',
+  '63c8ad0cd8f1e5201c4ef2e4',
+  '63c8b0187cceff21c8389543',
+  '63c8be904ffff922f3c6f8d0',
+  '63c8c00bfb671b23f9de4159',
+  '63c8c15fd337ad24b9b68049',
+  '63c9bc53735149084390e5d0',
+  '63c9bcc26219e7090da0f549',
+  '63c9bce376ca4f09c15a3768',
+  '63c9bdd916e0c10af01ed8d7',
+  '63c9be334f4a050c0b94bc93',
+  '63c9bef7fec05c0d38853828',
+  '63c9bf80558d780e848b2987',
+  '63c9c09a7daa4f0ff92c4023',
+  '63c9c0d0857f0a10a57af936',
+  '63c9c11a0a090311dff55564',
+  '63c9c16dd75dd212dc12363c',
+  '63c9c1ef134f3513e751c975',
+  '63c9e3a83bb3e61a80eea564',
+  '63c9e45519caf31b987fbb5f',
+  '63c9e4d2ff41811dd640504f',
+  '63c9e51b3a007a1eba1cd0f6',
+  '63c9e55b4b06c11fff555c64',
+  '63c9e5eea8261d22856ead1c',
+  '63c9e63bb1e32d23b6adbe44',
+  '63c9e6b7c0303524af2d0bc2',
+  '63c9e769df38c92635c158ba',
+  '63c9e7d5b21eee2776ecc226',
+  '63c9e84c9fe8ca28c4101189',
+  '63c9e8fe3a6f022a05a04675',
+  '63c9e94e9df7d72aed1c24bd',
+  '63c9ea23dbadbf2c2764e3f5',
+  '63c9ea9b16430f2d54522464',
+  '63c9eb09bcfaa72e3da820a1',
+  '63c9eb4a5d68f12f32d9b440',
+  '63c9ebb7b12bca3025b0a935',
+  '63c9ec044acedf312c4974ff',
+  '63c9f24afbc9cf324dcaa9a4',
+  '63c9f28bda3e3f336e21b6b4',
+  '63c9f2bff625af342023512c',
 
   // Date Formatter
 
@@ -1024,19 +1257,7 @@ const duplicatedProjectIds = [
 
   // Number Sorter Project
 
-  // Quick Sort Algorithm
-  '587d825a367417b2b2512c89',
-
-  // Roman Numeral Converter
-  '657bdc8ba322aae1eac38390',
-
   // Dice Game Project
-
-  // Telephone Number Validator
-  '657bdcb9a322aae1eac38391',
-
-  // Cash Register
-  'aa2e6f85cab2ab736c9a9b24',
 
   // Shopping Cart
   '63ec14d1c216aa063f0be4af',
@@ -1099,22 +1320,40 @@ const duplicatedProjectIds = [
   '63f03ac2b428b2404a5a7518',
   '63f03af535682e4138fdb915',
   '63f03b1ed5ab15420c057463',
-  // Stacks
-  '587d8250367417b2b2512c5f',
-
-  // Depth-first Search
-  '587d825d367417b2b2512c96',
-
-  // Nth Fibonacci Number
 
   // FCC Authors Page
-
+  '641d9a19bff38d34d5a5edb8',
+  '641da3c6b6fbd742bff6ee40',
+  '641da42481d90c4314c99e94',
+  '641da465273051435d332b15',
+  '641da4b16937be43ba24c63d',
+  '641da51a9810e74411262fcc',
+  '641da5462576784453146ec2',
+  '641da5abaac81844a54adb03',
+  '641da5dd6cd6db44f58b7787',
+  '641da615af82bf454215a992',
+  '641da6570acf7545931ce477',
+  '641da6dcb6e4c9463d54c75b',
+  '641da7071d0d45467cd59977',
+  '641da73b09e7f046c758e0ed',
+  '641da791d0c34a472b8d15b6',
+  '641da7bfbc7f0f477438ad8a',
+  '641da803d9892447d059804e',
+  '641da836581c254815f785fe',
+  '641da86294fd9f485d3c2bf0',
+  '641da895fb7ec648a5bdf19c',
+  '641da8db2a036048ebe6999e',
+  '641da97c987a514959ada414',
+  '641da9aceb788e49a73ebcc9',
+  '641da9ea9b847a49fe6ee9b6',
+  '641daa5ea050f24a7cade6e6',
+  '641daa8c2c3e364ac3650b37',
+  '641daabed8d0584b1150c953',
+  '641daae5e18eae4b562633e4',
+  '641dab13c1b6f14b9828e6b1',
   // Weather App
 
   // Forum Leaderboard
-
-  // Pokemon Search
-  '6555c1d3e11a1574434cf8b5',
 
   /*** Front End Libraries ***/
 
@@ -1166,48 +1405,6 @@ const duplicatedProjectIds = [
   '602da04c22201c65d2a019f4',
 
   /*** Back End JavaScript ***/
-
-  // Managing Packages with NPM
-  '587d7fb3367417b2b2512bfb',
-  '587d7fb3367417b2b2512bfc',
-  '587d7fb4367417b2b2512bfd',
-  '587d7fb4367417b2b2512bfe',
-  '587d7fb4367417b2b2512bff',
-  '587d7fb4367417b2b2512c00',
-  '587d7fb5367417b2b2512c01',
-  '587d7fb5367417b2b2512c02',
-  '587d7fb5367417b2b2512c03',
-  '587d7fb5367417b2b2512c04',
-
-  // Basic Node and Express
-  '5a8b073d06fa14fcfde687aa',
-  '587d7fb0367417b2b2512bed',
-  '587d7fb0367417b2b2512bee',
-  '587d7fb0367417b2b2512bef',
-  '587d7fb0367417b2b2512bf0',
-  '587d7fb1367417b2b2512bf1',
-  '587d7fb1367417b2b2512bf2',
-  '587d7fb1367417b2b2512bf3',
-  '587d7fb1367417b2b2512bf4',
-  '587d7fb2367417b2b2512bf5',
-  '587d7fb2367417b2b2512bf6',
-  '587d7fb2367417b2b2512bf7',
-  '587d7fb2367417b2b2512bf8',
-
-  // Timestamp Microservice
-  'bd7158d8c443edefaeb5bdef',
-
-  // Request Header Parser Microservice
-  'bd7158d8c443edefaeb5bdff',
-
-  // URL Shortener Microservice
-  'bd7158d8c443edefaeb5bd0e',
-
-  // Exercise Tracker
-  '5a8b073d06fa14fcfde687aa',
-
-  // File Metadata Microservice
-  'bd7158d8c443edefaeb5bd0f',
 
   /*** Legacy Only ***/
 

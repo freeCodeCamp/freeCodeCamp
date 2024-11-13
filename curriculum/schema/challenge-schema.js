@@ -137,7 +137,8 @@ const schema = Joi.object()
         'link',
         'project-list',
         'legacy-challenge-list',
-        'legacy-link'
+        'legacy-link',
+        'legacy-challenge-grid'
       ).required()
     }),
     challengeOrder: Joi.number(),
@@ -243,7 +244,7 @@ const schema = Joi.object()
         challengeTypes.theOdinProject
       ],
       then: Joi.array().items(questionJoi).min(1).required(),
-      otherwise: Joi.forbidden()
+      otherwise: Joi.array().length(0)
     }),
     quizzes: Joi.when('challengeType', {
       is: challengeTypes.quiz,
