@@ -2776,7 +2776,12 @@
           "In these lecture videos, you will learn about working with higher order functions and callbacks."
         ]
       },
-      "vjmm": { "title": "183", "intro": [] },
+      "workshop-library-manager": {
+        "title": "Build a Library Manager",
+        "intro": [
+          "In this workshop, you will learn higher order array methods by building a library manager"
+        ]
+      },
       "bxtv": { "title": "184", "intro": [] },
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",

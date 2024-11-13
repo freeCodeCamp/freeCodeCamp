@@ -372,6 +372,7 @@
             {
               "dashedName": "lecture-working-with-higher-order-functions-and-callbacks"
             },
+            { "dashedName": "workshop-library-manager" },
             { "dashedName": "review-javascript-higher-order-functions" },
             { "dashedName": "quiz-javascript-higher-order-functions" }
           ]
