@@ -368,7 +368,7 @@ class Block extends Component<BlockProps> {
      */
     const LinkBlock = (
       <ScrollableAnchor id={block}>
-        <div className='block block-grid grid-project-block grid-project-block-no-margin link-block'>
+        <div className='block block-grid grid-project-block grid-project-block-no-margin'>
           <div className='tags-wrapper'>
             {!isAudited && (
               <Link
