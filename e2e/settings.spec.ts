@@ -6,9 +6,7 @@ import { alertToBeVisible } from './utils/alerts';
 
 const settingsTestIds = {
   settingsHeading: 'settings-heading',
-  internetPresence: 'internet-presence',
-  portfolioItems: 'portfolio-items',
-  camperIdentity: 'camper-identity'
+  portfolioItems: 'portfolio-items'
 };
 
 const settingsObject = {
@@ -173,47 +171,6 @@ test.describe('Settings - Certified User', () => {
     });
     await expect(downloadButton).toBeVisible();
 
-    // Internet Presence
-    await expect(
-      page.getByRole('heading', {
-        name: translations.settings.headings.internet
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByTestId(settingsTestIds.internetPresence)
-    ).toBeVisible();
-    await expect(
-      page.getByRole('button', {
-        name: translations.settings.headings.internet
-      })
-    ).toBeVisible();
-
-    // Personal Information
-    await expect(
-      page.getByRole('heading', {
-        name: translations.settings.headings['personal-info']
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByTestId(settingsTestIds.camperIdentity)
-    ).toBeVisible();
-    const savePersonalInfoButton = page.getByRole('button', {
-      name: translations.settings.headings['personal-info']
-    });
-    await expect(savePersonalInfoButton).toBeVisible();
-    await expect(savePersonalInfoButton).toBeDisabled();
-    await expect(
-      page.getByLabel(translations.settings.labels.name, { exact: true })
-    ).toHaveValue('Full Stack User');
-    await expect(
-      page.getByLabel(translations.settings.labels.location)
-    ).toHaveValue('');
-    await expect(
-      page.getByLabel(translations.settings.labels.picture)
-    ).toHaveValue('');
-    await expect(
-      page.getByLabel(translations.settings.labels.about)
-    ).toHaveValue('');
     await expect(
       page
         .getByRole('group', {
@@ -299,53 +256,6 @@ test.describe('Settings - Certified User', () => {
       })
     ).toBeVisible();
   });
-
-  test('Should allow empty string in any field in about settings', async ({
-    page
-  }) => {
-    const saveButton = page.getByRole('button', {
-      name: translations.settings.headings['personal-info']
-    });
-
-    const nameInput = page.getByLabel(translations.settings.labels.name, {
-      exact: true
-    });
-    const locationInput = page.getByLabel(
-      translations.settings.labels.location
-    );
-    const pictureInput = page.getByLabel(translations.settings.labels.picture);
-    const aboutInput = page.getByLabel(translations.settings.labels.about);
-    const updatedAlert = page.getByText(translations.flash['updated-about-me']);
-
-    await nameInput.fill('Quincy Larson');
-    await locationInput.fill('USA');
-    await pictureInput.fill(
-      'https://cdn.freecodecamp.org/platform/english/images/quincy-larson-signature.svg'
-    );
-    await aboutInput.fill('Teacher at freeCodeCamp');
-
-    await expect(saveButton).not.toBeDisabled();
-    await saveButton.click();
-    await expect(updatedAlert).toBeVisible();
-    // clear the alert to make sure it's gone before we save again.
-    await updatedAlert.getByRole('button').click();
-
-    await nameInput.fill('');
-    await locationInput.fill('');
-    await pictureInput.fill('');
-    await aboutInput.fill('');
-
-    await expect(saveButton).not.toBeDisabled();
-    await saveButton.click();
-    await expect(updatedAlert).toBeVisible();
-
-    await page.reload();
-
-    await expect(nameInput).toHaveValue('');
-    await expect(locationInput).toHaveValue('');
-    await expect(pictureInput).toHaveValue('');
-    await expect(aboutInput).toHaveValue('');
-  });
 });
 
 // In order to claim the Full Stack cert, the user needs to complete 6 certs.
@@ -368,7 +278,7 @@ test.describe('Settings - Certified User without Full Stack Certification', () =
   test('should allow claiming Full Stack cert if the user has completed all requirements', async ({
     page
   }) => {
-    const claimButton = page.getByRole('link', {
+    const claimButton = page.getByRole('button', {
       name: 'Claim Certification Legacy Full Stack'
     });
     const showButton = page.getByRole('link', {
@@ -407,10 +317,20 @@ test.describe('Settings - New User', () => {
   test('should not allow claiming Full Stack cert if the user has not completed all the required certs', async ({
     page
   }) => {
-    const claimButton = page.getByRole('button', {
+    const claimFullStackCertButton = page.getByRole('button', {
       name: 'Claim Certification Legacy Full Stack'
     });
-    await expect(claimButton).toBeVisible();
-    await expect(claimButton).toBeDisabled();
+
+    const claimRwdCertButton = page.getByRole('button', {
+      name: 'Claim Certification Responsive Web Design'
+    });
+
+    // Buttons for normal certs are enabled
+    await expect(claimRwdCertButton).toBeVisible();
+    await expect(claimRwdCertButton).toBeEnabled();
+
+    // Button for full stack cert is disabled if the user hasn't claimed the required certs
+    await expect(claimFullStackCertButton).toBeVisible();
+    await expect(claimFullStackCertButton).toBeDisabled();
   });
 });

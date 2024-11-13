@@ -46,6 +46,6 @@ export const initializeMathJax = (mathJaxChallenge = true) => {
   }
 };
 
-export const mathJaxScriptLoader = () => {
+const mathJaxScriptLoader = () => {
   scriptLoader('mathjax', false, mathJaxSrc, configure, '');
 };

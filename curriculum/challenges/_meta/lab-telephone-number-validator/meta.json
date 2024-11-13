@@ -1,0 +1,11 @@
+{
+  "name": "Build a Telephone Number Validator",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-telephone-number-validator",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "657bdcb9a322aae1eac38391", "title": "Build a Telephone Number Validator" }],
+  "helpCategory": "JavaScript"
+}

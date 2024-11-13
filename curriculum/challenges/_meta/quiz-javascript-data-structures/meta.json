@@ -1,0 +1,16 @@
+{
+  "name": "JavaScript Data Structures Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-data-structures",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "66edd5583761e4f6dae19606",
+      "title": "JavaScript Data Structures Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

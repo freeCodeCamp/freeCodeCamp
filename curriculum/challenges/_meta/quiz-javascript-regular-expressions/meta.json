@@ -1,0 +1,16 @@
+{
+  "name": "JavaScript Regular Expressions Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-javascript-regular-expressions",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "66edd3011f18f4ee1bd9d28b",
+      "title": "JavaScript Regular Expressions Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

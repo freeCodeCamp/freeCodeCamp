@@ -2,11 +2,14 @@ const cloneDeep = require('lodash/cloneDeep');
 const find = require('unist-util-find');
 const { selectAll } = require('unist-util-select');
 
-const directivesOriginalAST = require('../__fixtures__/ast-directives.json');
+const parseFixture = require('../__fixtures__/parse-fixture');
 const restoreDirectives = require('./restore-directives');
 
 describe('restore-directives', () => {
-  let directivesAST;
+  let directivesAST, directivesOriginalAST;
+  beforeAll(async () => {
+    directivesOriginalAST = await parseFixture('with-directives.md');
+  });
   beforeEach(() => {
     directivesAST = cloneDeep(directivesOriginalAST);
   });

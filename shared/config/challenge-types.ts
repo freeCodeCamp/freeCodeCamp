@@ -23,6 +23,7 @@ const python = 20;
 const dialogue = 21;
 const fillInTheBlank = 22;
 const multifilePythonCertProject = 23;
+const generic = 24;
 
 export const challengeTypes = {
   html,
@@ -49,7 +50,8 @@ export const challengeTypes = {
   python,
   dialogue,
   fillInTheBlank,
-  multifilePythonCertProject
+  multifilePythonCertProject,
+  generic
 };
 
 export const hasNoSolution = (challengeType: number): boolean => {
@@ -71,7 +73,8 @@ export const hasNoSolution = (challengeType: number): boolean => {
     msTrophy,
     multipleChoice,
     dialogue,
-    fillInTheBlank
+    fillInTheBlank,
+    generic
   ];
 
   return noSolutions.includes(challengeType);
@@ -93,15 +96,16 @@ export const viewTypes = {
   [codeAllyPractice]: 'codeAlly',
   [codeAllyCert]: 'codeAlly',
   [multifileCertProject]: 'classic',
-  [theOdinProject]: 'odin',
+  [theOdinProject]: 'generic',
   [colab]: 'frontend',
   [exam]: 'exam',
   [msTrophy]: 'msTrophy',
-  [multipleChoice]: 'odin',
+  [multipleChoice]: 'generic',
   [python]: 'modern',
-  [dialogue]: 'dialogue',
+  [dialogue]: 'generic',
   [fillInTheBlank]: 'fillInTheBlank',
-  [multifilePythonCertProject]: 'classic'
+  [multifilePythonCertProject]: 'classic',
+  [generic]: 'generic'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -118,7 +122,7 @@ export const submitTypes = {
   [backEndProject]: 'project.backEnd',
   [pythonProject]: 'project.backEnd',
   [step]: 'step',
-  [quiz]: 'quiz',
+  [quiz]: 'tests',
   [backend]: 'backend',
   [modern]: 'tests',
   [video]: 'tests',
@@ -132,5 +136,6 @@ export const submitTypes = {
   [python]: 'tests',
   [dialogue]: 'tests',
   [fillInTheBlank]: 'tests',
-  [multifilePythonCertProject]: 'tests'
+  [multifilePythonCertProject]: 'tests',
+  [generic]: 'tests'
 };

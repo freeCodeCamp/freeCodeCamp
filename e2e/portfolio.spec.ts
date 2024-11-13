@@ -14,13 +14,22 @@ test.afterAll(() => {
 
 test.describe('Add Portfolio Item', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/settings');
-  });
+    await page.goto('/developmentuser');
 
-  test('The title has validation', async ({ page }) => {
+    if (!process.env.CI) {
+      await page
+        .getByRole('button', { name: 'Preview custom 404 page' })
+        .click();
+    }
+
+    await page.getByRole('button', { name: 'Edit my profile' }).click();
+
     await page
       .getByRole('button', { name: 'Add a new portfolio Item' })
       .click();
+  });
+
+  test('The title has validation', async ({ page }) => {
     await page.getByLabel(translations.settings.labels.title).fill('T');
     await expect(page.getByTestId('title-validation')).toContainText(
       'Title is too short'
@@ -41,9 +50,6 @@ test.describe('Add Portfolio Item', () => {
   });
 
   test('The url has validation', async ({ page }) => {
-    await page
-      .getByRole('button', { name: 'Add a new portfolio Item' })
-      .click();
     await page.getByLabel(translations.settings.labels.url).fill('T');
     await expect(page.getByTestId('url-validation')).toContainText(
       'Please use a valid URL'
@@ -55,9 +61,6 @@ test.describe('Add Portfolio Item', () => {
   });
 
   test('The image has validation', async ({ page }) => {
-    await page
-      .getByRole('button', { name: 'Add a new portfolio Item' })
-      .click();
     await page.getByLabel(translations.settings.labels.image).fill('T');
     await expect(page.getByTestId('image-validation')).toContainText(
       'URL must link directly to an image file'
@@ -69,9 +72,6 @@ test.describe('Add Portfolio Item', () => {
   });
 
   test('The description has validation', async ({ page }) => {
-    await page
-      .getByRole('button', { name: 'Add a new portfolio Item' })
-      .click();
     await page
       .getByLabel(translations.settings.labels.description)
       .fill(
@@ -87,9 +87,6 @@ test.describe('Add Portfolio Item', () => {
   });
 
   test('It should be possible to delete a portfolio item', async ({ page }) => {
-    await page
-      .getByRole('button', { name: 'Add a new portfolio Item' })
-      .click();
     await page
       .getByLabel(translations.settings.labels.title)
       .fill('My portfolio');
@@ -111,9 +108,6 @@ test.describe('Add Portfolio Item', () => {
   });
 
   test('It should be possible to add a portfolio item', async ({ page }) => {
-    await page
-      .getByRole('button', { name: 'Add a new portfolio Item' })
-      .click();
     await expect(
       page.getByRole('button', { name: 'Add a new portfolio Item' })
     ).toBeDisabled();
@@ -134,7 +128,7 @@ test.describe('Add Portfolio Item', () => {
     await page
       .getByRole('button', { name: 'Save this portfolio item' })
       .click();
-    await expect(page.getByTestId('flash-message')).toContainText(
+    await expect(page.getByRole('alert').first()).toContainText(
       /We have updated your portfolio/
     );
   });

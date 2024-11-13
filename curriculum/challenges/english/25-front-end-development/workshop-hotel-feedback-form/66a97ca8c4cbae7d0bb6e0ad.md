@@ -121,10 +121,10 @@ assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value=
       <form method="POST" action="https://hotel-feedback.freecodecamp.org">
         <fieldset>
           <legend>Personal Information</legend>
-          <label for="full-name">Name*:</label>
+          <label for="full-name">Name (required):</label>
           <input type="text" id="full-name" name="name" placeholder="Ex. John Doe" required>
 
-          <label for="email">Email address*:</label>
+          <label for="email">Email address (required):</label>
           <input
             placeholder="example@email.com"
             required
@@ -132,7 +132,7 @@ assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value=
             type="email"
             name="email"
           />
-          <label for="age">Age(optional):</label>
+          <label for="age">Age (optional):</label>
           <input type="number" name="age" id="age" min="3" max="100" />
         </fieldset>
 

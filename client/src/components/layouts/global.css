@@ -177,7 +177,7 @@ p {
 }
 
 .big-heading {
-  font-size: 2.5rem !important;
+  font-size: 2rem !important;
   overflow-wrap: break-word;
 }
 
@@ -631,6 +631,11 @@ pre code {
       rgba(255, 202, 225, 1) 0%,
       rgba(218, 234, 252, 1) 100%
     );
+}
+
+.university-alert p,
+.annual-donation-alert p {
+  color: inherit;
 }
 
 /* gatsby 404 */

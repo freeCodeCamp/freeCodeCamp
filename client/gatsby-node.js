@@ -74,6 +74,7 @@ exports.createPages = async function createPages({
             challenge {
               block
               blockType
+              blockLayout
               certification
               challengeType
               dashedName
@@ -260,14 +261,19 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type Challenge {
       blockType: String
+      blockLayout: String
       challengeFiles: [FileContents]
+      chapter: String
+      explanation: String
       notes: String
       url: String
       assignments: [String]
       prerequisites: [PrerequisiteChallenge]
+      module: String
       msTrophyId: String
       fillInTheBlank: FillInTheBlank
       scene: Scene
+      quizzes: [Quiz]
     }
     type FileContents {
       fileKey: String
@@ -328,6 +334,14 @@ exports.createSchemaCustomization = ({ actions }) => {
       x: Float
       y: Float
       z: Float
+    }
+    type Quiz {
+      questions: [QuizQuestion]
+    }
+    type QuizQuestion {
+      text: String
+      distractors: [String]
+      answer: String
     }
   `;
   createTypes(typeDefs);

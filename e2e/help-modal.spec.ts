@@ -40,7 +40,7 @@ test.describe('Help Modal component', () => {
     ).toBeVisible();
   });
 
-  test('should disable the submit button if the checboxes are not checked', async ({
+  test('should disable the submit button if the checkboxes are not checked', async ({
     page
   }) => {
     await page

@@ -1,0 +1,16 @@
+{
+  "name": "Graphs and Trees Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "dashedName": "quiz-graphs-and-trees",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "66edd5c8ac5314f8e80a3fc0",
+      "title": "Graphs and Trees Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

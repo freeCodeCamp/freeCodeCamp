@@ -1,6 +1,12 @@
+import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
+test.afterAll(() => {
+  // change the name back to the original
+  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+});
 
 const settingsObject = {
   usernamePlaceholder: '{{username}}',
@@ -18,7 +24,16 @@ const settingsObject = {
 
 test.describe('Username Settings Validation', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/settings');
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    await page.goto(`/certifieduser`);
+
+    if (!process.env.CI) {
+      await page
+        .getByRole('button', { name: 'Preview custom 404 page' })
+        .click();
+    }
+
+    await page.getByRole('button', { name: 'Edit my profile' }).click();
   });
 
   test('Should display Username Input and Save Button', async ({ page }) => {
@@ -87,16 +102,16 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
+    const flashText = translations.flash['username-updated'].replace(
+      settingsObject.usernamePlaceholder,
+      settingsObject.usernameAvailable
+    );
+
     await inputLabel.fill(settingsObject.usernameAvailable);
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
-      page.getByText(
-        translations.flash['username-updated'].replace(
-          settingsObject.usernamePlaceholder,
-          settingsObject.usernameAvailable
-        )
-      )
+      page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
   });
 
@@ -107,16 +122,16 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
+    const flashText = translations.flash['username-updated'].replace(
+      settingsObject.usernamePlaceholder,
+      settingsObject.usernameUpdateToLowerCase
+    );
+
     await inputLabel.fill(settingsObject.usernameUpdateToLowerCase);
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
-      page.getByText(
-        translations.flash['username-updated'].replace(
-          settingsObject.usernamePlaceholder,
-          settingsObject.usernameUpdateToLowerCase
-        )
-      )
+      page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
   });
 
@@ -127,22 +142,27 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
+    const flashText = translations.flash['username-updated'].replace(
+      settingsObject.usernamePlaceholder,
+      settingsObject.usernameUpdateToUpperCase
+    );
+
     await inputLabel.fill(settingsObject.usernameUpdateToUpperCase);
     await expect(saveButton).not.toBeDisabled();
     await saveButton.click();
     await expect(
-      page.getByText(
-        translations.flash['username-updated'].replace(
-          settingsObject.usernamePlaceholder,
-          settingsObject.usernameUpdateToUpperCase
-        )
-      )
+      page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
   });
 
   test('should update username by pressing enter', async ({ page }) => {
     const inputLabel = page.getByLabel(translations.settings.labels.username);
     await inputLabel.fill(settingsObject.testUser);
+
+    const flashText = translations.flash['username-updated'].replace(
+      settingsObject.usernamePlaceholder,
+      settingsObject.testUser
+    );
 
     await expect(
       page.getByText(translations.settings.username.available)
@@ -151,12 +171,7 @@ test.describe('Username Settings Validation', () => {
     await inputLabel.press('Enter');
 
     await expect(
-      page.getByText(
-        translations.flash['username-updated'].replace(
-          settingsObject.usernamePlaceholder,
-          settingsObject.testUser
-        )
-      )
+      page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
   });
 
@@ -167,7 +182,7 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
-    await inputLabel.fill(settingsObject.testUser);
+    await inputLabel.fill(settingsObject.certifiedUsername);
     await expect(saveButton).toBeDisabled();
   });
 });
