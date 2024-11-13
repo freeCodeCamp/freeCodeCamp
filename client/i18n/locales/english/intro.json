@@ -1706,6 +1706,7 @@
       "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
     ],
     "chapters": {
+      "freecodecamp": "freeCodeCamp",
       "html": "HTML",
       "css": "CSS",
       "javascript": "JavaScript",
