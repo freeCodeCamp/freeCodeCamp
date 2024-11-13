@@ -6,6 +6,10 @@ videoId: nVAaxZ34khk
 dashedName: welcome-message-from-quincy
 ---
 
+# --description--
+
+Watch the video and complete the assignment below.
+
 # --assignment--
 
 Check this box to indicate you have watched the video.
