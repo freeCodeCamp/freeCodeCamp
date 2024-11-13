@@ -37,6 +37,10 @@
     {
       "id": "673407eb10ca9d68634e81d9",
       "title": "What Is the Geolocation API, and How Does the getCurrentPosition Work?"
+    },
+    {
+      "id": "6734d6ae0dc8587dbd3d65f7",
+      "title": "What Is the Permissions API, and How Can You Use It?"
     }
   ],
   "helpCategory": "JavaScript"
