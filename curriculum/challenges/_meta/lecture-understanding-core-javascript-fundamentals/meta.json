@@ -8,11 +8,7 @@
   "challengeOrder": [
     {
       "id": "67329f9e9eb84e5c6a5e4366",
-      "title": "What Is a String Object, and How Does It Differ from String Primitive?"
-    },
-    {
-      "id": "6732c6802f4ee8602402176d",
-      "title": "What Is the String Constructor, and When Should You Use It?"
+      "title": "What Is a String Object, and How Does It Differ from a String Primitive?"
     },
     {
       "id": "6732c68f4520d160584a6fd2",
