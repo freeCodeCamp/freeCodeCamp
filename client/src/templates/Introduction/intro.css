@@ -598,3 +598,22 @@ a.map-grid-item.challenge-completed {
 .grid-project-block:hover:has(.tags-wrapper a:hover) {
   background: var(--primary-background);
 }
+
+/* Override the `.block-description` padding (25px)
+  to align the description with the content in the panel. */
+.block-ui .challenge-list-block .block-header .block-description,
+.block-ui .challenge-grid-block .block-header .block-description {
+  padding: 10px;
+}
+
+.block-ui .challenge-grid-block .progress-wrapper {
+  /* Make the progress bar align with the description above */
+  padding-inline-start: 10px;
+}
+
+.block-ui .challenge-grid-block .challenge-grid-block-panel {
+  /* Add some space between panel content and the top edge of the container.
+    The value (18px) is the same value `.map-challenges-grid` uses
+    to create space between the grid and the bottom edge of the container. */
+  margin-top: 18px;
+}
