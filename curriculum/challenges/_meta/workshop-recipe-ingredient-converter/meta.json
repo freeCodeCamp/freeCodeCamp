@@ -1,10 +1,10 @@
 {
   "name": "Build a Recipe Ingredient Converter",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-recipe-ingredient-converter",
-  "order": 247,
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
@@ -80,5 +80,6 @@
       "title": "Step 18"
     }
   ],
-  "helpCategory": "JavaScript"
+  "helpCategory": "JavaScript",
+  "blockType": "workshop"
 }
