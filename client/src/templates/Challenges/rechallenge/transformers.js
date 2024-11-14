@@ -143,11 +143,12 @@ const getTSTranspiler = loopProtectOptions => async challengeFile => {
   )(challengeFile);
 };
 
-const babelTransformer = loopProtectOptions => {
+const createTranspiler = loopProtectOptions => {
   return cond([
     [testJS, getJSTranspiler(loopProtectOptions)],
     [testJSX, getJSXTranspiler(loopProtectOptions)],
     [testTypeScript, getTSTranspiler(loopProtectOptions)],
+    [testHTML, transformHtml],
     [stubTrue, identity]
   ]);
 };
@@ -293,17 +294,11 @@ const transformHtml = async function (file) {
   return transformContents(() => contents, file);
 };
 
-const htmlTransformer = cond([
-  [testHTML, flow(transformHtml)],
-  [stubTrue, identity]
-]);
-
 export const getTransformers = loopProtectOptions => [
   createSource,
   replaceNBSP,
-  babelTransformer(loopProtectOptions),
-  partial(compileHeadTail, ''),
-  htmlTransformer
+  createTranspiler(loopProtectOptions),
+  partial(compileHeadTail, '')
 ];
 
 export const getPythonTransformers = () => [
