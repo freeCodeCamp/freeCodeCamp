@@ -2562,7 +2562,8 @@
       "review-javascript-math": {
         "title": "JavaScript Math Review",
         "intro": [
-          "Review the JavaScript Math concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with the <code>Math</code> object, you first need to review.",
+          "Open up this page to review how to work with the <code>Math.random()</code> method, the <code>Math.floor()</code> method and more."
         ]
       },
       "quiz-javascript-math": {
