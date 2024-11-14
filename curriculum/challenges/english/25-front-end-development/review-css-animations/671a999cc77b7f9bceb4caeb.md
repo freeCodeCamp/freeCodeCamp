@@ -35,9 +35,9 @@ Review the concepts below to prepare for the upcoming quiz.
 - **`animation-fill-mode`**: This specifies how the element should be styled before and after the animation.
 - **`animation-play-state`**: This allows you to pause and resume the animation.
 
-## Accessibility and `prefers-reduced-motion` Media Query
+## Accessibility and the `prefers-reduced-motion` Media Query
 
-- **`prefers-reduced-motion` Media Query**: One of the primary accessibility concerns with animations is that they can cause discomfort or even physical harm to some users. People with vestibular disorders or motion sensitivity may experience dizziness, nausea, or headaches when exposed to certain types of movement on screen. The `prefers-reduced-motion` media query allows web developers to detect if the user has requested minimal animations or motion effects at the system level.
+- **The `prefers-reduced-motion` Media Query**: One of the primary accessibility concerns with animations is that they can cause discomfort or even physical harm to some users. People with vestibular disorders or motion sensitivity may experience dizziness, nausea, or headaches when exposed to certain types of movement on screen. The `prefers-reduced-motion` media query allows web developers to detect if the user has requested minimal animations or motion effects at the system level.
 
 ```css
 .animated-element {
