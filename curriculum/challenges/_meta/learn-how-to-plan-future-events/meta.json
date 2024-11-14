@@ -7,7 +7,35 @@
   "challengeOrder": [
     {
       "id": "66609f86c2500e597c8cb52f",
-      "title": "Dialogue 1: I'm Tom"
+      "title": "Dialogue 1: Scheduled Maintenance to Prevent DoS Attacks"
+    },
+    {
+      "id": "673519c3d750b013c96f1e6f",
+      "title": "Task 1"
+    },
+    {
+      "id": "67351b96eefe7c282ec1424b",
+      "title": "Task 2"
+    },
+    {
+      "id": "673653fa580778853a7a7afd",
+      "title": "Task 3"
+    },
+    {
+      "id": "673654d11366b18b1c76d980",
+      "title": "Task 4"
+    },
+    {
+      "id": "6736576b5407af9bdf1f41b7",
+      "title": "Task 5"
+    },
+    {
+      "id": "673655ea628630928b5b50b8",
+      "title": "Task 6"
+    },
+    {
+      "id": "67365a08481f68acc18a9639",
+      "title": "Task 7"
     }
   ],
   "helpCategory": "English",
