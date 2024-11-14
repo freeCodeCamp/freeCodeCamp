@@ -447,16 +447,6 @@ class Block extends Component<BlockProps> {
     const blockRenderer = () => {
       const blockLayout = challenges[0].blockLayout;
 
-      // `blockLayout` property isn't available in all challenges
-      if (!blockLayout) {
-        if (isProjectBlock)
-          return isGridBlock ? LegacyLinkBlock : ProjectListBlock;
-        return isGridBlock
-          ? LegacyChallengeGridBlock
-          : LegacyChallengeListBlock;
-      }
-
-      // blockLayout is only being used in new certs at the moment, so I made some new components for them for now to not interfere with the existing ones
       if (blockLayout === BlockLayouts.ChallengeGrid) return ChallengeGridBlock;
       if (blockLayout === BlockLayouts.ChallengeList) return ChallengeListBlock;
       if (blockLayout === BlockLayouts.Link) return LinkBlock;
