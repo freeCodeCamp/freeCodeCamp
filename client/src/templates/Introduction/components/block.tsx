@@ -461,7 +461,7 @@ class Block extends Component<BlockProps> {
     return (
       <>
         {blockRenderer()}
-        {isGridBlock && !isProjectBlock ? null : <Spacer size='m' />}
+        {(!isGridBlock || isProjectBlock) && <Spacer size='m' />}
       </>
     );
   }
