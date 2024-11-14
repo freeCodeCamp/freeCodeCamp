@@ -852,7 +852,7 @@
     "expired-link": "Looks like the link you clicked has expired, please request a fresh link, to sign in",
     "signin-success": "Success! You have signed in to your account. Happy Coding!",
     "social-auth-gone": "We are moving away from social authentication for privacy reasons. Next time we recommend using your email address: {{email}} to sign in instead.",
-    "name-needed": "We need your name so we can put it on your certification. Add your name to your account settings and click the save button. Then we can issue your certification.",
+    "name-needed": "We need your name so we can put it on your certification. Please update your name in your profile section so we can include it on your certification.",
     "incomplete-steps": "It looks like you have not completed the necessary steps. Please complete the required projects to claim the {{name}} Certification.",
     "already-claimed": "It looks like you already have claimed the {{name}} Certification",
     "cert-claim-success": "@{{username}}, you have successfully claimed the {{name}} Certification! Congratulations on behalf of the freeCodeCamp.org team!",
