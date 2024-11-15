@@ -135,7 +135,7 @@
   background-color: var(--gray-75);
 }
 
-.ais-Hits-item:hover {
+.ais-Hits-item:not(:has(.no-hits-footer.fcc_suggestion_item)):hover {
   background-color: var(--blue-dark);
 }
 
