@@ -32,8 +32,6 @@ import {
 import Scene from '../components/scene/scene';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 
-// Styles
-import '../video.css';
 import './show.css';
 
 // Redux Setup
