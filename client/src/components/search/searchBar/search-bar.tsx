@@ -185,13 +185,13 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
     indexUp: (e: KeyboardEvent | undefined): void => {
       e?.preventDefault();
       this.setState(({ index, hits }) => ({
-        index: index === -1 ? hits.length - 1 : index - 1
+        index: index === -1 ? hits.length : index - 1
       }));
     },
     indexDown: (e: KeyboardEvent | undefined): void => {
       e?.preventDefault();
       this.setState(({ index, hits }) => ({
-        index: index === hits.length - 1 ? -1 : index + 1
+        index: index === hits.length ? -1 : index + 1
       }));
     }
   };

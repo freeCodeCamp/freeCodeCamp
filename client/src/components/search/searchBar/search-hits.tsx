@@ -21,7 +21,6 @@ function SearchHits({
 }: SearchHitsProps) {
   const { results } = useHits<Hit>();
   const { t } = useTranslation();
-
   const noHits = isEmpty(results?.hits);
 
   const allHits: Hit[] =
@@ -54,10 +53,11 @@ function SearchHits({
           </li>
         ))}
         <SearchBarFooter
-          handleMouseEnter={handleMouseEnter}
-          handleMouseLeave={handleMouseLeave}
           hasHits={!noHits}
           query={results?.query}
+          selectedIndex={selectedIndex}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         />
       </ul>
     </div>
