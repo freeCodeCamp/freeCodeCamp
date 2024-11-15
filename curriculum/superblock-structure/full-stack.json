@@ -477,6 +477,7 @@
         {
           "dashedName": "recursion",
           "blocks": [
+            { "dashedName": "workshop-decimal-to-binary-converter" },
             { "dashedName": "review-recursion" },
             { "dashedName": "quiz-recursion" }
           ]
