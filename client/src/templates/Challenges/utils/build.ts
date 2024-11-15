@@ -8,7 +8,8 @@ import { concatHtml } from '../rechallenge/builders';
 import {
   getTransformers,
   embedFilesInHtml,
-  getPythonTransformers
+  getPythonTransformers,
+  getMultifileJSXTransformers
 } from '../rechallenge/transformers';
 import {
   createTestFramer,
@@ -227,11 +228,18 @@ export async function buildDOMChallenge(
 ): Promise<BuildResult> {
   // TODO: make this required in the schema.
   if (!challengeFiles) throw Error('No challenge files provided');
-  const loadEnzyme = challengeFiles.some(
+  const hasJsx = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
+  const isMultifile = challengeFiles.length > 1;
 
-  const pipeLine = composeFunctions(...getTransformers(options));
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const transformers =
+    isMultifile && hasJsx
+      ? getMultifileJSXTransformers(options)
+      : getTransformers(options);
+
+  const pipeLine = composeFunctions(...transformers);
   const usesTestRunner = options?.usesTestRunner ?? false;
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
@@ -257,7 +265,7 @@ export async function buildDOMChallenge(
     challengeType: challengeTypes.html,
     build: concatHtml(toBuild),
     sources: buildSourceMap(embeddedFiles),
-    loadEnzyme,
+    loadEnzyme: hasJsx,
     error
   };
 }
