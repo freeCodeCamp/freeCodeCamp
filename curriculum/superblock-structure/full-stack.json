@@ -476,6 +476,7 @@
         {
           "dashedName": "recursion",
           "blocks": [
+            { "dashedName": "lab-permutation-generator" },
             { "dashedName": "review-recursion" },
             { "dashedName": "quiz-recursion" }
           ]

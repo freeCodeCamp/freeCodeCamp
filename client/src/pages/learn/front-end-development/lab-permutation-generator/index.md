@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Permutation Generator
 block: lab-permutation-generator
-superBlock: front-end-development
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Permutation Generator
