@@ -224,7 +224,10 @@ async function transformScript(documentElement, { useModules }) {
       ...(useModules && { plugins: [MODULE_TRANSFORM_PLUGIN] })
     };
 
-    if (isBabel) script.removeAttribute('type'); // otherwise the browser will ignore the script
+    // The type has to be removed, otherwise the browser will ignore the script.
+    // However, if we're importing modules, the type will be removed when the
+    // scripts are embedded in the HTML.
+    if (isBabel && !useModules) script.removeAttribute('type');
 
     script.innerHTML = babelTransformCode(options)(script.innerHTML);
   });
@@ -247,6 +250,15 @@ export const embedFilesInHtml = async function (challengeFiles) {
     const tsScript =
       documentElement.querySelector('script[src="index.ts"]') ??
       documentElement.querySelector('script[src="./index.ts"]');
+
+    const jsxScript =
+      documentElement.querySelector(
+        `script[data-plugins="${MODULE_TRANSFORM_PLUGIN}"][type="text/babel"][src="index.jsx"]`
+      ) ??
+      documentElement.querySelector(
+        `script[data-plugins="${MODULE_TRANSFORM_PLUGIN}"][type="text/babel"][src="./index.jsx"]`
+      );
+
     if (link) {
       const style = contentDocument.createElement('style');
       style.classList.add('fcc-injected-styles');
@@ -266,6 +278,13 @@ export const embedFilesInHtml = async function (challengeFiles) {
       tsScript.innerHTML = indexTs?.contents;
       tsScript.removeAttribute('src');
       tsScript.setAttribute('data-src', 'index.ts');
+    }
+    if (jsxScript) {
+      jsxScript.innerHTML = indexJsx?.contents;
+      jsxScript.removeAttribute('src');
+      jsxScript.removeAttribute('type');
+      jsxScript.setAttribute('data-src', 'index.jsx');
+      jsxScript.setAttribute('data-type', 'text/babel');
     }
     return documentElement.innerHTML;
   };
