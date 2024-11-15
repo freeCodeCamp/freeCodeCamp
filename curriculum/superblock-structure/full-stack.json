@@ -197,6 +197,7 @@
           "dashedName": "css-grid",
           "blocks": [
             { "dashedName": "workshop-magazine" },
+            { "dashedName": "lab-magazine-layout" },
             { "dashedName": "lab-product-landing-page" },
             { "dashedName": "review-css-grid" },
             { "dashedName": "quiz-css-grid" }
