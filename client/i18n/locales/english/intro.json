@@ -2838,7 +2838,12 @@
           "In these lecture videos, you will learn about the event object and event delegation."
         ]
       },
-      "lbyi": { "title": "193", "intro": [] },
+      "workshop-music-instrument-filter": {
+        "title": "Build a Music Instrument Filter",
+        "intro": [
+          "In this workshop, you will build a music instrument filter with JavaScript."
+        ]
+      },
       "lab-real-time-counter": {
         "title": "Build a Real Time Counter",
         "intro": ["In this lab, you will build a real-time character counter"]

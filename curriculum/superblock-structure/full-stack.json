@@ -402,6 +402,7 @@
             {
               "dashedName": "lecture-understanding-the-event-object-and-event-delegation"
             },
+            { "dashedName": "workshop-music-instrument-filter" },
             { "dashedName": "lab-real-time-counter" },
             { "dashedName": "lab-lightbox-viewer" },
             { "dashedName": "workshop-rps-game" },
