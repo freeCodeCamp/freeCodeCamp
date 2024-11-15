@@ -67,7 +67,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       portfolio: [...portfolio],
       unsavedItemId: null,
       isImageValid: {
-        state: null,
+        state: 'success',
         message: ''
       }
     };
@@ -82,29 +82,26 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       e.preventDefault();
       const userInput = e.target.value.slice();
-      this.setState(
-        state => {
-          const { portfolio: currentPortfolio } = state;
-          const mutablePortfolio = currentPortfolio.slice(0);
-          const index = findIndex(currentPortfolio, p => p.id === id);
+      this.setState(state => {
+        const { portfolio: currentPortfolio } = state;
+        const mutablePortfolio = currentPortfolio.slice(0);
+        const index = findIndex(currentPortfolio, p => p.id === id);
 
-          mutablePortfolio[index] = {
-            ...mutablePortfolio[index],
-            [key]: userInput
-          };
+        mutablePortfolio[index] = {
+          ...mutablePortfolio[index],
+          [key]: userInput
+        };
 
-          return { portfolio: mutablePortfolio };
-        },
-        () => {
-          if (key === 'image' && userInput) {
-            void this.validateImageLoad(userInput).then(imageValidation => {
-              this.setState({ isImageValid: imageValidation });
-            });
-          } else if (key === 'image' && !userInput) {
-            this.setState({ isImageValid: { state: 'success', message: '' } });
-          }
+        if (key === 'image' && userInput) {
+          void this.validateImageLoad(userInput).then(imageValidation => {
+            this.setState({ isImageValid: imageValidation });
+          });
+        } else if (key === 'image' && !userInput) {
+          this.setState({ isImageValid: { state: 'success', message: '' } });
         }
-      );
+
+        return { portfolio: mutablePortfolio };
+      });
     };
 
   updateItem = (id: string) => {
@@ -208,14 +205,16 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
   getUrlValidation(url: string) {
     const { t } = this.props;
     const len = url.length;
+
+    if (!url) {
+      return { state: 'success', message: '' };
+    }
+
     if (len >= 4 && !hasProtocolRE.test(url)) {
       return {
         state: 'error',
         message: t('validation.invalid-protocol')
       };
-    }
-    if (!url) {
-      return { state: null, message: '' };
     }
 
     return isURL(url)
@@ -296,7 +295,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
     const combineImageStatus =
       imageState === 'success' && this.state.isImageValid.state === 'success'
-        ? 'success'
+        ? null
         : 'error';
     const combineImageMessage = imageMessage || this.state.isImageValid.message;
 
@@ -359,7 +358,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               {t('settings.labels.image')}
             </ControlLabel>
             <FormControl
-              onInput={this.createOnChangeHandler(id, 'image')}
+              onChange={this.createOnChangeHandler(id, 'image')}
               type='url'
               value={image}
               name='portfolio-image'
