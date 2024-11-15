@@ -2464,7 +2464,10 @@
       },
       "review-css": {
         "title": "CSS Review",
-        "intro": ["Review the CSS concepts to prepare for the upcoming exam."]
+        "intro": [
+          "Before you take the CSS prep exam, you first need to review the concepts taught in the previous modules.",
+          "Open up this page to review concepts around the basics of CSS, responsive web design, animations, accessibility and more."
+        ]
       },
       "wvjx": { "title": "127", "intro": [] },
       "lecture-working-with-code-editors-and-ides": {
