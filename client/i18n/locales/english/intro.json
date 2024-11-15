@@ -2453,7 +2453,8 @@
       "review-css-animations": {
         "title": "CSS Animations Review",
         "intro": [
-          "Review the CSS Animations concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with CSS animations, you first need to review.",
+          "Open up this page to review concepts including <code>prefers-reduced-motion</code>, the <code>@keyframes</code> rule and more."
         ]
       },
       "quiz-css-animations": {
