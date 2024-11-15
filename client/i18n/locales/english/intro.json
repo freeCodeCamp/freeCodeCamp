@@ -2495,7 +2495,8 @@
       "review-javascript-variables-and-data-types": {
         "title": "JavaScript Variables and Data Types Review",
         "intro": [
-          "Revise what you've learned about variables, data types, logging, comments and how to work with them in JavaScript."
+          "Before you are quizzed on JavaScript variables and datatypes you first need to review the concepts.",
+          "Open up this page to review variables, data types, logging and commenting"
         ]
       },
       "quiz-javascript-variables-and-data-types": {
