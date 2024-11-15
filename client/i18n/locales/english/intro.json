@@ -2639,7 +2639,8 @@
       "review-javascript-functions": {
         "title": "JavaScript Functions Review",
         "intro": [
-          "Review the JavaScript Functions concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on JavaScript functions, HTML, you first need to review the concepts.",
+          "Open up this page to review functions, arrow functions and scope."
         ]
       },
       "quiz-javascript-functions": {
