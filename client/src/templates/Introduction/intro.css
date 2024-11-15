@@ -11,6 +11,50 @@
   overflow-wrap: break-word;
 }
 
+.block-label {
+  align-self: center;
+  height: fit-content;
+  padding: 1px 6px 2px;
+  font-size: 0.85rem;
+  border: 1px solid;
+  position: relative;
+  top: 1px;
+}
+
+.block-header:hover .block-label {
+  background-color: var(--tertiary-background);
+}
+
+.block-label-lecture {
+  border-color: var(--yellow-color);
+  color: var(--yellow-color);
+}
+
+.block-label-workshop {
+  border-color: var(--highlight-color);
+  color: var(--highlight-color);
+}
+
+.block-label-lab {
+  border-color: var(--success-color);
+  color: var(--success-color);
+}
+
+.block-label-review {
+  border-color: var(--purple-color);
+  color: var(--purple-color);
+}
+
+.block-label-quiz {
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+.block-label-exam {
+  border-color: var(--quaternary-color);
+  color: var(--quaternary-color);
+}
+
 .block-header {
   display: flex;
   justify-content: space-between;
@@ -517,6 +561,10 @@ a.map-grid-item.challenge-completed {
   position: relative;
 }
 
+.grid-project-block-no-margin {
+  margin-bottom: 0;
+}
+
 .block-grid.grid-project-block:hover {
   cursor: pointer;
   background: var(--tertiary-background);
@@ -549,4 +597,23 @@ a.map-grid-item.challenge-completed {
 
 .grid-project-block:hover:has(.tags-wrapper a:hover) {
   background: var(--primary-background);
+}
+
+/* Override the `.block-description` padding (25px)
+  to align the description with the content in the panel. */
+.block-ui .challenge-list-block .block-header .block-description,
+.block-ui .challenge-grid-block .block-header .block-description {
+  padding: 10px;
+}
+
+.block-ui .challenge-grid-block .progress-wrapper {
+  /* Make the progress bar align with the description above */
+  padding-inline-start: 10px;
+}
+
+.block-ui .challenge-grid-block .challenge-grid-block-panel {
+  /* Add some space between panel content and the top edge of the container.
+    The value (18px) is the same value `.map-challenges-grid` uses
+    to create space between the grid and the bottom edge of the container. */
+  margin-top: 18px;
 }

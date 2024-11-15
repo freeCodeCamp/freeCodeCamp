@@ -317,12 +317,7 @@ exports[`<Footer /> matches snapshot 1`] = `
         </li>
       </ul>
       <div
-        className="spacer"
-        style={
-          {
-            "padding": "15px 0",
-          }
-        }
+        className="h-[30px]"
       />
       <div>
         <h2

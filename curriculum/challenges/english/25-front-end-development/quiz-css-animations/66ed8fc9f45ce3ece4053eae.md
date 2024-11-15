@@ -7,7 +7,7 @@ dashedName: quiz-css-animations
 
 # --description--
 
-Answer all of the questions below correctly to pass the quiz.
+To pass the quiz, you must correctly answer at least 17 of the 20 of the questions below.
 
 # --quizzes--
 
@@ -17,439 +17,439 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-Placeholder question
+Which CSS property is used for 2D/3D transformations?
 
 #### --distractors--
 
-Placeholder distractor 1
+`position`
 
 ---
 
-Placeholder distractor 2
+`transition`
 
 ---
 
-Placeholder distractor 3
+`display`
 
 #### --answer--
 
-Placeholder answer
+`transform`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does `matrix()` allow you to control?
 
 #### --distractors--
 
-Placeholder distractor 1
+Only scaling
 
 ---
 
-Placeholder distractor 2
+Only translation
 
 ---
 
-Placeholder distractor 3
+Only rotation
 
 #### --answer--
 
-Placeholder answer
+Multiple transformations at once
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property ensures the animation runs 3 times?
 
 #### --distractors--
 
-Placeholder distractor 1
+`animation-repeat: 3`
 
 ---
 
-Placeholder distractor 2
+`animation-loop: 3`
 
 ---
 
-Placeholder distractor 3
+`animation-delay: 3`
 
 #### --answer--
 
-Placeholder answer
+`animation-iteration-count: 3`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which timing function makes the animation run with the same speed from start to end?
 
 #### --distractors--
 
-Placeholder distractor 1
+`ease`
 
 ---
 
-Placeholder distractor 2
+`ease-in`
 
 ---
 
-Placeholder distractor 3
+`cubic-bezier`
 
 #### --answer--
 
-Placeholder answer
+`linear`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does `@keyframes` define?
 
 #### --distractors--
 
-Placeholder distractor 1
+CSS colors
 
 ---
 
-Placeholder distractor 2
+CSS transitions
 
 ---
 
-Placeholder distractor 3
+CSS text styles
 
 #### --answer--
 
-Placeholder answer
+CSS animation sequences
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does `translate()` do?
 
 #### --distractors--
 
-Placeholder distractor 1
+Changes opacity
 
 ---
 
-Placeholder distractor 2
+Rotates the element
 
 ---
 
-Placeholder distractor 3
+Skews the element
 
 #### --answer--
 
-Placeholder answer
+Moves the element
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does accessibility focus on in web design?
 
 #### --distractors--
 
-Placeholder distractor 1
+Color choice
 
 ---
 
-Placeholder distractor 2
+Responsiveness
 
 ---
 
-Placeholder distractor 3
+Layout complexity
 
 #### --answer--
 
-Placeholder answer
+Usability for all users
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Where is `@keyframes` written?
 
 #### --distractors--
 
-Placeholder distractor 1
+Inside HTML tags
 
 ---
 
-Placeholder distractor 2
+Inside CSS selectors
 
 ---
 
-Placeholder distractor 3
+In JavaScript
 
 #### --answer--
 
-Placeholder answer
+In CSS
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property will pause the animation?
 
 #### --distractors--
 
-Placeholder distractor 1
+`animation-timing-function: paused`
 
 ---
 
-Placeholder distractor 2
+`animation-stop`
 
 ---
 
-Placeholder distractor 3
+`animation-direction: paused`
 
 #### --answer--
 
-Placeholder answer
+`animation-play-state: paused`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Why is providing video captions important?
 
 #### --distractors--
 
-Placeholder distractor 1
+To improve SEO
 
 ---
 
-Placeholder distractor 2
+To comply with web standards
 
 ---
 
-Placeholder distractor 3
+To enhance visuals
 
 #### --answer--
 
-Placeholder answer
+To provide accessibility for hearing impaired users
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which attribute is used for form field accessibility?
 
 #### --distractors--
 
-Placeholder distractor 1
+`placeholder`
 
 ---
 
-Placeholder distractor 2
+`action`
 
 ---
 
-Placeholder distractor 3
+`method`
 
 #### --answer--
 
-Placeholder answer
+`label`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property defines how an animation progresses over time?
 
 #### --distractors--
 
-Placeholder distractor 1
+`animation-delay`
 
 ---
 
-Placeholder distractor 2
+`animation-fill-mode`
 
 ---
 
-Placeholder distractor 3
+`animation-iteration-count`
 
 #### --answer--
 
-Placeholder answer
+`animation-timing-function`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What effect does `step-start` have on an animation?
 
 #### --distractors--
 
-Placeholder distractor 1
+Smoothly transitions between steps.
 
 ---
 
-Placeholder distractor 2
+Repeats the animation infinitely with no delay.
 
 ---
 
-Placeholder distractor 3
+Fades in and out during each step.
 
 #### --answer--
 
-Placeholder answer
+Jumps immediately to the next frame.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the purpose of focus indicators?
 
 #### --distractors--
 
-Placeholder distractor 1
+To show hidden elements.
 
 ---
 
-Placeholder distractor 2
+To enhance font styles.
 
 ---
 
-Placeholder distractor 3
+To adjust the layout.
 
 #### --answer--
 
-Placeholder answer
+To highlight focused elements
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What will happen when this animation `transform: translateX(200px)` is applied?
 
 #### --distractors--
 
-Placeholder distractor 1
+The element will move left.
 
 ---
 
-Placeholder distractor 2
+`The element will move 200px to the bottom.
 
 ---
 
-Placeholder distractor 3
+The element will rotate 200 degrees.
 
 #### --answer--
 
-Placeholder answer
+The element will move 200px to the right.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How will the animation behave if `animation-iteration-count` is set to `infinite`?
 
 #### --distractors--
 
-Placeholder distractor 1
+The animation will run once and stop.
 
 ---
 
-Placeholder distractor 2
+The animation will pause after the first iteration.
 
 ---
 
-Placeholder distractor 3
+The animation will stop after three iterations.
 
 #### --answer--
 
-Placeholder answer
+The animation will repeat indefinitely.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which `keyframe` selector defines the halfway point of an animation?
 
 #### --distractors--
 
-Placeholder distractor 1
+`0%`
 
 ---
 
-Placeholder distractor 2
+`25%`
 
 ---
 
-Placeholder distractor 3
+`100%`
 
 #### --answer--
 
-Placeholder answer
+`50%`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does the animation shorthand property include?
 
 #### --distractors--
 
-Placeholder distractor 1
+Only animation name
 
 ---
 
-Placeholder distractor 2
+Only animation timing
 
 ---
 
-Placeholder distractor 3
+Only animation duration
 
 #### --answer--
 
-Placeholder answer
+All animation properties
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the effect of using the `ease-in-out` timing function?
 
 #### --distractors--
 
-Placeholder distractor 1
+The animation will start fast and end slow
 
 ---
 
-Placeholder distractor 2
+The animation will run at a constant speed.
 
 ---
 
-Placeholder distractor 3
+The animation will loop infinitely.
 
 #### --answer--
 
-Placeholder answer
+The animation will start slow, speed up, then slow down.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which property prevents the animation from running immediately?
 
 #### --distractors--
 
-Placeholder distractor 1
+`animation-fill-mode`
 
 ---
 
-Placeholder distractor 2
+`animation-timing-function`
 
 ---
 
-Placeholder distractor 3
+`animation-iteration-count`
 
 #### --answer--
 
-Placeholder answer
+`animation-delay`
 

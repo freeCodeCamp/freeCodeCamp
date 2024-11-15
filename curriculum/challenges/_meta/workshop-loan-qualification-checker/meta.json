@@ -1,12 +1,12 @@
 {
   "name": "Build a Loan Qualification Checker",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
-  "blockType": "workshop",
   "dashedName": "workshop-loan-qualification-checker",
-  "order": 154,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "66c8ba41a77db20a93f9d7a1",

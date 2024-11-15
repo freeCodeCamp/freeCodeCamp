@@ -16,6 +16,11 @@ import {
   createSuperRequest
 } from '../../../jest.utils';
 import { JWT_SECRET } from '../../utils/env';
+import {
+  clearEnvExam,
+  seedEnvExam,
+  seedEnvExamAttempt
+} from '../../../__mocks__/env-exam';
 import { getMsTranscriptApiUrl } from './user';
 
 const mockedFetch = jest.fn();
@@ -336,6 +341,10 @@ describe('userRoutes', () => {
     });
 
     describe('/account/delete', () => {
+      beforeEach(async () => {
+        await seedEnvExam();
+        await seedEnvExamAttempt();
+      });
       afterEach(async () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
           where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
@@ -343,6 +352,7 @@ describe('userRoutes', () => {
         await fastifyTestInstance.prisma.msUsername.deleteMany({
           where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
         });
+        await clearEnvExam();
       });
 
       test('POST returns 200 status code with empty object', async () => {
@@ -397,6 +407,18 @@ describe('userRoutes', () => {
           ])
         );
         expect(setCookie).toHaveLength(3);
+      });
+
+      test("POST deletes all the user's exam attempts", async () => {
+        const examAttempts =
+          await fastifyTestInstance.prisma.envExamAttempt.findMany();
+        expect(examAttempts).toHaveLength(1);
+
+        await superPost('/account/delete');
+
+        const examAttemptsAfter =
+          await fastifyTestInstance.prisma.envExamAttempt.findMany();
+        expect(examAttemptsAfter).toHaveLength(0);
       });
     });
 
@@ -564,6 +586,11 @@ describe('userRoutes', () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
           where: { id: userTokenId }
         });
+        await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.deleteMany(
+          {
+            where: { userId: defaultUserId }
+          }
+        );
       });
 
       test('GET rejects with 500 status code if the username is missing', async () => {
@@ -1128,6 +1155,71 @@ Thanks and regards,
           type: 'success',
           message: 'flash.survey.success'
         });
+      });
+    });
+
+    describe('/user/exam-environment/token', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.deleteMany(
+          {
+            where: { userId: defaultUserId }
+          }
+        );
+      });
+
+      test('POST generates a new token if one does not exist', async () => {
+        const response = await superPost('/user/exam-environment/token');
+        const { examEnvironmentAuthorizationToken } = response.body;
+
+        const decodedToken = jwt.decode(examEnvironmentAuthorizationToken);
+
+        expect(decodedToken).toStrictEqual({
+          examEnvironmentAuthorizationToken:
+            expect.stringMatching(/^[a-z0-9]{24}$/),
+          iat: expect.any(Number)
+        });
+
+        expect(() =>
+          jwt.verify(examEnvironmentAuthorizationToken, 'wrong-secret')
+        ).toThrow();
+        expect(() =>
+          jwt.verify(examEnvironmentAuthorizationToken, JWT_SECRET)
+        ).not.toThrow();
+
+        expect(response.status).toBe(201);
+      });
+
+      test('POST only allows for one token per user id', async () => {
+        const token =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.create(
+            {
+              data: {
+                userId: defaultUserId,
+                expireAt: new Date()
+              }
+            }
+          );
+
+        const response = await superPost('/user/exam-environment/token');
+
+        const { examEnvironmentAuthorizationToken } = response.body;
+
+        const decodedToken = jwt.decode(examEnvironmentAuthorizationToken);
+
+        expect(decodedToken).not.toHaveProperty(
+          'examEnvironmentAuthorizationToken',
+          token.id
+        );
+
+        expect(response.status).toBe(201);
+
+        const tokens =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.findMany(
+            {
+              where: { userId: defaultUserId }
+            }
+          );
+        expect(tokens).toHaveLength(1);
       });
     });
   });
