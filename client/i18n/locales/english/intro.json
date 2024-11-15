@@ -2536,7 +2536,8 @@
       "review-javascript-strings": {
         "title": "JavaScript Strings Review",
         "intro": [
-          "Review the JavaScript Strings concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with JavaScript strings, you first need to review.",
+          "Open up this page to review how to work with template literals, the <code>slice</code> method, the <code>includes</code> method, the <code>trim</code> method and more."
         ]
       },
       "quiz-javascript-strings": {
