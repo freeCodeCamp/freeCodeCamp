@@ -1,6 +1,15 @@
 {
   "chapters": [
     {
+      "dashedName": "freecodecamp",
+      "modules": [
+        {
+          "dashedName": "getting-started-with-freecodecamp",
+          "blocks": [{ "dashedName": "lecture-welcome-to-freecodecamp" }]
+        }
+      ]
+    },
+    {
       "dashedName": "html",
       "modules": [
         {
@@ -246,6 +255,7 @@
           "dashedName": "css-animations",
           "blocks": [
             { "dashedName": "lecture-animations-and-accessibility" },
+            { "dashedName": "workshop-ferris-wheel" },
             { "dashedName": "lab-moon-orbit" },
             { "dashedName": "workshop-flappy-penguin" },
             { "dashedName": "lab-personal-portfolio" },
@@ -320,7 +330,9 @@
         {
           "dashedName": "javascript-arrays",
           "blocks": [
+            { "dashedName": "lecture-working-with-arrays" },
             { "dashedName": "workshop-shopping-list" },
+            { "dashedName": "lecture-working-with-common-array-methods" },
             { "dashedName": "lab-lunch-picker-program" },
             { "dashedName": "review-javascript-arrays" },
             { "dashedName": "quiz-javascript-arrays" }
@@ -329,6 +341,7 @@
         {
           "dashedName": "javascript-objects",
           "blocks": [
+            { "dashedName": "lecture-working-with-objects" },
             { "dashedName": "workshop-recipe-tracker" },
             { "dashedName": "lab-quiz-game" },
             { "dashedName": "review-javascript-objects" },
@@ -338,6 +351,7 @@
         {
           "dashedName": "javascript-loops",
           "blocks": [
+            { "dashedName": "lecture-working-with-loops" },
             { "dashedName": "workshop-sentence-analyzer" },
             { "dashedName": "lab-factorial-calculator" },
             { "dashedName": "review-javascript-loops" },
@@ -347,9 +361,16 @@
         {
           "dashedName": "review-javascript-fundamentals",
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-core-javascript-fundamentals"
+            },
             { "dashedName": "lab-pyramid-generator" },
             { "dashedName": "lab-gradebook-app" },
+            { "dashedName": "lecture-the-var-keyword-and-hoisting" },
             { "dashedName": "lab-inventory-management-program" },
+            {
+              "dashedName": "lecture-understanding-modules-imports-and-exports"
+            },
             { "dashedName": "review-javascript-fundamentals" },
             { "dashedName": "quiz-javascript-fundamentals" }
           ]
@@ -357,6 +378,10 @@
         {
           "dashedName": "higher-order-functions-and-callbacks",
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-higher-order-functions-and-callbacks"
+            },
+            { "dashedName": "workshop-library-manager" },
             { "dashedName": "review-javascript-higher-order-functions" },
             { "dashedName": "quiz-javascript-higher-order-functions" }
           ]
@@ -364,12 +389,18 @@
         {
           "dashedName": "dom-manipulation-and-events",
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-the-dom-click-events-and-web-apis"
+            },
             { "dashedName": "lab-favorite-icon-toggler" },
             {
               "dashedName": "review-dom-manipulation-and-click-events-with-javascript"
             },
             {
               "dashedName": "quiz-dom-manipulation-and-click-event-with-javascript"
+            },
+            {
+              "dashedName": "lecture-understanding-the-event-object-and-event-delegation"
             },
             { "dashedName": "lab-real-time-counter" },
             { "dashedName": "lab-lightbox-viewer" },
@@ -391,6 +422,7 @@
         {
           "dashedName": "basic-regex",
           "blocks": [
+            { "dashedName": "workshop-spam-filter" },
             { "dashedName": "lab-markdown-to-html-converter" },
             { "dashedName": "lab-regex-sandbox" },
             { "dashedName": "review-javascript-regular-expressions" },
@@ -436,6 +468,7 @@
         {
           "dashedName": "classes-and-the-this-keyword",
           "blocks": [
+            { "dashedName": "workshop-shopping-cart" },
             { "dashedName": "lab-project-idea-board" },
             { "dashedName": "review-javascript-classes" }
           ]
@@ -450,14 +483,6 @@
         {
           "dashedName": "functional-programming",
           "blocks": [
-            { "dashedName": "lab-quicksort-algorithm" },
-            { "dashedName": "quiz-searching-and-sorting-algorithms" },
-            { "dashedName": "lab-roman-numeral-converter" },
-            { "dashedName": "lab-telephone-number-validator" },
-            { "dashedName": "lab-cash-register" },
-            {
-              "dashedName": "quiz-javascript-problem-solving-and-algorithmic-thinking"
-            },
             { "dashedName": "review-javascript-functional-programming" },
             { "dashedName": "quiz-javascript-functional-programming" }
           ]
@@ -466,17 +491,6 @@
           "dashedName": "asynchronous-javascript",
           "blocks": [
             { "dashedName": "workshop-fcc-authors-page" },
-            { "dashedName": "lab-weather-app" },
-            { "dashedName": "quiz-javascript-object-oriented-programming" },
-            { "dashedName": "lab-stack-class" },
-            { "dashedName": "lab-linked-list-class" },
-            { "dashedName": "lab-hash-table-class" },
-            { "dashedName": "quiz-javascript-data-structures" },
-            { "dashedName": "lab-depth-first-search" },
-            { "dashedName": "quiz-graphs-and-trees" },
-            { "dashedName": "lab-nth-fibonacci-number-generator" },
-            { "dashedName": "quiz-dynamic-programming" },
-            { "dashedName": "lab-pokemon-search-app" },
             { "dashedName": "review-asynchronous-javascript" },
             { "dashedName": "quiz-asynchronous-javascript" }
           ]
@@ -494,7 +508,10 @@
         {
           "dashedName": "react-fundamentals",
           "blocks": [
-            { "dashedName": "quiz-web-standards" },
+            {
+              "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks"
+            },
+            { "dashedName": "lecture-working-with-data-in-react" },
             { "dashedName": "quiz-react-basics" }
           ]
         },
@@ -601,18 +618,6 @@
         {
           "dashedName": "review-relational-databases",
           "blocks": [{ "dashedName": "review-relational-databases" }]
-        }
-      ]
-    },
-    {
-      "dashedName": "security-and-privacy",
-      "modules": [
-        {
-          "dashedName": "security-and-privacy",
-          "blocks": [
-            { "dashedName": "review-security-and-privacy" },
-            { "dashedName": "quiz-security-and-privacy" }
-          ]
         }
       ]
     },

@@ -902,6 +902,35 @@ const duplicatedProjectIds = [
   '587d78af367417b2b2512b04',
 
   // Ferris Wheel
+  '6140c7e645d8e905819f1dd4',
+  '6140c9d35015ae0ba0c250e8',
+  '6140cbeec34e970dfe75e710',
+  '6140cd32d018ed0f600eefce',
+  '617ace7d831f9c16a569b38a',
+  '6140cdebd39d6a101e747529',
+  '6140cfc08ca9c5128c3e6478',
+  '6140d0069049f5139d78da40',
+  '6140d10d50636e14695013b2',
+  '6140d1a351e88f159ed54fca',
+  '6140d263016325162fd076fe',
+  '6140d2b687a2cd17bac5730c',
+  '6140d36b8b747718b50d4b7a',
+  '6140d3dc359b371b1a21d783',
+  '6140d4bc9db3c81c51a09ab7',
+  '6140d94b5fab7f1d73c9bedb',
+  '6140dc5e13d0c81e7496f182',
+  '6140dd77e0bc5a1f70bd7466',
+  '6140de31b1f5b420410728ff',
+  '6140df547f09402144e40b92',
+  '6140e0d875ec16262f26432b',
+  '6140f4b5c1555a2960de1e5f',
+  '614100d7d335bb2a5ff74f1f',
+  '61410126fa3a6d2b3cda502e',
+  '6141019eadec6d2c6c6f007b',
+  '6141026ec9882f2d39dcf2b8',
+  '6169ab1aaeb4cd1174def700',
+  '6169b1357fcb701bb5efc619',
+  '6169b284950e171d8d0bb16a',
 
   // Penguin
   '619665c9abd72906f3ad30f9',
@@ -1086,6 +1115,40 @@ const duplicatedProjectIds = [
 
   // Rock, Paper, Scissors Game
 
+  // Spam Filter
+  '641cd18eb67c661d8a9e11f3',
+  '641cd91d28bebe226f765d86',
+  '641cdefa704f232675ed98aa',
+  '641cdf57c3f7ee276e1d9b32',
+  '641ce03dfeca10293e05dad7',
+  '641ce3065c50e62f97406973',
+  '641ce3dcd0aec8309fbc9971',
+  '641ceed81533263283835c3d',
+  '641cf198ec366c33d6504854',
+  '6421f6f59d665615c9e94d8a',
+  '6421f98f4999d1179ce37cb4',
+  '642205fa6376c818f78bb24e',
+  '642206e054eef81b5e3092ed',
+  '642208bc4d44701c6fd6f65e',
+  '64220e8cb589f61e625bf453',
+  '64220fb017c57d20612de8b8',
+  '66bb6467b4b7381178420970',
+  '64221007887f38213fa57827',
+  '642213bf8d38b0227ed6ab0b',
+  '64233094a1293c079b5b0996',
+  '6423322e71f8d108608005cb',
+  '6423331f0527840934183aba',
+  '642335220b7d830a69eb59fb',
+  '642335d232d7690b2d67dbaf',
+  '64233d08f234a310e73f9496',
+  '642344dc9390c712080432c7',
+  '64234598ef08dd13114edae5',
+  '6423462975f33b14056583de',
+  '6423472aeed932150e8984b6',
+  '64234797d84734163088961a',
+  '6423491485db5e1786dd6434',
+  '642349b5b7bae31af21cd5f8',
+
   // Palindrome Checker
   '657bdc55a322aae1eac3838f',
 
@@ -1194,29 +1257,69 @@ const duplicatedProjectIds = [
 
   // Number Sorter Project
 
-  // Quick Sort Algorithm
-  '587d825a367417b2b2512c89',
-
-  // Roman Numeral Converter
-  '657bdc8ba322aae1eac38390',
-
   // Dice Game Project
 
-  // Telephone Number Validator
-  '657bdcb9a322aae1eac38391',
-
-  // Cash Register
-  'aa2e6f85cab2ab736c9a9b24',
-
   // Shopping Cart
-
-  // Stacks
-  '587d8250367417b2b2512c5f',
-
-  // Depth-first Search
-  '587d825d367417b2b2512c96',
-
-  // Nth Fibonacci Number
+  '63ec14d1c216aa063f0be4af',
+  '63ec19978a066607e23439f8',
+  '63ec1a16f930b108b8a76806',
+  '63ec1bbf5584390a7d08d41f',
+  '63ec1cb59f2a4c0be5b6dfa0',
+  '63ec20a06fff670d37befbd9',
+  '63ec3287b182ec0efe8a3135',
+  '63ec3427fc3e9214c9ed2a14',
+  '63ec36f6133df7160be3ec66',
+  '63ec47b454495519739486a7',
+  '63ee5d38a5d29d0696f8d820',
+  '63ee5d8f9e7168076e932fe2',
+  '63ee5e0f08e82208364c4128',
+  '63ee5ea8be892e0955ab346c',
+  '63ee5fc113bcb20a5db9214b',
+  '63ee611d478dca0b77f6a393',
+  '63ee7c664f9b65137d925c8a',
+  '63eea5cea403a81a68ae493c',
+  '63eea817673c8e1c22927fa6',
+  '63eea8e1e143ae1d098c8c9d',
+  '63eeb8e86becbf1e75c2cb0d',
+  '63eedebb0ec0231ff1cede1a',
+  '63efdbc22a0c56070beabed7',
+  '63efe370bbfc4a08d500118e',
+  '63eff02f00e69a0b2ac10b43',
+  '63eff98ffb1d5a0d24ec79cb',
+  '63effe558c87a70e7072e447',
+  '63f0165121a9181342d5bc66',
+  '63f017b4ad028a148eb713c0',
+  '63f01861f813e01564c95315',
+  '63f018f04e487e164dc27bd9',
+  '63f01c9791a0aa1751c73760',
+  '63f0224ceb16dc196d2c860a',
+  '63f026d041bc6c1a3d5cba0f',
+  '63f0284532742c1b26c7a052',
+  '63f0289df84a581bbdbd29b7',
+  '63f033fdb1fbcc254999fcc3',
+  '63f03446c2ed3e264be6c7fc',
+  '63f0348a54a177272071a595',
+  '63f034d012f74627ce538d3a',
+  '63f0295e673b661ccb299e8a',
+  '63f029b96b9e9e1df93be951',
+  '63f02a4ef92d711ec1ff618c',
+  '63f02b22cce1c11fe9604381',
+  '63f02bdeb9b428208b97eb6b',
+  '63f02c6e18773921ba50aa53',
+  '63f0311f5ea9382388d6124f',
+  '63f03686c5ea863533ec71f4',
+  '63f036ec91fdf238c90665f5',
+  '63f0370b340915399d31e5eb',
+  '63f0374d5351223a747c301d',
+  '63f0378e173e3c3b7638b528',
+  '63f6721d5110af243ef8f3d9',
+  '63f038a0ae041d3c5b0cdf23',
+  '63f038e671d3f73d5a041973',
+  '63f039dbcef7673e4e758fa3',
+  '63f03a7143a6ef3f7f3344f0',
+  '63f03ac2b428b2404a5a7518',
+  '63f03af535682e4138fdb915',
+  '63f03b1ed5ab15420c057463',
 
   // FCC Authors Page
   '641d9a19bff38d34d5a5edb8',
@@ -1251,9 +1354,6 @@ const duplicatedProjectIds = [
   // Weather App
 
   // Forum Leaderboard
-
-  // Pokemon Search
-  '6555c1d3e11a1574434cf8b5',
 
   /*** Front End Libraries ***/
 
