@@ -160,7 +160,7 @@ const createTranspiler = loopProtectOptions => {
     [testJS, getJSTranspiler(loopProtectOptions)],
     [testJSX, getJSXTranspiler(loopProtectOptions)],
     [testTypeScript, getTSTranspiler(loopProtectOptions)],
-    [testHTML, transformHtml],
+    [testHTML, getHtmlTranspiler({ useModules: false })],
     [stubTrue, identity]
   ]);
 };
@@ -168,7 +168,7 @@ const createTranspiler = loopProtectOptions => {
 const createModuleTransformer = loopProtectOptions => {
   return cond([
     [testJSX, getJSXModuleTranspiler(loopProtectOptions)],
-    [testHTML, transformHtml],
+    [testHTML, getHtmlTranspiler({ useModules: true })],
     [stubTrue, identity]
   ]);
 };
@@ -207,7 +207,7 @@ async function transformSASS(documentElement) {
   );
 }
 
-async function transformScript(documentElement) {
+async function transformScript(documentElement, { useModules }) {
   await loadBabel();
   await loadPresetEnv();
   await loadPresetReact();
@@ -217,12 +217,16 @@ async function transformScript(documentElement) {
     // TODO: make the use of JSX conditional on more than just the script type.
     // It should only be used for React challenges since it would be confusing
     // for learners to see the results of a transformation they didn't ask for.
-    const options = isBabel ? presetsJSX : presetsJS;
+    const baseOptions = isBabel ? presetsJSX : presetsJS;
+
+    const options = {
+      ...baseOptions,
+      ...(useModules && { plugins: [MODULE_TRANSFORM_PLUGIN] })
+    };
 
     if (isBabel) script.removeAttribute('type'); // otherwise the browser will ignore the script
-    script.innerHTML = babelTransformCode(getBabelOptions(options))(
-      script.innerHTML
-    );
+
+    script.innerHTML = babelTransformCode(options)(script.innerHTML);
   });
 }
 
@@ -299,18 +303,19 @@ const parseAndTransform = async function (transform, contents) {
   return await transform(newDoc.documentElement, newDoc);
 };
 
-const transformHtml = async function (file) {
-  const transform = async documentElement => {
-    await Promise.all([
-      transformSASS(documentElement),
-      transformScript(documentElement)
-    ]);
-    return documentElement.innerHTML;
-  };
+const getHtmlTranspiler = scriptOptions =>
+  async function (file) {
+    const transform = async documentElement => {
+      await Promise.all([
+        transformSASS(documentElement),
+        transformScript(documentElement, scriptOptions)
+      ]);
+      return documentElement.innerHTML;
+    };
 
-  const contents = await parseAndTransform(transform, file.contents);
-  return transformContents(() => contents, file);
-};
+    const contents = await parseAndTransform(transform, file.contents);
+    return transformContents(() => contents, file);
+  };
 
 export const getTransformers = loopProtectOptions => [
   createSource,
