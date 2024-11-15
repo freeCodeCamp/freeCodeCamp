@@ -28,6 +28,7 @@ const protectTimeout = 100;
 const testProtectTimeout = 1500;
 const loopsPerTimeoutCheck = 100;
 const testLoopsPerTimeoutCheck = 2000;
+const MODULE_TRANSFORM_PLUGIN = 'transform-modules-umd';
 
 function loopProtectCB(line) {
   console.log(
@@ -132,6 +133,18 @@ const getJSXTranspiler = loopProtectOptions => async challengeFile => {
   );
 };
 
+const getJSXModuleTranspiler = loopProtectOptions => async challengeFile => {
+  await loadBabel();
+  await loadPresetReact();
+  const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
+  const babelOptions = {
+    ...baseOptions,
+    plugins: [...baseOptions.plugins, MODULE_TRANSFORM_PLUGIN],
+    moduleId: 'index' // TODO: this should be dynamic
+  };
+  return transformContents(babelTransformCode(babelOptions), challengeFile);
+};
+
 const getTSTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await checkTSServiceIsReady();
@@ -147,6 +160,14 @@ const createTranspiler = loopProtectOptions => {
     [testJS, getJSTranspiler(loopProtectOptions)],
     [testJSX, getJSXTranspiler(loopProtectOptions)],
     [testTypeScript, getTSTranspiler(loopProtectOptions)],
+    [testHTML, transformHtml],
+    [stubTrue, identity]
+  ]);
+};
+
+const createModuleTransformer = loopProtectOptions => {
+  return cond([
+    [testJSX, getJSXModuleTranspiler(loopProtectOptions)],
     [testHTML, transformHtml],
     [stubTrue, identity]
   ]);
@@ -296,6 +317,12 @@ export const getTransformers = loopProtectOptions => [
   replaceNBSP,
   createTranspiler(loopProtectOptions),
   partial(compileHeadTail, '')
+];
+
+export const getMultifileJSXTransformers = loopProtectOptions => [
+  createSource,
+  replaceNBSP,
+  createModuleTransformer(loopProtectOptions)
 ];
 
 export const getPythonTransformers = () => [
