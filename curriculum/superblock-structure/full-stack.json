@@ -491,6 +491,7 @@
           "dashedName": "asynchronous-javascript",
           "blocks": [
             { "dashedName": "workshop-fcc-authors-page" },
+            { "dashedName": "lab-weather-app" },
             { "dashedName": "review-asynchronous-javascript" },
             { "dashedName": "quiz-asynchronous-javascript" }
           ]
