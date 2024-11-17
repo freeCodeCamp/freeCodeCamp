@@ -2590,7 +2590,8 @@
       "review-javascript-comparisons-and-conditionals": {
         "title": "JavaScript Comparisons and Conditionals Review",
         "intro": [
-          "Review the JavaScript Comparisons and Conditionals concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with conditionals, you first need to review.",
+          "Open up this page to review how to work with <code>switch</code> statements, other types of conditionals and more."
         ]
       },
       "quiz-javascript-comparisons-and-conditionals": {
