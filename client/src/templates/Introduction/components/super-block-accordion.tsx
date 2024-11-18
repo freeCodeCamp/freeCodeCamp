@@ -1,5 +1,5 @@
 import React, { ReactNode, useMemo } from 'react';
-import { uniq } from 'lodash-es';
+import { uniqBy } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
@@ -66,85 +66,91 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const content = useMemo(() => {
-    const chapters = uniq(challenges.map(({ chapter }) => chapter as string));
+  const { allChapters, allBlocks, examBlock } = useMemo(() => {
+    const allBlocks = uniqBy(challenges, 'block').map(
+      ({ block, blockType, chapter, module }) => ({
+        name: block,
+        blockType,
+        chapter: chapter as string,
+        module: module as string,
+        challenges: challenges.filter(({ block: b }) => b === block)
+      })
+    );
+
+    const allModules = uniqBy(allBlocks, 'module').map(
+      ({ module, chapter }) => ({
+        name: module,
+        chapter,
+        blocks: allBlocks.filter(({ module: m }) => m === module)
+      })
+    );
+
+    const allChapters = uniqBy(allModules, 'chapter').map(({ chapter }) => ({
+      name: chapter,
+      modules: allModules.filter(({ chapter: c }) => c === chapter)
+    }));
+
     const examBlock = challenges.find(
       ({ blockType }) => blockType === BlockTypes.exam
     );
 
-    // Expand the outer layers in order to reveal the chosen block.
-    const expandedChapter = challenges.find(
-      ({ block }) => chosenBlock === block
-    )?.chapter as string;
-    const expandedModule = challenges.find(({ block }) => chosenBlock === block)
-      ?.module as string;
+    return { allChapters, allModules, allBlocks, examBlock };
+  }, [challenges]);
 
-    return chapters.map(chapter => {
-      if (examBlock && chapter === examBlock.chapter) {
+  // Expand the outer layers in order to reveal the chosen block.
+  const expandedChapter = allBlocks.find(
+    ({ name }) => chosenBlock === name
+  )?.chapter;
+  const expandedModule = allBlocks.find(
+    ({ name }) => chosenBlock === name
+  )?.module;
+
+  return (
+    <ul className='super-block-accordion'>
+      {allChapters.map(chapter => {
+        if (examBlock && chapter.name === examBlock.chapter) {
+          return (
+            <li key={examBlock.dashedName} className='exam'>
+              <Block
+                block={examBlock.dashedName}
+                blockType={examBlock.blockType}
+                challenges={[examBlock]}
+                superBlock={superBlock}
+              />
+            </li>
+          );
+        }
         return (
-          <li key={examBlock.dashedName} className='exam'>
-            <Block
-              block={examBlock.dashedName}
-              blockType={examBlock.blockType}
-              challenges={[examBlock]}
-              superBlock={superBlock}
-            />
-          </li>
+          <Chapter
+            key={chapter.name}
+            dashedName={chapter.name}
+            isExpanded={expandedChapter === chapter.name}
+          >
+            {chapter.modules.map(mod => {
+              return (
+                <Module
+                  key={mod.name}
+                  dashedName={mod.name}
+                  isExpanded={expandedModule === mod.name}
+                >
+                  {mod.blocks.map(block => {
+                    return (
+                      <li key={block.name}>
+                        <Block
+                          block={block.name}
+                          blockType={block.blockType}
+                          challenges={block.challenges}
+                          superBlock={superBlock}
+                        />
+                      </li>
+                    );
+                  })}
+                </Module>
+              );
+            })}
+          </Chapter>
         );
-      }
-
-      const modules = uniq(
-        challenges
-          .filter(challenge => challenge.chapter === chapter)
-          .map(challenge => challenge.module as string)
-      );
-
-      return (
-        <Chapter
-          key={chapter}
-          dashedName={chapter}
-          isExpanded={expandedChapter === chapter}
-        >
-          {modules.map(mod => {
-            const blocks = uniq(
-              challenges
-                .filter(
-                  challenge =>
-                    challenge.chapter === chapter && challenge.module === mod
-                )
-                .map(challenge => challenge.block)
-            );
-
-            return (
-              <Module
-                key={mod}
-                dashedName={mod}
-                isExpanded={expandedModule === mod}
-              >
-                {blocks.map(block => {
-                  const blockChallenges = challenges.filter(
-                    challenge => challenge.block === block
-                  );
-                  const blockType = blockChallenges[0].blockType;
-
-                  return (
-                    <li key={block}>
-                      <Block
-                        block={block}
-                        blockType={blockType}
-                        challenges={blockChallenges}
-                        superBlock={superBlock}
-                      />
-                    </li>
-                  );
-                })}
-              </Module>
-            );
-          })}
-        </Chapter>
-      );
-    });
-  }, [challenges, superBlock, chosenBlock]);
-
-  return <ul className='super-block-accordion'>{content}</ul>;
+      })}
+    </ul>
+  );
 };
