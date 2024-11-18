@@ -1,7 +1,7 @@
 import { WindowLocation } from '@reach/router';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
-import React, { Fragment, useEffect, memo } from 'react';
+import React, { Fragment, useEffect, memo, useMemo } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -175,8 +175,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     pageContext: { superBlock, title, certification }
   } = props;
 
-  const allChallenges = nodes.map(({ challenge }) => challenge);
-  const challenges = allChallenges.filter(c => c.superBlock === superBlock);
+  const allChallenges = useMemo(
+    () => nodes.map(({ challenge }) => challenge),
+    [nodes]
+  );
+  const challenges = useMemo(
+    () => allChallenges.filter(c => c.superBlock === superBlock),
+    [allChallenges, superBlock]
+  );
   const blocks = uniq(challenges.map(({ block }) => block));
 
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
