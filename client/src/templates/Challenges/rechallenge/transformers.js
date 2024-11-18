@@ -13,7 +13,6 @@ import sassData from '../../../../config/browser-scripts/sass-compile.json';
 import {
   transformContents,
   transformHeadTailAndContents,
-  setExt,
   compileHeadTail,
   createSource
 } from '../../../../../shared/utils/polyvinyl';
@@ -127,10 +126,10 @@ const getJSXTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetReact();
   const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
-  return flow(
-    partial(transformHeadTailAndContents, babelTransformCode(babelOptions)),
-    partial(setExt, 'js')
-  )(challengeFile);
+  return transformHeadTailAndContents(
+    babelTransformCode(babelOptions),
+    challengeFile
+  );
 };
 
 const getTSTranspiler = loopProtectOptions => async challengeFile => {
@@ -265,9 +264,7 @@ export const embedFilesInHtml = async function (challengeFiles) {
 
 function challengeFilesToObject(challengeFiles) {
   const indexHtml = challengeFiles.find(file => file.fileKey === 'indexhtml');
-  const indexJsx = challengeFiles.find(
-    file => file.fileKey === 'indexjs' && file.history[0] === 'index.jsx'
-  );
+  const indexJsx = challengeFiles.find(file => file.fileKey === 'indexjsx');
   const stylesCss = challengeFiles.find(file => file.fileKey === 'stylescss');
   const scriptJs = challengeFiles.find(file => file.fileKey === 'scriptjs');
   const indexTs = challengeFiles.find(file => file.fileKey === 'indexts');
