@@ -176,7 +176,7 @@ test.describe('Editor theme if the system theme is light', () => {
         // go to the test page
         await page.goto(testPage);
 
-        // set the dark theme in local storage
+        // set the light theme in local storage
         await page.evaluate(() => {
           localStorage.setItem('theme', 'light');
         });
@@ -184,7 +184,7 @@ test.describe('Editor theme if the system theme is light', () => {
         // reload the page to apply the local storage changes
         await page.reload();
 
-        // check if the editor is in dark mode
+        // check if the editor is in light mode
         const editor = page.locator("div[role='code'].monaco-editor");
         await expect(editor).toHaveClass(/vs(?!\w)/);
       });
