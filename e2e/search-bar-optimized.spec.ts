@@ -105,7 +105,8 @@ test.describe('Search bar optimized', () => {
   });
 
   test('should exist when the user navigates back to the root page', async ({
-    page
+    page,
+    isMobile
   }) => {
     await page.getByTestId('curriculum-map-button').nth(0).click();
 
@@ -114,7 +115,7 @@ test.describe('Search bar optimized', () => {
     await page.waitForTimeout(500);
 
     await page.goBack();
-
+    await getSearchInput({ page, isMobile });
     await expect(page.getByTestId('search-optimized')).toBeVisible();
   });
 });
