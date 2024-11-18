@@ -2,7 +2,7 @@
 
 
 echo "Enter the ids of the challenges you wish to test (separated by commas) and hit enter."
-read input
+read -r input
 
 
 IFS=',' challengeIDS=($input)
