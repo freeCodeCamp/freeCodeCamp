@@ -77,7 +77,7 @@ It positions the element in a fixed position relative to the viewport.
 
 #### --answer--
 
-It moves an element relative to its default position in the document.
+It moves the element relative to its default position in the document.
 
 ### --question--
 
@@ -121,7 +121,7 @@ The `<body>` element.
 
 #### --answer--
 
-The closest positioned ancestor with `position: relative`, `absolute` or `fixed`.
+The closest positioned ancestor with `position` set to `relative`, `absolute`, or `fixed`.
 
 ### --question--
 
@@ -246,6 +246,7 @@ Child elements with `position: absolute` will be positioned relative to the near
 ---
 
 A `position: relative` element moved does not occupy any space within the document flow.
+
 
 ---
 
@@ -439,7 +440,7 @@ What is the default of an element with `position: sticky` in terms of stacking c
 
 #### --distractors--
 
-It will create a new stacking context, and on top of any other element whose `z-index` is auto.
+It will create a new stacking context, and be on top of any other element whose `z-index` is auto.
 
 ---
 
