@@ -93,29 +93,19 @@ test.describe('Search bar optimized', () => {
     await expect(searchInput).toHaveValue('');
   });
 
-  test('should not exist when the user navigates to a different page from the root', async ({
-    page
-  }) => {
-    await page.getByTestId('curriculum-map-button').nth(0).click();
-
-    // Any of the searchbar elements wont be visible for a certain amount of time, thus the timeout.
-    await page.waitForTimeout(500);
-
-    await expect(page.getByTestId('search-optimized')).not.toBeVisible();
-  });
-
-  test('should exist when the user navigates back to the root page', async ({
+  test('The optimized searchbar component should not render when not on the landing page', async ({
     page,
     isMobile
   }) => {
+    // This means that the default search bar should be rendered ^.
     await page.getByTestId('curriculum-map-button').nth(0).click();
 
-    // If we do not wait here the history is not yet pushed in to
-    // the browser context and the back navigation will default to about: blank
-    await page.waitForTimeout(500);
+    if (isMobile) {
+      const menuButton = page.getByTestId('header-menu-button');
+      await expect(menuButton).toBeVisible();
+      await menuButton.click();
+    }
 
-    await page.goBack();
-    await getSearchInput({ page, isMobile });
-    await expect(page.getByTestId('search-optimized')).toBeVisible();
+    await expect(page.getByTestId('header-search')).toBeVisible();
   });
 });

@@ -41,12 +41,11 @@ const UniversalNav = ({
     query: `(min-width: ${SEARCH_EXPOSED_WIDTH}px)`
   });
 
-  const search =
-    typeof window !== `undefined` && isLanding(pathname) ? (
-      <SearchBarOptimized innerRef={searchBarRef} />
-    ) : (
-      <SearchBar innerRef={searchBarRef} />
-    );
+  const search = isLanding(pathname) ? (
+    <SearchBarOptimized innerRef={searchBarRef} />
+  ) : (
+    <SearchBar innerRef={searchBarRef} />
+  );
   return (
     <nav
       aria-label={t('aria.primary-nav')}
