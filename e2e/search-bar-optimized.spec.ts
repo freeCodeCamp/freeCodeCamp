@@ -92,4 +92,29 @@ test.describe('Search bar optimized', () => {
 
     await expect(searchInput).toHaveValue('');
   });
+
+  test('should not exist when the user navigates to a different page from the root', async ({
+    page
+  }) => {
+    await page.getByTestId('curriculum-map-button').nth(0).click();
+
+    // Any of the searchbar elements wont be visible for a certain amount of time, thus the timeout.
+    await page.waitForTimeout(500);
+
+    await expect(page.getByTestId('search-optimized')).not.toBeVisible();
+  });
+
+  test('should exist when the user navigates back to the root page', async ({
+    page
+  }) => {
+    await page.getByTestId('curriculum-map-button').nth(0).click();
+
+    // If we do not wait here the history is not yet pushed in to
+    // the browser context and the back navigation will default to about: blank
+    await page.waitForTimeout(500);
+
+    await page.goBack();
+
+    await expect(page.getByTestId('search-optimized')).toBeVisible();
+  });
 });

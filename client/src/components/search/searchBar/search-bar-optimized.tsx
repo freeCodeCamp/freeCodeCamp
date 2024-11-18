@@ -60,6 +60,7 @@ const SearchBarOptimized = ({
               type='search'
               value={value}
               ref={inputElementRef}
+              data-playwright-test-label='search-optimized'
             />
             <button className='ais-SearchBox-submit' type='submit'>
               <Magnifier />

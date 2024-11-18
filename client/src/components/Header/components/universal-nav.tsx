@@ -23,6 +23,7 @@ type UniversalNavProps = Omit<
 > & {
   fetchState: { pending: boolean };
   searchBarRef?: React.RefObject<HTMLDivElement>;
+  pathname: string;
 };
 const UniversalNav = ({
   displayMenu,
@@ -31,7 +32,8 @@ const UniversalNav = ({
   menuButtonRef,
   searchBarRef,
   user,
-  fetchState
+  fetchState,
+  pathname
 }: UniversalNavProps): JSX.Element => {
   const { pending } = fetchState;
   const { t } = useTranslation();
@@ -40,12 +42,11 @@ const UniversalNav = ({
   });
 
   const search =
-    typeof window !== `undefined` && isLanding(window.location.pathname) ? (
+    typeof window !== `undefined` && isLanding(pathname) ? (
       <SearchBarOptimized innerRef={searchBarRef} />
     ) : (
       <SearchBar innerRef={searchBarRef} />
     );
-
   return (
     <nav
       aria-label={t('aria.primary-nav')}
