@@ -17,19 +17,23 @@ function* initalizeThemeSaga() {
   // Wait for the fetch userComplete action
   yield take(actionTypes.fetchUserComplete);
 
-  let selectTheme;
   const isUserThemeDark = (yield select(userThemeSelector)) === 'night';
   const isLocalStorageThemeDark = localStorage.getItem('theme') === 'dark';
   const isSysThemeDark = window.matchMedia(
     '(prefers-color-scheme: dark)'
   ).matches;
 
-  // the order matters here
-  if (isLocalStorageThemeDark || isUserThemeDark || isSysThemeDark) {
-    selectTheme = 'dark';
-  } else {
-    selectTheme = 'light';
-  }
+  /*
+   The order of priority is localStorage > user > system
+   That is why order matters in the logical expression below.
+   Once the localStorage is set, it will always take precedence over the user and system theme.
+   */
+
+  const selectTheme =
+    isLocalStorageThemeDark || isUserThemeDark || isSysThemeDark
+      ? 'dark'
+      : 'light';
+
   localStorage.setItem('theme', selectTheme);
   yield put(setTheme(selectTheme));
 }
