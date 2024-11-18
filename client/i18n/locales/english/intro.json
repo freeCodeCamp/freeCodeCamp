@@ -3406,6 +3406,10 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "lab-reusable-footer": {
+        "title": "Build a Reusable Footer using React",
+        "intro": ["In this lab, you will use React to build a reusable footer."]
       }
     }
   },
