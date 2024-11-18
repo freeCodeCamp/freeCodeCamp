@@ -852,7 +852,7 @@
     "expired-link": "Parece que el enlace en el que hiciste clic ha expirado, solicita un enlace nuevo para iniciar sesión",
     "signin-success": "¡Éxito! Has iniciado sesión en tu cuenta. ¡Feliz día programando!",
     "social-auth-gone": "Nos estamos alejando de la autenticación social por razones de privacidad. La próxima vez, te recomendamos que utilices tu dirección de correo electrónico: {{email}} para iniciar sesión.",
-    "name-needed": "Necesitamos tu nombre para poder incluirlo en tu certificación. Agrega tu nombre a los ajustes de tu cuenta y haz clic en el botón Guardar. Entonces podremos emitir tu certificación.",
+    "name-needed": "We need your name to put it on your certification. Please add your name in your profile and click save. Then we can issue your certification.",
     "incomplete-steps": "Parece que no has completado los pasos necesarios. Por favor, completa los proyectos requeridos para reclamar la certificación {{name}}.",
     "already-claimed": "Parece que ya has reclamado la certificación {{name}}",
     "cert-claim-success": "¡@{{username}}, has reclamado con éxito la certificación {{name}}! ¡Felicitaciones en nombre del equipo de freeCodeCamp.org!",

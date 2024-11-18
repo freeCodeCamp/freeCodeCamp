@@ -599,8 +599,6 @@ async function getExams(
   });
 
   return reply.send({
-    data: {
-      exams: availableExams
-    }
+    exams: availableExams
   });
 }
