@@ -66,7 +66,7 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const { allChapters, allBlocks, examBlock } = useMemo(() => {
+  const { allChapters, allBlocks, examChallenge } = useMemo(() => {
     const allBlocks = uniqBy(challenges, 'block').map(
       ({ block, blockType, chapter, module }) => ({
         name: block,
@@ -90,11 +90,11 @@ export const SuperBlockAccordion = ({
       modules: allModules.filter(({ chapter: c }) => c === chapter)
     }));
 
-    const examBlock = challenges.find(
+    const examChallenge = challenges.find(
       ({ blockType }) => blockType === BlockTypes.exam
     );
 
-    return { allChapters, allModules, allBlocks, examBlock };
+    return { allChapters, allModules, allBlocks, examChallenge };
   }, [challenges]);
 
   // Expand the outer layers in order to reveal the chosen block.
@@ -108,13 +108,13 @@ export const SuperBlockAccordion = ({
   return (
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
-        if (examBlock && chapter.name === examBlock.chapter) {
+        if (examChallenge && chapter.name === examChallenge.chapter) {
           return (
-            <li key={examBlock.dashedName} className='exam'>
+            <li key={examChallenge.dashedName} className='exam'>
               <Block
-                block={examBlock.dashedName}
-                blockType={examBlock.blockType}
-                challenges={[examBlock]}
+                block={examChallenge.block}
+                blockType={examChallenge.blockType}
+                challenges={[examChallenge]}
                 superBlock={superBlock}
               />
             </li>
