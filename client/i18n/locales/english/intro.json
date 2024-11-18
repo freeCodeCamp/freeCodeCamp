@@ -2975,7 +2975,12 @@
       },
       "pehm": { "title": "225", "intro": [] },
       "cvsw": { "title": "226", "intro": [] },
-      "cvs1": { "title": "227", "intro": [] },
+      "lab-voting-system": {
+        "title": "Build a Voting System Using Maps and Sets",
+        "intro": [
+          "In this lab, you will build a voting system using Maps and Sets."
+        ]
+      },
       "review-javascript-maps-sets-and-json": {
         "title": "JavaScript Maps, Sets, and JSON Review",
         "intro": [
