@@ -62,7 +62,7 @@ describe('server', () => {
       const res = await superRequest('/', { method: 'GET' });
       expect(res.headers).toMatchObject({
         'access-control-allow-headers':
-          'Origin, X-Requested-With, Content-Type, Accept, Csrf-Token',
+          'Origin, X-Requested-With, Content-Type, Accept, Csrf-Token, Coderoad-User-Token, Exam-Environment-Authorization-Token',
         'access-control-allow-credentials': 'true',
         'access-control-allow-methods': 'GET, PUT, POST, DELETE'
       });

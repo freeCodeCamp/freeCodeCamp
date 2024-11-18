@@ -13,6 +13,10 @@ on:
       - 'next-**'
       - 'e2e-**'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-client:
     name: Build Client
@@ -147,7 +151,6 @@ jobs:
       - name: Set freeCodeCamp Environment Variables (needed by api)
         run: |
           cp sample.env .env
-          echo 'HOST=0.0.0.0' >> .env
 
       - name: Install playwright dependencies
         run: npx playwright install --with-deps

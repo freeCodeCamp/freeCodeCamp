@@ -34,5 +34,6 @@ services:
       # container, so we have to override these variables.
       - MONGOHQ_URL=mongodb://mongo:27017/freecodecamp?directConnection=true
       - MAILHOG_HOST=mailhog
+      - HOST=0.0.0.0
     ports:
       - '3000:3000'

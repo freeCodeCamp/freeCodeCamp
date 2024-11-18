@@ -3,33 +3,21 @@ import React from 'react';
 import PrismFormatted from './prism-formatted';
 import './challenge-description.css';
 
-type Challenge = {
-  block?: string;
+type Props = {
   description?: string;
   instructions?: string;
-  superBlock?: string;
 };
 
-function ChallengeDescription(challenge: Challenge): JSX.Element {
-  const sbClass = challenge.superBlock ? challenge.superBlock : '';
-  const bClass = challenge.block ? challenge.block : '';
-
-  return (
-    <div
-      className={`challenge-instructions ${sbClass} ${bClass}`}
-      data-playwright-test-label='challenge-description'
-    >
-      {challenge.description && <PrismFormatted text={challenge.description} />}
-      {challenge.instructions && (
-        <>
-          <hr />
-          <PrismFormatted text={challenge.instructions} />
-        </>
-      )}
-      <hr />
-    </div>
-  );
-}
+const ChallengeDescription = ({ description, instructions }: Props) => (
+  <div
+    className={'challenge-instructions'}
+    data-playwright-test-label='challenge-description'
+  >
+    {description && <PrismFormatted text={description} />}
+    {instructions && description && <hr />}
+    {instructions && <PrismFormatted text={instructions} />}
+  </div>
+);
 
 ChallengeDescription.displayName = 'ChallengeDescription';
 
