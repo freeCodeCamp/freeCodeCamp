@@ -1,11 +1,11 @@
 {
   "name": "HTML Fundamentals",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "dashedName": "lecture-html-fundamentals",
-  "order": 4,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "helpCategory": "HTML-CSS",
-  "blockType": "lecture",
   "challengeOrder": [
     {
       "id": "670803abcb3e980233da4768",
@@ -37,7 +37,7 @@
     },
     {
       "id": "670839051794aa19fcef6dc8",
-      "title": "What Is UTF-8 Character Encoding and Why Is It Needed?"
+      "title": "What Is UTF-8 Character Encoding, and Why Is It Needed?"
     },
     {
       "id": "67083952f800051a8a21fcfd",

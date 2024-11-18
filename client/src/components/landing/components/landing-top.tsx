@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 import { clientLocale } from '../../../../config/env.json';
 import {
@@ -12,7 +12,6 @@ import {
   TencentLogo,
   AlibabaLogo
 } from '../../../assets/images/components';
-import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
 import CampersImage from './campers-image';
 
@@ -24,7 +23,7 @@ function LandingTop(): JSX.Element {
   return (
     <Container className='landing-top landing-top-a'>
       <Row>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
           <h1
             id='content-start'
@@ -68,10 +67,10 @@ function LandingTop(): JSX.Element {
               </>
             )}
           </div>
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <BigCallToAction />
           <CampersImage />
-          <Spacer size='medium' />
+          <Spacer size='m' />
         </Col>
       </Row>
     </Container>

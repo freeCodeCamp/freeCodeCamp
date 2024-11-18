@@ -1,6 +1,12 @@
+import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
+test.afterAll(() => {
+  // change the name back to the original
+  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+});
 
 const settingsObject = {
   usernamePlaceholder: '{{username}}',
@@ -16,11 +22,10 @@ const settingsObject = {
   errorCode: '404'
 };
 
-let currentUsername = 'certifieduser';
-
 test.describe('Username Settings Validation', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto(`/${currentUsername}`);
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    await page.goto(`/certifieduser`);
 
     if (!process.env.CI) {
       await page
@@ -108,7 +113,6 @@ test.describe('Username Settings Validation', () => {
     await expect(
       page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
-    currentUsername = settingsObject.usernameAvailable;
   });
 
   test('should update username in lowercase and reflect in the UI', async ({
@@ -129,7 +133,6 @@ test.describe('Username Settings Validation', () => {
     await expect(
       page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
-    currentUsername = settingsObject.usernameUpdateToLowerCase;
   });
 
   test('should update username in uppercase and reflect in the UI', async ({
@@ -150,7 +153,6 @@ test.describe('Username Settings Validation', () => {
     await expect(
       page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
-    currentUsername = settingsObject.usernameUpdateToUpperCase;
   });
 
   test('should update username by pressing enter', async ({ page }) => {
@@ -171,7 +173,6 @@ test.describe('Username Settings Validation', () => {
     await expect(
       page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
-    currentUsername = settingsObject.testUser;
   });
 
   test('should not be able to update username to the same username', async ({
@@ -181,7 +182,7 @@ test.describe('Username Settings Validation', () => {
     const saveButton = page.getByRole('button', {
       name: translations.settings.labels.username
     });
-    await inputLabel.fill(settingsObject.testUser);
+    await inputLabel.fill(settingsObject.certifiedUsername);
     await expect(saveButton).toBeDisabled();
   });
 });

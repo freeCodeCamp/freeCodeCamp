@@ -1,21 +1,19 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Container, Col, Row } from '@freecodecamp/ui';
-
-import { Spacer } from '../components/helpers';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 function BlockedPage(): JSX.Element {
   return (
     <>
       <Helmet title={`Access Denied | freeCodeCamp.org`} />
       <Container className='text-center'>
-        <Spacer size='large' />
+        <Spacer size='l' />
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
             <h1 id='content-start' data-playwright-test-label='main-heading'>
               We can&apos;t log you in.
             </h1>
-            <Spacer size='large' />
+            <Spacer size='l' />
             <Col lg={10} lgOffset={1} sm={10} smOffset={1} xs={12}>
               <div
                 className='text-start'
@@ -40,7 +38,7 @@ function BlockedPage(): JSX.Element {
             </Col>
           </Col>
         </Row>
-        <Spacer size='large' />
+        <Spacer size='l' />
       </Container>
     </>
   );

@@ -3,10 +3,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Container, Col, Row, Button } from '@freecodecamp/ui';
+import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
+import { isEqual } from 'lodash';
 
 // Local Utilities
-import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -24,6 +24,14 @@ import {
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { BlockTypes } from '../../../../../shared/config/blocks';
+import Scene from '../components/scene/scene';
+import MultipleChoiceQuestions from '../components/multiple-choice-questions';
+import ChallengeExplanation from '../components/challenge-explanation';
+import HelpModal from '../components/help-modal';
+
+// Styles
+import './show.css';
+import '../video.css';
 
 // Redux Setup
 const mapStateToProps = (state: unknown) => ({
@@ -35,7 +43,8 @@ const mapDispatchToProps = {
   updateChallengeMeta,
   challengeMounted,
   updateSolutionFormValues,
-  openCompletionModal: () => openModal('completion')
+  openCompletionModal: () => openModal('completion'),
+  openHelpModal: () => openModal('help')
 };
 
 // Types
@@ -46,6 +55,7 @@ interface ShowQuizProps {
   initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
+  openHelpModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -63,12 +73,15 @@ const ShowGeneric = ({
         block,
         blockType,
         description,
+        explanation,
         challengeType,
-        fields: { tests },
+        fields: { blockName, tests },
         helpCategory,
         instructions,
+        questions,
         title,
         translationPending,
+        scene,
         superBlock,
         videoId,
         videoLocaleIds
@@ -79,6 +92,7 @@ const ShowGeneric = ({
   initTests,
   updateChallengeMeta,
   openCompletionModal,
+  openHelpModal,
   isChallengeCompleted
 }: ShowQuizProps) => {
   const { t } = useTranslation();
@@ -127,6 +141,9 @@ const ShowGeneric = ({
     setVideoIsLoaded(true);
   };
 
+  // scene
+  const [isScenePlaying, setIsScenePlaying] = useState(false);
+
   // assignments
   const [assignmentsCompleted, setAssignmentsCompleted] = useState(0);
   const allAssignmentsCompleted = assignmentsCompleted === assignments.length;
@@ -138,9 +155,36 @@ const ShowGeneric = ({
     setAssignmentsCompleted(a => (isCompleted ? a + 1 : a - 1));
   };
 
+  // multiple choice questions
+  const [selectedMcqOptions, setSelectedMcqOptions] = useState(
+    questions.map<number | null>(() => null)
+  );
+  const [submittedMcqAnswers, setSubmittedMcqAnswers] = useState(
+    questions.map<number | null>(() => null)
+  );
+  const [showFeedback, setShowFeedback] = useState(false);
+
+  const handleMcqOptionChange = (
+    questionIndex: number,
+    answerIndex: number
+  ): void => {
+    setSelectedMcqOptions(prev =>
+      prev.map((option, index) =>
+        index === questionIndex ? answerIndex : option
+      )
+    );
+  };
+
   // submit
   const handleSubmit = () => {
-    if (assignments.length == 0 || allAssignmentsCompleted) {
+    const hasCompletedAssignments =
+      assignments.length === 0 || allAssignmentsCompleted;
+    const mcqSolutions = questions.map(question => question.solution - 1);
+    const mcqCorrect = isEqual(mcqSolutions, selectedMcqOptions);
+
+    setSubmittedMcqAnswers(selectedMcqOptions);
+    setShowFeedback(true);
+    if (hasCompletedAssignments && mcqCorrect) {
       openCompletionModal();
     }
   };
@@ -151,6 +195,7 @@ const ShowGeneric = ({
       containerRef={container}
       nextChallengePath={nextChallengePath}
       prevChallengePath={prevChallengePath}
+      playScene={scene ? () => setIsScenePlaying(true) : undefined}
     >
       <LearnLayout>
         <Helmet
@@ -158,7 +203,7 @@ const ShowGeneric = ({
         />
         <Container>
           <Row>
-            <Spacer size='medium' />
+            <Spacer size='m' />
             <ChallengeTitle
               isCompleted={isChallengeCompleted}
               translationPending={translationPending}
@@ -166,11 +211,12 @@ const ShowGeneric = ({
               {title}
             </ChallengeTitle>
 
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {description && (
+            {description && (
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription description={description} />
-              )}
-            </Col>
+                <Spacer size='m' />
+              </Col>
+            )}
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
               {videoId && (
@@ -185,12 +231,20 @@ const ShowGeneric = ({
               )}
             </Col>
 
+            {scene && (
+              <Scene
+                scene={scene}
+                isPlaying={isScenePlaying}
+                setIsPlaying={setIsScenePlaying}
+              />
+            )}
+
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               {instructions && (
-                <ChallengeDescription description={instructions} />
+                <ChallengeDescription instructions={instructions} />
               )}
 
-              <Spacer size='medium' />
+              <Spacer size='m' />
 
               {assignments.length > 0 && (
                 <Assignments
@@ -200,15 +254,34 @@ const ShowGeneric = ({
                 />
               )}
 
+              {questions.length > 0 && (
+                <MultipleChoiceQuestions
+                  questions={questions}
+                  selectedOptions={selectedMcqOptions}
+                  handleOptionChange={handleMcqOptionChange}
+                  submittedMcqAnswers={submittedMcqAnswers}
+                  showFeedback={showFeedback}
+                />
+              )}
+
+              {explanation ? (
+                <ChallengeExplanation explanation={explanation} />
+              ) : null}
+
               <Button block={true} variant='primary' onClick={handleSubmit}>
                 {blockType === BlockTypes.review
                   ? t('buttons.submit')
                   : t('buttons.check-answer')}
               </Button>
+              <Spacer size='xxs' />
+              <Button block={true} variant='primary' onClick={openHelpModal}>
+                {t('buttons.ask-for-help')}
+              </Button>
 
-              <Spacer size='large' />
+              <Spacer size='l' />
             </Col>
             <CompletionModal />
+            <HelpModal challengeTitle={title} challengeBlock={blockName} />
           </Row>
         </Container>
       </LearnLayout>
@@ -234,6 +307,7 @@ export const query = graphql`
         blockType
         challengeType
         description
+        explanation
         helpCategory
         instructions
         fields {
@@ -242,6 +316,51 @@ export const query = graphql`
           tests {
             text
             testString
+          }
+        }
+        questions {
+          text
+          answers {
+            answer
+            feedback
+          }
+          solution
+        }
+        scene {
+          setup {
+            background
+            characters {
+              character
+              position {
+                x
+                y
+                z
+              }
+              opacity
+            }
+            audio {
+              filename
+              startTime
+              startTimestamp
+              finishTimestamp
+            }
+            alwaysShowDialogue
+          }
+          commands {
+            background
+            character
+            position {
+              x
+              y
+              z
+            }
+            opacity
+            startTime
+            finishTime
+            dialogue {
+              text
+              align
+            }
           }
         }
         superBlock

@@ -2,6 +2,7 @@ import React, { useEffect, ReactElement, ReactNode } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Trans } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 
 import { Test } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
@@ -83,6 +84,7 @@ export function SidePanel({
         </p>
       )}
       {challengeDescription}
+      <Spacer size='m' />
       {toolPanel}
       <TestSuite tests={tests} />
     </div>
