@@ -172,7 +172,7 @@ test.describe('Editor theme if the system theme is light', () => {
     test.describe('if the user is signed out and has a light theme set in local storage', () => {
       test.use({ storageState: { cookies: [], origins: [] } });
 
-      test('should be in dark mode', async ({ page }) => {
+      test('should be in light mode', async ({ page }) => {
         // go to the test page
         await page.goto(testPage);
 
