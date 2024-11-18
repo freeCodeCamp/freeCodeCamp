@@ -126,28 +126,24 @@ export const SuperBlockAccordion = ({
             dashedName={chapter.name}
             isExpanded={expandedChapter === chapter.name}
           >
-            {chapter.modules.map(mod => {
-              return (
-                <Module
-                  key={mod.name}
-                  dashedName={mod.name}
-                  isExpanded={expandedModule === mod.name}
-                >
-                  {mod.blocks.map(block => {
-                    return (
-                      <li key={block.name}>
-                        <Block
-                          block={block.name}
-                          blockType={block.blockType}
-                          challenges={block.challenges}
-                          superBlock={superBlock}
-                        />
-                      </li>
-                    );
-                  })}
-                </Module>
-              );
-            })}
+            {chapter.modules.map(mod => (
+              <Module
+                key={mod.name}
+                dashedName={mod.name}
+                isExpanded={expandedModule === mod.name}
+              >
+                {mod.blocks.map(block => (
+                  <li key={block.name}>
+                    <Block
+                      block={block.name}
+                      blockType={block.blockType}
+                      challenges={block.challenges}
+                      superBlock={superBlock}
+                    />
+                  </li>
+                ))}
+              </Module>
+            ))}
           </Chapter>
         );
       })}
