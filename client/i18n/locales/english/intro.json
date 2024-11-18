@@ -2815,6 +2815,12 @@
         ]
       },
       "gibb": { "title": "188", "intro": [] },
+      "workshop-storytelling-app": {
+        "title": "Build a Storytelling App",
+        "intro": [
+          "In this workshop, you will build a storytelling app that will allow you to list different stories based on genre."
+        ]
+      },
       "lab-favorite-icon-toggler": {
         "title": "Build a Favorite Icon Toggler",
         "intro": [
