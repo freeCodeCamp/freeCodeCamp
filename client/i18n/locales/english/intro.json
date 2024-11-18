@@ -2890,7 +2890,12 @@
         "title": "JavaScript Events Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Events."]
       },
-      "kaqq": { "title": "201", "intro": [] },
+      "lecture-debugging-techniques": {
+        "title": "Debugging Techniques",
+        "intro": [
+          "In these lecture videos, you will learn debugging techniques."
+        ]
+      },
       "lab-random-background-color-changer": {
         "title": "Debug a Random Background Color Changer",
         "intro": [
@@ -2909,7 +2914,12 @@
           "Test what you've learned in this quiz on Debugging JavaScript."
         ]
       },
-      "ilop": { "title": "205", "intro": [] },
+      "lecture-working-with-regular-expressions": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "In these lecture videos, you will learn about regular expressions in JavaScript."
+        ]
+      },
       "workshop-spam-filter": {
         "title": "Build a Spam Filter",
         "intro": [
@@ -2939,7 +2949,12 @@
           "Test what you've learned in this quiz on JavaScript Regular Expressions."
         ]
       },
-      "zalp": { "title": "211", "intro": [] },
+      "lecture-understanding-form-validation": {
+        "title": "Understanding Form Validation",
+        "intro": [
+          "In these lecture videos, you will learn about form validation in JavaScript."
+        ]
+      },
       "workshop-calorie-counter": {
         "title": "Build a Calorie Counter",
         "intro": [
@@ -2960,7 +2975,12 @@
           "Test what you've learned in this quiz on Form Validation with JavaScript."
         ]
       },
-      "lupt": { "title": "216", "intro": [] },
+      "lecture-working-with-dates": {
+        "title": "Working with Dates",
+        "intro": [
+          "In these lecture videos, you will learn about working with JavaScript dates."
+        ]
+      },
       "lab-date-conversion": {
         "title": "Build a Date Conversion Program",
         "intro": [
@@ -2977,7 +2997,12 @@
         "title": "JavaScript Dates Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Dates."]
       },
-      "lvts": { "title": "220", "intro": [] },
+      "lecture-working-with-audio-and-video": {
+        "title": "Working with Audio and Video",
+        "intro": [
+          "In these lecture videos, you will learn about working with audio and video using JavaScript."
+        ]
+      },
       "foal": { "title": "221", "intro": [] },
       "crzf": { "title": "222", "intro": [] },
       "review-javascript-audio-and-video": {
@@ -2992,7 +3017,12 @@
           "Test what you've learned in this quiz on JavaScript Audio and Video."
         ]
       },
-      "pehm": { "title": "225", "intro": [] },
+      "lecture-working-with-maps-and-sets": {
+        "title": "Working with Maps and Sets",
+        "intro": [
+          "In these lecture videos, you will learn about JavaScript Maps and Sets."
+        ]
+      },
       "cvsw": { "title": "226", "intro": [] },
       "cvs1": { "title": "227", "intro": [] },
       "review-javascript-maps-sets-and-json": {
@@ -3002,7 +3032,12 @@
         ]
       },
       "cvs3": { "title": "229", "intro": [] },
-      "fgbp": { "title": "230", "intro": [] },
+      "lecture-working-with-client-side-storage-and-crud-operations": {
+        "title": "Working with Client-Side Storage and CRUD Operations",
+        "intro": [
+          "In these lecture videos, you will learn about client-side storage and CRUD operations with JavaScript."
+        ]
+      },
       "workshop-todo-app": {
         "title": "Build a Todo App using Local Storage",
         "intro": [
@@ -3026,7 +3061,12 @@
           "Test what you've learned in this quiz on Local Storage and CRUD."
         ]
       },
-      "jbst": { "title": "235", "intro": [] },
+      "lecture-understanding-how-to-work-with-classes-in-javascript": {
+        "title": "Understanding How to Work with Classes in JavaScript",
+        "intro": [
+          "In these lecture videos, you will learn about working with classes in JavaScript."
+        ]
+      },
       "workshop-shopping-cart": {
         "title": "Build a Shopping Cart",
         "intro": [
@@ -3048,7 +3088,12 @@
         ]
       },
       "ndl1": { "title": "240", "intro": [] },
-      "ndl2": { "title": "241", "intro": [] },
+      "lecture-understanding-recursion-and-the-call-stack": {
+        "title": "Understanding Recursion and the Call Stack",
+        "intro": [
+          "In these lecture videos, you will learn about recursion and the call stack."
+        ]
+      },
       "ndl3": { "title": "242", "intro": [] },
       "ndl4": { "title": "243", "intro": [] },
       "review-recursion": {
@@ -3061,10 +3106,21 @@
         "title": "Recursion Quiz",
         "intro": ["Test what you've learned in this quiz on Recursion."]
       },
-      "yshh": { "title": "246", "intro": [] },
+      "lecture-understanding-functional-programming": {
+        "title": "Understanding Functional Programming",
+        "intro": [
+          "In these lecture videos, you will learn about functional programming."
+        ]
+      },
       "wyx1": { "title": "247", "intro": [] },
       "wyx2": { "title": "248", "intro": [] },
       "wyx3": { "title": "249", "intro": [] },
+      "lecture-understanding-asynchronous-programming": {
+        "title": "Understanding Asynchronous Programming",
+        "intro": [
+          "In these lecture videos, you will learn about asynchronous programming."
+        ]
+      },
       "quiz-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Quiz",
         "intro": [
