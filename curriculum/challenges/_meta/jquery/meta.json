@@ -86,5 +86,6 @@
       "id": "bad87fee1348bd9aecb08826",
       "title": "Use jQuery to Modify the Entire Page"
     }
-  ]
+  ],
+  "blockLayout": "legacy-challenge-list"
 }

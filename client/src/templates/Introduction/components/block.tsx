@@ -444,34 +444,20 @@ class Block extends Component<BlockProps> {
       </ScrollableAnchor>
     );
 
-    const blockRenderer = () => {
-      const blockLayout = challenges[0].blockLayout;
-
-      // `blockLayout` property isn't available in all challenges
-      if (!blockLayout) {
-        if (isProjectBlock)
-          return isGridBlock ? LegacyLinkBlock : ProjectListBlock;
-        return isGridBlock
-          ? LegacyChallengeGridBlock
-          : LegacyChallengeListBlock;
-      }
-
-      // blockLayout is only being used in new certs at the moment, so I made some new components for them for now to not interfere with the existing ones
-      if (blockLayout === BlockLayouts.ChallengeGrid) return ChallengeGridBlock;
-      if (blockLayout === BlockLayouts.ChallengeList) return ChallengeListBlock;
-      if (blockLayout === BlockLayouts.Link) return LinkBlock;
-      if (blockLayout === BlockLayouts.ProjectList) return ProjectListBlock;
-      if (blockLayout === BlockLayouts.LegacyLink) return LegacyLinkBlock;
-      if (blockLayout === BlockLayouts.LegacyChallengeList)
-        return LegacyChallengeListBlock;
-      if (blockLayout === BlockLayouts.LegacyChallengeGrid)
-        return LegacyChallengeGridBlock;
+    const layoutToComponent = {
+      [BlockLayouts.ChallengeGrid]: ChallengeGridBlock,
+      [BlockLayouts.ChallengeList]: ChallengeListBlock,
+      [BlockLayouts.Link]: LinkBlock,
+      [BlockLayouts.ProjectList]: ProjectListBlock,
+      [BlockLayouts.LegacyLink]: LegacyLinkBlock,
+      [BlockLayouts.LegacyChallengeList]: LegacyChallengeListBlock,
+      [BlockLayouts.LegacyChallengeGrid]: LegacyChallengeGridBlock
     };
 
     return (
       <>
-        {blockRenderer()}
-        {isGridBlock && !isProjectBlock ? null : <Spacer size='m' />}
+        {layoutToComponent[challenges[0].blockLayout]}
+        {(!isGridBlock || isProjectBlock) && <Spacer size='m' />}
       </>
     );
   }
