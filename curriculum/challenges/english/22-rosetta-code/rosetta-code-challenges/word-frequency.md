@@ -29,71 +29,71 @@ For example, given the string "Hello hello goodbye", your function should return
 `wordFrequency` should be a function.
 
 ```js
-assert(typeof wordFrequency == 'function');
+assert.isFunction(wordFrequency);
 ```
 
 `wordFrequency` should return an array.
 
 ```js
-assert(Array.isArray(wordFrequency('test')));
+assert.isArray(wordFrequency('test'));
 ```
 
 `wordFrequency("Hello hello world", 2)` should return `[['hello', 2], ['world', 1]]`
 
 ```js
+const example_1 = 'Hello hello world';
+const example_1_solution = [['hello', 2], ['world', 1]];
+
 assert.deepEqual(wordFrequency(example_1, 2), example_1_solution);
 ```
 
 `wordFrequency("The quick brown fox jumped over the lazy dog", 1)` should return `[['the', 2]]`
 
 ```js
+const example_2 = 'The quick brown fox jumped over the lazy dog';
+const example_2_solution = [['the', 2]];
+
 assert.deepEqual(wordFrequency(example_2, 1), example_2_solution);
 ```
 
 `wordFrequency("Opensource opensource open-source open source", 1)` should return `[['opensource', 2]]`
 
 ```js
+const example_3 = 'Opensource opensource open-source open source';
+const example_3_solution = [['opensource', 2]];
+
 assert.deepEqual(wordFrequency(example_3, 1), example_3_solution);
 ```
 
 `wordFrequency("Apple App apply aPP aPPlE", 3)` should return `[['app', 2], ['apple', 2], ['apply', 1]]` or `[['apple', 2], ['app', 2], ['apply', 1]]`
 
 ```js
-const arr = JSON.stringify(wordFrequency(example_4, 3));
-assert(arr === example_4_solution_a || arr === example_4_solution_b);
+const example_4 = 'Apple App apply aPP aPPlE';
+const example_4_solution = [["app", 2],["apple", 2],["apply", 1]];
+
+const arr = wordFrequency(example_4, 3);
+assert.includeDeepMembers(arr, example_4_solution);
 ```
 
 `wordFrequency("c d a d c a b d d c", 4)` should return `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]`
 
 ```js
+const example_5 = 'c d a d c a b d d c';
+const example_5_solution = [['d', 4], ['c', 3], ['a', 2], ['b', 1]];
+
 assert.deepEqual(wordFrequency(example_5, 4), example_5_solution);
 ```
 
 `wordFrequency("", 5)` should return `[]`
 
 ```js
+const example_6 = '';
+const example_6_solution = [];
+
 assert.deepEqual(wordFrequency(example_6, 5), example_6_solution);
 ```
 
 # --seed--
-
-## --before-user-code--
-
-```js
-var example_1 = 'Hello hello world';
-var example_1_solution = [['hello', 2], ['world', 1]];
-var example_2 = 'The quick brown fox jumped over the lazy dog';
-var example_2_solution = [['the', 2]];
-var example_3 = 'Opensource opensource open-source open source';
-var example_3_solution = [['opensource', 2]];
-var example_4 = 'Apple App apply aPP aPPlE';
-var example_4_solution_a = "[[\"app\",2],[\"apple\",2],[\"apply\",1]]";
-var example_4_solution_b = "[[\"apple\",2],[\"app\",2],[\"apply\",1]]";
-var example_5 = 'c d a d c a b d d c';
-var example_5_solution = [['d', 4], ['c', 3], ['a', 2], ['b', 1]];
-var example_6 = '';
-var example_6_solution = [];
-```
 
 ## --seed-contents--
 
