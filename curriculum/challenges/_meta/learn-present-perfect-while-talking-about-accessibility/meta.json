@@ -502,5 +502,6 @@
       "title": "Task 120"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-list"
 }
