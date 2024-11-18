@@ -24,6 +24,7 @@ const blockSchema = Joi.object({}).keys({
     template: Joi.string().allow(''),
     required: Joi.array(),
     superBlock: Joi.string(),
+    blockLayout: Joi.string(),
     challengeOrder: Joi.array().items(
       Joi.object({}).keys({
         id: Joi.string(),

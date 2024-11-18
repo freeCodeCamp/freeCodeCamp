@@ -450,5 +450,6 @@
       "title": "Task 106"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }

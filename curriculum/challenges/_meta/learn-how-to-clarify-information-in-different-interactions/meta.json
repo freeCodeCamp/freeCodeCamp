@@ -370,5 +370,6 @@
       "title": "Task 86"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }
