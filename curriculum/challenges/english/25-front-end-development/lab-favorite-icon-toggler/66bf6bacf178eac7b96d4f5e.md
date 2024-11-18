@@ -58,7 +58,7 @@ Initially, the `span` elements should contain the code `&#9825;` to represent an
 
 ```js
 const inputs = document.querySelectorAll('ul li span.favorite-icon');
-assert.notEmpty(inputs)
+assert.isNotEmpty(inputs)
 
 for (let input of inputs) {
     assert.strictEqual(input.innerHTML.charCodeAt(0), 9825);
@@ -69,7 +69,7 @@ When the `span` element is clicked, and it contains the class `filled`, you shou
 
 ```js
 const spanElements = document.querySelectorAll('.favorite-icon');
-assert.notEmpty(spanElements);
+assert.isNotEmpty(spanElements);
 
 spanElements.forEach(span => span.classList.add('filled'));
 
@@ -85,7 +85,7 @@ When the `span` element is clicked, and it doesn't contain the class `filled`, y
 
 ```js
 const spanElements = document.querySelectorAll('.favorite-icon');
-assert.notEmpty(spanElements);
+assert.isNotEmpty(spanElements);
 
 spanElements.forEach(span => span.classList.remove('filled'));
 
