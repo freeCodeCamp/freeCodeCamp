@@ -69,10 +69,10 @@ assert.deepEqual(wordFrequency(example_3, 1), example_3_solution);
 
 ```js
 const example_4 = 'Apple App apply aPP aPPlE';
-const example_4_solution = [["app",2],["apple",2],["apply",1]];
+const example_4_solution = [["app", 2],["apple", 2],["apply", 1]];
 
 const arr = wordFrequency(example_4, 3);
-assert.includeDeepMembers(arr,example_4_solution);
+assert.includeDeepMembers(arr, example_4_solution);
 ```
 
 `wordFrequency("c d a d c a b d d c", 4)` should return `[['d', 4], ['c', 3], ['a', 2], ['b', 1]]`
