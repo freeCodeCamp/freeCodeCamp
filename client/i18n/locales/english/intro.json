@@ -3293,7 +3293,10 @@
         ]
       },
       "cdfr": { "title": "263", "intro": [] },
-      "bgtd": { "title": "264", "intro": [] },
+      "lab-mood-board-react": {
+        "title": "Build a Mood Board using React",
+        "intro": ["In this lab, you will create a mood board using React props"]
+      },
       "ascd": { "title": "265", "intro": [] },
       "quiz-react-basics": {
         "title": "React Basics Quiz",
