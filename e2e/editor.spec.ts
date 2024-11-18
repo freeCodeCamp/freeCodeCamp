@@ -81,11 +81,32 @@ test.describe('Editor theme if the system theme is dark', () => {
     });
   });
 
-  test.describe('If the user is signed out', () => {
+  test.describe('If the user is signed out and has no local storage data', () => {
     test.use({ storageState: { cookies: [], origins: [] } });
 
     test('should be in dark mode', async ({ page }) => {
       await page.goto(testPage);
+      const editor = page.locator("div[role='code'].monaco-editor");
+      await expect(editor).toHaveClass(/vs-dark/);
+    });
+  });
+
+  test.describe('if the user is signed out and has a dark theme set in local storage', () => {
+    test.use({ storageState: { cookies: [], origins: [] } });
+
+    test('should be in dark mode', async ({ page }) => {
+      // go to the test page
+      await page.goto(testPage);
+
+      // set the dark theme in local storage
+      await page.evaluate(() => {
+        localStorage.setItem('theme', 'dark');
+      });
+
+      // reload the page to apply the local storage changes
+      await page.reload();
+
+      // check if the editor is in dark mode
       const editor = page.locator("div[role='code'].monaco-editor");
       await expect(editor).toHaveClass(/vs-dark/);
     });
@@ -139,13 +160,34 @@ test.describe('Editor theme if the system theme is light', () => {
     });
   });
 
-  test.describe('If the user is signed out', () => {
+  test.describe('If the user is signed out and has no local storage value', () => {
     test.use({ storageState: { cookies: [], origins: [] } });
 
     test('should be in light mode', async ({ page }) => {
       await page.goto(testPage);
       const editor = page.locator("div[role='code'].monaco-editor");
       await expect(editor).toHaveClass(/vs(?!\w)/);
+    });
+
+    test.describe('if the user is signed out and has a light theme set in local storage', () => {
+      test.use({ storageState: { cookies: [], origins: [] } });
+
+      test('should be in dark mode', async ({ page }) => {
+        // go to the test page
+        await page.goto(testPage);
+
+        // set the dark theme in local storage
+        await page.evaluate(() => {
+          localStorage.setItem('theme', 'light');
+        });
+
+        // reload the page to apply the local storage changes
+        await page.reload();
+
+        // check if the editor is in dark mode
+        const editor = page.locator("div[role='code'].monaco-editor");
+        await expect(editor).toHaveClass(/vs(?!\w)/);
+      });
     });
   });
 });
