@@ -435,21 +435,21 @@ It ignores the positioning of the parent and moves relative to its normal positi
 
 #### --text--
 
-What is the default of an element with `position: sticky` in terms of stacking context when combined with a `z-index` value?
+Which of the following is the default value of the `position` property?
 
 #### --distractors--
 
-It will create a new stacking context, and be on top of any other element whose `z-index` is auto.
+`inherit`
 
 ---
 
-By default it behaves like `position: absolute` creating a new stacking context.
+`initial`
 
 ---
 
-It ignores stacking contexts completely and will always end behind every element.
+`relative`
 
 #### --answer--
 
-It stays within the stacking context in which it is if `z-index` is not explicitly defined.
+`static`
 
