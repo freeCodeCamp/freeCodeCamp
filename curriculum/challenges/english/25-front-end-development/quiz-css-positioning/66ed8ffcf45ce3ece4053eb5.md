@@ -17,7 +17,7 @@ Answer all of the questions below correctly to pass the quiz.
 
 #### --text--
 
-The main purpose of the float property in CSS is:
+The main purpose of the `float` property in CSS is:
 
 #### --distractors--
 
@@ -149,7 +149,7 @@ Which positioning method allows an element to stick to a defined position only w
 
 #### --text--
 
-What would happen if an element had `z-index: -1`?
+What happens if an element has `z-index: -1`?
 
 #### --distractors--
 
@@ -219,7 +219,7 @@ What happens when setting the `overflow` property of a parent to `auto` if one o
 
 #### --distractors--
 
-The child element's sticky behaviour is not affected by the overflow property of the parent.
+The child element's sticky behavior is not affected by the `overflow` property of the parent.
 
 ---
 
@@ -227,17 +227,17 @@ The sticky element will maintain its behavior regardless of scrolling.
 
 ---
 
-The sticky element will act as if it had position: fixed within the parent.
+The sticky element will act as if it has `position: fixed` within the parent.
 
 #### --answer--
 
-The child will lose its sticky behaviour when the parent scrolls.
+The child will lose its sticky behavior when the parent scrolls.
 
 ### --question--
 
 #### --text--
 
-Which of the following are true about `position: relative` and how it affects the child elements?
+Which of the following is true about `position: relative` and how it affects the child elements?
 
 #### --distractors--
 
@@ -245,8 +245,7 @@ Child elements with `position: absolute` will be positioned relative to the near
 
 ---
 
-A `position: relative` element moved does not occupy any space within the document flow.
-
+A `position: relative` element does not occupy any space within the document flow.
 
 ---
 
@@ -352,7 +351,7 @@ When does an element with `z-index: auto` create a new stacking context?
 
 #### --distractors--
 
-When Combined with `position: absolute` or `position: relative`.
+When combined with `position: absolute` or `position: relative`.
 
 ---
 
@@ -370,7 +369,7 @@ In combination with `position: fixed` or `position: sticky`.
 
 #### --text--
 
-If two sibling elements have the same `z-index` and are both positioned absolutely using `position: absolute`, what determins which one is on top?
+If two sibling elements have the same `z-index` and are both positioned absolutely using `position: absolute`, what determines which one is on top?
 
 #### --distractors--
 
@@ -414,7 +413,7 @@ It allows the element to shift without affecting the document flow of sibling el
 
 #### --text--
 
-What happens when a `position: relative` element is nested inside of a `position: absolute` parent, with top and left values set?
+What happens when a `position: relative` element is nested inside of a `position: absolute` parent, with `top` and `left` values set?
 
 #### --distractors--
 
@@ -426,7 +425,7 @@ It moves with respect to the absolute coordinates of the containing parent eleme
 
 ---
 
-It will never create a new stacking context whatever the `z-index` value.
+It will never create a new stacking context regardless of the `z-index` value.
 
 #### --answer--
 
