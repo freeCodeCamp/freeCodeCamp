@@ -776,5 +776,67 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.post(
+    '/submit-quiz-attempt',
+    {
+      schema: schemas.submitQuizAttempt,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          void reply.send({
+            type: 'error',
+            message:
+              'That does not appear to be a valid quiz attempt submission.'
+          });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async req => {
+      const { challengeId, quizId } = req.body;
+
+      const user = await fastify.prisma.user.findUniqueOrThrow({
+        where: { id: req.user?.id },
+        select: {
+          id: true,
+          quizAttempts: true
+        }
+      });
+
+      const existingAttemptIdx = user.quizAttempts.findIndex(
+        attempt =>
+          attempt.challengeId === challengeId && attempt.quizId === quizId
+      );
+
+      const newAttempt = {
+        challengeId,
+        quizId,
+        timestamp: Date.now()
+      };
+
+      const newQuizAttempts = [...user.quizAttempts];
+
+      // If there is an existing attempt, replace it with the new attempt (essentially only timestamp is changed).
+      // Otherwise, add the new attempt to the list.
+      if (existingAttemptIdx !== -1) {
+        newQuizAttempts.splice(existingAttemptIdx, 1, newAttempt);
+      } else {
+        newQuizAttempts.push(newAttempt);
+      }
+
+      await fastify.prisma.user.update({
+        where: { id: user.id },
+        data: {
+          quizAttempts: newQuizAttempts
+        }
+      });
+
+      return {
+        attemptDate: newAttempt.timestamp
+      };
+    }
+  );
+
   done();
 };

@@ -35,6 +35,9 @@ import {
 import { Answer } from '../../utils/exam-types';
 import type { getSessionUser } from '../../schemas/user/get-session-user';
 
+const EXISTING_COMPLETED_DATE = new Date('2024-11-08').getTime();
+const DATE_NOW = Date.now();
+
 jest.mock('../helpers/challenge-helpers', () => {
   const originalModule = jest.requireActual<
     typeof import('../helpers/challenge-helpers')
@@ -1673,6 +1676,147 @@ describe('challengeRoutes', () => {
             examResults: mockResultsAllCorrect
           });
           expect(res.statusCode).toBe(200);
+        });
+      });
+    });
+
+    describe('/submit-quiz-attempt', () => {
+      describe('validation', () => {
+        test('POST rejects requests without challengeId', async () => {
+          const response = await superPost('/submit-quiz-attempt').send({
+            quizId: 'id'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message:
+              'That does not appear to be a valid quiz attempt submission.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects requests without quizId', async () => {
+          const response = await superPost('/submit-quiz-attempt').send({
+            challengeId: '66df3b712c41c499e9d31e5b'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message:
+              'That does not appear to be a valid quiz attempt submission.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects requests without valid ObjectID', async () => {
+          const response = await superPost('/submit-quiz-attempt').send({
+            challengeId: 'not-a-valid-id'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message:
+              'That does not appear to be a valid quiz attempt submission.'
+          });
+          expect(response.statusCode).toBe(400);
+        });
+      });
+
+      describe('handling', () => {
+        beforeAll(() => {
+          jest.useFakeTimers({
+            doNotFake: ['nextTick']
+          });
+          jest.setSystemTime(DATE_NOW);
+        });
+
+        afterAll(() => {
+          jest.useRealTimers();
+        });
+
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              completedChallenges: [],
+              quizAttempts: []
+            }
+          });
+        });
+
+        test('POST adds new attempt to quizAttempts', async () => {
+          const response = await superPost('/submit-quiz-attempt').send({
+            challengeId: '66df3b712c41c499e9d31e5b',
+            quizId: '0'
+          });
+
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          expect(user).toMatchObject({
+            quizAttempts: [
+              {
+                challengeId: '66df3b712c41c499e9d31e5b',
+                quizId: '0',
+                timestamp: DATE_NOW
+              }
+            ]
+          });
+
+          expect(response.statusCode).toBe(200);
+          expect(response.body).toStrictEqual({
+            attemptDate: DATE_NOW
+          });
+        });
+
+        test('POST updates the timestamp of the existing attempt', async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { id: defaultUserId },
+            data: {
+              quizAttempts: [
+                {
+                  challengeId: '66df3b712c41c499e9d31e5b', // quiz-basic-html
+                  quizId: '0',
+                  timestamp: EXISTING_COMPLETED_DATE
+                },
+                {
+                  challengeId: '66ed903cf45ce3ece4053ebe', // quiz-semantic-html
+                  quizId: '1',
+                  timestamp: EXISTING_COMPLETED_DATE
+                }
+              ]
+            }
+          });
+
+          const response = await superPost('/submit-quiz-attempt').send({
+            challengeId: '66df3b712c41c499e9d31e5b',
+            quizId: '0'
+          });
+
+          const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          expect(user).toMatchObject({
+            quizAttempts: [
+              {
+                challengeId: '66df3b712c41c499e9d31e5b',
+                quizId: '0',
+                timestamp: DATE_NOW
+              },
+              {
+                challengeId: '66ed903cf45ce3ece4053ebe',
+                quizId: '1',
+                timestamp: EXISTING_COMPLETED_DATE
+              }
+            ]
+          });
+
+          expect(response.statusCode).toBe(200);
+          expect(response.body).toStrictEqual({
+            attemptDate: DATE_NOW
+          });
         });
       });
     });
