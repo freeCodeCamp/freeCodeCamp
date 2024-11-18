@@ -2055,7 +2055,13 @@
           "In these lecture videos, you will learn about working with pseudo-classes and pseudo-elements in CSS."
         ]
       },
-      "ohhu": { "title": "58", "intro": [] },
+      "workshop-greeting-card": {
+        "title": "Design a Greeting Card",
+        "intro": [
+          "In the previous lecture videos, you learned how to work with the different types of pseudo-classes.",
+          "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
+        ]
+      },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
         "intro": [
