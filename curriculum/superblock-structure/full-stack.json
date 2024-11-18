@@ -393,6 +393,7 @@
             {
               "dashedName": "lecture-working-with-the-dom-click-events-and-web-apis"
             },
+            { "dashedName": "workshop-storytelling-app" },
             { "dashedName": "lab-favorite-icon-toggler" },
             {
               "dashedName": "review-dom-manipulation-and-click-events-with-javascript"
@@ -403,6 +404,7 @@
             {
               "dashedName": "lecture-understanding-the-event-object-and-event-delegation"
             },
+            { "dashedName": "workshop-music-instrument-filter" },
             { "dashedName": "lab-real-time-counter" },
             { "dashedName": "lab-lightbox-viewer" },
             { "dashedName": "workshop-rps-game" },
@@ -477,6 +479,7 @@
         {
           "dashedName": "recursion",
           "blocks": [
+            { "dashedName": "workshop-decimal-to-binary-converter" },
             { "dashedName": "review-recursion" },
             { "dashedName": "quiz-recursion" }
           ]

@@ -142,5 +142,6 @@
       "title": "Task 31"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }

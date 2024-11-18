@@ -2416,7 +2416,8 @@
       "review-css-grid": {
         "title": "CSS Grid Review",
         "intro": [
-          "Review the CSS Grid concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the fundamentals of CSS Grid, you first need to review.",
+          "Open up this page to review how to work with the different CSS Grid properties like <code>grid-template-columns</code>, <code>grid-gap</code> and more."
         ]
       },
       "quiz-css-grid": {
@@ -2458,7 +2459,8 @@
       "review-css-animations": {
         "title": "CSS Animations Review",
         "intro": [
-          "Review the CSS Animations concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with CSS animations, you first need to review.",
+          "Open up this page to review concepts including <code>prefers-reduced-motion</code>, the <code>@keyframes</code> rule and more."
         ]
       },
       "quiz-css-animations": {
@@ -2469,7 +2471,10 @@
       },
       "review-css": {
         "title": "CSS Review",
-        "intro": ["Review the CSS concepts to prepare for the upcoming exam."]
+        "intro": [
+          "Before you take the CSS prep exam, you first need to review the concepts taught in the previous modules.",
+          "Open up this page to review concepts around the basics of CSS, responsive web design, animations, accessibility and more."
+        ]
       },
       "wvjx": { "title": "127", "intro": [] },
       "lecture-working-with-code-editors-and-ides": {
@@ -2506,7 +2511,8 @@
       "review-javascript-variables-and-data-types": {
         "title": "JavaScript Variables and Data Types Review",
         "intro": [
-          "Review the JavaScript Variables and Data Types concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on JavaScript variables and data types you first need to review the concepts.",
+          "Open up this page to review variables, data types, logging and commenting."
         ]
       },
       "quiz-javascript-variables-and-data-types": {
@@ -2537,7 +2543,8 @@
       "review-javascript-strings": {
         "title": "JavaScript Strings Review",
         "intro": [
-          "Review the JavaScript Strings concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with JavaScript strings, you first need to review.",
+          "Open up this page to review how to work with template literals, the <code>slice</code> method, the <code>includes</code> method, the <code>trim</code> method and more."
         ]
       },
       "quiz-javascript-strings": {
@@ -2638,7 +2645,8 @@
       "review-javascript-functions": {
         "title": "JavaScript Functions Review",
         "intro": [
-          "Review the JavaScript Functions concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on JavaScript functions, HTML, you first need to review the concepts.",
+          "Open up this page to review functions, arrow functions and scope."
         ]
       },
       "quiz-javascript-functions": {
@@ -2813,6 +2821,12 @@
         ]
       },
       "gibb": { "title": "188", "intro": [] },
+      "workshop-storytelling-app": {
+        "title": "Build a Storytelling App",
+        "intro": [
+          "In this workshop, you will build a storytelling app that will allow you to list different stories based on genre."
+        ]
+      },
       "lab-favorite-icon-toggler": {
         "title": "Build a Favorite Icon Toggler",
         "intro": [
@@ -2837,7 +2851,12 @@
           "In these lecture videos, you will learn about the event object and event delegation."
         ]
       },
-      "lbyi": { "title": "193", "intro": [] },
+      "workshop-music-instrument-filter": {
+        "title": "Build a Music Instrument Filter",
+        "intro": [
+          "In this workshop, you will build a music instrument filter with JavaScript."
+        ]
+      },
       "lab-real-time-counter": {
         "title": "Build a Real Time Counter",
         "intro": ["In this lab, you will build a real-time character counter"]
@@ -3058,7 +3077,14 @@
         ]
       },
       "dtfv": { "title": "240", "intro": [] },
-      "bnvw": { "title": "242", "intro": [] },
+      "bnvw": { "title": "241", "intro": [] },
+      "workshop-decimal-to-binary-converter": {
+        "title": "Build a Decimal to Binary Converter",
+        "intro": [
+          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
+          "In this workshop, you’ll build a decimal-to-binary converter using JavaScript. You’ll practice the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
+        ]
+      },
       "xkhk": { "title": "243", "intro": [] },
       "yaxm": { "title": "245", "intro": [] },
       "udia": { "title": "248", "intro": [] },

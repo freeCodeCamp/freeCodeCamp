@@ -24,5 +24,6 @@
       "title": "Step 4"
     }
   ],
-  "helpCategory": "JavaScript"
+  "helpCategory": "JavaScript",
+  "blockLayout": "legacy-challenge-grid"
 }

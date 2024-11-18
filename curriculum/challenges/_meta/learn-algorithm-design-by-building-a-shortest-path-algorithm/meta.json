@@ -244,5 +244,6 @@
       "title": "Step 59"
     }
   ],
-  "helpCategory": "Python"
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-grid"
 }

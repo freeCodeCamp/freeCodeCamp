@@ -7,19 +7,17 @@ export const examEnvironmentExams = {
   response: {
     200: Type.Union([
       Type.Object({
-        data: Type.Object({
-          exams: Type.Array(
-            Type.Object({
-              id: Type.String(),
-              config: Type.Object({
-                name: Type.String(),
-                note: Type.String(),
-                totalTimeInMS: Type.Number()
-              }),
-              canTake: Type.Boolean()
-            })
-          )
-        })
+        exams: Type.Array(
+          Type.Object({
+            id: Type.String(),
+            config: Type.Object({
+              name: Type.String(),
+              note: Type.String(),
+              totalTimeInMS: Type.Number()
+            }),
+            canTake: Type.Boolean()
+          })
+        )
       }),
       STANDARD_ERROR
     ])
