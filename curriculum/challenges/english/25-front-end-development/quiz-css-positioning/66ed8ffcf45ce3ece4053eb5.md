@@ -17,7 +17,7 @@ To pass the quiz, you must correctly answer at least 17 of the 20 of the questio
 
 #### --text--
 
-The main purpose of the `float` property in CSS is:
+What is the main purpose of the `float` property in CSS?
 
 #### --distractors--
 
@@ -256,23 +256,23 @@ The child will lose its sticky behavior when the parent scrolls.
 
 #### --text--
 
-Which of the following is true about `position: relative`?
+Which of the following properties is used to offset a positioned element from its normal position?
 
 #### --distractors--
 
-Child elements with `position: absolute` will be positioned relative to the nearest positioned ancestor, whether that is `relative` or `absolute`.
+`float`
 
 ---
 
-A `position: relative` element does not occupy any space within the document flow.
+`padding-right`
 
 ---
 
-Relative positioning allows an element to overlap sibling elements without affecting their layout.
+`margin-right`
 
 #### --answer--
 
-The `position: relative` element keeps its space in document flow, absolutely positioned children are positioned relative to the parent.
+`right`
 
 ### --question--
 
