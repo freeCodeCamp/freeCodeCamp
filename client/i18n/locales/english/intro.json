@@ -2640,7 +2640,7 @@
       "review-javascript-functions": {
         "title": "JavaScript Functions Review",
         "intro": [
-          "Before you are quizzed on JavaScript functions, HTML, you first need to review the concepts.",
+          "Before you are quizzed on JavaScript functions, you first need to review the concepts.",
           "Open up this page to review functions, arrow functions and scope."
         ]
       },
@@ -2678,7 +2678,8 @@
       "review-javascript-arrays": {
         "title": "JavaScript Arrays Review",
         "intro": [
-          "Review the JavaScript Arrays concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on JavaScript arrays, you first need to review the concepts.",
+          "Open up this page to review concepts like array destructuring, how to add and remove elements from an array, and more."
         ]
       },
       "quiz-javascript-arrays": {
