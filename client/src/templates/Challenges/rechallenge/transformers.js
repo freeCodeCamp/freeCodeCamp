@@ -20,7 +20,7 @@ import {
 import { WorkerExecutor } from '../utils/worker-executor';
 import {
   compileTypeScriptCode,
-  initTypeScriptService
+  checkTSServiceIsReady
 } from '../utils/typescript-worker-handler';
 
 const { filename: sassCompile } = sassData;
@@ -146,7 +146,7 @@ const babelTransformer = loopProtectOptions => {
       testTypeScript,
       async challengeFile => {
         await loadBabel();
-        await initTypeScriptService();
+        await checkTSServiceIsReady();
         const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
         return flow(
           partial(transformHeadTailAndContents, compileTypeScriptCode),
