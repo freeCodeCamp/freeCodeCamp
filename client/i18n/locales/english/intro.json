@@ -3099,7 +3099,10 @@
         ]
       },
       "oxiv": { "title": "260", "intro": [] },
-      "fjvx": { "title": "261", "intro": [] },
+      "lab-reusable-footer": {
+        "title": "Build a Reusable Footer using React",
+        "intro": ["In this lab, you will use React to build a reusable footer."]
+      },
       "lecture-working-with-data-in-react": {
         "title": "Working with Data in React",
         "intro": [
@@ -3406,10 +3409,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "lab-reusable-footer": {
-        "title": "Build a Reusable Footer using React",
-        "intro": ["In this lab, you will use React to build a reusable footer."]
       }
     }
   },
