@@ -245,7 +245,7 @@ function NavLinks({
       </li>
       <li className='nav-line' key='theme'>
         <button
-          aria-pressed={theme === LocalStorageThemes.Dark ? 'true' : 'false'}
+          aria-pressed={theme === LocalStorageThemes.Dark}
           className={'nav-link nav-link-flex'}
           onClick={toggleTheme}
           onKeyDown={currentUserName ? handleMenuKeyDown : handleSignOutKeys}
