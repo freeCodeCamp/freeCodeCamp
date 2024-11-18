@@ -149,11 +149,30 @@ Which positioning method allows an element to stick to a defined position only w
 
 #### --text--
 
-What happens if an element has `z-index: -1`?
+Given the following code:
+
+```css
+#box1 {
+  position: relative;
+  z-index: 1;
+}
+
+#box2 {
+  position: relative;
+  z-index: 2;
+}
+
+#box3 {
+  position: relative;
+  z-index: -1;
+}
+```
+
+How will `#box3` be positioned on the page?
 
 #### --distractors--
 
-It will be on top of all the other elements on the page.
+It will be stacked above all the other elements on the page.
 
 ---
 
@@ -161,11 +180,11 @@ It will disappear from view.
 
 ---
 
-It will stack on top of all other elements.
+It will stay at the bottom corner of the page.
 
 #### --answer--
 
-It will be in the back of other elements on the page. Elements with the same stack level in a stacking context are stacked back-to-front according to document tree order.
+It will be stacked below all the other elements on the page.
 
 ### --question--
 
@@ -215,7 +234,7 @@ A declared `top`, `left`, `right`, or `bottom` property.
 
 #### --text--
 
-What happens when setting the `overflow` property of a parent to `auto` if one of its children has the property `position: sticky`?
+What happens when setting the `overflow` property of a parent to `auto` and one of its children has the property `position: sticky`?
 
 #### --distractors--
 
@@ -237,11 +256,11 @@ The child will lose its sticky behavior when the parent scrolls.
 
 #### --text--
 
-Which of the following is true about `position: relative` and how it affects the child elements?
+Which of the following is true about `position: relative`?
 
 #### --distractors--
 
-Child elements with `position: absolute` will be positioned relative to the nearest positioned ancestor, whether that is relative or absolute.
+Child elements with `position: absolute` will be positioned relative to the nearest positioned ancestor, whether that is `relative` or `absolute`.
 
 ---
 
@@ -267,7 +286,7 @@ The height of the containing block is automatically expanded to fit the floated 
 
 ---
 
-Height will automatically adapt to fit all the floated elements.
+The height will automatically adapt to fit all the floated elements.
 
 ---
 
