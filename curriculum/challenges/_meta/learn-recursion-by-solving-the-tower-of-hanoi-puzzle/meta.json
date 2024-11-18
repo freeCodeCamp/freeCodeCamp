@@ -228,5 +228,6 @@
       "title": "Step 55"
     }
   ],
-  "helpCategory": "Python"
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-grid"
 }
