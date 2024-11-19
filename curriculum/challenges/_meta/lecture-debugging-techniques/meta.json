@@ -1,0 +1,43 @@
+{
+  "name": "Debugging Techniques",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-debugging-techniques",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6733aa9b006d29f4d11307a5",
+      "title": "What Are Some Examples of Common JavaScript Errors?"
+    },
+    {
+      "id": "6733bec70d86e13522e98a4f",
+      "title": "How Does the Throw Statement Work?"
+    },
+    {
+      "id": "6733becf4b0c353553b9bfa4",
+      "title": "How Does the Debugger Statement Work?"
+    },
+    {
+      "id": "6733bedbbccea7357a8a7066",
+      "title": "How Can console.log() and console.error() Work for Simple Debugging?"
+    },
+    {
+      "id": "6733bee844600f35c05b8264",
+      "title": "How Does try...catch...finally Work?"
+    },
+    {
+      "id": "6733bef186068435f8b7eebb",
+      "title": "How Can You Use Conditionals to Avoid Errors?"
+    },
+    {
+      "id": "6733befb703ca6361da3755b",
+      "title": "What Are Some Examples of Using Advanced JavaScript Debugging Techniques?"
+    },
+    {
+      "id": "6733bf075f945c3649ed78d8",
+      "title": "How Do You Use the Developer Tools to Debug JavaScript in the Browser?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

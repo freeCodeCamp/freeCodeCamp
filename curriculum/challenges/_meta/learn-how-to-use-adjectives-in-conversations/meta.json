@@ -10,5 +10,6 @@
       "title": "Dialogue 1: I'm Tom"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-list"
 }

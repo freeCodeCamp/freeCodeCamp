@@ -136,6 +136,7 @@ function DefaultLayout({
   superBlock,
   theme,
   user,
+  pathname,
   fetchUser
 }: DefaultLayoutProps): JSX.Element {
   const { t } = useTranslation();
@@ -269,6 +270,7 @@ function DefaultLayout({
           <Header
             fetchState={fetchState}
             user={user}
+            pathname={pathname}
             skipButtonText={t('learn.skip-to-content')}
           />
           <OfflineWarning
