@@ -152,7 +152,7 @@ export interface PrerequisiteChallenge {
   slug?: string;
 }
 
-export type ChallengeWithCompletedNode = {
+export type ExtendedChallenge = {
   block: string;
   challengeType: number;
   dashedName: string;
@@ -163,6 +163,7 @@ export type ChallengeWithCompletedNode = {
   isCompleted: boolean;
   order: number;
   superBlock: SuperBlocks;
+  stepNumber: number;
   title: string;
 };
 

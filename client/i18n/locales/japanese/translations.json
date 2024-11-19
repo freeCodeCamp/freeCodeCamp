@@ -852,7 +852,7 @@
     "expired-link": "クリックされたリンクは有効期限が切れているようです。サインインするには新しいリンクをリクエストしてください。",
     "signin-success": "成功です！アカウントにサインインしました。コーディングを楽しみましょう！",
     "social-auth-gone": "私たちはプライバシー上の理由のため、ソーシャル認証の使用中止を検討しています。次回は代わりにあなたのメールアドレス ({{email}}) を用いてサインインされることをお勧めします。",
-    "name-needed": "認定証に記載するため、あなたの名前が必要です。アカウント設定に名前を追加し、保存ボタンをクリックしてください。その後、認定証を発行することができるようになります。",
+    "name-needed": "We need your name to put it on your certification. Please add your name in your profile and click save. Then we can issue your certification.",
     "incomplete-steps": "必要な過程が完了していないようです。{{name}} 認定証を獲得するために必修のプロジェクトを完成させてください。",
     "already-claimed": "あなたはすでに {{name}} 認定証を獲得しているようです。",
     "cert-claim-success": "@{{username}} さん、あなたは無事に {{name}} 認定証を獲得しました！freeCodeCamp.org チームを代表してお祝い申し上げます！",

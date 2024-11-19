@@ -100,19 +100,6 @@ export function setContent(
   };
 }
 
-export async function setExt(ext: string, polyP: Promise<ChallengeFile>) {
-  const poly = await polyP;
-  checkPoly(poly);
-  const newPoly = {
-    ...poly,
-    ext,
-    path: poly.name + '.' + ext,
-    fileKey: poly.name + ext
-  };
-  newPoly.history = [...poly.history, newPoly.path];
-  return newPoly;
-}
-
 // This is currently only used to add back properties that are not stored in the
 // database.
 export function regeneratePathAndHistory(poly: ChallengeFile) {

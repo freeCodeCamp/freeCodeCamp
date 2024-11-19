@@ -92,4 +92,20 @@ test.describe('Search bar optimized', () => {
 
     await expect(searchInput).toHaveValue('');
   });
+
+  test('The optimized searchbar component should not render when not on the landing page', async ({
+    page,
+    isMobile
+  }) => {
+    // This means that the default search bar should be rendered ^.
+    await page.getByTestId('curriculum-map-button').nth(0).click();
+
+    if (isMobile) {
+      const menuButton = page.getByTestId('header-menu-button');
+      await expect(menuButton).toBeVisible();
+      await menuButton.click();
+    }
+
+    await expect(page.getByTestId('header-search')).toBeVisible();
+  });
 });
