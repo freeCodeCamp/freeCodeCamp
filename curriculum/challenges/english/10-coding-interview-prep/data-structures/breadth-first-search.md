@@ -36,97 +36,54 @@ Your function will output a JavaScript object key-value pairs with the node and 
 The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `1` should return `{0: 1, 1: 0, 2: 1, 3: 2}`
 
 ```js
-assert(
-  (function () {
-    var graph = [
-      [0, 1, 0, 0],
-      [1, 0, 1, 0],
-      [0, 1, 0, 1],
-      [0, 0, 1, 0]
-    ];
-    var results = bfs(graph, 1);
-    return isEquivalent(results, { 0: 1, 1: 0, 2: 1, 3: 2 });
-  })()
-);
+var graph = [
+  [0, 1, 0, 0],
+  [1, 0, 1, 0],
+  [0, 1, 0, 1],
+  [0, 0, 1, 0]
+];
+var results = bfs(graph, 1);
+assert.deepEqual(results, { 0: 1, 1: 0, 2: 1, 3: 2 });
 ```
 
 The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` with a start node of `1` should return `{0: 1, 1: 0, 2: 1, 3: Infinity}`
 
 ```js
-assert(
-  (function () {
-    var graph = [
-      [0, 1, 0, 0],
-      [1, 0, 1, 0],
-      [0, 1, 0, 0],
-      [0, 0, 0, 0]
-    ];
-    var results = bfs(graph, 1);
-    return isEquivalent(results, { 0: 1, 1: 0, 2: 1, 3: Infinity });
-  })()
-);
+var graph = [
+  [0, 1, 0, 0],
+  [1, 0, 1, 0],
+  [0, 1, 0, 0],
+  [0, 0, 0, 0]
+];
+var results = bfs(graph, 1);
+ assert.deepEqual(results, { 0: 1, 1: 0, 2: 1, 3: Infinity });
 ```
 
 The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `0` should return `{0: 0, 1: 1, 2: 2, 3: 3}`
 
 ```js
-assert(
-  (function () {
-    var graph = [
-      [0, 1, 0, 0],
-      [1, 0, 1, 0],
-      [0, 1, 0, 1],
-      [0, 0, 1, 0]
-    ];
-    var results = bfs(graph, 0);
-    return isEquivalent(results, { 0: 0, 1: 1, 2: 2, 3: 3 });
-  })()
-);
+var graph = [
+  [0, 1, 0, 0],
+  [1, 0, 1, 0],
+  [0, 1, 0, 1],
+  [0, 0, 1, 0]
+];
+var results = bfs(graph, 0);
+ assert.deepEqual(results, { 0: 0, 1: 1, 2: 2, 3: 3 });
 ```
 
 The input graph `[[0, 1], [1, 0]]` with a start node of `0` should return `{0: 0, 1: 1}`
 
 ```js
-assert(
-  (function () {
-    var graph = [
-      [0, 1],
-      [1, 0]
-    ];
-    var results = bfs(graph, 0);
-    return isEquivalent(results, { 0: 0, 1: 1 });
-  })()
-);
+var graph = [
+  [0, 1],
+  [1, 0]
+];
+var results = bfs(graph, 0);
+assert.deepEqual(results, { 0: 0, 1: 1 });
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-// Source: http://adripofjavascript.com/blog/drips/object-equality-in-javascript.html
-function isEquivalent(a, b) {
-    // Create arrays of property names
-    var aProps = Object.getOwnPropertyNames(a);
-    var bProps = Object.getOwnPropertyNames(b);
-    // If number of properties is different,
-    // objects are not equivalent
-    if (aProps.length != bProps.length) {
-        return false;
-    }
-    for (var i = 0; i < aProps.length; i++) {
-        var propName = aProps[i];
-        // If values of same property are not equal,
-        // objects are not equivalent
-        if (a[propName] !== b[propName]) {
-            return false;
-        }
-    }
-    // If we made it this far, objects
-    // are considered equivalent
-    return true;
-}
-```
 
 ## --seed-contents--
 
