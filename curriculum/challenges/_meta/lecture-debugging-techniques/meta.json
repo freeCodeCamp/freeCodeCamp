@@ -15,16 +15,16 @@
       "title": "How Does the Throw Statement Work?"
     },
     {
+      "id": "6733bee844600f35c05b8264",
+      "title": "How Does try...catch...finally Work?"
+    },
+    {
       "id": "6733becf4b0c353553b9bfa4",
       "title": "How Does the Debugger Statement Work?"
     },
     {
       "id": "6733bedbbccea7357a8a7066",
       "title": "How Can console.log() and console.error() Work for Simple Debugging?"
-    },
-    {
-      "id": "6733bee844600f35c05b8264",
-      "title": "How Does try...catch...finally Work?"
     },
     {
       "id": "6733bef186068435f8b7eebb",
