@@ -3102,7 +3102,12 @@
         ]
       },
       "ndl3": { "title": "242", "intro": [] },
-      "ndl4": { "title": "243", "intro": [] },
+      "lab-permutation-generator": {
+        "title": "Build a Permutation Generator",
+        "intro": [
+          "For this lab, you will build a permutation generator that produces all possible permutations of a given string."
+        ]
+      },
       "review-recursion": {
         "title": "Recursion Review",
         "intro": [

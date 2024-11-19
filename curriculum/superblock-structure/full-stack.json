@@ -497,6 +497,7 @@
               "dashedName": "lecture-understanding-recursion-and-the-call-stack"
             },
             { "dashedName": "workshop-decimal-to-binary-converter" },
+            { "dashedName": "lab-permutation-generator" },
             { "dashedName": "review-recursion" },
             { "dashedName": "quiz-recursion" }
           ]
