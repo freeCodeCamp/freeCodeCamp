@@ -2711,7 +2711,8 @@
       "review-javascript-objects": {
         "title": "JavaScript Objects Review",
         "intro": [
-          "Review the JavaScript Objects concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on JavaScript objects, you first need to review the concepts.",
+          "Open up this page to review concepts including how to access information from objects, object destructuring, working with JSON, and more."
         ]
       },
       "quiz-javascript-objects": {
