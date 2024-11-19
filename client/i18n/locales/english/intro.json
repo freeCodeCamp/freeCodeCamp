@@ -2379,7 +2379,7 @@
         "title": "CSS Variables Review",
         "intro": [
           "Before you are quizzed on the fundamentals of CSS variables, you first need to review.",
-          "Open up this page to review how to work with CSS custom properties(CSS variables) and the <code>@property</code> rule."
+          "Open up this page to review how to work with CSS custom properties (CSS variables) and the <code>@property</code> rule." 
         ]
       },
       "quiz-css-variables": {
