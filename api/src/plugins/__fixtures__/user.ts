@@ -12,6 +12,7 @@ export const newUser = (email: string) => ({
   acceptedPrivacyTerms: false,
   completedChallenges: [],
   completedExams: [],
+  quizAttempts: [],
   currentChallengeId: '',
   donationEmails: [],
   email,
