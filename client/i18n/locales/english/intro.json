@@ -2859,7 +2859,8 @@
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
-          "Review the JavaScript Higher Order Functions concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on JavaScript higher order functions, you first need to review the concepts.",
+          "Open up this page to review concepts including how to work with the <code>map()</code>, <code>filter()</code>, and <code>reduce()</code> methods."
         ]
       },
       "quiz-javascript-higher-order-functions": {
