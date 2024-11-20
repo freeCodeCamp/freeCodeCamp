@@ -2890,7 +2890,8 @@
       "review-dom-manipulation-and-click-events-with-javascript": {
         "title": "DOM Manipulation and Click Events with JavaScript Review",
         "intro": [
-          "Review the DOM Manipulation and Click Events with JavaScript concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the Document Object Model, you first need to review the concepts.",
+          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's/code>, the <code>addEventListener()</code> method and more."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
