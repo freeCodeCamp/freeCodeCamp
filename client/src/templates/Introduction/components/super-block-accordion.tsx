@@ -66,36 +66,47 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const { allChapters, allBlocks, examChallenge } = useMemo(() => {
-    const allBlocks = uniqBy(challenges, 'block').map(
-      ({ block, blockType, chapter, module }) => ({
-        name: block,
-        blockType,
-        chapter: chapter as string,
-        module: module as string,
-        challenges: challenges.filter(({ block: b }) => b === block)
-      })
-    );
+  const { allChapters, allBlocks, examChallenges, reviewChallenges } =
+    useMemo(() => {
+      const allBlocks = uniqBy(challenges, 'block').map(
+        ({ block, blockType, chapter, module }) => ({
+          name: block,
+          blockType,
+          chapter: chapter as string,
+          module: module as string,
+          challenges: challenges.filter(({ block: b }) => b === block)
+        })
+      );
 
-    const allModules = uniqBy(allBlocks, 'module').map(
-      ({ module, chapter }) => ({
-        name: module,
-        chapter,
-        blocks: allBlocks.filter(({ module: m }) => m === module)
-      })
-    );
+      const allModules = uniqBy(allBlocks, 'module').map(
+        ({ module, chapter }) => ({
+          name: module,
+          chapter,
+          blocks: allBlocks.filter(({ module: m }) => m === module)
+        })
+      );
 
-    const allChapters = uniqBy(allModules, 'chapter').map(({ chapter }) => ({
-      name: chapter,
-      modules: allModules.filter(({ chapter: c }) => c === chapter)
-    }));
+      const allChapters = uniqBy(allModules, 'chapter').map(({ chapter }) => ({
+        name: chapter,
+        modules: allModules.filter(({ chapter: c }) => c === chapter)
+      }));
 
-    const examChallenge = challenges.find(
-      ({ blockType }) => blockType === BlockTypes.exam
-    );
+      const examChallenges = challenges.filter(
+        ({ blockType }) => blockType === BlockTypes.exam
+      );
 
-    return { allChapters, allModules, allBlocks, examChallenge };
-  }, [challenges]);
+      const reviewChallenges = challenges.filter(
+        ({ blockType }) => blockType === BlockTypes.review
+      );
+
+      return {
+        allChapters,
+        allModules,
+        allBlocks,
+        examChallenges,
+        reviewChallenges
+      };
+    }, [challenges]);
 
   // Expand the outer layers in order to reveal the chosen block.
   const expandedChapter = allBlocks.find(
@@ -108,42 +119,70 @@ export const SuperBlockAccordion = ({
   return (
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
-        if (examChallenge && chapter.name === examChallenge.chapter) {
+        const chapterAsLinkChallenge = examChallenges.find(
+          challenge => challenge.dashedName === chapter.name
+        );
+
+        if (chapterAsLinkChallenge) {
           return (
-            <li key={examChallenge.dashedName} className='exam'>
+            <li key={chapter.name} className='link-chapter'>
               <Block
-                block={examChallenge.block}
-                blockType={examChallenge.blockType}
-                challenges={[examChallenge]}
+                block={chapterAsLinkChallenge.block}
+                blockType={chapterAsLinkChallenge.blockType}
+                challenges={[chapterAsLinkChallenge]}
                 superBlock={superBlock}
               />
             </li>
           );
         }
+
         return (
           <Chapter
             key={chapter.name}
             dashedName={chapter.name}
             isExpanded={expandedChapter === chapter.name}
           >
-            {chapter.modules.map(mod => (
-              <Module
-                key={mod.name}
-                dashedName={mod.name}
-                isExpanded={expandedModule === mod.name}
-              >
-                {mod.blocks.map(block => (
-                  <li key={block.name}>
+            {chapter.modules.map(mod => {
+              const moduleAsLinkChallenge =
+                reviewChallenges.find(
+                  challenge => challenge.dashedName === mod.name
+                ) ||
+                examChallenges.find(
+                  challenge => challenge.dashedName === mod.name
+                );
+
+              if (moduleAsLinkChallenge) {
+                return (
+                  <li key={mod.name} className='link-module'>
                     <Block
-                      block={block.name}
-                      blockType={block.blockType}
-                      challenges={block.challenges}
+                      block={moduleAsLinkChallenge.block}
+                      blockType={moduleAsLinkChallenge.blockType}
+                      challenges={[moduleAsLinkChallenge]}
                       superBlock={superBlock}
                     />
                   </li>
-                ))}
-              </Module>
-            ))}
+                );
+              }
+
+              return (
+                <Module
+                  key={mod.name}
+                  dashedName={mod.name}
+                  isExpanded={expandedModule === mod.name}
+                >
+                  {mod.blocks.map(block => (
+                    <li key={block.name}>
+                      <Block
+                        block={block.name}
+                        blockType={block.blockType}
+                        challenges={block.challenges}
+                        superBlock={superBlock}
+                      />
+                    </li>
+                  ))}
+                </Module>
+              );
+            })}
           </Chapter>
         );
       })}

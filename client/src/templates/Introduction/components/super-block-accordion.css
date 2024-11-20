@@ -18,7 +18,8 @@
 }
 
 .super-block-accordion .chapter,
-.super-block-accordion .exam {
+.super-block-accordion .link-chapter,
+.super-block-accordion .link-module {
   background-color: var(--primary-background);
 }
 
