@@ -78,7 +78,6 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           isRelationalDatabaseCertV8: true,
           isCollegeAlgebraPyCertV8: true,
           isFoundationalCSharpCertV8: true,
-          isUpcomingPythonCertV8: true,
           isHonest: true,
           username: true,
           name: true,

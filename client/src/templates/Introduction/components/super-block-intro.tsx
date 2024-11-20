@@ -26,8 +26,7 @@ export const ConditionalDonationAlert = ({
   const unfinishedCertifications = [
     SuperBlocks.A2English,
     SuperBlocks.B1English,
-    SuperBlocks.FullStackDeveloper,
-    SuperBlocks.UpcomingPython
+    SuperBlocks.FullStackDeveloper
   ];
 
   if (!isDonating && betaCertifications.includes(superBlock))
