@@ -1162,7 +1162,8 @@
     "title": "Matayarisho ya Mahojiano ya Coding",
     "intro": [
       "Ikiwa unatafuta mazoezi ya coding bila malipo ili kujiandaa kwa mahojiano yako ya kazini, tumekushughulikia.",
-      "Sehemu hii ina mamia ya changamoto za usimbaji ambazo hujaribu ujuzi wako wa kanuni, miundo ya data na hisabati. Pia ina idadi ya miradi ya kwenda nyumbani unayoweza kutumia kuimarisha ujuzi wako, au kuongeza kwenye wasifu yako."
+      "This section contains dozens of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio.",
+      "This work incorporates material from <a href=\"https://www.wikipedia.org/\" target=\"_blank\">Wikipedia</a>, which is licensed under the <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\">Creative Commons Attribution-ShareAlike License 4.0</a>. The original content might have been modified and adapted. For the unaltered version and additional details, see the original page on <a href=\"https://www.wikipedia.org/\" target\"_blank\">Wikipedia</a>."
     ],
     "note": "The Project Euler Project and Rosetta Code have been moved to their own courses. Go back to the curriculum to see the list of courses we offer.",
     "blocks": {
@@ -1406,7 +1407,6 @@
   },
   "a2-english-for-developers": {
     "title": "A2 English for Developers (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
@@ -1586,7 +1586,6 @@
   },
   "b1-english-for-developers": {
     "title": "B1 English for Developers (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": ["Placeholder intro"],
     "blocks": {
       "learn-how-to-describe-places-and-events": {
@@ -1708,6 +1707,73 @@
       "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
       "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
     ],
+    "chapters": {
+      "freecodecamp": "freeCodeCamp",
+      "html": "HTML",
+      "css": "CSS",
+      "javascript": "JavaScript",
+      "frontend-libraries": "Front End Libraries",
+      "relational-databases": "Relational Databases",
+      "security-and-privacy": "Security and Privacy"
+    },
+    "modules": {
+      "getting-started-with-freecodecamp": "Getting Started with freeCodeCamp",
+      "basic-html": "Basic HTML",
+      "semantic-html": "Semantic HTML",
+      "html-forms-and-tables": "HTML Forms and Tables",
+      "html-and-accessibility": "HTML and Accessibility",
+      "computer-basics": "Computer Basics",
+      "basic-css": "Basic CSS",
+      "design-for-developers": "Designer for Developers",
+      "absolute-and-relative-units": "Absolute and Relative Units",
+      "pseudo-classes-and-elements": "Pseudo Classes and Elements",
+      "css-colors": "CSS Colors",
+      "styling-forms": "Styling Forms",
+      "css-box-model": "CSS Box Model",
+      "css-flexbox": "CSS Flexbox",
+      "css-typography": "CSS Typography",
+      "css-and-accessibility": "CSS and Accessibility",
+      "attribute-selectors": "Attribute Selectors",
+      "css-positioning": "CSS Positioning",
+      "responsive-design": "Responsive Design",
+      "css-variables": "CSS Variables",
+      "css-grid": "CSS Grid",
+      "css-animations": "CSS Animations",
+      "code-editors": "Code editors",
+      "javascript-variables-and-strings": "JavaScript Variables and Strings",
+      "javascript-booleans-and-numbers": "JavaScript Booleans and Numbers",
+      "javascript-functions": "JavaScript Functions",
+      "javascript-arrays": "JavaScript Arrays",
+      "javascript-objects": "JavaScript Objects",
+      "javascript-loops": "JavaScript Loops",
+      "review-javascript-fundamentals": "Review JavaScript Fundamentals",
+      "higher-order-functions-and-callbacks": "Higher Order Functions and Callbacks",
+      "dom-manipulation-and-events": "DOM Manipulation and Events",
+      "debugging-javascript": "Debugging JavaScript",
+      "basic-regex": "Basic Regex",
+      "form-validation": "Form Validation",
+      "javascript-dates": "JavaScript Dates",
+      "audio-and-video-events": "Audio and Video Events",
+      "maps-sets-and-json": "Maps, Sets, and JSON",
+      "localstorage-and-crud-operations": "localStorage and CRUD Operations",
+      "classes-and-the-this-keyword": "Classes and the <code>this</code> keyword",
+      "recursion": "Recursion",
+      "functional-programming": "Functional Programming",
+      "asynchronous-javascript": "Asynchronous JavaScript",
+      "react-fundamentals": "React Fundamentals",
+      "react-state-hooks-and-routing": "React state, hooks, and routing",
+      "performance": "Performance",
+      "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
+      "testing": "Testing",
+      "typescript-fundamentals": "TypeScript Fundamentals",
+      "bash-fundamentals": "Bash Fundamentals",
+      "relational-databases": "Relational Databases",
+      "bash-scripting": "Bash Scripting",
+      "sql-and-bash": "SQL and Bash",
+      "nano": "Nano",
+      "git": "Git",
+      "security-and-privacy": "Security and Privacy"
+    },
     "blocks": {
       "lecture-welcome-to-freecodecamp": {
         "title": "Welcome to freeCodeCamp",
@@ -2064,9 +2130,12 @@
           "In these lecture videos, you will learn about working with pseudo-classes and pseudo-elements in CSS."
         ]
       },
-      "ohhu": {
-        "title": "58",
-        "intro": []
+      "workshop-greeting-card": {
+        "title": "Design a Greeting Card",
+        "intro": [
+          "In the previous lecture videos, you learned how to work with the different types of pseudo-classes.",
+          "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
+        ]
       },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
@@ -2387,7 +2456,7 @@
         "title": "CSS Variables Review",
         "intro": [
           "Before you are quizzed on the fundamentals of CSS variables, you first need to review.",
-          "Open up this page to review how to work with CSS custom properties(CSS variables) and the <code>@property</code> rule."
+          "Open up this page to review how to work with CSS custom properties (CSS variables) and the <code>@property</code> rule."
         ]
       },
       "quiz-css-variables": {
@@ -2595,7 +2664,8 @@
       "review-javascript-math": {
         "title": "JavaScript Math Review",
         "intro": [
-          "Review the JavaScript Math concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with the <code>Math</code> object, you first need to review.",
+          "Open up this page to review how to work with the <code>Math.random()</code> method, the <code>Math.floor()</code> method and more."
         ]
       },
       "quiz-javascript-math": {
@@ -2611,7 +2681,8 @@
       "review-javascript-comparisons-and-conditionals": {
         "title": "JavaScript Comparisons and Conditionals Review",
         "intro": [
-          "Review the JavaScript Comparisons and Conditionals concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with conditionals, you first need to review.",
+          "Open up this page to review how to work with <code>switch</code> statements, other types of conditionals and more."
         ]
       },
       "quiz-javascript-comparisons-and-conditionals": {
@@ -2660,7 +2731,7 @@
       "review-javascript-functions": {
         "title": "JavaScript Functions Review",
         "intro": [
-          "Before you are quizzed on JavaScript functions, HTML, you first need to review the concepts.",
+          "Before you are quizzed on JavaScript functions, you first need to review the concepts.",
           "Open up this page to review functions, arrow functions and scope."
         ]
       },
@@ -2698,7 +2769,8 @@
       "review-javascript-arrays": {
         "title": "JavaScript Arrays Review",
         "intro": [
-          "Review the JavaScript Arrays concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on JavaScript arrays, you first need to review the concepts.",
+          "Open up this page to review concepts like array destructuring, how to add and remove elements from an array, and more."
         ]
       },
       "quiz-javascript-arrays": {
@@ -2919,9 +2991,11 @@
         "title": "JavaScript Events Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Events."]
       },
-      "kaqq": {
-        "title": "201",
-        "intro": []
+      "lecture-debugging-techniques": {
+        "title": "Debugging Techniques",
+        "intro": [
+          "In these lecture videos, you will learn debugging techniques."
+        ]
       },
       "lab-random-background-color-changer": {
         "title": "Debug a Random Background Color Changer",
@@ -2941,9 +3015,11 @@
           "Test what you've learned in this quiz on Debugging JavaScript."
         ]
       },
-      "ilop": {
-        "title": "205",
-        "intro": []
+      "lecture-working-with-regular-expressions": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "In these lecture videos, you will learn about regular expressions in JavaScript."
+        ]
       },
       "workshop-spam-filter": {
         "title": "Build a Spam Filter",
@@ -2974,9 +3050,11 @@
           "Test what you've learned in this quiz on JavaScript Regular Expressions."
         ]
       },
-      "zalp": {
-        "title": "211",
-        "intro": []
+      "lecture-understanding-form-validation": {
+        "title": "Understanding Form Validation",
+        "intro": [
+          "In these lecture videos, you will learn about form validation in JavaScript."
+        ]
       },
       "workshop-calorie-counter": {
         "title": "Build a Calorie Counter",
@@ -3001,9 +3079,11 @@
           "Test what you've learned in this quiz on Form Validation with JavaScript."
         ]
       },
-      "lupt": {
-        "title": "216",
-        "intro": []
+      "lecture-working-with-dates": {
+        "title": "Working with Dates",
+        "intro": [
+          "In these lecture videos, you will learn about working with JavaScript dates."
+        ]
       },
       "lab-date-conversion": {
         "title": "Build a Date Conversion Program",
@@ -3021,9 +3101,11 @@
         "title": "JavaScript Dates Quiz",
         "intro": ["Test what you've learned in this quiz on JavaScript Dates."]
       },
-      "lvts": {
-        "title": "220",
-        "intro": []
+      "lecture-working-with-audio-and-video": {
+        "title": "Working with Audio and Video",
+        "intro": [
+          "In these lecture videos, you will learn about working with audio and video using JavaScript."
+        ]
       },
       "foal": {
         "title": "221",
@@ -3045,9 +3127,11 @@
           "Test what you've learned in this quiz on JavaScript Audio and Video."
         ]
       },
-      "pehm": {
-        "title": "225",
-        "intro": []
+      "lecture-working-with-maps-and-sets": {
+        "title": "Working with Maps and Sets",
+        "intro": [
+          "In these lecture videos, you will learn about JavaScript Maps and Sets."
+        ]
       },
       "cvsw": {
         "title": "226",
@@ -3067,9 +3151,11 @@
         "title": "229",
         "intro": []
       },
-      "fgbp": {
-        "title": "230",
-        "intro": []
+      "lecture-working-with-client-side-storage-and-crud-operations": {
+        "title": "Working with Client-Side Storage and CRUD Operations",
+        "intro": [
+          "In these lecture videos, you will learn about client-side storage and CRUD operations with JavaScript."
+        ]
       },
       "workshop-todo-app": {
         "title": "Build a Todo App using Local Storage",
@@ -3094,9 +3180,11 @@
           "Test what you've learned in this quiz on Local Storage and CRUD."
         ]
       },
-      "jbst": {
-        "title": "235",
-        "intro": []
+      "lecture-understanding-how-to-work-with-classes-in-javascript": {
+        "title": "Understanding How to Work with Classes in JavaScript",
+        "intro": [
+          "In these lecture videos, you will learn about working with classes in JavaScript."
+        ]
       },
       "workshop-shopping-cart": {
         "title": "Build a Shopping Cart",
@@ -3125,17 +3213,21 @@
         "title": "240",
         "intro": []
       },
-      "ndl2": {
-        "title": "241",
-        "intro": []
+      "lecture-understanding-recursion-and-the-call-stack": {
+        "title": "Understanding Recursion and the Call Stack",
+        "intro": [
+          "In these lecture videos, you will learn about recursion and the call stack."
+        ]
       },
       "ndl3": {
         "title": "242",
         "intro": []
       },
-      "ndl4": {
-        "title": "243",
-        "intro": []
+      "lab-permutation-generator": {
+        "title": "Build a Permutation Generator",
+        "intro": [
+          "For this lab, you will build a permutation generator that produces all possible permutations of a given string."
+        ]
       },
       "review-recursion": {
         "title": "Recursion Review",
@@ -3147,9 +3239,11 @@
         "title": "Recursion Quiz",
         "intro": ["Test what you've learned in this quiz on Recursion."]
       },
-      "yshh": {
-        "title": "246",
-        "intro": []
+      "lecture-understanding-functional-programming": {
+        "title": "Understanding Functional Programming",
+        "intro": [
+          "In these lecture videos, you will learn about functional programming."
+        ]
       },
       "wyx1": {
         "title": "247",
@@ -3162,6 +3256,12 @@
       "wyx3": {
         "title": "249",
         "intro": []
+      },
+      "lecture-understanding-asynchronous-programming": {
+        "title": "Understanding Asynchronous Programming",
+        "intro": [
+          "In these lecture videos, you will learn about asynchronous programming."
+        ]
       },
       "quiz-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Quiz",
