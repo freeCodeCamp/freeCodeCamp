@@ -58,10 +58,6 @@ const superBlockFolderMap = {
   'full-stack-developer': '25-front-end-development'
 };
 
-// These blocks are in the incorrect superblock. They should be moved but, for
-// the audit, we just ignore them.
-const blocksThatNeedToMove = ['d3-dashboard'];
-
 // Adding types for getChallengesForLang is possible, but not worth the effort
 // at this time.
 /* eslint-disable @typescript-eslint/no-unsafe-return */
@@ -160,9 +156,6 @@ async function auditChallengeFiles(
 ) {
   let auditPassed = true;
   for (const file of auditedFiles) {
-    if (blocksThatNeedToMove.some(block => file.includes(`/${block}/`))) {
-      continue;
-    }
     const filePath = join(langCurriculumDirectory, file);
     const fileExists = await access(filePath)
       .then(() => true)
