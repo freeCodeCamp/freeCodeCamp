@@ -24,7 +24,7 @@ Replace the text inside your `p` element with the first few words of this kitty 
 Your `p` element should contain the first few words of the provided "kitty ipsum" text.
 
 ```js
-assert.isTrue(/Kitty(\s)+ipsum/gi.test($('p').text()));
+assert.match(document.querySelector('p').textContent,/Kitty(\s)+ipsum/gi);
 ```
 
 # --seed--

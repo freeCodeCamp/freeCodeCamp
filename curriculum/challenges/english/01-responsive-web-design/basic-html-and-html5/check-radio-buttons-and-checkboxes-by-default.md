@@ -26,13 +26,13 @@ Set the first of your radio buttons and the first of your checkboxes to both be 
 Your first radio button on your form should be checked by default.
 
 ```js
-assert($('input[type="radio"]').prop('checked'));
+assert.isTrue(document.querySelector('input[type="radio"]').checked);
 ```
 
 Your first checkbox on your form should be checked by default.
 
 ```js
-assert($('input[type="checkbox"]').prop('checked'));
+assert.isTrue(document.querySelector('input[type="checkbox"]').checked);
 ```
 
 You should not change the inner text of the `Indoor` label.

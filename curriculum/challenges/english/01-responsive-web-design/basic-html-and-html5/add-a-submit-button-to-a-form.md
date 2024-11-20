@@ -26,33 +26,30 @@ Add a button as the last element of your `form` element with a type of `submit`,
 Your `form` should have a `button` inside it.
 
 ```js
-assert($('form').children('button').length > 0);
+const form = document.querySelector('form');
+const children = form.querySelectorAll(`:scope ${"button"}`); 
+assert.isNotEmpty(children); 
 ```
 
 Your submit button should have the attribute `type` set to `submit`.
 
 ```js
-assert($('button').attr('type') === 'submit');
+assert.strictEqual(document.querySelector('button').getAttribute('type'), 'submit');
 ```
 
 Your submit button should only have the text `Submit`.
 
 ```js
-assert(
-  $('button')
-    .text()
-    .match(/^\s*submit\s*$/gi)
-);
+const text = document.querySelector('button').textContent;
+assert.match(text,/^\s*submit\s*$/gi);
 ```
 
 Your `button` element should have a closing tag.
 
 ```js
-assert(
-  code.match(/<\/button>/g) &&
-    code.match(/<button/g) &&
-    code.match(/<\/button>/g).length === code.match(/<button/g).length
-);
+assert.match(code,/<\/button>/g);
+assert.match(code,/<button/g);
+assert.strictEqual(code.match(/<\/button>/g).length,code.match(/<button/g).length);
 ```
 
 # --seed--

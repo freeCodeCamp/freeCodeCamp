@@ -39,14 +39,16 @@ There should be only one `head` element on the page.
 
 ```js
 const headElems = code.replace(/\n/g, '').match(/\<head\s*>.*?\<\/head\s*>/g);
-assert(headElems && headElems.length === 1);
+assert.exists(headElems); 
+assert.lengthOf(headElems,1);
 ```
 
 There should be only one `body` element on the page.
 
 ```js
 const bodyElems = code.replace(/\n/g, '').match(/<body\s*>.*?<\/body\s*>/g);
-assert(bodyElems && bodyElems.length === 1);
+assert.exists(bodyElems); 
+assert.lengthOf(bodyElems,1);
 ```
 
 The `head` element should be a child of the `html` element.
@@ -61,7 +63,7 @@ if (htmlChildren) {
 
   foundHead = children.match(/<head\s*>.*<\/head\s*>/);
 }
-assert(foundHead);
+assert.exists(foundHead);
 ```
 
 The `body` element should be a child of the `html` element.
@@ -75,7 +77,7 @@ if (htmlChildren) {
   const { children } = htmlChildren.groups;
   foundBody = children.match(/<body\s*>.*<\/body\s*>/);
 }
-assert(foundBody);
+assert.exists(foundBody);
 ```
 
 The `head` element should wrap around the `title` element.
@@ -89,7 +91,7 @@ if (headChildren) {
   const { children } = headChildren.groups;
   foundTitle = children.match(/<title\s*>.*?<\/title\s*>/);
 }
-assert(foundTitle);
+assert.exists(foundTitle);
 ```
 
 The `body` element should wrap around both the `h1` and `p` elements.
@@ -107,7 +109,7 @@ if (bodyChildren) {
   const numPs = ps ? ps.length : 0;
   foundElems = numH1s === 1 && numPs === 1;
 }
-assert(foundElems);
+assert.exists(foundElems);
 ```
 
 # --seed--

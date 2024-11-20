@@ -33,80 +33,76 @@ Create an ordered list of the top 3 things cats hate the most.
 You should have an ordered list for `Top 3 things cats hate:`
 
 ```js
-assert(/Top 3 things cats hate:/i.test($('ol').prev().text()));
+const previousElement = document.querySelector('ol').previousElementSibling; 
+assert.match(previousElement.textContent,/Top 3 things cats hate:/i);
 ```
 
 You should have an unordered list for `Things cats love:`
 
 ```js
-assert(/Things cats love:/i.test($('ul').prev().text()));
+const previousElement = document.querySelector('ul').previousElementSibling; 
+assert.match(previousElement.textContent,/Things cats love:/i);
 ```
 
 You should have only one `ul` element.
 
 ```js
-assert.equal($('ul').length, 1);
+assert.lengthOf(document.querySelectorAll('ul'), 1);
 ```
 
 You should have only one `ol` element.
 
 ```js
-assert.equal($('ol').length, 1);
+assert.lengthOf(document.querySelectorAll('ol'), 1);
 ```
 
 You should have three `li` elements within your `ul` element.
 
 ```js
-assert.equal($('ul li').length, 3);
+assert.lengthOf(document.querySelectorAll('ul li'), 3);
 ```
 
 You should have three `li` elements within your `ol` element.
 
 ```js
-assert.equal($('ol li').length, 3);
+assert.lengthOf(document.querySelectorAll('ol li'), 3);
 ```
 
 Your `ul` element should have a closing tag.
 
 ```js
-assert(
-  code.match(/<\/ul>/g) &&
-    code.match(/<\/ul>/g).length === code.match(/<ul>/g).length
-);
+assert.match(code,/<\/ul>/g);
+assert.strictEqual(code.match(/<\/ul>/g).length ,code.match(/<ul>/g).length);
 ```
 
 Your `ol` element should have a closing tag.
 
 ```js
-assert(
-  code.match(/<\/ol>/g) &&
-    code.match(/<\/ol>/g).length === code.match(/<ol>/g).length
-);
+assert.match(code,/<\/ol>/g);
+assert.strictEqual(code.match(/<\/ol>/g).length ,code.match(/<ol>/g).length);
 ```
 
 Your `li` element should have a closing tag.
 
 ```js
-assert(
-  code.match(/<\/li>/g) &&
-    code.match(/<li>/g) &&
-    code.match(/<\/li>/g).length === code.match(/<li>/g).length
-);
+assert.match(code,/<\/li>/g);
+assert.match(code,/<li>/g);
+assert.strictEqual(code.match(/<\/li>/g).length ,code.match(/<li>/g).length);
 ```
 
 The `li` elements in your unordered list should not be empty.
 
 ```js
-$('ul li').each((i, val) =>
-  assert(__helpers.removeWhiteSpace(val.textContent))
+[...document.querySelectorAll('ul li')].forEach((val) =>
+  assert.isNotEmpty(__helpers.removeWhiteSpace(val.textContent))
 );
 ```
 
 The `li` elements in your ordered list should not be empty.
 
 ```js
-$('ol li').each((i, val) =>
-  assert(!!__helpers.removeWhiteSpace(val.textContent))
+[...document.querySelectorAll('ol li')].forEach((val) =>
+  assert.isNotEmpty(__helpers.removeWhiteSpace(val.textContent))
 );
 ```
 
