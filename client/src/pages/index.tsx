@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 import { useGrowthBook } from '@growthbook/growthbook-react';
@@ -57,6 +57,10 @@ function IndexPage({
     allChallengeNode: { nodes: challengeNodes }
   }
 }: Props): JSX.Element {
+  useEffect(() => {
+    sessionStorage.setItem('canOpenModal', 'true');
+  }, []);
+
   const { t } = useTranslation();
   const growthbook = useGrowthBook();
   const allChallenges = challengeNodes.map(node => node.challenge);
