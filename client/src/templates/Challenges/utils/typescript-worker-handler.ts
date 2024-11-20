@@ -30,10 +30,10 @@ export function compileTypeScriptCode(code: string): Promise<string> {
   });
 }
 
-export function initTypeScriptService(): Promise<boolean> {
+export function checkTSServiceIsReady(): Promise<boolean> {
   return awaitResponse({
     worker: getTypeScriptWorker(),
-    message: { type: 'init' },
+    message: { type: 'check-is-ready' },
     onMessage: (data, onSuccess) => {
       if (data.type === 'ready') {
         onSuccess(true);

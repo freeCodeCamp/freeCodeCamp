@@ -96,13 +96,13 @@ export const viewTypes = {
   [codeAllyPractice]: 'codeAlly',
   [codeAllyCert]: 'codeAlly',
   [multifileCertProject]: 'classic',
-  [theOdinProject]: 'odin',
+  [theOdinProject]: 'generic',
   [colab]: 'frontend',
   [exam]: 'exam',
   [msTrophy]: 'msTrophy',
-  [multipleChoice]: 'odin',
+  [multipleChoice]: 'generic',
   [python]: 'modern',
-  [dialogue]: 'generic', // TODO: use generic challengeType for dialogues
+  [dialogue]: 'generic',
   [fillInTheBlank]: 'fillInTheBlank',
   [multifilePythonCertProject]: 'classic',
   [generic]: 'generic'

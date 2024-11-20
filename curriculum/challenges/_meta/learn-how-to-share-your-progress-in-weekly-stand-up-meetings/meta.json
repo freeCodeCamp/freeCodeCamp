@@ -254,5 +254,6 @@
       "title": "Task 59"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }
