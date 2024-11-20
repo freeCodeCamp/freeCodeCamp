@@ -2791,7 +2791,8 @@
       "review-javascript-loops": {
         "title": "JavaScript Loops Review",
         "intro": [
-          "Review the JavaScript Loops concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the different JavaScript loops, you first need to review.",
+          "Open up this page to review the <code>for...of</code> loop, <code>while</code> loop, <code>break and continue</code> statements and more."
         ]
       },
       "quiz-javascript-loops": {
