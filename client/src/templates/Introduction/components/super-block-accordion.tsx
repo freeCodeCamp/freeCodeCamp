@@ -142,18 +142,18 @@ export const SuperBlockAccordion = ({
             dashedName={chapter.name}
             isExpanded={expandedChapter === chapter.name}
           >
-            {chapter.modules.map(mod => {
+            {chapter.modules.map(module => {
               const moduleAsLinkChallenge =
                 reviewChallenges.find(
-                  challenge => challenge.dashedName === mod.name
+                  challenge => challenge.dashedName === module.name
                 ) ||
                 examChallenges.find(
-                  challenge => challenge.dashedName === mod.name
+                  challenge => challenge.dashedName === module.name
                 );
 
               if (moduleAsLinkChallenge) {
                 return (
-                  <li key={mod.name} className='link-module'>
+                  <li key={module.name} className='link-module'>
                     <Block
                       block={moduleAsLinkChallenge.block}
                       blockType={moduleAsLinkChallenge.blockType}
@@ -166,11 +166,11 @@ export const SuperBlockAccordion = ({
 
               return (
                 <Module
-                  key={mod.name}
-                  dashedName={mod.name}
-                  isExpanded={expandedModule === mod.name}
+                  key={module.name}
+                  dashedName={module.name}
+                  isExpanded={expandedModule === module.name}
                 >
-                  {mod.blocks.map(block => (
+                  {module.blocks.map(block => (
                     <li key={block.name}>
                       <Block
                         block={block.name}

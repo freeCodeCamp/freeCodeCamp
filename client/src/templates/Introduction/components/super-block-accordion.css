@@ -68,3 +68,7 @@
 .super-block-accordion .module-panel {
   padding: 0 24px;
 }
+
+.super-block-accordion .chapter-panel > li:last-child .block-grid {
+  border-bottom: 0;
+}
