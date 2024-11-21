@@ -40,7 +40,6 @@ const iconMap = {
   [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
   [SuperBlocks.FoundationalCSharp]: CSharpLogo,
   [SuperBlocks.FullStackDeveloper]: ResponsiveDesign,
-  [SuperBlocks.UpcomingPython]: PythonIcon,
   [SuperBlocks.A2English]: A2EnglishIcon,
   [SuperBlocks.B1English]: B1EnglishIcon,
   [SuperBlocks.RosettaCode]: RosettaCodeIcon,
