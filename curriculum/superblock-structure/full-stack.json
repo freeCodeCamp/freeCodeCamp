@@ -508,6 +508,7 @@
           "dashedName": "functional-programming",
           "blocks": [
             { "dashedName": "lecture-understanding-functional-programming" },
+            { "dashedName": "workshop-recipe-ingredient-converter" },
             { "dashedName": "review-javascript-functional-programming" },
             { "dashedName": "quiz-javascript-functional-programming" }
           ]
