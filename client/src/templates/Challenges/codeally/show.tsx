@@ -338,20 +338,19 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
                     </>
                   )}
                 <Alert variant='info'>
-                  <p>
-                    <Trans
-                      values={{ course: title }}
-                      i18nKey='learn.gitpod.continue-project'
+                  <Trans
+                    values={{ course: title }}
+                    i18nKey='learn.gitpod.continue-project'
+                  >
+                    <a
+                      href='https://gitpod.io/workspaces'
+                      rel='noopener noreferrer'
+                      target='_blank'
                     >
-                      <a
-                        href='https://gitpod.io/workspaces'
-                        rel='noopener noreferrer'
-                        target='_blank'
-                      >
-                        placeholder
-                      </a>
-                    </Trans>
-                  </p>
+                      placeholder
+                    </a>
+                  </Trans>
+                  <Spacer size='m' />
                   <Trans i18nKey='learn.gitpod.learn-more'>
                     <a
                       href='https://forum.freecodecamp.org/t/using-gitpod-in-the-curriculum/668669'

@@ -49,28 +49,7 @@ test.describe('Landing Top - Variation B', () => {
     await goToLandingPage(page);
   });
 
-  test('The component Landing-top renders correctly', async ({ page }) => {
-    await expect(
-      page
-        .getByRole('heading', { level: 1 })
-        .filter({ hasText: `${translations.landing['big-heading-1-b']}` })
-    ).toBeVisible();
-
-    const landingHeading2 = page.getByTestId('landing-big-heading-2');
-    await expect(landingHeading2).toHaveText(
-      translations.landing['big-heading-2']
-    );
-
-    const landingHeading3 = page.getByTestId('landing-big-heading-3');
-    await expect(landingHeading3).toHaveText(
-      translations.landing['big-heading-3']
-    );
-
-    const landingHeading4 = page.getByTestId('landing-big-heading-4');
-    await expect(landingHeading4).toHaveText(
-      translations.landing['big-heading-4']
-    );
-
+  test('The supporting copy renders correctly', async ({ page }) => {
     const landingH2Heading = page.getByTestId('landing-h2-heading-b');
     await expect(landingH2Heading).toHaveText(
       translations.landing['h2-heading-b'].replace(/<\/?strong>/g, '')
@@ -99,22 +78,7 @@ test.describe('Landing Top - Variation A', () => {
     await goToLandingPage(page);
   });
 
-  test('The component Landing-top renders correctly', async ({ page }) => {
-    const landingHeading1 = page.getByTestId('landing-big-heading-1');
-    await expect(landingHeading1).toHaveText(
-      translations.landing['big-heading-1']
-    );
-
-    const landingHeading2 = page.getByTestId('landing-big-heading-2');
-    await expect(landingHeading2).toHaveText(
-      translations.landing['big-heading-2']
-    );
-
-    const landingHeading3 = page.getByTestId('landing-big-heading-3');
-    await expect(landingHeading3).toHaveText(
-      translations.landing['big-heading-3']
-    );
-
+  test('The supporting copy renders correctly', async ({ page }) => {
     const landingH2Heading = page.getByTestId('landing-h2-heading');
     await expect(landingH2Heading).toHaveText(
       translations.landing['h2-heading']
@@ -147,6 +111,23 @@ test.describe('Landing Page', () => {
     for (const cta of await ctas.all()) {
       await expect(cta).toBeVisible();
     }
+  });
+
+  test('The headline renders correctly', async ({ page }) => {
+    const landingHeading1 = page.getByTestId('landing-big-heading-1');
+    await expect(landingHeading1).toHaveText(
+      translations.landing['big-heading-1']
+    );
+
+    const landingHeading2 = page.getByTestId('landing-big-heading-2');
+    await expect(landingHeading2).toHaveText(
+      translations.landing['big-heading-2']
+    );
+
+    const landingHeading3 = page.getByTestId('landing-big-heading-3');
+    await expect(landingHeading3).toHaveText(
+      translations.landing['big-heading-3']
+    );
   });
 
   test('Hero image should have an alt and a description', async ({

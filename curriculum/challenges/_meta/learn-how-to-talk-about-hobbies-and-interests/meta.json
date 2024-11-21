@@ -446,5 +446,6 @@
       "title": "Task 105"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }
