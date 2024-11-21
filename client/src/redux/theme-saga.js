@@ -13,7 +13,7 @@ function* toggleThemeSaga() {
   yield put(createFlashMessage({ ...data }));
 }
 
-function* initalizeThemeSaga() {
+function* initializeThemeSaga() {
   // Wait for the fetch userComplete action
   yield take(actionTypes.fetchUserComplete);
 
@@ -27,9 +27,9 @@ function* initalizeThemeSaga() {
 
   if (localStorageTheme !== null) {
     selectTheme = localStorageTheme === 'dark' ? 'dark' : 'light';
-  } else if (userTheme !== null) {
+  } else if (userTheme !== null && userTheme !== undefined) {
     selectTheme = userTheme === 'night' ? 'dark' : 'light';
-  } else if (isSysThemeDark) {
+  } else if (isSysThemeDark === true) {
     selectTheme = 'dark';
   }
 
@@ -40,6 +40,6 @@ function* initalizeThemeSaga() {
 export function createThemeSaga(types) {
   return [
     takeEvery(types.toggleTheme, toggleThemeSaga),
-    takeEvery(types.initializeTheme, initalizeThemeSaga)
+    takeEvery(types.initializeTheme, initializeThemeSaga)
   ];
 }
