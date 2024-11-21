@@ -4,8 +4,7 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "review-html-tables-and-forms",
-  "order": 23,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "671a872c17382a582e455c4c",

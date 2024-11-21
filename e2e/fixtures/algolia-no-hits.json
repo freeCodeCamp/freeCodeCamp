@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "hits": [],
+      "nbHits": 0,
+      "page": 0,
+      "nbPages": 0,
+      "hitsPerPage": 5,
+      "exhaustiveNbHits": true,
+      "exhaustiveTypo": true,
+      "exhaustive": {
+        "nbHits": true,
+        "typo": true
+      },
+      "query": "sdefpuhsdfpiouhdsfgp",
+      "params": "highlightPostTag=__%2Fais-highlight__&highlightPreTag=__ais-highlight__&hitsPerPage=5&query=sdefpuhsdfpiouhdsfgp",
+      "index": "news",
+      "renderingContent": {},
+      "processingTimeMS": 1,
+      "processingTimingsMS": {
+        "_request": {
+          "roundTrip": 94
+        },
+        "total": 1
+      },
+      "serverTimeMS": 1
+    }
+  ]
+}

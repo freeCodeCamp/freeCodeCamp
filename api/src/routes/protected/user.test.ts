@@ -16,7 +16,11 @@ import {
   createSuperRequest
 } from '../../../jest.utils';
 import { JWT_SECRET } from '../../utils/env';
-import { customNanoid } from '../../utils/ids';
+import {
+  clearEnvExam,
+  seedEnvExam,
+  seedEnvExamAttempt
+} from '../../../__mocks__/env-exam';
 import { getMsTranscriptApiUrl } from './user';
 
 const mockedFetch = jest.fn();
@@ -337,6 +341,10 @@ describe('userRoutes', () => {
     });
 
     describe('/account/delete', () => {
+      beforeEach(async () => {
+        await seedEnvExam();
+        await seedEnvExamAttempt();
+      });
       afterEach(async () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
           where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
@@ -344,6 +352,7 @@ describe('userRoutes', () => {
         await fastifyTestInstance.prisma.msUsername.deleteMany({
           where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
         });
+        await clearEnvExam();
       });
 
       test('POST returns 200 status code with empty object', async () => {
@@ -398,6 +407,18 @@ describe('userRoutes', () => {
           ])
         );
         expect(setCookie).toHaveLength(3);
+      });
+
+      test("POST deletes all the user's exam attempts", async () => {
+        const examAttempts =
+          await fastifyTestInstance.prisma.envExamAttempt.findMany();
+        expect(examAttempts).toHaveLength(1);
+
+        await superPost('/account/delete');
+
+        const examAttemptsAfter =
+          await fastifyTestInstance.prisma.envExamAttempt.findMany();
+        expect(examAttemptsAfter).toHaveLength(0);
       });
     });
 
@@ -1148,13 +1169,13 @@ Thanks and regards,
 
       test('POST generates a new token if one does not exist', async () => {
         const response = await superPost('/user/exam-environment/token');
-        const { examEnvironmentAuthorizationToken } = response.body.data;
+        const { examEnvironmentAuthorizationToken } = response.body;
 
         const decodedToken = jwt.decode(examEnvironmentAuthorizationToken);
 
         expect(decodedToken).toStrictEqual({
           examEnvironmentAuthorizationToken:
-            expect.stringMatching(/^[a-zA-Z0-9]{64}$/),
+            expect.stringMatching(/^[a-z0-9]{24}$/),
           iat: expect.any(Number)
         });
 
@@ -1165,33 +1186,32 @@ Thanks and regards,
           jwt.verify(examEnvironmentAuthorizationToken, JWT_SECRET)
         ).not.toThrow();
 
-        expect(response.status).toBe(200);
+        expect(response.status).toBe(201);
       });
 
       test('POST only allows for one token per user id', async () => {
-        const id = customNanoid();
-        await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.create(
-          {
-            data: {
-              userId: defaultUserId,
-              id,
-              createdDate: new Date()
+        const token =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.create(
+            {
+              data: {
+                userId: defaultUserId,
+                expireAt: new Date()
+              }
             }
-          }
-        );
+          );
 
         const response = await superPost('/user/exam-environment/token');
 
-        const { examEnvironmentAuthorizationToken } = response.body.data;
+        const { examEnvironmentAuthorizationToken } = response.body;
 
         const decodedToken = jwt.decode(examEnvironmentAuthorizationToken);
 
         expect(decodedToken).not.toHaveProperty(
           'examEnvironmentAuthorizationToken',
-          id
+          token.id
         );
 
-        expect(response.status).toBe(200);
+        expect(response.status).toBe(201);
 
         const tokens =
           await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.findMany(

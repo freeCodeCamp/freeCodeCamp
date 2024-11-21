@@ -63,8 +63,9 @@ function LandingTop(): JSX.Element {
               id='content-start'
               className='mega-heading'
               data-test-label='landing-header'
+              data-playwright-test-label='landing-big-heading-1'
             >
-              {t('landing.big-heading-1-b')}
+              {t('landing.big-heading-1')}
             </h1>
             <p
               className='mega-heading'
@@ -77,12 +78,6 @@ function LandingTop(): JSX.Element {
               data-playwright-test-label='landing-big-heading-3'
             >
               {t('landing.big-heading-3')}
-            </p>
-            <p
-              className='mega-heading gradient-foreground'
-              data-playwright-test-label='landing-big-heading-4'
-            >
-              {t('landing.big-heading-4')}
             </p>
             <LogoRow />
             <Spacer size='m' />

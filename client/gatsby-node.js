@@ -263,11 +263,13 @@ exports.createSchemaCustomization = ({ actions }) => {
       blockType: String
       blockLayout: String
       challengeFiles: [FileContents]
+      chapter: String
       explanation: String
       notes: String
       url: String
       assignments: [String]
       prerequisites: [PrerequisiteChallenge]
+      module: String
       msTrophyId: String
       fillInTheBlank: FillInTheBlank
       scene: Scene
