@@ -2964,7 +2964,8 @@
       "review-debugging-javascript": {
         "title": "Debugging JavaScript Review",
         "intro": [
-          "Review the Debugging JavaScript concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on common debugging concepts you first need to review the concepts.",
+          "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally/code> and more."
         ]
       },
       "quiz-debugging-javascript": {
