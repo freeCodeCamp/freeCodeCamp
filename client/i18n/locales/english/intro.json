@@ -3094,7 +3094,12 @@
           "Review the JavaScript Maps, Sets, and JSON concepts to prepare for the upcoming quiz."
         ]
       },
-      "cvs3": { "title": "229", "intro": [] },
+      "quiz-javascript-maps-sets-and-json": {
+        "title": "JavaScript Maps, Sets, and JSON Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Maps, Sets, and JSON."
+        ]
+      },
       "lecture-working-with-client-side-storage-and-crud-operations": {
         "title": "Working with Client-Side Storage and CRUD Operations",
         "intro": [
@@ -3150,7 +3155,12 @@
           "Review the JavaScript Classes concepts to prepare for the upcoming quiz."
         ]
       },
-      "ndl1": { "title": "240", "intro": [] },
+      "quiz-javascript-classes": {
+        "title": "JavaScript Classes Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Classes."
+        ]
+      },
       "lecture-understanding-recursion-and-the-call-stack": {
         "title": "Understanding Recursion and the Call Stack",
         "intro": [
