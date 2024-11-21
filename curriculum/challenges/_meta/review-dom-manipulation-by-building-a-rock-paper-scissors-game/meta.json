@@ -32,5 +32,6 @@
       "title": "Step 6"
     }
   ],
-  "helpCategory": "JavaScript"
+  "helpCategory": "JavaScript",
+  "blockLayout": "legacy-challenge-grid"
 }

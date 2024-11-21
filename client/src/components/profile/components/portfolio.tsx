@@ -33,6 +33,7 @@ type PortfolioProps = {
 type PortfolioState = {
   portfolio: PortfolioProjectData[];
   unsavedItemId: string | null;
+  isImageValid: ProfileValidation;
 };
 
 interface ProfileValidation {
@@ -55,15 +56,20 @@ function createFindById(id: string) {
 }
 
 class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
+  validationImage: HTMLImageElement;
   static displayName: string;
   constructor(props: PortfolioProps) {
     super(props);
-
+    this.validationImage = new Image();
     const { portfolio = [] } = props;
 
     this.state = {
       portfolio: [...portfolio],
-      unsavedItemId: null
+      unsavedItemId: null,
+      isImageValid: {
+        state: 'success',
+        message: ''
+      }
     };
   }
 
@@ -76,7 +82,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       e.preventDefault();
       const userInput = e.target.value.slice();
-      return this.setState(state => {
+      this.setState(state => {
         const { portfolio: currentPortfolio } = state;
         const mutablePortfolio = currentPortfolio.slice(0);
         const index = findIndex(currentPortfolio, p => p.id === id);
@@ -85,6 +91,14 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           ...mutablePortfolio[index],
           [key]: userInput
         };
+
+        if (key === 'image' && userInput) {
+          void this.validateImageLoad(userInput).then(imageValidation => {
+            this.setState({ isImageValid: imageValidation });
+          });
+        } else if (key === 'image' && !userInput) {
+          this.setState({ isImageValid: { state: 'success', message: '' } });
+        }
 
         return { portfolio: mutablePortfolio };
       });
@@ -168,29 +182,45 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     return { state: 'success', message: '' };
   }
 
-  getUrlValidation(maybeUrl: string, isImage?: boolean) {
+  async validateImageLoad(image: string): Promise<ProfileValidation> {
+    return new Promise(resolve => {
+      this.validationImage.src = encodeURI(image);
+
+      this.validationImage.onload = () => {
+        resolve({
+          state: 'success',
+          message: ''
+        });
+      };
+
+      this.validationImage.onerror = () => {
+        resolve({
+          state: 'error',
+          message: this.props.t('validation.url-not-image')
+        });
+      };
+    });
+  }
+
+  getUrlValidation(url: string) {
     const { t } = this.props;
-    const len = maybeUrl.length;
-    if (len >= 4 && !hasProtocolRE.test(maybeUrl)) {
+    const len = url.length;
+
+    if (!url) {
+      return { state: 'success', message: '' };
+    }
+
+    if (len >= 4 && !hasProtocolRE.test(url)) {
       return {
         state: 'error',
         message: t('validation.invalid-protocol')
       };
     }
-    if (isImage && !maybeUrl) {
-      return { state: null, message: '' };
-    }
-    if (isImage && !/\.(png|jpg|jpeg|gif)$/.test(maybeUrl)) {
-      return {
-        state: 'error',
-        message: t('validation.url-not-image')
-      };
-    }
-    return isURL(maybeUrl)
+
+    return isURL(url)
       ? { state: 'success', message: '' }
       : { state: 'warning', message: t('validation.use-valid-url') };
   }
-
   formCorrect(portfolio: PortfolioProjectData) {
     const { id, title, description, url, image } = portfolio;
 
@@ -199,10 +229,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     const { state: urlState, message: urlMessage } = this.getUrlValidation(url);
     const { state: descriptionState, message: descriptionMessage } =
       this.getDescriptionValidation(description);
-    const { state: imageState, message: imageMessage } = this.getUrlValidation(
-      image,
-      true
-    );
+    const { state: imageState, message: imageMessage } =
+      this.getUrlValidation(image);
+
     const pristine = this.isFormPristine(id);
 
     const urlIsValid = !isURL(url, {
@@ -263,6 +292,13 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       this.toggleEditing();
       return this.updateItem(id);
     };
+
+    const combineImageStatus =
+      imageState === 'success' && this.state.isImageValid.state === 'success'
+        ? null
+        : 'error';
+    const combineImageMessage = imageMessage || this.state.isImageValid.message;
+
     return (
       <FullWidthRow key={id}>
         <form
@@ -316,7 +352,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           </FormGroup>
           <FormGroup
             controlId={`${id}-image`}
-            validationState={pristine ? null : imageState}
+            validationState={pristine ? null : combineImageStatus}
           >
             <ControlLabel htmlFor={`${id}-image-input`}>
               {t('settings.labels.image')}
@@ -328,9 +364,9 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
               name='portfolio-image'
               id={`${id}-image-input`}
             />
-            {imageMessage ? (
+            {combineImageMessage ? (
               <HelpBlock data-playwright-test-label='image-validation'>
-                {imageMessage}
+                {combineImageMessage}
               </HelpBlock>
             ) : null}
           </FormGroup>
@@ -387,6 +423,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
   render() {
     const { t } = this.props;
     const { portfolio = [], unsavedItemId } = this.state;
+
     return (
       <section id='portfolio-settings'>
         <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>

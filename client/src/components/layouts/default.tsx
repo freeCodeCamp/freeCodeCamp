@@ -134,7 +134,8 @@ function DefaultLayout({
   block,
   superBlock,
   theme,
-  user,
+  user,  
+  pathname,
   fetchUser,
   initializeTheme
 }: DefaultLayoutProps): JSX.Element {
@@ -271,6 +272,7 @@ function DefaultLayout({
           <Header
             fetchState={fetchState}
             user={user}
+            pathname={pathname}
             skipButtonText={t('learn.skip-to-content')}
           />
           <OfflineWarning
