@@ -11,10 +11,10 @@ Review the concepts below to prepare for the upcoming quiz.
 
 ## Working with the DOM and Web API's
 
-- **API**: An API(Application Programming Interface) is a set of rules and protocols that allow software applications to communicate with each other and exchange data efficiently. 
-- **Web API**: Web APIs are specifically designed for web applications. These types of API’s are often divided into two main categories: browser APIs and third-party APIs.
+- **API**: An API (Application Programming Interface) is a set of rules and protocols that allow software applications to communicate with each other and exchange data efficiently. 
+- **Web API**: Web APIs are specifically designed for web applications. These types of APIs are often divided into two main categories: browser APIs and third-party APIs.
 - **Browser APIs**: These APIs expose data from the browser. As a web developer, you can access and manipulate this data using JavaScript.
-- **Third-Party APIs**: These are not builtin into the browser by default. You have to retrieve their code in some way. Usually, they will have detailed documentation explaining how to use their services. An example is the Google Maps API, which you can use to display interactive maps on your website.
+- **Third-Party APIs**: These are not built into the browser by default. You have to retrieve their code in some way. Usually, they will have detailed documentation explaining how to use their services. An example is the Google Maps API, which you can use to display interactive maps on your website.
 - **DOM**: The DOM stands for Document Object Model. It’s a programming interface that lets you interact with HTML documents. With the DOM, you can add, modify, or delete elements on a webpage. The root of the DOM tree is the `<html>` element. It’s the top-level container for all the content of an HTML document. All other nodes are descendants of this root node. Then, below the root node, we find other nodes in the hierarchy. A parent node is an element that contains other elements. A child node is an element that is contained within another element.
 - **`navigator` Interface**: This provides information about the browser environment, such as the user agent string, the platform, and the version of the browser. A user agent string is a text string that identifies the browser and operating system being used.
 - **`window` Interface**: This represents the browser window that contains the DOM document. It provides methods and properties for interacting with the browser window, such as resizing the window, opening new windows, and navigating to different URLs.
