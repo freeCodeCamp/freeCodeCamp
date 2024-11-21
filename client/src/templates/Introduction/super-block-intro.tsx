@@ -1,7 +1,7 @@
 import { WindowLocation } from '@reach/router';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
-import React, { Fragment, useEffect, memo } from 'react';
+import React, { Fragment, useEffect, memo, useMemo } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -31,6 +31,7 @@ import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
+import { SuperBlockAccordion } from './components/super-block-accordion';
 import { resetExpansion, toggleBlock } from './redux';
 
 import './intro.css';
@@ -174,8 +175,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     pageContext: { superBlock, title, certification }
   } = props;
 
-  const allChallenges = nodes.map(({ challenge }) => challenge);
-  const challenges = allChallenges.filter(c => c.superBlock === superBlock);
+  const allChallenges = useMemo(
+    () => nodes.map(({ challenge }) => challenge),
+    [nodes]
+  );
+  const challenges = useMemo(
+    () => allChallenges.filter(c => c.superBlock === superBlock),
+    [allChallenges, superBlock]
+  );
   const blocks = uniq(challenges.map(({ block }) => block));
 
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
@@ -189,6 +196,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     SuperBlocks.RosettaCode,
     SuperBlocks.PythonForEverybody
   ];
+
+  const superBlockWithAccordionView = [SuperBlocks.FullStackDeveloper];
+  const chosenBlock = getChosenBlock();
 
   const onCertificationDonationAlertClick = () => {
     callGA({
@@ -221,32 +231,40 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 {t(`intro:misc-text.courses`)}
               </h2>
               <Spacer size='m' />
-              <div className='block-ui'>
-                {blocks.map(block => {
-                  const blockChallenges = challenges.filter(
-                    c => c.block === block
-                  );
-                  const blockType = blockChallenges[0].blockType;
+              {superBlockWithAccordionView.includes(superBlock) ? (
+                <SuperBlockAccordion
+                  challenges={challenges}
+                  superBlock={superBlock}
+                  chosenBlock={chosenBlock}
+                />
+              ) : (
+                <div className='block-ui'>
+                  {blocks.map(block => {
+                    const blockChallenges = challenges.filter(
+                      c => c.block === block
+                    );
+                    const blockType = blockChallenges[0].blockType;
 
-                  return (
-                    <Block
-                      key={block}
-                      block={block}
-                      blockType={blockType}
-                      challenges={blockChallenges}
+                    return (
+                      <Block
+                        key={block}
+                        block={block}
+                        blockType={blockType}
+                        challenges={blockChallenges}
+                        superBlock={superBlock}
+                      />
+                    );
+                  })}
+                  {!superblockWithoutCert.includes(superBlock) && (
+                    <CertChallenge
+                      certification={certification}
                       superBlock={superBlock}
+                      title={title}
+                      user={user}
                     />
-                  );
-                })}
-                {!superblockWithoutCert.includes(superBlock) && (
-                  <CertChallenge
-                    certification={certification}
-                    superBlock={superBlock}
-                    title={title}
-                    user={user}
-                  />
-                )}
-              </div>
+                  )}
+                </div>
+              )}
               {!isSignedIn && !signInLoading && (
                 <>
                   <Spacer size='l' />
@@ -305,6 +323,8 @@ export const query = graphql`
           superBlock
           dashedName
           blockLayout
+          chapter
+          module
         }
       }
     }

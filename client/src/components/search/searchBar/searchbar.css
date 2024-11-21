@@ -88,6 +88,7 @@
 .fcc_searchBar .ais-Highlight-highlighted {
   background-color: transparent;
   font-style: normal;
+  color: white;
   font-weight: bold;
 }
 
@@ -134,6 +135,10 @@
   background-color: var(--gray-75);
 }
 
+.ais-Hits-item:hover {
+  background-color: var(--blue-dark);
+}
+
 /* Hit selected with arrow keys or mouse */
 .selected {
   background-color: var(--blue-dark);
@@ -152,7 +157,7 @@ and arrow keys */
   padding: 6.5px 8px 8px;
 }
 
-.fcc_suggestion_footer .hit-name .ais-Highlight {
+.fcc_suggestion_footer span[class='ais-Highlight-nonHighlighted'] {
   font-weight: bold;
 }
 

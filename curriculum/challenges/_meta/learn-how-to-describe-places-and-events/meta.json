@@ -626,5 +626,6 @@
       "title": "Task 151"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-list"
 }

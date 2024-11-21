@@ -258,5 +258,6 @@
       "title": "Task 58"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }

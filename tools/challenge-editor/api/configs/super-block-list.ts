@@ -72,10 +72,6 @@ export const superBlockList = [
     path: '19-foundational-c-sharp-with-microsoft'
   },
   {
-    name: 'Upcoming Python',
-    path: '20-upcoming-python'
-  },
-  {
     name: 'A2 English for Developers (Beta)',
     path: '21-a2-english-for-developers'
   },
