@@ -516,9 +516,7 @@
     "preview-external-window": "Preview currently showing in external window.",
     "fill-in-the-blank": {
       "heading": "Fill in the blank",
-      "blank": "blank",
-      "correct-answer": "Correct answer.",
-      "incorrect-answer": "Incorrect answer."
+      "blank": "blank"
     },
     "quiz": {
       "correct-answer": "Correct!",

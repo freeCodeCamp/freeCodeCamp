@@ -26,19 +26,14 @@ function FillInTheBlanks({
 }: FillInTheBlankProps): JSX.Element {
   const { t } = useTranslation();
 
-  const addInputClass = (index: number): string => {
-    if (answersCorrect[index] === true) return 'green-underline';
-    if (answersCorrect[index] === false) return 'red-underline';
-    return '';
-  };
+  const getInputClass = (index: number): string => {
+    let cls = 'fill-in-the-blank-input';
 
-  const getInputLabel = (index: number) => {
-    if (answersCorrect[index] === true)
-      return t('learn.fill-in-the-blank.correct-answer');
-    if (answersCorrect[index] === false)
-      return t('learn.fill-in-the-blank.incorrect-answer');
+    if (answersCorrect[index] === false) {
+      cls += ' incorrect-blank-answer';
+    }
 
-    return t('learn.fill-in-the-blank.blank');
+    return cls;
   };
 
   const paragraphs = parseBlanks(sentence);
@@ -56,22 +51,35 @@ function FillInTheBlanks({
             <p key={i}>
               {p.map((node, j) => {
                 const { type, value } = node;
-                if (type === 'text') return value;
-                if (type === 'blank')
+                if (type === 'text') {
+                  return value;
+                }
+
+                // If a blank is answered correctly, render the answer as part of the sentence.
+                if (type === 'blank' && answersCorrect[value] === true) {
                   return (
-                    <input
-                      key={j}
-                      type='text'
-                      maxLength={blankAnswers[value].length + 3}
-                      className={`fill-in-the-blank-input ${addInputClass(
-                        value
-                      )}`}
-                      onChange={handleInputChange}
-                      data-index={node.value}
-                      size={blankAnswers[value].length}
-                      aria-label={getInputLabel(value)}
-                    />
+                    <span key={j} className='correct-blank-answer'>
+                      {blankAnswers[value]}
+                    </span>
                   );
+                }
+
+                return (
+                  <input
+                    key={j}
+                    type='text'
+                    maxLength={blankAnswers[value].length + 3}
+                    className={getInputClass(value)}
+                    onChange={handleInputChange}
+                    data-index={node.value}
+                    size={blankAnswers[value].length}
+                    autoComplete='off'
+                    aria-label={t('learn.fill-in-the-blank.blank')}
+                    {...(answersCorrect[value] === false
+                      ? { 'aria-invalid': 'true' }
+                      : {})}
+                  />
+                );
               })}
             </p>
           );
