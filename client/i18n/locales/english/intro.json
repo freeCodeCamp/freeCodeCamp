@@ -1927,14 +1927,14 @@
       "review-html-accessibility": {
         "title": "HTML Accessibility Review",
         "intro": [
-          "Review the HTML Accessibility concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on HTML and accessibility, you first need to review the concepts.",
+          "Open up this page to review concepts including the <code>aria-hidden</code>, <code>aria-describedby</code>, <code>tabindex</code> attributes and more."
         ]
       },
       "quiz-html-accessibility": {
         "title": "HTML Accessibility Quiz",
         "intro": [
-          "Before you are quizzed on HTML and accessibility, you first need to review the concepts.",
-          "Open up this page to review concepts including the <code>aria-hidden</code>, <code>aria-describedby</code>, <code>tabindex</code> attributes and more."
+          "The following quiz will test your knowledge on the accessibility concepts you have learned so far."
         ]
       },
       "review-html": {
