@@ -2942,7 +2942,8 @@
       "review-javascript-events": {
         "title": "JavaScript Events Review",
         "intro": [
-          "Review the JavaScript Events concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on events, you first need to review the concepts.",
+          "Open up this page to review concepts like change events, event bubbling, and event delegation."
         ]
       },
       "quiz-javascript-events": {
