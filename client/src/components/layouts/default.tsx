@@ -134,7 +134,7 @@ function DefaultLayout({
   block,
   superBlock,
   theme,
-  user,  
+  user,
   pathname,
   fetchUser,
   initializeTheme
