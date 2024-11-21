@@ -1,8 +1,11 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../shared/config/curriculum';
-import { BlockTypes } from '../../../shared/config/blocks';
+import { BlockLayouts, BlockTypes } from '../../../shared/config/blocks';
+import type { ChallengeFile, Ext } from '../../../shared/utils/polyvinyl';
 import { Themes } from '../components/settings/theme';
 import { type CertTitle } from '../../config/cert-and-project-map';
+
+export type { ChallengeFile, Ext };
 
 export type Steps = {
   isHonest?: boolean;
@@ -149,7 +152,7 @@ export interface PrerequisiteChallenge {
   slug?: string;
 }
 
-export type ChallengeWithCompletedNode = {
+export type ExtendedChallenge = {
   block: string;
   challengeType: number;
   dashedName: string;
@@ -160,6 +163,7 @@ export type ChallengeWithCompletedNode = {
   isCompleted: boolean;
   order: number;
   superBlock: SuperBlocks;
+  stepNumber: number;
   title: string;
 };
 
@@ -167,6 +171,7 @@ export type ChallengeNode = {
   challenge: {
     block: string;
     blockType: BlockTypes;
+    blockLayout: BlockLayouts;
     certification: string;
     challengeOrder: number;
     challengeType: number;
@@ -223,6 +228,8 @@ export type ChallengeNode = {
     videoLocaleIds?: VideoLocaleIds;
     bilibiliIds?: BilibiliIds;
     videoUrl: string;
+    chapter?: string;
+    module?: string;
   };
 };
 
@@ -385,8 +392,12 @@ export type CompletedChallenge = {
   examResults?: GeneratedExamResults;
 };
 
-export type Ext = 'js' | 'html' | 'css' | 'jsx';
-export type FileKey = 'scriptjs' | 'indexhtml' | 'stylescss' | 'indexjsx';
+export type FileKey =
+  | 'scriptjs'
+  | 'indexts'
+  | 'indexhtml'
+  | 'stylescss'
+  | 'indexjsx';
 
 export type ChallengeMeta = {
   block: string;
@@ -421,21 +432,6 @@ export type FileKeyChallenge = {
   tail: string;
 };
 
-export type ChallengeFile = {
-  fileKey: string;
-  ext: Ext;
-  name: string;
-  editableRegionBoundaries?: number[];
-  usesMultifileEditor?: boolean;
-  error?: unknown;
-  head: string;
-  tail: string;
-  seed: string;
-  contents: string;
-  id: string;
-  history: string[];
-};
-
 export type ChallengeFiles = ChallengeFile[] | null;
 
 export interface UserFetchState {
@@ -468,6 +464,11 @@ export interface GenerateExamResponseWithData {
   data: GenerateExamResponse;
 }
 
+export interface ExamTokenResponse {
+  data: {
+    examEnvironmentAuthorizationToken: string;
+  };
+}
 // User Exam (null until they answer the question)
 interface UserExamAnswer {
   id: string | null;

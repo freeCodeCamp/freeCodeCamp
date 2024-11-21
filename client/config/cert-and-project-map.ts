@@ -32,8 +32,7 @@ const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const foundationalCSharpBase =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
-const upcomingPythonBase = '/learn/upcoming-python';
-const frontEndDevelopmentBase = '/learn/front-end-development';
+const fullStackDeveloperBase = '/learn/full-stack-developer';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
 const legacyFrontEndBase = feLibsBase;
@@ -800,27 +799,14 @@ const allStandardCerts = [
   // Upcoming Certifications
   {
     id: '64514fda6c245de4d11eb7bb',
-    title: 'Front End Development',
-    certSlug: Certification.FrontEndDevelopment,
+    title: 'Certified Full Stack Developer',
+    certSlug: Certification.FullStackDeveloper,
     projects: [
       {
         id: '645147516c245de4d11eb7ba',
-        title: 'Front End Development Certification Exam',
-        link: `${frontEndDevelopmentBase}/front-end-development-certification-exam/front-end-development-certification-exam`,
-        certSlug: Certification.FrontEndDevelopment
-      }
-    ]
-  },
-  {
-    id: '64afc4e8f3b37856e035b85f',
-    title: 'Upcoming Python Certification',
-    certSlug: Certification.UpcomingPython,
-    projects: [
-      {
-        id: '64afc37bf3b37856e035b85e',
-        title: 'Upcoming Python Project',
-        link: `${upcomingPythonBase}/upcoming-python-project`,
-        certSlug: Certification.UpcomingPython
+        title: 'Certified Full Stack Developer Exam',
+        link: `${fullStackDeveloperBase}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
+        certSlug: Certification.FullStackDeveloper
       }
     ]
   },
@@ -831,8 +817,8 @@ const allStandardCerts = [
     projects: [
       {
         id: '651dd3e06ffb500e3f2ce478',
-        title: 'Challenge 1',
-        link: `${a2EnglishBase}/learn-greetings-in-your-first-day-at-the-office/challenge-1`,
+        title: 'A2 English for Developers Certification Exam',
+        link: `${a2EnglishBase}/a2-english-for-developers-certification-exam/a2-english-for-developers-certification-exam`,
         certSlug: Certification.A2English
       }
     ]

@@ -13,7 +13,7 @@ export interface Source {
   index: string;
   contents?: string;
   editableContents: string;
-  original: { [key: string]: string };
+  original: { [key: string]: string | null };
 }
 
 export interface Context {
@@ -86,8 +86,17 @@ const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 // of the frame.  React dom errors already appear in the console, so onerror
 // does not need to pass them on to the default error handler.
 
-export const createHeader = (id = mainPreviewId) => `
+// The "fcc-hide-header" class on line 95 is added to ensure that the CSSHelper class ignores this style element
+// during tests, preventing CSS-related test failures.
+
+export const createHeader = (id = mainPreviewId) =>
+  `
   <base href='' />
+  <style class="fcc-hide-header">
+    head *, title, meta, link, script {
+      display: none !important;
+    }
+  </style>
   <script>
     window.__frameId = '${id}';
     window.onerror = function(msg) {
@@ -369,8 +378,11 @@ function writeToFrame(content: string, frame?: FrameDocument) {
 }
 
 const writeContentToFrame = (frameContext: Context) => {
+  const doctype =
+    frameContext.sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
+
   writeToFrame(
-    createHeader(frameContext.element.id) + frameContext.build,
+    doctype + createHeader(frameContext.element.id) + frameContext.build,
     frameContext.document
   );
 

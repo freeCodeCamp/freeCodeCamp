@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import ReactTooltip from 'react-tooltip';
-import { Row } from '@freecodecamp/ui';
+import { Row, Spacer } from '@freecodecamp/ui';
 
 import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
@@ -20,7 +20,6 @@ import envData from '../../../../config/env.json';
 import { getLangCode } from '../../../../../shared/config/i18n';
 import { User } from '../../../redux/prop-types';
 import FullWidthRow from '../../helpers/full-width-row';
-import Spacer from '../../helpers/spacer';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { clientLocale } = envData;
@@ -100,7 +99,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
       <FullWidthRow>
         <section className='card'>
           <h2>{t('profile.activity')}</h2>
-          <Spacer size='medium' />
+          <Spacer size='m' />
 
           <CalendarHeatMap
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -164,7 +163,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
               &gt;
             </button>
           </Row>
-          <Spacer size='medium' />
+          <Spacer size='m' />
         </section>
         <hr />
       </FullWidthRow>

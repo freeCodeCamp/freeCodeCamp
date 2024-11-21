@@ -3,9 +3,10 @@ import { useTranslation } from 'react-i18next';
 import addDays from 'date-fns/addDays';
 import addMonths from 'date-fns/addMonths';
 import isEqual from 'date-fns/isEqual';
+import { Spacer } from '@freecodecamp/ui';
 import startOfDay from 'date-fns/startOfDay';
 import { User } from '../../../redux/prop-types';
-import { FullWidthRow, Spacer } from '../../helpers';
+import { FullWidthRow } from '../../helpers';
 import './stats.css';
 
 interface StatsProps {
@@ -114,7 +115,7 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
     <FullWidthRow>
       <section className='card'>
         <h2>{t('profile.stats')}</h2>
-        <Spacer size='small' />
+        <Spacer size='s' />
         <dl className='stats'>
           <div>
             <dt>

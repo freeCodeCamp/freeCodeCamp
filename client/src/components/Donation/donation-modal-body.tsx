@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Col, Row, Modal } from '@freecodecamp/ui';
+import { Col, Row, Modal, Spacer } from '@freecodecamp/ui';
 import { closeDonationModal } from '../../redux/actions';
-import { Spacer } from '../helpers';
 import { PaymentContext } from '../../../../shared/config/donation-settings'; //
 import donationAnimation from '../../assets/images/donation-bear-animation.svg';
 import supporterBear from '../../assets/images/supporter-bear.svg';
@@ -58,7 +57,7 @@ function ModalHeader({
                   )
                 })}
               </b>
-              <Spacer size='small' />
+              <Spacer size='xs' />
             </>
           )}
 
@@ -109,7 +108,7 @@ const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
     <Row className={'donate-btn-group'}>
       <Col xs={12}>
         <ModalBenefitList />
-        <Spacer size='small' />
+        <Spacer size='xs' />
         <button
           className='text-center confirm-donation-btn donate-btn-group'
           type='submit'
@@ -117,7 +116,7 @@ const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
         >
           {t('donate.become-supporter')}
         </button>
-        <Spacer size='medium' />
+        <Spacer size='m' />
       </Col>
     </Row>
   );
@@ -195,7 +194,7 @@ const BecomeASupporterConfirmation = ({
         donationAttempted={donationAttempted}
         showForm={showForm}
       />
-      <Spacer size='small' />
+      <Spacer size='xs' />
       {showForm ? (
         <MultiTierDonationForm
           setShowHeaderAndFooter={setShowHeaderAndFooter}

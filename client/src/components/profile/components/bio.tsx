@@ -6,8 +6,8 @@ import {
   faPen
 } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
-import { AvatarRenderer, FullWidthRow, Spacer } from '../../helpers';
+import { Button, Spacer } from '@freecodecamp/ui';
+import { AvatarRenderer, FullWidthRow } from '../../helpers';
 import { parseDate } from './utils';
 import SocialIcons from './social-icons';
 import { type CamperProps } from './camper';
@@ -34,7 +34,7 @@ const Bio = ({
 
   return (
     <FullWidthRow>
-      <Spacer size={'exLarge'} />
+      <Spacer size={'xl'} />
       <section className='card card-header'>
         <div className='avatar-camper'>
           <AvatarRenderer
@@ -57,7 +57,7 @@ const Bio = ({
           )}
         </div>
         {name && <h2>{name}</h2>}
-        <Spacer size={'small'} />
+        <Spacer size={'s'} />
         {about && <p>{about}</p>}
         <div className='profile-meta-container'>
           {joinDate && (
