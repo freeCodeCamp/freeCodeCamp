@@ -57,7 +57,7 @@ order to run your code, type `python3 main.py` into the GitPod terminal and hit 
 
 ## Testing
 
-The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. 
+The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience.
 
 ## Submitting
 
