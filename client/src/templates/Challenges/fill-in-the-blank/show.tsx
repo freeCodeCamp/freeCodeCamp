@@ -86,7 +86,7 @@ const ShowFillInTheBlank = ({
         challengeType,
         fillInTheBlank,
         helpCategory,
-        scene
+        scene: initSceneData
       }
     }
   },
@@ -108,8 +108,8 @@ const ShowFillInTheBlank = ({
   const [feedback, setFeedback] = useState<string | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
 
-  const sceneProps = useScene({
-    scene
+  const scene = useScene({
+    initSceneData
   });
 
   const container = useRef<HTMLElement | null>(null);
@@ -188,7 +188,7 @@ const ShowFillInTheBlank = ({
   };
 
   const handlePlayScene = (shouldPlay: boolean) => {
-    sceneProps.setIsPlaying(shouldPlay);
+    scene.setIsPlaying(shouldPlay);
   };
 
   const blockNameTitle = `${t(
@@ -222,7 +222,7 @@ const ShowFillInTheBlank = ({
               <Spacer size='m' />
             </Col>
 
-            {scene && <Scene {...sceneProps} />}
+            {initSceneData && <Scene {...scene} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               {instructions && (

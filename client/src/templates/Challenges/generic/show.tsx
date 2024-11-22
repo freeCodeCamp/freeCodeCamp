@@ -82,7 +82,7 @@ const ShowGeneric = ({
         questions,
         title,
         translationPending,
-        scene,
+        scene: initSceneData,
         superBlock,
         videoId,
         videoLocaleIds
@@ -142,8 +142,8 @@ const ShowGeneric = ({
     setVideoIsLoaded(true);
   };
 
-  const sceneProps = useScene({
-    scene
+  const scene = useScene({
+    initSceneData
   });
 
   // assignments
@@ -197,7 +197,7 @@ const ShowGeneric = ({
       containerRef={container}
       nextChallengePath={nextChallengePath}
       prevChallengePath={prevChallengePath}
-      playScene={scene ? () => sceneProps.setIsPlaying(true) : undefined}
+      playScene={initSceneData ? () => scene.setIsPlaying(true) : undefined}
     >
       <LearnLayout>
         <Helmet
@@ -233,7 +233,7 @@ const ShowGeneric = ({
               )}
             </Col>
 
-            {scene && <Scene {...sceneProps} />}
+            {initSceneData && <Scene {...scene} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               {instructions && (

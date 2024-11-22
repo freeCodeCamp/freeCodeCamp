@@ -4,7 +4,7 @@ import type { Dialogue, FullScene } from '../../../../redux/prop-types';
 import { sounds, backgrounds, characterAssets } from './scene-assets';
 
 type Args = {
-  scene: FullScene;
+  initSceneData: FullScene;
 };
 
 const loadImage = (src: string | null) => {
@@ -15,8 +15,8 @@ const sToMs = (n: number) => {
   return n * 1000;
 };
 
-export function useScene({ scene }: Args) {
-  const { setup, commands } = scene;
+export function useScene({ initSceneData }: Args) {
+  const { setup, commands } = initSceneData;
   const { audio, alwaysShowDialogue } = setup;
   const { startTimestamp = null, finishTimestamp = null } = audio;
 
