@@ -1,9 +1,9 @@
 ---
 title: Introduction to the Design a Blog Post Card
-block: lab-blog-post-card
+block: lab-design-a-blog-post-card
 superBlock: full-stack-developer
 ---
 
 ## Introduction to the Design a Blog Post Card
 
-This is a test for the new project-based curriculum.
+In this lab, you'll design a blog post card using HTML and CSS
