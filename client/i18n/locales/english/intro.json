@@ -2858,6 +2858,12 @@
           "In this workshop, you will learn higher order array methods by building a library manager"
         ]
       },
+      "lab-book-organizer": {
+        "title": "Build a Book Organizer",
+        "intro": [
+          "In this lab, you will build a book organizer using higher order functions in JavaScript."
+        ]
+      },
       "bxtv": { "title": "184", "intro": [] },
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
