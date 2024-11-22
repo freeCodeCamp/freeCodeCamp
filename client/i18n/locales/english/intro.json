@@ -2832,7 +2832,7 @@
           "In these lecture videos, you will learn about modules, imports, and exports in JavaScript."
         ]
       },
-      "lab-password-generator": {
+      "lab-build-a-password-generator": {
         "title": "Build a Password Generator App",
         "intro": ["In this lab, you'll build a password generator app."]
       },
