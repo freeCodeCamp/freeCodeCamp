@@ -3,6 +3,8 @@ import { execSync } from 'child_process';
 import { test as setup } from '@playwright/test';
 
 setup.describe('certifieduser', () => {
+  setup.use({ storageState: { cookies: [], origins: [] } });
+
   setup.beforeAll(() => {
     execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });
