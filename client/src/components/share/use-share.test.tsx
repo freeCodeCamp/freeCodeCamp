@@ -1,12 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import {
-  action,
   hastag,
   nextLine,
   space,
-  twitterDevelpoerDomainURL,
-  twitterDomain,
-  useShare
+  useShare,
+  twitterData,
+  blueSkyData
 } from './use-share';
 
 test('useShare testing', () => {
@@ -23,7 +22,11 @@ test('useShare testing', () => {
   const i18nSupportedBlock = t(`intro:${superBlock}.blocks.${block}.title`);
   const tweetMessage = `I${space}have${space}completed${space}${i18nSupportedBlock}${space}%23freecodecamp`;
   const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomain}/${superBlock}/${hastag}${block}`;
-  expect(redirectURL).toBe(
-    `https://${twitterDomain}/${action}?original_referer=${twitterDevelpoerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`
+  expect(redirectURL.xUrl).toBe(
+    `https://${twitterData.domain}/${twitterData.action}?original_referer=${twitterData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`
+  );
+
+  expect(redirectURL.blueSkyUrl).toBe(
+    `https://${blueSkyData.domain}/${blueSkyData.action}?original_referer=${blueSkyData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`
   );
 });

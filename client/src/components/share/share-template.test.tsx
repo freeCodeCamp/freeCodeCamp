@@ -5,12 +5,19 @@ import { ShareTemplate } from './share-template';
 const redirectURL = 'string';
 
 describe('Share Template Testing', () => {
-  render(<ShareTemplate redirectURL={redirectURL} />);
+  render(
+    <ShareTemplate
+      xRedirectURL={redirectURL}
+      blueSkyRedirectURL={redirectURL}
+    />
+  );
   test('Testing share template Click Redirect Event', () => {
-    const link = screen.getByRole('link', {
+    const links = screen.queryAllByRole('link', {
       name: 'buttons.tweet aria.opens-new-window'
     });
-    expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute('href', 'string');
+    expect(links[0]).toBeInTheDocument();
+    expect(links[0]).toHaveAttribute('href', 'string');
+    expect(links[1]).toBeInTheDocument();
+    expect(links[1]).toHaveAttribute('href', 'string');
   });
 });
