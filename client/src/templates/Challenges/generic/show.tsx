@@ -28,6 +28,7 @@ import Scene from '../components/scene/scene';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import ChallengeExplanation from '../components/challenge-explanation';
 import HelpModal from '../components/help-modal';
+import { useScene } from '../components/scene/use-scene';
 
 // Styles
 import './show.css';
@@ -144,6 +145,12 @@ const ShowGeneric = ({
   // scene
   const [isScenePlaying, setIsScenePlaying] = useState(false);
 
+  const sceneProps = useScene({
+    scene,
+    isPlaying: isScenePlaying,
+    setIsPlaying: setIsScenePlaying
+  });
+
   // assignments
   const [assignmentsCompleted, setAssignmentsCompleted] = useState(0);
   const allAssignmentsCompleted = assignmentsCompleted === assignments.length;
@@ -233,7 +240,7 @@ const ShowGeneric = ({
 
             {scene && (
               <Scene
-                scene={scene}
+                {...sceneProps}
                 isPlaying={isScenePlaying}
                 setIsPlaying={setIsScenePlaying}
               />

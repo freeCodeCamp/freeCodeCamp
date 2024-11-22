@@ -31,6 +31,7 @@ import {
 } from '../redux/actions';
 import Scene from '../components/scene/scene';
 import { isChallengeCompletedSelector } from '../redux/selectors';
+import { useScene } from '../components/scene/use-scene';
 
 import './show.css';
 
@@ -107,6 +108,12 @@ const ShowFillInTheBlank = ({
   const [feedback, setFeedback] = useState<string | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [isScenePlaying, setIsScenePlaying] = useState(false);
+
+  const sceneProps = useScene({
+    scene,
+    isPlaying: isScenePlaying,
+    setIsPlaying: setIsScenePlaying
+  });
 
   const container = useRef<HTMLElement | null>(null);
 
@@ -220,7 +227,7 @@ const ShowFillInTheBlank = ({
 
             {scene && (
               <Scene
-                scene={scene}
+                {...sceneProps}
                 isPlaying={isScenePlaying}
                 setIsPlaying={setIsScenePlaying}
               />

@@ -1,7 +1,6 @@
 import React from 'react'; //, ReactElement } from 'react';
 import { Col, Spacer } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
-import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
 import { images, backgrounds } from './scene-assets';
@@ -10,31 +9,24 @@ import { useScene } from './use-scene';
 
 import './scene.css';
 
+type Props = ReturnType<typeof useScene> & {
+  setIsPlaying: (shouldPlay: boolean) => void;
+  isPlaying: boolean;
+};
+
 export function Scene({
-  scene,
+  background,
+  characters,
+  sceneIsReady,
+  dialogue,
+  showDialogue,
+  alwaysShowDialogue,
+  accessibilityOn,
+  setAccessibilityOn,
   isPlaying,
   setIsPlaying
-}: {
-  scene: FullScene;
-  isPlaying: boolean;
-  setIsPlaying: (shouldPlay: boolean) => void;
-}): JSX.Element {
+}: Props): JSX.Element {
   const { t } = useTranslation();
-
-  const {
-    accessibilityOn,
-    background,
-    characters,
-    dialogue,
-    sceneIsReady,
-    alwaysShowDialogue,
-    setAccessibilityOn,
-    showDialogue
-  } = useScene({
-    scene,
-    isPlaying,
-    setIsPlaying
-  });
 
   return (
     <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
