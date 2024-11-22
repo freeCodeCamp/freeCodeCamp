@@ -465,7 +465,8 @@
           "blocks": [
             { "dashedName": "lecture-working-with-maps-and-sets" },
             { "dashedName": "lab-voting-system" },
-            { "dashedName": "review-javascript-maps-sets-and-json" }
+            { "dashedName": "review-javascript-maps-sets-and-json" },
+            { "dashedName": "quiz-javascript-maps-sets-and-json" }
           ]
         },
         {
@@ -488,7 +489,8 @@
             },
             { "dashedName": "workshop-shopping-cart" },
             { "dashedName": "lab-project-idea-board" },
-            { "dashedName": "review-javascript-classes" }
+            { "dashedName": "review-javascript-classes" },
+            { "dashedName": "quiz-javascript-classes" }
           ]
         },
         {
@@ -498,6 +500,7 @@
               "dashedName": "lecture-understanding-recursion-and-the-call-stack"
             },
             { "dashedName": "workshop-decimal-to-binary-converter" },
+            { "dashedName": "lab-permutation-generator" },
             { "dashedName": "review-recursion" },
             { "dashedName": "quiz-recursion" }
           ]
@@ -506,6 +509,7 @@
           "dashedName": "functional-programming",
           "blocks": [
             { "dashedName": "lecture-understanding-functional-programming" },
+            { "dashedName": "workshop-recipe-ingredient-converter" },
             { "dashedName": "review-javascript-functional-programming" },
             { "dashedName": "quiz-javascript-functional-programming" }
           ]

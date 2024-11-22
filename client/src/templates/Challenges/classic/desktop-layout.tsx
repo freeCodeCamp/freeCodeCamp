@@ -193,6 +193,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     testsPane
   } = layoutState;
 
+  const editorPaneFlex =
+    !displayPreviewConsole && !displayPreviewPane ? 1 : editorPane.flex;
+
   return (
     <div className='desktop-layout' data-playwright-test-label='desktop-layout'>
       {(projectBasedChallenge || isMultifileCertProject) && (
@@ -228,7 +231,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         )}
 
         <ReflexElement
-          flex={editorPane.flex}
+          flex={editorPaneFlex}
           name='editorPane'
           {...resizeProps}
           data-playwright-test-label='editor-pane'
