@@ -334,7 +334,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           target='_blank'
           data-playwright-test-label='bluesky-share-btn'
         >
-          {t('add-bluesky')}
+          {t('profile.add-bluesky')}
         </Button>
       </Col>
       <Spacer size='l' />
