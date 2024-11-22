@@ -16,6 +16,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
   test('should render the modal correctly', async ({ page }) => {
     await expect(page.getByRole('heading')).toBeVisible();
     await expect(page.getByRole('button', { name: 'close' })).toBeVisible();
