@@ -3151,7 +3151,12 @@
           "In this lab, you will build a project idea board using OOP in JavaScript."
         ]
       },
-      "ndlf": { "title": "238", "intro": [] },
+      "lab-bank-account-manager": {
+        "title": "Build a Bank Account Management Program",
+        "intro": [
+          "In this lab, you will build a simple transaction management system for a bank account."
+        ]
+      },
       "review-javascript-classes": {
         "title": "JavaScript Classes Review",
         "intro": [

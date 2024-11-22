@@ -488,6 +488,7 @@
             },
             { "dashedName": "workshop-shopping-cart" },
             { "dashedName": "lab-project-idea-board" },
+            { "dashedName": "lab-bank-account-manager" },
             { "dashedName": "review-javascript-classes" },
             { "dashedName": "quiz-javascript-classes" }
           ]
