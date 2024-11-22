@@ -26,9 +26,9 @@ setup.describe('developmentuser', () => {
   });
 
   setup('can sign in', async ({ request }) => {
+    await request.get(process.env.API_LOCATION + '/signin');
     await request.storageState({
       path: 'playwright/.auth/development-user.json'
     });
-    await request.get(process.env.API_LOCATION + '/signin');
   });
 });
