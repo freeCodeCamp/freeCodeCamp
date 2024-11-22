@@ -2607,7 +2607,7 @@
       "lecture-working-with-numbers-booleans-and-the-math-object": {
         "title": "Working with Numbers, Booleans, and the Math Object",
         "intro": [
-          "In these lecture videos, you will learn about numbers, booleans, and the Math Object."
+          "In these lecture videos, you will learn about numbers, booleans, and the <code>Math</code> object."
         ]
       },
       "workshop-mathbot": {
