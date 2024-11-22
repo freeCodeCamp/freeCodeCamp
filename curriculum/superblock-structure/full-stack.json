@@ -324,7 +324,6 @@
             { "dashedName": "lab-sentence-maker" },
             { "dashedName": "workshop-loan-qualification-checker" },
             { "dashedName": "lab-leap-year-calculator" },
-            { "dashedName": "lab-password-generator" },
             { "dashedName": "review-javascript-functions" },
             { "dashedName": "quiz-javascript-functions" }
           ]
@@ -373,6 +372,7 @@
             {
               "dashedName": "lecture-understanding-modules-imports-and-exports"
             },
+            { "dashedName": "lab-password-generator" },
             { "dashedName": "review-javascript-fundamentals" },
             { "dashedName": "quiz-javascript-fundamentals" }
           ]
