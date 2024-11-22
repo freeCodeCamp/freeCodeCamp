@@ -83,7 +83,6 @@ const legacyCerts = [
 
 test.describe('Profile component', () => {
   test.describe('when viewing my own profile', () => {
-    test.use({ storageState: 'playwright/.auth/certified-user.json' });
     test.beforeEach(async ({ page }) => {
       await page.goto('/certifieduser');
 
@@ -207,8 +206,6 @@ test.describe('Profile component', () => {
     });
 
     test.describe('while logged in', () => {
-      test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
       test('displays the public username', async ({ page }) => {
         await expect(
           page.getByRole('heading', { name: '@publicuser' })

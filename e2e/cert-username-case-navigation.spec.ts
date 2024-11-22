@@ -2,7 +2,6 @@ import { execSync } from 'child_process';
 import { expect, test } from '@playwright/test';
 
 test.describe('Public profile certifications', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test('Should show claimed certifications if the username has all lowercase characters', async ({
     page
   }) => {

@@ -8,8 +8,6 @@ import { alertToBeVisible } from './utils/alerts';
 
 const execP = promisify(exec);
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
 });

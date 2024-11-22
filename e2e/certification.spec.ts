@@ -3,8 +3,6 @@ import { test, expect, Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { alertToBeVisible } from './utils/alerts';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.describe('Certification page - Non Microsoft', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/certification/certifieduser/responsive-web-design');
