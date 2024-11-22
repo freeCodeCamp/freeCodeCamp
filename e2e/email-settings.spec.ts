@@ -15,8 +15,6 @@ const settingsPageElement = {
 const originalEmail = 'foo@bar.com';
 const newEmail = 'foo-update@bar.com';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.beforeEach(async ({ page }) => {
   execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   await page.goto('/settings');

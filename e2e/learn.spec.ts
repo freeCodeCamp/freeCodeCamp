@@ -74,8 +74,6 @@ test.describe('Learn - Unauthenticated user', () => {
 });
 
 test.describe('Learn - Authenticated user)', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test('the page should render correctly', async ({ page }) => {
     await page.goto('/learn');
 

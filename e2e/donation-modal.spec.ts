@@ -117,8 +117,6 @@ test.describe('Donation modal display', () => {
     await addGrowthbookCookie({ context, variation: 'A' });
   });
 
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test('should display the content correctly and disable close when the animation is not complete', async ({
     page,
     browserName,
@@ -292,7 +290,6 @@ test.describe('Donation modal appearance logic - New user', () => {
 });
 
 test.describe('Donation modal appearance logic - Certified user', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test.beforeEach(async ({ context }) => {
     await addGrowthbookCookie({ context, variation: 'A' });
   });
@@ -333,8 +330,6 @@ test.describe('Donation modal appearance logic - Certified user', () => {
 });
 
 test.describe('Donation modal appearance logic - Donor user', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeAll(() => {
     execSync(
       'node ./tools/scripts/seed/seed-demo-user --certified-user --set-true isDonating'

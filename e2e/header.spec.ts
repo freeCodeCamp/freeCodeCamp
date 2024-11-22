@@ -276,8 +276,6 @@ test.describe('Header', () => {
 });
 
 test.describe('Exam Header', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test('Renders exam nav for Foundational C# with Microsoft exam', async ({
     page
   }) => {

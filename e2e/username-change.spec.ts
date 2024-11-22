@@ -1,7 +1,6 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.afterAll(() => {
   // change the name back to the original

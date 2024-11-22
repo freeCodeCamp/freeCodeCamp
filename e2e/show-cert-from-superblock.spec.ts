@@ -32,8 +32,6 @@ test.describe('When the user HAS NOT claimed their cert', () => {
 });
 
 test.describe('When the user HAS claimed their cert', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
     await page.goto('/learn/front-end-development-libraries');
   });

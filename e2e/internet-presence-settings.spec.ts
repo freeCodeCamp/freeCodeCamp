@@ -12,8 +12,6 @@ const settingsPageElement = {
   internetPresenceForm: 'internet-presence'
 } as const;
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.beforeEach(async ({ page }) => {
   // Reset input values
   execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');

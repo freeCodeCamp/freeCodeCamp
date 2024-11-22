@@ -1,7 +1,5 @@
 import { test, expect } from '@playwright/test';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.describe('Classic challenge - 3 pane desktop layout component', () => {
   test.skip(
     ({ isMobile }) => isMobile === true,

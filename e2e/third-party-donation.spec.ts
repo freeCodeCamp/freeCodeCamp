@@ -5,7 +5,6 @@ import stripeJson from './fixtures/donation/stripe.json';
 import { alertToBeVisible } from './utils/alerts';
 
 test.describe('third-party donation tests', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test.beforeEach(async ({ page }) => {
     await page.goto('/donate');
   });
