@@ -107,12 +107,9 @@ const ShowFillInTheBlank = ({
   const [allBlanksFilled, setAllBlanksFilled] = useState(false);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
-  const [isScenePlaying, setIsScenePlaying] = useState(false);
 
   const sceneProps = useScene({
-    scene,
-    isPlaying: isScenePlaying,
-    setIsPlaying: setIsScenePlaying
+    scene
   });
 
   const container = useRef<HTMLElement | null>(null);
@@ -191,7 +188,7 @@ const ShowFillInTheBlank = ({
   };
 
   const handlePlayScene = (shouldPlay: boolean) => {
-    setIsScenePlaying(shouldPlay);
+    sceneProps.setIsPlaying(shouldPlay);
   };
 
   const blockNameTitle = `${t(
@@ -225,13 +222,7 @@ const ShowFillInTheBlank = ({
               <Spacer size='m' />
             </Col>
 
-            {scene && (
-              <Scene
-                {...sceneProps}
-                isPlaying={isScenePlaying}
-                setIsPlaying={setIsScenePlaying}
-              />
-            )}
+            {scene && <Scene {...sceneProps} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               {instructions && (

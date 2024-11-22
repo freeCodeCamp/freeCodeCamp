@@ -142,13 +142,8 @@ const ShowGeneric = ({
     setVideoIsLoaded(true);
   };
 
-  // scene
-  const [isScenePlaying, setIsScenePlaying] = useState(false);
-
   const sceneProps = useScene({
-    scene,
-    isPlaying: isScenePlaying,
-    setIsPlaying: setIsScenePlaying
+    scene
   });
 
   // assignments
@@ -202,7 +197,7 @@ const ShowGeneric = ({
       containerRef={container}
       nextChallengePath={nextChallengePath}
       prevChallengePath={prevChallengePath}
-      playScene={scene ? () => setIsScenePlaying(true) : undefined}
+      playScene={scene ? () => sceneProps.setIsPlaying(true) : undefined}
     >
       <LearnLayout>
         <Helmet
@@ -238,13 +233,7 @@ const ShowGeneric = ({
               )}
             </Col>
 
-            {scene && (
-              <Scene
-                {...sceneProps}
-                isPlaying={isScenePlaying}
-                setIsPlaying={setIsScenePlaying}
-              />
-            )}
+            {scene && <Scene {...sceneProps} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               {instructions && (

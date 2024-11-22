@@ -5,8 +5,6 @@ import { sounds, backgrounds, characterAssets } from './scene-assets';
 
 type Args = {
   scene: FullScene;
-  isPlaying: boolean;
-  setIsPlaying: (shouldPlay: boolean) => void;
 };
 
 const loadImage = (src: string | null) => {
@@ -17,7 +15,7 @@ const sToMs = (n: number) => {
   return n * 1000;
 };
 
-export function useScene({ scene, isPlaying, setIsPlaying }: Args) {
+export function useScene({ scene }: Args) {
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
   const { startTimestamp = null, finishTimestamp = null } = audio;
@@ -32,6 +30,7 @@ export function useScene({ scene, isPlaying, setIsPlaying }: Args) {
     };
   });
 
+  const [isPlaying, setIsPlaying] = useState(false);
   const [sceneIsReady, setSceneIsReady] = useState(false);
   const [showDialogue, setShowDialogue] = useState(false);
   const [accessibilityOn, setAccessibilityOn] = useState(false);
@@ -214,12 +213,14 @@ export function useScene({ scene, isPlaying, setIsPlaying }: Args) {
 
   return {
     accessibilityOn,
+    alwaysShowDialogue,
     background,
     characters,
     dialogue,
+    isPlaying,
     sceneIsReady,
-    alwaysShowDialogue,
     setAccessibilityOn,
+    setIsPlaying,
     showDialogue
   };
 }
