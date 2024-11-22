@@ -1,4 +1,4 @@
-import React from 'react'; //, ReactElement } from 'react';
+import React from 'react';
 import { Col, Spacer } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../../components/helpers';
