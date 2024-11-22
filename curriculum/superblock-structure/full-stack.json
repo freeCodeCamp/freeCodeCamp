@@ -464,7 +464,8 @@
           "dashedName": "maps-sets-and-json",
           "blocks": [
             { "dashedName": "lecture-working-with-maps-and-sets" },
-            { "dashedName": "review-javascript-maps-sets-and-json" }
+            { "dashedName": "review-javascript-maps-sets-and-json" },
+            { "dashedName": "quiz-javascript-maps-sets-and-json" }
           ]
         },
         {
@@ -488,7 +489,8 @@
             { "dashedName": "workshop-shopping-cart" },
             { "dashedName": "lab-project-idea-board" },
             { "dashedName": "lab-bank-account-manager" },
-            { "dashedName": "review-javascript-classes" }
+            { "dashedName": "review-javascript-classes" },
+            { "dashedName": "quiz-javascript-classes" }
           ]
         },
         {
@@ -507,6 +509,7 @@
           "dashedName": "functional-programming",
           "blocks": [
             { "dashedName": "lecture-understanding-functional-programming" },
+            { "dashedName": "workshop-recipe-ingredient-converter" },
             { "dashedName": "review-javascript-functional-programming" },
             { "dashedName": "quiz-javascript-functional-programming" }
           ]

@@ -2894,7 +2894,8 @@
       "review-dom-manipulation-and-click-events-with-javascript": {
         "title": "DOM Manipulation and Click Events with JavaScript Review",
         "intro": [
-          "Review the DOM Manipulation and Click Events with JavaScript concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the Document Object Model, you first need to review the concepts.",
+          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's/code>, the <code>addEventListener()</code> method and more."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
@@ -2946,7 +2947,8 @@
       "review-javascript-events": {
         "title": "JavaScript Events Review",
         "intro": [
-          "Review the JavaScript Events concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on events, you first need to review the concepts.",
+          "Open up this page to review concepts like change events, event bubbling, and event delegation."
         ]
       },
       "quiz-javascript-events": {
@@ -2968,7 +2970,8 @@
       "review-debugging-javascript": {
         "title": "Debugging JavaScript Review",
         "intro": [
-          "Review the Debugging JavaScript concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on common debugging concepts you first need to review the concepts.",
+          "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally/code> and more."
         ]
       },
       "quiz-debugging-javascript": {
@@ -3094,7 +3097,12 @@
           "Review the JavaScript Maps, Sets, and JSON concepts to prepare for the upcoming quiz."
         ]
       },
-      "cvs3": { "title": "229", "intro": [] },
+      "quiz-javascript-maps-sets-and-json": {
+        "title": "JavaScript Maps, Sets, and JSON Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Maps, Sets, and JSON."
+        ]
+      },
       "lecture-working-with-client-side-storage-and-crud-operations": {
         "title": "Working with Client-Side Storage and CRUD Operations",
         "intro": [
@@ -3155,7 +3163,12 @@
           "Review the JavaScript Classes concepts to prepare for the upcoming quiz."
         ]
       },
-      "ndl1": { "title": "240", "intro": [] },
+      "quiz-javascript-classes": {
+        "title": "JavaScript Classes Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Classes."
+        ]
+      },
       "lecture-understanding-recursion-and-the-call-stack": {
         "title": "Understanding Recursion and the Call Stack",
         "intro": [
@@ -3179,13 +3192,13 @@
         "title": "Recursion Quiz",
         "intro": ["Test what you've learned in this quiz on Recursion."]
       },
+      "yshh": { "title": "246", "intro": [] },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
           "In these lecture videos, you will learn about functional programming."
         ]
       },
-      "wyx1": { "title": "247", "intro": [] },
       "wyx2": { "title": "248", "intro": [] },
       "wyx3": { "title": "249", "intro": [] },
       "lecture-understanding-asynchronous-programming": {
@@ -3211,6 +3224,13 @@
       },
       "xkhk": { "title": "243", "intro": [] },
       "yaxm": { "title": "245", "intro": [] },
+      "workshop-recipe-ingredient-converter": {
+        "title": "Build a Recipe Ingredient Converter",
+        "intro": [
+          "In the previous lecture videos, you learned the core concepts behind functional programming and currying.",
+          "Now you will be able to apply what you have learned about currying and functional programming by building a recipe ingredient converter application."
+        ]
+      },
       "udia": { "title": "248", "intro": [] },
       "review-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Review",
