@@ -146,7 +146,6 @@ test.describe('Invalid certification page', () => {
     }
   };
   test.describe('for authenticated user', () => {
-    test.use({ storageState: 'playwright/.auth/certified-user.json' });
     test(
       'it should redirect to / and display an error message',
       testInvalidCertification
