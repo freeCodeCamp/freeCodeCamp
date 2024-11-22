@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Password Generator App
-block: lab-build-a-password-generator
-superBlock: front-end-development
+block: lab-password-generator
+superBlock: full-stack-developer
 ---
 
 ## Introduction to the Build a Password Generator App

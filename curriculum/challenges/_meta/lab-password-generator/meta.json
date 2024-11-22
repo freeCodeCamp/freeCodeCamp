@@ -3,7 +3,7 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "blockType": "lab",
-  "dashedName": "lab-build-a-password-generator",
+  "dashedName": "lab-password-generator",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66f53dc2c5bd6a11d6c3282f", "title": "Build a Password Generator App" }],
   "helpCategory": "JavaScript",
