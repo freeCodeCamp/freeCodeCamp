@@ -86,7 +86,7 @@ export interface CharacterPosition {
   z?: number;
 }
 
-export interface SceneCommand {
+interface SceneCommand {
   background?: string;
   character: string;
   position?: CharacterPosition;
@@ -121,7 +121,7 @@ export type Characters =
   | 'Sophie'
   | 'Tom';
 
-export interface SetupCharacter {
+interface SetupCharacter {
   character: Characters;
   position: CharacterPosition;
   opacity: number;
