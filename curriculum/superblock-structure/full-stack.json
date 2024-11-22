@@ -379,11 +379,11 @@
         {
           "dashedName": "higher-order-functions-and-callbacks",
           "blocks": [
-            { "dashedName": "lab-book-organizer" },
             {
               "dashedName": "lecture-working-with-higher-order-functions-and-callbacks"
             },
             { "dashedName": "workshop-library-manager" },
+            { "dashedName": "lab-book-organizer" },
             { "dashedName": "review-javascript-higher-order-functions" },
             { "dashedName": "quiz-javascript-higher-order-functions" }
           ]

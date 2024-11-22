@@ -2858,12 +2858,6 @@
           "Test what you've learned in this quiz on JavaScript Fundamentals Quiz."
         ]
       },
-      "lab-book-organizer": {
-        "title": "Build a Book Organizer",
-        "intro": [
-          "In this lab, you will build a book organizer using higher order functions in JavaScript."
-        ]
-      },
       "lecture-working-with-higher-order-functions-and-callbacks": {
         "title": "Working with Higher Order Functions and Callbacks",
         "intro": [
@@ -2874,6 +2868,12 @@
         "title": "Build a Library Manager",
         "intro": [
           "In this workshop, you will learn higher order array methods by building a library manager"
+        ]
+      },
+      "lab-book-organizer": {
+        "title": "Build a Book Organizer",
+        "intro": [
+          "In this lab, you will build a book organizer using higher order functions in JavaScript."
         ]
       },
       "bxtv": { "title": "184", "intro": [] },
