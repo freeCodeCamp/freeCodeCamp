@@ -1,0 +1,8 @@
+services:
+  api:
+    restart: unless-stopped
+    image: fcc-api
+    env_file:
+      - ../../.env
+    ports:
+      - '3000:3000'

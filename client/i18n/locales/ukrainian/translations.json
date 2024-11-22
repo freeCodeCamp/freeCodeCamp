@@ -618,6 +618,8 @@
     "progress-modal-cta-10": "Задонатьте зараз, щоб допомогти нам розробити безоплатні сертифікації з програмування.",
     "help-us-reach-20k": "Задонатьте зараз, щоб допомогти нашій організації досягнути мети у 20 000 донорів цього року.",
     "beta-certification": "Ця сертифікація знаходиться в бета-версії. Будь ласка, зробіть донат, щоб підтримати її створення.",
+    "unfinished-certification": "This certification is currently in active development. While there isn't a claimable certification available at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "consider-donating": "Please consider donating to support the completion of its development.",
     "help-us-develop": "Допоможіть нам розробити безоплатні сертифікації з програмування.",
     "nicely-done": "Чудово. Ви щойно завершили {{block}}.",
     "credit-card": "Кредитна картка",

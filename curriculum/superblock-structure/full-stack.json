@@ -128,6 +128,7 @@
             {
               "dashedName": "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css"
             },
+            { "dashedName": "workshop-greeting-card" },
             { "dashedName": "lab-job-application-form" },
             { "dashedName": "review-css-pseudo-classes" },
             { "dashedName": "quiz-css-pseudo-classes" }
@@ -416,6 +417,7 @@
         {
           "dashedName": "debugging-javascript",
           "blocks": [
+            { "dashedName": "lecture-debugging-techniques" },
             { "dashedName": "lab-random-background-color-changer" },
             { "dashedName": "review-debugging-javascript" },
             { "dashedName": "quiz-debugging-javascript" }
@@ -424,6 +426,7 @@
         {
           "dashedName": "basic-regex",
           "blocks": [
+            { "dashedName": "lecture-working-with-regular-expressions" },
             { "dashedName": "workshop-spam-filter" },
             { "dashedName": "lab-markdown-to-html-converter" },
             { "dashedName": "lab-regex-sandbox" },
@@ -434,6 +437,7 @@
         {
           "dashedName": "form-validation",
           "blocks": [
+            { "dashedName": "lecture-understanding-form-validation" },
             { "dashedName": "workshop-calorie-counter" },
             { "dashedName": "lab-customer-complaint-form" },
             { "dashedName": "review-form-validation-with-javascript" },
@@ -443,6 +447,7 @@
         {
           "dashedName": "javascript-dates",
           "blocks": [
+            { "dashedName": "lecture-working-with-dates" },
             { "dashedName": "lab-date-conversion" },
             { "dashedName": "review-javascript-dates" },
             { "dashedName": "quiz-javascript-dates" }
@@ -451,17 +456,25 @@
         {
           "dashedName": "audio-and-video-events",
           "blocks": [
+            { "dashedName": "lecture-working-with-audio-and-video" },
             { "dashedName": "review-javascript-audio-and-video" },
             { "dashedName": "quiz-javascript-audio-and-video" }
           ]
         },
         {
           "dashedName": "maps-sets-and-json",
-          "blocks": [{ "dashedName": "review-javascript-maps-sets-and-json" }]
+          "blocks": [
+            { "dashedName": "lecture-working-with-maps-and-sets" },
+            { "dashedName": "review-javascript-maps-sets-and-json" },
+            { "dashedName": "quiz-javascript-maps-sets-and-json" }
+          ]
         },
         {
           "dashedName": "localstorage-and-crud-operations",
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-client-side-storage-and-crud-operations"
+            },
             { "dashedName": "workshop-todo-app" },
             { "dashedName": "lab-bookmark-manager-app" },
             { "dashedName": "review-local-storage-and-crud" },
@@ -471,15 +484,23 @@
         {
           "dashedName": "classes-and-the-this-keyword",
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-how-to-work-with-classes-in-javascript"
+            },
             { "dashedName": "workshop-shopping-cart" },
             { "dashedName": "lab-project-idea-board" },
-            { "dashedName": "review-javascript-classes" }
+            { "dashedName": "review-javascript-classes" },
+            { "dashedName": "quiz-javascript-classes" }
           ]
         },
         {
           "dashedName": "recursion",
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-recursion-and-the-call-stack"
+            },
             { "dashedName": "workshop-decimal-to-binary-converter" },
+            { "dashedName": "lab-permutation-generator" },
             { "dashedName": "review-recursion" },
             { "dashedName": "quiz-recursion" }
           ]
@@ -487,6 +508,8 @@
         {
           "dashedName": "functional-programming",
           "blocks": [
+            { "dashedName": "lecture-understanding-functional-programming" },
+            { "dashedName": "workshop-recipe-ingredient-converter" },
             { "dashedName": "review-javascript-functional-programming" },
             { "dashedName": "quiz-javascript-functional-programming" }
           ]
@@ -494,6 +517,7 @@
         {
           "dashedName": "asynchronous-javascript",
           "blocks": [
+            { "dashedName": "lecture-understanding-asynchronous-programming" },
             { "dashedName": "workshop-fcc-authors-page" },
             { "dashedName": "review-asynchronous-javascript" },
             { "dashedName": "quiz-asynchronous-javascript" }

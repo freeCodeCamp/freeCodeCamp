@@ -618,6 +618,8 @@
     "progress-modal-cta-10": "Doe agora para nos ajudar a desenvolver certificações de programação profissional gratuitas para todos.",
     "help-us-reach-20k": "Doe agora para ajudar nossa instituição beneficente a atingir nosso objetivo de chegar a 20.000 apoiadores mensais neste ano.",
     "beta-certification": "Esta certificação está atualmente em versão beta. Considere doar para apoiar a conclusão do seu desenvolvimento.",
+    "unfinished-certification": "This certification is currently in active development. While there isn't a claimable certification available at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "consider-donating": "Please consider donating to support the completion of its development.",
     "help-us-develop": "Ajude-nos a desenvolver certificações de programação profissional gratuitas para todos.",
     "nicely-done": "Bom trabalho. Você acabou de completar {{block}}.",
     "credit-card": "Cartão de crédito",
