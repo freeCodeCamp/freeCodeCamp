@@ -24,176 +24,126 @@ Be sure to write your code to account for collisions!
 
 # --hints--
 
+The `hash` function should be valid. 
+
+```js
+let calls = 0;
+const ourHash = string => {
+  calls++;
+  let hashCode = 0;
+  for (let i = 0; i < string.length; i++) {
+    hashCode += string.charCodeAt(i);
+  }
+  return hashCode;
+};
+
+assert.strictEqual(hash('yek'),ourHash('yek'));
+
+assert.strictEqual(hash('key'),ourHash('key'));
+assert.strictEqual(hash('key1'),ourHash('key1'));
+assert.strictEqual(hash('key2'),ourHash('key2'));
+assert.strictEqual(hash('key3'),ourHash('key3'));
+
+assert.strictEqual(hash('1key'),ourHash('1key'));
+assert.strictEqual(hash('ke1y'),ourHash('ke1y'));
+assert.strictEqual(hash('altKey'),ourHash('altKey'));
+
+assert.strictEqual(called,calls); 
+```
+
 The `HashTable` data structure should exist.
 
 ```js
-assert(
-  (function () {
-    var test = false;
-    if (typeof HashTable !== 'undefined') {
-      test = new HashTable();
-    }
-    return typeof test === 'object';
-  })()
-);
+assert.isDefined(HashTable); 
+let newHashTable = new HashTable(); 
+assert.isObject(newHashTable); 
 ```
 
 The `HashTable` should have an `add` method.
 
 ```js
-assert(
-  (function () {
-    var test = false;
-    if (typeof HashTable !== 'undefined') {
-      test = new HashTable();
-    }
-    return typeof test.add === 'function';
-  })()
-);
+let newHashTable = new HashTable(); 
+assert.isFunction(newHashTable.add); 
 ```
 
 The `HashTable` should have a `lookup` method.
 
 ```js
-assert(
-  (function () {
-    var test = false;
-    if (typeof HashTable !== 'undefined') {
-      test = new HashTable();
-    }
-    return typeof test.lookup === 'function';
-  })()
-);
+let newHashTable = new HashTable(); 
+assert.isFunction(newHashTable.lookup); 
 ```
 
 The `HashTable` should have a `remove` method.
 
 ```js
-assert(
-  (function () {
-    var test = false;
-    if (typeof HashTable !== 'undefined') {
-      test = new HashTable();
-    }
-    return typeof test.remove === 'function';
-  })()
-);
+let newHashTable = new HashTable(); 
+assert.isFunction(newHashTable.remove); 
 ```
 
 The `add` method should add key value pairs and the `lookup` method should return the values associated with a given key.
 
 ```js
-assert(
-  (function () {
-    var test = false;
-    if (typeof HashTable !== 'undefined') {
-      test = new HashTable();
-    }
-    test.add('key', 'value');
-    return test.lookup('key') === 'value';
-  })()
-);
+let newHashTable = new HashTable(); 
+newHashTable.add('key','value');
+assert.strictEqual(newHashTable.lookup('key'),'value'); 
 ```
 
 The `remove` method should accept a key as input and should remove the associated key value pair.
 
 ```js
-assert(
-  (function () {
-    var test = false;
-    var hashValue = hash('key');
-    if (typeof HashTable !== 'undefined') {
-      test = new HashTable();
-    }
-    test.add('key', 'value');
-
-    test.remove('key');
-    return !test.collection.hasOwnProperty(hashValue);
-  })()
-);
+let hashValue = hash('key');
+let newHashTable = new HashTable(); 
+newHashTable.add('key','value');
+newHashTable.remove('key'); 
+assert.notProperty(newHashTable.collection,hashValue); 
 ```
 
 The `remove` method should only remove the correct key value pair.
 
 ```js
-assert(
-  (function () {
-    var test = false;
-    var hashValue = hash('key');
-    if (typeof HashTable !== 'undefined') {
-      test = new HashTable();
-    }
-    test.add('key', 'value');
-    test.add('yek', 'value');
-    test.add('altKey', 'value');
+let newHashTable = new HashTable(); 
+let hashValue = hash('key');
+newHashTable.add('key','value');
+newHashTable.add('yek','value');
+newHashTable.add('altKey','value');
+newHashTable.remove('yek');
 
-    test.remove('yek');
-    if (test.lookup('yek') || !test.lookup('key') || !test.lookup('altKey')) {
-      return false;
-    }
+assert.notExists(newHashTable.lookup('yek'));
+assert.exists(newHashTable.lookup('altKey'));
+assert.exists(newHashTable.lookup('key'));
 
-    test.remove('key');
+newHashTable.remove('key');
 
-    return !test.collection.hasOwnProperty(hashValue) && test.lookup('altKey');
-  })()
-);
+assert.notProperty(newHashTable.collection,hashValue); 
+assert.exists(newHashTable.lookup('altKey'));
+
 ```
 
 Items should be added using the hash function.
 
 ```js
-assert(
-  (function () {
-    var test = false;
-    if (typeof HashTable !== 'undefined') {
-      test = new HashTable();
-    }
-    called = 0;
-    test.add('key1', 'value1');
-    test.add('key2', 'value2');
-    test.add('key3', 'value3');
-    return called >= 3 && called % 3 === 0;
-  })()
-);
+let newHashTable = new HashTable(); 
+called = 0;
+newHashTable.add('key1', 'value1')
+newHashTable.add('key2', 'value2');
+newHashTable.add('key3', 'value3');
+assert.strictEqual(called,3); 
 ```
 
 The hash table should handle collisions.
 
 ```js
-assert(
-  (function () {
-    var test = false;
-    if (typeof HashTable !== 'undefined') {
-      test = new HashTable();
-    }
-    called = 0;
-    test.add('key1', 'value1');
-    test.add('1key', 'value2');
-    test.add('ke1y', 'value3');
-    return (
-      test.lookup('key1') === 'value1' &&
-      test.lookup('1key') == 'value2' &&
-      test.lookup('ke1y') == 'value3'
-    );
-  })()
-);
+let newHashTable = new HashTable(); 
+called = 0;
+newHashTable.add('key1','value1');
+newHashTable.add('1key', 'value2'); 
+newHashTable.add('ke1y', 'value3'); 
+assert.strictEqual(newHashTable.lookup('key1'),'value1');
+assert.strictEqual(newHashTable.lookup('1key'),'value2');
+assert.strictEqual(newHashTable.lookup('ke1y'),'value3');
 ```
 
 # --seed--
-
-## --before-user-code--
-
-```js
-var called = 0;
-var hash = string => {
-  called++;
-  var hash = 0;
-  for (var i = 0; i < string.length; i++) {
-    hash += string.charCodeAt(i);
-  }
-  return hash;
-};
-```
 
 ## --seed-contents--
 

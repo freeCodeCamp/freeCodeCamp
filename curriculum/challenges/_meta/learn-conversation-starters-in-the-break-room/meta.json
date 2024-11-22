@@ -534,5 +534,6 @@
       "title": "Task 127"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }

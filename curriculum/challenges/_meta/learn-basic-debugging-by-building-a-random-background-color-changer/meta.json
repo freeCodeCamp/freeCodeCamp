@@ -40,5 +40,6 @@
       "title": "Step 8"
     }
   ],
-  "helpCategory": "JavaScript"
+  "helpCategory": "JavaScript",
+  "blockLayout": "legacy-challenge-grid"
 }

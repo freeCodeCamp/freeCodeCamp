@@ -108,7 +108,7 @@ model user {
   is2018DataVisCert            Boolean? // Undefined
   is2018FullStackCert          Boolean? // Undefined
   isCollegeAlgebraPyCertV8     Boolean? // Undefined
-  isUpcomingPythonCertV8       Boolean? // Undefined
+  // isUpcomingPythonCertV8    Boolean? // Undefined. It is in the db but has never been used.
   keyboardShortcuts            Boolean? // Undefined
   linkedin                     String? // Null | Undefined
   location                     String? // Null
