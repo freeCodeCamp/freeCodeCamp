@@ -3062,7 +3062,8 @@
       "review-javascript-dates": {
         "title": "JavaScript Dates Review",
         "intro": [
-          "Review the JavaScript Dates concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with dates, you first need to review the concepts.",
+          "Open up this page to review the <code>Date()</code> object and common methods."
         ]
       },
       "quiz-javascript-dates": {
