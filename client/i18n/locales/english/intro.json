@@ -3039,7 +3039,7 @@
         "title": "Form Validation with JavaScript Review",
         "intro": [
           "Before you are quizzed on form validation concepts you first need to review.",
-          "Open up this page to review concepts including the <code>preventDefault() method</code> method, the submit event and more."
+          "Open up this page to review concepts including the <code>preventDefault()</code> method, the submit event and more."
         ]
       },
       "quiz-form-validation-with-javascript": {
