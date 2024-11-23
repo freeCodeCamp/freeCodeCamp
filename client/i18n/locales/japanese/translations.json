@@ -618,6 +618,8 @@
     "progress-modal-cta-10": "寄付を通して、無料で誰もが利用できる、専門的なプログラミング認定証の開発をご支援ください。",
     "help-us-reach-20k": "今年中にマンスリーサポーター 2 万人を目指しています。ぜひご協力ください。",
     "beta-certification": "この認定講座は現在ベータ版です。開発をサポートするための寄付をご検討いただければ幸いです。",
+    "unfinished-certification": "This certification is currently in active development. While there isn't a claimable certification available at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "consider-donating": "Please consider donating to support the completion of its development.",
     "help-us-develop": "無料で誰もが利用できる、専門的なプログラミング認定証の開発をご支援ください。",
     "nicely-done": "おめでとうございます。「{{block}}」を完了しました。",
     "credit-card": "クレジットカード",

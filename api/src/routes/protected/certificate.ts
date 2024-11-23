@@ -39,8 +39,7 @@ const {
   machineLearningPyV7Id,
   relationalDatabaseV8Id,
   collegeAlgebraPyV8Id,
-  foundationalCSharpV8Id,
-  upcomingPythonV8Id
+  foundationalCSharpV8Id
 } = certIds;
 
 function isCertAllowed(certSlug: string): boolean {
@@ -157,10 +156,9 @@ function createCertTypeIds(challenges: ReturnType<typeof getChallenges>) {
     [certTypes.foundationalCSharpV8]: getCertById(
       foundationalCSharpV8Id,
       challenges
-    ),
+    )
 
     // upcoming
-    [certTypes.upcomingPythonV8]: getCertById(upcomingPythonV8Id, challenges)
   };
 }
 
@@ -184,7 +182,6 @@ interface CertI {
   isRelationalDatabaseCertV8?: boolean;
   isCollegeAlgebraPyCertV8?: boolean;
   isFoundationalCSharpCertV8?: boolean;
-  isUpcomingPythonCertV8?: boolean;
 }
 
 function getUserIsCertMap(user: CertI) {
@@ -207,8 +204,7 @@ function getUserIsCertMap(user: CertI) {
     isMachineLearningPyCertV7 = false,
     isRelationalDatabaseCertV8 = false,
     isCollegeAlgebraPyCertV8 = false,
-    isFoundationalCSharpCertV8 = false,
-    isUpcomingPythonCertV8 = false
+    isFoundationalCSharpCertV8 = false
   } = user;
 
   return {
@@ -230,8 +226,7 @@ function getUserIsCertMap(user: CertI) {
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
     isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8,
-    isUpcomingPythonCertV8
+    isFoundationalCSharpCertV8
   };
 }
 
@@ -390,8 +385,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           isQaCertV7: true,
           isRelationalDatabaseCertV8: true,
           isRespWebDesignCert: true,
-          isSciCompPyCertV7: true,
-          isUpcomingPythonCertV8: true
+          isSciCompPyCertV7: true
         }
       });
 
