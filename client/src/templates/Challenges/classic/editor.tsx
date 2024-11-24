@@ -1280,7 +1280,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   const handleSubmitAndGoButtonBoolean = () => {
     const canShowModal = sessionStorage.getItem('canOpenModal');
 
-    if (canShowModal === 'false') {
+    if (canShowModal === 'false' && process.env.NODE_ENV === 'development') {
       return false;
     } else {
       challengeIsComplete();
