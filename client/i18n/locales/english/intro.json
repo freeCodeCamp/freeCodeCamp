@@ -3091,7 +3091,8 @@
       "review-javascript-maps-sets-and-json": {
         "title": "JavaScript Maps, Sets, and JSON Review",
         "intro": [
-          "Review the JavaScript Maps, Sets, and JSON concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on JS Maps and Sets, you first need to review.",
+          "Open up this page to review concepts including sets, maps, weak sets and weak maps."
         ]
       },
       "cvs3": { "title": "229", "intro": [] },
