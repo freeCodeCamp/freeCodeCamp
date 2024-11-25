@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Customer Complaint Form
 
-For this lab, you will use JavaScript to validate validate a customer complaint form.
+For this lab, you will use JavaScript to validate a customer complaint form.
