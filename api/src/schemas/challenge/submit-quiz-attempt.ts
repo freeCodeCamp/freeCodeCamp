@@ -11,9 +11,7 @@ export const submitQuizAttempt = {
     quizId: Type.String()
   }),
   response: {
-    200: Type.Object({
-      attemptDate: Type.Number()
-    }),
+    200: Type.Object({}),
     400: Type.Object({
       type: Type.Literal('error'),
       message: Type.Literal(

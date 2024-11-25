@@ -1765,9 +1765,7 @@ describe('challengeRoutes', () => {
           });
 
           expect(response.statusCode).toBe(200);
-          expect(response.body).toStrictEqual({
-            attemptDate: DATE_NOW
-          });
+          expect(response.body).toStrictEqual({});
         });
 
         test('POST updates the timestamp of the existing attempt', async () => {
@@ -1814,9 +1812,7 @@ describe('challengeRoutes', () => {
           });
 
           expect(response.statusCode).toBe(200);
-          expect(response.body).toStrictEqual({
-            attemptDate: DATE_NOW
-          });
+          expect(response.body).toStrictEqual({});
         });
       });
     });

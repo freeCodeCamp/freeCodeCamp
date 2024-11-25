@@ -823,9 +823,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       });
 
-      return {
-        attemptDate: newAttempt.timestamp
-      };
+      return {};
     }
   );
 
