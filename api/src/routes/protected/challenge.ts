@@ -804,9 +804,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       });
 
-      const existingAttempt = user.quizAttempts.find(
-        matches({ quizId, challengeId })
-      );
+      const existingAttempt = user.quizAttempts.find(matches({ challengeId }));
 
       const newAttempt = {
         challengeId,
@@ -814,14 +812,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         timestamp: Date.now()
       };
 
-      // If there is an existing attempt, replace it with the new attempt (essentially only timestamp is changed).
-      // Otherwise, add the new attempt to the list.
       await fastify.prisma.user.update({
         where: { id: user.id },
         data: {
           quizAttempts: existingAttempt
             ? {
-                updateMany: { where: { challengeId, quizId }, data: newAttempt }
+                updateMany: { where: { challengeId }, data: newAttempt }
               }
             : { push: newAttempt }
         }

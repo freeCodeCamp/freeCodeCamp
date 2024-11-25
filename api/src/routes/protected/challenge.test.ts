@@ -1791,7 +1791,7 @@ describe('challengeRoutes', () => {
 
           const response = await superPost('/submit-quiz-attempt').send({
             challengeId: '66df3b712c41c499e9d31e5b',
-            quizId: '0'
+            quizId: '1'
           });
 
           const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
@@ -1802,7 +1802,7 @@ describe('challengeRoutes', () => {
             quizAttempts: [
               {
                 challengeId: '66df3b712c41c499e9d31e5b',
-                quizId: '0',
+                quizId: '1',
                 timestamp: DATE_NOW
               },
               {
