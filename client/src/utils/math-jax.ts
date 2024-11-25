@@ -21,17 +21,13 @@ const configure = () => {
         ['\\(', '\\)']
       ],
       processEscapes: true,
-      processClass:
-        'rosetta-code|project-euler|intermediate-algorithm-scripting|description-container'
+      processClass: 'mathjax-support'
     }
   });
   MathJax.Hub.Queue([
     'Typeset',
     MathJax.Hub,
-    document.querySelector('.intermediate-algorithm-scripting'),
-    document.querySelector('.rosetta-code'),
-    document.querySelector('.project-euler'),
-    document.querySelector('.description-container')
+    document.querySelector('.mathjax-support')
   ]);
 };
 

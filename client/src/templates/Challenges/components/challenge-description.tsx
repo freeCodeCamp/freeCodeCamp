@@ -10,7 +10,7 @@ type Props = {
 
 const ChallengeDescription = ({ description, instructions }: Props) => (
   <div
-    className={'challenge-instructions'}
+    className={'challenge-instructions mathjax-support'}
     data-playwright-test-label='challenge-description'
   >
     {description && <PrismFormatted text={description} />}
