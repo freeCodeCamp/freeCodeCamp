@@ -9,6 +9,7 @@ describe('Share Template Testing', () => {
     <ShareTemplate
       xRedirectURL={redirectURL}
       blueSkyRedirectURL={redirectURL}
+      instaRedirectURL={redirectURL}
     />
   );
   test('Testing share template Click Redirect Event', () => {
@@ -19,5 +20,7 @@ describe('Share Template Testing', () => {
     expect(links[0]).toHaveAttribute('href', 'string');
     expect(links[1]).toBeInTheDocument();
     expect(links[1]).toHaveAttribute('href', 'string');
+    expect(links[2]).toBeInTheDocument();
+    expect(links[2]).toHaveAttribute('href', 'string');
   });
 });

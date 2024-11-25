@@ -6,4 +6,5 @@ export interface ShareProps {
 export interface ShareRedirectProps {
   xRedirectURL: string;
   blueSkyRedirectURL: string;
+  instaRedirectURL: string;
 }

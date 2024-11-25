@@ -106,7 +106,9 @@
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
     "play-scene": "Press Play",
-    "closed-caption": "Closed caption"
+    "closed-caption": "Closed caption",
+    "share-on-bluesky": "Share on BlueSky",
+    "share-on-insta": "Share on Threads"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
