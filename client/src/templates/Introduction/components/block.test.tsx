@@ -13,7 +13,7 @@ import {
   BilibiliIds
 } from '../../../redux/prop-types';
 import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
-import { BlockTypes } from '../../../../../shared/config/blocks';
+import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
 import Block from './block';
 
 jest.mock('../../../../../shared/utils/is-audited', () => ({
@@ -22,10 +22,12 @@ jest.mock('../../../../../shared/utils/is-audited', () => ({
 
 const defaultProps = {
   block: 'test-block',
+  blockType: null,
   challenges: [
     {
       block: 'testblock',
       blockType: BlockTypes.lab,
+      blockLayout: BlockLayouts.ChallengeGrid,
       certification: 'mockCertification',
       challengeOrder: 1,
       challengeType: 0,
@@ -67,7 +69,7 @@ const defaultProps = {
       },
       sourceInstanceName: 'mockSourceInstanceName',
       superOrder: 1,
-      superBlock: SuperBlocks.UpcomingPython,
+      superBlock: SuperBlocks.RespWebDesign,
       tail: ['mockTail'],
       template: 'mockTemplate',
       tests: [] as Test[],

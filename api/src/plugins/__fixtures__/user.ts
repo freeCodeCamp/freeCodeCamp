@@ -49,7 +49,6 @@ export const newUser = (email: string) => ({
   isCollegeAlgebraPyCertV8: false,
   isRespWebDesignCert: false,
   isSciCompPyCertV7: false,
-  isUpcomingPythonCertV8: null,
   keyboardShortcuts: false,
   linkedin: null,
   location: '',
