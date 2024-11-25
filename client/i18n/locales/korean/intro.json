@@ -584,10 +584,6 @@
           "Now that you learned how to work with D3, APIs, and AJAX technologies, put your skills to the test with these 5 Data Visualization projects.",
           "In these projects, you'll need to fetch data and parse a dataset, then use D3 to create different data visualizations. Finish them all to earn your Data Visualization certification."
         ]
-      },
-      "d3-dashboard": {
-        "title": "D3 Dashboard",
-        "intro": ["", ""]
       }
     }
   },
@@ -1391,20 +1387,6 @@
       }
     }
   },
-  "upcoming-python": {
-    "title": "Upcoming Python",
-    "intro": ["placeholder"],
-    "blocks": {
-      "learn-python-by-building-a-blackjack-game": {
-        "title": "Learn Python by Building a Blackjack Game",
-        "intro": ["Learn Python.", ""]
-      },
-      "upcoming-python-project": {
-        "title": "Upcoming Python Project",
-        "intro": ["placeholder"]
-      }
-    }
-  },
   "a2-english-for-developers": {
     "title": "A2 English for Developers (Beta)",
     "intro": [
@@ -1708,7 +1690,7 @@
       "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
     ],
     "chapters": {
-      "freecodecamp": "freeCodeCamp",
+      "freecodecamp": "Welcome",
       "html": "HTML",
       "css": "CSS",
       "javascript": "JavaScript",
@@ -1720,43 +1702,43 @@
       "getting-started-with-freecodecamp": "Getting Started with freeCodeCamp",
       "basic-html": "Basic HTML",
       "semantic-html": "Semantic HTML",
-      "html-forms-and-tables": "HTML Forms and Tables",
-      "html-and-accessibility": "HTML and Accessibility",
+      "html-forms-and-tables": "Forms and Tables",
+      "html-and-accessibility": "Accessibility",
       "computer-basics": "Computer Basics",
       "basic-css": "Basic CSS",
-      "design-for-developers": "Designer for Developers",
+      "design-for-developers": "Design",
       "absolute-and-relative-units": "Absolute and Relative Units",
       "pseudo-classes-and-elements": "Pseudo Classes and Elements",
-      "css-colors": "CSS Colors",
+      "css-colors": "Colors",
       "styling-forms": "Styling Forms",
-      "css-box-model": "CSS Box Model",
-      "css-flexbox": "CSS Flexbox",
-      "css-typography": "CSS Typography",
-      "css-and-accessibility": "CSS and Accessibility",
+      "css-box-model": "The Box Model",
+      "css-flexbox": "Flexbox",
+      "css-typography": "Typography",
+      "css-and-accessibility": "Accessibility",
       "attribute-selectors": "Attribute Selectors",
-      "css-positioning": "CSS Positioning",
+      "css-positioning": "Positioning",
       "responsive-design": "Responsive Design",
-      "css-variables": "CSS Variables",
-      "css-grid": "CSS Grid",
-      "css-animations": "CSS Animations",
-      "code-editors": "Code editors",
-      "javascript-variables-and-strings": "JavaScript Variables and Strings",
-      "javascript-booleans-and-numbers": "JavaScript Booleans and Numbers",
-      "javascript-functions": "JavaScript Functions",
-      "javascript-arrays": "JavaScript Arrays",
-      "javascript-objects": "JavaScript Objects",
-      "javascript-loops": "JavaScript Loops",
-      "review-javascript-fundamentals": "Review JavaScript Fundamentals",
+      "css-variables": "Variables",
+      "css-grid": "Grid",
+      "css-animations": "Animations",
+      "code-editors": "Code Editors",
+      "javascript-variables-and-strings": "Variables and Strings",
+      "javascript-booleans-and-numbers": "Booleans and Numbers",
+      "javascript-functions": "Functions",
+      "javascript-arrays": "Arrays",
+      "javascript-objects": "Objects",
+      "javascript-loops": "Loops",
+      "review-javascript-fundamentals": "JavaScript Fundamentals Review",
       "higher-order-functions-and-callbacks": "Higher Order Functions and Callbacks",
       "dom-manipulation-and-events": "DOM Manipulation and Events",
-      "debugging-javascript": "Debugging JavaScript",
+      "debugging-javascript": "Debugging",
       "basic-regex": "Basic Regex",
       "form-validation": "Form Validation",
-      "javascript-dates": "JavaScript Dates",
+      "javascript-dates": "Dates",
       "audio-and-video-events": "Audio and Video Events",
-      "maps-sets-and-json": "Maps, Sets, and JSON",
+      "maps-sets-and-json": "Maps and Sets",
       "localstorage-and-crud-operations": "localStorage and CRUD Operations",
-      "classes-and-the-this-keyword": "Classes and the <code>this</code> keyword",
+      "classes-and-the-this-keyword": "Classes",
       "recursion": "Recursion",
       "functional-programming": "Functional Programming",
       "asynchronous-javascript": "Asynchronous JavaScript",
@@ -1945,14 +1927,14 @@
       "review-html-accessibility": {
         "title": "HTML Accessibility Review",
         "intro": [
-          "Review the HTML Accessibility concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on HTML and accessibility, you first need to review the concepts.",
+          "Open up this page to review concepts including the <code>aria-hidden</code>, <code>aria-describedby</code>, <code>tabindex</code> attributes and more."
         ]
       },
       "quiz-html-accessibility": {
         "title": "HTML Accessibility Quiz",
         "intro": [
-          "Before you are quizzed on HTML and accessibility, you first need to review the concepts.",
-          "Open up this page to review concepts including the <code>aria-hidden</code>, <code>aria-describedby</code>, <code>tabindex</code> attributes and more."
+          "The following quiz will test your knowledge on the accessibility concepts you have learned so far."
         ]
       },
       "review-html": {
@@ -2640,7 +2622,7 @@
       "lecture-working-with-numbers-booleans-and-the-math-object": {
         "title": "Working with Numbers, Booleans, and the Math Object",
         "intro": [
-          "In these lecture videos, you will learn about numbers, booleans, and the Math Object."
+          "In these lecture videos, you will learn about numbers, booleans, and the <code>Math</code> object."
         ]
       },
       "workshop-mathbot": {
@@ -2796,7 +2778,8 @@
       "review-javascript-objects": {
         "title": "JavaScript Objects Review",
         "intro": [
-          "Review the JavaScript Objects concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on JavaScript objects, you first need to review the concepts.",
+          "Open up this page to review concepts including how to access information from objects, object destructuring, working with JSON, and more."
         ]
       },
       "quiz-javascript-objects": {
@@ -2824,7 +2807,8 @@
       "review-javascript-loops": {
         "title": "JavaScript Loops Review",
         "intro": [
-          "Review the JavaScript Loops concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the different JavaScript loops, you first need to review.",
+          "Open up this page to review the <code>for...of</code> loop, <code>while</code> loop, <code>break and continue</code> statements and more."
         ]
       },
       "quiz-javascript-loops": {
@@ -2870,7 +2854,8 @@
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
         "intro": [
-          "Review the JavaScript Fundamentals concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on JavaScript fundamentals, you first need to review the concepts.",
+          "Open up this page to review concepts like closures, memory management, and more."
         ]
       },
       "quiz-javascript-fundamentals": {
@@ -2891,6 +2876,12 @@
           "In this workshop, you will learn higher order array methods by building a library manager"
         ]
       },
+      "lab-book-organizer": {
+        "title": "Build a Book Organizer",
+        "intro": [
+          "In this lab, you will build a book organizer using higher order functions in JavaScript."
+        ]
+      },
       "bxtv": {
         "title": "184",
         "intro": []
@@ -2898,7 +2889,8 @@
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
-          "Review the JavaScript Higher Order Functions concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on JavaScript higher order functions, you first need to review the concepts.",
+          "Open up this page to review concepts including how to work with the <code>map()</code>, <code>filter()</code>, and <code>reduce()</code> methods."
         ]
       },
       "quiz-javascript-higher-order-functions": {
@@ -2932,7 +2924,8 @@
       "review-dom-manipulation-and-click-events-with-javascript": {
         "title": "DOM Manipulation and Click Events with JavaScript Review",
         "intro": [
-          "Review the DOM Manipulation and Click Events with JavaScript concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the Document Object Model, you first need to review the concepts.",
+          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's/code>, the <code>addEventListener()</code> method and more."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
@@ -2984,7 +2977,8 @@
       "review-javascript-events": {
         "title": "JavaScript Events Review",
         "intro": [
-          "Review the JavaScript Events concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on events, you first need to review the concepts.",
+          "Open up this page to review concepts like change events, event bubbling, and event delegation."
         ]
       },
       "quiz-javascript-events": {
@@ -3006,7 +3000,8 @@
       "review-debugging-javascript": {
         "title": "Debugging JavaScript Review",
         "intro": [
-          "Review the Debugging JavaScript concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on common debugging concepts you first need to review the concepts.",
+          "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally/code> and more."
         ]
       },
       "quiz-debugging-javascript": {
@@ -3041,7 +3036,8 @@
       "review-javascript-regular-expressions": {
         "title": "JavaScript Regular Expressions Review",
         "intro": [
-          "Review the JavaScript Regular Expressions concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on Regular Expressions you first need to review the concepts.",
+          "Open up this page to review concepts like lookaheads, lookbehinds, common regex modifiers and more."
         ]
       },
       "quiz-javascript-regular-expressions": {
@@ -3070,7 +3066,8 @@
       "review-form-validation-with-javascript": {
         "title": "Form Validation with JavaScript Review",
         "intro": [
-          "Review the Form Validation with JavaScript concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on form validation concepts you first need to review.",
+          "Open up this page to review concepts including the <code>preventDefault()</code> method, the submit event and more."
         ]
       },
       "quiz-form-validation-with-javascript": {
@@ -3094,7 +3091,8 @@
       "review-javascript-dates": {
         "title": "JavaScript Dates Review",
         "intro": [
-          "Review the JavaScript Dates concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with dates, you first need to review the concepts.",
+          "Open up this page to review the <code>Date()</code> object and common methods."
         ]
       },
       "quiz-javascript-dates": {
@@ -3147,9 +3145,11 @@
           "Review the JavaScript Maps, Sets, and JSON concepts to prepare for the upcoming quiz."
         ]
       },
-      "cvs3": {
-        "title": "229",
-        "intro": []
+      "quiz-javascript-maps-sets-and-json": {
+        "title": "JavaScript Maps, Sets, and JSON Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Maps, Sets, and JSON."
+        ]
       },
       "lecture-working-with-client-side-storage-and-crud-operations": {
         "title": "Working with Client-Side Storage and CRUD Operations",
@@ -3199,9 +3199,11 @@
           "In this lab, you will build a project idea board using OOP in JavaScript."
         ]
       },
-      "ndlf": {
-        "title": "238",
-        "intro": []
+      "lab-bank-account-manager": {
+        "title": "Build a Bank Account Management Program",
+        "intro": [
+          "In this lab, you will build a simple transaction management system for a bank account."
+        ]
       },
       "review-javascript-classes": {
         "title": "JavaScript Classes Review",
@@ -3209,9 +3211,11 @@
           "Review the JavaScript Classes concepts to prepare for the upcoming quiz."
         ]
       },
-      "ndl1": {
-        "title": "240",
-        "intro": []
+      "quiz-javascript-classes": {
+        "title": "JavaScript Classes Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Classes."
+        ]
       },
       "lecture-understanding-recursion-and-the-call-stack": {
         "title": "Understanding Recursion and the Call Stack",
@@ -3239,15 +3243,15 @@
         "title": "Recursion Quiz",
         "intro": ["Test what you've learned in this quiz on Recursion."]
       },
+      "yshh": {
+        "title": "246",
+        "intro": []
+      },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
           "In these lecture videos, you will learn about functional programming."
         ]
-      },
-      "wyx1": {
-        "title": "247",
-        "intro": []
       },
       "wyx2": {
         "title": "248",
@@ -3291,6 +3295,13 @@
       "yaxm": {
         "title": "245",
         "intro": []
+      },
+      "workshop-recipe-ingredient-converter": {
+        "title": "Build a Recipe Ingredient Converter",
+        "intro": [
+          "In the previous lecture videos, you learned the core concepts behind functional programming and currying.",
+          "Now you will be able to apply what you have learned about currying and functional programming by building a recipe ingredient converter application."
+        ]
       },
       "udia": {
         "title": "248",
