@@ -3012,7 +3012,8 @@
       "review-javascript-regular-expressions": {
         "title": "JavaScript Regular Expressions Review",
         "intro": [
-          "Review the JavaScript Regular Expressions concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on Regular Expressions you first need to review the concepts.",
+          "Open up this page to review concepts like lookaheads, lookbehinds, common regex modifiers and more."
         ]
       },
       "quiz-javascript-regular-expressions": {
