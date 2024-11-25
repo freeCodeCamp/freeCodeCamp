@@ -5,7 +5,6 @@ import {
   getFirstEmail,
   getSubject
 } from './utils/mailhog';
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
 test.beforeEach(async () => {
   await deleteAllEmails();

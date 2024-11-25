@@ -150,6 +150,8 @@ const ShowFillInTheBlank = ({
     setAnswersCorrect(newAnswersCorrect);
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
     if (!hasWrongAnswer) {
+      setShowFeedback(false);
+      setFeedback(null);
       openCompletionModal();
     } else {
       const firstWrongIndex = newAnswersCorrect.findIndex(a => a === false);
