@@ -1,6 +1,6 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
-import { uniqBy } from 'lodash';
+import { uniqBy, matches } from 'lodash';
 import { CompletedExam, ExamResults } from '@prisma/client';
 import isURL from 'validator/lib/isURL';
 
@@ -804,9 +804,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       });
 
-      const existingAttemptIdx = user.quizAttempts.findIndex(
-        attempt =>
-          attempt.challengeId === challengeId && attempt.quizId === quizId
+      const existingAttempt = user.quizAttempts.find(
+        matches({ quizId, challengeId })
       );
 
       const newAttempt = {
@@ -815,20 +814,16 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         timestamp: Date.now()
       };
 
-      const newQuizAttempts = [...user.quizAttempts];
-
       // If there is an existing attempt, replace it with the new attempt (essentially only timestamp is changed).
       // Otherwise, add the new attempt to the list.
-      if (existingAttemptIdx !== -1) {
-        newQuizAttempts.splice(existingAttemptIdx, 1, newAttempt);
-      } else {
-        newQuizAttempts.push(newAttempt);
-      }
-
       await fastify.prisma.user.update({
         where: { id: user.id },
         data: {
-          quizAttempts: newQuizAttempts
+          quizAttempts: existingAttempt
+            ? {
+                updateMany: { where: { challengeId, quizId }, data: newAttempt }
+              }
+            : { push: newAttempt }
         }
       });
 
