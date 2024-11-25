@@ -4,7 +4,7 @@ import type { Dialogue, FullScene } from '../../../../redux/prop-types';
 import { sounds, backgrounds, characterAssets } from './scene-assets';
 
 type Args = {
-  initSceneData: FullScene;
+  initSceneData: FullScene | null;
 };
 
 const loadImage = (src: string | null) => {
@@ -16,13 +16,12 @@ const sToMs = (n: number) => {
 };
 
 export function useScene({ initSceneData }: Args) {
-  const { setup, commands } = initSceneData;
-  const { audio, alwaysShowDialogue } = setup;
-  const { startTimestamp = null, finishTimestamp = null } = audio;
+  const { setup, commands } = initSceneData ?? {};
+  const { audio, alwaysShowDialogue, background: initBackground } = setup ?? {};
+  const { startTimestamp = null, finishTimestamp = null } = audio ?? {};
 
-  const initBackground = setup.background;
   const initDialogue = { label: '', text: '', align: 'left' as const };
-  const initCharacters = setup.characters.map(character => {
+  const initCharacters = setup?.characters.map(character => {
     return {
       ...character,
       opacity: character.opacity ?? 1,
@@ -54,6 +53,7 @@ export function useScene({ initSceneData }: Args) {
 
   // on mount
   useEffect(() => {
+    if (!audio || !initCharacters || !commands) return;
     const audioLoaded = () => {
       setSceneIsReady(true);
     };
@@ -66,9 +66,9 @@ export function useScene({ initSceneData }: Args) {
     }
 
     // preload images
-    loadImage(`${backgrounds}/${setup.background}`);
+    loadImage(`${backgrounds}/${initBackground}`);
 
-    setup.characters
+    initCharacters
       .map(({ character }) => Object.values(characterAssets[character]))
       .flat()
       .forEach(loadImage);
@@ -89,12 +89,13 @@ export function useScene({ initSceneData }: Args) {
     };
   }, [
     setSceneIsReady,
+    audio,
     audioRef,
-    audio.filename,
     audioTimestamp,
-    setup.background,
-    setup.characters,
-    commands
+    initBackground,
+    initCharacters,
+    commands,
+    background
   ]);
 
   useEffect(() => {
@@ -109,16 +110,19 @@ export function useScene({ initSceneData }: Args) {
   const playScene = () => {
     setShowDialogue(true);
 
-    setTimeout(() => {
-      if (audioRef.current.paused) {
-        start = Date.now();
-        void audioRef.current.play();
-      }
-      // if there are no timestamps, we can let the audio play to the end
-      if (hasTimestamps) maybeStopAudio();
-    }, sToMs(audio.startTime));
+    setTimeout(
+      () => {
+        if (audioRef.current.paused) {
+          start = Date.now();
+          void audioRef.current.play();
+        }
+        // if there are no timestamps, we can let the audio play to the end
+        if (hasTimestamps) maybeStopAudio();
+      },
+      sToMs(audio?.startTime ?? 0)
+    );
 
-    commands.forEach((command, commandIndex) => {
+    commands?.forEach((command, commandIndex) => {
       // Start command timeout
       setTimeout(() => {
         if (command.background) setBackground(command.background);
@@ -130,7 +134,7 @@ export function useScene({ initSceneData }: Args) {
         );
 
         setCharacters(prevCharacters => {
-          const newCharacters = prevCharacters.map(character => {
+          const newCharacters = prevCharacters?.map(character => {
             if (character.character === command.character) {
               return {
                 ...character,
@@ -150,7 +154,7 @@ export function useScene({ initSceneData }: Args) {
         setTimeout(
           () => {
             setCharacters(prevCharacters => {
-              const newCharacters = prevCharacters.map(character => {
+              const newCharacters = prevCharacters?.map(character => {
                 if (character.character === command.character) {
                   return {
                     ...character,
@@ -185,9 +189,9 @@ export function useScene({ initSceneData }: Args) {
     const { current } = audioRef;
     if (current) {
       current.pause();
-      current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
+      current.src = audio ? `${sounds}/${audio.filename}${audioTimestamp}` : '';
       current.load();
-      current.currentTime = audio.startTimestamp || 0;
+      current.currentTime = audio?.startTimestamp || 0;
     }
 
     setShowDialogue(false);

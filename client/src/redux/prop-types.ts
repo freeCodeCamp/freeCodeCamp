@@ -211,7 +211,7 @@ export type ChallengeNode = {
     quizzes: Quiz[];
     assignments: string[];
     required: Required[];
-    scene: FullScene;
+    scene: FullScene | null;
     solutions: {
       [T in FileKey]: FileKeyChallenge;
     };
