@@ -11,6 +11,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Link MS user component (signed-out user)', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
   test('should display the page content with a signin CTA', async ({
     page
   }) => {
@@ -44,7 +45,6 @@ test.describe('Link MS user component (signed-in user)', () => {
   test.afterEach(() => {
     execSync('node ./tools/scripts/seed/seed-ms-username');
   });
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test("should recognize the user's MS account", async ({ page }) => {
     await expect(
