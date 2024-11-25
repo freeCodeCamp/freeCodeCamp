@@ -3210,7 +3210,8 @@
       "review-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Review",
         "intro": [
-          "Review the JavaScript Functional Programming concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on functional programming concepts, you first need to review.",
+          "Open up this page to review concepts on functional programming, currying and more."
         ]
       },
       "mjbe": { "title": "251", "intro": [] },
