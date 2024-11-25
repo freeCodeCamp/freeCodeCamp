@@ -1282,10 +1282,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     if (canShowModal === 'false' && process.env.NODE_ENV === 'development') {
       return false;
-    } else {
-      challengeIsComplete();
     }
-
     return challengeIsComplete();
   };
 
