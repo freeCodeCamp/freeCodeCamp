@@ -19,7 +19,7 @@ How many composite integers, $n &lt; {10}^8$, have precisely two, not necessaril
 `semiPrimes()` should return `17427258`.
 
 ```js
-assert.strictEqual(euler187(), 17427258);
+assert.strictEqual(semiPrimes(), 17427258);
 ```
 
 # --seed--
