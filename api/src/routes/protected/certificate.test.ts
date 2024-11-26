@@ -6,7 +6,6 @@ import {
   setupServer,
   superRequest
 } from '../../../jest.utils';
-import { SHOW_UPCOMING_CHANGES } from '../../utils/env';
 
 describe('certificate routes', () => {
   setupServer();
@@ -395,12 +394,6 @@ describe('certificate routes', () => {
           Certification.LegacyFullStack
         ];
         const unclaimableCerts = ['fake-slug'];
-
-        if (SHOW_UPCOMING_CHANGES) {
-          claimableCerts.push(Certification.UpcomingPython);
-        } else {
-          unclaimableCerts.push(Certification.UpcomingPython);
-        }
 
         for (const certSlug of claimableCerts) {
           const response = await superRequest('/certificate/verify', {

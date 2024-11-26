@@ -7,6 +7,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
 
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import envData from '../../../../config/env.json';
 import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
@@ -83,8 +84,9 @@ class Block extends Component<BlockProps> {
     } = this.props;
 
     let completedCount = 0;
+    let stepNumber = 0;
 
-    const challengesWithCompleted = challenges.map(challenge => {
+    const extendedChallenges = challenges.map(challenge => {
       const { id } = challenge;
       const isCompleted = completedChallengeIds.some(
         (completedChallengeId: string) => completedChallengeId === id
@@ -92,7 +94,13 @@ class Block extends Component<BlockProps> {
       if (isCompleted) {
         completedCount++;
       }
-      return { ...challenge, isCompleted };
+      // Dialogues are interwoven with other challenges in the curriculum, but
+      // are not considered to be steps.
+      if (challenge.challengeType !== challengeTypes.dialogue) {
+        stepNumber++;
+      }
+
+      return { ...challenge, isCompleted, stepNumber };
     });
 
     const isProjectBlock = challenges.some(challenge => {
@@ -118,17 +126,17 @@ class Block extends Component<BlockProps> {
     const expandText = t('intro:misc-text.expand');
     const collapseText = t('intro:misc-text.collapse');
 
-    const isBlockCompleted = completedCount === challengesWithCompleted.length;
+    const isBlockCompleted = completedCount === extendedChallenges.length;
 
     const percentageCompleted = Math.floor(
-      (completedCount / challengesWithCompleted.length) * 100
+      (completedCount / extendedChallenges.length) * 100
     );
 
     const courseCompletionStatus = () => {
       if (completedCount === 0) {
         return t('learn.not-started');
       }
-      if (completedCount === challengesWithCompleted.length) {
+      if (completedCount === extendedChallenges.length) {
         return t('learn.completed');
       }
       return `${percentageCompleted}% ${t('learn.completed')}`;
@@ -174,19 +182,19 @@ class Block extends Component<BlockProps> {
               <span
                 aria-hidden='true'
                 className='map-completed-count'
-              >{`${completedCount}/${challengesWithCompleted.length}`}</span>
+              >{`${completedCount}/${extendedChallenges.length}`}</span>
               <span className='sr-only'>
                 ,{' '}
                 {t('learn.challenges-completed', {
                   completedCount,
-                  totalChallenges: challengesWithCompleted.length
+                  totalChallenges: extendedChallenges.length
                 })}
               </span>
             </div>
           </button>
           {isExpanded && (
             <Challenges
-              challengesWithCompleted={challengesWithCompleted}
+              challenges={extendedChallenges}
               isProjectBlock={isProjectBlock}
             />
           )}
@@ -218,7 +226,7 @@ class Block extends Component<BlockProps> {
           </div>
           <BlockIntros intros={blockIntroArr} />
           <Challenges
-            challengesWithCompleted={challengesWithCompleted}
+            challenges={extendedChallenges}
             isProjectBlock={isProjectBlock}
           />
         </div>
@@ -258,7 +266,7 @@ class Block extends Component<BlockProps> {
             <div id={`${block}-panel`}>
               <BlockIntros intros={blockIntroArr} />
               <Challenges
-                challengesWithCompleted={challengesWithCompleted}
+                challenges={extendedChallenges}
                 isProjectBlock={isProjectBlock}
                 isGridMap={true}
                 blockTitle={blockTitle}
@@ -301,7 +309,7 @@ class Block extends Component<BlockProps> {
                 onClick={() => {
                   this.handleBlockClick();
                 }}
-                to={challengesWithCompleted[0].fields.slug}
+                to={extendedChallenges[0].fields.slug}
               >
                 <CheckMark isCompleted={isBlockCompleted} />
                 {blockTitle}{' '}
@@ -351,7 +359,7 @@ class Block extends Component<BlockProps> {
           {isExpanded && (
             <div id={`${block}-panel`}>
               <Challenges
-                challengesWithCompleted={challengesWithCompleted}
+                challenges={extendedChallenges}
                 isProjectBlock={isProjectBlock}
               />
             </div>
@@ -386,7 +394,7 @@ class Block extends Component<BlockProps> {
                 onClick={() => {
                   this.handleBlockClick();
                 }}
-                to={challengesWithCompleted[0].fields.slug}
+                to={extendedChallenges[0].fields.slug}
               >
                 <CheckMark isCompleted={isBlockCompleted} />
                 {blockType && <BlockLabel blockType={blockType} />}
@@ -433,7 +441,7 @@ class Block extends Component<BlockProps> {
           {isExpanded && (
             <div id={`${block}-panel`} className='challenge-grid-block-panel'>
               <Challenges
-                challengesWithCompleted={challengesWithCompleted}
+                challenges={extendedChallenges}
                 isProjectBlock={isProjectBlock}
                 isGridMap={true}
                 blockTitle={blockTitle}

@@ -476,6 +476,9 @@ importers:
       '@growthbook/growthbook-react':
         specifier: 0.20.0
         version: 0.20.0(react@16.14.0)
+      '@headlessui/react':
+        specifier: 1.7.19
+        version: 1.7.19(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       '@loadable/component':
         specifier: 5.16.3
         version: 5.16.3(react@16.14.0)

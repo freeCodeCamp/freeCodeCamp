@@ -32,7 +32,6 @@ const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const foundationalCSharpBase =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
-const upcomingPythonBase = '/learn/upcoming-python';
 const fullStackDeveloperBase = '/learn/full-stack-developer';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
@@ -808,19 +807,6 @@ const allStandardCerts = [
         title: 'Certified Full Stack Developer Exam',
         link: `${fullStackDeveloperBase}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
         certSlug: Certification.FullStackDeveloper
-      }
-    ]
-  },
-  {
-    id: '64afc4e8f3b37856e035b85f',
-    title: 'Upcoming Python Certification',
-    certSlug: Certification.UpcomingPython,
-    projects: [
-      {
-        id: '64afc37bf3b37856e035b85e',
-        title: 'Upcoming Python Project',
-        link: `${upcomingPythonBase}/upcoming-python-project`,
-        certSlug: Certification.UpcomingPython
       }
     ]
   },
