@@ -10,7 +10,6 @@ import DropDown from '../../../assets/icons/dropdown';
 // TODO: See if there's a nice way to incorporate the structure into data Gatsby
 // sources from the curriculum, rather than importing it directly.
 import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
-import { BlockTypes } from '../../../../../shared/config/blocks';
 import Block from './block';
 
 import './super-block-accordion.css';
@@ -40,6 +39,14 @@ const isLinkModule = (name: string) => {
   const module = modules.find(module => module.dashedName === name);
 
   return module?.moduleType === 'review';
+};
+
+const isLinkChapter = (name: string) => {
+  const chapter = superBlockStructure.chapters.find(
+    chapter => chapter.dashedName === name
+  );
+
+  return chapter?.chapterType === 'exam';
 };
 
 const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
@@ -79,7 +86,7 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const { allChapters, allBlocks, examChallenges } = useMemo(() => {
+  const { allChapters, allBlocks } = useMemo(() => {
     const allBlocks = uniqBy(challenges, 'block').map(
       ({ block, blockType, chapter, module }) => ({
         name: block,
@@ -103,15 +110,10 @@ export const SuperBlockAccordion = ({
       modules: allModules.filter(({ chapter: c }) => c === chapter)
     }));
 
-    const examChallenges = challenges.filter(
-      ({ blockType }) => blockType === BlockTypes.exam
-    );
-
     return {
       allChapters,
       allModules,
-      allBlocks,
-      examChallenges
+      allBlocks
     };
   }, [challenges]);
 
@@ -126,17 +128,14 @@ export const SuperBlockAccordion = ({
   return (
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
-        const chapterAsLinkChallenge = examChallenges.find(
-          challenge => challenge.dashedName === chapter.name
-        );
-
-        if (chapterAsLinkChallenge) {
+        if (isLinkChapter(chapter.name)) {
+          const linkedChallenge = chapter.modules[0].blocks[0].challenges[0];
           return (
             <li key={chapter.name} className='link-chapter'>
               <Block
-                block={chapterAsLinkChallenge.block}
-                blockType={chapterAsLinkChallenge.blockType}
-                challenges={[chapterAsLinkChallenge]}
+                block={linkedChallenge.block}
+                blockType={linkedChallenge.blockType}
+                challenges={[linkedChallenge]}
                 superBlock={superBlock}
               />
             </li>
