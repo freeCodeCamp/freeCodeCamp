@@ -29,6 +29,7 @@ const jsLab = 26;
 const pyLab = 27;
 const dailyChallengeJs = 28;
 const dailyChallengePy = 29;
+const examDownload = 30;
 
 export const challengeTypes = {
   html,
@@ -61,7 +62,8 @@ export const challengeTypes = {
   jsLab,
   pyLab,
   dailyChallengeJs,
-  dailyChallengePy
+  dailyChallengePy,
+  examDownload
 };
 
 export const hasNoSolution = (challengeType: number): boolean => {
@@ -84,7 +86,8 @@ export const hasNoSolution = (challengeType: number): boolean => {
     multipleChoice,
     dialogue,
     fillInTheBlank,
-    generic
+    generic,
+    examDownload
   ];
 
   return noSolutions.includes(challengeType);
@@ -120,7 +123,8 @@ export const viewTypes = {
   [jsLab]: 'classic',
   [pyLab]: 'classic',
   [dailyChallengeJs]: 'classic',
-  [dailyChallengePy]: 'classic'
+  [dailyChallengePy]: 'classic',
+  [examDownload]: 'examDownload'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -157,7 +161,8 @@ export const submitTypes = {
   [jsLab]: 'tests',
   [pyLab]: 'tests',
   [dailyChallengeJs]: 'tests',
-  [dailyChallengePy]: 'tests'
+  [dailyChallengePy]: 'tests',
+  [examDownload]: 'examDownload'
 };
 
 export const canSaveToDB = (challengeType: number): boolean =>
