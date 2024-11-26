@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'; //, ReactElement } from 'react';
+import React, { useEffect, useState, useRef, useMemo } from 'react'; //, ReactElement } from 'react';
 import { Col, Spacer } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
 import { FullScene } from '../../../../redux/prop-types';
@@ -86,13 +86,19 @@ export function Scene({
 
   const initBackground = setup.background;
 
-  const initCharacters = setup.characters.map(character => {
-    return {
-      ...character,
-      opacity: character.opacity ?? 1,
-      isTalking: false
-    };
-  });
+  // The charactesr are memoized to prevent the useEffect from running on every
+  // render,
+  const initCharacters = useMemo(
+    () =>
+      setup.characters.map(character => {
+        return {
+          ...character,
+          opacity: character.opacity ?? 1,
+          isTalking: false
+        };
+      }),
+    [setup.characters]
+  );
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [sceneIsReady, setSceneIsReady] = useState(false);
