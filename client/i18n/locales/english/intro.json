@@ -3092,7 +3092,7 @@
         "title": "JavaScript Maps, Sets, and JSON Review",
         "intro": [
           "Before you are quizzed on JS Maps and Sets, you first need to review.",
-          "Open up this page to review concepts including sets, maps, weak sets and weak maps."
+          "Open up this page to review concepts such as the <code>Map</code> and <code>Set</code> objects, as well as WeakSet and WeakMap."
         ]
       },
       "cvs3": { "title": "229", "intro": [] },
