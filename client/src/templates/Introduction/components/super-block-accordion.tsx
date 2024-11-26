@@ -32,7 +32,9 @@ interface SuperBlockTreeViewProps {
   chosenBlock: string;
 }
 
-const modules = superBlockStructure.chapters.flatMap(({ modules }) => modules);
+const modules = superBlockStructure.chapters.flatMap(
+  chapter => chapter.modules
+);
 
 const isLinkModule = (name: string) => {
   const module = modules.find(module => module.dashedName === name);

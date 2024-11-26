@@ -651,9 +651,11 @@
       ]
     },
     {
+      "chapterType": "exam",
       "dashedName": "exam-certified-full-stack-developer",
       "modules": [
         {
+          "moduleType": "exam",
           "dashedName": "exam-certified-full-stack-developer",
           "blocks": [{ "dashedName": "exam-certified-full-stack-developer" }]
         }
