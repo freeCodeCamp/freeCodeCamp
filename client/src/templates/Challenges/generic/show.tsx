@@ -213,7 +213,10 @@ const ShowGeneric = ({
 
             {description && (
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <ChallengeDescription description={description} />
+                <ChallengeDescription
+                  description={description}
+                  superBlock={superBlock}
+                />
                 <Spacer size='m' />
               </Col>
             )}
@@ -241,7 +244,10 @@ const ShowGeneric = ({
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               {instructions && (
-                <ChallengeDescription instructions={instructions} />
+                <ChallengeDescription
+                  instructions={instructions}
+                  superBlock={superBlock}
+                />
               )}
 
               <Spacer size='m' />

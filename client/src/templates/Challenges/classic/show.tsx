@@ -389,11 +389,11 @@ function ShowClassic({
   }) => {
     return (
       <SidePanel
-        block={block}
         challengeDescription={
           <ChallengeDescription
             description={description}
             instructions={instructions}
+            superBlock={superBlock}
           />
         }
         challengeTitle={
@@ -406,7 +406,6 @@ function ShowClassic({
         }
         instructionsPanelRef={instructionsPanelRef}
         toolPanel={toolPanel}
-        superBlock={superBlock}
         hasDemo={hasDemo}
       />
     );

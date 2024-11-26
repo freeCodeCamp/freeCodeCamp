@@ -238,6 +238,7 @@ class BackEnd extends Component<BackEndProps> {
                   {title}
                 </ChallengeTitle>
                 <ChallengeDescription
+                  superBlock={superBlock}
                   description={description}
                   instructions={instructions}
                 />

@@ -272,7 +272,10 @@ class ShowVideo extends Component<ShowVideoProps, ShowVideoState> {
               )}
 
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <ChallengeDescription description={description} />
+                <ChallengeDescription
+                  description={description}
+                  superBlock={superBlock}
+                />
                 <ObserveKeys>
                   <MultipleChoiceQuestions
                     questions={questions}

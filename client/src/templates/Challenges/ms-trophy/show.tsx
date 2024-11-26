@@ -205,6 +205,7 @@ class MsTrophy extends Component<MsTrophyProps> {
                   {title}
                 </ChallengeTitle>
                 <ChallengeDescription
+                  superBlock={superBlock}
                   description={description}
                   instructions={instructions}
                 />
