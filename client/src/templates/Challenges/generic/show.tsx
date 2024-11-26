@@ -28,6 +28,7 @@ import Scene from '../components/scene/scene';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import ChallengeExplanation from '../components/challenge-explanation';
 import HelpModal from '../components/help-modal';
+import { SceneSubject } from '../components/scene/scene-subject';
 
 // Styles
 import './show.css';
@@ -171,11 +172,20 @@ const ShowGeneric = ({
     }
   };
 
+  const sceneSubject = new SceneSubject();
+
   return (
     <Hotkeys
       executeChallenge={handleSubmit}
       containerRef={container}
-      playScene={scene ? () => setIsScenePlaying(true) : undefined}
+      playScene={
+        scene
+          ? () => {
+              setIsScenePlaying(true);
+              sceneSubject.notify();
+            }
+          : undefined
+      }
     >
       <LearnLayout>
         <Helmet
@@ -216,6 +226,7 @@ const ShowGeneric = ({
                 scene={scene}
                 isPlaying={isScenePlaying}
                 setIsPlaying={setIsScenePlaying}
+                sceneSubject={sceneSubject}
               />
             )}
 

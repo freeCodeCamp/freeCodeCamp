@@ -6,6 +6,7 @@ import { Loader } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
 import { sounds, images, backgrounds, characterAssets } from './scene-assets';
 import Character from './character';
+import { SceneSubject } from './scene-subject';
 
 import './scene.css';
 
@@ -20,11 +21,13 @@ const loadImage = (src: string | null) => {
 export function Scene({
   scene,
   isPlaying,
-  setIsPlaying
+  setIsPlaying,
+  sceneSubject
 }: {
   scene: FullScene;
   isPlaying: boolean;
   setIsPlaying: (shouldPlay: boolean) => void;
+  sceneSubject: SceneSubject;
 }): JSX.Element {
   const { t } = useTranslation();
   const { setup, commands } = scene;
@@ -272,6 +275,7 @@ export function Scene({
                   className='scene-start-btn scene-play-btn'
                   onClick={() => {
                     setIsPlaying(true);
+                    sceneSubject.notify();
                   }}
                 >
                   <img
