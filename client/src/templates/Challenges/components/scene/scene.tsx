@@ -115,6 +115,10 @@ export function Scene({
 
   useEffect(() => {
     const playScene = () => {
+      // TODO: if we manage the playing state in another module, we should not
+      // need the early return here. It should not be possible for this to be
+      // called at all if the scene is already playing.
+      if (isPlaying) return;
       setIsPlaying(true);
       setShowDialogue(true);
 
@@ -222,6 +226,7 @@ export function Scene({
       sceneSubject.detach(playScene);
     };
   }, [
+    isPlaying,
     duration,
     sceneSubject,
     commands,
