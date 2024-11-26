@@ -2,7 +2,7 @@
 id: 672bbec3b86dbdaa07a5a5be
 title: What Are Examples of Functional Pseudo-classes?
 challengeType: 11
-videoId: nVAaxZ34khk
+videoId: eQwf6Y3N_kY
 dashedName: what-are-examples-of-functional-pseudo-classes
 ---
 
