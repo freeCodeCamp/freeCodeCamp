@@ -3083,7 +3083,8 @@
       "review-javascript-audio-and-video": {
         "title": "JavaScript Audio and Video Review",
         "intro": [
-          "Review the JavaScript Audio and Video concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with audio and video in JavaScript, you first need to review.",
+          "Open up this page to review concepts including the <code>Audio</code> constructor, the <code>HTMLMediaElement</code> API and more."
         ]
       },
       "quiz-javascript-audio-and-video": {
@@ -3169,7 +3170,8 @@
       "review-javascript-classes": {
         "title": "JavaScript Classes Review",
         "intro": [
-          "Review the JavaScript Classes concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with classes, you first need to review.",
+          "Open up this page to review concepts including the <code>this</code> keyword, class inheritance and more."
         ]
       },
       "quiz-javascript-classes": {
