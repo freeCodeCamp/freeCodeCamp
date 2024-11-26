@@ -7,6 +7,9 @@ import { Disclosure } from '@headlessui/react';
 import { ChallengeNode } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
+// TODO: See if there's a nice way to incorporate the structure into data Gatsby
+// sources from the curriculum, rather than importing it directly.
+import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
 import { BlockTypes } from '../../../../../shared/config/blocks';
 import Block from './block';
 
@@ -28,6 +31,14 @@ interface SuperBlockTreeViewProps {
   superBlock: SuperBlocks;
   chosenBlock: string;
 }
+
+const modules = superBlockStructure.chapters.flatMap(({ modules }) => modules);
+
+const isLinkModule = (name: string) => {
+  const module = modules.find(module => module.dashedName === name);
+
+  return module?.moduleType === 'review';
+};
 
 const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
   const { t } = useTranslation();
@@ -66,47 +77,41 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const { allChapters, allBlocks, examChallenges, reviewChallenges } =
-    useMemo(() => {
-      const allBlocks = uniqBy(challenges, 'block').map(
-        ({ block, blockType, chapter, module }) => ({
-          name: block,
-          blockType,
-          chapter: chapter as string,
-          module: module as string,
-          challenges: challenges.filter(({ block: b }) => b === block)
-        })
-      );
+  const { allChapters, allBlocks, examChallenges } = useMemo(() => {
+    const allBlocks = uniqBy(challenges, 'block').map(
+      ({ block, blockType, chapter, module }) => ({
+        name: block,
+        blockType,
+        chapter: chapter as string,
+        module: module as string,
+        challenges: challenges.filter(({ block: b }) => b === block)
+      })
+    );
 
-      const allModules = uniqBy(allBlocks, 'module').map(
-        ({ module, chapter }) => ({
-          name: module,
-          chapter,
-          blocks: allBlocks.filter(({ module: m }) => m === module)
-        })
-      );
+    const allModules = uniqBy(allBlocks, 'module').map(
+      ({ module, chapter }) => ({
+        name: module,
+        chapter,
+        blocks: allBlocks.filter(({ module: m }) => m === module)
+      })
+    );
 
-      const allChapters = uniqBy(allModules, 'chapter').map(({ chapter }) => ({
-        name: chapter,
-        modules: allModules.filter(({ chapter: c }) => c === chapter)
-      }));
+    const allChapters = uniqBy(allModules, 'chapter').map(({ chapter }) => ({
+      name: chapter,
+      modules: allModules.filter(({ chapter: c }) => c === chapter)
+    }));
 
-      const examChallenges = challenges.filter(
-        ({ blockType }) => blockType === BlockTypes.exam
-      );
+    const examChallenges = challenges.filter(
+      ({ blockType }) => blockType === BlockTypes.exam
+    );
 
-      const reviewChallenges = challenges.filter(
-        ({ blockType }) => blockType === BlockTypes.review
-      );
-
-      return {
-        allChapters,
-        allModules,
-        allBlocks,
-        examChallenges,
-        reviewChallenges
-      };
-    }, [challenges]);
+    return {
+      allChapters,
+      allModules,
+      allBlocks,
+      examChallenges
+    };
+  }, [challenges]);
 
   // Expand the outer layers in order to reveal the chosen block.
   const expandedChapter = allBlocks.find(
@@ -143,21 +148,14 @@ export const SuperBlockAccordion = ({
             isExpanded={expandedChapter === chapter.name}
           >
             {chapter.modules.map(module => {
-              const moduleAsLinkChallenge =
-                reviewChallenges.find(
-                  challenge => challenge.dashedName === module.name
-                ) ||
-                examChallenges.find(
-                  challenge => challenge.dashedName === module.name
-                );
-
-              if (moduleAsLinkChallenge) {
+              if (isLinkModule(module.name)) {
+                const linkedChallenge = module.blocks[0].challenges[0];
                 return (
                   <li key={module.name} className='link-module'>
                     <Block
-                      block={moduleAsLinkChallenge.block}
-                      blockType={moduleAsLinkChallenge.blockType}
-                      challenges={[moduleAsLinkChallenge]}
+                      block={linkedChallenge.block}
+                      blockType={linkedChallenge.blockType}
+                      challenges={[linkedChallenge]}
                       superBlock={superBlock}
                     />
                   </li>

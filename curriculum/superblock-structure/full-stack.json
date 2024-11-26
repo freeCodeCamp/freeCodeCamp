@@ -63,6 +63,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-html",
           "blocks": [{ "dashedName": "review-html" }]
         }
@@ -265,6 +266,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-css",
           "blocks": [{ "dashedName": "review-css" }]
         }
@@ -520,6 +522,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-javascript",
           "blocks": [{ "dashedName": "review-javascript" }]
         }
@@ -575,6 +578,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-front-end-libraries",
           "blocks": [{ "dashedName": "review-front-end-libraries" }]
         }
@@ -640,6 +644,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-relational-databases",
           "blocks": [{ "dashedName": "review-relational-databases" }]
         }
