@@ -13,7 +13,6 @@ import sassData from '../../../../config/browser-scripts/sass-compile.json';
 import {
   transformContents,
   transformHeadTailAndContents,
-  setExt,
   compileHeadTail,
   createSource
 } from '../../../../../shared/utils/polyvinyl';
@@ -113,50 +112,42 @@ const replaceNBSP = cond([
   [stubTrue, identity]
 ]);
 
-const babelTransformer = loopProtectOptions => {
+const getJSTranspiler = loopProtectOptions => async challengeFile => {
+  await loadBabel();
+  await loadPresetEnv();
+  const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
+  return transformHeadTailAndContents(
+    babelTransformCode(babelOptions),
+    challengeFile
+  );
+};
+
+const getJSXTranspiler = loopProtectOptions => async challengeFile => {
+  await loadBabel();
+  await loadPresetReact();
+  const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
+  return transformHeadTailAndContents(
+    babelTransformCode(babelOptions),
+    challengeFile
+  );
+};
+
+const getTSTranspiler = loopProtectOptions => async challengeFile => {
+  await loadBabel();
+  await checkTSServiceIsReady();
+  const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
+  return flow(
+    partial(transformHeadTailAndContents, compileTypeScriptCode),
+    partial(transformHeadTailAndContents, babelTransformCode(babelOptions))
+  )(challengeFile);
+};
+
+const createTranspiler = loopProtectOptions => {
   return cond([
-    [
-      testJS,
-      async challengeFile => {
-        await loadBabel();
-        await loadPresetEnv();
-        const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
-        return transformHeadTailAndContents(
-          babelTransformCode(babelOptions),
-          challengeFile
-        );
-      }
-    ],
-    [
-      testJSX,
-      async challengeFile => {
-        await loadBabel();
-        await loadPresetReact();
-        const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
-        return flow(
-          partial(
-            transformHeadTailAndContents,
-            babelTransformCode(babelOptions)
-          ),
-          partial(setExt, 'js')
-        )(challengeFile);
-      }
-    ],
-    [
-      testTypeScript,
-      async challengeFile => {
-        await loadBabel();
-        await checkTSServiceIsReady();
-        const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
-        return flow(
-          partial(transformHeadTailAndContents, compileTypeScriptCode),
-          partial(
-            transformHeadTailAndContents,
-            babelTransformCode(babelOptions)
-          )
-        )(challengeFile);
-      }
-    ],
+    [testJS, getJSTranspiler(loopProtectOptions)],
+    [testJSX, getJSXTranspiler(loopProtectOptions)],
+    [testTypeScript, getTSTranspiler(loopProtectOptions)],
+    [testHTML, transformHtml],
     [stubTrue, identity]
   ]);
 };
@@ -273,9 +264,7 @@ export const embedFilesInHtml = async function (challengeFiles) {
 
 function challengeFilesToObject(challengeFiles) {
   const indexHtml = challengeFiles.find(file => file.fileKey === 'indexhtml');
-  const indexJsx = challengeFiles.find(
-    file => file.fileKey === 'indexjs' && file.history[0] === 'index.jsx'
-  );
+  const indexJsx = challengeFiles.find(file => file.fileKey === 'indexjsx');
   const stylesCss = challengeFiles.find(file => file.fileKey === 'stylescss');
   const scriptJs = challengeFiles.find(file => file.fileKey === 'scriptjs');
   const indexTs = challengeFiles.find(file => file.fileKey === 'indexts');
@@ -302,17 +291,11 @@ const transformHtml = async function (file) {
   return transformContents(() => contents, file);
 };
 
-const htmlTransformer = cond([
-  [testHTML, flow(transformHtml)],
-  [stubTrue, identity]
-]);
-
 export const getTransformers = loopProtectOptions => [
   createSource,
   replaceNBSP,
-  babelTransformer(loopProtectOptions),
-  partial(compileHeadTail, ''),
-  htmlTransformer
+  createTranspiler(loopProtectOptions),
+  partial(compileHeadTail, '')
 ];
 
 export const getPythonTransformers = () => [

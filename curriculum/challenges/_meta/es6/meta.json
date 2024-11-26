@@ -122,5 +122,6 @@
       "id": "5cdafbe72913098997531682",
       "title": "Handle a Rejected Promise with catch"
     }
-  ]
+  ],
+  "blockLayout": "legacy-challenge-list"
 }

@@ -11,5 +11,6 @@
       "title": "Build a Polygon Area Calculator Project"
     }
   ],
-  "helpCategory": "Python"
+  "helpCategory": "Python",
+  "blockLayout": "legacy-link"
 }

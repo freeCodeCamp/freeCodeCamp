@@ -162,5 +162,6 @@
       "title": "Task 36"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }

@@ -480,5 +480,6 @@
       "title": "Step 118"
     }
   ],
-  "helpCategory": "JavaScript"
+  "helpCategory": "JavaScript",
+  "blockLayout": "legacy-challenge-grid"
 }

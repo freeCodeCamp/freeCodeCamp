@@ -129,17 +129,15 @@ const schema = Joi.object()
       ).required(),
       otherwise: Joi.valid(null)
     }),
-    blockLayout: Joi.when('superBlock', {
-      is: [SuperBlocks.FullStackDeveloper],
-      then: Joi.valid(
-        'challenge-list',
-        'challenge-grid',
-        'link',
-        'project-list',
-        'legacy-challenge-list',
-        'legacy-link'
-      ).required()
-    }),
+    blockLayout: Joi.valid(
+      'challenge-list',
+      'challenge-grid',
+      'link',
+      'project-list',
+      'legacy-challenge-list',
+      'legacy-link',
+      'legacy-challenge-grid'
+    ).required(),
     challengeOrder: Joi.number(),
     chapter: Joi.string().when('superBlock', {
       is: 'full-stack-developer',

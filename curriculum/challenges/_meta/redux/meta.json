@@ -82,5 +82,6 @@
       "id": "5a24c314108439a4d403615b",
       "title": "Copy an Object with Object.assign"
     }
-  ]
+  ],
+  "blockLayout": "legacy-challenge-list"
 }
