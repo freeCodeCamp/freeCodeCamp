@@ -18,15 +18,13 @@ const loadImage = (src: string | null) => {
   if (src) new Image().src = src;
 };
 
+const initDialogue = { label: '', text: '', align: 'left' };
+
 export function Scene({
   scene,
-  isPlaying,
-  setIsPlaying,
   sceneSubject
 }: {
   scene: FullScene;
-  isPlaying: boolean;
-  setIsPlaying: (shouldPlay: boolean) => void;
   sceneSubject: SceneSubject;
 }): JSX.Element {
   const { t } = useTranslation();
@@ -87,7 +85,7 @@ export function Scene({
   ]);
 
   const initBackground = setup.background;
-  const initDialogue = { label: '', text: '', align: 'left' };
+
   const initCharacters = setup.characters.map(character => {
     return {
       ...character,
@@ -96,133 +94,137 @@ export function Scene({
     };
   });
 
+  const [isPlaying, setIsPlaying] = useState(false);
   const [sceneIsReady, setSceneIsReady] = useState(false);
   const [showDialogue, setShowDialogue] = useState(false);
   const [accessibilityOn, setAccessibilityOn] = useState(false);
   const [characters, setCharacters] = useState(initCharacters);
   const [dialogue, setDialogue] = useState(initDialogue);
   const [background, setBackground] = useState(initBackground);
-
-  useEffect(() => {
-    if (isPlaying) {
-      playScene();
-    } else {
-      resetScene();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPlaying]);
+  const startRef = useRef<number>(0);
 
   const audioLoaded = () => {
     setSceneIsReady(true);
   };
 
-  let start = 0;
-  let stopAudio = false;
+  useEffect(() => {
+    const playScene = () => {
+      setIsPlaying(true);
+      setShowDialogue(true);
 
-  // this function exists because we couldn't reliably stop the audio when
-  // playing only part of the audio file. So it would get cut off
-  function maybeStopAudio() {
-    const runningTime = Date.now() - start;
-
-    if (runningTime >= duration) {
-      stopAudio = true;
-      audioRef.current.pause();
-    }
-
-    if (!stopAudio) {
-      window.requestAnimationFrame(maybeStopAudio);
-    }
-  }
-
-  const playScene = () => {
-    setShowDialogue(true);
-
-    setTimeout(() => {
-      if (audioRef.current.paused) {
-        start = Date.now();
-        void audioRef.current.play();
-      }
-      // if there are no timestamps, we can let the audio play to the end
-      if (hasTimestamps) maybeStopAudio();
-    }, sToMs(audio.startTime));
-
-    commands.forEach((command, commandIndex) => {
-      // Start command timeout
       setTimeout(() => {
-        if (command.background) setBackground(command.background);
+        if (audioRef.current.paused) {
+          startRef.current = Date.now();
+          void audioRef.current.play();
+        }
+        // if there are no timestamps, we can let the audio play to the end
+        if (hasTimestamps) maybeStopAudio();
+      }, sToMs(audio.startTime));
 
-        setDialogue(
-          command.dialogue
-            ? { ...command.dialogue, label: command.character }
-            : initDialogue
-        );
+      commands.forEach((command, commandIndex) => {
+        // Start command timeout
+        setTimeout(() => {
+          if (command.background) setBackground(command.background);
 
-        setCharacters(prevCharacters => {
-          const newCharacters = prevCharacters.map(character => {
-            if (character.character === command.character) {
-              return {
-                ...character,
-                position: command.position ?? character.position,
-                opacity: command.opacity ?? character.opacity,
-                isTalking: command.dialogue ? true : false
-              };
-            }
-            return character;
-          });
-          return newCharacters;
-        });
-      }, sToMs(command.startTime));
+          setDialogue(
+            command.dialogue
+              ? { ...command.dialogue, label: command.character }
+              : initDialogue
+          );
 
-      // Finish command timeout, only used when there's a dialogue
-      if (command.dialogue) {
-        setTimeout(
-          () => {
-            setCharacters(prevCharacters => {
-              const newCharacters = prevCharacters.map(character => {
-                if (character.character === command.character) {
-                  return {
-                    ...character,
-                    isTalking: false
-                  };
-                }
-                return character;
-              });
-              return newCharacters;
+          setCharacters(prevCharacters => {
+            const newCharacters = prevCharacters.map(character => {
+              if (character.character === command.character) {
+                return {
+                  ...character,
+                  position: command.position ?? character.position,
+                  opacity: command.opacity ?? character.opacity,
+                  isTalking: command.dialogue ? true : false
+                };
+              }
+              return character;
             });
-          },
-          sToMs(command.finishTime as number)
-        );
+            return newCharacters;
+          });
+        }, sToMs(command.startTime));
+
+        // Finish command timeout, only used when there's a dialogue
+        if (command.dialogue) {
+          setTimeout(
+            () => {
+              setCharacters(prevCharacters => {
+                const newCharacters = prevCharacters.map(character => {
+                  if (character.character === command.character) {
+                    return {
+                      ...character,
+                      isTalking: false
+                    };
+                  }
+                  return character;
+                });
+                return newCharacters;
+              });
+            },
+            sToMs(command.finishTime as number)
+          );
+        }
+
+        // Last command timeout
+        if (commandIndex === commands.length - 1) {
+          setTimeout(
+            resetScene,
+            // an extra 500ms at the end to let the characters fade out (CSS transition)
+            command.finishTime
+              ? sToMs(command.finishTime) + 500
+              : sToMs(command.startTime) + 500
+          );
+        }
+      });
+    };
+
+    const resetScene = () => {
+      const { current } = audioRef;
+      if (current) {
+        current.pause();
+        current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
+        current.load();
+        current.currentTime = audio.startTimestamp || 0;
       }
 
-      // Last command timeout
-      if (commandIndex === commands.length - 1) {
-        setTimeout(
-          () => {
-            setIsPlaying(false);
-          },
-          // an extra 500ms at the end to let the characters fade out (CSS transition)
-          command.finishTime
-            ? sToMs(command.finishTime) + 500
-            : sToMs(command.startTime) + 500
-        );
-      }
-    });
-  };
+      setIsPlaying(false);
+      setShowDialogue(false);
+      setDialogue(initDialogue);
+      setCharacters(initCharacters);
+      setBackground(initBackground);
+    };
 
-  const resetScene = () => {
-    const { current } = audioRef;
-    if (current) {
-      current.pause();
-      current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
-      current.load();
-      current.currentTime = audio.startTimestamp || 0;
+    // this function exists because we couldn't reliably stop the audio when
+    // playing only part of the audio file. So it would get cut off
+    function maybeStopAudio() {
+      const runningTime = Date.now() - startRef.current;
+
+      if (runningTime >= duration) {
+        audioRef.current.pause();
+      } else {
+        window.requestAnimationFrame(maybeStopAudio);
+      }
     }
 
-    setShowDialogue(false);
-    setDialogue(initDialogue);
-    setCharacters(initCharacters);
-    setBackground(initBackground);
-  };
+    sceneSubject.attach(playScene);
+
+    return () => {
+      sceneSubject.detach(playScene);
+    };
+  }, [
+    duration,
+    sceneSubject,
+    commands,
+    audio,
+    hasTimestamps,
+    initCharacters,
+    initBackground,
+    audioTimestamp
+  ]);
 
   return (
     <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
@@ -273,10 +275,7 @@ export function Scene({
               <div className='scene-start-screen'>
                 <button
                   className='scene-start-btn scene-play-btn'
-                  onClick={() => {
-                    setIsPlaying(true);
-                    sceneSubject.notify();
-                  }}
+                  onClick={() => sceneSubject.notify()}
                 >
                   <img
                     src={`${images}/play-button.png`}
