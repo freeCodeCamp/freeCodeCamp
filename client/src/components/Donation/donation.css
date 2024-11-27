@@ -883,6 +883,107 @@ a.patreon-button:hover {
   }
 }
 
+/* AB testing */
+p.donation-animation-bullet-1-b {
+  animation-name: animation-bullet-1-b;
+  margin-top: 450px;
+  font-size: 2.5rem;
+}
+
+.donation-animation-bullet-2-b {
+  animation-name: animation-bullet-2-b;
+}
+
+.donation-animation-bullet-3-b {
+  animation-name: animation-bullet-3-b;
+}
+
+.donation-animation-bullet-4-b {
+  animation-name: animation-bullet-4-b;
+}
+
+.donation-animation-bullet-1-b,
+.donation-animation-bullet-2-b,
+.donation-animation-bullet-3-b,
+.donation-animation-bullet-4-b {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 20s;
+  animation-timing-function: normal;
+}
+
+@keyframes animation-bullet-1-b {
+  1% {
+    opacity: 0;
+  }
+  2.5% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+  }
+  15.5% {
+    opacity: 0;
+  }
+}
+
+@keyframes animation-bullet-2-b {
+  15.5% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  16% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  33.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  34% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-3-b {
+  34.5% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  35% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  60% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  60.5% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-4-b {
+  60.5% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  61% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  85% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  85.5% {
+    opacity: 0;
+  }
+}
+/* END AB testing */
+
 .tester-text {
   margin-top: 80px;
 }
