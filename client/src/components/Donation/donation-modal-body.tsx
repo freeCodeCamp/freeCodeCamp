@@ -151,7 +151,7 @@ const AnimationContainer = ({
                 {t('donate.remove-distruptions')}
               </p>
               <p className='donation-animation-bullet-3-b'>
-                {t('donate.remove-distractions')}
+                {t('donate.acquire-skills-faster')}
               </p>
               <p className='donation-animation-bullet-4-b'>
                 {t('donate.help-millions-learn')}
