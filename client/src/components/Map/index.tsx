@@ -60,6 +60,7 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
   [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
   [SuperBlockStage.New]: '', // TODO: add translation
+  [SuperBlockStage.Next]: 'landing.next-heading',
   [SuperBlockStage.Upcoming]: 'landing.upcoming-heading'
 };
 
@@ -161,7 +162,11 @@ function Map({
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
-      {getStageOrder({ showNewCurriculum, showUpcomingChanges }).map(stage => (
+      {getStageOrder({
+        showNewCurriculum,
+        showUpcomingChanges,
+        showNextCurriculum: false // TODO: control with GrowthBook
+      }).map(stage => (
         <Fragment key={stage}>
           <h2 className={forLanding ? 'big-heading' : ''}>
             {t(superBlockHeadings[stage])}
