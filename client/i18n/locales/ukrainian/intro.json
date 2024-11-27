@@ -1682,7 +1682,7 @@
       "Наприкінці курсу ви отримаєте практичні навички та досвід, які дозволять впевнено розробляти повноцінні вебзастосунки, що підготує вас до успішної кар’єри full stack розробника."
     ],
     "chapters": {
-      "freecodecamp": "Welcome",
+      "freecodecamp": "Вітання",
       "html": "HTML",
       "css": "CSS",
       "javascript": "JavaScript",
@@ -1735,16 +1735,12 @@
       "functional-programming": "Функціональне програмування",
       "asynchronous-javascript": "Асинхронний JavaScript",
       "react-fundamentals": "Основи React",
-      "react-state-hooks-and-routing": "Стани, хуки та маршрутизація в React",
+      "react-state-hooks-and-routing": "React State, Hooks, and Routing",
       "performance": "Продуктивність",
       "css-libraries-and-frameworks": "Бібліотеки та фреймворки CSS",
       "testing": "Тестування",
       "typescript-fundamentals": "Основи TypeScript",
-      "bash-fundamentals": "Основи Bash",
-      "relational-databases": "Реляційні бази даних",
-      "bash-scripting": "Скрипти Bash",
       "sql-and-bash": "SQL та Bash",
-      "nano": "Nano",
       "git": "Git",
       "security-and-privacy": "Безпека та приватність"
     },
@@ -1922,13 +1918,13 @@
         "title": "Повторення доступності в HTML",
         "intro": [
           "Перш ніж перейти до тесту «Доступність в HTML», повторіть основні поняття.",
-          "Open up this page to review concepts including the <code>aria-hidden</code>, <code>aria-describedby</code>, <code>tabindex</code> attributes and more."
+          "Відкрийте цю сторінку, щоб пригадати атрибути <code>aria-hidden</code>, <code>aria-describedby</code>, <code>tabindex</code> та багато іншого."
         ]
       },
       "quiz-html-accessibility": {
         "title": "Тест «Доступність в HTML»",
         "intro": [
-          "The following quiz will test your knowledge on the accessibility concepts you have learned so far."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Доступність»."
         ]
       },
       "review-html": {
@@ -2590,7 +2586,7 @@
       "lecture-working-with-numbers-booleans-and-the-math-object": {
         "title": "Робота з числами, булевими значеннями й об’єктом math",
         "intro": [
-          "In these lecture videos, you will learn about numbers, booleans, and the <code>Math</code> object."
+          "У цих відеолекціях ви дізнаєтесь про числа, булеві значення й об’єкт <code>Math</code>."
         ]
       },
       "workshop-mathbot": {
@@ -2741,7 +2737,7 @@
         "title": "Повторення об’єктів у JavaScript",
         "intro": [
           "Перш ніж перейти до тесту «Об’єкти в JavaScript», повторіть основні поняття.",
-          "Open up this page to review concepts including how to access information from objects, object destructuring, working with JSON, and more."
+          "Відкрийте цю сторінку, щоб пригадати, як отримувати інформацію з об’єктів, деструктуризацію об’єктів, роботу з JSON та багато іншого."
         ]
       },
       "quiz-javascript-objects": {
@@ -2770,7 +2766,7 @@
         "title": "Повторення циклів у JavaScript",
         "intro": [
           "Перш ніж перейти до тесту «Цикли в JavaScript», повторіть основні поняття.",
-          "Open up this page to review the <code>for...of</code> loop, <code>while</code> loop, <code>break and continue</code> statements and more."
+          "Відкрийте цю сторінку, щоб пригадати цикл <code>for...of</code>, цикл <code>while</code>, інструкції <code>break and continue</code> та багато іншого."
         ]
       },
       "quiz-javascript-loops": {
@@ -2819,7 +2815,7 @@
         "title": "Повторення основ JavaScript",
         "intro": [
           "Перш ніж перейти до тесту «Основи JavaScript», повторіть основні поняття.",
-          "Open up this page to review concepts like closures, memory management, and more."
+          "Відкрийте цю сторінку, щоб пригадати замикання, управління пам’яттю та багато іншого."
         ]
       },
       "quiz-javascript-fundamentals": {
@@ -2839,9 +2835,9 @@
         ]
       },
       "lab-book-organizer": {
-        "title": "Build a Book Organizer",
+        "title": "Створіть органайзер для книжок",
         "intro": [
-          "In this lab, you will build a book organizer using higher order functions in JavaScript."
+          "У цій лабораторній роботі ви створите органайзер для книжок, використовуючи функції вищого порядку в JavaScript."
         ]
       },
       "bxtv": {
@@ -2852,7 +2848,7 @@
         "title": "Повторення функцій вищого порядку в JavaScript",
         "intro": [
           "Перш ніж перейти до тесту «Функції вищого порядку в JavaScript», повторіть основні поняття.",
-          "Open up this page to review concepts including how to work with the <code>map()</code>, <code>filter()</code>, and <code>reduce()</code> methods."
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з методами <code>map()</code>, <code>filter()</code> та <code>reduce()</code>."
         ]
       },
       "quiz-javascript-higher-order-functions": {
@@ -2886,8 +2882,8 @@
       "review-dom-manipulation-and-click-events-with-javascript": {
         "title": "Повторення маніпуляції DOM та подій Click в JavaScript",
         "intro": [
-          "Before you are quizzed on the Document Object Model, you first need to review the concepts.",
-          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's/code>, the <code>addEventListener()</code> method and more."
+          "Перш ніж перейти до тесту «Маніпуляція DOM та події Click в JavaScript», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з <code>DOM</code>, <code>Web API</code>, методом <code>addEventListener()</code> та багато іншого."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
@@ -2942,7 +2938,7 @@
         "title": "Повторення подій в JavaScript",
         "intro": [
           "Перш ніж перейти до тесту «Події в JavaScript», повторіть основні поняття.",
-          "Open up this page to review concepts like change events, event bubbling, and event delegation."
+          "Відкрийте цю сторінку, щоб пригадати події <code>change</code>, спливання подій та делегування подій."
         ]
       },
       "quiz-javascript-events": {
@@ -2963,7 +2959,7 @@
         "title": "Повторення налагодження JavaScript",
         "intro": [
           "Перш ніж перейти до тесту «Налагодження JavaScript», повторіть основні поняття.",
-          "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally/code> and more."
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з інструкцією <code>throw</code>, <code>try...catch...finally</code> та багато іншого."
         ]
       },
       "quiz-debugging-javascript": {
@@ -2998,8 +2994,8 @@
       "review-javascript-regular-expressions": {
         "title": "Повторення регулярних виразів у JavaScript",
         "intro": [
-          "Before you are quizzed on Regular Expressions you first need to review the concepts.",
-          "Open up this page to review concepts like lookaheads, lookbehinds, common regex modifiers and more."
+          "Перш ніж перейти до тесту «Регулярні вирази», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати перевірки уперед і назад, загальні модифікатори регулярних виразів та багато іншого."
         ]
       },
       "quiz-javascript-regular-expressions": {
@@ -3028,8 +3024,8 @@
       "review-form-validation-with-javascript": {
         "title": "Повторення валідації форм з JavaScript",
         "intro": [
-          "Before you are quizzed on form validation concepts you first need to review.",
-          "Open up this page to review concepts including the <code>preventDefault()</code> method, the submit event and more."
+          "Перш ніж перейти до тесту «Валідація форм», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати метод <code>preventDefault()</code>, подію <code>submit</code> та багато іншого."
         ]
       },
       "quiz-form-validation-with-javascript": {
@@ -3053,8 +3049,8 @@
       "review-javascript-dates": {
         "title": "Повторення дат у JavaScript",
         "intro": [
-          "Before you are quizzed on working with dates, you first need to review the concepts.",
-          "Open up this page to review the <code>Date()</code> object and common methods."
+          "Перш ніж перейти до тесту «Дати», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати об’єкт <code>Date()</code> та поширені методи."
         ]
       },
       "quiz-javascript-dates": {
@@ -3078,7 +3074,8 @@
       "review-javascript-audio-and-video": {
         "title": "Повторення аудіо та відео в JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Аудіо та відео в JavaScript», щоб підготуватись до тесту."
+          "Before you are quizzed on working with audio and video in JavaScript, you first need to review.",
+          "Open up this page to review concepts including the <code>Audio</code> constructor, the <code>HTMLMediaElement</code> API and more."
         ]
       },
       "quiz-javascript-audio-and-video": {
@@ -3108,7 +3105,7 @@
       "quiz-javascript-maps-sets-and-json": {
         "title": "Тест «Map, set та JSON в JavaScript»",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Maps, Sets, and JSON."
+          "Перевірте, що ви дізнались про map, set та JSON в JavaScript."
         ]
       },
       "lecture-working-with-client-side-storage-and-crud-operations": {
@@ -3158,22 +3155,21 @@
         ]
       },
       "lab-bank-account-manager": {
-        "title": "Build a Bank Account Management Program",
+        "title": "Створіть програму для управління банківським рахунком",
         "intro": [
-          "In this lab, you will build a simple transaction management system for a bank account."
+          "У цій лабораторній роботі ви створите просту систему управління транзакціями банківського рахунку."
         ]
       },
       "review-javascript-classes": {
         "title": "Повторення класів у JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Класи в JavaScript», щоб підготуватись до тесту."
+          "Before you are quizzed on working with classes, you first need to review.",
+          "Open up this page to review concepts including the <code>this</code> keyword, class inheritance and more."
         ]
       },
       "quiz-javascript-classes": {
         "title": "Тест «Класи в JavaScript»",
-        "intro": [
-          "Test what you've learned in this quiz on JavaScript Classes."
-        ]
+        "intro": ["Перевірте, що ви дізнались про класи в JavaScript."]
       },
       "lecture-understanding-recursion-and-the-call-stack": {
         "title": "Знайомство з рекурсією та стеком викликів",
@@ -3186,15 +3182,16 @@
         "intro": []
       },
       "lab-permutation-generator": {
-        "title": "Build a Permutation Generator",
+        "title": "Створіть генератор перестановок",
         "intro": [
-          "For this lab, you will build a permutation generator that produces all possible permutations of a given string."
+          "У цій лабораторній роботі ви створите генератор, який видаватиме всі можливі перестановки заданого рядка."
         ]
       },
       "review-recursion": {
         "title": "Повторення рекурсії",
         "intro": [
-          "Пригадайте поняття з теми «Рекурсія», щоб підготуватись до тесту."
+          "Before you are quizzed on the recursion, you first need to review the concepts.",
+          "Open up this page to review what is recursion and what is it used for."
         ]
       },
       "quiz-recursion": {
@@ -3255,10 +3252,10 @@
         "intro": []
       },
       "workshop-recipe-ingredient-converter": {
-        "title": "Build a Recipe Ingredient Converter",
+        "title": "Створіть конвертер інгредієнтів",
         "intro": [
-          "In the previous lecture videos, you learned the core concepts behind functional programming and currying.",
-          "Now you will be able to apply what you have learned about currying and functional programming by building a recipe ingredient converter application."
+          "У попередніх відеолекціях ви дізнались основні поняття функціонального програмування і каррування.",
+          "Зараз ви зможете застосувати на практиці все те, що вивчили про каррування та функціональне програмування, створивши застосунок із конвертацією інгредієнтів."
         ]
       },
       "udia": {
@@ -3268,7 +3265,8 @@
       "review-javascript-functional-programming": {
         "title": "Повторення функціонального програмування в JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Функціональне програмування в JavaScript», щоб підготуватись до тесту."
+          "Before you are quizzed on functional programming concepts, you first need to review.",
+          "Open up this page to review concepts on functional programming, currying and more."
         ]
       },
       "mjbe": {
