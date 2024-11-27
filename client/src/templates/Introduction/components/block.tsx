@@ -465,9 +465,8 @@ class Block extends Component<BlockProps> {
     return (
       <>
         {layoutToComponent[challenges[0].blockLayout]}
-        {(!isGridBlock || isProjectBlock) && !BlockLayouts.Link && (
-          <Spacer size='m' />
-        )}
+        {(!isGridBlock || isProjectBlock) &&
+          superBlock !== SuperBlocks.FullStackDeveloper && <Spacer size='m' />}
       </>
     );
   }
