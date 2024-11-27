@@ -54,7 +54,6 @@ export const PortfolioProjects = ({
         ))}
         <Spacer size='m' />
       </section>
-      <hr />
     </FullWidthRow>
   );
 };

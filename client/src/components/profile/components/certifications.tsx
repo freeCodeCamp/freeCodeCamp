@@ -116,7 +116,6 @@ function Certificates({
           </div>
         )}
       </section>
-      <hr />
     </FullWidthRow>
   );
 }

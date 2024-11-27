@@ -137,7 +137,6 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
           </div>
         </dl>
       </section>
-      <hr />
     </FullWidthRow>
   );
 }

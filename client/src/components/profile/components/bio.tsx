@@ -81,7 +81,6 @@ const Bio = ({
           website={website}
         />
       </section>
-      <hr />
     </FullWidthRow>
   );
 };

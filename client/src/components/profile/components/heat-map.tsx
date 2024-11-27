@@ -165,7 +165,6 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
           </Row>
           <Spacer size='m' />
         </section>
-        <hr />
       </FullWidthRow>
     );
   }

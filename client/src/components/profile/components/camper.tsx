@@ -97,7 +97,6 @@ function Camper({
               )}
             </div>
           </section>
-          <hr />
         </FullWidthRow>
       )}
     </>
