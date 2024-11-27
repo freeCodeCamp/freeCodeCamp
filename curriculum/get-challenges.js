@@ -384,10 +384,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
           path.resolve(META_DIR, `${getBlockNameFromPath(filePath)}/meta.json`)
         );
 
-    const isAudited = isAuditedSuperBlock(lang, meta.superBlock, {
-      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
-    });
+    const isAudited = isAuditedSuperBlock(lang, meta.superBlock);
 
     // If we can use the language, do so. Otherwise, default to english.
     const langUsed = isAudited && fs.existsSync(i18nPath) ? lang : 'english';
