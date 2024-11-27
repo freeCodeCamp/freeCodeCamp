@@ -19,7 +19,7 @@ describe('superBlockOrder', () => {
   });
 });
 
-describe('createFlatSuperBlockMap', () => {
+describe('generateSuperBlockList', () => {
   it('should return an array of SuperBlocks object with New and Upcoming when { showNewCurriculum: true, showUpcomingChanges: true }', () => {
     const result = generateSuperBlockList({
       showNewCurriculum: true,
