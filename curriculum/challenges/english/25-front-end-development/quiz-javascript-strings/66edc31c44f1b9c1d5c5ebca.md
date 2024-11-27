@@ -177,28 +177,28 @@ Which of the following is the correct way to access the third character of a str
 
 ```js
 const developer = "Jessica";
-developer[3]
+developer[3];
 ```
 
 ---
 
 ```js
 const developer = "Jessica";
-developer[-1]
+developer[-1];
 ```
 
 ---
 
 ```js
 const developer = "Jessica";
-developer[0]
+developer[0];
 ```
 
 #### --answer--
 
 ```js
 const developer = "Jessica";
-developer[2]
+developer[2];
 ```
 
 ### --question--
@@ -256,7 +256,7 @@ Which of the following `indexOf` examples will correctly return -1?
 ```js
 const organization = "freeCodeCamp";
 
-console.log(organization.indexOf("e")) 
+console.log(organization.indexOf("e"));
 ```
 
 ---
@@ -264,7 +264,7 @@ console.log(organization.indexOf("e"))
 ```js
 const organization = "freeCodeCamp";
 
-console.log(organization.indexOf("f")) 
+console.log(organization.indexOf("f"));
 ```
 
 ---
@@ -272,7 +272,7 @@ console.log(organization.indexOf("f"))
 ```js
 const organization = "freeCodeCamp";
 
-console.log(organization.indexOf("C")) 
+console.log(organization.indexOf("C"));
 ```
 
 #### --answer--
@@ -280,7 +280,7 @@ console.log(organization.indexOf("C"))
 ```js
 const organization = "freeCodeCamp";
 
-console.log(organization.indexOf("c")) 
+console.log(organization.indexOf("c"));
 ```
 
 ### --question--
