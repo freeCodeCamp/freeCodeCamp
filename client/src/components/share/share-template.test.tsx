@@ -13,14 +13,25 @@ describe('Share Template Testing', () => {
     />
   );
   test('Testing share template Click Redirect Event', () => {
-    const links = screen.queryAllByRole('link', {
+    const twitterLink = screen.queryByRole('link', {
       name: 'buttons.tweet aria.opens-new-window'
     });
-    expect(links[0]).toBeInTheDocument();
-    expect(links[0]).toHaveAttribute('href', 'string');
-    expect(links[1]).toBeInTheDocument();
-    expect(links[1]).toHaveAttribute('href', 'string');
-    expect(links[2]).toBeInTheDocument();
-    expect(links[2]).toHaveAttribute('href', 'string');
+
+    expect(twitterLink).toBeInTheDocument();
+    expect(twitterLink).toHaveAttribute('href', 'string');
+
+    const blueSkyLink = screen.queryByRole('link', {
+      name: 'buttons.share-on-bluesky aria.opens-new-window'
+    });
+
+    expect(blueSkyLink).toBeInTheDocument();
+    expect(blueSkyLink).toHaveAttribute('href', 'string');
+
+    const instaLink = screen.queryByRole('link', {
+      name: 'buttons.share-on-insta aria.opens-new-window'
+    });
+
+    expect(instaLink).toBeInTheDocument();
+    expect(instaLink).toHaveAttribute('href', 'string');
   });
 });
