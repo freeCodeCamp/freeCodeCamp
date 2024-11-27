@@ -43,11 +43,11 @@ Which option demonstrates string interpolation?
 
 #### --distractors--
 
-`'Hello, ' + user + '!'`
+`"Hello, " + user + "!"`
 
 ---
 
-`'Hello, $user!'`
+`"Hello, $user!"`
 
 ---
 
@@ -287,45 +287,45 @@ console.log(organization.indexOf("c"));
 
 #### --text--
 
-How can you check if the string `JavaScript` contains a specific substring?
+How can you check if the string `"JavaScript"` contains a specific substring?
 
 #### --distractors--
 
-`'JavaScript'.has()`
+`"JavaScript".has()`
 
 ---
 
-`'JavaScript'.contains()`
+`"JavaScript".contains()`
 
 ---
 
-`'JavaScript'.exists()`
+`"JavaScript".exists()`
 
 #### --answer--
 
-`'JavaScript'.includes()`
+`"JavaScript".includes()`
 
 ### --question--
 
 #### --text--
 
-Which method extracts a substring from the string `JavaScript`?
+Which method extracts a substring from the string `"JavaScript"`?
 
 #### --distractors--
 
-`'JavaScript'.remove()`
+`"JavaScript".remove()`
 
 ---
 
-`'JavaScript'.extract()`
+`"JavaScript".extract()`
 
 ---
 
-`'JavaScript'.cut()`
+`"JavaScript".cut()`
 
 #### --answer--
 
-`'JavaScript'.slice()`
+`"JavaScript".slice()`
 
 ### --question--
 
@@ -335,19 +335,19 @@ How do you convert the string `"JavaScript"` to uppercase?
 
 #### --distractors--
 
-`'JavaScript'.upper()`
+`"JavaScript".upper()`
 
 ---
 
-`'JavaScript'.toUpper()`
+`"JavaScript".toUpper()`
 
 ---
 
-`'JavaScript'.convertUpper()`
+`"JavaScript".convertUpper()`
 
 #### --answer--
 
-`'JavaScript'.toUpperCase()`
+`"JavaScript".toUpperCase()`
 
 ### --question--
 
@@ -357,19 +357,19 @@ How do you convert the string `"JavaScript"` to lowercase?
 
 #### --distractors--
 
-`'JavaScript'.lower()`
+`"JavaScript".lower()`
 
 ---
 
-`'JavaScript'.toLower()`
+`"JavaScript".toLower()`
 
 ---
 
-`'JavaScript'.convertLower()`
+`"JavaScript".convertLower()`
 
 #### --answer--
 
-`'JavaScript'.toLowerCase()`
+`"JavaScript".toLowerCase()`
 
 ### --question--
 
