@@ -130,7 +130,6 @@ const AnimationContainer = ({
   secondsRemaining: number;
 }) => {
   const newBearAnimation = useFeature('new-bear-animation').on;
-  console.log(newBearAnimation);
   const { t } = useTranslation();
   return (
     <>
