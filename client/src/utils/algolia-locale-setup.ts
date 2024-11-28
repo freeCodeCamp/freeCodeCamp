@@ -37,18 +37,19 @@ const algoliaIndices = {
     name: 'news-ja',
     searchPage: 'https://www.freecodecamp.org/japanese/news/search/'
   },
-  // TODO: Replace with German news when we have more useful resources on that instance
+  korean: {
+    name: 'news-ko',
+    searchPage: 'https://www.freecodecamp.org/korean/news/search/'
+  },
+  // Note: We don't build News for the locales below, so show English
+  // hits and use the English search page
   german: {
     name: 'news',
     searchPage: 'https://www.freecodecamp.org/news/search/'
   },
   swahili: {
-    name: 'news-sw',
+    name: 'news',
     searchPage: 'https://www.freecodecamp.org/swahili/news/search/'
-  },
-  korean: {
-    name: 'news-ko',
-    searchPage: 'https://www.freecodecamp.org/korean/news/search/'
   }
 };
 
