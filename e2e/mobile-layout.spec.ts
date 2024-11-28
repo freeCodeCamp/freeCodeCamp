@@ -2,8 +2,6 @@ import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.describe('Classic challenge - 5 tabs mobile layout component', () => {
   test.skip(
     ({ isMobile }) => isMobile === false,

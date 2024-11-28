@@ -7,7 +7,9 @@ import { Disclosure } from '@headlessui/react';
 import { ChallengeNode } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
-import { BlockTypes } from '../../../../../shared/config/blocks';
+// TODO: See if there's a nice way to incorporate the structure into data Gatsby
+// sources from the curriculum, rather than importing it directly.
+import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
 import Block from './block';
 
 import './super-block-accordion.css';
@@ -28,6 +30,24 @@ interface SuperBlockTreeViewProps {
   superBlock: SuperBlocks;
   chosenBlock: string;
 }
+
+const modules = superBlockStructure.chapters.flatMap(
+  chapter => chapter.modules
+);
+
+const isLinkModule = (name: string) => {
+  const module = modules.find(module => module.dashedName === name);
+
+  return module?.moduleType === 'review';
+};
+
+const isLinkChapter = (name: string) => {
+  const chapter = superBlockStructure.chapters.find(
+    chapter => chapter.dashedName === name
+  );
+
+  return chapter?.chapterType === 'exam';
+};
 
 const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
   const { t } = useTranslation();
@@ -66,7 +86,7 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const { allChapters, allBlocks, examChallenge } = useMemo(() => {
+  const { allChapters, allBlocks } = useMemo(() => {
     const allBlocks = uniqBy(challenges, 'block').map(
       ({ block, blockType, chapter, module }) => ({
         name: block,
@@ -90,11 +110,11 @@ export const SuperBlockAccordion = ({
       modules: allModules.filter(({ chapter: c }) => c === chapter)
     }));
 
-    const examChallenge = challenges.find(
-      ({ blockType }) => blockType === BlockTypes.exam
-    );
-
-    return { allChapters, allModules, allBlocks, examChallenge };
+    return {
+      allChapters,
+      allModules,
+      allBlocks
+    };
   }, [challenges]);
 
   // Expand the outer layers in order to reveal the chosen block.
@@ -108,42 +128,60 @@ export const SuperBlockAccordion = ({
   return (
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
-        if (examChallenge && chapter.name === examChallenge.chapter) {
+        if (isLinkChapter(chapter.name)) {
+          const linkedChallenge = chapter.modules[0].blocks[0].challenges[0];
           return (
-            <li key={examChallenge.dashedName} className='exam'>
+            <li key={chapter.name} className='link-chapter'>
               <Block
-                block={examChallenge.block}
-                blockType={examChallenge.blockType}
-                challenges={[examChallenge]}
+                block={linkedChallenge.block}
+                blockType={linkedChallenge.blockType}
+                challenges={[linkedChallenge]}
                 superBlock={superBlock}
               />
             </li>
           );
         }
+
         return (
           <Chapter
             key={chapter.name}
             dashedName={chapter.name}
             isExpanded={expandedChapter === chapter.name}
           >
-            {chapter.modules.map(mod => (
-              <Module
-                key={mod.name}
-                dashedName={mod.name}
-                isExpanded={expandedModule === mod.name}
-              >
-                {mod.blocks.map(block => (
-                  <li key={block.name}>
+            {chapter.modules.map(module => {
+              if (isLinkModule(module.name)) {
+                const linkedChallenge = module.blocks[0].challenges[0];
+                return (
+                  <li key={module.name} className='link-module'>
                     <Block
-                      block={block.name}
-                      blockType={block.blockType}
-                      challenges={block.challenges}
+                      block={linkedChallenge.block}
+                      blockType={linkedChallenge.blockType}
+                      challenges={[linkedChallenge]}
                       superBlock={superBlock}
                     />
                   </li>
-                ))}
-              </Module>
-            ))}
+                );
+              }
+
+              return (
+                <Module
+                  key={module.name}
+                  dashedName={module.name}
+                  isExpanded={expandedModule === module.name}
+                >
+                  {module.blocks.map(block => (
+                    <li key={block.name}>
+                      <Block
+                        block={block.name}
+                        blockType={block.blockType}
+                        challenges={block.challenges}
+                        superBlock={superBlock}
+                      />
+                    </li>
+                  ))}
+                </Module>
+              );
+            })}
           </Chapter>
         );
       })}

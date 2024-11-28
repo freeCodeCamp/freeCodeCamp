@@ -7,7 +7,7 @@ dashedName: quiz-javascript-strings
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 of the questions below.
+To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
 
 # --quizzes--
 
@@ -17,23 +17,23 @@ To pass the quiz, you must correctly answer at least 17 of the 20 of the questio
 
 #### --text--
 
-How can you access the second character of the string `JavaScript` using bracket notation?
+What is the return value for the `includes()` method?
 
 #### --distractors--
 
-`'JavaScript'.charAt(2)`
+If the substring is found within the string, the method returns the string otherwise, it returns `undefined`.
 
 ---
 
-`'JavaScript'.charAt(1)`
+If the substring is found within the string, the method returns `true` otherwise, it returns and empty string.
 
 ---
 
-`'JavaScript'[2]`
+If the substring is found within the string, the method returns the string otherwise, it returns `null`.
 
 #### --answer--
 
-`'JavaScript'[1]`
+If the substring is found within the string, the method returns `true` otherwise, it returns `false`.
 
 ### --question--
 
@@ -43,11 +43,11 @@ Which option demonstrates string interpolation?
 
 #### --distractors--
 
-`'Hello, ' + user + '!'`
+`"Hello, " + user + "!"`
 
 ---
 
-`'Hello, $user!'`
+`"Hello, $user!"`
 
 ---
 
@@ -61,19 +61,19 @@ Which option demonstrates string interpolation?
 
 #### --text--
 
-Which option creates a string with a newline character?
+Which of the following options is the newline character?
 
 #### --distractors--
 
-`'\t'`
+`'\newline'`
 
 ---
 
-`'\b'`
+`'\new'`
 
 ---
 
-`'\p'`
+`'\line'`
 
 #### --answer--
 
@@ -83,73 +83,73 @@ Which option creates a string with a newline character?
 
 #### --text--
 
-Which option creates a string with a tab character?
+Which of the following statements is correct about strings?
 
 #### --distractors--
 
-`'\n'`
+Strings are mutable and can be changed after they are created.
 
 ---
 
-`'\b'`
+Strings are non primitive data types.
 
 ---
 
-`'\p'`
+Strings can only be created using single quotes.
 
 #### --answer--
 
-`'\t'`
+Strings are immutable.
 
 ### --question--
 
 #### --text--
 
-Which option creates a string object?
+What does ASCII stand for?
 
 #### --distractors--
 
-`String('Hello')`
+American Standard Code for Internet Information
 
 ---
 
-`'Hello'`
+Advanced Systematic Code for Internal Interchange
 
 ---
 
-`createString('Hello')`
+Automatic Standard Code for Internal Information
 
 #### --answer--
 
-`new String('Hello')`
+American Standard Code for Information Interchange
 
 ### --question--
 
 #### --text--
 
-Which option extracts a substring consisting of the first three characters from the string `JavaScript`?
+Which of the following methods extracts a portion of a string and returns a new string?
 
 #### --distractors--
 
-`'JavaScript'.substring(3)`
+`trim()`
 
 ---
 
-`'JavaScript'.substring(0, 4)`
+`indexOf()`
 
 ---
 
-`'JavaScript'.extract(0, 3)`
+`prompt()`
 
 #### --answer--
 
-`'JavaScript'.substring(0, 3)`
+`slice()`
 
 ### --question--
 
 #### --text--
 
-What is the purpose of the `prompt()` function?
+What is the purpose of the `prompt()` method?
 
 #### --distractors--
 
@@ -171,23 +171,35 @@ It displays a dialog box that prompts the user for input.
 
 #### --text--
 
-What is the difference between a string object and a string primitive?
+Which of the following is the correct way to access the third character of a string?
 
 #### --distractors--
 
-String objects have methods, string primitives do not.
+```js
+const developer = "Jessica";
+developer[3];
+```
 
 ---
 
-String primitives are created using the `String` constructor, string objects are created using string literals.
+```js
+const developer = "Jessica";
+developer[-1];
+```
 
 ---
 
-There is no difference between a string object and a string primitive.
+```js
+const developer = "Jessica";
+developer[0];
+```
 
 #### --answer--
 
-String objects are created using the `String` constructor, string primitives are created using string literals.
+```js
+const developer = "Jessica";
+developer[2];
+```
 
 ### --question--
 
@@ -205,7 +217,7 @@ How can you obtain the ASCII index of a character in a string?
 
 ---
 
-`str.fromCharCode()`
+`str.getCharIndex()`
 
 #### --answer--
 
@@ -237,139 +249,155 @@ How can you obtain the character corresponding to an ASCII value?
 
 #### --text--
 
-Which function converts a number variable `num` to a string?
+Which of the following `indexOf` examples will correctly return -1?
 
 #### --distractors--
 
-`num.toNumber()`
+```js
+const organization = "freeCodeCamp";
+
+console.log(organization.indexOf("e"));
+```
 
 ---
 
-`num.toChar()`
+```js
+const organization = "freeCodeCamp";
+
+console.log(organization.indexOf("f"));
+```
 
 ---
 
-`num.toText()`
+```js
+const organization = "freeCodeCamp";
+
+console.log(organization.indexOf("C"));
+```
 
 #### --answer--
 
-`num.toString()`
+```js
+const organization = "freeCodeCamp";
+
+console.log(organization.indexOf("c"));
+```
 
 ### --question--
 
 #### --text--
 
-How can you check if the string `JavaScript` contains a specific substring?
+How can you check if the string `"JavaScript"` contains a specific substring?
 
 #### --distractors--
 
-`'JavaScript'.has()`
+`"JavaScript".has()`
 
 ---
 
-`'JavaScript'.contains()`
+`"JavaScript".contains()`
 
 ---
 
-`'JavaScript'.exists()`
+`"JavaScript".exists()`
 
 #### --answer--
 
-`'JavaScript'.includes()`
+`"JavaScript".includes()`
 
 ### --question--
 
 #### --text--
 
-Which method extracts a substring from the string `JavaScript`?
+Which method extracts a substring from the string `"JavaScript"`?
 
 #### --distractors--
 
-`'JavaScript'.splice()`
+`"JavaScript".remove()`
 
 ---
 
-`'JavaScript'.extract()`
+`"JavaScript".extract()`
 
 ---
 
-`'JavaScript'.cut()`
+`"JavaScript".cut()`
 
 #### --answer--
 
-`'JavaScript'.slice()`
+`"JavaScript".slice()`
 
 ### --question--
 
 #### --text--
 
-How do you convert the string `JavaScript` to uppercase?
+How do you convert the string `"JavaScript"` to uppercase?
 
 #### --distractors--
 
-`'JavaScript'.upper()`
+`"JavaScript".upper()`
 
 ---
 
-`'JavaScript'.toUpper()`
+`"JavaScript".toUpper()`
 
 ---
 
-`'JavaScript'.toUppercase()`
+`"JavaScript".convertUpper()`
 
 #### --answer--
 
-`'JavaScript'.toUpperCase()`
+`"JavaScript".toUpperCase()`
 
 ### --question--
 
 #### --text--
 
-How do you convert the string `JavaScript` to lowercase?
+How do you convert the string `"JavaScript"` to lowercase?
 
 #### --distractors--
 
-`'JavaScript'.lower()`
+`"JavaScript".lower()`
 
 ---
 
-`'JavaScript'.toLower()`
+`"JavaScript".toLower()`
 
 ---
 
-`'JavaScript'.toLowercase()`
+`"JavaScript".convertLower()`
 
 #### --answer--
 
-`'JavaScript'.toLowerCase()`
+`"JavaScript".toLowerCase()`
 
 ### --question--
 
 #### --text--
 
-How do you replace all occurances of `a` with `b` in the string `JavaScript`?
+Which of the following methods is used to find a specified value in a string and replace it with another value?
 
 #### --distractors--
 
-`'JavaScript'.replace('a', 'b')`
+`indexOf()`
 
 ---
 
-`'JavaScript'.replace('b', 'a')`
+`replaceWith()`
 
 ---
 
-`'JavaScript'.replaceAll('b', 'a')`
+`find()`
 
 #### --answer--
 
-`'JavaScript'.replaceAll('a', 'b')`
+`replace()`
 
 ### --question--
 
 #### --text--
 
-How do you repeat a string a specified number of times?
+Which method is used to repeat a string a specified number of times?
 
 #### --distractors--
 
@@ -395,11 +423,11 @@ What will the following code return: `'abc'.repeat(3)`?
 
 #### --distractors--
 
-'abcabc'
+`"abcabc"`
 
 ---
 
-'abcabcabcabc'
+`"abcabcabcabc"`
 
 ---
 
@@ -407,7 +435,7 @@ It will throw an error.
 
 #### --answer--
 
-'abcabcabc'
+`"abcabcabc"`
 
 ### --question--
 
@@ -435,21 +463,29 @@ How do you remove whitespace from the beginning and end of a string?
 
 #### --text--
 
-Which method can be used to check if a string starts with a specific substring?
+Which of the following is the correct syntax for escaping strings?
 
 #### --distractors--
 
-`str.beginsWith()`
+```js
+"She said, ?"Hello!?""
+```
 
 ---
 
-`str.starts()`
+```js
+"She said, ."Hello!.""
+```
 
 ---
 
-`str.hasPrefix()`
+```js
+"She said, //"Hello!//""
+```
 
 #### --answer--
 
-`str.startsWith()`
+```js
+"She said, \"Hello!\""
+```
 
