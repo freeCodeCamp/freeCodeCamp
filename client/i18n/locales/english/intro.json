@@ -3104,10 +3104,10 @@
           "Open up this page to review concepts such as the <code>Map</code> and <code>Set</code> objects, as well as WeakSet and WeakMap."
         ]
       },
-      "quiz-javascript-maps-sets-and-json": {
-        "title": "JavaScript Maps, Sets, and JSON Quiz",
+      "quiz-javascript-maps-and-sets": {
+        "title": "JavaScript Maps and Sets Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Maps, Sets, and JSON."
+          "Test what you've learned in this quiz on JavaScript Maps and Sets."
         ]
       },
       "lecture-working-with-client-side-storage-and-crud-operations": {
