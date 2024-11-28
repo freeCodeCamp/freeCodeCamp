@@ -3293,7 +3293,12 @@
       },
       "cdfr": { "title": "263", "intro": [] },
       "bgtd": { "title": "264", "intro": [] },
-      "ascd": { "title": "265", "intro": [] },
+      "review-react-basics": {
+        "title": "React Basics Review",
+        "intro": [
+          "Review basic React concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-react-basics": {
         "title": "React Basics Quiz",
         "intro": ["Test what you've learned in this quiz on React Basics."]
