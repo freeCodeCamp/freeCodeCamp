@@ -467,7 +467,7 @@
           "dashedName": "maps-sets-and-json",
           "blocks": [
             { "dashedName": "lecture-working-with-maps-and-sets" },
-            { "dashedName": "review-javascript-maps-sets-and-json" },
+            { "dashedName": "review-javascript-maps-and-sets" },
             { "dashedName": "quiz-javascript-maps-sets-and-json" }
           ]
         },
