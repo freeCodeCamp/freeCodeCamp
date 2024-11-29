@@ -55,6 +55,195 @@ function createFindById(id: string) {
   return (p: PortfolioProjectData) => p.id === id;
 }
 
+interface PortfolioFormProps {
+  portfolio: PortfolioProjectData;
+  t: (key: string) => string;
+  index: number;
+  arr: PortfolioProjectData[];
+  isImageValid: ProfileValidation;
+  formCorrect: (portfolio: PortfolioProjectData) => {
+    isButtonDisabled: boolean;
+    title: {
+      titleState: 'success' | 'warning' | 'error' | null | undefined;
+      titleMessage: string;
+    };
+    url: { urlState: string; urlMessage: string };
+    image: { imageState: string; imageMessage: string };
+    desc: {
+      descriptionState: 'success' | 'warning' | 'error' | null | undefined;
+      descriptionMessage: string;
+    };
+    pristine: boolean;
+  };
+  createOnChangeHandler: (
+    id: string,
+    key: 'description' | 'image' | 'title' | 'url'
+  ) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  toggleEditing: () => void;
+  updateItem: (id: string) => void;
+  handleRemoveItem: (id: string) => void;
+}
+
+class PortfolioForm extends Component<PortfolioFormProps> {
+  handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
+    const { toggleEditing, updateItem, formCorrect, portfolio } = this.props;
+    e.preventDefault();
+    const { isButtonDisabled } = formCorrect(portfolio);
+    if (isButtonDisabled) return null;
+    toggleEditing();
+    return updateItem(id);
+  };
+
+  render() {
+    const {
+      portfolio,
+      t,
+      index,
+      arr,
+      formCorrect,
+      isImageValid,
+      createOnChangeHandler,
+      handleRemoveItem
+    } = this.props;
+
+    const { id, title, description, url, image } = portfolio;
+    const {
+      isButtonDisabled,
+      title: { titleState, titleMessage },
+      url: { urlState, urlMessage },
+      image: { imageState, imageMessage },
+      desc: { descriptionState, descriptionMessage },
+      pristine
+    } = formCorrect(portfolio);
+
+    const combineImageStatus =
+      imageState === 'success' && isImageValid.state === 'success'
+        ? null
+        : 'error';
+    const combineImageMessage = imageMessage || isImageValid.message;
+
+    return (
+      <FullWidthRow key={id}>
+        <form
+          onSubmit={e => this.handleSubmit(e, id)}
+          id='portfolio-items'
+          data-playwright-test-label='portfolio-items'
+        >
+          <FormGroup
+            controlId={`${id}-title`}
+            validationState={
+              pristine || (!pristine && !title) ? null : titleState
+            }
+          >
+            <ControlLabel htmlFor={`${id}-title-input`}>
+              {t('settings.labels.title')}
+            </ControlLabel>
+            <FormControl
+              onChange={createOnChangeHandler(id, 'title')}
+              required={true}
+              type='text'
+              value={title}
+              name='portfolio-title'
+              id={`${id}-title-input`}
+            />
+            {titleMessage && (
+              <HelpBlock data-playwright-test-label='title-validation'>
+                {titleMessage}
+              </HelpBlock>
+            )}
+          </FormGroup>
+          <FormGroup
+            controlId={`${id}-url`}
+            validationState={pristine || (!pristine && !url) ? null : urlState}
+          >
+            <ControlLabel htmlFor={`${id}-url-input`}>
+              {t('settings.labels.url')}
+            </ControlLabel>
+            <FormControl
+              onChange={createOnChangeHandler(id, 'url')}
+              required={true}
+              type='url'
+              value={url}
+              name='portfolio-url'
+              id={`${id}-url-input`}
+            />
+            {urlMessage && (
+              <HelpBlock data-playwright-test-label='url-validation'>
+                {urlMessage}
+              </HelpBlock>
+            )}
+          </FormGroup>
+          <FormGroup
+            controlId={`${id}-image`}
+            validationState={pristine ? null : combineImageStatus}
+          >
+            <ControlLabel htmlFor={`${id}-image-input`}>
+              {t('settings.labels.image')}
+            </ControlLabel>
+            <FormControl
+              onChange={createOnChangeHandler(id, 'image')}
+              type='url'
+              value={image}
+              name='portfolio-image'
+              id={`${id}-image-input`}
+            />
+            {combineImageMessage && (
+              <HelpBlock data-playwright-test-label='image-validation'>
+                {combineImageMessage}
+              </HelpBlock>
+            )}
+          </FormGroup>
+          <FormGroup
+            controlId={`${id}-description`}
+            validationState={pristine ? null : descriptionState}
+          >
+            <ControlLabel htmlFor={`${id}-description-input`}>
+              {t('settings.labels.description')}
+            </ControlLabel>
+            <FormControl
+              componentClass='textarea'
+              onChange={createOnChangeHandler(id, 'description')}
+              value={description}
+              name='portfolio-description'
+              id={`${id}-description-input`}
+            />
+            {descriptionMessage && (
+              <HelpBlock data-playwright-test-label='description-validation'>
+                {descriptionMessage}
+              </HelpBlock>
+            )}
+          </FormGroup>
+          <BlockSaveButton
+            disabled={isButtonDisabled}
+            bgSize='large'
+            data-playwright-test-label='save-portfolio'
+            {...(isButtonDisabled && { tabIndex: -1 })}
+          >
+            {t('buttons.save-portfolio')}
+          </BlockSaveButton>
+          <Spacer size='xs' />
+          <Button
+            block={true}
+            size='large'
+            variant='danger'
+            onClick={() => handleRemoveItem(id)}
+            type='button'
+          >
+            {t('buttons.remove-portfolio')}
+          </Button>
+        </form>
+        {index + 1 !== arr.length && (
+          <>
+            <Spacer size='m' />
+            <hr />
+            <Spacer size='m' />
+          </>
+        )}
+      </FullWidthRow>
+    );
+  }
+}
+
 class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
   validationImage: HTMLImageElement;
   static displayName: string;
@@ -79,7 +268,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
 
   createOnChangeHandler =
     (id: string, key: 'description' | 'image' | 'title' | 'url') =>
-    (e: React.ChangeEvent<HTMLInputElement>) => {
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       e.preventDefault();
       const userInput = e.target.value.slice();
       this.setState(state => {
@@ -221,7 +410,7 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       ? { state: 'success', message: '' }
       : { state: 'warning', message: t('validation.use-valid-url') };
   }
-  formCorrect(portfolio: PortfolioProjectData) {
+  formCorrect = (portfolio: PortfolioProjectData) => {
     const { id, title, description, url, image } = portfolio;
 
     const { state: titleState, message: titleMessage } =
@@ -268,156 +457,6 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
       },
       pristine
     };
-  }
-
-  renderPortfolio = (
-    portfolio: PortfolioProjectData,
-    index: number,
-    arr: PortfolioProjectData[]
-  ) => {
-    const { t } = this.props;
-    const { id, title, description, url, image } = portfolio;
-    const {
-      isButtonDisabled,
-      title: { titleState, titleMessage },
-      url: { urlState, urlMessage },
-      image: { imageState, imageMessage },
-      desc: { descriptionState, descriptionMessage },
-      pristine
-    } = this.formCorrect(portfolio);
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
-      e.preventDefault();
-      if (isButtonDisabled) return null;
-      this.toggleEditing();
-      return this.updateItem(id);
-    };
-
-    const combineImageStatus =
-      imageState === 'success' && this.state.isImageValid.state === 'success'
-        ? null
-        : 'error';
-    const combineImageMessage = imageMessage || this.state.isImageValid.message;
-
-    return (
-      <FullWidthRow key={id}>
-        <form
-          onSubmit={e => handleSubmit(e, id)}
-          id='portfolio-items'
-          data-playwright-test-label='portfolio-items'
-        >
-          <FormGroup
-            controlId={`${id}-title`}
-            validationState={
-              pristine || (!pristine && !title) ? null : titleState
-            }
-          >
-            <ControlLabel htmlFor={`${id}-title-input`}>
-              {t('settings.labels.title')}
-            </ControlLabel>
-            <FormControl
-              onChange={this.createOnChangeHandler(id, 'title')}
-              required={true}
-              type='text'
-              value={title}
-              name='portfolio-title'
-              id={`${id}-title-input`}
-            />
-            {titleMessage ? (
-              <HelpBlock data-playwright-test-label='title-validation'>
-                {titleMessage}
-              </HelpBlock>
-            ) : null}
-          </FormGroup>
-          <FormGroup
-            controlId={`${id}-url`}
-            validationState={pristine || (!pristine && !url) ? null : urlState}
-          >
-            <ControlLabel htmlFor={`${id}-url-input`}>
-              {t('settings.labels.url')}
-            </ControlLabel>
-            <FormControl
-              onChange={this.createOnChangeHandler(id, 'url')}
-              required={true}
-              type='url'
-              value={url}
-              name='portfolio-url'
-              id={`${id}-url-input`}
-            />
-            {urlMessage ? (
-              <HelpBlock data-playwright-test-label='url-validation'>
-                {urlMessage}
-              </HelpBlock>
-            ) : null}
-          </FormGroup>
-          <FormGroup
-            controlId={`${id}-image`}
-            validationState={pristine ? null : combineImageStatus}
-          >
-            <ControlLabel htmlFor={`${id}-image-input`}>
-              {t('settings.labels.image')}
-            </ControlLabel>
-            <FormControl
-              onChange={this.createOnChangeHandler(id, 'image')}
-              type='url'
-              value={image}
-              name='portfolio-image'
-              id={`${id}-image-input`}
-            />
-            {combineImageMessage ? (
-              <HelpBlock data-playwright-test-label='image-validation'>
-                {combineImageMessage}
-              </HelpBlock>
-            ) : null}
-          </FormGroup>
-          <FormGroup
-            controlId={`${id}-description`}
-            validationState={pristine ? null : descriptionState}
-          >
-            <ControlLabel htmlFor={`${id}-description-input`}>
-              {t('settings.labels.description')}
-            </ControlLabel>
-            <FormControl
-              componentClass='textarea'
-              onChange={this.createOnChangeHandler(id, 'description')}
-              value={description}
-              name='portfolio-description'
-              id={`${id}-description-input`}
-            />
-            {descriptionMessage ? (
-              <HelpBlock data-playwright-test-label='description-validation'>
-                {descriptionMessage}
-              </HelpBlock>
-            ) : null}
-          </FormGroup>
-          <BlockSaveButton
-            disabled={isButtonDisabled}
-            bgSize='large'
-            data-playwright-test-label='save-portfolio'
-            {...(isButtonDisabled && { tabIndex: -1 })}
-          >
-            {t('buttons.save-portfolio')}
-          </BlockSaveButton>
-          <Spacer size='xs' />
-          <Button
-            block={true}
-            size='large'
-            variant='danger'
-            onClick={() => this.handleRemoveItem(id)}
-            type='button'
-          >
-            {t('buttons.remove-portfolio')}
-          </Button>
-        </form>
-        {index + 1 !== arr.length && (
-          <>
-            <Spacer size='m' />
-            <hr />
-            <Spacer size='m' />
-          </>
-        )}
-      </FullWidthRow>
-    );
   };
 
   render() {
@@ -442,7 +481,23 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
           </Button>
         </FullWidthRow>
         <Spacer size='l' />
-        {portfolio.length ? portfolio.map(this.renderPortfolio) : null}
+        {portfolio.length
+          ? portfolio.map((portfolio, index, arr) => (
+              <PortfolioForm
+                key={portfolio.id}
+                portfolio={portfolio}
+                index={index}
+                arr={arr}
+                t={this.props.t}
+                isImageValid={this.state.isImageValid}
+                formCorrect={this.formCorrect}
+                createOnChangeHandler={this.createOnChangeHandler}
+                toggleEditing={this.toggleEditing}
+                updateItem={this.updateItem}
+                handleRemoveItem={this.handleRemoveItem}
+              />
+            ))
+          : null}
       </section>
     );
   }
