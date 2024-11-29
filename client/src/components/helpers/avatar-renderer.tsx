@@ -19,22 +19,28 @@ function AvatarRenderer({
   const { t } = useTranslation();
   const [isPictureValid, setIsPictureValid] = useState(true);
   const borderColor: string = borderColorPicker(isDonating, isTopContributor);
-  const onImageLoad = () => setIsPictureValid(true);
-  const onImageError = () => setIsPictureValid(false);
 
   useEffect(() => {
-    const validationImage = document.createElement('img');
-    if (
-      // we probably have loads of records in the database with this default avatar URL set. To prevent making a request to the image we know will 404.
-      !/freecodecamp\.com\/sample-image/.test(picture) &&
-      isURL(picture, { require_protocol: true })
-    ) {
-      validationImage.src = picture;
-      validationImage.onload = onImageLoad;
-      validationImage.onerror = onImageError;
-    } else {
-      setIsPictureValid(false);
-    }
+    const validateImage = async () => {
+      if (
+        !/freecodecamp\.com\/sample-image/.test(picture) &&
+        isURL(picture, { require_protocol: true })
+      ) {
+        try {
+          const img = new HTMLImageElement();
+          img.src = picture;
+          await img.decode(); // This will reject if the image can't be loaded
+          setIsPictureValid(true);
+        } catch (error) {
+          setIsPictureValid(false);
+        }
+      } else {
+        setIsPictureValid(false);
+      }
+    };
+
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    validateImage();
   }, [picture]);
 
   const isPlaceHolderImage =
