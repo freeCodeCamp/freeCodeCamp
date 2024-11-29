@@ -223,15 +223,17 @@ type EnvAnswer {
 /// Configuration for an exam in the Exam Environment App
 type EnvConfig {
   /// Human-readable exam name
-  name          String
+  name           String
   /// Notes given about exam
-  note          String
+  note           String
   /// Category configuration for question selection
-  tags          EnvTagConfig[]
+  tags           EnvTagConfig[]
   /// Total time allocated for exam in milliseconds
-  totalTimeInMS Int
+  totalTimeInMS  Int
   /// Configuration for sets of questions
-  questionSets  EnvQuestionSetConfig[]
+  questionSets   EnvQuestionSetConfig[]
+  /// Duration after exam completion before a retake is allowed in milliseconds
+  retakeTimeInMS Int
 }
 
 /// Configuration for a set of questions in the Exam Environment App
@@ -267,14 +269,10 @@ model EnvExamAttempt {
   /// Foreign key to generated exam id
   generatedExamId String @db.ObjectId
 
-  questionSets       EnvQuestionSetAttempt[]
+  questionSets  EnvQuestionSetAttempt[]
   /// Time exam was started as milliseconds since epoch
-  startTimeInMS      Int
-  /// Time exam was submitted as milliseconds since epoch
-  ///
-  /// As attempt might not be submitted (disconnection or quit), field is optional
-  submissionTimeInMS Int?
-  needsRetake        Boolean
+  startTimeInMS Int
+  needsRetake   Boolean
 
   // Relations
   user          user             @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -301,7 +299,6 @@ type EnvMultipleChoiceQuestionAttempt {
 /// A generated exam for the Exam Environment App
 ///
 /// This is the user-facing information for an exam.
-/// TODO: Add userId?
 model EnvGeneratedExam {
   id           String                    @id @default(auto()) @map("_id") @db.ObjectId
   /// Foreign key to exam

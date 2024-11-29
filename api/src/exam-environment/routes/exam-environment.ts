@@ -8,7 +8,6 @@ import * as schemas from '../schemas';
 import { mapErr, syncMapErr, UpdateReqType } from '../../utils';
 import { JWT_SECRET } from '../../utils/env';
 import {
-  checkAttemptAgainstGeneratedExam,
   checkPrerequisites,
   constructUserExam,
   userAttemptToDatabaseAttemptQuestionSets,
@@ -209,16 +208,13 @@ async function postExamGeneratedExamHandler(
     : null;
 
   if (lastAttempt) {
-    const attemptIsExpired =
-      lastAttempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
-    if (attemptIsExpired) {
-      // If exam is not submitted, use exam start time + time allocated for exam
-      const effectiveSubmissionTime =
-        lastAttempt.submissionTimeInMS ??
-        lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
-      const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
+    const examExpirationTime =
+      lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
+    if (examExpirationTime < Date.now()) {
+      const retakeAllowed =
+        examExpirationTime + exam.config.retakeTimeInMS < Date.now();
 
-      if (effectiveSubmissionTime > twentyFourHoursAgo) {
+      if (!retakeAllowed) {
         void reply.code(429);
         // TODO: Consider sending last completed time
         return reply.send(
@@ -515,12 +511,6 @@ async function postExamAttemptHandler(
     validateAttempt(generatedExam, databaseAttemptQuestionSets)
   );
 
-  // If all questions have been answered, add submission time
-  const allQuestionsAnswered = checkAttemptAgainstGeneratedExam(
-    databaseAttemptQuestionSets,
-    generatedExam
-  );
-
   // Update attempt in database
   const maybeUpdatedAttempt = await mapErr(
     this.prisma.envExamAttempt.update({
@@ -528,8 +518,6 @@ async function postExamAttemptHandler(
         id: latestAttempt.id
       },
       data: {
-        // NOTE: submission time is set to null, because it just depends on whether all questions have been answered.
-        submissionTimeInMS: allQuestionsAnswered ? Date.now() : null,
         questionSets: databaseAttemptQuestionSets,
         // If attempt is not valid, immediately flag attempt as needing retake
         // TODO: If `needsRetake`, prevent further submissions?

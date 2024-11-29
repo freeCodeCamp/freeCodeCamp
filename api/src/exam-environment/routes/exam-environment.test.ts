@@ -435,8 +435,6 @@ describe('/exam-environment/', () => {
           24 * 60 * 60 * 1000 -
           mock.exam.config.totalTimeInMS -
           1 * 60 * 60 * 1000;
-        submittedAttempt.submissionTimeInMS =
-          Date.now() - mock.exam.config.totalTimeInMS - 24 * 60 * 60 * 1000;
         await fastifyTestInstance.prisma.envExamAttempt.create({
           data: submittedAttempt
         });
