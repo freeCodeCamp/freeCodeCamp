@@ -27,7 +27,7 @@ Something he plans to do in the future.
 
 ### --feedback--
 
-James isn’t talking about future plans; he is reflecting on something he did before.
+James isn't talking about future plans; he is reflecting on something he did before.
 
 ---
 
