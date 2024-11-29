@@ -45,6 +45,34 @@ function Info({ message }: { message: string }) {
   return message ? <HelpBlock>{message}</HelpBlock> : null;
 }
 
+interface ValidationCheckProps {
+  url: string;
+  validation: FormGroupProps['validationState'];
+  dataPlaywrightTestLabel: string;
+}
+
+class ValidationCheck extends Component<ValidationCheckProps> {
+  render() {
+    const { url, validation, dataPlaywrightTestLabel } = this.props;
+
+    if (!url || validation !== 'success') {
+      return null;
+    }
+
+    return (
+      <FormControl.Feedback>
+        <span>
+          <FontAwesomeIcon
+            data-playwright-test-label={dataPlaywrightTestLabel}
+            icon={faCheck}
+            size='1x'
+          />
+        </span>
+      </FormControl.Feedback>
+    );
+  }
+}
+
 class InternetSettings extends Component<InternetProps, InternetState> {
   static displayName: string;
   constructor(props: InternetProps) {
@@ -146,23 +174,6 @@ class InternetSettings extends Component<InternetProps, InternetState> {
     return null;
   };
 
-  renderCheck = (
-    url: string,
-    validation: FormGroupProps['validationState'],
-    dataPlaywrightTestLabel: string
-  ) =>
-    url && validation === 'success' ? (
-      <FormControl.Feedback>
-        <span>
-          <FontAwesomeIcon
-            data-playwright-test-label={dataPlaywrightTestLabel}
-            icon={faCheck}
-            size='1x'
-          />
-        </span>
-      </FormControl.Feedback>
-    ) : null;
-
   render() {
     const { t } = this.props;
     const {
@@ -208,11 +219,11 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={githubProfile}
                   id='internet-github-input'
                 />
-                {this.renderCheck(
-                  githubProfile,
-                  githubProfileValidation,
-                  'internet-github-check'
-                )}
+                <ValidationCheck
+                  url={githubProfile}
+                  validation={githubProfileValidation}
+                  dataPlaywrightTestLabel={'internet-github-check'}
+                />
                 <Info message={githubProfileValidationMessage} />
               </FormGroup>
               <FormGroup
@@ -229,11 +240,11 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={linkedin}
                   id='internet-linkedin-input'
                 />
-                {this.renderCheck(
-                  linkedin,
-                  linkedinValidation,
-                  'internet-linkedin-check'
-                )}
+                <ValidationCheck
+                  url={linkedin}
+                  validation={linkedinValidation}
+                  dataPlaywrightTestLabel={'internet-linkedin-check'}
+                />
                 <Info message={linkedinValidationMessage} />
               </FormGroup>
               <FormGroup
@@ -250,11 +261,11 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={twitter}
                   id='internet-twitter-input'
                 />
-                {this.renderCheck(
-                  twitter,
-                  twitterValidation,
-                  'internet-twitter-check'
-                )}
+                <ValidationCheck
+                  url={twitter}
+                  validation={twitterValidation}
+                  dataPlaywrightTestLabel={'internet-twitter-check'}
+                />
                 <Info message={twitterValidationMessage} />
               </FormGroup>
               <FormGroup
@@ -271,11 +282,11 @@ class InternetSettings extends Component<InternetProps, InternetState> {
                   value={website}
                   id='internet-website-input'
                 />
-                {this.renderCheck(
-                  website,
-                  websiteValidation,
-                  'internet-website-check'
-                )}
+                <ValidationCheck
+                  url={website}
+                  validation={websiteValidation}
+                  dataPlaywrightTestLabel={'internet-website-check'}
+                />
                 <Info message={websiteValidationMessage} />
               </FormGroup>
             </div>
