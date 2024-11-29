@@ -7,8 +7,10 @@ const schema = Joi.object()
     chapters: Joi.array().items(
       Joi.object().keys({
         dashedName: Joi.string().regex(slugRE).required(),
+        chapterType: Joi.valid('exam').optional(),
         modules: Joi.array().items(
           Joi.object().keys({
+            moduleType: Joi.valid('review', 'exam').optional(),
             dashedName: Joi.string().regex(slugRE).required(),
             blocks: Joi.array().items(
               Joi.object().keys({

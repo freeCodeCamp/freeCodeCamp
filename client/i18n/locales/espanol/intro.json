@@ -1745,16 +1745,12 @@
       "functional-programming": "Functional Programming",
       "asynchronous-javascript": "Asynchronous JavaScript",
       "react-fundamentals": "React Fundamentals",
-      "react-state-hooks-and-routing": "React state, hooks, and routing",
+      "react-state-hooks-and-routing": "React State, Hooks, and Routing",
       "performance": "Performance",
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
       "testing": "Testing",
       "typescript-fundamentals": "TypeScript Fundamentals",
-      "bash-fundamentals": "Bash Fundamentals",
-      "relational-databases": "Relational Databases",
-      "bash-scripting": "Bash Scripting",
       "sql-and-bash": "SQL and Bash",
-      "nano": "Nano",
       "git": "Git",
       "security-and-privacy": "Security and Privacy"
     },
@@ -3118,7 +3114,8 @@
       "review-javascript-audio-and-video": {
         "title": "JavaScript Audio and Video Review",
         "intro": [
-          "Review the JavaScript Audio and Video concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with audio and video in JavaScript, you first need to review.",
+          "Open up this page to review concepts including the <code>Audio</code> constructor, the <code>HTMLMediaElement</code> API and more."
         ]
       },
       "quiz-javascript-audio-and-video": {
@@ -3210,7 +3207,8 @@
       "review-javascript-classes": {
         "title": "JavaScript Classes Review",
         "intro": [
-          "Review the JavaScript Classes concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with classes, you first need to review.",
+          "Open up this page to review concepts including the <code>this</code> keyword, class inheritance and more."
         ]
       },
       "quiz-javascript-classes": {
@@ -3238,7 +3236,8 @@
       "review-recursion": {
         "title": "Recursion Review",
         "intro": [
-          "Review the Recursion concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on the recursion, you first need to review the concepts.",
+          "Open up this page to review what is recursion and what is it used for."
         ]
       },
       "quiz-recursion": {
@@ -3312,7 +3311,8 @@
       "review-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Review",
         "intro": [
-          "Review the JavaScript Functional Programming concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on functional programming concepts, you first need to review.",
+          "Open up this page to review concepts on functional programming, currying and more."
         ]
       },
       "mjbe": {

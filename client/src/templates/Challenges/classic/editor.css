@@ -55,7 +55,8 @@ textarea.inputarea {
   max-width: unset !important;
 }
 
-.editor-upper-jaw code {
+.editor-upper-jaw code,
+.editor-lower-jaw code {
   white-space: pre-wrap;
 }
 
