@@ -29,7 +29,7 @@ Linda did not mention any issues with the updates.
 
 ---
 
-They need further adjustments to work properly and this has made a no difference.
+They need further adjustments to work properly and this has made no difference.
 
 ### --feedback--
 
@@ -55,7 +55,7 @@ They are performing well and the adjustments have made a big difference.
 
 To know if something is performing well, look for words or phrases that indicate a good result or improvement. 
 
-Linda uses the phrase `have already made a big difference.`
+Linda uses the phrase `have already made a big difference`.
 
 `Made a big difference` suggests an important or noticeable change. When something has `made a big difference` in a positive context, it usually means that the change is helpful or effective.
 
