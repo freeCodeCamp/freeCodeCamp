@@ -425,20 +425,6 @@ async function postExamAttemptHandler(
     latest.startTimeInMS > current.startTimeInMS ? latest : current
   );
 
-  // TODO: Currently, submission time is set when all questions have been answered.
-  //       This might not necessarily be fully submitted. So, provided there is time
-  //       left on the clock, the attempt should still be updated, even if the submission
-  //       time is set.
-  //       The submission time just needs to be updated.
-  // if (latestAttempt.submissionTimeInMS !== null) {
-  //   void reply.code(403);
-  //   return reply.send(
-  //     ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
-  //       'Attempt has already been submitted.'
-  //     )
-  //   );
-  // }
-
   const maybeExam = await mapErr(
     this.prisma.envExam.findUnique({
       where: {

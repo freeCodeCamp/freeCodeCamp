@@ -490,7 +490,6 @@ describe('/exam-environment/', () => {
           generatedExamId: generatedExam!.id,
           questionSets: [],
           needsRetake: false,
-          submissionTimeInMS: null,
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           startTimeInMS: expect.any(Number)
         });
