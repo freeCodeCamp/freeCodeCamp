@@ -99,9 +99,73 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     startWithConsoleShown
   } = props;
 
-  const [showNotes, setShowNotes] = useState(false);
-  const [showConsole, setShowConsole] = useState(startWithConsoleShown);
-  const [showInstructions, setShowInstructions] = useState(true);
+  const initialShowState = (key: string, defaultValue: boolean): boolean => {
+    const savedState = sessionStorage.getItem('layoutPaneBooleans');
+    if (savedState) {
+      const parsedState: Record<string, boolean> = JSON.parse(
+        savedState
+      ) as Record<string, boolean>;
+      return parsedState[key] || defaultValue;
+    }
+    return defaultValue;
+  };
+
+  // Initialize state with sessionStorage values or defaults for each pane and instruction states
+  const [showNotes, setShowNotes] = useState(() =>
+    initialShowState('showNotes', false)
+  );
+  const [showConsole, setShowConsole] = useState(() =>
+    initialShowState('showConsole', startWithConsoleShown)
+  );
+  const [showInstructions, setShowInstructions] = useState(() =>
+    initialShowState('showInstructions', true)
+  );
+
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    setShowPreviewPane(initialShowState('showPreviewPane', false));
+    setShowPreviewPortal(initialShowState('showPreviewPortal', false));
+  }, []);
+  /* eslint-enable react-hooks/exhaustive-deps */
+
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    const layoutPaneBooleans = {
+      showNotes,
+      showConsole,
+      showInstructions,
+      showPreviewPane,
+      showPreviewPortal
+    };
+    sessionStorage.setItem(
+      'layoutPaneBooleans',
+      JSON.stringify(layoutPaneBooleans)
+    );
+  }, [
+    showNotes,
+    showConsole,
+    showInstructions,
+    showPreviewPane,
+    showPreviewPortal
+  ]);
+  /* eslint-disable react-hooks/exhaustive-deps */
+
+  // Effect to initialize states from sessionStorage on mount
+  useEffect(() => {
+    const layoutPaneBooleans = sessionStorage.getItem('layoutPaneBooleans');
+    if (layoutPaneBooleans) {
+      const parsedLayoutPaneBooleans: Record<string, boolean> = JSON.parse(
+        layoutPaneBooleans
+      ) as Record<string, boolean>;
+      setShowNotes(parsedLayoutPaneBooleans.showNotes || false);
+      setShowConsole(
+        parsedLayoutPaneBooleans.showConsole || startWithConsoleShown
+      );
+      setShowInstructions(parsedLayoutPaneBooleans.showInstructions || true);
+      setShowPreviewPane(parsedLayoutPaneBooleans.showPreviewPane || false);
+      setShowPreviewPortal(parsedLayoutPaneBooleans.showPreviewPortal || false);
+    }
+  }, []);
 
   const togglePane = (pane: string): void => {
     if (pane === 'showPreviewPane') {
