@@ -31,18 +31,32 @@ const LogoRow = (): JSX.Element => {
         className='logo-row'
         data-playwright-test-label='brand-logo-container'
       >
-        <AppleLogo />
-        <GoogleLogo />
-        <MicrosoftLogo />
+        <li>
+          <AppleLogo />
+        </li>
+        <li>
+          <GoogleLogo />
+        </li>
+        <li>
+          <MicrosoftLogo />
+        </li>
         {showChineseLogos ? (
           <>
-            <TencentLogo />
-            <AlibabaLogo />
+            <li>
+              <TencentLogo />
+            </li>
+            <li>
+              <AlibabaLogo />
+            </li>
           </>
         ) : (
           <>
-            <SpotifyLogo />
-            <AmazonLogo />
+            <li>
+              <SpotifyLogo />
+            </li>
+            <li>
+              <AmazonLogo />
+            </li>
           </>
         )}
       </ul>
