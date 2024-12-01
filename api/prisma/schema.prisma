@@ -108,7 +108,7 @@ model user {
   is2018DataVisCert            Boolean? // Undefined
   is2018FullStackCert          Boolean? // Undefined
   isCollegeAlgebraPyCertV8     Boolean? // Undefined
-  isUpcomingPythonCertV8       Boolean? // Undefined
+  // isUpcomingPythonCertV8    Boolean? // Undefined. It is in the db but has never been used.
   keyboardShortcuts            Boolean? // Undefined
   linkedin                     String? // Null | Undefined
   location                     String? // Null
@@ -277,7 +277,7 @@ model EnvExamAttempt {
   needsRetake        Boolean
 
   // Relations
-  user          user             @relation(fields: [userId], references: [id])
+  user          user             @relation(fields: [userId], references: [id], onDelete: Cascade)
   exam          EnvExam          @relation(fields: [examId], references: [id])
   generatedExam EnvGeneratedExam @relation(fields: [generatedExamId], references: [id])
 }
@@ -379,9 +379,11 @@ model UserToken {
 }
 
 model ExamEnvironmentAuthorizationToken {
-  id          String   @id @map("_id")
-  createdDate DateTime @db.Date
-  userId      String   @unique @db.ObjectId
+  /// An ObjectId is used to provide access to the created timestamp
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  /// Used to set an `expireAt` index to delete documents
+  expireAt DateTime @db.Date
+  userId   String   @unique @db.ObjectId
 
   // Relations
   user user @relation(fields: [userId], references: [id])

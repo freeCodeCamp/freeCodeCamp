@@ -15,6 +15,7 @@ import { getRedirectParams } from '../utils/redirection';
 const errorHandling: FastifyPluginCallback = (fastify, _options, done) => {
   void fastify.register(fastifySentry, {
     dsn: SENTRY_DSN,
+    maxValueLength: 8192, // the default is 250, which is too small.
     // No need to initialize if DSN is not provided (e.g. in development and
     // test environments)
     skipInit: !SENTRY_DSN,

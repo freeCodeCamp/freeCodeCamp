@@ -404,5 +404,6 @@
       "title": "Step 99"
     }
   ],
-  "helpCategory": "JavaScript"
+  "helpCategory": "JavaScript",
+  "blockLayout": "legacy-challenge-grid"
 }

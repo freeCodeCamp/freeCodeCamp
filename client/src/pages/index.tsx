@@ -69,7 +69,7 @@ function IndexPage({
       'show-benefits',
       false
     );
-
+    growthbook.getFeatureValue('landing-aa-test', false);
     return (
       <>
         <SEO title={t('metaTags:title')} />

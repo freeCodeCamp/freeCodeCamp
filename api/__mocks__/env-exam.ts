@@ -343,9 +343,7 @@ export const exam: EnvExam = {
 };
 
 export async function seedEnvExam() {
-  await fastifyTestInstance.prisma.envExamAttempt.deleteMany({});
-  await fastifyTestInstance.prisma.envGeneratedExam.deleteMany({});
-  await fastifyTestInstance.prisma.envExam.deleteMany({});
+  await clearEnvExam();
 
   await fastifyTestInstance.prisma.envExam.create({
     data: exam
@@ -368,4 +366,16 @@ export async function seedEnvExam() {
   //     //
   //   }
   // }
+}
+
+export async function clearEnvExam() {
+  await fastifyTestInstance.prisma.envExamAttempt.deleteMany({});
+  await fastifyTestInstance.prisma.envGeneratedExam.deleteMany({});
+  await fastifyTestInstance.prisma.envExam.deleteMany({});
+}
+
+export async function seedEnvExamAttempt() {
+  await fastifyTestInstance.prisma.envExamAttempt.create({
+    data: examAttempt
+  });
 }

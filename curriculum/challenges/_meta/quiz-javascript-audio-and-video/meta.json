@@ -5,8 +5,7 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-audio-and-video",
-  "order": 226,
-  "superBlock": "front-end-development",
+  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "66edd3b3096349f06cf688bb",

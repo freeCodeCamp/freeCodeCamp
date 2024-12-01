@@ -1,0 +1,39 @@
+{
+  "name": "Introduction to JavaScript Libraries and Frameworks",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6734e3a9cc78faaf4248d335",
+      "title": "What Is the Role of JS Libraries and Frameworks, and Why Are They Used in the Industry?"
+    },
+    {
+      "id": "6734e867bbf41cc5b11648c4",
+      "title": "What Are Single Page Applications, and What Are Some Issues Surrounding Them?"
+    },
+    {
+      "id": "6734e86f590727c5e7e9ec5e",
+      "title": "What Is React, and What Is It Commonly Used For?"
+    },
+    {
+      "id": "6734e879c78ee6c61db25b90",
+      "title": "What Are Components in React, and How Do They Work?"
+    },
+    {
+      "id": "6734e883fbc50ec642237caf",
+      "title": "What Are Meta Frameworks, and Why Are They Commonly Used in the Industry?"
+    },
+    {
+      "id": "6734e88cc46e6dc679420040",
+      "title": "What Are Some Tools to Use to Set Up Projects Using a Library or Framework?"
+    },
+    {
+      "id": "6734e89acc80e0c6afebb682",
+      "title": "What Is Dependency Management, and How Does It Work with Libraries Like React?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

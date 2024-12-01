@@ -1,8 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 import type { PortfolioProjectData } from '../../../redux/prop-types';
 import './portfolio-projects.css';
-import { FullWidthRow, Spacer } from '../../helpers';
+import { FullWidthRow } from '../../helpers';
 
 interface PortfolioProjectsProps {
   portfolioProjects: PortfolioProjectData[];
@@ -48,7 +49,7 @@ export const PortfolioProjects = ({
           </div>
         </a>
       ))}
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <hr />
     </FullWidthRow>
   );

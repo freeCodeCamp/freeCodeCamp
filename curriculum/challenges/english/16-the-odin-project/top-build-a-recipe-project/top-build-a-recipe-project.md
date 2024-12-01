@@ -51,7 +51,7 @@ You should have a `title` element within the `head` element that contains the te
 assert(document.querySelectorAll('HEAD > TITLE')[0].innerText == 'The Odin Recipes');
 ```
 
-You should have a `h1` element within your `body` element that contains the text
+You should have an `h1` element within your `body` element that contains the text
 `Creamy Chocolate Fudge`.
 
 ```js

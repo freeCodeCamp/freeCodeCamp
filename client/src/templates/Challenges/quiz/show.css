@@ -5,6 +5,7 @@
 }
 
 /* Override the bottom margin set in global.css */
-.quiz-challenge-container .quiz-answer-label p:last-child {
+.quiz-challenge-container .quiz-answer-label p:last-child,
+.quiz-challenge-container div[role='radiogroup'] label p:last-child {
   margin-bottom: 0;
 }

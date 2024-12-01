@@ -24,7 +24,7 @@ Run the code in the following notebook to get <a href="https://colab.research.go
 
 ## --text--
 
-Which of the following languages can you not use in Google Colaboratory?
+Which of the following languages can you use in a Google Colaboratory text field?
 
 ## --answers--
 
@@ -40,7 +40,7 @@ English
 
 ---
 
-Sanskrit
+All of the above
 
 ## --video-solution--
 
