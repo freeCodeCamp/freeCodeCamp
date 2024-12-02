@@ -154,7 +154,7 @@ exports.createPages = async function createPages({
     nodes.reduce((map, node, index) => {
       const nextNode = nodes[index + 1];
       const nextPath = nextNode ? nextNode.challenge.fields.slug : null;
-      map[node.id] = nextPath;
+      if (nextPath) map[node.id] = nextPath;
       return map;
     }, {});
 
@@ -162,7 +162,7 @@ exports.createPages = async function createPages({
     nodes.reduce((map, node, index) => {
       const prevNode = nodes[index - 1];
       const prevPath = prevNode ? prevNode.challenge.fields.slug : null;
-      map[node.id] = prevPath;
+      if (prevPath) map[node.id] = prevPath;
       return map;
     }, {});
 
