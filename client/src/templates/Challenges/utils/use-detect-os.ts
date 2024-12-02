@@ -51,7 +51,7 @@ const getArchitecture = async (): Promise<string> => {
 };
 
 export const detectOsInUserAgent = (userAgent: string | undefined): UserOS => {
-  const osMatch = userAgent?.match(/(Win|Mac|Linux|AIX)/);
+  const osMatch = userAgent?.match(/(Win|Mac|Linux)/);
   return osMatch ? (osMatch[1].toUpperCase() as UserOS) : 'OTHER';
 };
 
@@ -60,7 +60,7 @@ export const detectOS = (): UserOS => detectOsInUserAgent(navigator?.userAgent);
 const useDetectOS = () => {
   const [userOS, setUserOS] = useState<UserOSState>({
     os: 'LOADING',
-    architecture: 'ARM'
+    architecture: 'LOADING'
   });
 
   useEffect(() => {
