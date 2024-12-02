@@ -10,6 +10,7 @@ import completionEpic from './completion-epic';
 import createQuestionEpic from './create-question-epic';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
+import { createSubmitQuizAttemptSaga } from './submit-quiz-attempt-saga';
 
 export { ns };
 
@@ -57,14 +58,16 @@ const initialState = {
   successMessage: 'Happy Coding!',
   isAdvancing: false,
   chapterSlug: '',
-  isSubmitting: false
+  isSubmitting: false,
+  isQuizAttemptSubmitting: false
 };
 
 export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];
 
 export const sagas = [
   ...createExecuteChallengeSaga(actionTypes),
-  ...createCurrentChallengeSaga(actionTypes)
+  ...createCurrentChallengeSaga(actionTypes),
+  ...createSubmitQuizAttemptSaga(actionTypes)
 ];
 
 export const reducer = handleActions(
@@ -266,6 +269,18 @@ export const reducer = handleActions(
     [actionTypes.createQuestion]: (state, { payload }) => ({
       ...state,
       description: payload
+    }),
+    [actionTypes.submitQuizAttempt]: state => ({
+      ...state,
+      isQuizAttemptSubmitting: true
+    }),
+    [actionTypes.submitQuizAttemptComplete]: state => ({
+      ...state,
+      isQuizAttemptSubmitting: false
+    }),
+    [actionTypes.submitQuizAttemptError]: state => ({
+      ...state,
+      isQuizAttemptSubmitting: false
     })
   },
   initialState

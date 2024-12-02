@@ -2,7 +2,7 @@ import { graphql, navigate } from 'gatsby';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -21,7 +21,12 @@ import {
 // Local Utilities
 import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
 import LearnLayout from '../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
+import {
+  ChallengeNode,
+  ChallengeMeta,
+  Test,
+  User
+} from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
@@ -32,9 +37,16 @@ import {
   openModal,
   closeModal,
   updateSolutionFormValues,
-  initTests
+  initTests,
+  submitQuizAttempt
 } from '../redux/actions';
-import { isChallengeCompletedSelector } from '../redux/selectors';
+import { isSignedInSelector, userSelector } from '../../../redux/selectors';
+import { Link } from '../../../components/helpers';
+import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
+import {
+  isChallengeCompletedSelector,
+  isQuizAttemptSubmittingSelector
+} from '../redux/selectors';
 import PrismFormatted from '../components/prism-formatted';
 import { usePageLeave } from '../hooks';
 import ExitQuizModal from './exit-quiz-modal';
@@ -42,11 +54,24 @@ import FinishQuizModal from './finish-quiz-modal';
 
 import './show.css';
 
+const COOL_DOWN_PERIOD_IN_MS = 1000 * 60 * 60; // one hour
+
 // Redux Setup
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
-  (isChallengeCompleted: boolean) => ({
-    isChallengeCompleted
+  isSignedInSelector,
+  userSelector,
+  isQuizAttemptSubmittingSelector,
+  (
+    isChallengeCompleted: boolean,
+    isSignedIn: boolean,
+    user: User,
+    isQuizAttemptSubmitting: boolean
+  ) => ({
+    isChallengeCompleted,
+    isSignedIn,
+    user,
+    isQuizAttemptSubmitting
   })
 );
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -56,6 +81,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
+      submitQuizAttempt,
       openCompletionModal: () => openModal('completion'),
       openExitQuizModal: () => openModal('exitQuiz'),
       closeExitQuizModal: () => closeModal('exitQuiz'),
@@ -75,8 +101,18 @@ interface ShowQuizProps {
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
+  isSignedIn: boolean;
+  user: User;
+  isQuizAttemptSubmitting: boolean;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
+  submitQuizAttempt: ({
+    challengeId,
+    quizId
+  }: {
+    challengeId: string;
+    quizId: string;
+  }) => void;
   openCompletionModal: () => void;
   openExitQuizModal: () => void;
   closeExitQuizModal: () => void;
@@ -90,11 +126,14 @@ const ShowQuiz = ({
     challengeNode: {
       challenge: {
         fields: { tests, blockHashSlug },
+        id: challengeId,
         title,
         description,
         challengeType,
         helpCategory,
         superBlock,
+        chapter,
+        module,
         block,
         translationPending,
         quizzes
@@ -105,6 +144,9 @@ const ShowQuiz = ({
   initTests,
   updateChallengeMeta,
   isChallengeCompleted,
+  user: { quizAttempts = [] },
+  isQuizAttemptSubmitting,
+  submitQuizAttempt,
   openCompletionModal,
   openExitQuizModal,
   closeExitQuizModal,
@@ -116,10 +158,6 @@ const ShowQuiz = ({
 
   const { nextChallengePath, prevChallengePath } = challengeMeta;
   const container = useRef<HTMLElement | null>(null);
-
-  // Campers are not allowed to change their answers once the quiz is submitted.
-  // `hasSubmitted` is used as a flag to disable the quiz.
-  const [hasSubmitted, setHasSubmitted] = useState(false);
 
   // `isPassed` is used as a flag to conditionally render the test or submit button.
   const [isPassed, setIsPassed] = useState(false);
@@ -134,6 +172,19 @@ const ShowQuiz = ({
 
   const [quizId] = useState(Math.floor(Math.random() * quizzes.length));
   const quiz = quizzes[quizId].questions;
+
+  const attemptedQuiz = quizAttempts.find(
+    attempt => attempt.challengeId === challengeId
+  );
+
+  const timeUntilCooldownExpires = attemptedQuiz
+    ? attemptedQuiz.timestamp + COOL_DOWN_PERIOD_IN_MS - Date.now()
+    : null;
+
+  const isQuizDisabled =
+    !isChallengeCompleted &&
+    ((timeUntilCooldownExpires && timeUntilCooldownExpires > 0) ||
+      isQuizAttemptSubmitting);
 
   // Initialize the data passed to `useQuiz`
   const [initialQuizData] = useState(
@@ -178,7 +229,8 @@ const ShowQuiz = ({
     },
     passingGrade: 85,
     onSuccess: () => {
-      openCompletionModal(), setIsPassed(true);
+      openCompletionModal();
+      setIsPassed(true);
     },
     onFailure: () => setIsPassed(false)
   });
@@ -229,8 +281,11 @@ const ShowQuiz = ({
 
   const handleFinishQuizModalBtnClick = () => {
     validateAnswers();
-    setHasSubmitted(true);
     closeFinishQuizModal();
+    submitQuizAttempt({
+      challengeId,
+      quizId: quizId.toString()
+    });
   };
 
   const handleSubmitAndGo = () => {
@@ -261,13 +316,13 @@ const ShowQuiz = ({
     //   - If they don't pass, the Finish Quiz button is disabled, there isn't anything for them to do other than leaving the page
     //   - If they pass, the Submit-and-go button shows up, and campers should be allowed to leave the page
     // - When they have clicked the exit button on the exit modal
-    if (hasSubmitted || exitConfirmed) {
+    if (isQuizDisabled || exitConfirmed) {
       return;
     }
 
     void navigate(`${curLocation.pathname}`);
     openExitQuizModal();
-  }, [curLocation.pathname, hasSubmitted, exitConfirmed, openExitQuizModal]);
+  }, [curLocation.pathname, isQuizDisabled, exitConfirmed, openExitQuizModal]);
 
   usePageLeave({
     onWindowClose,
@@ -281,13 +336,43 @@ const ShowQuiz = ({
       });
     }
 
-    if (validated) {
-      // TODO: Update the message to include link(s) to the review materials
-      // if campers didn't pass the quiz.
+    if (validated && isPassed) {
       return t('learn.quiz.have-n-correct-questions', {
         correctAnswerCount,
         total: quiz.length
       });
+    }
+
+    if (validated && !isPassed) {
+      const currentChapter = superBlockStructure.chapters.find(
+        c => c.dashedName === chapter
+      );
+      const currentModule = currentChapter?.modules.find(
+        m => m.dashedName === module
+      );
+      const reviewBlock = currentModule?.blocks.find(b =>
+        b.dashedName.startsWith('review')
+      );
+
+      return (
+        <>
+          <p>
+            {t('learn.quiz.have-n-correct-questions', {
+              correctAnswerCount,
+              total: quiz.length
+            })}
+          </p>
+          {reviewBlock && (
+            <p>
+              <Trans i18nKey='learn.quiz.review-material-and-try-again-later'>
+                <Link to={`/learn/${superBlock}/#${reviewBlock.dashedName}`}>
+                  placeholder
+                </Link>
+              </Trans>
+            </p>
+          )}
+        </>
+      );
     }
 
     return '';
@@ -321,7 +406,7 @@ const ShowQuiz = ({
               <ChallengeDescription description={description} />
               <Spacer size='l' />
               <ObserveKeys>
-                <Quiz questions={quizData} disabled={hasSubmitted} />
+                <Quiz questions={quizData} disabled={isQuizDisabled} />
               </ObserveKeys>
               <Spacer size='m' />
               <div aria-live='polite' aria-atomic='true'>
@@ -334,7 +419,7 @@ const ShowQuiz = ({
                     block={true}
                     variant='primary'
                     onClick={handleFinishQuiz}
-                    disabled={hasSubmitted}
+                    disabled={isQuizDisabled}
                   >
                     {t('buttons.finish-quiz')}
                   </Button>
@@ -372,11 +457,14 @@ export const query = graphql`
   query QuizChallenge($id: String!) {
     challengeNode(id: { eq: $id }) {
       challenge {
+        id
         title
         description
         challengeType
         helpCategory
         superBlock
+        chapter
+        module
         block
         fields {
           blockHashSlug

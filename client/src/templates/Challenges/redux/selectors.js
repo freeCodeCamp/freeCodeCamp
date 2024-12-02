@@ -161,3 +161,6 @@ export const canFocusEditorSelector = state => state[ns].canFocusEditor;
 export const visibleEditorsSelector = state => state[ns].visibleEditors;
 export const showPreviewPortalSelector = state => state[ns].showPreviewPortal;
 export const showPreviewPaneSelector = state => state[ns].showPreviewPane;
+
+export const isQuizAttemptSubmittingSelector = state =>
+  state[ns].isQuizAttemptSubmitting;

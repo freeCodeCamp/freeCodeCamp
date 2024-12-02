@@ -521,6 +521,7 @@
       "incorrect-answer": "Incorrect.",
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
       "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct.",
+      "review-material-and-try-again-later": "Review <0>the material</0> and try again later.",
       "finish-modal-header": "Finish Quiz",
       "finish-modal-body": "Are you sure you want to finish the quiz? You will not be able to change any answers.",
       "finish-modal-yes": "Yes, I am finished",

@@ -93,3 +93,10 @@ export const setEditorFocusability = createAction(
 export const toggleVisibleEditor = createAction(
   actionTypes.toggleVisibleEditor
 );
+export const submitQuizAttempt = createAction(actionTypes.submitQuizAttempt);
+export const submitQuizAttemptComplete = createAction(
+  actionTypes.submitQuizAttemptComplete
+);
+export const submitQuizAttemptError = createAction(
+  actionTypes.submitQuizAttemptError
+);
