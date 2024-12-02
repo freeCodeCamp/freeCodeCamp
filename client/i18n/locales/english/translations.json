@@ -147,7 +147,7 @@
         },
         {
           "title": "Free Education",
-          "description": "Learn from our charity and save money on your education. No paywalls. No hidden costs."
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
         },
         {
           "title": "Extensive Certifications",
@@ -712,6 +712,8 @@
     "help-millions-learn": "Help millions of people learn",
     "reach-goals-faster": "Reach your goals faster",
     "remove-distractions": "Remove distractions",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.",
     "animation-countdown": "This animation will stop after {{secondsRemaining}} seconds."
   },
