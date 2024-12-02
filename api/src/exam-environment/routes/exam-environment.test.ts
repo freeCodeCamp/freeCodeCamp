@@ -576,7 +576,8 @@ describe('/exam-environment/', () => {
               config: {
                 name: mock.exam.config.name,
                 note: mock.exam.config.note,
-                totalTimeInMS: mock.exam.config.totalTimeInMS
+                totalTimeInMS: mock.exam.config.totalTimeInMS,
+                retakeTimeInMS: mock.exam.config.retakeTimeInMS
               },
               id: mock.examId
             }

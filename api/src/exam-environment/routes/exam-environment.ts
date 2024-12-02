@@ -566,7 +566,8 @@ async function getExams(
       config: {
         name: exam.config.name,
         note: exam.config.note,
-        totalTimeInMS: exam.config.totalTimeInMS
+        totalTimeInMS: exam.config.totalTimeInMS,
+        retakeTimeInMS: exam.config.retakeTimeInMS
       },
       canTake: isExamPrerequisitesMet
     };
