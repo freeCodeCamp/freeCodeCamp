@@ -104,17 +104,18 @@ async function tokenMetaHandler(
     );
   }
 
-  const tokenId = isObjectID(payload.examEnvironmentAuthorizationToken)
-    ? payload.examEnvironmentAuthorizationToken
-    : null;
+  if (!isObjectID(payload.examEnvironmentAuthorizationToken)) {
+    void reply.code(418);
+    return reply.send(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN('Token is not valid')
+    );
+  }
 
-  const token = tokenId
-    ? await this.prisma.examEnvironmentAuthorizationToken.findUnique({
-        where: {
-          id: tokenId
-        }
-      })
-    : null;
+  const token = await this.prisma.examEnvironmentAuthorizationToken.findUnique({
+    where: {
+      id: payload.examEnvironmentAuthorizationToken
+    }
+  });
 
   if (!token) {
     // Endpoint is valid, but resource does not exists
