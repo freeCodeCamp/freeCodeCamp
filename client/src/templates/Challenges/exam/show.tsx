@@ -164,9 +164,6 @@ function ShowExam(props: ShowExamProps) {
     isChallengeCompleted,
     openExitExamModal,
     openFinishExamModal,
-    pageContext: {
-      challengeMeta: { nextChallengePath, prevChallengePath }
-    },
     t
   } = props;
 
@@ -485,11 +482,7 @@ function ShowExam(props: ShowExamProps) {
       </Row>
     </Container>
   ) : (
-    <Hotkeys
-      containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
-    >
+    <Hotkeys containerRef={container}>
       <LearnLayout>
         <Helmet title={windowTitle} />
         <Container>
