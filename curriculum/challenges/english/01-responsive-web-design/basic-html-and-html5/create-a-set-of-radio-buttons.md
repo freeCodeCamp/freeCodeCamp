@@ -48,55 +48,50 @@ Add a pair of radio buttons to your form, each nested in its own `label` element
 Your page should have two `radio` button elements.
 
 ```js
-assert($('input[type="radio"]').length > 1);
+assert.lengthOf(document.querySelectorAll('input[type="radio"]'),2);
 ```
 
 Your radio buttons should be given the `name` attribute of `indoor-outdoor`.
 
 ```js
-assert($('input[type="radio"]').filter("[name='indoor-outdoor']").length > 1);
+assert.lengthOf([...document.querySelectorAll('input[type="radio"]')].filter(input => input.name === "indoor-outdoor"),2);
 ```
 
 Each of your two radio button elements should be nested in its own `label` element.
 
 ```js
-assert($('label > input[type="radio"]:only-child').length > 1);
+assert.lengthOf(document.querySelectorAll('label > input[type="radio"]:only-child'),2);
 ```
 
 Each of your `label` elements should have a closing tag.
 
 ```js
-assert(
-  code.match(/<\/label>/g) &&
-    code.match(/<label/g) &&
-    code.match(/<\/label>/g).length === code.match(/<label/g).length
-);
+assert.match(code,/<\/label>/g);
+assert.match(code,/<label/g);
+assert.strictEqual(code.match(/<\/label>/g).length,code.match(/<label/g).length);
 ```
 
 One of your radio buttons should have the label `indoor`.
 
 ```js
-assert(
-  $('label')
-    .text()
-    .match(/indoor/gi)
-);
+const labelTexts = [...document.querySelectorAll('label')].map(label => label.textContent);
+const hasMatch = labelTexts.some(label =>  label.match(/indoor/gi));
+assert.isTrue(hasMatch); 
 ```
 
 One of your radio buttons should have the label `outdoor`.
 
 ```js
-assert(
-  $('label')
-    .text()
-    .match(/outdoor/gi)
-);
+const labelTexts = [...document.querySelectorAll('label')].map(label => label.textContent);
+const hasMatch = labelTexts.some(label => label.match(/outdoor/gi));
+assert.isTrue(hasMatch); 
 ```
 
 Each of your radio button elements should be added within the `form` tag.
 
 ```js
-assert($('label').parent().get(0).tagName.match('FORM'));
+const labelParent = document.querySelector('label').parentNode;
+assert.strictEqual(labelParent.tagName,'FORM');
 ```
 
 # --seed--

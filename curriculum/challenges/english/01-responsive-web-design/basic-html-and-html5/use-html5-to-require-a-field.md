@@ -24,7 +24,7 @@ Then try to submit the form without inputting any text. See how your HTML5 form 
 Your text `input` element should have the `required` attribute.
 
 ```js
-assert($('input').prop('required'));
+assert.isTrue(document.querySelector('input').required);
 ```
 
 # --seed--
