@@ -107,7 +107,9 @@ async function tokenMetaHandler(
   if (!isObjectID(payload.examEnvironmentAuthorizationToken)) {
     void reply.code(418);
     return reply.send(
-      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN('Token is not valid')
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+        'Token is not valid'
+      )
     );
   }
 
