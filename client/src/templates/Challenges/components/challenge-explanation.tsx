@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 import PrismFormatted from './prism-formatted';
 
+import './challenge-explanation.css';
+
 interface ChallengeExplanationProps {
   explanation: string;
 }
