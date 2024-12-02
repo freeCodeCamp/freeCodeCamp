@@ -10,7 +10,7 @@
   box-shadow: none;
   background: var(--gray00);
   border: 1px solid var(--gray15);
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .card-header {
