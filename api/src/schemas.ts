@@ -10,8 +10,6 @@ export { modernChallengeCompleted } from './schemas/challenge/modern-challenge-c
 export { msTrophyChallengeCompleted } from './schemas/challenge/ms-trophy-challenge-completed';
 export { projectCompleted } from './schemas/challenge/project-completed';
 export { saveChallenge } from './schemas/challenge/save-challenge';
-export { moduleCompleted } from './schemas/module/module-completed';
-export { chapterCompleted } from './schemas/chapter/chapter-completed';
 export { curriculumSectionCompleted } from './schemas/curriculum-section/curriculum-section-completed';
 export { deprecatedEndpoints } from './schemas/deprecated';
 export { addDonation } from './schemas/donate/add-donation';

@@ -154,8 +154,6 @@ export const build = async (
       fastify.addHook('onRequest', fastify.send401IfNoUser);
 
       await fastify.register(protectedRoutes.challengeRoutes);
-      await fastify.register(protectedRoutes.moduleRoutes);
-      await fastify.register(protectedRoutes.chapterRoutes);
       await fastify.register(protectedRoutes.curriculumSectionRoutes);
       await fastify.register(protectedRoutes.donateRoutes);
       await fastify.register(protectedRoutes.protectedCertificateRoutes);
