@@ -1,0 +1,101 @@
+{
+  "name": "Build a Music Player",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-music-player",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67471d60ce8e6268fe9e12f6",
+      "title": "Step 1"
+    },
+    {
+      "id": "6747237371f13173c9f6c27e",
+      "title": "Step 2"
+    },
+    {
+      "id": "674724ff8af92f7733e6d980",
+      "title": "Step 3"
+    },
+    {
+      "id": "6747257cdf5412781e138bb2",
+      "title": "Step 4"
+    },
+    {
+      "id": "6747274264e8a5799fb3e0b5",
+      "title": "Step 5"
+    },
+    {
+      "id": "674728eda5829d7b4c360643",
+      "title": "Step 6"
+    },
+    {
+      "id": "6747299cbed5107c6a00d64c",
+      "title": "Step 7"
+    },
+    {
+      "id": "67472ab9f570797dbb01568a",
+      "title": "Step 8"
+    },
+    {
+      "id": "67472eef7b4b7ba77b50929b",
+      "title": "Step 9"
+    },
+    {
+      "id": "67473042e8751eac62fafc82",
+      "title": "Step 10"
+    },
+    {
+      "id": "674735e3b28351b8b8f05807",
+      "title": "Step 11"
+    },
+    {
+      "id": "674757668684f9deaa6ac3c0",
+      "title": "Step 12"
+    },
+    {
+      "id": "674dda6c6ae8bb538678e125",
+      "title": "Step 13"
+    },
+    {
+      "id": "674de4ee2039496c30a31b71",
+      "title": "Step 14"
+    },
+    {
+      "id": "674836ba82e9057dfee1849c",
+      "title": "Step 15"
+    },
+    {
+      "id": "674850b437668dd08edddbe2",
+      "title": "Step 16"
+    },
+    {
+      "id": "674e316e3892d32108ad2bb9",
+      "title": "Step 17"
+    },
+    {
+      "id": "674e34c42ee8f1237e4623cc",
+      "title": "Step 18"
+    },
+    {
+      "id": "6748567229cc8fe3f706de02",
+      "title": "Step 19"
+    },
+    {
+      "id": "6748bab9827a356c39559214",
+      "title": "Step 20"
+    },
+    {
+      "id": "674e2e4e04eb381ccfe92e15",
+      "title": "Step 21"
+    },
+    {
+      "id": "674e305b7bda7c1f4f37a930",
+      "title": "Step 22"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
