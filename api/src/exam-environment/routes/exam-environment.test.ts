@@ -669,7 +669,7 @@ describe('/exam-environment/', () => {
         );
 
         expect(res).toMatchObject({
-          status: 404,
+          status: 418,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
           }
