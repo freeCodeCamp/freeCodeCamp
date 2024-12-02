@@ -3168,7 +3168,8 @@
       "review-local-storage-and-crud": {
         "title": "Local Storage and CRUD Review",
         "intro": [
-          "Review the Local Storage and CRUD concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with <code>localStorage</code>, you first need to review the concepts.",
+          "Open up this page to review the <code>localStorage</code> property, <code>sessionStorage</code> property and more."
         ]
       },
       "quiz-local-storage-and-crud": {
