@@ -121,9 +121,11 @@ exports.createChallengePages = function (
           isLastChallengeInBlock: isLastChallengeInBlock,
           nextChallengePath: idToNextPathCurrentCurriculum[node.id],
           prevChallengePath: idToPrevPathCurrentCurriculum[node.id],
-          nextChallengePathNextCurriculum: idToNextPathNextCurriculum[node.id],
-          prevChallengePathNextCurriculum: idToPrevPathNextCurriculum[node.id],
           id
+        },
+        nextCurriculumPaths: {
+          nextChallengePath: idToNextPathNextCurriculum[node.id],
+          prevChallengePath: idToPrevPathNextCurriculum[node.id]
         },
         projectPreview: getProjectPreviewConfig(
           node.challenge,
