@@ -13,6 +13,8 @@ export const createFiles = createAction(
         challengeFile.contents,
         challengeFile.editableRegionBoundaries
       ),
+      editableRegionBoundaries:
+        challengeFile.editableRegionBoundaries?.slice() ?? [],
       seedEditableRegionBoundaries:
         challengeFile.editableRegionBoundaries?.slice() ?? []
     }))

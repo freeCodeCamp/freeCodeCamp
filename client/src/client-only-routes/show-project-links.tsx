@@ -2,9 +2,9 @@ import { find } from 'lodash-es';
 import React, { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Table } from '@freecodecamp/ui';
+import { Table, Spacer } from '@freecodecamp/ui';
 
-import { Link, Spacer } from '../components/helpers';
+import { Link } from '../components/helpers';
 import ProjectModal from '../components/SolutionViewer/project-modal';
 import type { CompletedChallenge, User } from '../redux/prop-types';
 import {
@@ -186,7 +186,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   return (
     <div data-playwright-test-label='project-links'>
       {t(getCertHeading(certName), { user: name })}
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <Table striped>
         <thead>
           <tr>
@@ -199,7 +199,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
           <ProjectsFor certName={certName} />
         </tbody>
       </Table>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <ProjectModal
         challengeFiles={completedChallenge?.challengeFiles ?? null}
         handleSolutionModalHide={handleSolutionModalHide}

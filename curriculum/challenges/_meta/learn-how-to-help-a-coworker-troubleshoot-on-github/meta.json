@@ -262,5 +262,6 @@
       "title": "Task 61"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }

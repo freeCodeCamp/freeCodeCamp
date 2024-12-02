@@ -81,12 +81,11 @@ const directoryToSuperblock = {
   '18-project-euler': 'project-euler',
   '19-foundational-c-sharp-with-microsoft':
     'foundational-c-sharp-with-microsoft',
-  '20-upcoming-python': 'upcoming-python',
   '21-a2-english-for-developers': 'a2-english-for-developers',
   '22-rosetta-code': 'rosetta-code',
   '23-python-for-everybody': 'python-for-everybody',
   '24-b1-english-for-developers': 'b1-english-for-developers',
-  '25-front-end-development': 'front-end-development'
+  '25-front-end-development': 'full-stack-developer'
 };
 
 function getSuperBlockFromDir(dir) {
@@ -95,6 +94,57 @@ function getSuperBlockFromDir(dir) {
   return directoryToSuperblock[dir];
 }
 
+function getChapterFromBlock(blockName, superBlockStructure) {
+  const chapters = superBlockStructure.chapters;
+  const chaptersWithBlocks = chapters.map(chapter => ({
+    ...chapter,
+    blocks: chapter.modules.flatMap(module => module.blocks)
+  }));
+
+  const chapter = chaptersWithBlocks.find(chapter =>
+    chapter.blocks.some(b => b.dashedName === blockName)
+  );
+
+  if (!chapter) {
+    throw Error(
+      `There is no chapter corresponding to block "${blockName}". It's possible that the block is missing in the superblock structure.`
+    );
+  }
+  return chapter.dashedName;
+}
+
+function getModuleFromBlock(blockName, superBlockStructure) {
+  const modules = superBlockStructure.chapters.flatMap(
+    chapter => chapter.modules
+  );
+  const module = modules.find(module =>
+    module.blocks.some(b => b.dashedName === blockName)
+  );
+  if (!module) {
+    throw Error(
+      `There is no module corresponding to block "${blockName}". It's possible that the block is missing in the superblock structure.`
+    );
+  }
+  return module.dashedName;
+}
+
+function getBlockOrder(blockName, superBlockStructure) {
+  const blocks = superBlockStructure.chapters
+    .flatMap(chapter => chapter.modules)
+    .flatMap(module => module.blocks);
+
+  const index = blocks.findIndex(block => block.dashedName === blockName);
+
+  if (index === -1)
+    throw Error(
+      `The block "${blockName}" does not appear in the superblock structure.`
+    );
+
+  return index + 1;
+}
 exports.createSuperOrder = createSuperOrder;
 exports.getSuperOrder = getSuperOrder;
 exports.getSuperBlockFromDir = getSuperBlockFromDir;
+exports.getChapterFromBlock = getChapterFromBlock;
+exports.getModuleFromBlock = getModuleFromBlock;
+exports.getBlockOrder = getBlockOrder;

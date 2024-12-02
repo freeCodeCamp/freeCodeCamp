@@ -38,6 +38,10 @@
   --z-index-site-header: 200;
 }
 
+:root:lang(ja) {
+  --font-family-sans-serif: 'Lato', 'NotoSansJapanese', sans-serif;
+}
+
 .dark-palette {
   --primary-color: var(--gray-00);
   --secondary-color: var(--gray-05);

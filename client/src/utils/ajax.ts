@@ -5,6 +5,7 @@ import type {
   ChallengeFile,
   ChallengeFiles,
   CompletedChallenge,
+  ExamTokenResponse,
   GenerateExamResponseWithData,
   SavedChallenge,
   SavedChallengeFile,
@@ -256,6 +257,12 @@ export function postChargeStripeCard(
   body: Donation
 ): Promise<ResponseWithData<void>> {
   return post('/donate/charge-stripe-card', body);
+}
+
+export function generateExamToken(): Promise<
+  ResponseWithData<ExamTokenResponse>
+> {
+  return post('/user/exam-environment/token', {});
 }
 
 type PaymentIntentResponse = Promise<

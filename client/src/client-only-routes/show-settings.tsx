@@ -4,12 +4,13 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { Callout, Container } from '@freecodecamp/ui';
+import { Callout, Container, Spacer } from '@freecodecamp/ui';
+import { useFeatureIsOn } from '@growthbook/growthbook-react';
 
 import store from 'store';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
-import { FullWidthRow, Loader, Spacer } from '../components/helpers';
+import { FullWidthRow, Loader } from '../components/helpers';
 import Certification from '../components/settings/certification';
 import MiscSettings from '../components/settings/misc-settings';
 import DangerZone from '../components/settings/danger-zone';
@@ -18,6 +19,7 @@ import Honesty from '../components/settings/honesty';
 import Privacy from '../components/settings/privacy';
 import { type ThemeProps, Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
+import ExamToken from '../components/settings/exam-token';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
@@ -35,6 +37,7 @@ import {
   updateMyKeyboardShortcuts,
   verifyCert
 } from '../redux/settings/actions';
+
 const { apiLocation } = envData;
 
 // TODO: update types for actions
@@ -126,6 +129,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   } = props;
   const isSignedInRef = useRef(isSignedIn);
 
+  const examTokenFlag = useFeatureIsOn('exam-token-widget');
+
   if (showLoading) {
     return <Loader fullScreen={true} />;
   }
@@ -140,7 +145,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <Container>
         <main>
-          <Spacer size='large' />
+          <Spacer size='l' />
           <FullWidthRow>
             <Callout variant='info'>{t('settings.profile-note')}</Callout>
           </FullWidthRow>
@@ -160,18 +165,19 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             toggleNightMode={toggleNightMode}
             toggleSoundMode={toggleSoundMode}
           />
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <Privacy />
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <Email
             email={email}
             isEmailVerified={isEmailVerified}
             sendQuincyEmail={sendQuincyEmail}
             updateQuincyEmail={updateQuincyEmail}
           />
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
-          <Spacer size='medium' />
+          <Spacer size='m' />
+          {examTokenFlag && <ExamToken />}
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
@@ -201,11 +207,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           />
           {userToken && (
             <>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               <UserToken />
             </>
           )}
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <DangerZone />
         </main>
       </Container>

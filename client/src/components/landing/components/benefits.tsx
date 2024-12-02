@@ -1,8 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Col, Row, Container } from '@freecodecamp/ui';
+import { Col, Row, Container, Spacer } from '@freecodecamp/ui';
 
-import { Spacer } from '../../helpers';
 import FreeIcon from '../../../assets/icons/free';
 import CapIcon from '../../../assets/icons/cap';
 import CommunityIcon from '../../../assets/icons/community';
@@ -32,7 +31,7 @@ const Benefits = (): JSX.Element => {
             </h2>
           </Col>
         </Row>
-        <Spacer size='small' />
+        <Spacer size='xs' />
         <Row>
           <Col xs={12} className='landing-benefits'>
             {benefitItems.map((benefit, index) => {
@@ -43,10 +42,10 @@ const Benefits = (): JSX.Element => {
                   data-playwright-test-label='landing-page-description'
                 >
                   <IconComponent /> {/* Dynamically render the icon */}
-                  <Spacer size='small' />
+                  <Spacer size='xs' />
                   <h3>{benefit.title}</h3>
                   <p>{benefit.description}</p>
-                  <Spacer size='small' />
+                  <Spacer size='xs' />
                 </div>
               );
             })}
@@ -54,7 +53,7 @@ const Benefits = (): JSX.Element => {
         </Row>
         <Row>
           <Col xs={12}>
-            <Spacer size='medium' />
+            <Spacer size='m' />
             <BigCallToAction text={t('landing.benefits.cta')} />
           </Col>
         </Row>

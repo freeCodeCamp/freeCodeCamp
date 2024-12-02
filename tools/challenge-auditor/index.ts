@@ -50,17 +50,12 @@ const superBlockFolderMap = {
   'project-euler': '18-project-euler',
   'foundational-c-sharp-with-microsoft':
     '19-foundational-c-sharp-with-microsoft',
-  'upcoming-python': '20-upcoming-python',
   'a2-english-for-developers': '21-a2-english-for-developers',
   'rosetta-code': '22-rosetta-code',
   'python-for-everybody': '23-python-for-everybody',
   'b1-english-for-developers': '24-b1-english-for-developers',
-  'front-end-development': '25-front-end-development'
+  'full-stack-developer': '25-front-end-development'
 };
-
-// These blocks are in the incorrect superblock. They should be moved but, for
-// the audit, we just ignore them.
-const blocksThatNeedToMove = ['d3-dashboard'];
 
 // Adding types for getChallengesForLang is possible, but not worth the effort
 // at this time.
@@ -160,9 +155,6 @@ async function auditChallengeFiles(
 ) {
   let auditPassed = true;
   for (const file of auditedFiles) {
-    if (blocksThatNeedToMove.some(block => file.includes(`/${block}/`))) {
-      continue;
-    }
     const filePath = join(langCurriculumDirectory, file);
     const fileExists = await access(filePath)
       .then(() => true)

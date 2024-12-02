@@ -24,7 +24,7 @@
     "joi": "17.12.2",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.1.0",
-    "mongodb": "5.9.2",
+    "mongodb": "6.10.0",
     "nanoid": "4.0.2"
   },
   "type": "module"

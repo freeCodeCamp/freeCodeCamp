@@ -1,6 +1,6 @@
 import React from 'react';
-import { Hit } from 'react-instantsearch-core';
-import { Highlight } from 'react-instantsearch-dom';
+import { Highlight } from 'react-instantsearch';
+import type { Hit } from './types';
 
 interface SuggestionProps {
   hit: Hit;
@@ -29,7 +29,7 @@ const Suggestion = ({
     >
       <span className='hit-name'>
         {dropdownFooter ? (
-          <Highlight attribute='query' hit={hit} tagName='strong' />
+          <Highlight attribute='query' hit={hit} />
         ) : (
           <Highlight attribute='title' hit={hit} />
         )}

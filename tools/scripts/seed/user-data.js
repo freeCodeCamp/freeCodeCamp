@@ -12219,6 +12219,30 @@ module.exports.fullyCertifiedUser = {
       id: '647f7da207d29547b3bee1ba',
       challengeType: 7,
       files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '671141d8e32fe934c26fa1be',
+      challengeType: 0,
+      files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '671141f948cbab359e74cc93',
+      challengeType: 0,
+      files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '671141feba228a35cefba82d',
+      challengeType: 0,
+      files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '671144cdcc01d73f7dd79dc9',
+      challengeType: 0,
+      files: []
     }
   ],
   completedExams: [

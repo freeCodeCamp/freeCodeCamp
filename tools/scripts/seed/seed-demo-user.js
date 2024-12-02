@@ -95,7 +95,7 @@ const trophyChallenges = [
   }
 });
 
-const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
+const client = new MongoClient(MONGOHQ_URL);
 
 const db = client.db('freecodecamp');
 const user = db.collection('user');

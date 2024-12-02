@@ -1,6 +1,7 @@
 import { execSync } from 'child_process';
 import { test, expect, Page } from '@playwright/test';
 import { SuperBlocks } from '../shared/config/curriculum';
+import translations from '../client/i18n/locales/english/translations.json';
 import tributePageHtml from './fixtures/tribute-page-html.json';
 import tributePageCss from './fixtures/tribute-page-css.json';
 import curriculum from './fixtures/js-ads-projects.json';
@@ -8,6 +9,7 @@ import { authedRequest } from './utils/request';
 
 import { focusEditor, getEditors, clearEditor } from './utils/editor';
 import { isMacOS } from './utils/user-agent';
+import { alertToBeVisible } from './utils/alerts';
 
 interface Meta {
   challengeOrder: { id: string; title: string }[];
@@ -201,7 +203,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       });
       await expect(solutionModal).toBeVisible();
       await solutionModal
-        .getByRole('button', { name: 'Close' })
+        .getByRole('button', { name: translations.buttons['close'] })
         .first()
         .click();
       // Wait for the modal to disappear before continue
@@ -210,15 +212,22 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
 
     await page
       .getByRole('button', {
-        name: "I agree to freeCodeCamp's Academic Honesty Policy."
+        name: translations.buttons['agree-honesty']
       })
       .click();
+
+    await alertToBeVisible(page, translations.buttons['accepted-honesty']);
 
     await page
       .getByRole('button', {
         name: 'Claim Certification Legacy JavaScript Algorithms and Data Structures'
       })
       .click();
+
+    await alertToBeVisible(
+      page,
+      '@developmentuser, you have successfully claimed the Legacy JavaScript Algorithms and Data Structures Certification! Congratulations on behalf of the freeCodeCamp.org team!'
+    );
 
     const showCertLink = page.getByRole('link', {
       name: 'Show Certification Legacy JavaScript Algorithms and Data Structures'

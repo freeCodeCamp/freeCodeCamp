@@ -392,5 +392,6 @@
       "title": "Step 96"
     }
   ],
-  "helpCategory": "Python"
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-grid"
 }

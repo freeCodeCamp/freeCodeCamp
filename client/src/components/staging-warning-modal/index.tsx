@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { Button, Modal } from '@freecodecamp/ui';
+import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import store from 'store';
-import { Spacer } from '../helpers';
 
 function StagingWarningModal(): JSX.Element {
   const { t } = useTranslation();
@@ -45,7 +44,7 @@ function StagingWarningModal(): JSX.Element {
         >
           {t('staging-warning.certain')}
         </Button>
-        <Spacer size='small' />
+        <Spacer size='xs' />
       </Modal.Body>
     </Modal>
   );

@@ -166,7 +166,7 @@ assert.match(playGame(), /You (win|lose) the game!/);
 ## --seed-contents--
 
 ```js
-const hand = ['rock', 'paper', 'scissor'];
+const hand = ['rock', 'paper', 'scissors'];
 ```
 
 ```html

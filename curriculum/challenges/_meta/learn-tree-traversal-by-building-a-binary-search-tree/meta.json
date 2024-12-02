@@ -256,5 +256,6 @@
       "title": "Step 62"
     }
   ],
-  "helpCategory": "Python"
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-grid"
 }

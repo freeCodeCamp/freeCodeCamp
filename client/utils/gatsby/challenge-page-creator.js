@@ -36,11 +36,6 @@ const video = path.resolve(
   '../../src/templates/Challenges/video/show.tsx'
 );
 
-const odin = path.resolve(
-  __dirname,
-  '../../src/templates/Challenges/odin/show.tsx'
-);
-
 const exam = path.resolve(
   __dirname,
   '../../src/templates/Challenges/exam/show.tsx'
@@ -51,14 +46,14 @@ const msTrophy = path.resolve(
   '../../src/templates/Challenges/ms-trophy/show.tsx'
 );
 
-const dialogue = path.resolve(
-  __dirname,
-  '../../src/templates/Challenges/dialogue/show.tsx'
-);
-
 const fillInTheBlank = path.resolve(
   __dirname,
   '../../src/templates/Challenges/fill-in-the-blank/show.tsx'
+);
+
+const generic = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/generic/show.tsx'
 );
 
 const views = {
@@ -69,12 +64,10 @@ const views = {
   quiz,
   video,
   codeAlly,
-  odin,
   exam,
   msTrophy,
-  dialogue,
-  fillInTheBlank
-  // quiz: Quiz
+  fillInTheBlank,
+  generic
 };
 
 function getIsFirstStepInBlock(id, edges) {

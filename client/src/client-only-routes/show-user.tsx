@@ -11,11 +11,12 @@ import {
   Panel,
   Col,
   Row,
-  Button
+  Button,
+  Spacer
 } from '@freecodecamp/ui';
 
 import Login from '../components/Header/components/login';
-import { Spacer, Loader, FullWidthRow } from '../components/helpers';
+import { Loader, FullWidthRow } from '../components/helpers';
 import { reportUser } from '../redux/actions';
 import {
   userFetchStateSelector,
@@ -83,17 +84,17 @@ function ShowUser({
     return (
       <main>
         <FullWidthRow>
-          <Spacer size='large' />
+          <Spacer size='l' />
           <Panel variant='primary' className='text-center'>
             <Panel.Heading>
               <Panel.Title>{t('report.sign-in')}</Panel.Title>
             </Panel.Heading>
             <Panel.Body className='text-center'>
-              <Spacer size='large' />
+              <Spacer size='l' />
               <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
                 <Login block={true}>{t('buttons.click-here')}</Login>
               </Col>
-              <Spacer size='exLarge' />
+              <Spacer size='xl' />
             </Panel.Body>
           </Panel>
         </FullWidthRow>
@@ -106,7 +107,7 @@ function ShowUser({
       <Helmet>
         <title>{t('report.portfolio')} | freeCodeCamp.org</title>
       </Helmet>
-      <Spacer size='large' />
+      <Spacer size='l' />
       <Row className='text-center overflow-fix'>
         <Col sm={8} smOffset={2} xs={12}>
           <h2>{t('report.portfolio-2', { username: username })}</h2>
@@ -133,7 +134,7 @@ function ShowUser({
             <Button block={true} variant='primary' type='submit'>
               {t('report.submit')}
             </Button>
-            <Spacer size='medium' />
+            <Spacer size='m' />
           </form>
         </Col>
       </Row>

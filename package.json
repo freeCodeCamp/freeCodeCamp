@@ -60,7 +60,7 @@
     "preseed": "npm-run-all create:shared",
     "playwright:install-build-tools": "npx playwright install --with-deps",
     "rename-challenges": "ts-node tools/challenge-helper-scripts/rename-challenge-files.ts",
-    "seed": "pnpm seed:surveys && pnpm seed:exams && pnpm seed:env-exam && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user",
+    "seed": "pnpm seed:surveys && pnpm seed:exams && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user",
     "seed:certified-user": "pnpm seed:surveys && pnpm seed:exams && pnpm seed:ms-username && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user --certified-user",
     "seed:exams": "DEBUG=fcc:* node tools/scripts/seed-exams/create-exams",
     "seed:env-exam": "cd api && pnpm run seed:env-exam",
