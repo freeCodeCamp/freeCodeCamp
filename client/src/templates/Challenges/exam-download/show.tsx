@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Spacer } from '@freecodecamp/ui';
+import { isEmpty } from 'lodash';
 import { useTranslation } from 'react-i18next';
 import { FullWidthRow } from '../../../components/helpers';
 import useDetectOS from '../utils/use-detect-os';
+
 interface GitProps {
   tag_name: string;
   assets: {
@@ -14,6 +16,7 @@ function ShowExamDownload(): JSX.Element {
   const [latestVersion, setLatestVersion] = useState<string | null>(null);
 
   const [downloadLink, setDownloadLink] = useState<string | undefined>('');
+  const [downloadLinks, setDownloadLinks] = useState<string[]>([]);
 
   const os = useDetectOS();
 
@@ -37,21 +40,31 @@ function ShowExamDownload(): JSX.Element {
     );
 
     if (os.os === 'WIN') {
+      if (isEmpty(win)) return '';
+
       return win;
     }
 
     if (os.os === 'MAC') {
       if (os.architecture.toLowerCase() === 'arm') {
+        if (isEmpty(macARM)) return '';
+
         return macARM;
       } else {
+        if (isEmpty(macX64)) return '';
+
         return macX64;
       }
     }
 
     if (os.os === 'LINUX') {
       if (os.architecture.toLowerCase() === 'arm') {
+        if (isEmpty(linuxARM)) return '';
+
         return linuxARM;
       } else {
+        if (isEmpty(linuxX64)) return '';
+
         return linuxX64;
       }
     }
@@ -77,6 +90,8 @@ function ShowExamDownload(): JSX.Element {
                 assets.map(links => links.browser_download_url)
               )
             );
+
+            setDownloadLinks(assets.map(links => links.browser_download_url));
           });
         }
       })
@@ -103,10 +118,27 @@ function ShowExamDownload(): JSX.Element {
       >
         {t('buttons.download-latest-version')}
       </Button>
+      {!downloadLink && <strong>{t('exam.unable-to-detect-os')}</strong>}
+      <Spacer size='l' />
+      <details>
+        <summary>{t('exam.download-details')}</summary>
+        <ul>
+          {downloadLinks
+            .filter(link => !link.match(/\.sig|\.json/))
+            .map((link, index) => {
+              return (
+                <li key={index} style={{ listStyle: 'none' }}>
+                  <a href={link} download={link}>
+                    {link}
+                  </a>
+                </li>
+              );
+            })}
+        </ul>
+      </details>
       <Spacer size='l' />
       <strong>{t('exam.download-trouble')}</strong>
       <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
-      <Spacer size='l' />
     </FullWidthRow>
   );
 }
