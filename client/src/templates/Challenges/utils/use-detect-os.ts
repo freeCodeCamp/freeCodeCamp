@@ -16,7 +16,6 @@ interface Navigator {
 }
 
 const getArchitecture = async (): Promise<string> => {
-  // Check for User-Agent Client Hints support
   if ((navigator as Navigator).userAgentData?.getHighEntropyValues) {
     try {
       const { architecture } =
@@ -34,19 +33,16 @@ const getArchitecture = async (): Promise<string> => {
     }
   }
 
-  // Fallback to userAgent parsing
   const userAgent = navigator.userAgent;
 
-  // Detect architectures
   if (/x86_64|Win64|WOW64|amd64/.test(userAgent)) {
-    return 'x86_64'; // 64-bit x86
+    return 'x86_64';
   } else if (/i686|x86|Win32/.test(userAgent)) {
-    return 'x86'; // 32-bit x86
+    return 'x86';
   } else if (/arm|aarch64/.test(userAgent)) {
-    return /aarch64/.test(userAgent) ? 'ARM64' : 'ARM'; // ARM
+    return /aarch64/.test(userAgent) ? 'ARM64' : 'ARM';
   }
 
-  // Unknown architecture
   return 'Unknown';
 };
 
