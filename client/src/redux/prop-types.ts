@@ -406,6 +406,8 @@ export type ChallengeMeta = {
   isFirstStep: boolean;
   nextChallengePath?: string;
   prevChallengePath?: string;
+  nextChallengePathNextCurriculum?: string;
+  prevChallengePathNextCurriculum?: string;
   superBlock: SuperBlocks;
   title?: string;
   challengeType?: number;

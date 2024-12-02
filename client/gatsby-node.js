@@ -174,11 +174,17 @@ exports.createPages = async function createPages({
     currentChallengeNodes
   );
 
+  const idToNextPathNextCurriculum = createIdToNextPathMap(allChallengeNodes);
+
+  const idToPrevPathNextCurriculum = createIdToPrevPathMap(allChallengeNodes);
+
   // Create challenge pages.
   result.data.allChallengeNode.edges.forEach(
     createChallengePages(createPage, {
       idToNextPathCurrentCurriculum,
-      idToPrevPathCurrentCurriculum
+      idToPrevPathCurrentCurriculum,
+      idToNextPathNextCurriculum,
+      idToPrevPathNextCurriculum
     })
   );
 
