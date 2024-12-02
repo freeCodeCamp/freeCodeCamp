@@ -3,7 +3,7 @@
  * but the link of the page isn't rendered on the screen.
  * For more details, see https://github.com/freeCodeCamp/freeCodeCamp/pull/55472.
  */
-export const preloadPage = (path: string | null) => {
+export const preloadPage = (path?: string) => {
   if (!window.___loader || !path) return;
 
   window.___loader.hovering(path);
