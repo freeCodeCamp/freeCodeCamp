@@ -1,4 +1,6 @@
 import { Static } from '@fastify/type-provider-typebox';
+import jwt from 'jsonwebtoken';
+
 import {
   createSuperRequest,
   defaultUserId,
@@ -11,6 +13,7 @@ import {
 } from '../schemas';
 import * as mock from '../../../__mocks__/env-exam';
 import { constructUserExam } from '../utils/exam';
+import { JWT_SECRET } from '../../utils/env';
 
 jest.mock('../../utils/env', () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -641,7 +644,7 @@ describe('/exam-environment/', () => {
     });
 
     describe('GET /exam-environment/token-meta', () => {
-      it('should allow a valid request', async () => {
+      it('should reject invalid tokens', async () => {
         const res = await superGet('/exam-environment/token-meta').set(
           'exam-environment-authorization-token',
           'invalid-token'
@@ -649,6 +652,24 @@ describe('/exam-environment/', () => {
 
         expect(res).toMatchObject({
           status: 418,
+          body: {
+            code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
+          }
+        });
+      });
+
+      it('should tell the requester if the token does not exist', async () => {
+        const validToken = jwt.sign(
+          { examEnvironmentAuthorizationToken: 'does-not-exist' },
+          JWT_SECRET
+        );
+        const res = await superGet('/exam-environment/token-meta').set(
+          'exam-environment-authorization-token',
+          validToken
+        );
+
+        expect(res).toMatchObject({
+          status: 404,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
           }

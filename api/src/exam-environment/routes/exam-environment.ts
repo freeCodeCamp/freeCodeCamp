@@ -15,6 +15,7 @@ import {
   validateAttempt
 } from '../utils/exam';
 import { ERRORS } from '../utils/errors';
+import { isObjectID } from '../../utils/validation';
 
 /**
  * Wrapper for endpoints related to the exam environment desktop app.
@@ -92,8 +93,9 @@ async function tokenMetaHandler(
 ) {
   const { 'exam-environment-authorization-token': encodedToken } = req.headers;
 
+  let payload: JwtPayload;
   try {
-    jwt.verify(encodedToken, JWT_SECRET);
+    payload = jwt.verify(encodedToken, JWT_SECRET) as JwtPayload;
   } catch (e) {
     // Server refuses to brew (verify) coffee (jwts) with a teapot (random strings)
     void reply.code(418);
@@ -102,16 +104,17 @@ async function tokenMetaHandler(
     );
   }
 
-  const payload = jwt.decode(encodedToken) as JwtPayload;
+  const tokenId = isObjectID(payload.examEnvironmentAuthorizationToken)
+    ? payload.examEnvironmentAuthorizationToken
+    : null;
 
-  const examEnvironmentAuthorizationToken =
-    payload.examEnvironmentAuthorizationToken;
-
-  const token = await this.prisma.examEnvironmentAuthorizationToken.findUnique({
-    where: {
-      id: examEnvironmentAuthorizationToken
-    }
-  });
+  const token = tokenId
+    ? await this.prisma.examEnvironmentAuthorizationToken.findUnique({
+        where: {
+          id: tokenId
+        }
+      })
+    : null;
 
   if (!token) {
     // Endpoint is valid, but resource does not exists
