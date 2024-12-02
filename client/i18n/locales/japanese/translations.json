@@ -147,7 +147,7 @@
         },
         {
           "title": "無償教育",
-          "description": "チャリティから学び、学習費用を節約しましょう。有料限定の教材や隠れたコストは一切ありません。"
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
         },
         {
           "title": "幅広い認定講座",
@@ -712,6 +712,8 @@
     "help-millions-learn": "世界中の人々の学びをサポートできます。",
     "reach-goals-faster": "さらにスピーディーにゴールへと近づけます。",
     "remove-distractions": "気が散る要素を減らせます。",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "これは、キャンパーに freeCodeCamp サポーターとなることを促す 20 秒間のアニメーション広告です。アニメーションの内容は、とあるテディベアがサポーターになるところから始まります。サポーターになることで、余計なポップアップ画面が表示されなくなり、テディベアは目標をスムーズに達成します。そしてついに卒業し、学問のスーパーヒーローとなって世界中の人々を助ける様子が描かれています。",
     "animation-countdown": "このアニメーションは {{secondsRemaining}} 秒後に終了します。"
   },
