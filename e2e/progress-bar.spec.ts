@@ -1,8 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { clearEditor, focusEditor } from './utils/editor';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.describe('Progress bar component', () => {
   test('Should appear with the correct content after the user has submitted their code', async ({
     page,

@@ -106,10 +106,10 @@ const MultifileEditor = (props: MultifileEditorProps) => {
 
   const editorKeys = [];
 
-  if (indexjsx) editorKeys.push('indexjsx');
   if (indexhtml) editorKeys.push('indexhtml');
   if (stylescss) editorKeys.push('stylescss');
   if (scriptjs) editorKeys.push('scriptjs');
+  if (indexjsx) editorKeys.push('indexjsx');
   if (mainpy) editorKeys.push('mainpy');
   if (indexts) editorKeys.push('indexts');
 

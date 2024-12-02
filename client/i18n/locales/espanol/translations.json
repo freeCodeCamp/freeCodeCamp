@@ -147,7 +147,7 @@
         },
         {
           "title": "Free Education",
-          "description": "Learn from our charity and save money on your education. No paywalls. No hidden costs."
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
         },
         {
           "title": "Extensive Certifications",
@@ -712,6 +712,8 @@
     "help-millions-learn": "Ayuda a millones de personas a aprender",
     "reach-goals-faster": "Alcanza tus metas más rápido",
     "remove-distractions": "Eliminar distracciones",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "Este es un anuncio animado de 20 segundos para animar a los campistas a convertirse en seguidores de freeCodeCamp. La animación comienza con un oso de téd que se convierte en un soporte. Como resultado, desaparecen los pop-ups de distracción y el oso llega a completar todas sus metas. Luego, se gradua y se convierte en un superhéroe educativo que ayuda a la gente de todo el mundo.",
     "animation-countdown": "Esta animación se detendrá después de {{secondesRemaining}} segundos."
   },

@@ -18,7 +18,8 @@
 }
 
 .super-block-accordion .chapter,
-.super-block-accordion .exam {
+.super-block-accordion .link-chapter,
+.super-block-accordion .link-module {
   background-color: var(--primary-background);
 }
 
@@ -66,4 +67,8 @@
 
 .super-block-accordion .module-panel {
   padding: 0 24px;
+}
+
+.super-block-accordion .chapter-panel > li:last-child .block-grid {
+  border-bottom: 0;
 }
