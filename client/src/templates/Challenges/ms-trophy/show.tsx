@@ -85,20 +85,11 @@ interface MsTrophyProps {
 function MsTrophy(props: MsTrophyProps) {
   const container = useRef<HTMLElement>(null);
   const {
-    challengeMounted,
     data: {
       challengeNode: {
-        challenge: {
-          fields: { tests },
-          title,
-          challengeType,
-          helpCategory
-        }
+        challenge: { title }
       }
-    },
-    pageContext: { challengeMeta },
-    initTests,
-    updateChallengeMeta
+    }
   } = props;
   useEffect(() => {
     const {
