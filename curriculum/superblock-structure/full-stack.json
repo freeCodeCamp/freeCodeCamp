@@ -63,6 +63,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-html",
           "blocks": [{ "dashedName": "review-html" }]
         }
@@ -265,6 +266,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-css",
           "blocks": [{ "dashedName": "review-css" }]
         }
@@ -383,6 +385,7 @@
               "dashedName": "lecture-working-with-higher-order-functions-and-callbacks"
             },
             { "dashedName": "workshop-library-manager" },
+            { "dashedName": "lab-book-organizer" },
             { "dashedName": "review-javascript-higher-order-functions" },
             { "dashedName": "quiz-javascript-higher-order-functions" }
           ]
@@ -461,10 +464,11 @@
           ]
         },
         {
-          "dashedName": "maps-sets-and-json",
+          "dashedName": "maps-and-sets",
           "blocks": [
             { "dashedName": "lecture-working-with-maps-and-sets" },
-            { "dashedName": "review-javascript-maps-sets-and-json" }
+            { "dashedName": "review-javascript-maps-and-sets" },
+            { "dashedName": "quiz-javascript-maps-and-sets" }
           ]
         },
         {
@@ -487,7 +491,9 @@
             },
             { "dashedName": "workshop-shopping-cart" },
             { "dashedName": "lab-project-idea-board" },
-            { "dashedName": "review-javascript-classes" }
+            { "dashedName": "lab-bank-account-manager" },
+            { "dashedName": "review-javascript-classes" },
+            { "dashedName": "quiz-javascript-classes" }
           ]
         },
         {
@@ -506,6 +512,7 @@
           "dashedName": "functional-programming",
           "blocks": [
             { "dashedName": "lecture-understanding-functional-programming" },
+            { "dashedName": "workshop-recipe-ingredient-converter" },
             { "dashedName": "lab-sorting-visualizer" },
             { "dashedName": "review-javascript-functional-programming" },
             { "dashedName": "quiz-javascript-functional-programming" }
@@ -521,6 +528,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-javascript",
           "blocks": [{ "dashedName": "review-javascript" }]
         }
@@ -576,6 +584,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-front-end-libraries",
           "blocks": [{ "dashedName": "review-front-end-libraries" }]
         }
@@ -641,15 +650,18 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-relational-databases",
           "blocks": [{ "dashedName": "review-relational-databases" }]
         }
       ]
     },
     {
+      "chapterType": "exam",
       "dashedName": "exam-certified-full-stack-developer",
       "modules": [
         {
+          "moduleType": "exam",
           "dashedName": "exam-certified-full-stack-developer",
           "blocks": [{ "dashedName": "exam-certified-full-stack-developer" }]
         }

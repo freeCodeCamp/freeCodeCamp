@@ -394,6 +394,8 @@ function ShowClassic({
           <ChallengeDescription
             description={description}
             instructions={instructions}
+            superBlock={superBlock}
+            block={block}
           />
         }
         challengeTitle={
