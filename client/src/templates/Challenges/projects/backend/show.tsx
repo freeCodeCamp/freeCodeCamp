@@ -129,6 +129,7 @@ const ShowBackEnd = (props: BackEndProps) => {
       helpCategory
     });
     challengeMounted(challengeMeta.id);
+    container.current?.focus();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
