@@ -24,6 +24,7 @@ const dialogue = 21;
 const fillInTheBlank = 22;
 const multifilePythonCertProject = 23;
 const generic = 24;
+const examDownload = 25;
 
 export const challengeTypes = {
   html,
@@ -51,7 +52,8 @@ export const challengeTypes = {
   dialogue,
   fillInTheBlank,
   multifilePythonCertProject,
-  generic
+  generic,
+  examDownload
 };
 
 export const hasNoSolution = (challengeType: number): boolean => {
@@ -74,7 +76,8 @@ export const hasNoSolution = (challengeType: number): boolean => {
     multipleChoice,
     dialogue,
     fillInTheBlank,
-    generic
+    generic,
+    examDownload
   ];
 
   return noSolutions.includes(challengeType);
@@ -105,7 +108,8 @@ export const viewTypes = {
   [dialogue]: 'generic',
   [fillInTheBlank]: 'fillInTheBlank',
   [multifilePythonCertProject]: 'classic',
-  [generic]: 'generic'
+  [generic]: 'generic',
+  [examDownload]: 'examDownload'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -137,5 +141,6 @@ export const submitTypes = {
   [dialogue]: 'tests',
   [fillInTheBlank]: 'tests',
   [multifilePythonCertProject]: 'tests',
-  [generic]: 'tests'
+  [generic]: 'tests',
+  [examDownload]: 'examDownload'
 };

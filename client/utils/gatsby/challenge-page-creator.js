@@ -56,6 +56,11 @@ const generic = path.resolve(
   '../../src/templates/Challenges/generic/show.tsx'
 );
 
+const examDownload = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/exam-download/show.tsx'
+);
+
 const views = {
   backend,
   classic,
@@ -67,7 +72,8 @@ const views = {
   exam,
   msTrophy,
   fillInTheBlank,
-  generic
+  generic,
+  examDownload
 };
 
 function getIsFirstStepInBlock(id, edges) {
