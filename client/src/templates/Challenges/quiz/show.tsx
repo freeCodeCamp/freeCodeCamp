@@ -15,7 +15,8 @@ import {
   Button,
   Quiz,
   useQuiz,
-  Spacer
+  Spacer,
+  Callout
 } from '@freecodecamp/ui';
 
 // Local Utilities
@@ -181,10 +182,23 @@ const ShowQuiz = ({
     ? attemptedQuiz.timestamp + COOL_DOWN_PERIOD_IN_MS - Date.now()
     : null;
 
-  const isQuizDisabled =
+  const isNotAllowedToStartQuiz =
     !isChallengeCompleted &&
-    ((timeUntilCooldownExpires && timeUntilCooldownExpires > 0) ||
-      isQuizAttemptSubmitting);
+    timeUntilCooldownExpires &&
+    timeUntilCooldownExpires > 0;
+
+  const isQuizDisabled = isNotAllowedToStartQuiz || isQuizAttemptSubmitting;
+
+  // Find the corresponding review block.
+  const currentChapter = superBlockStructure.chapters.find(
+    c => c.dashedName === chapter
+  );
+  const currentModule = currentChapter?.modules.find(
+    m => m.dashedName === module
+  );
+  const reviewBlock = currentModule?.blocks.find(b =>
+    b.dashedName.startsWith('review')
+  );
 
   // Initialize the data passed to `useQuiz`
   const [initialQuizData] = useState(
@@ -344,16 +358,6 @@ const ShowQuiz = ({
     }
 
     if (validated && !isPassed) {
-      const currentChapter = superBlockStructure.chapters.find(
-        c => c.dashedName === chapter
-      );
-      const currentModule = currentChapter?.modules.find(
-        m => m.dashedName === module
-      );
-      const reviewBlock = currentModule?.blocks.find(b =>
-        b.dashedName.startsWith('review')
-      );
-
       return (
         <>
           <p>
@@ -402,6 +406,20 @@ const ShowQuiz = ({
             </ChallengeTitle>
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='m' />
+              {isNotAllowedToStartQuiz && reviewBlock && (
+                <Callout variant='danger'>
+                  {
+                    <Trans i18nKey='learn.quiz.review-material-and-try-again-later'>
+                      <Link
+                        to={`/learn/${superBlock}/#${reviewBlock.dashedName}`}
+                      >
+                        placeholder
+                      </Link>
+                    </Trans>
+                  }
+                </Callout>
+              )}
               <Spacer size='m' />
               <ChallengeDescription description={description} />
               <Spacer size='l' />
