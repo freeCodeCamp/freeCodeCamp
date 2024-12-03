@@ -294,13 +294,13 @@ export const embedFilesInHtml = async function (challengeFiles) {
       embedStylesAndScript,
       indexHtml.contents
     );
-    return [challengeFiles, contents];
+    return contents;
   } else if (indexJsx) {
-    return [challengeFiles, `<script>${indexJsx.contents}</script>`];
+    return `<script>${indexJsx.contents}</script>`;
   } else if (scriptJs) {
-    return [challengeFiles, `<script>${scriptJs.contents}</script>`];
+    return `<script>${scriptJs.contents}</script>`;
   } else if (indexTs) {
-    return [challengeFiles, `<script>${indexTs.contents}</script>`];
+    return `<script>${indexTs.contents}</script>`;
   } else {
     throw Error('No html, ts or js(x) file found');
   }
