@@ -544,6 +544,7 @@
               "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks"
             },
             { "dashedName": "lecture-working-with-data-in-react" },
+            { "dashedName": "workshop-reusable-profile-card-component" },
             { "dashedName": "quiz-react-basics" }
           ]
         },

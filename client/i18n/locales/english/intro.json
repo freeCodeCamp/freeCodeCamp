@@ -3592,6 +3592,12 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "workshop-reusable-profile-card-component": {
+        "title": "Reusable Profile Card Component",
+        "intro": [
+          "In this workshop, you will learn how to work with props by building a reusable profile card component."
+        ]
       }
     }
   },
