@@ -1,10 +1,10 @@
 {
-  "name": "Build a Mood Board using React",
+  "name": "Build a Mood Board",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "dashedName": "lab-mood-board-react",
+  "dashedName": "lab-mood-board",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "673b3d6b7ef7318eef926d5a", "title": "Step 1" }],
+  "challengeOrder": [{ "id": "673b3d6b7ef7318eef926d5a", "title": "Build a Mood Board" }],
   "helpCategory": "HTML-CSS",
   "blockLayout": "link",
   "blockType": "lab"
