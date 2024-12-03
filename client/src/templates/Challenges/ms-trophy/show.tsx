@@ -100,15 +100,6 @@ function MsTrophy(props: MsTrophyProps) {
     initTests,
     updateChallengeMeta
   } = props;
-  initTests(tests);
-  updateChallengeMeta({
-    ...challengeMeta,
-    title,
-    challengeType,
-    helpCategory
-  });
-  challengeMounted(challengeMeta.id);
-  container.current?.focus();
   useEffect(() => {
     const {
       challengeMounted,
@@ -135,7 +126,9 @@ function MsTrophy(props: MsTrophyProps) {
     });
     challengeMounted(challengeMeta.id);
     container.current?.focus();
-  }, [props]);
+    // This effect should be run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSubmit = () => {
     const { setIsProcessing, submitChallenge } = props;
