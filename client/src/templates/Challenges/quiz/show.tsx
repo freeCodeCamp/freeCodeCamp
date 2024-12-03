@@ -160,7 +160,11 @@ const ShowQuiz = ({
   const { nextChallengePath, prevChallengePath } = challengeMeta;
   const container = useRef<HTMLElement | null>(null);
 
-  // `isPassed` is used as a flag to conditionally render the test or submit button.
+  // `isPassed` is used as a flag to conditionally render the finish or submit button.
+  // The difference between `isPassed` and `isChallengeCompleted` is,
+  // the value of `isPassed` is set when campers click the finish quiz button,
+  // while `isChallengeCompleted` comes from the DB and is only set to `true`
+  // when campers click the submit button on the completion modal.
   const [isPassed, setIsPassed] = useState(false);
 
   const [showUnanswered, setShowUnanswered] = useState(false);
@@ -186,8 +190,6 @@ const ShowQuiz = ({
     !isChallengeCompleted &&
     timeUntilCooldownExpires &&
     timeUntilCooldownExpires > 0;
-
-  const isQuizDisabled = isNotAllowedToStartQuiz || isQuizAttemptSubmitting;
 
   // Find the corresponding review block.
   const currentChapter = superBlockStructure.chapters.find(
@@ -246,8 +248,17 @@ const ShowQuiz = ({
       openCompletionModal();
       setIsPassed(true);
     },
-    onFailure: () => setIsPassed(false)
+    onFailure: () => {
+      setIsPassed(false);
+      submitQuizAttempt({
+        challengeId,
+        quizId: quizId.toString()
+      });
+    }
   });
+
+  const isQuizDisabled =
+    isNotAllowedToStartQuiz || isQuizAttemptSubmitting || validated;
 
   const unanswered = quizData.reduce<number[]>(
     (acc, curr, id) => (curr.selectedAnswer == null ? [...acc, id + 1] : acc),
@@ -296,10 +307,6 @@ const ShowQuiz = ({
   const handleFinishQuizModalBtnClick = () => {
     validateAnswers();
     closeFinishQuizModal();
-    submitQuizAttempt({
-      challengeId,
-      quizId: quizId.toString()
-    });
   };
 
   const handleSubmitAndGo = () => {
@@ -314,6 +321,20 @@ const ShowQuiz = ({
     setExitConfirmed(true);
     void navigate(blockHashSlug);
     closeExitQuizModal();
+  };
+
+  // If campers pass the quiz, we don't immediately submit the quiz attempt.
+  // Instead, we wait until they click the submit button on the completion modal
+  // so that the block completion and quiz attempt are recorded at the same time.
+  // Otherwise, there could be a case where campers close the completion modal without submitting
+  // while the attempt has been recorded,
+  // and the next time they visit the quiz, they would not be allowed to take it
+  // due to `isChallengeCompleted` being `false` and recent attempt being truthy.
+  const handleCompletionModalBtnClick = () => {
+    submitQuizAttempt({
+      challengeId,
+      quizId: quizId.toString()
+    });
   };
 
   const onWindowClose = useCallback(
@@ -459,7 +480,7 @@ const ShowQuiz = ({
             </Col>
           </Row>
         </Container>
-        <CompletionModal />
+        <CompletionModal onComplete={handleCompletionModalBtnClick} />
         <ExitQuizModal onExit={handleExitQuizModalBtnClick} />
         <FinishQuizModal onFinish={handleFinishQuizModalBtnClick} />
       </LearnLayout>
