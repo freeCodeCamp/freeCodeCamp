@@ -239,7 +239,8 @@ export const embedFilesInHtml = async function (challengeFiles) {
   const { indexHtml, stylesCss, scriptJs, indexJsx, indexTs } =
     challengeFilesToObject(challengeFiles);
 
-  const embedStylesAndScript = (documentElement, contentDocument) => {
+  const embedStylesAndScript = contentDocument => {
+    const documentElement = contentDocument.documentElement;
     const link =
       documentElement.querySelector('link[href="styles.css"]') ??
       documentElement.querySelector('link[href="./styles.css"]');
@@ -319,12 +320,13 @@ const parseAndTransform = async function (transform, contents) {
   const parser = new DOMParser();
   const newDoc = parser.parseFromString(contents, 'text/html');
 
-  return await transform(newDoc.documentElement, newDoc);
+  return await transform(newDoc);
 };
 
 const getHtmlTranspiler = scriptOptions =>
   async function (file) {
-    const transform = async documentElement => {
+    const transform = async contentDocument => {
+      const documentElement = contentDocument.documentElement;
       await Promise.all([
         transformSASS(documentElement),
         transformScript(documentElement, scriptOptions)
