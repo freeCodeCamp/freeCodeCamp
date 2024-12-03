@@ -63,6 +63,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-html",
           "blocks": [{ "dashedName": "review-html" }]
         }
@@ -265,6 +266,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-css",
           "blocks": [{ "dashedName": "review-css" }]
         }
@@ -462,12 +464,12 @@
           ]
         },
         {
-          "dashedName": "maps-sets-and-json",
+          "dashedName": "maps-and-sets",
           "blocks": [
             { "dashedName": "lecture-working-with-maps-and-sets" },
             { "dashedName": "workshop-plant-nursery-catalog" },
-            { "dashedName": "review-javascript-maps-sets-and-json" },
-            { "dashedName": "quiz-javascript-maps-sets-and-json" }
+            { "dashedName": "review-javascript-maps-and-sets" },
+            { "dashedName": "quiz-javascript-maps-and-sets" }
           ]
         },
         {
@@ -526,6 +528,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-javascript",
           "blocks": [{ "dashedName": "review-javascript" }]
         }
@@ -581,6 +584,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-front-end-libraries",
           "blocks": [{ "dashedName": "review-front-end-libraries" }]
         }
@@ -646,15 +650,18 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-relational-databases",
           "blocks": [{ "dashedName": "review-relational-databases" }]
         }
       ]
     },
     {
+      "chapterType": "exam",
       "dashedName": "exam-certified-full-stack-developer",
       "modules": [
         {
+          "moduleType": "exam",
           "dashedName": "exam-certified-full-stack-developer",
           "blocks": [{ "dashedName": "exam-certified-full-stack-developer" }]
         }
