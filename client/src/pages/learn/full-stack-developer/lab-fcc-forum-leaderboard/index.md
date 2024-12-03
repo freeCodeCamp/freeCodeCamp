@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build an fCC Forum Leaderboard
 
-For this lab you will practice asynchronous JavaScript coding your own freeCodeCamp forum leaderboard.
+For this lab you will practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard.

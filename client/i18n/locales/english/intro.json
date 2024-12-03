@@ -3257,7 +3257,7 @@
       "lab-fcc-forum-leaderboard": {
         "title": "Build an fCC Forum Leaderboard",
         "intro": [
-          "For this lab you will practice asynchronous JavaScript coding your own freeCodeCamp forum leaderboard."
+          "For this lab you will practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
         ]
       },
       "review-asynchronous-javascript": {
