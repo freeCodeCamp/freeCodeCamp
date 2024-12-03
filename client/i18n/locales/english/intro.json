@@ -3298,9 +3298,11 @@
         ]
       },
       "cdfr": { "title": "263", "intro": [] },
-      "lab-mood-board-react": {
-        "title": "Build a Mood Board using React",
-        "intro": ["In this lab, you will create a mood board using React props"]
+      "lab-mood-board": {
+        "title": "Build a Mood Board",
+        "intro": [
+          "In this lab, you will create a mood board using a React with props."
+        ]
       },
       "review-react-basics": {
         "title": "React Basics Review",
