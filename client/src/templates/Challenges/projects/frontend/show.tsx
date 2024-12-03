@@ -101,7 +101,9 @@ const ShowFrontEndProject = (props: ProjectProps) => {
     });
     challengeMounted(challengeMeta.id);
     container.current?.focus();
-  }, [props]);
+    // This effect should be run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const {
     data: {
