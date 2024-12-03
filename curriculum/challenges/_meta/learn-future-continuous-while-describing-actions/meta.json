@@ -6,8 +6,40 @@
   "superBlock": "b1-english-for-developers",
   "challengeOrder": [
     {
-      "id": "66609fae379db25a47f42e20",
-      "title": "Dialogue 1: I'm Tom"
+      "id": "674f0332ec59564081ec8b87",
+      "title": "Dialogue 1: Scheduled Maintenance to Prevent DoS Attacks"
+    },
+    {
+      "id": "674f0495e5f4b0485ed38cd4",
+      "title": "Task 1"
+    },
+    {
+      "id": "674f06b4b4d6eb4f6139ad61",
+      "title": "Task 2"
+    },
+    {
+      "id": "674f08fde55c2356b37e9b69",
+      "title": "Task 3"
+    },
+    {
+      "id": "674f0afcd85abc5d478e150c",
+      "title": "Task 4"
+    },
+    {
+      "id": "674f0d0dec2922641ce2c8e9",
+      "title": "Task 5"
+    },
+    {
+      "id": "674f0f8e84b4c76c0f6ae6d3",
+      "title": "Task 6"
+    },
+    {
+      "id": "674f1a33acb7717de4842822",
+      "title": "Task 7"
+    },
+    {
+      "id": "674f1ba48f50b78294f89089",
+      "title": "Task 8"
     }
   ],
   "helpCategory": "English",
