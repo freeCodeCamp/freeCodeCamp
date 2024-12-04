@@ -7,8 +7,6 @@ import { getEditors } from './utils/editor';
 const course =
   '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 const enableKeyboardShortcuts = async (request: APIRequestContext) => {
   const res = await authedRequest({
     request,

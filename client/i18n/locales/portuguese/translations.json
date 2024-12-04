@@ -147,7 +147,7 @@
         },
         {
           "title": "Educação gratuita",
-          "description": "Aprenda com nossa instituição beneficente e economize dinheiro em sua educação. Sem pagamentos. Sem custos ocultos."
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
         },
         {
           "title": "Certificações extensivas",
@@ -618,8 +618,8 @@
     "progress-modal-cta-10": "Doe agora para nos ajudar a desenvolver certificações de programação profissional gratuitas para todos.",
     "help-us-reach-20k": "Doe agora para ajudar nossa instituição beneficente a atingir nosso objetivo de chegar a 20.000 apoiadores mensais neste ano.",
     "beta-certification": "Esta certificação está atualmente em versão beta. Considere doar para apoiar a conclusão do seu desenvolvimento.",
-    "unfinished-certification": "This certification is currently in active development. While there isn't a claimable certification available at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
-    "consider-donating": "Please consider donating to support the completion of its development.",
+    "unfinished-certification": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível no momento, uma estará disponível em breve. Enquanto isso, você pode explorar os cursos que criamos abaixo.",
+    "consider-donating": "Considere doar para apoiar a conclusão do desenvolvimento da certificação.",
     "help-us-develop": "Ajude-nos a desenvolver certificações de programação profissional gratuitas para todos.",
     "nicely-done": "Bom trabalho. Você acabou de completar {{block}}.",
     "credit-card": "Cartão de crédito",
@@ -712,6 +712,8 @@
     "help-millions-learn": "Ajude milhões de pessoas a aprender",
     "reach-goals-faster": "Alcance seus objetivos mais rapidamente",
     "remove-distractions": "Remova distrações",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "Esse é um anúncio animado de 20 segundos para incentivar campers a se tornarem apoiadores do freeCodeCamp. A animação começa com um urso de pelúcia que se torna um apoiador. Como resultado, os pop-ups de distração desaparecem e o urso completa todos os seus objetivos. Então, termina o curso e se torna um super-herói da educação que ajuda as pessoas em todo o mundo.",
     "animation-countdown": "Esta animação será interrompida após {{secondsRemaining}} segundos."
   },
@@ -782,7 +784,7 @@
     "heart": "Coração",
     "initial": "Inicial",
     "input-reset": "Limpar termos de pesquisa",
-    "input-search": "Submit search terms",
+    "input-search": "Enviar termos de pesquisa",
     "info": "Informações introdutórias",
     "spacer": "Espaçador",
     "toggle": "Alternar marcação",
@@ -854,7 +856,7 @@
     "expired-link": "Parece que o link que você clicou expirou. Solicite um novo link para fazer login",
     "signin-success": "Sucesso! Você entrou com sua conta. Boa programação!",
     "social-auth-gone": "Estamos abandonando a autenticação social por motivos de privacidade. Da próxima vez, recomendamos que você entre com o seu endereço de e-mail: {{email}}.",
-    "name-needed": "We need your name to put it on your certification. Please add your name in your profile and click save. Then we can issue your certification.",
+    "name-needed": "Precisamos do seu nome para que possamos colocá-lo na sua certificação. Adicione seu nome ao seu perfil e clique em Salvar. Depois disso, poderemos emitir sua certificação.",
     "incomplete-steps": "Parece que você não completou as etapas necessárias. Complete os projetos necessários para reivindicar a certificação {{name}}.",
     "already-claimed": "Parece que você já solicitou a certificação {{name}}",
     "cert-claim-success": "@{{username}}, você solicitou a certificação {{name}} com sucesso! Parabéns em nome da equipe do freeCodeCamp.org!",

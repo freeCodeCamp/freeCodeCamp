@@ -28,6 +28,7 @@ const protectTimeout = 100;
 const testProtectTimeout = 1500;
 const loopsPerTimeoutCheck = 100;
 const testLoopsPerTimeoutCheck = 2000;
+const MODULE_TRANSFORM_PLUGIN = 'transform-modules-umd';
 
 function loopProtectCB(line) {
   console.log(
@@ -132,6 +133,18 @@ const getJSXTranspiler = loopProtectOptions => async challengeFile => {
   );
 };
 
+const getJSXModuleTranspiler = loopProtectOptions => async challengeFile => {
+  await loadBabel();
+  await loadPresetReact();
+  const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
+  const babelOptions = {
+    ...baseOptions,
+    plugins: [...baseOptions.plugins, MODULE_TRANSFORM_PLUGIN],
+    moduleId: 'index' // TODO: this should be dynamic
+  };
+  return transformContents(babelTransformCode(babelOptions), challengeFile);
+};
+
 const getTSTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await checkTSServiceIsReady();
@@ -147,7 +160,15 @@ const createTranspiler = loopProtectOptions => {
     [testJS, getJSTranspiler(loopProtectOptions)],
     [testJSX, getJSXTranspiler(loopProtectOptions)],
     [testTypeScript, getTSTranspiler(loopProtectOptions)],
-    [testHTML, transformHtml],
+    [testHTML, getHtmlTranspiler({ useModules: false })],
+    [stubTrue, identity]
+  ]);
+};
+
+const createModuleTransformer = loopProtectOptions => {
+  return cond([
+    [testJSX, getJSXModuleTranspiler(loopProtectOptions)],
+    [testHTML, getHtmlTranspiler({ useModules: true })],
     [stubTrue, identity]
   ]);
 };
@@ -186,7 +207,7 @@ async function transformSASS(documentElement) {
   );
 }
 
-async function transformScript(documentElement) {
+async function transformScript(documentElement, { useModules }) {
   await loadBabel();
   await loadPresetEnv();
   await loadPresetReact();
@@ -196,12 +217,19 @@ async function transformScript(documentElement) {
     // TODO: make the use of JSX conditional on more than just the script type.
     // It should only be used for React challenges since it would be confusing
     // for learners to see the results of a transformation they didn't ask for.
-    const options = isBabel ? presetsJSX : presetsJS;
+    const baseOptions = isBabel ? presetsJSX : presetsJS;
 
-    if (isBabel) script.removeAttribute('type'); // otherwise the browser will ignore the script
-    script.innerHTML = babelTransformCode(getBabelOptions(options))(
-      script.innerHTML
-    );
+    const options = {
+      ...baseOptions,
+      ...(useModules && { plugins: [MODULE_TRANSFORM_PLUGIN] })
+    };
+
+    // The type has to be removed, otherwise the browser will ignore the script.
+    // However, if we're importing modules, the type will be removed when the
+    // scripts are embedded in the HTML.
+    if (isBabel && !useModules) script.removeAttribute('type');
+
+    script.innerHTML = babelTransformCode(options)(script.innerHTML);
   });
 }
 
@@ -222,6 +250,15 @@ export const embedFilesInHtml = async function (challengeFiles) {
     const tsScript =
       documentElement.querySelector('script[src="index.ts"]') ??
       documentElement.querySelector('script[src="./index.ts"]');
+
+    const jsxScript =
+      documentElement.querySelector(
+        `script[data-plugins="${MODULE_TRANSFORM_PLUGIN}"][type="text/babel"][src="index.jsx"]`
+      ) ??
+      documentElement.querySelector(
+        `script[data-plugins="${MODULE_TRANSFORM_PLUGIN}"][type="text/babel"][src="./index.jsx"]`
+      );
+
     if (link) {
       const style = contentDocument.createElement('style');
       style.classList.add('fcc-injected-styles');
@@ -241,6 +278,13 @@ export const embedFilesInHtml = async function (challengeFiles) {
       tsScript.innerHTML = indexTs?.contents;
       tsScript.removeAttribute('src');
       tsScript.setAttribute('data-src', 'index.ts');
+    }
+    if (jsxScript) {
+      jsxScript.innerHTML = indexJsx?.contents;
+      jsxScript.removeAttribute('src');
+      jsxScript.removeAttribute('type');
+      jsxScript.setAttribute('data-src', 'index.jsx');
+      jsxScript.setAttribute('data-type', 'text/babel');
     }
     return documentElement.innerHTML;
   };
@@ -278,24 +322,31 @@ const parseAndTransform = async function (transform, contents) {
   return await transform(newDoc.documentElement, newDoc);
 };
 
-const transformHtml = async function (file) {
-  const transform = async documentElement => {
-    await Promise.all([
-      transformSASS(documentElement),
-      transformScript(documentElement)
-    ]);
-    return documentElement.innerHTML;
-  };
+const getHtmlTranspiler = scriptOptions =>
+  async function (file) {
+    const transform = async documentElement => {
+      await Promise.all([
+        transformSASS(documentElement),
+        transformScript(documentElement, scriptOptions)
+      ]);
+      return documentElement.innerHTML;
+    };
 
-  const contents = await parseAndTransform(transform, file.contents);
-  return transformContents(() => contents, file);
-};
+    const contents = await parseAndTransform(transform, file.contents);
+    return transformContents(() => contents, file);
+  };
 
 export const getTransformers = loopProtectOptions => [
   createSource,
   replaceNBSP,
   createTranspiler(loopProtectOptions),
   partial(compileHeadTail, '')
+];
+
+export const getMultifileJSXTransformers = loopProtectOptions => [
+  createSource,
+  replaceNBSP,
+  createModuleTransformer(loopProtectOptions)
 ];
 
 export const getPythonTransformers = () => [

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useFeature } from '@growthbook/growthbook-react';
 import { Col, Row, Modal, Spacer } from '@freecodecamp/ui';
 import { closeDonationModal } from '../../redux/actions';
 import { PaymentContext } from '../../../../shared/config/donation-settings'; //
 import donationAnimation from '../../assets/images/donation-bear-animation.svg';
+import donationAnimationB from '../../assets/images/new-bear-animation.svg';
 import supporterBear from '../../assets/images/supporter-bear.svg';
 import callGA from '../../analytics/call-ga';
 import MultiTierDonationForm from './multi-tier-donation-form';
@@ -127,6 +129,7 @@ const AnimationContainer = ({
 }: {
   secondsRemaining: number;
 }) => {
+  const newBearAnimation = useFeature('new-bear-animation').on;
   const { t } = useTranslation();
   return (
     <>
@@ -136,26 +139,44 @@ const AnimationContainer = ({
           {t('donate.animation-countdown', { secondsRemaining })}
         </span>
       </div>
-
       <div className='donation-animation-container' aria-hidden='true'>
         <div className='donation-animation-bullet-points'>
-          <p className='donation-animation-bullet-1'>
-            {t('donate.become-supporter')}
-          </p>
-          <p className='donation-animation-bullet-2'>
-            {t('donate.remove-distractions')}
-          </p>
-          <p className='donation-animation-bullet-3'>
-            {t('donate.reach-goals-faster')}
-          </p>
-          <p className='donation-animation-bullet-4'>
-            {t('donate.help-millions-learn')}
-          </p>
+          {newBearAnimation ? (
+            <>
+              <p className='donation-animation-bullet-1-b'>
+                {t('donate.become-supporter')}
+              </p>
+              <p className='donation-animation-bullet-2-b'>
+                {t('donate.remove-interruptions')}
+              </p>
+              <p className='donation-animation-bullet-3-b'>
+                {t('donate.acquire-skills-faster')}
+              </p>
+              <p className='donation-animation-bullet-4-b'>
+                {t('donate.help-millions-learn')}
+              </p>
+            </>
+          ) : (
+            <>
+              <p className='donation-animation-bullet-1'>
+                {t('donate.become-supporter')}
+              </p>
+              <p className='donation-animation-bullet-2'>
+                {t('donate.remove-distractions')}
+              </p>
+              <p className='donation-animation-bullet-3'>
+                {t('donate.reach-goals-faster')}
+              </p>
+              <p className='donation-animation-bullet-4'>
+                {t('donate.help-millions-learn')}
+              </p>
+            </>
+          )}
         </div>
         <img
           key={Date.now()}
           alt=''
-          src={donationAnimation}
+          src={newBearAnimation ? donationAnimationB : donationAnimation}
           id={'donation-animation'}
           data-playwright-test-label='donation-animation'
         />
