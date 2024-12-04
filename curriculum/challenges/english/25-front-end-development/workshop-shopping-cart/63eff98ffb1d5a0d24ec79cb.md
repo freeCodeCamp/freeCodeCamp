@@ -2,7 +2,7 @@
 id: 63eff98ffb1d5a0d24ec79cb
 title: Step 26
 challengeType: 0
-dashedName: step-26
+dashedName: 63eff98ffb1d5a0d24ec79cb
 ---
 
 # --description--

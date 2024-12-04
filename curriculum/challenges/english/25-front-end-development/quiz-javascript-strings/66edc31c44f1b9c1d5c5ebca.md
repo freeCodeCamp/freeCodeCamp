@@ -2,7 +2,7 @@
 id: 66edc31c44f1b9c1d5c5ebca
 title: JavaScript Strings Quiz
 challengeType: 8
-dashedName: quiz-javascript-strings
+dashedName: 66edc31c44f1b9c1d5c5ebca
 ---
 
 # --description--

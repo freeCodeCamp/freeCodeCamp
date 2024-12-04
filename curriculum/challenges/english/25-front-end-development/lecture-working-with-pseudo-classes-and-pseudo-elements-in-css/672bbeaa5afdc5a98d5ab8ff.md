@@ -3,7 +3,7 @@ id: 672bbeaa5afdc5a98d5ab8ff
 title: What Are Examples of Location Pseudo-classes?
 challengeType: 11
 videoId: i-J4xVUGY5c
-dashedName: what-are-examples-of-location-pseudo-classes
+dashedName: 672bbeaa5afdc5a98d5ab8ff
 ---
 
 # --description--

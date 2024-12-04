@@ -2,7 +2,7 @@
 id: 66ed8ffcf45ce3ece4053eb5
 title: CSS Positioning Quiz
 challengeType: 8
-dashedName: quiz-css-positioning
+dashedName: 66ed8ffcf45ce3ece4053eb5
 ---
 
 # --description--

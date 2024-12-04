@@ -2,7 +2,7 @@
 id: 66ed8fc1f45ce3ece4053ead
 title: CSS Accessibility Quiz
 challengeType: 8
-dashedName: quiz-css-accessibility
+dashedName: 66ed8fc1f45ce3ece4053ead
 ---
 
 # --description--

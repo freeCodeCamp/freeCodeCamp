@@ -3,7 +3,7 @@ id: 6732b28eeadda1158cdbff7b
 title: How Can You Check if an Array Contains a Certain Value?
 challengeType: 11
 videoId: nVAaxZ34khk
-dashedName: how-can-you-check-if-an-array-contains-a-certain-value
+dashedName: 6732b28eeadda1158cdbff7b
 ---
 
 # --description--

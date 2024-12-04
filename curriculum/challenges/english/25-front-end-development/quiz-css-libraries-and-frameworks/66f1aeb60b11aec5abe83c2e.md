@@ -2,7 +2,7 @@
 id: 66f1aeb60b11aec5abe83c2e
 title: CSS Libraries and Frameworks Quiz
 challengeType: 8
-dashedName: quiz-css-libraries-and-frameworks
+dashedName: 66f1aeb60b11aec5abe83c2e
 ---
 
 # --description--

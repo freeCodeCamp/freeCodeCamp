@@ -2,7 +2,7 @@
 id: 66edcdd18a4ef8df16e6bb7e
 title: JavaScript Higher Order Functions Quiz
 challengeType: 8
-dashedName: quiz-javascript-higher-order-functions
+dashedName: 66edcdd18a4ef8df16e6bb7e
 ---
 
 # --description--

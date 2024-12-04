@@ -2,7 +2,7 @@
 id: 60fadce90f85c50d0bb0dd4f
 title: Step 42
 challengeType: 0
-dashedName: step-42
+dashedName: 60fadce90f85c50d0bb0dd4f
 ---
 
 # --description--

@@ -3,7 +3,7 @@ id: 672bbe9171a5cca90f2edeea
 title: What Are Examples of Element User Action Pseudo-classes?
 challengeType: 11
 videoId: M80PYgBglmY
-dashedName: what-are-examples-of-element-user-action-pseudo-classes
+dashedName: 672bbe9171a5cca90f2edeea
 ---
 
 # --description--

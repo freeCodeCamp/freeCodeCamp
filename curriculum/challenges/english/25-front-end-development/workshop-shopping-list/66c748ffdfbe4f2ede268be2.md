@@ -2,7 +2,7 @@
 id: 66c748ffdfbe4f2ede268be2
 title: Step 20
 challengeType: 1
-dashedName: step-20
+dashedName: 66c748ffdfbe4f2ede268be2
 ---
 
 # --description--

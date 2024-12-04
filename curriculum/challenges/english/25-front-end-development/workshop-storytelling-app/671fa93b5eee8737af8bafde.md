@@ -2,7 +2,7 @@
 id: 671fa93b5eee8737af8bafde
 title: Step 10
 challengeType: 0
-dashedName: step-10
+dashedName: 671fa93b5eee8737af8bafde
 ---
 
 # --description--

@@ -2,7 +2,7 @@
 id: 5f46ede1ff8fec5ba656b44c
 title: Step 77
 challengeType: 0
-dashedName: step-77
+dashedName: 5f46ede1ff8fec5ba656b44c
 ---
 
 # --description--

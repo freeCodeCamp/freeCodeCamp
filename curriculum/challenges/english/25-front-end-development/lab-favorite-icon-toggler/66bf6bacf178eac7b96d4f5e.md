@@ -2,7 +2,7 @@
 id: 66bf6bacf178eac7b96d4f5e
 title: Build a Favorite Icon Toggler
 challengeType: 14
-dashedName: build-a-favorite-icon-toggler
+dashedName: 66bf6bacf178eac7b96d4f5e
 demoType: onClick
 ---
 

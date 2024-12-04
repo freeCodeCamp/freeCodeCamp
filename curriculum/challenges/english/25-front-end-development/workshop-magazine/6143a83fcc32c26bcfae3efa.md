@@ -2,7 +2,7 @@
 id: 6143a83fcc32c26bcfae3efa
 title: Step 17
 challengeType: 0
-dashedName: step-17
+dashedName: 6143a83fcc32c26bcfae3efa
 ---
 
 # --description--

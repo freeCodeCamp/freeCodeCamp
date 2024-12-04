@@ -3,7 +3,7 @@ id: 5f5904ac738bc2fa9efecf5a
 title: Build Five Programs
 challengeType: 12
 url: freeCodeCamp/learn-bash-scripting-by-building-five-programs
-dashedName: build-five-programs
+dashedName: 5f5904ac738bc2fa9efecf5a
 ---
 
 # --description--

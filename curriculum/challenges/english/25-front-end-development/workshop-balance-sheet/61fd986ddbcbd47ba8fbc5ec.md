@@ -2,7 +2,7 @@
 id: 61fd986ddbcbd47ba8fbc5ec
 title: Step 23
 challengeType: 0
-dashedName: step-23
+dashedName: 61fd986ddbcbd47ba8fbc5ec
 ---
 
 # --description--

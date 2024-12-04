@@ -2,7 +2,7 @@
 id: 5dfb5ecbeacea3f48c6300b1
 title: Step 23
 challengeType: 0
-dashedName: step-23
+dashedName: 5dfb5ecbeacea3f48c6300b1
 ---
 
 # --description--

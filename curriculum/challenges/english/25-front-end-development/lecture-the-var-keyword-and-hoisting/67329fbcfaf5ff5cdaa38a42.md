@@ -3,7 +3,7 @@ id: 67329fbcfaf5ff5cdaa38a42
 title: What Is the var Keyword, and Why Is It No Longer Suggested to Use It?
 challengeType: 11
 videoId: nVAaxZ34khk
-dashedName: what-is-the-var-keyword-and-why-is-it-no-longer-suggested-to-use-it
+dashedName: 67329fbcfaf5ff5cdaa38a42
 ---
 
 # --description--

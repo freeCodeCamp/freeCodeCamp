@@ -2,7 +2,7 @@
 id: 66ed8fb9f45ce3ece4053eac
 title: Computer Basics Quiz
 challengeType: 8
-dashedName: quiz-computer-basics
+dashedName: 66ed8fb9f45ce3ece4053eac
 ---
 
 # --description--

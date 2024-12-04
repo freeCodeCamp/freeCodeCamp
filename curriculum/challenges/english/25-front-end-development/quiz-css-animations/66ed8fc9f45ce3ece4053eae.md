@@ -2,7 +2,7 @@
 id: 66ed8fc9f45ce3ece4053eae
 title: CSS Animations Quiz
 challengeType: 8
-dashedName: quiz-css-animations
+dashedName: 66ed8fc9f45ce3ece4053eae
 ---
 
 # --description--
