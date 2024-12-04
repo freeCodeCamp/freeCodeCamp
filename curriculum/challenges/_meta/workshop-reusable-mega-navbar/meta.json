@@ -1,6 +1,7 @@
 {
-  "name": "Reusable Mega Navbar",
+  "name": "Build a Reusable Mega Navbar",
   "isUpcomingChange": true,
+  "blockType": "workshop",
   "blockLayout": "challenge-grid",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
