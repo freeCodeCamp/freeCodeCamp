@@ -205,4 +205,59 @@ test.describe('Quiz challenge', () => {
       page.locator("[role='radio'][aria-disabled='true']")
     ).toHaveCount(4 * 20);
   });
+
+  test("should not allow user to complete the block when they don't pass the quiz", async ({
+    page
+  }) => {
+    test.setTimeout(20000);
+
+    // Wait for the page content to render
+    await expect(page.getByRole('radiogroup')).toHaveCount(20);
+
+    const radioGroups = await page.getByRole('radiogroup').all();
+
+    // Answer only 10 questions correctly.
+    for (let i = 0; i < radioGroups.length; i++) {
+      if (i <= 9) {
+        await radioGroups[i].locator("[role='radio'][data-value='4']").click();
+      } else {
+        await radioGroups[i].locator("[role='radio'][data-value='1']").click();
+      }
+    }
+
+    await page.getByRole('button', { name: 'Finish the quiz' }).click();
+    await page.getByRole('button', { name: 'Yes, I am finished' }).click();
+
+    // Wait for the finish quiz modal to close
+    await expect(
+      page.getByRole('dialog', { name: 'Finish Quiz' })
+    ).toBeHidden();
+
+    await expect(
+      page.getByText('You have 10 out of 20 questions correct.')
+    ).toBeVisible();
+
+    // We currently show this message twice, one at the bottom, and one at the top.
+    await expect(
+      page.getByText('Review the material and try again later.')
+    ).toHaveCount(2);
+
+    await expect(
+      page.getByRole('link', { name: 'the material' }).first()
+    ).toHaveAttribute('href', '/learn/full-stack-developer/#review-basic-html');
+    await expect(
+      page.getByRole('link', { name: 'the material' }).last()
+    ).toHaveAttribute('href', '/learn/full-stack-developer/#review-basic-html');
+
+    await expect(
+      page.getByRole('button', { name: 'Finish the quiz' })
+    ).toBeDisabled();
+
+    // Find all of the disabled radio elements on the page,
+    // and check if the count matches the total number of quiz answers (4 answers x 20 questions).
+    // This approach is much faster than querying each radio on the page and check if they are disabled.
+    await expect(
+      page.locator("[role='radio'][aria-disabled='true']")
+    ).toHaveCount(4 * 20);
+  });
 });
