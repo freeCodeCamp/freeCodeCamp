@@ -3292,7 +3292,12 @@
           "In these lecture videos, you will learn about working with data in React."
         ]
       },
-      "cdfr": { "title": "263", "intro": [] },
+      "workshop-reusable-profile-card-component": {
+        "title": "Build a Reusable Profile Card Component",
+        "intro": [
+          "In this workshop, you will learn how to work with props by building a reusable profile card component."
+        ]
+      },
       "bgtd": { "title": "264", "intro": [] },
       "ascd": { "title": "265", "intro": [] },
       "quiz-react-basics": {
@@ -3592,12 +3597,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-reusable-profile-card-component": {
-        "title": "Reusable Profile Card Component",
-        "intro": [
-          "In this workshop, you will learn how to work with props by building a reusable profile card component."
-        ]
       }
     }
   },
