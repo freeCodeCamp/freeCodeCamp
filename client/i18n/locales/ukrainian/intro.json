@@ -1728,7 +1728,7 @@
       "form-validation": "Валідація форм",
       "javascript-dates": "Дати",
       "audio-and-video-events": "Аудіо- та відеоподії",
-      "maps-sets-and-json": "Map та set",
+      "maps-and-sets": "Maps and Sets",
       "localstorage-and-crud-operations": "localStorage та операції CRUD",
       "classes-and-the-this-keyword": "Класи",
       "recursion": "Рекурсія",
@@ -3096,16 +3096,17 @@
         "title": "227",
         "intro": []
       },
-      "review-javascript-maps-sets-and-json": {
-        "title": "Повторення map, set та JSON в JavaScript",
+      "review-javascript-maps-and-sets": {
+        "title": "JavaScript Maps and Sets Review",
         "intro": [
-          "Пригадайте поняття з теми «Map, set та JSON в JavaScript», щоб підготуватись до тесту."
+          "Before you are quizzed on JS Maps and Sets, you first need to review.",
+          "Open up this page to review concepts such as the <code>Map</code> and <code>Set</code> objects, as well as WeakSet and WeakMap."
         ]
       },
-      "quiz-javascript-maps-sets-and-json": {
-        "title": "Тест «Map, set та JSON в JavaScript»",
+      "quiz-javascript-maps-and-sets": {
+        "title": "JavaScript Maps and Sets Quiz",
         "intro": [
-          "Перевірте, що ви дізнались про map, set та JSON в JavaScript."
+          "Test what you've learned in this quiz on JavaScript Maps and Sets."
         ]
       },
       "lecture-working-with-client-side-storage-and-crud-operations": {
