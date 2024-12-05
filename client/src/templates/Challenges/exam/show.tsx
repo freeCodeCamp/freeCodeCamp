@@ -218,17 +218,20 @@ function ShowExam(props: ShowExamProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const stopWindowClose = (event: Event) => {
+  // Normally you would clear listeners in a useEffect cleanup function, but we
+  // need to set them in the runExam function (rather than in a useEffect). The
+  // refs make them stable across renders and thus removable.
+  const stopWindowCloseRef = useRef((event: Event) => {
     event.preventDefault();
     alert(props.t('misc.navigation-warning'));
-  };
+  });
 
-  const stopBrowserBack = (event: Event) => {
+  const stopBrowserBackRef = useRef((event: Event) => {
     event.preventDefault();
     window.history.forward();
     // TODO: useTranslation
     alert(props.t('misc.navigation-warning'));
-  };
+  });
 
   const runExam = async () => {
     // TODO: show loader
@@ -265,8 +268,8 @@ function ShowExam(props: ShowExamProps) {
 
       props.startExam();
 
-      window.addEventListener('beforeunload', stopWindowClose);
-      window.addEventListener('popstate', stopBrowserBack);
+      window.addEventListener('beforeunload', stopWindowCloseRef.current);
+      window.addEventListener('popstate', stopBrowserBackRef.current);
     } else {
       createFlashMessage({
         type: 'danger',
@@ -296,8 +299,8 @@ function ShowExam(props: ShowExamProps) {
     setExamTimeInSeconds(0);
     setCurrentQuestionIndex(0);
 
-    window.removeEventListener('beforeunload', stopWindowClose);
-    window.removeEventListener('popstate', stopBrowserBack);
+    window.removeEventListener('beforeunload', stopWindowCloseRef.current);
+    window.removeEventListener('popstate', stopBrowserBackRef.current);
 
     props.clearExamResults();
     props.closeExitExamModal();
