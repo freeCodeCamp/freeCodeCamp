@@ -117,14 +117,14 @@ class MyComponent extends React.Component {
 
   }
   // Change code above this line
-  handleEnter() {
+  handleEnter(message) {
     this.setState((state) => ({
-      message: state.message + 'You pressed the enter key! '
+      message: state.message + message,
     }));
   }
   handleKeyPress(event) {
     if (event.keyCode === 13) {
-      this.handleEnter();
+      this.handleEnter('You pressed the enter key! ');
     }
   }
   render() {
@@ -158,14 +158,14 @@ class MyComponent extends React.Component {
     document.removeEventListener('keydown', this.handleKeyPress);
     // Change code above this line
   }
-  handleEnter() {
+  handleEnter(message) {
     this.setState((state) => ({
-      message: state.message + 'You pressed the enter key! '
+      message: state.message + message,
     }));
   }
   handleKeyPress(event) {
     if (event.keyCode === 13) {
-      this.handleEnter();
+      this.handleEnter('You pressed the enter key! ');
     }
   }
   render() {
