@@ -42,6 +42,10 @@ describe('/exam-environment/', () => {
         res.body.examEnvironmentAuthorizationToken;
     });
 
+    afterAll(async () => {
+      await mock.clearEnvExam();
+    });
+
     describe('POST /exam-environment/exam/attempt', () => {
       afterEach(async () => {
         await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
@@ -569,19 +573,17 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(200);
 
         expect(res.body).toStrictEqual({
-          data: {
-            exams: [
-              {
-                canTake: true,
-                config: {
-                  name: mock.exam.config.name,
-                  note: mock.exam.config.note,
-                  totalTimeInMS: mock.exam.config.totalTimeInMS
-                },
-                id: mock.examId
-              }
-            ]
-          }
+          exams: [
+            {
+              canTake: true,
+              config: {
+                name: mock.exam.config.name,
+                note: mock.exam.config.note,
+                totalTimeInMS: mock.exam.config.totalTimeInMS
+              },
+              id: mock.examId
+            }
+          ]
         });
       });
     });

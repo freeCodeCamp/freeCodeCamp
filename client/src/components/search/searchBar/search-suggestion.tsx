@@ -1,6 +1,6 @@
 import React from 'react';
-import { Hit } from 'react-instantsearch-core';
-import { Highlight } from 'react-instantsearch-dom';
+import { Highlight } from 'react-instantsearch';
+import type { Hit } from './types';
 
 interface SuggestionProps {
   hit: Hit;
@@ -13,14 +13,9 @@ const Suggestion = ({
   handleMouseEnter,
   handleMouseLeave
 }: SuggestionProps): JSX.Element => {
-  const dropdownFooter = hit.objectID.includes('footer-');
   return (
     <a
-      className={
-        dropdownFooter
-          ? 'fcc_suggestion_footer fcc_suggestion_item'
-          : 'fcc_suggestion_item'
-      }
+      className={'fcc_suggestion_item'}
       href={hit.url}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -28,11 +23,7 @@ const Suggestion = ({
       target='_blank'
     >
       <span className='hit-name'>
-        {dropdownFooter ? (
-          <Highlight attribute='query' hit={hit} tagName='strong' />
-        ) : (
-          <Highlight attribute='title' hit={hit} />
-        )}
+        <Highlight attribute='title' hit={hit} />
       </span>
     </a>
   );

@@ -96,6 +96,8 @@
     "exit": "Sair",
     "finish-exam": "Finalizar o exame",
     "finish": "Finalizar",
+    "exit-quiz": "Sair do questionário",
+    "finish-quiz": "Finalizar o questionário",
     "submit-exam-results": "Enviar meus resultados",
     "verify-trophy": "Verificar troféu",
     "link-account": "Vincular conta",
@@ -145,7 +147,7 @@
         },
         {
           "title": "Educação gratuita",
-          "description": "Aprenda com nossa instituição beneficente e economize dinheiro em sua educação. Sem pagamentos. Sem custos ocultos."
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
         },
         {
           "title": "Certificações extensivas",
@@ -518,7 +520,15 @@
       "correct-answer": "Correto!",
       "incorrect-answer": "Incorreto.",
       "unanswered-questions": "As seguintes perguntas não foram respondidas: {{ unansweredQuestions }}. Você precisa responder a todas as perguntas.",
-      "have-n-correct-questions": "Você acertou {{ correctAnswerCount }} de {{ total }} perguntas."
+      "have-n-correct-questions": "Você acertou {{ correctAnswerCount }} de {{ total }} perguntas.",
+      "finish-modal-header": "Terminar o questionário",
+      "finish-modal-body": "Tem certeza de que deseja finalizar o questionário? Você não será capaz de alterar respostas depois disso.",
+      "finish-modal-yes": "Sim, eu terminei",
+      "finish-modal-no": "Não, quero continuar no questionário",
+      "exit-modal-header": "Sair do questionário",
+      "exit-modal-body": "Tem certeza de que deseja sair do questionário? Você perderá todo o progresso que já fez.",
+      "exit-modal-yes": "Sim, quero sair do questionário",
+      "exit-modal-no": "Não, quero continuar no questionário"
     },
     "exam": {
       "qualified": "Parabéns! Você completou todos os requisitos para se qualificar para o exame.",
@@ -608,6 +618,8 @@
     "progress-modal-cta-10": "Doe agora para nos ajudar a desenvolver certificações de programação profissional gratuitas para todos.",
     "help-us-reach-20k": "Doe agora para ajudar nossa instituição beneficente a atingir nosso objetivo de chegar a 20.000 apoiadores mensais neste ano.",
     "beta-certification": "Esta certificação está atualmente em versão beta. Considere doar para apoiar a conclusão do seu desenvolvimento.",
+    "unfinished-certification": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível no momento, uma estará disponível em breve. Enquanto isso, você pode explorar os cursos que criamos abaixo.",
+    "consider-donating": "Considere doar para apoiar a conclusão do desenvolvimento da certificação.",
     "help-us-develop": "Ajude-nos a desenvolver certificações de programação profissional gratuitas para todos.",
     "nicely-done": "Bom trabalho. Você acabou de completar {{block}}.",
     "credit-card": "Cartão de crédito",
@@ -700,6 +712,8 @@
     "help-millions-learn": "Ajude milhões de pessoas a aprender",
     "reach-goals-faster": "Alcance seus objetivos mais rapidamente",
     "remove-distractions": "Remova distrações",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "Esse é um anúncio animado de 20 segundos para incentivar campers a se tornarem apoiadores do freeCodeCamp. A animação começa com um urso de pelúcia que se torna um apoiador. Como resultado, os pop-ups de distração desaparecem e o urso completa todos os seus objetivos. Então, termina o curso e se torna um super-herói da educação que ajuda as pessoas em todo o mundo.",
     "animation-countdown": "Esta animação será interrompida após {{secondsRemaining}} segundos."
   },
@@ -770,6 +784,7 @@
     "heart": "Coração",
     "initial": "Inicial",
     "input-reset": "Limpar termos de pesquisa",
+    "input-search": "Enviar termos de pesquisa",
     "info": "Informações introdutórias",
     "spacer": "Espaçador",
     "toggle": "Alternar marcação",
@@ -841,7 +856,7 @@
     "expired-link": "Parece que o link que você clicou expirou. Solicite um novo link para fazer login",
     "signin-success": "Sucesso! Você entrou com sua conta. Boa programação!",
     "social-auth-gone": "Estamos abandonando a autenticação social por motivos de privacidade. Da próxima vez, recomendamos que você entre com o seu endereço de e-mail: {{email}}.",
-    "name-needed": "Precisamos do seu nome para que possamos colocá-lo na sua certificação. Adicione seu nome às configurações da sua conta e clique no botão Salvar. Depois disso, poderemos emitir sua certificação.",
+    "name-needed": "Precisamos do seu nome para que possamos colocá-lo na sua certificação. Adicione seu nome ao seu perfil e clique em Salvar. Depois disso, poderemos emitir sua certificação.",
     "incomplete-steps": "Parece que você não completou as etapas necessárias. Complete os projetos necessários para reivindicar a certificação {{name}}.",
     "already-claimed": "Parece que você já solicitou a certificação {{name}}",
     "cert-claim-success": "@{{username}}, você solicitou a certificação {{name}} com sucesso! Parabéns em nome da equipe do freeCodeCamp.org!",

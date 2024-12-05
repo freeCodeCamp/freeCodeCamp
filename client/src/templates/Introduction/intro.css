@@ -598,3 +598,16 @@ a.map-grid-item.challenge-completed {
 .grid-project-block:hover:has(.tags-wrapper a:hover) {
   background: var(--primary-background);
 }
+
+.challenge-grid-block .challenge-grid-block-panel {
+  /* Add some space between panel content and the top edge of the container.
+    The value (18px) is the same value `.map-challenges-grid` uses
+    to create space between the grid and the bottom edge of the container. */
+  margin-top: 18px;
+}
+
+.chapter-button .dropdown-icon,
+.module-button .dropdown-icon {
+  width: 14px;
+  height: 14px;
+}

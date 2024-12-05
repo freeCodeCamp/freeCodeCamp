@@ -590,5 +590,6 @@
       "title": "Task 141"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }

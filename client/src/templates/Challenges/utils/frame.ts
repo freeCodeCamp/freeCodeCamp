@@ -378,8 +378,11 @@ function writeToFrame(content: string, frame?: FrameDocument) {
 }
 
 const writeContentToFrame = (frameContext: Context) => {
+  const doctype =
+    frameContext.sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
+
   writeToFrame(
-    createHeader(frameContext.element.id) + frameContext.build,
+    doctype + createHeader(frameContext.element.id) + frameContext.build,
     frameContext.document
   );
 

@@ -13,9 +13,6 @@ declare const ts: typeof import('typescript');
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
   typeof globalThis;
 
-let tsEnv: VirtualTypeScriptEnvironment | null = null;
-let compilerHost: CompilerHost | null = null;
-
 interface TSCompileEvent extends MessageEvent {
   data: {
     type: 'compile';
@@ -29,9 +26,9 @@ interface TSCompiledMessage {
   error: string;
 }
 
-interface InitRequestEvent extends MessageEvent {
+interface CheckIsReadyRequestEvent extends MessageEvent {
   data: {
-    type: 'init';
+    type: 'check-is-ready';
   };
 }
 
@@ -42,15 +39,23 @@ interface CancelEvent extends MessageEvent {
   };
 }
 
+const TS_VERSION = '5'; // hardcoding for now, in the future this may be dynamic
+
+let tsEnv: VirtualTypeScriptEnvironment | null = null;
+let compilerHost: CompilerHost | null = null;
 let cachedVersion: string | null = null;
 
-async function setupTypeScript(version: string) {
-  // TODO: make sure no racing happens if multiple inits arrive at once.
-  if (cachedVersion == version) return tsEnv;
+// NOTE: vfs.globals must only be imported once, otherwise it will throw.
+importScripts('https://unpkg.com/@typescript/vfs@1.6.0/dist/vfs.globals.js');
 
+function importTS(version: string) {
+  if (cachedVersion == version) return;
   importScripts('https://unpkg.com/typescript@' + version);
-  importScripts('https://unpkg.com/@typescript/vfs@1.6.0/dist/vfs.globals.js');
+  cachedVersion = version;
+}
 
+async function setupTypeScript() {
+  importTS(TS_VERSION);
   const compilerOptions: CompilerOptions = {
     target: ts.ScriptTarget.ES2015,
     skipLibCheck: true // TODO: look into why this is needed. Are we doing something wrong? Could it be that it's not "synced"  with this TS version?
@@ -87,20 +92,15 @@ async function setupTypeScript(version: string) {
   // We freeze this to prevent learners from getting the worker into a
   // weird state.
   Object.freeze(self);
-
-  cachedVersion = version;
   return env;
 }
 
-// TODO: figure out how to start setting up TS in the background, but allow the
-// client to wait for it to be ready. Currently the waiting works, but the setup
-// is done on demand.
-// void setupTypeScript('5');
-
-ctx.onmessage = (e: TSCompileEvent | InitRequestEvent | CancelEvent) => {
+ctx.onmessage = (
+  e: TSCompileEvent | CheckIsReadyRequestEvent | CancelEvent
+) => {
   const { data, ports } = e;
-  if (data.type === 'init') {
-    void handleInitRequest(ports[0]);
+  if (data.type === 'check-is-ready') {
+    void handleCheckIsReadyRequest(ports[0]);
   } else if (data.type === 'cancel') {
     handleCancelRequest(data);
   } else {
@@ -108,13 +108,15 @@ ctx.onmessage = (e: TSCompileEvent | InitRequestEvent | CancelEvent) => {
   }
 };
 
+const isTSSetup = setupTypeScript();
+
 // This lets the client know that there is nothing to cancel.
 function handleCancelRequest({ value }: { value: number }) {
   postMessage({ type: 'is-alive', text: value });
 }
 
-async function handleInitRequest(port: MessagePort) {
-  await setupTypeScript('5');
+async function handleCheckIsReadyRequest(port: MessagePort) {
+  await isTSSetup;
   port.postMessage({ type: 'ready' });
 }
 

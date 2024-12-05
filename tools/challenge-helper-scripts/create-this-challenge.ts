@@ -129,7 +129,7 @@ dashedName: dialogue-1-maria-introduces-herself-to-tom
 
 # --description--
 
-Watch the video above to understand the context of the upcoming lessons.
+Watch the video below to understand the context of the upcoming lessons.
 
 # --assignment--
 
