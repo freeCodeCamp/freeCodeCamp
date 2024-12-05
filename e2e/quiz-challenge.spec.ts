@@ -1,13 +1,18 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 
+import { challengeTypes } from '../shared/config/challenge-types';
+
+test.use({ storageState: 'playwright/.auth/development-user.json' });
+
+const ATTEMPT_DATE = new Date('2024-12-01T10:00:00');
+const TIME_AFTER_COOLDOWN_EXPIRES = new Date('2024-12-01T12:00:00');
+
 test.describe('Quiz challenge', () => {
   test.skip(
     () => process.env.SHOW_UPCOMING_CHANGES !== 'true',
     'The FSD superblock is not available if SHOW_UPCOMING_CHANGES is false'
   );
-
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ page }) => {
     execSync('node ./tools/scripts/seed/seed-demo-user');
@@ -259,5 +264,135 @@ test.describe('Quiz challenge', () => {
     await expect(
       page.locator("[role='radio'][aria-disabled='true']")
     ).toHaveCount(4 * 20);
+  });
+
+  test('should enforce the cooldown period if user previously failed the quiz', async ({
+    page
+  }) => {
+    await page.clock.setFixedTime(new Date(ATTEMPT_DATE));
+
+    // We can't make a POST request here to /submit-quiz-attempt
+    // because the timestamp is generated on the backend,
+    // and Playwright can't have control over that.
+    // Instead, we mock the returned `quizAttempts` in the user data.
+    await page.route('*/**/user/get-session-user', async route => {
+      const response = await route.fetch();
+      const json = await response.json();
+
+      json.user.developmentuser.quizAttempts = [
+        {
+          challengeId: '66df3b712c41c499e9d31e5b',
+          quizId: '1',
+          timestamp: ATTEMPT_DATE.getTime()
+        }
+      ];
+
+      await route.fulfill({ json });
+    });
+
+    // Reload to fetch the updated quiz attempts.
+    await page.reload();
+
+    // The entire quiz is locked
+    await expect(
+      page.getByText('Review the material and try again later.')
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('button', { name: 'Finish the quiz' })
+    ).toBeDisabled();
+
+    await expect(
+      page.locator("[role='radio'][aria-disabled='true']")
+    ).toHaveCount(4 * 20);
+
+    // Fast forward the time
+    await page.clock.setFixedTime(new Date(TIME_AFTER_COOLDOWN_EXPIRES));
+
+    // Reload so the page responses to the new time
+    await page.reload();
+
+    // The entire quiz is unlocked
+    await expect(
+      page.getByText('Review the material and try again later.')
+    ).toBeHidden();
+
+    await expect(
+      page.getByRole('button', { name: 'Finish the quiz' })
+    ).toBeEnabled();
+
+    await expect(
+      page.locator("[role='radio'][aria-disabled='true']")
+    ).toHaveCount(0);
+  });
+
+  test('should not enforce the cooldown period if user previously passed the quiz', async ({
+    page
+  }) => {
+    await page.clock.setFixedTime(new Date(ATTEMPT_DATE));
+
+    // We can't make a POST request here to /submit-quiz-attempt
+    // because the timestamp is generated on the backend,
+    // and Playwright can't have control over that.
+    // Instead, we mock the returned `quizAttempts` in the user data.
+    await page.route('*/**/user/get-session-user', async route => {
+      const response = await route.fetch();
+      const json = await response.json();
+
+      json.user.developmentuser.quizAttempts = [
+        {
+          challengeId: '66df3b712c41c499e9d31e5b',
+          quizId: '1',
+          timestamp: ATTEMPT_DATE.getTime()
+        }
+      ];
+
+      json.user.developmentuser.completedChallenges = [
+        {
+          id: '66df3b712c41c499e9d31e5b',
+          challengeType: challengeTypes.quiz,
+          completedDate: ATTEMPT_DATE.getTime(),
+          files: [],
+          solution: null
+        }
+      ];
+
+      await route.fulfill({ json });
+    });
+
+    // Reload to fetch the updated quiz attempts.
+    await page.reload();
+
+    // The quiz is unlocked.
+    await expect(
+      page.getByText('Review the material and try again later.')
+    ).toBeHidden();
+
+    await expect(
+      page.getByRole('button', { name: 'Finish the quiz' })
+    ).toBeEnabled();
+
+    await expect(
+      page.locator("[role='radio'][aria-disabled='true']")
+    ).toHaveCount(0);
+
+    // Fast forward the time
+    await page.clock.setFixedTime(new Date(TIME_AFTER_COOLDOWN_EXPIRES));
+
+    // Reload so the page responses to the new time
+    await page.reload();
+
+    // The quiz remains unlocked.
+    await expect(
+      page.getByText('Review the material and try again later.')
+    ).toBeHidden();
+
+    await expect(
+      page.getByRole('button', { name: 'Finish the quiz' })
+    ).toBeEnabled();
+
+    await expect(
+      page.locator("[role='radio'][aria-disabled='true']")
+    ).toHaveCount(0);
   });
 });
