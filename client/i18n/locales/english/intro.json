@@ -3274,7 +3274,8 @@
       "review-javascript": {
         "title": "JavaScript Review",
         "intro": [
-          "Review the JavaScript concepts to prepare for the upcoming quiz."
+          "Before you take the JavaScript prep exam, you will need to review first.",
+          "Open up this page, to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
       "kagw": { "title": "258", "intro": [] },
