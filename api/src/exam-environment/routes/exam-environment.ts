@@ -14,6 +14,7 @@ import {
   validateAttempt
 } from '../utils/exam';
 import { ERRORS } from '../utils/errors';
+import { isObjectID } from '../../utils/validation';
 
 /**
  * Wrapper for endpoints related to the exam environment desktop app.
@@ -91,8 +92,9 @@ async function tokenMetaHandler(
 ) {
   const { 'exam-environment-authorization-token': encodedToken } = req.headers;
 
+  let payload: JwtPayload;
   try {
-    jwt.verify(encodedToken, JWT_SECRET);
+    payload = jwt.verify(encodedToken, JWT_SECRET) as JwtPayload;
   } catch (e) {
     // Server refuses to brew (verify) coffee (jwts) with a teapot (random strings)
     void reply.code(418);
@@ -101,14 +103,18 @@ async function tokenMetaHandler(
     );
   }
 
-  const payload = jwt.decode(encodedToken) as JwtPayload;
-
-  const examEnvironmentAuthorizationToken =
-    payload.examEnvironmentAuthorizationToken;
+  if (!isObjectID(payload.examEnvironmentAuthorizationToken)) {
+    void reply.code(418);
+    return reply.send(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+        'Token is not valid'
+      )
+    );
+  }
 
   const token = await this.prisma.examEnvironmentAuthorizationToken.findUnique({
     where: {
-      id: examEnvironmentAuthorizationToken
+      id: payload.examEnvironmentAuthorizationToken
     }
   });
 
