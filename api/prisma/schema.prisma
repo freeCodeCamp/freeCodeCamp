@@ -69,6 +69,12 @@ type SavedChallenge {
   lastSavedDate Float
 }
 
+type QuizAttempt {
+  challengeId String
+  quizId      String
+  timestamp   Float
+}
+
 /// Corresponds to the `user` collection.
 model user {
   id                           String                        @id @default(auto()) @map("_id") @db.ObjectId
@@ -76,6 +82,7 @@ model user {
   acceptedPrivacyTerms         Boolean
   completedChallenges          CompletedChallenge[]
   completedExams               CompletedExam[] // Undefined
+  quizAttempts                 QuizAttempt[] // Undefined
   currentChallengeId           String?
   donationEmails               String[] // Undefined | String[] (only possible for built in Types like String)
   email                        String
