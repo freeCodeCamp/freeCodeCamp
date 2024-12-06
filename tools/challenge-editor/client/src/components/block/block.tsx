@@ -7,7 +7,8 @@ import './block.css';
 const stepBasedSuperblocks = [
   '07-scientific-computing-with-python',
   '14-responsive-web-design-22',
-  '15-javascript-algorithms-and-data-structures-22'
+  '15-javascript-algorithms-and-data-structures-22',
+  '25-front-end-development'
 ];
 
 const taskBasedSuperblocks = [
