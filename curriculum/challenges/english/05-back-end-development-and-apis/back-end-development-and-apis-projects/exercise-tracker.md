@@ -217,6 +217,13 @@ async (getUserInput) => {
       throw new Error(`${addRes.status} ${addRes.statusText}`);
     }
     const responseBody = await addRes.json();
+    assert.isString(responseBody.description);
+    assert.isNumber(responseBody.duration);
+    assert.isString(responseBody.date);
+    assert.equal(responseBody._id, expected._id);
+    assert.equal(responseBody.username, expected.username);
+    assert.equal(responseBody.description, expected.description);
+    assert.equal(responseBody.duration, expected.duration);
     const receivedDate = new Date(responseBody.date);
     const expectedDate = new Date(expected.date); // Jan 1, 1990
     const allowedPreviousDate = new Date(expectedDate);
@@ -628,5 +635,4 @@ async (getUserInput) => {
     throw new Error(`${res.status} ${res.statusText}`);
   }
 };
-
 ```
