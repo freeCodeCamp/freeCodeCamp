@@ -43,7 +43,7 @@
     "predevelop": "npm-run-all -p create:shared -s build:curriculum",
     "develop": "npm-run-all -p develop:*",
     "develop:client": "cd ./client && pnpm run develop",
-    "develop:server": "cd ./api-server && pnpm run develop",
+    "develop:server": "cd ./api && pnpm run develop",
     "format": "run-s format:eslint format:prettier",
     "format:eslint": "eslint . --fix",
     "format:prettier": "prettier --write .",

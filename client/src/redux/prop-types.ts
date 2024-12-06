@@ -290,6 +290,12 @@ type CertTest = {
   title: string;
 };
 
+interface QuizAttempt {
+  challengeId: string;
+  quizId: string;
+  timestamp: number;
+}
+
 export type User = {
   calendar: Record<string, number>;
   about: string;
@@ -322,6 +328,7 @@ export type User = {
   username: string;
   website: string;
   yearsTopContributor: string[];
+  quizAttempts: QuizAttempt[];
 } & ClaimedCertifications;
 
 export type ProfileUI = {
