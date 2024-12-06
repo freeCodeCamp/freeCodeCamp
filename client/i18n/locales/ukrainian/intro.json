@@ -1728,14 +1728,14 @@
       "form-validation": "Валідація форм",
       "javascript-dates": "Дати",
       "audio-and-video-events": "Аудіо- та відеоподії",
-      "maps-sets-and-json": "Map та set",
+      "maps-and-sets": "Maps and Sets",
       "localstorage-and-crud-operations": "localStorage та операції CRUD",
       "classes-and-the-this-keyword": "Класи",
       "recursion": "Рекурсія",
       "functional-programming": "Функціональне програмування",
       "asynchronous-javascript": "Асинхронний JavaScript",
       "react-fundamentals": "Основи React",
-      "react-state-hooks-and-routing": "React State, Hooks, and Routing",
+      "react-state-hooks-and-routing": "Стани, хуки та маршрутизація в React",
       "performance": "Продуктивність",
       "css-libraries-and-frameworks": "Бібліотеки та фреймворки CSS",
       "testing": "Тестування",
@@ -2899,9 +2899,9 @@
         ]
       },
       "workshop-music-instrument-filter": {
-        "title": "Build a Music Instrument Filter",
+        "title": "Створіть музичний інструмент",
         "intro": [
-          "In this workshop, you will build a music instrument filter with JavaScript."
+          "У цьому практичному занятті ви створите музичний інструмент за допомогою JavaScript."
         ]
       },
       "lab-real-time-counter": {
@@ -3074,8 +3074,8 @@
       "review-javascript-audio-and-video": {
         "title": "Повторення аудіо та відео в JavaScript",
         "intro": [
-          "Before you are quizzed on working with audio and video in JavaScript, you first need to review.",
-          "Open up this page to review concepts including the <code>Audio</code> constructor, the <code>HTMLMediaElement</code> API and more."
+          "Перш ніж перейти до тесту «Аудіо та відео в JavaScript», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати конструктор <code>Audio</code>, <code>HTMLMediaElement</code> API та багато іншого."
         ]
       },
       "quiz-javascript-audio-and-video": {
@@ -3096,16 +3096,17 @@
         "title": "227",
         "intro": []
       },
-      "review-javascript-maps-sets-and-json": {
-        "title": "Повторення map, set та JSON в JavaScript",
+      "review-javascript-maps-and-sets": {
+        "title": "JavaScript Maps and Sets Review",
         "intro": [
-          "Пригадайте поняття з теми «Map, set та JSON в JavaScript», щоб підготуватись до тесту."
+          "Before you are quizzed on JS Maps and Sets, you first need to review.",
+          "Open up this page to review concepts such as the <code>Map</code> and <code>Set</code> objects, as well as WeakSet and WeakMap."
         ]
       },
-      "quiz-javascript-maps-sets-and-json": {
-        "title": "Тест «Map, set та JSON в JavaScript»",
+      "quiz-javascript-maps-and-sets": {
+        "title": "JavaScript Maps and Sets Quiz",
         "intro": [
-          "Перевірте, що ви дізнались про map, set та JSON в JavaScript."
+          "Test what you've learned in this quiz on JavaScript Maps and Sets."
         ]
       },
       "lecture-working-with-client-side-storage-and-crud-operations": {
@@ -3128,7 +3129,8 @@
       "review-local-storage-and-crud": {
         "title": "Повторення локального сховища та CRUD",
         "intro": [
-          "Пригадайте поняття з теми «Локальне сховище та CRUD», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Сховище <code>localStorage</code>», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати властивості <code>localStorage</code>, <code>sessionStorage</code> та багато іншого."
         ]
       },
       "quiz-local-storage-and-crud": {
@@ -3163,8 +3165,8 @@
       "review-javascript-classes": {
         "title": "Повторення класів у JavaScript",
         "intro": [
-          "Before you are quizzed on working with classes, you first need to review.",
-          "Open up this page to review concepts including the <code>this</code> keyword, class inheritance and more."
+          "Перш ніж перейти до тесту «Класи», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати ключове слово <code>this</code>, наслідування класу та багато іншого."
         ]
       },
       "quiz-javascript-classes": {
@@ -3190,8 +3192,8 @@
       "review-recursion": {
         "title": "Повторення рекурсії",
         "intro": [
-          "Before you are quizzed on the recursion, you first need to review the concepts.",
-          "Open up this page to review what is recursion and what is it used for."
+          "Перш ніж перейти до тесту «Рекурсія», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати рекурсію і для чого її використовують."
         ]
       },
       "quiz-recursion": {
@@ -3265,8 +3267,8 @@
       "review-javascript-functional-programming": {
         "title": "Повторення функціонального програмування в JavaScript",
         "intro": [
-          "Before you are quizzed on functional programming concepts, you first need to review.",
-          "Open up this page to review concepts on functional programming, currying and more."
+          "Перш ніж перейти до тесту «Функціональне програмування», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати поняття з функціонального програмування, каррування та багато іншого."
         ]
       },
       "mjbe": {
