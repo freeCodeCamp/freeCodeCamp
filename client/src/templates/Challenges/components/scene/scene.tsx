@@ -28,6 +28,7 @@ export function Scene({
   sceneSubject: SceneSubject;
 }): JSX.Element {
   const { t } = useTranslation();
+  const canPauseRef = useRef(false);
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
   const { startTimestamp = null, finishTimestamp = null } = audio;
@@ -113,6 +114,12 @@ export function Scene({
     setSceneIsReady(true);
   };
 
+  const pause = () => {
+    // Until the play() promise resolves, we can't pause the audio
+    if (canPauseRef.current) audioRef.current.pause();
+    canPauseRef.current = false;
+  };
+
   useEffect(() => {
     const playScene = () => {
       // TODO: if we manage the playing state in another module, we should not
@@ -125,7 +132,9 @@ export function Scene({
       setTimeout(() => {
         if (audioRef.current.paused) {
           startRef.current = Date.now();
-          void audioRef.current.play();
+          void audioRef.current.play().then(() => {
+            canPauseRef.current = true;
+          });
         }
         // if there are no timestamps, we can let the audio play to the end
         if (hasTimestamps) maybeStopAudio();
@@ -194,8 +203,8 @@ export function Scene({
 
     const resetScene = () => {
       const { current } = audioRef;
+      pause();
       if (current) {
-        current.pause();
         current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
         current.load();
         current.currentTime = audio.startTimestamp || 0;
@@ -214,7 +223,7 @@ export function Scene({
       const runningTime = Date.now() - startRef.current;
 
       if (runningTime >= duration) {
-        audioRef.current.pause();
+        pause();
       } else {
         window.requestAnimationFrame(maybeStopAudio);
       }
