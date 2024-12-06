@@ -304,6 +304,9 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
       ({ id }) => id === challenge.id
     );
 
+    const isLastChallengeInBlock =
+      meta.challengeOrder.length - 1 === challengeOrder;
+
     const isObjectIdFilename = /\/[a-z0-9]{24}\.md$/.test(englishPath);
     if (isObjectIdFilename) {
       const filename = englishPath.split('/').pop();
@@ -348,6 +351,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     challenge.certification = hasDupe ? hasDupe.certification : meta.superBlock;
     challenge.superBlock = meta.superBlock;
     challenge.challengeOrder = challengeOrder;
+    challenge.isLastChallengeInBlock = isLastChallengeInBlock;
     challenge.isPrivate = challenge.isPrivate || meta.isPrivate;
     challenge.required = (meta.required || []).concat(challenge.required || []);
     challenge.template = meta.template;
