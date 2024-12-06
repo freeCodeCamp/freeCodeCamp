@@ -147,7 +147,7 @@
         },
         {
           "title": "Educação gratuita",
-          "description": "Aprenda com nossa instituição beneficente e economize dinheiro em sua educação. Sem pagamentos. Sem custos ocultos."
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
         },
         {
           "title": "Certificações extensivas",
@@ -712,6 +712,8 @@
     "help-millions-learn": "Ajude milhões de pessoas a aprender",
     "reach-goals-faster": "Alcance seus objetivos mais rapidamente",
     "remove-distractions": "Remova distrações",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "Esse é um anúncio animado de 20 segundos para incentivar campers a se tornarem apoiadores do freeCodeCamp. A animação começa com um urso de pelúcia que se torna um apoiador. Como resultado, os pop-ups de distração desaparecem e o urso completa todos os seus objetivos. Então, termina o curso e se torna um super-herói da educação que ajuda as pessoas em todo o mundo.",
     "animation-countdown": "Esta animação será interrompida após {{secondsRemaining}} segundos."
   },

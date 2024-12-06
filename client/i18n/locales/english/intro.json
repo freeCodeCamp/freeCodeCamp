@@ -2026,7 +2026,12 @@
           "In these lecture videos, you will learn about working with backgrounds and borders."
         ]
       },
-      "pahx": { "title": "45", "intro": [] },
+      "lab-blog-post-card": {
+        "title": "Design a Blog Post Card",
+        "intro": [
+          "In this lab, you'll design a blog post card using HTML and CSS"
+        ]
+      },
       "review-css-backgrounds-and-borders": {
         "title": "CSS Backgrounds and Borders Review",
         "intro": [
@@ -3262,7 +3267,7 @@
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
-          "Review the Asynchronous JavaScript concepts to prepare for the upcoming quiz."
+          "Review Asynchronous JavaScript concepts to prepare for the upcoming quiz."
         ]
       },
       "quiz-asynchronous-javascript": {

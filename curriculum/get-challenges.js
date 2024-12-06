@@ -304,6 +304,9 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
       ({ id }) => id === challenge.id
     );
 
+    const isLastChallengeInBlock =
+      meta.challengeOrder.length - 1 === challengeOrder;
+
     const isObjectIdFilename = /\/[a-z0-9]{24}\.md$/.test(englishPath);
     if (isObjectIdFilename) {
       const filename = englishPath.split('/').pop();
@@ -348,6 +351,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     challenge.certification = hasDupe ? hasDupe.certification : meta.superBlock;
     challenge.superBlock = meta.superBlock;
     challenge.challengeOrder = challengeOrder;
+    challenge.isLastChallengeInBlock = isLastChallengeInBlock;
     challenge.isPrivate = challenge.isPrivate || meta.isPrivate;
     challenge.required = (meta.required || []).concat(challenge.required || []);
     challenge.template = meta.template;
@@ -380,10 +384,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
           path.resolve(META_DIR, `${getBlockNameFromPath(filePath)}/meta.json`)
         );
 
-    const isAudited = isAuditedSuperBlock(lang, meta.superBlock, {
-      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
-    });
+    const isAudited = isAuditedSuperBlock(lang, meta.superBlock);
 
     // If we can use the language, do so. Otherwise, default to english.
     const langUsed = isAudited && fs.existsSync(i18nPath) ? lang : 'english';

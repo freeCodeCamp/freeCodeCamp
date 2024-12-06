@@ -86,6 +86,7 @@ exports.createPages = async function createPages({
                 blockHashSlug
               }
               id
+              isLastChallengeInBlock
               order
               required {
                 link

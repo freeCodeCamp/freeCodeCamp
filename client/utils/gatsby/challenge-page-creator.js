@@ -31,11 +31,6 @@ const quiz = path.resolve(
   '../../src/templates/Challenges/quiz/show.tsx'
 );
 
-const video = path.resolve(
-  __dirname,
-  '../../src/templates/Challenges/video/show.tsx'
-);
-
 const exam = path.resolve(
   __dirname,
   '../../src/templates/Challenges/exam/show.tsx'
@@ -62,7 +57,6 @@ const views = {
   modern: classic,
   frontend,
   quiz,
-  video,
   codeAlly,
   exam,
   msTrophy,
@@ -92,11 +86,6 @@ function getTemplateComponent(challengeType) {
   return views[viewTypes[challengeType]];
 }
 
-function getNextBlock(id, edges) {
-  const next = edges[id + 1];
-  return next ? next.node.challenge.block : null;
-}
-
 exports.createChallengePages = function (createPage) {
   return function ({ node }, index, allChallengeEdges) {
     const {
@@ -110,7 +99,8 @@ exports.createChallengePages = function (createPage) {
       required = [],
       template,
       challengeType,
-      id
+      id,
+      isLastChallengeInBlock
     } = node.challenge;
     // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
     // should remove one of them.
@@ -130,7 +120,7 @@ exports.createChallengePages = function (createPage) {
           isFirstStep: getIsFirstStepInBlock(index, allChallengeEdges),
           template,
           required,
-          nextBlock: getNextBlock(index, allChallengeEdges),
+          isLastChallengeInBlock: isLastChallengeInBlock,
           nextChallengePath: getNextChallengePath(index, allChallengeEdges),
           prevChallengePath: getPrevChallengePath(index, allChallengeEdges),
           id
