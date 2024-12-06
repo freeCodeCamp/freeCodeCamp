@@ -435,8 +435,6 @@ describe('/exam-environment/', () => {
           24 * 60 * 60 * 1000 -
           mock.exam.config.totalTimeInMS -
           1 * 60 * 60 * 1000;
-        submittedAttempt.submissionTimeInMS =
-          Date.now() - mock.exam.config.totalTimeInMS - 24 * 60 * 60 * 1000;
         await fastifyTestInstance.prisma.envExamAttempt.create({
           data: submittedAttempt
         });
@@ -492,7 +490,6 @@ describe('/exam-environment/', () => {
           generatedExamId: generatedExam!.id,
           questionSets: [],
           needsRetake: false,
-          submissionTimeInMS: null,
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           startTimeInMS: expect.any(Number)
         });
@@ -579,7 +576,8 @@ describe('/exam-environment/', () => {
               config: {
                 name: mock.exam.config.name,
                 note: mock.exam.config.note,
-                totalTimeInMS: mock.exam.config.totalTimeInMS
+                totalTimeInMS: mock.exam.config.totalTimeInMS,
+                retakeTimeInMS: mock.exam.config.retakeTimeInMS
               },
               id: mock.examId
             }
