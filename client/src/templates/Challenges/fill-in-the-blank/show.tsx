@@ -1,6 +1,7 @@
 // Package Utilities
 import { graphql } from 'gatsby';
 import React, { useEffect, useRef, useState } from 'react';
+import { useFeature } from '@growthbook/growthbook-react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import type { TFunction } from 'i18next';
@@ -14,7 +15,12 @@ import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
+import {
+  ChallengeNode,
+  ChallengeMeta,
+  NavigationPaths,
+  Test
+} from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import ChallegeExplanation from '../components/challenge-explanation';
@@ -30,6 +36,7 @@ import {
   initTests
 } from '../redux/actions';
 import Scene from '../components/scene/scene';
+import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 
 import './show.css';
@@ -64,6 +71,7 @@ interface ShowFillInTheBlankProps {
   openHelpModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
+    nextCurriculumPaths: NavigationPaths;
   };
   t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
@@ -93,7 +101,7 @@ const ShowFillInTheBlank = ({
   openHelpModal,
   updateChallengeMeta,
   openCompletionModal,
-  pageContext: { challengeMeta },
+  pageContext: { challengeMeta, nextCurriculumPaths },
   isChallengeCompleted
 }: ShowFillInTheBlankProps) => {
   const { t } = useTranslation();
@@ -109,14 +117,21 @@ const ShowFillInTheBlank = ({
   const [isScenePlaying, setIsScenePlaying] = useState(false);
 
   const container = useRef<HTMLElement | null>(null);
+  const showNextCurriculum = useFeature('fcc-10').on;
 
   useEffect(() => {
     initTests(tests);
+    const challengePaths = getChallengePaths({
+      showNextCurriculum,
+      currentCurriculumPaths: challengeMeta,
+      nextCurriculumPaths
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
     container.current?.focus();

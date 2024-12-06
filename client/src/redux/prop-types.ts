@@ -404,14 +404,17 @@ export type ChallengeMeta = {
   id: string;
   introPath: string;
   isFirstStep: boolean;
-  nextChallengePath: string | null;
-  prevChallengePath: string | null;
   superBlock: SuperBlocks;
   title?: string;
   challengeType?: number;
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
+} & NavigationPaths;
+
+export type NavigationPaths = {
+  nextChallengePath?: string;
+  prevChallengePath?: string;
 };
 
 export type PortfolioProjectData = {

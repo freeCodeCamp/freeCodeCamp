@@ -72,21 +72,19 @@ function getIsFirstStepInBlock(id, edges) {
   return previous.node.challenge.block !== current.node.challenge.block;
 }
 
-function getNextChallengePath(id, edges) {
-  const next = edges[id + 1];
-  return next ? next.node.challenge.fields.slug : null;
-}
-
-function getPrevChallengePath(id, edges) {
-  const prev = edges[id - 1];
-  return prev ? prev.node.challenge.fields.slug : null;
-}
-
 function getTemplateComponent(challengeType) {
   return views[viewTypes[challengeType]];
 }
 
-exports.createChallengePages = function (createPage) {
+exports.createChallengePages = function (
+  createPage,
+  {
+    idToNextPathCurrentCurriculum,
+    idToPrevPathCurrentCurriculum,
+    idToNextPathNextCurriculum,
+    idToPrevPathNextCurriculum
+  }
+) {
   return function ({ node }, index, allChallengeEdges) {
     const {
       dashedName,
@@ -121,9 +119,13 @@ exports.createChallengePages = function (createPage) {
           template,
           required,
           isLastChallengeInBlock: isLastChallengeInBlock,
-          nextChallengePath: getNextChallengePath(index, allChallengeEdges),
-          prevChallengePath: getPrevChallengePath(index, allChallengeEdges),
+          nextChallengePath: idToNextPathCurrentCurriculum[node.id],
+          prevChallengePath: idToPrevPathCurrentCurriculum[node.id],
           id
+        },
+        nextCurriculumPaths: {
+          nextChallengePath: idToNextPathNextCurriculum[node.id],
+          prevChallengePath: idToPrevPathNextCurriculum[node.id]
         },
         projectPreview: getProjectPreviewConfig(
           node.challenge,
