@@ -22,11 +22,13 @@ import {
 // Local Utilities
 import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
 import LearnLayout from '../../../components/layouts/learn';
-import {
+import type {
   ChallengeNode,
   ChallengeMeta,
   Test,
-  User
+  User,
+  Quiz as TQuiz,
+  QuizAttempt
 } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
@@ -121,6 +123,26 @@ interface ShowQuizProps {
   closeFinishQuizModal: () => void;
 }
 
+/**
+ * Get a list of question sets that the page can randomly picked from.
+ * If there was a previous attempt, the question set used in the attempt is excluded.
+ */
+export const getAvailableQuizzes = ({
+  quizzes,
+  attemptedQuiz
+}: {
+  quizzes: TQuiz[];
+  attemptedQuiz: QuizAttempt | undefined;
+}): TQuiz[] => {
+  if (quizzes.length === 1 || !attemptedQuiz) {
+    return quizzes;
+  }
+
+  return quizzes.filter(
+    (_, index) => index.toString() !== attemptedQuiz.quizId
+  );
+};
+
 const ShowQuiz = ({
   challengeMounted,
   data: {
@@ -175,9 +197,6 @@ const ShowQuiz = ({
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
 
-  const [quizId] = useState(Math.floor(Math.random() * quizzes.length));
-  const quiz = quizzes[quizId].questions;
-
   const attemptedQuiz = quizAttempts.find(
     attempt => attempt.challengeId === challengeId
   );
@@ -190,6 +209,15 @@ const ShowQuiz = ({
     !isChallengeCompleted &&
     timeUntilCooldownExpires &&
     timeUntilCooldownExpires > 0;
+
+  const [availableQuizzes] = useState(
+    getAvailableQuizzes({ quizzes, attemptedQuiz })
+  );
+
+  const [quizId] = useState(
+    Math.floor(Math.random() * availableQuizzes.length)
+  );
+  const quiz = availableQuizzes[quizId].questions;
 
   // Find the corresponding review block.
   const currentChapter = superBlockStructure.chapters.find(
@@ -258,7 +286,7 @@ const ShowQuiz = ({
   });
 
   const isQuizDisabled =
-    isNotAllowedToStartQuiz || isQuizAttemptSubmitting || validated;
+    !isNotAllowedToStartQuiz || isQuizAttemptSubmitting || validated;
 
   const unanswered = quizData.reduce<number[]>(
     (acc, curr, id) => (curr.selectedAnswer == null ? [...acc, id + 1] : acc),
@@ -411,7 +439,7 @@ const ShowQuiz = ({
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer size='m' />
-              {isNotAllowedToStartQuiz && reviewBlock && (
+              {!isNotAllowedToStartQuiz && reviewBlock && (
                 <Callout variant='danger'>
                   {
                     <Trans i18nKey='learn.quiz.review-material-and-try-again-later'>

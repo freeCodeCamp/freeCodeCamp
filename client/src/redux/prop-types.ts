@@ -233,7 +233,7 @@ export type ChallengeNode = {
   };
 };
 
-type Quiz = {
+export type Quiz = {
   questions: QuizQuestion[];
 };
 
@@ -290,7 +290,7 @@ type CertTest = {
   title: string;
 };
 
-interface QuizAttempt {
+export interface QuizAttempt {
   challengeId: string;
   quizId: string;
   timestamp: number;
