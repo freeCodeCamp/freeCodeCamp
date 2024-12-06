@@ -112,20 +112,16 @@ void (async () => {
   const langsToCheck = availableLangs.curriculum.filter(
     lang => String(lang) !== 'english'
   );
-  for (const lang of langsToCheck) {
-    console.log(`\n=== ${lang} ===`);
-    const certs = getAuditedSuperBlocks({
-      language: lang,
-      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
-      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
-    });
+  for (const language of langsToCheck) {
+    console.log(`\n=== ${language} ===`);
+    const certs = getAuditedSuperBlocks({ language });
     const langCurriculumDirectory = join(
       process.cwd(),
       'curriculum',
       'i18n-curriculum',
       'curriculum',
       'challenges',
-      lang
+      language
     );
     const auditedFiles = englishFilePaths.filter(file =>
       certs.some(
@@ -139,7 +135,7 @@ void (async () => {
     const noMissingFiles = await auditChallengeFiles(auditedFiles, {
       langCurriculumDirectory
     });
-    const noDuplicateSlugs = await auditSlugs(lang, certs);
+    const noDuplicateSlugs = await auditSlugs(language, certs);
     if (noMissingFiles && noDuplicateSlugs) {
       console.log(`All challenges pass.`);
     } else {
