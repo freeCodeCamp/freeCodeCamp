@@ -98,6 +98,7 @@
             { "dashedName": "lecture-styling-lists-and-links" },
             { "dashedName": "lab-stylized-to-do-list" },
             { "dashedName": "lecture-working-with-backgrounds-and-borders" },
+            { "dashedName": "lab-blog-post-card" },
             { "dashedName": "review-css-backgrounds-and-borders" },
             { "dashedName": "quiz-css-backgrounds-and-borders" }
           ]
@@ -464,11 +465,11 @@
           ]
         },
         {
-          "dashedName": "maps-sets-and-json",
+          "dashedName": "maps-and-sets",
           "blocks": [
             { "dashedName": "lecture-working-with-maps-and-sets" },
-            { "dashedName": "review-javascript-maps-sets-and-json" },
-            { "dashedName": "quiz-javascript-maps-sets-and-json" }
+            { "dashedName": "review-javascript-maps-and-sets" },
+            { "dashedName": "quiz-javascript-maps-and-sets" }
           ]
         },
         {

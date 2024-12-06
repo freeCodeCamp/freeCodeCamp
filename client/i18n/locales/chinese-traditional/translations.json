@@ -147,7 +147,7 @@
         },
         {
           "title": "Free Education",
-          "description": "Learn from our charity and save money on your education. No paywalls. No hidden costs."
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
         },
         {
           "title": "Extensive Certifications",
@@ -712,6 +712,8 @@
     "help-millions-learn": "幫助數百萬人學習",
     "reach-goals-faster": "更快地實現你的目標",
     "remove-distractions": "消除干擾",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "這是一個 20 秒的動畫廣告，旨在鼓勵學員成爲 freeCodeCamp 的支持者。動畫開頭是一隻泰迪熊成爲支持者。最後，彈窗消失了，泰迪熊完成了所有目標。它畢業了，成爲了幫助全世界人們的教育超級英雄。",
     "animation-countdown": "該動畫將在 {{secondsRemaining}} 秒後停止。"
   },

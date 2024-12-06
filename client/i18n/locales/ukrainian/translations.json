@@ -147,7 +147,7 @@
         },
         {
           "title": "Безоплатна освіта",
-          "description": "Навчайтесь з спільнотою і заощаджуйте на навчанні. Жодних прихованих витрат."
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
         },
         {
           "title": "Зразкові сертифікації",
@@ -712,6 +712,8 @@
     "help-millions-learn": "Допоможіть мільйонам людей навчатись",
     "reach-goals-faster": "Досягайте цілей швидше",
     "remove-distractions": "Позбавтесь повідомлень",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "Це 20-секундна анімаційна реклама, щоб заохотити кемперів стати донорами freeCodeCamp. Анімація починається з ведмедика, який стає донором. В результаті відволікаючі спливаючі вікна зникають, і ведмедик може досягти своїх цілей. Потім він закінчує навчання і стає освітнім супергероєм, який допомагає людям по всьому світу.",
     "animation-countdown": "До завершення анімації залишилось: {{secondsRemaining}}."
   },

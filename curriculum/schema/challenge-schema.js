@@ -180,6 +180,7 @@ const schema = Joi.object()
       'Euler',
       'Rosetta'
     ),
+    isLastChallengeInBlock: Joi.boolean().required(),
     videoUrl: Joi.string().allow(''),
     fillInTheBlank: Joi.object().keys({
       sentence: Joi.string().required(),
