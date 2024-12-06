@@ -3289,7 +3289,13 @@
           "In these lecture videos, you will get an introduction to JavaScript libraries and frameworks."
         ]
       },
-      "oxiv": { "title": "260", "intro": [] },
+      "workshop-reusable-mega-navbar": {
+        "title": "Build a Reusable Mega Navbar",
+        "intro": [
+          "In the previous lecture videos, you learned how to work with components in React.",
+          "In this workshop, you will build a reusable Navbar component using React."
+        ]
+      },
       "fjvx": { "title": "261", "intro": [] },
       "lecture-working-with-data-in-react": {
         "title": "Working with Data in React",
