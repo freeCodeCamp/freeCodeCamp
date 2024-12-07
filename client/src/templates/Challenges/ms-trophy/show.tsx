@@ -145,9 +145,6 @@ function MsTrophy(props: MsTrophyProps) {
     isProcessing,
     msUsername,
     openHelpModal,
-    pageContext: {
-      challengeMeta: { nextChallengePath, prevChallengePath }
-    },
     t
   } = props;
 
@@ -156,11 +153,7 @@ function MsTrophy(props: MsTrophyProps) {
   )} - ${title}`;
 
   return (
-    <Hotkeys
-      containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
-    >
+    <Hotkeys containerRef={container}>
       <LearnLayout>
         <Helmet
           title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}

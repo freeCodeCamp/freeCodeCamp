@@ -122,9 +122,6 @@ const ShowFrontEndProject = (props: ProjectProps) => {
       }
     },
     isChallengeCompleted,
-    pageContext: {
-      challengeMeta: { nextChallengePath, prevChallengePath }
-    },
     t,
     updateSolutionFormValues
   } = props;
@@ -134,11 +131,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
   )} - ${title}`;
 
   return (
-    <Hotkeys
-      containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
-    >
+    <Hotkeys containerRef={container}>
       <LearnLayout>
         <Helmet
           title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}

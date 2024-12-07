@@ -114,7 +114,6 @@ const ShowQuiz = ({
   const { t } = useTranslation();
   const curLocation = useLocation();
 
-  const { nextChallengePath, prevChallengePath } = challengeMeta;
   const container = useRef<HTMLElement | null>(null);
 
   // Campers are not allowed to change their answers once the quiz is submitted.
@@ -282,8 +281,6 @@ const ShowQuiz = ({
     <Hotkeys
       executeChallenge={!isPassed ? handleFinishQuiz : handleSubmitAndGo}
       containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
     >
       <LearnLayout>
         <Helmet
