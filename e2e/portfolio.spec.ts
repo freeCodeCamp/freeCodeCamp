@@ -24,7 +24,6 @@ test.describe('Add Portfolio Item', () => {
 
     await page.getByRole('button', { name: 'Edit my profile' }).click();
 
-
     // Will check if the portfolio button is hydrated correctly with different intervals.
     await expect(async () => {
       const addPortfolioItemButton = page.getByRole('button', {
