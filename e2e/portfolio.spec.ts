@@ -14,7 +14,6 @@ test.afterAll(() => {
 
 test.describe('Add Portfolio Item', () => {
   test.beforeEach(async ({ page }) => {
-    test.setTimeout(61000);
     await page.goto('/developmentuser');
 
     if (!process.env.CI) {
@@ -25,15 +24,15 @@ test.describe('Add Portfolio Item', () => {
 
     await page.getByRole('button', { name: 'Edit my profile' }).click();
 
-    await page
-      .getByRole('button', { name: 'Add a new portfolio Item' })
-      .click();
 
     // Will check if the portfolio button is hydrated correctly with different intervals.
     await expect(async () => {
-      await expect(
-        page.getByRole('button', { name: 'Add a new portfolio Item' })
-      ).toBeDisabled();
+      const addPortfolioItemButton = page.getByRole('button', {
+        name: 'Add a new portfolio Item'
+      });
+      await addPortfolioItemButton.click();
+
+      await expect(addPortfolioItemButton).toBeDisabled({ timeout: 1 });
     }).toPass();
   });
 
