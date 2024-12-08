@@ -3079,7 +3079,13 @@
           "In these lecture videos, you will learn about working with audio and video using JavaScript."
         ]
       },
-      "foal": { "title": "221", "intro": [] },
+      "workshop-music-player": {
+        "title": "Build a Music Player",
+        "intro": [
+          "In this workshop, you'll code a basic MP3 player using HTML, CSS, and JavaScript.",
+          "The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, and previous functionalities and dynamically update your user interface based on the current song."
+        ]
+      },
       "crzf": { "title": "222", "intro": [] },
       "review-javascript-audio-and-video": {
         "title": "JavaScript Audio and Video Review",
