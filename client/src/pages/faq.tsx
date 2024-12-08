@@ -2,14 +2,14 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Spacer } from '@freecodecamp/ui';
 
-import BigCallToAction from './big-call-to-action';
+import BigCallToAction from '../components/landing/components/big-call-to-action';
 
 interface FaqItem {
   question: string;
   answer: string[];
 }
 
-const Faq = (): JSX.Element => {
+function FAQPage(): JSX.Element {
   const { t } = useTranslation();
   const faqItems = t<string, string & FaqItem[]>('landing.faqs');
 
@@ -43,7 +43,7 @@ const Faq = (): JSX.Element => {
       <Spacer size='l' />
     </Col>
   );
-};
+}
 
-Faq.displayName = 'Faq';
-export default Faq;
+FAQPage.displayName = 'FAQPage';
+export default FAQPage;
