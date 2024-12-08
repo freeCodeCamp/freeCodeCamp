@@ -17,7 +17,6 @@ import DangerZone from '../components/settings/danger-zone';
 import Email from '../components/settings/email';
 import Honesty from '../components/settings/honesty';
 import Privacy from '../components/settings/privacy';
-import { type ThemeProps, Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
 import ExamToken from '../components/settings/exam-token';
 import { hardGoTo as navigate } from '../redux/actions';
@@ -33,7 +32,6 @@ import {
   updateMyHonesty,
   updateMyQuincyEmail,
   updateMySound,
-  updateMyTheme,
   updateMyKeyboardShortcuts,
   verifyCert
 } from '../redux/settings/actions';
@@ -41,7 +39,7 @@ import {
 const { apiLocation } = envData;
 
 // TODO: update types for actions
-type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
+type ShowSettingsProps = {
   createFlashMessage: typeof createFlashMessage;
   isSignedIn: boolean;
   navigate: (location: string) => void;
@@ -73,7 +71,6 @@ const mapDispatchToProps = {
   createFlashMessage,
   navigate,
   submitNewAbout,
-  toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),
@@ -88,7 +85,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const {
     createFlashMessage,
     isSignedIn,
-    toggleNightMode,
     toggleSoundMode,
     toggleKeyboardShortcuts,
     user: {
@@ -117,7 +113,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isHonest,
       sendQuincyEmail,
       username,
-      theme,
       keyboardShortcuts
     },
     navigate,
@@ -158,11 +153,9 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             {t('settings.for', { username: username })}
           </h1>
           <MiscSettings
-            currentTheme={theme}
             keyboardShortcuts={keyboardShortcuts}
             sound={sound}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-            toggleNightMode={toggleNightMode}
             toggleSoundMode={toggleSoundMode}
           />
           <Spacer size='m' />

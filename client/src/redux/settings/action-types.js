@@ -10,7 +10,6 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('updateMyEmail'),
     ...createAsyncTypes('updateMySocials'),
     ...createAsyncTypes('updateMySound'),
-    ...createAsyncTypes('updateMyTheme'),
     ...createAsyncTypes('updateMyKeyboardShortcuts'),
     ...createAsyncTypes('updateMyHonesty'),
     ...createAsyncTypes('updateMyQuincyEmail'),

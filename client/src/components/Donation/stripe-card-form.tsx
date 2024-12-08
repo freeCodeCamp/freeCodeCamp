@@ -11,14 +11,14 @@ import type {
 import React, { useState } from 'react';
 
 import { PaymentProvider } from '../../../../shared/config/donation-settings';
-import { Themes } from '../settings/theme';
+import { LocalStorageThemes } from '../../redux/types';
 import { DonationApprovalData, PostPayment } from './types';
 
 interface FormPropTypes {
   onDonationStateChange: (donationState: DonationApprovalData) => void;
   postPayment: (arg0: PostPayment) => void;
   t: (label: string) => string;
-  theme: Themes;
+  theme: LocalStorageThemes;
   processing: boolean;
 }
 
@@ -80,7 +80,7 @@ export default function StripeCardForm({
       base: {
         fontSize: '18px',
         fontFamily: 'Lato, sans-serif',
-        color: `${theme === Themes.Night ? '#fff' : '#0a0a23'}`,
+        color: `${theme === LocalStorageThemes.Dark ? '#fff' : '#0a0a23'}`,
         '::placeholder': {
           color: `#858591`
         }

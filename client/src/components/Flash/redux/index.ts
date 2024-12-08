@@ -4,10 +4,10 @@ import {
   FlashState,
   State,
   FlashApp,
-  FlashMessageArg
+  FlashMessageArg,
+  LocalStorageThemes
 } from '../../../redux/types';
 import { playTone } from '../../../utils/tone';
-import { Themes } from '../../settings/theme';
 import { FlashMessages } from './flash-messages';
 
 export const flashMessageSelector = (state: State): FlashState['message'] =>
@@ -33,7 +33,7 @@ export const createFlashMessage = (
 ): ReducerPayload<FlashActionTypes.CreateFlashMessage> => {
   // Nightmode theme has special tones
   if (flash.variables?.theme) {
-    void playTone(flash.variables.theme as Themes);
+    void playTone(flash.variables.theme as LocalStorageThemes);
   } else if (flash.message !== FlashMessages.None) {
     void playTone(flash.message);
   }

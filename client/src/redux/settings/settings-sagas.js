@@ -24,7 +24,6 @@ import {
   putUpdateMyProfileUI,
   putUpdateMyQuincyEmail,
   putUpdateMySocials,
-  putUpdateMyTheme,
   putUpdateMyUsername,
   putVerifyCert
 } from '../../utils/ajax';
@@ -48,8 +47,6 @@ import {
   updateMySocialsError,
   updateMySoundComplete,
   updateMySoundError,
-  updateMyThemeComplete,
-  updateMyThemeError,
   validateUsernameComplete,
   validateUsernameError,
   verifyCertComplete,
@@ -107,16 +104,6 @@ function* updateMySoundSaga({ payload: update }) {
     yield put(createFlashMessage({ ...data }));
   } catch (e) {
     yield put(updateMySoundError);
-  }
-}
-
-function* updateMyThemeSaga({ payload: update }) {
-  try {
-    const { data } = yield call(putUpdateMyTheme, update);
-    yield put(updateMyThemeComplete({ ...data, payload: update }));
-    yield put(createFlashMessage({ ...data }));
-  } catch (e) {
-    yield put(updateMyThemeError);
   }
 }
 
@@ -225,7 +212,6 @@ export function createSettingsSagas(types) {
     takeEvery(types.updateMySocials, updateMySocialsSaga),
     takeEvery(types.updateMyHonesty, updateMyHonestySaga),
     takeEvery(types.updateMySound, updateMySoundSaga),
-    takeEvery(types.updateMyTheme, updateMyThemeSaga),
     takeEvery(types.updateMyKeyboardShortcuts, updateMyKeyboardShortcutsSaga),
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
     takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),

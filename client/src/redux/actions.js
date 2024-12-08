@@ -52,6 +52,10 @@ export const fetchUser = createAction(actionTypes.fetchUser);
 export const fetchUserComplete = createAction(actionTypes.fetchUserComplete);
 export const fetchUserError = createAction(actionTypes.fetchUserError);
 
+export const toggleTheme = createAction(actionTypes.toggleTheme);
+export const setTheme = createAction(actionTypes.setTheme);
+export const initializeTheme = createAction(actionTypes.initializeTheme);
+
 export const updateAllChallengesInfo = createAction(
   actionTypes.updateAllChallengesInfo
 );

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { Themes } from '../settings/theme';
+import { UserThemes } from '../../redux/types';
 import Profile from './profile';
 
 jest.mock('../../analytics');
@@ -46,7 +46,7 @@ const userProps = {
     sendQuincyEmail: true,
     sound: true,
     keyboardShortcuts: false,
-    theme: Themes.Default,
+    theme: UserThemes.Default,
     twitter: 'string',
     username: 'string',
     website: 'string',

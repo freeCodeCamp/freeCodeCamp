@@ -4,6 +4,9 @@ export const ns = 'app';
 
 export const actionTypes = createTypes(
   [
+    'setTheme',
+    'initializeTheme',
+    'toggleTheme',
     'appMount',
     'hardGoTo',
     'allowBlockDonationRequests',
