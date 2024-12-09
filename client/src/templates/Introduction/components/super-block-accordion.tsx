@@ -48,6 +48,33 @@ const isLinkChapter = (name: string) => {
   return chapter?.chapterType === 'exam';
 };
 
+const getBlockToChapterMap = () => {
+  const blockToChapterMap = new Map<string, string>();
+  chapters.forEach(chapter => {
+    chapter.modules.forEach(module => {
+      module.blocks.forEach(block => {
+        blockToChapterMap.set(block.dashedName, chapter.dashedName);
+      });
+    });
+  });
+
+  return blockToChapterMap;
+};
+
+const getBlockToModuleMap = () => {
+  const blockToModuleMap = new Map<string, string>();
+  modules.forEach(module => {
+    module.blocks.forEach(block => {
+      blockToModuleMap.set(block.dashedName, module.dashedName);
+    });
+  });
+
+  return blockToModuleMap;
+};
+
+const blockToChapterMap = getBlockToChapterMap();
+const blockToModuleMap = getBlockToModuleMap();
+
 const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
   const { t } = useTranslation();
 
@@ -91,7 +118,7 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const { currentChapters, currentBlocks } = useMemo(() => {
+  const { currentChapters } = useMemo(() => {
     const currentBlocks = uniqBy(challenges, 'block').map(
       ({ block, blockType, chapter, module }) => ({
         name: block,
@@ -117,20 +144,12 @@ export const SuperBlockAccordion = ({
       })
     );
 
-    return {
-      currentChapters,
-      currentModules,
-      currentBlocks
-    };
+    return { currentChapters };
   }, [challenges]);
 
   // Expand the outer layers in order to reveal the chosen block.
-  const expandedChapter = currentBlocks.find(
-    ({ name }) => chosenBlock === name
-  )?.chapter;
-  const expandedModule = currentBlocks.find(
-    ({ name }) => chosenBlock === name
-  )?.module;
+  const expandedChapter = blockToChapterMap.get(chosenBlock);
+  const expandedModule = blockToModuleMap.get(chosenBlock);
 
   return (
     <ul className='super-block-accordion'>
