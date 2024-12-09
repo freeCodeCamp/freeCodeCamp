@@ -115,6 +115,36 @@ input:focus-visible + .video-quiz-input-visible {
   background: none;
 }
 
-.multiple-choice-feedback p {
-  margin-bottom: 0;
+.mcq-correct-border {
+  border-left-color: var(--success-background);
+}
+
+.mcq-incorrect-border {
+  border-left-color: var(--danger-background);
+}
+
+.mcq-correct {
+  color: var(--success-color);
+  border-left-color: var(--success-background);
+}
+
+.mcq-incorrect {
+  color: var(--danger-color);
+  border-left-color: var(--danger-background);
+}
+
+.mcq-hide-border {
+  border-bottom: none;
+}
+
+.mcq-feedback {
+  border-top: none;
+}
+
+.mcq-prism-correct code {
+  color: var(--success-color);
+}
+
+.mcq-prism-incorrect code {
+  color: var(--danger-color);
 }

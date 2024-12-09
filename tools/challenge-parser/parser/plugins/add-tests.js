@@ -1,5 +1,5 @@
 const chunk = require('lodash/chunk');
-const getSection = require('./utils/get-section');
+const { getSection } = require('./utils/get-section');
 const mdastToHtml = require('./utils/mdast-to-html');
 
 function plugin() {

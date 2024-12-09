@@ -4,7 +4,7 @@ import {
   SuperBlockStage,
   superBlockStages,
   notAuditedSuperBlocks,
-  createFlatSuperBlockMap,
+  generateSuperBlockList,
   getAuditedSuperBlocks
 } from './curriculum';
 
@@ -19,9 +19,9 @@ describe('superBlockOrder', () => {
   });
 });
 
-describe('createFlatSuperBlockMap', () => {
+describe('generateSuperBlockList', () => {
   it('should return an array of SuperBlocks object with New and Upcoming when { showNewCurriculum: true, showUpcomingChanges: true }', () => {
-    const result = createFlatSuperBlockMap({
+    const result = generateSuperBlockList({
       showNewCurriculum: true,
       showUpcomingChanges: true
     });
@@ -29,7 +29,7 @@ describe('createFlatSuperBlockMap', () => {
   });
 
   it('should return an array of SuperBlocks without New and Upcoming when { showNewCurriculum: false, showUpcomingChanges: false }', () => {
-    const result = createFlatSuperBlockMap({
+    const result = generateSuperBlockList({
       showNewCurriculum: false,
       showUpcomingChanges: false
     });
@@ -64,8 +64,6 @@ describe('getAuditedSuperBlocks', () => {
   Object.keys(notAuditedSuperBlocks).forEach(language => {
     it(`should return only audited SuperBlocks for ${language}`, () => {
       const auditedSuperBlocks = getAuditedSuperBlocks({
-        showNewCurriculum: true,
-        showUpcomingChanges: true,
         language
       });
 

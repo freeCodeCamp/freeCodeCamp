@@ -232,8 +232,8 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.stack = stack;
       }
 
-      newTest.message = newTest.message.replace(/<p>/, `<p>${i + 1}. `);
-      yield put(updateConsole(newTest.message));
+      const withIndex = newTest.message.replace(/<p>/, `<p>${i + 1}. `);
+      yield put(updateConsole(withIndex));
     } finally {
       testResults.push(newTest);
     }

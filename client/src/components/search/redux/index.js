@@ -32,16 +32,16 @@ export const reducer = handleActions(
       isSearchDropdownEnabled:
         typeof payload === 'boolean' ? payload : !state.isSearchDropdownEnabled
     }),
-    [types.toggleSearchFocused]: (state, { payload }) => ({
+    [types.toggleSearchFocused]: (state, { payload }) => {
+      const focussed = state.isSearchBarFocused;
+      return focussed === payload
+        ? state
+        : { ...state, isSearchBarFocused: payload };
+    },
+    [types.updateSearchQuery]: (state, { payload }) => ({
       ...state,
-      isSearchBarFocused: payload
-    }),
-    [types.updateSearchQuery]: (state, { payload }) => {
-      return {
-        ...state,
-        query: payload
-      };
-    }
+      query: payload
+    })
   },
   initialState
 );

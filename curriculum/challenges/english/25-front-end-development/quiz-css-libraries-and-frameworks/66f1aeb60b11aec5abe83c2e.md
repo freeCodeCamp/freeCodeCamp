@@ -7,7 +7,7 @@ dashedName: quiz-css-libraries-and-frameworks
 
 # --description--
 
-Answer all of the questions below correctly to pass the quiz.
+To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
 
 # --quizzes--
 
@@ -15,401 +15,441 @@ Answer all of the questions below correctly to pass the quiz.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is a CSS framework? 
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+A set of CSS rules
 
 ---
 
-Placeholder distractor 3
+A JavaScript library  
 
-### --answer--
+---
 
-Placeholder answer
+A coding language
+
+#### --answer--
+
+A library for CSS styles
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of these is a popular CSS framework?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+JavaScript
 
 ---
 
-Placeholder distractor 3
+SQL
 
-### --answer--
+---
 
-Placeholder answer
+HTML
+
+#### --answer--
+
+Bootstrap
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is a key advantage of using a CSS framework?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Provides predefined templates
 
 ---
 
-Placeholder distractor 3
+Reduces loading speed
 
-### --answer--
+---
 
-Placeholder answer
+Increases code complexity
+
+#### --answer--
+
+Simplifies design consistency
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is a disadvantage of CSS frameworks?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Too few components
 
 ---
 
-Placeholder distractor 3
+No customization options
 
-### --answer--
+---
 
-Placeholder answer
+Improved browser support
+
+#### --answer--
+
+Can bloat CSS files
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which framework uses utility classes extensively?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Materialize
 
 ---
 
-Placeholder distractor 3
+Bootstrap
 
-### --answer--
+---
 
-Placeholder answer
+Foundation
+
+#### --answer--
+
+Tailwind
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the primary purpose of the `.container` class in Bootstrap?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+To add padding to elements
 
 ---
 
-Placeholder distractor 3
+To apply a background color
 
-### --answer--
+---
 
-Placeholder answer
+To center text
+
+#### --answer--
+
+To create a fixed-width responsive container
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does SCSS stand for?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Super Cascading Style Sheets
 
 ---
 
-Placeholder distractor 3
+Structured CSS
 
-### --answer--
+---
 
-Placeholder answer
+Simple CSS
+
+#### --answer--
+
+Sassy CSS
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What benefit do preprocessors like Sass provide?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Adds JavaScript functionality
 
 ---
 
-Placeholder distractor 3
+Directly edits HTML
 
-### --answer--
+---
 
-Placeholder answer
+Eliminates CSS
+
+#### --answer--
+
+Nesting of styles
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following is a feature of Sass?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Comments
 
 ---
 
-Placeholder distractor 3
+CSS variables
 
-### --answer--
+---
 
-Placeholder answer
+Inline CSS
+
+#### --answer--
+
+Mixins
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is Bootstrap known for?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Static design
 
 ---
 
-Placeholder distractor 3
+Focus on accessibility
 
-### --answer--
+---
 
-Placeholder answer
+No JavaScript support
+
+#### --answer--
+
+Mobile-first approach
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does Tailwind CSS focus on?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Component-based styling
 
 ---
 
-Placeholder distractor 3
+Image optimization
 
-### --answer--
+---
 
-Placeholder answer
+Mobile responsiveness
+
+#### --answer--
+
+Utility-first design
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does a CSS framework typically include?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+JavaScript functions
 
 ---
 
-Placeholder distractor 3
+HTML templates
 
-### --answer--
+---
 
-Placeholder answer
+Database management
+
+#### --answer--
+
+Predefined styles and components
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+In Tailwind CSS, which class is used to add margin to an element?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`m-4`
 
 ---
 
-Placeholder distractor 3
+`padding-4`
 
-### --answer--
+---
 
-Placeholder answer
+`margin-4`
+
+#### --answer--
+
+`mt-4`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is a main feature of preprocessors?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Linear CSS
 
 ---
 
-Placeholder distractor 3
+Uncompiled styles
 
-### --answer--
+---
 
-Placeholder answer
+Built-in animations
+
+#### --answer--
+
+Variables
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following is a drawback of Tailwind CSS?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Limited utility classes
 
 ---
 
-Placeholder distractor 3
+Lack of documentation
 
-### --answer--
+---
 
-Placeholder answer
+Hard to learn
+
+#### --answer--
+
+Verbose class names
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which CSS framework has strong community support?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Tailwind
 
 ---
 
-Placeholder distractor 3
+Materialize
 
-### --answer--
+---
 
-Placeholder answer
+Bulma
+
+#### --answer--
+
+Bootstrap
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the file extension for SCSS?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`.sass`
 
 ---
 
-Placeholder distractor 3
+`.scsss`
 
-### --answer--
+---
 
-Placeholder answer
+`.css`
+
+#### --answer--
+
+`.scss`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does Bootstrap's grid system help with?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+CSS animations
 
 ---
 
-Placeholder distractor 3
+JavaScript functions
 
-### --answer--
+---
 
-Placeholder answer
+Image loading
+
+#### --answer--
+
+Responsive layout
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which Tailwind class would you use to set the text color to red?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`text-red`
 
 ---
 
-Placeholder distractor 3
+`red-text`
 
-### --answer--
+---
 
-Placeholder answer
+`color-red`
+
+#### --answer--
+
+`text-red-500`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Why might developers choose Materialize?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Strong community support
 
 ---
 
-Placeholder distractor 3
+Easy integration with HTML
 
-### --answer--
+---
 
-Placeholder answer
+Comprehensive animation support
+
+#### --answer--
+
+Focus on material design principles
 

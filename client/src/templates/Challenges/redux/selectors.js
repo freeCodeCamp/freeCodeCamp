@@ -37,6 +37,9 @@ export const isFinishExamModalOpenSelector = state =>
 export const isSurveyModalOpenSelector = state => state[ns].modal.survey;
 export const isExamResultsModalOpenSelector = state =>
   state[ns].modal.examResults;
+export const isExitQuizModalOpenSelector = state => state[ns].modal.exitQuiz;
+export const isFinishQuizModalOpenSelector = state =>
+  state[ns].modal.finishQuiz;
 export const isProjectPreviewModalOpenSelector = state =>
   state[ns].modal.projectPreview;
 export const isShortcutsModalOpenSelector = state => state[ns].modal.shortcuts;

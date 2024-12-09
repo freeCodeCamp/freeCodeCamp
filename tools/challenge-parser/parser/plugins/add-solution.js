@@ -3,7 +3,7 @@ const { root } = require('mdast-builder');
 const visitChildren = require('unist-util-visit-children');
 
 const { editableRegionMarker } = require('./add-seed');
-const getSection = require('./utils/get-section');
+const { getSection } = require('./utils/get-section');
 const { getFileVisitor } = require('./utils/get-file-visitor');
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 

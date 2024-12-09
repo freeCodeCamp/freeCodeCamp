@@ -8,7 +8,7 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab. 
+Fulfill the user stories below and get all the tests to pass to complete the lab.
 
 **User Stories:**
 
@@ -278,7 +278,7 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
           </li>
           <li>
             <strong>1953</strong> - crosses a short, sturdy dwarf breed of wheat
-            with a high-yeidling American breed, creating a strain that responds
+            with a high-yielding American breed, creating a strain that responds
             well to fertilizer. It goes on to provide 95% of Mexico's wheat.
           </li>
           <li>

@@ -23,7 +23,7 @@ const initialState = {
     block: '',
     blockHashSlug: '/',
     id: '',
-    nextBlock: '',
+    isLastChallengeInBlock: false,
     nextChallengePath: '/',
     prevChallengePath: '/',
     challengeType: -1
@@ -43,6 +43,8 @@ const initialState = {
     reset: false,
     exitExam: false,
     finishExam: false,
+    exitQuiz: false,
+    finishQuiz: false,
     examResults: false,
     survey: false,
     projectPreview: false,

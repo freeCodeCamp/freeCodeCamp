@@ -5,14 +5,14 @@ import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Image, Button } from '@freecodecamp/ui';
+import { Container, Col, Row, Image, Button, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
 import { getLangCode } from '../../../shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import { createFlashMessage } from '../components/Flash/redux';
-import { Loader, Spacer } from '../components/helpers';
+import { Loader } from '../components/helpers';
 import RedirectHome from '../components/redirect-home';
 import { Themes } from '../components/settings/theme';
 import { showCert, fetchProfileForUser } from '../redux/actions';
@@ -253,7 +253,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       className='donation-section'
       data-playwright-test-label='donation-section'
     >
-      <Spacer size='large' />
+      <Spacer size='l' />
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
@@ -280,13 +280,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           />
         </Col>
       </Row>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <Row>
         <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
           {isDonationSubmitted && donationCloseBtn}
         </Col>
       </Row>
-      <Spacer size='large' />
+      <Spacer size='l' />
     </div>
   );
 
@@ -308,7 +308,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         >
           {t('profile.add-linkedin')}
         </Button>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <Button
           block={true}
           size='large'
@@ -323,7 +323,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           {t('profile.add-twitter')}
         </Button>
       </Col>
-      <Spacer size='large' />
+      <Spacer size='l' />
     </Row>
   );
 
@@ -484,11 +484,11 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         className='row certificate-links'
         data-playwright-test-label='cert-links'
       >
-        <Spacer size='large' />
+        <Spacer size='l' />
         {signedInUserName === username ? shareCertBtns : ''}
-        <Spacer size='large' />
+        <Spacer size='l' />
         <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
-        <Spacer size='large' />
+        <Spacer size='l' />
       </div>
     </Container>
   );

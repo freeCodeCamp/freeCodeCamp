@@ -12,7 +12,6 @@ export const partiallyCompletedChallengesSelector = state =>
   userSelector(state).partiallyCompletedChallenges || [];
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
-export const completionCountSelector = state => state[MainApp].completionCount;
 export const isRandomCompletionThresholdSelector = state =>
   state[MainApp].isRandomCompletionThreshold;
 export const isDonatingSelector = state => userSelector(state).isDonating;

@@ -8,7 +8,7 @@ demoType: onClick
 
 # --description--
 
-**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab.
+Fulfill the user stories below and get all the tests to pass to complete the lab.
 
 **User Stories:**
 

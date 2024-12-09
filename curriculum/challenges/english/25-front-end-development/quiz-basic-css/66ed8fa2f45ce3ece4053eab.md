@@ -7,7 +7,7 @@ dashedName: quiz-basic-css
 
 # --description--
 
-Answer all of the questions below correctly to pass the quiz.
+To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
 
 # --quizzes--
 
@@ -15,401 +15,441 @@ Answer all of the questions below correctly to pass the quiz.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does CSS stand for?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Cascading Style Script
 
 ---
 
-Placeholder distractor 3
+Concatenating Style Script
 
-### --answer--
+---
 
-Placeholder answer
+Castor Sage Style
+
+#### --answer--
+
+Cascading Style Sheets
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which answer uses the correct structure of using a CSS rule?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`p=red`
 
 ---
 
-Placeholder distractor 3
+`p (color: red)`
 
-### --answer--
+---
 
-Placeholder answer
+`{p color: red;}`
+
+#### --answer--
+
+`p {color: red;}`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does `<meta name="viewport">` do?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Establishes flexbox within the device.
 
 ---
 
-Placeholder distractor 3
+Creates the font for the device.
 
-### --answer--
+---
 
-Placeholder answer
+Makes the website automatically responsive.
+
+#### --answer--
+
+Controls the shape and size of the web page from a user's device.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which syntax is correct to use inline CSS?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`<p color =  blue></p>`
 
 ---
 
-Placeholder distractor 3
+`<p><style = blue></p>`
 
-### --answer--
+---
 
-Placeholder answer
+`p {color: blue;}`
+
+#### --answer--
+
+`<p style="color: blue;"></p>`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+When using internal CSS, where is the `style` element placed within the HTML?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+In the `meta` element
 
 ---
 
-Placeholder distractor 3
+In the `script` element
 
-### --answer--
+---
 
-Placeholder answer
+In the `body` element
+
+#### --answer--
+
+In the `head` element
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which rule is correct for setting the width and height in CSS?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`height-width: 50px;`
 
 ---
 
-Placeholder distractor 3
+`width-and-height: 50px;`
 
-### --answer--
+---
 
-Placeholder answer
+`flex-width: 50px; flex-height: 50px;`
+
+#### --answer--
+
+`width: 50px; height: 50px;`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which selector is correct to target `h1` elements inside of a `div`?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`div + h1 {}`
 
 ---
 
-Placeholder distractor 3
+`div ~ h1 {}`
 
-### --answer--
+---
 
-Placeholder answer
+`div > h1 {}`
+
+#### --answer--
+
+`div h1 {}`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which selector is correct to target direct children of a `footer`?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`footer ~ ul {}`
 
 ---
 
-Placeholder distractor 3
+`footer + ul {}`
 
-### --answer--
+---
 
-Placeholder answer
+`footer ul {}`
+
+#### --answer--
+
+`footer > ul {}`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which selector is correct to target the next sibling of an `img`?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`img h1 {}`
 
 ---
 
-Placeholder distractor 3
+`img > h1 {}`
 
-### --answer--
+---
 
-Placeholder answer
+`img ~ h1 {}`
+
+#### --answer--
+
+`img + h1 {}`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which selector is correct to target all siblings of an `img`?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`img > caption {}`
 
 ---
 
-Placeholder distractor 3
+`img caption {}`
 
-### --answer--
+---
 
-Placeholder answer
+`img + caption {}`
+
+#### --answer--
+
+`img ~ caption {}`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What statement is TRUE about `block` elements?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Blockline elements don't start on new lines.
 
 ---
 
-Placeholder distractor 3
+Blockline elements only takes up as much as it needs.
 
-### --answer--
+---
 
-Placeholder answer
+Blockline elements come with no margin.
+
+#### --answer--
+
+Blockline elements start on a new line with margin before and after the element.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What statement is TRUE when using the `inline-block` value?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Doesn't allow you to set the height and width.
 
 ---
 
-Placeholder distractor 3
+Top and bottom margins not respected.
 
-### --answer--
+---
 
-Placeholder answer
+Adds a line break after an element.
+
+#### --answer--
+
+Allows you to place elements next to each other while letting you set the height and width.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Given the following selectors, which has the highest specificity?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`div`
 
 ---
 
-Placeholder distractor 3
+`h1`
 
-### --answer--
+---
 
-Placeholder answer
+`p`
+
+#### --answer--
+
+`#id`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Given the following selectors, which has the lowest specificity?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`h1`
 
 ---
 
-Placeholder distractor 3
+`#id`
 
-### --answer--
+---
 
-Placeholder answer
+`p`
+
+#### --answer--
+
+`div`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does the `*` selector do?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Targets some elements on the page.
 
 ---
 
-Placeholder distractor 3
+Targets elements that have children on the page.
 
-### --answer--
+---
 
-Placeholder answer
+Targets all `p` elements on the page.
+
+#### --answer--
+
+Targets all elements on the page.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does `!important` do in CSS?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+It doesn't effect the code.
 
 ---
 
-Placeholder distractor 3
+Applies to all properties in the code.
 
-### --answer--
+---
 
-Placeholder answer
+Applies on to a certain selector or group of elements.
+
+#### --answer--
+
+Overrides any other values applied to the property for that selector.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+How does the CSS Cascade algorithm work?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Determines styles of the element based on alphabetical order.
 
 ---
 
-Placeholder distractor 3
+Gives animations to the page.
 
-### --answer--
+---
 
-Placeholder answer
+Improves Search Emgine Optimization (SEO).
+
+#### --answer--
+
+Determines styles of the element based on specificity and order of declaration.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which rule applies `32px` of margin to all sides?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`margin-top: 32px;`
 
 ---
 
-Placeholder distractor 3
+`margin: 32px 0;`
 
-### --answer--
+---
 
-Placeholder answer
+`margin: 0 32px;`
+
+#### --answer--
+
+`margin: 32px;`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which rule applies `24px` padding to the top and bottom?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`padding: 24px;`
 
 ---
 
-Placeholder distractor 3
+`padding-top-bottom: 24px;`
 
-### --answer--
+---
 
-Placeholder answer
+`padding: 0 24px;`
+
+#### --answer--
+
+`padding: 24px 0;`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does the `line-height` property do?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Controls the size of the font.
 
 ---
 
-Placeholder distractor 3
+Controls the responsiveness of text.
 
-### --answer--
+---
 
-Placeholder answer
+Controls how much space is between the letters of text.
+
+#### --answer--
+
+Controls how much space is between the lines of text.
 

@@ -21,7 +21,10 @@ export type CamperProps = Pick<
   | 'picture'
   | 'name'
   | 'joinDate'
->;
+> & {
+  setIsEditing: (value: boolean) => void;
+  isSessionUser: boolean;
+};
 
 function Camper({
   name,
@@ -35,11 +38,12 @@ function Camper({
   joinDate,
   linkedin,
   twitter,
-  website
+  website,
+  isSessionUser,
+  setIsEditing
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
   const isTopContributor = yearsTopContributor.filter(Boolean).length > 0;
-
   return (
     <>
       <div className='bio-container'>
@@ -56,40 +60,43 @@ function Camper({
           isDonating={isDonating}
           yearsTopContributor={yearsTopContributor}
           picture={picture}
+          setIsEditing={setIsEditing}
+          isSessionUser={isSessionUser}
         />
       </div>
       {(isDonating || isTopContributor) && (
         <FullWidthRow>
-          <h2>{t('profile.badges')}</h2>
-          <div className='badge-card-container'>
-            {isDonating && (
-              <div className='badge-card'>
-                <div className='camper-badge'>
-                  <SupporterBadgeEmblem />
+          <section className='card'>
+            <h2>{t('profile.badges')}</h2>
+            <div className='badge-card-container'>
+              {isDonating && (
+                <div className='badge-card'>
+                  <div className='camper-badge'>
+                    <SupporterBadgeEmblem />
+                  </div>
+                  <div className='badge-card-description'>
+                    <h3>{t('profile.supporter')}</h3>
+                    <p>{t('profile.donated')}</p>
+                  </div>
                 </div>
-                <div className='badge-card-description'>
-                  <h3>{t('profile.supporter')}</h3>
-                  <p>{t('profile.donated')}</p>
+              )}
+              {isTopContributor && (
+                <div className='badge-card'>
+                  <div className='camper-badge'>
+                    <TopContibutorBadgeEmblem />
+                  </div>
+                  <div className='badge-card-description'>
+                    <h3>{t('profile.contributor')}</h3>
+                    <p>
+                      {t('profile.contributor-prolific', {
+                        year: yearsTopContributor.join(', ')
+                      })}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            )}
-            {isTopContributor && (
-              <div className='badge-card'>
-                <div className='camper-badge'>
-                  <TopContibutorBadgeEmblem />
-                </div>
-                <div className='badge-card-description'>
-                  <h3>{t('profile.contributor')}</h3>
-                  <p>
-                    {t('profile.contributor-prolific', {
-                      year: yearsTopContributor.join(', ')
-                    })}
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
-          <hr />
+              )}
+            </div>
+          </section>
         </FullWidthRow>
       )}
     </>

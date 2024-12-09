@@ -8,7 +8,7 @@ demoType: onClick
 
 # --description--
 
-**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab. 
+Fulfill the user stories below and get all the tests to pass to complete the lab.
 
 **User Stories:**
 
@@ -313,7 +313,7 @@ Your `#navbar` element should always be at the top of the viewport.
         </p>
         <p>
             &copy; Created for
-            <a href="https://www.freecodecamp.com/" target="_blank">freeCodeCamp <i
+            <a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp <i
                     class="fab fa-free-code-camp"></i></a>
         </p>
     </footer>

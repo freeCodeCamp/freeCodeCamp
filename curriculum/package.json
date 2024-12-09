@@ -41,18 +41,9 @@
   },
   "devDependencies": {
     "@babel/core": "7.23.7",
-    "@babel/preset-env": "7.23.7",
-    "@babel/preset-typescript": "7.23.3",
     "@babel/register": "7.23.7",
     "@compodoc/live-server": "^1.2.3",
-    "babel-plugin-dynamic-import-node": "2.3.3",
-    "babel-plugin-lodash": "3.3.4",
-    "babel-plugin-transform-runtime": "6.23.0",
-    "babel-preset-env": "1.7.0",
-    "babel-preset-react": "6.24.1",
-    "babel-preset-stage-0": "6.24.1",
     "chai": "4.4.1",
-    "css": "3.0.0",
     "glob": "8.1.0",
     "invariant": "2.2.4",
     "joi": "17.12.2",
@@ -65,7 +56,6 @@
     "ora": "5.4.1",
     "puppeteer": "22.12.1",
     "readdirp": "3.6.0",
-    "string-similarity": "4.0.4",
-    "unist-util-visit": "2.0.3"
+    "string-similarity": "4.0.4"
   }
 }

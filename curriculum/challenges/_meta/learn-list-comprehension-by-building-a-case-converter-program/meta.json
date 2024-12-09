@@ -100,5 +100,6 @@
       "title": "Step 23"
     }
   ],
-  "helpCategory": "Python"
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-grid"
 }

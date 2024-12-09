@@ -6,7 +6,7 @@ export const hastag = '%23';
 export const nextLine = '%0A';
 export const action = 'intent/tweet';
 export const twitterDomain = 'twitter.com';
-export const freecodecampLearnDomainURL = 'www.freecodecamp.org/learn';
+const freecodecampLearnDomainURL = 'www.freecodecamp.org/learn';
 export const twitterDevelpoerDomainURL = 'https://developer.twitter.com';
 
 export const useShare = ({ superBlock, block }: ShareProps): string => {

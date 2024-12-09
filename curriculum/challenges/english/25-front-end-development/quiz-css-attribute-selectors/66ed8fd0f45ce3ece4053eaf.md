@@ -7,7 +7,7 @@ dashedName: quiz-css-attribute-selectors
 
 # --description--
 
-Answer all of the questions below correctly to pass the quiz.
+To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
 
 # --quizzes--
 
@@ -15,401 +15,609 @@ Answer all of the questions below correctly to pass the quiz.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which selector would target all `option` elements where the value attribute starts with `"A"`?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+option[value$="A"] { font-size: 14px; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+option[value*="A"] { font-size: 14px; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+option[value~="A"] { font-size: 14px; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+option[value^="A"] { font-size: 14px; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following will not match this CSS rule?
 
-Placeholder distractor 1
+```html
+<style>
+[title~="flower"] {
+  border: 5px solid yellow;
+}
+</style>
+```
+
+#### --distractors--
+
+```html
+<img src="img1.jpg" title="klematis flower" width="150" height="113">
+```
 
 ---
 
-Placeholder distractor 2
+```html
+<img src="img2.jpg" title="flower" width="150" height="113">
+```
 
 ---
 
-Placeholder distractor 3
+```html
+<img src="img2.jpg" title="FLOWERS of flower" width="150" height="113">
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```html
+<img src="img2.jpg" title="flowers" width="150" height="113">
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which selector will target all elements with a `lang` attribute starting with `"fr"`?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+[lang*="fr"] { color: blue; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+[lang="fr"] { color: blue; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+[lang~="fr"] { color: blue; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+[lang^="fr"] { color: blue; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+How would you style all `a` elements where the `title` attribute starts with `"Read"`?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+a[title$="Read"] { color: blue; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+a[title~="Read"] { color: blue; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+a[title*="Read"] { color: blue; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+a[title^="Read"] { color: blue; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+How would you target all `input` elements with an `id` attribute that ends with `"field"`?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+input[id^="field"] { border-color: red; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+ input[id*="field"] { border-color: red; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+input[id~="field"] { border-color: red; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+input[id$="field"] { border-color: red; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which selector targets all elements with a `lang` attribute set to `"en-US"`?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+[lang*="en"] { color: black; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+[lang$="US"] { color: black; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+[lang~="en"] { color: black; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+[lang="en-US"] { color: black; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which selector targets `a` elements where the href attribute contains `"https"`?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+a[href^="https"] { text-decoration: none; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+a[href~="https"] { text-decoration: none; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+a[href$="https"] { text-decoration: none; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+a[href*="https"] { text-decoration: none; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+How would you target all elements with a lang attribute that starts with `"es"` but not `"es-MX"`?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+[lang*="es"]:not([lang="es-MX"]) { color: red; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+[lang~="es"]:not([lang="es-MX"]) { color: red; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+[lang$="es"]:not([lang="es-MX"]) { color: red; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+[lang^="es"]:not([lang="es-MX"]) { color: red; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+You want to style the `img` elements only if their `alt` attribute does not contain the word `"thumbnail"`. Which selector would achieve this?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+img[alt$="thumbnail"] { border: 1px solid red; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+img[alt^="thumbnail"] { border: 1px solid red; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+img[alt*="thumbnail"] { border: 1px solid red; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+img:not([alt*="thumbnail"]) { border: 1px solid red; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+You're implementing an accessibility feature where `button` elements with a `data-tooltip` attribute should show a dotted underline. However, you want to exclude `button` elements where `data-tooltip` is exactly `"off"`. How would you write the selector?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+button[data-tooltip="off"] { text-decoration: none; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+button[data-tooltip*="off"] { text-decoration: underline dotted; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+button[data-tooltip$="off"] { text-decoration: underline dotted; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+button[data-tooltip]:not([data-tooltip="off"]) { text-decoration: underline dotted; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+You need to style all links (`a`) that point to image files by selecting `href` attributes ending with `.jpg`, `.png`, or `.gif`. Which selector works best?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+a[href*=".jpg"], a[href*=".png"], a[href*=".gif"] { border-bottom: 2px solid green; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+a[href$=".jpg"], a[href~=".png"], a[href^=".gif"] { border-bottom: 2px solid green; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+a[href*="image"] { border-bottom: 2px solid green; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+a[href$=".jpg"], a[href$=".png"], a[href$=".gif"] { border-bottom: 2px solid green; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+How would you target `section` elements that have a `data-theme` attribute containing the word `"dark"` but exclude those where it ends with `"-light"`?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+section[data-theme="dark"]:not([data-theme$="-light"]) { background-color: black; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+section[data-theme*="dark"]:not([data-theme*="-light"]) { background-color: black; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+section[data-theme^="dark"]:not([data-theme$="-light"]) { background-color: black; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+section[data-theme*="dark"]:not([data-theme$="-light"]) { background-color: black; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+You want to style ordered lists (`ol`) where the `type` attribute is set to `"i"` (for Roman numerals). Which of the following selectors would you use?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+ol[type$="i"] { color: darkgreen; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+ ol[type*="i"] { color: darkgreen; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+ol[type^="i"] { color: darkgreen; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+ol[type="i"] { color: darkgreen; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+You want to create a highlight effect for all external links (links that point to another domain) by checking for `href` attributes that do not start with your domain (`"freecodecamp.org"`). How would you do this?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+ a[href^="https://freecodecamp.org"] { color: inherit; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+a[href$="freecodecamp.org"] { color: inherit; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+a[href*="freecodecamp.org"] { color: inherit; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+a:not([href^="https://freecodecamp.org"]) { color: orange; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+You need to select ordered lists (`ol`) that use the `type="1"` (for numerical listing). Which of the following selectors is correct?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+ol[type*="1"] { font-weight: bold; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+ol[type$="1"] { font-weight: bold; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+ol[type~="1"] { font-weight: bold; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+ ol[type="1"] { font-weight: bold; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Suppose, on freeCodeCamp’s forum, each discussion has a `data-status` attribute that could be `"open"` or `"closed"`. You want to highlight all open discussions. How would you select these discussions?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+div[data-status$="open"] { border: 2px solid green; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+div[data-status^="open"] { border: 2px solid green; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+div[data-status*="open"] { border: 2px solid green; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+div[data-status="open"] { border: 2px solid green; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+ You want to style `textarea` elements in your form, but only those with a `maxlength` attribute. Which selector would work?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+textarea[maxlength="true"] { border-color: darkred; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+textarea[maxlength^="true"] { border-color: darkred; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+textarea[maxlength*="true"] { border-color: darkred; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+textarea[maxlength] { border-color: darkred; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Suppose, on freeCodeCamp’s course catalog, each course has a `data-completion` attribute representing the percentage completed. You want to style courses where this attribute ends with `"100"`, indicating full completion. Which selector would work?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+div[data-completion="100"] { font-weight: bold; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+div[data-completion*="100"] { font-weight: bold; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+div[data-completion^="100"] { font-weight: bold; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+div[data-completion$="100"] { font-weight: bold; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+You're building a job portal and want to style job listings where the `data-role` attribute contains `"developer"`. How would you write this selector?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+div[data-role="developer"] { background-color: lightgreen; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+div[data-role^="developer"] { background-color: lightgreen; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+div[data-role$="developer"] { background-color: lightgreen; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+div[data-role*="developer"] { background-color: lightgreen; }
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+You want to style lists that have a type attribute with a value ending in `"square"`, indicating they use square bullets. Which selector would you use?
 
-Placeholder distractor 1
+#### --distractors--
+
+```css
+ul[type*="square"] { list-style-type: square; }
+```
 
 ---
 
-Placeholder distractor 2
+```css
+ul[type="square"] { list-style-type: square; }
+```
 
 ---
 
-Placeholder distractor 3
+```css
+ul[type~="square"] { list-style-type: square; }
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```css
+ul[type$="square"] { list-style-type: square; }
+```
 

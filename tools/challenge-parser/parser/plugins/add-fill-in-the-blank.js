@@ -1,7 +1,7 @@
 const { root } = require('mdast-builder');
 const find = require('unist-util-find');
 const visit = require('unist-util-visit');
-const getSection = require('./utils/get-section');
+const { getSection } = require('./utils/get-section');
 const getAllBefore = require('./utils/before-heading');
 const mdastToHtml = require('./utils/mdast-to-html');
 

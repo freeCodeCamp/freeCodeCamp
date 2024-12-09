@@ -5,7 +5,6 @@ import stripeJson from './fixtures/donation/stripe.json';
 import { alertToBeVisible } from './utils/alerts';
 
 test.describe('third-party donation tests', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test.beforeEach(async ({ page }) => {
     await page.goto('/donate');
   });
@@ -59,7 +58,7 @@ test.describe('third-party donation tests', () => {
     );
 
     await page.route(
-      'http://localhost:3000/donate/charge-stripe-card',
+      new URL('donate/charge-stripe-card', process.env.API_LOCATION).toString(),
       async route => {
         await route.fulfill({ json: { isDonating: true } });
       }

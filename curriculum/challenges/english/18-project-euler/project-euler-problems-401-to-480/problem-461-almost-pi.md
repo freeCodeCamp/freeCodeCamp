@@ -65,89 +65,54 @@ function almostPi(n) {
 
 ```js
 function almostPi(n) {
+  const max_k = Math.ceil(n * Math.log(Math.PI + 1)) + 1;
+  const     f = Array(max_k)
+                  .fill(0)
+                  .map((_, i) => Math.exp(i / n) - 1);
 
-  // Find all possible values where f(k, n) <= PI
-  const f = [];
-  let max = 0;
-  while (1) {
-    let current = Math.exp(max / n) - 1;
+  // Pairs of values
+  const pairs     = Array(max_k * (max_k - 1) / 2);
+  let   num_pairs = 0;
 
-    if (current > Math.PI) break;
+  for (let b = 1; b < max_k; b++) {
+    for (let a = 0; a < b; a++) {
+      const value = f[a] + f[b];
 
-    f.push(current);
-    ++max;
-  }
-
-  // Get all pairs where f[i] + f[j] <= PI
-  const pairs = [];
-  for (let i = 0; i < max; ++i) {
-    for (let j = 0; j < max; ++j) {
-      if (f[i] + f[j] > Math.PI) break;
-      pairs.push(f[i] + f[j]);
+      if (value > Math.PI) break;
+      pairs[num_pairs] = {a, b, value};
+      num_pairs++;
     }
   }
+  pairs.sort((a, b) => a.value - b.value);
 
-  // Sort all values
-  pairs.sort((a, b) => a - b);
+  // Find lowest matching pair for each pair
+  let min_error = Math.PI;
+  let min_abcd  = -1;
 
-  // Optimal Value for (a + b)
-  let left = 0;
-  // Optimal Value for (c + d)
-  let right = 0;
-  // minimum error with Math.abs(a + b - Math.PI)
-  let minError = Math.PI;
+  for (let i = 0; i < num_pairs; i++) {
+    const error = Math.PI - pairs[i].value;
+    let start   = i;
+    let stop    = num_pairs - 1;
 
-  // Binary Search for the best match
-  for (let i = 0; i < pairs.length; ++i) {
-    let current = pairs[i];
-    let need = Math.PI - current;
+    // Find best match
+    while (stop - start > 1) {
+      let mid = start + Math.floor((stop - start) / 2);
 
-    if (need < current) break;
-
-    let match;
-    for (let i = 1; i < pairs.length; ++i) {
-      if (pairs[i] > need) {
-        match = i;
-        break;
-      }
+      if (pairs[mid].value > error) stop = mid - 1;
+      else start = mid + 1;
     }
 
-    let error = Math.abs(need - pairs[match]);
-    if (error < minError)
-    {
-      minError = error;
-      left = i;
-      right = match;
-    }
+    // Compute new best error
+    for (const j of [start, stop]) {
+      const new_error = Math.abs(error - pairs[j].value);
 
-    --match;
-    error = Math.abs(need - pairs[match]);
-    if (error < minError) {
-      minError = error;
-      left = i;
-      right = match;
-    }
-  }
-
-  let a, b, c, d;
-
-  OuterLoop1:
-  for (a = 0; a < max; ++a) {
-    for (b = a; b < max; ++b) {
-      if (pairs[left] == f[a] + f[b]) {
-        break OuterLoop1;
+      if (new_error < min_error) {
+        min_error = new_error;
+        min_abcd  = pairs[i].a * pairs[i].a + pairs[i].b * pairs[i].b +
+                    pairs[j].a * pairs[j].a + pairs[j].b * pairs[j].b;
       }
     }
   }
-
-  OuterLoop2:
-  for (c = 0; c < max; ++c) {
-    for (d = c; d < max; ++d) {
-      if (pairs[right] == f[c] + f[d]) {
-        break OuterLoop2;
-      }
-    }
-  }
-  return a*a + b*b + c*c + d*d;
+  return min_abcd;
 }
 ```

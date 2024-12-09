@@ -11,7 +11,8 @@ const landingPageElements = {
   curriculumBtns: 'curriculum-map-button',
   testimonials: 'testimonial-card',
   landingPageImage: 'landing-page-figure',
-  faq: 'landing-page-faq'
+  faq: 'landing-page-faq',
+  jobs: 'More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:'
 } as const;
 
 const superBlocks = [
@@ -42,90 +43,77 @@ async function goToLandingPage(page: Page) {
   await page.goto('/');
 }
 
-test.describe('Landing Page - Variation B', () => {
+test.describe('Landing Top - Variation B', () => {
   test.beforeEach(async ({ context, page }) => {
     await addGrowthbookCookie({ context, variation: 'B' });
     await goToLandingPage(page);
   });
 
-  test('The component Landing-top renders correctly', async ({ page }) => {
-    await expect(
-      page
-        .getByRole('heading', { level: 1 })
-        .filter({ hasText: `${translations.landing['big-heading-1-b']}` })
-    ).toBeVisible();
-
-    const landingHeading2 = page.getByTestId('landing-big-heading-2');
-    await expect(landingHeading2).toHaveText(
-      translations.landing['big-heading-2']
-    );
-
-    const landingHeading3 = page.getByTestId('landing-big-heading-3');
-    await expect(landingHeading3).toHaveText(
-      translations.landing['big-heading-3']
-    );
-
-    const landingHeading4 = page.getByTestId('landing-big-heading-4');
-    await expect(landingHeading4).toHaveText(
-      translations.landing['big-heading-4']
-    );
-
+  test('The supporting copy renders correctly', async ({ page }) => {
     const landingH2Heading = page.getByTestId('landing-h2-heading-b');
     await expect(landingH2Heading).toHaveText(
-      translations.landing['h2-heading-b']
+      translations.landing['h2-heading-b'].replace(/<\/?strong>/g, '')
     );
-  });
-
-  test('CTA buttons should render correctly', async ({ page }) => {
-    const mainCta = page.getByRole('link', {
-      name: translations.buttons['get-started'],
-      exact: true
-    });
-    await expect(mainCta).toHaveCount(1);
-    for (const cta of await mainCta.all()) {
-      await expect(cta).toBeVisible();
-    }
-
-    const ctas = page.getByRole('link', {
-      name: translations.buttons['logged-in-cta-btn'],
-      exact: true
-    });
-    await expect(ctas).toHaveCount(3);
-    for (const cta of await ctas.all()) {
-      await expect(cta).toBeVisible();
-    }
-  });
-
-  test('Hero image should have a descriptive alt', async ({
-    isMobile,
-    page
-  }) => {
-    const campersImage = page.getByAltText(
-      translations.landing['hero-img-uis']
-    );
-
-    if (isMobile) {
-      await expect(campersImage).toBeHidden();
-    } else {
-      await expect(campersImage).toBeVisible();
-    }
-  });
-
-  test('The as seen in container with featured logos should not exist', async ({
-    page
-  }) => {
-    const asSeenInContainer = page.getByTestId('landing-as-seen-in-text');
-    await expect(asSeenInContainer).toHaveCount(0);
   });
 });
 
-test.describe('Landing Page - Variation A', () => {
+test.describe('Second section - Variation B', () => {
+  test('The component Why learn with freeCodeCamp renders correctly', async ({
+    context,
+    page
+  }) => {
+    await addGrowthbookCookie({ context, variation: 'C' });
+    await goToLandingPage(page);
+    const h2Element = page.locator(
+      `h2:has-text("${translations.landing.benefits['heading']}")`
+    );
+
+    await expect(h2Element).toBeVisible();
+  });
+});
+
+test.describe('Landing Top - Variation A', () => {
   test.beforeEach(async ({ context, page }) => {
     await addGrowthbookCookie({ context, variation: 'A' });
     await goToLandingPage(page);
   });
 
-  test('The component Landing-top renders correctly', async ({ page }) => {
+  test('The supporting copy renders correctly', async ({ page }) => {
+    const landingH2Heading = page.getByTestId('landing-h2-heading');
+    await expect(landingH2Heading).toHaveText(
+      translations.landing['h2-heading']
+    );
+  });
+});
+
+test.describe('Second section - Variation A', () => {
+  test('The component As Seen renders correctly', async ({ context, page }) => {
+    await addGrowthbookCookie({ context, variation: 'E' });
+    await goToLandingPage(page);
+    const h2Element = page.locator(
+      `h2:has-text("${translations.landing['as-seen-in']}")`
+    );
+
+    await expect(h2Element).toBeVisible();
+  });
+});
+
+test.describe('Landing Page', () => {
+  test.beforeEach(async ({ page }) => {
+    await goToLandingPage(page);
+  });
+
+  test('Call to action buttons should render correctly', async ({ page }) => {
+    const ctas = page.getByRole('link', {
+      name: translations.buttons['logged-in-cta-btn']
+    });
+    await expect(ctas).toHaveCount(4);
+    for (const cta of await ctas.all()) {
+      await expect(cta).toBeVisible();
+    }
+  });
+
+  test('The headline renders correctly', async ({ page }) => {
     const landingHeading1 = page.getByTestId('landing-big-heading-1');
     await expect(landingHeading1).toHaveText(
       translations.landing['big-heading-1']
@@ -140,21 +128,6 @@ test.describe('Landing Page - Variation A', () => {
     await expect(landingHeading3).toHaveText(
       translations.landing['big-heading-3']
     );
-
-    const landingH2Heading = page.getByTestId('landing-h2-heading');
-    await expect(landingH2Heading).toHaveText(
-      translations.landing['h2-heading']
-    );
-  });
-
-  test('Call to action buttons should render correctly', async ({ page }) => {
-    const ctas = page.getByRole('link', {
-      name: translations.buttons['logged-in-cta-btn']
-    });
-    await expect(ctas).toHaveCount(4);
-    for (const cta of await ctas.all()) {
-      await expect(cta).toBeVisible();
-    }
   });
 
   test('Hero image should have an alt and a description', async ({
@@ -175,25 +148,6 @@ test.describe('Landing Page - Variation A', () => {
       await expect(campersImage).toBeVisible();
       await expect(captionText).toBeVisible();
     }
-  });
-
-  test('The as seen in container is visible with featured logos', async ({
-    page
-  }) => {
-    const asSeenInContainer = page.getByTestId('landing-as-seen-in-text');
-    await expect(asSeenInContainer).toHaveText(
-      translations.landing['as-seen-in']
-    );
-    const featuredLogos = page.getByTestId(
-      'landing-as-seen-in-container-logos'
-    );
-    await expect(featuredLogos).toBeVisible();
-  });
-});
-
-test.describe('Landing Page - common', () => {
-  test.beforeEach(async ({ page }) => {
-    await goToLandingPage(page);
   });
 
   test('Has 5 brand logos', async ({ page }) => {

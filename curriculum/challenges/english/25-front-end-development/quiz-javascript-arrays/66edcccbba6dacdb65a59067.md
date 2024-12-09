@@ -7,7 +7,7 @@ dashedName: quiz-javascript-arrays
 
 # --description--
 
-Answer all of the questions below correctly to pass the quiz.
+To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
 
 # --quizzes--
 
@@ -15,401 +15,505 @@ Answer all of the questions below correctly to pass the quiz.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the correct way to declare a JavaScript array?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`let arr = array(1, 2, 3);`
 
 ---
 
-Placeholder distractor 3
+`let arr = "1, 2, 3"; `
 
-### --answer--
+---
 
-Placeholder answer
+`let arr = {1, 2, 3};`
+
+#### --answer--
+
+`let arr = [1, 2, 3];`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the key difference between primitive and non-primitive data types?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Primitives can store multiple values.
 
 ---
 
-Placeholder distractor 3
+Non-primitives cannot hold references to other objects.
 
-### --answer--
+---
 
-Placeholder answer
+Non-primitives store values directly.
+
+#### --answer--
+
+Primitives hold direct values, non-primitives hold references.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What value will be assigned to the `index` variable?
 
-Placeholder distractor 1
+```js
+const numbers = [10, 20, 30, 40];
+const index = numbers.indexOf(20);
+console.log(index);
+```
+
+#### --distractors--
+
+2
 
 ---
 
-Placeholder distractor 2
+3
 
 ---
 
-Placeholder distractor 3
+-1
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+1
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What value will be assigned to the `arr2` variable?
 
-Placeholder distractor 1
+```js
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5];
+console.log(arr2);
+```
+
+#### --distractors--
+
+`[4, 5, 1, 2, 3]`
 
 ---
 
-Placeholder distractor 2
+`[1, 2, [3, 4, 5]]`
 
 ---
 
-Placeholder distractor 3
+`[1, 2, 3]`
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+`[1, 2, 3, 4, 5]`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What will this code print to the console?
 
-Placeholder distractor 1
+```js
+const colors = ['red', 'blue', 'green', 'yellow'];
+colors.splice(1, 2, 'purple');
+console.log(colors);
+```
+
+#### --distractors--
+
+`['red', 'purple', 'green', 'yellow']`
 
 ---
 
-Placeholder distractor 2
+`['red', 'blue', 'yellow']`
 
 ---
 
-Placeholder distractor 3
+`['red', 'blue', 'green', 'yellow']`
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+`['red', 'purple', 'yellow']`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What value will be assigned to the `slicedArr` variable?
 
-Placeholder distractor 1
+```js
+const arr = ['apple', 'banana', 'cherry', 'date'];
+const slicedArr = arr.slice(1, 3);
+console.log(slicedArr);
+```
+
+#### --distractors--
+
+`['apple', 'banana']`
 
 ---
 
-Placeholder distractor 2
+`['cherry', 'date']`
 
 ---
 
-Placeholder distractor 3
+`['apple', 'cherry']`
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+`['banana', 'cherry']`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which method returns the first index of a given element in an array?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`findIndex()`
 
 ---
 
-Placeholder distractor 3
+`lastIndexOf()`
 
-### --answer--
+---
 
-Placeholder answer
+`slice()`
+
+#### --answer--
+
+`indexOf()`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which method removes the first element from an array and shifts all other elements down?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`pop()`
 
 ---
 
-Placeholder distractor 3
+`slice()`
 
-### --answer--
+---
 
-Placeholder answer
+`splice()`
+
+#### --answer--
+
+`shift()`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does `Array.prototype.concat()` do?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Joins array elements into a string.
 
 ---
 
-Placeholder distractor 3
+Adds an element to the beginning of an array.
 
-### --answer--
+---
 
-Placeholder answer
+Removes an element from the array.
+
+#### --answer--
+
+Merges two arrays into a new array.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What happens if you set an array's length to a value smaller than the current length?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+It throws a syntax error.
 
 ---
 
-Placeholder distractor 3
+The extra space is filled with `undefined`.
 
-### --answer--
+---
 
-Placeholder answer
+Nothing happens; the array remains the same size.
+
+#### --answer--
+
+The array gets truncated, removing elements beyond the new length.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What will be the output of this code ?
 
-Placeholder distractor 1
+```js
+const fruits = ['apple', 'banana', 'cherry', 'apple', 'orange'];
+const index = fruits.indexOf('apple');
+if (index !== -1) {
+    fruits.splice(index, 1);
+}
+console.log(fruits);
+```
+
+#### --distractors--
+
+`['banana', 'cherry', 'orange']`
 
 ---
 
-Placeholder distractor 2
+`['apple', 'cherry', 'apple', 'orange']`
 
 ---
 
-Placeholder distractor 3
+`['banana', 'cherry', 'apple']`
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+`['banana', 'cherry', 'apple', 'orange']`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the final value of `result` in the following code?
 
-Placeholder distractor 1
+```js
+const arr1 = [1, 2];
+const arr2 = [3, 4, 5];
+const combined = arr1.concat(arr2);
+const result = combined.includes(3);
+console.log(result);
+```
+
+#### --distractors--
+
+`false`
 
 ---
 
-Placeholder distractor 2
+`[1, 2, 3, 4, 5]`
 
 ---
 
-Placeholder distractor 3
+`undefined`
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+`true`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does the following code output?
 
-Placeholder distractor 1
+```js
+const nums = [1, 2, 3, 4];
+const doubled = nums.map(n => n * 2);
+console.log(doubled.includes(8));
+```
+
+#### --distractors--
+
+`false`
 
 ---
 
-Placeholder distractor 2
+`[2, 4, 6, 8]`
 
 ---
 
-Placeholder distractor 3
+`Error`
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+`true`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the output when using `splice()` to remove elements from a 2D array?
 
-Placeholder distractor 1
+```js
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+matrix.splice(1, 1);
+console.log(matrix);
+```
+
+#### --distractors--
+
+`[[1, 2, 3], [4, 5, 6]]`
 
 ---
 
-Placeholder distractor 2
+`[[1, 2], [4, 5], [7, 8]]`
 
 ---
 
-Placeholder distractor 3
+`[[7, 8, 9]]`
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+`[[1, 2, 3], [7, 8, 9]]`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following statements about `.length` is correct?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+It counts the number of values in a 2D array.
 
 ---
 
-Placeholder distractor 3
+It returns `undefined` for empty arrays.
 
-### --answer--
+---
 
-Placeholder answer
+It gives the total number of elements in a 2D array.
+
+#### --answer--
+
+It counts the number of top-level elements in a 2D array.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following is true about the `indexOf()` method in arrays?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+It always returns the last occurrence of the element.
 
 ---
 
-Placeholder distractor 3
+It throws an error if the element is not found.
 
-### --answer--
+---
 
-Placeholder answer
+It requires the array to be sorted.
+
+#### --answer--
+
+It returns `-1` if the element is not found.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the main difference between `push()` and `concat()` when working with arrays?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`push()` adds multiple arrays together, while `concat()` adds a single element.
 
 ---
 
-Placeholder distractor 3
+`concat()` modifies the original array, while `push()` creates a new array.
 
-### --answer--
+---
 
-Placeholder answer
+Both `push()` and `concat()` are immutable methods.
+
+#### --answer--
+
+`push()` modifies the original array, while `concat()` creates a new array.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+How does the rest parameter `...rest` work in array destructuring in JavaScript?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+It is used to add extra elements to the array.
 
 ---
 
-Placeholder distractor 3
+It allows you to access elements outside the array's bounds.
 
-### --answer--
+---
 
-Placeholder answer
+It removes the last element of the array.
+
+#### --answer--
+
+It collects the remaining elements into a new array after the initial elements are assigned to variables.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What will be the result of this code ?
 
-Placeholder distractor 1
+```js
+const numbers = [10, 20, 30];
+numbers.push(40);
+numbers.pop();
+const length = numbers.length;
+console.log(length);
+```
+
+#### --distractors--
+
+2
 
 ---
 
-Placeholder distractor 2
+5
 
 ---
 
-Placeholder distractor 3
+4
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+3
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which method will return a new array without changing the original array?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`splice()`
 
 ---
 
-Placeholder distractor 3
+`pop()`
 
-### --answer--
+---
 
-Placeholder answer
+`push()`
 
+#### --answer--
+
+`slice()`

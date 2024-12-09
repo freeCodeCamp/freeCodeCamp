@@ -1,5 +1,5 @@
 const { isEmpty } = require('lodash');
-const getSection = require('./utils/get-section');
+const { getSection } = require('./utils/get-section');
 const mdastToHTML = require('./utils/mdast-to-html');
 
 function addText(sectionIds) {

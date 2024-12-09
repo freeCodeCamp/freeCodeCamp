@@ -1,7 +1,6 @@
 import type { FastifyPluginCallback } from 'fastify';
 
 import fp from 'fastify-plugin';
-import accepts from '@fastify/accepts';
 
 import { getRedirectParams } from '../utils/redirection';
 
@@ -13,8 +12,6 @@ import { getRedirectParams } from '../utils/redirection';
  * @param done Callback to signal that the logic has completed.
  */
 const fourOhFour: FastifyPluginCallback = (fastify, _options, done) => {
-  void fastify.register(accepts);
-
   // If the request accepts JSON and does not specifically prefer text/html,
   // this will return a 404 JSON response. Everything else will be redirected.
   fastify.setNotFoundHandler((request, reply) => {
@@ -34,4 +31,6 @@ const fourOhFour: FastifyPluginCallback = (fastify, _options, done) => {
   done();
 };
 
-export default fp(fourOhFour, { dependencies: ['redirect-with-message'] });
+export default fp(fourOhFour, {
+  dependencies: ['redirect-with-message', '@fastify/accepts']
+});

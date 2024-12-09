@@ -10,7 +10,7 @@ demoType: onClick
 
 In this lab you will use JavaScript click events to toggle the appearance of a favorite icon. When the heart icon is clicked, the appearance of the heart changes from empty to filled, and vice versa.
 
-**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab. **Do not copy this demo project**.
+Fulfill the user stories below and get all the tests to pass to complete the lab. **Do not copy this demo project**.
 
 **User Stories:**
 
@@ -58,7 +58,7 @@ Initially, the `span` elements should contain the code `&#9825;` to represent an
 
 ```js
 const inputs = document.querySelectorAll('ul li span.favorite-icon');
-assert(inputs.length)
+assert.isNotEmpty(inputs)
 
 for (let input of inputs) {
     assert.strictEqual(input.innerHTML.charCodeAt(0), 9825);
@@ -69,7 +69,7 @@ When the `span` element is clicked, and it contains the class `filled`, you shou
 
 ```js
 const spanElements = document.querySelectorAll('.favorite-icon');
-assert(spanElements.length);
+assert.isNotEmpty(spanElements);
 
 spanElements.forEach(span => span.classList.add('filled'));
 
@@ -85,7 +85,7 @@ When the `span` element is clicked, and it doesn't contain the class `filled`, y
 
 ```js
 const spanElements = document.querySelectorAll('.favorite-icon');
-assert(spanElements.length);
+assert.isNotEmpty(spanElements);
 
 spanElements.forEach(span => span.classList.remove('filled'));
 

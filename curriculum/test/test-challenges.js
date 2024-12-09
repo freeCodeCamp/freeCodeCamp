@@ -46,6 +46,10 @@ const { getLines } = require('../../shared/utils/get-lines');
 const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
+const {
+  createHeader,
+  testId
+} = require('../../client/src/templates/Challenges/utils/frame');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -664,7 +668,7 @@ async function getWorkerEvaluator(build, sources, code, runsInPythonWorker) {
 
 async function initializeTestRunner(build, sources, code, loadEnzyme) {
   await page.reload();
-  await page.setContent(build);
+  await page.setContent(createHeader(testId) + build);
   await page.evaluate(
     async (code, sources, loadEnzyme) => {
       const getUserInput = fileName => sources[fileName];

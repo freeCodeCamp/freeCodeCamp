@@ -102,7 +102,7 @@ h1, h2, p {
 
 .price {
   text-align: right;
-  width: 25%
+  width: 25%;
 }
 ```
 

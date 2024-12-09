@@ -1,27 +1,55 @@
 {
-  "$schema": "https://unpkg.com/knip@1/schema.json",
-
-  "ignore": "**/*.d.ts",
-
-  // Only workspaces with a configuration below are analyzed by Knip
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "ignoreBinaries": ["create:shared", "install-puppeteer", "pm2"],
+  "ignoreWorkspaces": ["api-server"], // Ignored based on https://github.com/freeCodeCamp/freeCodeCamp/pull/52330#issuecomment-1807917235
   "workspaces": {
     ".": {
-      // No custom entry/project files in root workspace to not interfere with workspaces that are not set up yet
-      "entry": []
+      "playwright": [
+        "playwright.config.ts",
+        "playwright-mobile.config.ts" // How/where is this file used?
+      ],
+      "ignore": ["tools/scripts/redirect-gen.ts"] // Referenced in tools/scripts/redirect-gen.ts
+    },
+    "api": {
+      "ignoreDependencies": ["pino-pretty"] // Knip doesn't have a fastify plugin yet
     },
     "client": {
+      "entry": ["static/**/*.js"],
       "webpack": "webpack-workers.js",
-      "ignore": ["**/__mocks__"]
+      "ignore": [
+        "**/__mocks__/**",
+        "tailwind.config.js",
+        "src/assets/icons/*.tsx" // Ignored based on https://github.com/freeCodeCamp/freeCodeCamp/pull/56244#issuecomment-2367830791
+      ],
+      "ignoreDependencies": [
+        "core-js",
+        // Node.js built-ins need to be ignored
+        "process",
+        "util",
+        "assert",
+        "@redux-saga/core" // Not referenced, something seems off related to peer dep and types
+      ]
     },
-    "client/plugins/*": {
-      "entry": "gatsby-node.js"
+    "curriculum": {
+      "ignoreDependencies": ["invariant"] // Used from another workspace: shared/utils/polyvinyl.js
+    },
+    "shared": {
+      "ignore": ["{config,utils}/*.ts"] // Using the same dir for src + outDir files with tsc confuses Knip
+    },
+    "tools/challenge-helper-scripts": {
+      "ignoreBinaries": ["mocha"] // Test setup in this workspace seems to be in need of a checkup
+    },
+    "tools/challenge-parser": {
+      "entry": ["parser/tools/*.js"] // Files not referenced/documented?
+    },
+    "tools/client-plugins/browser-scripts": {
+      "ignoreDependencies": ["sass.js", "xterm", "process", "util"] // Node.js built-ins need to be ignored
     },
     "tools/scripts/build": {
       "entry": ["*.ts"]
+    },
+    "tools/scripts/seed-exams": {
+      "entry": ["add-nano-ids.js"] // Referenced in tools/scripts/seed-exams/README.md
     }
-  },
-  "ignoreDependencies": [
-    // framerunner throws error if removed
-    "@babel/runtime"
-  ]
+  }
 }

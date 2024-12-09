@@ -1,0 +1,74 @@
+.super-block-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+.super-block-accordion ul {
+  padding: 0;
+}
+
+.super-block-accordion li {
+  list-style-type: none;
+}
+
+.super-block-accordion li a {
+  text-decoration: none;
+}
+
+.super-block-accordion .chapter,
+.super-block-accordion .link-chapter,
+.super-block-accordion .link-module {
+  background-color: var(--primary-background);
+}
+
+.super-block-accordion .chapter-button {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  text-align: start;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.super-block-accordion .module-button {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  text-align: start;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.super-block-accordion .chapter-button:hover,
+.super-block-accordion .module-button:hover {
+  background-color: var(--tertiary-background);
+  color: var(--primary-text);
+}
+
+.super-block-accordion .chapter-button[aria-expanded='false'] .dropdown-icon,
+.super-block-accordion .module-button[aria-expanded='false'] .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.super-block-accordion .chapter-button[aria-expanded='true'] .dropdown-icon,
+.super-block-accordion .module-button[aria-expanded='true'] .dropdown-icon {
+  transform: rotate(0deg);
+}
+
+.super-block-accordion .chapter-panel {
+  padding: 0 16px;
+}
+
+.super-block-accordion .module-panel {
+  padding: 0 24px;
+}
+
+.super-block-accordion .chapter-panel > li:last-child .block-grid {
+  border-bottom: 0;
+}

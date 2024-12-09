@@ -31,16 +31,6 @@ const quiz = path.resolve(
   '../../src/templates/Challenges/quiz/show.tsx'
 );
 
-const video = path.resolve(
-  __dirname,
-  '../../src/templates/Challenges/video/show.tsx'
-);
-
-const odin = path.resolve(
-  __dirname,
-  '../../src/templates/Challenges/odin/show.tsx'
-);
-
 const exam = path.resolve(
   __dirname,
   '../../src/templates/Challenges/exam/show.tsx'
@@ -51,14 +41,14 @@ const msTrophy = path.resolve(
   '../../src/templates/Challenges/ms-trophy/show.tsx'
 );
 
-const dialogue = path.resolve(
-  __dirname,
-  '../../src/templates/Challenges/dialogue/show.tsx'
-);
-
 const fillInTheBlank = path.resolve(
   __dirname,
   '../../src/templates/Challenges/fill-in-the-blank/show.tsx'
+);
+
+const generic = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/generic/show.tsx'
 );
 
 const views = {
@@ -67,14 +57,11 @@ const views = {
   modern: classic,
   frontend,
   quiz,
-  video,
   codeAlly,
-  odin,
   exam,
   msTrophy,
-  dialogue,
-  fillInTheBlank
-  // quiz: Quiz
+  fillInTheBlank,
+  generic
 };
 
 function getIsFirstStepInBlock(id, edges) {
@@ -99,11 +86,6 @@ function getTemplateComponent(challengeType) {
   return views[viewTypes[challengeType]];
 }
 
-function getNextBlock(id, edges) {
-  const next = edges[id + 1];
-  return next ? next.node.challenge.block : null;
-}
-
 exports.createChallengePages = function (createPage) {
   return function ({ node }, index, allChallengeEdges) {
     const {
@@ -117,7 +99,8 @@ exports.createChallengePages = function (createPage) {
       required = [],
       template,
       challengeType,
-      id
+      id,
+      isLastChallengeInBlock
     } = node.challenge;
     // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
     // should remove one of them.
@@ -137,7 +120,7 @@ exports.createChallengePages = function (createPage) {
           isFirstStep: getIsFirstStepInBlock(index, allChallengeEdges),
           template,
           required,
-          nextBlock: getNextBlock(index, allChallengeEdges),
+          isLastChallengeInBlock: isLastChallengeInBlock,
           nextChallengePath: getNextChallengePath(index, allChallengeEdges),
           prevChallengePath: getPrevChallengePath(index, allChallengeEdges),
           id

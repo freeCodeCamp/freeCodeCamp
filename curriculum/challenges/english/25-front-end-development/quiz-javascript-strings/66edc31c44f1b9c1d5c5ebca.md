@@ -7,7 +7,7 @@ dashedName: quiz-javascript-strings
 
 # --description--
 
-Answer all of the questions below correctly to pass the quiz.
+To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
 
 # --quizzes--
 
@@ -15,401 +15,477 @@ Answer all of the questions below correctly to pass the quiz.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the return value for the `includes()` method?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+If the substring is found within the string, the method returns the string otherwise, it returns `undefined`.
 
 ---
 
-Placeholder distractor 3
+If the substring is found within the string, the method returns `true` otherwise, it returns and empty string.
 
-### --answer--
+---
 
-Placeholder answer
+If the substring is found within the string, the method returns the string otherwise, it returns `null`.
+
+#### --answer--
+
+If the substring is found within the string, the method returns `true` otherwise, it returns `false`.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which option demonstrates string interpolation?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`"Hello, " + user + "!"`
 
 ---
 
-Placeholder distractor 3
+`"Hello, $user!"`
 
-### --answer--
+---
 
-Placeholder answer
+`` `Hello, {user}!` ``
+
+#### --answer--
+
+`` `Hello, ${user}!` ``
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following options is the newline character?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`'\newline'`
 
 ---
 
-Placeholder distractor 3
+`'\new'`
 
-### --answer--
+---
 
-Placeholder answer
+`'\line'`
+
+#### --answer--
+
+`'\n'`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following statements is correct about strings?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Strings are mutable and can be changed after they are created.
 
 ---
 
-Placeholder distractor 3
+Strings are non primitive data types.
 
-### --answer--
+---
 
-Placeholder answer
+Strings can only be created using single quotes.
+
+#### --answer--
+
+Strings are immutable.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does ASCII stand for?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+American Standard Code for Internet Information
 
 ---
 
-Placeholder distractor 3
+Advanced Systematic Code for Internal Interchange
 
-### --answer--
+---
 
-Placeholder answer
+Automatic Standard Code for Internal Information
+
+#### --answer--
+
+American Standard Code for Information Interchange
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following methods extracts a portion of a string and returns a new string?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`trim()`
 
 ---
 
-Placeholder distractor 3
+`indexOf()`
 
-### --answer--
+---
 
-Placeholder answer
+`prompt()`
+
+#### --answer--
+
+`slice()`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the purpose of the `prompt()` method?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+It displays a message in the console.
 
 ---
 
-Placeholder distractor 3
+It displays an alert box with a message.
 
-### --answer--
+---
 
-Placeholder answer
+It displays a confirmation box with a message.
+
+#### --answer--
+
+It displays a dialog box that prompts the user for input.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following is the correct way to access the third character of a string?
 
-Placeholder distractor 1
+#### --distractors--
+
+```js
+const developer = "Jessica";
+developer[3];
+```
 
 ---
 
-Placeholder distractor 2
+```js
+const developer = "Jessica";
+developer[-1];
+```
 
 ---
 
-Placeholder distractor 3
+```js
+const developer = "Jessica";
+developer[0];
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```js
+const developer = "Jessica";
+developer[2];
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+How can you obtain the ASCII index of a character in a string?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`str.charCode()`
 
 ---
 
-Placeholder distractor 3
+`str.codeAt()`
 
-### --answer--
+---
 
-Placeholder answer
+`str.getCharIndex()`
+
+#### --answer--
+
+`str.charCodeAt()`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+How can you obtain the character corresponding to an ASCII value?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`String.toASCII()`
 
 ---
 
-Placeholder distractor 3
+`String.toChar()`
 
-### --answer--
+---
 
-Placeholder answer
+`String.toCode()`
+
+#### --answer--
+
+`String.fromCharCode()`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following `indexOf` examples will correctly return -1?
 
-Placeholder distractor 1
+#### --distractors--
+
+```js
+const organization = "freeCodeCamp";
+
+console.log(organization.indexOf("e"));
+```
 
 ---
 
-Placeholder distractor 2
+```js
+const organization = "freeCodeCamp";
+
+console.log(organization.indexOf("f"));
+```
 
 ---
 
-Placeholder distractor 3
+```js
+const organization = "freeCodeCamp";
 
-### --answer--
+console.log(organization.indexOf("C"));
+```
 
-Placeholder answer
+#### --answer--
+
+```js
+const organization = "freeCodeCamp";
+
+console.log(organization.indexOf("c"));
+```
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+How can you check if the string `"JavaScript"` contains a specific substring?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`"JavaScript".has()`
 
 ---
 
-Placeholder distractor 3
+`"JavaScript".contains()`
 
-### --answer--
+---
 
-Placeholder answer
+`"JavaScript".exists()`
+
+#### --answer--
+
+`"JavaScript".includes()`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which method extracts a substring from the string `"JavaScript"`?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`"JavaScript".remove()`
 
 ---
 
-Placeholder distractor 3
+`"JavaScript".extract()`
 
-### --answer--
+---
 
-Placeholder answer
+`"JavaScript".cut()`
+
+#### --answer--
+
+`"JavaScript".slice()`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+How do you convert the string `"JavaScript"` to uppercase?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`"JavaScript".upper()`
 
 ---
 
-Placeholder distractor 3
+`"JavaScript".toUpper()`
 
-### --answer--
+---
 
-Placeholder answer
+`"JavaScript".convertUpper()`
+
+#### --answer--
+
+`"JavaScript".toUpperCase()`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+How do you convert the string `"JavaScript"` to lowercase?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`"JavaScript".lower()`
 
 ---
 
-Placeholder distractor 3
+`"JavaScript".toLower()`
 
-### --answer--
+---
 
-Placeholder answer
+`"JavaScript".convertLower()`
+
+#### --answer--
+
+`"JavaScript".toLowerCase()`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following methods is used to find a specified value in a string and replace it with another value?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`indexOf()`
 
 ---
 
-Placeholder distractor 3
+`replaceWith()`
 
-### --answer--
+---
 
-Placeholder answer
+`find()`
+
+#### --answer--
+
+`replace()`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which method is used to repeat a string a specified number of times?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`str.times()`
 
 ---
 
-Placeholder distractor 3
+`str.repeatTimes()`
 
-### --answer--
+---
 
-Placeholder answer
+`str.repeatNumber()`
+
+#### --answer--
+
+`str.repeat()`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What will the following code return: `'abc'.repeat(3)`?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`"abcabc"`
 
 ---
 
-Placeholder distractor 3
+`"abcabcabcabc"`
 
-### --answer--
+---
 
-Placeholder answer
+It will throw an error.
+
+#### --answer--
+
+`"abcabcabc"`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+How do you remove whitespace from the beginning and end of a string?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`str.strip()`
 
 ---
 
-Placeholder distractor 3
+`str.removeWhitespace()`
 
-### --answer--
+---
 
-Placeholder answer
+`str.trimWhitespace()`
+
+#### --answer--
+
+`str.trim()`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following is the correct syntax for escaping strings?
 
-Placeholder distractor 1
+#### --distractors--
+
+```js
+"She said, ?"Hello!?""
+```
 
 ---
 
-Placeholder distractor 2
+```js
+"She said, ."Hello!.""
+```
 
 ---
 
-Placeholder distractor 3
+```js
+"She said, //"Hello!//""
+```
 
-### --answer--
+#### --answer--
 
-Placeholder answer
+```js
+"She said, \"Hello!\""
+```
 

@@ -1,10 +1,16 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Picture input field', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
-    await page.goto('/settings');
+    await page.goto('/certifieduser');
+
+    if (!process.env.CI) {
+      await page
+        .getByRole('button', { name: 'Preview custom 404 page' })
+        .click();
+    }
+
+    await page.getByRole('button', { name: 'Edit my profile' }).click();
   });
 
   test('Should be possible to type', async ({ page }) => {

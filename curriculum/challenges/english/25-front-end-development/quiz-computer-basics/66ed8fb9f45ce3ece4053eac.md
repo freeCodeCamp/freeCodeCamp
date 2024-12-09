@@ -7,7 +7,7 @@ dashedName: quiz-computer-basics
 
 # --description--
 
-Answer all of the questions below correctly to pass the quiz.
+To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
 
 # --quizzes--
 
@@ -15,401 +15,441 @@ Answer all of the questions below correctly to pass the quiz.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What part of a computer is used to connect the other internal components together?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Processor
 
 ---
 
-Placeholder distractor 3
+Graphics Card
 
-### --answer--
+---
 
-Placeholder answer
+Memory
+
+#### --answer--
+
+Motherboard
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which is not a conventional way to connect a keyboard to the computer?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+USB Receiver
 
 ---
 
-Placeholder distractor 3
+Bluetooth
 
-### --answer--
+---
 
-Placeholder answer
+USB Cable
+
+#### --answer--
+
+Ethernet Cable
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following ISP connections are typically the fastest?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+DSL
 
 ---
 
-Placeholder distractor 3
+Satellite
 
-### --answer--
+---
 
-Placeholder answer
+Cable
+
+#### --answer--
+
+Fiber Optic
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following is NOT a safe practice when signing in?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Using a fingerprint or face scanner
 
 ---
 
-Placeholder distractor 3
+Making a long and complex password like `@ppl3_+B@nana34823`
 
-### --answer--
+---
 
-Placeholder answer
+Utilizing a physical USB security key
+
+#### --answer--
+
+Saving passwords in the browser on a public computer
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following is not a Web Browser?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Safari
 
 ---
 
-Placeholder distractor 3
+Opera GX
 
-### --answer--
+---
 
-Placeholder answer
+DuckDuckGo
+
+#### --answer--
+
+Google Drive
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+When you need to edit a piece of code, which of the following are you most likely going to use?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Node Package Manager
 
 ---
 
-Placeholder distractor 3
+Microsoft Edge
 
-### --answer--
+---
 
-Placeholder answer
+Github
+
+#### --answer--
+
+Visual Studio Code
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following stores and accesses files on the hard drive?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Dropbox
 
 ---
 
-Placeholder distractor 3
+Microsoft OneDrive
 
-### --answer--
+---
 
-Placeholder answer
+Google Drive
+
+#### --answer--
+
+Windows File Explorer
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is not a good practice when naming files for later use?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Putting an underscore or hyphen between words
 
 ---
 
-Placeholder distractor 3
+Use a casing style such as camelCase and sticking with it
 
-### --answer--
+---
 
-Placeholder answer
+Putting a version number at the end of a document like `summaryReport_v2.docx`
+
+#### --answer--
+
+Being lazy and pounding your keyboard like `asdfloweiueld` to get it over with
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following is a way to move files?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Using `Ctrl + X` and `Ctrl + V` (or `Command + X` and `Command + V` on Mac)
 
 ---
 
-Placeholder distractor 3
+Dragging the file and dropping it at the destination
 
-### --answer--
+---
 
-Placeholder answer
+Using a terminal command such as `move` (`mv` on Mac)
+
+#### --answer--
+
+All of the other choices
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following is a way to send a file to the Recycle Bin/Trash?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+All of the other choices
 
 ---
 
-Placeholder distractor 3
+Pressing the `Backspace` key on the keyboard
 
-### --answer--
+---
 
-Placeholder answer
+Moving it to an Archived folder
+
+#### --answer--
+
+Pressing the `Delete` key on the keyboard (`Command + Delete` on Mac)
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following is not a feature when searching for files?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Using boolean operators like `AND`, `OR`, and `NOT`
 
 ---
 
-Placeholder distractor 3
+Using filters like `*.jpg`
 
-### --answer--
+---
 
-Placeholder answer
+Using Cortana on Windows or Spotlight Search on Mac
+
+#### --answer--
+
+Typing the name of the file into your Web Browser and hitting `Enter`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What file type will be best suited for writing documentation?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`.php`
 
 ---
 
-Placeholder distractor 3
+`.html`
 
-### --answer--
+---
 
-Placeholder answer
+`.json`
+
+#### --answer--
+
+`.md`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following is not a configuration file?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`.env`
 
 ---
 
-Placeholder distractor 3
+`.build`
 
-### --answer--
+---
 
-Placeholder answer
+`.yaml` or `.yml`
+
+#### --answer--
+
+`.log`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+A piece of software that allows you to look at online content is called a:
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Internet Content Displayer
 
 ---
 
-Placeholder distractor 3
+Search Engine
 
-### --answer--
+---
 
-Placeholder answer
+Website
+
+#### --answer--
+
+Web Browser
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+A piece of software that lists web pages related to a user's query is a called a:
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Page Finder
 
 ---
 
-Placeholder distractor 3
+Web Browser
 
-### --answer--
+---
 
-Placeholder answer
+Website
+
+#### --answer--
+
+Search Engine
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+A set of one or more web pages under one domain name is called a:
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Web Browser
 
 ---
 
-Placeholder distractor 3
+Hyperlink
 
-### --answer--
+---
 
-Placeholder answer
+Search Engine
+
+#### --answer--
+
+Website
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+To search for an exact phrase, you should use what character?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Backtick
 
 ---
 
-Placeholder distractor 3
+Parenthesis
 
-### --answer--
+---
 
-Placeholder answer
+Brackets
+
+#### --answer--
+
+Quotation marks
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which is not a way to install a Web Browser?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Using a Package Manager
 
 ---
 
-Placeholder distractor 3
+Directly downloading from the website
 
-### --answer--
+---
 
-Placeholder answer
+Using an App Store like Microsoft Store
+
+#### --answer--
+
+Pressing the Network/Internet button in Settings
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of these peripherals is not the same type as the others?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Projector
 
 ---
 
-Placeholder distractor 3
+Speakers
 
-### --answer--
+---
 
-Placeholder answer
+Monitor
+
+#### --answer--
+
+Microphone
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following lists of parts can all be found in the circuit board?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Printer, Router, USB Ports
 
 ---
 
-Placeholder distractor 3
+Mouse, Keyboard, Monitor
 
-### --answer--
+---
 
-Placeholder answer
+Motherboard, Hard Drive, GPU
+
+#### --answer--
+
+BIOS/UEFI Chip, CPU, RAM
 

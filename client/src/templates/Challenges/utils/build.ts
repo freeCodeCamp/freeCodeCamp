@@ -3,15 +3,13 @@ import frameRunnerData from '../../../../../client/config/browser-scripts/frame-
 import jsTestEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
 import pyTestEvaluatorData from '../../../../../client/config/browser-scripts/python-test-evaluator.json';
 
-import {
-  ChallengeFile as PropTypesChallengeFile,
-  ChallengeMeta
-} from '../../../redux/prop-types';
+import { ChallengeFile, ChallengeMeta } from '../../../redux/prop-types';
 import { concatHtml } from '../rechallenge/builders';
 import {
   getTransformers,
   embedFilesInHtml,
-  getPythonTransformers
+  getPythonTransformers,
+  getMultifileJSXTransformers
 } from '../rechallenge/transformers';
 import {
   createTestFramer,
@@ -24,12 +22,6 @@ import {
   Source
 } from './frame';
 import { WorkerExecutor } from './worker-executor';
-
-interface ChallengeFile extends PropTypesChallengeFile {
-  source: string;
-  index: string;
-  editableContents: string;
-}
 
 interface BuildChallengeData extends Context {
   challengeType: number;
@@ -236,18 +228,22 @@ export async function buildDOMChallenge(
 ): Promise<BuildResult> {
   // TODO: make this required in the schema.
   if (!challengeFiles) throw Error('No challenge files provided');
-  const loadEnzyme = challengeFiles.some(
+  const hasJsx = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
+  const isMultifile = challengeFiles.length > 1;
 
-  const pipeLine = composeFunctions(...getTransformers(options));
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const transformers =
+    isMultifile && hasJsx
+      ? getMultifileJSXTransformers(options)
+      : getTransformers(options);
+
+  const pipeLine = composeFunctions(...transformers);
   const usesTestRunner = options?.usesTestRunner ?? false;
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
-  const [embeddedFiles, contents] = (await embedFilesInHtml(finalFiles)) as [
-    ChallengeFile[],
-    string
-  ];
+  const contents = (await embedFilesInHtml(finalFiles)) as string;
 
   // if there is an error, we just build the test runner so that it can be
   // used to run tests against the code without actually running the code.
@@ -265,8 +261,8 @@ export async function buildDOMChallenge(
     // necessary at the moment.
     challengeType: challengeTypes.html,
     build: concatHtml(toBuild),
-    sources: buildSourceMap(embeddedFiles),
-    loadEnzyme,
+    sources: buildSourceMap(finalFiles),
+    loadEnzyme: hasJsx,
     error
   };
 }

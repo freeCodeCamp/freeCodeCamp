@@ -8,10 +8,12 @@ import { Button, Modal } from '@freecodecamp/ui';
 import { closeModal, resetChallenge } from '../redux/actions';
 import { isResetModalOpenSelector } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
+import { isProjectBased } from '../../../utils/curriculum-layout';
 
 interface ResetModalProps {
   close: () => void;
   isOpen: boolean;
+  challengeType: number;
   reset: () => void;
 }
 
@@ -35,7 +37,12 @@ function withActions(...fns: Array<() => void>) {
   return () => fns.forEach(fn => fn());
 }
 
-function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
+function ResetModal({
+  reset,
+  close,
+  challengeType,
+  isOpen
+}: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
   if (isOpen) {
     callGA({ event: 'pageview', pagePath: '/reset-modal' });
@@ -46,7 +53,11 @@ function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
         {t('learn.reset')}
       </Modal.Header>
       <Modal.Body alignment='center'>
-        <p>{t('learn.reset-warn')}</p>
+        <p>
+          {isProjectBased(challengeType)
+            ? t('learn.revert-warn')
+            : t('learn.reset-warn')}
+        </p>
         <p>
           <em>{t('learn.reset-warn-2')}</em>
         </p>
@@ -58,7 +69,9 @@ function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
           variant='danger'
           onClick={withActions(reset, close)}
         >
-          {t('buttons.reset-lesson')}
+          {isProjectBased(challengeType)
+            ? t('buttons.revert-to-saved-code')
+            : t('buttons.reset-lesson')}
         </Button>
       </Modal.Footer>
     </Modal>

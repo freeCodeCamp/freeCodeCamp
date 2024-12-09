@@ -204,7 +204,7 @@ function ShowClassic({
   },
   pageContext: {
     challengeMeta,
-    challengeMeta: { isFirstStep, nextChallengePath, prevChallengePath },
+    challengeMeta: { isFirstStep, nextChallengePath },
     projectPreview: { challengeData }
   },
   createFiles,
@@ -392,10 +392,10 @@ function ShowClassic({
         block={block}
         challengeDescription={
           <ChallengeDescription
-            block={block}
             description={description}
             instructions={instructions}
             superBlock={superBlock}
+            block={block}
           />
         }
         challengeTitle={
@@ -445,8 +445,6 @@ function ShowClassic({
       executeChallenge={executeChallenge}
       containerRef={containerRef}
       instructionsPanelRef={instructionsPanelRef}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
     >
@@ -522,11 +520,15 @@ function ShowClassic({
         <CompletionModal />
         <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />
-        <ResetModal />
+        <ResetModal challengeType={challengeType} />
         <ProjectPreviewModal
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}
-          previewTitle={t('learn.project-preview-title')}
+          previewTitle={
+            demoType === 'onClick'
+              ? t('learn.demo-project-title')
+              : t('learn.project-preview-title')
+          }
         />
         <ShortcutsModal />
       </LearnLayout>

@@ -74,6 +74,7 @@ exports.createPages = async function createPages({
             challenge {
               block
               blockType
+              blockLayout
               certification
               challengeType
               dashedName
@@ -85,6 +86,7 @@ exports.createPages = async function createPages({
                 blockHashSlug
               }
               id
+              isLastChallengeInBlock
               order
               required {
                 link
@@ -260,11 +262,15 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type Challenge {
       blockType: String
+      blockLayout: String
       challengeFiles: [FileContents]
+      chapter: String
+      explanation: String
       notes: String
       url: String
       assignments: [String]
       prerequisites: [PrerequisiteChallenge]
+      module: String
       msTrophyId: String
       fillInTheBlank: FillInTheBlank
       scene: Scene
@@ -334,7 +340,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       questions: [QuizQuestion]
     }
     type QuizQuestion {
-      question: String
+      text: String
       distractors: [String]
       answer: String
     }

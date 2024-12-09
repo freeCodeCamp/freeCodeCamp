@@ -65,6 +65,7 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
       name: translations.buttons['agree-honesty']
     });
     await agreeButton.click();
+    await alertToBeVisible(page, translations.buttons['accepted-honesty']);
 
     await page.reload();
 

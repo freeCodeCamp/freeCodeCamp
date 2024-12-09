@@ -1,4 +1,4 @@
-const getSection = require('./utils/get-section');
+const { getSection } = require('./utils/get-section');
 
 function plugin() {
   return transformer;

@@ -7,7 +7,7 @@ dashedName: quiz-css-accessibility
 
 # --description--
 
-Answer all of the questions below correctly to pass the quiz.
+To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
 
 # --quizzes--
 
@@ -15,401 +15,441 @@ Answer all of the questions below correctly to pass the quiz.
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which property changes the background color in CSS?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`bg-color`
 
 ---
 
-Placeholder distractor 3
+`color-bg`
 
-### --answer--
+---
 
-Placeholder answer
+`fill-color`
+
+#### --answer--
+
+`background-color`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which CSS property controls the width of an element?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`size`
 
 ---
 
-Placeholder distractor 3
+`dimension`
 
-### --answer--
+---
 
-Placeholder answer
+`area`
+
+#### --answer--
+
+`width`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which tool can help inspect element styles in a web browser?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Adobe Photoshop
 
 ---
 
-Placeholder distractor 3
+Microsoft Word
 
-### --answer--
+---
 
-Placeholder answer
+Notepad
+
+#### --answer--
+
+Chrome DevTools
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which property is essential for setting custom fonts in CSS?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`font-weight`
 
 ---
 
-Placeholder distractor 3
+`text-align`
 
-### --answer--
+---
 
-Placeholder answer
+`text-transform`
+
+#### --answer--
+
+`font-family`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does the  `:hover` pseudo-class indicate? 
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Active state
 
 ---
 
-Placeholder distractor 3
+Element is focused
 
-### --answer--
+---
 
-Placeholder answer
+Element is hidden
+
+#### --answer--
+
+Mouse is over the element
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which online tool checks color contrast accessibility?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+ColorZilla
 
 ---
 
-Placeholder distractor 3
+Canva
 
-### --answer--
+---
 
-Placeholder answer
+Figma
+
+#### --answer--
+
+Contrast checker
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the purpose of the `alt` attribute in images?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+To change image size
 
 ---
 
-Placeholder distractor 3
+To add a title
 
-### --answer--
+---
 
-Placeholder answer
+To change image color
+
+#### --answer--
+
+To provide a text alternative
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is a screen reader?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+A browser for disabled users
 
 ---
 
-Placeholder distractor 3
+A CSS tool
 
-### --answer--
+---
 
-Placeholder answer
+A web development library
+
+#### --answer--
+
+A text-to-speech software
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does the 'Inspect Element' feature do?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Edits text directly
 
 ---
 
-Placeholder distractor 3
+Downloads files
 
-### --answer--
+---
 
-Placeholder answer
+Modifies images
+
+#### --answer--
+
+Displays CSS and HTML
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which CSS property controls text size?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`text-size`
 
 ---
 
-Placeholder distractor 3
+`size-font`
 
-### --answer--
+---
 
-Placeholder answer
+`text-style`
+
+#### --answer--
+
+`font-size`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does the `opacity` property do in CSS?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Changes text size
 
 ---
 
-Placeholder distractor 3
+Adds a border
 
-### --answer--
+---
 
-Placeholder answer
+Sets the element's position
+
+#### --answer--
+
+Controls element transparency
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which CSS property controls the spacing between lines of text?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`letter-spacing`
 
 ---
 
-Placeholder distractor 3
+`line-spacing`
 
-### --answer--
+---
 
-Placeholder answer
+`word-spacing`
+
+#### --answer--
+
+`line-height`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is a common use for `aria-hidden="true"`?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+To show content
 
 ---
 
-Placeholder distractor 3
+To display on mobile
 
-### --answer--
+---
 
-Placeholder answer
+To increase visibility
+
+#### --answer--
+
+To hide content from screen readers
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the `flex` property used for?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Changing text color
 
 ---
 
-Placeholder distractor 3
+Adjusting font size
 
-### --answer--
+---
 
-Placeholder answer
+Adding animations
+
+#### --answer--
+
+Creating responsive layouts
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which of the following is a CSS Grid property?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`flex-direction`
 
 ---
 
-Placeholder distractor 3
+`float`
 
-### --answer--
+---
 
-Placeholder answer
+`position`
+
+#### --answer--
+
+`grid-area`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What does CSS stand for?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Creative Style Sheets
 
 ---
 
-Placeholder distractor 3
+Colorful Style Sheets
 
-### --answer--
+---
 
-Placeholder answer
+Computer Style Sheets
+
+#### --answer--
+
+Cascading Style Sheets
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the minimum contrast ratio for graphics?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+1.5:1
 
 ---
 
-Placeholder distractor 3
+4.5:1
 
-### --answer--
+---
 
-Placeholder answer
+0:1
+
+#### --answer--
+
+3:1
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which property helps with responsive design?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`position`
 
 ---
 
-Placeholder distractor 3
+`width`
 
-### --answer--
+---
 
-Placeholder answer
+`overflow`
+
+#### --answer--
+
+`max-width`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+Which property aligns text in CSS?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+`align-text`
 
 ---
 
-Placeholder distractor 3
+`justify-text`
 
-### --answer--
+---
 
-Placeholder answer
+`text-position`
+
+#### --answer--
+
+`text-align`
 
 ### --question--
 
-Placeholder question
+#### --text--
 
-### --distractors--
+What is the `outline` property most commonly used to configure?
 
-Placeholder distractor 1
+#### --distractors--
 
----
-
-Placeholder distractor 2
+Border of an element
 
 ---
 
-Placeholder distractor 3
+Margin of an element
 
-### --answer--
+---
 
-Placeholder answer
+Padding of an element
+
+#### --answer--
+
+Focus indicator around an element
 

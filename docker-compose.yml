@@ -26,7 +26,7 @@ services:
     depends_on:
       - mongo
       - mailhog
-    image: fcc-new-api
+    image: fcc-api
     env_file:
       - .env
     environment:
@@ -34,7 +34,6 @@ services:
       # container, so we have to override these variables.
       - MONGOHQ_URL=mongodb://mongo:27017/freecodecamp?directConnection=true
       - MAILHOG_HOST=mailhog
+      - HOST=0.0.0.0
     ports:
-      # PORT is used by the new api, so we use the less generic API_PORT to
-      # avoid conflicts.
       - '3000:3000'

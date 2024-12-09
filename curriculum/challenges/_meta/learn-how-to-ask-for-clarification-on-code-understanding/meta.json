@@ -190,5 +190,6 @@
       "title": "Task 43"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }

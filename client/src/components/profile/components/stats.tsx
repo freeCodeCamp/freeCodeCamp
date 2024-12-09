@@ -3,9 +3,10 @@ import { useTranslation } from 'react-i18next';
 import addDays from 'date-fns/addDays';
 import addMonths from 'date-fns/addMonths';
 import isEqual from 'date-fns/isEqual';
+import { Spacer } from '@freecodecamp/ui';
 import startOfDay from 'date-fns/startOfDay';
 import { User } from '../../../redux/prop-types';
-import { FullWidthRow, Spacer } from '../../helpers';
+import { FullWidthRow } from '../../helpers';
 import './stats.css';
 
 interface StatsProps {
@@ -112,29 +113,30 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
 
   return (
     <FullWidthRow>
-      <h2>{t('profile.stats')}</h2>
-      <Spacer size='small' />
-      <dl className='stats'>
-        <div>
-          <dt>
-            <b data-testid='current-streak'>{t('profile.current-streak')}</b>
-          </dt>
-          <dd>{currentStreak || 0}</dd>
-        </div>
-        <div>
-          <dt>
-            <b>{t('profile.total-points')}</b>
-          </dt>
-          <dd>{points}</dd>
-        </div>
-        <div>
-          <dt>
-            <b data-testid='longest-streak'>{t('profile.longest-streak')}</b>
-          </dt>
-          <dd>{longestStreak || 0}</dd>
-        </div>
-      </dl>
-      <hr />
+      <section className='card'>
+        <h2>{t('profile.stats')}</h2>
+        <Spacer size='s' />
+        <dl className='stats'>
+          <div>
+            <dt>
+              <b data-testid='current-streak'>{t('profile.current-streak')}</b>
+            </dt>
+            <dd>{currentStreak || 0}</dd>
+          </div>
+          <div>
+            <dt>
+              <b>{t('profile.total-points')}</b>
+            </dt>
+            <dd>{points}</dd>
+          </div>
+          <div>
+            <dt>
+              <b data-testid='longest-streak'>{t('profile.longest-streak')}</b>
+            </dt>
+            <dd>{longestStreak || 0}</dd>
+          </div>
+        </dl>
+      </section>
     </FullWidthRow>
   );
 }
