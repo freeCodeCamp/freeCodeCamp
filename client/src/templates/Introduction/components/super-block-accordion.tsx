@@ -1,5 +1,4 @@
 import React, { ReactNode, useMemo } from 'react';
-import { uniqBy } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
@@ -118,33 +117,29 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const { currentChapters } = useMemo(() => {
-    const currentBlocks = uniqBy(challenges, 'block').map(
-      ({ block, blockType, chapter, module }) => ({
-        name: block,
-        blockType,
-        chapter: chapter as string,
-        module: module as string,
-        challenges: challenges.filter(({ block: b }) => b === block)
-      })
-    );
+  const { allChapters } = useMemo(() => {
+    const populateBlocks = (blocks: { dashedName: string }[]) =>
+      blocks.map(block => {
+        const blockChallenges = challenges.filter(
+          ({ block: blockName }) => blockName === block.dashedName
+        );
 
-    const currentModules = uniqBy(currentBlocks, 'module').map(
-      ({ module, chapter }) => ({
-        name: module,
-        chapter,
-        blocks: currentBlocks.filter(({ module: m }) => m === module)
-      })
-    );
+        return {
+          name: block.dashedName,
+          blockType: blockChallenges[0]?.blockType ?? null,
+          challenges: blockChallenges
+        };
+      });
 
-    const currentChapters = uniqBy(currentModules, 'chapter').map(
-      ({ chapter }) => ({
-        name: chapter,
-        modules: currentModules.filter(({ chapter: c }) => c === chapter)
-      })
-    );
+    const allChapters = chapters.map(chapter => ({
+      name: chapter.dashedName,
+      modules: chapter.modules.map(module => ({
+        name: module.dashedName,
+        blocks: populateBlocks(module.blocks)
+      }))
+    }));
 
-    return { currentChapters };
+    return { allChapters };
   }, [challenges]);
 
   // Expand the outer layers in order to reveal the chosen block.
@@ -153,7 +148,7 @@ export const SuperBlockAccordion = ({
 
   return (
     <ul className='super-block-accordion'>
-      {currentChapters.map(chapter => {
+      {allChapters.map(chapter => {
         if (isLinkChapter(chapter.name)) {
           const linkedChallenge = chapter.modules[0].blocks[0].challenges[0];
           return (
