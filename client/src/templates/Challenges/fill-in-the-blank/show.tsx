@@ -178,8 +178,6 @@ const ShowFillInTheBlank = ({
     <Hotkeys
       executeChallenge={() => handleSubmit()}
       containerRef={container}
-      nextChallengePath={challengeMeta.nextChallengePath}
-      prevChallengePath={challengeMeta.prevChallengePath}
       playScene={() => handlePlayScene(true)}
     >
       <LearnLayout>

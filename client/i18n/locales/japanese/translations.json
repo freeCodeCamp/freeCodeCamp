@@ -238,6 +238,8 @@
     "sound-mode": "これは快適なアコースティックギターの音をウェブサイトの至る所へ追加します。エディターにタイプしたり、チャレンジを完了したり、認定証を請求したり、その他いろいろなことをする度に音のフィードバックを受け取ります。",
     "sound-volume": "キャンプファイアモードの音量:",
     "scrollbar-width": "エディターのスクロールバーの幅",
+    "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
+    "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "チャレンジの画面で、ESC キーを押した後、? キーを押すと、利用可能なショートカットキーの一覧が表示されます。",
     "username": {
       "contains invalid characters": "ユーザー名 \"{{username}}\" に無効な文字が含まれています",
@@ -346,6 +348,7 @@
     "donated": "freeCodeCamp コミュニティに寄付した",
     "projects": "プロジェクト",
     "stats": "統計",
+    "activity": "Activity",
     "timeline": "タイムライン",
     "none-completed": "完了したチャレンジがありません。",
     "get-started": "ここから始めましょう。",
@@ -895,6 +898,7 @@
     "invalid-update-flag": "禁止されたリソースにアクセスしようとしています。正当なリクエストの場合、https://forum.freecodecamp.org でサポートを依頼してください。",
     "generate-exam-error": "試験の準備中にエラーが発生しました。",
     "cert-not-found": "この認定証は存在しません。({{certSlug}})",
+    "reset-editor-layout": "Your editor layout has been reset.",
     "ms": {
       "transcript": {
         "link-err-1": "リクエストに Microsoft の成績証明書の URL を含めてください。",
