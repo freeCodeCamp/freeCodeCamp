@@ -169,10 +169,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
-  const isMultifileCertProject =
+  const isMultifileProject =
     challengeType === challengeTypes.multifileCertProject ||
     challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeType == challengeTypes.frontEndCertLabWithSeed;
+    challengeType == challengeTypes.lab;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
   const displayNotes = projectBasedChallenge ? showNotes && !!notes : false;
