@@ -27,9 +27,9 @@ function* initializeThemeSaga() {
 
   if (localStorageTheme !== null) {
     selectTheme = localStorageTheme === 'dark' ? 'dark' : 'light';
-  } else if (userTheme !== null && userTheme !== undefined) {
+  } else if (userTheme) {
     selectTheme = userTheme === 'night' ? 'dark' : 'light';
-  } else if (isSysThemeDark === true) {
+  } else if (isSysThemeDark) {
     selectTheme = 'dark';
   }
 
