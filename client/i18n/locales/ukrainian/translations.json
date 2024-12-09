@@ -147,7 +147,7 @@
         },
         {
           "title": "Безоплатна освіта",
-          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
+          "description": "Навчайтесь зі спільнотою та економте на освіті, що можливо завдяки щедрій підтримці донорів."
         },
         {
           "title": "Зразкові сертифікації",
@@ -238,6 +238,8 @@
     "sound-mode": "Це додає приємне звучання акустичної гітари на всьому вебсайті. Ви почуєте музичний супровід, коли будете писати у редакторі, при завершенні випробувань, при затвердженні сертифікацій та інше.",
     "sound-volume": "Гучність багаття:",
     "scrollbar-width": "Ширина смуги прокрутки редактора",
+    "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
+    "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "В межах завдання натисніть ESC та знак питання, щоб переглянути список доступних скорочень.",
     "username": {
       "contains invalid characters": "Ім’я користувача «{{username}}» містить неприпустимі символи",
@@ -346,6 +348,7 @@
     "donated": "Задонатив(-ла) спільноті",
     "projects": "Проєкти",
     "stats": "Статистика",
+    "activity": "Activity",
     "timeline": "Хронологія",
     "none-completed": "Поки що немає виконаних завдань.",
     "get-started": "Почніть тут.",
@@ -712,8 +715,8 @@
     "help-millions-learn": "Допоможіть мільйонам людей навчатись",
     "reach-goals-faster": "Досягайте цілей швидше",
     "remove-distractions": "Позбавтесь повідомлень",
-    "remove-interruptions": "Remove interruptions",
-    "acquire-skills-faster": "Acquire skills faster",
+    "remove-interruptions": "Позбавтесь повідомлень",
+    "acquire-skills-faster": "Набувайте навичок швидше",
     "animation-description": "Це 20-секундна анімаційна реклама, щоб заохотити кемперів стати донорами freeCodeCamp. Анімація починається з ведмедика, який стає донором. В результаті відволікаючі спливаючі вікна зникають, і ведмедик може досягти своїх цілей. Потім він закінчує навчання і стає освітнім супергероєм, який допомагає людям по всьому світу.",
     "animation-countdown": "До завершення анімації залишилось: {{secondsRemaining}}."
   },
@@ -895,6 +898,7 @@
     "invalid-update-flag": "Ви намагаєтеся отримати доступ до заборонених ресурсів. Зверніться по допомогу на https://forum.freecodecamp.org, якщо це є дійсним запитом.",
     "generate-exam-error": "Під час спроби створити екзамен виникла помилка.",
     "cert-not-found": "Сертифікація «{{certSlug}}» не існує.",
+    "reset-editor-layout": "Your editor layout has been reset.",
     "ms": {
       "transcript": {
         "link-err-1": "Будь ласка, вкажіть посилання на стенограму Microsoft в запиті.",
