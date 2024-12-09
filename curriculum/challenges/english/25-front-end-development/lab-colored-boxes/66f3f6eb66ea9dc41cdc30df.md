@@ -2,7 +2,7 @@
 id: 66f3f6eb66ea9dc41cdc30df
 title: Design Colored Boxes
 challengeType: 14
-dashedName: "lab-css-colors"
+dashedName: "lab-colored-boxes"
 demoType: onClick
 ---
 
