@@ -2833,7 +2833,10 @@
           "In these lecture videos, you will learn about modules, imports, and exports in JavaScript."
         ]
       },
-      "lnmg": { "title": "179", "intro": [] },
+      "lab-password-generator": {
+        "title": "Build a Password Generator App",
+        "intro": ["In this lab, you'll build a password generator app."]
+      },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
         "intro": [
