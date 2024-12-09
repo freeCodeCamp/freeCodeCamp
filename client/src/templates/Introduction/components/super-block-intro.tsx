@@ -18,10 +18,7 @@ export const ConditionalDonationAlert = ({
 }: SuperBlockIntroProps): JSX.Element => {
   const { t } = useTranslation();
 
-  const betaCertifications = [
-    SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.SciCompPy
-  ];
+  const betaCertifications: SuperBlocks[] = [];
 
   const unfinishedCertifications = [
     SuperBlocks.A2English,

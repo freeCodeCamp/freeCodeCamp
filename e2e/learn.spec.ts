@@ -3,25 +3,25 @@ import words from '../client/i18n/locales/english/motivation.json';
 
 const superBlocks = [
   'Responsive Web Design',
-  'JavaScript Algorithms and Data Structures (Beta)',
+  'JavaScript Algorithms and Data Structures',
   'Front End Development Libraries',
   'Data Visualization',
   'Relational Database',
   'Back End Development and APIs',
   'Quality Assurance',
-  'Scientific Computing with Python (Beta)',
+  'Scientific Computing with Python',
   'Data Analysis with Python',
   'Information Security',
   'Machine Learning with Python',
   'College Algebra with Python',
   'A2 English for Developers (Beta)',
   'Foundational C# with Microsoft',
-  'The Odin Project - freeCodeCamp Remix (Beta)',
+  'The Odin Project - freeCodeCamp Remix',
   'Coding Interview Prep',
   'Project Euler',
   'Rosetta Code',
   'Legacy Responsive Web Design Challenges',
-  'JavaScript Algorithms and Data Structures',
+  'Legacy JavaScript Algorithms and Data Structures',
   'Legacy Python for Everybody'
 ];
 

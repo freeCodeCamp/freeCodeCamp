@@ -246,8 +246,7 @@ export const certTypeTitleMap = {
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.jsAlgoDataStructV8]:
-    'JavaScript Algorithms and Data Structures (Beta)'
+  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures'
 };
 
 export type CertSlug = (typeof Certification)[keyof typeof Certification];
@@ -260,8 +259,8 @@ export const linkedInCredentialIds = {
   [Certification.LegacyFullStack]: 'lfs',
   [Certification.RespWebDesign]: 'rwd',
   [Certification.FrontEndDevLibs]: 'fedl',
-  [Certification.JsAlgoDataStruct]: 'ljaads',
   [Certification.DataVis]: 'dv',
+  [Certification.JsAlgoDataStruct]: 'ljaads',
   [Certification.BackEndDevApis]: 'bedaa',
   [Certification.QualityAssurance]: 'qa',
   [Certification.InfoSec]: 'is',
