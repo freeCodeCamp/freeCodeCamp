@@ -3,13 +3,13 @@ import React from 'react';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+
 import type {
   ChallengeFiles,
   Test,
   User,
   ChallengeMeta
 } from '../../../redux/prop-types';
-
 import { userSelector } from '../../../redux/selectors';
 import {
   setEditorFocusability,
@@ -20,6 +20,7 @@ import {
 import {
   canFocusEditorSelector,
   challengeFilesSelector,
+  challengeMetaSelector,
   challengeTestsSelector,
   isHelpModalOpenSelector,
   isProjectPreviewModalOpenSelector,
@@ -39,6 +40,7 @@ const mapStateToProps = createSelector(
   challengeFilesSelector,
   challengeTestsSelector,
   userSelector,
+  challengeMetaSelector,
   (
     isHelpModalOpen: boolean,
     isResetModalOpen: boolean,
@@ -47,7 +49,8 @@ const mapStateToProps = createSelector(
     canFocusEditor: boolean,
     challengeFiles: ChallengeFiles,
     tests: Test[],
-    user: User
+    user: User,
+    { nextChallengePath, prevChallengePath }: ChallengeMeta
   ) => ({
     isHelpModalOpen,
     isResetModalOpen,
@@ -56,7 +59,9 @@ const mapStateToProps = createSelector(
     canFocusEditor,
     challengeFiles,
     tests,
-    user
+    user,
+    nextChallengePath,
+    prevChallengePath
   })
 );
 

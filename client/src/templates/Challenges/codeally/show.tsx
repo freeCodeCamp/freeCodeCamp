@@ -130,9 +130,6 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     },
     isChallengeCompleted,
     isSignedIn,
-    pageContext: {
-      challengeMeta: { nextChallengePath, prevChallengePath }
-    },
     partiallyCompletedChallenges,
     t,
     updateSolutionFormValues
@@ -260,11 +257,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
   };
 
   return (
-    <Hotkeys
-      containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
-    >
+    <Hotkeys containerRef={container}>
       <LearnLayout>
         <Helmet title={windowTitle} />
         <Container>

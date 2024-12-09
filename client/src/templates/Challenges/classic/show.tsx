@@ -204,7 +204,7 @@ function ShowClassic({
   },
   pageContext: {
     challengeMeta,
-    challengeMeta: { isFirstStep, nextChallengePath, prevChallengePath },
+    challengeMeta: { isFirstStep, nextChallengePath },
     projectPreview: { challengeData }
   },
   createFiles,
@@ -445,8 +445,6 @@ function ShowClassic({
       executeChallenge={executeChallenge}
       containerRef={containerRef}
       instructionsPanelRef={instructionsPanelRef}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
     >

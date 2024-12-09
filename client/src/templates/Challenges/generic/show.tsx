@@ -96,7 +96,6 @@ const ShowGeneric = ({
   isChallengeCompleted
 }: ShowQuizProps) => {
   const { t } = useTranslation();
-  const { nextChallengePath, prevChallengePath } = challengeMeta;
   const container = useRef<HTMLElement | null>(null);
 
   const blockNameTitle = `${t(
@@ -176,8 +175,6 @@ const ShowGeneric = ({
     <Hotkeys
       executeChallenge={handleSubmit}
       containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
       playScene={scene ? () => setIsScenePlaying(true) : undefined}
     >
       <LearnLayout>

@@ -105,5 +105,13 @@ export const verifyCertError = createAction(types.verifyCertError);
 export const resetProgress = createAction(types.resetProgress);
 export const resetProgressError = createAction(types.resetProgressError);
 
+export const resetMyEditorLayout = createAction(types.resetMyEditorLayout);
+export const resetMyEditorLayoutComplete = createAction(
+  types.resetMyEditorLayoutComplete
+);
+export const resetMyEditorLayoutError = createAction(
+  types.resetMyEditorLayoutError
+);
+
 export const deleteAccount = createAction(types.deleteAccount);
 export const deleteAccountError = createAction(types.deleteAccountError);
