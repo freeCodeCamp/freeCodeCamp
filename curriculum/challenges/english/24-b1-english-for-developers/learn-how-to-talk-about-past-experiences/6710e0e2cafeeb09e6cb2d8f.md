@@ -60,7 +60,7 @@ In this sentence, Linda is describing how she and her team were both working and
 ```json
 {
   "setup": {
-    "background": "interview-room3.png",
+    "background": "company2-center.png",
     "characters": [
       {
         "character": "Linda",
