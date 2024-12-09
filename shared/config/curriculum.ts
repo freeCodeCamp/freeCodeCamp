@@ -35,6 +35,10 @@ export enum SuperBlocks {
  *
  * SuperBlockStages.Upcoming = SHOW_UPCOMING_CHANGES === 'true'
  * 'Upcoming' is for development -> not shown on stag or prod anywhere
+ *
+ * SuperBlockStages.Next = deployed, but only shown if the Growthbook feature
+ * is enabled.
+ *
  */
 export enum SuperBlockStage {
   Core,
@@ -43,11 +47,13 @@ export enum SuperBlockStage {
   Extra,
   Legacy,
   New,
-  Upcoming
+  Upcoming,
+  Next
 }
 
 const defaultStageOrder = [
   SuperBlockStage.Core,
+  SuperBlockStage.Next,
   SuperBlockStage.English,
   SuperBlockStage.Professional,
   SuperBlockStage.Extra,
@@ -56,9 +62,12 @@ const defaultStageOrder = [
 
 export function getStageOrder({
   showNewCurriculum,
-  showUpcomingChanges
+  showUpcomingChanges,
+  showNextCurriculum
 }: Config): SuperBlockStage[] {
-  const stageOrder = [...defaultStageOrder];
+  const stageOrder = showNextCurriculum
+    ? [...defaultStageOrder]
+    : [...defaultStageOrder.filter(stage => stage !== SuperBlockStage.Next)];
 
   if (showNewCurriculum) stageOrder.push(SuperBlockStage.New);
   if (showUpcomingChanges) stageOrder.push(SuperBlockStage.Upcoming);
@@ -85,6 +94,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CollegeAlgebraPy
   ],
+  [SuperBlockStage.Next]: [SuperBlocks.FullStackDeveloper],
   [SuperBlockStage.English]: [SuperBlocks.A2English],
   [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStage.Extra]: [
@@ -99,10 +109,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.PythonForEverybody
   ],
   [SuperBlockStage.New]: [],
-  [SuperBlockStage.Upcoming]: [
-    SuperBlocks.B1English,
-    SuperBlocks.FullStackDeveloper
-  ]
+  [SuperBlockStage.Upcoming]: [SuperBlocks.B1English]
 };
 
 Object.freeze(superBlockStages);
@@ -246,6 +253,7 @@ Object.freeze(notAuditedSuperBlocks);
 type Config = {
   showNewCurriculum: boolean;
   showUpcomingChanges: boolean;
+  showNextCurriculum: boolean;
 };
 
 export function generateSuperBlockList(config: Config): SuperBlocks[] {
@@ -266,7 +274,8 @@ export function getAuditedSuperBlocks({
   // To find the audited superblocks, we need to start with all superblocks.
   const flatSuperBlockMap = generateSuperBlockList({
     showNewCurriculum: true,
-    showUpcomingChanges: true
+    showUpcomingChanges: true,
+    showNextCurriculum: true
   });
   const auditedSuperBlocks = flatSuperBlockMap.filter(
     superBlock =>

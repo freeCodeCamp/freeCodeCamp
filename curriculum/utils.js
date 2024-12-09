@@ -44,7 +44,8 @@ function createSuperOrder(superBlocks) {
 
 const flatSuperBlockMap = generateSuperBlockList({
   showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
-  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
+  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true',
+  showNextCurriculum: true
 });
 const superOrder = createSuperOrder(flatSuperBlockMap);
 
