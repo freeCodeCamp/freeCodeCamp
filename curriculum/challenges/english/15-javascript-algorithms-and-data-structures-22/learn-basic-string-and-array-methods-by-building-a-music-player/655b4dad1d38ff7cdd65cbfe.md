@@ -676,6 +676,8 @@ const playPreviousSong = () => {
 };
 
 const shuffle = () => {
+  if (userData.songs.length === 0) return;
+  
   userData?.songs.sort(() => Math.random() - 0.5);
   userData.currentSong = null;
   userData.songCurrentTime = 0;
@@ -1462,6 +1464,8 @@ const playPreviousSong = () => {
 };
 
 const shuffle = () => {
+  if (userData.songs.length === 0) return;
+
   userData?.songs.sort(() => Math.random() - 0.5);
   userData.currentSong = null;
   userData.songCurrentTime = 0;
