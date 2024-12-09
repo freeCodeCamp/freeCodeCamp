@@ -17,7 +17,7 @@ In this lab, you'll practice using CSS colors by designing boxes.
 1. You should set the background color for `body` to `#f4f4f4`.
 2. You should have a `div` with a class of `color-grid` to hold all your color elements.
 3. You should have five `div` elements within `color-grid` `div`.
-4. The five `div` elements should each have a class of `color-box` and `color#`, where # is the number of the order of that `div`. For example: `color1` for the first `div`, `color2` for the second, and so on.
+4. The five `div` elements should each have a class of `color-box` and `color#`, where `#` is the number of the order of that `div`. For example: `color1` for the first `div`, `color2` for the second, and so on.
 5. The `.color-box` class should have a set `width` and `height` so your `div` elements are visible on the page.
 6. The `.color1` element should have a `background-color` that uses hexadecimal color value.
 7. The `.color2` element should have a `background-color` that uses an RGB color value.
@@ -32,96 +32,78 @@ In this lab, you'll practice using CSS colors by designing boxes.
 ```js
 const body = document.body;
 const bodyBgColor = getComputedStyle(body).backgroundColor;
-assert.strictEqual(bodyBgColor, 'rgb(244, 244, 244)', 'The background color for the body is set to #f4f4f4');
+assert.strictEqual(bodyBgColor, 'rgb(244, 244, 244)');
 ```
 
-You should have a `.color-grid` `div`.
+You should have a `div` element with a class of `color-grid`.
 
 ```js
 const colorGrid = document.querySelector('div.color-grid');
-assert.exists(colorGrid, 'The <div> with class "color-grid" exists');
+assert.exists(colorGrid);
 ```
 
-You should have five `div` elements the `.color-grid` `div`.
+You should have five `div` elements within the `.color-grid` `div` element.
 
 ```js
 const colorGridChildren = document.querySelectorAll('div.color-grid > div');
-assert.strictEqual(colorGridChildren.length, 5, 'There are five <div> elements within the color-grid');
+assert.strictEqual(colorGridChildren.length, 5);
 ```
 
-Each of the five `div` elements should each have a class of `color-box` and `color#`—substitute the order of the `div` for the # symbol.
+Each of the five `div` elements should each have a class of `color-box` and `color#`—substitute the order of the `div` for the `#` symbol.
 
 ```js
 const colorGridChildren = document.querySelectorAll('div.color-grid > div');
-assert.strictEqual(colorGridChildren.length, 5, 'There are five <div> elements within the color-grid');
+assert.strictEqual(colorGridChildren.length, 5);
 
 colorGridChildren.forEach((child, index) => {
   const colorClass = `color${index + 1}`;
-  assert.isTrue(child.classList.contains('color-box'), `The <div> element has the class "color-box"`);
-  assert.isTrue(child.classList.contains(colorClass), `The <div> element has the class "${colorClass}"`);
+  assert.isTrue(child.classList.contains('color-box'));
+  assert.isTrue(child.classList.contains(colorClass));
 });
 ```
 
-`.color-box` should have a set `width` and `height`.
+The `.color-box` element should have a set `width` and `height`.
 
 ```js
-const colorGridChildren = document.querySelectorAll('div.color-grid > div');
-assert.strictEqual(colorGridChildren.length, 5, 'There are five <div> elements within the color-grid');
+const colorBox = document.querySelector('.color-box');
+assert.exists(colorBox);
 
-colorGridChildren.forEach((child) => {
-  const width = getComputedStyle(child).width;
-  const height = getComputedStyle(child).height;
-  assert.isNotEmpty(width, 'The .color-box element has a width set');
-  assert.isNotEmpty(height, 'The .color-box element has a height set');
-});
+const colorBoxStyles = getComputedStyle(colorBox);
+const width = colorBoxStyles.width;
+const height = colorBoxStyles.height;
+
+assert.notStrictEqual(width, '0px');
+assert.notStrictEqual(height, '0px');
 ```
 
-`.color1` should have a hexadecimal background color.
+The `.color1` element should have a hexadecimal background color.
 
 ```js
-function rgbToHex(rgb) {
-    const result = rgb.match(/\d+/g);
-    return result
-        ? '#' + result.map(x => ('0' + parseInt(x).toString(16)).slice(-2)).join('')
-        : rgb;
-}
-
-const color1 = document.querySelector('.color1');
-const color1BgColor = getComputedStyle(color1).backgroundColor;
-const color1Hex = rgbToHex(color1BgColor);
-const isHex = /^#(?:[0-9a-fA-F]{3}){1,2}$/.test(color1Hex);
-assert(isHex, 'The background color of .color1 should be a valid hexadecimal value');
+assert.match(code, /\.color1\s*{[^}]*\bbackground-color\s*:\s*#[0-9a-fA-F]{3,6}\s*;[^}]*}/);
 ```
 
-`.color2` should have an RGB background color.
+The `.color2` element should have an RGB background color.
 
 ```js
-const color2 = document.querySelector('.color2');
-const color2BgColor = getComputedStyle(color2).backgroundColor;
-assert.match(color2BgColor, /^rgb\(\d+, \d+, \d+\)$/, 'The background color of .color2 is an RGB value');
+assert.match(code, /\.color2\s*{[^}]*\bbackground-color\s*:\s*rgb\s*\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\)\s*;[^}]*}/);
 ```
 
-`.color3` should have a predefined (word) background color.
+The `.color3` element should have a predefined (word) background color.
 
 ```js
-//
+assert.match(code, /\.color3\s*{[^}]*\bbackground-color\s*:\s*[a-zA-Z]+\s*;[^}]*}/);
 ```
 
-`.color4` should have a HSL background color.
+The `.color4` element should have a HSL background color.
 
 ```js
-const color4Element = document.querySelector('.color4');
-const originalBackgroundColor = color4Element.style.backgroundColor;
-const isHslFormat = originalBackgroundColor.startsWith('hsl');
-assert(isHslFormat, 'The background color of .color4 should be an HSL color value');
+assert.match(code, /\.color4\s*{[^}]*\bbackground-color\s*:\s*hsl\s*\(\s*\d+\s*,\s*\d+%\s*,\s*\d+%\s*\)\s*;[^}]*}/);
 ```
 
-`.color5` should have a background color set.
+The `.color5` element should have a background color set.
 
 ```js
-const color5 = document.querySelector('.color5');
-const color5BgColor = getComputedStyle(color5).backgroundColor;
-assert.isNotEmpty(color5BgColor, 'The background color of .color5 is set');
+assert.match(code, /\.color5\s*{[^}]*\bbackground-color\s*:\s*[^;]+;[^}]*}/);
 ```
 
 # --seed--
@@ -134,7 +116,7 @@ assert.isNotEmpty(color5BgColor, 'The background color of .color5 is set');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post Card</title>
+    <title>Colored Boxes</title>
 </head>
 <body>
 
@@ -159,7 +141,7 @@ assert.isNotEmpty(color5BgColor, 'The background color of .color5 is set');
 </head>
 <body>
     <h1>Colored Boxes</h1>
-    <div class="color-grid">git 
+    <div class="color-grid"> 
         <div class="color-box color1"></div>
         <div class="color-box color2"></div>
         <div class="color-box color3"></div>
