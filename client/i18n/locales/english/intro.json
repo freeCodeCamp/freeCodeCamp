@@ -3097,7 +3097,7 @@
       },
       "cvsw": { "title": "226", "intro": [] },
       "lab-voting-system": {
-        "title": "Build a Voting System Using Maps and Sets",
+        "title": "Build a Voting System",
         "intro": [
           "In this lab, you will build a voting system using Maps and Sets."
         ]
