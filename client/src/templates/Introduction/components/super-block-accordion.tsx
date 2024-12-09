@@ -33,9 +33,8 @@ interface SuperBlockTreeViewProps {
   chosenBlock: string;
 }
 
-const modules = superBlockStructure.chapters.flatMap(
-  chapter => chapter.modules
-);
+const modules = superBlockStructure.chapters.flatMap(({ modules }) => modules);
+const chapters = superBlockStructure.chapters;
 
 const isLinkModule = (name: string) => {
   const module = modules.find(module => module.dashedName === name);
@@ -44,9 +43,7 @@ const isLinkModule = (name: string) => {
 };
 
 const isLinkChapter = (name: string) => {
-  const chapter = superBlockStructure.chapters.find(
-    chapter => chapter.dashedName === name
-  );
+  const chapter = chapters.find(chapter => chapter.dashedName === name);
 
   return chapter?.chapterType === 'exam';
 };
@@ -94,8 +91,8 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const { allChapters, allBlocks } = useMemo(() => {
-    const allBlocks = uniqBy(challenges, 'block').map(
+  const { currentChapters, currentBlocks } = useMemo(() => {
+    const currentBlocks = uniqBy(challenges, 'block').map(
       ({ block, blockType, chapter, module }) => ({
         name: block,
         blockType,
@@ -105,37 +102,39 @@ export const SuperBlockAccordion = ({
       })
     );
 
-    const allModules = uniqBy(allBlocks, 'module').map(
+    const currentModules = uniqBy(currentBlocks, 'module').map(
       ({ module, chapter }) => ({
         name: module,
         chapter,
-        blocks: allBlocks.filter(({ module: m }) => m === module)
+        blocks: currentBlocks.filter(({ module: m }) => m === module)
       })
     );
 
-    const allChapters = uniqBy(allModules, 'chapter').map(({ chapter }) => ({
-      name: chapter,
-      modules: allModules.filter(({ chapter: c }) => c === chapter)
-    }));
+    const currentChapters = uniqBy(currentModules, 'chapter').map(
+      ({ chapter }) => ({
+        name: chapter,
+        modules: currentModules.filter(({ chapter: c }) => c === chapter)
+      })
+    );
 
     return {
-      allChapters,
-      allModules,
-      allBlocks
+      currentChapters,
+      currentModules,
+      currentBlocks
     };
   }, [challenges]);
 
   // Expand the outer layers in order to reveal the chosen block.
-  const expandedChapter = allBlocks.find(
+  const expandedChapter = currentBlocks.find(
     ({ name }) => chosenBlock === name
   )?.chapter;
-  const expandedModule = allBlocks.find(
+  const expandedModule = currentBlocks.find(
     ({ name }) => chosenBlock === name
   )?.module;
 
   return (
     <ul className='super-block-accordion'>
-      {allChapters.map(chapter => {
+      {currentChapters.map(chapter => {
         if (isLinkChapter(chapter.name)) {
           const linkedChallenge = chapter.modules[0].blocks[0].challenges[0];
           return (
