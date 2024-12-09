@@ -5,10 +5,7 @@ challengeType: 22
 dashedName: task-55
 ---
 
-<!--
-AUDIO REFERENCE:
-Jake: I was reviewing our security protocols for the project just yesterday. What's on your mind?
--->
+<!-- (Audio) Linda: Well, during the project, I was working closely with the development team, and we were constantly updating the user interface based on user feedback. -->
 
 # --instructions--
 
@@ -18,20 +15,99 @@ Listen to the audio and complete the sentence below.
 
 ## --sentence--
 
-`I was reviewing our BLANK for the project just yesterday.`
+`Well, during the project, I BLANK BLANK closely with the development team, and we BLANK constantly BLANK the user interface based on user feedback.`
 
 ## --blanks--
 
-`security protocols`
+`was`
 
 ### --feedback--
 
-Use two words. Those are rules that help protect the system.
+This is the auxiliary verb used to form the Past Continuous in the singular first-person form.
+
+---
+
+`working`
+
+### --feedback--
+
+This is the main verb in the Past Continuous, describing the act of laboring.
+
+---
+
+`were`
+
+### --feedback--
+
+This is the auxiliary verb used to form the Past Continuous in the plural first-person form.
+
+---
+
+`updating`
+
+### --feedback--
+
+This is the main verb in the Past Continuous, describing an ongoing action of improving or modernizing something.
 
 # --explanation--
 
-`Security protocols` are rules or procedures designed to ensure that systems and data are protected. For example:
+The Past Continuous tense is used to describe actions that were ongoing at a specific time in the past. When two Past Continuous sentences are used together, they often describe simultaneous actions or actions happening alongside each other.  
 
-- `We use security protocols to protect user passwords.` - The team follows rules to keep passwords safe.
+In this sentence, Linda is describing how she and her team were both working and updating the user interface continuously throughout the project. This shows two actions happening at the same time in the past, providing context or background for each other. Example: `While I was preparing the report, they were testing the new features.` (this means the action of my preparing the report and the testing of the new features happened at the same time)
 
-- `The app failed because it didn’t follow security protocols.` - The app broke because it didn’t use the right safety rules.
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "interview-room3.png",
+    "characters": [
+      {
+        "character": "Linda",
+        "position": {
+          "x": 50,
+          "y": 0,
+          "z": 1.4
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "B1_2-2.mp3",
+      "startTime": 1,
+      "startTimestamp": 10.08,
+      "finishTimestamp": 17.34
+    }
+  },
+  "commands": [
+    {
+      "character": "Linda",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Linda",
+      "startTime": 1,
+      "finishTime": 4.36,
+      "dialogue": {
+        "text": "Well, during the project, I was working closely with the development team,",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Linda",
+      "startTime": 4.5,
+      "finishTime": 8.26,
+      "dialogue": {
+        "text": "and we were constantly updating the user interface based on user feedback.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Linda",
+      "opacity": 0,
+      "startTime": 8.76
+    }
+  ]
+}
+```
