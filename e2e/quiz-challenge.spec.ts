@@ -244,8 +244,8 @@ test.describe('Quiz challenge', () => {
 
     // We currently show this message twice, one at the bottom, and one at the top.
     await expect(
-      page.getByText('Review the material and try again later.')
-    ).toHaveCount(2);
+      page.getByText('Review the material and try again in 60 minutes.')
+    ).toBeVisible();
 
     await expect(
       page.getByRole('link', { name: 'the material' }).first()
@@ -293,18 +293,16 @@ test.describe('Quiz challenge', () => {
     // Reload to fetch the updated quiz attempts.
     await page.reload();
 
-    // The entire quiz is locked
     await expect(
-      page.getByText('Review the material and try again later.')
+      page.getByText('Review the material and try again in 60 minutes.')
     ).toBeVisible();
 
     await expect(
-      page.getByRole('button', { name: 'Finish the quiz' })
-    ).toBeDisabled();
+      page.getByRole('link', { name: 'Go back to the curriculum' })
+    ).toBeVisible();
 
-    await expect(
-      page.locator("[role='radio'][aria-disabled='true']")
-    ).toHaveCount(4 * 20);
+    // The entire quiz is hidden
+    await expect(page.getByRole('radiogroup')).toBeHidden();
 
     // Fast forward the time
     await page.clock.setFixedTime(new Date(TIME_AFTER_COOLDOWN_EXPIRES));
@@ -314,12 +312,8 @@ test.describe('Quiz challenge', () => {
 
     // The entire quiz is unlocked
     await expect(
-      page.getByText('Review the material and try again later.')
+      page.getByText('Review the material and try again in 60 minutes.')
     ).toBeHidden();
-
-    await expect(
-      page.getByRole('button', { name: 'Finish the quiz' })
-    ).toBeEnabled();
 
     await expect(
       page.locator("[role='radio'][aria-disabled='true']")

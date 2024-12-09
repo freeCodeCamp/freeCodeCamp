@@ -106,7 +106,8 @@
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
     "play-scene": "Press Play",
-    "closed-caption": "Closed caption"
+    "closed-caption": "Closed caption",
+    "go-back-to-curriculum": "Go back to the curriculum"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -522,7 +523,7 @@
       "incorrect-answer": "Incorrect.",
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
       "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct.",
-      "review-material-and-try-again-later": "Review <0>the material</0> and try again later.",
+      "review-material-and-try-again": "Review <0>the material</0> and try again in <1>{{ minutesUntilCooldownExpires }}</1> minutes.",
       "finish-modal-header": "Finish Quiz",
       "finish-modal-body": "Are you sure you want to finish the quiz? You will not be able to change any answers.",
       "finish-modal-yes": "Yes, I am finished",
