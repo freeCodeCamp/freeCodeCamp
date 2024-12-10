@@ -42,6 +42,10 @@ export const shouldRequestDonationSelector = state => {
   // don't request donation if already donating
   if (isDonating) return false;
 
+  // donations only appear after the user has completed ten challenges (i.e.
+  // not before the 11th challenge has mounted)
+  if (completedChallengeCount < 10) return false;
+
   // a block has been completed
   if (recentlyClaimedBlock) return true;
 
@@ -55,10 +59,6 @@ export const shouldRequestDonationSelector = state => {
     // request
     return sessionChallengeData.countSinceSave >= 20;
   }
-
-  // donations only appear after the user has completed ten challenges (i.e.
-  // not before the 11th challenge has mounted)
-  if (completedChallengeCount < 10) return false;
 
   /*
    Show modal if user has completed 10 challanged in total
