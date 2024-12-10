@@ -157,7 +157,7 @@ export const certificatesByNameSelector = username => state => {
       },
       {
         show: isJsAlgoDataStructCertV8,
-        title: 'JavaScript Algorithms and Data Structures (Beta) Certification',
+        title: 'JavaScript Algorithms and Data Structures Certification',
         certSlug: Certification.JsAlgoDataStructNew
       },
       {
