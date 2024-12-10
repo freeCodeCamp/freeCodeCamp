@@ -23,7 +23,7 @@ const initialState = {
     block: '',
     blockHashSlug: '/',
     id: '',
-    nextBlock: '',
+    isLastChallengeInBlock: false,
     nextChallengePath: '/',
     prevChallengePath: '/',
     challengeType: -1

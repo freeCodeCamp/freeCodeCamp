@@ -114,7 +114,6 @@ const ShowQuiz = ({
   const { t } = useTranslation();
   const curLocation = useLocation();
 
-  const { nextChallengePath, prevChallengePath } = challengeMeta;
   const container = useRef<HTMLElement | null>(null);
 
   // Campers are not allowed to change their answers once the quiz is submitted.
@@ -202,23 +201,6 @@ const ShowQuiz = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    updateChallengeMeta({
-      ...challengeMeta,
-      title,
-      challengeType,
-      helpCategory
-    });
-    challengeMounted(challengeMeta.id);
-  }, [
-    title,
-    challengeMeta,
-    challengeType,
-    helpCategory,
-    challengeMounted,
-    updateChallengeMeta
-  ]);
-
   const handleFinishQuiz = () => {
     setShowUnanswered(true);
 
@@ -299,8 +281,6 @@ const ShowQuiz = ({
     <Hotkeys
       executeChallenge={!isPassed ? handleFinishQuiz : handleSubmitAndGo}
       containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
     >
       <LearnLayout>
         <Helmet
