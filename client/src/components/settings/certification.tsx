@@ -134,7 +134,7 @@ const isCertMapSelector = createSelector(
     'Upcoming Python Certification': false,
     'A2 English for Developers': false,
     'B1 English for Developers': false,
-    'JavaScript Algorithms and Data Structures (Beta)': isJsAlgoDataStructCertV8
+    'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCertV8
   })
 );
 
