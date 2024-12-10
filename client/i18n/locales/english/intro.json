@@ -2844,7 +2844,7 @@
       "quiz-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Fundamentals Quiz."
+          "Test what you've learned in this quiz on JavaScript Fundamentals."
         ]
       },
       "lecture-working-with-higher-order-functions-and-callbacks": {
@@ -2908,7 +2908,7 @@
       "quiz-dom-manipulation-and-click-event-with-javascript": {
         "title": "DOM Manipulation and Click Events with JavaScript Quiz",
         "intro": [
-          "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript Quiz."
+          "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript."
         ]
       },
       "lecture-understanding-the-event-object-and-event-delegation": {
@@ -3100,7 +3100,12 @@
           "In these lecture videos, you will learn about JavaScript Maps and Sets."
         ]
       },
-      "cvsw": { "title": "226", "intro": [] },
+      "workshop-plant-nursery-catalog": {
+        "title": "Build a Plant Nursery Catalog",
+        "intro": [
+          "In this workshop, you will practice maps and sets by building a plant nursery catalog in JavaScript."
+        ]
+      },
       "lab-voting-system": {
         "title": "Build a Voting System",
         "intro": [
@@ -3268,7 +3273,12 @@
         ]
       },
       "alda": { "title": "253", "intro": [] },
-      "cvaf": { "title": "254", "intro": [] },
+      "lab-fcc-forum-leaderboard": {
+        "title": "Build an fCC Forum Leaderboard",
+        "intro": [
+          "For this lab you will practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
+        ]
+      },
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
@@ -3302,7 +3312,11 @@
           "In this workshop, you will build a reusable Navbar component using React."
         ]
       },
-      "fjvx": { "title": "261", "intro": [] },
+      "oxiv": { "title": "260", "intro": [] },
+      "lab-reusable-footer": {
+        "title": "Build a Reusable Footer",
+        "intro": ["In this lab, you will use React to build a reusable footer."]
+      },
       "lecture-working-with-data-in-react": {
         "title": "Working with Data in React",
         "intro": [
