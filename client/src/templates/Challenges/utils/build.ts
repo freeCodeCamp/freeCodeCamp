@@ -243,10 +243,7 @@ export async function buildDOMChallenge(
   const usesTestRunner = options?.usesTestRunner ?? false;
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
-  const [embeddedFiles, contents] = (await embedFilesInHtml(finalFiles)) as [
-    ChallengeFile[],
-    string
-  ];
+  const contents = (await embedFilesInHtml(finalFiles)) as string;
 
   // if there is an error, we just build the test runner so that it can be
   // used to run tests against the code without actually running the code.
@@ -264,7 +261,7 @@ export async function buildDOMChallenge(
     // necessary at the moment.
     challengeType: challengeTypes.html,
     build: concatHtml(toBuild),
-    sources: buildSourceMap(embeddedFiles),
+    sources: buildSourceMap(finalFiles),
     loadEnzyme: hasJsx,
     error
   };

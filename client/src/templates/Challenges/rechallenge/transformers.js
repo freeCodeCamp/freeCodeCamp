@@ -239,7 +239,8 @@ export const embedFilesInHtml = async function (challengeFiles) {
   const { indexHtml, stylesCss, scriptJs, indexJsx, indexTs } =
     challengeFilesToObject(challengeFiles);
 
-  const embedStylesAndScript = (documentElement, contentDocument) => {
+  const embedStylesAndScript = contentDocument => {
+    const documentElement = contentDocument.documentElement;
     const link =
       documentElement.querySelector('link[href="styles.css"]') ??
       documentElement.querySelector('link[href="./styles.css"]');
@@ -294,13 +295,13 @@ export const embedFilesInHtml = async function (challengeFiles) {
       embedStylesAndScript,
       indexHtml.contents
     );
-    return [challengeFiles, contents];
+    return contents;
   } else if (indexJsx) {
-    return [challengeFiles, `<script>${indexJsx.contents}</script>`];
+    return `<script>${indexJsx.contents}</script>`;
   } else if (scriptJs) {
-    return [challengeFiles, `<script>${scriptJs.contents}</script>`];
+    return `<script>${scriptJs.contents}</script>`;
   } else if (indexTs) {
-    return [challengeFiles, `<script>${indexTs.contents}</script>`];
+    return `<script>${indexTs.contents}</script>`;
   } else {
     throw Error('No html, ts or js(x) file found');
   }
@@ -319,12 +320,13 @@ const parseAndTransform = async function (transform, contents) {
   const parser = new DOMParser();
   const newDoc = parser.parseFromString(contents, 'text/html');
 
-  return await transform(newDoc.documentElement, newDoc);
+  return await transform(newDoc);
 };
 
 const getHtmlTranspiler = scriptOptions =>
   async function (file) {
-    const transform = async documentElement => {
+    const transform = async contentDocument => {
+      const documentElement = contentDocument.documentElement;
       await Promise.all([
         transformSASS(documentElement),
         transformScript(documentElement, scriptOptions)

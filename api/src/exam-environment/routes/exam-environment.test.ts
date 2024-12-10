@@ -1,4 +1,6 @@
 import { Static } from '@fastify/type-provider-typebox';
+import jwt from 'jsonwebtoken';
+
 import {
   createSuperRequest,
   defaultUserId,
@@ -11,6 +13,7 @@ import {
 } from '../schemas';
 import * as mock from '../../../__mocks__/env-exam';
 import { constructUserExam } from '../utils/exam';
+import { JWT_SECRET } from '../../utils/env';
 
 jest.mock('../../utils/env', () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -435,8 +438,6 @@ describe('/exam-environment/', () => {
           24 * 60 * 60 * 1000 -
           mock.exam.config.totalTimeInMS -
           1 * 60 * 60 * 1000;
-        submittedAttempt.submissionTimeInMS =
-          Date.now() - mock.exam.config.totalTimeInMS - 24 * 60 * 60 * 1000;
         await fastifyTestInstance.prisma.envExamAttempt.create({
           data: submittedAttempt
         });
@@ -492,7 +493,6 @@ describe('/exam-environment/', () => {
           generatedExamId: generatedExam!.id,
           questionSets: [],
           needsRetake: false,
-          submissionTimeInMS: null,
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           startTimeInMS: expect.any(Number)
         });
@@ -579,7 +579,8 @@ describe('/exam-environment/', () => {
               config: {
                 name: mock.exam.config.name,
                 note: mock.exam.config.note,
-                totalTimeInMS: mock.exam.config.totalTimeInMS
+                totalTimeInMS: mock.exam.config.totalTimeInMS,
+                retakeTimeInMS: mock.exam.config.retakeTimeInMS
               },
               id: mock.examId
             }
@@ -641,10 +642,28 @@ describe('/exam-environment/', () => {
     });
 
     describe('GET /exam-environment/token-meta', () => {
-      it('should allow a valid request', async () => {
+      it('should reject invalid tokens', async () => {
         const res = await superGet('/exam-environment/token-meta').set(
           'exam-environment-authorization-token',
           'invalid-token'
+        );
+
+        expect(res).toMatchObject({
+          status: 418,
+          body: {
+            code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
+          }
+        });
+      });
+
+      it('should tell the requester if the token does not exist', async () => {
+        const validToken = jwt.sign(
+          { examEnvironmentAuthorizationToken: 'does-not-exist' },
+          JWT_SECRET
+        );
+        const res = await superGet('/exam-environment/token-meta').set(
+          'exam-environment-authorization-token',
+          validToken
         );
 
         expect(res).toMatchObject({
