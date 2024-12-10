@@ -46,6 +46,7 @@ import {
 import { isSignedInSelector, userSelector } from '../../../redux/selectors';
 import { ButtonLink, Link } from '../../../components/helpers';
 import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import {
   isChallengeCompletedSelector,
   isQuizAttemptSubmittingSelector
@@ -123,6 +124,13 @@ interface ShowQuizProps {
   closeFinishQuizModal: () => void;
 }
 
+interface QuizMessageProps {
+  superBlock: SuperBlocks;
+  reviewBlock: string;
+  block: string;
+  minutesUntilCooldownExpires: number;
+}
+
 /**
  * Get a list of question sets that the page can randomly picked from.
  * If there was a previous attempt, the question set used in the attempt is excluded.
@@ -140,6 +148,32 @@ export const getAvailableQuizzes = ({
 
   return quizzes.filter(
     (_, index) => index.toString() !== attemptedQuiz.quizId
+  );
+};
+
+const QuizLockedMessage = ({
+  superBlock,
+  reviewBlock,
+  block,
+  minutesUntilCooldownExpires
+}: QuizMessageProps) => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <Callout variant='danger'>
+        {
+          <Trans i18nKey='learn.quiz.attempted-too-recently'>
+            <span>{{ minutesUntilCooldownExpires }}</span>
+            <Link to={`/learn/${superBlock}/#${reviewBlock}`}>placeholder</Link>
+          </Trans>
+        }
+      </Callout>
+      <Spacer size='m' />
+      <ButtonLink block href={`/learn/${superBlock}/#${block}`}>
+        {t('buttons.go-back-to-curriculum')}
+      </ButtonLink>
+    </>
   );
 };
 
@@ -457,26 +491,19 @@ const ShowQuiz = ({
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer size='m' />
               {!shouldShowQuiz && reviewBlock ? (
-                <>
-                  <Callout variant='danger'>
-                    {
-                      <Trans i18nKey='learn.quiz.review-material-and-try-again'>
-                        <Link
-                          to={`/learn/${superBlock}/#${reviewBlock.dashedName}`}
-                        >
-                          placeholder
-                        </Link>
-                        <span>{{ minutesUntilCooldownExpires }}</span>
-                      </Trans>
-                    }
-                  </Callout>
-                  <Spacer size='m' />
-                  <ButtonLink block href={`/learn/${superBlock}/#${block}`}>
-                    {t('buttons.go-back-to-curriculum')}
-                  </ButtonLink>
-                </>
+                <QuizLockedMessage
+                  superBlock={superBlock}
+                  reviewBlock={reviewBlock.dashedName}
+                  block={block}
+                  minutesUntilCooldownExpires={minutesUntilCooldownExpires}
+                />
               ) : (
                 <>
+                  {isChallengeCompleted && (
+                    <Callout variant='info'>
+                      {t('learn.quiz.already-passed')}
+                    </Callout>
+                  )}
                   <ChallengeDescription description={description} />
                   <Spacer size='l' />
                   <ObserveKeys>

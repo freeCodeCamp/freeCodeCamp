@@ -244,14 +244,11 @@ test.describe('Quiz challenge', () => {
 
     // We currently show this message twice, one at the bottom, and one at the top.
     await expect(
-      page.getByText('Review the material and try again in 60 minutes.')
+      page.getByText('Review the course material and try again in 60 minutes.')
     ).toBeVisible();
 
     await expect(
-      page.getByRole('link', { name: 'the material' }).first()
-    ).toHaveAttribute('href', '/learn/full-stack-developer/#review-basic-html');
-    await expect(
-      page.getByRole('link', { name: 'the material' }).last()
+      page.getByRole('link', { name: 'the course material' }).first()
     ).toHaveAttribute('href', '/learn/full-stack-developer/#review-basic-html');
 
     await expect(
@@ -294,8 +291,14 @@ test.describe('Quiz challenge', () => {
     await page.reload();
 
     await expect(
-      page.getByText('Review the material and try again in 60 minutes.')
+      page.getByText(
+        'You attempted this quiz too recently. You need to wait 60 minutes before you can take it again. In the mean time, you should review the course material.'
+      )
     ).toBeVisible();
+
+    await expect(
+      page.getByRole('link', { name: 'the course material' }).first()
+    ).toHaveAttribute('href', '/learn/full-stack-developer/#review-basic-html');
 
     await expect(
       page.getByRole('link', { name: 'Go back to the curriculum' })
@@ -359,8 +362,10 @@ test.describe('Quiz challenge', () => {
 
     // The quiz is unlocked.
     await expect(
-      page.getByText('Review the material and try again later.')
-    ).toBeHidden();
+      page.getByText(
+        'You have already passed this quiz. Feel free to take it again.'
+      )
+    ).toBeVisible();
 
     await expect(
       page.getByRole('button', { name: 'Finish the quiz' })
@@ -378,8 +383,10 @@ test.describe('Quiz challenge', () => {
 
     // The quiz remains unlocked.
     await expect(
-      page.getByText('Review the material and try again later.')
-    ).toBeHidden();
+      page.getByText(
+        'You have already passed this quiz. Feel free to take it again.'
+      )
+    ).toBeVisible();
 
     await expect(
       page.getByRole('button', { name: 'Finish the quiz' })
