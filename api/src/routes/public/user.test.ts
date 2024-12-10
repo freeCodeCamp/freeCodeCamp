@@ -203,12 +203,10 @@ const publicUserData = {
   linkedin: testUserData.linkedin,
   location: testUserData.location,
   name: testUserData.name,
-  partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   picture: testUserData.picture,
   points: 2,
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
-  savedChallenges: testUserData.savedChallenges,
   twitter: 'https://twitter.com/foobar',
   username: testUserData.usernameDisplay, // It defaults to usernameDisplay
   website: testUserData.website,
