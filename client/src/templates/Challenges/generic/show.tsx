@@ -96,7 +96,6 @@ const ShowGeneric = ({
   isChallengeCompleted
 }: ShowQuizProps) => {
   const { t } = useTranslation();
-  const { nextChallengePath, prevChallengePath } = challengeMeta;
   const container = useRef<HTMLElement | null>(null);
 
   const blockNameTitle = `${t(
@@ -116,23 +115,6 @@ const ShowGeneric = ({
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    updateChallengeMeta({
-      ...challengeMeta,
-      title,
-      challengeType,
-      helpCategory
-    });
-    challengeMounted(challengeMeta.id);
-  }, [
-    title,
-    challengeMeta,
-    challengeType,
-    helpCategory,
-    challengeMounted,
-    updateChallengeMeta
-  ]);
 
   // video
   const [videoIsLoaded, setVideoIsLoaded] = useState(false);
@@ -193,8 +175,6 @@ const ShowGeneric = ({
     <Hotkeys
       executeChallenge={handleSubmit}
       containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
       playScene={scene ? () => setIsScenePlaying(true) : undefined}
     >
       <LearnLayout>

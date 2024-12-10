@@ -147,7 +147,7 @@
         },
         {
           "title": "Educação gratuita",
-          "description": "Aprenda com nossa instituição beneficente e economize dinheiro em sua educação. Sem pagamentos. Sem custos ocultos."
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
         },
         {
           "title": "Certificações extensivas",
@@ -238,6 +238,8 @@
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
     "sound-volume": "Volume do modo fogueira:",
     "scrollbar-width": "Largura da barra de rolagem do editor",
+    "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
+    "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Dentro de um desafio, aperte ESC seguido pelo ponto de interrogação para mostrar uma lista de atalhos disponíveis.",
     "username": {
       "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
@@ -346,6 +348,7 @@
     "donated": "Doou para a comunidade",
     "projects": "Projetos",
     "stats": "Estatísticas",
+    "activity": "Activity",
     "timeline": "Cronograma",
     "none-completed": "Nenhum desafio foi concluído ainda.",
     "get-started": "Comece aqui.",
@@ -712,6 +715,8 @@
     "help-millions-learn": "Ajude milhões de pessoas a aprender",
     "reach-goals-faster": "Alcance seus objetivos mais rapidamente",
     "remove-distractions": "Remova distrações",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "Esse é um anúncio animado de 20 segundos para incentivar campers a se tornarem apoiadores do freeCodeCamp. A animação começa com um urso de pelúcia que se torna um apoiador. Como resultado, os pop-ups de distração desaparecem e o urso completa todos os seus objetivos. Então, termina o curso e se torna um super-herói da educação que ajuda as pessoas em todo o mundo.",
     "animation-countdown": "Esta animação será interrompida após {{secondsRemaining}} segundos."
   },
@@ -893,6 +898,7 @@
     "invalid-update-flag": "Você está tentando acessar recursos proibidos. Solicite assistência em https://forum.freecodecamp.org se sua solicitação for válida.",
     "generate-exam-error": "Ocorreu um erro ao tentar gerar seu exame.",
     "cert-not-found": "A certificação {{certSlug}} não existe.",
+    "reset-editor-layout": "Your editor layout has been reset.",
     "ms": {
       "transcript": {
         "link-err-1": "Inclua um URL de transcrição da Microsoft na solicitação.",

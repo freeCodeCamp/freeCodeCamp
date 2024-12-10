@@ -248,28 +248,25 @@ type Config = {
   showUpcomingChanges: boolean;
 };
 
-type LanguagesConfig = Config & {
-  language: string;
-};
-
-export function createFlatSuperBlockMap(config: Config): SuperBlocks[] {
+export function generateSuperBlockList(config: Config): SuperBlocks[] {
   return getStageOrder(config)
     .map(stage => superBlockStages[stage])
     .flat();
 }
 
 export function getAuditedSuperBlocks({
-  language = 'english',
-  showNewCurriculum,
-  showUpcomingChanges
-}: LanguagesConfig): SuperBlocks[] {
+  language = 'english'
+}: {
+  language: string;
+}): SuperBlocks[] {
   if (!Object.prototype.hasOwnProperty.call(notAuditedSuperBlocks, language)) {
     throw Error(`'${language}' key not found in 'notAuditedSuperBlocks'`);
   }
 
-  const flatSuperBlockMap = createFlatSuperBlockMap({
-    showNewCurriculum,
-    showUpcomingChanges
+  // To find the audited superblocks, we need to start with all superblocks.
+  const flatSuperBlockMap = generateSuperBlockList({
+    showNewCurriculum: true,
+    showUpcomingChanges: true
   });
   const auditedSuperBlocks = flatSuperBlockMap.filter(
     superBlock =>
