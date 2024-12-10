@@ -468,6 +468,7 @@
           "dashedName": "maps-and-sets",
           "blocks": [
             { "dashedName": "lecture-working-with-maps-and-sets" },
+            { "dashedName": "lab-voting-system" },
             { "dashedName": "review-javascript-maps-and-sets" },
             { "dashedName": "quiz-javascript-maps-and-sets" }
           ]
