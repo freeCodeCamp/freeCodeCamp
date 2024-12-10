@@ -2026,7 +2026,12 @@
           "In these lecture videos, you will learn about working with backgrounds and borders."
         ]
       },
-      "pahx": { "title": "45", "intro": [] },
+      "lab-blog-post-card": {
+        "title": "Design a Blog Post Card",
+        "intro": [
+          "In this lab, you'll design a blog post card using HTML and CSS"
+        ]
+      },
       "review-css-backgrounds-and-borders": {
         "title": "CSS Backgrounds and Borders Review",
         "intro": [
@@ -2877,7 +2882,7 @@
       "lecture-working-with-the-dom-click-events-and-web-apis": {
         "title": "Working with the DOM, Click Events, and Web APIs",
         "intro": [
-          "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using Javascript."
+          "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using JavaScript."
         ]
       },
       "gibb": { "title": "188", "intro": [] },
@@ -3101,7 +3106,12 @@
           "In this workshop, you will practice maps and sets by building a plant nursery catalog in JavaScript."
         ]
       },
-      "cvs1": { "title": "227", "intro": [] },
+      "lab-voting-system": {
+        "title": "Build a Voting System",
+        "intro": [
+          "In this lab, you will build a voting system using Maps and Sets."
+        ]
+      },
       "review-javascript-maps-and-sets": {
         "title": "JavaScript Maps and Sets Review",
         "intro": [
@@ -3267,7 +3277,7 @@
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
-          "Review the Asynchronous JavaScript concepts to prepare for the upcoming quiz."
+          "Review Asynchronous JavaScript concepts to prepare for the upcoming quiz."
         ]
       },
       "quiz-asynchronous-javascript": {
@@ -3279,7 +3289,8 @@
       "review-javascript": {
         "title": "JavaScript Review",
         "intro": [
-          "Review the JavaScript concepts to prepare for the upcoming quiz."
+          "Before you take the JavaScript prep exam, you will need to review first.",
+          "Open up this page, to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
       "kagw": { "title": "258", "intro": [] },
@@ -3299,7 +3310,12 @@
       },
       "cdfr": { "title": "263", "intro": [] },
       "bgtd": { "title": "264", "intro": [] },
-      "ascd": { "title": "265", "intro": [] },
+      "review-react-basics": {
+        "title": "React Basics Review",
+        "intro": [
+          "Review basic React concepts to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-react-basics": {
         "title": "React Basics Quiz",
         "intro": ["Test what you've learned in this quiz on React Basics."]
@@ -3320,7 +3336,12 @@
       "ftmi": { "title": "275", "intro": [] },
       "sgau": { "title": "276", "intro": [] },
       "clak": { "title": "277", "intro": [] },
-      "fcom": { "title": "278", "intro": [] },
+      "lab-weather-app": {
+        "title": "Build a Weather App",
+        "intro": [
+          "In this lab you will build a Weather App using an API to fetch the data."
+        ]
+      },
       "ffpt": { "title": "279", "intro": [] },
       "lrof": { "title": "280", "intro": [] },
       "vyzp": { "title": "281", "intro": [] },

@@ -78,6 +78,13 @@ const testUserData: Prisma.userCreateInput = {
   ],
   partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   completedExams: [],
+  quizAttempts: [
+    {
+      challengeId: '66df3b712c41c499e9d31e5b',
+      quizId: '0',
+      timestamp: 1731924665902
+    }
+  ],
   githubProfile: 'github.com/foobar',
   website: 'https://www.freecodecamp.org',
   donationEmails: ['an@add.ress'],
@@ -211,6 +218,7 @@ const publicUserData = {
   ],
   completedExams: testUserData.completedExams,
   completedSurveys: [], // TODO: add surveys
+  quizAttempts: testUserData.quizAttempts,
   githubProfile: testUserData.githubProfile,
   is2018DataVisCert: testUserData.is2018DataVisCert,
   is2018FullStackCert: testUserData.is2018FullStackCert, // TODO: should this be returned? The client doesn't use it at the moment.
@@ -717,6 +725,7 @@ describe('userRoutes', () => {
           partiallyCompletedChallenges: [],
           portfolio: [],
           savedChallenges: [],
+          quizAttempts: [],
           yearsTopContributor: [],
           is2018DataVisCert: false,
           is2018FullStackCert: false,

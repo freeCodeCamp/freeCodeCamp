@@ -238,6 +238,8 @@
     "sound-mode": "为整个网站添加令人愉快的吉他原声音乐。在编辑器输入、完成挑战、申请认证等时刻，你将获得音乐反馈。",
     "sound-volume": "营火音效音量",
     "scrollbar-width": "编辑器滚动条宽度",
+    "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
+    "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "在一项挑战中，按 ESC 键和问号可显示可用的快捷方式列表。",
     "username": {
       "contains invalid characters": "用户名 \"{{username}}\" 含有无效字符",
@@ -346,6 +348,7 @@
     "donated": "给社区捐款",
     "projects": "项目",
     "stats": "统计数据",
+    "activity": "Activity",
     "timeline": "时间线",
     "none-completed": "尚未完成任何挑战。",
     "get-started": "从这里开始。",
@@ -895,6 +898,7 @@
     "invalid-update-flag": "你正在尝试访问禁止的资源。如果这是一个有效的请求，请在 https://forum.freecodecamp.org 上请求帮助。",
     "generate-exam-error": "生成考试时发生错误。",
     "cert-not-found": "认证 {{certSlug}} 不存在。",
+    "reset-editor-layout": "Your editor layout has been reset.",
     "ms": {
       "transcript": {
         "link-err-1": "请在请求中包含一个 Microsoft 成绩单的 URL。",

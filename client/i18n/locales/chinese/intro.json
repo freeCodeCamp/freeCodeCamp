@@ -1722,7 +1722,7 @@
       "form-validation": "Form Validation",
       "javascript-dates": "Dates",
       "audio-and-video-events": "Audio and Video Events",
-      "maps-sets-and-json": "Maps and Sets",
+      "maps-and-sets": "Maps and Sets",
       "localstorage-and-crud-operations": "localStorage and CRUD Operations",
       "classes-and-the-this-keyword": "Classes",
       "recursion": "Recursion",
@@ -2015,9 +2015,11 @@
           "In these lecture videos, you will learn about working with backgrounds and borders."
         ]
       },
-      "pahx": {
-        "title": "45",
-        "intro": []
+      "lab-blog-post-card": {
+        "title": "Design a Blog Post Card",
+        "intro": [
+          "In this lab, you'll design a blog post card using HTML and CSS"
+        ]
       },
       "review-css-backgrounds-and-borders": {
         "title": "CSS Backgrounds and Borders Review",
@@ -2884,7 +2886,7 @@
       "lecture-working-with-the-dom-click-events-and-web-apis": {
         "title": "Working with the DOM, Click Events, and Web APIs",
         "intro": [
-          "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using Javascript."
+          "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using JavaScript."
         ]
       },
       "gibb": {
@@ -3122,16 +3124,17 @@
         "title": "227",
         "intro": []
       },
-      "review-javascript-maps-sets-and-json": {
-        "title": "JavaScript Maps, Sets, and JSON Review",
+      "review-javascript-maps-and-sets": {
+        "title": "JavaScript Maps and Sets Review",
         "intro": [
-          "Review the JavaScript Maps, Sets, and JSON concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on JS Maps and Sets, you first need to review.",
+          "Open up this page to review concepts such as the <code>Map</code> and <code>Set</code> objects, as well as WeakSet and WeakMap."
         ]
       },
-      "quiz-javascript-maps-sets-and-json": {
-        "title": "JavaScript Maps, Sets, and JSON Quiz",
+      "quiz-javascript-maps-and-sets": {
+        "title": "JavaScript Maps and Sets Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Maps, Sets, and JSON."
+          "Test what you've learned in this quiz on JavaScript Maps and Sets."
         ]
       },
       "lecture-working-with-client-side-storage-and-crud-operations": {
@@ -3322,7 +3325,7 @@
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
-          "Review the Asynchronous JavaScript concepts to prepare for the upcoming quiz."
+          "Review Asynchronous JavaScript concepts to prepare for the upcoming quiz."
         ]
       },
       "quiz-asynchronous-javascript": {
