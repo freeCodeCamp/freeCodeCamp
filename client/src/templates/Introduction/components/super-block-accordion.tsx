@@ -198,7 +198,7 @@ export const SuperBlockAccordion = ({
                 );
               } else if (module.blocks.length === 0) {
                 return (
-                  <li key={chapter.name}>
+                  <li key={module.name}>
                     <Badge>{t('misc.coming-soon')}</Badge>{' '}
                     {t(`intro:full-stack-developer.modules.${module.name}`)}
                   </li>
