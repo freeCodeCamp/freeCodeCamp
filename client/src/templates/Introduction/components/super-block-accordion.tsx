@@ -162,6 +162,8 @@ export const SuperBlockAccordion = ({
               />
             </li>
           );
+        } else if (chapter.modules.length === 0) {
+          return <li key={chapter.name}>Chapter coming soon</li>;
         }
 
         return (
@@ -184,6 +186,8 @@ export const SuperBlockAccordion = ({
                     />
                   </li>
                 );
+              } else if (module.blocks.length === 0) {
+                return <li key={chapter.name}>Module coming soon</li>;
               }
 
               return (
