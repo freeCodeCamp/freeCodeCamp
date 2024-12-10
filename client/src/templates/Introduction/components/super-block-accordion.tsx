@@ -1,5 +1,4 @@
 import React, { ReactNode, useMemo } from 'react';
-import { uniqBy } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
@@ -31,9 +30,8 @@ interface SuperBlockTreeViewProps {
   chosenBlock: string;
 }
 
-const modules = superBlockStructure.chapters.flatMap(
-  chapter => chapter.modules
-);
+const modules = superBlockStructure.chapters.flatMap(({ modules }) => modules);
+const chapters = superBlockStructure.chapters;
 
 const isLinkModule = (name: string) => {
   const module = modules.find(module => module.dashedName === name);
@@ -42,12 +40,37 @@ const isLinkModule = (name: string) => {
 };
 
 const isLinkChapter = (name: string) => {
-  const chapter = superBlockStructure.chapters.find(
-    chapter => chapter.dashedName === name
-  );
+  const chapter = chapters.find(chapter => chapter.dashedName === name);
 
   return chapter?.chapterType === 'exam';
 };
+
+const getBlockToChapterMap = () => {
+  const blockToChapterMap = new Map<string, string>();
+  chapters.forEach(chapter => {
+    chapter.modules.forEach(module => {
+      module.blocks.forEach(block => {
+        blockToChapterMap.set(block.dashedName, chapter.dashedName);
+      });
+    });
+  });
+
+  return blockToChapterMap;
+};
+
+const getBlockToModuleMap = () => {
+  const blockToModuleMap = new Map<string, string>();
+  modules.forEach(module => {
+    module.blocks.forEach(block => {
+      blockToModuleMap.set(block.dashedName, module.dashedName);
+    });
+  });
+
+  return blockToModuleMap;
+};
+
+const blockToChapterMap = getBlockToChapterMap();
+const blockToModuleMap = getBlockToModuleMap();
 
 const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
   const { t } = useTranslation();
@@ -86,44 +109,34 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const { allChapters, allBlocks } = useMemo(() => {
-    const allBlocks = uniqBy(challenges, 'block').map(
-      ({ block, blockType, chapter, module }) => ({
-        name: block,
-        blockType,
-        chapter: chapter as string,
-        module: module as string,
-        challenges: challenges.filter(({ block: b }) => b === block)
-      })
-    );
+  const { allChapters } = useMemo(() => {
+    const populateBlocks = (blocks: { dashedName: string }[]) =>
+      blocks.map(block => {
+        const blockChallenges = challenges.filter(
+          ({ block: blockName }) => blockName === block.dashedName
+        );
 
-    const allModules = uniqBy(allBlocks, 'module').map(
-      ({ module, chapter }) => ({
-        name: module,
-        chapter,
-        blocks: allBlocks.filter(({ module: m }) => m === module)
-      })
-    );
+        return {
+          name: block.dashedName,
+          blockType: blockChallenges[0]?.blockType ?? null,
+          challenges: blockChallenges
+        };
+      });
 
-    const allChapters = uniqBy(allModules, 'chapter').map(({ chapter }) => ({
-      name: chapter,
-      modules: allModules.filter(({ chapter: c }) => c === chapter)
+    const allChapters = chapters.map(chapter => ({
+      name: chapter.dashedName,
+      modules: chapter.modules.map(module => ({
+        name: module.dashedName,
+        blocks: populateBlocks(module.blocks)
+      }))
     }));
 
-    return {
-      allChapters,
-      allModules,
-      allBlocks
-    };
+    return { allChapters };
   }, [challenges]);
 
   // Expand the outer layers in order to reveal the chosen block.
-  const expandedChapter = allBlocks.find(
-    ({ name }) => chosenBlock === name
-  )?.chapter;
-  const expandedModule = allBlocks.find(
-    ({ name }) => chosenBlock === name
-  )?.module;
+  const expandedChapter = blockToChapterMap.get(chosenBlock);
+  const expandedModule = blockToModuleMap.get(chosenBlock);
 
   return (
     <ul className='super-block-accordion'>
