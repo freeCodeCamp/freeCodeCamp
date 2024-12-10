@@ -87,7 +87,8 @@
     "playwright:watch": "playwright test --ui"
   },
   "dependencies": {
-    "dotenv": "16.4.5"
+    "dotenv": "16.4.5",
+    "puppeteer": "22.12.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.23.3",
