@@ -29,6 +29,8 @@ import {
 } from '../../utils/ajax';
 import { completedChallengesSelector } from '../selectors';
 import {
+  resetMyEditorLayoutComplete,
+  resetMyEditorLayoutError,
   submitNewAboutComplete,
   submitNewAboutError,
   submitNewUsernameComplete,
@@ -104,6 +106,26 @@ function* updateMySoundSaga({ payload: update }) {
     yield put(createFlashMessage({ ...data }));
   } catch (e) {
     yield put(updateMySoundError);
+  }
+}
+
+function* resetMyEditorLayoutSaga() {
+  const layout = store.get('challenge-layout');
+
+  if (layout) {
+    try {
+      const data = {
+        message: 'flash.reset-editor-layout',
+        type: 'success'
+      };
+
+      store.remove('challenge-layout');
+
+      yield put(createFlashMessage({ ...data }));
+      yield put(resetMyEditorLayoutComplete({ ...data }));
+    } catch (e) {
+      yield put(resetMyEditorLayoutError);
+    }
   }
 }
 
@@ -212,6 +234,7 @@ export function createSettingsSagas(types) {
     takeEvery(types.updateMySocials, updateMySocialsSaga),
     takeEvery(types.updateMyHonesty, updateMyHonestySaga),
     takeEvery(types.updateMySound, updateMySoundSaga),
+    takeEvery(types.resetMyEditorLayout, resetMyEditorLayoutSaga),
     takeEvery(types.updateMyKeyboardShortcuts, updateMyKeyboardShortcutsSaga),
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
     takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),

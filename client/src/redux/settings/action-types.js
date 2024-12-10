@@ -17,6 +17,7 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('submitProfileUI'),
     ...createAsyncTypes('verifyCert'),
     ...createAsyncTypes('resetProgress'),
+    ...createAsyncTypes('resetMyEditorLayout'),
     ...createAsyncTypes('deleteAccount')
   ],
   ns

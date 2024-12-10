@@ -584,10 +584,6 @@
           "Ви дізналися як працювати з технологіями D3, APIs та AJAX, тому перевірте свої навички завдяки тесту з п’яти проєктів візуалізації даних.",
           "У цих проєктах вам потрібно буде отримати й проаналізувати набір даних, тоді використати D3 для створення різної візуалізації даних. Завершіть усі проєкти, аби отримати сертифікацію «Візуалізація даних»."
         ]
-      },
-      "d3-dashboard": {
-        "title": "Інформаційна панель D3",
-        "intro": ["", ""]
       }
     }
   },
@@ -1383,20 +1379,6 @@
       }
     }
   },
-  "upcoming-python": {
-    "title": "Майбутній Python",
-    "intro": ["заповнювач"],
-    "blocks": {
-      "learn-python-by-building-a-blackjack-game": {
-        "title": "Вивчіть Python, створивши гру «Блекджек»",
-        "intro": ["Вивчіть Python.", ""]
-      },
-      "upcoming-python-project": {
-        "title": "Майбутній проєкт з Python",
-        "intro": ["заповнювач"]
-      }
-    }
-  },
   "a2-english-for-developers": {
     "title": "Англійська мова рівня A2 для розробників (бета-версія)",
     "intro": [
@@ -1700,71 +1682,67 @@
       "Наприкінці курсу ви отримаєте практичні навички та досвід, які дозволять впевнено розробляти повноцінні вебзастосунки, що підготує вас до успішної кар’єри full stack розробника."
     ],
     "chapters": {
-      "freecodecamp": "freeCodeCamp",
+      "freecodecamp": "Вітання",
       "html": "HTML",
       "css": "CSS",
       "javascript": "JavaScript",
-      "frontend-libraries": "Front End Libraries",
-      "relational-databases": "Relational Databases",
-      "security-and-privacy": "Security and Privacy"
+      "frontend-libraries": "Бібліотеки для front end",
+      "relational-databases": "Реляційні бази даних",
+      "security-and-privacy": "Безпека та приватність"
     },
     "modules": {
-      "getting-started-with-freecodecamp": "Getting Started with freeCodeCamp",
-      "basic-html": "Basic HTML",
-      "semantic-html": "Semantic HTML",
-      "html-forms-and-tables": "HTML Forms and Tables",
-      "html-and-accessibility": "HTML and Accessibility",
-      "computer-basics": "Computer Basics",
-      "basic-css": "Basic CSS",
-      "design-for-developers": "Designer for Developers",
-      "absolute-and-relative-units": "Absolute and Relative Units",
-      "pseudo-classes-and-elements": "Pseudo Classes and Elements",
-      "css-colors": "CSS Colors",
-      "styling-forms": "Styling Forms",
-      "css-box-model": "CSS Box Model",
-      "css-flexbox": "CSS Flexbox",
-      "css-typography": "CSS Typography",
-      "css-and-accessibility": "CSS and Accessibility",
-      "attribute-selectors": "Attribute Selectors",
-      "css-positioning": "CSS Positioning",
-      "responsive-design": "Responsive Design",
-      "css-variables": "CSS Variables",
-      "css-grid": "CSS Grid",
-      "css-animations": "CSS Animations",
-      "code-editors": "Code editors",
-      "javascript-variables-and-strings": "JavaScript Variables and Strings",
-      "javascript-booleans-and-numbers": "JavaScript Booleans and Numbers",
-      "javascript-functions": "JavaScript Functions",
-      "javascript-arrays": "JavaScript Arrays",
-      "javascript-objects": "JavaScript Objects",
-      "javascript-loops": "JavaScript Loops",
-      "review-javascript-fundamentals": "Review JavaScript Fundamentals",
-      "higher-order-functions-and-callbacks": "Higher Order Functions and Callbacks",
-      "dom-manipulation-and-events": "DOM Manipulation and Events",
-      "debugging-javascript": "Debugging JavaScript",
-      "basic-regex": "Basic Regex",
-      "form-validation": "Form Validation",
-      "javascript-dates": "JavaScript Dates",
-      "audio-and-video-events": "Audio and Video Events",
-      "maps-sets-and-json": "Maps, Sets, and JSON",
-      "localstorage-and-crud-operations": "localStorage and CRUD Operations",
-      "classes-and-the-this-keyword": "Classes and the <code>this</code> keyword",
-      "recursion": "Recursion",
-      "functional-programming": "Functional Programming",
-      "asynchronous-javascript": "Asynchronous JavaScript",
-      "react-fundamentals": "React Fundamentals",
-      "react-state-hooks-and-routing": "React state, hooks, and routing",
-      "performance": "Performance",
-      "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
-      "testing": "Testing",
-      "typescript-fundamentals": "TypeScript Fundamentals",
-      "bash-fundamentals": "Bash Fundamentals",
-      "relational-databases": "Relational Databases",
-      "bash-scripting": "Bash Scripting",
-      "sql-and-bash": "SQL and Bash",
-      "nano": "Nano",
+      "getting-started-with-freecodecamp": "Початок роботи з freeCodeCamp",
+      "basic-html": "Основи HTML",
+      "semantic-html": "Семантичний HTML",
+      "html-forms-and-tables": "Форми та таблиці",
+      "html-and-accessibility": "Доступність",
+      "computer-basics": "Основи комп’ютера",
+      "basic-css": "Основи CSS",
+      "design-for-developers": "Дизайн",
+      "absolute-and-relative-units": "Відносні та абсолютні одиниці",
+      "pseudo-classes-and-elements": "Псевдокласи й псевдоелементи",
+      "css-colors": "Кольори",
+      "styling-forms": "Стилізація форм",
+      "css-box-model": "Блокова модель",
+      "css-flexbox": "Flexbox",
+      "css-typography": "Типографія",
+      "css-and-accessibility": "Доступність",
+      "attribute-selectors": "Селектори атрибутів",
+      "css-positioning": "Позиціювання",
+      "responsive-design": "Адаптивний дизайн",
+      "css-variables": "Змінні",
+      "css-grid": "Сітка",
+      "css-animations": "Анімації",
+      "code-editors": "Редактори коду",
+      "javascript-variables-and-strings": "Змінні та рядки",
+      "javascript-booleans-and-numbers": "Булеві значення та числа",
+      "javascript-functions": "Функції",
+      "javascript-arrays": "Масиви",
+      "javascript-objects": "Об’єкти",
+      "javascript-loops": "Цикли",
+      "review-javascript-fundamentals": "Повторення основ JavaScript",
+      "higher-order-functions-and-callbacks": "Функції вищого порядку та зворотного виклику",
+      "dom-manipulation-and-events": "Маніпуляція DOM та події Click в JavaScript",
+      "debugging-javascript": "Налагодження",
+      "basic-regex": "Основи регулярних виразів",
+      "form-validation": "Валідація форм",
+      "javascript-dates": "Дати",
+      "audio-and-video-events": "Аудіо- та відеоподії",
+      "maps-and-sets": "Map та set",
+      "localstorage-and-crud-operations": "localStorage та операції CRUD",
+      "classes-and-the-this-keyword": "Класи",
+      "recursion": "Рекурсія",
+      "functional-programming": "Функціональне програмування",
+      "asynchronous-javascript": "Асинхронний JavaScript",
+      "react-fundamentals": "Основи React",
+      "react-state-hooks-and-routing": "Стани, хуки та маршрутизація в React",
+      "performance": "Продуктивність",
+      "css-libraries-and-frameworks": "Бібліотеки та фреймворки CSS",
+      "testing": "Тестування",
+      "typescript-fundamentals": "Основи TypeScript",
+      "sql-and-bash": "SQL та Bash",
       "git": "Git",
-      "security-and-privacy": "Security and Privacy"
+      "security-and-privacy": "Безпека та приватність"
     },
     "blocks": {
       "lecture-welcome-to-freecodecamp": {
@@ -1939,14 +1917,14 @@
       "review-html-accessibility": {
         "title": "Повторення доступності в HTML",
         "intro": [
-          "Пригадайте поняття з теми «Доступність в HTML», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Доступність в HTML», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати атрибути <code>aria-hidden</code>, <code>aria-describedby</code>, <code>tabindex</code> та багато іншого."
         ]
       },
       "quiz-html-accessibility": {
         "title": "Тест «Доступність в HTML»",
         "intro": [
-          "Перш ніж перейти до тесту «Доступність в HTML», повторіть основні поняття.",
-          "Відкрийте цю сторінку, щоб пригадати атрибути <code>aria-hidden</code>, <code>aria-describedby</code>, <code>tabindex</code> та багато іншого."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Доступність»."
         ]
       },
       "review-html": {
@@ -2041,9 +2019,11 @@
           "У цих відеолекціях ви дізнаєтесь, як працювати з фоном і кордоном."
         ]
       },
-      "pahx": {
-        "title": "45",
-        "intro": []
+      "lab-blog-post-card": {
+        "title": "Створіть картку для допису",
+        "intro": [
+          "У цій лабораторній роботі ви створите картку для допису із блогу, використовуючи HTML та CSS."
+        ]
       },
       "review-css-backgrounds-and-borders": {
         "title": "Повторення фонів та кордонів у CSS",
@@ -2608,7 +2588,7 @@
       "lecture-working-with-numbers-booleans-and-the-math-object": {
         "title": "Робота з числами, булевими значеннями й об’єктом math",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь про числа, булеві значення й об’єкт math."
+          "У цих відеолекціях ви дізнаєтесь про числа, булеві значення й об’єкт <code>Math</code>."
         ]
       },
       "workshop-mathbot": {
@@ -2758,7 +2738,8 @@
       "review-javascript-objects": {
         "title": "Повторення об’єктів у JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Об’єкти в JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Об’єкти в JavaScript», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати, як отримувати інформацію з об’єктів, деструктуризацію об’єктів, роботу з JSON та багато іншого."
         ]
       },
       "quiz-javascript-objects": {
@@ -2786,7 +2767,8 @@
       "review-javascript-loops": {
         "title": "Повторення циклів у JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Цикли в JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Цикли в JavaScript», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати цикл <code>for...of</code>, цикл <code>while</code>, інструкції <code>break and continue</code> та багато іншого."
         ]
       },
       "quiz-javascript-loops": {
@@ -2834,7 +2816,8 @@
       "review-javascript-fundamentals": {
         "title": "Повторення основ JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Основи JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Основи JavaScript», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати замикання, управління пам’яттю та багато іншого."
         ]
       },
       "quiz-javascript-fundamentals": {
@@ -2853,6 +2836,12 @@
           "У цьому практичному занятті ви дізнаєтесь про методи вищого порядку для роботи з масивами, створивши менеджера бібліотеки."
         ]
       },
+      "lab-book-organizer": {
+        "title": "Створіть органайзер для книжок",
+        "intro": [
+          "У цій лабораторній роботі ви створите органайзер для книжок, використовуючи функції вищого порядку в JavaScript."
+        ]
+      },
       "bxtv": {
         "title": "184",
         "intro": []
@@ -2860,7 +2849,8 @@
       "review-javascript-higher-order-functions": {
         "title": "Повторення функцій вищого порядку в JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Функції вищого порядку в JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Функції вищого порядку в JavaScript», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з методами <code>map()</code>, <code>filter()</code> та <code>reduce()</code>."
         ]
       },
       "quiz-javascript-higher-order-functions": {
@@ -2872,7 +2862,7 @@
       "lecture-working-with-the-dom-click-events-and-web-apis": {
         "title": "Робота з DOM, подіями click та web API",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь, як працювати з DOM, подіями click та web API за допомогою JavaScript."
+          "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using JavaScript."
         ]
       },
       "gibb": {
@@ -2894,7 +2884,8 @@
       "review-dom-manipulation-and-click-events-with-javascript": {
         "title": "Повторення маніпуляції DOM та подій Click в JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Маніпуляція DOM та події Click в JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Маніпуляція DOM та події Click в JavaScript», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з <code>DOM</code>, <code>Web API</code>, методом <code>addEventListener()</code> та багато іншого."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
@@ -2910,9 +2901,9 @@
         ]
       },
       "workshop-music-instrument-filter": {
-        "title": "Build a Music Instrument Filter",
+        "title": "Створіть музичний інструмент",
         "intro": [
-          "In this workshop, you will build a music instrument filter with JavaScript."
+          "У цьому практичному занятті ви створите музичний інструмент за допомогою JavaScript."
         ]
       },
       "lab-real-time-counter": {
@@ -2948,7 +2939,8 @@
       "review-javascript-events": {
         "title": "Повторення подій в JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Події в JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Події в JavaScript», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати події <code>change</code>, спливання подій та делегування подій."
         ]
       },
       "quiz-javascript-events": {
@@ -2968,7 +2960,8 @@
       "review-debugging-javascript": {
         "title": "Повторення налагодження JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Налагодження JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Налагодження JavaScript», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з інструкцією <code>throw</code>, <code>try...catch...finally</code> та багато іншого."
         ]
       },
       "quiz-debugging-javascript": {
@@ -3003,7 +2996,8 @@
       "review-javascript-regular-expressions": {
         "title": "Повторення регулярних виразів у JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Регулярні вирази в JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Регулярні вирази», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати перевірки уперед і назад, загальні модифікатори регулярних виразів та багато іншого."
         ]
       },
       "quiz-javascript-regular-expressions": {
@@ -3032,7 +3026,8 @@
       "review-form-validation-with-javascript": {
         "title": "Повторення валідації форм з JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Валідація форм з JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Валідація форм», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати метод <code>preventDefault()</code>, подію <code>submit</code> та багато іншого."
         ]
       },
       "quiz-form-validation-with-javascript": {
@@ -3056,7 +3051,8 @@
       "review-javascript-dates": {
         "title": "Повторення дат у JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Дати в JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Дати», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати об’єкт <code>Date()</code> та поширені методи."
         ]
       },
       "quiz-javascript-dates": {
@@ -3080,7 +3076,8 @@
       "review-javascript-audio-and-video": {
         "title": "Повторення аудіо та відео в JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Аудіо та відео в JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Аудіо та відео в JavaScript», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати конструктор <code>Audio</code>, <code>HTMLMediaElement</code> API та багато іншого."
         ]
       },
       "quiz-javascript-audio-and-video": {
@@ -3101,15 +3098,16 @@
         "title": "227",
         "intro": []
       },
-      "review-javascript-maps-sets-and-json": {
-        "title": "Повторення map, set та JSON в JavaScript",
+      "review-javascript-maps-and-sets": {
+        "title": "Повторення map та set в JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Map, set та JSON в JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Map та set в JavaScript», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати об’єкти <code>Map</code> та <code>Set</code>, а також WeakSet й WeakMap."
         ]
       },
-      "cvs3": {
-        "title": "229",
-        "intro": []
+      "quiz-javascript-maps-and-sets": {
+        "title": "Тест «Map та set в JavaScript»",
+        "intro": ["Перевірте, що ви дізнались про map та set в JavaScript."]
       },
       "lecture-working-with-client-side-storage-and-crud-operations": {
         "title": "Робота зі сховищем на клієнтській стороні та операціями CRUD",
@@ -3131,7 +3129,8 @@
       "review-local-storage-and-crud": {
         "title": "Повторення локального сховища та CRUD",
         "intro": [
-          "Пригадайте поняття з теми «Локальне сховище та CRUD», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Сховище <code>localStorage</code>», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати властивості <code>localStorage</code>, <code>sessionStorage</code> та багато іншого."
         ]
       },
       "quiz-local-storage-and-crud": {
@@ -3157,19 +3156,22 @@
           "У цій лабораторній роботі ви створите дошку ідей за допомогою ООП в JavaScript."
         ]
       },
-      "ndlf": {
-        "title": "238",
-        "intro": []
+      "lab-bank-account-manager": {
+        "title": "Створіть програму для управління банківським рахунком",
+        "intro": [
+          "У цій лабораторній роботі ви створите просту систему управління транзакціями банківського рахунку."
+        ]
       },
       "review-javascript-classes": {
         "title": "Повторення класів у JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Класи в JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Класи», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати ключове слово <code>this</code>, наслідування класу та багато іншого."
         ]
       },
-      "ndl1": {
-        "title": "240",
-        "intro": []
+      "quiz-javascript-classes": {
+        "title": "Тест «Класи в JavaScript»",
+        "intro": ["Перевірте, що ви дізнались про класи в JavaScript."]
       },
       "lecture-understanding-recursion-and-the-call-stack": {
         "title": "Знайомство з рекурсією та стеком викликів",
@@ -3182,30 +3184,31 @@
         "intro": []
       },
       "lab-permutation-generator": {
-        "title": "Build a Permutation Generator",
+        "title": "Створіть генератор перестановок",
         "intro": [
-          "For this lab, you will build a permutation generator that produces all possible permutations of a given string."
+          "У цій лабораторній роботі ви створите генератор, який видаватиме всі можливі перестановки заданого рядка."
         ]
       },
       "review-recursion": {
         "title": "Повторення рекурсії",
         "intro": [
-          "Пригадайте поняття з теми «Рекурсія», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Рекурсія», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати рекурсію і для чого її використовують."
         ]
       },
       "quiz-recursion": {
         "title": "Тест «Рекурсія»",
         "intro": ["Перевірте, що ви дізнались про рекурсію."]
       },
+      "yshh": {
+        "title": "246",
+        "intro": []
+      },
       "lecture-understanding-functional-programming": {
         "title": "Знайомство з функціональним програмуванням",
         "intro": [
           "У цих відеолекціях ви дізнаєтесь про функціональне програмування."
         ]
-      },
-      "wyx1": {
-        "title": "247",
-        "intro": []
       },
       "wyx2": {
         "title": "248",
@@ -3250,6 +3253,13 @@
         "title": "245",
         "intro": []
       },
+      "workshop-recipe-ingredient-converter": {
+        "title": "Створіть конвертер інгредієнтів",
+        "intro": [
+          "У попередніх відеолекціях ви дізнались основні поняття функціонального програмування і каррування.",
+          "Зараз ви зможете застосувати на практиці все те, що вивчили про каррування та функціональне програмування, створивши застосунок із конвертацією інгредієнтів."
+        ]
+      },
       "udia": {
         "title": "248",
         "intro": []
@@ -3257,7 +3267,8 @@
       "review-javascript-functional-programming": {
         "title": "Повторення функціонального програмування в JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «Функціональне програмування в JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Функціональне програмування», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати поняття з функціонального програмування, каррування та багато іншого."
         ]
       },
       "mjbe": {
