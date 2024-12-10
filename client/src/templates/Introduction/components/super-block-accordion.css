@@ -27,18 +27,24 @@
   border: none;
   background-color: transparent;
   width: 100%;
-  text-align: start;
   padding: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.super-block-accordion .chapter-button .chapter-icon-and-text {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-size: 1.5em;
+}
+
 .super-block-accordion .module-button {
   border: none;
   background-color: transparent;
   width: 100%;
-  text-align: start;
+  font-size: 1.25em;
   padding: 16px;
   display: flex;
   align-items: center;
