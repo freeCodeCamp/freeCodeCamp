@@ -336,5 +336,6 @@
       "title": "Step 82"
     }
   ],
-  "helpCategory": "HTML-CSS"
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "legacy-challenge-grid"
 }

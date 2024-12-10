@@ -33,7 +33,7 @@ export default defineConfig({
     baseURL: process.env.HOME_LOCATION || 'http://127.0.0.1:8000',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-
+    storageState: 'playwright/.auth/certified-user.json',
     /* Use custom test attribute */
     testIdAttribute: 'data-playwright-test-label'
   },

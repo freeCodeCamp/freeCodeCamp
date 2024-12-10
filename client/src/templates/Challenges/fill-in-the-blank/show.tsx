@@ -1,10 +1,10 @@
 // Package Utilities
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import type { TFunction } from 'i18next';
-import { withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
@@ -70,151 +70,103 @@ interface ShowFillInTheBlankProps {
   updateSolutionFormValues: () => void;
 }
 
-interface ShowFillInTheBlankState {
-  showWrong: boolean;
-  userAnswers: (string | null)[];
-  answersCorrect: (boolean | null)[];
-  allBlanksFilled: boolean;
-  feedback: string | null;
-  showFeedback: boolean;
-  isScenePlaying: boolean;
-}
-
-// Component
-class ShowFillInTheBlank extends Component<
-  ShowFillInTheBlankProps,
-  ShowFillInTheBlankState
-> {
-  static displayName: string;
-  private container: React.RefObject<HTMLElement> = React.createRef();
-
-  constructor(props: ShowFillInTheBlankProps) {
-    super(props);
-
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            fillInTheBlank: { blanks }
-          }
-        }
+const ShowFillInTheBlank = ({
+  data: {
+    challengeNode: {
+      challenge: {
+        title,
+        description,
+        instructions,
+        explanation,
+        superBlock,
+        block,
+        translationPending,
+        fields: { blockName, tests },
+        challengeType,
+        fillInTheBlank,
+        helpCategory,
+        scene
       }
-    } = props;
+    }
+  },
+  challengeMounted,
+  openHelpModal,
+  updateChallengeMeta,
+  openCompletionModal,
+  pageContext: { challengeMeta },
+  isChallengeCompleted
+}: ShowFillInTheBlankProps) => {
+  const { t } = useTranslation();
+  const emptyArray = fillInTheBlank.blanks.map(() => null);
 
-    const emptyArray = blanks.map(() => null);
+  const [showWrong, setShowWrong] = useState(false);
+  const [userAnswers, setUserAnswers] = useState<(null | string)[]>(emptyArray);
+  const [answersCorrect, setAnswersCorrect] =
+    useState<(null | boolean)[]>(emptyArray);
+  const [allBlanksFilled, setAllBlanksFilled] = useState(false);
+  const [feedback, setFeedback] = useState<string | null>(null);
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [isScenePlaying, setIsScenePlaying] = useState(false);
 
-    this.state = {
-      showWrong: false,
-      userAnswers: emptyArray,
-      answersCorrect: emptyArray,
-      allBlanksFilled: false,
-      feedback: null,
-      showFeedback: false,
-      isScenePlaying: false
-    };
+  const container = useRef<HTMLElement | null>(null);
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentDidMount(): void {
-    const {
-      challengeMounted,
-      data: {
-        challengeNode: {
-          challenge: {
-            fields: { tests },
-            title,
-            challengeType,
-            helpCategory
-          }
-        }
-      },
-      pageContext: { challengeMeta },
-      initTests,
-      updateChallengeMeta
-    } = this.props;
+  useEffect(() => {
+    initTests(tests);
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
       helpCategory
     });
-    initTests(tests);
     challengeMounted(challengeMeta.id);
-    this.container.current?.focus();
-  }
+    container.current?.focus();
+    // This effect should be run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  componentDidUpdate(prevProps: ShowFillInTheBlankProps): void {
-    const {
-      data: {
-        challengeNode: {
-          challenge: { title: prevTitle }
-        }
-      }
-    } = prevProps;
-    const {
-      challengeMounted,
-      data: {
-        challengeNode: {
-          challenge: { title: currentTitle, challengeType, helpCategory }
-        }
-      },
-      pageContext: { challengeMeta },
-      updateChallengeMeta
-    } = this.props;
-    if (prevTitle !== currentTitle) {
-      updateChallengeMeta({
-        ...challengeMeta,
-        title: currentTitle,
-        challengeType,
-        helpCategory
-      });
-      challengeMounted(challengeMeta.id);
-    }
-  }
+  useEffect(() => {
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory
+    });
+    challengeMounted(challengeMeta.id);
+  }, [
+    title,
+    challengeMeta,
+    challengeType,
+    helpCategory,
+    challengeMounted,
+    updateChallengeMeta
+  ]);
 
-  handleSubmit() {
-    const {
-      openCompletionModal,
-      data: {
-        challengeNode: {
-          challenge: {
-            fillInTheBlank: { blanks }
-          }
-        }
-      }
-    } = this.props;
-    const { userAnswers } = this.state;
-
-    const blankAnswers = blanks.map(b => b.answer);
+  const handleSubmit = () => {
+    const blankAnswers = fillInTheBlank.blanks.map(b => b.answer);
 
     const newAnswersCorrect = userAnswers.map(
       (userAnswer, i) => !!userAnswer && userAnswer.trim() === blankAnswers[i]
     );
-
+    setAnswersCorrect(newAnswersCorrect);
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
     if (!hasWrongAnswer) {
-      this.setState({
-        answersCorrect: newAnswersCorrect
-      });
-
+      setShowFeedback(false);
+      setFeedback(null);
       openCompletionModal();
     } else {
       const firstWrongIndex = newAnswersCorrect.findIndex(a => a === false);
       const feedback =
-        firstWrongIndex >= 0 ? blanks[firstWrongIndex].feedback : null;
+        firstWrongIndex >= 0
+          ? fillInTheBlank.blanks[firstWrongIndex].feedback
+          : null;
 
-      this.setState({
-        answersCorrect: newAnswersCorrect,
-        showWrong: true,
-        showFeedback: true,
-        feedback: feedback
-      });
+      setFeedback(feedback);
+      setShowWrong(true);
+      setShowFeedback(true);
     }
-  }
+  };
 
-  handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const { userAnswers, answersCorrect } = this.state;
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const inputIndex = parseInt(e.target.getAttribute('data-index') as string);
 
     const newUserAnswers = [...userAnswers];
@@ -225,145 +177,109 @@ class ShowFillInTheBlank extends Component<
 
     const allBlanksFilled = newUserAnswers.every(a => a);
 
-    this.setState({
-      userAnswers: newUserAnswers,
-      answersCorrect: newAnswersCorrect,
-      allBlanksFilled,
-      showWrong: false
-    });
+    setUserAnswers(newUserAnswers);
+    setAnswersCorrect(newAnswersCorrect);
+    setAllBlanksFilled(allBlanksFilled);
+    setShowWrong(false);
   };
 
-  setIsScenePlaying = (shouldPlay: boolean) => {
-    this.setState({
-      isScenePlaying: shouldPlay
-    });
+  const handlePlayScene = (shouldPlay: boolean) => {
+    setIsScenePlaying(shouldPlay);
   };
 
-  render() {
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            title,
-            description,
-            instructions,
-            explanation,
-            superBlock,
-            block,
-            translationPending,
-            fields: { blockName },
-            fillInTheBlank,
-            scene
-          }
-        }
-      },
-      openHelpModal,
-      pageContext: {
-        challengeMeta: { nextChallengePath, prevChallengePath }
-      },
-      t,
-      isChallengeCompleted
-    } = this.props;
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )} - ${title}`;
 
-    const blockNameTitle = `${t(
-      `intro:${superBlock}.blocks.${block}.title`
-    )} - ${title}`;
+  return (
+    <Hotkeys
+      executeChallenge={() => handleSubmit()}
+      containerRef={container}
+      nextChallengePath={challengeMeta.nextChallengePath}
+      prevChallengePath={challengeMeta.prevChallengePath}
+      playScene={() => handlePlayScene(true)}
+    >
+      <LearnLayout>
+        <Helmet
+          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+        />
+        <Container>
+          <Row>
+            <Spacer size='m' />
+            <ChallengeTitle
+              isCompleted={isChallengeCompleted}
+              translationPending={translationPending}
+            >
+              {title}
+            </ChallengeTitle>
 
-    const { allBlanksFilled, feedback, showFeedback, showWrong } = this.state;
-
-    return (
-      <Hotkeys
-        executeChallenge={() => this.handleSubmit()}
-        containerRef={this.container}
-        nextChallengePath={nextChallengePath}
-        prevChallengePath={prevChallengePath}
-        playScene={() => this.setIsScenePlaying(true)}
-      >
-        <LearnLayout>
-          <Helmet
-            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-          />
-          <Container>
-            <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <PrismFormatted text={description} />
               <Spacer size='m' />
-              <ChallengeTitle
-                isCompleted={isChallengeCompleted}
-                translationPending={translationPending}
-              >
-                {title}
-              </ChallengeTitle>
+            </Col>
 
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <PrismFormatted text={description} />
-                <Spacer size='m' />
-              </Col>
+            {scene && (
+              <Scene
+                scene={scene}
+                isPlaying={isScenePlaying}
+                setIsPlaying={setIsScenePlaying}
+              />
+            )}
 
-              {scene && (
-                <Scene
-                  scene={scene}
-                  isPlaying={this.state.isScenePlaying}
-                  setIsPlaying={this.setIsScenePlaying}
-                />
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              {instructions && (
+                <>
+                  <PrismFormatted text={instructions} />
+                  <Spacer size='xs' />
+                </>
               )}
 
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                {instructions && (
-                  <>
-                    <PrismFormatted text={instructions} />
-                    <Spacer size='xs' />
-                  </>
-                )}
-
-                {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
+              {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
                 if it encounters a key combination, so we have to pass in the individual keys to observe */}
-                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
-                  <FillInTheBlanks
-                    fillInTheBlank={fillInTheBlank}
-                    answersCorrect={this.state.answersCorrect}
-                    showFeedback={showFeedback}
-                    feedback={feedback}
-                    showWrong={showWrong}
-                    handleInputChange={this.handleInputChange}
-                  />
-                </ObserveKeys>
+              <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                <FillInTheBlanks
+                  fillInTheBlank={fillInTheBlank}
+                  answersCorrect={answersCorrect}
+                  showFeedback={showFeedback}
+                  feedback={feedback}
+                  showWrong={showWrong}
+                  handleInputChange={handleInputChange}
+                />
+              </ObserveKeys>
 
-                {explanation ? (
-                  <ChallegeExplanation explanation={explanation} />
-                ) : (
-                  <Spacer size='m' />
-                )}
+              {explanation ? (
+                <ChallegeExplanation explanation={explanation} />
+              ) : (
+                <Spacer size='m' />
+              )}
 
-                <Button
-                  block={true}
-                  variant='primary'
-                  disabled={!allBlanksFilled}
-                  onClick={() => this.handleSubmit()}
-                >
-                  {t('buttons.check-answer')}
-                </Button>
-                <Spacer size='xxs' />
-                <Button block={true} variant='primary' onClick={openHelpModal}>
-                  {t('buttons.ask-for-help')}
-                </Button>
-                <Spacer size='l' />
-              </Col>
-              <CompletionModal />
-              <HelpModal challengeTitle={title} challengeBlock={blockName} />
-            </Row>
-          </Container>
-          <ShortcutsModal />
-        </LearnLayout>
-      </Hotkeys>
-    );
-  }
-}
+              <Button
+                block={true}
+                variant='primary'
+                disabled={!allBlanksFilled}
+                onClick={() => handleSubmit()}
+              >
+                {t('buttons.check-answer')}
+              </Button>
+              <Spacer size='xxs' />
+              <Button block={true} variant='primary' onClick={openHelpModal}>
+                {t('buttons.ask-for-help')}
+              </Button>
+              <Spacer size='l' />
+            </Col>
+            <CompletionModal />
+            <HelpModal challengeTitle={title} challengeBlock={blockName} />
+          </Row>
+        </Container>
+        <ShortcutsModal />
+      </LearnLayout>
+    </Hotkeys>
+  );
+};
 
 ShowFillInTheBlank.displayName = 'ShowFillInTheBlank';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(ShowFillInTheBlank));
+export default connect(mapStateToProps, mapDispatchToProps)(ShowFillInTheBlank);
 
 export const query = graphql`
   query FillInTheBlankChallenge($id: String!) {

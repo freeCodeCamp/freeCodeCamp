@@ -2,6 +2,7 @@ import { test, expect, type Page } from '@playwright/test';
 
 test.describe('Show certification else', () => {
   let page: Page;
+  test.use({ storageState: { cookies: [], origins: [] } });
 
   test.beforeAll(async ({ browser }) => {
     page = await browser.newPage();

@@ -64,8 +64,6 @@ test.describe('Editor theme if the system theme is dark', () => {
   test.use({ colorScheme: 'dark' });
 
   test.describe('If the user is signed in', () => {
-    test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
     test('should respect the user settings', async ({ page, request }) => {
       const editor = page.locator("div[role='code'].monaco-editor");
 
@@ -96,8 +94,6 @@ test.describe('Editor theme if the system theme is light', () => {
   test.use({ colorScheme: 'light' });
 
   test.describe('If the user is signed in', () => {
-    test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
     test('should respect the user settings', async ({ page, request }) => {
       const editor = page.locator("div[role='code'].monaco-editor");
 
