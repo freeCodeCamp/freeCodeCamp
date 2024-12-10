@@ -42,7 +42,7 @@ import {
   submitQuizAttempt
 } from '../redux/actions';
 import { isSignedInSelector, userSelector } from '../../../redux/selectors';
-import { Link } from '../../../components/helpers';
+import { ButtonLink, Link } from '../../../components/helpers';
 import {
   isChallengeCompletedSelector,
   isQuizAttemptSubmittingSelector
@@ -403,6 +403,63 @@ const ShowQuiz = ({
 
   const errorMessage = getErrorMessage();
 
+  const renderQuizActions = () => {
+    if (!validated) {
+      return (
+        <>
+          <Button
+            block={true}
+            variant='primary'
+            onClick={handleFinishQuiz}
+            disabled={isQuizDisabled}
+          >
+            {t('buttons.finish-quiz')}
+          </Button>
+          <Spacer size='xxs' />
+          <Button block={true} variant='primary' onClick={handleExitQuiz}>
+            {t('buttons.exit-quiz')}
+          </Button>
+        </>
+      );
+    }
+
+    if (isPassed) {
+      return (
+        <>
+          <Button block={true} variant='primary' onClick={handleSubmitAndGo}>
+            {t('buttons.submit-and-go')}
+          </Button>
+          <Spacer size='xxs' />
+          <Button
+            block={true}
+            variant='primary'
+            onClick={handleExitQuiz}
+            disabled
+          >
+            {t('buttons.exit-quiz')}
+          </Button>
+        </>
+      );
+    }
+
+    return (
+      <>
+        <Button
+          block={true}
+          variant='primary'
+          onClick={handleFinishQuiz}
+          disabled={isQuizDisabled}
+        >
+          {t('buttons.finish-quiz')}
+        </Button>
+        <Spacer size='xxs' />
+        <ButtonLink block href={`/learn/${superBlock}/#${block}`}>
+          {t('buttons.exit-quiz')}
+        </ButtonLink>
+      </>
+    );
+  };
+
   return (
     <Hotkeys
       executeChallenge={!isPassed ? handleFinishQuiz : handleSubmitAndGo}
@@ -450,34 +507,7 @@ const ShowQuiz = ({
                     {errorMessage}
                   </div>
                   <Spacer size='m' />
-                  {!isPassed ? (
-                    <>
-                      <Button
-                        block={true}
-                        variant='primary'
-                        onClick={handleFinishQuiz}
-                        disabled={isQuizDisabled}
-                      >
-                        {t('buttons.finish-quiz')}
-                      </Button>
-                    </>
-                  ) : (
-                    <Button
-                      block={true}
-                      variant='primary'
-                      onClick={handleSubmitAndGo}
-                    >
-                      {t('buttons.submit-and-go')}
-                    </Button>
-                  )}
-                  <Spacer size='xxs' />
-                  <Button
-                    block={true}
-                    variant='primary'
-                    onClick={handleExitQuiz}
-                  >
-                    {t('buttons.exit-quiz')}
-                  </Button>
+                  {renderQuizActions()}
                   <Spacer size='l' />
                 </>
               )}

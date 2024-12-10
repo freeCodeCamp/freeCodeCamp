@@ -200,6 +200,10 @@ test.describe('Quiz challenge', () => {
     ).toBeVisible();
 
     await expect(
+      page.getByRole('button', { name: 'Exit the quiz' })
+    ).toBeDisabled();
+
+    await expect(
       page.getByText('You have 17 out of 20 questions correct.')
     ).toBeVisible();
 
@@ -254,6 +258,18 @@ test.describe('Quiz challenge', () => {
     await expect(
       page.getByRole('button', { name: 'Finish the quiz' })
     ).toBeDisabled();
+
+    // The exit button is changed to a link, which immediately takes the user to the super block page
+    // as oppose to showing the confirm exit modal on click.
+    await expect(
+      page.getByRole('button', { name: 'Exit the quiz' })
+    ).toBeHidden();
+    await expect(
+      page.getByRole('link', { name: 'Exit the quiz' })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('link', { name: 'Exit the quiz' })
+    ).toHaveAttribute('href', '/learn/full-stack-developer/#quiz-basic-html');
 
     // Find all of the disabled radio elements on the page,
     // and check if the count matches the total number of quiz answers (4 answers x 20 questions).
