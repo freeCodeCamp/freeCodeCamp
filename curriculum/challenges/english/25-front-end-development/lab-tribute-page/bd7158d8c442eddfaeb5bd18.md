@@ -1,7 +1,7 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
 title: Build a Tribute Page
-challengeType: 14
+challengeType: 25
 demoType: onClick
 dashedName: build-a-tribute-page
 ---
