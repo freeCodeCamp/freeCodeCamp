@@ -749,6 +749,7 @@
     "result-list": "Search results"
   },
   "misc": {
+    "coming-soon": "Coming Soon",
     "offline": "You appear to be offline, your progress may not be saved",
     "server-offline": "The server could not be reached and your progress may not be saved. Please contact <0>support</0> if this message persists",
     "unsubscribed": "You have successfully been unsubscribed",
