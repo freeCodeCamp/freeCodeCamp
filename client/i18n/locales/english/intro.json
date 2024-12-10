@@ -3100,7 +3100,12 @@
           "In these lecture videos, you will learn about JavaScript Maps and Sets."
         ]
       },
-      "cvsw": { "title": "226", "intro": [] },
+      "workshop-plant-nursery-catalog": {
+        "title": "Build a Plant Nursery Catalog",
+        "intro": [
+          "In this workshop, you will practice maps and sets by building a plant nursery catalog in JavaScript."
+        ]
+      },
       "lab-voting-system": {
         "title": "Build a Voting System",
         "intro": [
