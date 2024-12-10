@@ -460,6 +460,7 @@
           "dashedName": "audio-and-video-events",
           "blocks": [
             { "dashedName": "lecture-working-with-audio-and-video" },
+            { "dashedName": "workshop-music-player" },
             { "dashedName": "review-javascript-audio-and-video" },
             { "dashedName": "quiz-javascript-audio-and-video" }
           ]
