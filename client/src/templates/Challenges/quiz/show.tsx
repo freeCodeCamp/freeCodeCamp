@@ -26,9 +26,7 @@ import type {
   ChallengeNode,
   ChallengeMeta,
   Test,
-  User,
-  Quiz as TQuiz,
-  QuizAttempt
+  User
 } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
@@ -44,9 +42,7 @@ import {
   submitQuizAttempt
 } from '../redux/actions';
 import { isSignedInSelector, userSelector } from '../../../redux/selectors';
-import { ButtonLink, Link } from '../../../components/helpers';
-import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { Link } from '../../../components/helpers';
 import {
   isChallengeCompletedSelector,
   isQuizAttemptSubmittingSelector
@@ -55,6 +51,8 @@ import PrismFormatted from '../components/prism-formatted';
 import { usePageLeave } from '../hooks';
 import ExitQuizModal from './exit-quiz-modal';
 import FinishQuizModal from './finish-quiz-modal';
+import { getAvailableQuizzes, getReviewBlock } from './helpers';
+import { QuizLockedMessage } from './quiz-locked-message';
 
 import './show.css';
 
@@ -124,59 +122,6 @@ interface ShowQuizProps {
   closeFinishQuizModal: () => void;
 }
 
-interface QuizMessageProps {
-  superBlock: SuperBlocks;
-  reviewBlock: string;
-  block: string;
-  minutesUntilCooldownExpires: number;
-}
-
-/**
- * Get a list of question sets that the page can randomly picked from.
- * If there was a previous attempt, the question set used in the attempt is excluded.
- */
-export const getAvailableQuizzes = ({
-  quizzes,
-  attemptedQuiz
-}: {
-  quizzes: TQuiz[];
-  attemptedQuiz: QuizAttempt | undefined;
-}): TQuiz[] => {
-  if (quizzes.length === 1 || !attemptedQuiz) {
-    return quizzes;
-  }
-
-  return quizzes.filter(
-    (_, index) => index.toString() !== attemptedQuiz.quizId
-  );
-};
-
-const QuizLockedMessage = ({
-  superBlock,
-  reviewBlock,
-  block,
-  minutesUntilCooldownExpires
-}: QuizMessageProps) => {
-  const { t } = useTranslation();
-
-  return (
-    <>
-      <Callout variant='danger'>
-        {
-          <Trans i18nKey='learn.quiz.attempted-too-recently'>
-            <span>{{ minutesUntilCooldownExpires }}</span>
-            <Link to={`/learn/${superBlock}/#${reviewBlock}`}>placeholder</Link>
-          </Trans>
-        }
-      </Callout>
-      <Spacer size='m' />
-      <ButtonLink block href={`/learn/${superBlock}/#${block}`}>
-        {t('buttons.go-back-to-curriculum')}
-      </ButtonLink>
-    </>
-  );
-};
-
 const ShowQuiz = ({
   challengeMounted,
   data: {
@@ -221,7 +166,7 @@ const ShowQuiz = ({
   // the value of `isPassed` is set when campers click the finish quiz button,
   // while `isChallengeCompleted` comes from the DB and is only set to `true`
   // when campers click the submit button on the completion modal.
-  const [isPassed, setIsPassed] = useState<null | boolean>(null);
+  const [isPassed, setIsPassed] = useState(false);
 
   const [showUnanswered, setShowUnanswered] = useState(false);
 
@@ -253,16 +198,7 @@ const ShowQuiz = ({
 
   const quiz = availableQuizzes[quizId].questions;
 
-  // Find the corresponding review block.
-  const currentChapter = superBlockStructure.chapters.find(
-    c => c.dashedName === chapter
-  );
-  const currentModule = currentChapter?.modules.find(
-    m => m.dashedName === module
-  );
-  const reviewBlock = currentModule?.blocks.find(b =>
-    b.dashedName.startsWith('review')
-  );
+  const reviewBlock = getReviewBlock({ chapter, module });
 
   // Initialize the data passed to `useQuiz`
   const [initialQuizData] = useState(
@@ -322,9 +258,9 @@ const ShowQuiz = ({
   // We show the quiz if:
   // - Campers have successfully completed the quiz
   // - Campers failed the quiz but the cooldown period has expired
-  // - Campers just finished answering the quiz and are shown the quiz feedback (`isPassed` not being null)
+  // - Campers just finished answering the quiz and are shown the quiz feedback (`validated` being `true`)
   const shouldShowQuiz =
-    isChallengeCompleted || timeUntilCooldownExpires <= 0 || isPassed !== null;
+    isChallengeCompleted || timeUntilCooldownExpires <= 0 || validated;
 
   const isQuizDisabled = isQuizAttemptSubmitting || validated;
 

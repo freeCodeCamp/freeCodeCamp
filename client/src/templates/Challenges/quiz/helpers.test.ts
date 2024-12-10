@@ -1,4 +1,4 @@
-import { getAvailableQuizzes } from './show';
+import { getAvailableQuizzes } from './helpers';
 
 describe('getAvailableQuizzes', () => {
   it('should return the original quizzes array if the array contains only one item', () => {
