@@ -211,16 +211,26 @@ export const SuperBlockAccordion = ({
                   dashedName={module.name}
                   isExpanded={expandedModule === module.name}
                 >
-                  {module.blocks.map(block => (
-                    <li key={block.name}>
-                      <Block
-                        block={block.name}
-                        blockType={block.blockType}
-                        challenges={block.challenges}
-                        superBlock={superBlock}
-                      />
-                    </li>
-                  ))}
+                  {module.blocks.map(block => {
+                    if (block.challenges.length === 0) {
+                      return (
+                        <li key={block.name}>
+                          <Badge>{t('misc.coming-soon')}</Badge>{' '}
+                          {t(`intro:${superBlock}.blocks.${block.name}.title`)}
+                        </li>
+                      );
+                    }
+                    return (
+                      <li key={block.name}>
+                        <Block
+                          block={block.name}
+                          blockType={block.blockType}
+                          challenges={block.challenges}
+                          superBlock={superBlock}
+                        />
+                      </li>
+                    );
+                  })}
                 </Module>
               );
             })}
