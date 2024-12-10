@@ -23,9 +23,9 @@ type ChapterIconProps = {
 } & React.SVGProps<SVGSVGElement>;
 
 export function ChapterIcon(props: ChapterIconProps): JSX.Element {
-  const { chapter, className, ...iconProps } = props;
+  const { chapter, ...iconProps } = props;
   // fallback to RWD Icon
-  const Icon = iconMap[chapter] ? iconMap[chapter] : ResponsiveDesign;
+  const Icon = iconMap[chapter] ?? ResponsiveDesign;
 
-  return <Icon className={className} {...iconProps} />;
+  return <Icon {...iconProps} />;
 }
