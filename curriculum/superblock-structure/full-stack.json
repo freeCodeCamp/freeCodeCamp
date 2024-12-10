@@ -548,6 +548,7 @@
             {
               "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks"
             },
+            { "dashedName": "lab-reusable-footer" },
             { "dashedName": "lecture-working-with-data-in-react" },
             { "dashedName": "review-react-basics" },
             { "dashedName": "quiz-react-basics" }
