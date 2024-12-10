@@ -10,6 +10,8 @@ import DropDown from '../../../assets/icons/dropdown';
 // TODO: See if there's a nice way to incorporate the structure into data Gatsby
 // sources from the curriculum, rather than importing it directly.
 import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
+import { ChapterIcon } from '../../../assets/icons/chapter-icon';
+import { FsdChapters } from '../../../../../shared/config/chapters';
 import Block from './block';
 
 import './super-block-accordion.css';
@@ -55,7 +57,13 @@ const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
   return (
     <Disclosure as='li' className='chapter' defaultOpen={isExpanded}>
       <Disclosure.Button className='chapter-button'>
-        {t(`intro:full-stack-developer.chapters.${dashedName}`)}
+        <div className='chapter-icon-and-text'>
+          <ChapterIcon
+            className='map-icon'
+            chapter={dashedName as FsdChapters}
+          />
+          {t(`intro:full-stack-developer.chapters.${dashedName}`)}
+        </div>
         <DropDown />
       </Disclosure.Button>
       <Disclosure.Panel as='ul' className='chapter-panel'>
