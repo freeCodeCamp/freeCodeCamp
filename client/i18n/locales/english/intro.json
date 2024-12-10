@@ -2844,7 +2844,7 @@
       "quiz-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Fundamentals Quiz."
+          "Test what you've learned in this quiz on JavaScript Fundamentals."
         ]
       },
       "lecture-working-with-higher-order-functions-and-callbacks": {
@@ -2908,7 +2908,7 @@
       "quiz-dom-manipulation-and-click-event-with-javascript": {
         "title": "DOM Manipulation and Click Events with JavaScript Quiz",
         "intro": [
-          "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript Quiz."
+          "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript."
         ]
       },
       "lecture-understanding-the-event-object-and-event-delegation": {
