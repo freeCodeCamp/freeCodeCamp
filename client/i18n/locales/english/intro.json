@@ -2844,7 +2844,7 @@
       "quiz-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Fundamentals Quiz."
+          "Test what you've learned in this quiz on JavaScript Fundamentals."
         ]
       },
       "lecture-working-with-higher-order-functions-and-callbacks": {
@@ -2908,7 +2908,7 @@
       "quiz-dom-manipulation-and-click-event-with-javascript": {
         "title": "DOM Manipulation and Click Events with JavaScript Quiz",
         "intro": [
-          "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript Quiz."
+          "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript."
         ]
       },
       "lecture-understanding-the-event-object-and-event-delegation": {
@@ -3100,8 +3100,18 @@
           "In these lecture videos, you will learn about JavaScript Maps and Sets."
         ]
       },
-      "cvsw": { "title": "226", "intro": [] },
-      "cvs1": { "title": "227", "intro": [] },
+      "workshop-plant-nursery-catalog": {
+        "title": "Build a Plant Nursery Catalog",
+        "intro": [
+          "In this workshop, you will practice maps and sets by building a plant nursery catalog in JavaScript."
+        ]
+      },
+      "lab-voting-system": {
+        "title": "Build a Voting System",
+        "intro": [
+          "In this lab, you will build a voting system using Maps and Sets."
+        ]
+      },
       "review-javascript-maps-and-sets": {
         "title": "JavaScript Maps and Sets Review",
         "intro": [
@@ -3263,7 +3273,12 @@
         ]
       },
       "alda": { "title": "253", "intro": [] },
-      "cvaf": { "title": "254", "intro": [] },
+      "lab-fcc-forum-leaderboard": {
+        "title": "Build an fCC Forum Leaderboard",
+        "intro": [
+          "For this lab you will practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
+        ]
+      },
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
@@ -3279,7 +3294,8 @@
       "review-javascript": {
         "title": "JavaScript Review",
         "intro": [
-          "Review the JavaScript concepts to prepare for the upcoming quiz."
+          "Before you take the JavaScript prep exam, you will need to review first.",
+          "Open up this page, to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
       "kagw": { "title": "258", "intro": [] },
@@ -3289,8 +3305,18 @@
           "In these lecture videos, you will get an introduction to JavaScript libraries and frameworks."
         ]
       },
+      "workshop-reusable-mega-navbar": {
+        "title": "Build a Reusable Mega Navbar",
+        "intro": [
+          "In the previous lecture videos, you learned how to work with components in React.",
+          "In this workshop, you will build a reusable Navbar component using React."
+        ]
+      },
       "oxiv": { "title": "260", "intro": [] },
-      "fjvx": { "title": "261", "intro": [] },
+      "lab-reusable-footer": {
+        "title": "Build a Reusable Footer",
+        "intro": ["In this lab, you will use React to build a reusable footer."]
+      },
       "lecture-working-with-data-in-react": {
         "title": "Working with Data in React",
         "intro": [
