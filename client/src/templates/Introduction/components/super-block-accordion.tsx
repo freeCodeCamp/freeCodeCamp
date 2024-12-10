@@ -150,13 +150,14 @@ export const SuperBlockAccordion = ({
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
         if (isLinkChapter(chapter.name)) {
-          const linkedChallenge = chapter.modules[0].blocks[0].challenges[0];
+          const challenges = chapter.modules[0]?.blocks[0]?.challenges;
+          const firstChallenge = challenges ? challenges[0] : null;
           return (
             <li key={chapter.name} className='link-chapter'>
               <Block
-                block={linkedChallenge.block}
-                blockType={linkedChallenge.blockType}
-                challenges={[linkedChallenge]}
+                block={firstChallenge?.block ?? ''}
+                blockType={firstChallenge?.blockType ?? null}
+                challenges={challenges}
                 superBlock={superBlock}
               />
             </li>
@@ -171,13 +172,14 @@ export const SuperBlockAccordion = ({
           >
             {chapter.modules.map(module => {
               if (isLinkModule(module.name)) {
-                const linkedChallenge = module.blocks[0].challenges[0];
+                const challenges = module.blocks[0]?.challenges;
+                const firstChallenge = challenges ? challenges[0] : null;
                 return (
                   <li key={module.name} className='link-module'>
                     <Block
-                      block={linkedChallenge.block}
-                      blockType={linkedChallenge.blockType}
-                      challenges={[linkedChallenge]}
+                      block={firstChallenge?.block ?? ''}
+                      blockType={firstChallenge?.blockType ?? null}
+                      challenges={challenges}
                       superBlock={superBlock}
                     />
                   </li>
