@@ -544,8 +544,8 @@
               "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks"
             },
             { "dashedName": "lecture-working-with-data-in-react" },
-            { "dashedName": "quiz-react-basics" },
-            { "dashedName": "workshop-reusable-mega-navbar" }
+            { "dashedName": "workshop-reusable-mega-navbar" },
+            { "dashedName": "quiz-react-basics" }
           ]
         },
         {
