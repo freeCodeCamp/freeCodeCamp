@@ -3036,7 +3036,12 @@
           "You'll also practice basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
         ]
       },
-      "egkv": { "title": "213", "intro": [] },
+      "lab-customer-complaint-form": {
+        "title": "Build a Customer Complaint Form",
+        "intro": [
+          "For this lab, you will use JavaScript to validate a customer complaint form."
+        ]
+      },
       "review-form-validation-with-javascript": {
         "title": "Form Validation with JavaScript Review",
         "intro": [
