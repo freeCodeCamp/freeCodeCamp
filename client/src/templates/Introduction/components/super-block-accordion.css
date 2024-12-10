@@ -78,3 +78,11 @@
 .super-block-accordion .chapter-panel > li:last-child .block-grid {
   border-bottom: 0;
 }
+
+.super-block-accordion .badge {
+  background-color: var(--purple-background);
+  color: var(--purple-color);
+  padding: 4px 8px;
+  border-width: 1px;
+  border-color: var(--purple-color);
+}
