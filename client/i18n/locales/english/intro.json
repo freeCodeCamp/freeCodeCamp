@@ -3268,7 +3268,12 @@
         ]
       },
       "alda": { "title": "253", "intro": [] },
-      "cvaf": { "title": "254", "intro": [] },
+      "lab-fcc-forum-leaderboard": {
+        "title": "Build an fCC Forum Leaderboard",
+        "intro": [
+          "For this lab you will practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
+        ]
+      },
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
