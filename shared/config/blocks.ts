@@ -42,12 +42,5 @@ export enum BlockLayouts {
    * This layout is used in legacy certifications.
    * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#javascript-algorithms-and-data-structures-projects
    */
-  ProjectList = 'project-list',
-
-  /**
-   * ComingSoon just displays a message that the block is coming soon.
-   * This layout is used for blocks that are not yet implemented.
-   */
-
-  ComingSoon = 'coming-soon'
+  ProjectList = 'project-list'
 }
