@@ -1,4 +1,4 @@
-import { uniqBy } from 'lodash-es';
+import { uniqBy, uniqWith } from 'lodash-es';
 import { handleActions } from 'redux-actions';
 import store from 'store';
 
@@ -507,7 +507,36 @@ export const reducer = handleActions(
               }
             }
           }
-        : state
+        : state,
+    [challengeTypes.submitQuizAttemptComplete]: (state, { payload }) => {
+      const { challengeId, quizId } = payload;
+      const { appUsername } = state;
+
+      const newQuizAttempt = {
+        challengeId,
+        quizId,
+        timestamp: Date.now()
+      };
+
+      const newQuizAttempts = [
+        newQuizAttempt,
+        ...state.user[appUsername].quizAttempts
+      ];
+
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            quizAttempts: uniqWith(
+              newQuizAttempts,
+              (a, b) => a.challengeId === b.challengeId && a.quizId === b.quizId
+            )
+          }
+        }
+      };
+    }
   },
   initialState
 );
