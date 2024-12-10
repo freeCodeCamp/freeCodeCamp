@@ -157,28 +157,32 @@
       "title": "Step 37"
     },
     {
-      "id": "6752c62efa90554c01415e7b",
+      "id": "6757f2b25418da4f73e29eb6",
       "title": "Step 38"
     },
     {
-      "id": "6752ecd811c96d5dc33ae853",
+      "id": "6752c62efa90554c01415e7b",
       "title": "Step 39"
     },
     {
-      "id": "6752edba757ff96404faf9e9",
+      "id": "6752ecd811c96d5dc33ae853",
       "title": "Step 40"
     },
     {
-      "id": "675304e7937e62902e08a3ab",
+      "id": "6752edba757ff96404faf9e9",
       "title": "Step 41"
     },
     {
-      "id": "67532282ab9b95d7083617ee",
+      "id": "675304e7937e62902e08a3ab",
       "title": "Step 42"
     },
     {
-      "id": "675309b2795c2a9ae03b8812",
+      "id": "67532282ab9b95d7083617ee",
       "title": "Step 43"
+    },
+    {
+      "id": "675309b2795c2a9ae03b8812",
+      "title": "Step 44"
     }
   ],
   "helpCategory": "JavaScript"
