@@ -130,9 +130,6 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     },
     isChallengeCompleted,
     isSignedIn,
-    pageContext: {
-      challengeMeta: { nextChallengePath, prevChallengePath }
-    },
     partiallyCompletedChallenges,
     t,
     updateSolutionFormValues
@@ -177,7 +174,9 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     });
     challengeMounted(challengeMeta.id);
     container.current?.focus();
-  }, [props]); // TODO: split props, so that it doesn't rerender on every prop change
+    // This effect should be run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const openGitpod = (userToken?: string) => {
     const {
@@ -258,11 +257,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
   };
 
   return (
-    <Hotkeys
-      containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
-    >
+    <Hotkeys containerRef={container}>
       <LearnLayout>
         <Helmet title={windowTitle} />
         <Container>

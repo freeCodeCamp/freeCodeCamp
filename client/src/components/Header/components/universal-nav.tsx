@@ -19,7 +19,7 @@ const SearchBarOptimized = Loadable(
 
 type UniversalNavProps = Omit<
   NavLinksProps,
-  'toggleNightMode' | 'openSignoutModal'
+  'toggleTheme' | 'openSignoutModal'
 > & {
   fetchState: { pending: boolean };
   searchBarRef?: React.RefObject<HTMLDivElement>;

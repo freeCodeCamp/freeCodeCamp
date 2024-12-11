@@ -166,6 +166,7 @@
     "professional-certs-heading": "Earn free professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
     "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
+    "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "faq": "Maswali yanayoulizwa mara kwa mara:",
     "faqs": [
@@ -238,6 +239,8 @@
     "sound-mode": "Hii inaongeza sauti ya kupendeza ya gitaa la akustika kwenye tovuti. Utapata maoni ya muziki unapoandika kwenye kihariri, unapokamilisha changamoto, unapopata cheti na zaidi.",
     "sound-volume": "Sauti ya Campfire:",
     "scrollbar-width": "Upana wa Upau wa kusogeza wa Kihariri",
+    "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
+    "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "Jina la mtumiaji \"{{username}}\" lina vibambo batili",
@@ -346,6 +349,7 @@
     "donated": "Donated to the community",
     "projects": "Projects",
     "stats": "Stats",
+    "activity": "Activity",
     "timeline": "Rekodi ya matukio",
     "none-completed": "Hakuna changamoto zilizokamilishwa bado.",
     "get-started": "Anza hapa.",
@@ -895,6 +899,7 @@
     "invalid-update-flag": "Unajaribu kufikia rasilimali zilizopigwa marufuku. Tafadhali omba usaidizi katika https://forum.freecodecamp.org ikiwa hili ni ombi halali.",
     "generate-exam-error": "Hitilafu ilitokea wakati wa kujaribu kuunda mtihani wako.",
     "cert-not-found": "The certification {{certSlug}} does not exist.",
+    "reset-editor-layout": "Your editor layout has been reset.",
     "ms": {
       "transcript": {
         "link-err-1": "Please include a Microsoft transcript URL in the request.",

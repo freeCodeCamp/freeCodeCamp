@@ -27,7 +27,7 @@ import BlockHeader from './block-header';
 
 import '../intro.css';
 
-const { curriculumLocale, showUpcomingChanges, showNewCurriculum } = envData;
+const { curriculumLocale } = envData;
 
 type Challenge = ChallengeNode['challenge'];
 
@@ -111,10 +111,7 @@ class Block extends Component<BlockProps> {
       return isGridBased(superBlock, challenge.challengeType);
     });
 
-    const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock, {
-      showNewCurriculum,
-      showUpcomingChanges
-    });
+    const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock);
 
     const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
     // the real type of TFunction is the type below, because intro can be an array of strings
