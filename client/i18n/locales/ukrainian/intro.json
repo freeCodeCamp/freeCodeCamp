@@ -2862,7 +2862,7 @@
       "lecture-working-with-the-dom-click-events-and-web-apis": {
         "title": "Робота з DOM, подіями click та web API",
         "intro": [
-          "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using JavaScript."
+          "У цих відеолекціях ви дізнаєтесь, як працювати з DOM, подіями click та web API за допомогою JavaScript."
         ]
       },
       "gibb": {
@@ -2891,7 +2891,7 @@
       "quiz-dom-manipulation-and-click-event-with-javascript": {
         "title": "Тест «Маніпуляція DOM та події Click в JavaScript»",
         "intro": [
-          "Перевірте, що ви дізнались про маніпуляцію DOM та події Click в JavaScript."
+          "Перевірте, що ви дізнались про маніпуляцію DOM та події click в JavaScript."
         ]
       },
       "lecture-understanding-the-event-object-and-event-delegation": {
@@ -3090,13 +3090,17 @@
           "У цих відеолекціях ви дізнаєтесь про map та set в JavaScript."
         ]
       },
-      "cvsw": {
-        "title": "226",
-        "intro": []
+      "workshop-plant-nursery-catalog": {
+        "title": "Build a Plant Nursery Catalog",
+        "intro": [
+          "In this workshop, you will practice maps and sets by building a plant nursery catalog in JavaScript."
+        ]
       },
-      "cvs1": {
-        "title": "227",
-        "intro": []
+      "lab-voting-system": {
+        "title": "Створіть систему для голосування",
+        "intro": [
+          "У цій лабораторній роботі ви створите систему для голосування, використовуючи map та set."
+        ]
       },
       "review-javascript-maps-and-sets": {
         "title": "Повторення map та set в JavaScript",
@@ -3286,9 +3290,11 @@
         "title": "253",
         "intro": []
       },
-      "cvaf": {
-        "title": "254",
-        "intro": []
+      "lab-fcc-forum-leaderboard": {
+        "title": "Створіть таблицю лідерів на fCC",
+        "intro": [
+          "У цій лабораторній роботі ви застосуєте асинхронний JavaScript, щоб створити власну таблицю лідерів freeCodeCamp."
+        ]
       },
       "review-asynchronous-javascript": {
         "title": "Повторення асинхронного JavaScript",
@@ -3303,7 +3309,8 @@
       "review-javascript": {
         "title": "Повторення JavaScript",
         "intro": [
-          "Пригадайте поняття з теми «JavaScript», щоб підготуватись до тесту."
+          "Перш ніж перейти до підготовчого екзамену «JavaScript», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати змінні, рядки, булеві значення, функції, об’єкти, масиви, налагодження, роботу з DOM та багато іншого."
         ]
       },
       "kagw": {
@@ -3316,13 +3323,20 @@
           "У цих відеолекціях ви ознайомитесь з бібліотеками й фреймворками в JavaScript."
         ]
       },
+      "workshop-reusable-mega-navbar": {
+        "title": "Build a Reusable Mega Navbar",
+        "intro": [
+          "In the previous lecture videos, you learned how to work with components in React.",
+          "In this workshop, you will build a reusable Navbar component using React."
+        ]
+      },
       "oxiv": {
         "title": "260",
         "intro": []
       },
-      "fjvx": {
-        "title": "261",
-        "intro": []
+      "lab-reusable-footer": {
+        "title": "Build a Reusable Footer",
+        "intro": ["In this lab, you will use React to build a reusable footer."]
       },
       "lecture-working-with-data-in-react": {
         "title": "Робота з даними в React",
@@ -3334,13 +3348,17 @@
         "title": "263",
         "intro": []
       },
-      "bgtd": {
-        "title": "264",
-        "intro": []
+      "lab-mood-board": {
+        "title": "Build a Mood Board",
+        "intro": [
+          "In this lab, you will create a mood board using a React with props."
+        ]
       },
-      "ascd": {
-        "title": "265",
-        "intro": []
+      "review-react-basics": {
+        "title": "Повторення основ React",
+        "intro": [
+          "Пригадайте поняття з теми «Основи React», щоб підготуватись до тесту."
+        ]
       },
       "quiz-react-basics": {
         "title": "Тест «Основи React»",
@@ -3390,9 +3408,11 @@
         "title": "277",
         "intro": []
       },
-      "fcom": {
-        "title": "278",
-        "intro": []
+      "lab-weather-app": {
+        "title": "Створіть застосунок з прогнозом погоди",
+        "intro": [
+          "У цій лабораторній роботі ви створите застосунок з прогнозом погоди, використовуючи API для отримання даних."
+        ]
       },
       "ffpt": {
         "title": "279",
