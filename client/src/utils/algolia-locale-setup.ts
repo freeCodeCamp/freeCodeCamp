@@ -49,7 +49,7 @@ const algoliaIndices = {
   },
   swahili: {
     name: 'news',
-    searchPage: 'https://www.freecodecamp.org/swahili/news/search/'
+    searchPage: 'https://www.freecodecamp.org/news/search/'
   }
 };
 
