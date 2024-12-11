@@ -468,6 +468,7 @@
           "dashedName": "maps-and-sets",
           "blocks": [
             { "dashedName": "lecture-working-with-maps-and-sets" },
+            { "dashedName": "workshop-plant-nursery-catalog" },
             { "dashedName": "lab-voting-system" },
             { "dashedName": "review-javascript-maps-and-sets" },
             { "dashedName": "quiz-javascript-maps-and-sets" }
@@ -524,6 +525,7 @@
           "blocks": [
             { "dashedName": "lecture-understanding-asynchronous-programming" },
             { "dashedName": "workshop-fcc-authors-page" },
+            { "dashedName": "lab-fcc-forum-leaderboard" },
             { "dashedName": "lab-weather-app" },
             { "dashedName": "review-asynchronous-javascript" },
             { "dashedName": "quiz-asynchronous-javascript" }
@@ -546,7 +548,10 @@
             {
               "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks"
             },
+            { "dashedName": "lab-reusable-footer" },
             { "dashedName": "lecture-working-with-data-in-react" },
+            { "dashedName": "workshop-reusable-mega-navbar" },
+            { "dashedName": "lab-mood-board" },
             { "dashedName": "review-react-basics" },
             { "dashedName": "quiz-react-basics" }
           ]

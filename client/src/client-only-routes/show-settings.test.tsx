@@ -42,7 +42,7 @@ const loggedInProps = {
   navigate: navigate,
   showLoading: false,
   submitNewAbout: jest.fn(),
-  toggleNightMode: jest.fn(),
+  toggleTheme: jest.fn(),
   updateSocials: jest.fn(),
   updateIsHonest: jest.fn(),
   updatePortfolio: jest.fn(),

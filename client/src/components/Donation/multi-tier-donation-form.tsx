@@ -17,8 +17,8 @@ import {
   defaultTierAmount,
   type DonationAmount
 } from '../../../../shared/config/donation-settings'; // You can further extract these into separate components and import them
-import { Themes } from '../settings/theme';
 import callGA from '../../analytics/call-ga';
+import { LocalStorageThemes } from '../../redux/types';
 import { formattedAmountLabel, convertToTimeContributed } from './utils';
 import DonateForm from './donate-form';
 
@@ -27,7 +27,7 @@ type MultiTierDonationFormProps = {
   handleProcessing?: () => void;
   paymentContext: PaymentContext;
   isMinimalForm?: boolean;
-  defaultTheme?: Themes;
+  defaultTheme?: LocalStorageThemes;
   isAnimationEnabled?: boolean;
 };
 function SelectionTabs({
