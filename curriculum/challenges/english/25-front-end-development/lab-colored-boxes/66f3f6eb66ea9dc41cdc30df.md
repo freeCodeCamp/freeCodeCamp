@@ -1,6 +1,6 @@
 ---
 id: 66f3f6eb66ea9dc41cdc30df
-title: Design Colored Boxes
+title: Design a Set of Colored Boxes
 challengeType: 14
 dashedName: lab-colored-boxes
 demoType: onClick
@@ -24,6 +24,8 @@ In this lab, you'll practice using CSS colors by designing boxes.
 8. The `.color3` element should have a `background-color` that uses a predefined (word) color value.
 9. The `.color4` element should have a `background-color` that uses a HSL color value.
 10. The `.color5` element should have a `background-color` set.
+
+**Note:** Be sure to link your stylesheet in your HTML and apply your CSS.
 
 # --hints--
 
