@@ -238,6 +238,8 @@
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
     "sound-volume": "Volume do modo fogueira:",
     "scrollbar-width": "Largura da barra de rolagem do editor",
+    "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
+    "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Dentro de um desafio, aperte ESC seguido pelo ponto de interrogação para mostrar uma lista de atalhos disponíveis.",
     "username": {
       "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
@@ -346,6 +348,7 @@
     "donated": "Doou para a comunidade",
     "projects": "Projetos",
     "stats": "Estatísticas",
+    "activity": "Activity",
     "timeline": "Cronograma",
     "none-completed": "Nenhum desafio foi concluído ainda.",
     "get-started": "Comece aqui.",
@@ -895,6 +898,7 @@
     "invalid-update-flag": "Você está tentando acessar recursos proibidos. Solicite assistência em https://forum.freecodecamp.org se sua solicitação for válida.",
     "generate-exam-error": "Ocorreu um erro ao tentar gerar seu exame.",
     "cert-not-found": "A certificação {{certSlug}} não existe.",
+    "reset-editor-layout": "Your editor layout has been reset.",
     "ms": {
       "transcript": {
         "link-err-1": "Inclua um URL de transcrição da Microsoft na solicitação.",
