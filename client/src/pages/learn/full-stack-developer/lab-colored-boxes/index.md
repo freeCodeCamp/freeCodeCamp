@@ -1,5 +1,5 @@
 ---
-title: Introduction to the Design Colored Boxes
+title: Introduction to the Design a Set of Colored Boxes
 block: lab-colored-boxes
 superBlock: full-stack-developer
 ---
