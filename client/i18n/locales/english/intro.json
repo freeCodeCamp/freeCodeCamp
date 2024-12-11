@@ -2453,7 +2453,7 @@
         ]
       },
       "lab-magazine-layout": {
-        "title": "Design a Magazine Layout Using CSS Grid",
+        "title": "Design a Magazine Layout",
         "intro": [
           "In this lab, you will design a magazine layout using CSS Grid, including concepts like grid rows and grid columns."
         ]
