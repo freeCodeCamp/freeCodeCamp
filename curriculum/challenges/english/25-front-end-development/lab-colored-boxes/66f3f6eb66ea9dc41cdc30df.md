@@ -2,7 +2,7 @@
 id: 66f3f6eb66ea9dc41cdc30df
 title: Design Colored Boxes
 challengeType: 14
-dashedName: "lab-colored-boxes"
+dashedName: lab-colored-boxes
 demoType: onClick
 ---
 
@@ -79,31 +79,31 @@ assert.notStrictEqual(height, '0px');
 The `.color1` element should have a hexadecimal background color.
 
 ```js
-assert.match(code, /\.color1\s*{[^}]*\bbackground-color\s*:\s*#[0-9a-fA-F]{3,6}\s*;[^}]*}/);
+assert.match(__helpers.removeCssComments(code), /\.color1\s*{[^}]*\bbackground-color\s*:\s*#[0-9a-fA-F]{3,6}\s*;[^}]*}/);
 ```
 
 The `.color2` element should have an RGB background color.
 
 ```js
-assert.match(code, /\.color2\s*{[^}]*\bbackground-color\s*:\s*rgb\s*\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\)\s*;[^}]*}/);
+assert.match(__helpers.removeCssComments(code), /\.color2\s*{[^}]*\bbackground-color\s*:\s*rgb\s*\(\s*\d+\s*,\s*\d+\s*,\s*\d+\s*\)\s*;[^}]*}/);
 ```
 
 The `.color3` element should have a predefined (word) background color.
 
 ```js
-assert.match(code, /\.color3\s*{[^}]*\bbackground-color\s*:\s*[a-zA-Z]+\s*;[^}]*}/);
+assert.match(__helpers.removeCssComments(code), /\.color3\s*{[^}]*\bbackground-color\s*:\s*[a-zA-Z]+\s*;[^}]*}/);
 ```
 
 The `.color4` element should have a HSL background color.
 
 ```js
-assert.match(code, /\.color4\s*{[^}]*\bbackground-color\s*:\s*hsl\s*\(\s*\d+\s*,\s*\d+%\s*,\s*\d+%\s*\)\s*;[^}]*}/);
+assert.match(__helpers.removeCssComments(code), /\.color4\s*{[^}]*\bbackground-color\s*:\s*hsl\s*\(\s*\d+\s*,\s*\d+%\s*,\s*\d+%\s*\)\s*;[^}]*}/);
 ```
 
 The `.color5` element should have a background color set.
 
 ```js
-assert.match(code, /\.color5\s*{[^}]*\bbackground-color\s*:\s*[^;]+;[^}]*}/);
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.color5').getPropVal('background-color', true));
 ```
 
 # --seed--
