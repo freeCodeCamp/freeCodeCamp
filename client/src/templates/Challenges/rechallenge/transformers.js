@@ -214,6 +214,7 @@ async function transformScript(documentElement, { useModules }) {
   const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
     const isBabel = script.type === 'text/babel';
+    const hasSource = !!script.src;
     // TODO: make the use of JSX conditional on more than just the script type.
     // It should only be used for React challenges since it would be confusing
     // for learners to see the results of a transformation they didn't ask for.
@@ -228,8 +229,18 @@ async function transformScript(documentElement, { useModules }) {
     // However, if we're importing modules, the type will be removed when the
     // scripts are embedded in the HTML.
     if (isBabel && !useModules) script.removeAttribute('type');
+    // We could use babel standalone to transform inline code in the preview,
+    // but that generates a warning that's shown to learner. By removing the
+    // type attribute and transforming the code we can avoid that warning.
+    if (isBabel && !hasSource) {
+      script.removeAttribute('type');
+      script.setAttribute('data-type', 'text/babel');
+    }
 
-    script.innerHTML = babelTransformCode(options)(script.innerHTML);
+    // Skip unnecessary transformations
+    script.innerHTML = script.innerHTML
+      ? babelTransformCode(options)(script.innerHTML)
+      : '';
   });
 }
 
