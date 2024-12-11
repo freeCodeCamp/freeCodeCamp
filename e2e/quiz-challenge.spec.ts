@@ -334,6 +334,51 @@ test.describe('Quiz challenge', () => {
       page.getByText('Review the material and try again in 60 minutes.')
     ).toBeHidden();
 
+    await expect(page.getByRole('radiogroup')).toHaveCount(20);
+    await expect(
+      page.locator("[role='radio'][aria-disabled='true']")
+    ).toHaveCount(0);
+  });
+
+  test('should enforce the cooldown period only to the recently attempted quiz', async ({
+    page
+  }) => {
+    await page.clock.setFixedTime(new Date(ATTEMPT_DATE));
+
+    // We can't make a POST request here to /submit-quiz-attempt
+    // because the timestamp is generated on the backend,
+    // and Playwright can't have control over that.
+    // Instead, we mock the returned `quizAttempts` in the user data.
+    await page.route('*/**/user/get-session-user', async route => {
+      const response = await route.fetch();
+      const json = await response.json();
+
+      json.user.developmentuser.quizAttempts = [
+        {
+          challengeId: '66df3b712c41c499e9d31e5b',
+          quizId: '1',
+          timestamp: ATTEMPT_DATE.getTime()
+        }
+      ];
+
+      await route.fulfill({ json });
+    });
+
+    // Reload to fetch the updated quiz attempts.
+    await page.reload();
+
+    await expect(
+      page.getByText(
+        'You attempted this quiz too recently. You need to wait 60 minutes before you can take it again. In the mean time, you should review the course material.'
+      )
+    ).toBeVisible();
+
+    // Go to another quiz challenge
+    await page.goto(
+      '/learn/full-stack-developer/quiz-semantic-html/quiz-semantic-html'
+    );
+
+    await expect(page.getByRole('radiogroup')).toHaveCount(20);
     await expect(
       page.locator("[role='radio'][aria-disabled='true']")
     ).toHaveCount(0);
