@@ -2865,7 +2865,6 @@
           "In this lab, you will build a book organizer using higher order functions in JavaScript."
         ]
       },
-      "bxtv": { "title": "184", "intro": [] },
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
@@ -2885,7 +2884,6 @@
           "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using JavaScript."
         ]
       },
-      "gibb": { "title": "188", "intro": [] },
       "workshop-storytelling-app": {
         "title": "Build a Storytelling App",
         "intro": [
@@ -3228,7 +3226,7 @@
         "intro": [
           "In these lecture videos, you will learn about functional programming."
         ]
-      },
+      },        
       "workshop-recipe-ingredient-converter": {
         "title": "Build a Recipe Ingredient Converter",
         "intro": [
@@ -3268,7 +3266,6 @@
           "In this workshop you will practice how to use the fetch method, dynamically update the DOM to display the fetched data and paginate your data so you can load results in batches."
         ]
       },
-      "alda": { "title": "253", "intro": [] },
       "lab-fcc-forum-leaderboard": {
         "title": "Build an fCC Forum Leaderboard",
         "intro": [
@@ -3308,7 +3305,6 @@
           "In this workshop, you will build a reusable Navbar component using React."
         ]
       },
-      "oxiv": { "title": "260", "intro": [] },
       "lab-reusable-footer": {
         "title": "Build a Reusable Footer",
         "intro": ["In this lab, you will use React to build a reusable footer."]
