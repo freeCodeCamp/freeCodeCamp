@@ -10,7 +10,6 @@ import LandingTopB from '../components/landing/components/landing-top-b';
 import AsSeenIn from '../components/landing/components/as-seen-in';
 import Testimonials from '../components/landing/components/testimonials';
 import Certifications from '../components/landing/components/certifications';
-import Faq from '../components/landing/components/faq';
 import Benefits from '../components/landing/components/benefits';
 import '../components/landing/landing.css';
 
@@ -48,7 +47,6 @@ const Landing = ({
 
     <Testimonials />
     <Certifications allChallenges={allChallenges} />
-    <Faq />
   </main>
 );
 
