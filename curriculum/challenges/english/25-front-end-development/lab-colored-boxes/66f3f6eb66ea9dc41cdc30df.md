@@ -2,7 +2,7 @@
 id: 66f3f6eb66ea9dc41cdc30df
 title: Design a Set of Colored Boxes
 challengeType: 14
-dashedName: lab-colored-boxes
+dashedName: set-of-colored-boxes
 demoType: onClick
 ---
 
@@ -16,7 +16,7 @@ In this lab, you'll practice using CSS colors by designing boxes.
 
 1. You should set the background color for `body` to `#f4f4f4`.
 2. You should have a `div` with a class of `color-grid` to hold all your color elements.
-3. You should have five `div` elements within `color-grid` `div`.
+3. You should have five `div` elements within the `.color-grid` element.
 4. The five `div` elements should each have a class of `color-box` and `color#`, where `#` is the number of the order of that `div`. For example: `color1` for the first `div`, `color2` for the second, and so on.
 5. The `.color-box` class should have a set `width` and `height` so your `div` elements are visible on the page.
 6. The `.color1` element should have a `background-color` that uses hexadecimal color value.
@@ -44,7 +44,7 @@ const colorGrid = document.querySelector('div.color-grid');
 assert.exists(colorGrid);
 ```
 
-You should have five `div` elements within the `.color-grid` `div` element.
+You should have five `div` elements within the `.color-grid` element.
 
 ```js
 const colorGridChildren = document.querySelectorAll('div.color-grid > div');
