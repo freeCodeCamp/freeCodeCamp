@@ -39,6 +39,25 @@ test.describe('Super Block Page - Authenticated User', () => {
       ).toHaveAttribute('aria-expanded', 'true');
     });
 
+    test('should expand the block of the current challenge if it is saved in local storage', async ({
+      page
+    }) => {
+      await page.addInitScript(() => {
+        window.localStorage.setItem(
+          'currentChallengeId',
+          '660ee6e3a242da6bd579de69' // JS Pyramid Generator step 2
+        );
+      });
+
+      await page.goto('/learn/javascript-algorithms-and-data-structures-v8');
+
+      await expect(
+        page.getByRole('button', {
+          name: 'Learn Introductory JavaScript by Building a Pyramid Generator'
+        })
+      ).toHaveAttribute('aria-expanded', 'true');
+    });
+
     test('should expand the block of the most recently completed challenge', async ({
       page,
       isMobile,
@@ -96,6 +115,11 @@ test.describe('Super Block Page - Authenticated User', () => {
   });
 
   test.describe('Super Block in Accordion View', () => {
+    test.skip(
+      () => process.env.SHOW_UPCOMING_CHANGES !== 'true',
+      'The FSD superblock is not available if SHOW_UPCOMING_CHANGES is false'
+    );
+
     test('should expand the correct block when user goes to the page from breadcrumb click', async ({
       page
     }) => {
@@ -128,6 +152,42 @@ test.describe('Super Block Page - Authenticated User', () => {
       await expect(
         page.getByRole('button', {
           name: 'Workshop Design a Cafe Menu'
+        })
+      ).toHaveAttribute('aria-expanded', 'true');
+    });
+
+    test('should expand the block of the current challenge if it is saved in local storage', async ({
+      page
+    }) => {
+      await page.addInitScript(() => {
+        window.localStorage.setItem(
+          'currentChallengeId',
+          '66f6db08d55022680a3cfbc9' // What Is HTML, and What Role Does It Play on the Web?
+        );
+      });
+
+      await page.goto('/learn/full-stack-developer');
+
+      // HTML chapter
+      await expect(
+        page.getByRole('button', {
+          name: 'HTML',
+          exact: true
+        })
+      ).toHaveAttribute('aria-expanded', 'true');
+
+      // Basic HTML module
+      await expect(
+        page.getByRole('button', {
+          name: 'Basic HTML',
+          exact: true
+        })
+      ).toHaveAttribute('aria-expanded', 'true');
+
+      // What is HTML block
+      await expect(
+        page.getByRole('button', {
+          name: 'Lecture What is HTML?'
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -241,6 +301,11 @@ test.describe('Super Block Page - Unauthenticated User', () => {
   });
 
   test.describe('Super Block in Accordion View', () => {
+    test.skip(
+      () => process.env.SHOW_UPCOMING_CHANGES !== 'true',
+      'The FSD superblock is not available if SHOW_UPCOMING_CHANGES is false'
+    );
+
     test('should expand the first block of the super block', async ({
       page
     }) => {
