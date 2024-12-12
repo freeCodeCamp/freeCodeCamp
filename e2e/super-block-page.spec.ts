@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 import { expect, test } from '@playwright/test';
 
-import { getEditors } from './utils/editor';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
 
 test.describe('Super Block Page - Authenticated User', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
@@ -40,7 +40,9 @@ test.describe('Super Block Page - Authenticated User', () => {
     });
 
     test('should expand the block of the most recently completed challenge', async ({
-      page
+      page,
+      isMobile,
+      browserName
     }) => {
       test.setTimeout(20000);
 
@@ -62,7 +64,11 @@ test.describe('Super Block Page - Authenticated User', () => {
       await page.goto(
         '/learn/javascript-algorithms-and-data-structures-v8/learn-basic-javascript-by-building-a-role-playing-game/step-2'
       );
-      await getEditors(page).fill('<script></script>');
+
+      const editor = getEditors(page);
+      await focusEditor({ page, isMobile });
+      await clearEditor({ page, browserName });
+      await editor.fill('<script></script>');
       await page.getByRole('button', { name: /check your code/i }).click();
       await page.getByRole('button', { name: /submit and go/i }).click();
 
@@ -127,7 +133,9 @@ test.describe('Super Block Page - Authenticated User', () => {
     });
 
     test('should expand the block of the most recently completed challenge', async ({
-      page
+      page,
+      isMobile,
+      browserName
     }) => {
       test.setTimeout(20000);
 
@@ -156,7 +164,11 @@ test.describe('Super Block Page - Authenticated User', () => {
       ).toHaveAttribute('aria-expanded', 'true');
 
       await page.goto('/learn/full-stack-developer/workshop-blog-page/step-2');
-      await getEditors(page).fill('<head></head>');
+
+      const editor = getEditors(page);
+      await focusEditor({ page, isMobile });
+      await clearEditor({ page, browserName });
+      await editor.fill('<head></head>');
       await page.getByRole('button', { name: /check your code/i }).click();
       await page.getByRole('button', { name: /submit and go/i }).click();
 
