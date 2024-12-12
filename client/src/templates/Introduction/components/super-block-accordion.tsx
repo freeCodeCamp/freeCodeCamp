@@ -1,5 +1,4 @@
 import React, { ReactNode, useMemo } from 'react';
-import { uniqBy } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
@@ -33,9 +32,8 @@ interface SuperBlockTreeViewProps {
   chosenBlock: string;
 }
 
-const modules = superBlockStructure.chapters.flatMap(
-  chapter => chapter.modules
-);
+const modules = superBlockStructure.chapters.flatMap(({ modules }) => modules);
+const chapters = superBlockStructure.chapters;
 
 const isLinkModule = (name: string) => {
   const module = modules.find(module => module.dashedName === name);
@@ -44,12 +42,37 @@ const isLinkModule = (name: string) => {
 };
 
 const isLinkChapter = (name: string) => {
-  const chapter = superBlockStructure.chapters.find(
-    chapter => chapter.dashedName === name
-  );
+  const chapter = chapters.find(chapter => chapter.dashedName === name);
 
   return chapter?.chapterType === 'exam';
 };
+
+const getBlockToChapterMap = () => {
+  const blockToChapterMap = new Map<string, string>();
+  chapters.forEach(chapter => {
+    chapter.modules.forEach(module => {
+      module.blocks.forEach(block => {
+        blockToChapterMap.set(block.dashedName, chapter.dashedName);
+      });
+    });
+  });
+
+  return blockToChapterMap;
+};
+
+const getBlockToModuleMap = () => {
+  const blockToModuleMap = new Map<string, string>();
+  modules.forEach(module => {
+    module.blocks.forEach(block => {
+      blockToModuleMap.set(block.dashedName, module.dashedName);
+    });
+  });
+
+  return blockToModuleMap;
+};
+
+const blockToChapterMap = getBlockToChapterMap();
+const blockToModuleMap = getBlockToModuleMap();
 
 const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
   const { t } = useTranslation();
@@ -89,64 +112,87 @@ const Module = ({ dashedName, children, isExpanded }: ModuleProps) => {
   );
 };
 
+const LinkBlock = ({
+  superBlock,
+  challenges
+}: {
+  superBlock: SuperBlocks;
+  challenges?: ChallengeNode['challenge'][];
+  key: string;
+}) => {
+  const firstChallenge = challenges ? challenges[0] : null;
+  return (
+    <li className='link-block'>
+      <Block
+        block={firstChallenge?.block ?? ''}
+        blockType={firstChallenge?.blockType ?? null}
+        challenges={challenges ?? []}
+        superBlock={superBlock}
+      />
+    </li>
+  );
+};
+
+const ComingSoon = ({ children }: { children: ReactNode }) => {
+  const { t } = useTranslation();
+  return (
+    <li className='coming-soon'>
+      <span className='badge'>{t('misc.coming-soon')}</span> {children}
+    </li>
+  );
+};
+
 export const SuperBlockAccordion = ({
   challenges,
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const { allChapters, allBlocks } = useMemo(() => {
-    const allBlocks = uniqBy(challenges, 'block').map(
-      ({ block, blockType, chapter, module }) => ({
-        name: block,
-        blockType,
-        chapter: chapter as string,
-        module: module as string,
-        challenges: challenges.filter(({ block: b }) => b === block)
-      })
-    );
+  const { t } = useTranslation();
+  const { allChapters } = useMemo(() => {
+    const populateBlocks = (blocks: { dashedName: string }[]) =>
+      blocks.map(block => {
+        const blockChallenges = challenges.filter(
+          ({ block: blockName }) => blockName === block.dashedName
+        );
 
-    const allModules = uniqBy(allBlocks, 'module').map(
-      ({ module, chapter }) => ({
-        name: module,
-        chapter,
-        blocks: allBlocks.filter(({ module: m }) => m === module)
-      })
-    );
+        return {
+          name: block.dashedName,
+          blockType: blockChallenges[0]?.blockType ?? null,
+          challenges: blockChallenges
+        };
+      });
 
-    const allChapters = uniqBy(allModules, 'chapter').map(({ chapter }) => ({
-      name: chapter,
-      modules: allModules.filter(({ chapter: c }) => c === chapter)
+    const allChapters = chapters.map(chapter => ({
+      name: chapter.dashedName,
+      modules: chapter.modules.map(module => ({
+        name: module.dashedName,
+        blocks: populateBlocks(module.blocks)
+      }))
     }));
 
-    return {
-      allChapters,
-      allModules,
-      allBlocks
-    };
+    return { allChapters };
   }, [challenges]);
 
   // Expand the outer layers in order to reveal the chosen block.
-  const expandedChapter = allBlocks.find(
-    ({ name }) => chosenBlock === name
-  )?.chapter;
-  const expandedModule = allBlocks.find(
-    ({ name }) => chosenBlock === name
-  )?.module;
+  const expandedChapter = blockToChapterMap.get(chosenBlock);
+  const expandedModule = blockToModuleMap.get(chosenBlock);
 
   return (
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
         if (isLinkChapter(chapter.name)) {
-          const linkedChallenge = chapter.modules[0].blocks[0].challenges[0];
           return (
-            <li key={chapter.name} className='link-chapter'>
-              <Block
-                block={linkedChallenge.block}
-                blockType={linkedChallenge.blockType}
-                challenges={[linkedChallenge]}
-                superBlock={superBlock}
-              />
-            </li>
+            <LinkBlock
+              key={chapter.name}
+              superBlock={superBlock}
+              challenges={chapter.modules[0]?.blocks[0]?.challenges}
+            />
+          );
+        } else if (chapter.modules.length === 0) {
+          return (
+            <ComingSoon key={chapter.name}>
+              {t(`intro:full-stack-developer.chapters.${chapter.name}`)}
+            </ComingSoon>
           );
         }
 
@@ -158,16 +204,18 @@ export const SuperBlockAccordion = ({
           >
             {chapter.modules.map(module => {
               if (isLinkModule(module.name)) {
-                const linkedChallenge = module.blocks[0].challenges[0];
                 return (
-                  <li key={module.name} className='link-module'>
-                    <Block
-                      block={linkedChallenge.block}
-                      blockType={linkedChallenge.blockType}
-                      challenges={[linkedChallenge]}
-                      superBlock={superBlock}
-                    />
-                  </li>
+                  <LinkBlock
+                    key={module.name}
+                    superBlock={superBlock}
+                    challenges={module.blocks[0]?.challenges}
+                  />
+                );
+              } else if (module.blocks.length === 0) {
+                return (
+                  <ComingSoon key={module.name}>
+                    {t(`intro:full-stack-developer.modules.${module.name}`)}
+                  </ComingSoon>
                 );
               }
 
@@ -177,16 +225,25 @@ export const SuperBlockAccordion = ({
                   dashedName={module.name}
                   isExpanded={expandedModule === module.name}
                 >
-                  {module.blocks.map(block => (
-                    <li key={block.name}>
-                      <Block
-                        block={block.name}
-                        blockType={block.blockType}
-                        challenges={block.challenges}
-                        superBlock={superBlock}
-                      />
-                    </li>
-                  ))}
+                  {module.blocks.map(block => {
+                    if (block.challenges.length === 0) {
+                      return (
+                        <ComingSoon key={block.name}>
+                          {t(`intro:${superBlock}.blocks.${block.name}.title`)}
+                        </ComingSoon>
+                      );
+                    }
+                    return (
+                      <li key={block.name}>
+                        <Block
+                          block={block.name}
+                          blockType={block.blockType}
+                          challenges={block.challenges}
+                          superBlock={superBlock}
+                        />
+                      </li>
+                    );
+                  })}
                 </Module>
               );
             })}

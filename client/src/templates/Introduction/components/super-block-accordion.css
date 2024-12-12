@@ -18,8 +18,7 @@
 }
 
 .super-block-accordion .chapter,
-.super-block-accordion .link-chapter,
-.super-block-accordion .link-module {
+.super-block-accordion .link-block {
   background-color: var(--primary-background);
 }
 
@@ -77,4 +76,23 @@
 
 .super-block-accordion .chapter-panel > li:last-child .block-grid {
   border-bottom: 0;
+}
+
+.super-block-accordion .badge {
+  color: var(--purple-color);
+  border: 1px solid var(--purple-color);
+  align-self: center;
+  height: fit-content;
+  padding: 1px 6px 2px;
+  font-size: 0.85rem;
+  position: relative;
+  top: 1px;
+}
+
+.super-block-accordion .coming-soon {
+  border-bottom: 4px solid var(--secondary-background);
+}
+
+.super-block-accordion .coming-soon:last-child {
+  border-bottom: 0px;
 }

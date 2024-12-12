@@ -129,6 +129,12 @@ class Block extends Component<BlockProps> {
       (completedCount / extendedChallenges.length) * 100
     );
 
+    // since the Blocks are not components, we need link to exist even if it's
+    // not being used to render anything
+    // all blocks should have at least one challenge
+    const link = challenges[0].fields.slug || '';
+    const blockLayout = challenges[0].blockLayout;
+
     const courseCompletionStatus = () => {
       if (completedCount === 0) {
         return t('learn.not-started');
@@ -306,7 +312,7 @@ class Block extends Component<BlockProps> {
                 onClick={() => {
                   this.handleBlockClick();
                 }}
-                to={extendedChallenges[0].fields.slug}
+                to={link}
               >
                 <CheckMark isCompleted={isBlockCompleted} />
                 {blockTitle}{' '}
@@ -391,7 +397,7 @@ class Block extends Component<BlockProps> {
                 onClick={() => {
                   this.handleBlockClick();
                 }}
-                to={extendedChallenges[0].fields.slug}
+                to={link}
               >
                 <CheckMark isCompleted={isBlockCompleted} />
                 {blockType && <BlockLabel blockType={blockType} />}
@@ -461,7 +467,7 @@ class Block extends Component<BlockProps> {
 
     return (
       <>
-        {layoutToComponent[challenges[0].blockLayout]}
+        {layoutToComponent[blockLayout]}
         {(!isGridBlock || isProjectBlock) &&
           superBlock !== SuperBlocks.FullStackDeveloper && <Spacer size='m' />}
       </>
