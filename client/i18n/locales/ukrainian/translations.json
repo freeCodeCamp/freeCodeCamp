@@ -166,6 +166,7 @@
     "professional-certs-heading": "Отримайте безоплатні професійні сертифікації:",
     "interview-prep-heading": "Підготуйтесь до посади розробника:",
     "legacy-curriculum-heading": "Перегляньте застарілу навчальну програму:",
+    "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Майбутня навчальна програма:",
     "faq": "Часті питання:",
     "faqs": [
@@ -238,8 +239,8 @@
     "sound-mode": "Це додає приємне звучання акустичної гітари на всьому вебсайті. Ви почуєте музичний супровід, коли будете писати у редакторі, при завершенні випробувань, при затвердженні сертифікацій та інше.",
     "sound-volume": "Гучність багаття:",
     "scrollbar-width": "Ширина смуги прокрутки редактора",
-    "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
-    "reset-editor-layout": "Reset Editor Layout",
+    "reset-editor-layout-tooltip": "Скинути редактор до початкового стану",
+    "reset-editor-layout": "Скинути редактор",
     "shortcuts-explained": "В межах завдання натисніть ESC та знак питання, щоб переглянути список доступних скорочень.",
     "username": {
       "contains invalid characters": "Ім’я користувача «{{username}}» містить неприпустимі символи",
@@ -348,7 +349,7 @@
     "donated": "Задонатив(-ла) спільноті",
     "projects": "Проєкти",
     "stats": "Статистика",
-    "activity": "Activity",
+    "activity": "Активність",
     "timeline": "Хронологія",
     "none-completed": "Поки що немає виконаних завдань.",
     "get-started": "Почніть тут.",
@@ -898,7 +899,7 @@
     "invalid-update-flag": "Ви намагаєтеся отримати доступ до заборонених ресурсів. Зверніться по допомогу на https://forum.freecodecamp.org, якщо це є дійсним запитом.",
     "generate-exam-error": "Під час спроби створити екзамен виникла помилка.",
     "cert-not-found": "Сертифікація «{{certSlug}}» не існує.",
-    "reset-editor-layout": "Your editor layout has been reset.",
+    "reset-editor-layout": "Редактор скинуто.",
     "ms": {
       "transcript": {
         "link-err-1": "Будь ласка, вкажіть посилання на стенограму Microsoft в запиті.",

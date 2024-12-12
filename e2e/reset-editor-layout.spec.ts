@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
+
 test.describe('Reset Editor Layout', () => {
   test('drag layout and reset', async ({ page, isMobile }) => {
     test.skip(
