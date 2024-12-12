@@ -131,8 +131,9 @@ class Block extends Component<BlockProps> {
 
     // since the Blocks are not components, we need link to exist even if it's
     // not being used to render anything
-    const link = challenges[0]?.fields.slug || '';
-    const blockLayout = challenges[0]?.blockLayout ?? BlockLayouts.ComingSoon;
+    // all blocks should have at least one challenge
+    const link = challenges[0].fields.slug || '';
+    const blockLayout = challenges[0].blockLayout;
 
     const courseCompletionStatus = () => {
       if (completedCount === 0) {
