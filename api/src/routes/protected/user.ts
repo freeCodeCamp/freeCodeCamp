@@ -451,6 +451,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             completedModules: true,
             completedChapters: true,
             currentChallengeId: true,
+            quizAttempts: true,
             email: true,
             emailVerified: true,
             githubProfile: true,

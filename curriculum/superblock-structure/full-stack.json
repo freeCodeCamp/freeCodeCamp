@@ -98,6 +98,7 @@
             { "dashedName": "lecture-styling-lists-and-links" },
             { "dashedName": "lab-stylized-to-do-list" },
             { "dashedName": "lecture-working-with-backgrounds-and-borders" },
+            { "dashedName": "lab-blog-post-card" },
             { "dashedName": "review-css-backgrounds-and-borders" },
             { "dashedName": "quiz-css-backgrounds-and-borders" }
           ]
@@ -335,8 +336,8 @@
           "blocks": [
             { "dashedName": "lecture-working-with-arrays" },
             { "dashedName": "workshop-shopping-list" },
-            { "dashedName": "lecture-working-with-common-array-methods" },
             { "dashedName": "lab-lunch-picker-program" },
+            { "dashedName": "lecture-working-with-common-array-methods" },
             { "dashedName": "review-javascript-arrays" },
             { "dashedName": "quiz-javascript-arrays" }
           ]
@@ -464,11 +465,13 @@
           ]
         },
         {
-          "dashedName": "maps-sets-and-json",
+          "dashedName": "maps-and-sets",
           "blocks": [
             { "dashedName": "lecture-working-with-maps-and-sets" },
-            { "dashedName": "review-javascript-maps-sets-and-json" },
-            { "dashedName": "quiz-javascript-maps-sets-and-json" }
+            { "dashedName": "workshop-plant-nursery-catalog" },
+            { "dashedName": "lab-voting-system" },
+            { "dashedName": "review-javascript-maps-and-sets" },
+            { "dashedName": "quiz-javascript-maps-and-sets" }
           ]
         },
         {
@@ -522,6 +525,8 @@
           "blocks": [
             { "dashedName": "lecture-understanding-asynchronous-programming" },
             { "dashedName": "workshop-fcc-authors-page" },
+            { "dashedName": "lab-fcc-forum-leaderboard" },
+            { "dashedName": "lab-weather-app" },
             { "dashedName": "review-asynchronous-javascript" },
             { "dashedName": "quiz-asynchronous-javascript" }
           ]
@@ -543,7 +548,11 @@
             {
               "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks"
             },
+            { "dashedName": "workshop-reusable-mega-navbar" },
+            { "dashedName": "lab-reusable-footer" },
             { "dashedName": "lecture-working-with-data-in-react" },
+            { "dashedName": "lab-mood-board" },
+            { "dashedName": "review-react-basics" },
             { "dashedName": "quiz-react-basics" }
           ]
         },
