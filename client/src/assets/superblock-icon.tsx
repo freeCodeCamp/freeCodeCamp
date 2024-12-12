@@ -1,25 +1,25 @@
 import React from 'react';
-import { SuperBlocks } from '../../../../shared/config/curriculum';
-import APIIcon from './api';
-import D3Icon from './d3';
-import DatabaseIcon from './database';
-import JavaScriptIcon from './javascript';
-import ReactIcon from './react';
-import TensorflowIcon from './tensorflow';
-import Algorithm from './algorithm';
-import Analytics from './analytics';
-import Clipboard from './clipboard';
-import PythonIcon from './python';
-import ResponsiveDesign from './responsive-design';
-import Shield from './shield';
-import VikingHelmet from './viking-helmet';
-import Graduation from './graduation';
-import CollegeAlgebra from './college-algebra';
-import CSharpLogo from './c-sharp-logo';
-import A2EnglishIcon from './a2-english';
-import B1EnglishIcon from './b1-english';
-import RosettaCodeIcon from './rosetta-code';
-import Code from './code';
+import { SuperBlocks } from '../../../shared/config/curriculum';
+import APIIcon from './icons/api';
+import D3Icon from './icons/d3';
+import DatabaseIcon from './icons/database';
+import JavaScriptIcon from './icons/javascript';
+import ReactIcon from './icons/react';
+import TensorflowIcon from './icons/tensorflow';
+import Algorithm from './icons/algorithm';
+import Analytics from './icons/analytics';
+import Clipboard from './icons/clipboard';
+import PythonIcon from './icons/python';
+import ResponsiveDesign from './icons/responsive-design';
+import Shield from './icons/shield';
+import VikingHelmet from './icons/viking-helmet';
+import Graduation from './icons/graduation';
+import CollegeAlgebra from './icons/college-algebra';
+import CSharpLogo from './icons/c-sharp-logo';
+import A2EnglishIcon from './icons/a2-english';
+import B1EnglishIcon from './icons/b1-english';
+import RosettaCodeIcon from './icons/rosetta-code';
+import Code from './icons/code';
 
 const iconMap = {
   [SuperBlocks.RespWebDesignNew]: ResponsiveDesign,
@@ -52,9 +52,8 @@ type SuperBlockIconProps = {
 } & React.SVGProps<SVGSVGElement>;
 
 export function SuperBlockIcon(props: SuperBlockIconProps): JSX.Element {
-  const { superBlock, className, ...iconProps } = props;
-  // fallback in case super block doesn't exist and for tests
+  const { superBlock, ...iconProps } = props;
   const Icon = iconMap[superBlock] ? iconMap[superBlock] : ResponsiveDesign;
 
-  return <Icon className={className} {...iconProps} />;
+  return <Icon {...iconProps} />;
 }

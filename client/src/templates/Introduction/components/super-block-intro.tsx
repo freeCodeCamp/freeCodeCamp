@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert, Spacer } from '@freecodecamp/ui';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
-import { SuperBlockIcon } from '../../../assets/icons/superblock-icon';
+import { SuperBlockIcon } from '../../../assets/superblock-icon';
 import { Link } from '../../../components/helpers';
 
 interface SuperBlockIntroProps {

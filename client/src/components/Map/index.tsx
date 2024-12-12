@@ -11,7 +11,7 @@ import {
   getStageOrder,
   superBlockStages
 } from '../../../../shared/config/curriculum';
-import { SuperBlockIcon } from '../../assets/icons/superblock-icon';
+import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';

@@ -9,7 +9,7 @@ import { Container, Col, Row, Image, Button, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
 import { getLangCode } from '../../../shared/config/i18n';
-import FreeCodeCampLogo from '../assets/icons/freecodecamp';
+import FreeCodeCampLogo from '../assets/icons/freecodecamp-logo';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader } from '../components/helpers';
