@@ -912,9 +912,9 @@ describe('challengeRoutes', () => {
       });
     });
 
-    describe('/save-challenge', () => {
+    describe('POST /save-challenge', () => {
       describe('validation', () => {
-        test('POST returns 403 status for unsavable challenges', async () => {
+        test('returns 400 status for unsavable challenges', async () => {
           const response = await superPost('/save-challenge').send({
             savedChallenges: {
               // valid mongo id, but not a saveable one
@@ -941,7 +941,23 @@ describe('challengeRoutes', () => {
           });
         });
 
-        test('POST update the user savedchallenges and return them', async () => {
+        test('rejects requests for challenges that cannot be saved', async () => {
+          const response = await superPost('/save-challenge').send({
+            id: '66ebd4ae2812430bb883c786',
+            files: multiFileCertProjectBody.files
+          });
+
+          const { savedChallenges } =
+            await fastifyTestInstance.prisma.user.findFirstOrThrow({
+              where: { email: 'foo@bar.com' }
+            });
+
+          expect(response.statusCode).toBe(400);
+          expect(response.text).toEqual('That challenge type is not saveable.');
+          expect(savedChallenges).toHaveLength(0);
+        });
+
+        test('update the user savedchallenges and return them', async () => {
           const response = await superPost('/save-challenge').send({
             id: multiFileCertProjectId,
             files: updatedMultiFileCertProjectBody.files
