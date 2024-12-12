@@ -331,6 +331,13 @@ export function postSubmitSurvey(body: {
   return post('/user/submit-survey', body);
 }
 
+export function postQuizAttempt(body: {
+  challengeId: string;
+  quizId: string;
+}): Promise<ResponseWithData<void>> {
+  return post('/submit-quiz-attempt', body);
+}
+
 /** PUT **/
 
 interface MyAbout {
