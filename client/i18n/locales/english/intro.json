@@ -1572,19 +1572,27 @@
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Learn How to Describe Places and Events",
-        "intro": [""]
+        "intro": [
+          "This course will show you ways of talking about places and events conversationally."
+        ]
       },
       "learn-how-to-talk-about-past-experiences": {
         "title": "Learn How to Talk About Past Experiences",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to share experiences that you had in the past."
+        ]
       },
       "learn-how-to-talk-about-past-activities": {
         "title": "Learn How to Talk About Past Activities",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how talk about things that you did."
+        ]
       },
       "learn-present-perfect-while-talking-about-accessibility": {
         "title": "Learn Present Perfect while Talking About Accessibility",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to use the Present Perfect structure and learn a bit more about accessibility."
+        ]
       },
       "learn-how-to-plan-future-events": {
         "title": "Learn How to Plan Future Events",
