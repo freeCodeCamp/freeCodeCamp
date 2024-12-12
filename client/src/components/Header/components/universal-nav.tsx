@@ -5,12 +5,13 @@ import { useMediaQuery } from 'react-responsive';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
 import { SEARCH_EXPOSED_WIDTH } from '../../../../config/misc';
+import FreeCodeCampLogo from '../../../assets/icons/freecodecamp-logo';
 import MenuButton from './menu-button';
 import NavLinks, { type NavLinksProps } from './nav-links';
-import NavLogo from './nav-logo';
-import './universal-nav.css';
 import AuthOrProfile from './auth-or-profile';
 import LanguageList from './language-list';
+
+import './universal-nav.css';
 
 const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(
@@ -62,7 +63,10 @@ const UniversalNav = ({
         to='/learn'
         data-playwright-test-label='header-universal-nav-logo'
       >
-        <NavLogo />
+        <FreeCodeCampLogo
+          aria-label={t('aria.fcc-curriculum')}
+          data-playwright-test-label='header-logo'
+        />
       </Link>
       <div className='universal-nav-right main-nav'>
         {pending ? (
