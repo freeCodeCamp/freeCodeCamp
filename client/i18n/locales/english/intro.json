@@ -2865,7 +2865,6 @@
           "In this lab, you will build a book organizer using higher order functions in JavaScript."
         ]
       },
-      "bxtv": { "title": "184", "intro": [] },
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
@@ -2885,7 +2884,6 @@
           "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using JavaScript."
         ]
       },
-      "gibb": { "title": "188", "intro": [] },
       "workshop-storytelling-app": {
         "title": "Build a Storytelling App",
         "intro": [
@@ -3199,7 +3197,13 @@
           "In these lecture videos, you will learn about recursion and the call stack."
         ]
       },
-      "ndl3": { "title": "242", "intro": [] },
+      "workshop-decimal-to-binary-converter": {
+        "title": "Build a Decimal to Binary Converter",
+        "intro": [
+          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
+          "In this workshop, you’ll build a decimal-to-binary converter using JavaScript. You’ll practice the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
+        ]
+      },
       "lab-permutation-generator": {
         "title": "Build a Permutation Generator",
         "intro": [
@@ -3217,7 +3221,6 @@
         "title": "Recursion Quiz",
         "intro": ["Test what you've learned in this quiz on Recursion."]
       },
-      "yshh": { "title": "246", "intro": [] },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
@@ -3225,7 +3228,6 @@
         ]
       },
       "wyx2": { "title": "248", "intro": [] },
-      "wyx3": { "title": "249", "intro": [] },
       "lecture-understanding-asynchronous-programming": {
         "title": "Understanding Asynchronous Programming",
         "intro": [
@@ -3238,17 +3240,6 @@
           "Test what you've learned in this quiz on JavaScript Functional Programming."
         ]
       },
-      "dtfv": { "title": "240", "intro": [] },
-      "bnvw": { "title": "241", "intro": [] },
-      "workshop-decimal-to-binary-converter": {
-        "title": "Build a Decimal to Binary Converter",
-        "intro": [
-          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
-          "In this workshop, you’ll build a decimal-to-binary converter using JavaScript. You’ll practice the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
-        ]
-      },
-      "xkhk": { "title": "243", "intro": [] },
-      "yaxm": { "title": "245", "intro": [] },
       "workshop-recipe-ingredient-converter": {
         "title": "Build a Recipe Ingredient Converter",
         "intro": [
@@ -3256,7 +3247,6 @@
           "Now you will be able to apply what you have learned about currying and functional programming by building a recipe ingredient converter application."
         ]
       },
-      "udia": { "title": "248", "intro": [] },
       "review-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Review",
         "intro": [
@@ -3264,7 +3254,6 @@
           "Open up this page to review concepts on functional programming, currying and more."
         ]
       },
-      "mjbe": { "title": "251", "intro": [] },
       "workshop-fcc-authors-page": {
         "title": "Build an fCC Authors Page",
         "intro": [
@@ -3272,7 +3261,6 @@
           "In this workshop you will practice how to use the fetch method, dynamically update the DOM to display the fetched data and paginate your data so you can load results in batches."
         ]
       },
-      "alda": { "title": "253", "intro": [] },
       "lab-fcc-forum-leaderboard": {
         "title": "Build an fCC Forum Leaderboard",
         "intro": [
@@ -3312,7 +3300,6 @@
           "In this workshop, you will build a reusable Navbar component using React."
         ]
       },
-      "oxiv": { "title": "260", "intro": [] },
       "lab-reusable-footer": {
         "title": "Build a Reusable Footer",
         "intro": ["In this lab, you will use React to build a reusable footer."]
