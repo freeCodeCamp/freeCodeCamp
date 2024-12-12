@@ -11,6 +11,7 @@ import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Alert, Row, Button, Spacer } from '@freecodecamp/ui';
 import { micromark } from 'micromark';
+import { useFeature } from '@growthbook/growthbook-react';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
@@ -46,6 +47,7 @@ import {
   CompletedChallenge,
   UserExamQuestion,
   UserExam,
+  NavigationPaths,
   GeneratedExamResults,
   GeneratedExamQuestion,
   PrerequisiteChallenge,
@@ -54,6 +56,7 @@ import {
 } from '../../../redux/prop-types';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { formatSecondsToTime } from '../../../utils/format-seconds';
+import { getChallengePaths } from '../utils/challenge-paths';
 import ExitExamModal from './components/exit-exam-modal';
 import FinishExamModal from './components/finish-exam-modal';
 import ExamResults from './components/exam-results';
@@ -127,6 +130,7 @@ interface ShowExamProps {
   closeFinishExamModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
+    nextCurriculumPaths: NavigationPaths;
   };
   t: TFunction;
   startExam: () => void;
@@ -164,11 +168,13 @@ function ShowExam(props: ShowExamProps) {
     isChallengeCompleted,
     openExitExamModal,
     openFinishExamModal,
+    pageContext: { nextCurriculumPaths },
     t
   } = props;
 
   let timerInterval: NodeJS.Timeout;
 
+  const showNextCurriculum = useFeature('fcc-10').on;
   const container = useRef<HTMLElement>(null);
 
   const [examTimeInSeconds, setExamTimeInSeconds] = useState(0);
@@ -198,11 +204,17 @@ function ShowExam(props: ShowExamProps) {
       updateChallengeMeta
     } = props;
     initTests(tests);
+    const challengePaths = getChallengePaths({
+      showNextCurriculum,
+      currentCurriculumPaths: challengeMeta,
+      nextCurriculumPaths
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
 

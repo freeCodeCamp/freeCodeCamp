@@ -9,6 +9,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Alert, Spacer } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
@@ -39,9 +40,11 @@ import {
   ChallengeNode,
   ChallengeMeta,
   CompletedChallenge,
+  NavigationPaths,
   Test
 } from '../../../redux/prop-types';
 import ProjectToolPanel from '../projects/tool-panel';
+import { getChallengePaths } from '../utils/challenge-paths';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
@@ -99,6 +102,7 @@ interface ShowCodeAllyProps {
   openCompletionModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
+    nextCurriculumPaths: NavigationPaths;
   };
   partiallyCompletedChallenges: CompletedChallenge[];
   t: TFunction;
@@ -110,6 +114,8 @@ interface ShowCodeAllyProps {
 
 function ShowCodeAlly(props: ShowCodeAllyProps) {
   const container = useRef<HTMLElement>(null);
+
+  const showNextCurriculum = useFeature('fcc-10').on;
 
   const {
     completedChallenges,
@@ -130,6 +136,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     },
     isChallengeCompleted,
     isSignedIn,
+    pageContext: { nextCurriculumPaths },
     partiallyCompletedChallenges,
     t,
     updateSolutionFormValues
@@ -166,11 +173,17 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
       updateChallengeMeta
     } = props;
     initTests(tests);
+    const challengePaths = getChallengePaths({
+      showNextCurriculum,
+      currentCurriculumPaths: challengeMeta,
+      nextCurriculumPaths
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
     container.current?.focus();

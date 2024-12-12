@@ -17,15 +17,22 @@ import {
   useQuiz,
   Spacer
 } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 
 // Local Utilities
 import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
 import LearnLayout from '../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
+import {
+  ChallengeNode,
+  ChallengeMeta,
+  NavigationPaths,
+  Test
+} from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
+import { getChallengePaths } from '../utils/challenge-paths';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -74,6 +81,7 @@ interface ShowQuizProps {
   isChallengeCompleted: boolean;
   pageContext: {
     challengeMeta: ChallengeMeta;
+    nextCurriculumPaths: NavigationPaths;
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
@@ -101,7 +109,7 @@ const ShowQuiz = ({
       }
     }
   },
-  pageContext: { challengeMeta },
+  pageContext: { challengeMeta, nextCurriculumPaths },
   initTests,
   updateChallengeMeta,
   isChallengeCompleted,
@@ -126,6 +134,7 @@ const ShowQuiz = ({
   const [showUnanswered, setShowUnanswered] = useState(false);
 
   const [exitConfirmed, setExitConfirmed] = useState(false);
+  const showNextCurriculum = useFeature('fcc-10').on;
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -189,11 +198,17 @@ const ShowQuiz = ({
 
   useEffect(() => {
     initTests(tests);
+    const challengePaths = getChallengePaths({
+      showNextCurriculum,
+      currentCurriculumPaths: challengeMeta,
+      nextCurriculumPaths
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
     container.current?.focus();
