@@ -36,10 +36,11 @@
   z-index: 2;
 }
 
-.green-underline {
-  border-bottom-color: var(--success-background) !important;
+.correct-blank-answer {
+  color: var(--background-success) !important;
+  font-weight: bold;
 }
 
-.red-underline {
-  border-bottom-color: var(--danger-background) !important;
+.incorrect-blank-answer {
+  border-bottom-color: var(--background-danger) !important;
 }
