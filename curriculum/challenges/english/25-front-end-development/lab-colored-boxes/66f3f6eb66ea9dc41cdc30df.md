@@ -1,7 +1,7 @@
 ---
 id: 66f3f6eb66ea9dc41cdc30df
 title: Design a Set of Colored Boxes
-challengeType: 14
+challengeType: 25
 dashedName: set-of-colored-boxes
 demoType: onClick
 ---
