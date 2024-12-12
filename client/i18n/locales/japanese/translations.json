@@ -147,7 +147,7 @@
         },
         {
           "title": "無償教育",
-          "description": "チャリティから学び、学習費用を節約しましょう。有料限定の教材や隠れたコストは一切ありません。"
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
         },
         {
           "title": "幅広い認定講座",
@@ -166,6 +166,7 @@
     "professional-certs-heading": "プロフェッショナル認定証を無料で取得:",
     "interview-prep-heading": "就職活動・技術面接に備える:",
     "legacy-curriculum-heading": "旧カリキュラムを見る:",
+    "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "公開予定カリキュラム:",
     "faq": "よくある質問:",
     "faqs": [
@@ -238,6 +239,8 @@
     "sound-mode": "これは快適なアコースティックギターの音をウェブサイトの至る所へ追加します。エディターにタイプしたり、チャレンジを完了したり、認定証を請求したり、その他いろいろなことをする度に音のフィードバックを受け取ります。",
     "sound-volume": "キャンプファイアモードの音量:",
     "scrollbar-width": "エディターのスクロールバーの幅",
+    "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
+    "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "チャレンジの画面で、ESC キーを押した後、? キーを押すと、利用可能なショートカットキーの一覧が表示されます。",
     "username": {
       "contains invalid characters": "ユーザー名 \"{{username}}\" に無効な文字が含まれています",
@@ -346,6 +349,7 @@
     "donated": "freeCodeCamp コミュニティに寄付した",
     "projects": "プロジェクト",
     "stats": "統計",
+    "activity": "Activity",
     "timeline": "タイムライン",
     "none-completed": "完了したチャレンジがありません。",
     "get-started": "ここから始めましょう。",
@@ -618,8 +622,8 @@
     "progress-modal-cta-10": "寄付を通して、無料で誰もが利用できる、専門的なプログラミング認定証の開発をご支援ください。",
     "help-us-reach-20k": "今年中にマンスリーサポーター 2 万人を目指しています。ぜひご協力ください。",
     "beta-certification": "この認定講座は現在ベータ版です。開発をサポートするための寄付をご検討いただければ幸いです。",
-    "unfinished-certification": "This certification is currently in active development. While there isn't a claimable certification available at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
-    "consider-donating": "Please consider donating to support the completion of its development.",
+    "unfinished-certification": "こちらの認定講座は現在開発中です。認定証は後日追加予定となっており、現時点では取得できません。以下に公開済みのコースは先行してご利用いただけます。",
+    "consider-donating": "開発をサポートするための寄付をご検討いただければ幸いです。",
     "help-us-develop": "無料で誰もが利用できる、専門的なプログラミング認定証の開発をご支援ください。",
     "nicely-done": "おめでとうございます。「{{block}}」を完了しました。",
     "credit-card": "クレジットカード",
@@ -712,6 +716,8 @@
     "help-millions-learn": "世界中の人々の学びをサポートできます。",
     "reach-goals-faster": "さらにスピーディーにゴールへと近づけます。",
     "remove-distractions": "気が散る要素を減らせます。",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "これは、キャンパーに freeCodeCamp サポーターとなることを促す 20 秒間のアニメーション広告です。アニメーションの内容は、とあるテディベアがサポーターになるところから始まります。サポーターになることで、余計なポップアップ画面が表示されなくなり、テディベアは目標をスムーズに達成します。そしてついに卒業し、学問のスーパーヒーローとなって世界中の人々を助ける様子が描かれています。",
     "animation-countdown": "このアニメーションは {{secondsRemaining}} 秒後に終了します。"
   },
@@ -782,7 +788,7 @@
     "heart": "ハート",
     "initial": "初期状態",
     "input-reset": "検索キーワードをクリア",
-    "input-search": "Submit search terms",
+    "input-search": "検索キーワードを送信",
     "info": "導入情報",
     "spacer": "スペーサー",
     "toggle": "トグルチェックマーク",
@@ -854,7 +860,7 @@
     "expired-link": "クリックされたリンクは有効期限が切れているようです。サインインするには新しいリンクをリクエストしてください。",
     "signin-success": "成功です！アカウントにサインインしました。コーディングを楽しみましょう！",
     "social-auth-gone": "私たちはプライバシー上の理由のため、ソーシャル認証の使用中止を検討しています。次回は代わりにあなたのメールアドレス ({{email}}) を用いてサインインされることをお勧めします。",
-    "name-needed": "We need your name to put it on your certification. Please add your name in your profile and click save. Then we can issue your certification.",
+    "name-needed": "認定証に記載する名前が必要です。プロフィールに名前を追加し、保存してください。その後、認定証を発行することができるようになります。",
     "incomplete-steps": "必要な過程が完了していないようです。{{name}} 認定証を獲得するために必修のプロジェクトを完成させてください。",
     "already-claimed": "あなたはすでに {{name}} 認定証を獲得しているようです。",
     "cert-claim-success": "@{{username}} さん、あなたは無事に {{name}} 認定証を獲得しました！freeCodeCamp.org チームを代表してお祝い申し上げます！",
@@ -893,6 +899,7 @@
     "invalid-update-flag": "禁止されたリソースにアクセスしようとしています。正当なリクエストの場合、https://forum.freecodecamp.org でサポートを依頼してください。",
     "generate-exam-error": "試験の準備中にエラーが発生しました。",
     "cert-not-found": "この認定証は存在しません。({{certSlug}})",
+    "reset-editor-layout": "Your editor layout has been reset.",
     "ms": {
       "transcript": {
         "link-err-1": "リクエストに Microsoft の成績証明書の URL を含めてください。",
