@@ -46,7 +46,7 @@ function SelectionTabs({
     setDonationAmount(Number(value) as DonationAmount);
   };
   useFeature('aa-test-in-component');
-  const handleAmountConformationClick = () => {
+  const handleAmountConfirmationClick = () => {
     callGA({
       event: 'donation_related',
       action: `Amount Confirmation Clicked`
@@ -114,7 +114,7 @@ function SelectionTabs({
         <button
           className='text-center confirm-donation-btn donate-btn-group'
           type='submit'
-          onClick={handleAmountConformationClick}
+          onClick={handleAmountConfirmationClick}
         >
           {isAnimationEnabled
             ? t('buttons.confirm-amount')
