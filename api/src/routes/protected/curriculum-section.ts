@@ -12,19 +12,25 @@ const getInformationForUpdate = ({
   completedItems: CompletedModule[] | CompletedChapter[];
   completedDate: number;
 }) => {
-  const alreadyCompletedSection = sectionId
-    ? completedItems.find(({ id }) => sectionId === id)
-    : undefined;
+  if (!sectionId) {
+    return {
+      alreadyCompletedSection: undefined,
+      newCompletedSection: completedItems
+    };
+  }
 
-  const newCompletedSection =
-    !sectionId || alreadyCompletedSection
-      ? completedItems
-      : {
-          push: {
-            id: sectionId,
-            completedDate
-          }
-        };
+  const alreadyCompletedSection = completedItems.find(
+    ({ id }) => sectionId === id
+  );
+
+  const newCompletedSection = alreadyCompletedSection
+    ? completedItems
+    : {
+        push: {
+          id: sectionId,
+          completedDate
+        }
+      };
 
   return { alreadyCompletedSection, newCompletedSection };
 };
@@ -43,7 +49,7 @@ const getReturnValue = ({
   return {
     id,
     alreadyCompleted: !!alreadyCompletedSection,
-    completedDate: alreadyCompletedSection?.completedDate || completedDate
+    completedDate: alreadyCompletedSection?.completedDate ?? completedDate
   };
 };
 

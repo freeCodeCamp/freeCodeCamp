@@ -67,7 +67,7 @@ describe('curriculumSectionRoutes', () => {
           });
         });
 
-        test('POST handles newly completed module', async () => {
+        test('POST adds newly completed module', async () => {
           const res = await superPost('/curriculum-section-completed').send({
             moduleId: 'semantic-html'
           });
@@ -99,7 +99,7 @@ describe('curriculumSectionRoutes', () => {
           expect(res.statusCode).toBe(200);
         });
 
-        test('POST handles already completed module', async () => {
+        test('POST updates completion date of already completed module', async () => {
           const res = await superPost('/curriculum-section-completed').send({
             moduleId: 'basic-html'
           });
@@ -127,7 +127,7 @@ describe('curriculumSectionRoutes', () => {
           expect(res.statusCode).toBe(200);
         });
 
-        test('POST handles newly completed chapter', async () => {
+        test('POST adds newly completed chapter', async () => {
           const res = await superPost('/curriculum-section-completed').send({
             chapterId: 'css'
           });
@@ -159,7 +159,7 @@ describe('curriculumSectionRoutes', () => {
           expect(res.statusCode).toBe(200);
         });
 
-        test('POST handles already completed chapter', async () => {
+        test('POST updates completion date of already completed chapter', async () => {
           const res = await superPost('/curriculum-section-completed').send({
             chapterId: 'html'
           });
@@ -187,7 +187,7 @@ describe('curriculumSectionRoutes', () => {
           expect(res.statusCode).toBe(200);
         });
 
-        test('POST handles newly completed module and chapter, all at once', async () => {
+        test('POST adds newly completed module and chapter, all at once', async () => {
           const res = await superPost('/curriculum-section-completed').send({
             moduleId: 'semantic-html',
             chapterId: 'css'
@@ -235,7 +235,7 @@ describe('curriculumSectionRoutes', () => {
           expect(res.statusCode).toBe(200);
         });
 
-        test('POST handles already completed module and chapter, all at once', async () => {
+        test('POST updates already completed module and chapter, all at once', async () => {
           const res = await superPost('/curriculum-section-completed').send({
             moduleId: 'basic-html',
             chapterId: 'html'
