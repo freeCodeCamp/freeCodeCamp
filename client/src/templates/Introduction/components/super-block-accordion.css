@@ -80,12 +80,11 @@
 
 .super-block-accordion .badge {
   color: var(--purple-color);
-  border-color: var(--purple-color);
+  border: 1px solid var(--purple-color);
   align-self: center;
   height: fit-content;
   padding: 1px 6px 2px;
   font-size: 0.85rem;
-  border: 1px solid;
   position: relative;
   top: 1px;
 }
