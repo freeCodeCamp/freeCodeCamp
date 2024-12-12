@@ -11,9 +11,12 @@ import DropDown from '../../../assets/icons/dropdown';
 import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { FsdChapters } from '../../../../../shared/config/chapters';
+import envData from '../../../../config/env.json';
 import Block from './block';
 
 import './super-block-accordion.css';
+
+const { showUpcomingChanges } = envData;
 
 interface ChapterProps {
   dashedName: string;
@@ -112,27 +115,6 @@ const Module = ({ dashedName, children, isExpanded }: ModuleProps) => {
   );
 };
 
-const LinkBlock = ({
-  superBlock,
-  challenges
-}: {
-  superBlock: SuperBlocks;
-  challenges?: ChallengeNode['challenge'][];
-  key: string;
-}) => {
-  const firstChallenge = challenges ? challenges[0] : null;
-  return (
-    <li className='link-block'>
-      <Block
-        block={firstChallenge?.block ?? ''}
-        blockType={firstChallenge?.blockType ?? null}
-        challenges={challenges ?? []}
-        superBlock={superBlock}
-      />
-    </li>
-  );
-};
-
 const ComingSoon = ({ children }: { children: ReactNode }) => {
   const { t } = useTranslation();
   return (
@@ -164,8 +146,10 @@ export const SuperBlockAccordion = ({
 
     const allChapters = chapters.map(chapter => ({
       name: chapter.dashedName,
+      comingSoon: 'comingSoon' in chapter ? chapter.comingSoon : false,
       modules: chapter.modules.map(module => ({
         name: module.dashedName,
+        comingSoon: 'comingSoon' in module ? module.comingSoon : false,
         blocks: populateBlocks(module.blocks)
       }))
     }));
@@ -180,19 +164,37 @@ export const SuperBlockAccordion = ({
   return (
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
-        if (isLinkChapter(chapter.name)) {
-          return (
-            <LinkBlock
-              key={chapter.name}
-              superBlock={superBlock}
-              challenges={chapter.modules[0]?.blocks[0]?.challenges}
-            />
-          );
-        } else if (chapter.modules.length === 0) {
+        // show coming soon on production, and all the challenges in dev
+        if (chapter.comingSoon && !showUpcomingChanges) {
           return (
             <ComingSoon key={chapter.name}>
               {t(`intro:full-stack-developer.chapters.${chapter.name}`)}
             </ComingSoon>
+          );
+        }
+
+        // if modules is missing or empty, or if module[0].blocks is
+        // missing or empty, or if module[0].blocks[0].challenges is
+        // missing or empty, don't render the chapter
+        if (
+          !chapter.modules?.length ||
+          !chapter.modules[0]?.blocks?.length ||
+          !chapter.modules[0]?.blocks[0]?.challenges?.length
+        ) {
+          return null;
+        }
+
+        if (isLinkChapter(chapter.name)) {
+          const linkedChallenge = chapter.modules[0].blocks[0].challenges[0];
+          return (
+            <li key={chapter.name} className='link-chapter'>
+              <Block
+                block={linkedChallenge.block}
+                blockType={linkedChallenge.blockType}
+                challenges={[linkedChallenge]}
+                superBlock={superBlock}
+              />
+            </li>
           );
         }
 
@@ -203,19 +205,37 @@ export const SuperBlockAccordion = ({
             isExpanded={expandedChapter === chapter.name}
           >
             {chapter.modules.map(module => {
-              if (isLinkModule(module.name)) {
+              // show coming soon on production, and all the challenges in dev
+              if (module.comingSoon && !showUpcomingChanges) {
                 return (
-                  <LinkBlock
-                    key={module.name}
-                    superBlock={superBlock}
-                    challenges={module.blocks[0]?.challenges}
-                  />
-                );
-              } else if (module.blocks.length === 0) {
-                return (
-                  <ComingSoon key={module.name}>
-                    {t(`intro:full-stack-developer.modules.${module.name}`)}
+                  <ComingSoon key={chapter.name}>
+                    <span className='coming-soon-module'>
+                      {t(`intro:full-stack-developer.modules.${module.name}`)}
+                    </span>
                   </ComingSoon>
+                );
+              }
+
+              // if blocks is missing or empty, or if challenges is missing or empty,
+              // don't render the module
+              if (
+                !module.blocks?.length ||
+                !module.blocks[0]?.challenges?.length
+              ) {
+                return null;
+              }
+
+              if (isLinkModule(module.name)) {
+                const linkedChallenge = module.blocks[0].challenges[0];
+                return (
+                  <li key={module.name} className='link-module'>
+                    <Block
+                      block={linkedChallenge.block}
+                      blockType={linkedChallenge.blockType}
+                      challenges={[linkedChallenge]}
+                      superBlock={superBlock}
+                    />
+                  </li>
                 );
               }
 
@@ -225,15 +245,10 @@ export const SuperBlockAccordion = ({
                   dashedName={module.name}
                   isExpanded={expandedModule === module.name}
                 >
-                  {module.blocks.map(block => {
-                    if (block.challenges.length === 0) {
-                      return (
-                        <ComingSoon key={block.name}>
-                          {t(`intro:${superBlock}.blocks.${block.name}.title`)}
-                        </ComingSoon>
-                      );
-                    }
-                    return (
+                  {module.blocks.map(block =>
+                    // if no challenges, don't render the block
+                    // maybe TODO: allow blocks to be "coming soon"
+                    block.challenges.length ? (
                       <li key={block.name}>
                         <Block
                           block={block.name}
@@ -242,8 +257,8 @@ export const SuperBlockAccordion = ({
                           superBlock={superBlock}
                         />
                       </li>
-                    );
-                  })}
+                    ) : null
+                  )}
                 </Module>
               );
             })}

@@ -18,7 +18,8 @@
 }
 
 .super-block-accordion .chapter,
-.super-block-accordion .link-block {
+.super-block-accordion .link-chapter,
+.super-block-accordion .link-module {
   background-color: var(--primary-background);
 }
 
@@ -74,13 +75,22 @@
   padding: 0 24px;
 }
 
-.super-block-accordion .chapter-panel > li:last-child .block-grid {
+.super-block-accordion .chapter-panel > li {
+  border-bottom: 4px solid var(--secondary-background);
+}
+
+.super-block-accordion .chapter-panel > li:last-child {
+  border-bottom: none;
+}
+
+.super-block-accordion .chapter-panel > li:last-child .block-grid,
+.super-block-accordion .module-panel > li:last-child .block-grid {
   border-bottom: 0;
 }
 
 .super-block-accordion .badge {
-  color: var(--purple-color);
-  border: 1px solid var(--purple-color);
+  color: var(--quaternary-color);
+  border: 1px solid var(--quaternary-color);
   align-self: center;
   height: fit-content;
   padding: 1px 6px 2px;
@@ -90,9 +100,15 @@
 }
 
 .super-block-accordion .coming-soon {
-  border-bottom: 4px solid var(--secondary-background);
+  background-color: var(--primary-background);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  font-size: 1.5em;
 }
 
-.super-block-accordion .coming-soon:last-child {
-  border-bottom: 0px;
+.super-block-accordion .coming-soon-module {
+  font-size: 1.25rem;
 }

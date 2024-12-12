@@ -1696,7 +1696,8 @@
       "javascript": "JavaScript",
       "frontend-libraries": "Front End Libraries",
       "relational-databases": "Relational Databases",
-      "security-and-privacy": "Security and Privacy"
+      "backend-javascript": "Backend JavaScript",
+      "python": "Python"
     },
     "modules": {
       "getting-started-with-freecodecamp": "Getting Started with freeCodeCamp",
