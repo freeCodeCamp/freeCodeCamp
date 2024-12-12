@@ -169,7 +169,7 @@ export const SuperBlockAccordion = ({
           );
         } else if (chapter.modules.length === 0) {
           return (
-            <li key={chapter.name}>
+            <li className='coming-soon' key={chapter.name}>
               <Badge>{t('misc.coming-soon')}</Badge>{' '}
               {t(`intro:full-stack-developer.chapters.${chapter.name}`)}
             </li>
@@ -198,7 +198,7 @@ export const SuperBlockAccordion = ({
                 );
               } else if (module.blocks.length === 0) {
                 return (
-                  <li key={module.name}>
+                  <li className='coming-soon' key={module.name}>
                     <Badge>{t('misc.coming-soon')}</Badge>{' '}
                     {t(`intro:full-stack-developer.modules.${module.name}`)}
                   </li>
@@ -214,7 +214,7 @@ export const SuperBlockAccordion = ({
                   {module.blocks.map(block => {
                     if (block.challenges.length === 0) {
                       return (
-                        <li key={block.name}>
+                        <li className='coming-soon' key={block.name}>
                           <Badge>{t('misc.coming-soon')}</Badge>{' '}
                           {t(`intro:${superBlock}.blocks.${block.name}.title`)}
                         </li>

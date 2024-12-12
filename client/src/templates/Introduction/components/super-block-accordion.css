@@ -80,9 +80,21 @@
 }
 
 .super-block-accordion .badge {
-  background-color: var(--purple-background);
   color: var(--purple-color);
-  padding: 4px 8px;
-  border-width: 1px;
   border-color: var(--purple-color);
+  align-self: center;
+  height: fit-content;
+  padding: 1px 6px 2px;
+  font-size: 0.85rem;
+  border: 1px solid;
+  position: relative;
+  top: 1px;
+}
+
+.super-block-accordion .coming-soon {
+  border-bottom: 4px solid var(--secondary-background);
+}
+
+.super-block-accordion .coming-soon:last-child {
+  border-bottom: 0px;
 }
