@@ -112,9 +112,35 @@ const Module = ({ dashedName, children, isExpanded }: ModuleProps) => {
   );
 };
 
-const Badge = ({ children }: { children: ReactNode }) => (
-  <span className='badge'>{children}</span>
-);
+const LinkBlock = ({
+  superBlock,
+  challenges
+}: {
+  superBlock: SuperBlocks;
+  challenges?: ChallengeNode['challenge'][];
+  key: string;
+}) => {
+  const firstChallenge = challenges ? challenges[0] : null;
+  return (
+    <li className='link-block'>
+      <Block
+        block={firstChallenge?.block ?? ''}
+        blockType={firstChallenge?.blockType ?? null}
+        challenges={challenges ?? []}
+        superBlock={superBlock}
+      />
+    </li>
+  );
+};
+
+const ComingSoon = ({ children }: { children: ReactNode }) => {
+  const { t } = useTranslation();
+  return (
+    <li className='coming-soon'>
+      <span className='badge'>{t('misc.coming-soon')}</span> {children}
+    </li>
+  );
+};
 
 export const SuperBlockAccordion = ({
   challenges,
@@ -155,24 +181,18 @@ export const SuperBlockAccordion = ({
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
         if (isLinkChapter(chapter.name)) {
-          const challenges = chapter.modules[0]?.blocks[0]?.challenges;
-          const firstChallenge = challenges ? challenges[0] : null;
           return (
-            <li key={chapter.name} className='link-chapter'>
-              <Block
-                block={firstChallenge?.block ?? ''}
-                blockType={firstChallenge?.blockType ?? null}
-                challenges={challenges}
-                superBlock={superBlock}
-              />
-            </li>
+            <LinkBlock
+              key={chapter.name}
+              superBlock={superBlock}
+              challenges={chapter.modules[0]?.blocks[0]?.challenges}
+            />
           );
         } else if (chapter.modules.length === 0) {
           return (
-            <li className='coming-soon' key={chapter.name}>
-              <Badge>{t('misc.coming-soon')}</Badge>{' '}
+            <ComingSoon key={chapter.name}>
               {t(`intro:full-stack-developer.chapters.${chapter.name}`)}
-            </li>
+            </ComingSoon>
           );
         }
 
@@ -184,24 +204,18 @@ export const SuperBlockAccordion = ({
           >
             {chapter.modules.map(module => {
               if (isLinkModule(module.name)) {
-                const challenges = module.blocks[0]?.challenges;
-                const firstChallenge = challenges ? challenges[0] : null;
                 return (
-                  <li key={module.name} className='link-module'>
-                    <Block
-                      block={firstChallenge?.block ?? ''}
-                      blockType={firstChallenge?.blockType ?? null}
-                      challenges={challenges}
-                      superBlock={superBlock}
-                    />
-                  </li>
+                  <LinkBlock
+                    key={module.name}
+                    superBlock={superBlock}
+                    challenges={module.blocks[0]?.challenges}
+                  />
                 );
               } else if (module.blocks.length === 0) {
                 return (
-                  <li className='coming-soon' key={module.name}>
-                    <Badge>{t('misc.coming-soon')}</Badge>{' '}
+                  <ComingSoon key={module.name}>
                     {t(`intro:full-stack-developer.modules.${module.name}`)}
-                  </li>
+                  </ComingSoon>
                 );
               }
 
@@ -214,10 +228,9 @@ export const SuperBlockAccordion = ({
                   {module.blocks.map(block => {
                     if (block.challenges.length === 0) {
                       return (
-                        <li className='coming-soon' key={block.name}>
-                          <Badge>{t('misc.coming-soon')}</Badge>{' '}
+                        <ComingSoon key={block.name}>
                           {t(`intro:${superBlock}.blocks.${block.name}.title`)}
-                        </li>
+                        </ComingSoon>
                       );
                     }
                     return (
