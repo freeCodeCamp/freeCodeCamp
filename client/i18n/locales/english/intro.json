@@ -2458,7 +2458,6 @@
           "In this lab, you will design a magazine layout using CSS Grid, including concepts like grid rows and grid columns."
         ]
       },
-      "harp": { "title": "115", "intro": [] },
       "lecture-debugging-css": {
         "title": "Debugging CSS",
         "intro": [
