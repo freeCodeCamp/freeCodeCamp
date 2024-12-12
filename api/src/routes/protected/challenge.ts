@@ -1,6 +1,6 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
-import { uniqBy } from 'lodash';
+import { uniqBy, matches } from 'lodash';
 import { CompletedExam, ExamResults } from '@prisma/client';
 import isURL from 'validator/lib/isURL';
 
@@ -391,7 +391,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         !multifileCertProjectIds.includes(challengeId) &&
         !multifilePythonCertProjectIds.includes(challengeId)
       ) {
-        void reply.code(403).send('That challenge type is not saveable.');
+        return void reply
+          .code(400)
+          .send('That challenge type is not saveable.');
       }
 
       const userSavedChallenges = saveUserChallengeData(
@@ -773,6 +775,57 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           error: 'An error occurred trying to submit your exam.'
         };
       }
+    }
+  );
+
+  fastify.post(
+    '/submit-quiz-attempt',
+    {
+      schema: schemas.submitQuizAttempt,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          void reply.send({
+            type: 'error',
+            message:
+              'That does not appear to be a valid quiz attempt submission.'
+          });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async req => {
+      const { challengeId, quizId } = req.body;
+
+      const user = await fastify.prisma.user.findUniqueOrThrow({
+        where: { id: req.user?.id },
+        select: {
+          id: true,
+          quizAttempts: true
+        }
+      });
+
+      const existingAttempt = user.quizAttempts.find(matches({ challengeId }));
+
+      const newAttempt = {
+        challengeId,
+        quizId,
+        timestamp: Date.now()
+      };
+
+      await fastify.prisma.user.update({
+        where: { id: user.id },
+        data: {
+          quizAttempts: existingAttempt
+            ? {
+                updateMany: { where: { challengeId }, data: newAttempt }
+              }
+            : { push: newAttempt }
+        }
+      });
+
+      return {};
     }
   );
 

@@ -12,7 +12,8 @@ export const examEnvironmentExams = {
           config: Type.Object({
             name: Type.String(),
             note: Type.String(),
-            totalTimeInMS: Type.Number()
+            totalTimeInMS: Type.Number(),
+            retakeTimeInMS: Type.Number()
           }),
           canTake: Type.Boolean()
         })

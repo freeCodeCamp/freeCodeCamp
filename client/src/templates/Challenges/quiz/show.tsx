@@ -17,15 +17,22 @@ import {
   useQuiz,
   Spacer
 } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 
 // Local Utilities
 import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
 import LearnLayout from '../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
+import {
+  ChallengeNode,
+  ChallengeMeta,
+  NavigationPaths,
+  Test
+} from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
+import { getChallengePaths } from '../utils/challenge-paths';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -74,6 +81,7 @@ interface ShowQuizProps {
   isChallengeCompleted: boolean;
   pageContext: {
     challengeMeta: ChallengeMeta;
+    nextCurriculumPaths: NavigationPaths;
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
@@ -101,7 +109,7 @@ const ShowQuiz = ({
       }
     }
   },
-  pageContext: { challengeMeta },
+  pageContext: { challengeMeta, nextCurriculumPaths },
   initTests,
   updateChallengeMeta,
   isChallengeCompleted,
@@ -114,7 +122,6 @@ const ShowQuiz = ({
   const { t } = useTranslation();
   const curLocation = useLocation();
 
-  const { nextChallengePath, prevChallengePath } = challengeMeta;
   const container = useRef<HTMLElement | null>(null);
 
   // Campers are not allowed to change their answers once the quiz is submitted.
@@ -127,6 +134,7 @@ const ShowQuiz = ({
   const [showUnanswered, setShowUnanswered] = useState(false);
 
   const [exitConfirmed, setExitConfirmed] = useState(false);
+  const showNextCurriculum = useFeature('fcc-10').on;
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -190,34 +198,23 @@ const ShowQuiz = ({
 
   useEffect(() => {
     initTests(tests);
+    const challengePaths = getChallengePaths({
+      showNextCurriculum,
+      currentCurriculumPaths: challengeMeta,
+      nextCurriculumPaths
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
     container.current?.focus();
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    updateChallengeMeta({
-      ...challengeMeta,
-      title,
-      challengeType,
-      helpCategory
-    });
-    challengeMounted(challengeMeta.id);
-  }, [
-    title,
-    challengeMeta,
-    challengeType,
-    helpCategory,
-    challengeMounted,
-    updateChallengeMeta
-  ]);
 
   const handleFinishQuiz = () => {
     setShowUnanswered(true);
@@ -299,8 +296,6 @@ const ShowQuiz = ({
     <Hotkeys
       executeChallenge={!isPassed ? handleFinishQuiz : handleSubmitAndGo}
       containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
     >
       <LearnLayout>
         <Helmet

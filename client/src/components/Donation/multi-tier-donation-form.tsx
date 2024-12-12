@@ -17,7 +17,8 @@ import {
   defaultTierAmount,
   type DonationAmount
 } from '../../../../shared/config/donation-settings'; // You can further extract these into separate components and import them
-import { Themes } from '../settings/theme';
+import callGA from '../../analytics/call-ga';
+import { LocalStorageThemes } from '../../redux/types';
 import { formattedAmountLabel, convertToTimeContributed } from './utils';
 import DonateForm from './donate-form';
 
@@ -26,7 +27,7 @@ type MultiTierDonationFormProps = {
   handleProcessing?: () => void;
   paymentContext: PaymentContext;
   isMinimalForm?: boolean;
-  defaultTheme?: Themes;
+  defaultTheme?: LocalStorageThemes;
   isAnimationEnabled?: boolean;
 };
 function SelectionTabs({
@@ -45,6 +46,22 @@ function SelectionTabs({
     setDonationAmount(Number(value) as DonationAmount);
   };
   useFeature('aa-test-in-component');
+  const handleAmountConfirmationClick = () => {
+    callGA({
+      event: 'donation_related',
+      action: `Amount Confirmation Clicked`
+    });
+    setShowDonateForm(true);
+  };
+
+  const selectAmountTabClick = (value: DonationAmount) => {
+    callGA({
+      event: 'donation_related',
+      action: `Select Amount Tab Clicked`,
+      amount: value
+    });
+    setDonationAmount(value);
+  };
 
   return (
     <Row
@@ -68,7 +85,7 @@ function SelectionTabs({
               <TabsTrigger
                 key={value}
                 value={value.toString()}
-                onClick={() => setDonationAmount(value)}
+                onClick={() => selectAmountTabClick(value)}
               >
                 ${formattedAmountLabel(value)}
               </TabsTrigger>
@@ -97,7 +114,7 @@ function SelectionTabs({
         <button
           className='text-center confirm-donation-btn donate-btn-group'
           type='submit'
-          onClick={() => setShowDonateForm(true)}
+          onClick={handleAmountConfirmationClick}
         >
           {isAnimationEnabled
             ? t('buttons.confirm-amount')
@@ -122,6 +139,13 @@ function DonationFormRow({
   donationAmount: DonationAmount;
   paymentContext: PaymentContext;
 }) {
+  const editAmountClick = () => {
+    callGA({
+      event: 'donation_related',
+      action: `Edit Amount Clicked`
+    });
+    setShowDonateForm(false);
+  };
   return (
     <Row>
       <Col xs={12}>
@@ -129,7 +153,7 @@ function DonationFormRow({
           handleProcessing={handleProcessing}
           isMinimalForm={isMinimalForm}
           paymentContext={paymentContext}
-          editAmount={() => setShowDonateForm(false)}
+          editAmount={editAmountClick}
           selectedDonationAmount={donationAmount}
         />
         <Spacer size='m' />

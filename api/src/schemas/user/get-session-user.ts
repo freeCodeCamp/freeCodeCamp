@@ -41,6 +41,17 @@ export const getSessionUser = {
               examResults
             })
           ),
+          quizAttempts: Type.Array(
+            Type.Object({
+              challengeId: Type.String({
+                format: 'objectid',
+                maxLength: 24,
+                minLength: 24
+              }),
+              quizId: Type.String(),
+              timestamp: Type.Number()
+            })
+          ),
           completedChallengeCount: Type.Number(),
           currentChallengeId: Type.String(),
           email: Type.String(),
