@@ -35,9 +35,8 @@ import {
 import { PaymentContext } from '../../../shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
+  Certification,
   CertSlug,
-  certTypes,
-  certTypeTitleMap,
   linkedInCredentialIds
 } from '../../../shared/config/certification-settings';
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
@@ -327,8 +326,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     </Row>
   );
 
-  const isMicrosoftCert =
-    certTitle === certTypeTitleMap[certTypes.foundationalCSharpV8];
+  const isMicrosoftCert = certSlug === Certification.FoundationalCSharp;
 
   return (
     <Container className='certificate-outer-wrapper'>
@@ -376,7 +374,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                     ? 'certification.fulltextNoHours'
                     : 'certification.fulltext'
                 }
-                title={certTitle}
+                title={t(`certification.title.${certSlug}`, certTitle)}
               >
                 <h3>placeholder</h3>
                 <h1>
@@ -388,7 +386,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <h1 data-playwright-test-label='certification-title'>
                   <strong>
                     {{
-                      title: t(`certification.title.${certTitle}`, certTitle)
+                      title: t(`certification.title.${certSlug}`, certTitle)
                     }}
                   </strong>
                 </h1>
@@ -487,7 +485,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         <Spacer size='l' />
         {signedInUserName === username ? shareCertBtns : ''}
         <Spacer size='l' />
-        <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
+        <ShowProjectLinks certSlug={certSlug} name={displayName} user={user} />
         <Spacer size='l' />
       </div>
     </Container>
