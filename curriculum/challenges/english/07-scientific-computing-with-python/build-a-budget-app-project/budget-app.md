@@ -711,6 +711,305 @@ t.result.wasSuccessful()
 })
 ```
 
+Title at the top of `create_spend_chart` chart should say `Percentage spent by category`.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import budget
+from importlib import reload
+
+reload(budget)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.food = budget.Category("Food")
+
+    def test_create_spend_chart(self):
+        self.food.deposit(900, "deposit")
+        self.food.withdraw(105.55)
+        chart = budget.create_spend_chart([self.food])
+        expected = "Percentage spent by category"
+        self.assertEqual(chart.split("\\n")[0], expected, "Chart should have correct title.")
+`);
+
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`create_spend_chart` chart should have correct percentages down the left side.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import budget
+from importlib import reload
+
+reload(budget)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.food = budget.Category("Food")
+
+    def test_create_spend_chart(self):
+        self.food.deposit(900, "deposit")
+        self.food.withdraw(105.55)
+        chart = budget.create_spend_chart([self.food])
+        percentages = ["100|", " 90|", " 80|", " 70|", " 60|", " 50|", " 40|", " 30|", " 20|", " 10|", "  0|"]
+        for line, percent in zip(chart.split("\\n")[1:], percentages):
+           self.assertTrue(line.startswith(percent), "Chart correct percentages in the vertical axis.")
+`);
+
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+The height of each bar on the `create_spend_chart` chart should be rounded down to the nearest 10.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import budget
+from importlib import reload
+
+reload(budget)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.food = budget.Category("Food")
+        self.entertainment = budget.Category("Entertainment")
+        self.business = budget.Category("Business")
+        self.food.deposit(900, "deposit")
+        self.entertainment.deposit(900, "deposit")
+        self.business.deposit(900, "deposit")
+        self.food.withdraw(78)
+        self.entertainment.withdraw(22)
+        self.business.withdraw(8)
+
+    def test_create_spend_chart_rounding_close_to_upper_and_lower_ten(self):
+        chart_lines = budget.create_spend_chart([self.food, self.entertainment]).split("\\n")[1:12]
+        result_lines = '''100|
+ 90|
+ 80|
+ 70| o
+ 60| o
+ 50| o
+ 40| o
+ 30| o
+ 20| o  o
+ 10| o  o
+  0| o  o'''.split("\\n")
+
+        self.assertEqual(len(chart_lines), len(result_lines), "Lines missing in chart.")
+        for actual, expected in zip(chart_lines, result_lines):
+            self.assertTrue(actual.startswith(expected), "Expected different rounding of bars.")
+
+
+    def test_create_spend_chart_rounding_single_digit(self):
+        chart_lines = budget.create_spend_chart([self.business, self.food, self.entertainment]).split("\\n")[1:12]
+        result_lines = '''100|
+ 90|
+ 80|
+ 70|    o
+ 60|    o
+ 50|    o
+ 40|    o
+ 30|    o
+ 20|    o  o
+ 10|    o  o
+  0| o  o  o'''.split("\\n")
+
+        self.assertEqual(len(chart_lines), len(result_lines), "Lines missing in chart.")
+        for actual, expected in zip(chart_lines, result_lines):
+            self.assertTrue(actual.startswith(expected), "Expected different rounding of bars.")
+`);
+
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`create_spend_chart` should correctly show horizontal line below the bars. Using three `-` characters for each category, and in total going two characters past the final bar.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import budget
+from importlib import reload
+
+reload(budget)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.food = budget.Category("Food")
+        self.entertainment = budget.Category("Entertainment")
+        self.business = budget.Category("Business")
+        self.food.deposit(900, "deposit")
+        self.entertainment.deposit(900, "deposit")
+        self.business.deposit(900, "deposit")
+        self.food.withdraw(105.55)
+        self.entertainment.withdraw(33.40)
+        self.business.withdraw(10.99)
+
+    def test_create_spend_chart_horizontal_bar(self):
+        chart_categories = [[self.business], [self.business, self.food], [self.business, self.food, self.entertainment]]
+        horizontal_lines = ["    ----", "    -------", "    ----------"]
+        for categories, expected in zip(chart_categories, horizontal_lines):
+            actual = budget.create_spend_chart(categories).split("\\n")[12]
+            self.assertEqual(actual, expected, "Expected different horizontal bar. Check that all spacing is exact.")
+`);
+
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`create_spend_chart` chart should have each category name written vertically below the bar.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import budget
+from importlib import reload
+
+reload(budget)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.food = budget.Category("Food")
+        self.entertainment = budget.Category("Entertainment")
+        self.business = budget.Category("Business")
+        self.food.deposit(900, "deposit")
+        self.entertainment.deposit(900, "deposit")
+        self.business.deposit(900, "deposit")
+        self.food.withdraw(105.55)
+        self.entertainment.withdraw(33.40)
+        self.business.withdraw(10.99)
+
+    def test_create_spend_chart_names_two_categories(self):
+        chart = budget.create_spend_chart([self.food, self.entertainment])
+        actual = "\\n".join(chart.split("\\n")[13:])
+        expected = "     F  E  \\n     o  n  \\n     o  t  \\n     d  e  \\n        r  \\n        t  \\n        a  \\n        i  \\n        n  \\n        m  \\n        e  \\n        n  \\n        t  "
+        self.assertEqual(actual, expected, "Expected different chart representation. Check that all spacing is exact.")
+
+    def test_create_spend_chart_names_three_categories(self):
+        chart = budget.create_spend_chart([self.business, self.food, self.entertainment])
+        actual = "\\n".join(chart.split("\\n")[13:])
+        expected = "     B  F  E  \\n     u  o  n  \\n     s  o  t  \\n     i  d  e  \\n     n     r  \\n     e     t  \\n     s     a  \\n     s     i  \\n           n  \\n           m  \\n           e  \\n           n  \\n           t  "
+        self.assertEqual(actual, expected, "Expected different chart representation. Check that all spacing is exact.")
+`);
+
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = runPython(testCode);
+    assert(out);
+  }
+})
+```
+
+`create_spend_chart` chart should not have new line character at the end.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import budget
+from importlib import reload
+
+reload(budget)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.food = budget.Category("Food")
+        self.entertainment = budget.Category("Entertainment")
+        self.business = budget.Category("Business")
+
+    def test_create_spend_chart_no_ending_new_line(self):
+        self.food.deposit(900, "deposit")
+        self.entertainment.deposit(900, "deposit")
+        self.business.deposit(900, "deposit")
+        self.food.withdraw(105.55)
+        self.entertainment.withdraw(33.40)
+        self.business.withdraw(10.99)
+        actual = budget.create_spend_chart([self.business, self.food, self.entertainment])
+        self.assertFalse(actual.endswith("\\n"), "Expected chart to not have new line at the end.")
+`);
+
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = runPython(testCode);
+    assert(out);
+  }
+})
+```
+
 `create_spend_chart` should print a different chart representation. Check that all spacing is exact. Open your browser console with F12 for more details.
 
 ```js
