@@ -814,7 +814,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   ): HTMLDivElement {
     const scrollGutterNode = document.createElement('div');
     const lineGutterWidth = editor.getLayoutInfo().contentLeft;
-    scrollGutterNode.style.width = `${lineGutterWidth}px`;
+    scrollGutterNode.style.width = `${lineGutterWidth * 1.35}px`;
     scrollGutterNode.style.left = `-${lineGutterWidth}px`;
     scrollGutterNode.style.top = '0';
     scrollGutterNode.style.height = '10000px';
