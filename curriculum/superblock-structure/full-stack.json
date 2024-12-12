@@ -548,9 +548,10 @@
             {
               "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks"
             },
+            { "dashedName": "workshop-reusable-mega-navbar" },
             { "dashedName": "lab-reusable-footer" },
             { "dashedName": "lecture-working-with-data-in-react" },
-            { "dashedName": "workshop-reusable-mega-navbar" },
+            { "dashedName": "workshop-reusable-profile-card-component" },
             { "dashedName": "lab-mood-board" },
             { "dashedName": "review-react-basics" },
             { "dashedName": "quiz-react-basics" }
