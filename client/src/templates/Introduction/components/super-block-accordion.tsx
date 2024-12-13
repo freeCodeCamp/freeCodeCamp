@@ -224,15 +224,6 @@ export const SuperBlockAccordion = ({
                 );
               }
 
-              // if blocks is missing or empty, or if challenges is missing or empty,
-              // don't render the module
-              if (
-                !module.blocks?.length ||
-                !module.blocks[0]?.challenges?.length
-              ) {
-                return null;
-              }
-
               if (isLinkModule(module.name)) {
                 const linkedChallenge = module.blocks[0].challenges[0];
                 return (
@@ -253,20 +244,17 @@ export const SuperBlockAccordion = ({
                   dashedName={module.name}
                   isExpanded={expandedModule === module.name}
                 >
-                  {module.blocks.map(block =>
-                    // if no challenges, don't render the block
+                  {module.blocks.map(block => (
                     // maybe TODO: allow blocks to be "coming soon"
-                    block.challenges.length ? (
-                      <li key={block.name}>
-                        <Block
-                          block={block.name}
-                          blockType={block.blockType}
-                          challenges={block.challenges}
-                          superBlock={superBlock}
-                        />
-                      </li>
-                    ) : null
-                  )}
+                    <li key={block.name}>
+                      <Block
+                        block={block.name}
+                        blockType={block.blockType}
+                        challenges={block.challenges}
+                        superBlock={superBlock}
+                      />
+                    </li>
+                  ))}
                 </Module>
               );
             })}
