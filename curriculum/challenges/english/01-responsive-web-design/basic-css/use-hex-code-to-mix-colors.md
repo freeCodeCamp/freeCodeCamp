@@ -32,13 +32,13 @@ Your `h1` element with the text `I am red!` should be given the `color` red.
 ```js
 const redText = document.querySelector('.red-text');
 const color = window.getComputedStyle(redText)['color']; 
-assert.strictEqual(color,'rgb(255, 0, 0)');
+assert.strictEqual(color, 'rgb(255, 0, 0)');
 ```
 
 The `hex code` for the color red should be used instead of the word `red`.
 
 ```js
-assert.match(code,/\.red-text\s*?{\s*?color\s*:\s*?(#FF0000|#F00)\s*?;?\s*?}/gi);
+assert.match(code, /\.red-text\s*?{\s*?color\s*:\s*?(#FF0000|#F00)\s*?;?\s*?}/gi);
 ```
 
 Your `h1` element with the text `I am green!` should be given the `color` green.
@@ -46,13 +46,13 @@ Your `h1` element with the text `I am green!` should be given the `color` green.
 ```js
 const greenText = document.querySelector('.green-text');
 const color = window.getComputedStyle(greenText)['color']; 
-assert.strictEqual(color,'rgb(0, 255, 0)');
+assert.strictEqual(color, 'rgb(0, 255, 0)');
 ```
 
 The `hex code` for the color green should be used instead of the word `green`.
 
 ```js
-assert.match(code,/\.green-text\s*?{\s*?color\s*:\s*?(#00FF00|#0F0)\s*?;?\s*?}/gi);
+assert.match(code, /\.green-text\s*?{\s*?color\s*:\s*?(#00FF00|#0F0)\s*?;?\s*?}/gi);
 ```
 
 Your `h1` element with the text `I am dodger blue!` should be given the `color` dodger blue.
@@ -66,7 +66,7 @@ assert.strictEqual(color, 'rgb(30, 144, 255)');
 The `hex code` for the color dodger blue should be used instead of the word `dodgerblue`.
 
 ```js
-assert.match(code,/\.dodger-blue-text\s*?{\s*?color\s*:\s*?#1E90FF\s*?;?\s*?}/gi);
+assert.match(code, /\.dodger-blue-text\s*?{\s*?color\s*:\s*?#1E90FF\s*?;?\s*?}/gi);
 ```
 
 Your `h1` element with the text `I am orange!` should be given the `color` orange.
@@ -75,13 +75,13 @@ Your `h1` element with the text `I am orange!` should be given the `color` orang
 const orangeText = document.querySelector('.orange-text');
 const color = window.getComputedStyle(orangeText)['color']; 
 
-assert.strictEqual(color,'rgb(255, 165, 0)');
+assert.strictEqual(color, 'rgb(255, 165, 0)');
 ```
 
 The `hex code` for the color orange should be used instead of the word `orange`.
 
 ```js
-assert.match(code,/\.orange-text\s*?{\s*?color\s*:\s*?#FFA500\s*?;?\s*?}/gi);
+assert.match(code, /\.orange-text\s*?{\s*?color\s*:\s*?#FFA500\s*?;?\s*?}/gi);
 ```
 
 # --seed--

@@ -44,20 +44,21 @@ assert.isTrue(document.querySelector('h1').classList.contains('blue-text'));
 Your `h1` element should have the `id` of `orange-text`.
 
 ```js
-assert.strictEqual(document.querySelector('h1').getAttribute('id'),'orange-text');
+assert.strictEqual(document.querySelector('h1').getAttribute('id'), 'orange-text');
 ```
 
 Your `h1` element should have the inline style of `color: white`.
 
 ```js
-assert.match(code,/<h1.*style/gi);
-assert.match(code,/<h1.*style.*color\s*?:/gi);
+const commentessCode = __helpers.removeHTMLComments(code);
+assert.match(commentessCode, /<h1.*style/gi);
+assert.match(commentessCode, /<h1.*style.*color\s*?:/gi);
 ```
 
 Your `pink-text` class declaration should have the `!important` keyword to override all other declarations.
 
 ```js
-assert.match(code,/\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g);
+assert.match(__helpers.removeCssComments(code), /\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g);
 ```
 
 Your `h1` element should be pink.
@@ -65,7 +66,7 @@ Your `h1` element should be pink.
 ```js
 const h1Element = document.querySelector('h1');
 const color = window.getComputedStyle(h1Element)['color'];
-assert.strictEqual(color,'rgb(255, 192, 203)');
+assert.strictEqual(color, 'rgb(255, 192, 203)');
 ```
 
 # --seed--

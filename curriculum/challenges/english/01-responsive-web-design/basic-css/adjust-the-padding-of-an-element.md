@@ -32,7 +32,7 @@ Your `blue-box` class should give elements `20px` of `padding`.
 ```js
 const blueBox = document.querySelector('.blue-box');
 const paddingTop = window.getComputedStyle(blueBox)['padding-top'];
-assert.strictEqual(paddingTop,'20px');
+assert.strictEqual(paddingTop, '20px');
 ```
 
 # --seed--

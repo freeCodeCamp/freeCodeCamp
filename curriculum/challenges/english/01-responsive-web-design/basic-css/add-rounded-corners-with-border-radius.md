@@ -35,10 +35,10 @@ const borderTopRightRadius = style['border-top-right-radius'];
 const borderBottomLeftRadius = style['border-bottom-left-radius'];
 const borderBottomRightRadius = style['border-bottom-right-radius'];
 
-assert.strictEqual(borderTopLeftRadius,'10px');
-assert.strictEqual(borderTopRightRadius,'10px');
-assert.strictEqual(borderBottomLeftRadius,'10px');
-assert.strictEqual(borderBottomRightRadius,'10px');
+assert.strictEqual(borderTopLeftRadius, '10px');
+assert.strictEqual(borderTopRightRadius, '10px');
+assert.strictEqual(borderBottomLeftRadius, '10px');
+assert.strictEqual(borderBottomRightRadius, '10px');
 ```
 
 # --seed--

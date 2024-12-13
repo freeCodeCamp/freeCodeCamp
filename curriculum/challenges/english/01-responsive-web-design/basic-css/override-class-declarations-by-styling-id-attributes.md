@@ -64,13 +64,13 @@ assert.lengthOf(document.querySelectorAll('h1'), 1);
 Your `orange-text` id should have a CSS declaration.
 
 ```js
-assert.match(code,/#orange-text\s*{/gi);
+assert.match(__helpers.removeCssComments(code), /#orange-text\s*{/gi);
 ```
 
 Your `h1` should not have any `style` attributes.
 
 ```js
-assert.notMatch(code,/<h1.*style.*>/gi);
+assert.notMatch(__helpers.removeHTMLComments(code), /<h1.*style.*>/gi);
 ```
 
 Your `h1` element should be orange.
@@ -78,7 +78,7 @@ Your `h1` element should be orange.
 ```js
 const h1Element = document.querySelector('h1');
 const color = window.getComputedStyle(h1Element)['color']; 
-assert.strictEqual(color,'rgb(255, 165, 0)');
+assert.strictEqual(color, 'rgb(255, 165, 0)');
 ```
 
 # --seed--

@@ -50,7 +50,7 @@ You should create a `style` element.
 
 ```js
 assert.exists(document.querySelector('style:not(.fcc-hide-header)'));
-assert.isAtLeast(document.querySelectorAll('style:not(.fcc-hide-header)').length,1);
+assert.isAtLeast(document.querySelectorAll('style:not(.fcc-hide-header)').length, 1);
 ```
 
 Your `h2` element should be blue.
@@ -58,23 +58,23 @@ Your `h2` element should be blue.
 ```js
 const h2Element = document.querySelector('h2');
 const color = window.getComputedStyle(h2Element)['color']; 
-assert.strictEqual(color,'rgb(0, 0, 255)');
+assert.strictEqual(color, 'rgb(0, 0, 255)');
 ```
 
 Your stylesheet `h2` declaration should be valid with a semicolon and closing brace.
 
 ```js
-assert.match(code,/h2\s*\{\s*color\s*:.*;\s*\}/g);
+assert.match(__helpers.removeCssComments(code), /h2\s*\{\s*color\s*:.*;\s*\}/g);
 ```
 
 All your `style` elements should be valid and have closing tags.
 
 ```js
-assert.match(code,/<\/style>/g);
+assert.match(__helpers.removeHTMLComments(code), /<\/style>/g);
 
-const closingElementLength = code.match(/<\/style>/g).length;
-const openingElementsLength = (code.match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g) || []).length;
-assert.strictEqual(closingElementLength,openingElementsLength);
+const closingElementLength = __helpers.removeHTMLComments(code).match(/<\/style>/g).length;
+const openingElementsLength = __helpers.removeHTMLComments(code).match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g).length;
+assert.strictEqual(closingElementLength, openingElementsLength);
 ```
 
 # --seed--

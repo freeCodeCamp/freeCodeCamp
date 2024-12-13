@@ -29,16 +29,16 @@ Your `red-box` class should have a `padding` property.
 const redBox =document.querySelector('.red-box'); 
 const style = window.getComputedStyle(redBox); 
 
-assert.notEqual(style['padding-top'],'0px');
-assert.notEqual(style['padding-right'],'0px');
-assert.notEqual(style['padding-bottom'],'0px');
-assert.notEqual(style['padding-left'],'0px');
+assert.notEqual(style['padding-top'], '0px');
+assert.notEqual(style['padding-right'], '0px');
+assert.notEqual(style['padding-bottom'], '0px');
+assert.notEqual(style['padding-left'], '0px');
 ```
 
 Your `red-box` class should give elements 1.5em of `padding`.
 
 ```js
-assert.match(code,/\.red-box\s*?{[\s\S]*padding\s*:\s*?1\.5em/gi);
+assert.match(__helpers.removeCssComments(code), /\.red-box\s*?{[\s\S]*padding\s*:\s*?1\.5em/gi);
 ```
 
 # --seed--

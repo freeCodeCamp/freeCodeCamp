@@ -26,7 +26,7 @@ Your `blue-box` class should give elements `-15px` of `margin`.
 ```js
 const blueBox = document.querySelector('.blue-box');
 const marginTop = window.getComputedStyle(blueBox)["margin-top"]; 
-assert.strictEqual(marginTop,"-15px"); 
+assert.strictEqual(marginTop, "-15px"); 
 ```
 
 # --seed--

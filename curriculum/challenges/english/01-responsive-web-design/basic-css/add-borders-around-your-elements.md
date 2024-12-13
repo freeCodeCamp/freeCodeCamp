@@ -53,7 +53,7 @@ Your image should have a border width of `10px`.
 const image = document.querySelector('img'); 
 const imageBorderTopWidth = window.getComputedStyle(image)["border-top-width"]; 
 
-assert.strictEqual(imageBorderTopWidth,"10px")
+assert.strictEqual(imageBorderTopWidth, "10px")
 ```
 
 Your image should have a border style of `solid`.
@@ -61,15 +61,15 @@ Your image should have a border style of `solid`.
 ```js
 const image = document.querySelector('img'); 
 const borderRightStyle = window.getComputedStyle(image)["border-right-style"]; 
-assert.strictEqual(borderRightStyle,'solid');
+assert.strictEqual(borderRightStyle, 'solid');
 ```
 
 The border around your `img` element should be green.
 
 ```js
-const image= document.querySelector('img'); 
+const image = document.querySelector('img'); 
 const borderLeftColor = window.getComputedStyle(image)["border-left-color"]; 
-assert.strictEqual(borderLeftColor,'rgb(0, 128, 0)');
+assert.strictEqual(borderLeftColor, 'rgb(0, 128, 0)');
 ```
 
 # --seed--

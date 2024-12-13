@@ -26,21 +26,25 @@ Finally, give your `body` element the font-family of `monospace` by adding `font
 You should create an `h1` element.
 
 ```js
-assert.isAtLeast(document.querySelectorAll('h1').length,1);
+assert.isNotEmpty(document.querySelectorAll('h1'));
 ```
 
 Your `h1` element should have the text `Hello World`.
 
 ```js
-assert.match(document.querySelector('h1').textContent,/hello world/i);
+assert.match(
+  document.querySelector('h1').textContent,
+  /hello world/i
+);
 ```
 
 Your `h1` element should have a closing tag.
 
 ```js
-assert.match(code,/<\/h1>/g);
-assert.match(code,/<h1/g);
-assert.strictEqual(code.match(/<\/h1>/g).length,code.match(/<h1/g).length);
+const commentlessCode = __helpers.removeHTMLComments(code);
+assert.match(commentlessCode, /<\/h1>/g);
+assert.match(_commentlessCode, /<h1/g);
+assert.lengthOf(commentlessCode.match(/<\/h1>/g), commentlessCode.match(/<h1/g).length);
 ```
 
 Your `body` element should have the `color` property of `green`.
@@ -48,7 +52,7 @@ Your `body` element should have the `color` property of `green`.
 ```js
 const bodyElement = document.querySelector('body');
 const color = window.getComputedStyle(bodyElement)['color']; 
-assert.strictEqual(color,'rgb(0, 128, 0)');
+assert.strictEqual(color, 'rgb(0, 128, 0)');
 ```
 
 Your `body` element should have the `font-family` property of `monospace`.
@@ -56,7 +60,7 @@ Your `body` element should have the `font-family` property of `monospace`.
 ```js
 const bodyElement = document.querySelector('body');
 const fontFamily = window.getComputedStyle(bodyElement)['font-family'];
-assert.match(fontFamily,/monospace/i);
+assert.include(fontFamily.toLowerCase(), "monospace");
 ```
 
 Your `h1` element should inherit the font `monospace` from your `body` element.
@@ -64,7 +68,7 @@ Your `h1` element should inherit the font `monospace` from your `body` element.
 ```js
 const h1Element = document.querySelector('h1');
 const fontFamily = window.getComputedStyle(h1Element)['font-family'];
-assert.match(fontFamily,/monospace/i);
+assert.include(fontFamily.toLowerCase(), "monospace");
 ```
 
 Your `h1` element should inherit the color `green` from your `body` element.
@@ -72,7 +76,7 @@ Your `h1` element should inherit the color `green` from your `body` element.
 ```js
 const h1Element = document.querySelector('h1');
 const color = window.getComputedStyle(h1Element)['color'];
-assert.strictEqual(color,'rgb(0, 128, 0)');
+assert.strictEqual(color, 'rgb(0, 128, 0)');
 ```
 
 # --seed--

@@ -36,13 +36,13 @@ Your `div` element should have a silver background.
 ```js
 const div = document.querySelector('div');
 const backgroundColor = window.getComputedStyle(div)['background-color']; 
-assert.strictEqual(backgroundColor,'rgb(192, 192, 192)');
+assert.strictEqual(backgroundColor, 'rgb(192, 192, 192)');
 ```
 
 A class named `silver-background` should be defined within the `style` element and the value of `silver` should be assigned to the `background-color` property.
 
 ```js
-assert.match(code,/\.silver-background\s*{\s*background-color\s*:\s*silver\s*;?\s*}/);
+assert.match(__helpers.removeHTMLComments(code), /\.silver-background\s*{\s*background-color\s*:\s*silver\s*;?\s*}/);
 ```
 
 # --seed--

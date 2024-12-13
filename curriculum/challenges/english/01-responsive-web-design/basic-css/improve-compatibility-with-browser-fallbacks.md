@@ -23,9 +23,11 @@ It looks like a variable is being used to set the background color of the `.red-
 Your `.red-box` rule should include a fallback with the `background` set to `red` immediately before the existing `background` declaration.
 
 ```js
-const spacelessCode = __helpers.removeWhiteSpace(code);
+const spacelessCode = __helpers.removeWhiteSpace(__helpers.removeCssComments(code));
 assert.match(
-spacelessCode,/\.red-box{background:(red|#ff0000|#f00|rgb\(255,0,0\)|rgb\(100%,0%,0%\)|hsl\(0,100%,50%\));background:var\(--red-color\);height:200px;width:200px;}/gi)
+  spacelessCode,
+  /\.red-box{background:(red|#ff0000|#f00|rgb\(255,0,0\)|rgb\(100%,0%,0%\)|hsl\(0,100%,50%\));background:var\(--red-color\);height:200px;width:200px;}/gi
+);
 ```
 
 # --seed--

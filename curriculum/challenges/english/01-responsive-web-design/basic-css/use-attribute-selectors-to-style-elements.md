@@ -30,17 +30,17 @@ Using the `type` attribute selector, try to give the checkboxes in CatPhotoApp a
 The `type` attribute selector should be used to select the checkboxes.
 
 ```js
-assert.match(code,/<style>[\s\S]*?\[\s*?type\s*?=\s*?("|')checkbox\1\s*?\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi);
+assert.match(__helpers.removeHTMLComments(code), /<style>[\s\S]*?\[\s*?type\s*?=\s*?("|')checkbox\1\s*?\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi);
 ```
 
 The top margins of the checkboxes should be 10px.
 
 ```js
 const checkboxes = document.querySelectorAll("[type='checkbox']");
-checkboxes.forEach(function(checkbox)
-{
+assert.isNotEmpty(checkboxes);
+checkboxes.forEach(function(checkbox) {
   const marginTop = window.getComputedStyle(checkbox)['margin-top']; 
-  assert.strictEqual(marginTop,'10px');
+  assert.strictEqual(marginTop, '10px');
 });
 ```
 
@@ -48,10 +48,10 @@ The bottom margins of the checkboxes should be 15px.
 
 ```js
 const checkboxes = document.querySelectorAll("[type='checkbox']");
-checkboxes.forEach(function(checkbox)
-{
-  const marginTop = window.getComputedStyle(checkbox)['margin-bottom']; 
-  assert.strictEqual(marginTop,'15px');
+assert.isNotEmpty(checkboxes);
+checkboxes.forEach(function(checkbox) {
+  const marginBottom = window.getComputedStyle(checkbox)['margin-bottom']; 
+  assert.strictEqual(marginBottom, '15px');
 });
 ```
 

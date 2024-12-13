@@ -28,7 +28,7 @@ Your `h1` element with the text `I am red!` should be given the `color` red.
 ```js
 const redText = document.querySelector('.red-text');
 const color = window.getComputedStyle(redText)['color']; 
-assert.strictEqual(color,'rgb(255, 0, 0)');
+assert.strictEqual(color, 'rgb(255, 0, 0)');
 ```
 
 The abbreviated hex code for the color red should be used instead of the hex code `#FF0000`.
@@ -42,13 +42,13 @@ Your `h1` element with the text `I am green!` should be given the `color` green.
 ```js
 const greenText = document.querySelector('.green-text');
 const color = window.getComputedStyle(greenText)['color']; 
-assert.strictEqual(color,'rgb(0, 255, 0)');
+assert.strictEqual(color, 'rgb(0, 255, 0)');
 ```
 
 The abbreviated hex code for the color green should be used instead of the hex code `#00FF00`.
 
 ```js
-assert.match(code,/\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi);
+assert.match(__helpers.removeCssComments(code), /\.green-text\s*?{\s*?color\s*:\s*?#0F0\s*?;?\s*?}/gi);
 ```
 
 Your `h1` element with the text `I am cyan!` should be given the `color` cyan.
@@ -56,13 +56,13 @@ Your `h1` element with the text `I am cyan!` should be given the `color` cyan.
 ```js
 const cyanText = document.querySelector('.cyan-text');
 const color = window.getComputedStyle(cyanText)['color']; 
-assert.strictEqual(color,'rgb(0, 255, 255)');
+assert.strictEqual(color, 'rgb(0, 255, 255)');
 ```
 
 The abbreviated hex code for the color cyan should be used instead of the hex code `#00FFFF`.
 
 ```js
-assert.match(code,/\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi);
+assert.match(__helpers.removeCssComments(code), /\.cyan-text\s*?{\s*?color\s*:\s*?#0FF\s*?;?\s*?}/gi);
 ```
 
 Your `h1` element with the text `I am fuchsia!` should be given the `color` fuchsia.
@@ -76,7 +76,7 @@ assert.strictEqual(color,'rgb(255, 0, 255)');
 The abbreviated hex code for the color fuchsia should be used instead of the hex code `#FF00FF`.
 
 ```js
-assert.match(code,/\.fuchsia-text\s*?{\s*?color\s*:\s*?#F0F\s*?;?\s*?}/gi);
+assert.match(__helpers.removeCssComments(code), /\.fuchsia-text\s*?{\s*?color\s*:\s*?#F0F\s*?;?\s*?}/gi);
 ```
 
 # --seed--

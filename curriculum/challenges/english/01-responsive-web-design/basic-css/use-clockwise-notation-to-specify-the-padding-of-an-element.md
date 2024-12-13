@@ -28,7 +28,7 @@ Your `blue-box` class should give the top of elements `40px` of `padding`.
 ```js
 const blueBox = document.querySelector('.blue-box');
 const paddingTop = window.getComputedStyle(blueBox)['padding-top'];
-assert.strictEqual(paddingTop,'40px');
+assert.strictEqual(paddingTop, '40px');
 ```
 
 Your `blue-box` class should give the right of elements `20px` of `padding`.
@@ -36,7 +36,7 @@ Your `blue-box` class should give the right of elements `20px` of `padding`.
 ```js
 const blueBox = document.querySelector('.blue-box');
 const paddingRight = window.getComputedStyle(blueBox)['padding-right'];
-assert.strictEqual(paddingRight,'20px');
+assert.strictEqual(paddingRight, '20px');
 ```
 
 Your `blue-box` class should give the bottom of elements `20px` of `padding`.
@@ -44,7 +44,7 @@ Your `blue-box` class should give the bottom of elements `20px` of `padding`.
 ```js
 const blueBox = document.querySelector('.blue-box');
 const paddingBottom = window.getComputedStyle(blueBox)['padding-bottom'];
-assert.strictEqual(paddingBottom,'20px');
+assert.strictEqual(paddingBottom, '20px');
 ```
 
 Your `blue-box` class should give the left of elements `40px` of `padding`.
@@ -52,7 +52,7 @@ Your `blue-box` class should give the left of elements `40px` of `padding`.
 ```js
 const blueBox = document.querySelector('.blue-box');
 const paddingLeft = window.getComputedStyle(blueBox)['padding-left'];
-assert.strictEqual(paddingLeft,'40px');
+assert.strictEqual(paddingLeft, '40px');
 ```
 
 You should use the clockwise notation to set the padding of `blue-box` class.

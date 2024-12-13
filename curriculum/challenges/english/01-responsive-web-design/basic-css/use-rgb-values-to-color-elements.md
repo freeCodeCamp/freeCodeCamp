@@ -46,13 +46,13 @@ Your `body` element should have a black background.
 ```js
 const body = document.querySelector('body');
 const backgroundColor = window.getComputedStyle(body)['background-color']; 
-assert.strictEqual(backgroundColor,'rgb(0, 0, 0)');
+assert.strictEqual(backgroundColor, 'rgb(0, 0, 0)');
 ```
 
 You should use `rgb` to give your `body` element a background of black.
 
 ```js
-assert.match(code,/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/gi);
+assert.match(__helpers.removeCssComments(code), /rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/gi);
 ```
 
 # --seed--

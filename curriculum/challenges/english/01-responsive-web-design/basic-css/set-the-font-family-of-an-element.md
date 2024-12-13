@@ -30,7 +30,7 @@ Your `p` elements should use the font `monospace`.
 ```js
 const notRed = document.querySelector('p:not(.red-text)');
 const fontFamily = window.getComputedStyle(notRed)['font-family']; 
-assert.match(fontFamily,/monospace/i);
+assert.match(fontFamily, /monospace/i);
 ```
 
 # --seed--

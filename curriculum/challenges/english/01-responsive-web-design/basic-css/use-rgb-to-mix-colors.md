@@ -24,13 +24,13 @@ Your `h1` element with the text `I am red!` should have the `color` red.
 ```js
 const redText = document.querySelector('.red-text');
 const color = window.getComputedStyle(redText)['color']; 
-assert.strictEqual(color,'rgb(255, 0, 0)');
+assert.strictEqual(color, 'rgb(255, 0, 0)');
 ```
 
 You should use `rgb` for the color red.
 
 ```js
-assert.match(code,/\.red-text\s*{\s*color\s*:\s*rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)\s*;?\s*}/gi);
+assert.match(code, /\.red-text\s*{\s*color\s*:\s*rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)\s*;?\s*}/gi);
 ```
 
 Your `h1` element with the text `I am orchid!` should have the `color` orchid.
@@ -38,13 +38,13 @@ Your `h1` element with the text `I am orchid!` should have the `color` orchid.
 ```js
 const orchidText = document.querySelector('.orchid-text');
 const color = window.getComputedStyle(orchidText)['color']; 
-assert.strictEqual(color,'rgb(218, 112, 214)');
+assert.strictEqual(color, 'rgb(218, 112, 214)');
 ```
 
 You should use `rgb` for the color orchid.
 
 ```js
-assert.match(code,/\.orchid-text\s*{\s*color\s*:\s*rgb\(\s*218\s*,\s*112\s*,\s*214\s*\)\s*;?\s*}/gi);
+assert.match(__helpers.removeCssComments(code), /\.orchid-text\s*{\s*color\s*:\s*rgb\(\s*218\s*,\s*112\s*,\s*214\s*\)\s*;?\s*}/gi);
 ```
 
 Your `h1` element with the text `I am blue!` should have the `color` blue.
@@ -52,13 +52,13 @@ Your `h1` element with the text `I am blue!` should have the `color` blue.
 ```js
 const blueText = document.querySelector('.blue-text');
 const color = window.getComputedStyle(blueText)['color']; 
-assert.strictEqual(color,'rgb(0, 0, 255)');
+assert.strictEqual(color, 'rgb(0, 0, 255)');
 ```
 
 You should use `rgb` for the color blue.
 
 ```js
-assert.match(code,/\.blue-text\s*{\s*color\s*:\s*rgb\(\s*0\s*,\s*0\s*,\s*255\s*\)\s*;?\s*}/gi);
+assert.match(__helpers.removeCssComments(code), /\.blue-text\s*{\s*color\s*:\s*rgb\(\s*0\s*,\s*0\s*,\s*255\s*\)\s*;?\s*}/gi);
 ```
 
 Your `h1` element with the text `I am sienna!` should have the `color` sienna.
@@ -72,7 +72,7 @@ assert.strictEqual(color, 'rgb(160, 82, 45)');
 You should use `rgb` for the color sienna.
 
 ```js
-assert.match(code,/\.sienna-text\s*{\s*color\s*:\s*rgb\(\s*160\s*,\s*82\s*,\s*45\s*\)\s*;?\s*}/gi);
+assert.match(__helpers.removeCssComments(code), /\.sienna-text\s*{\s*color\s*:\s*rgb\(\s*160\s*,\s*82\s*,\s*45\s*\)\s*;?\s*}/gi);
 ```
 
 # --seed--

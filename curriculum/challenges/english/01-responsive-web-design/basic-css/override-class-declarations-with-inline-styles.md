@@ -40,7 +40,7 @@ assert.isTrue(document.querySelector('h1').classList.contains('blue-text'));
 Your `h1` element should have the id of `orange-text`.
 
 ```js
-assert.strictEqual(document.querySelector('h1').getAttribute('id'),'orange-text');
+assert.strictEqual(document.querySelector('h1').getAttribute('id'), 'orange-text');
 ```
 
 Your `h1` element should have an inline style.
@@ -54,7 +54,7 @@ Your `h1` element should be white.
 ```js
 const h1Element = document.querySelector('h1');
 const color = window.getComputedStyle(h1Element)['color']; 
-assert.strictEqual(color,'rgb(255, 255, 255)');
+assert.strictEqual(color, 'rgb(255, 255, 255)');
 ```
 
 # --seed--

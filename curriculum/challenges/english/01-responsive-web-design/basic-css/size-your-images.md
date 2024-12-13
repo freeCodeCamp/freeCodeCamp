@@ -31,7 +31,7 @@ Your `img` element should have the class `smaller-image`.
 ```js
 const relaxingCatImage = document.querySelector("img[src='https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg']");
 const catImageClass = relaxingCatImage.getAttribute('class').trim().split(/\s+/g);
-assert.include(catImageClass,'smaller-image');
+assert.include(catImageClass, 'smaller-image');
 ```
 
 Your image should be 100 pixels wide.
@@ -39,8 +39,8 @@ Your image should be 100 pixels wide.
 ```js
 const image = document.querySelector('img');
 const width = image.getBoundingClientRect().width;
-assert.isBelow(width,200); 
-assert.match(code,/\.smaller-image\s*{\s*width\s*:\s*100px\s*(;\s*}|})/i);
+assert.isBelow(width, 200); 
+assert.match(__helpers.removeCssComments(code), /\.smaller-image\s*{\s*width\s*:\s*100px\s*(;\s*}|})/i);
 ```
 
 # --seed--

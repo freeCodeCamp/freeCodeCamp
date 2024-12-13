@@ -38,25 +38,25 @@ Your h2 element should use the font `Lobster`.
 ```js
 const h2Element = document.querySelector('h2');
 const fontFamily = window.getComputedStyle(h2Element)['font-family']; 
-assert.match(fontFamily,/^"?lobster/i);
+assert.match(fontFamily, /^"?lobster/i);
 ```
 
 Your h2 element should degrade to the font `monospace` when `Lobster` is not available.
 
 ```js
-assert.match(code,/\s*h2\s*\{\s*font-family\s*\:\s*(\'|"|)Lobster\1\s*,\s*monospace\s*;?\s*\}/gi);
+assert.match(__helpers.removeCssComments(code), /\s*h2\s*\{\s*font-family\s*\:\s*(\'|"|)Lobster\1\s*,\s*monospace\s*;?\s*\}/gi);
 ```
 
 You should comment out your call to Google for the `Lobster` font by putting `<!--` in front of it.
 
 ```js
-assert.match(code,/<!--[^fc]/gi);
+assert.match(code, /<!--[^fc]/gi);
 ```
 
 You should close your comment by adding `-->`.
 
 ```js
-assert.match(code,/[^fc]-->/gi);
+assert.match(code, /[^fc]-->/gi);
 ```
 
 # --seed--

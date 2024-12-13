@@ -38,7 +38,7 @@ assert.strictEqual(backgroundColor, 'rgb(0, 0, 0)');
 The hex code for the color black should be used instead of the word `black`.
 
 ```js
-assert.match(code,/body\s*{(([\s\S]*;\s*?)|\s*?)background.*\s*:\s*?#000(000)?((\s*})|(;[\s\S]*?}))/gi);
+assert.match(code, /body\s*{(([\s\S]*;\s*?)|\s*?)background.*\s*:\s*?#000(000)?((\s*})|(;[\s\S]*?}))/gi);
 ```
 
 # --seed--

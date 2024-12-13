@@ -48,7 +48,7 @@ assert.isTrue(document.querySelector('h2').classList.contains('red-text'));
 Your stylesheet should declare a `red-text` class and have its color set to `red`.
 
 ```js
-assert.match(code,/\.red-text\s*\{\s*color\s*:\s*red;?\s*\}/g);
+assert.match(__helpers.removeCssComments(code), /\.red-text\s*\{\s*color\s*:\s*red;?\s*\}/g);
 ```
 
 You should not use inline style declarations like `style="color: red"` in your `h2` element.

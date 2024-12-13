@@ -32,7 +32,7 @@ assert.isTrue(document.querySelector('h1').classList.contains('pink-text'));
 Your `<style>` should have a `pink-text` CSS class that changes the `color`.
 
 ```js
-assert.match(code,/\.pink-text\s*\{\s*color\s*:\s*.+\s*;?\s*\}/g);
+assert.match(__helpers.removeCssComments(code), /\.pink-text\s*\{\s*color\s*:\s*.+\s*;?\s*\}/g);
 ```
 
 Your `h1` element should be pink.
@@ -40,7 +40,7 @@ Your `h1` element should be pink.
 ```js
 const h1Element = document.querySelector('h1');
 const color = window.getComputedStyle(h1Element)['color']; 
-assert.strictEqual(color,'rgb(255, 192, 203)');
+assert.strictEqual(color, 'rgb(255, 192, 203)');
 ```
 
 # --seed--

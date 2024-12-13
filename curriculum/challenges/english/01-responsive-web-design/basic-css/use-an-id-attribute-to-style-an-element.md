@@ -40,21 +40,21 @@ Your `form` element should have the `background-color` of green.
 ```js
 const catPhotoForm = document.querySelector('#cat-photo-form');
 const backgroundColor = window.getComputedStyle(catPhotoForm)['background-color'];
-assert.strictEqual(backgroundColor,'rgb(0, 128, 0)');
+assert.strictEqual(backgroundColor, 'rgb(0, 128, 0)');
 ```
 
 Your `form` element should have an `id` attribute.
 
 ```js
-assert.match(code,/<form.*cat-photo-form.*>/gi);
-assert.strictEqual(code.match(/<form.*cat-photo-form.*>/gi).length,1)
+assert.match(__helpers.removeHTMLComments(code), /<form.*cat-photo-form.*>/gi);
+assert.lengthOf(__helpers.removeHTMLComments(code).match(/<form.*cat-photo-form.*>/gi), 1)
 ```
 
 You should not give your `form` any `class` or `style` attributes.
 
 ```js
-assert.notMatch(code,/<form.*style.*>/gi);
-assert.notMatch(code,/<form.*class.*>/gi);
+assert.notMatch(__helpers.removeHTMLComments(code), /<form.*style.*>/gi);
+assert.notMatch(__helpers.removeHTMLComments(code), /<form.*class.*>/gi);
 ```
 
 # --seed--

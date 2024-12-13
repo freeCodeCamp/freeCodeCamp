@@ -18,7 +18,7 @@ Your `h2` element should be red.
 ```js
 const h2Element = document.querySelector('h2');
 const color = window.getComputedStyle(h2Element)['color']; 
-assert.strictEqual(color,'rgb(255, 0, 0)');
+assert.strictEqual(color, 'rgb(255, 0, 0)');
 ```
 
 Your `h2` element should have the class `red-text`.
@@ -32,7 +32,7 @@ Your first `p` element should be red.
 ```js
 const paragraph = document.querySelectorAll('p')[0];
 const color = window.getComputedStyle(paragraph )['color'];
-assert.strictEqual(color,'rgb(255, 0, 0)');
+assert.strictEqual(color, 'rgb(255, 0, 0)');
 ```
 
 Your second and third `p` elements should not be red.
@@ -44,8 +44,8 @@ const paragraph3 = document.querySelectorAll('p')[2];
 const color2 = window.getComputedStyle(paragraph2)['color'];
 const color3 = window.getComputedStyle(paragraph3)['color'];
 
-assert.notStrictEqual(color2,'rgb(255, 0, 0)');
-assert.notStrictEqual(color3,'rgb(255, 0, 0)');
+assert.notStrictEqual(color2, 'rgb(255, 0, 0)');
+assert.notStrictEqual(color3, 'rgb(255, 0, 0)');
 ```
 
 Your first `p` element should have the class `red-text`.

@@ -33,19 +33,19 @@ Your `body` element should have the `background-color` of black.
 const body = document.querySelector('body');
 const backgroundColor = window.getComputedStyle(body)['background-color'];
 
-assert.strictEqual(backgroundColor,'rgb(0, 0, 0)');
+assert.strictEqual(backgroundColor, 'rgb(0, 0, 0)');
 ```
 
 Your CSS rule should be properly formatted with both opening and closing curly brackets.
 
 ```js
-assert.match(code,/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i);
+assert.match(code, /<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i);
 ```
 
 Your CSS rule should end with a semicolon.
 
 ```js
-assert.match(code,/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i);
+assert.match(code, /<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i);
 ```
 
 # --seed--

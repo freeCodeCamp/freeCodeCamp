@@ -24,7 +24,7 @@ Your `blue-box` class should give the top of elements `40px` of `margin`.
 ```js
 const blueBox = document.querySelector('.blue-box');
 const marginTop = window.getComputedStyle(blueBox)['margin-top'];
-assert.strictEqual(marginTop,'40px');
+assert.strictEqual(marginTop, '40px');
 ```
 
 Your `blue-box` class should give the right of elements `20px` of `margin`.
@@ -32,7 +32,7 @@ Your `blue-box` class should give the right of elements `20px` of `margin`.
 ```js
 const blueBox = document.querySelector('.blue-box');
 const marginRight = window.getComputedStyle(blueBox)['margin-right'];
-assert.strictEqual(marginRight,'20px');
+assert.strictEqual(marginRight, '20px');
 ```
 
 Your `blue-box` class should give the bottom of elements `20px` of `margin`.
@@ -40,7 +40,7 @@ Your `blue-box` class should give the bottom of elements `20px` of `margin`.
 ```js
 const blueBox = document.querySelector('.blue-box');
 const marginBottom = window.getComputedStyle(blueBox)['margin-bottom'];
-assert.strictEqual(marginBottom,'20px');
+assert.strictEqual(marginBottom, '20px');
 ```
 
 Your `blue-box` class should give the left of elements `40px` of `margin`.

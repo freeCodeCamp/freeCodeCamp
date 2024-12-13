@@ -48,13 +48,13 @@ Your `h2` element should use the font `Lobster`.
 ```js
 const h2 = document.querySelector('h2'); 
 const fontFamily = window.getComputedStyle(h2)['font-family']; 
-assert.match(fontFamily,/lobster/i);
+assert.match(fontFamily, /lobster/i);
 ```
 
 You should only use an `h2` element selector to change the font.
 
 ```js
-assert.match(code,/\s*[^\.]h2\s*\{\s*font-family\s*:\s*('|"|)Lobster\1\s*(,\s*('|"|)[a-z -]+\3\s*)?(;\s*\}|\})/gi);
+assert.match(__helpers.removeHTMLComments(code), /\s*[^\.]h2\s*\{\s*font-family\s*:\s*('|"|)Lobster\1\s*(,\s*('|"|)[a-z -]+\3\s*)?(;\s*\}|\})/gi);
 ```
 
 Your `p` element should still use the font `monospace`.
@@ -62,7 +62,7 @@ Your `p` element should still use the font `monospace`.
 ```js
 const paragraphElement = document.querySelector('p');
 const fontFamily = window.getComputedStyle(paragraphElement)['font-family']; 
-assert.match(fontFamily,/monospace/i);
+assert.match(fontFamily, /monospace/i);
 ```
 
 # --seed--

@@ -38,7 +38,7 @@ assert.exists(document.querySelector('h2').getAttribute('style'));
 Your `h2` element should have color set to `red`.
 
 ```js
-assert.strictEqual(document.querySelector('h2').style.color,'red');
+assert.strictEqual(document.querySelector('h2').style.color, 'red');
 ```
 
 Your `style` declaration should end with a `;` .
