@@ -143,3 +143,7 @@ export const submitTypes = {
   [generic]: 'tests',
   [lab]: 'tests'
 };
+
+export const canSaveToDB = (challengeType: number): boolean =>
+  challengeType === challengeTypes.multifileCertProject ||
+  challengeType === challengeTypes.multifilePythonCertProject;
