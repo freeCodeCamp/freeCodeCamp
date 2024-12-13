@@ -3342,7 +3342,12 @@
           "In these lecture videos, you will learn about working with data in React."
         ]
       },
-      "cdfr": { "title": "263", "intro": [] },
+      "workshop-reusable-profile-card-component": {
+        "title": "Build a Reusable Profile Card Component",
+        "intro": [
+          "In this workshop, you will learn how to work with props by building a reusable profile card component."
+        ]
+      },
       "lab-mood-board": {
         "title": "Build a Mood Board",
         "intro": [
