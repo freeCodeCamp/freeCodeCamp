@@ -35,6 +35,14 @@ interface SuperBlockTreeViewProps {
   chosenBlock: string;
 }
 
+type Module = {
+  dashedName: string;
+  comingSoon?: boolean;
+  blocks: {
+    dashedName: string;
+  }[];
+};
+
 const modules = superBlockStructure.chapters.flatMap(({ modules }) => modules);
 const chapters = superBlockStructure.chapters;
 
@@ -146,10 +154,10 @@ export const SuperBlockAccordion = ({
 
     const allChapters = chapters.map(chapter => ({
       name: chapter.dashedName,
-      comingSoon: 'comingSoon' in chapter ? chapter.comingSoon : false,
-      modules: chapter.modules.map(module => ({
+      comingSoon: chapter.comingSoon,
+      modules: chapter.modules.map((module: Module) => ({
         name: module.dashedName,
-        comingSoon: 'comingSoon' in module ? module.comingSoon : false,
+        comingSoon: module.comingSoon,
         blocks: populateBlocks(module.blocks)
       }))
     }));
