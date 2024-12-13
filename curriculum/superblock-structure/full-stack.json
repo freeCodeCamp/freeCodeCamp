@@ -141,6 +141,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-colors-in-css" },
             { "dashedName": "workshop-colored-markers" },
+            { "dashedName": "lab-colored-boxes" },
             { "dashedName": "review-css-colors" },
             { "dashedName": "quiz-css-colors" }
           ]
@@ -461,6 +462,7 @@
           "dashedName": "audio-and-video-events",
           "blocks": [
             { "dashedName": "lecture-working-with-audio-and-video" },
+            { "dashedName": "workshop-music-player" },
             { "dashedName": "review-javascript-audio-and-video" },
             { "dashedName": "quiz-javascript-audio-and-video" }
           ]

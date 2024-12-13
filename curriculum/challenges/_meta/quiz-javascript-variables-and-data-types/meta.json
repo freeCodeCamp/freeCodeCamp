@@ -3,7 +3,6 @@
   "blockType": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": true,
-  "usesMultifileEditor": true,
   "dashedName": "quiz-javascript-variables-and-data-types",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
