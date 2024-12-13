@@ -336,8 +336,8 @@
           "blocks": [
             { "dashedName": "lecture-working-with-arrays" },
             { "dashedName": "workshop-shopping-list" },
-            { "dashedName": "lecture-working-with-common-array-methods" },
             { "dashedName": "lab-lunch-picker-program" },
+            { "dashedName": "lecture-working-with-common-array-methods" },
             { "dashedName": "review-javascript-arrays" },
             { "dashedName": "quiz-javascript-arrays" }
           ]
@@ -460,6 +460,7 @@
           "dashedName": "audio-and-video-events",
           "blocks": [
             { "dashedName": "lecture-working-with-audio-and-video" },
+            { "dashedName": "workshop-music-player" },
             { "dashedName": "review-javascript-audio-and-video" },
             { "dashedName": "quiz-javascript-audio-and-video" }
           ]

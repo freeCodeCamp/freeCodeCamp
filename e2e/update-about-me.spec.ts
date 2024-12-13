@@ -6,9 +6,7 @@ test.beforeEach(async ({ page }) => {
   execSync(
     'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
   );
-  await page.goto('/settings');
-});
-test.beforeEach(async ({ page }) => {
+
   await page.goto('/certifieduser');
 
   if (!process.env.CI) {
