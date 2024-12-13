@@ -93,7 +93,7 @@ function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
   return source;
 }
 
-const buildFunctions = {
+export const buildFunctions = {
   [challengeTypes.js]: buildJSChallenge,
   [challengeTypes.jsProject]: buildJSChallenge,
   [challengeTypes.html]: buildDOMChallenge,
