@@ -8,7 +8,7 @@
   margin: 0;
   padding: 1em;
   box-shadow: none;
-  background: var(--gray00);
+  background: var(--primary-background);
   border: 1px solid var(--gray15);
   margin-bottom: 1em;
 }
