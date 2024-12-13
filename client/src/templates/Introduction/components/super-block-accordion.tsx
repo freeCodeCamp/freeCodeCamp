@@ -132,6 +132,24 @@ const ComingSoon = ({ children }: { children: ReactNode }) => {
   );
 };
 
+const LinkBlock = ({
+  superBlock,
+  challenges
+}: {
+  superBlock: SuperBlocks;
+  challenges?: ChallengeNode['challenge'][];
+}) =>
+  challenges?.length ? (
+    <li className='link-block'>
+      <Block
+        block={challenges[0].block}
+        blockType={challenges[0].blockType}
+        challenges={challenges}
+        superBlock={superBlock}
+      />
+    </li>
+  ) : null;
+
 export const SuperBlockAccordion = ({
   challenges,
   superBlock,
@@ -181,28 +199,13 @@ export const SuperBlockAccordion = ({
           );
         }
 
-        // if modules is missing or empty, or if module[0].blocks is
-        // missing or empty, or if module[0].blocks[0].challenges is
-        // missing or empty, don't render the chapter
-        if (
-          !chapter.modules?.length ||
-          !chapter.modules[0]?.blocks?.length ||
-          !chapter.modules[0]?.blocks[0]?.challenges?.length
-        ) {
-          return null;
-        }
-
         if (isLinkChapter(chapter.name)) {
-          const linkedChallenge = chapter.modules[0].blocks[0].challenges[0];
           return (
-            <li key={chapter.name} className='link-chapter'>
-              <Block
-                block={linkedChallenge.block}
-                blockType={linkedChallenge.blockType}
-                challenges={[linkedChallenge]}
-                superBlock={superBlock}
-              />
-            </li>
+            <LinkBlock
+              key={chapter.name}
+              superBlock={superBlock}
+              challenges={chapter.modules[0]?.blocks[0]?.challenges}
+            />
           );
         }
 
@@ -225,16 +228,12 @@ export const SuperBlockAccordion = ({
               }
 
               if (isLinkModule(module.name)) {
-                const linkedChallenge = module.blocks[0].challenges[0];
                 return (
-                  <li key={module.name} className='link-module'>
-                    <Block
-                      block={linkedChallenge.block}
-                      blockType={linkedChallenge.blockType}
-                      challenges={[linkedChallenge]}
-                      superBlock={superBlock}
-                    />
-                  </li>
+                  <LinkBlock
+                    key={module.name}
+                    superBlock={superBlock}
+                    challenges={module.blocks[0]?.challenges}
+                  />
                 );
               }
 
