@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import store from 'store';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 import { SuperBlocks } from '../../../../shared/config/curriculum';
@@ -21,12 +20,12 @@ import { tryToShowDonationModal } from '../../redux/actions';
 import {
   isSignedInSelector,
   userSelector,
+  currentChallengeIdSelector,
   userFetchStateSelector,
   signInLoadingSelector
 } from '../../redux/selectors';
 import type { ChallengeNode, User } from '../../redux/prop-types';
 import { CertTitle } from '../../../config/cert-and-project-map';
-import { CURRENT_CHALLENGE_KEY } from '../Challenges/redux/action-types';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
@@ -70,16 +69,19 @@ configureAnchors({ offset: -40, scrollDuration: 0 });
 
 const mapStateToProps = (state: Record<string, unknown>) => {
   return createSelector(
+    currentChallengeIdSelector,
     isSignedInSelector,
     signInLoadingSelector,
     userFetchStateSelector,
     userSelector,
     (
+      currentChallengeId: string,
       isSignedIn,
       signInLoading: boolean,
       fetchState: FetchState,
       user: User
     ) => ({
+      currentChallengeId,
       isSignedIn,
       signInLoading,
       fetchState,
@@ -119,6 +121,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
       allChallengeNode: { nodes }
     },
     isSignedIn,
+    currentChallengeId,
     signInLoading,
     user,
     pageContext: { superBlock, title, certification },
@@ -179,7 +182,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
     if (isSignedIn) {
       // see if currentChallenge is in this superBlock
-      const currentChallengeId = store.get(CURRENT_CHALLENGE_KEY) as string;
       const currentChallenge = challenges.find(
         challenge => challenge.id === currentChallengeId
       );
