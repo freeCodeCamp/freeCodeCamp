@@ -961,6 +961,8 @@
     "issued": "Issued",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
     "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "quincy-larson-signature": "Quincy Larson's Signature",
+    "julia-liuson-signature": "Julia Liuson's Signature",
     "project": {
       "heading-legacy-full-stack": "As part of this Legacy Full Stack certification, {{user}} completed the following certifications:",
       "heading-exam": "As part of this certification, {{user}} passed the following exam: ",
