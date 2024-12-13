@@ -1,5 +1,4 @@
 import React, { ReactNode, useMemo } from 'react';
-import { uniqBy } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
@@ -12,9 +11,12 @@ import DropDown from '../../../assets/icons/dropdown';
 import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { FsdChapters } from '../../../../../shared/config/chapters';
+import envData from '../../../../config/env.json';
 import Block from './block';
 
 import './super-block-accordion.css';
+
+const { showUpcomingChanges } = envData;
 
 interface ChapterProps {
   dashedName: string;
@@ -33,9 +35,16 @@ interface SuperBlockTreeViewProps {
   chosenBlock: string;
 }
 
-const modules = superBlockStructure.chapters.flatMap(
-  chapter => chapter.modules
-);
+type Module = {
+  dashedName: string;
+  comingSoon?: boolean;
+  blocks: {
+    dashedName: string;
+  }[];
+};
+
+const modules = superBlockStructure.chapters.flatMap(({ modules }) => modules);
+const chapters = superBlockStructure.chapters;
 
 const isLinkModule = (name: string) => {
   const module = modules.find(module => module.dashedName === name);
@@ -44,12 +53,37 @@ const isLinkModule = (name: string) => {
 };
 
 const isLinkChapter = (name: string) => {
-  const chapter = superBlockStructure.chapters.find(
-    chapter => chapter.dashedName === name
-  );
+  const chapter = chapters.find(chapter => chapter.dashedName === name);
 
   return chapter?.chapterType === 'exam';
 };
+
+const getBlockToChapterMap = () => {
+  const blockToChapterMap = new Map<string, string>();
+  chapters.forEach(chapter => {
+    chapter.modules.forEach(module => {
+      module.blocks.forEach(block => {
+        blockToChapterMap.set(block.dashedName, chapter.dashedName);
+      });
+    });
+  });
+
+  return blockToChapterMap;
+};
+
+const getBlockToModuleMap = () => {
+  const blockToModuleMap = new Map<string, string>();
+  modules.forEach(module => {
+    module.blocks.forEach(block => {
+      blockToModuleMap.set(block.dashedName, module.dashedName);
+    });
+  });
+
+  return blockToModuleMap;
+};
+
+const blockToChapterMap = getBlockToChapterMap();
+const blockToModuleMap = getBlockToModuleMap();
 
 const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
   const { t } = useTranslation();
@@ -89,64 +123,89 @@ const Module = ({ dashedName, children, isExpanded }: ModuleProps) => {
   );
 };
 
+const ComingSoon = ({ children }: { children: ReactNode }) => {
+  const { t } = useTranslation();
+  return (
+    <li className='coming-soon'>
+      <span className='badge'>{t('misc.coming-soon')}</span> {children}
+    </li>
+  );
+};
+
+const LinkBlock = ({
+  superBlock,
+  challenges
+}: {
+  superBlock: SuperBlocks;
+  challenges?: ChallengeNode['challenge'][];
+}) =>
+  challenges?.length ? (
+    <li className='link-block'>
+      <Block
+        block={challenges[0].block}
+        blockType={challenges[0].blockType}
+        challenges={challenges}
+        superBlock={superBlock}
+      />
+    </li>
+  ) : null;
+
 export const SuperBlockAccordion = ({
   challenges,
   superBlock,
   chosenBlock
 }: SuperBlockTreeViewProps) => {
-  const { allChapters, allBlocks } = useMemo(() => {
-    const allBlocks = uniqBy(challenges, 'block').map(
-      ({ block, blockType, chapter, module }) => ({
-        name: block,
-        blockType,
-        chapter: chapter as string,
-        module: module as string,
-        challenges: challenges.filter(({ block: b }) => b === block)
-      })
-    );
+  const { t } = useTranslation();
+  const { allChapters } = useMemo(() => {
+    const populateBlocks = (blocks: { dashedName: string }[]) =>
+      blocks.map(block => {
+        const blockChallenges = challenges.filter(
+          ({ block: blockName }) => blockName === block.dashedName
+        );
 
-    const allModules = uniqBy(allBlocks, 'module').map(
-      ({ module, chapter }) => ({
-        name: module,
-        chapter,
-        blocks: allBlocks.filter(({ module: m }) => m === module)
-      })
-    );
+        return {
+          name: block.dashedName,
+          blockType: blockChallenges[0]?.blockType ?? null,
+          challenges: blockChallenges
+        };
+      });
 
-    const allChapters = uniqBy(allModules, 'chapter').map(({ chapter }) => ({
-      name: chapter,
-      modules: allModules.filter(({ chapter: c }) => c === chapter)
+    const allChapters = chapters.map(chapter => ({
+      name: chapter.dashedName,
+      comingSoon: chapter.comingSoon,
+      modules: chapter.modules.map((module: Module) => ({
+        name: module.dashedName,
+        comingSoon: module.comingSoon,
+        blocks: populateBlocks(module.blocks)
+      }))
     }));
 
-    return {
-      allChapters,
-      allModules,
-      allBlocks
-    };
+    return { allChapters };
   }, [challenges]);
 
   // Expand the outer layers in order to reveal the chosen block.
-  const expandedChapter = allBlocks.find(
-    ({ name }) => chosenBlock === name
-  )?.chapter;
-  const expandedModule = allBlocks.find(
-    ({ name }) => chosenBlock === name
-  )?.module;
+  const expandedChapter = blockToChapterMap.get(chosenBlock);
+  const expandedModule = blockToModuleMap.get(chosenBlock);
 
   return (
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
-        if (isLinkChapter(chapter.name)) {
-          const linkedChallenge = chapter.modules[0].blocks[0].challenges[0];
+        // show coming soon on production, and all the challenges in dev
+        if (chapter.comingSoon && !showUpcomingChanges) {
           return (
-            <li key={chapter.name} className='link-chapter'>
-              <Block
-                block={linkedChallenge.block}
-                blockType={linkedChallenge.blockType}
-                challenges={[linkedChallenge]}
-                superBlock={superBlock}
-              />
-            </li>
+            <ComingSoon key={chapter.name}>
+              {t(`intro:full-stack-developer.chapters.${chapter.name}`)}
+            </ComingSoon>
+          );
+        }
+
+        if (isLinkChapter(chapter.name)) {
+          return (
+            <LinkBlock
+              key={chapter.name}
+              superBlock={superBlock}
+              challenges={chapter.modules[0]?.blocks[0]?.challenges}
+            />
           );
         }
 
@@ -157,17 +216,24 @@ export const SuperBlockAccordion = ({
             isExpanded={expandedChapter === chapter.name}
           >
             {chapter.modules.map(module => {
-              if (isLinkModule(module.name)) {
-                const linkedChallenge = module.blocks[0].challenges[0];
+              // show coming soon on production, and all the challenges in dev
+              if (module.comingSoon && !showUpcomingChanges) {
                 return (
-                  <li key={module.name} className='link-module'>
-                    <Block
-                      block={linkedChallenge.block}
-                      blockType={linkedChallenge.blockType}
-                      challenges={[linkedChallenge]}
-                      superBlock={superBlock}
-                    />
-                  </li>
+                  <ComingSoon key={chapter.name}>
+                    <span className='coming-soon-module'>
+                      {t(`intro:full-stack-developer.modules.${module.name}`)}
+                    </span>
+                  </ComingSoon>
+                );
+              }
+
+              if (isLinkModule(module.name)) {
+                return (
+                  <LinkBlock
+                    key={module.name}
+                    superBlock={superBlock}
+                    challenges={module.blocks[0]?.challenges}
+                  />
                 );
               }
 
@@ -178,6 +244,7 @@ export const SuperBlockAccordion = ({
                   isExpanded={expandedModule === module.name}
                 >
                   {module.blocks.map(block => (
+                    // maybe TODO: allow blocks to be "coming soon"
                     <li key={block.name}>
                       <Block
                         block={block.name}

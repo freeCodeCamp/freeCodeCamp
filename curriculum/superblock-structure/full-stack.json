@@ -2,6 +2,7 @@
   "chapters": [
     {
       "dashedName": "freecodecamp",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "getting-started-with-freecodecamp",
@@ -11,6 +12,7 @@
     },
     {
       "dashedName": "html",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "basic-html",
@@ -71,6 +73,7 @@
     },
     {
       "dashedName": "css",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "computer-basics",
@@ -276,6 +279,7 @@
     },
     {
       "dashedName": "javascript",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "code-editors",
@@ -546,6 +550,7 @@
 
     {
       "dashedName": "frontend-libraries",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "react-fundamentals",
@@ -564,6 +569,7 @@
         },
         {
           "dashedName": "react-state-hooks-and-routing",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "quiz-react-state-and-hooks" },
             { "dashedName": "quiz-advanced-react" }
@@ -571,6 +577,7 @@
         },
         {
           "dashedName": "performance",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-web-performance" },
             { "dashedName": "quiz-web-performance" }
@@ -578,6 +585,7 @@
         },
         {
           "dashedName": "css-libraries-and-frameworks",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-css-libraries-and-frameworks" },
             { "dashedName": "quiz-css-libraries-and-frameworks" }
@@ -585,6 +593,7 @@
         },
         {
           "dashedName": "testing",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-testing" },
             { "dashedName": "quiz-testing" }
@@ -592,6 +601,7 @@
         },
         {
           "dashedName": "typescript-fundamentals",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-typescript" },
             { "dashedName": "quiz-typescript" }
@@ -606,6 +616,7 @@
     },
     {
       "dashedName": "relational-databases",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "bash-fundamentals",
@@ -669,6 +680,16 @@
           "blocks": [{ "dashedName": "review-relational-databases" }]
         }
       ]
+    },
+    {
+      "dashedName": "backend-javascript",
+      "comingSoon": true,
+      "modules": []
+    },
+    {
+      "dashedName": "python",
+      "comingSoon": true,
+      "modules": []
     },
     {
       "chapterType": "exam",
