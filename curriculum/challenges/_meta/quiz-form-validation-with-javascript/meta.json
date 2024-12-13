@@ -3,7 +3,6 @@
   "blockType": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": true,
-  "usesMultifileEditor": true,
   "dashedName": "quiz-form-validation-with-javascript",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

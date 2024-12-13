@@ -1736,7 +1736,7 @@
       "form-validation": "Form Validation",
       "javascript-dates": "Dates",
       "audio-and-video-events": "Audio and Video Events",
-      "maps-sets-and-json": "Maps and Sets",
+      "maps-and-sets": "Maps and Sets",
       "localstorage-and-crud-operations": "localStorage and CRUD Operations",
       "classes-and-the-this-keyword": "Classes",
       "recursion": "Recursion",
@@ -2029,9 +2029,11 @@
           "In these lecture videos, you will learn about working with backgrounds and borders."
         ]
       },
-      "pahx": {
-        "title": "45",
-        "intro": []
+      "lab-blog-post-card": {
+        "title": "Design a Blog Post Card",
+        "intro": [
+          "In this lab, you'll design a blog post card using HTML and CSS"
+        ]
       },
       "review-css-backgrounds-and-borders": {
         "title": "CSS Backgrounds and Borders Review",
@@ -2857,7 +2859,7 @@
       "quiz-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Fundamentals Quiz."
+          "Test what you've learned in this quiz on JavaScript Fundamentals."
         ]
       },
       "lecture-working-with-higher-order-functions-and-callbacks": {
@@ -2898,7 +2900,7 @@
       "lecture-working-with-the-dom-click-events-and-web-apis": {
         "title": "Working with the DOM, Click Events, and Web APIs",
         "intro": [
-          "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using Javascript."
+          "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using JavaScript."
         ]
       },
       "gibb": {
@@ -2927,7 +2929,7 @@
       "quiz-dom-manipulation-and-click-event-with-javascript": {
         "title": "DOM Manipulation and Click Events with JavaScript Quiz",
         "intro": [
-          "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript Quiz."
+          "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript."
         ]
       },
       "lecture-understanding-the-event-object-and-event-delegation": {
@@ -3128,24 +3130,29 @@
           "In these lecture videos, you will learn about JavaScript Maps and Sets."
         ]
       },
-      "cvsw": {
-        "title": "226",
-        "intro": []
-      },
-      "cvs1": {
-        "title": "227",
-        "intro": []
-      },
-      "review-javascript-maps-sets-and-json": {
-        "title": "JavaScript Maps, Sets, and JSON Review",
+      "workshop-plant-nursery-catalog": {
+        "title": "Build a Plant Nursery Catalog",
         "intro": [
-          "Review the JavaScript Maps, Sets, and JSON concepts to prepare for the upcoming quiz."
+          "In this workshop, you will practice maps and sets by building a plant nursery catalog in JavaScript."
         ]
       },
-      "quiz-javascript-maps-sets-and-json": {
-        "title": "JavaScript Maps, Sets, and JSON Quiz",
+      "lab-voting-system": {
+        "title": "Build a Voting System",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Maps, Sets, and JSON."
+          "In this lab, you will build a voting system using Maps and Sets."
+        ]
+      },
+      "review-javascript-maps-and-sets": {
+        "title": "JavaScript Maps and Sets Review",
+        "intro": [
+          "Before you are quizzed on JS Maps and Sets, you first need to review.",
+          "Open up this page to review concepts such as the <code>Map</code> and <code>Set</code> objects, as well as WeakSet and WeakMap."
+        ]
+      },
+      "quiz-javascript-maps-and-sets": {
+        "title": "JavaScript Maps and Sets Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Maps and Sets."
         ]
       },
       "lecture-working-with-client-side-storage-and-crud-operations": {
@@ -3168,7 +3175,8 @@
       "review-local-storage-and-crud": {
         "title": "Local Storage and CRUD Review",
         "intro": [
-          "Review the Local Storage and CRUD concepts to prepare for the upcoming quiz."
+          "Before you are quizzed on working with <code>localStorage</code>, you first need to review the concepts.",
+          "Open up this page to review the <code>localStorage</code> property, <code>sessionStorage</code> property and more."
         ]
       },
       "quiz-local-storage-and-crud": {
@@ -3328,14 +3336,16 @@
         "title": "253",
         "intro": []
       },
-      "cvaf": {
-        "title": "254",
-        "intro": []
+      "lab-fcc-forum-leaderboard": {
+        "title": "Build an fCC Forum Leaderboard",
+        "intro": [
+          "For this lab you will practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
+        ]
       },
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
-          "Review the Asynchronous JavaScript concepts to prepare for the upcoming quiz."
+          "Review Asynchronous JavaScript concepts to prepare for the upcoming quiz."
         ]
       },
       "quiz-asynchronous-javascript": {
@@ -3347,7 +3357,8 @@
       "review-javascript": {
         "title": "JavaScript Review",
         "intro": [
-          "Review the JavaScript concepts to prepare for the upcoming quiz."
+          "Before you take the JavaScript prep exam, you will need to review first.",
+          "Open up this page, to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
       "kagw": {
@@ -3360,13 +3371,20 @@
           "In these lecture videos, you will get an introduction to JavaScript libraries and frameworks."
         ]
       },
+      "workshop-reusable-mega-navbar": {
+        "title": "Build a Reusable Mega Navbar",
+        "intro": [
+          "In the previous lecture videos, you learned how to work with components in React.",
+          "In this workshop, you will build a reusable Navbar component using React."
+        ]
+      },
       "oxiv": {
         "title": "260",
         "intro": []
       },
-      "fjvx": {
-        "title": "261",
-        "intro": []
+      "lab-reusable-footer": {
+        "title": "Build a Reusable Footer",
+        "intro": ["In this lab, you will use React to build a reusable footer."]
       },
       "lecture-working-with-data-in-react": {
         "title": "Working with Data in React",
@@ -3378,13 +3396,17 @@
         "title": "263",
         "intro": []
       },
-      "bgtd": {
-        "title": "264",
-        "intro": []
+      "lab-mood-board": {
+        "title": "Build a Mood Board",
+        "intro": [
+          "In this lab, you will create a mood board using a React with props."
+        ]
       },
-      "ascd": {
-        "title": "265",
-        "intro": []
+      "review-react-basics": {
+        "title": "React Basics Review",
+        "intro": [
+          "Review basic React concepts to prepare for the upcoming quiz."
+        ]
       },
       "quiz-react-basics": {
         "title": "React Basics Quiz",
@@ -3436,9 +3458,11 @@
         "title": "277",
         "intro": []
       },
-      "fcom": {
-        "title": "278",
-        "intro": []
+      "lab-weather-app": {
+        "title": "Build a Weather App",
+        "intro": [
+          "In this lab you will build a Weather App using an API to fetch the data."
+        ]
       },
       "ffpt": {
         "title": "279",

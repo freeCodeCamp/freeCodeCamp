@@ -147,7 +147,7 @@
         },
         {
           "title": "Free Education",
-          "description": "Learn from our charity and save money on your education. No paywalls. No hidden costs."
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
         },
         {
           "title": "Extensive Certifications",
@@ -166,6 +166,7 @@
     "professional-certs-heading": "免费获得专业认证：",
     "interview-prep-heading": "为开发人员面试求职做好准备：",
     "legacy-curriculum-heading": "探索我们的旧版课程：",
+    "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "即将推出的课程：",
     "faq": "常见问题：",
     "faqs": [
@@ -238,6 +239,8 @@
     "sound-mode": "为整个网站添加令人愉快的吉他原声音乐。在编辑器输入、完成挑战、申请认证等时刻，你将获得音乐反馈。",
     "sound-volume": "营火音效音量",
     "scrollbar-width": "编辑器滚动条宽度",
+    "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
+    "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "在一项挑战中，按 ESC 键和问号可显示可用的快捷方式列表。",
     "username": {
       "contains invalid characters": "用户名 \"{{username}}\" 含有无效字符",
@@ -346,6 +349,7 @@
     "donated": "给社区捐款",
     "projects": "项目",
     "stats": "统计数据",
+    "activity": "Activity",
     "timeline": "时间线",
     "none-completed": "尚未完成任何挑战。",
     "get-started": "从这里开始。",
@@ -712,6 +716,8 @@
     "help-millions-learn": "帮助数百万人学习",
     "reach-goals-faster": "更快地实现你的目标",
     "remove-distractions": "消除干扰",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "这是一个 20 秒的动画广告，旨在鼓励学员成为 freeCodeCamp 的支持者。动画开头是一只泰迪熊成为支持者。最后，弹窗消失了，泰迪熊完成了所有目标。它毕业了，成为了帮助全世界人们的教育超级英雄。",
     "animation-countdown": "该动画将在 {{secondsRemaining}} 秒后停止。"
   },
@@ -893,6 +899,7 @@
     "invalid-update-flag": "你正在尝试访问禁止的资源。如果这是一个有效的请求，请在 https://forum.freecodecamp.org 上请求帮助。",
     "generate-exam-error": "生成考试时发生错误。",
     "cert-not-found": "认证 {{certSlug}} 不存在。",
+    "reset-editor-layout": "Your editor layout has been reset.",
     "ms": {
       "transcript": {
         "link-err-1": "请在请求中包含一个 Microsoft 成绩单的 URL。",
