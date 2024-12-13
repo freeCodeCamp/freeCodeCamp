@@ -267,7 +267,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   const idToNameMap = new Map();
   for (const id of getCertIds()) {
     const certPath = getPathFromID(id);
-    const certName = t(`certification.title.${certPath}`);
+    const certName = t(`certification.title.${certPath}-cert`);
     idToNameMap.set(id, {
       challengeTitle: certName,
       certPath: certPath
