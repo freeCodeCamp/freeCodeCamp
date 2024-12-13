@@ -2,6 +2,7 @@
   "chapters": [
     {
       "dashedName": "freecodecamp",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "getting-started-with-freecodecamp",
@@ -11,6 +12,7 @@
     },
     {
       "dashedName": "html",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "basic-html",
@@ -71,6 +73,7 @@
     },
     {
       "dashedName": "css",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "computer-basics",
@@ -275,6 +278,7 @@
     },
     {
       "dashedName": "javascript",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "code-editors",
@@ -541,6 +545,7 @@
 
     {
       "dashedName": "frontend-libraries",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "react-fundamentals",
