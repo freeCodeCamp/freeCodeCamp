@@ -147,7 +147,7 @@
         },
         {
           "title": "Free Education",
-          "description": "Learn from our charity and save money on your education. No paywalls. No hidden costs."
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
         },
         {
           "title": "Extensive Certifications",
@@ -166,6 +166,7 @@
     "professional-certs-heading": "Earn free professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
     "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
+    "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "faq": "Frequently asked questions:",
     "faqs": [
@@ -238,6 +239,8 @@
     "sound-mode": "Das sorgt für den angenehmen Klang der Akustikgitarre auf der gesamten Website. Du bekommst musikalisches Feedback, wenn du im Editor tippst, Aufgaben löst, Zertifizierungen beantragst und vieles mehr.",
     "sound-volume": "Lautstärke Lagerfeuer-Modus:",
     "scrollbar-width": "Editor Scrollbar Width",
+    "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
+    "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
       "contains invalid characters": "Der Benutzername \"{{username}}\" enthält ungültige Zeichen",
@@ -346,6 +349,7 @@
     "donated": "Donated to the community",
     "projects": "Projects",
     "stats": "Stats",
+    "activity": "Activity",
     "timeline": "Zeitleiste",
     "none-completed": "Es wurden noch keine Herausforderungen abgeschlossen.",
     "get-started": "Hier geht es los.",
@@ -618,6 +622,8 @@
     "progress-modal-cta-10": "Donate now to help us develop free professional programming certifications for all.",
     "help-us-reach-20k": "Donate now to help our charity reach our goal of 20,000 monthly supporters this year.",
     "beta-certification": "This certification is currently in beta. Please consider donating to support the completion of its development.",
+    "unfinished-certification": "This certification is currently in active development. While there isn't a claimable certification available at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "consider-donating": "Please consider donating to support the completion of its development.",
     "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "Großartig. Du hast soeben {{block}} abgeschlossen.",
     "credit-card": "Kreditkarte",
@@ -710,6 +716,8 @@
     "help-millions-learn": "Help millions of people learn",
     "reach-goals-faster": "Reach your goals faster",
     "remove-distractions": "Remove distractions",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.",
     "animation-countdown": "This animation will stop after {{secondsRemaining}} seconds."
   },
@@ -852,7 +860,7 @@
     "expired-link": "Es sieht so aus, als ob der Link, den du geklickt hast, abgelaufen wäre. Bitte fordere einen neuen Link an, um dich anzumelden.",
     "signin-success": "Geschafft! Du hast dich in deinem Konto angemeldet. Viel Spaß beim Programmieren!",
     "social-auth-gone": "Aus Gründen des Datenschutzes verabschieden wir uns von der sozialen Authentifizierung. Beim nächsten Mal empfehlen wir, deine E-Mail-Adresse zu verwenden: {{email}}, um sich stattdessen anzumelden.",
-    "name-needed": "Wir benötigen deinen Namen, damit wir ihn auf deinem Zertifikat eintragen können. Füge deinen Namen zu deinen Kontoeinstellungen hinzu und klicke auf den Speichern-Button. Dann können wir dein Zertifikat ausstellen.",
+    "name-needed": "We need your name to put it on your certification. Please add your name in your profile and click save. Then we can issue your certification.",
     "incomplete-steps": "Es sieht so aus, als hättest du die notwendigen Schritte nicht abgeschlossen. Bitte vervollständige die erforderlichen Projekte, um die {{name}} Zertifizierung zu erhalten.",
     "already-claimed": "Es sieht so aus, als hättest du bereits die {{name}} Zertifizierung erhalten",
     "cert-claim-success": "@{{username}}, du hast erfolgreich die {{name}} Zertifizierung bestanden! Herzlichen Glückwunsch im Namen des freeCodeCamp.org Teams!",
@@ -891,6 +899,7 @@
     "invalid-update-flag": "Du versuchst, auf verbotene Ressourcen zuzugreifen. Bitte fordere unter https://forum.freecodecamp.org Unterstützung an, wenn dies eine gültige Anfrage ist.",
     "generate-exam-error": "An error occurred trying to generate your exam.",
     "cert-not-found": "The certification {{certSlug}} does not exist.",
+    "reset-editor-layout": "Your editor layout has been reset.",
     "ms": {
       "transcript": {
         "link-err-1": "Please include a Microsoft transcript URL in the request.",

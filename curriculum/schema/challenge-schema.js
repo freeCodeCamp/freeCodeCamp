@@ -129,17 +129,15 @@ const schema = Joi.object()
       ).required(),
       otherwise: Joi.valid(null)
     }),
-    blockLayout: Joi.when('superBlock', {
-      is: [SuperBlocks.FullStackDeveloper],
-      then: Joi.valid(
-        'challenge-list',
-        'challenge-grid',
-        'link',
-        'project-list',
-        'legacy-challenge-list',
-        'legacy-link'
-      ).required()
-    }),
+    blockLayout: Joi.valid(
+      'challenge-list',
+      'challenge-grid',
+      'link',
+      'project-list',
+      'legacy-challenge-list',
+      'legacy-link',
+      'legacy-challenge-grid'
+    ).required(),
     challengeOrder: Joi.number(),
     chapter: Joi.string().when('superBlock', {
       is: 'full-stack-developer',
@@ -147,7 +145,7 @@ const schema = Joi.object()
       otherwise: Joi.optional()
     }),
     certification: Joi.string().regex(slugWithSlashRE),
-    challengeType: Joi.number().min(0).max(24).required(),
+    challengeType: Joi.number().min(0).max(25).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -182,6 +180,7 @@ const schema = Joi.object()
       'Euler',
       'Rosetta'
     ),
+    isLastChallengeInBlock: Joi.boolean().required(),
     videoUrl: Joi.string().allow(''),
     fillInTheBlank: Joi.object().keys({
       sentence: Joi.string().required(),

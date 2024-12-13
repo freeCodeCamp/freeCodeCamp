@@ -7,6 +7,8 @@
 
 .avatar-camper {
   display: flex;
+  position: absolute;
+  top: -160px;
 }
 
 .header {
@@ -36,7 +38,6 @@
 .profile-meta-container {
   display: flex;
   flex-direction: row;
-  margin-bottom: 2rem;
   color: var(--quaternary-color);
 }
 
@@ -44,11 +45,17 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 .profile-edit-container h1 {
   margin: 0;
+}
+
+.profile-edit-container button {
+  position: absolute;
+  right: 18px;
+  top: 18px;
 }
 
 .profile-meta-container div {
@@ -57,6 +64,10 @@
 
 .profile-meta-container svg {
   margin-inline-end: 4px;
+}
+
+.social-icons-row {
+  margin-top: 1em;
 }
 
 .social-icons-row a {

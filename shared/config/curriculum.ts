@@ -23,7 +23,6 @@ export enum SuperBlocks {
   CollegeAlgebraPy = 'college-algebra-with-python',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   FullStackDeveloper = 'full-stack-developer',
-  UpcomingPython = 'upcoming-python',
   A2English = 'a2-english-for-developers',
   B1English = 'b1-english-for-developers',
   RosettaCode = 'rosetta-code',
@@ -36,6 +35,10 @@ export enum SuperBlocks {
  *
  * SuperBlockStages.Upcoming = SHOW_UPCOMING_CHANGES === 'true'
  * 'Upcoming' is for development -> not shown on stag or prod anywhere
+ *
+ * SuperBlockStages.Next = deployed, but only shown if the Growthbook feature
+ * is enabled.
+ *
  */
 export enum SuperBlockStage {
   Core,
@@ -44,11 +47,13 @@ export enum SuperBlockStage {
   Extra,
   Legacy,
   New,
-  Upcoming
+  Upcoming,
+  Next
 }
 
 const defaultStageOrder = [
   SuperBlockStage.Core,
+  SuperBlockStage.Next,
   SuperBlockStage.English,
   SuperBlockStage.Professional,
   SuperBlockStage.Extra,
@@ -57,9 +62,12 @@ const defaultStageOrder = [
 
 export function getStageOrder({
   showNewCurriculum,
-  showUpcomingChanges
+  showUpcomingChanges,
+  showNextCurriculum
 }: Config): SuperBlockStage[] {
-  const stageOrder = [...defaultStageOrder];
+  const stageOrder = showNextCurriculum
+    ? [...defaultStageOrder]
+    : [...defaultStageOrder.filter(stage => stage !== SuperBlockStage.Next)];
 
   if (showNewCurriculum) stageOrder.push(SuperBlockStage.New);
   if (showUpcomingChanges) stageOrder.push(SuperBlockStage.Upcoming);
@@ -86,6 +94,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CollegeAlgebraPy
   ],
+  [SuperBlockStage.Next]: [SuperBlocks.FullStackDeveloper],
   [SuperBlockStage.English]: [SuperBlocks.A2English],
   [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStage.Extra]: [
@@ -100,11 +109,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.PythonForEverybody
   ],
   [SuperBlockStage.New]: [],
-  [SuperBlockStage.Upcoming]: [
-    SuperBlocks.B1English,
-    SuperBlocks.FullStackDeveloper,
-    SuperBlocks.UpcomingPython
-  ]
+  [SuperBlockStage.Upcoming]: [SuperBlocks.B1English]
 };
 
 Object.freeze(superBlockStages);
@@ -127,7 +132,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
     SuperBlocks.FullStackDeveloper,
-    SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -137,7 +141,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.TheOdinProject,
     SuperBlocks.FullStackDeveloper,
-    SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -147,7 +150,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.TheOdinProject,
     SuperBlocks.FullStackDeveloper,
-    SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -157,7 +159,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
     SuperBlocks.FullStackDeveloper,
-    SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -165,7 +166,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.Portuguese]: [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.FullStackDeveloper,
-    SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -173,7 +173,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.Ukrainian]: [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.FullStackDeveloper,
-    SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English
   ],
@@ -181,7 +180,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
     SuperBlocks.FullStackDeveloper,
-    SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English
   ],
@@ -197,7 +195,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
     SuperBlocks.FullStackDeveloper,
-    SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -221,7 +218,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.FullStackDeveloper,
-    SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody
@@ -243,7 +239,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibs,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.FullStackDeveloper,
-    SuperBlocks.UpcomingPython,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.PythonForEverybody,
@@ -258,30 +253,29 @@ Object.freeze(notAuditedSuperBlocks);
 type Config = {
   showNewCurriculum: boolean;
   showUpcomingChanges: boolean;
+  showNextCurriculum: boolean;
 };
 
-type LanguagesConfig = Config & {
-  language: string;
-};
-
-export function createFlatSuperBlockMap(config: Config): SuperBlocks[] {
+export function generateSuperBlockList(config: Config): SuperBlocks[] {
   return getStageOrder(config)
     .map(stage => superBlockStages[stage])
     .flat();
 }
 
 export function getAuditedSuperBlocks({
-  language = 'english',
-  showNewCurriculum,
-  showUpcomingChanges
-}: LanguagesConfig): SuperBlocks[] {
+  language = 'english'
+}: {
+  language: string;
+}): SuperBlocks[] {
   if (!Object.prototype.hasOwnProperty.call(notAuditedSuperBlocks, language)) {
     throw Error(`'${language}' key not found in 'notAuditedSuperBlocks'`);
   }
 
-  const flatSuperBlockMap = createFlatSuperBlockMap({
-    showNewCurriculum,
-    showUpcomingChanges
+  // To find the audited superblocks, we need to start with all superblocks.
+  const flatSuperBlockMap = generateSuperBlockList({
+    showNewCurriculum: true,
+    showUpcomingChanges: true,
+    showNextCurriculum: true
   });
   const auditedSuperBlocks = flatSuperBlockMap.filter(
     superBlock =>

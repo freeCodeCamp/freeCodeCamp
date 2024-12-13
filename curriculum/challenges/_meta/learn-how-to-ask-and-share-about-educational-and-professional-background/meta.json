@@ -394,5 +394,6 @@
       "title": "Task 92"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }

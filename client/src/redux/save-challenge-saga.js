@@ -1,6 +1,6 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 
-import { challengeTypes } from '../../../shared/config/challenge-types';
+import { canSaveToDB } from '../../../shared/config/challenge-types';
 import { createFlashMessage } from '../components/Flash/redux';
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import {
@@ -34,11 +34,7 @@ function* saveChallengeSaga() {
     );
   }
 
-  // only allow saving of multifileCertProject's
-  if (
-    challengeType === challengeTypes.multifileCertProject ||
-    challengeType === challengeTypes.multifilePythonCertProject
-  ) {
+  if (canSaveToDB(challengeType)) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 

@@ -210,5 +210,6 @@
       "title": "Task 48"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }

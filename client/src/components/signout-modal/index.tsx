@@ -8,6 +8,7 @@ import { Button, Modal, Spacer } from '@freecodecamp/ui';
 import { hardGoTo as navigate, closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
 import { apiLocation } from '../../../config/env.json';
+import callGA from '../../analytics/call-ga';
 
 const mapStateToProps = createSelector(
   isSignoutModalOpenSelector,
@@ -41,6 +42,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
 
   const handleSignout = () => {
     closeSignoutModal();
+    callGA({ event: 'sign_out', user_id: undefined });
     navigate(`${apiLocation}/signout`);
   };
 

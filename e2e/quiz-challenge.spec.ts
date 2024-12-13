@@ -6,8 +6,6 @@ test.describe('Quiz challenge', () => {
     'The FSD superblock is not available if SHOW_UPCOMING_CHANGES is false'
   );
 
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
     await page.goto(
       '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html'

@@ -1,5 +1,7 @@
 const Joi = require('joi');
 
+const { SuperBlocks } = require('../../shared/config/curriculum');
+
 const slugRE = new RegExp('^[a-z0-9-]+$');
 const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
 
@@ -12,8 +14,9 @@ const schema = Joi.object()
       'link',
       'project-list',
       'legacy-challenge-list',
-      'legacy-link'
-    ),
+      'legacy-link',
+      'legacy-challenge-grid'
+    ).required(),
     blockType: Joi.valid(
       'workshop',
       'lab',
@@ -24,7 +27,10 @@ const schema = Joi.object()
     ),
     isUpcomingChange: Joi.boolean().required(),
     dashedName: Joi.string().regex(slugRE).required(),
-    superBlock: Joi.string().regex(slugWithSlashRE).required(),
+    superBlock: Joi.string()
+      .regex(slugWithSlashRE)
+      .valid(...Object.values(SuperBlocks))
+      .required(),
     order: Joi.number().when('superBlock', {
       is: 'full-stack-developer',
       then: Joi.forbidden(),
@@ -72,5 +78,5 @@ const schema = Joi.object()
   .unknown(false);
 
 exports.metaSchemaValidator = meta => {
-  return schema.validate(meta);
+  return schema.validate(meta, { abortEarly: false });
 };

@@ -101,7 +101,8 @@ export function constructUserExam(
   const config = {
     totalTimeInMS: exam.config.totalTimeInMS,
     name: exam.config.name,
-    note: exam.config.note
+    note: exam.config.note,
+    retakeTimeInMS: exam.config.retakeTimeInMS
   };
 
   const userExam: UserExam = {

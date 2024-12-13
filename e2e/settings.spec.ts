@@ -47,8 +47,6 @@ const legacyCertifications = [
 ];
 
 test.describe('Settings - Certified User', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
     execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/settings');
@@ -170,15 +168,6 @@ test.describe('Settings - Certified User', () => {
       name: translations.buttons['download-data']
     });
     await expect(downloadButton).toBeVisible();
-
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['night-mode'],
-          exact: true
-        })
-        .locator('p')
-    ).toBeVisible();
     await expect(page.locator('#legendsound')).toBeVisible();
     await expect(
       page.getByText(translations.settings['sound-volume'])
@@ -262,8 +251,6 @@ test.describe('Settings - Certified User', () => {
 // Instead of simulating 6 cert claim flows,
 // we use the data of Certified User but remove the Full Stack cert.
 test.describe('Settings - Certified User without Full Stack Certification', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
     execSync(
       'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'

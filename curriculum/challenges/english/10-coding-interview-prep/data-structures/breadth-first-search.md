@@ -16,7 +16,8 @@ This algorithm starts at one node and visits all its neighbors that are one edge
 
 An important data structure that will help implement the breadth-first search algorithm is the queue. This is an array where you can add elements to one end and remove elements from the other end. This is also known as a <dfn>FIFO</dfn> or <dfn>First-In-First-Out</dfn> data structure.
 
-Visually, this is what the algorithm is doing. ![Breadth first search algorithm moving through a tree](https://camo.githubusercontent.com/2f57e6239884a1a03402912f13c49555dec76d06/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f342f34362f416e696d617465645f4246532e676966)
+Visually, this is what the algorithm is doing:
+<img alt="animation showing the breadth first search algorithm" src='https://cdn.freecodecamp.org/curriculum/coding-interview-prep/breadth-first-search.gif'>
 
 The grey shading represents a node getting added into the queue and the black shading represents a node getting removed from the queue. See how every time a node gets removed from the queue (node turns black), all their neighbors get added into the queue (node turns grey).
 
@@ -35,97 +36,54 @@ Your function will output a JavaScript object key-value pairs with the node and 
 The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `1` should return `{0: 1, 1: 0, 2: 1, 3: 2}`
 
 ```js
-assert(
-  (function () {
-    var graph = [
-      [0, 1, 0, 0],
-      [1, 0, 1, 0],
-      [0, 1, 0, 1],
-      [0, 0, 1, 0]
-    ];
-    var results = bfs(graph, 1);
-    return isEquivalent(results, { 0: 1, 1: 0, 2: 1, 3: 2 });
-  })()
-);
+var graph = [
+  [0, 1, 0, 0],
+  [1, 0, 1, 0],
+  [0, 1, 0, 1],
+  [0, 0, 1, 0]
+];
+var results = bfs(graph, 1);
+assert.deepEqual(results, { 0: 1, 1: 0, 2: 1, 3: 2 });
 ```
 
 The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]` with a start node of `1` should return `{0: 1, 1: 0, 2: 1, 3: Infinity}`
 
 ```js
-assert(
-  (function () {
-    var graph = [
-      [0, 1, 0, 0],
-      [1, 0, 1, 0],
-      [0, 1, 0, 0],
-      [0, 0, 0, 0]
-    ];
-    var results = bfs(graph, 1);
-    return isEquivalent(results, { 0: 1, 1: 0, 2: 1, 3: Infinity });
-  })()
-);
+var graph = [
+  [0, 1, 0, 0],
+  [1, 0, 1, 0],
+  [0, 1, 0, 0],
+  [0, 0, 0, 0]
+];
+var results = bfs(graph, 1);
+ assert.deepEqual(results, { 0: 1, 1: 0, 2: 1, 3: Infinity });
 ```
 
 The input graph `[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]` with a start node of `0` should return `{0: 0, 1: 1, 2: 2, 3: 3}`
 
 ```js
-assert(
-  (function () {
-    var graph = [
-      [0, 1, 0, 0],
-      [1, 0, 1, 0],
-      [0, 1, 0, 1],
-      [0, 0, 1, 0]
-    ];
-    var results = bfs(graph, 0);
-    return isEquivalent(results, { 0: 0, 1: 1, 2: 2, 3: 3 });
-  })()
-);
+var graph = [
+  [0, 1, 0, 0],
+  [1, 0, 1, 0],
+  [0, 1, 0, 1],
+  [0, 0, 1, 0]
+];
+var results = bfs(graph, 0);
+ assert.deepEqual(results, { 0: 0, 1: 1, 2: 2, 3: 3 });
 ```
 
 The input graph `[[0, 1], [1, 0]]` with a start node of `0` should return `{0: 0, 1: 1}`
 
 ```js
-assert(
-  (function () {
-    var graph = [
-      [0, 1],
-      [1, 0]
-    ];
-    var results = bfs(graph, 0);
-    return isEquivalent(results, { 0: 0, 1: 1 });
-  })()
-);
+var graph = [
+  [0, 1],
+  [1, 0]
+];
+var results = bfs(graph, 0);
+assert.deepEqual(results, { 0: 0, 1: 1 });
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-// Source: http://adripofjavascript.com/blog/drips/object-equality-in-javascript.html
-function isEquivalent(a, b) {
-    // Create arrays of property names
-    var aProps = Object.getOwnPropertyNames(a);
-    var bProps = Object.getOwnPropertyNames(b);
-    // If number of properties is different,
-    // objects are not equivalent
-    if (aProps.length != bProps.length) {
-        return false;
-    }
-    for (var i = 0; i < aProps.length; i++) {
-        var propName = aProps[i];
-        // If values of same property are not equal,
-        // objects are not equivalent
-        if (a[propName] !== b[propName]) {
-            return false;
-        }
-    }
-    // If we made it this far, objects
-    // are considered equivalent
-    return true;
-}
-```
 
 ## --seed-contents--
 

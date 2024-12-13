@@ -6,15 +6,14 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
 
-import './tool-panel.css';
+import { canSaveToDB } from '../../../../../shared/config/challenge-types';
 import { openModal, executeChallenge } from '../redux/actions';
 import { challengeMetaSelector } from '../redux/selectors';
-
 import { saveChallenge } from '../../../redux/actions';
 import { isSignedInSelector } from '../../../redux/selectors';
-import { isProjectBased } from '../../../utils/curriculum-layout';
+
+import './tool-panel.css';
 
 const mapStateToProps = createSelector(
   challengeMetaSelector,
@@ -77,27 +76,21 @@ function ToolPanel({
       <Button block={true} variant='primary' onClick={handleRunTests}>
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
-      {isSignedIn &&
-        (challengeType === challengeTypes.multifileCertProject ||
-          challengeType === challengeTypes.multifilePythonCertProject) && (
-          <>
-            <Spacer size='xxs' />
-            <Button block={true} variant='primary' onClick={saveChallenge}>
-              {isMobile ? t('buttons.save') : t('buttons.save-code')}
-            </Button>
-          </>
-        )}
+      {isSignedIn && canSaveToDB(challengeType) && (
+        <>
+          <Spacer size='xxs' />
+          <Button block={true} variant='primary' onClick={saveChallenge}>
+            {isMobile ? t('buttons.save') : t('buttons.save-code')}
+          </Button>
+        </>
+      )}
       <>
         <Spacer size='xxs' />
         <Button block={true} variant='primary' onClick={openResetModal}>
           {isMobile
-            ? t(
-                isProjectBased(challengeType)
-                  ? 'buttons.revert'
-                  : 'buttons.reset'
-              )
+            ? t(canSaveToDB(challengeType) ? 'buttons.revert' : 'buttons.reset')
             : t(
-                isProjectBased(challengeType)
+                canSaveToDB(challengeType)
                   ? 'buttons.revert-to-saved-code'
                   : 'buttons.reset-lesson'
               )}

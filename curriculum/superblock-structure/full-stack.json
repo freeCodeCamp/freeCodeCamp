@@ -1,7 +1,18 @@
 {
   "chapters": [
     {
+      "dashedName": "freecodecamp",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "getting-started-with-freecodecamp",
+          "blocks": [{ "dashedName": "lecture-welcome-to-freecodecamp" }]
+        }
+      ]
+    },
+    {
       "dashedName": "html",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "basic-html",
@@ -54,6 +65,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-html",
           "blocks": [{ "dashedName": "review-html" }]
         }
@@ -61,6 +73,7 @@
     },
     {
       "dashedName": "css",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "computer-basics",
@@ -88,6 +101,7 @@
             { "dashedName": "lecture-styling-lists-and-links" },
             { "dashedName": "lab-stylized-to-do-list" },
             { "dashedName": "lecture-working-with-backgrounds-and-borders" },
+            { "dashedName": "lab-blog-post-card" },
             { "dashedName": "review-css-backgrounds-and-borders" },
             { "dashedName": "quiz-css-backgrounds-and-borders" }
           ]
@@ -119,6 +133,7 @@
             {
               "dashedName": "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css"
             },
+            { "dashedName": "workshop-greeting-card" },
             { "dashedName": "lab-job-application-form" },
             { "dashedName": "review-css-pseudo-classes" },
             { "dashedName": "quiz-css-pseudo-classes" }
@@ -129,6 +144,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-colors-in-css" },
             { "dashedName": "workshop-colored-markers" },
+            { "dashedName": "lab-colored-boxes" },
             { "dashedName": "review-css-colors" },
             { "dashedName": "quiz-css-colors" }
           ]
@@ -246,6 +262,7 @@
           "dashedName": "css-animations",
           "blocks": [
             { "dashedName": "lecture-animations-and-accessibility" },
+            { "dashedName": "workshop-ferris-wheel" },
             { "dashedName": "lab-moon-orbit" },
             { "dashedName": "workshop-flappy-penguin" },
             { "dashedName": "lab-personal-portfolio" },
@@ -254,6 +271,7 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-css",
           "blocks": [{ "dashedName": "review-css" }]
         }
@@ -261,16 +279,26 @@
     },
     {
       "dashedName": "javascript",
+      "comingSoon": true,
       "modules": [
-        { "dashedName": "code-editors", "blocks": [] },
+        {
+          "dashedName": "code-editors",
+          "blocks": [
+            { "dashedName": "lecture-working-with-code-editors-and-ides" }
+          ]
+        },
         {
           "dashedName": "javascript-variables-and-strings",
           "blocks": [
+            { "dashedName": "lecture-introduction-to-javascript" },
             { "dashedName": "workshop-greeting-bot" },
             { "dashedName": "lab-javascript-trivia-bot" },
+            { "dashedName": "lecture-working-with-data-types" },
             { "dashedName": "review-javascript-variables-and-data-types" },
             { "dashedName": "quiz-javascript-variables-and-data-types" },
+            { "dashedName": "lecture-working-with-strings-in-javascript" },
             { "dashedName": "workshop-teacher-chatbot" },
+            { "dashedName": "lecture-working-with-common-string-methods" },
             { "dashedName": "review-javascript-strings" },
             { "dashedName": "quiz-javascript-strings" }
           ]
@@ -278,10 +306,19 @@
         {
           "dashedName": "javascript-booleans-and-numbers",
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-numbers-booleans-and-the-math-object"
+            },
             { "dashedName": "workshop-mathbot" },
             { "dashedName": "lab-fortune-teller" },
+            {
+              "dashedName": "lecture-working-with-numbers-and-common-number-methods"
+            },
             { "dashedName": "review-javascript-math" },
             { "dashedName": "quiz-javascript-math" },
+            {
+              "dashedName": "lecture-understanding-comparisons-and-conditionals"
+            },
             { "dashedName": "review-javascript-comparisons-and-conditionals" },
             { "dashedName": "quiz-javascript-comparisons-and-conditionals" }
           ]
@@ -289,6 +326,7 @@
         {
           "dashedName": "javascript-functions",
           "blocks": [
+            { "dashedName": "lecture-working-with-functions" },
             { "dashedName": "workshop-calculator" },
             { "dashedName": "lab-email-masker" },
             { "dashedName": "lab-sentence-maker" },
@@ -301,8 +339,10 @@
         {
           "dashedName": "javascript-arrays",
           "blocks": [
+            { "dashedName": "lecture-working-with-arrays" },
             { "dashedName": "workshop-shopping-list" },
             { "dashedName": "lab-lunch-picker-program" },
+            { "dashedName": "lecture-working-with-common-array-methods" },
             { "dashedName": "review-javascript-arrays" },
             { "dashedName": "quiz-javascript-arrays" }
           ]
@@ -310,6 +350,7 @@
         {
           "dashedName": "javascript-objects",
           "blocks": [
+            { "dashedName": "lecture-working-with-objects" },
             { "dashedName": "workshop-recipe-tracker" },
             { "dashedName": "lab-quiz-game" },
             { "dashedName": "review-javascript-objects" },
@@ -319,6 +360,7 @@
         {
           "dashedName": "javascript-loops",
           "blocks": [
+            { "dashedName": "lecture-working-with-loops" },
             { "dashedName": "workshop-sentence-analyzer" },
             { "dashedName": "lab-factorial-calculator" },
             { "dashedName": "review-javascript-loops" },
@@ -328,9 +370,17 @@
         {
           "dashedName": "review-javascript-fundamentals",
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-core-javascript-fundamentals"
+            },
             { "dashedName": "lab-pyramid-generator" },
             { "dashedName": "lab-gradebook-app" },
+            { "dashedName": "lecture-the-var-keyword-and-hoisting" },
             { "dashedName": "lab-inventory-management-program" },
+            {
+              "dashedName": "lecture-understanding-modules-imports-and-exports"
+            },
+            { "dashedName": "lab-password-generator" },
             { "dashedName": "review-javascript-fundamentals" },
             { "dashedName": "quiz-javascript-fundamentals" }
           ]
@@ -338,6 +388,11 @@
         {
           "dashedName": "higher-order-functions-and-callbacks",
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-higher-order-functions-and-callbacks"
+            },
+            { "dashedName": "workshop-library-manager" },
+            { "dashedName": "lab-book-organizer" },
             { "dashedName": "review-javascript-higher-order-functions" },
             { "dashedName": "quiz-javascript-higher-order-functions" }
           ]
@@ -345,6 +400,10 @@
         {
           "dashedName": "dom-manipulation-and-events",
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-the-dom-click-events-and-web-apis"
+            },
+            { "dashedName": "workshop-storytelling-app" },
             { "dashedName": "lab-favorite-icon-toggler" },
             {
               "dashedName": "review-dom-manipulation-and-click-events-with-javascript"
@@ -352,6 +411,10 @@
             {
               "dashedName": "quiz-dom-manipulation-and-click-event-with-javascript"
             },
+            {
+              "dashedName": "lecture-understanding-the-event-object-and-event-delegation"
+            },
+            { "dashedName": "workshop-music-instrument-filter" },
             { "dashedName": "lab-real-time-counter" },
             { "dashedName": "lab-lightbox-viewer" },
             { "dashedName": "workshop-rps-game" },
@@ -364,6 +427,7 @@
         {
           "dashedName": "debugging-javascript",
           "blocks": [
+            { "dashedName": "lecture-debugging-techniques" },
             { "dashedName": "lab-random-background-color-changer" },
             { "dashedName": "review-debugging-javascript" },
             { "dashedName": "quiz-debugging-javascript" }
@@ -372,6 +436,8 @@
         {
           "dashedName": "basic-regex",
           "blocks": [
+            { "dashedName": "lecture-working-with-regular-expressions" },
+            { "dashedName": "workshop-spam-filter" },
             { "dashedName": "lab-markdown-to-html-converter" },
             { "dashedName": "lab-regex-sandbox" },
             { "dashedName": "review-javascript-regular-expressions" },
@@ -381,7 +447,9 @@
         {
           "dashedName": "form-validation",
           "blocks": [
+            { "dashedName": "lecture-understanding-form-validation" },
             { "dashedName": "workshop-calorie-counter" },
+            { "dashedName": "lab-customer-complaint-form" },
             { "dashedName": "review-form-validation-with-javascript" },
             { "dashedName": "quiz-form-validation-with-javascript" }
           ]
@@ -389,6 +457,7 @@
         {
           "dashedName": "javascript-dates",
           "blocks": [
+            { "dashedName": "lecture-working-with-dates" },
             { "dashedName": "lab-date-conversion" },
             { "dashedName": "review-javascript-dates" },
             { "dashedName": "quiz-javascript-dates" }
@@ -397,17 +466,28 @@
         {
           "dashedName": "audio-and-video-events",
           "blocks": [
+            { "dashedName": "lecture-working-with-audio-and-video" },
+            { "dashedName": "workshop-music-player" },
             { "dashedName": "review-javascript-audio-and-video" },
             { "dashedName": "quiz-javascript-audio-and-video" }
           ]
         },
         {
-          "dashedName": "maps-sets-and-json",
-          "blocks": [{ "dashedName": "review-javascript-maps-sets-and-json" }]
+          "dashedName": "maps-and-sets",
+          "blocks": [
+            { "dashedName": "lecture-working-with-maps-and-sets" },
+            { "dashedName": "workshop-plant-nursery-catalog" },
+            { "dashedName": "lab-voting-system" },
+            { "dashedName": "review-javascript-maps-and-sets" },
+            { "dashedName": "quiz-javascript-maps-and-sets" }
+          ]
         },
         {
           "dashedName": "localstorage-and-crud-operations",
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-client-side-storage-and-crud-operations"
+            },
             { "dashedName": "workshop-todo-app" },
             { "dashedName": "lab-bookmark-manager-app" },
             { "dashedName": "review-local-storage-and-crud" },
@@ -417,13 +497,24 @@
         {
           "dashedName": "classes-and-the-this-keyword",
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-how-to-work-with-classes-in-javascript"
+            },
+            { "dashedName": "workshop-shopping-cart" },
             { "dashedName": "lab-project-idea-board" },
-            { "dashedName": "review-javascript-classes" }
+            { "dashedName": "lab-bank-account-manager" },
+            { "dashedName": "review-javascript-classes" },
+            { "dashedName": "quiz-javascript-classes" }
           ]
         },
         {
           "dashedName": "recursion",
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-recursion-and-the-call-stack"
+            },
+            { "dashedName": "workshop-decimal-to-binary-converter" },
+            { "dashedName": "lab-permutation-generator" },
             { "dashedName": "review-recursion" },
             { "dashedName": "quiz-recursion" }
           ]
@@ -431,14 +522,9 @@
         {
           "dashedName": "functional-programming",
           "blocks": [
-            { "dashedName": "lab-quicksort-algorithm" },
-            { "dashedName": "quiz-searching-and-sorting-algorithms" },
-            { "dashedName": "lab-roman-numeral-converter" },
-            { "dashedName": "lab-telephone-number-validator" },
-            { "dashedName": "lab-cash-register" },
-            {
-              "dashedName": "quiz-javascript-problem-solving-and-algorithmic-thinking"
-            },
+            { "dashedName": "lecture-understanding-functional-programming" },
+            { "dashedName": "workshop-recipe-ingredient-converter" },
+            { "dashedName": "lab-sorting-visualizer" },
             { "dashedName": "review-javascript-functional-programming" },
             { "dashedName": "quiz-javascript-functional-programming" }
           ]
@@ -446,22 +532,16 @@
         {
           "dashedName": "asynchronous-javascript",
           "blocks": [
+            { "dashedName": "lecture-understanding-asynchronous-programming" },
             { "dashedName": "workshop-fcc-authors-page" },
-            { "dashedName": "quiz-javascript-object-oriented-programming" },
-            { "dashedName": "lab-stack-class" },
-            { "dashedName": "lab-linked-list-class" },
-            { "dashedName": "lab-hash-table-class" },
-            { "dashedName": "quiz-javascript-data-structures" },
-            { "dashedName": "lab-depth-first-search" },
-            { "dashedName": "quiz-graphs-and-trees" },
-            { "dashedName": "lab-nth-fibonacci-number-generator" },
-            { "dashedName": "quiz-dynamic-programming" },
-            { "dashedName": "lab-pokemon-search-app" },
+            { "dashedName": "lab-fcc-forum-leaderboard" },
+            { "dashedName": "lab-weather-app" },
             { "dashedName": "review-asynchronous-javascript" },
             { "dashedName": "quiz-asynchronous-javascript" }
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-javascript",
           "blocks": [{ "dashedName": "review-javascript" }]
         }
@@ -470,16 +550,26 @@
 
     {
       "dashedName": "frontend-libraries",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "react-fundamentals",
           "blocks": [
-            { "dashedName": "quiz-web-standards" },
+            {
+              "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks"
+            },
+            { "dashedName": "workshop-reusable-mega-navbar" },
+            { "dashedName": "lab-reusable-footer" },
+            { "dashedName": "lecture-working-with-data-in-react" },
+            { "dashedName": "workshop-reusable-profile-card-component" },
+            { "dashedName": "lab-mood-board" },
+            { "dashedName": "review-react-basics" },
             { "dashedName": "quiz-react-basics" }
           ]
         },
         {
           "dashedName": "react-state-hooks-and-routing",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "quiz-react-state-and-hooks" },
             { "dashedName": "quiz-advanced-react" }
@@ -487,6 +577,7 @@
         },
         {
           "dashedName": "performance",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-web-performance" },
             { "dashedName": "quiz-web-performance" }
@@ -494,6 +585,7 @@
         },
         {
           "dashedName": "css-libraries-and-frameworks",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-css-libraries-and-frameworks" },
             { "dashedName": "quiz-css-libraries-and-frameworks" }
@@ -501,6 +593,7 @@
         },
         {
           "dashedName": "testing",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-testing" },
             { "dashedName": "quiz-testing" }
@@ -508,12 +601,14 @@
         },
         {
           "dashedName": "typescript-fundamentals",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-typescript" },
             { "dashedName": "quiz-typescript" }
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-front-end-libraries",
           "blocks": [{ "dashedName": "review-front-end-libraries" }]
         }
@@ -521,6 +616,7 @@
     },
     {
       "dashedName": "relational-databases",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "bash-fundamentals",
@@ -579,27 +675,28 @@
           ]
         },
         {
+          "moduleType": "review",
           "dashedName": "review-relational-databases",
           "blocks": [{ "dashedName": "review-relational-databases" }]
         }
       ]
     },
     {
-      "dashedName": "security-and-privacy",
-      "modules": [
-        {
-          "dashedName": "security-and-privacy",
-          "blocks": [
-            { "dashedName": "review-security-and-privacy" },
-            { "dashedName": "quiz-security-and-privacy" }
-          ]
-        }
-      ]
+      "dashedName": "backend-javascript",
+      "comingSoon": true,
+      "modules": []
     },
     {
+      "dashedName": "python",
+      "comingSoon": true,
+      "modules": []
+    },
+    {
+      "chapterType": "exam",
       "dashedName": "exam-certified-full-stack-developer",
       "modules": [
         {
+          "moduleType": "exam",
           "dashedName": "exam-certified-full-stack-developer",
           "blocks": [{ "dashedName": "exam-certified-full-stack-developer" }]
         }

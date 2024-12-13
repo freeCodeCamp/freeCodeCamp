@@ -24,9 +24,15 @@ test.describe('Add Portfolio Item', () => {
 
     await page.getByRole('button', { name: 'Edit my profile' }).click();
 
-    await page
-      .getByRole('button', { name: 'Add a new portfolio Item' })
-      .click();
+    // Will check if the portfolio button is hydrated correctly with different intervals.
+    await expect(async () => {
+      const addPortfolioItemButton = page.getByRole('button', {
+        name: 'Add a new portfolio Item'
+      });
+      await addPortfolioItemButton.click();
+
+      await expect(addPortfolioItemButton).toBeDisabled({ timeout: 1 });
+    }).toPass();
   });
 
   test('The title has validation', async ({ page }) => {
@@ -63,12 +69,21 @@ test.describe('Add Portfolio Item', () => {
   test('The image has validation', async ({ page }) => {
     await page.getByLabel(translations.settings.labels.image).fill('T');
     await expect(page.getByTestId('image-validation')).toContainText(
-      'URL must link directly to an image file'
+      'Please use a valid URL'
     );
     await page
       .getByLabel(translations.settings.labels.image)
-      .fill('http://helloworld.com/image.png');
+      .fill(
+        'https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png'
+      );
     await expect(page.getByTestId('image-validation')).toBeHidden();
+
+    await page
+      .getByLabel(translations.settings.labels.image)
+      .fill('https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.pn');
+    await expect(page.getByTestId('image-validation')).toContainText(
+      'URL must link directly to an image file'
+    );
   });
 
   test('The description has validation', async ({ page }) => {
