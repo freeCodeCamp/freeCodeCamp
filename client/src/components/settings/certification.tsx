@@ -177,7 +177,7 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
           >
             {t('buttons.show-cert')}{' '}
             <span className='sr-only'>
-              {t('certification.title.Legacy Full Stack')}
+              {t(`certification.title.${Certification.LegacyFullStack}`)}
             </span>
           </Button>
         ) : (
@@ -191,7 +191,7 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
           >
             {t('buttons.claim-cert')}{' '}
             <span className='sr-only'>
-              {t('certification.title.Legacy Full Stack')}
+              {t(`certification.title.${Certification.LegacyFullStack}`)}
             </span>
           </Button>
         )}
