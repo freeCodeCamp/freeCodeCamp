@@ -33,7 +33,8 @@ const projectBasedChallengeTypes = [
   challengeTypes.multifileCertProject,
   challengeTypes.exam,
   challengeTypes.codeAllyPractice,
-  challengeTypes.multifilePythonCertProject
+  challengeTypes.multifilePythonCertProject,
+  challengeTypes.lab
 ];
 
 export const isProjectBased = (
