@@ -34,7 +34,10 @@ import {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import {
+  canSaveToDB,
+  challengeTypes
+} from '../../../../../shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -543,9 +546,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_S
       ],
       run:
-        (props.challengeType === challengeTypes.multifileCertProject ||
-          props.challengeType === challengeTypes.multifilePythonCertProject) &&
-        props.isSignedIn
+        canSaveToDB(props.challengeType) && props.isSignedIn
           ? // save to database
             props.saveChallenge
           : // save to local storage

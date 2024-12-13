@@ -141,6 +141,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-colors-in-css" },
             { "dashedName": "workshop-colored-markers" },
+            { "dashedName": "lab-colored-boxes" },
             { "dashedName": "review-css-colors" },
             { "dashedName": "quiz-css-colors" }
           ]
@@ -336,8 +337,8 @@
           "blocks": [
             { "dashedName": "lecture-working-with-arrays" },
             { "dashedName": "workshop-shopping-list" },
-            { "dashedName": "lecture-working-with-common-array-methods" },
             { "dashedName": "lab-lunch-picker-program" },
+            { "dashedName": "lecture-working-with-common-array-methods" },
             { "dashedName": "review-javascript-arrays" },
             { "dashedName": "quiz-javascript-arrays" }
           ]
@@ -375,6 +376,7 @@
             {
               "dashedName": "lecture-understanding-modules-imports-and-exports"
             },
+            { "dashedName": "lab-password-generator" },
             { "dashedName": "review-javascript-fundamentals" },
             { "dashedName": "quiz-javascript-fundamentals" }
           ]
@@ -443,6 +445,7 @@
           "blocks": [
             { "dashedName": "lecture-understanding-form-validation" },
             { "dashedName": "workshop-calorie-counter" },
+            { "dashedName": "lab-customer-complaint-form" },
             { "dashedName": "review-form-validation-with-javascript" },
             { "dashedName": "quiz-form-validation-with-javascript" }
           ]
@@ -460,6 +463,7 @@
           "dashedName": "audio-and-video-events",
           "blocks": [
             { "dashedName": "lecture-working-with-audio-and-video" },
+            { "dashedName": "workshop-music-player" },
             { "dashedName": "review-javascript-audio-and-video" },
             { "dashedName": "quiz-javascript-audio-and-video" }
           ]
@@ -516,6 +520,7 @@
           "blocks": [
             { "dashedName": "lecture-understanding-functional-programming" },
             { "dashedName": "workshop-recipe-ingredient-converter" },
+            { "dashedName": "lab-sorting-visualizer" },
             { "dashedName": "review-javascript-functional-programming" },
             { "dashedName": "quiz-javascript-functional-programming" }
           ]
@@ -548,9 +553,9 @@
             {
               "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks"
             },
+            { "dashedName": "workshop-reusable-mega-navbar" },
             { "dashedName": "lab-reusable-footer" },
             { "dashedName": "lecture-working-with-data-in-react" },
-            { "dashedName": "workshop-reusable-mega-navbar" },
             { "dashedName": "lab-mood-board" },
             { "dashedName": "review-react-basics" },
             { "dashedName": "quiz-react-basics" }

@@ -104,7 +104,8 @@ const buildFunctions = {
   [challengeTypes.multifileCertProject]: buildDOMChallenge,
   [challengeTypes.colab]: buildBackendChallenge,
   [challengeTypes.python]: buildPythonChallenge,
-  [challengeTypes.multifilePythonCertProject]: buildPythonChallenge
+  [challengeTypes.multifilePythonCertProject]: buildPythonChallenge,
+  [challengeTypes.lab]: buildDOMChallenge
 };
 
 export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
@@ -133,7 +134,8 @@ const testRunners = {
   [challengeTypes.pythonProject]: getDOMTestRunner,
   [challengeTypes.python]: getPyTestRunner,
   [challengeTypes.multifileCertProject]: getDOMTestRunner,
-  [challengeTypes.multifilePythonCertProject]: getPyTestRunner
+  [challengeTypes.multifilePythonCertProject]: getPyTestRunner,
+  [challengeTypes.lab]: getDOMTestRunner
 };
 // TODO: Figure out and (hopefully) simplify the return type.
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -335,7 +337,8 @@ export function updatePreview(
 
   if (
     buildData.challengeType === challengeTypes.html ||
-    buildData.challengeType === challengeTypes.multifileCertProject
+    buildData.challengeType === challengeTypes.multifileCertProject ||
+    buildData.challengeType === challengeTypes.lab
   ) {
     return new Promise<void>(resolve =>
       createMainPreviewFramer(
@@ -369,7 +372,8 @@ export function updateProjectPreview(
 ): void {
   if (
     buildData.challengeType === challengeTypes.html ||
-    buildData.challengeType === challengeTypes.multifileCertProject
+    buildData.challengeType === challengeTypes.multifileCertProject ||
+    buildData.challengeType === challengeTypes.lab
   ) {
     createProjectPreviewFramer(
       document,
@@ -388,7 +392,8 @@ export function challengeHasPreview({ challengeType }: ChallengeMeta): boolean {
     challengeType === challengeTypes.modern ||
     challengeType === challengeTypes.multifileCertProject ||
     challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeType === challengeTypes.python
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.lab
   );
 }
 

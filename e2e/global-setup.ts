@@ -19,7 +19,7 @@ setup.describe('certifieduser', () => {
 
 setup.describe('developmentuser', () => {
   // We need to make sure the development user does not have any cookies from the certified user.
-  // Ass the certified user now has the default storage state.
+  // As the certified user now has the default storage state.
   setup.use({ storageState: { cookies: [], origins: [] } });
 
   // We can only sign in as a single user (one with email: 'foo@bar.com'), so
