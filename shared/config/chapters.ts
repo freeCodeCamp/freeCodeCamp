@@ -4,6 +4,7 @@ export enum FsdChapters {
   Html = 'html',
   Css = 'css',
   Javascript = 'javascript',
+  FrontendLibraries = 'frontend-libraries',
   RelationalDatabases = 'relational-databases',
   Security = 'security-and-privacy'
 }
