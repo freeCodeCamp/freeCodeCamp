@@ -1914,14 +1914,14 @@
       "review-html-tables-and-forms": {
         "title": "HTML Tables and Forms Review",
         "intro": [
-          "Before you are quizzed on HTML forms and tables, you first need to review the concepts.",
-          "Open up this page to review the <code>table</code>, <code>label</code>, <code>input</code>, <code>button</code> and more elements."
+          "Before you are quizzed on HTML forms, tables and tools, you first need to review the concepts.",
+          "Open up this page to review the <code>table</code>, <code>input</code>, and <code>button</code> elements as well as commonly used tools like the HTML validator and more."
         ]
       },
       "quiz-html-tables-and-forms": {
         "title": "HTML Tables and Forms Quiz",
         "intro": [
-          "The following quiz will test your knowledge of HTML tables and forms."
+          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools."
         ]
       },
       "lecture-importance-of-accessibility-and-good-html-structure": {
