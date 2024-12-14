@@ -867,6 +867,59 @@ t.result.wasSuccessful()
 })
 ```
 
+Each line in `create_spend_chart` chart should have the same length. Bars for different categories should be separated by two spaces, with additional two spaces after the final bar.
+
+```js
+({
+  test: () => {
+    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+    pyodide.FS.writeFile('/home/pyodide/test_module.py',`
+import unittest
+import budget
+from importlib import reload
+
+reload(budget)
+class UnitTests(unittest.TestCase):
+    maxDiff = None
+    def setUp(self):
+        self.food = budget.Category("Food")
+        self.entertainment = budget.Category("Entertainment")
+        self.business = budget.Category("Business")
+        self.food.deposit(900, "deposit")
+        self.entertainment.deposit(900, "deposit")
+        self.business.deposit(900, "deposit")
+        self.food.withdraw(78)
+        self.entertainment.withdraw(22)
+        self.business.withdraw(8)
+
+
+    def test_create_spend_chart_chart_lines_have_expected_length(self):
+        chart_categories = [[self.food, self.entertainment], [self.business, self.food, self.entertainment]]
+
+        expected_lengths = [len(line) for line in ["  0| o  o  ", "  0| o  o  o  "]]
+        expected_chart_lines = 11
+
+        for categories, expected_length in zip(chart_categories, expected_lengths):
+            chart_lines = budget.create_spend_chart(categories).split("\\n")[1:12]
+
+            self.assertEqual(len(chart_lines), expected_chart_lines, "Lines missing in chart.")
+            for actual in chart_lines:
+                self.assertEqual(len(actual), expected_length, "Expected different length of the chart line. Check that all spacing is exact.")
+`);
+    const testCode = `
+from unittest import main
+from importlib import reload
+import test_module
+reload(test_module)
+t = main(module='test_module', exit=False)
+t.result.wasSuccessful()
+`;
+    const out = runPython(testCode);
+    assert(out);
+  }
+})
+```
+
 `create_spend_chart` should correctly show horizontal line below the bars. Using three `-` characters for each category, and in total going two characters past the final bar.
 
 ```js
