@@ -2634,7 +2634,7 @@
       "lab-fortune-teller": {
         "title": "Build a Fortune Teller",
         "intro": [
-          "In this lab, you will build a fortune teller by randomly selecting a fortune from the available fortunes."
+          "In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes."
         ]
       },
       "lecture-working-with-numbers-and-common-number-methods": {
