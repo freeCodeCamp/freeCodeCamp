@@ -410,7 +410,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <div>
                     <Image
                       data-playwright-test-label='quincy-signature'
-                      alt="Quincy Larson's Signature"
+                      alt={t('certification.quincy-larson-signature')}
                       src={
                         'https://cdn.freecodecamp.org' +
                         '/platform/english/images/quincy-larson-signature.svg'
@@ -426,7 +426,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <div className='microsoft-signature'>
                     <Image
                       data-playwright-test-label='microsoft-signature'
-                      alt="Julia Liusons's Signature"
+                      alt={t('certification.julia-liuson-signature')}
                       src={
                         'https://cdn.freecodecamp.org' +
                         '/platform/english/images/microsoft-signature.png'
@@ -445,7 +445,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <div>
                   <Image
                     data-playwright-test-label='quincy-signature'
-                    alt="Quincy Larson's Signature"
+                    alt={t('certification.quincy-larson-signature')}
                     src={
                       'https://cdn.freecodecamp.org' +
                       '/platform/english/images/quincy-larson-signature.svg'
