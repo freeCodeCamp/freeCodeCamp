@@ -46,15 +46,15 @@ assert.strictEqual(backgroundColor, 'rgb(0, 128, 0)');
 Your `form` element should have an `id` attribute.
 
 ```js
-assert.match(__helpers.removeHTMLComments(code), /<form.*cat-photo-form.*>/gi);
-assert.lengthOf(__helpers.removeHTMLComments(code).match(/<form.*cat-photo-form.*>/gi), 1)
+assert.match(__helpers.removeHtmlComments(code), /<form.*cat-photo-form.*>/gi);
+assert.lengthOf(__helpers.removeHtmlComments(code).match(/<form.*cat-photo-form.*>/gi), 1)
 ```
 
 You should not give your `form` any `class` or `style` attributes.
 
 ```js
-assert.notMatch(__helpers.removeHTMLComments(code), /<form.*style.*>/gi);
-assert.notMatch(__helpers.removeHTMLComments(code), /<form.*class.*>/gi);
+assert.notMatch(__helpers.removeHtmlComments(code), /<form.*style.*>/gi);
+assert.notMatch(__helpers.removeHtmlComments(code), /<form.*class.*>/gi);
 ```
 
 # --seed--

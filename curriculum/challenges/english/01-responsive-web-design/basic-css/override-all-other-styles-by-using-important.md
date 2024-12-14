@@ -50,7 +50,7 @@ assert.strictEqual(document.querySelector('h1').getAttribute('id'), 'orange-text
 Your `h1` element should have the inline style of `color: white`.
 
 ```js
-const commentessCode = __helpers.removeHTMLComments(code);
+const commentessCode = __helpers.removeHtmlComments(code);
 assert.match(commentessCode, /<h1.*style/gi);
 assert.match(commentessCode, /<h1.*style.*color\s*?:/gi);
 ```

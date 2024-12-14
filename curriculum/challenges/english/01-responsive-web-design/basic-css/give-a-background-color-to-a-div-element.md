@@ -42,7 +42,7 @@ assert.strictEqual(backgroundColor, 'rgb(192, 192, 192)');
 A class named `silver-background` should be defined within the `style` element and the value of `silver` should be assigned to the `background-color` property.
 
 ```js
-assert.match(__helpers.removeHTMLComments(code), /\.silver-background\s*{\s*background-color\s*:\s*silver\s*;?\s*}/);
+assert.match(__helpers.removeHtmlComments(code), /\.silver-background\s*{\s*background-color\s*:\s*silver\s*;?\s*}/);
 ```
 
 # --seed--

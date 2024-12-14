@@ -70,7 +70,7 @@ assert.match(__helpers.removeCssComments(code), /#orange-text\s*{/gi);
 Your `h1` should not have any `style` attributes.
 
 ```js
-assert.notMatch(__helpers.removeHTMLComments(code), /<h1.*style.*>/gi);
+assert.notMatch(__helpers.removeHtmlComments(code), /<h1.*style.*>/gi);
 ```
 
 Your `h1` element should be orange.

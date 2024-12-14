@@ -22,14 +22,13 @@ Your image should have a border radius of `50%`, making it perfectly circular.
 ```js
 const image = document.querySelector('img');
 const borderTopLeftRadius = window.getComputedStyle(image)['border-top-left-radius'];
-
 assert.strictEqual(parseInt(borderTopLeftRadius), 50);
 ```
 
 The `border-radius` value should use a percentage value of `50%`.
 
 ```js
-assert.match(__helpers.removeCssComments(), /50%/g);
+assert.match(__helpers.removeCssComments(code), /50%/g);
 ```
 
 # --seed--

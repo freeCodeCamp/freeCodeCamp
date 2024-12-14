@@ -70,10 +70,10 @@ assert.match(__helpers.removeCssComments(code), /h2\s*\{\s*color\s*:.*;\s*\}/g);
 All your `style` elements should be valid and have closing tags.
 
 ```js
-assert.match(__helpers.removeHTMLComments(code), /<\/style>/g);
+assert.match(__helpers.removeHtmlComments(code), /<\/style>/g);
 
-const closingElementLength = __helpers.removeHTMLComments(code).match(/<\/style>/g).length;
-const openingElementsLength = __helpers.removeHTMLComments(code).match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g).length;
+const closingElementLength = __helpers.removeHtmlComments(code).match(/<\/style>/g).length;
+const openingElementsLength = __helpers.removeHtmlComments(code).match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g).length;
 assert.strictEqual(closingElementLength, openingElementsLength);
 ```
 

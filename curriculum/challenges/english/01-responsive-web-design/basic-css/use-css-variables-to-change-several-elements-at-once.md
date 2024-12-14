@@ -22,7 +22,7 @@ In the `penguin` class, change the `black` value to `gray`, the `gray` value to 
 `penguin` class should declare the `--penguin-skin` variable and assign it to `gray`.
 
 ```js
-assert.match(__helpers.removeHTMLComments(code), /.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi);
+assert.match(__helpers.removeHtmlComments(code), /.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi);
 ```
 
 `penguin` class should declare the `--penguin-belly` variable and assign it to `white`.

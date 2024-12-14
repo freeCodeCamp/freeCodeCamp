@@ -54,7 +54,7 @@ assert.match(fontFamily, /lobster/i);
 You should only use an `h2` element selector to change the font.
 
 ```js
-assert.match(__helpers.removeHTMLComments(code), /\s*[^\.]h2\s*\{\s*font-family\s*:\s*('|"|)Lobster\1\s*(,\s*('|"|)[a-z -]+\3\s*)?(;\s*\}|\})/gi);
+assert.match(__helpers.removeHtmlComments(code), /\s*[^\.]h2\s*\{\s*font-family\s*:\s*('|"|)Lobster\1\s*(,\s*('|"|)[a-z -]+\3\s*)?(;\s*\}|\})/gi);
 ```
 
 Your `p` element should still use the font `monospace`.

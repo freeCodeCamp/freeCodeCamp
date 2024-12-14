@@ -41,9 +41,9 @@ assert.match(
 Your `h1` element should have a closing tag.
 
 ```js
-const commentlessCode = __helpers.removeHTMLComments(code);
+const commentlessCode = __helpers.removeHtmlComments(code);
 assert.match(commentlessCode, /<\/h1>/g);
-assert.match(_commentlessCode, /<h1/g);
+assert.match(commentlessCode, /<h1/g);
 assert.lengthOf(commentlessCode.match(/<\/h1>/g), commentlessCode.match(/<h1/g).length);
 ```
 

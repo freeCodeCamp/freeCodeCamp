@@ -30,7 +30,7 @@ Using the `type` attribute selector, try to give the checkboxes in CatPhotoApp a
 The `type` attribute selector should be used to select the checkboxes.
 
 ```js
-assert.match(__helpers.removeHTMLComments(code), /<style>[\s\S]*?\[\s*?type\s*?=\s*?("|')checkbox\1\s*?\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi);
+assert.match(__helpers.removeHtmlComments(code), /<style>[\s\S]*?\[\s*?type\s*?=\s*?("|')checkbox\1\s*?\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi);
 ```
 
 The top margins of the checkboxes should be 10px.
