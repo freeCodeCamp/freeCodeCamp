@@ -958,7 +958,7 @@ t.result.wasSuccessful()
 })
 ```
 
-`create_spend_chart` chart should have each category name written vertically below the bar.
+`create_spend_chart` chart should have each category name written vertically below the bar. Each line should have the same length, each category should be separated by two spaces, with additional two spaces after the final category.
 
 ```js
 ({
