@@ -30,21 +30,13 @@ It looks like there is a problem with the variables supplied to the `.penguin-to
 The fallback value of `black` should be used in the `background` property of the `penguin-top` class.
 
 ```js
-assert(
-  code.match(
-    /.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi
-  )
-);
+assert.match(__helpers.removeCssComments(code), /.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi);
 ```
 
 The fallback value of `black` should be used in `background` property of the `penguin-bottom` class.
 
 ```js
-assert(
-  code.match(
-    /.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi
-  )
-);
+assert.match(__helpers.removeCssComments(code), /.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi);
 ```
 
 # --seed--

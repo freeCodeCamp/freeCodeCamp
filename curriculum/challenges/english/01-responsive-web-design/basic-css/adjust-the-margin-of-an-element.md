@@ -24,7 +24,9 @@ Change the `margin` of the blue box to match that of the red box.
 Your `blue-box` class should give elements `20px` of `margin`.
 
 ```js
-assert($('.blue-box').css('margin-top') === '20px');
+const blueBox = document.querySelector('.blue-box');
+const marginTop = window.getComputedStyle(blueBox)['margin-top'];
+assert.strictEqual(marginTop, '20px');
 ```
 
 # --seed--

@@ -26,41 +26,25 @@ Apply the `--penguin-skin` variable to the `background` property of the `penguin
 The `--penguin-skin` variable should be applied to the `background` property of the `penguin-top` class.
 
 ```js
-assert(
-  code.match(
-    /.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi
-  )
-);
+assert.match(__helpers.removeCssComments(code), /.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi);
 ```
 
 The `--penguin-skin` variable should be applied to the `background` property of the `penguin-bottom` class.
 
 ```js
-assert(
-  code.match(
-    /.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi
-  )
-);
+assert.match(__helpers.removeCssComments(code), /.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi);
 ```
 
 The `--penguin-skin` variable should be applied to the `background` property of the `right-hand` class.
 
 ```js
-assert(
-  code.match(
-    /.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi
-  )
-);
+assert.match(__helpers.removeCssComments(code), /.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi);
 ```
 
 The `--penguin-skin` variable should be applied to the `background` property of the `left-hand` class.
 
 ```js
-assert(
-  code.match(
-    /.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi
-  )
-);
+assert.match(__helpers.removeCssComments(code), /.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi);
 ```
 
 # --seed--
