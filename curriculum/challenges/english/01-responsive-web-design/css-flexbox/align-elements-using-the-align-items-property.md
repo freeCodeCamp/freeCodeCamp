@@ -32,8 +32,8 @@ The `#box-container` element should have an `align-items` property set to a valu
 
 ```js
 const boxContainer = document.querySelector('#box-container');
-const alignment = window.getComputedStyle(boxContainer)['align-items']; 
-assert.strictEqual(alignment,'center');
+const alignment = window.getComputedStyle(boxContainer)['align-items'];
+assert.strictEqual(alignment, 'center');
 ```
 
 # --seed--

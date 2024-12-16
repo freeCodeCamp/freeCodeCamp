@@ -32,8 +32,9 @@ The `#box-container` element should have a `justify-content` property set to a v
 
 ```js
 const boxContainer = document.querySelector('#box-container');
-const justifyDirection = window.getComputedStyle(boxContainer)['justify-content']; 
-assert.strictEqual(justifyDirection,'center');
+const justifyDirection =
+  window.getComputedStyle(boxContainer)['justify-content'];
+assert.strictEqual(justifyDirection, 'center');
 ```
 
 # --seed--

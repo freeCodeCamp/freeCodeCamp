@@ -21,9 +21,9 @@ Your `.follow-btn` should be rendered on the page. Be sure to turn off any exten
 
 ```js
 const followButton = document.querySelector('.follow-btn');
-const displayStyle = window.getComputedStyle(followButton)['display']; 
+const displayStyle = window.getComputedStyle(followButton)['display'];
 assert.isNotNull(followButton);
-assert.notStrictEqual(displayStyle,"none"); 
+assert.notStrictEqual(displayStyle, 'none');
 ```
 
 The `.profile-name` element should have the `justify-content` property set to any of these values: `center`, `flex-start`, `flex-end`, `space-between`, `space-around`, or `space-evenly`.
@@ -31,7 +31,7 @@ The `.profile-name` element should have the `justify-content` property set to an
 ```js
 assert.match(
   code,
-    /header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around|space-evenly)\s*;/g
+  /header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around|space-evenly)\s*;/g
 );
 ```
 
@@ -44,7 +44,8 @@ assert.match(
   body {
     font-family: Arial, sans-serif;
   }
-  header, footer {
+  header,
+  footer {
     display: flex;
     flex-direction: row;
   }
@@ -68,7 +69,8 @@ assert.match(
     border-radius: 3px;
     padding: 5px;
   }
-  header h3, header h4 {
+  header h3,
+  header h4 {
     display: flex;
     margin: 0;
   }
@@ -100,7 +102,11 @@ assert.match(
   }
 </style>
 <header>
-  <img src="https://cdn.freecodecamp.org/curriculum/legacy-css-flexbox/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img
+    src="https://cdn.freecodecamp.org/curriculum/legacy-css-flexbox/quincy-twitter-photo.jpg"
+    alt="Quincy Larson's profile picture"
+    class="profile-thumbnail"
+  />
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
@@ -110,18 +116,17 @@ assert.match(
   </div>
 </header>
 <div id="inner">
-  <p>I meet so many people who are in search of that one trick that will help them work smart. Even if you work smart, you still have to work hard.</p>
+  <p>
+    I meet so many people who are in search of that one trick that will help
+    them work smart. Even if you work smart, you still have to work hard.
+  </p>
   <span class="date">1:32 PM - 12 Jan 2018</span>
-  <hr>
+  <hr />
 </div>
 <footer>
   <div class="stats">
-    <div class="Retweets">
-      <strong>107</strong> Retweets
-    </div>
-    <div class="likes">
-      <strong>431</strong> Likes
-    </div>
+    <div class="Retweets"><strong>107</strong> Retweets</div>
+    <div class="likes"><strong>431</strong> Likes</div>
   </div>
   <div class="cta">
     <button class="share-btn">Share</button>
@@ -138,7 +143,8 @@ assert.match(
   body {
     font-family: Arial, sans-serif;
   }
-  header, footer {
+  header,
+  footer {
     display: flex;
     flex-direction: row;
   }
@@ -162,7 +168,8 @@ assert.match(
     border-radius: 3px;
     padding: 5px;
   }
-  header h3, header h4 {
+  header h3,
+  header h4 {
     display: flex;
     margin: 0;
   }
@@ -194,7 +201,11 @@ assert.match(
   }
 </style>
 <header>
-  <img src="https://cdn.freecodecamp.org/curriculum/legacy-css-flexbox/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img
+    src="https://cdn.freecodecamp.org/curriculum/legacy-css-flexbox/quincy-twitter-photo.jpg"
+    alt="Quincy Larson's profile picture"
+    class="profile-thumbnail"
+  />
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
@@ -204,18 +215,17 @@ assert.match(
   </div>
 </header>
 <div id="inner">
-  <p>I meet so many people who are in search of that one trick that will help them work smart. Even if you work smart, you still have to work hard.</p>
+  <p>
+    I meet so many people who are in search of that one trick that will help
+    them work smart. Even if you work smart, you still have to work hard.
+  </p>
   <span class="date">1:32 PM - 12 Jan 2018</span>
-  <hr>
+  <hr />
 </div>
 <footer>
   <div class="stats">
-    <div class="Retweets">
-      <strong>107</strong> Retweets
-    </div>
-    <div class="likes">
-      <strong>431</strong> Likes
-    </div>
+    <div class="Retweets"><strong>107</strong> Retweets</div>
+    <div class="likes"><strong>431</strong> Likes</div>
   </div>
   <div class="cta">
     <button class="share-btn">Share</button>

@@ -23,65 +23,65 @@ Your `.follow-btn` should be rendered on the page. Be sure to turn off any exten
 
 ```js
 const followButton = document.querySelector('.follow-btn');
-const displayStyle = window.getComputedStyle(followButton)['display']; 
+const displayStyle = window.getComputedStyle(followButton)['display'];
 assert.isNotNull(followButton);
-assert.notStrictEqual(displayStyle,"none"); 
+assert.notStrictEqual(displayStyle, 'none');
 ```
 
 Your `header` should have a `display` property set to `flex`.
 
 ```js
 const header = document.querySelector('header');
-const displayStyle = window.getComputedStyle(header)['display']; 
-assert.strictEqual(displayStyle,'flex');
+const displayStyle = window.getComputedStyle(header)['display'];
+assert.strictEqual(displayStyle, 'flex');
 ```
 
 Your `footer` should have a `display` property set to `flex`.
 
 ```js
 const footer = document.querySelector('footer');
-const displayStyle = window.getComputedStyle(footer)['display']; 
-assert.strictEqual(displayStyle,'flex');
+const displayStyle = window.getComputedStyle(footer)['display'];
+assert.strictEqual(displayStyle, 'flex');
 ```
 
 Your `h3` should have a `display` property set to `flex`.
 
 ```js
 const h3Element = document.querySelector('h3');
-const displayStyle = window.getComputedStyle(h3Element)['display']; 
-assert.strictEqual(displayStyle,'flex');
+const displayStyle = window.getComputedStyle(h3Element)['display'];
+assert.strictEqual(displayStyle, 'flex');
 ```
 
 Your `h4` should have a `display` property set to `flex`.
 
 ```js
 const h4Element = document.querySelector('h4');
-const displayStyle = window.getComputedStyle(h4Element)['display']; 
-assert.strictEqual(displayStyle,'flex');
+const displayStyle = window.getComputedStyle(h4Element)['display'];
+assert.strictEqual(displayStyle, 'flex');
 ```
 
 Your `.profile-name` should have a `display` property set to `flex`.
 
 ```js
 const profileName = document.querySelector('.profile-name');
-const displayStyle = window.getComputedStyle(profileName)['display']; 
-assert.strictEqual(displayStyle,'flex');
+const displayStyle = window.getComputedStyle(profileName)['display'];
+assert.strictEqual(displayStyle, 'flex');
 ```
 
 Your `.follow-btn` should have a `display` property set to `flex`.
 
 ```js
 const followButton = document.querySelector('.follow-btn');
-const displayStyle = window.getComputedStyle(followButton)['display']; 
-assert.strictEqual(displayStyle,'flex');
+const displayStyle = window.getComputedStyle(followButton)['display'];
+assert.strictEqual(displayStyle, 'flex');
 ```
 
 Your `.stats` should have a `display` property set to `flex`.
 
 ```js
 const stats = document.querySelector('.stats');
-const displayStyle = window.getComputedStyle(stats)['display']; 
-assert.strictEqual(displayStyle,'flex');
+const displayStyle = window.getComputedStyle(stats)['display'];
+assert.strictEqual(displayStyle, 'flex');
 ```
 
 # --seed--
@@ -159,18 +159,17 @@ assert.strictEqual(displayStyle,'flex');
   </div>
 </header>
 <div id="inner">
-  <p>I meet so many people who are in search of that one trick that will help them work smart. Even if you work smart, you still have to work hard.</p>
+  <p>
+    I meet so many people who are in search of that one trick that will help
+    them work smart. Even if you work smart, you still have to work hard.
+  </p>
   <span class="date">1:32 PM - 12 Jan 2018</span>
-  <hr>
+  <hr />
 </div>
 <footer>
   <div class="stats">
-    <div class="Retweets">
-      <strong>107</strong> Retweets
-    </div>
-    <div class="likes">
-      <strong>431</strong> Likes
-    </div>
+    <div class="Retweets"><strong>107</strong> Retweets</div>
+    <div class="likes"><strong>431</strong> Likes</div>
   </div>
   <div class="cta">
     <button class="share-btn">Share</button>
@@ -188,7 +187,7 @@ assert.strictEqual(displayStyle,'flex');
     font-family: Arial, sans-serif;
   }
   header {
-   display: flex;
+    display: flex;
   }
   header .profile-thumbnail {
     width: 50px;
@@ -208,7 +207,8 @@ assert.strictEqual(displayStyle,'flex');
     border-radius: 3px;
     padding: 5px;
   }
-  header h3, header h4 {
+  header h3,
+  header h4 {
     display: flex;
     margin: 0;
   }
@@ -243,7 +243,11 @@ assert.strictEqual(displayStyle,'flex');
   }
 </style>
 <header>
-  <img src="https://cdn.freecodecamp.org/curriculum/legacy-css-flexbox/quincy-twitter-photo.jpg" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <img
+    src="https://cdn.freecodecamp.org/curriculum/legacy-css-flexbox/quincy-twitter-photo.jpg"
+    alt="Quincy Larson's profile picture"
+    class="profile-thumbnail"
+  />
   <div class="profile-name">
     <h3>Quincy Larson</h3>
     <h4>@ossia</h4>
@@ -253,18 +257,17 @@ assert.strictEqual(displayStyle,'flex');
   </div>
 </header>
 <div id="inner">
-  <p>I meet so many people who are in search of that one trick that will help them work smart. Even if you work smart, you still have to work hard.</p>
+  <p>
+    I meet so many people who are in search of that one trick that will help
+    them work smart. Even if you work smart, you still have to work hard.
+  </p>
   <span class="date">1:32 PM - 12 Jan 2018</span>
-  <hr>
+  <hr />
 </div>
 <footer>
   <div class="stats">
-    <div class="Retweets">
-      <strong>107</strong> Retweets
-    </div>
-    <div class="likes">
-      <strong>431</strong> Likes
-    </div>
+    <div class="Retweets"><strong>107</strong> Retweets</div>
+    <div class="likes"><strong>431</strong> Likes</div>
   </div>
   <div class="cta">
     <button class="share-btn">Share</button>

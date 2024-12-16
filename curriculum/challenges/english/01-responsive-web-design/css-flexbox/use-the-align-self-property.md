@@ -23,16 +23,16 @@ The `#box-1` element should have the `align-self` property set to a value of `ce
 
 ```js
 const boxOne = document.querySelector('#box-1');
-const alignment = window.getComputedStyle(boxOne)['align-self']; 
-assert.strictEqual(alignment,'center');
+const alignment = window.getComputedStyle(boxOne)['align-self'];
+assert.strictEqual(alignment, 'center');
 ```
 
 The `#box-2` element should have the `align-self` property set to a value of `flex-end`.
 
 ```js
 const boxTwo = document.querySelector('#box-2');
-const alignment = window.getComputedStyle(boxTwo)['align-self']; 
-assert.strictEqual(alignment,'flex-end');
+const alignment = window.getComputedStyle(boxTwo)['align-self'];
+assert.strictEqual(alignment, 'flex-end');
 ```
 
 # --seed--

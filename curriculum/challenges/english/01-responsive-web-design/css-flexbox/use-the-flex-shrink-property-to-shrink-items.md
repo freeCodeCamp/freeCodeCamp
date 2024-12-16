@@ -26,7 +26,7 @@ The `#box-1` element should have the `flex-shrink` property set to a value of `1
 ```js
 const boxOne = document.querySelector('#box-1');
 const flexShrink = window.getComputedStyle(boxOne)['flex-shrink'];
-assert.equal(flexShrink,'1');
+assert.equal(flexShrink, '1');
 ```
 
 The `#box-2` element should have the `flex-shrink` property set to a value of `2`.
@@ -34,7 +34,7 @@ The `#box-2` element should have the `flex-shrink` property set to a value of `2
 ```js
 const boxTwo = document.querySelector('#box-2');
 const flexShrink = window.getComputedStyle(boxTwo)['flex-shrink'];
-assert.equal(flexShrink,'2');
+assert.equal(flexShrink, '2');
 ```
 
 # --seed--

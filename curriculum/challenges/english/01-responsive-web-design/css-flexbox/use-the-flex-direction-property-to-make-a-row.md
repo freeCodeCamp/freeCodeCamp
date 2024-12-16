@@ -25,8 +25,8 @@ The `#box-container` element should have a `flex-direction` property set to `row
 
 ```js
 const boxContainer = document.querySelector('#box-container');
-const flexDirection = window.getComputedStyle(boxContainer )['flex-direction']; 
-assert.strictEqual(flexDirection,'row-reverse');
+const flexDirection = window.getComputedStyle(boxContainer)['flex-direction'];
+assert.strictEqual(flexDirection, 'row-reverse');
 ```
 
 # --seed--

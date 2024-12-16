@@ -31,9 +31,9 @@ const flexGrow = window.getComputedStyle(boxOne)['flex-grow'];
 const flexShrink = window.getComputedStyle(boxOne)['flex-shrink'];
 const flexBasis = window.getComputedStyle(boxOne)['flex-basis'];
 
-assert.equal(flexGrow,'2');
-assert.equal(flexShrink,'2');
-assert.equal(flexBasis,'150px');
+assert.equal(flexGrow, '2');
+assert.equal(flexShrink, '2');
+assert.equal(flexBasis, '150px');
 ```
 
 The `#box-2` element should have the `flex` property set to a value of `1 1 150px`.
@@ -44,15 +44,15 @@ const flexGrow = window.getComputedStyle(boxTwo)['flex-grow'];
 const flexShrink = window.getComputedStyle(boxTwo)['flex-shrink'];
 const flexBasis = window.getComputedStyle(boxTwo)['flex-basis'];
 
-assert.equal(flexGrow,'1');
-assert.equal(flexShrink,'1');
-assert.equal(flexBasis,'150px');
+assert.equal(flexGrow, '1');
+assert.equal(flexShrink, '1');
+assert.equal(flexBasis, '150px');
 ```
 
 Your code should use the `flex` property for `#box-1` and `#box-2`.
 
 ```js
-assert.lengthOf(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g),2);
+assert.lengthOf(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g), 2);
 ```
 
 # --seed--

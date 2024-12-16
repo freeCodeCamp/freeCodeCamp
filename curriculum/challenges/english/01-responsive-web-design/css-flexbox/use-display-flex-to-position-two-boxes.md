@@ -23,8 +23,8 @@ Add the CSS property `display` to `#box-container` and set its value to `flex`.
 
 ```js
 const boxContainer = document.querySelector('#box-container');
-const displayStyle = window.getComputedStyle(boxContainer)['display']; 
-assert.strictEqual(displayStyle,'flex');
+const displayStyle = window.getComputedStyle(boxContainer)['display'];
+assert.strictEqual(displayStyle, 'flex');
 ```
 
 # --seed--

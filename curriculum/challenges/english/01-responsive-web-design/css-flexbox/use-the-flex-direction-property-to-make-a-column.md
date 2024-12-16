@@ -21,8 +21,8 @@ The `#box-container` element should have a `flex-direction` property set to `col
 
 ```js
 const boxContainer = document.querySelector('#box-container');
-const flexDirection = window.getComputedStyle(boxContainer )['flex-direction']; 
-assert.strictEqual(flexDirection,'column');
+const flexDirection = window.getComputedStyle(boxContainer)['flex-direction'];
+assert.strictEqual(flexDirection, 'column');
 ```
 
 # --seed--

@@ -21,16 +21,16 @@ The `#box-1` element should have the `order` property set to a value of `2`.
 
 ```js
 const boxOne = document.querySelector('#box-1');
-const order = window.getComputedStyle(boxOne)['order']; 
-assert.strictEqual(order,'2');
+const order = window.getComputedStyle(boxOne)['order'];
+assert.strictEqual(order, '2');
 ```
 
 The `#box-2` element should have the `order` property set to a value of `1`.
 
 ```js
 const boxTwo = document.querySelector('#box-2');
-const order = window.getComputedStyle(boxTwo)['order']; 
-assert.strictEqual(order,'1');
+const order = window.getComputedStyle(boxTwo)['order'];
+assert.strictEqual(order, '1');
 ```
 
 # --seed--

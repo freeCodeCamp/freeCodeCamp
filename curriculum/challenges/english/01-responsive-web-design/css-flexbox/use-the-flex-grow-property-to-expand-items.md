@@ -23,16 +23,16 @@ The `#box-1` element should have the `flex-grow` property set to a value of `1`.
 
 ```js
 const boxOne = document.querySelector('#box-1');
-const flexGrow = window.getComputedStyle(boxOne)['flex-grow']; 
-assert.equal(flexGrow,'1');
+const flexGrow = window.getComputedStyle(boxOne)['flex-grow'];
+assert.equal(flexGrow, '1');
 ```
 
 The `#box-2` element should have the `flex-grow` property set to a value of `2`.
 
 ```js
 const boxTwo = document.querySelector('#box-2');
-const flexGrow = window.getComputedStyle(boxTwo)['flex-grow']; 
-assert.equal(flexGrow,'2');
+const flexGrow = window.getComputedStyle(boxTwo)['flex-grow'];
+assert.equal(flexGrow, '2');
 ```
 
 # --seed--

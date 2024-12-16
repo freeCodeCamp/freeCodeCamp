@@ -27,8 +27,8 @@ The `#box-container` element should have the `flex-wrap` property set to a value
 
 ```js
 const boxContainer = document.querySelector('#box-container');
-const flexWrap = window.getComputedStyle(boxContainer)['flex-wrap']; 
-assert.strictEqual(flexWrap,'wrap');
+const flexWrap = window.getComputedStyle(boxContainer)['flex-wrap'];
+assert.strictEqual(flexWrap, 'wrap');
 ```
 
 # --seed--
