@@ -31,8 +31,8 @@ Fulfill the user stories below and get all the tests to pass to complete the lab
 Your portfolio should have a "Welcome" section with an `id` of `welcome-section`.
 
 ```js
-const el = document.getElementById('welcome-section')
-assert(!!el);
+const el = document.getElementById('welcome-section');
+assert.isNotNull(el);
 ```
 
 Your `#welcome-section` element should contain an `h1` element.
@@ -51,16 +51,15 @@ You should not have any empty `h1` elements within `#welcome-section` element.
 assert.isAbove(
   document.querySelectorAll('#welcome-section h1')?.[0]?.innerText?.length,
   0,
-  'h1 element in welcome section should contain your name or camper ' +
-    'name '
+  'h1 element in welcome section should contain your name or camper ' + 'name '
 );
 ```
 
 You should have a "Projects" section with an `id` of `project-section`.
 
 ```js
-const el = document.getElementById('project-section')
-assert(!!el);
+const el = document.getElementById('project-section');
+assert.isNotNull(el);
 ```
 
 Your portfolio should contain at least one element with a class of `project-tile`.
@@ -82,35 +81,33 @@ Your portfolio should have a navbar with an `id` of `navbar`.
 
 ```js
 const el = document.getElementById('navbar');
-assert(!!el);
+assert.isNotNull(el);
 ```
 
 Your `#navbar` element should contain at least one `a` element whose `href` attribute starts with `#`.
 
 ```js
 const links = [...document.querySelectorAll('#navbar a')].filter(
-  (nav) => (nav?.getAttribute('href') || '').substring(0, 1) === '#'
+  nav => (nav?.getAttribute('href') || '').substring(0, 1) === '#'
 );
 
-assert.isAbove(
-  links.length,
-  0,
-  'Navbar should contain an anchor link '
-);
+assert.isAbove(links.length, 0, 'Navbar should contain an anchor link ');
 ```
 
 Your portfolio should have an `a` element with an `id` of `profile-link`.
 
 ```js
 const el = document.getElementById('profile-link');
-assert(!!el && el.tagName === 'A')
+assert.isNotNull(el);
+assert.strictEqual(el.tagName, 'A');
 ```
 
 Your `#profile-link` element should have a `target` attribute of `_blank`.
 
 ```js
 const el = document.getElementById('profile-link');
-assert(!!el && el.target === '_blank')
+assert.isNotNull(el);
+assert.strictEqual(el.target, '_blank');
 ```
 
 Your portfolio should use at least one media query.
@@ -118,14 +115,15 @@ Your portfolio should use at least one media query.
 ```js
 const htmlSourceAttr = Array.from(document.querySelectorAll('source')).map(el => el.getAttribute('media'))
 const cssCheck = new __helpers.CSSHelp(document).getCSSRules('media')
-assert(cssCheck.length > 0 || htmlSourceAttr.length > 0);
+assert.isTrue(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 ```
 
 Your `#navbar` element should always be at the top of the viewport.
 
 ```js
 (async () => {
-  const timeout = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+  const timeout = milliseconds =>
+    new Promise(resolve => setTimeout(resolve, milliseconds));
 
   const navbar = document.getElementById('navbar');
   assert.approximately(
@@ -133,7 +131,7 @@ Your `#navbar` element should always be at the top of the viewport.
     0,
     15,
     "Navbar's parent should be body and it should be at the top of " +
-    'the viewport '
+      'the viewport '
   );
 
   window.scroll(0, 500);
@@ -144,8 +142,7 @@ Your `#navbar` element should always be at the top of the viewport.
     navbar?.getBoundingClientRect().top,
     0,
     15,
-    'Navbar should be at the top of the viewport even after ' +
-    'scrolling '
+    'Navbar should be at the top of the viewport even after ' + 'scrolling '
   );
   window.scroll(0, 0);
 })();
@@ -156,16 +153,13 @@ Your `#navbar` element should always be at the top of the viewport.
 ## --seed-contents--
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Personal Portfolio</title>
-</head>
-<body>
-
-</body>
-
+  </head>
+  <body></body>
 </html>
 ```
 
@@ -176,31 +170,41 @@ Your `#navbar` element should always be at the top of the viewport.
 # --solutions--
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
+  <head>
     <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet" />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- START NAV -->
 
     <nav id="navbar" class="nav">
-        <ul class="nav-list">
-            <li>
-                <a href="#welcome-section">About</a>
-            </li>
-            <li>
-                <a href="#project-section">Work</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
+      <ul class="nav-list">
+        <li>
+          <a href="#welcome-section">About</a>
+        </li>
+        <li>
+          <a href="#project-section">Work</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
     </nav>
 
     <!-- END NAV -->
@@ -208,8 +212,8 @@ Your `#navbar` element should always be at the top of the viewport.
     <!-- START WELCOME SECTION -->
 
     <section id="welcome-section" class="welcome-section">
-        <h1>Hey I am Mimic</h1>
-        <p>a web developer</p>
+      <h1>Hey I am Mimic</h1>
+      <p>a web developer</p>
     </section>
 
     <!-- END WELCOME SECTION -->
@@ -217,68 +221,113 @@ Your `#navbar` element should always be at the top of the viewport.
     <!-- START PROJECTS SECTION -->
 
     <section id="project-section" class="projects-section">
-        <h2 class="projects-section-header">These are some of my projects</h2>
+      <h2 class="projects-section-header">These are some of my projects</h2>
 
-        <div class="projects-grid">
-            <a href="https://codepen.io/freeCodeCamp/full/zNqgVx" target="_blank" class="project project-tile">
-                <img class="project-image" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg"
-                    alt="project" />
-                <p class="project-title">
-                    <span class="code">&lt;</span>
-                    Tribute Page
-                    <span class="code">&#47;&gt;</span>
-                </p>
-            </a>
-            <a href="https://codepen.io/freeCodeCamp/full/qRZeGZ" target="_blank" class="project project-tile">
-                <img class="project-image"
-                    src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png"
-                    alt="project" />
-                <p class="project-title">
-                    <span class="code">&lt;</span>
-                    Random Quote Machine
-                    <span class="code">&#47;&gt;</span>
-                </p>
-            </a>
-            <a href="https://codepen.io/freeCodeCamp/full/wgGVVX" target="_blank" class="project project-tile">
-                <img class="project-image" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png"
-                    alt="project" />
-                <p class="project-title">
-                    <span class="code">&lt;</span>
-                    JavaScript Calculator
-                    <span class="code">&#47;&gt;</span>
-                </p>
-            </a>
-            <a href="https://codepen.io/freeCodeCamp/full/mVEJag" target="_blank" class="project project-tile">
-                <img class="project-image" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/map.jpg"
-                    alt="project" />
-                <p class="project-title">
-                    <span class="code">&lt;</span>
-                    Map Data Across the Globe
-                    <span class="code">&#47;&gt;</span>
-                </p>
-            </a>
-            <a href="https://codepen.io/freeCodeCamp/full/wGqEga" target="_blank" class="project project-tile">
-                <img class="project-image" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/wiki.png"
-                    alt="project" />
-                <p class="project-title">
-                    <span class="code">&lt;</span>
-                    Wikipedia Viewer
-                    <span class="code">&#47;&gt;</span>
-                </p>
-            </a>
-            <a href="https://codepen.io/freeCodeCamp/full/KzXQgy" target="_blank" class="project project-tile">
-                <img class="project-image"
-                    src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tic-tac-toe.png" alt="project" />
-                <p class="project-title">
-                    <span class="code">&lt;</span>
-                    Tic Tac Toe Game
-                    <span class="code">&#47;&gt;</span>
-                </p>
-            </a>
-        </div>
+      <div class="projects-grid">
+        <a
+          href="https://codepen.io/freeCodeCamp/full/zNqgVx"
+          target="_blank"
+          class="project project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg"
+            alt="project"
+          />
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Tribute Page
+            <span class="code">&#47;&gt;</span>
+          </p>
+        </a>
+        <a
+          href="https://codepen.io/freeCodeCamp/full/qRZeGZ"
+          target="_blank"
+          class="project project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/random-quote-machine.png"
+            alt="project"
+          />
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Random Quote Machine
+            <span class="code">&#47;&gt;</span>
+          </p>
+        </a>
+        <a
+          href="https://codepen.io/freeCodeCamp/full/wgGVVX"
+          target="_blank"
+          class="project project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/calc.png"
+            alt="project"
+          />
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            JavaScript Calculator
+            <span class="code">&#47;&gt;</span>
+          </p>
+        </a>
+        <a
+          href="https://codepen.io/freeCodeCamp/full/mVEJag"
+          target="_blank"
+          class="project project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/map.jpg"
+            alt="project"
+          />
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Map Data Across the Globe
+            <span class="code">&#47;&gt;</span>
+          </p>
+        </a>
+        <a
+          href="https://codepen.io/freeCodeCamp/full/wGqEga"
+          target="_blank"
+          class="project project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/wiki.png"
+            alt="project"
+          />
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Wikipedia Viewer
+            <span class="code">&#47;&gt;</span>
+          </p>
+        </a>
+        <a
+          href="https://codepen.io/freeCodeCamp/full/KzXQgy"
+          target="_blank"
+          class="project project-tile"
+        >
+          <img
+            class="project-image"
+            src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tic-tac-toe.png"
+            alt="project"
+          />
+          <p class="project-title">
+            <span class="code">&lt;</span>
+            Tic Tac Toe Game
+            <span class="code">&#47;&gt;</span>
+          </p>
+        </a>
+      </div>
 
-        <a href="https://codepen.io/FreeCodeCamp/" class="btn btn-show-all" target="_blank">Show all<i
-                class="fas fa-chevron-right"></i></a>
+      <a
+        href="https://codepen.io/FreeCodeCamp/"
+        class="btn btn-show-all"
+        target="_blank"
+        >Show all<i class="fas fa-chevron-right"></i
+      ></a>
     </section>
 
     <!-- END PROJECTS SECTION -->
@@ -286,20 +335,37 @@ Your `#navbar` element should always be at the top of the viewport.
     <!-- START CONTACT SECTION -->
 
     <section id="contact" class="contact-section">
-        <div class="contact-section-header">
-            <h2>Let's work together...</h2>
-            <p>How do you take your coffee?</p>
-        </div>
-        <div class="contact-links">
-            <a href="https://facebook.com/freecodecamp" target="_blank" class="btn contact-details"><i
-                    class="fab fa-facebook-square"></i> Facebook</a>
-            <a id="profile-link" href="https://github.com/freecodecamp" target="_blank" class="btn contact-details"><i
-                    class="fab fa-github"></i> GitHub</a>
-            <a href="https://twitter.com/freecodecamp" target="_blank" class="btn contact-details"><i
-                    class="fab fa-twitter"></i> Twitter</a>
-            <a href="mailto:example@example.com" class="btn contact-details"><i class="fas fa-at"></i> Send a mail</a>
-            <a href="tel:555-555-5555" class="btn contact-details"><i class="fas fa-mobile-alt"></i> Call me</a>
-        </div>
+      <div class="contact-section-header">
+        <h2>Let's work together...</h2>
+        <p>How do you take your coffee?</p>
+      </div>
+      <div class="contact-links">
+        <a
+          href="https://facebook.com/freecodecamp"
+          target="_blank"
+          class="btn contact-details"
+          ><i class="fab fa-facebook-square"></i> Facebook</a
+        >
+        <a
+          id="profile-link"
+          href="https://github.com/freecodecamp"
+          target="_blank"
+          class="btn contact-details"
+          ><i class="fab fa-github"></i> GitHub</a
+        >
+        <a
+          href="https://twitter.com/freecodecamp"
+          target="_blank"
+          class="btn contact-details"
+          ><i class="fab fa-twitter"></i> Twitter</a
+        >
+        <a href="mailto:example@example.com" class="btn contact-details"
+          ><i class="fas fa-at"></i> Send a mail</a
+        >
+        <a href="tel:555-555-5555" class="btn contact-details"
+          ><i class="fas fa-mobile-alt"></i> Call me</a
+        >
+      </div>
     </section>
 
     <!-- END CONTACT SECTION -->
@@ -307,19 +373,23 @@ Your `#navbar` element should always be at the top of the viewport.
     <!-- START FOOTER SECTION -->
 
     <footer>
-        <p>
-            **This is just a fake portfolio. All the projects and contact details
-            given are not real.
-        </p>
-        <p>
-            &copy; Created for
-            <a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp <i
-                    class="fab fa-free-code-camp"></i></a>
-        </p>
+      <p>
+        **This is just a fake portfolio. All the projects and contact details
+        given are not real.
+      </p>
+      <p>
+        &copy; Created for
+        <a href="https://www.freecodecamp.org/" target="_blank"
+          >freeCodeCamp <i class="fab fa-free-code-camp"></i
+        ></a>
+      </p>
     </footer>
 
     <!-- END FOOTER SECTION -->
 </body>
+</body>
+
+  </body>
 
 </html>
 ```
@@ -327,34 +397,34 @@ Your `#navbar` element should always be at the top of the viewport.
 ```css
 /* Custom properties/variables  */
 :root {
-    --main-white: #f0f0f0;
-    --main-red: #be3144;
-    --main-blue: #45567d;
-    --main-gray: #303841;
+  --main-white: #f0f0f0;
+  --main-red: #be3144;
+  --main-blue: #45567d;
+  --main-gray: #303841;
 }
 
 /* Base reset */
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* box-sizing and font sizing */
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    /* Set font size for easy rem calculations
+  /* Set font size for easy rem calculations
    * default document font size = 16px, 1rem = 16px, 100% = 16px
    * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
   */
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 /* A few media query to set some font sizes at different screen sizes.
@@ -374,287 +444,287 @@ html {
 
 /* 1200px / 16px = 75em */
 @media (max-width: 75em) {
-    html {
-        font-size: 60%;
-    }
+  html {
+    font-size: 60%;
+  }
 }
 
 /* 980px / 16px = 61.25em */
 @media (max-width: 61.25em) {
-    html {
-        font-size: 58%;
-    }
+  html {
+    font-size: 58%;
+  }
 }
 
 /* 460px / 16px = 28.75em */
 @media (max-width: 28.75em) {
-    html {
-        font-size: 55%;
-    }
+  html {
+    font-size: 55%;
+  }
 }
 
 /* Base styles */
 
 body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem;
-    /* 18px */
-    font-weight: 400;
-    line-height: 1.4;
-    color: var(--main-white);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  /* 18px */
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--main-white);
 }
 
 h1,
 h2 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-align: center;
 }
 
 h1 {
-    font-size: 6rem;
+  font-size: 6rem;
 }
 
 h2 {
-    font-size: 4.2rem;
+  font-size: 4.2rem;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: var(--main-white);
+  text-decoration: none;
+  color: var(--main-white);
 }
 
 img {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
 /* nav */
 
 .nav {
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: var(--main-red);
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-    z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--main-red);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+  z-index: 10;
 }
 
 .nav-list {
-    display: flex;
-    margin-right: 2rem;
+  display: flex;
+  margin-right: 2rem;
 }
 
 @media (max-width: 28.75em) {
-    .nav {
-        justify-content: center;
-    }
+  .nav {
+    justify-content: center;
+  }
 
-    .nav-list {
-        margin: 0 1rem;
-    }
+  .nav-list {
+    margin: 0 1rem;
+  }
 }
 
 .nav-list a {
-    display: block;
-    font-size: 2.2rem;
-    padding: 2rem;
+  display: block;
+  font-size: 2.2rem;
+  padding: 2rem;
 }
 
 .nav-list a:hover {
-    background: var(--main-blue);
+  background: var(--main-blue);
 }
 
 /* Welcome section */
 
 .welcome-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: #000;
-    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
 }
 
-.welcome-section>p {
-    font-size: 3rem;
-    font-weight: 200;
-    font-style: italic;
-    color: var(--main-red);
+.welcome-section > p {
+  font-size: 3rem;
+  font-weight: 200;
+  font-style: italic;
+  color: var(--main-red);
 }
 
 /* Projects section */
 
 .projects-section {
-    text-align: center;
-    padding: 10rem 2rem;
-    background: var(--main-blue);
+  text-align: center;
+  padding: 10rem 2rem;
+  background: var(--main-blue);
 }
 
 .projects-section-header {
-    max-width: 640px;
-    margin: 0 auto 6rem auto;
-    border-bottom: 0.2rem solid var(--main-white);
+  max-width: 640px;
+  margin: 0 auto 6rem auto;
+  border-bottom: 0.2rem solid var(--main-white);
 }
 
 @media (max-width: 28.75em) {
-    .projects-section-header {
-        font-size: 4rem;
-    }
+  .projects-section-header {
+    font-size: 4rem;
+  }
 }
 
 /* "Automagic" image grid using no media queries */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 4rem;
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    margin-bottom: 6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
 }
 
 @media (max-width: 30.625em) {
-    .projects-section {
-        padding: 6rem 1rem;
-    }
+  .projects-section {
+    padding: 6rem 1rem;
+  }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project {
-    background: var(--main-gray);
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
+  background: var(--main-gray);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
 }
 
 .code {
-    color: var(--main-gray);
-    transition: color 0.3s ease-out;
+  color: var(--main-gray);
+  transition: color 0.3s ease-out;
 }
 
 .project:hover .code {
-    color: #ff7f50;
+  color: #ff7f50;
 }
 
 .project-image {
-    height: calc(100% - 6.8rem);
-    width: 100%;
-    object-fit: cover;
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
 }
 
 .project-title {
-    font-size: 2rem;
-    padding: 2rem 0.5rem;
+  font-size: 2rem;
+  padding: 2rem 0.5rem;
 }
 
 .btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 2px;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 2px;
 }
 
 .btn-show-all {
-    font-size: 2rem;
-    background: var(--main-gray);
-    transition: background 0.3s ease-out;
+  font-size: 2rem;
+  background: var(--main-gray);
+  transition: background 0.3s ease-out;
 }
 
 .btn-show-all:hover {
-    background: var(--main-red);
+  background: var(--main-red);
 }
 
-.btn-show-all:hover>i {
-    transform: translateX(2px);
+.btn-show-all:hover > i {
+  transform: translateX(2px);
 }
 
-.btn-show-all>i {
-    margin-left: 10px;
-    transform: translateX(0);
-    transition: transform 0.3s ease-out;
+.btn-show-all > i {
+  margin-left: 10px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
 }
 
 /* Contact section */
 
 .contact-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    height: 80vh;
-    padding: 0 2rem;
-    background: var(--main-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 80vh;
+  padding: 0 2rem;
+  background: var(--main-gray);
 }
 
-.contact-section-header>h2 {
-    font-size: 6rem;
+.contact-section-header > h2 {
+  font-size: 6rem;
 }
 
 @media (max-width: 28.75em) {
-    .contact-section-header>h2 {
-        font-size: 4rem;
-    }
+  .contact-section-header > h2 {
+    font-size: 4rem;
+  }
 }
 
-.contact-section-header>p {
-    font-style: italic;
+.contact-section-header > p {
+  font-style: italic;
 }
 
 .contact-links {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 980px;
-    margin-top: 4rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 4rem;
+  flex-wrap: wrap;
 }
 
 .contact-details {
-    font-size: 2.4rem;
-    text-shadow: 2px 2px 1px #1f1f1f;
-    transition: transform 0.3s ease-out;
+  font-size: 2.4rem;
+  text-shadow: 2px 2px 1px #1f1f1f;
+  transition: transform 0.3s ease-out;
 }
 
 .contact-details:hover {
-    transform: translateY(8px);
+  transform: translateY(8px);
 }
 
 /* Footer */
 
 footer {
-    font-weight: 300;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 2rem;
-    background: var(--main-gray);
-    border-top: 4px solid var(--main-red);
+  font-weight: 300;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+  background: var(--main-gray);
+  border-top: 4px solid var(--main-red);
 }
 
-footer>p {
-    margin: 2rem;
+footer > p {
+  margin: 2rem;
 }
 
 footer i {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 @media (max-width: 28.75em) {
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 ```
