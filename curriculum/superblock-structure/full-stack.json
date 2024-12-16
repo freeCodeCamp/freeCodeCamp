@@ -2,6 +2,7 @@
   "chapters": [
     {
       "dashedName": "freecodecamp",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "getting-started-with-freecodecamp",
@@ -11,6 +12,7 @@
     },
     {
       "dashedName": "html",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "basic-html",
@@ -71,6 +73,7 @@
     },
     {
       "dashedName": "css",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "computer-basics",
@@ -141,6 +144,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-colors-in-css" },
             { "dashedName": "workshop-colored-markers" },
+            { "dashedName": "lab-colored-boxes" },
             { "dashedName": "review-css-colors" },
             { "dashedName": "quiz-css-colors" }
           ]
@@ -276,6 +280,7 @@
     },
     {
       "dashedName": "javascript",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "code-editors",
@@ -376,6 +381,7 @@
             {
               "dashedName": "lecture-understanding-modules-imports-and-exports"
             },
+            { "dashedName": "lab-password-generator" },
             { "dashedName": "review-javascript-fundamentals" },
             { "dashedName": "quiz-javascript-fundamentals" }
           ]
@@ -444,6 +450,7 @@
           "blocks": [
             { "dashedName": "lecture-understanding-form-validation" },
             { "dashedName": "workshop-calorie-counter" },
+            { "dashedName": "lab-customer-complaint-form" },
             { "dashedName": "review-form-validation-with-javascript" },
             { "dashedName": "quiz-form-validation-with-javascript" }
           ]
@@ -518,6 +525,7 @@
           "blocks": [
             { "dashedName": "lecture-understanding-functional-programming" },
             { "dashedName": "workshop-recipe-ingredient-converter" },
+            { "dashedName": "lab-sorting-visualizer" },
             { "dashedName": "review-javascript-functional-programming" },
             { "dashedName": "quiz-javascript-functional-programming" }
           ]
@@ -543,6 +551,7 @@
 
     {
       "dashedName": "frontend-libraries",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "react-fundamentals",
@@ -553,6 +562,7 @@
             { "dashedName": "workshop-reusable-mega-navbar" },
             { "dashedName": "lab-reusable-footer" },
             { "dashedName": "lecture-working-with-data-in-react" },
+            { "dashedName": "workshop-reusable-profile-card-component" },
             { "dashedName": "lab-mood-board" },
             { "dashedName": "review-react-basics" },
             { "dashedName": "quiz-react-basics" }
@@ -560,6 +570,7 @@
         },
         {
           "dashedName": "react-state-hooks-and-routing",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "quiz-react-state-and-hooks" },
             { "dashedName": "quiz-advanced-react" }
@@ -567,6 +578,7 @@
         },
         {
           "dashedName": "performance",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-web-performance" },
             { "dashedName": "quiz-web-performance" }
@@ -574,6 +586,7 @@
         },
         {
           "dashedName": "css-libraries-and-frameworks",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-css-libraries-and-frameworks" },
             { "dashedName": "quiz-css-libraries-and-frameworks" }
@@ -581,6 +594,7 @@
         },
         {
           "dashedName": "testing",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-testing" },
             { "dashedName": "quiz-testing" }
@@ -588,6 +602,7 @@
         },
         {
           "dashedName": "typescript-fundamentals",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-typescript" },
             { "dashedName": "quiz-typescript" }
@@ -602,6 +617,7 @@
     },
     {
       "dashedName": "relational-databases",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "bash-fundamentals",
@@ -665,6 +681,16 @@
           "blocks": [{ "dashedName": "review-relational-databases" }]
         }
       ]
+    },
+    {
+      "dashedName": "backend-javascript",
+      "comingSoon": true,
+      "modules": []
+    },
+    {
+      "dashedName": "python",
+      "comingSoon": true,
+      "modules": []
     },
     {
       "chapterType": "exam",

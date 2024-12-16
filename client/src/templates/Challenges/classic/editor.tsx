@@ -34,7 +34,10 @@ import {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import {
+  canSaveToDB,
+  challengeTypes
+} from '../../../../../shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -543,9 +546,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_S
       ],
       run:
-        (props.challengeType === challengeTypes.multifileCertProject ||
-          props.challengeType === challengeTypes.multifilePythonCertProject) &&
-        props.isSignedIn
+        canSaveToDB(props.challengeType) && props.isSignedIn
           ? // save to database
             props.saveChallenge
           : // save to local storage
@@ -814,7 +815,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   ): HTMLDivElement {
     const scrollGutterNode = document.createElement('div');
     const lineGutterWidth = editor.getLayoutInfo().contentLeft;
-    scrollGutterNode.style.width = `${lineGutterWidth}px`;
+    scrollGutterNode.style.width = `${lineGutterWidth * 1.35}px`;
     scrollGutterNode.style.left = `-${lineGutterWidth}px`;
     scrollGutterNode.style.top = '0';
     scrollGutterNode.style.height = '10000px';

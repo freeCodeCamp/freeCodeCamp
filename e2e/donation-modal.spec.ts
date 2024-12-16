@@ -6,7 +6,7 @@ import { clearEditor, focusEditor } from './utils/editor';
 
 const slowExpect = expect.configure({ timeout: 25000 });
 
-const completeFrontEndCert = async (page: Page) => {
+const completeFrontEndCert = async (page: Page, number?: number) => {
   await page.goto(
     `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine`
   );
@@ -19,9 +19,10 @@ const completeFrontEndCert = async (page: Page) => {
     '25--5-clock'
   ];
 
-  for (const project of projects) {
+  const loopNumber = number || projects.length;
+  for (let i = 0; i < loopNumber; i++) {
     await page.waitForURL(
-      `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${project}`
+      `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i]}`
     );
     await page
       .getByRole('textbox', { name: 'solution' })
@@ -257,12 +258,32 @@ test.describe('Donation modal appearance logic - New user', () => {
     await expect(donationModal).toBeHidden();
   });
 
-  test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
+  test('should not appear if the user has just completed a new block but has less than 10 completed challenges', async ({
     page
   }) => {
     test.setTimeout(40000);
 
     await completeFrontEndCert(page);
+
+    const donationModal = page
+      .getByRole('dialog')
+      .filter({ hasText: 'Become a Supporter' });
+    await expect(donationModal).toBeHidden();
+  });
+});
+
+test.describe('Donation modal appearance logic - Certified user claiming a new block', () => {
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+  execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user');
+
+  test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
+    page,
+    context
+  }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    test.setTimeout(40000);
+
+    await completeFrontEndCert(page, 1);
 
     const donationModal = page
       .getByRole('dialog')
@@ -284,7 +305,7 @@ test.describe('Donation modal appearance logic - New user', () => {
     await donationModal.getByRole('button', { name: 'Ask me later' }).click();
     await expect(donationModal).toBeHidden();
 
-    await completeFrontEndCert(page);
+    await completeFrontEndCert(page, 1);
     await expect(donationModal).toBeHidden();
   });
 });

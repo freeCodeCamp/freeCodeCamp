@@ -253,7 +253,8 @@ function ShowClassic({
     challengeTypes.modern,
     challengeTypes.multifileCertProject,
     challengeTypes.multifilePythonCertProject,
-    challengeTypes.python
+    challengeTypes.python,
+    challengeTypes.lab
   ].includes(challengeType);
   const getLayoutState = () => {
     const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout | null;
