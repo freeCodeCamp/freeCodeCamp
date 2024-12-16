@@ -2,7 +2,7 @@
   "name": "Working with Forms",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-forms",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

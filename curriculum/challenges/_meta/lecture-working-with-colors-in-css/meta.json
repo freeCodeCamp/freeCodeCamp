@@ -2,7 +2,7 @@
   "name": "Working with Colors in CSS",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-colors-in-css",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
