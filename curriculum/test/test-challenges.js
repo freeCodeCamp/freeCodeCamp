@@ -25,8 +25,9 @@ require('@babel/register')({
 });
 const {
   buildDOMChallenge,
-  buildJSChallenge,
-  buildPythonChallenge
+  buildPythonChallenge,
+  buildChallenge,
+  buildFunctions
 } = require('../../client/src/templates/Challenges/utils/build');
 const {
   WorkerExecutor
@@ -407,18 +408,6 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                   return;
                 }
 
-                // TODO(after python PR): simplify pipeline and sync with client.
-                // buildChallengeData should be called and any errors handled.
-                // canBuildChallenge does not need to exist independently.
-                const buildChallenge =
-                  {
-                    [challengeTypes.js]: buildJSChallenge,
-                    [challengeTypes.jsProject]: buildJSChallenge,
-                    [challengeTypes.python]: buildPythonChallenge,
-                    [challengeTypes.multifilePythonCertProject]:
-                      buildPythonChallenge
-                  }[challengeType] ?? buildDOMChallenge;
-
                 // The python tests are (currently) slow, so we give them more time.
                 const timePerTest =
                   challengeType === challengeTypes.python ? 10000 : 5000;
@@ -563,8 +552,6 @@ async function createTestRunner(
   buildChallenge,
   solutionFromNext
 ) {
-  const { required = [], template } = challenge;
-
   const challengeFiles = replaceChallengeFilesContentsWithSolutions(
     challenge.challengeFiles,
     solutionFiles
@@ -572,9 +559,8 @@ async function createTestRunner(
 
   const { build, sources, loadEnzyme } = await buildChallenge(
     {
-      challengeFiles,
-      required,
-      template
+      ...challenge,
+      challengeFiles
     },
     { usesTestRunner: true }
   );
@@ -585,8 +571,10 @@ async function createTestRunner(
     original: sources.original
   };
 
-  const runsInBrowser = buildChallenge === buildDOMChallenge;
-  const runsInPythonWorker = buildChallenge === buildPythonChallenge;
+  const buildFunction = buildFunctions[challenge.challengeType];
+
+  const runsInBrowser = buildFunction === buildDOMChallenge;
+  const runsInPythonWorker = buildFunction === buildPythonChallenge;
 
   const evaluator = await (runsInBrowser
     ? getContextEvaluator(build, sources, code, loadEnzyme)
