@@ -1,6 +1,6 @@
 {
   "name": "Build a Password Generator App",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "blockType": "lab",
   "dashedName": "lab-password-generator",

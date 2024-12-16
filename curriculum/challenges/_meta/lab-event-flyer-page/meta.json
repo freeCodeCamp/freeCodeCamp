@@ -2,7 +2,7 @@
   "name": "Build an Event Flyer Page",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-event-flyer-page",
   "superBlock": "full-stack-developer",

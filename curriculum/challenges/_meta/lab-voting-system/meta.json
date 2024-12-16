@@ -1,6 +1,6 @@
 {
   "name": "Build a Voting System",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-voting-system",
   "superBlock": "full-stack-developer",
