@@ -246,8 +246,7 @@ export const certTypeTitleMap = {
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.jsAlgoDataStructV8]:
-    'JavaScript Algorithms and Data Structures (Beta)'
+  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures'
 };
 
 export type CertSlug = (typeof Certification)[keyof typeof Certification];
