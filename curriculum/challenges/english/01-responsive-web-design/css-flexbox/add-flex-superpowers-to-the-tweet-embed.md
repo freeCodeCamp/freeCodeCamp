@@ -22,49 +22,66 @@ Add the CSS property `display: flex` to all of the following items - note that t
 Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
 
 ```js
-assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+const followButton = document.querySelector('.follow-btn');
+const displayStyle = window.getComputedStyle(followButton)['display']; 
+assert.isNotNull(followButton);
+assert.notStrictEqual(displayStyle,"none"); 
 ```
 
 Your `header` should have a `display` property set to `flex`.
 
 ```js
-assert($('header').css('display') == 'flex');
+const header = document.querySelector('header');
+const displayStyle = window.getComputedStyle(header)['display']; 
+assert.strictEqual(displayStyle,'flex');
 ```
 
 Your `footer` should have a `display` property set to `flex`.
 
 ```js
-assert($('footer').css('display') == 'flex');
+const footer = document.querySelector('footer');
+const displayStyle = window.getComputedStyle(footer)['display']; 
+assert.strictEqual(displayStyle,'flex');
 ```
 
 Your `h3` should have a `display` property set to `flex`.
 
 ```js
-assert($('h3').css('display') == 'flex');
+const h3Element = document.querySelector('h3');
+const displayStyle = window.getComputedStyle(h3Element)['display']; 
+assert.strictEqual(displayStyle,'flex');
 ```
 
 Your `h4` should have a `display` property set to `flex`.
 
 ```js
-assert($('h4').css('display') == 'flex');
+const h4Element = document.querySelector('h4');
+const displayStyle = window.getComputedStyle(h4Element)['display']; 
+assert.strictEqual(displayStyle,'flex');
 ```
 
 Your `.profile-name` should have a `display` property set to `flex`.
 
 ```js
-assert($('.profile-name').css('display') == 'flex');
+const profileName = document.querySelector('.profile-name');
+const displayStyle = window.getComputedStyle(profileName)['display']; 
+assert.strictEqual(displayStyle,'flex');
 ```
 
 Your `.follow-btn` should have a `display` property set to `flex`.
 
 ```js
-assert($('.follow-btn').css('display') == 'flex');
+const followButton = document.querySelector('.follow-btn');
+const displayStyle = window.getComputedStyle(followButton)['display']; 
+assert.strictEqual(displayStyle,'flex');
 ```
 
 Your `.stats` should have a `display` property set to `flex`.
 
 ```js
-assert($('.stats').css('display') == 'flex');
+const stats = document.querySelector('.stats');
+const displayStyle = window.getComputedStyle(stats)['display']; 
+assert.strictEqual(displayStyle,'flex');
 ```
 
 # --seed--

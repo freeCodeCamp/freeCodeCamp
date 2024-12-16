@@ -20,13 +20,18 @@ Add the CSS property `align-items` to the header's `.follow-btn` element. Set th
 Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
 
 ```js
-assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+const followButton = document.querySelector('.follow-btn');
+const displayStyle = window.getComputedStyle(followButton)['display']; 
+assert.isNotNull(followButton);
+assert.notStrictEqual(displayStyle,"none"); 
 ```
 
 The `.follow-btn` element should have the `align-items` property set to a value of `center`.
 
 ```js
-assert($('.follow-btn').css('align-items') == 'center');
+const followButton = document.querySelector('.follow-btn');
+const alignItems = window.getComputedStyle(followButton)['align-items']; 
+assert.strictEqual(alignItems,"center"); 
 ```
 
 # --seed--

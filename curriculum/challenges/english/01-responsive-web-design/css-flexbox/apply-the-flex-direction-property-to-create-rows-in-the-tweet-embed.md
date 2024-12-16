@@ -20,19 +20,22 @@ Add the CSS property `flex-direction` to both the `header` and `footer` and set 
 Your `.follow-btn` should be rendered on the page. Be sure to turn off any extensions such as ad blockers.
 
 ```js
-assert($('.follow-btn').length > 0 && $('.follow-btn').css('display') !== 'none');
+const followButton = document.querySelector('.follow-btn');
+const displayStyle = window.getComputedStyle(followButton)['display']; 
+assert.isNotNull(followButton);
+assert.notStrictEqual(displayStyle,"none"); 
 ```
 
 The `header` should have a `flex-direction` property set to `row`.
 
 ```js
-assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g));
+assert.match(code,/header\s*?{[^}]*?flex-direction:\s*?row;/g);
 ```
 
 The `footer` should have a `flex-direction` property set to `row`.
 
 ```js
-assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g));
+assert.match(code,/footer\s*?{[^}]*?flex-direction:\s*?row;/g);
 ```
 
 # --seed--
