@@ -1,7 +1,7 @@
 {
   "name": "Build a Recipe Ingredient Converter",
   "blockLayout": "challenge-grid",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-recipe-ingredient-converter",

@@ -1,7 +1,7 @@
 {
   "name": "Build a Recipe Tracker",
   "blockLayout": "challenge-grid",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-recipe-tracker",

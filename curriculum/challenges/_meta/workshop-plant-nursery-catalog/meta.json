@@ -1,6 +1,6 @@
 {
   "name": "Build a Plant Nursery Catalog",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-plant-nursery-catalog",

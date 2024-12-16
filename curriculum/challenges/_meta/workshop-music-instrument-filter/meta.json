@@ -2,7 +2,7 @@
   "name": "Build a Music Instrument Filter",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-music-instrument-filter",
