@@ -1570,23 +1570,36 @@
   },
   "b1-english-for-developers": {
     "title": "B1 Inglés para desarrolladores (Beta)",
-    "intro": ["Introducción con marcador de posición"],
+    "intro": [
+      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the B1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
+      "It will help you strengthen your foundational skills while introducing more complex grammar and usage. You'll learn how to describe places and things, share past experiences, and confidently use tenses like Present Perfect and Future. Practical communication strategies are included as well, such as managing conversations, expressing opinions, and building agreement or disagreement in discussions.",
+      "You'll also focus on applying these skills in professional and technical settings. You'll practice vocabulary and phrases essential for developers, such as describing code, participating in stand-up meetings, and discussing tech trends. Advanced topics include conditionals, comparative structures, and conversation management, so you can prepare for real-world interactions in the tech industry.",
+      "This entire B1-level curriculum includes 73 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
+    ],
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Aprende a describir lugares y acontecimientos",
-        "intro": [""]
+        "intro": [
+          "This course will show you ways of talking about places and events conversationally."
+        ]
       },
       "learn-how-to-talk-about-past-experiences": {
         "title": "Aprende a hablar de experiencias pasadas",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to share experiences that you had in the past."
+        ]
       },
       "learn-how-to-talk-about-past-activities": {
         "title": "Aprende a hablar de actividades pasadas",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how talk about things that you did."
+        ]
       },
       "learn-present-perfect-while-talking-about-accessibility": {
         "title": "Aprende el presente perfecto hablando de accesibilidad",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to use the Present Perfect structure and learn a bit more about accessibility."
+        ]
       },
       "learn-how-to-plan-future-events": {
         "title": "Aprende a planificar eventos futuros",
@@ -1698,7 +1711,8 @@
       "javascript": "JavaScript",
       "frontend-libraries": "Front End Libraries",
       "relational-databases": "Relational Databases",
-      "security-and-privacy": "Security and Privacy"
+      "backend-javascript": "Backend JavaScript",
+      "python": "Python"
     },
     "modules": {
       "getting-started-with-freecodecamp": "Getting Started with freeCodeCamp",
@@ -1902,14 +1916,14 @@
       "review-html-tables-and-forms": {
         "title": "HTML Tables and Forms Review",
         "intro": [
-          "Before you are quizzed on HTML forms and tables, you first need to review the concepts.",
-          "Open up this page to review the <code>table</code>, <code>label</code>, <code>input</code>, <code>button</code> and more elements."
+          "Before you are quizzed on HTML forms, tables and tools, you first need to review the concepts.",
+          "Open up this page to review the <code>table</code>, <code>input</code>, and <code>button</code> elements as well as commonly used tools like the HTML validator and more."
         ]
       },
       "quiz-html-tables-and-forms": {
         "title": "HTML Tables and Forms Quiz",
         "intro": [
-          "The following quiz will test your knowledge of HTML tables and forms."
+          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools."
         ]
       },
       "lecture-importance-of-accessibility-and-good-html-structure": {
@@ -2150,9 +2164,11 @@
           "In this workshop, you'll build a set of colored markers. You'll practice different ways to set color values and how to pair colors with each other."
         ]
       },
-      "ogdb": {
-        "title": "64",
-        "intro": []
+      "lab-colored-boxes": {
+        "title": "Design a Set of Colored Boxes",
+        "intro": [
+          "In this lab, you'll practice using CSS colors by designing boxes"
+        ]
       },
       "review-css-colors": {
         "title": "CSS Colors Review",
@@ -2634,7 +2650,7 @@
       "lab-fortune-teller": {
         "title": "Build a Fortune Teller",
         "intro": [
-          "In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes."
+          "In this lab, you will build a fortune teller by randomly selecting a fortune from the available fortunes."
         ]
       },
       "lecture-working-with-numbers-and-common-number-methods": {
@@ -2847,9 +2863,9 @@
           "In these lecture videos, you will learn about modules, imports, and exports in JavaScript."
         ]
       },
-      "lnmg": {
-        "title": "179",
-        "intro": []
+      "lab-password-generator": {
+        "title": "Build a Password Generator App",
+        "intro": ["In this lab, you'll build a password generator app."]
       },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
@@ -2882,10 +2898,6 @@
           "In this lab, you will build a book organizer using higher order functions in JavaScript."
         ]
       },
-      "bxtv": {
-        "title": "184",
-        "intro": []
-      },
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
@@ -2904,10 +2916,6 @@
         "intro": [
           "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using JavaScript."
         ]
-      },
-      "gibb": {
-        "title": "188",
-        "intro": []
       },
       "workshop-storytelling-app": {
         "title": "Build a Storytelling App",
@@ -3059,9 +3067,11 @@
           "You'll also practice basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
         ]
       },
-      "egkv": {
-        "title": "213",
-        "intro": []
+      "lab-customer-complaint-form": {
+        "title": "Build a Customer Complaint Form",
+        "intro": [
+          "For this lab, you will use JavaScript to validate a customer complaint form."
+        ]
       },
       "review-form-validation-with-javascript": {
         "title": "Form Validation with JavaScript Review",
@@ -3105,9 +3115,12 @@
           "In these lecture videos, you will learn about working with audio and video using JavaScript."
         ]
       },
-      "foal": {
-        "title": "221",
-        "intro": []
+      "workshop-music-player": {
+        "title": "Build a Music Player",
+        "intro": [
+          "In this workshop, you'll code a basic MP3 player using HTML, CSS, and JavaScript.",
+          "The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, and previous functionalities and dynamically update your user interface based on the current song."
+        ]
       },
       "crzf": {
         "title": "222",
@@ -3231,9 +3244,12 @@
           "In these lecture videos, you will learn about recursion and the call stack."
         ]
       },
-      "ndl3": {
-        "title": "242",
-        "intro": []
+      "workshop-decimal-to-binary-converter": {
+        "title": "Build a Decimal to Binary Converter",
+        "intro": [
+          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
+          "In this workshop, you’ll build a decimal-to-binary converter using JavaScript. You’ll practice the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
+        ]
       },
       "lab-permutation-generator": {
         "title": "Build a Permutation Generator",
@@ -3252,58 +3268,11 @@
         "title": "Recursion Quiz",
         "intro": ["Test what you've learned in this quiz on Recursion."]
       },
-      "yshh": {
-        "title": "246",
-        "intro": []
-      },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
           "In these lecture videos, you will learn about functional programming."
         ]
-      },
-      "wyx2": {
-        "title": "248",
-        "intro": []
-      },
-      "wyx3": {
-        "title": "249",
-        "intro": []
-      },
-      "lecture-understanding-asynchronous-programming": {
-        "title": "Understanding Asynchronous Programming",
-        "intro": [
-          "In these lecture videos, you will learn about asynchronous programming."
-        ]
-      },
-      "quiz-javascript-functional-programming": {
-        "title": "JavaScript Functional Programming Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on JavaScript Functional Programming."
-        ]
-      },
-      "dtfv": {
-        "title": "240",
-        "intro": []
-      },
-      "bnvw": {
-        "title": "241",
-        "intro": []
-      },
-      "workshop-decimal-to-binary-converter": {
-        "title": "Build a Decimal to Binary Converter",
-        "intro": [
-          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
-          "In this workshop, you’ll build a decimal-to-binary converter using JavaScript. You’ll practice the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
-        ]
-      },
-      "xkhk": {
-        "title": "243",
-        "intro": []
-      },
-      "yaxm": {
-        "title": "245",
-        "intro": []
       },
       "workshop-recipe-ingredient-converter": {
         "title": "Build a Recipe Ingredient Converter",
@@ -3312,9 +3281,11 @@
           "Now you will be able to apply what you have learned about currying and functional programming by building a recipe ingredient converter application."
         ]
       },
-      "udia": {
-        "title": "248",
-        "intro": []
+      "lab-sorting-visualizer": {
+        "title": "Build a Sorting Visualizer",
+        "intro": [
+          "For this lab, you will use JavaScript to visualize the steps that the Bubble Sort algorithm takes to reorder an array of integers."
+        ]
       },
       "review-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Review",
@@ -3323,9 +3294,17 @@
           "Open up this page to review concepts on functional programming, currying and more."
         ]
       },
-      "mjbe": {
-        "title": "251",
-        "intro": []
+      "quiz-javascript-functional-programming": {
+        "title": "JavaScript Functional Programming Quiz",
+        "intro": [
+          "Test what you've learned in this quiz on JavaScript Functional Programming."
+        ]
+      },
+      "lecture-understanding-asynchronous-programming": {
+        "title": "Understanding Asynchronous Programming",
+        "intro": [
+          "In these lecture videos, you will learn about asynchronous programming."
+        ]
       },
       "workshop-fcc-authors-page": {
         "title": "Build an fCC Authors Page",
@@ -3333,10 +3312,6 @@
           "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
           "In this workshop you will practice how to use the fetch method, dynamically update the DOM to display the fetched data and paginate your data so you can load results in batches."
         ]
-      },
-      "alda": {
-        "title": "253",
-        "intro": []
       },
       "lab-fcc-forum-leaderboard": {
         "title": "Build an fCC Forum Leaderboard",
@@ -3380,10 +3355,6 @@
           "In this workshop, you will build a reusable Navbar component using React."
         ]
       },
-      "oxiv": {
-        "title": "260",
-        "intro": []
-      },
       "lab-reusable-footer": {
         "title": "Build a Reusable Footer",
         "intro": ["In this lab, you will use React to build a reusable footer."]
@@ -3394,9 +3365,11 @@
           "In these lecture videos, you will learn about working with data in React."
         ]
       },
-      "cdfr": {
-        "title": "263",
-        "intro": []
+      "workshop-reusable-profile-card-component": {
+        "title": "Build a Reusable Profile Card Component",
+        "intro": [
+          "In this workshop, you will learn how to work with props by building a reusable profile card component."
+        ]
       },
       "lab-mood-board": {
         "title": "Build a Mood Board",
