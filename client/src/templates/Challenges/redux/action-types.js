@@ -44,6 +44,7 @@ export const actionTypes = createTypes(
     'resetAttempts',
     'setEditorFocusability',
     'toggleVisibleEditor',
+    'updateAllChapters',
     ...createAsyncTypes('submitChallenge'),
     ...createAsyncTypes('executeChallenge')
   ],

@@ -1,9 +1,10 @@
-import React, { ReactNode, useMemo } from 'react';
+import React, { ReactNode, useMemo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
 
-import { ChallengeNode } from '../../../redux/prop-types';
+import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
 // TODO: See if there's a nice way to incorporate the structure into data Gatsby
@@ -12,11 +13,31 @@ import superBlockStructure from '../../../../../curriculum/superblock-structure/
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { FsdChapters } from '../../../../../shared/config/chapters';
 import envData from '../../../../config/env.json';
+import { completedChallengesSelector } from '../../../redux/selectors';
+import { updateAllChapters } from '../../Challenges/redux/actions';
+import { BlockTypes } from '../../../../../shared/config/blocks';
 import Block from './block';
 
 import './super-block-accordion.css';
 
 const { showUpcomingChanges } = envData;
+
+type AllChapters = {
+  name: string;
+  comingSoon?: boolean;
+  isCompleted: boolean;
+  modules: {
+    name: string;
+    comingSoon?: boolean;
+    isCompleted: boolean;
+    blocks: {
+      name: string;
+      blockType: BlockTypes;
+      challenges: ChallengeNode['challenge'][];
+      isCompleted: boolean;
+    }[];
+  }[];
+}[];
 
 interface ChapterProps {
   dashedName: string;
@@ -29,10 +50,12 @@ interface ModuleProps {
   children: ReactNode;
   isExpanded: boolean;
 }
-interface SuperBlockTreeViewProps {
+interface SuperBlockAccordionProps {
   challenges: ChallengeNode['challenge'][];
   superBlock: SuperBlocks;
   chosenBlock: string;
+  completedChallengesIds: string[];
+  updateAllChapters: (allChapters: AllChapters) => void;
 }
 
 type Module = {
@@ -41,6 +64,18 @@ type Module = {
   blocks: {
     dashedName: string;
   }[];
+};
+
+const mapStateToProps = (state: unknown) => {
+  const completedChallenges = completedChallengesSelector(
+    state
+  ) as CompletedChallenge[];
+
+  return { completedChallengesIds: completedChallenges.map(({ id }) => id) };
+};
+
+const mapDispatchToProps = {
+  updateAllChapters
 };
 
 const modules = superBlockStructure.chapters.flatMap(({ modules }) => modules);
@@ -150,11 +185,13 @@ const LinkBlock = ({
     </li>
   ) : null;
 
-export const SuperBlockAccordion = ({
+const SuperBlockAccordion = ({
   challenges,
   superBlock,
-  chosenBlock
-}: SuperBlockTreeViewProps) => {
+  chosenBlock,
+  completedChallengesIds,
+  updateAllChapters
+}: SuperBlockAccordionProps) => {
   const { t } = useTranslation();
   const { allChapters } = useMemo(() => {
     const populateBlocks = (blocks: { dashedName: string }[]) =>
@@ -163,29 +200,60 @@ export const SuperBlockAccordion = ({
           ({ block: blockName }) => blockName === block.dashedName
         );
 
+        const completedBlockChallenges = completedChallengesIds.filter(
+          completedChallengeId =>
+            blockChallenges.some(
+              ({ id: blockChallengeId }) =>
+                blockChallengeId === completedChallengeId
+            )
+        );
+
         return {
           name: block.dashedName,
           blockType: blockChallenges[0]?.blockType ?? null,
-          challenges: blockChallenges
+          challenges: blockChallenges,
+          isCompleted:
+            completedBlockChallenges.length === blockChallenges.length
         };
       });
 
-    const allChapters = chapters.map(chapter => ({
-      name: chapter.dashedName,
-      comingSoon: chapter.comingSoon,
-      modules: chapter.modules.map((module: Module) => ({
-        name: module.dashedName,
-        comingSoon: module.comingSoon,
-        blocks: populateBlocks(module.blocks)
-      }))
-    }));
+    const populateModules = (modules: Module[]) =>
+      modules.map((module: Module) => {
+        const blocks = populateBlocks(module.blocks);
+        const isCompleted = blocks.every(block => block.isCompleted === true);
+
+        return {
+          name: module.dashedName,
+          comingSoon: module.comingSoon,
+          blocks,
+          isCompleted
+        };
+      });
+
+    const allChapters = chapters.map(chapter => {
+      const modules = populateModules(chapter.modules);
+      const isCompleted = modules.every(module => module.isCompleted === true);
+
+      return {
+        name: chapter.dashedName,
+        comingSoon: chapter.comingSoon,
+        modules: populateModules(chapter.modules),
+        isCompleted
+      };
+    });
 
     return { allChapters };
-  }, [challenges]);
+  }, [challenges, completedChallengesIds]);
 
   // Expand the outer layers in order to reveal the chosen block.
   const expandedChapter = blockToChapterMap.get(chosenBlock);
   const expandedModule = blockToModuleMap.get(chosenBlock);
+
+  // Save allChapters to redux
+  useEffect(() => {
+    updateAllChapters(allChapters);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <ul className='super-block-accordion'>
@@ -263,3 +331,8 @@ export const SuperBlockAccordion = ({
     </ul>
   );
 };
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SuperBlockAccordion);

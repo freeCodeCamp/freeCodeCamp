@@ -46,7 +46,9 @@ import {
   challengeTestsSelector,
   userCompletedExamSelector,
   projectFormValuesSelector,
-  isBlockNewlyCompletedSelector
+  isBlockNewlyCompletedSelector,
+  isModuleNewlyCompletedSelector,
+  isChapterNewlyCompletedSelector
 } from './selectors';
 
 function postChallenge(update) {
@@ -246,6 +248,10 @@ export default function completionEpic(action$, state$) {
       let pathToNavigateTo = isLastChallengeInBlock
         ? blockHashSlug
         : nextChallengePath;
+
+      // TODO: Use these variables in the donation modal logic
+      const isModuleNewlyCompleted = isModuleNewlyCompletedSelector(state);
+      const isChapterNewlyCompleted = isChapterNewlyCompletedSelector(state);
 
       const canAllowDonationRequest = (state, action) =>
         isBlockNewlyCompletedSelector(state) &&

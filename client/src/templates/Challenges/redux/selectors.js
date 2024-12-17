@@ -56,6 +56,7 @@ export const isAdvancingToChallengeSelector = state => state[ns].isAdvancing;
 export const chapterSlugSelector = state => state[ns].chapterSlug;
 export const portalDocumentSelector = state => state[ns].portalWindow?.document;
 export const portalWindowSelector = state => state[ns].portalWindow;
+export const allChaptersSelector = state => state[ns].allChapters;
 
 export const userCompletedExamSelector = state => state[ns].userCompletedExam;
 export const challengeDataSelector = state => {
@@ -155,6 +156,47 @@ export const isBlockNewlyCompletedSelector = state => {
   const completedChallengesIds = completedChallengesIdsSelector(state);
   const { id } = challengeMetaSelector(state);
   return completedPercentage === 100 && !completedChallengesIds.includes(id);
+};
+
+export const isModuleNewlyCompletedSelector = state => {
+  const isBlockNewlyCompleted = isBlockNewlyCompletedSelector(state);
+  const { chapter, module, block } = challengeMetaSelector(state);
+
+  if (!isBlockNewlyCompleted || !chapter || !module) return;
+
+  const allChapters = allChaptersSelector(state);
+
+  const incompleteBlocksInModule = allChapters
+    .find(({ name }) => name === chapter)
+    ?.modules.find(({ name }) => name === module)
+    ?.blocks.filter(({ isCompleted }) => !isCompleted);
+
+  // The module is completed if the newly completed block
+  // is the last block that has `isCompleted === false`.
+  return (
+    incompleteBlocksInModule?.length === 1 &&
+    incompleteBlocksInModule.some(({ name }) => name === block)
+  );
+};
+
+export const isChapterNewlyCompletedSelector = state => {
+  const isModuleNewlyCompleted = isModuleNewlyCompletedSelector(state);
+  const { chapter, module } = challengeMetaSelector(state);
+
+  if (!isModuleNewlyCompleted || !chapter || !module) return;
+
+  const allChapters = allChaptersSelector(state);
+
+  const incompleteModulesInChapter = allChapters
+    .find(({ name }) => name === chapter)
+    ?.modules.filter(({ isCompleted }) => !isCompleted);
+
+  // The chapter is completed if the newly completed module
+  // is the last module that has `isCompleted === false`.
+  return (
+    incompleteModulesInChapter?.length === 1 &&
+    incompleteModulesInChapter.some(({ name }) => name === module)
+  );
 };
 
 export const attemptsSelector = state => state[ns].attempts;

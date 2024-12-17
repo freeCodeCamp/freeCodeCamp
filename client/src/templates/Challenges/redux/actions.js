@@ -93,3 +93,4 @@ export const setEditorFocusability = createAction(
 export const toggleVisibleEditor = createAction(
   actionTypes.toggleVisibleEditor
 );
+export const updateAllChapters = createAction(actionTypes.updateAllChapters);

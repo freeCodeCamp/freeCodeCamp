@@ -57,7 +57,8 @@ const initialState = {
   successMessage: 'Happy Coding!',
   isAdvancing: false,
   chapterSlug: '',
-  isSubmitting: false
+  isSubmitting: false,
+  allChapters: []
 };
 
 export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];
@@ -266,6 +267,10 @@ export const reducer = handleActions(
     [actionTypes.createQuestion]: (state, { payload }) => ({
       ...state,
       description: payload
+    }),
+    [actionTypes.updateAllChapters]: (state, { payload }) => ({
+      ...state,
+      allChapters: payload
     })
   },
   initialState
