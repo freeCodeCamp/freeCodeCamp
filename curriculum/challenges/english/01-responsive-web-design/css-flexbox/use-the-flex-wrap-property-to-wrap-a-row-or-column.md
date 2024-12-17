@@ -26,7 +26,9 @@ The current layout has too many boxes for one row. Add the CSS property `flex-wr
 The `#box-container` element should have the `flex-wrap` property set to a value of `wrap`.
 
 ```js
-assert($('#box-container').css('flex-wrap') == 'wrap');
+const boxContainer = document.querySelector('#box-container');
+const flexWrap = window.getComputedStyle(boxContainer)['flex-wrap'];
+assert.strictEqual(flexWrap, 'wrap');
 ```
 
 # --seed--

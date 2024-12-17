@@ -26,27 +26,33 @@ These values will cause `#box-1` to grow to fill the extra space at twice the ra
 The `#box-1` element should have the `flex` property set to a value of `2 2 150px`.
 
 ```js
-assert(
-  $('#box-1').css('flex-grow') == '2' &&
-    $('#box-1').css('flex-shrink') == '2' &&
-    $('#box-1').css('flex-basis') == '150px'
-);
+const boxOne = document.querySelector('#box-1');
+const flexGrow = window.getComputedStyle(boxOne)['flex-grow'];
+const flexShrink = window.getComputedStyle(boxOne)['flex-shrink'];
+const flexBasis = window.getComputedStyle(boxOne)['flex-basis'];
+
+assert.equal(flexGrow, '2');
+assert.equal(flexShrink, '2');
+assert.equal(flexBasis, '150px');
 ```
 
 The `#box-2` element should have the `flex` property set to a value of `1 1 150px`.
 
 ```js
-assert(
-  $('#box-2').css('flex-grow') == '1' &&
-    $('#box-2').css('flex-shrink') == '1' &&
-    $('#box-2').css('flex-basis') == '150px'
-);
+const boxTwo = document.querySelector('#box-2');
+const flexGrow = window.getComputedStyle(boxTwo)['flex-grow'];
+const flexShrink = window.getComputedStyle(boxTwo)['flex-shrink'];
+const flexBasis = window.getComputedStyle(boxTwo)['flex-basis'];
+
+assert.equal(flexGrow, '1');
+assert.equal(flexShrink, '1');
+assert.equal(flexBasis, '150px');
 ```
 
 Your code should use the `flex` property for `#box-1` and `#box-2`.
 
 ```js
-assert(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g).length == 2);
+assert.lengthOf(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g), 2);
 ```
 
 # --seed--
