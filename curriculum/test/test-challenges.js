@@ -51,6 +51,7 @@ const {
   createHeader,
   testId
 } = require('../../client/src/templates/Challenges/utils/frame');
+const { SuperBlocks } = require('../../shared/config/curriculum');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -314,8 +315,12 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
           );
         });
         filteredMeta.forEach((meta, index) => {
-          // ignore block order for upcoming blocks
-          if (!meta.isUpcomingChange) {
+          // Upcoming changes are in developmen so are not required to be in
+          // order. FullStackDeveloper does not use the meta for order.
+          if (
+            !meta.isUpcomingChange &&
+            meta.superBlock !== SuperBlocks.FullStackDeveloper
+          ) {
             it(`${meta.superBlock} ${meta.name} must be in order`, function () {
               assert.equal(meta.order, index);
             });

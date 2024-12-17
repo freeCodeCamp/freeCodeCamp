@@ -41,9 +41,12 @@ type Module = {
   blocks: {
     dashedName: string;
   }[];
+  moduleType?: string;
 };
 
-const modules = superBlockStructure.chapters.flatMap(({ modules }) => modules);
+const modules = superBlockStructure.chapters.flatMap<Module>(
+  ({ modules }) => modules
+);
 const chapters = superBlockStructure.chapters;
 
 const isLinkModule = (name: string) => {
