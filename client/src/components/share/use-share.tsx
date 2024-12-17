@@ -18,7 +18,7 @@ export const blueSkyData = {
   developerDomainURL: 'https://docs.bsky.app/'
 };
 
-export const instaData = {
+export const threadsData = {
   action: 'intent/post',
   domain: 'threads.net',
   developerDomainURL: 'https://developers.facebook.com'
@@ -27,7 +27,7 @@ export const instaData = {
 interface ShareUrls {
   xUrl: string;
   blueSkyUrl: string;
-  instaURL: string;
+  threadsURL: string;
 }
 
 export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
@@ -41,11 +41,11 @@ export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
 
   const blueSkyRedirectURL = `https://${blueSkyData.domain}/${blueSkyData.action}?original_referer=${blueSkyData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
 
-  const instaThreadRedirectURL = `https://${instaData.domain}/${instaData.action}?original_referer=${instaData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
+  const threadRedirectURL = `https://${threadsData.domain}/${threadsData.action}?original_referer=${threadsData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
 
   return {
     xUrl: xRedirectURL,
     blueSkyUrl: blueSkyRedirectURL,
-    instaURL: instaThreadRedirectURL
+    threadsURL: threadRedirectURL
   };
 };

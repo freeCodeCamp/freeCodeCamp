@@ -9,7 +9,7 @@ describe('Share Template Testing', () => {
     <ShareTemplate
       xRedirectURL={redirectURL}
       blueSkyRedirectURL={redirectURL}
-      instaRedirectURL={redirectURL}
+      threadsRedirectURL={redirectURL}
     />
   );
   test('Testing share template Click Redirect Event', () => {
@@ -27,11 +27,11 @@ describe('Share Template Testing', () => {
     expect(blueSkyLink).toBeInTheDocument();
     expect(blueSkyLink).toHaveAttribute('href', 'string');
 
-    const instaLink = screen.queryByRole('link', {
-      name: 'buttons.share-on-insta aria.opens-new-window'
+    const threadsLink = screen.queryByRole('link', {
+      name: 'buttons.share-on-threads aria.opens-new-window'
     });
 
-    expect(instaLink).toBeInTheDocument();
-    expect(instaLink).toHaveAttribute('href', 'string');
+    expect(threadsLink).toBeInTheDocument();
+    expect(threadsLink).toHaveAttribute('href', 'string');
   });
 });

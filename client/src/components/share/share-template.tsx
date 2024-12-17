@@ -11,7 +11,7 @@ import { ShareRedirectProps } from './types';
 export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
   xRedirectURL,
   blueSkyRedirectURL,
-  instaRedirectURL
+  threadsRedirectURL
 }) => {
   const { t } = useTranslation();
   return (
@@ -51,7 +51,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
       <a
         data-testid='ShareTemplateWrapperTestID'
         className='btn fade-in'
-        href={instaRedirectURL}
+        href={threadsRedirectURL}
         target='_blank'
         rel='noreferrer'
       >
@@ -61,7 +61,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
           aria-label='instagramIcon'
           aria-hidden='true'
         />
-        {t('buttons.share-on-insta')}
+        {t('buttons.share-on-threads')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
     </div>

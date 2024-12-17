@@ -12,7 +12,7 @@ export const Share = ({ superBlock, block }: ShareProps): JSX.Element => {
     <ShareTemplate
       xRedirectURL={redirectURLs.xUrl}
       blueSkyRedirectURL={redirectURLs.blueSkyUrl}
-      instaRedirectURL={redirectURLs.instaURL}
+      threadsRedirectURL={redirectURLs.threadsURL}
     />
   );
 };

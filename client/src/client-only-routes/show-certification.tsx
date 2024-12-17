@@ -346,9 +346,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             certURL: certURL
           })}`}
           target='_blank'
-          data-playwright-test-label='insta-share-btn'
+          data-playwright-test-label='thread-share-btn'
         >
-          {t('profile.add-insta')}
+          {t('profile.add-threads')}
         </Button>
       </Col>
       <Spacer size='l' />
