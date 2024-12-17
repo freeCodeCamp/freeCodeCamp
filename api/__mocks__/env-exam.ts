@@ -45,7 +45,8 @@ export const config: EnvConfig = {
       numberOfCorrectAnswers: 1,
       numberOfIncorrectAnswers: 1
     }
-  ]
+  ],
+  retakeTimeInMS: 24 * 60 * 60 * 1000
 };
 
 export const questionSets: EnvQuestionSet[] = [
@@ -292,8 +293,7 @@ export const examAttempt: EnvExamAttempt = {
     }
   ],
   startTimeInMS: Date.now(),
-  userId: defaultUserId,
-  submissionTimeInMS: null
+  userId: defaultUserId
 };
 
 export const examAttemptSansSubmissionTimeInMS: Static<

@@ -35,7 +35,7 @@ test.describe('Certification page - Non Microsoft', () => {
     await expect(certInfoContainer).toBeVisible();
     const certTitle = certInfoContainer.getByTestId('certification-title');
     await expect(certTitle).toHaveText(
-      translations.certification.title['Responsive Web Design']
+      translations.certification.title['responsive-web-design']
     );
 
     const footer = certWrapper.getByTestId('cert-footer');
@@ -195,7 +195,7 @@ test.describe('Certification page - Microsoft', () => {
     await expect(certInfoContainer).toBeVisible();
     const certTitle = certInfoContainer.getByTestId('certification-title');
     await expect(certTitle).toHaveText(
-      translations.certification.title['Foundational C# with Microsoft']
+      translations.certification.title['foundational-c-sharp-with-microsoft']
     );
 
     const footer = certWrapper.getByTestId('cert-footer');

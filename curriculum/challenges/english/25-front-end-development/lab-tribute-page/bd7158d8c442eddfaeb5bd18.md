@@ -1,7 +1,7 @@
 ---
 id: bd7158d8c442eddfaeb5bd18
 title: Build a Tribute Page
-challengeType: 14
+challengeType: 25
 demoType: onClick
 dashedName: build-a-tribute-page
 ---
@@ -253,7 +253,7 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
             <strong>1938</strong> - Marries wife of 69 years Margret Gibson.
             Gets laid off due to budget cuts. Inspired by Elvin Charles Stakman,
             he returns to school study under Stakman, who teaches him about
-            breeding pest-resistent plants.
+            breeding pest-resistant plants.
           </li>
           <li>
             <strong>1941</strong> - Tries to enroll in the military after the
@@ -269,7 +269,7 @@ assert(leftMargin - rightMargin < 6 && rightMargin - leftMargin < 6)
             <strong>1944</strong> - Rejects a 100% salary increase from Dupont,
             leaves behind his pregnant wife, and flies to Mexico to head a new
             plant pathology program. Over the next 16 years, his team breeds
-            6,000 different strains of disease resistent wheat - including
+            6,000 different strains of disease resistant wheat - including
             different varieties for each major climate on Earth.
           </li>
           <li>

@@ -67,7 +67,7 @@ function renderCertifiedEmail({
 
 Congratulations on completing all of the freeCodeCamp certifications!
 
-All of your certifications are now live at at: https://www.freecodecamp.org/${username}
+All of your certifications are now live at: https://www.freecodecamp.org/${username}
 
 Please tell me a bit more about you and your near-term goals.
 

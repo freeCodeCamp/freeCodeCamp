@@ -2,12 +2,9 @@ import { isEmpty } from 'lodash-es';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHits } from 'react-instantsearch';
-import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 import Suggestion from './search-suggestion';
-import NoHitsSuggestion from './no-hits-suggestion';
 import type { Hit } from './types';
-
-const searchUrl = searchPageUrl;
+import SearchBarFooter from './search-bar-footer';
 
 interface SearchHitsProps {
   handleMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
@@ -23,29 +20,11 @@ function SearchHits({
   selectedIndex
 }: SearchHitsProps) {
   const { results } = useHits<Hit>();
-  const query = results ? results.query : '';
   const { t } = useTranslation();
-
   const noHits = isEmpty(results?.hits);
-  const noHitsTitle = t('search.no-tutorials');
 
-  const footer = [
-    {
-      __position: 8,
-      objectID: `footer-${query}`,
-      query: query,
-      url: noHits ? '' : `${searchUrl}?query=${encodeURIComponent(query)}`,
-      _highlightResult: {
-        query: {
-          value: `${t('search.see-results', { searchQuery: query })}`,
-          matchLevel: 'none' as const,
-          matchedWords: []
-        }
-      }
-    }
-  ];
   const allHits: Hit[] =
-    results?.hits && results?.query ? [...results.hits, ...footer] : [];
+    results?.hits && results?.query ? [...results.hits] : [];
 
   useEffect(() => {
     handleHits(allHits);
@@ -64,21 +43,22 @@ function SearchHits({
             data-fccobjectid={hit.objectID}
             key={hit.objectID}
           >
-            {noHits ? (
-              <NoHitsSuggestion
-                handleMouseEnter={handleMouseEnter}
-                handleMouseLeave={handleMouseLeave}
-                title={noHitsTitle}
-              />
-            ) : (
+            {!noHits && (
               <Suggestion
+                hit={hit}
                 handleMouseEnter={handleMouseEnter}
                 handleMouseLeave={handleMouseLeave}
-                hit={hit}
               />
             )}
           </li>
         ))}
+        <SearchBarFooter
+          hasHits={!noHits}
+          query={results?.query}
+          selectedIndex={selectedIndex}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        />
       </ul>
     </div>
   );

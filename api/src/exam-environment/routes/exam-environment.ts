@@ -8,13 +8,13 @@ import * as schemas from '../schemas';
 import { mapErr, syncMapErr, UpdateReqType } from '../../utils';
 import { JWT_SECRET } from '../../utils/env';
 import {
-  checkAttemptAgainstGeneratedExam,
   checkPrerequisites,
   constructUserExam,
   userAttemptToDatabaseAttemptQuestionSets,
   validateAttempt
 } from '../utils/exam';
 import { ERRORS } from '../utils/errors';
+import { isObjectID } from '../../utils/validation';
 
 /**
  * Wrapper for endpoints related to the exam environment desktop app.
@@ -92,8 +92,9 @@ async function tokenMetaHandler(
 ) {
   const { 'exam-environment-authorization-token': encodedToken } = req.headers;
 
+  let payload: JwtPayload;
   try {
-    jwt.verify(encodedToken, JWT_SECRET);
+    payload = jwt.verify(encodedToken, JWT_SECRET) as JwtPayload;
   } catch (e) {
     // Server refuses to brew (verify) coffee (jwts) with a teapot (random strings)
     void reply.code(418);
@@ -102,14 +103,18 @@ async function tokenMetaHandler(
     );
   }
 
-  const payload = jwt.decode(encodedToken) as JwtPayload;
-
-  const examEnvironmentAuthorizationToken =
-    payload.examEnvironmentAuthorizationToken;
+  if (!isObjectID(payload.examEnvironmentAuthorizationToken)) {
+    void reply.code(418);
+    return reply.send(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+        'Token is not valid'
+      )
+    );
+  }
 
   const token = await this.prisma.examEnvironmentAuthorizationToken.findUnique({
     where: {
-      id: examEnvironmentAuthorizationToken
+      id: payload.examEnvironmentAuthorizationToken
     }
   });
 
@@ -209,16 +214,13 @@ async function postExamGeneratedExamHandler(
     : null;
 
   if (lastAttempt) {
-    const attemptIsExpired =
-      lastAttempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
-    if (attemptIsExpired) {
-      // If exam is not submitted, use exam start time + time allocated for exam
-      const effectiveSubmissionTime =
-        lastAttempt.submissionTimeInMS ??
-        lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
-      const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
+    const examExpirationTime =
+      lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
+    if (examExpirationTime < Date.now()) {
+      const retakeAllowed =
+        examExpirationTime + exam.config.retakeTimeInMS < Date.now();
 
-      if (effectiveSubmissionTime > twentyFourHoursAgo) {
+      if (!retakeAllowed) {
         void reply.code(429);
         // TODO: Consider sending last completed time
         return reply.send(
@@ -429,20 +431,6 @@ async function postExamAttemptHandler(
     latest.startTimeInMS > current.startTimeInMS ? latest : current
   );
 
-  // TODO: Currently, submission time is set when all questions have been answered.
-  //       This might not necessarily be fully submitted. So, provided there is time
-  //       left on the clock, the attempt should still be updated, even if the submission
-  //       time is set.
-  //       The submission time just needs to be updated.
-  // if (latestAttempt.submissionTimeInMS !== null) {
-  //   void reply.code(403);
-  //   return reply.send(
-  //     ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
-  //       'Attempt has already been submitted.'
-  //     )
-  //   );
-  // }
-
   const maybeExam = await mapErr(
     this.prisma.envExam.findUnique({
       where: {
@@ -515,12 +503,6 @@ async function postExamAttemptHandler(
     validateAttempt(generatedExam, databaseAttemptQuestionSets)
   );
 
-  // If all questions have been answered, add submission time
-  const allQuestionsAnswered = checkAttemptAgainstGeneratedExam(
-    databaseAttemptQuestionSets,
-    generatedExam
-  );
-
   // Update attempt in database
   const maybeUpdatedAttempt = await mapErr(
     this.prisma.envExamAttempt.update({
@@ -528,8 +510,6 @@ async function postExamAttemptHandler(
         id: latestAttempt.id
       },
       data: {
-        // NOTE: submission time is set to null, because it just depends on whether all questions have been answered.
-        submissionTimeInMS: allQuestionsAnswered ? Date.now() : null,
         questionSets: databaseAttemptQuestionSets,
         // If attempt is not valid, immediately flag attempt as needing retake
         // TODO: If `needsRetake`, prevent further submissions?
@@ -592,7 +572,8 @@ async function getExams(
       config: {
         name: exam.config.name,
         note: exam.config.note,
-        totalTimeInMS: exam.config.totalTimeInMS
+        totalTimeInMS: exam.config.totalTimeInMS,
+        retakeTimeInMS: exam.config.retakeTimeInMS
       },
       canTake: isExamPrerequisitesMet
     };
