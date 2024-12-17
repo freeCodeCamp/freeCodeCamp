@@ -2,7 +2,7 @@
   "name": "Importance of Semantic HTML",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-importance-of-semantic-html",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

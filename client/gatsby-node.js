@@ -143,11 +143,12 @@ exports.createPages = async function createPages({
     ({ node }) => node
   );
 
-  const inNextCurriculum = superBlock =>
-    superBlockStages[SuperBlockStage.Next].includes(superBlock);
+  const inCurrentCurriculum = superBlock =>
+    !superBlockStages[SuperBlockStage.Next].includes(superBlock) &&
+    !superBlockStages[SuperBlockStage.NextEnglish].includes(superBlock);
 
-  const currentChallengeNodes = allChallengeNodes.filter(
-    node => !inNextCurriculum(node.challenge.superBlock)
+  const currentChallengeNodes = allChallengeNodes.filter(node =>
+    inCurrentCurriculum(node.challenge.superBlock)
   );
 
   const createIdToNextPathMap = nodes =>

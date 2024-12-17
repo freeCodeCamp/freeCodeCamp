@@ -30,6 +30,7 @@ const superBlocks = [
   intro[SuperBlocks.CollegeAlgebraPy].title,
   intro[SuperBlocks.FullStackDeveloper].title,
   intro[SuperBlocks.A2English].title,
+  intro[SuperBlocks.B1English].title,
   intro[SuperBlocks.FoundationalCSharp].title,
   intro[SuperBlocks.TheOdinProject].title,
   intro[SuperBlocks.CodingInterviewPrep].title,
