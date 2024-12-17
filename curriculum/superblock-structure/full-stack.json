@@ -1,6 +1,16 @@
 {
   "chapters": [
     {
+      "dashedName": "freecodecamp",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "getting-started-with-freecodecamp",
+          "blocks": [{ "dashedName": "lecture-welcome-to-freecodecamp" }]
+        }
+      ]
+    },
+    {
       "dashedName": "html",
       "modules": [
         {
