@@ -5,7 +5,6 @@
       "modules": [
         {
           "dashedName": "basic-html",
-          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-what-is-html" },
             { "dashedName": "workshop-cat-photo-app" },
@@ -31,7 +30,6 @@
         },
         {
           "dashedName": "html-forms-and-tables",
-          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-working-with-forms" },
             { "dashedName": "workshop-hotel-feedback-form" },
@@ -46,7 +44,6 @@
         },
         {
           "dashedName": "html-and-accessibility",
-          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "lecture-importance-of-accessibility-and-good-html-structure"
@@ -58,7 +55,6 @@
         },
         {
           "moduleType": "review",
-          "comingSoon": true,
           "dashedName": "review-html",
           "blocks": [{ "dashedName": "review-html" }]
         },
@@ -617,8 +613,15 @@
         },
         {
           "moduleType": "review",
+          "comingSoon": true,
           "dashedName": "review-front-end-libraries",
           "blocks": [{ "dashedName": "review-front-end-libraries" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-front-end-libraries",
+          "blocks": []
         }
       ]
     },
