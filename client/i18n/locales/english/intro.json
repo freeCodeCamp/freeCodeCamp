@@ -2268,7 +2268,7 @@
       "lab-page-of-playing-cards": {
         "title": "Build a Page of Playing Cards",
         "intro": [
-          "For this lab, you will use flexbox to create a webpage of playing cards.",
+          "In this lab, you will use flexbox to create a webpage of playing cards.",
           "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code> and more."
         ]
       },
