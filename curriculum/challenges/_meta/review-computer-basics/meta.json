@@ -2,7 +2,7 @@
   "name": "Computer Basics Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-computer-basics",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

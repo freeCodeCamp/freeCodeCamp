@@ -2,7 +2,7 @@
   "name": "CSS Relative and Absolute Units Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-css-relative-and-absolute-units",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

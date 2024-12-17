@@ -2,7 +2,7 @@
   "name": "JavaScript Audio and Video Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-javascript-audio-and-video",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

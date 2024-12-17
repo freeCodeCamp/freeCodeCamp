@@ -2,7 +2,7 @@
   "name": "HTML Accessibility Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-html-accessibility",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

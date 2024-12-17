@@ -2,7 +2,7 @@
   "name": "Basic CSS Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-basic-css",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
