@@ -25,7 +25,7 @@ If the substring is found within the string, the method returns the string other
 
 ---
 
-If the substring is found within the string, the method returns `true` otherwise, it returns and empty string.
+If the substring is found within the string, the method returns `true` otherwise, it returns an empty string.
 
 ---
 
