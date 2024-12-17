@@ -1,7 +1,7 @@
 ---
 id: bd7158d8c242eddfaeb5bd13
 title: Build a Personal Portfolio
-challengeType: 14
+challengeType: 25
 dashedName: build-a-personal-portfolio
 demoType: onClick
 ---

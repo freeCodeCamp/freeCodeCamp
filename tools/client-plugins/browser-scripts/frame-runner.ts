@@ -61,6 +61,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   const { default: chai } = await import(/* webpackChunkName: "chai" */ 'chai');
   const assert = chai.assert;
   const __helpers = helpers;
+  const __checkForBrowserExtensions = true;
   /* eslint-enable @typescript-eslint/no-unused-vars */
 
   let Enzyme;
