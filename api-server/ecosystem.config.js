@@ -1,13 +1,13 @@
 const fs = require('fs');
 const path = require('path');
-
 const dotenv = require('dotenv');
-
 const filePath = path.resolve(__dirname, '..', '.env');
+
 let env = {};
 try {
   env = dotenv.parse(fs.readFileSync(filePath));
-} catch (e) {
+} 
+catch (e) {
   console.log(
     "If you're setting the env vars in the shell, it should be fine (you can probably ignore the error)."
   );
