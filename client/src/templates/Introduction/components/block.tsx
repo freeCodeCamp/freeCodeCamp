@@ -318,7 +318,9 @@ class Block extends Component<BlockProps> {
                 <CheckMark isCompleted={isBlockCompleted} />
                 {blockTitle}{' '}
                 <span className='sr-only'>
-                  {t('misc.certification-project')}
+                  {isBlockCompleted
+                    ? `${t('misc.certification-project')}, ${t('learn.completed')}`
+                    : `${t('misc.certification-project')}, ${t('learn.not-completed')}`}
                 </span>
               </Link>
             </h3>
@@ -403,6 +405,11 @@ class Block extends Component<BlockProps> {
                 <CheckMark isCompleted={isBlockCompleted} />
                 {blockType && <BlockLabel blockType={blockType} />}
                 {blockTitle}
+                <span className='sr-only'>
+                  {isBlockCompleted
+                    ? `, ${t('learn.completed')}`
+                    : `, ${t('learn.not-completed')}`}
+                </span>
               </Link>
             </h3>
           </div>
