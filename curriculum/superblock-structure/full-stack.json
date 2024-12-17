@@ -1,16 +1,6 @@
 {
   "chapters": [
     {
-      "dashedName": "freecodecamp",
-      "comingSoon": true,
-      "modules": [
-        {
-          "dashedName": "getting-started-with-freecodecamp",
-          "blocks": [{ "dashedName": "lecture-welcome-to-freecodecamp" }]
-        }
-      ]
-    },
-    {
       "dashedName": "html",
       "modules": [
         {
@@ -71,12 +61,17 @@
           "comingSoon": true,
           "dashedName": "review-html",
           "blocks": [{ "dashedName": "review-html" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-html",
+          "blocks": []
         }
       ]
     },
     {
       "dashedName": "css",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "computer-basics",
@@ -277,12 +272,17 @@
           "moduleType": "review",
           "dashedName": "review-css",
           "blocks": [{ "dashedName": "review-css" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-css",
+          "blocks": []
         }
       ]
     },
     {
       "dashedName": "javascript",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "code-editors",
@@ -547,13 +547,18 @@
           "moduleType": "review",
           "dashedName": "review-javascript",
           "blocks": [{ "dashedName": "review-javascript" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-javascript",
+          "blocks": []
         }
       ]
     },
 
     {
       "dashedName": "frontend-libraries",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "react-fundamentals",
@@ -696,6 +701,7 @@
     },
     {
       "chapterType": "exam",
+      "comingSoon": true,
       "dashedName": "exam-certified-full-stack-developer",
       "modules": [
         {
