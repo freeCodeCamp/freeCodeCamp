@@ -1560,23 +1560,36 @@
   },
   "b1-english-for-developers": {
     "title": "Англійська мова рівня B1 для розробників (бета-версія)",
-    "intro": ["Placeholder intro"],
+    "intro": [
+      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the B1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
+      "It will help you strengthen your foundational skills while introducing more complex grammar and usage. You'll learn how to describe places and things, share past experiences, and confidently use tenses like Present Perfect and Future. Practical communication strategies are included as well, such as managing conversations, expressing opinions, and building agreement or disagreement in discussions.",
+      "You'll also focus on applying these skills in professional and technical settings. You'll practice vocabulary and phrases essential for developers, such as describing code, participating in stand-up meetings, and discussing tech trends. Advanced topics include conditionals, comparative structures, and conversation management, so you can prepare for real-world interactions in the tech industry.",
+      "This entire B1-level curriculum includes 73 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
+    ],
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Дізнайтесь, як описувати місця і події",
-        "intro": [""]
+        "intro": [
+          "This course will show you ways of talking about places and events conversationally."
+        ]
       },
       "learn-how-to-talk-about-past-experiences": {
         "title": "Дізнайтесь, як говорити про досвід",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to share experiences that you had in the past."
+        ]
       },
       "learn-how-to-talk-about-past-activities": {
         "title": "Дізнайтесь, як говорити про дії з минулого",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how talk about things that you did."
+        ]
       },
       "learn-present-perfect-while-talking-about-accessibility": {
         "title": "Дізнайтесь про теперішній доконаний час, говорячи про доступність",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to use the Present Perfect structure and learn a bit more about accessibility."
+        ]
       },
       "learn-how-to-plan-future-events": {
         "title": "Дізнайтесь, як планувати майбутні події",
@@ -1688,7 +1701,8 @@
       "javascript": "JavaScript",
       "frontend-libraries": "Бібліотеки для front end",
       "relational-databases": "Реляційні бази даних",
-      "security-and-privacy": "Безпека та приватність"
+      "backend-javascript": "Backend JavaScript",
+      "python": "Python"
     },
     "modules": {
       "getting-started-with-freecodecamp": "Початок роботи з freeCodeCamp",
@@ -1892,14 +1906,14 @@
       "review-html-tables-and-forms": {
         "title": "Повторення таблиць та форм в HTML",
         "intro": [
-          "Перш ніж перейти до тесту «Таблиці та форми в HTML», повторіть основні поняття.",
-          "Відкрийте цю сторінку, щоб пригадати <code>table</code>, <code>label</code>, <code>input</code>, <code>button</code> та інші елементи."
+          "Before you are quizzed on HTML forms, tables and tools, you first need to review the concepts.",
+          "Open up this page to review the <code>table</code>, <code>input</code>, and <code>button</code> elements as well as commonly used tools like the HTML validator and more."
         ]
       },
       "quiz-html-tables-and-forms": {
         "title": "Тест «Таблиці та форми в HTML»",
         "intro": [
-          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Таблиці та форми в HTML»."
+          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools."
         ]
       },
       "lecture-importance-of-accessibility-and-good-html-structure": {
@@ -2132,9 +2146,11 @@
           "У цьому практичному занятті ви створите набір кольорових маркерів. Ви попрактикуєте різні способи встановити значення кольорів та дізнаєтесь, як поєднувати кольори між собою."
         ]
       },
-      "ogdb": {
-        "title": "64",
-        "intro": []
+      "lab-colored-boxes": {
+        "title": "Створіть кольорові коробки",
+        "intro": [
+          "У цій лабораторній роботі ви будете використовувати кольори в CSS, розробивши дизайн коробок."
+        ]
       },
       "review-css-colors": {
         "title": "Повторення кольорів у CSS",
@@ -2600,7 +2616,7 @@
       "lab-fortune-teller": {
         "title": "Створіть генератор передбачень",
         "intro": [
-          "У цій лабораторній роботі ви створите генератор передбачень, де користувач випадково обиратиме передбачення зі всіх доступних."
+          "In this lab, you will build a fortune teller by randomly selecting a fortune from the available fortunes."
         ]
       },
       "lecture-working-with-numbers-and-common-number-methods": {
@@ -2809,9 +2825,9 @@
           "У цих відеолекціях ви дізнаєтесь про модулі, імпорт та експорт в JavaScript."
         ]
       },
-      "lnmg": {
-        "title": "179",
-        "intro": []
+      "lab-password-generator": {
+        "title": "Створіть генератор паролів",
+        "intro": ["У цій лабораторній роботі ви створите генератор паролів."]
       },
       "review-javascript-fundamentals": {
         "title": "Повторення основ JavaScript",
@@ -2842,10 +2858,6 @@
           "У цій лабораторній роботі ви створите органайзер для книжок, використовуючи функції вищого порядку в JavaScript."
         ]
       },
-      "bxtv": {
-        "title": "184",
-        "intro": []
-      },
       "review-javascript-higher-order-functions": {
         "title": "Повторення функцій вищого порядку в JavaScript",
         "intro": [
@@ -2864,10 +2876,6 @@
         "intro": [
           "У цих відеолекціях ви дізнаєтесь, як працювати з DOM, подіями click та web API за допомогою JavaScript."
         ]
-      },
-      "gibb": {
-        "title": "188",
-        "intro": []
       },
       "workshop-storytelling-app": {
         "title": "Створіть застосунок з оповіданнями",
@@ -3019,9 +3027,11 @@
           "Ви також попрактикуєте регулярні вирази, шаблонні літерали, метод <code>addEventListener()</code> та багато іншого."
         ]
       },
-      "egkv": {
-        "title": "213",
-        "intro": []
+      "lab-customer-complaint-form": {
+        "title": "Build a Customer Complaint Form",
+        "intro": [
+          "For this lab, you will use JavaScript to validate a customer complaint form."
+        ]
       },
       "review-form-validation-with-javascript": {
         "title": "Повторення валідації форм з JavaScript",
@@ -3065,9 +3075,12 @@
           "У цих відеолекціях ви дізнаєтесь, як працювати з аудіо та відео в JavaScript."
         ]
       },
-      "foal": {
-        "title": "221",
-        "intro": []
+      "workshop-music-player": {
+        "title": "Створіть музичний плеєр",
+        "intro": [
+          "У цьому практичному занятті ви створите звичайний MP3-плеєр за допомогою HTML, CSS та JavaScript.",
+          "Цей проєкт охоплює ключові поняття, серед яких обробка аудіо, управління плейлистом, реалізація функцій програвання, паузи, наступної пісні та перемішування, а також динамічне оновлення інтерфейсу користувача на основі поточної пісні."
+        ]
       },
       "crzf": {
         "title": "222",
@@ -3091,9 +3104,9 @@
         ]
       },
       "workshop-plant-nursery-catalog": {
-        "title": "Build a Plant Nursery Catalog",
+        "title": "Створіть каталог рослин",
         "intro": [
-          "In this workshop, you will practice maps and sets by building a plant nursery catalog in JavaScript."
+          "У цьому практичному занятті ви попрактикуєте map та set, створивши каталог рослин у JavaScript."
         ]
       },
       "lab-voting-system": {
@@ -3183,9 +3196,12 @@
           "У цих відеолекціях ви дізнаєтесь про рекурсію та стек викликів."
         ]
       },
-      "ndl3": {
-        "title": "242",
-        "intro": []
+      "workshop-decimal-to-binary-converter": {
+        "title": "Створіть конвертер десяткових чисел в бінарні",
+        "intro": [
+          "Рекурсія — це таке поняття в програмуванні, коли функція викликає сама себе. Це може перетворити складне завдання на декілька менших простіших завдань, допоки вони не стануть зрозумілими.",
+          "У цьому практичному занятті ви побудуєте конвертер десяткових чисел в бінарні за допомогою JavaScript. Ви будете використовувати основи рекурсії, дослідите стек викликів та створите візуальне представлення процесу рекурсії через анімацію."
+        ]
       },
       "lab-permutation-generator": {
         "title": "Створіть генератор перестановок",
@@ -3204,58 +3220,11 @@
         "title": "Тест «Рекурсія»",
         "intro": ["Перевірте, що ви дізнались про рекурсію."]
       },
-      "yshh": {
-        "title": "246",
-        "intro": []
-      },
       "lecture-understanding-functional-programming": {
         "title": "Знайомство з функціональним програмуванням",
         "intro": [
           "У цих відеолекціях ви дізнаєтесь про функціональне програмування."
         ]
-      },
-      "wyx2": {
-        "title": "248",
-        "intro": []
-      },
-      "wyx3": {
-        "title": "249",
-        "intro": []
-      },
-      "lecture-understanding-asynchronous-programming": {
-        "title": "Знайомство з асинхронним програмуванням",
-        "intro": [
-          "У цих відеолекціях ви дізнаєтесь про асинхронне програмування."
-        ]
-      },
-      "quiz-javascript-functional-programming": {
-        "title": "Тест «Функціональне програмування в JavaScript»",
-        "intro": [
-          "Перевірте, що ви дізнались про функціональне програмування в JavaScript."
-        ]
-      },
-      "dtfv": {
-        "title": "240",
-        "intro": []
-      },
-      "bnvw": {
-        "title": "241",
-        "intro": []
-      },
-      "workshop-decimal-to-binary-converter": {
-        "title": "Створіть конвертер десяткових чисел в бінарні",
-        "intro": [
-          "Рекурсія — це таке поняття в програмуванні, коли функція викликає сама себе. Це може перетворити складне завдання на декілька менших простіших завдань, допоки вони не стануть зрозумілими.",
-          "У цьому практичному занятті ви побудуєте конвертер десяткових чисел в бінарні за допомогою JavaScript. Ви будете використовувати основи рекурсії, дослідите стек викликів та створите візуальне представлення процесу рекурсії через анімацію."
-        ]
-      },
-      "xkhk": {
-        "title": "243",
-        "intro": []
-      },
-      "yaxm": {
-        "title": "245",
-        "intro": []
       },
       "workshop-recipe-ingredient-converter": {
         "title": "Створіть конвертер інгредієнтів",
@@ -3264,9 +3233,11 @@
           "Зараз ви зможете застосувати на практиці все те, що вивчили про каррування та функціональне програмування, створивши застосунок із конвертацією інгредієнтів."
         ]
       },
-      "udia": {
-        "title": "248",
-        "intro": []
+      "lab-sorting-visualizer": {
+        "title": "Build a Sorting Visualizer",
+        "intro": [
+          "For this lab, you will use JavaScript to visualize the steps that the Bubble Sort algorithm takes to reorder an array of integers."
+        ]
       },
       "review-javascript-functional-programming": {
         "title": "Повторення функціонального програмування в JavaScript",
@@ -3275,9 +3246,17 @@
           "Відкрийте цю сторінку, щоб пригадати поняття з функціонального програмування, каррування та багато іншого."
         ]
       },
-      "mjbe": {
-        "title": "251",
-        "intro": []
+      "quiz-javascript-functional-programming": {
+        "title": "Тест «Функціональне програмування в JavaScript»",
+        "intro": [
+          "Перевірте, що ви дізнались про функціональне програмування в JavaScript."
+        ]
+      },
+      "lecture-understanding-asynchronous-programming": {
+        "title": "Знайомство з асинхронним програмуванням",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про асинхронне програмування."
+        ]
       },
       "workshop-fcc-authors-page": {
         "title": "Створіть сторінку автора fCC",
@@ -3285,10 +3264,6 @@
           "Один із загальних аспектів веброзробки, якого потрібно навчитись — отримувати дані від зовнішнього API, а потім працювати з асинхронним JavaScript.",
           "У цьому практичному занятті ви попрактикуєтесь використовувати метод fetch, динамічно оновлювати DOM для відтворення отриманих даних, а також розбивати дані на сторінки, щоб завантажувати результати партіями."
         ]
-      },
-      "alda": {
-        "title": "253",
-        "intro": []
       },
       "lab-fcc-forum-leaderboard": {
         "title": "Створіть таблицю лідерів на fCC",
@@ -3324,19 +3299,17 @@
         ]
       },
       "workshop-reusable-mega-navbar": {
-        "title": "Build a Reusable Mega Navbar",
+        "title": "Створіть Navbar, придатний для повторного використання",
         "intro": [
-          "In the previous lecture videos, you learned how to work with components in React.",
-          "In this workshop, you will build a reusable Navbar component using React."
+          "У попередніх відеолекціях ви навчилися працювати з компонентами в React.",
+          "У цьому практичному занятті ви створите компонент Navbar, придатний для повторного використання, за допомогою React."
         ]
       },
-      "oxiv": {
-        "title": "260",
-        "intro": []
-      },
       "lab-reusable-footer": {
-        "title": "Build a Reusable Footer",
-        "intro": ["In this lab, you will use React to build a reusable footer."]
+        "title": "Створіть нижній колонтитул, придатний для повторного використання",
+        "intro": [
+          "У цій лабораторній роботі ви створите нижній колонтитул, придатний для повторного використання, за допомогою React."
+        ]
       },
       "lecture-working-with-data-in-react": {
         "title": "Робота з даними в React",
@@ -3344,14 +3317,16 @@
           "У цих відеолекціях ви дізнаєтесь, як працювати з даними в React."
         ]
       },
-      "cdfr": {
-        "title": "263",
-        "intro": []
+      "workshop-reusable-profile-card-component": {
+        "title": "Build a Reusable Profile Card Component",
+        "intro": [
+          "In this workshop, you will learn how to work with props by building a reusable profile card component."
+        ]
       },
       "lab-mood-board": {
-        "title": "Build a Mood Board",
+        "title": "Створіть мудборд",
         "intro": [
-          "In this lab, you will create a mood board using a React with props."
+          "У цій лабораторній роботі ви створите мудборд, використовуючи пропси з React."
         ]
       },
       "review-react-basics": {

@@ -6,5 +6,6 @@ export enum FsdChapters {
   Javascript = 'javascript',
   FrontendLibraries = 'frontend-libraries',
   RelationalDatabases = 'relational-databases',
-  Security = 'security-and-privacy'
+  BackendJavascript = 'backend-javascript',
+  Python = 'python'
 }

@@ -12,10 +12,10 @@
     },
     {
       "dashedName": "html",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "basic-html",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-what-is-html" },
             { "dashedName": "workshop-cat-photo-app" },
@@ -41,6 +41,7 @@
         },
         {
           "dashedName": "html-forms-and-tables",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-working-with-forms" },
             { "dashedName": "workshop-hotel-feedback-form" },
@@ -55,6 +56,7 @@
         },
         {
           "dashedName": "html-and-accessibility",
+          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "lecture-importance-of-accessibility-and-good-html-structure"
@@ -66,6 +68,7 @@
         },
         {
           "moduleType": "review",
+          "comingSoon": true,
           "dashedName": "review-html",
           "blocks": [{ "dashedName": "review-html" }]
         }
