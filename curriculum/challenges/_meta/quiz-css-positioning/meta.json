@@ -2,7 +2,7 @@
   "name": "CSS Positioning Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-css-positioning",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed8ffcf45ce3ece4053eb5", "title": "CSS Positioning Quiz" }],

@@ -2,7 +2,7 @@
   "name": "Debugging JavaScript Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-debugging-javascript",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

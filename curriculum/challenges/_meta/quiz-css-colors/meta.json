@@ -2,7 +2,7 @@
   "name": "CSS Colors Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-css-colors",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed8fe1f45ce3ece4053eb1", "title": "CSS Colors Quiz" }],
