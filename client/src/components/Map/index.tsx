@@ -3,13 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
+
 import {
   type SuperBlocks,
   SuperBlockStage,
   getStageOrder,
   superBlockStages
 } from '../../../../shared/config/curriculum';
-import { SuperBlockIcon } from '../../assets/icons/superblock-icon';
+import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
@@ -60,6 +62,8 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
   [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
   [SuperBlockStage.New]: '', // TODO: add translation
+  [SuperBlockStage.Next]: 'landing.next-heading',
+  [SuperBlockStage.NextEnglish]: 'landing.next-english-heading',
   [SuperBlockStage.Upcoming]: 'landing.upcoming-heading'
 };
 
@@ -135,6 +139,7 @@ function Map({
   allChallenges
 }: MapProps): React.ReactElement {
   const { t } = useTranslation();
+  const showNextCurriculum = useFeature('fcc-10').on;
 
   const allSuperblockChallengesCompleted = (superblock: SuperBlocks) => {
     // array of all challenge ID's in the superblock
@@ -161,7 +166,11 @@ function Map({
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
-      {getStageOrder({ showNewCurriculum, showUpcomingChanges }).map(stage => (
+      {getStageOrder({
+        showNewCurriculum,
+        showUpcomingChanges,
+        showNextCurriculum
+      }).map(stage => (
         <Fragment key={stage}>
           <h2 className={forLanding ? 'big-heading' : ''}>
             {t(superBlockHeadings[stage])}

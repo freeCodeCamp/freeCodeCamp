@@ -10,7 +10,9 @@ test.beforeEach(async ({ page }) => {
 
 const superBlocksWithLinks = [
   ...superBlockStages[SuperBlockStage.Core],
+  ...superBlockStages[SuperBlockStage.Next],
   ...superBlockStages[SuperBlockStage.English],
+  ...superBlockStages[SuperBlockStage.NextEnglish],
   ...superBlockStages[SuperBlockStage.Professional],
   ...superBlockStages[SuperBlockStage.Extra],
   ...superBlockStages[SuperBlockStage.Legacy]

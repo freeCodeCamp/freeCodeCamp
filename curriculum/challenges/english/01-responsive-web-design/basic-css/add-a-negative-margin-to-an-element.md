@@ -24,7 +24,9 @@ Change the `margin` of the blue box to `-15px`, so it fills the entire horizonta
 Your `blue-box` class should give elements `-15px` of `margin`.
 
 ```js
-assert($('.blue-box').css('margin-top') === '-15px');
+const blueBox = document.querySelector('.blue-box');
+const marginTop = window.getComputedStyle(blueBox)["margin-top"]; 
+assert.strictEqual(marginTop, "-15px"); 
 ```
 
 # --seed--

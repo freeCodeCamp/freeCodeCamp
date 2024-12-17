@@ -169,21 +169,20 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
-  const isMultifileCertProject =
+  const isMultifileProject =
     challengeType === challengeTypes.multifileCertProject ||
-    challengeType === challengeTypes.multifilePythonCertProject;
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType == challengeTypes.lab;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
   const displayNotes = projectBasedChallenge ? showNotes && !!notes : false;
-  const displayEditorConsole = !(
-    projectBasedChallenge || isMultifileCertProject
-  )
+  const displayEditorConsole = !(projectBasedChallenge || isMultifileProject)
     ? true
     : false;
   const displayPreviewConsole =
-    (projectBasedChallenge || isMultifileCertProject) && showConsole;
+    (projectBasedChallenge || isMultifileProject) && showConsole;
   const hasVerticalResizableCodePane =
-    !isMultifileCertProject && !projectBasedChallenge;
+    !isMultifileProject && !projectBasedChallenge;
   const {
     codePane,
     editorPane,
@@ -198,7 +197,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   return (
     <div className='desktop-layout' data-playwright-test-label='desktop-layout'>
-      {(projectBasedChallenge || isMultifileCertProject) && (
+      {(projectBasedChallenge || isMultifileProject) && (
         <ActionRow
           hasPreview={hasPreview}
           hasNotes={!!notes}

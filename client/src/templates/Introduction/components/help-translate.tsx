@@ -7,7 +7,7 @@ import { Link } from '../../../components/helpers';
 
 import envData from '../../../../config/env.json';
 
-const { clientLocale, showUpcomingChanges, showNewCurriculum } = envData;
+const { clientLocale } = envData;
 
 interface HelpTranslateProps {
   superBlock: SuperBlocks;
@@ -16,12 +16,7 @@ interface HelpTranslateProps {
 function HelpTranslate({ superBlock }: HelpTranslateProps): JSX.Element | null {
   const { t } = useTranslation();
 
-  if (
-    isAuditedSuperBlock(clientLocale, superBlock, {
-      showNewCurriculum,
-      showUpcomingChanges
-    })
-  ) {
+  if (isAuditedSuperBlock(clientLocale, superBlock)) {
     return null;
   }
 

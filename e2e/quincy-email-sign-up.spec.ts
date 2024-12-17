@@ -92,8 +92,6 @@ test.describe('Email sign-up page when user is not signed in', () => {
 });
 
 test.describe('Email sign-up page when user is signed in', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
     // It's necessary to seed with a user that has not accepted the privacy
     // terms, otherwise the user will be redirected away from the email sign-up

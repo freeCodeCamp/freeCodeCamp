@@ -54,7 +54,7 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
         href={`/certification/${username}/${cert.certSlug}`}
       >
         {t('buttons.view-cert-title', {
-          certTitle: t(`certification.title.${cert.certSlug}`)
+          certTitle: t(`certification.title.${cert.certSlug}-cert`)
         })}
       </ButtonLink>
       <Spacer size='xs' />
@@ -72,45 +72,50 @@ function Certificates({
   const { t } = useTranslation();
   return (
     <FullWidthRow className='profile-certifications'>
-      <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
-      <br />
-      {hasModernCert && currentCerts ? (
-        <ul aria-labelledby='fcc-certifications'>
-          {currentCerts
-            .filter(({ show }) => show)
-            .map(cert => (
-              <CertButton key={cert.certSlug} cert={cert} username={username} />
-            ))}
-        </ul>
-      ) : (
-        <p className='text-center'>{t('profile.no-certs')}</p>
-      )}
-      {hasLegacyCert && (
-        <div>
-          <Spacer size='m' />
-          <h3 id='legacy-certifications'>
-            {t('settings.headings.legacy-certs')}
-          </h3>
-          <Spacer size='m' />
-          {legacyCerts && (
-            <>
-              <ul aria-labelledby='legacy-certifications'>
-                {legacyCerts
-                  .filter(({ show }) => show)
-                  .map(cert => (
-                    <CertButton
-                      key={cert.certSlug}
-                      cert={cert}
-                      username={username}
-                    />
-                  ))}
-              </ul>
-              <Spacer size='m' />
-            </>
-          )}
-        </div>
-      )}
-      <hr />
+      <section className='card'>
+        <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
+        <br />
+        {hasModernCert && currentCerts ? (
+          <ul aria-labelledby='fcc-certifications'>
+            {currentCerts
+              .filter(({ show }) => show)
+              .map(cert => (
+                <CertButton
+                  key={cert.certSlug}
+                  cert={cert}
+                  username={username}
+                />
+              ))}
+          </ul>
+        ) : (
+          <p className='text-center'>{t('profile.no-certs')}</p>
+        )}
+        {hasLegacyCert && (
+          <div>
+            <Spacer size='m' />
+            <h3 id='legacy-certifications'>
+              {t('settings.headings.legacy-certs')}
+            </h3>
+            <Spacer size='m' />
+            {legacyCerts && (
+              <>
+                <ul aria-labelledby='legacy-certifications'>
+                  {legacyCerts
+                    .filter(({ show }) => show)
+                    .map(cert => (
+                      <CertButton
+                        key={cert.certSlug}
+                        cert={cert}
+                        username={username}
+                      />
+                    ))}
+                </ul>
+                <Spacer size='m' />
+              </>
+            )}
+          </div>
+        )}
+      </section>
     </FullWidthRow>
   );
 }

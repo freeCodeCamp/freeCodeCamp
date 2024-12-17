@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Building a Fortune Teller
 
-In this lab, you will build a fortune teller by randomly selecting a fortune from the avaialble fortunes.
+In this lab, you will build a fortune teller by randomly selecting a fortune from the available fortunes.

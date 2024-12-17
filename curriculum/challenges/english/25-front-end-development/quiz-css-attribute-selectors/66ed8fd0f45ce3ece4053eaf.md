@@ -7,7 +7,7 @@ dashedName: quiz-css-attribute-selectors
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 of the questions below.
+To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
 
 # --quizzes--
 
@@ -475,7 +475,7 @@ ol[type~="1"] { font-weight: bold; }
 
 #### --text--
 
-Suppose, on freeCodeCamp’s forum, each discussion has a `data-status` attribute that could be `"open"` or `"closed"`. You want to highlight all open discussions. How would you select these discussions?
+Suppose, on freeCodeCamp's forum, each discussion has a `data-status` attribute that could be `"open"` or `"closed"`. You want to highlight all open discussions. How would you select these discussions?
 
 #### --distractors--
 
@@ -535,7 +535,7 @@ textarea[maxlength] { border-color: darkred; }
 
 #### --text--
 
-Suppose, on freeCodeCamp’s course catalog, each course has a `data-completion` attribute representing the percentage completed. You want to style courses where this attribute ends with `"100"`, indicating full completion. Which selector would work?
+Suppose, on freeCodeCamp's course catalog, each course has a `data-completion` attribute representing the percentage completed. You want to style courses where this attribute ends with `"100"`, indicating full completion. Which selector would work?
 
 #### --distractors--
 

@@ -2,15 +2,11 @@ import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.beforeEach(async ({ page }) => {
   execSync(
     'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
   );
-  await page.goto('/settings');
-});
-test.beforeEach(async ({ page }) => {
+
   await page.goto('/certifieduser');
 
   if (!process.env.CI) {
