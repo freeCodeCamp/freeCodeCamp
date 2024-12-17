@@ -21,19 +21,19 @@ What is the return value for the `includes()` method?
 
 #### --distractors--
 
-If the substring is found within the string, the method returns the string otherwise, it returns `undefined`.
+If the substring is found within the string, the method returns the string. Otherwise, it returns `undefined`.
 
 ---
 
-If the substring is found within the string, the method returns `true` otherwise, it returns an empty string.
+If the substring is found within the string, the method returns `true`. Otherwise, it returns an empty string.
 
 ---
 
-If the substring is found within the string, the method returns the string otherwise, it returns `null`.
+If the substring is found within the string, the method returns the string. Otherwise, it returns `null`.
 
 #### --answer--
 
-If the substring is found within the string, the method returns `true` otherwise, it returns `false`.
+If the substring is found within the string, the method returns `true`. Otherwise, it returns `false`.
 
 ### --question--
 
