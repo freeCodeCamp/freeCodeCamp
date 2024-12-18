@@ -6,5 +6,6 @@
   "challengeOrder": [{ "id": "6762ec275cef87635acc4fe3", "title": "Build a Drum Machine" }],
   "helpCategory": "JavaScript",
   "isUpcomingChange": false,
-  "blockLayout": "link"
+  "blockLayout": "link",
+  "blockType": "lab"
 }
