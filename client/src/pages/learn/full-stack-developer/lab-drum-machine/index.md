@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Drum Machine
 
-This is a test for the new project-based curriculum.
+For this lab you will use the <code>audio</code> element to build a drum machine.
