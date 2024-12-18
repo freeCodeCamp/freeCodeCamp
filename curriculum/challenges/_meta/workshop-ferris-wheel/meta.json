@@ -1,6 +1,6 @@
 {
   "name": "Build an Animated Ferris Wheel",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-ferris-wheel",

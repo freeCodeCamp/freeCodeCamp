@@ -1,6 +1,6 @@
 {
   "name": "Build a Bank Account Management Program",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-bank-account-manager",
   "superBlock": "full-stack-developer",

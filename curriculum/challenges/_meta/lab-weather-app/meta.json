@@ -1,6 +1,6 @@
 {
   "name": "Build a Weather App",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-weather-app",
   "superBlock": "full-stack-developer",

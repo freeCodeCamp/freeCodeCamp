@@ -2,7 +2,7 @@
   "name": "Working with Maps and Sets",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-maps-and-sets",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

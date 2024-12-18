@@ -2,7 +2,7 @@
   "name": "User-Centered Design",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-user-centered-design",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

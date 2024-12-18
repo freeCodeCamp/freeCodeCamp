@@ -2,7 +2,7 @@
   "name": "Welcome to freeCodeCamp",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-welcome-to-freecodecamp",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

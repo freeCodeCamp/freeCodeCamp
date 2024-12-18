@@ -2,7 +2,7 @@
   "name": "Basic HTML Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-basic-html",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66df3b712c41c499e9d31e5b", "title": "Basic HTML Quiz" }],

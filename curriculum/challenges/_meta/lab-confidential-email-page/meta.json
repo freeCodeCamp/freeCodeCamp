@@ -2,7 +2,7 @@
   "name": "Build a Confidential Email Page",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-confidential-email-page",
   "superBlock": "full-stack-developer",
