@@ -25,7 +25,8 @@ import {
   signInLoadingSelector
 } from '../../redux/selectors';
 import type { ChallengeNode, User } from '../../redux/prop-types';
-import { CertTitle } from '../../../config/cert-and-project-map';
+import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
+import { superBlockToCertMap } from '../../../../shared/config/certification-settings';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
@@ -187,15 +188,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
 
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
 
-  const superblockWithoutCert = [
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.A2English,
-    SuperBlocks.RosettaCode,
-    SuperBlocks.PythonForEverybody
-  ];
+  const showCertification = liveCerts.some(
+    cert => superBlockToCertMap[superBlock] === cert.certSlug
+  );
 
   const superBlockWithAccordionView = [SuperBlocks.FullStackDeveloper];
   const chosenBlock = getChosenBlock();
@@ -255,7 +250,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                       />
                     );
                   })}
-                  {!superblockWithoutCert.includes(superBlock) && (
+                  {showCertification && (
                     <CertChallenge
                       certification={certification}
                       superBlock={superBlock}
