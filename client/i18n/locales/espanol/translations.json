@@ -167,6 +167,7 @@
     "interview-prep-heading": "Prepárate para la búsqueda de empleo en la entrevista de desarrollador:",
     "legacy-curriculum-heading": "Explora nuestro Plan de Estudios Legado:",
     "next-heading": "Try our beta curriculum:",
+    "next-english-heading": "Try our latest English curriculum:",
     "upcoming-heading": "Próximo plan de estudio:",
     "faq": "Preguntas frecuentes:",
     "faqs": [
@@ -505,6 +506,7 @@
     "complete-both-steps": "Completa los dos pasos a continuación para terminar el desafío.",
     "runs-in-vm": "El proyecto se ejecuta en una máquina virtual, completa las historias de usuario descritas en ella y consigue que todas las pruebas pasen hasta el paso 1.",
     "completed": "Completado",
+    "not-completed": "Not completed",
     "not-started": "Sin iniciar",
     "test": "Prueba",
     "sorry-try-again": "Lo sentimos, tu código no pasa. Inténtalo de nuevo.",
