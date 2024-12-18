@@ -2070,7 +2070,7 @@
       "lecture-user-centered-design": {
         "title": "User-Centered Design",
         "intro": [
-          "In these lecture videos, you will learn about best practices necessary in designing user-facing features like dark mode, breadcrumbs, modal dialogs, and much more. You will also learn how to coduct user research, user requirements and testing."
+          "In these lecture videos, you will learn about best practices for designing user-facing features like dark mode, breadcrumbs, modal dialogs, and much more. You will also learn how to conduct user research, user requirements and testing."
         ]
       },
       "lecture-common-design-tools": {
@@ -2371,7 +2371,7 @@
       "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
         "title": "Understanding How to Work with Floats and Positioning in CSS",
         "intro": [
-          "In these lecture videos, you will learn how to use CSS positioning and floats. You will learn how to use <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also learn about the <code>z-index</code> property."
+          "In these lecture videos, you will learn how to use CSS positioning and floats. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
         ]
       },
       "workshop-cat-painting": {
@@ -2433,7 +2433,7 @@
       "lecture-working-with-css-variables": {
         "title": "Working with CSS Variables",
         "intro": [
-          "In these lecture videos, you will learn how to define and use custom properties, or CSS variables. You will also learn about the <code>@property</code> rule and how it works."
+          "In these lecture videos, you will learn how to define and use custom properties (also known as CSS variables). You will also learn about the <code>@property</code> rule and how it works."
         ]
       },
       "workshop-city-skyline": {
