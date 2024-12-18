@@ -1,8 +1,6 @@
 import { execSync } from 'child_process';
 import { expect, test } from '@playwright/test';
 
-import { clearEditor, focusEditor, getEditors } from './utils/editor';
-
 test.describe('Super Block Page - Authenticated User', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
@@ -59,7 +57,7 @@ test.describe('Super Block Page - Authenticated User', () => {
     });
 
     test('should expand the block of the most recently viewed challenge', async ({
-      page,
+      page
     }) => {
       test.setTimeout(20000);
 
@@ -177,10 +175,8 @@ test.describe('Super Block Page - Authenticated User', () => {
       ).toHaveAttribute('aria-expanded', 'true');
     });
 
-    test('should expand the block of the most recently completed challenge', async ({
-      page,
-      isMobile,
-      browserName
+    test('should expand the block of the most recently viewed challenge', async ({
+      page
     }) => {
       test.setTimeout(20000);
 

@@ -137,14 +137,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     () => allChallenges.filter(c => c.superBlock === superBlock),
     [allChallenges, superBlock]
   );
-  const blocks = uniq(challenges.map(({ block }) => block));
+  const blocks = uniq(superBlockChallenges.map(({ block }) => block));
 
   const completedChallenges = useMemo(
     () =>
       allCompletedChallenges.filter(completedChallenge =>
-        challenges.some(c => c.id === completedChallenge.id)
+        superBlockChallenges.some(c => c.id === completedChallenge.id)
       ),
-    [challenges, allCompletedChallenges]
+    [superBlockChallenges, allCompletedChallenges]
   );
 
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
@@ -182,7 +182,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
     if (isSignedIn) {
       // see if currentChallenge is in this superBlock
-      const currentChallenge = challenges.find(
+      const currentChallenge = superBlockChallenges.find(
         challenge => challenge.id === currentChallengeId
       );
 
@@ -200,7 +200,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
         if (lastCompletedChallenge) return lastCompletedChallenge.block;
       }
-
     }
 
     return blocks[0];
@@ -248,14 +247,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
               <Spacer size='m' />
               {superBlockWithAccordionView.includes(superBlock) ? (
                 <SuperBlockAccordion
-                  challenges={challenges}
+                  challenges={superBlockChallenges}
                   superBlock={superBlock}
                   chosenBlock={chosenBlock}
                 />
               ) : (
                 <div className='block-ui'>
                   {blocks.map(block => {
-                    const blockChallenges = challenges.filter(
+                    const blockChallenges = superBlockChallenges.filter(
                       c => c.block === block
                     );
                     const blockType = blockChallenges[0].blockType;
