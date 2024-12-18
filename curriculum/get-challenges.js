@@ -206,19 +206,18 @@ async function buildBlocks(file, curriculum, superBlock) {
   const { basename: blockName } = file;
   const metaPath = path.resolve(META_DIR, `${blockName}/meta.json`);
   const isCertification = !fs.existsSync(metaPath);
-  if (isCertification && superBlock !== 'certifications') {
-    const isEmptyDir = fs.readdirSync(file.fullPath).length === 0;
-    if (isEmptyDir) {
-      throw Error(
-        `Block directory, ${file.fullPath}, is empty.
+  const isEmptyDir = fs.readdirSync(file.fullPath).length === 0;
+  if (isEmptyDir) {
+    throw Error(
+      `Block directory, ${file.fullPath}, is empty.
 If this block should exist, please add challenge files to it.
 If this block should not exist, please remove the directory.`
-      );
-    } else {
-      throw Error(
-        `superblock ${superBlock} is missing meta.json for ${blockName}`
-      );
-    }
+    );
+  }
+  if (isCertification && superBlock !== 'certifications') {
+    throw Error(
+      `superblock ${superBlock} is missing meta.json for ${blockName}`
+    );
   }
 
   if (isCertification) {
