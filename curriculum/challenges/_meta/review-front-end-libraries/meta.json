@@ -1,0 +1,12 @@
+{
+  "name": "Front End Libraries Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "review-front-end-libraries",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6724e2dbf723fe1c8883cc69", "title": "Front End Libraries Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

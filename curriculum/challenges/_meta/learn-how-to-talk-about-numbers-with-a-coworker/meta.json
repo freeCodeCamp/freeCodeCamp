@@ -1,0 +1,15 @@
+{
+  "name": "Learn How to Talk About Numbers with a Coworker",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-talk-about-numbers-with-a-coworker",
+  "order": 22,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6660a357a167db7129dad153",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Build a Number Guessing Game",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "lab-number-guessing-game",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "602da04c22201c65d2a019f4", "title": "Build a Number Guessing Game" }],
+  "helpCategory": "Backend Development"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Working with Maps and Sets",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-maps-and-sets",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6733ab269b378bf724c9ac71",
+      "title": "What Are Sets in JavaScript, and How Does It Differ from WeakSets?"
+    },
+    {
+      "id": "6733dd694f91d61a5272b4ac",
+      "title": "What Is the Map Object, and How Does It Differ from WeakMaps?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Working with Forms",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-forms",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6729974ec29be33cb00eb54d",
+      "title": "How Do Forms, Labels, and Inputs Work in HTML?"
+    },
+    {
+      "id": "672a4cd3d59756726657efb8",
+      "title": "What Are the Different Types of Buttons, and When Should You Use Them?"
+    },
+    {
+      "id": "672a4ce6dab9eb735828b48b",
+      "title": "What Is Client-Side Form Validation in HTML Forms, and What Are Some Examples?"
+    },
+    {
+      "id": "672a4cf959443073a6774908",
+      "title": "What Are the Different Form States, and Why Are They Important?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

@@ -1,0 +1,55 @@
+# -------------------------------------------------
+# CODEOWNERS - For automated review request for
+# high impact files.
+#
+# Important: The order in this file cascades.
+#
+# https://help.github.com/articles/about-codeowners
+# -------------------------------------------------
+
+# -------------------------------------------------
+# All files are owned by dev team
+# -------------------------------------------------
+
+* @freecodecamp/dev-team
+
+# --- Owned by none (negate rule above) ---
+
+*.md
+package.json
+pnpm-lock.yaml
+
+# -------------------------------------------------
+# All files in the root are owned by dev team
+# -------------------------------------------------
+
+/* @freecodecamp/dev-team
+
+# --- Owned by none (negate rule above) ---
+
+/package.json
+/pnpm-lock.yaml
+
+# -------------------------------------------------
+# Files that need attention from Curriculum team
+# -------------------------------------------------
+
+/curriculum/challenges/_meta/* @freecodecamp/curriculum
+/curriculum/challenges/english/* @freecodecamp/curriculum
+
+# -------------------------------------------------
+# Files that need attention from Staff
+# -------------------------------------------------
+
+# README, LICENSE, etc.
+/*.md @freeCodeCamp/staff
+
+# i18n Quotes
+**/motivation.json @freeCodeCamp/staff @freeCodeCamp/i18n
+
+# -------------------------------------------------
+# Files that need attention from the mobile team
+# -------------------------------------------------
+
+/curriculum/schema/challenge-schema.js @freeCodeCamp/dev-team @freeCodeCamp/mobile
+/client/src/redux/prop-types.ts @freeCodeCamp/dev-team @freeCodeCamp/mobile

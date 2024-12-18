@@ -1,0 +1,109 @@
+{
+  "name": "Build an fCC Authors Page",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-fcc-authors-page",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "641d9a19bff38d34d5a5edb8",
+      "title": "Step 1"
+    },
+    {
+      "id": "641da3c6b6fbd742bff6ee40",
+      "title": "Step 2"
+    },
+    {
+      "id": "641da42481d90c4314c99e94",
+      "title": "Step 3"
+    },
+    {
+      "id": "641da465273051435d332b15",
+      "title": "Step 4"
+    },
+    {
+      "id": "641da4b16937be43ba24c63d",
+      "title": "Step 5"
+    },
+    {
+      "id": "641da51a9810e74411262fcc",
+      "title": "Step 6"
+    },
+    {
+      "id": "641da5462576784453146ec2",
+      "title": "Step 7"
+    },
+    {
+      "id": "641da5abaac81844a54adb03",
+      "title": "Step 8"
+    },
+    {
+      "id": "641da73b09e7f046c758e0ed",
+      "title": "Step 9"
+    },
+    {
+      "id": "641da791d0c34a472b8d15b6",
+      "title": "Step 10"
+    },
+    {
+      "id": "641da7bfbc7f0f477438ad8a",
+      "title": "Step 11"
+    },
+    {
+      "id": "641da803d9892447d059804e",
+      "title": "Step 12"
+    },
+    {
+      "id": "641da836581c254815f785fe",
+      "title": "Step 13"
+    },
+    {
+      "id": "641da86294fd9f485d3c2bf0",
+      "title": "Step 14"
+    },
+    {
+      "id": "641da895fb7ec648a5bdf19c",
+      "title": "Step 15"
+    },
+    {
+      "id": "641da8db2a036048ebe6999e",
+      "title": "Step 16"
+    },
+    {
+      "id": "641da97c987a514959ada414",
+      "title": "Step 17"
+    },
+    {
+      "id": "641da9aceb788e49a73ebcc9",
+      "title": "Step 18"
+    },
+    {
+      "id": "641da9ea9b847a49fe6ee9b6",
+      "title": "Step 19"
+    },
+    {
+      "id": "641daa5ea050f24a7cade6e6",
+      "title": "Step 20"
+    },
+    {
+      "id": "641daa8c2c3e364ac3650b37",
+      "title": "Step 21`"
+    },
+    {
+      "id": "641daabed8d0584b1150c953",
+      "title": "Step 22"
+    },
+    {
+      "id": "641daae5e18eae4b562633e4",
+      "title": "Step 23"
+    },
+    {
+      "id": "641dab13c1b6f14b9828e6b1",
+      "title": "Step 24"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

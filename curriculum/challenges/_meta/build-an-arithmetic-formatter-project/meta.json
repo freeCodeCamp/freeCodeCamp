@@ -1,0 +1,16 @@
+{
+  "name": "Build an Arithmetic Formatter Project",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "build-an-arithmetic-formatter-project",
+  "order": 5,
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "5e44412c903586ffb414c94c",
+      "title": "Build an Arithmetic Formatter Project"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "legacy-link"
+}

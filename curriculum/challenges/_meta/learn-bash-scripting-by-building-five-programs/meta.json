@@ -1,0 +1,15 @@
+{
+  "name": "Learn Bash Scripting by Building Five Programs",
+  "isUpcomingChange": false,
+  "dashedName": "learn-bash-scripting-by-building-five-programs",
+  "helpCategory": "Backend Development",
+  "order": 3,
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    {
+      "id": "5f5904ac738bc2fa9efecf5a",
+      "title": "Build Five Programs"
+    }
+  ],
+  "blockLayout": "project-list"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Learn How to Use Adjectives in Conversations",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-use-adjectives-in-conversations",
+  "order": 18,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6660a291d63e8f6cce869657",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

@@ -1,0 +1,79 @@
+{
+  "name": "CSS Flexbox",
+  "isUpcomingChange": false,
+  "dashedName": "css-flexbox",
+  "helpCategory": "HTML-CSS",
+  "order": 5,
+  "superBlock": "responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "587d78ab367417b2b2512af0",
+      "title": "Use display: flex to Position Two Boxes"
+    },
+    {
+      "id": "587d78ab367417b2b2512af1",
+      "title": "Add Flex Superpowers to the Tweet Embed"
+    },
+    {
+      "id": "587d78ab367417b2b2512af2",
+      "title": "Use the flex-direction Property to Make a Row"
+    },
+    {
+      "id": "587d78ab367417b2b2512af3",
+      "title": "Apply the flex-direction Property to Create Rows in the Tweet Embed"
+    },
+    {
+      "id": "587d78ac367417b2b2512af4",
+      "title": "Use the flex-direction Property to Make a Column"
+    },
+    {
+      "id": "587d78ac367417b2b2512af5",
+      "title": "Apply the flex-direction Property to Create a Column in the Tweet Embed"
+    },
+    {
+      "id": "587d78ac367417b2b2512af6",
+      "title": "Align Elements Using the justify-content Property"
+    },
+    {
+      "id": "587d78ac367417b2b2512af7",
+      "title": "Use the justify-content Property in the Tweet Embed"
+    },
+    {
+      "id": "587d78ad367417b2b2512af8",
+      "title": "Align Elements Using the align-items Property"
+    },
+    {
+      "id": "587d78ad367417b2b2512af9",
+      "title": "Use the align-items Property in the Tweet Embed"
+    },
+    {
+      "id": "587d78ad367417b2b2512afa",
+      "title": "Use the flex-wrap Property to Wrap a Row or Column"
+    },
+    {
+      "id": "587d78ad367417b2b2512afb",
+      "title": "Use the flex-shrink Property to Shrink Items"
+    },
+    {
+      "id": "587d78ae367417b2b2512afc",
+      "title": "Use the flex-grow Property to Expand Items"
+    },
+    {
+      "id": "587d78ae367417b2b2512afd",
+      "title": "Use the flex-basis Property to Set the Initial Size of an Item"
+    },
+    {
+      "id": "587d78ae367417b2b2512afe",
+      "title": "Use the flex Shorthand Property"
+    },
+    {
+      "id": "587d78ae367417b2b2512aff",
+      "title": "Use the order Property to Rearrange Items"
+    },
+    {
+      "id": "587d78af367417b2b2512b00",
+      "title": "Use the align-self Property"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Learn How to Manage a Conversation",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-manage-a-conversation",
+  "order": 14,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6660a0f4dbf5a3622399100f",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

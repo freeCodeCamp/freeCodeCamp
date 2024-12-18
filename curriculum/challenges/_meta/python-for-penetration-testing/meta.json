@@ -1,0 +1,39 @@
+{
+  "name": "Python for Penetration Testing",
+  "isUpcomingChange": false,
+  "dashedName": "python-for-penetration-testing",
+  "helpCategory": "Python",
+  "order": 1,
+  "superBlock": "information-security",
+  "challengeOrder": [
+    {
+      "id": "5ea9997bbec2e9bc47e94dae",
+      "title": "Introduction and Setup"
+    },
+    {
+      "id": "5ea9997bbec2e9bc47e94daf",
+      "title": "Understanding Sockets and Creating a TCP Server"
+    },
+    {
+      "id": "5ea9997bbec2e9bc47e94db0",
+      "title": "Creating a TCP Client"
+    },
+    {
+      "id": "5ea9997bbec2e9bc47e94db1",
+      "title": "Developing an Nmap Scanner part 1"
+    },
+    {
+      "id": "5ea9997bbec2e9bc47e94db2",
+      "title": "Developing an Nmap Scanner part 2"
+    },
+    {
+      "id": "5ea9997bbec2e9bc47e94db3",
+      "title": "Developing a Banner Grabber"
+    },
+    {
+      "id": "5ea9997bbec2e9bc47e94db4",
+      "title": "Developing a Port Scanner"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

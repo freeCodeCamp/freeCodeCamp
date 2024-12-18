@@ -1,0 +1,43 @@
+{
+  "name": "Work with Variable Data in C# Console Applications",
+  "isUpcomingChange": false,
+  "dashedName": "work-with-variable-data-in-c-sharp-console-applications",
+  "helpCategory": "C-Sharp",
+  "order": 3,
+  "superBlock": "foundational-c-sharp-with-microsoft",
+  "challengeOrder": [
+    {
+      "id": "647e23188acb466c97ccbefa",
+      "title": "Choose the Correct Data Type in Your C# Code"
+    },
+    {
+      "id": "647e23248acb466c97ccbefb",
+      "title": "Convert Data Types Using Casting and Conversion Techniques in C#"
+    },
+    {
+      "id": "647e23508acb466c97ccbeff",
+      "title": "Perform Operations on Arrays Using Helper Methods in C#"
+    },
+    {
+      "id": "647e232c8acb466c97ccbefc",
+      "title": "Format Alphanumeric Data for Presentation in C#"
+    },
+    {
+      "id": "647e23438acb466c97ccbefe",
+      "title": "Modify the Content of Strings Using Built-In String Data Type Methods in C#"
+    },
+    {
+      "id": "647e23368acb466c97ccbefd",
+      "title": "Guided Project - Work with Variable Data in C#"
+    },
+    {
+      "id": "647e230c8acb466c97ccbef9",
+      "title": "Challenge Project - Work with Variable Data in C#"
+    },
+    {
+      "id": "647f867a07d29547b3bee1bc",
+      "title": "Trophy - Work with Variable Data in C# Console Applications"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

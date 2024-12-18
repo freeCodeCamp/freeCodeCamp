@@ -1,0 +1,31 @@
+{
+  "name": "Working with Code Editors and IDE's",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-code-editors-and-ides",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672d26269456511aa3db614d",
+      "title": "What Is a Code Editor and IDE?"
+    },
+    {
+      "id": "672d45583fd75a504136fbbb",
+      "title": "How to Install Visual Studio Code onto Your Computer"
+    },
+    {
+      "id": "672d45651d83b450801efb3a",
+      "title": "How to Create a Project and Run Your Code Locally in VS Code"
+    },
+    {
+      "id": "672d456f4ac35950b300e93f",
+      "title": "What Are Several Useful Keyboard Shortcuts for Maximizing Productivity in VS Code?"
+    },
+    {
+      "id": "672d457bcdd8b350ec2b6254",
+      "title": "What Are Some Good VS Code Extensions You Can Use in Your Editor?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

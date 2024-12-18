@@ -1,0 +1,19 @@
+{
+  "name": "Working with CSS Variables",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-css-variables",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa8985acb7361e656f94c",
+      "title": "What Are CSS Custom Properties, and How Do They Work?"
+    },
+    {
+      "id": "672cf3ca326da9f63683e236",
+      "title": "What Is the @property Rule, and How Does It Work with Fallbacks?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

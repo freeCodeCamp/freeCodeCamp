@@ -1,0 +1,39 @@
+{
+  "name": "Write Your First Code Using C#",
+  "isUpcomingChange": false,
+  "dashedName": "write-your-first-code-using-c-sharp",
+  "helpCategory": "C-Sharp",
+  "order": 0,
+  "superBlock": "foundational-c-sharp-with-microsoft",
+  "challengeOrder": [
+    {
+      "id": "647e239e8acb466c97ccbf05",
+      "title": "Write Your First C# Code"
+    },
+    {
+      "id": "647e238f8acb466c97ccbf04",
+      "title": "Store and Retrieve Data Using Literal and Variable Values in C#"
+    },
+    {
+      "id": "647e23828acb466c97ccbf03",
+      "title": "Perform Basic String Formatting in C#"
+    },
+    {
+      "id": "647e23788acb466c97ccbf02",
+      "title": "Perform Basic Operations on Numbers in C#"
+    },
+    {
+      "id": "647e235a8acb466c97ccbf00",
+      "title": "Guided Project - Calculate and Print Student Grades"
+    },
+    {
+      "id": "647e236d8acb466c97ccbf01",
+      "title": "Guided Project - Calculate Final GPA"
+    },
+    {
+      "id": "647f85d407d29547b3bee1bb",
+      "title": "Trophy - Write Your First Code Using C#"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

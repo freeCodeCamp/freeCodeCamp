@@ -1,0 +1,15 @@
+{
+  "name": "Learn Common Phrasal Verbs and Idioms",
+  "isUpcomingChange": true,
+  "dashedName": "learn-common-phrasal-verbs-and-idioms",
+  "order": 23,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6660a3787b34f972a9776968",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

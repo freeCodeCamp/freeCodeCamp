@@ -1,0 +1,12 @@
+{
+  "name": "JavaScript Dates Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-dates",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6723ced0ba0b42c2a0ac14d2", "title": "JavaScript Dates Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

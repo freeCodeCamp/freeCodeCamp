@@ -1,0 +1,15 @@
+{
+  "name": "Learn How to Express Decisions Based on Comparisons",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-express-decisions-based-on-comparisons",
+  "order": 12,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6660a0a59e62cf6096f8d6fc",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

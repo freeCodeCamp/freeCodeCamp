@@ -1,0 +1,15 @@
+{
+  "name": "Learn Bash by Building a Boilerplate",
+  "isUpcomingChange": false,
+  "dashedName": "learn-bash-by-building-a-boilerplate",
+  "helpCategory": "Backend Development",
+  "order": 0,
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    {
+      "id": "5ea8adfab628f68d805bfc5e",
+      "title": "Build a Boilerplate"
+    }
+  ],
+  "blockLayout": "project-list"
+}

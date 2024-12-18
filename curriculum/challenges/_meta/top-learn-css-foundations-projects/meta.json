@@ -1,0 +1,31 @@
+{
+  "name": "Learn CSS Foundations Projects",
+  "isUpcomingChange": false,
+  "dashedName": "top-learn-css-foundations-projects",
+  "helpCategory": "Odin",
+  "order": 5,
+  "superBlock": "the-odin-project",
+  "challengeOrder": [
+    {
+      "id": "63ee3f71381756f9716727ef",
+      "title": "CSS Foundations Exercise A"
+    },
+    {
+      "id": "63ee3fe4381756f9716727f0",
+      "title": "CSS Foundations Exercise B"
+    },
+    {
+      "id": "63ee3fe9381756f9716727f1",
+      "title": "CSS Foundations Exercise C"
+    },
+    {
+      "id": "63ee3ff1381756f9716727f2",
+      "title": "CSS Foundations Exercise D"
+    },
+    {
+      "id": "63ee3ff8381756f9716727f3",
+      "title": "CSS Foundations Exercise E"
+    }
+  ],
+  "blockLayout": "project-list"
+}

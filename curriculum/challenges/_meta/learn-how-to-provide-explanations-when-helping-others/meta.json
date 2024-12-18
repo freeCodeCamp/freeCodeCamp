@@ -1,0 +1,187 @@
+{
+  "name": "Learn How to Provide Explanations When Helping Others",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-provide-explanations-when-helping-others",
+  "order": 26,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6626261426a32b191320ecbe",
+      "title": "Dialogue 1: An Issue with the Computer"
+    },
+    {
+      "id": "662626b2e13cfe1d39bc40fd",
+      "title": "Task 1"
+    },
+    {
+      "id": "66262700a108801e85319172",
+      "title": "Task 2"
+    },
+    {
+      "id": "6626273eb00c031f4988f129",
+      "title": "Task 3"
+    },
+    {
+      "id": "662629de1d3ccf2559a76a02",
+      "title": "Task 4"
+    },
+    {
+      "id": "66262a51f3a76626829fe191",
+      "title": "Task 5"
+    },
+    {
+      "id": "66262a982c6ae427498f9871",
+      "title": "Task 6"
+    },
+    {
+      "id": "66262b58c53d902944183b44",
+      "title": "Task 7"
+    },
+    {
+      "id": "66262b91a2380f2a02d20e94",
+      "title": "Task 8"
+    },
+    {
+      "id": "66262c938943392c6aa23d39",
+      "title": "Task 9"
+    },
+    {
+      "id": "66262d2afcdcf52e02a98d24",
+      "title": "Task 10"
+    },
+    {
+      "id": "66262d74745ccb2efde7670e",
+      "title": "Task 11"
+    },
+    {
+      "id": "66263023754e892fd8fd3eee",
+      "title": "Task 12"
+    },
+    {
+      "id": "6626346c3db7ed3eab925b8c",
+      "title": "Task 13"
+    },
+    {
+      "id": "662634fa4dab0640457469f6",
+      "title": "Task 14"
+    },
+    {
+      "id": "6626355a442bde41613ed03b",
+      "title": "Task 15"
+    },
+    {
+      "id": "662635b73cca81426d091f59",
+      "title": "Task 16"
+    },
+    {
+      "id": "66263606a953984372df559a",
+      "title": "Task 17"
+    },
+    {
+      "id": "662636481f9a3a4467dcaec3",
+      "title": "Task 18"
+    },
+    {
+      "id": "662637442baaf548015d56d9",
+      "title": "Dialogue 2: An Online Meeting for Software Training"
+    },
+    {
+      "id": "662637b4ae77ed48d6d5ba8d",
+      "title": "Task 19"
+    },
+    {
+      "id": "66263800f12d8d4a6edffdcd",
+      "title": "Task 20"
+    },
+    {
+      "id": "66263852d4e9534b53c82e2e",
+      "title": "Task 21"
+    },
+    {
+      "id": "66263891f8b3f74c36cd90b4",
+      "title": "Task 22"
+    },
+    {
+      "id": "662638ca74be054d04c448fa",
+      "title": "Task 23"
+    },
+    {
+      "id": "662639212dc5664e08ec05f6",
+      "title": "Task 24"
+    },
+    {
+      "id": "6626396c2fd2604f117731b2",
+      "title": "Task 25"
+    },
+    {
+      "id": "66263a41ce552c514cb6fc3e",
+      "title": "Task 26"
+    },
+    {
+      "id": "66263aace1c84e52a2974049",
+      "title": "Task 27"
+    },
+    {
+      "id": "66263b5ca3878d54811f9ac2",
+      "title": "Task 28"
+    },
+    {
+      "id": "66263d28fe1eae5a2601d0d6",
+      "title": "Dialogue 3: Integrating a Framework"
+    },
+    {
+      "id": "66263d47baac2d5ad278e68c",
+      "title": "Task 29"
+    },
+    {
+      "id": "66264a9e3e030663acc4109a",
+      "title": "Task 30"
+    },
+    {
+      "id": "66264bc673d62766a8ab48bc",
+      "title": "Task 31"
+    },
+    {
+      "id": "66265cebc033f66a2a4451e9",
+      "title": "Task 32"
+    },
+    {
+      "id": "66265d447926ae6b9e9af13e",
+      "title": "Task 33"
+    },
+    {
+      "id": "66265dd49cbab56d038d0d2e",
+      "title": "Task 34"
+    },
+    {
+      "id": "66265e0ac3bdc26ddf3525f5",
+      "title": "Task 35"
+    },
+    {
+      "id": "66265e4a43ec6d6e9ba7cc79",
+      "title": "Task 36"
+    },
+    {
+      "id": "66265ec39f8cf36fe615bd11",
+      "title": "Task 37"
+    },
+    {
+      "id": "66265f07ee69a670cc620d1e",
+      "title": "Task 38"
+    },
+    {
+      "id": "66265f3bb6ec0c7186e0c621",
+      "title": "Task 39"
+    },
+    {
+      "id": "6626676b898b1d721834736a",
+      "title": "Task 40"
+    },
+    {
+      "id": "662668a5aa1437017755151d",
+      "title": "Task 41"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

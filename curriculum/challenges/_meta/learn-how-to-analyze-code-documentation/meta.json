@@ -1,0 +1,123 @@
+{
+  "name": "Learn How to Analyze Code Documentation",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-analyze-code-documentation",
+  "order": 20,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6606682f3fbb93838673920d",
+      "title": "Dialogue 1: Analyzing API Documentation"
+    },
+    {
+      "id": "66066c563917c5874b792337",
+      "title": "Task 1"
+    },
+    {
+      "id": "660681a717d84e89da14f6f4",
+      "title": "Task 2"
+    },
+    {
+      "id": "660682b572c0bb8aa3075feb",
+      "title": "Task 3"
+    },
+    {
+      "id": "6606838ecf64478b53a51496",
+      "title": "Task 4"
+    },
+    {
+      "id": "660683e649f8fa8bbd5baac5",
+      "title": "Task 5"
+    },
+    {
+      "id": "66068414094b3a8c10a4770d",
+      "title": "Task 6"
+    },
+    {
+      "id": "6606846eba453e8c7bacb2f7",
+      "title": "Task 7"
+    },
+    {
+      "id": "660684bfc24bf48cfaaf9cfa",
+      "title": "Task 8"
+    },
+    {
+      "id": "660686845b5e788def3527ca",
+      "title": "Task 9"
+    },
+    {
+      "id": "66068a6d0bb2aa90f0d93979",
+      "title": "Dialogue 2: Analyzing Code Documentation for Functions"
+    },
+    {
+      "id": "66068ad667567091500128c5",
+      "title": "Task 10"
+    },
+    {
+      "id": "66068b650b681c91de9e19a0",
+      "title": "Task 11"
+    },
+    {
+      "id": "66068bf9c9046292705b856d",
+      "title": "Task 12"
+    },
+    {
+      "id": "66068c5cfc7a4992f2574ab2",
+      "title": "Task 13"
+    },
+    {
+      "id": "66068d4033a07d9393291ef0",
+      "title": "Task 14"
+    },
+    {
+      "id": "66068f5b2b7dda9450a7cc2c",
+      "title": "Task 15"
+    },
+    {
+      "id": "66068fc7aa2fe094c5cb84bd",
+      "title": "Task 16"
+    },
+    {
+      "id": "6606906b3f31fc953f1ee3b6",
+      "title": "Task 17"
+    },
+    {
+      "id": "660694cf7803c598ce999171",
+      "title": "Dialogue 3: Analyzing Code Documentation for Classes and Objects"
+    },
+    {
+      "id": "6606952c28640e9941c8fa29",
+      "title": "Task 18"
+    },
+    {
+      "id": "660695c672854899d6862834",
+      "title": "Task 19"
+    },
+    {
+      "id": "660696292c16659a5e9ccf81",
+      "title": "Task 20"
+    },
+    {
+      "id": "660696cce3e4e79af4612466",
+      "title": "Task 21"
+    },
+    {
+      "id": "66069719acca7d9b59499ce9",
+      "title": "Task 22"
+    },
+    {
+      "id": "6606977e8f0b509bdac39012",
+      "title": "Task 23"
+    },
+    {
+      "id": "660697f307c6559c60e976f7",
+      "title": "Task 24"
+    },
+    {
+      "id": "6606989c34f0be9d141130b1",
+      "title": "Task 25"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

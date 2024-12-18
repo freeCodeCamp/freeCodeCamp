@@ -1,0 +1,91 @@
+{
+  "name": "Take Home Projects",
+  "isUpcomingChange": false,
+  "dashedName": "take-home-projects",
+  "helpCategory": "JavaScript",
+  "order": 2,
+  "superBlock": "coding-interview-prep",
+  "challengeOrder": [
+    {
+      "id": "bd7158d8c442eddfaeb5bd10",
+      "title": "Show the Local Weather"
+    },
+    {
+      "id": "bd7158d8c442eddfaeb5bd19",
+      "title": "Build a Wikipedia Viewer"
+    },
+    {
+      "id": "bd7158d8c442eddfaeb5bd1f",
+      "title": "Use the Twitch JSON API"
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bdee",
+      "title": "Build an Image Search Abstraction Layer"
+    },
+    {
+      "id": "bd7158d8c442eedfaeb5bd1c",
+      "title": "Build a Tic Tac Toe Game"
+    },
+    {
+      "id": "bd7158d8c442eddfaeb5bd1c",
+      "title": "Build a Simon Game"
+    },
+    {
+      "id": "bd7156d8c242eddfaeb5bd13",
+      "title": "Build a freeCodeCamp Forum Homepage"
+    },
+    {
+      "id": "bd7155d8c242eddfaeb5bd13",
+      "title": "Build a Recipe Box"
+    },
+    {
+      "id": "bd7154d8c242eddfaeb5bd13",
+      "title": "Build the Game of Life"
+    },
+    {
+      "id": "bd7153d8c242eddfaeb5bd13",
+      "title": "Build a Roguelike Dungeon Crawler Game"
+    },
+    {
+      "id": "bd7150d8c442eddfafb5bd1c",
+      "title": "P2P Video Chat Application"
+    },
+    {
+      "id": "bd7198d8c242eddfaeb5bd13",
+      "title": "Show National Contiguity with a Force Directed Graph"
+    },
+    {
+      "id": "bd7108d8c242eddfaeb5bd13",
+      "title": "Map Data Across the Globe"
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bd0f",
+      "title": "Manage a Book Trading Club"
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bdee",
+      "title": "Build a Pinterest Clone"
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bdff",
+      "title": "Build a Nightlife Coordination App"
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bd0e",
+      "title": "Chart the Stock Market"
+    },
+    {
+      "id": "bd7158d8c443eddfaeb5bdef",
+      "title": "Build a Voting App"
+    },
+    {
+      "id": "5a4b7fcdb66f799f199e11db",
+      "title": "Build a Pong Game"
+    },
+    {
+      "id": "5a5d02bd919fcf9ca8cf46cb",
+      "title": "Build a Light-Bright App"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

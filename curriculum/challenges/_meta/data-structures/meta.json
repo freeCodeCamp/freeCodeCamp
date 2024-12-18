@@ -1,0 +1,195 @@
+{
+  "name": "Data Structures",
+  "isUpcomingChange": false,
+  "dashedName": "data-structures",
+  "helpCategory": "JavaScript",
+  "order": 1,
+  "superBlock": "coding-interview-prep",
+  "challengeOrder": [
+    {
+      "id": "587d8253367417b2b2512c6a",
+      "title": "Typed Arrays"
+    },
+    {
+      "id": "587d8250367417b2b2512c5e",
+      "title": "Learn how a Stack Works"
+    },
+    {
+      "id": "587d8250367417b2b2512c5f",
+      "title": "Create a Stack Class"
+    },
+    {
+      "id": "587d8250367417b2b2512c60",
+      "title": "Create a Queue Class"
+    },
+    {
+      "id": "587d8255367417b2b2512c74",
+      "title": "Create a Priority Queue Class"
+    },
+    {
+      "id": "587d8255367417b2b2512c75",
+      "title": "Create a Circular Queue"
+    },
+    {
+      "id": "8d1323c8c441eddfaeb5bdef",
+      "title": "Create a Set Class"
+    },
+    {
+      "id": "587d8253367417b2b2512c6c",
+      "title": "Perform a Union on Two Sets"
+    },
+    {
+      "id": "587d8253367417b2b2512c6d",
+      "title": "Perform an Intersection on Two Sets of Data"
+    },
+    {
+      "id": "587d8254367417b2b2512c6e",
+      "title": "Perform a Difference on Two Sets of Data"
+    },
+    {
+      "id": "587d8254367417b2b2512c6f",
+      "title": "Perform a Subset Check on Two Sets of Data"
+    },
+    {
+      "id": "587d8254367417b2b2512c70",
+      "title": "Create and Add to Sets in ES6"
+    },
+    {
+      "id": "587d8254367417b2b2512c71",
+      "title": "Remove items from a set in ES6"
+    },
+    {
+      "id": "587d8255367417b2b2512c72",
+      "title": "Use .has and .size on an ES6 Set"
+    },
+    {
+      "id": "587d8255367417b2b2512c73",
+      "title": "Use Spread and Notes for ES5 Set() Integration"
+    },
+    {
+      "id": "8d5823c8c441eddfaeb5bdef",
+      "title": "Create a Map Data Structure"
+    },
+    {
+      "id": "587d825b367417b2b2512c8d",
+      "title": "Create an ES6 JavaScript Map"
+    },
+    {
+      "id": "587d825b367417b2b2512c8e",
+      "title": "Create a Hash Table"
+    },
+    {
+      "id": "587d8251367417b2b2512c61",
+      "title": "Work with Nodes in a Linked List"
+    },
+    {
+      "id": "587d8251367417b2b2512c62",
+      "title": "Create a Linked List Class"
+    },
+    {
+      "id": "587d8251367417b2b2512c63",
+      "title": "Remove Elements from a Linked List"
+    },
+    {
+      "id": "587d8251367417b2b2512c64",
+      "title": "Search within a Linked List"
+    },
+    {
+      "id": "587d8251367417b2b2512c65",
+      "title": "Remove Elements from a Linked List by Index"
+    },
+    {
+      "id": "587d8252367417b2b2512c67",
+      "title": "Add Elements at a Specific Index in a Linked List"
+    },
+    {
+      "id": "587d825a367417b2b2512c87",
+      "title": "Create a Doubly Linked List"
+    },
+    {
+      "id": "587d825a367417b2b2512c88",
+      "title": "Reverse a Doubly Linked List"
+    },
+    {
+      "id": "587d8257367417b2b2512c7b",
+      "title": "Add a New Element to a Binary Search Tree"
+    },
+    {
+      "id": "587d8256367417b2b2512c7a",
+      "title": "Find the Minimum and Maximum Value in a Binary Search Tree"
+    },
+    {
+      "id": "587d8257367417b2b2512c7c",
+      "title": "Check if an Element is Present in a Binary Search Tree"
+    },
+    {
+      "id": "5cc0c1b32479e176caf3b422",
+      "title": "Check if Tree is Binary Search Tree"
+    },
+    {
+      "id": "587d8257367417b2b2512c7d",
+      "title": "Find the Minimum and Maximum Height of a Binary Search Tree"
+    },
+    {
+      "id": "587d8257367417b2b2512c7e",
+      "title": "Use Depth First Search in a Binary Search Tree"
+    },
+    {
+      "id": "587d8258367417b2b2512c7f",
+      "title": "Use Breadth First Search in a Binary Search Tree"
+    },
+    {
+      "id": "587d8258367417b2b2512c80",
+      "title": "Delete a Leaf Node in a Binary Search Tree"
+    },
+    {
+      "id": "587d8258367417b2b2512c81",
+      "title": "Delete a Node with One Child in a Binary Search Tree"
+    },
+    {
+      "id": "587d8258367417b2b2512c82",
+      "title": "Delete a Node with Two Children in a Binary Search Tree"
+    },
+    {
+      "id": "587d8259367417b2b2512c83",
+      "title": "Invert a Binary Tree"
+    },
+    {
+      "id": "587d8259367417b2b2512c84",
+      "title": "Create a Trie Search Tree"
+    },
+    {
+      "id": "587d825a367417b2b2512c8a",
+      "title": "Insert an Element into a Max Heap"
+    },
+    {
+      "id": "587d825b367417b2b2512c8b",
+      "title": "Remove an Element from a Max Heap"
+    },
+    {
+      "id": "587d825b367417b2b2512c8c",
+      "title": "Implement Heap Sort with a Min Heap"
+    },
+    {
+      "id": "587d8256367417b2b2512c77",
+      "title": "Adjacency List"
+    },
+    {
+      "id": "587d8256367417b2b2512c78",
+      "title": "Adjacency Matrix"
+    },
+    {
+      "id": "587d8256367417b2b2512c79",
+      "title": "Incidence Matrix"
+    },
+    {
+      "id": "587d825c367417b2b2512c90",
+      "title": "Breadth-First Search"
+    },
+    {
+      "id": "587d825d367417b2b2512c96",
+      "title": "Depth-First Search"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

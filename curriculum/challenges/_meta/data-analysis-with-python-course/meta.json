@@ -1,0 +1,123 @@
+{
+  "name": "Data Analysis with Python",
+  "isUpcomingChange": false,
+  "dashedName": "data-analysis-with-python-course",
+  "helpCategory": "Python",
+  "order": 0,
+  "superBlock": "data-analysis-with-python",
+  "challengeOrder": [
+    {
+      "id": "5e9a093a74c4063ca6f7c14c",
+      "title": "Introduction to Data Analysis"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c14d",
+      "title": "Data Analysis Example A"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c14e",
+      "title": "Data Analysis Example B"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c14f",
+      "title": "How to use Jupyter Notebooks Intro"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c150",
+      "title": "Jupyter Notebooks Cells"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c151",
+      "title": "Jupyter Notebooks Importing and Exporting Data"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c152",
+      "title": "Numpy Introduction A"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c153",
+      "title": "Numpy Introduction B"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c154",
+      "title": "Numpy Arrays"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c155",
+      "title": "Numpy Operations"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c156",
+      "title": "Numpy Boolean Arrays"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c157",
+      "title": "Numpy Algebra and Size"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c158",
+      "title": "Pandas Introduction"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c159",
+      "title": "Pandas Indexing and Conditional Selection"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c15a",
+      "title": "Pandas DataFrames"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c15b",
+      "title": "Pandas Conditional Selection and Modifying DataFrames"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c15c",
+      "title": "Pandas Creating Columns"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c15d",
+      "title": "Data Cleaning Introduction"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c15e",
+      "title": "Data Cleaning with DataFrames"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c15f",
+      "title": "Data Cleaning Duplicates"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c160",
+      "title": "Data Cleaning and Visualizations"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c161",
+      "title": "Reading Data Introduction"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c162",
+      "title": "Reading Data CSV and TXT"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c163",
+      "title": "Reading Data from Databases"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c164",
+      "title": "Parsing HTML and Saving Data"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c165",
+      "title": "Python Introduction"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c166",
+      "title": "Python Functions and Collections"
+    },
+    {
+      "id": "5e9a093a74c4063ca6f7c167",
+      "title": "Python Iteration and Modules"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

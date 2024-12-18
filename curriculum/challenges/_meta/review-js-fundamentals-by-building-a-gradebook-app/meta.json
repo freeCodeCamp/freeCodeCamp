@@ -1,0 +1,29 @@
+{
+  "name": "Review JavaScript Fundamentals by Building a Gradebook App",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "review-js-fundamentals-by-building-a-gradebook-app",
+  "order": 1,
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
+  "challengeOrder": [
+    {
+      "id": "662693f82c91a66be46c881b",
+      "title": "Step 1"
+    },
+    {
+      "id": "6626a060c4006f793e10cb33",
+      "title": "Step 2"
+    },
+    {
+      "id": "6626b4c58c027d86478ff5eb",
+      "title": "Step 3"
+    },
+    {
+      "id": "6626b8dcf5057f896f948440",
+      "title": "Step 4"
+    }
+  ],
+  "helpCategory": "JavaScript",
+  "blockLayout": "legacy-challenge-grid"
+}
