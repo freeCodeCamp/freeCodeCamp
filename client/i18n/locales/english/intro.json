@@ -3127,7 +3127,9 @@
       },
       "lab-drum-machine": {
         "title": "Build a Drum Machine",
-        "intro": ["", ""]
+        "intro": [
+          "In this project you can practice using the <code>audio</code> element."
+        ]
       },
       "review-javascript-audio-and-video": {
         "title": "JavaScript Audio and Video Review",
