@@ -2,7 +2,7 @@
   "name": "Asynchronous JavaScript Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-asynchronous-javascript",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

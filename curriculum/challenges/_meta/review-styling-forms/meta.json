@@ -2,7 +2,7 @@
   "name": "Styling Forms Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-styling-forms",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

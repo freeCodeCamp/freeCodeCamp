@@ -2,7 +2,7 @@
   "name": "Animations and Accessibility",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-animations-and-accessibility",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

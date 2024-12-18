@@ -2,7 +2,7 @@
   "name": "Build a Greeting Bot",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-greeting-bot",

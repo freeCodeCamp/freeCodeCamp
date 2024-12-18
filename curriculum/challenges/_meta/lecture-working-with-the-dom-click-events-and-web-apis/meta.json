@@ -2,7 +2,7 @@
   "name": "Working with the DOM, Click Events, and Web APIs",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-the-dom-click-events-and-web-apis",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

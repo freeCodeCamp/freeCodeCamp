@@ -2,7 +2,7 @@
   "name": "DOM Manipulation and Click Events with JavaScript Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-dom-manipulation-and-click-event-with-javascript",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

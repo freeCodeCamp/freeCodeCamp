@@ -2,7 +2,7 @@
   "name": "Build a RegEx Sandbox",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-regex-sandbox",
   "superBlock": "full-stack-developer",

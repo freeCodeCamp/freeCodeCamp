@@ -2,7 +2,7 @@
   "name": "Understanding the Event Object and Event Delegation",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-the-event-object-and-event-delegation",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

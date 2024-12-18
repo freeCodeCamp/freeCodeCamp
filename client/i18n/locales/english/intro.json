@@ -1710,7 +1710,8 @@
       "frontend-libraries": "Front End Libraries",
       "relational-databases": "Relational Databases",
       "backend-javascript": "Backend JavaScript",
-      "python": "Python"
+      "python": "Python",
+      "exam-certified-full-stack-developer": "Certified Full Stack Developer Exam"
     },
     "modules": {
       "getting-started-with-freecodecamp": "Getting Started with freeCodeCamp",
@@ -1719,6 +1720,7 @@
       "html-forms-and-tables": "Forms and Tables",
       "html-and-accessibility": "Accessibility",
       "review-html": "HTML Review",
+      "exam-html": "HTML Exam",
       "computer-basics": "Computer Basics",
       "basic-css": "Basic CSS",
       "design-for-developers": "Design",
@@ -1736,6 +1738,7 @@
       "css-variables": "Variables",
       "css-grid": "Grid",
       "css-animations": "Animations",
+      "exam-css": "CSS Exam",
       "code-editors": "Code Editors",
       "javascript-variables-and-strings": "Variables and Strings",
       "javascript-booleans-and-numbers": "Booleans and Numbers",
@@ -1757,12 +1760,15 @@
       "recursion": "Recursion",
       "functional-programming": "Functional Programming",
       "asynchronous-javascript": "Asynchronous JavaScript",
+      "exam-javascript": "JavaScript Exam",
       "react-fundamentals": "React Fundamentals",
       "react-state-hooks-and-routing": "React State, Hooks, and Routing",
       "performance": "Performance",
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
       "testing": "Testing",
       "typescript-fundamentals": "TypeScript Fundamentals",
+      "review-front-end-libraries": "Front End Libraries Review",
+      "exam-front-end-libraries": "Front End Libraries Exam",
       "sql-and-bash": "SQL and Bash",
       "git": "Git",
       "security-and-privacy": "Security and Privacy"

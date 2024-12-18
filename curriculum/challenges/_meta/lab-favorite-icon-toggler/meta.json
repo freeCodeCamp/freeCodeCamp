@@ -2,7 +2,7 @@
   "name": "Build a Favorite Icon Toggler",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-favorite-icon-toggler",
   "superBlock": "full-stack-developer",
