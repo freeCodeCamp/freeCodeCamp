@@ -1791,7 +1791,7 @@
       "lab-recipe-page": {
         "title": "Build a Recipe Page",
         "intro": [
-          "In this lab, you will review HTML basics by creating a web page of your favorite recipe. You'll create an HTML boilerplate and work with headings, lists, images and more."
+          "In this lab, you'll review HTML basics by creating a web page of your favorite recipe. You'll create an HTML boilerplate and work with headings, lists, images, and more."
         ]
       },
       "lecture-html-fundamentals": {
@@ -1803,7 +1803,7 @@
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
         "intro": [
-          "In this lab, you will review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element and more."
+          "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element, and more."
         ]
       },
       "lecture-working-with-media": {
@@ -1815,7 +1815,7 @@
       "lab-video-compilation-page": {
         "title": "Build a Video Compilation Page",
         "intro": [
-          "In this lab, you will create a video compilation web page. You'll practice working with the <code>iframe</code> element."
+          "In this lab, you'll create a video compilation web page. You'll practice working with the <code>iframe</code> element."
         ]
       },
       "lecture-working-with-links": {
@@ -1852,7 +1852,7 @@
       "lab-event-hub": {
         "title": "Build an Event Hub",
         "intro": [
-          "In this lab, you will build an event hub and review semantic elements like <code>header</code>, <code>nav</code>, <code>article</code> and more."
+          "In this lab, you'll build an event hub and review semantic elements like <code>header</code>, <code>nav</code>, <code>article</code>, and more."
         ]
       },
       "review-semantic-html": {
@@ -1884,7 +1884,7 @@
       "lab-survey-form": {
         "title": "Build a Survey Form",
         "intro": [
-          "In this lab, you will review HTML forms by creating a survey form.",
+          "In this lab, you'll review HTML forms by creating a survey form.",
           "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
         ]
       },
@@ -1903,8 +1903,8 @@
       "lab-book-catalog-table": {
         "title": "Build a Book Catalog Table",
         "intro": [
-          "In this lab, you will review HTML tables by building a book information table.",
-          "You'll practice the different table components like the <code>thead</code>, <code>tbody</code>, <code>th</code>, <code>tr</code> and <code>td</code> elements."
+          "In this lab, you'll review HTML tables by building a book information table.",
+          "You'll practice the different table components like the <code>thead</code>, <code>tbody</code>, <code>th</code>, <code>tr</code>, and <code>td</code> elements."
         ]
       },
       "lecture-working-with-html-tools": {
@@ -1935,7 +1935,7 @@
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
         "intro": [
-          "In this lab, you will create an accessible checkout page.",
+          "In this lab, you'll create an accessible checkout page.",
           "You'll practice concepts like <code>alt</code> attributes and aria roles."
         ]
       },
@@ -2006,7 +2006,7 @@
         "title": "Design a Business Card",
         "intro": [
           "In this lab, you'll create a business card and style it using CSS.",
-          "You'll practice style properties like <code>color</code>, <code>font-size</code>, <code>text-align</code> and more."
+          "You'll practice style properties like <code>color</code>, <code>font-size</code>, <code>text-align</code>, and more."
         ]
       },
       "lecture-css-specificity-the-cascade-algorithm-and-inheritance": {
@@ -2051,7 +2051,7 @@
         "title": "Design a Blog Post Card",
         "intro": [
           "In this lab, you'll design a blog post card using HTML and CSS",
-          "You'll practice concepts like <code>background-color</code>, <code>border-radius</code>, margins, paddings and more."
+          "You'll practice concepts like <code>background-color</code>, <code>border-radius</code>, margins, paddings, and more."
         ]
       },
       "review-css-backgrounds-and-borders": {
@@ -2107,7 +2107,7 @@
       "lab-event-flyer-page": {
         "title": "Build an Event Flyer Page",
         "intro": [
-          "In this lab, you create an event flyer page.",
+          "In this lab, you'll create an event flyer page.",
           "You will practice aligning elements using absolute and relative CSS"
         ]
       },
@@ -2140,8 +2140,8 @@
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
         "intro": [
-          "In this lab you will build a job application form and style it using pseudo-classes.",
-          "You'll practice concepts like <code>:hover</code>, <code>:active</code>, <code>:focus</code> and more."
+          "In this lab you'll build a job application form and style it using pseudo-classes.",
+          "You'll practice concepts like <code>:hover</code>, <code>:active</code>, <code>:focus</code>, and more."
         ]
       },
       "review-css-pseudo-classes": {
@@ -2172,7 +2172,7 @@
       "lab-colored-boxes": {
         "title": "Design a Set of Colored Boxes",
         "intro": [
-          "In this lab, you'll create a color grid and practice adding background colors to the grid items using hex codes, RGB and predefined color names."
+          "In this lab, you'll create a color grid and practice adding background colors to the grid items using hex codes, RGB, and predefined color names."
         ]
       },
       "review-css-colors": {
@@ -2204,7 +2204,7 @@
       "lab-contact-form": {
         "title": "Design a Contact Form",
         "intro": [
-          "In this lab, you will design a contact form in HTML and style it using CSS."
+          "In this lab, you'll design a contact form in HTML and style it using CSS."
         ]
       },
       "review-styling-forms": {
@@ -2236,7 +2236,7 @@
       "lab-confidential-email-page": {
         "title": "Build a Confidential Email Page",
         "intro": [
-          "For this lab, you will create a web page using HTML and mask the content using CSS properties."
+          "In this lab, you'll create a web page using HTML and mask the content using CSS properties."
         ]
       },
       "review-css-layout-and-effects": {
@@ -2268,8 +2268,8 @@
       "lab-page-of-playing-cards": {
         "title": "Build a Page of Playing Cards",
         "intro": [
-          "In this lab, you will use flexbox to create a webpage of playing cards.",
-          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code> and more."
+          "In this lab, you'll use flexbox to create a webpage of playing cards.",
+          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
         ]
       },
       "review-css-flexbox": {
@@ -2301,8 +2301,8 @@
       "lab-newspaper-article": {
         "title": "Build a Newspaper Article",
         "intro": [
-          "In this lab, you will build a newspaper article page using HTML and CSS.",
-          "You'll style the fonts using properties like <code>font-family</code>, <code>font-size</code>, <code>font-weight</code> and more."
+          "In this lab, you'll build a newspaper article page using HTML and CSS.",
+          "You'll style the fonts using properties like <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, and more."
         ]
       },
       "review-css-typography": {
@@ -2332,7 +2332,7 @@
       "lab-tribute-page": {
         "title": "Build a Tribute Page",
         "intro": [
-          "For this lab, you will build a tribute page for a subject of your choosing, fictional or real."
+          "in this lab, you'll build a tribute page for a subject of your choosing, fictional or real."
         ]
       },
       "review-css-accessibility": {
@@ -2364,8 +2364,8 @@
       "lab-book-inventory-app": {
         "title": "Build a Book Inventory App",
         "intro": [
-          "For this lab, you will create a book inventory app.",
-          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code> and more."
+          "In this lab, you'll create a book inventory app.",
+          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
         ]
       },
       "review-css-attribute-selectors": {
@@ -2397,8 +2397,8 @@
       "lab-house-painting": {
         "title": "Build a House Painting",
         "intro": [
-          "In this lab, you will build a house painting using CSS.",
-          "You'll design individual elements of the house and position them using CSS properties like <code>position</code>, <code>top</code>, <code>left</code> and more."
+          "In this lab, you'll build a house painting using CSS.",
+          "You'll design individual elements of the house and position them using CSS properties like <code>position</code>, <code>top</code>, <code>left</code>, and more."
         ]
       },
       "review-css-positioning": {
@@ -2430,7 +2430,7 @@
       "lab-technical-documentation-page": {
         "title": "Build a Technical Documentation Page",
         "intro": [
-          "For this lab, you will build a technical documentation page to serve as instruction or reference for a topic.",
+          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
           "You'll also practice media queries to create a responsive design."
         ]
       },
@@ -2463,7 +2463,7 @@
       "lab-availability-table": {
         "title": "Build an Availability Table",
         "intro": [
-          "For this lab, you will create an availability table that shows the availability of people for a meeting.",
+          "For this lab, you'll create an availability table that shows the availability of people for a meeting.",
           "You'll practice using CSS variables to store and reuse colors, fonts, and other styles."
         ]
       },
@@ -2503,7 +2503,7 @@
       "lab-product-landing-page": {
         "title": "Build a Product Landing Page",
         "intro": [
-          "For this project, you will build a product landing page to market a product of your choice."
+          "In this project, you'll build a product landing page to market a product of your choice."
         ]
       },
       "review-css-grid": {
@@ -2533,8 +2533,8 @@
       "lab-moon-orbit": {
         "title": "Build a Moon Orbit",
         "intro": [
-          "For this lab, you will create an animation of the moon orbiting the earth.",
-          "You'll practice animation properties like <code>animation-name</code>, <code>animation-duration</code>, <code>animation-timing-function</code> and more."
+          "In this lab, you'll create an animation of the moon orbiting the earth.",
+          "You'll practice animation properties like <code>animation-name</code>, <code>animation-duration</code>, <code>animation-timing-function</code>, and more."
         ]
       },
       "workshop-flappy-penguin": {
@@ -2547,7 +2547,7 @@
       "lab-personal-portfolio": {
         "title": "Build a Personal Portfolio",
         "intro": [
-          "For this project, you will build your own personal portfolio page."
+          "In this project, you'll build your own personal portfolio page."
         ]
       },
       "review-css-animations": {
@@ -2593,7 +2593,7 @@
       "lab-javascript-trivia-bot": {
         "title": "Build a JavaScript Trivia Bot",
         "intro": [
-          "In this lab, you will practice working with JavaScript variables and strings by building a trivia bot.",
+          "In this lab, you'll practice working with JavaScript variables and strings by building a trivia bot.",
           "You'll practice how to use variables and basic strings."
         ]
       },
@@ -2663,7 +2663,7 @@
       "lab-fortune-teller": {
         "title": "Build a Fortune Teller",
         "intro": [
-          "In this lab, you will build a fortune teller by randomly selecting a fortune from the available fortunes.",
+          "In this lab, you'll build a fortune teller by randomly selecting a fortune from the available fortunes.",
           "You'll practice how to work with the <code>Math.random()</code> method and the <code>Math.floor()</code> method to generate random numbers."
         ]
       },
@@ -2725,7 +2725,7 @@
       "lab-sentence-maker": {
         "title": "Build a Sentence Maker",
         "intro": [
-          "In this lab, you will create different stories by assigning different words to different variables."
+          "In this lab, you'll create different stories by assigning different words to different variables."
         ]
       },
       "workshop-loan-qualification-checker": {
@@ -2738,7 +2738,7 @@
       "lab-leap-year-calculator": {
         "title": "Build a Leap Year Calculator ",
         "intro": [
-          "In this lab you will use conditional statements and loops to determine if a year is a leap year."
+          "In this lab you'll use conditional statements and loops to determine if a year is a leap year."
         ]
       },
       "review-javascript-functions": {
@@ -2770,7 +2770,7 @@
       "lab-lunch-picker-program": {
         "title": "Build a Lunch Picker Program",
         "intro": [
-          "In this lab, you will review working with arrays and random numbers by building a lunch picker program."
+          "In this lab, you'll review working with arrays and random numbers by building a lunch picker program."
         ]
       },
       "lecture-working-with-common-array-methods": {
@@ -2805,8 +2805,8 @@
       "lab-quiz-game": {
         "title": "Build a Quiz Game",
         "intro": [
-          "For this lab, you will build a quiz game using JavaScript arrays and objects.",
-          "You will also practice using functions to randomly select a question and an answer from an array and compare them."
+          "In this lab, you'll build a quiz game using JavaScript arrays and objects.",
+          "You'll also practice using functions to randomly select a question and an answer from an array and compare them."
         ]
       },
       "review-javascript-objects": {
@@ -2837,8 +2837,8 @@
       "lab-factorial-calculator": {
         "title": "Build a Factorial Calculator ",
         "intro": [
-          "In this lab, you will build a factorial calculator.",
-          "You will practice using loops and conditionals to calculate the factorial of a number."
+          "In this lab, you'll build a factorial calculator.",
+          "You'll practice using loops and conditionals to calculate the factorial of a number."
         ]
       },
       "review-javascript-loops": {
@@ -2861,15 +2861,15 @@
       "lab-pyramid-generator": {
         "title": "Build a Pyramid Generator",
         "intro": [
-          "In this lab you will build a pyramid generator.",
-          "You will take a number as input and generate a pyramid with that many levels using a loop."
+          "In this lab you'll build a pyramid generator.",
+          "You'll take a number as input and generate a pyramid with that many levels using a loop."
         ]
       },
       "lab-gradebook-app": {
         "title": "Build a Gradebook App",
         "intro": [
-          "For this lab, you will create a gradebook app.",
-          "You will practice conditionals to determine the student's grade based on their score."
+          "For this lab, you'll create a gradebook app.",
+          "You'll practice conditionals to determine the student's grade based on their score."
         ]
       },
       "lecture-the-var-keyword-and-hoisting": {
@@ -2881,8 +2881,8 @@
       "lab-inventory-management-program": {
         "title": "Build an Inventory Management Program",
         "intro": [
-          "For this lab, you will build an inventory management program using JavaScript.",
-          "You will use JavaScript array of objects to manage the inventory."
+          "For this lab, you'll build an inventory management program using JavaScript.",
+          "You'll use JavaScript array of objects to manage the inventory."
         ]
       },
       "lecture-understanding-modules-imports-and-exports": {
@@ -2925,7 +2925,7 @@
       "lab-book-organizer": {
         "title": "Build a Book Organizer",
         "intro": [
-          "In this lab, you will build a book organizer using higher order functions in JavaScript."
+          "In this lab, you'll build a book organizer using higher order functions in JavaScript."
         ]
       },
       "review-javascript-higher-order-functions": {
@@ -2956,7 +2956,7 @@
       "lab-favorite-icon-toggler": {
         "title": "Build a Favorite Icon Toggler",
         "intro": [
-          "In this lab, you will build a favorite icon toggler by utilizing JavaScript click events."
+          "In this lab, you'll build a favorite icon toggler by utilizing JavaScript click events."
         ]
       },
       "review-dom-manipulation-and-click-events-with-javascript": {
@@ -2987,14 +2987,14 @@
       "lab-real-time-counter": {
         "title": "Build a Real Time Counter",
         "intro": [
-          "In this lab, you will build a real-time character counter",
+          "In this lab, you'll build a real-time character counter",
           "You'll practice how to work with the <code>input</code> event when the user types in the input field."
         ]
       },
       "lab-lightbox-viewer": {
         "title": "Build a Lightbox Viewer",
         "intro": [
-          "In this lab, you will build a lighbox viewer for viewing images in a focused mode.",
+          "In this lab, you'll build a lighbox viewer for viewing images in a focused mode.",
           "You'll practice click events and toggling classes."
         ]
       },
@@ -3013,7 +3013,7 @@
       "lab-football-team-cards": {
         "title": "Build a Set of Football Team Cards",
         "intro": [
-          "In this lab, you will use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+          "In this lab, you'll use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
         ]
       },
       "review-javascript-events": {
@@ -3036,7 +3036,7 @@
       "lab-random-background-color-changer": {
         "title": "Debug a Random Background Color Changer",
         "intro": [
-          "In this lab, you will debug a random background color changer and fix the errors to make it work properly."
+          "In this lab, you'll debug a random background color changer and fix the errors to make it work properly."
         ]
       },
       "review-debugging-javascript": {
@@ -3068,13 +3068,13 @@
       "lab-markdown-to-html-converter": {
         "title": "Build a Markdown to HTML Converter",
         "intro": [
-          "For this lab, you will build a Markdown to HTML converter using JavaScript.",
+          "For this lab, you'll build a Markdown to HTML converter using JavaScript.",
           "You'll practice regular expressions, string manipulation, and more."
         ]
       },
       "lab-regex-sandbox": {
         "title": "Build a RegEx Sandbox",
-        "intro": ["In this lab you will build a regex sandbox."]
+        "intro": ["In this lab you'll build a regex sandbox."]
       },
       "review-javascript-regular-expressions": {
         "title": "JavaScript Regular Expressions Review",
@@ -3105,7 +3105,7 @@
       "lab-customer-complaint-form": {
         "title": "Build a Customer Complaint Form",
         "intro": [
-          "For this lab, you will use JavaScript to validate a customer complaint form.",
+          "For this lab, you'll use JavaScript to validate a customer complaint form.",
           "You'll practice how to validate form inputs, display error messages, and prevent the form from submitting if there are errors."
         ]
       },
@@ -3131,7 +3131,7 @@
       "lab-date-conversion": {
         "title": "Build a Date Conversion Program",
         "intro": [
-          "In this lab, you will build a program to convert a date from one format to another."
+          "In this lab, you'll build a program to convert a date from one format to another."
         ]
       },
       "review-javascript-dates": {
@@ -3187,7 +3187,7 @@
       "lab-voting-system": {
         "title": "Build a Voting System",
         "intro": [
-          "In this lab, you will build a voting system using Maps and Sets.",
+          "In this lab, you'll build a voting system using Maps and Sets.",
           "You'll practice how to use the <code>Map</code> object to store key-value pairs and the <code>Set</code> object to store unique values."
         ]
       },
@@ -3220,7 +3220,7 @@
       "lab-bookmark-manager-app": {
         "title": "Build a Bookmark Manager App",
         "intro": [
-          "For this lab, you will build a bookmark manager app.",
+          "For this lab, you'll build a bookmark manager app.",
           "You'll utilize local storage to store bookmarks, and practice how to add, remove, and display bookmarks."
         ]
       },
@@ -3253,14 +3253,14 @@
       "lab-project-idea-board": {
         "title": "Build a Project Idea Board",
         "intro": [
-          "In this lab, you will build a project idea board using OOP in JavaScript.",
+          "In this lab, you'll build a project idea board using OOP in JavaScript.",
           "You'll practice how to create classes, add methods to classes, and create instances of classes."
         ]
       },
       "lab-bank-account-manager": {
         "title": "Build a Bank Account Management Program",
         "intro": [
-          "In this lab, you will build a simple transaction management system for a bank account."
+          "In this lab, you'll build a simple transaction management system for a bank account."
         ]
       },
       "review-javascript-classes": {
@@ -3292,7 +3292,7 @@
       "lab-permutation-generator": {
         "title": "Build a Permutation Generator",
         "intro": [
-          "For this lab, you will build a permutation generator that produces all possible permutations of a given string."
+          "For this lab, you'll build a permutation generator that produces all possible permutations of a given string."
         ]
       },
       "review-recursion": {
@@ -3322,7 +3322,7 @@
       "lab-sorting-visualizer": {
         "title": "Build a Sorting Visualizer",
         "intro": [
-          "For this lab, you will use JavaScript to visualize the steps that the Bubble Sort algorithm takes to reorder an array of integers."
+          "For this lab, you'll use JavaScript to visualize the steps that the Bubble Sort algorithm takes to reorder an array of integers."
         ]
       },
       "review-javascript-functional-programming": {
@@ -3354,7 +3354,7 @@
       "lab-fcc-forum-leaderboard": {
         "title": "Build an fCC Forum Leaderboard",
         "intro": [
-          "For this lab you will practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
+          "For this lab you'll practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
         ]
       },
       "review-asynchronous-javascript": {
@@ -3392,7 +3392,7 @@
       },
       "lab-reusable-footer": {
         "title": "Build a Reusable Footer",
-        "intro": ["In this lab, you will use React to build a reusable footer."]
+        "intro": ["In this lab, you'll use React to build a reusable footer."]
       },
       "lecture-working-with-data-in-react": {
         "title": "Working with Data in React",
@@ -3409,7 +3409,7 @@
       "lab-mood-board": {
         "title": "Build a Mood Board",
         "intro": [
-          "In this lab, you will create a mood board using React.",
+          "In this lab, you'll create a mood board using React.",
           "You'll practice how to pass data from a parent component to a child component using props."
         ]
       },
@@ -3442,8 +3442,8 @@
       "lab-weather-app": {
         "title": "Build a Weather App",
         "intro": [
-          "In this lab you will build a Weather App using an API",
-          "You'll practice how to fetch data from the API, store and display it your app."
+          "In this lab you'll build a Weather App using an API",
+          "You'll practice how to fetch data from the API, store and display it on your app."
         ]
       },
       "ffpt": { "title": "279", "intro": [] },
