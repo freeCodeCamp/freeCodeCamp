@@ -1,6 +1,6 @@
 {
   "name": "Build a Markdown to HTML Converter",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "blockType": "lab",
   "blockLayout": "link",

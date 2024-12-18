@@ -2,7 +2,7 @@
   "name": "HTML Tables and Forms Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-html-tables-and-forms",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

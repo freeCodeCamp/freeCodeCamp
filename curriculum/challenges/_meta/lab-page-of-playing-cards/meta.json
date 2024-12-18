@@ -2,7 +2,7 @@
   "name": "Build a Page of Playing Cards",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-page-of-playing-cards",
   "superBlock": "full-stack-developer",

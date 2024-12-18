@@ -2,7 +2,7 @@
   "name": "Build a Rock, Paper, Scissors Game",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-rps-game",

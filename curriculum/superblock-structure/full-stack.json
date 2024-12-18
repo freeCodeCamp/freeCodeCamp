@@ -2,6 +2,7 @@
   "chapters": [
     {
       "dashedName": "freecodecamp",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "getting-started-with-freecodecamp",
@@ -66,6 +67,12 @@
           "moduleType": "review",
           "dashedName": "review-html",
           "blocks": [{ "dashedName": "review-html" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-html",
+          "blocks": []
         }
       ]
     },
@@ -249,6 +256,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-css-grid" },
             { "dashedName": "workshop-magazine" },
+            { "dashedName": "lab-magazine-layout" },
             { "dashedName": "lecture-debugging-css" },
             { "dashedName": "lab-product-landing-page" },
             { "dashedName": "review-css-grid" },
@@ -271,6 +279,12 @@
           "moduleType": "review",
           "dashedName": "review-css",
           "blocks": [{ "dashedName": "review-css" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-css",
+          "blocks": []
         }
       ]
     },
@@ -540,6 +554,12 @@
           "moduleType": "review",
           "dashedName": "review-javascript",
           "blocks": [{ "dashedName": "review-javascript" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-javascript",
+          "blocks": []
         }
       ]
     },
@@ -556,6 +576,7 @@
             { "dashedName": "workshop-reusable-mega-navbar" },
             { "dashedName": "lab-reusable-footer" },
             { "dashedName": "lecture-working-with-data-in-react" },
+            { "dashedName": "workshop-reusable-profile-card-component" },
             { "dashedName": "lab-mood-board" },
             { "dashedName": "review-react-basics" },
             { "dashedName": "quiz-react-basics" }
@@ -563,6 +584,7 @@
         },
         {
           "dashedName": "react-state-hooks-and-routing",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "quiz-react-state-and-hooks" },
             { "dashedName": "quiz-advanced-react" }
@@ -570,6 +592,7 @@
         },
         {
           "dashedName": "performance",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-web-performance" },
             { "dashedName": "quiz-web-performance" }
@@ -577,6 +600,7 @@
         },
         {
           "dashedName": "css-libraries-and-frameworks",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-css-libraries-and-frameworks" },
             { "dashedName": "quiz-css-libraries-and-frameworks" }
@@ -584,6 +608,7 @@
         },
         {
           "dashedName": "testing",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-testing" },
             { "dashedName": "quiz-testing" }
@@ -591,6 +616,7 @@
         },
         {
           "dashedName": "typescript-fundamentals",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-typescript" },
             { "dashedName": "quiz-typescript" }
@@ -598,13 +624,21 @@
         },
         {
           "moduleType": "review",
+          "comingSoon": true,
           "dashedName": "review-front-end-libraries",
           "blocks": [{ "dashedName": "review-front-end-libraries" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-front-end-libraries",
+          "blocks": []
         }
       ]
     },
     {
       "dashedName": "relational-databases",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "bash-fundamentals",
@@ -670,7 +704,18 @@
       ]
     },
     {
+      "dashedName": "backend-javascript",
+      "comingSoon": true,
+      "modules": []
+    },
+    {
+      "dashedName": "python",
+      "comingSoon": true,
+      "modules": []
+    },
+    {
       "chapterType": "exam",
+      "comingSoon": true,
       "dashedName": "exam-certified-full-stack-developer",
       "modules": [
         {

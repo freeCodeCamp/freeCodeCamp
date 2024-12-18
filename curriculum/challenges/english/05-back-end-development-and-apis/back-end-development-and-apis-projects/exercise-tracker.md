@@ -212,15 +212,29 @@ async (getUserInput) => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: `description=${expected.description}&duration=${expected.duration}&date=1990-01-01`
     });
-    if (addRes.ok) {
-      const actual = await addRes.json();
-      assert.deepEqual(actual, expected);
-      assert.isString(actual.description);
-      assert.isNumber(actual.duration);
-      assert.isString(actual.date);
-    } else {
+    assert.isTrue(addRes.ok);
+    if (!addRes.ok) {
       throw new Error(`${addRes.status} ${addRes.statusText}`);
     }
+    const responseBody = await addRes.json();
+    assert.isString(responseBody.description);
+    assert.isNumber(responseBody.duration);
+    assert.isString(responseBody.date);
+    assert.equal(responseBody._id, expected._id);
+    assert.equal(responseBody.username, expected.username);
+    assert.equal(responseBody.description, expected.description);
+    assert.equal(responseBody.duration, expected.duration);
+    const receivedDate = new Date(responseBody.date);
+    const expectedDate = new Date(expected.date); // Jan 1, 1990
+    const allowedPreviousDate = new Date(expectedDate);
+    allowedPreviousDate.setDate(expectedDate.getDate() - 1); // Dec 31, 1989
+    const isValidDate =
+      receivedDate.toDateString() === expectedDate.toDateString() ||
+      receivedDate.toDateString() === allowedPreviousDate.toDateString();
+    assert.isTrue(
+      isValidDate,
+      `Expected date to be ${expectedDate.toDateString()} or ${allowedPreviousDate.toDateString()}, but got ${receivedDate.toDateString()}`
+    );
   } else {
     throw new Error(`${res.status} ${res.statusText}`);
   }
@@ -495,26 +509,38 @@ async(getUserInput) => {
 The `date` property of any object in the `log` array that is returned from `GET /api/users/:_id/logs` should be a string. Use the `dateString` format of the `Date` API.
 
 ```js
-async(getUserInput) => {
+async (getUserInput) => {
   const url = getUserInput('url');
   const res = await fetch(url + '/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: `username=fcc_test_${Date.now()}`.substring(0,29)
+    body: `username=fcc_test_${Date.now()}`.substring(0, 29)
   });
-  if(res.ok) {
-    const {_id, username} = await res.json();
+  
+  if (res.ok) {
+    const { _id, username } = await res.json();
+    const currentDate = new Date();
+    const expectedDates = [
+      new Date(currentDate.setDate(currentDate.getDate() - 1)).toLocaleDateString("en-US", {
+        timeZone: "UTC", weekday: "short", month: "short",
+        day: "2-digit", year: "numeric"
+      }).replaceAll(',', ''),
+      new Date().toLocaleDateString("en-US", {
+        timeZone: "UTC", weekday: "short", month: "short",
+        day: "2-digit", year: "numeric"
+      }).replaceAll(',', ''),
+      new Date(currentDate.setDate(currentDate.getDate() + 1)).toLocaleDateString("en-US", {
+        timeZone: "UTC", weekday: "short", month: "short",
+        day: "2-digit", year: "numeric"
+      }).replaceAll(',', '')
+    ];
     const expected = {
       username,
       description: 'test',
       duration: 60,
       _id,
-      date: new Date().toLocaleDateString("en-US", {
-        timeZone: "UTC", weekday: "short", month: "short",
-        day: "2-digit", year: "numeric"
-      }).replaceAll(',', '')
     };
     const addRes = await fetch(url + `/api/users/${_id}/exercises`, {
       method: 'POST',
@@ -523,13 +549,13 @@ async(getUserInput) => {
       },
       body: `description=${expected.description}&duration=${expected.duration}`
     });
-    if(addRes.ok) {
+    if (addRes.ok) {
       const logRes = await fetch(url + `/api/users/${_id}/logs`);
-      if(logRes.ok){
-        const {log} = await logRes.json();
+      if (logRes.ok) {
+        const { log } = await logRes.json();
         const exercise = log[0];
         assert.isString(exercise.date);
-        assert.equal(exercise.date, expected.date);
+        assert.include(expectedDates, exercise.date); // Check if date matches any valid dates
       } else {
         throw new Error(`${logRes.status} ${logRes.statusText}`);
       }

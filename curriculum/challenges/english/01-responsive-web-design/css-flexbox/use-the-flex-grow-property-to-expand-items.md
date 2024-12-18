@@ -22,13 +22,17 @@ Add the CSS property `flex-grow` to both `#box-1` and `#box-2`. Give `#box-1` a 
 The `#box-1` element should have the `flex-grow` property set to a value of `1`.
 
 ```js
-assert($('#box-1').css('flex-grow') == '1');
+const boxOne = document.querySelector('#box-1');
+const flexGrow = window.getComputedStyle(boxOne)['flex-grow'];
+assert.equal(flexGrow, '1');
 ```
 
 The `#box-2` element should have the `flex-grow` property set to a value of `2`.
 
 ```js
-assert($('#box-2').css('flex-grow') == '2');
+const boxTwo = document.querySelector('#box-2');
+const flexGrow = window.getComputedStyle(boxTwo)['flex-grow'];
+assert.equal(flexGrow, '2');
 ```
 
 # --seed--

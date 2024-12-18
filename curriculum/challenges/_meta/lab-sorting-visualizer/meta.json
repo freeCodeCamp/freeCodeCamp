@@ -1,6 +1,6 @@
 {
   "name": "Build a Sorting Visualizer",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "blockType": "lab",
   "blockLayout": "link",

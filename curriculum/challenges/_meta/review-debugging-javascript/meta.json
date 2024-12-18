@@ -2,7 +2,7 @@
   "name": "Debugging JavaScript Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-debugging-javascript",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

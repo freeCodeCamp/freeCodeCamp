@@ -2,7 +2,7 @@
   "name": "Introduction to JavaScript",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-javascript",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

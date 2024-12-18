@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import type { DefaultTFuncReturn, TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -72,7 +72,7 @@ class Block extends Component<BlockProps> {
     toggleBlock(block);
   };
 
-  render(): JSX.Element {
+  render(): ReactNode {
     const {
       block,
       blockType,
@@ -128,6 +128,13 @@ class Block extends Component<BlockProps> {
     const percentageCompleted = Math.floor(
       (completedCount / extendedChallenges.length) * 100
     );
+
+    // since the Blocks are not components, we need link to exist even if it's
+    // not being used to render anything
+    const link = challenges[0]?.fields.slug || '';
+    const blockLayout = challenges[0]?.blockLayout;
+
+    const isEmptyBlock = !challenges.length;
 
     const courseCompletionStatus = () => {
       if (completedCount === 0) {
@@ -306,12 +313,14 @@ class Block extends Component<BlockProps> {
                 onClick={() => {
                   this.handleBlockClick();
                 }}
-                to={extendedChallenges[0].fields.slug}
+                to={link}
               >
                 <CheckMark isCompleted={isBlockCompleted} />
                 {blockTitle}{' '}
                 <span className='sr-only'>
-                  {t('misc.certification-project')}
+                  {isBlockCompleted
+                    ? `${t('misc.certification-project')}, ${t('learn.completed')}`
+                    : `${t('misc.certification-project')}, ${t('learn.not-completed')}`}
                 </span>
               </Link>
             </h3>
@@ -391,11 +400,16 @@ class Block extends Component<BlockProps> {
                 onClick={() => {
                   this.handleBlockClick();
                 }}
-                to={extendedChallenges[0].fields.slug}
+                to={link}
               >
                 <CheckMark isCompleted={isBlockCompleted} />
                 {blockType && <BlockLabel blockType={blockType} />}
                 {blockTitle}
+                <span className='sr-only'>
+                  {isBlockCompleted
+                    ? `, ${t('learn.completed')}`
+                    : `, ${t('learn.not-completed')}`}
+                </span>
               </Link>
             </h3>
           </div>
@@ -460,11 +474,15 @@ class Block extends Component<BlockProps> {
     };
 
     return (
-      <>
-        {layoutToComponent[challenges[0].blockLayout]}
-        {(!isGridBlock || isProjectBlock) &&
-          superBlock !== SuperBlocks.FullStackDeveloper && <Spacer size='m' />}
-      </>
+      !isEmptyBlock && (
+        <>
+          {layoutToComponent[blockLayout]}
+          {(!isGridBlock || isProjectBlock) &&
+            superBlock !== SuperBlocks.FullStackDeveloper && (
+              <Spacer size='m' />
+            )}
+        </>
+      )
     );
   }
 }

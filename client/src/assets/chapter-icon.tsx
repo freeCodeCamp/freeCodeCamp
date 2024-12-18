@@ -7,6 +7,8 @@ import ResponsiveDesign from './icons/responsive-design';
 import FreeCodeCampIcon from './icons/freecodecamp';
 import Html from './icons/html';
 import Css from './icons/css';
+import NodeIcon from './icons/node';
+import Python from './icons/python';
 
 const iconMap = {
   [FsdChapters.Welcome]: FreeCodeCampIcon,
@@ -15,7 +17,8 @@ const iconMap = {
   [FsdChapters.Javascript]: JavaScriptIcon,
   [FsdChapters.FrontendLibraries]: ReactIcon,
   [FsdChapters.RelationalDatabases]: DatabaseIcon,
-  [FsdChapters.Security]: ResponsiveDesign
+  [FsdChapters.BackendJavascript]: NodeIcon,
+  [FsdChapters.Python]: Python
 };
 
 type ChapterIconProps = {

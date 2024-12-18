@@ -2,7 +2,7 @@
   "name": "JavaScript Functions Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-javascript-functions",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

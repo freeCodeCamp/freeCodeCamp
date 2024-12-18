@@ -5,8 +5,15 @@ const blankUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb9');
 const publicUserId = new ObjectId('663b839b24a8b29f57728b13');
 const demoUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb5');
 const fullyCertifiedUserId = new ObjectId('5fa2db00a25c1c1fa49ce067');
+const almostFullyCertifiedUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb9');
 
-const userIds = [blankUserId, publicUserId, demoUserId, fullyCertifiedUserId];
+const userIds = [
+  blankUserId,
+  publicUserId,
+  demoUserId,
+  fullyCertifiedUserId,
+  almostFullyCertifiedUserId
+];
 
 module.exports.blankUser = {
   _id: blankUserId,
@@ -12285,6 +12292,15 @@ module.exports.fullyCertifiedUser = {
   emailVerifyTTL: null,
   externalId: '',
   unsubscribeId: 'tBX8stC5jiustPBteF2mV'
+};
+
+module.exports.almostFullyCertifiedUser = {
+  ...module.exports.fullyCertifiedUser,
+  id: almostFullyCertifiedUserId,
+  completedChallenges:
+    module.exports.fullyCertifiedUser.completedChallenges.filter(
+      challenge => challenge.id !== 'bd7158d8c442eddfaeb5bd13'
+    )
 };
 
 module.exports.userIds = userIds;

@@ -2,7 +2,7 @@
   "name": "Build a Loan Qualification Checker",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-loan-qualification-checker",

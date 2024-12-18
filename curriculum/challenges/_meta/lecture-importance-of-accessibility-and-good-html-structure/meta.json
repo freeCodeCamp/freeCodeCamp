@@ -2,7 +2,7 @@
   "name": "Importance of Accessibility and Good HTML Structure",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-importance-of-accessibility-and-good-html-structure",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

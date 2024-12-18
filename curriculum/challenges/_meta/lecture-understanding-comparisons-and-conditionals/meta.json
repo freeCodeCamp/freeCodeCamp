@@ -2,7 +2,7 @@
   "name": "Understanding Comparisons and Conditionals",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-comparisons-and-conditionals",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
