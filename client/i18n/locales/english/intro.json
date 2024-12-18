@@ -2882,7 +2882,7 @@
         "title": "Build an Inventory Management Program",
         "intro": [
           "For this lab, you will build an inventory management program using JavaScript.",
-          "Yu will use JavaScript array of objects to manage the inventory."
+          "You will use JavaScript array of objects to manage the inventory."
         ]
       },
       "lecture-understanding-modules-imports-and-exports": {
@@ -3409,7 +3409,7 @@
       "lab-mood-board": {
         "title": "Build a Mood Board",
         "intro": [
-          "In this lab, you will create a mood board using React props.",
+          "In this lab, you will create a mood board using React.",
           "You'll practice how to pass data from a parent component to a child component using props."
         ]
       },
