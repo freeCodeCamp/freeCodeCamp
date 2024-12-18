@@ -5,9 +5,9 @@ export const mathJaxSrc =
   'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML';
 
 export const isMathJaxAllowed = (pathname: string) =>
-  initiateMathJaxOnSuperBlock.some(superBlock => pathname.includes(superBlock));
+  superBlocksWithMathJax.some(superBlock => pathname.includes(superBlock));
 
-const initiateMathJaxOnSuperBlock = [
+const superBlocksWithMathJax = [
   SuperBlocks.JsAlgoDataStructNew,
   SuperBlocks.JsAlgoDataStruct,
   SuperBlocks.ProjectEuler,
