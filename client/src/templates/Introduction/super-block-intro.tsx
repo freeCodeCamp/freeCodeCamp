@@ -133,7 +133,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     () => nodes.map(({ challenge }) => challenge),
     [nodes]
   );
-  const challenges = useMemo(
+  const superBlockChallenges = useMemo(
     () => allChallenges.filter(c => c.superBlock === superBlock),
     [allChallenges, superBlock]
   );
@@ -194,14 +194,13 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
       if (!isEmpty(completedChallenges)) {
         const lastCompletedChallengeId = last(completedChallenges)?.id;
 
-        const lastCompletedChallenge = nodes.find(
-          node => node.challenge.id === lastCompletedChallengeId
-        )?.challenge;
+        const lastCompletedChallenge = allChallenges.find(
+          ({ id }) => id === lastCompletedChallengeId
+        );
 
         if (lastCompletedChallenge) return lastCompletedChallenge.block;
       }
 
-      return blocks[0];
     }
 
     return blocks[0];

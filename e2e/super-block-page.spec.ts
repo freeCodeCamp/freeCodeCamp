@@ -58,10 +58,8 @@ test.describe('Super Block Page - Authenticated User', () => {
       ).toHaveAttribute('aria-expanded', 'true');
     });
 
-    test('should expand the block of the most recently completed challenge', async ({
+    test('should expand the block of the most recently viewed challenge', async ({
       page,
-      isMobile,
-      browserName
     }) => {
       test.setTimeout(20000);
 
@@ -82,19 +80,6 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       await page.goto(
         '/learn/javascript-algorithms-and-data-structures-v8/learn-basic-javascript-by-building-a-role-playing-game/step-2'
-      );
-
-      const editor = getEditors(page);
-      await focusEditor({ page, isMobile });
-      await clearEditor({ page, browserName });
-      await editor.fill('<script></script>');
-      await page.getByRole('button', { name: /check your code/i }).click();
-      await page.getByRole('button', { name: /submit and go/i }).click();
-
-      // The submit button navigates user to the next challenge.
-      // Allow that navigation to complete before going back to the super block page.
-      await page.waitForURL(
-        '/learn/javascript-algorithms-and-data-structures-v8/learn-basic-javascript-by-building-a-role-playing-game/step-3'
       );
 
       // Go back to the super block page
@@ -224,19 +209,6 @@ test.describe('Super Block Page - Authenticated User', () => {
       ).toHaveAttribute('aria-expanded', 'true');
 
       await page.goto('/learn/full-stack-developer/workshop-blog-page/step-2');
-
-      const editor = getEditors(page);
-      await focusEditor({ page, isMobile });
-      await clearEditor({ page, browserName });
-      await editor.fill('<head></head>');
-      await page.getByRole('button', { name: /check your code/i }).click();
-      await page.getByRole('button', { name: /submit and go/i }).click();
-
-      // The submit button navigates user to the next challenge.
-      // Allow that navigation to complete before going back to the super block page.
-      await page.waitForURL(
-        '/learn/full-stack-developer/workshop-blog-page/step-3'
-      );
 
       // Go back to the super block page
       await page.goto('/learn/full-stack-developer');
