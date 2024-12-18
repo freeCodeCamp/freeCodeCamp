@@ -3169,7 +3169,12 @@
           "The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, and previous functionalities and dynamically update your user interface based on the current song."
         ]
       },
-      "crzf": { "title": "222", "intro": [] },
+      "lab-drum-machine": {
+        "title": "Build a Drum Machine",
+        "intro": [
+          "For this lab you will use the <code>audio</code> element to build a drum machine."
+        ]
+      },
       "review-javascript-audio-and-video": {
         "title": "JavaScript Audio and Video Review",
         "intro": [
