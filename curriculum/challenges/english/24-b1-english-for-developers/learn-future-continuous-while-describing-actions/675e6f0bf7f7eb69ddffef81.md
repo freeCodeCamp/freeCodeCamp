@@ -51,7 +51,7 @@ This phrase of three words means to solve a problem or deal with a difficult sit
     "audio": {
       "filename": "B1_6-2.mp3",
       "startTime": 1,
-      "startTimestamp": 56.28,
+      "startTimestamp": 56.08,
       "finishTimestamp": 60.02
     }
   },
@@ -64,7 +64,7 @@ This phrase of three words means to solve a problem or deal with a difficult sit
     {
       "character": "Mark",
       "startTime": 1,
-      "finishTime": 4.74,
+      "finishTime": 4.94,
       "dialogue": {
         "text": "No, we don't. Okay, let's get to work and see if we can sort this out.",
         "align": "center"
@@ -73,7 +73,7 @@ This phrase of three words means to solve a problem or deal with a difficult sit
     {
       "character": "Mark",
       "opacity": 0,
-      "startTime": 5.24
+      "startTime": 5.44
     }
   ]
 }
