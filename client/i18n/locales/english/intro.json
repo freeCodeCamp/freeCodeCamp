@@ -1969,19 +1969,19 @@
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
-          "In these lecture videos, you will learn about computer, internet, and tooling basics."
+          "In these lecture videos, you will learn about the computer, its different parts, internet service providers (ISPs), and the tools professional developers use."
         ]
       },
       "lecture-working-with-file-systems": {
         "title": "Working with File Systems",
         "intro": [
-          "In these lecture videos, you will learn about working with file systems."
+          "In these lecture videos, you will learn how to work with file and folder systems on your computers. You will learn how to create, move, and delete files and folders, the best practices for naming and organizing files and folders, and more."
         ]
       },
       "lecture-browsing-the-web-effectively": {
         "title": "Browsing the Web Effectively",
         "intro": [
-          "In these lecture videos, you will learn how to browse the web effectively."
+          "In these lecture videos, you will learn about what websites, search engine, and web browsers are, the different browsers available, and how to get the best out of a search engine."
         ]
       },
       "review-computer-basics": {
@@ -1999,7 +1999,9 @@
       },
       "lecture-what-is-css": {
         "title": "What Is CSS?",
-        "intro": ["In these lecture videos, you will learn what CSS is."]
+        "intro": [
+          "The following lecture videos are all about CSS. You will learn what CSS is and its role on the web, a CSS rule and its anatomy, the three ways to write CSS and when to use each, inline and block elements, and many more."
+        ]
       },
       "workshop-cafe-menu": {
         "title": "Design a Cafe Menu",
@@ -2018,7 +2020,7 @@
       "lecture-css-specificity-the-cascade-algorithm-and-inheritance": {
         "title": "CSS Specificity, the Cascade Algorithm, and Inheritance",
         "intro": [
-          "In these lecture videos, you will learn about CSS specificity, the cascade algorithm, and inheritance."
+          "In these lecture videos, you will learn about CSS specificity, the common selectors and their specificities, the cascade algorithm, inheritance, and more."
         ]
       },
       "review-basic-css": {
@@ -2037,7 +2039,7 @@
       "lecture-styling-lists-and-links": {
         "title": "Styling Lists and Links",
         "intro": [
-          "In these lecture videos, you will learn about styling lists and links."
+          "In these lecture videos, you will learn the properties you need to know to effectively style lists and links, including link states like <code>link</code>, <code>visited</code>, <code>hover</code>, and <code>active</code>."
         ]
       },
       "lab-stylized-to-do-list": {
@@ -2050,7 +2052,7 @@
       "lecture-working-with-backgrounds-and-borders": {
         "title": "Working with Backgrounds and Borders",
         "intro": [
-          "In these lecture videos, you will learn about working with backgrounds and borders."
+          "In these lecture videos, you will learn about the properties and values you need to know to style backgrounds and borders of elements, alongside the accessibility considerations for backgrounds."
         ]
       },
       "lab-blog-post-card": {
@@ -2076,19 +2078,19 @@
       "lecture-user-interface-design-fundamentals": {
         "title": "User Interface Design Fundamentals",
         "intro": [
-          "In these lecture videos, you will learn about user interface design fundamentals."
+          "In these lecture videos, you will learn about the fundamentals of user interface (UI) design. You will learn about the terms you need to know to communicate with designers, visual heirarchy, scaling, alignment, whitespace, and much more."
         ]
       },
       "lecture-user-centered-design": {
         "title": "User-Centered Design",
         "intro": [
-          "In these lecture videos, you will learn about user-centered design."
+          "In these lecture videos, you will learn about best practices for designing user-facing features like dark mode, breadcrumbs, modal dialogs, and much more. You will also learn how to conduct user research, user requirements and testing."
         ]
       },
       "lecture-common-design-tools": {
         "title": "Common Design Tools",
         "intro": [
-          "In these lecture videos, you will learn about common design tools."
+          "In these lecture videos, you will learn about the common design tools developers should know. You will also learn about design briefs and how developers work with them."
         ]
       },
       "review-design-fundamentals": {
@@ -2107,7 +2109,7 @@
       "lecture-working-with-relative-and-absolute-units": {
         "title": "Working with Relative and Absolute Units",
         "intro": [
-          "In these lecture videos, you will learn about working with relative and absolute units."
+          "In these lecture videos, you will learn about relative and absolute units, and how they both impact what you see in the browser."
         ]
       },
       "lab-event-flyer-page": {
@@ -2133,7 +2135,7 @@
       "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css": {
         "title": "Working with Pseudo-Classes and Pseudo-Elements in CSS",
         "intro": [
-          "In these lecture videos, you will learn about working with pseudo-classes and pseudo-elements in CSS."
+          "In these lecture videos, you will learn about pseudo-classes and pseudo-elements, alongisde their examples and how they work."
         ]
       },
       "workshop-greeting-card": {
@@ -2166,7 +2168,7 @@
       "lecture-working-with-colors-in-css": {
         "title": "Working with Colors in CSS",
         "intro": [
-          "In these lecture videos, you will learn about working with colors in CSS."
+          "In these lecture videos, you will learn about linear and radial gradients, the color theory, different kinds of colors like named, RGB, Hex, and HSL colors. You will learn how these colors work, and which to use in specific cases."
         ]
       },
       "workshop-colored-markers": {
@@ -2197,7 +2199,7 @@
       "lecture-best-practices-for-styling-forms": {
         "title": "Best Practices for Styling Forms",
         "intro": [
-          "In these lecture videos, you will learn about the best practices for styling forms."
+          "In these lecture videos, you will learn about the best practices for styling forms and issues you can encounter while styling special inputs like <code>color</code> and <code>datetime-local</code>."
         ]
       },
       "workshop-registration-form": {
@@ -2229,7 +2231,7 @@
       "lecture-working-with-css-transforms-overflow-and-filters": {
         "title": "Working with CSS Transforms, Overflow, and Filters",
         "intro": [
-          "In these lecture videos, you will learn about working with CSS transforms, overflow, and filters."
+          "In these lecture videos, you will learn about working with CSS transforms, overflow, and filters. You will also learn about the box model and how it works."
         ]
       },
       "workshop-rothko-painting": {
@@ -2261,7 +2263,7 @@
       "lecture-working-with-css-flexbox": {
         "title": "Working with CSS Flexbox",
         "intro": [
-          "In these lecture videos, you will learn about working with CSS flexbox."
+          "In these lecture videos, you will learn how CSS flexbox works, its properties, and when you should use it."
         ]
       },
       "workshop-flexbox-photo-gallery": {
@@ -2294,7 +2296,7 @@
       "lecture-working-with-css-fonts": {
         "title": "Working with CSS Fonts",
         "intro": [
-          "In these lecture videos, you will learn about working with CSS fonts."
+          "In these lecture videos, you will learn about typography and its best practices, fonts, and the <code>text-shadow</code> property."
         ]
       },
       "workshop-nutritional-label": {
@@ -2325,7 +2327,7 @@
       "lecture-best-practices-for-accessibility-and-css": {
         "title": "Best Practices for Accessibility and CSS",
         "intro": [
-          "In these lecture videos, you will learn about best practices for accessibility in CSS."
+          "In these lecture videos, you will learn about best practices for accessibility in CSS, and the tools for checking good color contrast on websites."
         ]
       },
       "workshop-accessibility-quiz": {
@@ -2357,7 +2359,7 @@
       "lecture-working-with-attribute-selectors": {
         "title": "Working with Attribute Selectors",
         "intro": [
-          "In these lecture videos, you will learn about working with attribute selectors."
+          "In these lecture videos, you will learn about attribute selectors and how to use them to target elements like links and lists."
         ]
       },
       "workshop-balance-sheet": {
@@ -2390,7 +2392,7 @@
       "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
         "title": "Understanding How to Work with Floats and Positioning in CSS",
         "intro": [
-          "In these lecture videos, you will learn about how to work with floats and positioning in CSS."
+          "In these lecture videos, you will learn how to use CSS positioning and floats. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
         ]
       },
       "workshop-cat-painting": {
@@ -2423,7 +2425,7 @@
       "lecture-best-practices-for-responsive-web-design": {
         "title": "Best Practices for Responsive Web Design",
         "intro": [
-          "In these lecture videos, you will learn about the best practices for responsive web design."
+          "In these lecture videos, you will learn about the best practices for responsive web design, the roles concepts like grid, flexbox, media queries, and media breakpoints play in responsive design, and more."
         ]
       },
       "workshop-piano": {
@@ -2456,7 +2458,7 @@
       "lecture-working-with-css-variables": {
         "title": "Working with CSS Variables",
         "intro": [
-          "In these lecture videos, you will learn about working with CSS variables."
+          "In these lecture videos, you will learn how to define and use custom properties (also known as CSS variables). You will also learn about the <code>@property</code> rule and how it works."
         ]
       },
       "workshop-city-skyline": {
@@ -2489,7 +2491,7 @@
       "lecture-working-with-css-grid": {
         "title": "Working with CSS Grid",
         "intro": [
-          "In these lecture videos, you will learn about working with CSS grid."
+          "In these lecture videos, you will learn about CSS grid, its several properties and how to use them, and how CSS grid differs from flexbox."
         ]
       },
       "workshop-magazine": {
@@ -2531,7 +2533,7 @@
       "lecture-animations-and-accessibility": {
         "title": "Animations and Accessibility",
         "intro": [
-          "In these lecture videos, you will learn about animations and accessibility."
+          "In these lecture videos, you will learn about CSS animations and their accessibility concerns. You will also learn how <code>prefers-reduced-motion</code> can help address those accessibility concerns."
         ]
       },
       "workshop-ferris-wheel": {
