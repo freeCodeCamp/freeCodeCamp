@@ -2906,7 +2906,7 @@
       "lecture-working-with-the-dom-click-events-and-web-apis": {
         "title": "Working with the DOM, Click Events, and Web APIs",
         "intro": [
-          "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using JavaScript."
+          "In these lecture videos, you will learn how to work with the Document Object Model (DOM), the `addEventListener()` method and events, and web APIs."
         ]
       },
       "workshop-storytelling-app": {
@@ -2937,7 +2937,7 @@
       "lecture-understanding-the-event-object-and-event-delegation": {
         "title": "Understanding the Event Object and Event Delegation",
         "intro": [
-          "In these lecture videos, you will learn about the event object and event delegation."
+          "In these lecture videos, you will learn about the event object, the change event, event bubbling, and event delegation."
         ]
       },
       "workshop-music-instrument-filter": {
@@ -2988,7 +2988,7 @@
       "lecture-debugging-techniques": {
         "title": "Debugging Techniques",
         "intro": [
-          "In these lecture videos, you will learn debugging techniques."
+          "In these lecture videos, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
         ]
       },
       "lab-random-background-color-changer": {
@@ -3013,7 +3013,7 @@
       "lecture-working-with-regular-expressions": {
         "title": "Working with Regular Expressions",
         "intro": [
-          "In these lecture videos, you will learn about regular expressions in JavaScript."
+          "In these lecture videos, you will learn about regular expressions in JavaScript. You will learn about the methods for working with regular expressions, modifiers, character classes, lookaheads, lookbehinds, back-references, quantifiers, and more."
         ]
       },
       "workshop-spam-filter": {
@@ -3049,7 +3049,7 @@
       "lecture-understanding-form-validation": {
         "title": "Understanding Form Validation",
         "intro": [
-          "In these lecture videos, you will learn about form validation in JavaScript."
+          "In these lecture videos, you will learn about form validation in JavaScript. You will learn about the varous ways to validate forms, how the <code>preventDefault()</code> method works, and how the submit event works."
         ]
       },
       "workshop-calorie-counter": {
@@ -3081,7 +3081,7 @@
       "lecture-working-with-dates": {
         "title": "Working with Dates",
         "intro": [
-          "In these lecture videos, you will learn about working with JavaScript dates."
+          "In these lecture videos, you will learn about the JavaScript date object. You will learn about the methods for working with dates and how to format dates."
         ]
       },
       "lab-date-conversion": {
@@ -3104,7 +3104,7 @@
       "lecture-working-with-audio-and-video": {
         "title": "Working with Audio and Video",
         "intro": [
-          "In these lecture videos, you will learn about working with audio and video using JavaScript."
+          "In these lecture videos, you will learn how to work with audio and video files using JavaScript. You will learn about the <code>Audio</code> and <code>Video</code> constructors, their methods and properties, audio and video formats, codecs, the <code>HTMLMediaElement</code> API, and much more."
         ]
       },
       "workshop-music-player": {
@@ -3131,7 +3131,7 @@
       "lecture-working-with-maps-and-sets": {
         "title": "Working with Maps and Sets",
         "intro": [
-          "In these lecture videos, you will learn about JavaScript Maps and Sets."
+          "In these lecture videos, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>"
         ]
       },
       "workshop-plant-nursery-catalog": {
@@ -3162,7 +3162,7 @@
       "lecture-working-with-client-side-storage-and-crud-operations": {
         "title": "Working with Client-Side Storage and CRUD Operations",
         "intro": [
-          "In these lecture videos, you will learn about client-side storage and CRUD operations with JavaScript."
+          "In these lecture videos, you will learn about client-side storage and CRUD operations in JavaScript. You will learn about <code>localStorage</code> and <code>sessionStorage</code> alongside their methods and properties, cookies, the Cache API, IndexDB, and much more."
         ]
       },
       "workshop-todo-app": {
@@ -3192,7 +3192,7 @@
       "lecture-understanding-how-to-work-with-classes-in-javascript": {
         "title": "Understanding How to Work with Classes in JavaScript",
         "intro": [
-          "In these lecture videos, you will learn about working with classes in JavaScript."
+          "In these lecture videos, you will learn about classes in JavaScript. You will learn about inheritance, the <code>this</code> keyword, static properties and methods, and more."
         ]
       },
       "workshop-shopping-cart": {
@@ -3230,7 +3230,7 @@
       "lecture-understanding-recursion-and-the-call-stack": {
         "title": "Understanding Recursion and the Call Stack",
         "intro": [
-          "In these lecture videos, you will learn about recursion and the call stack."
+          "In this lecture video, you will learn about recursion and the call stack."
         ]
       },
       "workshop-decimal-to-binary-converter": {
@@ -3260,7 +3260,7 @@
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
-          "In these lecture videos, you will learn about functional programming."
+          "In these lecture videos, you will learn about functional programming and how to nest functions using a technique called currying."
         ]
       },
       "workshop-recipe-ingredient-converter": {
@@ -3292,7 +3292,7 @@
       "lecture-understanding-asynchronous-programming": {
         "title": "Understanding Asynchronous Programming",
         "intro": [
-          "In these lecture videos, you will learn about asynchronous programming."
+          "In these lecture videos, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>asnyc</code> keyword works, the <code>Fetch</code> API, promises, async/await, the <code>Geolocation</code> API, and much more."
         ]
       },
       "workshop-fcc-authors-page": {
