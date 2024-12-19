@@ -147,3 +147,34 @@ export const submitTypes = {
 export const canSaveToDB = (challengeType: number): boolean =>
   challengeType === challengeTypes.multifileCertProject ||
   challengeType === challengeTypes.multifilePythonCertProject;
+
+// Challenge that can show a completion modal
+const challengesUsingModal = [
+  frontEndProject,
+  backEndProject,
+  jsProject,
+  pythonProject,
+  codeAllyCert,
+  multifileCertProject,
+  exam,
+  codeAllyPractice,
+  multifilePythonCertProject,
+  lab
+];
+
+export const canShowCompletionModal = (challengeType: number): boolean =>
+  challengesUsingModal.includes(challengeType);
+
+// Project challenges that are part of certifications
+const certificationProjectTypes = [
+  frontEndProject,
+  backEndProject,
+  jsProject,
+  pythonProject,
+  multifileCertProject,
+  multifilePythonCertProject,
+  codeAllyCert
+];
+
+export const isCertificationProject = (challengeType: number): boolean =>
+  certificationProjectTypes.includes(challengeType);

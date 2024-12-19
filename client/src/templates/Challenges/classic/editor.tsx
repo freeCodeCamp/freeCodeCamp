@@ -36,6 +36,7 @@ import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   canSaveToDB,
+  canShowCompletionModal,
   challengeTypes
 } from '../../../../../shared/config/challenge-types';
 import {
@@ -67,7 +68,6 @@ import {
 } from '../utils/index';
 import { initializeMathJax } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
-import { isProjectBased } from '../../../utils/curriculum-layout';
 import LowerJaw from './lower-jaw';
 import './editor.css';
 
@@ -518,7 +518,10 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
       ],
       run: () => {
-        if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
+        if (
+          props.usesMultifileEditor &&
+          !canShowCompletionModal(props.challengeType)
+        ) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
           } else {

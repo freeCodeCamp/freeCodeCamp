@@ -10,6 +10,7 @@ import type {
   User,
   ChallengeMeta
 } from '../../../redux/prop-types';
+import { canShowCompletionModal } from '../../../../../shared/config/challenge-types';
 import { userSelector } from '../../../redux/selectors';
 import {
   setEditorFocusability,
@@ -27,9 +28,9 @@ import {
   isResetModalOpenSelector,
   isShortcutsModalOpenSelector
 } from '../redux/selectors';
-import './hotkeys.css';
-import { isProjectBased } from '../../../utils/curriculum-layout';
 import type { EditorProps } from '../classic/editor';
+
+import './hotkeys.css';
 
 const mapStateToProps = createSelector(
   isHelpModalOpenSelector,
@@ -163,7 +164,7 @@ function Hotkeys({
       if (
         usesMultifileEditor &&
         typeof challengeType == 'number' &&
-        !isProjectBased(challengeType)
+        !canShowCompletionModal(challengeType)
       ) {
         if (testsArePassing) {
           submitChallenge();
