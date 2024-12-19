@@ -1,7 +1,7 @@
 import { WindowLocation } from '@reach/router';
 import { graphql } from 'gatsby';
-import { uniq } from 'lodash-es';
-import React, { Fragment, useEffect, memo, useMemo } from 'react';
+import { uniq, isEmpty, last } from 'lodash-es';
+import React, { useEffect, memo, useMemo } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -43,7 +43,7 @@ type FetchState = {
   errored: boolean;
 };
 
-type SuperBlockProp = {
+type SuperBlockProps = {
   currentChallengeId: string;
   data: {
     allChallengeNode: { nodes: ChallengeNode[] };
@@ -101,7 +101,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
+const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   const { t } = useTranslation();
   useEffect(() => {
     initializeExpandedState();
@@ -117,16 +117,46 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getChosenBlock = (): string => {
-    const {
-      data: {
-        allChallengeNode: { nodes }
-      },
-      isSignedIn,
-      currentChallengeId,
-      location
-    }: SuperBlockProp = props;
+  const {
+    data: {
+      allChallengeNode: { nodes }
+    },
+    isSignedIn,
+    currentChallengeId,
+    signInLoading,
+    user,
+    pageContext: { superBlock, title, certification },
+    location,
+    user: { completedChallenges: allCompletedChallenges }
+  } = props;
 
+  const allChallenges = useMemo(
+    () => nodes.map(({ challenge }) => challenge),
+    [nodes]
+  );
+  const superBlockChallenges = useMemo(
+    () => allChallenges.filter(c => c.superBlock === superBlock),
+    [allChallenges, superBlock]
+  );
+  const blocks = uniq(superBlockChallenges.map(({ block }) => block));
+
+  const completedChallenges = useMemo(
+    () =>
+      allCompletedChallenges.filter(completedChallenge =>
+        superBlockChallenges.some(c => c.id === completedChallenge.id)
+      ),
+    [superBlockChallenges, allCompletedChallenges]
+  );
+
+  const i18nTitle = getSuperBlockTitleForMap(superBlock);
+
+  const showCertification = liveCerts.some(
+    cert => superBlockToCertMap[superBlock] === cert.certSlug
+  );
+
+  const superBlockWithAccordionView = [SuperBlocks.FullStackDeveloper];
+
+  const getChosenBlock = (): string => {
     // if coming from breadcrumb click
     if (
       location.state &&
@@ -145,18 +175,29 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
       return dashedBlock;
     }
 
-    const firstChallenge = nodes[0]?.challenge;
-
     if (isSignedIn) {
       // see if currentChallenge is in this superBlock
-      const currentChallenge = nodes.find(
-        node => node.challenge.id === currentChallengeId
-      )?.challenge;
+      const currentChallenge = superBlockChallenges.find(
+        challenge => challenge.id === currentChallengeId
+      );
 
-      return currentChallenge ? currentChallenge.block : firstChallenge?.block;
+      if (currentChallenge) return currentChallenge.block;
+
+      // If the current challenge isn't in the super block
+      // Find the most recently completed challenge of the super block,
+      // which is the last item of the `completedChallenges` array.
+      if (!isEmpty(completedChallenges)) {
+        const lastCompletedChallengeId = last(completedChallenges)?.id;
+
+        const lastCompletedChallenge = allChallenges.find(
+          ({ id }) => id === lastCompletedChallengeId
+        );
+
+        if (lastCompletedChallenge) return lastCompletedChallenge.block;
+      }
     }
 
-    return firstChallenge?.block;
+    return blocks[0];
   };
 
   const initializeExpandedState = () => {
@@ -166,33 +207,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     return toggleBlock(getChosenBlock());
   };
 
-  const {
-    data: {
-      allChallengeNode: { nodes }
-    },
-    isSignedIn,
-    signInLoading,
-    user,
-    pageContext: { superBlock, title, certification }
-  } = props;
-
-  const allChallenges = useMemo(
-    () => nodes.map(({ challenge }) => challenge),
-    [nodes]
-  );
-  const challenges = useMemo(
-    () => allChallenges.filter(c => c.superBlock === superBlock),
-    [allChallenges, superBlock]
-  );
-  const blocks = uniq(challenges.map(({ block }) => block));
-
-  const i18nTitle = getSuperBlockTitleForMap(superBlock);
-
-  const showCertification = liveCerts.some(
-    cert => superBlockToCertMap[superBlock] === cert.certSlug
-  );
-
-  const superBlockWithAccordionView = [SuperBlocks.FullStackDeveloper];
   const chosenBlock = getChosenBlock();
 
   const onCertificationDonationAlertClick = () => {
@@ -228,14 +242,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
               <Spacer size='m' />
               {superBlockWithAccordionView.includes(superBlock) ? (
                 <SuperBlockAccordion
-                  challenges={challenges}
+                  challenges={superBlockChallenges}
                   superBlock={superBlock}
                   chosenBlock={chosenBlock}
                 />
               ) : (
                 <div className='block-ui'>
                   {blocks.map(block => {
-                    const blockChallenges = challenges.filter(
+                    const blockChallenges = superBlockChallenges.filter(
                       c => c.block === block
                     );
                     const blockType = blockChallenges[0].blockType;
