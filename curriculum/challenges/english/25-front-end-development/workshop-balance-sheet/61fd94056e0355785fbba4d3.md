@@ -146,8 +146,7 @@ assert.isTrue(
             </thead>
             <tbody>
               <tr class="data">
-              <th>Cash <span class="description">This is the cash we currently have on hand.</span></th>
-                </th>
+                <th>Cash <span class="description">This is the cash we currently have on hand.</span></th>
                 <td>$25</td>
                 <td>$30</td>
                 <td class="current">$28</td>
