@@ -189,6 +189,7 @@ const ShowBackEnd = (props: BackEndProps) => {
                 {title}
               </ChallengeTitle>
               <ChallengeDescription
+                superBlock={superBlock}
                 description={description}
                 instructions={instructions}
               />
