@@ -179,26 +179,6 @@ export const isModuleNewlyCompletedSelector = state => {
   );
 };
 
-export const isChapterNewlyCompletedSelector = state => {
-  const isModuleNewlyCompleted = isModuleNewlyCompletedSelector(state);
-  const { chapter, module } = challengeMetaSelector(state);
-
-  if (!isModuleNewlyCompleted || !chapter || !module) return;
-
-  const allChapters = allChaptersSelector(state);
-
-  const incompleteModulesInChapter = allChapters
-    .find(({ name }) => name === chapter)
-    ?.modules.filter(({ isCompleted }) => !isCompleted);
-
-  // The chapter is completed if the newly completed module
-  // is the last module that has `isCompleted === false`.
-  return (
-    incompleteModulesInChapter?.length === 1 &&
-    incompleteModulesInChapter.some(({ name }) => name === module)
-  );
-};
-
 export const attemptsSelector = state => state[ns].attempts;
 export const canFocusEditorSelector = state => state[ns].canFocusEditor;
 export const visibleEditorsSelector = state => state[ns].visibleEditors;

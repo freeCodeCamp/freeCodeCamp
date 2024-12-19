@@ -32,6 +32,7 @@ import { isSignedInSelector, userSelector } from '../../../redux/selectors';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import postUpdate$ from '../utils/post-update';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { actionTypes } from './action-types';
 import {
   closeModal,
@@ -47,8 +48,7 @@ import {
   userCompletedExamSelector,
   projectFormValuesSelector,
   isBlockNewlyCompletedSelector,
-  isModuleNewlyCompletedSelector,
-  isChapterNewlyCompletedSelector
+  isModuleNewlyCompletedSelector
 } from './selectors';
 
 function postChallenge(update) {
@@ -249,13 +249,20 @@ export default function completionEpic(action$, state$) {
         ? blockHashSlug
         : nextChallengePath;
 
-      // TODO: Use these variables in the donation modal logic
-      const isModuleNewlyCompleted = isModuleNewlyCompletedSelector(state);
-      const isChapterNewlyCompleted = isChapterNewlyCompletedSelector(state);
+      const canAllowDonationRequest = (state, action) => {
+        if (action.type === submitActionTypes.submitComplete) {
+          if (
+            (superBlock !== SuperBlocks.FullStackDeveloper &&
+              isBlockNewlyCompletedSelector(state)) ||
+            (superBlock === SuperBlocks.FullStackDeveloper &&
+              isModuleNewlyCompletedSelector(state))
+          ) {
+            return true;
+          }
+        }
 
-      const canAllowDonationRequest = (state, action) =>
-        isBlockNewlyCompletedSelector(state) &&
-        action.type === submitActionTypes.submitComplete;
+        return false;
+      };
 
       return submitter(type, state).pipe(
         concat(
