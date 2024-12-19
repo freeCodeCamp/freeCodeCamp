@@ -1278,6 +1278,15 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const firstFailedTest = props.tests.find(test => !!test.err);
 
+  const handleSubmitAndGoButtonBoolean = () => {
+    const canShowModal = sessionStorage.getItem('canOpenModal');
+
+    if (canShowModal === 'false' && process.env.NODE_ENV === 'development') {
+      return false;
+    }
+    return challengeIsComplete();
+  };
+
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>
@@ -1298,7 +1307,7 @@ const Editor = (props: EditorProps): JSX.Element => {
             hint={firstFailedTest?.message}
             testsLength={props.tests.length}
             attempts={attemptsRef.current}
-            challengeIsCompleted={challengeIsComplete()}
+            challengeIsCompleted={handleSubmitAndGoButtonBoolean()}
             tryToSubmitChallenge={tryToSubmitChallenge}
             isSignedIn={props.isSignedIn}
             updateContainer={() =>
