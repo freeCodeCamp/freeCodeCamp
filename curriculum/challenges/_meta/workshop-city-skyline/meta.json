@@ -2,7 +2,7 @@
   "name": "Build a City Skyline",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-city-skyline",

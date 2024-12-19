@@ -1,6 +1,6 @@
 {
   "name": "Design a Blog Post Card",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-blog-post-card",
   "superBlock": "full-stack-developer",

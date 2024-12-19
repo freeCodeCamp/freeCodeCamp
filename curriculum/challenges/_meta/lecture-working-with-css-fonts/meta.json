@@ -2,7 +2,7 @@
   "name": "Working with CSS Fonts",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-css-fonts",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

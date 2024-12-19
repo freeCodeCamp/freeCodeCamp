@@ -2,7 +2,7 @@
   "name": "Build a Recipe Page",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-recipe-page",
   "superBlock": "full-stack-developer",

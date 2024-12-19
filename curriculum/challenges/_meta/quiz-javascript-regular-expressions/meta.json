@@ -2,7 +2,7 @@
   "name": "JavaScript Regular Expressions Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-javascript-regular-expressions",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

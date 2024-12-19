@@ -41,9 +41,12 @@ type Module = {
   blocks: {
     dashedName: string;
   }[];
+  moduleType?: string;
 };
 
-const modules = superBlockStructure.chapters.flatMap(({ modules }) => modules);
+const modules = superBlockStructure.chapters.flatMap<Module>(
+  ({ modules }) => modules
+);
 const chapters = superBlockStructure.chapters;
 
 const isLinkModule = (name: string) => {
@@ -127,7 +130,7 @@ const ComingSoon = ({ children }: { children: ReactNode }) => {
   const { t } = useTranslation();
   return (
     <li className='coming-soon'>
-      <span className='badge'>{t('misc.coming-soon')}</span> {children}
+      {children} <span className='badge'>{t('misc.coming-soon')}</span>
     </li>
   );
 };
@@ -193,9 +196,17 @@ export const SuperBlockAccordion = ({
         // show coming soon on production, and all the challenges in dev
         if (chapter.comingSoon && !showUpcomingChanges) {
           return (
-            <ComingSoon key={chapter.name}>
-              {t(`intro:full-stack-developer.chapters.${chapter.name}`)}
-            </ComingSoon>
+            <>
+              <ComingSoon key={chapter.name}>
+                {Object.values(FsdChapters).includes(chapter.name) && (
+                  <ChapterIcon
+                    className='map-icon'
+                    chapter={chapter.name as FsdChapters}
+                  />
+                )}
+                {t(`intro:full-stack-developer.chapters.${chapter.name}`)}
+              </ComingSoon>
+            </>
           );
         }
 

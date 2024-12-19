@@ -2,7 +2,7 @@
   "name": "Best Practices for Accessibility and CSS",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-best-practices-for-accessibility-and-css",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

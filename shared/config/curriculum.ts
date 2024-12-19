@@ -48,13 +48,15 @@ export enum SuperBlockStage {
   Legacy,
   New,
   Upcoming,
-  Next
+  Next,
+  NextEnglish
 }
 
 const defaultStageOrder = [
   SuperBlockStage.Core,
   SuperBlockStage.Next,
   SuperBlockStage.English,
+  SuperBlockStage.NextEnglish,
   SuperBlockStage.Professional,
   SuperBlockStage.Extra,
   SuperBlockStage.Legacy
@@ -65,9 +67,12 @@ export function getStageOrder({
   showUpcomingChanges,
   showNextCurriculum
 }: Config): SuperBlockStage[] {
+  const isCurrentStage = (stage: SuperBlockStage) =>
+    !(stage === SuperBlockStage.Next) &&
+    !(stage === SuperBlockStage.NextEnglish);
   const stageOrder = showNextCurriculum
     ? [...defaultStageOrder]
-    : [...defaultStageOrder.filter(stage => stage !== SuperBlockStage.Next)];
+    : [...defaultStageOrder.filter(isCurrentStage)];
 
   if (showNewCurriculum) stageOrder.push(SuperBlockStage.New);
   if (showUpcomingChanges) stageOrder.push(SuperBlockStage.Upcoming);
@@ -96,6 +101,7 @@ export const superBlockStages: StageMap = {
   ],
   [SuperBlockStage.Next]: [SuperBlocks.FullStackDeveloper],
   [SuperBlockStage.English]: [SuperBlocks.A2English],
+  [SuperBlockStage.NextEnglish]: [SuperBlocks.B1English],
   [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStage.Extra]: [
     SuperBlocks.TheOdinProject,
@@ -109,7 +115,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.PythonForEverybody
   ],
   [SuperBlockStage.New]: [],
-  [SuperBlockStage.Upcoming]: [SuperBlocks.B1English]
+  [SuperBlockStage.Upcoming]: []
 };
 
 Object.freeze(superBlockStages);

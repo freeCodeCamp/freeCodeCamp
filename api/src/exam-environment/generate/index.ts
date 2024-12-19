@@ -24,7 +24,9 @@ const prisma = new PrismaClient({
 /// TODO:
 /// 1. Deprecate all previous generated exams for a given exam id?
 async function main() {
+  console.info('Connecting to cluster...');
   await prisma.$connect();
+  console.info('Connected.');
 
   const exam = await prisma.envExam.findUnique({
     where: {
@@ -38,6 +40,9 @@ async function main() {
 
   let numberOfExamsGenerated = 0;
 
+  console.info(
+    `Exam with _id ${ENV_EXAM_ID} found. Generating ${NUMBER_OF_EXAMS_TO_GENERATE} exams...`
+  );
   while (numberOfExamsGenerated < NUMBER_OF_EXAMS_TO_GENERATE) {
     try {
       const generatedExam = generateExam(exam);
@@ -45,10 +50,12 @@ async function main() {
         data: generatedExam
       });
       numberOfExamsGenerated++;
+      console.info(`Generated ${numberOfExamsGenerated} exams`);
     } catch (e) {
       console.log(e);
     }
   }
+  console.log(`Finished generating exams.`);
 }
 
 void main();

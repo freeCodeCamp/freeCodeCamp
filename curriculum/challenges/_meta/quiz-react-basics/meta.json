@@ -2,7 +2,7 @@
   "name": "React Basics Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-react-basics",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

@@ -2,7 +2,7 @@
   "name": "Working with Media",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-media",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

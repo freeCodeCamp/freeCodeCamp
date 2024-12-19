@@ -2,7 +2,7 @@
   "name": "Form Validation with JavaScript Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-form-validation-with-javascript",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

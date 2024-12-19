@@ -2,7 +2,7 @@
   "name": "What Is CSS?",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-what-is-css",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

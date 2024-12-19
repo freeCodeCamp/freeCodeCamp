@@ -2,7 +2,7 @@
   "name": "Styling Forms Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-styling-forms",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed9043f45ce3ece4053ebf", "title": "Styling Forms Quiz" }],

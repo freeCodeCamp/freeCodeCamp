@@ -2,7 +2,7 @@
   "name": "Working with Relative and Absolute Units",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-relative-and-absolute-units",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

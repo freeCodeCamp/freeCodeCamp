@@ -2,7 +2,7 @@
   "name": "Working with Loops",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-loops",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

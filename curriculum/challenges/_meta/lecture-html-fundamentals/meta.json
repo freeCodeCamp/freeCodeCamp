@@ -2,7 +2,7 @@
   "name": "HTML Fundamentals",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-html-fundamentals",
   "superBlock": "full-stack-developer",
   "helpCategory": "HTML-CSS",

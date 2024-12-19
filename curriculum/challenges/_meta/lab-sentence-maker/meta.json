@@ -2,7 +2,7 @@
   "name": "Build a Sentence Maker",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-sentence-maker",
   "superBlock": "full-stack-developer",

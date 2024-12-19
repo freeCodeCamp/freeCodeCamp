@@ -54,7 +54,7 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
         href={`/certification/${username}/${cert.certSlug}`}
       >
         {t('buttons.view-cert-title', {
-          certTitle: t(`certification.title.${cert.certSlug}`)
+          certTitle: t(`certification.title.${cert.certSlug}-cert`)
         })}
       </ButtonLink>
       <Spacer size='xs' />

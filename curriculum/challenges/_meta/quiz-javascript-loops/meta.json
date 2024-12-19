@@ -2,7 +2,7 @@
   "name": "JavaScript Loops Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-javascript-loops",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

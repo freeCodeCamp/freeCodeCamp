@@ -31,7 +31,10 @@ Try the other options for the `justify-content` property in the code editor to s
 The `#box-container` element should have a `justify-content` property set to a value of `center`.
 
 ```js
-assert($('#box-container').css('justify-content') == 'center');
+const boxContainer = document.querySelector('#box-container');
+const justifyDirection =
+  window.getComputedStyle(boxContainer)['justify-content'];
+assert.strictEqual(justifyDirection, 'center');
 ```
 
 # --seed--

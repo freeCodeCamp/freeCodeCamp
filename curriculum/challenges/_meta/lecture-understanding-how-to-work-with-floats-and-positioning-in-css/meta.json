@@ -2,7 +2,7 @@
   "name": "Understanding How to Work with Floats and Positioning in CSS",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-how-to-work-with-floats-and-positioning-in-css",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
