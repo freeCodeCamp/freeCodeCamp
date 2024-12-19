@@ -3331,7 +3331,7 @@
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
-          "In these lecture videos, you will get an introduction to JavaScript libraries and frameworks."
+          "In these lecture videos, you will get an introduction to JavaScript libraries and frameworks. You will learn about the roles of JavaScript libraries and frameworks, single page applications (SPAs) and the issue surrounding them,  and React, the most popular frontend JavaScript library."
         ]
       },
       "workshop-reusable-mega-navbar": {
@@ -3348,7 +3348,7 @@
       "lecture-working-with-data-in-react": {
         "title": "Working with Data in React",
         "intro": [
-          "In these lecture videos, you will learn about working with data in React."
+          "In these lecture videos, you will learn ho to work with data in React. You will learn about <code>props</code> and how to pass them around, conditional rendering, how to render lists, and how to use inline styles."
         ]
       },
       "workshop-reusable-profile-card-component": {
