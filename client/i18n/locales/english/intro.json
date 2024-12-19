@@ -2008,7 +2008,7 @@
       "lecture-css-specificity-the-cascade-algorithm-and-inheritance": {
         "title": "CSS Specificity, the Cascade Algorithm, and Inheritance",
         "intro": [
-          "In these lecture videos, you will learn about CSS specificity, the commong selectors and their specificities, the cascade algorithm, inheritance, and more."
+          "In these lecture videos, you will learn about CSS specificity, the common selectors and their specificities, the cascade algorithm, inheritance, and more."
         ]
       },
       "review-basic-css": {
