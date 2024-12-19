@@ -2554,13 +2554,13 @@
       "lecture-working-with-code-editors-and-ides": {
         "title": "Working with Code Editors and IDEs",
         "intro": [
-          "In these lecture videos, you will learn how to worki with code editors and IDEs. You will learn various concepts about the most popular code editor, VS Code such as its installation, how to create a project in it, keyboard shortcuts, and extensions."
+          "In these lecture videos, you will learn how to work with code editors and IDEs. You will learn various concepts about the most popular code editor, VS Code such as its installation, how to create a project in it, keyboard shortcuts, and extensions."
         ]
       },
       "lecture-introduction-to-javascript": {
         "title": "Introduction to JavaScript",
         "intro": [
-          "In these lecture videos, you will learn about the fundamentals of JavaScript. What you'll learn include but not limited to variables, data types, how JavaScript works with HTML and CSS, string, and much more."
+          "In these lecture videos, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
         ]
       },
       "workshop-greeting-bot": {
@@ -2630,7 +2630,7 @@
       "lecture-working-with-numbers-booleans-and-the-math-object": {
         "title": "Working with Numbers, Booleans, and the Math Object",
         "intro": [
-          "In these lecture videos, you will dive into the fundamentals of JavaScript. These include numbers, booleans, and the <code>Math</code> object in JavaScript. You will about different types of numbers, how arithmetic and comparison operators work, how JavaScript behaves when you combine strings and numbers in calculations, and much more."
+          "In these lecture videos, you will dive into the fundamentals of JavaScript. These include numbers, booleans, and the <code>Math</code> object. You will learn about different types of numbers, how arithmetic and comparison operators work, how JavaScript behaves when you combine strings and numbers in calculations, and much more."
         ]
       },
       "workshop-mathbot": {
@@ -2648,7 +2648,7 @@
       "lecture-working-with-numbers-and-common-number-methods": {
         "title": "Working with Numbers and Common Number Methods",
         "intro": [
-          "In these lecture videos, you will learn about numbers and common number methods. These include <code>isNaN()</code>, <code>parseInt()</code>, <code>parseFlot()</code>, and <code>toFixed()</code>."
+          "In these lecture videos, you will learn about numbers and common number methods. These include <code>isNaN()</code>, <code>parseInt()</code>, <code>parseFloat()</code>, and <code>toFixed()</code>."
         ]
       },
       "review-javascript-math": {
@@ -2684,7 +2684,7 @@
       "lecture-working-with-functions": {
         "title": "Working with Functions",
         "intro": [
-          "In these lecture videos, you will learn how to reuse a block of code with functions. You will learn what the purpose of a function is and how they work, and hwo scope works in programming. "
+          "In these lecture videos, you will learn how to reuse a block of code with functions. You will learn what the purpose of a function is and how they work, and how scope works in programming. "
         ]
       },
       "workshop-calculator": {
@@ -3049,7 +3049,7 @@
       "lecture-understanding-form-validation": {
         "title": "Understanding Form Validation",
         "intro": [
-          "In these lecture videos, you will learn about form validation in JavaScript. You will learn about the varous ways to validate forms, how the <code>preventDefault()</code> method works, and how the submit event works."
+          "In these lecture videos, you will learn about form validation in JavaScript. You will learn about the various ways to validate forms, how the <code>preventDefault()</code> method works, and how the submit event works."
         ]
       },
       "workshop-calorie-counter": {
@@ -3331,7 +3331,7 @@
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
-          "In these lecture videos, you will get an introduction to JavaScript libraries and frameworks. You will learn about the roles of JavaScript libraries and frameworks, single page applications (SPAs) and the issue surrounding them,  and React, the most popular frontend JavaScript library."
+          "In these lecture videos, you will get an introduction to JavaScript libraries and frameworks. You will learn about the roles of JavaScript libraries and frameworks, single page applications (SPAs) and the issue surrounding them, and React, the most popular frontend JavaScript library."
         ]
       },
       "workshop-reusable-mega-navbar": {
@@ -3348,7 +3348,7 @@
       "lecture-working-with-data-in-react": {
         "title": "Working with Data in React",
         "intro": [
-          "In these lecture videos, you will learn ho to work with data in React. You will learn about <code>props</code> and how to pass them around, conditional rendering, how to render lists, and how to use inline styles."
+          "In these lecture videos, you will learn how to work with data in React. You will learn about <code>props</code> and how to pass them around, conditional rendering, how to render lists, and how to use inline styles."
         ]
       },
       "workshop-reusable-profile-card-component": {
