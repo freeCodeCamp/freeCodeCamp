@@ -64,6 +64,7 @@ function ProjectPreviewModal({
         <Preview
           previewId={projectPreviewId}
           previewMounted={() => projectPreviewMounted({ challengeData })}
+          useNoMinHeight={true}
         />
       </Modal.Body>
       <Modal.Footer>
