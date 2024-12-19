@@ -11,20 +11,27 @@ Before you get too far into your styling, you should make use of the `sr-only` c
 
 The CSS you are about to write is a common set of properties used to ensure elements are completely hidden visually.
 
-The `span[class~="sr-only"]` selector will select any `span` element whose `class` *includes* `sr-only`. Create that selector, and give it a `border` property set to `0`.
+The `span[class~="sr-only"]` selector will select any `span` element whose `class` _includes_ `sr-only`. Create that selector, and give it a `border` property set to `0`.
 
 # --hints--
 
 You should have an `span[class~="sr-only"]` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]'));
+assert.isNotNull(
+  new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')
+);
 ```
 
 Your `span[class~="sr-only"]` selector should have a `border` property set to `0`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('border-width') === '0px');
+assert.strictEqual(
+  new __helpers.CSSHelp(document)
+    .getStyle('span[class~="sr-only"]')
+    ?.getPropertyValue('border-width'),
+  '0px'
+);
 ```
 
 # --seed--
@@ -35,10 +42,10 @@ assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPr
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Balance Sheet</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main>
@@ -56,7 +63,9 @@ assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPr
         </div>
         <div class="table-wrap">
           <table>
-            <caption>Assets</caption>
+            <caption>
+              Assets
+            </caption>
             <thead>
               <tr>
                 <td></td>
@@ -93,13 +102,15 @@ assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPr
             </tbody>
           </table>
           <table>
-            <caption>Liabilities</caption>
+            <caption>
+              Liabilities
+            </caption>
             <thead>
               <tr>
-              <td></td>
-              <th><span class="sr-only">2019</span></th>
-              <th><span class="sr-only">2020</span></th>
-              <th><span class="sr-only">2021</span></th>
+                <td></td>
+                <th><span class="sr-only">2019</span></th>
+                <th><span class="sr-only">2020</span></th>
+                <th><span class="sr-only">2021</span></th>
               </tr>
             </thead>
             <tbody>
@@ -130,13 +141,15 @@ assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPr
             </tbody>
           </table>
           <table>
-            <caption>Net Worth</caption>
+            <caption>
+              Net Worth
+            </caption>
             <thead>
               <tr>
-              <td></td>
-              <th><span class="sr-only">2019</span></th>
-              <th><span class="sr-only">2020</span></th>
-              <th><span class="sr-only">2021</span></th>
+                <td></td>
+                <th><span class="sr-only">2019</span></th>
+                <th><span class="sr-only">2020</span></th>
+                <th><span class="sr-only">2021</span></th>
               </tr>
             </thead>
             <tbody>
