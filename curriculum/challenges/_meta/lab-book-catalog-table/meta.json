@@ -2,7 +2,7 @@
   "name": "Build a Book Catalog Table",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-book-catalog-table",
   "superBlock": "full-stack-developer",

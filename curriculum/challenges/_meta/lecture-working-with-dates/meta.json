@@ -2,7 +2,7 @@
   "name": "Working with Dates",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-dates",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

@@ -1,6 +1,6 @@
 {
   "name": "Build a Mood Board",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-mood-board",
   "superBlock": "full-stack-developer",

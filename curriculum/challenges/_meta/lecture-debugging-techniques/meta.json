@@ -2,7 +2,7 @@
   "name": "Debugging Techniques",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-debugging-techniques",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

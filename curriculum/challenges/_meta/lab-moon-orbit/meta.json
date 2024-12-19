@@ -2,7 +2,7 @@
   "name": "Build a Moon Orbit",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": false,
   "dashedName": "lab-moon-orbit",

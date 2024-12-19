@@ -2,7 +2,7 @@
   "name": "CSS Animations Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-css-animations",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

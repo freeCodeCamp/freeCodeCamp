@@ -2,7 +2,7 @@
   "name": "Working with Higher Order Functions and Callbacks",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-higher-order-functions-and-callbacks",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

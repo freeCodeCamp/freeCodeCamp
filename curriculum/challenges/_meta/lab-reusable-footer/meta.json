@@ -1,6 +1,6 @@
 {
   "name": "Build a Reusable Footer",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-reusable-footer",
   "superBlock": "full-stack-developer",

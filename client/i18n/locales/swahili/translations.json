@@ -167,6 +167,7 @@
     "interview-prep-heading": "Prepare for the developer interview job search:",
     "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
     "next-heading": "Try our beta curriculum:",
+    "next-english-heading": "Try our latest English curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "faq": "Maswali yanayoulizwa mara kwa mara:",
     "faqs": [
@@ -505,6 +506,7 @@
     "complete-both-steps": "Kamilisha hatua zote mbili hapa chini ili kumaliza changamoto.",
     "runs-in-vm": "Mradi unaendeshwa kwa mashine virtual, kamilisha mazoezi za watumiaji zilizofafanuliwa hapo na upate majaribio yote ya kupita ili kumaliza hatua ya 1.",
     "completed": "Imekamilika",
+    "not-completed": "Not completed",
     "not-started": "Haujaanza",
     "test": "Jaribio",
     "sorry-try-again": "Samahani, msimbo wako haupiti. Jaribu tena.",

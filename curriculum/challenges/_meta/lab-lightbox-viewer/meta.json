@@ -2,7 +2,7 @@
   "name": "Build a Lightbox Viewer",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-lightbox-viewer",
   "superBlock": "full-stack-developer",

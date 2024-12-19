@@ -2,7 +2,7 @@
   "name": "JavaScript Functional Programming Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-javascript-functional-programming",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

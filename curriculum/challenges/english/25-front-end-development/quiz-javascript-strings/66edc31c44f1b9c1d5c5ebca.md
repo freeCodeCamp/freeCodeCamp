@@ -21,19 +21,19 @@ What is the return value for the `includes()` method?
 
 #### --distractors--
 
-If the substring is found within the string, the method returns the string otherwise, it returns `undefined`.
+If the substring is found within the string, the method returns the string. Otherwise, it returns `undefined`.
 
 ---
 
-If the substring is found within the string, the method returns `true` otherwise, it returns and empty string.
+If the substring is found within the string, the method returns `true`. Otherwise, it returns an empty string.
 
 ---
 
-If the substring is found within the string, the method returns the string otherwise, it returns `null`.
+If the substring is found within the string, the method returns the string. Otherwise, it returns `null`.
 
 #### --answer--
 
-If the substring is found within the string, the method returns `true` otherwise, it returns `false`.
+If the substring is found within the string, the method returns `true`. Otherwise, it returns `false`.
 
 ### --question--
 
@@ -165,7 +165,7 @@ It displays a confirmation box with a message.
 
 #### --answer--
 
-It displays a dialog box that prompts the user for input.
+It displays a dialog box that waits for the user input.
 
 ### --question--
 
@@ -463,7 +463,7 @@ How do you remove whitespace from the beginning and end of a string?
 
 #### --text--
 
-Which of the following is the correct syntax for escaping strings?
+Which of the following is the correct syntax for escaping quotes?
 
 #### --distractors--
 
