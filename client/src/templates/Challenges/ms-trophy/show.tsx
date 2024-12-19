@@ -184,6 +184,7 @@ function MsTrophy(props: MsTrophyProps) {
                 {title}
               </ChallengeTitle>
               <ChallengeDescription
+                superBlock={superBlock}
                 description={description}
                 instructions={instructions}
               />
