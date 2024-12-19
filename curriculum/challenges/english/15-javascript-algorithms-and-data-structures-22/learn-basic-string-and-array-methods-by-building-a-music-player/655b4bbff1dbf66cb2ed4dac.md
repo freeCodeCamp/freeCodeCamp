@@ -1,8 +1,8 @@
 ---
 id: 655b4bbff1dbf66cb2ed4dac
-title: Step 97
+title: Step 98
 challengeType: 0
-dashedName: step-97
+dashedName: step-98
 ---
 
 # --description--
@@ -623,6 +623,8 @@ const playPreviousSong = () => {
 };
 
 const shuffle = () => {
+  if (userData.songs.length === 0) return;
+    
   userData?.songs.sort(() => Math.random() - 0.5);
   userData.currentSong = null;
   userData.songCurrentTime = 0;
