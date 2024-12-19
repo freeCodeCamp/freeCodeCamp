@@ -53,6 +53,7 @@ const initialState = {
   appUsername: '',
   isRandomCompletionThreshold: false,
   recentlyClaimedBlock: null,
+  recentlyClaimedModule: null,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   examInProgress: false,
   isProcessing: false,
@@ -138,10 +139,14 @@ export const reducer = handleActions(
         }
       };
     },
-    [actionTypes.allowBlockDonationRequests]: (state, { payload }) => {
+    [actionTypes.allowSectionDonationRequests]: (state, { payload }) => {
       return {
         ...state,
-        recentlyClaimedBlock: payload
+        recentlyClaimedBlock: {
+          block: payload.block,
+          superBlock: payload.superBlock
+        },
+        recentlyClaimedModule: payload.module
       };
     },
     [actionTypes.setRenderStartTime]: (state, { payload }) => {
@@ -276,9 +281,10 @@ export const reducer = handleActions(
       ...state,
       showDonationModal: true
     }),
-    [actionTypes.preventBlockDonationRequests]: state => ({
+    [actionTypes.preventSectionDonationRequests]: state => ({
       ...state,
-      recentlyClaimedBlock: null
+      recentlyClaimedBlock: null,
+      recentlyClaimedModule: null
     }),
     [actionTypes.setIsRandomCompletionThreshold]: (state, { payload }) => ({
       ...state,

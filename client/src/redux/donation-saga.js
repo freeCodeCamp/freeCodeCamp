@@ -28,13 +28,14 @@ import {
   postChargeComplete,
   postChargeProcessing,
   postChargeError,
-  preventBlockDonationRequests,
+  preventSectionDonationRequests,
   updateCardError,
   updateCardRedirecting
 } from './actions';
 import {
   isDonatingSelector,
   recentlyClaimedBlockSelector,
+  recentlyClaimedModuleSelector,
   shouldRequestDonationSelector,
   isSignedInSelector,
   completedChallengesSelector
@@ -52,11 +53,12 @@ function* showDonateModalSaga() {
   if (shouldRequestDonation || isModalRecentlyShown) {
     yield delay(200);
     const recentlyClaimedBlock = yield select(recentlyClaimedBlockSelector);
+    const recentlyClaimedModule = yield select(recentlyClaimedModuleSelector);
     yield put(openDonationModal());
     sessionStorage.setItem(MODAL_SHOWN_KEY, Date.now());
     yield take(appTypes.closeDonationModal);
-    if (recentlyClaimedBlock) {
-      yield put(preventBlockDonationRequests());
+    if (recentlyClaimedBlock || recentlyClaimedModule) {
+      yield put(preventSectionDonationRequests());
     } else {
       yield call(saveCurrentCount);
     }
