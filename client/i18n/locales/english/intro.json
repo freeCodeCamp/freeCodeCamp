@@ -2585,15 +2585,15 @@
       },
       "wvjx": { "title": "127", "intro": [] },
       "lecture-working-with-code-editors-and-ides": {
-        "title": "Working with Code Editors and IDE's",
+        "title": "Working with Code Editors and IDEs",
         "intro": [
-          "In these lecture videos, you will learn about working with code editors and IDE's."
+          "In these lecture videos, you will learn how to work with code editors and IDEs. You will learn various concepts about the most popular code editor, VS Code such as its installation, how to create a project in it, keyboard shortcuts, and extensions."
         ]
       },
       "lecture-introduction-to-javascript": {
         "title": "Introduction to JavaScript",
         "intro": [
-          "In these lecture videos, you will get a basic introduction to JavaScript."
+          "In these lecture videos, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
         ]
       },
       "workshop-greeting-bot": {
@@ -2613,7 +2613,7 @@
       "lecture-working-with-data-types": {
         "title": "Working with Data Types",
         "intro": [
-          "In these lecture videos, you will learn about data types in JavaScript."
+          "In the following lecture videos, you will learn how to work with data types in JavaScript. You will also learn how dynamic typing differs from static typing, the <code>typeof</code> operator, and the <code>typeof null</code> bug."
         ]
       },
       "review-javascript-variables-and-data-types": {
@@ -2632,7 +2632,7 @@
       "lecture-working-with-strings-in-javascript": {
         "title": "Working with Strings in JavaScript",
         "intro": [
-          "In these lecture videos, you will learn about working with strings in JavaScript."
+          "In these lecture videos, you will learn how to work with strings in JavaScript. You will learn how to access characters from a string, how to use template literals and interpolation, how to create a new line in strings, and much more."
         ]
       },
       "workshop-teacher-chatbot": {
@@ -2645,7 +2645,7 @@
       "lecture-working-with-common-string-methods": {
         "title": "Working with Common String Methods",
         "intro": [
-          "In these lecture videos, you will learn about common String methods."
+          "In these lecture videos, you will learn about the common string methods available in JavaScript. The string methods will let you do things like extracting a part of a string, changing the casing for a string, replacing a part of a string, trimming whitespace from a string, and much more."
         ]
       },
       "review-javascript-strings": {
@@ -2664,7 +2664,7 @@
       "lecture-working-with-numbers-booleans-and-the-math-object": {
         "title": "Working with Numbers, Booleans, and the Math Object",
         "intro": [
-          "In these lecture videos, you will learn about numbers, booleans, and the <code>Math</code> object."
+          "In these lecture videos, you will dive into the fundamentals of JavaScript. These include numbers, booleans, and the <code>Math</code> object. You will learn about different types of numbers, how arithmetic and comparison operators work, how JavaScript behaves when you combine strings and numbers in calculations, and much more."
         ]
       },
       "workshop-mathbot": {
@@ -2683,7 +2683,7 @@
       "lecture-working-with-numbers-and-common-number-methods": {
         "title": "Working with Numbers and Common Number Methods",
         "intro": [
-          "In these lecture videos, you will learn about numbers and common Number methods."
+          "In these lecture videos, you will learn about numbers and common number methods. These include <code>isNaN()</code>, <code>parseInt()</code>, <code>parseFloat()</code>, and <code>toFixed()</code>."
         ]
       },
       "review-javascript-math": {
@@ -2700,7 +2700,7 @@
       "lecture-understanding-comparisons-and-conditionals": {
         "title": "Understanding Comparisons and Conditionals",
         "intro": [
-          "In these lecture videos, you will learn about comparisons and conditionals."
+          "In these lecture videos, you will learn about comparison operators and conditionals. You will learn how the various conditionals differ from one another, and how comparisons work with <code>null</code> and <code>undefined</code>."
         ]
       },
       "review-javascript-comparisons-and-conditionals": {
@@ -2719,7 +2719,7 @@
       "lecture-working-with-functions": {
         "title": "Working with Functions",
         "intro": [
-          "In these lecture videos, you will learn about working with functions."
+          "In these lecture videos, you will learn how to reuse a block of code with functions. You will learn what the purpose of a function is and how they work, and how scope works in programming. "
         ]
       },
       "workshop-calculator": {
@@ -2770,7 +2770,7 @@
       "lecture-working-with-arrays": {
         "title": "Working with Arrays",
         "intro": [
-          "In these lecture videos, you will learn about working with JavaScript arrays."
+          "In these lecture videos, you will learn how to work with JavaScript arrays. You will learn about what makes an array, one-dimensional and two-dimensional arrays, how to access and update the elements in an array, and much more."
         ]
       },
       "workshop-shopping-list": {
@@ -2789,7 +2789,7 @@
       "lecture-working-with-common-array-methods": {
         "title": "Working with Common Array Methods",
         "intro": [
-          "In these lecture videos, you will learn about common array methods."
+          "In these lecture videos, you will learn about the array methods for performing more advanced operations like getting the position of an item in an array, checking if an array contains a certain element, copying an array, and lots more."
         ]
       },
       "review-javascript-arrays": {
@@ -2806,7 +2806,7 @@
       "lecture-working-with-objects": {
         "title": "Working with Objects",
         "intro": [
-          "In these lecture videos, you will learn about working with objects in JavaScript."
+          "In these lecture videos, you will learn how to work with JavaScript objects. The concepts you will learn include how to access properties from an object, check if an object has a property, how object methods differ from functions, object destructuring, and much more."
         ]
       },
       "workshop-recipe-tracker": {
@@ -2838,7 +2838,7 @@
       "lecture-working-with-loops": {
         "title": "Working with Loops",
         "intro": [
-          "In these lecture videos, you will learn about working with loops in JavaScript."
+          "Loops are an essential part of JavaScript. That's why the following lecture videos have been prepared for you to learn about the different types of loops and how they work, and also how iteration works."
         ]
       },
       "workshop-sentence-analyzer": {
@@ -2868,7 +2868,7 @@
       "lecture-understanding-core-javascript-fundamentals": {
         "title": "Understanding Core JavaScript Fundamentals",
         "intro": [
-          "In these lecture videos, you will learn more about core JavaScript fundamentals."
+          "In these lecture videos, you will learn more about the core JavaScript fundamentals. You will learn how a string object differs from a primitive string, the <code>toString()</code> method, conventions and common practices for naming variables, linters and formatters, closures, and much more."
         ]
       },
       "lab-pyramid-generator": {
@@ -2888,7 +2888,7 @@
       "lecture-the-var-keyword-and-hoisting": {
         "title": "The var Keyword and Hoisting",
         "intro": [
-          "In these lecture videos, you will learn about the var keyword and hoisting in JavaScript."
+          "In these lecture videos, you will learn about the <code>var</code> keyword and why it is not recommended for use anymore. You will also learn about hoisting in JavaScript so you can avoid subtle bugs in your code."
         ]
       },
       "lab-inventory-management-program": {
@@ -2901,7 +2901,7 @@
       "lecture-understanding-modules-imports-and-exports": {
         "title": "Understanding Modules, Imports, and Exports",
         "intro": [
-          "In these lecture videos, you will learn about modules, imports, and exports in JavaScript."
+          "In this lecture video, you will learn about modules, imports, and exports in JavaScript."
         ]
       },
       "lab-password-generator": {
@@ -2926,7 +2926,7 @@
       "lecture-working-with-higher-order-functions-and-callbacks": {
         "title": "Working with Higher Order Functions and Callbacks",
         "intro": [
-          "In these lecture videos, you will learn about working with higher order functions and callbacks."
+          "In these lecture videos, you will learn how to work with higher order functions and callbacks. The higher order functions you will learn include <code>map()</code>, <code>filter()</code>, <code>reduce()</code>, <code>sort()</code>, <code>every()</code>, and <code>some()</code>. You will also learn how to chain these methods together to achieve your desired results."
         ]
       },
       "workshop-library-manager": {
@@ -2957,7 +2957,7 @@
       "lecture-working-with-the-dom-click-events-and-web-apis": {
         "title": "Working with the DOM, Click Events, and Web APIs",
         "intro": [
-          "In these lecture videos, you will learn how to work with the DOM, click events, and web APIs, using JavaScript."
+          "In these lecture videos, you will learn how to work with the Document Object Model (DOM), the `addEventListener()` method and events, and web APIs."
         ]
       },
       "workshop-storytelling-app": {
@@ -2988,7 +2988,7 @@
       "lecture-understanding-the-event-object-and-event-delegation": {
         "title": "Understanding the Event Object and Event Delegation",
         "intro": [
-          "In these lecture videos, you will learn about the event object and event delegation."
+          "In these lecture videos, you will learn about the event object, the change event, event bubbling, and event delegation."
         ]
       },
       "workshop-music-instrument-filter": {
@@ -3043,7 +3043,7 @@
       "lecture-debugging-techniques": {
         "title": "Debugging Techniques",
         "intro": [
-          "In these lecture videos, you will learn debugging techniques."
+          "In these lecture videos, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
         ]
       },
       "lab-random-background-color-changer": {
@@ -3068,7 +3068,7 @@
       "lecture-working-with-regular-expressions": {
         "title": "Working with Regular Expressions",
         "intro": [
-          "In these lecture videos, you will learn about regular expressions in JavaScript."
+          "In these lecture videos, you will learn about regular expressions in JavaScript. You will learn about the methods for working with regular expressions, modifiers, character classes, lookaheads, lookbehinds, back-references, quantifiers, and more."
         ]
       },
       "workshop-spam-filter": {
@@ -3105,7 +3105,7 @@
       "lecture-understanding-form-validation": {
         "title": "Understanding Form Validation",
         "intro": [
-          "In these lecture videos, you will learn about form validation in JavaScript."
+          "In these lecture videos, you will learn about form validation in JavaScript. You will learn about the various ways to validate forms, how the <code>preventDefault()</code> method works, and how the submit event works."
         ]
       },
       "workshop-calorie-counter": {
@@ -3138,7 +3138,7 @@
       "lecture-working-with-dates": {
         "title": "Working with Dates",
         "intro": [
-          "In these lecture videos, you will learn about working with JavaScript dates."
+          "In these lecture videos, you will learn about the JavaScript date object. You will learn about the methods for working with dates and how to format dates."
         ]
       },
       "lab-date-conversion": {
@@ -3161,7 +3161,7 @@
       "lecture-working-with-audio-and-video": {
         "title": "Working with Audio and Video",
         "intro": [
-          "In these lecture videos, you will learn about working with audio and video using JavaScript."
+          "In these lecture videos, you will learn how to work with audio and video files using JavaScript. You will learn about the <code>Audio</code> and <code>Video</code> constructors, their methods and properties, audio and video formats, codecs, the <code>HTMLMediaElement</code> API, and much more."
         ]
       },
       "workshop-music-player": {
@@ -3193,7 +3193,7 @@
       "lecture-working-with-maps-and-sets": {
         "title": "Working with Maps and Sets",
         "intro": [
-          "In these lecture videos, you will learn about JavaScript Maps and Sets."
+          "In these lecture videos, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>"
         ]
       },
       "workshop-plant-nursery-catalog": {
@@ -3225,7 +3225,7 @@
       "lecture-working-with-client-side-storage-and-crud-operations": {
         "title": "Working with Client-Side Storage and CRUD Operations",
         "intro": [
-          "In these lecture videos, you will learn about client-side storage and CRUD operations with JavaScript."
+          "In these lecture videos, you will learn about client-side storage and CRUD operations in JavaScript. You will learn about <code>localStorage</code> and <code>sessionStorage</code> alongside their methods and properties, cookies, the Cache API, IndexDB, and much more."
         ]
       },
       "workshop-todo-app": {
@@ -3258,7 +3258,7 @@
       "lecture-understanding-how-to-work-with-classes-in-javascript": {
         "title": "Understanding How to Work with Classes in JavaScript",
         "intro": [
-          "In these lecture videos, you will learn about working with classes in JavaScript."
+          "In these lecture videos, you will learn about classes in JavaScript. You will learn about inheritance, the <code>this</code> keyword, static properties and methods, and more."
         ]
       },
       "workshop-shopping-cart": {
@@ -3297,7 +3297,7 @@
       "lecture-understanding-recursion-and-the-call-stack": {
         "title": "Understanding Recursion and the Call Stack",
         "intro": [
-          "In these lecture videos, you will learn about recursion and the call stack."
+          "In this lecture video, you will learn about recursion and the call stack."
         ]
       },
       "workshop-decimal-to-binary-converter": {
@@ -3327,7 +3327,7 @@
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
-          "In these lecture videos, you will learn about functional programming."
+          "In these lecture videos, you will learn about functional programming and how to nest functions using a technique called currying."
         ]
       },
       "workshop-recipe-ingredient-converter": {
@@ -3359,7 +3359,7 @@
       "lecture-understanding-asynchronous-programming": {
         "title": "Understanding Asynchronous Programming",
         "intro": [
-          "In these lecture videos, you will learn about asynchronous programming."
+          "In these lecture videos, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>asnyc</code> keyword works, the <code>Fetch</code> API, promises, async/await, the <code>Geolocation</code> API, and much more."
         ]
       },
       "workshop-fcc-authors-page": {
@@ -3398,7 +3398,7 @@
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
-          "In these lecture videos, you will get an introduction to JavaScript libraries and frameworks."
+          "In these lecture videos, you will get an introduction to JavaScript libraries and frameworks. You will learn about the roles of JavaScript libraries and frameworks, single page applications (SPAs) and the issue surrounding them, and React, the most popular frontend JavaScript library."
         ]
       },
       "workshop-reusable-mega-navbar": {
@@ -3415,7 +3415,7 @@
       "lecture-working-with-data-in-react": {
         "title": "Working with Data in React",
         "intro": [
-          "In these lecture videos, you will learn about working with data in React."
+          "In these lecture videos, you will learn how to work with data in React. You will learn about <code>props</code> and how to pass them around, conditional rendering, how to render lists, and how to use inline styles."
         ]
       },
       "workshop-reusable-profile-card-component": {
