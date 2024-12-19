@@ -218,7 +218,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const {
     date,
-    name: userFullName = null,
+    name,
     username,
     certTitle,
     certSlug,
@@ -227,7 +227,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const { user } = props;
 
-  const displayName = userFullName ?? username;
+  const displayName = name || username;
 
   const certDate = new Date(date);
   const certYear = certDate.getFullYear();
