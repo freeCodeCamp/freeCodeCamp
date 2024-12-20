@@ -2155,14 +2155,14 @@
       "review-css-pseudo-classes": {
         "title": "CSS Pseudo-classes Review",
         "intro": [
-          "Before you are quizzed on CSS pseudo-classes and pseudo-elements, you first need to review.",
+          "Before you are quizzed on CSS pseudo-classes and pseudo-elements, you first need to review what you've learned on it.",
           "Open up this page to review concepts like the <code>::before</code> and <code>::after</code> pseudo-elements as well as the <code>:hover</code>, <code>:active</code> pseudo-classes and more."
         ]
       },
       "quiz-css-pseudo-classes": {
         "title": "CSS Pseudo-classes Quiz",
         "intro": [
-          "Test what you've learned in this quiz of pseudo-classes in CSS."
+          "Test what you've learned on CSS pseudo-classes with this quiz."
         ]
       },
       "lecture-working-with-colors-in-css": {
@@ -2186,15 +2186,13 @@
       "review-css-colors": {
         "title": "CSS Colors Review",
         "intro": [
-          "Before you are quizzed on CSS colors, you first need to review.",
+          "Before you are quizzed on CSS colors, you first need to review what you've learned about the topic.",
           "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, <code>hex codes</code>, and more."
         ]
       },
       "quiz-css-colors": {
         "title": "CSS Colors Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of using colors in CSS."
-        ]
+        "intro": ["Test what you've learned on CSS colors with this quiz."]
       },
       "lecture-best-practices-for-styling-forms": {
         "title": "Best Practices for Styling Forms",
@@ -2205,7 +2203,6 @@
       "workshop-registration-form": {
         "title": "Design a Registration Form",
         "intro": [
-          "You can use HTML forms to collect information from people who visit your webpage.",
           "In this workshop, you'll learn how to design HTML forms by designing a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
         ]
       },
@@ -2218,14 +2215,14 @@
       "review-styling-forms": {
         "title": "Styling Forms Review",
         "intro": [
-          "Before you are quizzed on styling forms, you first need to review.",
+          "Before you are quizzed on styling forms, you first need to review what you've learned about it.",
           "Open up this page to review how to style form inputs, working with <code>appearance: none</code> and more."
         ]
       },
       "quiz-styling-forms": {
         "title": "Styling Forms Quiz",
         "intro": [
-          "Test what you've learned in this quiz of how to style forms using CSS."
+          "In this quix, you will test what you've learned on how to style forms."
         ]
       },
       "lecture-working-with-css-transforms-overflow-and-filters": {
@@ -2257,7 +2254,7 @@
       "quiz-css-layout-and-effects": {
         "title": "CSS Layout and Effects Quiz",
         "intro": [
-          "Test what you've learned in this quiz of the box model, transforms, filters, and overflow in CSS."
+          "In this quiz, you will test what you've learned on the box model, transforms, filters, and overflow in CSS."
         ]
       },
       "lecture-working-with-css-flexbox": {
@@ -2269,7 +2266,6 @@
       "workshop-flexbox-photo-gallery": {
         "title": "Build a Flexbox Photo Gallery",
         "intro": [
-          "Flexbox helps you design your webpage so that it looks good on any screen size.",
           "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
         ]
       },
@@ -2283,14 +2279,14 @@
       "review-css-flexbox": {
         "title": "CSS Flexbox Review",
         "intro": [
-          "Before you are quizzed on CSS Flexbox concepts, you first need to review.",
-          "Open up this page to review concepts like the <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> properties and more."
+          "Before you are quizzed on CSS Flexbox concepts, you first need to review what you've learned about it.",
+          "Open up this page to review concepts like the <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> properties, and more."
         ]
       },
       "quiz-css-flexbox": {
         "title": "CSS Flexbox Quiz",
         "intro": [
-          "Test what you've learned in this quiz of using flexbox in CSS."
+          "Test what you've learned on CSS flexbox with this quiz of using."
         ]
       },
       "lecture-working-with-css-fonts": {
@@ -2316,13 +2312,13 @@
       "review-css-typography": {
         "title": "CSS Typography Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of typography, you first need to review.",
+          "Before you are quizzed on the fundamentals of typography, you first need a review of what you've learned on the topic.",
           "Open up this page to review concepts like web safe fonts, the <code>font-family</code> property and more."
         ]
       },
       "quiz-css-typography": {
         "title": "CSS Typography Quiz",
-        "intro": ["Test what you've learned in this quiz of typography in CSS."]
+        "intro": ["Test what you've learned on typography with this quiz."]
       },
       "lecture-best-practices-for-accessibility-and-css": {
         "title": "Best Practices for Accessibility and CSS",
@@ -2333,7 +2329,7 @@
       "workshop-accessibility-quiz": {
         "title": "Build a Quiz Webpage",
         "intro": [
-          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
+          "Accessibility is process of making your webpage easy for all people to use –including those with disabilities.",
           "In this workshop, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
         ]
       },
@@ -2346,14 +2342,14 @@
       "review-css-accessibility": {
         "title": "CSS Accessibility Review",
         "intro": [
-          "Before you are quizzed on CSS and accessibility, you first need to review.",
+          "Before you are quizzed on CSS and accessibility, you first need to review what you've learned on it.",
           "Open up this page to review concepts like color contrast tools and accessibility best practices."
         ]
       },
       "quiz-css-accessibility": {
         "title": "CSS Accessibility Quiz",
         "intro": [
-          "Test what you've learned in this quiz of making your webpage accessible with CSS."
+          "In this quiz, you'll test what you've learned how to make your webpage accessible with CSS."
         ]
       },
       "lecture-working-with-attribute-selectors": {
@@ -2365,7 +2361,6 @@
       "workshop-balance-sheet": {
         "title": "Build a Balance Sheet",
         "intro": [
-          "You can use CSS pseudo selectors to change specific HTML elements.",
           "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
         ]
       },
@@ -2379,14 +2374,14 @@
       "review-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of CSS attribute selectors, you first need to review.",
+          "Before you are quizzed on the fundamentals of CSS attribute selectors, you first need to review what you've learned on it.",
           "Open up this page to review concepts like how to work with different attribute selectors that target links with the <code>href</code> and <code>title</code> attributes."
         ]
       },
       "quiz-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Quiz",
         "intro": [
-          "Test what you've learned in this quiz of using attribute selectors in CSS."
+          "Test what you've learned on CSS attribute selectors with this quiz."
         ]
       },
       "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
@@ -2412,15 +2407,13 @@
       "review-css-positioning": {
         "title": "CSS Positioning Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of CSS positioning concepts, you first need to review.",
+          "Before you are quizzed on the fundamentals of CSS positioning concepts, you first need to review what you've learned on the topic.",
           "Open up this page to review concepts like floats, relative positioning, absolute positioning and more."
         ]
       },
       "quiz-css-positioning": {
         "title": "CSS Positioning Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of how positioning works in CSS."
-        ]
+        "intro": ["Test what you've learned on CSS positioning with this quiz."]
       },
       "lecture-best-practices-for-responsive-web-design": {
         "title": "Best Practices for Responsive Web Design",
@@ -2445,14 +2438,14 @@
       "review-responsive-web-design": {
         "title": "Responsive Web Design Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of responsive design, you first need to review.",
+          "Before you are quizzed on the fundamentals of responsive design, you first need to review what you've learned on it.",
           "Open up this page to review concepts like media queries, media breakpoints and mobile first approach design."
         ]
       },
       "quiz-responsive-web-design": {
         "title": "Responsive Web Design Quiz",
         "intro": [
-          "Test what you've learned in this quiz of making your webpage responsive."
+          "Test what you've learned on how to make your webpage responsive with this quiz."
         ]
       },
       "lecture-working-with-css-variables": {
@@ -2478,15 +2471,13 @@
       "review-css-variables": {
         "title": "CSS Variables Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of CSS variables, you first need to review.",
+          "Before you are quizzed on the fundamentals of CSS variables, you first need to review what you've learned on it.",
           "Open up this page to review how to work with CSS custom properties (CSS variables) and the <code>@property</code> rule."
         ]
       },
       "quiz-css-variables": {
         "title": "CSS Variables Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of how using variables in CSS."
-        ]
+        "intro": ["Test what you've learned on CSS variables with this quiz."]
       },
       "lecture-working-with-css-grid": {
         "title": "Working with CSS Grid",
@@ -2510,7 +2501,7 @@
       "lecture-debugging-css": {
         "title": "Debugging CSS",
         "intro": [
-          "In these lecture videos, you will learn about debugging CSS."
+          "In this lecture video, you will learn how to debug CSS by using the browser developer tools and CSS validators."
         ]
       },
       "lab-product-landing-page": {
@@ -2522,13 +2513,13 @@
       "review-css-grid": {
         "title": "CSS Grid Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of CSS Grid, you first need to review.",
+          "Before you are quizzed on the fundamentals of CSS Grid, you first need to review the concepts you've learned about it.",
           "Open up this page to review how to work with the different CSS Grid properties like <code>grid-template-columns</code>, <code>grid-gap</code> and more."
         ]
       },
       "quiz-css-grid": {
         "title": "CSS Grid Quiz",
-        "intro": ["Test what you've learned in this quiz of using grid in CSS."]
+        "intro": ["Test what your knowledge on CSS Grid with this quiz."]
       },
       "lecture-animations-and-accessibility": {
         "title": "Animations and Accessibility",
@@ -2566,15 +2557,13 @@
       "review-css-animations": {
         "title": "CSS Animations Review",
         "intro": [
-          "Before you are quizzed on working with CSS animations, you first need to review.",
+          "Before you are quizzed on working with CSS animations, you first need to review what you've learned on it.",
           "Open up this page to review concepts including <code>prefers-reduced-motion</code>, the <code>@keyframes</code> rule and more."
         ]
       },
       "quiz-css-animations": {
         "title": "CSS Animations Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of using animations in CSS."
-        ]
+        "intro": ["Test what you've learned on CSS animations with this quiz."]
       },
       "review-css": {
         "title": "CSS Review",
@@ -2599,7 +2588,7 @@
       "workshop-greeting-bot": {
         "title": "Build a Greeting Bot",
         "intro": [
-          "For this workshop, you will learn how to work with JavaScript fundamentals by building a greeting bot.",
+          "In this workshop, you will learn how to work with JavaScript fundamentals by building a greeting bot.",
           "You will learn about variables, <code>let</code>, <code>const</code>, <code>console.log</code> and basic string usage."
         ]
       },
@@ -2626,7 +2615,7 @@
       "quiz-javascript-variables-and-data-types": {
         "title": "JavaScript Variables and Data Types Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Variables and Data Types."
+          "Test your knowledge on JavaScript variables and data types with this quiz."
         ]
       },
       "lecture-working-with-strings-in-javascript": {
