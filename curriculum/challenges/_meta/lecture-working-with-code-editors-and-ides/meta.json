@@ -2,7 +2,7 @@
   "name": "Working with Code Editors and IDE's",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-code-editors-and-ides",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

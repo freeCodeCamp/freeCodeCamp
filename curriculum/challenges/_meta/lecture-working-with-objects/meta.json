@@ -2,7 +2,7 @@
   "name": "Working with Objects",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-objects",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

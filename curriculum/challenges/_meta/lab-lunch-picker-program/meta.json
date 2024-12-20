@@ -2,7 +2,7 @@
   "name": "Build a Lunch Picker Program",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-lunch-picker-program",
   "superBlock": "full-stack-developer",

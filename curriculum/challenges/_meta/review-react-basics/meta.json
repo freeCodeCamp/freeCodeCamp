@@ -2,7 +2,7 @@
   "name": "React Basics",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-react-basics",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

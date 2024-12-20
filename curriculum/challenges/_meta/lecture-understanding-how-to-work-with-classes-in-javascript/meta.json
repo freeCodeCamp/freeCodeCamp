@@ -2,7 +2,7 @@
   "name": "Understanding How to Work with Classes in JavaScript",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-how-to-work-with-classes-in-javascript",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

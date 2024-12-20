@@ -2,7 +2,7 @@
   "name": "Build a Quiz Game",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-quiz-game",
   "superBlock": "full-stack-developer",

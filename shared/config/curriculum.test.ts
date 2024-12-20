@@ -51,6 +51,7 @@ describe('generateSuperBlockList', () => {
     tempSuperBlockMap[SuperBlockStage.New] = [];
     tempSuperBlockMap[SuperBlockStage.Upcoming] = [];
     tempSuperBlockMap[SuperBlockStage.Next] = [];
+    tempSuperBlockMap[SuperBlockStage.NextEnglish] = [];
     expect(result).toHaveLength(Object.values(tempSuperBlockMap).flat().length);
   });
 });
@@ -59,19 +60,19 @@ describe('Immutability of superBlockOrder, notAuditedSuperBlocks, and flatSuperB
   it('should not allow modification of superBlockOrder', () => {
     expect(() => {
       superBlockStages[SuperBlockStage.Core] = [];
-    }).toThrowError(TypeError);
+    }).toThrow(TypeError);
   });
 
   it('should not allow modification of notAuditedSuperBlocks', () => {
     expect(() => {
       notAuditedSuperBlocks[Languages.English] = [];
-    }).toThrowError(TypeError);
+    }).toThrow(TypeError);
   });
 
   it('should not allow modification of flatSuperBlockMap', () => {
     expect(() => {
       notAuditedSuperBlocks[Languages.English] = [];
-    }).toThrowError(TypeError);
+    }).toThrow(TypeError);
   });
 });
 

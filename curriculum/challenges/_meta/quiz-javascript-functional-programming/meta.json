@@ -2,7 +2,7 @@
   "name": "JavaScript Functional Programming Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-javascript-functional-programming",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

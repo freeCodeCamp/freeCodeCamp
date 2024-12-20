@@ -63,6 +63,7 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
   [SuperBlockStage.New]: '', // TODO: add translation
   [SuperBlockStage.Next]: 'landing.next-heading',
+  [SuperBlockStage.NextEnglish]: 'landing.next-english-heading',
   [SuperBlockStage.Upcoming]: 'landing.upcoming-heading'
 };
 

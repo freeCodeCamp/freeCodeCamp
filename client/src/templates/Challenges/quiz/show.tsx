@@ -372,8 +372,6 @@ export const query = graphql`
         challengeType
         helpCategory
         superBlock
-        chapter
-        module
         block
         fields {
           blockHashSlug

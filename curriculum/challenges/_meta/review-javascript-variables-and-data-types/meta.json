@@ -2,7 +2,7 @@
   "name": "JavaScript Variables and Data Types Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-javascript-variables-and-data-types",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

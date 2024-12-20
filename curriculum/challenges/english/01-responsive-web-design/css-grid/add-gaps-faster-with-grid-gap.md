@@ -20,10 +20,9 @@ Use `grid-gap` to introduce a `10px` gap between the rows and `20px` gap between
 `container` class should have a `grid-gap` property that introduces a `10px` gap between the rows and a `20px` gap between the columns.
 
 ```js
-assert(
-  code.match(
-    /.container\s*?{[\s\S]*grid-gap\s*?:\s*?10px\s+?20px\s*?;[\s\S]*}/gi
-  )
+assert.match(
+  code,
+  /.container\s*?{[\s\S]*grid-gap\s*?:\s*?10px\s+?20px\s*?;[\s\S]*}/gi
 );
 ```
 
@@ -33,11 +32,21 @@ assert(
 
 ```html
 <style>
-  .d1{background:LightSkyBlue;}
-  .d2{background:LightSalmon;}
-  .d3{background:PaleTurquoise;}
-  .d4{background:LightPink;}
-  .d5{background:PaleGreen;}
+  .d1 {
+    background: LightSkyBlue;
+  }
+  .d2 {
+    background: LightSalmon;
+  }
+  .d3 {
+    background: PaleTurquoise;
+  }
+  .d4 {
+    background: LightPink;
+  }
+  .d5 {
+    background: PaleGreen;
+  }
 
   .container {
     font-size: 40px;
@@ -65,5 +74,9 @@ assert(
 # --solutions--
 
 ```html
-<style>.container {grid-gap: 10px 20px;}</style>
+<style>
+  .container {
+    grid-gap: 10px 20px;
+  }
+</style>
 ```

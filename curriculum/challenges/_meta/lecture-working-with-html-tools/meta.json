@@ -2,7 +2,7 @@
   "name": "Working with HTML Tools",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-html-tools",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

@@ -2,7 +2,7 @@
   "name": "Build a Real Time Counter",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-real-time-counter",
   "superBlock": "full-stack-developer",

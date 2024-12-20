@@ -2,7 +2,7 @@
   "name": "Understanding Functional Programming",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-functional-programming",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

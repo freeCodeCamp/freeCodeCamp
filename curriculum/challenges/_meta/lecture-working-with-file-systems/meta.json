@@ -2,7 +2,7 @@
   "name": "Working with File Systems",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-file-systems",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

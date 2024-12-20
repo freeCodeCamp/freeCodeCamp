@@ -57,8 +57,7 @@ const initialState = {
   successMessage: 'Happy Coding!',
   isAdvancing: false,
   chapterSlug: '',
-  isSubmitting: false,
-  allChapters: []
+  isSubmitting: false
 };
 
 export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];

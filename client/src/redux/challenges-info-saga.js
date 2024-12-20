@@ -8,7 +8,11 @@ import {
 } from '../templates/Challenges/redux/selectors';
 import { updateAllChallengesInfoWithCompletionState } from './actions';
 
-const getAllChapters = ({ chapters, challenges, completedChallengesIds }) => {
+const getCompletionState = ({
+  chapters,
+  challenges,
+  completedChallengesIds
+}) => {
   const populateBlocks = blocks =>
     blocks.map(block => {
       const blockChallenges = challenges.filter(
@@ -59,7 +63,7 @@ function* updateChallengesInfoSaga({ payload }) {
   let completionState;
 
   if (currentSuperBlock === SuperBlocks.FullStackDeveloper) {
-    completionState = getAllChapters({
+    completionState = getCompletionState({
       chapters,
       challenges: challengeNodes.map(({ challenge }) => challenge),
       completedChallengesIds

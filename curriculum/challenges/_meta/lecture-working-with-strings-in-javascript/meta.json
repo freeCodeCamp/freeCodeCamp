@@ -2,7 +2,7 @@
   "name": "Working with Strings in JavaScript",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-strings-in-javascript",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

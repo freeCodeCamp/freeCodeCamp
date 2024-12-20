@@ -2,7 +2,7 @@
   "name": "Build an Email Masker",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-email-masker",
   "superBlock": "full-stack-developer",

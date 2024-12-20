@@ -2,7 +2,7 @@
   "name": "Best Practices for Styling Forms",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-best-practices-for-styling-forms",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
