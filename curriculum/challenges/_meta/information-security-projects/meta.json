@@ -25,6 +25,10 @@
     {
       "id": "5e601c775ac9d0ecd8b94aff",
       "title": "Secure Real Time Multiplayer Game"
+    },
+    {
+      "id": "6765b1146d23df5428a1ca90",
+      "title": "Web Vulnerability Scanner"
     }
   ],
   "blockLayout": "project-list"
