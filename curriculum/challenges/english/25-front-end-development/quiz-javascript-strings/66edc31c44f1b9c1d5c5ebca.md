@@ -205,7 +205,7 @@ developer[2];
 
 #### --text--
 
-How can you obtain the ASCII index of a character in a string?
+How can you obtain the ASCII value of a character in a string?
 
 #### --distractors--
 
@@ -313,19 +313,19 @@ Which method extracts a substring from the string `"JavaScript"`?
 
 #### --distractors--
 
-`"JavaScript".remove()`
+`"JavaScript".remove(4)`
 
 ---
 
-`"JavaScript".extract()`
+`"JavaScript".extract(2)`
 
 ---
 
-`"JavaScript".cut()`
+`"JavaScript".cut(3)`
 
 #### --answer--
 
-`"JavaScript".slice()`
+`"JavaScript".slice(1)`
 
 ### --question--
 
