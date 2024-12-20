@@ -309,15 +309,15 @@ How can you check if the string `"JavaScript"` contains a specific substring?
 
 #### --text--
 
-Which method extracts a substring from the string `"JavaScript"`?
+Which of the following extracts the substring `"Script"` from the string `"JavaScript"`?
 
 #### --distractors--
 
-`"JavaScript".remove(4)`
+`"JavaScript".remove(3)`
 
 ---
 
-`"JavaScript".extract(2)`
+`"JavaScript".extract(4)`
 
 ---
 
@@ -325,7 +325,7 @@ Which method extracts a substring from the string `"JavaScript"`?
 
 #### --answer--
 
-`"JavaScript".slice(1)`
+`"JavaScript".slice(4)`
 
 ### --question--
 
