@@ -16,7 +16,7 @@ This first video will look at key words that tell you what math operation to use
 
 \- <a href="https://cdn.freecodecamp.org/curriculum/college-algebra/AlgebraAndTrigonometry-OP_1tE6R5r.pdf" target="_blank" rel="noopener noreferrer nofollow">Algebra and Trigonometry by Jay Abramson</a>
 
-It is also possible to download the Algebra and Trigonometry textbook from the <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">OpenStax website</a>. You will need to find the correct textbook and then download the PDF. The page numbers for the assignment are based on the first link of this book.
+It is also possible to download the Algebra and Trigonometry textbook from the <a href="https://openstax.org/details/books/algebra-and-trigonometry" target="_blank" rel="noopener noreferrer nofollow">OpenStax website</a>. You will need to find the correct textbook and then download the PDF. The page numbers for the assignment are based on the first link for this book.
 
 # --assignment--
 
