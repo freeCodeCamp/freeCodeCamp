@@ -478,6 +478,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-audio-and-video" },
             { "dashedName": "workshop-music-player" },
+            { "dashedName": "lab-drum-machine" },
             { "dashedName": "review-javascript-audio-and-video" },
             { "dashedName": "quiz-javascript-audio-and-video" }
           ]
