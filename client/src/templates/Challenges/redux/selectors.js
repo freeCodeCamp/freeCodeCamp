@@ -3,7 +3,8 @@ import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import {
   completedChallengesSelector,
   allChallengesInfoSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  completionStateSelector
 } from '../../../redux/selectors';
 import {
   getCurrentBlockIds,
@@ -56,7 +57,6 @@ export const isAdvancingToChallengeSelector = state => state[ns].isAdvancing;
 export const chapterSlugSelector = state => state[ns].chapterSlug;
 export const portalDocumentSelector = state => state[ns].portalWindow?.document;
 export const portalWindowSelector = state => state[ns].portalWindow;
-export const allChaptersSelector = state => state[ns].allChapters;
 
 export const userCompletedExamSelector = state => state[ns].userCompletedExam;
 export const challengeDataSelector = state => {
@@ -164,9 +164,9 @@ export const isModuleNewlyCompletedSelector = state => {
 
   if (!isBlockNewlyCompleted || !chapter || !module) return;
 
-  const allChapters = allChaptersSelector(state);
+  const completionState = completionStateSelector(state);
 
-  const incompleteBlocksInModule = allChapters
+  const incompleteBlocksInModule = completionState
     .find(({ name }) => name === chapter)
     ?.modules.find(({ name }) => name === module)
     ?.blocks.filter(({ isCompleted }) => !isCompleted);

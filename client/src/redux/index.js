@@ -24,6 +24,7 @@ import { createMsUsernameSaga } from './ms-username-saga';
 import { createSurveySaga } from './survey-saga';
 import { createSessionCompletedChallengesSaga } from './session-completed-challenges';
 import { createThemeSaga } from './theme-saga';
+import { createChallengesInfoSaga } from './challenges-info-saga';
 
 const defaultFetchState = {
   pending: true,
@@ -100,7 +101,8 @@ export const sagas = [
   ...createSaveChallengeSaga(actionTypes),
   ...createMsUsernameSaga(actionTypes),
   ...createSurveySaga(actionTypes),
-  ...createSessionCompletedChallengesSaga(actionTypes)
+  ...createSessionCompletedChallengesSaga(actionTypes),
+  ...createChallengesInfoSaga(actionTypes)
 ];
 
 function spreadThePayloadOnUser(state, payload) {
@@ -194,10 +196,19 @@ export const reducer = handleActions(
       ...state,
       donationFormState: { ...defaultDonationFormState, error: payload }
     }),
-    [actionTypes.updateAllChallengesInfo]: (state, { payload }) => ({
-      ...state,
-      allChallengesInfo: { ...payload }
-    }),
+    [actionTypes.updateAllChallengesInfoWithCompletionState]: (
+      state,
+      { payload }
+    ) => {
+      return {
+        ...state,
+        allChallengesInfo: {
+          challengeNodes: payload.challengeNodes,
+          certificateNodes: payload.certificateNodes
+        },
+        completionState: payload.completionState
+      };
+    },
     [actionTypes.fetchUser]: state => ({
       ...state,
       userFetchState: { ...defaultFetchState }

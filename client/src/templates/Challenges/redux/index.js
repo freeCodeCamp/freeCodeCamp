@@ -267,10 +267,6 @@ export const reducer = handleActions(
     [actionTypes.createQuestion]: (state, { payload }) => ({
       ...state,
       description: payload
-    }),
-    [actionTypes.updateAllChapters]: (state, { payload }) => ({
-      ...state,
-      allChapters: payload
     })
   },
   initialState
