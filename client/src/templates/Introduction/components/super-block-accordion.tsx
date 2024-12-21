@@ -29,7 +29,7 @@ interface ModuleProps {
   children: ReactNode;
   isExpanded: boolean;
 }
-interface SuperBlockTreeViewProps {
+interface SuperBlockAccordionProps {
   challenges: ChallengeNode['challenge'][];
   superBlock: SuperBlocks;
   chosenBlock: string;
@@ -157,7 +157,7 @@ export const SuperBlockAccordion = ({
   challenges,
   superBlock,
   chosenBlock
-}: SuperBlockTreeViewProps) => {
+}: SuperBlockAccordionProps) => {
   const { t } = useTranslation();
   const { allChapters } = useMemo(() => {
     const populateBlocks = (blocks: { dashedName: string }[]) =>
