@@ -55,9 +55,9 @@ Your image should have a border width of `10px`.
 // it will be read as 9~px. 
 const image = document.querySelector('img'); 
 const imageBorderTopWidth = window.getComputedStyle(image)["border-top-width"]; 
-const widthNumber = parseInt(imageBorderTopWidth.replace("px",""));
-assert.isAtLeast(widthNumber,8);
-assert.isAtMost(widthNumber,12);
+const widthNumber = parseInt(imageBorderTopWidth);
+assert.isAtLeast(widthNumber, 8);
+assert.isAtMost(widthNumber, 12);
 ```
 
 Your image should have a border style of `solid`.
