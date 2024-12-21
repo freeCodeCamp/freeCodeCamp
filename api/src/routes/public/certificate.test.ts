@@ -7,11 +7,24 @@ import {
 } from '../../../jest.utils';
 import { getFallbackFullStackDate } from '../helpers/certificate-utils';
 
+const DATE_NOW = Date.now();
+
 describe('certificate routes', () => {
   setupServer();
 
   describe('Unauthenticated user', () => {
-    beforeAll(async () => resetDefaultUser());
+    beforeAll(async () => {
+      await resetDefaultUser();
+
+      jest.useFakeTimers({
+        doNotFake: ['nextTick']
+      });
+      jest.setSystemTime(DATE_NOW);
+    });
+
+    afterAll(() => {
+      jest.useRealTimers();
+    });
 
     describe('GET /certificate/showCert/:username/:certSlug', () => {
       beforeEach(async () => {
@@ -201,6 +214,70 @@ describe('certificate routes', () => {
             }
           ]
         });
+        expect(response.status).toBe(200);
+      });
+
+      test('should not return user full name if `showName` is `false`', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            profileUI: {
+              showTimeLine: true,
+              showCerts: true,
+              isLocked: false,
+              showName: false
+            },
+            isJsAlgoDataStructCert: true,
+            completedChallenges: [
+              {
+                id: '561abd10cb81ac38a17513bc', // Cert ID
+                completedDate: DATE_NOW
+              }
+            ]
+          }
+        });
+
+        const response = await superRequest(
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
+          {
+            method: 'GET'
+          }
+        );
+
+        // TODO: delete this assertion once there's only one status 200 response
+        expect(response.body).toHaveProperty('username', 'foobar');
+        expect(response.body).not.toHaveProperty('name');
+        expect(response.status).toBe(200);
+      });
+
+      test('should return user full name if `showName` is `true`', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            profileUI: {
+              showTimeLine: true,
+              showCerts: true,
+              isLocked: false,
+              showName: true
+            },
+            isJsAlgoDataStructCert: true,
+            completedChallenges: [
+              {
+                id: '561abd10cb81ac38a17513bc', // Cert ID
+                completedDate: DATE_NOW
+              }
+            ]
+          }
+        });
+
+        const response = await superRequest(
+          '/certificate/showCert/foobar/javascript-algorithms-and-data-structures',
+          {
+            method: 'GET'
+          }
+        );
+
+        expect(response.body).toHaveProperty('name', 'foobar');
         expect(response.status).toBe(200);
       });
 
