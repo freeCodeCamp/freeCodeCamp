@@ -205,7 +205,7 @@ developer[2];
 
 #### --text--
 
-How can you obtain the ASCII index of a character in a string?
+How can you obtain the ASCII value of a character in a string?
 
 #### --distractors--
 
@@ -309,23 +309,23 @@ How can you check if the string `"JavaScript"` contains a specific substring?
 
 #### --text--
 
-Which method extracts a substring from the string `"JavaScript"`?
+Which of the following extracts the substring `"Script"` from the string `"JavaScript"`?
 
 #### --distractors--
 
-`"JavaScript".remove()`
+`"JavaScript".remove(3)`
 
 ---
 
-`"JavaScript".extract()`
+`"JavaScript".extract(4)`
 
 ---
 
-`"JavaScript".cut()`
+`"JavaScript".cut(3)`
 
 #### --answer--
 
-`"JavaScript".slice()`
+`"JavaScript".slice(4)`
 
 ### --question--
 
