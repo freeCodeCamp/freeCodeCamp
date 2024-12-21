@@ -2,7 +2,7 @@
 id: 6734ddabad59e593a49afafe
 title: Welcome Message from Quincy
 challengeType: 24
-videoId: uYTI0zQcKPM
+videoId: KwZkXwDUc1o
 dashedName: welcome-message-from-quincy
 ---
 
