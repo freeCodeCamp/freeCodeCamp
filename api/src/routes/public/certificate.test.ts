@@ -244,13 +244,9 @@ describe('certificate routes', () => {
           }
         );
 
-        expect(response.body).toEqual({
-          certSlug: 'javascript-algorithms-and-data-structures',
-          certTitle: 'Legacy JavaScript Algorithms and Data Structures',
-          username: 'foobar',
-          date: DATE_NOW,
-          completionTime: 300
-        });
+        // TODO: delete this assertion once there's only one status 200 response
+        expect(response.body).toHaveProperty('username', 'foobar');
+        expect(response.body).not.toHaveProperty('name');
         expect(response.status).toBe(200);
       });
 
@@ -281,14 +277,7 @@ describe('certificate routes', () => {
           }
         );
 
-        expect(response.body).toEqual({
-          certSlug: 'javascript-algorithms-and-data-structures',
-          certTitle: 'Legacy JavaScript Algorithms and Data Structures',
-          username: 'foobar',
-          name: 'foobar',
-          date: DATE_NOW,
-          completionTime: 300
-        });
+        expect(response.body).toHaveProperty('name', 'foobar');
         expect(response.status).toBe(200);
       });
 
