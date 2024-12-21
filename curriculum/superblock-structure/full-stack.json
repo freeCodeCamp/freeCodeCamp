@@ -2,7 +2,6 @@
   "chapters": [
     {
       "dashedName": "freecodecamp",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "getting-started-with-freecodecamp",
