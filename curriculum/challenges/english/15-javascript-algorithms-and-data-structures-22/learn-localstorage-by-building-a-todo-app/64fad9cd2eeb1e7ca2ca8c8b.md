@@ -7,7 +7,7 @@ dashedName: step-37
 
 # --description--
 
-Use arrow syntax to create an `updateTaskContainer` function. Then move the `taskData.forEach()` from the `taskForm`'s `submit` event listener and its content into it.
+Use arrow syntax to create an `updateTaskContainer` function. Then move the `taskData.forEach()` and its content from the `taskForm`'s `submit` event listener into the newly created function.
 
 # --hints--
 
