@@ -336,7 +336,10 @@ class Block extends Component<BlockProps> {
      * so we can play with it without affecting the existing block layouts.
      */
     const ChallengeListBlock = (
-      <ScrollableAnchor id={block}>
+      <>
+        <ScrollableAnchor id={block}>
+          <span className='hide-scrollable-anchor'></span>
+        </ScrollableAnchor>
         <div
           className={`block block-grid challenge-list-block ${isExpanded ? 'open' : ''}`}
         >
@@ -371,7 +374,7 @@ class Block extends Component<BlockProps> {
             </div>
           )}
         </div>
-      </ScrollableAnchor>
+      </>
     );
 
     /**
@@ -381,7 +384,10 @@ class Block extends Component<BlockProps> {
      * so we can play with it without affecting the existing block layouts.
      */
     const LinkBlock = (
-      <ScrollableAnchor id={block}>
+      <>
+        <ScrollableAnchor id={block}>
+          <span className='hide-scrollable-anchor'></span>
+        </ScrollableAnchor>
         <div className='block block-grid grid-project-block grid-project-block-no-margin'>
           <div className='tags-wrapper'>
             {!isAudited && (
@@ -415,7 +421,7 @@ class Block extends Component<BlockProps> {
           </div>
           <BlockIntros intros={blockIntroArr} />
         </div>
-      </ScrollableAnchor>
+      </>
     );
 
     /**
@@ -423,7 +429,10 @@ class Block extends Component<BlockProps> {
      * This layout is specifically used for the new Full Stack Developer Certification.
      */
     const ChallengeGridBlock = (
-      <ScrollableAnchor id={block}>
+      <>
+        <ScrollableAnchor id={block}>
+          <span className='hide-scrollable-anchor'></span>
+        </ScrollableAnchor>
         <div
           className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
         >
@@ -460,7 +469,7 @@ class Block extends Component<BlockProps> {
             </div>
           )}
         </div>
-      </ScrollableAnchor>
+      </>
     );
 
     const layoutToComponent = {
