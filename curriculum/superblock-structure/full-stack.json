@@ -256,6 +256,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-css-grid" },
             { "dashedName": "workshop-magazine" },
+            { "dashedName": "lab-magazine-layout" },
             { "dashedName": "lecture-debugging-css" },
             { "dashedName": "lab-product-landing-page" },
             { "dashedName": "review-css-grid" },
@@ -477,6 +478,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-audio-and-video" },
             { "dashedName": "workshop-music-player" },
+            { "dashedName": "lab-drum-machine" },
             { "dashedName": "review-javascript-audio-and-video" },
             { "dashedName": "quiz-javascript-audio-and-video" }
           ]

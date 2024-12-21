@@ -1712,7 +1712,8 @@
       "frontend-libraries": "Front End Libraries",
       "relational-databases": "Relational Databases",
       "backend-javascript": "Backend JavaScript",
-      "python": "Python"
+      "python": "Python",
+      "exam-certified-full-stack-developer": "Certified Full Stack Developer Exam"
     },
     "modules": {
       "getting-started-with-freecodecamp": "Getting Started with freeCodeCamp",
@@ -1720,6 +1721,8 @@
       "semantic-html": "Semantic HTML",
       "html-forms-and-tables": "Forms and Tables",
       "html-and-accessibility": "Accessibility",
+      "review-html": "HTML Review",
+      "exam-html": "HTML Exam",
       "computer-basics": "Computer Basics",
       "basic-css": "Basic CSS",
       "design-for-developers": "Design",
@@ -1737,6 +1740,7 @@
       "css-variables": "Variables",
       "css-grid": "Grid",
       "css-animations": "Animations",
+      "exam-css": "CSS Exam",
       "code-editors": "Code Editors",
       "javascript-variables-and-strings": "Variables and Strings",
       "javascript-booleans-and-numbers": "Booleans and Numbers",
@@ -1758,12 +1762,15 @@
       "recursion": "Recursion",
       "functional-programming": "Functional Programming",
       "asynchronous-javascript": "Asynchronous JavaScript",
+      "exam-javascript": "JavaScript Exam",
       "react-fundamentals": "React Fundamentals",
       "react-state-hooks-and-routing": "React State, Hooks, and Routing",
       "performance": "Performance",
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
       "testing": "Testing",
       "typescript-fundamentals": "TypeScript Fundamentals",
+      "review-front-end-libraries": "Front End Libraries Review",
+      "exam-front-end-libraries": "Front End Libraries Exam",
       "sql-and-bash": "SQL and Bash",
       "git": "Git",
       "security-and-privacy": "Security and Privacy"
@@ -1778,7 +1785,7 @@
       "lecture-what-is-html": {
         "title": "What is HTML?",
         "intro": [
-          "In this lecture video, you will be introduced to HTML (HyperText Markup Language) which is a markup language for creating web pages.",
+          "In this lecture video, you will be introduced to HTML (HyperText Markup Language), a markup language for creating web pages.",
           "You will learn about HTML's role on the web, the basic syntax, and what HTML attributes are."
         ]
       },
@@ -1798,7 +1805,7 @@
       "lecture-html-fundamentals": {
         "title": "HTML Fundamentals",
         "intro": [
-          "In these lecture videos, you will learn about HTML fundamentals like the <code>id</code> and <code>class</code> attributes, as well as the <code>div</code> and <code>span</code> elements, HTML entities, and more."
+          "In these lecture videos, you will learn about HTML fundamentals like the <code>div</code> and <code>span</code> elements, <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
       "lab-travel-agency-page": {
@@ -1810,7 +1817,7 @@
       "lecture-working-with-media": {
         "title": "Working with Media",
         "intro": [
-          "In these lecture videos, you will learn how to work with the <code>audio</code> and <code>video</code> elements as well as with SVG's and more."
+          "In these lecture videos, you will learn how to work with media assets like the <code>audio</code> and <code>video</code> elements, SVGs, how to optimize them, and more."
         ]
       },
       "lab-video-compilation-page": {
@@ -1822,7 +1829,7 @@
       "lecture-working-with-links": {
         "title": "Working with Links",
         "intro": [
-          "In these lecture videos, you will learn about the different <code>target</code> attribute values, absolute and relative links and the different links states."
+          "In these lecture videos, you will learn about links, the <code>target</code> attribute, different link states, absolute, and relative paths, and more."
         ]
       },
       "review-basic-html": {
@@ -1841,7 +1848,7 @@
       "lecture-importance-of-semantic-html": {
         "title": "Importance of Semantic HTML",
         "intro": [
-          "In these lecture videos, you will learn about semantic HTML and the importance of using it."
+          "In these lecture videos, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
         ]
       },
       "workshop-blog-page": {
@@ -1873,7 +1880,7 @@
       "lecture-working-with-forms": {
         "title": "Working with Forms",
         "intro": [
-          "In these lecture videos, you will learn about working with forms in HTML."
+          "In these lecture videos, you will learn about forms, the role of labels, inputs and buttons in creating forms, client-side form validation, and form states."
         ]
       },
       "workshop-hotel-feedback-form": {
@@ -1892,7 +1899,9 @@
       },
       "lecture-working-with-tables": {
         "title": "Working with Tables",
-        "intro": ["In these lecture videos, you will learn about HTML tables."]
+        "intro": [
+          "In these lecture videos, you will learn about HTML tables, how to create them, and when to use them."
+        ]
       },
       "workshop-final-exams-table": {
         "title": "Build a Final Exams Table",
@@ -1910,7 +1919,7 @@
       "lecture-working-with-html-tools": {
         "title": "Working with HTML Tools",
         "intro": [
-          "In these lecture videos, you will learn about working with HTML tools."
+          "In these lecture videos, you will learn about HTML tools and how they let you write better code. These tools include HTML validators, DOM Inspector, and the browser developer tools."
         ]
       },
       "review-html-tables-and-forms": {
@@ -1929,7 +1938,7 @@
       "lecture-importance-of-accessibility-and-good-html-structure": {
         "title": "Importance of Accessibility and Good HTML Structure",
         "intro": [
-          "In these lecture videos, you will learn about importance of accessibility and using good HTML structure."
+          "In these lecture videos, you will learn about accessibility and its importance, assistive tools for people with disabilities, HTML attributes that let you create inclusive websites, accessibility best practices, and much more."
         ]
       },
       "lab-checkout-page": {

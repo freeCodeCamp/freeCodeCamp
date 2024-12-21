@@ -1561,34 +1561,28 @@
   "b1-english-for-developers": {
     "title": "Англійська мова рівня B1 для розробників (бета-версія)",
     "intro": [
-      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the B1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
-      "It will help you strengthen your foundational skills while introducing more complex grammar and usage. You'll learn how to describe places and things, share past experiences, and confidently use tenses like Present Perfect and Future. Practical communication strategies are included as well, such as managing conversations, expressing opinions, and building agreement or disagreement in discussions.",
-      "You'll also focus on applying these skills in professional and technical settings. You'll practice vocabulary and phrases essential for developers, such as describing code, participating in stand-up meetings, and discussing tech trends. Advanced topics include conditionals, comparative structures, and conversation management, so you can prepare for real-world interactions in the tech industry.",
-      "This entire B1-level curriculum includes 73 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
+      "У цьому курсі з вивчення англійської мови для розробників ви опануєте основи англійської комунікації. Курс створено відповідно до загальноєвропейських рекомендацій з мовної освіти рівня B1 (CEFR). Ми зосередилися на словниковому запасі, що є особливо корисним для розробників.",
+      "Курс допоможе зміцнити базові знання, одночасно ознайомлюючи із більш складною граматикою та використанням. Ви навчитесь описувати місця та речі, ділитися досвідом і впевнено використовувати часи, серед яких теперішній доконаний та простий майбутній. А також отримаєте практичні поради: як вести розмову, ділитись думкою та висловлювати згоду чи незгоду.",
+      "Основний фокус на застосуванні цих навичок у професійній та технологічній галузях. Ви будете практикувати словниковий запас і фрази, важливі для розробників: як описувати код, брати участь у зустрічах і обговорювати технологічні тенденції. До складніших тем належать умовні речення, порівняльні конструкції та підтримка розмови, щоб підготувати вас до реальних взаємодій у технологічній індустрії.",
+      "Весь курс рівня B1 складається з 73 різних діалогів. Кожен з них створений для того, щоб розширити ваш словниковий запас та підвищити впевненість під час спілкування в професійному середовищі."
     ],
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Дізнайтесь, як описувати місця і події",
-        "intro": [
-          "This course will show you ways of talking about places and events conversationally."
-        ]
+        "intro": ["У цьому курсі ви навчитеся говорити про місця та події."]
       },
       "learn-how-to-talk-about-past-experiences": {
         "title": "Дізнайтесь, як говорити про досвід",
-        "intro": [
-          "In this course, you will learn how to share experiences that you had in the past."
-        ]
+        "intro": ["У цьому курсі ви навчитеся ділитись власним досвідом."]
       },
       "learn-how-to-talk-about-past-activities": {
         "title": "Дізнайтесь, як говорити про дії з минулого",
-        "intro": [
-          "In this course, you will learn how talk about things that you did."
-        ]
+        "intro": ["У цьому курсі ви навчитеся говорити про речі, які зробили."]
       },
       "learn-present-perfect-while-talking-about-accessibility": {
         "title": "Дізнайтесь про теперішній доконаний час, говорячи про доступність",
         "intro": [
-          "In this course, you will learn to use the Present Perfect structure and learn a bit more about accessibility."
+          "У цьому курсі ви навчитеся використовувати теперішній доконаний час і трішки дізнаєтесь про доступність."
         ]
       },
       "learn-how-to-plan-future-events": {
@@ -1702,7 +1696,8 @@
       "frontend-libraries": "Бібліотеки для front end",
       "relational-databases": "Реляційні бази даних",
       "backend-javascript": "Backend JavaScript",
-      "python": "Python"
+      "python": "Python",
+      "exam-certified-full-stack-developer": "Certified Full Stack Developer Exam"
     },
     "modules": {
       "getting-started-with-freecodecamp": "Початок роботи з freeCodeCamp",
@@ -1710,6 +1705,8 @@
       "semantic-html": "Семантичний HTML",
       "html-forms-and-tables": "Форми та таблиці",
       "html-and-accessibility": "Доступність",
+      "review-html": "Повторення HTML",
+      "exam-html": "HTML Exam",
       "computer-basics": "Основи комп’ютера",
       "basic-css": "Основи CSS",
       "design-for-developers": "Дизайн",
@@ -1727,6 +1724,7 @@
       "css-variables": "Змінні",
       "css-grid": "Сітка",
       "css-animations": "Анімації",
+      "exam-css": "CSS Exam",
       "code-editors": "Редактори коду",
       "javascript-variables-and-strings": "Змінні та рядки",
       "javascript-booleans-and-numbers": "Булеві значення та числа",
@@ -1748,12 +1746,15 @@
       "recursion": "Рекурсія",
       "functional-programming": "Функціональне програмування",
       "asynchronous-javascript": "Асинхронний JavaScript",
+      "exam-javascript": "JavaScript Exam",
       "react-fundamentals": "Основи React",
       "react-state-hooks-and-routing": "Стани, хуки та маршрутизація в React",
       "performance": "Продуктивність",
       "css-libraries-and-frameworks": "Бібліотеки та фреймворки CSS",
       "testing": "Тестування",
       "typescript-fundamentals": "Основи TypeScript",
+      "review-front-end-libraries": "Front End Libraries Review",
+      "exam-front-end-libraries": "Front End Libraries Exam",
       "sql-and-bash": "SQL та Bash",
       "git": "Git",
       "security-and-privacy": "Безпека та приватність"
@@ -1788,7 +1789,7 @@
       "lecture-html-fundamentals": {
         "title": "Основи HTML",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь про основи HTML, серед яких атрибути <code>id</code> й <code>class</code>, елементи <code>div</code> й <code>span</code>, об’єкти HTML та багато іншого."
+          "У цих відеолекціях ви дізнаєтесь про основи HTML, серед яких елементи <code>div</code> та <code>span</code>, атрибути <code>id</code> та <code>class</code>, шаблонний код HTML тощо."
         ]
       },
       "lab-travel-agency-page": {
@@ -1800,7 +1801,7 @@
       "lecture-working-with-media": {
         "title": "Робота з медіа",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь, як працювати з елементами <code>audio</code> й <code>video</code>, а також із SVG, та багато іншого."
+          "У цих відеолекціях ви дізнаєтесь, як працювати з цифровими активами (наприклад, елементами <code>audio</code> та <code>video</code>), SVG, як їх оптимізувати тощо."
         ]
       },
       "lab-video-compilation-page": {
@@ -1812,7 +1813,7 @@
       "lecture-working-with-links": {
         "title": "Робота з посиланнями",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь про різні значення атрибута <code>target</code>, абсолютні й відносні посилання та різні стани посилань."
+          "У цих відеолекціях ви дізнаєтесь про посилання, атрибут <code>target</code>, різні стани посилань, абсолютний і відносний шлях тощо."
         ]
       },
       "review-basic-html": {
@@ -1831,7 +1832,7 @@
       "lecture-importance-of-semantic-html": {
         "title": "Важливість семантичного HTML",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь про семантичний HTML та важливість його використання."
+          "У цих відеолекціях ви дізнаєтесь про семантичний HTML та чому ним варто цікавитись, а також про семантичні елементи, різницю між семантичним і презентаційним HTML та багато іншого."
         ]
       },
       "workshop-blog-page": {
@@ -1863,7 +1864,7 @@
       "lecture-working-with-forms": {
         "title": "Робота з формами",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь, як працювати з формами в HTML."
+          "У цих відеолекціях ви дізнаєтесь про форми, важливість міток, полів введення і кнопок, валідацію форми зі сторони клієнта та стани форм."
         ]
       },
       "workshop-hotel-feedback-form": {
@@ -1882,7 +1883,9 @@
       },
       "lecture-working-with-tables": {
         "title": "Робота з таблицями",
-        "intro": ["У цих відеолекціях ви дізнаєтесь про таблиці в HTML."]
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про таблиці в HTML, включно з їхнім створенням і використанням."
+        ]
       },
       "workshop-final-exams-table": {
         "title": "Створіть таблицю з кінцевими екзаменами",
@@ -1900,26 +1903,26 @@
       "lecture-working-with-html-tools": {
         "title": "Робота з інструментами HTML",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь, як працювати з інструментами HTML."
+          "У цих відеолекціях ви дізнаєтесь про інструменти HTML, які допомагають писати кращий код. До цих інструментів належать валідатори HTML, інспектор DOM та інструменти розробника браузера."
         ]
       },
       "review-html-tables-and-forms": {
         "title": "Повторення таблиць та форм в HTML",
         "intro": [
-          "Before you are quizzed on HTML forms, tables and tools, you first need to review the concepts.",
-          "Open up this page to review the <code>table</code>, <code>input</code>, and <code>button</code> elements as well as commonly used tools like the HTML validator and more."
+          "Перш ніж перейти до тесту «Форми, таблиці та інструменти в HTML», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати елементи <code>table</code>, <code>input</code> та <code>button</code>, а також поширені інструменти (серед яких валідатор HTML) та багато іншого."
         ]
       },
       "quiz-html-tables-and-forms": {
         "title": "Тест «Таблиці та форми в HTML»",
         "intro": [
-          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Форми, таблиці та інструменти в HTML»."
         ]
       },
       "lecture-importance-of-accessibility-and-good-html-structure": {
         "title": "Важливість доступності та хорошої структури HTML",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь про важливість доступності та хорошої структури в HTML."
+          "У цих відеолекціях ви дізнаєтесь про доступність та її важливість, допоміжні технології для людей з порушеннями, атрибути HTML для створення інклюзивних вебсайтів, найкращі практики й багато іншого."
         ]
       },
       "lab-checkout-page": {
@@ -2616,7 +2619,7 @@
       "lab-fortune-teller": {
         "title": "Створіть генератор передбачень",
         "intro": [
-          "In this lab, you will build a fortune teller by randomly selecting a fortune from the available fortunes."
+          "У цій лабораторній роботі ви створите генератор передбачень, де користувач випадково обиратиме передбачення зі всіх доступних."
         ]
       },
       "lecture-working-with-numbers-and-common-number-methods": {
@@ -3028,9 +3031,9 @@
         ]
       },
       "lab-customer-complaint-form": {
-        "title": "Build a Customer Complaint Form",
+        "title": "Створіть форму для скарг",
         "intro": [
-          "For this lab, you will use JavaScript to validate a customer complaint form."
+          "У цій лабораторній роботі ви будете працювати над формою для скарг від клієнтів, використовуючи JavaScript."
         ]
       },
       "review-form-validation-with-javascript": {
@@ -3234,9 +3237,9 @@
         ]
       },
       "lab-sorting-visualizer": {
-        "title": "Build a Sorting Visualizer",
+        "title": "Створіть візуалізатор сортування",
         "intro": [
-          "For this lab, you will use JavaScript to visualize the steps that the Bubble Sort algorithm takes to reorder an array of integers."
+          "У цій лабораторній роботі ви будете використовувати JavaScript, щоб візуалізувати кроки алгоритму сортування бульбашкою, необхідні для впорядкування масиву цілих чисел."
         ]
       },
       "review-javascript-functional-programming": {
@@ -3318,9 +3321,9 @@
         ]
       },
       "workshop-reusable-profile-card-component": {
-        "title": "Build a Reusable Profile Card Component",
+        "title": "Створіть картку профілю",
         "intro": [
-          "In this workshop, you will learn how to work with props by building a reusable profile card component."
+          "У цьому практичному занятті ви дізнаєтесь, як працювати з пропсами, створивши картку профілю, доступну для повторного використання."
         ]
       },
       "lab-mood-board": {

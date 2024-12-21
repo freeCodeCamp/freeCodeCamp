@@ -167,6 +167,7 @@
     "interview-prep-heading": "爲開發人員面試求職做好準備：",
     "legacy-curriculum-heading": "探索我們的舊版課程：",
     "next-heading": "Try our beta curriculum:",
+    "next-english-heading": "Try our latest English curriculum:",
     "upcoming-heading": "即將推出的課程：",
     "faq": "常見問題：",
     "faqs": [
@@ -505,6 +506,7 @@
     "complete-both-steps": "完成下面的兩個步驟來完成這一挑戰。",
     "runs-in-vm": "該項目在虛擬機中運行，完成在那裏描述的用戶故事，獲取所有測試並通過它們以完成步驟 1。",
     "completed": "已完成",
+    "not-completed": "Not completed",
     "not-started": "未開始",
     "test": "測試",
     "sorry-try-again": "抱歉，你的代碼未通過，再試一次。",
