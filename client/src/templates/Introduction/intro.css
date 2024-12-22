@@ -11,6 +11,11 @@
   overflow-wrap: break-word;
 }
 
+.hide-scrollable-anchor {
+  display: inline-block;
+  max-height: 0px;
+}
+
 .block-label {
   align-self: center;
   height: fit-content;
