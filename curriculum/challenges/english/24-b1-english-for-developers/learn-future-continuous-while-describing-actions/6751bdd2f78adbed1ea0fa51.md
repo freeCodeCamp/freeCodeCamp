@@ -43,7 +43,7 @@ If the downtime will affect the server's performance.
 
 ### --feedback--
 
-Brian's question is about informing users, not the server's performance.
+Brian's concern is not about the server's performance.
 
 ## --video-solution--
 

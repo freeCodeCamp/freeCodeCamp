@@ -37,7 +37,7 @@ This word in the plural form means actions by hackers or criminals to harm a com
 
 `Man-in-the-Middle` (or `MITM`) is a type of attack where a hacker secretly gets between two people or systems that are communicating. The hacker listens to or changes the information being shared without anyone knowing. For example:
 
-`A Man-in-the-Middle attack (MITM) happened when a hacker intercepted the data sent between a user's computer and their bank.` - In this example, the hacker pretended to be the bank, intercepted the information, and stole the user's login credentials. This allowed the hacker to access the bank account without the user knowing.
+`A Man-in-the-Middle attack (MITM) happened when a hacker intercepted the data sent between a user's computer and their bank.` - The hacker pretended to be the bank, intercepted the information, and stole the user's login credentials. This allowed the hacker to access the bank account without the user knowing.
 
 `Attacks` are actions by hackers to harm computer systems, steal information, or cause problems. For example:
 
