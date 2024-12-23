@@ -3317,7 +3317,7 @@
       },
       "quiz-recursion": {
         "title": "Recursion Quiz",
-        "intro": ["Test your knowledge of Recursion with this quiz."]
+        "intro": ["Test your knowledge of recursion with this quiz."]
       },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
@@ -3465,7 +3465,7 @@
       "zagz": { "title": "282", "intro": [] },
       "quiz-advanced-react": {
         "title": "Advanced React Quiz",
-        "intro": ["Test what you've learned about Advanced React with this quiz."]
+        "intro": ["Test what you've learned about advanced React with this quiz."]
       },
       "zdsj": { "title": "284", "intro": [] },
       "review-web-performance": {
@@ -3476,7 +3476,7 @@
       },
       "quiz-web-performance": {
         "title": "Web Performance Quiz",
-        "intro": ["Test what you've learned about Web Performance with this quiz."]
+        "intro": ["Test what you've learned about web performance with this quiz."]
       },
       "mbpv": { "title": "287", "intro": [] },
       "review-css-libraries-and-frameworks": {
@@ -3488,7 +3488,7 @@
       "quiz-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Quiz",
         "intro": [
-          "Test what you've learned about CSS Libraries and Frameworks with this quiz."
+          "Test what you've learned about CSS libraries and frameworks with this quiz."
         ]
       },
       "khuu": { "title": "290", "intro": [] },
@@ -3513,7 +3513,7 @@
       },
       "quiz-typescript": {
         "title": "TypeScript Quiz",
-        "intro": ["Test what you've learned on Typescript with this quiz."]
+        "intro": ["Test what you've learned on TypeScript with this quiz."]
       },
       "review-front-end-libraries": {
         "title": "Front End Libraries Review",
@@ -3538,7 +3538,7 @@
       },
       "quiz-bash-commands": {
         "title": "Bash Commands Quiz",
-        "intro": ["Test what you've learned bash commands with this quiz."]
+        "intro": ["Test what you've learned on bash commands with this quiz."]
       },
       "voks": { "title": "306", "intro": [] },
       "workshop-mario-database": {
