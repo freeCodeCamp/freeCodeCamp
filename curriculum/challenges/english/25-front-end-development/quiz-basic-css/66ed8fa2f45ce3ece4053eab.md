@@ -237,23 +237,23 @@ Which selector is correct to target all siblings of an `img`?
 
 #### --text--
 
-What statement is TRUE about `block` elements?
+What statement is TRUE about block-level elements?
 
 #### --distractors--
 
-Blockline elements don't start on new lines.
+Block-level elements don't start on new lines.
 
 ---
 
-Blockline elements only takes up as much as it needs.
+Block-level elements only takes up as much as it needs.
 
 ---
 
-Blockline elements come with no margin.
+Block-level elements come with no margin.
 
 #### --answer--
 
-Blockline elements start on a new line with margin before and after the element.
+Block-level elements start on a new line with margin before and after the element.
 
 ### --question--
 
