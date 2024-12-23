@@ -32,11 +32,27 @@
   justify-content: space-between;
 }
 
-.super-block-accordion .chapter-button .chapter-icon-and-text {
+.super-block-accordion .chapter-button .chapter-button-left {
   display: flex;
   align-items: center;
   column-gap: 10px;
   font-size: 1.5em;
+}
+
+.super-block-accordion .chapter-button .chapter-button-right {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.super-block-accordion .dropdown-wrap,
+.super-block-accordion .checkmark-wrap {
+  position: relative;
+  top: 2px;
+}
+
+.super-block-accordion .chapter-checkmark-wrap {
+  right: 5px;
 }
 
 .super-block-accordion .module-button {
@@ -47,7 +63,19 @@
   padding: 16px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
+}
+
+.super-block-accordion .module-button-left,
+.super-block-accordion .module-button-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.super-block-accordion .module-steps {
+  font-size: 0.75em;
 }
 
 .super-block-accordion .chapter-button:hover,
