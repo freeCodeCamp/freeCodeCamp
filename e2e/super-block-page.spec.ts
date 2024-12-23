@@ -80,6 +80,11 @@ test.describe('Super Block Page - Authenticated User', () => {
         '/learn/javascript-algorithms-and-data-structures-v8/learn-basic-javascript-by-building-a-role-playing-game/step-2'
       );
 
+      // Wait for the page to finish loading so that the current challenge ID can be registered.
+      await expect(
+        page.getByRole('heading', { name: 'Step 2', level: 1 })
+      ).toBeVisible();
+
       // Go back to the super block page
       await page.goto('/learn/javascript-algorithms-and-data-structures-v8');
 
@@ -205,6 +210,11 @@ test.describe('Super Block Page - Authenticated User', () => {
       ).toHaveAttribute('aria-expanded', 'true');
 
       await page.goto('/learn/full-stack-developer/workshop-blog-page/step-2');
+
+      // Wait for the page to finish loading so that the current challenge ID can be registered.
+      await expect(
+        page.getByRole('heading', { name: 'Step 2', level: 1 })
+      ).toBeVisible();
 
       // Go back to the super block page
       await page.goto('/learn/full-stack-developer');
