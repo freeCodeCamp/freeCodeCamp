@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import { Alert, Spacer } from '@freecodecamp/ui';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
@@ -50,17 +50,12 @@ export const ConditionalDonationAlert = ({
       <Alert variant='info' className='annual-donation-alert'>
         <p>{t('donate.unfinished-certification')}</p>
         <hr />
-        <p>{t('donate.consider-donating')}</p>
-        <p className='btn-container'>
-          <Link
-            className='btn donate-button'
-            key='donate'
-            sameTab={false}
-            to='/donate'
-            onClick={onCertificationDonationAlertClick}
-          >
-            {t('buttons.donate-now')}
-          </Link>
+        <p>
+          <Trans i18nKey='donate.consider-donating'>
+            <Link className='inline' to='/donate'>
+              placeholder
+            </Link>
+          </Trans>
         </p>
       </Alert>
     );
