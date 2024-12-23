@@ -2,7 +2,7 @@
   "name": "JavaScript Arrays Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-javascript-arrays",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

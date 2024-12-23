@@ -2,7 +2,7 @@
   "name": "JavaScript Dates Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-javascript-dates",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

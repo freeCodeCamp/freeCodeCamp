@@ -2,7 +2,7 @@
   "name": "Design Fundamentals Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-design-fundamentals",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

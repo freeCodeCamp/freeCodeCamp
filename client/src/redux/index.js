@@ -23,6 +23,7 @@ import { createUserTokenSaga } from './user-token-saga';
 import { createMsUsernameSaga } from './ms-username-saga';
 import { createSurveySaga } from './survey-saga';
 import { createSessionCompletedChallengesSaga } from './session-completed-challenges';
+import { createThemeSaga } from './theme-saga';
 
 const defaultFetchState = {
   pending: true,
@@ -55,6 +56,7 @@ const initialState = {
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   examInProgress: false,
   isProcessing: false,
+  theme: 'light',
   showCert: {},
   showCertFetchState: {
     ...defaultFetchState
@@ -87,6 +89,7 @@ export const epics = [hardGoToEpic, failedUpdatesEpic, updateCompleteEpic];
 
 export const sagas = [
   ...createAcceptTermsSaga(actionTypes),
+  ...createThemeSaga(actionTypes),
   ...createAppMountSaga(actionTypes),
   ...createDonationSaga(actionTypes),
   ...createFetchUserSaga(actionTypes),
@@ -208,7 +211,8 @@ export const reducer = handleActions(
         [username]: { ...user, sessionUser: true }
       },
       appUsername: username,
-      currentChallengeId: user.currentChallengeId,
+      currentChallengeId:
+        user.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY),
       userFetchState: {
         pending: false,
         complete: true,
@@ -252,6 +256,10 @@ export const reducer = handleActions(
         errored: true,
         error: payload
       }
+    }),
+    [actionTypes.setTheme]: (state, { payload: theme }) => ({
+      ...state,
+      theme
     }),
     [actionTypes.onlineStatusChange]: (state, { payload: isOnline }) => ({
       ...state,
@@ -481,8 +489,6 @@ export const reducer = handleActions(
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMySoundComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
-    [settingsTypes.updateMyThemeComplete]: (state, { payload }) =>
-      payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyKeyboardShortcutsComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyHonestyComplete]: (state, { payload }) =>
@@ -490,6 +496,8 @@ export const reducer = handleActions(
     [settingsTypes.updateMyQuincyEmailComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyPortfolioComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.resetMyEditorLayoutComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.verifyCertComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,

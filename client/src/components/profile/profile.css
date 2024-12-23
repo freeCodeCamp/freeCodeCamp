@@ -8,8 +8,8 @@
   margin: 0;
   padding: 1em;
   box-shadow: none;
-  background: var(--gray00);
-  border: 1px solid var(--gray15);
+  background: var(--primary-background);
+  border: 1px solid var(--quaternary-background);
   margin-bottom: 1em;
 }
 

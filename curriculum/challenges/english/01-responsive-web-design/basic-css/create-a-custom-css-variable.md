@@ -26,9 +26,7 @@ In the `penguin` class, create a variable name `--penguin-skin` and give it a va
 `penguin` class should declare the `--penguin-skin` variable and assign it to `gray`.
 
 ```js
-assert(
-  code.match(/\.penguin\s*\{[^{}]*?--penguin-skin\s*:\s*gr[ae]y\s*;[^{}]*?\}/gi)
-);
+assert.match(__helpers.removeHtmlComments(code), /\.penguin\s*\{[^{}]*?--penguin-skin\s*:\s*gr[ae]y\s*;[^{}]*?\}/gi);
 ```
 
 # --seed--

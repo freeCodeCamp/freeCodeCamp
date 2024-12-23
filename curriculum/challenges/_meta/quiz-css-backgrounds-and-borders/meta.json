@@ -2,7 +2,7 @@
   "name": "CSS Backgrounds and Borders Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-css-backgrounds-and-borders",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed8fd7f45ce3ece4053eb0", "title": "CSS Backgrounds and Borders Quiz" }],

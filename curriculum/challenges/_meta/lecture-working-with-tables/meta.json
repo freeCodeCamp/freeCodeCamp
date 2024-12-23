@@ -2,7 +2,7 @@
   "name": "Working with Tables",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-tables",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "672a4e04a24858778f57ebfe", "title": "What Are HTML Tables Used For, and What Should They Not Be Used For?" }],

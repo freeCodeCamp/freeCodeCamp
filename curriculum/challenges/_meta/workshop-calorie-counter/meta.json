@@ -1,6 +1,6 @@
 {
   "name": "Build a Calorie Counter",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "blockType": "workshop",

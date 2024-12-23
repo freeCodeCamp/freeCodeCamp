@@ -2,7 +2,7 @@
   "name": "Local Storage and CRUD Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-local-storage-and-crud",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

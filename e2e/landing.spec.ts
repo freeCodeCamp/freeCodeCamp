@@ -28,7 +28,9 @@ const superBlocks = [
   intro[SuperBlocks.InfoSec].title,
   intro[SuperBlocks.MachineLearningPy].title,
   intro[SuperBlocks.CollegeAlgebraPy].title,
+  intro[SuperBlocks.FullStackDeveloper].title,
   intro[SuperBlocks.A2English].title,
+  intro[SuperBlocks.B1English].title,
   intro[SuperBlocks.FoundationalCSharp].title,
   intro[SuperBlocks.TheOdinProject].title,
   intro[SuperBlocks.CodingInterviewPrep].title,
@@ -201,7 +203,7 @@ test.describe('Landing Page', () => {
 
   test('Has links to all curriculum', async ({ page }) => {
     const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
-    await expect(curriculumBtns).toHaveCount(21);
+    await expect(curriculumBtns).toHaveCount(superBlocks.length);
     for (let index = 0; index < superBlocks.length; index++) {
       const btn = curriculumBtns.nth(index);
       await expect(btn).toContainText(superBlocks[index]);

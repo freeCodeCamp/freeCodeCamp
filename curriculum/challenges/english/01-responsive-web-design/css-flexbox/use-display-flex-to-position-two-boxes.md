@@ -22,7 +22,9 @@ Add the CSS property `display` to `#box-container` and set its value to `flex`.
 `#box-container` should have the `display` property set to a value of `flex`.
 
 ```js
-assert($('#box-container').css('display') == 'flex');
+const boxContainer = document.querySelector('#box-container');
+const displayStyle = window.getComputedStyle(boxContainer)['display'];
+assert.strictEqual(displayStyle, 'flex');
 ```
 
 # --seed--

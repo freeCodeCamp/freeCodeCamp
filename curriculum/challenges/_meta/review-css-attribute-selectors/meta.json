@@ -2,7 +2,7 @@
   "name": "CSS Attribute Selectors Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-css-attribute-selectors",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

@@ -58,11 +58,6 @@ assert.ok(process.env.MONGOHQ_URL);
 assert.ok(process.env.COOKIE_SECRET);
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
-  assert.notEqual(
-    process.env.FCC_ENABLE_EXAM_ENVIRONMENT,
-    'true',
-    'Exam environment is not ready for production.'
-  );
   assert.ok(process.env.SES_ID);
   assert.ok(process.env.SES_SECRET);
   assert.notEqual(

@@ -2,7 +2,7 @@
   "name": "Build a Video Compilation Page",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-video-compilation-page",
   "superBlock": "full-stack-developer",

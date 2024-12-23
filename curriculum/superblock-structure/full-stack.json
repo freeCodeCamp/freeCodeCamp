@@ -66,6 +66,12 @@
           "moduleType": "review",
           "dashedName": "review-html",
           "blocks": [{ "dashedName": "review-html" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-html",
+          "blocks": []
         }
       ]
     },
@@ -141,6 +147,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-colors-in-css" },
             { "dashedName": "workshop-colored-markers" },
+            { "dashedName": "lab-colored-boxes" },
             { "dashedName": "review-css-colors" },
             { "dashedName": "quiz-css-colors" }
           ]
@@ -248,6 +255,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-css-grid" },
             { "dashedName": "workshop-magazine" },
+            { "dashedName": "lab-magazine-layout" },
             { "dashedName": "lecture-debugging-css" },
             { "dashedName": "lab-product-landing-page" },
             { "dashedName": "review-css-grid" },
@@ -270,6 +278,12 @@
           "moduleType": "review",
           "dashedName": "review-css",
           "blocks": [{ "dashedName": "review-css" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-css",
+          "blocks": []
         }
       ]
     },
@@ -336,8 +350,8 @@
           "blocks": [
             { "dashedName": "lecture-working-with-arrays" },
             { "dashedName": "workshop-shopping-list" },
-            { "dashedName": "lecture-working-with-common-array-methods" },
             { "dashedName": "lab-lunch-picker-program" },
+            { "dashedName": "lecture-working-with-common-array-methods" },
             { "dashedName": "review-javascript-arrays" },
             { "dashedName": "quiz-javascript-arrays" }
           ]
@@ -375,6 +389,7 @@
             {
               "dashedName": "lecture-understanding-modules-imports-and-exports"
             },
+            { "dashedName": "lab-password-generator" },
             { "dashedName": "review-javascript-fundamentals" },
             { "dashedName": "quiz-javascript-fundamentals" }
           ]
@@ -443,6 +458,7 @@
           "blocks": [
             { "dashedName": "lecture-understanding-form-validation" },
             { "dashedName": "workshop-calorie-counter" },
+            { "dashedName": "lab-customer-complaint-form" },
             { "dashedName": "review-form-validation-with-javascript" },
             { "dashedName": "quiz-form-validation-with-javascript" }
           ]
@@ -460,6 +476,8 @@
           "dashedName": "audio-and-video-events",
           "blocks": [
             { "dashedName": "lecture-working-with-audio-and-video" },
+            { "dashedName": "workshop-music-player" },
+            { "dashedName": "lab-drum-machine" },
             { "dashedName": "review-javascript-audio-and-video" },
             { "dashedName": "quiz-javascript-audio-and-video" }
           ]
@@ -468,6 +486,8 @@
           "dashedName": "maps-and-sets",
           "blocks": [
             { "dashedName": "lecture-working-with-maps-and-sets" },
+            { "dashedName": "workshop-plant-nursery-catalog" },
+            { "dashedName": "lab-voting-system" },
             { "dashedName": "review-javascript-maps-and-sets" },
             { "dashedName": "quiz-javascript-maps-and-sets" }
           ]
@@ -514,6 +534,7 @@
           "blocks": [
             { "dashedName": "lecture-understanding-functional-programming" },
             { "dashedName": "workshop-recipe-ingredient-converter" },
+            { "dashedName": "lab-sorting-visualizer" },
             { "dashedName": "review-javascript-functional-programming" },
             { "dashedName": "quiz-javascript-functional-programming" }
           ]
@@ -523,6 +544,8 @@
           "blocks": [
             { "dashedName": "lecture-understanding-asynchronous-programming" },
             { "dashedName": "workshop-fcc-authors-page" },
+            { "dashedName": "lab-fcc-forum-leaderboard" },
+            { "dashedName": "lab-weather-app" },
             { "dashedName": "review-asynchronous-javascript" },
             { "dashedName": "quiz-asynchronous-javascript" }
           ]
@@ -531,6 +554,12 @@
           "moduleType": "review",
           "dashedName": "review-javascript",
           "blocks": [{ "dashedName": "review-javascript" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-javascript",
+          "blocks": []
         }
       ]
     },
@@ -544,12 +573,18 @@
             {
               "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks"
             },
+            { "dashedName": "workshop-reusable-mega-navbar" },
+            { "dashedName": "lab-reusable-footer" },
             { "dashedName": "lecture-working-with-data-in-react" },
+            { "dashedName": "workshop-reusable-profile-card-component" },
+            { "dashedName": "lab-mood-board" },
+            { "dashedName": "review-react-basics" },
             { "dashedName": "quiz-react-basics" }
           ]
         },
         {
           "dashedName": "react-state-hooks-and-routing",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "quiz-react-state-and-hooks" },
             { "dashedName": "quiz-advanced-react" }
@@ -557,6 +592,7 @@
         },
         {
           "dashedName": "performance",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-web-performance" },
             { "dashedName": "quiz-web-performance" }
@@ -564,6 +600,7 @@
         },
         {
           "dashedName": "css-libraries-and-frameworks",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-css-libraries-and-frameworks" },
             { "dashedName": "quiz-css-libraries-and-frameworks" }
@@ -571,6 +608,7 @@
         },
         {
           "dashedName": "testing",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-testing" },
             { "dashedName": "quiz-testing" }
@@ -578,6 +616,7 @@
         },
         {
           "dashedName": "typescript-fundamentals",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "review-typescript" },
             { "dashedName": "quiz-typescript" }
@@ -585,13 +624,21 @@
         },
         {
           "moduleType": "review",
+          "comingSoon": true,
           "dashedName": "review-front-end-libraries",
           "blocks": [{ "dashedName": "review-front-end-libraries" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-front-end-libraries",
+          "blocks": []
         }
       ]
     },
     {
       "dashedName": "relational-databases",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "bash-fundamentals",
@@ -657,7 +704,18 @@
       ]
     },
     {
+      "dashedName": "backend-javascript",
+      "comingSoon": true,
+      "modules": []
+    },
+    {
+      "dashedName": "python",
+      "comingSoon": true,
+      "modules": []
+    },
+    {
       "chapterType": "exam",
+      "comingSoon": true,
       "dashedName": "exam-certified-full-stack-developer",
       "modules": [
         {

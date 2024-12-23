@@ -2,7 +2,7 @@
   "name": "Responsive Web Design Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-responsive-web-design",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

@@ -2,7 +2,7 @@
   "name": "Build an Availability Table",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-availability-table",
   "superBlock": "full-stack-developer",

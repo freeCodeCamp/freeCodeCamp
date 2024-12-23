@@ -18,6 +18,7 @@ import {
   Spacer,
   Callout
 } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 
 // Local Utilities
 import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
@@ -25,6 +26,7 @@ import LearnLayout from '../../../components/layouts/learn';
 import type {
   ChallengeNode,
   ChallengeMeta,
+  NavigationPaths,
   Test,
   User
 } from '../../../redux/prop-types';
@@ -32,6 +34,7 @@ import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
+import { getChallengePaths } from '../utils/challenge-paths';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -102,6 +105,7 @@ interface ShowQuizProps {
   isChallengeCompleted: boolean;
   pageContext: {
     challengeMeta: ChallengeMeta;
+    nextCurriculumPaths: NavigationPaths;
   };
   isSignedIn: boolean;
   user: User;
@@ -142,7 +146,7 @@ const ShowQuiz = ({
       }
     }
   },
-  pageContext: { challengeMeta },
+  pageContext: { challengeMeta, nextCurriculumPaths },
   initTests,
   updateChallengeMeta,
   isChallengeCompleted,
@@ -158,7 +162,6 @@ const ShowQuiz = ({
   const { t } = useTranslation();
   const curLocation = useLocation();
 
-  const { nextChallengePath, prevChallengePath } = challengeMeta;
   const container = useRef<HTMLElement | null>(null);
 
   // `isPassed` is used as a flag to conditionally render the finish or submit button.
@@ -171,6 +174,7 @@ const ShowQuiz = ({
   const [showUnanswered, setShowUnanswered] = useState(false);
 
   const [exitConfirmed, setExitConfirmed] = useState(false);
+  const showNextCurriculum = useFeature('fcc-10').on;
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -271,11 +275,17 @@ const ShowQuiz = ({
 
   useEffect(() => {
     initTests(tests);
+    const challengePaths = getChallengePaths({
+      showNextCurriculum,
+      currentCurriculumPaths: challengeMeta,
+      nextCurriculumPaths
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
     container.current?.focus();
@@ -464,8 +474,6 @@ const ShowQuiz = ({
     <Hotkeys
       executeChallenge={!isPassed ? handleFinishQuiz : handleSubmitAndGo}
       containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
     >
       <LearnLayout>
         <Helmet

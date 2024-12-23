@@ -2,7 +2,7 @@
   "name": "Design a Business Card",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-business-card",
   "superBlock": "full-stack-developer",
