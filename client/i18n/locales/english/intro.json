@@ -2029,7 +2029,7 @@
         "title": "Basic CSS Review",
         "intro": [
           "Before you are quizzed on basic CSS concepts, you first need to review.",
-          "Open up this page to review concepts including <code>margin</code>, <code>padding</code>, CSS combinators, CSS Specificity and more."
+          "Open up this page to review concepts including <code>margin</code>, <code>padding</code>, CSS combinators, CSS specificity and more."
         ]
       },
       "quiz-basic-css": {
@@ -2080,7 +2080,7 @@
       "lecture-user-interface-design-fundamentals": {
         "title": "User Interface Design Fundamentals",
         "intro": [
-          "In these lecture videos, you will learn about the fundamentals of user interface (UI) design. You will learn about the terms you need to know to communicate with designers, visual heirarchy, scaling, alignment, whitespace, and much more."
+          "In these lecture videos, you will learn about the fundamentals of user interface (UI) design. You will learn about the terms you need to know to communicate with designers, visual hierarchy, scaling, alignment, whitespace, and much more."
         ]
       },
       "lecture-user-centered-design": {
@@ -2118,7 +2118,7 @@
         "title": "Build an Event Flyer Page",
         "intro": [
           "In this lab, you'll create an event flyer page.",
-          "You will practice aligning elements using absolute and relative CSS"
+          "You will practice aligning elements using absolute and relative CSS."
         ]
       },
       "review-css-relative-and-absolute-units": {
@@ -2137,7 +2137,7 @@
       "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css": {
         "title": "Working with Pseudo-Classes and Pseudo-Elements in CSS",
         "intro": [
-          "In these lecture videos, you will learn about pseudo-classes and pseudo-elements, alongisde their examples and how they work."
+          "In these lecture videos, you will learn about pseudo-classes and pseudo-elements, alongside their examples and how they work."
         ]
       },
       "workshop-greeting-card": {
