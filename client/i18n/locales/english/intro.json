@@ -2285,9 +2285,7 @@
       },
       "quiz-css-flexbox": {
         "title": "CSS Flexbox Quiz",
-        "intro": [
-          "Test what you've learned on CSS flexbox with this quiz."
-        ]
+        "intro": ["Test what you've learned on CSS flexbox with this quiz."]
       },
       "lecture-working-with-css-fonts": {
         "title": "Working with CSS Fonts",
