@@ -47,7 +47,9 @@ export const ThankYouMessage = ({
   const { t } = useTranslation();
   return (
     <>
-      <h1 data-playwright-test-label='main-head'>{t('donate.thank-you')}</h1>
+      <h1 data-playwright-test-label='main-head'>
+        {t('donate.thank-you-continued')}
+      </h1>
       {(askForDonation || thankContributon) && (
         <>
           <Spacer size='m' />
