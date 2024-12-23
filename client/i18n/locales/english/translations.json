@@ -513,7 +513,7 @@
     "completed": "Completed",
     "not-completed": "Not completed",
     "not-started": "Not started",
-    "steps-completed": "({{totalSteps}} steps)",
+    "steps-completed": "{{completedSteps}} of {{totalSteps}} steps complete",
     "test": "Test",
     "sorry-try-again": "Sorry, your code does not pass. Try again.",
     "sorry-keep-trying": "Sorry, your code does not pass. Keep trying.",
