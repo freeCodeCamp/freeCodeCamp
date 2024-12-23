@@ -13,6 +13,7 @@ import { ChapterIcon } from '../../../assets/chapter-icon';
 import { FsdChapters } from '../../../../../shared/config/chapters';
 import envData from '../../../../config/env.json';
 import Block from './block';
+import CheckMark from './check-mark';
 
 import './super-block-accordion.css';
 
@@ -101,6 +102,7 @@ const Chapter = ({
   completedSteps
 }: ChapterProps) => {
   const { t } = useTranslation();
+  const isComplete = completedSteps === totalSteps;
 
   return (
     <Disclosure as='li' className='chapter' defaultOpen={isExpanded}>
@@ -118,6 +120,9 @@ const Chapter = ({
               totalSteps,
               completedSteps
             })}
+          </span>
+          <span className='checkmark-wrap chapter-checkmark-wrap'>
+            <CheckMark isCompleted={isComplete} />
           </span>
           <span className='dropdown-wrap'>
             <DropDown />
@@ -139,6 +144,7 @@ const Module = ({
   completedSteps
 }: ModuleProps) => {
   const { t } = useTranslation();
+  const isComplete = completedSteps === totalSteps;
 
   return (
     <Disclosure as='li' defaultOpen={isExpanded}>
@@ -149,12 +155,17 @@ const Module = ({
           </span>
           {t(`intro:full-stack-developer.modules.${dashedName}`)}
         </div>
-        <span className='module-steps'>
-          {t('learn.steps-completed', {
-            totalSteps,
-            completedSteps
-          })}
-        </span>
+        <div className='module-button-right'>
+          <span className='module-steps'>
+            {t('learn.steps-completed', {
+              totalSteps,
+              completedSteps
+            })}
+          </span>
+          <span className='checkmark-wrap'>
+            <CheckMark isCompleted={isComplete} />
+          </span>
+        </div>
       </Disclosure.Button>
       <Disclosure.Panel as='ul' className='module-panel'>
         {children}

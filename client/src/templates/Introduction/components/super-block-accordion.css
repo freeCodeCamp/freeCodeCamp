@@ -45,9 +45,14 @@
   column-gap: 15px;
 }
 
-.super-block-accordion .dropdown-wrap {
+.super-block-accordion .dropdown-wrap,
+.super-block-accordion .checkmark-wrap {
   position: relative;
   top: 2px;
+}
+
+.super-block-accordion .chapter-checkmark-wrap {
+  right: 5px;
 }
 
 .super-block-accordion .module-button {
@@ -62,7 +67,8 @@
   gap: 10px;
 }
 
-.super-block-accordion .module-button-left {
+.super-block-accordion .module-button-left,
+.super-block-accordion .module-button-right {
   display: flex;
   align-items: center;
   gap: 10px;
