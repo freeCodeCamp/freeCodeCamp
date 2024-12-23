@@ -106,7 +106,9 @@
     "donate-now": "Doe agora",
     "confirm-amount": "Confirmar o valor",
     "play-scene": "Pressione Play",
-    "closed-caption": "Versão legendada"
+    "closed-caption": "Versão legendada",
+    "share-on-bluesky": "Share on BlueSky",
+    "share-on-threads": "Share on Threads"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -357,7 +359,7 @@
     "challenge": "Desafio",
     "completed": "Concluído",
     "add-linkedin": "Adicionar esta certificação ao meu perfil do LinkedIn",
-    "add-twitter": "Compartilhar esta certificação no Twitter",
+    "add-twitter": "Share this certification on X",
     "tweet": "Acabei de receber a certificação {{certTitle}} @freeCodeCamp! Confira aqui: {{certURL}}",
     "avatar": "Avatar de {{username}}",
     "joined": "Entrou em {{date}}",
@@ -366,7 +368,9 @@
     "points": "{{count}} ponto em {{date}}",
     "points_plural": "{{count}} pontos em {{date}}",
     "page-number": "{{pageNumber}} de {{totalPages}}",
-    "edit-my-profile": "Editar meu perfil"
+    "edit-my-profile": "Editar meu perfil",
+    "add-bluesky": "Share this certification on BlueSky",
+    "add-threads": "Share this certification on Threads"
   },
   "footer": {
     "tax-exempt-status": "O freeCodeCamp é uma organização beneficente 501(c)(3), isenta de impostos e apoiada por doações (Número de identificação fiscal federal dos Estados Unidos: 82-0779546).",
@@ -421,6 +425,7 @@
     "assignments": "Tarefas",
     "question": "Questão",
     "questions": "Questão",
+    "answered-mcq": "You have unanswered questions and/or incorrect answers.",
     "explanation": "Explicação",
     "solution-link": "Link da solução",
     "source-code-link": "Link do código-fonte",
@@ -1055,8 +1060,8 @@
       "responsive-web-design-cert": "Responsive Web Design Certification",
       "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures",
       "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta)",
-      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript Algorithms and Data Structures (Beta) Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript Algorithms and Data Structures Certification",
       "front-end-development-libraries": "Front End Development Libraries",
       "front-end-development-libraries-cert": "Front End Development Libraries Certification",
       "data-visualization": "Data Visualization",
