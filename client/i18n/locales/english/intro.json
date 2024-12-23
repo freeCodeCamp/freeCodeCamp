@@ -2222,7 +2222,7 @@
       "quiz-styling-forms": {
         "title": "Styling Forms Quiz",
         "intro": [
-          "In this quix, you will test what you've learned on how to style forms."
+          "In this quiz, you will test what you've learned on how to style forms."
         ]
       },
       "lecture-working-with-css-transforms-overflow-and-filters": {
@@ -2286,7 +2286,7 @@
       "quiz-css-flexbox": {
         "title": "CSS Flexbox Quiz",
         "intro": [
-          "Test what you've learned on CSS flexbox with this quiz of using."
+          "Test what you've learned on CSS flexbox with this quiz."
         ]
       },
       "lecture-working-with-css-fonts": {
@@ -2342,7 +2342,7 @@
       "review-css-accessibility": {
         "title": "CSS Accessibility Review",
         "intro": [
-          "Before you are quizzed on CSS and accessibility, you first need to review what you've learned on it.",
+          "Before you are quizzed on CSS and accessibility, you first need to review what you've learned about them.",
           "Open up this page to review concepts like color contrast tools and accessibility best practices."
         ]
       },
@@ -2374,7 +2374,7 @@
       "review-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of CSS attribute selectors, you first need to review what you've learned on it.",
+          "Before you are quizzed on the fundamentals of CSS attribute selectors, you first need to review what you've learned about them.",
           "Open up this page to review concepts like how to work with different attribute selectors that target links with the <code>href</code> and <code>title</code> attributes."
         ]
       },
@@ -2407,7 +2407,7 @@
       "review-css-positioning": {
         "title": "CSS Positioning Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of CSS positioning concepts, you first need to review what you've learned on the topic.",
+          "Before you are quizzed on the fundamentals of CSS positioning concepts, you first need to review what you've learned about them.",
           "Open up this page to review concepts like floats, relative positioning, absolute positioning and more."
         ]
       },
@@ -3448,7 +3448,7 @@
       "quiz-react-state-and-hooks": {
         "title": "React State and Hooks Quiz",
         "intro": [
-          "Test what you've learned on  React State and Hooks with this quiz."
+          "Test what you've learned on React State and Hooks with this quiz."
         ]
       },
       "ftmi": { "title": "275", "intro": [] },
@@ -3584,7 +3584,7 @@
       },
       "quiz-bash-scripting": {
         "title": "Bash Scripting Quiz",
-        "intro": ["Test what you've learned on bash scripting in this quiz on."]
+        "intro": ["Test what you've learned on bash scripting in this quiz."]
       },
       "tkgg": { "title": "315", "intro": [] },
       "workshop-sql-student-database-part-1": {
