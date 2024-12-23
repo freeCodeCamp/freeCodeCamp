@@ -106,7 +106,9 @@
     "donate-now": "Задонатити",
     "confirm-amount": "Підтвердити суму",
     "play-scene": "Натисніть «Відтворити»",
-    "closed-caption": "Приховані субтитри"
+    "closed-caption": "Приховані субтитри",
+    "share-on-bluesky": "Поділитись на BlueSky",
+    "share-on-threads": "Поділитись на Threads"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати безоплатно.",
@@ -357,7 +359,7 @@
     "challenge": "Завдання",
     "completed": "Виконано",
     "add-linkedin": "Додати цю сертифікацію до мого профілю LinkedIn",
-    "add-twitter": "Поділитися цією сертифікацією у Twitter",
+    "add-twitter": "Поділитись сертифікацією на X",
     "tweet": "Я щойно отримав(-ла) сертифікацію {{certTitle}} від @freeCodeCamp! Перегляньте її тут: {{certURL}}",
     "avatar": "Аватар {{username}}",
     "joined": "Приєднався(-лась) {{date}}",
@@ -366,7 +368,9 @@
     "points": "{{count}}х балів станом на {{date}}",
     "points_plural": "{{count}}х балів станом на {{date}}",
     "page-number": "{{pageNumber}} з {{totalPages}}",
-    "edit-my-profile": "Редагувати профіль"
+    "edit-my-profile": "Редагувати профіль",
+    "add-bluesky": "Поділитись сертифікацією на BlueSky",
+    "add-threads": "Поділитись сертифікацією на Threads"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp — це некомерційна організація, яка підтримується спонсорськими внесками та звільнена від сплати податків 501(c)(3) (Федеральний ідентифікаційний номер платника податків США: 82-0779546).",
@@ -421,6 +425,7 @@
     "assignments": "Завдання",
     "question": "Запитання",
     "questions": "Запитання",
+    "answered-mcq": "Ви не відповіли на всі запитання та/або допустились помилок.",
     "explanation": "Пояснення",
     "solution-link": "Посилання на розв’язок",
     "source-code-link": "Посилання на вихідний код",
@@ -547,7 +552,7 @@
       "correct-answers": "Правильних відповідей: {{ n }}",
       "percent-correct": "Відсоток правильних відповідей: {{ n }}%",
       "passed-message": "Вітаємо! Ви пройшли екзамен та можете отримати сертифікацію.",
-      "not-passed-message": "На жаль, ви не відповіли на достатню кількість запитань, щоб пройти екзамен.",
+      "not-passed-message": "На жаль, ви не відповіли на достатню кількість запитань, щоб скласти екзамен.",
       "results-header": "Результати «{{ title }}»",
       "question-results": "Ви правильно відповіли на {{ n }} з {{ q }} запитань",
       "percent-results": "{{ p }}% правильно",
@@ -1055,8 +1060,8 @@
       "responsive-web-design-cert": "Сертифікація «Адаптивний вебдизайн»",
       "javascript-algorithms-and-data-structures": "Алгоритми та структури даних JavaScript (стара версія)",
       "javascript-algorithms-and-data-structures-cert": "Сертифікація «Алгоритми та структури даних JavaScript» (стара версія)",
-      "javascript-algorithms-and-data-structures-v8": "Алгоритми та структури даних JavaScript (бета-версія)",
-      "javascript-algorithms-and-data-structures-v8-cert": "Сертифікація «Алгоритми та структури даних JavaScript» (бета-версія)",
+      "javascript-algorithms-and-data-structures-v8": "Алгоритми та структури даних JavaScript",
+      "javascript-algorithms-and-data-structures-v8-cert": "Сертифікація «Алгоритми та структури даних JavaScript»",
       "front-end-development-libraries": "Бібліотеки Front End",
       "front-end-development-libraries-cert": "Сертифікація «Бібліотеки Front End»",
       "data-visualization": "Візуалізація даних",

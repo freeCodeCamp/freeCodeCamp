@@ -106,7 +106,9 @@
     "donate-now": "寄付する",
     "confirm-amount": "金額を選択",
     "play-scene": "再生",
-    "closed-caption": "クローズドキャプション"
+    "closed-caption": "クローズドキャプション",
+    "share-on-bluesky": "Share on BlueSky",
+    "share-on-threads": "Share on Threads"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -357,7 +359,7 @@
     "challenge": "チャレンジ",
     "completed": "完了日",
     "add-linkedin": "この認定証を LinkedIn のプロフィールに追加",
-    "add-twitter": "この認定証を Twitter で共有",
+    "add-twitter": "Share this certification on X",
     "tweet": "{{certTitle}} の認定証を @freeCodeCamp で取得しました！確認はこちら: {{certURL}}",
     "avatar": "{{username}} のアバター",
     "joined": "加入: {{date}}",
@@ -366,7 +368,9 @@
     "points": "{{count}} ポイント ({{date}})",
     "points_plural": "{{count}} ポイント ({{date}})",
     "page-number": "{{pageNumber}} / {{totalPages}}",
-    "edit-my-profile": "プロフィールを編集"
+    "edit-my-profile": "プロフィールを編集",
+    "add-bluesky": "Share this certification on BlueSky",
+    "add-threads": "Share this certification on Threads"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp は皆様からの寄付により支えられている非課税の 501(c)(3) 慈善団体です。(United States Federal Tax Identification Number: 82-0779546)",
@@ -421,6 +425,7 @@
     "assignments": "課題",
     "question": "質問",
     "questions": "質問",
+    "answered-mcq": "You have unanswered questions and/or incorrect answers.",
     "explanation": "解説",
     "solution-link": "回答のリンク",
     "source-code-link": "ソースコードのリンク",
@@ -1055,8 +1060,8 @@
       "responsive-web-design-cert": "レスポンシブウェブデザイン認定証",
       "javascript-algorithms-and-data-structures": "旧 JavaScript アルゴリズムとデータ構造",
       "javascript-algorithms-and-data-structures-cert": "旧 JavaScript アルゴリズムとデータ構造認定証",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript アルゴリズムとデータ構造 (ベータ版)",
-      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript アルゴリズムとデータ構造 (ベータ版) 認定証",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript Algorithms and Data Structures Certification",
       "front-end-development-libraries": "フロントエンド開発ライブラリ",
       "front-end-development-libraries-cert": "フロントエンド開発ライブラリ認定証",
       "data-visualization": "データ可視化",
