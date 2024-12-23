@@ -22,12 +22,14 @@ interface ChapterProps {
   dashedName: string;
   children: ReactNode;
   isExpanded: boolean;
+  totalSteps: number;
 }
 
 interface ModuleProps {
   dashedName: string;
   children: ReactNode;
   isExpanded: boolean;
+  totalSteps: number;
 }
 interface SuperBlockTreeViewProps {
   challenges: ChallengeNode['challenge'][];
@@ -88,7 +90,12 @@ const getBlockToModuleMap = () => {
 const blockToChapterMap = getBlockToChapterMap();
 const blockToModuleMap = getBlockToModuleMap();
 
-const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
+const Chapter = ({
+  dashedName,
+  children,
+  isExpanded,
+  totalSteps
+}: ChapterProps) => {
   const { t } = useTranslation();
 
   return (
@@ -100,6 +107,11 @@ const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
             chapter={dashedName as FsdChapters}
           />
           {t(`intro:full-stack-developer.chapters.${dashedName}`)}
+          <span className='chapter-steps'>
+            {t('learn.steps-completed', {
+              totalSteps
+            })}
+          </span>
         </div>
         <DropDown />
       </Disclosure.Button>
@@ -110,7 +122,12 @@ const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
   );
 };
 
-const Module = ({ dashedName, children, isExpanded }: ModuleProps) => {
+const Module = ({
+  dashedName,
+  children,
+  isExpanded,
+  totalSteps
+}: ModuleProps) => {
   const { t } = useTranslation();
 
   return (
@@ -118,6 +135,11 @@ const Module = ({ dashedName, children, isExpanded }: ModuleProps) => {
       <Disclosure.Button className='module-button'>
         <DropDown />
         {t(`intro:full-stack-developer.modules.${dashedName}`)}
+        <span className='module-steps'>
+          {t('learn.steps-completed', {
+            totalSteps
+          })}
+        </span>
       </Disclosure.Button>
       <Disclosure.Panel as='ul' className='module-panel'>
         {children}
@@ -220,11 +242,18 @@ export const SuperBlockAccordion = ({
           );
         }
 
+        let chapterSteps = 0;
+        chapter.modules.forEach(module => {
+          const { blocks } = module;
+          blocks.forEach(block => (chapterSteps += block.challenges.length));
+        });
+
         return (
           <Chapter
             key={chapter.name}
             dashedName={chapter.name}
             isExpanded={expandedChapter === chapter.name}
+            totalSteps={chapterSteps}
           >
             {chapter.modules.map(module => {
               // show coming soon on production, and all the challenges in dev
@@ -248,11 +277,17 @@ export const SuperBlockAccordion = ({
                 );
               }
 
+              let moduleSteps = 0;
+              module.blocks.forEach(block => {
+                moduleSteps += block.challenges.length;
+              });
+
               return (
                 <Module
                   key={module.name}
                   dashedName={module.name}
                   isExpanded={expandedModule === module.name}
+                  totalSteps={moduleSteps}
                 >
                   {module.blocks.map(block => (
                     // maybe TODO: allow blocks to be "coming soon"

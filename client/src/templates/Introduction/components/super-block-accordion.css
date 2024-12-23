@@ -32,6 +32,14 @@
   justify-content: space-between;
 }
 
+.super-block-accordion .chapter-steps {
+  font-size: 0.75em;
+}
+
+.super-block-accordion .module-steps {
+  font-size: 0.75em;
+}
+
 .super-block-accordion .chapter-button .chapter-icon-and-text {
   display: flex;
   align-items: center;
