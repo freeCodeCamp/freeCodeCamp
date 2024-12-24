@@ -106,7 +106,10 @@ const Chapter = ({
 
   return (
     <Disclosure as='li' className='chapter' defaultOpen={isExpanded}>
-      <Disclosure.Button className='chapter-button'>
+      <Disclosure.Button
+        className='chapter-button'
+        data-playwright-test-label='chapter-button'
+      >
         <div className='chapter-button-left'>
           <ChapterIcon
             className='map-icon'
