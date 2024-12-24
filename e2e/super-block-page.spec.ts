@@ -103,11 +103,6 @@ test.describe('Super Block Page - Authenticated User', () => {
   });
 
   test.describe('Super Block in Accordion View', () => {
-    test.skip(
-      () => process.env.SHOW_UPCOMING_CHANGES !== 'true',
-      'The FSD superblock is not available if SHOW_UPCOMING_CHANGES is false'
-    );
-
     test('should expand the correct block when user goes to the page from breadcrumb click', async ({
       page
     }) => {
@@ -279,11 +274,6 @@ test.describe('Super Block Page - Unauthenticated User', () => {
   });
 
   test.describe('Super Block in Accordion View', () => {
-    test.skip(
-      () => process.env.SHOW_UPCOMING_CHANGES !== 'true',
-      'The FSD superblock is not available if SHOW_UPCOMING_CHANGES is false'
-    );
-
     test('should expand the first block of the super block', async ({
       page
     }) => {
