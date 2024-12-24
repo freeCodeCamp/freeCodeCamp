@@ -235,16 +235,6 @@ textarea.inputarea {
   gap: 20px;
 }
 
-.utility-bar button {
-  display: flex;
-  width: 50%;
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.3rem;
-}
-
 .utility-bar .utility-bar-top {
   width: 100%;
   display: flex;
@@ -264,6 +254,16 @@ textarea.inputarea {
   width: 100%;
   display: flex;
   gap: 0.75rem;
+}
+
+.utility-bar .utility-bar-bottom button {
+  display: flex;
+  width: 50%;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .progress-bar-container {
