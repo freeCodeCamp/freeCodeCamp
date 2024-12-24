@@ -14,7 +14,7 @@ describe('Share Template Testing', () => {
   );
   test('Testing share template Click Redirect Event', () => {
     const twitterLink = screen.queryByRole('link', {
-      name: 'buttons.tweet aria.opens-new-window'
+      name: 'buttons.share-on-x aria.opens-new-window'
     });
 
     expect(twitterLink).toBeInTheDocument();
