@@ -9,6 +9,10 @@
   background-color: white;
 }
 
+.challenge-preview-frame-no-min-height {
+  min-height: 0 !important;
+}
+
 .enable-iframe {
   pointer-events: auto;
 }

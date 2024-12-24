@@ -10,12 +10,14 @@ export interface PreviewProps {
   disableIframe?: boolean;
   previewMounted: () => void;
   previewId?: string;
+  useNoMinHeight?: boolean;
 }
 
 function Preview({
   disableIframe,
   previewMounted,
-  previewId
+  previewId,
+  useNoMinHeight = false
 }: PreviewProps): JSX.Element {
   const { t } = useTranslation();
   const [iframeStatus, setIframeStatus] = useState<boolean | undefined>(false);
@@ -43,7 +45,9 @@ function Preview({
       className={`notranslate challenge-preview ${iframeToggle}-iframe`}
     >
       <iframe
-        className={'challenge-preview-frame'}
+        className={`challenge-preview-frame ${
+          useNoMinHeight ? 'challenge-preview-frame-no-min-height' : ''
+        }`}
         id={id}
         title={t('learn.chal-preview')}
       />
