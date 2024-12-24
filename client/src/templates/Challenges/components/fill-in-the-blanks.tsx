@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
 import { Spacer } from '@freecodecamp/ui';
+
 import { parseBlanks } from '../fill-in-the-blank/parse-blanks';
 import PrismFormatted from '../components/prism-formatted';
 import { FillInTheBlank } from '../../../redux/prop-types';
@@ -26,10 +26,14 @@ function FillInTheBlanks({
 }: FillInTheBlankProps): JSX.Element {
   const { t } = useTranslation();
 
-  const addInputClass = (index: number): string => {
-    if (answersCorrect[index] === true) return 'green-underline';
-    if (answersCorrect[index] === false) return 'red-underline';
-    return '';
+  const getInputClass = (index: number): string => {
+    let cls = 'fill-in-the-blank-input';
+
+    if (answersCorrect[index] === false) {
+      cls += ' incorrect-blank-answer';
+    }
+
+    return cls;
   };
 
   const paragraphs = parseBlanks(sentence);
@@ -37,7 +41,7 @@ function FillInTheBlanks({
 
   return (
     <>
-      <ChallengeHeading heading={t('learn.fill-in-the-blank')} />
+      <ChallengeHeading heading={t('learn.fill-in-the-blank.heading')} />
       <Spacer size='xs' />
       <div className='fill-in-the-blank-wrap'>
         {paragraphs.map((p, i) => {
@@ -47,36 +51,49 @@ function FillInTheBlanks({
             <p key={i}>
               {p.map((node, j) => {
                 const { type, value } = node;
-                if (type === 'text') return value;
-                if (type === 'blank')
+                if (type === 'text') {
+                  return value;
+                }
+
+                // If a blank is answered correctly, render the answer as part of the sentence.
+                if (type === 'blank' && answersCorrect[value] === true) {
                   return (
-                    <input
-                      key={j}
-                      type='text'
-                      maxLength={blankAnswers[value].length + 3}
-                      className={`fill-in-the-blank-input ${addInputClass(
-                        value
-                      )}`}
-                      onChange={handleInputChange}
-                      data-index={node.value}
-                      size={blankAnswers[value].length}
-                      aria-label={t('learn.blank')}
-                    />
+                    <span key={j} className='correct-blank-answer'>
+                      {blankAnswers[value]}
+                    </span>
                   );
+                }
+
+                return (
+                  <input
+                    key={j}
+                    type='text'
+                    maxLength={blankAnswers[value].length + 3}
+                    className={getInputClass(value)}
+                    onChange={handleInputChange}
+                    data-index={node.value}
+                    size={blankAnswers[value].length}
+                    autoComplete='off'
+                    aria-label={t('learn.fill-in-the-blank.blank')}
+                    {...(answersCorrect[value] === false
+                      ? { 'aria-invalid': 'true' }
+                      : {})}
+                  />
+                );
               })}
             </p>
           );
         })}
       </div>
       <Spacer size='m' />
-      {showFeedback && feedback && (
-        <>
-          <PrismFormatted text={feedback} />
-          <Spacer size='m' />
-        </>
-      )}
-      <div className='text-center'>
-        {showWrong && <span>{t('learn.wrong-answer')}</span>}
+      <div aria-live='polite'>
+        {showWrong && (
+          <div className='text-center'>
+            <span>{t('learn.wrong-answer')}</span>
+            <Spacer size='m' />
+          </div>
+        )}
+        {showFeedback && feedback && <PrismFormatted text={feedback} />}
       </div>
     </>
   );
