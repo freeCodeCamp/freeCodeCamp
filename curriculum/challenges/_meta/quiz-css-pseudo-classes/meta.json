@@ -2,7 +2,7 @@
   "name": "CSS Pseudo-classes Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-css-pseudo-classes",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed9002f45ce3ece4053eb6", "title": "CSS Pseudo-classes Quiz" }],

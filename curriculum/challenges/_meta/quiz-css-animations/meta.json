@@ -2,7 +2,7 @@
   "name": "CSS Animations Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-css-animations",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed8fc9f45ce3ece4053eae", "title": "CSS Animations Quiz" }],

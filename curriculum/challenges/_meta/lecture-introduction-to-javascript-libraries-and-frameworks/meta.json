@@ -2,7 +2,7 @@
   "name": "Introduction to JavaScript Libraries and Frameworks",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

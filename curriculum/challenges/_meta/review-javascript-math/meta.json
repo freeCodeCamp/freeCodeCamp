@@ -2,7 +2,7 @@
   "name": "JavaScript Math Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-javascript-math",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

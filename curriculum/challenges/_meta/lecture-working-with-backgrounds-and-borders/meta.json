@@ -2,7 +2,7 @@
   "name": "Working with Backgrounds and Borders",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-backgrounds-and-borders",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

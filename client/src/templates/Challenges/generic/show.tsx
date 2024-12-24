@@ -156,6 +156,9 @@ const ShowGeneric = ({
   const [submittedMcqAnswers, setSubmittedMcqAnswers] = useState(
     questions.map<number | null>(() => null)
   );
+
+  const [hasAnsweredMcqCorrectly, sethasAnsweredMcqCorrectly] = useState(true);
+
   const [showFeedback, setShowFeedback] = useState(false);
 
   const showNextCurriculum = useFeature('fcc-10').on;
@@ -171,7 +174,6 @@ const ShowGeneric = ({
     );
   };
 
-  // submit
   const handleSubmit = () => {
     const hasCompletedAssignments =
       assignments.length === 0 || allAssignmentsCompleted;
@@ -182,6 +184,12 @@ const ShowGeneric = ({
     setShowFeedback(true);
     if (hasCompletedAssignments && mcqCorrect) {
       openCompletionModal();
+    }
+
+    if (mcqSolutions.length > selectedMcqOptions.length || !mcqCorrect) {
+      sethasAnsweredMcqCorrectly(false);
+    } else {
+      sethasAnsweredMcqCorrectly(true);
     }
   };
 
@@ -209,7 +217,10 @@ const ShowGeneric = ({
 
             {description && (
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <ChallengeDescription description={description} />
+                <ChallengeDescription
+                  description={description}
+                  superBlock={superBlock}
+                />
                 <Spacer size='m' />
               </Col>
             )}
@@ -231,7 +242,10 @@ const ShowGeneric = ({
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               {instructions && (
-                <ChallengeDescription instructions={instructions} />
+                <ChallengeDescription
+                  instructions={instructions}
+                  superBlock={superBlock}
+                />
               )}
 
               <Spacer size='m' />
@@ -257,6 +271,10 @@ const ShowGeneric = ({
               {explanation ? (
                 <ChallengeExplanation explanation={explanation} />
               ) : null}
+
+              {!hasAnsweredMcqCorrectly && (
+                <p className='text-center'>{t('learn.answered-mcq')}</p>
+              )}
 
               <Button block={true} variant='primary' onClick={handleSubmit}>
                 {blockType === BlockTypes.review

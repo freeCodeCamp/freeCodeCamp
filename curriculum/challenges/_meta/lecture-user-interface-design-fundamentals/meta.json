@@ -2,7 +2,7 @@
   "name": "User Interface Design Fundamentals",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-user-interface-design-fundamentals",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

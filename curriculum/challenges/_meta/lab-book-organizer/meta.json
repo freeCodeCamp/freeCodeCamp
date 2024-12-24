@@ -1,6 +1,6 @@
 {
   "name": "Build a Book Organizer",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-book-organizer",
   "superBlock": "full-stack-developer",

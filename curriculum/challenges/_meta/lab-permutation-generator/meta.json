@@ -1,6 +1,6 @@
 {
   "name": "Build a Permutation Generator",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-permutation-generator",
   "superBlock": "full-stack-developer",

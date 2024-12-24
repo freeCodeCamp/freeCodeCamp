@@ -2,7 +2,7 @@
   "name": "Working with Data Types",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-data-types",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

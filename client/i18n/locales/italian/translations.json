@@ -106,7 +106,9 @@
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
     "play-scene": "Press Play",
-    "closed-caption": "Closed caption"
+    "closed-caption": "Closed caption",
+    "share-on-bluesky": "Share on BlueSky",
+    "share-on-threads": "Share on Threads"
   },
   "landing": {
     "big-heading-1": "Impara a programmare — gratis.",
@@ -167,6 +169,7 @@
     "interview-prep-heading": "Preparati per la ricerca di colloqui di lavoro da sviluppatore:",
     "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
     "next-heading": "Try our beta curriculum:",
+    "next-english-heading": "Try our latest English curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "faq": "Domande frequenti:",
     "faqs": [
@@ -356,7 +359,7 @@
     "challenge": "Sfida",
     "completed": "Completata",
     "add-linkedin": "Aggiungi questa certificazione al mio profilo LinkedIn",
-    "add-twitter": "Condividi questa certificazione su Twitter",
+    "add-twitter": "Share this certification on X",
     "tweet": "Ho appena ottenuto la {{certTitle}} @freeCodeCamp! Guarda qui: {{certURL}}",
     "avatar": "avatar di {{username}}",
     "joined": "Iscritto da {{date}}",
@@ -365,7 +368,9 @@
     "points": "{{count}} punto il {{date}}",
     "points_plural": "{{count}} punti il {{date}}",
     "page-number": "{{pageNumber}} di {{totalPages}}",
-    "edit-my-profile": "Edit My Profile"
+    "edit-my-profile": "Edit My Profile",
+    "add-bluesky": "Share this certification on BlueSky",
+    "add-threads": "Share this certification on Threads"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -420,6 +425,7 @@
     "assignments": "Attività",
     "question": "Domande",
     "questions": "Questions",
+    "answered-mcq": "You have unanswered questions and/or incorrect answers.",
     "explanation": "Explanation",
     "solution-link": "Link alla soluzione",
     "source-code-link": "Source Code Link",
@@ -505,6 +511,7 @@
     "complete-both-steps": "Completa entrambi gli step qua sotto per finire la sfida.",
     "runs-in-vm": "Il progetto esegue in una macchina virtuale, completa le user story descritte lì dentro e fai passare tutti i test per finire lo step 1.",
     "completed": "Completato",
+    "not-completed": "Not completed",
     "not-started": "Non iniziato",
     "test": "Test",
     "sorry-try-again": "Il tuo codice non è corretto. Riprova.",
@@ -1053,8 +1060,8 @@
       "responsive-web-design-cert": "Responsive Web Design Certification",
       "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures",
       "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta)",
-      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript Algorithms and Data Structures (Beta) Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript Algorithms and Data Structures Certification",
       "front-end-development-libraries": "Front End Development Libraries",
       "front-end-development-libraries-cert": "Front End Development Libraries Certification",
       "data-visualization": "Data Visualization",

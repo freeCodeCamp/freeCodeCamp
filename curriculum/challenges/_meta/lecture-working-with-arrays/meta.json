@@ -2,7 +2,7 @@
   "name": "Working with Arrays",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-arrays",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

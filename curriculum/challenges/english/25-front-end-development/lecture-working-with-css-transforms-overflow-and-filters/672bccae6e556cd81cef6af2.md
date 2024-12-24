@@ -2,7 +2,7 @@
 id: 672bccae6e556cd81cef6af2
 title: What Is Margin Collapsing, and How Does It Work?
 challengeType: 11
-videoId: nVAaxZ34khk
+videoId: MMWBC8duT_0
 dashedName: what-is-margin-collapsing
 ---
 

@@ -106,7 +106,9 @@
     "donate-now": "立即捐款",
     "confirm-amount": "確認金額",
     "play-scene": "點擊播放",
-    "closed-caption": "關閉標題"
+    "closed-caption": "關閉標題",
+    "share-on-bluesky": "Share on BlueSky",
+    "share-on-threads": "Share on Threads"
   },
   "landing": {
     "big-heading-1": "免費學習編程",
@@ -167,6 +169,7 @@
     "interview-prep-heading": "爲開發人員面試求職做好準備：",
     "legacy-curriculum-heading": "探索我們的舊版課程：",
     "next-heading": "Try our beta curriculum:",
+    "next-english-heading": "Try our latest English curriculum:",
     "upcoming-heading": "即將推出的課程：",
     "faq": "常見問題：",
     "faqs": [
@@ -356,7 +359,7 @@
     "challenge": "挑戰",
     "completed": "已完成",
     "add-linkedin": "將此認證添加到我的 LinkedIn 個人資料",
-    "add-twitter": "將此認證分享到 Twitter",
+    "add-twitter": "Share this certification on X",
     "tweet": "我獲得了 {{certTitle}} 認證 @freeCodeCamp！在這裏查看：{{certURL}}",
     "avatar": "{{username}} 的頭像",
     "joined": "於 {{date}} 加入",
@@ -365,7 +368,9 @@
     "points": "{{date}} 獲得 {{count}} 分",
     "points_plural": "{{date}} 獲得 {{count}} 分",
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁",
-    "edit-my-profile": "Edit My Profile"
+    "edit-my-profile": "Edit My Profile",
+    "add-bluesky": "Share this certification on BlueSky",
+    "add-threads": "Share this certification on Threads"
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 條款下具有免稅資格的慈善組織（稅號：82-0779546）。",
@@ -420,6 +425,7 @@
     "assignments": "任務",
     "question": "問題",
     "questions": "Questions",
+    "answered-mcq": "You have unanswered questions and/or incorrect answers.",
     "explanation": "Explanation",
     "solution-link": "解決方案鏈接",
     "source-code-link": "源代碼鏈接",
@@ -505,6 +511,7 @@
     "complete-both-steps": "完成下面的兩個步驟來完成這一挑戰。",
     "runs-in-vm": "該項目在虛擬機中運行，完成在那裏描述的用戶故事，獲取所有測試並通過它們以完成步驟 1。",
     "completed": "已完成",
+    "not-completed": "Not completed",
     "not-started": "未開始",
     "test": "測試",
     "sorry-try-again": "抱歉，你的代碼未通過，再試一次。",
@@ -1053,8 +1060,8 @@
       "responsive-web-design-cert": "Responsive Web Design Certification",
       "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures",
       "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures (Beta)",
-      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript Algorithms and Data Structures (Beta) Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript Algorithms and Data Structures Certification",
       "front-end-development-libraries": "Front End Development Libraries",
       "front-end-development-libraries-cert": "Front End Development Libraries Certification",
       "data-visualization": "Data Visualization",

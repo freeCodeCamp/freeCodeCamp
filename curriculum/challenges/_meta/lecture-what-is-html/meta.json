@@ -1,6 +1,6 @@
 {
   "name": "What is HTML?",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-what-is-html",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66f6db08d55022680a3cfbc9", "title": "What Is HTML, and What Role Does It Play on the Web?" }],

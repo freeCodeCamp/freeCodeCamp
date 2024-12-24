@@ -45,13 +45,18 @@ const updateCardErrorMessage = i18next.t('donate.error-3');
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
+  const recentlyClaimedBlock = yield select(recentlyClaimedBlockSelector);
   const MODAL_SHOWN_KEY = 'modalShownTimestamp';
   const modalShownTimestamp = sessionStorage.getItem(MODAL_SHOWN_KEY);
   const isModalRecentlyShown = Date.now() - modalShownTimestamp < 20000;
-
-  if (shouldRequestDonation || isModalRecentlyShown) {
+  if (
+    shouldRequestDonation &&
+    recentlyClaimedBlock &&
+    recentlyClaimedBlock.superBlock === 'full-stack-developer'
+  ) {
+    yield put(preventBlockDonationRequests());
+  } else if (shouldRequestDonation || isModalRecentlyShown) {
     yield delay(200);
-    const recentlyClaimedBlock = yield select(recentlyClaimedBlockSelector);
     yield put(openDonationModal());
     sessionStorage.setItem(MODAL_SHOWN_KEY, Date.now());
     yield take(appTypes.closeDonationModal);

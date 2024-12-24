@@ -2,7 +2,7 @@
   "name": "CSS Grid Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-css-grid",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed8fedf45ce3ece4053eb3", "title": "CSS Grid Quiz" }],

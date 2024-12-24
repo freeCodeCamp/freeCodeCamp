@@ -2,7 +2,7 @@
   "name": "CSS Positioning Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-css-positioning",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

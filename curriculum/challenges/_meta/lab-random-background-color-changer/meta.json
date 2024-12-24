@@ -2,7 +2,7 @@
   "name": "Debug a Random Background Color Changer",
   "blockLayout": "link",
   "blockType": "lab",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-random-background-color-changer",
   "superBlock": "full-stack-developer",

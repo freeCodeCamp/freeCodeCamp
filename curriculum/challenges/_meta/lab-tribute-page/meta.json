@@ -2,7 +2,7 @@
   "name": "Build a Tribute Page",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-tribute-page",
   "superBlock": "full-stack-developer",

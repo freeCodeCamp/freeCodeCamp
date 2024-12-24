@@ -2,7 +2,7 @@
   "name": "Build a Factorial Calculator ",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-factorial-calculator",
   "superBlock": "full-stack-developer",

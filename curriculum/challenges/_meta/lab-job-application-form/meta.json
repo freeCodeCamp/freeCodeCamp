@@ -2,7 +2,7 @@
   "name": "Build a Job Application Form",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-job-application-form",
   "superBlock": "full-stack-developer",
