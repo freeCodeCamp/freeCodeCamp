@@ -1609,7 +1609,9 @@
       },
       "learn-future-continuous-while-describing-actions": {
         "title": "Aprende el futuro continuo describiendo acciones",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to use the Future Continuous tense, and how to describe actions to be performed."
+        ]
       },
       "learn-how-to-use-conditionals": {
         "title": "Aprende a utilizar los condicionales",
@@ -2162,15 +2164,13 @@
       "review-css-pseudo-classes": {
         "title": "CSS Pseudo-classes Review",
         "intro": [
-          "Before you are quizzed on CSS pseudo-classes and pseudo-elements, you first need to review.",
+          "Before you're quizzed on CSS pseudo-classes and pseudo-elements, you should review what you've learned about them.",
           "Open up this page to review concepts like the <code>::before</code> and <code>::after</code> pseudo-elements as well as the <code>:hover</code>, <code>:active</code> pseudo-classes and more."
         ]
       },
       "quiz-css-pseudo-classes": {
         "title": "CSS Pseudo-classes Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of pseudo-classes in CSS."
-        ]
+        "intro": ["Test your knowledge of CSS pseudo-classes with this quiz."]
       },
       "lecture-working-with-colors-in-css": {
         "title": "Working with Colors in CSS",
@@ -2193,15 +2193,13 @@
       "review-css-colors": {
         "title": "CSS Colors Review",
         "intro": [
-          "Before you are quizzed on CSS colors, you first need to review.",
+          "Before you're quizzed on CSS colors, you should review what you've learned about them.",
           "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, <code>hex codes</code>, and more."
         ]
       },
       "quiz-css-colors": {
         "title": "CSS Colors Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of using colors in CSS."
-        ]
+        "intro": ["Test your knowledge of CSS colors with this quiz."]
       },
       "lecture-best-practices-for-styling-forms": {
         "title": "Best Practices for Styling Forms",
@@ -2212,7 +2210,6 @@
       "workshop-registration-form": {
         "title": "Design a Registration Form",
         "intro": [
-          "You can use HTML forms to collect information from people who visit your webpage.",
           "In this workshop, you'll learn how to design HTML forms by designing a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
         ]
       },
@@ -2225,14 +2222,14 @@
       "review-styling-forms": {
         "title": "Styling Forms Review",
         "intro": [
-          "Before you are quizzed on styling forms, you first need to review.",
+          "Before you're quizzed on styling forms, you should review what you've learned.",
           "Open up this page to review how to style form inputs, working with <code>appearance: none</code> and more."
         ]
       },
       "quiz-styling-forms": {
         "title": "Styling Forms Quiz",
         "intro": [
-          "Test what you've learned in this quiz of how to style forms using CSS."
+          "In this quiz, you will test your knowledge of how to style forms."
         ]
       },
       "lecture-working-with-css-transforms-overflow-and-filters": {
@@ -2264,7 +2261,7 @@
       "quiz-css-layout-and-effects": {
         "title": "CSS Layout and Effects Quiz",
         "intro": [
-          "Test what you've learned in this quiz of the box model, transforms, filters, and overflow in CSS."
+          "In this quiz, you will test your knowledge of the box model, transforms, filters, and overflow in CSS."
         ]
       },
       "lecture-working-with-css-flexbox": {
@@ -2276,7 +2273,6 @@
       "workshop-flexbox-photo-gallery": {
         "title": "Build a Flexbox Photo Gallery",
         "intro": [
-          "Flexbox helps you design your webpage so that it looks good on any screen size.",
           "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
         ]
       },
@@ -2290,15 +2286,13 @@
       "review-css-flexbox": {
         "title": "CSS Flexbox Review",
         "intro": [
-          "Before you are quizzed on CSS Flexbox concepts, you first need to review.",
-          "Open up this page to review concepts like the <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> properties and more."
+          "Before you're quizzed on CSS flexbox, you should review what you've learned.",
+          "Open up this page to review concepts like the <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> properties, and more."
         ]
       },
       "quiz-css-flexbox": {
         "title": "CSS Flexbox Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of using flexbox in CSS."
-        ]
+        "intro": ["Test what you've learned on CSS flexbox with this quiz."]
       },
       "lecture-working-with-css-fonts": {
         "title": "Working with CSS Fonts",
@@ -2323,13 +2317,13 @@
       "review-css-typography": {
         "title": "CSS Typography Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of typography, you first need to review.",
+          "Before you're quizzed on the fundamentals of typography, you should review what you've learned.",
           "Open up this page to review concepts like web safe fonts, the <code>font-family</code> property and more."
         ]
       },
       "quiz-css-typography": {
         "title": "CSS Typography Quiz",
-        "intro": ["Test what you've learned in this quiz of typography in CSS."]
+        "intro": ["Test your knowledge of typography with this quiz."]
       },
       "lecture-best-practices-for-accessibility-and-css": {
         "title": "Best Practices for Accessibility and CSS",
@@ -2340,7 +2334,7 @@
       "workshop-accessibility-quiz": {
         "title": "Build a Quiz Webpage",
         "intro": [
-          "Accessibility is making your webpage easy for all people to use – even people with disabilities.",
+          "Accessibility is the process of making your webpages usable for everyone, including people with disabilities.",
           "In this workshop, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
         ]
       },
@@ -2353,14 +2347,14 @@
       "review-css-accessibility": {
         "title": "CSS Accessibility Review",
         "intro": [
-          "Before you are quizzed on CSS and accessibility, you first need to review.",
+          "Before you're quizzed on CSS and accessibility, you should review what you've learned.",
           "Open up this page to review concepts like color contrast tools and accessibility best practices."
         ]
       },
       "quiz-css-accessibility": {
         "title": "CSS Accessibility Quiz",
         "intro": [
-          "Test what you've learned in this quiz of making your webpage accessible with CSS."
+          "In this quiz, you'll test what you've learned about making your webpages accessible with CSS."
         ]
       },
       "lecture-working-with-attribute-selectors": {
@@ -2372,7 +2366,6 @@
       "workshop-balance-sheet": {
         "title": "Build a Balance Sheet",
         "intro": [
-          "You can use CSS pseudo selectors to change specific HTML elements.",
           "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
         ]
       },
@@ -2386,14 +2379,14 @@
       "review-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of CSS attribute selectors, you first need to review.",
+          "Before you're quizzed on the fundamentals of CSS attribute selectors, you should review what you've learned about them.",
           "Open up this page to review concepts like how to work with different attribute selectors that target links with the <code>href</code> and <code>title</code> attributes."
         ]
       },
       "quiz-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Quiz",
         "intro": [
-          "Test what you've learned in this quiz of using attribute selectors in CSS."
+          "Test your knowledge of CSS attribute selectors with this quiz."
         ]
       },
       "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
@@ -2419,15 +2412,13 @@
       "review-css-positioning": {
         "title": "CSS Positioning Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of CSS positioning concepts, you first need to review.",
+          "Before you're quizzed on the fundamentals of CSS positioning, you should review what you've learned.",
           "Open up this page to review concepts like floats, relative positioning, absolute positioning and more."
         ]
       },
       "quiz-css-positioning": {
         "title": "CSS Positioning Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of how positioning works in CSS."
-        ]
+        "intro": ["Test your knowledge of CSS positioning with this quiz."]
       },
       "lecture-best-practices-for-responsive-web-design": {
         "title": "Best Practices for Responsive Web Design",
@@ -2452,14 +2443,14 @@
       "review-responsive-web-design": {
         "title": "Responsive Web Design Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of responsive design, you first need to review.",
+          "Before you're quizzed on the fundamentals of responsive design, you should review what you've learned.",
           "Open up this page to review concepts like media queries, media breakpoints and mobile first approach design."
         ]
       },
       "quiz-responsive-web-design": {
         "title": "Responsive Web Design Quiz",
         "intro": [
-          "Test what you've learned in this quiz of making your webpage responsive."
+          "Test what you've learned about making your webpages responsive with this quiz."
         ]
       },
       "lecture-working-with-css-variables": {
@@ -2485,15 +2476,13 @@
       "review-css-variables": {
         "title": "CSS Variables Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of CSS variables, you first need to review.",
+          "Before you're quizzed on the fundamentals of CSS variables, you should review what you've learned.",
           "Open up this page to review how to work with CSS custom properties (CSS variables) and the <code>@property</code> rule."
         ]
       },
       "quiz-css-variables": {
         "title": "CSS Variables Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of how using variables in CSS."
-        ]
+        "intro": ["Test your knowledge of CSS variables with this quiz."]
       },
       "lecture-working-with-css-grid": {
         "title": "Working with CSS Grid",
@@ -2517,7 +2506,7 @@
       "lecture-debugging-css": {
         "title": "Debugging CSS",
         "intro": [
-          "In these lecture videos, you will learn about debugging CSS."
+          "In this lecture video, you'll learn how to debug CSS using your browser's developer tools and CSS validators."
         ]
       },
       "lab-product-landing-page": {
@@ -2529,13 +2518,13 @@
       "review-css-grid": {
         "title": "CSS Grid Review",
         "intro": [
-          "Before you are quizzed on the fundamentals of CSS Grid, you first need to review.",
+          "Before you're quizzed on the fundamentals of CSS Grid, you should review what you've learned.",
           "Open up this page to review how to work with the different CSS Grid properties like <code>grid-template-columns</code>, <code>grid-gap</code> and more."
         ]
       },
       "quiz-css-grid": {
         "title": "CSS Grid Quiz",
-        "intro": ["Test what you've learned in this quiz of using grid in CSS."]
+        "intro": ["Test your knowledge of CSS Grid with this quiz."]
       },
       "lecture-animations-and-accessibility": {
         "title": "Animations and Accessibility",
@@ -2573,15 +2562,13 @@
       "review-css-animations": {
         "title": "CSS Animations Review",
         "intro": [
-          "Before you are quizzed on working with CSS animations, you first need to review.",
+          "Before you're quizzed on working with CSS animations, you should review what you've learned about them.",
           "Open up this page to review concepts including <code>prefers-reduced-motion</code>, the <code>@keyframes</code> rule and more."
         ]
       },
       "quiz-css-animations": {
         "title": "CSS Animations Quiz",
-        "intro": [
-          "Test what you've learned in this quiz of using animations in CSS."
-        ]
+        "intro": ["Test your knowledge of CSS animations with this quiz."]
       },
       "review-css": {
         "title": "CSS Review",
@@ -2609,7 +2596,7 @@
       "workshop-greeting-bot": {
         "title": "Build a Greeting Bot",
         "intro": [
-          "For this workshop, you will learn how to work with JavaScript fundamentals by building a greeting bot.",
+          "In this workshop, you will learn JavaScript fundamentals by building a greeting bot.",
           "You will learn about variables, <code>let</code>, <code>const</code>, <code>console.log</code> and basic string usage."
         ]
       },
@@ -2618,6 +2605,12 @@
         "intro": [
           "In this lab, you'll practice working with JavaScript variables and strings by building a trivia bot.",
           "You'll practice how to use variables and basic strings."
+        ]
+      },
+      "lab-sentence-maker": {
+        "title": "Build a Sentence Maker",
+        "intro": [
+          "In this lab, you'll create different stories by assigning different words to different variables."
         ]
       },
       "lecture-working-with-data-types": {
@@ -2636,7 +2629,7 @@
       "quiz-javascript-variables-and-data-types": {
         "title": "JavaScript Variables and Data Types Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Variables and Data Types."
+          "Test your knowledge of JavaScript variables and data types with this quiz."
         ]
       },
       "lecture-working-with-strings-in-javascript": {
@@ -2667,9 +2660,7 @@
       },
       "quiz-javascript-strings": {
         "title": "JavaScript Strings Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on JavaScript Strings."
-        ]
+        "intro": ["Test your knowledge of JavaScript strings with this quiz."]
       },
       "lecture-working-with-numbers-booleans-and-the-math-object": {
         "title": "Working with Numbers, Booleans, and the Math Object",
@@ -2699,13 +2690,15 @@
       "review-javascript-math": {
         "title": "JavaScript Math Review",
         "intro": [
-          "Before you are quizzed on working with the <code>Math</code> object, you first need to review.",
+          "Before you're quizzed on working with the <code>Math</code> object, you should review what you've learned.",
           "Open up this page to review how to work with the <code>Math.random()</code> method, the <code>Math.floor()</code> method and more."
         ]
       },
       "quiz-javascript-math": {
         "title": "JavaScript Math Quiz",
-        "intro": ["Test what you've learned in this quiz on JavaScript Math."]
+        "intro": [
+          "Test your knowledge of the JavaScript <code>Math</code> object with this quiz."
+        ]
       },
       "lecture-understanding-comparisons-and-conditionals": {
         "title": "Understanding Comparisons and Conditionals",
@@ -2716,14 +2709,14 @@
       "review-javascript-comparisons-and-conditionals": {
         "title": "JavaScript Comparisons and Conditionals Review",
         "intro": [
-          "Before you are quizzed on working with conditionals, you first need to review.",
+          "Before you're quizzed on working with conditionals, you should review what you've learned about them.",
           "Open up this page to review how to work with <code>switch</code> statements, other types of conditionals and more."
         ]
       },
       "quiz-javascript-comparisons-and-conditionals": {
         "title": "JavaScript Comparisons and Conditionals Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Comparisons and Conditionals."
+          "Test your knowledge of JavaScript Comparisons and Conditionals with this quiz."
         ]
       },
       "lecture-working-with-functions": {
@@ -2735,7 +2728,7 @@
       "workshop-calculator": {
         "title": "Build a Calculator",
         "intro": [
-          "In this workshop, you will review working with functions by building a calculator."
+          "In this workshop, you will review your knowledge of functions by building a calculator."
         ]
       },
       "lab-email-masker": {
@@ -2743,12 +2736,6 @@
         "intro": [
           "In this lab, you'll build an email masker that will take an email address and obscure it.",
           "You'll practice string slicing, concatenation, and using functions."
-        ]
-      },
-      "lab-sentence-maker": {
-        "title": "Build a Sentence Maker",
-        "intro": [
-          "In this lab, you'll create different stories by assigning different words to different variables."
         ]
       },
       "workshop-loan-qualification-checker": {
@@ -2767,15 +2754,13 @@
       "review-javascript-functions": {
         "title": "JavaScript Functions Review",
         "intro": [
-          "Before you are quizzed on JavaScript functions, you first need to review the concepts.",
+          "Before you're quizzed on JavaScript functions, you should review what you've learned about them.",
           "Open up this page to review functions, arrow functions and scope."
         ]
       },
       "quiz-javascript-functions": {
         "title": "JavaScript Functions Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on JavaScript Functions."
-        ]
+        "intro": ["Test your knowledge of JavaScript functions with this quiz."]
       },
       "lecture-working-with-arrays": {
         "title": "Working with Arrays",
@@ -2786,7 +2771,7 @@
       "workshop-shopping-list": {
         "title": "Build a Shopping List",
         "intro": [
-          "In this workshop, you will practice working with arrays by building a shopping list.",
+          "In this workshop, you will practice how to work with arrays by building a shopping list.",
           "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
         ]
       },
@@ -2805,13 +2790,13 @@
       "review-javascript-arrays": {
         "title": "JavaScript Arrays Review",
         "intro": [
-          "Before you are quizzed on JavaScript arrays, you first need to review the concepts.",
+          "Before you're quizzed on JavaScript arrays, you should review what you've learned about them.",
           "Open up this page to review concepts like array destructuring, how to add and remove elements from an array, and more."
         ]
       },
       "quiz-javascript-arrays": {
         "title": "JavaScript Arrays Quiz",
-        "intro": ["Test what you've learned in this quiz on JavaScript Arrays."]
+        "intro": ["Test your knowledge of JavaScript arrays with this quiz."]
       },
       "lecture-working-with-objects": {
         "title": "Working with Objects",
@@ -2835,15 +2820,13 @@
       "review-javascript-objects": {
         "title": "JavaScript Objects Review",
         "intro": [
-          "Before you are quizzed on JavaScript objects, you first need to review the concepts.",
+          "Before you're quizzed on JavaScript objects, you should review what you've learned about them.",
           "Open up this page to review concepts including how to access information from objects, object destructuring, working with JSON, and more."
         ]
       },
       "quiz-javascript-objects": {
         "title": "JavaScript Objects Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on JavaScript Objects."
-        ]
+        "intro": ["Test your knowledge of JavaScript objects with this quiz."]
       },
       "lecture-working-with-loops": {
         "title": "Working with Loops",
@@ -2854,7 +2837,7 @@
       "workshop-sentence-analyzer": {
         "title": "Build a Sentence Analyzer",
         "intro": [
-          "In this workshop, you'll review working with JavaScript loops by building a sentence analyzer app."
+          "In this workshop, you'll review how to work with JavaScript loops by building a sentence analyzer app."
         ]
       },
       "lab-factorial-calculator": {
@@ -2867,13 +2850,13 @@
       "review-javascript-loops": {
         "title": "JavaScript Loops Review",
         "intro": [
-          "Before you are quizzed on the different JavaScript loops, you first need to review.",
+          "Before you're quizzed on the different JavaScript loops, you should review them.",
           "Open up this page to review the <code>for...of</code> loop, <code>while</code> loop, <code>break and continue</code> statements and more."
         ]
       },
       "quiz-javascript-loops": {
         "title": "JavaScript Loops Quiz",
-        "intro": ["Test what you've learned in this quiz on JavaScript Loops."]
+        "intro": ["Test your knowledge of JavaScript loops with this quiz."]
       },
       "lecture-understanding-core-javascript-fundamentals": {
         "title": "Understanding Core JavaScript Fundamentals",
@@ -2930,7 +2913,7 @@
       "quiz-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Fundamentals."
+          "Test your knowledge of JavaScript fundamentals with this quiz."
         ]
       },
       "lecture-working-with-higher-order-functions-and-callbacks": {
@@ -2954,14 +2937,14 @@
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
-          "Before you are quizzed on JavaScript higher order functions, you first need to review the concepts.",
+          "Before you're quizzed on JavaScript higher order functions, you should review them.",
           "Open up this page to review concepts including how to work with the <code>map()</code>, <code>filter()</code>, and <code>reduce()</code> methods."
         ]
       },
       "quiz-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Higher Order Functions."
+          "Test your knowledge of JavaScript higher order functions with this quiz."
         ]
       },
       "lecture-working-with-the-dom-click-events-and-web-apis": {
@@ -2985,14 +2968,14 @@
       "review-dom-manipulation-and-click-events-with-javascript": {
         "title": "DOM Manipulation and Click Events with JavaScript Review",
         "intro": [
-          "Before you are quizzed on the Document Object Model, you first need to review the concepts.",
+          "Before you're quizzed on the DOM, you should review what you've learned about it.",
           "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's/code>, the <code>addEventListener()</code> method and more."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
         "title": "DOM Manipulation and Click Events with JavaScript Quiz",
         "intro": [
-          "Test what you've learned in this quiz on DOM Manipulation and Click Events with JavaScript."
+          "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
         ]
       },
       "lecture-understanding-the-event-object-and-event-delegation": {
@@ -3042,13 +3025,13 @@
       "review-javascript-events": {
         "title": "JavaScript Events Review",
         "intro": [
-          "Before you are quizzed on events, you first need to review the concepts.",
+          "Before you're quizzed on events, you should review what you've learned.",
           "Open up this page to review concepts like change events, event bubbling, and event delegation."
         ]
       },
       "quiz-javascript-events": {
         "title": "JavaScript Events Quiz",
-        "intro": ["Test what you've learned in this quiz on JavaScript Events."]
+        "intro": ["Test your knowledge of JavaScript events with this quiz."]
       },
       "lecture-debugging-techniques": {
         "title": "Debugging Techniques",
@@ -3065,15 +3048,13 @@
       "review-debugging-javascript": {
         "title": "Debugging JavaScript Review",
         "intro": [
-          "Before you are quizzed on common debugging concepts you first need to review the concepts.",
+          "Before you're quizzed on common debugging techniques, you should review what you've learned.",
           "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally/code> and more."
         ]
       },
       "quiz-debugging-javascript": {
         "title": "Debugging JavaScript Quiz",
-        "intro": [
-          "Test what you've learned in this quiz on Debugging JavaScript."
-        ]
+        "intro": ["Test your knowledge of JavaScript debugging with this quiz."]
       },
       "lecture-working-with-regular-expressions": {
         "title": "Working with Regular Expressions",
@@ -3102,14 +3083,14 @@
       "review-javascript-regular-expressions": {
         "title": "JavaScript Regular Expressions Review",
         "intro": [
-          "Before you are quizzed on Regular Expressions you first need to review the concepts.",
+          "Before you're quizzed on Regular Expressions, you should review what you've learned.",
           "Open up this page to review concepts like lookaheads, lookbehinds, common regex modifiers and more."
         ]
       },
       "quiz-javascript-regular-expressions": {
         "title": "JavaScript Regular Expressions Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Regular Expressions."
+          "Test your knowledge of JavaScript Regular Expressions with this quiz."
         ]
       },
       "lecture-understanding-form-validation": {
@@ -3135,14 +3116,14 @@
       "review-form-validation-with-javascript": {
         "title": "Form Validation with JavaScript Review",
         "intro": [
-          "Before you are quizzed on form validation concepts you first need to review.",
+          "Before you're quizzed on form validation, you should review what you've learned.",
           "Open up this page to review concepts including the <code>preventDefault()</code> method, the submit event and more."
         ]
       },
       "quiz-form-validation-with-javascript": {
         "title": "Form Validation with JavaScript Quiz",
         "intro": [
-          "Test what you've learned in this quiz on Form Validation with JavaScript."
+          "Test what you've learned about JavaScript form validation with this quiz."
         ]
       },
       "lecture-working-with-dates": {
@@ -3160,13 +3141,15 @@
       "review-javascript-dates": {
         "title": "JavaScript Dates Review",
         "intro": [
-          "Before you are quizzed on working with dates, you first need to review the concepts.",
+          "Before you're quizzed on working with dates, you should review what you've learned.",
           "Open up this page to review the <code>Date()</code> object and common methods."
         ]
       },
       "quiz-javascript-dates": {
         "title": "JavaScript Dates Quiz",
-        "intro": ["Test what you've learned in this quiz on JavaScript Dates."]
+        "intro": [
+          "Test what you've learned about JavaScript Dates with this quiz."
+        ]
       },
       "lecture-working-with-audio-and-video": {
         "title": "Working with Audio and Video",
@@ -3190,14 +3173,14 @@
       "review-javascript-audio-and-video": {
         "title": "JavaScript Audio and Video Review",
         "intro": [
-          "Before you are quizzed on working with audio and video in JavaScript, you first need to review.",
+          "Before you're quizzed on working with audio and video in JavaScript, you should review what you've learned about them.",
           "Open up this page to review concepts including the <code>Audio</code> constructor, the <code>HTMLMediaElement</code> API and more."
         ]
       },
       "quiz-javascript-audio-and-video": {
         "title": "JavaScript Audio and Video Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Audio and Video."
+          "Test what you've learned about JavaScript audio and video with this quiz."
         ]
       },
       "lecture-working-with-maps-and-sets": {
@@ -3209,7 +3192,7 @@
       "workshop-plant-nursery-catalog": {
         "title": "Build a Plant Nursery Catalog",
         "intro": [
-          "In this workshop, you will practice maps and sets by building a plant nursery catalog in JavaScript."
+          "In this workshop, you will practice using Maps and Sets by building a plant nursery catalog."
         ]
       },
       "lab-voting-system": {
@@ -3222,14 +3205,14 @@
       "review-javascript-maps-and-sets": {
         "title": "JavaScript Maps and Sets Review",
         "intro": [
-          "Before you are quizzed on JS Maps and Sets, you first need to review.",
+          "Before you're quizzed on JavaScript Maps and Sets, you should review what you've learned about them.",
           "Open up this page to review concepts such as the <code>Map</code> and <code>Set</code> objects, as well as WeakSet and WeakMap."
         ]
       },
       "quiz-javascript-maps-and-sets": {
         "title": "JavaScript Maps and Sets Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Maps and Sets."
+          "Test what you've learned about JavaScript Maps and Sets with this quiz."
         ]
       },
       "lecture-working-with-client-side-storage-and-crud-operations": {
@@ -3262,7 +3245,7 @@
       "quiz-local-storage-and-crud": {
         "title": "Local Storage and CRUD Quiz",
         "intro": [
-          "Test what you've learned in this quiz on Local Storage and CRUD."
+          "Test what you've learned about local storage and CRUD with this quiz."
         ]
       },
       "lecture-understanding-how-to-work-with-classes-in-javascript": {
@@ -3294,14 +3277,14 @@
       "review-javascript-classes": {
         "title": "JavaScript Classes Review",
         "intro": [
-          "Before you are quizzed on working with classes, you first need to review.",
+          "Before you're quizzed on how to work with classes, you should review what you've learned about them.",
           "Open up this page to review concepts including the <code>this</code> keyword, class inheritance and more."
         ]
       },
       "quiz-javascript-classes": {
         "title": "JavaScript Classes Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Classes."
+          "Test what you've learned about JavaScript Classes with this quiz."
         ]
       },
       "lecture-understanding-recursion-and-the-call-stack": {
@@ -3326,13 +3309,13 @@
       "review-recursion": {
         "title": "Recursion Review",
         "intro": [
-          "Before you are quizzed on the recursion, you first need to review the concepts.",
+          "Before you're quizzed on recursion, you should review what you've learned.",
           "Open up this page to review what is recursion and what is it used for."
         ]
       },
       "quiz-recursion": {
         "title": "Recursion Quiz",
-        "intro": ["Test what you've learned in this quiz on Recursion."]
+        "intro": ["Test your knowledge of Recursion with this quiz."]
       },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
@@ -3356,14 +3339,14 @@
       "review-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Review",
         "intro": [
-          "Before you are quizzed on functional programming concepts, you first need to review.",
+          "Before you're quizzed on functional programming, you should review what you've learned.",
           "Open up this page to review concepts on functional programming, currying and more."
         ]
       },
       "quiz-javascript-functional-programming": {
         "title": "JavaScript Functional Programming Quiz",
         "intro": [
-          "Test what you've learned in this quiz on JavaScript Functional Programming."
+          "Test what you've learned about JavaScript functional programming with this quiz."
         ]
       },
       "lecture-understanding-asynchronous-programming": {
@@ -3388,19 +3371,19 @@
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
-          "Review Asynchronous JavaScript concepts to prepare for the upcoming quiz."
+          "Review asynchronous JavaScript concepts to prepare for the upcoming quiz."
         ]
       },
       "quiz-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Quiz",
         "intro": [
-          "Test what you've learned in this quiz on Asynchronous JavaScript."
+          "Test what you've learned about asynchronous JavaScript with this quiz."
         ]
       },
       "review-javascript": {
         "title": "JavaScript Review",
         "intro": [
-          "Before you take the JavaScript prep exam, you will need to review first.",
+          "Before you take the JavaScript prep exam, you should review everything you've learned about JavaScript.",
           "Open up this page, to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
@@ -3452,7 +3435,7 @@
       },
       "quiz-react-basics": {
         "title": "React Basics Quiz",
-        "intro": ["Test what you've learned in this quiz on React Basics."]
+        "intro": ["Test your knowledge of React basics with this quiz."]
       },
       "rugw": {
         "title": "267",
@@ -3485,7 +3468,7 @@
       "quiz-react-state-and-hooks": {
         "title": "React State and Hooks Quiz",
         "intro": [
-          "Test what you've learned in this quiz on React State and Hooks."
+          "Test what you've learned about React State and Hooks with this quiz."
         ]
       },
       "ftmi": {
@@ -3525,7 +3508,9 @@
       },
       "quiz-advanced-react": {
         "title": "Advanced React Quiz",
-        "intro": ["Test what you've learned in this quiz on Advanced React."]
+        "intro": [
+          "Test what you've learned about Advanced React with this quiz."
+        ]
       },
       "zdsj": {
         "title": "284",
@@ -3539,7 +3524,9 @@
       },
       "quiz-web-performance": {
         "title": "Web Performance Quiz",
-        "intro": ["Test what you've learned in this quiz on Web Performance."]
+        "intro": [
+          "Test what you've learned about Web Performance with this quiz."
+        ]
       },
       "mbpv": {
         "title": "287",
@@ -3554,7 +3541,7 @@
       "quiz-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Quiz",
         "intro": [
-          "Test what you've learned in this quiz on CSS Libraries and Frameworks."
+          "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
       "khuu": {
@@ -3563,13 +3550,11 @@
       },
       "review-testing": {
         "title": "Testing Review",
-        "intro": [
-          "Review the Testing concepts to prepare for the upcoming quiz."
-        ]
+        "intro": ["Review testing concepts to prepare for the upcoming quiz."]
       },
       "quiz-testing": {
         "title": "Testing Quiz",
-        "intro": ["Test what you've learned in this quiz on Testing."]
+        "intro": ["Test what you've learned on testing with this quiz."]
       },
       "trvf": {
         "title": "293",
@@ -3594,12 +3579,12 @@
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
-          "Review the Typescript concepts to prepare for the upcoming quiz."
+          "Review Typescript concepts to prepare for the upcoming quiz."
         ]
       },
       "quiz-typescript": {
         "title": "TypeScript Quiz",
-        "intro": ["Test what you've learned in this quiz on TypeScript."]
+        "intro": ["Test what you've learned on Typescript with this quiz."]
       },
       "review-front-end-libraries": {
         "title": "Front End Libraries Review",
@@ -3630,7 +3615,7 @@
       },
       "quiz-bash-commands": {
         "title": "Bash Commands Quiz",
-        "intro": ["Test what you've learned in this quiz on Bash Commands."]
+        "intro": ["Test what you've learned bash commands with this quiz."]
       },
       "voks": {
         "title": "306",
@@ -3658,7 +3643,7 @@
       "quiz-relational-database": {
         "title": "Relational Database Quiz",
         "intro": [
-          "Test what you've learned in this quiz on Relational Databases."
+          "Test what you've learned on relational databases with this quiz."
         ]
       },
       "pexz": {
@@ -3675,12 +3660,12 @@
       "review-bash-scripting": {
         "title": "Bash Scripting Review",
         "intro": [
-          "Review the Bash Scripting concepts to prepare for the upcoming quiz."
+          "Review the bash scripting concepts you've learned to prepare for the upcoming quiz."
         ]
       },
       "quiz-bash-scripting": {
         "title": "Bash Scripting Quiz",
-        "intro": ["Test what you've learned in this quiz on Bash Scripting."]
+        "intro": ["Test what you've learned on bash scripting in this quiz."]
       },
       "tkgg": {
         "title": "315",
@@ -3752,7 +3737,7 @@
       },
       "quiz-nano": {
         "title": "Nano Quiz",
-        "intro": ["Test what you've learned in this quiz on Nano."]
+        "intro": ["Test what you've learned on Nano with this quiz ."]
       },
       "rhhl": {
         "title": "328",
@@ -3779,16 +3764,16 @@
       },
       "review-git": {
         "title": "Git Review",
-        "intro": ["Review the Git concepts to prepare for the upcoming quiz."]
+        "intro": ["Review Git concepts to prepare for the upcoming quiz."]
       },
       "quiz-git": {
         "title": "Git Quiz",
-        "intro": ["Test what you've learned in this quiz on Git."]
+        "intro": ["Test what you've learned on Git with this quiz."]
       },
       "review-relational-databases": {
         "title": "Relational Databases Review",
         "intro": [
-          "Review the Relational Databases concepts to prepare for the upcoming quiz."
+          "Review relational databases concepts to prepare for the upcoming quiz."
         ]
       },
       "thsj": {
