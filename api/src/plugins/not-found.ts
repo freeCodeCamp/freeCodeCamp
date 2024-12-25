@@ -15,7 +15,8 @@ const fourOhFour: FastifyPluginCallback = (fastify, _options, done) => {
   // If the request accepts JSON and does not specifically prefer text/html,
   // this will return a 404 JSON response. Everything else will be redirected.
   fastify.setNotFoundHandler((request, reply) => {
-    const accepted = request.accepts().type(['json', 'html']);
+    // @ts-ignore: Unreachable code error
+    const accepted = request?.accepts().type(['json', 'html']);
 
     if (accepted == 'json') {
       void reply.code(404).send({ error: 'path not found' });
