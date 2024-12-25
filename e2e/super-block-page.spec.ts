@@ -103,11 +103,6 @@ test.describe('Super Block Page - Authenticated User', () => {
   });
 
   test.describe('Super Block in Accordion View', () => {
-    test.skip(
-      () => process.env.SHOW_UPCOMING_CHANGES !== 'true',
-      'The FSD superblock is not available if SHOW_UPCOMING_CHANGES is false'
-    );
-
     test('should expand the correct block when user goes to the page from breadcrumb click', async ({
       page
     }) => {
@@ -123,23 +118,18 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       // Chapter
       await expect(
-        page.getByRole('button', {
-          name: 'CSS',
-          exact: true
-        })
+        page.getByTestId('chapter-button').filter({ hasText: /CSS/ })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Module
       await expect(
-        page.getByRole('button', {
-          name: 'Basic CSS'
-        })
+        page.getByRole('button', { name: /Basic CSS/ })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Block
       await expect(
         page.getByRole('button', {
-          name: 'Workshop Design a Cafe Menu'
+          name: /Workshop Design a Cafe Menu/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -158,24 +148,18 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       // HTML chapter
       await expect(
-        page.getByRole('button', {
-          name: 'HTML',
-          exact: true
-        })
+        page.getByTestId('chapter-button').filter({ hasText: /HTML/ })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Basic HTML module
       await expect(
-        page.getByRole('button', {
-          name: 'Basic HTML',
-          exact: true
-        })
+        page.getByRole('button', { name: /Basic HTML/ })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // What is HTML block
       await expect(
         page.getByRole('button', {
-          name: 'Lecture What is HTML?'
+          name: /Lecture What is HTML/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -189,23 +173,20 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       // First chapter
       await expect(
-        page.getByRole('button', {
-          name: 'Welcome',
-          exact: true
-        })
+        page.getByTestId('chapter-button').filter({ hasText: /Welcome/ })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First module
       await expect(
         page.getByRole('button', {
-          name: 'Getting Started with freeCodeCamp'
+          name: /Getting Started with freeCodeCamp/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First block
       await expect(
         page.getByRole('button', {
-          name: 'Lecture Welcome to freeCodeCamp'
+          name: /Lecture Welcome to freeCodeCamp/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
@@ -221,26 +202,17 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       // The entire first chapter is collapsed
       await expect(
-        page.getByRole('button', {
-          name: 'Welcome',
-          exact: true
-        })
+        page.getByTestId('chapter-button').filter({ hasText: /Welcome/ })
       ).toHaveAttribute('aria-expanded', 'false');
 
       // HTML chapter
       await expect(
-        page.getByRole('button', {
-          name: 'HTML',
-          exact: true
-        })
+        page.getByTestId('chapter-button').filter({ hasText: /HTML/ })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Semantic HTML module
       await expect(
-        page.getByRole('button', {
-          name: 'Semantic HTML',
-          exact: true
-        })
+        page.getByRole('button', { name: /^Semantic HTML/ })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Cat Blog Page block
@@ -279,11 +251,6 @@ test.describe('Super Block Page - Unauthenticated User', () => {
   });
 
   test.describe('Super Block in Accordion View', () => {
-    test.skip(
-      () => process.env.SHOW_UPCOMING_CHANGES !== 'true',
-      'The FSD superblock is not available if SHOW_UPCOMING_CHANGES is false'
-    );
-
     test('should expand the first block of the super block', async ({
       page
     }) => {
@@ -291,10 +258,7 @@ test.describe('Super Block Page - Unauthenticated User', () => {
 
       // First chapter
       await expect(
-        page.getByRole('button', {
-          name: 'Welcome',
-          exact: true
-        })
+        page.getByTestId('chapter-button').filter({ hasText: /Welcome/ })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First module
