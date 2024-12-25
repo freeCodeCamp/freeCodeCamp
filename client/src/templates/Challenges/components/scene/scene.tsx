@@ -49,8 +49,10 @@ export function Scene({
     const { current } = audioRef;
 
     if (current) {
+      current.volume = 1;
       current.addEventListener('canplaythrough', audioLoaded);
       current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
+      current.preload = 'auto';
       current.load();
     }
 
