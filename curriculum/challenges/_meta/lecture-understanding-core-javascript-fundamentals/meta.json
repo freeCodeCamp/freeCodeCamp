@@ -1,0 +1,43 @@
+{
+  "name": "Understanding Core JavaScript Fundamentals",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-core-javascript-fundamentals",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67329f9e9eb84e5c6a5e4366",
+      "title": "What Is a String Object, and How Does It Differ from a String Primitive?"
+    },
+    {
+      "id": "6732c68f4520d160584a6fd2",
+      "title": "What Is the toString() Method, and How Does It Work?"
+    },
+    {
+      "id": "6732c69d82814160951b1aa7",
+      "title": "What Is the Number Constructor, and How Does It Work for Type Coercion?"
+    },
+    {
+      "id": "6732c6ab21031b60d2b0c999",
+      "title": "What Are Some Common Practices for Naming Variables and Functions?"
+    },
+    {
+      "id": "6732c6ba2ea42b610b9f9ce1",
+      "title": "How Do You Get the Length for an Array, and How Can You Create an Empty Array of Fixed Length?"
+    },
+    {
+      "id": "6732c6c72d3738614e1230a2",
+      "title": "What Are Linters and Formatters, and How Can They Help You with Code Consistency?"
+    },
+    {
+      "id": "6732c6d4dec34c61850a1276",
+      "title": "What Is Memory Management, and How Does It Work in JavaScript?"
+    },
+    {
+      "id": "6732c6e281c14a61c4858361",
+      "title": "What Are Closures, and How Do They Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "JavaScript Math Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-math",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6723c463e51a2d9b747d7529", "title": "JavaScript Math Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

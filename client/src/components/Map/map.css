@@ -1,0 +1,79 @@
+.map-ui {
+  height: 100%;
+}
+
+.map-ui ul {
+  list-style: none;
+  color: var(--secondary-color);
+  padding: 0;
+}
+
+.map-ui ul li {
+  display: flex;
+  flex-direction: row;
+}
+
+.map-ui ul li .progress-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.map-ui ul .progress-icon {
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  padding-inline-end: 0.9rem;
+}
+
+.map-ui ul .progress-icon .cert-icon-outline {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+}
+
+.map-ui ul li .progress-icon .cert-icon-outline > svg {
+  display: inline-block;
+  height: 3rem;
+  width: auto;
+}
+
+.map-ui ul li:not(:first-child) .progress-icon.show-progression-lines:before,
+.map-ui ul li:not(:last-child) .progress-icon.show-progression-lines:after {
+  content: '';
+  display: block;
+  width: 2px;
+  height: calc(50% - 26px);
+  background-color: var(--secondary-color);
+  position: absolute;
+  left: calc(36.5%);
+}
+
+.map-ui ul li:not(:first-child) .progress-icon.show-progression-lines:before {
+  bottom: calc(50% + 1.7rem);
+}
+
+.map-ui ul li:not(:last-child) .progress-icon.show-progression-lines:after {
+  top: calc(50% + 1.2rem);
+}
+
+.map-ui ul li a > svg {
+  overflow: visible;
+}
+
+@media (max-width: 640px) {
+  .map-ui .block ul {
+    padding-inline-start: 6rem;
+    font-size: 0.9rem;
+  }
+
+  .map-ui > ul {
+    padding-inline-start: 0;
+  }
+}

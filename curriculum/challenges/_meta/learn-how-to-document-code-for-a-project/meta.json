@@ -1,0 +1,215 @@
+{
+  "name": "Learn How to Document Code for a Project",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-document-code-for-a-project",
+  "order": 18,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "65ddb2ee481da72f38f076ad",
+      "title": "Dialogue 1: Introduction to Code Documentation"
+    },
+    {
+      "id": "65ddb38c14e76d317c6128e6",
+      "title": "Task 1"
+    },
+    {
+      "id": "65e44fdc3b0d5813ee7fc300",
+      "title": "Task 2"
+    },
+    {
+      "id": "65e452611e67af1a07314eb6",
+      "title": "Task 3"
+    },
+    {
+      "id": "65e4642c66bb7a29b328111e",
+      "title": "Task 4"
+    },
+    {
+      "id": "65e46524078f872c3a871f9f",
+      "title": "Task 5"
+    },
+    {
+      "id": "65e4660946dec02eb08f1a0d",
+      "title": "Task 6"
+    },
+    {
+      "id": "65e466b7e1db1530a27f413b",
+      "title": "Task 7"
+    },
+    {
+      "id": "65e468fe7454d936320fe31c",
+      "title": "Task 8"
+    },
+    {
+      "id": "65e5c959087282242cf23f03",
+      "title": "Task 9"
+    },
+    {
+      "id": "65e5ca3d8fd484268f4336d4",
+      "title": "Task 10"
+    },
+    {
+      "id": "65e5caebc431182877f90758",
+      "title": "Task 11"
+    },
+    {
+      "id": "65e5cc619608ce2bf40e3ce8",
+      "title": "Task 12"
+    },
+    {
+      "id": "65e5cd292dbe212e2af21c9e",
+      "title": "Task 13"
+    },
+    {
+      "id": "65e5cf002c98ea3289bf2bea",
+      "title": "Task 14"
+    },
+    {
+      "id": "65e5d04819aa7c35cf23028c",
+      "title": "Task 15"
+    },
+    {
+      "id": "65e5d1128a3a2137ff818dd6",
+      "title": "Task 16"
+    },
+    {
+      "id": "65e84a436d691712a7769ea9",
+      "title": "Task 17"
+    },
+    {
+      "id": "65e85c512d559f216cacd3c4",
+      "title": "Task 18"
+    },
+    {
+      "id": "65e865a63c108a2f651b58c4",
+      "title": "Task 19"
+    },
+    {
+      "id": "65e8668b12eaa63202034f84",
+      "title": "Task 20"
+    },
+    {
+      "id": "65e8677731fef734895ac330",
+      "title": "Task 21"
+    },
+    {
+      "id": "65e8687c037bd7373bac6bb8",
+      "title": "Task 22"
+    },
+    {
+      "id": "65e8697e64f1883a30a759e5",
+      "title": "Task 23"
+    },
+    {
+      "id": "65e86cac39492642332416e9",
+      "title": "Dialogue 2: Adding Comments to Code"
+    },
+    {
+      "id": "65e86e39e990f4461c9e23a7",
+      "title": "Task 24"
+    },
+    {
+      "id": "65e870a2ad67264ba3aac3f6",
+      "title": "Task 25"
+    },
+    {
+      "id": "65e92d17a7e3c777c5a2f4b1",
+      "title": "Task 26"
+    },
+    {
+      "id": "65e932555f5de583b53ac688",
+      "title": "Task 27"
+    },
+    {
+      "id": "65e93353894747864641dc5c",
+      "title": "Task 28"
+    },
+    {
+      "id": "65e93446e44ce704166696fa",
+      "title": "Task 29"
+    },
+    {
+      "id": "65e935d6ca6d6b082cf59682",
+      "title": "Task 30"
+    },
+    {
+      "id": "65e9376e45814e0c248c2262",
+      "title": "Task 31"
+    },
+    {
+      "id": "65e9393152c63010e8d14dce",
+      "title": "Task 32"
+    },
+    {
+      "id": "65e93a6cca356414bb39c4a6",
+      "title": "Task 33"
+    },
+    {
+      "id": "65e93b241e3f2216db6801e8",
+      "title": "Task 34"
+    },
+    {
+      "id": "65e93be2cbc1da18d7602a31",
+      "title": "Task 35"
+    },
+    {
+      "id": "65e943b74900112d64038331",
+      "title": "Dialogue 3: Version Control and Documenting Changes"
+    },
+    {
+      "id": "65e99114ec85863bbd32be2d",
+      "title": "Task 36"
+    },
+    {
+      "id": "65e992a27a99bd3fce984132",
+      "title": "Task 37"
+    },
+    {
+      "id": "65e9932d9cab2348221a1139",
+      "title": "Task 38"
+    },
+    {
+      "id": "65e993f3248e434a5a47744c",
+      "title": "Task 39"
+    },
+    {
+      "id": "65e994e2f526634d09c0814a",
+      "title": "Task 40"
+    },
+    {
+      "id": "65e99595bee9924f07b5abc3",
+      "title": "Task 41"
+    },
+    {
+      "id": "65e9965b96af115148dc3d79",
+      "title": "Task 42"
+    },
+    {
+      "id": "65e9972a13329b53a5aff71f",
+      "title": "Task 43"
+    },
+    {
+      "id": "65e997de10f05355b0354cf8",
+      "title": "Task 44"
+    },
+    {
+      "id": "65e9988f286c8457cc809619",
+      "title": "Task 45"
+    },
+    {
+      "id": "65e9991e59d4b959920e8c7d",
+      "title": "Task 46"
+    },
+    {
+      "id": "65e999be5746e45b5a8bb757",
+      "title": "Task 47"
+    },
+    {
+      "id": "65e99a2986903b5c9f4bc720",
+      "title": "Task 48"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

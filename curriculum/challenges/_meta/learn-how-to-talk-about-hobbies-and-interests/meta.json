@@ -1,0 +1,451 @@
+{
+  "name": "Learn How to Talk About Hobbies and Interests",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-talk-about-hobbies-and-interests",
+  "order": 7,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "657d4ea39262ba758c15bc1a",
+      "title": "Dialogue 1: An Interest in Photography"
+    },
+    {
+      "id": "657d50434d1a007661712182",
+      "title": "Task 1"
+    },
+    {
+      "id": "657d572d0a7e49837a3e63dc",
+      "title": "Task 2"
+    },
+    {
+      "id": "657d5a9cbf7f0e84f2ca16d7",
+      "title": "Task 3"
+    },
+    {
+      "id": "657d5b2d1fe085857b5083f2",
+      "title": "Task 4"
+    },
+    {
+      "id": "657d5c9008b25e85e95ce60b",
+      "title": "Task 5"
+    },
+    {
+      "id": "657d5dc51cf88187cbf7d27c",
+      "title": "Task 6"
+    },
+    {
+      "id": "657d5e32e50d15885265eb30",
+      "title": "Task 7"
+    },
+    {
+      "id": "657d6008a37af78962d30873",
+      "title": "Task 8"
+    },
+    {
+      "id": "657d5eafe5e79d88d2b6328e",
+      "title": "Task 9"
+    },
+    {
+      "id": "657d777c3a22758abc00a183",
+      "title": "Task 10"
+    },
+    {
+      "id": "657d7892712a078b33d7e8a7",
+      "title": "Task 11"
+    },
+    {
+      "id": "657d791a78ae2a8bb7416ad7",
+      "title": "Task 12"
+    },
+    {
+      "id": "657d7a4ad41e438c5be0a138",
+      "title": "Task 13"
+    },
+    {
+      "id": "657d9af10739f78d5401ad1d",
+      "title": "Task 14"
+    },
+    {
+      "id": "657d9b88332ce98fc894db2c",
+      "title": "Task 15"
+    },
+    {
+      "id": "657d9d6b3838fa9030d5b9d8",
+      "title": "Task 16"
+    },
+    {
+      "id": "657d9dbe3f6a1b90f79d81f2",
+      "title": "Task 17"
+    },
+    {
+      "id": "657d9e7fd1b3fa915c3c1401",
+      "title": "Task 18"
+    },
+    {
+      "id": "657d9eed9f6a5a91c7c5f210",
+      "title": "Task 19"
+    },
+    {
+      "id": "657d7b217b77cf8cf1969713",
+      "title": "Task 20"
+    },
+    {
+      "id": "657d9f77e8d77292246e5679",
+      "title": "Task 21"
+    },
+    {
+      "id": "657da01f0bb64c927f6d84c3",
+      "title": "Task 22"
+    },
+    {
+      "id": "657da0838dfc7992f94c7df9",
+      "title": "Task 23"
+    },
+    {
+      "id": "657da0ec9f3a5a936a6cd54d",
+      "title": "Task 24"
+    },
+    {
+      "id": "657da1d38bf3e693eb579be9",
+      "title": "Task 25"
+    },
+    {
+      "id": "657da2e3cf29239535791805",
+      "title": "Dialogue 2: The Bike Rider"
+    },
+    {
+      "id": "657da34294cbf695b2bfe889",
+      "title": "Task 26"
+    },
+    {
+      "id": "657e758778ff8dc01567c9e7",
+      "title": "Task 27"
+    },
+    {
+      "id": "657e76356b6af6c07fe338c1",
+      "title": "Task 28"
+    },
+    {
+      "id": "657e76d866ebcec0e44d0748",
+      "title": "Task 29"
+    },
+    {
+      "id": "657e77d93552a0c1b00f775a",
+      "title": "Task 30"
+    },
+    {
+      "id": "657e786b51f7eac240e92bcc",
+      "title": "Task 31"
+    },
+    {
+      "id": "657e77615bb8dec146e91f96",
+      "title": "Task 32"
+    },
+    {
+      "id": "657e7a17f47a8fc2d037f48e",
+      "title": "Task 33"
+    },
+    {
+      "id": "657ea8c4a679bbc40a7aef26",
+      "title": "Task 34"
+    },
+    {
+      "id": "657ea950baa4a8c48e39d031",
+      "title": "Task 35"
+    },
+    {
+      "id": "657ea9f6e0214dc4f84c8229",
+      "title": "Task 36"
+    },
+    {
+      "id": "657ec57a0ab01cc7af71f565",
+      "title": "Task 37"
+    },
+    {
+      "id": "657ec62074e77dc82b0f05e7",
+      "title": "Task 38"
+    },
+    {
+      "id": "657ec6ac4de4eac8bab2f2a7",
+      "title": "Task 39"
+    },
+    {
+      "id": "657ef0061e99a3ddd0e1245f",
+      "title": "Dialogue 3: The Collector"
+    },
+    {
+      "id": "657eda6e48e0d7c92f0af163",
+      "title": "Task 40"
+    },
+    {
+      "id": "657edbc3e12e35cfc1d80358",
+      "title": "Task 41"
+    },
+    {
+      "id": "657edc5136791ed04ffab234",
+      "title": "Task 42"
+    },
+    {
+      "id": "657ee0a0c52d0ed1164a85d8",
+      "title": "Task 43"
+    },
+    {
+      "id": "657ee214b9ad1ad2b6f8325c",
+      "title": "Task 44"
+    },
+    {
+      "id": "657ee25acee11cd3122e0876",
+      "title": "Task 45"
+    },
+    {
+      "id": "657ee2f44346f3d4017cc990",
+      "title": "Task 46"
+    },
+    {
+      "id": "657ee3954d64e5d465500620",
+      "title": "Task 47"
+    },
+    {
+      "id": "657ee4171371e9d4d1402e91",
+      "title": "Task 48"
+    },
+    {
+      "id": "657ee47c1af836d5289254d9",
+      "title": "Task 49"
+    },
+    {
+      "id": "657ee51ce8dac8d5a227f758",
+      "title": "Task 50"
+    },
+    {
+      "id": "657ee5ddb47b1dd62f87d784",
+      "title": "Task 51"
+    },
+    {
+      "id": "657ee66dd1216ad6c61f1168",
+      "title": "Task 52"
+    },
+    {
+      "id": "657ee781258676d764a5282f",
+      "title": "Task 53"
+    },
+    {
+      "id": "657ee8a9a195b8d8756ca5e1",
+      "title": "Task 54"
+    },
+    {
+      "id": "657ee957cb4719d9031a0be4",
+      "title": "Task 55"
+    },
+    {
+      "id": "657ee9b69c2e26d964f67ee4",
+      "title": "Task 56"
+    },
+    {
+      "id": "657eeb163e1993d9e342d661",
+      "title": "Task 57"
+    },
+    {
+      "id": "657eebaa042b5cda6ec2dac9",
+      "title": "Task 58"
+    },
+    {
+      "id": "657eec0a21bc7adada04453e",
+      "title": "Task 59"
+    },
+    {
+      "id": "657eecb3b368badb3cc7fe4c",
+      "title": "Task 60"
+    },
+    {
+      "id": "657eed5ed318e4dbbce6903a",
+      "title": "Task 61"
+    },
+    {
+      "id": "657ef4e5a4a1e1e126eba6dd",
+      "title": "Dialogue 4: Inviting to A Convention"
+    },
+    {
+      "id": "657ef58855ff45e1e4ca70ee",
+      "title": "Task 62"
+    },
+    {
+      "id": "657fb48f31654ae4cb52d395",
+      "title": "Task 63"
+    },
+    {
+      "id": "657fb5034da144e55cbee9d7",
+      "title": "Task 64"
+    },
+    {
+      "id": "657ef61be0a682e2591776f6",
+      "title": "Task 65"
+    },
+    {
+      "id": "657fb8cfbd0e4ae797fc6077",
+      "title": "Task 66"
+    },
+    {
+      "id": "657fb665a39478e642f5a139",
+      "title": "Task 67"
+    },
+    {
+      "id": "657fbad88163d8e96189f823",
+      "title": "Task 68"
+    },
+    {
+      "id": "657fbb3a1a63d0e9c307fd83",
+      "title": "Task 69"
+    },
+    {
+      "id": "657fba163fec41e8e00c5817",
+      "title": "Task 70"
+    },
+    {
+      "id": "657fbc14d41a20ea5f286378",
+      "title": "Task 71"
+    },
+    {
+      "id": "657fbc85c25a16eac8356182",
+      "title": "Task 72"
+    },
+    {
+      "id": "657fbcecfc4d42eb28700349",
+      "title": "Task 73"
+    },
+    {
+      "id": "657fbd591461eaeba07ffff1",
+      "title": "Task 74"
+    },
+    {
+      "id": "657fbde9a43e35ec1ebafe56",
+      "title": "Task 75"
+    },
+    {
+      "id": "657fb92c6f888fe8013f1a28",
+      "title": "Task 76"
+    },
+    {
+      "id": "657fb980a9b567e860b77f2c",
+      "title": "Task 77"
+    },
+    {
+      "id": "657fff0bfb6a28f1d70fa9ef",
+      "title": "Task 78"
+    },
+    {
+      "id": "657fb5afeeba2de5d01dda0e",
+      "title": "Task 79"
+    },
+    {
+      "id": "657fff7dabba2ff23993b08c",
+      "title": "Task 80"
+    },
+    {
+      "id": "6580001adc7fd4f2b244f3a5",
+      "title": "Task 81"
+    },
+    {
+      "id": "65800082405352f30c6dbc7a",
+      "title": "Task 82"
+    },
+    {
+      "id": "65800148406738f397561d77",
+      "title": "Task 83"
+    },
+    {
+      "id": "658001a018bbcbf3fd84f832",
+      "title": "Task 84"
+    },
+    {
+      "id": "6580026241ae0ef46b181e49",
+      "title": "Task 85"
+    },
+    {
+      "id": "658002d23e245ff4ca8542d5",
+      "title": "Task 86"
+    },
+    {
+      "id": "658003870281a9f5541085af",
+      "title": "Task 87"
+    },
+    {
+      "id": "658003d8ff9da6f5c08971a1",
+      "title": "Task 88"
+    },
+    {
+      "id": "658030876ac4f605145aeae1",
+      "title": "Dialogue 5: Getting into Extreme Sports"
+    },
+    {
+      "id": "658009d86dc9caf988e2ea64",
+      "title": "Task 89"
+    },
+    {
+      "id": "65800a95389cc0fa4c197587",
+      "title": "Task 90"
+    },
+    {
+      "id": "65800b1c13005dfa9df75d73",
+      "title": "Task 91"
+    },
+    {
+      "id": "65800b96989013fb24aa1b70",
+      "title": "Task 92"
+    },
+    {
+      "id": "65800c12978ba7fb82007446",
+      "title": "Task 93"
+    },
+    {
+      "id": "65800cf36faba0fbfa1027b6",
+      "title": "Task 94"
+    },
+    {
+      "id": "65800d61890343fc5cce0ec8",
+      "title": "Task 95"
+    },
+    {
+      "id": "65800df7fc5d49fcd7209248",
+      "title": "Task 96"
+    },
+    {
+      "id": "65800e60dad5fefd4ed91589",
+      "title": "Task 97"
+    },
+    {
+      "id": "65800f4d194382fdebb81e1f",
+      "title": "Task 98"
+    },
+    {
+      "id": "658010478daa16fe79d8113a",
+      "title": "Task 99"
+    },
+    {
+      "id": "65801182280f63ff10ca4d4f",
+      "title": "Task 100"
+    },
+    {
+      "id": "658011ef9ec114ff80ce5e42",
+      "title": "Task 101"
+    },
+    {
+      "id": "658013bd3b1a06001a59e006",
+      "title": "Task 102"
+    },
+    {
+      "id": "65802ee9706eb103aea442f8",
+      "title": "Task 103"
+    },
+    {
+      "id": "65802f717cef8c042af950b8",
+      "title": "Task 104"
+    },
+    {
+      "id": "65802fe92ef0f404ba0437f7",
+      "title": "Task 105"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

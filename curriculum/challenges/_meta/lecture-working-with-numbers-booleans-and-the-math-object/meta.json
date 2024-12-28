@@ -1,0 +1,63 @@
+{
+  "name": "Working with Numbers, Booleans, and the Math Object",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-numbers-booleans-and-the-math-object",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672d266e014ef8216df987d2",
+      "title": "What Is the Number Type in JavaScript, and What Are the Different Types of Numbers Available?"
+    },
+    {
+      "id": "673271884bf678d8b9c64f56",
+      "title": "What Are the Different Arithmetic Operators in JavaScript?"
+    },
+    {
+      "id": "67327195e77b1bd90bdd49d7",
+      "title": "What Happens When You Try to Do Calculations with Numbers and Strings?"
+    },
+    {
+      "id": "6732719e2e3ad4d947410b65",
+      "title": "How Does Operator Precedence Work?"
+    },
+    {
+      "id": "673271a8998ddfd97578d095",
+      "title": "How Do the Increment and Decrement Operators Work?"
+    },
+    {
+      "id": "673271b4213033d9b661c70e",
+      "title": "What Are Compound Assignment Operators in JavaScript, and How Do They Work?"
+    },
+    {
+      "id": "673271c7581a27d9dd78f6d6",
+      "title": "What Are Booleans, and How Do They Work with Equality and Inequality Operators?"
+    },
+    {
+      "id": "673271dffbc34fda31da9515",
+      "title": "What Are Comparison Operators, and How Do They Work?"
+    },
+    {
+      "id": "673271e8e3d43bda89f723b3",
+      "title": "What Are Unary Operators, and How Do They Work?"
+    },
+    {
+      "id": "673271f39f124ddac28866d5",
+      "title": "What Are Bitwise Operators, and How Do They Work?"
+    },
+    {
+      "id": "673271fd11d063daf0cf8d20",
+      "title": "What Are Conditional Statements, and How Do If/Else If/Else Statements Work?"
+    },
+    {
+      "id": "6732720e95f6a0db526a2e4d",
+      "title": "What Are Binary Logical Operators, and How Do They Work?"
+    },
+    {
+      "id": "67327217e70ee0db7913b255",
+      "title": "What Is the Math Object in JavaScript, and What Are Some Common Methods?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

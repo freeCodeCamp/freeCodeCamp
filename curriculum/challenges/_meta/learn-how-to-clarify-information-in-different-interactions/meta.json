@@ -1,0 +1,375 @@
+{
+  "name": "Learn How to Clarify Information in Different Interactions",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-clarify-information-in-different-interactions",
+  "order": 11,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "655c114a439cc488b79fe60f",
+      "title": "Dialogue 1: Describing a Workmate"
+    },
+    {
+      "id": "6620024f9abdcba3f531a4ed",
+      "title": "Task 1"
+    },
+    {
+      "id": "66200544eb8080a7cffe98cd",
+      "title": "Task 2"
+    },
+    {
+      "id": "662006b0cb4ee9a8a0e3b9bc",
+      "title": "Task 3"
+    },
+    {
+      "id": "66200a69671a05aa6bcd669e",
+      "title": "Task 4"
+    },
+    {
+      "id": "6620102deeab45aeeffa84ac",
+      "title": "Task 5"
+    },
+    {
+      "id": "662016beb9bb69b2bd4f5d2a",
+      "title": "Task 6"
+    },
+    {
+      "id": "6620187263f472b3b2d0c638",
+      "title": "Task 7"
+    },
+    {
+      "id": "6626dd1f251b2a43ad18b3bb",
+      "title": "Task 8"
+    },
+    {
+      "id": "6633e43c32afebfaef45da26",
+      "title": "Task 9"
+    },
+    {
+      "id": "6636759d3068bf2dd73272f2",
+      "title": "Task 10"
+    },
+    {
+      "id": "663677ae4cd78f2e87d34cac",
+      "title": "Task 11"
+    },
+    {
+      "id": "66367be03c46fd32ebb2d7a5",
+      "title": "Task 12"
+    },
+    {
+      "id": "66367e01e3c7bb33ca28dcff",
+      "title": "Task 13"
+    },
+    {
+      "id": "663681f2b524fe34dca85721",
+      "title": "Task 14"
+    },
+    {
+      "id": "663683bee8bb3c35a05ba69a",
+      "title": "Task 15"
+    },
+    {
+      "id": "663685882305b736cb133f2b",
+      "title": "Task 16"
+    },
+    {
+      "id": "663688f21e5cce3a30161e12",
+      "title": "Task 17"
+    },
+    {
+      "id": "66368c556493fd3fd21f446d",
+      "title": "Dialogue 2: Looking for Tom"
+    },
+    {
+      "id": "6636cb4a5a281173c4ac8c08",
+      "title": "Task 18"
+    },
+    {
+      "id": "6636ce8dd8527976bcc512a5",
+      "title": "Task 19"
+    },
+    {
+      "id": "6636d1246df2f077a703512c",
+      "title": "Task 20"
+    },
+    {
+      "id": "6636d20a1479ea7853331bc6",
+      "title": "Task 21"
+    },
+    {
+      "id": "6636d3e08afa737905037258",
+      "title": "Task 22"
+    },
+    {
+      "id": "6636e06ef062127d6e45d136",
+      "title": "Task 23"
+    },
+    {
+      "id": "663a3f4bd1ed1ba8f4552212",
+      "title": "Task 24"
+    },
+    {
+      "id": "663a4113812035a9e55aaf29",
+      "title": "Task 25"
+    },
+    {
+      "id": "663a47b234aefeabacb3cf75",
+      "title": "Task 26"
+    },
+    {
+      "id": "663a4d6ec33accaf2ec7be49",
+      "title": "Task 27"
+    },
+    {
+      "id": "663a4e8d22e594affc57ed82",
+      "title": "Task 28"
+    },
+    {
+      "id": "663a4fa7a15067b0c128cb01",
+      "title": "Task 29"
+    },
+    {
+      "id": "663a5b36b3cfadb39db070a2",
+      "title": "Task 30"
+    },
+    {
+      "id": "663a5bde4b0ae5b4421b4964",
+      "title": "Task 31"
+    },
+    {
+      "id": "663a62b17fc3bbb5f60b3d32",
+      "title": "Task 32"
+    },
+    {
+      "id": "663a6406c05b04b6affb427a",
+      "title": "Task 33"
+    },
+    {
+      "id": "663b704b213885462be6020e",
+      "title": "Task 34"
+    },
+    {
+      "id": "663b73051a79cb48e8575c9c",
+      "title": "Task 35"
+    },
+    {
+      "id": "663b9a1f2d5bed4fa98759bb",
+      "title": "Dialogue 3: A Guessing Game"
+    },
+    {
+      "id": "663bce49cc4c88ac83a3d618",
+      "title": "Task 36"
+    },
+    {
+      "id": "663bd0951a16faada79364bd",
+      "title": "Task 37"
+    },
+    {
+      "id": "663bd4807a9e2faee277fe71",
+      "title": "Task 38"
+    },
+    {
+      "id": "663bd7b5e73f82b044a7ebab",
+      "title": "Task 39"
+    },
+    {
+      "id": "663c1e666a0636bad7df73fc",
+      "title": "Task 40"
+    },
+    {
+      "id": "663c215247722dbc339af6a3",
+      "title": "Task 41"
+    },
+    {
+      "id": "663c28fb560322fb7f096297",
+      "title": "Task 42"
+    },
+    {
+      "id": "663c88890037230b817b9fef",
+      "title": "Task 43"
+    },
+    {
+      "id": "663c89e095962e0cc15c6553",
+      "title": "Task 44"
+    },
+    {
+      "id": "663c8dd09e3f71105de1ca9c",
+      "title": "Task 45"
+    },
+    {
+      "id": "663c8fc74ba87a11b0c1f642",
+      "title": "Task 46"
+    },
+    {
+      "id": "663c90e831be4c127bb11d35",
+      "title": "Task 47"
+    },
+    {
+      "id": "663c927eace0de1347294f6e",
+      "title": "Task 48"
+    },
+    {
+      "id": "663c9a6ddd82d94fbe28bb08",
+      "title": "Dialogue 4: Checking the Project Details"
+    },
+    {
+      "id": "663ccbc479ca2261259f46bc",
+      "title": "Task 49"
+    },
+    {
+      "id": "663cccdee312b962235e81d1",
+      "title": "Task 50"
+    },
+    {
+      "id": "663cce39c325416308bf1cc6",
+      "title": "Task 51"
+    },
+    {
+      "id": "663cd87f741bbf69f5f3b070",
+      "title": "Task 52"
+    },
+    {
+      "id": "663cdd506fb3896b73b1cd13",
+      "title": "Task 53"
+    },
+    {
+      "id": "663cffeb24e5c975dfa41e46",
+      "title": "Task 54"
+    },
+    {
+      "id": "663d02da85fab2771f93d4f2",
+      "title": "Task 55"
+    },
+    {
+      "id": "663d0c3d407cb479e138ba33",
+      "title": "Task 56"
+    },
+    {
+      "id": "663d115d93f1107c06ffa065",
+      "title": "Task 57"
+    },
+    {
+      "id": "663d136b07dbdd7cebf17907",
+      "title": "Task 58"
+    },
+    {
+      "id": "663d6a2db05996853d03529c",
+      "title": "Task 59"
+    },
+    {
+      "id": "663d6d929fe885871065c758",
+      "title": "Task 60"
+    },
+    {
+      "id": "663d6ec0d26560880593fbc2",
+      "title": "Task 61"
+    },
+    {
+      "id": "663d7154bd39b3894c29ddc0",
+      "title": "Task 62"
+    },
+    {
+      "id": "663d74ac95bdc08a3cfce6f5",
+      "title": "Task 63"
+    },
+    {
+      "id": "663d762ab138308b52969b04",
+      "title": "Task 64"
+    },
+    {
+      "id": "663d77a4930d448c314c0739",
+      "title": "Task 65"
+    },
+    {
+      "id": "663e822e5223e819f2eb118d",
+      "title": "Task 66"
+    },
+    {
+      "id": "664142b603be4d4521520f50",
+      "title": "Task 67"
+    },
+    {
+      "id": "664146aa13fd6746cd12f123",
+      "title": "Task 68"
+    },
+    {
+      "id": "66414800bb3a0d47e9962cec",
+      "title": "Task 69"
+    },
+    {
+      "id": "6641495568b04c48f699b7f9",
+      "title": "Task 70"
+    },
+    {
+      "id": "66414b6b60f69749ebd1dda9",
+      "title": "Task 71"
+    },
+    {
+      "id": "66414c799e5c1f4ac17bc54d",
+      "title": "Task 72"
+    },
+    {
+      "id": "664150b24f82ec4dc8d4f077",
+      "title": "Dialogue 5: Arrangements for a Company Party"
+    },
+    {
+      "id": "664154f44e837f509dbea6d4",
+      "title": "Task 73"
+    },
+    {
+      "id": "6641570410a46551973bb25c",
+      "title": "Task 74"
+    },
+    {
+      "id": "664159dd319cc352e511b057",
+      "title": "Task 75"
+    },
+    {
+      "id": "66415d2fc70cf753ed0723a4",
+      "title": "Task 76"
+    },
+    {
+      "id": "66415e9aa33e7054cc3da761",
+      "title": "Task 77"
+    },
+    {
+      "id": "664274a516894a70a9111cb6",
+      "title": "Task 78"
+    },
+    {
+      "id": "6642914bd5def3734c59b763",
+      "title": "Task 79"
+    },
+    {
+      "id": "664292f34cfe2c744598162c",
+      "title": "Task 80"
+    },
+    {
+      "id": "66429658abee9b75dea25871",
+      "title": "Task 81"
+    },
+    {
+      "id": "664298c6fd5b8d77b7f2d6fb",
+      "title": "Task 82"
+    },
+    {
+      "id": "664299c450949978bda86771",
+      "title": "Task 83"
+    },
+    {
+      "id": "66429a94355a0179708be94f",
+      "title": "Task 84"
+    },
+    {
+      "id": "66429c74fa3c997a4ff881e8",
+      "title": "Task 85"
+    },
+    {
+      "id": "66429ebe414f867b59b7843c",
+      "title": "Task 86"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

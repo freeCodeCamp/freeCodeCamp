@@ -1,0 +1,451 @@
+{
+  "name": "Learn How to Discuss Popular Trends in Technology",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-discuss-popular-trends-in-technology",
+  "order": 10,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "655c111ce03db7881e612a27",
+      "title": "Dialogue 1: Talking about Artificial Intelligence"
+    },
+    {
+      "id": "65fdc3c2cf0b9f186b30c7d4",
+      "title": "Task 1"
+    },
+    {
+      "id": "65fe10ef733aebd257f0677d",
+      "title": "Task 2"
+    },
+    {
+      "id": "65fe1441bf249ff3ee517b63",
+      "title": "Task 3"
+    },
+    {
+      "id": "65ff086669d84512c7d132f1",
+      "title": "Task 4"
+    },
+    {
+      "id": "6617e75a204e044552675f58",
+      "title": "Task 5"
+    },
+    {
+      "id": "6617e123a11505168aa02850",
+      "title": "Task 6"
+    },
+    {
+      "id": "6617e5067ae22739491c8333",
+      "title": "Task 7"
+    },
+    {
+      "id": "6617f4d790c1b470c3835818",
+      "title": "Task 8"
+    },
+    {
+      "id": "6617f4e86152be717a0d3569",
+      "title": "Task 9"
+    },
+    {
+      "id": "6618506a28b7340074a7512a",
+      "title": "Task 10"
+    },
+    {
+      "id": "6617f500f6a99d72213a5c92",
+      "title": "Task 11"
+    },
+    {
+      "id": "6617f517c76ecc72b9e6260b",
+      "title": "Task 12"
+    },
+    {
+      "id": "6617f532491c4f7393c859a7",
+      "title": "Task 13"
+    },
+    {
+      "id": "6617f51ef25faa7314b76691",
+      "title": "Task 14"
+    },
+    {
+      "id": "6617f539e6a21d73f1fdff0b",
+      "title": "Task 15"
+    },
+    {
+      "id": "6617f552ea245c74ec9ba31c",
+      "title": "Task 16"
+    },
+    {
+      "id": "6617f546c322867470cb0d02",
+      "title": "Task 17"
+    },
+    {
+      "id": "661811bce448257e10e8e1e9",
+      "title": "Task 18"
+    },
+    {
+      "id": "6617f560bb343c757c0d85fb",
+      "title": "Task 19"
+    },
+    {
+      "id": "6618129f75df1d7f0af1c3c0",
+      "title": "Task 20"
+    },
+    {
+      "id": "65fdc24bcb89e8162b96d954",
+      "title": "Dialogue 2: Talking about Remote Work and Collaboration Tools"
+    },
+    {
+      "id": "661918b4f8dc067669326ac6",
+      "title": "Task 21"
+    },
+    {
+      "id": "661918bb4626e7770c416e91",
+      "title": "Task 22"
+    },
+    {
+      "id": "661918cca4435877962d595a",
+      "title": "Task 23"
+    },
+    {
+      "id": "661918e3626bbf77fefcffcf",
+      "title": "Task 24"
+    },
+    {
+      "id": "661918e976fea8785956cd12",
+      "title": "Task 25"
+    },
+    {
+      "id": "661920391cc3297ee7350b33",
+      "title": "Task 26"
+    },
+    {
+      "id": "661918fafa78d478d0e9dc87",
+      "title": "Task 27"
+    },
+    {
+      "id": "661918ff8203057931fb6412",
+      "title": "Task 28"
+    },
+    {
+      "id": "66191905e86bc9798f6b903a",
+      "title": "Task 29"
+    },
+    {
+      "id": "66191916ab984979f9a1ae9d",
+      "title": "Task 30"
+    },
+    {
+      "id": "66192c57ba758e85c4f2d766",
+      "title": "Task 31"
+    },
+    {
+      "id": "6619191be66af37a5152b69b",
+      "title": "Task 32"
+    },
+    {
+      "id": "66191920b7e6dc7aacd28e07",
+      "title": "Task 33"
+    },
+    {
+      "id": "6619192ad58dc37b221da83c",
+      "title": "Task 34"
+    },
+    {
+      "id": "6619192e29a7f77b7a73d556",
+      "title": "Task 35"
+    },
+    {
+      "id": "661934977df94b891d403ca9",
+      "title": "Task 36"
+    },
+    {
+      "id": "6619364db35ae78a30a4a48b",
+      "title": "Task 37"
+    },
+    {
+      "id": "66191932f2fa967bbe2f5ac3",
+      "title": "Task 38"
+    },
+    {
+      "id": "661939c3f5ce238bfafba2b4",
+      "title": "Task 39"
+    },
+    {
+      "id": "66193b1deee8db8cfe3bc5c1",
+      "title": "Task 40"
+    },
+    {
+      "id": "65fdce67e652825776635f7e",
+      "title": "Dialogue 3: Talking about Quantum Computing"
+    },
+    {
+      "id": "66195ca035cf05015d8ab62f",
+      "title": "Task 41"
+    },
+    {
+      "id": "66195f137aa45a02467f9da6",
+      "title": "Task 42"
+    },
+    {
+      "id": "661960a9ed46f9037e252329",
+      "title": "Task 43"
+    },
+    {
+      "id": "661962ea6cd127049ca20b86",
+      "title": "Task 44"
+    },
+    {
+      "id": "661965b181f27d0595a0e67a",
+      "title": "Task 45"
+    },
+    {
+      "id": "661967b58a6d41069b47f602",
+      "title": "Task 46"
+    },
+    {
+      "id": "6619694e433188077c71d7ce",
+      "title": "Task 47"
+    },
+    {
+      "id": "66199df94bdd5c4de6c6fd00",
+      "title": "Task 48"
+    },
+    {
+      "id": "6619a04a1764834f38e43c85",
+      "title": "Task 49"
+    },
+    {
+      "id": "6619a3859a7988504633e9b0",
+      "title": "Task 50"
+    },
+    {
+      "id": "6619b420967139534c777c95",
+      "title": "Task 51"
+    },
+    {
+      "id": "6619c19ff141525653592e28",
+      "title": "Task 52"
+    },
+    {
+      "id": "6619e52962779d5b224e1f90",
+      "title": "Task 53"
+    },
+    {
+      "id": "6619e90b0cf1085c4e4b66bc",
+      "title": "Task 54"
+    },
+    {
+      "id": "6619ec6c2310ea5f3eea6f4a",
+      "title": "Task 55"
+    },
+    {
+      "id": "6619eea6ff1e07606fb64c13",
+      "title": "Task 56"
+    },
+    {
+      "id": "6619f1096f23a0619be8795c",
+      "title": "Task 57"
+    },
+    {
+      "id": "6619f35ae8ccb362d4d2d485",
+      "title": "Task 58"
+    },
+    {
+      "id": "65fdcfcd986a305a20de5e57",
+      "title": "Dialogue 4: Talking about Biometrics"
+    },
+    {
+      "id": "661ae3524b312bc38efcd2c6",
+      "title": "Task 59"
+    },
+    {
+      "id": "661ae52c7bcb38c507d2b54a",
+      "title": "Task 60"
+    },
+    {
+      "id": "661ae82d5c4b5dc68e84f409",
+      "title": "Task 61"
+    },
+    {
+      "id": "661ae8e967096cc75830f5b1",
+      "title": "Task 62"
+    },
+    {
+      "id": "661aeb62c0cf70c99147fbe9",
+      "title": "Task 63"
+    },
+    {
+      "id": "661aedc854df65ca707fab88",
+      "title": "Task 64"
+    },
+    {
+      "id": "661aeec49a6635cb37599db1",
+      "title": "Task 65"
+    },
+    {
+      "id": "661bd3fc29debe22a71eedb5",
+      "title": "Task 66"
+    },
+    {
+      "id": "661bd56a0154b323bd171a78",
+      "title": "Task 67"
+    },
+    {
+      "id": "661bd63b63586e25c1863cfd",
+      "title": "Task 68"
+    },
+    {
+      "id": "661bd79d5c288226d64bf03c",
+      "title": "Task 69"
+    },
+    {
+      "id": "661bd8ff4ef42827cd22b46f",
+      "title": "Task 70"
+    },
+    {
+      "id": "661bdbcf1d85c329ce8ef7b1",
+      "title": "Task 71"
+    },
+    {
+      "id": "661bdcc98f5d9b2ab8d2ec69",
+      "title": "Task 72"
+    },
+    {
+      "id": "661bddbdbbc09e2b8fac0801",
+      "title": "Task 73"
+    },
+    {
+      "id": "661bdee600dd352c60d0143e",
+      "title": "Task 74"
+    },
+    {
+      "id": "661be07313e6ef2d509c3f52",
+      "title": "Task 75"
+    },
+    {
+      "id": "661eb97a2eb89a1ecd9a507a",
+      "title": "Task 76"
+    },
+    {
+      "id": "661ebaf8b803451ff4b50a69",
+      "title": "Task 77"
+    },
+    {
+      "id": "661ebcd0e68e8820d99577c5",
+      "title": "Task 78"
+    },
+    {
+      "id": "661ebf11bfc6a72252a17fd6",
+      "title": "Task 79"
+    },
+    {
+      "id": "661ec00f710b5c232f2ac3d6",
+      "title": "Task 80"
+    },
+    {
+      "id": "661ec0de154fc223f87a3e44",
+      "title": "Task 81"
+    },
+    {
+      "id": "661ec1f0f4216124b5e450dd",
+      "title": "Task 82"
+    },
+    {
+      "id": "661ec3695be80025c0dcd556",
+      "title": "Task 83"
+    },
+    {
+      "id": "661ec4ab724bde26bf656574",
+      "title": "Task 84"
+    },
+    {
+      "id": "661ec6f5966e9027ab9756dc",
+      "title": "Task 85"
+    },
+    {
+      "id": "661ec8fa433f6e28aa69812c",
+      "title": "Task 86"
+    },
+    {
+      "id": "661ec9b63618da29bcfe55a5",
+      "title": "Task 87"
+    },
+    {
+      "id": "65fdd18dada8515bcb983337",
+      "title": "Dialogue 5: Talking about Augmented Reality"
+    },
+    {
+      "id": "661ed01f09114567cc8fa939",
+      "title": "Task 88"
+    },
+    {
+      "id": "661ed71bed334e6bac73cac5",
+      "title": "Task 89"
+    },
+    {
+      "id": "661edda6df434c6f2161bea5",
+      "title": "Task 90"
+    },
+    {
+      "id": "661edfb33a4dc570a763a05a",
+      "title": "Task 91"
+    },
+    {
+      "id": "661ee1436ecb9271c66be82c",
+      "title": "Task 92"
+    },
+    {
+      "id": "661ee36af2d2c772f247f6b6",
+      "title": "Task 93"
+    },
+    {
+      "id": "661ee8082f62ac75392224eb",
+      "title": "Task 94"
+    },
+    {
+      "id": "661ee552f40b9874237df84b",
+      "title": "Task 95"
+    },
+    {
+      "id": "661ee943945b22763d8ef29a",
+      "title": "Task 96"
+    },
+    {
+      "id": "661eea69ca8a5177320d5e90",
+      "title": "Task 97"
+    },
+    {
+      "id": "661eec2eeb773977fecc123d",
+      "title": "Task 98"
+    },
+    {
+      "id": "661eed09f4b5ed78d2d12e59",
+      "title": "Task 99"
+    },
+    {
+      "id": "661eedfdd116c27b62029999",
+      "title": "Task 100"
+    },
+    {
+      "id": "661eeede39f9547c34267bcc",
+      "title": "Task 101"
+    },
+    {
+      "id": "661eefbfc65d087cf3566591",
+      "title": "Task 102"
+    },
+    {
+      "id": "661ef077d0f4037daaae8a88",
+      "title": "Task 103"
+    },
+    {
+      "id": "661ef18cf60dc87ebdaf405d",
+      "title": "Task 104"
+    },
+    {
+      "id": "661ef27056f2c37f93141988",
+      "title": "Task 105"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

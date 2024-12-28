@@ -1,0 +1,123 @@
+{
+  "name": "Basic HTML and HTML5",
+  "isUpcomingChange": false,
+  "dashedName": "basic-html-and-html5",
+  "helpCategory": "HTML-CSS",
+  "order": 0,
+  "superBlock": "responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "bd7123c8c441eddfaeb5bdef",
+      "title": "Say Hello to HTML Elements"
+    },
+    {
+      "id": "bad87fee1348bd9aedf0887a",
+      "title": "Headline with the h2 Element"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08801",
+      "title": "Inform with the Paragraph Element"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08833",
+      "title": "Fill in the Blank with Placeholder Text"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08802",
+      "title": "Uncomment HTML"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08804",
+      "title": "Comment out HTML"
+    },
+    {
+      "id": "bad87fed1348bd9aedf08833",
+      "title": "Delete HTML Elements"
+    },
+    {
+      "id": "bad87fee1348bd9aecf08801",
+      "title": "Introduction to HTML5 Elements"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08812",
+      "title": "Add Images to Your Website"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08816",
+      "title": "Link to External Pages with Anchor Elements"
+    },
+    {
+      "id": "bad88fee1348bd9aedf08816",
+      "title": "Link to Internal Sections of a Page with Anchor Elements"
+    },
+    {
+      "id": "bad87fee1348bd9aede08817",
+      "title": "Nest an Anchor Element within a Paragraph"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08817",
+      "title": "Make Dead Links Using the Hash Symbol"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08820",
+      "title": "Turn an Image into a Link"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08827",
+      "title": "Create a Bulleted Unordered List"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08828",
+      "title": "Create an Ordered List"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08829",
+      "title": "Create a Text Field"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08830",
+      "title": "Add Placeholder Text to a Text Field"
+    },
+    {
+      "id": "bad87fee1348bd9aede08830",
+      "title": "Create a Form Element"
+    },
+    {
+      "id": "bad87fee1348bd9aedd08830",
+      "title": "Add a Submit Button to a Form"
+    },
+    {
+      "id": "bad87fee1348bd9aedc08830",
+      "title": "Use HTML5 to Require a Field"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08834",
+      "title": "Create a Set of Radio Buttons"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08835",
+      "title": "Create a Set of Checkboxes"
+    },
+    {
+      "id": "5c6c06847491271903d37cfd",
+      "title": "Use the value attribute with Radio Buttons and Checkboxes"
+    },
+    {
+      "id": "bad87fee1348bd9aedd08835",
+      "title": "Check Radio Buttons and Checkboxes by Default"
+    },
+    {
+      "id": "bad87fee1348bd9aede08835",
+      "title": "Nest Many Elements within a Single div Element"
+    },
+    {
+      "id": "587d78aa367417b2b2512aed",
+      "title": "Declare the Doctype of an HTML Document"
+    },
+    {
+      "id": "587d78aa367417b2b2512aec",
+      "title": "Define the Head and Body of an HTML Document"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

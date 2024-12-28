@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add-quizzes plugin should match the quizzes snapshot 1`] = `
+{
+  "quizzes": [
+    {
+      "questions": [
+        {
+          "answer": "<p>Quiz 1, question 1, answer</p>",
+          "distractors": [
+            "<p>Quiz 1, question 1, distractor 1</p>",
+            "<p>Quiz 1, question 1, distractor 2</p>",
+            "<p>Quiz 1, question 1, distractor 3</p>",
+          ],
+          "text": "<p>Quiz 1, question 1</p>",
+        },
+        {
+          "answer": "<p>Quiz 1, question 2, answer</p>",
+          "distractors": [
+            "<p>Quiz 1, question 2, distractor 1</p>",
+            "<p>Quiz 1, question 2, distractor 2</p>",
+            "<p>Quiz 1, question 2, distractor 3</p>",
+          ],
+          "text": "<p>Quiz 1, question 2</p>",
+        },
+      ],
+    },
+    {
+      "questions": [
+        {
+          "answer": "<p>Quiz 2, question 1, answer</p>",
+          "distractors": [
+            "<p>Quiz 2, question 1, distractor 1</p>",
+            "<p>Quiz 2, question 1, distractor 2</p>",
+            "<p>Quiz 2, question 1, distractor 3</p>",
+          ],
+          "text": "<p>Quiz 2, question 1</p>",
+        },
+        {
+          "answer": "<p>Quiz 2, question 2, answer</p>",
+          "distractors": [
+            "<p>Quiz 2, question 2, distractor 1</p>",
+            "<p>Quiz 2, question 2, distractor 2</p>",
+            "<p>Quiz 2, question 2, distractor 3</p>",
+          ],
+          "text": "<p>Quiz 2, question 2</p>",
+        },
+      ],
+    },
+  ],
+}
+`;

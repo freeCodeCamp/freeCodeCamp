@@ -1,0 +1,65 @@
+#editor-layout {
+  min-height: 0;
+  height: 100%;
+}
+
+#learn-app-wrapper,
+#learn-app-wrapper .desktop-layout,
+#learn-app-wrapper .reflex-container.vertical {
+  height: 100%;
+}
+
+#learn-app-wrapper .desktop-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+#learn-app-wrapper .reflex-container.vertical {
+  min-height: 0;
+  flex-grow: 1;
+}
+
+#learn-app-wrapper .reflex-container.vertical > .reflex-splitter,
+#learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {
+  background-color: var(--quaternary-background);
+  border: none;
+}
+
+#learn-app-wrapper .reflex-container.vertical > .reflex-splitter:hover,
+#learn-app-wrapper .reflex-container.horizontal > .reflex-splitter:hover {
+  background-color: var(--quaternary-color);
+}
+
+#learn-app-wrapper .reflex-container.vertical > .reflex-splitter {
+  width: 5px;
+}
+
+#learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {
+  height: 5px;
+}
+
+#learn-app-wrapper table {
+  display: inline-block;
+  overflow: auto;
+}
+
+#learn-app-wrapper table thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+#learn-app-wrapper table th {
+  font-weight: 700;
+}
+
+#learn-app-wrapper table th,
+#learn-app-wrapper table td {
+  padding: 6px 13px;
+  border: 1px solid var(--secondary-color);
+  text-align: center;
+}
+
+#learn-app-wrapper table tbody tr:nth-of-type(odd) {
+  background-color: var(--tertiary-background);
+}

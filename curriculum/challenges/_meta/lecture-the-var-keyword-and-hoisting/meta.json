@@ -1,0 +1,19 @@
+{
+  "name": "The var Keyword and Hoisting",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-the-var-keyword-and-hoisting",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67329fbcfaf5ff5cdaa38a42",
+      "title": "What Is the var Keyword, and Why Is It No Longer Suggested to Use It?"
+    },
+    {
+      "id": "67335f45489c5a11b71d0ed5",
+      "title": "What Is Hoisting?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

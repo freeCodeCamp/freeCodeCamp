@@ -1,0 +1,249 @@
+{
+  "name": "Learn Algorithm Design by Building a Shortest Path Algorithm",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-algorithm-design-by-building-a-shortest-path-algorithm",
+  "order": 7,
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "65789506b30453080f77470c",
+      "title": "Step 1"
+    },
+    {
+      "id": "65576ff7888f9e96f52a4be1",
+      "title": "Step 2"
+    },
+    {
+      "id": "6578b13757611e2825beb8a5",
+      "title": "Step 3"
+    },
+    {
+      "id": "6578b57361f2f132a02e2a18",
+      "title": "Step 4"
+    },
+    {
+      "id": "65796fac81f983127558f3f4",
+      "title": "Step 5"
+    },
+    {
+      "id": "6579717f0920131304286804",
+      "title": "Step 6"
+    },
+    {
+      "id": "65797670e0c0d016f17e7660",
+      "title": "Step 7"
+    },
+    {
+      "id": "6579ca0923cfa7162089d2f0",
+      "title": "Step 8"
+    },
+    {
+      "id": "65b7cd2b7bd9a684ccf1dc16",
+      "title": "Step 9"
+    },
+    {
+      "id": "65b7cf140d34058d7ea8935f",
+      "title": "Step 10"
+    },
+    {
+      "id": "65b7d25992879698180e6a71",
+      "title": "Step 11"
+    },
+    {
+      "id": "65b7d3319ebec69b983fb91b",
+      "title": "Step 12"
+    },
+    {
+      "id": "6579cbab9825b8170974c69a",
+      "title": "Step 13"
+    },
+    {
+      "id": "6579cd5f6dd62c189e53ddbb",
+      "title": "Step 14"
+    },
+    {
+      "id": "6579dd49fa8a8e1fd06b85a9",
+      "title": "Step 15"
+    },
+    {
+      "id": "6557709b0aee699a6a00528c",
+      "title": "Step 16"
+    },
+    {
+      "id": "65affe602a2a828b0382a058",
+      "title": "Step 17"
+    },
+    {
+      "id": "6557712d77ce2d9bd7e63afd",
+      "title": "Step 18"
+    },
+    {
+      "id": "6557716aadbd2d9c42c0e69a",
+      "title": "Step 19"
+    },
+    {
+      "id": "655771d889132f9ccd341060",
+      "title": "Step 20"
+    },
+    {
+      "id": "6566195b0a021bb660b2b4b1",
+      "title": "Step 21"
+    },
+    {
+      "id": "65661b72d6745ebec6a96923",
+      "title": "Step 22"
+    },
+    {
+      "id": "65577236b056379d5dbc7000",
+      "title": "Step 23"
+    },
+    {
+      "id": "655773b0591c5f9f4045883e",
+      "title": "Step 24"
+    },
+    {
+      "id": "655773f8b8b5db9fc6d0ae76",
+      "title": "Step 25"
+    },
+    {
+      "id": "6557743527cb92a06417ea97",
+      "title": "Step 26"
+    },
+    {
+      "id": "6557746aad2844a0cd864e12",
+      "title": "Step 27"
+    },
+    {
+      "id": "655774955b097ea14897db12",
+      "title": "Step 28"
+    },
+    {
+      "id": "655774d01daeeaa1978b99d5",
+      "title": "Step 29"
+    },
+    {
+      "id": "655775221059f5a20493d5d7",
+      "title": "Step 30"
+    },
+    {
+      "id": "655776db1eeae0a620e42a0d",
+      "title": "Step 31"
+    },
+    {
+      "id": "655777060d8ddea6741be1b1",
+      "title": "Step 32"
+    },
+    {
+      "id": "65577739f57ecca6c39bb4e9",
+      "title": "Step 33"
+    },
+    {
+      "id": "65577791ad8c26a7705e2919",
+      "title": "Step 34"
+    },
+    {
+      "id": "65577a17564ce8a8e06c1460",
+      "title": "Step 35"
+    },
+    {
+      "id": "65578c17d54dfab65cd54b95",
+      "title": "Step 36"
+    },
+    {
+      "id": "65578c74607d40b6d8c4757f",
+      "title": "Step 37"
+    },
+    {
+      "id": "65578cb031cd93b77a285db2",
+      "title": "Step 38"
+    },
+    {
+      "id": "65578cee7f2cb8b80127cce2",
+      "title": "Step 39"
+    },
+    {
+      "id": "65578d0f6c78a0b868a43b9c",
+      "title": "Step 40"
+    },
+    {
+      "id": "65578d4fc3afc3b8f554c882",
+      "title": "Step 41"
+    },
+    {
+      "id": "65578f895f2a65ba7a916804",
+      "title": "Step 42"
+    },
+    {
+      "id": "65578fcf00322dbad5dee05b",
+      "title": "Step 43"
+    },
+    {
+      "id": "657891ab9c1903f4e55433ba",
+      "title": "Step 44"
+    },
+    {
+      "id": "655790d113d14dbb727eaf41",
+      "title": "Step 45"
+    },
+    {
+      "id": "6557910b0ebaeebc18209e90",
+      "title": "Step 46"
+    },
+    {
+      "id": "6557913b8fe5c0bc834c9f4f",
+      "title": "Step 47"
+    },
+    {
+      "id": "655791847db8a9bd0b685f40",
+      "title": "Step 48"
+    },
+    {
+      "id": "655791ae44c182bd92f31caa",
+      "title": "Step 49"
+    },
+    {
+      "id": "655791e6cf5e03be3de73451",
+      "title": "Step 50"
+    },
+    {
+      "id": "6567722f53ad97d7ea6bb082",
+      "title": "Step 51"
+    },
+    {
+      "id": "65579228c669fcbebffd01d5",
+      "title": "Step 52"
+    },
+    {
+      "id": "6557924d47c325bf27afbe51",
+      "title": "Step 53"
+    },
+    {
+      "id": "6559d70c5161b16ff1d6530d",
+      "title": "Step 54"
+    },
+    {
+      "id": "6557927ad11e58bf8c794b25",
+      "title": "Step 55"
+    },
+    {
+      "id": "6559d86fe1b8947954b9178d",
+      "title": "Step 56"
+    },
+    {
+      "id": "6559da1b7d75f088f5e6b89f",
+      "title": "Step 57"
+    },
+    {
+      "id": "65774ae7c3eee66fe79b9459",
+      "title": "Step 58"
+    },
+    {
+      "id": "6559da93115de78dbbdc7ba3",
+      "title": "Step 59"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-grid"
+}

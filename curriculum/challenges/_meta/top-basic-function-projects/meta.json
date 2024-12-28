@@ -1,0 +1,27 @@
+{
+  "name": "Basic Function Projects",
+  "isUpcomingChange": false,
+  "dashedName": "top-basic-function-projects",
+  "helpCategory": "Odin",
+  "order": 13,
+  "superBlock": "the-odin-project",
+  "challengeOrder": [
+    {
+      "id": "6619240f46cec8e04d77e03a",
+      "title": "Basic Functions Exercise A"
+    },
+    {
+      "id": "661e131f068359c3ccf2f4d6",
+      "title": "Basic Functions Exercise B"
+    },
+    {
+      "id": "661e151f068359c3ccf2f4d7",
+      "title": "Basic Functions Exercise C"
+    },
+    {
+      "id": "661e17c6068359c3ccf2f4d8",
+      "title": "Basic Functions Exercise D"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

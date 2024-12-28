@@ -1,0 +1,51 @@
+{
+  "name": "Algorithms",
+  "isUpcomingChange": false,
+  "dashedName": "algorithms",
+  "helpCategory": "JavaScript",
+  "order": 0,
+  "superBlock": "coding-interview-prep",
+  "challengeOrder": [
+    {
+      "id": "a3f503de51cf954ede28891d",
+      "title": "Find the Symmetric Difference"
+    },
+    {
+      "id": "a56138aff60341a09ed6c480",
+      "title": "Inventory Update"
+    },
+    {
+      "id": "a7bf700cd123b9a54eef01d5",
+      "title": "No Repeats Please"
+    },
+    {
+      "id": "a3f503de51cfab748ff001aa",
+      "title": "Pairwise"
+    },
+    {
+      "id": "8d5123c8c441eddfaeb5bdef",
+      "title": "Implement Bubble Sort"
+    },
+    {
+      "id": "587d8259367417b2b2512c85",
+      "title": "Implement Selection Sort"
+    },
+    {
+      "id": "587d8259367417b2b2512c86",
+      "title": "Implement Insertion Sort"
+    },
+    {
+      "id": "587d825a367417b2b2512c89",
+      "title": "Implement Quick Sort"
+    },
+    {
+      "id": "587d825c367417b2b2512c8f",
+      "title": "Implement Merge Sort"
+    },
+    {
+      "id": "61abc7ebf3029b56226de5b6",
+      "title": "Implement Binary Search"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

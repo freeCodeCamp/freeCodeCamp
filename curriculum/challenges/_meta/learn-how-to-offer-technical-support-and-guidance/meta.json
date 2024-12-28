@@ -1,0 +1,287 @@
+{
+  "name": "Learn How to Offer Technical Support and Guidance",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-offer-technical-support-and-guidance",
+  "order": 24,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "661f629b4c12b93b615653be",
+      "title": "Dialogue 1: A Code Review Session"
+    },
+    {
+      "id": "661f62dcabe3153bebf1f72a",
+      "title": "Task 1"
+    },
+    {
+      "id": "661f8dd25cb5063e427337c9",
+      "title": "Task 2"
+    },
+    {
+      "id": "661f8cea1f72013d96065104",
+      "title": "Task 3"
+    },
+    {
+      "id": "661f906d5019b63f27af438c",
+      "title": "Task 4"
+    },
+    {
+      "id": "661f9142b11c393fa2e77593",
+      "title": "Task 5"
+    },
+    {
+      "id": "661f92163598134025d84a8e",
+      "title": "Task 6"
+    },
+    {
+      "id": "661f92a4f77e0740906355cb",
+      "title": "Task 7"
+    },
+    {
+      "id": "661f92f280d7f340dcfc56ca",
+      "title": "Task 8"
+    },
+    {
+      "id": "661f94a82f94a341819c0c9c",
+      "title": "Task 9"
+    },
+    {
+      "id": "6620829558e03f4653f58deb",
+      "title": "Task 10"
+    },
+    {
+      "id": "6620836572e36e46d688c04c",
+      "title": "Task 11"
+    },
+    {
+      "id": "66209f7a6550cf489ba9a9cd",
+      "title": "Task 12"
+    },
+    {
+      "id": "6620ae52fc918b06f4a8a790",
+      "title": "Task 13"
+    },
+    {
+      "id": "6620aeaa6aaa2807531e86f9",
+      "title": "Task 14"
+    },
+    {
+      "id": "6620d099d9fdfe0a09652a58",
+      "title": "Task 15"
+    },
+    {
+      "id": "6620d3003ddaf50aac1bc76d",
+      "title": "Task 16"
+    },
+    {
+      "id": "6620d5fa0e60d10ba81bd831",
+      "title": "Task 17"
+    },
+    {
+      "id": "6620d6cd9452910c27da19f1",
+      "title": "Task 18"
+    },
+    {
+      "id": "6620d86f3f8def0d220fe3d8",
+      "title": "Task 19"
+    },
+    {
+      "id": "6620d9bfd778060e1e264398",
+      "title": "Task 20"
+    },
+    {
+      "id": "6620da144418460e75025a66",
+      "title": "Task 21"
+    },
+    {
+      "id": "6620da6a9775020ecae448f4",
+      "title": "Task 22"
+    },
+    {
+      "id": "6620dbe988a71c0f99829974",
+      "title": "Task 23"
+    },
+    {
+      "id": "6620dcbedf73a4100939b90d",
+      "title": "Task 24"
+    },
+    {
+      "id": "6620de23b04dcb10920f2666",
+      "title": "Task 25"
+    },
+    {
+      "id": "6620dfcbc189b31168594021",
+      "title": "Task 26"
+    },
+    {
+      "id": "6620e3abcd0702129df8d7d0",
+      "title": "Task 27"
+    },
+    {
+      "id": "6620e4a094f6f213164ef107",
+      "title": "Task 28"
+    },
+    {
+      "id": "6620e51c36d18c137b887081",
+      "title": "Task 29"
+    },
+    {
+      "id": "6620e5c0b65d6913e1d94e8a",
+      "title": "Task 30"
+    },
+    {
+      "id": "6620e608b5f72b14311595b3",
+      "title": "Task 31"
+    },
+    {
+      "id": "662229a912046b51dd81b35a",
+      "title": "Dialogue 2: Tom's Onboarding with Maria"
+    },
+    {
+      "id": "662229d4a4690852e430a704",
+      "title": "Task 32"
+    },
+    {
+      "id": "66222a1ac43cd953b431e464",
+      "title": "Task 33"
+    },
+    {
+      "id": "66222b2a53c6be5671cd5b38",
+      "title": "Task 34"
+    },
+    {
+      "id": "66222b6f66670e574eedea0d",
+      "title": "Task 35"
+    },
+    {
+      "id": "66222be67d3aa258bc576aee",
+      "title": "Task 36"
+    },
+    {
+      "id": "66222c85f656035a4b1325f6",
+      "title": "Task 37"
+    },
+    {
+      "id": "66222e95ac25115f2dc5f171",
+      "title": "Task 38"
+    },
+    {
+      "id": "66222ef6f67cf4605103f73a",
+      "title": "Task 39"
+    },
+    {
+      "id": "66222fe05f1727629efcbeb9",
+      "title": "Task 40"
+    },
+    {
+      "id": "662230f3b1103a655e612d6c",
+      "title": "Task 41"
+    },
+    {
+      "id": "662231495ea4e36644b0a1f3",
+      "title": "Task 42"
+    },
+    {
+      "id": "662232980acab86a1f32aed0",
+      "title": "Task 43"
+    },
+    {
+      "id": "662234053814b36dc0ab9ae5",
+      "title": "Task 44"
+    },
+    {
+      "id": "6622346c798d906ee4d31846",
+      "title": "Task 45"
+    },
+    {
+      "id": "662236f6f07f7775b35ca43d",
+      "title": "Task 46"
+    },
+    {
+      "id": "6622372ee4a646767edcbfde",
+      "title": "Task 47"
+    },
+    {
+      "id": "6623472f50e39ddeccb047c6",
+      "title": "Dialogue 3: Collaborating on a Bug Fix"
+    },
+    {
+      "id": "662347b1bb7b3cdfcccffa57",
+      "title": "Task 48"
+    },
+    {
+      "id": "66234815e0a0b2e1967556c1",
+      "title": "Task 49"
+    },
+    {
+      "id": "66234877415f31e2b8717a91",
+      "title": "Task 50"
+    },
+    {
+      "id": "66234939088c72e4a35b3608",
+      "title": "Task 51"
+    },
+    {
+      "id": "662349f0cadfcce6b20889bd",
+      "title": "Task 52"
+    },
+    {
+      "id": "66234a5dc9c4d8e7dcc629d7",
+      "title": "Task 53"
+    },
+    {
+      "id": "66234ab7decaffe8ecb8327d",
+      "title": "Task 54"
+    },
+    {
+      "id": "66234b28ae877fea2d15571e",
+      "title": "Task 55"
+    },
+    {
+      "id": "66234b711dab68eafd8bf850",
+      "title": "Task 56"
+    },
+    {
+      "id": "66234f32cadc5ff3e109d696",
+      "title": "Task 57"
+    },
+    {
+      "id": "66234fc78749f6f521af89f3",
+      "title": "Task 58"
+    },
+    {
+      "id": "662350dc387cd3f81989ba51",
+      "title": "Task 59"
+    },
+    {
+      "id": "66235136fd7a23f8f802b279",
+      "title": "Task 60"
+    },
+    {
+      "id": "662351c28974b0faad8607be",
+      "title": "Task 61"
+    },
+    {
+      "id": "66235f35bef6ef183f7a06ff",
+      "title": "Task 62"
+    },
+    {
+      "id": "66235ffab373a11abea1a42c",
+      "title": "Task 63"
+    },
+    {
+      "id": "662360667ceb071bd3061489",
+      "title": "Task 64"
+    },
+    {
+      "id": "66236122aafa541e002b61e5",
+      "title": "Task 65"
+    },
+    {
+      "id": "6623619449c2dc1f62f15ff2",
+      "title": "Task 66"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

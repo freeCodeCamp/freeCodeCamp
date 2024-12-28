@@ -1,0 +1,115 @@
+{
+  "name": "Object Oriented Programming",
+  "isUpcomingChange": false,
+  "dashedName": "object-oriented-programming",
+  "helpCategory": "JavaScript",
+  "order": 6,
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "challengeOrder": [
+    {
+      "id": "587d7dac367417b2b2512b73",
+      "title": "Create a Basic JavaScript Object"
+    },
+    {
+      "id": "587d7dac367417b2b2512b74",
+      "title": "Use Dot Notation to Access the Properties of an Object"
+    },
+    {
+      "id": "587d7dad367417b2b2512b75",
+      "title": "Create a Method on an Object"
+    },
+    {
+      "id": "587d7dad367417b2b2512b76",
+      "title": "Make Code More Reusable with the this Keyword"
+    },
+    {
+      "id": "587d7dad367417b2b2512b77",
+      "title": "Define a Constructor Function"
+    },
+    {
+      "id": "587d7dad367417b2b2512b78",
+      "title": "Use a Constructor to Create Objects"
+    },
+    {
+      "id": "587d7dae367417b2b2512b79",
+      "title": "Extend Constructors to Receive Arguments"
+    },
+    {
+      "id": "587d7dae367417b2b2512b7a",
+      "title": "Verify an Object's Constructor with instanceof"
+    },
+    {
+      "id": "587d7dae367417b2b2512b7b",
+      "title": "Understand Own Properties"
+    },
+    {
+      "id": "587d7dae367417b2b2512b7c",
+      "title": "Use Prototype Properties to Reduce Duplicate Code"
+    },
+    {
+      "id": "587d7daf367417b2b2512b7d",
+      "title": "Iterate Over All Properties"
+    },
+    {
+      "id": "587d7daf367417b2b2512b7e",
+      "title": "Understand the Constructor Property"
+    },
+    {
+      "id": "587d7daf367417b2b2512b7f",
+      "title": "Change the Prototype to a New Object"
+    },
+    {
+      "id": "587d7daf367417b2b2512b80",
+      "title": "Remember to Set the Constructor Property when Changing the Prototype"
+    },
+    {
+      "id": "587d7db0367417b2b2512b81",
+      "title": "Understand Where an Object’s Prototype Comes From"
+    },
+    {
+      "id": "587d7db0367417b2b2512b82",
+      "title": "Understand the Prototype Chain"
+    },
+    {
+      "id": "587d7db0367417b2b2512b83",
+      "title": "Use Inheritance So You Don't Repeat Yourself"
+    },
+    {
+      "id": "587d7db0367417b2b2512b84",
+      "title": "Inherit Behaviors from a Supertype"
+    },
+    {
+      "id": "587d7db1367417b2b2512b85",
+      "title": "Set the Child's Prototype to an Instance of the Parent"
+    },
+    {
+      "id": "587d7db1367417b2b2512b86",
+      "title": "Reset an Inherited Constructor Property"
+    },
+    {
+      "id": "587d7db1367417b2b2512b87",
+      "title": "Add Methods After Inheritance"
+    },
+    {
+      "id": "587d7db1367417b2b2512b88",
+      "title": "Override Inherited Methods"
+    },
+    {
+      "id": "587d7db2367417b2b2512b89",
+      "title": "Use a Mixin to Add Common Behavior Between Unrelated Objects"
+    },
+    {
+      "id": "587d7db2367417b2b2512b8a",
+      "title": "Use Closure to Protect Properties Within an Object from Being Modified Externally"
+    },
+    {
+      "id": "587d7db2367417b2b2512b8b",
+      "title": "Understand the Immediately Invoked Function Expression (IIFE)"
+    },
+    {
+      "id": "587d7db2367417b2b2512b8c",
+      "title": "Use an IIFE to Create a Module"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

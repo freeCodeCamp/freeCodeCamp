@@ -1,0 +1,16 @@
+{
+  "name": "Build a Roman Numeral Converter Project",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-roman-numeral-converter-project",
+  "usesMultifileEditor": true,
+  "helpCategory": "JavaScript",
+  "order": 12,
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
+  "challengeOrder": [
+    {
+      "id": "657bdc8ba322aae1eac38390",
+      "title": "Build a Roman Numeral Converter"
+    }
+  ],
+  "blockLayout": "legacy-link"
+}

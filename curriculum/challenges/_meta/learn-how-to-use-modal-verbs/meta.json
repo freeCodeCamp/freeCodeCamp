@@ -1,0 +1,15 @@
+{
+  "name": "Learn How to Use Modal Verbs",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-use-modal-verbs",
+  "order": 13,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6660a0bd36571f6179705efe",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

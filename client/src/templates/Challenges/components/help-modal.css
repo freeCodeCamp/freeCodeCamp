@@ -1,0 +1,24 @@
+.alert > p > strong {
+  color: inherit;
+}
+
+.fa-circle-exclamation {
+  font-size: 3rem;
+  padding-bottom: 10px;
+}
+
+.help-form-legend {
+  color: var(--secondary-color);
+  border: 0;
+  font-size: 18px;
+}
+
+.checkbox-container {
+  display: flex;
+  width: 100%;
+  text-align: left;
+}
+
+.help-text-warning {
+  text-align: left;
+}

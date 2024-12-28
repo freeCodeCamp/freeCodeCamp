@@ -1,0 +1,12 @@
+{
+  "name": "Basic CSS Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-basic-css",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "671a887a7e62c75e9ab1ee4a", "title": "Basic CSS Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

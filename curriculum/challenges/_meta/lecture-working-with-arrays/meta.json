@@ -1,0 +1,31 @@
+{
+  "name": "Working with Arrays",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-arrays",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67329f508a6ec45b046700b3",
+      "title": "What Are the Key Characteristics of JavaScript Arrays?"
+    },
+    {
+      "id": "6732aebaa8abb9086a9bb17a",
+      "title": "How Do You Access and Update Elements in an Array?"
+    },
+    {
+      "id": "6732aec982904608b637716b",
+      "title": "How Do You Add and Remove Elements from the Beginning and End of an Array?"
+    },
+    {
+      "id": "6732aed2ac3d3c08f6149dd6",
+      "title": "What Is the Difference Between One-Dimensional and Two-Dimensional Arrays?"
+    },
+    {
+      "id": "6732aedd2d92e30923b9bc24",
+      "title": "What Is Array Destructuring, and How Does It Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

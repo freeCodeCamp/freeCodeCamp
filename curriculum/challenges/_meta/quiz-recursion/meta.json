@@ -1,0 +1,12 @@
+{
+  "name": "Recursion Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-recursion",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "66edd43cded6bff30944b676", "title": "Recursion Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

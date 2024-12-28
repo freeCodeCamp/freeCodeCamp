@@ -1,0 +1,159 @@
+{
+  "name": "Learn How to Express Agreement or Disagreement",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-express-agreement-or-disagreement",
+  "order": 23,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "661750f15f41cc866197183d",
+      "title": "Dialogue 1: Reviewing an App Design"
+    },
+    {
+      "id": "6617513e3855718810b088d0",
+      "title": "Task 1"
+    },
+    {
+      "id": "6617528c1b07688acdfea4e9",
+      "title": "Task 2"
+    },
+    {
+      "id": "661752fbc765ec8c13f96616",
+      "title": "Task 3"
+    },
+    {
+      "id": "66175386c145ea8d96b0adf9",
+      "title": "Task 4"
+    },
+    {
+      "id": "6617562f72eb2a9387252430",
+      "title": "Task 5"
+    },
+    {
+      "id": "6617569f81323494d7c80fa4",
+      "title": "Task 6"
+    },
+    {
+      "id": "661757150c7a75961a574a39",
+      "title": "Task 7"
+    },
+    {
+      "id": "66175792ec93b19771c55c62",
+      "title": "Task 8"
+    },
+    {
+      "id": "661757e285095e986fed9c27",
+      "title": "Task 9"
+    },
+    {
+      "id": "66177150856cd6d0ca504c9f",
+      "title": "Dialogue 2: What to Prioritize Next"
+    },
+    {
+      "id": "661771a11af289d1ec5c72f9",
+      "title": "Task 10"
+    },
+    {
+      "id": "661772551b64ddd40c834b1e",
+      "title": "Task 11"
+    },
+    {
+      "id": "661772f42e1412d5bfe4c655",
+      "title": "Task 12"
+    },
+    {
+      "id": "6617962704224fe969a76811",
+      "title": "Task 13"
+    },
+    {
+      "id": "661796e4635cd3eb1c8c78a4",
+      "title": "Task 14"
+    },
+    {
+      "id": "661797b505f2d3ed4b170d74",
+      "title": "Task 15"
+    },
+    {
+      "id": "66179829f664e3ee9b42ce5f",
+      "title": "Task 16"
+    },
+    {
+      "id": "6617994636fa13f16060b12b",
+      "title": "Task 17"
+    },
+    {
+      "id": "6617aea9ccdd68f7088368d1",
+      "title": "Task 18"
+    },
+    {
+      "id": "6617af3ab73475f87b53a59d",
+      "title": "Task 19"
+    },
+    {
+      "id": "6617afa03e1a7bf99f123c52",
+      "title": "Task 20"
+    },
+    {
+      "id": "6617b04b6e9139fb30d059d9",
+      "title": "Dialogue 3: How to Approach the Project"
+    },
+    {
+      "id": "6617b087df2220fcc00514ec",
+      "title": "Task 21"
+    },
+    {
+      "id": "6617b1efe920c2ffea40b54d",
+      "title": "Task 22"
+    },
+    {
+      "id": "6617b23534265c00d6b800fd",
+      "title": "Task 23"
+    },
+    {
+      "id": "6617b2b0388c600232500e28",
+      "title": "Task 24"
+    },
+    {
+      "id": "6617b34260704803d74a6e07",
+      "title": "Task 25"
+    },
+    {
+      "id": "6617b3d0e2de65050f11351c",
+      "title": "Task 26"
+    },
+    {
+      "id": "6617b41fe23fc0066e715317",
+      "title": "Task 27"
+    },
+    {
+      "id": "6617b494880f74079c400fa2",
+      "title": "Task 28"
+    },
+    {
+      "id": "6617b500a7049808f3a2a593",
+      "title": "Task 29"
+    },
+    {
+      "id": "6617b53e5eda8e09c6c67d28",
+      "title": "Task 30"
+    },
+    {
+      "id": "6617b674eb480b0c8d3d6031",
+      "title": "Task 31"
+    },
+    {
+      "id": "6617b81046e7b11287a7bef8",
+      "title": "Task 32"
+    },
+    {
+      "id": "6617b9b4bb38f916a2c01f8e",
+      "title": "Task 33"
+    },
+    {
+      "id": "6617bae50ecd231987654d2e",
+      "title": "Task 34"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

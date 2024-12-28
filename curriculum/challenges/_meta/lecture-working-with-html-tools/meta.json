@@ -1,0 +1,19 @@
+{
+  "name": "Working with HTML Tools",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-html-tools",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672a4fa7d335bc7cfb63a392",
+      "title": "What Is an HTML Validator, and How Can It Help You Debug Your Code?"
+    },
+    {
+      "id": "672a511bb408ec81c592eb68",
+      "title": "How to Use the DOM Inspector and DevTools to Debug and Build Your Projects"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

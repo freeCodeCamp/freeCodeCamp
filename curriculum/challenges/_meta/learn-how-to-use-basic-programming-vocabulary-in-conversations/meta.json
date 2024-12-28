@@ -1,0 +1,335 @@
+{
+  "name": "Learn How to Use Basic Programming Vocabulary in Conversations",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-use-basic-programming-vocabulary-in-conversations",
+  "order": 12,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6629cbab2498e4a1d1f592ac",
+      "title": "Dialogue 1: Discussing Basic Programming"
+    },
+    {
+      "id": "6629ce6bffd1efa9c6c57eaa",
+      "title": "Task 1"
+    },
+    {
+      "id": "6629cc728221a1a4a5613320",
+      "title": "Task 2"
+    },
+    {
+      "id": "6629ce1a4f6581a7266d6ca9",
+      "title": "Task 3"
+    },
+    {
+      "id": "6629e0281f1f63c107adeeb1",
+      "title": "Task 4"
+    },
+    {
+      "id": "662a1be9a499ccee6beb20f9",
+      "title": "Task 5"
+    },
+    {
+      "id": "6629e10635cf1ec412861da1",
+      "title": "Task 6"
+    },
+    {
+      "id": "6629e2c8d7ddd4c836958a4c",
+      "title": "Task 7"
+    },
+    {
+      "id": "6629e49677d89dcc9614251c",
+      "title": "Task 8"
+    },
+    {
+      "id": "6629e6f8758adad2ae0894b0",
+      "title": "Task 9"
+    },
+    {
+      "id": "6629e96c186102d8a65bfbb9",
+      "title": "Task 10"
+    },
+    {
+      "id": "6629e8993ac42fd6825f9b54",
+      "title": "Task 11"
+    },
+    {
+      "id": "662a20ae5a9153fa9e6206c9",
+      "title": "Task 12"
+    },
+    {
+      "id": "662a26c7a3d49b0a4a19a00f",
+      "title": "Task 13"
+    },
+    {
+      "id": "662a2779b2aeb80c10508bf2",
+      "title": "Task 14"
+    },
+    {
+      "id": "662a292bb1622d1012b5b86e",
+      "title": "Task 15"
+    },
+    {
+      "id": "662a2990757239112d74142e",
+      "title": "Task 16"
+    },
+    {
+      "id": "662a2b1f0c9314142ae87955",
+      "title": "Task 17"
+    },
+    {
+      "id": "662a2f2a2c16bf1a9f3609b7",
+      "title": "Task 18"
+    },
+    {
+      "id": "662a304552f2631d63aa7cab",
+      "title": "Task 19"
+    },
+    {
+      "id": "662a30d3f1071a1ef14eefe1",
+      "title": "Task 20"
+    },
+    {
+      "id": "662a35f7eaaa932ab0973d0c",
+      "title": "Task 21"
+    },
+    {
+      "id": "662b5fdf67f4ea087ff7e590",
+      "title": "Task 22"
+    },
+    {
+      "id": "662b718c7709f809559d5806",
+      "title": "Task 23"
+    },
+    {
+      "id": "662b74055c06e60af4f9b976",
+      "title": "Task 24"
+    },
+    {
+      "id": "662b7577212ab40b8534efbf",
+      "title": "Task 25"
+    },
+    {
+      "id": "662b772113dc330c283730f3",
+      "title": "Task 26"
+    },
+    {
+      "id": "662b7d0fda698d0d84ac67f4",
+      "title": "Task 27"
+    },
+    {
+      "id": "662b803fd9ddc00e943e350e",
+      "title": "Task 28"
+    },
+    {
+      "id": "662b81901b178a0fd33f093c",
+      "title": "Task 29"
+    },
+    {
+      "id": "662b82c8d47f8a1076172391",
+      "title": "Task 30"
+    },
+    {
+      "id": "662b83b12cab3910d87fdebc",
+      "title": "Task 31"
+    },
+    {
+      "id": "662b868dab90d512fc912cad",
+      "title": "Dialogue 2: Discussing Debugging"
+    },
+    {
+      "id": "662b871f32087113511f262a",
+      "title": "Task 32"
+    },
+    {
+      "id": "662b888ba2c1d713f3a05203",
+      "title": "Task 33"
+    },
+    {
+      "id": "662b8975b11107146a49ec58",
+      "title": "Task 34"
+    },
+    {
+      "id": "662e4dc39f884e1d15ed5f7a",
+      "title": "Task 35"
+    },
+    {
+      "id": "662e4f2edbb46a1dc6efc94f",
+      "title": "Task 36"
+    },
+    {
+      "id": "662e50c396d1771e709de60a",
+      "title": "Task 37"
+    },
+    {
+      "id": "662e523b4ee2e71f9c3ea9c7",
+      "title": "Task 38"
+    },
+    {
+      "id": "662ef8c53ee35f23bb031313",
+      "title": "Task 39"
+    },
+    {
+      "id": "662ef8454ca90123631dfc51",
+      "title": "Task 40"
+    },
+    {
+      "id": "662efb9464339d2518178b6e",
+      "title": "Task 41"
+    },
+    {
+      "id": "662efc55d552e72591518e31",
+      "title": "Task 42"
+    },
+    {
+      "id": "662efd365564b6260b79b0e9",
+      "title": "Task 43"
+    },
+    {
+      "id": "662efac808e7e024ab2672f2",
+      "title": "Task 44"
+    },
+    {
+      "id": "662efee6946fda26f424c1a5",
+      "title": "Task 45"
+    },
+    {
+      "id": "662effd7a99b2d275f0ff610",
+      "title": "Task 46"
+    },
+    {
+      "id": "662f00bdd41bbe27edf749fa",
+      "title": "Task 47"
+    },
+    {
+      "id": "662f0151b4dc8e284a8554fa",
+      "title": "Task 48"
+    },
+    {
+      "id": "662f0277f7bbb028dbc2c734",
+      "title": "Task 49"
+    },
+    {
+      "id": "662f047a8839a2298e1e8b3e",
+      "title": "Task 50"
+    },
+    {
+      "id": "662f053a70bb3a2a154993c0",
+      "title": "Task 51"
+    },
+    {
+      "id": "662f062232f1962aa082710a",
+      "title": "Task 52"
+    },
+    {
+      "id": "662f074021418e2b24937af7",
+      "title": "Task 53"
+    },
+    {
+      "id": "662f095c43dddc2c58d2e61f",
+      "title": "Task 54"
+    },
+    {
+      "id": "662f0839522f5e2bb4158b6f",
+      "title": "Task 55"
+    },
+    {
+      "id": "662f0b68050ee62d22149718",
+      "title": "Task 56"
+    },
+    {
+      "id": "662f0d350c37f42de48847fe",
+      "title": "Task 57"
+    },
+    {
+      "id": "662f0ea56ef95d3017740a5c",
+      "title": "Dialogue 3: Talking about OOP"
+    },
+    {
+      "id": "662f113e19790531297cec7b",
+      "title": "Task 58"
+    },
+    {
+      "id": "662f12006df30c31b9cb5a3c",
+      "title": "Task 59"
+    },
+    {
+      "id": "662f1025a0cbc2307f2ee9a7",
+      "title": "Task 60"
+    },
+    {
+      "id": "662f150f6e708633720c8c52",
+      "title": "Task 61"
+    },
+    {
+      "id": "662f16078a88463405b894c6",
+      "title": "Task 62"
+    },
+    {
+      "id": "662f17bf83ad0234a0261d92",
+      "title": "Task 63"
+    },
+    {
+      "id": "662f18633253ba3511982c4e",
+      "title": "Task 64"
+    },
+    {
+      "id": "662f18dd52d5583574fcb9e0",
+      "title": "Task 65"
+    },
+    {
+      "id": "662f2e4b96f60636d44eb7db",
+      "title": "Task 66"
+    },
+    {
+      "id": "662f31024608f337c0bf53a9",
+      "title": "Task 67"
+    },
+    {
+      "id": "662f327b74cbce38624be994",
+      "title": "Task 68"
+    },
+    {
+      "id": "662f3450de7c2139809fb72b",
+      "title": "Task 69"
+    },
+    {
+      "id": "662f36132e09c33a21645096",
+      "title": "Task 70"
+    },
+    {
+      "id": "662f3815b0798f3ae730a888",
+      "title": "Task 71"
+    },
+    {
+      "id": "662f38df518e713b716c3e2f",
+      "title": "Task 72"
+    },
+    {
+      "id": "662f638a2644e13c7b450cc0",
+      "title": "Task 73"
+    },
+    {
+      "id": "662f63e3af6b793ceb32df9d",
+      "title": "Task 74"
+    },
+    {
+      "id": "662f659f6ad8103db5d73490",
+      "title": "Task 75"
+    },
+    {
+      "id": "662f66ed185bc53e6171be3c",
+      "title": "Task 76"
+    },
+    {
+      "id": "662f67ce5ef6803efa19be3b",
+      "title": "Task 77"
+    },
+    {
+      "id": "662f69e2ea29ba3fd64e66e0",
+      "title": "Task 78"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

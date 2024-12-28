@@ -1,0 +1,187 @@
+{
+  "name": "Basic CSS",
+  "isUpcomingChange": false,
+  "dashedName": "basic-css",
+  "helpCategory": "HTML-CSS",
+  "order": 1,
+  "superBlock": "responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "bad87fee1348bd9aedf08803",
+      "title": "Change the Color of Text"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08805",
+      "title": "Use CSS Selectors to Style Elements"
+    },
+    {
+      "id": "bad87fee1348bd9aecf08806",
+      "title": "Use a CSS Class to Style an Element"
+    },
+    {
+      "id": "bad87fee1348bd9aefe08806",
+      "title": "Style Multiple Elements with a CSS Class"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08806",
+      "title": "Change the Font Size of an Element"
+    },
+    {
+      "id": "bad87fee1348bd9aede08807",
+      "title": "Set the Font Family of an Element"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08807",
+      "title": "Import a Google Font"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08808",
+      "title": "Specify How Fonts Should Degrade"
+    },
+    {
+      "id": "bad87fee1348bd9acdf08812",
+      "title": "Size Your Images"
+    },
+    {
+      "id": "bad87fee1348bd9bedf08813",
+      "title": "Add Borders Around Your Elements"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08814",
+      "title": "Add Rounded Corners with border-radius"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08815",
+      "title": "Make Circular Images with a border-radius"
+    },
+    {
+      "id": "bad87fed1348bd9aede07836",
+      "title": "Give a Background Color to a div Element"
+    },
+    {
+      "id": "bad87eee1348bd9aede07836",
+      "title": "Set the id of an Element"
+    },
+    {
+      "id": "bad87dee1348bd9aede07836",
+      "title": "Use an id Attribute to Style an Element"
+    },
+    {
+      "id": "bad88fee1348bd9aedf08825",
+      "title": "Adjust the Padding of an Element"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08822",
+      "title": "Adjust the Margin of an Element"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08823",
+      "title": "Add a Negative Margin to an Element"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08824",
+      "title": "Add Different Padding to Each Side of an Element"
+    },
+    {
+      "id": "bad87fee1248bd9aedf08824",
+      "title": "Add Different Margins to Each Side of an Element"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08826",
+      "title": "Use Clockwise Notation to Specify the Padding of an Element"
+    },
+    {
+      "id": "bad87fee1348bd9afdf08726",
+      "title": "Use Clockwise Notation to Specify the Margin of an Element"
+    },
+    {
+      "id": "58c383d33e2e3259241f3076",
+      "title": "Use Attribute Selectors to Style Elements"
+    },
+    {
+      "id": "bad82fee1322bd9aedf08721",
+      "title": "Understand Absolute versus Relative Units"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08736",
+      "title": "Style the HTML Body Element"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08746",
+      "title": "Inherit Styles from the Body Element"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08756",
+      "title": "Prioritize One Style Over Another"
+    },
+    {
+      "id": "bad87fee1348bd9aedf04756",
+      "title": "Override Styles in Subsequent CSS"
+    },
+    {
+      "id": "bad87fee1348bd8aedf06756",
+      "title": "Override Class Declarations by Styling ID Attributes"
+    },
+    {
+      "id": "bad87fee1348bd9aedf06756",
+      "title": "Override Class Declarations with Inline Styles"
+    },
+    {
+      "id": "bad87fee1348bd9aedf07756",
+      "title": "Override All Other Styles by using Important"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08726",
+      "title": "Use Hex Code for Specific Colors"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08721",
+      "title": "Use Hex Code to Mix Colors"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08719",
+      "title": "Use Abbreviated Hex Code"
+    },
+    {
+      "id": "bad87fee1348bd9aede08718",
+      "title": "Use RGB values to Color Elements"
+    },
+    {
+      "id": "bad82fee1348bd9aedf08721",
+      "title": "Use RGB to Mix Colors"
+    },
+    {
+      "id": "5a9d725e424fe3d0e10cad10",
+      "title": "Use CSS Variables to change several elements at once"
+    },
+    {
+      "id": "5a9d726c424fe3d0e10cad11",
+      "title": "Create a custom CSS Variable"
+    },
+    {
+      "id": "5a9d727a424fe3d0e10cad12",
+      "title": "Use a custom CSS Variable"
+    },
+    {
+      "id": "5a9d7286424fe3d0e10cad13",
+      "title": "Attach a Fallback value to a CSS Variable"
+    },
+    {
+      "id": "5b7d72c338cd7e35b63f3e14",
+      "title": "Improve Compatibility with Browser Fallbacks"
+    },
+    {
+      "id": "5a9d7295424fe3d0e10cad14",
+      "title": "Inherit CSS Variables"
+    },
+    {
+      "id": "5a9d72a1424fe3d0e10cad15",
+      "title": "Change a variable for a specific area"
+    },
+    {
+      "id": "5a9d72ad424fe3d0e10cad16",
+      "title": "Use a media query to change a variable"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

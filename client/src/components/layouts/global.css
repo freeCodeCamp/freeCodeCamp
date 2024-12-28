@@ -1,0 +1,696 @@
+html {
+  height: 100%;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  scroll-padding-top: calc(var(--header-height) + 10px);
+}
+
+body {
+  height: 100%;
+  font-family: var(--font-family-sans-serif);
+  color: var(--secondary-color);
+  background: var(--secondary-background);
+}
+
+/* This is to override Tailwind as it sets the font-weight to `bolder`.
+   TODO: Move this rule to @freecodecamp/ui. */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. (Though some styles might need to be dropped). */
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eeeeee;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+blockquote footer,
+blockquote small,
+blockquote .small {
+  display: block;
+  font-size: 80%;
+  line-height: 1.42857143;
+  color: var(--gray-45);
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+blockquote footer:before,
+blockquote small:before,
+blockquote .small:before {
+  content: '\2014 \00A0';
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+ul {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-inline-start: 40px;
+  list-style-type: disc;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding-inline-start: 40px;
+  list-style-type: decimal;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid var(--quaternary-background);
+}
+
+#___gatsby {
+  height: 100%;
+}
+
+#gatsby-focus-wrapper {
+  height: 100%;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  height: 100%;
+}
+
+.page-wrapper-80 {
+  min-height: 80vh;
+}
+
+.btn-cta-big {
+  max-height: 100%;
+  font-size: 1.5rem;
+  white-space: normal;
+  width: 100%;
+  max-width: 500px;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+/*
+  Row from @freecodecamp/ui adds some negative margin which causes
+  a little bit of horizontal overflow on certain pages. This eliminates that
+  for those pages.
+*/
+.overflow-fix {
+  margin-inline: 0;
+}
+
+.default-layout {
+  margin-top: var(--header-height);
+  background: var(--secondary-background);
+}
+
+.default-layout:only-child {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 0;
+}
+
+h1 {
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0.6rem 0;
+}
+h2 {
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0.6rem 0;
+}
+h3 {
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 0.6rem;
+}
+
+h4,
+h5,
+h6,
+td,
+th {
+  color: var(--secondary-color);
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0 0 1.2rem;
+}
+
+p {
+  line-height: 1.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0 0 1.2rem;
+}
+
+.big-heading {
+  font-size: 2rem !important;
+  overflow-wrap: break-word;
+}
+
+::selection {
+  background-color: var(--selection-color);
+}
+
+@media (max-width: 500px) {
+  .big-heading {
+    font-size: 1.5rem !important;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  .btn-cta,
+  .btn-cta-big {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .btn-cta-big {
+    font-size: 1.3rem;
+  }
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.green-text {
+  color: var(--secondary-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  /* This is required in order to improve text readability in Arabic */
+  text-underline-position: under;
+}
+
+@supports not (text-underline-position: under) {
+  a {
+    text-underline-offset: 1em;
+  }
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
+}
+/* modal */
+
+.fcc-modal {
+  background-color: var(--secondary-background);
+  color: var(--secondary-color);
+}
+
+button.close {
+  color: inherit;
+  background-color: transparent;
+  font-size: 28px;
+  opacity: 0.5;
+  text-shadow: none;
+}
+
+button.close:hover,
+button.close:focus {
+  color: inherit;
+  opacity: 1;
+  background-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus-outline-color);
+  outline-offset: 0;
+}
+
+@supports not selector(:focus-visible) {
+  :focus {
+    outline: 3px solid var(--focus-outline-color);
+    outline-offset: 0;
+  }
+}
+
+.modal-content {
+  background-color: var(--secondary-background);
+  border-radius: 0;
+  border: 1px solid var(--secondary-color);
+}
+
+.modal-footer,
+.modal-header {
+  border-color: var(--secondary-color);
+}
+
+button,
+input[type='submit'],
+.btn {
+  background-color: var(--quaternary-background);
+  border: 3px solid var(--secondary-color);
+  color: var(--secondary-color);
+  border-radius: 0;
+  text-decoration: none;
+  white-space: pre-line;
+  text-align: center;
+}
+
+button:hover,
+input[type='submit']:hover,
+.btn:hover,
+.btn:focus:hover {
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: var(--secondary-background);
+}
+
+.btn:focus {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn:active:hover {
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+}
+
+button[aria-disabled='true'],
+button[aria-disabled='true']:hover,
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  cursor: not-allowed;
+  background-color: var(--quaternary-background);
+  border-color: var(--gray-45);
+  color: var(--secondary-color);
+  opacity: 0.8;
+}
+
+.btn-cta {
+  background-color: #feac32;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border: 3px solid #feac32;
+  color: #0a0a23 !important;
+  text-align: center;
+}
+.btn-cta:hover,
+.btn-cta:focus,
+.btn-cta:active:hover {
+  background-color: #fecc4c !important;
+  border: 3px solid #f1a02a;
+  background-image: none;
+  color: #0a0a23 !important;
+}
+.btn-cta:active {
+  background-image: none;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.btn-link,
+.btn-link:focus,
+.btn-link:active {
+  color: inherit;
+  border: none;
+  text-decoration: underline;
+  background: transparent;
+  padding: 0;
+}
+.btn-link:hover,
+.btn-link:focus:active {
+  background: var(--tertiary-background);
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* Equivalent to the `medium` size of `@freecodecamp/ui` Button component */
+.btn {
+  padding: 6px 12px;
+  font-size: 18px;
+  line-height: 1.42857143;
+}
+
+/* Equivalent to the `large` size of `@freecodecamp/ui` Button component */
+.btn-lg {
+  padding: 0.625rem 1rem;
+  font-size: 24px;
+  line-height: 1.3333333;
+}
+
+/* Equivalent to the `small` size of `@freecodecamp/ui` Button component */
+.btn-sm {
+  padding: 0.25rem 0.625rem;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.map-superblock-link {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.map-superblock-link.btn-lg svg {
+  height: 100%;
+  min-height: 20px;
+  min-width: 16px;
+  margin-inline-start: 5px;
+}
+
+.map-superblock-link:active {
+  background-color: var(--quaternary-background);
+}
+
+.map-superblock-link:focus,
+.map-superblock-link.btn-lg:focus svg {
+  fill: var(--quaternary-background);
+  background-color: var(--secondary-color);
+  border-color: var(--gray-45);
+  color: var(--secondary-background);
+}
+
+.map-superblock-link:focus:not(:focus-visible),
+.map-superblock-link.btn-lg:focus:not(:focus-visible) svg {
+  background-color: var(--quaternary-background);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  fill: var(--primary-color);
+}
+
+.map-superblock-link:hover,
+.map-superblock-link.btn-lg:hover svg {
+  fill: var(--quaternary-background) !important;
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+  color: var(--secondary-background) !important;
+}
+
+.map-superblock-link.btn-lg svg,
+.map-icon,
+.cert-header-icon {
+  flex-shrink: 0;
+  fill: var(--primary-color);
+}
+
+.map-icon .inverted-color {
+  fill: var(--quaternary-background);
+}
+
+.map-superblock-link.btn-lg:hover .map-icon .inverted-color,
+.map-arrow-icon {
+  fill: var(--secondary-color);
+}
+
+.map-icon {
+  width: 35px;
+  max-height: 45px;
+  margin-inline: 5px;
+}
+
+.map-arrow-icon {
+  stroke: var(--secondary-color);
+}
+
+.cert-header-icon {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}
+
+@media (min-width: 700px) {
+  .map-superblock-link {
+    font-size: 1.1rem;
+  }
+  .map-icon {
+    width: 45px;
+    max-height: 55px;
+  }
+  .cert-header-icon {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .map-icon {
+    width: 50px;
+  }
+  .cert-header-icon {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+strong {
+  color: var(--secondary-color);
+}
+
+.form-control {
+  color: var(--primary-color);
+  border-color: var(--quaternary-background);
+  background-color: var(--primary-background);
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: 0;
+}
+
+input {
+  outline-color: transparent;
+  border-color: var(--quaternary-background);
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+form {
+  margin-bottom: 5px;
+}
+.form-control:focus,
+input:focus {
+  border-color: var(--tertiary-color);
+}
+code {
+  padding: 1px 4px;
+  background-color: var(--tertiary-background);
+  color: var(--tertiary-color);
+  border-radius: 0;
+  font-family: var(--font-family-monospace);
+  overflow-wrap: anywhere;
+  font-size: 90%;
+}
+
+:not(pre) > code {
+  border: 1px solid var(--gray-45);
+}
+
+.challenge-instructions code {
+  white-space: break-spaces;
+}
+
+.challenge-output span {
+  font-size: 1rem;
+}
+
+.breadcrumb {
+  background: var(--tertiary-background);
+  border-radius: 0;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  border-radius: 0;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+pre {
+  color: inherit;
+  background-color: inherit;
+  border: none;
+  border-radius: 0;
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 17px;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+/* TODO: Move this rule to @freecodecamp/ui. */
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.solution-viewer,
+.solution-viewer pre {
+  margin-bottom: 0;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.alert .btn,
+[role='alert'] .btn {
+  background-color: transparent;
+  color: inherit;
+  border-color: inherit;
+}
+.alert .btn:hover,
+.alert .btn:focus,
+.alert a:hover,
+.alert a:focus,
+[role='alert'] :is(a, .btn):is(:hover, :focus) {
+  background-color: #31708f;
+  color: #d9edf7;
+  border-color: #31708f;
+}
+
+.annual-donation-alert {
+  background: linear-gradient(
+      -10deg,
+      rgba(217, 237, 247, 1) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(255 215 224) 100%
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 202, 225, 1) 0%,
+      rgba(218, 234, 252, 1) 100%
+    );
+}
+
+.university-alert p,
+.annual-donation-alert p {
+  color: inherit;
+}
+
+/* gatsby 404 */
+#search {
+  background-color: var(--quaternary-background);
+  color: var(--primary-color);
+  border-color: var(--quaternary-color, buttonface);
+  border-width: 2px;
+  border-style: outset;
+  border-image: initial;
+}
+
+#search::placeholder {
+  color: var(--secondary-color);
+}
+
+/* WCAG fix */
+.sr-only {
+  color: white;
+  background-color: black;
+}
+
+/*
+ * /learn sets some default styles to all `h2`s.
+ * These rules are to override the defaults and apply danger styles to `danger` modal.
+ */
+#headlessui-portal-root h2 {
+  font-weight: normal;
+}
+#headlessui-portal-root .text-background-danger h2 {
+  color: var(--background-danger);
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* Port from Bootstrap as the Col component from @freecodecamp/ui
+   doesn't fully support the xs-8 + xs-4 layout.
+   TODO: Remove these and replace the classes with Col
+   once https://github.com/freeCodeCamp/ui/issues/162 is resolved. */
+.col-xs-8,
+.col-xs-4 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.col-xs-8 {
+  width: 66.66666667%;
+}
+.col-xs-4 {
+  width: 33.33333333%;
+}

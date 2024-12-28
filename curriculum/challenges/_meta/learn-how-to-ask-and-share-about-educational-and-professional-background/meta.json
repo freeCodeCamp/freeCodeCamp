@@ -1,0 +1,399 @@
+{
+  "name": "Learn How to Ask and Share About Educational and Professional Background",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-ask-and-share-about-educational-and-professional-background",
+  "order": 6,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "655c0feadb1dd77f6cda623f",
+      "title": "Dialogue 1: A Job Interview"
+    },
+    {
+      "id": "657b0f0be03b2137ed88b36c",
+      "title": "Task 1"
+    },
+    {
+      "id": "657b106ced8c653be6b3218f",
+      "title": "Task 2"
+    },
+    {
+      "id": "657b108cf870283d22b21e8e",
+      "title": "Task 3"
+    },
+    {
+      "id": "657b110ad8afcc3f8e586362",
+      "title": "Task 4"
+    },
+    {
+      "id": "657b115008a62d41c0d7482f",
+      "title": "Task 5"
+    },
+    {
+      "id": "657b119f0ce64343420bb850",
+      "title": "Task 6"
+    },
+    {
+      "id": "657b11e082e48a44eb4bfc09",
+      "title": "Task 7"
+    },
+    {
+      "id": "657b11f87368cf463ea4fe46",
+      "title": "Task 8"
+    },
+    {
+      "id": "657b1240ef768447b80817ad",
+      "title": "Task 9"
+    },
+    {
+      "id": "657b12ae08dd7049b300c901",
+      "title": "Task 10"
+    },
+    {
+      "id": "657b12e7c306334b7c320221",
+      "title": "Task 11"
+    },
+    {
+      "id": "657b13088693ef4ce21ce0e4",
+      "title": "Task 12"
+    },
+    {
+      "id": "657b133afcef714e542b557a",
+      "title": "Task 13"
+    },
+    {
+      "id": "657b135e9029fb4f8141e40c",
+      "title": "Task 14"
+    },
+    {
+      "id": "657b138d33db9e50f116b5f0",
+      "title": "Task 15"
+    },
+    {
+      "id": "657b1431076b365555784189",
+      "title": "Task 16"
+    },
+    {
+      "id": "657b145976723b56a97b8dda",
+      "title": "Task 17"
+    },
+    {
+      "id": "657b149630b3ea5873269a38",
+      "title": "Task 18"
+    },
+    {
+      "id": "657b14d8353d665a187fe771",
+      "title": "Task 19"
+    },
+    {
+      "id": "657b46c9be150f577f5a1086",
+      "title": "Dialogue 2: Another Job Interview"
+    },
+    {
+      "id": "657b153ac677705c7059530d",
+      "title": "Task 20"
+    },
+    {
+      "id": "657b15dbcafe4d5f39a5de82",
+      "title": "Task 21"
+    },
+    {
+      "id": "657b160d6a8662610fe6a523",
+      "title": "Task 22"
+    },
+    {
+      "id": "657b163c9da40e62b904be1f",
+      "title": "Task 23"
+    },
+    {
+      "id": "657b18e71067d6680b9ac5d3",
+      "title": "Task 24"
+    },
+    {
+      "id": "657b1a03df3ec46eca276046",
+      "title": "Task 25"
+    },
+    {
+      "id": "657b1985ae17886b05b382b1",
+      "title": "Task 26"
+    },
+    {
+      "id": "657b19bf7b32af6caf763ef7",
+      "title": "Task 27"
+    },
+    {
+      "id": "657b1a9581015573806e1e20",
+      "title": "Task 28"
+    },
+    {
+      "id": "657b1a27dc6daf6ffd52ff1f",
+      "title": "Task 29"
+    },
+    {
+      "id": "657b1cc072206e7ac3db88b8",
+      "title": "Task 30"
+    },
+    {
+      "id": "657b1a637e4dc571f8f4d3d7",
+      "title": "Task 31"
+    },
+    {
+      "id": "657b1d080265ba7c4f96bf79",
+      "title": "Task 32"
+    },
+    {
+      "id": "657b1d4ec0e2587e8bcc95f7",
+      "title": "Dialogue 3: Two Workmates Talk About Their Backgrounds"
+    },
+    {
+      "id": "657b1da0b27fef8117827ce5",
+      "title": "Task 33"
+    },
+    {
+      "id": "65f22f7d84784d8bd129c9a4",
+      "title": "Task 34"
+    },
+    {
+      "id": "65f230854698ec8c68b67fa4",
+      "title": "Task 35"
+    },
+    {
+      "id": "65f3146b4f4fb2c1f95c7335",
+      "title": "Task 36"
+    },
+    {
+      "id": "657b1e2fad2ffe84ab420a56",
+      "title": "Task 37"
+    },
+    {
+      "id": "657b1dfec76149836ea5c7d0",
+      "title": "Task 38"
+    },
+    {
+      "id": "65f310fc37e701bfa451be47",
+      "title": "Task 39"
+    },
+    {
+      "id": "65f31898ad2ed9c3b1a4c9b3",
+      "title": "Task 40"
+    },
+    {
+      "id": "65f3212e767d81dbcfbeb0cc",
+      "title": "Task 41"
+    },
+    {
+      "id": "65f3234e85f828dd1f45d384",
+      "title": "Task 42"
+    },
+    {
+      "id": "657b1e66159fec86336a737b",
+      "title": "Task 43"
+    },
+    {
+      "id": "65f3641948909aecf182befe",
+      "title": "Task 44"
+    },
+    {
+      "id": "65f365351cf89fedddcc281e",
+      "title": "Task 45"
+    },
+    {
+      "id": "65f365bc3c1491ee60db85a8",
+      "title": "Task 46"
+    },
+    {
+      "id": "657b1e9a62603587747f7f45",
+      "title": "Task 47"
+    },
+    {
+      "id": "657b1f0585d48f8ac0b19654",
+      "title": "Task 48"
+    },
+    {
+      "id": "657b1f598f63008c8bdb20b8",
+      "title": "Task 49"
+    },
+    {
+      "id": "657b1f981cd42e8dc3b282d9",
+      "title": "Task 50"
+    },
+    {
+      "id": "657b1fe950c0df90346e5d12",
+      "title": "Task 51"
+    },
+    {
+      "id": "657b201372864e91d4f5bb53",
+      "title": "Task 52"
+    },
+    {
+      "id": "657b20338e0802931673c1e1",
+      "title": "Task 53"
+    },
+    {
+      "id": "65f39df8d18f4814c75d3fba",
+      "title": "Task 54"
+    },
+    {
+      "id": "657b20985d315095e5c3851d",
+      "title": "Task 55"
+    },
+    {
+      "id": "65f39f5bc6d49d15d7ae3d73",
+      "title": "Task 56"
+    },
+    {
+      "id": "65f3a19e8b77c4170ed0704d",
+      "title": "Task 57"
+    },
+    {
+      "id": "657b21e28a01039cb27b4f13",
+      "title": "Task 58"
+    },
+    {
+      "id": "657b221b2ab0ac9e18a173ef",
+      "title": "Task 59"
+    },
+    {
+      "id": "657b223e41ce6b9f9a01d214",
+      "title": "Task 60"
+    },
+    {
+      "id": "65f3a5111de04c216a38d998",
+      "title": "Task 61"
+    },
+    {
+      "id": "65f3a5733a199c21ca589173",
+      "title": "Task 62"
+    },
+    {
+      "id": "65f3a66869afaa22af33a9a3",
+      "title": "Task 63"
+    },
+    {
+      "id": "65f3a7087f990a233ebb16ba",
+      "title": "Task 64"
+    },
+    {
+      "id": "657b227f7ad32ea17e2cdf28",
+      "title": "Dialogue 4: A Developer with a Different Background"
+    },
+    {
+      "id": "657b2310b8cd52a4f15c1818",
+      "title": "Task 65"
+    },
+    {
+      "id": "657b2340be1593a6517fe77b",
+      "title": "Task 66"
+    },
+    {
+      "id": "657b236aa1eb9fa7b209aa03",
+      "title": "Task 67"
+    },
+    {
+      "id": "657b23a413d28da927e087ca",
+      "title": "Task 68"
+    },
+    {
+      "id": "657b23bc0e32f9aa9c62eb82",
+      "title": "Task 69"
+    },
+    {
+      "id": "657b23f03b449aac2c517089",
+      "title": "Task 70"
+    },
+    {
+      "id": "657b24774d8cdab052ffe2a6",
+      "title": "Task 71"
+    },
+    {
+      "id": "657b242d06512dadaea55056",
+      "title": "Task 72"
+    },
+    {
+      "id": "657b24542024c8af092cd6c4",
+      "title": "Task 73"
+    },
+    {
+      "id": "657b24a500800cb1c6945da9",
+      "title": "Task 74"
+    },
+    {
+      "id": "657b2be1b19500c63fc1a467",
+      "title": "Task 75"
+    },
+    {
+      "id": "657b2c040bb5f6c77fa5df80",
+      "title": "Task 76"
+    },
+    {
+      "id": "657b2d618b8851cc5baf9490",
+      "title": "Task 77"
+    },
+    {
+      "id": "657b2d9cb974dace59024964",
+      "title": "Task 78"
+    },
+    {
+      "id": "657b2dd7745fdcd03e5160f4",
+      "title": "Dialogue 5: Anna Talks About her Experience"
+    },
+    {
+      "id": "657b2e0666d4a9d1b851f90e",
+      "title": "Task 79"
+    },
+    {
+      "id": "657b2ec6c054efd71e503a27",
+      "title": "Task 80"
+    },
+    {
+      "id": "657b2eeb31e435d89ecce6f3",
+      "title": "Task 81"
+    },
+    {
+      "id": "657b2f0b3bcfe7d9f4151854",
+      "title": "Task 82"
+    },
+    {
+      "id": "657b2f3bf7a2cbdb58d959d5",
+      "title": "Task 83"
+    },
+    {
+      "id": "657b2f6cb66826dcbac08094",
+      "title": "Task 84"
+    },
+    {
+      "id": "657b2fa89ddc20de629ca21f",
+      "title": "Task 85"
+    },
+    {
+      "id": "657b2fc9c0f96bdfddfce4d9",
+      "title": "Task 86"
+    },
+    {
+      "id": "657b2fea728c2be14a8a98c4",
+      "title": "Task 87"
+    },
+    {
+      "id": "657b3026ff79fbe2dda6cb39",
+      "title": "Task 88"
+    },
+    {
+      "id": "657b306fe94f29e4b4aa9105",
+      "title": "Task 89"
+    },
+    {
+      "id": "657b30ac03b523e6640deaf1",
+      "title": "Task 90"
+    },
+    {
+      "id": "657b30e1b9f035e7e656fd01",
+      "title": "Task 91"
+    },
+    {
+      "id": "657b315533e4edeba65111b8",
+      "title": "Task 92"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

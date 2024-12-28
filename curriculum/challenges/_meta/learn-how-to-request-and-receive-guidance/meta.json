@@ -1,0 +1,275 @@
+{
+  "name": "Learn How to Request and Receive Guidance",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-request-and-receive-guidance",
+  "order": 25,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "66250fc0d711192eebfff0e9",
+      "title": "Dialogue 1: Solving Coding Challenges"
+    },
+    {
+      "id": "662510c947e06930d2dbab21",
+      "title": "Task 1"
+    },
+    {
+      "id": "66251132384f80331831867a",
+      "title": "Task 2"
+    },
+    {
+      "id": "662511992b96e5344c2ff040",
+      "title": "Task 3"
+    },
+    {
+      "id": "6625123129742735c5231dbe",
+      "title": "Task 4"
+    },
+    {
+      "id": "66251295a284563711fba9ba",
+      "title": "Task 5"
+    },
+    {
+      "id": "6625136b87a56a3913122eb5",
+      "title": "Task 6"
+    },
+    {
+      "id": "662513cfc37d6c3a297b7b94",
+      "title": "Task 7"
+    },
+    {
+      "id": "662514383f43d53b748dff42",
+      "title": "Task 8"
+    },
+    {
+      "id": "662514cc5f752c3cfa8f790a",
+      "title": "Task 9"
+    },
+    {
+      "id": "662515989f56983f1f2cb10d",
+      "title": "Task 10"
+    },
+    {
+      "id": "6625161c74f42b40918e3d40",
+      "title": "Task 11"
+    },
+    {
+      "id": "662516a0393cb741cf52e4ab",
+      "title": "Task 12"
+    },
+    {
+      "id": "662516f67e575142bcd515dc",
+      "title": "Task 13"
+    },
+    {
+      "id": "6625172e28818f43a04d7915",
+      "title": "Task 14"
+    },
+    {
+      "id": "662517bb095bf344730c6e7a",
+      "title": "Task 15"
+    },
+    {
+      "id": "6625182c819dcd464d8a772f",
+      "title": "Task 16"
+    },
+    {
+      "id": "662519204fa706489bf194d7",
+      "title": "Task 17"
+    },
+    {
+      "id": "662519d6e045404a8825ec64",
+      "title": "Task 18"
+    },
+    {
+      "id": "66251a827166c04c250f8858",
+      "title": "Task 19"
+    },
+    {
+      "id": "66251b2d50a4454dd7eb4591",
+      "title": "Task 20"
+    },
+    {
+      "id": "66251b9ca21e8a4f232af061",
+      "title": "Task 21"
+    },
+    {
+      "id": "66251c216cffc3508cdcc4d9",
+      "title": "Task 22"
+    },
+    {
+      "id": "66251c6da2ea2b517704971a",
+      "title": "Task 23"
+    },
+    {
+      "id": "66251cba9059ca525eac8eb7",
+      "title": "Task 24"
+    },
+    {
+      "id": "66251d38d259e453c729ed73",
+      "title": "Task 25"
+    },
+    {
+      "id": "66251d83ab861554d81c9001",
+      "title": "Task 26"
+    },
+    {
+      "id": "66251dd2d2582a55cc4ca988",
+      "title": "Task 27"
+    },
+    {
+      "id": "66251e6701f1ac574db171fe",
+      "title": "Task 28"
+    },
+    {
+      "id": "66251f12b5f14c58d410cd98",
+      "title": "Task 29"
+    },
+    {
+      "id": "6625ceb55c430866094b40b9",
+      "title": "Dialogue 2: Learning a New Technology"
+    },
+    {
+      "id": "6625cee408515366fddbf402",
+      "title": "Task 30"
+    },
+    {
+      "id": "6625cf67c35a69684aafd265",
+      "title": "Task 31"
+    },
+    {
+      "id": "6625cff7d0c95169e5b8fc7d",
+      "title": "Task 32"
+    },
+    {
+      "id": "6625d0e9ef6f966c3e2d6164",
+      "title": "Task 33"
+    },
+    {
+      "id": "6625d3af386a1a72d220e20d",
+      "title": "Task 34"
+    },
+    {
+      "id": "6625d42589aa8173e84c6cac",
+      "title": "Task 35"
+    },
+    {
+      "id": "6625d472aa9f8074dca7199f",
+      "title": "Task 36"
+    },
+    {
+      "id": "6625d4b5b043f075a2e9425d",
+      "title": "Task 37"
+    },
+    {
+      "id": "6625d54c1eb70c774106c380",
+      "title": "Task 38"
+    },
+    {
+      "id": "6625d5ad00fc51785d7fb311",
+      "title": "Task 39"
+    },
+    {
+      "id": "6625d612ad11c279939fb91c",
+      "title": "Task 40"
+    },
+    {
+      "id": "6625d6554783147a7dbce128",
+      "title": "Task 41"
+    },
+    {
+      "id": "6625d6b086abb87b8c962955",
+      "title": "Task 42"
+    },
+    {
+      "id": "6625d757c9a1667d13c358db",
+      "title": "Task 43"
+    },
+    {
+      "id": "6625d7e129384c7ec26b2cc3",
+      "title": "Task 44"
+    },
+    {
+      "id": "6625d81940f2c57f66bbd17e",
+      "title": "Task 45"
+    },
+    {
+      "id": "6625d84e92201f802eac3973",
+      "title": "Task 46"
+    },
+    {
+      "id": "6625d8bc46b89481625b068b",
+      "title": "Task 47"
+    },
+    {
+      "id": "6625d910fb77f9826de00b73",
+      "title": "Task 48"
+    },
+    {
+      "id": "6625d9508854008334d44831",
+      "title": "Task 49"
+    },
+    {
+      "id": "6625d987196d2383e359d41f",
+      "title": "Task 50"
+    },
+    {
+      "id": "6625da09ef6e5b8547626587",
+      "title": "Task 51"
+    },
+    {
+      "id": "6625da582aba58863d900bcf",
+      "title": "Task 52"
+    },
+    {
+      "id": "6625dc1d103a638a7fd5308b",
+      "title": "Task 53"
+    },
+    {
+      "id": "6625dc81861c0d8b754a4829",
+      "title": "Task 54"
+    },
+    {
+      "id": "6625ddee54d1db9090a4800f",
+      "title": "Dialogue 3: Offering Assistance and Receiving Guidance"
+    },
+    {
+      "id": "6625de24962337919e462c20",
+      "title": "Task 55"
+    },
+    {
+      "id": "6625deaf1ab4a69314d3125e",
+      "title": "Task 56"
+    },
+    {
+      "id": "6625dee8ccb83a93da674fca",
+      "title": "Task 57"
+    },
+    {
+      "id": "6625df2bb732da94b03089d1",
+      "title": "Task 58"
+    },
+    {
+      "id": "6625df8d71b44495cde83d48",
+      "title": "Task 59"
+    },
+    {
+      "id": "6625dfe17a5dd696cf89cb01",
+      "title": "Task 60"
+    },
+    {
+      "id": "6625e02aa797a497b69d2c55",
+      "title": "Task 61"
+    },
+    {
+      "id": "6625e08130068e98c6c166c6",
+      "title": "Task 62"
+    },
+    {
+      "id": "6625e0c2e7f616999352aa7b",
+      "title": "Task 63"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

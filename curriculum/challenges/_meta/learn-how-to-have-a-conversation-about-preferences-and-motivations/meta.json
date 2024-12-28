@@ -1,0 +1,595 @@
+{
+  "name": "Learn How to Have a Conversation About Preferences and Motivations",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-have-a-conversation-about-preferences-and-motivations",
+  "order": 9,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "658111239f39a01c8f095c44",
+      "title": "Dialogue 1: What Motivates the Team?"
+    },
+    {
+      "id": "65ca7d68954aca359009f790",
+      "title": "Task 1"
+    },
+    {
+      "id": "65ca82211643fd3f990788dd",
+      "title": "Task 2"
+    },
+    {
+      "id": "65cb916a2d3d9851f81601b2",
+      "title": "Task 3"
+    },
+    {
+      "id": "65cb95e5ff03d253dcf867af",
+      "title": "Task 4"
+    },
+    {
+      "id": "658113cc404fc81e44cb941c",
+      "title": "Task 5"
+    },
+    {
+      "id": "658112ee8ac40a1d9619f160",
+      "title": "Task 6"
+    },
+    {
+      "id": "658114e39ae35a1ece3e4ef1",
+      "title": "Task 7"
+    },
+    {
+      "id": "6581157ca9f14c1f5394d232",
+      "title": "Task 8"
+    },
+    {
+      "id": "6581530787b552274518eea5",
+      "title": "Task 9"
+    },
+    {
+      "id": "65811619cf9fad1fe57fd7b8",
+      "title": "Task 10"
+    },
+    {
+      "id": "658118a9a10235216e6cd698",
+      "title": "Task 11"
+    },
+    {
+      "id": "658147bb3dbda824437fd6f9",
+      "title": "Task 12"
+    },
+    {
+      "id": "65814f353f7b4f252e11b550",
+      "title": "Task 13"
+    },
+    {
+      "id": "65815057676f2625ba44a320",
+      "title": "Task 14"
+    },
+    {
+      "id": "658150c6b7f47a2629b2372d",
+      "title": "Task 15"
+    },
+    {
+      "id": "658153bbda68b527d415c463",
+      "title": "Task 16"
+    },
+    {
+      "id": "658154d361f5f6285eeeffc6",
+      "title": "Task 17"
+    },
+    {
+      "id": "6581178fca60702052899c94",
+      "title": "Task 18"
+    },
+    {
+      "id": "6581557c17e64128b1a5aeb6",
+      "title": "Task 19"
+    },
+    {
+      "id": "6581561eb7a353292c4a1ff7",
+      "title": "Task 20"
+    },
+    {
+      "id": "65fc8beb00559e5a183ab2de",
+      "title": "Task 21"
+    },
+    {
+      "id": "65fc8d3b0133d45abd7a179b",
+      "title": "Task 22"
+    },
+    {
+      "id": "65fc92b127e3af5bcab2a449",
+      "title": "Task 23"
+    },
+    {
+      "id": "65fc932d577d505c57e9551a",
+      "title": "Task 24"
+    },
+    {
+      "id": "65fc9417738a7e5cd2bf317e",
+      "title": "Task 25"
+    },
+    {
+      "id": "6581568b3a22522999c40969",
+      "title": "Task 26"
+    },
+    {
+      "id": "65fc94ba65ed765d55195bc0",
+      "title": "Task 27"
+    },
+    {
+      "id": "6581576a14f97b2a2d82c584",
+      "title": "Task 28"
+    },
+    {
+      "id": "65fc989e09a9226b9b51dc87",
+      "title": "Task 29"
+    },
+    {
+      "id": "65fc990ec22b3e6c0345c725",
+      "title": "Task 30"
+    },
+    {
+      "id": "65fc9a04edb4d56c8390bc3a",
+      "title": "Task 31"
+    },
+    {
+      "id": "658157d104bbc92a95147e45",
+      "title": "Task 32"
+    },
+    {
+      "id": "65fc9ab3635ebc6d167f86e6",
+      "title": "Task 33"
+    },
+    {
+      "id": "65fc9b4c8577c76d76724227",
+      "title": "Task 34"
+    },
+    {
+      "id": "6581588237ef332b1f4a2418",
+      "title": "Task 35"
+    },
+    {
+      "id": "65fc9be86f2ae26ddcdf0bb3",
+      "title": "Task 36"
+    },
+    {
+      "id": "65fc9c5db0a80e6e3d3cfce5",
+      "title": "Task 37"
+    },
+    {
+      "id": "658158edd3fc672bafe96079",
+      "title": "Task 38"
+    },
+    {
+      "id": "6581596326d6ef2c0b39200d",
+      "title": "Task 39"
+    },
+    {
+      "id": "658160772584ba319849f910",
+      "title": "Dialogue 2: Asking How Someone Feels"
+    },
+    {
+      "id": "65816188f69f4731f852414b",
+      "title": "Task 40"
+    },
+    {
+      "id": "658162d19fa392326fe7a5c7",
+      "title": "Task 41"
+    },
+    {
+      "id": "658163793f65e532b8fa18e6",
+      "title": "Task 42"
+    },
+    {
+      "id": "65816435fa555c330f785cbb",
+      "title": "Task 43"
+    },
+    {
+      "id": "65818f21f6e4f33551f7023a",
+      "title": "Task 44"
+    },
+    {
+      "id": "658191bf5053a835c882fdd3",
+      "title": "Task 45"
+    },
+    {
+      "id": "65819284843aab3625cf49e1",
+      "title": "Task 46"
+    },
+    {
+      "id": "658192efec6fe7366f7b99d2",
+      "title": "Task 47"
+    },
+    {
+      "id": "65819377e2ad2536b3d1e0c0",
+      "title": "Task 48"
+    },
+    {
+      "id": "6581944b911c3c3715d35518",
+      "title": "Task 49"
+    },
+    {
+      "id": "658194a34cb24537624fad0e",
+      "title": "Task 50"
+    },
+    {
+      "id": "6581950a4e5ca237a17d1a02",
+      "title": "Task 51"
+    },
+    {
+      "id": "658195600d516b37e310fbf2",
+      "title": "Task 52"
+    },
+    {
+      "id": "658197767dc3fc387439e067",
+      "title": "Task 53"
+    },
+    {
+      "id": "6581a2a527222938f4f0a9eb",
+      "title": "Task 54"
+    },
+    {
+      "id": "6581a32ee97531393b34b783",
+      "title": "Task 55"
+    },
+    {
+      "id": "6581a3ccf2ecd839816c885d",
+      "title": "Task 56"
+    },
+    {
+      "id": "6581a46a402a0d39de6b1932",
+      "title": "Task 57"
+    },
+    {
+      "id": "6581a5c14eb46b3a36f082c6",
+      "title": "Task 58"
+    },
+    {
+      "id": "6581a6b50e86ae3a9041f6f1",
+      "title": "Task 59"
+    },
+    {
+      "id": "6581a7d6af8f2f3aefd232ab",
+      "title": "Task 60"
+    },
+    {
+      "id": "6581a95da053653b4593a650",
+      "title": "Task 61"
+    },
+    {
+      "id": "6581aa0c6583c53b927defa4",
+      "title": "Task 62"
+    },
+    {
+      "id": "6581add0405ccf3bfc3c1d5f",
+      "title": "Task 63"
+    },
+    {
+      "id": "65a25ccb31eedb00df74679f",
+      "title": "Task 64"
+    },
+    {
+      "id": "65a1f4b78e0174e6ce7272ff",
+      "title": "Task 65"
+    },
+    {
+      "id": "65a1f959ca8f18f0e711d596",
+      "title": "Task 66"
+    },
+    {
+      "id": "65a1fa60a447d4f36ae16e1e",
+      "title": "Task 67"
+    },
+    {
+      "id": "65a351bd69b0b72d7ed24eb5",
+      "title": "Dialogue 3: Talking about Motivations to Pursue a Career"
+    },
+    {
+      "id": "65a3524b7cfbc82f51667b0a",
+      "title": "Task 68"
+    },
+    {
+      "id": "65a35281e6f8f4303df075e5",
+      "title": "Task 69"
+    },
+    {
+      "id": "65a352d14f8050311510e2e9",
+      "title": "Task 70"
+    },
+    {
+      "id": "65a35340e8c3ae32030cea01",
+      "title": "Task 71"
+    },
+    {
+      "id": "65a3538f615216331ea90f58",
+      "title": "Task 72"
+    },
+    {
+      "id": "65a35429c637c13540c9be80",
+      "title": "Task 73"
+    },
+    {
+      "id": "65a35b30ccc7db44250a72b6",
+      "title": "Task 74"
+    },
+    {
+      "id": "65a35b8a7dd409452ec99d38",
+      "title": "Task 75"
+    },
+    {
+      "id": "65a35c036df46e46187c31a3",
+      "title": "Task 76"
+    },
+    {
+      "id": "65a35c7b9d642f478d6cabba",
+      "title": "Task 77"
+    },
+    {
+      "id": "65a35cf34eb65f48c24ee97e",
+      "title": "Task 78"
+    },
+    {
+      "id": "65a35d50e8421d49ef07ae09",
+      "title": "Task 79"
+    },
+    {
+      "id": "65a391fe39a2997ea4c0e980",
+      "title": "Task 80"
+    },
+    {
+      "id": "65a392505010427f98bd8363",
+      "title": "Task 81"
+    },
+    {
+      "id": "65a392b9f8a69480b1063c86",
+      "title": "Task 82"
+    },
+    {
+      "id": "65a393115e989381c5dc0c4c",
+      "title": "Task 83"
+    },
+    {
+      "id": "65a3937c171d9182e6bb4bc5",
+      "title": "Task 84"
+    },
+    {
+      "id": "65a3948b46f1b6857a598ff7",
+      "title": "Task 85"
+    },
+    {
+      "id": "65a39972a4169f0739dd52b8",
+      "title": "Task 86"
+    },
+    {
+      "id": "65a39a1ed201f80945939c52",
+      "title": "Task 87"
+    },
+    {
+      "id": "65a39a8889842f0a4ed3faa4",
+      "title": "Task 88"
+    },
+    {
+      "id": "65a39ae928cfbd0b75cd91c5",
+      "title": "Task 89"
+    },
+    {
+      "id": "65a39b443701060c7297158e",
+      "title": "Task 90"
+    },
+    {
+      "id": "65a3dafe5c945761cef35199",
+      "title": "Dialogue 4: Chatting About Gadgets"
+    },
+    {
+      "id": "65a4f2c2d1bbdfbe82cb3fdd",
+      "title": "Task 91"
+    },
+    {
+      "id": "65a4f3c0e87146c0d01a57f8",
+      "title": "Task 92"
+    },
+    {
+      "id": "65a4f4aef1c065c3263c561a",
+      "title": "Task 93"
+    },
+    {
+      "id": "65a4f58e1daa8fc51dafc832",
+      "title": "Task 94"
+    },
+    {
+      "id": "65a4f5fe475701c6697e738b",
+      "title": "Task 95"
+    },
+    {
+      "id": "65a4f6ca14fdbfc86041b28a",
+      "title": "Task 96"
+    },
+    {
+      "id": "65a4f87e991076cbb4efd9bc",
+      "title": "Task 97"
+    },
+    {
+      "id": "65a4f90542fdffcd6533424a",
+      "title": "Task 98"
+    },
+    {
+      "id": "65a4ff8554c98dd601a081d4",
+      "title": "Task 99"
+    },
+    {
+      "id": "65a5000506fe76d745652a33",
+      "title": "Task 100"
+    },
+    {
+      "id": "65a5010affb10fd99d166200",
+      "title": "Task 101"
+    },
+    {
+      "id": "65a502f63b185addb3117797",
+      "title": "Task 102"
+    },
+    {
+      "id": "65a5034b32a0cfdefbe36156",
+      "title": "Task 103"
+    },
+    {
+      "id": "65a50441ea961ee157da6ff3",
+      "title": "Task 104"
+    },
+    {
+      "id": "65a505250947a4e3777c82ab",
+      "title": "Task 105"
+    },
+    {
+      "id": "65a506572b8d62e47a6f1c08",
+      "title": "Task 106"
+    },
+    {
+      "id": "65a507474a05a9e869827a34",
+      "title": "Task 107"
+    },
+    {
+      "id": "65a507ad3caccfe9620e868b",
+      "title": "Task 108"
+    },
+    {
+      "id": "65a5080cafc379ea8d382c42",
+      "title": "Task 109"
+    },
+    {
+      "id": "65a50874fd56ceeb9d8a271f",
+      "title": "Task 110"
+    },
+    {
+      "id": "65a508d77b492aecb63b06b5",
+      "title": "Task 111"
+    },
+    {
+      "id": "65a5312db639d2f8fd4c31a7",
+      "title": "Task 112"
+    },
+    {
+      "id": "65a533f54a5afeff6c6bb996",
+      "title": "Dialogue 5: Discussing Open-source Software"
+    },
+    {
+      "id": "65a53475949fcc0056b1e479",
+      "title": "Task 113"
+    },
+    {
+      "id": "65a534f9fdc15f01ed67d860",
+      "title": "Task 114"
+    },
+    {
+      "id": "65a73f5e3153ba7bff076a3e",
+      "title": "Task 115"
+    },
+    {
+      "id": "65a7405cef607d7f856cc5ac",
+      "title": "Task 116"
+    },
+    {
+      "id": "65a74152da45e881db4f54dc",
+      "title": "Task 117"
+    },
+    {
+      "id": "65a742367d9803841b422795",
+      "title": "Task 118"
+    },
+    {
+      "id": "65a74339f74217867ec2eb5e",
+      "title": "Task 119"
+    },
+    {
+      "id": "65a743f03d6688884acb6cb2",
+      "title": "Task 120"
+    },
+    {
+      "id": "65a7455f319ba98b5885cb6a",
+      "title": "Task 121"
+    },
+    {
+      "id": "65a747a9502c8f8fbcd5dd13",
+      "title": "Task 122"
+    },
+    {
+      "id": "65a749262ad6c093d2dc8bb1",
+      "title": "Task 123"
+    },
+    {
+      "id": "65a74ac67e7fbd97ef282812",
+      "title": "Task 124"
+    },
+    {
+      "id": "65a74b5ca72a0c9a0b8e5e99",
+      "title": "Task 125"
+    },
+    {
+      "id": "65a74c672ff11d9c210a8732",
+      "title": "Task 126"
+    },
+    {
+      "id": "65a74cd01bc1b59d99c053a8",
+      "title": "Task 127"
+    },
+    {
+      "id": "65a74dae1b3acd9fad3a068e",
+      "title": "Task 128"
+    },
+    {
+      "id": "65a750a82c2476a6305bf621",
+      "title": "Task 129"
+    },
+    {
+      "id": "65a751927c4b80a86e6fb1c9",
+      "title": "Task 130"
+    },
+    {
+      "id": "65a788ea40f8e6b77d3cc64f",
+      "title": "Task 131"
+    },
+    {
+      "id": "65a78dadbf033cc11554453d",
+      "title": "Task 132"
+    },
+    {
+      "id": "65a78e7b5fb9a0c38757cc3e",
+      "title": "Task 133"
+    },
+    {
+      "id": "65a78f35fab096c5694079db",
+      "title": "Task 134"
+    },
+    {
+      "id": "65a7917a28aa16ca5a832593",
+      "title": "Task 135"
+    },
+    {
+      "id": "6602ec717db2bc1105700d40",
+      "title": "Task 136"
+    },
+    {
+      "id": "65a792163bf705cb7b6eb255",
+      "title": "Task 137"
+    },
+    {
+      "id": "65a7957981392ed32523e628",
+      "title": "Task 138"
+    },
+    {
+      "id": "65a79822981b3fd86a5cb03b",
+      "title": "Task 139"
+    },
+    {
+      "id": "65a7996c848275dbf2083044",
+      "title": "Task 140"
+    },
+    {
+      "id": "65a79a08cb0594ddd408e4db",
+      "title": "Task 141"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

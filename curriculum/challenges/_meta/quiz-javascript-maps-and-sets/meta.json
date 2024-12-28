@@ -1,0 +1,15 @@
+{
+  "name": "JavaScript Maps and Sets Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-maps-and-sets",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67358be1c7903489c0a7db78",
+      "title": "JavaScript Maps and Sets Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
