@@ -1804,12 +1804,13 @@
           "In this lab, you'll review HTML basics by creating a web page of your favorite recipe. You'll create an HTML boilerplate and work with headings, lists, images, and more."
         ]
       },
-      "lecture-html-fundamentals": {
+  "lecture-html-fundamentals": {
         "title": "HTML Fundamentals",
         "intro": [
-          "In these lecture videos, you will learn about HTML fundamentals like the <code>div</code> and <code>span</code> elements, <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+          "In these lecture videos, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
+
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
         "intro": [
