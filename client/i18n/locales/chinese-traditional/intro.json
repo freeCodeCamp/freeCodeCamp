@@ -1793,7 +1793,7 @@
       "lecture-html-fundamentals": {
         "title": "HTML Fundamentals",
         "intro": [
-          "In these lecture videos, you will learn about HTML fundamentals like the <code>div</code> and <code>span</code> elements, <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+          "In these lecture videos, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
       "lab-travel-agency-page": {

@@ -1793,7 +1793,7 @@
       "lecture-html-fundamentals": {
         "title": "Основи HTML",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь про основи HTML, серед яких елементи <code>div</code> та <code>span</code>, атрибути <code>id</code> та <code>class</code>, шаблонний код HTML тощо."
+          "In these lecture videos, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
       "lab-travel-agency-page": {
