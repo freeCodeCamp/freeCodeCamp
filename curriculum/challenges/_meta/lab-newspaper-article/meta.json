@@ -2,7 +2,7 @@
   "name": "Build a Newspaper Article",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-newspaper-article",
   "superBlock": "full-stack-developer",

@@ -2,7 +2,7 @@
   "name": "CSS Pseudo-classes Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-css-pseudo-classes",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

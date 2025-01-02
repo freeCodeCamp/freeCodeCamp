@@ -211,7 +211,8 @@ export const reducer = handleActions(
         [username]: { ...user, sessionUser: true }
       },
       appUsername: username,
-      currentChallengeId: user.currentChallengeId,
+      currentChallengeId:
+        user.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY),
       userFetchState: {
         pending: false,
         complete: true,

@@ -1,6 +1,6 @@
 {
   "name": "Build a Todo App using Local Storage",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-todo-app",

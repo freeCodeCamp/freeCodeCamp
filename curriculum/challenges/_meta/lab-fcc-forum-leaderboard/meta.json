@@ -1,6 +1,6 @@
 {
   "name": "Build an fCC Forum Leaderboard",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "blockType": "lab",
   "blockLayout": "link",

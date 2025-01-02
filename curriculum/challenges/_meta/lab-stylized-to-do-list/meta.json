@@ -2,7 +2,7 @@
   "name": "Build a Stylized To-Do List",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-stylized-to-do-list",
   "superBlock": "full-stack-developer",

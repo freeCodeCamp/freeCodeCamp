@@ -103,7 +103,7 @@ window.alert = (message) => alertMessage = message; // Override alert and store 
 
 userInput.value = '';
 checkBtn.click();
-assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please provide a phone number');
+assert.strictEqual(alertMessage?.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please provide a phone number');
 ```
 
 When you click on the `#clear-btn` element, the content within the `#results-div` element should be removed.

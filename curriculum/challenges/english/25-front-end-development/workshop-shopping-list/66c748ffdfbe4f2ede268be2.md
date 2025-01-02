@@ -13,10 +13,10 @@ And with this last step your grocery list is complete!
 
 # --hints--
 
-You should log the `shoppingList` array to the console.
+You should call the `getShoppingListMsg` function inside of the `console.log`.
 
 ```js
-assert.match(code, /console\.log\(\s*shoppingList\s*\)/);
+assert.lengthOf(code.match(/console\.log\(\s*getShoppingListMsg\(\)\s*\)/g), 7);
 ```
 
 # --seed--
@@ -112,5 +112,5 @@ console.log("On second thought, maybe we should be more health conscious.");
 shoppingList.shift();
 shoppingList[0] = "Canola Oil";
 
-console.log(shoppingList);
+console.log(getShoppingListMsg());
 ```

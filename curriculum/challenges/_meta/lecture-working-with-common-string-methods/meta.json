@@ -2,7 +2,7 @@
   "name": "Working with Common String Methods",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-common-string-methods",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

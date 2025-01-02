@@ -2,7 +2,7 @@
   "name": "Build a JavaScript Trivia Bot",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-javascript-trivia-bot",
   "superBlock": "full-stack-developer",

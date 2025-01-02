@@ -2,7 +2,7 @@
   "name": "Responsive Web Design Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-responsive-web-design",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed9034f45ce3ece4053ebd", "title": "Responsive Web Design Quiz" }],

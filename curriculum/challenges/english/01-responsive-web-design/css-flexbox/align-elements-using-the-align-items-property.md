@@ -31,7 +31,9 @@ Try the other options for the `align-items` property in the code editor to see t
 The `#box-container` element should have an `align-items` property set to a value of `center`.
 
 ```js
-assert($('#box-container').css('align-items') == 'center');
+const boxContainer = document.querySelector('#box-container');
+const alignment = window.getComputedStyle(boxContainer)['align-items'];
+assert.strictEqual(alignment, 'center');
 ```
 
 # --seed--

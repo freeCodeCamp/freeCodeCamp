@@ -2,7 +2,7 @@
   "name": "JavaScript Arrays Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-javascript-arrays",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

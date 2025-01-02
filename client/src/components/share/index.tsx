@@ -4,9 +4,15 @@ import { ShareProps } from './types';
 import { useShare } from './use-share';
 
 export const Share = ({ superBlock, block }: ShareProps): JSX.Element => {
-  const redirectURL = useShare({
+  const redirectURLs = useShare({
     superBlock,
     block
   });
-  return <ShareTemplate redirectURL={redirectURL} />;
+  return (
+    <ShareTemplate
+      xRedirectURL={redirectURLs.xUrl}
+      blueSkyRedirectURL={redirectURLs.blueSkyUrl}
+      threadsRedirectURL={redirectURLs.threadsURL}
+    />
+  );
 };
