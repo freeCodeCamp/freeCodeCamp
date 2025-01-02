@@ -2,7 +2,7 @@
   "name": "JavaScript Audio and Video Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-javascript-audio-and-video",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

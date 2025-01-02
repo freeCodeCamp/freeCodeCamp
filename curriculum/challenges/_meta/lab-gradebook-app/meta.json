@@ -2,7 +2,7 @@
   "name": "Build a Gradebook App",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-gradebook-app",
   "superBlock": "full-stack-developer",

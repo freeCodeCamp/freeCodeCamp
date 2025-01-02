@@ -18,7 +18,9 @@ The four different viewport units are:
 Here is an example that sets a `body` tag to 30% of the viewport's width.
 
 ```css
-body { width: 30vw; }
+body {
+  width: 30vw;
+}
 ```
 
 # --instructions--
@@ -30,20 +32,18 @@ Set the `width` of the `h2` tag to 80% of the viewport's width and the `width` o
 Your `h2` tag should have a `width` of 80vw.
 
 ```js
-assert(
-  __helpers
-    .removeCssComments(code)
-    .match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g)
+assert.match(
+  __helpers.removeCssComments(code),
+  /h2\s*?{\s*?width:\s*?80vw;\s*?}/g
 );
 ```
 
 Your `p` tag should have a `width` of 75vmin.
 
 ```js
-assert(
-  __helpers
-    .removeCssComments(code)
-    .match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g)
+assert.match(
+  __helpers.removeCssComments(code),
+  /p\s*?{\s*?width:\s*?75vmin;\s*?}/g
 );
 ```
 
@@ -57,7 +57,14 @@ assert(
 </style>
 
 <h2>Importantus Ipsum</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus
+  massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet
+  lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac
+  habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem.
+  Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida
+  consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.
+</p>
 ```
 
 # --solutions--
@@ -65,13 +72,20 @@ assert(
 ```html
 <style>
   h2 {
-      width: 80vw;
+    width: 80vw;
   }
   p {
-      width: 75vmin;
+    width: 75vmin;
   }
 </style>
 
 <h2>Importantus Ipsum</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus
+  massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet
+  lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac
+  habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem.
+  Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida
+  consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.
+</p>
 ```

@@ -2,7 +2,7 @@
   "name": "Working with Audio and Video",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-audio-and-video",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

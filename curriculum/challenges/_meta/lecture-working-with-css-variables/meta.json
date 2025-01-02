@@ -2,7 +2,7 @@
   "name": "Working with CSS Variables",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-css-variables",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

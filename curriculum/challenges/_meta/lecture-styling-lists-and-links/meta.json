@@ -2,7 +2,7 @@
   "name": "Styling Lists and Links",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-styling-lists-and-links",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

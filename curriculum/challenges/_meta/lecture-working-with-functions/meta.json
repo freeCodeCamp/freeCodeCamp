@@ -2,7 +2,7 @@
   "name": "Working with Functions",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-functions",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

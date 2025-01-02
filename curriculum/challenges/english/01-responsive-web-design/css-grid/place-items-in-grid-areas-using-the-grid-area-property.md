@@ -28,10 +28,9 @@ Place an element with the `item5` class in the `footer` area using the `grid-are
 `item5` class should have a `grid-area` property that has the value of `footer`.
 
 ```js
-assert(
-  __helpers
-    .removeCssComments(code)
-    .match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi)
+assert.match(
+  __helpers.removeCssComments(code),
+  /.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi
 );
 ```
 
@@ -41,10 +40,18 @@ assert(
 
 ```html
 <style>
-  .item1{background:LightSkyBlue;}
-  .item2{background:LightSalmon;}
-  .item3{background:PaleTurquoise;}
-  .item4{background:LightPink;}
+  .item1 {
+    background: LightSkyBlue;
+  }
+  .item2 {
+    background: LightSalmon;
+  }
+  .item3 {
+    background: PaleTurquoise;
+  }
+  .item4 {
+    background: LightPink;
+  }
 
   .item5 {
     background: PaleGreen;
@@ -64,9 +71,9 @@ assert(
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
     grid-template-areas:
-      "header header header"
-      "advert content content"
-      "footer footer footer";
+      'header header header'
+      'advert content content'
+      'footer footer footer';
   }
 </style>
 
@@ -82,5 +89,9 @@ assert(
 # --solutions--
 
 ```html
-<style>.item5 {grid-area: footer;}</style>
+<style>
+  .item5 {
+    grid-area: footer;
+  }
+</style>
 ```

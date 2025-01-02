@@ -2,7 +2,7 @@
   "name": "CSS Accessibility Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-css-accessibility",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed8fc1f45ce3ece4053ead", "title": "CSS Accessibility Quiz" }],

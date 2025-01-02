@@ -20,9 +20,7 @@ function ExamToken(): JSX.Element {
       const response = await generateExamToken();
 
       const {
-        data: {
-          data: { examEnvironmentAuthorizationToken }
-        }
+        data: { examEnvironmentAuthorizationToken }
       } = response;
       setExamToken(examEnvironmentAuthorizationToken);
       setExamTokenError('');

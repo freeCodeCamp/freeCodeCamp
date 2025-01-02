@@ -2,7 +2,7 @@
   "name": "Understanding Computer, Internet, and Tooling Basics",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-computer-internet-and-tooling-basics",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

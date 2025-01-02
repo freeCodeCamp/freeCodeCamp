@@ -2,7 +2,7 @@
   "name": "Working with Links",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-links",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

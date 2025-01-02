@@ -5,12 +5,33 @@ import { ShareTemplate } from './share-template';
 const redirectURL = 'string';
 
 describe('Share Template Testing', () => {
-  render(<ShareTemplate redirectURL={redirectURL} />);
+  render(
+    <ShareTemplate
+      xRedirectURL={redirectURL}
+      blueSkyRedirectURL={redirectURL}
+      threadsRedirectURL={redirectURL}
+    />
+  );
   test('Testing share template Click Redirect Event', () => {
-    const link = screen.getByRole('link', {
-      name: 'buttons.tweet aria.opens-new-window'
+    const twitterLink = screen.queryByRole('link', {
+      name: 'buttons.share-on-x aria.opens-new-window'
     });
-    expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute('href', 'string');
+
+    expect(twitterLink).toBeInTheDocument();
+    expect(twitterLink).toHaveAttribute('href', 'string');
+
+    const blueSkyLink = screen.queryByRole('link', {
+      name: 'buttons.share-on-bluesky aria.opens-new-window'
+    });
+
+    expect(blueSkyLink).toBeInTheDocument();
+    expect(blueSkyLink).toHaveAttribute('href', 'string');
+
+    const threadsLink = screen.queryByRole('link', {
+      name: 'buttons.share-on-threads aria.opens-new-window'
+    });
+
+    expect(threadsLink).toBeInTheDocument();
+    expect(threadsLink).toHaveAttribute('href', 'string');
   });
 });

@@ -2,7 +2,7 @@
   "name": "Build a Set of Football Team Cards",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-football-team-cards",
   "superBlock": "full-stack-developer",

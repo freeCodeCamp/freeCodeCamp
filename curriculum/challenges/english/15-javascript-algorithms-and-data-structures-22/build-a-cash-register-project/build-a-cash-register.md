@@ -111,7 +111,7 @@ cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.strictEqual(
   alertMessage
-    .trim()
+    ?.trim()
     .replace(/[.,?!]+$/g, '')
     .toLowerCase(),
   'customer does not have enough money to purchase the item'
@@ -148,7 +148,7 @@ cashInput.dispatchEvent(new Event('change'));
 purchaseBtn.click();
 assert.strictEqual(
   alertMessage
-    .trim()
+    ?.trim()
     .replace(/[.,?!]+$/g, '')
     .toLowerCase(),
   'customer does not have enough money to purchase the item'

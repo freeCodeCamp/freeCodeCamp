@@ -2,7 +2,7 @@
   "name": "Working with Numbers, Booleans, and the Math Object",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-numbers-booleans-and-the-math-object",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

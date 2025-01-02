@@ -2,7 +2,7 @@
   "name": "Browsing the Web Effectively",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-browsing-the-web-effectively",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

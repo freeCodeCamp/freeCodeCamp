@@ -2,7 +2,7 @@
   "name": "JavaScript Events Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-javascript-events",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

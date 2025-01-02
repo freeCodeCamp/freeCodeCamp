@@ -2,7 +2,7 @@
   "name": "Build a Cat Photo App",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-cat-photo-app",
