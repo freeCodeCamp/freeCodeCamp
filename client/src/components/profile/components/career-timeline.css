@@ -24,12 +24,6 @@
   margin-bottom: 1em;
 }
 
-.experience-container {
-  background: white;
-  padding: 1em;
-  border: 1px solid var(--quaternary-background);
-}
-
 .job-info p {
   line-height: 0.8;
 }

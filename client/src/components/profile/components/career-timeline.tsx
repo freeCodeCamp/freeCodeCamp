@@ -311,7 +311,7 @@ const CareerTimeline = ({
 
   return (
     <FullWidthRow>
-      <div className='experience-container'>
+      <section className='card'>
         <div className='header-container'>
           <h2>{t('profile.your-exp')}</h2>
 
@@ -417,7 +417,7 @@ const CareerTimeline = ({
             )
           );
         })}
-      </div>
+      </section>
       <hr />
     </FullWidthRow>
   );
