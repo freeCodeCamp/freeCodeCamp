@@ -71,12 +71,18 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.PORT);
   assert.ok(process.env.HOST);
   assert.ok(process.env.SENTRY_DSN);
+  assert.ok(process.env.SENTRY_ENVIRONMENT);
   // The following values can exist in development, but production-like
   // environments need to override the defaults.
   assert.notEqual(
     process.env.SENTRY_DSN,
     'dsn_from_sentry_dashboard',
     `The DSN from Sentry's dashboard should be used.`
+  );
+  assert.notEqual(
+    process.env.SENTRY_ENVIRONMENT,
+    'development',
+    `The Sentry environment should be changed from the default.`
   );
   assert.notEqual(
     process.env.JWT_SECRET,
@@ -133,6 +139,10 @@ export const SENTRY_DSN =
   process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
     ? ''
     : process.env.SENTRY_DSN;
+export const SENTRY_ENVIRONMENT =
+  process.env.SENTRY_ENVIRONMENT === 'development'
+    ? ''
+    : process.env.SENTRY_ENVIRONMENT;
 export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN;
 export const COOKIE_SECRET = process.env.COOKIE_SECRET;
 export const JWT_SECRET = process.env.JWT_SECRET;
