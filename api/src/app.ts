@@ -38,7 +38,8 @@ import {
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
   FCC_ENABLE_SHADOW_CAPTURE,
-  FCC_ENABLE_EXAM_ENVIRONMENT
+  FCC_ENABLE_EXAM_ENVIRONMENT,
+  FCC_ENABLE_SENTRY_ROUTES
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 import {
@@ -196,6 +197,10 @@ export const build = async (
       done();
     });
     void fastify.register(examEnvironmentOpenRoutes);
+  }
+
+  if (FCC_ENABLE_SENTRY_ROUTES) {
+    void fastify.register(publicRoutes.sentryRoutes);
   }
 
   void fastify.register(publicRoutes.chargeStripeRoute);
