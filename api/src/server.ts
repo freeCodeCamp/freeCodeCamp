@@ -20,9 +20,11 @@ const envToLogger = {
         ignore: 'pid,hostname'
       }
     },
-    level: FCC_API_LOG_LEVEL
+    level: FCC_API_LOG_LEVEL || 'info'
   },
-  production: { level: FCC_API_LOG_LEVEL },
+  production: {
+    level: FCC_API_LOG_LEVEL || 'info'
+  },
   test: undefined
 };
 
