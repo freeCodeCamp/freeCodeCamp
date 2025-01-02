@@ -219,7 +219,7 @@ export default function completionEpic(action$, state$) {
       const state = state$.value;
 
       const {
-        nextBlock,
+        isLastChallengeInBlock,
         nextChallengePath,
         challengeType,
         superBlock,
@@ -243,8 +243,7 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      const lastChallengeInBlock = block !== nextBlock;
-      let pathToNavigateTo = lastChallengeInBlock
+      let pathToNavigateTo = isLastChallengeInBlock
         ? blockHashSlug
         : nextChallengePath;
 
@@ -254,7 +253,7 @@ export default function completionEpic(action$, state$) {
 
       return submitter(type, state).pipe(
         concat(
-          of(setIsAdvancing(!lastChallengeInBlock), setIsProcessing(false))
+          of(setIsAdvancing(!isLastChallengeInBlock), setIsProcessing(false))
         ),
         mergeMap(x =>
           canAllowDonationRequest(state, x)

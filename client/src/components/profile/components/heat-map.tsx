@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import ReactTooltip from 'react-tooltip';
-import { Row } from '@freecodecamp/ui';
+import { Row, Spacer } from '@freecodecamp/ui';
 
 import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
@@ -20,7 +20,6 @@ import envData from '../../../../config/env.json';
 import { getLangCode } from '../../../../../shared/config/i18n';
 import { User } from '../../../redux/prop-types';
 import FullWidthRow from '../../helpers/full-width-row';
-import Spacer from '../../helpers/spacer';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { clientLocale } = envData;
@@ -98,72 +97,74 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
 
     return (
       <FullWidthRow>
-        <Spacer size='medium' />
+        <section className='card'>
+          <h2>{t('profile.activity')}</h2>
+          <Spacer size='m' />
 
-        <CalendarHeatMap
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          classForValue={(value: any) => {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            if (!value || value.count < 1) return 'color-empty';
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            if (value.count < 4) return 'color-scale-1';
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            if (value.count < 8) return 'color-scale-2';
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            if (value.count >= 8) return 'color-scale-a-lot';
-            return 'color-empty';
-          }}
-          endDate={endOfCalendar}
-          startDate={startOfCalendar}
-          tooltipDataAttrs={(value: { count: number; date: Date }) => {
-            const dateFormatted: string =
-              value && value.date
-                ? value.date.toLocaleDateString([localeCode, 'en-US'], {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                  })
-                : '';
-            return {
-              'data-tip':
-                value && value.count > -1
-                  ? t('profile.points', {
-                      count: value.count,
-                      date: dateFormatted
+          <CalendarHeatMap
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            classForValue={(value: any) => {
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              if (!value || value.count < 1) return 'color-empty';
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              if (value.count < 4) return 'color-scale-1';
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              if (value.count < 8) return 'color-scale-2';
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              if (value.count >= 8) return 'color-scale-a-lot';
+              return 'color-empty';
+            }}
+            endDate={endOfCalendar}
+            startDate={startOfCalendar}
+            tooltipDataAttrs={(value: { count: number; date: Date }) => {
+              const dateFormatted: string =
+                value && value.date
+                  ? value.date.toLocaleDateString([localeCode, 'en-US'], {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
                     })
-                  : ''
-            };
-          }}
-          values={dataToDisplay}
-        />
-        <ReactTooltip className='react-tooltip' effect='solid' html={true} />
-        <Row className='text-center'>
-          <button
-            className='heatmap-nav-btn'
-            disabled={!pages[this.state.pageIndex - 1]}
-            // eslint-disable-next-line @typescript-eslint/unbound-method
-            onClick={this.prevPage}
-            style={{
-              visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
+                  : '';
+              return {
+                'data-tip':
+                  value && value.count > -1
+                    ? t('profile.points', {
+                        count: value.count,
+                        date: dateFormatted
+                      })
+                    : ''
+              };
             }}
-          >
-            &lt;
-          </button>
-          <span>{title}</span>
-          <button
-            className='heatmap-nav-btn'
-            disabled={!pages[this.state.pageIndex + 1]}
-            // eslint-disable-next-line @typescript-eslint/unbound-method
-            onClick={this.nextPage}
-            style={{
-              visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
-            }}
-          >
-            &gt;
-          </button>
-        </Row>
-        <Spacer size='medium' />
-        <hr />
+            values={dataToDisplay}
+          />
+          <ReactTooltip className='react-tooltip' effect='solid' html={true} />
+          <Row className='text-center'>
+            <button
+              className='heatmap-nav-btn'
+              disabled={!pages[this.state.pageIndex - 1]}
+              // eslint-disable-next-line @typescript-eslint/unbound-method
+              onClick={this.prevPage}
+              style={{
+                visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
+              }}
+            >
+              &lt;
+            </button>
+            <span>{title}</span>
+            <button
+              className='heatmap-nav-btn'
+              disabled={!pages[this.state.pageIndex + 1]}
+              // eslint-disable-next-line @typescript-eslint/unbound-method
+              onClick={this.nextPage}
+              style={{
+                visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
+              }}
+            >
+              &gt;
+            </button>
+          </Row>
+          <Spacer size='m' />
+        </section>
       </FullWidthRow>
     );
   }

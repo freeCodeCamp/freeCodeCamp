@@ -28,3 +28,9 @@ pnpm seed
 ## Login in development/testing
 
 During development and testing, the api exposes the endpoint GET auth/dev-callback. Calling this will log you in as the user with the email `foo@bar.com` by setting the session cookie for that user.
+
+## Generating Exams
+
+```bash
+pnpm run generate-exams <ENV_EXAM_ID> <NUMBER_OF_EXAMS_TO_GENERATE>
+```

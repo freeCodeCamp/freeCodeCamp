@@ -11,6 +11,10 @@ on:
   # to test this ad-hoc
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   do-everything:
     name: Build & Test

@@ -3,8 +3,6 @@ import { test, expect, Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { alertToBeVisible } from './utils/alerts';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.describe('Certification page - Non Microsoft', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/certification/certifieduser/responsive-web-design');
@@ -37,7 +35,7 @@ test.describe('Certification page - Non Microsoft', () => {
     await expect(certInfoContainer).toBeVisible();
     const certTitle = certInfoContainer.getByTestId('certification-title');
     await expect(certTitle).toHaveText(
-      translations.certification.title['Responsive Web Design']
+      translations.certification.title['responsive-web-design']
     );
 
     const footer = certWrapper.getByTestId('cert-footer');
@@ -148,7 +146,6 @@ test.describe('Invalid certification page', () => {
     }
   };
   test.describe('for authenticated user', () => {
-    test.use({ storageState: 'playwright/.auth/certified-user.json' });
     test(
       'it should redirect to / and display an error message',
       testInvalidCertification
@@ -198,7 +195,7 @@ test.describe('Certification page - Microsoft', () => {
     await expect(certInfoContainer).toBeVisible();
     const certTitle = certInfoContainer.getByTestId('certification-title');
     await expect(certTitle).toHaveText(
-      translations.certification.title['Foundational C# with Microsoft']
+      translations.certification.title['foundational-c-sharp-with-microsoft']
     );
 
     const footer = certWrapper.getByTestId('cert-footer');

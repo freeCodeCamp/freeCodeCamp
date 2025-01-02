@@ -417,28 +417,25 @@
       "title": "Step 102"
     },
     {
-      "id": "6464ad3c9b2e6cf58224cfa9",
+      "id": "674dd79dcfa5690e16e59775",
       "title": "Step 103"
     },
     {
-      "id": "6464b1384318a5087190950a",
+      "id": "6464b25851863b0a119eb7b1",
       "title": "Step 104"
     },
     {
-      "id": "6464b25851863b0a119eb7b1",
+      "id": "6464b3adeee9310bd37ff636",
       "title": "Step 105"
     },
     {
-      "id": "6464b3adeee9310bd37ff636",
+      "id": "6464b8ccb1a5d612c2f857d1",
       "title": "Step 106"
     },
     {
-      "id": "6464b8ccb1a5d612c2f857d1",
-      "title": "Step 107"
-    },
-    {
       "id": "6464c6d6698a8027f8c9d6be",
-      "title": "Step 108"
+      "title": "Step 107"
     }
-  ]
+  ],
+  "blockLayout": "legacy-challenge-grid"
 }

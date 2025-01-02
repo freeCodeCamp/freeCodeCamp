@@ -2,6 +2,7 @@ import { test, expect, type Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import algoliaEightHits from './fixtures/algolia-eight-hits.json';
 import algoliaFiveHits from './fixtures/algolia-five-hits.json';
+import algoliaNoHits from './fixtures/algolia-no-hits.json';
 
 const haveApiKeys =
   process.env.ALGOLIA_APP_ID !== 'app_id_from_algolia_dashboard' &&
@@ -22,7 +23,7 @@ const getSearchInput = async ({
     await menuButton.click();
   }
 
-  return page.getByLabel('Search');
+  return page.getByLabel('Search', { exact: true });
 };
 
 const search = async ({
@@ -38,6 +39,8 @@ const search = async ({
   await searchInput.fill(query);
 };
 
+// Mock Algolia requests to prevent hitting Algolia server unnecessarily.
+// Comment out the function call if you want to test against the real server.
 const mockAlgolia = async ({
   page,
   hitsPerPage
@@ -46,16 +49,16 @@ const mockAlgolia = async ({
   hitsPerPage: number;
 }) => {
   if (hitsPerPage === 8) {
-    await page.route(/\w+(\.algolia\.net|\.algolianet\.com)/, async route => {
+    await page.route(/dsn.algolia.net/, async route => {
       await route.fulfill({ json: algoliaEightHits });
     });
   } else if (hitsPerPage === 5) {
-    await page.route(/\w+(\.algolia\.net|\.algolianet\.com)/, async route => {
+    await page.route(/dsn.algolia.net/, async route => {
       await route.fulfill({ json: algoliaFiveHits });
     });
   } else if (hitsPerPage === 0) {
-    await page.route(/\w+(\.algolia\.net|\.algolianet\.com)/, async route => {
-      await route.fulfill({ json: {} });
+    await page.route(/dsn.algolia.net/, async route => {
+      await route.fulfill({ json: algoliaNoHits });
     });
   }
 };
@@ -63,20 +66,14 @@ const mockAlgolia = async ({
 test.describe('Search bar', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/learn');
-
-    // Mock Algolia requests to prevent hitting Algolia server unnecessarily.
-    // Comment out this line if you want to test against the real server.
-    await mockAlgolia({ page, hitsPerPage: 8 });
   });
 
   test('should display correctly', async ({ page, isMobile }) => {
     const searchInput = await getSearchInput({ page, isMobile });
 
     await expect(searchInput).toBeVisible();
-    await expect(searchInput).toHaveAttribute(
-      'placeholder',
-      translations.search.placeholder
-    );
+
+    await expect(searchInput).toHaveAttribute('placeholder', /Search/i);
     await expect(
       page.getByRole('button', { name: 'Submit search terms' })
     ).toBeVisible();
@@ -87,7 +84,7 @@ test.describe('Search bar', () => {
     isMobile
   }) => {
     test.skip(!haveApiKeys, 'This test requires Algolia API keys');
-
+    await mockAlgolia({ page, hitsPerPage: 8 });
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
@@ -112,7 +109,7 @@ test.describe('Search bar', () => {
     isMobile
   }) => {
     test.skip(!haveApiKeys, 'This test requires Algolia API keys');
-
+    await mockAlgolia({ page, hitsPerPage: 8 });
     await search({ page, isMobile, query: 'article' });
 
     // Wait for the search results to show up
@@ -137,7 +134,7 @@ test.describe('Search bar', () => {
     isMobile
   }) => {
     await mockAlgolia({ page, hitsPerPage: 0 });
-    await search({ page, isMobile, query: '!@#$%^' });
+    await search({ page, isMobile, query: 'test' });
 
     const resultList = page.getByRole('list', { name: 'Search results' });
     await expect(resultList.getByRole('listitem')).toHaveCount(1);

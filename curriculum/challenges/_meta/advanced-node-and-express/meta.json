@@ -94,5 +94,6 @@
       "id": "589fc832f9fc0f352b528e79",
       "title": "Send and Display Chat Messages"
     }
-  ]
+  ],
+  "blockLayout": "legacy-challenge-list"
 }

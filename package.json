@@ -63,6 +63,7 @@
     "seed": "pnpm seed:surveys && pnpm seed:exams && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user",
     "seed:certified-user": "pnpm seed:surveys && pnpm seed:exams && pnpm seed:ms-username && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user --certified-user",
     "seed:exams": "DEBUG=fcc:* node tools/scripts/seed-exams/create-exams",
+    "seed:env-exam": "cd api && pnpm run seed:env-exam",
     "seed:surveys": "DEBUG=fcc:* node ./tools/scripts/seed/seed-surveys",
     "seed:ms-username": "DEBUG=fcc:* node ./tools/scripts/seed/seed-ms-username",
     "serve:client": "cd ./client && pnpm run serve",

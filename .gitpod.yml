@@ -30,7 +30,7 @@ ports:
 tasks:
   - before: |
       echo '
-      export COOKIE_DOMAIN=gitpod.io
+      export COOKIE_DOMAIN=.gitpod.io
       export HOME_LOCATION=$(gp url 8000)
       export API_LOCATION=$(gp url 3000)
       export CHALLENGE_EDITOR_API_LOCATION=$(gp url 3200)
@@ -45,7 +45,7 @@ tasks:
       docker compose up -d
 
   - name: server
-    before: export COOKIE_DOMAIN=gitpod.io && export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
+    before: export COOKIE_DOMAIN=.gitpod.io && export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
     # init is not executed for prebuilt workspaces and restarts,
     # so we should put all the heavy initialization here
     init: >

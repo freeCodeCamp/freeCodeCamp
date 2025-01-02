@@ -1,21 +1,20 @@
 import { WindowLocation } from '@reach/router';
 import { graphql } from 'gatsby';
 import { uniq } from 'lodash-es';
-import React, { Fragment, useEffect, memo } from 'react';
+import React, { Fragment, useEffect, memo, useMemo } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 import { SuperBlocks } from '../../../../shared/config/curriculum';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
-import { Spacer } from '../../components/helpers';
 import callGA from '../../analytics/call-ga';
 import { tryToShowDonationModal } from '../../redux/actions';
 import {
@@ -32,6 +31,7 @@ import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
+import { SuperBlockAccordion } from './components/super-block-accordion';
 import { resetExpansion, toggleBlock } from './redux';
 
 import './intro.css';
@@ -175,8 +175,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     pageContext: { superBlock, title, certification }
   } = props;
 
-  const allChallenges = nodes.map(({ challenge }) => challenge);
-  const challenges = allChallenges.filter(c => c.superBlock === superBlock);
+  const allChallenges = useMemo(
+    () => nodes.map(({ challenge }) => challenge),
+    [nodes]
+  );
+  const challenges = useMemo(
+    () => allChallenges.filter(c => c.superBlock === superBlock),
+    [allChallenges, superBlock]
+  );
   const blocks = uniq(challenges.map(({ block }) => block));
 
   const i18nTitle = getSuperBlockTitleForMap(superBlock);
@@ -190,6 +196,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
     SuperBlocks.RosettaCode,
     SuperBlocks.PythonForEverybody
   ];
+
+  const superBlockWithAccordionView = [SuperBlocks.FullStackDeveloper];
+  const chosenBlock = getChosenBlock();
 
   const onCertificationDonationAlertClick = () => {
     callGA({
@@ -207,7 +216,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
         <main>
           <Row className='super-block-intro-page'>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer size='large' />
+              <Spacer size='l' />
               <LegacyLinks superBlock={superBlock} />
               <SuperBlockIntro
                 superBlock={superBlock}
@@ -217,45 +226,61 @@ const SuperBlockIntroductionPage = (props: SuperBlockProp) => {
                 isDonating={user.isDonating}
               />
               <HelpTranslate superBlock={superBlock} />
-              <Spacer size='large' />
+              <Spacer size='l' />
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
               </h2>
-              <Spacer size='medium' />
-              <div className='block-ui'>
-                {blocks.map(block => (
-                  <Block
-                    key={block}
-                    block={block}
-                    challenges={challenges.filter(c => c.block === block)}
-                    superBlock={superBlock}
-                  />
-                ))}
-                {!superblockWithoutCert.includes(superBlock) && (
-                  <CertChallenge
-                    certification={certification}
-                    superBlock={superBlock}
-                    title={title}
-                    user={user}
-                  />
-                )}
-              </div>
+              <Spacer size='m' />
+              {superBlockWithAccordionView.includes(superBlock) ? (
+                <SuperBlockAccordion
+                  challenges={challenges}
+                  superBlock={superBlock}
+                  chosenBlock={chosenBlock}
+                />
+              ) : (
+                <div className='block-ui'>
+                  {blocks.map(block => {
+                    const blockChallenges = challenges.filter(
+                      c => c.block === block
+                    );
+                    const blockType = blockChallenges[0].blockType;
+
+                    return (
+                      <Block
+                        key={block}
+                        block={block}
+                        blockType={blockType}
+                        challenges={blockChallenges}
+                        superBlock={superBlock}
+                      />
+                    );
+                  })}
+                  {!superblockWithoutCert.includes(superBlock) && (
+                    <CertChallenge
+                      certification={certification}
+                      superBlock={superBlock}
+                      title={title}
+                      user={user}
+                    />
+                  )}
+                </div>
+              )}
               {!isSignedIn && !signInLoading && (
                 <>
-                  <Spacer size='large' />
+                  <Spacer size='l' />
                   <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
                 </>
               )}
-              <Spacer size='large' />
+              <Spacer size='l' />
               <h3
                 className='text-center big-block-title'
                 style={{ whiteSpace: 'pre-line' }}
               >
                 {t(`intro:misc-text.browse-other`)}
               </h3>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               <Map allChallenges={allChallenges} />
-              <Spacer size='large' />
+              <Spacer size='l' />
             </Col>
           </Row>
         </main>
@@ -291,11 +316,15 @@ export const query = graphql`
           }
           id
           block
+          blockType
           challengeType
           title
           order
           superBlock
           dashedName
+          blockLayout
+          chapter
+          module
         }
       }
     }

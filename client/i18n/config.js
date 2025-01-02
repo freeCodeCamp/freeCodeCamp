@@ -53,6 +53,13 @@ i18n.use(initReactI18next).init({
       if (clientLocale !== 'english') {
         module.exports = require('./locales/' + clientLocale + '/links.json');
       }
+    `,
+      'search-bar': preval`
+      const envData = require('../config/env.json');
+      const { clientLocale } = envData;
+      if (clientLocale !== 'english') {
+        module.exports = require('./locales/' + clientLocale + '/search-bar.json');
+      }
     `
     },
     en: {
@@ -60,10 +67,11 @@ i18n.use(initReactI18next).init({
       trending: preval`module.exports = require('./locales/english/trending.json')`,
       intro: preval`module.exports = require('./locales/english/intro.json')`,
       metaTags: preval`module.exports = require('./locales/english/meta-tags.json')`,
-      links: preval`module.exports = require('./locales/english/links.json')`
+      links: preval`module.exports = require('./locales/english/links.json')`,
+      'search-bar': preval`module.exports = require('./locales/english/search-bar.json')`
     }
   },
-  ns: ['translations', 'trending', 'intro', 'metaTags', 'links'],
+  ns: ['translations', 'trending', 'intro', 'metaTags', 'links', 'search-bar'],
   defaultNS: 'translations',
   returnObjects: true,
   // Uncomment the next line for debug logging

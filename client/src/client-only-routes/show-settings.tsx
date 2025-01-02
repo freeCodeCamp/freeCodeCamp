@@ -4,20 +4,21 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { Container } from '@freecodecamp/ui';
+import { Callout, Container, Spacer } from '@freecodecamp/ui';
+import { useFeatureIsOn } from '@growthbook/growthbook-react';
 
 import store from 'store';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
-import { Loader, Spacer } from '../components/helpers';
+import { FullWidthRow, Loader } from '../components/helpers';
 import Certification from '../components/settings/certification';
 import MiscSettings from '../components/settings/misc-settings';
 import DangerZone from '../components/settings/danger-zone';
 import Email from '../components/settings/email';
 import Honesty from '../components/settings/honesty';
 import Privacy from '../components/settings/privacy';
-import { type ThemeProps, Themes } from '../components/settings/theme';
 import UserToken from '../components/settings/user-token';
+import ExamToken from '../components/settings/exam-token';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
@@ -31,19 +32,21 @@ import {
   updateMyHonesty,
   updateMyQuincyEmail,
   updateMySound,
-  updateMyTheme,
   updateMyKeyboardShortcuts,
-  verifyCert
+  verifyCert,
+  resetMyEditorLayout
 } from '../redux/settings/actions';
+
 const { apiLocation } = envData;
 
 // TODO: update types for actions
-type ShowSettingsProps = Pick<ThemeProps, 'toggleNightMode'> & {
+type ShowSettingsProps = {
   createFlashMessage: typeof createFlashMessage;
   isSignedIn: boolean;
   navigate: (location: string) => void;
   showLoading: boolean;
   toggleSoundMode: (sound: boolean) => void;
+  resetEditorLayout: () => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   updateIsHonest: () => void;
   updateCareer: () => void;
@@ -71,13 +74,13 @@ const mapDispatchToProps = {
   createFlashMessage,
   navigate,
   submitNewAbout,
-  toggleNightMode: (theme: Themes) => updateMyTheme({ theme }),
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),
   updateIsHonest: updateMyHonesty,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
     updateMyQuincyEmail({ sendQuincyEmail }),
+  resetEditorLayout: () => resetMyEditorLayout(),
   verifyCert
 };
 
@@ -86,9 +89,9 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const {
     createFlashMessage,
     isSignedIn,
-    toggleNightMode,
     toggleSoundMode,
     toggleKeyboardShortcuts,
+    resetEditorLayout,
     user: {
       completedChallenges,
       email,
@@ -115,7 +118,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       isHonest,
       sendQuincyEmail,
       username,
-      theme,
       keyboardShortcuts
     },
     navigate,
@@ -127,6 +129,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   } = props;
   const isSignedInRef = useRef(isSignedIn);
 
+  const examTokenFlag = useFeatureIsOn('exam-token-widget');
+
   if (showLoading) {
     return <Loader fullScreen={true} />;
   }
@@ -136,12 +140,16 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     return <Loader fullScreen={true} />;
   }
   const sound = (store.get('fcc-sound') as boolean) ?? false;
+  const editorLayout = (store.get('challenge-layout') as boolean) ?? false;
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <Container>
         <main>
-          <Spacer size='large' />
+          <Spacer size='l' />
+          <FullWidthRow>
+            <Callout variant='info'>{t('settings.profile-note')}</Callout>
+          </FullWidthRow>
           <h1
             id='content-start'
             className='text-center'
@@ -152,25 +160,26 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           </h1>
 
           <MiscSettings
-            currentTheme={theme}
             keyboardShortcuts={keyboardShortcuts}
             sound={sound}
+            editorLayout={editorLayout}
+            resetEditorLayout={resetEditorLayout}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-            toggleNightMode={toggleNightMode}
             toggleSoundMode={toggleSoundMode}
           />
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <Privacy />
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <Email
             email={email}
             isEmailVerified={isEmailVerified}
             sendQuincyEmail={sendQuincyEmail}
             updateQuincyEmail={updateQuincyEmail}
           />
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
-          <Spacer size='medium' />
+          <Spacer size='m' />
+          {examTokenFlag && <ExamToken />}
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
@@ -200,11 +209,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           />
           {userToken && (
             <>
-              <Spacer size='medium' />
+              <Spacer size='m' />
               <UserToken />
             </>
           )}
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <DangerZone />
         </main>
       </Container>

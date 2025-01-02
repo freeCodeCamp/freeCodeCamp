@@ -1,4 +1,3 @@
-import { type PrismaPromise } from '@prisma/client';
 import { Certification } from '../../../../shared/config/certification-settings';
 import {
   defaultUserEmail,
@@ -7,7 +6,6 @@ import {
   setupServer,
   superRequest
 } from '../../../jest.utils';
-import { SHOW_UPCOMING_CHANGES } from '../../utils/env';
 
 describe('certificate routes', () => {
   setupServer();
@@ -85,7 +83,10 @@ describe('certificate routes', () => {
         jest
           .spyOn(fastifyTestInstance.prisma.user, 'findUnique')
           .mockImplementation(
-            () => Promise.resolve(null) as PrismaPromise<null>
+            () =>
+              Promise.resolve(null) as ReturnType<
+                typeof fastifyTestInstance.prisma.user.findUnique
+              >
           );
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
@@ -393,12 +394,6 @@ describe('certificate routes', () => {
           Certification.LegacyFullStack
         ];
         const unclaimableCerts = ['fake-slug'];
-
-        if (SHOW_UPCOMING_CHANGES) {
-          claimableCerts.push(Certification.UpcomingPython);
-        } else {
-          unclaimableCerts.push(Certification.UpcomingPython);
-        }
 
         for (const certSlug of claimableCerts) {
           const response = await superRequest('/certificate/verify', {

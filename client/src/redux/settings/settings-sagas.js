@@ -25,12 +25,13 @@ import {
   putUpdateMyProfileUI,
   putUpdateMyQuincyEmail,
   putUpdateMySocials,
-  putUpdateMyTheme,
   putUpdateMyUsername,
   putVerifyCert
 } from '../../utils/ajax';
 import { completedChallengesSelector } from '../selectors';
 import {
+  resetMyEditorLayoutComplete,
+  resetMyEditorLayoutError,
   submitNewAboutComplete,
   submitNewAboutError,
   submitNewUsernameComplete,
@@ -51,8 +52,6 @@ import {
   updateMySocialsError,
   updateMySoundComplete,
   updateMySoundError,
-  updateMyThemeComplete,
-  updateMyThemeError,
   validateUsernameComplete,
   validateUsernameError,
   verifyCertComplete,
@@ -113,13 +112,23 @@ function* updateMySoundSaga({ payload: update }) {
   }
 }
 
-function* updateMyThemeSaga({ payload: update }) {
-  try {
-    const { data } = yield call(putUpdateMyTheme, update);
-    yield put(updateMyThemeComplete({ ...data, payload: update }));
-    yield put(createFlashMessage({ ...data }));
-  } catch (e) {
-    yield put(updateMyThemeError);
+function* resetMyEditorLayoutSaga() {
+  const layout = store.get('challenge-layout');
+
+  if (layout) {
+    try {
+      const data = {
+        message: 'flash.reset-editor-layout',
+        type: 'success'
+      };
+
+      store.remove('challenge-layout');
+
+      yield put(createFlashMessage({ ...data }));
+      yield put(resetMyEditorLayoutComplete({ ...data }));
+    } catch (e) {
+      yield put(resetMyEditorLayoutError);
+    }
   }
 }
 
@@ -238,7 +247,7 @@ export function createSettingsSagas(types) {
     takeEvery(types.updateMySocials, updateMySocialsSaga),
     takeEvery(types.updateMyHonesty, updateMyHonestySaga),
     takeEvery(types.updateMySound, updateMySoundSaga),
-    takeEvery(types.updateMyTheme, updateMyThemeSaga),
+    takeEvery(types.resetMyEditorLayout, resetMyEditorLayoutSaga),
     takeEvery(types.updateMyKeyboardShortcuts, updateMyKeyboardShortcutsSaga),
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
     takeEvery(types.updateMyCareer, updateMyCareerSaga),

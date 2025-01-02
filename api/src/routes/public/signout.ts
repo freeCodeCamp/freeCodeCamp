@@ -16,9 +16,7 @@ export const signoutRoute: FastifyPluginCallback = (
   done
 ) => {
   fastify.get('/signout', async (req, reply) => {
-    void reply.clearCookie('jwt_access_token');
-    void reply.clearCookie('csrf_token');
-    void reply.clearCookie('_csrf');
+    void reply.clearOurCookies();
 
     const { returnTo } = getRedirectParams(req);
     await reply.redirect(returnTo);

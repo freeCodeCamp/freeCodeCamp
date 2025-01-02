@@ -5,8 +5,15 @@ const blankUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb9');
 const publicUserId = new ObjectId('663b839b24a8b29f57728b13');
 const demoUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb5');
 const fullyCertifiedUserId = new ObjectId('5fa2db00a25c1c1fa49ce067');
+const almostFullyCertifiedUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb9');
 
-const userIds = [blankUserId, publicUserId, demoUserId, fullyCertifiedUserId];
+const userIds = [
+  blankUserId,
+  publicUserId,
+  demoUserId,
+  fullyCertifiedUserId,
+  almostFullyCertifiedUserId
+];
 
 module.exports.blankUser = {
   _id: blankUserId,
@@ -12222,6 +12229,30 @@ module.exports.fullyCertifiedUser = {
       id: '647f7da207d29547b3bee1ba',
       challengeType: 7,
       files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '671141d8e32fe934c26fa1be',
+      challengeType: 0,
+      files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '671141f948cbab359e74cc93',
+      challengeType: 0,
+      files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '671141feba228a35cefba82d',
+      challengeType: 0,
+      files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '671144cdcc01d73f7dd79dc9',
+      challengeType: 0,
+      files: []
     }
   ],
   completedExams: [
@@ -12266,6 +12297,15 @@ module.exports.fullyCertifiedUser = {
   emailVerifyTTL: null,
   externalId: '',
   unsubscribeId: 'tBX8stC5jiustPBteF2mV'
+};
+
+module.exports.almostFullyCertifiedUser = {
+  ...module.exports.fullyCertifiedUser,
+  id: almostFullyCertifiedUserId,
+  completedChallenges:
+    module.exports.fullyCertifiedUser.completedChallenges.filter(
+      challenge => challenge.id !== 'bd7158d8c442eddfaeb5bd13'
+    )
 };
 
 module.exports.userIds = userIds;
