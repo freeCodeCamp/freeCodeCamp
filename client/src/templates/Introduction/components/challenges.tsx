@@ -19,7 +19,7 @@ interface Challenges {
 const CheckMark = ({ isCompleted }: { isCompleted: boolean }) =>
   isCompleted ? <GreenPass /> : <GreenNotCompleted />;
 
-const Challenge = ({ challenge }: { challenge: ExtendedChallenge }) => (
+const ListChallenge = ({ challenge }: { challenge: ExtendedChallenge }) => (
   <Link to={challenge.fields.slug}>
     <span className='map-badge'>
       <CheckMark isCompleted={challenge.isCompleted} />
@@ -28,7 +28,7 @@ const Challenge = ({ challenge }: { challenge: ExtendedChallenge }) => (
   </Link>
 );
 
-const Project = ({ challenge }: { challenge: ExtendedChallenge }) => (
+const CertChallenge = ({ challenge }: { challenge: ExtendedChallenge }) => (
   <Link to={challenge.fields.slug}>
     {challenge.title}
     <span className='map-badge map-project-checkmark'>
@@ -36,6 +36,30 @@ const Project = ({ challenge }: { challenge: ExtendedChallenge }) => (
     </span>
   </Link>
 );
+
+// Step or Task challenge
+const GridChallenge = ({ challenge }: { challenge: ExtendedChallenge }) => {
+  const { t } = useTranslation();
+
+  return (
+    <Link
+      to={challenge.fields.slug}
+      className={`map-grid-item ${
+        +challenge.isCompleted ? 'challenge-completed' : ''
+      }`}
+    >
+      <span className='sr-only'>
+        {challenge.superBlock === SuperBlocks.A2English
+          ? t('aria.task')
+          : t('aria.step')}
+      </span>
+      <span>{challenge.stepNumber}</span>
+      <span className='sr-only'>
+        {challenge.isCompleted ? t('icons.passed') : t('icons.not-passed')}
+      </span>
+    </Link>
+  );
+};
 
 function Challenges({
   challenges,
@@ -89,29 +113,11 @@ function Challenges({
             >
               {!isProjectBlock &&
               challenge.challengeType !== challengeTypes.dialogue ? (
-                // Step or Task challenge
-                <Link
-                  to={challenge.fields.slug}
-                  className={`map-grid-item ${
-                    +challenge.isCompleted ? 'challenge-completed' : ''
-                  }`}
-                >
-                  <span className='sr-only'>
-                    {challenge.superBlock === SuperBlocks.A2English
-                      ? t('aria.task')
-                      : t('aria.step')}
-                  </span>
-                  <span>{challenge.stepNumber}</span>
-                  <span className='sr-only'>
-                    {challenge.isCompleted
-                      ? t('icons.passed')
-                      : t('icons.not-passed')}
-                  </span>
-                </Link>
+                <GridChallenge challenge={challenge} />
               ) : challenge.challengeType === challengeTypes.dialogue ? (
-                <Challenge challenge={challenge} />
+                <ListChallenge challenge={challenge} />
               ) : (
-                <Project challenge={challenge} />
+                <CertChallenge challenge={challenge} />
               )}
             </li>
           ))}
@@ -129,9 +135,9 @@ function Challenges({
           key={'map-challenge' + challenge.fields.slug}
         >
           {!isProjectBlock ? (
-            <Challenge challenge={challenge} />
+            <ListChallenge challenge={challenge} />
           ) : (
-            <Project challenge={challenge} />
+            <CertChallenge challenge={challenge} />
           )}
         </li>
       ))}
