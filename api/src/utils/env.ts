@@ -130,6 +130,10 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   );
 }
 
+if (process.env.FCC_ENABLE_EXAM_ENVIRONMENT === 'true') {
+  assert.ok(process.env.SCREENSHOT_SERVICE_LOCATION);
+}
+
 export const HOME_LOCATION = process.env.HOME_LOCATION;
 export const MAILHOG_HOST = process.env.MAILHOG_HOST ?? 'localhost';
 export const MONGOHQ_URL =
@@ -176,3 +180,5 @@ export const EMAIL_PROVIDER = process.env.EMAIL_PROVIDER;
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
+export const SCREENSHOT_SERVICE_LOCATION =
+  process.env.SCREENSHOT_SERVICE_LOCATION;
