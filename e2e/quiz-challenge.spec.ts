@@ -6,7 +6,7 @@ import { challengeTypes } from '../shared/config/challenge-types';
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 
 const ATTEMPT_DATE = new Date('2024-12-01T10:00:00');
-const TIME_AFTER_COOLDOWN_EXPIRES = new Date('2024-12-01T12:00:00');
+const TIME_AFTER_COOLDOWN_EXPIRES = new Date('2024-12-01T11:00:00');
 
 test.describe('Quiz challenge', () => {
   test.beforeEach(async ({ page }) => {
