@@ -16,100 +16,100 @@ Likewise, `getIndexToIns([20,3,5], 19)` should return `2` because once the array
 
 # --hints--
 
-`getIndexToIns([10, 20, 30, 40, 50], 35)` should return `3`.
-
-```js
-assert(getIndexToIns([10, 20, 30, 40, 50], 35) === 3);
-```
-
 `getIndexToIns([10, 20, 30, 40, 50], 35)` should return a number.
 
 ```js
-assert(typeof getIndexToIns([10, 20, 30, 40, 50], 35) === 'number');
+assert.isNumber(getIndexToIns([10, 20, 30, 40, 50], 35));
 ```
 
-`getIndexToIns([10, 20, 30, 40, 50], 30)` should return `2`.
+`getIndexToIns([10, 20, 30, 40, 50], 35)` should return `3`.
 
 ```js
-assert(getIndexToIns([10, 20, 30, 40, 50], 30) === 2);
+assert.strictEqual(getIndexToIns([10, 20, 30, 40, 50], 35), 3);
 ```
 
 `getIndexToIns([10, 20, 30, 40, 50], 30)` should return a number.
 
 ```js
-assert(typeof getIndexToIns([10, 20, 30, 40, 50], 30) === 'number');
+assert.isNumber(getIndexToIns([10, 20, 30, 40, 50], 30));
 ```
 
-`getIndexToIns([40, 60], 50)` should return `1`.
+`getIndexToIns([10, 20, 30, 40, 50], 30)` should return `2`.
 
 ```js
-assert(getIndexToIns([40, 60], 50) === 1);
+assert.strictEqual(getIndexToIns([10, 20, 30, 40, 50], 30), 2);
 ```
 
 `getIndexToIns([40, 60], 50)` should return a number.
 
 ```js
-assert(typeof getIndexToIns([40, 60], 50) === 'number');
+assert.isNumber(getIndexToIns([40, 60], 50));
 ```
 
-`getIndexToIns([3, 10, 5], 3)` should return `0`.
+`getIndexToIns([40, 60], 50)` should return `1`.
 
 ```js
-assert(getIndexToIns([3, 10, 5], 3) === 0);
+assert.strictEqual(getIndexToIns([40, 60], 50), 1);
 ```
 
 `getIndexToIns([3, 10, 5], 3)` should return a number.
 
 ```js
-assert(typeof getIndexToIns([3, 10, 5], 3) === 'number');
+assert.isNumber(getIndexToIns([3, 10, 5], 3));
 ```
 
-`getIndexToIns([5, 3, 20, 3], 5)` should return `2`.
+`getIndexToIns([3, 10, 5], 3)` should return `0`.
 
 ```js
-assert(getIndexToIns([5, 3, 20, 3], 5) === 2);
+assert.strictEqual(getIndexToIns([3, 10, 5], 3), 0);
 ```
 
 `getIndexToIns([5, 3, 20, 3], 5)` should return a number.
 
 ```js
-assert(typeof getIndexToIns([5, 3, 20, 3], 5) === 'number');
+assert.isNumber(getIndexToIns([5, 3, 20, 3], 5));
+```
+
+`getIndexToIns([5, 3, 20, 3], 5)` should return `2`.
+
+```js
+assert.strictEqual(getIndexToIns([5, 3, 20, 3], 5), 2);
 ```
 
 `getIndexToIns([2, 20, 10], 19)` should return `2`.
 
 ```js
-assert(getIndexToIns([2, 20, 10], 19) === 2);
+assert.strictEqual(getIndexToIns([2, 20, 10], 19), 2);
 ```
 
 `getIndexToIns([2, 20, 10], 19)` should return a number.
 
 ```js
-assert(typeof getIndexToIns([2, 20, 10], 19) === 'number');
+assert.isNumber(getIndexToIns([2, 20, 10], 19));
 ```
 
 `getIndexToIns([2, 5, 10], 15)` should return `3`.
 
 ```js
-assert(getIndexToIns([2, 5, 10], 15) === 3);
+assert.strictEqual(getIndexToIns([2, 5, 10], 15), 3);
 ```
 
 `getIndexToIns([2, 5, 10], 15)` should return a number.
 
 ```js
-assert(typeof getIndexToIns([2, 5, 10], 15) === 'number');
-```
-
-`getIndexToIns([], 1)` should return `0`.
-
-```js
-assert(getIndexToIns([], 1) === 0);
+assert.isNumber(getIndexToIns([2, 5, 10], 15));
 ```
 
 `getIndexToIns([], 1)` should return a number.
 
 ```js
-assert(typeof getIndexToIns([], 1) === 'number');
+assert.isNumber(getIndexToIns([], 1));
+```
+
+`getIndexToIns([], 1)` should return `0`.
+
+```js
+assert.strictEqual(getIndexToIns([], 1), 0);
 ```
 
 # --seed--
