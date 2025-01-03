@@ -50,7 +50,7 @@ function BlockHeader({
           </span>
           <DropDown />
         </span>
-        {!isEmpty(blockIntroArr) && (
+        {isExpanded && !isEmpty(blockIntroArr) && (
           <BlockIntros intros={blockIntroArr as string[]} />
         )}
         {!isExpanded && !isCompleted && completedCount > 0 && (
