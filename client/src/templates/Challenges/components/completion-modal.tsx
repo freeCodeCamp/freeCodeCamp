@@ -64,6 +64,10 @@ interface CompletionModalsProps extends StateProps {
   close: () => void;
   submitChallenge: () => void;
   t: TFunction;
+  /**
+   * Additional actions that would be executed on submit button click
+   */
+  onComplete?: () => void;
 }
 
 interface CompletionModalState {
@@ -158,7 +162,8 @@ class CompletionModal extends Component<
       message,
       t,
       dashedName,
-      submitChallenge
+      submitChallenge,
+      onComplete
     } = this.props;
 
     const isMacOS = navigator.userAgent.includes('Mac OS');
@@ -213,7 +218,12 @@ class CompletionModal extends Component<
             size='large'
             variant='primary'
             disabled={isSubmitting}
-            onClick={() => submitChallenge()}
+            onClick={() => {
+              submitChallenge();
+              if (onComplete) {
+                onComplete();
+              }
+            }}
           >
             {buttonText}
           </Button>
