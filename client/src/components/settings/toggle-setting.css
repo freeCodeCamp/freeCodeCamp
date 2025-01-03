@@ -75,6 +75,10 @@
   margin-inline-start: 2rem;
 }
 
+.toggle-radio-group label.not-checked {
+  cursor: pointer;
+}
+
 .toggle-radio-group input {
   position: absolute;
   left: -9999px;
