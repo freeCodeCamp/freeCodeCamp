@@ -12,7 +12,7 @@
 }
 
 .hide-scrollable-anchor {
-  display: block;
+  display: inline-block;
   max-height: 0px;
 }
 
