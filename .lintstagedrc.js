@@ -49,5 +49,16 @@ module.exports = {
         filename => `node ./tools/scripts/lint/index.js '${filename}'`
       );
     }
+  },
+
+  '*.css': files => {
+    if (completedStages.has('css')) return [];
+
+    if (files.length > 10) {
+      completedStages.add('css');
+      return 'pnpm run lint:client-css';
+    } else {
+      return files.map(filename => `stylelint '${filename}'`);
+    }
   }
 };
