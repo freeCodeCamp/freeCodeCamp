@@ -340,9 +340,7 @@ class Block extends Component<BlockProps> {
         <ScrollableAnchor id={block}>
           <span className='hide-scrollable-anchor'></span>
         </ScrollableAnchor>
-        <div
-          className={`block block-grid challenge-list-block ${isExpanded ? 'open' : ''}`}
-        >
+        <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
