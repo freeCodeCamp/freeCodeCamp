@@ -52,7 +52,7 @@ function* showDonateModalSaga() {
   if (
     shouldRequestDonation &&
     recentlyClaimedBlock &&
-    recentlyClaimedBlock.superBlock == 'full-stack-developer'
+    recentlyClaimedBlock.superBlock === 'full-stack-developer'
   ) {
     yield put(preventBlockDonationRequests());
   } else if (shouldRequestDonation || isModalRecentlyShown) {

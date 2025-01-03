@@ -505,7 +505,10 @@ const ShowQuiz = ({
                       {t('learn.quiz.already-passed')}
                     </Callout>
                   )}
-                  <ChallengeDescription description={description} />
+                  <ChallengeDescription
+                    description={description}
+                    superBlock={superBlock}
+                  />
                   <Spacer size='l' />
                   <ObserveKeys>
                     <Quiz questions={quizData} disabled={isQuizDisabled} />

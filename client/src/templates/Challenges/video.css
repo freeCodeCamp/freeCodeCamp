@@ -139,6 +139,7 @@ input:focus-visible + .video-quiz-input-visible {
 
 .mcq-feedback {
   border-top: none;
+  display: block;
 }
 
 .mcq-prism-correct code {

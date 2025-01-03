@@ -44,7 +44,7 @@ export function getheadTagComponents(): JSX.Element[] {
   return headTags;
 }
 
-export function getPostBodyComponents(pathname: string): JSX.Element[] {
+export function getPostBodyComponents(superblock: string): JSX.Element[] {
   const scripts = [];
   const mathJaxScriptElement = (
     <script
@@ -56,7 +56,7 @@ export function getPostBodyComponents(pathname: string): JSX.Element[] {
     />
   );
 
-  if (isMathJaxAllowed(pathname)) {
+  if (isMathJaxAllowed(superblock)) {
     scripts.push(mathJaxScriptElement);
   }
 

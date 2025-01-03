@@ -13,6 +13,7 @@ import { ChapterIcon } from '../../../assets/chapter-icon';
 import { FsdChapters } from '../../../../../shared/config/chapters';
 import envData from '../../../../config/env.json';
 import Block from './block';
+import CheckMark from './check-mark';
 
 import './super-block-accordion.css';
 
@@ -22,17 +23,22 @@ interface ChapterProps {
   dashedName: string;
   children: ReactNode;
   isExpanded: boolean;
+  totalSteps: number;
+  completedSteps: number;
 }
 
 interface ModuleProps {
   dashedName: string;
   children: ReactNode;
   isExpanded: boolean;
+  totalSteps: number;
+  completedSteps: number;
 }
 interface SuperBlockTreeViewProps {
   challenges: ChallengeNode['challenge'][];
   superBlock: SuperBlocks;
   chosenBlock: string;
+  completedChallengeIds: string[];
 }
 
 type Module = {
@@ -88,20 +94,43 @@ const getBlockToModuleMap = () => {
 const blockToChapterMap = getBlockToChapterMap();
 const blockToModuleMap = getBlockToModuleMap();
 
-const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
+const Chapter = ({
+  dashedName,
+  children,
+  isExpanded,
+  totalSteps,
+  completedSteps
+}: ChapterProps) => {
   const { t } = useTranslation();
+  const isComplete = completedSteps === totalSteps;
 
   return (
     <Disclosure as='li' className='chapter' defaultOpen={isExpanded}>
-      <Disclosure.Button className='chapter-button'>
-        <div className='chapter-icon-and-text'>
+      <Disclosure.Button
+        className='chapter-button'
+        data-playwright-test-label='chapter-button'
+      >
+        <div className='chapter-button-left'>
           <ChapterIcon
             className='map-icon'
             chapter={dashedName as FsdChapters}
           />
           {t(`intro:full-stack-developer.chapters.${dashedName}`)}
         </div>
-        <DropDown />
+        <div className='chapter-button-right'>
+          <span className='chapter-steps'>
+            {t('learn.steps-completed', {
+              totalSteps,
+              completedSteps
+            })}
+          </span>
+          <span className='checkmark-wrap chapter-checkmark-wrap'>
+            <CheckMark isCompleted={isComplete} />
+          </span>
+          <span className='dropdown-wrap'>
+            <DropDown />
+          </span>
+        </div>
       </Disclosure.Button>
       <Disclosure.Panel as='ul' className='chapter-panel'>
         {children}
@@ -110,14 +139,36 @@ const Chapter = ({ dashedName, children, isExpanded }: ChapterProps) => {
   );
 };
 
-const Module = ({ dashedName, children, isExpanded }: ModuleProps) => {
+const Module = ({
+  dashedName,
+  children,
+  isExpanded,
+  totalSteps,
+  completedSteps
+}: ModuleProps) => {
   const { t } = useTranslation();
+  const isComplete = completedSteps === totalSteps;
 
   return (
     <Disclosure as='li' defaultOpen={isExpanded}>
       <Disclosure.Button className='module-button'>
-        <DropDown />
-        {t(`intro:full-stack-developer.modules.${dashedName}`)}
+        <div className='module-button-left'>
+          <span className='dropdown-wrap'>
+            <DropDown />
+          </span>
+          {t(`intro:full-stack-developer.modules.${dashedName}`)}
+        </div>
+        <div className='module-button-right'>
+          <span className='module-steps'>
+            {t('learn.steps-completed', {
+              totalSteps,
+              completedSteps
+            })}
+          </span>
+          <span className='checkmark-wrap'>
+            <CheckMark isCompleted={isComplete} />
+          </span>
+        </div>
       </Disclosure.Button>
       <Disclosure.Panel as='ul' className='module-panel'>
         {children}
@@ -156,7 +207,8 @@ const LinkBlock = ({
 export const SuperBlockAccordion = ({
   challenges,
   superBlock,
-  chosenBlock
+  chosenBlock,
+  completedChallengeIds
 }: SuperBlockTreeViewProps) => {
   const { t } = useTranslation();
   const { allChapters } = useMemo(() => {
@@ -220,11 +272,26 @@ export const SuperBlockAccordion = ({
           );
         }
 
+        const chapterStepIds: string[] = [];
+        chapter.modules.forEach(module => {
+          const { blocks } = module;
+          blocks.forEach(block =>
+            chapterStepIds.push(...block.challenges.map(c => c.id))
+          );
+        });
+
+        const chapterStepIdsSet = new Set(chapterStepIds);
+        const completedStepsInChapter = completedChallengeIds.filter(id =>
+          chapterStepIdsSet.has(id)
+        );
+
         return (
           <Chapter
             key={chapter.name}
             dashedName={chapter.name}
             isExpanded={expandedChapter === chapter.name}
+            totalSteps={chapterStepIds.length}
+            completedSteps={completedStepsInChapter.length}
           >
             {chapter.modules.map(module => {
               // show coming soon on production, and all the challenges in dev
@@ -248,11 +315,23 @@ export const SuperBlockAccordion = ({
                 );
               }
 
+              const moduleStepIds: string[] = [];
+              module.blocks.forEach(block =>
+                moduleStepIds.push(...block.challenges.map(c => c.id))
+              );
+
+              const moduleStepIdsSet = new Set(moduleStepIds);
+              const completedStepsInModule = completedChallengeIds.filter(id =>
+                moduleStepIdsSet.has(id)
+              );
+
               return (
                 <Module
                   key={module.name}
                   dashedName={module.name}
                   isExpanded={expandedModule === module.name}
+                  totalSteps={moduleStepIds.length}
+                  completedSteps={completedStepsInModule.length}
                 >
                   {module.blocks.map(block => (
                     // maybe TODO: allow blocks to be "coming soon"

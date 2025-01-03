@@ -96,26 +96,33 @@ const LowerButtonsPanel = ({
     <>
       <hr />
       <div className='utility-bar'>
-        <Button
-          data-playwright-test-label='lowerJaw-reset-button'
-          className='fade-in'
-          onClick={resetButtonEvent}
-        >
-          <Reset />
-          {resetButtonText}
-        </Button>
-        {showShareButton && <Share superBlock={superBlock} block={block} />}
-
-        {hideHelpButton && (
-          <Button
-            className='fade-in'
-            id='get-help-button'
-            onClick={helpButtonEvent}
-          >
-            <Help />
-            {helpButtonText}
-          </Button>
+        {showShareButton && (
+          <div className='utility-bar-top'>
+            <Share superBlock={superBlock} block={block} />
+          </div>
         )}
+
+        <div className='utility-bar-bottom'>
+          <Button
+            data-playwright-test-label='lowerJaw-reset-button'
+            className='fade-in'
+            onClick={resetButtonEvent}
+          >
+            <Reset />
+            {resetButtonText}
+          </Button>
+
+          {hideHelpButton && (
+            <Button
+              className='fade-in'
+              id='get-help-button'
+              onClick={helpButtonEvent}
+            >
+              <Help />
+              {helpButtonText}
+            </Button>
+          )}
+        </div>
       </div>
     </>
   );

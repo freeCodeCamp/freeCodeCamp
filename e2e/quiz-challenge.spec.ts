@@ -9,11 +9,6 @@ const ATTEMPT_DATE = new Date('2024-12-01T10:00:00');
 const TIME_AFTER_COOLDOWN_EXPIRES = new Date('2024-12-01T12:00:00');
 
 test.describe('Quiz challenge', () => {
-  test.skip(
-    () => process.env.SHOW_UPCOMING_CHANGES !== 'true',
-    'The FSD superblock is not available if SHOW_UPCOMING_CHANGES is false'
-  );
-
   test.beforeEach(async ({ page }) => {
     execSync('node ./tools/scripts/seed/seed-demo-user');
 
@@ -128,14 +123,8 @@ test.describe('Quiz challenge', () => {
   });
 
   test('should show a confirm exit modal when user closes the page', async ({
-    page,
-    browserName
+    page
   }) => {
-    test.skip(
-      browserName === 'webkit' || browserName === 'chromium',
-      'This test is flaky on Chromium and WebKit'
-    );
-
     // Wait for the page content to render
     await expect(page.getByRole('radiogroup')).toHaveCount(20);
 
