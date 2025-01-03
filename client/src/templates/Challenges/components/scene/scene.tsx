@@ -127,7 +127,7 @@ export function Scene({
       // TODO: if we manage the playing state in another module, we should not
       // need the early return here. It should not be possible for this to be
       // called at all if the scene is already playing.
-      if (isPlaying) return;
+      if (isPlaying || !sceneIsReady) return;
       setIsPlaying(true);
       setShowDialogue(true);
 
@@ -240,6 +240,7 @@ export function Scene({
     isPlaying,
     duration,
     sceneSubject,
+    sceneIsReady,
     commands,
     audio,
     hasTimestamps,
