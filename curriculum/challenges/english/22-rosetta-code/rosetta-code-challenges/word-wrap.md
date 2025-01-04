@@ -50,7 +50,6 @@ assert.equal(wrapped80.split('\n')[0], firstRow80);
 `wrap(text, 42)` should return 7 lines.
 
 ```js
-console.log(wrapped42);
 assert(wrapped42.split('\n').length === 7);
 ```
 
