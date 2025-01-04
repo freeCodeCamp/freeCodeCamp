@@ -37,6 +37,12 @@ Your `div` tag should be nested in the `body`.
 assert.equal(document.querySelector('div')?.parentElement?.tagName, 'BODY');
 ```
 
+Move all the other elements inside the new `div`.
+
+```js
+assert.lengthOf(document.querySelector('body > div#menu > main')?.children, 3);
+```
+
 
 # --seed--
 
