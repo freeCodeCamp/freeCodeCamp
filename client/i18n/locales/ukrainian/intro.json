@@ -1594,7 +1594,7 @@
       "learn-future-continuous-while-describing-actions": {
         "title": "Дізнайтесь про майбутній тривалий час, описуючи дії",
         "intro": [
-          "In this course, you will learn to use the Future Continuous tense, and how to describe actions to be performed."
+          "У цьому курсі ви навчитеся використовувати майбутній тривалий час та описувати дії, які будуть виконані."
         ]
       },
       "learn-how-to-use-conditionals": {
@@ -1793,7 +1793,7 @@
       "lecture-html-fundamentals": {
         "title": "Основи HTML",
         "intro": [
-          "In these lecture videos, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+          "У цих відеолекціях ви дізнаєтесь про основи HTML, серед яких елемент <code>div</code>, атрибути <code>id</code> та <code>class</code>, шаблонний код HTML тощо."
         ]
       },
       "lab-travel-agency-page": {
@@ -2140,13 +2140,15 @@
       "review-css-pseudo-classes": {
         "title": "Повторення псевдокласів у CSS",
         "intro": [
-          "Before you're quizzed on CSS pseudo-classes and pseudo-elements, you should review what you've learned about them.",
+          "Перш ніж перейти до тесту «Псевдокласи та псевдоелементи в CSS», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати псевдоелементи <code>::before</code> й <code>::after</code>, псевдокласи <code>:hover</code> й <code>:active</code> та багато іншого."
         ]
       },
       "quiz-css-pseudo-classes": {
         "title": "Тест «Псевдокласи в CSS»",
-        "intro": ["Test your knowledge of CSS pseudo-classes with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Псевдокласи в CSS»."
+        ]
       },
       "lecture-working-with-colors-in-css": {
         "title": "Робота з кольорами в CSS",
@@ -2169,13 +2171,15 @@
       "review-css-colors": {
         "title": "Повторення кольорів у CSS",
         "intro": [
-          "Before you're quizzed on CSS colors, you should review what you've learned about them.",
+          "Перш ніж перейти до тесту «Кольори в CSS», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати функцію <code>rgb()</code>, функцію <code>hsl()</code>, <code>hex codes</code> та багато іншого."
         ]
       },
       "quiz-css-colors": {
         "title": "Тест «Кольори в CSS»",
-        "intro": ["Test your knowledge of CSS colors with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Кольори в CSS»."
+        ]
       },
       "lecture-best-practices-for-styling-forms": {
         "title": "Найкращі практики стилізації форм",
@@ -2186,7 +2190,7 @@
       "workshop-registration-form": {
         "title": "Створіть реєстраційну форму",
         "intro": [
-          "In this workshop, you'll learn how to design HTML forms by designing a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+          "У цьому практичному занятті ви навчитесь працювати з формами HTML, створивши сторінку реєстрації. Ви дізнаєтесь, як керувати типами даних, що можна ввести у формі, й деякі нові інструменти CSS для стилізації сторінки."
         ]
       },
       "lab-contact-form": {
@@ -2198,14 +2202,14 @@
       "review-styling-forms": {
         "title": "Повторення стилізації форм",
         "intro": [
-          "Before you're quizzed on styling forms, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Стилізація форм», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати, як стилізувати введення форми, як працювати з <code>appearance: none</code> та багато іншого."
         ]
       },
       "quiz-styling-forms": {
         "title": "Тест «Стилізація форм»",
         "intro": [
-          "In this quiz, you will test your knowledge of how to style forms."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Стилізація форм»."
         ]
       },
       "lecture-working-with-css-transforms-overflow-and-filters": {
@@ -2237,7 +2241,7 @@
       "quiz-css-layout-and-effects": {
         "title": "Тест «Макети та ефекти в CSS»",
         "intro": [
-          "In this quiz, you will test your knowledge of the box model, transforms, filters, and overflow in CSS."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Макети та ефекти в CSS»."
         ]
       },
       "lecture-working-with-css-flexbox": {
@@ -2249,7 +2253,7 @@
       "workshop-flexbox-photo-gallery": {
         "title": "Створіть фотогалерею із Flexbox",
         "intro": [
-          "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
+          "У цьому практичному занятті ви будете використовувати Flexbox, щоб створити адаптивну вебсторінку із фотогалереєю."
         ]
       },
       "lab-page-of-playing-cards": {
@@ -2262,13 +2266,13 @@
       "review-css-flexbox": {
         "title": "Повторення CSS Flexbox",
         "intro": [
-          "Before you're quizzed on CSS flexbox, you should review what you've learned.",
-          "Open up this page to review concepts like the <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> properties, and more."
+          "Перш ніж перейти до тесту «CSS Flexbox», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати властивості <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> та багато іншого."
         ]
       },
       "quiz-css-flexbox": {
         "title": "Тест «CSS Flexbox»",
-        "intro": ["Test what you've learned on CSS flexbox with this quiz."]
+        "intro": ["Перевірте, що ви дізнались про CSS flexbox."]
       },
       "lecture-working-with-css-fonts": {
         "title": "Робота з шрифтами в CSS",
@@ -2293,13 +2297,15 @@
       "review-css-typography": {
         "title": "Повторення типографії в CSS",
         "intro": [
-          "Before you're quizzed on the fundamentals of typography, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Типографія», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати веббезпечні шрифти, властивість <code>font-family</code> та багато іншого."
         ]
       },
       "quiz-css-typography": {
         "title": "Тест «Типографія в CSS»",
-        "intro": ["Test your knowledge of typography with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Типографія»."
+        ]
       },
       "lecture-best-practices-for-accessibility-and-css": {
         "title": "Найкращі практики доступності й CSS",
@@ -2310,7 +2316,7 @@
       "workshop-accessibility-quiz": {
         "title": "Створіть сторінку з вікториною",
         "intro": [
-          "Accessibility is the process of making your webpages usable for everyone, including people with disabilities.",
+          "Доступність полегшує користування вебсторінкою для всіх людей, навіть для людей з порушеннями.",
           "У цьому практичному занятті ви створите вебсторінку з вікториною. Ви дізнаєтеся про інструменти доступності, серед яких комбінації клавіш, атрибути ARIA та найкращі поради щодо дизайну."
         ]
       },
@@ -2323,14 +2329,14 @@
       "review-css-accessibility": {
         "title": "Повторення доступності в CSS",
         "intro": [
-          "Before you're quizzed on CSS and accessibility, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Доступність в CSS», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати інструменти контрастності кольорів та найкращі практики доступності."
         ]
       },
       "quiz-css-accessibility": {
         "title": "Тест «Доступність в CSS»",
         "intro": [
-          "In this quiz, you'll test what you've learned about making your webpages accessible with CSS."
+          "Перевірте, що ви дізнались про доступність вебсторінок із CSS."
         ]
       },
       "lecture-working-with-attribute-selectors": {
@@ -2342,7 +2348,7 @@
       "workshop-balance-sheet": {
         "title": "Створіть бухгалтерський баланс",
         "intro": [
-          "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+          "У цьому практичному занятті ви побудуєте бухгалтерський баланс за допомогою псевдоселекторів. Ви дізнаєтеся, як змінити стиль елемента, коли ви наводите на нього курсор, та запускати інші події на вебсторінці."
         ]
       },
       "lab-book-inventory-app": {
@@ -2355,14 +2361,14 @@
       "review-css-attribute-selectors": {
         "title": "Повторення селекторів атрибутів у CSS",
         "intro": [
-          "Before you're quizzed on the fundamentals of CSS attribute selectors, you should review what you've learned about them.",
+          "Перш ніж перейти до тесту «Селектори атрибутів у CSS», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати, як працювати з різними селекторами атрибутів, які націлюють посилання атрибутами <code>href</code> та <code>title</code>."
         ]
       },
       "quiz-css-attribute-selectors": {
         "title": "Тест «Селектори атрибутів у CSS»",
         "intro": [
-          "Test your knowledge of CSS attribute selectors with this quiz."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Селектори атрибутів у CSS»."
         ]
       },
       "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
@@ -2388,13 +2394,15 @@
       "review-css-positioning": {
         "title": "Повторення позиціювання в CSS",
         "intro": [
-          "Before you're quizzed on the fundamentals of CSS positioning, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Позиціювання в CSS», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати обтікання, відносне позиціювання, абсолютне позиціювання та багато іншого."
         ]
       },
       "quiz-css-positioning": {
         "title": "Тест «Позиціювання в CSS»",
-        "intro": ["Test your knowledge of CSS positioning with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Позиціювання в CSS»."
+        ]
       },
       "lecture-best-practices-for-responsive-web-design": {
         "title": "Найкращі практики адаптивного вебдизайну",
@@ -2419,15 +2427,13 @@
       "review-responsive-web-design": {
         "title": "Повторення адаптивного вебдизайну",
         "intro": [
-          "Before you're quizzed on the fundamentals of responsive design, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Адаптивний вебдизайн», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати медіазапити, точки зупинки та принцип mobile first."
         ]
       },
       "quiz-responsive-web-design": {
         "title": "Тест «Адаптивний вебдизайн»",
-        "intro": [
-          "Test what you've learned about making your webpages responsive with this quiz."
-        ]
+        "intro": ["Перевірте, що ви дізнались про адаптивність вебсторінок."]
       },
       "lecture-working-with-css-variables": {
         "title": "Робота зі змінними в CSS",
@@ -2452,13 +2458,15 @@
       "review-css-variables": {
         "title": "Повторення змінних в CSS",
         "intro": [
-          "Before you're quizzed on the fundamentals of CSS variables, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Змінні в CSS», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати, як працювати з власними CSS-властивостями (CSS-змінними) та директивою <code>@property</code>."
         ]
       },
       "quiz-css-variables": {
         "title": "Тест «Змінні в CSS»",
-        "intro": ["Test your knowledge of CSS variables with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Змінні в CSS»."
+        ]
       },
       "lecture-working-with-css-grid": {
         "title": "Робота з сіткою в CSS",
@@ -2482,7 +2490,7 @@
       "lecture-debugging-css": {
         "title": "Налагодження CSS",
         "intro": [
-          "In this lecture video, you'll learn how to debug CSS using your browser's developer tools and CSS validators."
+          "У цій відеолекції ви навчитесь налагоджувати CSS за допомогою інструментів розробника свого браузера та валідаторів CSS."
         ]
       },
       "lab-product-landing-page": {
@@ -2494,13 +2502,15 @@
       "review-css-grid": {
         "title": "Повторення сітки в CSS",
         "intro": [
-          "Before you're quizzed on the fundamentals of CSS Grid, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Сітка в CSS», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати, як працювати з різними властивостями CSS-сітки, серед яких <code>grid-template-columns</code>, <code>grid-gap</code> тощо."
         ]
       },
       "quiz-css-grid": {
         "title": "Тест «Сітка в CSS»",
-        "intro": ["Test your knowledge of CSS Grid with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Сітка в CSS»."
+        ]
       },
       "lecture-animations-and-accessibility": {
         "title": "Анімація та доступність",
@@ -2536,13 +2546,15 @@
       "review-css-animations": {
         "title": "Повторення анімацій в CSS",
         "intro": [
-          "Before you're quizzed on working with CSS animations, you should review what you've learned about them.",
+          "Перш ніж перейти до тесту «Анімації в CSS», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати <code>prefers-reduced-motion</code>, директиву <code>@keyframes</code> та багато іншого."
         ]
       },
       "quiz-css-animations": {
         "title": "Тест «Анімації в CSS»",
-        "intro": ["Test your knowledge of CSS animations with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Анімації в CSS»."
+        ]
       },
       "review-css": {
         "title": "Повторення CSS",
@@ -2570,7 +2582,7 @@
       "workshop-greeting-bot": {
         "title": "Створіть вітального бота",
         "intro": [
-          "In this workshop, you will learn JavaScript fundamentals by building a greeting bot.",
+          "У цьому практичному занятті ви дізнаєтесь, як працювати з основами JavaScript, створивши вітального бота.",
           "Ви дізнаєтесь про змінні, <code>let</code>, <code>const</code>, <code>console.log</code> та базове використання рядка."
         ]
       },
@@ -2603,7 +2615,7 @@
       "quiz-javascript-variables-and-data-types": {
         "title": "Тест «Змінні та типи даних в JavaScript»",
         "intro": [
-          "Test your knowledge of JavaScript variables and data types with this quiz."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Змінні та типи даних в JavaScript»."
         ]
       },
       "lecture-working-with-strings-in-javascript": {
@@ -2634,7 +2646,9 @@
       },
       "quiz-javascript-strings": {
         "title": "Тест «Рядки в JavaScript»",
-        "intro": ["Test your knowledge of JavaScript strings with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Рядки в JavaScript»."
+        ]
       },
       "lecture-working-with-numbers-booleans-and-the-math-object": {
         "title": "Робота з числами, булевими значеннями й об’єктом math",
@@ -2662,16 +2676,16 @@
         ]
       },
       "review-javascript-math": {
-        "title": "Повторення математики в JavaScript",
+        "title": "Повторення об’єкту Math в JavaScript",
         "intro": [
-          "Before you're quizzed on working with the <code>Math</code> object, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Об’єкт <code>Math</code> в JavaScript», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати, як працювати з методами <code>Math.random()</code>, <code>Math.floor()</code> тощо."
         ]
       },
       "quiz-javascript-math": {
-        "title": "Тест «Математика в JavaScript»",
+        "title": "Тест «Об’єкт Math в JavaScript»",
         "intro": [
-          "Test your knowledge of the JavaScript <code>Math</code> object with this quiz."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Об’єкт <code>Math</code> в JavaScript»."
         ]
       },
       "lecture-understanding-comparisons-and-conditionals": {
@@ -2683,14 +2697,14 @@
       "review-javascript-comparisons-and-conditionals": {
         "title": "Повторення порівняння та умов у JavaScript",
         "intro": [
-          "Before you're quizzed on working with conditionals, you should review what you've learned about them.",
+          "Перш ніж перейти до тесту «Порівняння та умови в JavaScript», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати, як працювати з інструкціями <code>switch</code>, а також з іншими типами умовних інструкцій."
         ]
       },
       "quiz-javascript-comparisons-and-conditionals": {
         "title": "Тест «Порівняння та умови в JavaScript»",
         "intro": [
-          "Test your knowledge of JavaScript Comparisons and Conditionals with this quiz."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Порівняння та умови в JavaScript»."
         ]
       },
       "lecture-working-with-functions": {
@@ -2702,7 +2716,7 @@
       "workshop-calculator": {
         "title": "Створіть калькулятор",
         "intro": [
-          "In this workshop, you will review your knowledge of functions by building a calculator."
+          "У цьому практичному занятті ви пригадаєте, як працювати з функціями, створивши калькулятор."
         ]
       },
       "lab-email-masker": {
@@ -2728,13 +2742,15 @@
       "review-javascript-functions": {
         "title": "Повторення функцій в JavaScript",
         "intro": [
-          "Before you're quizzed on JavaScript functions, you should review what you've learned about them.",
+          "Перш ніж перейти до тесту «Функції в JavaScript», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати функції, стрілкові функції та область видимості."
         ]
       },
       "quiz-javascript-functions": {
         "title": "Тест «Функції в JavaScript»",
-        "intro": ["Test your knowledge of JavaScript functions with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Функції в JavaScript»."
+        ]
       },
       "lecture-working-with-arrays": {
         "title": "Робота з масивами",
@@ -2745,7 +2761,7 @@
       "workshop-shopping-list": {
         "title": "Створіть список покупок",
         "intro": [
-          "In this workshop, you will practice how to work with arrays by building a shopping list.",
+          "У цьому практичному занятті ви попрактикуєтесь працювати з масивами, створивши список покупок.",
           "Ви пригадаєте, як додавати й видаляти елементи з масиву за допомогою різних методів, серед яких <code>push</code>, <code>pop</code>, <code>shift</code> та <code>unshift</code>."
         ]
       },
@@ -2764,13 +2780,15 @@
       "review-javascript-arrays": {
         "title": "Повторення масивів у JavaScript",
         "intro": [
-          "Before you're quizzed on JavaScript arrays, you should review what you've learned about them.",
+          "Перш ніж перейти до тесту «Масиви в JavaScript», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати деструктуризацію масивів, додавання і вилучення елементів з масиву та багато іншого."
         ]
       },
       "quiz-javascript-arrays": {
         "title": "Тест «Масиви в JavaScript»",
-        "intro": ["Test your knowledge of JavaScript arrays with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Масиви в JavaScript»."
+        ]
       },
       "lecture-working-with-objects": {
         "title": "Робота з об’єктами",
@@ -2794,13 +2812,15 @@
       "review-javascript-objects": {
         "title": "Повторення об’єктів у JavaScript",
         "intro": [
-          "Before you're quizzed on JavaScript objects, you should review what you've learned about them.",
+          "Перш ніж перейти до тесту «Об’єкти в JavaScript», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати, як отримувати інформацію з об’єктів, деструктуризацію об’єктів, роботу з JSON та багато іншого."
         ]
       },
       "quiz-javascript-objects": {
         "title": "Тест «Об’єкти в JavaScript»",
-        "intro": ["Test your knowledge of JavaScript objects with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Об’єкти в JavaScript»."
+        ]
       },
       "lecture-working-with-loops": {
         "title": "Робота з циклами",
@@ -2811,7 +2831,7 @@
       "workshop-sentence-analyzer": {
         "title": "Створіть аналізатор речень",
         "intro": [
-          "In this workshop, you'll review how to work with JavaScript loops by building a sentence analyzer app."
+          "У цьому практичному занятті ви пригадаєте, як працювати з циклами в JavaScript, створивши аналізатор речень."
         ]
       },
       "lab-factorial-calculator": {
@@ -2824,13 +2844,15 @@
       "review-javascript-loops": {
         "title": "Повторення циклів у JavaScript",
         "intro": [
-          "Before you're quizzed on the different JavaScript loops, you should review them.",
+          "Перш ніж перейти до тесту «Цикли в JavaScript», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати цикл <code>for...of</code>, цикл <code>while</code>, інструкції <code>break and continue</code> та багато іншого."
         ]
       },
       "quiz-javascript-loops": {
         "title": "Тест «Цикли в JavaScript»",
-        "intro": ["Test your knowledge of JavaScript loops with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Цикли в JavaScript»."
+        ]
       },
       "lecture-understanding-core-javascript-fundamentals": {
         "title": "Знайомство з основами JavaScript",
@@ -2887,7 +2909,7 @@
       "quiz-javascript-fundamentals": {
         "title": "Тест «Основи JavaScript»",
         "intro": [
-          "Test your knowledge of JavaScript fundamentals with this quiz."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Основи JavaScript»."
         ]
       },
       "lecture-working-with-higher-order-functions-and-callbacks": {
@@ -2911,14 +2933,14 @@
       "review-javascript-higher-order-functions": {
         "title": "Повторення функцій вищого порядку в JavaScript",
         "intro": [
-          "Before you're quizzed on JavaScript higher order functions, you should review them.",
+          "Перш ніж перейти до тесту «Функції вищого порядку в JavaScript», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати, як працювати з методами <code>map()</code>, <code>filter()</code> та <code>reduce()</code>."
         ]
       },
       "quiz-javascript-higher-order-functions": {
         "title": "Тест «Функції вищого порядку в JavaScript»",
         "intro": [
-          "Test your knowledge of JavaScript higher order functions with this quiz."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Функції вищого порядку в JavaScript»."
         ]
       },
       "lecture-working-with-the-dom-click-events-and-web-apis": {
@@ -2942,14 +2964,14 @@
       "review-dom-manipulation-and-click-events-with-javascript": {
         "title": "Повторення маніпуляції DOM та подій Click в JavaScript",
         "intro": [
-          "Before you're quizzed on the DOM, you should review what you've learned about it.",
+          "Перш ніж перейти до тесту «DOM», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати, як працювати з <code>DOM</code>, <code>Web API</code>, методом <code>addEventListener()</code> та багато іншого."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
         "title": "Тест «Маніпуляція DOM та події Click в JavaScript»",
         "intro": [
-          "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Маніпуляція DOM та події Click в JavaScript»."
         ]
       },
       "lecture-understanding-the-event-object-and-event-delegation": {
@@ -2999,13 +3021,15 @@
       "review-javascript-events": {
         "title": "Повторення подій в JavaScript",
         "intro": [
-          "Before you're quizzed on events, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Події», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати події <code>change</code>, спливання подій та делегування подій."
         ]
       },
       "quiz-javascript-events": {
         "title": "Тест «Події в JavaScript»",
-        "intro": ["Test your knowledge of JavaScript events with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Події в JavaScript»."
+        ]
       },
       "lecture-debugging-techniques": {
         "title": "Техніки налагодження",
@@ -3022,13 +3046,15 @@
       "review-debugging-javascript": {
         "title": "Повторення налагодження JavaScript",
         "intro": [
-          "Before you're quizzed on common debugging techniques, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Налагодження JavaScript», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати, як працювати з інструкцією <code>throw</code>, <code>try...catch...finally</code> та багато іншого."
         ]
       },
       "quiz-debugging-javascript": {
         "title": "Тест «Налагодження JavaScript»",
-        "intro": ["Test your knowledge of JavaScript debugging with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Налагодження JavaScript»."
+        ]
       },
       "lecture-working-with-regular-expressions": {
         "title": "Робота з регулярними виразами",
@@ -3059,14 +3085,14 @@
       "review-javascript-regular-expressions": {
         "title": "Повторення регулярних виразів у JavaScript",
         "intro": [
-          "Before you're quizzed on Regular Expressions, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Регулярні вирази», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати перевірки уперед і назад, загальні модифікатори регулярних виразів та багато іншого."
         ]
       },
       "quiz-javascript-regular-expressions": {
         "title": "Тест «Регулярні вирази в JavaScript»",
         "intro": [
-          "Test your knowledge of JavaScript Regular Expressions with this quiz."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Регулярні вирази в JavaScript»."
         ]
       },
       "lecture-understanding-form-validation": {
@@ -3092,15 +3118,13 @@
       "review-form-validation-with-javascript": {
         "title": "Повторення валідації форм з JavaScript",
         "intro": [
-          "Before you're quizzed on form validation, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Валідація форм», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати метод <code>preventDefault()</code>, подію <code>submit</code> та багато іншого."
         ]
       },
       "quiz-form-validation-with-javascript": {
         "title": "Тест «Валідація форм з JavaScript»",
-        "intro": [
-          "Test what you've learned about JavaScript form validation with this quiz."
-        ]
+        "intro": ["Перевірте, що ви дізнались про валідацію форм з JavaScript."]
       },
       "lecture-working-with-dates": {
         "title": "Робота з датами",
@@ -3117,15 +3141,13 @@
       "review-javascript-dates": {
         "title": "Повторення дат у JavaScript",
         "intro": [
-          "Before you're quizzed on working with dates, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Дати», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати об’єкт <code>Date()</code> та поширені методи."
         ]
       },
       "quiz-javascript-dates": {
         "title": "Тест «Дати в JavaScript»",
-        "intro": [
-          "Test what you've learned about JavaScript Dates with this quiz."
-        ]
+        "intro": ["Перевірте, що ви дізнались про дати в JavaScript."]
       },
       "lecture-working-with-audio-and-video": {
         "title": "Робота з аудіо та відео",
@@ -3149,15 +3171,13 @@
       "review-javascript-audio-and-video": {
         "title": "Повторення аудіо та відео в JavaScript",
         "intro": [
-          "Before you're quizzed on working with audio and video in JavaScript, you should review what you've learned about them.",
+          "Перш ніж перейти до тесту «Аудіо та відео в JavaScript», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати конструктор <code>Audio</code>, <code>HTMLMediaElement</code> API та багато іншого."
         ]
       },
       "quiz-javascript-audio-and-video": {
         "title": "Тест «Аудіо та відео в JavaScript»",
-        "intro": [
-          "Test what you've learned about JavaScript audio and video with this quiz."
-        ]
+        "intro": ["Перевірте, що ви дізнались про аудіо та відео в JavaScript."]
       },
       "lecture-working-with-maps-and-sets": {
         "title": "Робота з map та set",
@@ -3168,7 +3188,7 @@
       "workshop-plant-nursery-catalog": {
         "title": "Створіть каталог рослин",
         "intro": [
-          "In this workshop, you will practice using Maps and Sets by building a plant nursery catalog."
+          "У цьому практичному занятті ви попрактикуєте map та set, створивши каталог рослин у JavaScript."
         ]
       },
       "lab-voting-system": {
@@ -3181,15 +3201,13 @@
       "review-javascript-maps-and-sets": {
         "title": "Повторення map та set в JavaScript",
         "intro": [
-          "Before you're quizzed on JavaScript Maps and Sets, you should review what you've learned about them.",
+          "Перш ніж перейти до тесту «Map та set в JavaScript», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати об’єкти <code>Map</code> та <code>Set</code>, а також WeakSet й WeakMap."
         ]
       },
       "quiz-javascript-maps-and-sets": {
         "title": "Тест «Map та set в JavaScript»",
-        "intro": [
-          "Test what you've learned about JavaScript Maps and Sets with this quiz."
-        ]
+        "intro": ["Перевірте, що ви дізнались про map та set в JavaScript."]
       },
       "lecture-working-with-client-side-storage-and-crud-operations": {
         "title": "Робота зі сховищем на клієнтській стороні та операціями CRUD",
@@ -3220,9 +3238,7 @@
       },
       "quiz-local-storage-and-crud": {
         "title": "Тест «Локальне сховище та CRUD»",
-        "intro": [
-          "Test what you've learned about local storage and CRUD with this quiz."
-        ]
+        "intro": ["Перевірте, що ви дізнались про локальне сховище та CRUD."]
       },
       "lecture-understanding-how-to-work-with-classes-in-javascript": {
         "title": "Знайомство з класами в JavaScript",
@@ -3253,15 +3269,13 @@
       "review-javascript-classes": {
         "title": "Повторення класів у JavaScript",
         "intro": [
-          "Before you're quizzed on how to work with classes, you should review what you've learned about them.",
+          "Перш ніж перейти до тесту «Класи в JavaScript», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати ключове слово <code>this</code>, наслідування класу та багато іншого."
         ]
       },
       "quiz-javascript-classes": {
         "title": "Тест «Класи в JavaScript»",
-        "intro": [
-          "Test what you've learned about JavaScript Classes with this quiz."
-        ]
+        "intro": ["Перевірте, що ви дізнались про класи в JavaScript."]
       },
       "lecture-understanding-recursion-and-the-call-stack": {
         "title": "Знайомство з рекурсією та стеком викликів",
@@ -3285,13 +3299,15 @@
       "review-recursion": {
         "title": "Повторення рекурсії",
         "intro": [
-          "Before you're quizzed on recursion, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Рекурсія», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати рекурсію і для чого її використовують."
         ]
       },
       "quiz-recursion": {
         "title": "Тест «Рекурсія»",
-        "intro": ["Test your knowledge of Recursion with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Рекурсія»."
+        ]
       },
       "lecture-understanding-functional-programming": {
         "title": "Знайомство з функціональним програмуванням",
@@ -3315,14 +3331,14 @@
       "review-javascript-functional-programming": {
         "title": "Повторення функціонального програмування в JavaScript",
         "intro": [
-          "Before you're quizzed on functional programming, you should review what you've learned.",
+          "Перш ніж перейти до тесту «Функціональне програмування», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати поняття з функціонального програмування, каррування та багато іншого."
         ]
       },
       "quiz-javascript-functional-programming": {
         "title": "Тест «Функціональне програмування в JavaScript»",
         "intro": [
-          "Test what you've learned about JavaScript functional programming with this quiz."
+          "Перевірте, що ви дізнались про функціональне програмування в JavaScript."
         ]
       },
       "lecture-understanding-asynchronous-programming": {
@@ -3347,19 +3363,17 @@
       "review-asynchronous-javascript": {
         "title": "Повторення асинхронного JavaScript",
         "intro": [
-          "Review asynchronous JavaScript concepts to prepare for the upcoming quiz."
+          "Пригадайте поняття з теми «Асинхронний JavaScript», щоб підготуватись до тесту."
         ]
       },
       "quiz-asynchronous-javascript": {
         "title": "Тест «Асинхронний JavaScript»",
-        "intro": [
-          "Test what you've learned about asynchronous JavaScript with this quiz."
-        ]
+        "intro": ["Перевірте, що ви дізнались про асинхронний JavaScript."]
       },
       "review-javascript": {
         "title": "Повторення JavaScript",
         "intro": [
-          "Before you take the JavaScript prep exam, you should review everything you've learned about JavaScript.",
+          "Перш ніж перейти до підготовчого екзамену «JavaScript», повторіть основні поняття з попередніх модулів.",
           "Відкрийте цю сторінку, щоб пригадати змінні, рядки, булеві значення, функції, об’єкти, масиви, налагодження, роботу з DOM та багато іншого."
         ]
       },
@@ -3413,7 +3427,9 @@
       },
       "quiz-react-basics": {
         "title": "Тест «Основи React»",
-        "intro": ["Test your knowledge of React basics with this quiz."]
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Основи React»."
+        ]
       },
       "rugw": {
         "title": "267",
@@ -3445,9 +3461,7 @@
       },
       "quiz-react-state-and-hooks": {
         "title": "Тест «Стани та хуки в React»",
-        "intro": [
-          "Test what you've learned about React State and Hooks with this quiz."
-        ]
+        "intro": ["Перевірте, що ви дізнались про стани та хуки в React."]
       },
       "ftmi": {
         "title": "275",
@@ -3486,9 +3500,7 @@
       },
       "quiz-advanced-react": {
         "title": "Тест «Advanced React»",
-        "intro": [
-          "Test what you've learned about Advanced React with this quiz."
-        ]
+        "intro": ["Перевірте, що ви дізнались про Advanced React."]
       },
       "zdsj": {
         "title": "284",
@@ -3502,9 +3514,7 @@
       },
       "quiz-web-performance": {
         "title": "Тест «Вебпродуктивність»",
-        "intro": [
-          "Test what you've learned about Web Performance with this quiz."
-        ]
+        "intro": ["Перевірте, що ви дізнались про вебпродуктивність."]
       },
       "mbpv": {
         "title": "287",
@@ -3519,7 +3529,7 @@
       "quiz-css-libraries-and-frameworks": {
         "title": "Тест «Бібліотеки та фреймворки CSS»",
         "intro": [
-          "Test what you've learned about CSS Libraries and Frameworks with this quiz."
+          "Перевірте, що ви дізнались про бібліотеки та фреймворки CSS."
         ]
       },
       "khuu": {
@@ -3528,11 +3538,13 @@
       },
       "review-testing": {
         "title": "Повторення тестування",
-        "intro": ["Review testing concepts to prepare for the upcoming quiz."]
+        "intro": [
+          "Пригадайте поняття з теми «Тестування», щоб підготуватись до тесту."
+        ]
       },
       "quiz-testing": {
         "title": "Тест «Тестування»",
-        "intro": ["Test what you've learned on testing with this quiz."]
+        "intro": ["Перевірте, що ви дізнались про тестування."]
       },
       "trvf": {
         "title": "293",
@@ -3557,12 +3569,12 @@
       "review-typescript": {
         "title": "Повторення Typescript",
         "intro": [
-          "Review Typescript concepts to prepare for the upcoming quiz."
+          "Пригадайте поняття з теми «Typescript», щоб підготуватись до тесту."
         ]
       },
       "quiz-typescript": {
         "title": "Тест «TypeScript»",
-        "intro": ["Test what you've learned on Typescript with this quiz."]
+        "intro": ["Перевірте, що ви дізнались про Typescript."]
       },
       "review-front-end-libraries": {
         "title": "Повторення бібліотек для Front End",
@@ -3593,7 +3605,7 @@
       },
       "quiz-bash-commands": {
         "title": "Тест «Команди Bash»",
-        "intro": ["Test what you've learned bash commands with this quiz."]
+        "intro": ["Перевірте, що ви дізнались про команди bash."]
       },
       "voks": {
         "title": "306",
@@ -3620,9 +3632,7 @@
       },
       "quiz-relational-database": {
         "title": "Тест «Реляційні бази даних»",
-        "intro": [
-          "Test what you've learned on relational databases with this quiz."
-        ]
+        "intro": ["Перевірте, що ви дізнались про реляційні бази даних."]
       },
       "pexz": {
         "title": "311",
@@ -3638,12 +3648,12 @@
       "review-bash-scripting": {
         "title": "Повторення скриптів Bash",
         "intro": [
-          "Review the bash scripting concepts you've learned to prepare for the upcoming quiz."
+          "Пригадайте поняття з теми «Скрипти Bash», щоб підготуватись до тесту."
         ]
       },
       "quiz-bash-scripting": {
         "title": "Тест «Скрипти Bash»",
-        "intro": ["Test what you've learned on bash scripting in this quiz."]
+        "intro": ["Перевірте, що ви дізнались про скрипти bash."]
       },
       "tkgg": {
         "title": "315",
@@ -3717,7 +3727,7 @@
       },
       "quiz-nano": {
         "title": "Тест «Nano»",
-        "intro": ["Test what you've learned on Nano with this quiz ."]
+        "intro": ["Перевірте, що ви дізнались про Nano."]
       },
       "rhhl": {
         "title": "328",
@@ -3744,16 +3754,18 @@
       },
       "review-git": {
         "title": "Повторення Git",
-        "intro": ["Review Git concepts to prepare for the upcoming quiz."]
+        "intro": [
+          "Пригадайте поняття з теми «Git», щоб підготуватись до тесту."
+        ]
       },
       "quiz-git": {
         "title": "Тест «Git»",
-        "intro": ["Test what you've learned on Git with this quiz."]
+        "intro": ["Перевірте, що ви дізнались про Git."]
       },
       "review-relational-databases": {
         "title": "Повторення реляційних баз даних",
         "intro": [
-          "Review relational databases concepts to prepare for the upcoming quiz."
+          "Пригадайте поняття з теми «Реляційні бази даних», щоб підготуватись до тесту."
         ]
       },
       "thsj": {
