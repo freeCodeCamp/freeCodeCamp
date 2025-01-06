@@ -53,7 +53,13 @@ const processor = unified()
   .use(addScene)
   .use(addQuizzes)
   .use(addTests)
-  .use(addText, ['description', 'instructions', 'notes', 'explanation']);
+  .use(addText, [
+    'description',
+    'instructions',
+    'notes',
+    'explanation',
+    'transcript'
+  ]);
 
 exports.parseMD = function parseMD(filename) {
   return new Promise((resolve, reject) => {

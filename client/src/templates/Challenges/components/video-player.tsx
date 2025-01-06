@@ -1,5 +1,6 @@
 import React from 'react';
 import YouTube from 'react-youtube';
+import { Spacer } from '@freecodecamp/ui';
 
 import Loader from '../../../components/helpers/loader';
 import envData from '../../../../config/env.json';
@@ -79,6 +80,7 @@ function VideoPlayer({
           videoId={videoId}
         />
       )}
+      <Spacer size='m' />
     </div>
   );
 }
