@@ -2,7 +2,7 @@
   "name": "Working with Numbers and Common Number Methods",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-numbers-and-common-number-methods",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

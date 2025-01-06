@@ -1,6 +1,6 @@
 {
   "name": "Build a Project Idea Board",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-project-idea-board",
   "superBlock": "full-stack-developer",

@@ -2,7 +2,7 @@
   "name": "Working with CSS Transforms, Overflow, and Filters",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-css-transforms-overflow-and-filters",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

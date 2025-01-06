@@ -31,7 +31,7 @@ window.alert = (message) => alertMessage = message; // Override alert and store 
 numberInput.value = '';
 checkUserInput();
 
-assert.strictEqual(alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please provide a decimal number greater than or equal to 0');
+assert.strictEqual(alertMessage?.trim().replace(/[.,?!]+$/g, '').toLowerCase(), 'please provide a decimal number greater than or equal to 0');
 ```
 
 # --seed--

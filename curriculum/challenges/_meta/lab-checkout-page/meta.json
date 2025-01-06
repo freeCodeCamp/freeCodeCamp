@@ -2,7 +2,7 @@
   "name": "Build a Checkout Page",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-checkout-page",
   "superBlock": "full-stack-developer",

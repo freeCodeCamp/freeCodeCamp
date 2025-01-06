@@ -2,7 +2,7 @@
   "name": "CSS Layouts and Effects Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-css-layout-and-effects",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

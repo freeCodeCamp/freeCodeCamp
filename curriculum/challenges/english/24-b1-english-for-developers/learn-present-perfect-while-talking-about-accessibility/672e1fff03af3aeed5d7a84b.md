@@ -31,7 +31,7 @@ She thinks James' ideas are confusing and suggests focusing only on accessibilit
 
 ### --feedback--
 
-Anna doesn’t find James’ ideas confusing; she agrees and wants to monitor progress on their shared goals.
+Anna doesn't find James' ideas confusing; she agrees and wants to monitor progress on their shared goals.
 
 ---
 
@@ -43,7 +43,7 @@ She thinks James' ideas are unnecessary and suggests stopping the project.
 
 ### --feedback--
 
-Anna doesn’t suggest stopping; she supports James’ ideas and wants to stay updated.
+Anna doesn't suggest stopping; she supports James' ideas and wants to stay updated.
 
 ## --video-solution--
 

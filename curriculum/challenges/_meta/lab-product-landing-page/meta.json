@@ -2,7 +2,7 @@
   "name": "Build a Product Landing Page",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-product-landing-page",
   "superBlock": "full-stack-developer",

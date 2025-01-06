@@ -2,7 +2,7 @@
   "name": "Build a Fortune Teller App",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-fortune-teller",
   "superBlock": "full-stack-developer",

@@ -2,7 +2,7 @@
   "name": "Working with Common Array Methods",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-common-array-methods",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

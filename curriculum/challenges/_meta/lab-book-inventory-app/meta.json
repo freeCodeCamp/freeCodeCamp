@@ -2,7 +2,7 @@
   "name": "Build a Book Inventory App",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-book-inventory-app",
   "superBlock": "full-stack-developer",

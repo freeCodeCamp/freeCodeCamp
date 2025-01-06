@@ -2,7 +2,7 @@
   "name": "CSS Relative and Absolute Units Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-css-relative-and-absolute-units",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed9009f45ce3ece4053eb7", "title": "CSS Relative and Absolute Units Quiz" }],

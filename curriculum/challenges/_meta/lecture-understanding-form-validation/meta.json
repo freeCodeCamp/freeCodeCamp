@@ -2,7 +2,7 @@
   "name": "Understanding Form Validation",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-form-validation",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

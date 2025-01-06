@@ -2,7 +2,7 @@
   "name": "Common Design Tools",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-common-design-tools",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

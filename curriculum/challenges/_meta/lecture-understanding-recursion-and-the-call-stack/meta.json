@@ -2,7 +2,7 @@
   "name": "Understanding Recursion and the Call Stack",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-recursion-and-the-call-stack",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "6733b02d1e556005a544c5e3", "title": "What Is Recursion, and How Does It Work?" }],

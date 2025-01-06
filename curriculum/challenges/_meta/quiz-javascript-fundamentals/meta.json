@@ -2,7 +2,7 @@
   "name": "JavaScript Fundamentals Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-javascript-fundamentals",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

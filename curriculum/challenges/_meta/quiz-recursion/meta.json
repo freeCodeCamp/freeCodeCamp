@@ -2,7 +2,7 @@
   "name": "Recursion Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-recursion",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
