@@ -3,6 +3,7 @@ import React, { useState, useEffect, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
+import store from 'store';
 import { sortChallengeFiles } from '../../../../utils/sort-challengefiles';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import {
@@ -100,7 +101,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   } = props;
 
   const initialShowState = (key: string, defaultValue: boolean): boolean => {
-    const savedState = sessionStorage.getItem('layoutPaneBooleans');
+    const savedState: string = store.get('layoutPaneBooleans') as string;
     if (savedState) {
       const parsedState: Record<string, boolean> = JSON.parse(
         savedState
@@ -110,7 +111,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     return defaultValue;
   };
 
-  // Initialize state with sessionStorage values or defaults for each pane and instruction states
   const [showNotes, setShowNotes] = useState(() =>
     initialShowState('showNotes', false)
   );
@@ -137,10 +137,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
       showPreviewPane,
       showPreviewPortal
     };
-    sessionStorage.setItem(
-      'layoutPaneBooleans',
-      JSON.stringify(layoutPaneBooleans)
-    );
+    store.set('layoutPaneBooleans', JSON.stringify(layoutPaneBooleans));
   }, [
     showNotes,
     showConsole,
@@ -150,9 +147,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   ]);
   /* eslint-disable react-hooks/exhaustive-deps */
 
-  // Effect to initialize states from sessionStorage on mount
   useEffect(() => {
-    const layoutPaneBooleans = sessionStorage.getItem('layoutPaneBooleans');
+    const layoutPaneBooleans: string = store.get(
+      'layoutPaneBooleans'
+    ) as string;
     if (layoutPaneBooleans) {
       const parsedLayoutPaneBooleans: Record<string, boolean> = JSON.parse(
         layoutPaneBooleans
