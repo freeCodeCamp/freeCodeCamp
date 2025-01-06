@@ -19,10 +19,14 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "devDependencies": {
-    "@total-typescript/ts-reset": "^0.5.0",
-    "@types/chai": "^4.3.16",
-    "chai": "4.4.1",
-    "joi": "17.12.2",
-    "readdirp": "3.6.0"
+    "@total-typescript/ts-reset": "^0.5.1",
+    "@types/chai": "^4.3.17",
+    "chai": "^4.4.2",
+    "joi": "^17.12.3",
+    "readdirp": "^3.7.0"
+  },
+  "scripts": {
+    "test": "mocha tests/**/*.js",
+    "build": "tsc -p tsconfig.json"
   }
 }
