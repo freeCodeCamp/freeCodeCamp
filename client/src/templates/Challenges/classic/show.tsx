@@ -21,7 +21,6 @@ import {
   ChallengeMeta,
   ChallengeNode,
   CompletedChallenge,
-  NavigationPaths,
   ResizeProps,
   SavedChallengeFiles,
   Test
@@ -113,7 +112,6 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMeta;
-    nextCurriculumPaths: NavigationPaths;
     projectPreview: {
       challengeData: CompletedChallenge;
     };
@@ -208,7 +206,6 @@ function ShowClassic({
   pageContext: {
     challengeMeta,
     challengeMeta: { isFirstStep, nextChallengePath },
-    nextCurriculumPaths,
     projectPreview: { challengeData }
   },
   createFiles,
@@ -236,7 +233,6 @@ function ShowClassic({
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
-  const showNextCurriculum = useFeature('fcc-10').on;
 
   const guideUrl = getGuideUrl({ forumTopicId, title });
 
@@ -378,9 +374,7 @@ function ShowClassic({
     // freeform, so the preview is shown on demand.
     if (demoType === 'onLoad') openModal('projectPreview');
     const challengePaths = getChallengePaths({
-      showNextCurriculum,
-      currentCurriculumPaths: challengeMeta,
-      nextCurriculumPaths
+      currentCurriculumPaths: challengeMeta
     });
 
     updateChallengeMeta({

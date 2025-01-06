@@ -78,12 +78,7 @@ function getTemplateComponent(challengeType) {
 
 exports.createChallengePages = function (
   createPage,
-  {
-    idToNextPathCurrentCurriculum,
-    idToPrevPathCurrentCurriculum,
-    idToNextPathNextCurriculum,
-    idToPrevPathNextCurriculum
-  }
+  { idToNextPathCurrentCurriculum, idToPrevPathCurrentCurriculum }
 ) {
   return function ({ node }, index, allChallengeEdges) {
     const {
@@ -122,10 +117,6 @@ exports.createChallengePages = function (
           nextChallengePath: idToNextPathCurrentCurriculum[node.id],
           prevChallengePath: idToPrevPathCurrentCurriculum[node.id],
           id
-        },
-        nextCurriculumPaths: {
-          nextChallengePath: idToNextPathNextCurriculum[node.id],
-          prevChallengePath: idToPrevPathNextCurriculum[node.id]
         },
         projectPreview: getProjectPreviewConfig(
           node.challenge,

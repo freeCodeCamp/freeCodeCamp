@@ -11,7 +11,6 @@ import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Alert, Row, Button, Spacer } from '@freecodecamp/ui';
 import { micromark } from 'micromark';
-import { useFeature } from '@growthbook/growthbook-react';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
@@ -47,7 +46,6 @@ import {
   CompletedChallenge,
   UserExamQuestion,
   UserExam,
-  NavigationPaths,
   GeneratedExamResults,
   GeneratedExamQuestion,
   PrerequisiteChallenge,
@@ -130,7 +128,6 @@ interface ShowExamProps {
   closeFinishExamModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
-    nextCurriculumPaths: NavigationPaths;
   };
   t: TFunction;
   startExam: () => void;
@@ -168,13 +165,11 @@ function ShowExam(props: ShowExamProps) {
     isChallengeCompleted,
     openExitExamModal,
     openFinishExamModal,
-    pageContext: { nextCurriculumPaths },
     t
   } = props;
 
   let timerInterval: NodeJS.Timeout;
 
-  const showNextCurriculum = useFeature('fcc-10').on;
   const container = useRef<HTMLElement>(null);
 
   const [examTimeInSeconds, setExamTimeInSeconds] = useState(0);
@@ -205,9 +200,7 @@ function ShowExam(props: ShowExamProps) {
     } = props;
     initTests(tests);
     const challengePaths = getChallengePaths({
-      showNextCurriculum,
-      currentCurriculumPaths: challengeMeta,
-      nextCurriculumPaths
+      currentCurriculumPaths: challengeMeta
     });
     updateChallengeMeta({
       ...challengeMeta,
