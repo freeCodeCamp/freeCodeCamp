@@ -1,9 +1,14 @@
+/**
+ * This script builds and writes curriculum data for a given version and curriculum.
+ * It processes and organizes data for various SuperBlocks, generating structured JSON files.
+ */
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { submitTypes } from '../../../shared/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared/config/curriculum';
 
+// Type definitions for curriculum structure and properties
 type Intro = { [keyValue in SuperBlocks]: IntroProps };
 export type Curriculum<T> = {
   [keyValue in SuperBlocks]: T extends CurriculumProps
@@ -12,27 +17,28 @@ export type Curriculum<T> = {
 };
 
 interface IntroProps extends CurriculumProps {
-  title: string;
-  intro: string[];
+  title: string; // Title of the superblock
+  intro: string[]; // Introduction text for the superblock
 }
 
 export interface CurriculumProps {
-  intro: string[];
-  blocks: Record<string, Block<ChallengeNode['challenge'][]>>;
+  intro: string[]; // General introduction text
+  blocks: Record<string, Block<ChallengeNode['challenge'][]>>; // Blocks within the superblock
 }
 
 interface GeneratedCurriculumProps {
-  intro: string[];
-  blocks: Record<string, Block<Record<string, unknown>>>;
+  intro: string[]; // Introduction text for generated curriculum
+  blocks: Record<string, Block<Record<string, unknown>>>; // Blocks within the generated curriculum
 }
 
 interface Block<T> {
-  desc: string[];
-  intro: string[];
-  challenges: T;
-  meta: Record<string, unknown>;
+  desc: string[]; // Description of the block
+  intro: string[]; // Introduction text for the block
+  challenges: T; // Challenges under the block
+  meta: Record<string, unknown>; // Metadata for the block
 }
 
+// Ordered list of superblock information with visibility status
 export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.RespWebDesignNew, public: true },
   { dashedName: SuperBlocks.DataAnalysisPy, public: true },
@@ -59,6 +65,11 @@ export const orderedSuperBlockInfo = [
 
 const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);
 
+/**
+ * Builds and writes extended curriculum data.
+ * @param {string} ver - Version of the curriculum.
+ * @param {Curriculum<CurriculumProps>} curriculum - Curriculum data to process.
+ */
 export function buildExtCurriculumData(
   ver: string,
   curriculum: Curriculum<CurriculumProps>
@@ -75,6 +86,9 @@ export function buildExtCurriculumData(
   parseCurriculumData();
   getSubmitTypes();
 
+  /**
+   * Parses curriculum data and writes it to files.
+   */
   function parseCurriculumData() {
     const superBlockKeys = Object.values(SuperBlocks).filter(x =>
       dashedNames.includes(x)
@@ -125,12 +139,23 @@ export function buildExtCurriculumData(
     }
   }
 
+  /**
+   * Writes data to a JSON file.
+   * @param {string} fileName - Name of the file to write.
+   * @param {Record<string, unknown>} data - Data to write.
+   */
   function writeToFile(fileName: string, data: Record<string, unknown>): void {
     const filePath = `${dataPath}/${ver}/${fileName}.json`;
     mkdirSync(dirname(filePath), { recursive: true });
     writeFileSync(filePath, JSON.stringify(data, null, 2));
   }
 
+  /**
+   * Gets the description of a block.
+   * @param {SuperBlocks} superBlockKeys - SuperBlock key.
+   * @param {string} blockKey - Block key.
+   * @returns {string[]} Description of the block.
+   */
   function getBlockDescription(
     superBlockKeys: SuperBlocks,
     blockKey: string
@@ -140,6 +165,11 @@ export function buildExtCurriculumData(
     return intros[superBlockKeys]['blocks'][blockKey]['intro'];
   }
 
+  /**
+   * Gets the description of a superblock.
+   * @param {SuperBlocks} superBlockKey - SuperBlock key.
+   * @returns {string[]} Description of the superblock.
+   */
   function getSuperBlockDescription(superBlockKey: SuperBlocks): string[] {
     const superBlockIntro = JSON.parse(
       readFileSync(blockIntroPath, 'utf-8')
@@ -147,6 +177,11 @@ export function buildExtCurriculumData(
     return superBlockIntro[superBlockKey]['intro'];
   }
 
+  /**
+   * Gets the title of a superblock.
+   * @param {SuperBlocks} superBlock - SuperBlock key.
+   * @returns {string} Title of the superblock.
+   */
   function getSuperBlockTitle(superBlock: SuperBlocks): string {
     const superBlocks = JSON.parse(
       readFileSync(blockIntroPath, 'utf-8')
@@ -155,6 +190,9 @@ export function buildExtCurriculumData(
     return superBlocks[superBlock].title;
   }
 
+  /**
+   * Writes submit types data to a JSON file.
+   */
   function getSubmitTypes() {
     writeFileSync(
       `${dataPath}/submit-types.json`,
