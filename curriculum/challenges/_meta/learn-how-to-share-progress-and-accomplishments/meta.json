@@ -1,0 +1,183 @@
+{
+  "name": "Learn How to Share Progress and Accomplishments",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-share-progress-and-accomplishments",
+  "order": 21,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "66100326d773b61282509e50",
+      "title": "Dialogue 1: During a Weekly Meeting"
+    },
+    {
+      "id": "661003c35e5ba713abd2da6c",
+      "title": "Task 1"
+    },
+    {
+      "id": "6610041a61d5ec13feffff07",
+      "title": "Task 2"
+    },
+    {
+      "id": "6610056e633ce41466b6c5bc",
+      "title": "Task 3"
+    },
+    {
+      "id": "661005bbe1801e14c303a57a",
+      "title": "Task 4"
+    },
+    {
+      "id": "66100646290700150caff732",
+      "title": "Task 5"
+    },
+    {
+      "id": "661215c06938a71ad4101c93",
+      "title": "Task 6"
+    },
+    {
+      "id": "661216bbf6d9a51b409172a8",
+      "title": "Task 7"
+    },
+    {
+      "id": "661216ff45b1871b85f57a1a",
+      "title": "Task 8"
+    },
+    {
+      "id": "6612181d89fdfc1c2f44309d",
+      "title": "Task 9"
+    },
+    {
+      "id": "661218bc905fb61c898221b4",
+      "title": "Task 10"
+    },
+    {
+      "id": "66121954a1cde81cd252ef26",
+      "title": "Task 11"
+    },
+    {
+      "id": "66121a02da620e1d25ff63d4",
+      "title": "Task 12"
+    },
+    {
+      "id": "66121b3a462fe01da4816b39",
+      "title": "Task 13"
+    },
+    {
+      "id": "66122a393fd32d2a4876ca95",
+      "title": "Dialogue 2: A Manager and a Direct Report in a Performance Review"
+    },
+    {
+      "id": "66122a6093ba082abb2cd136",
+      "title": "Task 14"
+    },
+    {
+      "id": "66122ab30afc8e2b1f42b78a",
+      "title": "Task 15"
+    },
+    {
+      "id": "66122b7d6f1f182bb1fe0338",
+      "title": "Task 16"
+    },
+    {
+      "id": "661253cc9fb5ee2d01a0d6a8",
+      "title": "Task 17"
+    },
+    {
+      "id": "661254cf9474ed2da90fec1b",
+      "title": "Task 18"
+    },
+    {
+      "id": "66125530a1a9e92e0e08d594",
+      "title": "Task 19"
+    },
+    {
+      "id": "661255c3b6ea612e984a62b8",
+      "title": "Task 20"
+    },
+    {
+      "id": "66125666f8437c2f3616045e",
+      "title": "Task 21"
+    },
+    {
+      "id": "661256fe823f142fb9858beb",
+      "title": "Task 22"
+    },
+    {
+      "id": "66126744e24b0a31255718a7",
+      "title": "Task 23"
+    },
+    {
+      "id": "661267c5ac355931ab1f933d",
+      "title": "Task 24"
+    },
+    {
+      "id": "6612693507cbd43269ae64e0",
+      "title": "Task 25"
+    },
+    {
+      "id": "661269c4ccdd4132db7517b8",
+      "title": "Task 26"
+    },
+    {
+      "id": "66126a21821998335a86a34b",
+      "title": "Task 27"
+    },
+    {
+      "id": "66127192c932be37ed0217e7",
+      "title": "Dialogue 3: Sharing Accomplishments over Lunch"
+    },
+    {
+      "id": "661271c2b16aff3870604148",
+      "title": "Task 28"
+    },
+    {
+      "id": "6612727ec0a11b390b8e92cb",
+      "title": "Task 29"
+    },
+    {
+      "id": "6612752978bcc239ae7b60da",
+      "title": "Task 30"
+    },
+    {
+      "id": "6612757ffdc16b3a22b08427",
+      "title": "Task 31"
+    },
+    {
+      "id": "6612762a058bb43b960e91ca",
+      "title": "Task 32"
+    },
+    {
+      "id": "66127678c88f183c0312d8e8",
+      "title": "Task 33"
+    },
+    {
+      "id": "66127755a52efa3c9a73065b",
+      "title": "Task 34"
+    },
+    {
+      "id": "661277970c67233d02f138de",
+      "title": "Task 35"
+    },
+    {
+      "id": "661278160653ee3d9040ed68",
+      "title": "Task 36"
+    },
+    {
+      "id": "66127850c4415c3df1b4e99a",
+      "title": "Task 37"
+    },
+    {
+      "id": "6612792bc77de13e8f2af3ad",
+      "title": "Task 38"
+    },
+    {
+      "id": "6612797faf03663ef83f4459",
+      "title": "Task 39"
+    },
+    {
+      "id": "661279c8d3bf0f3f6f23f21f",
+      "title": "Task 40"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Working with Functions",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-functions",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672d269da46786225e3fe3fd",
+      "title": "What Is the Purpose of Functions, and How Do They Work?"
+    },
+    {
+      "id": "673284d5e52ef81a2169b097",
+      "title": "What Are Arrow Functions, and How Do They Work?"
+    },
+    {
+      "id": "673284e7244c0c1a649121b9",
+      "title": "What Is Scope in Programming, and How Does Global, Local, and Block Scope Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

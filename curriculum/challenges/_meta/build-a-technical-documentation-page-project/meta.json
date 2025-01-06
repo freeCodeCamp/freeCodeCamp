@@ -1,0 +1,16 @@
+{
+  "name": "Technical Documentation Page",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-technical-documentation-page-project",
+  "usesMultifileEditor": true,
+  "helpCategory": "HTML-CSS",
+  "order": 13,
+  "superBlock": "2022/responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "587d78b0367417b2b2512b05",
+      "title": "Build a Technical Documentation Page"
+    }
+  ],
+  "blockLayout": "legacy-link"
+}

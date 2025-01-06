@@ -1,0 +1,31 @@
+{
+  "name": "Working with Common Array Methods",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-common-array-methods",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67329f64e0ef5c5b7388158d",
+      "title": "How Do You Get the Index for an Element in an Array Using the indexOf Method?"
+    },
+    {
+      "id": "6732b284901f8c1539e20bcb",
+      "title": "How Do You Add and Remove Elements from the Middle of an Array?"
+    },
+    {
+      "id": "6732b28eeadda1158cdbff7b",
+      "title": "How Can You Check if an Array Contains a Certain Value?"
+    },
+    {
+      "id": "6732b29b8b7d4f15b94d12ca",
+      "title": "What Is a Shallow Copy of an Array, and What Are Some Ways to Create These Copies?"
+    },
+    {
+      "id": "6732b2a6de5a1c15edf05b75",
+      "title": "How Can You Use String and Array Methods to Reverse a String?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

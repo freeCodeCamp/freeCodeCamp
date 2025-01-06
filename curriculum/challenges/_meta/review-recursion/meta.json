@@ -1,0 +1,12 @@
+{
+  "name": "Recursion Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-recursion",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6723d1f0568292cd394d6fb6", "title": "Recursion Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

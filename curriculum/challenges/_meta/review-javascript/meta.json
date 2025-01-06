@@ -1,0 +1,12 @@
+{
+  "name": "JavaScript Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6723d3cfdd0717d3f1bf27e3", "title": "JavaScript Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

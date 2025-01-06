@@ -1,0 +1,227 @@
+{
+  "name": "Learn How to Use Code-related Concepts and Terms",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-use-code-related-concepts-and-terms",
+  "order": 13,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6630b37556424464ba0f984e",
+      "title": "Dialogue 1: Asking about Data Types"
+    },
+    {
+      "id": "6630b49ade31b06586863453",
+      "title": "Task 1"
+    },
+    {
+      "id": "6630b56594405466378bbfbb",
+      "title": "Task 2"
+    },
+    {
+      "id": "6630b687daf7dd66a730a0be",
+      "title": "Task 3"
+    },
+    {
+      "id": "6630b88fdd1eb2675cba64ec",
+      "title": "Task 4"
+    },
+    {
+      "id": "6630bb08c02b626826c937ae",
+      "title": "Task 5"
+    },
+    {
+      "id": "6630bc7702367d68c7679dba",
+      "title": "Task 6"
+    },
+    {
+      "id": "6630bd815e1b146937422948",
+      "title": "Task 7"
+    },
+    {
+      "id": "6630bf29b2e38669e3c15823",
+      "title": "Task 8"
+    },
+    {
+      "id": "6630e609d81a446cd663c521",
+      "title": "Task 9"
+    },
+    {
+      "id": "6630e7b497466d6d8bb5b863",
+      "title": "Task 10"
+    },
+    {
+      "id": "6630e831b3a1a36de42fb705",
+      "title": "Task 11"
+    },
+    {
+      "id": "6630e965a9e9c46e8b5a3ee2",
+      "title": "Task 12"
+    },
+    {
+      "id": "663246e8f661af779398be0e",
+      "title": "Task 13"
+    },
+    {
+      "id": "6632497b37b28b78907c0a97",
+      "title": "Task 14"
+    },
+    {
+      "id": "66324d85e67a5c7a072a5b4d",
+      "title": "Task 15"
+    },
+    {
+      "id": "66324c110747c079691211a1",
+      "title": "Task 16"
+    },
+    {
+      "id": "66324f956a24867b039d95c4",
+      "title": "Task 17"
+    },
+    {
+      "id": "663253fdb77eab7c9f3bbd16",
+      "title": "Task 18"
+    },
+    {
+      "id": "66325225b08cff7be37ac2e7",
+      "title": "Task 19"
+    },
+    {
+      "id": "66325752419d337dc13ffd83",
+      "title": "Task 20"
+    },
+    {
+      "id": "6632fd7b0b9f8087ff8aa3ba",
+      "title": "Dialogue 2: Asking about Functions"
+    },
+    {
+      "id": "665632c4ace6cb00ab832023",
+      "title": "Task 21"
+    },
+    {
+      "id": "6632fe1b6548f7887488a767",
+      "title": "Task 22"
+    },
+    {
+      "id": "6633008b3377e5894cf71629",
+      "title": "Task 23"
+    },
+    {
+      "id": "663301c3812e2e89c08dcc31",
+      "title": "Task 24"
+    },
+    {
+      "id": "6633032bf786ff8a61b0c482",
+      "title": "Task 25"
+    },
+    {
+      "id": "66330444cf1ea28af44e980d",
+      "title": "Task 26"
+    },
+    {
+      "id": "663308af5363be8c4a5c68b9",
+      "title": "Task 27"
+    },
+    {
+      "id": "66330dac56ad868d51d5698c",
+      "title": "Task 28"
+    },
+    {
+      "id": "66330fc6d2e3c38e148c8789",
+      "title": "Task 29"
+    },
+    {
+      "id": "66331263a35e868f3dade3de",
+      "title": "Task 30"
+    },
+    {
+      "id": "66331384245d028fd8b1be23",
+      "title": "Task 31"
+    },
+    {
+      "id": "663315286b7cff907e92ae25",
+      "title": "Task 32"
+    },
+    {
+      "id": "663316fdcce39d9144ae40cd",
+      "title": "Task 33"
+    },
+    {
+      "id": "6633203e58595e93ef54ba3b",
+      "title": "Task 34"
+    },
+    {
+      "id": "6633261bb572f2953f5abd13",
+      "title": "Task 35"
+    },
+    {
+      "id": "66334fd916a3a697e1d2c631",
+      "title": "Dialogue 3: Getting Help with Variables"
+    },
+    {
+      "id": "663350023c7cb898358af702",
+      "title": "Task 36"
+    },
+    {
+      "id": "6633511c7b197798ad5fd703",
+      "title": "Task 37"
+    },
+    {
+      "id": "663352b4860f03995736b6cd",
+      "title": "Task 38"
+    },
+    {
+      "id": "663354f60aafd69a4c0138da",
+      "title": "Task 39"
+    },
+    {
+      "id": "66339d408258519c61151a64",
+      "title": "Task 40"
+    },
+    {
+      "id": "66339e21256f099cd722292f",
+      "title": "Task 41"
+    },
+    {
+      "id": "66339f1995bdea9d4aa28cd8",
+      "title": "Task 42"
+    },
+    {
+      "id": "6633a14f17a4669e1c980d91",
+      "title": "Task 43"
+    },
+    {
+      "id": "6633a2a86218659eb77fb9a1",
+      "title": "Task 44"
+    },
+    {
+      "id": "6633a45ce837ac9f95394eab",
+      "title": "Task 45"
+    },
+    {
+      "id": "6633a64567c725a05a94b68f",
+      "title": "Task 46"
+    },
+    {
+      "id": "6633a97f928771a163b59745",
+      "title": "Task 47"
+    },
+    {
+      "id": "6633aa9cf90591a1f63a431e",
+      "title": "Task 48"
+    },
+    {
+      "id": "6633abfc050e82a29a76dd42",
+      "title": "Task 49"
+    },
+    {
+      "id": "6633ad387b6914a3313339b3",
+      "title": "Task 50"
+    },
+    {
+      "id": "6633ae85f1fb7aa3ca13234d",
+      "title": "Task 51"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

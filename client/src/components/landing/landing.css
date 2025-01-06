@@ -1,0 +1,299 @@
+.large-p {
+  font-size: 24px;
+}
+
+/* Buttons with a lot of text can overflow and mess up formatting on small
+   screens, this stops that unless the word itself is too large. */
+
+.btn {
+  white-space: pre-line;
+}
+
+.landing-page ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+#featured-logos {
+  max-width: 600px;
+}
+.landing-top h1:first-child {
+  margin-top: 0;
+}
+
+.landing-page .landing-page-happy {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+figcaption.caption {
+  margin: 10px 0 0;
+  font-weight: 600;
+  text-align: center;
+  color: var(--quaternary-color);
+}
+
+.as-seen-in {
+  background-color: var(--gray-75);
+  color: var(--gray-15);
+  padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.as-seen-in .big-heading {
+  color: var(--gray-15);
+  margin-top: 0;
+}
+
+.landing-page .big-heading {
+  height: 100%;
+  margin-bottom: 40px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.logo-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  margin: 10px 0;
+}
+
+.logo-row svg {
+  height: 40px;
+}
+
+.faq-question {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 1.2rem;
+}
+
+@media (min-width: 370px) {
+  .logo-row svg {
+    margin: 5px 15px;
+  }
+}
+
+@media (min-width: 480px) {
+  .logo-row svg {
+    height: 25px;
+    margin: 5px;
+  }
+}
+
+@media (min-width: 550px) {
+  .logo-row {
+    justify-content: space-between;
+  }
+
+  .logo-row svg {
+    height: 40px;
+  }
+}
+
+.landing-top p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.6rem 0;
+}
+
+/* testimonials */
+
+.testimonials-row {
+  --image-size: min(320px, 350px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.testimonials p,
+.testimonials strong {
+  font-size: 1.1rem;
+  margin: 0;
+  color: var(--quaternary-color);
+}
+.testimonial-meta p:last-child {
+  margin-top: 15px;
+}
+
+.testimonial-card {
+  display: flex;
+  width: min(100%, 1170px);
+  margin-top: 10px;
+  margin-bottom: 50px;
+  background-color: var(--primary-background);
+  -webkit-box-shadow: 0 3px 13px 1px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 3px 13px 1px rgba(0, 0, 0, 0.09);
+}
+
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 0 30px;
+}
+
+.testimonial-meta h3 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.testimonial-meta p,
+.testimonial-meta strong {
+  font-size: 1.2rem;
+}
+
+.testimonial-card-header,
+.testimonial-image {
+  height: var(--image-size);
+  width: var(--image-size);
+  /* Override the default max-width (100%) set by Tailwind */
+  max-width: var(--image-size);
+}
+
+.testimonials-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  text-align: justify;
+  justify-content: center;
+}
+
+.testimony blockquote {
+  padding: 0;
+  border: 0;
+}
+
+.landing-top,
+.as-seen-in,
+.certification-section,
+.benefits,
+.testimonials {
+  padding: 4vw 15px;
+}
+
+.certification-section,
+.faq-section {
+  padding-inline: 4vw;
+}
+
+.map-ui .btn {
+  min-height: 80px;
+}
+
+@media (min-width: 500px) {
+  .landing-top p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .testimonial-card {
+    flex-direction: column;
+    width: var(--image-size);
+  }
+}
+
+@media (min-width: 992px) {
+  .testimonial-meta {
+    padding: 0 0 30px;
+  }
+  .testimonial-meta p,
+  .testimonial-meta strong {
+    font-size: 1.3rem;
+  }
+  .testimonials-footer {
+    padding: 40px;
+  }
+}
+
+/* AB testing styles */
+.landing-page-b .mega-heading {
+  font-size: 2.2rem;
+  margin: 0px 0px 2rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.landing-page-b .landing-top .btn-cta-big {
+  max-width: fit-content;
+  padding: 12px 20px;
+}
+
+@media (min-width: 500px) {
+  .landing-page-b .mega-heading {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+  .landing-page-b .landing-top .btn-cta-big {
+    padding: 12px 40px;
+  }
+}
+
+.landing-page-b .logo-row-title {
+  font-weight: normal;
+}
+
+.landing-page-b {
+  overflow-x: hidden;
+}
+
+figure.ui-images {
+  position: absolute;
+  left: 50%;
+  height: auto;
+  width: 750px;
+  top: 3vw;
+}
+
+figure.ui-images img {
+  width: 100%;
+  height: auto;
+}
+
+.landing-benefits {
+  display: grid;
+  grid-template-columns: 1fr; /* Default: 1 column */
+  gap: 30px; /* Adjust the space between the grid items */
+}
+
+/* When the screen is larger than 700px */
+@media screen and (min-width: 700px) {
+  .landing-benefits {
+    grid-template-columns: 1fr 1fr; /* Two columns */
+  }
+}
+
+.landing-top figure,
+.landing-top figure img {
+  margin-top: 50px;
+  height: 442px;
+  width: 750px;
+}
+
+.landing-benefits svg path {
+  fill: var(--gray-15);
+}
+
+.benefits-container {
+  background: var(--gray-75);
+}
+
+.benefits-container h2,
+.benefits-container h3 {
+  color: var(--gray-10);
+}
+
+.benefits-container p {
+  color: var(--gray-15);
+}

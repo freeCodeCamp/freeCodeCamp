@@ -1,0 +1,15 @@
+{
+  "name": "CSS Attribute Selectors Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-css-attribute-selectors",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "671a95990b86b68961340adc",
+      "title": "CSS Attribute Selectors Review"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

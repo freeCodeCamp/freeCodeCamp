@@ -1,0 +1,475 @@
+{
+  "name": "Learn Future Continuous while Describing Actions",
+  "isUpcomingChange": false,
+  "dashedName": "learn-future-continuous-while-describing-actions",
+  "order": 5,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "674f0332ec59564081ec8b87",
+      "title": "Dialogue 1: Scheduled Maintenance to Prevent DoS Attacks"
+    },
+    {
+      "id": "674f0495e5f4b0485ed38cd4",
+      "title": "Task 1"
+    },
+    {
+      "id": "674f06b4b4d6eb4f6139ad61",
+      "title": "Task 2"
+    },
+    {
+      "id": "674f08fde55c2356b37e9b69",
+      "title": "Task 3"
+    },
+    {
+      "id": "674f0afcd85abc5d478e150c",
+      "title": "Task 4"
+    },
+    {
+      "id": "674f0d0dec2922641ce2c8e9",
+      "title": "Task 5"
+    },
+    {
+      "id": "674f0f8e84b4c76c0f6ae6d3",
+      "title": "Task 6"
+    },
+    {
+      "id": "674f1a33acb7717de4842822",
+      "title": "Task 7"
+    },
+    {
+      "id": "674f1ba48f50b78294f89089",
+      "title": "Task 8"
+    },
+    {
+      "id": "67504e15ec1851a15aad11c1",
+      "title": "Task 9"
+    },
+    {
+      "id": "675052373a1887aaa89c9a22",
+      "title": "Task 10"
+    },
+    {
+      "id": "67505766bad3bcbac2f16fe4",
+      "title": "Task 11"
+    },
+    {
+      "id": "67505903fa6affc0910b7a9d",
+      "title": "Task 12"
+    },
+    {
+      "id": "675106629f2c07cec9bf2c71",
+      "title": "Task 13"
+    },
+    {
+      "id": "67510809633277d10d4fff4f",
+      "title": "Task 14"
+    },
+    {
+      "id": "6751a781fd421fda55170fc8",
+      "title": "Task 15"
+    },
+    {
+      "id": "6751a827719c0fdb5b66b8e3",
+      "title": "Task 16"
+    },
+    {
+      "id": "6751a990269891dd6f0ab1c2",
+      "title": "Task 17"
+    },
+    {
+      "id": "6751ab72ff11cae0021d02d8",
+      "title": "Task 18"
+    },
+    {
+      "id": "6751aca2701270e188b07df9",
+      "title": "Task 19"
+    },
+    {
+      "id": "6751ad79009d66e2f5878282",
+      "title": "Task 20"
+    },
+    {
+      "id": "6751aeb422ef45e4af25434d",
+      "title": "Task 21"
+    },
+    {
+      "id": "6751bc2826c791ea69d7e8f2",
+      "title": "Task 22"
+    },
+    {
+      "id": "6751bd2301b9feebf3813ac3",
+      "title": "Task 23"
+    },
+    {
+      "id": "6751bdd2f78adbed1ea0fa51",
+      "title": "Task 24"
+    },
+    {
+      "id": "6751beb68c063aee92555abe",
+      "title": "Task 25"
+    },
+    {
+      "id": "6752e404804c1c044c804b79",
+      "title": "Task 26"
+    },
+    {
+      "id": "6752e54369231d06538b4ac0",
+      "title": "Task 27"
+    },
+    {
+      "id": "6752e83a806f520923bd28fa",
+      "title": "Task 28"
+    },
+    {
+      "id": "6752eb5797ad390c7f40ef08",
+      "title": "Task 29"
+    },
+    {
+      "id": "6752f4680f2d251372d4ae64",
+      "title": "Task 30"
+    },
+    {
+      "id": "6752f6ebff95ee1781462c02",
+      "title": "Task 31"
+    },
+    {
+      "id": "6752fb3e6257c91b93721288",
+      "title": "Task 32"
+    },
+    {
+      "id": "6752fb92ecc7811d3a0f3320",
+      "title": "Task 33"
+    },
+    {
+      "id": "6752fc06607eba1e73a89929",
+      "title": "Task 34"
+    },
+    {
+      "id": "675948c97c0d4fd3d596960a",
+      "title": "Dialogue 2: Troubleshooting Authentication Errors"
+    },
+    {
+      "id": "67594c1c9c8fc90a8e6f2f75",
+      "title": "Task 35"
+    },
+    {
+      "id": "67594e4ad681381278cee337",
+      "title": "Task 36"
+    },
+    {
+      "id": "675950eed633ac1ac3884471",
+      "title": "Task 37"
+    },
+    {
+      "id": "675961ce80a70e23e933fa8c",
+      "title": "Task 38"
+    },
+    {
+      "id": "675963eadf3bcf2ae50f74fe",
+      "title": "Task 39"
+    },
+    {
+      "id": "675966e572894133e1b3b275",
+      "title": "Task 40"
+    },
+    {
+      "id": "6759a3d84d89c4474d6a06b6",
+      "title": "Task 41"
+    },
+    {
+      "id": "6759a570761b794ba1dc57e5",
+      "title": "Task 42"
+    },
+    {
+      "id": "6759a679b6934850b6b0a31d",
+      "title": "Task 43"
+    },
+    {
+      "id": "6759a7cc60ea94557c578ed4",
+      "title": "Task 44"
+    },
+    {
+      "id": "6759a98f5028cb5bdf0a6f4b",
+      "title": "Task 45"
+    },
+    {
+      "id": "675beaae0511b83217778531",
+      "title": "Task 46"
+    },
+    {
+      "id": "675d10fd9150e00d5ea464c2",
+      "title": "Task 47"
+    },
+    {
+      "id": "675d1437a379f517d766a249",
+      "title": "Task 48"
+    },
+    {
+      "id": "675d16180e3c3f1e843ed138",
+      "title": "Task 49"
+    },
+    {
+      "id": "675d177b1b7aca23c7f1b6d9",
+      "title": "Task 50"
+    },
+    {
+      "id": "675d18c725ee4928ba83fa7c",
+      "title": "Task 51"
+    },
+    {
+      "id": "675d6e0e52e8ee2d7b2b69cf",
+      "title": "Task 52"
+    },
+    {
+      "id": "675d6f815fb6c83276d12870",
+      "title": "Task 53"
+    },
+    {
+      "id": "675d710fb8118237e416155a",
+      "title": "Task 54"
+    },
+    {
+      "id": "675d72320c09a53c1020e59d",
+      "title": "Task 55"
+    },
+    {
+      "id": "675d72b7d86e163e326979e5",
+      "title": "Task 56"
+    },
+    {
+      "id": "675d7493249c24447ca9e166",
+      "title": "Task 57"
+    },
+    {
+      "id": "675d86beee48ab4941767200",
+      "title": "Task 58"
+    },
+    {
+      "id": "675d87ed627c734d9ee5c028",
+      "title": "Task 59"
+    },
+    {
+      "id": "675d88ce781849512cd7d426",
+      "title": "Task 60"
+    },
+    {
+      "id": "675d8aabc2397c583c081ea9",
+      "title": "Task 61"
+    },
+    {
+      "id": "675d8b482d5fa45b0226a891",
+      "title": "Task 62"
+    },
+    {
+      "id": "675d8c5d1a1d775f78424011",
+      "title": "Task 63"
+    },
+    {
+      "id": "675d8dfaad5f4765cbd8c013",
+      "title": "Task 64"
+    },
+    {
+      "id": "675d8eddf05fb469a75ef543",
+      "title": "Task 65"
+    },
+    {
+      "id": "675d91adb9fb7173f4a7a4c7",
+      "title": "Task 66"
+    },
+    {
+      "id": "675e6dfe0160bb66faa60a68",
+      "title": "Task 67"
+    },
+    {
+      "id": "675e6f0bf7f7eb69ddffef81",
+      "title": "Task 68"
+    },
+    {
+      "id": "675e70d7b854926d7f18693c",
+      "title": "Task 69"
+    },
+    {
+      "id": "675e7387be428072d95baeac",
+      "title": "Task 70"
+    },
+    {
+      "id": "675e79e6ecfda37e1f49be65",
+      "title": "Task 71"
+    },
+    {
+      "id": "675e7cc999813e83379b139c",
+      "title": "Task 72"
+    },
+    {
+      "id": "675e8013d40d0d860143c14f",
+      "title": "Task 73"
+    },
+    {
+      "id": "675e80709ee205871518ba9b",
+      "title": "Task 74"
+    },
+    {
+      "id": "675e8133c874a588f947de57",
+      "title": "Task 75"
+    },
+    {
+      "id": "675ecdef47179ea4653c2b9f",
+      "title": "Dialogue 3: Preventing MitM attacks"
+    },
+    {
+      "id": "675ecedbb04f6ca6dd620f0e",
+      "title": "Task 76"
+    },
+    {
+      "id": "675ed1414303a6abfaac2d96",
+      "title": "Task 77"
+    },
+    {
+      "id": "675ed59b1e938bb2443585a5",
+      "title": "Task 78"
+    },
+    {
+      "id": "675ed69e54ae31b462edf95b",
+      "title": "Task 79"
+    },
+    {
+      "id": "675ed905490b9ab8f4e640c4",
+      "title": "Task 80"
+    },
+    {
+      "id": "675edb8012accfbd8f4135c5",
+      "title": "Task 81"
+    },
+    {
+      "id": "675edc3228d9d1bf95c5e649",
+      "title": "Task 82"
+    },
+    {
+      "id": "675edeea805bb0c44385d0d5",
+      "title": "Task 83"
+    },
+    {
+      "id": "675ee01ee1d37cc722bbad83",
+      "title": "Task 84"
+    },
+    {
+      "id": "675ee218782b4dcb26796c19",
+      "title": "Task 85"
+    },
+    {
+      "id": "675fa4789b65761b6c562a1b",
+      "title": "Task 86"
+    },
+    {
+      "id": "675fa66d590e0127ba60b7f6",
+      "title": "Task 87"
+    },
+    {
+      "id": "675fa827b0a17832dc798ba0",
+      "title": "Task 88"
+    },
+    {
+      "id": "675fb5315884dc456fad654a",
+      "title": "Task 89"
+    },
+    {
+      "id": "675fb7824cbbe3539de6111b",
+      "title": "Task 90"
+    },
+    {
+      "id": "675fba2a32b4aa625e2f7940",
+      "title": "Task 91"
+    },
+    {
+      "id": "675fbba5f9807566fb0c39ef",
+      "title": "Task 92"
+    },
+    {
+      "id": "675fbefa9f40157cad662e8d",
+      "title": "Task 93"
+    },
+    {
+      "id": "675fbfc6fa824c820a7e49d4",
+      "title": "Task 94"
+    },
+    {
+      "id": "675fc02724147984cfe068d5",
+      "title": "Task 95"
+    },
+    {
+      "id": "675fe3fb72bdcb97dd10b7c8",
+      "title": "Task 96"
+    },
+    {
+      "id": "675fe58fb4c9539cb37b4065",
+      "title": "Task 97"
+    },
+    {
+      "id": "675fe6a1e81c4ba00f415364",
+      "title": "Task 98"
+    },
+    {
+      "id": "675feaafa5546fab32aa0736",
+      "title": "Task 99"
+    },
+    {
+      "id": "675febf4f03233af8e347802",
+      "title": "Task 100"
+    },
+    {
+      "id": "675fee8f5d64f2b504e91281",
+      "title": "Task 101"
+    },
+    {
+      "id": "675ff2b7f9405abf27f26740",
+      "title": "Task 102"
+    },
+    {
+      "id": "675ff37bebf32bc223e3660a",
+      "title": "Task 103"
+    },
+    {
+      "id": "675ff42fb8c8a6c4f21cd3bb",
+      "title": "Task 104"
+    },
+    {
+      "id": "675ff94f80bd9bd12c8497e2",
+      "title": "Task 105"
+    },
+    {
+      "id": "6760f057483bbf684bfa6457",
+      "title": "Task 106"
+    },
+    {
+      "id": "6760f48b0fe69572664e85f1",
+      "title": "Task 107"
+    },
+    {
+      "id": "6760f7ca38c9167853ebf917",
+      "title": "Task 108"
+    },
+    {
+      "id": "676147de99ef019cee551581",
+      "title": "Task 109"
+    },
+    {
+      "id": "6761493d2db43ba139340975",
+      "title": "Task 110"
+    },
+    {
+      "id": "67614992d9e494a2b69f89bb",
+      "title": "Task 111"
+    },
+    {
+      "id": "67614a0187bd80a49d438b1f",
+      "title": "Task 112"
+    },
+    {
+      "id": "67614a6e5d4df6a6744127b7",
+      "title": "Task 113"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

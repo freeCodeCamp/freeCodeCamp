@@ -1,0 +1,11 @@
+{
+  "name": "Build a Book Inventory App",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-book-inventory-app",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66a207974c806a19d6607073", "title": "Build a Book Inventory App" }],
+  "helpCategory": "HTML-CSS"
+}

@@ -1,0 +1,412 @@
+{
+  "name": "Project Euler Problems 301 to 400",
+  "isUpcomingChange": false,
+  "dashedName": "project-euler-problems-301-to-400",
+  "helpCategory": "Euler",
+  "order": 3,
+  "superBlock": "project-euler",
+  "disableLoopProtectTests": true,
+  "challengeOrder": [
+    {
+      "id": "5900f4991000cf542c50ffab",
+      "title": "Problem 301: Nim"
+    },
+    {
+      "id": "5900f49b1000cf542c50ffad",
+      "title": "Problem 302: Strong Achilles Numbers"
+    },
+    {
+      "id": "5900f49b1000cf542c50ffae",
+      "title": "Problem 303: Multiples with small digits"
+    },
+    {
+      "id": "5900f49d1000cf542c50ffaf",
+      "title": "Problem 304: Primonacci"
+    },
+    {
+      "id": "5900f49d1000cf542c50ffb0",
+      "title": "Problem 305: Reflexive Position"
+    },
+    {
+      "id": "5900f49f1000cf542c50ffb1",
+      "title": "Problem 306: Paper-strip Game"
+    },
+    {
+      "id": "5900f4a01000cf542c50ffb2",
+      "title": "Problem 307: Chip Defects"
+    },
+    {
+      "id": "5900f4a11000cf542c50ffb3",
+      "title": "Problem 308: An amazing Prime-generating Automaton"
+    },
+    {
+      "id": "5900f4a11000cf542c50ffb4",
+      "title": "Problem 309: Integer Ladders"
+    },
+    {
+      "id": "5900f4a21000cf542c50ffb5",
+      "title": "Problem 310: Nim Square"
+    },
+    {
+      "id": "5900f4a31000cf542c50ffb6",
+      "title": "Problem 311: Biclinic Integral Quadrilaterals"
+    },
+    {
+      "id": "5900f4a51000cf542c50ffb7",
+      "title": "Problem 312: Cyclic paths on Sierpiński graphs"
+    },
+    {
+      "id": "5900f4a61000cf542c50ffb8",
+      "title": "Problem 313: Sliding game"
+    },
+    {
+      "id": "5900f4a71000cf542c50ffb9",
+      "title": "Problem 314: The Mouse on the Moon"
+    },
+    {
+      "id": "5900f4a71000cf542c50ffba",
+      "title": "Problem 315: Digital root clocks"
+    },
+    {
+      "id": "5900f4a81000cf542c50ffbb",
+      "title": "Problem 316: Numbers in decimal expansions"
+    },
+    {
+      "id": "5900f4aa1000cf542c50ffbc",
+      "title": "Problem 317: Firecracker"
+    },
+    {
+      "id": "5900f4ab1000cf542c50ffbd",
+      "title": "Problem 318: 2011 nines"
+    },
+    {
+      "id": "5900f4ab1000cf542c50ffbe",
+      "title": "Problem 319: Bounded Sequences"
+    },
+    {
+      "id": "5900f4ae1000cf542c50ffbf",
+      "title": "Problem 320: Factorials divisible by a huge integer"
+    },
+    {
+      "id": "5900f4ae1000cf542c50ffc0",
+      "title": "Problem 321: Swapping Counters"
+    },
+    {
+      "id": "5900f4af1000cf542c50ffc1",
+      "title": "Problem 322: Binomial coefficients divisible by 10"
+    },
+    {
+      "id": "5900f4b01000cf542c50ffc2",
+      "title": "Problem 323: Bitwise-OR operations on random integers"
+    },
+    {
+      "id": "5900f4b11000cf542c50ffc3",
+      "title": "Problem 324: Building a tower"
+    },
+    {
+      "id": "5900f4b11000cf542c50ffc4",
+      "title": "Problem 325: Stone Game II"
+    },
+    {
+      "id": "5900f4b21000cf542c50ffc5",
+      "title": "Problem 326: Modulo Summations"
+    },
+    {
+      "id": "5900f4b31000cf542c50ffc6",
+      "title": "Problem 327: Rooms of Doom"
+    },
+    {
+      "id": "5900f4b41000cf542c50ffc7",
+      "title": "Problem 328: Lowest-cost Search"
+    },
+    {
+      "id": "5900f4b51000cf542c50ffc8",
+      "title": "Problem 329: Prime Frog"
+    },
+    {
+      "id": "5900f4b71000cf542c50ffc9",
+      "title": "Problem 330: Euler's Number"
+    },
+    {
+      "id": "5900f4b71000cf542c50ffca",
+      "title": "Problem 331: Cross flips"
+    },
+    {
+      "id": "5900f4b91000cf542c50ffcb",
+      "title": "Problem 332: Spherical triangles"
+    },
+    {
+      "id": "5900f4b91000cf542c50ffcc",
+      "title": "Problem 333: Special partitions"
+    },
+    {
+      "id": "5900f4ba1000cf542c50ffcd",
+      "title": "Problem 334: Spilling the beans"
+    },
+    {
+      "id": "5900f4bd1000cf542c50ffce",
+      "title": "Problem 335: Gathering the beans"
+    },
+    {
+      "id": "5900f4bd1000cf542c50ffcf",
+      "title": "Problem 336: Maximix Arrangements"
+    },
+    {
+      "id": "5900f4be1000cf542c50ffd0",
+      "title": "Problem 337: Totient Stairstep Sequences"
+    },
+    {
+      "id": "5900f4be1000cf542c50ffd1",
+      "title": "Problem 338: Cutting Rectangular Grid Paper"
+    },
+    {
+      "id": "5900f4c01000cf542c50ffd2",
+      "title": "Problem 339: Peredur fab Efrawg"
+    },
+    {
+      "id": "5900f4c21000cf542c50ffd4",
+      "title": "Problem 340: Crazy Function"
+    },
+    {
+      "id": "5900f4c11000cf542c50ffd3",
+      "title": "Problem 341: Golomb's self-describing sequence"
+    },
+    {
+      "id": "5900f4c31000cf542c50ffd5",
+      "title": "Problem 342: The totient of a square is a cube"
+    },
+    {
+      "id": "5900f4c41000cf542c50ffd6",
+      "title": "Problem 343: Fractional Sequences"
+    },
+    {
+      "id": "5900f4c51000cf542c50ffd7",
+      "title": "Problem 344: Silver dollar game"
+    },
+    {
+      "id": "5900f4c81000cf542c50ffda",
+      "title": "Problem 345: Matrix Sum"
+    },
+    {
+      "id": "5900f4c71000cf542c50ffd8",
+      "title": "Problem 346: Strong Repunits"
+    },
+    {
+      "id": "5900f4c81000cf542c50ffd9",
+      "title": "Problem 347: Largest integer divisible by two primes"
+    },
+    {
+      "id": "5900f4c81000cf542c50ffdb",
+      "title": "Problem 348: Sum of a square and a cube"
+    },
+    {
+      "id": "5900f4ca1000cf542c50ffdc",
+      "title": "Problem 349: Langton's ant"
+    },
+    {
+      "id": "5900f4cb1000cf542c50ffdd",
+      "title": "Problem 350: Constraining the least greatest and the greatest least"
+    },
+    {
+      "id": "5900f4cb1000cf542c50ffde",
+      "title": "Problem 351: Hexagonal orchards"
+    },
+    {
+      "id": "5900f4cd1000cf542c50ffdf",
+      "title": "Problem 352: Blood tests"
+    },
+    {
+      "id": "5900f4cd1000cf542c50ffe0",
+      "title": "Problem 353: Risky moon"
+    },
+    {
+      "id": "5900f4cf1000cf542c50ffe1",
+      "title": "Problem 354: Distances in a bee's honeycomb"
+    },
+    {
+      "id": "5900f4d01000cf542c50ffe2",
+      "title": "Problem 355: Maximal coprime subset"
+    },
+    {
+      "id": "5900f4d01000cf542c50ffe3",
+      "title": "Problem 356: Largest roots of cubic polynomials"
+    },
+    {
+      "id": "5900f4d11000cf542c50ffe4",
+      "title": "Problem 357: Prime generating integers"
+    },
+    {
+      "id": "5900f4d21000cf542c50ffe5",
+      "title": "Problem 358: Cyclic numbers"
+    },
+    {
+      "id": "5900f4d31000cf542c50ffe6",
+      "title": "Problem 359: Hilbert's New Hotel"
+    },
+    {
+      "id": "5900f4d41000cf542c50ffe7",
+      "title": "Problem 360: Scary Sphere"
+    },
+    {
+      "id": "5900f4d51000cf542c50ffe8",
+      "title": "Problem 361: Subsequence of Thue-Morse sequence"
+    },
+    {
+      "id": "5900f4d61000cf542c50ffe9",
+      "title": "Problem 362: Squarefree factors"
+    },
+    {
+      "id": "5900f4d91000cf542c50ffeb",
+      "title": "Problem 363: Bézier Curves"
+    },
+    {
+      "id": "5900f4d91000cf542c50ffea",
+      "title": "Problem 364: Comfortable distance"
+    },
+    {
+      "id": "5900f4da1000cf542c50ffec",
+      "title": "Problem 365: A huge binomial coefficient"
+    },
+    {
+      "id": "5900f4da1000cf542c50ffed",
+      "title": "Problem 366: Stone Game III"
+    },
+    {
+      "id": "5900f4db1000cf542c50ffee",
+      "title": "Problem 367: Bozo sort"
+    },
+    {
+      "id": "5900f4dd1000cf542c50ffef",
+      "title": "Problem 368: A Kempner-like series"
+    },
+    {
+      "id": "5900f4de1000cf542c50fff0",
+      "title": "Problem 369: Badugi"
+    },
+    {
+      "id": "5900f4de1000cf542c50fff1",
+      "title": "Problem 370: Geometric triangles"
+    },
+    {
+      "id": "5900f4e01000cf542c50fff2",
+      "title": "Problem 371: Licence plates"
+    },
+    {
+      "id": "5900f4e11000cf542c50fff3",
+      "title": "Problem 372: Pencils of rays"
+    },
+    {
+      "id": "5900f4e11000cf542c50fff4",
+      "title": "Problem 373: Circumscribed Circles"
+    },
+    {
+      "id": "5900f4e51000cf542c50fff6",
+      "title": "Problem 374: Maximum Integer Partition Product"
+    },
+    {
+      "id": "5900f4e41000cf542c50fff5",
+      "title": "Problem 375: Minimum of subsequences"
+    },
+    {
+      "id": "5900f4e51000cf542c50fff7",
+      "title": "Problem 376: Nontransitive sets of dice"
+    },
+    {
+      "id": "5900f4e51000cf542c50fff8",
+      "title": "Problem 377: Sum of digits, experience 13"
+    },
+    {
+      "id": "5900f4e61000cf542c50fff9",
+      "title": "Problem 378: Triangle Triples"
+    },
+    {
+      "id": "5900f4e81000cf542c50fffa",
+      "title": "Problem 379: Least common multiple count"
+    },
+    {
+      "id": "5900f4e81000cf542c50fffb",
+      "title": "Problem 380: Amazing Mazes!"
+    },
+    {
+      "id": "5900f4ea1000cf542c50fffc",
+      "title": "Problem 381: (prime-k) factorial"
+    },
+    {
+      "id": "5900f4eb1000cf542c50fffd",
+      "title": "Problem 382: Generating polygons"
+    },
+    {
+      "id": "5900f4ed1000cf542c50ffff",
+      "title": "Problem 383: Divisibility comparison between factorials"
+    },
+    {
+      "id": "5900f4ed1000cf542c50fffe",
+      "title": "Problem 384: Rudin-Shapiro sequence"
+    },
+    {
+      "id": "5900f4ee1000cf542c510000",
+      "title": "Problem 385: Ellipses inside triangles"
+    },
+    {
+      "id": "5900f4ef1000cf542c510001",
+      "title": "Problem 386: Maximum length of an antichain"
+    },
+    {
+      "id": "5900f4f11000cf542c510003",
+      "title": "Problem 387: Harshad Numbers"
+    },
+    {
+      "id": "5900f4f11000cf542c510002",
+      "title": "Problem 388: Distinct Lines"
+    },
+    {
+      "id": "5900f4f21000cf542c510004",
+      "title": "Problem 389: Platonic Dice"
+    },
+    {
+      "id": "5900f4f21000cf542c510005",
+      "title": "Problem 390: Triangles with non rational sides and integral area"
+    },
+    {
+      "id": "5900f4f31000cf542c510006",
+      "title": "Problem 391: Hopping Game"
+    },
+    {
+      "id": "5900f4f41000cf542c510007",
+      "title": "Problem 392: Enmeshed unit circle"
+    },
+    {
+      "id": "5900f4f61000cf542c510008",
+      "title": "Problem 393: Migrating ants"
+    },
+    {
+      "id": "5900f4f71000cf542c510009",
+      "title": "Problem 394: Eating pie"
+    },
+    {
+      "id": "5900f4f71000cf542c51000a",
+      "title": "Problem 395: Pythagorean tree"
+    },
+    {
+      "id": "5900f4f81000cf542c51000b",
+      "title": "Problem 396: Weak Goodstein sequence"
+    },
+    {
+      "id": "5900f4f91000cf542c51000c",
+      "title": "Problem 397: Triangle on parabola"
+    },
+    {
+      "id": "5900f4fa1000cf542c51000d",
+      "title": "Problem 398: Cutting rope"
+    },
+    {
+      "id": "5900f4fc1000cf542c51000e",
+      "title": "Problem 399: Squarefree Fibonacci Numbers"
+    },
+    {
+      "id": "5900f4fe1000cf542c510010",
+      "title": "Problem 400: Fibonacci tree game"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

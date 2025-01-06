@@ -1,0 +1,16 @@
+{
+  "name": "Product Landing Page",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-product-landing-page-project",
+  "usesMultifileEditor": true,
+  "helpCategory": "HTML-CSS",
+  "order": 16,
+  "superBlock": "2022/responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "587d78af367417b2b2512b04",
+      "title": "Build a Product Landing Page"
+    }
+  ],
+  "blockLayout": "legacy-link"
+}

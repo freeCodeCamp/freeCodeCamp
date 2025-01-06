@@ -1,0 +1,15 @@
+{
+  "name": "Learn About Speculation and Requests",
+  "isUpcomingChange": true,
+  "dashedName": "learn-about-speculation-and-requests",
+  "order": 16,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6660a1f8afeef3663bddaecb",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

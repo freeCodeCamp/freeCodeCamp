@@ -1,0 +1,167 @@
+{
+  "name": "Learn How to Read and Understand Code Documentation",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-read-and-understand-code-documentation",
+  "order": 19,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "65fd595245455d0dca3434ba",
+      "title": "Dialogue 1: Navigating Documentation"
+    },
+    {
+      "id": "65fd5a9680a9540e9787dec5",
+      "title": "Task 1"
+    },
+    {
+      "id": "65fd5c89285ea50f25bd0241",
+      "title": "Task 2"
+    },
+    {
+      "id": "65fd5d1a6cb7f10f77a06163",
+      "title": "Task 3"
+    },
+    {
+      "id": "65fd5da902959d0fda781aa3",
+      "title": "Task 4"
+    },
+    {
+      "id": "65fd5dfc174596101eae1107",
+      "title": "Task 5"
+    },
+    {
+      "id": "65fd5f2abfdbc510942d76f8",
+      "title": "Task 6"
+    },
+    {
+      "id": "65fd5f86457b4910e35b51c9",
+      "title": "Task 7"
+    },
+    {
+      "id": "65fd620e9ba99c116c42c361",
+      "title": "Task 8"
+    },
+    {
+      "id": "65fd63be9afd7611d2a9b788",
+      "title": "Task 9"
+    },
+    {
+      "id": "65ffa914bc44081a196fa6f7",
+      "title": "Task 10"
+    },
+    {
+      "id": "65ffa9d80e7ffb1ab9b4df1c",
+      "title": "Task 11"
+    },
+    {
+      "id": "65fff2b49779301d9bdab6fa",
+      "title": "Task 12"
+    },
+    {
+      "id": "65fff336d7553c1df86f7968",
+      "title": "Task 13"
+    },
+    {
+      "id": "65fff428290eaa1e5819c119",
+      "title": "Task 14"
+    },
+    {
+      "id": "65fff57ce568cf1ed9702fbf",
+      "title": "Task 15"
+    },
+    {
+      "id": "66000a440c2f492ddee509f9",
+      "title": "Dialogue 2: Understanding Function Descriptions"
+    },
+    {
+      "id": "66000ac46e87f52e84328b95",
+      "title": "Task 16"
+    },
+    {
+      "id": "66000eeeec06b6338a5c5caf",
+      "title": "Task 17"
+    },
+    {
+      "id": "66000f74c71b623407a8394e",
+      "title": "Task 18"
+    },
+    {
+      "id": "66000fec4b5a8c348421fada",
+      "title": "Task 19"
+    },
+    {
+      "id": "6600107b9dffa8350e0c4ee8",
+      "title": "Task 20"
+    },
+    {
+      "id": "660011289b5237359f69c76b",
+      "title": "Task 21"
+    },
+    {
+      "id": "660011d015f7d43626524ef8",
+      "title": "Task 22"
+    },
+    {
+      "id": "660012a18576e836ea18fa0b",
+      "title": "Task 23"
+    },
+    {
+      "id": "660012ff748bf2375c31b591",
+      "title": "Task 24"
+    },
+    {
+      "id": "660013ce54713f37ecac079d",
+      "title": "Task 25"
+    },
+    {
+      "id": "6600144958b1d33857b0309f",
+      "title": "Task 26"
+    },
+    {
+      "id": "660014d3f5b02038de6ac35c",
+      "title": "Task 27"
+    },
+    {
+      "id": "660019617debd03c767e0a3d",
+      "title": "Dialogue 3: Understanding Parameters and Options"
+    },
+    {
+      "id": "66001985c091f13cda6d4f4d",
+      "title": "Task 28"
+    },
+    {
+      "id": "66001a1c9df0a83d8e8c670a",
+      "title": "Task 29"
+    },
+    {
+      "id": "66001a935988e43e1183bd38",
+      "title": "Task 30"
+    },
+    {
+      "id": "66001b1aa59adc3ea4b024b4",
+      "title": "Task 31"
+    },
+    {
+      "id": "66001b8d0518d03f18b19715",
+      "title": "Task 32"
+    },
+    {
+      "id": "66001be61f20a33f8a45f3cb",
+      "title": "Task 33"
+    },
+    {
+      "id": "66001cac957f0740252c2611",
+      "title": "Task 34"
+    },
+    {
+      "id": "66001d1ffd0e0b40a8cbf0c7",
+      "title": "Task 35"
+    },
+    {
+      "id": "66001d8b878f5141214f2d77",
+      "title": "Task 36"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

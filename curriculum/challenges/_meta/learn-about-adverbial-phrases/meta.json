@@ -1,0 +1,15 @@
+{
+  "name": "Learn About Adverbial Phrases",
+  "isUpcomingChange": true,
+  "dashedName": "learn-about-adverbial-phrases",
+  "order": 17,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6660a229268f4469af6af407",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

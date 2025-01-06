@@ -1,0 +1,36 @@
+{
+  "name": "@freecodecamp/curriculum-helper-scripts",
+  "version": "0.0.0-next.1",
+  "description": "freeCodeCamp's project-based curriculum scripts",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "utils.js",
+  "scripts": {
+    "test": "mocha --delay --reporter progress --bail",
+    "create-project": "ts-node create-project"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.0.1",
+    "@types/inquirer": "^8.2.5",
+    "bson-objectid": "2.0.4",
+    "glob": "^8.1.0",
+    "gray-matter": "4.0.3",
+    "inquirer": "8.2.6",
+    "prettier": "3.2.5",
+    "ts-node": "10.9.2",
+    "typescript": "5.2.2"
+  }
+}

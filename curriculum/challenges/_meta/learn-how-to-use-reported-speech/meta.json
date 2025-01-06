@@ -1,0 +1,15 @@
+{
+  "name": "Learn How to Use Reported Speech",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-use-reported-speech",
+  "order": 20,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6660a2f4e01ea36f7c3758fa",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

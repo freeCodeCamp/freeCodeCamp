@@ -1,0 +1,103 @@
+{
+  "name": "Importance of Accessibility and Good HTML Structure",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-importance-of-accessibility-and-good-html-structure",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672a51e9e4fd8b8552eeb758",
+      "title": "What Is Accessibility?"
+    },
+    {
+      "id": "672a5310d7e46b8a34d48dfd",
+      "title": "What Are Screen Readers, and Who Uses Them?"
+    },
+    {
+      "id": "672a5326a7606a8a766cbedb",
+      "title": "What Are Large Text or Braille Keyboards, and Who Uses Them?"
+    },
+    {
+      "id": "672a533e6041c28ad680eb8f",
+      "title": "What Are Alternative Pointing Devices Such as Trackballs, Joysticks, and Touchpads Used For?"
+    },
+    {
+      "id": "672a5361ef88158b25fbfba7",
+      "title": "What Are Screen Magnifiers Used For?"
+    },
+    {
+      "id": "672a536f8386288b9ed0a154",
+      "title": "What Is Voice Recognition Software Used For?"
+    },
+    {
+      "id": "672a537f05f3798bd4f57d2d",
+      "title": "What Are Some Common Accessibility Auditing Tools to Use?"
+    },
+    {
+      "id": "672a538c029f9e8c1687460e",
+      "title": "How Does Proper Heading Level Structure Affect Accessibility?"
+    },
+    {
+      "id": "672a539b887ec68c593cdc4b",
+      "title": "What Are Best Practices for Tables and Accessibility?"
+    },
+    {
+      "id": "672a53ae8f1ad28c8a1ed0f0",
+      "title": "Why Is It Important for Inputs to Have an Associated Label?"
+    },
+    {
+      "id": "672a53cf67140d8cd85d4b0f",
+      "title": "What Is the Purpose of WAI-ARIA, and How Does It Work?"
+    },
+    {
+      "id": "672a549231b8728f7171ed9d",
+      "title": "What Are ARIA Roles?"
+    },
+    {
+      "id": "672a54a6675c168faa84252d",
+      "title": "What Are the Roles of the aria-label and aria-labelledby Attributes?"
+    },
+    {
+      "id": "672a54bc58319c8fe6f78ad4",
+      "title": "What Is the aria-hidden Attribute, and How Does It Work?"
+    },
+    {
+      "id": "672a54ce90c19e9038f481d7",
+      "title": "What Is the aria-expanded Attribute, and How Does It Work?"
+    },
+    {
+      "id": "672a54dff9dc439089f1a219",
+      "title": "What Is the aria-live Attribute, and How Does It Work?"
+    },
+    {
+      "id": "672a54f29d783890d1f94740",
+      "title": "What Are Some Common ARIA States Used on Custom Control Elements?"
+    },
+    {
+      "id": "672a5507d857a891139abc7f",
+      "title": "What Is the aria-controls Attribute, and How Does It Work?"
+    },
+    {
+      "id": "672a551975938a916c74802c",
+      "title": "What Is the aria-describedby Attribute, and How Does It Work?"
+    },
+    {
+      "id": "672a55b5c0c14493328fe36e",
+      "title": "When Is the alt Attribute Needed, and What Are Some Examples of Good Alt Text?"
+    },
+    {
+      "id": "672a55dd1d86bc939606e204",
+      "title": "What Are the Accessibility Benefits for Good Link Text, and What Are Examples of Good Link Text?"
+    },
+    {
+      "id": "672a55eb7791559421ff0cd3",
+      "title": "What Are Good Ways to Make Audio and Video Content Accessible?"
+    },
+    {
+      "id": "672a55fbc2d95a9453151caf",
+      "title": "What Are Some Ways to Make Web Applications Keyboard Accessible?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

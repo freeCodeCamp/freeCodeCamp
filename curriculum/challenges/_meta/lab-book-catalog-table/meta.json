@@ -1,0 +1,11 @@
+{
+  "name": "Build a Book Catalog Table",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-book-catalog-table",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66ec4c8e9878d8441956516f", "title": "Build a Book Catalog Table" }],
+  "helpCategory": "HTML-CSS"
+}

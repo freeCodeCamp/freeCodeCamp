@@ -1,0 +1,231 @@
+{
+  "name": "Learn How to Discuss Tech Trends and Updates",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-discuss-tech-trends-and-updates",
+  "order": 14,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6635c3e30e02d224d4450eac",
+      "title": "Dialogue 1: Discussing Low-Code Development"
+    },
+    {
+      "id": "6635f9203e0ed42948db1e4c",
+      "title": "Task 1"
+    },
+    {
+      "id": "6635f9c305ad6d2a08cb6ad4",
+      "title": "Task 2"
+    },
+    {
+      "id": "6635fc67f6d0f82ad629e71d",
+      "title": "Task 3"
+    },
+    {
+      "id": "6635fdc8fdd98f2b56c3bcf8",
+      "title": "Task 4"
+    },
+    {
+      "id": "663601a777cfc92cbaf8cb7c",
+      "title": "Task 5"
+    },
+    {
+      "id": "666339cedcfb436e2c9fd550",
+      "title": "Task 6"
+    },
+    {
+      "id": "666339dd9d6dc46efa85c8cb",
+      "title": "Task 7"
+    },
+    {
+      "id": "66360374d980d82d3cccddf7",
+      "title": "Task 8"
+    },
+    {
+      "id": "663604ab610a932dc9882194",
+      "title": "Task 9"
+    },
+    {
+      "id": "663606cc695a992e81ef521d",
+      "title": "Task 10"
+    },
+    {
+      "id": "663608aa63d5b72f475b7718",
+      "title": "Task 11"
+    },
+    {
+      "id": "663609d95c99422fce1d3824",
+      "title": "Task 12"
+    },
+    {
+      "id": "66360b4ec92e49305fec41ce",
+      "title": "Task 13"
+    },
+    {
+      "id": "66360c141117e030da0c0cb3",
+      "title": "Task 14"
+    },
+    {
+      "id": "6636159376b91532f4f8e49b",
+      "title": "Task 15"
+    },
+    {
+      "id": "66361836f505f333d344da43",
+      "title": "Task 16"
+    },
+    {
+      "id": "66361ad945006834b7eb7ccd",
+      "title": "Task 17"
+    },
+    {
+      "id": "66361c43829cea3535e7a49a",
+      "title": "Task 18"
+    },
+    {
+      "id": "663620974eb4a0369d76b6b8",
+      "title": "Task 19"
+    },
+    {
+      "id": "663621cf8781e93738b3e30f",
+      "title": "Task 20"
+    },
+    {
+      "id": "66362350df72dc37d8c9ca40",
+      "title": "Task 21"
+    },
+    {
+      "id": "6636242c12c019384fd78b5a",
+      "title": "Task 22"
+    },
+    {
+      "id": "6636263059a6703a80ee06aa",
+      "title": "Dialogue 2: Discussing Serverless Computing"
+    },
+    {
+      "id": "663626ee2c3a803af8cc2fd6",
+      "title": "Task 23"
+    },
+    {
+      "id": "66362781eb0d663b5eabc353",
+      "title": "Task 24"
+    },
+    {
+      "id": "6636285e6fcb733bdffaa986",
+      "title": "Task 25"
+    },
+    {
+      "id": "6636ebb50b24c83f130344f4",
+      "title": "Task 26"
+    },
+    {
+      "id": "6636ee901c0de13ff4f02edc",
+      "title": "Task 27"
+    },
+    {
+      "id": "6636f20df76124410fe597e9",
+      "title": "Task 28"
+    },
+    {
+      "id": "6636f36bfde85f41809044c9",
+      "title": "Task 29"
+    },
+    {
+      "id": "6636f47542d2a4421a433d8e",
+      "title": "Task 30"
+    },
+    {
+      "id": "6636f652561a9842e74b032a",
+      "title": "Task 31"
+    },
+    {
+      "id": "6636f834a7b32443a43fa4e0",
+      "title": "Task 32"
+    },
+    {
+      "id": "6636f90f25a10b442185e3b8",
+      "title": "Task 33"
+    },
+    {
+      "id": "6638478a5f79414a5126bca3",
+      "title": "Task 34"
+    },
+    {
+      "id": "66384b3e267aef4c6daf5279",
+      "title": "Task 35"
+    },
+    {
+      "id": "66384d37bfbd344d5c647fbd",
+      "title": "Task 36"
+    },
+    {
+      "id": "66384eb6677d974e02af573b",
+      "title": "Task 37"
+    },
+    {
+      "id": "6638510e8311f74fec51b839",
+      "title": "Dialogue 3: Discussing AI in Programming"
+    },
+    {
+      "id": "663855865f5d53510f9cd9a5",
+      "title": "Task 38"
+    },
+    {
+      "id": "663856f8cf403151ac9d9e8a",
+      "title": "Task 39"
+    },
+    {
+      "id": "663897f00196a953f16499c6",
+      "title": "Task 40"
+    },
+    {
+      "id": "6638994f7dbcb3548e458202",
+      "title": "Task 41"
+    },
+    {
+      "id": "66389a37bc8a4b5539eab451",
+      "title": "Task 42"
+    },
+    {
+      "id": "66389c04cffc4f55e6e0f798",
+      "title": "Task 43"
+    },
+    {
+      "id": "66389e09cec2fa569567b15a",
+      "title": "Task 44"
+    },
+    {
+      "id": "66389ee34417c057109ed5f6",
+      "title": "Task 45"
+    },
+    {
+      "id": "6638a163d5757f57e5270598",
+      "title": "Task 46"
+    },
+    {
+      "id": "6638a290bc4a5458dd6ebf07",
+      "title": "Task 47"
+    },
+    {
+      "id": "6638a5aaf619a15a1c5cfe6f",
+      "title": "Task 48"
+    },
+    {
+      "id": "6638a7713695f25abd3f3c02",
+      "title": "Task 49"
+    },
+    {
+      "id": "6638a9a5dee1ac5b6a9db7d9",
+      "title": "Task 50"
+    },
+    {
+      "id": "6638aa72831d185bdac55c12",
+      "title": "Task 51"
+    },
+    {
+      "id": "6638abe5e8d43a5c7ed9d320",
+      "title": "Task 52"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

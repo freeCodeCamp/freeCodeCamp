@@ -1,0 +1,195 @@
+{
+  "name": "Learn How to Ask for Clarification on Code Understanding",
+  "isUpcomingChange": false,
+  "dashedName": "learn-how-to-ask-for-clarification-on-code-understanding",
+  "order": 17,
+  "superBlock": "a2-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "65f422e03c1be26ee37dbcf1",
+      "title": "Dialogue 1: Asking for Help to Understand Code"
+    },
+    {
+      "id": "65f424048ab85171c45e9a08",
+      "title": "Task 1"
+    },
+    {
+      "id": "65f425b9d9686e76a354a7ee",
+      "title": "Task 2"
+    },
+    {
+      "id": "65f4264c34d9b678ecd79ad3",
+      "title": "Task 3"
+    },
+    {
+      "id": "65f4271a0a61e57af14a9b35",
+      "title": "Task 4"
+    },
+    {
+      "id": "65f42789b0fe157c08cf04eb",
+      "title": "Task 5"
+    },
+    {
+      "id": "65f434b6c6a3ba9743d08e22",
+      "title": "Task 6"
+    },
+    {
+      "id": "65f435edbd8f519aba51cc93",
+      "title": "Task 7"
+    },
+    {
+      "id": "65f437964aed009f178dd167",
+      "title": "Task 8"
+    },
+    {
+      "id": "65f4386ef80894a17d6b1f3d",
+      "title": "Task 9"
+    },
+    {
+      "id": "65f439533bb1c4a3ab360b62",
+      "title": "Task 10"
+    },
+    {
+      "id": "65f439b8a46608a46ba94c73",
+      "title": "Task 11"
+    },
+    {
+      "id": "65f43a3a8b2c8ba627c31e46",
+      "title": "Task 12"
+    },
+    {
+      "id": "65f43aa270f998a70375bb23",
+      "title": "Task 13"
+    },
+    {
+      "id": "65f43b8a961e01a96a940470",
+      "title": "Task 14"
+    },
+    {
+      "id": "65f43c96b08a08ac434de6cb",
+      "title": "Task 15"
+    },
+    {
+      "id": "65f50a13853f93ef6c7337c1",
+      "title": "Dialogue 2: Asking for Help on a Bug"
+    },
+    {
+      "id": "65f510b35d792af24e985351",
+      "title": "Task 16"
+    },
+    {
+      "id": "65f511638aa1de0b9d53963e",
+      "title": "Task 17"
+    },
+    {
+      "id": "65f52ee449926c59b5c3a407",
+      "title": "Task 18"
+    },
+    {
+      "id": "65f52f215010605aa4da8804",
+      "title": "Task 19"
+    },
+    {
+      "id": "65f52f761f23715bce60f9ce",
+      "title": "Task 20"
+    },
+    {
+      "id": "65f52fb434a8875cb666ede5",
+      "title": "Task 21"
+    },
+    {
+      "id": "65f53033b856ff5e687644e4",
+      "title": "Task 22"
+    },
+    {
+      "id": "65f530793181a05f4e44a36a",
+      "title": "Task 23"
+    },
+    {
+      "id": "65f569d173ab3d5100c42fd0",
+      "title": "Task 24"
+    },
+    {
+      "id": "65f56b281bb51c5493d3e598",
+      "title": "Task 25"
+    },
+    {
+      "id": "65f56b6445b35b558688bc4d",
+      "title": "Task 26"
+    },
+    {
+      "id": "65f5703b434254615ec3b886",
+      "title": "Task 27"
+    },
+    {
+      "id": "65f587dd775b4e74643cf3db",
+      "title": "Dialogue 3: Asking for Peer Reviewing"
+    },
+    {
+      "id": "65f5884cd3c21a9bd49f4b00",
+      "title": "Task 28"
+    },
+    {
+      "id": "65f58a1bc78dd4a0a22a8168",
+      "title": "Task 29"
+    },
+    {
+      "id": "65f58b427db077a36de24777",
+      "title": "Task 30"
+    },
+    {
+      "id": "65f58d630872fea94e0f91f5",
+      "title": "Task 31"
+    },
+    {
+      "id": "65f592180269c1b38c771164",
+      "title": "Task 32"
+    },
+    {
+      "id": "65f5928f3ee01db4e8b9d7fe",
+      "title": "Task 33"
+    },
+    {
+      "id": "65f5936de4e017b74ea663db",
+      "title": "Task 34"
+    },
+    {
+      "id": "65f59409f39a43b8d90b53f7",
+      "title": "Task 35"
+    },
+    {
+      "id": "65f594d096c1aebb60e5194d",
+      "title": "Task 36"
+    },
+    {
+      "id": "65f598d3a104b7c50aea53ab",
+      "title": "Task 37"
+    },
+    {
+      "id": "65f6f5d9324c65ef3adab297",
+      "title": "Task 38"
+    },
+    {
+      "id": "65f6f6f53aaa73f21560a9cc",
+      "title": "Task 39"
+    },
+    {
+      "id": "65f6f7d103c247f4d7e10b34",
+      "title": "Task 40"
+    },
+    {
+      "id": "65f6f9e9cfbda7f9c04e8af7",
+      "title": "Task 41"
+    },
+    {
+      "id": "65f6fb76ea5932fe4ba266c6",
+      "title": "Task 42"
+    },
+    {
+      "id": "65f6fc00be7facffe0898c6d",
+      "title": "Task 43"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

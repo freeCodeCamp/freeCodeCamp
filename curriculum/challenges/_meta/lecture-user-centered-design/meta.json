@@ -1,0 +1,55 @@
+{
+  "name": "User-Centered Design",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-user-centered-design",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa6ee9011775b27e23399",
+      "title": "What Is User-Centered Design?"
+    },
+    {
+      "id": "672bafd715f6ba77d57f3ec0",
+      "title": "What Are User Requirements, User Research, and Testing?"
+    },
+    {
+      "id": "672bafe4ef812b78696b0e27",
+      "title": "What Are Best Practices for Designing a Dark Mode Feature?"
+    },
+    {
+      "id": "672baff13bc5b3789691c75c",
+      "title": "What Are Best Practices for Designing Breadcrumbs?"
+    },
+    {
+      "id": "672baffc684be178dd02fa06",
+      "title": "What Are Best Practices for Designing Cards?"
+    },
+    {
+      "id": "672bb009952c7a7904a750cb",
+      "title": "What Are Best Practices for Designing Infinite Scrolls?"
+    },
+    {
+      "id": "672bb015cfc889794359c4e0",
+      "title": "What Are Best Practices for Designing Modal Dialogs?"
+    },
+    {
+      "id": "672bb02009ffc0797ca567ab",
+      "title": "What Are Best Practices for Progress Indication on Forms, Registration, and Setup?"
+    },
+    {
+      "id": "672bb02ecb230779bbbaccd9",
+      "title": "What Are Best Practices for Designing Shopping Carts?"
+    },
+    {
+      "id": "672bb03999f39379f67d8972",
+      "title": "What Is Progressive Disclosure?"
+    },
+    {
+      "id": "672bb04476b1997a1da8b79b",
+      "title": "What Is Deferred and Lazy Registration?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

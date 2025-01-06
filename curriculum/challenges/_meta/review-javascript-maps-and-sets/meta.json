@@ -1,0 +1,15 @@
+{
+  "name": "JavaScript Maps and Sets Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-maps-and-sets",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6723d027b02e4cc6ee5944da",
+      "title": "JavaScript Maps and Sets Review"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

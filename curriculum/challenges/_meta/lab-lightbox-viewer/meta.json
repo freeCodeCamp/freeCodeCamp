@@ -1,0 +1,11 @@
+{
+  "name": "Build a Lightbox Viewer",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-lightbox-viewer",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66db57ad34c7089b9b41bfd6", "title": "Build a Lightbox Viewer" }],
+  "helpCategory": "HTML-CSS"
+}

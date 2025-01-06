@@ -1,0 +1,15 @@
+{
+  "name": "Learn How to Clarify Misunderstandings",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-clarify-misunderstandings",
+  "order": 15,
+  "superBlock": "b1-english-for-developers",
+  "challengeOrder": [
+    {
+      "id": "6660a1648c9c67637b61f254",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
+}

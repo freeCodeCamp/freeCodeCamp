@@ -1,0 +1,107 @@
+/* Base styles for mobile devices */
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.portfolio-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.portfolio-card-description {
+  margin: 1rem 0rem;
+  width: auto;
+  overflow-wrap: break-word;
+}
+
+#link-icon {
+  margin-inline-start: 10px;
+}
+
+a.portfolio-card {
+  text-decoration: none;
+}
+
+.portfolio-card p {
+  margin-bottom: 10px;
+}
+
+a.portfolio-card:hover,
+a.portfolio-card:focus {
+  background-color: transparent;
+}
+
+a.portfolio-card:hover h3,
+a.portfolio-card:focus h3 {
+  text-decoration: underline;
+}
+
+a.portfolio-card:hover img,
+a.portfolio-card:focus img {
+  opacity: 0.8;
+}
+
+/* Adjust styles for desktop screens */
+@media (min-width: 769px) {
+  .portfolio-card {
+    flex-direction: row;
+    min-width: 0;
+    max-height: none;
+  }
+
+  .portfolio-image {
+    width: 300px;
+    min-width: 300px;
+    min-height: auto;
+  }
+
+  .portfolio-card-description {
+    margin: 0rem 1rem 1rem;
+    width: 100%;
+  }
+}
+
+/* Timeline pagination */
+.timeline-pagination_list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.timeline-pagination_list_item {
+  margin: 0 5px;
+}
+
+.timeline-pagination_list_item > button {
+  outline-color: transparent;
+  padding: 0 3px;
+}
+
+.timeline-row {
+  height: 60px;
+}
+
+.timeline-row > td {
+  vertical-align: middle !important;
+}
+
+.timeline-cert-link {
+  margin-inline-end: 20px;
+}
+
+.timeline-cert-link > svg {
+  display: inline-block;
+  height: 25px;
+  width: auto;
+  margin-inline-start: 10px;
+  position: absolute;
+}

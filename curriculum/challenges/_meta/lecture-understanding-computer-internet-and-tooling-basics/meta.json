@@ -1,0 +1,31 @@
+{
+  "name": "Understanding Computer, Internet, and Tooling Basics",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-computer-internet-and-tooling-basics",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa578a2129554d4675049",
+      "title": "What Are the Basic Parts of a Computer?"
+    },
+    {
+      "id": "672ab82c1a9bbd0e3aabc39d",
+      "title": "How Can You Effectively Work With Your Keyboard, Mouse, and Other Pointing Devices"
+    },
+    {
+      "id": "672ab83c4297910eade53c2e",
+      "title": "What Are the Different Types of Internet Service Providers?"
+    },
+    {
+      "id": "672ab849aa1ef70eefd29364",
+      "title": "What Are Safe Ways to Sign Into Your Computer?"
+    },
+    {
+      "id": "672ab8573f32480f192aaae1",
+      "title": "What Are the Different Types of Tools Professional Developers Use?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

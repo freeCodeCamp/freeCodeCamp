@@ -1,0 +1,15 @@
+{
+  "rms15q": "React-Redux:",
+  "78gz3i": "React:",
+  "7e3lpb": "Redux:",
+  "b0atz9": "<h1>Hello World</h1>\n\n<h2>CatPhotoApp</h2>\n\n<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>",
+  "b1x7w0": "import React from 'react'\nimport ReactDOM from 'react-dom'\nimport { Provider, connect } from 'react-redux'\nimport { createStore, combineReducers, applyMiddleware } from 'redux'\nimport thunk from 'redux-thunk'\n\nimport rootReducer from './redux/reducers'\nimport App from './components/App'\n\nconst store = createStore(\n  rootReducer,\n  applyMiddleware(thunk)\n);\n\nReactDOM.render(\n  <Provider store={store}>\n    <App/>\n  </Provider>,\n  document.getElementById('root')\n);",
+  "4143lg": "TODO: Add link to cat photos",
+  "3q1p2l": "console.log(spreadsheetFunctions[\"random\"](1, 1000) === spreadsheetFunctions[\"random\"](1, 1000))",
+  "gq2zsq": "window.onload();",
+  "3xhkhx": "highPrecedence(\"2*2\");",
+  "4143lf": "initialize buttons",
+  "y1f9p0": "for (let i = 1; i <= count; i++) {\n  rows.push(padRow(i, count));\n}",
+  "697fln": "while (rows.length < count) {\n  rows.push(padRow(rows.length + 1, count));\n}",
+  "499lw3": "for (let i = count; i > 0; i--) {\n  rows.push(padRow(i, count));\n}"
+}

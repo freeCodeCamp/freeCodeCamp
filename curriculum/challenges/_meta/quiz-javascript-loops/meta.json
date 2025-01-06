@@ -1,0 +1,12 @@
+{
+  "name": "JavaScript Loops Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-loops",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "66edcd49e73385dd4df54ac7", "title": "JavaScript Loops Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

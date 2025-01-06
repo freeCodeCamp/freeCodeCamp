@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add solution plugin should have an output to match the snapshot 1`] = `
+{
+  "solutions": [
+    [
+      {
+        "contents": "<html>
+  <body>
+  </body>
+</html>",
+        "ext": "html",
+        "head": "",
+        "id": "html-key",
+        "name": "index",
+        "tail": "",
+      },
+      {
+        "contents": "body {
+  background: white;
+}",
+        "ext": "css",
+        "head": "",
+        "id": "",
+        "name": "styles",
+        "tail": "",
+      },
+      {
+        "contents": "var x = 'y';
+\`\`",
+        "ext": "js",
+        "head": "",
+        "id": "",
+        "name": "script",
+        "tail": "",
+      },
+    ],
+  ],
+}
+`;

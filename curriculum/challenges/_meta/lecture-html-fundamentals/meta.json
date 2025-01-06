@@ -1,0 +1,47 @@
+{
+  "name": "HTML Fundamentals",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-html-fundamentals",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "HTML-CSS",
+  "challengeOrder": [
+    {
+      "id": "670803abcb3e980233da4768",
+      "title": "What are Div Elements and When Should You Use Them?"
+    },
+    {
+      "id": "6708382cf088b216580a9ff1",
+      "title": "What Are IDs and Classes, and When Should You Use Them?"
+    },
+    {
+      "id": "67083868d5fdcb17bf8c14bd",
+      "title": "What Are HTML Entities, and What Are Some Common Examples?"
+    },
+    {
+      "id": "670838977810401844af6fe0",
+      "title": "What Is the Role of the Link Element in HTML, and How Can It Be Used to Link to External Stylesheets?"
+    },
+    {
+      "id": "670838b10ee87a18e5faff62",
+      "title": "What Is the Role of the Script Element in HTML, and How Can It Be Used to Link to External JavaScript Files?"
+    },
+    {
+      "id": "670838e914096b194b0c51aa",
+      "title": "What Is an HTML Boilerplate, and Why Is It Important?"
+    },
+    {
+      "id": "670839051794aa19fcef6dc8",
+      "title": "What Is UTF-8 Character Encoding, and Why Is It Needed?"
+    },
+    {
+      "id": "67083952f800051a8a21fcfd",
+      "title": "What Is the Role of the Meta Description, and How Does It Affect SEO?"
+    },
+    {
+      "id": "6708396caa00e11b597b3365",
+      "title": "What Is the Role of Open Graph Tags, and How Do They Affect SEO?"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "JavaScript Functional Programming Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-functional-programming",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6723d2c154dd19d0025f7cd9",
+      "title": "JavaScript Functional Programming Review"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

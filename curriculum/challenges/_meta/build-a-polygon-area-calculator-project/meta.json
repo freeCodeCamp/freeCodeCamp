@@ -1,0 +1,16 @@
+{
+  "name": "Build a Polygon Area Calculator Project",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "build-a-polygon-area-calculator-project",
+  "order": 16,
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "5e444147903586ffb414c94f",
+      "title": "Build a Polygon Area Calculator Project"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "legacy-link"
+}
