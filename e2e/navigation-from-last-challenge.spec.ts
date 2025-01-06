@@ -22,7 +22,6 @@ const rwdChallenge = {
   nextUrl:
     '/learn/2022/responsive-web-design/#build-a-personal-portfolio-webpage-project'
 };
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('Navigation from the middle or end (URL solution)', () => {
   test('In the middle of a block should take you to the next challenge', async ({
     page

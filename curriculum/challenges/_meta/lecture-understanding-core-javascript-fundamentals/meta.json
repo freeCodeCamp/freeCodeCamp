@@ -2,7 +2,7 @@
   "name": "Understanding Core JavaScript Fundamentals",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-core-javascript-fundamentals",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

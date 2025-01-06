@@ -10,6 +10,7 @@ export { modernChallengeCompleted } from './schemas/challenge/modern-challenge-c
 export { msTrophyChallengeCompleted } from './schemas/challenge/ms-trophy-challenge-completed';
 export { projectCompleted } from './schemas/challenge/project-completed';
 export { saveChallenge } from './schemas/challenge/save-challenge';
+export { submitQuizAttempt } from './schemas/challenge/submit-quiz-attempt';
 export { deprecatedEndpoints } from './schemas/deprecated';
 export { addDonation } from './schemas/donate/add-donation';
 export { chargeStripeCard } from './schemas/donate/charge-stripe-card';
@@ -40,3 +41,4 @@ export { reportUser } from './schemas/user/report-user';
 export { resetMyProgress } from './schemas/user/reset-my-progress';
 export { submitSurvey } from './schemas/user/submit-survey';
 export { userExamEnvironmentToken } from './schemas/user/exam-environment-token';
+export { sentryPostEvent } from './schemas/sentry/event';

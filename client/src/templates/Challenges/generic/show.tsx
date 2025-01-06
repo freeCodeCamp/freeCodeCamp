@@ -24,10 +24,12 @@ import {
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { BlockTypes } from '../../../../../shared/config/blocks';
+import { getChallengePaths } from '../utils/challenge-paths';
 import Scene from '../components/scene/scene';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import ChallengeExplanation from '../components/challenge-explanation';
 import HelpModal from '../components/help-modal';
+import { SceneSubject } from '../components/scene/scene-subject';
 
 // Styles
 import './show.css';
@@ -96,7 +98,6 @@ const ShowGeneric = ({
   isChallengeCompleted
 }: ShowQuizProps) => {
   const { t } = useTranslation();
-  const { nextChallengePath, prevChallengePath } = challengeMeta;
   const container = useRef<HTMLElement | null>(null);
 
   const blockNameTitle = `${t(
@@ -105,11 +106,15 @@ const ShowGeneric = ({
 
   useEffect(() => {
     initTests(tests);
+    const challengePaths = getChallengePaths({
+      currentCurriculumPaths: challengeMeta
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
     container.current?.focus();
@@ -117,32 +122,12 @@ const ShowGeneric = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    updateChallengeMeta({
-      ...challengeMeta,
-      title,
-      challengeType,
-      helpCategory
-    });
-    challengeMounted(challengeMeta.id);
-  }, [
-    title,
-    challengeMeta,
-    challengeType,
-    helpCategory,
-    challengeMounted,
-    updateChallengeMeta
-  ]);
-
   // video
   const [videoIsLoaded, setVideoIsLoaded] = useState(false);
 
   const handleVideoIsLoaded = () => {
     setVideoIsLoaded(true);
   };
-
-  // scene
-  const [isScenePlaying, setIsScenePlaying] = useState(false);
 
   // assignments
   const [assignmentsCompleted, setAssignmentsCompleted] = useState(0);
@@ -162,6 +147,9 @@ const ShowGeneric = ({
   const [submittedMcqAnswers, setSubmittedMcqAnswers] = useState(
     questions.map<number | null>(() => null)
   );
+
+  const [hasAnsweredMcqCorrectly, sethasAnsweredMcqCorrectly] = useState(true);
+
   const [showFeedback, setShowFeedback] = useState(false);
 
   const handleMcqOptionChange = (
@@ -175,7 +163,6 @@ const ShowGeneric = ({
     );
   };
 
-  // submit
   const handleSubmit = () => {
     const hasCompletedAssignments =
       assignments.length === 0 || allAssignmentsCompleted;
@@ -187,15 +174,21 @@ const ShowGeneric = ({
     if (hasCompletedAssignments && mcqCorrect) {
       openCompletionModal();
     }
+
+    if (mcqSolutions.length > selectedMcqOptions.length || !mcqCorrect) {
+      sethasAnsweredMcqCorrectly(false);
+    } else {
+      sethasAnsweredMcqCorrectly(true);
+    }
   };
+
+  const sceneSubject = new SceneSubject();
 
   return (
     <Hotkeys
       executeChallenge={handleSubmit}
       containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
-      playScene={scene ? () => setIsScenePlaying(true) : undefined}
+      playScene={scene ? () => sceneSubject.notify() : undefined}
     >
       <LearnLayout>
         <Helmet
@@ -213,7 +206,10 @@ const ShowGeneric = ({
 
             {description && (
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <ChallengeDescription description={description} />
+                <ChallengeDescription
+                  description={description}
+                  superBlock={superBlock}
+                />
                 <Spacer size='m' />
               </Col>
             )}
@@ -231,17 +227,14 @@ const ShowGeneric = ({
               )}
             </Col>
 
-            {scene && (
-              <Scene
-                scene={scene}
-                isPlaying={isScenePlaying}
-                setIsPlaying={setIsScenePlaying}
-              />
-            )}
+            {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               {instructions && (
-                <ChallengeDescription instructions={instructions} />
+                <ChallengeDescription
+                  instructions={instructions}
+                  superBlock={superBlock}
+                />
               )}
 
               <Spacer size='m' />
@@ -267,6 +260,10 @@ const ShowGeneric = ({
               {explanation ? (
                 <ChallengeExplanation explanation={explanation} />
               ) : null}
+
+              {!hasAnsweredMcqCorrectly && (
+                <p className='text-center'>{t('learn.answered-mcq')}</p>
+              )}
 
               <Button block={true} variant='primary' onClick={handleSubmit}>
                 {blockType === BlockTypes.review

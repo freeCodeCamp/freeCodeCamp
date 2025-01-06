@@ -46,8 +46,6 @@ const waitUntilHydrated = async (page: Page, pageId: PageId) => {
   await waitUntilListening(page);
 };
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.beforeAll(async ({ request }) => {
   await authedRequest({
     request,

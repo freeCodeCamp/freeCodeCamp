@@ -4,7 +4,7 @@ import {
   SuperBlockStage,
   superBlockStages,
   notAuditedSuperBlocks,
-  createFlatSuperBlockMap,
+  generateSuperBlockList,
   getAuditedSuperBlocks
 } from './curriculum';
 
@@ -19,9 +19,9 @@ describe('superBlockOrder', () => {
   });
 });
 
-describe('createFlatSuperBlockMap', () => {
-  it('should return an array of SuperBlocks object with New and Upcoming when { showNewCurriculum: true, showUpcomingChanges: true }', () => {
-    const result = createFlatSuperBlockMap({
+describe('generateSuperBlockList', () => {
+  it('should return an array of SuperBlocks object with all elements when if all configs are true', () => {
+    const result = generateSuperBlockList({
       showNewCurriculum: true,
       showUpcomingChanges: true
     });
@@ -29,7 +29,7 @@ describe('createFlatSuperBlockMap', () => {
   });
 
   it('should return an array of SuperBlocks without New and Upcoming when { showNewCurriculum: false, showUpcomingChanges: false }', () => {
-    const result = createFlatSuperBlockMap({
+    const result = generateSuperBlockList({
       showNewCurriculum: false,
       showUpcomingChanges: false
     });
@@ -44,19 +44,19 @@ describe('Immutability of superBlockOrder, notAuditedSuperBlocks, and flatSuperB
   it('should not allow modification of superBlockOrder', () => {
     expect(() => {
       superBlockStages[SuperBlockStage.Core] = [];
-    }).toThrowError(TypeError);
+    }).toThrow(TypeError);
   });
 
   it('should not allow modification of notAuditedSuperBlocks', () => {
     expect(() => {
       notAuditedSuperBlocks[Languages.English] = [];
-    }).toThrowError(TypeError);
+    }).toThrow(TypeError);
   });
 
   it('should not allow modification of flatSuperBlockMap', () => {
     expect(() => {
       notAuditedSuperBlocks[Languages.English] = [];
-    }).toThrowError(TypeError);
+    }).toThrow(TypeError);
   });
 });
 
@@ -64,8 +64,6 @@ describe('getAuditedSuperBlocks', () => {
   Object.keys(notAuditedSuperBlocks).forEach(language => {
     it(`should return only audited SuperBlocks for ${language}`, () => {
       const auditedSuperBlocks = getAuditedSuperBlocks({
-        showNewCurriculum: true,
-        showUpcomingChanges: true,
         language
       });
 

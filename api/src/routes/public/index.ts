@@ -8,3 +8,4 @@ export * from './email-subscription';
 export * from './signout';
 export * from './status';
 export * from './user';
+export * from './sentry';

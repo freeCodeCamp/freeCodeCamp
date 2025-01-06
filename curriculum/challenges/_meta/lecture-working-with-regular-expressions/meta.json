@@ -2,7 +2,7 @@
   "name": "Working with Regular Expressions",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-regular-expressions",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

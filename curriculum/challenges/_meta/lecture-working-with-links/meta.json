@@ -2,7 +2,7 @@
   "name": "Working with Links",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-links",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
@@ -21,10 +21,6 @@
     {
       "id": "67168323932391a9ee0d3a9e",
       "title": "What Are the Different Link States, and Why Are They Important?"
-    },
-    {
-      "id": "67168343450957aa4335c56b",
-      "title": "What Is the Difference Between Inline and Block-Level Links?"
     }
   ],
   "helpCategory": "HTML-CSS"

@@ -2,7 +2,7 @@
   "name": "CSS Flexbox Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-css-flexbox",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed8fe7f45ce3ece4053eb2", "title": "CSS Flexbox Quiz" }],

@@ -2,7 +2,7 @@
   "name": "Introduction to JavaScript Libraries and Frameworks",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
@@ -23,16 +23,12 @@
       "title": "What Are Components in React, and How Do They Work?"
     },
     {
-      "id": "6734e883fbc50ec642237caf",
-      "title": "What Are Meta Frameworks, and Why Are They Commonly Used in the Industry?"
+      "id": "674ba6876f7ada867135bb95",
+      "title": "How Can You Import and Export Components in React?"
     },
     {
       "id": "6734e88cc46e6dc679420040",
-      "title": "What Are Some Tools to Use to Set Up Projects Using a Library or Framework?"
-    },
-    {
-      "id": "6734e89acc80e0c6afebb682",
-      "title": "What Is Dependency Management, and How Does It Work with Libraries Like React?"
+      "title": "What is Vite and How Can It Be Used to Setup a New React Project?"
     }
   ],
   "helpCategory": "JavaScript"

@@ -2,7 +2,7 @@
   "name": "Build a Personal Portfolio",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-personal-portfolio",
   "superBlock": "full-stack-developer",

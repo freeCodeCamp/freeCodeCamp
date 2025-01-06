@@ -1,13 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Quiz challenge', () => {
-  test.skip(
-    () => process.env.SHOW_UPCOMING_CHANGES !== 'true',
-    'The FSD superblock is not available if SHOW_UPCOMING_CHANGES is false'
-  );
-
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
     await page.goto(
       '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html'
@@ -73,7 +66,7 @@ test.describe('Quiz challenge', () => {
 
     // The navigation should be blocked, the user should stay on the same page
     await expect(page).toHaveURL(
-      '/learn/front-end-development/quiz-basic-html/quiz-basic-html'
+      '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html'
     );
 
     await expect(page.getByRole('dialog')).toBeVisible();
@@ -90,7 +83,7 @@ test.describe('Quiz challenge', () => {
       .getByRole('button', { name: 'Yes, I want to leave the quiz' })
       .click();
 
-    await page.waitForURL('/learn/front-end-development/#quiz-basic-html');
+    await page.waitForURL('/learn/full-stack-developer/#quiz-basic-html');
     await expect(
       page.getByRole('heading', { level: 3, name: 'Basic HTML Quiz' })
     ).toBeVisible();
@@ -109,21 +102,15 @@ test.describe('Quiz challenge', () => {
       .getByRole('button', { name: 'Yes, I want to leave the quiz' })
       .click();
 
-    await page.waitForURL('/learn/front-end-development/#quiz-basic-html');
+    await page.waitForURL('/learn/full-stack-developer/#quiz-basic-html');
     await expect(
       page.getByRole('heading', { level: 3, name: 'Basic HTML Quiz' })
     ).toBeVisible();
   });
 
   test('should show a confirm exit modal when user closes the page', async ({
-    page,
-    browserName
+    page
   }) => {
-    test.skip(
-      browserName === 'webkit' || browserName === 'chromium',
-      'This test is flaky on Chromium and WebKit'
-    );
-
     // Wait for the page content to render
     await expect(page.getByRole('radiogroup')).toHaveCount(20);
 

@@ -2,7 +2,7 @@
   "name": "CSS Typography Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-css-typography",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed9010f45ce3ece4053eb8", "title": "CSS Typography Quiz" }],

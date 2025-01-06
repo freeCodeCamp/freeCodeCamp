@@ -24,25 +24,27 @@ Uncomment your `h1`, `h2` and `p` elements.
 Your `h1` element should be visible on the page by uncommenting it.
 
 ```js
-assert($('h1').length > 0);
+assert.notEmpty(document.querySelectorAll('h1'));
 ```
 
 Your `h2` element should be visible on the page by uncommenting it.
 
 ```js
-assert($('h2').length > 0);
+assert.notEmpty(document.querySelectorAll('h2'));
 ```
 
 Your `p` element should be visible on the page by uncommenting it.
 
 ```js
-assert($('p').length > 0);
+assert.notEmpty(document.querySelectorAll('p'));
 ```
 
 No trailing comment tags should be visible on the page (i.e. `-->`).
 
 ```js
-assert(!$('*:contains("-->")')[1]);
+const elements = document.querySelectorAll('*');
+const potentialComments = Array.from(elements).filter(el => el.textContent.includes('-->'));
+assert.notExists(potentialComments[1])
 ```
 
 # --seed--

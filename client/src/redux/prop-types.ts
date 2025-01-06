@@ -2,8 +2,8 @@ import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../shared/config/curriculum';
 import { BlockLayouts, BlockTypes } from '../../../shared/config/blocks';
 import type { ChallengeFile, Ext } from '../../../shared/utils/polyvinyl';
-import { Themes } from '../components/settings/theme';
 import { type CertTitle } from '../../config/cert-and-project-map';
+import { UserThemes } from './types';
 
 export type { ChallengeFile, Ext };
 
@@ -316,7 +316,7 @@ export type User = {
   savedChallenges: SavedChallenges;
   sendQuincyEmail: boolean;
   sound: boolean;
-  theme: Themes;
+  theme: UserThemes;
   keyboardShortcuts: boolean;
   twitter: string;
   username: string;
@@ -404,14 +404,17 @@ export type ChallengeMeta = {
   id: string;
   introPath: string;
   isFirstStep: boolean;
-  nextChallengePath: string | null;
-  prevChallengePath: string | null;
   superBlock: SuperBlocks;
   title?: string;
   challengeType?: number;
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
+} & NavigationPaths;
+
+export type NavigationPaths = {
+  nextChallengePath?: string;
+  prevChallengePath?: string;
 };
 
 export type PortfolioProjectData = {
@@ -465,9 +468,7 @@ export interface GenerateExamResponseWithData {
 }
 
 export interface ExamTokenResponse {
-  data: {
-    examEnvironmentAuthorizationToken: string;
-  };
+  examEnvironmentAuthorizationToken: string;
 }
 // User Exam (null until they answer the question)
 interface UserExamAnswer {

@@ -98,7 +98,7 @@ const allStandardCerts = [
   },
   {
     id: '658180220947283cdc0689ce',
-    title: 'JavaScript Algorithms and Data Structures (Beta)',
+    title: 'JavaScript Algorithms and Data Structures',
     certSlug: Certification.JsAlgoDataStructNew,
     projects: [
       {
@@ -881,29 +881,19 @@ const liveCerts = showUpcomingChanges
   : [...currentCerts, ...legacyCerts, fullstackCert];
 
 type CertsToProjects = Record<
-  (typeof allStandardCerts)[number]['title'],
+  (typeof allStandardCerts)[number]['certSlug'],
   (typeof allStandardCerts)[number]['projects']
 >;
 
 const certsToProjects = allStandardCerts.reduce((acc, curr) => {
   return {
     ...acc,
-    [curr.title]: curr.projects
+    [curr.certSlug]: curr.projects
   };
 }, {} as CertsToProjects);
-
-const currentCertTitles = currentCerts.map(({ title }) => title);
-const legacyCertTitles = legacyCerts.map(({ title }) => title);
-const upcomingCertTitles = upcomingCerts.map(({ title }) => title);
 
 export type CertTitle =
   | (typeof liveCerts)[number]['title']
   | 'Legacy Full Stack';
 
-export {
-  currentCertTitles,
-  legacyCertTitles,
-  upcomingCertTitles,
-  liveCerts,
-  certsToProjects
-};
+export { liveCerts, certsToProjects };

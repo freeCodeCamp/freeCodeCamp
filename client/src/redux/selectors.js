@@ -42,6 +42,10 @@ export const shouldRequestDonationSelector = state => {
   // don't request donation if already donating
   if (isDonating) return false;
 
+  // donations only appear after the user has completed ten challenges (i.e.
+  // not before the 11th challenge has mounted)
+  if (completedChallengeCount < 10) return false;
+
   // a block has been completed
   if (recentlyClaimedBlock) return true;
 
@@ -55,10 +59,6 @@ export const shouldRequestDonationSelector = state => {
     // request
     return sessionChallengeData.countSinceSave >= 20;
   }
-
-  // donations only appear after the user has completed ten challenges (i.e.
-  // not before the 11th challenge has mounted)
-  if (completedChallengeCount < 10) return false;
 
   /*
    Show modal if user has completed 10 challanged in total
@@ -157,7 +157,7 @@ export const certificatesByNameSelector = username => state => {
       },
       {
         show: isJsAlgoDataStructCertV8,
-        title: 'JavaScript Algorithms and Data Structures (Beta) Certification',
+        title: 'JavaScript Algorithms and Data Structures Certification',
         certSlug: Certification.JsAlgoDataStructNew
       },
       {
@@ -259,6 +259,10 @@ export const allChallengesInfoSelector = state =>
 export const userProfileFetchStateSelector = state =>
   state[MainApp].userProfileFetchState;
 export const usernameSelector = state => state[MainApp].appUsername;
+export const themeSelector = state => state[MainApp].theme;
+export const userThemeSelector = state => {
+  return userSelector(state).theme;
+};
 export const userSelector = state => {
   const username = usernameSelector(state);
 

@@ -2,7 +2,7 @@
   "name": "Build a House Painting",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-house-painting",
   "superBlock": "full-stack-developer",

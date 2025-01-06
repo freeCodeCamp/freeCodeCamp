@@ -8,7 +8,8 @@ import { concatHtml } from '../rechallenge/builders';
 import {
   getTransformers,
   embedFilesInHtml,
-  getPythonTransformers
+  getPythonTransformers,
+  getMultifileJSXTransformers
 } from '../rechallenge/transformers';
 import {
   createTestFramer,
@@ -92,7 +93,7 @@ function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
   return source;
 }
 
-const buildFunctions = {
+export const buildFunctions = {
   [challengeTypes.js]: buildJSChallenge,
   [challengeTypes.jsProject]: buildJSChallenge,
   [challengeTypes.html]: buildDOMChallenge,
@@ -103,7 +104,8 @@ const buildFunctions = {
   [challengeTypes.multifileCertProject]: buildDOMChallenge,
   [challengeTypes.colab]: buildBackendChallenge,
   [challengeTypes.python]: buildPythonChallenge,
-  [challengeTypes.multifilePythonCertProject]: buildPythonChallenge
+  [challengeTypes.multifilePythonCertProject]: buildPythonChallenge,
+  [challengeTypes.lab]: buildDOMChallenge
 };
 
 export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
@@ -132,7 +134,8 @@ const testRunners = {
   [challengeTypes.pythonProject]: getDOMTestRunner,
   [challengeTypes.python]: getPyTestRunner,
   [challengeTypes.multifileCertProject]: getDOMTestRunner,
-  [challengeTypes.multifilePythonCertProject]: getPyTestRunner
+  [challengeTypes.multifilePythonCertProject]: getPyTestRunner,
+  [challengeTypes.lab]: getDOMTestRunner
 };
 // TODO: Figure out and (hopefully) simplify the return type.
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -227,18 +230,22 @@ export async function buildDOMChallenge(
 ): Promise<BuildResult> {
   // TODO: make this required in the schema.
   if (!challengeFiles) throw Error('No challenge files provided');
-  const loadEnzyme = challengeFiles.some(
+  const hasJsx = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx'
   );
+  const isMultifile = challengeFiles.length > 1;
 
-  const pipeLine = composeFunctions(...getTransformers(options));
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const transformers =
+    isMultifile && hasJsx
+      ? getMultifileJSXTransformers(options)
+      : getTransformers(options);
+
+  const pipeLine = composeFunctions(...transformers);
   const usesTestRunner = options?.usesTestRunner ?? false;
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
-  const [embeddedFiles, contents] = (await embedFilesInHtml(finalFiles)) as [
-    ChallengeFile[],
-    string
-  ];
+  const contents = (await embedFilesInHtml(finalFiles)) as string;
 
   // if there is an error, we just build the test runner so that it can be
   // used to run tests against the code without actually running the code.
@@ -256,8 +263,8 @@ export async function buildDOMChallenge(
     // necessary at the moment.
     challengeType: challengeTypes.html,
     build: concatHtml(toBuild),
-    sources: buildSourceMap(embeddedFiles),
-    loadEnzyme,
+    sources: buildSourceMap(finalFiles),
+    loadEnzyme: hasJsx,
     error
   };
 }
@@ -330,7 +337,8 @@ export function updatePreview(
 
   if (
     buildData.challengeType === challengeTypes.html ||
-    buildData.challengeType === challengeTypes.multifileCertProject
+    buildData.challengeType === challengeTypes.multifileCertProject ||
+    buildData.challengeType === challengeTypes.lab
   ) {
     return new Promise<void>(resolve =>
       createMainPreviewFramer(
@@ -364,7 +372,8 @@ export function updateProjectPreview(
 ): void {
   if (
     buildData.challengeType === challengeTypes.html ||
-    buildData.challengeType === challengeTypes.multifileCertProject
+    buildData.challengeType === challengeTypes.multifileCertProject ||
+    buildData.challengeType === challengeTypes.lab
   ) {
     createProjectPreviewFramer(
       document,
@@ -383,7 +392,8 @@ export function challengeHasPreview({ challengeType }: ChallengeMeta): boolean {
     challengeType === challengeTypes.modern ||
     challengeType === challengeTypes.multifileCertProject ||
     challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeType === challengeTypes.python
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.lab
   );
 }
 

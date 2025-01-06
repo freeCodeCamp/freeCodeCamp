@@ -26,6 +26,7 @@ import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
+import { getChallengePaths } from '../utils/challenge-paths';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -114,7 +115,6 @@ const ShowQuiz = ({
   const { t } = useTranslation();
   const curLocation = useLocation();
 
-  const { nextChallengePath, prevChallengePath } = challengeMeta;
   const container = useRef<HTMLElement | null>(null);
 
   // Campers are not allowed to change their answers once the quiz is submitted.
@@ -190,34 +190,21 @@ const ShowQuiz = ({
 
   useEffect(() => {
     initTests(tests);
+    const challengePaths = getChallengePaths({
+      currentCurriculumPaths: challengeMeta
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
     container.current?.focus();
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    updateChallengeMeta({
-      ...challengeMeta,
-      title,
-      challengeType,
-      helpCategory
-    });
-    challengeMounted(challengeMeta.id);
-  }, [
-    title,
-    challengeMeta,
-    challengeType,
-    helpCategory,
-    challengeMounted,
-    updateChallengeMeta
-  ]);
 
   const handleFinishQuiz = () => {
     setShowUnanswered(true);
@@ -299,8 +286,6 @@ const ShowQuiz = ({
     <Hotkeys
       executeChallenge={!isPassed ? handleFinishQuiz : handleSubmitAndGo}
       containerRef={container}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
     >
       <LearnLayout>
         <Helmet
@@ -318,7 +303,10 @@ const ShowQuiz = ({
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer size='m' />
-              <ChallengeDescription description={description} />
+              <ChallengeDescription
+                description={description}
+                superBlock={superBlock}
+              />
               <Spacer size='l' />
               <ObserveKeys>
                 <Quiz questions={quizData} disabled={hasSubmitted} />

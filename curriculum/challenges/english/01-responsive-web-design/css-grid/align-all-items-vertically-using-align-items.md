@@ -20,8 +20,9 @@ Use it now to move all the items to the end of each cell.
 `container` class should have a `align-items` property that has the value of `end`.
 
 ```js
-assert(
-  code.match(/.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi)
+assert.match(
+  code,
+  /.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi
 );
 ```
 
@@ -31,11 +32,21 @@ assert(
 
 ```html
 <style>
-  .item1{background:LightSkyBlue;}
-  .item2{background:LightSalmon;}
-  .item3{background:PaleTurquoise;}
-  .item4{background:LightPink;}
-  .item5{background:PaleGreen;}
+  .item1 {
+    background: LightSkyBlue;
+  }
+  .item2 {
+    background: LightSalmon;
+  }
+  .item3 {
+    background: PaleTurquoise;
+  }
+  .item4 {
+    background: LightPink;
+  }
+  .item5 {
+    background: PaleGreen;
+  }
 
   .container {
     font-size: 40px;
@@ -65,5 +76,9 @@ assert(
 # --solutions--
 
 ```html
-<style>.container {align-items: end;}</style>
+<style>
+  .container {
+    align-items: end;
+  }
+</style>
 ```

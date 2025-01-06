@@ -62,6 +62,7 @@ import { getGuideUrl } from '../utils';
 import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
+import { getChallengePaths } from '../utils/challenge-paths';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -204,7 +205,7 @@ function ShowClassic({
   },
   pageContext: {
     challengeMeta,
-    challengeMeta: { isFirstStep, nextChallengePath, prevChallengePath },
+    challengeMeta: { isFirstStep, nextChallengePath },
     projectPreview: { challengeData }
   },
   createFiles,
@@ -232,6 +233,7 @@ function ShowClassic({
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
+
   const guideUrl = getGuideUrl({ forumTopicId, title });
 
   const blockNameTitle = `${t(
@@ -247,7 +249,8 @@ function ShowClassic({
     challengeTypes.modern,
     challengeTypes.multifileCertProject,
     challengeTypes.multifilePythonCertProject,
-    challengeTypes.python
+    challengeTypes.python,
+    challengeTypes.lab
   ].includes(challengeType);
   const getLayoutState = () => {
     const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout | null;
@@ -370,11 +373,16 @@ function ShowClassic({
     // project and is shown (once) automatically. In contrast, labs are more
     // freeform, so the preview is shown on demand.
     if (demoType === 'onLoad') openModal('projectPreview');
+    const challengePaths = getChallengePaths({
+      currentCurriculumPaths: challengeMeta
+    });
+
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
     setIsAdvancing(false);
@@ -389,11 +397,11 @@ function ShowClassic({
   }) => {
     return (
       <SidePanel
-        block={block}
         challengeDescription={
           <ChallengeDescription
             description={description}
             instructions={instructions}
+            superBlock={superBlock}
           />
         }
         challengeTitle={
@@ -406,7 +414,6 @@ function ShowClassic({
         }
         instructionsPanelRef={instructionsPanelRef}
         toolPanel={toolPanel}
-        superBlock={superBlock}
         hasDemo={hasDemo}
       />
     );
@@ -443,8 +450,6 @@ function ShowClassic({
       executeChallenge={executeChallenge}
       containerRef={containerRef}
       instructionsPanelRef={instructionsPanelRef}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
     >

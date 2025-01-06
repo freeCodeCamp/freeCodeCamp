@@ -7,16 +7,22 @@ const schema = Joi.object()
     chapters: Joi.array().items(
       Joi.object().keys({
         dashedName: Joi.string().regex(slugRE).required(),
-        modules: Joi.array().items(
-          Joi.object().keys({
-            dashedName: Joi.string().regex(slugRE).required(),
-            blocks: Joi.array().items(
-              Joi.object().keys({
-                dashedName: Joi.string().regex(slugRE).required()
-              })
-            )
-          })
-        )
+        comingSoon: Joi.boolean().optional(),
+        chapterType: Joi.valid('exam').optional(),
+        modules: Joi.array()
+          .items(
+            Joi.object().keys({
+              moduleType: Joi.valid('review', 'exam').optional(),
+              comingSoon: Joi.boolean().optional(),
+              dashedName: Joi.string().regex(slugRE).required(),
+              blocks: Joi.array().items(
+                Joi.object().keys({
+                  dashedName: Joi.string().regex(slugRE).required()
+                })
+              )
+            })
+          )
+          .required()
       })
     )
   })

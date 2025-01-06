@@ -22,33 +22,31 @@ const settingsObject = {
 };
 
 const certifications = [
-  translations.certification.title['Responsive Web Design'],
-  translations.certification.title['JavaScript Algorithms and Data Structures'],
-  translations.certification.title['Front End Development Libraries'],
-  translations.certification.title['Data Visualization'],
-  translations.certification.title['Relational Database'],
-  translations.certification.title['Back End Development and APIs'],
-  translations.certification.title['Quality Assurance'],
-  translations.certification.title['Scientific Computing with Python'],
-  translations.certification.title['Data Analysis with Python'],
-  translations.certification.title['Information Security'],
-  translations.certification.title['Machine Learning with Python'],
-  translations.certification.title['College Algebra with Python'],
-  translations.certification.title['Foundational C# with Microsoft']
+  translations.certification.title['responsive-web-design'],
+  translations.certification.title[
+    'javascript-algorithms-and-data-structures-v8'
+  ],
+  translations.certification.title['front-end-development-libraries'],
+  translations.certification.title['data-visualization'],
+  translations.certification.title['relational-database-v8'],
+  translations.certification.title['back-end-development-and-apis'],
+  translations.certification.title['quality-assurance-v7'],
+  translations.certification.title['scientific-computing-with-python-v7'],
+  translations.certification.title['data-analysis-with-python-v7'],
+  translations.certification.title['information-security-v7'],
+  translations.certification.title['machine-learning-with-python-v7'],
+  translations.certification.title['college-algebra-with-python-v8'],
+  translations.certification.title['foundational-c-sharp-with-microsoft']
 ];
 
 const legacyCertifications = [
-  translations.certification.title['Legacy Front End'],
-  translations.certification.title['Legacy Back End'],
-  translations.certification.title['Legacy Data Visualization'],
-  translations.certification.title[
-    'Legacy Information Security and Quality Assurance'
-  ]
+  translations.certification.title['legacy-front-end'],
+  translations.certification.title['legacy-back-end'],
+  translations.certification.title['legacy-data-visualization'],
+  translations.certification.title['information-security-and-quality-assurance']
 ];
 
 test.describe('Settings - Certified User', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
     execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/settings');
@@ -170,15 +168,6 @@ test.describe('Settings - Certified User', () => {
       name: translations.buttons['download-data']
     });
     await expect(downloadButton).toBeVisible();
-
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['night-mode'],
-          exact: true
-        })
-        .locator('p')
-    ).toBeVisible();
     await expect(page.locator('#legendsound')).toBeVisible();
     await expect(
       page.getByText(translations.settings['sound-volume'])
@@ -262,8 +251,6 @@ test.describe('Settings - Certified User', () => {
 // Instead of simulating 6 cert claim flows,
 // we use the data of Certified User but remove the Full Stack cert.
 test.describe('Settings - Certified User without Full Stack Certification', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
     execSync(
       'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
