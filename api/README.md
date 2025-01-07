@@ -25,6 +25,16 @@ cd ../.. # back to the root of the repo
 pnpm seed
 ```
 
+### Troubleshooting
+
+If you have any issues connecting to the database (e.g. MongoServerError: not primary), try removing the volume and recreating the containers.
+
+```bash
+cd tools
+docker compose down -v
+docker compose up -d
+```
+
 ## Login in development/testing
 
 During development and testing, the api exposes the endpoint GET auth/dev-callback. Calling this will log you in as the user with the email `foo@bar.com` by setting the session cookie for that user.
