@@ -22,19 +22,16 @@ describe('superBlockOrder', () => {
 describe('generateSuperBlockList', () => {
   it('should return an array of SuperBlocks object with all elements when if all configs are true', () => {
     const result = generateSuperBlockList({
-      showNewCurriculum: true,
       showUpcomingChanges: true
     });
     expect(result).toHaveLength(Object.values(superBlockStages).flat().length);
   });
 
-  it('should return an array of SuperBlocks without New and Upcoming when { showNewCurriculum: false, showUpcomingChanges: false }', () => {
+  it('should return an array of SuperBlocks without Upcoming when { showUpcomingChanges: false }', () => {
     const result = generateSuperBlockList({
-      showNewCurriculum: false,
       showUpcomingChanges: false
     });
     const tempSuperBlockMap = { ...superBlockStages };
-    tempSuperBlockMap[SuperBlockStage.New] = [];
     tempSuperBlockMap[SuperBlockStage.Upcoming] = [];
     expect(result).toHaveLength(Object.values(tempSuperBlockMap).flat().length);
   });

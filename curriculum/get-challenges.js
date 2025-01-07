@@ -341,10 +341,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
 
     // const superOrder = getSuperOrder(meta.superBlock);
     // NOTE: Use this version when a super block is in beta.
-    const superOrder = getSuperOrder(meta.superBlock, {
-      // switch this back to SHOW_NEW_CURRICULUM when we're ready to beta the JS superblock
-      showNewCurriculum: process.env.SHOW_UPCOMING_CHANGES === 'true'
-    });
+    const superOrder = getSuperOrder(meta.superBlock);
     if (superOrder !== null) challenge.superOrder = superOrder;
     /* Since there can be more than one way to complete a certification (using the
    legacy curriculum or the new one, for instance), we need a certification
