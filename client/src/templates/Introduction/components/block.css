@@ -1,21 +1,17 @@
 /* these are all used in the AccordionBlock() layout in Block.tsx */
-.accordion-expanded-block {
+.accordion-block-expanded {
   padding: 0 24px;
 }
 
-.accordion-expanded-block .tags-wrapper {
-  padding: 18px 15px 0 15px;
-}
-
-.accordion-expanded-block .block-description {
+.accordion-block-expanded .block-description {
   padding: 18px 15px;
   border-bottom: 1px solid var(--secondary-background);
 }
 
-.accordion-expanded-block .challenge-jump-link {
+.accordion-block-expanded .challenge-jump-link {
   margin: 0 15px 25px 15px;
 }
 
-.accordion-expanded-block .map-challenges-grid {
-  margin: 0 15px 18px;
+.accordion-block-expanded .map-challenges-grid {
+  margin: 0 15px 18px 15px;
 }

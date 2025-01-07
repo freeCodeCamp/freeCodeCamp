@@ -6,7 +6,6 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
-import { isEmpty } from 'lodash';
 
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
@@ -358,10 +357,11 @@ class Block extends Component<BlockProps> {
             isCompleted={isBlockCompleted}
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
+            blockIntroArr={blockIntroArr}
           />
 
           {isExpanded && (
-            <div className='accordion-expanded-block'>
+            <div className='accordion-block-expanded'>
               {!isAudited && (
                 <div className='tags-wrapper'>
                   <Link
@@ -371,9 +371,6 @@ class Block extends Component<BlockProps> {
                     {t('misc.translation-pending')}
                   </Link>
                 </div>
-              )}
-              {!isEmpty(blockIntroArr) && (
-                <BlockIntros intros={blockIntroArr as string[]} />
               )}
               <div
                 id={`${block}-panel`}
