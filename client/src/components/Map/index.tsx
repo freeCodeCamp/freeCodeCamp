@@ -14,10 +14,7 @@ import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
-import {
-  showUpcomingChanges,
-  showNewCurriculum
-} from '../../../config/env.json';
+import { showUpcomingChanges } from '../../../config/env.json';
 
 import './map.css';
 
@@ -165,7 +162,6 @@ function Map({
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
       {getStageOrder({
-        showNewCurriculum,
         showUpcomingChanges
       }).map(stage => (
         <Fragment key={stage}>

@@ -29,8 +29,6 @@ RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) gener
 # following env vars.
 ARG SHOW_UPCOMING_CHANGES=false
 ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
-ARG SHOW_NEW_CURRICULUM=false
-ENV SHOW_NEW_CURRICULUM=$SHOW_NEW_CURRICULUM
 
 RUN pnpm build:curriculum
 RUN pnpm -F=api build
