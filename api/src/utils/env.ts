@@ -23,7 +23,7 @@ function isAllowedEnv(env: string): env is 'development' | 'production' {
   return ['development', 'production'].includes(env);
 }
 
-const EMAIL = process.env.EMAIL_PROVIDER || 'ses';
+const EMAIL_PROVIDER = process.env.EMAIL_PROVIDER || 'ses';
 
 function isAllowedProvider(provider: string): provider is 'ses' | 'nodemailer' {
   return ['ses', 'nodemailer'].includes(provider);
@@ -46,7 +46,7 @@ If so, ensure that the environment variable JEST_WORKER_ID is set.`
 assert.ok(process.env.HOME_LOCATION);
 assert.ok(process.env.FREECODECAMP_NODE_ENV);
 assert.ok(isAllowedEnv(process.env.FREECODECAMP_NODE_ENV));
-assert.ok(isAllowedProvider(EMAIL));
+assert.ok(isAllowedProvider(EMAIL_PROVIDER));
 assert.ok(process.env.AUTH0_CLIENT_ID);
 assert.ok(process.env.AUTH0_CLIENT_SECRET);
 assert.ok(process.env.AUTH0_DOMAIN);
@@ -70,11 +70,11 @@ function isLogLevel(level: string): level is LogLevel {
   return LOG_LEVELS.includes(level);
 }
 
-const LOG_LEVEL = process.env.FCC_API_LOG_LEVEL || 'info';
+const FCC_API_LOG_LEVEL = process.env.FCC_API_LOG_LEVEL || 'info';
 
 assert.ok(
-  isLogLevel(LOG_LEVEL),
-  `FCC_API_LOG_LEVEL must be one of ${LOG_LEVELS.join(', ')}. Found ${LOG_LEVEL}`
+  isLogLevel(FCC_API_LOG_LEVEL),
+  `FCC_API_LOG_LEVEL must be one of ${LOG_LEVELS.join(', ')}. Found ${FCC_API_LOG_LEVEL}`
 );
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
@@ -159,7 +159,6 @@ export const FCC_ENABLE_EXAM_ENVIRONMENT =
   process.env.FCC_ENABLE_EXAM_ENVIRONMENT === 'true';
 export const FCC_ENABLE_SENTRY_ROUTES =
   process.env.FCC_ENABLE_SENTRY_ROUTES === 'true';
-export const FCC_API_LOG_LEVEL = LOG_LEVEL;
 export const SENTRY_DSN =
   process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
     ? ''
@@ -174,7 +173,7 @@ export const JWT_SECRET = process.env.JWT_SECRET;
 export const SES_ID = process.env.SES_ID;
 export const SES_SECRET = process.env.SES_SECRET;
 export const SES_REGION = process.env.SES_REGION;
-export const EMAIL_PROVIDER = EMAIL;
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
+export { EMAIL_PROVIDER, FCC_API_LOG_LEVEL };
