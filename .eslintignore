@@ -10,4 +10,3 @@ shared/config/superblocks.js
 docs/**/*.md
 playwright*.config.ts
 playwright/**
-curriculum/challenges/**/*
