@@ -52,7 +52,6 @@ assert.ok(process.env.AUTH0_DOMAIN);
 assert.ok(process.env.API_LOCATION);
 assert.ok(process.env.JWT_SECRET);
 assert.ok(process.env.STRIPE_SECRET_KEY);
-assert.ok(process.env.SHOW_UPCOMING_CHANGES);
 assert.ok(process.env.MONGOHQ_URL);
 assert.ok(process.env.COOKIE_SECRET);
 
