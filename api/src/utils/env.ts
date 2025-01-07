@@ -23,6 +23,8 @@ function isAllowedEnv(env: string): env is 'development' | 'production' {
   return ['development', 'production'].includes(env);
 }
 
+const EMAIL = process.env.EMAIL_PROVIDER || 'ses';
+
 function isAllowedProvider(provider: string): provider is 'ses' | 'nodemailer' {
   return ['ses', 'nodemailer'].includes(provider);
 }
@@ -44,8 +46,7 @@ If so, ensure that the environment variable JEST_WORKER_ID is set.`
 assert.ok(process.env.HOME_LOCATION);
 assert.ok(process.env.FREECODECAMP_NODE_ENV);
 assert.ok(isAllowedEnv(process.env.FREECODECAMP_NODE_ENV));
-assert.ok(process.env.EMAIL_PROVIDER);
-assert.ok(isAllowedProvider(process.env.EMAIL_PROVIDER));
+assert.ok(isAllowedProvider(EMAIL));
 assert.ok(process.env.AUTH0_CLIENT_ID);
 assert.ok(process.env.AUTH0_CLIENT_SECRET);
 assert.ok(process.env.AUTH0_DOMAIN);
@@ -87,8 +88,6 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.ok(process.env.SES_REGION);
   assert.ok(process.env.COOKIE_DOMAIN);
   assert.notEqual(process.env.COOKIE_SECRET, 'a_cookie_secret');
-  assert.ok(process.env.PORT);
-  assert.ok(process.env.HOST);
   assert.ok(process.env.SENTRY_DSN);
   assert.ok(process.env.SENTRY_ENVIRONMENT);
   // The following values can exist in development, but production-like
@@ -130,6 +129,8 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
+// Mailhog is used in development and test environments, hence the localhost
+// default.
 export const MAILHOG_HOST = process.env.MAILHOG_HOST ?? 'localhost';
 export const MONGOHQ_URL =
   process.env.NODE_ENV === 'test'
@@ -144,7 +145,9 @@ export const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
 export const AUTH0_CLIENT_SECRET = process.env.AUTH0_CLIENT_SECRET;
 export const PORT = process.env.PORT || '3000';
-export const HOST = process.env.HOST || 'localhost';
+// HOST defaults to 0.0.0.0 because the server is intended to be used in a
+// container.
+export const HOST = process.env.HOST || '0.0.0.0';
 export const API_LOCATION = process.env.API_LOCATION;
 export const FCC_ENABLE_SWAGGER_UI =
   process.env.FCC_ENABLE_SWAGGER_UI === 'true';
@@ -171,7 +174,7 @@ export const JWT_SECRET = process.env.JWT_SECRET;
 export const SES_ID = process.env.SES_ID;
 export const SES_SECRET = process.env.SES_SECRET;
 export const SES_REGION = process.env.SES_REGION;
-export const EMAIL_PROVIDER = process.env.EMAIL_PROVIDER;
+export const EMAIL_PROVIDER = EMAIL;
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
