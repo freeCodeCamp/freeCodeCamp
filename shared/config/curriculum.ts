@@ -64,15 +64,9 @@ const defaultStageOrder = [
 
 export function getStageOrder({
   showNewCurriculum,
-  showUpcomingChanges,
-  showNextCurriculum
+  showUpcomingChanges
 }: Config): SuperBlockStage[] {
-  const isCurrentStage = (stage: SuperBlockStage) =>
-    !(stage === SuperBlockStage.Next) &&
-    !(stage === SuperBlockStage.NextEnglish);
-  const stageOrder = showNextCurriculum
-    ? [...defaultStageOrder]
-    : [...defaultStageOrder.filter(isCurrentStage)];
+  const stageOrder = [...defaultStageOrder];
 
   if (showNewCurriculum) stageOrder.push(SuperBlockStage.New);
   if (showUpcomingChanges) stageOrder.push(SuperBlockStage.Upcoming);
@@ -259,7 +253,6 @@ Object.freeze(notAuditedSuperBlocks);
 type Config = {
   showNewCurriculum: boolean;
   showUpcomingChanges: boolean;
-  showNextCurriculum: boolean;
 };
 
 export function generateSuperBlockList(config: Config): SuperBlocks[] {
@@ -280,8 +273,7 @@ export function getAuditedSuperBlocks({
   // To find the audited superblocks, we need to start with all superblocks.
   const flatSuperBlockMap = generateSuperBlockList({
     showNewCurriculum: true,
-    showUpcomingChanges: true,
-    showNextCurriculum: true
+    showUpcomingChanges: true
   });
   const auditedSuperBlocks = flatSuperBlockMap.filter(
     superBlock =>
