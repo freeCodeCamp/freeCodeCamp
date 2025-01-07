@@ -6,6 +6,7 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
+import { isEmpty } from 'lodash';
 
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
@@ -26,6 +27,7 @@ import BlockIntros from './block-intros';
 import BlockHeader from './block-header';
 
 import '../intro.css';
+import './block.css';
 
 const { curriculumLocale } = envData;
 
@@ -257,26 +259,30 @@ class Block extends Component<BlockProps> {
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
           />
-          {!isAudited && (
-            <div className='tags-wrapper'>
-              <Link
-                className='cert-tag'
-                to={t('links:help-translate-link-url')}
-              >
-                {t('misc.translation-pending')}
-              </Link>
-            </div>
-          )}
+
           {isExpanded && (
-            <div id={`${block}-panel`}>
-              <BlockIntros intros={blockIntroArr} />
-              <Challenges
-                challenges={extendedChallenges}
-                isProjectBlock={isProjectBlock}
-                isGridMap={true}
-                blockTitle={blockTitle}
-              />
-            </div>
+            <>
+              {!isAudited && (
+                <div className='tags-wrapper'>
+                  <Link
+                    className='cert-tag'
+                    to={t('links:help-translate-link-url')}
+                  >
+                    {t('misc.translation-pending')}
+                  </Link>
+                </div>
+              )}
+
+              <div id={`${block}-panel`}>
+                <BlockIntros intros={blockIntroArr} />
+                <Challenges
+                  challenges={extendedChallenges}
+                  isProjectBlock={isProjectBlock}
+                  isGridMap={true}
+                  blockTitle={blockTitle}
+                />
+              </div>
+            </>
           )}
         </div>
       </ScrollableAnchor>
@@ -352,11 +358,10 @@ class Block extends Component<BlockProps> {
             isCompleted={isBlockCompleted}
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
-            blockIntroArr={blockIntroArr}
           />
 
           {isExpanded && (
-            <>
+            <div className='accordion-expanded-block'>
               {!isAudited && (
                 <div className='tags-wrapper'>
                   <Link
@@ -366,6 +371,9 @@ class Block extends Component<BlockProps> {
                     {t('misc.translation-pending')}
                   </Link>
                 </div>
+              )}
+              {!isEmpty(blockIntroArr) && (
+                <BlockIntros intros={blockIntroArr as string[]} />
               )}
               <div
                 id={`${block}-panel`}
@@ -378,7 +386,7 @@ class Block extends Component<BlockProps> {
                   blockTitle={blockTitle}
                 />
               </div>
-            </>
+            </div>
           )}
         </div>
       </>
