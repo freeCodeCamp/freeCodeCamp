@@ -50,11 +50,8 @@ assert.ok(process.env.AUTH0_CLIENT_ID);
 assert.ok(process.env.AUTH0_CLIENT_SECRET);
 assert.ok(process.env.AUTH0_DOMAIN);
 assert.ok(process.env.API_LOCATION);
-assert.ok(process.env.FCC_ENABLE_SWAGGER_UI);
-assert.ok(process.env.FCC_ENABLE_DEV_LOGIN_MODE);
 assert.ok(process.env.JWT_SECRET);
 assert.ok(process.env.STRIPE_SECRET_KEY);
-assert.ok(process.env.SHOW_UPCOMING_CHANGES);
 assert.ok(process.env.MONGOHQ_URL);
 assert.ok(process.env.COOKIE_SECRET);
 
@@ -68,13 +65,15 @@ const LOG_LEVELS: LogLevel[] = [
   'silent'
 ] as const;
 
-function assertLogLevel(level: unknown): level is LogLevel {
-  return typeof level === 'string' && LOG_LEVELS.includes(level);
+function isLogLevel(level: string): level is LogLevel {
+  return LOG_LEVELS.includes(level);
 }
 
+const LOG_LEVEL = process.env.FCC_API_LOG_LEVEL || 'info';
+
 assert.ok(
-  assertLogLevel(process.env.FCC_API_LOG_LEVEL),
-  `FCC_API_LOG_LEVEL must be one of ${LOG_LEVELS.join(',')}. Found ${process.env.FCC_API_LOG_LEVEL}`
+  isLogLevel(LOG_LEVEL),
+  `FCC_API_LOG_LEVEL must be one of ${LOG_LEVELS.join(', ')}. Found ${LOG_LEVEL}`
 );
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
@@ -157,7 +156,7 @@ export const FCC_ENABLE_EXAM_ENVIRONMENT =
   process.env.FCC_ENABLE_EXAM_ENVIRONMENT === 'true';
 export const FCC_ENABLE_SENTRY_ROUTES =
   process.env.FCC_ENABLE_SENTRY_ROUTES === 'true';
-export const FCC_API_LOG_LEVEL = process.env.FCC_API_LOG_LEVEL;
+export const FCC_API_LOG_LEVEL = LOG_LEVEL;
 export const SENTRY_DSN =
   process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
     ? ''
