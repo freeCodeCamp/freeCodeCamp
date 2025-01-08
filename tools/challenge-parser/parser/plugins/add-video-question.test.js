@@ -35,7 +35,7 @@ describe('add-video-question plugin', () => {
     expect(question).toHaveProperty('text');
     expect(typeof question.text).toBe('string');
     expect(question).toHaveProperty('answer');
-    expect(typeof question.solution).toBe('string');
+    expect(typeof question.answer).toBe('string');
     expect(question).toHaveProperty('distractors');
     expect(Array.isArray(question.distractors)).toBe(true);
     expect(typeof question.distractors[0]).toBe('object');
