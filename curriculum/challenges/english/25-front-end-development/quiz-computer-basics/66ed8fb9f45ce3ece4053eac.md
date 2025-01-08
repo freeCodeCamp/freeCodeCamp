@@ -237,7 +237,7 @@ Pressing the `Delete` key on the keyboard (`Command + Delete` on Mac)
 
 #### --text--
 
-Which of the following is not a feature when searching for files?
+Which of the following is not a feature when searching for files locally?
 
 #### --distractors--
 
@@ -413,7 +413,7 @@ Pressing the Network/Internet button in Settings
 
 #### --text--
 
-Which of these peripherals is not the same type as the others?
+Which of these peripherals is an input device?
 
 #### --distractors--
 
