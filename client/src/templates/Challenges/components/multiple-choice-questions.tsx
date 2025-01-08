@@ -2,12 +2,16 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Spacer } from '@freecodecamp/ui';
-import { Question } from '../../../redux/prop-types';
+// import { Question } from '../../../redux/prop-types';
 import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';
 
 type MultipleChoiceQuestionsProps = {
-  questions: Question[];
+  questions: {
+    question: string;
+    answers: { answer: string; value: number; feedback: string | null }[];
+    correctAnswer: number;
+  }[];
   selectedOptions: (number | null)[];
   handleOptionChange: (questionIndex: number, answerIndex: number) => void;
   submittedMcqAnswers: (number | null)[];
@@ -36,7 +40,7 @@ function MultipleChoiceQuestions({
       />
       {questions.map((question, questionIndex) => (
         <div key={questionIndex}>
-          <PrismFormatted className={'line-numbers'} text={question.text} />
+          <PrismFormatted className={'line-numbers'} text={question.question} />
           <div className='video-quiz-options'>
             {question.answers.map(({ answer }, answerIndex) => {
               const isSubmittedAnswer =
@@ -46,13 +50,13 @@ function MultipleChoiceQuestions({
               const isCorrect =
                 submittedMcqAnswers[questionIndex] ===
                 // -1 because the solution is 1-indexed
-                questions[questionIndex].solution - 1;
+                questions[questionIndex].correctAnswer;
 
               return (
                 <React.Fragment key={answerIndex}>
                   <label
-                    className={`video-quiz-option-label 
-                      ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''} 
+                    className={`video-quiz-option-label
+                      ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''}
                       ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
                     htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
                   >

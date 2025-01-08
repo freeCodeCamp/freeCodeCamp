@@ -40,8 +40,8 @@ type MultipleChoiceAnswer = {
 
 export type Question = {
   text: string;
-  answers: MultipleChoiceAnswer[];
-  solution: number;
+  distractors: MultipleChoiceAnswer[];
+  answer: string;
 };
 
 export type FillInTheBlank = {
