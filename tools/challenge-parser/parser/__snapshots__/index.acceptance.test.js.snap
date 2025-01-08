@@ -87,7 +87,8 @@ exports[`challenge parser it should parse video questions 1`] = `
 </section>",
   "questions": [
     {
-      "answers": [
+      "answer": "<p><code> code in </code> code tags</p>",
+      "distractors": [
         {
           "answer": "<p>Some inline <code>code</code></p>",
           "feedback": "<p>That is not correct.</p>",
@@ -97,12 +98,7 @@ exports[`challenge parser it should parse video questions 1`] = `
 <p>A second answer paragraph.</p>",
           "feedback": null,
         },
-        {
-          "answer": "<p><code> code in </code> code tags</p>",
-          "feedback": null,
-        },
       ],
-      "solution": 3,
       "text": "<p>Question line 1</p>
 <pre><code class="language-js">  var x = 'y';
 </code></pre>",
