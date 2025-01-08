@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { writeFile, readFile } = require('fs/promises');
 const path = require('path');
 const util = require('util');
 const yaml = require('js-yaml');
@@ -16,6 +17,7 @@ const {
 
 const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
 const { createPoly } = require('../shared/utils/polyvinyl');
+const { challengeTypes } = require('../shared/config/challenge-types');
 const {
   getSuperOrder,
   getSuperBlockFromDir,
@@ -250,7 +252,7 @@ async function buildSuperBlocks({ path, fullPath }, curriculum) {
   return walk(fullPath, curriculum, { depth: 1, type: 'directories' }, cb);
 }
 
-async function buildChallenges({ path: filePath }, curriculum, lang) {
+async function buildChallenges({ path: filePath, fullPath }, curriculum, lang) {
   // path is relative to getChallengesDirForLang(lang)
   const block = getBlockNameFromPath(filePath);
   const superBlockDir = getBaseDir(filePath);
@@ -285,6 +287,72 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   const challenge = isCert
     ? await parseCert(englishPath)
     : await createChallenge(filePath, meta);
+
+  const stringifyFeedback = feedback =>
+    feedback
+      ? `
+### --feedback--
+
+${feedback}
+`
+      : '';
+
+  if (
+    challenge.challengeType == challengeTypes.multipleChoice ||
+    challenge.challengeType == challengeTypes.video ||
+    challenge.challengeType == challengeTypes.theOdinProject
+  ) {
+    const oldChallengeFile = await readFile(fullPath, { encoding: 'utf8' });
+    const beforeQuestions =
+      oldChallengeFile.split('# --questions--')[0] + '# --questions--\n';
+
+    const splitByVideoSolution = oldChallengeFile.split(
+      /## --video-solution--\n\n\d\n/
+    );
+    const noOfQuestions = splitByVideoSolution.length - 1;
+
+    const afterQuestions =
+      oldChallengeFile.split(/## --video-solution--\n\n\d\n/)[noOfQuestions] ||
+      '';
+    const withDistractors = challenge.questions.map(question => {
+      const { answers, text, solution: solutionId } = question;
+      const answerObj = answers[solutionId - 1];
+
+      const distractors = answers.filter(a => a !== answerObj);
+
+      return {
+        text,
+        distractors,
+        answer: answerObj
+      };
+    });
+
+    const questionsString = withDistractors
+      .map(({ text, distractors, answer }) =>
+        `
+## --text--
+
+${text}
+## --distractors--
+
+${distractors
+  .map(d => `${d.answer}${stringifyFeedback(d.feedback)}`.trim())
+  .join('\n\n---\n\n')}
+
+## --answer--
+
+${answer.answer}
+`.trim()
+      )
+      .join('\n\n');
+
+    await writeFile(
+      fullPath,
+      [beforeQuestions.trim(), questionsString.trim(), afterQuestions.trim()]
+        .join('\n\n')
+        .trim() + '\n\n'
+    );
+  }
 
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
