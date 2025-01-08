@@ -126,6 +126,16 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
     'client_secret_from_auth0_dashboard',
     'The Auth0 client secret should be changed from the default value.'
   );
+  assert.notEqual(
+    process.env.GROWTHBOOK_FASTIFY_API_HOST,
+    'fastify_api_sdk_api_host_from_growthbook_dashboard',
+    'The GROWTHBOOK_FASTIFY_API_HOST env should be changed from the default value.'
+  );
+  assert.notEqual(
+    process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY,
+    'fastify_api_sdk_client_key_from_growthbook_dashboard',
+    'The GROWTHBOOK_FASTIFY_CLIENT_KEY env should be changed from the default value.'
+  );
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
@@ -178,3 +188,7 @@ export const SES_REGION = process.env.SES_REGION || 'us-east-1';
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
+export const GROWTHBOOK_FASTIFY_API_HOST =
+  process.env.GROWTHBOOK_FASTIFY_API_HOST;
+export const GROWTHBOOK_FASTIFY_CLIENT_KEY =
+  process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY;
