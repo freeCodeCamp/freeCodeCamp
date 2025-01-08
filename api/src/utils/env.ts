@@ -24,6 +24,7 @@ function isAllowedEnv(env: string): env is 'development' | 'production' {
 }
 
 const EMAIL_PROVIDER = process.env.EMAIL_PROVIDER || 'ses';
+const FREECODECAMP_NODE_ENV = process.env.FREECODECAMP_NODE_ENV || 'production';
 
 function isAllowedProvider(provider: string): provider is 'ses' | 'nodemailer' {
   return ['ses', 'nodemailer'].includes(provider);
@@ -31,7 +32,7 @@ function isAllowedProvider(provider: string): provider is 'ses' | 'nodemailer' {
 
 function createTestConnectionURL(url: string, dbId?: string) {
   assert.notEqual(
-    process.env.FREECODECAMP_NODE_ENV,
+    FREECODECAMP_NODE_ENV,
     'production',
     "The database URL can't be modified in production."
   );
@@ -44,8 +45,7 @@ If so, ensure that the environment variable JEST_WORKER_ID is set.`
 }
 
 assert.ok(process.env.HOME_LOCATION);
-assert.ok(process.env.FREECODECAMP_NODE_ENV);
-assert.ok(isAllowedEnv(process.env.FREECODECAMP_NODE_ENV));
+assert.ok(isAllowedEnv(FREECODECAMP_NODE_ENV));
 assert.ok(isAllowedProvider(EMAIL_PROVIDER));
 assert.ok(process.env.AUTH0_CLIENT_ID);
 assert.ok(process.env.AUTH0_CLIENT_SECRET);
@@ -140,7 +140,6 @@ export const MONGOHQ_URL =
       )
     : process.env.MONGOHQ_URL;
 
-export const FREECODECAMP_NODE_ENV = process.env.FREECODECAMP_NODE_ENV;
 export const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
 export const AUTH0_CLIENT_SECRET = process.env.AUTH0_CLIENT_SECRET;
@@ -176,4 +175,4 @@ export const SES_REGION = process.env.SES_REGION;
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
-export { EMAIL_PROVIDER, FCC_API_LOG_LEVEL };
+export { EMAIL_PROVIDER, FCC_API_LOG_LEVEL, FREECODECAMP_NODE_ENV };
