@@ -24,7 +24,7 @@ Question line 1
   var x = 'y';
 ```
 
-## --answers--
+## --distractors--
 
 Some inline `code`
 
@@ -38,10 +38,6 @@ Some *italics*
 
 A second answer paragraph.
 
----
+## --answer--
 
 <code> code in </code> code tags
-
-## --video-solution--
-
-3

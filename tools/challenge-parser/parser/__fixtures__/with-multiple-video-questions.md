@@ -24,7 +24,7 @@ Question line 1
   var x = 'y';
 ```
 
-## --answers--
+## --distractors--
 
 Some inline `code`
 
@@ -38,13 +38,9 @@ Some *italics*
 
 A second answer paragraph.
 
----
+## --answer--
 
 <code> code in </code> code tags
-
-## --video-solution--
-
-3
 
 ## --text--
 
@@ -54,7 +50,7 @@ Question 2
   var anything = 'y';
 ```
 
-## --answers--
+## --distractors--
 
 Some inline `code` again
 
@@ -64,14 +60,10 @@ That is not correct.
 
 ---
 
+<code> code in </code> code tags
+
+## --answer--
+
 Some *italics*
 
 A second answer paragraph.
-
----
-
-<code> code in </code> code tags
-
-## --video-solution--
-
-2
