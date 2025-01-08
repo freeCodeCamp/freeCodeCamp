@@ -281,9 +281,9 @@ export const SuperBlockAccordion = ({
         });
 
         const chapterStepIdsSet = new Set(chapterStepIds);
-        const completedStepsInChapter = completedChallengeIds.filter(id =>
-          chapterStepIdsSet.has(id)
-        );
+        const completedStepsInChapter = new Set(
+          completedChallengeIds.filter(id => chapterStepIdsSet.has(id))
+        ).size;
 
         return (
           <Chapter
@@ -291,7 +291,7 @@ export const SuperBlockAccordion = ({
             dashedName={chapter.name}
             isExpanded={expandedChapter === chapter.name}
             totalSteps={chapterStepIds.length}
-            completedSteps={completedStepsInChapter.length}
+            completedSteps={completedStepsInChapter}
           >
             {chapter.modules.map(module => {
               // show coming soon on production, and all the challenges in dev
@@ -321,9 +321,9 @@ export const SuperBlockAccordion = ({
               );
 
               const moduleStepIdsSet = new Set(moduleStepIds);
-              const completedStepsInModule = completedChallengeIds.filter(id =>
-                moduleStepIdsSet.has(id)
-              );
+              const completedStepsInModule = new Set(
+                completedChallengeIds.filter(id => moduleStepIdsSet.has(id))
+              ).size;
 
               return (
                 <Module
@@ -331,7 +331,7 @@ export const SuperBlockAccordion = ({
                   dashedName={module.name}
                   isExpanded={expandedModule === module.name}
                   totalSteps={moduleStepIds.length}
-                  completedSteps={completedStepsInModule.length}
+                  completedSteps={completedStepsInModule}
                 >
                   {module.blocks.map(block => (
                     // maybe TODO: allow blocks to be "coming soon"
