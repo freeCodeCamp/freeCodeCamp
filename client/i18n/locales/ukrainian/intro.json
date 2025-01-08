@@ -1893,7 +1893,7 @@
       "workshop-final-exams-table": {
         "title": "Створіть таблицю з кінцевими екзаменами",
         "intro": [
-          "У цьому практичному занятті ви дізнаєтесь, як працювати з HTML-таблицями, створивши таблицю кінцевих екзаменів."
+          "In this workshop, you will practice working with HTML tables by building a table of final exams."
         ]
       },
       "lab-book-catalog-table": {
