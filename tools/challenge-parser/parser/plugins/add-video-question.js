@@ -3,7 +3,6 @@ const find = require('unist-util-find');
 const { getSection } = require('./utils/get-section');
 const getAllBefore = require('./utils/before-heading');
 const mdastToHtml = require('./utils/mdast-to-html');
-const { getParagraphContent } = require('./utils/get-paragraph-content');
 
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
@@ -30,10 +29,10 @@ function plugin() {
         const questionTree = root(questionNodes);
 
         const textNodes = getSection(questionTree, '--text--');
-        const answersNodes = getSection(questionTree, '--answers--');
-        const solutionNodes = getSection(questionTree, '--video-solution--');
+        const distractorNodes = getSection(questionTree, '--distractors--');
+        const solutionNodes = getSection(questionTree, '--answer--');
 
-        questions.push(getQuestion(textNodes, answersNodes, solutionNodes));
+        questions.push(getQuestion(textNodes, distractorNodes, solutionNodes));
       });
 
       file.data.questions = questions;
@@ -41,28 +40,28 @@ function plugin() {
   }
 }
 
-function getQuestion(textNodes, answersNodes, solutionNodes) {
+function getQuestion(textNodes, distractorsNodes, answerNodes) {
   const text = mdastToHtml(textNodes);
-  const answers = getAnswers(answersNodes);
-  const solution = getSolution(solutionNodes);
+  const distractors = getDistractors(distractorsNodes);
+  const answer = getAnswer(answerNodes);
 
   if (!text) throw Error('text is missing from question');
-  if (!answers) throw Error('answers are missing from question');
-  if (!solution) throw Error('solution is missing from question');
+  if (!distractors) throw Error('distractors are missing from question');
+  if (!answer) throw Error('answer is missing from question');
 
-  return { text, answers, solution };
+  return { text, distractors, answer };
 }
 
-function getAnswers(answersNodes) {
-  const answerGroups = splitOnThematicBreak(answersNodes);
+function getDistractors(distractorsNodes) {
+  const distractorGroups = splitOnThematicBreak(distractorsNodes);
 
-  return answerGroups.map(answerGroup => {
-    const answerTree = root(answerGroup);
-    const feedback = find(answerTree, { value: '--feedback--' });
+  return distractorGroups.map(distractorGroup => {
+    const distractorTree = root(distractorGroup);
+    const feedback = find(distractorTree, { value: '--feedback--' });
 
     if (feedback) {
-      const answerNodes = getAllBefore(answerTree, '--feedback--');
-      const feedbackNodes = getSection(answerTree, '--feedback--');
+      const answerNodes = getAllBefore(distractorTree, '--feedback--');
+      const feedbackNodes = getSection(distractorTree, '--feedback--');
 
       if (answerNodes.length < 1) {
         throw Error('Answer missing');
@@ -74,22 +73,12 @@ function getAnswers(answersNodes) {
       };
     }
 
-    return { answer: mdastToHtml(answerGroup), feedback: null };
+    return { answer: mdastToHtml(distractorGroup), feedback: null };
   });
 }
 
-function getSolution(solutionNodes) {
-  let solution;
-  try {
-    solution = Number(getParagraphContent(solutionNodes[0]));
-    if (Number.isNaN(solution)) throw Error('Not a number');
-    if (solution < 1) throw Error('Not positive number');
-  } catch (e) {
-    console.log(e);
-    throw Error('A video solution should be a positive integer');
-  }
-
-  return solution;
+function getAnswer(solutionNodes) {
+  return mdastToHtml(solutionNodes);
 }
 
 module.exports = plugin;
