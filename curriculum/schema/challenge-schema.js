@@ -84,7 +84,7 @@ const commandJoi = Joi.object().keys({
 
 const questionJoi = Joi.object().keys({
   text: Joi.string().required(),
-  answers: Joi.array()
+  distractors: Joi.array()
     .items(
       Joi.object().keys({
         answer: Joi.string().required(),
@@ -92,7 +92,7 @@ const questionJoi = Joi.object().keys({
       })
     )
     .required(),
-  solution: Joi.number().required()
+  answer: Joi.number().required()
 });
 
 const quizJoi = Joi.object().keys({
