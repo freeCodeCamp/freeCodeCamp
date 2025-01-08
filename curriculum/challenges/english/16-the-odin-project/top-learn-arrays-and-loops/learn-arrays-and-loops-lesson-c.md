@@ -42,13 +42,9 @@ console.log(animals);
 console.log(removed);
 ```
 
-## --answers--
+## --distractors--
 
 `['deer', 'whale', 'frog', 'shark', 'bear']` and `'bear'`
-
----
-
-`['deer', 'whale', 'frog', 'shark']` and `'bear'`
 
 ---
 
@@ -58,6 +54,7 @@ console.log(removed);
 
 `['deer', 'whale', 'frog', 'shark', 'bear']` and `['deer', 'whale', 'frog', 'shark']`
 
-## --video-solution--
+## --answer--
 
-2
+`['deer', 'whale', 'frog', 'shark']` and `'bear'`
+

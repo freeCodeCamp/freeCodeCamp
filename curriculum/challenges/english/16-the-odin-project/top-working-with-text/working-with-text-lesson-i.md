@@ -26,11 +26,7 @@ Ordered lists are created using the `<ol>` element. Each individual item in them
 
 What HTML tag is used to create an ordered list?
 
-## --answers--
-
-`<ol>`
-
----
+## --distractors--
 
 `<li>`
 
@@ -38,6 +34,7 @@ What HTML tag is used to create an ordered list?
 
 `<ul>`
 
-## --video-solution--
+## --answer--
 
-1
+`<ol>`
+

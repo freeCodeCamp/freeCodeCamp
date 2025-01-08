@@ -20,11 +20,7 @@ let sentence = "freeCodeCamp loves The Odin Project!";
 
 Which method should be used to check if the word `loves` is present in the string?
 
-## --answers--
-
-The `includes()` method should be used to check if the word `loves` is present in the string.
-
----
+## --distractors--
 
 The `indexOf()` method should be used to check if the word `loves` is present in the string.
 
@@ -36,6 +32,7 @@ The `search()` method should be used to check if the word `loves` is present in 
 
 The `toUpperCase()` method should be used to check if the word `loves` is present in the string.
 
-## --video-solution--
+## --answer--
 
-1
+The `includes()` method should be used to check if the word `loves` is present in the string.
+

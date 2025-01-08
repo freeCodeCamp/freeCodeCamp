@@ -45,18 +45,15 @@ It’s worth noting you can use anchor tags to link to any kind of resource on t
 
 What attribute tells links where to go to?
 
-## --answers--
+## --distractors--
 
 `src`
 
 ---
 
-`href`
-
----
-
 `link`
 
-## --video-solution--
+## --answer--
 
-2
+`href`
+

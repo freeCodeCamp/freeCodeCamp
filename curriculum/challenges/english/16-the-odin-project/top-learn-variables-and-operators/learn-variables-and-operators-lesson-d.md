@@ -43,7 +43,7 @@ let my-name; // hyphens '-' aren't allowed in the name
 
 Which of the following is a valid JavaScript variable name?
 
-## --answers--
+## --distractors--
 
 `let 2things;`
 
@@ -55,11 +55,7 @@ Which of the following is a valid JavaScript variable name?
 
 `let var!;`
 
----
+## --answer--
 
 `let $myVar;`
 
-
-## --video-solution--
-
-4

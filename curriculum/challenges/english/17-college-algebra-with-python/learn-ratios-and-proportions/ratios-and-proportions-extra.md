@@ -20,7 +20,7 @@ Open the following Colab notebook, run the cell, and <a href="https://colab.rese
 
 What is another way to write 0.9999... (repeating 9)?
 
-## --answers--
+## --distractors--
 
 99 percent
 
@@ -30,12 +30,9 @@ You can't get an exact answer
 
 ---
 
-1
-
----
-
 Almost 1
 
-## --video-solution--
+## --answer--
 
-3
+1
+

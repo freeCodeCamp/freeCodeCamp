@@ -26,7 +26,7 @@ What is another way to produce the following array?
 [0. 0. 0. 0. 0. 0. 0.]]
 ```
 
-## --answers--
+## --distractors--
 
 ```py
 output = np.ones((7, 7))
@@ -40,17 +40,6 @@ output[1:1, -1:-1] = z
 ---
 
 ```py
-output = np.zeros((7,7))
-
-z = np.ones((5, 5))
-z[2, 2] = 5
-
-output[1:-1, 1:-1] = z
-```
-
----
-
-```py
 output = np.ones((7, 7))
 
 z = np.zeros((5, 5))
@@ -59,7 +48,14 @@ z[3, 3] = 5
 output[1:-1, 1:-1] = z
 ```
 
-## --video-solution--
+## --answer--
 
-2
+```py
+output = np.zeros((7,7))
+
+z = np.ones((5, 5))
+z[2, 2] = 5
+
+output[1:-1, 1:-1] = z
+```
 

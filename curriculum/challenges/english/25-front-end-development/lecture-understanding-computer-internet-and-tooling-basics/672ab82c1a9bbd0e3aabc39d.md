@@ -16,7 +16,7 @@ Watch the lecture video and answer the questions below.
 
 What is one of the risks of gripping the mouse too tightly?
 
-## --answers--
+## --distractors--
 
 It can improve your accuracy in gaming.
 
@@ -34,25 +34,21 @@ Pay attention to the advice about mouse grip in the video.
 
 ---
 
-It can cause hand and wrist issues.
-
----
-
 It improves your overall performance.
 
 ### --feedback--
 
 Pay attention to the advice about mouse grip in the video.
 
-## --video-solution--
+## --answer--
 
-3
+It can cause hand and wrist issues.
 
 ## --text--
 
 What is the benefit of using an ergonomic keyboard and mouse?
 
-## --answers--
+## --distractors--
 
 They help you type faster.
 
@@ -70,35 +66,27 @@ The video mentions ergonomic devices as a way to protect your hands and wrists.
 
 ---
 
-They reduce wrist strain by keeping your hands in a more natural position.
-
----
-
 They increase screen resolution.
 
 ### --feedback--
 
 The video mentions ergonomic devices as a way to protect your hands and wrists.
 
-## --video-solution--
+## --answer--
 
-3
+They reduce wrist strain by keeping your hands in a more natural position.
 
 ## --text--
 
 What is the recommendation for the height of your mouse in relation to your keyboard?
 
-## --answers--
+## --distractors--
 
 The mouse should be far above the keyboard.
 
 ### --feedback--
 
 Think about how to position your mouse to avoid wrist and arm strain.
-
----
-
-The mouse should be at the same height as the keyboard.
 
 ---
 
@@ -116,6 +104,7 @@ The mouse should be higher than the keyboard.
 
 Think about how to position your mouse to avoid wrist and arm strain.
 
-## --video-solution--
+## --answer--
 
-2
+The mouse should be at the same height as the keyboard.
+

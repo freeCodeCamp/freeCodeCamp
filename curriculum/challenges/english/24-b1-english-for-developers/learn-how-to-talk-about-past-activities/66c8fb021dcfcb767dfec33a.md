@@ -16,7 +16,7 @@ Listen to the audio and answer the question below.
 
 Which statement below is true?
 
-## --answers--
+## --distractors--
 
 They have never fixed any issues like this before.
 
@@ -34,19 +34,15 @@ Consider whether Linda says they have experience with this specific issue or som
 
 ---
 
-They haven't fixed this exact issue, but they have fixed similar ones before.
-
----
-
 They have fixed this issue many times before.
 
 ### --feedback--
 
 Reflect on whether Linda is talking about having fixed this exact issue or something similar.
-  
-## --video-solution--
 
-3
+## --answer--
+
+They haven't fixed this exact issue, but they have fixed similar ones before.
 
 # --explanation--
 
@@ -112,3 +108,4 @@ The correct answer should show this balance—acknowledging no exact match but c
   ]
 }
 ```
+

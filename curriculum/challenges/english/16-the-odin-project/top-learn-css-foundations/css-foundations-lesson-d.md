@@ -49,13 +49,13 @@ You can take the two elements above and combine them with the following:
 
 In general, you can’t chain more than one type selector since an element can’t be two different types at once. For example, chaining two type selectors like `div` and `p` would give us the selector `divp`, which wouldn’t work since the selector would try to find a literal `<divp>` element, which doesn’t exist.
 
-# --questions--    
+# --questions--
 
 ## --text--
 
 Given an element that has an `id` of `title` and a `class` of `primary`, how would you use both attributes for a single rule?
 
-## --answers--
+## --distractors--
 
 ```css
 .title.primary {
@@ -71,7 +71,7 @@ Given an element that has an `id` of `title` and a `class` of `primary`, how wou
 }
 ```
 
----
+## --answer--
 
 ```css
 #title.primary { 
@@ -79,7 +79,3 @@ Given an element that has an `id` of `title` and a `class` of `primary`, how wou
 }
 ```
 
-
-## --video-solution--
-
-3

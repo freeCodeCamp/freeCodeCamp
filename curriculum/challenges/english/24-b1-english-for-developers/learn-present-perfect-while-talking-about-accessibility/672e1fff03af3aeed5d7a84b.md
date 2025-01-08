@@ -17,7 +17,7 @@ Listen to the audio and answer the question below.
 
 What does Anna think about James' ideas, and what does she suggest?
 
-## --answers--
+## --distractors--
 
 She disagrees with James' ideas and suggests starting a new approach.
 
@@ -35,19 +35,15 @@ Anna doesn't find James' ideas confusing; she agrees and wants to monitor progre
 
 ---
 
-She agrees with James and suggests they stay in contact to monitor progress.
-
----
-
 She thinks James' ideas are unnecessary and suggests stopping the project.
 
 ### --feedback--
 
 Anna doesn't suggest stopping; she supports James' ideas and wants to stay updated.
 
-## --video-solution--
+## --answer--
 
-3
+She agrees with James and suggests they stay in contact to monitor progress.
 
 # --explanation--
 
@@ -100,3 +96,4 @@ Anna agrees with James' approach, saying `That makes sense`, which shows she und
   ]
 }
 ```
+

@@ -15,7 +15,7 @@ Because the box model concept is so incredibly fundamental, let’s dig a bit de
 
 Would you use margin or padding to create more space between 2 elements?
 
-## --answers--
+## --distractors--
 
 Padding
 
@@ -27,11 +27,7 @@ Both margin and padding can be used interchangeably
 
 Neither margin nor padding can be used to create more space between elements
 
----
+## --answer--
 
 Margin
 
-
-## --video-solution--
-
-4

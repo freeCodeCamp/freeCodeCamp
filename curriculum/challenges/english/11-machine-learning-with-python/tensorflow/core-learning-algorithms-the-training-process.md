@@ -16,11 +16,7 @@ dashedName: core-learning-algorithms-the-training-process
 
 What are epochs?
 
-## --answers--
-
-The number of times the model will see the same data.
-
----
+## --distractors--
 
 A type of graph.
 
@@ -28,7 +24,7 @@ A type of graph.
 
 The number of elements you feed to the model at once.
 
-## --video-solution--
+## --answer--
 
-1
+The number of times the model will see the same data.
 

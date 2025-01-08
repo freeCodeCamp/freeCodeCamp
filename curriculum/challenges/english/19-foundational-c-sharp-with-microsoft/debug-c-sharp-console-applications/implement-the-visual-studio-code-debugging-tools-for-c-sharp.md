@@ -22,18 +22,15 @@ Complete the <a href="https://learn.microsoft.com/training/modules/implement-vis
 
 Which section of the RUN AND DEBUG view is used to track the current point of execution within the running application?
 
-## --answers--
+## --distractors--
 
 The VARIABLES section.
 
 ---
 
-The CALL STACK section.
-
----
-
 The WATCH section.
 
-## --video-solution--
+## --answer--
 
-2
+The CALL STACK section.
+

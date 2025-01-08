@@ -25,19 +25,15 @@ More resources:
 
 What does the `loc` method allow you to do?
 
-## --answers--
+## --distractors--
 
 Retrieve a subset of rows and columns by supplying integer-location arguments.
 
 ---
 
-Access a group of rows and columns by supplying label(s) arguments.
-
----
-
 Returns the first `n` rows based on the integer argument supplied.
 
-## --video-solution--
+## --answer--
 
-2
+Access a group of rows and columns by supplying label(s) arguments.
 

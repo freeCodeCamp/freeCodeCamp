@@ -20,13 +20,9 @@ The next few video lessons will reference [this Colab notebook](https://colab.re
 
 Which of the following is **not** a type of tensor?
 
-## --answers--
+## --distractors--
 
 Variable
-
----
-
-Flowing
 
 ---
 
@@ -40,7 +36,7 @@ SparseTensor
 
 Constant
 
-## --video-solution--
+## --answer--
 
-2
+Flowing
 

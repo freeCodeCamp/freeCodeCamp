@@ -50,13 +50,13 @@ Instead of a period, you use a hashtag immediately followed by the case-sensitiv
 
 The major difference between classes and IDs is that an element can only have one `id`. An `id` cannot be repeated on a single page, and the `id` attribute should not contain any whitespace at all.
 
-# --questions--    
+# --questions--
 
 ## --text--
 
 What is the syntax for class and ID selectors?
 
-## --answers--
+## --distractors--
 
 To select a `class` you use `$` and to select an `id` you use `#`
 
@@ -64,11 +64,7 @@ To select a `class` you use `$` and to select an `id` you use `#`
 
 To select a `class` you use `.` and to select an `id` you use `*`
 
----
+## --answer--
 
 To select a `class` you use `.` and to select an `id` you use `#`
 
-
-## --video-solution--
-
-3

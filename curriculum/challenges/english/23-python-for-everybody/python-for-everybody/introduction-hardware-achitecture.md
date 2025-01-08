@@ -16,19 +16,15 @@ dashedName: introduction-hardware-architecture
 
 Where are your programs stored when they are running?
 
-## --answers--
+## --distractors--
 
 Hard Drive.
 
 ---
 
-Memory.
-
----
-
 Central Processing Unit.
 
-## --video-solution--
+## --answer--
 
-2
+Memory.
 

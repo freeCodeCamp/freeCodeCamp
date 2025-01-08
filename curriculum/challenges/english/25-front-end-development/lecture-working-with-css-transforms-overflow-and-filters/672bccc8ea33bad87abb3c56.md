@@ -16,11 +16,7 @@ Watch the lecture video and answer the questions below.
 
 Which of the following is the default value for the `box-sizing` property in most browsers?
 
-## --answers--
-
-`content-box`
-
----
+## --distractors--
 
 `border-box`
 
@@ -44,15 +40,15 @@ Think about the default behavior for element sizing.
 
 Think about the default behavior for element sizing.
 
-## --video-solution--
+## --answer--
 
-1
+`content-box`
 
 ## --text--
 
 What is the primary advantage of using `border-box` for creating responsive layouts?
 
-## --answers--
+## --distractors--
 
 It makes the calculations more complicated.
 
@@ -70,35 +66,27 @@ Think about how the `border-box` model handles `padding` and `border` within the
 
 ---
 
-It ensures that elements maintain their specified dimensions regardless of changes in `padding` or `border`.
-
----
-
 It improves browser compatibility.
 
 ### --feedback--
 
 Think about how the `border-box` model handles `padding` and `border` within the specified `width` and `height`.
 
-## --video-solution--
+## --answer--
 
-3
+It ensures that elements maintain their specified dimensions regardless of changes in `padding` or `border`.
 
 ## --text--
 
 In the `content-box` model, what does the specified `width` of an element represent?
 
-## --answers--
+## --distractors--
 
 The total `width` of the element, including `padding`, `border`, and `margin`.
 
 ### --feedback--
 
 Think about the relationship between the content area and the overall element dimensions in the `content-box` model.
-
----
-
-The `width` of the content area only.
 
 ---
 
@@ -116,6 +104,7 @@ The `width` of the `padding`.
 
 Think about the relationship between the content area and the overall element dimensions in the `content-box` model.
 
-## --video-solution--
+## --answer--
 
-2
+The `width` of the content area only.
+

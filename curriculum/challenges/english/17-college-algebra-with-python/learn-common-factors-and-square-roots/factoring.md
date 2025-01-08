@@ -18,7 +18,7 @@ Here is the <a href="https://colab.research.google.com/drive/1tB7N3QqHEbGk33v0Bd
 
 What does the modulus (`%`) operator do in Python?
 
-## --answers--
+## --distractors--
 
 returns the percent
 
@@ -28,12 +28,9 @@ divides
 
 ---
 
-returns the remainder when dividing
-
----
-
 creates a space
 
-## --video-solution--
+## --answer--
 
-3
+returns the remainder when dividing
+

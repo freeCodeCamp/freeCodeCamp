@@ -27,7 +27,7 @@ for itervar in [3, 41, 12, 9, 74, 15]:
 print("Smallest:", smallest)
 ```
 
-## --answers--
+## --distractors--
 
 3
 
@@ -37,13 +37,9 @@ print("Smallest:", smallest)
 
 ---
 
-6
-
----
-
 7
 
-## --video-solution--
+## --answer--
 
-3
+6
 

@@ -16,7 +16,7 @@ dashedName: working-with-lists
 
 Which method is used to add an item at the end of a list?
 
-## --answers--
+## --distractors--
 
 insert
 
@@ -26,13 +26,9 @@ push
 
 ---
 
-append
-
----
-
 new
 
-## --video-solution--
+## --answer--
 
-3
+append
 

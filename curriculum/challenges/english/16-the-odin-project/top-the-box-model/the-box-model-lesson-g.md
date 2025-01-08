@@ -30,7 +30,7 @@ Add a border to every element on the page and see how the boxes are laid out.
 
 From inside to outside, what is the order of box-model properties?
 
-## --answers--
+## --distractors--
 
 Content, Margin, Padding, Border
 
@@ -40,13 +40,9 @@ Margin, Padding, Content, Border
 
 ---
 
-Content, Padding, Border, Margin
-
----
-
 Padding, Content, Border, Margin
 
+## --answer--
 
-## --video-solution--
+Content, Padding, Border, Margin
 
-3

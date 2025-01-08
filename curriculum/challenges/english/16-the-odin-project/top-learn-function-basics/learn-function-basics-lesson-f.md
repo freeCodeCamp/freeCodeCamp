@@ -31,7 +31,7 @@ In the example above, the arrow function `add` takes two parameters `a` and `b` 
 
 What makes arrow functions different from traditional function expressions in JavaScript?
 
-## --answers--
+## --distractors--
 
 They cannot return values.
 
@@ -41,12 +41,9 @@ They cannot take parameters.
 
 ---
 
-They have a more compact syntax compared to traditional function expressions.
-
----
-
 They require the use of the `function` keyword.
 
-## --video-solution--
+## --answer--
 
-3
+They have a more compact syntax compared to traditional function expressions.
+

@@ -16,7 +16,7 @@ dashedName: core-learning-algorithms-clustering
 
 Which of the following steps is **not** part of the K-Means algorithm?
 
-## --answers--
+## --distractors--
 
 Randomly pick K points to place K centeroids.
 
@@ -30,13 +30,9 @@ Move each K centeroid into the middle of all of their data points.
 
 ---
 
-Shuffle the K points so they're redistributed randomly.
-
----
-
 Reassign each K point to the closest K centeroid.
 
-## --video-solution--
+## --answer--
 
-4
+Shuffle the K points so they're redistributed randomly.
 

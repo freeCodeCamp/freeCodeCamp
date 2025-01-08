@@ -35,7 +35,7 @@ const newStrings = strings.filter((string) => {
 console.log(newStrings);
 ```
 
-## --answers--
+## --distractors--
 
 `['apple', 'banana', 'cherry', 'orange', 'kiwi', 'mango']`
 
@@ -45,13 +45,9 @@ console.log(newStrings);
 
 ---
 
-`['banana, 'cherry', 'orange']`
-
----
-
 `['apple', 'banana', 'cherry', 'orange', 'kiwi']`
 
+## --answer--
 
-## --video-solution--
+`['banana, 'cherry', 'orange']`
 
-3

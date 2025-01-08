@@ -17,11 +17,7 @@ When you hear about different types of guitars, two common kinds might come up: 
 
 Listen to the dialogue and choose the correct type of guitar Sophie prefers.
 
-## --answers--
-
-Electric Guitar
-
----
+## --distractors--
 
 Acoustic Guitar
 
@@ -29,9 +25,9 @@ Acoustic Guitar
 
 Sophie makes it very clear which type of guitar she likes. Remember, the one she prefers needs an amplifier to be loud.
 
-## --video-solution--
+## --answer--
 
-1
+Electric Guitar
 
 # --scene--
 
@@ -100,3 +96,4 @@ Sophie makes it very clear which type of guitar she likes. Remember, the one she
   ]
 }
 ```
+

@@ -25,11 +25,7 @@ More resources:
 
 What is the main difference between lists and tuples in Python?
 
-## --answers--
-
-Tuples are immutable.
-
----
+## --distractors--
 
 Lists are ordered.
 
@@ -37,7 +33,7 @@ Lists are ordered.
 
 Tuples are unordered.
 
-## --video-solution--
+## --answer--
 
-1
+Tuples are immutable.
 

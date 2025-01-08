@@ -18,7 +18,7 @@ Here is the <a href="https://colab.research.google.com/drive/1a_RtRtVfeO0m2528T4
 
 Which of the following is not true?
 
-## --answers--
+## --distractors--
 
 When graphing, you can adjust your tic marks on each axis
 
@@ -28,12 +28,9 @@ The `nonlinsolve()` function can solve linear equations
 
 ---
 
-The `linsolve()` function can solve nonlinear equations
-
----
-
 To zoom in or out on a graph, an interactive slider is useful
 
-## --video-solution--
+## --answer--
 
-3
+The `linsolve()` function can solve nonlinear equations
+

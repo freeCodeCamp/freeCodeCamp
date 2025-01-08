@@ -79,18 +79,15 @@ Read about the <a href="https://www.freecodecamp.org/news/image-file-types-pictu
 
 What are the four main image formats that you can use for images on the web?
 
-## --answers--
+## --distractors--
 
 MOV, GIF, PNG, and SVG.
 
 ---
 
-JPG, PNG, GIF, and SVG.
-
----
-
 JPG, PDF, SVG, and GIF.
 
-## --video-solution--
+## --answer--
 
-2
+JPG, PNG, GIF, and SVG.
+

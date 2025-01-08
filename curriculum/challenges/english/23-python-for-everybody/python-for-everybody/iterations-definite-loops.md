@@ -21,7 +21,7 @@ for i in [2,1,5]:
     print(i)
 ```
 
-## --answers--
+## --distractors--
 
 1
 
@@ -31,13 +31,9 @@ for i in [2,1,5]:
 
 ---
 
-3
-
----
-
 5
 
-## --video-solution--
+## --answer--
 
 3
 

@@ -17,17 +17,13 @@ Listen to the audio and answer the question below.
 
 Why is Tom thanking Sophie?
 
-## --answers--
+## --distractors--
 
 For giving him a time management app.
 
 ### --feedback--
 
 Tom is thanking Sophie for tips, not for giving her an app.
-
----
-
-Because he finds Sophie's tips helpful.
 
 ---
 
@@ -45,9 +41,9 @@ For helping him with a project.
 
 Tom's gratitude is related to the tips about organization, not specific project help.
 
-## --video-solution--
+## --answer--
 
-2
+Because he finds Sophie's tips helpful.
 
 # --scene--
 
@@ -92,3 +88,4 @@ Tom's gratitude is related to the tips about organization, not specific project 
   ]
 }
 ```
+

@@ -18,7 +18,7 @@ Here is the <a href="https://colab.research.google.com/drive/1UJ1w-XFTuCfK6FI3H2
 
 If you have already defined these variables, which of the following is the correct slope formula?
 
-## --answers--
+## --distractors--
 
 `slope = (x1 - x2) / (y1 - y2)`
 
@@ -30,10 +30,7 @@ If you have already defined these variables, which of the following is the corre
 
 `slope = (x1 - y1) / (x2 - y2)`
 
----
+## --answer--
 
 `slope = (y2 - y1) / (x2 - x1)`
 
-## --video-solution--
-
-4

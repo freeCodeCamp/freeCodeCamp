@@ -32,7 +32,7 @@ while True:
 mysock.close()
 ```
 
-## --answers--
+## --distractors--
 
 A simple web server.
 
@@ -44,11 +44,7 @@ A simple email client.
 
 A simple todo list.
 
----
+## --answer--
 
 A simple web browser.
-
-## --video-solution--
-
-4
 

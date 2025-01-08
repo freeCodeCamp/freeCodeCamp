@@ -16,13 +16,9 @@ dashedName: using-web-services
 
 What are the two most common ways to send data over the internet?
 
-## --answers--
+## --distractors--
 
 JSON and TXT
-
----
-
-JSON and XML
 
 ---
 
@@ -36,7 +32,7 @@ XML and PHP
 
 PHP and TXT
 
-## --video-solution--
+## --answer--
 
-2
+JSON and XML
 

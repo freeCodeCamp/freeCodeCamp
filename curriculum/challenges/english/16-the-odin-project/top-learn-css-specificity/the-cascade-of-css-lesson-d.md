@@ -37,7 +37,7 @@ In the example above, despite rule 2 having more class selectors than ID selecto
 
 Based on the modified HTML and CSS code, which color would the `<div class="list" id="subsection"></div>` element be rendered as?
 
-## --answers--
+## --distractors--
 
 orange
 
@@ -47,12 +47,9 @@ red
 
 ---
 
-blue
-
----
-
 cyan
 
-## --video-solution--
+## --answer--
 
-3
+blue
+

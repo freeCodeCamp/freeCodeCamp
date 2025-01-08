@@ -33,7 +33,7 @@ solution = solve(equation,x)
 print(solution)
 ```
 
-## --answers--
+## --distractors--
 
 3
 
@@ -43,12 +43,9 @@ print(solution)
 
 ---
 
-[4]
-
----
-
 x = 4
 
-## --video-solution--
+## --answer--
 
-3
+\[4]
+

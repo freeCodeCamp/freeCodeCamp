@@ -22,18 +22,15 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-switch
 
 What is the purpose of the `break` keyword?
 
-## --answers--
+## --distractors--
 
 The `break` keyword tells the runtime to continue evaluating other cases in the `switch` construct.
 
 ---
 
-The `break` keyword tells the runtime to stop evaluating other cases in the `switch` construct.
-
----
-
 The `break` keyword tells the runtime to exit the application.
 
-## --video-solution--
+## --answer--
 
-2
+The `break` keyword tells the runtime to stop evaluating other cases in the `switch` construct.
+

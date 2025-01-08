@@ -23,7 +23,7 @@ def banner(ip, port):
     print(s.recv(1024))
 ```
 
-## --answers--
+## --distractors--
 
 A: `connect`
 
@@ -35,13 +35,9 @@ A: `getsockname`
 
 B: `'1-1024'`
 
----
+## --answer--
 
 A: `connect`
 
 B: `int(port)`
-
-## --video-solution--
-
-3
 

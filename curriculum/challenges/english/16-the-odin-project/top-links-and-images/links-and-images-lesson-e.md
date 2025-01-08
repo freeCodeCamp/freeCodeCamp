@@ -80,7 +80,7 @@ Watch Kevin Powell’s HTML Images Video above.
 
 Which tag is used to display an image?
 
-## --answers--
+## --distractors--
 
 `<link>`
 
@@ -88,10 +88,7 @@ Which tag is used to display an image?
 
 `<a>`
 
----
+## --answer--
 
 `<img>`
 
-## --video-solution--
-
-3

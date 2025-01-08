@@ -17,17 +17,13 @@ Sometimes people invite their friends to events or activities they enjoy. How yo
 
 How does Tom respond to Sarah's invitation to the sci-fi convention?
 
-## --answers--
+## --distractors--
 
 Accepts immediately
 
 ### --feedback--
 
 Tom does not accept the invitation. He mentions his lack of interest in sci-fi.
-
----
-
-Declines politely
 
 ---
 
@@ -45,9 +41,9 @@ Ignores the invitation
 
 Tom acknowledges the invitation and responds, so he does not ignore it.
 
-## --video-solution--
+## --answer--
 
-2
+Declines politely
 
 # --scene--
 
@@ -92,3 +88,4 @@ Tom acknowledges the invitation and responds, so he does not ignore it.
   ]
 }
 ```
+

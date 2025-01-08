@@ -22,7 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/write-first-c
 
 Which of the following correctly declares a method?
 
-## --answers--
+## --distractors--
 
 `DisplayNumbers();`
 
@@ -30,10 +30,7 @@ Which of the following correctly declares a method?
 
 `void DisplayNumbers{};`
 
----
+## --answer--
 
 `void DisplayNumbers() { }`
 
-## --video-solution--
-
-3

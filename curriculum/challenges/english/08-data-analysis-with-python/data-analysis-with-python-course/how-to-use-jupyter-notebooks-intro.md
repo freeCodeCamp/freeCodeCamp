@@ -25,7 +25,7 @@ More resources:
 
 What is **not** allowed in a Jupyter Notebook's cell?
 
-## --answers--
+## --distractors--
 
 Markdown
 
@@ -33,11 +33,7 @@ Markdown
 
 Python code
 
----
+## --answer--
 
 An Excel sheet
-
-## --video-solution--
-
-3
 

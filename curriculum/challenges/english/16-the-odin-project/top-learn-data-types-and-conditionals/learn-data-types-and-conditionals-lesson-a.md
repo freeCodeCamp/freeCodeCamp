@@ -32,7 +32,7 @@ There are many ways to manipulate strings in JavaScript. Go through points 8 thr
 
 Which statement accurately describes the versatility and use of strings in JavaScript in conjunction with HTML, CSS, and JavaScript itself?
 
-## --answers--
+## --distractors--
 
 Strings in JavaScript can only be manipulated using CSS for web page design.
 
@@ -40,11 +40,7 @@ Strings in JavaScript can only be manipulated using CSS for web page design.
 
 JavaScript strings are exclusively used for mathematical computations and cannot interact with HTML or CSS.
 
----
+## --answer--
 
 Strings allow for text manipulation in JavaScript, including but not limited to creating custom messages, sorting terms, and dynamically updating HTML content with CSS styling.
 
-
-## --video-solution--
-
-3

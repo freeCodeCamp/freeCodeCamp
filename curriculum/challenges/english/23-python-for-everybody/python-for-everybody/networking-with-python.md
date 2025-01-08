@@ -16,13 +16,9 @@ dashedName: networking-with-python
 
 What Python library gives access to TCP Sockets?
 
-## --answers--
+## --distractors--
 
 tcp
-
----
-
-socket
 
 ---
 
@@ -32,7 +28,7 @@ http
 
 port
 
-## --video-solution--
+## --answer--
 
-2
+socket
 

@@ -18,13 +18,9 @@ Search the web for a list of `block` elements and a list of `inline` elements.
 
 What is the difference between a `block` element and an `inline` element?
 
-## --answers--
+## --distractors--
 
 `block` elements are displayed without line breaks, while `inline` elements are displayed with line breaks.
-
----
-
-`block` elements take up the full width available, while `inline` elements only take up the space necessary for their content.
 
 ---
 
@@ -34,7 +30,7 @@ What is the difference between a `block` element and an `inline` element?
 
 `block` elements are used for small sections of text, while `inline` elements are used for larger chunks of content.
 
+## --answer--
 
-## --video-solution--
+`block` elements take up the full width available, while `inline` elements only take up the space necessary for their content.
 
-2

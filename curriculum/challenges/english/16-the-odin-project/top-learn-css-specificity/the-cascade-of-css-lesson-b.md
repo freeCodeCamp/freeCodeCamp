@@ -21,13 +21,9 @@ Specificity will only be taken into account when an element has multiple, confli
 
 Which of the following is the correct order of specificity for CSS selectors, from most specific to least specific?
 
-## --answers--
+## --distractors--
 
 Type selectors, class selectors, ID selectors
-
----
-
-ID selectors, class selectors, type selectors
 
 ---
 
@@ -37,6 +33,7 @@ Class selectors, type selectors, ID selectors
 
 ID selectors, type selectors, class selectors
 
-## --video-solution--
+## --answer--
 
-2
+ID selectors, class selectors, type selectors
+

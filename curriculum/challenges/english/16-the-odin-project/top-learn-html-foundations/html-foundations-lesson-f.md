@@ -29,7 +29,7 @@ Run your boilerplate through this [HTML validator](https://www.freeformatter.com
 
 What is the purpose of the `body` element?
 
-## --answers--
+## --distractors--
 
 This is where all important information about the webpage is displayed such as the `title` and `meta` tags.
 
@@ -37,11 +37,7 @@ This is where all important information about the webpage is displayed such as t
 
 This is where you tell the browser how to render the webpage correctly.
 
----
+## --answer--
 
 This is where all content will be displayed on the page such images, text, and links.
 
-
-## --video-solution--
-
-3

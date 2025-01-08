@@ -29,17 +29,13 @@ Besides these differences, the syntax is exactly the same as the external method
 
 This method can be useful for adding unique styles to a single page of a website, but it doesn’t keep things separate like the external method, and depending on how many rules and declarations there are it can cause the HTML file to get pretty big.
 
-# --questions--    
+# --questions--
 
 ## --text--
 
 Which of the following is a difference between internal and external CSS methods?
 
-## --answers--
-
-The external method places CSS rules in a separate file, while the internal method places CSS rules within the HTML file itself.
-
----
+## --distractors--
 
 The internal method keeps CSS separate from HTML, while the external method embeds CSS directly in HTML.
 
@@ -47,7 +43,7 @@ The internal method keeps CSS separate from HTML, while the external method embe
 
 The internal method uses `<link>` element to link CSS to HTML, while the external method embeds CSS directly in HTML.
 
+## --answer--
 
-## --video-solution--
+The external method places CSS rules in a separate file, while the internal method places CSS rules within the HTML file itself.
 
-1

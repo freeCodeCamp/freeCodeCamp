@@ -17,7 +17,7 @@ The phrase `by the end of it` is commonly used in English to refer to the conclu
 
 In the dialogue, what does Brian mean by `by the end of it`?
 
-## --answers--
+## --distractors--
 
 They will stop the investigation.
 
@@ -41,13 +41,9 @@ They will take a break.
 
 The phrase focuses on reaching an understanding at the end of the process, not taking a break.
 
----
+## --answer--
 
 They will have a clearer understanding of the situation after the investigation.
-
-## --video-solution--
-
-4
 
 # --scene--
 
@@ -96,3 +92,4 @@ They will have a clearer understanding of the situation after the investigation.
   ]
 }
 ```
+

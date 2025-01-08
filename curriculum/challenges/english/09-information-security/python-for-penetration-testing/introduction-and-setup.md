@@ -16,19 +16,15 @@ dashedName: introduction-and-setup
 
 What code editor and extension does the instructor recommend for developing penetration testing tools in Python?
 
-## --answers--
+## --distractors--
 
 Atom and the atom-python-run extension.
 
 ---
 
-VSCode and Microsoft's Python extension.
-
----
-
 Sublime Text and the Anaconda package.
 
-## --video-solution--
+## --answer--
 
-2
+VSCode and Microsoft's Python extension.
 

@@ -22,11 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-do-whi
 
 A developer needs to iterate through an array of items to find one that matches a certain criteria. Which is the best iteration statement for this purpose?
 
-## --answers--
-
-`foreach`
-
----
+## --distractors--
 
 `for`
 
@@ -34,6 +30,7 @@ A developer needs to iterate through an array of items to find one that matches 
 
 `while`
 
-## --video-solution--
+## --answer--
 
-1
+`foreach`
+

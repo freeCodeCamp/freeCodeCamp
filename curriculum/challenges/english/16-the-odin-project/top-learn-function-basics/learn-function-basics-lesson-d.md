@@ -35,7 +35,7 @@ In the example above, the default value of the parameter `animal` is set to `'Gi
 
 How do default parameters in JavaScript functions enhance the behavior of functions like `favoriteAnimal` when called without any arguments?
 
-## --answers--
+## --distractors--
 
 They cause the function to throw an error if no argument is provided.
 
@@ -47,10 +47,7 @@ They prevent the function from being called without the required number of argum
 
 They ensure the function returns `null` to indicate that no argument was passed.
 
----
+## --answer--
 
 They allow the function to execute with a predefined value, avoiding `undefined` related issues.
 
-## --video-solution--
-
-4

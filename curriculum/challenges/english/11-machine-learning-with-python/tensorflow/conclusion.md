@@ -16,11 +16,7 @@ dashedName: conclusion
 
 Most people that are experts in AI or machine learning usually...:
 
-## --answers--
-
-have one specialization.
-
----
+## --distractors--
 
 have many specializations.
 
@@ -28,7 +24,7 @@ have many specializations.
 
 have a deep understanding of many different frameworks.
 
-## --video-solution--
+## --answer--
 
-1
+have one specialization.
 

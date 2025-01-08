@@ -26,18 +26,15 @@ What is the value of the following result?
 int result = 3 + 1 * 5 / 2;
 ```
 
-## --answers--
+## --distractors--
 
 10
 
 ---
 
-5
-
----
-
 6
 
-## --video-solution--
+## --answer--
 
-2
+5
+

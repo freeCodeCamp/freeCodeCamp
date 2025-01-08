@@ -18,11 +18,7 @@ Here is the <a href="https://colab.research.google.com/drive/1uwKuaHCC2WCUFKmXW-
 
 In numpy, what is the cube root of x?
 
-## --answers--
-
-cbrt(x)
-
----
+## --distractors--
 
 cube_root(x)
 
@@ -34,6 +30,7 @@ root3(x)
 
 root(x,3)
 
-## --video-solution--
+## --answer--
 
-1
+cbrt(x)
+

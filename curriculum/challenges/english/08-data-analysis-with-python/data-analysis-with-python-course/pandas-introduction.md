@@ -36,17 +36,7 @@ certificates_earned = pd.Series(
 print(certificates_earned)
 ```
 
-## --answers--
-
-```markup
-Tom      8
-Kris     2
-Ahmad    5
-Beau     6
-dtype: int64
-```
-
----
+## --distractors--
 
 ```markup
 Kris     2
@@ -66,7 +56,13 @@ Beau     6
 Name: certificates_earned dtype: int64
 ```
 
-## --video-solution--
+## --answer--
 
-1
+```markup
+Tom      8
+Kris     2
+Ahmad    5
+Beau     6
+dtype: int64
+```
 

@@ -24,7 +24,7 @@ Very often, you see the flex shorthand defined with only one value. In that case
 
 Which properties are set by the `flex` shorthand?
 
-## --answers--
+## --distractors--
 
 `flex-grow`, `flex-shrink`, and `flex`
 
@@ -34,12 +34,9 @@ Which properties are set by the `flex` shorthand?
 
 ---
 
-`flex-grow`, `flex-shrink`, and `flex-basis`
-
----
-
 `flex-direction`, `flex`, and `flex-wrap`
 
-## --video-solution--
+## --answer--
 
-3
+`flex-grow`, `flex-shrink`, and `flex-basis`
+

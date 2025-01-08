@@ -31,7 +31,7 @@ Kris              2                 5                    0.40
 Ahmad             5                 9                    0.56
 Beau              6                12                    0.50</pre>
 
-## --answers--
+## --distractors--
 
 ```py
 certificates_earned['Certificates'] /
@@ -47,7 +47,7 @@ certificates_earned['Certificates per month'] = round(
 )
 ```
 
----
+## --answer--
 
 ```py
 certificates_earned['Certificates per month'] = round(
@@ -55,8 +55,4 @@ certificates_earned['Certificates per month'] = round(
     certificates_earned['Time (in months)'], 2
 )
 ```
-
-## --video-solution--
-
-3
 

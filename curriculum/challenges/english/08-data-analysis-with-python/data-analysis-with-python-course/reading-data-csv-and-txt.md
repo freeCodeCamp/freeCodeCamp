@@ -25,18 +25,11 @@ More resources:
 
 How would you import the CSV file `data.csv` and store it in a DataFrame using the Pandas module?
 
-## --answers--
+## --distractors--
 
 ```python
 import pandas as pd
 df = pd.csv("data.csv")
-```
-
----
-
-```python
-import pandas as pd
-df = pd.read_csv("data.csv")
 ```
 
 ---
@@ -53,7 +46,10 @@ import pandas as pd
 df = pd.csv_reader("data.csv")
 ```
 
-## --video-solution--
+## --answer--
 
-2
+```python
+import pandas as pd
+df = pd.read_csv("data.csv")
+```
 

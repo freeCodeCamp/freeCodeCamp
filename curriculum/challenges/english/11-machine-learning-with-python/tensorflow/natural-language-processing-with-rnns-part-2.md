@@ -16,7 +16,7 @@ dashedName: natural-language-processing-with-rnns-part-2
 
 Word embeddings are...:
 
-## --answers--
+## --distractors--
 
 an unordered group of encoded words that describes the frequency of words in a given document.
 
@@ -24,11 +24,7 @@ an unordered group of encoded words that describes the frequency of words in a g
 
 a group of encoded words that preserves the original order of the words in a given document.
 
----
+## --answer--
 
 a vectorized representation of words in a given document that places words with similar meanings near each other.
-
-## --video-solution--
-
-3
 

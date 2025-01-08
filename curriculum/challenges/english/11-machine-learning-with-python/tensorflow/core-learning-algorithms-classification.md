@@ -16,11 +16,7 @@ dashedName: core-learning-algorithms-classification
 
 What is classification?
 
-## --answers--
-
-The process of separating data points into different classes.
-
----
+## --distractors--
 
 Predicting a numeric value or forecast based on independent and dependent variables.
 
@@ -28,7 +24,7 @@ Predicting a numeric value or forecast based on independent and dependent variab
 
 None of the above.
 
-## --video-solution--
+## --answer--
 
-1
+The process of separating data points into different classes.
 

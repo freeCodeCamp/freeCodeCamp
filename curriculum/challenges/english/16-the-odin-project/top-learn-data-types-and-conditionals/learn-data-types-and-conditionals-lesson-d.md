@@ -20,13 +20,9 @@ let sentence = "freeCodeCamp loves The Odin Project! The Odin Project is great!"
 
 Which method should be used to find the index of the last occurence of the word `The` in the string?
 
-## --answers--
+## --distractors--
 
 The `includes()` method should be used to find the index of the last occurence of the word `The` in the string.
-
----
-
-The `lastIndexOf()` method should be used to find the index of the last occurence of the word `The` in the string.
 
 ---
 
@@ -36,6 +32,7 @@ The `indexOf()` method should be used to find the index of the last occurence of
 
 The `search()` method should be used to find the index of the last occurence of the word `The` in the string.
 
-## --video-solution--
+## --answer--
 
-2
+The `lastIndexOf()` method should be used to find the index of the last occurence of the word `The` in the string.
+

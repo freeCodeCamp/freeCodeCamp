@@ -8,19 +8,15 @@ dashedName: learn-block-and-inline-lesson-e
 
 Inline-block elements behave like inline elements, but with block-style padding and margin. `display: inline-block` is a useful tool to know about, but in practice, you'll probably end up reaching for flexbox more often if you're trying to line up a bunch of boxes. Flexbox will be covered in-depth in the next lesson.
 
-# --questions--    
+# --questions--
 
 ## --text--
 
 What is the difference between an `inline` element and an `inline-block` element?
 
-## --answers--
+## --distractors--
 
 `inline` elements are displayed without line breaks, while `inline-block` elements are displayed with line breaks.
-
----
-
-`inline` elements do not allow setting width and height, while `inline-block` elements allow setting width and height.
 
 ---
 
@@ -30,6 +26,7 @@ What is the difference between an `inline` element and an `inline-block` element
 
 `inline` elements can contain block-level elements, while `inline-block` elements cannot contain other elements.
 
-## --video-solution--
+## --answer--
 
-2
+`inline` elements do not allow setting width and height, while `inline-block` elements allow setting width and height.
+

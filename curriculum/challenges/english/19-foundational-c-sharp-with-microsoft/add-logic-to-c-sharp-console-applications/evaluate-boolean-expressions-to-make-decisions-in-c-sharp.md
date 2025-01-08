@@ -22,11 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-evalua
 
 Which of the following lines of code is a valid use of the conditional operator?
 
-## --answers--
-
-`int value = amount >= 10 ? 10 : 20;`
-
----
+## --distractors--
 
 `int value = amount >= 10 : 10 ? 20;`
 
@@ -34,6 +30,7 @@ Which of the following lines of code is a valid use of the conditional operator?
 
 `int value = amount >= 10 ? 10 | 20;`
 
-## --video-solution--
+## --answer--
 
-1
+`int value = amount >= 10 ? 10 : 20;`
+

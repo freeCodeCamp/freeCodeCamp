@@ -16,7 +16,7 @@ This video is showing you some economics applications, and creating graphs and f
 
 Which of the following is not true of supply and demand graphs?
 
-## --answers--
+## --distractors--
 
 The supply curve has a positive slope
 
@@ -28,10 +28,7 @@ The demand curve has a negative slope
 
 The supply curve and demand curve will intersect
 
----
+## --answer--
 
 The supply curve and demand curve will always be straight lines
 
-## --video-solution--
-
-4

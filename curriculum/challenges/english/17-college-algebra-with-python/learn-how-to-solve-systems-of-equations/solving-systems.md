@@ -22,11 +22,7 @@ Add code to your notebook to solve and graph systems of equations
 
 Which of the following can SymPy do that matplotlib can't do?
 
-## --answers--
-
-Solve for a variable
-
----
+## --distractors--
 
 Display an x-y axis
 
@@ -38,6 +34,7 @@ Graph an equation or two
 
 Show tic marks on the graph
 
-## --video-solution--
+## --answer--
 
-1
+Solve for a variable
+

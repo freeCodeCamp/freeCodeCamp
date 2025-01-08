@@ -22,7 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-write-
 
 What is the difference between `Console.Write` and `Console.WriteLine`?
 
-## --answers--
+## --distractors--
 
 `Console.Write` prints the output on a new line.
 
@@ -30,10 +30,7 @@ What is the difference between `Console.Write` and `Console.WriteLine`?
 
 `Console.WriteLine` prints the output on a new line.
 
----
+## --answer--
 
 `Console.WriteLine` appends a new line after the output.
 
-## --video-solution--
-
-3

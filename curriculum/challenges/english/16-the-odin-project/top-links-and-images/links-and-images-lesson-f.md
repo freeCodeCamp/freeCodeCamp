@@ -70,12 +70,12 @@ This is how the The Odin Project logo example you used earlier looks with an alt
 <iframe allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="cp_embed_iframe " frameborder="0" height="300" width="100%" name="cp_embed_2" scrolling="no" src="https://codepen.io/TheOdinProjectExamples/embed/ExXjoEp?height=300&amp;theme-id=dark&amp;default-tab=html%2Cresult&amp;slug-hash=ExXjoEp&amp;user=TheOdinProjectExamples&amp;name=cp_embed_2" style="width: 100%; overflow:hidden; display:block;" title="CodePen Embed" loading="lazy" id="cp_embed_ExXjoEp"></iframe>
 
 # --questions--
-    
+
 ## --text--
 
 What two attributes do images always need to have?
 
-## --answers--
+## --distractors--
 
 `href` and `alt`
 
@@ -83,10 +83,7 @@ What two attributes do images always need to have?
 
 `name` and `href`
 
----
+## --answer--
 
 `alt` and `src`
 
-## --video-solution--
-
-3

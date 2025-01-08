@@ -16,7 +16,7 @@ dashedName: what-is-numpy
 
 Why are Numpy arrays faster than regular Python lists?
 
-## --answers--
+## --distractors--
 
 Numpy does not perform type checking while iterating through objects.
 
@@ -28,11 +28,7 @@ Numpy uses fixed types.
 
 Numpy uses contiguous memory.
 
----
+## --answer--
 
 All of the above.
-
-## --video-solution--
-
-4
 

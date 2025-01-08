@@ -25,13 +25,7 @@ while True:
     n = n + 1
 ```
 
-## --answers--
-
-<pre>0
-1
-2</pre>
-
----
+## --distractors--
 
 <pre>0
 1
@@ -49,7 +43,9 @@ while True:
 2
 3</pre>
 
-## --video-solution--
+## --answer--
 
+<pre>0
 1
+2</pre>
 

@@ -14,9 +14,9 @@ dashedName: visualizing-data-with-python
 
 ## --text--
 
-Most data needs to be ______ before using it.
+Most data needs to be \__\__\__ before using it.
 
-## --answers--
+## --distractors--
 
 converted to JSON format
 
@@ -26,17 +26,13 @@ graphed
 
 ---
 
-cleaned
-
----
-
 memorized
 
 ---
 
 turned into song
 
-## --video-solution--
+## --answer--
 
-3
+cleaned
 

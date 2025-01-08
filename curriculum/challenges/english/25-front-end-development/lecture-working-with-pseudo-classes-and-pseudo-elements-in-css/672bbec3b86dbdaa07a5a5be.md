@@ -16,7 +16,7 @@ Watch the lecture video and answer the questions below.
 
 Which pseudo-class works like `:is()`, but doesn't add any specificity to your selectors?
 
-## --answers--
+## --distractors--
 
 `:not()`
 
@@ -31,10 +31,6 @@ This pseudo-class is great for applying broad, non-invasive styles.
 ### --feedback--
 
 This pseudo-class is great for applying broad, non-invasive styles.
-
----
-
-`:where()`
 
 ---
 
@@ -44,25 +40,17 @@ This pseudo-class is great for applying broad, non-invasive styles.
 
 This pseudo-class is great for applying broad, non-invasive styles.
 
-## --video-solution--
+## --answer--
 
-3
+`:where()`
 
 ## --text--
 
 Which of these is not a functional pseudo-class?
 
-## --answers--
+## --distractors--
 
 `:is()`
-
-### --feedback--
-
-Functional pseudo-classes use parentheses and accept arguments inside them.
-
----
-
-`:first-child`
 
 ### --feedback--
 
@@ -84,15 +72,15 @@ Functional pseudo-classes use parentheses and accept arguments inside them.
 
 Functional pseudo-classes use parentheses and accept arguments inside them.
 
-## --video-solution--
+## --answer--
 
-2
+`:first-child`
 
 ## --text--
 
 Which pseudo-class is perfect for a situation in which you want to apply styles to a group of elements without one or two exceptions?
 
-## --answers--
+## --distractors--
 
 `:has()`
 
@@ -110,16 +98,13 @@ Think about how you can exclude specific elements from being styled.
 
 ---
 
-`:not()`
-
----
-
 `:where()`
 
 ### --feedback--
 
 Think about how you can exclude specific elements from being styled.
 
-## --video-solution--
+## --answer--
 
-3
+`:not()`
+

@@ -20,7 +20,7 @@ Here is an additional <a href="https://colab.research.google.com/drive/1-HWYmzKn
 
 In percent increase formulas, what does the "principle" refer to?
 
-## --answers--
+## --distractors--
 
 the main amount
 
@@ -30,12 +30,9 @@ the ending amount
 
 ---
 
-the starting amount
-
----
-
 the (1 + rate) multiplier
 
-## --video-solution--
+## --answer--
 
-3
+the starting amount
+

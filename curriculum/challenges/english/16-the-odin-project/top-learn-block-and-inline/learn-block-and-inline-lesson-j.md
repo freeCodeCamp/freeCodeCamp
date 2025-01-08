@@ -8,19 +8,15 @@ dashedName: learn-block-and-inline-lesson-j
 
 Now that you have a basic understanding on how adding width and height to `inline` elements works, what happens when you add a top padding of 10 pixels to a `span` element?
 
-# --questions--    
+# --questions--
 
 ## --text--
 
 What happens when you add `padding-top: 10px;` to a `span` element?
 
-## --answers--
+## --distractors--
 
 The `span` element's content will shift downward by 10 pixels.
-
----
-
-The `span` element will gain additional space above its content.
 
 ---
 
@@ -30,6 +26,7 @@ The `span` element's width will increase by 10 pixels.
 
 Padding has no effect on the layout of a `span` element.
 
-## --video-solution--
+## --answer--
 
-2
+The `span` element will gain additional space above its content.
+

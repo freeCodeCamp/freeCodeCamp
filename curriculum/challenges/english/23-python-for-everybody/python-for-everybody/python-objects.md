@@ -16,7 +16,7 @@ dashedName: python-objects
 
 Which is NOT true about objects in Python?
 
-## --answers--
+## --distractors--
 
 Objects get created and used.
 
@@ -28,11 +28,7 @@ Objects are bits of code and data.
 
 Objects hide detail.
 
----
+## --answer--
 
 Objects are one of the five standard data types.
-
-## --video-solution--
-
-4
 

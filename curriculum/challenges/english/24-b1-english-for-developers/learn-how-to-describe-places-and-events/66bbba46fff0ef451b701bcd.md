@@ -19,17 +19,13 @@ Listen to the audio and answer the question below.
 
 Is Sarah available to talk to Tom?
 
-## --answers--
+## --distractors--
 
 No, she is busy and doesn´t want to know about his problems.
 
 ### --feedback--
 
 Sarah says she is not busy.
-
----
-
-Yes, she is available and wants know what's the problem.
 
 ---
 
@@ -47,9 +43,9 @@ Yes, but only for a moment because she has her own problems.
 
 Sarah doesn't limit the time; she simply states that she is not busy.
 
-## --video-solution--
+## --answer--
 
-2
+Yes, she is available and wants know what's the problem.
 
 # --explanation--
 
@@ -143,3 +139,4 @@ Her follow-up sentence, `What's the problem?`, confirms she's willing to assist 
   ]
 }
 ```
+

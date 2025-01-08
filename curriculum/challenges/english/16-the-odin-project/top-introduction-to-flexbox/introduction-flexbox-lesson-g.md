@@ -22,13 +22,9 @@ An important implication to notice here is that when you specify `flex-grow` or 
 
 What is the default behavior of `flex-shrink` when applied to flex items?
 
-## --answers--
+## --distractors--
 
 It prevents any item from shrinking.
-
----
-
-It makes all items shrink at an equal rate.
 
 ---
 
@@ -38,7 +34,7 @@ It causes only specific items to shrink.
 
 It enlarges the items' sizes equally.
 
+## --answer--
 
-## --video-solution--
+It makes all items shrink at an equal rate.
 
-2

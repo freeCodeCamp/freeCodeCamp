@@ -22,11 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-modify
 
 Which method finds the next index of either the `-` char, the `=` char, or the `_` char?
 
-## --answers--
-
-`IndexOfAny()`
-
----
+## --distractors--
 
 `Remove()`
 
@@ -34,6 +30,7 @@ Which method finds the next index of either the `-` char, the `=` char, or the `
 
 `IndexOf()`
 
-## --video-solution--
+## --answer--
 
-1
+`IndexOfAny()`
+

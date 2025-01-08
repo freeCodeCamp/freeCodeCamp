@@ -22,13 +22,9 @@ Play around with Chrome Dev Tools and see if you can answer the following questi
 
 Which panes should you focus on in the Chrome Dev Tools for inspecting and debugging HTML and CSS?
 
-## --answers--
+## --distractors--
 
 Console and Network
-
----
-
-Elements and Styles
 
 ---
 
@@ -38,7 +34,7 @@ Sources and Application
 
 Performance and Memory
 
+## --answer--
 
-## --video-solution--
+Elements and Styles
 
-2

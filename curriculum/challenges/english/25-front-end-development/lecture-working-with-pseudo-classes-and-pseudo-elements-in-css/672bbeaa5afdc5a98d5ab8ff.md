@@ -16,7 +16,7 @@ Watch the lecture video and answer the questions below.
 
 Which pseudo-class allows you to style an element that matches the current URL fragment identifier, such as `#section1`?
 
-## --answers--
+## --distractors--
 
 `:hover`
 
@@ -34,35 +34,27 @@ Think about how you can highlight a specific section when navigating through in-
 
 ---
 
-`:target`
-
----
-
 `:checked`
 
 ### --feedback--
 
 Think about how you can highlight a specific section when navigating through in-page links.
 
-## --video-solution--
+## --answer--
 
-3
+`:target`
 
 ## --text--
 
 When are location pseudo-classes particularly useful?
 
-## --answers--
+## --distractors--
 
 When styling elements based on their sibling relationships.
 
 ### --feedback--
 
 Think about how you can style links and targeted elements depending on user interaction.
-
----
-
-When applying styles based on whether a link is visited or an element is currently in focus.
 
 ---
 
@@ -80,25 +72,21 @@ When adjusting the layout of a webpage dynamically.
 
 Think about how you can style links and targeted elements depending on user interaction.
 
-## --video-solution--
+## --answer--
 
-2
+When applying styles based on whether a link is visited or an element is currently in focus.
 
 ## --text--
 
 Which pseudo-class is designed to target links that point to the same document but is not currently supported by any browser?
 
-## --answers--
+## --distractors--
 
 `:any-link`
 
 ### --feedback--
 
 Consider the pseudo-class intended for distinguishing internal links from external ones, even though it's not yet supported.
-
----
-
-`:local-link`
 
 ---
 
@@ -116,6 +104,7 @@ Consider the pseudo-class intended for distinguishing internal links from extern
 
 Consider the pseudo-class intended for distinguishing internal links from external ones, even though it's not yet supported.
 
-## --video-solution--
+## --answer--
 
-2
+`:local-link`
+

@@ -16,11 +16,7 @@ dashedName: convolutional-neural-networks-the-convolutional-layer
 
 What are the three main properties of each convolutional layer?
 
-## --answers--
-
-Input size, the number of filters, and the sample size of the filters.
-
----
+## --distractors--
 
 Input size, input dimensions, and the color values of the input.
 
@@ -28,7 +24,7 @@ Input size, input dimensions, and the color values of the input.
 
 Input size, input padding, and stride.
 
-## --video-solution--
+## --answer--
 
-1
+Input size, the number of filters, and the sample size of the filters.
 

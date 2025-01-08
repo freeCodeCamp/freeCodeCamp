@@ -34,11 +34,7 @@ s = pd.Series(['a', 3, np.nan, 1, np.nan])
 print(s.notnull().sum())
 ```
 
-## --answers--
-
-3
-
----
+## --distractors--
 
 <pre>0     True
 1     True
@@ -56,7 +52,7 @@ dtype: bool</pre>
 4     True
 dtype: bool</pre>
 
-## --video-solution--
+## --answer--
 
-1
+3
 

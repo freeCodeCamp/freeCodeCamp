@@ -22,11 +22,7 @@ Add code to your algebra Colab notebook for functions and graphing.
 
 What Python library would you import to create arrays that you can graph?
 
-## --answers--
-
-numpy
-
----
+## --distractors--
 
 nimby
 
@@ -38,6 +34,7 @@ math
 
 graph
 
-## --video-solution--
+## --answer--
 
-1
+numpy
+

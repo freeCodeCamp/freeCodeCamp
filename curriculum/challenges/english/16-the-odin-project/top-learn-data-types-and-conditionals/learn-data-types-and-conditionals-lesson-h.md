@@ -43,15 +43,11 @@ if (x == y) {
 
 ```
 
-## --answers--
+## --distractors--
 
 `x is equal to y`
 
----
+## --answer--
 
 `x is not equal to y`
 
-
-## --video-solution--
-
-2

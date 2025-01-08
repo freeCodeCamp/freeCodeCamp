@@ -16,7 +16,7 @@ dashedName: relational-databases-join-operation
 
 When using a JOIN clause in an SQL statement, what does ON do?
 
-## --answers--
+## --distractors--
 
 It indicates what tables to perform the JOIN on.
 
@@ -24,11 +24,7 @@ It indicates what tables to perform the JOIN on.
 
 It specifies the fields to use for the JOIN.
 
----
+## --answer--
 
 It indicates how the two tables are to be joined.
-
-## --video-solution--
-
-3
 

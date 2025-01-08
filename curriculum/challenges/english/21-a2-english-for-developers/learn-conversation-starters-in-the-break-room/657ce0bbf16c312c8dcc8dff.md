@@ -23,17 +23,13 @@ With other verbs, `usually` comes before the main verb, for example:
 
 Choose the sentence that correctly uses the adverb `usually.`
 
-## --answers--
+## --distractors--
 
 `She usually is very careful with her work.`
 
 ### --feedback--
 
 `Usually` should come before the main verb when not using `to be.` The correct sentence is `She is usually very careful with her work.`
-
----
-
-`He is usually the last one to leave the office.`
 
 ---
 
@@ -51,6 +47,7 @@ Choose the sentence that correctly uses the adverb `usually.`
 
 With the verb `to be,` `usually` comes after. The correct sentence is `We are usually happy to help out with new projects.`
 
-## --video-solution--
+## --answer--
 
-2
+`He is usually the last one to leave the office.`
+

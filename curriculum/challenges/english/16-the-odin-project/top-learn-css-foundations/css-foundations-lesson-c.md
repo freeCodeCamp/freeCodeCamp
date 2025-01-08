@@ -43,23 +43,13 @@ Both our `.read` and `.unread` selectors share the `color: white;` and `backgrou
 
 Both of the examples above (with and without grouping) will have the same result, but the second example reduces the repetition of declarations and makes it easier to edit either the `color` or `background-color` for both classes at once.
 
-# --questions--    
+# --questions--
 
 ## --text--
 
 How would you apply a single rule to two different selectors, `.red-box` and `.yellow-box`?
 
-## --answers--
-
-```css
-.red-box,
-.yellow-box {
-  width: 25px;
-  height: 25px;
-}
-```
-
----
+## --distractors--
 
 ```css
 .red-box {
@@ -84,6 +74,13 @@ How would you apply a single rule to two different selectors, `.red-box` and `.y
 }
 ```
 
-## --video-solution--
+## --answer--
 
-1
+```css
+.red-box,
+.yellow-box {
+  width: 25px;
+  height: 25px;
+}
+```
+

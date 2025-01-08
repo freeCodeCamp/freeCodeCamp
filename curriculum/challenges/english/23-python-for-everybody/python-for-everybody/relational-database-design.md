@@ -16,13 +16,9 @@ dashedName: relational-database-design
 
 What is the best practice for how many times a piece of string data should be stored in a database?
 
-## --answers--
+## --distractors--
 
 0
-
----
-
-1
 
 ---
 
@@ -32,7 +28,7 @@ What is the best practice for how many times a piece of string data should be st
 
 3
 
-## --video-solution--
+## --answer--
 
-2
+1
 

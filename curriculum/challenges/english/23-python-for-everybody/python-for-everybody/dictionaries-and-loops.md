@@ -29,12 +29,7 @@ for key in counts:
         print(key, counts[key])
 ```
 
-## --answers--
-
-<pre>annie 42
-jan 100</pre>
-
----
+## --distractors--
 
 <pre>chuck 1
 annie 42
@@ -48,6 +43,8 @@ jan 100</pre>
 
 <pre>[Error]</pre>
 
-## --video-solution--
+## --answer--
 
-1
+<pre>annie 42
+jan 100</pre>
+

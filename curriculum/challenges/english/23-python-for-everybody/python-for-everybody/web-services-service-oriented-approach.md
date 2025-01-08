@@ -16,11 +16,7 @@ dashedName: web-services-service-oriented-approach
 
 With a services oriented approach to developing web apps, where is the data located?
 
-## --answers--
-
-Spread across many computer systems connected via the internet or internal network.
-
----
+## --distractors--
 
 Within different services on the main web server.
 
@@ -28,7 +24,7 @@ Within different services on the main web server.
 
 On a separate database server.
 
-## --video-solution--
+## --answer--
 
-1
+Spread across many computer systems connected via the internet or internal network.
 

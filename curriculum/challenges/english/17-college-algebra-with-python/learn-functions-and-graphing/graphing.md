@@ -26,7 +26,7 @@ Run the following notebook to see <a href="https://colab.research.google.com/dri
 
 Which of the following would put a blue line on a graph?
 
-## --answers--
+## --distractors--
 
 `plt.plot([0,0],[10,10],'b-')`
 
@@ -36,12 +36,9 @@ Which of the following would put a blue line on a graph?
 
 ---
 
-`plt.plot([0,10],[0,10],'b')`
-
----
-
 `plt.plot([10,10],[10,10],'b^')`
 
-## --video-solution--
+## --answer--
 
-3
+`plt.plot([0,10],[0,10],'b')`
+

@@ -30,7 +30,7 @@ def build_mode(vocab_size, embedding_dim, rnn_units, batch_size):
     __D__
 ```
 
-## --answers--
+## --distractors--
 
 A: `ELU`
 
@@ -50,7 +50,7 @@ C: `batch_size`
 
 D: `return model`
 
----
+## --answer--
 
 A: `LSTM`
 
@@ -59,8 +59,4 @@ B: `True`
 C: `vocab_size`
 
 D: `return model`
-
-## --video-solution--
-
-3
 

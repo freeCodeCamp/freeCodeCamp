@@ -25,7 +25,7 @@ What is wrong with the following XML?:
 </person>
 ```
 
-## --answers--
+## --distractors--
 
 Email tag is missing closing tag.
 
@@ -35,13 +35,9 @@ Spacing will cause XML to be invalid.
 
 ---
 
-Phone tag is missing closing tag.
-
----
-
 Plain text should be encoded using UTF-8.
 
-## --video-solution--
+## --answer--
 
-3
+Phone tag is missing closing tag.
 

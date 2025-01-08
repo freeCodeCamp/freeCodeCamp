@@ -32,13 +32,9 @@ Read this <a href="https://builtin.com/data-science/pseudocode" target="_blank">
 
 What are the benefits of using pseudocode according to the linked article?
 
-## --answers--
+## --distractors--
 
 Pseudocode is primarily beneficial for beginners as it helps them learn programming languages faster by skipping complex syntax.
-
----
-
-Pseudocode simplifies communication with non-programmers, aids in code construction, provides a good basis for documentation, and helps in bug detection.
 
 ---
 
@@ -48,6 +44,7 @@ Pseudocode entirely eliminates the need for programmers to understand or use pro
 
 Pseudocode is used exclusively for creating detailed flowcharts that replace traditional coding in complex software development environments.
 
-## --video-solution--
+## --answer--
 
-2
+Pseudocode simplifies communication with non-programmers, aids in code construction, provides a good basis for documentation, and helps in bug detection.
+

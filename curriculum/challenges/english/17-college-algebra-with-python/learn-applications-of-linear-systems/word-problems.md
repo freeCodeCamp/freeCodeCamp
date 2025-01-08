@@ -32,13 +32,9 @@ Complete the problems on pages 304, 308, and 321 from "Algebra and Trigonometry"
 
 Which of the following key words indicate subtraction?
 
-## --answers--
+## --distractors--
 
 plus, more, increase, up
-
----
-
-difference, less, decrease, down
 
 ---
 
@@ -48,6 +44,7 @@ of, by, factor, area, times
 
 out of, per, divided, quotient
 
-## --video-solution--
+## --answer--
 
-2
+difference, less, decrease, down
+

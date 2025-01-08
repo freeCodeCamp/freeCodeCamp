@@ -12,11 +12,7 @@ dashedName: how-deep-neural-networks-work
 
 Why is it better to calculate the gradient (slope) directly rather than numerically?
 
-## --answers--
-
-It is computationally expensive to go back through the entire neural network and adjust the weights for each layer of the neural network.
-
----
+## --distractors--
 
 It is more accurate.
 
@@ -24,7 +20,7 @@ It is more accurate.
 
 There is no difference between the two methods.
 
-## --video-solution--
+## --answer--
 
-1
+It is computationally expensive to go back through the entire neural network and adjust the weights for each layer of the neural network.
 

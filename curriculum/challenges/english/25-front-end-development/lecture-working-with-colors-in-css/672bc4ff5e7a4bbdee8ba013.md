@@ -16,17 +16,13 @@ Watch the lecture video and answer the questions below.
 
 What is a key benefit of using named colors in CSS?
 
-## --answers--
+## --distractors--
 
 Named colors allow you to create gradients.
 
 ### --feedback--
 
 Think about the simplicity and readability aspect of named colors.
-
----
-
-Named colors are simpler to write and make code more readable.
 
 ---
 
@@ -44,25 +40,21 @@ Named colors are the most precise way to define colors in web design.
 
 Think about the simplicity and readability aspect of named colors.
 
-## --video-solution--
+## --answer--
 
-2
+Named colors are simpler to write and make code more readable.
 
 ## --text--
 
 In what scenario might named colors not be the best choice?
 
-## --answers--
+## --distractors--
 
 When you need to quickly prototype a design.
 
 ### --feedback--
 
 Think about the limitations of named colors in more complex designs.
-
----
-
-When your design requires very specific or nuanced shades of color.
 
 ---
 
@@ -80,15 +72,15 @@ When collaborating with others on a simple project.
 
 Think about the limitations of named colors in more complex designs.
 
-## --video-solution--
+## --answer--
 
-2
+When your design requires very specific or nuanced shades of color.
 
 ## --text--
 
 Which of the following is an example of a named color in CSS?
 
-## --answers--
+## --distractors--
 
 `#ff5733`
 
@@ -106,16 +98,13 @@ Named colors are descriptive words, not numerical codes.
 
 ---
 
-`tomato`
-
----
-
 `hsl(120, 100%, 50%)`
 
 ### --feedback--
 
 Named colors are descriptive words, not numerical codes.
 
-## --video-solution--
+## --answer--
 
-3
+`tomato`
+

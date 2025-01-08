@@ -34,13 +34,9 @@ info = json.loads(data)
 print(info[1]['name'])
 ```
 
-## --answers--
+## --distractors--
 
 Quincy
-
----
-
-Mrugesh
 
 ---
 
@@ -52,9 +48,9 @@ Mrugesh
 
 ---
 
-[Error]
+\[Error]
 
-## --video-solution--
+## --answer--
 
-2
+Mrugesh
 

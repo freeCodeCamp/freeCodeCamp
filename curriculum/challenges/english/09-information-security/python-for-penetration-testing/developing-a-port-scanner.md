@@ -16,7 +16,7 @@ dashedName: developing-a-port-scanner
 
 What is the main difference between the `.connect()` and `.connect_ex()` methods?
 
-## --answers--
+## --distractors--
 
 There is no difference between the two methods.
 
@@ -24,11 +24,7 @@ There is no difference between the two methods.
 
 If there is an error or if no host is found, `.connect()` returns an error code while `.connect_ex()` raises an exception.
 
----
+## --answer--
 
 If there is an error or if no host is found, `.connect()` raises an exception while `.connect_ex()` returns an error code.
-
-## --video-solution--
-
-3
 

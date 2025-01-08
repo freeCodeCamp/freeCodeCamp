@@ -24,15 +24,7 @@ model = __A__.__B__([
 ])
 ```
 
-## --answers--
-
-A: `keras`
-
-B: `Sequential`
-
-C: `Dense`
-
----
+## --distractors--
 
 A: `tf`
 
@@ -48,7 +40,11 @@ B: `sequential`
 
 C: `dense`
 
-## --video-solution--
+## --answer--
 
-1
+A: `keras`
+
+B: `Sequential`
+
+C: `Dense`
 

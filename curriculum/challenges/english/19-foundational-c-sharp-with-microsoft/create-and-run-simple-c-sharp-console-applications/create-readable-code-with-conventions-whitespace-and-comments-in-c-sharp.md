@@ -22,7 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-readab
 
 Which of the following is a bad reason to use a code comment?
 
-## --answers--
+## --distractors--
 
 To describe the high-level intent of the code.
 
@@ -30,10 +30,7 @@ To describe the high-level intent of the code.
 
 To temporarily comment out a line of code while evaluating a feature in a different way.
 
----
+## --answer--
 
 To explain how a new C# keyword works.
 
-## --video-solution--
-
-3

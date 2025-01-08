@@ -14,14 +14,11 @@ Most of the elements that you have learned about so far are block elements. In o
 
 Which of the following statements about block elements is true?
 
-## --answers--
+## --distractors--
 
 Block elements take up only the space necessary for their content.
 
----
+## --answer--
 
 Block elements start on a new line and take up the full width available.
 
-## --video-solution--
-
-2

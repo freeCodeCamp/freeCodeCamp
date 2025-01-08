@@ -22,18 +22,15 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-litera
 
 Which of the following lines of code creates a variable correctly?
 
-## --answers--
+## --distractors--
 
 `int x = 12.3m;`
 
 ---
 
-`decimal x = 12.3m;`
-
----
-
 `bool x = 'False';`
 
-## --video-solution--
+## --answer--
 
-2
+`decimal x = 12.3m;`
+

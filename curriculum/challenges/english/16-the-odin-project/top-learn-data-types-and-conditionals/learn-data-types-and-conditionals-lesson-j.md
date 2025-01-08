@@ -57,13 +57,13 @@ In the above example, the extra pair of parentheses is used to make the code mor
 
 You're tasked with writing an `if` statement that checks for the following conditions in a web app to display `Welcome!` to the user:
 
-1. The user must either have a premium account (`isPremium`) or have been a member for more than a year (`membershipDuration` > 12 months).
+1.  The user must either have a premium account (`isPremium`) or have been a member for more than a year (`membershipDuration` > 12 months).
 
-1. The user must not be currently blocked from the service (`!isBlocked`).
+2.  The user must not be currently blocked from the service (`!isBlocked`).
 
 Which if statement correctly checks these conditions?
 
-## --answers--
+## --distractors--
 
 ```javascript
 if (isPremium && membershipDuration > 12 && !isBlocked) {
@@ -82,19 +82,16 @@ if (isPremium || (membershipDuration > 12 && !isBlocked)) {
 ---
 
 ```javascript
-if ((isPremium || membershipDuration > 12) && !isBlocked) {
-  console.log("Welcome!");
-}
-```
-
----
-
-```javascript
 if (!isPremium || membershipDuration <= 12 || isBlocked) {
   console.log("Welcome!");
 }
 ```
 
-## --video-solution--
+## --answer--
 
-3
+```javascript
+if ((isPremium || membershipDuration > 12) && !isBlocked) {
+  console.log("Welcome!");
+}
+```
+

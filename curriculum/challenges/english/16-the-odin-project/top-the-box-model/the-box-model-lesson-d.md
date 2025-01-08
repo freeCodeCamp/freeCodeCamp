@@ -24,7 +24,7 @@ Play around with Chrome Dev Tools and see if you can answer the following questi
 
 In the Styles pane, what information can you view about an element when it is selected?
 
-## --answers--
+## --distractors--
 
 HTML structure and CSS rules
 
@@ -36,11 +36,7 @@ Styles tab
 
 Inspector tab
 
----
+## --answer--
 
 Applied styles and overwritten styles.
 
-
-## --video-solution--
-
-4

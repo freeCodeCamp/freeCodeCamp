@@ -24,11 +24,7 @@ Play around with Chrome Dev Tools and see if you can answer the following questi
 
 Which feature in the Elements pane allows you to select any element on a webpage by hovering over it?
 
-## --answers--
-
-Blue-highlighted icon
-
----
+## --distractors--
 
 Styles tab
 
@@ -38,9 +34,9 @@ Inspector tab
 
 ---
 
-HTML structure view 
+HTML structure view
 
+## --answer--
 
-## --video-solution--
+Blue-highlighted icon
 
-1

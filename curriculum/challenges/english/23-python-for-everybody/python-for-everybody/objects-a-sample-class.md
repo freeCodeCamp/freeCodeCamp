@@ -28,7 +28,7 @@ an.party()
 an.party()
 ```
 
-## --answers--
+## --distractors--
 
 <pre>
 So far 1
@@ -49,14 +49,10 @@ So far 2
 2
 </pre>
 
----
+## --answer--
 
 <pre>
 2
 4
 </pre>
-
-## --video-solution--
-
-4
 

@@ -18,13 +18,9 @@ Here is the <a href="https://colab.research.google.com/drive/1jr_k4awSSW1CBs9ma9
 
 In Python code, what is the formula for the x value of the vertex?
 
-## --answers--
+## --distractors--
 
 x = -b/2a
-
----
-
-x = -b/(2 &ast; a)
 
 ---
 
@@ -32,8 +28,9 @@ x = b/2a
 
 ---
 
-x = -b/2*a
+x = -b/2\*a
 
-## --video-solution--
+## --answer--
 
-2
+x = -b/(2 \* a)
+

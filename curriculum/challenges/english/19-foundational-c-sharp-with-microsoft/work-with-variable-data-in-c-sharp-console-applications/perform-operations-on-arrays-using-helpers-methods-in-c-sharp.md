@@ -22,7 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-arrays
 
 Which method changes the order of items in an `string` array?
 
-## --answers--
+## --distractors--
 
 `myArray.Resize()`
 
@@ -30,10 +30,7 @@ Which method changes the order of items in an `string` array?
 
 `myArray.Clear()`
 
----
+## --answer--
 
 `Array.Sort()`
 
-## --video-solution--
-
-3

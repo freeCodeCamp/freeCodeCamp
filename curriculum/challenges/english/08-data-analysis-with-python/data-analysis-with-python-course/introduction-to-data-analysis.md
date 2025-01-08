@@ -23,13 +23,9 @@ More resources:
 
 Which of the following is **not** part of Data Analysis?
 
-## --answers--
+## --distractors--
 
 Building statistical models and data visualizations.
-
----
-
-Picking a desired conclusion for the analysis.
 
 ---
 
@@ -39,6 +35,7 @@ Fixing incorrect values and removing invalid data.
 
 Transforming data into an appropriate data structure.
 
-## --video-solution--
+## --answer--
 
-2
+Picking a desired conclusion for the analysis.
+

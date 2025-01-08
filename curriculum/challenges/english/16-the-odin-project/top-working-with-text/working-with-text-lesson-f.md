@@ -47,19 +47,15 @@ The parent, child, and sibling relationships between elements will become much m
 
 What relationship does an element have with any nested element within it?
 
-## --answers--
+## --distractors--
 
 The element within the other element is called the parent element.
 
 ---
 
-The element within the other element is called the child element.
-
----
-
 The element within the other element is called the sibling element.
 
+## --answer--
 
-## --video-solution--
+The element within the other element is called the child element.
 
-2

@@ -16,11 +16,7 @@ dashedName: web-services-xml-schema
 
 What is XSD?
 
-## --answers--
-
-The W3C Schema specification for XML.
-
----
+## --distractors--
 
 The standard JSON schema from MOZ.
 
@@ -28,7 +24,7 @@ The standard JSON schema from MOZ.
 
 Extensible Situational Driver
 
-## --video-solution--
+## --answer--
 
-1
+The W3C Schema specification for XML.
 

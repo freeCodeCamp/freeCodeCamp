@@ -21,7 +21,7 @@ Here, `She` is used by Brian to refer to Sophie. Instead of repeating Sophie's n
 
 In the dialogue, which word does Brian use to refer to Sophie without repeating her name?
 
-## --answers--
+## --distractors--
 
 `he`
 
@@ -45,17 +45,9 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 
 `It` is usually used for things or animals.
 
----
+## --answer--
 
 `she`
-
-### --feedback--
-
-`She` refers to a female person.
-
-## --video-solution--
-
-4
 
 # --scene--
 
@@ -124,3 +116,4 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
   ]
 }
 ```
+

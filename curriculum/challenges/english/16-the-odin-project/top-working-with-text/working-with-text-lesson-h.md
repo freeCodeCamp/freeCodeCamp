@@ -42,23 +42,20 @@ Make an unordered list of places you’d like to visit someday.
 Make an ordered list of your all time top 5 favorite video games or movies.
   
 # --questions--
-  
+
 ## --text--
 
 What HTML tag is used to create an unordered list?
 
-## --answers--
+## --distractors--
 
 `<li>`
 
 ---
 
-`<ul>`
-
----
-
 `<ol>`
 
-## --video-solution--
+## --answer--
 
-2
+`<ul>`
+

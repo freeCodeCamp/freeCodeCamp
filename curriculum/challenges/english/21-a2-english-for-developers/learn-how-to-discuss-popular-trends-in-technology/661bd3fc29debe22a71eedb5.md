@@ -15,7 +15,7 @@ dashedName: task-66
 
 What do `physical or behavioral traits` include in biometrics?
 
-## --answers--
+## --distractors--
 
 Random objects
 
@@ -39,10 +39,7 @@ Colorful patterns
 
 Colorful patterns do not represent the specific traits of your body or behavior.
 
----
+## --answer--
 
 Special characteristics of your body or behavior
 
-## --video-solution--
-
-4

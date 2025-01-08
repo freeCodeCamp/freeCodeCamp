@@ -29,7 +29,7 @@ Watch Kevin Powell’s HTML Bold and Italic Text Video above.
 
 What element should you use to make text bold and important?
 
-## --answers--
+## --distractors--
 
 `<em>This is an important message</em>`
 
@@ -37,10 +37,7 @@ What element should you use to make text bold and important?
 
 `<h1>This is an important message</h1>`
 
----
+## --answer--
 
 `<strong>This is an important message</strong>`
 
-## --video-solution--
-
-3

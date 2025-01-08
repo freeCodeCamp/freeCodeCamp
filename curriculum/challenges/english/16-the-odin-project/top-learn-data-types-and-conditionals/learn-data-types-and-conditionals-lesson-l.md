@@ -27,15 +27,11 @@ let condition = true;
 let result = condition ? "option 1" : "option 2";
 ```
 
-## --answers--
+## --distractors--
 
 `"option 2"`
 
----
+## --answer--
 
 `"option 1"`
 
-
-## --video-solution--
-
-2

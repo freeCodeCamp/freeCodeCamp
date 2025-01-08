@@ -24,7 +24,7 @@ Suppose `decimal gradePointAverage = 3.99872831m;`.
 
 What is the value of `(int) gradePointAverage`?
 
-## --answers--
+## --distractors--
 
 3.99
 
@@ -32,10 +32,7 @@ What is the value of `(int) gradePointAverage`?
 
 4
 
----
+## --answer--
 
 3
 
-## --video-solution--
-
-3

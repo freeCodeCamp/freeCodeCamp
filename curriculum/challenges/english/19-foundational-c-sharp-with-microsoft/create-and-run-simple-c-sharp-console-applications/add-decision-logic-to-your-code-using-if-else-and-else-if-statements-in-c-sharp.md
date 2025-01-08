@@ -22,11 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-if-els
 
 Which of the choices below is not a valid operator in C#?
 
-## --answers--
-
-`%%`
-
----
+## --distractors--
 
 `&&`
 
@@ -34,6 +30,7 @@ Which of the choices below is not a valid operator in C#?
 
 `||`
 
-## --video-solution--
+## --answer--
 
-1
+`%%`
+

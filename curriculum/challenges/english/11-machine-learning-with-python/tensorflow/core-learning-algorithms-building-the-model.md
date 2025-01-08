@@ -16,19 +16,15 @@ dashedName: core-learning-algorithms-building-the-model
 
 What kind of estimator/model does TensorFlow recommend using for classification?
 
-## --answers--
+## --distractors--
 
 `LinearClassifier`
 
 ---
 
-`DNNClassifier`
-
----
-
 `BoostedTreesClassifier`
 
-## --video-solution--
+## --answer--
 
-2
+`DNNClassifier`
 

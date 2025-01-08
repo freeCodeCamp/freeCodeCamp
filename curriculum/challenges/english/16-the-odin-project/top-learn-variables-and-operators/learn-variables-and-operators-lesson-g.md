@@ -56,11 +56,12 @@ Why are unary pluses applied to values before the binary ones? As you’re going
 # --questions--
 
 ## --text--
+
 Given the explanation of unary and binary `+` operators in JavaScript, how can you correctly sum the string values `'2'` and `'3'` as numbers using unary `+`?
 
-## --answers--
+## --distractors--
 
-`console.log('2' + '3'); // Outputs: '23'` 
+`console.log('2' + '3'); // Outputs: '23'`
 
 ---
 
@@ -68,13 +69,9 @@ Given the explanation of unary and binary `+` operators in JavaScript, how can y
 
 ---
 
-`console.log(+'2' + +'3'); // Outputs: 5`
-
----
-
 `console.log(Number('2') + Number('3')); // Outputs: '23'`
 
+## --answer--
 
-## --video-solution--
+`console.log(+'2' + +'3'); // Outputs: 5`
 
-3

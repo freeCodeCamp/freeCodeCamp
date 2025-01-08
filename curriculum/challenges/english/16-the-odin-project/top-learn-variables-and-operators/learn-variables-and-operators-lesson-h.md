@@ -38,13 +38,9 @@ Here’s an extract from the precedence table (you don’t need to remember this
 
 When dealing with multiple operators in a JavaScript expression, which statement is true regarding the order of execution?
 
-## --answers--
+## --distractors--
 
 Operators are executed from right to left, regardless of their precedence.
-
----
-
-Operators with higher precedence are executed first, and parentheses can override the predefined precedence.
 
 ---
 
@@ -54,7 +50,7 @@ The operator precedence is determined by the operator's speed of execution.
 
 Multiplication always takes precedence over addition, and unary operators are executed after binary ones.
 
+## --answer--
 
-## --video-solution--
+Operators with higher precedence are executed first, and parentheses can override the predefined precedence.
 
-2

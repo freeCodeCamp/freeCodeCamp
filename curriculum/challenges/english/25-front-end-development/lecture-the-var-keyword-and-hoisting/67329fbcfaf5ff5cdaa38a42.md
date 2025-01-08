@@ -16,7 +16,7 @@ Watch the video lecture and answer the questions below.
 
 What is the scope of a variable declared with `var` outside of any function?
 
-## --answers--
+## --distractors--
 
 Block scope.
 
@@ -34,19 +34,15 @@ Think about where a `var` variable declared outside a function can be accessed.
 
 ---
 
-Global scope.
-
----
-
 Module scope.
 
 ### --feedback--
 
 Think about where a `var` variable declared outside a function can be accessed.
 
-## --video-solution--
+## --answer--
 
-3
+Global scope.
 
 ## --text--
 
@@ -63,7 +59,7 @@ if (true) {
 console.log(x);
 ```
 
-## --answers--
+## --distractors--
 
 ```js
 10
@@ -73,13 +69,6 @@ console.log(x);
 ### --feedback--
 
 Remember that `var` is function-scoped or globally-scoped, and it allows redeclaration within the same scope.
-
----
-
-```js
-20
-20
-```
 
 ---
 
@@ -103,25 +92,24 @@ Remember that `var` is function-scoped or globally-scoped, and it allows redecla
 
 Remember that `var` is function-scoped or globally-scoped, and it allows redeclaration within the same scope.
 
-## --video-solution--
+## --answer--
 
-2
+```js
+20
+20
+```
 
 ## --text--
 
 Which of the following is NOT a reason to avoid using `var` in modern JavaScript?
 
-## --answers--
+## --distractors--
 
 `var` allows redeclaration of variables in the same scope.
 
 ### --feedback--
 
 Consider which statement is false about `var`'s behavior or support.
-
----
-
-`var` is not supported in modern browsers.
 
 ---
 
@@ -139,6 +127,7 @@ Consider which statement is false about `var`'s behavior or support.
 
 Consider which statement is false about `var`'s behavior or support.
 
-## --video-solution--
+## --answer--
 
-2
+`var` is not supported in modern browsers.
+

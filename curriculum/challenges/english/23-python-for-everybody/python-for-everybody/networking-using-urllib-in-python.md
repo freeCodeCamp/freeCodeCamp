@@ -23,11 +23,7 @@ for line in fhand:
     print(line.decode().strip())
 ```
 
-## --answers--
-
-Just contents of "romeo.txt".
-
----
+## --distractors--
 
 A header and the contents of "romeo.txt".
 
@@ -35,7 +31,7 @@ A header and the contents of "romeo.txt".
 
 A header, a footer, and the contents of "romeo.txt".
 
-## --video-solution--
+## --answer--
 
-1
+Just contents of "romeo.txt".
 

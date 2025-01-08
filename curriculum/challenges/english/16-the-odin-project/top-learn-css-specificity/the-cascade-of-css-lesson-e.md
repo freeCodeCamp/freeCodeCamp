@@ -30,13 +30,9 @@ While the `color: red` declaration would take precedence, the `background-color:
 
 Considering the updated CSS code, which of the following describes the rendering of the `<div class="list" id="subsection"></div>` element?
 
-## --answers--
+## --distractors--
 
 Text color: Red, Background color: Transparent
-
----
-
-Text color: Red, Background color: Yellow
 
 ---
 
@@ -46,6 +42,7 @@ Text color: Blue, Background color: Transparent
 
 Text color: Blue, Background color: Yellow
 
-## --video-solution--
+## --answer--
 
-2
+Text color: Red, Background color: Yellow
+

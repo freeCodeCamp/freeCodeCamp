@@ -16,7 +16,7 @@ dashedName: natural-language-processing-with-rnns-recurring-neural-networks
 
 What is true about Recurrent Neural Networks?
 
-## --answers--
+## --distractors--
 
 1: They are a type of feed-forward neural network.
 
@@ -28,11 +28,7 @@ What is true about Recurrent Neural Networks?
 
 3: RNN's contain a loop and process one piece of input at a time.
 
----
+## --answer--
 
 4: Both 2 and 3.
-
-## --video-solution--
-
-4
 

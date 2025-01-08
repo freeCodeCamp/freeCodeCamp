@@ -15,7 +15,7 @@ Because the box model concept is so incredibly fundamental, let’s dig a bit de
 
 What does the box-sizing CSS property do?
 
-## --answers--
+## --distractors--
 
 It determines the order of the box-model properties.
 
@@ -25,13 +25,9 @@ It specifies the position of an element on the webpage.
 
 ---
 
-It controls how the total width and height of an element are calculated.
-
----
-
 It sets the background color of an element.
 
+## --answer--
 
-## --video-solution--
+It controls how the total width and height of an element are calculated.
 
-3

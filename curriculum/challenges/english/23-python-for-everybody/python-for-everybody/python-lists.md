@@ -21,13 +21,9 @@ fruit = "banana"
 x = fruit[1]
 ```
 
-## --answers--
+## --distractors--
 
 banana
-
----
-
-a
 
 ---
 
@@ -37,7 +33,7 @@ b
 
 True
 
-## --video-solution--
+## --answer--
 
-2
+a
 

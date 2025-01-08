@@ -16,7 +16,7 @@ dashedName: understanding-sockets-and-creating-a-tcp-server
 
 Which of the following functions creates a socket object?
 
-## --answers--
+## --distractors--
 
 `socket.bind((host, port))`
 
@@ -24,11 +24,7 @@ Which of the following functions creates a socket object?
 
 `socket.gethostbyname()`
 
----
+## --answer--
 
 `socket.socket(socket.AF_INET, socket.SOCK_STREAM)`
-
-## --video-solution--
-
-3
 

@@ -16,13 +16,9 @@ dashedName: regular-expressions
 
 Which regex matches only a white space character?
 
-## --answers--
+## --distractors--
 
-\\S
-
----
-
-\\s
+\S
 
 ---
 
@@ -36,7 +32,7 @@ Which regex matches only a white space character?
 
 \\.
 
-## --video-solution--
+## --answer--
 
-2
+\s
 

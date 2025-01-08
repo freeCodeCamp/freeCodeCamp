@@ -28,13 +28,9 @@ When a programmer is sure that a variable will never change, they can declare it
 
 What is the result of attempting to reassign a `const` declared variable in JavaScript?
 
-## --answers--
+## --distractors--
 
 The reassignment succeeds with no errors.
-
----
-
-An error is thrown because `const` declared variables cannot be reassigned.
 
 ---
 
@@ -44,7 +40,7 @@ JavaScript silently ignores the reassignment.
 
 The variable type is automatically changed to `let`.
 
+## --answer--
 
-## --video-solution--
+An error is thrown because `const` declared variables cannot be reassigned.
 
-2

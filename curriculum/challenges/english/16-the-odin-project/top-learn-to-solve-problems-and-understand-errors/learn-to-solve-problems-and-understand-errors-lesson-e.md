@@ -36,13 +36,9 @@ Sometimes your browser’s console will also display the column (or character) i
 
 What does the `ReferenceError` in the provided JavaScript code indicate?
 
-## --answers--
+## --distractors--
 
 The variable used has been declared but used incorrectly in its type.
-
----
-
-The variable called in the code has not been declared within the current scope.
 
 ---
 
@@ -52,7 +48,7 @@ The code has an issue with its syntax that prevents it from being parsed correct
 
 The variable used has been declared but not initialized within the current scope.
 
+## --answer--
 
-## --video-solution--
+The variable called in the code has not been declared within the current scope.
 
-2

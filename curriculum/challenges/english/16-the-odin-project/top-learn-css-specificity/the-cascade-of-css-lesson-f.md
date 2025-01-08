@@ -44,7 +44,7 @@ When comparing selectors, you may come across special symbols for the universal 
 
 Based on the given CSS code, which font size would be applied to elements with the class "class second-class"?
 
-## --answers--
+## --distractors--
 
 12px
 
@@ -54,12 +54,9 @@ Based on the given CSS code, which font size would be applied to elements with t
 
 ---
 
-24px
-
----
-
 48px
 
-## --video-solution--
+## --answer--
 
-3
+24px
+

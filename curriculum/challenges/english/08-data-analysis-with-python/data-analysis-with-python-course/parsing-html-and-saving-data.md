@@ -25,7 +25,7 @@ More resources:
 
 What Python library has the `.read_html()` method we can use for parsing HTML documents and extracting tables?
 
-## --answers--
+## --distractors--
 
 BeautifierSoupy
 
@@ -37,11 +37,7 @@ WebReader
 
 HTTP-master
 
----
+## --answer--
 
 Pandas
-
-## --video-solution--
-
-4
 

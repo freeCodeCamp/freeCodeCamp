@@ -16,7 +16,7 @@ dashedName: python-functions
 
 What is the purpose of the "def" keyword in Python?
 
-## --answers--
+## --distractors--
 
 It is slang that means "The following code is really cool."
 
@@ -30,13 +30,9 @@ It indicates that the following indented section of code is to be stored for lat
 
 ---
 
-It indicates the start of a function, and the following indented section of code is to be stored for later.
-
----
-
 None of the above.
 
-## --video-solution--
+## --answer--
 
-4
+It indicates the start of a function, and the following indented section of code is to be stored for later.
 

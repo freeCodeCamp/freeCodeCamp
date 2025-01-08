@@ -31,13 +31,7 @@ lst = sorted(lst, reverse=True)
 print(lst)
 ```
 
-## --answers--
-
-```python
-print( sorted( [ (v,k) for k,v in counts.items() ], reverse=True ) )
-```
-
----
+## --distractors--
 
 ```python
 print( [ (k,v) for k,v in counts.items().sorted() ] )
@@ -55,7 +49,9 @@ print( sorted( [ (v,k) for k,v in counts.keys() ] ) )
 print( [ (k,v) for k,v in counts.values().sort() ] )
 ```
 
-## --video-solution--
+## --answer--
 
-1
+```python
+print( sorted( [ (v,k) for k,v in counts.items() ], reverse=True ) )
+```
 

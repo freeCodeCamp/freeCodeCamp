@@ -28,25 +28,21 @@ div {
 
 Here, all three `<div>` elements would be selected, while the `<p>` element wouldn’t be.
 
-# --questions--    
+# --questions--
 
 ## --text--
 
 Which of the following best describes the CSS code given above?
 
-## --answers--
+## --distractors--
 
 The code applies a `white` color to all elements in the HTML file.
 
 ---
 
-The code applies a `white` color to all `div` elements in the HTML file.
-
----
-
 The code applies a `white` color to all `p` elements in the HTML file.
 
+## --answer--
 
-## --video-solution--
+The code applies a `white` color to all `div` elements in the HTML file.
 
-2

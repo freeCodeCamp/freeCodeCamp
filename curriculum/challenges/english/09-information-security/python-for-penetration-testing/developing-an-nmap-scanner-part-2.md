@@ -16,11 +16,7 @@ dashedName: developing-an-nmap-scanner-part-2
 
 Which of the following allows you to scan for UDP ports between 21 to 443?
 
-## --answers--
-
-`.scan(ip_addr, '21-443', '-v -sU')`
-
----
+## --distractors--
 
 `.scan(ip_addr, '1-1024', '-v -sS')`
 
@@ -28,7 +24,7 @@ Which of the following allows you to scan for UDP ports between 21 to 443?
 
 `.scan(ip_addr, '21-443', '-v -sS')`
 
-## --video-solution--
+## --answer--
 
-1
+`.scan(ip_addr, '21-443', '-v -sU')`
 

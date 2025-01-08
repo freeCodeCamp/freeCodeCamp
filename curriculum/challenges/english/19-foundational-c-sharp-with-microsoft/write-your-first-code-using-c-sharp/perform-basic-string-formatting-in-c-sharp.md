@@ -22,18 +22,15 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-basic-
 
 Which of the following lines of code correctly uses string interpolation assuming that the variable `value` is a string?
 
-## --answers--
+## --distractors--
 
 `Console.WriteLine(@"My value: {value}");`
 
 ---
 
-`Console.WriteLine($"My value: {value}");`
-
----
-
 `Console.WriteLine(@"My value: [value]");`
 
-## --video-solution--
+## --answer--
 
-2
+`Console.WriteLine($"My value: {value}");`
+

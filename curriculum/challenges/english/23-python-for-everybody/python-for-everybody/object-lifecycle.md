@@ -35,7 +35,7 @@ m.party()
 q.party()
 ```
 
-## --answers--
+## --distractors--
 
 <pre>
 Quincy constructed
@@ -49,23 +49,19 @@ Quincy party count 3
 
 <pre>
 Quincy constructed
-Miya constructed
 Quincy party count 1
-Miya party count 1
 Quincy party count 2
+Miya constructed
+Miya party count 1
 </pre>
 
----
+## --answer--
 
 <pre>
 Quincy constructed
-Quincy party count 1
-Quincy party count 2
 Miya constructed
+Quincy party count 1
 Miya party count 1
+Quincy party count 2
 </pre>
-
-## --video-solution--
-
-2
 

@@ -25,19 +25,15 @@ More resources:
 
 The Python method `.duplicated()` returns a boolean Series for your DataFrame. `True` is the return value for rows that:
 
-## --answers--
+## --distractors--
 
 contain a duplicate, where the value for the row contains the first occurrence of that value.
 
 ---
 
-contain a duplicate, where the value for the row is at least the second occurrence of that value.
-
----
-
 contain a duplicate, where the value for the row contains either the first or second occurrence.
 
-## --video-solution--
+## --answer--
 
-2
+contain a duplicate, where the value for the row is at least the second occurrence of that value.
 

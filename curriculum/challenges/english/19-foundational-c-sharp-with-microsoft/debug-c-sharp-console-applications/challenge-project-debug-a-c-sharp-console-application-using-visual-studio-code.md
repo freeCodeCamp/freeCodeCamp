@@ -22,11 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/challenge-pro
 
 Which of the following options can be used to set a breakpoint in Visual Studio Code?
 
-## --answers--
-
-Left-click in the column to the left of a line number in the code editor.
-
----
+## --distractors--
 
 Select Toggle Breakpoint on the Edit menu.
 
@@ -34,6 +30,7 @@ Select Toggle Breakpoint on the Edit menu.
 
 Right-click in the middle of a line of code, and then select Toggle Breakpoint.
 
-## --video-solution--
+## --answer--
 
-1
+Left-click in the column to the left of a line number in the code editor.
+

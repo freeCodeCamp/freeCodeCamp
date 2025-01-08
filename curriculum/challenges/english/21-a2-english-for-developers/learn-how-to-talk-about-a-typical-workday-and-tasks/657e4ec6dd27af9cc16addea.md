@@ -18,7 +18,7 @@ Example: `Health and safety regulations ensure a safe workplace.`
 
 What are `regulations` usually in a business context?
 
-## --answers--
+## --distractors--
 
 Personal preferences.
 
@@ -36,16 +36,13 @@ Regulations are more formal than informal agreements.
 
 ---
 
-Official rules set by authorities.
-
----
-
 Suggestions for leisure activities.
 
 ### --feedback--
 
 They are about professional conduct, not leisure.
 
-## --video-solution--
+## --answer--
 
-3
+Official rules set by authorities.
+

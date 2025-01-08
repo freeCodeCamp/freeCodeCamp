@@ -22,7 +22,7 @@ x = x + 1
 print(x)
 ```
 
-## --answers--
+## --distractors--
 
 x
 
@@ -30,11 +30,7 @@ x
 
 x + 1
 
----
+## --answer--
 
 44
-
-## --video-solution--
-
-3
 

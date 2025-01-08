@@ -35,13 +35,9 @@ const newNumbers = numbers.map((number) => {
 console.log(newNumbers);
 ```
 
-## --answers--
+## --distractors--
 
 `[1, 2, 3, 4, 5]`
-
----
-
-`[3, 6, 9, 12, 15]`
 
 ---
 
@@ -51,6 +47,7 @@ console.log(newNumbers);
 
 `[3, 6, 9, 12, 15, 18]`
 
-## --video-solution--
+## --answer--
 
-2
+`[3, 6, 9, 12, 15]`
+

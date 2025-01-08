@@ -35,13 +35,9 @@ Watch <a href="https://www.youtube.com/watch?v=azcrPFhaY9k" target="_blank">How 
 
 What should you do before starting to code according to the provided text?
 
-## --answers--
+## --distractors--
 
 Immediately start coding to see what problems arise.
-
----
-
-Write out the problem in plain English and make sure you can explain it to someone else.
 
 ---
 
@@ -51,7 +47,7 @@ Sketch the user interface and start coding the most complex functions first.
 
 Collect all possible inputs from users and other sources.
 
+## --answer--
 
-## --video-solution--
+Write out the problem in plain English and make sure you can explain it to someone else.
 
-2

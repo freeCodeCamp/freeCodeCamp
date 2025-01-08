@@ -16,22 +16,19 @@ Here is a detour from the Python code, as this video shows you how to create mor
 
 What marker do you use to attach a formula to a cell in a spreadsheet?
 
-## --answers--
+## --distractors--
 
 ()
 
 ---
 
-=
-
----
-
-==
+\==
 
 ---
 
 formula()
 
-## --video-solution--
+## --answer--
 
-2
+\=
+

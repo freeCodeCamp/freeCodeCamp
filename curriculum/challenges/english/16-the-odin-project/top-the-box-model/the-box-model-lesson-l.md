@@ -15,14 +15,11 @@ Because the box model concept is so incredibly fundamental, let’s dig a bit de
 
 Would you use margin or padding if you wanted two elements to overlap each other?
 
-## --answers--
+## --distractors--
 
 Padding
 
----
+## --answer--
 
 Margin
 
-## --video-solution--
-
-2

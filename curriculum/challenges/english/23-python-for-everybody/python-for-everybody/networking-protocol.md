@@ -16,13 +16,9 @@ dashedName: networking-protocol
 
 What type of HTTP request is usually used to access a website?
 
-## --answers--
+## --distractors--
 
 POST
-
----
-
-GET
 
 ---
 
@@ -32,7 +28,7 @@ WEB
 
 ACCESS
 
-## --video-solution--
+## --answer--
 
-2
+GET
 

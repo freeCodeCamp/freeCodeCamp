@@ -22,7 +22,7 @@ const fruits = ['apple', 'banana', 'orange'];
 
 What is an array in JavaScript?
 
-## --answers--
+## --distractors--
 
 A function that stores multiple strings and numbers.
 
@@ -32,12 +32,9 @@ A data type used exclusively for numerical operations.
 
 ---
 
-An ordered collection of items that can store values of any type, including strings and numbers.
-
----
-
 A variable that can only store string values.
 
-## --video-solution--
+## --answer--
 
-3
+An ordered collection of items that can store values of any type, including strings and numbers.
+

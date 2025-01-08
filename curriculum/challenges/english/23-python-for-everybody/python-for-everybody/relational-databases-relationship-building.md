@@ -16,11 +16,7 @@ dashedName: relational-databases-relationship-building
 
 What does the INSERT command do in SQL?
 
-## --answers--
-
-It defines a new row by listing the fields we want to include followed by the values we want placed in the new row.
-
----
+## --distractors--
 
 It defines a new column by listing the rows we want to include followed by the values we want placed in the new column.
 
@@ -28,7 +24,7 @@ It defines a new column by listing the rows we want to include followed by the v
 
 It defines a new table by listing the rows and fields we want to include followed by the values that we want placed in the table.
 
-## --video-solution--
+## --answer--
 
-1
+It defines a new row by listing the fields we want to include followed by the values we want placed in the new row.
 

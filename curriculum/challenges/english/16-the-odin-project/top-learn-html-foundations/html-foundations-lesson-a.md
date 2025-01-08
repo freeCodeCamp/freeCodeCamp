@@ -27,11 +27,7 @@ Watch Kevin Powell’s <a href="https://www.youtube.com/watch?v=LGQuIIv2RVA&list
 
 What are HTML tags?
 
-## --answers--
-
-HTML tags tell the browser what content an element contains.
-
----
+## --distractors--
 
 HTML tags tell the browser when to load its content.
 
@@ -39,7 +35,7 @@ HTML tags tell the browser when to load its content.
 
 HTML tags tell the browser what content the next element contains.
 
+## --answer--
 
-## --video-solution--
+HTML tags tell the browser what content an element contains.
 
-1

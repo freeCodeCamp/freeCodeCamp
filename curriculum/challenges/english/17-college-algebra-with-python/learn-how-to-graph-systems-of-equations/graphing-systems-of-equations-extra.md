@@ -18,7 +18,7 @@ Here is the <a href="https://colab.research.google.com/drive/1m5oG62NzUHRzBghGCP
 
 If you want to create an interactive plot with a slider to zoom in and out, where does most of the graphing code appear?
 
-## --answers--
+## --distractors--
 
 Within the interactive() function
 
@@ -28,12 +28,9 @@ In the slider
 
 ---
 
-Within the function that the interactive() calls
-
----
-
 Before all of the functions
 
-## --video-solution--
+## --answer--
 
-3
+Within the function that the interactive() calls
+

@@ -20,13 +20,7 @@ Fill in the blanks below to create the training examples for the RNN:
 char_dataset = tf.data.__A__.__B__(text_as_int)
 ```
 
-## --answers--
-
-A: `Dataset`
-
-B: `from_tensor_slices`
-
----
+## --distractors--
 
 A: `data`
 
@@ -38,7 +32,9 @@ A: `DataSet`
 
 B: `from_generator`
 
-## --video-solution--
+## --answer--
 
-1
+A: `Dataset`
+
+B: `from_tensor_slices`
 

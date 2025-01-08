@@ -16,11 +16,7 @@ dashedName: networking-text-processing
 
 Which type of encoding do most websites use?
 
-## --answers--
-
-UTF-8
-
----
+## --distractors--
 
 UTF-16
 
@@ -28,7 +24,7 @@ UTF-16
 
 UTF-32
 
-## --video-solution--
+## --answer--
 
-1
+UTF-8
 

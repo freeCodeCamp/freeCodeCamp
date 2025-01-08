@@ -16,7 +16,7 @@ Watch the lecture video and answer the questions below.
 
 What do user action pseudo-classes allow you to do?
 
-## --answers--
+## --distractors--
 
 They enable animations and transitions.
 
@@ -34,25 +34,21 @@ Think about how you can interact with users purely with CSS.
 
 ---
 
-They let you provide feedback to the user without relying on JavaScript.
-
----
-
 They let you style the last element in a list.
 
 ### --feedback--
 
 Think about how you can interact with users purely with CSS.
 
-## --video-solution--
+## --answer--
 
-3
+They let you provide feedback to the user without relying on JavaScript.
 
 ## --text--
 
 What does the `:checked` pseudo-class do in CSS?
 
-## --answers--
+## --distractors--
 
 It selects an element when it is disabled.
 
@@ -70,35 +66,27 @@ Think about how forms handle user selections.
 
 ---
 
-It styles elements like checkboxes or radio buttons that are checked.
-
----
-
 It styles an element when it gains focus.
 
 ### --feedback--
 
 Think about how forms handle user selections.
 
-## --video-solution--
+## --answer--
 
-3
+It styles elements like checkboxes or radio buttons that are checked.
 
 ## --text--
 
 What does the `:focus` pseudo-class do?
 
-## --answers--
+## --distractors--
 
 It selects an element when it is hovered over by a mouse.
 
 ### --feedback--
 
 Think about how users navigate forms using a keyboard.
-
----
-
-It applies styles when an element gains focus, usually through keyboard navigation or a click.
 
 ---
 
@@ -116,6 +104,7 @@ It applies styles to an element when it is disabled.
 
 Think about how users navigate forms using a keyboard.
 
-## --video-solution--
+## --answer--
 
-2
+It applies styles when an element gains focus, usually through keyboard navigation or a click.
+

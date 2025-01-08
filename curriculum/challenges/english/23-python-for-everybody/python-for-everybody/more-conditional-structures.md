@@ -34,7 +34,7 @@ print(cel)
 
 Which line/lines should be surrounded by `try` block?
 
-## --answers--
+## --distractors--
 
 1
 
@@ -44,17 +44,13 @@ Which line/lines should be surrounded by `try` block?
 
 ---
 
-3,4
-
----
-
 4
 
 ---
 
 None
 
-## --video-solution--
+## --answer--
 
-3
+3,4
 

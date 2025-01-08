@@ -23,7 +23,7 @@ dict["Sat"] = 2
 dict["Sun"] = 9
 ```
 
-## --answers--
+## --distractors--
 
 ```python
 {'Fri': 20, 'Thu': 6, 'Sat': 1}
@@ -47,13 +47,9 @@ dict["Sun"] = 9
 {'Thu': 13, 'Sat': 2, 'Sun': 9}
 ```
 
----
+## --answer--
 
 ```python
 {'Fri': 20, 'Thu': 13, 'Sat': 2, 'Sun': 9}
 ```
-
-## --video-solution--
-
-5
 

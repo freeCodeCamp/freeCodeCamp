@@ -22,18 +22,15 @@ Complete the <a href="https://learn.microsoft.com/training/modules/create-throw-
 
 When should a method throw an exception?
 
-## --answers--
+## --distractors--
 
 A method should throw an exception when the method can complete its intended purpose.
 
 ---
 
-A method should throw an exception when the method can't complete its intended purpose.
-
----
-
 A method should throw an exception when an exception type matches the intended purpose of the method.
 
-## --video-solution--
+## --answer--
 
-2
+A method should throw an exception when the method can't complete its intended purpose.
+

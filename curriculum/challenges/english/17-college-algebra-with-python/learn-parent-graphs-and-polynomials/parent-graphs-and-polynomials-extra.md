@@ -18,7 +18,7 @@ Here is the <a href="https://colab.research.google.com/drive/1bspkmQVcKOXUuk-Orb
 
 How many sliders would you add to change the coefficients in a quadratic graph?
 
-## --answers--
+## --distractors--
 
 1
 
@@ -28,12 +28,9 @@ How many sliders would you add to change the coefficients in a quadratic graph?
 
 ---
 
-3
-
----
-
 4
 
-## --video-solution--
+## --answer--
 
 3
+

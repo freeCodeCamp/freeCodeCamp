@@ -21,7 +21,7 @@ counts = { 'quincy' : 1 , 'mrugesh' : 42, 'beau': 100, '0': 10}
 print(counts.get('kris', 0))
 ```
 
-## --answers--
+## --distractors--
 
 2
 
@@ -31,17 +31,13 @@ quincy
 
 ---
 
-0
-
----
-
 10
 
 ---
 
-[will return error]
+\[will return error]
 
-## --video-solution--
+## --answer--
 
-3
+0
 

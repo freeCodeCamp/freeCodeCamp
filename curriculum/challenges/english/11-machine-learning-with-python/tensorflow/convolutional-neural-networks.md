@@ -20,7 +20,7 @@ The next few video lessons will reference [this Colab notebook](https://colab.re
 
 Dense neural networks analyze input on a global scale and recognize patterns in specific areas. Convolutional neural networks...:
 
-## --answers--
+## --distractors--
 
 also analyze input globally and extract features from specific areas.
 
@@ -28,11 +28,7 @@ also analyze input globally and extract features from specific areas.
 
 do not work well for image classification or object detection.
 
----
+## --answer--
 
 scan through the entire input a little at a time and learn local patterns.
-
-## --video-solution--
-
-3
 

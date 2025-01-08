@@ -22,7 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-for/" 
 
 Which of the following `for` statements is correct?
 
-## --answers--
+## --distractors--
 
 `for (int x = 20: x < 80: x++)`
 
@@ -30,10 +30,7 @@ Which of the following `for` statements is correct?
 
 `for (int j = 0; j == 80; j + 1)`
 
----
+## --answer--
 
 `for (int counter = 20; counter < 80; counter++)`
 
-## --video-solution--
-
-3

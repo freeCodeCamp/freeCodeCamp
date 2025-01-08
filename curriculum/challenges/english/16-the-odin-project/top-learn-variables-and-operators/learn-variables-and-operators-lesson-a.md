@@ -41,7 +41,7 @@ JavaScript files have the extension `.js` similar to `.css` for stylesheets. Ext
 
 Which statement accurately describes how to include JavaScript in an HTML document?
 
-## --answers--
+## --distractors--
 
 JavaScript can only be included internally within a `<script>` tag in the HTML body.
 
@@ -51,13 +51,9 @@ JavaScript code must be written in the `<head>` section of an HTML document for 
 
 ---
 
-JavaScript can be included directly in an HTML file using a `<script>` tag or linked externally via a `<script src="javascript.js">` tag. 
-
----
-
 External JavaScript files require a special attribute in the `<script>` tag to be recognized by web browsers.
 
+## --answer--
 
-## --video-solution--
+JavaScript can be included directly in an HTML file using a `<script>` tag or linked externally via a `<script src="javascript.js">` tag.
 
-3

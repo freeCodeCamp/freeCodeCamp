@@ -22,25 +22,21 @@ A couple of the pros to this method are:
 1. It keeps your HTML and CSS separated, which results in the HTML file being smaller and making things look cleaner.
 2. You only need to edit the CSS in one place, which is especially handy for websites with many pages that all share similar styles.
 
-# --questions--    
+# --questions--
 
 ## --text--
 
 Which of the following best describes the purpose of the `rel` attribute in the `<link>` element when linking an external CSS file to an HTML file?
 
-## --answers--
+## --distractors--
 
 It specifies the location of the CSS file relative to the location of the HTML file.
 
 ---
 
-It specifies the relationship between the HTML file and the linked file.
-
----
-
 It specifies the type of file being linked (e.g. "stylesheet").
 
+## --answer--
 
-## --video-solution--
+It specifies the relationship between the HTML file and the linked file.
 
-2

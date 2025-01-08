@@ -47,7 +47,7 @@ The parent, child, and sibling relationships between elements will become much m
 
 What relationship do two elements have if they are at the same level of nesting?
 
-## --answers--
+## --distractors--
 
 The elements are each other's parents.
 
@@ -55,10 +55,7 @@ The elements are each other's parents.
 
 The elements are each other's children.
 
----
+## --answer--
 
 The elements are siblings.
 
-## --video-solution--
-
-3

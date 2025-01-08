@@ -16,7 +16,7 @@ One more thing... This brief video will show you some of the resources available
 
 Which code snippets are available in the Google Colaboratory?
 
-## --answers--
+## --distractors--
 
 Camera capture
 
@@ -28,10 +28,7 @@ Adding form fields
 
 Importing data from Google Sheets
 
----
+## --answer--
 
 All of the above
 
-## --video-solution--
-
-4

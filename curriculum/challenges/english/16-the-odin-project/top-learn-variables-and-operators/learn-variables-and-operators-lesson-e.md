@@ -28,11 +28,7 @@ Given the table of operators above, write a simple program snippet that demonstr
 
 What is the result of applying the modulus operator to `x` where `x = 10`?
 
-## --answers--
-
-`x % 3` results in `1`
-
----
+## --distractors--
 
 `x % 3` results in `3`
 
@@ -44,7 +40,7 @@ What is the result of applying the modulus operator to `x` where `x = 10`?
 
 `x % 3` results in `2`
 
+## --answer--
 
-## --video-solution--
+`x % 3` results in `1`
 
-1

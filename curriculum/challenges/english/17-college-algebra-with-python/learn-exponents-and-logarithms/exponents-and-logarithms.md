@@ -16,7 +16,7 @@ Here is the <a href="https://colab.research.google.com/drive/1hg7ecxGT20B8HR2mV7
 
 What is log<sub>5</sub>(25)?
 
-## --answers--
+## --distractors--
 
 0
 
@@ -26,12 +26,9 @@ What is log<sub>5</sub>(25)?
 
 ---
 
-2
-
----
-
 5
 
-## --video-solution--
+## --answer--
 
-3
+2
+

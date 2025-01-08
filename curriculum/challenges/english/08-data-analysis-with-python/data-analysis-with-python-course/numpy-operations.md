@@ -30,7 +30,7 @@ a = np.arange(5)
 a + 20
 ```
 
-## --answers--
+## --distractors--
 
 ```python
 [20, 21, 22, 24, 24]
@@ -39,16 +39,12 @@ a + 20
 ---
 
 ```python
-[0, 1, 2, 3, 4]
-```
-
----
-
-```python
 [25, 26, 27, 28, 29]
 ```
 
-## --video-solution--
+## --answer--
 
-2
+```python
+[0, 1, 2, 3, 4]
+```
 

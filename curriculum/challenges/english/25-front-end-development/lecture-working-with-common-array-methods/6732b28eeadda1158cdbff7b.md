@@ -21,17 +21,13 @@ let arr = [1, 2, 3, 4, 5];
 console.log(arr.includes(3, 3));
 ```
 
-## --answers--
+## --distractors--
 
 `true`
 
 ### --feedback--
 
 The second parameter of `includes()` specifies the starting position for the search.
-
----
-
-`false`
 
 ---
 
@@ -49,9 +45,9 @@ This will throw an error.
 
 The second parameter of `includes()` specifies the starting position for the search.
 
-## --video-solution--
+## --answer--
 
-2
+`false`
 
 ## --text--
 
@@ -62,17 +58,13 @@ let arr = ['a', 'b', 'c', 'd', 'e'];
 console.log(arr.includes('C'));
 ```
 
-## --answers--
+## --distractors--
 
 `true`
 
 ### --feedback--
 
 Remember that `includes()` is case-sensitive when dealing with strings.
-
----
-
-`false`
 
 ---
 
@@ -90,9 +82,9 @@ This will throw an error.
 
 Remember that `includes()` is case-sensitive when dealing with strings.
 
-## --video-solution--
+## --answer--
 
-2
+`false`
 
 ## --text--
 
@@ -103,17 +95,13 @@ let arr = [1, '2', 3, '4', 5];
 console.log(arr.includes('3'));
 ```
 
-## --answers--
+## --distractors--
 
 `true`
 
 ### --feedback--
 
 The `includes()` method uses strict equality (`===`) for comparison.
-
----
-
-`false`
 
 ---
 
@@ -131,6 +119,7 @@ This will throw an error.
 
 The `includes()` method uses strict equality (`===`) for comparison.
 
-## --video-solution--
+## --answer--
 
-2
+`false`
+

@@ -15,7 +15,7 @@ In an office setting, it's common to point out items using `these` and `those`. 
 
 Which sentence correctly differentiates between `these` and `those`?
 
-## --answers--
+## --distractors--
 
 `These is my monitor and those is my speakers.`
 
@@ -33,16 +33,13 @@ Look for a sentence that uses `these` for multiple items nearby and `those` for 
 
 ---
 
-`These are my folders, and those are my files in the cabinet.`
-
----
-
 `Those are my phone, and these are my charger on the shelf.`
 
 ### --feedback--
 
 Look for a sentence that uses `these` for multiple items nearby and `those` for multiple items at a distance or not being directly addressed.
 
-## --video-solution--
+## --answer--
 
-3
+`These are my folders, and those are my files in the cabinet.`
+

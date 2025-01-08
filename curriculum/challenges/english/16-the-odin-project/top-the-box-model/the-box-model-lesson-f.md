@@ -26,7 +26,7 @@ Add a border to every element on the page and see how the boxes are laid out.
 
 What is the fundamental concept in CSS that helps you understand the structure of elements as rectangular boxes?
 
-## --answers--
+## --distractors--
 
 Box-sizing
 
@@ -36,13 +36,9 @@ Box-shadow
 
 ---
 
-Box model
-
----
-
 Border-box
 
+## --answer--
 
-## --video-solution--
+Box model
 
-3

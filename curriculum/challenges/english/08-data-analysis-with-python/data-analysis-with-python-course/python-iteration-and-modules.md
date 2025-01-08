@@ -25,7 +25,7 @@ More resources:
 
 How would you iterate over and print the keys and values of a dictionary named `user`?
 
-## --answers--
+## --distractors--
 
 ```python
 for key in user.items():
@@ -43,18 +43,14 @@ for key, value in user.all():
 ---
 
 ```python
-for key, value in user.items():
-    print(key, value)
-```
-
----
-
-```python
 for key, value in user
     print(key, value)
 ```
 
-## --video-solution--
+## --answer--
 
-3
+```python
+for key, value in user.items():
+    print(key, value)
+```
 

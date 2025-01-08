@@ -16,7 +16,7 @@ dashedName: core-learning-algorithms-using-probabilities-to-make-predictions
 
 What TensorFlow module should you import to implement `.HiddenMarkovModel()`?
 
-## --answers--
+## --distractors--
 
 `tensorflow.keras`
 
@@ -24,11 +24,7 @@ What TensorFlow module should you import to implement `.HiddenMarkovModel()`?
 
 `tensorflow_gpu`
 
----
+## --answer--
 
 `tensorflow_probability`
-
-## --video-solution--
-
-3
 

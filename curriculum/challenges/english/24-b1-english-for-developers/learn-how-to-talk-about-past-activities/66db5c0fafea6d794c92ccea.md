@@ -19,13 +19,13 @@ Listen to the audio and answer the question below.
 
 How are the updated elements performing?
 
-## --answers--
+## --distractors--
 
 They are not working correctly across all devices, and this has made a big difference.
 
 ### --feedback--
 
-Linda did not mention any issues with the updates. 
+Linda did not mention any issues with the updates.
 
 ---
 
@@ -33,7 +33,7 @@ They need further adjustments to work properly and this has made no difference.
 
 ### --feedback--
 
-Linda did not mention the need for further adjustments. 
+Linda did not mention the need for further adjustments.
 
 ---
 
@@ -41,15 +41,11 @@ They are causing new problems with the user interface and this has made a big di
 
 ### --feedback--
 
-Linda did not say that the updates caused new problems. 
+Linda did not say that the updates caused new problems.
 
----
+## --answer--
 
 They are performing well and the adjustments have made a big difference.
-
-## --video-solution--
-
-4
 
 # --explanation--
 
@@ -117,3 +113,4 @@ So, Linda's response indicates that the updated elements are working well and ha
   ]
 }
 ```
+

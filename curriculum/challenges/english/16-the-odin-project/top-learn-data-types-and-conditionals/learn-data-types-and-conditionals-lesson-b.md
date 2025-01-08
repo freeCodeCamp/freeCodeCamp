@@ -24,7 +24,7 @@ console.log(greeting);
 
 Following the problem above, which method should be used to only remove the trailing space from the string?
 
-## --answers--
+## --distractors--
 
 The `trim()` method should be used to only remove the trailing space from the string.
 
@@ -34,12 +34,9 @@ The `replace()` method should be used to only remove the trailing space from the
 
 ---
 
-The `trimEnd()` method should be used to only remove the trailing space from the string.
-
----
-
 The `trimStart()` method should be used to only remove the trailing space from the string.
 
-## --video-solution--
+## --answer--
 
-3
+The `trimEnd()` method should be used to only remove the trailing space from the string.
+

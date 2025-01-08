@@ -30,11 +30,7 @@ More resources:
 
 Which is an example of a many-to-many relationship?
 
-## --answers--
-
-teacher to student
-
----
+## --distractors--
 
 customer to order
 
@@ -46,7 +42,7 @@ book to pages
 
 city to country
 
-## --video-solution--
+## --answer--
 
-1
+teacher to student
 

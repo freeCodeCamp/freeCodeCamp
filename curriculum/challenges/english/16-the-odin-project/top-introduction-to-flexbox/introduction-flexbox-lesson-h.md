@@ -18,7 +18,7 @@ In other words, in our very first example, you put `display: flex` on a div and 
 
 Which CSS property changes the main axis direction in flex containers to arrange items from top to bottom?
 
-## --answers--
+## --distractors--
 
 `align-items`
 
@@ -28,13 +28,9 @@ Which CSS property changes the main axis direction in flex containers to arrange
 
 ---
 
-`flex-direction`
-
----
-
 `justify-content`
 
+## --answer--
 
-## --video-solution--
+`flex-direction`
 
-3

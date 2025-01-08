@@ -18,7 +18,7 @@ Here is the <a href="https://colab.research.google.com/drive/1OzC7gqCNWNzwv50ziN
 
 Which of the following would you not use when displaying a graph?
 
-## --answers--
+## --distractors--
 
 `ax.set_xlabel("x values")`
 
@@ -30,10 +30,7 @@ Which of the following would you not use when displaying a graph?
 
 `ax.grid(True)`
 
----
+## --answer--
 
 `ax.set_table()`
 
-## --video-solution--
-
-4

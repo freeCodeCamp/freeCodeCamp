@@ -22,11 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-conver
 
 What type of action is being performed when changing a `float` into an `int`?
 
-## --answers--
-
-A narrowing conversion.
-
----
+## --distractors--
 
 A widening conversion.
 
@@ -34,6 +30,7 @@ A widening conversion.
 
 An illegal conversion.
 
-## --video-solution--
+## --answer--
 
-1
+A narrowing conversion.
+

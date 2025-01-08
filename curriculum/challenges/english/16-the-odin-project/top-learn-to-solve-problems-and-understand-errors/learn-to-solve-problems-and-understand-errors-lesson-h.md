@@ -21,7 +21,7 @@ At this point, you might be wondering how you can resolve these errors.
 
 When encountering an error in your code, which of the following is NOT a recommended step for identifying and resolving the issue?
 
-## --answers--
+## --distractors--
 
 Utilizing `console.log()` or other console methods to debug and gain insights into the values and state of your code.
 
@@ -31,12 +31,9 @@ Searching for the error message on resources like StackOverflow or reading docum
 
 ---
 
-Ignoring the error messages and guessing what might be wrong.
-
----
-
 Using error messages as a guide to understand what part of the code is causing the problem.
 
-## --video-solution--
+## --answer--
 
-3
+Ignoring the error messages and guessing what might be wrong.
+

@@ -22,11 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/create-c-shar
 
 Which of the following options correctly returns a `string` value?
 
-## --answers--
-
-`return "";`
-
----
+## --distractors--
 
 `return 'a';`
 
@@ -34,6 +30,7 @@ Which of the following options correctly returns a `string` value?
 
 `return 5;`
 
-## --video-solution--
+## --answer--
 
-1
+`return "";`
+

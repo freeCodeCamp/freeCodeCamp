@@ -22,11 +22,7 @@ Another detail to notice: when you changed the `flex-direction` to `column`, `fl
 
 Why does using `flex: 1` shorthand with `flex-direction: column` lead to collapsed divs in the example described?
 
-## --answers--
-
-The `flex` shorthand defaults `flex-basis` to 0, disregarding the defined height of the divs.
-
----
+## --distractors--
 
 The `flex` shorthand overrides the specified `flex-direction`, causing collapsing.
 
@@ -38,7 +34,7 @@ The `flex` shorthand overrides the specified `flex-direction`, causing collapsin
 
 The `flex-basis` property becomes fixed to the width, ignoring the height in column layout.
 
+## --answer--
 
-## --video-solution--
+The `flex` shorthand defaults `flex-basis` to 0, disregarding the defined height of the divs.
 
-1

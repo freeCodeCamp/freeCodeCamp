@@ -22,7 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-arrays
 
 Which of the following foreach statements is syntactically correct?
 
-## --answers--
+## --distractors--
 
 `foreach (int value of values)`
 
@@ -30,11 +30,7 @@ Which of the following foreach statements is syntactically correct?
 
 `foreach (int value with values)`
 
----
+## --answer--
 
 `foreach (int value in values)`
 
-
-## --video-solution--
-
-3

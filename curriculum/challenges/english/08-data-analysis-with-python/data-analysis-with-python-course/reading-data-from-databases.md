@@ -25,7 +25,7 @@ More resources:
 
 What method does a `Cursor` instance have and what does it allow?
 
-## --answers--
+## --distractors--
 
 The `Cursor` instance has a `.run()` method which allows you to run SQL queries.
 
@@ -33,11 +33,7 @@ The `Cursor` instance has a `.run()` method which allows you to run SQL queries.
 
 The `Cursor` instance has a `.select()` method which allows you to select records.
 
----
+## --answer--
 
 The `Cursor` instance has an `.execute()` method which will receive SQL parameters to run against the database.
-
-## --video-solution--
-
-3
 

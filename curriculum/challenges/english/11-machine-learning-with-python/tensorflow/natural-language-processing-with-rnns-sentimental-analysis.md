@@ -24,7 +24,7 @@ model = __A__.keras.Sequential([
 ])
 ```
 
-## --answers--
+## --distractors--
 
 A: `tensor_flow`
 
@@ -40,15 +40,11 @@ B: `Embedding`
 
 C: `AlphaDropout`
 
----
+## --answer--
 
 A: `tf`
 
 B: `Embedding`
 
 C: `LSTM`
-
-## --video-solution--
-
-3
 

@@ -27,13 +27,9 @@ In the example above, the function definition is written on the first line: `fun
 
 What does the parameter in the function `favoriteAnimal` represent in the context of JavaScript functions?
 
-## --answers--
+## --distractors--
 
 The actual value that is used when calling the function.
-
----
-
-A placeholder for the value that will be passed to the function when it is called.
 
 ---
 
@@ -43,6 +39,7 @@ The name of the function.
 
 The result of the function execution.
 
-## --video-solution--
+## --answer--
 
-2
+A placeholder for the value that will be passed to the function when it is called.
+

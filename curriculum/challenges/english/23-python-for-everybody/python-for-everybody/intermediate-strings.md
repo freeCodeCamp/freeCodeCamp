@@ -27,13 +27,9 @@ word = "bananana"
 i = word.find("na")
 ```
 
-## --answers--
+## --distractors--
 
 nanana
-
----
-
-2
 
 ---
 
@@ -47,7 +43,7 @@ True
 
 na
 
-## --video-solution--
+## --answer--
 
 2
 

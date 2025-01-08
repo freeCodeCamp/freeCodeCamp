@@ -23,24 +23,20 @@ Back in the `index.html` file, let’s add the `<html>` element by typing out it
 `lang` specifies the language of the text content in that element. This attribute is primarily used for improving accessibility of the webpage. It allows assistive technologies, for example screen readers, to adapt according to the language and invoke correct pronunciation.
 
 # --questions--
-    
+
 ## --text--
 
 What is the `html` element?
 
-## --answers--
+## --distractors--
 
 It is the root element in the document and tells the browser which version of HTML it should use.
 
 ---
 
-It is the root element in the document and all other elements should descend from it.
-
----
-
 It is the root element in the document and all other elements should come after it.
 
+## --answer--
 
-## --video-solution--
+It is the root element in the document and all other elements should descend from it.
 
-2

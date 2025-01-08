@@ -15,13 +15,9 @@ Because the box model concept is so incredibly fundamental, let’s dig a bit de
 
 What is the difference between the standard and alternative box model?
 
-## --answers--
+## --distractors--
 
 The standard box model calculates the width and height of an element based on the content alone, while the alternative box model calculates based on the content plus padding and border.
-
----
-
-The standard box model includes content, padding, and border, while the alternative box model includes only the content.
 
 ---
 
@@ -31,6 +27,7 @@ The standard box model and the alternative box model are the same and have no di
 
 The standard box model includes only the content, while the alternative box model includes content, padding, and border.
 
-## --video-solution--
+## --answer--
 
-2
+The standard box model includes content, padding, and border, while the alternative box model includes only the content.
+

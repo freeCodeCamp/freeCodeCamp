@@ -34,13 +34,9 @@ More resources:
 
 Which is a common JavaScript visualization library?
 
-## --answers--
+## --distractors--
 
 DataViz.js
-
----
-
-D3
 
 ---
 
@@ -50,7 +46,7 @@ Lowcharts
 
 DATA6
 
-## --video-solution--
+## --answer--
 
-2
+D3
 

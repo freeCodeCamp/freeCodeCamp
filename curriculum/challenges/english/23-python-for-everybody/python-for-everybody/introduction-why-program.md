@@ -28,7 +28,7 @@ More resources:
 
 Who should learn to program?
 
-## --answers--
+## --distractors--
 
 College students.
 
@@ -44,11 +44,7 @@ People who want to become software developers.
 
 People who want to become software developers should learn to program, but there's a better answer.
 
----
+## --answer--
 
 Everyone.
-
-## --video-solution--
-
-3
 

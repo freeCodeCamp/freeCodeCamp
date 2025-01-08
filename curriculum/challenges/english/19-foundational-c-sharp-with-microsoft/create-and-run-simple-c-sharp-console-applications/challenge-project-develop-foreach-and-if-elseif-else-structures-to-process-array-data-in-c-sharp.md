@@ -22,7 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/challenge-pro
 
 A developer is working with two other developers to update a collection of applications. The developers will use code comments during the update process. Which of the following describes an appropriate use of code comments?
 
-## --answers--
+## --distractors--
 
 When updates are made, the developers use line and block comments to identify each individual code update.
 
@@ -30,10 +30,7 @@ When updates are made, the developers use line and block comments to identify ea
 
 When updates are made, the developers leave all existing code comments intact. New comments are added to indicate when old comments no longer apply.
 
----
+## --answer--
 
 When updates are made, the developers summarize changes using block comments.
 
-## --video-solution--
-
-3

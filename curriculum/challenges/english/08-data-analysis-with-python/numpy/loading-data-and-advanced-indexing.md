@@ -27,7 +27,7 @@ What code would produce the following array?
 [29. 32. 45. 15.  5. 22.]
 ```
 
-## --answers--
+## --distractors--
 
 ```py
 filedata = np.genfromtxt('data.txt', delimiter=',')
@@ -45,7 +45,7 @@ output = np.all(filedata < 50, axis=1)
 print(output)
 ```
 
----
+## --answer--
 
 ```py
 filedata = np.genfromtxt('data.txt', delimiter=',')
@@ -53,8 +53,4 @@ output = filedata[filedata < 50]
 
 print(output)
 ```
-
-## --video-solution--
-
-3
 

@@ -16,7 +16,7 @@ dashedName: core-learning-algorithms-working-with-data
 
 What does the pandas `.head()` function do?
 
-## --answers--
+## --distractors--
 
 Returns the number of entries in a data frame.
 
@@ -24,11 +24,7 @@ Returns the number of entries in a data frame.
 
 Returns the number of columns in a data frame.
 
----
+## --answer--
 
 By default, shows the first five rows or entries in a data frame.
-
-## --video-solution--
-
-3
 

@@ -26,7 +26,7 @@ Before moving on to the next lesson, see if you can figure out how `align-items`
 
 When changing the `flex-direction` property to `column` in a flex container, how does `align-items` behave in relation to the flex items?
 
-## --answers--
+## --distractors--
 
 It distributes space between items evenly.
 
@@ -36,12 +36,9 @@ It aligns items horizontally along the main axis.
 
 ---
 
-It centers items vertically along the cross axis.
-
----
-
 It aligns items to the start of the container along the cross axis.
 
-## --video-solution--
+## --answer--
 
-3
+It centers items vertically along the cross axis.
+

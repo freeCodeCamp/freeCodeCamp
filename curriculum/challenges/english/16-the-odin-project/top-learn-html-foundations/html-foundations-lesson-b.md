@@ -15,24 +15,20 @@ HTML has a vast list of predefined tags that you can use to create all kinds of 
 Using the correct elements for content is called semantic HTML. You will explore this in much more depth later on in the curriculum.
 
 # --questions--
-    
+
 ## --text--
 
 Why are void elements like `<br/>` or `<img>` essential in HTML?
 
-## --answers--
+## --distractors--
 
 They prevent formatting issues in HTML documents.
 
 ---
 
-They indicate empty elements and require no closing tag.
-
----
-
 They improve website performance by reducing code complexity.
 
+## --answer--
 
-## --video-solution--
+They indicate empty elements and require no closing tag.
 
-2

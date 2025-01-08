@@ -30,11 +30,7 @@ Before moving on to the next lesson, see what is possible with the `justify-cont
 
 How does applying `justify-content: space-between` to a flex container affect the positioning of its items?
 
-## --answers--
-
-It evenly distributes space between items, pushing the first and last items to the edges.
-
----
+## --distractors--
 
 It centers all items within the container.
 
@@ -46,6 +42,7 @@ It causes the items to grow to fill available space.
 
 It aligns items to the left side while leaving excessive space on the right side.
 
-## --video-solution--
+## --answer--
 
-1
+It evenly distributes space between items, pushing the first and last items to the edges.
+

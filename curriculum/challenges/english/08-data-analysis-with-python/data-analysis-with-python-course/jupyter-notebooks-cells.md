@@ -25,18 +25,15 @@ More resources:
 
 What are the three main types of Jupyter Notebook Cell?
 
-## --answers--
+## --distractors--
 
 Code, Markdown, and Python
 
 ---
 
-Code, Markdown, and Raw
-
----
-
 Markdown, Python, and Raw
 
-## --video-solution--
+## --answer--
 
-2
+Code, Markdown, and Raw
+

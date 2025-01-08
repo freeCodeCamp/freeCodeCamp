@@ -18,11 +18,7 @@ A flex container is any element that has `display: flex` on it. A flex item is a
 
 What’s the difference between a flex container and a flex item?
 
-## --answers--
-
-Flex containers are elements with `display: flex`, while flex items are elements within flex containers.
-
----
+## --distractors--
 
 Flex containers are elements within flex items, while flex items define the overall layout.
 
@@ -34,6 +30,7 @@ Flex containers are elements using flexbox, and flex items are inline elements.
 
 Flex containers are elements that define the layout structure, while flex items control the overall page design.
 
-## --video-solution--
+## --answer--
 
-1
+Flex containers are elements with `display: flex`, while flex items are elements within flex containers.
+

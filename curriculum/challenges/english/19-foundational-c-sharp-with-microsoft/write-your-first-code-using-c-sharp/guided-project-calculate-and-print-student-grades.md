@@ -27,11 +27,7 @@ int sophiaSum;
 Console.WriteLine("Sophia: " + sophiaSum);
 ```
 
-## --answers--
-
-`sophiaSum` is not initialized before use
-
----
+## --distractors--
 
 `sophiaSum` is not implicitly typed to a string
 
@@ -39,6 +35,7 @@ Console.WriteLine("Sophia: " + sophiaSum);
 
 `sophiaSum` should use the var keyword
 
-## --video-solution--
+## --answer--
 
-1
+`sophiaSum` is not initialized before use
+

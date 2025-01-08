@@ -26,17 +26,13 @@ More resources:
 
 What Python library is used for parsing HTML documents and extracting data from HTML documents?
 
-## --answers--
+## --distractors--
 
 socket
 
 ---
 
 http
-
----
-
-BeautifulSoup
 
 ---
 
@@ -54,7 +50,7 @@ HttpParser
 
 GrunkleStan
 
-## --video-solution--
+## --answer--
 
-3
+BeautifulSoup
 

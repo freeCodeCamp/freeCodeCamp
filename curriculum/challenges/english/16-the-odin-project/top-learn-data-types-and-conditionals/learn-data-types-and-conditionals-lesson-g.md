@@ -35,19 +35,15 @@ Read <a href="https://javascript.info/comparison" target="_blank" rel="noopener 
 
 What happens when you use the strict equality operator `===` to compare a number of the value `0` and a boolean of the value `false`?
 
-## --answers--
+## --distractors--
 
 The output would be `true`.
 
 ---
 
-The output would be `false`.
-
----
-
 You cannot compare a number and a boolean using the strict equality operator.
 
+## --answer--
 
-## --video-solution--
+The output would be `false`.
 
-2

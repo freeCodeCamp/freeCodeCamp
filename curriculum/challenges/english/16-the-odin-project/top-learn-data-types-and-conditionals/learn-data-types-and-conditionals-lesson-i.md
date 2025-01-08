@@ -42,11 +42,7 @@ if (x > 10) {
 }
 ```
 
-## --answers--
-
-`x is less than or equal to 5`
-
----
+## --distractors--
 
 `x is greater than 5`
 
@@ -54,6 +50,7 @@ if (x > 10) {
 
 `x is greater than 10`
 
-## --video-solution--
+## --answer--
 
-1
+`x is less than or equal to 5`
+

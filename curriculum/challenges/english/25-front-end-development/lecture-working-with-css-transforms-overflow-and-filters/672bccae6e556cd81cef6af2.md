@@ -16,17 +16,13 @@ Watch the lecture video and answer the questions below.
 
 In which direction does margin collapsing occur?
 
-## --answers--
+## --distractors--
 
 Horizontal margins only.
 
 ### --feedback--
 
 Think about which margins (top, bottom, left, right) are affected by this behavior.
-
----
-
-Vertical margins only.
 
 ---
 
@@ -44,15 +40,15 @@ Diagonal margins.
 
 Think about which margins (top, bottom, left, right) are affected by this behavior.
 
-## --video-solution--
+## --answer--
 
-2
+Vertical margins only.
 
 ## --text--
 
 What happens when two adjacent elements have different margin values?
 
-## --answers--
+## --distractors--
 
 The margins add up.
 
@@ -70,25 +66,21 @@ Consider which margin "wins" when collapsing occurs.
 
 ---
 
-The larger margin is used.
-
----
-
 The average of the two margins is used.
 
 ### --feedback--
 
 Consider which margin "wins" when collapsing occurs.
 
-## --video-solution--
+## --answer--
 
-3
+The larger margin is used.
 
 ## --text--
 
 Which of the following will NOT prevent margin collapsing between a parent and its first child?
 
-## --answers--
+## --distractors--
 
 Adding a `border` to the parent.
 
@@ -112,10 +104,7 @@ Using `display: inline-block;` on the child.
 
 Think about which properties create a separation between the parent and child margins.
 
----
+## --answer--
 
 Setting `margin-top: 0;` on the child.
 
-## --video-solution--
-
-4

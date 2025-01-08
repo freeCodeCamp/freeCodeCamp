@@ -23,23 +23,19 @@ lst = re.findall('\\S+@\\S+', s)
 print(lst)
 ```
 
-## --answers--
+## --distractors--
 
-['csev@umich.edu', 'cwen@iupui.edu']
-
----
-
-['csev@umich.edu']
+\['csev@umich.edu']
 
 ---
 
-['umich.edu', 'iupui.edu']
+\['umich.edu', 'iupui.edu']
 
 ---
 
-['csev@', 'cwen@']
+\['csev@', 'cwen@']
 
-## --video-solution--
+## --answer--
 
-1
+\['csev@umich.edu', 'cwen@iupui.edu']
 

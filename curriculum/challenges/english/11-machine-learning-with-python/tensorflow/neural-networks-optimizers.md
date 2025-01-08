@@ -16,19 +16,15 @@ dashedName: neural-networks-optimizers
 
 What is an optimizer function?
 
-## --answers--
+## --distractors--
 
 A function that increases the accuracy of a model's predictions.
 
 ---
 
-A function that implements the gradient descent and backpropagation algorithms for you.
-
----
-
 A function that reduces the time a model needs to train.
 
-## --video-solution--
+## --answer--
 
-2
+A function that implements the gradient descent and backpropagation algorithms for you.
 

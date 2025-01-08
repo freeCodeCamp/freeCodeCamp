@@ -16,7 +16,7 @@ dashedName: developing-an-nmap-scanner-part-1
 
 What is the correct command to install the Python 3 version of the `python-nmap` library?
 
-## --answers--
+## --distractors--
 
 `sudo apt install python-nmap`
 
@@ -24,11 +24,7 @@ What is the correct command to install the Python 3 version of the `python-nmap`
 
 `pip install python-nmap`
 
----
+## --answer--
 
 `pip3 install python-nmap`
-
-## --video-solution--
-
-3
 

@@ -38,7 +38,7 @@ certificates_earned.index = ['Tom', 'Kris', 'Ahmad', 'Beau']
 print(certificates_earned.iloc[2])
 ```
 
-## --answers--
+## --distractors--
 
 <pre>
 Tom      16
@@ -56,15 +56,11 @@ Time (in months)    12
 Name: Beau, dtype: int64
 </pre>
 
----
+## --answer--
 
 <pre>
 Certificates        5
 Time (in months)    9
 Name: Ahmad, dtype: int64
 </pre>
-
-## --video-solution--
-
-3
 

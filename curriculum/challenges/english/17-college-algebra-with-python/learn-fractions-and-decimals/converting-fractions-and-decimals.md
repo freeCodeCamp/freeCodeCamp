@@ -22,13 +22,9 @@ Add the code to convert fractions and decimals to your algebra Colab notebook.
 
 Which of the following correctly represents "three hundredths" as a decimal?
 
-## --answers--
+## --distractors--
 
 0.3
-
----
-
-0.03
 
 ---
 
@@ -38,6 +34,7 @@ Which of the following correctly represents "three hundredths" as a decimal?
 
 100.3
 
-## --video-solution--
+## --answer--
 
-2
+0.03
+

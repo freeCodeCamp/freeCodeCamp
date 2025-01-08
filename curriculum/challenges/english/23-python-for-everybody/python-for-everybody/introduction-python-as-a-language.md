@@ -21,13 +21,9 @@ x = 6
 print(x)
 ```
 
-## --answers--
+## --distractors--
 
 x
-
----
-
-6
 
 ---
 
@@ -37,7 +33,7 @@ x = 6
 
 (x)
 
-## --video-solution--
+## --answer--
 
-2
+6
 

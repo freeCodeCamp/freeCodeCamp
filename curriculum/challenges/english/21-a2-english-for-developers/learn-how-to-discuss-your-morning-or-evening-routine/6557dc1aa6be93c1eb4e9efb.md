@@ -20,17 +20,13 @@ The word `if` is often used in conditional statements to talk about a possible s
 
 What does Sarah imply by using `if` in her statement about checking emails and messages?
 
-## --answers--
+## --distractors--
 
 She always finds urgent updates from her team
 
 ### --feedback--
 
 `If` doesn't suggest certainty of finding urgent updates.
-
----
-
-Sometimes there are urgent updates, sometimes not
 
 ---
 
@@ -48,9 +44,9 @@ Checking emails is not part of her routine
 
 Sarah mentions that checking emails and messages is part of her routine.
 
-## --video-solution--
+## --answer--
 
-2
+Sometimes there are urgent updates, sometimes not
 
 # --scene--
 
@@ -95,3 +91,4 @@ Sarah mentions that checking emails and messages is part of her routine.
   ]
 }
 ```
+

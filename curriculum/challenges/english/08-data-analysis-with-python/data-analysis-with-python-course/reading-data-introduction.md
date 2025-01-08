@@ -46,7 +46,7 @@ with open(__A__, 'r') as fp:
         print(f"{name} earned {__C__} certificates in {months_num} months")
 ```
 
-## --answers--
+## --distractors--
 
 A: `'certificates.csv'`
 
@@ -56,21 +56,17 @@ C: `values`
 
 ---
 
-A: `'certificates.csv'`
-
-B: `'$'`
-
-C: `certs_num`
-
----
-
 A: `'certificates'`
 
 B: `'$'`
 
 C: `certs_num`
 
-## --video-solution--
+## --answer--
 
-2
+A: `'certificates.csv'`
+
+B: `'$'`
+
+C: `certs_num`
 

@@ -14,11 +14,12 @@ So if you end up with some unexpected behavior like this it’s either because o
 The cascade is what determines which rules actually get applied to your HTML. There are different factors that the cascade uses to determine this. We will examine three of these factors, which will hopefully help you avoid those frustrating “I hate CSS” moments.
 
 # --questions--
+
 ## --text--
 
 Why might you encounter unexpected behavior in CSS?
 
-## --answers--
+## --distractors--
 
 Due to conflicting rules and unexpected results
 
@@ -30,10 +31,7 @@ Due to the browser's default styles
 
 Due to a lack of understanding of CSS properties
 
----
+## --answer--
 
 All of the above
 
-## --video-solution--
-
-4

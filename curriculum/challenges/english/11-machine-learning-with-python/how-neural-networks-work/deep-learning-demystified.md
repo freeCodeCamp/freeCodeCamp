@@ -12,13 +12,9 @@ dashedName: deep-learning-demystified
 
 How should you assign weights to input neurons before training your network for the first time?
 
-## --answers--
+## --distractors--
 
 From smallest to largest.
-
----
-
-Completely randomly.
 
 ---
 
@@ -28,7 +24,7 @@ Alphabetically.
 
 None of the above.
 
-## --video-solution--
+## --answer--
 
-2
+Completely randomly.
 

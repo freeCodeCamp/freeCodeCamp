@@ -29,7 +29,7 @@ parts = pieces[3].split('-')
 n = parts[1]
 ```
 
-## --answers--
+## --distractors--
 
 mail
 
@@ -41,11 +41,7 @@ q
 
 lar
 
----
+## --answer--
 
 `lar@freecodecamp.org`
-
-## --video-solution--
-
-4
 

@@ -21,7 +21,7 @@ for n in "banana":
     print(n)
 ```
 
-## --answers--
+## --distractors--
 
 <pre>
 n
@@ -46,7 +46,7 @@ n
 5
 </pre>
 
----
+## --answer--
 
 <pre>
 b
@@ -56,8 +56,4 @@ a
 n
 a
 </pre>
-
-## --video-solution--
-
-4
 

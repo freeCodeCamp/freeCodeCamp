@@ -14,7 +14,7 @@ Now that you have a basic understanding of how flexbox works, what is the primai
 
 What role does a flex item play within a flex container?
 
-## --answers--
+## --distractors--
 
 Flex items define the overall layout structure.
 
@@ -26,10 +26,7 @@ Flex items set the background colors of flex containers.
 
 Flex items allow the flex container to resize based on content.
 
----
+## --answer--
 
 Flex items are elements that reside directly within a flex container.
 
-## --video-solution--
-
-4

@@ -26,22 +26,19 @@ Complete the problems on pages 155 and 163 from "Business Math, a Step-by-Step H
 
 Which of the following business equations is not correct?
 
-## --answers--
+## --distractors--
 
 Profit = Revenue - Cost
 
 ---
 
-Revenue = Price * Demand
+Revenue = Price \* Demand
 
 ---
 
 Cost = Fixed Expenses + Variable Expenses
 
----
+## --answer--
 
 Marginal Revenue = Margins + Revenue
 
-## --video-solution--
-
-4

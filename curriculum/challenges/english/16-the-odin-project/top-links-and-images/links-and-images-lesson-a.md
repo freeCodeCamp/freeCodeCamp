@@ -50,11 +50,7 @@ Watch Kevin Powell’s HTML Links video above.
 
 What HTML tag is used to create a link?
 
-## --answers--
-
-`<a>`
-
----
+## --distractors--
 
 `<p>`
 
@@ -62,6 +58,7 @@ What HTML tag is used to create a link?
 
 `<ol>`
 
-## --video-solution--
+## --answer--
 
-1
+`<a>`
+

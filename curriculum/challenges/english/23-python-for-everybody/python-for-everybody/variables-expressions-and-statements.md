@@ -16,9 +16,9 @@ dashedName: variables-expressions-and-statements
 
 What is the symbol used in an assignment statement?
 
-## --answers--
+## --distractors--
 
-~
+\~
 
 ---
 
@@ -26,13 +26,9 @@ What is the symbol used in an assignment statement?
 
 ---
 
-=
+|
 
----
+## --answer--
 
-\|
-
-## --video-solution--
-
-3
+\=
 

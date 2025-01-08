@@ -54,17 +54,14 @@ console.log( '6' / '2' ); // 3, converts both operands to numbers
 # --questions--
 
 ## --text--
+
 Considering the behavior of the `+` operator with mixed data types in JavaScript, what will be the output of the following code snippet?
 
 ```js
 console.log('3' + 2 - 1);
 ```
 
-## --answers--
-
-`31`, because the `+` operator concatenates the string and number before subtraction.
-
----
+## --distractors--
 
 `32`, because `+` concatenates the string and number before subtraction.
 
@@ -76,6 +73,7 @@ console.log('3' + 2 - 1);
 
 `321`, because the `-` operator is not supported with strings.
 
-## --video-solution--
+## --answer--
 
-1
+`31`, because the `+` operator concatenates the string and number before subtraction.
+

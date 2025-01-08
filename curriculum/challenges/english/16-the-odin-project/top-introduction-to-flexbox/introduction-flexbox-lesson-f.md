@@ -18,7 +18,7 @@ In the following example the `flex` shorthand has values for `flex-shrink` and `
 
 What does setting `flex: 2` to one specific div inside a flex container, while other divs have `flex: 1`, imply?
 
-## --answers--
+## --distractors--
 
 The container will shrink to accommodate the larger div.
 
@@ -28,12 +28,9 @@ All divs will retain the same size due to conflicting `flex` values.
 
 ---
 
-The specific div will grow to be twice the size of the others.
-
----
-
 All divs will shrink equally to adjust to the new `flex` values.
 
-## --video-solution--
+## --answer--
 
-3
+The specific div will grow to be twice the size of the others.
+

@@ -28,7 +28,7 @@ More resources:
 
 When making a request from the Twitter API, what information must always be sent with the request?
 
-## --answers--
+## --distractors--
 
 Twitter username
 
@@ -40,11 +40,7 @@ date range
 
 search term
 
----
+## --answer--
 
 key
-
-## --video-solution--
-
-4
 

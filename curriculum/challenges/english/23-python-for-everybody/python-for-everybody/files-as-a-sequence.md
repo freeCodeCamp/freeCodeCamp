@@ -22,7 +22,7 @@ More resources:
 
 What does the word 'continue' do in the middle of a loop?
 
-## --answers--
+## --distractors--
 
 Skips to the code directly after the loop.
 
@@ -32,13 +32,9 @@ Skips to the next line in the code.
 
 ---
 
-Skips to the next iteration of the loop.
-
----
-
 Skips the next block of code.
 
-## --video-solution--
+## --answer--
 
-3
+Skips to the next iteration of the loop.
 

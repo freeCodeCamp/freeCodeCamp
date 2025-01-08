@@ -8,17 +8,13 @@ dashedName: learn-block-and-inline-lesson-d
 
 Now that you have a basic understanding on how adding width and height to `inline` elements works, what happens when you add a top margin to an `inline` element?
 
-# --questions--    
+# --questions--
 
 ## --text--
 
 How does `margin-top` affect `inline` elements?
 
-## --answers--
-
-`margin-top` has no impact on the layout of `inline` elements
-
----
+## --distractors--
 
 `margin-top` increases the height of `inline` elements.
 
@@ -30,6 +26,7 @@ How does `margin-top` affect `inline` elements?
 
 `margin-top` only affects the horizontal spacing of `inline` elements.
 
-## --video-solution--
+## --answer--
 
-1
+`margin-top` has no impact on the layout of `inline` elements
+

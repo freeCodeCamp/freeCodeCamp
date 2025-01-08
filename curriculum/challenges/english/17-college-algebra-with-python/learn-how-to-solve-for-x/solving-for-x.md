@@ -22,7 +22,7 @@ Add the code to solve for x from the video to your algebra Colab notebook.
 
 In Python, what is the library you import to solve algebra problems with variables?
 
-## --answers--
+## --distractors--
 
 symba
 
@@ -34,10 +34,7 @@ math
 
 sympsons
 
----
+## --answer--
 
 sympy
 
-## --video-solution--
-
-4

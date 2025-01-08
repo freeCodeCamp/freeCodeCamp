@@ -20,7 +20,7 @@ The next few video lessons will reference [this Colab notebook](https://colab.re
 
 A densely connected neural network is one in which...:
 
-## --answers--
+## --distractors--
 
 all the neurons in the current layer are connected to one neuron in the previous layer.
 
@@ -28,11 +28,7 @@ all the neurons in the current layer are connected to one neuron in the previous
 
 all the neurons in each layer are connected randomly.
 
----
+## --answer--
 
 all the neurons in the current layer are connected to every neuron in the previous layer.
-
-## --video-solution--
-
-3
 

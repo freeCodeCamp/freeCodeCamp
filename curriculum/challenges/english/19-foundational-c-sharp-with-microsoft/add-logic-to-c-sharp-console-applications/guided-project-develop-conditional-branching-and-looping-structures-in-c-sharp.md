@@ -22,11 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/guided-projec
 
 When is it appropriate to use a `switch-case` construct rather than a `if-elseif-else` construct?
 
-## --answers--
-
-A `switch-case` construct is appropriate when more than 2-3 `else if` code blocks are required.
-
----
+## --distractors--
 
 A `switch-case` construct is appropriate when the number of `case` patterns is small.
 
@@ -34,7 +30,7 @@ A `switch-case` construct is appropriate when the number of `case` patterns is s
 
 A `switch-case` construct is appropriate when the selection statement is inside a loop.
 
+## --answer--
 
-## --video-solution--
+A `switch-case` construct is appropriate when more than 2-3 `else if` code blocks are required.
 
-1

@@ -22,7 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-choose
 
 A piece of code must store whole numeric values between negative and positive `1,000,000`. Which data type should you choose?
 
-## --answers--
+## --distractors--
 
 float
 
@@ -30,10 +30,7 @@ float
 
 double
 
----
+## --answer--
 
 int
 
-## --video-solution--
-
-3

@@ -16,19 +16,15 @@ dashedName: neural-networks-activation-functions
 
 Which activation function squishes values between -1 and 1?
 
-## --answers--
+## --distractors--
 
 ReLU (Rectified Linear Unit)
 
 ---
 
-Tanh (Hyperbolic Tangent)
-
----
-
 Sigmoid
 
-## --video-solution--
+## --answer--
 
-2
+Tanh (Hyperbolic Tangent)
 

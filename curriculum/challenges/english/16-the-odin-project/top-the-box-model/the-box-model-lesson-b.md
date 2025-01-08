@@ -14,19 +14,15 @@ When an element is selected, the Styles tab will show all the currently applied 
 
 <img src="https://cdn.freecodecamp.org/curriculum/odin-project/the-box-model/overwritten-style.png" alt="CSS code snippet in the developer console showing .hero_main-heading with applied margin-bottom: 100px, padding-bottom: 1.875rem, .accent color #ce973e. h1 style rules include font-size, weight, letter-spacing, with its margin-bottom: 2rem overridden.">
 
-# --questions--    
+# --questions--
 
 ## --text--
 
 When inspecting an element in the Chrome Dev Tools, if a style property is shown with a strikethrough, what does it indicate?
 
-## --answers--
+## --distractors--
 
 The style property is currently disabled and not applied to the element.
-
----
-
-The style property is overridden by a more specific CSS rule.
 
 ---
 
@@ -36,6 +32,7 @@ The style property is deprecated and should not be used.
 
 The style property is experimental and may not be supported by all browsers
 
-## --video-solution--
+## --answer--
 
-2
+The style property is overridden by a more specific CSS rule.
+

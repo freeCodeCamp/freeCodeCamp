@@ -31,22 +31,19 @@ Make note of the fact that by calling `favoriteAnimal()` inside of `console.log(
 
 If you change the argument from `'Goat'` to `'Elephant'` in the `favoriteAnimal('Goat')` function call, what would `console.log(favoriteAnimal('Elephant'))` print to the console?
 
-## --answers--
+## --distractors--
 
 `"Goat is my favorite animal!"`
 
 ---
 
-The function will return an error because `"Elephant"` is not a recognized argument.  
-
----
-
-`"Elephant is my favorite animal!"`
+The function will return an error because `"Elephant"` is not a recognized argument.
 
 ---
 
 `"Kangaroo is my favorite animal!"`
 
-## --video-solution--
+## --answer--
 
-3
+`"Elephant is my favorite animal!"`
+

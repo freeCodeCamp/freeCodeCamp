@@ -20,19 +20,15 @@ The next few video lessons will reference [this Colab notebook](https://colab.re
 
 The key components of reinforcement learning are...
 
-## --answers--
+## --distractors--
 
 environment, representative, state, reaction, and reward.
 
 ---
 
-environment, agent, state, action, and reward.
-
----
-
 habitat, agent, state, action, and punishment.
 
-## --video-solution--
+## --answer--
 
-2
+environment, agent, state, action, and reward.
 

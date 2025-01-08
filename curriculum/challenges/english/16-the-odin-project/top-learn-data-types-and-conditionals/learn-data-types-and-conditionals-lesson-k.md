@@ -80,11 +80,7 @@ switch (day) {
 
 ```
 
-## --answers--
-
-The value of the `activity` variable will be `"Attend coding meetup"`.
-
----
+## --distractors--
 
 The value of the `activity` variable will be `"Watch a movie"`.
 
@@ -96,6 +92,7 @@ The value of the `activity` variable will be `"Undefined day"`.
 
 The value of the `activity` variable will be `"Go to the gym"`.
 
-## --video-solution--
+## --answer--
 
-1
+The value of the `activity` variable will be `"Attend coding meetup"`.
+

@@ -35,7 +35,7 @@ s = s.fillna(method='ffill')
 print(s)
 ```
 
-## --answers--
+## --distractors--
 
 <pre>
 0    1.0
@@ -52,23 +52,19 @@ dtype: float64
 0    NaN
 1    1.0
 2    2.0
-3    2.0
-4    3.0
-dtype: float64
-</pre>
-
----
-
-<pre>
-0    NaN
-1    1.0
-2    2.0
 3    NaN
 4    3.0
 dtype: float64
 </pre>
 
-## --video-solution--
+## --answer--
 
-2
+<pre>
+0    NaN
+1    1.0
+2    2.0
+3    2.0
+4    3.0
+dtype: float64
+</pre>
 

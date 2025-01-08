@@ -95,13 +95,9 @@ let counter = 1;
 console.log(2 * counter++); // Statement B
 ```
 
-## --answers--
+## --distractors--
 
 There is no difference; both `console.log` statements will show the same result.
-
----
-
-Statement A will log `4` because `++counter` increments the value before the multiplication. Statement B will log `2` because `counter++` increments the value after the multiplication.
 
 ---
 
@@ -111,7 +107,7 @@ Statement A will log `2` because `++counter` is a syntax error. Statement B will
 
 Both statements will log `3` because the counter is incremented in both cases before the `console.log`.
 
+## --answer--
 
-## --video-solution--
+Statement A will log `4` because `++counter` increments the value before the multiplication. Statement B will log `2` because `counter++` increments the value after the multiplication.
 
-2

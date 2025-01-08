@@ -21,7 +21,7 @@ Maria informs Tom about public transportation options, specifically mentioning a
 
 What does Maria say stops two blocks away?
 
-## --answers--
+## --distractors--
 
 A taxi.
 
@@ -39,19 +39,15 @@ Trains don't typically stop at blocks; they stop at stations.
 
 ---
 
-A bus.
-
----
-
 A bicycle rental.
 
 ### --feedback--
 
 Rentals are usually stationary services, not something that stops.
 
-## --video-solution--
+## --answer--
 
-3
+A bus.
 
 # --scene--
 
@@ -96,3 +92,4 @@ Rentals are usually stationary services, not something that stops.
   ]
 }
 ```
+

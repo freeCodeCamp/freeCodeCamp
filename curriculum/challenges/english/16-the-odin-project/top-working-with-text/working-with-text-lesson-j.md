@@ -26,18 +26,15 @@ Ordered lists are created using the `<ol>` element. Each individual item in them
 
 What HTML tag is used to create list items within both unordered and ordered lists?
 
-## --answers--
+## --distractors--
 
 `<ol>`
 
 ---
 
-`<li>`
-
----
-
 `<ul>`
 
-## --video-solution--
+## --answer--
 
-2
+`<li>`
+

@@ -22,16 +22,10 @@ More resources:
 
 Which of these evaluates to False?
 
-## --answers--
+## --distractors--
 
 ```python
 0 == 0.0
-```
-
----
-
-```python
-0 is 0.0
 ```
 
 ---
@@ -46,7 +40,9 @@ Which of these evaluates to False?
 0 = 0.0
 ```
 
-## --video-solution--
+## --answer--
 
-2
+```python
+0 is 0.0
+```
 

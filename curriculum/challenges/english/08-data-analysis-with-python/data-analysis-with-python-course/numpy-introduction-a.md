@@ -25,11 +25,7 @@ More resources:
 
 Why is Numpy an important, but unpopular Python library?
 
-## --answers--
-
-Often you won't work directly with Numpy.
-
----
+## --distractors--
 
 It is extremely slow.
 
@@ -37,7 +33,7 @@ It is extremely slow.
 
 Working with Numpy is difficult.
 
-## --video-solution--
+## --answer--
 
-1
+Often you won't work directly with Numpy.
 

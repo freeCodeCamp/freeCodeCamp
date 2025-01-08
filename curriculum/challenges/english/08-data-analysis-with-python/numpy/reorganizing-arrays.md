@@ -23,15 +23,7 @@ What code would produce the following array?
 [1. 1.]]
 ```
 
-## --answers--
-
-```py
-a = np.ones((2, 4))
-b = a.reshape((4, 2))
-print(b)
-```
-
----
+## --distractors--
 
 ```py
 a = np.ones((2, 4))
@@ -47,7 +39,11 @@ b = a.reshape((8, 1))
 print(b)
 ```
 
-## --video-solution--
+## --answer--
 
-1
+```py
+a = np.ones((2, 4))
+b = a.reshape((4, 2))
+print(b)
+```
 

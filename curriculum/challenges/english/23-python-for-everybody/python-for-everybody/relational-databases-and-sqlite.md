@@ -26,11 +26,7 @@ More resources:
 
 Which is NOT a primary data structure in a database?
 
-## --answers--
-
-index
-
----
+## --distractors--
 
 table
 
@@ -42,7 +38,7 @@ row
 
 column
 
-## --video-solution--
+## --answer--
 
-1
+index
 

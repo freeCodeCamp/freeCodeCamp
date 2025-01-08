@@ -22,18 +22,15 @@ Complete the <a href="https://learn.microsoft.com/training/modules/challenge-pro
 
 A developer needs to create an iteration statement. Under what condition is a `while` statement a better choice than a `do` statement?
 
-## --answers--
+## --distractors--
 
 When the expression values evaluated by the iteration statement are unknown prior to the iteration code block.
 
 ---
 
-When the expression values evaluated by the iteration statement are known prior to the iteration code block.
-
----
-
 When the developer creates nested `do` or `while` loops.
 
-## --video-solution--
+## --answer--
 
-2
+When the expression values evaluated by the iteration statement are known prior to the iteration code block.
+

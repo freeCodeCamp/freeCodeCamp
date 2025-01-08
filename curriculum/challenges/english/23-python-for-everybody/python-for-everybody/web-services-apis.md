@@ -16,7 +16,7 @@ dashedName: web-services-apis
 
 What does API stand for?
 
-## --answers--
+## --distractors--
 
 Application Portable Intelligence
 
@@ -26,13 +26,9 @@ Associate Programming International
 
 ---
 
-Application Program Interface
-
----
-
 Action Portable Interface
 
-## --video-solution--
+## --answer--
 
-3
+Application Program Interface
 

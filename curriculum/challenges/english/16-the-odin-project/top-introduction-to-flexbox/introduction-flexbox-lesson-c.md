@@ -22,13 +22,9 @@ Certainly, the image features a representation of a CSS Flexbox layout with nest
 
 Which CSS property is applied to elements to make them flex containers?
 
-## --answers--
+## --distractors--
 
 `align-items`
-
----
-
-`display: flex`
 
 ---
 
@@ -38,6 +34,7 @@ Which CSS property is applied to elements to make them flex containers?
 
 `flex`
 
-## --video-solution--
+## --answer--
 
-2
+`display: flex`
+

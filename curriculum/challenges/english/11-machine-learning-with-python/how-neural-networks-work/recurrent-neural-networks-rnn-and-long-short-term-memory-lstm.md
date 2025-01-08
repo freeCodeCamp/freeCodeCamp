@@ -12,7 +12,7 @@ dashedName: recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
 
 What are the main neural network components that make up a Long Short Term Memory network?
 
-## --answers--
+## --distractors--
 
 New information and prediction.
 
@@ -20,11 +20,7 @@ New information and prediction.
 
 Prediction, collected possibilities, and selection.
 
----
+## --answer--
 
 Prediction, ignoring, forgetting, and selection.
-
-## --video-solution--
-
-3
 

@@ -50,15 +50,11 @@ function myFunction() {
 myFunction();
 ```
 
-## --answers--
+## --distractors--
 
 10
 
----
+## --answer--
 
 20
 
-
-## --video-solution--
-
-2

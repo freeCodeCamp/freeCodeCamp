@@ -23,7 +23,7 @@ But that's the key - `.push()` is not a String method, it's an Array method. Hen
 
 A good note to keep in mind when faced with a `TypeError` is to consider the data type you are trying to run a method or operation against. You'll likely find that it is not what you think, or the operation or method is not compatible with that type.
 
-# --questions-- 
+# --questions--
 
 ## --text--
 
@@ -35,13 +35,9 @@ const str2 = "World!";
 const message = str1.push(str2);
 ```
 
-## --answers--
+## --distractors--
 
 The `.push()` method can only be used on objects, not strings.
-
----
-
-The `.push()` method is not available for strings because it is an Array method.
 
 ---
 
@@ -51,6 +47,7 @@ The `.push()` method is incorrectly spelled and should be .pusch().
 
 The `TypeError` is a result of a syntax error in the JavaScript code.
 
-## --video-solution--
+## --answer--
 
-2
+The `.push()` method is not available for strings because it is an Array method.
+

@@ -22,11 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/challenge-pro
 
 A developer wants to create a method that returns a value in an array. Which of the following options would be a good choice for a method signature?
 
-## --answers--
-
-`string GetValueAtIndex(string[] array, int index)`
-
----
+## --distractors--
 
 `bool GetValueAtIndex(string[] array, int index)`
 
@@ -34,6 +30,7 @@ A developer wants to create a method that returns a value in an array. Which of 
 
 `int GetValueAtIndex(int index)`
 
-## --video-solution--
+## --answer--
 
-1
+`string GetValueAtIndex(string[] array, int index)`
+

@@ -28,7 +28,7 @@ checkpoint_callback = tf.keras.callbacks.__B__(
 history = model.fit(data, epochs=2, callbacks=[__C__])
 ```
 
-## --answers--
+## --distractors--
 
 A: `'./training_checkpoints'`
 
@@ -40,19 +40,15 @@ C: `checkpoint_prefix`
 
 A: `'./checkpoints'`
 
-B: `ModelCheckpoint`
-
-C: `checkpoint_callback`
-
----
-
-A: `'./checkpoints'`
-
 B: `BaseLogger`
 
 C: `checkpoint_callback`
 
-## --video-solution--
+## --answer--
 
-2
+A: `'./checkpoints'`
+
+B: `ModelCheckpoint`
+
+C: `checkpoint_callback`
 

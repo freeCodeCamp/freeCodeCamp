@@ -16,13 +16,9 @@ Let's look at how you can connect your Math and Python knowledge with external d
 
 What library helps you to read data from a .csv and store it as a dataframe where you can select columns?
 
-## --answers--
+## --distractors--
 
 Math
-
----
-
-Pandas
 
 ---
 
@@ -32,6 +28,7 @@ Data
 
 Matplotlib
 
-## --video-solution--
+## --answer--
 
-2
+Pandas
+

@@ -25,7 +25,7 @@ More resources:
 
 What kind of data can you import and work with in a Jupyter Notebook?
 
-## --answers--
+## --distractors--
 
 Excel files.
 
@@ -41,11 +41,7 @@ XML files.
 
 Data from an API.
 
----
+## --answer--
 
 All of the above.
-
-## --video-solution--
-
-5
 

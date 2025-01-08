@@ -16,13 +16,9 @@ The next video contains more examples of how to set up equations and use your Co
 
 How can you make use of a Colab notebook to solve practical business problems?
 
-## --answers--
+## --distractors--
 
 Modify the equations in the code you already wrote
-
----
-
-Copy your existing code and then modify it as necessary
 
 ---
 
@@ -32,6 +28,7 @@ Write new code based on the functions you already know
 
 All of the above
 
-## --video-solution--
+## --answer--
 
-2
+Copy your existing code and then modify it as necessary
+

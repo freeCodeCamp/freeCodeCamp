@@ -15,13 +15,9 @@ Because the box model concept is so incredibly fundamental, let’s dig a bit de
 
 Which CSS property would you use to create more space between the contents of an element and its border?
 
-## --answers--
+## --distractors--
 
 Margin
-
----
-
-Padding
 
 ---
 
@@ -31,6 +27,7 @@ Border
 
 Float
 
-## --video-solution--
+## --answer--
 
-2
+Padding
+

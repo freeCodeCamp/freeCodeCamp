@@ -22,7 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-format
 
 For the C# code `Console.WriteLine("C110".PadLeft(6, '0'));`, which is the expected output?
 
-## --answers--
+## --distractors--
 
 `C11000`
 
@@ -30,10 +30,7 @@ For the C# code `Console.WriteLine("C110".PadLeft(6, '0'));`, which is the expec
 
 `C110000000`
 
----
+## --answer--
 
 `00C110`
 
-## --video-solution--
-
-3

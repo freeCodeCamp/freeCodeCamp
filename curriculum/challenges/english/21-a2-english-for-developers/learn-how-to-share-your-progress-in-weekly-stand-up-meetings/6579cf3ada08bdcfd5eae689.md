@@ -17,11 +17,7 @@ In this dialogue, Sophie is making a request to Bob. Understanding the nature of
 
 What is Sophie asking for in her conversation with Bob?
 
-## --answers--
-
-She's asking for help with a coding problem
-
----
+## --distractors--
 
 She wants Bob to solve the problem for her
 
@@ -45,9 +41,9 @@ She's discussing a future project
 
 Sophie's request is about a current coding issue she's facing, not a future project.
 
-## --video-solution--
+## --answer--
 
-1
+She's asking for help with a coding problem
 
 # --scene--
 
@@ -96,3 +92,4 @@ Sophie's request is about a current coding issue she's facing, not a future proj
   ]
 }
 ```
+

@@ -16,7 +16,7 @@ dashedName: convolutional-neural-networks-evaluating-the-model
 
 What is **not** a good way to increase the accuracy of a convolutional neural network?
 
-## --answers--
+## --distractors--
 
 Augmenting the data you already have.
 
@@ -24,11 +24,7 @@ Augmenting the data you already have.
 
 Using a pre-trained model.
 
----
+## --answer--
 
 Using your test data to retrain the model.
-
-## --video-solution--
-
-3
 

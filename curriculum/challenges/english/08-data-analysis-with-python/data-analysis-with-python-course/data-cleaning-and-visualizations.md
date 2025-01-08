@@ -29,7 +29,7 @@ When using Matplotlib's global API, what does the order of numbers mean here?
 plt.subplot(1, 2, 1)
 ```
 
-## --answers--
+## --distractors--
 
 My figure will have one column, two rows, and I am going to start drawing in the first (left) plot.
 
@@ -37,11 +37,7 @@ My figure will have one column, two rows, and I am going to start drawing in the
 
 I am going to start drawing in the first (left) plot, my figure will have two rows, and my figure will have one column.
 
----
+## --answer--
 
 My figure will have one row, two columns, and I am going to start drawing in the first (left) plot.
-
-## --video-solution--
-
-3
 

@@ -20,15 +20,7 @@ Fill in the blanks to complete the following Q-Learning equation:
 Q[__A__, __B__] = Q[__A__, __B__] + LEARNING_RATE * (reward + GAMMA * np.max(Q[__C__, :]) - Q[__A__, __B__])
 ```
 
-## --answers--
-
-A: `state`
-
-B: `action`
-
-C: `next_state`
-
----
+## --distractors--
 
 A: `state`
 
@@ -44,7 +36,11 @@ B: `reaction`
 
 C: `next_state`
 
-## --video-solution--
+## --answer--
 
-1
+A: `state`
+
+B: `action`
+
+C: `next_state`
 

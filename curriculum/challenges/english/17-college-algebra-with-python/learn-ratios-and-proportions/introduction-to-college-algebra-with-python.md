@@ -28,22 +28,19 @@ Create an algebra <a href="https://drive.google.com/" target="_blank" rel="noope
 
 When adding text in Google Colab, what symbol would you use to create a heading that will appear in the table of contents?
 
-## --answers--
+## --distractors--
 
-&dollar;
-
----
-
-&num;
+$
 
 ---
 
-&commat;
+@
 
 ---
 
-&percnt;
+%
 
-## --video-solution--
+## --answer--
 
-2
+\#
+

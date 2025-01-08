@@ -20,11 +20,7 @@ The next few video lessons will reference [this Colab notebook](https://colab.re
 
 Natural Language Processing is a branch of artificial intelligence that...:
 
-## --answers--
-
-deals with how computers understand and process natural/human languages.
-
----
+## --distractors--
 
 translates image data into natural/human languages.
 
@@ -32,7 +28,7 @@ translates image data into natural/human languages.
 
 is focused on translating computer languages into natural/human languages.
 
-## --video-solution--
+## --answer--
 
-1
+deals with how computers understand and process natural/human languages.
 

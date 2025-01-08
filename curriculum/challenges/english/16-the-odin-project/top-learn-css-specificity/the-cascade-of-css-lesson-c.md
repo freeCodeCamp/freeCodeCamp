@@ -37,13 +37,9 @@ In the example above, both rules are using only class selectors, but rule 2 is m
 
 Based on the given HTML and CSS code, which color would the `<div class="list subsection"></div>` element be rendered as?
 
-## --answers--
+## --distractors--
 
 blue
-
----
-
-red
 
 ---
 
@@ -53,6 +49,7 @@ purple
 
 black
 
-## --video-solution--
+## --answer--
 
-2
+red
+

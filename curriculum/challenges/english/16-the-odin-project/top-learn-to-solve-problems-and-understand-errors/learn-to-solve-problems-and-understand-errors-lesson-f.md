@@ -42,7 +42,7 @@ Thus the stack trace lets you trace the evolution of an error back to its origin
 
 How does the stack trace help in debugging the error in the provided JavaScript code?
 
-## --answers--  
+## --distractors--
 
 The stack trace shows that the function `add()` correctly returns the value of `c`.
 
@@ -52,12 +52,9 @@ The stack trace indicates which line in the code needs to be edited to correct a
 
 ---
 
-The stack trace provides a detailed path of function calls leading to the error, helping identify where `c` is incorrectly referenced.
-
----
-
 The stack trace only indicates that `print()` was called, but does not provide details about the error in `add()`.
 
-## --video-solution--
+## --answer--
 
-3
+The stack trace provides a detailed path of function calls leading to the error, helping identify where `c` is incorrectly referenced.
+

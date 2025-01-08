@@ -16,19 +16,15 @@ dashedName: core-learning-algorithms-training-and-testing-data
 
 What is categorical data?
 
-## --answers--
+## --distractors--
 
 Another term for one-hot encoding.
 
 ---
 
-Any data that is not numeric.
-
----
-
 Any data that is represented numerically.
 
-## --video-solution--
+## --answer--
 
-2
+Any data that is not numeric.
 

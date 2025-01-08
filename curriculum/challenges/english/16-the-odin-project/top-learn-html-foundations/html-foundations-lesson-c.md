@@ -31,16 +31,13 @@ However, you probably won’t ever want to be using an older version of HTML, an
 
 Open the `index.html` file created earlier in your text editor and add `<!DOCTYPE html>` to the very first line. 
 
-# --questions-- 
+# --questions--
+
 ## --text--
 
 What is the purpose of the `DOCTYPE` declaration?
 
-## --answers--
-
-It tells the browser which version of HTML to use to render the document.
-
----
+## --distractors--
 
 It tells the browser that this document uses JavaScript.
 
@@ -48,7 +45,7 @@ It tells the browser that this document uses JavaScript.
 
 It tells the browser the title of the document.
 
+## --answer--
 
-## --video-solution--
+It tells the browser which version of HTML to use to render the document.
 
-1

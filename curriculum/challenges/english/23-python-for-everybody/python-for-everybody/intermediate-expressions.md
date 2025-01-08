@@ -30,7 +30,7 @@ height = 12.0
 print(height/3)
 ```
 
-## --answers--
+## --distractors--
 
 39
 
@@ -40,17 +40,13 @@ print(height/3)
 
 ---
 
-4.0
-
----
-
 5.0
 
 ---
 
 5
 
-## --video-solution--
+## --answer--
 
-3
+4.0
 

@@ -44,7 +44,7 @@ for (let i = 1; i < items.length; i++) {
 }
 ```
 
-## --answers--
+## --distractors--
 
 ```bash
 apple
@@ -68,7 +68,7 @@ banana
 cherry
 ```
 
----
+## --answer--
 
 ```bash
 banana
@@ -76,6 +76,3 @@ cherry
 date
 ```
 
-## --video-solution--
-
-4

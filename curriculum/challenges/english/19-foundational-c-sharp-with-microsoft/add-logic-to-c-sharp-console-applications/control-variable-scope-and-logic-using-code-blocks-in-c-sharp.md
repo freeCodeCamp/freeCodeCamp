@@ -20,9 +20,9 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-code-b
 
 ## --text--
 
-Which of the following statements is true about showing/removing the curly braces for code blocks associated with an `if` statement? 
+Which of the following statements is true about showing/removing the curly braces for code blocks associated with an `if` statement?
 
-## --answers--
+## --distractors--
 
 The curly braces can't be removed from the code block for `else if` and `else` statements.
 
@@ -30,10 +30,7 @@ The curly braces can't be removed from the code block for `else if` and `else` s
 
 If the curly braces are removed from the code blocks of an `if-elseif-else`, the white space must also be removed.
 
----
+## --answer--
 
 Always choose a style that improves readability.
 
-## --video-solution--
-
-3

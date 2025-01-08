@@ -35,7 +35,6 @@ The above code creates a new array `newCharacters` with the second element from 
 
 What will be the output of the following JavaScript code snippet?
 
-
 ```javascript
 const numbers = [10, 20, 30, 40, 50];
 numbers.splice(3, 1);
@@ -45,11 +44,7 @@ console.log(numbers);
 console.log(slicedNumbers);
 ```
 
-## --answers--
-
-`numbers` output: `[10, 20, 30, 50]` and `slicedNumbers` output: `[30, 50]`
-
----
+## --distractors--
 
 `numbers` output: `[10, 20, 30, 40]` and `slicedNumbers` output: `[30, 40]`
 
@@ -61,6 +56,7 @@ console.log(slicedNumbers);
 
 `numbers` output: `[10, 20, 30, 50, 40]` and `slicedNumbers` output: `[30, 50]`
 
-## --video-solution--
+## --answer--
 
-1
+`numbers` output: `[10, 20, 30, 50]` and `slicedNumbers` output: `[30, 50]`
+

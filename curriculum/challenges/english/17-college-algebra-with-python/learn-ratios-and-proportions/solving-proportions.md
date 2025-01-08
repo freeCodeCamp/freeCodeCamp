@@ -22,11 +22,7 @@ Add the code from the video to the algebra Colab notebook you created in the fir
 
 In solving a proportion, if one numerator is zero, does the other numerator have to be zero for the statement to be true?
 
-## --answers--
-
-Yes
-
----
+## --distractors--
 
 No
 
@@ -34,6 +30,7 @@ No
 
 Sometimes
 
-## --video-solution--
+## --answer--
 
-1
+Yes
+

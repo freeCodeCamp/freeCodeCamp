@@ -22,7 +22,7 @@ Add code to your algebra Colab notebook that creates Python functions for decima
 
 After defining a function in Python, indent each line of the function how many spaces?
 
-## --answers--
+## --distractors--
 
 2
 
@@ -32,12 +32,9 @@ After defining a function in Python, indent each line of the function how many s
 
 ---
 
-4
-
----
-
 5
 
-## --video-solution--
+## --answer--
 
-3
+4
+

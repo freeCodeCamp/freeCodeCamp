@@ -26,7 +26,7 @@ model.add(layers.__B__(32, (3, 3), activation='relu'))
 model.add(layers.__C__(2, 2))
 ```
 
-## --answers--
+## --distractors--
 
 A: `Sequential`
 
@@ -42,15 +42,11 @@ B: `Cropping2D`
 
 C: `AlphaDropout`
 
----
+## --answer--
 
 A: `Sequential`
 
 B: `Conv2D`
 
 C: `MaxPooling2D`
-
-## --video-solution--
-
-3
 

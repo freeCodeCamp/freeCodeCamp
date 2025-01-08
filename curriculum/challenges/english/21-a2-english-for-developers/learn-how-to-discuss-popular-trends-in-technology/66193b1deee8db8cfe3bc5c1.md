@@ -17,11 +17,7 @@ Listen to the audio and answer the question.
 
 What collaboration tools does Alice mention?
 
-## --answers--
-
-`Project management tools` and `cloud storage services`
-
----
+## --distractors--
 
 `The internet` and `computer networks`
 
@@ -45,9 +41,9 @@ These are manual tools, not collaboration tools.
 
 These can be considered collaboration tools in a virtual environment, but Alice does not mention them.
 
-## --video-solution--
+## --answer--
 
-1
+`Project management tools` and `cloud storage services`
 
 # --scene--
 
@@ -133,3 +129,4 @@ These can be considered collaboration tools in a virtual environment, but Alice 
   ]
 }
 ```
+

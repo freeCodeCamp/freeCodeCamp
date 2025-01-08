@@ -35,7 +35,7 @@ A = np.array([
 print(A[:, :2])
 ```
 
-## --answers--
+## --distractors--
 
 ```py
 [['a' 'b']]
@@ -49,15 +49,11 @@ print(A[:, :2])
 ['h' 'i']]
 ```
 
----
+## --answer--
 
 ```py
 [['a' 'b']
 ['d' 'e']
 ['g' 'h']]
 ```
-
-## --video-solution--
-
-3
 

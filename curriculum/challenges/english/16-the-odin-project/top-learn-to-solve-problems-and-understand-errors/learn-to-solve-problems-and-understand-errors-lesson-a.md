@@ -31,7 +31,7 @@ Read <a href="https://www.freecodecamp.org/news/how-to-think-like-a-programmer-l
 
 According to V. Anton Spraul in "Think Like a Programmer," what is problem solving in programming?
 
-## --answers--
+## --distractors--
 
 Learning the syntax and concepts of different programming languages.
 
@@ -41,13 +41,9 @@ Building applications with high performance and scalability as the key features.
 
 ---
 
-Writing an original program that performs a specific set of tasks and meets all stated constraints.
-
----
-
 Solving coding exercises to improve programming skills.
 
+## --answer--
 
-## --video-solution--
+Writing an original program that performs a specific set of tasks and meets all stated constraints.
 
-3

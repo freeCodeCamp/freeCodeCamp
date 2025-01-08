@@ -22,7 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/guided-projec
 
 What is the purpose of defining an optional parameter in a method?
 
-## --answers--
+## --distractors--
 
 To cause a method to perform a different task.
 
@@ -30,11 +30,7 @@ To cause a method to perform a different task.
 
 To overload a method.
 
----
+## --answer--
 
 To simplify the required parameters when a parameter isn't significant to the result.
-
-## --video-solution--
-
-3
 

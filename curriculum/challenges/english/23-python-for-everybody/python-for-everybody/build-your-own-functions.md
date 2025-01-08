@@ -33,7 +33,7 @@ fred()
 jane()
 ```
 
-## --answers--
+## --distractors--
 
 <pre>Zap
 ABC
@@ -55,17 +55,13 @@ jane</pre>
 
 ---
 
-<pre>ABC
-Zap
-ABC</pre>
-
----
-
 <pre>Zap
 Zap
 Zap</pre>
 
-## --video-solution--
+## --answer--
 
-4
+<pre>ABC
+Zap
+ABC</pre>
 

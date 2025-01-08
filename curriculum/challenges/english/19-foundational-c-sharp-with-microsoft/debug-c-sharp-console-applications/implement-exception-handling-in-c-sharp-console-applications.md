@@ -22,11 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/implement-exc
 
 When is an `ArrayTypeMismatchException` exception thrown?
 
-## --answers--
-
-An `ArrayTypeMismatchException` exception is thrown when an attempt is made to store a value of one type in an array of another type.
-
----
+## --distractors--
 
 An `ArrayTypeMismatchException` exception is thrown when attempting to access a member on a type whose value is null.
 
@@ -34,6 +30,7 @@ An `ArrayTypeMismatchException` exception is thrown when attempting to access a 
 
 An `ArrayTypeMismatchException` exception is thrown when an attempt is made to index an array outside the bounds of the array.
 
-## --video-solution--
+## --answer--
 
-1
+An `ArrayTypeMismatchException` exception is thrown when an attempt is made to store a value of one type in an array of another type.
+

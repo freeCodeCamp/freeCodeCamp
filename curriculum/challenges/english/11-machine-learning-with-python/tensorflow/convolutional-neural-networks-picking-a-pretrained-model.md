@@ -23,15 +23,7 @@ base_model = tf.__A__.applications.__B__(input_shape=(160, 160, 3),
                                                )
 ```
 
-## --answers--
-
-A: `keras`
-
-B: `MobileNetV2`
-
-C: `False`
-
----
+## --distractors--
 
 A: `Keras`
 
@@ -47,7 +39,11 @@ B: `mobile_net_v2`
 
 C: `False`
 
-## --video-solution--
+## --answer--
 
-1
+A: `keras`
+
+B: `MobileNetV2`
+
+C: `False`
 

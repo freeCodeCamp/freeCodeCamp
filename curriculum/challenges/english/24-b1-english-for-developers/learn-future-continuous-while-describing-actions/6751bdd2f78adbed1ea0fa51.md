@@ -17,11 +17,7 @@ Listen to the audio and answer the question below.
 
 What is Brian's concern?
 
-## --answers--
-
-If users need to be informed about the downtime.
-
----
+## --distractors--
 
 If the downtime will last too long.
 
@@ -45,9 +41,9 @@ If the downtime will affect the server's performance.
 
 Brian's concern is not about the server's performance.
 
-## --video-solution--
+## --answer--
 
-1
+If users need to be informed about the downtime.
 
 # --explanation--
 
@@ -100,3 +96,4 @@ Brian is asking if they should update users about the downtime, showing his conc
   ]
 }
 ```
+

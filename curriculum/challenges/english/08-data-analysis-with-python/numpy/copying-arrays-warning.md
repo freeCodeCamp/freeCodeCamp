@@ -24,7 +24,7 @@ b = a
 b[2] = 20
 ```
 
-## --answers--
+## --distractors--
 
 ```python
 [1 2 3 4 5]
@@ -33,16 +33,12 @@ b[2] = 20
 ---
 
 ```python
-[1 2 20 4 5]
-```
-
----
-
-```python
 [1 20 3 4 5]
 ```
 
-## --video-solution--
+## --answer--
 
-2
+```python
+[1 2 20 4 5]
+```
 

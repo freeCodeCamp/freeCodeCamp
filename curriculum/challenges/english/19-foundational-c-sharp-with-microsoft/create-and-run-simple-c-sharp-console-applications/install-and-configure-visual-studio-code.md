@@ -22,7 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/install-confi
 
 Which of the following choices provides the best description of an Integrated Development Environment (IDE)?
 
-## --answers--
+## --distractors--
 
 Visual Studio Code is an Integrated Development Environment.
 
@@ -30,10 +30,7 @@ Visual Studio Code is an Integrated Development Environment.
 
 An Integrated Development Environment is tool that makes it easier to write code.
 
----
+## --answer--
 
 An IDE is a suite of tools that supports the full software development lifecycle.
 
-## --video-solution--
-
-3

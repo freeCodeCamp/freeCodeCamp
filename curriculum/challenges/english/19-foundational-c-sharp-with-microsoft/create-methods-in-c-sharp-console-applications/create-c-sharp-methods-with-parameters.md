@@ -28,11 +28,7 @@ void Print(string name, string number = "", bool member = false)
 
 Which of the following options correctly uses named and optional arguments?
 
-## --answers--
-
-`Print("Tony", member: true);`
-
----
+## --distractors--
 
 `Print(number: "555", member: false)`
 
@@ -40,6 +36,7 @@ Which of the following options correctly uses named and optional arguments?
 
 `Print("Tony", false)`
 
-## --video-solution--
+## --answer--
 
-1
+`Print("Tony", member: true);`
+

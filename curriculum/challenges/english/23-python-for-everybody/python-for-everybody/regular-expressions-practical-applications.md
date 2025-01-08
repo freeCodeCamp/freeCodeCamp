@@ -16,23 +16,19 @@ dashedName: regular-expressions-practical-applications
 
 What will search for a "$" in a regular expression?
 
-## --answers--
+## --distractors--
 
 $
 
 ---
 
-\\dollar\\
-
----
-
-\\$
+\dollar\\
 
 ---
 
 !$
 
-## --video-solution--
+## --answer--
 
-3
+\\$
 

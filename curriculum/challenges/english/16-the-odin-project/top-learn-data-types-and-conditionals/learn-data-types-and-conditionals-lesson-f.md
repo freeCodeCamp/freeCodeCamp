@@ -37,7 +37,7 @@ console.log(result); // true
 
 Which of the following is the correct way to check if the variable `x` is equal to the number `5` in JavaScript?
 
-## --answers--
+## --distractors--
 
 `x = 5`
 
@@ -47,12 +47,9 @@ Which of the following is the correct way to check if the variable `x` is equal 
 
 ---
 
-`x == 5`
-
----
-
 `x >= 5`
 
-## --video-solution--
+## --answer--
 
-3
+`x == 5`
+

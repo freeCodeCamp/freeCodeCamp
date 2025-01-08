@@ -22,7 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/csharp-call-m
 
 What is an object?
 
-## --answers--
+## --distractors--
 
 A memory address.
 
@@ -30,10 +30,7 @@ A memory address.
 
 A stateless class.
 
----
+## --answer--
 
 An instance of a class.
 
-## --video-solution--
-
-3

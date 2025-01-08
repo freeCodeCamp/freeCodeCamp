@@ -22,13 +22,9 @@ Add code to your algebra Colab notebook to graph a function from points or from 
 
 If you know the slope ("m") and you have one (x,y) coordinate point, which of the following equations could you use to find "b", representing the y-intercept in Python?
 
-## --answers--
+## --distractors--
 
 `y = mx +b`
-
----
-
-`b = y - m*x`
 
 ---
 
@@ -38,6 +34,7 @@ If you know the slope ("m") and you have one (x,y) coordinate point, which of th
 
 `(y2-y1)/(x2-x1)=m`
 
-## --video-solution--
+## --answer--
 
-2
+`b = y - m*x`
+

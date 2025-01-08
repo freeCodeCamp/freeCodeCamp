@@ -17,11 +17,7 @@ Listen to the audio and answer the question below.
 
 What is James describing about his approach to coding?
 
-## --answers--
-
-A habit he had in the past.
-
----
+## --distractors--
 
 Something he plans to do in the future.
 
@@ -45,9 +41,9 @@ A process he never followed.
 
 James describes a habit he once had, so it is not something he never did.
 
-## --video-solution--
+## --answer--
 
-1
+A habit he had in the past.
 
 # --explanation--
 
@@ -113,3 +109,4 @@ This sentence shows that he previously wrote code without considering the end us
   ]
 }
 ```
+

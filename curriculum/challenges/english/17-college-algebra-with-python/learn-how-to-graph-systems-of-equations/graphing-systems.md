@@ -22,7 +22,7 @@ Add code from the video to the algebra notebook you are building, and test it wi
 
 The numpy `linspace()` function takes three arguments to create an array. Which of the following arguments does it not take?
 
-## --answers--
+## --distractors--
 
 Minimum value
 
@@ -34,10 +34,7 @@ Maximum value
 
 Number of items in the array
 
----
+## --answer--
 
 Formula to generate each item
 
-## --video-solution--
-
-4

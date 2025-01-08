@@ -38,13 +38,9 @@ If you add another `div` to the HTML, inside of `.flex-container`, it will show 
 
 What happens when the two flex related CSS declarations in the CodePen are uncommented?
 
-## --answers--
+## --distractors--
 
 The `div` elements become hidden from view, losing their visibility within the container.
-
----
-
-All 3 `div` elements are arranged horizontally, and they flex to fill the available area with equal width.
 
 ---
 
@@ -54,6 +50,7 @@ Each `div` element enlarges and covers the entire container, overlapping each ot
 
 The `div` elements align vertically in a single column, ignoring the flex-related CSS declarations.
 
-## --video-solution--
+## --answer--
 
-2
+All 3 `div` elements are arranged horizontally, and they flex to fill the available area with equal width.
+

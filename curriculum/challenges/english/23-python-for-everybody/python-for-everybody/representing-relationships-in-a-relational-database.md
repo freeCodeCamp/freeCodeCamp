@@ -16,7 +16,7 @@ dashedName: representing-relationships-in-a-relational-database
 
 What is a foreign key?
 
-## --answers--
+## --distractors--
 
 A key that is not supposed to be there.
 
@@ -26,13 +26,9 @@ A key that uses non-latin characters.
 
 ---
 
-A number that points to the primary key of an associated row in a different table.
-
----
-
 A key that the "real world" might use to look up a row.
 
-## --video-solution--
+## --answer--
 
-3
+A number that points to the primary key of an associated row in a different table.
 

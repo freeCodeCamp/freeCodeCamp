@@ -17,17 +17,13 @@ Listen to the audio and answer the question.
 
 What does the phrase `Would you like to come?` convey in this context?
 
-## --answers--
+## --distractors--
 
 Declining an invitation
 
 ### --feedback--
 
 This option is incorrect because the phrase is not a response indicating refusal; instead, it is an invitation being extended.
-
----
-
-Extending an invitation
 
 ---
 
@@ -45,9 +41,9 @@ Asking for information
 
 This option is incorrect because the phrase is not seeking information; rather, it is an invitation to join an event.
 
-## --video-solution--
+## --answer--
 
-2
+Extending an invitation
 
 # --scene--
 
@@ -92,3 +88,4 @@ This option is incorrect because the phrase is not seeking information; rather, 
   ]
 }
 ```
+

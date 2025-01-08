@@ -23,7 +23,7 @@ a = np.array(([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]))
 b = np.max(a, axis=1).sum()
 ```
 
-## --answers--
+## --distractors--
 
 ```py
 10
@@ -41,13 +41,9 @@ b = np.max(a, axis=1).sum()
 5
 ```
 
----
+## --answer--
 
 ```py
 15
 ```
-
-## --video-solution--
-
-4
 

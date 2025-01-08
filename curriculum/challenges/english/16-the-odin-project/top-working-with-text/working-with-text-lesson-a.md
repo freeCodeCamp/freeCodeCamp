@@ -41,19 +41,15 @@ Watch and follow along to Kevin Powell’s HTML Paragraph and Headings Video abo
 
 How do you create a paragraph in HTML?
 
-## --answers--
+## --distractors--
 
 `<h3>This is a paragraph</h3>`
 
 ---
 
-`<p>This is a paragraph</p>`
-
----
-
 `<strong>This is a paragraph<strong>`
 
+## --answer--
 
-## --video-solution--
+`<p>This is a paragraph</p>`
 
-2

@@ -31,7 +31,7 @@ a = np.arange(5)
 print(a <= 3)
 ```
 
-## --answers--
+## --distractors--
 
 ```python
 [False, False, False, False, True]
@@ -49,13 +49,9 @@ print(a <= 3)
 [0, 1, 2, 3]
 ```
 
----
+## --answer--
 
 ```python
 [True, True, True, True, False]
 ```
-
-## --video-solution--
-
-4
 

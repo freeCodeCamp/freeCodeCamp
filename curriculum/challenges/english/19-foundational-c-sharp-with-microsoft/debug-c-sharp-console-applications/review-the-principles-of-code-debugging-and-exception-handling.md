@@ -22,11 +22,7 @@ Complete the <a href="https://learn.microsoft.com/training/modules/review-princi
 
 What is the relationship between the type of exception and the information it contains?
 
-## --answers--
-
-The type of exception determines the information it contains.
-
----
+## --distractors--
 
 The type of exception and the information it contains are unrelated.
 
@@ -34,6 +30,7 @@ The type of exception and the information it contains are unrelated.
 
 The information contained in an exception determines the type of exception.
 
-## --video-solution--
+## --answer--
 
-1
+The type of exception determines the information it contains.
+

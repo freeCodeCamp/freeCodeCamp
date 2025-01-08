@@ -16,11 +16,7 @@ dashedName: reading-files
 
 What is used to indicate a new line in a string?
 
-## --answers--
-
-\\n
-
----
+## --distractors--
 
 {new_line}
 
@@ -36,7 +32,7 @@ What is used to indicate a new line in a string?
 
 /new
 
-## --video-solution--
+## --answer--
 
-1
+\n
 

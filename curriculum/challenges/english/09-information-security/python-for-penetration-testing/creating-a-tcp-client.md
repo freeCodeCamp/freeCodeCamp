@@ -16,11 +16,7 @@ dashedName: creating-a-tcp-client
 
 Which socket object method lets you set the maximum amount of data your client accepts at once?
 
-## --answers--
-
-`.recv(1024)`
-
----
+## --distractors--
 
 `.decode('ascii')`
 
@@ -28,7 +24,7 @@ Which socket object method lets you set the maximum amount of data your client a
 
 `.connect(host, port)`
 
-## --video-solution--
+## --answer--
 
-1
+`.recv(1024)`
 

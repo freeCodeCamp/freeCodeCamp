@@ -17,17 +17,13 @@ Listen to the audio and answer the question.
 
 What is Tom asking about?
 
-## --answers--
+## --distractors--
 
 If Anna works in HR
 
 ### --feedback--
 
 Tom's question is specifically about whether the person has worked with Anna, not about Anna's role.
-
----
-
-If Alice has had any experience working with Anna.
 
 ---
 
@@ -45,9 +41,9 @@ If Anna has ever worked
 
 The focus of Tom's question is on the listener's experience with Anna, not on Anna's work history.
 
-## --video-solution--
+## --answer--
 
-2
+If Alice has had any experience working with Anna.
 
 # --scene--
 
@@ -92,3 +88,4 @@ The focus of Tom's question is on the listener's experience with Anna, not on An
   ]
 }
 ```
+

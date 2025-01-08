@@ -16,11 +16,7 @@ dashedName: data-visualization-page-rank
 
 How does the PageRank algorithm work?
 
-## --answers--
-
-It determines which pages are most highly connected.
-
----
+## --distractors--
 
 It ranks pages based on view counts.
 
@@ -28,7 +24,7 @@ It ranks pages based on view counts.
 
 It figures out which pages contain the most important content.
 
-## --video-solution--
+## --answer--
 
-1
+It determines which pages are most highly connected.
 

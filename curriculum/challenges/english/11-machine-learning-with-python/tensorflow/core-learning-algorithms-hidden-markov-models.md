@@ -16,11 +16,7 @@ dashedName: core-learning-algorithms-hidden-markov-models
 
 What makes a Hidden Markov model different than linear regression or classification?
 
-## --answers--
-
-It uses probability distributions to predict future events or states.
-
----
+## --distractors--
 
 It analyzes the relationship between independent and dependent variables to make predictions.
 
@@ -28,7 +24,7 @@ It analyzes the relationship between independent and dependent variables to make
 
 It separates data points into separate categories.
 
-## --video-solution--
+## --answer--
 
-1
+It uses probability distributions to predict future events or states.
 

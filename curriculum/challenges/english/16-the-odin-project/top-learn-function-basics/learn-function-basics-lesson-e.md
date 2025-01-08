@@ -54,11 +54,7 @@ function add(a, b = 12) {
 console.log(add(3));
 ```
 
-## --answers--
-
-The output is `24`.
-
----
+## --distractors--
 
 The output is `14`.
 
@@ -70,6 +66,7 @@ The output is `15`.
 
 The output is `12`.
 
-## --video-solution--
+## --answer--
 
-1
+The output is `24`.
+

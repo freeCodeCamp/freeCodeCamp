@@ -15,7 +15,7 @@ Because the box model concept is so incredibly fundamental, let’s dig a bit de
 
 How do you set the alternative box model for all of your elements?
 
-## --answers--
+## --distractors--
 
 ```css
 html {
@@ -47,7 +47,7 @@ html {
 }
 ```
 
----
+## --answer--
 
 ```css
 html {
@@ -60,8 +60,3 @@ html {
 }
 ```
 
-
-
-## --video-solution--
-
-4

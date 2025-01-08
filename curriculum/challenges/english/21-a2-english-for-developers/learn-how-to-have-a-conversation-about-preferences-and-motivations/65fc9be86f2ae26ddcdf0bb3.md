@@ -18,7 +18,7 @@ Listen to Maria and answer the question.
 
 What can boost their motivation according to Maria?
 
-## --answers--
+## --distractors--
 
 Having a big team
 
@@ -36,19 +36,15 @@ Consider if breaks are mentioned as a way to increase motivation.
 
 ---
 
-Seeing the team inspired
-
----
-
 Solving problems quickly
 
 ### --feedback--
 
 Reflect on whether the speed of solving problems is what Maria highlights as motivating.
 
-## --video-solution--
+## --answer--
 
-3
+Seeing the team inspired
 
 # --scene--
 
@@ -102,3 +98,4 @@ Reflect on whether the speed of solving problems is what Maria highlights as mot
   ]
 }
 ```
+

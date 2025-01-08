@@ -24,7 +24,7 @@ For the code `decimal.TryParse(numberString, out myConvert))` when the type of `
 
 Which best describes the value type for `myConvert` when the `TryParse()` is successful?
 
-## --answers--
+## --distractors--
 
 A string representing numeric digits.
 
@@ -32,10 +32,7 @@ A string representing numeric digits.
 
 A Boolean value.
 
----
+## --answer--
 
 A decimal
 
-## --video-solution--
-
-3

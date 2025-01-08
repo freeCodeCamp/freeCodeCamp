@@ -25,7 +25,7 @@ If the index is out of range, JavaScript will return `undefined`. Meaning that i
 
 What is the element at the fourth index of the `fruits` array?
 
-## --answers--
+## --distractors--
 
 `orange`
 
@@ -37,10 +37,7 @@ What is the element at the fourth index of the `fruits` array?
 
 `pineapple`
 
----
+## --answer--
 
 `undefined`
 
-## --video-solution--
-
-4

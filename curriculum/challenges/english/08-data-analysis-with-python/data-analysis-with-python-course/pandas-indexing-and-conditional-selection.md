@@ -36,7 +36,7 @@ certificates_earned = pd.Series(
 print(certificates_earned[certificates_earned > 5])
 ```
 
-## --answers--
+## --distractors--
 
 <pre>
 Tom      True
@@ -55,15 +55,11 @@ Beau     6
 dtype: int64
 </pre>
 
----
+## --answer--
 
 <pre>
 Tom      8
 Beau     6
 dtype: int64
 </pre>
-
-## --video-solution--
-
-3
 

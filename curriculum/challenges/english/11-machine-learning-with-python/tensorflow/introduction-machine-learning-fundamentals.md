@@ -16,11 +16,7 @@ dashedName: introduction-machine-learning-fundamentals
 
 Which statement below is **false**?
 
-## --answers--
-
-Neural networks are modeled after the way the human brain works.
-
----
+## --distractors--
 
 Computer programs that play tic-tac-toe or chess against human players are examples of simple artificial intelligence.
 
@@ -28,7 +24,7 @@ Computer programs that play tic-tac-toe or chess against human players are examp
 
 Machine learning is a subset of artificial intelligence.
 
-## --video-solution--
+## --answer--
 
-1
+Neural networks are modeled after the way the human brain works.
 

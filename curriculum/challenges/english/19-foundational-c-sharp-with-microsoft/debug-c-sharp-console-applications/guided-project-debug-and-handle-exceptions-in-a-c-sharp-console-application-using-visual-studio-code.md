@@ -22,18 +22,15 @@ Complete the <a href="https://learn.microsoft.com/training/modules/guided-projec
 
 When is an `ArgumentOutOfRangeException` exception thrown?
 
-## --answers--
+## --distractors--
 
 An `ArgumentOutOfRangeException` exception is thrown when an attempt is made to index an array outside the bounds of the array.
 
 ---
 
-An `ArgumentOutOfRangeException` exception is thrown when the value of an argument is outside the allowable range of values as defined by the method.
-
----
-
 An `ArgumentOutOfRangeException` exception is thrown when an attempt is made to store a value of one type in an array of another type.
 
-## --video-solution--
+## --answer--
 
-2
+An `ArgumentOutOfRangeException` exception is thrown when the value of an argument is outside the allowable range of values as defined by the method.
+

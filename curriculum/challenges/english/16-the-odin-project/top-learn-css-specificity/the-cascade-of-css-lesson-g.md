@@ -39,13 +39,9 @@ Despite the `parent` element having a higher specificity with an ID, the `child`
 
 Based on the given HTML and CSS code, what would be the color of the `<div class="child"></div>` element?
 
-## --answers--
+## --distractors--
 
 Red
-
----
-
-Blue
 
 ---
 
@@ -55,6 +51,7 @@ Inherited from the parent element
 
 Transparent
 
-## --video-solution--
+## --answer--
 
-2
+Blue
+

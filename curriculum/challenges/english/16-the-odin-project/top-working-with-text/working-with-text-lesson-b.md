@@ -17,11 +17,12 @@ Headings are defined much like paragraphs. For example, to create an `h1` headin
 Using the correct level of heading is important as levels provide a hierarchy to the content. An `h1` heading should always be used for the heading of the overall page, and the lower level headings should be used as the headings for content in smaller sections of the page.
 
 # --questions--
+
 ## --text--
 
 How many different levels of headings are there and what is the difference between them?
 
-## --answers--
+## --distractors--
 
 There are 5 different levels of headings. `h5` is the smallest and least important heading, and `h1` is the largest and most important heading.
 
@@ -29,10 +30,7 @@ There are 5 different levels of headings. `h5` is the smallest and least importa
 
 There are 6 different levels of headings. `h6` is the largest and most important heading, and `h1` is the smallest and least important heading.
 
----
+## --answer--
 
 There are 6 different levels of headings. `h1` is the largest and most important heading, and `h6` is the smallest and least important heading.
 
-## --video-solution--
-
-3

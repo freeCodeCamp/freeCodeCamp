@@ -26,7 +26,7 @@ Run the code in the following notebook to get <a href="https://colab.research.go
 
 Which of the following languages can you use in a Google Colaboratory text field?
 
-## --answers--
+## --distractors--
 
 HTML
 
@@ -38,10 +38,7 @@ LaTex
 
 English
 
----
+## --answer--
 
 All of the above
 
-## --video-solution--
-
-4

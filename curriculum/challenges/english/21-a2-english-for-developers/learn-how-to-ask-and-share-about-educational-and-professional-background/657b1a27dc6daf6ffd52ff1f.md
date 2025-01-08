@@ -18,7 +18,7 @@ In English, the noun suffixed with `'s` followed by a second noun structure is u
 
 What does `master's degree` in the context of the dialogue refer to?
 
-## --answers--
+## --distractors--
 
 A degree for school teachers
 
@@ -42,13 +42,9 @@ A degree in mastering skills
 
 While it implies expertise, `master's degree` specifically refers to an academic qualification.
 
----
+## --answer--
 
 An advanced academic degree
-
-## --video-solution--
-
-4
 
 # --scene--
 
@@ -117,3 +113,4 @@ An advanced academic degree
   ]
 }
 ```
+

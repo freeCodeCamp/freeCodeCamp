@@ -42,7 +42,7 @@ let message = 'Hello';
 
 What is the purpose of using the `let` keyword in JavaScript?
 
-## --answers--
+## --distractors--
 
 To perform mathematical operations.
 
@@ -52,13 +52,9 @@ To declare a constant value that cannot be changed.
 
 ---
 
-To declare a variable that can store data, which can be assigned and changed.
-
----
-
 To create a function.
 
+## --answer--
 
-## --video-solution--
+To declare a variable that can store data, which can be assigned and changed.
 
-3

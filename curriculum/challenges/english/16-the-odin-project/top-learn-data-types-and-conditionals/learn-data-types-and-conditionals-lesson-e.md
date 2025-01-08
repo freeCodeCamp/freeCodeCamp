@@ -24,22 +24,19 @@ will result in the `greeting` variable containing the string "Hello, my name is 
 
 Which of the following is the correct way to define a template literal in JavaScript?
 
-## --answers--
+## --distractors--
 
-``` `Hello, my name is ${name} and I am ${age} years old.` ```
-
----
-
-``` `Hello, my name is `name` and I am `age` years old.` ```
+`` `Hello, my name is `name` and I am `age` years old.` ``
 
 ---
 
-``` `Hello, my name is {name} and I am {age} years old.` ```
+`` `Hello, my name is {name} and I am {age} years old.` ``
 
 ---
 
-``` `Hello, my name is $name and I am $age years old.` ```
+`` `Hello, my name is $name and I am $age years old.` ``
 
-## --video-solution--
+## --answer--
 
-1
+`` `Hello, my name is ${name} and I am ${age} years old.` ``
+
