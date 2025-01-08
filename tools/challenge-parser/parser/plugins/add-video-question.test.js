@@ -34,14 +34,14 @@ describe('add-video-question plugin', () => {
   const checkQuestion = question => {
     expect(question).toHaveProperty('text');
     expect(typeof question.text).toBe('string');
-    expect(question).toHaveProperty('solution');
-    expect(typeof question.solution).toBe('number');
-    expect(question).toHaveProperty('answers');
-    expect(Array.isArray(question.answers)).toBe(true);
-    expect(typeof question.answers[0]).toBe('object');
-    expect(question.answers[0]).toHaveProperty('answer');
-    expect(question.answers[0].answer).toBeTruthy();
-    expect(question.answers[0]).toHaveProperty('feedback');
+    expect(question).toHaveProperty('answer');
+    expect(typeof question.solution).toBe('string');
+    expect(question).toHaveProperty('distractors');
+    expect(Array.isArray(question.distractors)).toBe(true);
+    expect(typeof question.distractors[0]).toBe('object');
+    expect(question.distractors[0]).toHaveProperty('answer');
+    expect(question.distractors[0].answer).toBeTruthy();
+    expect(question.distractors[0]).toHaveProperty('feedback');
   };
 
   it('should generate a questions array from a video challenge AST', () => {
@@ -72,20 +72,19 @@ describe('add-video-question plugin', () => {
         `<pre><code class="language-js">  var x = 'y';\n` +
         '</code></pre>'
     );
-    expect(testObject.solution).toBe(3);
-    expect(testObject.answers[0]).toStrictEqual({
+
+    expect(testObject.distractors[0]).toStrictEqual({
       answer: '<p>Some inline <code>code</code></p>',
       feedback: '<p>That is not correct.</p>'
     });
-    expect(testObject.answers[1]).toStrictEqual({
+    expect(testObject.distractors[1]).toStrictEqual({
       answer: `<p>Some <em>italics</em></p>
 <p>A second answer paragraph.</p>`,
       feedback: null
     });
-    expect(testObject.answers[2]).toStrictEqual({
-      answer: '<p><code> code in </code> code tags</p>',
-      feedback: null
-    });
+    expect(testObject.answer).toStrictEqual(
+      '<p><code> code in </code> code tags</p>'
+    );
   });
 
   // TODO: consider testing for more specific messages.  Ideally we them to say
