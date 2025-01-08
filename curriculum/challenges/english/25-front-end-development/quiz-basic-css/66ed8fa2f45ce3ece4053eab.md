@@ -149,11 +149,11 @@ Which rule is correct for setting the width and height in CSS?
 
 #### --text--
 
-Which selector is correct to target `h1` elements inside of a `div`?
+Which selector correctly targets `h1` elements only when inside a `div`?
 
 #### --distractors--
 
-`div + h1 {}`
+`div, h1 {}`
 
 ---
 
@@ -161,7 +161,7 @@ Which selector is correct to target `h1` elements inside of a `div`?
 
 ---
 
-`div > h1 {}`
+`div + h1 {}`
 
 #### --answer--
 
