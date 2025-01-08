@@ -86,7 +86,6 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
     'ses_secret_from_aws',
     'The SES secret should be changed from the default value.'
   );
-  assert.ok(process.env.SES_REGION);
   assert.ok(process.env.COOKIE_DOMAIN);
   assert.notEqual(process.env.COOKIE_SECRET, 'a_cookie_secret');
   assert.ok(process.env.SENTRY_DSN);
@@ -175,7 +174,7 @@ export const COOKIE_SECRET = process.env.COOKIE_SECRET;
 export const JWT_SECRET = process.env.JWT_SECRET;
 export const SES_ID = process.env.SES_ID;
 export const SES_SECRET = process.env.SES_SECRET;
-export const SES_REGION = process.env.SES_REGION;
+export const SES_REGION = process.env.SES_REGION || 'us-east-1';
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
