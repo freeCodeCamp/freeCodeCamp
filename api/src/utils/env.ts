@@ -23,8 +23,9 @@ function isAllowedEnv(env: string): env is 'development' | 'production' {
   return ['development', 'production'].includes(env);
 }
 
-const EMAIL_PROVIDER = process.env.EMAIL_PROVIDER || 'ses';
-const FREECODECAMP_NODE_ENV = process.env.FREECODECAMP_NODE_ENV || 'production';
+const _EMAIL_PROVIDER = process.env.EMAIL_PROVIDER || 'ses';
+const _FREECODECAMP_NODE_ENV =
+  process.env.FREECODECAMP_NODE_ENV || 'production';
 
 function isAllowedProvider(provider: string): provider is 'ses' | 'nodemailer' {
   return ['ses', 'nodemailer'].includes(provider);
@@ -32,7 +33,7 @@ function isAllowedProvider(provider: string): provider is 'ses' | 'nodemailer' {
 
 function createTestConnectionURL(url: string, dbId?: string) {
   assert.notEqual(
-    FREECODECAMP_NODE_ENV,
+    _FREECODECAMP_NODE_ENV,
     'production',
     "The database URL can't be modified in production."
   );
@@ -45,8 +46,8 @@ If so, ensure that the environment variable JEST_WORKER_ID is set.`
 }
 
 assert.ok(process.env.HOME_LOCATION);
-assert.ok(isAllowedEnv(FREECODECAMP_NODE_ENV));
-assert.ok(isAllowedProvider(EMAIL_PROVIDER));
+assert.ok(isAllowedEnv(_FREECODECAMP_NODE_ENV));
+assert.ok(isAllowedProvider(_EMAIL_PROVIDER));
 assert.ok(process.env.AUTH0_CLIENT_ID);
 assert.ok(process.env.AUTH0_CLIENT_SECRET);
 assert.ok(process.env.AUTH0_DOMAIN);
@@ -70,11 +71,11 @@ function isLogLevel(level: string): level is LogLevel {
   return LOG_LEVELS.includes(level);
 }
 
-const FCC_API_LOG_LEVEL = process.env.FCC_API_LOG_LEVEL || 'info';
+const _FCC_API_LOG_LEVEL = process.env.FCC_API_LOG_LEVEL || 'info';
 
 assert.ok(
-  isLogLevel(FCC_API_LOG_LEVEL),
-  `FCC_API_LOG_LEVEL must be one of ${LOG_LEVELS.join(', ')}. Found ${FCC_API_LOG_LEVEL}`
+  isLogLevel(_FCC_API_LOG_LEVEL),
+  `FCC_API_LOG_LEVEL must be one of ${LOG_LEVELS.join(', ')}. Found ${_FCC_API_LOG_LEVEL}`
 );
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
@@ -143,6 +144,7 @@ export const MONGOHQ_URL =
 export const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
 export const AUTH0_CLIENT_SECRET = process.env.AUTH0_CLIENT_SECRET;
+export const EMAIL_PROVIDER = _EMAIL_PROVIDER;
 export const PORT = process.env.PORT || '3000';
 // HOST defaults to 0.0.0.0 because the server is intended to be used in a
 // container.
@@ -152,12 +154,14 @@ export const FCC_ENABLE_SWAGGER_UI =
   process.env.FCC_ENABLE_SWAGGER_UI === 'true';
 export const FCC_ENABLE_DEV_LOGIN_MODE =
   process.env.FCC_ENABLE_DEV_LOGIN_MODE === 'true';
+export const FCC_API_LOG_LEVEL = _FCC_API_LOG_LEVEL;
 export const FCC_ENABLE_SHADOW_CAPTURE =
   process.env.FCC_ENABLE_SHADOW_CAPTURE === 'true';
 export const FCC_ENABLE_EXAM_ENVIRONMENT =
   process.env.FCC_ENABLE_EXAM_ENVIRONMENT === 'true';
 export const FCC_ENABLE_SENTRY_ROUTES =
   process.env.FCC_ENABLE_SENTRY_ROUTES === 'true';
+export const FREECODECAMP_NODE_ENV = _FREECODECAMP_NODE_ENV;
 export const SENTRY_DSN =
   process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
     ? ''
@@ -175,4 +179,3 @@ export const SES_REGION = process.env.SES_REGION;
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
-export { EMAIL_PROVIDER, FCC_API_LOG_LEVEL, FREECODECAMP_NODE_ENV };
