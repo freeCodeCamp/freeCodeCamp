@@ -21,6 +21,7 @@ import ChallegeExplanation from '../components/challenge-explanation';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import FillInTheBlanks from '../components/fill-in-the-blanks';
+import ChallengeTranscript from '../components/challenge-transcript';
 import PrismFormatted from '../components/prism-formatted';
 import {
   challengeMounted,
@@ -80,6 +81,7 @@ const ShowFillInTheBlank = ({
         description,
         instructions,
         explanation,
+        transcript,
         superBlock,
         block,
         translationPending,
@@ -209,6 +211,8 @@ const ShowFillInTheBlank = ({
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              {transcript && <ChallengeTranscript transcript={transcript} />}
+
               {instructions && (
                 <>
                   <PrismFormatted text={instructions} />
@@ -290,6 +294,7 @@ export const query = graphql`
             feedback
           }
         }
+        transcript
         scene {
           setup {
             background
