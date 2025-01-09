@@ -33,6 +33,7 @@ import Scene from '../components/scene/scene';
 import { SceneSubject } from '../components/scene/scene-subject';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
+import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
 
 import './show.css';
 
@@ -133,7 +134,9 @@ const ShowFillInTheBlank = ({
     const blankAnswers = fillInTheBlank.blanks.map(b => b.answer);
 
     const newAnswersCorrect = userAnswers.map(
-      (userAnswer, i) => !!userAnswer && userAnswer.trim() === blankAnswers[i]
+      (userAnswer, i) =>
+        !!userAnswer &&
+        replaceAppleQuotes(userAnswer.trim()) === blankAnswers[i]
     );
     setAnswersCorrect(newAnswersCorrect);
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
