@@ -28,6 +28,7 @@ import { getChallengePaths } from '../utils/challenge-paths';
 import Scene from '../components/scene/scene';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import ChallengeExplanation from '../components/challenge-explanation';
+import ChallengeTranscript from '../components/challenge-transcript';
 import HelpModal from '../components/help-modal';
 import { SceneSubject } from '../components/scene/scene-subject';
 
@@ -82,6 +83,7 @@ const ShowGeneric = ({
         instructions,
         questions,
         title,
+        transcript,
         translationPending,
         scene,
         superBlock,
@@ -204,6 +206,8 @@ const ShowGeneric = ({
               {title}
             </ChallengeTitle>
 
+            <Spacer size='m' />
+
             {description && (
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription
@@ -216,28 +220,34 @@ const ShowGeneric = ({
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
               {videoId && (
-                <VideoPlayer
-                  bilibiliIds={bilibiliIds}
-                  onVideoLoad={handleVideoIsLoaded}
-                  title={title}
-                  videoId={videoId}
-                  videoIsLoaded={videoIsLoaded}
-                  videoLocaleIds={videoLocaleIds}
-                />
+                <>
+                  <VideoPlayer
+                    bilibiliIds={bilibiliIds}
+                    onVideoLoad={handleVideoIsLoaded}
+                    title={title}
+                    videoId={videoId}
+                    videoIsLoaded={videoIsLoaded}
+                    videoLocaleIds={videoLocaleIds}
+                  />
+                  <Spacer size='m' />
+                </>
               )}
             </Col>
 
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {instructions && (
-                <ChallengeDescription
-                  instructions={instructions}
-                  superBlock={superBlock}
-                />
-              )}
+              {transcript && <ChallengeTranscript transcript={transcript} />}
 
-              <Spacer size='m' />
+              {instructions && (
+                <>
+                  <ChallengeDescription
+                    instructions={instructions}
+                    superBlock={superBlock}
+                  />
+                  <Spacer size='m' />
+                </>
+              )}
 
               {assignments.length > 0 && (
                 <Assignments
@@ -362,6 +372,7 @@ export const query = graphql`
         }
         superBlock
         title
+        transcript
         translationPending
         videoId
         videoId

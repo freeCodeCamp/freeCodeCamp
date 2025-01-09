@@ -287,6 +287,10 @@ const schema = Joi.object()
       .required(),
     template: Joi.string().allow(''),
     title: Joi.string().required(),
+    transcript: Joi.when('challengeType', {
+      is: [challengeTypes.generic, challengeTypes.video],
+      then: Joi.string()
+    }),
     translationPending: Joi.bool().required(),
     url: Joi.when('challengeType', {
       is: [challengeTypes.codeAllyPractice, challengeTypes.codeAllyCert],
