@@ -90,10 +90,11 @@ const Editor = () => {
       </p>
       <p>
         <Link
-          to={`https://freecodecamp.org/learn/${superBlockNameMap[superblock || '']}/${block || ''}/${items.name.replace(/[\s]+/g, '-').toLowerCase() || ''}`}
+          to={`localhost:8000/learn/${superBlockNameMap[superblock || '']}/${block || ''}/${items.name.replace(/[\s]+/g, '-').toLowerCase() || ''}`}
           target='_blank'
         >
-          View Live Version of the Challenge on freecodecamp.org
+          View Live Version of the Challenge in your running development
+          environment
         </Link>
       </p>
     </div>
