@@ -181,12 +181,10 @@ const ShowGeneric = ({
 
   const handleMcqOptionChange = (
     questionIndex: number,
-    answerIndex: number
+    value: number
   ): void => {
     setSelectedMcqOptions(prev =>
-      prev.map((option, index) =>
-        index === questionIndex ? answerIndex : option
-      )
+      prev.map((option, index) => (index === questionIndex ? value : option))
     );
   };
 

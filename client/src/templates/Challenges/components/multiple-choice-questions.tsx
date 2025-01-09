@@ -13,7 +13,7 @@ type MultipleChoiceQuestionsProps = {
     correctAnswer: number;
   }[];
   selectedOptions: (number | null)[];
-  handleOptionChange: (questionIndex: number, answerIndex: number) => void;
+  handleOptionChange: (questionIndex: number, value: number) => void;
   submittedMcqAnswers: (number | null)[];
   showFeedback: boolean;
 };
@@ -42,37 +42,34 @@ function MultipleChoiceQuestions({
         <div key={questionIndex}>
           <PrismFormatted className={'line-numbers'} text={question.question} />
           <div className='video-quiz-options'>
-            {question.answers.map(({ answer }, answerIndex) => {
+            {question.answers.map(({ answer, value, feedback }) => {
               const isSubmittedAnswer =
-                submittedMcqAnswers[questionIndex] === answerIndex;
-              const feedback =
-                questions[questionIndex].answers[answerIndex].feedback;
+                submittedMcqAnswers[questionIndex] === value;
+
               const isCorrect =
                 submittedMcqAnswers[questionIndex] ===
                 // -1 because the solution is 1-indexed
                 questions[questionIndex].correctAnswer;
 
               return (
-                <React.Fragment key={answerIndex}>
+                <React.Fragment key={value}>
                   <label
                     className={`video-quiz-option-label
                       ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''}
                       ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
-                    htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
+                    htmlFor={`mc-question-${questionIndex}-answer-${value}`}
                   >
                     <input
                       name='quiz'
-                      checked={selectedOptions[questionIndex] === answerIndex}
+                      checked={selectedOptions[questionIndex] === value}
                       className='sr-only'
-                      onChange={() =>
-                        handleOptionChange(questionIndex, answerIndex)
-                      }
+                      onChange={() => handleOptionChange(questionIndex, value)}
                       type='radio'
-                      value={answerIndex}
-                      id={`mc-question-${questionIndex}-answer-${answerIndex}`}
+                      value={value}
+                      id={`mc-question-${questionIndex}-answer-${value}`}
                     />{' '}
                     <span className='video-quiz-input-visible'>
-                      {selectedOptions[questionIndex] === answerIndex ? (
+                      {selectedOptions[questionIndex] === value ? (
                         <span className='video-quiz-selected-input' />
                       ) : null}
                     </span>
