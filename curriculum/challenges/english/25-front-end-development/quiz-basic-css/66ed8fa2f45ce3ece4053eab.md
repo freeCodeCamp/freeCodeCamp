@@ -434,3 +434,22 @@ Which rule applies `24px` padding to the top and bottom?
 ### --question--
 
 #### --text--
+
+What is the purpose of a `universal selector (*)` in CSS?
+
+#### --distractors--
+
+It selects only block-level elements in a document.
+
+---
+
+It resets all margins to default values.
+
+---
+
+It applies styles only to elements with an ID.
+
+#### --answer--
+
+It matches all elements in a document and applies specified styles.
+
