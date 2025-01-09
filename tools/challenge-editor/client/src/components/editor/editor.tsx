@@ -13,6 +13,7 @@ import { ChallengeContent } from '../../../interfaces/challenge-content';
 import SaveChallenge from '../buttons/save-challenge';
 import './editor.css';
 import { API_LOCATION } from '../../utils/handle-request';
+import { superBlockNameMap } from '../../utils/block-name-translator';
 
 const Editor = () => {
   const [error, setError] = useState<Error | null>(null);
@@ -86,6 +87,14 @@ const Editor = () => {
       />
       <p>
         <Link to={`/${superblock || ''}/${block || ''}`}>Return to Block</Link>
+      </p>
+      <p>
+        <Link
+          to={`https://freecodecamp.org/learn/${superBlockNameMap[superblock || '']}/${block || ''}/${items.name.replace(/[\s]+/g, '-').toLowerCase() || ''}`}
+          target='_blank'
+        >
+          View Live Version of the Challenge on freecodecamp.org
+        </Link>
       </p>
     </div>
   );
