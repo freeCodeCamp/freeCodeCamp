@@ -434,3 +434,22 @@ Which rule applies `24px` padding to the top and bottom?
 ### --question--
 
 #### --text--
+
+What does the `line-height` property do?
+
+#### --distractors--
+
+Controls the size of the font.
+
+---
+
+Controls the responsiveness of text.
+
+---
+
+Controls how much space is between the letters of text.
+
+#### --answer--
+
+Controls how much space is between the lines of text.
+
