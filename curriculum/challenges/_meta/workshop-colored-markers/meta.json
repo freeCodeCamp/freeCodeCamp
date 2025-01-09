@@ -1,7 +1,7 @@
 {
   "name": "Build a Set of Colored Markers",
   "blockType": "workshop",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-colored-markers",

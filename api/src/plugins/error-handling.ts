@@ -2,7 +2,7 @@ import type { FastifyPluginCallback } from 'fastify';
 import fastifySentry from '@immobiliarelabs/fastify-sentry';
 import fp from 'fastify-plugin';
 
-import { SENTRY_DSN } from '../utils/env';
+import { SENTRY_DSN, SENTRY_ENVIRONMENT } from '../utils/env';
 import { getRedirectParams } from '../utils/redirection';
 
 /**
@@ -15,6 +15,7 @@ import { getRedirectParams } from '../utils/redirection';
 const errorHandling: FastifyPluginCallback = (fastify, _options, done) => {
   void fastify.register(fastifySentry, {
     dsn: SENTRY_DSN,
+    environment: SENTRY_ENVIRONMENT,
     maxValueLength: 8192, // the default is 250, which is too small.
     // No need to initialize if DSN is not provided (e.g. in development and
     // test environments)

@@ -2,7 +2,7 @@
   "name": "HTML Fundamentals",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-html-fundamentals",
   "superBlock": "full-stack-developer",
   "helpCategory": "HTML-CSS",
@@ -10,10 +10,6 @@
     {
       "id": "670803abcb3e980233da4768",
       "title": "What are Div Elements and When Should You Use Them?"
-    },
-    {
-      "id": "6708143cab2b583ecd3324f5",
-      "title": "What Are Attributes, and How Do They Work?"
     },
     {
       "id": "6708382cf088b216580a9ff1",

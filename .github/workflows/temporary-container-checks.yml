@@ -51,7 +51,6 @@ jobs:
             --build-arg PATREON_CLIENT_ID=id_from_patreon_dashboard \
             --build-arg DEPLOYMENT_ENV=staging \
             --build-arg SHOW_UPCOMING_CHANGES=false \
-            --build-arg SHOW_NEW_CURRICULUM=false \
             --build-arg GROWTHBOOK_URI=api_URI_from_Growthbook_dashboard \
             --build-arg FREECODECAMP_NODE_ENV=development \
             -f docker/web/Dockerfile .

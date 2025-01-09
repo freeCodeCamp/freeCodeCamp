@@ -202,13 +202,23 @@ Accepted languages are ${curriculumLangs.join(', ')}`);
   );
 };
 
-async function buildBlocks({ basename: blockName }, curriculum, superBlock) {
+async function buildBlocks(file, curriculum, superBlock) {
+  const { basename: blockName } = file;
   const metaPath = path.resolve(META_DIR, `${blockName}/meta.json`);
   const isCertification = !fs.existsSync(metaPath);
-  if (isCertification && superBlock !== 'certifications')
+  const isEmptyDir = fs.readdirSync(file.fullPath).length === 0;
+  if (isEmptyDir) {
+    throw Error(
+      `Block directory, ${file.fullPath}, is empty.
+If this block should exist, please add challenge files to it.
+If this block should not exist, please remove the directory.`
+    );
+  }
+  if (isCertification && superBlock !== 'certifications') {
     throw Error(
       `superblock ${superBlock} is missing meta.json for ${blockName}`
     );
+  }
 
   if (isCertification) {
     curriculum['certifications'].blocks[blockName] = { challenges: [] };
@@ -304,6 +314,9 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
       ({ id }) => id === challenge.id
     );
 
+    const isLastChallengeInBlock =
+      meta.challengeOrder.length - 1 === challengeOrder;
+
     const isObjectIdFilename = /\/[a-z0-9]{24}\.md$/.test(englishPath);
     if (isObjectIdFilename) {
       const filename = englishPath.split('/').pop();
@@ -328,10 +341,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
 
     // const superOrder = getSuperOrder(meta.superBlock);
     // NOTE: Use this version when a super block is in beta.
-    const superOrder = getSuperOrder(meta.superBlock, {
-      // switch this back to SHOW_NEW_CURRICULUM when we're ready to beta the JS superblock
-      showNewCurriculum: process.env.SHOW_UPCOMING_CHANGES === 'true'
-    });
+    const superOrder = getSuperOrder(meta.superBlock);
     if (superOrder !== null) challenge.superOrder = superOrder;
     /* Since there can be more than one way to complete a certification (using the
    legacy curriculum or the new one, for instance), we need a certification
@@ -348,6 +358,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     challenge.certification = hasDupe ? hasDupe.certification : meta.superBlock;
     challenge.superBlock = meta.superBlock;
     challenge.challengeOrder = challengeOrder;
+    challenge.isLastChallengeInBlock = isLastChallengeInBlock;
     challenge.isPrivate = challenge.isPrivate || meta.isPrivate;
     challenge.required = (meta.required || []).concat(challenge.required || []);
     challenge.template = meta.template;
@@ -380,10 +391,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
           path.resolve(META_DIR, `${getBlockNameFromPath(filePath)}/meta.json`)
         );
 
-    const isAudited = isAuditedSuperBlock(lang, meta.superBlock, {
-      showNewCurriculum: process.env.SHOW_NEW_CURRICULUM,
-      showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES
-    });
+    const isAudited = isAuditedSuperBlock(lang, meta.superBlock);
 
     // If we can use the language, do so. Otherwise, default to english.
     const langUsed = isAudited && fs.existsSync(i18nPath) ? lang : 'english';

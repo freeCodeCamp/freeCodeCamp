@@ -83,12 +83,13 @@ function MultipleChoiceQuestions({
                     <div
                       className={`video-quiz-option-label mcq-feedback ${isCorrect ? 'mcq-correct' : 'mcq-incorrect'}`}
                     >
-                      {isCorrect
-                        ? t('learn.quiz.correct-answer')
-                        : t('learn.quiz.incorrect-answer')}
+                      <p>
+                        {isCorrect
+                          ? t('learn.quiz.correct-answer')
+                          : t('learn.quiz.incorrect-answer')}
+                      </p>
                       {feedback && (
-                        <>
-                          <span>&nbsp;</span>
+                        <p>
                           <PrismFormatted
                             className={
                               isCorrect
@@ -99,7 +100,7 @@ function MultipleChoiceQuestions({
                             useSpan
                             noAria
                           />
-                        </>
+                        </p>
                       )}
                     </div>
                   )}

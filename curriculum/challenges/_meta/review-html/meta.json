@@ -2,7 +2,7 @@
   "name": "HTML Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-html",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

@@ -30,23 +30,25 @@ Once you've done this, hover over your image with your cursor. Your cursor's nor
 The existing `img` element should be nested within an `a` element.
 
 ```js
-assert($('a').children('img').length > 0);
+const anchor = document.querySelectorAll('a')[1];
+const children = anchor.querySelectorAll("img");
+assert.notEmpty(children);
 ```
 
 Your `a` element should be a dead link with an `href` attribute set to `#`.
 
 ```js
-assert(new RegExp('#').test($('a').children('img').parent().attr('href')));
+const anchor = document.querySelectorAll('a')[1];
+const parentHREF = anchor.querySelector("img").parentNode.getAttribute('href');
+assert.match(parentHREF,new RegExp('#'));
 ```
 
 Each of your `a` elements should have a closing tag.
 
 ```js
-assert(
-  code.match(/<\/a>/g) &&
-    code.match(/<a/g) &&
-    code.match(/<\/a>/g).length === code.match(/<a/g).length
-);
+assert.match(code,/<\/a>/g);
+assert.match(code,/<a/g);
+assert.strictEqual(code.match(/<\/a>/g).length, code.match(/<a/g).length)
 ```
 
 # --seed--

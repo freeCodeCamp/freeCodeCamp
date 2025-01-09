@@ -153,7 +153,7 @@ async () => {
     if (!res.ok) {
       await new Promise(resolve => setTimeout(resolve, 1000)); // Additional delay to allow the alert to trigger
 
-      assert.include(['pokémon not found', 'pokemon not found'], alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase());
+      assert.include(['pokémon not found', 'pokemon not found'], alertMessage?.trim().replace(/[.,?!]+$/g, '').toLowerCase());
     }
   } catch (err) {
     throw new Error(err);
@@ -375,7 +375,7 @@ async () => {
     if (!res.ok) {
       await new Promise(resolve => setTimeout(resolve, 2000)); // Additional delay to allow the alert to trigger
 
-      assert.include(['pokémon not found', 'pokemon not found'], alertMessage.trim().replace(/[.,?!]+$/g, '').toLowerCase());
+      assert.include(['pokémon not found', 'pokemon not found'], alertMessage?.trim().replace(/[.,?!]+$/g, '').toLowerCase());
     }
   } catch (err) {
     throw new Error(err);

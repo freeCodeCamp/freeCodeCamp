@@ -159,6 +159,9 @@ importers:
       '@fastify/type-provider-typebox':
         specifier: 3.6.0
         version: 3.6.0(@sinclair/typebox@0.32.14)
+      '@growthbook/growthbook':
+        specifier: 1.3.1
+        version: 1.3.1
       '@immobiliarelabs/fastify-sentry':
         specifier: 7.1.1
         version: 7.1.1
@@ -453,17 +456,17 @@ importers:
         specifier: 7.23.7
         version: 7.23.7
       '@fortawesome/fontawesome-svg-core':
-        specifier: 6.4.2
-        version: 6.4.2
+        specifier: 6.7.1
+        version: 6.7.1
       '@fortawesome/free-brands-svg-icons':
-        specifier: 6.4.2
-        version: 6.4.2
+        specifier: 6.7.1
+        version: 6.7.1
       '@fortawesome/free-solid-svg-icons':
-        specifier: 6.4.2
-        version: 6.4.2
+        specifier: 6.7.1
+        version: 6.7.1
       '@fortawesome/react-fontawesome':
-        specifier: 0.2.0
-        version: 0.2.0(@fortawesome/fontawesome-svg-core@6.4.2)(react@16.14.0)
+        specifier: 0.2.2
+        version: 0.2.2(@fortawesome/fontawesome-svg-core@6.7.1)(react@16.14.0)
       '@freecodecamp/loop-protect':
         specifier: 3.0.0
         version: 3.0.0
@@ -471,8 +474,8 @@ importers:
         specifier: 1.1.0
         version: 1.1.0(react@16.14.0)
       '@freecodecamp/ui':
-        specifier: 3.1.0
-        version: 3.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+        specifier: 3.1.1
+        version: 3.1.1(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       '@growthbook/growthbook-react':
         specifier: 0.20.0
         version: 0.20.0(react@16.14.0)
@@ -827,7 +830,7 @@ importers:
         version: 10.9.2(@types/node@20.12.8)(typescript@5.2.2)
       webpack:
         specifier: 5.90.3
-        version: 5.90.3
+        version: 5.90.3(webpack-cli@4.10.0)
 
   curriculum:
     devDependencies:
@@ -1116,7 +1119,7 @@ importers:
         version: 4.3.12
       '@types/copy-webpack-plugin':
         specifier: ^8.0.1
-        version: 8.0.1(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))
+        version: 8.0.1(webpack-cli@4.10.0)
       '@types/enzyme':
         specifier: 3.10.16
         version: 3.10.16
@@ -1134,13 +1137,13 @@ importers:
         version: 1.6.0(typescript@5.4.5)
       babel-loader:
         specifier: 8.3.0
-        version: 8.3.0(@babel/core@7.23.7)(webpack@5.90.3(webpack-cli@4.10.0))
+        version: 8.3.0(@babel/core@7.23.7)(webpack@5.90.3)
       chai:
         specifier: 4.4.1
         version: 4.4.1
       copy-webpack-plugin:
         specifier: 9.1.0
-        version: 9.1.0(webpack@5.90.3(webpack-cli@4.10.0))
+        version: 9.1.0(webpack@5.90.3)
       enzyme:
         specifier: 3.11.0
         version: 3.11.0
@@ -3034,39 +3037,21 @@ packages:
     peerDependencies:
       '@sinclair/typebox': '>=0.26 <=0.32'
 
-  '@fortawesome/fontawesome-common-types@6.4.2':
-    resolution: {integrity: sha512-1DgP7f+XQIJbLFCTX1V2QnxVmpLdKdzzo2k8EmvDOePfchaIGQ9eCHj2up3/jNEbZuBqel5OxiaOJf37TWauRA==}
+  '@fortawesome/fontawesome-common-types@6.7.1':
+    resolution: {integrity: sha512-gbDz3TwRrIPT3i0cDfujhshnXO9z03IT1UKRIVi/VEjpNHtSBIP2o5XSm+e816FzzCFEzAxPw09Z13n20PaQJQ==}
     engines: {node: '>=6'}
 
-  '@fortawesome/fontawesome-common-types@6.6.0':
-    resolution: {integrity: sha512-xyX0X9mc0kyz9plIyryrRbl7ngsA9jz77mCZJsUkLl+ZKs0KWObgaEBoSgQiYWAsSmjz/yjl0F++Got0Mdp4Rw==}
+  '@fortawesome/fontawesome-svg-core@6.7.1':
+    resolution: {integrity: sha512-8dBIHbfsKlCk2jHQ9PoRBg2Z+4TwyE3vZICSnoDlnsHA6SiMlTwfmW6yX0lHsRmWJugkeb92sA0hZdkXJhuz+g==}
     engines: {node: '>=6'}
 
-  '@fortawesome/fontawesome-svg-core@6.4.2':
-    resolution: {integrity: sha512-gjYDSKv3TrM2sLTOKBc5rH9ckje8Wrwgx1CxAPbN5N3Fm4prfi7NsJVWd1jklp7i5uSCVwhZS5qlhMXqLrpAIg==}
+  '@fortawesome/free-brands-svg-icons@6.7.1':
+    resolution: {integrity: sha512-nJR76eqPzCnMyhbiGf6X0aclDirZriTPRcFm1YFvuupyJOGwlNF022w3YBqu+yrHRhnKRpzFX+8wJKqiIjWZkA==}
     engines: {node: '>=6'}
 
-  '@fortawesome/fontawesome-svg-core@6.6.0':
-    resolution: {integrity: sha512-KHwPkCk6oRT4HADE7smhfsKudt9N/9lm6EJ5BVg0tD1yPA5hht837fB87F8pn15D8JfTqQOjhKTktwmLMiD7Kg==}
+  '@fortawesome/free-solid-svg-icons@6.7.1':
+    resolution: {integrity: sha512-BTKc0b0mgjWZ2UDKVgmwaE0qt0cZs6ITcDgjrti5f/ki7aF5zs+N91V6hitGo3TItCFtnKg6cUVGdTmBFICFRg==}
     engines: {node: '>=6'}
-
-  '@fortawesome/free-brands-svg-icons@6.4.2':
-    resolution: {integrity: sha512-LKOwJX0I7+mR/cvvf6qIiqcERbdnY+24zgpUSouySml+5w8B4BJOx8EhDR/FTKAu06W12fmUIcv6lzPSwYKGGg==}
-    engines: {node: '>=6'}
-
-  '@fortawesome/free-solid-svg-icons@6.4.2':
-    resolution: {integrity: sha512-sYwXurXUEQS32fZz9hVCUUv/xu49PEJEyUOsA51l6PU/qVgfbTb2glsTEaJngVVT8VqBATRIdh7XVgV1JF1LkA==}
-    engines: {node: '>=6'}
-
-  '@fortawesome/free-solid-svg-icons@6.6.0':
-    resolution: {integrity: sha512-IYv/2skhEDFc2WGUcqvFJkeK39Q+HyPf5GHUrT/l2pKbtgEIv1al1TKd6qStR5OIwQdN1GZP54ci3y4mroJWjA==}
-    engines: {node: '>=6'}
-
-  '@fortawesome/react-fontawesome@0.2.0':
-    resolution: {integrity: sha512-uHg75Rb/XORTtVt7OS9WoK8uM276Ufi7gCzshVWkUJbHhh3svsUUeqXerrM96Wm7fRiDzfKRwSoahhMIkGAYHw==}
-    peerDependencies:
-      '@fortawesome/fontawesome-svg-core': ~1 || ~6
-      react: '>=16.3'
 
   '@fortawesome/react-fontawesome@0.2.2':
     resolution: {integrity: sha512-EnkrprPNqI6SXJl//m29hpaNzOp1bruISWaOiRtkMi/xSvHJlzc2j2JAYS7egxt/EbjSNV/k6Xy0AQI6vB2+1g==}
@@ -3090,8 +3075,8 @@ packages:
     peerDependencies:
       react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
 
-  '@freecodecamp/ui@3.1.0':
-    resolution: {integrity: sha512-V92HKnOyfGXFDDBqKm2yYILTJIuxWOxSiBLZ4d4kULJXlCSHW8pqsALHw6dsQj6LCTTuUBabQNIwD9RHsHq+yg==}
+  '@freecodecamp/ui@3.1.1':
+    resolution: {integrity: sha512-tenTSsf4HiTS4gEdUeg9rRxEaCdQqJSDnP+8MufT5zLj3kLkUrIc5ugbHju3kuM9BexgYiwzcVLJtjeRBXLtDQ==}
     engines: {node: '>=20', pnpm: '9'}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
@@ -3179,6 +3164,10 @@ packages:
 
   '@growthbook/growthbook@0.30.0':
     resolution: {integrity: sha512-ennMHKZIhAZokHHcnA9/tOTLFdBB4DQR0WHT8Lf1pD80jWVv8JBCAzsV1jzSjYUQhb8R8pLR2Kho0IfgjzIZGQ==}
+    engines: {node: '>=10'}
+
+  '@growthbook/growthbook@1.3.1':
+    resolution: {integrity: sha512-ewtwq6+86rRKwcYUXEmBVR1JuiEIYZhxow/Z52qyAxJwEHdXmpS4Yk8sVeVD9bphCwE2r0zuifxFkBxmnIL4Mg==}
     engines: {node: '>=10'}
 
   '@hapi/address@2.1.4':
@@ -4749,6 +4738,7 @@ packages:
 
   acorn-import-assertions@1.9.0:
     resolution: {integrity: sha512-cmMwop9x+8KFhxvKrKfPYmN6/pKTYYHBqLa0DfvVZcKMJWNyWLnaqND7dx/qn66R7ewM1UX5XMaDVP5wlVTaVA==}
+    deprecated: package has been renamed to acorn-import-attributes
     peerDependencies:
       acorn: ^8
 
@@ -7012,11 +7002,13 @@ packages:
   eslint@7.32.0:
     resolution: {integrity: sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA==}
     engines: {node: ^10.12.0 || >=12.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@7.3.1:
@@ -12428,6 +12420,7 @@ packages:
 
   sudo-prompt@8.2.5:
     resolution: {integrity: sha512-rlBo3HU/1zAJUrkY6jNxDOC9eVYliG6nS4JA8u8KAshITd07tafMc/Br7xQwCSseXwJ2iCcHCE8SNWX3q8Z+kw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   superagent@8.1.2:
     resolution: {integrity: sha512-6WTxW1EB6yCxV5VFOIPQruWGHqc3yI7hEmZK6h+pyk69Lk/Ut7rLUY6W/ONF2MjBuGjvmMiIpsrVJ2vjrHlslA==}
@@ -16955,39 +16948,23 @@ snapshots:
     dependencies:
       '@sinclair/typebox': 0.32.14
 
-  '@fortawesome/fontawesome-common-types@6.4.2': {}
+  '@fortawesome/fontawesome-common-types@6.7.1': {}
 
-  '@fortawesome/fontawesome-common-types@6.6.0': {}
-
-  '@fortawesome/fontawesome-svg-core@6.4.2':
+  '@fortawesome/fontawesome-svg-core@6.7.1':
     dependencies:
-      '@fortawesome/fontawesome-common-types': 6.4.2
+      '@fortawesome/fontawesome-common-types': 6.7.1
 
-  '@fortawesome/fontawesome-svg-core@6.6.0':
+  '@fortawesome/free-brands-svg-icons@6.7.1':
     dependencies:
-      '@fortawesome/fontawesome-common-types': 6.6.0
+      '@fortawesome/fontawesome-common-types': 6.7.1
 
-  '@fortawesome/free-brands-svg-icons@6.4.2':
+  '@fortawesome/free-solid-svg-icons@6.7.1':
     dependencies:
-      '@fortawesome/fontawesome-common-types': 6.4.2
+      '@fortawesome/fontawesome-common-types': 6.7.1
 
-  '@fortawesome/free-solid-svg-icons@6.4.2':
+  '@fortawesome/react-fontawesome@0.2.2(@fortawesome/fontawesome-svg-core@6.7.1)(react@16.14.0)':
     dependencies:
-      '@fortawesome/fontawesome-common-types': 6.4.2
-
-  '@fortawesome/free-solid-svg-icons@6.6.0':
-    dependencies:
-      '@fortawesome/fontawesome-common-types': 6.6.0
-
-  '@fortawesome/react-fontawesome@0.2.0(@fortawesome/fontawesome-svg-core@6.4.2)(react@16.14.0)':
-    dependencies:
-      '@fortawesome/fontawesome-svg-core': 6.4.2
-      prop-types: 15.8.1
-      react: 16.14.0
-
-  '@fortawesome/react-fontawesome@0.2.2(@fortawesome/fontawesome-svg-core@6.6.0)(react@16.14.0)':
-    dependencies:
-      '@fortawesome/fontawesome-svg-core': 6.6.0
+      '@fortawesome/fontawesome-svg-core': 6.7.1
       prop-types: 15.8.1
       react: 16.14.0
 
@@ -17012,11 +16989,11 @@ snapshots:
       prop-types: 15.8.1
       react: 16.14.0
 
-  '@freecodecamp/ui@3.1.0(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
+  '@freecodecamp/ui@3.1.1(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
     dependencies:
-      '@fortawesome/fontawesome-svg-core': 6.6.0
-      '@fortawesome/free-solid-svg-icons': 6.6.0
-      '@fortawesome/react-fontawesome': 0.2.2(@fortawesome/fontawesome-svg-core@6.6.0)(react@16.14.0)
+      '@fortawesome/fontawesome-svg-core': 6.7.1
+      '@fortawesome/free-solid-svg-icons': 6.7.1
+      '@fortawesome/react-fontawesome': 0.2.2(@fortawesome/fontawesome-svg-core@6.7.1)(react@16.14.0)
       '@headlessui/react': 1.7.19(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       '@radix-ui/react-tabs': 1.1.1(@types/react-dom@16.9.24)(@types/react@16.14.56)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       babel-plugin-prismjs: 2.1.0(prismjs@1.29.0)
@@ -17167,6 +17144,10 @@ snapshots:
       react: 16.14.0
 
   '@growthbook/growthbook@0.30.0':
+    dependencies:
+      dom-mutator: 0.6.0
+
+  '@growthbook/growthbook@1.3.1':
     dependencies:
       dom-mutator: 0.6.0
 
@@ -17578,7 +17559,7 @@ snapshots:
       react-refresh: 0.9.0
       schema-utils: 2.7.1
       source-map: 0.7.4
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   '@polka/url@1.0.0-next.23': {}
 
@@ -18318,7 +18299,7 @@ snapshots:
 
   '@types/cookiejar@2.1.2': {}
 
-  '@types/copy-webpack-plugin@8.0.1(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))':
+  '@types/copy-webpack-plugin@8.0.1(webpack-cli@4.10.0)':
     dependencies:
       '@types/node': 20.8.0
       tapable: 2.2.1
@@ -19067,17 +19048,17 @@ snapshots:
       '@webassemblyjs/ast': 1.11.6
       '@xtuc/long': 4.2.2
 
-  '@webpack-cli/configtest@1.2.0(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))(webpack@5.90.3(webpack-cli@4.10.0))':
+  '@webpack-cli/configtest@1.2.0(webpack-cli@4.10.0)(webpack@5.90.3)':
     dependencies:
       webpack: 5.90.3(webpack-cli@4.10.0)
       webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
 
-  '@webpack-cli/info@1.5.0(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))':
+  '@webpack-cli/info@1.5.0(webpack-cli@4.10.0)':
     dependencies:
       envinfo: 7.10.0
       webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
 
-  '@webpack-cli/serve@1.7.0(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))':
+  '@webpack-cli/serve@1.7.0(webpack-cli@4.10.0)':
     dependencies:
       webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
 
@@ -19561,9 +19542,9 @@ snapshots:
       loader-utils: 2.0.4
       make-dir: 3.1.0
       schema-utils: 2.7.1
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
-  babel-loader@8.3.0(@babel/core@7.23.7)(webpack@5.90.3(webpack-cli@4.10.0)):
+  babel-loader@8.3.0(@babel/core@7.23.7)(webpack@5.90.3):
     dependencies:
       '@babel/core': 7.23.7
       find-cache-dir: 3.3.2
@@ -20684,7 +20665,7 @@ snapshots:
 
   copy-descriptor@0.1.1: {}
 
-  copy-webpack-plugin@9.1.0(webpack@5.90.3(webpack-cli@4.10.0)):
+  copy-webpack-plugin@9.1.0(webpack@5.90.3):
     dependencies:
       fast-glob: 3.3.1
       glob-parent: 6.0.2
@@ -20865,7 +20846,7 @@ snapshots:
       postcss-value-parser: 4.2.0
       schema-utils: 3.3.0
       semver: 7.6.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   css-mediaquery@0.1.2: {}
 
@@ -20878,7 +20859,7 @@ snapshots:
       schema-utils: 3.3.0
       serialize-javascript: 5.0.1
       source-map: 0.6.1
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   css-select@4.3.0:
     dependencies:
@@ -21808,7 +21789,7 @@ snapshots:
       debug: 4.3.4(supports-color@8.1.1)
       enhanced-resolve: 5.15.0
       eslint: 8.57.0
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5)(eslint@8.57.0)
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.5.5)(eslint@8.57.0)
       get-tsconfig: 4.7.2
       globby: 13.2.2
@@ -21832,7 +21813,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.8.0(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0):
+  eslint-module-utils@2.8.0(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5)(eslint@8.57.0):
     dependencies:
       debug: 3.2.7(supports-color@5.5.0)
     optionalDependencies:
@@ -21905,7 +21886,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0))(eslint@8.57.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@7.1.1(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5)(eslint@8.57.0)
       hasown: 2.0.0
       is-core-module: 2.13.1
       is-glob: 4.0.3
@@ -22086,7 +22067,7 @@ snapshots:
       micromatch: 4.0.5
       normalize-path: 3.0.0
       schema-utils: 3.3.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   eslint@7.32.0:
     dependencies:
@@ -22565,7 +22546,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   file-type@16.5.4:
     dependencies:
@@ -22691,7 +22672,7 @@ snapshots:
       semver: 5.7.2
       tapable: 1.1.3
       typescript: 5.2.2
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
       worker-rpc: 0.1.1
     optionalDependencies:
       eslint: 7.32.0
@@ -23266,7 +23247,7 @@ snapshots:
       url-loader: 4.1.1(file-loader@6.2.0(webpack@5.90.3))(webpack@5.90.3)
       uuid: 3.4.0
       v8-compile-cache: 2.4.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
       webpack-dev-middleware: 4.3.0(webpack@5.90.3)
       webpack-merge: 5.9.0
       webpack-stats-plugin: 1.1.3
@@ -26359,7 +26340,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
       webpack-sources: 1.4.3
 
   minimalistic-assert@1.0.1: {}
@@ -26463,7 +26444,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       monaco-editor: 0.28.1
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   monaco-editor@0.28.1: {}
 
@@ -26765,7 +26746,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   nwsapi@2.2.7: {}
 
@@ -27344,7 +27325,7 @@ snapshots:
       postcss: 8.4.35
       schema-utils: 3.3.0
       semver: 7.6.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   postcss-loader@5.3.0(postcss@8.4.35)(webpack@5.90.3):
     dependencies:
@@ -27352,7 +27333,7 @@ snapshots:
       klona: 2.0.6
       postcss: 8.4.35
       semver: 7.6.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   postcss-merge-longhand@5.1.7(postcss@8.4.35):
     dependencies:
@@ -27816,7 +27797,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   rc@1.2.8:
     dependencies:
@@ -27851,7 +27832,7 @@ snapshots:
       shell-quote: 1.7.2
       strip-ansi: 6.0.0
       text-table: 0.2.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
     optionalDependencies:
       typescript: 5.2.2
     transitivePeerDependencies:
@@ -29357,7 +29338,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   style-to-object@0.3.0:
     dependencies:
@@ -29498,7 +29479,7 @@ snapshots:
 
   term-size@2.2.1: {}
 
-  terser-webpack-plugin@5.3.10(webpack@5.90.3(webpack-cli@4.10.0)):
+  terser-webpack-plugin@5.3.10(webpack@5.90.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
@@ -29507,15 +29488,6 @@ snapshots:
       terser: 5.28.1
       webpack: 5.90.3(webpack-cli@4.10.0)
 
-  terser-webpack-plugin@5.3.10(webpack@5.90.3):
-    dependencies:
-      '@jridgewell/trace-mapping': 0.3.25
-      jest-worker: 27.5.1
-      schema-utils: 3.3.0
-      serialize-javascript: 6.0.1
-      terser: 5.28.1
-      webpack: 5.90.3
-
   terser-webpack-plugin@5.3.9(webpack@5.90.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.22
@@ -29523,7 +29495,7 @@ snapshots:
       schema-utils: 3.3.0
       serialize-javascript: 6.0.1
       terser: 5.20.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   terser@5.20.0:
     dependencies:
@@ -30173,7 +30145,7 @@ snapshots:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.3.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
     optionalDependencies:
       file-loader: 6.2.0(webpack@5.90.3)
 
@@ -30388,9 +30360,9 @@ snapshots:
   webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3):
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
-      '@webpack-cli/configtest': 1.2.0(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))(webpack@5.90.3(webpack-cli@4.10.0))
-      '@webpack-cli/info': 1.5.0(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))
-      '@webpack-cli/serve': 1.7.0(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))
+      '@webpack-cli/configtest': 1.2.0(webpack-cli@4.10.0)(webpack@5.90.3)
+      '@webpack-cli/info': 1.5.0(webpack-cli@4.10.0)
+      '@webpack-cli/serve': 1.7.0(webpack-cli@4.10.0)
       colorette: 2.0.20
       commander: 7.2.0
       cross-spawn: 7.0.3
@@ -30411,7 +30383,7 @@ snapshots:
       mime-types: 2.1.35
       range-parser: 1.2.1
       schema-utils: 3.3.0
-      webpack: 5.90.3
+      webpack: 5.90.3(webpack-cli@4.10.0)
 
   webpack-merge@5.9.0:
     dependencies:
@@ -30432,37 +30404,6 @@ snapshots:
       debug: 3.2.7(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
-
-  webpack@5.90.3:
-    dependencies:
-      '@types/eslint-scope': 3.7.5
-      '@types/estree': 1.0.5
-      '@webassemblyjs/ast': 1.11.6
-      '@webassemblyjs/wasm-edit': 1.11.6
-      '@webassemblyjs/wasm-parser': 1.11.6
-      acorn: 8.11.3
-      acorn-import-assertions: 1.9.0(acorn@8.11.3)
-      browserslist: 4.23.0
-      chrome-trace-event: 1.0.3
-      enhanced-resolve: 5.15.0
-      es-module-lexer: 1.3.1
-      eslint-scope: 5.1.1
-      events: 3.3.0
-      glob-to-regexp: 0.4.1
-      graceful-fs: 4.2.11
-      json-parse-even-better-errors: 2.3.1
-      loader-runner: 4.3.0
-      mime-types: 2.1.35
-      neo-async: 2.6.2
-      schema-utils: 3.3.0
-      tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(webpack@5.90.3)
-      watchpack: 2.4.0
-      webpack-sources: 3.2.3
-    transitivePeerDependencies:
-      - '@swc/core'
-      - esbuild
-      - uglify-js
 
   webpack@5.90.3(webpack-cli@4.10.0):
     dependencies:
@@ -30487,7 +30428,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(webpack@5.90.3(webpack-cli@4.10.0))
+      terser-webpack-plugin: 5.3.10(webpack@5.90.3)
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     optionalDependencies:

@@ -4,7 +4,12 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="./reset.d.ts" />
 import { build } from './app';
-import { FREECODECAMP_NODE_ENV, HOST, PORT } from './utils/env';
+import {
+  FREECODECAMP_NODE_ENV,
+  FCC_API_LOG_LEVEL,
+  HOST,
+  PORT
+} from './utils/env';
 
 const envToLogger = {
   development: {
@@ -15,10 +20,11 @@ const envToLogger = {
         ignore: 'pid,hostname'
       }
     },
-    level: 'debug'
+    level: FCC_API_LOG_LEVEL || 'info'
   },
-  // TODO: is this the right level for production or should we use 'error'?
-  production: { level: 'fatal' },
+  production: {
+    level: FCC_API_LOG_LEVEL || 'info'
+  },
   test: undefined
 };
 

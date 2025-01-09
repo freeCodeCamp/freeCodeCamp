@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Final Exams Table
 
-This is a test for the new project-based curriculum.
+In this workshop, you will practice working with HTML tables by building a table of final exams.

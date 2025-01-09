@@ -214,6 +214,7 @@ async function transformScript(documentElement, { useModules }) {
   const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
     const isBabel = script.type === 'text/babel';
+    const hasSource = !!script.src;
     // TODO: make the use of JSX conditional on more than just the script type.
     // It should only be used for React challenges since it would be confusing
     // for learners to see the results of a transformation they didn't ask for.
@@ -228,8 +229,18 @@ async function transformScript(documentElement, { useModules }) {
     // However, if we're importing modules, the type will be removed when the
     // scripts are embedded in the HTML.
     if (isBabel && !useModules) script.removeAttribute('type');
+    // We could use babel standalone to transform inline code in the preview,
+    // but that generates a warning that's shown to learner. By removing the
+    // type attribute and transforming the code we can avoid that warning.
+    if (isBabel && !hasSource) {
+      script.removeAttribute('type');
+      script.setAttribute('data-type', 'text/babel');
+    }
 
-    script.innerHTML = babelTransformCode(options)(script.innerHTML);
+    // Skip unnecessary transformations
+    script.innerHTML = script.innerHTML
+      ? babelTransformCode(options)(script.innerHTML)
+      : '';
   });
 }
 
@@ -239,7 +250,8 @@ export const embedFilesInHtml = async function (challengeFiles) {
   const { indexHtml, stylesCss, scriptJs, indexJsx, indexTs } =
     challengeFilesToObject(challengeFiles);
 
-  const embedStylesAndScript = (documentElement, contentDocument) => {
+  const embedStylesAndScript = contentDocument => {
+    const documentElement = contentDocument.documentElement;
     const link =
       documentElement.querySelector('link[href="styles.css"]') ??
       documentElement.querySelector('link[href="./styles.css"]');
@@ -294,13 +306,13 @@ export const embedFilesInHtml = async function (challengeFiles) {
       embedStylesAndScript,
       indexHtml.contents
     );
-    return [challengeFiles, contents];
+    return contents;
   } else if (indexJsx) {
-    return [challengeFiles, `<script>${indexJsx.contents}</script>`];
+    return `<script>${indexJsx.contents}</script>`;
   } else if (scriptJs) {
-    return [challengeFiles, `<script>${scriptJs.contents}</script>`];
+    return `<script>${scriptJs.contents}</script>`;
   } else if (indexTs) {
-    return [challengeFiles, `<script>${indexTs.contents}</script>`];
+    return `<script>${indexTs.contents}</script>`;
   } else {
     throw Error('No html, ts or js(x) file found');
   }
@@ -319,12 +331,13 @@ const parseAndTransform = async function (transform, contents) {
   const parser = new DOMParser();
   const newDoc = parser.parseFromString(contents, 'text/html');
 
-  return await transform(newDoc.documentElement, newDoc);
+  return await transform(newDoc);
 };
 
 const getHtmlTranspiler = scriptOptions =>
   async function (file) {
-    const transform = async documentElement => {
+    const transform = async contentDocument => {
+      const documentElement = contentDocument.documentElement;
       await Promise.all([
         transformSASS(documentElement),
         transformScript(documentElement, scriptOptions)

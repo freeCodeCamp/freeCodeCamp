@@ -2,8 +2,7 @@
   "name": "JavaScript Dates Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
-  "usesMultifileEditor": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-javascript-dates",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

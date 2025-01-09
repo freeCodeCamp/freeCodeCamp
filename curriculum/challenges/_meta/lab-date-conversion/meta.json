@@ -2,7 +2,7 @@
   "name": "Build a Date Conversion Program",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-date-conversion",
   "superBlock": "full-stack-developer",

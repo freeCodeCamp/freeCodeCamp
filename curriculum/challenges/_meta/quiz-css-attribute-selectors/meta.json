@@ -2,7 +2,7 @@
   "name": "CSS Attribute Selectors Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-css-attribute-selectors",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed8fd0f45ce3ece4053eaf", "title": "CSS Attribute Selectors Quiz" }],

@@ -42,6 +42,8 @@ const config = {
           'css',
           'html',
           'javascript',
+          'json',
+          'jsx',
           'markup',
           'mathml',
           'pug',

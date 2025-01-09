@@ -30,7 +30,9 @@ Change the `padding` of your blue box to match that of your red box.
 Your `blue-box` class should give elements `20px` of `padding`.
 
 ```js
-assert($('.blue-box').css('padding-top') === '20px');
+const blueBox = document.querySelector('.blue-box');
+const paddingTop = window.getComputedStyle(blueBox)['padding-top'];
+assert.strictEqual(paddingTop, '20px');
 ```
 
 # --seed--

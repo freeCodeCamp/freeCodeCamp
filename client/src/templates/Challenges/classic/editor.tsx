@@ -18,12 +18,12 @@ import store from 'store';
 import { debounce } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../components/helpers';
-import { Themes } from '../../../components/settings/theme';
+import { LocalStorageThemes } from '../../../redux/types';
 import { saveChallenge } from '../../../redux/actions';
 import {
   isDonationModalOpenSelector,
   isSignedInSelector,
-  userSelector
+  themeSelector
 } from '../../../redux/selectors';
 import {
   ChallengeFiles,
@@ -34,7 +34,10 @@ import {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import {
+  canSaveToDB,
+  challengeTypes
+} from '../../../../../shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -101,7 +104,7 @@ export interface EditorProps {
   stopResetting: () => void;
   resetAttempts: () => void;
   tests: Test[];
-  theme: Themes;
+  theme: LocalStorageThemes;
   title: string;
   showProjectPreview: boolean;
   previewOpen: boolean;
@@ -137,9 +140,9 @@ const mapStateToProps = createSelector(
   isProjectPreviewModalOpenSelector,
   isResettingSelector,
   isSignedInSelector,
-  userSelector,
   challengeTestsSelector,
   isChallengeCompletedSelector,
+  themeSelector,
   (
     attempts: number,
     canFocus: boolean,
@@ -148,9 +151,9 @@ const mapStateToProps = createSelector(
     previewOpen: boolean,
     isResetting: boolean,
     isSignedIn: boolean,
-    { theme }: { theme: Themes },
     tests: [{ text: string; testString: string; message?: string }],
-    isChallengeCompleted: boolean
+    isChallengeCompleted: boolean,
+    theme: LocalStorageThemes
   ) => ({
     attempts,
     canFocus: open ? false : canFocus,
@@ -158,9 +161,9 @@ const mapStateToProps = createSelector(
     previewOpen,
     isResetting,
     isSignedIn,
-    theme,
     tests,
-    isChallengeCompleted
+    isChallengeCompleted,
+    theme
   })
 );
 
@@ -543,9 +546,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_S
       ],
       run:
-        (props.challengeType === challengeTypes.multifileCertProject ||
-          props.challengeType === challengeTypes.multifilePythonCertProject) &&
-        props.isSignedIn
+        canSaveToDB(props.challengeType) && props.isSignedIn
           ? // save to database
             props.saveChallenge
           : // save to local storage
@@ -1269,9 +1270,9 @@ const Editor = (props: EditorProps): JSX.Element => {
   ).matches;
   const editorSystemTheme = preferDarkScheme ? 'vs-dark-custom' : 'vs-custom';
   const editorTheme =
-    theme === Themes.Night
+    theme === LocalStorageThemes.Dark
       ? 'vs-dark-custom'
-      : theme === Themes.Default
+      : theme === LocalStorageThemes.Light
         ? 'vs-custom'
         : editorSystemTheme;
 

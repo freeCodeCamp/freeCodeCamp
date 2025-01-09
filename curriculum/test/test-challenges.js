@@ -25,8 +25,9 @@ require('@babel/register')({
 });
 const {
   buildDOMChallenge,
-  buildJSChallenge,
-  buildPythonChallenge
+  buildPythonChallenge,
+  buildChallenge,
+  buildFunctions
 } = require('../../client/src/templates/Challenges/utils/build');
 const {
   WorkerExecutor
@@ -50,6 +51,7 @@ const {
   createHeader,
   testId
 } = require('../../client/src/templates/Challenges/utils/frame');
+const { SuperBlocks } = require('../../shared/config/curriculum');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -298,23 +300,22 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
           return;
         }
         it(`${superBlock} should have the same order in every meta`, function () {
-          const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
-            showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
-          });
+          const firstOrder = getSuperOrder(filteredMeta[0].superBlock);
           assert.isNumber(firstOrder);
           assert.isTrue(
             filteredMeta.every(
-              el =>
-                getSuperOrder(el.superBlock, {
-                  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
-                }) === firstOrder
+              el => getSuperOrder(el.superBlock) === firstOrder
             ),
             'The superOrder properties are mismatched.'
           );
         });
         filteredMeta.forEach((meta, index) => {
-          // ignore block order for upcoming blocks
-          if (!meta.isUpcomingChange) {
+          // Upcoming changes are in developmen so are not required to be in
+          // order. FullStackDeveloper does not use the meta for order.
+          if (
+            !meta.isUpcomingChange &&
+            meta.superBlock !== SuperBlocks.FullStackDeveloper
+          ) {
             it(`${meta.superBlock} ${meta.name} must be in order`, function () {
               assert.equal(meta.order, index);
             });
@@ -406,18 +407,6 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                   it('Check tests is not implemented.');
                   return;
                 }
-
-                // TODO(after python PR): simplify pipeline and sync with client.
-                // buildChallengeData should be called and any errors handled.
-                // canBuildChallenge does not need to exist independently.
-                const buildChallenge =
-                  {
-                    [challengeTypes.js]: buildJSChallenge,
-                    [challengeTypes.jsProject]: buildJSChallenge,
-                    [challengeTypes.python]: buildPythonChallenge,
-                    [challengeTypes.multifilePythonCertProject]:
-                      buildPythonChallenge
-                  }[challengeType] ?? buildDOMChallenge;
 
                 // The python tests are (currently) slow, so we give them more time.
                 const timePerTest =
@@ -563,8 +552,6 @@ async function createTestRunner(
   buildChallenge,
   solutionFromNext
 ) {
-  const { required = [], template } = challenge;
-
   const challengeFiles = replaceChallengeFilesContentsWithSolutions(
     challenge.challengeFiles,
     solutionFiles
@@ -572,9 +559,8 @@ async function createTestRunner(
 
   const { build, sources, loadEnzyme } = await buildChallenge(
     {
-      challengeFiles,
-      required,
-      template
+      ...challenge,
+      challengeFiles
     },
     { usesTestRunner: true }
   );
@@ -585,8 +571,10 @@ async function createTestRunner(
     original: sources.original
   };
 
-  const runsInBrowser = buildChallenge === buildDOMChallenge;
-  const runsInPythonWorker = buildChallenge === buildPythonChallenge;
+  const buildFunction = buildFunctions[challenge.challengeType];
+
+  const runsInBrowser = buildFunction === buildDOMChallenge;
+  const runsInPythonWorker = buildFunction === buildPythonChallenge;
 
   const evaluator = await (runsInBrowser
     ? getContextEvaluator(build, sources, code, loadEnzyme)

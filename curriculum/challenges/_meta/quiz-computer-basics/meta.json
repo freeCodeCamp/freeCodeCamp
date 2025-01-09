@@ -2,7 +2,7 @@
   "name": "Computer Basics Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-computer-basics",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "66ed8fb9f45ce3ece4053eac", "title": "Computer Basics Quiz" }],

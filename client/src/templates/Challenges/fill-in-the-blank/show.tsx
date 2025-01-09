@@ -30,6 +30,8 @@ import {
   initTests
 } from '../redux/actions';
 import Scene from '../components/scene/scene';
+import { SceneSubject } from '../components/scene/scene-subject';
+import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 
 import './show.css';
@@ -106,40 +108,26 @@ const ShowFillInTheBlank = ({
   const [allBlanksFilled, setAllBlanksFilled] = useState(false);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
-  const [isScenePlaying, setIsScenePlaying] = useState(false);
 
   const container = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     initTests(tests);
+    const challengePaths = getChallengePaths({
+      currentCurriculumPaths: challengeMeta
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
     container.current?.focus();
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    updateChallengeMeta({
-      ...challengeMeta,
-      title,
-      challengeType,
-      helpCategory
-    });
-    challengeMounted(challengeMeta.id);
-  }, [
-    title,
-    challengeMeta,
-    challengeType,
-    helpCategory,
-    challengeMounted,
-    updateChallengeMeta
-  ]);
 
   const handleSubmit = () => {
     const blankAnswers = fillInTheBlank.blanks.map(b => b.answer);
@@ -183,21 +171,21 @@ const ShowFillInTheBlank = ({
     setShowWrong(false);
   };
 
-  const handlePlayScene = (shouldPlay: boolean) => {
-    setIsScenePlaying(shouldPlay);
+  const handlePlayScene = () => {
+    sceneSubject.notify();
   };
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
 
+  const sceneSubject = new SceneSubject();
+
   return (
     <Hotkeys
       executeChallenge={() => handleSubmit()}
       containerRef={container}
-      nextChallengePath={challengeMeta.nextChallengePath}
-      prevChallengePath={challengeMeta.prevChallengePath}
-      playScene={() => handlePlayScene(true)}
+      playScene={handlePlayScene}
     >
       <LearnLayout>
         <Helmet
@@ -218,13 +206,7 @@ const ShowFillInTheBlank = ({
               <Spacer size='m' />
             </Col>
 
-            {scene && (
-              <Scene
-                scene={scene}
-                isPlaying={isScenePlaying}
-                setIsPlaying={setIsScenePlaying}
-              />
-            )}
+            {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               {instructions && (

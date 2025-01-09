@@ -2,7 +2,7 @@
   "name": "Build a Bookmark Manager App",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-bookmark-manager-app",
   "superBlock": "full-stack-developer",

@@ -1,6 +1,6 @@
 const path = require('path');
 const {
-  createFlatSuperBlockMap,
+  generateSuperBlockList,
   SuperBlocks
 } = require('../shared/config/curriculum');
 
@@ -42,8 +42,7 @@ function createSuperOrder(superBlocks) {
   return superOrder;
 }
 
-const flatSuperBlockMap = createFlatSuperBlockMap({
-  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
+const flatSuperBlockMap = generateSuperBlockList({
   showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
 });
 const superOrder = createSuperOrder(flatSuperBlockMap);

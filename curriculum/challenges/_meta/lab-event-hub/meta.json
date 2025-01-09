@@ -2,7 +2,7 @@
   "name": "Build an Event Hub",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-event-hub",
   "superBlock": "full-stack-developer",

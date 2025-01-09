@@ -34,10 +34,9 @@ Make a grid with three columns whose widths are as follows: 1fr, 100px, and 2fr.
 Your `container` class should have a `grid-template-columns` property that has three columns with the following widths: `1fr`, `100px`, and `2fr`.
 
 ```js
-assert(
-  code.match(
-    /.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi
-  )
+assert.match(
+  code,
+  /.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi
 );
 ```
 
@@ -47,11 +46,21 @@ assert(
 
 ```html
 <style>
-  .d1{background:LightSkyBlue;}
-  .d2{background:LightSalmon;}
-  .d3{background:PaleTurquoise;}
-  .d4{background:LightPink;}
-  .d5{background:PaleGreen;}
+  .d1 {
+    background: LightSkyBlue;
+  }
+  .d2 {
+    background: LightSalmon;
+  }
+  .d3 {
+    background: PaleTurquoise;
+  }
+  .d4 {
+    background: LightPink;
+  }
+  .d5 {
+    background: PaleGreen;
+  }
 
   .container {
     font-size: 40px;
@@ -79,5 +88,9 @@ assert(
 # --solutions--
 
 ```html
-<style>.container {grid-template-columns: 1fr 100px 2fr;}</style>
+<style>
+  .container {
+    grid-template-columns: 1fr 100px 2fr;
+  }
+</style>
 ```

@@ -1,7 +1,7 @@
 {
   "name": "Basic HTML Review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-basic-html",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "67072fc183c7ca6c588feb4d", "title": "Basic HTML Review" }],

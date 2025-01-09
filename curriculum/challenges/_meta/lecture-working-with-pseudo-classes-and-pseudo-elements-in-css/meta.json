@@ -2,7 +2,7 @@
   "name": "Working with Pseudo-Classes and Pseudo-Elements in CSS",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

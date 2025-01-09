@@ -27,7 +27,7 @@ const LogoRow = (): JSX.Element => {
       >
         <Trans>landing.h2-heading-b</Trans>
       </p>
-      <ul
+      <div
         className='logo-row'
         data-playwright-test-label='brand-logo-container'
       >
@@ -45,7 +45,7 @@ const LogoRow = (): JSX.Element => {
             <AmazonLogo />
           </>
         )}
-      </ul>
+      </div>
     </>
   );
 };

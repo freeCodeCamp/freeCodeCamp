@@ -2,7 +2,7 @@
   "name": "Understanding Modules, Imports, and Exports",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-modules-imports-and-exports",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "67329fd6ad99c75d4a4b74e4", "title": "What Is a Module in JavaScript, and How Can You Import and Export Modules in Your Program?" }],

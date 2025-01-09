@@ -246,8 +246,35 @@ export const certTypeTitleMap = {
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.jsAlgoDataStructV8]:
-    'JavaScript Algorithms and Data Structures (Beta)'
+  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures'
+};
+
+export const superBlockToCertMap: {
+  [key in SuperBlocks]: Certification | null;
+} = {
+  [SuperBlocks.RespWebDesign]: Certification.RespWebDesign,
+  [SuperBlocks.JsAlgoDataStructNew]: Certification.JsAlgoDataStructNew,
+  [SuperBlocks.FrontEndDevLibs]: Certification.FrontEndDevLibs,
+  [SuperBlocks.DataVis]: Certification.DataVis,
+  [SuperBlocks.RelationalDb]: Certification.RelationalDb,
+  [SuperBlocks.BackEndDevApis]: Certification.BackEndDevApis,
+  [SuperBlocks.QualityAssurance]: Certification.QualityAssurance,
+  [SuperBlocks.SciCompPy]: Certification.SciCompPy,
+  [SuperBlocks.DataAnalysisPy]: Certification.DataAnalysisPy,
+  [SuperBlocks.InfoSec]: Certification.InfoSec,
+  [SuperBlocks.MachineLearningPy]: Certification.MachineLearningPy,
+  [SuperBlocks.CollegeAlgebraPy]: Certification.CollegeAlgebraPy,
+  [SuperBlocks.FoundationalCSharp]: Certification.FoundationalCSharp,
+  [SuperBlocks.RespWebDesignNew]: Certification.RespWebDesign,
+  [SuperBlocks.JsAlgoDataStruct]: Certification.JsAlgoDataStruct,
+  [SuperBlocks.FullStackDeveloper]: Certification.FullStackDeveloper,
+  [SuperBlocks.A2English]: Certification.A2English,
+  [SuperBlocks.B1English]: Certification.B1English,
+  [SuperBlocks.PythonForEverybody]: null,
+  [SuperBlocks.CodingInterviewPrep]: null,
+  [SuperBlocks.ProjectEuler]: null,
+  [SuperBlocks.TheOdinProject]: null,
+  [SuperBlocks.RosettaCode]: null
 };
 
 export type CertSlug = (typeof Certification)[keyof typeof Certification];

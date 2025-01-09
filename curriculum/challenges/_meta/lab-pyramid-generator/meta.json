@@ -2,7 +2,7 @@
   "name": "Build a Pyramid Generator",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-pyramid-generator",
   "superBlock": "full-stack-developer",

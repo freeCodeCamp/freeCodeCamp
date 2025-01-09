@@ -1,7 +1,7 @@
 {
   "name": "Build a Library Manager",
   "blockLayout": "challenge-grid",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-library-manager",

@@ -8,7 +8,7 @@ import { Button, Modal } from '@freecodecamp/ui';
 import { closeModal, resetChallenge } from '../redux/actions';
 import { isResetModalOpenSelector } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
-import { isProjectBased } from '../../../utils/curriculum-layout';
+import { canSaveToDB } from '../../../../../shared/config/challenge-types';
 
 interface ResetModalProps {
   close: () => void;
@@ -54,7 +54,7 @@ function ResetModal({
       </Modal.Header>
       <Modal.Body alignment='center'>
         <p>
-          {isProjectBased(challengeType)
+          {canSaveToDB(challengeType)
             ? t('learn.revert-warn')
             : t('learn.reset-warn')}
         </p>
@@ -69,7 +69,7 @@ function ResetModal({
           variant='danger'
           onClick={withActions(reset, close)}
         >
-          {isProjectBased(challengeType)
+          {canSaveToDB(challengeType)
             ? t('buttons.revert-to-saved-code')
             : t('buttons.reset-lesson')}
         </Button>
