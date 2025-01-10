@@ -236,6 +236,7 @@ export function Scene({
         current.currentTime = audio.startTimestamp || 0;
       }
 
+      setCurrentTime(0);
       setIsPlaying(false);
       isPlayingSceneRef.current = false;
       setShowDialogue(false);
@@ -243,14 +244,6 @@ export function Scene({
       setCharacters(initCharacters);
       setBackground(initBackground);
     };
-
-    // an extra 500ms at the end to let the characters fade out (CSS transition
-    const resetTime =
-      normalizedCommands[normalizedCommands.length - 1].time + 500;
-
-    if (currentTime >= resetTime) {
-      resetScene();
-    }
 
     normalizedCommands.forEach((command, commandIndex) => {
       // Start command timeout
@@ -283,6 +276,17 @@ export function Scene({
         });
       }
     });
+
+    // an extra 500ms at the end to let the characters fade out (CSS transition
+    const resetTime =
+      normalizedCommands[normalizedCommands.length - 1].time + 500;
+
+    // TODO: this has to be _after_ the normalizedCommands.forEach, otherwise
+    // the usedCommandsRef will be cleared and immediately refilled. This kind
+    // of temporal coupling is a bit fragile.
+    if (currentTime >= resetTime) {
+      resetScene();
+    }
   }, [
     currentTime,
     audio,
