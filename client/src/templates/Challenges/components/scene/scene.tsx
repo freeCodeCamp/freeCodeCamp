@@ -241,8 +241,14 @@ export function Scene({
       setBackground(initBackground);
     };
 
-    // TODO: set each command once. Currently it only checks to see if the
-    // command should have started, not if another supercedes it.
+    // an extra 500ms at the end to let the characters fade out (CSS transition
+    const resetTime =
+      normalizedCommands[normalizedCommands.length - 1].time + 500;
+
+    if (currentTime >= resetTime) {
+      resetScene();
+    }
+
     normalizedCommands.forEach((command, commandIndex) => {
       // Start command timeout
       if (
@@ -272,17 +278,6 @@ export function Scene({
           });
           return newCharacters;
         });
-      }
-
-      // Last command timeout
-      // an extra 500ms at the end to let the characters fade out (CSS transition)
-      const resetTime = command.time + 500;
-
-      if (
-        currentTime >= resetTime &&
-        commandIndex === normalizedCommands.length - 1
-      ) {
-        resetScene();
       }
     });
   }, [
