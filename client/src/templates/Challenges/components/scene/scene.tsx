@@ -114,6 +114,8 @@ export function Scene({
   const timerRef = useRef<number>(0);
 
   const [currentTime, setCurrentTime] = useState(0);
+  // TODO: can we avoid having both a ref and a state for currentTime?
+  const currentTimeRef = useRef(currentTime);
   // TODO: I'm using a ref so that the maybeStopAudio closure doesn't get stuck
   // with the initial value of isPlaying. Given that we also have a state,
   // isPlaying, it feels like there's a better way.
@@ -152,6 +154,15 @@ export function Scene({
   };
 
   useEffect(() => {
+    const updateCurrentTime = () => {
+      const time = Date.now() - startRef.current;
+      setCurrentTime(time);
+      currentTimeRef.current = time;
+
+      if (isPlayingSceneRef.current)
+        window.requestAnimationFrame(updateCurrentTime);
+    };
+
     const playScene = () => {
       // TODO: if we manage the playing state in another module, we should not
       // need the early return here. It should not be possible for this to be
@@ -159,14 +170,15 @@ export function Scene({
       if (isPlaying || !sceneIsReady) return;
       setIsPlaying(true);
       isPlayingSceneRef.current = true;
+      startRef.current = Date.now();
       setShowDialogue(true);
-
+      updateCurrentTime();
       //  @ts-expect-error it's not a node timer
       timerRef.current = setTimeout(() => {
         if (audioRef.current.paused) {
           // TODO: after fixing the commands, if it's still happening, figure
           // out why the audio starts earlier than the scene.
-          startRef.current = Date.now();
+
           void audioRef.current.play().then(() => {
             // if there are no timestamps, we can let the audio play to the end
             if (hasTimestamps) maybeStopAudio();
@@ -179,12 +191,8 @@ export function Scene({
     // this function exists because we couldn't reliably stop the audio when
     // playing only part of the audio file. So it would get cut off
     function maybeStopAudio() {
-      const runningTime = Date.now() - startRef.current;
-
-      setCurrentTime(runningTime);
-
       // time for the audio to stop
-      if (runningTime >= duration) pause();
+      if (currentTimeRef.current >= duration + sToMs(audio.startTime)) pause();
 
       // the scene doesn't stop until it "resets", at which point
       // isPlayingSceneRef.current should be false.
@@ -198,6 +206,7 @@ export function Scene({
       sceneSubject.detach(playScene);
     };
   }, [
+    currentTime,
     isPlaying,
     duration,
     sceneSubject,
