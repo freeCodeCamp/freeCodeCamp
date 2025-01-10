@@ -102,11 +102,15 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const initialShowState = (key: string, defaultValue: boolean): boolean => {
     const savedState: string = store.get('layoutPaneBooleans') as string;
-    if (savedState) {
-      const parsedState: Record<string, boolean> = JSON.parse(
-        savedState
-      ) as Record<string, boolean>;
-      return parsedState[key] || defaultValue;
+    try {
+      if (savedState) {
+        const parsedState: Record<string, boolean> = JSON.parse(
+          savedState
+        ) as Record<string, boolean>;
+        return parsedState[key] || defaultValue;
+      }
+    } catch (error) {
+      console.error('Error parsing layoutPaneBooleans from store', error);
     }
     return defaultValue;
   };
@@ -126,9 +130,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     setShowPreviewPane(initialShowState('showPreviewPane', false));
     setShowPreviewPortal(initialShowState('showPreviewPortal', false));
   }, []);
-  /* eslint-enable react-hooks/exhaustive-deps */
 
-  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     const layoutPaneBooleans = {
       showNotes,
@@ -145,16 +147,21 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     showPreviewPane,
     showPreviewPortal
   ]);
-  /* eslint-disable react-hooks/exhaustive-deps */
 
   useEffect(() => {
     const layoutPaneBooleans: string = store.get(
       'layoutPaneBooleans'
     ) as string;
     if (layoutPaneBooleans) {
-      const parsedLayoutPaneBooleans: Record<string, boolean> = JSON.parse(
-        layoutPaneBooleans
-      ) as Record<string, boolean>;
+      let parsedLayoutPaneBooleans: Record<string, boolean> = {};
+      try {
+        parsedLayoutPaneBooleans = JSON.parse(layoutPaneBooleans) as Record<
+          string,
+          boolean
+        >;
+      } catch (error) {
+        console.error('Error parsing layoutPaneBooleans from store', error);
+      }
       setShowNotes(parsedLayoutPaneBooleans.showNotes || false);
       setShowConsole(
         parsedLayoutPaneBooleans.showConsole || startWithConsoleShown
