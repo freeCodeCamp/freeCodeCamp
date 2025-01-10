@@ -111,6 +111,13 @@ export function Scene({
   const [dialogue, setDialogue] = useState(initDialogue);
   const [background, setBackground] = useState(initBackground);
   const startRef = useRef<number>(0);
+  const timerRef = useRef<number>(0);
+
+  const [currentTime, setCurrentTime] = useState(0);
+  // TODO: I'm using a ref so that the maybeStopAudio closure doesn't get stuck
+  // with the initial value of isPlaying. Given that we also have a state,
+  // isPlaying, it feels like there's a better way.
+  const isPlayingSceneRef = useRef(false);
 
   const audioLoaded = () => {
     setSceneIsReady(true);
@@ -129,94 +136,22 @@ export function Scene({
       // called at all if the scene is already playing.
       if (isPlaying || !sceneIsReady) return;
       setIsPlaying(true);
+      isPlayingSceneRef.current = true;
       setShowDialogue(true);
 
-      setTimeout(() => {
+      //  @ts-expect-error it's not a node timer
+      timerRef.current = setTimeout(() => {
         if (audioRef.current.paused) {
+          // TODO: after fixing the commands, if it's still happening, figure
+          // out why the audio starts earlier than the scene.
           startRef.current = Date.now();
           void audioRef.current.play().then(() => {
+            // if there are no timestamps, we can let the audio play to the end
+            if (hasTimestamps) maybeStopAudio();
             canPauseRef.current = true;
           });
         }
-        // if there are no timestamps, we can let the audio play to the end
-        if (hasTimestamps) maybeStopAudio();
       }, sToMs(audio.startTime));
-
-      commands.forEach((command, commandIndex) => {
-        // Start command timeout
-        setTimeout(() => {
-          if (command.background) setBackground(command.background);
-
-          setDialogue(
-            command.dialogue
-              ? { ...command.dialogue, label: command.character }
-              : initDialogue
-          );
-
-          setCharacters(prevCharacters => {
-            const newCharacters = prevCharacters.map(character => {
-              if (character.character === command.character) {
-                return {
-                  ...character,
-                  position: command.position ?? character.position,
-                  opacity: command.opacity ?? character.opacity,
-                  isTalking: command.dialogue ? true : false
-                };
-              }
-              return character;
-            });
-            return newCharacters;
-          });
-        }, sToMs(command.startTime));
-
-        // Finish command timeout, only used when there's a dialogue
-        if (command.dialogue) {
-          setTimeout(
-            () => {
-              setCharacters(prevCharacters => {
-                const newCharacters = prevCharacters.map(character => {
-                  if (character.character === command.character) {
-                    return {
-                      ...character,
-                      isTalking: false
-                    };
-                  }
-                  return character;
-                });
-                return newCharacters;
-              });
-            },
-            sToMs(command.finishTime as number)
-          );
-        }
-
-        // Last command timeout
-        if (commandIndex === commands.length - 1) {
-          setTimeout(
-            resetScene,
-            // an extra 500ms at the end to let the characters fade out (CSS transition)
-            command.finishTime
-              ? sToMs(command.finishTime) + 500
-              : sToMs(command.startTime) + 500
-          );
-        }
-      });
-    };
-
-    const resetScene = () => {
-      const { current } = audioRef;
-      pause();
-      if (current) {
-        current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
-        current.load();
-        current.currentTime = audio.startTimestamp || 0;
-      }
-
-      setIsPlaying(false);
-      setShowDialogue(false);
-      setDialogue(initDialogue);
-      setCharacters(initCharacters);
-      setBackground(initBackground);
     };
 
     // this function exists because we couldn't reliably stop the audio when
@@ -224,11 +159,15 @@ export function Scene({
     function maybeStopAudio() {
       const runningTime = Date.now() - startRef.current;
 
-      if (runningTime >= duration) {
-        pause();
-      } else {
+      setCurrentTime(runningTime);
+
+      // time for the audio to stop
+      if (runningTime >= duration) pause();
+
+      // the scene doesn't stop until it "resets", at which point
+      // isPlayingSceneRef.current should be false.
+      if (isPlayingSceneRef.current)
         window.requestAnimationFrame(maybeStopAudio);
-      }
     }
 
     sceneSubject.attach(playScene);
@@ -247,6 +186,96 @@ export function Scene({
     initCharacters,
     initBackground,
     audioTimestamp
+  ]);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    const resetScene = () => {
+      const { current } = audioRef;
+      pause();
+      if (current) {
+        current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
+        current.load();
+        current.currentTime = audio.startTimestamp || 0;
+      }
+
+      setIsPlaying(false);
+      isPlayingSceneRef.current = false;
+      setShowDialogue(false);
+      setDialogue(initDialogue);
+      setCharacters(initCharacters);
+      setBackground(initBackground);
+    };
+
+    // TODO: set each command once. Currently it only checks to see if the
+    // command should have started, not if another supercedes it.
+    commands.forEach((command, commandIndex) => {
+      // Start command timeout
+      if (currentTime >= sToMs(command.startTime)) {
+        if (command.background) setBackground(command.background);
+
+        setDialogue(
+          command.dialogue
+            ? { ...command.dialogue, label: command.character }
+            : initDialogue
+        );
+
+        setCharacters(prevCharacters => {
+          const newCharacters = prevCharacters.map(character => {
+            if (character.character === command.character) {
+              return {
+                ...character,
+                position: command.position ?? character.position,
+                opacity: command.opacity ?? character.opacity,
+                isTalking: command.dialogue ? true : false
+              };
+            }
+            return character;
+          });
+          return newCharacters;
+        });
+      }
+
+      // Finish command timeout, only used when there's a dialogue
+      if (command.finishTime && currentTime >= sToMs(command.finishTime)) {
+        if (command.dialogue) {
+          setCharacters(prevCharacters => {
+            const newCharacters = prevCharacters.map(character => {
+              if (character.character === command.character) {
+                return {
+                  ...character,
+                  isTalking: false
+                };
+              }
+              return character;
+            });
+            return newCharacters;
+          });
+        }
+      }
+
+      // Last command timeout
+      // an extra 500ms at the end to let the characters fade out (CSS transition)
+      const resetTime = command.finishTime
+        ? sToMs(command.finishTime) + 500
+        : sToMs(command.startTime) + 500;
+
+      if (currentTime >= resetTime && commandIndex === commands.length - 1) {
+        resetScene();
+      }
+    });
+  }, [
+    currentTime,
+    audio,
+    audioTimestamp,
+    commands,
+    initCharacters,
+    initBackground
   ]);
 
   return (
