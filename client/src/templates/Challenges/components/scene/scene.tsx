@@ -216,19 +216,7 @@ export function Scene({
     return () => {
       sceneSubject.detach(playScene);
     };
-  }, [
-    currentTime,
-    isPlaying,
-    duration,
-    sceneSubject,
-    sceneIsReady,
-    commands,
-    audio,
-    hasTimestamps,
-    initCharacters,
-    initBackground,
-    audioTimestamp
-  ]);
+  }, [isPlaying, duration, sceneSubject, sceneIsReady, audio, hasTimestamps]);
 
   useEffect(() => {
     return () => {
