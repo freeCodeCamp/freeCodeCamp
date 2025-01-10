@@ -177,9 +177,6 @@ export function Scene({
       // @ts-expect-error it's not a node timer
       startTimerRef.current = setTimeout(() => {
         if (audioRef.current.paused) {
-          // TODO: after fixing the commands, if it's still happening, figure
-          // out why the audio starts earlier than the scene.
-
           void audioRef.current.play().then(() => {
             canPauseRef.current = true;
           });
@@ -190,7 +187,25 @@ export function Scene({
       finishTimerRef.current = setTimeout(
         () => {
           // if there are no timestamps, we can let the audio play to the end
-          if (hasTimestamps) pause();
+          if (hasTimestamps) {
+            const endTimeStamp = sToMs(audio.finishTimestamp!); // it exists if hasTimestamps is true
+            const audioCurrentTime = sToMs(audioRef.current.currentTime);
+            const remainingTime = endTimeStamp - audioCurrentTime;
+            // For some reason, despite the setTimeout resolving at the right
+            // time, the currentTime is smaller than expected. That means that
+            // if we pause now it will cut off the last part.
+            if (remainingTime < 100) {
+              // 100ms is arbitrary and may need to be adjusted if people still
+              // notice the cut off
+
+              pause();
+            } else {
+              // @ts-expect-error it's not a node timer
+              finishTimerRef.current = setTimeout(() => {
+                pause();
+              }, remainingTime);
+            }
+          }
         },
         duration + sToMs(audio.startTime)
       );
