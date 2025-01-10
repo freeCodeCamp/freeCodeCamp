@@ -90,7 +90,7 @@ const Editor = () => {
       </p>
       <p>
         <Link
-          to={`localhost:8000/learn/${superBlockNameMap[superblock || '']}/${block || ''}/${items.name.replace(/[\s]+/g, '-').toLowerCase() || ''}`}
+          to={`${import.meta.env.CHALLENGE_EDITOR_FCC_LOCATION || 'https://localhost:8000'}/learn/${superBlockNameMap[superblock || '']}/${block || ''}/${items.name.replace(/[\s]+/g, '-').toLowerCase() || ''}`}
           target='_blank'
         >
           View Live Version of the Challenge in your running development
