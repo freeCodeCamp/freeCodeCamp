@@ -111,7 +111,8 @@ export function Scene({
   const [dialogue, setDialogue] = useState(initDialogue);
   const [background, setBackground] = useState(initBackground);
   const startRef = useRef<number>(0);
-  const timerRef = useRef<number>(0);
+  const startTimerRef = useRef<number>(0);
+  const finishTimerRef = useRef<number>(Number.MAX_SAFE_INTEGER);
 
   const [currentTime, setCurrentTime] = useState(0);
   // TODO: can we avoid having both a ref and a state for currentTime?
@@ -173,32 +174,27 @@ export function Scene({
       startRef.current = Date.now();
       setShowDialogue(true);
       updateCurrentTime();
-      //  @ts-expect-error it's not a node timer
-      timerRef.current = setTimeout(() => {
+      // @ts-expect-error it's not a node timer
+      startTimerRef.current = setTimeout(() => {
         if (audioRef.current.paused) {
           // TODO: after fixing the commands, if it's still happening, figure
           // out why the audio starts earlier than the scene.
 
           void audioRef.current.play().then(() => {
-            // if there are no timestamps, we can let the audio play to the end
-            if (hasTimestamps) maybeStopAudio();
             canPauseRef.current = true;
           });
         }
       }, sToMs(audio.startTime));
+
+      // @ts-expect-error it's not a node timer
+      finishTimerRef.current = setTimeout(
+        () => {
+          // if there are no timestamps, we can let the audio play to the end
+          if (hasTimestamps) pause();
+        },
+        duration + sToMs(audio.startTime)
+      );
     };
-
-    // this function exists because we couldn't reliably stop the audio when
-    // playing only part of the audio file. So it would get cut off
-    function maybeStopAudio() {
-      // time for the audio to stop
-      if (currentTimeRef.current >= duration + sToMs(audio.startTime)) pause();
-
-      // the scene doesn't stop until it "resets", at which point
-      // isPlayingSceneRef.current should be false.
-      if (isPlayingSceneRef.current)
-        window.requestAnimationFrame(maybeStopAudio);
-    }
 
     sceneSubject.attach(playScene);
 
@@ -221,7 +217,8 @@ export function Scene({
 
   useEffect(() => {
     return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
+      if (startTimerRef.current) clearTimeout(startTimerRef.current);
+      if (finishTimerRef.current) clearTimeout(finishTimerRef.current);
     };
   }, []);
 
