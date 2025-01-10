@@ -68,6 +68,7 @@ import {
 import { initializeMathJax } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
+import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
 import './editor.css';
 
@@ -1281,7 +1282,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   const handleSubmitAndGoButtonBoolean = () => {
     const canShowModal = sessionStorage.getItem('canOpenModal');
 
-    if (canShowModal === 'false' && process.env.NODE_ENV === 'development') {
+    if (canShowModal === 'false' && envConfig.environment === 'development') {
       return false;
     }
     return challengeIsComplete();
