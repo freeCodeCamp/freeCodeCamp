@@ -119,6 +119,28 @@ export function Scene({
   // isPlaying, it feels like there's a better way.
   const isPlayingSceneRef = useRef(false);
 
+  // memoizing to prevent the useEffect from running on every render
+  const normalizedCommands = useMemo(() => {
+    const normalized = commands.flatMap(command => {
+      const { startTime, finishTime, ...rest } = command;
+
+      const startCommand = {
+        ...rest,
+        time: sToMs(startTime),
+        isTalking: !!rest.dialogue
+      };
+      const finishCommand = finishTime
+        ? { ...rest, time: sToMs(finishTime), isTalking: false }
+        : null;
+
+      return finishCommand ? [startCommand, finishCommand] : [startCommand];
+    });
+    normalized.sort((a, b) => a.time - b.time);
+    return normalized;
+  }, [commands]);
+
+  const usedCommandsRef = useRef(new Set<number>());
+
   const audioLoaded = () => {
     setSceneIsReady(true);
   };
@@ -197,6 +219,7 @@ export function Scene({
   useEffect(() => {
     const resetScene = () => {
       const { current } = audioRef;
+      usedCommandsRef.current.clear();
       pause();
       if (current) {
         current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
@@ -214,9 +237,13 @@ export function Scene({
 
     // TODO: set each command once. Currently it only checks to see if the
     // command should have started, not if another supercedes it.
-    commands.forEach((command, commandIndex) => {
+    normalizedCommands.forEach((command, commandIndex) => {
       // Start command timeout
-      if (currentTime >= sToMs(command.startTime)) {
+      if (
+        currentTime > command.time &&
+        !usedCommandsRef.current.has(commandIndex)
+      ) {
+        usedCommandsRef.current.add(commandIndex);
         if (command.background) setBackground(command.background);
 
         setDialogue(
@@ -232,7 +259,7 @@ export function Scene({
                 ...character,
                 position: command.position ?? character.position,
                 opacity: command.opacity ?? character.opacity,
-                isTalking: command.dialogue ? true : false
+                isTalking: command.isTalking
               };
             }
             return character;
@@ -241,31 +268,14 @@ export function Scene({
         });
       }
 
-      // Finish command timeout, only used when there's a dialogue
-      if (command.finishTime && currentTime >= sToMs(command.finishTime)) {
-        if (command.dialogue) {
-          setCharacters(prevCharacters => {
-            const newCharacters = prevCharacters.map(character => {
-              if (character.character === command.character) {
-                return {
-                  ...character,
-                  isTalking: false
-                };
-              }
-              return character;
-            });
-            return newCharacters;
-          });
-        }
-      }
-
       // Last command timeout
       // an extra 500ms at the end to let the characters fade out (CSS transition)
-      const resetTime = command.finishTime
-        ? sToMs(command.finishTime) + 500
-        : sToMs(command.startTime) + 500;
+      const resetTime = command.time + 500;
 
-      if (currentTime >= resetTime && commandIndex === commands.length - 1) {
+      if (
+        currentTime >= resetTime &&
+        commandIndex === normalizedCommands.length - 1
+      ) {
         resetScene();
       }
     });
@@ -273,7 +283,7 @@ export function Scene({
     currentTime,
     audio,
     audioTimestamp,
-    commands,
+    normalizedCommands,
     initCharacters,
     initBackground
   ]);
