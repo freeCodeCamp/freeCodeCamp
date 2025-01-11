@@ -202,6 +202,10 @@
     {
       "id": "5a24c314108439a4d403618d",
       "title": "Render React on the Server with renderToString"
+    },
+    {
+      "id": "5a24c314108439a4d403618e",
+      "title": "Create a Todo List App"
     }
   ],
   "blockLayout": "legacy-challenge-list"
