@@ -4,6 +4,7 @@
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "license": "BSD-3-Clause",
   "private": true,
+  "type":"module",
   "engines": {
     "node": ">=16",
     "pnpm": ">=9"
