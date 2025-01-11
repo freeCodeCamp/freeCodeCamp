@@ -435,21 +435,22 @@ Which rule applies `24px` padding to the top and bottom?
 
 #### --text--
 
-What does the `line-height` property do?
+What is the `main` difference between ordered and unorderd list?
 
 #### --distractors--
 
-Controls the size of the font.
+Ordered lists are image-based while unordered lists are text-based. 
 
 ---
 
-Controls the responsiveness of text.
+Unordered lists are written in a vertical line while ordered lists are written in horizontal line.
 
 ---
 
-Controls how much space is between the letters of text.
+Ordered lists is represented using `<ol>` tag while unordered ones are represented using `<ul>` tag.
+
 
 #### --answer--
 
-Controls how much space is between the lines of text.
+Ordered lists represent items using a specific order, mostly letters or numbers while unordered lists represent items with bullets or pointers. 
 
