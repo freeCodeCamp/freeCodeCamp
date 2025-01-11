@@ -1,7 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-
-const dotenv = require('dotenv');
+import fs from "node:fs";
+import path from "path"; 
+import dotenv from "dotenv";
 
 const filePath = path.resolve(__dirname, '..', '.env');
 let env = {};
