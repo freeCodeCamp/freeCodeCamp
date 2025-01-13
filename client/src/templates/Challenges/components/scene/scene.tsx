@@ -1,4 +1,10 @@
-import React, { useEffect, useState, useRef, useMemo } from 'react'; //, ReactElement } from 'react';
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  useMemo,
+  useCallback
+} from 'react';
 import { Col, Spacer } from '@freecodecamp/ui';
 import { isEmpty } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
@@ -151,7 +157,7 @@ export function Scene({
     canPauseRef.current = false;
   };
 
-  useEffect(() => {
+  const playScene = useCallback(() => {
     const updateCurrentTime = () => {
       const time = Date.now() - startRef.current;
       setCurrentTime(time);
@@ -159,60 +165,60 @@ export function Scene({
       if (isPlayingSceneRef.current)
         window.requestAnimationFrame(updateCurrentTime);
     };
+    // TODO: if we manage the playing state in another module, we should not
+    // need the early return here. It should not be possible for this to be
+    // called at all if the scene is already playing.
+    if (isPlaying || !sceneIsReady) return;
+    setIsPlaying(true);
+    isPlayingSceneRef.current = true;
+    startRef.current = Date.now();
+    setShowDialogue(true);
 
-    const playScene = () => {
-      // TODO: if we manage the playing state in another module, we should not
-      // need the early return here. It should not be possible for this to be
-      // called at all if the scene is already playing.
-      if (isPlaying || !sceneIsReady) return;
-      setIsPlaying(true);
-      isPlayingSceneRef.current = true;
-      startRef.current = Date.now();
-      setShowDialogue(true);
-      updateCurrentTime();
-      // @ts-expect-error it's not a node timer
-      startTimerRef.current = setTimeout(() => {
-        if (audioRef.current.paused) {
-          void audioRef.current.play().then(() => {
-            canPauseRef.current = true;
-          });
-        }
-      }, sToMs(audio.startTime));
+    updateCurrentTime();
 
-      // @ts-expect-error it's not a node timer
-      finishTimerRef.current = setTimeout(
-        () => {
-          // if there are no timestamps, we can let the audio play to the end
-          if (hasTimestamps) {
-            const endTimeStamp = sToMs(audio.finishTimestamp!); // it exists if hasTimestamps is true
-            const audioCurrentTime = sToMs(audioRef.current.currentTime);
-            const remainingTime = endTimeStamp - audioCurrentTime;
-            // For some reason, despite the setTimeout resolving at the right
-            // time, the currentTime can be smaller than expected. That means
-            // that if we pause now it will cut off the last part.
-            if (remainingTime < 100) {
-              // 100ms is arbitrary and may need to be adjusted if people still
-              // notice the cut off
+    // @ts-expect-error it's not a node timer
+    startTimerRef.current = setTimeout(() => {
+      if (audioRef.current.paused) {
+        void audioRef.current.play().then(() => {
+          canPauseRef.current = true;
+        });
+      }
+    }, sToMs(audio.startTime));
 
+    // @ts-expect-error it's not a node timer
+    finishTimerRef.current = setTimeout(
+      () => {
+        // if there are no timestamps, we can let the audio play to the end
+        if (hasTimestamps) {
+          const endTimeStamp = sToMs(audio.finishTimestamp!); // it exists if hasTimestamps is true
+          const audioCurrentTime = sToMs(audioRef.current.currentTime);
+          const remainingTime = endTimeStamp - audioCurrentTime;
+          // For some reason, despite the setTimeout resolving at the right
+          // time, the currentTime can be smaller than expected. That means
+          // that if we pause now it will cut off the last part.
+          if (remainingTime < 100) {
+            // 100ms is arbitrary and may need to be adjusted if people still
+            // notice the cut off
+
+            pause();
+          } else {
+            // @ts-expect-error it's not a node timer
+            finishTimerRef.current = setTimeout(() => {
               pause();
-            } else {
-              // @ts-expect-error it's not a node timer
-              finishTimerRef.current = setTimeout(() => {
-                pause();
-              }, remainingTime);
-            }
+            }, remainingTime);
           }
-        },
-        duration + sToMs(audio.startTime)
-      );
-    };
+        }
+      },
+      duration + sToMs(audio.startTime)
+    );
+  }, [isPlaying, sceneIsReady, audio, duration, hasTimestamps]);
 
+  useEffect(() => {
     sceneSubject.attach(playScene);
-
     return () => {
       sceneSubject.detach(playScene);
     };
-  }, [isPlaying, duration, sceneSubject, sceneIsReady, audio, hasTimestamps]);
+  }, [playScene, sceneSubject]);
 
   useEffect(() => {
     return () => {
