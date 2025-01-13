@@ -36,24 +36,24 @@ export function Scene({
   const canPauseRef = useRef(false);
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
-  const { startTimestamp = null, finishTimestamp = null } = audio;
-
-  const hasTimestamps = startTimestamp !== null && finishTimestamp !== null;
-  const audioTimestamp = hasTimestamps ? `#t=${startTimestamp}` : '';
 
   const audioRef = useRef<HTMLAudioElement>(new Audio());
 
   // if there are timestamps, we use the difference between them as the duration
   // if not, we assume we're playing the whole audio file.
-  const duration = hasTimestamps
-    ? sToMs(finishTimestamp - startTimestamp)
-    : Infinity;
+  const duration =
+    audio.startTimestamp !== undefined && audio.finishTimestamp !== undefined
+      ? sToMs(audio.finishTimestamp - audio.startTimestamp)
+      : Infinity;
 
   // on mount
   useEffect(() => {
     const { current } = audioRef;
+    const { audio } = setup;
 
     if (current) {
+      const audioTimestamp =
+        duration !== Infinity ? `#t=${audio.startTimestamp}` : '';
       current.volume = 1;
       current.addEventListener('canplaythrough', audioLoaded);
       current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
@@ -83,14 +83,7 @@ export function Scene({
         current.removeEventListener('canplaythrough', audioLoaded);
       }
     };
-  }, [
-    audioRef,
-    audio.filename,
-    audioTimestamp,
-    setup.background,
-    setup.characters,
-    commands
-  ]);
+  }, [audioRef, duration, setup, commands]);
 
   const initBackground = setup.background;
 
@@ -188,9 +181,8 @@ export function Scene({
     // @ts-expect-error it's not a node timer
     finishTimerRef.current = setTimeout(
       () => {
-        // if there are no timestamps, we can let the audio play to the end
-        if (hasTimestamps) {
-          const endTimeStamp = sToMs(audio.finishTimestamp!); // it exists if hasTimestamps is true
+        if (duration !== Infinity) {
+          const endTimeStamp = sToMs(audio.finishTimestamp!); // it exists because duration is not Infinity
           const audioCurrentTime = sToMs(audioRef.current.currentTime);
           const remainingTime = endTimeStamp - audioCurrentTime;
           // For some reason, despite the setTimeout resolving at the right
@@ -211,7 +203,7 @@ export function Scene({
       },
       duration + sToMs(audio.startTime)
     );
-  }, [isPlaying, sceneIsReady, audio, duration, hasTimestamps]);
+  }, [isPlaying, sceneIsReady, audio, duration]);
 
   useEffect(() => {
     sceneSubject.attach(playScene);
@@ -284,14 +276,7 @@ export function Scene({
     if (currentTime >= resetTime) {
       resetScene();
     }
-  }, [
-    currentTime,
-    audio,
-    audioTimestamp,
-    sortedCommands,
-    initCharacters,
-    initBackground
-  ]);
+  }, [currentTime, audio, sortedCommands, initCharacters, initBackground]);
 
   return (
     <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
