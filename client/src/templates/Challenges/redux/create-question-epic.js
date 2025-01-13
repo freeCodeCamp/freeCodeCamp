@@ -24,18 +24,22 @@ function filesToMarkdown(challengeFiles = []) {
 
     const fileExtension = challengeFile.ext;
     const fileName = challengeFile.name;
-    const fileType = fileExtension === 'js' ? 'javascript' : fileExtension;
     let fileDescription;
 
     if (!moreThanOneFile) {
       fileDescription = '';
-    } else if (fileExtension === 'html') {
-      fileDescription = `<!-- file: ${fileName}.${fileExtension} -->\n`;
     } else {
-      fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
+      switch (fileExtension) {
+        case 'html':
+          fileDescription = `<!-- file: ${fileName}.${fileExtension} -->\n`;
+          break;
+        default:
+          fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
+          break;
+      }
     }
 
-    return `${fileString}\`\`\`${fileType}\n${fileDescription}${challengeFile.contents}\n\`\`\`\n\n`;
+    return `${fileString}\`\`\`${fileExtension}\n${fileDescription}${challengeFile.contents}\n\`\`\`\n\n`;
   }, '\n');
 }
 
@@ -84,7 +88,7 @@ function editableRegionsToMarkdown(challengeFiles = []) {
 
     const fileExtension = challengeFile.ext;
     const fileName = challengeFile.name;
-    const fileType = fileExtension;
+
     let fileDescription;
 
     if (!moreThanOneFile) {
@@ -94,11 +98,9 @@ function editableRegionsToMarkdown(challengeFiles = []) {
         case 'html':
           fileDescription = `<!-- file: ${fileName}.${fileExtension} -->\n`;
           break;
-        case 'jsx':
-          fileDescription = `{/* file: ${fileName}.${fileExtension} */}\n`;
-          break;
         default:
           fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
+          break;
       }
     }
 
@@ -106,7 +108,7 @@ function editableRegionsToMarkdown(challengeFiles = []) {
     const lines = challengeFile.contents.split('\n');
     const editableRegion = lines.slice(start + 1, end + 4).join('\n');
 
-    return `${fileString}\`\`\`${fileType}\n${fileDescription}${editableRegion}\n\`\`\`\n\n`;
+    return `${fileString}\`\`\`${fileExtension}\n${fileDescription}${editableRegion}\n\`\`\`\n\n`;
   }, '\n');
 }
 
