@@ -109,8 +109,9 @@ export function Scene({
   const [dialogue, setDialogue] = useState(initDialogue);
   const [background, setBackground] = useState(initBackground);
   const startRef = useRef<number>(0);
-  const startTimerRef = useRef<number>(0);
-  const finishTimerRef = useRef<number>(Number.MAX_SAFE_INTEGER);
+  const startTimerRef = useRef<number>();
+  const finishTimerRef = useRef<number>();
+  const animationRef = useRef<number>();
 
   const [currentTime, setCurrentTime] = useState(0);
   // TODO: I'm using a ref so that the maybeStopAudio closure doesn't get stuck
@@ -155,8 +156,9 @@ export function Scene({
       const time = Date.now() - startRef.current;
       setCurrentTime(time);
 
-      if (isPlayingSceneRef.current)
-        window.requestAnimationFrame(updateCurrentTime);
+      if (isPlayingSceneRef.current) {
+        animationRef.current = window.requestAnimationFrame(updateCurrentTime);
+      }
     };
     // TODO: if we manage the playing state in another module, we should not
     // need the early return here. It should not be possible for this to be
@@ -214,8 +216,11 @@ export function Scene({
 
   useEffect(() => {
     return () => {
-      if (startTimerRef.current) clearTimeout(startTimerRef.current);
-      if (finishTimerRef.current) clearTimeout(finishTimerRef.current);
+      clearTimeout(startTimerRef.current);
+      clearTimeout(finishTimerRef.current);
+      // @ts-expect-error cancelAnimationFrame accepts undefined, but TS doesn't
+      // know that
+      window.cancelAnimationFrame(animationRef.current);
     };
   }, []);
 
