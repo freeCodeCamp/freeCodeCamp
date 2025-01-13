@@ -188,8 +188,8 @@ export function Scene({
             const audioCurrentTime = sToMs(audioRef.current.currentTime);
             const remainingTime = endTimeStamp - audioCurrentTime;
             // For some reason, despite the setTimeout resolving at the right
-            // time, the currentTime is smaller than expected. That means that
-            // if we pause now it will cut off the last part.
+            // time, the currentTime can be smaller than expected. That means
+            // that if we pause now it will cut off the last part.
             if (remainingTime < 100) {
               // 100ms is arbitrary and may need to be adjusted if people still
               // notice the cut off
