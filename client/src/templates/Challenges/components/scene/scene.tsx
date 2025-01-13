@@ -11,9 +11,7 @@ import { SceneSubject } from './scene-subject';
 
 import './scene.css';
 
-const sToMs = (n: number) => {
-  return n * 1000;
-};
+const sToMs = (n: number) => n * 1000;
 
 const loadImage = (src: string | null) => {
   if (src) new Image().src = src;
