@@ -139,6 +139,9 @@ export function Scene({
     return normalized;
   }, [commands]);
 
+  // an extra 500ms at the end to let the characters fade out (CSS transition
+  const resetTime = sortedCommands.at(-1)!.time + 500;
+
   const usedCommandsRef = useRef(new Set<number>());
 
   const audioLoaded = () => {
@@ -207,6 +210,19 @@ export function Scene({
     );
   }, [isPlaying, sceneIsReady, audio, duration]);
 
+  const resetScene = useCallback(() => {
+    usedCommandsRef.current.clear();
+    pause();
+    audioRef.current.currentTime = audio.startTimestamp || 0;
+    setCurrentTime(0);
+    setIsPlaying(false);
+    isPlayingSceneRef.current = false;
+    setShowDialogue(false);
+    setDialogue(initDialogue);
+    setCharacters(initCharacters);
+    setBackground(initBackground);
+  }, [audio, initCharacters, initBackground]);
+
   useEffect(() => {
     sceneSubject.attach(playScene);
     return () => {
@@ -215,30 +231,7 @@ export function Scene({
   }, [playScene, sceneSubject]);
 
   useEffect(() => {
-    return () => {
-      clearTimeout(startTimerRef.current);
-      clearTimeout(finishTimerRef.current);
-      // @ts-expect-error cancelAnimationFrame accepts undefined, but TS doesn't
-      // know that
-      window.cancelAnimationFrame(animationRef.current);
-    };
-  }, []);
-
-  useEffect(() => {
     if (isEmpty(sortedCommands)) return;
-
-    const resetScene = () => {
-      usedCommandsRef.current.clear();
-      pause();
-      audioRef.current.currentTime = audio.startTimestamp || 0;
-      setCurrentTime(0);
-      setIsPlaying(false);
-      isPlayingSceneRef.current = false;
-      setShowDialogue(false);
-      setDialogue(initDialogue);
-      setCharacters(initCharacters);
-      setBackground(initBackground);
-    };
 
     sortedCommands.forEach((command, commandIndex) => {
       // Start command timeout
@@ -271,17 +264,24 @@ export function Scene({
         });
       }
     });
+  }, [currentTime, sortedCommands]);
 
-    // an extra 500ms at the end to let the characters fade out (CSS transition
-    const resetTime = sortedCommands.at(-1)!.time + 500;
-
+  useEffect(() => {
     // TODO: this has to be _after_ the normalizedCommands.forEach, otherwise
     // the usedCommandsRef will be cleared and immediately refilled. This kind
     // of temporal coupling is a bit fragile.
-    if (currentTime >= resetTime) {
-      resetScene();
-    }
-  }, [currentTime, audio, sortedCommands, initCharacters, initBackground]);
+    if (currentTime >= resetTime) resetScene();
+  }, [currentTime, resetTime, resetScene]);
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(startTimerRef.current);
+      clearTimeout(finishTimerRef.current);
+      // @ts-expect-error cancelAnimationFrame accepts undefined, but TS doesn't
+      // know that
+      window.cancelAnimationFrame(animationRef.current);
+    };
+  }, []);
 
   return (
     <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
