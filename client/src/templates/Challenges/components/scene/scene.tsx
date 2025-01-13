@@ -112,6 +112,7 @@ export function Scene({
   const startTimerRef = useRef<number>();
   const finishTimerRef = useRef<number>();
   const animationRef = useRef<number>();
+  const usedCommandsRef = useRef(new Set<number>());
 
   const [currentTime, setCurrentTime] = useState(0);
   // TODO: I'm using a ref so that the maybeStopAudio closure doesn't get stuck
@@ -141,8 +142,6 @@ export function Scene({
 
   // an extra 500ms at the end to let the characters fade out (CSS transition
   const resetTime = sortedCommands.at(-1)!.time + 500;
-
-  const usedCommandsRef = useRef(new Set<number>());
 
   const audioLoaded = () => {
     setSceneIsReady(true);
@@ -264,14 +263,11 @@ export function Scene({
         });
       }
     });
-  }, [currentTime, sortedCommands]);
 
-  useEffect(() => {
-    // TODO: this has to be _after_ the normalizedCommands.forEach, otherwise
-    // the usedCommandsRef will be cleared and immediately refilled. This kind
-    // of temporal coupling is a bit fragile.
+    // resetScene only works if called AFTER the commands, otherwise the
+    // commands will undo the reset.
     if (currentTime >= resetTime) resetScene();
-  }, [currentTime, resetTime, resetScene]);
+  }, [currentTime, resetTime, sortedCommands, resetScene]);
 
   useEffect(() => {
     return () => {
