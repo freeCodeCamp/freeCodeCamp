@@ -25,7 +25,7 @@ module.exports = {
       ];
     }
   },
-  '*.!(js|ts|tsx)': files => {
+  '*.!(js|ts|tsx|css)': files => {
     if (completedStages.has('not-js')) return [];
 
     if (files.length > 10) {
