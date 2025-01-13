@@ -341,7 +341,7 @@ Adaptive Resource Integration Architecture.
 
 #### --answer--
 
-Accessible Rich Internet Applications.
+Accessible Rich Internet Applications
 
 ### --question--
 
