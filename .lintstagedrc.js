@@ -56,7 +56,7 @@ module.exports = {
 
     if (files.length > 10) {
       completedStages.add('css');
-      return 'pnpm run lint:client-css';
+      return 'pnpm run stylelint --fix .';
     } else {
       return files.map(filename => `stylelint '${filename}'`);
     }
