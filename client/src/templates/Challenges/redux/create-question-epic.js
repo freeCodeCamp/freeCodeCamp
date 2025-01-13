@@ -51,6 +51,8 @@ export function insertEditableRegions(challengeFiles = []) {
           return '\n# User Editable Region\n';
         case 'js':
           return '\n// User Editable Region\n';
+        case 'jsx':
+          return '\n{/* User Editable Region */}\n';
         default:
           return '\nUser Editable Region\n';
       }
@@ -82,15 +84,22 @@ function editableRegionsToMarkdown(challengeFiles = []) {
 
     const fileExtension = challengeFile.ext;
     const fileName = challengeFile.name;
-    const fileType = fileExtension === 'js' ? 'javascript' : fileExtension;
+    const fileType = fileExtension;
     let fileDescription;
 
     if (!moreThanOneFile) {
       fileDescription = '';
-    } else if (fileExtension === 'html') {
-      fileDescription = `<!-- file: ${fileName}.${fileExtension} -->\n`;
     } else {
-      fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
+      switch (fileExtension) {
+        case 'html':
+          fileDescription = `<!-- file: ${fileName}.${fileExtension} -->\n`;
+          break;
+        case 'jsx':
+          fileDescription = `{/* file: ${fileName}.${fileExtension} */}\n`;
+          break;
+        default:
+          fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
+      }
     }
 
     const [start, end] = challengeFile.editableRegionBoundaries;
