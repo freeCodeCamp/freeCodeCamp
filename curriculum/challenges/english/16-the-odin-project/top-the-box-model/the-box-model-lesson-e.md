@@ -22,7 +22,7 @@ It allows you to create complex animations and interactive effects.
 
 ---
 
-It allows you to create complex animations and interactive effects.
+It allows you to send and receive server requests.
 
 ---
 
