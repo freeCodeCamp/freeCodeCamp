@@ -275,7 +275,7 @@ export function Scene({
     });
 
     // an extra 500ms at the end to let the characters fade out (CSS transition
-    const resetTime = sortedCommands[sortedCommands.length - 1].time + 500;
+    const resetTime = sortedCommands.at(-1)!.time + 500;
 
     // TODO: this has to be _after_ the normalizedCommands.forEach, otherwise
     // the usedCommandsRef will be cleared and immediately refilled. This kind
