@@ -115,8 +115,6 @@ export function Scene({
   const finishTimerRef = useRef<number>(Number.MAX_SAFE_INTEGER);
 
   const [currentTime, setCurrentTime] = useState(0);
-  // TODO: can we avoid having both a ref and a state for currentTime?
-  const currentTimeRef = useRef(currentTime);
   // TODO: I'm using a ref so that the maybeStopAudio closure doesn't get stuck
   // with the initial value of isPlaying. Given that we also have a state,
   // isPlaying, it feels like there's a better way.
@@ -158,7 +156,6 @@ export function Scene({
     const updateCurrentTime = () => {
       const time = Date.now() - startRef.current;
       setCurrentTime(time);
-      currentTimeRef.current = time;
 
       if (isPlayingSceneRef.current)
         window.requestAnimationFrame(updateCurrentTime);
