@@ -52,11 +52,14 @@ function* showDonateModalSaga() {
 
   if (shouldRequestDonation || isModalRecentlyShown) {
     yield delay(200);
+
     const recentlyClaimedBlock = yield select(recentlyClaimedBlockSelector);
     const recentlyClaimedModule = yield select(recentlyClaimedModuleSelector);
+
     yield put(openDonationModal());
     sessionStorage.setItem(MODAL_SHOWN_KEY, Date.now());
     yield take(appTypes.closeDonationModal);
+
     if (recentlyClaimedBlock || recentlyClaimedModule) {
       yield put(preventSectionDonationRequests());
     } else {
