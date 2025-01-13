@@ -106,15 +106,13 @@ const quizJoi = Joi.object().keys({
             Joi.valid(Joi.ref('...answer')).forbidden(),
             Joi.string().required()
           )
-          .min(3)
-          .max(3)
+          .length(3)
           .required()
           .unique(),
         answer: Joi.string().required()
       })
     )
-    .min(20)
-    .max(20)
+    .length(20)
     .required()
 });
 
