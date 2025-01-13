@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react'; //, ReactElement } from 'react';
 import { Col, Spacer } from '@freecodecamp/ui';
+import { isEmpty } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
@@ -223,6 +224,8 @@ export function Scene({
   }, []);
 
   useEffect(() => {
+    if (isEmpty(sortedCommands)) return;
+
     const resetScene = () => {
       const { current } = audioRef;
       usedCommandsRef.current.clear();
