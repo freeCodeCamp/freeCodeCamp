@@ -245,6 +245,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                   challenges={superBlockChallenges}
                   superBlock={superBlock}
                   chosenBlock={chosenBlock}
+                  completedChallengeIds={completedChallenges.map(c => c.id)}
                 />
               ) : (
                 <div className='block-ui'>

@@ -2,7 +2,6 @@
   "chapters": [
     {
       "dashedName": "freecodecamp",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "getting-started-with-freecodecamp",
@@ -303,6 +302,7 @@
             { "dashedName": "lecture-introduction-to-javascript" },
             { "dashedName": "workshop-greeting-bot" },
             { "dashedName": "lab-javascript-trivia-bot" },
+            { "dashedName": "lab-sentence-maker" },
             { "dashedName": "lecture-working-with-data-types" },
             { "dashedName": "review-javascript-variables-and-data-types" },
             { "dashedName": "quiz-javascript-variables-and-data-types" },
@@ -339,7 +339,6 @@
             { "dashedName": "lecture-working-with-functions" },
             { "dashedName": "workshop-calculator" },
             { "dashedName": "lab-email-masker" },
-            { "dashedName": "lab-sentence-maker" },
             { "dashedName": "workshop-loan-qualification-checker" },
             { "dashedName": "lab-leap-year-calculator" },
             { "dashedName": "review-javascript-functions" },

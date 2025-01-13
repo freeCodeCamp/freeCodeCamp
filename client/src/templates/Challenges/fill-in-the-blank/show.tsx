@@ -1,7 +1,6 @@
 // Package Utilities
 import { graphql } from 'gatsby';
 import React, { useEffect, useRef, useState } from 'react';
-import { useFeature } from '@growthbook/growthbook-react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import type { TFunction } from 'i18next';
@@ -15,18 +14,14 @@ import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
-import {
-  ChallengeNode,
-  ChallengeMeta,
-  NavigationPaths,
-  Test
-} from '../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import ChallegeExplanation from '../components/challenge-explanation';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import FillInTheBlanks from '../components/fill-in-the-blanks';
+import ChallengeTranscript from '../components/challenge-transcript';
 import PrismFormatted from '../components/prism-formatted';
 import {
   challengeMounted,
@@ -39,6 +34,7 @@ import Scene from '../components/scene/scene';
 import { SceneSubject } from '../components/scene/scene-subject';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
+import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
 
 import './show.css';
 
@@ -72,7 +68,6 @@ interface ShowFillInTheBlankProps {
   openHelpModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
-    nextCurriculumPaths: NavigationPaths;
   };
   t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
@@ -87,6 +82,7 @@ const ShowFillInTheBlank = ({
         description,
         instructions,
         explanation,
+        transcript,
         superBlock,
         block,
         translationPending,
@@ -102,7 +98,7 @@ const ShowFillInTheBlank = ({
   openHelpModal,
   updateChallengeMeta,
   openCompletionModal,
-  pageContext: { challengeMeta, nextCurriculumPaths },
+  pageContext: { challengeMeta },
   isChallengeCompleted
 }: ShowFillInTheBlankProps) => {
   const { t } = useTranslation();
@@ -117,14 +113,11 @@ const ShowFillInTheBlank = ({
   const [showFeedback, setShowFeedback] = useState(false);
 
   const container = useRef<HTMLElement | null>(null);
-  const showNextCurriculum = useFeature('fcc-10').on;
 
   useEffect(() => {
     initTests(tests);
     const challengePaths = getChallengePaths({
-      showNextCurriculum,
-      currentCurriculumPaths: challengeMeta,
-      nextCurriculumPaths
+      currentCurriculumPaths: challengeMeta
     });
     updateChallengeMeta({
       ...challengeMeta,
@@ -143,7 +136,9 @@ const ShowFillInTheBlank = ({
     const blankAnswers = fillInTheBlank.blanks.map(b => b.answer);
 
     const newAnswersCorrect = userAnswers.map(
-      (userAnswer, i) => !!userAnswer && userAnswer.trim() === blankAnswers[i]
+      (userAnswer, i) =>
+        !!userAnswer &&
+        replaceAppleQuotes(userAnswer.trim()) === blankAnswers[i]
     );
     setAnswersCorrect(newAnswersCorrect);
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
@@ -219,6 +214,8 @@ const ShowFillInTheBlank = ({
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              {transcript && <ChallengeTranscript transcript={transcript} />}
+
               {instructions && (
                 <>
                   <PrismFormatted text={instructions} />
@@ -300,6 +297,7 @@ export const query = graphql`
             feedback
           }
         }
+        transcript
         scene {
           setup {
             background

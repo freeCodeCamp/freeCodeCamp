@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
 import { Col, Row, Modal, Spacer } from '@freecodecamp/ui';
@@ -129,7 +129,9 @@ const AnimationContainer = ({
 }: {
   secondsRemaining: number;
 }) => {
+  const animationKey = useRef(Date.now()).current;
   const newBearAnimation = useFeature('new-bear-animation').on;
+  const animationSrc = `${newBearAnimation ? donationAnimationB : donationAnimation}?t=${animationKey}`;
   const { t } = useTranslation();
   return (
     <>
@@ -174,9 +176,9 @@ const AnimationContainer = ({
           )}
         </div>
         <img
-          key={Date.now()}
+          key={animationKey}
           alt=''
-          src={newBearAnimation ? donationAnimationB : donationAnimation}
+          src={animationSrc}
           id={'donation-animation'}
           data-playwright-test-label='donation-animation'
         />

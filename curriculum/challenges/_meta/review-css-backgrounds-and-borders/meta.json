@@ -1,5 +1,5 @@
 {
-  "name": "CSS Backgrounds and Borders Review",
+  "name": "Lists, Links, CSS Background and Borders Review",
   "blockType": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
@@ -8,7 +8,7 @@
   "challengeOrder": [
     {
       "id": "671a88d636cebc5fbd407b78",
-      "title": "CSS Backgrounds and Borders Review"
+      "title": "Lists, Links, CSS Background and Borders Review"
     }
   ],
   "helpCategory": "HTML-CSS"

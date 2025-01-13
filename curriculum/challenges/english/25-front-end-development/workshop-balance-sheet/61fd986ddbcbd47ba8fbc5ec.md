@@ -16,55 +16,92 @@ Add three `td` elements below that, and give them the following text, in order: 
 Your third `tr` should have a `th` element.
 
 ```js
-assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th'));
+const table = document.querySelectorAll('table')?.[1];
+const tbody = table?.querySelector('tbody');
+const tableRow = tbody?.querySelectorAll('tr')?.[2];
+assert.isNotNull(tableRow?.querySelector('th'));
 ```
 
 Your `th` element should have the text `Credit The outstanding balance on our credit card.`.
 
 ```js
-assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th')?.innerText === 'Credit The outstanding balance on our credit card.');
+const table = document.querySelectorAll('table')?.[1];
+const tbody = table?.querySelector('tbody');
+const tableRow = tbody?.querySelectorAll('tr')?.[2];
+assert.strictEqual(
+  tableRow?.querySelector('th')?.innerText,
+  'Credit The outstanding balance on our credit card.'
+);
 ```
 
 You should wrap the text `The outstanding balance on our credit card.` in a `span` element.
 
 ```js
-assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th > span')?.textContent === 'The outstanding balance on our credit card.');
+const table = document.querySelectorAll('table')?.[1];
+const tbody = table?.querySelector('tbody');
+const tableRow = tbody?.querySelectorAll('tr')?.[2];
+assert.strictEqual(
+  tableRow?.querySelector('th > span')?.textContent,
+  'The outstanding balance on our credit card.'
+);
 ```
 
 Your `span` element should have the `class` attribute set to `description`.
 
 ```js
-assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th > span')?.classList?.contains('description'));
+const table = document.querySelectorAll('table')?.[1];
+const tbody = table?.querySelector('tbody');
+const tableRow = tbody?.querySelectorAll('tr')?.[2];
+assert.isTrue(
+  tableRow?.querySelector('th > span')?.classList?.contains('description')
+);
 ```
 
 You should have three `td` elements.
 
 ```js
-assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelectorAll('td').length === 3);
+const table = document.querySelectorAll('table')?.[1];
+const tbody = table?.querySelector('tbody');
+const tableRow = tbody?.querySelectorAll('tr')?.[2];
+assert.lengthOf(tableRow?.querySelectorAll('td'), 3);
 ```
 
 Your first `td` element should have the text `$50`.
 
 ```js
-assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelectorAll('td')?.[0]?.textContent === '$50');
+const table = document.querySelectorAll('table')?.[1];
+const tbody = table?.querySelector('tbody');
+const tableRow = tbody?.querySelectorAll('tr')?.[2];
+assert.strictEqual(tableRow?.querySelectorAll('td')?.[0]?.textContent, '$50');
 ```
 
 Your second `td` element should have the text `$50`.
 
 ```js
-assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelectorAll('td')?.[1]?.textContent === '$50');
+const table = document.querySelectorAll('table')?.[1];
+const tbody = table?.querySelector('tbody');
+const tableRow = tbody?.querySelectorAll('tr')?.[2];
+assert.strictEqual(tableRow?.querySelectorAll('td')?.[1]?.textContent, '$50');
 ```
 
 Your third `td` element should have the text `$75`.
 
 ```js
-assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelectorAll('td')?.[2]?.textContent === '$75');
+const table = document.querySelectorAll('table')?.[1];
+const tbody = table?.querySelector('tbody');
+const tableRow = tbody?.querySelectorAll('tr')?.[2];
+assert.strictEqual(tableRow?.querySelectorAll('td')?.[2]?.textContent, '$75');
 ```
 
 Your third `td` element should have the `class` set to `current`.
 
 ```js
-assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelectorAll('td')?.[2]?.classList?.contains('current'));
+const table = document.querySelectorAll('table')?.[1];
+const tbody = table?.querySelector('tbody');
+const tableRow = tbody?.querySelectorAll('tr')?.[2];
+assert.isTrue(
+  tableRow?.querySelectorAll('td')?.[2]?.classList?.contains('current')
+);
 ```
 
 # --seed--
@@ -75,10 +112,10 @@ assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySel
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Balance Sheet</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main>
@@ -96,7 +133,9 @@ assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySel
         </div>
         <div class="table-wrap">
           <table>
-            <caption>Assets</caption>
+            <caption>
+              Assets
+            </caption>
             <thead>
               <tr>
                 <td></td>
@@ -133,13 +172,15 @@ assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySel
             </tbody>
           </table>
           <table>
-            <caption>Liabilities</caption>
+            <caption>
+              Liabilities
+            </caption>
             <thead>
               <tr>
-              <td></td>
-              <th><span class="sr-only">2019</span></th>
-              <th><span class="sr-only">2020</span></th>
-              <th><span class="sr-only">2021</span></th>
+                <td></td>
+                <th><span class="sr-only">2019</span></th>
+                <th><span class="sr-only">2020</span></th>
+                <th><span class="sr-only">2021</span></th>
               </tr>
             </thead>
             <tbody>
@@ -163,8 +204,7 @@ assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySel
 --fcc-editable-region--
             </tbody>
           </table>
-          <table>
-          </table>
+          <table></table>
         </div>
       </section>
     </main>
