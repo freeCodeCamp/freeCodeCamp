@@ -227,15 +227,9 @@ export function Scene({
     if (isEmpty(sortedCommands)) return;
 
     const resetScene = () => {
-      const { current } = audioRef;
       usedCommandsRef.current.clear();
       pause();
-      if (current) {
-        current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
-        current.load();
-        current.currentTime = audio.startTimestamp || 0;
-      }
-
+      audioRef.current.currentTime = audio.startTimestamp || 0;
       setCurrentTime(0);
       setIsPlaying(false);
       isPlayingSceneRef.current = false;
