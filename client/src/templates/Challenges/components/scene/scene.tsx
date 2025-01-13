@@ -121,7 +121,7 @@ export function Scene({
   const isPlayingSceneRef = useRef(false);
 
   // memoizing to prevent the useEffect from running on every render
-  const normalizedCommands = useMemo(() => {
+  const sortedCommands = useMemo(() => {
     const normalized = commands.flatMap(command => {
       const { startTime, finishTime, ...rest } = command;
 
@@ -242,7 +242,7 @@ export function Scene({
       setBackground(initBackground);
     };
 
-    normalizedCommands.forEach((command, commandIndex) => {
+    sortedCommands.forEach((command, commandIndex) => {
       // Start command timeout
       if (
         currentTime > command.time &&
@@ -275,8 +275,7 @@ export function Scene({
     });
 
     // an extra 500ms at the end to let the characters fade out (CSS transition
-    const resetTime =
-      normalizedCommands[normalizedCommands.length - 1].time + 500;
+    const resetTime = sortedCommands[sortedCommands.length - 1].time + 500;
 
     // TODO: this has to be _after_ the normalizedCommands.forEach, otherwise
     // the usedCommandsRef will be cleared and immediately refilled. This kind
@@ -288,7 +287,7 @@ export function Scene({
     currentTime,
     audio,
     audioTimestamp,
-    normalizedCommands,
+    sortedCommands,
     initCharacters,
     initBackground
   ]);
