@@ -325,23 +325,23 @@ Creating responsive layouts
 
 #### --text--
 
-What does ARIA stand for?
+What does `ARIA` stand for?
 
 #### --distractors--
 
-Advanced Responsive Interactive Applications
+Advanced Responsive Interactive Applications.
 
 ---
 
-Augmented Real-time Interface Accessibility
+Augmented Real-time Interface Accessibility.
 
 ---
 
-Adaptive Resource Integration Architecture
+Adaptive Resource Integration Architecture.
 
 #### --answer--
 
-Accessible Rich Internet Applications
+Accessible Rich Internet Applications.
 
 ### --question--
 
