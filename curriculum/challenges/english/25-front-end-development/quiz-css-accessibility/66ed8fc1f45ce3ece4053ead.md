@@ -329,7 +329,7 @@ What does `ARIA` stand for?
 
 #### --distractors--
 
-Advanced Responsive Interactive Applications.
+Advanced Responsive Interactive Applications
 
 ---
 
