@@ -435,21 +435,21 @@ Which rule applies `24px` padding to the top and bottom?
 
 #### --text--
 
-What does the `line-height` property do?
+For `padding: 10px 20px 30px 40px`, what is the correct order of values?
 
 #### --distractors--
 
-Controls the size of the font.
+Right, Top, Left, Bottom
 
 ---
 
-Controls the responsiveness of text.
+Top, Left, Bottom, Right
 
 ---
 
-Controls how much space is between the letters of text.
+Top, Bottom, Right, Left
 
 #### --answer--
 
-Controls how much space is between the lines of text.
+Top, Right, Bottom, Left
 
