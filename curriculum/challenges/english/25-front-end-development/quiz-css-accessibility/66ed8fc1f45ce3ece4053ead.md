@@ -337,7 +337,7 @@ Augmented Real-time Interface Accessibility.
 
 ---
 
-Adaptive Resource Integration Architecture.
+Adaptive Resource Integration Architecture
 
 #### --answer--
 
