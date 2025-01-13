@@ -333,7 +333,7 @@ Advanced Responsive Interactive Applications
 
 ---
 
-Augmented Real-time Interface Accessibility.
+Augmented Real-time Interface Accessibility
 
 ---
 
