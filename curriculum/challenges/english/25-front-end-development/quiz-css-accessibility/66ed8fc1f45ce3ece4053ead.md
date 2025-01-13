@@ -325,7 +325,7 @@ Creating responsive layouts
 
 #### --text--
 
-What does `ARIA` stand for?
+What does ARIA stand for?
 
 #### --distractors--
 
