@@ -19,6 +19,10 @@ interface CharacterStyles {
   opacity?: number;
 }
 
+function getRandomInt(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 export function Character({
   position,
   opacity,
@@ -34,17 +38,17 @@ export function Character({
     let talkInterval: NodeJS.Timeout | null = null;
 
     if (isBlinking) {
-      const msBetweenIntervals = Math.floor(Math.random() * 3000) + 2000;
+      const blinkPeriod = getRandomInt(2000, 5000);
       blinkInterval = setInterval(() => {
-        const msBlinkDelay = Math.floor(Math.random() * 1000);
+        const blinkJitter = getRandomInt(0, 1000);
         setTimeout(() => {
           setEyesAreOpen(false);
 
           setTimeout(() => {
             setEyesAreOpen(true);
           }, 30); // always unblink after 30ms
-        }, msBlinkDelay);
-      }, msBetweenIntervals);
+        }, blinkJitter);
+      }, blinkPeriod);
     }
 
     if (isTalking) {
@@ -65,10 +69,6 @@ export function Character({
       talkInterval = setInterval(() => {
         talk();
       }, 300);
-    }
-
-    function getRandomInt(min: number, max: number): number {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     // Clear intervals when component is unmounted or conditions change
