@@ -24,18 +24,22 @@ function filesToMarkdown(challengeFiles = []) {
 
     const fileExtension = challengeFile.ext;
     const fileName = challengeFile.name;
-    const fileType = fileExtension === 'js' ? 'javascript' : fileExtension;
     let fileDescription;
 
     if (!moreThanOneFile) {
       fileDescription = '';
-    } else if (fileExtension === 'html') {
-      fileDescription = `<!-- file: ${fileName}.${fileExtension} -->\n`;
     } else {
-      fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
+      switch (fileExtension) {
+        case 'html':
+          fileDescription = `<!-- file: ${fileName}.${fileExtension} -->\n`;
+          break;
+        default:
+          fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
+          break;
+      }
     }
 
-    return `${fileString}\`\`\`${fileType}\n${fileDescription}${challengeFile.contents}\n\`\`\`\n\n`;
+    return `${fileString}\`\`\`${fileExtension}\n${fileDescription}${challengeFile.contents}\n\`\`\`\n\n`;
   }, '\n');
 }
 
@@ -51,6 +55,8 @@ export function insertEditableRegions(challengeFiles = []) {
           return '\n# User Editable Region\n';
         case 'js':
           return '\n// User Editable Region\n';
+        case 'jsx':
+          return '\n{/* User Editable Region */}\n';
         default:
           return '\nUser Editable Region\n';
       }
@@ -82,22 +88,27 @@ function editableRegionsToMarkdown(challengeFiles = []) {
 
     const fileExtension = challengeFile.ext;
     const fileName = challengeFile.name;
-    const fileType = fileExtension === 'js' ? 'javascript' : fileExtension;
+
     let fileDescription;
 
     if (!moreThanOneFile) {
       fileDescription = '';
-    } else if (fileExtension === 'html') {
-      fileDescription = `<!-- file: ${fileName}.${fileExtension} -->\n`;
     } else {
-      fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
+      switch (fileExtension) {
+        case 'html':
+          fileDescription = `<!-- file: ${fileName}.${fileExtension} -->\n`;
+          break;
+        default:
+          fileDescription = `/* file: ${fileName}.${fileExtension} */\n`;
+          break;
+      }
     }
 
     const [start, end] = challengeFile.editableRegionBoundaries;
     const lines = challengeFile.contents.split('\n');
     const editableRegion = lines.slice(start + 1, end + 4).join('\n');
 
-    return `${fileString}\`\`\`${fileType}\n${fileDescription}${editableRegion}\n\`\`\`\n\n`;
+    return `${fileString}\`\`\`${fileExtension}\n${fileDescription}${editableRegion}\n\`\`\`\n\n`;
   }, '\n');
 }
 

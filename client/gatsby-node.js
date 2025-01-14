@@ -305,6 +305,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       msTrophyId: String
       fillInTheBlank: FillInTheBlank
       scene: Scene
+      transcript: String
       quizzes: [Quiz]
     }
     type FileContents {

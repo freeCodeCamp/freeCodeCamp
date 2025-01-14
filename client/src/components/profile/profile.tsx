@@ -45,7 +45,7 @@ const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
     <FullWidthRow>
       <Alert variant='info'>{t('profile.you-change-privacy')}</Alert>
-      <Spacer size='m' />
+      <Spacer size='xl' />
     </FullWidthRow>
   );
 };
