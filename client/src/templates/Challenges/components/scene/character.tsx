@@ -34,17 +34,20 @@ export function Character({
   const [mouthIsOpen, setMouthIsOpen] = useState(false);
 
   useEffect(() => {
-    let blinkInterval: NodeJS.Timeout | null = null;
-    let talkInterval: NodeJS.Timeout | null = null;
+    let blinkIntervalId: NodeJS.Timeout;
+    let talkIntervalId: NodeJS.Timeout;
+    let blinkTimeoutId: NodeJS.Timeout;
+    let mouthOpenTimeoutId: NodeJS.Timeout;
+    let mouthCloseTimeoutId: NodeJS.Timeout;
 
     if (isBlinking) {
       const blinkPeriod = getRandomInt(2000, 5000);
-      blinkInterval = setInterval(() => {
+      blinkIntervalId = setInterval(() => {
         const blinkJitter = getRandomInt(0, 1000);
-        setTimeout(() => {
+        blinkTimeoutId = setTimeout(() => {
           setEyesAreOpen(false);
 
-          setTimeout(() => {
+          blinkTimeoutId = setTimeout(() => {
             setEyesAreOpen(true);
           }, 30); // always unblink after 30ms
         }, blinkJitter);
@@ -56,17 +59,17 @@ export function Character({
         const openTimeout = getRandomInt(0, 100);
         const closeTimeout = getRandomInt(150, 300);
 
-        setTimeout(() => {
+        mouthOpenTimeoutId = setTimeout(() => {
           setMouthIsOpen(true);
         }, openTimeout);
 
-        setTimeout(() => {
+        mouthCloseTimeoutId = setTimeout(() => {
           setMouthIsOpen(false);
         }, closeTimeout);
       };
 
       talk();
-      talkInterval = setInterval(() => {
+      talkIntervalId = setInterval(() => {
         talk();
       }, 300);
     }
@@ -75,8 +78,11 @@ export function Character({
     return () => {
       setEyesAreOpen(true);
       setMouthIsOpen(false);
-      if (blinkInterval) clearInterval(blinkInterval);
-      if (talkInterval) clearInterval(talkInterval);
+      clearInterval(blinkIntervalId);
+      clearInterval(talkIntervalId);
+      clearTimeout(blinkTimeoutId);
+      clearTimeout(mouthOpenTimeoutId);
+      clearTimeout(mouthCloseTimeoutId);
     };
   }, [isBlinking, isTalking]);
 
