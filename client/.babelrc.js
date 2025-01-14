@@ -51,7 +51,8 @@ const config = {
           'sql',
           'svg',
           'typescript',
-          'xml'
+          'xml',
+          'bash'
         ],
         theme: 'default',
         css: true,
