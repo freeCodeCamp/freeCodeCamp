@@ -42,7 +42,7 @@ export function Scene({
   // if there are timestamps, we use the difference between them as the duration
   // if not, we assume we're playing the whole audio file.
   const duration =
-    audio.startTimestamp !== undefined && audio.finishTimestamp !== undefined
+    audio.startTimestamp !== null && audio.finishTimestamp !== null
       ? sToMs(audio.finishTimestamp - audio.startTimestamp)
       : Infinity;
 
