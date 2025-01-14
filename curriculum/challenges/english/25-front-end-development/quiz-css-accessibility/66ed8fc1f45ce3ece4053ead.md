@@ -325,23 +325,23 @@ Creating responsive layouts
 
 #### --text--
 
-Which of the following is a CSS Grid property?
+What does ARIA stand for?
 
 #### --distractors--
 
-`flex-direction`
+Advanced Responsive Interactive Applications
 
 ---
 
-`float`
+Augmented Real-time Interface Accessibility
 
 ---
 
-`position`
+Adaptive Resource Integration Architecture
 
 #### --answer--
 
-`grid-area`
+Accessible Rich Internet Applications
 
 ### --question--
 
