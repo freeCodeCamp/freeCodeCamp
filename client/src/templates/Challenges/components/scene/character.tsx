@@ -35,10 +35,7 @@ export function Character({
 
   useEffect(() => {
     let blinkIntervalId: NodeJS.Timeout;
-    let talkIntervalId: NodeJS.Timeout;
     let blinkTimeoutId: NodeJS.Timeout;
-    let mouthOpenTimeoutId: NodeJS.Timeout;
-    let mouthCloseTimeoutId: NodeJS.Timeout;
 
     if (isBlinking) {
       const blinkPeriod = getRandomInt(2000, 5000);
@@ -53,6 +50,19 @@ export function Character({
         }, blinkJitter);
       }, blinkPeriod);
     }
+
+    // Clear intervals when component is unmounted or conditions change
+    return () => {
+      setEyesAreOpen(true);
+      clearInterval(blinkIntervalId);
+      clearTimeout(blinkTimeoutId);
+    };
+  }, [isBlinking]);
+
+  useEffect(() => {
+    let talkIntervalId: NodeJS.Timeout;
+    let mouthOpenTimeoutId: NodeJS.Timeout;
+    let mouthCloseTimeoutId: NodeJS.Timeout;
 
     if (isTalking) {
       const talk = () => {
@@ -76,15 +86,12 @@ export function Character({
 
     // Clear intervals when component is unmounted or conditions change
     return () => {
-      setEyesAreOpen(true);
       setMouthIsOpen(false);
-      clearInterval(blinkIntervalId);
       clearInterval(talkIntervalId);
-      clearTimeout(blinkTimeoutId);
       clearTimeout(mouthOpenTimeoutId);
       clearTimeout(mouthCloseTimeoutId);
     };
-  }, [isBlinking, isTalking]);
+  }, [isTalking]);
 
   const characterWrapStyles: CharacterStyles = {
     opacity
