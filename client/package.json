@@ -164,7 +164,6 @@
     "i18next-fs-backend": "2.3.2",
     "jest-json-schema-extended": "1.0.1",
     "joi": "17.12.2",
-    "joi-objectid": "3.0.1",
     "js-yaml": "4.1.0",
     "monaco-editor-webpack-plugin": "4.2.0",
     "node-fetch": "2.7.0",

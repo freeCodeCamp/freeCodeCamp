@@ -807,9 +807,6 @@ importers:
       joi:
         specifier: 17.12.2
         version: 17.12.2
-      joi-objectid:
-        specifier: 3.0.1
-        version: 3.0.1
       js-yaml:
         specifier: 4.1.0
         version: 4.1.0
