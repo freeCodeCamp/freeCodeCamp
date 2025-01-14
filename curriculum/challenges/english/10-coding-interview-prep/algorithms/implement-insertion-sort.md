@@ -84,7 +84,7 @@ assert.deepEqual(insertionSort([5, 4, 33, 2, 8]), [2, 4, 5, 8, 33])
 `insertionSort` should not use the built-in `.sort()` method.
 
 ```js
-assert(isBuiltInSortUsed());
+assert.isFalse(isBuiltInSortUsed());
 ```
 
 # --seed--
@@ -101,9 +101,14 @@ function isSorted(a){
 
 function isBuiltInSortUsed(){
   let sortUsed = false;
+  const temp = Array.prototype.sort;
   Array.prototype.sort = () => sortUsed = true;
-  insertionSort([0, 1]);
-  return !sortUsed;
+  try {
+    insertionSort([0, 1]);
+  } finally {
+    Array.prototype.sort = temp;
+  }
+  return sortUsed;
 }
 ```
 
