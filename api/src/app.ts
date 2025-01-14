@@ -119,7 +119,7 @@ export const build = async (
   void fastify.register(mailer, { provider });
 
   // Swagger plugin
-  if (FCC_ENABLE_SWAGGER_UI || fastify.gb.isOn('swagger-ui')) {
+  if (FCC_ENABLE_SWAGGER_UI ?? fastify.gb.isOn('swagger-ui')) {
     void fastify.register(fastifySwagger, {
       openapi: {
         openapi: '3.1.0',
@@ -147,7 +147,7 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
-  if (FCC_ENABLE_SHADOW_CAPTURE || fastify.gb.isOn('shadow-capture')) {
+  if (FCC_ENABLE_SHADOW_CAPTURE ?? fastify.gb.isOn('shadow-capture')) {
     void fastify.register(shadowCapture);
   }
 
@@ -204,7 +204,7 @@ export const build = async (
     }
   });
 
-  if (FCC_ENABLE_EXAM_ENVIRONMENT || fastify.gb.isOn('exam-environment')) {
+  if (FCC_ENABLE_EXAM_ENVIRONMENT ?? fastify.gb.isOn('exam-environment')) {
     void fastify.register(function (fastify, _opts, done) {
       fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
 
@@ -214,7 +214,7 @@ export const build = async (
     void fastify.register(examEnvironmentOpenRoutes);
   }
 
-  if (FCC_ENABLE_SENTRY_ROUTES || fastify.gb.isOn('sentry-routes')) {
+  if (FCC_ENABLE_SENTRY_ROUTES ?? fastify.gb.isOn('sentry-routes')) {
     void fastify.register(publicRoutes.sentryRoutes);
   }
 

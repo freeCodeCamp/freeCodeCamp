@@ -159,17 +159,21 @@ export const PORT = process.env.PORT || '3000';
 // container.
 export const HOST = process.env.HOST || '0.0.0.0';
 export const API_LOCATION = process.env.API_LOCATION;
-export const FCC_ENABLE_SWAGGER_UI =
-  process.env.FCC_ENABLE_SWAGGER_UI === 'true';
+export const FCC_ENABLE_SWAGGER_UI = undefinedOrBool(
+  process.env.FCC_ENABLE_SWAGGER_UI
+);
 export const FCC_ENABLE_DEV_LOGIN_MODE =
   process.env.FCC_ENABLE_DEV_LOGIN_MODE === 'true';
 export const FCC_API_LOG_LEVEL = _FCC_API_LOG_LEVEL;
-export const FCC_ENABLE_SHADOW_CAPTURE =
-  process.env.FCC_ENABLE_SHADOW_CAPTURE === 'true';
-export const FCC_ENABLE_EXAM_ENVIRONMENT =
-  process.env.FCC_ENABLE_EXAM_ENVIRONMENT === 'true';
-export const FCC_ENABLE_SENTRY_ROUTES =
-  process.env.FCC_ENABLE_SENTRY_ROUTES === 'true';
+export const FCC_ENABLE_SHADOW_CAPTURE = undefinedOrBool(
+  process.env.FCC_ENABLE_SHADOW_CAPTURE
+);
+export const FCC_ENABLE_EXAM_ENVIRONMENT = undefinedOrBool(
+  process.env.FCC_ENABLE_EXAM_ENVIRONMENT
+);
+export const FCC_ENABLE_SENTRY_ROUTES = undefinedOrBool(
+  process.env.FCC_ENABLE_SENTRY_ROUTES
+);
 export const FREECODECAMP_NODE_ENV = _FREECODECAMP_NODE_ENV;
 export const SENTRY_DSN =
   process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
@@ -192,3 +196,11 @@ export const GROWTHBOOK_FASTIFY_API_HOST =
   process.env.GROWTHBOOK_FASTIFY_API_HOST;
 export const GROWTHBOOK_FASTIFY_CLIENT_KEY =
   process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY;
+
+function undefinedOrBool(val: string | undefined): undefined | boolean {
+  if (!val) {
+    return undefined;
+  }
+
+  return val === 'true';
+}
