@@ -38,6 +38,7 @@ const config = {
       'prismjs',
       {
         languages: [
+          'bash',
           'clike',
           'css',
           'html',
@@ -51,8 +52,7 @@ const config = {
           'sql',
           'svg',
           'typescript',
-          'xml',
-          'bash'
+          'xml'
         ],
         theme: 'default',
         css: true,
