@@ -6,8 +6,52 @@
   "superBlock": "b1-english-for-developers",
   "challengeOrder": [
     {
-      "id": "6660a03636891e5d6c1d75a8",
-      "title": "Dialogue 1: I'm Tom"
+      "id": "67828be909569821c4e0c666",
+      "title": "Dialogue 1: Choosing a Programming Language"
+    },
+    {
+      "id": "6784d0806e8ebc00832820cf",
+      "title": "Task 1"
+    },
+    {
+      "id": "67876442173eb3094261233a",
+      "title": "Task 2"
+    },
+    {
+      "id": "678766ada9f08515d38da1fa",
+      "title": "Task 3"
+    },
+    {
+      "id": "67876786972db81e08e7ebba",
+      "title": "Task 4"
+    },
+    {
+      "id": "67878200c2b78d332227efe7",
+      "title": "Task 5"
+    },
+    {
+      "id": "6787842dd5afb340b8ff2dcc",
+      "title": "Task 6"
+    },
+    {
+      "id": "67878592e8b64048204e13ba",
+      "title": "Task 7"
+    },
+    {
+      "id": "6787868b7d7c5650aa21b529",
+      "title": "Task 8"
+    },
+    {
+      "id": "6787870b93ad4154701b9411",
+      "title": "Task 9"
+    },
+    {
+      "id": "67878956e0155b60edc2ee37",
+      "title": "Task 10"
+    },
+    {
+      "id": "67878ab70cc91669e1d36793",
+      "title": "Task 11"
     }
   ],
   "helpCategory": "English",
