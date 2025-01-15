@@ -221,6 +221,7 @@ export type ChallengeNode = {
     template: string;
     tests: Test[];
     title: string;
+    transcript: string;
     translationPending: boolean;
     url: string;
     usesMultifileEditor: boolean;
