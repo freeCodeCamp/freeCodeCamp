@@ -1,0 +1,100 @@
+name: CD -- Deploy - API (Docker Swarm)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  static:
+    runs-on: ubuntu-24.04
+    outputs:
+      site_tld: ${{ steps.static_data.outputs.site_tld }}
+      environment: ${{ steps.static_data.outputs.environment }}
+
+    steps:
+      - name: Set site_tld
+        id: static_data
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/prod-staging" ]; then
+            echo "site_tld=dev" >> $GITHUB_OUTPUT
+            echo "environment=staging" >> $GITHUB_OUTPUT
+          elif [ "${{ github.ref }}" == "refs/heads/prod-current" ]; then
+            echo "site_tld=org" >> $GITHUB_OUTPUT
+            echo "environment=production" >> $GITHUB_OUTPUT
+          else
+            echo "site_tld=dev" >> $GITHUB_OUTPUT
+            echo "environment=staging" >> $GITHUB_OUTPUT
+          fi
+
+  build:
+    name: Build & Push Docker Image
+    needs: static
+    uses: ./.github/workflows/re--docker-docr.yml
+    with:
+      site_tld: ${{ needs.static.outputs.site_tld }}
+      app: api
+
+  deploy:
+    runs-on: ubuntu-24.04
+    needs: [static, build]
+    permissions:
+      deployments: write
+    environment:
+      name: ${{ needs.static.outputs.environment }}
+      url: https://api.freecodecamp.${{ needs.static.outputs.site_tld }}/status/ping?version=${{ needs.build.outputs.tagname }}
+
+    steps:
+      - name: Setup and connect to Tailscale network
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          version: latest
+
+      - name: Configure SSH
+        # This is a workaround to avoid the SSH warning about known hosts & strict host key checking.
+        # It's not a problem for us, because we're using Tailscale to connect.
+        run: |
+          mkdir -p ~/.ssh
+          echo "Host *
+            UserKnownHostsFile=/dev/null
+            StrictHostKeyChecking no" > ~/.ssh/config
+
+      - name: Check connection to Deployment Target
+        run: |
+          tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Machine not found"; exit 1; }
+          ssh $TS_USERNAME@$TS_MACHINE_NAME "uptime"
+
+      - name: Deploy with Docker Stack
+        env:
+          STACK_NAME: stg-api
+          RUNTIME_ENVS: ${{ secrets.RUNTIME_ENVS }}
+          DEPLOYMENT_VERSION: ${{ needs.build.outputs.tagname }}
+        run: |
+          REMOTE_USER=$TS_USERNAME
+          ssh $TS_USERNAME@$TS_MACHINE_NAME /bin/bash << EOF
+
+            # Change to the config directory
+            cd /home/${REMOTE_USER}/docker-swarm-config/stacks/api || exit 1
+            echo "Debug: Current directory: \$(pwd)"
+
+            # Create temp file for the environment variables
+            echo "${RUNTIME_ENVS}" > .env.tmp
+            echo "DEPLOYMENT_VERSION=${DEPLOYMENT_VERSION}" >> .env.tmp
+
+            # Source the environment variables
+            set -a  # Automatically export all variables
+            source .env.tmp || exit 1
+            set +a
+
+            # Clean up the temp file
+            rm -f .env.tmp
+
+            # Verify the environment variables
+            echo "Debug: Sanity check variables: "
+            env | grep -E '^DEPLOYMENT' || echo 'Vars not found'
+            echo "Debug: Sanity check config: "
+            docker stack config -c stack-api.yml | rg 'DOMAIN' || echo 'Config not found'
+
+          EOF
+        shell: bash
