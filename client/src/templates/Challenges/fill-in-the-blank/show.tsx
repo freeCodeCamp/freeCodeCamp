@@ -21,6 +21,7 @@ import ChallegeExplanation from '../components/challenge-explanation';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import FillInTheBlanks from '../components/fill-in-the-blanks';
+import ChallengeTranscript from '../components/challenge-transcript';
 import PrismFormatted from '../components/prism-formatted';
 import {
   challengeMounted,
@@ -33,6 +34,7 @@ import Scene from '../components/scene/scene';
 import { SceneSubject } from '../components/scene/scene-subject';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
+import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
 
 import './show.css';
 
@@ -80,6 +82,7 @@ const ShowFillInTheBlank = ({
         description,
         instructions,
         explanation,
+        transcript,
         superBlock,
         block,
         translationPending,
@@ -133,7 +136,10 @@ const ShowFillInTheBlank = ({
     const blankAnswers = fillInTheBlank.blanks.map(b => b.answer);
 
     const newAnswersCorrect = userAnswers.map(
-      (userAnswer, i) => !!userAnswer && userAnswer.trim() === blankAnswers[i]
+      (userAnswer, i) =>
+        !!userAnswer &&
+        replaceAppleQuotes(userAnswer.trim()).toLowerCase() ===
+          blankAnswers[i].toLowerCase()
     );
     setAnswersCorrect(newAnswersCorrect);
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
@@ -209,6 +215,8 @@ const ShowFillInTheBlank = ({
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              {transcript && <ChallengeTranscript transcript={transcript} />}
+
               {instructions && (
                 <>
                   <PrismFormatted text={instructions} />
@@ -290,6 +298,7 @@ export const query = graphql`
             feedback
           }
         }
+        transcript
         scene {
           setup {
             background

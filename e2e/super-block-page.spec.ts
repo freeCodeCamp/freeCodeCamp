@@ -123,7 +123,9 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       // Module
       await expect(
-        page.getByRole('button', { name: /Basic CSS/ })
+        page.getByRole('button', {
+          name: /Basic CSS \d+ of \d+ steps complete/
+        })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Block
@@ -153,7 +155,9 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       // Basic HTML module
       await expect(
-        page.getByRole('button', { name: /Basic HTML/ })
+        page.getByRole('button', {
+          name: /Basic HTML \d+ of \d+ steps complete/
+        })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // What is HTML block

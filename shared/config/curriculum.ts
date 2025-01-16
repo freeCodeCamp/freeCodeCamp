@@ -30,9 +30,6 @@ export enum SuperBlocks {
 }
 
 /*
- * SuperBlockStages.New = SHOW_NEW_CURRICULUM === 'true'
- * 'New' -> shown only on english staging at the moment
- *
  * SuperBlockStages.Upcoming = SHOW_UPCOMING_CHANGES === 'true'
  * 'Upcoming' is for development -> not shown on stag or prod anywhere
  *
@@ -46,7 +43,6 @@ export enum SuperBlockStage {
   Professional,
   Extra,
   Legacy,
-  New,
   Upcoming,
   Next,
   NextEnglish
@@ -63,12 +59,10 @@ const defaultStageOrder = [
 ];
 
 export function getStageOrder({
-  showNewCurriculum,
   showUpcomingChanges
 }: Config): SuperBlockStage[] {
   const stageOrder = [...defaultStageOrder];
 
-  if (showNewCurriculum) stageOrder.push(SuperBlockStage.New);
   if (showUpcomingChanges) stageOrder.push(SuperBlockStage.Upcoming);
   return stageOrder;
 }
@@ -108,7 +102,6 @@ export const superBlockStages: StageMap = {
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.PythonForEverybody
   ],
-  [SuperBlockStage.New]: [],
   [SuperBlockStage.Upcoming]: []
 };
 
@@ -251,7 +244,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 Object.freeze(notAuditedSuperBlocks);
 
 type Config = {
-  showNewCurriculum: boolean;
   showUpcomingChanges: boolean;
 };
 
@@ -272,7 +264,6 @@ export function getAuditedSuperBlocks({
 
   // To find the audited superblocks, we need to start with all superblocks.
   const flatSuperBlockMap = generateSuperBlockList({
-    showNewCurriculum: true,
     showUpcomingChanges: true
   });
   const auditedSuperBlocks = flatSuperBlockMap.filter(

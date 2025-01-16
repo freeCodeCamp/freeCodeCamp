@@ -14,13 +14,23 @@ To prevent the text content from overflowing, give your `span[class~="sr-only"]`
 Your `span[class~="sr-only"]` selector should have an `overflow` property set to `hidden`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('overflow') === 'hidden');
+assert.strictEqual(
+  new __helpers.CSSHelp(document)
+    .getStyle('span[class~="sr-only"]')
+    ?.getPropertyValue('overflow'),
+  'hidden'
+);
 ```
 
 Your `span[class~="sr-only"]` selector should have a `white-space` property set to `nowrap`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPropertyValue('white-space') === 'nowrap');
+assert.strictEqual(
+  new __helpers.CSSHelp(document)
+    .getStyle('span[class~="sr-only"]')
+    ?.getPropertyValue('white-space'),
+  'nowrap'
+);
 ```
 
 # --seed--
@@ -31,10 +41,10 @@ assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPr
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Balance Sheet</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main>
@@ -52,7 +62,9 @@ assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPr
         </div>
         <div class="table-wrap">
           <table>
-            <caption>Assets</caption>
+            <caption>
+              Assets
+            </caption>
             <thead>
               <tr>
                 <td></td>
@@ -89,13 +101,15 @@ assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPr
             </tbody>
           </table>
           <table>
-            <caption>Liabilities</caption>
+            <caption>
+              Liabilities
+            </caption>
             <thead>
               <tr>
-              <td></td>
-              <th><span class="sr-only">2019</span></th>
-              <th><span class="sr-only">2020</span></th>
-              <th><span class="sr-only">2021</span></th>
+                <td></td>
+                <th><span class="sr-only">2019</span></th>
+                <th><span class="sr-only">2020</span></th>
+                <th><span class="sr-only">2021</span></th>
               </tr>
             </thead>
             <tbody>
@@ -126,13 +140,15 @@ assert(new __helpers.CSSHelp(document).getStyle('span[class~="sr-only"]')?.getPr
             </tbody>
           </table>
           <table>
-            <caption>Net Worth</caption>
+            <caption>
+              Net Worth
+            </caption>
             <thead>
               <tr>
-              <td></td>
-              <th><span class="sr-only">2019</span></th>
-              <th><span class="sr-only">2020</span></th>
-              <th><span class="sr-only">2021</span></th>
+                <td></td>
+                <th><span class="sr-only">2019</span></th>
+                <th><span class="sr-only">2020</span></th>
+                <th><span class="sr-only">2021</span></th>
               </tr>
             </thead>
             <tbody>

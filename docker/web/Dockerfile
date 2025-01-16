@@ -26,18 +26,12 @@ ARG PAYPAL_CLIENT_ID
 ARG PATREON_CLIENT_ID
 ARG DEPLOYMENT_ENV
 ARG SHOW_UPCOMING_CHANGES
-ARG SHOW_NEW_CURRICULUM
 ARG GROWTHBOOK_URI
 ARG FREECODECAMP_NODE_ENV
 
-# We're installing specific packages even though it is not strictly necessary -
-# pnpm install would work. The idea is to make the dependencies explicit and
-# keep them under our control.
-RUN pnpm config set dedupe-peer-dependents false
-# Scripts need to be run at this stage (--ignore-scripts cannot be used) because
-# without them, Gatsby will not install sharp.
-RUN pnpm install -F=shared -F=client -F=ui -F=browser-scripts -F=challenge-parser \
-  --frozen-lockfile
+# For simplicity and because node_modules do not make it into the final image,
+# we can just install all dependencies here.
+RUN pnpm install --frozen-lockfile
 RUN pnpm build:client
 
 FROM node:20-alpine

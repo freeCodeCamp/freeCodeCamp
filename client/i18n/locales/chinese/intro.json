@@ -1842,7 +1842,7 @@
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
         ]
       },
       "lab-event-hub": {
@@ -1893,7 +1893,7 @@
       "workshop-final-exams-table": {
         "title": "Build a Final Exams Table",
         "intro": [
-          "In this workshop, you will learn how to work with HTML tables by building a table of final exams."
+          "In this workshop, you will practice working with HTML tables by building a table of final exams."
         ]
       },
       "lab-book-catalog-table": {
@@ -2325,7 +2325,7 @@
       "lab-tribute-page": {
         "title": "Build a Tribute Page",
         "intro": [
-          "in this lab, you'll build a tribute page for a subject of your choosing, fictional or real."
+          "In this lab, you'll build a tribute page for a subject of your choosing, fictional or real."
         ]
       },
       "review-css-accessibility": {

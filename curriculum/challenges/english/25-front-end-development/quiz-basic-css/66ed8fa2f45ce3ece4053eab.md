@@ -149,11 +149,11 @@ Which rule is correct for setting the width and height in CSS?
 
 #### --text--
 
-Which selector is correct to target `h1` elements inside of a `div`?
+Which selector correctly targets `h1` elements only when inside a `div`?
 
 #### --distractors--
 
-`div + h1 {}`
+`div, h1 {}`
 
 ---
 
@@ -161,7 +161,7 @@ Which selector is correct to target `h1` elements inside of a `div`?
 
 ---
 
-`div > h1 {}`
+`div + h1 {}`
 
 #### --answer--
 
@@ -215,7 +215,7 @@ Which selector is correct to target the next sibling of an `img`?
 
 #### --text--
 
-Which selector is correct to target all siblings of an `img`?
+Which selector is correct to target all siblings preceded by an `img` element?
 
 #### --distractors--
 
@@ -381,7 +381,7 @@ Gives animations to the page.
 
 ---
 
-Improves Search Emgine Optimization (SEO).
+Improves Search Engine Optimization (SEO).
 
 #### --answer--
 
@@ -435,21 +435,21 @@ Which rule applies `24px` padding to the top and bottom?
 
 #### --text--
 
-What does the `line-height` property do?
+For `padding: 10px 20px 30px 40px`, what is the correct order of values?
 
 #### --distractors--
 
-Controls the size of the font.
+Right, Top, Left, Bottom
 
 ---
 
-Controls the responsiveness of text.
+Top, Left, Bottom, Right
 
 ---
 
-Controls how much space is between the letters of text.
+Top, Bottom, Right, Left
 
 #### --answer--
 
-Controls how much space is between the lines of text.
+Top, Right, Bottom, Left
 
