@@ -334,7 +334,7 @@ textarea.inputarea {
   bottom: var(--monaco-scrollbar-arrow-icon-top-bottom) !important;
 }
 
-/* we can live with with no color change for hover state if browser doesn't
+/* we can live with no color change for hover state if browser doesn't
    support :has (the mouse cursor will still change to pointer) */
 @supports (selector(html:has(body))) {
   .vs .monaco-scrollable-element .scrollbar .arrow-background:hover,
