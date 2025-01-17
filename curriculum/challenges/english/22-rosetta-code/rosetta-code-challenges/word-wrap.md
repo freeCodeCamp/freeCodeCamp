@@ -35,25 +35,25 @@ assert.equal(typeof wrap, 'function');
 assert.equal(typeof wrap('abc', 10), 'string');
 ```
 
-`wrap(text,80)` should return `4` lines.
+`wrap(text,80)` should return 4 lines.
 
 ```js
 assert(wrapped80.split('\n').length === 4);
 ```
 
-Your `wrap` function should return our expected text.
+Your `wrap` function should return the expected text.
 
 ```js
 assert.equal(wrapped80.split('\n')[0], firstRow80);
 ```
 
-`wrap(text,42)` should return `7` lines.
+`wrap(text,42)` should return 7 lines.
 
 ```js
 assert(wrapped42.split('\n').length === 7);
 ```
 
-Your `wrap` function should return our expected text.
+Your `wrap` function should return the expected text.
 
 ```js
 assert.equal(wrapped42.split('\n')[0], firstRow42);
