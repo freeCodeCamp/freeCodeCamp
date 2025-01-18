@@ -285,7 +285,7 @@ Which Web API is effective for measuring performance in JavaScript?
 
 #### --distractors--
 
-`window.getPerformaceStatistics()`
+`window.getPerformanceStatistics()`
 
 ---
 
