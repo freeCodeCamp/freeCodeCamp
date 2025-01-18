@@ -193,7 +193,7 @@ assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value=
 
           --fcc-editable-region--
           <select name="food" id="food">
-
+            
           </select>
           --fcc-editable-region--
         </fieldset>
