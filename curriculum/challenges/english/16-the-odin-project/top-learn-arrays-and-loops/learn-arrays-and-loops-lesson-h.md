@@ -49,7 +49,7 @@ console.log(newStrings);
 
 ---
 
-`['apple', 'banana', 'cherry', 'orange', 'kiwi']`
+`['banana', 'cherry', 'orange', 'kiwi', 'mango' ]`
 
 
 ## --video-solution--

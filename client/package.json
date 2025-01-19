@@ -34,7 +34,8 @@
     "serve-ci": "serve -l 8000 -c serve.json public",
     "prestand-alone": "pnpm run prebuild",
     "stand-alone": "gatsby develop",
-    "validate-keys": "ts-node --project ../tsconfig.json ../tools/scripts/lint/validate-keys"
+    "validate-keys": "ts-node --project ../tsconfig.json ../tools/scripts/lint/validate-keys",
+    "lint-css": "stylelint '**/*.css'"
   },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "7.23.3",
@@ -80,12 +81,12 @@
     "gatsby-source-filesystem": "3.15.0",
     "gatsby-transformer-remark": "5.25.1",
     "i18next": "22.5.1",
+    "instantsearch.js": "4.75.3",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
     "micromark": "4.0.0",
     "monaco-editor": "0.28.1",
     "nanoid": "3.3.7",
-    "instantsearch.js": "4.75.3",
     "normalize-url": "4.5.1",
     "path-browserify": "1.0.1",
     "postcss": "8.4.35",
@@ -101,8 +102,8 @@
     "react-helmet": "6.1.0",
     "react-hotkeys": "2.0.0",
     "react-i18next": "12.3.1",
-    "react-instantsearch-core": "7.13.6",
     "react-instantsearch": "7.13.6",
+    "react-instantsearch-core": "7.13.6",
     "react-monaco-editor": "0.40.0",
     "react-redux": "7.2.9",
     "react-reflex": "4.1.0",
@@ -111,7 +112,7 @@
     "react-spinkit": "3.0.0",
     "react-tooltip": "4.5.1",
     "react-transition-group": "4.4.5",
-    "react-youtube": "7.14.0",
+    "react-youtube": "10.1.0",
     "redux": "4.2.1",
     "redux-actions": "2.6.5",
     "redux-observable": "1.2.0",
@@ -169,6 +170,7 @@
     "react-test-renderer": "16.14.0",
     "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
+    "stylelint": "16.12.0",
     "ts-node": "10.9.2",
     "webpack": "5.90.3"
   }
