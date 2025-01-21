@@ -274,7 +274,9 @@ test.describe('Donation modal appearance logic - New user', () => {
 
 test.describe('Donation modal appearance logic - Certified user claiming a new block', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
-  execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user');
+  test.beforeEach(() =>
+    execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user')
+  );
 
   test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
     page,
