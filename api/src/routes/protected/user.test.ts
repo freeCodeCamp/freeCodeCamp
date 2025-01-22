@@ -19,7 +19,8 @@ import { JWT_SECRET } from '../../utils/env';
 import {
   clearEnvExam,
   seedEnvExam,
-  seedEnvExamAttempt
+  seedEnvExamAttempt,
+  seedExamEnvExamAuthToken
 } from '../../../__mocks__/env-exam';
 import { getMsTranscriptApiUrl } from './user';
 
@@ -425,9 +426,19 @@ describe('userRoutes', () => {
         const countAfter =
           await fastifyTestInstance.prisma.envExamAttempt.count();
         expect(countAfter).toBe(0);
-        const examAttemptsAfter =
-          await fastifyTestInstance.prisma.envExamAttempt.findMany();
-        expect(examAttemptsAfter).toHaveLength(0);
+      });
+
+      test("POST deletes all the user's exam tokens", async () => {
+        await seedExamEnvExamAuthToken();
+        const countBefore =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
+        expect(countBefore).toBe(1);
+
+        await superPost('/account/delete');
+
+        const countAfter =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
+        expect(countAfter).toBe(0);
       });
     });
 
