@@ -421,11 +421,12 @@ describe('userRoutes', () => {
           await fastifyTestInstance.prisma.envExamAttempt.count();
         expect(countBefore).toBe(1);
 
-        await superPost('/account/delete');
+        const res = await superPost('/account/delete');
 
         const countAfter =
           await fastifyTestInstance.prisma.envExamAttempt.count();
         expect(countAfter).toBe(0);
+        expect(res.status).toBe(200);
       });
 
       test("POST deletes all the user's exam tokens", async () => {
@@ -434,11 +435,12 @@ describe('userRoutes', () => {
           await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
         expect(countBefore).toBe(1);
 
-        await superPost('/account/delete');
+        const res = await superPost('/account/delete');
 
         const countAfter =
           await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
         expect(countAfter).toBe(0);
+        expect(res.status).toBe(200);
       });
     });
 
