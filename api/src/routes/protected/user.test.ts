@@ -349,10 +349,6 @@ describe('userRoutes', () => {
     });
 
     describe('/account/delete', () => {
-      beforeEach(async () => {
-        await seedEnvExam();
-        await seedEnvExamAttempt();
-      });
       afterEach(async () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
           where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
@@ -418,12 +414,17 @@ describe('userRoutes', () => {
       });
 
       test("POST deletes all the user's exam attempts", async () => {
-        const examAttempts =
-          await fastifyTestInstance.prisma.envExamAttempt.findMany();
-        expect(examAttempts).toHaveLength(1);
+        await seedEnvExam();
+        await seedEnvExamAttempt();
+        const countBefore =
+          await fastifyTestInstance.prisma.envExamAttempt.count();
+        expect(countBefore).toBe(1);
 
         await superPost('/account/delete');
 
+        const countAfter =
+          await fastifyTestInstance.prisma.envExamAttempt.count();
+        expect(countAfter).toBe(0);
         const examAttemptsAfter =
           await fastifyTestInstance.prisma.envExamAttempt.findMany();
         expect(examAttemptsAfter).toHaveLength(0);
