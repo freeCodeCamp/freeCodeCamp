@@ -14,7 +14,7 @@ Watch the lecture video and answer the questions below.
 
 How can you effectively work with your keyboard, mouse, and other pointing devices?
 
-Many of you have been used to working with your keyboard and mouse for years on end for a variety of activities like gaming, performing tasks for work or surfing the web.
+Many of you have been used to working with your keyboard and mouse for years on end for a variety of activities like gaming, performing tasks for work, or surfing the web.
 
 But prolonged misuse of these devices can lead to serious health problems down the road.
 
