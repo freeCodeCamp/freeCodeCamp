@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { allowTrailingSlash } from './utils/url';
 
 // To run this test locally you will need to run: pnpm run start-ci;
 // Also, make sure that you have pm2 installed globally via: pnpm install -g pm2
@@ -74,7 +75,7 @@ test.describe('Legacy Challenge Path Redirection Tests', () => {
   for (const [input, expected] of pathsToTest) {
     test(`should redirect from ${input} to ${expected}`, async ({ page }) => {
       await page.goto(input);
-      await expect(page).toHaveURL(new RegExp(`${expected}/?`));
+      await expect(page).toHaveURL(allowTrailingSlash(expected));
     });
   }
 });
