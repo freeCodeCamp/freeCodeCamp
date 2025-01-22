@@ -694,7 +694,7 @@ describe('/exam-environment/', () => {
       });
     });
 
-    describe('GET /exam-environment/;', () => {
+    describe('GET /exam-environment/exams', () => {
       it('should return 403', async () => {
         const res = await superGet('/exam-environment/exams').set(
           'exam-environment-authorization-token',
