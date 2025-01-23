@@ -147,9 +147,6 @@ importers:
       '@fastify/oauth2':
         specifier: 7.8.1
         version: 7.8.1
-      '@fastify/rate-limit':
-        specifier: 9.1.0
-        version: 9.1.0
       '@fastify/swagger':
         specifier: 8.14.0
         version: 8.14.0
@@ -219,9 +216,6 @@ importers:
       query-string:
         specifier: 7.1.3
         version: 7.1.3
-      rate-limit-mongo:
-        specifier: ^2.3.2
-        version: 2.3.2
       stripe:
         specifier: 16.0.0
         version: 16.0.0
@@ -3037,9 +3031,6 @@ packages:
 
   '@fastify/oauth2@7.8.1':
     resolution: {integrity: sha512-PBIMizzgEOcUcttyfX1hC6CR9vESoI1lfNucBywgcqrxvknVg+zvBCgH2+oU8NvrpSDMtlY6nyuEYYZtVhDT7Q==}
-
-  '@fastify/rate-limit@9.1.0':
-    resolution: {integrity: sha512-h5dZWCkuZXN0PxwqaFQLxeln8/LNwQwH9popywmDCFdKfgpi4b/HoMH1lluy6P+30CG9yzzpSpwTCIPNB9T1JA==}
 
   '@fastify/send@2.1.0':
     resolution: {integrity: sha512-yNYiY6sDkexoJR0D8IDy3aRP3+L4wdqCpvx5WP+VtEU58sn7USmKynBzDQex5X42Zzvw2gNzzYgP90UfWShLFA==}
@@ -12749,10 +12740,6 @@ packages:
     resolution: {integrity: sha512-3oDzcogWGHZdkwrHyvJVpPjA7oNzY6ENOV3PsWJY9XYPZ6INo94Yd47s5may1U+nleBPwDhrRiTPMIvKaa3MQg==}
     engines: {node: '>=12'}
 
-  toad-cache@3.7.0:
-    resolution: {integrity: sha512-/m8M+2BJUpoJdgAHoG+baCwBT+tf2VraSfkBgl0Y00qIWt41DJ8R5B8nsEw0I58YwF5IZH6z24/2TobDKnqSWw==}
-    engines: {node: '>=12'}
-
   toidentifier@1.0.0:
     resolution: {integrity: sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==}
     engines: {node: '>=0.6'}
@@ -14489,7 +14476,7 @@ snapshots:
       '@babel/traverse': 7.23.7
       '@babel/types': 7.23.9
       convert-source-map: 2.0.0
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -16694,7 +16681,7 @@ snapshots:
       '@babel/helper-split-export-declaration': 7.22.6
       '@babel/parser': 7.23.6
       '@babel/types': 7.23.9
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -17032,12 +17019,6 @@ snapshots:
       simple-oauth2: 5.1.0
     transitivePeerDependencies:
       - supports-color
-
-  '@fastify/rate-limit@9.1.0':
-    dependencies:
-      '@lukeed/ms': 2.0.2
-      fastify-plugin: 4.5.1
-      toad-cache: 3.7.0
 
   '@fastify/send@2.1.0':
     dependencies:
@@ -19265,7 +19246,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
 
@@ -19592,7 +19573,7 @@ snapshots:
     dependencies:
       '@fastify/error': 3.4.1
       archy: 1.0.0
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       fastq: 1.17.1
     transitivePeerDependencies:
       - supports-color
@@ -21171,6 +21152,10 @@ snapshots:
       ms: 2.1.3
     optionalDependencies:
       supports-color: 5.5.0
+
+  debug@4.3.4:
+    dependencies:
+      ms: 2.1.2
 
   debug@4.3.4(supports-color@8.1.1):
     dependencies:
@@ -24106,7 +24091,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
 
@@ -24652,7 +24637,7 @@ snapshots:
 
   istanbul-lib-source-maps@4.0.1:
     dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       istanbul-lib-coverage: 3.2.0
       source-map: 0.6.1
     transitivePeerDependencies:
@@ -25198,7 +25183,7 @@ snapshots:
 
   json-schema-resolver@2.0.0:
     dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       rfdc: 1.3.0
       uri-js: 4.4.1
     transitivePeerDependencies:
@@ -28999,7 +28984,7 @@ snapshots:
     dependencies:
       '@hapi/hoek': 11.0.4
       '@hapi/wreck': 18.1.0
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       joi: 17.12.2
     transitivePeerDependencies:
       - supports-color
@@ -29621,7 +29606,7 @@ snapshots:
     dependencies:
       component-emitter: 1.3.0
       cookiejar: 2.1.4
-      debug: 4.3.4(supports-color@8.1.1)
+      debug: 4.3.4
       fast-safe-stringify: 2.1.1
       form-data: 4.0.0
       formidable: 2.1.2
@@ -29872,8 +29857,6 @@ snapshots:
       vfile: 3.0.1
 
   toad-cache@3.3.0: {}
-
-  toad-cache@3.7.0: {}
 
   toidentifier@1.0.0: {}
 

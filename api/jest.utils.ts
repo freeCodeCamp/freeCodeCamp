@@ -128,16 +128,6 @@ const indexData: IndexData[] = [
     indexes: [{ key: { userId: 1 }, name: 'userId_1' }]
   },
   {
-    collection: 'UserRateLimit',
-    indexes: [
-      {
-        key: { expirationDate: 1 },
-        name: 'expirationDate_1',
-        expireAfterSeconds: 0
-      }
-    ]
-  },
-  {
     collection: 'UserToken',
     indexes: [{ key: { userId: 1 }, name: 'userId_1' }]
   },
