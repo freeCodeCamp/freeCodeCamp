@@ -10,3 +10,4 @@ shared/config/superblocks.js
 docs/**/*.md
 playwright*.config.ts
 playwright/**
+tools/challenge-editor

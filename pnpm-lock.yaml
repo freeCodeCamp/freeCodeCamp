@@ -938,14 +938,14 @@ importers:
         specifier: 5.65.16
         version: 5.65.16
       react:
-        specifier: 16.14.0
-        version: 16.14.0
+        specifier: 19.0.0
+        version: 19.0.0
       react-dom:
-        specifier: 16.14.0
-        version: 16.14.0(react@16.14.0)
+        specifier: 19.0.0
+        version: 19.0.0(react@19.0.0)
       react-router-dom:
         specifier: 6.18.0
-        version: 6.18.0(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+        version: 6.18.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -957,14 +957,14 @@ importers:
         specifier: 5.60.15
         version: 5.60.15
       '@types/react':
-        specifier: 16.14.56
-        version: 16.14.56
+        specifier: 19.0.8
+        version: 19.0.8
       '@types/react-dom':
-        specifier: 16.9.24
-        version: 16.9.24
+        specifier: 19.0.3
+        version: 19.0.3(@types/react@19.0.8)
       '@uiw/react-codemirror':
         specifier: 3.2.10
-        version: 3.2.10(@babel/runtime@7.23.9)(codemirror@5.65.16)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+        version: 3.2.10(@babel/runtime@7.23.9)(codemirror@5.65.16)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       shx:
         specifier: 0.3.4
         version: 0.3.4
@@ -1152,7 +1152,7 @@ importers:
         version: 3.11.0
       enzyme-adapter-react-16:
         specifier: 1.15.8
-        version: 1.15.8(enzyme@3.11.0)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+        version: 1.15.8(enzyme@3.11.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       jquery:
         specifier: 3.7.1
         version: 3.7.1
@@ -4347,6 +4347,11 @@ packages:
   '@types/react-dom@16.9.24':
     resolution: {integrity: sha512-Gcmq2JTDheyWn/1eteqyzzWKSqDjYU6KYsIvH7thb7CR5OYInAWOX+7WnKf6PaU/cbdOc4szJItcDEJO7UGmfA==}
 
+  '@types/react-dom@19.0.3':
+    resolution: {integrity: sha512-0Knk+HJiMP/qOZgMyNFamlIjw9OFCsyC2ZbigmEEyXXixgre6IQpm/4V+r3qH4GC1JPvRJKInw+on2rV6YZLeA==}
+    peerDependencies:
+      '@types/react': ^19.0.0
+
   '@types/react-gtm-module@2.0.3':
     resolution: {integrity: sha512-fL2zKdDFN5LckSsVBXEhhm9M4tFTM9oHJfGcfZJzktQkzpOTGtDM8oXIP9d9UBDxO4xLNZhS22dlgRVv6wgK9w==}
 
@@ -4373,6 +4378,9 @@ packages:
 
   '@types/react@16.14.56':
     resolution: {integrity: sha512-MxuHB7dvVm5yOxRr7hJoonLG0JY8YvqZtaQ9Quirp3Oe4FLFjAgxkxsKE6IspdHPpRVZKo2ZoDEravWO81EeYA==}
+
+  '@types/react@19.0.8':
+    resolution: {integrity: sha512-9P/o1IGdfmQxrujGbIMDyYaaCykhLKc0NGCtYcECNUr9UAaDe4gwvV9bR6tvd5Br1SG0j+PBpbKr2UYY8CwqSw==}
 
   '@types/redux-actions@2.6.5':
     resolution: {integrity: sha512-RgXOigay5cNweP+xH1ru+Vaaj1xXYLpWIfSVO8cSA8Ii2xvR+HRfWYdLe1UVOA8X0kIklalGOa0DTDyld0obkg==}
@@ -11327,6 +11335,11 @@ packages:
     peerDependencies:
       react: ^16.14.0
 
+  react-dom@19.0.0:
+    resolution: {integrity: sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==}
+    peerDependencies:
+      react: ^19.0.0
+
   react-error-overlay@6.0.11:
     resolution: {integrity: sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==}
 
@@ -11486,6 +11499,10 @@ packages:
 
   react@16.14.0:
     resolution: {integrity: sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==}
+    engines: {node: '>=0.10.0'}
+
+  react@19.0.0:
+    resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
     engines: {node: '>=0.10.0'}
 
   read-only-stream@2.0.0:
@@ -11899,6 +11916,9 @@ packages:
 
   scheduler@0.19.1:
     resolution: {integrity: sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==}
+
+  scheduler@0.25.0:
+    resolution: {integrity: sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA==}
 
   schema-utils@2.7.1:
     resolution: {integrity: sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==}
@@ -18694,6 +18714,10 @@ snapshots:
     dependencies:
       '@types/react': 16.14.56
 
+  '@types/react-dom@19.0.3(@types/react@19.0.8)':
+    dependencies:
+      '@types/react': 19.0.8
+
   '@types/react-gtm-module@2.0.3': {}
 
   '@types/react-helmet@6.1.11':
@@ -18732,6 +18756,10 @@ snapshots:
       '@types/prop-types': 15.7.8
       '@types/scheduler': 0.16.4
       csstype: 3.1.2
+
+  '@types/react@19.0.8':
+    dependencies:
+      csstype: 3.1.3
 
   '@types/redux-actions@2.6.5': {}
 
@@ -19078,12 +19106,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@uiw/react-codemirror@3.2.10(@babel/runtime@7.23.9)(codemirror@5.65.16)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
+  '@uiw/react-codemirror@3.2.10(@babel/runtime@7.23.9)(codemirror@5.65.16)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@babel/runtime': 7.23.9
       codemirror: 5.65.16
-      react: 16.14.0
-      react-dom: 16.14.0(react@16.14.0)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   '@ungap/structured-clone@1.2.0': {}
 
@@ -19280,7 +19308,7 @@ snapshots:
       clean-stack: 2.2.0
       indent-string: 4.0.0
 
-  airbnb-prop-types@2.16.0(react@16.14.0):
+  airbnb-prop-types@2.16.0(react@19.0.0):
     dependencies:
       array.prototype.find: 2.2.2
       function.prototype.name: 1.1.6
@@ -19290,7 +19318,7 @@ snapshots:
       object.entries: 1.1.7
       prop-types: 15.8.1
       prop-types-exact: 1.2.0
-      react: 16.14.0
+      react: 19.0.0
       react-is: 16.13.1
 
   ajv-formats@2.1.1(ajv@8.12.0):
@@ -21634,30 +21662,30 @@ snapshots:
 
   envinfo@7.10.0: {}
 
-  enzyme-adapter-react-16@1.15.8(enzyme@3.11.0)(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
+  enzyme-adapter-react-16@1.15.8(enzyme@3.11.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       enzyme: 3.11.0
-      enzyme-adapter-utils: 1.14.2(react@16.14.0)
+      enzyme-adapter-utils: 1.14.2(react@19.0.0)
       enzyme-shallow-equal: 1.0.7
       hasown: 2.0.0
       object.assign: 4.1.5
       object.values: 1.1.7
       prop-types: 15.8.1
-      react: 16.14.0
-      react-dom: 16.14.0(react@16.14.0)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
       react-is: 16.13.1
-      react-test-renderer: 16.14.0(react@16.14.0)
+      react-test-renderer: 16.14.0(react@19.0.0)
       semver: 5.7.2
 
-  enzyme-adapter-utils@1.14.2(react@16.14.0):
+  enzyme-adapter-utils@1.14.2(react@19.0.0):
     dependencies:
-      airbnb-prop-types: 2.16.0(react@16.14.0)
+      airbnb-prop-types: 2.16.0(react@19.0.0)
       function.prototype.name: 1.1.6
       hasown: 2.0.1
       object.assign: 4.1.5
       object.fromentries: 2.0.7
       prop-types: 15.8.1
-      react: 16.14.0
+      react: 19.0.0
       semver: 6.3.1
 
   enzyme-shallow-equal@1.0.5:
@@ -28049,6 +28077,11 @@ snapshots:
       react: 16.14.0
       scheduler: 0.19.1
 
+  react-dom@19.0.0(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      scheduler: 0.25.0
+
   react-error-overlay@6.0.11: {}
 
   react-fast-compare@3.2.2: {}
@@ -28160,17 +28193,17 @@ snapshots:
       react: 16.14.0
       shallow-equal: 1.2.1
 
-  react-router-dom@6.18.0(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
+  react-router-dom@6.18.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
       '@remix-run/router': 1.11.0
-      react: 16.14.0
-      react-dom: 16.14.0(react@16.14.0)
-      react-router: 6.18.0(react@16.14.0)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+      react-router: 6.18.0(react@19.0.0)
 
-  react-router@6.18.0(react@16.14.0):
+  react-router@6.18.0(react@19.0.0):
     dependencies:
       '@remix-run/router': 1.11.0
-      react: 16.14.0
+      react: 19.0.0
 
   react-scrollable-anchor@0.6.1(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
     dependencies:
@@ -28195,6 +28228,14 @@ snapshots:
       object-assign: 4.1.1
       prop-types: 15.8.1
       react: 16.14.0
+      react-is: 16.13.1
+      scheduler: 0.19.1
+
+  react-test-renderer@16.14.0(react@19.0.0):
+    dependencies:
+      object-assign: 4.1.1
+      prop-types: 15.8.1
+      react: 19.0.0
       react-is: 16.13.1
       scheduler: 0.19.1
 
@@ -28228,6 +28269,8 @@ snapshots:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       prop-types: 15.8.1
+
+  react@19.0.0: {}
 
   read-only-stream@2.0.0:
     dependencies:
@@ -28745,6 +28788,8 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
+
+  scheduler@0.25.0: {}
 
   schema-utils@2.7.1:
     dependencies:

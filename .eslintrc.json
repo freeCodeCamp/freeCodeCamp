@@ -65,8 +65,8 @@
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "project": [
-          "./client/tsconfig.json",
           "./tsconfig.json",
+          "./client/tsconfig.json",
           "./api/tsconfig.json",
           "./shared/tsconfig.json",
           "./tools/client-plugins/browser-scripts/tsconfig.json",
