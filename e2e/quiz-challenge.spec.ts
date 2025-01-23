@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { allowTrailingSlash } from './utils/url';
 
 test.describe('Quiz challenge', () => {
   test.beforeEach(async ({ page }) => {
@@ -66,7 +67,9 @@ test.describe('Quiz challenge', () => {
 
     // The navigation should be blocked, the user should stay on the same page
     await expect(page).toHaveURL(
-      '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html'
+      allowTrailingSlash(
+        '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html'
+      )
     );
 
     await expect(page.getByRole('dialog')).toBeVisible();
