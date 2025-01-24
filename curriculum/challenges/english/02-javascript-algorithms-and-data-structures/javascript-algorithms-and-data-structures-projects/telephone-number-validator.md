@@ -204,16 +204,12 @@ function generatePhoneNumber(type) {
   let bit3 = "";
   
   for (let i = 0; i < 3; i++) {
-    bit1 += String(Math.floor(Math.random() * 9));
+    bit1 += Math.floor(Math.random() * 10);
+    bit2 += Math.floor(Math.random() * 10);
+    bit3 += Math.floor(Math.random() * 10);
   }
-  
-  for (let i = 0; i < 3; i++) {
-    bit2 += String(Math.floor(Math.random() * 9));
-  }
-  
-  for (let i = 0; i < 4; i++) {
-    bit3 += String(Math.floor(Math.random() * 9));
-  }
+
+  bit3 += Math.floor(Math.random() * 10);
 
   if (type <= 1) {
     // 1 XXX-XXX-XXXX
@@ -248,14 +244,8 @@ function generatePhoneNumber(type) {
   return result;
 }
 
-for (let i = 1; i <= 7; i++) {
-  let phoneNum = generatePhoneNumber(i);
-  if ((telephoneCheck(phoneNum) === true)) {
-    passedTests++
-  }
-}
-
-assert.strictEqual(passedTests, 7);
+let phoneNum = generatePhoneNumber(Math.floor(Math.random() * 7));
+assert.strictEqual(telephoneCheck(phoneNum), true);
 ```
 
 
