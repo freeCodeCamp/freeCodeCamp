@@ -207,16 +207,6 @@
           ]
         },
         {
-          "dashedName": "attribute-selectors",
-          "blocks": [
-            { "dashedName": "lecture-working-with-attribute-selectors" },
-            { "dashedName": "workshop-balance-sheet" },
-            { "dashedName": "lab-book-inventory-app" },
-            { "dashedName": "review-css-attribute-selectors" },
-            { "dashedName": "quiz-css-attribute-selectors" }
-          ]
-        },
-        {
           "dashedName": "css-positioning",
           "blocks": [
             {
@@ -226,6 +216,16 @@
             { "dashedName": "lab-house-painting" },
             { "dashedName": "review-css-positioning" },
             { "dashedName": "quiz-css-positioning" }
+          ]
+        },
+        {
+          "dashedName": "attribute-selectors",
+          "blocks": [
+            { "dashedName": "lecture-working-with-attribute-selectors" },
+            { "dashedName": "workshop-balance-sheet" },
+            { "dashedName": "lab-book-inventory-app" },
+            { "dashedName": "review-css-attribute-selectors" },
+            { "dashedName": "quiz-css-attribute-selectors" }
           ]
         },
         {
