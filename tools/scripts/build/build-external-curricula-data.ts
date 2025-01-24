@@ -50,7 +50,7 @@ export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.QualityAssurance, public: false },
   { dashedName: SuperBlocks.SciCompPy, public: false },
   { dashedName: SuperBlocks.InfoSec, public: false },
-  { dashedName: SuperBlocks.CollegeAlgebraPy, public: false },
+  { dashedName: SuperBlocks.CollegeAlgebraPy, public: true },
   { dashedName: SuperBlocks.FoundationalCSharp, public: false },
   { dashedName: SuperBlocks.CodingInterviewPrep, public: false },
   { dashedName: SuperBlocks.ProjectEuler, public: false },
