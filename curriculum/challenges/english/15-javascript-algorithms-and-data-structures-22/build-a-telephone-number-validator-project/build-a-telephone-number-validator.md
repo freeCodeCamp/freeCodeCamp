@@ -572,7 +572,7 @@ for (let i = 1; i <= 7; i++) {
   userInput.value = phoneNum;
   userInput.dispatchEvent(new Event('change'));
   checkBtn.click();
-  if (resultsDiv.innerText.trim().toLowerCase() === `valid us number: ${phoneNum}`) {
+  if (document.getElementById('results-div').innerText.trim().toLowerCase() === `valid us number: ${phoneNum}`) {
     passedTests++
   }
 }
