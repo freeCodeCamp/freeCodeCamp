@@ -206,13 +206,13 @@ function generatePhoneNumber(type) {
     result = "1 ";
     for (let i = 0; i < 2; i++) {
       for (let i = 0; i < 3; i++) {
-        let num = String(Math.floor(Math.random() * 9));
+        let num = String(Math.floor(Math.random() * 10));
         result += num;
       }
       result += "-";
     }
     for (let i = 0; i < 4; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
   } else if (type <= 2) {
@@ -220,17 +220,17 @@ function generatePhoneNumber(type) {
 
     result = "1 (";
     for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
     result += ")";
     for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
     result += "-";
     for (let i = 0; i < 4; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
   } else if (type <= 3) {
@@ -238,17 +238,17 @@ function generatePhoneNumber(type) {
 
     result = "1(";
     for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
     result += ")";
     for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
     result += "-";
     for (let i = 0; i < 4; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
   } else if (type <= 4) {
@@ -257,20 +257,20 @@ function generatePhoneNumber(type) {
     result = "1 ";
     for (let i = 0; i < 2; i++) {
       for (let i = 0; i < 3; i++) {
-        let num = String(Math.floor(Math.random() * 9));
+        let num = String(Math.floor(Math.random() * 10));
         result += num;
       }
       result += " ";
     }
     for (let i = 0; i < 4; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
   } else if (type <= 5) {
     // XXXXXXXXXX
 
     for (let i = 0; i < 10; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
   } else if (type <= 6) {
@@ -278,30 +278,30 @@ function generatePhoneNumber(type) {
 
     for (let i = 0; i < 2; i++) {
       for (let i = 0; i < 3; i++) {
-        let num = String(Math.floor(Math.random() * 9));
+        let num = String(Math.floor(Math.random() * 10));
         result += num;
       }
       result += "-";
     }
     for (let i = 0; i < 4; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
   } else {
     //(555)555-5555
     result = "(";
     for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
     result += ")";
     for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
     result += "-";
     for (let i = 0; i < 4; i++) {
-      let num = String(Math.floor(Math.random() * 9));
+      let num = String(Math.floor(Math.random() * 10));
       result += num;
     }
   }
