@@ -21,19 +21,19 @@ Which of the following is NOT a valid value for the `position` property?
 
 #### --distractors--
 
-`position: fixed;`
+`fixed`
 
 ---
 
-`position: absolute;`
+`absolute`
 
 ---
 
-`position: relative;`
+`relative`
 
 #### --answer--
 
-`position: above;`
+`above`
 
 ### --question--
 
@@ -209,19 +209,19 @@ Which CSS property would you use to fix an element at a certain position on the 
 
 #### --distractors--
 
-`position: no-scroll`
+`position: no-scroll;`
 
 ---
 
-`position: relative`
+`position: relative;`
 
 ---
 
-`display: block`
+`display: block;`
 
 #### --answer--
 
-`position: fixed`
+`position: fixed;`
 
 ### --question--
 
@@ -275,15 +275,15 @@ What is the key difference between relative and absolute positioning?
 
 #### --distractors--
 
-Absolute positioning sets the element in a sticky position while relative positioning take an element out of the normal document flow.
+Absolute positioning sets the element in a sticky position while relative positioning takes an element out of the normal document flow.
 
 ---
 
-Relative positioning sets the elements in a fixed position while absolute positioning take an element out of the normal document flow.
+Relative positioning sets the element in a fixed position while absolute positioning takes an element out of the normal document flow.
 
 ---
 
-Absolute positioning positions the element within the normal document flow while relative positioning take an element out of the normal document flow.
+Absolute positioning positions the element within the normal document flow while relative positioning takes an element out of the normal document flow.
 
 #### --answer--
 
@@ -468,7 +468,7 @@ The `clearfix` hack helped solve the issue of floated elements disappearing from
 
 #### --answer--
 
-The `clearfix` hack helped solve the issue of overlap and collapsing in the layouts when multiple floated elements were stacked next to each other.
+The `clearfix` hack helped solve the issue of overlaps and collapsing in the layouts when multiple floated elements were stacked next to each other.
 
 ### --question--
 
