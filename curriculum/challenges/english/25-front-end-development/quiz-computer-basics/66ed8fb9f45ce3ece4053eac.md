@@ -149,7 +149,7 @@ Visual Studio Code
 
 #### --text--
 
-Which of the following stores and accesses files on the hard drive?
+Which of the following is used primarily for managing files stored on a local hard drive?
 
 #### --distractors--
 
@@ -303,7 +303,7 @@ A program that integrates tools for writing, debugging, and running code.
 
 #### --text--
 
-A piece of software that allows you to look at online content is called a:
+What is a piece of software that allows you to look at online content called?
 
 #### --distractors--
 
@@ -325,7 +325,7 @@ Web Browser
 
 #### --text--
 
-A piece of software that lists web pages related to a user's query is a called a:
+What is a piece of software that lists web pages related to a user's query called?
 
 #### --distractors--
 
@@ -347,7 +347,7 @@ Search Engine
 
 #### --text--
 
-A set of one or more web pages under one domain name is called a:
+What is a set of one or more web pages under one domain name called?
 
 #### --distractors--
 
