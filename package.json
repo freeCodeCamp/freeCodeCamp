@@ -52,6 +52,7 @@
     "knip:all": "npx -y knip@5 ",
     "prelint": "pnpm run -F=client predevelop",
     "lint": "NODE_OPTIONS=\"--max-old-space-size=7168\" npm-run-all create:shared -p lint:*",
+    "lint:client-css": "cd ./client && pnpm run lint-css",
     "lint:challenges": "cd ./curriculum && pnpm run lint",
     "lint:js": "eslint --cache --max-warnings 0 .",
     "lint:ts": "tsc && tsc -p shared && tsc -p api",

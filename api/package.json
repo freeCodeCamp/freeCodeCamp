@@ -9,7 +9,6 @@
     "@fastify/cookie": "9.4.0",
     "@fastify/csrf-protection": "6.4.1",
     "@fastify/oauth2": "7.8.1",
-    "@fastify/rate-limit": "9.1.0",
     "@fastify/swagger": "8.14.0",
     "@fastify/swagger-ui": "1.10.2",
     "@fastify/type-provider-typebox": "3.6.0",
@@ -33,7 +32,6 @@
     "nodemon": "2.0.22",
     "pino-pretty": "10.2.3",
     "query-string": "7.1.3",
-    "rate-limit-mongo": "^2.3.2",
     "stripe": "16.0.0",
     "validator": "13.11.0"
   },

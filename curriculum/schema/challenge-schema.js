@@ -91,7 +91,8 @@ const questionJoi = Joi.object().keys({
         feedback: Joi.string().allow(null)
       })
     )
-    .required(),
+    .required()
+    .unique('answer'),
   solution: Joi.number().required()
 });
 
@@ -101,15 +102,17 @@ const quizJoi = Joi.object().keys({
       Joi.object().keys({
         text: Joi.string().required(),
         distractors: Joi.array()
-          .items(Joi.string().required())
-          .min(3)
-          .max(3)
-          .required(),
+          .items(
+            Joi.valid(Joi.ref('...answer')).forbidden(),
+            Joi.string().required()
+          )
+          .length(3)
+          .required()
+          .unique(),
         answer: Joi.string().required()
       })
     )
-    .min(20)
-    .max(20)
+    .length(20)
     .required()
 });
 

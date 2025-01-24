@@ -78,7 +78,7 @@ assert.sameMembers(
 `selectionSort` should not use the built-in `.sort()` method.
 
 ```js
-assert(isBuiltInSortUsed());
+assert.isFalse(isBuiltInSortUsed());
 ```
 
 # --seed--
@@ -95,9 +95,14 @@ function isSorted(a){
 
 function isBuiltInSortUsed(){
   let sortUsed = false;
+  const temp = Array.prototype.sort;
   Array.prototype.sort = () => sortUsed = true;
-  selectionSort([0, 1]);
-  return !sortUsed;
+  try {
+    selectionSort([0, 1]);
+  } finally {
+    Array.prototype.sort = temp;
+  }
+  return sortUsed;
 }
 ```
 
