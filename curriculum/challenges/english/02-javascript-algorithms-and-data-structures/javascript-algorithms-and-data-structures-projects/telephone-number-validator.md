@@ -319,7 +319,6 @@ for (i = 1; i <= 7; i++) {
 assert.strictEqual(passedTests, 7);
 ```
 
-```
 
 # --seed--
 
