@@ -57,7 +57,6 @@ function* showDonateModalSaga() {
     yield put(openDonationModal());
     sessionStorage.setItem(MODAL_SHOWN_KEY, Date.now());
     yield take(appTypes.closeDonationModal);
-
     if (recentlyClaimedBlock || recentlyClaimedModule) {
       yield put(preventSectionDonationRequests());
     } else {
