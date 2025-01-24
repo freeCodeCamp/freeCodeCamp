@@ -171,7 +171,7 @@ Windows File Explorer
 
 #### --text--
 
-What is NOT a good practice when naming files for later use?
+What is NOT a good practice when naming files?
 
 #### --distractors--
 
@@ -187,7 +187,7 @@ Putting a version number at the end of a document like `summaryReport_v2.docx`.
 
 #### --answer--
 
-Being lazy and pounding your keyboard like `asdfloweiueld` to get it over with.
+Using non-descriptive names like `file1.txt`.
 
 ### --question--
 
@@ -259,7 +259,7 @@ A temporary memory for fast data access by the processor.
 
 #### --text--
 
-What file type will be best suited for writing a README file?
+What file type will be best suited for writing a `README` file?
 
 #### --distractors--
 
@@ -439,17 +439,17 @@ Which of the following parts can be found in the circuit board?
 
 #### --distractors--
 
-Printer and Router
+Printer and Router.
 
 ---
 
-Mouse and Keyboard
+Mouse and Keyboard.
 
 ---
 
-Hard Drive and GPU
+Hard Drive and GPU.
 
 #### --answer--
 
-CPU and RAM
+CPU and RAM.
 
