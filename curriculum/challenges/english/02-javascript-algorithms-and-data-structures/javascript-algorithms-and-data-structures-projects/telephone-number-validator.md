@@ -199,111 +199,50 @@ let passedTests = 0;
 
 function generatePhoneNumber(type) {
   let result = "";
+  let bit1 = "";
+  let bit2 = "";
+  let bit3 = "";
+  
+  for (let i = 0; i < 3; i++) {
+    bit1 += String(Math.floor(Math.random() * 9));
+  }
+  
+  for (let i = 0; i < 3; i++) {
+    bit2 += String(Math.floor(Math.random() * 9));
+  }
+  
+  for (let i = 0; i < 4; i++) {
+    bit3 += String(Math.floor(Math.random() * 9));
+  }
 
   if (type <= 1) {
     // 1 XXX-XXX-XXXX
-
-    result = "1 ";
-    for (let i = 0; i < 2; i++) {
-      for (let i = 0; i < 3; i++) {
-        let num = String(Math.floor(Math.random() * 10));
-        result += num;
-      }
-      result += "-";
-    }
-    for (let i = 0; i < 4; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
+    result = `1 ${bit1}-${bit2}-${bit3}`
+    
   } else if (type <= 2) {
     // 1 (XXX)XXX-XXXX
-
-    result = "1 (";
-    for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
-    result += ")";
-    for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
-    result += "-";
-    for (let i = 0; i < 4; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
+    result = `1 (${bit1})${bit2}-${bit3}`;
+    
   } else if (type <= 3) {
     // 1(XXX)XXX-XXXX
-
-    result = "1(";
-    for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
-    result += ")";
-    for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
-    result += "-";
-    for (let i = 0; i < 4; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
+    result = `1(${bit1})${bit2}-${bit3}`;
+    
   } else if (type <= 4) {
     // 1 XXX XXX XXXX
-
-    result = "1 ";
-    for (let i = 0; i < 2; i++) {
-      for (let i = 0; i < 3; i++) {
-        let num = String(Math.floor(Math.random() * 10));
-        result += num;
-      }
-      result += " ";
-    }
-    for (let i = 0; i < 4; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
+    result = `1 ${bit1} ${bit2} ${bit3}`
+    
   } else if (type <= 5) {
     // XXXXXXXXXX
-
-    for (let i = 0; i < 10; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
+    result = `${bit1}${bit2}${bit3}`
+    
   } else if (type <= 6) {
     // XXX-XXX-XXXX
-
-    for (let i = 0; i < 2; i++) {
-      for (let i = 0; i < 3; i++) {
-        let num = String(Math.floor(Math.random() * 10));
-        result += num;
-      }
-      result += "-";
-    }
-    for (let i = 0; i < 4; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
+    result = `${bit1}-${bit2}-${bit3}`
+    
   } else {
     //(555)555-5555
-    result = "(";
-    for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
-    result += ")";
-    for (let i = 0; i < 3; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
-    result += "-";
-    for (let i = 0; i < 4; i++) {
-      let num = String(Math.floor(Math.random() * 10));
-      result += num;
-    }
+    result = `(${bit1})${bit2}-${bit3}`
+    
   }
 
   return result;
