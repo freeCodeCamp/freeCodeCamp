@@ -379,3 +379,9 @@ export async function seedEnvExamAttempt() {
     data: examAttempt
   });
 }
+
+export async function seedExamEnvExamAuthToken() {
+  return fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.create({
+    data: { userId: defaultUserId, expireAt: new Date(Date.now() + 60000) }
+  });
+}

@@ -382,7 +382,7 @@ model ExamEnvironmentAuthorizationToken {
   userId   String   @unique @db.ObjectId
 
   // Relations
-  user user @relation(fields: [userId], references: [id])
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model sessions {
