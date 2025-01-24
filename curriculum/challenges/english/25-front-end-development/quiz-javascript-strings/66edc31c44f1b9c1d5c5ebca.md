@@ -227,7 +227,7 @@ How can you obtain the ASCII value of the first character in the string `"hello"
 
 #### --text--
 
-Which method can you use obtain the character corresponding to an ASCII value?
+Which method can you use to obtain the character corresponding to an ASCII value?
 
 #### --distractors--
 
