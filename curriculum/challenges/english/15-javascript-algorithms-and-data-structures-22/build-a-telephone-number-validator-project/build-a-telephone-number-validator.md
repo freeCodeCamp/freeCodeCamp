@@ -523,7 +523,7 @@ function generatePhoneNumber(type) {
   let bit3 = "";
   
   for (let i = 0; i < 3; i++) {
-    bit1 += String(Math.floor(Math.random() * 9));
+    bit1 += Math.floor(Math.random() * 10);
   }
   
   for (let i = 0; i < 3; i++) {
