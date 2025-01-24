@@ -60,6 +60,7 @@ Note that the area code is required. Also, if the country code is provided, you 
 1. When `#user-input` contains `(555)5(55?)-5555` and `#check-btn` is clicked, `#results-div` should contain the text `"Invalid US number: (555)5(55?)-5555"`.
 1. When the `#user-input` element contains `55 55-55-555-5` and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Invalid US number: 55 55-55-555-5"`.
 1. When the `#user-input` element contains `11 555-555-5555` and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Invalid US number: 11 555-555-5555"`.
+1. When the `#user-input` element contains a valid US number and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Valid US number: "` followed by the number.
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
@@ -508,6 +509,136 @@ userInput.value = '11 555-555-5555';
 userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 11 555-555-5555');
+```
+
+When the `#user-input` element contains a valid US number and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Valid US number: "` followed by the number.
+
+```js
+let passedTests = 0;
+
+function generatePhoneNumber(type) {
+  let result = "";
+
+  if (type <= 1) {
+    // 1 XXX-XXX-XXXX
+
+    result = "1 ";
+    for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 3; i++) {
+        let num = String(Math.floor(Math.random() * 9));
+        result += num;
+      }
+      result += "-";
+    }
+    for (let i = 0; i < 4; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  } else if (type <= 2) {
+    // 1 (XXX)XXX-XXXX
+
+    result = "1 (";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+    result += ")";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+    result += "-";
+    for (let i = 0; i < 4; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  } else if (type <= 3) {
+    // 1(XXX)XXX-XXXX
+
+    result = "1(";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+    result += ")";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+    result += "-";
+    for (let i = 0; i < 4; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  } else if (type <= 4) {
+    // 1 XXX XXX XXXX
+
+    result = "1 ";
+    for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 3; i++) {
+        let num = String(Math.floor(Math.random() * 9));
+        result += num;
+      }
+      result += " ";
+    }
+    for (let i = 0; i < 4; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  } else if (type <= 5) {
+    // XXXXXXXXXX
+
+    for (let i = 0; i < 10; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  } else if (type <= 6) {
+    // XXX-XXX-XXXX
+
+    for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 3; i++) {
+        let num = String(Math.floor(Math.random() * 9));
+        result += num;
+      }
+      result += "-";
+    }
+    for (let i = 0; i < 4; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  } else {
+    //(555)555-5555
+    result = "(";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+    result += ")";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+    result += "-";
+    for (let i = 0; i < 4; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  }
+
+  return result;
+}
+
+for (i = 1; i <= 7; i++) {
+  let phoneNum = generatePhoneNumber(i);
+  userInput.value = phoneNum;
+  userInput.dispatchEvent(new Event('change'));
+  checkBtn.click();
+  if (resultsDiv.innerText.trim().toLowerCase() === `valid us number: ${phoneNum}`) {
+    passedTests++
+  }
+}
+
+assert.strictEqual(passedTests, 7);
 ```
 
 # --seed--
