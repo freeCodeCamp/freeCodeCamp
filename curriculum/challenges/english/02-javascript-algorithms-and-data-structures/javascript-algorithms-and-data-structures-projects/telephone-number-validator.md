@@ -309,7 +309,7 @@ function generatePhoneNumber(type) {
   return result;
 }
 
-for (i = 1; i <= 7; i++) {
+for (let i = 1; i <= 7; i++) {
   let phoneNum = generatePhoneNumber(i);
   if ((telephoneCheck(phoneNum) === true)) {
     passedTests++
