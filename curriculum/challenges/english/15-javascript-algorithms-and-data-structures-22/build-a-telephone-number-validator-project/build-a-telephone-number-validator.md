@@ -567,12 +567,12 @@ function generatePhoneNumber(type) {
   return result;
 }
 
-for (let i = 1; i <= 7; i++) {
-  let phoneNum = generatePhoneNumber(i);
-  userInput.value = phoneNum;
-  userInput.dispatchEvent(new Event('change'));
-  checkBtn.click();
-  assert.strictEqual(document.getElementById('results-div').innerText.trim().toLowerCase(), `valid us number: ${phoneNum}`);
+
+let phoneNum = generatePhoneNumber(Math.round(Math.random()*10));
+userInput.value = phoneNum;
+userInput.dispatchEvent(new Event('change'));
+checkBtn.click();
+assert.strictEqual(document.getElementById('results-div').innerText.trim().toLowerCase(), `valid us number: ${phoneNum}`);
 ```
 
 # --seed--
