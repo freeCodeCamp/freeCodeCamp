@@ -192,6 +192,135 @@ assert(telephoneCheck('55 55-55-555-5') === false);
 assert(telephoneCheck('11 555-555-5555') === false);
 ```
 
+`telephoneCheck()`, when called with any valid number, should return `true`.
+
+```js
+let passedTests = 0;
+
+function generatePhoneNumber(type) {
+  let result = "";
+
+  if (type <= 1) {
+    // 1 XXX-XXX-XXXX
+
+    result = "1 ";
+    for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 3; i++) {
+        let num = String(Math.floor(Math.random() * 9));
+        result += num;
+      }
+      result += "-";
+    }
+    for (let i = 0; i < 4; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  } else if (type <= 2) {
+    // 1 (XXX)XXX-XXXX
+
+    result = "1 (";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+    result += ")";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+    result += "-";
+    for (let i = 0; i < 4; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  } else if (type <= 3) {
+    // 1(XXX)XXX-XXXX
+
+    result = "1(";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+    result += ")";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+    result += "-";
+    for (let i = 0; i < 4; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  } else if (type <= 4) {
+    // 1 XXX XXX XXXX
+
+    result = "1 ";
+    for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 3; i++) {
+        let num = String(Math.floor(Math.random() * 9));
+        result += num;
+      }
+      result += " ";
+    }
+    for (let i = 0; i < 4; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  } else if (type <= 5) {
+    // XXXXXXXXXX
+
+    for (let i = 0; i < 10; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  } else if (type <= 6) {
+    // XXX-XXX-XXXX
+
+    for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 3; i++) {
+        let num = String(Math.floor(Math.random() * 9));
+        result += num;
+      }
+      result += "-";
+    }
+    for (let i = 0; i < 4; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  } else {
+    //(555)555-5555
+    result = "(";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+    result += ")";
+    for (let i = 0; i < 3; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+    result += "-";
+    for (let i = 0; i < 4; i++) {
+      let num = String(Math.floor(Math.random() * 9));
+      result += num;
+    }
+  }
+
+  return result;
+}
+
+for (i = 1; i <= 7; i++) {
+  let phoneNum = generatePhoneNumber(i);
+  if ((telephoneCheck(phoneNum) === true)) {
+    passedTests++
+  }
+}
+
+assert.strictEqual(passedTests, 7);
+```
+
+```
+
 # --seed--
 
 ## --seed-contents--
