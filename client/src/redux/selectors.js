@@ -1,4 +1,5 @@
 import { Certification } from '../../../shared/config/certification-settings';
+import { SuperBlocks } from '../../../shared/config/curriculum';
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
 import { ns as MainApp } from './action-types';
@@ -50,7 +51,17 @@ export const shouldRequestDonationSelector = state => {
   if (completedChallengeCount < 10) return false;
 
   // a block or module has been completed
-  if (recentlyClaimedBlock || recentlyClaimedModule) return true;
+  if (
+    recentlyClaimedBlock &&
+    recentlyClaimedBlock.superBlock !== SuperBlocks.FullStackDeveloper
+  )
+    return true;
+
+  if (
+    recentlyClaimedModule &&
+    recentlyClaimedModule.superBlock === SuperBlocks.FullStackDeveloper
+  )
+    return true;
 
   const sessionChallengeData = getSessionChallengeData();
   /*

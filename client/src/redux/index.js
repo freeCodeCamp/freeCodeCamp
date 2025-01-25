@@ -148,7 +148,10 @@ export const reducer = handleActions(
           block: payload.block,
           superBlock: payload.superBlock
         },
-        recentlyClaimedModule: payload.module
+        recentlyClaimedModule: {
+          module: payload.module,
+          superBlock: payload.superBlock
+        }
       };
     },
     [actionTypes.setRenderStartTime]: (state, { payload }) => {
