@@ -366,7 +366,7 @@
     "joined": "Iscritto da {{date}}",
     "from": "From {{location}}",
     "total-points": "Total Points:",
-    "points_singular": "{{count}} punto il {{date}}",
+    "points": "{{count}} punto il {{date}}",
     "points_plural": "{{count}} punti il {{date}}",
     "page-number": "{{pageNumber}} di {{totalPages}}",
     "edit-my-profile": "Edit My Profile",

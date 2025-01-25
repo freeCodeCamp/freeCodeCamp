@@ -366,7 +366,7 @@
     "joined": "Приєднався(-лась) {{date}}",
     "from": "{{location}}",
     "total-points": "Всього балів:",
-    "points_singular": "{{count}}х балів станом на {{date}}",
+    "points": "{{count}}х балів станом на {{date}}",
     "points_plural": "{{count}}х балів станом на {{date}}",
     "page-number": "{{pageNumber}} з {{totalPages}}",
     "edit-my-profile": "Редагувати профіль",

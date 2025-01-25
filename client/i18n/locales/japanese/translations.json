@@ -366,7 +366,7 @@
     "joined": "加入: {{date}}",
     "from": "場所: {{location}}",
     "total-points": "合計ポイント:",
-    "points_singular": "{{count}} ポイント ({{date}})",
+    "points": "{{count}} ポイント ({{date}})",
     "points_plural": "{{count}} ポイント ({{date}})",
     "page-number": "{{pageNumber}} / {{totalPages}}",
     "edit-my-profile": "プロフィールを編集",

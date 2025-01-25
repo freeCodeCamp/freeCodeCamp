@@ -366,7 +366,7 @@
     "joined": "Umejiunga {{date}}",
     "from": "From {{location}}",
     "total-points": "Total Points:",
-    "points_singular": "Pointi {{count}} mnamo {{date}}",
+    "points": "Pointi {{count}} mnamo {{date}}",
     "points_plural": "Alama {{count}} mnamo {{date}}",
     "page-number": "{{pageNumber}} kati ya {{totalPages}}",
     "edit-my-profile": "Edit My Profile",

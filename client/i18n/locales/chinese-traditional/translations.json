@@ -366,7 +366,7 @@
     "joined": "於 {{date}} 加入",
     "from": "來自 {{location}}",
     "total-points": "總分：",
-    "points_singular": "{{date}} 獲得 {{count}} 分",
+    "points": "{{date}} 獲得 {{count}} 分",
     "points_plural": "{{date}} 獲得 {{count}} 分",
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁",
     "edit-my-profile": "編輯我的個人資料",
