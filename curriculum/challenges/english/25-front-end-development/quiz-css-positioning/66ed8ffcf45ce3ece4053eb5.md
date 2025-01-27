@@ -592,19 +592,19 @@ Which of the following is a valid value to use for the `z-index` property?
 
 #### --distractors--
 
-`z-index: 12.0;`
+`12.0`
 
 ---
 
-`z-index: none;`
+`none`
 
 ---
 
-`z-index: up;`
+`up`
 
 #### --answer--
 
-`z-index: 1;`
+`1`
 
 ### --question--
 
