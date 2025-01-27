@@ -248,6 +248,60 @@ let phoneNum = generatePhoneNumber(Math.floor(Math.random() * 7));
 assert.strictEqual(telephoneCheck(phoneNum), true);
 ```
 
+`telephoneCheck()`, when called with an invalid phone number, should return `false`
+
+```js
+function generateInvalidPhoneNumber(type) {
+  let result = "";
+  let bit1 = "";
+  let bit2 = "";
+  let bit3 = "";
+
+  for (let i = 0; i < 3; i++) {
+    bit1 += Math.floor(Math.random() * 10);
+    bit2 += Math.floor(Math.random() * 10);
+    bit3 += Math.floor(Math.random() * 10);
+  }
+
+  bit3 += Math.floor(Math.random() * 10);
+
+  if (type <= 1) {
+    // 1 XXX-XXX-XXX
+    result = `1 ${bit1}-${bit2}-${bit1}`
+
+  } else if (type <= 2) {
+    // 1 (XXXXXX-XXXX
+    result = `1 (${bit1}${bit2}-${bit3}`;
+
+  } else if (type <= 3) {
+    // XX(XXX)XXX-XXXX
+    result = `${bit1[0]}(${bit1})${bit2}-${bit3}`;
+
+  } else if (type <= 4) {
+    // XXXX XXX XXX 
+    result = `${bit3} ${bit2} ${bit1}`
+
+  } else if (type <= 5) {
+    // XXXXXXXXXXX
+    result = `${bit1}${bit2}${bit3}${bit3[0]}`
+
+  } else if (type <= 6) {
+    // XXX#XXX-XXXX
+    result = `${bit1}#${bit2}-${bit3}`
+
+  } else {
+    //555)555-5555
+    result = `${bit1})${bit2}-${bit3}`
+
+  }
+
+  return result;
+}
+
+const notPhoneNum = generateInvalidPhoneNumber(Math.floor(Math.random() * 7))
+assert.strictEqual(telephoneCheck(notPhoneNum), false)
+```
+
 
 # --seed--
 
