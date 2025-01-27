@@ -605,12 +605,12 @@ function generateInvalidPhoneNumber(type) {
     result = `${bit1[0]}(${bit1})${bit2}-${bit3}`;
     
   } else if (type <= 4) {
-    // XXXX XXX XXX 
-    result = `${bit3} ${bit2} ${bit1}`
+    // -XXXX XXX XXX 
+    result = `-${bit3} ${bit2} ${bit1}`
     
   } else if (type <= 5) {
-    // XXXXXXXXXXX
-    result = `${bit1}${bit2}${bit3}${bit3[0]}`
+    // XXXXXXXXXX-X
+    result = `${bit1}${bit2}${bit3}-${bit3[0]}`
     
   } else if (type <= 6) {
     // XXX#XXX-XXXX
