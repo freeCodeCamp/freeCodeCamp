@@ -243,8 +243,10 @@ function generatePhoneNumber(type) {
   return result;
 }
 
-const phoneNum = generatePhoneNumber(Math.floor(Math.random() * 7));
-assert.strictEqual(telephoneCheck(phoneNum), true);
+for (let i = 1; i <= 7; i++) {
+  let phoneNum = generatePhoneNumber(i);
+  assert.strictEqual(telephoneCheck(phoneNum), true);
+}
 ```
 
 `telephoneCheck()`, when called with an invalid phone number, should return `false`
