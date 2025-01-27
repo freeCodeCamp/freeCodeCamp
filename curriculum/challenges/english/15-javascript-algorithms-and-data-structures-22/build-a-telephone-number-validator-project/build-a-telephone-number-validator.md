@@ -514,7 +514,6 @@ assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number
 When the `#user-input` element contains a valid US number and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Valid US number: "` followed by the number.
 
 ```js
-let passedTests = 0;
 
 function generatePhoneNumber(type) {
   let result = "";
@@ -564,7 +563,7 @@ function generatePhoneNumber(type) {
 }
 
 
-let phoneNum = generatePhoneNumber(Math.round(Math.random()*7));
+const phoneNum = generatePhoneNumber(Math.round(Math.random()*7));
 userInput.value = phoneNum;
 userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
@@ -574,7 +573,6 @@ assert.strictEqual(document.getElementById('results-div').innerText.trim().toLow
 When the `#user-input` element contains an invalid US number and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Invalid US number: "` followed by the number.
 
 ```js
-let passedTests = 0;
 
 function generateInvalidPhoneNumber(type) {
   let result = "";
@@ -624,11 +622,11 @@ function generateInvalidPhoneNumber(type) {
 }
 
 
-let phoneNum = generatePhoneNumber(Math.round(Math.random()*7));
-userInput.value = phoneNum;
+const notPhoneNum = generateInvalidPhoneNumber(Math.round(Math.random()*7));
+userInput.value = notPhoneNum;
 userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
-assert.strictEqual(document.getElementById('results-div').innerText.trim().toLowerCase(), `invalid us number: ${phoneNum}`);
+assert.strictEqual(document.getElementById('results-div').innerText.trim().toLowerCase(), `invalid us number: ${notPhoneNum}`);
 ```
 
 # --seed--
