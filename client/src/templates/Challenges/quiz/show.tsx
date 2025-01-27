@@ -176,8 +176,8 @@ const ShowQuiz = ({
       correct: t('learn.quiz.correct-answer'),
       incorrect: t('learn.quiz.incorrect-answer')
     },
-    // 10 question quizzes need 80% (8/10) to pass, 20 need 85% (17/20)
-    passingGrade: quiz.length === 10 ? 80 : 85,
+    // 10 question quizzes need 90% (9/10) to pass, 20 need 85% (17/20)
+    passingGrade: quiz.length === 10 ? 90 : 85,
     onSuccess: () => {
       openCompletionModal(), setIsPassed(true);
     },
