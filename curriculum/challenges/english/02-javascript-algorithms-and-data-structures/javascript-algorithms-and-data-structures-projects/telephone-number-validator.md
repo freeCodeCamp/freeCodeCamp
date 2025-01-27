@@ -195,7 +195,6 @@ assert(telephoneCheck('11 555-555-5555') === false);
 `telephoneCheck()`, when called with any valid number, should return `true`.
 
 ```js
-let passedTests = 0;
 
 function generatePhoneNumber(type) {
   let result = "";
@@ -244,7 +243,7 @@ function generatePhoneNumber(type) {
   return result;
 }
 
-let phoneNum = generatePhoneNumber(Math.floor(Math.random() * 7));
+const phoneNum = generatePhoneNumber(Math.floor(Math.random() * 7));
 assert.strictEqual(telephoneCheck(phoneNum), true);
 ```
 
