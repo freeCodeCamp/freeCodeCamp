@@ -563,7 +563,8 @@ function generatePhoneNumber(type) {
 }
 
 for (let i = 1; i <= 7; i++) {
-  let phoneNum = generatePhoneNumber(Math.round(Math.random()*7));
+  let phoneNum = generatePhoneNumber(i);
+  resultsDiv.innerHTML = '';
   userInput.value = phoneNum;
   userInput.dispatchEvent(new Event('change'));
   checkBtn.click();
@@ -624,6 +625,7 @@ function generateInvalidPhoneNumber(type) {
 
 
 const notPhoneNum = generateInvalidPhoneNumber(Math.round(Math.random()*7));
+resultsDiv.innerHTML = '';
 userInput.value = notPhoneNum;
 userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
