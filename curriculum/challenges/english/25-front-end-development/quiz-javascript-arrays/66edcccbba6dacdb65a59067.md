@@ -17,23 +17,28 @@ To pass the quiz, you must correctly answer at least 17 of the 20 questions belo
 
 #### --text--
 
-Which of the following is the correct way to create an array in JavaScript?
+What will be the output for the following code?
+
+```js
+const numbers = [1, 2, 3];
+console.log(numbers[10]);
+```
 
 #### --distractors--
 
-`array(1, 2, 3)`
+`[1, 2, 3]`
 
 ---
 
-`"1, 2, 3"`
+`null`
 
 ---
 
-`{1, 2, 3}`
+`10`
 
 #### --answer--
 
-`[1, 2, 3]`
+`undefined`
 
 ### --question--
 
@@ -176,26 +181,26 @@ console.log(arr2);
 What will this code log to the console?
 
 ```js
-const colors = ['red', 'blue', 'green', 'yellow'];
-colors.splice(1, 2, 'purple');
+const colors = ["red", "blue", "green", "yellow"];
+colors.splice(1, 2, "purple");
 console.log(colors);
 ```
 
 #### --distractors--
 
-`['red', 'purple', 'green', 'yellow']`
+`["red", "blue", "green", "yellow"]`
 
 ---
 
-`['red', 'blue', 'yellow']`
+`["red", "blue", "yellow"]`
 
 ---
 
-`['red', 'blue', 'green', 'yellow']`
+`["red", "yellow"]`
 
 #### --answer--
 
-`['red', 'purple', 'yellow']`
+`["red", "purple", "yellow"]`
 
 ### --question--
 
@@ -204,26 +209,26 @@ console.log(colors);
 What value will be assigned to the `slicedArr` variable?
 
 ```js
-const arr = ['apple', 'banana', 'cherry', 'date'];
+const arr = ["apple", "banana", "cherry", "date"];
 const slicedArr = arr.slice(1, 3);
 console.log(slicedArr);
 ```
 
 #### --distractors--
 
-`['apple', 'banana']`
+`["apple", "banana"]`
 
 ---
 
-`['cherry', 'date']`
+`["cherry", "date"]`
 
 ---
 
-`['apple', 'cherry']`
+`["apple", "cherry"]`
 
 #### --answer--
 
-`['banana', 'cherry']`
+`["banana", "cherry"]`
 
 ### --question--
 
@@ -300,7 +305,7 @@ What will be the output of this code?
 ```js
 const fruits = ["apple", "banana", "cherry", "apple", "orange"];
 
-fruits.splice(index, 1);
+fruits.splice(0, 1);
 
 console.log(fruits);
 ```
@@ -462,7 +467,7 @@ console.log(arr.join(""));
 
 #### --text--
 
-What will happen if you try to use the `shift()` method on an empty array?
+What will be the result of using the `shift()` method on an empty array?
 
 
 #### --distractors--
