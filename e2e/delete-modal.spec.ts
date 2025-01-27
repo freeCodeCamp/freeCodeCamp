@@ -5,6 +5,7 @@ import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { alertToBeVisible } from './utils/alerts';
+import { allowTrailingSlash } from './utils/url';
 
 const execP = promisify(exec);
 
@@ -145,7 +146,7 @@ test.describe('Delete Modal component', () => {
       })
     ).not.toBeVisible();
 
-    await expect(page).toHaveURL(/.*\/learn\/?/);
+    await expect(page).toHaveURL(allowTrailingSlash('/learn'));
     await alertToBeVisible(page, translations.flash['account-deleted']);
     // The user is signed out after their account is deleted
     await expect(page.getByRole('link', { name: 'Sign in' })).toHaveCount(2);

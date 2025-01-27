@@ -16,8 +16,10 @@ function ChallengeTranscript({
 
   return (
     <>
-      <details className='challenge-transcript'>
-        <summary>{t('learn.transcript')}</summary>
+      <details>
+        <summary className='challenge-transcript-heading'>
+          {t('learn.transcript')}
+        </summary>
         <Spacer size='m' />
         <PrismFormatted className={'line-numbers'} text={transcript} />
       </details>
