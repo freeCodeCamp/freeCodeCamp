@@ -562,12 +562,13 @@ function generatePhoneNumber(type) {
   return result;
 }
 
-
-const phoneNum = generatePhoneNumber(Math.round(Math.random()*7));
-userInput.value = phoneNum;
-userInput.dispatchEvent(new Event('change'));
-checkBtn.click();
-assert.strictEqual(document.getElementById('results-div').innerText.trim().toLowerCase(), `valid us number: ${phoneNum}`);
+for (let i = 1; i <= 7; i++) {
+  let phoneNum = generatePhoneNumber(Math.round(Math.random()*7));
+  userInput.value = phoneNum;
+  userInput.dispatchEvent(new Event('change'));
+  checkBtn.click();
+  assert.strictEqual(document.getElementById('results-div').innerText.trim().toLowerCase(), `valid us number: ${phoneNum}`);
+}
 ```
 
 When the `#user-input` element contains an invalid US number and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Invalid US number: "` followed by the number.
