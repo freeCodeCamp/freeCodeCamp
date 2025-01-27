@@ -131,14 +131,14 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
               // Use singular translation if count == 1 else plural
               if (value.count === 1) {
                 return {
-                  'data-tip': t('profile.points_singular', {
+                  'data-tip': t('profile.points-singular', {
                     count: value.count,
                     date: dateFormatted
                   })
                 };
               }
               return {
-                'data-tip': t('profile.points_plural', {
+                'data-tip': t('profile.points-plural', {
                   count: value.count,
                   date: dateFormatted
                 })
