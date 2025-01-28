@@ -1,35 +1,36 @@
-import React from 'react';
-
+import React, { useEffect } from 'react';
+import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
 import PrismFormatted from './prism-formatted';
 import './challenge-description.css';
 
-type Challenge = {
-  block?: string;
+type Props = {
   description?: string;
   instructions?: string;
-  superBlock?: string;
+  superBlock: string;
 };
 
-function ChallengeDescription(challenge: Challenge): JSX.Element {
-  const sbClass = challenge.superBlock ? challenge.superBlock : '';
-  const bClass = challenge.block ? challenge.block : '';
+const ChallengeDescription = ({
+  description,
+  instructions,
+  superBlock
+}: Props) => {
+  useEffect(() => {
+    if (isMathJaxAllowed(superBlock)) {
+      initializeMathJax();
+    }
+  }, [superBlock]);
 
   return (
     <div
-      className={`challenge-instructions ${sbClass} ${bClass}`}
+      className={'challenge-instructions mathjax-support'}
       data-playwright-test-label='challenge-description'
     >
-      {challenge.description && <PrismFormatted text={challenge.description} />}
-      {challenge.instructions && (
-        <>
-          <hr />
-          <PrismFormatted text={challenge.instructions} />
-        </>
-      )}
-      <hr />
+      {description && <PrismFormatted text={description} />}
+      {instructions && description && <hr />}
+      {instructions && <PrismFormatted text={instructions} />}
     </div>
   );
-}
+};
 
 ChallengeDescription.displayName = 'ChallengeDescription';
 

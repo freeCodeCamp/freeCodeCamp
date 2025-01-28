@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import { allowTrailingSlash } from './utils/url';
 
 test.describe('The update-email page when the user is signed in', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
     await page.goto('/update-email');
   });
@@ -66,7 +65,7 @@ test.describe('The update-email page when the user is not signed in', () => {
     // Ref: https://github.com/microsoft/playwright/issues/20749
     test.skip(browserName === 'firefox');
 
-    await page.waitForURL(/\/learn\/?/);
+    await page.waitForURL(allowTrailingSlash('/learn'));
 
     await expect(
       page.getByRole('heading', { name: 'Welcome back, Full Stack User' })

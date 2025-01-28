@@ -1,5 +1,5 @@
 {
-  "help-translate-link-url": "https://contribute.freecodecamp.org/#/i18n/portuguese/how-to-translate-files",
+  "help-translate-link-url": "https://contribute.freecodecamp.org/getting-started/#translations",
   "top-contributors": "https://www.freecodecamp.org/news/freecodecamp-top-contributors/",
   "footer": {
     "about-url": "https://www.freecodecamp.org/portuguese/news/sobre-o-freecodecamp-perguntas-frequentes/",
@@ -22,7 +22,7 @@
     "contribute": "https://contribute.freecodecamp.org/#/i18n/portuguese/index",
     "forum": "https://forum.freecodecamp.org/c/portugues/",
     "news": "https://freecodecamp.org/portuguese/news/",
-    "podcast": "https://freecodecamp.libsyn.com/"
+    "podcast": "https://open.spotify.com/show/70m92At5oht4zY4f87lLEE?si=6tozUAOBQFSVyaqixy6aCg"
   },
   "help": {
     "HTML-CSS": "Portugues/HTML-CSS",

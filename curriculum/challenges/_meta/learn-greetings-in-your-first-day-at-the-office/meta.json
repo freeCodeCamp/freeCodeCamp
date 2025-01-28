@@ -690,5 +690,6 @@
       "title": "Task 166"
     }
   ],
-  "helpCategory": "English"
+  "helpCategory": "English",
+  "blockLayout": "legacy-challenge-grid"
 }

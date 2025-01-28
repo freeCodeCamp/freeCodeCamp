@@ -1,0 +1,27 @@
+{
+  "name": "Working with Backgrounds and Borders",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-backgrounds-and-borders",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa669960f6a596081fcad",
+      "title": "How Do Background Image Size, Repeat, Position, and Attachment Work?"
+    },
+    {
+      "id": "672b98be592cfb451f651451",
+      "title": "What Is a Background Gradient, and How Does It Work?"
+    },
+    {
+      "id": "672b98cd77b6b7456b6ef2de",
+      "title": "What Are Some Accessibility Considerations for Backgrounds?"
+    },
+    {
+      "id": "672b98db3bcdd545ab3b3c73",
+      "title": "What Are the Different Ways You Can Add Borders Around Images?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

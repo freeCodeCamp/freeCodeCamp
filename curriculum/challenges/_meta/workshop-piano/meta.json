@@ -1,0 +1,137 @@
+{
+  "name": "Design a Piano",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-piano",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "612e78af05201622d4bab8aa",
+      "title": "Step 1"
+    },
+    {
+      "id": "612e7d1c29fb872d6384379c",
+      "title": "Step 2"
+    },
+    {
+      "id": "612e804c54d5e7308d7ebe56",
+      "title": "Step 3"
+    },
+    {
+      "id": "612e813b3ba67633222cbe54",
+      "title": "Step 4"
+    },
+    {
+      "id": "612e8279827a28352ce83a72",
+      "title": "Step 5"
+    },
+    {
+      "id": "612e83ec2eca1e370f830511",
+      "title": "Step 6"
+    },
+    {
+      "id": "612e89562043183c86df287c",
+      "title": "Step 7"
+    },
+    {
+      "id": "612e89d254fe5d3df7d6693d",
+      "title": "Step 8"
+    },
+    {
+      "id": "612e8eebe3a6dc3fcc33a66f",
+      "title": "Step 9"
+    },
+    {
+      "id": "612e95ef2e4bdf41f69067f9",
+      "title": "Step 10"
+    },
+    {
+      "id": "612e96fc87fe8e44f69f7ec5",
+      "title": "Step 11"
+    },
+    {
+      "id": "612e98f3245c98475e49cfc6",
+      "title": "Step 12"
+    },
+    {
+      "id": "612e9a21381a1949327512e6",
+      "title": "Step 13"
+    },
+    {
+      "id": "612e9d142affc44a453655db",
+      "title": "Step 14"
+    },
+    {
+      "id": "612e9f1e7e5ccd4fa9ada0be",
+      "title": "Step 15"
+    },
+    {
+      "id": "612ea4c4993aba52ab4aa32e",
+      "title": "Step 16"
+    },
+    {
+      "id": "612ea97df5742154772f312e",
+      "title": "Step 17"
+    },
+    {
+      "id": "612ead8788d28655ef8db056",
+      "title": "Step 18"
+    },
+    {
+      "id": "612eaf56b7ba3257fdbfb0db",
+      "title": "Step 19"
+    },
+    {
+      "id": "612eb4893b63c75bb9251ddf",
+      "title": "Step 20"
+    },
+    {
+      "id": "612eb75153591b5e3b1ab65e",
+      "title": "Step 21"
+    },
+    {
+      "id": "612eb7ca8c275d5f89c73333",
+      "title": "Step 22"
+    },
+    {
+      "id": "612eb8e984cd73677a92b7e9",
+      "title": "Step 23"
+    },
+    {
+      "id": "612eb934f64a4d6890a45518",
+      "title": "Step 24"
+    },
+    {
+      "id": "612ebcba99bfa46a15370b11",
+      "title": "Step 25"
+    },
+    {
+      "id": "612ebe7fe6d07e6b76d1cae2",
+      "title": "Step 26"
+    },
+    {
+      "id": "612ebedec97e096c8bf64999",
+      "title": "Step 27"
+    },
+    {
+      "id": "612ebf9a210f2b6d77001e68",
+      "title": "Step 28"
+    },
+    {
+      "id": "612ec0490ae8626e9adf82e4",
+      "title": "Step 29"
+    },
+    {
+      "id": "612ec19d5268da7074941f84",
+      "title": "Step 30"
+    },
+    {
+      "id": "612ec29c84b9a6718b1f5cec",
+      "title": "Step 31"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

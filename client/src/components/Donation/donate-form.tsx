@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';
 import { createSelector } from 'reselect';
 import type { TFunction } from 'i18next';
+import { Spacer } from '@freecodecamp/ui';
 
 import {
   defaultDonation,
@@ -20,11 +21,10 @@ import {
   isDonatingSelector,
   signInLoadingSelector,
   donationFormStateSelector,
-  completedChallengesSelector
+  completedChallengesSelector,
+  themeSelector
 } from '../../redux/selectors';
-import Spacer from '../helpers/spacer';
-import { Themes } from '../settings/theme';
-import { DonateFormState } from '../../redux/types';
+import { LocalStorageThemes, DonateFormState } from '../../redux/types';
 import type { CompletedChallenge } from '../../redux/prop-types';
 import { CENTS_IN_DOLLAR, formattedAmountLabel } from './utils';
 import DonateCompletion from './donate-completion';
@@ -61,7 +61,7 @@ type PostCharge = (data: {
 
 type DonateFormProps = {
   postCharge: PostCharge;
-  defaultTheme?: Themes;
+  defaultTheme?: LocalStorageThemes;
   email: string;
   handleProcessing?: () => void;
   editAmount?: () => void;
@@ -72,10 +72,10 @@ type DonateFormProps = {
   isDonating: boolean;
   showLoading: boolean;
   t: TFunction;
-  theme: Themes;
   updateDonationFormState: (state: DonationApprovalData) => unknown;
   paymentContext: PaymentContext;
   completedChallenges: CompletedChallenge[];
+  theme: LocalStorageThemes;
 };
 
 const mapStateToProps = createSelector(
@@ -85,21 +85,23 @@ const mapStateToProps = createSelector(
   donationFormStateSelector,
   userSelector,
   completedChallengesSelector,
+  themeSelector,
   (
     showLoading: DonateFormProps['showLoading'],
     isSignedIn: DonateFormProps['isSignedIn'],
     isDonating: DonateFormProps['isDonating'],
     donationFormState: DonateFormState,
-    { email, theme }: { email: string; theme: Themes },
-    completedChallenges: CompletedChallenge[]
+    { email }: { email: string },
+    completedChallenges: CompletedChallenge[],
+    theme: LocalStorageThemes
   ) => ({
     isSignedIn,
     isDonating,
     showLoading,
     donationFormState,
     email,
-    theme,
-    completedChallenges
+    completedChallenges,
+    theme
   })
 );
 
@@ -242,7 +244,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     return (
       <>
         <div className={confirmationClass()}>{confirmationWithEditAmount}</div>
-        <Spacer size={editAmount ? 'small' : 'medium'} />
+        <Spacer size={editAmount ? 'xs' : 'm'} />
         <fieldset
           data-playwright-test-label='donation-form'
           className={'donate-btn-group security-legend'}

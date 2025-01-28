@@ -27,6 +27,10 @@
   background-color: var(--tertiary-background);
 }
 
+.test-result:nth-child(odd) code {
+  background-color: var(--secondary-background);
+}
+
 .test-output {
   padding: 5px 10px;
 }

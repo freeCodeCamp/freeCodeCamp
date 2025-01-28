@@ -1,0 +1,35 @@
+{
+  "name": "Introduction to JavaScript Libraries and Frameworks",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6734e3a9cc78faaf4248d335",
+      "title": "What Is the Role of JS Libraries and Frameworks, and Why Are They Used in the Industry?"
+    },
+    {
+      "id": "6734e867bbf41cc5b11648c4",
+      "title": "What Are Single Page Applications, and What Are Some Issues Surrounding Them?"
+    },
+    {
+      "id": "6734e86f590727c5e7e9ec5e",
+      "title": "What Is React, and What Is It Commonly Used For?"
+    },
+    {
+      "id": "6734e879c78ee6c61db25b90",
+      "title": "What Are Components in React, and How Do They Work?"
+    },
+    {
+      "id": "674ba6876f7ada867135bb95",
+      "title": "How Can You Import and Export Components in React?"
+    },
+    {
+      "id": "6734e88cc46e6dc679420040",
+      "title": "What is Vite, and How Can It Be Used to Set Up a New React Project?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

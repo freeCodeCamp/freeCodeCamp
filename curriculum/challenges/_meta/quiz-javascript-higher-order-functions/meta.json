@@ -1,0 +1,15 @@
+{
+  "name": "JavaScript Higher Order Functions Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-higher-order-functions",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "66edcdd18a4ef8df16e6bb7e",
+      "title": "JavaScript Higher Order Functions Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

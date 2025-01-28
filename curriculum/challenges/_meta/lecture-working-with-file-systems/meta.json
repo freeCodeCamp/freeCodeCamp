@@ -1,0 +1,35 @@
+{
+  "name": "Working with File Systems",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-file-systems",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa58c389eb9565978495d",
+      "title": "How Can You Use File Management Applications on Your Computer?"
+    },
+    {
+      "id": "672ac37104dc2530a769e6a4",
+      "title": "What Are Best Practices for Naming Files for Web Applications?"
+    },
+    {
+      "id": "672ac39a22b0cc30eb8fd65e",
+      "title": "What Are Best Practices for File/Folder Organization in Web Applications?"
+    },
+    {
+      "id": "672ac3c5d0e9fd31835ff772",
+      "title": "How Can You Create, Move, and Delete Files and Folders Using Explorer/Finder?"
+    },
+    {
+      "id": "672ac3f129efbf327742eb33",
+      "title": "How Can You Search for Files and Folders on Your Computer?"
+    },
+    {
+      "id": "672ac403a9ba7732b31c6480",
+      "title": "What Are Some Common File Types You Will Work With in Web Applications?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

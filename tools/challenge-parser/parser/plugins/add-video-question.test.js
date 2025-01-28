@@ -1,12 +1,21 @@
-const simpleAST = require('../__fixtures__/ast-simple.json');
-const mockVideoAST = require('../__fixtures__/ast-video-challenge.json');
-// eslint-disable-next-line max-len
-const videoOutOfOrderAST = require('../__fixtures__/ast-video-out-of-order.json');
+const parseFixture = require('../__fixtures__/parse-fixture');
 const addVideoQuestion = require('./add-video-question');
 
 describe('add-video-question plugin', () => {
+  let simpleAST, videoAST, multipleQuestionAST, videoOutOfOrderAST;
   const plugin = addVideoQuestion();
   let file = { data: {} };
+
+  beforeAll(async () => {
+    simpleAST = await parseFixture('simple.md');
+    videoAST = await parseFixture('with-video-question.md');
+    multipleQuestionAST = await parseFixture(
+      'with-multiple-video-questions.md'
+    );
+    videoOutOfOrderAST = await parseFixture(
+      'with-video-question-out-of-order.md'
+    );
+  });
 
   beforeEach(() => {
     file = { data: {} };
@@ -17,32 +26,45 @@ describe('add-video-question plugin', () => {
   });
 
   it('adds a `questions` property to `file.data`', () => {
-    plugin(mockVideoAST, file);
+    plugin(videoAST, file);
 
     expect('questions' in file.data).toBe(true);
   });
 
+  const checkQuestion = question => {
+    expect(question).toHaveProperty('text');
+    expect(typeof question.text).toBe('string');
+    expect(question).toHaveProperty('solution');
+    expect(typeof question.solution).toBe('number');
+    expect(question).toHaveProperty('answers');
+    expect(Array.isArray(question.answers)).toBe(true);
+    expect(typeof question.answers[0]).toBe('object');
+    expect(question.answers[0]).toHaveProperty('answer');
+    expect(question.answers[0].answer).toBeTruthy();
+    expect(question.answers[0]).toHaveProperty('feedback');
+  };
+
   it('should generate a questions array from a video challenge AST', () => {
-    expect.assertions(11);
-    plugin(mockVideoAST, file);
+    plugin(videoAST, file);
     const testArr = file.data.questions;
     expect(Array.isArray(testArr)).toBe(true);
     expect(testArr.length).toBe(1);
 
-    const testObject = testArr[0];
-    expect(testObject).toHaveProperty('text');
-    expect(typeof testObject.text).toBe('string');
-    expect(testObject).toHaveProperty('solution');
-    expect(typeof testObject.solution).toBe('number');
-    expect(testObject).toHaveProperty('answers');
-    expect(Array.isArray(testObject.answers)).toBe(true);
-    expect(typeof testObject.answers[0]).toBe('object');
-    expect(testObject.answers[0]).toHaveProperty('answer');
-    expect(testObject.answers[0]).toHaveProperty('feedback');
+    checkQuestion(testArr[0]);
+  });
+
+  it('should include multiple questions if present', () => {
+    plugin(multipleQuestionAST, file);
+    const testArr = file.data.questions;
+    expect(Array.isArray(testArr)).toBe(true);
+    expect(testArr.length).toBe(2);
+    for (const testObject of testArr) {
+      checkQuestion(testObject);
+    }
   });
 
   it('should convert question and answer markdown into html', () => {
-    plugin(mockVideoAST, file);
+    plugin(videoAST, file);
     const testObject = file.data.questions[0];
     expect(Object.keys(testObject).length).toBe(3);
     expect(testObject.text).toBe(
@@ -79,7 +101,7 @@ describe('add-video-question plugin', () => {
   });
 
   it('should match the video snapshot', () => {
-    plugin(mockVideoAST, file);
+    plugin(videoAST, file);
     expect(file.data).toMatchSnapshot();
   });
 });

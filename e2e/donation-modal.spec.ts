@@ -3,10 +3,11 @@ import { test, expect, type Page } from '@playwright/test';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
 import { clearEditor, focusEditor } from './utils/editor';
+import { allowTrailingSlash } from './utils/url';
 
 const slowExpect = expect.configure({ timeout: 25000 });
 
-const completeFrontEndCert = async (page: Page) => {
+const completeFrontEndCert = async (page: Page, number?: number) => {
   await page.goto(
     `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-random-quote-machine`
   );
@@ -19,9 +20,12 @@ const completeFrontEndCert = async (page: Page) => {
     '25--5-clock'
   ];
 
-  for (const project of projects) {
+  const loopNumber = number || projects.length;
+  for (let i = 0; i < loopNumber; i++) {
     await page.waitForURL(
-      `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${project}`
+      allowTrailingSlash(
+        `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i]}`
+      )
     );
     await page
       .getByRole('textbox', { name: 'solution' })
@@ -91,7 +95,7 @@ const completeChallenges = async ({
 }) => {
   await page.goto(challenges[0].url);
   for (const challenge of challenges.slice(0, number)) {
-    await page.waitForURL(challenge.url);
+    await page.waitForURL(allowTrailingSlash(challenge.url));
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
     await page.evaluate(
@@ -116,8 +120,6 @@ test.describe('Donation modal display', () => {
   test.beforeEach(async ({ context }) => {
     await addGrowthbookCookie({ context, variation: 'A' });
   });
-
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
   test('should display the content correctly and disable close when the animation is not complete', async ({
     page,
@@ -259,12 +261,34 @@ test.describe('Donation modal appearance logic - New user', () => {
     await expect(donationModal).toBeHidden();
   });
 
-  test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
+  test('should not appear if the user has just completed a new block but has less than 10 completed challenges', async ({
     page
   }) => {
     test.setTimeout(40000);
 
     await completeFrontEndCert(page);
+
+    const donationModal = page
+      .getByRole('dialog')
+      .filter({ hasText: 'Become a Supporter' });
+    await expect(donationModal).toBeHidden();
+  });
+});
+
+test.describe('Donation modal appearance logic - Certified user claiming a new block', () => {
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+  test.beforeEach(() =>
+    execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user')
+  );
+
+  test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
+    page,
+    context
+  }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    test.setTimeout(40000);
+
+    await completeFrontEndCert(page, 1);
 
     const donationModal = page
       .getByRole('dialog')
@@ -286,13 +310,12 @@ test.describe('Donation modal appearance logic - New user', () => {
     await donationModal.getByRole('button', { name: 'Ask me later' }).click();
     await expect(donationModal).toBeHidden();
 
-    await completeFrontEndCert(page);
+    await completeFrontEndCert(page, 1);
     await expect(donationModal).toBeHidden();
   });
 });
 
 test.describe('Donation modal appearance logic - Certified user', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test.beforeEach(async ({ context }) => {
     await addGrowthbookCookie({ context, variation: 'A' });
   });
@@ -333,8 +356,6 @@ test.describe('Donation modal appearance logic - Certified user', () => {
 });
 
 test.describe('Donation modal appearance logic - Donor user', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeAll(() => {
     execSync(
       'node ./tools/scripts/seed/seed-demo-user --certified-user --set-true isDonating'

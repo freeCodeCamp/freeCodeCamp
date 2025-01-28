@@ -1,0 +1,12 @@
+{
+  "name": "JavaScript Objects Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-objects",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6723c77d1a44b8a7599277dd", "title": "JavaScript Objects Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

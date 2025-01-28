@@ -1,10 +1,16 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Picture input field', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
-    await page.goto('/settings');
+    await page.goto('/certifieduser');
+
+    if (!process.env.CI) {
+      await page
+        .getByRole('button', { name: 'Preview custom 404 page' })
+        .click();
+    }
+
+    await page.getByRole('button', { name: 'Edit my profile' }).click();
   });
 
   test('Should be possible to type', async ({ page }) => {
@@ -20,7 +26,7 @@ test.describe('Picture input field', () => {
     const pictureInput = page.getByLabel('Picture');
     await pictureInput.fill('');
     await pictureInput.fill(
-      'https://s3.amazonaws.com/freecodecamp/camper-image'
+      'https://cdn.freecodecamp.org/platform/universal/camper-image-placeholder'
     );
     await expect(
       page.getByText('URL must link directly to an image file')
@@ -31,7 +37,7 @@ test.describe('Picture input field', () => {
     const pictureInput = page.getByLabel('Picture');
     await pictureInput.fill('');
     await pictureInput.fill(
-      'https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png'
+      'https://cdn.freecodecamp.org/platform/universal/camper-image-placeholder.png'
     );
 
     const form = page.getByTestId('camper-identity');

@@ -7,6 +7,7 @@
     "first-lesson": "Ir para a primeira aula",
     "close": "Fechar",
     "edit": "Editar",
+    "copy": "Copiar",
     "view": "Visualizar",
     "view-code": "Ver código",
     "view-project": "Ver o projeto",
@@ -52,6 +53,8 @@
     "create-post": "Criar uma postagem de ajuda no fórum",
     "cancel": "Cancelar",
     "reset-lesson": "Reiniciar esta aula",
+    "revert": "Reverter",
+    "revert-to-saved-code": "Reverter para o código salvo",
     "run": "Executar",
     "run-test": "Execute os testes (Ctrl + Enter)",
     "check-code": "Verifique seu código",
@@ -93,6 +96,8 @@
     "exit": "Sair",
     "finish-exam": "Finalizar o exame",
     "finish": "Finalizar",
+    "exit-quiz": "Sair do questionário",
+    "finish-quiz": "Finalizar o questionário",
     "submit-exam-results": "Enviar meus resultados",
     "verify-trophy": "Verificar troféu",
     "link-account": "Vincular conta",
@@ -101,7 +106,10 @@
     "donate-now": "Doe agora",
     "confirm-amount": "Confirmar o valor",
     "play-scene": "Pressione Play",
-    "closed-caption": "Versão legendada"
+    "closed-caption": "Versão legendada",
+    "share-on-x": "Share on X",
+    "share-on-bluesky": "Share on BlueSky",
+    "share-on-threads": "Share on Threads"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -110,7 +118,7 @@
     "big-heading-3": "Obtenha certificações.",
     "big-heading-4": "De graça.",
     "h2-heading": "Desde 2014, mais de 40.000 pessoas que concluíram o freeCodeCamp.org obtiveram empregos em empresas de tecnologia incluindo:",
-    "h2-heading-b": "Mais de 100 mil pessoas já concluíram o freeCodeCamp.org e obtiveram empregos em empresas de tecnologia, incluindo:",
+    "h2-heading-b": "Mais de <strong>100 mil pessoas</strong> já concluíram o freeCodeCamp.org e obtiveram <strong>empregos</strong> em empresas de tecnologia, incluindo:",
     "hero-img-description": "Estudantes do freeCodeCamp em um grupo de estudos local na Coreia do Sul.",
     "hero-img-alt": "Um grupo de pessoas, incluindo um homem branco, uma mulher negra e uma mulher asiática, reunidos ao redor de um laptop.",
     "hero-img-uis": "Um grupo de capturas de tela mostrando a interface de editor do freeCodeCamp em um dispositivo móvel e em um desktop, além de uma certificação.",
@@ -133,12 +141,36 @@
         "testimony": "\"Eu sempre tive dificuldade em aprender JavaScript. Eu fiz muitos cursos, mas o curso do freeCodeCamp foi aquele que prendeu minha atenção. Estudar JavaScript, bem como algoritmos e estruturas de dados no <strong>freeCodeCamp me deu as habilidades</strong> e a confiança que eu precisava para conseguir o trabalho dos meus sonhos como engenheira de software na Spotify.\""
       }
     },
+    "benefits": {
+      "heading": "Por que aprender com o freeCodeCamp:",
+      "list": [
+        {
+          "title": "Uma grande comunidade",
+          "description": "Junte-se à nossa vibrante comunidade de estudantes, ex-estudantes e educadores."
+        },
+        {
+          "title": "Educação gratuita",
+          "description": "Learn from our charity and save money on your education. This is made possible by the generous support of our monthly donors."
+        },
+        {
+          "title": "Certificações extensivas",
+          "description": "Obtenha certificações da área, reconhecidas e verificáveis, em tecnologias de alta demanda."
+        },
+        {
+          "title": "Currículo extenso",
+          "description": "Melhore suas habilidades técnicas com nosso currículo linear e de primeira classe, baseado em projetos."
+        }
+      ],
+      "cta": "Comece a aprender agora (é grátis)"
+    },
     "certification-heading": "Ganhe certificações verificadas gratuitas em:",
     "core-certs-heading": "Obtenha certificações verificadas gratuitamente com o currículo principal do freeCodeCamp:",
     "learn-english-heading": "Aprenda inglês para desenvolvedores:",
     "professional-certs-heading": "Obtenha certificações profissionais gratuitas:",
     "interview-prep-heading": "Prepare-se para desenvolvedor em sua procura por emprego:",
     "legacy-curriculum-heading": "Explore nosso currículo antigo:",
+    "next-heading": "Try our beta curriculum:",
+    "next-english-heading": "Try our latest English curriculum:",
     "upcoming-heading": "Próximo currículo:",
     "faq": "Perguntas frequentes:",
     "faqs": [
@@ -200,6 +232,7 @@
     ]
   },
   "settings": {
+    "profile-note": "Observação: as configurações foram movidas para a página de perfil.",
     "share-projects": "Compartilhe seus projetos que não sejam do freeCodeCamp, artigos ou pull requests aceitas.",
     "privacy": "As configurações nesta seção permitem que você controle o que é mostrado no seu portfólio público do freeCodeCamp. Pressione Save para salvar suas alterações.",
     "data": "Para ver quais dados mantemos sobre sua conta, clique no botão \"Baixar seus dados\" abaixo",
@@ -210,6 +243,8 @@
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
     "sound-volume": "Volume do modo fogueira:",
     "scrollbar-width": "Largura da barra de rolagem do editor",
+    "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
+    "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Dentro de um desafio, aperte ESC seguido pelo ponto de interrogação para mostrar uma lista de atalhos disponíveis.",
     "username": {
       "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
@@ -318,13 +353,14 @@
     "donated": "Doou para a comunidade",
     "projects": "Projetos",
     "stats": "Estatísticas",
+    "activity": "Activity",
     "timeline": "Cronograma",
     "none-completed": "Nenhum desafio foi concluído ainda.",
     "get-started": "Comece aqui.",
     "challenge": "Desafio",
     "completed": "Concluído",
     "add-linkedin": "Adicionar esta certificação ao meu perfil do LinkedIn",
-    "add-twitter": "Compartilhar esta certificação no Twitter",
+    "add-twitter": "Share this certification on X",
     "tweet": "Acabei de receber a certificação {{certTitle}} @freeCodeCamp! Confira aqui: {{certURL}}",
     "avatar": "Avatar de {{username}}",
     "joined": "Entrou em {{date}}",
@@ -332,7 +368,10 @@
     "total-points": "Pontos no total:",
     "points": "{{count}} ponto em {{date}}",
     "points_plural": "{{count}} pontos em {{date}}",
-    "page-number": "{{pageNumber}} de {{totalPages}}"
+    "page-number": "{{pageNumber}} de {{totalPages}}",
+    "edit-my-profile": "Editar meu perfil",
+    "add-bluesky": "Share this certification on BlueSky",
+    "add-threads": "Share this certification on Threads"
   },
   "footer": {
     "tax-exempt-status": "O freeCodeCamp é uma organização beneficente 501(c)(3), isenta de impostos e apoiada por doações (Número de identificação fiscal federal dos Estados Unidos: 82-0779546).",
@@ -386,6 +425,10 @@
     "assignment-not-complete": "Complete as tarefas",
     "assignments": "Tarefas",
     "question": "Questão",
+    "questions": "Questão",
+    "answered-mcq": "You have unanswered questions and/or incorrect answers.",
+    "explanation": "Explicação",
+    "transcript": "Read a transcript of this video",
     "solution-link": "Link da solução",
     "source-code-link": "Link do código-fonte",
     "ms-link": "Link da Microsoft",
@@ -397,6 +440,7 @@
     "running-tests": "// executando testes",
     "tests-completed": "// testes concluídos",
     "console-output": "// saída do console",
+    "example-app": "Crie uma aplicação que seja funcionalmente semelhante a <0>este projeto de exemplo</0>. Tente não copiar o projeto de exemplo, dê a ele seu próprio estilo pessoal.",
     "syntax-error": "Seu código gerou um erro antes que qualquer teste possa ser executado. Corrija-o e tente novamente.",
     "indentation-error": "Seu código tem um erro de indentação. Você pode precisar adicionar <code>pass</code> em uma nova linha para formar um bloco de código válido.",
     "sign-in-save": "Faça o login para salvar seu progresso",
@@ -416,6 +460,7 @@
     "reset": "Reiniciar esta aula?",
     "reset-warn": "Tem certeza de que deseja reiniciar esta lição? Os editores e testes serão reiniciados.",
     "reset-warn-2": "Isto não pode ser desfeito.",
+    "revert-warn": "Tem certeza que deseja reverter esta lição? As alterações mais recentes serão desfeitas e o código será revertido para a versão salva mais recentemente.",
     "scrimba-tip": "Dica: se o minibrowser estiver cobrindo o código, clique e arraste para movê-lo. Além disso, sinta-se à vontade para parar e editar o código no vídeo a qualquer momento.",
     "chal-preview": "Pré-visualização do desafio",
     "donation-record-not-found": "O registro de sua doação não foi encontrado.",
@@ -445,6 +490,7 @@
     "help-translate": "Ainda estamos traduzindo essa certificação.",
     "help-translate-link": "Ajude-nos a traduzir.",
     "project-preview-title": "Aqui está uma prévia do que você vai criar",
+    "demo-project-title": "Aqui está o exemplo de um projeto que atende aos requisitos",
     "github-required": "<0>Crie uma conta no GitHub</0> se você já não tiver uma. Você vai precisar dela ao criar a máquina virtual do servidor Linux. Esse processo pode demorar alguns minutos.",
     "gitpod": {
       "intro": "Este curso é executado em uma máquina virtual Linux usando o Gitpod. Siga estas instruções para iniciar o curso:",
@@ -467,7 +513,9 @@
     "complete-both-steps": "Complete as duas etapas abaixo para terminar o desafio.",
     "runs-in-vm": "O projeto é executado em uma máquina virtual. Complete as histórias de usuários descritas lá e passe em todos os testes para concluir a etapa 1.",
     "completed": "Concluído",
+    "not-completed": "Not completed",
     "not-started": "Não iniciado",
+    "steps-completed": "{{completedSteps}} of {{totalSteps}} steps complete",
     "test": "Teste",
     "sorry-try-again": "Desculpe, seu código não passou nos testes. Tente novamente.",
     "sorry-keep-trying": "Desculpe, seu código não passou nos testes. Continue tentando.",
@@ -480,8 +528,24 @@
     "building-a-university": "Estamos criando um programa gratuito de graduação em Ciência da Computação 🎉",
     "if-help-university": "Já fizemos um progresso enorme. Doe agora para apoiar nossa organização sem fins lucrativos no caminho que temos pela frente.",
     "preview-external-window": "Visualização exibida atualmente na janela externa.",
-    "fill-in-the-blank": "Preencha o espaço em branco",
-    "blank": "vazio",
+    "fill-in-the-blank": {
+      "heading": "Fill in the blank",
+      "blank": "blank"
+    },
+    "quiz": {
+      "correct-answer": "Correto!",
+      "incorrect-answer": "Incorreto.",
+      "unanswered-questions": "As seguintes perguntas não foram respondidas: {{ unansweredQuestions }}. Você precisa responder a todas as perguntas.",
+      "have-n-correct-questions": "Você acertou {{ correctAnswerCount }} de {{ total }} perguntas.",
+      "finish-modal-header": "Terminar o questionário",
+      "finish-modal-body": "Tem certeza de que deseja finalizar o questionário? Você não será capaz de alterar respostas depois disso.",
+      "finish-modal-yes": "Sim, eu terminei",
+      "finish-modal-no": "Não, quero continuar no questionário",
+      "exit-modal-header": "Sair do questionário",
+      "exit-modal-body": "Tem certeza de que deseja sair do questionário? Você perderá todo o progresso que já fez.",
+      "exit-modal-yes": "Sim, quero sair do questionário",
+      "exit-modal-no": "Não, quero continuar no questionário"
+    },
     "exam": {
       "qualified": "Parabéns! Você completou todos os requisitos para se qualificar para o exame.",
       "not-qualified": "Você ainda não cumpriu os requisitos para ser elegível para o exame. Para se qualificar, complete os seguintes desafios:",
@@ -520,13 +584,13 @@
       "transcript-label": "Seu link de transcrição da Microsoft",
       "invalid-transcript": "O link da transcrição não está correto. Ele deve ter esta aparência: <1>https://learn.microsoft.com/IDIOMA_DE_LOCALIZACAO/users/NOME_DO_USUARIO/transcript/ID</1> - Confira os itens que aparecem em MAIÚSCULAS no seu link para ver se estão corretos."
     },
-    "blockType": {
+    "block-type": {
       "lecture": "Aula",
       "workshop": "Workshop",
       "lab": "Laboratório",
       "review": "Revisão",
       "quiz": "Questionário",
-      "exam": "Prova"
+      "exam": "Teste"
     }
   },
   "donate": {
@@ -535,6 +599,7 @@
     "redirecting": "Redirecionando...",
     "thanks": "Agradecemos por sua doação",
     "thank-you": "Obrigado pelo seu apoio",
+    "thank-you-continued": "Thank you for your continued support",
     "success-card-update": "Seu cartão foi atualizado com sucesso.",
     "additional": "Você pode fazer uma doação adicional de qualquer valor usando este link: <0>{{url}}</0>",
     "help-more": "Ajude nossa instituição a fazer mais",
@@ -570,6 +635,10 @@
     "progress-modal-cta-10": "Doe agora para nos ajudar a desenvolver certificações de programação profissional gratuitas para todos.",
     "help-us-reach-20k": "Doe agora para ajudar nossa instituição beneficente a atingir nosso objetivo de chegar a 20.000 apoiadores mensais neste ano.",
     "beta-certification": "Esta certificação está atualmente em versão beta. Considere doar para apoiar a conclusão do seu desenvolvimento.",
+    "unfinished-certification": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível no momento, uma estará disponível em breve. Enquanto isso, você pode explorar os cursos que criamos abaixo.",
+    "consider-donating": "Considere doar para apoiar a conclusão do desenvolvimento da certificação.",
+    "unfinished-certification-2": "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to take the final exam when we launch it in the coming months.",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please <0>consider becoming a supporter of our charity.</0>",
     "help-us-develop": "Ajude-nos a desenvolver certificações de programação profissional gratuitas para todos.",
     "nicely-done": "Bom trabalho. Você acabou de completar {{block}}.",
     "credit-card": "Cartão de crédito",
@@ -635,13 +704,13 @@
     "bear-progress-alt": "Ilustração de um ursinho de pelúcia adorável com um olhar triste e segurando um pote de dinheiro vazio.",
     "bear-completion-alt": "Ilustração de um ursinho de pelúcia adorável segurando um grande troféu.",
     "flying-bear": "Ilustração de um urso de pelúcia adorável usando um chapéu de formatura e voando com um distintivo de suporte.",
-    "crucial-contribution": "Sua contribuição será fundamental para a criação de recursos que permitam a milhões de pessoas aprender novas competências e sustentar suas famílias.",
+    "crucial-contribution": "Your contributions are crucial in creating resources that empower millions of people to learn new skills and support their families.",
     "support-benefits-title": "Benefícios de se tornar um apoiador:",
     "support-benefits-1": "Não ter mais pop-ups de doação",
     "support-benefits-2": "Você receberá um emblema de apoiador",
     "support-benefits-3": "Sua imagem de perfil terá um contorno dourado em torno dela",
     "support-benefits-4": "Você terá acesso a canais especiais do Discord para apoiador – <0>entre no nosso Discord</0> e use o comando <1>/supporter</1> para ter acesso",
-    "support-benefits-5": "Mais benefícios virão em 2024",
+    "support-benefits-5": "And more benefits to come soon",
     "exclusive-features": "Aqui está a lista de recursos exclusivos para você como apoiador:",
     "current-initiatives-title": "Iniciativas atuais:",
     "your-donation-helps-followings": "Sua doação torna possíveis as seguintes iniciativas:",
@@ -650,10 +719,10 @@
     "current-initiatives-3": "Traduzir nosso currículo e tutoriais para 32 idiomas",
     "current-initiatives-4": "Criar uma graduação em ciência da computação reconhecida e gratuita",
     "community-achivements-title": "Conquistas da nossa comunidade neste ano:",
-    "community-achivements-1": "Publicamos <0>114</0> cursos completos no YouTube.",
-    "community-achivements-2": "Publicamos <0>1.045</0> tutoriais de programação baseados em texto e <0>20</0> livros gratuitos através do editorial do freeCodeCamp.",
-    "community-achivements-3": "Fizemos o merge de <0>2.753</0> contribuições ao código em nossos repositórios de código aberto no GitHub",
-    "community-achivements-4": "Traduzimos <0>2.106.203</0> palavras para tornar nosso currículo e tutoriais mais acessíveis aos falantes de muitos idiomas do mundo",
+    "community-achivements-1": "Published <0>193</0> full-length courses on YouTube.",
+    "community-achivements-2": "Published <0>850</0> text-based coding tutorials and <0>5</0> free books through freeCodeCamp Press.",
+    "community-achivements-3": "Merged <0>2,455</0> code contributions into our open source repositories on GitHub",
+    "community-achivements-4": "Translated <0>1.5</0> million words to make our curriculum and tutorials more accessible to speakers of many world languages",
     "as-you-see": "Como você pode ver, estamos fazendo acontecer. Então, você pode ter a certeza de que usaremos suas doações de maneira correta.",
     "get-benefits": "Obtenha os benefícios e o conhecimento de que você está ajudando a nossa instituição beneficente a mudar a educação para melhor. Torne-se um apoiador hoje.",
     "modal-benefits-title": "Apoie-nos",
@@ -662,6 +731,8 @@
     "help-millions-learn": "Ajude milhões de pessoas a aprender",
     "reach-goals-faster": "Alcance seus objetivos mais rapidamente",
     "remove-distractions": "Remova distrações",
+    "remove-interruptions": "Remove interruptions",
+    "acquire-skills-faster": "Acquire skills faster",
     "animation-description": "Esse é um anúncio animado de 20 segundos para incentivar campers a se tornarem apoiadores do freeCodeCamp. A animação começa com um urso de pelúcia que se torna um apoiador. Como resultado, os pop-ups de distração desaparecem e o urso completa todos os seus objetivos. Então, termina o curso e se torna um super-herói da educação que ajuda as pessoas em todo o mundo.",
     "animation-countdown": "Esta animação será interrompida após {{secondsRemaining}} segundos."
   },
@@ -682,7 +753,10 @@
   },
   "search": {
     "label": "Pesquisar",
-    "placeholder": "Buscar entre os mais de 10.700 tutoriais",
+    "placeholder": {
+      "default": "Buscar em nossos tutoriais",
+      "numbered": "Buscar em mais de {{ roundedTotalRecords }} tutoriais"
+    },
     "see-results": "Ver todos os resultados para {{searchQuery}}",
     "no-tutorials": "Nenhum tutorial foi encontrado",
     "try": "Procurando algo? Tente a barra de pesquisa nesta página.",
@@ -690,6 +764,7 @@
     "result-list": "Resultados da pesquisa"
   },
   "misc": {
+    "coming-soon": "Coming Soon",
     "offline": "Você parece estar off-line, seu progresso pode não ser salvo",
     "server-offline": "O servidor não pôde ser alcançado e seu progresso pode não ser salvo. Entre em contato com <0>suporte</0> se esta mensagem persistir",
     "unsubscribed": "Sua assinatura foi cancelada com sucesso",
@@ -729,6 +804,7 @@
     "heart": "Coração",
     "initial": "Inicial",
     "input-reset": "Limpar termos de pesquisa",
+    "input-search": "Enviar termos de pesquisa",
     "info": "Informações introdutórias",
     "spacer": "Espaçador",
     "toggle": "Alternar marcação",
@@ -764,7 +840,8 @@
     "code-example": "Exemplo de código de {{codeName}}",
     "opens-new-window": "Abre em uma nova janela",
     "rsa-checkbox": "Eu tentei o método Ler-Pesquisar-Perguntar",
-    "similar-questions-checkbox": "Eu pesquisei por perguntas semelhantes que já foram respondidas no fórum"
+    "similar-questions-checkbox": "Eu pesquisei por perguntas semelhantes que já foram respondidas no fórum",
+    "edit-my-profile": "Editar meu perfil"
   },
   "flash": {
     "honest-first": "Para solicitar uma certificação, você precisa primeiro concordar com nossa política de honestidade acadêmica",
@@ -799,7 +876,7 @@
     "expired-link": "Parece que o link que você clicou expirou. Solicite um novo link para fazer login",
     "signin-success": "Sucesso! Você entrou com sua conta. Boa programação!",
     "social-auth-gone": "Estamos abandonando a autenticação social por motivos de privacidade. Da próxima vez, recomendamos que você entre com o seu endereço de e-mail: {{email}}.",
-    "name-needed": "Precisamos do seu nome para que possamos colocá-lo na sua certificação. Adicione seu nome às configurações da sua conta e clique no botão Salvar. Depois disso, poderemos emitir sua certificação.",
+    "name-needed": "Precisamos do seu nome para que possamos colocá-lo na sua certificação. Adicione seu nome ao seu perfil e clique em Salvar. Depois disso, poderemos emitir sua certificação.",
     "incomplete-steps": "Parece que você não completou as etapas necessárias. Complete os projetos necessários para reivindicar a certificação {{name}}.",
     "already-claimed": "Parece que você já solicitou a certificação {{name}}",
     "cert-claim-success": "@{{username}}, você solicitou a certificação {{name}} com sucesso! Parabéns em nome da equipe do freeCodeCamp.org!",
@@ -838,6 +915,7 @@
     "invalid-update-flag": "Você está tentando acessar recursos proibidos. Solicite assistência em https://forum.freecodecamp.org se sua solicitação for válida.",
     "generate-exam-error": "Ocorreu um erro ao tentar gerar seu exame.",
     "cert-not-found": "A certificação {{certSlug}} não existe.",
+    "reset-editor-layout": "Your editor layout has been reset.",
     "ms": {
       "transcript": {
         "link-err-1": "Inclua um URL de transcrição da Microsoft na solicitação.",
@@ -898,6 +976,8 @@
     "issued": "Emitido",
     "fulltext": "<0>Esta é a certificação de que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>do freeCodeCamp. org em {{time}},</4> <5>representando aproximadamente {{completionTime}} horas de curso.</5>",
     "fulltextNoHours": "<0>Certificamos que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>em {{time}}</4>",
+    "quincy-larson-signature": "Quincy Larson's Signature",
+    "julia-liuson-signature": "Julia Liuson's Signature",
     "project": {
       "heading-legacy-full-stack": "Como parte desta certificação de full-stack legada, {{user}} completou as seguintes certificações:",
       "heading-exam": "Como parte desta certificação, {{user}} passou no seguinte exame: ",
@@ -984,50 +1064,50 @@
       }
     },
     "title": {
-      "Responsive Web Design": "Design responsivo para a web",
-      "responsive-web-design": "Certificação de design responsivo para a web",
-      "JavaScript Algorithms and Data Structures": "Algoritmos e estrutura de dados em JavaScript legado",
-      "javascript-algorithms-and-data-structures": "Certificação de algoritmos e estruturas de dados em JavaScript legado",
-      "javascript-algorithms-and-data-structures-v8": "Certificação de algoritmos e estruturas de dados em JavaScript (Beta)",
-      "Front End Development Libraries": "Bibliotecas de desenvolvimento em front-end",
-      "front-end-development-libraries": "Certificação de desenvolvimento com bibliotecas de front-end",
-      "Data Visualization": "Visualização de dados",
-      "data-visualization": "Certificação de visualização de dados",
-      "Relational Database": "Bancos de dados relacionais",
-      "relational-database-v8": "Certificação de bancos de dados relacionais",
-      "Back End Development and APIs": "APIs e desenvolvimento de back-end",
-      "back-end-development-and-apis": "Certificação de APIs e desenvolvimento de back-end",
-      "Quality Assurance": "Garantia de qualidade",
-      "quality-assurance-v7": "Certificação de garantia de qualidade",
-      "Scientific Computing with Python": "Computação científica em Python",
-      "scientific-computing-with-python-v7": "Certificação de computação científica em Python",
-      "Data Analysis with Python": "Análise de dados com Python",
-      "data-analysis-with-python-v7": "Certificação de análise de dados com Python",
-      "Information Security": "Segurança da informação",
-      "information-security-v7": "Certificação de segurança da informação",
-      "Machine Learning with Python": "Aprendizado de máquina com Python",
-      "machine-learning-with-python-v7": "Certificação de aprendizagem de máquina com Python",
-      "College Algebra with Python": "Álgebra para o ensino superior com Python",
-      "college-algebra-with-python-v8": "Certificação de Álgebra do ensino superior com Python",
-      "Foundational C# with Microsoft": "Fundamentos de C# com a Microsoft",
-      "foundational-c-sharp-with-microsoft": "Fundamentos de C# com certificação da Microsoft",
-      "A2 English for Developers": "A2 Inglês para Desenvolvedores",
-      "a2-english-for-developers": "Certificação A2 Inglês para Desenvolvedores",
-      "B1 English for Developers": "B1 Inglês para Desenvolvedores",
-      "b1-english-for-developers": "Certificação B1 Inglês para Desenvolvedores",
-      "Front End Development": "Desenvolvimento de front-end",
-      "front-end-development-v9": "Certificação de desenvolvimento de front-end",
-      "Legacy Front End": "Front-end legado",
-      "legacy-front-end": "Certificação de front-end legada",
-      "Legacy Back End": "Back-end legado",
-      "legacy-back-end": "Certificação de back-end legada",
-      "Legacy Data Visualization": "Visualização de dados legada",
-      "legacy-data-visualization": "Certificação de visualização de dados legado",
-      "Legacy Information Security and Quality Assurance": "Segurança da informação e garantia da qualidade legado",
-      "information-security-and-quality-assurance": "Certificação de garantia da qualidade e segurança da informação legada",
-      "Legacy Full Stack Certification": "Certificação de full-stack legada",
-      "Legacy Full Stack": "Full-stack legado",
-      "full-stack": "Certificação de full-stack legada"
+      "responsive-web-design": "Responsive Web Design",
+      "responsive-web-design-cert": "Responsive Web Design Certification",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures Certification",
+      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures",
+      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript Algorithms and Data Structures Certification",
+      "front-end-development-libraries": "Front End Development Libraries",
+      "front-end-development-libraries-cert": "Front End Development Libraries Certification",
+      "data-visualization": "Data Visualization",
+      "data-visualization-cert": "Data Visualization Certification",
+      "relational-database-v8": "Relational Database",
+      "relational-database-v8-cert": "Relational Database Certification",
+      "back-end-development-and-apis": "Back End Development and APIs",
+      "back-end-development-and-apis-cert": "Back End Development and APIs Certification",
+      "quality-assurance-v7": "Quality Assurance",
+      "quality-assurance-v7-cert": "Quality Assurance Certification",
+      "scientific-computing-with-python-v7": "Scientific Computing with Python",
+      "scientific-computing-with-python-v7-cert": "Scientific Computing with Python Certification",
+      "data-analysis-with-python-v7": "Data Analysis with Python",
+      "data-analysis-with-python-v7-cert": "Data Analysis with Python Certification",
+      "information-security-v7": "Information Security",
+      "information-security-v7-cert": "Information Security Certification",
+      "machine-learning-with-python-v7": "Machine Learning with Python",
+      "machine-learning-with-python-v7-cert": "Machine Learning with Python Certification",
+      "college-algebra-with-python-v8": "College Algebra with Python",
+      "college-algebra-with-python-v8-cert": "College Algebra with Python Certification",
+      "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft",
+      "foundational-c-sharp-with-microsoft-cert": "Foundational C# with Microsoft Certification",
+      "a2-english-for-developers": "A2 English for Developers",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification",
+      "b1-english-for-developers": "B1 English for Developers",
+      "b1-english-for-developers-cert": "B1 English for Developers Certification",
+      "full-stack-developer-v9": "Full Stack Developer",
+      "full-stack-developer-v9-cert": "Full Stack Developer Certification",
+      "legacy-front-end": "Legacy Front End",
+      "legacy-front-end-cert": "Legacy Front End Certification",
+      "legacy-back-end": "Legacy Back End",
+      "legacy-back-end-cert": "Legacy Back End Certification",
+      "legacy-data-visualization": "Legacy Data Visualization",
+      "legacy-data-visualization-cert": "Legacy Data Visualization Certification",
+      "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance",
+      "information-security-and-quality-assurance-cert": "Legacy Information Security and Quality Assurance Certification",
+      "full-stack": "Legacy Full Stack",
+      "full-stack-cert": "Legacy Full Stack Certification"
     }
   },
   "certification-card": {
@@ -1068,6 +1148,16 @@
     "delete-p3": "Você precisa criar um novo token para salvar seu progresso futuro nas seções de currículo que usam uma máquina virtual.",
     "no-thanks": "Não, obrigado. Eu gostaria de manter meu token",
     "yes-please": "Sim, eu gostaria de excluir meu token"
+  },
+  "exam-token": {
+    "exam-token": "Token de exame",
+    "note": "O token de exame é uma chave secreta que permite que você acesse os exames. Não compartilhe esse token com ninguém.",
+    "invalidation": "Se você gerar um novo token, seu token antigo será invalidado.",
+    "generate-exam-token": "Gerar token de exame",
+    "error": "Houve um erro ao gerar seu token. Tente novamente daqui a pouco.",
+    "your-exam-token": "Seu token de exame é: {{token}}",
+    "copied": "Token copiado para a área de transferência",
+    "copy-error": "Erro ao copiar o token para a área de transferência"
   },
   "shortcuts": {
     "title": "Atalhos do teclado",

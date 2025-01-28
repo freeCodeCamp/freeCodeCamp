@@ -1,7 +1,7 @@
 const { root } = require('mdast-builder');
 const find = require('unist-util-find');
 const visit = require('unist-util-visit');
-const getAllBetween = require('./utils/between-headings');
+const { getSection } = require('./utils/get-section');
 const getAllBefore = require('./utils/before-heading');
 const mdastToHtml = require('./utils/mdast-to-html');
 
@@ -36,14 +36,14 @@ Example of good formatting:
 function plugin() {
   return transformer;
   function transformer(tree, file) {
-    const fillInTheBlankNodes = getAllBetween(tree, '--fillInTheBlank--');
+    const fillInTheBlankNodes = getSection(tree, '--fillInTheBlank--');
     if (fillInTheBlankNodes.length > 0) {
       const fillInTheBlankTree = root(fillInTheBlankNodes);
 
       validateBlanksCount(fillInTheBlankTree);
 
-      const sentenceNodes = getAllBetween(fillInTheBlankTree, '--sentence--');
-      const blanksNodes = getAllBetween(fillInTheBlankTree, '--blanks--');
+      const sentenceNodes = getSection(fillInTheBlankTree, '--sentence--');
+      const blanksNodes = getSection(fillInTheBlankTree, '--blanks--');
 
       const fillInTheBlank = getfillInTheBlank(sentenceNodes, blanksNodes);
 
@@ -97,7 +97,7 @@ function getBlanks(blanksNodes) {
 
     if (feedback) {
       const blanksNodes = getAllBefore(blanksTree, '--feedback--');
-      const feedbackNodes = getAllBetween(blanksTree, '--feedback--');
+      const feedbackNodes = getSection(blanksTree, '--feedback--');
 
       return {
         answer: blanksNodes[0].children[0].value,

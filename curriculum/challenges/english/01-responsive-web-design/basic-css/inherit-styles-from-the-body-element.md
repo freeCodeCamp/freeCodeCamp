@@ -15,7 +15,7 @@ Remember, you can style your `body` element just like any other HTML element, an
 
 # --instructions--
 
-First, create a `h1` element with the text `Hello World`
+First, create an `h1` element with the text `Hello World`.
 
 Then, let's give all elements on your page the color of `green` by adding `color: green;` to your `body` element's style declaration.
 
@@ -26,61 +26,57 @@ Finally, give your `body` element the font-family of `monospace` by adding `font
 You should create an `h1` element.
 
 ```js
-assert($('h1').length > 0);
+assert.isNotEmpty(document.querySelectorAll('h1'));
 ```
 
 Your `h1` element should have the text `Hello World`.
 
 ```js
-assert(
-  $('h1').length > 0 &&
-    $('h1')
-      .text()
-      .match(/hello world/i)
+assert.match(
+  document.querySelector('h1').textContent,
+  /hello world/i
 );
 ```
 
 Your `h1` element should have a closing tag.
 
 ```js
-assert(
-  code.match(/<\/h1>/g) &&
-    code.match(/<h1/g) &&
-    code.match(/<\/h1>/g).length === code.match(/<h1/g).length
-);
+const commentlessCode = __helpers.removeHtmlComments(code);
+assert.match(commentlessCode, /<\/h1>/g);
+assert.match(commentlessCode, /<h1/g);
+assert.lengthOf(commentlessCode.match(/<\/h1>/g), commentlessCode.match(/<h1/g).length);
 ```
 
 Your `body` element should have the `color` property of `green`.
 
 ```js
-assert($('body').css('color') === 'rgb(0, 128, 0)');
+const bodyElement = document.querySelector('body');
+const color = window.getComputedStyle(bodyElement)['color']; 
+assert.strictEqual(color, 'rgb(0, 128, 0)');
 ```
 
 Your `body` element should have the `font-family` property of `monospace`.
 
 ```js
-assert(
-  $('body')
-    .css('font-family')
-    .match(/monospace/i)
-);
+const bodyElement = document.querySelector('body');
+const fontFamily = window.getComputedStyle(bodyElement)['font-family'];
+assert.include(fontFamily.toLowerCase(), "monospace");
 ```
 
 Your `h1` element should inherit the font `monospace` from your `body` element.
 
 ```js
-assert(
-  $('h1').length > 0 &&
-    $('h1')
-      .css('font-family')
-      .match(/monospace/i)
-);
+const h1Element = document.querySelector('h1');
+const fontFamily = window.getComputedStyle(h1Element)['font-family'];
+assert.include(fontFamily.toLowerCase(), "monospace");
 ```
 
 Your `h1` element should inherit the color `green` from your `body` element.
 
 ```js
-assert($('h1').length > 0 && $('h1').css('color') === 'rgb(0, 128, 0)');
+const h1Element = document.querySelector('h1');
+const color = window.getComputedStyle(h1Element)['color'];
+assert.strictEqual(color, 'rgb(0, 128, 0)');
 ```
 
 # --seed--

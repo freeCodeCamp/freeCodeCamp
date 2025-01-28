@@ -1,5 +1,5 @@
 const { isEmpty } = require('lodash');
-const getAllBetween = require('./utils/between-headings');
+const { getSection } = require('./utils/get-section');
 const mdastToHTML = require('./utils/mdast-to-html');
 
 function addText(sectionIds) {
@@ -8,7 +8,7 @@ function addText(sectionIds) {
   }
   function transformer(tree, file) {
     for (const sectionId of sectionIds) {
-      const textNodes = getAllBetween(tree, `--${sectionId}--`);
+      const textNodes = getSection(tree, `--${sectionId}--`);
       const sectionText = mdastToHTML(textNodes);
 
       if (!isEmpty(sectionText)) {

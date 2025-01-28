@@ -2,7 +2,6 @@
 .portfolio-card {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
   width: 100%;
   height: auto;
   overflow: hidden;

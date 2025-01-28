@@ -1,8 +1,11 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../shared/config/curriculum';
-import { BlockTypes } from '../../../shared/config/blocks';
-import { Themes } from '../components/settings/theme';
+import { BlockLayouts, BlockTypes } from '../../../shared/config/blocks';
+import type { ChallengeFile, Ext } from '../../../shared/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
+import { UserThemes } from './types';
+
+export type { ChallengeFile, Ext };
 
 export type Steps = {
   isHonest?: boolean;
@@ -30,7 +33,7 @@ export type MarkdownRemark = {
   id: string;
 };
 
-export type MultipleChoiceAnswer = {
+type MultipleChoiceAnswer = {
   answer: string;
   feedback: string | null;
 };
@@ -71,7 +74,7 @@ export interface VideoLocaleIds {
 }
 
 // English types for animations
-export interface Dialogue {
+interface Dialogue {
   text: string;
   align: 'left' | 'right' | 'center';
 }
@@ -82,7 +85,7 @@ export interface CharacterPosition {
   z?: number;
 }
 
-export interface SceneCommand {
+interface SceneCommand {
   background?: string;
   character: string;
   position?: CharacterPosition;
@@ -117,21 +120,21 @@ export type Characters =
   | 'Sophie'
   | 'Tom';
 
-export interface SetupCharacter {
+interface SetupCharacter {
   character: Characters;
   position: CharacterPosition;
   opacity: number;
   isTalking?: boolean;
 }
 
-export interface SetupAudio {
+interface SetupAudio {
   filename: string;
   startTime: number;
-  startTimestamp?: number;
-  finishTimestamp?: number;
+  startTimestamp: number | null;
+  finishTimestamp: number | null;
 }
 
-export interface SceneSetup {
+interface SceneSetup {
   background: string;
   characters: SetupCharacter[];
   audio: SetupAudio;
@@ -149,7 +152,7 @@ export interface PrerequisiteChallenge {
   slug?: string;
 }
 
-export type ChallengeWithCompletedNode = {
+export type ExtendedChallenge = {
   block: string;
   challengeType: number;
   dashedName: string;
@@ -160,6 +163,7 @@ export type ChallengeWithCompletedNode = {
   isCompleted: boolean;
   order: number;
   superBlock: SuperBlocks;
+  stepNumber: number;
   title: string;
 };
 
@@ -167,6 +171,7 @@ export type ChallengeNode = {
   challenge: {
     block: string;
     blockType: BlockTypes;
+    blockLayout: BlockLayouts;
     certification: string;
     challengeOrder: number;
     challengeType: number;
@@ -174,6 +179,7 @@ export type ChallengeNode = {
     demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
+    explanation: string;
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
@@ -201,6 +207,7 @@ export type ChallengeNode = {
     isPrivate: boolean;
     order: number;
     questions: Question[];
+    quizzes: Quiz[];
     assignments: string[];
     required: Required[];
     scene: FullScene;
@@ -214,6 +221,7 @@ export type ChallengeNode = {
     template: string;
     tests: Test[];
     title: string;
+    transcript: string;
     translationPending: boolean;
     url: string;
     usesMultifileEditor: boolean;
@@ -221,7 +229,19 @@ export type ChallengeNode = {
     videoLocaleIds?: VideoLocaleIds;
     bilibiliIds?: BilibiliIds;
     videoUrl: string;
+    chapter?: string;
+    module?: string;
   };
+};
+
+type Quiz = {
+  questions: QuizQuestion[];
+};
+
+type QuizQuestion = {
+  text: string;
+  distractors: string[];
+  answer: string;
 };
 
 export type CertificateNode = {
@@ -258,6 +278,7 @@ export type Dimensions = {
 export type Test = {
   pass?: boolean;
   err?: string;
+  message?: string;
 } & (ChallengeTest | CertTest);
 
 export type ChallengeTest = {
@@ -296,7 +317,7 @@ export type User = {
   savedChallenges: SavedChallenges;
   sendQuincyEmail: boolean;
   sound: boolean;
-  theme: Themes;
+  theme: UserThemes;
   keyboardShortcuts: boolean;
   twitter: string;
   username: string;
@@ -372,22 +393,29 @@ export type CompletedChallenge = {
   examResults?: GeneratedExamResults;
 };
 
-export type Ext = 'js' | 'html' | 'css' | 'jsx';
-export type FileKey = 'scriptjs' | 'indexhtml' | 'stylescss' | 'indexjsx';
+export type FileKey =
+  | 'scriptjs'
+  | 'indexts'
+  | 'indexhtml'
+  | 'stylescss'
+  | 'indexjsx';
 
 export type ChallengeMeta = {
   block: string;
   id: string;
   introPath: string;
   isFirstStep: boolean;
-  nextChallengePath: string | null;
-  prevChallengePath: string | null;
   superBlock: SuperBlocks;
   title?: string;
   challengeType?: number;
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
+} & NavigationPaths;
+
+export type NavigationPaths = {
+  nextChallengePath?: string;
+  prevChallengePath?: string;
 };
 
 export type PortfolioProjectData = {
@@ -406,21 +434,6 @@ export type FileKeyChallenge = {
   key: FileKey;
   name: string;
   tail: string;
-};
-
-export type ChallengeFile = {
-  fileKey: string;
-  ext: Ext;
-  name: string;
-  editableRegionBoundaries?: number[];
-  usesMultifileEditor?: boolean;
-  error?: unknown;
-  head: string;
-  tail: string;
-  seed: string;
-  contents: string;
-  id: string;
-  history: string[];
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;
@@ -445,7 +458,7 @@ export interface GeneratedExamQuestion {
   answers: GeneratedExamAnswer[];
 }
 
-export interface GenerateExamResponse {
+interface GenerateExamResponse {
   error?: string;
   generatedExam?: GeneratedExamQuestion[];
 }
@@ -455,6 +468,9 @@ export interface GenerateExamResponseWithData {
   data: GenerateExamResponse;
 }
 
+export interface ExamTokenResponse {
+  examEnvironmentAuthorizationToken: string;
+}
 // User Exam (null until they answer the question)
 interface UserExamAnswer {
   id: string | null;

@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
+import { allowTrailingSlash } from './utils/url';
 
 const nextChallengeURL =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
@@ -16,6 +17,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
   test('should render the modal correctly', async ({ page }) => {
     await expect(page.getByRole('heading')).toBeVisible();
     await expect(page.getByRole('button', { name: 'close' })).toBeVisible();
@@ -71,7 +73,7 @@ test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
     await page
       .getByRole('link', { name: translations.learn['sign-in-save'] })
       .click();
-    await expect(page).toHaveURL(/.*\/learn\/?$/);
+    await expect(page).toHaveURL(allowTrailingSlash('/learn'));
   });
 
   test('should redirect to next challenge', async ({ page }) => {
@@ -83,8 +85,6 @@ test.describe('Challenge Completion Modal Tests (Signed Out)', () => {
 });
 
 test.describe('Challenge Completion Modal Tests (Signed In)', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test('should render the modal correctly', async ({ page }) => {
     await expect(page.getByRole('heading')).toBeVisible();
     await expect(page.getByRole('button', { name: 'close' })).toBeVisible();

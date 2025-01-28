@@ -1,7 +1,7 @@
 {
   "name": "Build a Budget App Project",
   "isUpcomingChange": false,
-  "usesMultifileEditor": true,  
+  "usesMultifileEditor": true,
   "dashedName": "build-a-budget-app-project",
   "order": 13,
   "superBlock": "scientific-computing-with-python",
@@ -11,5 +11,6 @@
       "title": "Build a Budget App Project"
     }
   ],
-  "helpCategory": "Python"
+  "helpCategory": "Python",
+  "blockLayout": "legacy-link"
 }

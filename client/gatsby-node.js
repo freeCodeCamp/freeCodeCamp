@@ -4,8 +4,8 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
-const env = require('./config/env.json');
 
+const env = require('./config/env.json');
 const {
   createChallengePages,
   createBlockIntroPages,
@@ -74,6 +74,7 @@ exports.createPages = async function createPages({
             challenge {
               block
               blockType
+              blockLayout
               certification
               challengeType
               dashedName
@@ -85,6 +86,7 @@ exports.createPages = async function createPages({
                 blockHashSlug
               }
               id
+              isLastChallengeInBlock
               order
               required {
                 link
@@ -133,8 +135,39 @@ exports.createPages = async function createPages({
     }
   `);
 
+  const allChallengeNodes = result.data.allChallengeNode.edges.map(
+    ({ node }) => node
+  );
+
+  const createIdToNextPathMap = nodes =>
+    nodes.reduce((map, node, index) => {
+      const nextNode = nodes[index + 1];
+      const nextPath = nextNode ? nextNode.challenge.fields.slug : null;
+      if (nextPath) map[node.id] = nextPath;
+      return map;
+    }, {});
+
+  const createIdToPrevPathMap = nodes =>
+    nodes.reduce((map, node, index) => {
+      const prevNode = nodes[index - 1];
+      const prevPath = prevNode ? prevNode.challenge.fields.slug : null;
+      if (prevPath) map[node.id] = prevPath;
+      return map;
+    }, {});
+
+  const idToNextPathCurrentCurriculum =
+    createIdToNextPathMap(allChallengeNodes);
+
+  const idToPrevPathCurrentCurriculum =
+    createIdToPrevPathMap(allChallengeNodes);
+
   // Create challenge pages.
-  result.data.allChallengeNode.edges.forEach(createChallengePages(createPage));
+  result.data.allChallengeNode.edges.forEach(
+    createChallengePages(createPage, {
+      idToNextPathCurrentCurriculum,
+      idToPrevPathCurrentCurriculum
+    })
+  );
 
   const blocks = uniq(
     result.data.allChallengeNode.edges.map(
@@ -260,14 +293,20 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type Challenge {
       blockType: String
+      blockLayout: String
       challengeFiles: [FileContents]
+      chapter: String
+      explanation: String
       notes: String
       url: String
       assignments: [String]
       prerequisites: [PrerequisiteChallenge]
+      module: String
       msTrophyId: String
       fillInTheBlank: FillInTheBlank
       scene: Scene
+      transcript: String
+      quizzes: [Quiz]
     }
     type FileContents {
       fileKey: String
@@ -328,6 +367,14 @@ exports.createSchemaCustomization = ({ actions }) => {
       x: Float
       y: Float
       z: Float
+    }
+    type Quiz {
+      questions: [QuizQuestion]
+    }
+    type QuizQuestion {
+      text: String
+      distractors: [String]
+      answer: String
     }
   `;
   createTypes(typeDefs);

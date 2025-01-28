@@ -1,0 +1,43 @@
+{
+  "name": "Understanding Asynchronous Programming",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-asynchronous-programming",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6733b072bd8f5b06ccdbd9e2",
+      "title": "What Is Asynchronous JavaScript, and How Does It Differ from Synchronous JavaScript?"
+    },
+    {
+      "id": "67340798c2c1776709d8a5fe",
+      "title": "How Does the Async Attribute Work Inside Script Elements, and How Does It Differ from the Defer Attribute?"
+    },
+    {
+      "id": "673407a223891b6734563c89",
+      "title": "What Is the Fetch API, and What Are Common Types of Resources That Are Fetched from the Network?"
+    },
+    {
+      "id": "673407be6af21d6766ed4b96",
+      "title": "How Does the Fetch API Work with Common HTTP Methods and res.json()?"
+    },
+    {
+      "id": "673407ca21117a67cf9521ca",
+      "title": "What Are Promises, and How Does Promise Chaining Work?"
+    },
+    {
+      "id": "673407d56c3dce67fa97969b",
+      "title": "What Is Async/Await, and How Does It Work?"
+    },
+    {
+      "id": "673407e02bcf0d682b9a49a9",
+      "title": "How Does the JavaScript Engine Work, and What Is a JavaScript Runtime?"
+    },
+    {
+      "id": "673407eb10ca9d68634e81d9",
+      "title": "What Is the Geolocation API, and How Does the getCurrentPosition Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

@@ -1,5 +1,5 @@
 {
-  "help-translate-link-url": "https://contribute.freecodecamp.org/#/how-to-translate-files",
+  "help-translate-link-url": "https://contribute.freecodecamp.org/getting-started/#translations",
   "top-contributors": "https://www.freecodecamp.org/news/freecodecamp-top-contributors/",
   "footer": {
     "about-url": "https://www.freecodecamp.org/news/about/",
@@ -14,8 +14,8 @@
   },
   "donate": {
     "other-ways-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp",
-    "download-irs-url": "https://s3.amazonaws.com/freecodecamp/Free+Code+Camp+Inc+IRS+Determination+Letter.pdf",
-    "download-990-url": "https://freecodecamp.s3.amazonaws.com/freeCodeCamp+2019+f990.pdf",
+    "download-irs-url": "https://cdn.freecodecamp.org/non-profit-docs/freeCodeCamp-determination-letter.pdf",
+    "download-990-url": "https://cdn.freecodecamp.org/non-profit-docs/freeCodeCamp-2019-f990.pdf",
     "one-time-url": "https://paypal.me/freecodecamp",
     "one-time-external-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp/#how-can-i-make-a-one-time-donation",
     "mail-check-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp/#can-i-mail-a-physical-check"

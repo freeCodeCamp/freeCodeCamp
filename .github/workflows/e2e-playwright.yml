@@ -14,6 +14,10 @@ on:
       - 'next-**'
       - 'e2e-**'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-client:
     name: Build Client
@@ -153,10 +157,16 @@ jobs:
           pnpm run start-ci &
           sleep 10
           npx playwright test --project="${{ matrix.browsers }}" --grep-invert 'third-party-donation.spec.ts'
-
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
           name: playwright-report-${{ matrix.browsers }}
           path: playwright/reporter
           retention-days: 30
+      - name: Upload screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots-${{ matrix.browsers }}
+          path: playwright/test-results
+          retention-days: 14

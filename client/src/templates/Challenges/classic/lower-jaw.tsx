@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/ui';
+import { Button, Spacer } from '@freecodecamp/ui';
 import { connect } from 'react-redux';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
@@ -22,7 +22,6 @@ import {
   completedPercentageSelector
 } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
-import { Spacer } from '../../../components/helpers';
 
 interface LowerJawPanelProps extends ShareProps {
   resetButtonText: string;
@@ -97,26 +96,33 @@ const LowerButtonsPanel = ({
     <>
       <hr />
       <div className='utility-bar'>
-        <Button
-          data-playwright-test-label='lowerJaw-reset-button'
-          className='fade-in'
-          onClick={resetButtonEvent}
-        >
-          <Reset />
-          {resetButtonText}
-        </Button>
-        {showShareButton && <Share superBlock={superBlock} block={block} />}
-
-        {hideHelpButton && (
-          <Button
-            className='fade-in'
-            id='get-help-button'
-            onClick={helpButtonEvent}
-          >
-            <Help />
-            {helpButtonText}
-          </Button>
+        {showShareButton && (
+          <div className='utility-bar-top'>
+            <Share superBlock={superBlock} block={block} />
+          </div>
         )}
+
+        <div className='utility-bar-bottom'>
+          <Button
+            data-playwright-test-label='lowerJaw-reset-button'
+            className='fade-in'
+            onClick={resetButtonEvent}
+          >
+            <Reset />
+            {resetButtonText}
+          </Button>
+
+          {hideHelpButton && (
+            <Button
+              className='fade-in'
+              id='get-help-button'
+              onClick={helpButtonEvent}
+            >
+              <Help />
+              {helpButtonText}
+            </Button>
+          )}
+        </div>
       </div>
     </>
   );
@@ -320,7 +326,7 @@ const LowerJaw = ({
           >
             {t('learn.sign-in-save')}
           </a>
-          <Spacer size='xxSmall' />
+          <Spacer size='xxs' />
         </>
       )}
       <Button

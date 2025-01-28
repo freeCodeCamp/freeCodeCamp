@@ -23,8 +23,6 @@ test.describe('Before completing the project', () => {
 });
 
 test.describe('After completing the project', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeAll(() => {
     execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   });

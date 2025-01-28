@@ -18,3 +18,14 @@
   height: auto;
   overflow-y: none;
 }
+
+.example-app-link {
+  text-decoration: underline;
+}
+
+.example-app-link:hover,
+.example-app-link:active,
+.example-app-link:focus {
+  text-decoration: none;
+  background-color: var(--tertiary-background);
+}

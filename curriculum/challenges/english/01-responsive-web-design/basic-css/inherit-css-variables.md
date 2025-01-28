@@ -24,8 +24,9 @@ Define a variable named `--penguin-belly` in the `:root` selector and give it th
 The `--penguin-belly` variable should be declared in the `:root` and assigned the value `pink`.
 
 ```js
-assert(
-  code.match(/:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi)
+assert.match(
+  __helpers.removeCssComments(code),
+  /:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi
 );
 ```
 

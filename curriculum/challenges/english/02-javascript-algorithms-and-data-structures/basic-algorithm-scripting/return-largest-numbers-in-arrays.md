@@ -17,13 +17,13 @@ Remember, you can iterate through an array with a simple for loop, and access ea
 `largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])` should return an array.
 
 ```js
-assert(
+assert.isArray(
   largestOfFour([
     [4, 5, 1, 3],
     [13, 27, 18, 26],
     [32, 35, 37, 39],
     [1000, 1001, 857, 1]
-  ]).constructor === Array
+  ])
 );
 ```
 
@@ -78,7 +78,12 @@ function largestOfFour(arr) {
   return arr;
 }
 
-largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+largestOfFour([
+  [4, 5, 1, 3],
+  [13, 27, 18, 26],
+  [32, 35, 37, 39],
+  [1000, 1001, 857, 1]
+]);
 ```
 
 # --solutions--
@@ -88,5 +93,10 @@ function largestOfFour(arr) {
   return arr.map(subArr => Math.max.apply(null, subArr));
 }
 
-largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+largestOfFour([
+  [4, 5, 1, 3],
+  [13, 27, 18, 26],
+  [32, 35, 37, 39],
+  [1000, 1001, 857, 1]
+]);
 ```

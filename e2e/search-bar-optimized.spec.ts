@@ -28,9 +28,11 @@ test.describe('Search bar optimized', () => {
     const searchInput = await getSearchInput({ page, isMobile });
 
     await expect(searchInput).toBeVisible();
+    // Because we're mocking Algolia requests, the placeholder
+    // should be the default one.
     await expect(searchInput).toHaveAttribute(
       'placeholder',
-      translations.search.placeholder
+      translations.search.placeholder.default
     );
   });
 
@@ -89,5 +91,21 @@ test.describe('Search bar optimized', () => {
       .click();
 
     await expect(searchInput).toHaveValue('');
+  });
+
+  test('The optimized searchbar component should not render when not on the landing page', async ({
+    page,
+    isMobile
+  }) => {
+    // This means that the default search bar should be rendered ^.
+    await page.getByTestId('curriculum-map-button').nth(0).click();
+
+    if (isMobile) {
+      const menuButton = page.getByTestId('header-menu-button');
+      await expect(menuButton).toBeVisible();
+      await menuButton.click();
+    }
+
+    await expect(page.getByTestId('header-search')).toBeVisible();
   });
 });

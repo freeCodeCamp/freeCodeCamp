@@ -1,0 +1,31 @@
+{
+  "name": "Working with Relative and Absolute Units",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-relative-and-absolute-units",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa7194614b55c16b879a1",
+      "title": "What Are Absolute Units in CSS, and When Should You Use Them?"
+    },
+    {
+      "id": "672bb7d659f0089377a91eab",
+      "title": "What Are Percentages in CSS, and When Should You Use Them?"
+    },
+    {
+      "id": "672bb7f08b58df93ed2a8768",
+      "title": "What Are ems and rems in CSS, and When Should You Use Them?"
+    },
+    {
+      "id": "672bb83c3a9906945536cff2",
+      "title": "What Are vh and vw Units, and When Should You Use Them?"
+    },
+    {
+      "id": "672bb851b068e3954a05b9b1",
+      "title": "What Is the calc() Function, and How Does It Work?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

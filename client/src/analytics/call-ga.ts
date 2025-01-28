@@ -32,11 +32,15 @@ type DonationRelatedEventAction =
   | 'Modal Become Supporter Click'
   | 'Donate Page Patreon Payment Redirection'
   | 'Modal Patreon Payment Redirection'
+  | 'Amount Confirmation Clicked'
+  | 'Select Amount Tab Clicked'
+  | 'Edit Amount Clicked'
   | 'Certificate Patreon Payment Redirection';
 
 interface DonationRelatedEvent {
   event: 'donation_related';
   action: DonationRelatedEventAction;
+  amount?: DonationAmount;
 }
 
 type DonationViewEventAction =
@@ -83,6 +87,11 @@ interface SignIn {
   event: 'sign_in';
 }
 
+interface SignOut {
+  event: 'sign_out';
+  user_id: undefined;
+}
+
 export type GAevent =
   | DonationViewEvent
   | DonationEvent
@@ -92,6 +101,7 @@ export type GAevent =
   | ExperimentViewEvent
   | ChallengeFailedEvent
   | UserData
+  | SignOut
   | SignIn;
 
 export default function callGA(payload: GAevent) {

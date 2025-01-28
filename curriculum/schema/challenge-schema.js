@@ -91,8 +91,29 @@ const questionJoi = Joi.object().keys({
         feedback: Joi.string().allow(null)
       })
     )
-    .required(),
+    .required()
+    .unique('answer'),
   solution: Joi.number().required()
+});
+
+const quizJoi = Joi.object().keys({
+  questions: Joi.array()
+    .items(
+      Joi.object().keys({
+        text: Joi.string().required(),
+        distractors: Joi.array()
+          .items(
+            Joi.valid(Joi.ref('...answer')).forbidden(),
+            Joi.string().required()
+          )
+          .length(3)
+          .required()
+          .unique(),
+        answer: Joi.string().required()
+      })
+    )
+    .length(20)
+    .required()
 });
 
 const schema = Joi.object()
@@ -100,7 +121,7 @@ const schema = Joi.object()
     block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
     blockType: Joi.when('superBlock', {
-      is: [SuperBlocks.FrontEndDevelopment],
+      is: [SuperBlocks.FullStackDeveloper],
       then: Joi.valid(
         'workshop',
         'lab',
@@ -111,9 +132,23 @@ const schema = Joi.object()
       ).required(),
       otherwise: Joi.valid(null)
     }),
+    blockLayout: Joi.valid(
+      'challenge-list',
+      'challenge-grid',
+      'link',
+      'project-list',
+      'legacy-challenge-list',
+      'legacy-link',
+      'legacy-challenge-grid'
+    ).required(),
     challengeOrder: Joi.number(),
+    chapter: Joi.string().when('superBlock', {
+      is: 'full-stack-developer',
+      then: Joi.required(),
+      otherwise: Joi.optional()
+    }),
     certification: Joi.string().regex(slugWithSlashRE),
-    challengeType: Joi.number().min(0).max(23).required(),
+    challengeType: Joi.number().min(0).max(25).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -122,6 +157,7 @@ const schema = Joi.object()
       is: [
         challengeTypes.step,
         challengeTypes.video,
+        challengeTypes.multipleChoice,
         challengeTypes.fillInTheBlank
       ],
       then: Joi.string().allow(''),
@@ -129,6 +165,10 @@ const schema = Joi.object()
     }),
     disableLoopProtectTests: Joi.boolean().required(),
     disableLoopProtectPreview: Joi.boolean().required(),
+    explanation: Joi.when('challengeType', {
+      is: [challengeTypes.multipleChoice, challengeTypes.fillInTheBlank],
+      then: Joi.string()
+    }),
     challengeFiles: Joi.array().items(fileJoi),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     hasEditableBoundaries: Joi.boolean(),
@@ -143,6 +183,7 @@ const schema = Joi.object()
       'Euler',
       'Rosetta'
     ),
+    isLastChallengeInBlock: Joi.boolean().required(),
     videoUrl: Joi.string().allow(''),
     fillInTheBlank: Joi.object().keys({
       sentence: Joi.string().required(),
@@ -161,6 +202,11 @@ const schema = Joi.object()
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
+    module: Joi.string().when('superBlock', {
+      is: 'full-stack-developer',
+      then: Joi.required(),
+      otherwise: Joi.optional()
+    }),
     msTrophyId: Joi.when('challengeType', {
       is: [challengeTypes.msTrophy],
       then: Joi.string().required()
@@ -199,6 +245,11 @@ const schema = Joi.object()
         challengeTypes.theOdinProject
       ],
       then: Joi.array().items(questionJoi).min(1).required(),
+      otherwise: Joi.array().length(0)
+    }),
+    quizzes: Joi.when('challengeType', {
+      is: challengeTypes.quiz,
+      then: Joi.array().items(quizJoi).min(1).required(),
       otherwise: Joi.forbidden()
     }),
     required: Joi.array().items(
@@ -239,6 +290,10 @@ const schema = Joi.object()
       .required(),
     template: Joi.string().allow(''),
     title: Joi.string().required(),
+    transcript: Joi.when('challengeType', {
+      is: [challengeTypes.generic, challengeTypes.video],
+      then: Joi.string()
+    }),
     translationPending: Joi.bool().required(),
     url: Joi.when('challengeType', {
       is: [challengeTypes.codeAllyPractice, challengeTypes.codeAllyCert],

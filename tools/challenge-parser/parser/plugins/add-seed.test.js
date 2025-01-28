@@ -1,27 +1,49 @@
 const isArray = require('lodash/isArray');
-
-const adjacentKeysAST = require('../__fixtures__/ast-adjacent-keys.json');
-const withBeforeAfterAST = require('../__fixtures__/ast-before-after.json');
-const cCodeAST = require('../__fixtures__/ast-c-code.json');
-const doubleMarkerAST = require('../__fixtures__/ast-double-marker.json');
-const emptyAfterAST = require('../__fixtures__/ast-empty-after.json');
-const emptyBeforeAST = require('../__fixtures__/ast-empty-before.json');
-const emptyContentAST = require('../__fixtures__/ast-empty-contents.json');
-const emptyCSSAST = require('../__fixtures__/ast-empty-css.json');
-const emptyHTMLAST = require('../__fixtures__/ast-empty-html.json');
-const explodedMarkerAST = require('../__fixtures__/ast-exploded-marker.json');
-const jsxSeedAST = require('../__fixtures__/ast-jsx-seed.json');
-const orphanKeyAST = require('../__fixtures__/ast-orphan-key.json');
-const withSeedKeysAST = require('../__fixtures__/ast-seed-keys.json');
-const simpleAST = require('../__fixtures__/ast-simple.json');
-const withExtraLinesAST = require('../__fixtures__/ast-with-extra-lines.json');
-const withEditableAST = require('../__fixtures__/ast-with-markers.json');
+const parseFixture = require('../__fixtures__/parse-fixture');
 
 const addSeed = require('./add-seed');
 
 describe('add-seed plugin', () => {
+  let adjacentKeysAST,
+    withSeedKeysAST,
+    withBeforeAfterAST,
+    cCodeAST,
+    withErmsOnOneLineAST,
+    withEmptyAfterAST,
+    withEmptyBeforeAST,
+    withEmptyContentsAST,
+    withInvalidBeforeAST,
+    withInvalidAfterAST,
+    simpleAST,
+    withEditableMarkersAST,
+    withSeedKeysOrphanAST,
+    withSeedKeysExtraLinesAST,
+    withSeedKeysJSXAST;
+
   const plugin = addSeed();
   let file = { data: {} };
+
+  beforeAll(async () => {
+    adjacentKeysAST = await parseFixture('with-seed-keys-adjacent.md');
+    withSeedKeysAST = await parseFixture('with-seed-keys.md');
+    withBeforeAfterAST = await parseFixture('with-before-and-after.md');
+    cCodeAST = await parseFixture('with-c-code.md');
+    withErmsOnOneLineAST = await parseFixture(
+      'with-editable-markers-on-one-line.md'
+    );
+    withEmptyAfterAST = await parseFixture('with-empty-after.md');
+    withEmptyBeforeAST = await parseFixture('with-empty-before.md');
+    withEmptyContentsAST = await parseFixture('with-empty-contents.md');
+    withInvalidBeforeAST = await parseFixture('with-invalid-before.md');
+    withInvalidAfterAST = await parseFixture('with-invalid-after.md');
+    simpleAST = await parseFixture('simple.md');
+    withEditableMarkersAST = await parseFixture('with-editable-markers.md');
+    withSeedKeysOrphanAST = await parseFixture('with-seed-keys-orphan.md');
+    withSeedKeysExtraLinesAST = await parseFixture(
+      'with-seed-keys-extra-lines.md'
+    );
+    withSeedKeysJSXAST = await parseFixture('with-seed-keys-jsx.md');
+  });
 
   beforeEach(() => {
     file = { data: {} };
@@ -87,7 +109,7 @@ describe('add-seed plugin', () => {
 
   it('removes region markers from contents', () => {
     expect.assertions(2);
-    plugin(withEditableAST, file);
+    plugin(withEditableMarkersAST, file);
     const {
       data: { challengeFiles }
     } = file;
@@ -119,7 +141,7 @@ describe('add-seed plugin', () => {
     expect(() => plugin(adjacentKeysAST, file)).toThrow(
       '::id{#id}s must come before code blocks'
     );
-    expect(() => plugin(orphanKeyAST, file)).toThrow(
+    expect(() => plugin(withSeedKeysOrphanAST, file)).toThrow(
       '::id{#id}s must come before code blocks'
     );
   });
@@ -128,7 +150,7 @@ describe('add-seed plugin', () => {
     expect.assertions(1);
     plugin(withSeedKeysAST, file);
     const fileTwo = { data: {} };
-    plugin(withExtraLinesAST, fileTwo);
+    plugin(withSeedKeysExtraLinesAST, fileTwo);
     expect(file).toEqual(fileTwo);
   });
 
@@ -178,17 +200,17 @@ describe('add-seed plugin', () => {
 
   it('throws if there is before/after code with empty blocks', () => {
     expect.assertions(2);
-    expect(() => plugin(emptyHTMLAST, file)).toThrow(
+    expect(() => plugin(withInvalidBeforeAST, file)).toThrow(
       'Empty code block in --before-user-code-- section'
     );
-    expect(() => plugin(emptyCSSAST, file)).toThrow(
+    expect(() => plugin(withInvalidAfterAST, file)).toThrow(
       'Empty code block in --after-user-code-- section'
     );
   });
 
   it('quietly ignores empty before sections', () => {
     expect.assertions(6);
-    plugin(emptyBeforeAST, file);
+    plugin(withEmptyBeforeAST, file);
     const {
       data: { challengeFiles }
     } = file;
@@ -206,7 +228,7 @@ describe('add-seed plugin', () => {
 
   it('quietly ignores empty after sections', () => {
     expect.assertions(6);
-    plugin(emptyAfterAST, file);
+    plugin(withEmptyAfterAST, file);
     const {
       data: { challengeFiles }
     } = file;
@@ -224,21 +246,14 @@ describe('add-seed plugin', () => {
 
   it('throws an error (with line number) if 2 markers appear on 1 line', () => {
     expect.assertions(1);
-    expect(() => plugin(doubleMarkerAST, file)).toThrow(
-      `Line 8 has two markers. Each line should only have one.`
-    );
-  });
-
-  it('throws if a javascript file has formatted a marker', () => {
-    expect.assertions(1);
-    expect(() => plugin(explodedMarkerAST, file)).toThrow(
-      `Line 66 has a malformed marker. It should be --fcc-editable-region--`
+    expect(() => plugin(withErmsOnOneLineAST, file)).toThrow(
+      `Line 53 has two markers. Each line should only have one.`
     );
   });
 
   it('handles jsx', () => {
     expect.assertions(3);
-    plugin(jsxSeedAST, file);
+    plugin(withSeedKeysJSXAST, file);
     const {
       data: { challengeFiles }
     } = file;
@@ -276,12 +291,12 @@ const Button = () => {
     depending on what's easier to work with in graphQL
 
   });
-  
+
   */
 
   it('should throw an error if a seed has no contents', () => {
     expect.assertions(1);
-    expect(() => plugin(emptyContentAST, file)).toThrow(
+    expect(() => plugin(withEmptyContentsAST, file)).toThrow(
       `## --seed-contents-- must appear in # --seed-- sections`
     );
   });

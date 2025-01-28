@@ -26,14 +26,9 @@ const superBlockIntro = path.resolve(
   __dirname,
   '../../src/templates/Introduction/super-block-intro.tsx'
 );
-const video = path.resolve(
+const quiz = path.resolve(
   __dirname,
-  '../../src/templates/Challenges/video/show.tsx'
-);
-
-const odin = path.resolve(
-  __dirname,
-  '../../src/templates/Challenges/odin/show.tsx'
+  '../../src/templates/Challenges/quiz/show.tsx'
 );
 
 const exam = path.resolve(
@@ -46,14 +41,14 @@ const msTrophy = path.resolve(
   '../../src/templates/Challenges/ms-trophy/show.tsx'
 );
 
-const dialogue = path.resolve(
-  __dirname,
-  '../../src/templates/Challenges/dialogue/show.tsx'
-);
-
 const fillInTheBlank = path.resolve(
   __dirname,
   '../../src/templates/Challenges/fill-in-the-blank/show.tsx'
+);
+
+const generic = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/generic/show.tsx'
 );
 
 const views = {
@@ -61,14 +56,12 @@ const views = {
   classic,
   modern: classic,
   frontend,
-  video,
+  quiz,
   codeAlly,
-  odin,
   exam,
   msTrophy,
-  dialogue,
-  fillInTheBlank
-  // quiz: Quiz
+  fillInTheBlank,
+  generic
 };
 
 function getIsFirstStepInBlock(id, edges) {
@@ -79,26 +72,14 @@ function getIsFirstStepInBlock(id, edges) {
   return previous.node.challenge.block !== current.node.challenge.block;
 }
 
-function getNextChallengePath(id, edges) {
-  const next = edges[id + 1];
-  return next ? next.node.challenge.fields.slug : null;
-}
-
-function getPrevChallengePath(id, edges) {
-  const prev = edges[id - 1];
-  return prev ? prev.node.challenge.fields.slug : null;
-}
-
 function getTemplateComponent(challengeType) {
   return views[viewTypes[challengeType]];
 }
 
-function getNextBlock(id, edges) {
-  const next = edges[id + 1];
-  return next ? next.node.challenge.block : null;
-}
-
-exports.createChallengePages = function (createPage) {
+exports.createChallengePages = function (
+  createPage,
+  { idToNextPathCurrentCurriculum, idToPrevPathCurrentCurriculum }
+) {
   return function ({ node }, index, allChallengeEdges) {
     const {
       dashedName,
@@ -111,7 +92,8 @@ exports.createChallengePages = function (createPage) {
       required = [],
       template,
       challengeType,
-      id
+      id,
+      isLastChallengeInBlock
     } = node.challenge;
     // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
     // should remove one of them.
@@ -131,9 +113,9 @@ exports.createChallengePages = function (createPage) {
           isFirstStep: getIsFirstStepInBlock(index, allChallengeEdges),
           template,
           required,
-          nextBlock: getNextBlock(index, allChallengeEdges),
-          nextChallengePath: getNextChallengePath(index, allChallengeEdges),
-          prevChallengePath: getPrevChallengePath(index, allChallengeEdges),
+          isLastChallengeInBlock: isLastChallengeInBlock,
+          nextChallengePath: idToNextPathCurrentCurriculum[node.id],
+          prevChallengePath: idToPrevPathCurrentCurriculum[node.id],
           id
         },
         projectPreview: getProjectPreviewConfig(

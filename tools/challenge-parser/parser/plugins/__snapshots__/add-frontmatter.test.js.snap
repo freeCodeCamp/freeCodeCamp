@@ -5,6 +5,7 @@ exports[`process-frontmatter plugin should have an output to match the snapshot 
   "challengeType": 0,
   "forumTopicId": 18276,
   "id": "bd7123c8c441eddfaeb5bdef",
+  "isHidden": false,
   "title": "Say Hello to HTML Elements",
   "videoUrl": "https://scrimba.com/p/pVMPUv/cE8Gpt2",
 }

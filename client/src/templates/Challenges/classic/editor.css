@@ -55,7 +55,8 @@ textarea.inputarea {
   max-width: unset !important;
 }
 
-.editor-upper-jaw code {
+.editor-upper-jaw code,
+.editor-lower-jaw code {
   white-space: pre-wrap;
 }
 
@@ -228,18 +229,41 @@ textarea.inputarea {
 }
 
 .utility-bar {
-  display: grid;
-  /* 8rem is a safe default for all currently supported languages. Will need to be increased if a new language has longer words for Reset/Help. */
-  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.utility-bar .utility-bar-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.utility-bar .utility-bar-top a {
+  width: 30%;
+}
+
+.utility-bar .utility-bar-top svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.utility-bar .utility-bar-bottom {
+  width: 100%;
+  display: flex;
   gap: 0.75rem;
 }
 
-.utility-bar > * {
+.utility-bar .utility-bar-bottom button {
   display: flex;
-  align-items: center;
+  width: 50%;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
   justify-content: center;
+  align-items: center;
   gap: 0.3rem;
-  padding: 6px 0;
 }
 
 .progress-bar-container {
@@ -310,7 +334,7 @@ textarea.inputarea {
   bottom: var(--monaco-scrollbar-arrow-icon-top-bottom) !important;
 }
 
-/* we can live with with no color change for hover state if browser doesn't
+/* we can live with no color change for hover state if browser doesn't
    support :has (the mouse cursor will still change to pointer) */
 @supports (selector(html:has(body))) {
   .vs .monaco-scrollable-element .scrollbar .arrow-background:hover,

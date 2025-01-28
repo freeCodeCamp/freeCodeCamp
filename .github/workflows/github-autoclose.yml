@@ -21,7 +21,12 @@ jobs:
             });
             if (
               files.data.length !== 1 ||
-              files.data[0].filename !== ".gitignore"
+              (files.data[0].filename !== ".gitignore" &&
+              // We've had four PRs make this same (irrelevant) change already.
+                !(files.data[0].filename === "664ef4623946e65e18d59764.md" &&
+                  files.data[0].patch.includes("return re.sub('(?<!\d)1', '', equation_string.strip('+'))")
+                )
+              )
             ) {
               return;
             }

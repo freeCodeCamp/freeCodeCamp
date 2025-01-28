@@ -5,6 +5,7 @@ import type {
   ChallengeFile,
   ChallengeFiles,
   CompletedChallenge,
+  ExamTokenResponse,
   GenerateExamResponseWithData,
   SavedChallenge,
   SavedChallengeFile,
@@ -258,6 +259,12 @@ export function postChargeStripeCard(
   return post('/donate/charge-stripe-card', body);
 }
 
+export function generateExamToken(): Promise<
+  ResponseWithData<ExamTokenResponse>
+> {
+  return post('/user/exam-environment/token', {});
+}
+
 type PaymentIntentResponse = Promise<
   ResponseWithData<
     | {
@@ -354,12 +361,6 @@ export function putUpdateMySocials(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
   return put('/update-my-socials', update);
-}
-
-export function putUpdateMyTheme(
-  update: Record<string, string>
-): Promise<ResponseWithData<void>> {
-  return put('/update-my-theme', update);
 }
 
 export function putUpdateMyKeyboardShortcuts(

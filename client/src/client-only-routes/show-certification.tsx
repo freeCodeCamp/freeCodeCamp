@@ -5,16 +5,16 @@ import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Image, Button } from '@freecodecamp/ui';
+import { Container, Col, Row, Image, Button, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
 import { getLangCode } from '../../../shared/config/i18n';
-import FreeCodeCampLogo from '../assets/icons/freecodecamp';
+import FreeCodeCampLogo from '../assets/icons/freecodecamp-logo';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import { createFlashMessage } from '../components/Flash/redux';
-import { Loader, Spacer } from '../components/helpers';
+import { Loader } from '../components/helpers';
 import RedirectHome from '../components/redirect-home';
-import { Themes } from '../components/settings/theme';
+import { LocalStorageThemes } from '../redux/types';
 import { showCert, fetchProfileForUser } from '../redux/actions';
 import {
   showCertSelector,
@@ -35,9 +35,8 @@ import {
 import { PaymentContext } from '../../../shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
+  Certification,
   CertSlug,
-  certTypes,
-  certTypeTitleMap,
   linkedInCredentialIds
 } from '../../../shared/config/certification-settings';
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
@@ -253,7 +252,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       className='donation-section'
       data-playwright-test-label='donation-section'
     >
-      <Spacer size='large' />
+      <Spacer size='l' />
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
@@ -273,20 +272,20 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           data-playwright-test-label='donation-form'
         >
           <MultiTierDonationForm
-            defaultTheme={Themes.Default}
+            defaultTheme={LocalStorageThemes.Light}
             handleProcessing={handleProcessing}
             isMinimalForm={true}
             paymentContext={PaymentContext.Certificate}
           />
         </Col>
       </Row>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <Row>
         <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
           {isDonationSubmitted && donationCloseBtn}
         </Col>
       </Row>
-      <Spacer size='large' />
+      <Spacer size='l' />
     </div>
   );
 
@@ -308,7 +307,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         >
           {t('profile.add-linkedin')}
         </Button>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <Button
           block={true}
           size='large'
@@ -322,13 +321,40 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         >
           {t('profile.add-twitter')}
         </Button>
+        <Spacer size='m' />
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          href={`https://bsky.app/intent/compose?text=${t('profile.tweet', {
+            certTitle: urlFriendlyCertTitle,
+            certURL: certURL
+          })}`}
+          target='_blank'
+          data-playwright-test-label='bluesky-share-btn'
+        >
+          {t('profile.add-bluesky')}
+        </Button>
+        <Spacer size='m' />
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          href={`https://threads.net/intent/post?text=${t('profile.tweet', {
+            certTitle: urlFriendlyCertTitle,
+            certURL: certURL
+          })}`}
+          target='_blank'
+          data-playwright-test-label='thread-share-btn'
+        >
+          {t('profile.add-threads')}
+        </Button>
       </Col>
-      <Spacer size='large' />
+      <Spacer size='l' />
     </Row>
   );
 
-  const isMicrosoftCert =
-    certTitle === certTypeTitleMap[certTypes.foundationalCSharpV8];
+  const isMicrosoftCert = certSlug === Certification.FoundationalCSharp;
 
   return (
     <Container className='certificate-outer-wrapper'>
@@ -376,7 +402,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                     ? 'certification.fulltextNoHours'
                     : 'certification.fulltext'
                 }
-                title={certTitle}
+                title={t(`certification.title.${certSlug}`, certTitle)}
               >
                 <h3>placeholder</h3>
                 <h1>
@@ -388,7 +414,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <h1 data-playwright-test-label='certification-title'>
                   <strong>
                     {{
-                      title: t(`certification.title.${certTitle}`, certTitle)
+                      title: t(`certification.title.${certSlug}`, certTitle)
                     }}
                   </strong>
                 </h1>
@@ -412,7 +438,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <div>
                     <Image
                       data-playwright-test-label='quincy-signature'
-                      alt="Quincy Larson's Signature"
+                      alt={t('certification.quincy-larson-signature')}
                       src={
                         'https://cdn.freecodecamp.org' +
                         '/platform/english/images/quincy-larson-signature.svg'
@@ -428,7 +454,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <div className='microsoft-signature'>
                     <Image
                       data-playwright-test-label='microsoft-signature'
-                      alt="Julia Liusons's Signature"
+                      alt={t('certification.julia-liuson-signature')}
                       src={
                         'https://cdn.freecodecamp.org' +
                         '/platform/english/images/microsoft-signature.png'
@@ -447,7 +473,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <div>
                   <Image
                     data-playwright-test-label='quincy-signature'
-                    alt="Quincy Larson's Signature"
+                    alt={t('certification.quincy-larson-signature')}
                     src={
                       'https://cdn.freecodecamp.org' +
                       '/platform/english/images/quincy-larson-signature.svg'
@@ -484,11 +510,11 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         className='row certificate-links'
         data-playwright-test-label='cert-links'
       >
-        <Spacer size='large' />
+        <Spacer size='l' />
         {signedInUserName === username ? shareCertBtns : ''}
-        <Spacer size='large' />
-        <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
-        <Spacer size='large' />
+        <Spacer size='l' />
+        <ShowProjectLinks certSlug={certSlug} name={displayName} user={user} />
+        <Spacer size='l' />
       </div>
     </Container>
   );

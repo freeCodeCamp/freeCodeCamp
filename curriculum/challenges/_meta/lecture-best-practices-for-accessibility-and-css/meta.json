@@ -1,0 +1,19 @@
+{
+  "name": "Best Practices for Accessibility and CSS",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-best-practices-for-accessibility-and-css",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa82768e00d600305afc0",
+      "title": "What Are Some Tools to Check for Good Color Contrast on Sites?"
+    },
+    {
+      "id": "672c35a79fa53e00de9f2a49",
+      "title": "What Are Best Practices for Hiding Content So It Doesn't Become Inaccessible?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

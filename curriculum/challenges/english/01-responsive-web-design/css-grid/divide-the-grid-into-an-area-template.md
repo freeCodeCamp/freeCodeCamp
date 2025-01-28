@@ -12,9 +12,9 @@ You can group cells of your grid together into an <dfn>area</dfn> and give the a
 
 ```css
 grid-template-areas:
-  "header header header"
-  "advert content content"
-  "advert footer footer";
+  'header header header'
+  'advert content content'
+  'advert footer footer';
 ```
 
 The code above groups the cells of the grid into four areas: `header`, `advert`, `content`, and `footer`. Every word represents a cell and every pair of quotation marks represent a row.
@@ -28,12 +28,9 @@ Change the template so the `footer` area spans the entire bottom row. Defining t
 `container` class should have a `grid-template-areas` property similar to the example but with the `footer` area spanning the whole bottom row.
 
 ```js
-assert(
-  __helpers
-    .removeCssComments(code)
-    .match(
-      /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?advert\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi
-    )
+assert.match(
+  __helpers.removeCssComments(code),
+  /.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?["|']\s*?header\s*?header\s*?header\s*?["|']\s*?["|']\s*?advert\s*?content\s*?content\s*?["|']\s*?["|']\s*?footer\s*?footer\s*?footer\s*?["|']\s*?;[\s\S]*}/gi
 );
 ```
 
@@ -43,11 +40,21 @@ assert(
 
 ```html
 <style>
-  .item1{background:LightSkyBlue;}
-  .item2{background:LightSalmon;}
-  .item3{background:PaleTurquoise;}
-  .item4{background:LightPink;}
-  .item5{background:PaleGreen;}
+  .item1 {
+    background: LightSkyBlue;
+  }
+  .item2 {
+    background: LightSalmon;
+  }
+  .item3 {
+    background: PaleTurquoise;
+  }
+  .item4 {
+    background: LightPink;
+  }
+  .item5 {
+    background: PaleGreen;
+  }
 
   .container {
     font-size: 40px;
@@ -60,9 +67,9 @@ assert(
     grid-gap: 10px;
     grid-template-areas:
     /* Only change code below this line */
-      "header header header"
-      "advert content content"
-      "advert footer footer";
+      'header header header'
+      'advert content content'
+      'advert footer footer';
     /* Only change code above this line */
   }
 </style>
@@ -80,11 +87,21 @@ assert(
 
 ```html
 <style>
-  .item1{background:LightSkyBlue;}
-  .item2{background:LightSalmon;}
-  .item3{background:PaleTurquoise;}
-  .item4{background:LightPink;}
-  .item5{background:PaleGreen;}
+  .item1 {
+    background: LightSkyBlue;
+  }
+  .item2 {
+    background: LightSalmon;
+  }
+  .item3 {
+    background: PaleTurquoise;
+  }
+  .item4 {
+    background: LightPink;
+  }
+  .item5 {
+    background: PaleGreen;
+  }
 
   .container {
     font-size: 40px;
@@ -97,9 +114,9 @@ assert(
     grid-gap: 10px;
 
     grid-template-areas:
-      "header header header"
-      "advert content content"
-      "footer footer footer";
+      'header header header'
+      'advert content content'
+      'footer footer footer';
   }
 </style>
 

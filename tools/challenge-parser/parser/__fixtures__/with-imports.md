@@ -1,5 +1,4 @@
 ::import{component="Script" from="./script.md" }
-::import{component="Second" from="./script-two.md" }
 
 # --description--
 

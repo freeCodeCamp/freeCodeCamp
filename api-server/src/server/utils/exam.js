@@ -1,18 +1,4 @@
-function shuffleArray(arr) {
-  let currentIndex = arr.length,
-    randomIndex;
-
-  while (currentIndex != 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [arr[currentIndex], arr[randomIndex]] = [
-      arr[randomIndex],
-      arr[currentIndex]
-    ];
-  }
-
-  return arr;
-}
+import { shuffleArray } from '../../../../shared/utils/shuffle-array';
 
 function filterDeprecated(arr) {
   return arr.filter(i => !i.deprecated);
