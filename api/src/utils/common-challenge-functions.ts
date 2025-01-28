@@ -1,6 +1,10 @@
-import type { ExamResults, user, Prisma } from '@prisma/client';
+import type {
+  user,
+  Prisma,
+  SavedChallenge,
+  CompletedChallenge
+} from '@prisma/client';
 import { FastifyInstance } from 'fastify';
-import { omit, pick } from 'lodash';
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { getChallenges } from './get-challenges';
 
@@ -24,53 +28,6 @@ export const msTrophyChallenges = getChallenges()
   .filter(challenge => challenge.challengeType === challengeTypes.msTrophy)
   .map(({ id, msTrophyId }) => ({ id, msTrophyId }));
 
-type SavedChallengeFile = {
-  key: string;
-  ext: string; // NOTE: This is Ext type in client
-  name: string;
-  history: string[];
-  contents: string;
-};
-
-type SavedChallenge = {
-  id: string;
-  lastSavedDate: number;
-  files: SavedChallengeFile[];
-};
-
-// TODO: Confirm this type - read comments below
-type CompletedChallengeFile = {
-  key: string;
-  ext: string; // NOTE: This is Ext type in client
-  name: string;
-  contents: string;
-
-  // These values are present in prop-types and ajax.ts builds with it
-  // editableRegionBoundaries?: number[];
-  // usesMultifileEditor?: boolean;
-  // error: null | string | unknown;
-  // head: string;
-  // tail: string;
-  // seed: string;
-  // id: string;
-  // history: string[];
-
-  // This value is present in prisma schema
-  path?: string | null;
-};
-
-// TODO: Should probably prefer `import{CompletedChallenge}from'@prisma/client'` instead of defining it here
-export type CompletedChallenge = {
-  id: string;
-  solution?: string | null;
-  githubLink?: string | null;
-  challengeType?: number | null;
-  completedDate: number;
-  isManuallyApproved?: boolean | null;
-  files?: CompletedChallengeFile[];
-  examResults?: ExamResults | null;
-};
-
 /**
  * Helper function to save a user's challenge data. Used in challenge
  * submission endpoints.
@@ -88,9 +45,7 @@ export function saveUserChallengeData(
   const challengeToSave: SavedChallenge = {
     id: challengeId,
     lastSavedDate: Date.now(),
-    files: challenge.files?.map(file =>
-      pick(file, ['contents', 'key', 'name', 'ext', 'history'])
-    )
+    files: challenge.files
   };
 
   const savedIndex = savedChallenges.findIndex(({ id }) => challengeId === id);
@@ -139,20 +94,10 @@ export async function updateUserChallengeData(
   ) {
     completedChallenge = {
       ..._completedChallenge,
-      files: files?.map(
-        file =>
-          pick(file, [
-            'contents',
-            'key',
-            'index',
-            'name',
-            'path',
-            'ext'
-          ]) as CompletedChallengeFile
-      )
+      files
     };
   } else {
-    completedChallenge = omit(_completedChallenge, ['files']);
+    completedChallenge = { ..._completedChallenge, files: [] };
   }
 
   const {
@@ -199,9 +144,7 @@ export async function updateUserChallengeData(
     const challengeToSave: SavedChallenge = {
       id: challengeId,
       lastSavedDate: newProgressTimeStamp,
-      files: files?.map(file =>
-        pick(file, ['contents', 'key', 'name', 'ext', 'history'])
-      ) as SavedChallengeFile[]
+      files
     };
 
     const isSaved = savedChallenges.some(({ id }) => challengeId === id);
@@ -223,7 +166,7 @@ export async function updateUserChallengeData(
         completedChallenges: userCompletedChallenges,
         // TODO: `needsModeration` should be handled closer to source, because it exists in 3 states: true, false, undefined/null
         //       `undefined` in Prisma is a no-op
-        needsModeration: needsModeration || undefined,
+        needsModeration: needsModeration,
         savedChallenges: savedChallengesUpdate,
         progressTimestamps: userProgressTimestamps,
         partiallyCompletedChallenges: userPartiallyCompletedChallenges

@@ -31,7 +31,7 @@ export const file = Type.Object({
   key: Type.String(),
   ext: Type.String(),
   name: Type.String(),
-  history: Type.Array(Type.String())
+  path: Type.String()
 });
 
 // This is only used for serialization, so should not use format. Reason being,

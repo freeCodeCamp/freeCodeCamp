@@ -12,7 +12,7 @@ export const modernChallengeCompleted = {
           key: Type.String(),
           ext: Type.String(),
           name: Type.String(),
-          history: Type.Array(Type.String())
+          path: Type.String()
         })
       )
     )
