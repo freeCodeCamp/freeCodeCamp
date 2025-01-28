@@ -225,7 +225,7 @@ function generatePhoneNumber(type) {
 
 for (let i = 1; i <= 7; i++) {
   let phoneNum = generatePhoneNumber(i);
-  assert.strictEqual(telephoneCheck(phoneNum), true);
+  assert.isTrue(telephoneCheck(phoneNum));
 }
 ```
 
@@ -261,7 +261,7 @@ function generateInvalidPhoneNumber(type) {
 }
 
 const notPhoneNum = generateInvalidPhoneNumber(Math.floor(Math.random() * 7))
-assert.strictEqual(telephoneCheck(notPhoneNum), false)
+assert.isFalse(telephoneCheck(notPhoneNum))
 ```
 
 
