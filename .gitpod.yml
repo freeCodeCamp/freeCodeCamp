@@ -35,6 +35,7 @@ tasks:
       export API_LOCATION=$(gp url 3000)
       export CHALLENGE_EDITOR_API_LOCATION=$(gp url 3200)
       export CHALLENGE_EDITOR_CLIENT_LOCATION=$(gp url 3300)
+      export CHALLENGE_EDITOR_LEARN_CLIENT_LOCATION=$(gp url 8000)
       ' >> ~/.bashrc;
       exit;
 

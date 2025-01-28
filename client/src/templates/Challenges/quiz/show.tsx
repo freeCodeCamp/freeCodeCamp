@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { useLocation } from '@reach/router';
+import { useLocation, navigate as reachNavigate } from '@reach/router';
 import {
   Container,
   Col,
@@ -176,7 +176,7 @@ const ShowQuiz = ({
       correct: t('learn.quiz.correct-answer'),
       incorrect: t('learn.quiz.incorrect-answer')
     },
-    passingGrade: 85,
+    passingGrade: 90,
     onSuccess: () => {
       openCompletionModal(), setIsPassed(true);
     },
@@ -252,7 +252,9 @@ const ShowQuiz = ({
       return;
     }
 
-    void navigate(`${curLocation.pathname}`);
+    // We need to use Reach Router, because the pathname is already prefixed
+    // with the language and Gatsby's navigate will prefix it again.
+    void reachNavigate(`${curLocation.pathname}`);
     openExitQuizModal();
   }, [curLocation.pathname, hasSubmitted, exitConfirmed, openExitQuizModal]);
 

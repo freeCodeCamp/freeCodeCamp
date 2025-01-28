@@ -171,7 +171,9 @@ ${e.data.testString}`)) as unknown;
     ctx.postMessage({
       err: {
         message: (err as Error).message,
-        stack: (err as Error).stack
+        stack: (err as Error).stack,
+        expected: (err as { expected?: string }).expected,
+        actual: (err as { actual?: string }).actual
       }
     });
   }

@@ -160,7 +160,7 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
           <li>{t(`certification.title.${Certification.JsAlgoDataStruct}`)}</li>
           <li>{t(`certification.title.${Certification.LegacyFrontEnd}`)}</li>
           <li>{t(`certification.title.${Certification.LegacyDataVis}`)}</li>
-          <li>{t(`certification.title.${Certification.LegacyBackEnd}`)}</li>
+          <li>{t(`certification.title.${Certification.BackEndDevApis}`)}</li>
           <li>{t(`certification.title.${Certification.LegacyInfoSecQa}`)}</li>
         </ul>
       </div>
