@@ -62,7 +62,7 @@ Both `Great for` and `Good for` means something is very helpful, suitable or eff
       "filename": "B1_9-1.mp3",
       "startTime": 1,
       "startTimestamp": 16.04,
-      "finishTimestamp": 21.8
+      "finishTimestamp": 21.9
     }
   },
   "commands": [
@@ -83,7 +83,7 @@ Both `Great for` and `Good for` means something is very helpful, suitable or eff
     {
       "character": "Linda",
       "startTime": 4.64,
-      "finishTime": 6.76,
+      "finishTime": 6.86,
       "dialogue": {
         "text": "Plus it's really good for building prototypes quickly.",
         "align": "center"
@@ -92,7 +92,7 @@ Both `Great for` and `Good for` means something is very helpful, suitable or eff
     {
       "character": "Linda",
       "opacity": 0,
-      "startTime": 7.26
+      "startTime": 7.36
     }
   ]
 }
