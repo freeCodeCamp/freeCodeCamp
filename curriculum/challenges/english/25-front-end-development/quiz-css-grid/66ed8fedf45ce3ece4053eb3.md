@@ -121,7 +121,7 @@ Sets the minimal size of the element for browser working in full-screen mode.
 
 #### --answer--
 
-A function to set the minimum and maximum sizes for a track.
+Sets the minimum and maximum sizes for a track.
 
 ### --question--
 
@@ -227,7 +227,7 @@ Aligns text in the grid item vertically.
 
 ---
 
-Specifies the number of columns in a grid element.
+Sets two columns for a grid container.
 
 #### --answer--
 
