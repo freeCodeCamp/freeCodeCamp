@@ -428,7 +428,7 @@
     "questions": "質問",
     "answered-mcq": "未回答または不正解の質問があります。",
     "explanation": "解説",
-    "transcript": "Read a transcript of this video",
+    "transcript": "この動画の文字起こしを読む",
     "solution-link": "回答のリンク",
     "source-code-link": "ソースコードのリンク",
     "ms-link": "Microsoft のリンク",
@@ -529,8 +529,8 @@
     "if-help-university": "おかげさまで順調に進んでいます。ぜひ、寄付を通してこの先の活動をご支援いただければ幸いです。",
     "preview-external-window": "プレビューは別ウィンドウに表示されています。",
     "fill-in-the-blank": {
-      "heading": "Fill in the blank",
-      "blank": "blank"
+      "heading": "空欄を埋めてください。",
+      "blank": "空欄"
     },
     "quiz": {
       "correct-answer": "正解！",
@@ -710,7 +710,7 @@
     "support-benefits-2": "サポーターバッジを獲得できます。",
     "support-benefits-3": "プロフィール画像に金色の枠が表示されます。",
     "support-benefits-4": "サポーター向け Discord チャンネルにアクセスできます。<0>freeCodeCamp 公式 Discord に参加</0>した上で、<1>/supporter</1> コマンドを使用してください。",
-    "support-benefits-5": "And more benefits to come soon",
+    "support-benefits-5": "今後も新たな特典を追加予定です。",
     "exclusive-features": "以下のサポーター特典が利用できます:",
     "current-initiatives-title": "freeCodeCamp における現在の取り組み:",
     "your-donation-helps-followings": "いただいた寄付は以下のような取り組みに役立てられます:",
@@ -719,10 +719,10 @@
     "current-initiatives-3": "既存のカリキュラム、チュートリアルの翻訳 (32 の言語を対象に翻訳中)",
     "current-initiatives-4": "コンピューターサイエンスの無料認定学士号の設立",
     "community-achivements-title": "2023 年の freeCodeCamp コミュニティの実績:",
-    "community-achivements-1": "Published <0>193</0> full-length courses on YouTube.",
-    "community-achivements-2": "Published <0>850</0> text-based coding tutorials and <0>5</0> free books through freeCodeCamp Press.",
-    "community-achivements-3": "Merged <0>2,455</0> code contributions into our open source repositories on GitHub",
-    "community-achivements-4": "Translated <0>1.5</0> million words to make our curriculum and tutorials more accessible to speakers of many world languages",
+    "community-achivements-1": "長編 YouTube 講座を <0>193</0> 件投稿",
+    "community-achivements-2": "プログラミングチュートリアル記事を <0>850</0> 件、freeCodeCamp Press として無料の電子書籍を <0>5</0> 冊投稿",
+    "community-achivements-3": "GitHub のオープンソースリポジトリにてコードのコントリビューションを <0>2,455</0> 件マージ",
+    "community-achivements-4": "カリキュラムとチュートリアル記事の多言語化において <0>150 万</0>ワードを翻訳",
     "as-you-see": "皆様からのご寄付のおかげで、上記の活動が成し遂げられました。今後も有効に活用させていただくことをお約束いたします。",
     "get-benefits": "上記のメリットを通して、教育に良い変化をもたらすチャリティー活動を支援している実感が得られることと思います。ぜひサポーター加入をご検討ください。",
     "modal-benefits-title": "寄付のお願い",
