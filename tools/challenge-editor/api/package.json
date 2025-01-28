@@ -5,7 +5,8 @@
   "description": "Editor to help with new challenge structure",
   "scripts": {
     "start": "ts-node server.ts",
-    "postinstall": "shx cp ./sample.env ./.env"
+    "postinstall": "shx cp ./sample.env ./.env",
+    "lint": "eslint ."
   },
   "author": "freeCodeCamp",
   "license": "BSD-3-Clause",
