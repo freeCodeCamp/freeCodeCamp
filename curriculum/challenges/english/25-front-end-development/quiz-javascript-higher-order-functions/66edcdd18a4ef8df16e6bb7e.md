@@ -17,7 +17,7 @@ To pass the quiz, you must correctly answer at least 18 of the 20 questions belo
 
 #### --text--
 
-Consider the following statements about JavaScript higher-order functions. Which one presents a common misconception?
+Which of the following statements about JavaScript higher-order functions is a common misconception?
 
 #### --distractors--
 
@@ -39,29 +39,29 @@ All functions in JavaScript, including those that do not take or return other fu
 
 #### --text--
 
-Which of the following statements about closures and higher-order functions is true?
+What is a function factory in the context of higher order functions?
 
 #### --distractors--
 
-Higher-order functions must always return a new function; otherwise, they are not considered higher-order.
+A function that creates new variables.
 
 ---
 
-Closures and higher-order functions are unrelated concepts in JavaScript.
+A function that only works with strings.
 
 ---
 
-Higher-order functions cannot create closures since they do not return inner functions.
+A function that automatically generates code comments.
 
 #### --answer--
 
-Closures created by higher-order functions can capture the lexical scope, allowing for state preservation.
+A function that returns a new function based on specific parameters
 
 ### --question--
 
 #### --text--
 
-What is the result of this code?
+After code execution, what will be the value of `forEachRes` and `mapRes`?
 
 ```js
 const numbers = [1, 1, 1, 1, 1];
@@ -168,15 +168,15 @@ It varies depending on the accumulator's initial value and the callback function
 
 #### --text--
 
-How does the `sort()` method behave if no comparison function is provided?
+How does the `sort()` method behave if no compare function is provided in numerical sorting?
 
 #### --distractors--
 
-It sorts the array as strings based on UTF-16 code units, sorting `undefined`, empty slots, and object references to the beginning of the array.
+It fills the empty slots with `null`.
 
 ---
 
-It returns an error.
+It returns an array of special characters.
 
 ---
 
@@ -184,7 +184,7 @@ It sorts the array in reverse order.
 
 #### --answer--
 
-It sorts the array as strings based on UTF-16 code units. Objects are compared as the string `"[object Object]"`. Empty slots are moved to the end of the array.
+It sorts the array as strings based on UTF-16 code units.
 
 ### --question--
 
@@ -264,7 +264,7 @@ The same object (`this`) or another object that has more methods.
 
 #### --text--
 
-Which of the following benefits does method chaining provide?
+Which of the following is a benefit of method chaining?
 
 #### --distractors--
 
@@ -286,73 +286,67 @@ It promotes simplified syntax and more readable code by allowing multiple operat
 
 #### --text--
 
-In the context of method chaining, what is a fluent interface?
+What is the primary benefit of method chaining in programming?
 
 #### --distractors--
 
-A way to handle errors in method calls.
+It makes code execution faster.
 
 ---
 
-A type of function that returns a promise.
+It allows for more complex operations.
 
 ---
 
-A design pattern for asynchronous programming.
+It uses less resources.
 
 #### --answer--
 
-A style that allows method chaining for more natural syntax.
+It improves code readability.
 
 ### --question--
 
 #### --text--
 
-What is the impact of using `bind()` on a higher-order function in JavaScript?
+In method chaining, what is a common practice to enhance clarity and debugging?
 
 #### --distractors--
 
-`bind()` creates a new function with a specific `this` context, but does not change the function's parameters.
+Use fewer methods in the chain.
 
 ---
 
-`bind()` can modify the original function's implementation.
+Avoid chaining methods that return only primitive values.
 
 ---
 
-`bind()` ensures the function is executed immediately with the specified context.
+Use only built-in methods.
 
 #### --answer--
 
-`bind()` creates a new function with a specific `this` context, allowing the higher-order function to retain the intended context when called later.
+Break long chains into multiple steps.
 
 ### --question--
 
 #### --text--
 
-Which of the following methods supports method chaining?
+What is a potential downside of using method chaining excessively in your code?
 
 #### --distractors--
 
-```js
-Array.prototype.concat();
-```
+It makes the code run slower.
 
 ---
 
-```js
-Array.prototype.map();
-```
+It prevents the use of comments.
 
 ---
 
-```js
-Array.prototype.filter();
-```
+It makes the file size larger.
 
 #### --answer--
 
-All options mentioned.
+It can make the code harder to debug.
 
 ### --question--
 
@@ -380,7 +374,7 @@ What will `[2, , 2].every((x) => x === 2)` return?
 
 #### --text--
 
-What does the following code demonstrate about the `.filter()` method in JavaScript?
+Which option is true about the code below?
 
 ```js
 const originalArray = [{ id: 1 }, { id: 2 }, { id: 3 }];
@@ -440,7 +434,7 @@ console.log(result);
 
 #### --text--
 
-What is the purpose of the `initialValue` parameter in the `reduce()` method?
+What is the purpose of providing an initial value as an argument to the `reduce()` method?
 
 #### --distractors--
 
@@ -462,43 +456,42 @@ To define the starting value for the accumulator.
 
 #### --text--
 
-What is the recommended practice when using the `map()` method instead of `forEach()`?
+Can the `map` method be used on objects that are not arrays?
 
 #### --distractors--
 
-Always chain it with the `forEach()` method.
+Yes, it can be used on any object.
 
 ---
 
-Always use it to modify existing objects.
+Yes, but only on objects with numeric properties
 
 ---
 
-Use it to delete elements from the array.
+It depends on the JavaScript version
 
 #### --answer--
 
-Use it with pure functions, avoid it when using functions making side effects.
+No, it is specifically designed for arrays.
 
 ### --question--
 
 #### --text--
 
-What happens when `map()` is called on a sparse array?
+What is the primary purpose of the `map` method in JavaScript?
 
 #### --distractors--
 
-It fills in the empty slots with null.
+To sort an array
 
 ---
 
-The callback function is called for every index, including empty slots.
+To filter elements from an array
 
 ---
 
-The array is automatically compacted to remove empty slots.
+To find a specific element in an array
 
 #### --answer--
 
-The returned array remains sparse, and the callback is not invoked for empty slots.
-
+To transform each element of an array into a new element.
