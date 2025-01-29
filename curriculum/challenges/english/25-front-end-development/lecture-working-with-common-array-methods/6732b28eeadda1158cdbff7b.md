@@ -19,9 +19,9 @@ In JavaScript, the `includes()` method is a simple and efficient way to check if
 The `includes()` method is particularly useful when you need to quickly verify the presence of an element in an array without needing to know its exact position. Let's start with an example of how to use the `includes()` method:
 
 ```js
-let fruits = ['apple', 'banana', 'orange', 'mango'];
-console.log(fruits.includes('banana')); // true
-console.log(fruits.includes('grape'));  // false
+let fruits = ["apple", "banana", "orange", "mango"];
+console.log(fruits.includes("banana")); // true
+console.log(fruits.includes("grape"));  // false
 ```
 
 In this example, we have an array of fruits. We use the `includes()` method to check if `banana` is in the array. It returns `true` because `banana` is indeed present. We then check for `grape`, which returns `false` because it's not in the array.
@@ -29,9 +29,9 @@ In this example, we have an array of fruits. We use the `includes()` method to c
 The `includes()` method is case-sensitive when dealing with strings. This means that `Banana` with a capital B and `banana` with all lowercase letters are considered different values. Here's an example that illustrates this:
 
 ```js
-let fruits = ['apple', 'banana', 'orange'];
-console.log(fruits.includes('banana')); // true
-console.log(fruits.includes('Banana')); // false
+let fruits = ["apple", "banana", "orange"];
+console.log(fruits.includes("banana")); // true
+console.log(fruits.includes("Banana")); // false
 ```
 
 In this case, `banana` (all in lowercase) is found in the array, but `Banana` (with the first letter capitalized) is not, so the second `includes()` call returns `false`.
@@ -51,12 +51,12 @@ The same is true for the second `console.log`. We are looking for the number `30
 It's worth noting that `includes()` uses the strict equality comparison (`===`), which means it can distinguish between different types. For example:
 
 ```js
-let mixedArray = [1, '2', 3, '4', 5];
+let mixedArray = [1, "2", 3, "4", 5];
 console.log(mixedArray.includes(2));  // false
-console.log(mixedArray.includes('2')); // true
+console.log(mixedArray.includes("2")); // true
 ```
 
-In this case, the number `2` and the string `'2'` are considered different data types. So, the first `console.log` will return `false`, while the second `console.log` will return `true`.
+In this case, the number `2` and the string `"2"` are considered different data types. So, the first `console.log` will return `false`, while the second `console.log` will return `true`.
 
 The `includes()` method is a powerful tool for checking the presence of elements in arrays. It's simple to use, efficient, and can save you from writing more complex loops or conditions to search through arrays. Whether you're working with strings, numbers, or mixed data types, `includes()` provides a straightforward way to verify if a value exists in your array.
 
@@ -108,8 +108,8 @@ The second parameter of ``includes()`` specifies the starting position for the s
 What will be the output of the following code?
 
 ```js
-let arr = ['a', 'b', 'c', 'd', 'e'];
-console.log(arr.includes('C'));
+let arr = ["a", "b", "c", "d", "e"];
+console.log(arr.includes("C"));
 ```
 
 ## --answers--
@@ -149,8 +149,8 @@ Remember that ``includes()`` is case-sensitive when dealing with strings.
 What will be the output of the following code?
 
 ```js
-let arr = [1, '2', 3, '4', 5];
-console.log(arr.includes('3'));
+let arr = [1, "2", 3, "4", 5];
+console.log(arr.includes("3"));
 ```
 
 ## --answers--
