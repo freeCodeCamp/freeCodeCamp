@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
+import ChallengeTranscript from '../challenge-transcript';
 import { sounds, images, backgrounds, characterAssets } from './scene-assets';
 import Character from './character';
 import { SceneSubject } from './scene-subject';
@@ -87,7 +88,7 @@ export function Scene({
 
   const initBackground = setup.background;
 
-  // The charactesr are memoized to prevent the useEffect from running on every
+  // The character are memoized to prevent the useEffect from running on every
   // render,
   const initCharacters = useMemo(
     () =>
@@ -108,7 +109,6 @@ export function Scene({
   const [characters, setCharacters] = useState(initCharacters);
   const [dialogue, setDialogue] = useState(initDialogue);
   const [background, setBackground] = useState(initBackground);
-  const [showTranscript, setTranscriptVisiblity] = useState(false);
   const startRef = useRef<number>(0);
   const startTimerRef = useRef<number>();
   const finishTimerRef = useRef<number>();
@@ -154,239 +154,225 @@ export function Scene({
     canPauseRef.current = false;
   };
 
-  const playScene = useCallback(() => {
-    const updateCurrentTime = () => {
-      const time = Date.now() - startRef.current;
-      setCurrentTime(time);
-
-  const buildTranscript = () => {
-    let transcript = '';
-    commands.forEach(command => {
-      if (command.character && command.dialogue && command.startTime) {
-        transcript = transcript + '\n' + command.startTime;
-        ' ' + command.character + ':' + ' ' + command.dialogue.text;
-      }
-    });
-    return transcript;
-  };
-
-  const toggleTranscript = () => {
-    setTranscriptVisiblity(!showTranscript);
-  };
-
-  const playScene = () => {
-    setShowDialogue(true);
-    setTimeout(() => {
-      if (isPlayingSceneRef.current) {
-        animationRef.current = window.requestAnimationFrame(updateCurrentTime);
-      }
-    };
-    // TODO: if we manage the playing state in another module, we should not
-    // need the early return here. It should not be possible for this to be
-    // called at all if the scene is already playing.
-    if (isPlaying || !sceneIsReady) return;
-    setIsPlaying(true);
-    isPlayingSceneRef.current = true;
-    startRef.current = Date.now();
-    setShowDialogue(true);
-
-    updateCurrentTime();
-
-    // @ts-expect-error it's not a node timer
-    startTimerRef.current = setTimeout(() => {
-      if (audioRef.current.paused) {
-        void audioRef.current.play().then(() => {
-          canPauseRef.current = true;
-        });
-      }
-    }, sToMs(audio.startTime));
-
-    // @ts-expect-error it's not a node timer
-    finishTimerRef.current = setTimeout(
-      () => {
-        if (duration !== Infinity) {
-          const endTimeStamp = sToMs(audio.finishTimestamp!); // it exists because duration is not Infinity
-          const audioCurrentTime = sToMs(audioRef.current.currentTime);
-          const remainingTime = endTimeStamp - audioCurrentTime;
-          // For some reason, despite the setTimeout resolving at the right
-          // time, the currentTime can be smaller than expected. That means
-          // that if we pause now it will cut off the last part.
-          if (remainingTime < 100) {
-            // 100ms is arbitrary and may need to be adjusted if people still
-            // notice the cut off
-
-            pause();
-          } else {
-            // @ts-expect-error it's not a node timer
-            finishTimerRef.current = setTimeout(() => {
-              pause();
-            }, remainingTime);
-          }
+    const buildTranscript = () => {
+      let transcriptText = '';
+      commands.forEach(command => {
+        if (command.character && command.dialogue && command.startTime) {
+          transcriptText = transcriptText + '\n' + command.character + ':' + ' ' + command.dialogue.text;
         }
-      },
-      duration + sToMs(audio.startTime)
-    );
-  }, [isPlaying, sceneIsReady, audio, duration]);
+      });
 
-  const resetScene = useCallback(() => {
-    usedCommandsRef.current.clear();
-    pause();
-    audioRef.current.currentTime = audio.startTimestamp || 0;
-    setCurrentTime(0);
-    setIsPlaying(false);
-    isPlayingSceneRef.current = false;
-    setShowDialogue(false);
-    setDialogue(initDialogue);
-    setCharacters(initCharacters);
-    setBackground(initBackground);
-  }, [audio, initCharacters, initBackground]);
-
-  useEffect(() => {
-    sceneSubject.attach(playScene);
-    return () => {
-      sceneSubject.detach(playScene);
+      return transcriptText;
     };
-  }, [playScene, sceneSubject]);
 
-  useEffect(() => {
-    if (isEmpty(sortedCommands)) return;
+      const playScene = useCallback(() => {
+        const updateCurrentTime = () => {
+          const time = Date.now() - startRef.current;
+          setCurrentTime(time);
 
-    sortedCommands.forEach((command, commandIndex) => {
-      // Start command timeout
-      if (
-        currentTime > command.time &&
-        !usedCommandsRef.current.has(commandIndex)
-      ) {
-        usedCommandsRef.current.add(commandIndex);
-        if (command.background) setBackground(command.background);
+          if (isPlayingSceneRef.current) {
+            animationRef.current = window.requestAnimationFrame(updateCurrentTime);
+          }
+        };
+        // TODO: if we manage the playing state in another module, we should not
+        // need the early return here. It should not be possible for this to be
+        // called at all if the scene is already playing.
+        if (isPlaying || !sceneIsReady) return;
+        setIsPlaying(true);
+        isPlayingSceneRef.current = true;
+        startRef.current = Date.now();
+        setShowDialogue(true);
 
-        setDialogue(
-          command.dialogue
-            ? { ...command.dialogue, label: command.character }
-            : initDialogue
-        );
+        updateCurrentTime();
 
-        setCharacters(prevCharacters => {
-          const newCharacters = prevCharacters.map(character => {
-            if (character.character === command.character) {
-              return {
-                ...character,
-                position: command.position ?? character.position,
-                opacity: command.opacity ?? character.opacity,
-                isTalking: command.isTalking
-              };
+        // @ts-expect-error it's not a node timer
+        startTimerRef.current = setTimeout(() => {
+          if (audioRef.current.paused) {
+            void audioRef.current.play().then(() => {
+              canPauseRef.current = true;
+            });
+          }
+        }, sToMs(audio.startTime));
+
+        // @ts-expect-error it's not a node timer
+        finishTimerRef.current = setTimeout(
+          () => {
+            if (duration !== Infinity) {
+              const endTimeStamp = sToMs(audio.finishTimestamp!); // it exists because duration is not Infinity
+              const audioCurrentTime = sToMs(audioRef.current.currentTime);
+              const remainingTime = endTimeStamp - audioCurrentTime;
+              // For some reason, despite the setTimeout resolving at the right
+              // time, the currentTime can be smaller than expected. That means
+              // that if we pause now it will cut off the last part.
+              if (remainingTime < 100) {
+                // 100ms is arbitrary and may need to be adjusted if people still
+                // notice the cut off
+
+                pause();
+              } else {
+                // @ts-expect-error it's not a node timer
+                finishTimerRef.current = setTimeout(() => {
+                  pause();
+                }, remainingTime);
+              }
             }
-            return character;
-          });
-          return newCharacters;
+          },
+          duration + sToMs(audio.startTime)
+        );
+      }, [isPlaying, sceneIsReady, audio, duration]);
+
+
+      const resetScene = useCallback(() => {
+        usedCommandsRef.current.clear();
+        pause();
+        audioRef.current.currentTime = audio.startTimestamp || 0;
+        setCurrentTime(0);
+        setIsPlaying(false);
+        isPlayingSceneRef.current = false;
+        setShowDialogue(false);
+        setDialogue(initDialogue);
+        setCharacters(initCharacters);
+        setBackground(initBackground);
+      }, [audio, initCharacters, initBackground]);
+
+      useEffect(() => {
+        sceneSubject.attach(playScene);
+        return () => {
+          sceneSubject.detach(playScene);
+        };
+      }, [playScene, sceneSubject]);
+
+      useEffect(() => {
+        if (isEmpty(sortedCommands)) return;
+
+        sortedCommands.forEach((command, commandIndex) => {
+          // Start command timeout
+          if (
+            currentTime > command.time &&
+            !usedCommandsRef.current.has(commandIndex)
+          ) {
+            usedCommandsRef.current.add(commandIndex);
+            if (command.background) setBackground(command.background);
+
+            setDialogue(
+              command.dialogue
+                ? { ...command.dialogue, label: command.character }
+                : initDialogue
+            );
+
+            setCharacters(prevCharacters => {
+              const newCharacters = prevCharacters.map(character => {
+                if (character.character === command.character) {
+                  return {
+                    ...character,
+                    position: command.position ?? character.position,
+                    opacity: command.opacity ?? character.opacity,
+                    isTalking: command.isTalking
+                  };
+                }
+                return character;
+              });
+              return newCharacters;
+            });
+          }
         });
-      }
-    });
 
-    // resetScene only works if called AFTER the commands, otherwise the
-    // commands will undo the reset.
-    if (currentTime >= resetTime) resetScene();
-  }, [currentTime, resetTime, sortedCommands, resetScene]);
+        // resetScene only works if called AFTER the commands, otherwise the
+        // commands will undo the reset.
+        if (currentTime >= resetTime) resetScene();
+      }, [currentTime, resetTime, sortedCommands, resetScene]);
 
-  useEffect(() => {
-    return () => {
-      clearTimeout(startTimerRef.current);
-      clearTimeout(finishTimerRef.current);
-      // @ts-expect-error cancelAnimationFrame accepts undefined, but TS doesn't
-      // know that
-      window.cancelAnimationFrame(animationRef.current);
-    };
-  }, []);
+      useEffect(() => {
+        return () => {
+          clearTimeout(startTimerRef.current);
+          clearTimeout(finishTimerRef.current);
+          // @ts-expect-error cancelAnimationFrame accepts undefined, but TS doesn't
+          // know that
+          window.cancelAnimationFrame(animationRef.current);
+        };
+      }, []);
 
   const transcriptText = buildTranscript();
-  return (
-    <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
-      <div
-        className='scene-wrapper'
-        style={{
-          backgroundImage: `url("${backgrounds}/${background}")`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center center',
-          aspectRatio: '16 / 9'
-        }}
-      >
-        {!sceneIsReady ? (
-          <Loader />
-        ) : (
-          <>
-            {characters.map(
-              (
-                { character, position = {}, opacity = 1, isTalking = false },
-                i
-              ) => {
-                return (
-                  <Character
-                    key={i}
-                    name={character}
-                    position={position}
-                    opacity={opacity}
-                    isTalking={isTalking}
-                    isBlinking={isPlaying}
-                  />
-                );
-              }
-            )}
-
-            {showDialogue && (alwaysShowDialogue || accessibilityOn) && (
-              <div
-                className={`scene-dialogue-wrap ${
-                  dialogue.align ? `scene-dialogue-align-${dialogue.align}` : ''
-                }`}
-              >
-                <div className='scene-dialogue-label'>{dialogue.label}</div>
-                <div className='scene-dialogue-text'>{dialogue.text}</div>
-              </div>
-            )}
-
-            {!isPlaying && (
-              <div className='scene-start-screen'>
-                <button
-                  className='scene-start-btn scene-play-btn'
-                  onClick={() => sceneSubject.notify()}
-                >
-                  <img
-                    src={`${images}/play-button.png`}
-                    alt={t('buttons.play-scene')}
-                  />
-                </button>
-
-                {!alwaysShowDialogue && (
-                  <button
-                    className='scene-start-btn scene-a11y-btn'
-                    aria-label={t('buttons.closed-caption')}
-                    aria-pressed={accessibilityOn}
-                    onClick={() => setAccessibilityOn(!accessibilityOn)}
-                  >
-                    <ClosedCaptionsIcon
-                      fill={
-                        accessibilityOn ? 'var(--gray-00)' : 'var(--gray-15)'
-                      }
-                    />
-                  </button>
+      return (
+        <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
+          <div
+            className='scene-wrapper'
+            style={{
+              backgroundImage: `url("${backgrounds}/${background}")`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center center',
+              aspectRatio: '16 / 9'
+            }}
+          >
+            {!sceneIsReady ? (
+              <Loader />
+            ) : (
+              <>
+                {characters.map(
+                  (
+                    { character, position = {}, opacity = 1, isTalking = false },
+                    i
+                  ) => {
+                    return (
+                      <Character
+                        key={i}
+                        name={character}
+                        position={position}
+                        opacity={opacity}
+                        isTalking={isTalking}
+                        isBlinking={isPlaying}
+                      />
+                    );
+                  }
                 )}
-              </div>
+
+                {showDialogue && (alwaysShowDialogue || accessibilityOn) && (
+                  <div
+                    className={`scene-dialogue-wrap ${dialogue.align ? `scene-dialogue-align-${dialogue.align}` : ''
+                      }`}
+                  >
+                    <div className='scene-dialogue-label'>{dialogue.label}</div>
+                    <div className='scene-dialogue-text'>{dialogue.text}</div>
+                  </div>
+                )}
+
+                {!isPlaying && (
+                  <div className='scene-start-screen'>
+                    <button
+                      className='scene-start-btn scene-play-btn'
+                      onClick={() => sceneSubject.notify()}
+                    >
+                      <img
+                        src={`${images}/play-button.png`}
+                        alt={t('buttons.play-scene')}
+                      />
+                    </button>
+
+                    {!alwaysShowDialogue && (
+                      <button
+                        className='scene-start-btn scene-a11y-btn'
+                        aria-label={t('buttons.closed-caption')}
+                        aria-pressed={accessibilityOn}
+                        onClick={() => setAccessibilityOn(!accessibilityOn)}
+                      >
+                        <ClosedCaptionsIcon
+                          fill={
+                            accessibilityOn ? 'var(--gray-00)' : 'var(--gray-15)'
+                          }
+                        />
+                      </button>
+                    )}
+                  </div>
+                )}
+              </>
             )}
-          </>
-        )}
-      </div>
-      <button id='toggle-transcript' onClick={toggleTranscript}>
-        {t('buttons.toggle-transcript')}
-      </button>
-      {showTranscript && (
-        <p id='transcript' className='transcript'>
-          {transcriptText}
-        </p>
-      )}
-      <Spacer size='m' />
-    </Col>
-  );
-}
+          </div>
+          <ChallengeTranscript transcript={transcriptText} />
+          <Spacer size='m' />
+        </Col>
+      );
+    }
 
 Scene.displayName = 'Scene';
 
