@@ -35,11 +35,11 @@ This phrase of two words means something is suitable or beneficial for a specifi
 
 # --explanation--
 
-Both `Great for` and `Good for` means something is very helpful, suitable or effective for a specific purpose. For example:
+Both `great for` and `good for` mean something is very helpful, suitable or effective for a specific purpose. For example:
 
 - `This new software is great for managing large projects.` - This means the software is very suitable and effective for managing large projects.
 
-- `Cloud storage is great for backing up large volumes of data.` - This means cloud storage is highly effective and well-suited for safely storing large amounts of data.
+- `Cloud storage is good for backing up large volumes of data.` - This means cloud storage is highly effective and well-suited for safely storing large amounts of data.
 
 # --scene--
 
