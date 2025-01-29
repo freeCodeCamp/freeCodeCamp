@@ -1613,7 +1613,9 @@
       },
       "learn-how-to-use-conditionals": {
         "title": "Learn How to Use Conditionals",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to use the conditional sentences to describe hypothetical outcomes depending on the fact that certain conditions are met."
+        ]
       },
       "learn-how-to-share-feedback": {
         "title": "Learn How to Share Feedback",
