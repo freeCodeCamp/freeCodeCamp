@@ -464,11 +464,11 @@ Yes, it can be used on any object.
 
 ---
 
-Yes, but only on objects with numeric properties
+Yes, but only on objects with numeric properties.
 
 ---
 
-It depends on the JavaScript version
+It depends on the JavaScript version.
 
 #### --answer--
 
@@ -482,15 +482,15 @@ What is the primary purpose of the `map` method in JavaScript?
 
 #### --distractors--
 
-To sort an array
+To sort an array.
 
 ---
 
-To filter elements from an array
+To filter elements from an array.
 
 ---
 
-To find a specific element in an array
+To find a specific element in an array.
 
 #### --answer--
 
