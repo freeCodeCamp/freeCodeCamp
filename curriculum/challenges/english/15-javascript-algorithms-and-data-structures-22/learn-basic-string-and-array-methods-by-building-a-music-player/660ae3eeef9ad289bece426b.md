@@ -17,7 +17,7 @@ Here is the basic syntax:
 () => {}
 ```
 
-To create a named arrow function, you can assign the function to a variable:
+By assigning the arrow function definition to a variable, you bind it to an identifier.
 
 ```js
 const exampleFunction = () => {
@@ -25,23 +25,23 @@ const exampleFunction = () => {
 }
 ```
 
-Create a new named arrow function called `printGreeting`. Inside the body of that function use the `console.log()` method to print the string `"Hello there!"`.
+Create a new arrow function and assign it to the variable `printGreeting`. Inside the function body, use the `console.log()` method to print the string `Hello there!`.
 
 # --hints--
 
-You should have a function called `printGreeting`.
+You should have a variable named `printGreeting` that stores an arrow function.
 
 ```js
 assert.isFunction(printGreeting);
 ```
 
-You should use arrow syntax to create the `printGreeting` function.
+You should use arrow function syntax and store it in the variable `printGreeting`.
 
 ```js
 assert.match(code, /(let|const)\s+printGreeting\s*=\s*\(.*\)\s*=>\s*{\s*[\s\S]*}\s*;?/)
 ```
 
-Your `printGreeting` function should include a `console.log('Hello there!')`.
+The arrow function stored in `printGreeting` should include a `console.log('Hello there!')`.
 
 ```js
 assert.match(printGreeting.toString(), /console\.log\(['"]Hello\s+there!['"]\)/);
