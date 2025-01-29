@@ -2969,7 +2969,7 @@
         "title": "DOM Manipulation and Click Events with JavaScript Review",
         "intro": [
           "Before you're quizzed on the DOM, you should review what you've learned about it.",
-          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's/code>, the <code>addEventListener()</code> method and more."
+          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's</code>, the <code>addEventListener()</code> method and more."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
