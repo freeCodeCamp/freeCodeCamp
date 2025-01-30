@@ -24,9 +24,10 @@ import {
   userFetchStateSelector,
   signInLoadingSelector
 } from '../../redux/selectors';
-import type { ChallengeNode, User } from '../../redux/prop-types';
+import type { User } from '../../redux/prop-types';
 import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '../../../../shared/config/certification-settings';
+import { BlockLayouts, BlockTypes } from '../../../../shared/config/blocks';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
@@ -41,6 +42,23 @@ type FetchState = {
   pending: boolean;
   complete: boolean;
   errored: boolean;
+};
+
+type ChallengeNode = {
+  challenge: {
+    fields: { slug: string; blockName: string };
+    id: string;
+    block: string;
+    blockType: BlockTypes;
+    challengeType: number;
+    title: string;
+    order: number;
+    superBlock: SuperBlocks;
+    dashedName: string;
+    blockLayout: BlockLayouts;
+    chapter: string;
+    module: string;
+  };
 };
 
 type SuperBlockProps = {
