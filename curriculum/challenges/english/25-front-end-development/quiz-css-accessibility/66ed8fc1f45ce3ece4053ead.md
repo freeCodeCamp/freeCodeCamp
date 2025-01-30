@@ -329,19 +329,19 @@ What does ARIA stand for?
 
 #### --distractors--
 
-Advanced Responsive Interactive Applications.
+Advanced Responsive Interactive Applications
 
 ---
 
-Augmented Real-time Interface Accessibility.
+Augmented Real-time Interface Accessibility
 
 ---
 
-Adaptive Resource Integration Architecture.
+Adaptive Resource Integration Architecture
 
 #### --answer--
 
-Accessible Rich Internet Applications.
+Accessible Rich Internet Applications
 
 ### --question--
 
@@ -351,19 +351,19 @@ What does CSS stand for?
 
 #### --distractors--
 
-Creative Style Sheets.
+Creative Style Sheets
 
 ---
 
-Colorful Style Sheets.
+Colorful Style Sheets
 
 ---
 
-Computer Style Sheets.
+Computer Style Sheets
 
 #### --answer--
 
-Cascading Style Sheets.
+Cascading Style Sheets
 
 ### --question--
 

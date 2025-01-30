@@ -21,19 +21,19 @@ What does CSS stand for?
 
 #### --distractors--
 
-Cascading Style Script.
+Cascading Style Script
 
 ---
 
-Concatenating Style Script.
+Concatenating Style Script
 
 ---
 
-Castor Sage Style.
+Castor Sage Style
 
 #### --answer--
 
-Cascading Style Sheets.
+Cascading Style Sheets
 
 ### --question--
 
