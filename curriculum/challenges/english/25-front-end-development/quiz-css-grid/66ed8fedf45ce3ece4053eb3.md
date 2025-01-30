@@ -245,7 +245,7 @@ How do you create four columns of equal width?
 
 ---
 
-`grid-template-columns: repeat(1,4);`
+`grid-template-columns: repeat(1, 4);`
 
 ---
 
