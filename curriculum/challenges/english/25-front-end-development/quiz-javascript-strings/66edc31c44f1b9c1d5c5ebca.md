@@ -109,19 +109,19 @@ What does ASCII stand for?
 
 #### --distractors--
 
-American Standard Code for Internet Information
+American Standard Code for Internet Information.
 
 ---
 
-Advanced Systematic Code for Internal Interchange
+Advanced Systematic Code for Internal Interchange.
 
 ---
 
-Automatic Standard Code for Internal Information
+Automatic Standard Code for Internal Information.
 
 #### --answer--
 
-American Standard Code for Information Interchange
+American Standard Code for Information Interchange.
 
 ### --question--
 
