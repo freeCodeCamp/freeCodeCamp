@@ -14,7 +14,7 @@ It's often used in instructions or advice to keep oneself in a certain situation
 
 - `Stay safe online.` - Continue being safe while using the internet. 
 
-- `Stay calm during the test` (continue being calm)
+- `Stay calm during the test.` - Continue being calm.
 
 - `Stay focused on your work` (continue paying attention to your work)
 
