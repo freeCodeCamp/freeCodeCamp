@@ -50,28 +50,28 @@ Which of the following is the correct way access the string `"Jessica"` from the
 
 ```js
 const developers = ["Jessica", "Naomi", "Tom"];
-developers[1] 
+developers[1]
 ```
 
 ---
 
 ```js
 const developers = ["Jessica", "Naomi", "Tom"];
-developers[2] 
+developers[2]
 ```
 
 ---
 
 ```js
 const developers = ["Jessica", "Naomi", "Tom"];
-developers[-1] 
+developers[-1]
 ```
 
 #### --answer--
 
 ```js
 const developers = ["Jessica", "Naomi", "Tom"];
-developers[0] 
+developers[0]
 ```
 
 ### --question--
@@ -114,7 +114,7 @@ It is used to divide a string into an array of substrings.
 
 ---
 
-It is used to add or remove elements from any position in an array. 
+It is used to add or remove elements from any position in an array.
 
 ---
 
@@ -140,7 +140,7 @@ It is used to check if an array contains a specific value.
 
 ---
 
-It is used to remove the last element from an array and will return that removed element. 
+It is used to remove the last element from an array and will return that removed element.
 
 #### --answer--
 
@@ -342,7 +342,7 @@ It is used to concatenate all of the elements of an array into a single string.
 
 ---
 
-It is used to add or remove elements from any position in an array. 
+It is used to add or remove elements from any position in an array.
 
 #### --answer--
 
