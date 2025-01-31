@@ -410,7 +410,7 @@
         ]
       },
       "review-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Review Algorithmic Thinking by Building a Dice Game",
+        "title": "アルゴリズム的思考の復習: ダイスゲームを作成する",
         "intro": [
           "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
           "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
@@ -1856,7 +1856,7 @@
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will learn how to build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
         ]
       },
       "lab-event-hub": {
@@ -1887,8 +1887,8 @@
       "workshop-hotel-feedback-form": {
         "title": "Build a Hotel Feedback Form",
         "intro": [
-          "In this workshop, you will learn how to work with forms by building a Hotel Feedback Form.",
-          "You will learn how to work with labels, inputs, fieldsets, legends, textareas and buttons."
+          "In this workshop, you will build a Hotel Feedback Form.",
+          "You will practice working with labels, inputs, fieldsets, legends, textareas and buttons."
         ]
       },
       "lab-survey-form": {
@@ -2339,7 +2339,7 @@
       "lab-tribute-page": {
         "title": "Build a Tribute Page",
         "intro": [
-          "in this lab, you'll build a tribute page for a subject of your choosing, fictional or real."
+          "In this lab, you'll build a tribute page for a subject of your choosing, fictional or real."
         ]
       },
       "review-css-accessibility": {
@@ -2967,7 +2967,7 @@
         "title": "DOM Manipulation and Click Events with JavaScript Review",
         "intro": [
           "Before you're quizzed on the DOM, you should review what you've learned about it.",
-          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's/code>, the <code>addEventListener()</code> method and more."
+          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's</code>, the <code>addEventListener()</code> method and more."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {

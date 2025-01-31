@@ -1842,7 +1842,7 @@
       "workshop-blog-page": {
         "title": "Створіть сторінку блогу про котів",
         "intro": [
-          "У цьому практичному занятті ви дізнаєтесь, як створити сторінку блогу лише на HTML, використовуючи семантичні елементи, серед яких <code>main</code>, <code>nav</code>, <code>article</code> та <code>footer</code>."
+          "У цьому практичному занятті ви створите сторінку блогу лише на HTML, використовуючи семантичні елементи, серед яких <code>main</code>, <code>nav</code>, <code>article</code> та <code>footer</code>."
         ]
       },
       "lab-event-hub": {
@@ -1873,7 +1873,7 @@
       "workshop-hotel-feedback-form": {
         "title": "Створіть форму зворотного зв’язку для готелю",
         "intro": [
-          "У цьому практичному занятті ви дізнаєтесь, як працювати з формами, створивши форму зворотного зв’язку для готелю.",
+          "У цьому практичному занятті ви створите форму зворотного зв’язку для готелю.",
           "Ви навчитесь працювати з мітками, полями введення даних, наборами полів, легендами, текстовими полями та кнопками."
         ]
       },
@@ -1893,7 +1893,7 @@
       "workshop-final-exams-table": {
         "title": "Створіть таблицю з кінцевими екзаменами",
         "intro": [
-          "In this workshop, you will practice working with HTML tables by building a table of final exams."
+          "У цьому практичному занятті ви дізнаєтесь, як працювати з HTML-таблицями, створивши таблицю кінцевих екзаменів."
         ]
       },
       "lab-book-catalog-table": {
@@ -2965,7 +2965,7 @@
         "title": "Повторення маніпуляції DOM та подій Click в JavaScript",
         "intro": [
           "Перш ніж перейти до тесту «DOM», повторіть основні поняття.",
-          "Відкрийте цю сторінку, щоб пригадати, як працювати з <code>DOM</code>, <code>Web API</code>, методом <code>addEventListener()</code> та багато іншого."
+          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's</code>, the <code>addEventListener()</code> method and more."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {

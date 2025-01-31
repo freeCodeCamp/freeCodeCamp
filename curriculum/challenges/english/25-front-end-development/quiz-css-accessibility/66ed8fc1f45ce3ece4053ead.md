@@ -7,7 +7,7 @@ dashedName: quiz-css-accessibility
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -325,23 +325,23 @@ Creating responsive layouts
 
 #### --text--
 
-Which of the following is a CSS Grid property?
+What does ARIA stand for?
 
 #### --distractors--
 
-`flex-direction`
+Advanced Responsive Interactive Applications
 
 ---
 
-`float`
+Augmented Real-time Interface Accessibility
 
 ---
 
-`position`
+Adaptive Resource Integration Architecture
 
 #### --answer--
 
-`grid-area`
+Accessible Rich Internet Applications
 
 ### --question--
 

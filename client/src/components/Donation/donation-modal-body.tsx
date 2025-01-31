@@ -254,25 +254,16 @@ function DonationModalBody({
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setSecondsRemaining(prevSeconds => {
-        if (prevSeconds > 0) {
-          return prevSeconds - 1;
-        } else {
-          setIsAnimationVisible(false);
-          clearInterval(interval);
-          return 0;
-        }
-      });
+    const intervalId = setInterval(() => {
+      setSecondsRemaining(prevSeconds => prevSeconds - 1);
     }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (secondsRemaining === 0) {
+    if (secondsRemaining <= 0) {
+      setIsAnimationVisible(false);
       setCanClose(true);
+      clearInterval(intervalId);
     }
+    return () => clearInterval(intervalId);
   }, [secondsRemaining, setCanClose]);
 
   return (

@@ -21,7 +21,9 @@ Here is an example of list items in an unordered list:
 Within the `ul` element nest three list items to display three things cats love:
 
 `cat nip`
+
 `laser pointers`
+
 `lasagna` 
 
 # --hints--

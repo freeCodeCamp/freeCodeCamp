@@ -106,7 +106,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         { name: Certification.JsAlgoDataStruct },
         { name: Certification.LegacyFrontEnd },
         { name: Certification.LegacyDataVis },
-        { name: Certification.LegacyBackEnd },
+        { name: Certification.BackEndDevApis },
         { name: Certification.LegacyInfoSecQa }
       ] as const;
 

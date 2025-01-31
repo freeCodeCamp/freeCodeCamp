@@ -52,6 +52,8 @@
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
+    "react": "16",
+    "react-dom": "16",
     "xterm": "^5.2.1"
   }
 }

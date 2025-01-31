@@ -19,7 +19,8 @@ import { JWT_SECRET } from '../../utils/env';
 import {
   clearEnvExam,
   seedEnvExam,
-  seedEnvExamAttempt
+  seedEnvExamAttempt,
+  seedExamEnvExamAuthToken
 } from '../../../__mocks__/env-exam';
 import { getMsTranscriptApiUrl } from './user';
 
@@ -349,10 +350,6 @@ describe('userRoutes', () => {
     });
 
     describe('/account/delete', () => {
-      beforeEach(async () => {
-        await seedEnvExam();
-        await seedEnvExamAttempt();
-      });
       afterEach(async () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
           where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
@@ -418,15 +415,32 @@ describe('userRoutes', () => {
       });
 
       test("POST deletes all the user's exam attempts", async () => {
-        const examAttempts =
-          await fastifyTestInstance.prisma.envExamAttempt.findMany();
-        expect(examAttempts).toHaveLength(1);
+        await seedEnvExam();
+        await seedEnvExamAttempt();
+        const countBefore =
+          await fastifyTestInstance.prisma.envExamAttempt.count();
+        expect(countBefore).toBe(1);
 
-        await superPost('/account/delete');
+        const res = await superPost('/account/delete');
 
-        const examAttemptsAfter =
-          await fastifyTestInstance.prisma.envExamAttempt.findMany();
-        expect(examAttemptsAfter).toHaveLength(0);
+        const countAfter =
+          await fastifyTestInstance.prisma.envExamAttempt.count();
+        expect(countAfter).toBe(0);
+        expect(res.status).toBe(200);
+      });
+
+      test("POST deletes all the user's exam tokens", async () => {
+        await seedExamEnvExamAuthToken();
+        const countBefore =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
+        expect(countBefore).toBe(1);
+
+        const res = await superPost('/account/delete');
+
+        const countAfter =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
+        expect(countAfter).toBe(0);
+        expect(res.status).toBe(200);
       });
     });
 

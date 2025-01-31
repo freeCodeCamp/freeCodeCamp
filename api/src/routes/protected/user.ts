@@ -76,9 +76,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       await fastify.prisma.user.delete({
         where: { id: req.user!.id }
       });
-      await fastify.prisma.examEnvironmentAuthorizationToken.deleteMany({
-        where: { userId: req.user!.id }
-      });
       reply.clearOurCookies();
 
       return {};
