@@ -127,7 +127,6 @@
     "prettier": "3.2.5",
     "prismjs": "1.29.0",
     "stylelint": "16.14.1",
-    "stylelint-config-standard": "37.0.0",
     "ts-node": "10.9.2",
     "typescript": "5.4.5",
     "webpack-bundle-analyzer": "4.10.1",
