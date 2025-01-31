@@ -16,7 +16,7 @@ It's often used in instructions or advice to keep oneself in a certain situation
 
 - `Stay calm during the test.` - Continue being calm.
 
-- `Stay focused on your work` (continue paying attention to your work)
+- `Stay focused on your work.` - Continue paying attention to your work.
 
 
 # --fillInTheBlank--
