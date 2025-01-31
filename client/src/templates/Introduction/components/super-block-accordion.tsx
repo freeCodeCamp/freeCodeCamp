@@ -3,13 +3,13 @@ import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
 
-import { ChallengeNode } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
 // TODO: See if there's a nice way to incorporate the structure into data Gatsby
 // sources from the curriculum, rather than importing it directly.
 import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
 import { ChapterIcon } from '../../../assets/chapter-icon';
+import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
 import { FsdChapters } from '../../../../../shared/config/chapters';
 import envData from '../../../../config/env.json';
 import Block from './block';
@@ -34,8 +34,21 @@ interface ModuleProps {
   totalSteps: number;
   completedSteps: number;
 }
+
+interface Challenge {
+  id: string;
+  block: string;
+  blockType: BlockTypes;
+  title: string;
+  fields: { slug: string };
+  dashedName: string;
+  challengeType: number;
+  blockLayout: BlockLayouts;
+  superBlock: SuperBlocks;
+}
+
 interface SuperBlockTreeViewProps {
-  challenges: ChallengeNode['challenge'][];
+  challenges: Challenge[];
   superBlock: SuperBlocks;
   chosenBlock: string;
   completedChallengeIds: string[];
@@ -191,7 +204,7 @@ const LinkBlock = ({
   challenges
 }: {
   superBlock: SuperBlocks;
-  challenges?: ChallengeNode['challenge'][];
+  challenges?: Challenge[];
 }) =>
   challenges?.length ? (
     <li className='link-block'>
