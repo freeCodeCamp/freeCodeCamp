@@ -69,26 +69,32 @@ export function createPoly<Rest>({
 }
 
 export function isPoly(poly: unknown): poly is ChallengeFile {
-  return (
-    !!poly &&
-    typeof poly === 'object' &&
-    'contents' in poly &&
+  function hasProperties(poly: unknown): poly is Record<string, unknown> {
+    return (
+      !!poly &&
+      typeof poly === 'object' &&
+      'contents' in poly &&
+      'name' in poly &&
+      'ext' in poly &&
+      'fileKey' in poly &&
+      'head' in poly &&
+      'tail' in poly &&
+      'seed' in poly &&
+      'history' in poly
+    );
+  }
+
+  const hasCorrectTypes = (poly: Record<string, unknown>): boolean =>
     typeof poly.contents === 'string' &&
-    'name' in poly &&
     typeof poly.name === 'string' &&
-    'ext' in poly &&
     exts.includes(poly.ext as Ext) &&
-    'fileKey' in poly &&
     typeof poly.fileKey === 'string' &&
-    'head' in poly &&
     typeof poly.head === 'string' &&
-    'tail' in poly &&
     typeof poly.tail === 'string' &&
-    'seed' in poly &&
     typeof poly.seed === 'string' &&
-    'history' in poly &&
-    Array.isArray(poly.history)
-  );
+    Array.isArray(poly.history);
+
+  return hasProperties(poly) && hasCorrectTypes(poly);
 }
 
 function checkPoly(poly: ChallengeFile) {
