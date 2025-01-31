@@ -29,19 +29,19 @@ Create a new arrow function and assign it to the variable `printGreeting`. Insid
 
 # --hints--
 
-You should have a variable named `printGreeting` that stores an arrow function.
+You should have a variable named `printGreeting` and assign it an arrow function.
 
 ```js
 assert.isFunction(printGreeting);
 ```
 
-You should use arrow function syntax and store it in the variable `printGreeting`.
+You should create an arrow function and assign it to the `printGreeting` variable.
 
 ```js
 assert.match(code, /(let|const)\s+printGreeting\s*=\s*\(.*\)\s*=>\s*{\s*[\s\S]*}\s*;?/)
 ```
 
-The arrow function stored in `printGreeting` should include a `console.log('Hello there!')`.
+Your `printGreeting` function should log "Hello there!" to the console`.
 
 ```js
 assert.match(printGreeting.toString(), /console\.log\(['"]Hello\s+there!['"]\)/);
