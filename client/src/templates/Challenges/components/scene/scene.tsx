@@ -6,12 +6,14 @@ import React, {
   useCallback
 } from 'react';
 import { Col, Spacer } from '@freecodecamp/ui';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePause, faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import { isEmpty } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
-import { sounds, images, backgrounds, characterAssets } from './scene-assets';
+import { sounds, backgrounds, characterAssets } from './scene-assets';
 import Character from './character';
 import { SceneSubject } from './scene-subject';
 
@@ -105,7 +107,7 @@ export function Scene({
 
   const initBackground = setup.background;
 
-  // The charactesr are memoized to prevent the useEffect from running on every
+  // The characters are memoized to prevent the useEffect from running on every
   // render,
   const initCharacters = useMemo(
     () =>
@@ -369,51 +371,54 @@ export function Scene({
               }
             )}
 
-            {showDialogue && (alwaysShowDialogue || accessibilityOn) && (
+            <div className='scene-bottom-bar'>
+              <button
+                className='scene-start-btn scene-play-btn'
+                onClick={() =>
+                  sceneSubject.notify(isPlaying ? 'pause' : 'play')
+                }
+              >
+                {isPlaying ? (
+                  <>
+                    <span className='sr-only'>{t('buttons.pause-scene')}</span>
+                    <FontAwesomeIcon icon={faCirclePause} size='3x' />
+                  </>
+                ) : (
+                  <>
+                    <span className='sr-only'>{t('buttons.play-scene')}</span>
+                    <FontAwesomeIcon icon={faCirclePlay} size='3x' />
+                  </>
+                )}
+              </button>
+
               <div
                 className={`scene-dialogue-wrap ${
                   dialogue.align ? `scene-dialogue-align-${dialogue.align}` : ''
                 }`}
               >
-                <div className='scene-dialogue-label'>{dialogue.label}</div>
-                <div className='scene-dialogue-text'>{dialogue.text}</div>
-              </div>
-            )}
-
-            {
-              <div className='scene-start-screen'>
-                <button
-                  className='scene-start-btn scene-play-btn'
-                  onClick={() =>
-                    sceneSubject.notify(isPlaying ? 'pause' : 'play')
-                  }
-                >
-                  {isPlaying ? (
-                    'Imagine you see a pause button here'
-                  ) : (
-                    <img
-                      src={`${images}/play-button.png`}
-                      alt={t('buttons.play-scene')}
-                    />
-                  )}
-                </button>
-
-                {!alwaysShowDialogue && (
-                  <button
-                    className='scene-start-btn scene-a11y-btn'
-                    aria-label={t('buttons.closed-caption')}
-                    aria-pressed={accessibilityOn}
-                    onClick={() => setAccessibilityOn(!accessibilityOn)}
-                  >
-                    <ClosedCaptionsIcon
-                      fill={
-                        accessibilityOn ? 'var(--gray-00)' : 'var(--gray-15)'
-                      }
-                    />
-                  </button>
+                {showDialogue && (alwaysShowDialogue || accessibilityOn) && (
+                  <>
+                    <div className='scene-dialogue-label'>{dialogue.label}</div>
+                    <div className='scene-dialogue-text'>{dialogue.text}</div>
+                  </>
                 )}
               </div>
-            }
+
+              {alwaysShowDialogue ? (
+                <div className='scene-a11y-btn'></div>
+              ) : (
+                <button
+                  className='scene-start-btn scene-a11y-btn'
+                  aria-label={t('buttons.closed-caption')}
+                  aria-pressed={accessibilityOn}
+                  onClick={() => setAccessibilityOn(!accessibilityOn)}
+                >
+                  <ClosedCaptionsIcon
+                    fill={accessibilityOn ? 'var(--gray-00)' : 'var(--gray-15)'}
+                  />
+                </button>
+              )}
+            </div>
           </>
         )}
       </div>

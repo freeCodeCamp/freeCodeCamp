@@ -28,17 +28,30 @@
 }
 
 .scene-a11y-btn {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
   text-align: right;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 10%;
 }
 
-.scene-play-btn img {
-  transform: translate(5px, 10px);
+.scene-play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-00);
+  flex: 0 0 10%;
+}
+.scene-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  background: rgba(10, 10, 35, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
 }
 
 .scene-a11y-btn svg {
@@ -47,13 +60,11 @@
 }
 
 .scene-dialogue-wrap {
-  position: absolute;
-  bottom: 0;
   padding: calc(5px + 0.25vw) calc(5px + 4vw);
-  background: rgba(10, 10, 35, 0.9);
   font-size: calc(0.25vw + 0.75rem);
   width: 100%;
   min-height: calc(35px + 1vw + 2rem);
+  flex: 0 0 80%;
 }
 
 .scene-dialogue-label {
