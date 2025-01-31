@@ -1,5 +1,5 @@
 import { isEqual } from 'lodash-es';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { SearchBox } from 'react-instantsearch';
@@ -57,6 +57,8 @@ export function SearchBar({
   const { t } = useTranslation();
   const [index, setIndex] = useState(-1);
   const [hits, setHits] = useState<Array<Hit>>([]);
+  // We need a ref because we have to get the current value of hits in handlers
+  const hitsRef = useRef(hits);
 
   const handleChange = (): void => {
     if (!isSearchFocused) {
@@ -150,6 +152,7 @@ export function SearchBar({
   const handleHits = (currHits: Array<Hit>): void => {
     if (!isEqual(hits, currHits)) {
       setIndex(-1);
+      hitsRef.current = currHits;
       setHits(currHits);
     }
   };
@@ -157,11 +160,11 @@ export function SearchBar({
   const keyHandlers = {
     indexUp: (e: KeyboardEvent | undefined): void => {
       e?.preventDefault();
-      setIndex(index === -1 ? hits.length : index - 1);
+      setIndex(index => (index === -1 ? hitsRef.current.length : index - 1));
     },
     indexDown: (e: KeyboardEvent | undefined): void => {
       e?.preventDefault();
-      setIndex(index === hits.length ? -1 : index + 1);
+      setIndex(index => (index === hitsRef.current.length ? -1 : index + 1));
     }
   };
 
