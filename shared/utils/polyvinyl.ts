@@ -1,12 +1,17 @@
 // originally based off of https://github.com/gulpjs/vinyl
 import invariant from 'invariant';
 
-export type Ext = 'js' | 'html' | 'css' | 'jsx' | 'ts';
+const exts = ['js', 'html', 'css', 'jsx', 'ts'] as const;
+export type Ext = (typeof exts)[number];
 
-export type ChallengeFile = {
+export type IncompleteChallengeFile = {
   fileKey: string;
   ext: Ext;
   name: string;
+  contents: string;
+};
+
+export type ChallengeFile = IncompleteChallengeFile & {
   editableRegionBoundaries?: number[];
   editableContents?: string;
   usesMultifileEditor?: boolean;
@@ -14,9 +19,8 @@ export type ChallengeFile = {
   head: string;
   tail: string;
   seed: string;
-  contents: string;
   source?: string | null;
-  id: string;
+  path: string;
   history: string[];
 };
 
@@ -73,7 +77,15 @@ export function isPoly(poly: unknown): poly is ChallengeFile {
     'name' in poly &&
     typeof poly.name === 'string' &&
     'ext' in poly &&
-    typeof poly.ext === 'string' &&
+    exts.includes(poly.ext as Ext) &&
+    'fileKey' in poly &&
+    typeof poly.fileKey === 'string' &&
+    'head' in poly &&
+    typeof poly.head === 'string' &&
+    'tail' in poly &&
+    typeof poly.tail === 'string' &&
+    'seed' in poly &&
+    typeof poly.seed === 'string' &&
     'history' in poly &&
     Array.isArray(poly.history)
   );
@@ -83,7 +95,7 @@ function checkPoly(poly: ChallengeFile) {
   invariant(
     isPoly(poly),
     'function should receive a PolyVinyl, but got %s',
-    poly
+    JSON.stringify(poly)
   );
 }
 
@@ -102,15 +114,14 @@ export function setContent(
 
 // This is currently only used to add back properties that are not stored in the
 // database.
-export function regeneratePathAndHistory(poly: ChallengeFile) {
-  const newPath = poly.name + '.' + poly.ext;
-  const newPoly = {
-    ...poly,
+export function regeneratePathAndHistory(file: IncompleteChallengeFile) {
+  const newPath = file.name + '.' + file.ext;
+  const newFile = {
+    ...file,
     path: newPath,
     history: [newPath]
   };
-  checkPoly(newPoly);
-  return newPoly;
+  return newFile;
 }
 
 async function clearHeadTail(polyP: Promise<ChallengeFile>) {
