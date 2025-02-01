@@ -17,7 +17,7 @@ To pass the quiz, you must correctly answer at least 18 of the 20 questions belo
 
 #### --text--
 
-Which of the following statements about JavaScript higher-order functions is a common misconception?
+Which of the following statements about JavaScript higher-order functions is NOT true?
 
 #### --distractors--
 
@@ -494,4 +494,4 @@ To find a specific element in an array.
 
 #### --answer--
 
-To transform each element of an array into a new element.
+To create a new array containing the results of calling a provided function on each element in the starting array.
