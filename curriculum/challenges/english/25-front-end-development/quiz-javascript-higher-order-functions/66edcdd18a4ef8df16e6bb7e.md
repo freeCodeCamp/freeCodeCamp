@@ -39,7 +39,7 @@ All functions in JavaScript, including those that do not take or return other fu
 
 #### --text--
 
-What is a function factory in the context of higher order functions?
+What is a factory function in the context of higher order functions?
 
 #### --distractors--
 
@@ -242,23 +242,31 @@ str.toLowerCase().trim().replace(' ', '_');
 
 #### --text--
 
-What must a method return to allow for method chaining?
+What is the output of the following code?
+
+```js
+let numbers = [2, 4, 8, 10];
+
+numbers.forEach(function(number) {
+    console.log(number % 2);
+});
+```
 
 #### --distractors--
 
-A primitive value.
+`2 4 8 10`
 
 ---
 
-A boolean value.
+`null null null null`
 
 ---
 
-An array.
+`1 1 1 1`
 
 #### --answer--
 
-The same object (`this`) or another object that has more methods.
+`0 0 0 0`
 
 ### --question--
 
@@ -286,23 +294,23 @@ It promotes simplified syntax and more readable code by allowing multiple operat
 
 #### --text--
 
-What is the primary benefit of method chaining in programming?
+How can you sort an array of objects by a specific property using the `sort` method?
 
 #### --distractors--
 
-It makes code execution faster.
+The sort method cannot sort objects.
 
 ---
 
-It allows for more complex operations.
+Use the reverse method after sorting.
 
 ---
 
-It uses less resources.
+Convert the objects to strings and sort them.
 
 #### --answer--
 
-It improves code readability.
+Use a compare function that compares the property values.
 
 ### --question--
 
@@ -352,54 +360,51 @@ It can make the code harder to debug.
 
 #### --text--
 
-What will `[2, , 2].every((x) => x === 2)` return?
+Which method would you use to determine if all elements in an array are strings?
 
 #### --distractors--
 
-`false`, `every()` will not run its predicate on empty slots.
+`some()`
 
 ---
 
-`undefined`
+`everyInstance()`
 
 ---
 
-`null`
+`filter()`
 
 #### --answer--
 
-`true`, `every()` will not run its predicate on empty slots.
+`every()`
 
 ### --question--
 
 #### --text--
 
-Which option is true about the code below?
+What will be the value of originalArray after the following code is run?
 
 ```js
 const originalArray = [{ id: 1 }, { id: 2 }, { id: 3 }];
 const filteredArray = originalArray.filter(item => item.id > 1);
 filteredArray[0].id = 4;
-
-console.log(originalArray);
 ```
 
 #### --distractors--
 
-`originalArray` remains unchanged.
+`[{ id: 1 }, { id: 2 }, { id: 3 }]`
 
 ---
 
-`originalArray` only retains the elements filtered out.
+`[{ id: 1 }]`
 
 ---
 
-`originalArray` is completely different from `filteredArray`.
+`[{ id: 4 }, { id: 2 }, { id: 3 }]`
 
 #### --answer--
 
-`originalArray` reflects changes made to `filteredArray` due to shallow copying.
-
+`[{ id: 1 }, { id: 4 }, { id: 3 }]`
 ### --question--
 
 #### --text--
@@ -482,15 +487,15 @@ What is the primary purpose of the `map` method in JavaScript?
 
 #### --distractors--
 
-To sort an array.
+To sort an array and return a new array while maintaining the original order. 
 
 ---
 
-To filter elements from an array.
+To filter elements from an array and remove or add elements based on a condition.
 
 ---
 
-To find a specific element in an array.
+To find a specific element in an array and return its index along with the element.
 
 #### --answer--
 
