@@ -1,8 +1,8 @@
 ---
 id: 677d3b8fac17ba6cbf3d8afa
-title: Task 2
+title: Task 3
 challengeType: 22
-dashedName: task-2
+dashedName: task-3
 ---
 
 <!-- (Audio) Bob: I want to start by saying that you've done a great job with your QA work. -->
