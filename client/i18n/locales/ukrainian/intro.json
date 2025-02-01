@@ -2965,7 +2965,7 @@
         "title": "Повторення маніпуляції DOM та подій Click в JavaScript",
         "intro": [
           "Перш ніж перейти до тесту «DOM», повторіть основні поняття.",
-          "Відкрийте цю сторінку, щоб пригадати, як працювати з <code>DOM</code>, <code>Web API</code>, методом <code>addEventListener()</code> та багато іншого."
+          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's</code>, the <code>addEventListener()</code> method and more."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
