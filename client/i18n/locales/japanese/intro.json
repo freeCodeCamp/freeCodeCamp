@@ -410,7 +410,7 @@
         ]
       },
       "review-algorithmic-thinking-by-building-a-dice-game": {
-        "title": "Review Algorithmic Thinking by Building a Dice Game",
+        "title": "アルゴリズム的思考の復習: ダイスゲームを作成する",
         "intro": [
           "Algorithmic thinking involves the ability to break down complex problems into a sequence of well-defined, step-by-step instructions.",
           "In this Dice game project, you’ll learn how to manage game state, implement game logic for rolling dice, keeping score, and applying rules for various combinations.",
@@ -2967,7 +2967,7 @@
         "title": "DOM Manipulation and Click Events with JavaScript Review",
         "intro": [
           "Before you're quizzed on the DOM, you should review what you've learned about it.",
-          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's/code>, the <code>addEventListener()</code> method and more."
+          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's</code>, the <code>addEventListener()</code> method and more."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {

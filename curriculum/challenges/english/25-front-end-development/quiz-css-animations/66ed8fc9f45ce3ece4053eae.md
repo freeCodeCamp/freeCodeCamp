@@ -7,7 +7,7 @@ dashedName: quiz-css-animations
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -43,19 +43,19 @@ What does `matrix()` allow you to control?
 
 #### --distractors--
 
-Only scaling
+Only scaling.
 
 ---
 
-Only translation
+Only translation.
 
 ---
 
-Only rotation
+Only rotation.
 
 #### --answer--
 
-Multiple transformations at once
+Multiple transformations at once.
 
 ### --question--
 
@@ -109,19 +109,19 @@ What does `@keyframes` define?
 
 #### --distractors--
 
-CSS colors
+CSS colors.
 
 ---
 
-CSS transitions
+CSS transitions.
 
 ---
 
-CSS text styles
+CSS text styles.
 
 #### --answer--
 
-CSS animation sequences
+CSS animation sequences.
 
 ### --question--
 
@@ -131,19 +131,19 @@ What does `translate()` do?
 
 #### --distractors--
 
-Changes opacity
+Changes opacity.
 
 ---
 
-Rotates the element
+Rotates the element.
 
 ---
 
-Skews the element
+Skews the element.
 
 #### --answer--
 
-Moves the element
+Moves the element.
 
 ### --question--
 
@@ -153,7 +153,7 @@ What does accessibility focus on in web design?
 
 #### --distractors--
 
-Color choice
+Color choice.
 
 ---
 
@@ -161,11 +161,11 @@ Responsiveness
 
 ---
 
-Layout complexity
+Layout complexity.
 
 #### --answer--
 
-Usability for all users
+Usability for all users.
 
 ### --question--
 
@@ -175,19 +175,19 @@ Where is `@keyframes` written?
 
 #### --distractors--
 
-Inside HTML tags
+Inside HTML tags.
 
 ---
 
-Inside CSS selectors
+Inside CSS selectors.
 
 ---
 
-In JavaScript
+In JavaScript.
 
 #### --answer--
 
-In CSS
+In CSS.
 
 ### --question--
 
@@ -219,19 +219,19 @@ Why is providing video captions important?
 
 #### --distractors--
 
-To improve SEO
+To improve SEO.
 
 ---
 
-To comply with web standards
+To comply with web standards.
 
 ---
 
-To enhance visuals
+To enhance visuals.
 
 #### --answer--
 
-To provide accessibility for hearing impaired users
+To provide accessibility for hearing impaired users.
 
 ### --question--
 
@@ -319,7 +319,7 @@ To adjust the layout.
 
 #### --answer--
 
-To highlight focused elements
+To highlight focused elements.
 
 ### --question--
 
@@ -395,19 +395,19 @@ What does the animation shorthand property include?
 
 #### --distractors--
 
-Only animation name
+Only animation name.
 
 ---
 
-Only animation timing
+Only animation timing.
 
 ---
 
-Only animation duration
+Only animation duration.
 
 #### --answer--
 
-All animation properties
+All animation properties.
 
 ### --question--
 
@@ -417,7 +417,7 @@ What is the effect of using the `ease-in-out` timing function?
 
 #### --distractors--
 
-The animation will start fast and end slow
+The animation will start fast and end slow.
 
 ---
 
