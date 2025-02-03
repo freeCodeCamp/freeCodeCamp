@@ -202,7 +202,10 @@ class PortfolioSettings extends Component<PortfolioProps, PortfolioState> {
     });
   }
 
-  getUrlValidation(url: string) {
+  getUrlValidation(url: string): {
+    state: 'success' | 'warning' | 'error';
+    message: string;
+  } {
     const { t } = this.props;
     const len = url.length;
 

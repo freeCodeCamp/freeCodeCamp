@@ -20,11 +20,10 @@ export const completedChallengesIdsSelector = createSelector(
   completedChallengesSelector,
   completedChallenges => completedChallenges.map(node => node.id)
 );
-export const isChallengeCompletedSelector = state => {
-  const completedChallenges = completedChallengesSelector(state);
-  const { id: currentChallengeId } = challengeMetaSelector(state);
-  return completedChallenges.some(({ id }) => id === currentChallengeId);
-};
+export const isChallengeCompletedSelector = createSelector(
+  [completedChallengesIdsSelector, challengeMetaSelector],
+  (ids, meta) => ids.includes(meta.id)
+);
 export const isCodeLockedSelector = state => state[ns].isCodeLocked;
 export const isCompletionModalOpenSelector = state =>
   state[ns].modal.completion;
