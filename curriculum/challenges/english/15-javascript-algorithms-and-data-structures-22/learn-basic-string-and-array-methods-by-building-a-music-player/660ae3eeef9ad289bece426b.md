@@ -41,7 +41,7 @@ You should create an arrow function and assign it to the `printGreeting` variabl
 assert.match(code, /(let|const)\s+printGreeting\s*=\s*\(.*\)\s*=>\s*{\s*[\s\S]*}\s*;?/)
 ```
 
-Your `printGreeting` function should log "Hello there!" to the console`.
+Your `printGreeting` function should log `Hello there!` to the console.
 
 ```js
 assert.match(printGreeting.toString(), /console\.log\(['"]Hello\s+there!['"]\)/);
