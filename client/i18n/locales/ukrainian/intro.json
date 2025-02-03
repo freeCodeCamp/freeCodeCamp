@@ -1599,7 +1599,9 @@
       },
       "learn-how-to-use-conditionals": {
         "title": "Дізнайтесь, як використовувати умовні речення",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви навчитесь використовувати умовні речення, щоб описувати уявні ситуації, які залежать від певних умов."
+        ]
       },
       "learn-how-to-share-feedback": {
         "title": "Дізнайтесь, як ділитись фідбеком",
@@ -2965,7 +2967,7 @@
         "title": "Повторення маніпуляції DOM та подій Click в JavaScript",
         "intro": [
           "Перш ніж перейти до тесту «DOM», повторіть основні поняття.",
-          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's</code>, the <code>addEventListener()</code> method and more."
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з <code>DOM</code>, <code>Web API</code>, методом <code>addEventListener()</code> та багато іншого."
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {

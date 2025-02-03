@@ -58,23 +58,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     return o;
   };
 
-  const __prepTestComponent = async (
-    component: React.ComponentType | React.FunctionComponent | string,
-    props: Record<string, unknown>
-  ) => {
-    const testDiv = document.createElement('div');
-    const createdElement = window.React.createElement(component, props);
-
-    // @ts-expect-error the React version is determined at runtime so we can't define the types here
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/require-await
-    await window.React?.act(async () => {
-      // @ts-expect-error Same for ReactDOM as for React
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-      window.ReactDOM?.createRoot(testDiv).render(createdElement);
-    });
-    return testDiv;
-  };
-
   const { default: chai } = await import(/* webpackChunkName: "chai" */ 'chai');
   const assert = chai.assert;
   const __helpers = helpers;
