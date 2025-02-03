@@ -14,7 +14,7 @@ describe('<ChallengeTranscript />', () => {
 
   it('renders the transcript heading', () => {
     render(<ChallengeTranscript {...baseProps} />);
-    expect(screen.getByText(/learn.transcript/)).toBeVisible();
+    expect(screen.getByText('learn.transcript')).toBeVisible();
   });
 
   it('renders collapsed by default', () => {
@@ -22,7 +22,7 @@ describe('<ChallengeTranscript />', () => {
     expect(screen.getByTestId('challenge-transcript')).not.toHaveAttribute(
       'open'
     );
-    expect(screen.getByText(/Sample transcript text/)).not.toBeVisible();
+    expect(screen.getByText('Sample transcript text')).not.toBeVisible();
   });
 
   it("renders collapsed when localstorage 'fcc-transcript-expanded = false'", () => {
@@ -31,13 +31,13 @@ describe('<ChallengeTranscript />', () => {
     expect(screen.getByTestId('challenge-transcript')).not.toHaveAttribute(
       'open'
     );
-    expect(screen.getByText(/Sample transcript text/)).not.toBeVisible();
+    expect(screen.getByText('Sample transcript text')).not.toBeVisible();
   });
 
   it("renders expanded when 'fcc-transcript-expanded = true'", () => {
     store.set('fcc-transcript-expanded', true);
     render(<ChallengeTranscript {...baseProps} />);
     expect(screen.getByTestId('challenge-transcript')).toHaveAttribute('open');
-    expect(screen.getByText(/Sample transcript text/)).toBeVisible();
+    expect(screen.getByText('Sample transcript text')).toBeVisible();
   });
 });
