@@ -17,7 +17,7 @@ function ChallengeTranscript({
 
   // default to expanded
   const [isOpen, setIsOpen] = useState(
-    () => (store.get('fcc-transcript-expanded') as boolean | null) ?? true
+    () => (store.get('fcc-transcript-expanded') as boolean | null) ?? false
   );
 
   function toggleExpandedState(e: React.MouseEvent<HTMLDetailsElement>) {
@@ -34,9 +34,7 @@ function ChallengeTranscript({
           aria-expanded={isOpen}
           className='challenge-transcript-heading'
         >
-          {isOpen
-            ? t('learn.collapse-transcript')
-            : t('learn.expand-transcript')}
+          {t('learn.transcript')}
         </summary>
         <Spacer size='m' />
         <PrismFormatted className={'line-numbers'} text={transcript} />
