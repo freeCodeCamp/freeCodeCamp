@@ -270,6 +270,7 @@ const defaultTestProps = {
   isQaCertV7: false,
   isInfosecCertV7: false,
   isJsAlgoDataStructCert: false,
+  isJsAlgoDataStructCertV8: false,
   isRespWebDesignCert: false,
   isSciCompPyCertV7: false,
   isDataAnalysisPyCertV7: false,
