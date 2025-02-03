@@ -15,7 +15,7 @@ function ChallengeTranscript({
 }: ChallengeTranscriptProps): JSX.Element {
   const { t } = useTranslation();
 
-  // default to expanded
+  // default to collapsed
   const [isOpen, setIsOpen] = useState(
     () => (store.get('fcc-transcript-expanded') as boolean | null) ?? false
   );
