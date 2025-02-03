@@ -1615,7 +1615,9 @@
       },
       "learn-how-to-use-conditionals": {
         "title": "Aprende a utilizar los condicionales",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to use the conditional sentences to describe hypothetical outcomes depending on the fact that certain conditions are met."
+        ]
       },
       "learn-how-to-share-feedback": {
         "title": "Aprende a compartir opiniones",
@@ -2950,7 +2952,7 @@
       "lecture-working-with-the-dom-click-events-and-web-apis": {
         "title": "Working with the DOM, Click Events, and Web APIs",
         "intro": [
-          "In these lecture videos, you will learn how to work with the Document Object Model (DOM), the `addEventListener()` method and events, and web APIs."
+          "In these lecture videos, you will learn how to work with the Document Object Model (DOM), the <code>addEventListener()</code> method and events, and web APIs."
         ]
       },
       "workshop-storytelling-app": {

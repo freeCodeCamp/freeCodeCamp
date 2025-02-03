@@ -55,7 +55,7 @@ Floats are used to remove an element from its normal flow on the page and automa
 
 #### --answer--
 
-Floats are used to remove an element from its normal flow on the page and position it either on the left or right side of its container. 
+Floats are used to remove an element from its normal flow on the page and position it either on the left or right side of its container.
 
 ### --question--
 
@@ -131,7 +131,7 @@ It is used to determine if an element needs to be fixed to the top of the page.
 
 #### --answer--
 
-It is used to determine if an element needs to be moved below the floated content. 
+It is used to determine if an element needs to be moved below the floated content.
 
 ### --question--
 
@@ -231,7 +231,7 @@ What does absolute positioning do to an element?
 
 #### --distractors--
 
-Absolute positioning is used to determine if an element needs to be moved below the floated content. 
+Absolute positioning is used to determine if an element needs to be moved below the floated content.
 
 ---
 
@@ -355,19 +355,19 @@ Which positioning method allows an element to stick to a defined position only w
 
 #### --distractors--
 
-Float positioning
+Float positioning.
 
 ---
 
-Fixed positioning
+Fixed positioning.
 
 ---
 
-Absolute positioning
+Absolute positioning.
 
 #### --answer--
 
-Sticky positioning
+Sticky positioning.
 
 ### --question--
 
@@ -480,9 +480,9 @@ Which of the following is a correct example for using the `clearfix` hack?
 
 ```css
 .clearfix::before {
-  position: fixed; 
-  top: 0; 
-  width: 100%; 
+  position: fixed;
+  top: 0;
+  width: 100%;
   clear: both;
 }
 ```
@@ -549,9 +549,9 @@ Which of the following is an example of setting the navbar to the top of the pag
 
 ```css
 .navbar {
-  fixed: top; 
-  top: 0; 
-  width: 100%; 
+  fixed: top;
+  top: 0;
+  width: 100%;
 }
 ```
 
@@ -559,8 +559,8 @@ Which of the following is an example of setting the navbar to the top of the pag
 
 ```css
 .navbar {
-  upper: fixed; 
-  width: 100%; 
+  upper: fixed;
+  width: 100%;
 }
 ```
 
@@ -568,9 +568,9 @@ Which of the following is an example of setting the navbar to the top of the pag
 
 ```css
 .navbar {
-  position: fixed-top; 
-  top: 0; 
-  width: 100%; 
+  position: fixed-top;
+  top: 0;
+  width: 100%;
 }
 ```
 
@@ -578,9 +578,9 @@ Which of the following is an example of setting the navbar to the top of the pag
 
 ```css
 .navbar {
-  position: fixed; 
-  top: 0; 
-  width: 100%; 
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 ```
 
