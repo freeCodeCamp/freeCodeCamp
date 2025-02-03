@@ -28,7 +28,7 @@ function ChallengeTranscript({
 
   return (
     <>
-      <details open={isOpen}>
+      <details data-playwright-test-label='challenge-transcript' open={isOpen}>
         <summary
           onClick={toggleExpandedState}
           aria-expanded={isOpen}

@@ -8,7 +8,9 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Challenge Transcript', () => {
   test('Should be collapsed by default', async ({ page }) => {
-    await expect(page.locator('details')).not.toHaveAttribute('open');
+    await expect(page.getByTestId('challenge-transcript')).not.toHaveAttribute(
+      'open'
+    );
   });
 
   test("Should be collapsed when 'fcc-transcript-expanded = false'", async ({
@@ -19,7 +21,9 @@ test.describe('Challenge Transcript', () => {
     });
 
     await page.reload();
-    await expect(page.locator('details')).not.toHaveAttribute('open');
+    await expect(page.getByTestId('challenge-transcript')).not.toHaveAttribute(
+      'open'
+    );
   });
 
   test("Should be expanded when 'fcc-transcript-expanded = true'", async ({
@@ -30,6 +34,8 @@ test.describe('Challenge Transcript', () => {
     });
 
     await page.reload();
-    await expect(page.locator('details')).toHaveAttribute('open', '');
+    await expect(page.getByTestId('challenge-transcript')).toHaveAttribute(
+      'open'
+    );
   });
 });
