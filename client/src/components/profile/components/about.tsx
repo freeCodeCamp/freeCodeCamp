@@ -53,7 +53,6 @@ const AboutSettings = ({
   submitNewAbout,
   setIsEditing
 }: AboutProps) => {
-  const validationImage = new Image();
   const [formValues, setFormValues] = useState<FormValues>({
     name,
     location,
@@ -71,6 +70,13 @@ const AboutSettings = ({
 
   const toggleEditing = () => {
     setIsEditing(false);
+  };
+
+  const checkIfValidImage = (url: string) => {
+    const img = new Image();
+    img.src = url;
+
+    return img.complete;
   };
 
   useEffect(() => {
@@ -127,25 +133,14 @@ const AboutSettings = ({
     }));
   };
 
-  useEffect(() => {
-    validationImage.addEventListener('error', errorEvent);
-    validationImage.addEventListener('load', loadEvent);
-    return () => {
-      validationImage.removeEventListener('load', loadEvent);
-      validationImage.removeEventListener('error', errorEvent);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const errorEvent = () => setIsPictureUrlValid(true);
-  const loadEvent = () => setIsPictureUrlValid(false);
-
   const handlePictureChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.slice(0);
     if (!value) {
       setIsPictureUrlValid(true);
     } else if (isURL(value, { require_protocol: true })) {
-      validationImage.src = encodeURI(value);
+      checkIfValidImage(value)
+        ? setIsPictureUrlValid(true)
+        : setIsPictureUrlValid(false);
     } else {
       setIsPictureUrlValid(false);
     }
