@@ -3043,7 +3043,7 @@
         "title": "Debugging JavaScript Review",
         "intro": [
           "Before you're quizzed on common debugging techniques, you should review what you've learned.",
-          "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally/code> and more."
+          "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally</code> and more."
         ]
       },
       "quiz-debugging-javascript": {
