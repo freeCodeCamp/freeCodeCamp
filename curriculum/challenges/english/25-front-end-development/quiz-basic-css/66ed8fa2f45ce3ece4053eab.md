@@ -109,19 +109,19 @@ When using internal CSS, where is the `style` element placed within the HTML?
 
 #### --distractors--
 
-In the `meta` element
+In the `meta` element.
 
 ---
 
-In the `script` element
+In the `script` element.
 
 ---
 
-In the `body` element
+In the `body` element.
 
 #### --answer--
 
-In the `head` element
+In the `head` element.
 
 ### --question--
 
@@ -439,17 +439,17 @@ For `padding: 10px 20px 30px 40px`, what is the correct order of values?
 
 #### --distractors--
 
-Right, Top, Left, Bottom
+Right, Top, Left, Bottom.
 
 ---
 
-Top, Left, Bottom, Right
+Top, Left, Bottom, Right.
 
 ---
 
-Top, Bottom, Right, Left
+Top, Bottom, Right, Left.
 
 #### --answer--
 
-Top, Right, Bottom, Left
+Top, Right, Bottom, Left.
 
