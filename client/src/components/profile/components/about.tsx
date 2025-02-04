@@ -54,7 +54,7 @@ const AboutSettings = ({
   setIsEditing
 }: AboutProps) => {
   const validationImage = new Image();
-  const [formValues, setFormValues] = React.useState<FormValues>({
+  const [formValues, setFormValues] = useState<FormValues>({
     name,
     location,
     picture,
