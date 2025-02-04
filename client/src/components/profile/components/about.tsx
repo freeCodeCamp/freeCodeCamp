@@ -74,9 +74,12 @@ const AboutSettings = ({
 
   const checkIfValidImage = (url: string) => {
     const img = new Image();
-    img.src = url;
 
-    return img.complete;
+    return new Promise(resolve => {
+      img.onerror = () => resolve(false);
+      img.onload = () => resolve(true);
+      img.src = url;
+    });
   };
 
   useEffect(() => {
@@ -138,9 +141,9 @@ const AboutSettings = ({
     if (!value) {
       setIsPictureUrlValid(true);
     } else if (isURL(value, { require_protocol: true })) {
-      checkIfValidImage(value)
-        ? setIsPictureUrlValid(true)
-        : setIsPictureUrlValid(false);
+      void checkIfValidImage(value).then(isValid => {
+        setIsPictureUrlValid(isValid as boolean);
+      });
     } else {
       setIsPictureUrlValid(false);
     }
