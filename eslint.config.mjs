@@ -177,15 +177,11 @@ export default tseslint.config(
     }
   },
   {
-    ...jsdoc.configs['flat/recommended-typescript-error'],
-    files: ['**/api/src/**/*.ts']
-  },
-  {
+    extends: [
+      jsdoc.configs['flat/recommended-typescript-error'],
+      tseslint.configs.recommendedTypeChecked
+    ],
     files: ['**/api/src/**/*.ts'],
-
-    plugins: {
-      jsdoc
-    },
 
     rules: {
       'jsdoc/require-jsdoc': [
