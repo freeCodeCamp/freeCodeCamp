@@ -68,10 +68,6 @@ const AboutSettings = ({
   const [formClicked, setFormClicked] = useState(false);
   const [isPictureUrlValid, setIsPictureUrlValid] = useState(true);
 
-  const toggleEditing = () => {
-    setIsEditing(false);
-  };
-
   const checkIfValidImage = (url: string) => {
     const img = new Image();
 
@@ -112,11 +108,11 @@ const AboutSettings = ({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isPictureUrlValid === true && !isFormPristine()) {
-      toggleEditing();
+      setIsEditing(false);
       setFormClicked(true);
       submitNewAbout(formValues);
     } else {
-      toggleEditing();
+      setIsEditing(false);
     }
   };
 
