@@ -262,7 +262,7 @@ numbers.forEach(function(number) {
 
 ---
 
-`1 1 1 1`
+`1 2 4 5`
 
 #### --answer--
 
@@ -298,11 +298,11 @@ How can you sort an array of objects by a specific property using the `sort` met
 
 #### --distractors--
 
-The sort method cannot sort objects.
+The `sort` method cannot sort objects.
 
 ---
 
-Use the reverse method after sorting.
+Use the `reverse` method after sorting.
 
 ---
 
@@ -382,7 +382,7 @@ Which method would you use to determine if all elements in an array are strings?
 
 #### --text--
 
-What will be the value of originalArray after the following code is run?
+What will be the value of `originalArray` after the following code is run?
 
 ```js
 const originalArray = [{ id: 1 }, { id: 2 }, { id: 3 }];
