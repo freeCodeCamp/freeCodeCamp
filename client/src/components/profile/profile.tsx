@@ -140,32 +140,17 @@ function UserProfile({
 
   const {
     profileUI: {
-      showAbout,
       showCerts,
-      showDonation,
       showHeatMap,
-      showLocation,
-      showName,
       showPoints,
       showPortfolio,
       showTimeLine
     },
     calendar,
     completedChallenges,
-    githubProfile,
-    linkedin,
-    twitter,
-    website,
-    name,
     username,
-    joinDate,
-    location,
     points,
-    picture,
-    portfolio,
-    about,
-    yearsTopContributor,
-    isDonating
+    portfolio
   } = user;
 
   return (
@@ -181,22 +166,7 @@ function UserProfile({
           submitNewAbout={submitNewAbout}
         />
       )}
-      <Camper
-        about={showAbout ? about : ''}
-        githubProfile={githubProfile}
-        isDonating={showDonation ? isDonating : false}
-        joinDate={showAbout ? joinDate : ''}
-        linkedin={linkedin}
-        location={showLocation ? location : ''}
-        name={showName ? name : ''}
-        picture={picture}
-        twitter={twitter}
-        username={username}
-        website={website}
-        yearsTopContributor={yearsTopContributor}
-        isSessionUser={isSessionUser}
-        setIsEditing={setIsEditing}
-      />
+      <Camper isSessionUser={isSessionUser} setIsEditing={setIsEditing} />
       {showPoints ? <Stats points={points} calendar={calendar} /> : null}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showPortfolio ? (

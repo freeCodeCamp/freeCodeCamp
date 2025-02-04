@@ -7,27 +7,87 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { Button, Spacer } from '@freecodecamp/ui';
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
 import { AvatarRenderer, FullWidthRow } from '../../helpers';
+import {
+  isDonatingSelector,
+  userPrivacySelector,
+  userSocialSelector,
+  userTopContributorSelector
+} from '../../../redux/selectors';
+import { ProfileUI } from '../../../redux/prop-types';
 import { parseDate } from './utils';
 import SocialIcons from './social-icons';
-import { type CamperProps } from './camper';
+
+type SocialProps = {
+  githubProfile: string;
+  website: string;
+  location: string;
+  username: string;
+  name: string;
+  picture: string;
+  joinDate: string;
+  about: string;
+};
+
+type BioProps = {
+  yearsTopContributor: string[];
+  isDonating: boolean;
+  socials: SocialProps;
+  isSessionUser: boolean;
+  privacy: ProfileUI;
+  setIsEditing: (isEditing: boolean) => void;
+};
+
+const mapStateToProps = createSelector(
+  userTopContributorSelector,
+  isDonatingSelector,
+  userSocialSelector,
+  userPrivacySelector,
+  (
+    yearsTopContributor: string[],
+    isDonating: boolean,
+    socials: SocialProps,
+    privacy: ProfileUI
+  ) => ({
+    yearsTopContributor,
+    isDonating,
+    socials: {
+      ...socials
+    },
+    privacy: {
+      ...privacy
+    }
+  })
+);
+
 const Bio = ({
-  joinDate,
-  location,
-  username,
-  name,
-  about,
-  githubProfile,
-  linkedin,
-  twitter,
-  website,
-  isDonating,
   yearsTopContributor,
-  picture,
+  isDonating,
+  socials,
+  isSessionUser,
   setIsEditing,
-  isSessionUser
-}: CamperProps) => {
+  privacy
+}: BioProps) => {
   const { t } = useTranslation();
+
+  const handlePrivacy = (socials: SocialProps) => {
+    const { showAbout, showLocation } = privacy;
+
+    const { about, joinDate, location, name, ...localPrivacy } = socials;
+
+    return {
+      about: showAbout ? about : '',
+      joinDate: showAbout ? joinDate : '',
+      location: showLocation ? location : '',
+      name: showAbout ? name : '',
+      ...localPrivacy
+    };
+  };
+
+  const { picture, username, name, about, joinDate, location } =
+    handlePrivacy(socials);
 
   const isTopContributor =
     yearsTopContributor && yearsTopContributor.length > 0;
@@ -47,7 +107,9 @@ const Bio = ({
           <h1>@{username}</h1>
           {isSessionUser && (
             <Button
-              onClick={() => setIsEditing(true)}
+              onClick={() => {
+                setIsEditing(true);
+              }}
               size='small'
               className='button-fit'
               aria-label={t('aria.edit-my-profile')}
@@ -73,15 +135,9 @@ const Bio = ({
             </div>
           )}
         </div>
-        <SocialIcons
-          githubProfile={githubProfile}
-          linkedin={linkedin}
-          twitter={twitter}
-          username={username}
-          website={website}
-        />
+        <SocialIcons />
       </section>
     </FullWidthRow>
   );
 };
-export default Bio;
+export default connect(mapStateToProps)(Bio);

@@ -263,10 +263,69 @@ export const themeSelector = state => state[MainApp].theme;
 export const userThemeSelector = state => {
   return userSelector(state).theme;
 };
+export const userTopContributorSelector = state =>
+  userSelector(state).yearsTopContributor || [];
 export const userSelector = state => {
   const username = usernameSelector(state);
 
   return state[MainApp].user[username] || {};
 };
 
+export const userSocialSelector = state => {
+  const {
+    githubProfile,
+    twitter,
+    linkedin,
+    website,
+    location,
+    username,
+    name,
+    picture,
+    joinDate,
+    about
+  } = userSelector(state);
+
+  return {
+    githubProfile,
+    twitter,
+    linkedin,
+    website,
+    location,
+    username,
+    name,
+    picture,
+    joinDate,
+    about
+  };
+};
+
+export const userPrivacySelector = state => {
+  const {
+    profileUI: {
+      isLocked,
+      showAbout,
+      showCerts,
+      showDonation,
+      showHeatMap,
+      showLocation,
+      showName,
+      showPoints,
+      showPortfolio,
+      showTimeLine
+    }
+  } = userSelector(state);
+
+  return {
+    isLocked,
+    showAbout,
+    showCerts,
+    showDonation,
+    showHeatMap,
+    showLocation,
+    showName,
+    showPoints,
+    showPortfolio,
+    showTimeLine
+  };
+};
 export const renderStartTimeSelector = state => state[MainApp].renderStartTime;

@@ -1,68 +1,58 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import type { User } from '../../../redux/prop-types';
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
 import { FullWidthRow } from '../../helpers';
 import './camper.css';
 import SupporterBadgeEmblem from '../../../assets/icons/supporter-badge-emblem';
 import TopContibutorBadgeEmblem from '../../../assets/icons/top-contributor-badge-emblem';
+import { ProfileUI } from '../../../redux/prop-types';
+import {
+  isDonatingSelector,
+  userPrivacySelector,
+  userTopContributorSelector
+} from '../../../redux/selectors';
 import Bio from './bio';
 
-export type CamperProps = Pick<
-  User,
-  | 'about'
-  | 'githubProfile'
-  | 'isDonating'
-  | 'linkedin'
-  | 'username'
-  | 'twitter'
-  | 'yearsTopContributor'
-  | 'location'
-  | 'website'
-  | 'picture'
-  | 'name'
-  | 'joinDate'
-> & {
-  setIsEditing: (value: boolean) => void;
+type CamperProps = {
+  yearsTopContributor: string[];
+  isDonating: boolean;
   isSessionUser: boolean;
+  setIsEditing: (isEditing: boolean) => void;
+  privacy: ProfileUI;
 };
 
+const mapStateToProps = createSelector(
+  userTopContributorSelector,
+  isDonatingSelector,
+  userPrivacySelector,
+  (yearsTopContributor: string[], isDonating: boolean, privacy: ProfileUI) => ({
+    yearsTopContributor,
+    isDonating,
+    privacy: {
+      ...privacy
+    }
+  })
+);
+
 function Camper({
-  name,
-  username,
-  location,
-  picture,
-  about,
   yearsTopContributor,
-  githubProfile,
   isDonating,
-  joinDate,
-  linkedin,
-  twitter,
-  website,
   isSessionUser,
-  setIsEditing
+  setIsEditing,
+  privacy
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
+
+  const handleDonate = () => isDonating && privacy.showDonation;
+
+  isDonating = handleDonate();
+
   const isTopContributor = yearsTopContributor.filter(Boolean).length > 0;
   return (
     <>
       <div className='bio-container'>
-        <Bio
-          joinDate={joinDate}
-          location={location}
-          username={username}
-          name={name}
-          about={about}
-          githubProfile={githubProfile}
-          linkedin={linkedin}
-          twitter={twitter}
-          website={website}
-          isDonating={isDonating}
-          yearsTopContributor={yearsTopContributor}
-          picture={picture}
-          setIsEditing={setIsEditing}
-          isSessionUser={isSessionUser}
-        />
+        <Bio isSessionUser={isSessionUser} setIsEditing={setIsEditing} />
       </div>
       {(isDonating || isTopContributor) && (
         <FullWidthRow>
@@ -105,4 +95,4 @@ function Camper({
 
 Camper.displayName = 'Camper';
 
-export default Camper;
+export default connect(mapStateToProps)(Camper);

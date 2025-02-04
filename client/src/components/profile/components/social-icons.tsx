@@ -8,10 +8,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Row } from '@freecodecamp/ui';
-
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
 import './social-icons.css';
+import { userSocialSelector } from '../../../redux/selectors';
 
-interface SocialIconsProps {
+interface SocialProps {
   email?: string;
   githubProfile: string;
   linkedin: string;
@@ -25,6 +27,15 @@ interface IconProps {
   href: string;
   username: string;
 }
+
+const mapStateToProps = createSelector(
+  userSocialSelector,
+  (socials: SocialProps) => ({
+    socials: {
+      ...socials
+    }
+  })
+);
 
 function LinkedInIcon({ href, username }: IconProps): JSX.Element {
   const { t } = useTranslation();
@@ -82,8 +93,11 @@ function TwitterIcon({ href, username }: IconProps): JSX.Element {
   );
 }
 
-function SocialIcons(props: SocialIconsProps): JSX.Element | null {
-  const { githubProfile, linkedin, twitter, username, website } = props;
+function SocialIcons({
+  socials: { githubProfile, linkedin, twitter, username, website }
+}: {
+  socials: SocialProps;
+}): JSX.Element | null {
   const show = linkedin || githubProfile || website || twitter;
   if (!show) {
     return null;
@@ -105,4 +119,4 @@ function SocialIcons(props: SocialIconsProps): JSX.Element | null {
 
 SocialIcons.displayName = 'SocialIcons';
 
-export default SocialIcons;
+export default connect(mapStateToProps)(SocialIcons);
