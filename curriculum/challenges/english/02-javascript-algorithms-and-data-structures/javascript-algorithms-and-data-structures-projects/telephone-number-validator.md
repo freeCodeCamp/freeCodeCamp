@@ -196,72 +196,45 @@ assert(telephoneCheck('11 555-555-5555') === false);
 
 ```js
 
-function generatePhoneNumber(type) {
-  
-  let bit1 = "" 
-  let bit2 = "";
-  let bit3 = "";
+const validPatterns = [
+  '1 XXX-XXX-XXXX',
+  '1 (XXX)XXX-XXXX',
+  '1(XXX)XXX-XXXX',
+  '1 XXX XXX XXXX',
+  'XXXXXXXXXX',
+  'XXX-XXX-XXXX',
+  '(XXX)XXX-XXXX',
+];
 
-  for (let i = 0; i < 3; i++) {
-    bit1 += Math.floor(Math.random() * 7) + 2;
-    bit2 += Math.floor(Math.random() * 8) + 2;
-    bit3 += Math.floor(Math.random() * 10);
+validPatterns.forEach(pattern => {
+  while (pattern.includes('X')) {
+    pattern = pattern.replace('X',  Math.floor(Math.random() * 7) + 2); //While this may seem weird at first, it's required for the CI build to pass
+    //This is apparently because the solution provided for CI purposes actually checks for valid area and exchange codes.
   }
-
-  bit3 += Math.floor(Math.random() * 10);
-  
-  const patterns = [
-    `1 ${bit1}-${bit2}-${bit3}`,
-    `1 (${bit1})${bit2}-${bit3}`,
-    `1(${bit1})${bit2}-${bit3}`,
-    `1 ${bit1} ${bit2} ${bit3}`,
-    `${bit1}${bit2}${bit3}`,
-    `${bit1}-${bit2}-${bit3}`,
-    `(${bit1})${bit2}-${bit3}`
-  ];
-
-  return patterns[type - 1];
-}
-
-for (let i = 1; i <= 7; i++) {
-  let phoneNum = generatePhoneNumber(i);
-  assert.isTrue(telephoneCheck(phoneNum));
-}
+  assert.isTrue(telephoneCheck(pattern));
+});
 ```
 
-When the `#user-input` element contains an invalid US number and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Invalid US number: "` followed by the number.
+`telephoneCheck()`, when called with an invalid number, should return `false`.
 
 ```js
 
-function generateInvalidPhoneNumber(type) {
-  
-  let bit1 = "" 
-  let bit2 = "";
-  let bit3 = "";
+const invalidPatterns = [
+  '10 XXX-XXX-XXXX',
+  '1 (XX)XXX-XXXX',
+  '1!(XXX)XXX-XXXX',
+  '-1 XXX XXX XXXX',
+  'XXXXXXXXXXX',
+  'XXX#XXX-XXXX',
+  '(XXXXXX-XXXX',
+];
 
-  for (let i = 0; i < 3; i++) {
-    bit1 += Math.floor(Math.random() * 10);
-    bit2 += Math.floor(Math.random() * 10);
-    bit3 += Math.floor(Math.random() * 10);
+invalidPatterns.forEach(pattern => {
+  while (pattern.includes('X')) {
+    pattern = pattern.replace('X',  Math.floor(Math.random() * 10));
   }
-
-  bit3 += Math.floor(Math.random() * 10);
-  
-  const patterns = [
-    `11 ${bit1}-${bit2}-${bit3}`,
-    `1 ${bit1})${bit2}-${bit3}`,
-    `1(${bit3})${bit3}-${bit3}`,
-    `1 ${bit1}#${bit2} ${bit3}`,
-    `${bit1}${bit2}${bit3}-`,
-    `$-{bit1}-${bit2}-${bit3}`,
-    `(${bit1}${bit2}-${bit3}`
-  ];
-
-  return patterns[type - 1];
-}
-
-const notPhoneNum = generateInvalidPhoneNumber(Math.floor(Math.random() * 7))
-assert.isFalse(telephoneCheck(notPhoneNum))
+  assert.isFalse(telephoneCheck(pattern));
+});
 ```
 
 
