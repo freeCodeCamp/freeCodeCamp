@@ -224,7 +224,7 @@ const invalidPatterns = [
   '1 (XX)XXX-XXXX',
   '1!(XXX)XXX-XXXX',
   '-1 XXX XXX XXXX',
-  'XXXXXXXXXXX',
+  'XXXXXXXX',
   'XXX#XXX-XXXX',
   '(XXXXXX-XXXX',
 ];
