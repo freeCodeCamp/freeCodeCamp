@@ -698,9 +698,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             ] as CompletedChallenge;
             const oldResults = oldChallenge?.examResults as ExamResults;
 
-            const newChallenge = oldChallenge;
-            newChallenge ? (newChallenge.examResults = examResults) : null;
-
             // only update if it's a better result
             if (percentCorrect > oldResults.percentCorrect) {
               const updatedChallege = {
