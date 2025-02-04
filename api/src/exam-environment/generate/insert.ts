@@ -19,7 +19,7 @@ async function main() {
   console.info('Connected.');
 
   if (!EXAM_JSON_PATH) {
-    throw 'First argument must be the file path to the exam';
+    throw Error('First argument must be the file path to the exam');
   }
 
   const exam_str = await readFile(EXAM_JSON_PATH, 'utf-8');
