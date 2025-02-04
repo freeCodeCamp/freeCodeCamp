@@ -198,7 +198,7 @@ const ShowGeneric = ({
     <Hotkeys
       executeChallenge={handleSubmit}
       containerRef={container}
-      playScene={scene ? () => sceneSubject.notify() : undefined}
+      playScene={scene ? () => sceneSubject.notify('play') : undefined}
     >
       <LearnLayout>
         <Helmet

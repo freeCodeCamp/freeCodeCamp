@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { HandlerProps } from 'react-reflex';
 import { useMediaQuery } from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
-import { createStructuredSelector } from 'reselect';
 import store from 'store';
 import { editor } from 'monaco-editor';
 import type { FitAddon } from 'xterm-addon-fit';
@@ -22,6 +21,7 @@ import {
   ChallengeNode,
   CompletedChallenge,
   ResizeProps,
+  SavedChallenge,
   SavedChallengeFiles,
   Test
 } from '../../../redux/prop-types';
@@ -72,11 +72,11 @@ import { mergeChallengeFiles } from './saved-challenges';
 import './classic.css';
 import '../components/test-frame.css';
 
-const mapStateToProps = createStructuredSelector({
-  challengeFiles: challengeFilesSelector,
-  output: consoleOutputSelector,
-  isChallengeCompleted: isChallengeCompletedSelector,
-  savedChallenges: savedChallengesSelector
+const mapStateToProps = (state: unknown) => ({
+  challengeFiles: challengeFilesSelector(state) as ChallengeFiles,
+  output: consoleOutputSelector(state) as string[],
+  isChallengeCompleted: isChallengeCompletedSelector(state) as boolean,
+  savedChallenges: savedChallengesSelector(state) as SavedChallenge[]
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -120,7 +120,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   openModal: (modal: string) => void;
   setEditorFocusability: (canFocus: boolean) => void;
   setIsAdvancing: (arg: boolean) => void;
-  savedChallenges: CompletedChallenge[];
+  savedChallenges: SavedChallenge[];
 }
 
 interface ReflexLayout {

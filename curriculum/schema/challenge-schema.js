@@ -112,7 +112,14 @@ const quizJoi = Joi.object().keys({
         answer: Joi.string().required()
       })
     )
-    .length(20)
+    .custom((value, helpers) => {
+      return value.length === 10 || value.length === 20
+        ? value
+        : helpers.error('array.invalidLength');
+    })
+    .messages({
+      'array.invalidLength': 'Quiz must have exactly 10 or 20 questions.'
+    })
     .required()
 });
 

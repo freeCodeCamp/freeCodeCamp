@@ -7,7 +7,7 @@ dashedName: quiz-css-accessibility
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -65,11 +65,11 @@ Which tool can help inspect element styles in a web browser?
 
 #### --distractors--
 
-Adobe Photoshop
+Adobe Photoshop.
 
 ---
 
-Microsoft Word
+Microsoft Word.
 
 ---
 
@@ -77,7 +77,7 @@ Notepad
 
 #### --answer--
 
-Chrome DevTools
+Chrome DevTools.
 
 ### --question--
 
@@ -105,23 +105,23 @@ Which property is essential for setting custom fonts in CSS?
 
 #### --text--
 
-What does the  `:hover` pseudo-class indicate? 
+What does the  `:hover` pseudo-class indicate?
 
 #### --distractors--
 
-Active state
+Active state.
 
 ---
 
-Element is focused
+Element is focused.
 
 ---
 
-Element is hidden
+Element is hidden.
 
 #### --answer--
 
-Mouse is over the element
+Mouse is over the element.
 
 ### --question--
 
@@ -143,7 +143,7 @@ Figma
 
 #### --answer--
 
-Contrast checker
+Contrast checker.
 
 ### --question--
 
@@ -153,19 +153,19 @@ What is the purpose of the `alt` attribute in images?
 
 #### --distractors--
 
-To change image size
+To change image size.
 
 ---
 
-To add a title
+To add a title.
 
 ---
 
-To change image color
+To change image color.
 
 #### --answer--
 
-To provide a text alternative
+To provide a text alternative.
 
 ### --question--
 
@@ -175,19 +175,19 @@ What is a screen reader?
 
 #### --distractors--
 
-A browser for disabled users
+A browser for disabled users.
 
 ---
 
-A CSS tool
+A CSS tool.
 
 ---
 
-A web development library
+A web development library.
 
 #### --answer--
 
-A text-to-speech software
+A text-to-speech software.
 
 ### --question--
 
@@ -197,19 +197,19 @@ What does the 'Inspect Element' feature do?
 
 #### --distractors--
 
-Edits text directly
+Edits text directly.
 
 ---
 
-Downloads files
+Downloads files.
 
 ---
 
-Modifies images
+Modifies images.
 
 #### --answer--
 
-Displays CSS and HTML
+Displays CSS and HTML.
 
 ### --question--
 
@@ -241,19 +241,19 @@ What does the `opacity` property do in CSS?
 
 #### --distractors--
 
-Changes text size
+Changes text size.
 
 ---
 
-Adds a border
+Adds a border.
 
 ---
 
-Sets the element's position
+Sets the element's position.
 
 #### --answer--
 
-Controls element transparency
+Controls element transparency.
 
 ### --question--
 
@@ -285,19 +285,19 @@ What is a common use for `aria-hidden="true"`?
 
 #### --distractors--
 
-To show content
+To show content.
 
 ---
 
-To display on mobile
+To display on mobile.
 
 ---
 
-To increase visibility
+To increase visibility.
 
 #### --answer--
 
-To hide content from screen readers
+To hide content from screen readers.
 
 ### --question--
 
@@ -307,19 +307,19 @@ What is the `flex` property used for?
 
 #### --distractors--
 
-Changing text color
+Changing text color.
 
 ---
 
-Adjusting font size
+Adjusting font size.
 
 ---
 
-Adding animations
+Adding animations.
 
 #### --answer--
 
-Creating responsive layouts
+Creating responsive layouts.
 
 ### --question--
 
@@ -439,17 +439,17 @@ What is the `outline` property most commonly used to configure?
 
 #### --distractors--
 
-Border of an element
+Border of an element.
 
 ---
 
-Margin of an element
+Margin of an element.
 
 ---
 
-Padding of an element
+Padding of an element.
 
 #### --answer--
 
-Focus indicator around an element
+Focus indicator around an element.
 

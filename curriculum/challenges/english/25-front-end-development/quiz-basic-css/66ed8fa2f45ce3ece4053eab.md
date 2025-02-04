@@ -7,7 +7,7 @@ dashedName: quiz-basic-css
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -39,7 +39,7 @@ Cascading Style Sheets
 
 #### --text--
 
-Which answer uses the correct structure of using a CSS rule?
+Which of the following is a correct CSS rule?
 
 #### --distractors--
 
@@ -65,19 +65,19 @@ What does `<meta name="viewport">` do?
 
 #### --distractors--
 
-Establishes flexbox within the device.
+It links external stylesheets to a webpage for responsive design.
 
 ---
 
-Creates the font for the device.
+It specifies the metadata used by search engines to index a webpage.
 
 ---
 
-Makes the website automatically responsive.
+It specifies the character encoding used on the webpage.
 
 #### --answer--
 
-Controls the shape and size of the web page from a user's device.
+It controls the shape and size of a web page on different screen sizes.
 
 ### --question--
 
@@ -109,19 +109,19 @@ When using internal CSS, where is the `style` element placed within the HTML?
 
 #### --distractors--
 
-In the `meta` element
+In the `meta` element.
 
 ---
 
-In the `script` element
+In the `script` element.
 
 ---
 
-In the `body` element
+In the `body` element.
 
 #### --answer--
 
-In the `head` element
+In the `head` element.
 
 ### --question--
 
@@ -241,19 +241,19 @@ What statement is TRUE about block-level elements?
 
 #### --distractors--
 
-Block-level elements don't start on new lines.
+Block-level elements stack horizontally by default.
 
 ---
 
-Block-level elements only takes up as much as it needs.
+`width` and `height` properties usually do not apply to block-level elements unless you set their `display` property to `inline-block`.
 
 ---
 
-Block-level elements come with no margin.
+Block-level elements cannot contain inline elements inside them.
 
 #### --answer--
 
-Block-level elements start on a new line with margin before and after the element.
+Block-level elements start on a new line and take up the full width of their container.
 
 ### --question--
 
@@ -263,19 +263,19 @@ What statement is TRUE when using the `inline-block` value?
 
 #### --distractors--
 
-Doesn't allow you to set the height and width.
+Elements stack vertically, always taking up the full width of their container.
 
 ---
 
-Top and bottom margins not respected.
+Elements align horizontally but cannot apply vertical padding or margin.
 
 ---
 
-Adds a line break after an element.
+Elements respect width and height settings but cannot contain other elements inside them.
 
 #### --answer--
 
-Allows you to place elements next to each other while letting you set the height and width.
+Elements retain inline flow but allow setting width and height.
 
 ### --question--
 
@@ -351,19 +351,19 @@ What does `!important` do in CSS?
 
 #### --distractors--
 
-It doesn't effect the code.
+It makes the CSS rule work exclusively for inline styles and ignores styles defined in external or internal stylesheets.
 
 ---
 
-Applies to all properties in the code.
+It disables all other CSS properties applied to the same element, effectively making it the only rule that affects the element's styling.
 
 ---
 
-Applies on to a certain selector or group of elements.
+It applies on to a certain selector or group of elements.
 
 #### --answer--
 
-Overrides any other values applied to the property for that selector.
+It overrides any other values applied to the property for that selector.
 
 ### --question--
 
@@ -373,19 +373,19 @@ How does the CSS Cascade algorithm work?
 
 #### --distractors--
 
-Determines styles of the element based on alphabetical order.
+It determines styles of the element based on order of declaration, regardless of other factors.
 
 ---
 
-Gives animations to the page.
+It applies styles based solely on the order they are written, ignoring specificity.
 
 ---
 
-Improves Search Engine Optimization (SEO).
+It applies styles prioritizing specificity, ignoring origin and relevance.
 
 #### --answer--
 
-Determines styles of the element based on specificity and order of declaration.
+It determines styles of the element based on specificity and order of declaration.
 
 ### --question--
 
@@ -439,17 +439,17 @@ For `padding: 10px 20px 30px 40px`, what is the correct order of values?
 
 #### --distractors--
 
-Right, Top, Left, Bottom
+Right, Top, Left, Bottom.
 
 ---
 
-Top, Left, Bottom, Right
+Top, Left, Bottom, Right.
 
 ---
 
-Top, Bottom, Right, Left
+Top, Bottom, Right, Left.
 
 #### --answer--
 
-Top, Right, Bottom, Left
+Top, Right, Bottom, Left.
 

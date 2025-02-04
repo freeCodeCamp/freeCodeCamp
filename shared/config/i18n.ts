@@ -112,7 +112,7 @@ export const hiddenLangs = [Languages.Korean];
 /**
  * This array contains languages that use the RTL layouts.
  */
-export const rtlLangs = [];
+export const rtlLangs: Languages[] = [];
 
 // locale is sourced from a JSON file, so we use getLangCode to
 // find the associated enum values

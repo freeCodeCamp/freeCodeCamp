@@ -90,6 +90,11 @@ function renderWithRedux(ui: JSX.Element) {
 }
 describe('<Profile/>', () => {
   it('renders the report button on another persons profile', () => {
+    // TODO: Profile is a mess, it shouldn't depend on the entire user. Each
+    // component Camper, Stats, HeatMap etc should be get the relevant data from
+    // the store themselves.
+
+    // @ts-expect-error - quick hack to mollify TS.
     renderWithRedux(<Profile {...notMyProfileProps} />);
 
     const reportButton: HTMLElement = screen.getByText('buttons.flag-user');
@@ -97,6 +102,7 @@ describe('<Profile/>', () => {
   });
 
   it('renders correctly', () => {
+    // @ts-expect-error - quick hack to mollify TS.
     const { container } = renderWithRedux(<Profile {...notMyProfileProps} />);
 
     expect(container).toMatchSnapshot();
