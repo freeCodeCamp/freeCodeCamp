@@ -3049,7 +3049,7 @@
         "title": "Повторення налагодження JavaScript",
         "intro": [
           "Перш ніж перейти до тесту «Налагодження JavaScript», повторіть основні поняття.",
-          "Відкрийте цю сторінку, щоб пригадати, як працювати з інструкцією <code>throw</code>, <code>try...catch...finally</code> та багато іншого."
+          "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally</code> and more."
         ]
       },
       "quiz-debugging-javascript": {
