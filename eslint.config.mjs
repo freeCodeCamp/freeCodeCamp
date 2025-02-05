@@ -117,6 +117,7 @@ export default tseslint.config(
       'react/prop-types': 'off',
       'no-only-tests/no-only-tests': 'error',
       'no-unused-vars': 'off',
+      'no-unused-expressions': 'error', // This is so the js rules are more in line with the ts rules
       'filenames-simple/naming-convention': ['warn']
     }
   },
