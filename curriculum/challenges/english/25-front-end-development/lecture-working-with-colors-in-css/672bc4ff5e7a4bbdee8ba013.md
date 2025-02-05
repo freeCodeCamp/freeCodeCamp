@@ -14,11 +14,7 @@ Watch the lecture video and answer the questions below.
 
 What are named colors in CSS, and when to use them?
 
-In CSS, colors play a crucial role in designing web pages, enhancing readability, setting the mood, and improving user experience. 
-
-One of the simplest ways to define colors in CSS is by using named colors. Named colors are predefined color names recognized by browsers. 
-
-Here is an example of using a named color for a paragraph element:
+In CSS, colors play a crucial role in designing web pages, enhancing readability, setting the mood, and improving user experience. One of the simplest ways to define colors in CSS is by using named colors. Named colors are predefined color names recognized by browsers. Here is an example of using a named color for a paragraph element:
 
 ```css
 p {
@@ -26,13 +22,11 @@ p {
 }
 ```
 
-In this example, we’re using the named color red to style the text in a paragraph.
+In this example, we’re using the named color `red` to style the text in a paragraph.
 
-Named colors in CSS are a collection of 140 standard color names like red, blue, yellow, aqua, fuchsia, black, and so on. These names are simple to use and make your code more readable, and they are self-descriptive. 
+Named colors in CSS are a collection of 140 standard color names like `red`, `blue`, `yellow`, `aqua`, `fuchsia`, `black`, and so on. These names are simple to use and make your code more readable, and they are self-descriptive. 
 
-Named colors are useful for quick prototyping, simple designs, and improving code readability. 
-
-Here is an another example of using named colors for an `h1` selector:
+Named colors are useful for quick prototyping, simple designs, and improving code readability. Here is an another example of using named colors for an `h1` selector:
 
 ```css
 h1 {
