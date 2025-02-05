@@ -158,7 +158,8 @@ export default tseslint.config(
       'tools/client-plugins/**/*.ts',
       'tools/scripts/**/*.ts',
       'tools/challenge-helper-scripts/**/*.ts',
-      'tools/challenge-auditor/**/*.ts'
+      'tools/challenge-auditor/**/*.ts',
+      'e2e/**/*.ts'
     ],
     extends: [tseslint.configs.recommendedTypeChecked]
   },
@@ -183,7 +184,7 @@ export default tseslint.config(
     }
   },
   {
-    files: ['**/api-server/**/*', '**/404.*'],
+    files: ['.lintstagedrc.js', '**/.babelrc.js', '**/404.tsx'],
     rules: {
       'filenames-simple/naming-convention': 'off'
     }
