@@ -152,7 +152,13 @@ export default tseslint.config(
     }
   },
   {
-    files: ['client/**/*.ts?(x)'],
+    files: [
+      'client/**/*.ts?(x)',
+      'api/**/*.ts',
+      'shared/**/*.ts',
+      'tools/client-plugins/**/*.ts',
+      'tools/scripts/**/*.ts'
+    ],
     extends: [tseslint.configs.recommendedTypeChecked]
   },
   {
