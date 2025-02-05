@@ -26,13 +26,11 @@ The `:active` pseudo-class applies styles when an element is activated by the us
 
 ```css
 a:active {
-   color: crimson;
+  color: crimson;
 }
 ```
 
-The `:hover` pseudo-class is triggered when a user hovers over an element with their mouse or other pointing device. Developers often use it to create visual feedback for buttons, links, or any element that should respond to user attention.
-
-Here's a button a user would hover over before clicking:
+The `:hover` pseudo-class is triggered when a user hovers over an element with their mouse or other pointing device. Developers often use it to create visual feedback for buttons, links, or any element that should respond to user attention. Here's a button a user would hover over before clicking:
 
 ```html
 <button class="btn">Hover Over Me</button>
@@ -54,7 +52,7 @@ Here's an input element inside a form element:
 
 ```html
 <form>
-     <input type="text" />
+  <input type="text" />
 </form>
 ```
 
@@ -67,9 +65,7 @@ input:focus {
 }
 ```
 
-The `:visited` pseudo-class targets a link the user has visited. This can be useful for helping users distinguish between pages they have already visited and the ones they are yet to visit.
-
-Here is an example of changing the anchor text color to cyan when the link is visited:
+The `:visited` pseudo-class targets a link the user has visited. This can be useful for helping users distinguish between pages they have already visited and the ones they are yet to visit. Here is an example of changing the anchor text color to cyan when the link is visited:
 
 ```css
 a:visited {
@@ -83,7 +79,7 @@ Here's the kind of checkbox you usually check to agree to terms on a website:
 
 ```html
 <form>
-   Agree <input class="checkbox" type="checkbox" />
+  Agree <input class="checkbox" type="checkbox" />
 </form>
 ```
 
@@ -91,10 +87,10 @@ Here's how you can use the `:checked` pseudo-class to indicate to the user that 
 
 ```css
 .checkbox:checked {
-   appearance: none;
-   width: 12px;
-   height: 12px;
-   background-color: red;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background-color: red;
 }
 ```
 
@@ -102,13 +98,13 @@ In this example, we are using the `appearance` property set to `none` to remove 
 
 Other examples of action pseudo-classes are:
 
-`:focus-within`: for applying styles to an element when it or any of its descendants have focus
+`:focus-within`: for applying styles to an element when it or any of its descendants have focus.
 
-`:enabled`: for targeting form buttons or other elements that are currently enabled
+`:enabled`: for targeting form buttons or other elements that are currently enabled.
 
-`:disabled`: for targeting form buttons or other elements that are disabled
+`:disabled`: for targeting form buttons or other elements that are disabled.
 
-`:target`: for applying styles to an element that is the target of a URL fragment (the part of a URL after the # symbol)
+`:target`: for applying styles to an element that is the target of a URL fragment (the part of a URL after the # symbol).
 
 # --questions--
 

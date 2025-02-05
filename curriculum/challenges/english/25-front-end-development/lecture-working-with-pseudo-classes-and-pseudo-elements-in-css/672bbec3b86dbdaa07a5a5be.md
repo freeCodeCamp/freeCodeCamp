@@ -25,9 +25,7 @@ Examples of functional pseudo-classes are:
 
 Let's take a deeper look at each of these functional pseudo-classes with examples.
 
-The `:is()` pseudo-class is useful when you want to style a group of elements that share some, but not all, characteristics. For example, you might want to style different types of buttons on your website, including `<button>` elements, links styled as buttons, and `<input>` elements with types `submit` and `reset`.
-
-Here's an HTML example representing that:
+The `:is()` pseudo-class is useful when you want to style a group of elements that share some, but not all, characteristics. For example, you might want to style different types of buttons on your website, including `<button>` elements, links styled as buttons, and `<input>` elements with types `submit` and `reset`. Here's an HTML example representing that:
 
 ```html
 <button>Click Me</button>
@@ -43,25 +41,25 @@ button,
 a.button,
 input[type='submit'],
 input[type='reset'] {
-    background-color: darkblue;
-    color: white;
-    border: 1px solid darkblue;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-    margin: 5px;
-    font-size: 16px;
-    text-align: center;
+  background-color: darkblue;
+  color: white;
+  border: 1px solid darkblue;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 5px;
+  font-size: 16px;
+  text-align: center;
 }
 
 button:hover,
 a.button:hover,
 input[type='submit']:hover,
 input[type='reset']:hover {
-    background-color: lightblue;
-    border-color: lightblue;
+  background-color: lightblue;
+  border-color: lightblue;
 }
 ```
 
@@ -90,9 +88,7 @@ With the `:is()` function, you can write a more compact and understandable selec
 
 The `:where` pseudo-class functions similarly to `:is()`, but it doesn't increase the specificity of your selectors. This makes it ideal for applying styles without affecting the specificity of other rules.
 
-For example, you can use the `:where()` function to apply 0 `margin` and `padding` to heading elements. This ensures that the reset won't interfere with more specific styles you might apply later.
-
-Here's the HTML for that:
+For example, you can use the `:where()` function to apply 0 `margin` and `padding` to heading elements. This ensures that the reset won't interfere with more specific styles you might apply later. Here's the HTML for that:
 
 ```html
 <h1>Page Title</h1>
@@ -104,18 +100,18 @@ And this is the CSS:
 
 ```css
 :where(h1, h2, h3) {
- margin: 0;
- padding: 0;
+  margin: 0;
+  padding: 0;
 }
 ```
 
 Styling a parent element based on its children's states was previously challenging until the `:has()` pseudo-class was introduced. It allows you to apply styles to a parent element based on the presence or state of its child elements.
 
-For example, the CSS below will only apply to any article element that has an `h2` in it:
+For example, the CSS below will only apply to any `article` element that has an `h2` in it:
 
 ```css
 article:has(h2) {
- border: 2px solid hotpink;
+  border: 2px solid hotpink;
 }
 ```
 
@@ -134,9 +130,7 @@ Here's the HTML for that:
 </article>
 ```
 
-The `:not()` pseudo-class is ideal for situations where you want to apply styles to a group of elements, excluding one or more specific exceptions.
-
-In the CSS below, any button that is not a primary button will have a grey background:
+The `:not()` pseudo-class is ideal for situations where you want to apply styles to a group of elements, excluding one or more specific exceptions. In the CSS below, any button that is not a primary button will have a grey background:
 
 ```css
 button {

@@ -31,23 +31,23 @@ The `:link` pseudo-class allows you to target all unvisited links on a webpage. 
 
 ```css
 a:link {
-   color: magenta;
+  color: magenta;
 }
 ```
 
-In the code above, any link the user hasn't clicked yet will appear magenta. Once the user clicks the link, the `:link` style no longer applies, and the `:visited` pseudo-class takes over. The `:visited` pseudo-class comes into play after the user clicks the link, so you can use it to target links the user has already clicked. 
+In this case, any link the user hasn't clicked yet will appear magenta. Once the user clicks the link, the `:link` style no longer applies, and the `:visited` pseudo-class takes over. The `:visited` pseudo-class comes into play after the user clicks the link, so you can use it to target links the user has already clicked. 
 
 Here is an example of changing the visited link state to the color purple:
 
 ```css
 a:visited {
-   color: purple;
+  color: purple;
 }
 ```
 
 The `:visited` pseudo-class helps users distinguish between links they have visited and those they have not.
 
-The `:any-link` pseudo-class is a combination of the `:link` and `:visited` pseudo-classes. So it matches any anchor element with an `href` attribute, regardless of whether it’s visited or not.
+The `:any-link` pseudo-class is a combination of the `:link` and `:visited` pseudo-classes. So it matches any anchor element with an `href` attribute, regardless of whether it's visited or not.
 
 Here is an example of changing the link color for the `:any-link` pseudo-class to crimson:
 
@@ -59,16 +59,16 @@ a:any-link {
 
 The `:local-link` pseudo-class targets links that point to the same document. It can be useful when you want to differentiate internal links from external ones. Currently, no browser supports the `:local-link` pseudo-class.
 
-The `:target` pseudo-class selects an element that matches the current URL fragment identifier, for example, #section1. It's very useful for pages with in-page navigation.
+The `:target` pseudo-class selects an element that matches the current URL fragment identifier, for example, `#section1`. It's very useful for pages with in-page navigation.
 
 Here's an HTML example that represents an in-page navigation:
 
 ```html
 <nav id="table-of-contents">
-   <ul>
-     <li><a href="#section1">Introduction</a></li>
-     <li><a href="#section2">Features</a></li>
-   </ul>
+  <ul>
+    <li><a href="#section1">Introduction</a></li>
+    <li><a href="#section2">Features</a></li>
+  </ul>
 </nav>
 
 <section id="section1">

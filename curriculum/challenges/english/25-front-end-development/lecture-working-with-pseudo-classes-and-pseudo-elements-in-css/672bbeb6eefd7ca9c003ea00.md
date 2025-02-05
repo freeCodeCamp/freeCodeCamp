@@ -32,12 +32,12 @@ Here is a list of tree-structural pseudo-classes:
 
 Let's take a closer look at each of the tree-structural pseudo-classes, accompanied by examples.
 
-​​The `:root` pseudo-class is usually the root `<html>` element. It helps you target the highest level in the document so you can apply a common style to the entire document.        
+​​The `:root` pseudo-class is usually the root `html` element. It helps you target the highest level in the document so you can apply a common style to the entire document.        
 
 ```css
 :root {
-   background: black;
-   color: aliceblue;
+  background: black;
+  color: aliceblue;
 }
 ```
 
@@ -45,17 +45,15 @@ The `:root` pseudo-class is also commonly used in setting CSS variables:
 
 ```css
 :root {
-   --main-font: 'Arial, sans-serif';
-   --primary-color: blue; 
-   --secondary-color: green; 
+  --main-font: 'Arial, sans-serif';
+  --primary-color: blue; 
+  --secondary-color: green; 
 }
 ```
 
 With CSS variables, you get to store values and reuse them in your stylesheet. You will learn more about these later on.
 
-Empty elements, that is, elements with no children other than white space, are also included in the document tree. That's why there's an `:empty` pseudo-class to target empty elements.
-
-For example, this HTML code has two empty list items:
+Empty elements, that is, elements with no children other than white space, are also included in the document tree. That's why there's an `:empty` pseudo-class to target empty elements. For example, this HTML code has two empty list items:
 
 ```html
 <ul>
@@ -71,7 +69,7 @@ With the `:empty` pseudo-class, you can style the empty list items differently:
 
 ```css
 :empty {
-   background: black;
+  background: black;
 }
 ```
 
@@ -79,31 +77,31 @@ The most practical thing to do with the empty list items is probably not display
 
 ```css
 :empty {
-    display: none;
+  display: none;
 }
 ```
 
-`:nth-child(n)` allows you to select elements based on their position within a parent, while `:nth-last-child(n)` enables you to select elements by counting from the end. The `n` can be a specific number or a keyword like odd or even. This is incredibly useful in styling table cells based on position: even and odd.
+`:nth-child(n)` allows you to select elements based on their position within a parent, while `:nth-last-child(n)` enables you to select elements by counting from the end. The `n` can be a specific number or a keyword like `odd` or `even`. This is incredibly useful in styling table cells based on position: even and odd.
 
 Here's an HTML example of a fruit price list table:
 
 ```html
 <table>
- <tr>
-   <th>Item</th>
-   <th>Price</th>
- </tr>
- <tr>
-   <td>Apple</td>
-   <td>$1.00</td>
- </tr>
- <tr>
-   <td>Banana</td>
-   <td>$0.50</td>
- </tr>
- <tr>
-   <td>Orange</td>
-   <td>$0.80</td>
+  <tr>
+    <th>Item</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>$1.00</td>
+  </tr>
+  <tr>
+    <td>Banana</td>
+    <td>$0.50</td>
+  </tr>
+  <tr>
+    <td>Orange</td>
+    <td>$0.80</td>
   </tr>
 </table>
 ```
@@ -113,8 +111,8 @@ Here's the CSS using the `:nth-child` pseudo-class to target the table cells bas
 ```css
 th,
 td {
-   border: 1px solid lightgray;
-   padding: 8px;
+  border: 1px solid lightgray;
+  padding: 8px;
 }
 
 tr:nth-child(even) {
@@ -122,17 +120,17 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-   background-color: lightgreen;
+  background-color: lightgreen;
 }
 ```
 
 The `:first-child`, `:last-child`, and `:only-child` pseudo-classes all act on items within a parent container or the entire document.
 
-- `:first-child` selects the first element in a parent element or the document
-- `:last-child` selects the last element in a parent element or the document
-- `:only-child` selects the only element in a parent element or the document
+- `:first-child` selects the first element in a parent element or the document.
+- `:last-child` selects the last element in a parent element or the document.
+- `:only-child` selects the only element in a parent element or the document.
 
-Using the `:first-child` and `:last-child` pseudo-classes will select both Item 1 and Item 3 in this HTML:
+Using the `:first-child` and `:last-child` pseudo-classes will select both `Item 1` and `Item 3` in this HTML:
 
 ```html
 <ul>
@@ -146,11 +144,11 @@ Here's the CSS:
 
 ```css
 li:first-child {
-   background-color: orangered;
+  background-color: orangered;
 }
 
 li:last-child {
-   background-color: lightgreen;
+  background-color: lightgreen;
 }
 ```
 
@@ -158,11 +156,11 @@ If you have more unordered lists on the page, you have to be more specific with 
 
 ```css
 ul li:first-child {
-   background-color: orangered;
+  background-color: orangered;
 }
 
 ul li:last-child {
-   background-color: lightgreen;
+  background-color: lightgreen;
 }
 ```
 
@@ -183,15 +181,15 @@ Using the `:only-child` pseudo-class ensures only the `div` element with a singl
 
 ```css
 .container div:only-child {
-   border: 2px solid crimson;
-   padding: 10px;
-   background-color: lightblue;
+  border: 2px solid crimson;
+  padding: 10px;
+  background-color: lightblue;
 }
 ```
 
 The `:first-of-type` and `:last-of-type` pseudo-classes select the first and last occurrence of a specific element type within its parent. They are useful for applying unique styles to the first or last instance of that element type among its siblings.
 
-In the HTML below, `:first-of-type` and `:last-of-type` applies to the first element and last element within the section element:
+In the HTML below, `:first-of-type` and `:last-of-type` applies to the first element and last element within the `section` element:
 
 ```html
 <section>
@@ -210,25 +208,23 @@ Here's the CSS:
 
 ```css
 section p:first-of-type {
-   background-color: lightgreen;
+  background-color: lightgreen;
 }
 
 section p:last-of-type {
-   background-color:lightblue;
+  background-color:lightblue;
 }
 ```
 
-`:nth-of-type(n)` allows you to select a specific element within its parent based on its position among siblings of the same type.
-
-For instance, in the HTML below, `:nth-of-type(2)` targets the second element in the container:
+`:nth-of-type(n)` allows you to select a specific element within its parent based on its position among siblings of the same type. For instance, in the HTML below, `:nth-of-type(2)` targets the second element in the container:
 
 ```html
 <div class="container">
-   <p>First paragraph</p>
-   <h2>First heading</h2>
-   <p>Second paragraph</p>
-   <p>Third paragraph</p>
-   <h2>Second heading</h2>
+  <p>First paragraph</p>
+  <h2>First heading</h2>
+  <p>Second paragraph</p>
+  <p>Third paragraph</p>
+  <h2>Second heading</h2>
 </div>
 ```
 
@@ -236,12 +232,12 @@ Here's the CSS:
 
 ```css
 p:nth-of-type(2) {
-    color: red;
-    font-weight: bold;
+  color: red;
+  font-weight: bold;
 }
 ```
 
-`:only-of-type` selects an element if it’s the only one of its type within its parent. This can be useful for emphasizing single items or ensuring that they are styled differently when they’re not part of a group.
+`:only-of-type` selects an element if it's the only one of its type within its parent. This can be useful for emphasizing single items or ensuring that they are styled differently when they’re not part of a group.
 
 In the HTML below, there are two `div` elements with one having a single element:
 
@@ -260,7 +256,7 @@ Here's the CSS that only applies to the first container:
 
 ```css
 p:only-of-type {
-   border: 4px solid green;
+  border: 4px solid green;
 }
 ```
 
