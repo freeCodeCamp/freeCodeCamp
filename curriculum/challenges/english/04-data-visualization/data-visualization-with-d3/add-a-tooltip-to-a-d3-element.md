@@ -27,55 +27,55 @@ assert.lengthOf(document.querySelectorAll('title'), 9);
 The first `title` element should have tooltip text of `12`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('title')[0].textContent, '12');
+assert.strictEqual(document.querySelectorAll('title')[0]?.textContent, '12');
 ```
 
 The second `title` element should have tooltip text of `31`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('title')[1].textContent, '31');
+assert.strictEqual(document.querySelectorAll('title')[1]?.textContent, '31');
 ```
 
 The third `title` element should have tooltip text of `22`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('title')[2].textContent, '22');
+assert.strictEqual(document.querySelectorAll('title')[2]?.textContent, '22');
 ```
 
 The fourth `title` element should have tooltip text of `17`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('title')[3].textContent, '17');
+assert.strictEqual(document.querySelectorAll('title')[3]?.textContent, '17');
 ```
 
 The fifth `title` element should have tooltip text of `25`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('title')[4].textContent, '25');
+assert.strictEqual(document.querySelectorAll('title')[4]?.textContent, '25');
 ```
 
 The sixth `title` element should have tooltip text of `18`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('title')[5].textContent, '18');
+assert.strictEqual(document.querySelectorAll('title')[5]?.textContent, '18');
 ```
 
 The seventh `title` element should have tooltip text of `29`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('title')[6].textContent, '29');
+assert.strictEqual(document.querySelectorAll('title')[6]?.textContent, '29');
 ```
 
 The eighth `title` element should have tooltip text of `14`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('title')[7].textContent, '14');
+assert.strictEqual(document.querySelectorAll('title')[7]?.textContent, '14');
 ```
 
 The ninth `title` element should have tooltip text of `9`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('title')[8].textContent, '9');
+assert.strictEqual(document.querySelectorAll('title')[8]?.textContent, '9');
 ```
 
 # --seed--
