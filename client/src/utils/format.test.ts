@@ -32,15 +32,7 @@ describe('format', () => {
     );
   });
   it('handles all primitive values', () => {
-    const primitives = [
-      'str',
-      57,
-      true,
-      false,
-      null,
-      // eslint-disable-next-line no-undefined
-      undefined
-    ];
+    const primitives = ['str', 57, true, false, null, undefined];
     expect(format(primitives)).toBe(
       `[ 'str', 57, true, false, null, undefined ]`
     );
