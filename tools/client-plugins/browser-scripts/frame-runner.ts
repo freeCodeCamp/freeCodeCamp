@@ -51,7 +51,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         (typeof o[prop] === 'object' || typeof o[prop] === 'function') &&
         !Object.isFrozen(o[prop])
       ) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         DeepFreeze(o[prop]);
       }
     });
@@ -73,7 +72,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
       import(/* webpackChunkName: "enzyme" */ 'enzyme'),
       import(/* webpackChunkName: "enzyme-adapter" */ 'enzyme-adapter-react-16')
     ]);
-    /* eslint-enable no-inline-comments */
 
     Enzyme.configure({ adapter: new Adapter16() });
     /* eslint-enable prefer-const */
