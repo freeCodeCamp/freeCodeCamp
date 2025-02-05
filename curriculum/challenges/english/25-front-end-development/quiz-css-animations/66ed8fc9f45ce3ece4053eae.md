@@ -149,15 +149,15 @@ It repositions the element horizontally.
 
 #### --text--
 
-What is the primary accessibility concern with CSS animations?
+Which of the following is NOT a potential concern with CSS animations?
 
 #### --distractors--
 
-They may decrease website loading speed.
+They may cause discomfort or physical harm to certain users.
 
 ---
 
-They may distract users from the main content of the website.
+Users may find them distracting.
 
 ---
 
@@ -165,7 +165,7 @@ They may not work correctly on older browsers.
 
 #### --answer--
 
-They may cause discomfort or physical harm to certain users.
+They may increase website loading speed.
 
 ### --question--
 
