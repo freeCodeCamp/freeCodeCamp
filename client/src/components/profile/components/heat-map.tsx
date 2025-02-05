@@ -1,9 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import CalendarHeatMap from '@freecodecamp/react-calendar-heatmap';
-// TODO: Check if we can import { addDays, addMonths, isEqual, startOfDay } from
-// 'date-fns' without bundling all of the package then we can remove the
-// disable-next-line comments.
+// TODO: Check if we can import { addDays, addMonths ... } from 'date-fns'
+// without bundling all of the package then we can remove the disable-next-line
+// comments.
 
 // eslint-disable-next-line import/no-duplicates
 import addDays from 'date-fns/addDays';

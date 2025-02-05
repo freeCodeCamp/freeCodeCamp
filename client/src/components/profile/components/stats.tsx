@@ -1,9 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+// TODO: Check if we can import { addDays, addMonths ... } from 'date-fns'
+// without bundling all of the package then we can remove the disable-next-line
+// comments.
+
+// eslint-disable-next-line import/no-duplicates
 import addDays from 'date-fns/addDays';
+// eslint-disable-next-line import/no-duplicates
 import addMonths from 'date-fns/addMonths';
+// eslint-disable-next-line import/no-duplicates
 import isEqual from 'date-fns/isEqual';
 import { Spacer } from '@freecodecamp/ui';
+// eslint-disable-next-line import/no-duplicates
 import startOfDay from 'date-fns/startOfDay';
 import { User } from '../../../redux/prop-types';
 import { FullWidthRow } from '../../helpers';
