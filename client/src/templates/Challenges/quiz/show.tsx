@@ -178,7 +178,8 @@ const ShowQuiz = ({
     },
     passingGrade: 90,
     onSuccess: () => {
-      openCompletionModal(), setIsPassed(true);
+      openCompletionModal();
+      setIsPassed(true);
     },
     onFailure: () => setIsPassed(false)
   });
