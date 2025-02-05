@@ -10,7 +10,8 @@ import importPlugin from 'eslint-plugin-import';
 import jsxAllyPlugin from 'eslint-plugin-jsx-a11y';
 import prettierConfig from 'eslint-config-prettier';
 import reactPlugin from 'eslint-plugin-react';
-import testingLibrary from 'eslint-plugin-testing-library';
+import testingLibraryPlugin from 'eslint-plugin-testing-library';
+import jestDomPlugin from 'eslint-plugin-jest-dom';
 import tsParser from '@typescript-eslint/parser';
 import tseslint from 'typescript-eslint';
 import jsdoc from 'eslint-plugin-jsdoc';
@@ -150,13 +151,16 @@ export default tseslint.config(
     }
   },
   {
-    files: ['client/**/*.test.[jt]s?(x)'],
-    ...testingLibrary.configs['flat/react'],
-    ...testingLibrary.configs['flat/jest-dom']
+    files: ['client/**/*.ts?(x)'],
+    extends: [tseslint.configs.recommendedTypeChecked]
   },
   {
     files: ['client/**/*.test.[jt]s?(x)'],
 
+    extends: [
+      testingLibraryPlugin.configs['flat/react'],
+      jestDomPlugin.configs['flat/recommended']
+    ],
     rules: {
       'import/named': 2
     }
