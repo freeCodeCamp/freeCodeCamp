@@ -158,7 +158,8 @@ export default tseslint.config(
       'shared/**/*.ts',
       'tools/client-plugins/**/*.ts',
       'tools/scripts/**/*.ts',
-      'tools/challenge-helper-scripts/**/*.ts'
+      'tools/challenge-helper-scripts/**/*.ts',
+      'tools/challenge-auditor/**/*.ts'
     ],
     extends: [tseslint.configs.recommendedTypeChecked]
   },
