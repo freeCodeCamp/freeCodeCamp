@@ -161,11 +161,11 @@ Users may find them distracting.
 
 ---
 
-They may not work correctly on older browsers.
+Overuse can lead to poor performance.
 
 #### --answer--
 
-They may increase website loading speed.
+They can enhance user experience.
 
 ### --question--
 
