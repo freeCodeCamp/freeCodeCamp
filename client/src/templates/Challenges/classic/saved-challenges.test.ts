@@ -5,7 +5,6 @@ import type {
 import { mergeChallengeFiles } from './saved-challenges';
 
 const jsChallenge = {
-  id: '1',
   contents: 'js contents',
   fileKey: 'jsFileKey',
   name: 'name',
@@ -13,11 +12,11 @@ const jsChallenge = {
   head: 'head',
   tail: 'tail',
   history: [],
-  seed: 'original js contents'
+  seed: 'original js contents',
+  path: 'index.js'
 };
 
 const cssChallenge = {
-  id: '2',
   contents: 'css contents',
   fileKey: 'cssFileKey',
   name: 'name',
@@ -25,11 +24,11 @@ const cssChallenge = {
   head: 'head',
   tail: 'tail',
   history: [],
-  seed: 'original css contents'
+  seed: 'original css contents',
+  path: 'styles.css'
 };
 
 const htmlChallenge = {
-  id: '3',
   contents: 'html contents',
   fileKey: 'htmlFileKey',
   name: 'name',
@@ -37,7 +36,8 @@ const htmlChallenge = {
   head: 'head',
   tail: 'tail',
   history: [],
-  seed: 'original html contents'
+  seed: 'original html contents',
+  path: 'index.html'
 };
 
 const savedJsChallenge: SavedChallengeFile = {

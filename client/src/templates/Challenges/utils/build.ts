@@ -51,7 +51,9 @@ const jsWorkerExecutor = new WorkerExecutor(jsTestEvaluator, {
   terminateWorker: true
 });
 
-type ApplyFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
+type ApplyFunctionProps = (
+  file: ChallengeFile
+) => Promise<ChallengeFile> | ChallengeFile;
 
 const applyFunction =
   (fn: ApplyFunctionProps) => async (file: ChallengeFile) => {
@@ -80,7 +82,7 @@ function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
     (sources, challengeFile) => {
       sources.index += challengeFile.source || '';
       sources.contents = sources.index;
-      sources.original[challengeFile.history[0]] = challengeFile.source;
+      sources.original[challengeFile.history[0]] = challengeFile.source ?? null;
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },
@@ -235,11 +237,11 @@ export async function buildDOMChallenge(
   );
   const isMultifile = challengeFiles.length > 1;
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const transformers =
-    isMultifile && hasJsx
-      ? getMultifileJSXTransformers(options)
-      : getTransformers(options);
+  // I'm reasonably sure this is fine, but we need to migrate transformers to
+  // TypeScript to be sure.
+  const transformers: ApplyFunctionProps[] = (isMultifile && hasJsx
+    ? getMultifileJSXTransformers(options)
+    : getTransformers(options)) as unknown as ApplyFunctionProps[];
 
   const pipeLine = composeFunctions(...transformers);
   const usesTestRunner = options?.usesTestRunner ?? false;
@@ -274,7 +276,9 @@ export async function buildJSChallenge(
   options: BuildOptions
 ): Promise<BuildResult> {
   if (!challengeFiles) throw Error('No challenge files provided');
-  const pipeLine = composeFunctions(...getTransformers(options));
+  const pipeLine = composeFunctions(
+    ...(getTransformers(options) as unknown as ApplyFunctionProps[])
+  );
 
   const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
@@ -311,7 +315,9 @@ export async function buildPythonChallenge({
   challengeFiles
 }: BuildChallengeData): Promise<BuildResult> {
   if (!challengeFiles) throw new Error('No challenge files provided');
-  const pipeLine = composeFunctions(...getPythonTransformers());
+  const pipeLine = composeFunctions(
+    ...(getPythonTransformers() as unknown as ApplyFunctionProps[])
+  );
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
 
