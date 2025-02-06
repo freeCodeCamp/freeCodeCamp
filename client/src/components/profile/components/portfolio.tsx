@@ -49,16 +49,16 @@ function createFindById(id: string) {
   return (p: PortfolioProjectData) => p.id === id;
 }
 
-const PortfolioSettings: React.FC<PortfolioProps> = props => {
+const PortfolioSettings = (props: PortfolioProps) => {
   const {
     t,
     portfolio: initialPortfolio = [],
     setIsEditing,
     updatePortfolio
   } = props;
-  const [portfolio, setPortfolio] = useState([...initialPortfolio]);
+  const [portfolio, setPortfolio] = useState(initialPortfolio);
   const [unsavedItemId, setUnsavedItemId] = useState<string | null>(null);
-  const [isImageValid, setIsImageValid] = useState<ProfileValidation>({
+  const [imageValidation, setImageValid] = useState<ProfileValidation>({
     state: 'success',
     message: ''
   });
