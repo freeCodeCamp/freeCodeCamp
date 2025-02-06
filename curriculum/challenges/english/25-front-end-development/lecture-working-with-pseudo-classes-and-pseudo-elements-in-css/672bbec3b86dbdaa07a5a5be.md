@@ -25,7 +25,7 @@ Examples of functional pseudo-classes are:
 
 Let's take a deeper look at each of these functional pseudo-classes with examples.
 
-The `:is()` pseudo-class is useful when you want to style a group of elements that share some, but not all, characteristics. For example, you might want to style different types of buttons on your website, including `<button>` elements, links styled as buttons, and `<input>` elements with types `submit` and `reset`. Here's an HTML example representing that:
+The `:is()` pseudo-class is useful when you want to style a group of elements that share some, but not all, characteristics. For example, you might want to style different types of buttons on your website, including `button` elements, links styled as buttons, and `input` elements with types `submit` and `reset`. Here's an HTML example representing that:
 
 ```html
 <button>Click Me</button>
@@ -86,9 +86,9 @@ With the `:is()` function, you can write a more compact and understandable selec
 }
 ```
 
-The `:where` pseudo-class functions similarly to `:is()`, but it doesn't increase the specificity of your selectors. This makes it ideal for applying styles without affecting the specificity of other rules.
+The `:where()` pseudo-class functions similarly to `:is()`, but it doesn't increase the specificity of your selectors. This makes it ideal for applying styles without affecting the specificity of other rules.
 
-For example, you can use the `:where()` function to apply 0 `margin` and `padding` to heading elements. This ensures that the reset won't interfere with more specific styles you might apply later. Here's the HTML for that:
+For example, you can use the `:where()` function to apply zero `margin` and `padding` to heading elements. This ensures that the reset won't interfere with more specific styles you might apply later. Here's the HTML for that:
 
 ```html
 <h1>Page Title</h1>

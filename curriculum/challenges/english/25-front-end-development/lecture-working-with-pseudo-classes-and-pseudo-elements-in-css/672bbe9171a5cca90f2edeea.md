@@ -20,7 +20,7 @@ User action pseudo-classes in CSS are special keywords that allow you to provide
 
 These pseudo-classes include `:hover`, `:active`, `:focus`, and `:visited`, among others. They enable you to change the appearance of elements based on user interactions, improving the overall user experience.
 
-Let’s dive into some of the user action pseudo-classes we have and see how they work.
+Let's dive into some of the user action pseudo-classes we have and see how they work.
 
 The `:active` pseudo-class applies styles when an element is activated by the user. For example, when the user clicks a button or a link, it provides immediate visual feedback, showing users that their actions are being recognized.
 
@@ -104,7 +104,7 @@ Other examples of action pseudo-classes are:
 
 `:disabled`: for targeting form buttons or other elements that are disabled.
 
-`:target`: for applying styles to an element that is the target of a URL fragment (the part of a URL after the # symbol).
+`:target`: for applying styles to an element that is the target of a URL fragment (the part of a URL after the `#` symbol).
 
 # --questions--
 
