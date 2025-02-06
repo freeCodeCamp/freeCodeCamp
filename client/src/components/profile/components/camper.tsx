@@ -18,22 +18,26 @@ type CamperProps = {
   yearsTopContributor: string[];
   isDonating: boolean;
   isSessionUser: boolean;
+  username: string;
   setIsEditing: (isEditing: boolean) => void;
   privacy: ProfileUI;
 };
 
-const mapStateToProps = createSelector(
-  userTopContributorSelector,
-  isDonatingSelector,
-  userPrivacySelector,
-  (yearsTopContributor: string[], isDonating: boolean, privacy: ProfileUI) => ({
-    yearsTopContributor,
-    isDonating,
-    privacy: {
-      ...privacy
-    }
-  })
-);
+const mapStateToProps = (state: Record<string, unknown>, props: CamperProps) =>
+  createSelector(
+    userTopContributorSelector,
+    isDonatingSelector,
+    userPrivacySelector(props.username.toLowerCase()),
+    (
+      yearsTopContributor: string[],
+      isDonating: boolean,
+      privacy: ProfileUI
+    ) => ({
+      yearsTopContributor,
+      isDonating,
+      privacy: privacy
+    })
+  )(state);
 
 function Camper({
   yearsTopContributor,
@@ -44,9 +48,7 @@ function Camper({
 }: CamperProps): JSX.Element {
   const { t } = useTranslation();
 
-  const handleDonate = () => isDonating && privacy.showDonation;
-
-  isDonating = handleDonate();
+  isDonating = isDonating && privacy.showDonation;
 
   const isTopContributor = yearsTopContributor.filter(Boolean).length > 0;
   return (

@@ -271,7 +271,7 @@ export const userSelector = state => {
   return state[MainApp].user[username] || {};
 };
 
-export const userSocialSelector = state => {
+export const userSocialSelector = select => state => {
   const {
     githubProfile,
     twitter,
@@ -283,7 +283,7 @@ export const userSocialSelector = state => {
     picture,
     joinDate,
     about
-  } = userSelector(state);
+  } = userByNameSelector(select)(state);
 
   return {
     githubProfile,
@@ -299,7 +299,7 @@ export const userSocialSelector = state => {
   };
 };
 
-export const userPrivacySelector = state => {
+export const userPrivacySelector = select => state => {
   const {
     profileUI: {
       isLocked,
@@ -313,7 +313,7 @@ export const userPrivacySelector = state => {
       showPortfolio,
       showTimeLine
     }
-  } = userSelector(state);
+  } = userByNameSelector(select)(state);
 
   return {
     isLocked,
