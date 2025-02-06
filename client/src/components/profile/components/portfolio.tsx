@@ -1,6 +1,6 @@
 import { findIndex, find, isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import type { TFunction } from 'i18next';
 import {
   FormGroup,
@@ -62,19 +62,15 @@ const PortfolioSettings = (props: PortfolioProps) => {
     state: 'success',
     message: ''
   });
-  const validationImageRef = useRef<HTMLImageElement>(new Image());
 
-  const validateImageLoad = async (
-    image: string
-  ): Promise<ProfileValidation> => {
+  const checkIfValidImage = (url: string): Promise<ProfileValidation> => {
+    const img = new Image();
+
     return new Promise(resolve => {
-      validationImageRef.current.src = encodeURI(image);
-      validationImageRef.current.onload = () => {
-        resolve({ state: 'success', message: '' });
-      };
-      validationImageRef.current.onerror = () => {
+      img.onerror = () =>
         resolve({ state: 'error', message: t('validation.url-not-image') });
-      };
+      img.onload = () => resolve({ state: 'success', message: '' });
+      img.src = url;
     });
   };
 
@@ -91,11 +87,11 @@ const PortfolioSettings = (props: PortfolioProps) => {
           [key]: userInput
         };
         if (key === 'image' && userInput) {
-          void validateImageLoad(userInput).then(imageValidation => {
-            setIsImageValid(imageValidation);
+          void checkIfValidImage(userInput).then(imageValidation => {
+            setImageValid(imageValidation);
           });
         } else if (key === 'image' && !userInput) {
-          setIsImageValid({ state: 'success', message: '' });
+          setImageValid({ state: 'success', message: '' });
         }
         return mutablePortfolio;
       });
@@ -238,10 +234,10 @@ const PortfolioSettings = (props: PortfolioProps) => {
       return updateItem(id);
     };
     const combineImageStatus =
-      imageState === 'success' && isImageValid.state === 'success'
+      imageState === 'success' && imageValidation.state === 'success'
         ? null
         : 'error';
-    const combineImageMessage = imageMessage || isImageValid.message;
+    const combineImageMessage = imageMessage || imageValidation.message;
     return (
       <FullWidthRow key={id}>
         <form
