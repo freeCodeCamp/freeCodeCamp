@@ -173,7 +173,7 @@ const InternetSettings = ({
               <FormControl
                 data-playwright-test-label='internet-github-input'
                 onChange={createHandleChange('githubProfile')}
-                placeholder=''
+                placeholder='https://github.com/your-handle'
                 type='url'
                 value={formValues.githubProfile}
                 id='internet-github-input'
@@ -194,7 +194,7 @@ const InternetSettings = ({
               </ControlLabel>
               <FormControl
                 onChange={createHandleChange('linkedin')}
-                placeholder=''
+                placeholder='https://linkedin.com/in/your-profile'
                 type='url'
                 value={formValues.linkedin}
                 id='internet-linkedin-input'
@@ -215,7 +215,7 @@ const InternetSettings = ({
               </ControlLabel>
               <FormControl
                 onChange={createHandleChange('twitter')}
-                placeholder=''
+                placeholder='https://twitter.com/your-handle'
                 type='url'
                 value={formValues.twitter}
                 id='internet-twitter-input'
@@ -236,7 +236,7 @@ const InternetSettings = ({
               </ControlLabel>
               <FormControl
                 onChange={createHandleChange('website')}
-                placeholder=''
+                placeholder='https://your-website.com'
                 type='url'
                 value={formValues.website}
                 id='internet-website-input'
