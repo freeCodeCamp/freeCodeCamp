@@ -10,7 +10,6 @@ import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 
 import { FullWidthRow } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
@@ -20,6 +19,7 @@ import { SocialProps } from './bio';
 
 type AboutProps = {
   socials: SocialProps;
+  _username: string;
   t: TFunction;
   submitNewAbout: (formValues: FormValues) => void;
   setIsEditing: (isEditing: boolean) => void;
@@ -44,21 +44,18 @@ const ShowImageValidationWarning = ({
   );
 };
 
-const mapStateToProps = createSelector(
-  userSocialSelector,
-  (socials: SocialProps) => ({
-    socials
-  })
-);
+const mapStateToProps = (state: unknown, props: { _username: string }) => ({
+  socials: userSocialSelector(props._username)(state) as unknown as SocialProps
+});
 
 const AboutSettings = ({
   t,
   submitNewAbout,
   setIsEditing,
+  _username,
   socials
 }: AboutProps) => {
   const { name, location, picture, about } = socials;
-
   const [formValues, setFormValues] = useState<FormValues>({
     name,
     location,
