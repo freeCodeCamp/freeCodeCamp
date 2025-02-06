@@ -22,10 +22,7 @@ type CamperProps = {
   privacy: ProfileUI;
 };
 
-const mapStateToProps = (
-  state: Record<string, unknown>,
-  props: CamperProps
-) => ({
+const mapStateToProps = (state: unknown, props: { username: string }) => ({
   yearsTopContributor: userTopContributorSelector(state) as string[],
   privacy: userPrivacySelector(props.username) as unknown as ProfileUI,
   isDonating: isDonatingSelector(state) as boolean
