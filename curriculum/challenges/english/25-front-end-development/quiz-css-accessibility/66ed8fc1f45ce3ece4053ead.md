@@ -149,7 +149,7 @@ img {
 
 ```css
 img {
-  width: max(400px, 50vw);
+  width: max(400px, 20vw);
 }
 ```
 
