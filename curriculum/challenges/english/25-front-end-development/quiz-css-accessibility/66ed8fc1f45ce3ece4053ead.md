@@ -127,7 +127,7 @@ A structure used by screen readers to interpret and interact with the content on
 
 #### --text--
 
-Which of the following code will result a width of at least 400px, and the width gets wider if the viewport is more than 1000px wide?
+Which of the following ensures that an image has a minimum width of `400px`, but becomes wider when the viewport width is greater than `1000px`?
 
 #### --distractors--
 
