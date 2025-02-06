@@ -43,19 +43,19 @@ Which of the following tools allows you to enter background and foreground color
 
 #### --distractors--
 
-TPGi Color Contrast Analyzer.
+TPGi Color Contrast Analyzer
 
 ---
 
-Figma.
+Figma
 
 ---
 
-Canva.
+Canva
 
 #### --answer--
 
-WebAIM's Color Contrast Checker.
+WebAIM's Color Contrast Checker
 
 ### --question--
 
@@ -65,19 +65,19 @@ Which of the following tools allows you to pick background and foreground colors
 
 #### --distractors--
 
-Figma.
+Figma
 
 ---
 
-Canva.
+Canva
 
 ---
 
-WebAIM's Color Contrast Checker.
+WebAIM's Color Contrast Checker
 
 #### --answer--
 
-TPGi Color Contrast Analyzer.
+TPGi Color Contrast Analyzer
 
 ### --question--
 
