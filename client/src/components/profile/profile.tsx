@@ -146,7 +146,11 @@ function UserProfile({
           submitNewAbout={submitNewAbout}
         />
       )}
-      <Camper isSessionUser={isSessionUser} setIsEditing={setIsEditing} />
+      <Camper
+        username={username}
+        isSessionUser={isSessionUser}
+        setIsEditing={setIsEditing}
+      />
       {showPoints ? <Stats points={points} calendar={calendar} /> : null}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showPortfolio ? (

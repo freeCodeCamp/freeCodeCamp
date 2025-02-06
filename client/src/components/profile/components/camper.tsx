@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { FullWidthRow } from '../../helpers';
 import './camper.css';
@@ -23,21 +22,14 @@ type CamperProps = {
   privacy: ProfileUI;
 };
 
-const mapStateToProps = (state: Record<string, unknown>, props: CamperProps) =>
-  createSelector(
-    userTopContributorSelector,
-    isDonatingSelector,
-    userPrivacySelector(props.username.toLowerCase()),
-    (
-      yearsTopContributor: string[],
-      isDonating: boolean,
-      privacy: ProfileUI
-    ) => ({
-      yearsTopContributor,
-      isDonating,
-      privacy: privacy
-    })
-  )(state);
+const mapStateToProps = (
+  state: Record<string, unknown>,
+  props: CamperProps
+) => ({
+  yearsTopContributor: userTopContributorSelector(state) as string[],
+  privacy: userPrivacySelector(props.username) as unknown as ProfileUI,
+  isDonating: isDonatingSelector(state) as boolean
+});
 
 function Camper({
   yearsTopContributor,
