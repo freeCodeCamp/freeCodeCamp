@@ -9,7 +9,7 @@ enum SuperBlockI18nKeys {
 // the key above is used to create the last word for superBlock titles used on
 // the map and window. e.g. 'Certification' in Responsive Web Design
 // Certification
-export const superBlocksWithoutLastWord = [
+const superBlocksWithoutLastWord = [
   SuperBlocks.RespWebDesign,
   SuperBlocks.CodingInterviewPrep,
   SuperBlocks.TheOdinProject,
