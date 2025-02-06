@@ -24,12 +24,13 @@ type CamperProps = {
 
 const mapStateToProps = (state: unknown, props: { username: string }) => ({
   yearsTopContributor: userTopContributorSelector(state) as string[],
-  privacy: userPrivacySelector(props.username) as unknown as ProfileUI,
+  privacy: userPrivacySelector(props.username)(state) as unknown as ProfileUI,
   isDonating: isDonatingSelector(state) as boolean
 });
 
 function Camper({
   yearsTopContributor,
+  username,
   isDonating,
   isSessionUser,
   setIsEditing,
@@ -43,7 +44,11 @@ function Camper({
   return (
     <>
       <div className='bio-container'>
-        <Bio isSessionUser={isSessionUser} setIsEditing={setIsEditing} />
+        <Bio
+          username={username}
+          isSessionUser={isSessionUser}
+          setIsEditing={setIsEditing}
+        />
       </div>
       {(isDonating || isTopContributor) && (
         <FullWidthRow>

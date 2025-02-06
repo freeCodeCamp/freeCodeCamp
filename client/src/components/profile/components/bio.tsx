@@ -33,6 +33,7 @@ export type SocialProps = {
 type BioProps = {
   yearsTopContributor: string[];
   isDonating: boolean;
+  username: string;
   socials: SocialProps;
   isSessionUser: boolean;
   privacy: ProfileUI;
@@ -41,14 +42,15 @@ type BioProps = {
 
 const mapStateToProps = (state: unknown, props: { username: string }) => ({
   yearsTopContributor: userTopContributorSelector(state) as string[],
-  privacy: userPrivacySelector(props.username) as unknown as ProfileUI,
-  socail: userSocialSelector(props.username) as unknown as SocialProps,
+  privacy: userPrivacySelector(props.username)(state) as unknown as ProfileUI,
+  socials: userSocialSelector(props.username)(state) as unknown as SocialProps,
   isDonating: isDonatingSelector(state) as boolean
 });
 
 const Bio = ({
   yearsTopContributor,
   isDonating,
+  username,
   socials,
   isSessionUser,
   setIsEditing,
@@ -70,8 +72,7 @@ const Bio = ({
     };
   };
 
-  const { picture, username, name, about, joinDate, location } =
-    handlePrivacy(socials);
+  const { picture, name, about, joinDate, location } = handlePrivacy(socials);
 
   const isTopContributor =
     yearsTopContributor && yearsTopContributor.length > 0;

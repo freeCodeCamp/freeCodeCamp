@@ -28,7 +28,7 @@ interface IconProps {
 }
 
 const mapStateToProps = (state: unknown, props: { username: string }) => ({
-  socials: userSocialSelector(props.username) as unknown as SocialProps
+  socials: userSocialSelector(props.username)(state) as unknown as SocialProps
 });
 
 function LinkedInIcon({ href, username }: IconProps): JSX.Element {
