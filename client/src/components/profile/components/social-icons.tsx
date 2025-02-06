@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Row } from '@freecodecamp/ui';
-import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import './social-icons.css';
 import { userSocialSelector } from '../../../redux/selectors';
@@ -28,12 +27,9 @@ interface IconProps {
   username: string;
 }
 
-const mapStateToProps = createSelector(
-  userSocialSelector,
-  (socials: SocialProps) => ({
-    socials
-  })
-);
+const mapStateToProps = (state: unknown, props: { username: string }) => ({
+  socials: userSocialSelector(props.username) as unknown as SocialProps
+});
 
 function LinkedInIcon({ href, username }: IconProps): JSX.Element {
   const { t } = useTranslation();
@@ -92,9 +88,11 @@ function TwitterIcon({ href, username }: IconProps): JSX.Element {
 }
 
 function SocialIcons({
-  socials: { githubProfile, linkedin, twitter, username, website }
+  username,
+  socials: { githubProfile, linkedin, twitter, website }
 }: {
   socials: SocialProps;
+  username: string;
 }): JSX.Element | null {
   const show = linkedin || githubProfile || website || twitter;
   if (!show) {

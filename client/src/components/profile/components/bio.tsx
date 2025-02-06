@@ -7,7 +7,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { Button, Spacer } from '@freecodecamp/ui';
-import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { AvatarRenderer, FullWidthRow } from '../../helpers';
 import {
@@ -40,23 +39,12 @@ type BioProps = {
   setIsEditing: (isEditing: boolean) => void;
 };
 
-const mapStateToProps = createSelector(
-  userTopContributorSelector,
-  isDonatingSelector,
-  userSocialSelector,
-  userPrivacySelector,
-  (
-    yearsTopContributor: string[],
-    isDonating: boolean,
-    socials: SocialProps,
-    privacy: ProfileUI
-  ) => ({
-    yearsTopContributor,
-    isDonating,
-    socials,
-    privacy
-  })
-);
+const mapStateToProps = (state: unknown, props: { username: string }) => ({
+  yearsTopContributor: userTopContributorSelector(state) as string[],
+  privacy: userPrivacySelector(props.username) as unknown as ProfileUI,
+  socail: userSocialSelector(props.username) as unknown as SocialProps,
+  isDonating: isDonatingSelector(state) as boolean
+});
 
 const Bio = ({
   yearsTopContributor,
@@ -131,7 +119,7 @@ const Bio = ({
             </div>
           )}
         </div>
-        <SocialIcons />
+        <SocialIcons username={username} />
       </section>
     </FullWidthRow>
   );
