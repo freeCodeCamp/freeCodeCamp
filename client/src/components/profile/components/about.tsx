@@ -9,28 +9,28 @@ import {
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
 
 import { FullWidthRow } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
 import SectionHeader from '../../settings/section-header';
-import type { CamperProps } from './camper';
+import { userSocialSelector } from '../../../redux/selectors';
+import { SocialProps } from './bio';
 
-type AboutProps = Omit<
-  CamperProps,
-  | 'linkedin'
-  | 'joinDate'
-  | 'isDonating'
-  | 'githubProfile'
-  | 'twitter'
-  | 'website'
-  | 'yearsTopContributor'
-> & {
+type AboutProps = {
+  socials: SocialProps;
   t: TFunction;
   submitNewAbout: (formValues: FormValues) => void;
   setIsEditing: (isEditing: boolean) => void;
 };
 
-type FormValues = Pick<AboutProps, 'name' | 'location' | 'picture' | 'about'>;
+type FormValues = {
+  name: string;
+  location: string;
+  picture: string;
+  about: string;
+};
 
 const ShowImageValidationWarning = ({
   alertContent
@@ -44,15 +44,21 @@ const ShowImageValidationWarning = ({
   );
 };
 
+const mapStateToProps = createSelector(
+  userSocialSelector,
+  (socials: SocialProps) => ({
+    socials
+  })
+);
+
 const AboutSettings = ({
   t,
-  name = '',
-  location = '',
-  picture = '',
-  about = '',
   submitNewAbout,
-  setIsEditing
+  setIsEditing,
+  socials
 }: AboutProps) => {
+  const { name, location, picture, about } = socials;
+
   const [formValues, setFormValues] = useState<FormValues>({
     name,
     location,
@@ -235,4 +241,4 @@ const AboutSettings = ({
 
 AboutSettings.displayName = 'AboutSettings';
 
-export default withTranslation()(AboutSettings);
+export default connect(mapStateToProps)(withTranslation()(AboutSettings));

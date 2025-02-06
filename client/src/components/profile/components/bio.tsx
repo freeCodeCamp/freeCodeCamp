@@ -20,7 +20,7 @@ import { ProfileUI } from '../../../redux/prop-types';
 import { parseDate } from './utils';
 import SocialIcons from './social-icons';
 
-type SocialProps = {
+export type SocialProps = {
   githubProfile: string;
   website: string;
   location: string;
@@ -53,12 +53,8 @@ const mapStateToProps = createSelector(
   ) => ({
     yearsTopContributor,
     isDonating,
-    socials: {
-      ...socials
-    },
-    privacy: {
-      ...privacy
-    }
+    socials,
+    privacy
   })
 );
 

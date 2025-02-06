@@ -53,24 +53,13 @@ const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
 const EditModal = ({
   user,
   isEditing,
-  isSessionUser,
   setIsEditing,
   updateMyPortfolio,
   updateMySocials,
   submitNewAbout
 }: EditModalProps) => {
-  const {
-    portfolio,
-    username,
-    about,
-    location,
-    name,
-    picture,
-    githubProfile,
-    linkedin,
-    twitter,
-    website
-  } = user;
+  const { portfolio, username, githubProfile, linkedin, twitter, website } =
+    user;
   const { t } = useTranslation();
   return (
     <Modal onClose={() => setIsEditing(false)} open={isEditing} size='large'>
@@ -78,16 +67,7 @@ const EditModal = ({
       <Modal.Body alignment='left'>
         <UsernameSettings username={username} setIsEditing={setIsEditing} />
         <Spacer size='m' />
-        <About
-          about={about}
-          location={location}
-          name={name}
-          picture={picture}
-          username={username}
-          submitNewAbout={submitNewAbout}
-          setIsEditing={setIsEditing}
-          isSessionUser={isSessionUser}
-        />
+        <About submitNewAbout={submitNewAbout} setIsEditing={setIsEditing} />
         <Spacer size='m' />
         <Internet
           githubProfile={githubProfile}

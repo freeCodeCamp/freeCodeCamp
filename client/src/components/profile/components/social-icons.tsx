@@ -31,9 +31,7 @@ interface IconProps {
 const mapStateToProps = createSelector(
   userSocialSelector,
   (socials: SocialProps) => ({
-    socials: {
-      ...socials
-    }
+    socials
   })
 );
 
