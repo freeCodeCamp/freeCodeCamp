@@ -33,14 +33,17 @@ Change the `x` attribute callback function so it returns the index times 30.
 The first `rect` should have an `x` value of `0`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('rect')[0].getAttribute('x'), '0');
+assert.strictEqual(
+  document.querySelectorAll('rect')[0]?.getAttribute('x'),
+  '0'
+);
 ```
 
 The second `rect` should have an `x` value of `30`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[1].getAttribute('x'),
+  document.querySelectorAll('rect')[1]?.getAttribute('x'),
   '30'
 );
 ```
@@ -49,7 +52,7 @@ The third `rect` should have an `x` value of `60`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[2].getAttribute('x'),
+  document.querySelectorAll('rect')[2]?.getAttribute('x'),
   '60'
 );
 ```
@@ -58,7 +61,7 @@ The fourth `rect` should have an `x` value of `90`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[3].getAttribute('x'),
+  document.querySelectorAll('rect')[3]?.getAttribute('x'),
   '90'
 );
 ```
@@ -67,7 +70,7 @@ The fifth `rect` should have an `x` value of `120`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[4].getAttribute('x'),
+  document.querySelectorAll('rect')[4]?.getAttribute('x'),
   '120'
 );
 ```
@@ -76,7 +79,7 @@ The sixth `rect` should have an `x` value of `150`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[5].getAttribute('x'),
+  document.querySelectorAll('rect')[5]?.getAttribute('x'),
   '150'
 );
 ```
@@ -85,7 +88,7 @@ The seventh `rect` should have an `x` value of `180`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[6].getAttribute('x'),
+  document.querySelectorAll('rect')[6]?.getAttribute('x'),
   '180'
 );
 ```
@@ -94,7 +97,7 @@ The eighth `rect` should have an `x` value of `210`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[7].getAttribute('x'),
+  document.querySelectorAll('rect')[7]?.getAttribute('x'),
   '210'
 );
 ```
@@ -103,7 +106,7 @@ The ninth `rect` should have an `x` value of `240`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[8].getAttribute('x'),
+  document.querySelectorAll('rect')[8]?.getAttribute('x'),
   '240'
 );
 ```

@@ -45,7 +45,7 @@ The y-axis `g` element should have a `transform` attribute to translate the axis
 
 ```js
 const yAxis = document.querySelectorAll('g')[10];
-assert.match(yAxis.getAttribute('transform'), /translate\(60\s*?,\s*?0\)/g);
+assert.match(yAxis?.getAttribute('transform'), /translate\(60\s*?,\s*?0\)/g);
 ```
 
 Your code should call the `yAxis`.

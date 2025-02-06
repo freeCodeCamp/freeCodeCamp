@@ -32,90 +32,90 @@ The first `circle` element should have a `cx` value of `34`, a `cy` value of `42
 
 ```js
 const circle1 = document.querySelector('circle');
-assert.strictEqual(circle1.getAttribute('cx'), '34');
-assert.strictEqual(circle1.getAttribute('cy'), '422');
-assert.strictEqual(circle1.getAttribute('r'), '5');
+assert.strictEqual(circle1?.getAttribute('cx'), '34');
+assert.strictEqual(circle1?.getAttribute('cy'), '422');
+assert.strictEqual(circle1?.getAttribute('r'), '5');
 ```
 
 The second `circle` element should have a `cx` value of `109`, a `cy` value of `220`, and an `r` value of `5`.
 
 ```js
 const circle2 = document.querySelectorAll('circle')[1];
-assert.strictEqual(circle2.getAttribute('cx'), '109');
-assert.strictEqual(circle2.getAttribute('cy'), '220');
-assert.strictEqual(circle2.getAttribute('r'), '5');
+assert.strictEqual(circle2?.getAttribute('cx'), '109');
+assert.strictEqual(circle2?.getAttribute('cy'), '220');
+assert.strictEqual(circle2?.getAttribute('r'), '5');
 ```
 
 The third `circle` element should have a `cx` value of `310`, a `cy` value of `380`, and an `r` value of `5`.
 
 ```js
 const circle3 = document.querySelectorAll('circle')[2];
-assert.strictEqual(circle3.getAttribute('cx'), '310');
-assert.strictEqual(circle3.getAttribute('cy'), '380');
-assert.strictEqual(circle3.getAttribute('r'), '5');
+assert.strictEqual(circle3?.getAttribute('cx'), '310');
+assert.strictEqual(circle3?.getAttribute('cy'), '380');
+assert.strictEqual(circle3?.getAttribute('r'), '5');
 ```
 
 The fourth `circle` element should have a `cx` value of `79`, a `cy` value of `89`, and an `r` value of `5`.
 
 ```js
 const circle4 = document.querySelectorAll('circle')[3];
-assert.strictEqual(circle4.getAttribute('cx'), '79');
-assert.strictEqual(circle4.getAttribute('cy'), '89');
-assert.strictEqual(circle4.getAttribute('r'), '5');
+assert.strictEqual(circle4?.getAttribute('cx'), '79');
+assert.strictEqual(circle4?.getAttribute('cy'), '89');
+assert.strictEqual(circle4?.getAttribute('r'), '5');
 ```
 
 The fifth `circle` element should have a `cx` value of `420`, a `cy` value of `280`, and an `r` value of `5`.
 
 ```js
 const circle5 = document.querySelectorAll('circle')[4];
-assert.strictEqual(circle5.getAttribute('cx'), '420');
-assert.strictEqual(circle5.getAttribute('cy'), '280');
-assert.strictEqual(circle5.getAttribute('r'), '5');
+assert.strictEqual(circle5?.getAttribute('cx'), '420');
+assert.strictEqual(circle5?.getAttribute('cy'), '280');
+assert.strictEqual(circle5?.getAttribute('r'), '5');
 ```
 
 The sixth `circle` element should have a `cx` value of `233`, a `cy` value of `355`, and an `r` value of `5`.
 
 ```js
 const circle6 = document.querySelectorAll('circle')[5];
-assert.strictEqual(circle6.getAttribute('cx'), '233');
-assert.strictEqual(circle6.getAttribute('cy'), '355');
-assert.strictEqual(circle6.getAttribute('r'), '5');
+assert.strictEqual(circle6?.getAttribute('cx'), '233');
+assert.strictEqual(circle6?.getAttribute('cy'), '355');
+assert.strictEqual(circle6?.getAttribute('r'), '5');
 ```
 
 The seventh `circle` element should have a `cx` value of `333`, a `cy` value of `404`, and an `r` value of `5`.
 
 ```js
 const circle7 = document.querySelectorAll('circle')[6];
-assert.strictEqual(circle7.getAttribute('cx'), '333');
-assert.strictEqual(circle7.getAttribute('cy'), '404');
-assert.strictEqual(circle7.getAttribute('r'), '5');
+assert.strictEqual(circle7?.getAttribute('cx'), '333');
+assert.strictEqual(circle7?.getAttribute('cy'), '404');
+assert.strictEqual(circle7?.getAttribute('r'), '5');
 ```
 
 The eighth `circle` element should have a `cx` value of `222`, a `cy` value of `167`, and an `r` value of `5`.
 
 ```js
 const circle8 = document.querySelectorAll('circle')[7];
-assert.strictEqual(circle8.getAttribute('cx'), '222');
-assert.strictEqual(circle8.getAttribute('cy'), '167');
-assert.strictEqual(circle8.getAttribute('r'), '5');
+assert.strictEqual(circle8?.getAttribute('cx'), '222');
+assert.strictEqual(circle8?.getAttribute('cy'), '167');
+assert.strictEqual(circle8?.getAttribute('r'), '5');
 ```
 
 The ninth `circle` element should have a `cx` value of `78`, a `cy` value of `180`, and an `r` value of `5`.
 
 ```js
 const circle9 = document.querySelectorAll('circle')[8];
-assert.strictEqual(circle9.getAttribute('cx'), '78');
-assert.strictEqual(circle9.getAttribute('cy'), '180');
-assert.strictEqual(circle9.getAttribute('r'), '5');
+assert.strictEqual(circle9?.getAttribute('cx'), '78');
+assert.strictEqual(circle9?.getAttribute('cy'), '180');
+assert.strictEqual(circle9?.getAttribute('r'), '5');
 ```
 
 The tenth `circle` element should have a `cx` value of `21`, a `cy` value of `377`, and an `r` value of `5`.
 
 ```js
 const circle10 = document.querySelectorAll('circle')[9];
-assert.strictEqual(circle10.getAttribute('cx'), '21');
-assert.strictEqual(circle10.getAttribute('cy'), '377');
-assert.strictEqual(circle10.getAttribute('r'), '5');
+assert.strictEqual(circle10?.getAttribute('cx'), '21');
+assert.strictEqual(circle10?.getAttribute('cy'), '377');
+assert.strictEqual(circle10?.getAttribute('r'), '5');
 ```
 
 # --seed--
@@ -153,7 +153,6 @@ assert.strictEqual(circle10.getAttribute('r'), '5');
 
 
     // Add your code above this line
-
   </script>
 </body>
 ```

@@ -52,7 +52,7 @@ The text in the `h2` elements should say `New Title`. The capitalization and spa
 ```js
 const h2Elements = document.querySelectorAll('h2');
 for (let i = 0; i < h2Elements.length; i++) {
-  assert.match(h2Elements[i].textContent, /New Title/g);
+  assert.match(h2Elements[i]?.textContent, /New Title/g);
 }
 ```
 

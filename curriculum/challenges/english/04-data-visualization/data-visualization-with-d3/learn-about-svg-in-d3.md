@@ -35,7 +35,7 @@ The `svg` element should have a `width` attribute set to `500` or styled to have
 ```js
 const svg = document.querySelector('svg');
 const width = window.getComputedStyle(svg)['width'];
-assert.isTrue(svg.getAttribute('width') === '500' || width === '500px');
+assert.isTrue(svg?.getAttribute('width') === '500' || width === '500px');
 ```
 
 The `svg` element should have a `height` attribute set to `100` or styled to have a height of `100px`.
@@ -44,7 +44,7 @@ The `svg` element should have a `height` attribute set to `100` or styled to hav
 const svg = document.querySelector('svg');
 const height = window.getComputedStyle(svg)['height'];
 
-assert.isTrue(svg.getAttribute('height') === '100' || height === '100px');
+assert.isTrue(svg?.getAttribute('height') === '100' || height === '100px');
 ```
 
 # --seed--

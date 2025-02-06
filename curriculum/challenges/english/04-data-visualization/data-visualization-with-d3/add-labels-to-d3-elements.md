@@ -25,9 +25,9 @@ The code in the editor already binds the data to each new `text` element. First,
 The first `text` element should have a label of `12` and a `y` value of `61`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('text')[0].textContent, '12');
+assert.strictEqual(document.querySelectorAll('text')[0]?.textContent, '12');
 assert.strictEqual(
-  document.querySelectorAll('text')[0].getAttribute('y'),
+  document.querySelectorAll('text')[0]?.getAttribute('y'),
   '61'
 );
 ```
@@ -35,16 +35,19 @@ assert.strictEqual(
 The second `text` element should have a label of `31` and a `y` value of `4`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('text')[1].textContent, '31');
-assert.strictEqual(document.querySelectorAll('text')[1].getAttribute('y'), '4');
+assert.strictEqual(document.querySelectorAll('text')[1]?.textContent, '31');
+assert.strictEqual(
+  document.querySelectorAll('text')[1]?.getAttribute('y'),
+  '4'
+);
 ```
 
 The third `text` element should have a label of `22` and a `y` value of `31`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('text')[2].textContent, '22');
+assert.strictEqual(document.querySelectorAll('text')[2]?.textContent, '22');
 assert.strictEqual(
-  document.querySelectorAll('text')[2].getAttribute('y'),
+  document.querySelectorAll('text')[2]?.getAttribute('y'),
   '31'
 );
 ```
@@ -52,9 +55,9 @@ assert.strictEqual(
 The fourth `text` element should have a label of `17` and a `y` value of `46`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('text')[3].textContent, '17');
+assert.strictEqual(document.querySelectorAll('text')[3]?.textContent, '17');
 assert.strictEqual(
-  document.querySelectorAll('text')[3].getAttribute('y'),
+  document.querySelectorAll('text')[3]?.getAttribute('y'),
   '46'
 );
 ```
@@ -62,9 +65,9 @@ assert.strictEqual(
 The fifth `text` element should have a label of `25` and a `y` value of `22`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('text')[4].textContent, '25');
+assert.strictEqual(document.querySelectorAll('text')[4]?.textContent, '25');
 assert.strictEqual(
-  document.querySelectorAll('text')[4].getAttribute('y'),
+  document.querySelectorAll('text')[4]?.getAttribute('y'),
   '22'
 );
 ```
@@ -72,9 +75,9 @@ assert.strictEqual(
 The sixth `text` element should have a label of `18` and a `y` value of `43`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('text')[5].textContent, '18');
+assert.strictEqual(document.querySelectorAll('text')[5]?.textContent, '18');
 assert.strictEqual(
-  document.querySelectorAll('text')[5].getAttribute('y'),
+  document.querySelectorAll('text')[5]?.getAttribute('y'),
   '43'
 );
 ```
@@ -82,9 +85,9 @@ assert.strictEqual(
 The seventh `text` element should have a label of `29` and a `y` value of `10`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('text')[6].textContent, '29');
+assert.strictEqual(document.querySelectorAll('text')[6]?.textContent, '29');
 assert.strictEqual(
-  document.querySelectorAll('text')[6].getAttribute('y'),
+  document.querySelectorAll('text')[6]?.getAttribute('y'),
   '10'
 );
 ```
@@ -92,9 +95,9 @@ assert.strictEqual(
 The eighth `text` element should have a label of `14` and a `y` value of `55`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('text')[7].textContent, '14');
+assert.strictEqual(document.querySelectorAll('text')[7]?.textContent, '14');
 assert.strictEqual(
-  document.querySelectorAll('text')[7].getAttribute('y'),
+  document.querySelectorAll('text')[7]?.getAttribute('y'),
   '55'
 );
 ```
@@ -102,9 +105,9 @@ assert.strictEqual(
 The ninth `text` element should have a label of `9` and a `y` value of `70`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('text')[8].textContent, '9');
+assert.strictEqual(document.querySelectorAll('text')[8]?.textContent, '9');
 assert.strictEqual(
-  document.querySelectorAll('text')[8].getAttribute('y'),
+  document.querySelectorAll('text')[8]?.getAttribute('y'),
   '70'
 );
 ```

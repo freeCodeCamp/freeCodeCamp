@@ -31,55 +31,55 @@ Change the `text()` method so that each `h2` element displays the corresponding 
 The first `h2` should have the text `12 USD`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('h2')[0].textContent, '12 USD');
+assert.strictEqual(document.querySelectorAll('h2')[0]?.textContent, '12 USD');
 ```
 
 The second `h2` should have the text `31 USD`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('h2')[1].textContent, '31 USD');
+assert.strictEqual(document.querySelectorAll('h2')[1]?.textContent, '31 USD');
 ```
 
 The third `h2` should have the text `22 USD`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('h2')[2].textContent, '22 USD');
+assert.strictEqual(document.querySelectorAll('h2')[2]?.textContent, '22 USD');
 ```
 
 The fourth `h2` should have the text `17 USD`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('h2')[3].textContent, '17 USD');
+assert.strictEqual(document.querySelectorAll('h2')[3]?.textContent, '17 USD');
 ```
 
 The fifth `h2` should have the text `25 USD`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('h2')[4].textContent, '25 USD');
+assert.strictEqual(document.querySelectorAll('h2')[4]?.textContent, '25 USD');
 ```
 
 The sixth `h2` should have the text `18 USD`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('h2')[5].textContent, '18 USD');
+assert.strictEqual(document.querySelectorAll('h2')[5]?.textContent, '18 USD');
 ```
 
 The seventh `h2` should have the text `29 USD`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('h2')[6].textContent, '29 USD');
+assert.strictEqual(document.querySelectorAll('h2')[6]?.textContent, '29 USD');
 ```
 
 The eighth `h2` should have the text `14 USD`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('h2')[7].textContent, '14 USD');
+assert.strictEqual(document.querySelectorAll('h2')[7]?.textContent, '14 USD');
 ```
 
 The ninth `h2` should have the text `9 USD`.
 
 ```js
-assert.strictEqual(document.querySelectorAll('h2')[8].textContent, '9 USD');
+assert.strictEqual(document.querySelectorAll('h2')[8]?.textContent, '9 USD');
 ```
 
 # --seed--

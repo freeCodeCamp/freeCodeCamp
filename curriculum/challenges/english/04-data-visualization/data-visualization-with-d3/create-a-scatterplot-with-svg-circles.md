@@ -56,11 +56,11 @@ assert.lengthOf(document.querySelectorAll('circle'), 10);
       .attr('height', h);
 
     svg.selectAll('circle');
-  // Add your code below this line
+    // Add your code below this line
 
 
 
-  // Add your code above this line
+    // Add your code above this line
   </script>
 </body>
 ```

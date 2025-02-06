@@ -28,7 +28,7 @@ The first `rect` should have a `height` of `36`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[0].getAttribute('height'),
+  document.querySelectorAll('rect')[0]?.getAttribute('height'),
   '36'
 );
 ```
@@ -37,7 +37,7 @@ The second `rect` should have a `height` of `93`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[1].getAttribute('height'),
+  document.querySelectorAll('rect')[1]?.getAttribute('height'),
   '93'
 );
 ```
@@ -46,7 +46,7 @@ The third `rect` should have a `height` of `66`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[2].getAttribute('height'),
+  document.querySelectorAll('rect')[2]?.getAttribute('height'),
   '66'
 );
 ```
@@ -55,7 +55,7 @@ The fourth `rect` should have a `height` of `51`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[3].getAttribute('height'),
+  document.querySelectorAll('rect')[3]?.getAttribute('height'),
   '51'
 );
 ```
@@ -64,7 +64,7 @@ The fifth `rect` should have a `height` of `75`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[4].getAttribute('height'),
+  document.querySelectorAll('rect')[4]?.getAttribute('height'),
   '75'
 );
 ```
@@ -73,7 +73,7 @@ The sixth `rect` should have a `height` of `54`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[5].getAttribute('height'),
+  document.querySelectorAll('rect')[5]?.getAttribute('height'),
   '54'
 );
 ```
@@ -82,7 +82,7 @@ The seventh `rect` should have a `height` of `87`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[6].getAttribute('height'),
+  document.querySelectorAll('rect')[6]?.getAttribute('height'),
   '87'
 );
 ```
@@ -91,7 +91,7 @@ The eighth `rect` should have a `height` of `42`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[7].getAttribute('height'),
+  document.querySelectorAll('rect')[7]?.getAttribute('height'),
   '42'
 );
 ```
@@ -100,7 +100,7 @@ The ninth `rect` should have a `height` of `27`.
 
 ```js
 assert.strictEqual(
-  document.querySelectorAll('rect')[8].getAttribute('height'),
+  document.querySelectorAll('rect')[8]?.getAttribute('height'),
   '27'
 );
 ```

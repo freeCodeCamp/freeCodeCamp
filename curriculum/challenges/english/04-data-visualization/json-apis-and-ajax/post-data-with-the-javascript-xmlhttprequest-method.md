@@ -71,10 +71,9 @@ assert.match(code, /\.onreadystatechange\s*?=/g);
 Your code should get the element with class `message` and change its `textContent` to `userName loves cats`
 
 ```js
-assert(
-  code.match(
-    /document\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\.textContent\s*?=\s*?.+?\.userName\s*?\+\s*?.+?\.suffix/g
-  )
+assert.match(
+  code,
+  /document\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\.textContent\s*?=\s*?.+?\.userName\s*?\+\s*?.+?\.suffix/g
 );
 ```
 

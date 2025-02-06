@@ -21,7 +21,7 @@ Use the `attr()` method to add a class of `bar` to all the `rect` elements. This
 Your `rect` elements should have a class of `bar`.
 
 ```js
-assert.isTrue(document.querySelector('rect').classList.contains('bar'));
+assert.isTrue(document.querySelector('rect')?.classList.contains('bar'));
 ```
 
 # --seed--

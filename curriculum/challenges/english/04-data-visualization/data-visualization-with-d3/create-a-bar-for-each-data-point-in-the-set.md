@@ -70,8 +70,6 @@ assert.match(code, /\.append/g);
       .selectAll('rect')
       // Add your code below this line
 
-
-
       // Add your code above this line
       .attr('x', 0)
       .attr('y', 0)

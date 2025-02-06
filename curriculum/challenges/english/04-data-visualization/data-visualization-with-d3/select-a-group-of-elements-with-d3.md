@@ -28,7 +28,7 @@ There should be 3 `li` elements on the page, and the text in each one should say
 const listItems = document.querySelectorAll('li');
 assert.lengthOf(listItems, 3);
 for (let i = 0; i < listItems.length; i++) {
-  assert.match(listItems[i].textContent, /list item/g);
+  assert.match(listItems[i]?.textContent, /list item/g);
 }
 ```
 

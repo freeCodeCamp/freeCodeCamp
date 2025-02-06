@@ -27,7 +27,7 @@ Add the `attr()` method to the code in the editor and put a class of `bar` on th
 Your `div` elements should have a class of `bar`.
 
 ```js
-assert.isTrue(document.querySelector('div').classList.contains('bar'));
+assert.isTrue(document.querySelector('div')?.classList.contains('bar'));
 ```
 
 Your code should use the `attr()` method.
