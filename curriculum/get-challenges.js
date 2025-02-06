@@ -4,6 +4,7 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
+const logger = require('your-logger-module');
 
 const { curriculum: curriculumLangs } =
   require('../shared/config/i18n').availableLangs;
@@ -179,6 +180,7 @@ const walk = (root, target, options, cb) => {
 exports.getChallengesForLang = async function getChallengesForLang(lang) {
   const invalidLang = !curriculumLangs.includes(lang);
   if (invalidLang)
+    logger.error(`Invalid language requested: ${lang}`);
     throw Error(`${lang} is not a accepted language.
 Accepted languages are ${curriculumLangs.join(', ')}`);
   // english determines the shape of the curriculum, all other languages mirror
