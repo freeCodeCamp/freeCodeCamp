@@ -22,7 +22,7 @@ p {
 }
 ```
 
-In this example, we’re using the named color `red` to style the text in a paragraph.
+In this example, we're using the named color `red` to style the text in a paragraph.
 
 Named colors in CSS are a collection of 140 standard color names like `red`, `blue`, `yellow`, `aqua`, `fuchsia`, `black`, and so on. These names are simple to use and make your code more readable, and they are self-descriptive. 
 
