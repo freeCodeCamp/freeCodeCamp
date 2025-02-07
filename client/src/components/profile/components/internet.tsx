@@ -1,6 +1,6 @@
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
@@ -55,23 +55,6 @@ const InternetSettings = ({
     twitter,
     website
   });
-  const [originalValues, setOriginalValues] = useState<Socials>({
-    githubProfile,
-    linkedin,
-    twitter,
-    website
-  });
-
-  useEffect(() => {
-    if (
-      githubProfile !== originalValues.githubProfile ||
-      linkedin !== originalValues.linkedin ||
-      twitter !== originalValues.twitter ||
-      website !== originalValues.website
-    ) {
-      setOriginalValues({ githubProfile, linkedin, twitter, website });
-    }
-  }, [githubProfile, linkedin, twitter, website, originalValues]);
 
   const getValidationStateFor = (maybeURl = ''): URLValidation => {
     if (!maybeURl || !maybeUrlRE.test(maybeURl)) {
@@ -102,6 +85,8 @@ const InternetSettings = ({
     };
 
   const isFormPristine = () => {
+    const originalValues = { githubProfile, linkedin, twitter, website };
+
     return (Object.keys(originalValues) as Array<keyof Socials>).every(
       key => originalValues[key] === formValues[key]
     );
@@ -120,23 +105,6 @@ const InternetSettings = ({
     }
     setIsEditing(false);
   };
-
-  const renderCheck = (
-    url: string,
-    validation: FormGroupProps['validationState'],
-    dataPlaywrightTestLabel: string
-  ) =>
-    url && validation === 'success' ? (
-      <FormControl.Feedback>
-        <span>
-          <FontAwesomeIcon
-            data-playwright-test-label={dataPlaywrightTestLabel}
-            icon={faCheck}
-            size='1x'
-          />
-        </span>
-      </FormControl.Feedback>
-    ) : null;
 
   const {
     state: githubProfileValidation,
@@ -173,16 +141,16 @@ const InternetSettings = ({
               <FormControl
                 data-playwright-test-label='internet-github-input'
                 onChange={createHandleChange('githubProfile')}
-                placeholder='https://github.com/your-handle'
+                placeholder='https://github.com/user-name'
                 type='url'
                 value={formValues.githubProfile}
                 id='internet-github-input'
               />
-              {renderCheck(
-                formValues.githubProfile,
-                githubProfileValidation,
-                'internet-github-check'
-              )}
+              <Check
+                url={formValues.githubProfile}
+                validation={githubProfileValidation}
+                dataPlaywrightTestLabel='internet-github-check'
+              />
               <Info message={githubProfileValidationMessage} />
             </FormGroup>
             <FormGroup
@@ -194,16 +162,16 @@ const InternetSettings = ({
               </ControlLabel>
               <FormControl
                 onChange={createHandleChange('linkedin')}
-                placeholder='https://linkedin.com/in/your-profile'
+                placeholder='https://www.linkedin.com/in/user-name'
                 type='url'
                 value={formValues.linkedin}
                 id='internet-linkedin-input'
               />
-              {renderCheck(
-                formValues.linkedin,
-                linkedinValidation,
-                'internet-linkedin-check'
-              )}
+              <Check
+                url={formValues.linkedin}
+                validation={linkedinValidation}
+                dataPlaywrightTestLabel='internet-linkedin-check'
+              />
               <Info message={linkedinValidationMessage} />
             </FormGroup>
             <FormGroup
@@ -215,16 +183,16 @@ const InternetSettings = ({
               </ControlLabel>
               <FormControl
                 onChange={createHandleChange('twitter')}
-                placeholder='https://twitter.com/your-handle'
+                placeholder='https://twitter.com/user-name'
                 type='url'
                 value={formValues.twitter}
                 id='internet-twitter-input'
               />
-              {renderCheck(
-                formValues.twitter,
-                twitterValidation,
-                'internet-twitter-check'
-              )}
+              <Check
+                url={formValues.twitter}
+                validation={twitterValidation}
+                dataPlaywrightTestLabel='internet-twitter-check'
+              />
               <Info message={twitterValidationMessage} />
             </FormGroup>
             <FormGroup
@@ -236,16 +204,18 @@ const InternetSettings = ({
               </ControlLabel>
               <FormControl
                 onChange={createHandleChange('website')}
-                placeholder='https://your-website.com'
+                placeholder='https://example.com'
                 type='url'
                 value={formValues.website}
                 id='internet-website-input'
               />
-              {renderCheck(
-                formValues.website,
-                websiteValidation,
-                'internet-website-check'
-              )}
+
+              <Check
+                url={formValues.website}
+                validation={websiteValidation}
+                dataPlaywrightTestLabel='internet-website-check'
+              />
+
               <Info message={websiteValidationMessage} />
             </FormGroup>
           </div>
@@ -262,6 +232,27 @@ const InternetSettings = ({
     </>
   );
 };
+
+const Check = ({
+  url,
+  validation,
+  dataPlaywrightTestLabel
+}: {
+  url: string;
+  validation: URLValidation['state'];
+  dataPlaywrightTestLabel: string;
+}) =>
+  url && validation === 'success' ? (
+    <FormControl.Feedback>
+      <span>
+        <FontAwesomeIcon
+          data-playwright-test-label={dataPlaywrightTestLabel}
+          icon={faCheck}
+          size='1x'
+        />
+      </span>
+    </FormControl.Feedback>
+  ) : null;
 
 InternetSettings.displayName = 'InternetSettings';
 
