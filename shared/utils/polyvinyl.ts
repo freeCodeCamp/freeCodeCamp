@@ -18,7 +18,7 @@ export type ChallengeFile = IncompleteChallengeFile & {
   error?: unknown;
   head: string;
   tail: string;
-  seed: string;
+  seed?: string;
   source?: string | null;
   path: string;
   history: string[];
@@ -79,7 +79,6 @@ export function isPoly(poly: unknown): poly is ChallengeFile {
       'fileKey' in poly &&
       'head' in poly &&
       'tail' in poly &&
-      'seed' in poly &&
       'history' in poly
     );
   }
@@ -91,7 +90,6 @@ export function isPoly(poly: unknown): poly is ChallengeFile {
     typeof poly.fileKey === 'string' &&
     typeof poly.head === 'string' &&
     typeof poly.tail === 'string' &&
-    typeof poly.seed === 'string' &&
     Array.isArray(poly.history);
 
   return hasProperties(poly) && hasCorrectTypes(poly);
