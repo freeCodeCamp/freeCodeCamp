@@ -30,7 +30,7 @@ The first label should have text of `34, 78`, an `x` value of `39`, and a `y` va
 
 ```js
 const labelOne = document.querySelector('text');
-assert.strictEqual(labelOne.textContent, '34, 78');
+assert.strictEqual(labelOne?.textContent, '34, 78');
 assert.strictEqual(labelOne?.getAttribute('x'), '39');
 assert.strictEqual(labelOne?.getAttribute('y'), '422');
 ```
@@ -39,7 +39,7 @@ The second label should have text of `109, 280`, an `x` value of `114`, and a `y
 
 ```js
 const labelTwo = document.querySelectorAll('text')[1];
-assert.strictEqual(labelTwo.textContent, '109, 280');
+assert.strictEqual(labelTwo?.textContent, '109, 280');
 assert.strictEqual(labelTwo?.getAttribute('x'), '114');
 assert.strictEqual(labelTwo?.getAttribute('y'), '220');
 ```
@@ -48,7 +48,7 @@ The third label should have text of `310, 120`, an `x` value of `315`, and a `y`
 
 ```js
 const labelThree = document.querySelectorAll('text')[2];
-assert.strictEqual(labelThree.textContent, '310, 120');
+assert.strictEqual(labelThree?.textContent, '310, 120');
 assert.strictEqual(labelThree?.getAttribute('x'), '315');
 assert.strictEqual(labelThree?.getAttribute('y'), '380');
 ```
@@ -57,7 +57,7 @@ The fourth label should have text of `79, 411`, an `x` value of `84`, and a `y` 
 
 ```js
 const labelFour = document.querySelectorAll('text')[3];
-assert.strictEqual(labelFour.textContent, '79, 411');
+assert.strictEqual(labelFour?.textContent, '79, 411');
 assert.strictEqual(labelFour?.getAttribute('x'), '84');
 assert.strictEqual(labelFour?.getAttribute('y'), '89');
 ```
@@ -66,7 +66,7 @@ The fifth label should have text of `420, 220`, an `x` value of `425`, and a `y`
 
 ```js
 const labelFive = document.querySelectorAll('text')[4];
-assert.strictEqual(labelFive.textContent, '420, 220');
+assert.strictEqual(labelFive?.textContent, '420, 220');
 assert.strictEqual(labelFive?.getAttribute('x'), '425');
 assert.strictEqual(labelFive?.getAttribute('y'), '280');
 ```
@@ -75,7 +75,7 @@ The sixth label should have text of `233, 145`, an `x` value of `238`, and a `y`
 
 ```js
 const labelSix = document.querySelectorAll('text')[5];
-assert.strictEqual(labelSix.textContent, '233, 145');
+assert.strictEqual(labelSix?.textContent, '233, 145');
 assert.strictEqual(labelSix?.getAttribute('x'), '238');
 assert.strictEqual(labelSix?.getAttribute('y'), '355');
 ```
@@ -84,7 +84,7 @@ The seventh label should have text of `333, 96`, an `x` value of `338`, and a `y
 
 ```js
 const labelSeven = document.querySelectorAll('text')[6];
-assert.strictEqual(labelSeven.textContent, '333, 96');
+assert.strictEqual(labelSeven?.textContent, '333, 96');
 assert.strictEqual(labelSeven?.getAttribute('x'), '338');
 assert.strictEqual(labelSeven?.getAttribute('y'), '404');
 ```
@@ -93,7 +93,7 @@ The eighth label should have text of `222, 333`, an `x` value of `227`, and a `y
 
 ```js
 const labelEight = document.querySelectorAll('text')[7];
-assert.strictEqual(labelEight.textContent, '222, 333');
+assert.strictEqual(labelEight?.textContent, '222, 333');
 assert.strictEqual(labelEight?.getAttribute('x'), '227');
 assert.strictEqual(labelEight?.getAttribute('y'), '167');
 ```
@@ -102,7 +102,7 @@ The ninth label should have text of `78, 320`, an `x` value of `83`, and a `y` v
 
 ```js
 const labelNine = document.querySelectorAll('text')[8];
-assert.strictEqual(labelNine.textContent, '78, 320');
+assert.strictEqual(labelNine?.textContent, '78, 320');
 assert.strictEqual(labelNine?.getAttribute('x'), '83');
 assert.strictEqual(labelNine?.getAttribute('y'), '180');
 ```
@@ -111,7 +111,7 @@ The tenth label should have text of `21, 123`, an `x` value of `26`, and a `y` v
 
 ```js
 const labelTen = document.querySelectorAll('text')[9];
-assert.strictEqual(labelTen.textContent, '21, 123');
+assert.strictEqual(labelTen?.textContent, '21, 123');
 assert.strictEqual(labelTen?.getAttribute('x'), '26');
 assert.strictEqual(labelTen?.getAttribute('y'), '377');
 ```

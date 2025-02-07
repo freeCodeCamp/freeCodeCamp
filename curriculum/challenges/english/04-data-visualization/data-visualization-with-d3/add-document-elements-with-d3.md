@@ -27,7 +27,7 @@ The `text()` method either sets the text of the selected node, or gets the curre
 Here's an example that selects an unordered list, appends a list item, and adds text:
 
 ```js
-d3.select('ul').append('li').text('Very important item');
+d3.select('ul')?.append('li').text('Very important item');
 ```
 
 D3 allows you to chain several methods together with periods to perform a number of actions in a row.
@@ -42,14 +42,14 @@ The `body` should have one `h1` element.
 
 ```js
 const body = document.querySelector('body');
-const headers = body.querySelectorAll('h1');
+const headers = body?.querySelectorAll('h1');
 assert.lengthOf(headers, 1);
 ```
 
 The `h1` element should have the text `Learning D3` in it.
 
 ```js
-assert.strictEqual(document.querySelector('h1').textContent, 'Learning D3');
+assert.strictEqual(document.querySelector('h1')?.textContent, 'Learning D3');
 ```
 
 Your code should access the `d3` object.

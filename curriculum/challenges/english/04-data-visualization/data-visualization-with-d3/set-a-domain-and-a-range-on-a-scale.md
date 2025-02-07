@@ -65,7 +65,7 @@ assert.deepEqual(scale.range(), [10, 150]);
 The text in the `h2` should be `-102`.
 
 ```js
-assert.strictEqual(document.querySelector('h2').textContent, '-102');
+assert.strictEqual(document.querySelector('h2')?.textContent, '-102');
 ```
 
 # --seed--

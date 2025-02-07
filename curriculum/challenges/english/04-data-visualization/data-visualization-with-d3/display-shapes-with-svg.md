@@ -33,14 +33,14 @@ assert.lengthOf(document.querySelectorAll('rect'), 1);
 The `rect` element should have a `width` attribute set to `25`.
 
 ```js
-assert.strictEqual(document.querySelector('rect').getAttribute('width'), '25');
+assert.strictEqual(document.querySelector('rect')?.getAttribute('width'), '25');
 ```
 
 The `rect` element should have a `height` attribute set to `100`.
 
 ```js
 assert.strictEqual(
-  document.querySelector('rect').getAttribute('height'),
+  document.querySelector('rect')?.getAttribute('height'),
   '100'
 );
 ```
@@ -48,13 +48,13 @@ assert.strictEqual(
 The `rect` element should have an `x` attribute set to `0`.
 
 ```js
-assert.strictEqual(document.querySelector('rect').getAttribute('x'), '0');
+assert.strictEqual(document.querySelector('rect')?.getAttribute('x'), '0');
 ```
 
 The `rect` element should have a `y` attribute set to `0`.
 
 ```js
-assert.strictEqual(document.querySelector('rect').getAttribute('y'), '0');
+assert.strictEqual(document.querySelector('rect')?.getAttribute('y'), '0');
 ```
 
 # --seed--

@@ -46,7 +46,7 @@ The text in the `h2` should be `8`.
 
 ```js
 assert.strictEqual(output, 8);
-assert.strictEqual(document.querySelector('h2').textContent, '8');
+assert.strictEqual(document.querySelector('h2')?.textContent, '8');
 ```
 
 Your code should use the `max()` method.

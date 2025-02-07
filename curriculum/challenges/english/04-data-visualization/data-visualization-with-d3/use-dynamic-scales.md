@@ -53,7 +53,7 @@ The text in the `h2` should be `30`.
 
 ```js
 assert.strictEqual(output, 30);
-assert.strictEqual(document.querySelector('h2').textContent, '30');
+assert.strictEqual(document.querySelector('h2')?.textContent, '30');
 ```
 
 The `domain()` of yScale should be equivalent to `[0, 411]`.

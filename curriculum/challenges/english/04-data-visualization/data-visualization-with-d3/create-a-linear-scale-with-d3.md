@@ -33,7 +33,7 @@ Change the `scale` variable to create a linear scale. Then set the `output` vari
 The text in the `h2` should be `50`.
 
 ```js
-assert.strictEqual(document.querySelector('h2').textContent, '50');
+assert.strictEqual(document.querySelector('h2')?.textContent, '50');
 ```
 
 Your code should use the `scaleLinear()` method.
