@@ -105,7 +105,7 @@ function getParamsFromUrl(
   let returnUrl;
   try {
     returnUrl = new URL(url ? url : HOME_LOCATION);
-  } catch (e) {
+  } catch (_e) {
     returnUrl = new URL(HOME_LOCATION);
   }
 

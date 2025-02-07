@@ -102,6 +102,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         const subscription =
           await stripe.subscriptions.retrieve(subscriptionId);
         const isSubscriptionActive = subscription.status === 'active';
+        // eslint-disable-next-line @typescript-eslint/no-base-to-string
         const productId = subscription.items.data[0]?.plan.product?.toString();
         const isStartedRecently = inLastFiveMinutes(
           subscription.current_period_start
