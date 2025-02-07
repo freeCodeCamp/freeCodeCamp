@@ -67,11 +67,7 @@ const EditModal = ({
       <Modal.Body alignment='left'>
         <UsernameSettings username={username} setIsEditing={setIsEditing} />
         <Spacer size='m' />
-        <About
-          submitNewAbout={submitNewAbout}
-          _username={username}
-          setIsEditing={setIsEditing}
-        />
+        <About submitNewAbout={submitNewAbout} setIsEditing={setIsEditing} />
         <Spacer size='m' />
         <Internet
           githubProfile={githubProfile}
@@ -150,11 +146,7 @@ function UserProfile({
           submitNewAbout={submitNewAbout}
         />
       )}
-      <Camper
-        username={username}
-        isSessionUser={isSessionUser}
-        setIsEditing={setIsEditing}
-      />
+      <Camper isSessionUser={isSessionUser} setIsEditing={setIsEditing} />
       {showPoints ? <Stats points={points} calendar={calendar} /> : null}
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showPortfolio ? (

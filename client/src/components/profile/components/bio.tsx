@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import { AvatarRenderer, FullWidthRow } from '../../helpers';
 import {
   isDonatingSelector,
+  usernameSelector,
   userPrivacySelector,
   userSocialSelector,
   userTopContributorSelector
@@ -33,24 +34,26 @@ export type SocialProps = {
 type BioProps = {
   yearsTopContributor: string[];
   isDonating: boolean;
-  username: string;
   socials: SocialProps;
   isSessionUser: boolean;
   privacy: ProfileUI;
   setIsEditing: (isEditing: boolean) => void;
 };
 
-const mapStateToProps = (state: unknown, props: { username: string }) => ({
-  yearsTopContributor: userTopContributorSelector(state) as string[],
-  privacy: userPrivacySelector(props.username)(state) as unknown as ProfileUI,
-  socials: userSocialSelector(props.username)(state) as unknown as SocialProps,
-  isDonating: isDonatingSelector(state) as boolean
-});
+const mapStateToProps = (state: unknown) => {
+  const username = usernameSelector(state) as string;
+
+  return {
+    yearsTopContributor: userTopContributorSelector(state) as string[],
+    privacy: userPrivacySelector(username)(state) as ProfileUI,
+    isDonating: isDonatingSelector(state) as boolean,
+    socials: userSocialSelector(username)(state) as SocialProps
+  };
+};
 
 const Bio = ({
   yearsTopContributor,
   isDonating,
-  username,
   socials,
   isSessionUser,
   setIsEditing,
@@ -72,7 +75,8 @@ const Bio = ({
     };
   };
 
-  const { picture, name, about, joinDate, location } = handlePrivacy(socials);
+  const { picture, name, about, joinDate, location, username } =
+    handlePrivacy(socials);
 
   const isTopContributor =
     yearsTopContributor && yearsTopContributor.length > 0;

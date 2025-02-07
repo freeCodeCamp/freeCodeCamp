@@ -14,12 +14,11 @@ import { connect } from 'react-redux';
 import { FullWidthRow } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
 import SectionHeader from '../../settings/section-header';
-import { userSocialSelector } from '../../../redux/selectors';
+import { usernameSelector, userSocialSelector } from '../../../redux/selectors';
 import { SocialProps } from './bio';
 
 type AboutProps = {
   socials: SocialProps;
-  _username: string;
   t: TFunction;
   submitNewAbout: (formValues: FormValues) => void;
   setIsEditing: (isEditing: boolean) => void;
@@ -44,15 +43,18 @@ const ShowImageValidationWarning = ({
   );
 };
 
-const mapStateToProps = (state: unknown, props: { _username: string }) => ({
-  socials: userSocialSelector(props._username)(state) as unknown as SocialProps
-});
+const mapStateToProps = (state: unknown) => {
+  const username = usernameSelector(state) as string;
+
+  return {
+    socials: userSocialSelector(username)(state) as unknown as SocialProps
+  };
+};
 
 const AboutSettings = ({
   t,
   submitNewAbout,
   setIsEditing,
-  _username,
   socials
 }: AboutProps) => {
   const { name, location, picture, about } = socials;

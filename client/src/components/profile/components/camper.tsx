@@ -8,6 +8,7 @@ import TopContibutorBadgeEmblem from '../../../assets/icons/top-contributor-badg
 import { ProfileUI } from '../../../redux/prop-types';
 import {
   isDonatingSelector,
+  usernameSelector,
   userPrivacySelector,
   userTopContributorSelector
 } from '../../../redux/selectors';
@@ -17,20 +18,22 @@ type CamperProps = {
   yearsTopContributor: string[];
   isDonating: boolean;
   isSessionUser: boolean;
-  username: string;
   setIsEditing: (isEditing: boolean) => void;
   privacy: ProfileUI;
 };
 
-const mapStateToProps = (state: unknown, props: { username: string }) => ({
-  yearsTopContributor: userTopContributorSelector(state) as string[],
-  privacy: userPrivacySelector(props.username)(state) as unknown as ProfileUI,
-  isDonating: isDonatingSelector(state) as boolean
-});
+const mapStateToProps = (state: unknown) => {
+  const username = usernameSelector(state) as string;
+
+  return {
+    yearsTopContributor: userTopContributorSelector(state) as string[],
+    privacy: userPrivacySelector(username)(state) as unknown as ProfileUI,
+    isDonating: isDonatingSelector(state) as boolean
+  };
+};
 
 function Camper({
   yearsTopContributor,
-  username,
   isDonating,
   isSessionUser,
   setIsEditing,
@@ -44,11 +47,7 @@ function Camper({
   return (
     <>
       <div className='bio-container'>
-        <Bio
-          username={username}
-          isSessionUser={isSessionUser}
-          setIsEditing={setIsEditing}
-        />
+        <Bio isSessionUser={isSessionUser} setIsEditing={setIsEditing} />
       </div>
       {(isDonating || isTopContributor) && (
         <FullWidthRow>
