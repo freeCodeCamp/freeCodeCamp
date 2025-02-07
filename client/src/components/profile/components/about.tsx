@@ -13,24 +13,21 @@ import isURL from 'validator/lib/isURL';
 import { FullWidthRow } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
 import SectionHeader from '../../settings/section-header';
-import type { CamperProps } from './camper';
+import { User } from '../../../redux/prop-types';
 
-type AboutProps = Omit<
-  CamperProps,
-  | 'linkedin'
-  | 'joinDate'
-  | 'isDonating'
-  | 'githubProfile'
-  | 'twitter'
-  | 'website'
-  | 'yearsTopContributor'
-> & {
+type AboutProps = {
+  user: User;
   t: TFunction;
   submitNewAbout: (formValues: FormValues) => void;
   setIsEditing: (isEditing: boolean) => void;
 };
 
-type FormValues = Pick<AboutProps, 'name' | 'location' | 'picture' | 'about'>;
+type FormValues = {
+  name: string;
+  location: string;
+  picture: string;
+  about: string;
+};
 
 const ShowImageValidationWarning = ({
   alertContent
@@ -45,14 +42,13 @@ const ShowImageValidationWarning = ({
 };
 
 const AboutSettings = ({
+  user,
   t,
-  name = '',
-  location = '',
-  picture = '',
-  about = '',
   submitNewAbout,
   setIsEditing
 }: AboutProps) => {
+  const { name, location, picture, about } = user;
+
   const [formValues, setFormValues] = useState<FormValues>({
     name,
     location,
