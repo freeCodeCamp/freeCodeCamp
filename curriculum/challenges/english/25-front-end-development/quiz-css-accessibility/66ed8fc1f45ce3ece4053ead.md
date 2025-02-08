@@ -217,7 +217,7 @@ Placeholder text prevents screen readers from reading the input label text.
 
 ---
 
-Placeholder text is ignored by screen readers.
+Placeholder text prevents screen readers from reading the input value.
 
 ---
 
