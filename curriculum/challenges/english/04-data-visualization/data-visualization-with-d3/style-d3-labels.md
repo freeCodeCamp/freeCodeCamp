@@ -20,6 +20,7 @@ The labels should all have a `fill` color of red.
 
 ```js
 const text = document.querySelector('text');
+assert.exists(text); 
 const fill = window.getComputedStyle(text)['fill'];
 assert.strictEqual(fill, 'rgb(255, 0, 0)');
 ```
@@ -28,6 +29,7 @@ The labels should all have a `font-size` of `25` pixels.
 
 ```js
 const text = document.querySelector('text');
+assert.exists(text); 
 const fontSize = window.getComputedStyle(text)['font-size'];
 assert.strictEqual(fontSize, '25px');
 ```

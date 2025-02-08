@@ -22,6 +22,7 @@ The bars should all have a `fill` color of navy.
 
 ```js
 const rect = document.querySelector('rect');
+assert.exists(rect); 
 const fill = window.getComputedStyle(rect)['fill'];
 assert.strictEqual(fill, 'rgb(0, 0, 128)');
 ```

@@ -26,6 +26,7 @@ Your `h2` elements should have a `font-family` of `verdana`.
 
 ```js
 const headingTwo = document.querySelector('h2');
+assert.exists(headingTwo); 
 const fontFamily = window.getComputedStyle(headingTwo)['font-family'];
 assert.strictEqual(fontFamily, 'verdana');
 ```

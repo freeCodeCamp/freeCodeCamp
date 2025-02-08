@@ -29,6 +29,7 @@ The first `h2` should have a `color` of red.
 
 ```js
 const headingTwoFirst = document.querySelector('h2');
+assert.exists(headingTwoFirst); 
 const color = window.getComputedStyle(headingTwoFirst)['color'];
 assert.strictEqual(color, 'rgb(255, 0, 0)');
 ```
@@ -37,6 +38,7 @@ The second `h2` should have a `color` of green.
 
 ```js
 const headingTwoSecond = document.querySelectorAll('h2')[1];
+assert.exists(headingTwoSecond); 
 const color = window.getComputedStyle(headingTwoSecond)['color'];
 assert.strictEqual(color, 'rgb(0, 128, 0)');
 ```
@@ -45,6 +47,7 @@ The third `h2` should have a `color` of green.
 
 ```js
 const headingTwoThird = document.querySelectorAll('h2')[2];
+assert.exists(headingTwoThird); 
 const color = window.getComputedStyle(headingTwoThird)['color'];
 assert.strictEqual(color, 'rgb(0, 128, 0)');
 ```
@@ -53,6 +56,7 @@ The fourth `h2` should have a `color` of red.
 
 ```js
 const headingTwoFourth = document.querySelectorAll('h2')[3];
+assert.exists(headingTwoFourth); 
 const color = window.getComputedStyle(headingTwoFourth)['color'];
 assert.strictEqual(color, 'rgb(255, 0, 0)');
 ```
@@ -61,6 +65,7 @@ The fifth `h2` should have a `color` of green.
 
 ```js
 const headingTwoFifth = document.querySelectorAll('h2')[4];
+assert.exists(headingTwoFifth); 
 const color = window.getComputedStyle(headingTwoFifth)['color'];
 assert.strictEqual(color, 'rgb(0, 128, 0)');
 ```
@@ -69,6 +74,7 @@ The sixth `h2` should have a `color` of red.
 
 ```js
 const headingTwoSixth = document.querySelectorAll('h2')[5];
+assert.exists(headingTwoSixth); 
 const color = window.getComputedStyle(headingTwoSixth)['color'];
 assert.strictEqual(color, 'rgb(255, 0, 0)');
 ```
@@ -77,6 +83,7 @@ The seventh `h2` should have a `color` of green.
 
 ```js
 const headingTwoSeventh = document.querySelectorAll('h2')[6];
+assert.exists(headingTwoSeventh); 
 const color = window.getComputedStyle(headingTwoSeventh)['color'];
 assert.strictEqual(color, 'rgb(0, 128, 0)');
 ```
@@ -85,6 +92,7 @@ The eighth `h2` should have a `color` of red.
 
 ```js
 const headingTwoEighth = document.querySelectorAll('h2')[7];
+assert.exists(headingTwoEighth); 
 const color = window.getComputedStyle(headingTwoEighth)['color'];
 assert.strictEqual(color, 'rgb(255, 0, 0)');
 ```
@@ -93,6 +101,7 @@ The ninth `h2` should have a `color` of red.
 
 ```js
 const headingTwoNinth = document.querySelectorAll('h2')[8];
+assert.exists(headingTwoNinth); 
 const color = window.getComputedStyle(headingTwoNinth)['color'];
 assert.strictEqual(color, 'rgb(255, 0, 0)');
 ```

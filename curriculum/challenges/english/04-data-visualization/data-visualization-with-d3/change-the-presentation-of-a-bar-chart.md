@@ -26,6 +26,7 @@ The first `div` should have a `height` of `120` pixels and a `margin` of `2` pix
 
 ```js
 const firstDiv = document.querySelector('div');
+assert.exists(firstDiv); 
 const height = window.getComputedStyle(firstDiv)['height'];
 const margin = window.getComputedStyle(firstDiv)['margin-right'];
 assert.strictEqual(height, '120px');
@@ -36,6 +37,7 @@ The second `div` should have a `height` of `310` pixels and a `margin` of `2` pi
 
 ```js
 const secondDiv = document.querySelectorAll('div')[1];
+assert.exists(secondDiv); 
 const height = window.getComputedStyle(secondDiv)['height'];
 const margin = window.getComputedStyle(secondDiv)['margin-right'];
 assert.strictEqual(height, '310px');
@@ -46,6 +48,7 @@ The third `div` should have a `height` of `220` pixels and a `margin` of `2` pix
 
 ```js
 const thirdDiv = document.querySelectorAll('div')[2];
+assert.exists(thirdDiv); 
 const height = window.getComputedStyle(thirdDiv)['height'];
 const margin = window.getComputedStyle(thirdDiv)['margin-right'];
 assert.strictEqual(height, '220px');
@@ -56,6 +59,7 @@ The fourth `div` should have a `height` of `170` pixels and a `margin` of `2` pi
 
 ```js
 const fourthDiv = document.querySelectorAll('div')[3];
+assert.exists(fourthDiv); 
 const height = window.getComputedStyle(fourthDiv)['height'];
 const margin = window.getComputedStyle(fourthDiv)['margin-right'];
 assert.strictEqual(height, '170px');
@@ -66,6 +70,7 @@ The fifth `div` should have a `height` of `250` pixels and a `margin` of `2` pix
 
 ```js
 const fifthDiv = document.querySelectorAll('div')[4];
+assert.exists(fifthDiv); 
 const height = window.getComputedStyle(fifthDiv)['height'];
 const margin = window.getComputedStyle(fifthDiv)['margin-right'];
 assert.strictEqual(height, '250px');
@@ -76,6 +81,7 @@ The sixth `div` should have a `height` of `180` pixels and a `margin` of `2` pix
 
 ```js
 const sixthDiv = document.querySelectorAll('div')[5];
+assert.exists(sixthDiv); 
 const height = window.getComputedStyle(sixthDiv)['height'];
 const margin = window.getComputedStyle(sixthDiv)['margin-right'];
 assert.strictEqual(height, '180px');
@@ -86,6 +92,7 @@ The seventh `div` should have a `height` of `290` pixels and a `margin` of `2` p
 
 ```js
 const seventhDiv = document.querySelectorAll('div')[6];
+assert.exists(seventhDiv); 
 const height = window.getComputedStyle(seventhDiv)['height'];
 const margin = window.getComputedStyle(seventhDiv)['margin-right'];
 assert.strictEqual(height, '290px');
@@ -96,6 +103,7 @@ The eighth `div` should have a `height` of `140` pixels and a `margin` of `2` pi
 
 ```js
 const eighthDiv = document.querySelectorAll('div')[7];
+assert.exists(eighthDiv); 
 const height = window.getComputedStyle(eighthDiv)['height'];
 const margin = window.getComputedStyle(eighthDiv)['margin-right'];
 assert.strictEqual(height, '140px');
@@ -106,6 +114,7 @@ The ninth `div` should have a `height` of `90` pixels and a `margin` of `2` pixe
 
 ```js
 const ninthDiv = document.querySelectorAll('div')[8];
+assert.exists(ninthDiv); 
 const height = window.getComputedStyle(ninthDiv)['height'];
 const margin = window.getComputedStyle(ninthDiv)['margin-right'];
 assert.strictEqual(height, '90px');
