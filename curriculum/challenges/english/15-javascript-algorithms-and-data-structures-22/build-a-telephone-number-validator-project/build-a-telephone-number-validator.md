@@ -60,6 +60,8 @@ Note that the area code is required. Also, if the country code is provided, you 
 1. When `#user-input` contains `(555)5(55?)-5555` and `#check-btn` is clicked, `#results-div` should contain the text `"Invalid US number: (555)5(55?)-5555"`.
 1. When the `#user-input` element contains `55 55-55-555-5` and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Invalid US number: 55 55-55-555-5"`.
 1. When the `#user-input` element contains `11 555-555-5555` and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Invalid US number: 11 555-555-5555"`.
+1. When the `#user-input` element contains a valid US number and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Valid US number: "` followed by the number.
+1. When the `#user-input` element contains an invalid US number and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Invalid US number: "` followed by the number.
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
@@ -508,6 +510,59 @@ userInput.value = '11 555-555-5555';
 userInput.dispatchEvent(new Event('change'));
 checkBtn.click();
 assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number: 11 555-555-5555');
+```
+
+When the `#user-input` element contains a valid US number and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Valid US number: "` followed by the number.
+
+```js
+
+  const validPatterns = [
+  '1 XXX-XXX-XXXX',
+  '1 (XXX)XXX-XXXX',
+  '1(XXX)XXX-XXXX',
+  '1 XXX XXX XXXX',
+  'XXXXXXXXXX',
+  'XXX-XXX-XXXX',
+  '(XXX)XXX-XXXX',
+];
+
+validPatterns.forEach(pattern => {
+  while (pattern.includes('X')) {
+    pattern = pattern.replace('X',  Math.floor(Math.random() * 7) + 2); //While this may seem weird at first, it's required for the CI build to pass
+    //This is apparently because the solution provided for CI purposes actually checks for valid area and exchange codes.
+  }
+  resultsDiv.innerHTML = '';
+  userInput.value = pattern;
+  userInput.dispatchEvent(new Event('change'));
+  checkBtn.click();
+  assert.strictEqual(document.getElementById('results-div').innerText.trim().toLowerCase(), `valid us number: ${pattern}`);
+});
+```
+
+When the `#user-input` element contains an invalid US number and the `#check-btn` element is clicked, the `#results-div` element should contain the text `"Invalid US number: "` followed by the number.
+
+```js
+
+const invalidPatterns = [
+  '10 XXX-XXX-XXXX',
+  '1 (XX)XXX-XXXX',
+  '1!(XXX)XXX-XXXX',
+  '-1 XXX XXX XXXX',
+  'XXXXXXXX',
+  'XXX#XXX-XXXX',
+  '(XXXXXX-XXXX',
+];
+
+invalidPatterns.forEach(pattern => {
+  while (pattern.includes('X')) {
+    pattern = pattern.replace('X',  Math.floor(Math.random() * 10));
+  }
+  resultsDiv.innerHTML = '';
+  userInput.value = pattern;
+  userInput.dispatchEvent(new Event('change'));
+  checkBtn.click();
+  assert.strictEqual(document.getElementById('results-div').innerText.trim().toLowerCase(), `invalid us number: ${pattern}`);
+});
 ```
 
 # --seed--
