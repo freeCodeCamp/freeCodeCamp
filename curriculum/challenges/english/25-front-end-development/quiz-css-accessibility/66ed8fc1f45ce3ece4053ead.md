@@ -165,7 +165,7 @@ img {
 
 #### --text--
 
-Which of the following `smooth-scroll` value allows a smooth scrolling behavior?
+Which of the following `scroll-behavior` value allows a smooth scrolling behavior?
 
 #### --distractors--
 
