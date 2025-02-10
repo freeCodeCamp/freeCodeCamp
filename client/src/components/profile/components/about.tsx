@@ -10,10 +10,12 @@ import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 
+import { connect } from 'react-redux';
 import { FullWidthRow } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
 import SectionHeader from '../../settings/section-header';
 import { User } from '../../../redux/prop-types';
+import { submitNewAbout } from '../../../redux/settings/actions';
 
 type AboutProps = {
   user: User;
@@ -27,6 +29,12 @@ type FormValues = {
   location: string;
   picture: string;
   about: string;
+};
+
+const mapDispatchToProps: {
+  submitNewAbout: () => void;
+} = {
+  submitNewAbout
 };
 
 const ShowImageValidationWarning = ({
@@ -47,7 +55,7 @@ const AboutSettings = ({
   submitNewAbout,
   setIsEditing
 }: AboutProps) => {
-  const { name, location, picture, about } = user;
+  const { name = '', location = '', picture = '', about = '' } = user;
 
   const [formValues, setFormValues] = useState<FormValues>({
     name,
@@ -231,4 +239,6 @@ const AboutSettings = ({
 
 AboutSettings.displayName = 'AboutSettings';
 
-export default withTranslation()(AboutSettings);
+export default withTranslation()(
+  connect(null, mapDispatchToProps)(AboutSettings)
+);

@@ -8,7 +8,7 @@ import Portfolio from './components/portfolio';
 
 import UsernameSettings from './components/username';
 import About from './components/about';
-import Internet, { Socials } from './components/internet';
+import Internet from './components/internet';
 import { User } from './../../redux/prop-types';
 import Timeline from './components/time-line';
 import Camper from './components/camper';
@@ -21,9 +21,6 @@ import { PortfolioProjects } from './components/portfolio-projects';
 interface ProfileProps {
   isSessionUser: boolean;
   user: User;
-  updateMyPortfolio: () => void;
-  updateMySocials: (formValues: Socials) => void;
-  submitNewAbout: () => void;
 }
 
 interface EditModalProps {
@@ -31,9 +28,6 @@ interface EditModalProps {
   isEditing: boolean;
   isSessionUser: boolean;
   setIsEditing: (isEditing: boolean) => void;
-  updateMySocials: (formValues: Socials) => void;
-  updateMyPortfolio: () => void;
-  submitNewAbout: () => void;
 }
 interface MessageProps {
   isSessionUser: boolean;
@@ -50,14 +44,7 @@ const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   );
 };
 
-const EditModal = ({
-  user,
-  isEditing,
-  setIsEditing,
-  updateMyPortfolio,
-  updateMySocials,
-  submitNewAbout
-}: EditModalProps) => {
+const EditModal = ({ user, isEditing, setIsEditing }: EditModalProps) => {
   const { portfolio, username } = user;
   const { t } = useTranslation();
   return (
@@ -66,23 +53,11 @@ const EditModal = ({
       <Modal.Body alignment='left'>
         <UsernameSettings username={username} setIsEditing={setIsEditing} />
         <Spacer size='m' />
-        <About
-          submitNewAbout={submitNewAbout}
-          setIsEditing={setIsEditing}
-          user={user}
-        />
+        <About user={user} setIsEditing={setIsEditing} />
         <Spacer size='m' />
-        <Internet
-          user={user}
-          updateSocials={updateMySocials}
-          setIsEditing={setIsEditing}
-        />
+        <Internet user={user} setIsEditing={setIsEditing} />
         <Spacer size='m' />
-        <Portfolio
-          portfolio={portfolio}
-          updatePortfolio={updateMyPortfolio}
-          setIsEditing={setIsEditing}
-        />
+        <Portfolio portfolio={portfolio} setIsEditing={setIsEditing} />
       </Modal.Body>
     </Modal>
   );
@@ -109,13 +84,7 @@ const Message = ({ isSessionUser, t, username }: MessageProps) => {
   return <VisitorMessage t={t} username={username} />;
 };
 
-function UserProfile({
-  user,
-  isSessionUser,
-  updateMyPortfolio,
-  updateMySocials,
-  submitNewAbout
-}: ProfileProps): JSX.Element {
+function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
   const [isEditing, setIsEditing] = useState(false);
 
   const {
@@ -141,9 +110,6 @@ function UserProfile({
           isEditing={isEditing}
           isSessionUser={isSessionUser}
           setIsEditing={setIsEditing}
-          updateMyPortfolio={updateMyPortfolio}
-          updateMySocials={updateMySocials}
-          submitNewAbout={submitNewAbout}
         />
       )}
       <Camper
@@ -165,13 +131,7 @@ function UserProfile({
   );
 }
 
-function Profile({
-  user,
-  isSessionUser,
-  updateMyPortfolio,
-  updateMySocials,
-  submitNewAbout
-}: ProfileProps): JSX.Element {
+function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
   const { t } = useTranslation();
   const {
     profileUI: { isLocked },
@@ -192,13 +152,7 @@ function Profile({
           <Message username={username} isSessionUser={isSessionUser} t={t} />
         )}
         {showUserProfile && (
-          <UserProfile
-            user={user}
-            isSessionUser={isSessionUser}
-            updateMyPortfolio={updateMyPortfolio}
-            updateMySocials={updateMySocials}
-            submitNewAbout={submitNewAbout}
-          />
+          <UserProfile user={user} isSessionUser={isSessionUser} />
         )}
         {!isSessionUser && (
           <Row className='text-center'>

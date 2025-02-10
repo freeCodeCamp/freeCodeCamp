@@ -12,12 +12,14 @@ import {
   type FormGroupProps
 } from '@freecodecamp/ui';
 
+import { connect } from 'react-redux';
 import { maybeUrlRE } from '../../../utils';
 
 import { FullWidthRow } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
 import SectionHeader from '../../settings/section-header';
 import { User } from '../../../redux/prop-types';
+import { updateMySocials } from '../../../redux/settings/actions';
 
 export interface Socials {
   githubProfile: string;
@@ -29,7 +31,7 @@ export interface Socials {
 interface InternetProps {
   user: User;
   t: TFunction;
-  updateSocials: (formValues: Socials) => void;
+  updateMySocials: (formValues: Socials) => void;
   setIsEditing: (isEditing: boolean) => void;
 }
 
@@ -42,13 +44,24 @@ function Info({ message }: { message: string }) {
   return message ? <HelpBlock>{message}</HelpBlock> : null;
 }
 
+const mapDispatchToProps: {
+  updateMySocials: (formValues: Socials) => void;
+} = {
+  updateMySocials
+};
+
 const InternetSettings = ({
   user,
   t,
-  updateSocials,
+  updateMySocials,
   setIsEditing
 }: InternetProps) => {
-  const { githubProfile, linkedin, twitter, website } = user;
+  const {
+    githubProfile = '',
+    linkedin = '',
+    twitter = '',
+    website = ''
+  } = user;
 
   const [formValues, setFormValues] = useState<Socials>({
     githubProfile,
@@ -102,7 +115,7 @@ const InternetSettings = ({
     e.preventDefault();
     if (!isFormPristine() && isFormValid()) {
       // Only submit the form if is has changed, and if it is valid
-      updateSocials({ ...formValues });
+      updateMySocials({ ...formValues });
     }
     setIsEditing(false);
   };
@@ -257,4 +270,6 @@ const Check = ({
 
 InternetSettings.displayName = 'InternetSettings';
 
-export default withTranslation()(InternetSettings);
+export default withTranslation()(
+  connect(null, mapDispatchToProps)(InternetSettings)
+);
