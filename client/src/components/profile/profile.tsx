@@ -58,8 +58,7 @@ const EditModal = ({
   updateMySocials,
   submitNewAbout
 }: EditModalProps) => {
-  const { portfolio, username, githubProfile, linkedin, twitter, website } =
-    user;
+  const { portfolio, username } = user;
   const { t } = useTranslation();
   return (
     <Modal onClose={() => setIsEditing(false)} open={isEditing} size='large'>
@@ -74,12 +73,9 @@ const EditModal = ({
         />
         <Spacer size='m' />
         <Internet
-          githubProfile={githubProfile}
-          linkedin={linkedin}
-          twitter={twitter}
+          user={user}
           updateSocials={updateMySocials}
           setIsEditing={setIsEditing}
-          website={website}
         />
         <Spacer size='m' />
         <Portfolio
@@ -124,32 +120,17 @@ function UserProfile({
 
   const {
     profileUI: {
-      showAbout,
       showCerts,
-      showDonation,
       showHeatMap,
-      showLocation,
-      showName,
       showPoints,
       showPortfolio,
       showTimeLine
     },
     calendar,
     completedChallenges,
-    githubProfile,
-    linkedin,
-    twitter,
-    website,
-    name,
     username,
-    joinDate,
-    location,
     points,
-    picture,
-    portfolio,
-    about,
-    yearsTopContributor,
-    isDonating
+    portfolio
   } = user;
 
   return (
@@ -166,18 +147,7 @@ function UserProfile({
         />
       )}
       <Camper
-        about={showAbout ? about : ''}
-        githubProfile={githubProfile}
-        isDonating={showDonation ? isDonating : false}
-        joinDate={showAbout ? joinDate : ''}
-        linkedin={linkedin}
-        location={showLocation ? location : ''}
-        name={showName ? name : ''}
-        picture={picture}
-        twitter={twitter}
-        username={username}
-        website={website}
-        yearsTopContributor={yearsTopContributor}
+        user={user}
         isSessionUser={isSessionUser}
         setIsEditing={setIsEditing}
       />

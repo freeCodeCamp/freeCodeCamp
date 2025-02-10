@@ -17,6 +17,7 @@ import { maybeUrlRE } from '../../../utils';
 import { FullWidthRow } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
 import SectionHeader from '../../settings/section-header';
+import { User } from '../../../redux/prop-types';
 
 export interface Socials {
   githubProfile: string;
@@ -25,7 +26,8 @@ export interface Socials {
   website: string;
 }
 
-interface InternetProps extends Socials {
+interface InternetProps {
+  user: User;
   t: TFunction;
   updateSocials: (formValues: Socials) => void;
   setIsEditing: (isEditing: boolean) => void;
@@ -41,14 +43,13 @@ function Info({ message }: { message: string }) {
 }
 
 const InternetSettings = ({
-  githubProfile = '',
-  linkedin = '',
-  twitter = '',
-  website = '',
+  user,
   t,
   updateSocials,
   setIsEditing
 }: InternetProps) => {
+  const { githubProfile, linkedin, twitter, website } = user;
+
   const [formValues, setFormValues] = useState<Socials>({
     githubProfile,
     linkedin,
