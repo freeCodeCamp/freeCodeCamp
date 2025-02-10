@@ -1599,7 +1599,9 @@
       },
       "learn-how-to-use-conditionals": {
         "title": "Дізнайтесь, як використовувати умовні речення",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви навчитесь використовувати умовні речення, щоб описувати уявні ситуації, які залежать від певних умов."
+        ]
       },
       "learn-how-to-share-feedback": {
         "title": "Дізнайтесь, як ділитись фідбеком",
@@ -1842,7 +1844,7 @@
       "workshop-blog-page": {
         "title": "Створіть сторінку блогу про котів",
         "intro": [
-          "У цьому практичному занятті ви дізнаєтесь, як створити сторінку блогу лише на HTML, використовуючи семантичні елементи, серед яких <code>main</code>, <code>nav</code>, <code>article</code> та <code>footer</code>."
+          "У цьому практичному занятті ви створите сторінку блогу лише на HTML, використовуючи семантичні елементи, серед яких <code>main</code>, <code>nav</code>, <code>article</code> та <code>footer</code>."
         ]
       },
       "lab-event-hub": {
@@ -1873,7 +1875,7 @@
       "workshop-hotel-feedback-form": {
         "title": "Створіть форму зворотного зв’язку для готелю",
         "intro": [
-          "У цьому практичному занятті ви дізнаєтесь, як працювати з формами, створивши форму зворотного зв’язку для готелю.",
+          "У цьому практичному занятті ви створите форму зворотного зв’язку для готелю.",
           "Ви навчитесь працювати з мітками, полями введення даних, наборами полів, легендами, текстовими полями та кнопками."
         ]
       },
@@ -1893,7 +1895,7 @@
       "workshop-final-exams-table": {
         "title": "Створіть таблицю з кінцевими екзаменами",
         "intro": [
-          "In this workshop, you will practice working with HTML tables by building a table of final exams."
+          "У цьому практичному занятті ви дізнаєтесь, як працювати з HTML-таблицями, створивши таблицю кінцевих екзаменів."
         ]
       },
       "lab-book-catalog-table": {
@@ -3047,7 +3049,7 @@
         "title": "Повторення налагодження JavaScript",
         "intro": [
           "Перш ніж перейти до тесту «Налагодження JavaScript», повторіть основні поняття.",
-          "Відкрийте цю сторінку, щоб пригадати, як працювати з інструкцією <code>throw</code>, <code>try...catch...finally</code> та багато іншого."
+          "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally</code> and more."
         ]
       },
       "quiz-debugging-javascript": {

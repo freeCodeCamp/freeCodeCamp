@@ -165,6 +165,23 @@ describe('redirection', () => {
       expect(result).toEqual(expectedReturn);
     });
 
+    it('should strip off any query parameters from the referer', () => {
+      const req = {
+        headers: {
+          referer: `https://www.freecodecamp.org/espanol/learn/rosetta-code/?query=param`
+        }
+      };
+
+      const expectedReturn = {
+        origin: 'https://www.freecodecamp.org',
+        pathPrefix: 'espanol',
+        returnTo: 'https://www.freecodecamp.org/espanol/learn/rosetta-code/'
+      };
+
+      const result = getRedirectParams(req);
+      expect(result).toEqual(expectedReturn);
+    });
+
     it('should use HOME_LOCATION with missing referer', () => {
       const req = {
         headers: {}

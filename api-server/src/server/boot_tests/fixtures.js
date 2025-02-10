@@ -113,9 +113,7 @@ export const mockCompletedChallenges = [
     completedDate: 1541678430790.0,
     files: [
       {
-        contents:
-          // eslint-disable-next-line max-len
-          "function palindrome(str) {\n  const clean = str.replace(/[\\W_]/g, '').toLowerCase()\n  const revStr = clean.split('').reverse().join('');\n  return clean === revStr;\n}\n\n\n\npalindrome(\"eye\");\n",
+        contents: "function palindrome(str) {\n  const clean = str.replace(/[\\W_]/g, '').toLowerCase()\n  const revStr = clean.split('').reverse().join('');\n  return clean === revStr;\n}\n\n\n\npalindrome(\"eye\");\n",
         ext: 'js',
         path: 'index.js',
         name: 'index',

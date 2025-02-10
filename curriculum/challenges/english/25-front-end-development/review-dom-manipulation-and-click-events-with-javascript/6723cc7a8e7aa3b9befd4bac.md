@@ -9,7 +9,7 @@ dashedName: review-dom-manipulation-and-click-events-with-javascript
 
 Review the concepts below to prepare for the upcoming quiz.
 
-## Working with the DOM and Web API's
+## Working with the DOM and Web APIs
 
 - **API**: An API (Application Programming Interface) is a set of rules and protocols that allow software applications to communicate with each other and exchange data efficiently. 
 - **Web API**: Web APIs are specifically designed for web applications. These types of APIs are often divided into two main categories: browser APIs and third-party APIs.
@@ -31,7 +31,7 @@ Review the concepts below to prepare for the upcoming quiz.
 const container = document.getElementById("container");
 ```
 
-- **`querySelector()` Method**: This method is used to get the first element in the HTML document that matches the CSS selector passed as argument.
+- **`querySelector()` Method**: This method is used to get the first element in the HTML document that matches the CSS selector passed as an argument.
 
 ```html
 <section class="section"></section>
@@ -140,7 +140,7 @@ const lastParagraph = document.querySelector("#example-section p:last-of-type");
 sectionEl.removeChild(lastParagraph);
 ```
 
-## Work with the `setAttribute` Method
+## Work with the `setAttribute()` Method
 
 - **Definition**: This method is used to set the attribute for a given element. If the attribute already exists, then the value is updated. Otherwise, a new attribute is added with a value.
 
@@ -167,7 +167,7 @@ const btn = document.getElementById("btn");
 btn.addEventListener("click", () => alert("You clicked the button"));
 ```
 
-- **`removeEventListener` Method**: This method is used to remove an event listener that was previously added to an element using the `addEventListener` method. This is useful when you want to stop listening for a particular event on an element.
+- **`removeEventListener()` Method**: This method is used to remove an event listener that was previously added to an element using the `addEventListener()` method. This is useful when you want to stop listening for a particular event on an element.
 
 ```js
 const bodyEl = document.querySelector("body");
@@ -194,20 +194,56 @@ para.addEventListener("mouseover", () => {
 <button onclick="alert('Hello World!')">Show alert</button>
 ```
 
+## The Change Event
+
+- **Definition**: The change event is a special event which is fired when the user modifies the value of certain input elements. Examples would include when a checkbox or a radio button is ticked. Or when the user makes a selection from something like a date picker or dropdown menu.
+
+```html
+<label>
+  Choose a programming language:
+  <select class="language" name="language">
+    <option value="">---Select One---</option>
+    <option value="JavaScript">JavaScript</option>
+    <option value="Python">Python</option>
+    <option value="C++">C++</option>
+  </select>
+</label>
+
+<p class="result"></p>
+```
+
+```js 
+const selectEl = document.querySelector(".language");
+const result = document.querySelector(".result");
+
+selectEl.addEventListener("change", (e) => {
+  result.textContent = `You enjoy programming in ${e.target.value}.`;
+});
+```
+
+## Event Bubbling
+
+- **Definition**: Event bubbling, or propagation, refers to how an event "bubbles up" to parent objects when triggered.
+- **`stopPropagation()` Method**: This method prevents further propagation for an event.
+
+## Event Delegation
+
+- **Definition**: Event delegation is the process of listening to events that have bubbled up to a parent, rather than handling them directly on the element that triggered them. 
+
 ## DOMContentLoaded
 
 - **Definition**: The `DOMContentLoaded` event is fired when everything in the HTML document has been loaded and parsed. If you have external stylesheets, or images, the `DOMContentLoaded` event will not wait for those to be loaded. It will only wait for the HTML to be loaded.
 
 ## Working with `style` and `classList`
 
-- **`Element.style` Property**: This property is a read only property that represents the inline style of an element. You can use this property to get or set the style of an element.
+- **`Element.style` Property**: This property is a read-only property that represents the inline style of an element. You can use this property to get or set the style of an element.
 
 ```js
 const paraEl = document.getElementById("para");
 paraEl.style.color = "red";
 ```
 
-- **`Element.classList` Property**: This property is a read only property that can be used to add, remove, or toggle classes on an element.
+- **`Element.classList` Property**: This property is a read-only property that can be used to add, remove, or toggle classes on an element.
 
 ```js
 // Example adding a class
@@ -225,7 +261,7 @@ toggleBtn.addEventListener("click", () => menu.classList.toggle("show"));
 ```
 
 
-## Working with the `setTimeout` and `setInterval` Methods
+## Working with the `setTimeout()` and `setInterval()` Methods
 
 - **`setTimeout()` Method**: This method lets you delay an action for a specified time. 
 
@@ -286,7 +322,7 @@ const animation = square.animate(
 
 ## The Canvas API
 
-- **Definition**: The Canvas API is a powerful tool that lets you and manipulate graphics right inside your JavaScript file. To work with the Canvas API, you first need to provide a `<canvas>` element in HTML. This element acts as a drawing surface you can manipulate with the instance methods and properties of the interfaces in the Canvas API. This API has interfaces like `HTMLCanvasElement`, `CanvasRenderingContext2D`, `CanvasGradient`, `CanvasPattern`, and `TextMetrics` which contains methods and properties you can use to create graphics in your JavaScript file.
+- **Definition**: The Canvas API is a powerful tool that lets you and manipulate graphics right inside your JavaScript file. To work with the Canvas API, you first need to provide a `<canvas>` element in HTML. This element acts as a drawing surface you can manipulate with the instance methods and properties of the interfaces in the Canvas API. This API has interfaces like `HTMLCanvasElement`, `CanvasRenderingContext2D`, `CanvasGradient`, `CanvasPattern`, and `TextMetrics` which contain methods and properties you can use to create graphics in your JavaScript file.
 
 ```html
 <canvas id="my-canvas" width="400" height="400"></canvas>

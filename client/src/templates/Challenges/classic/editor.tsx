@@ -65,9 +65,10 @@ import {
   makePrismCollapsible,
   setScrollbarArrowStyles
 } from '../utils/index';
-import { initializeMathJax } from '../../../utils/math-jax';
+import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
+import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
 import './editor.css';
 
@@ -404,7 +405,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       addContentChangeListener();
       resetAttempts();
       showEditableRegion(editor);
-      initializeMathJax();
+      if (isMathJaxAllowed(props.superBlock)) {
+        initializeMathJax();
+      }
     }
 
     const storedAccessibilityMode = () => {
@@ -632,9 +635,11 @@ const Editor = (props: EditorProps): JSX.Element => {
   const setAriaRoledescription = (value: boolean) => {
     const textareas = document.querySelectorAll('.monaco-editor textarea');
     textareas.forEach(textarea => {
-      value
-        ? textarea.setAttribute('aria-roledescription', 'editor')
-        : textarea.removeAttribute('aria-roledescription');
+      if (value) {
+        textarea.setAttribute('aria-roledescription', 'editor');
+      } else {
+        textarea.removeAttribute('aria-roledescription');
+      }
     });
     store.set('ariaRoledescription', value);
   };
@@ -696,7 +701,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         dataRef.current.descriptionZoneTop =
           editor.getTopForLineNumber(getLineBeforeEditableRegion() + 1) -
           domNode.offsetHeight;
-        dataRef.current.descriptionWidget &&
+        if (dataRef.current.descriptionWidget)
           editor.layoutContentWidget(dataRef.current.descriptionWidget);
       }
     };
@@ -768,6 +773,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     const desc = document.createElement('div');
     const descContainer = document.createElement('div');
     descContainer.classList.add('description-container');
+    if (isMathJaxAllowed(props.superBlock)) {
+      descContainer.classList.add('mathjax-support');
+    }
     domNode.classList.add('editor-upper-jaw');
     domNode.appendChild(descContainer);
     if (isMobileLayout) descContainer.appendChild(createBreadcrumb());
@@ -1241,7 +1249,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       );
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.tests]);
 
   useEffect(() => {
@@ -1252,7 +1259,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!isTabTrapped()) {
       setMonacoTabTrapped(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.dimensions]);
 
   function updateDescriptionZone() {
@@ -1278,6 +1284,15 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const firstFailedTest = props.tests.find(test => !!test.err);
 
+  const handleSubmitAndGoButtonBoolean = () => {
+    const canShowModal = sessionStorage.getItem('canOpenModal');
+
+    if (canShowModal === 'false' && envConfig.environment === 'development') {
+      return false;
+    }
+    return challengeIsComplete();
+  };
+
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       <span className='notranslate'>
@@ -1298,7 +1313,7 @@ const Editor = (props: EditorProps): JSX.Element => {
             hint={firstFailedTest?.message}
             testsLength={props.tests.length}
             attempts={attemptsRef.current}
-            challengeIsCompleted={challengeIsComplete()}
+            challengeIsCompleted={handleSubmitAndGoButtonBoolean()}
             tryToSubmitChallenge={tryToSubmitChallenge}
             isSignedIn={props.isSignedIn}
             updateContainer={() =>

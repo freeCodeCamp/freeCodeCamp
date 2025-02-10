@@ -166,6 +166,8 @@ model EnvExam {
   config        EnvConfig
   /// ObjectIds for required challenges/blocks to take the exam
   prerequisites String[]         @db.ObjectId
+  /// If `deprecated`, the exam should no longer be considered for users
+  deprecated    Boolean
 
   // Relations
   generatedExams EnvGeneratedExam[]
@@ -365,14 +367,6 @@ model Donation {
   @@index([userId], map: "userId_1")
 }
 
-model UserRateLimit {
-  id             String   @id @map("_id")
-  counter        Int
-  expirationDate DateTime @db.Date
-
-  @@index([expirationDate], map: "expirationDate_1")
-}
-
 model UserToken {
   id      String   @id @map("_id")
   created DateTime @db.Date
@@ -390,7 +384,7 @@ model ExamEnvironmentAuthorizationToken {
   userId   String   @unique @db.ObjectId
 
   // Relations
-  user user @relation(fields: [userId], references: [id])
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model sessions {

@@ -2,6 +2,7 @@ import { expect, test } from '@playwright/test';
 
 import currData from '../../shared/config/curriculum.json';
 import { orderedSuperBlockInfo } from '../../tools/scripts/build/build-external-curricula-data';
+import { SuperBlocks } from '../../shared/config/curriculum';
 
 interface Curriculum {
   [key: string]: {
@@ -21,32 +22,29 @@ interface Curriculum {
   };
 }
 
+// non editor superblocks should be skipped because they are not
+// checked if they are compatible with the mobile app.
+
 const nonEditorSB = [
-  'python-for-everybody',
-  'data-analysis-with-python',
-  'machine-learning-with-python'
+  SuperBlocks.PythonForEverybody,
+  SuperBlocks.DataAnalysisPy,
+  SuperBlocks.MachineLearningPy,
+  SuperBlocks.CollegeAlgebraPy,
+  SuperBlocks.A2English,
+  SuperBlocks.B1English
 ];
 
 const publicSB = orderedSuperBlockInfo
   .filter(sb => sb.public === true && !nonEditorSB.includes(sb.dashedName))
   .map(sb => sb.dashedName);
 
-const incompatible = [
-  'certifications',
-  'a2-english-for-developers',
-  'b1-english-for-developers'
-];
-
-const removeNonCompatibleSuperblocks = (currData: Curriculum): Curriculum => {
+const removeCertSuperBlock = (currData: Curriculum): Curriculum => {
   const copy = currData;
-
-  for (const superBlock of incompatible) {
-    delete copy[superBlock];
-  }
+  delete copy['certifications'];
   return copy;
 };
 
-const typedCurriculum = removeNonCompatibleSuperblocks(currData as never);
+const typedCurriculum = removeCertSuperBlock(currData as never);
 
 test.describe('Test challenges in mobile', () => {
   for (const superBlock of publicSB) {

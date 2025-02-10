@@ -37,7 +37,6 @@ function handleError(err, client) {
     } catch (e) {
       // no-op
     } finally {
-      /* eslint-disable-next-line no-process-exit */
       process.exit(1);
     }
   }

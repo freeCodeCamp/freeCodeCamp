@@ -1,9 +1,17 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import CalendarHeatMap from '@freecodecamp/react-calendar-heatmap';
+// TODO: Check if we can import { addDays, addMonths ... } from 'date-fns'
+// without bundling all of the package then we can remove the disable-next-line
+// comments.
+
+// eslint-disable-next-line import/no-duplicates
 import addDays from 'date-fns/addDays';
+// eslint-disable-next-line import/no-duplicates
 import addMonths from 'date-fns/addMonths';
+// eslint-disable-next-line import/no-duplicates
 import isEqual from 'date-fns/isEqual';
+// eslint-disable-next-line import/no-duplicates
 import startOfDay from 'date-fns/startOfDay';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
@@ -21,7 +29,6 @@ import { getLangCode } from '../../../../../shared/config/i18n';
 import { User } from '../../../redux/prop-types';
 import FullWidthRow from '../../helpers/full-width-row';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { clientLocale } = envData;
 
 const localeCode = getLangCode(clientLocale);
@@ -125,14 +132,14 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
                       day: 'numeric'
                     })
                   : '';
+              if (!value || value.count < 0) {
+                return { 'data-tip': '' };
+              }
               return {
-                'data-tip':
-                  value && value.count > -1
-                    ? t('profile.points', {
-                        count: value.count,
-                        date: dateFormatted
-                      })
-                    : ''
+                'data-tip': t('profile.points', {
+                  count: value.count,
+                  date: dateFormatted
+                })
               };
             }}
             values={dataToDisplay}

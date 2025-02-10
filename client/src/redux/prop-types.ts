@@ -130,8 +130,8 @@ interface SetupCharacter {
 interface SetupAudio {
   filename: string;
   startTime: number;
-  startTimestamp?: number;
-  finishTimestamp?: number;
+  startTimestamp: number | null;
+  finishTimestamp: number | null;
 }
 
 interface SceneSetup {
@@ -151,21 +151,6 @@ export interface PrerequisiteChallenge {
   title: string;
   slug?: string;
 }
-
-export type ExtendedChallenge = {
-  block: string;
-  challengeType: number;
-  dashedName: string;
-  fields: {
-    slug: string;
-  };
-  id: string;
-  isCompleted: boolean;
-  order: number;
-  superBlock: SuperBlocks;
-  stepNumber: number;
-  title: string;
-};
 
 export type ChallengeNode = {
   challenge: {

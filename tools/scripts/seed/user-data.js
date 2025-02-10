@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 const { ObjectId } = require('mongodb');
 
 const blankUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb9');
