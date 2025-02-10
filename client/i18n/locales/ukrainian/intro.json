@@ -2963,19 +2963,6 @@
           "У цій лабораторній роботі ви створите перемикач вподобаної іконки, використовуючи подію click в JavaScript."
         ]
       },
-      "review-dom-manipulation-and-click-events-with-javascript": {
-        "title": "Повторення маніпуляції DOM та подій Click в JavaScript",
-        "intro": [
-          "Перш ніж перейти до тесту «DOM», повторіть основні поняття.",
-          "Відкрийте цю сторінку, щоб пригадати, як працювати з <code>DOM</code>, <code>Web API</code>, методом <code>addEventListener()</code> та багато іншого."
-        ]
-      },
-      "quiz-dom-manipulation-and-click-event-with-javascript": {
-        "title": "Тест «Маніпуляція DOM та події Click в JavaScript»",
-        "intro": [
-          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Маніпуляція DOM та події Click в JavaScript»."
-        ]
-      },
       "lecture-understanding-the-event-object-and-event-delegation": {
         "title": "Знайомство з подіями та їх делегуванням",
         "intro": [
@@ -3020,17 +3007,17 @@
           "У цій лабораторній роботі ви будете використовувати маніпуляцію DOM, деструктуризацію об’єктів, обробку подій та фільтрацію даних, щоб створити набір карток футбольних команд."
         ]
       },
-      "review-javascript-events": {
-        "title": "Повторення подій в JavaScript",
+      "review-dom-manipulation-and-click-events-with-javascript": {
+        "title": "Повторення маніпуляції DOM та подій Click в JavaScript",
         "intro": [
-          "Перш ніж перейти до тесту «Події», повторіть основні поняття.",
-          "Відкрийте цю сторінку, щоб пригадати події <code>change</code>, спливання подій та делегування подій."
+          "Перш ніж перейти до тесту «DOM», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з <code>DOM</code>, <code>Web API</code>, методом <code>addEventListener()</code>, зміною подій та багато іншого."
         ]
       },
-      "quiz-javascript-events": {
-        "title": "Тест «Події в JavaScript»",
+      "quiz-dom-manipulation-and-click-event-with-javascript": {
+        "title": "Тест «Маніпуляція DOM та події Click в JavaScript»",
         "intro": [
-          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Події в JavaScript»."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Маніпуляція DOM та події Click в JavaScript»."
         ]
       },
       "lecture-debugging-techniques": {
@@ -3049,7 +3036,7 @@
         "title": "Повторення налагодження JavaScript",
         "intro": [
           "Перш ніж перейти до тесту «Налагодження JavaScript», повторіть основні поняття.",
-          "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally</code> and more."
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з інструкцією <code>throw</code>, <code>try...catch...finally</code> та багато іншого."
         ]
       },
       "quiz-debugging-javascript": {
