@@ -43,7 +43,7 @@ Fulfill the user stories and pass all the tests below to complete this project. 
 
 # --hints--
 
-You should have an `input` element with an `id` of `"search-input"`. The `input` should be marked as **required**.
+You should have an `input` element with an `id` of `"search-input"`. The `input` should be marked as required.
 
 ```js
 const el = document.getElementById('search-input');
