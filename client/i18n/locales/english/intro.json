@@ -2597,8 +2597,7 @@
       "lab-javascript-trivia-bot": {
         "title": "Build a JavaScript Trivia Bot",
         "intro": [
-          "In this lab, you'll practice working with JavaScript variables and strings by building a trivia bot.",
-          "You'll practice how to use variables and basic strings."
+          "In this lab, you'll practice working with JavaScript variables and strings by building a trivia bot."
         ]
       },
       "lab-sentence-maker": {
