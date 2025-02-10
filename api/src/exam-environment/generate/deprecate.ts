@@ -5,7 +5,7 @@ const args = process.argv.slice(2);
 const ENV_EXAM_ID = args[0];
 
 if (!ENV_EXAM_ID) {
-  throw 'First argument must be the EnvExam _id';
+  throw Error('First argument must be the EnvExam _id');
 }
 
 const prisma = new PrismaClient({

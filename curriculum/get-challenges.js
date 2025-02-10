@@ -8,11 +8,10 @@ const readDirP = require('readdirp');
 const { curriculum: curriculumLangs } =
   require('../shared/config/i18n').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
-/* eslint-disable max-len */
+
 const {
   translateCommentsInChallenge
 } = require('../tools/challenge-parser/translation-parser');
-/* eslint-enable max-len*/
 
 const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
 const { createPoly } = require('../shared/utils/polyvinyl');
@@ -267,7 +266,6 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
     }
   } catch (e) {
     console.log(`failed to create superBlock from ${superBlockDir}`);
-    // eslint-disable-next-line no-process-exit
     process.exit(1);
   }
   const { meta } = challengeBlock;

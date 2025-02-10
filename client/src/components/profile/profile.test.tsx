@@ -72,7 +72,6 @@ const userProps = {
     isCollegeAlgebraPyCertV8: true,
     isFoundationalCSharpVertV8: true
   },
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   navigate: () => {}
 };
 

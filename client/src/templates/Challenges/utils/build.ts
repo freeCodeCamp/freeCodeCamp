@@ -115,8 +115,6 @@ export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
   return Object.prototype.hasOwnProperty.call(buildFunctions, challengeType);
 }
 
-// TODO: Figure out and (hopefully) simplify the return type.
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export async function buildChallenge(
   challengeData: BuildChallengeData,
   options: BuildOptions
@@ -139,8 +137,7 @@ const testRunners = {
   [challengeTypes.multifilePythonCertProject]: getPyTestRunner,
   [challengeTypes.lab]: getDOMTestRunner
 };
-// TODO: Figure out and (hopefully) simplify the return type.
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+
 export function getTestRunner(
   buildData: BuildChallengeData,
   runnerConfig: TestRunnerConfig,
