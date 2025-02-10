@@ -135,7 +135,6 @@
   "packageManager": "pnpm@10.11.0",
   "pnpm": {
     "patchedDependencies": {
-      "@fastify/oauth2@7.8.1": "patches/@fastify__oauth2@7.8.1.patch",
       "@fastify/csrf-protection@6.4.1": "patches/@fastify__csrf-protection@6.4.1.patch"
     },
     "peerDependencyRules": {
