@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@fastify/oauth2@7.8.1':
+    hash: fjqma2r6xxjavghcsvyjlkhmyy
+    path: patches/@fastify__oauth2@7.8.1.patch
+
 importers:
 
   .:
@@ -26,7 +31,7 @@ importers:
         version: 3.2.0
       '@eslint/js':
         specifier: ^9.19.0
-        version: 9.19.0
+        version: 9.20.0
       '@playwright/test':
         specifier: ^1.47.1
         version: 1.47.1
@@ -164,7 +169,7 @@ importers:
         version: 6.4.1
       '@fastify/oauth2':
         specifier: 7.8.1
-        version: 7.8.1
+        version: 7.8.1(patch_hash=fjqma2r6xxjavghcsvyjlkhmyy)
       '@fastify/swagger':
         specifier: 8.14.0
         version: 8.14.0
@@ -842,7 +847,7 @@ importers:
         version: 10.9.2(@types/node@20.12.8)(typescript@5.2.2)
       webpack:
         specifier: 5.90.3
-        version: 5.90.3(webpack-cli@4.10.0)
+        version: 5.90.3
 
   curriculum:
     devDependencies:
@@ -1137,7 +1142,7 @@ importers:
         version: 4.3.12
       '@types/copy-webpack-plugin':
         specifier: ^8.0.1
-        version: 8.0.1(webpack-cli@4.10.0)
+        version: 8.0.1(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))
       '@types/enzyme':
         specifier: 3.10.16
         version: 3.10.16
@@ -1155,13 +1160,13 @@ importers:
         version: 1.6.0(typescript@5.4.5)
       babel-loader:
         specifier: 8.3.0
-        version: 8.3.0(@babel/core@7.23.7)(webpack@5.90.3)
+        version: 8.3.0(@babel/core@7.23.7)(webpack@5.90.3(webpack-cli@4.10.0))
       chai:
         specifier: 4.4.1
         version: 4.4.1
       copy-webpack-plugin:
         specifier: 9.1.0
-        version: 9.1.0(webpack@5.90.3)
+        version: 9.1.0(webpack@5.90.3(webpack-cli@4.10.0))
       enzyme:
         specifier: 3.11.0
         version: 3.11.0
@@ -1528,10 +1533,6 @@ packages:
     resolution: {integrity: sha512-lN85QRR+5IbYrMWM6Y4pE/noaQtg4pNiqeNGX60eqOfo6gtEj6uw/JagelB8vVztSd7R6M5n1+PQkDbHbBRU4g==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/generator@7.23.3':
-    resolution: {integrity: sha512-keeZWAV4LU3tW0qRi19HRpabC/ilM0HRBBzf9/k8FFiG4KVpiv0FIy4hHfLfFQZNhziCTPTmd59zoyv6DNISzg==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/generator@7.23.6':
     resolution: {integrity: sha512-qrSfCYxYQB5owCmGLbl8XRpX1ytXlpueOb0N0UmQwA073KZxejgQTzAmJezxvpwQD9uGtK2shHdi55QT+MbjIw==}
     engines: {node: '>=6.9.0'}
@@ -1540,8 +1541,8 @@ packages:
     resolution: {integrity: sha512-VPC82gr1seXOpkjAAKoLhP50vx4vGNlF4msF64dSFq1P8RfB+QAuJWGHPXXPc8QyfVWwwB/TNNU4+ayZmHNbZw==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/generator@7.26.5':
-    resolution: {integrity: sha512-2caSP6fN9I7HOe6nqhtft7V4g7/V/gfDsC3Ag4W7kEzzvRGKqiv0pu0HogPiZ3KaVSoNDhUws6IJjDjpfmYIXw==}
+  '@babel/generator@7.26.8':
+    resolution: {integrity: sha512-ef383X5++iZHWAXX0SXQR6ZyQhw/0KtTkrTz61WXRhFM6dhpHulO/RJz79L8S6ugZHJkOOkUrUdxgdF2YiPFnA==}
     engines: {node: '>=6.9.0'}
 
   '@babel/helper-annotate-as-pure@7.22.5':
@@ -1666,10 +1667,6 @@ packages:
     resolution: {integrity: sha512-AsUnxuLhRYsisFiaJwvp1QF+I3KjD5FOxut14q/GzovUe6orHLesW2C7d754kRm53h5gqrz6sFl6sxc4BVtE/g==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/helper-string-parser@7.22.5':
-    resolution: {integrity: sha512-mM4COjgZox8U+JcXQwPijIZLElkgEpO5rsERVDJTc2qfCDfERyob6k5WegS14SX18IIjv+XD+GrqNumY5JRCDw==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/helper-string-parser@7.23.4':
     resolution: {integrity: sha512-803gmbQdqwdf4olxrX4AJyFBV/RTr3rSmOj0rKwesmzlfhYNDEs+/iOcznzpNWlJlIlTJC2QfPFcHB6DlzdVLQ==}
     engines: {node: '>=6.9.0'}
@@ -1734,11 +1731,6 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
-  '@babel/parser@7.23.3':
-    resolution: {integrity: sha512-uVsWNvlVsIninV2prNz/3lHCb+5CJ+e+IUBfbjToAHODtfGYLfCFuY4AU7TskI+dAKk+njsPiBjq1gKTvZOBaw==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-
   '@babel/parser@7.23.6':
     resolution: {integrity: sha512-Z2uID7YJ7oNvAI20O9X0bblw7Qqs8Q2hFy0R9tAfnfLkp5MW0UH9eUvnDSnFwKZ0AvgS1ucqR4KzvVHgnke1VQ==}
     engines: {node: '>=6.0.0'}
@@ -1754,8 +1746,8 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
-  '@babel/parser@7.26.7':
-    resolution: {integrity: sha512-kEvgGGgEjRUutvdVvZhbn/BxVt+5VSpwXz1j3WYXQbXDo8KzFOPNG2GQbdAiNq8g6wn1yKk7C/qrke03a84V+w==}
+  '@babel/parser@7.26.8':
+    resolution: {integrity: sha512-TZIQ25pkSoaKEYYaHbbxkfL36GNsQ6iFiBbeuzAkLnXayKR1yP1zFe+NxuZWWsUyvt8icPU9CCq0sgWGXR1GEw==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -2705,8 +2697,8 @@ packages:
     resolution: {integrity: sha512-aOOgh1/5XzKvg1jvVz7AVrx2piJ2XBi227DHmbY6y+bM9H2FlN+IfecYu4Xl0cNiiVejlsCri89LUsbj8vJD9Q==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/template@7.25.9':
-    resolution: {integrity: sha512-9DGttpmPvIxBb/2uwpVo3dqJ+O6RooAFOS+lB+xDqoE2PVCE8nfoHMdZLpfCQRLwvohzXISPZcgxt80xLfsuwg==}
+  '@babel/template@7.26.8':
+    resolution: {integrity: sha512-iNKaX3ZebKIsCvJ+0jd6embf+Aulaa3vNBqZ41kM7iTWjx5qzWKXGHiJUW3+nTpQ18SG11hdF8OAzKrpXkb96Q==}
     engines: {node: '>=6.9.0'}
 
   '@babel/traverse@7.23.0':
@@ -2721,16 +2713,12 @@ packages:
     resolution: {integrity: sha512-tY3mM8rH9jM0YHFGyfC0/xf+SB5eKUu7HPj7/k3fpi9dAlsMc5YbQvDi0Sh2QTPXqMhyaAtzAr807TIyfQrmyg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/traverse@7.23.9':
-    resolution: {integrity: sha512-I/4UJ9vs90OkBtY6iiiTORVMyIhJ4kAVmsKo9KFc8UOxMeUfi2hvtIBsET5u9GizXE6/GFSuKCTNfgCswuEjRg==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/traverse@7.25.6':
     resolution: {integrity: sha512-9Vrcx5ZW6UwK5tvqsj0nGpp/XzqthkT0dqIc9g1AdtygFToNtTF67XzYS//dm+SAK9cp3B9R4ZO/46p63SCjlQ==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/traverse@7.26.7':
-    resolution: {integrity: sha512-1x1sgeyRLC3r5fQOM0/xtQKsYjyxmFjaOrLJNtZ81inNjyJHGIolTULPiSc/2qe1/qfpFLisLQYFnnZl7QoedA==}
+  '@babel/traverse@7.26.8':
+    resolution: {integrity: sha512-nic9tRkjYH0oB2dzr/JoGIm+4Q6SuYeLEiIiZDwBscRMYFJ+tMAz98fuel9ZnbXViA2I0HVSSRRK8DW5fjXStA==}
     engines: {node: '>=6.9.0'}
 
   '@babel/types@7.23.0':
@@ -2741,10 +2729,6 @@ packages:
     resolution: {integrity: sha512-OZnvoH2l8PK5eUvEcUyCt/sXgr/h+UWpVuBbOljwcrAgUl6lpchoQ++PHGyQy1AtYnVA6CEq3y5xeEI10brpXw==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.23.6':
-    resolution: {integrity: sha512-+uarb83brBzPKN38NX1MkB6vb6+mwvR6amUulqAE7ccQw1pEl+bCia9TbdG1lsnFP7lZySvUn37CHyXQdfTwzg==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/types@7.23.9':
     resolution: {integrity: sha512-dQjSq/7HaSjRM43FFGnv5keM2HsxpmyV1PfaSVm0nzzjwwTmjOe6J4bC8e3+pTEIgHaHj+1ZlLThRJ2auc/w1Q==}
     engines: {node: '>=6.9.0'}
@@ -2753,8 +2737,8 @@ packages:
     resolution: {integrity: sha512-/l42B1qxpG6RdfYf343Uw1vmDjeNhneUXtzhojE7pDgfpEypmRhI6j1kr17XCVv4Cgl9HdAiQY2x0GwKm7rWCw==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.26.7':
-    resolution: {integrity: sha512-t8kDRGrKXyp6+tjUh7hw2RLyclsW4TRoRvRHtSyAX9Bb5ldlFh+90YAYY6awRXrlB4G5G2izNeGySpATlFzmOg==}
+  '@babel/types@7.26.8':
+    resolution: {integrity: sha512-eUuWapzEGWFEpHFxgEaBG8e3n6S8L3MSu0oda755rOfabWPnh0Our1AozNFVUxGFIhbKgd1ksprsoDGMinTOTA==}
     engines: {node: '>=6.9.0'}
 
   '@bcoe/v8-coverage@0.2.3':
@@ -3126,6 +3110,10 @@ packages:
 
   '@eslint/js@9.19.0':
     resolution: {integrity: sha512-rbq9/g38qjfqFLOVPvwjIvFFdNziEC5S65jmjPw5r6A//QH+W91akh9irMwjDN8zKUTak6W9EsAv4m/7Wnw0UQ==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@eslint/js@9.20.0':
+    resolution: {integrity: sha512-iZA07H9io9Wn836aVTytRaNqh00Sad+EamwOVJT12GTLw1VGMFV/4JaME+JjLtr9fiGaoWgYnS54wrfWsSs4oQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/object-schema@2.1.6':
@@ -5160,6 +5148,10 @@ packages:
 
   array.prototype.findlast@1.2.5:
     resolution: {integrity: sha512-CVvd6FHg1Z3POpBLxO6E6zr+rSKEQ9L6rZHAaY7lLfhKsWYUBBOuMs0e9o24oopj6H+geRCX0YJ+TJLBK2eHyQ==}
+    engines: {node: '>= 0.4'}
+
+  array.prototype.findlastindex@1.2.3:
+    resolution: {integrity: sha512-LzLoiOMAxvy+Gd3BAq3B7VeIgPdo+Q8hthvKtXybMvRV0jrXfJM/t8mw7nNlpEcVlVUnCnM2KSX4XU5HmpodOA==}
     engines: {node: '>= 0.4'}
 
   array.prototype.findlastindex@1.2.5:
@@ -7211,6 +7203,16 @@ packages:
     peerDependencies:
       graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
 
+  eslint-plugin-import@2.28.1:
+    resolution: {integrity: sha512-9I9hFlITvOV55alzoKBI+K9q74kv0iKMeY6av5+umsNwayt59fz692daGyjR+oStBQgx6nwR9rXldDev3Clw+A==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      '@typescript-eslint/parser': '*'
+      eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
+    peerDependenciesMeta:
+      '@typescript-eslint/parser':
+        optional: true
+
   eslint-plugin-import@2.31.0:
     resolution: {integrity: sha512-ixmkI62Rbc2/w8Vfxyh1jQRTdRTF52VxwRVHl/ykPAmqG+Nb7/kNn+byLP0LxPgI7zWA16Jt82SybJInmMia3A==}
     engines: {node: '>=4'}
@@ -8300,6 +8302,10 @@ packages:
     resolution: {integrity: sha512-vUptKVTpIJhcczKBbgnS+RtcuYMB8+oNzPK2/Hp3hanz8JmpATdmmgLgSaadVREkDm+e2giHwY3ZRkyjSIDDFA==}
     engines: {node: '>= 0.4'}
 
+  hasown@2.0.1:
+    resolution: {integrity: sha512-1/th4MHjnwncwXsIW6QMzlvYL9kG5e/CpVvLRZe4XPa8TOUNbCELqmvhDmnkNsAjwaG4+I8gJJL0JBvTTLO9qA==}
+    engines: {node: '>= 0.4'}
+
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
@@ -8778,8 +8784,8 @@ packages:
     resolution: {integrity: sha512-gDYaKHJmnj4aWxyj6YHyXVpdQawtVLHU5cb+eztPGczf6cjuTdwve5ZIEfgXqH4e57An1D1AKf8CZ3kYrQRqYA==}
     engines: {node: '>= 0.4'}
 
-  is-boolean-object@1.2.1:
-    resolution: {integrity: sha512-l9qO6eFlUETHtuihLcYOaLKByJ1f+N4kthcU9YjHy3N+B3hWv0y/2Nd0mu/7lTFnRQHTrSdXF50HQ3bl5fEnng==}
+  is-boolean-object@1.2.2:
+    resolution: {integrity: sha512-wa56o2/ElJMYqjCjGkXri7it5FbebW5usLw/nPmCMs5DeZ7eziSYZhSmPRn0txqeW4LnAmQQU7FgqLpsEFKM4A==}
     engines: {node: '>= 0.4'}
 
   is-buffer@1.1.6:
@@ -10799,8 +10805,8 @@ packages:
   object-inspect@1.12.3:
     resolution: {integrity: sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==}
 
-  object-inspect@1.13.3:
-    resolution: {integrity: sha512-kDCGIbxkDSXE3euJZZXzc6to7fCrKHNI/hSRQnRuQ+BWjFNzZwiFF8fj/6o2t2G9/jTj8PSIYTfCLelLZEeRpA==}
+  object-inspect@1.13.4:
+    resolution: {integrity: sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==}
     engines: {node: '>= 0.4'}
 
   object-is@1.1.5:
@@ -10846,6 +10852,9 @@ packages:
   object.getownpropertydescriptors@2.1.7:
     resolution: {integrity: sha512-PrJz0C2xJ58FNn11XV2lr4Jt5Gzl94qpy9Lu0JlfEj14z88sqbSBJCBEzdlNUCzY2gburhbrwOZ5BHCmuNUy0g==}
     engines: {node: '>= 0.8'}
+
+  object.groupby@1.0.1:
+    resolution: {integrity: sha512-HqaQtqLnp/8Bn4GL16cj+CUYbnpe1bh0TtEaWvybszDG4tgxCJuRpV8VGuvNaI1fAnI4lUJzDG55MXcOH4JZcQ==}
 
   object.groupby@1.0.3:
     resolution: {integrity: sha512-+Lhy3TQTuzXI5hevh8sBGqbmurHbbIjAi0Z4S63nthVLmLxfbj4T54a4CfZrXIrt9iP4mVAPYMo/v99taj3wjQ==}
@@ -11281,8 +11290,8 @@ packages:
     resolution: {integrity: sha512-xTgYBc3fuo7Yt7JbiuFxSYGToMoz8fLoE6TC9Wx1P/u+LfeThMOAqmuyECnlBaaJb+u1m9hHiXUEtwW4OzfUJg==}
     engines: {node: '>=0.10.0'}
 
-  possible-typed-array-names@1.0.0:
-    resolution: {integrity: sha512-d7Uw+eZoloe0EHDIYoe+bQ5WXnGMOpmiZFTuMWCwpjzzkL2nTjcKiAk4hh8TjnGye2TwWOk3UXucZ+3rbmBa8Q==}
+  possible-typed-array-names@1.1.0:
+    resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
     engines: {node: '>= 0.4'}
 
   postcss-calc@8.2.4:
@@ -12354,6 +12363,9 @@ packages:
   safe-push-apply@1.0.0:
     resolution: {integrity: sha512-iKE9w/Z7xCzUMIZqdBsp6pEQvwuEebH4vdpjcDWnyzaI6yl6O9FHvVpmGelvEHNsoY6wGblkxR6Zty/h00WiSA==}
     engines: {node: '>= 0.4'}
+
+  safe-regex-test@1.0.0:
+    resolution: {integrity: sha512-JBUUzyOgEwXQY1NuPtvcj/qcBDbDmEvWufhlnXZIm75DEHp+afM1r1ujJpJsV/gSM4t59tpDyPi1sd6ZaPFfsA==}
 
   safe-regex-test@1.1.0:
     resolution: {integrity: sha512-x/+Cz4YrimQxQccJf5mKEbIa1NzeCRNI5Ecl/ekmlYaampdNLPalVyIcCZNNH3MvmqBugV5TMYZXv0ljslUlaw==}
@@ -14480,8 +14492,8 @@ snapshots:
 
   '@ampproject/remapping@2.2.1':
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.19
+      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/trace-mapping': 0.3.25
 
   '@ardatan/aggregate-error@0.0.6':
     dependencies:
@@ -15012,12 +15024,12 @@ snapshots:
   '@babel/core@7.10.5':
     dependencies:
       '@babel/code-frame': 7.24.7
-      '@babel/generator': 7.23.6
+      '@babel/generator': 7.25.6
       '@babel/helper-module-transforms': 7.23.3(@babel/core@7.10.5)
       '@babel/helpers': 7.23.2
-      '@babel/parser': 7.23.9
+      '@babel/parser': 7.25.6
       '@babel/template': 7.25.0
-      '@babel/traverse': 7.23.9
+      '@babel/traverse': 7.25.6
       '@babel/types': 7.25.6
       convert-source-map: 1.9.0
       debug: 4.3.4(supports-color@8.1.1)
@@ -15054,14 +15066,14 @@ snapshots:
     dependencies:
       '@ampproject/remapping': 2.2.1
       '@babel/code-frame': 7.24.7
-      '@babel/generator': 7.23.6
+      '@babel/generator': 7.25.6
       '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-module-transforms': 7.23.3(@babel/core@7.23.0)
       '@babel/helpers': 7.23.7
-      '@babel/parser': 7.23.6
-      '@babel/template': 7.22.15
-      '@babel/traverse': 7.23.7
-      '@babel/types': 7.23.9
+      '@babel/parser': 7.25.6
+      '@babel/template': 7.25.0
+      '@babel/traverse': 7.25.6
+      '@babel/types': 7.25.6
       convert-source-map: 2.0.0
       debug: 4.3.4(supports-color@8.1.1)
       gensync: 1.0.0-beta.2
@@ -15113,18 +15125,11 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.19
       jsesc: 2.5.2
 
-  '@babel/generator@7.23.3':
-    dependencies:
-      '@babel/types': 7.23.9
-      '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.22
-      jsesc: 2.5.2
-
   '@babel/generator@7.23.6':
     dependencies:
-      '@babel/types': 7.23.9
-      '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.22
+      '@babel/types': 7.25.6
+      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/trace-mapping': 0.3.25
       jsesc: 2.5.2
 
   '@babel/generator@7.25.6':
@@ -15134,10 +15139,10 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.25
       jsesc: 2.5.2
 
-  '@babel/generator@7.26.5':
+  '@babel/generator@7.26.8':
     dependencies:
-      '@babel/parser': 7.26.7
-      '@babel/types': 7.26.7
+      '@babel/parser': 7.26.8
+      '@babel/types': 7.26.8
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
       jsesc: 3.1.0
@@ -15148,11 +15153,11 @@ snapshots:
 
   '@babel/helper-annotate-as-pure@7.25.9':
     dependencies:
-      '@babel/types': 7.26.7
+      '@babel/types': 7.26.8
 
   '@babel/helper-builder-binary-assignment-operator-visitor@7.22.15':
     dependencies:
-      '@babel/types': 7.23.9
+      '@babel/types': 7.25.6
 
   '@babel/helper-compilation-targets@7.22.15':
     dependencies:
@@ -15290,12 +15295,12 @@ snapshots:
 
   '@babel/helper-function-name@7.23.0':
     dependencies:
-      '@babel/template': 7.22.15
-      '@babel/types': 7.23.9
+      '@babel/template': 7.25.0
+      '@babel/types': 7.25.6
 
   '@babel/helper-hoist-variables@7.22.5':
     dependencies:
-      '@babel/types': 7.23.9
+      '@babel/types': 7.25.6
 
   '@babel/helper-member-expression-to-functions@7.23.0':
     dependencies:
@@ -15307,8 +15312,8 @@ snapshots:
 
   '@babel/helper-module-imports@7.25.9':
     dependencies:
-      '@babel/traverse': 7.26.7
-      '@babel/types': 7.26.7
+      '@babel/traverse': 7.26.8
+      '@babel/types': 7.26.8
     transitivePeerDependencies:
       - supports-color
 
@@ -15359,7 +15364,7 @@ snapshots:
 
   '@babel/helper-optimise-call-expression@7.22.5':
     dependencies:
-      '@babel/types': 7.23.9
+      '@babel/types': 7.25.6
 
   '@babel/helper-plugin-utils@7.10.4': {}
 
@@ -15411,7 +15416,7 @@ snapshots:
 
   '@babel/helper-simple-access@7.22.5':
     dependencies:
-      '@babel/types': 7.23.9
+      '@babel/types': 7.25.6
 
   '@babel/helper-skip-transparent-expression-wrappers@7.22.5':
     dependencies:
@@ -15419,9 +15424,7 @@ snapshots:
 
   '@babel/helper-split-export-declaration@7.22.6':
     dependencies:
-      '@babel/types': 7.23.9
-
-  '@babel/helper-string-parser@7.22.5': {}
+      '@babel/types': 7.25.6
 
   '@babel/helper-string-parser@7.23.4': {}
 
@@ -15463,9 +15466,9 @@ snapshots:
 
   '@babel/helpers@7.23.7':
     dependencies:
-      '@babel/template': 7.22.15
-      '@babel/traverse': 7.23.7
-      '@babel/types': 7.23.9
+      '@babel/template': 7.25.0
+      '@babel/traverse': 7.25.6
+      '@babel/types': 7.25.6
     transitivePeerDependencies:
       - supports-color
 
@@ -15488,15 +15491,11 @@ snapshots:
 
   '@babel/parser@7.23.0':
     dependencies:
-      '@babel/types': 7.23.3
-
-  '@babel/parser@7.23.3':
-    dependencies:
-      '@babel/types': 7.23.9
+      '@babel/types': 7.25.6
 
   '@babel/parser@7.23.6':
     dependencies:
-      '@babel/types': 7.23.9
+      '@babel/types': 7.25.6
 
   '@babel/parser@7.23.9':
     dependencies:
@@ -15506,9 +15505,9 @@ snapshots:
     dependencies:
       '@babel/types': 7.25.6
 
-  '@babel/parser@7.26.7':
+  '@babel/parser@7.26.8':
     dependencies:
-      '@babel/types': 7.26.7
+      '@babel/types': 7.26.8
 
   '@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@7.22.15(@babel/core@7.18.0)':
     dependencies:
@@ -16193,7 +16192,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.18.0
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/template': 7.22.15
+      '@babel/template': 7.25.0
 
   '@babel/plugin-transform-computed-properties@7.23.3(@babel/core@7.23.0)':
     dependencies:
@@ -16725,7 +16724,7 @@ snapshots:
       '@babel/helper-module-imports': 7.25.9
       '@babel/helper-plugin-utils': 7.26.5
       '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.23.0)
-      '@babel/types': 7.26.7
+      '@babel/types': 7.26.8
     transitivePeerDependencies:
       - supports-color
 
@@ -16736,7 +16735,7 @@ snapshots:
       '@babel/helper-module-imports': 7.25.9
       '@babel/helper-plugin-utils': 7.26.5
       '@babel/plugin-syntax-jsx': 7.25.9(@babel/core@7.23.7)
-      '@babel/types': 7.26.7
+      '@babel/types': 7.26.8
     transitivePeerDependencies:
       - supports-color
 
@@ -17229,7 +17228,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/plugin-proposal-unicode-property-regex': 7.18.6(@babel/core@7.18.0)
       '@babel/plugin-transform-dotall-regex': 7.23.3(@babel/core@7.18.0)
-      '@babel/types': 7.23.6
+      '@babel/types': 7.25.6
       esutils: 2.0.3
 
   '@babel/preset-modules@0.1.6-no-external-plugins(@babel/core@7.23.0)':
@@ -17322,8 +17321,8 @@ snapshots:
   '@babel/template@7.22.15':
     dependencies:
       '@babel/code-frame': 7.24.7
-      '@babel/parser': 7.23.3
-      '@babel/types': 7.23.3
+      '@babel/parser': 7.25.6
+      '@babel/types': 7.25.6
 
   '@babel/template@7.25.0':
     dependencies:
@@ -17331,22 +17330,22 @@ snapshots:
       '@babel/parser': 7.25.6
       '@babel/types': 7.25.6
 
-  '@babel/template@7.25.9':
+  '@babel/template@7.26.8':
     dependencies:
       '@babel/code-frame': 7.26.2
-      '@babel/parser': 7.26.7
-      '@babel/types': 7.26.7
+      '@babel/parser': 7.26.8
+      '@babel/types': 7.26.8
 
   '@babel/traverse@7.23.0':
     dependencies:
       '@babel/code-frame': 7.24.7
-      '@babel/generator': 7.23.3
+      '@babel/generator': 7.25.6
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-hoist-variables': 7.22.5
       '@babel/helper-split-export-declaration': 7.22.6
-      '@babel/parser': 7.23.3
-      '@babel/types': 7.23.3
+      '@babel/parser': 7.25.6
+      '@babel/types': 7.25.6
       debug: 4.3.4(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:
@@ -17370,22 +17369,7 @@ snapshots:
   '@babel/traverse@7.23.7':
     dependencies:
       '@babel/code-frame': 7.24.7
-      '@babel/generator': 7.23.6
-      '@babel/helper-environment-visitor': 7.22.20
-      '@babel/helper-function-name': 7.23.0
-      '@babel/helper-hoist-variables': 7.22.5
-      '@babel/helper-split-export-declaration': 7.22.6
-      '@babel/parser': 7.23.6
-      '@babel/types': 7.23.9
-      debug: 4.3.4(supports-color@8.1.1)
-      globals: 11.12.0
-    transitivePeerDependencies:
-      - supports-color
-
-  '@babel/traverse@7.23.9':
-    dependencies:
-      '@babel/code-frame': 7.24.7
-      '@babel/generator': 7.23.6
+      '@babel/generator': 7.25.6
       '@babel/helper-environment-visitor': 7.22.20
       '@babel/helper-function-name': 7.23.0
       '@babel/helper-hoist-variables': 7.22.5
@@ -17409,13 +17393,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/traverse@7.26.7':
+  '@babel/traverse@7.26.8':
     dependencies:
       '@babel/code-frame': 7.26.2
-      '@babel/generator': 7.26.5
-      '@babel/parser': 7.26.7
-      '@babel/template': 7.25.9
-      '@babel/types': 7.26.7
+      '@babel/generator': 7.26.8
+      '@babel/parser': 7.26.8
+      '@babel/template': 7.26.8
+      '@babel/types': 7.26.8
       debug: 4.3.4(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:
@@ -17423,7 +17407,7 @@ snapshots:
 
   '@babel/types@7.23.0':
     dependencies:
-      '@babel/helper-string-parser': 7.22.5
+      '@babel/helper-string-parser': 7.24.8
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
@@ -17433,15 +17417,9 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  '@babel/types@7.23.6':
-    dependencies:
-      '@babel/helper-string-parser': 7.23.4
-      '@babel/helper-validator-identifier': 7.24.7
-      to-fast-properties: 2.0.0
-
   '@babel/types@7.23.9':
     dependencies:
-      '@babel/helper-string-parser': 7.23.4
+      '@babel/helper-string-parser': 7.24.8
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
@@ -17451,7 +17429,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
-  '@babel/types@7.26.7':
+  '@babel/types@7.26.8':
     dependencies:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
@@ -17709,6 +17687,8 @@ snapshots:
 
   '@eslint/js@9.19.0': {}
 
+  '@eslint/js@9.20.0': {}
+
   '@eslint/object-schema@2.1.6': {}
 
   '@eslint/plugin-kit@0.2.5':
@@ -17750,7 +17730,7 @@ snapshots:
     dependencies:
       fast-json-stringify: 5.8.0
 
-  '@fastify/oauth2@7.8.1':
+  '@fastify/oauth2@7.8.1(patch_hash=fjqma2r6xxjavghcsvyjlkhmyy)':
     dependencies:
       '@fastify/cookie': 9.4.0
       fastify-plugin: 4.5.1
@@ -18176,7 +18156,7 @@ snapshots:
       '@jest/test-result': 29.7.0
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
-      '@jridgewell/trace-mapping': 0.3.22
+      '@jridgewell/trace-mapping': 0.3.25
       '@types/node': 20.12.8
       chalk: 4.1.2
       collect-v8-coverage: 1.0.2
@@ -18204,7 +18184,7 @@ snapshots:
 
   '@jest/source-map@29.6.3':
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.22
+      '@jridgewell/trace-mapping': 0.3.25
       callsites: 3.1.0
       graceful-fs: 4.2.11
 
@@ -18288,8 +18268,8 @@ snapshots:
 
   '@jridgewell/source-map@0.3.5':
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.22
+      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/trace-mapping': 0.3.25
 
   '@jridgewell/sourcemap-codec@1.4.15': {}
 
@@ -18413,7 +18393,7 @@ snapshots:
       react-refresh: 0.9.0
       schema-utils: 2.7.1
       source-map: 0.7.4
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   '@polka/url@1.0.0-next.23': {}
 
@@ -19088,7 +19068,7 @@ snapshots:
 
   '@types/babel__core@7.20.3':
     dependencies:
-      '@babel/parser': 7.23.9
+      '@babel/parser': 7.25.6
       '@babel/types': 7.25.6
       '@types/babel__generator': 7.6.5
       '@types/babel__template': 7.4.2
@@ -19096,8 +19076,8 @@ snapshots:
 
   '@types/babel__core@7.20.5':
     dependencies:
-      '@babel/parser': 7.23.6
-      '@babel/types': 7.23.9
+      '@babel/parser': 7.25.6
+      '@babel/types': 7.25.6
       '@types/babel__generator': 7.6.5
       '@types/babel__template': 7.4.2
       '@types/babel__traverse': 7.20.2
@@ -19155,7 +19135,7 @@ snapshots:
 
   '@types/cookiejar@2.1.2': {}
 
-  '@types/copy-webpack-plugin@8.0.1(webpack-cli@4.10.0)':
+  '@types/copy-webpack-plugin@8.0.1(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))':
     dependencies:
       '@types/node': 20.8.0
       tapable: 2.2.1
@@ -19929,17 +19909,17 @@ snapshots:
       '@webassemblyjs/ast': 1.11.6
       '@xtuc/long': 4.2.2
 
-  '@webpack-cli/configtest@1.2.0(webpack-cli@4.10.0)(webpack@5.90.3)':
+  '@webpack-cli/configtest@1.2.0(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))(webpack@5.90.3(webpack-cli@4.10.0))':
     dependencies:
       webpack: 5.90.3(webpack-cli@4.10.0)
       webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
 
-  '@webpack-cli/info@1.5.0(webpack-cli@4.10.0)':
+  '@webpack-cli/info@1.5.0(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))':
     dependencies:
       envinfo: 7.10.0
       webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
 
-  '@webpack-cli/serve@1.7.0(webpack-cli@4.10.0)':
+  '@webpack-cli/serve@1.7.0(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))':
     dependencies:
       webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
 
@@ -20041,9 +20021,9 @@ snapshots:
     dependencies:
       array.prototype.find: 2.2.2
       function.prototype.name: 1.1.6
-      is-regex: 1.2.1
+      is-regex: 1.1.4
       object-is: 1.1.5
-      object.assign: 4.1.7
+      object.assign: 4.1.5
       object.entries: 1.1.7
       prop-types: 15.8.1
       prop-types-exact: 1.2.0
@@ -20181,7 +20161,7 @@ snapshots:
 
   array-buffer-byte-length@1.0.0:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       is-array-buffer: 3.0.2
 
   array-buffer-byte-length@1.0.2:
@@ -20201,12 +20181,12 @@ snapshots:
 
   array-includes@3.1.8:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
       es-abstract: 1.23.9
       es-object-atoms: 1.1.1
-      get-intrinsic: 1.2.7
-      is-string: 1.1.1
+      get-intrinsic: 1.2.4
+      is-string: 1.0.7
 
   array-iterate@1.1.4: {}
 
@@ -20216,18 +20196,18 @@ snapshots:
 
   array.prototype.filter@1.0.3:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.22.2
       es-array-method-boxes-properly: 1.0.0
-      is-string: 1.1.1
+      is-string: 1.0.7
 
   array.prototype.find@2.2.2:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
-      es-abstract: 1.23.9
-      es-shim-unscopables: 1.0.2
+      es-abstract: 1.22.2
+      es-shim-unscopables: 1.0.0
 
   array.prototype.findlast@1.2.5:
     dependencies:
@@ -20238,9 +20218,17 @@ snapshots:
       es-object-atoms: 1.1.1
       es-shim-unscopables: 1.0.2
 
+  array.prototype.findlastindex@1.2.3:
+    dependencies:
+      call-bind: 1.0.7
+      define-properties: 1.2.1
+      es-abstract: 1.22.2
+      es-shim-unscopables: 1.0.0
+      get-intrinsic: 1.2.4
+
   array.prototype.findlastindex@1.2.5:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
       es-abstract: 1.23.9
       es-errors: 1.3.0
@@ -20249,10 +20237,10 @@ snapshots:
 
   array.prototype.flat@1.3.2:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
-      es-abstract: 1.23.9
-      es-shim-unscopables: 1.0.2
+      es-abstract: 1.22.2
+      es-shim-unscopables: 1.0.0
 
   array.prototype.flatmap@1.3.2:
     dependencies:
@@ -20270,19 +20258,19 @@ snapshots:
 
   array.prototype.reduce@1.0.6:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.22.2
       es-array-method-boxes-properly: 1.0.0
-      is-string: 1.1.1
+      is-string: 1.0.7
 
   array.prototype.tosorted@1.1.2:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
-      es-abstract: 1.23.9
-      es-shim-unscopables: 1.0.2
-      get-intrinsic: 1.2.7
+      es-abstract: 1.22.2
+      es-shim-unscopables: 1.0.0
+      get-intrinsic: 1.2.4
 
   array.prototype.tosorted@1.1.4:
     dependencies:
@@ -20295,10 +20283,10 @@ snapshots:
   arraybuffer.prototype.slice@1.0.2:
     dependencies:
       array-buffer-byte-length: 1.0.0
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
-      es-abstract: 1.23.9
-      get-intrinsic: 1.2.7
+      es-abstract: 1.22.2
+      get-intrinsic: 1.2.4
       is-array-buffer: 3.0.2
       is-shared-array-buffer: 1.0.2
 
@@ -20331,7 +20319,7 @@ snapshots:
 
   assert@1.5.1:
     dependencies:
-      object.assign: 4.1.7
+      object.assign: 4.1.5
       util: 0.10.4
 
   assert@2.0.0:
@@ -20400,7 +20388,7 @@ snapshots:
 
   available-typed-arrays@1.0.7:
     dependencies:
-      possible-typed-array-names: 1.0.0
+      possible-typed-array-names: 1.1.0
 
   avvio@8.3.0:
     dependencies:
@@ -20461,9 +20449,9 @@ snapshots:
   babel-eslint@10.1.0(eslint@7.32.0):
     dependencies:
       '@babel/code-frame': 7.26.2
-      '@babel/parser': 7.26.7
-      '@babel/traverse': 7.26.7
-      '@babel/types': 7.26.7
+      '@babel/parser': 7.26.8
+      '@babel/traverse': 7.26.8
+      '@babel/types': 7.26.8
       eslint: 7.32.0
       eslint-visitor-keys: 1.3.0
       resolve: 1.22.8
@@ -20490,9 +20478,9 @@ snapshots:
       loader-utils: 2.0.4
       make-dir: 3.1.0
       schema-utils: 2.7.1
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
-  babel-loader@8.3.0(@babel/core@7.23.7)(webpack@5.90.3):
+  babel-loader@8.3.0(@babel/core@7.23.7)(webpack@5.90.3(webpack-cli@4.10.0)):
     dependencies:
       '@babel/core': 7.23.7
       find-cache-dir: 3.3.2
@@ -20527,7 +20515,7 @@ snapshots:
   babel-plugin-lodash@3.3.4:
     dependencies:
       '@babel/helper-module-imports': 7.22.15
-      '@babel/types': 7.23.0
+      '@babel/types': 7.25.6
       glob: 7.2.3
       lodash: 4.17.21
       require-package-name: 2.0.1
@@ -20657,7 +20645,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.23.0
       '@babel/runtime': 7.23.9
-      '@babel/types': 7.23.9
+      '@babel/types': 7.25.6
       gatsby: 3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@16.14.0(react@16.14.0))(react@16.14.0)(typescript@5.2.2)
       gatsby-core-utils: 2.15.0
 
@@ -20665,7 +20653,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.23.7
       '@babel/runtime': 7.23.9
-      '@babel/types': 7.23.9
+      '@babel/types': 7.25.6
       gatsby: 3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@16.14.0(react@16.14.0))(react@16.14.0)(typescript@5.2.2)
       gatsby-core-utils: 2.15.0
 
@@ -21641,7 +21629,7 @@ snapshots:
 
   copy-descriptor@0.1.1: {}
 
-  copy-webpack-plugin@9.1.0(webpack@5.90.3):
+  copy-webpack-plugin@9.1.0(webpack@5.90.3(webpack-cli@4.10.0)):
     dependencies:
       fast-glob: 3.3.1
       glob-parent: 6.0.2
@@ -21830,7 +21818,7 @@ snapshots:
       postcss-value-parser: 4.2.0
       schema-utils: 3.3.0
       semver: 7.6.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   css-mediaquery@0.1.2: {}
 
@@ -21843,7 +21831,7 @@ snapshots:
       schema-utils: 3.3.0
       serialize-javascript: 5.0.1
       source-map: 0.6.1
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   css-select@4.3.0:
     dependencies:
@@ -22118,7 +22106,7 @@ snapshots:
     dependencies:
       es-define-property: 1.0.0
       es-errors: 1.3.0
-      gopd: 1.0.1
+      gopd: 1.2.0
 
   define-lazy-prop@2.0.0: {}
 
@@ -22514,9 +22502,9 @@ snapshots:
     dependencies:
       airbnb-prop-types: 2.16.0(react@16.14.0)
       function.prototype.name: 1.1.6
-      hasown: 2.0.2
+      hasown: 2.0.1
       object.assign: 4.1.5
-      object.fromentries: 2.0.8
+      object.fromentries: 2.0.7
       prop-types: 15.8.1
       react: 16.14.0
       semver: 6.3.1
@@ -22528,7 +22516,7 @@ snapshots:
 
   enzyme-shallow-equal@1.0.7:
     dependencies:
-      hasown: 2.0.2
+      hasown: 2.0.1
       object-is: 1.1.5
 
   enzyme@3.11.0:
@@ -22597,7 +22585,7 @@ snapshots:
       object.assign: 4.1.5
       regexp.prototype.flags: 1.5.1
       safe-array-concat: 1.0.1
-      safe-regex-test: 1.1.0
+      safe-regex-test: 1.0.0
       string.prototype.trim: 1.2.8
       string.prototype.trimend: 1.0.9
       string.prototype.trimstart: 1.0.7
@@ -22643,7 +22631,7 @@ snapshots:
       is-typed-array: 1.1.15
       is-weakref: 1.1.1
       math-intrinsics: 1.1.0
-      object-inspect: 1.13.3
+      object-inspect: 1.13.4
       object-keys: 1.1.1
       object.assign: 4.1.7
       own-keys: 1.0.1
@@ -22666,7 +22654,7 @@ snapshots:
 
   es-define-property@1.0.0:
     dependencies:
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.2.4
 
   es-define-property@1.0.1: {}
 
@@ -22674,25 +22662,25 @@ snapshots:
 
   es-get-iterator@1.1.3:
     dependencies:
-      call-bind: 1.0.8
-      get-intrinsic: 1.2.7
+      call-bind: 1.0.7
+      get-intrinsic: 1.2.4
       has-symbols: 1.0.3
       is-arguments: 1.1.1
       is-map: 2.0.2
       is-set: 2.0.2
-      is-string: 1.1.1
+      is-string: 1.0.7
       isarray: 2.0.5
       stop-iteration-iterator: 1.0.0
 
   es-iterator-helpers@1.0.15:
     dependencies:
       asynciterator.prototype: 1.0.0
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.22.2
       es-set-tostringtag: 2.0.1
       function-bind: 1.1.2
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.2.4
       globalthis: 1.0.3
       has-property-descriptors: 1.0.2
       has-proto: 1.0.1
@@ -22728,7 +22716,7 @@ snapshots:
 
   es-set-tostringtag@2.0.1:
     dependencies:
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.2.4
       has: 1.0.3
       has-tostringtag: 1.0.0
 
@@ -22869,7 +22857,7 @@ snapshots:
     dependencies:
       eslint: 9.19.0
 
-  eslint-config-react-app@6.0.0(@typescript-eslint/eslint-plugin@4.33.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint@7.32.0)(typescript@5.2.2))(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(babel-eslint@10.1.0(eslint@7.32.0))(eslint-plugin-flowtype@5.10.0(eslint@7.32.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.7.1(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.0(eslint@7.32.0))(eslint-plugin-react@7.33.2(eslint@7.32.0))(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(eslint@7.32.0)(typescript@5.2.2):
+  eslint-config-react-app@6.0.0(@typescript-eslint/eslint-plugin@4.33.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint@7.32.0)(typescript@5.2.2))(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(babel-eslint@10.1.0(eslint@7.32.0))(eslint-plugin-flowtype@5.10.0(eslint@7.32.0))(eslint-plugin-import@2.28.1(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.7.1(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.0(eslint@7.32.0))(eslint-plugin-react@7.33.2(eslint@7.32.0))(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(eslint@7.32.0)(typescript@5.2.2):
     dependencies:
       '@typescript-eslint/eslint-plugin': 4.33.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint@7.32.0)(typescript@5.2.2)
       '@typescript-eslint/parser': 4.33.0(eslint@7.32.0)(typescript@5.2.2)
@@ -22877,7 +22865,7 @@ snapshots:
       confusing-browser-globals: 1.0.11
       eslint: 7.32.0
       eslint-plugin-flowtype: 5.10.0(eslint@7.32.0)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0)
+      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@7.32.0)
       eslint-plugin-react: 7.33.2(eslint@7.32.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@7.32.0)
@@ -22898,7 +22886,7 @@ snapshots:
       debug: 4.3.4(supports-color@8.1.1)
       enhanced-resolve: 5.15.0
       eslint: 9.19.0
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.5.5)(eslint@9.19.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@9.19.0)
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.5.5)(eslint@9.19.0)
       get-tsconfig: 4.7.2
       globby: 13.2.2
@@ -22911,18 +22899,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0):
-    dependencies:
-      debug: 3.2.7(supports-color@5.5.0)
-    optionalDependencies:
-      '@typescript-eslint/parser': 4.33.0(eslint@7.32.0)(typescript@5.2.2)
-      eslint: 7.32.0
-      eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0)
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5)(eslint@9.19.0):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@9.19.0):
     dependencies:
       debug: 3.2.7(supports-color@5.5.0)
     optionalDependencies:
@@ -22933,7 +22910,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.8.0(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.5.5)(eslint@9.19.0):
+  eslint-module-utils@2.8.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0):
+    dependencies:
+      debug: 3.2.7(supports-color@5.5.0)
+    optionalDependencies:
+      '@typescript-eslint/parser': 4.33.0(eslint@7.32.0)(typescript@5.2.2)
+      eslint: 7.32.0
+      eslint-import-resolver-node: 0.3.9
+      eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0)
+    transitivePeerDependencies:
+      - supports-color
+
+  eslint-module-utils@2.8.0(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@9.19.0):
     dependencies:
       debug: 3.2.7(supports-color@5.5.0)
     optionalDependencies:
@@ -22968,27 +22956,25 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0):
+  eslint-plugin-import@2.28.1(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0):
     dependencies:
-      '@rtsao/scc': 1.1.0
-      array-includes: 3.1.8
-      array.prototype.findlastindex: 1.2.5
+      array-includes: 3.1.7
+      array.prototype.findlastindex: 1.2.3
       array.prototype.flat: 1.3.2
-      array.prototype.flatmap: 1.3.3
+      array.prototype.flatmap: 1.3.2
       debug: 3.2.7(supports-color@5.5.0)
       doctrine: 2.1.0
       eslint: 7.32.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0)
-      hasown: 2.0.2
-      is-core-module: 2.16.1
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0)
+      has: 1.0.3
+      is-core-module: 2.13.1
       is-glob: 4.0.3
       minimatch: 3.1.2
-      object.fromentries: 2.0.8
-      object.groupby: 1.0.3
-      object.values: 1.2.1
+      object.fromentries: 2.0.7
+      object.groupby: 1.0.1
+      object.values: 1.1.7
       semver: 6.3.1
-      string.prototype.trimend: 1.0.9
       tsconfig-paths: 3.15.0
     optionalDependencies:
       '@typescript-eslint/parser': 4.33.0(eslint@7.32.0)(typescript@5.2.2)
@@ -23003,12 +22989,12 @@ snapshots:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
       array.prototype.flat: 1.3.2
-      array.prototype.flatmap: 1.3.3
+      array.prototype.flatmap: 1.3.2
       debug: 3.2.7(supports-color@5.5.0)
       doctrine: 2.1.0
       eslint: 9.19.0
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5)(eslint@9.19.0)
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@9.19.0)
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -23053,7 +23039,7 @@ snapshots:
     dependencies:
       aria-query: 5.3.2
       array-includes: 3.1.8
-      array.prototype.flatmap: 1.3.3
+      array.prototype.flatmap: 1.3.2
       ast-types-flow: 0.0.8
       axe-core: 4.10.2
       axobject-query: 4.1.0
@@ -23100,8 +23086,8 @@ snapshots:
 
   eslint-plugin-react@7.33.2(eslint@7.32.0):
     dependencies:
-      array-includes: 3.1.8
-      array.prototype.flatmap: 1.3.3
+      array-includes: 3.1.7
+      array.prototype.flatmap: 1.3.2
       array.prototype.tosorted: 1.1.2
       doctrine: 2.1.0
       es-iterator-helpers: 1.0.15
@@ -23110,9 +23096,9 @@ snapshots:
       jsx-ast-utils: 3.3.5
       minimatch: 3.1.2
       object.entries: 1.1.7
-      object.fromentries: 2.0.8
+      object.fromentries: 2.0.7
       object.hasown: 1.1.3
-      object.values: 1.2.1
+      object.values: 1.1.7
       prop-types: 15.8.1
       resolve: 2.0.0-next.4
       semver: 6.3.1
@@ -23194,7 +23180,7 @@ snapshots:
       micromatch: 4.0.8
       normalize-path: 3.0.0
       schema-utils: 3.3.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   eslint@7.32.0:
     dependencies:
@@ -23685,7 +23671,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   file-type@16.5.4:
     dependencies:
@@ -23822,7 +23808,7 @@ snapshots:
       semver: 5.7.2
       tapable: 1.1.3
       typescript: 5.2.2
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
       worker-rpc: 0.1.1
     optionalDependencies:
       eslint: 7.32.0
@@ -24046,7 +24032,7 @@ snapshots:
   gatsby-plugin-page-creator@3.15.0(gatsby@3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@16.14.0(react@16.14.0))(react@16.14.0)(typescript@5.2.2))(graphql@15.8.0):
     dependencies:
       '@babel/runtime': 7.23.9
-      '@babel/traverse': 7.23.7
+      '@babel/traverse': 7.25.6
       '@sindresorhus/slugify': 1.1.2
       chokidar: 3.6.0
       fs-exists-cached: 1.0.0
@@ -24127,14 +24113,14 @@ snapshots:
   gatsby-recipes@0.26.0:
     dependencies:
       '@babel/core': 7.23.7
-      '@babel/generator': 7.23.6
+      '@babel/generator': 7.25.6
       '@babel/helper-plugin-utils': 7.22.5
       '@babel/plugin-proposal-optional-chaining': 7.17.12(@babel/core@7.23.7)
       '@babel/plugin-transform-react-jsx': 7.22.15(@babel/core@7.23.7)
       '@babel/runtime': 7.23.9
       '@babel/standalone': 7.23.7
-      '@babel/template': 7.22.15
-      '@babel/types': 7.23.9
+      '@babel/template': 7.25.0
+      '@babel/types': 7.25.6
       '@graphql-tools/schema': 7.1.5(graphql@15.8.0)
       '@graphql-tools/utils': 7.10.0(graphql@15.8.0)
       '@hapi/hoek': 8.5.1
@@ -24313,10 +24299,10 @@ snapshots:
       devcert: 1.2.2
       dotenv: 8.6.0
       eslint: 7.32.0
-      eslint-config-react-app: 6.0.0(@typescript-eslint/eslint-plugin@4.33.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint@7.32.0)(typescript@5.2.2))(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(babel-eslint@10.1.0(eslint@7.32.0))(eslint-plugin-flowtype@5.10.0(eslint@7.32.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.7.1(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.0(eslint@7.32.0))(eslint-plugin-react@7.33.2(eslint@7.32.0))(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(eslint@7.32.0)(typescript@5.2.2)
+      eslint-config-react-app: 6.0.0(@typescript-eslint/eslint-plugin@4.33.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint@7.32.0)(typescript@5.2.2))(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(babel-eslint@10.1.0(eslint@7.32.0))(eslint-plugin-flowtype@5.10.0(eslint@7.32.0))(eslint-plugin-import@2.28.1(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.7.1(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.0(eslint@7.32.0))(eslint-plugin-react@7.33.2(eslint@7.32.0))(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(eslint@7.32.0)(typescript@5.2.2)
       eslint-plugin-flowtype: 5.10.0(eslint@7.32.0)
       eslint-plugin-graphql: 4.0.0(@types/node@20.12.8)(graphql@15.8.0)(typescript@5.2.2)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0)
+      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-typescript@3.5.5(@typescript-eslint/parser@8.23.0(eslint@9.19.0)(typescript@5.4.5))(eslint-plugin-import@2.31.0)(eslint@9.19.0))(eslint@7.32.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@7.32.0)
       eslint-plugin-react: 7.33.2(eslint@7.32.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@7.32.0)
@@ -24406,7 +24392,7 @@ snapshots:
       url-loader: 4.1.1(file-loader@6.2.0(webpack@5.90.3))(webpack@5.90.3)
       uuid: 3.4.0
       v8-compile-cache: 2.4.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
       webpack-dev-middleware: 4.3.0(webpack@5.90.3)
       webpack-merge: 5.9.0
       webpack-stats-plugin: 1.1.3
@@ -24495,8 +24481,8 @@ snapshots:
 
   get-symbol-description@1.0.0:
     dependencies:
-      call-bind: 1.0.8
-      get-intrinsic: 1.2.7
+      call-bind: 1.0.7
+      get-intrinsic: 1.2.4
 
   get-symbol-description@1.1.0:
     dependencies:
@@ -24650,7 +24636,7 @@ snapshots:
 
   gopd@1.0.1:
     dependencies:
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.2.4
 
   gopd@1.2.0: {}
 
@@ -24838,6 +24824,10 @@ snapshots:
       type-fest: 0.8.1
 
   hasown@2.0.0:
+    dependencies:
+      function-bind: 1.1.2
+
+  hasown@2.0.1:
     dependencies:
       function-bind: 1.1.2
 
@@ -25318,7 +25308,7 @@ snapshots:
 
   internal-slot@1.0.5:
     dependencies:
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.2.4
       has: 1.0.3
       side-channel: 1.0.4
 
@@ -25380,8 +25370,8 @@ snapshots:
 
   is-array-buffer@3.0.2:
     dependencies:
-      call-bind: 1.0.8
-      get-intrinsic: 1.2.7
+      call-bind: 1.0.7
+      get-intrinsic: 1.2.4
       is-typed-array: 1.1.12
 
   is-array-buffer@3.0.5:
@@ -25415,7 +25405,7 @@ snapshots:
       call-bind: 1.0.7
       has-tostringtag: 1.0.0
 
-  is-boolean-object@1.2.1:
+  is-boolean-object@1.2.2:
     dependencies:
       call-bound: 1.0.3
       has-tostringtag: 1.0.2
@@ -25440,7 +25430,7 @@ snapshots:
 
   is-core-module@2.13.1:
     dependencies:
-      hasown: 2.0.2
+      hasown: 2.0.1
 
   is-core-module@2.16.1:
     dependencies:
@@ -25501,7 +25491,7 @@ snapshots:
 
   is-finalizationregistry@1.0.2:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
 
   is-finalizationregistry@1.1.1:
     dependencies:
@@ -25626,7 +25616,7 @@ snapshots:
 
   is-shared-array-buffer@1.0.2:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
 
   is-shared-array-buffer@1.0.4:
     dependencies:
@@ -25695,7 +25685,7 @@ snapshots:
 
   is-weakref@1.0.2:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
 
   is-weakref@1.1.1:
     dependencies:
@@ -25703,8 +25693,8 @@ snapshots:
 
   is-weakset@2.0.2:
     dependencies:
-      call-bind: 1.0.8
-      get-intrinsic: 1.2.7
+      call-bind: 1.0.7
+      get-intrinsic: 1.2.4
 
   is-weakset@2.0.4:
     dependencies:
@@ -25762,7 +25752,7 @@ snapshots:
   istanbul-lib-instrument@6.0.0:
     dependencies:
       '@babel/core': 7.23.7
-      '@babel/parser': 7.23.9
+      '@babel/parser': 7.25.6
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.0
       semver: 7.6.0
@@ -25793,7 +25783,7 @@ snapshots:
   iterator.prototype@1.1.2:
     dependencies:
       define-properties: 1.2.1
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.2.4
       has-symbols: 1.0.3
       reflect.getprototypeof: 1.0.4
       set-function-name: 2.0.1
@@ -26114,7 +26104,7 @@ snapshots:
   jest-snapshot@29.7.0:
     dependencies:
       '@babel/core': 7.23.7
-      '@babel/generator': 7.23.6
+      '@babel/generator': 7.25.6
       '@babel/plugin-syntax-jsx': 7.23.3(@babel/core@7.23.7)
       '@babel/plugin-syntax-typescript': 7.23.3(@babel/core@7.23.7)
       '@babel/types': 7.25.6
@@ -26401,8 +26391,8 @@ snapshots:
     dependencies:
       array-includes: 3.1.8
       array.prototype.flat: 1.3.2
-      object.assign: 4.1.7
-      object.values: 1.2.1
+      object.assign: 4.1.5
+      object.values: 1.1.7
 
   jump.js@1.0.1: {}
 
@@ -27674,7 +27664,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
       webpack-sources: 1.4.3
 
   minimalistic-assert@1.0.1: {}
@@ -27782,7 +27772,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       monaco-editor: 0.28.1
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   monaco-editor@0.28.1: {}
 
@@ -28086,7 +28076,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   nwsapi@2.2.7: {}
 
@@ -28104,7 +28094,7 @@ snapshots:
 
   object-inspect@1.12.3: {}
 
-  object-inspect@1.13.3: {}
+  object-inspect@1.13.4: {}
 
   object-is@1.1.5:
     dependencies:
@@ -28155,7 +28145,7 @@ snapshots:
 
   object.fromentries@2.0.8:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
       es-abstract: 1.23.9
       es-object-atoms: 1.1.1
@@ -28163,21 +28153,28 @@ snapshots:
   object.getownpropertydescriptors@2.1.7:
     dependencies:
       array.prototype.reduce: 1.0.6
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.22.2
       safe-array-concat: 1.0.1
+
+  object.groupby@1.0.1:
+    dependencies:
+      call-bind: 1.0.7
+      define-properties: 1.2.1
+      es-abstract: 1.22.2
+      get-intrinsic: 1.2.4
 
   object.groupby@1.0.3:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
       es-abstract: 1.23.9
 
   object.hasown@1.1.3:
     dependencies:
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.22.2
 
   object.pick@1.3.0:
     dependencies:
@@ -28653,7 +28650,7 @@ snapshots:
 
   posix-character-classes@0.1.1: {}
 
-  possible-typed-array-names@1.0.0: {}
+  possible-typed-array-names@1.1.0: {}
 
   postcss-calc@8.2.4(postcss@8.4.35):
     dependencies:
@@ -28703,7 +28700,7 @@ snapshots:
       postcss: 8.4.35
       schema-utils: 3.3.0
       semver: 7.6.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   postcss-loader@5.3.0(postcss@8.4.35)(webpack@5.90.3):
     dependencies:
@@ -28711,7 +28708,7 @@ snapshots:
       klona: 2.0.6
       postcss: 8.4.35
       semver: 7.6.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   postcss-merge-longhand@5.1.7(postcss@8.4.35):
     dependencies:
@@ -28968,7 +28965,7 @@ snapshots:
   prop-types-exact@1.2.0:
     dependencies:
       has: 1.0.3
-      object.assign: 4.1.7
+      object.assign: 4.1.5
       reflect.ownkeys: 0.2.0
 
   prop-types@15.8.1:
@@ -29186,7 +29183,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   rc@1.2.8:
     dependencies:
@@ -29221,7 +29218,7 @@ snapshots:
       shell-quote: 1.7.2
       strip-ansi: 6.0.0
       text-table: 0.2.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
     optionalDependencies:
       typescript: 5.2.2
     transitivePeerDependencies:
@@ -29541,10 +29538,10 @@ snapshots:
 
   reflect.getprototypeof@1.0.4:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
-      es-abstract: 1.23.9
-      get-intrinsic: 1.2.7
+      es-abstract: 1.22.2
+      get-intrinsic: 1.2.4
       globalthis: 1.0.3
       which-builtin-type: 1.1.3
 
@@ -29571,7 +29568,7 @@ snapshots:
 
   regexp.prototype.flags@1.5.1:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
       set-function-name: 2.0.1
 
@@ -29797,13 +29794,13 @@ snapshots:
 
   resolve@1.22.8:
     dependencies:
-      is-core-module: 2.16.1
+      is-core-module: 2.13.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 
   resolve@2.0.0-next.4:
     dependencies:
-      is-core-module: 2.16.1
+      is-core-module: 2.13.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 
@@ -29891,8 +29888,8 @@ snapshots:
 
   safe-array-concat@1.0.1:
     dependencies:
-      call-bind: 1.0.8
-      get-intrinsic: 1.2.7
+      call-bind: 1.0.7
+      get-intrinsic: 1.2.4
       has-symbols: 1.0.3
       isarray: 2.0.5
 
@@ -29914,6 +29911,12 @@ snapshots:
     dependencies:
       es-errors: 1.3.0
       isarray: 2.0.5
+
+  safe-regex-test@1.0.0:
+    dependencies:
+      call-bind: 1.0.7
+      get-intrinsic: 1.2.4
+      is-regex: 1.1.4
 
   safe-regex-test@1.1.0:
     dependencies:
@@ -30122,7 +30125,7 @@ snapshots:
       define-data-property: 1.1.4
       es-errors: 1.3.0
       function-bind: 1.1.2
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.2.4
       gopd: 1.0.1
       has-property-descriptors: 1.0.2
 
@@ -30131,7 +30134,7 @@ snapshots:
       define-data-property: 1.1.4
       es-errors: 1.3.0
       function-bind: 1.1.2
-      get-intrinsic: 1.2.7
+      get-intrinsic: 1.2.4
       gopd: 1.0.1
       has-property-descriptors: 1.0.2
 
@@ -30229,33 +30232,33 @@ snapshots:
   side-channel-list@1.0.0:
     dependencies:
       es-errors: 1.3.0
-      object-inspect: 1.13.3
+      object-inspect: 1.13.4
 
   side-channel-map@1.0.1:
     dependencies:
       call-bound: 1.0.3
       es-errors: 1.3.0
       get-intrinsic: 1.2.7
-      object-inspect: 1.13.3
+      object-inspect: 1.13.4
 
   side-channel-weakmap@1.0.2:
     dependencies:
       call-bound: 1.0.3
       es-errors: 1.3.0
       get-intrinsic: 1.2.7
-      object-inspect: 1.13.3
+      object-inspect: 1.13.4
       side-channel-map: 1.0.1
 
   side-channel@1.0.4:
     dependencies:
-      call-bind: 1.0.8
-      get-intrinsic: 1.2.7
+      call-bind: 1.0.7
+      get-intrinsic: 1.2.4
       object-inspect: 1.12.3
 
   side-channel@1.1.0:
     dependencies:
       es-errors: 1.3.0
-      object-inspect: 1.13.3
+      object-inspect: 1.13.4
       side-channel-list: 1.0.0
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
@@ -30633,16 +30636,16 @@ snapshots:
 
   string.prototype.includes@2.0.1:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
       es-abstract: 1.23.9
 
   string.prototype.matchall@4.0.10:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
-      es-abstract: 1.23.9
-      get-intrinsic: 1.2.7
+      es-abstract: 1.22.2
+      get-intrinsic: 1.2.4
       has-symbols: 1.0.3
       internal-slot: 1.0.5
       regexp.prototype.flags: 1.5.1
@@ -30695,9 +30698,9 @@ snapshots:
 
   string.prototype.trimstart@1.0.7:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.22.2
 
   string.prototype.trimstart@1.0.8:
     dependencies:
@@ -30864,7 +30867,7 @@ snapshots:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   style-to-object@0.3.0:
     dependencies:
@@ -31056,7 +31059,7 @@ snapshots:
 
   term-size@2.2.1: {}
 
-  terser-webpack-plugin@5.3.10(webpack@5.90.3):
+  terser-webpack-plugin@5.3.10(webpack@5.90.3(webpack-cli@4.10.0)):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
@@ -31065,14 +31068,23 @@ snapshots:
       terser: 5.28.1
       webpack: 5.90.3(webpack-cli@4.10.0)
 
+  terser-webpack-plugin@5.3.10(webpack@5.90.3):
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.25
+      jest-worker: 27.5.1
+      schema-utils: 3.3.0
+      serialize-javascript: 6.0.1
+      terser: 5.28.1
+      webpack: 5.90.3
+
   terser-webpack-plugin@5.3.9(webpack@5.90.3):
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.22
+      '@jridgewell/trace-mapping': 0.3.25
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.1
       terser: 5.20.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   terser@5.20.0:
     dependencies:
@@ -31376,8 +31388,8 @@ snapshots:
 
   typed-array-buffer@1.0.0:
     dependencies:
-      call-bind: 1.0.8
-      get-intrinsic: 1.2.7
+      call-bind: 1.0.7
+      get-intrinsic: 1.2.4
       is-typed-array: 1.1.12
 
   typed-array-buffer@1.0.3:
@@ -31388,7 +31400,7 @@ snapshots:
 
   typed-array-byte-length@1.0.0:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       for-each: 0.3.3
       has-proto: 1.0.1
       is-typed-array: 1.1.12
@@ -31404,7 +31416,7 @@ snapshots:
   typed-array-byte-offset@1.0.0:
     dependencies:
       available-typed-arrays: 1.0.5
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       for-each: 0.3.3
       has-proto: 1.0.1
       is-typed-array: 1.1.12
@@ -31421,7 +31433,7 @@ snapshots:
 
   typed-array-length@1.0.4:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       for-each: 0.3.3
       is-typed-array: 1.1.12
 
@@ -31431,7 +31443,7 @@ snapshots:
       for-each: 0.3.3
       gopd: 1.2.0
       is-typed-array: 1.1.15
-      possible-typed-array-names: 1.0.0
+      possible-typed-array-names: 1.1.0
       reflect.getprototypeof: 1.0.10
 
   typedarray-to-buffer@3.1.5:
@@ -31478,7 +31490,7 @@ snapshots:
 
   unbox-primitive@1.0.2:
     dependencies:
-      call-bind: 1.0.8
+      call-bind: 1.0.7
       has-bigints: 1.0.2
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
@@ -31762,7 +31774,7 @@ snapshots:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.3.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
     optionalDependencies:
       file-loader: 6.2.0(webpack@5.90.3)
 
@@ -31834,7 +31846,7 @@ snapshots:
 
   v8-to-istanbul@9.1.0:
     dependencies:
-      '@jridgewell/trace-mapping': 0.3.22
+      '@jridgewell/trace-mapping': 0.3.25
       '@types/istanbul-lib-coverage': 2.0.4
       convert-source-map: 1.9.0
 
@@ -31977,9 +31989,9 @@ snapshots:
   webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3):
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
-      '@webpack-cli/configtest': 1.2.0(webpack-cli@4.10.0)(webpack@5.90.3)
-      '@webpack-cli/info': 1.5.0(webpack-cli@4.10.0)
-      '@webpack-cli/serve': 1.7.0(webpack-cli@4.10.0)
+      '@webpack-cli/configtest': 1.2.0(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))(webpack@5.90.3(webpack-cli@4.10.0))
+      '@webpack-cli/info': 1.5.0(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))
+      '@webpack-cli/serve': 1.7.0(webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3))
       colorette: 2.0.20
       commander: 7.2.0
       cross-spawn: 7.0.3
@@ -32000,7 +32012,7 @@ snapshots:
       mime-types: 2.1.35
       range-parser: 1.2.1
       schema-utils: 3.3.0
-      webpack: 5.90.3(webpack-cli@4.10.0)
+      webpack: 5.90.3
 
   webpack-merge@5.9.0:
     dependencies:
@@ -32021,6 +32033,37 @@ snapshots:
       debug: 3.2.7(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
+
+  webpack@5.90.3:
+    dependencies:
+      '@types/eslint-scope': 3.7.5
+      '@types/estree': 1.0.5
+      '@webassemblyjs/ast': 1.11.6
+      '@webassemblyjs/wasm-edit': 1.11.6
+      '@webassemblyjs/wasm-parser': 1.11.6
+      acorn: 8.11.3
+      acorn-import-assertions: 1.9.0(acorn@8.11.3)
+      browserslist: 4.23.0
+      chrome-trace-event: 1.0.3
+      enhanced-resolve: 5.15.0
+      es-module-lexer: 1.3.1
+      eslint-scope: 5.1.1
+      events: 3.3.0
+      glob-to-regexp: 0.4.1
+      graceful-fs: 4.2.11
+      json-parse-even-better-errors: 2.3.1
+      loader-runner: 4.3.0
+      mime-types: 2.1.35
+      neo-async: 2.6.2
+      schema-utils: 3.3.0
+      tapable: 2.2.1
+      terser-webpack-plugin: 5.3.10(webpack@5.90.3)
+      watchpack: 2.4.0
+      webpack-sources: 3.2.3
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - uglify-js
 
   webpack@5.90.3(webpack-cli@4.10.0):
     dependencies:
@@ -32045,7 +32088,7 @@ snapshots:
       neo-async: 2.6.2
       schema-utils: 3.3.0
       tapable: 2.2.1
-      terser-webpack-plugin: 5.3.10(webpack@5.90.3)
+      terser-webpack-plugin: 5.3.10(webpack@5.90.3(webpack-cli@4.10.0))
       watchpack: 2.4.0
       webpack-sources: 3.2.3
     optionalDependencies:
@@ -32101,13 +32144,13 @@ snapshots:
       is-bigint: 1.0.4
       is-boolean-object: 1.1.2
       is-number-object: 1.0.7
-      is-string: 1.1.1
+      is-string: 1.0.7
       is-symbol: 1.0.4
 
   which-boxed-primitive@1.1.1:
     dependencies:
       is-bigint: 1.1.0
-      is-boolean-object: 1.2.1
+      is-boolean-object: 1.2.2
       is-number-object: 1.1.1
       is-string: 1.1.1
       is-symbol: 1.1.1
@@ -32115,12 +32158,12 @@ snapshots:
   which-builtin-type@1.1.3:
     dependencies:
       function.prototype.name: 1.1.6
-      has-tostringtag: 1.0.2
+      has-tostringtag: 1.0.0
       is-async-function: 2.0.0
       is-date-object: 1.0.5
       is-finalizationregistry: 1.0.2
       is-generator-function: 1.0.10
-      is-regex: 1.2.1
+      is-regex: 1.1.4
       is-weakref: 1.0.2
       isarray: 2.0.5
       which-boxed-primitive: 1.0.2
