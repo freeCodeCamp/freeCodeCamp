@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import Fastify, { FastifyInstance } from 'fastify';
 
 import { defaultUserEmail } from '../../jest.utils';

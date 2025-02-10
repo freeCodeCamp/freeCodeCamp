@@ -105,7 +105,7 @@ function getParamsFromUrl(
   let returnUrl;
   try {
     returnUrl = new URL(url ? url : HOME_LOCATION);
-  } catch (e) {
+  } catch (_e) {
     returnUrl = new URL(HOME_LOCATION);
   }
 
@@ -113,7 +113,12 @@ function getParamsFromUrl(
   // if this is not one of the client languages, validation will convert
   // this to '' before it is used.
   const pathPrefix = returnUrl.pathname.split('/')[1] ?? '';
-  return normalize({ returnTo: returnUrl.href, origin, pathPrefix });
+  return normalize({
+    // strip off any query parameters
+    returnTo: returnUrl.origin + returnUrl.pathname,
+    origin,
+    pathPrefix
+  });
 }
 
 /**

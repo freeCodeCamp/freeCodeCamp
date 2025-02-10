@@ -306,7 +306,6 @@ export function* previewChallengeSaga(action) {
   } catch (err) {
     if (err[0] === 'timeout') {
       // TODO: translate the error
-      // eslint-disable-next-line no-ex-assign
       err[0] = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
     }
     // If the preview fails, the most useful thing to do is to show the learner
