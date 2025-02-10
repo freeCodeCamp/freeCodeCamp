@@ -150,7 +150,7 @@ export default class PayPalButtonScriptLoader extends Component<
     });
   }
 
-  render(): JSX.Element {
+  render(): JSX.Element | null {
     const {
       isSdkLoaded,
       isSubscription
@@ -164,7 +164,7 @@ export default class PayPalButtonScriptLoader extends Component<
       style
     } = this.props;
 
-    if (!isSdkLoaded) return <></>;
+    if (!isSdkLoaded) return null;
 
     // TODO: fill in the full list of props instead of any
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

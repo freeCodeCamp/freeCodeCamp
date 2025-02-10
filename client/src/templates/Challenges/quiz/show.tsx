@@ -320,16 +320,14 @@ const ShowQuiz = ({
               </div>
               <Spacer size='m' />
               {!isPassed ? (
-                <>
-                  <Button
-                    block={true}
-                    variant='primary'
-                    onClick={handleFinishQuiz}
-                    disabled={hasSubmitted}
-                  >
-                    {t('buttons.finish-quiz')}
-                  </Button>
-                </>
+                <Button
+                  block={true}
+                  variant='primary'
+                  onClick={handleFinishQuiz}
+                  disabled={hasSubmitted}
+                >
+                  {t('buttons.finish-quiz')}
+                </Button>
               ) : (
                 <Button
                   block={true}
