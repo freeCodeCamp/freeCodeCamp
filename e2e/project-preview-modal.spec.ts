@@ -9,6 +9,19 @@ test.describe('When it renders', () => {
     await page.goto(urlWithProjectPreview);
   });
 
+  test('it should contain a non-empty preview frame', async ({ page }) => {
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['project-preview-title']
+    });
+    await expect(dialog).toBeVisible();
+    const previewFrame = dialog.frameLocator('#fcc-project-preview-frame');
+    await expect(
+      // This is a part of the Cat Photo App that we expect to see. Essentially,
+      // it's a proxy for "not empty"
+      previewFrame.getByRole('heading', { name: 'Cat Photos' })
+    ).toBeVisible();
+  });
+
   test('it can be closed by the Start Coding! button', async ({ page }) => {
     const dialog = page.getByRole('dialog', {
       name: translations.learn['project-preview-title']
@@ -36,7 +49,7 @@ test.describe('When it renders', () => {
   });
 });
 
-test.describe('It should on appear', () => {
+test.describe('It should NOT appear', () => {
   test('on the second step of a project', async ({ page }) => {
     await page.goto(
       '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
