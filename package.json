@@ -80,8 +80,8 @@
     "test:shared": "cd ./shared && pnpm vitest run",
     "test:client": "cd ./client && pnpm test run",
     "prepare": "husky",
-    "playwright:run": "playwright test",
-    "playwright:watch": "playwright test --ui-port=0"
+    "playwright:run": "playwright test -c e2e",
+    "playwright:watch": "playwright test --ui -c e2e --ui-port=0"
   },
   "dependencies": {
     "dotenv": "16.4.5"

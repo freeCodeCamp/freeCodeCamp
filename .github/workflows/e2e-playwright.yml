@@ -2,14 +2,14 @@ name: CI - E2E - Playwright
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ['CI - Node.js']
+    workflows: ["CI - Node.js"]
     types:
       - completed
   # TODO: refactor with a workflow_call
   pull_request:
     branches:
-      - 'main'
-      - 'temp-**' # Temporary branches allowed on Upstream
+      - "main"
+      - "temp-**" # Temporary branches allowed on Upstream
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          submodules: 'recursive'
+          submodules: "recursive"
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
@@ -82,7 +82,7 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          submodules: 'recursive'
+          submodules: "recursive"
 
       - name: Create Image
         run: |
@@ -168,7 +168,7 @@ jobs:
         run: pnpm run seed:certified-user
 
       - name: Run playwright tests
-        run: npx playwright test --project=${{ matrix.browsers }} --grep-invert 'third-party-donation.spec.ts'
+        run: npx playwright test -c e2e --project="${{ matrix.browsers }}" --grep-invert 'third-party-donation.spec.ts'
 
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
