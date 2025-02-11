@@ -72,6 +72,7 @@ const GrowthBookReduxConnector = ({
     showModalsRandomly,
     setIsRandomCompletionThreshold
   ]);
+  // eslint-disable-next-line react/jsx-no-useless-fragment
   return <>{children}</>;
 };
 

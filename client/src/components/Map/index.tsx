@@ -91,38 +91,36 @@ function MapLi({
   index: number;
 }) {
   return (
-    <>
-      <li
-        data-test-label='curriculum-map-button'
-        data-playwright-test-label='curriculum-map-button'
-      >
-        <div className='progress-icon-wrapper'>
-          <div
-            className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
-          >
-            <RibbonIcon
-              value={index + 1}
-              showNumbers={showNumbers}
-              isCompleted={completed}
-              isClaimed={claimed}
-            />
-          </div>
-        </div>
-
-        <ButtonLink
-          block
-          size='large'
-          className='map-superblock-link'
-          href={`/learn/${superBlock}/`}
+    <li
+      data-test-label='curriculum-map-button'
+      data-playwright-test-label='curriculum-map-button'
+    >
+      <div className='progress-icon-wrapper'>
+        <div
+          className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
         >
-          <div style={linkSpacingStyle}>
-            <SuperBlockIcon className='map-icon' superBlock={superBlock} />
-            {getSuperBlockTitleForMap(superBlock)}
-          </div>
-          {landing && <LinkButton />}
-        </ButtonLink>
-      </li>
-    </>
+          <RibbonIcon
+            value={index + 1}
+            showNumbers={showNumbers}
+            isCompleted={completed}
+            isClaimed={claimed}
+          />
+        </div>
+      </div>
+
+      <ButtonLink
+        block
+        size='large'
+        className='map-superblock-link'
+        href={`/learn/${superBlock}/`}
+      >
+        <div style={linkSpacingStyle}>
+          <SuperBlockIcon className='map-icon' superBlock={superBlock} />
+          {getSuperBlockTitleForMap(superBlock)}
+        </div>
+        {landing && <LinkButton />}
+      </ButtonLink>
+    </li>
   );
 }
 
