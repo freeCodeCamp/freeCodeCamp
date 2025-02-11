@@ -23,7 +23,7 @@ Listen to the audio and complete the sentence below.
 
 ### --feedback--
 
-This phrase of two words means something is very suitable or effective for a particular purpose.
+This two-word phrase means something is very suitable or effective for a particular purpose.
 
 ---
 
@@ -31,7 +31,7 @@ This phrase of two words means something is very suitable or effective for a par
 
 ### --feedback--
 
-This phrase of two words means something is suitable or beneficial for a specific task or situation.
+This two-word phrase means something is suitable or beneficial for a specific task or situation.
 
 # --explanation--
 
