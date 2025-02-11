@@ -16,7 +16,7 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 
 **User Stories:**
 
-1. You should have an `input` element with an `id` of `"search-input"`.
+1. You should have an `input` element with an `id` of `"search-input"`, that is required.
 1. You should have a `button` element with an `id` of `"search-button"`.
 1. You should have an element with an `id` of `"pokemon-name"`.
 1. You should have an element with an `id` of `"pokemon-id"`.
@@ -45,7 +45,7 @@ Fulfill the user stories and pass all the tests below to complete this project. 
 
 # --hints--
 
-You should have an `input` element with an `id` of `"search-input"` and is `required`.
+You should have an `input` element with an `id` of `"search-input"` and is **required**.
 
 ```js
 const el = document.getElementById('search-input');
