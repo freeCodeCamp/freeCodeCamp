@@ -53,6 +53,10 @@ const start = async () => {
     genReqId: () => randomBytes(8).toString('hex'),
     disableRequestLogging: true
   });
+  fastify.addHook('onRequest', (req, _reply, done) => {
+    req.log.debug({ req }, 'incoming request');
+    done();
+  });
   try {
     const port = Number(PORT);
     fastify.log.info(`Starting server on port ${port}`);

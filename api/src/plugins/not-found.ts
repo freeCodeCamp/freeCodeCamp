@@ -17,6 +17,8 @@ const fourOhFour: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.setNotFoundHandler((request, reply) => {
     const accepted = request.accepts().type(['json', 'html']);
 
+    request.log.debug(`Route ${request.method}:${request.url} not found`);
+
     if (accepted == 'json') {
       void reply.code(404).send({ error: 'path not found' });
     } else {
