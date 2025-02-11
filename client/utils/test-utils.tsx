@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import { render as rtlRender } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import type { Store } from 'redux';
 
-function render(ui, store) {
-  // eslint-disable-next-line react/prop-types
-  function Wrapper({ children }) {
+function render(ui: ReactElement, store: Store) {
+  function Wrapper({ children }: { children: ReactElement }) {
     return <Provider store={store}>{children}</Provider>;
   }
   return rtlRender(ui, { wrapper: Wrapper });
