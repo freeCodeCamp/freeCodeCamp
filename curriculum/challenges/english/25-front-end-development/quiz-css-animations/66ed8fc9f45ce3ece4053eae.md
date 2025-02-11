@@ -175,11 +175,11 @@ Where is the `@keyframes` at-rule defined?
 
 #### --distractors--
 
-Within the `<body>` element of an HTML file.
+Within the `body` element of an HTML file.
 
 ---
 
-Within the `<head>` element of an HTML file.
+Within the `head` element of an HTML file.
 
 ---
 
