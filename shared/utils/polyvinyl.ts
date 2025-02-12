@@ -103,16 +103,17 @@ function checkPoly(poly: ChallengeFile) {
   );
 }
 
-// setContent will lose source if set
+// setContent will lose source if not supplied
 export function setContent(
   contents: string,
-  poly: ChallengeFile
+  poly: ChallengeFile,
+  source?: string | null
 ): ChallengeFile {
   checkPoly(poly);
   return {
     ...poly,
     contents,
-    source: null
+    source: source ?? null
   };
 }
 
@@ -157,9 +158,7 @@ export async function transformContents(
   polyP: ChallengeFile | Promise<ChallengeFile>
 ) {
   const poly = await polyP;
-  const newPoly = setContent(await wrap(poly.contents), poly);
-  // if no source exist, set the original contents as source
-  newPoly.source = poly.source || poly.contents;
+  const newPoly = setContent(await wrap(poly.contents), poly, poly.source);
   return newPoly;
 }
 
@@ -179,9 +178,11 @@ export async function transformHeadTailAndContents(
 }
 
 // createSource(poly: PolyVinyl) => PolyVinyl
-export function createSource(poly: Pick<ChallengeFile, 'contents' | 'source'>) {
+export function createSource<Rest>(
+  poly: Pick<ChallengeFile, 'contents' | 'source'> & Rest
+): Rest & { contents: string; source: string } {
   return {
     ...poly,
-    source: poly.source || poly.contents
+    source: poly.source ?? poly.contents
   };
 }
