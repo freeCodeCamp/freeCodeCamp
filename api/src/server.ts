@@ -18,7 +18,6 @@ import {
 const requestSerializer = (req: FastifyRequest) => {
   const method = req.method || 'METHOD not found';
   const url = req.url || 'URL not found';
-  // const reqId = req.id || 'REQ_ID not found';
   const headers = req.headers || 'HEADERS not found';
   const xForwardedFor = Array.isArray(req.headers['x-forwarded-for'])
     ? req.headers['x-forwarded-for'][0]
