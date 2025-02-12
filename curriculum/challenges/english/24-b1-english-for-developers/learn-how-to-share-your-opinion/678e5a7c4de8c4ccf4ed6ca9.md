@@ -63,8 +63,8 @@ This word means to have a different opinion or to not be in agreement.
     "audio": {
       "filename": "B1_9-2.mp3",
       "startTime": 1,
-      "startTimestamp": 55.9,
-      "finishTimestamp": 58.08
+      "startTimestamp": 56.0,
+      "finishTimestamp": 58.28
     }
   },
   "commands": [
@@ -76,7 +76,7 @@ This word means to have a different opinion or to not be in agreement.
     {
       "character": "Jake",
       "startTime": 1,
-      "finishTime": 3.18,
+      "finishTime": 3.28,
       "dialogue": {
         "text": "Okay, let's agree to disagree.",
         "align": "center"
@@ -85,7 +85,7 @@ This word means to have a different opinion or to not be in agreement.
     {
       "character": "Jake",
       "opacity": 0,
-      "startTime": 3.68
+      "startTime": 3.78
     }
   ]
 }

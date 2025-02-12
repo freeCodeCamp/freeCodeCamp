@@ -51,7 +51,13 @@ Because it's lightweight and has excellent security features.
 
 # --explanation--
 
-Jake prefers Visual Studio Code because it is lightweight (doesn't use a lot of resources) and offers strong security features (protects against potential risks).
+Listen for key words that explain Jake's preference.  
+
+`Lightweight` – This means Visual Studio Code doesn't use a lot of system resources.  
+
+`Security features` – This shows that Jake values how the tool helps protect against potential risks.  
+
+These key words help you see that Jake prefers Visual Studio Code because it is lightweight and has strong security features.
 
 # --scene--
 
