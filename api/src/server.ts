@@ -5,6 +5,8 @@
 /// <reference path="./reset.d.ts" />
 import { randomBytes } from 'crypto';
 import { FastifyRequest } from 'fastify';
+import { isEmpty } from 'lodash';
+
 import { build } from './app';
 import {
   FREECODECAMP_NODE_ENV,
@@ -13,16 +15,30 @@ import {
   PORT
 } from './utils/env';
 
-const requestSerializer = (request: FastifyRequest) => ({
-  method: request.method,
-  url: request.url,
-  ip: request.headers['x-forwarded-for'] || request.ip,
-  hostname: request.hostname,
-  remoteAddress: Array.isArray(request.headers['x-forwarded-for'])
-    ? request.headers['x-forwarded-for'][0]
-    : request.headers['x-forwarded-for'] || request.ip,
-  remotePort: request.socket.remotePort
-});
+const requestSerializer = (req: FastifyRequest) => {
+  const method = req.method || 'METHOD not found';
+  const url = req.url || 'URL not found';
+  // const reqId = req.id || 'REQ_ID not found';
+  const headers = req.headers || 'HEADERS not found';
+  const xForwardedFor = Array.isArray(req.headers['x-forwarded-for'])
+    ? req.headers['x-forwarded-for'][0]
+    : req.headers['x-forwarded-for'];
+  const ip =
+    xForwardedFor || req.headers['x-real-ip'] || req.ip || 'IP not found';
+  const query = isEmpty(req.query) ? 'QUERY not found' : req.query;
+  const hostname = req.hostname || 'HOSTNAME not found';
+  const remotePort = req.socket.remotePort || 'REMOTE_PORT not found';
+
+  return {
+    METHOD: method,
+    URL: url,
+    IP: ip,
+    HOSTNAME: hostname,
+    REMOTE_PORT: remotePort,
+    QUERY: query,
+    HEADERS: headers
+  };
+};
 
 const envToLogger = {
   development: {
@@ -38,12 +54,14 @@ const envToLogger = {
     serializers: {
       req: requestSerializer
     }
+    // No need to redact in development
   },
   production: {
     level: FCC_API_LOG_LEVEL || 'info',
     serializers: {
       req: requestSerializer
-    }
+    },
+    redact: ['req.HEADERS.cookie']
   }
 };
 
