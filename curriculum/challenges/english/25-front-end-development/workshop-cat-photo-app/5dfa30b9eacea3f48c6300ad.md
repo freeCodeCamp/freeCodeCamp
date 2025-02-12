@@ -45,7 +45,7 @@ assert.lengthOf(document.querySelectorAll('a'), 3);
 Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
 ```js
-assert.isAtLeast(code.match(/<\/a>/g).length, 3);
+assert.isAtLeast(code.match(/<\/a>/g)?.length, 3);
 ```
 
 You should only add one closing anchor (`a`) tag. Please remove any extras.
@@ -57,14 +57,14 @@ assert.lengthOf(code.match(/<\/a>/g), 3);
 Your anchor (`a`) element does not have an `href` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
 
 ```js
-assert.isTrue(document.querySelectorAll('a')[2].hasAttribute('href'));
+assert.isTrue(document.querySelectorAll('a')[2]?.hasAttribute('href'));
 ```
 
 Your anchor (`a`) element should link to `https://freecatphotoapp.com`. You have either omitted the URL or have a typo.
 
 ```js
 assert.equal(
-  document.querySelectorAll('a')[2].getAttribute('href'),
+  document.querySelectorAll('a')[2]?.getAttribute('href'),
     'https://freecatphotoapp.com'
 );
 ```
@@ -72,7 +72,7 @@ assert.equal(
 Your `img` element should be nested within the anchor (`a`) element. The entire `img` element should be inside the opening and closing tags of the anchor (`a`) element.
 
 ```js
-assert.equal(document.querySelector('img').parentNode.nodeName, 'A');
+assert.equal(document.querySelector('img')?.parentNode.nodeName, 'A');
 ```
 
 # --seed--
