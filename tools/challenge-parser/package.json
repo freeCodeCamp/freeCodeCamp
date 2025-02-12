@@ -22,6 +22,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@freecodecamp/challenge-parser": "file:",
     "hast-util-to-html": "7.1.3",
     "js-yaml": "3.14.1",
     "lodash": "4.17.21",

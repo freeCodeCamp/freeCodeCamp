@@ -22,5 +22,8 @@
     "debug": "4.3.4",
     "dotenv": "16.4.5",
     "mongodb": "6.10.0"
+  },
+  "dependencies": {
+    "@freecodecamp/scripts-seed": "file:"
   }
 }

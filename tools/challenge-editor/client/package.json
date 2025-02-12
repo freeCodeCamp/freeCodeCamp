@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@freecodecamp/challenge-editor-client": "file:",
     "@vitejs/plugin-react": "4.2.1",
     "codemirror": "5.65.16",
     "react": "16.14.0",

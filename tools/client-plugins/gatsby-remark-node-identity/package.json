@@ -17,5 +17,8 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
-  "main": "gatsby-node.js"
+  "main": "gatsby-node.js",
+  "dependencies": {
+    "@freecodecamp/gatsby-remark-node-identity": "file:"
+  }
 }

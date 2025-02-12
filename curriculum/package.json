@@ -57,5 +57,8 @@
     "puppeteer": "22.12.1",
     "readdirp": "3.6.0",
     "string-similarity": "4.0.4"
+  },
+  "dependencies": {
+    "@freecodecamp/curriculum": "file:"
   }
 }

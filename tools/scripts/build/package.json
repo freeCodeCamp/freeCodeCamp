@@ -24,5 +24,8 @@
     "chai": "4.4.1",
     "joi": "17.12.2",
     "readdirp": "3.6.0"
+  },
+  "dependencies": {
+    "@freecodecamp/scripts-build": "file:"
   }
 }

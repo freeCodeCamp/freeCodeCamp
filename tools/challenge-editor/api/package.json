@@ -10,6 +10,7 @@
   "author": "freeCodeCamp",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "@freecodecamp/challenge-editor": "file:",
     "cors": "2.8.5",
     "express": "4.18.2",
     "gray-matter": "4.0.3",

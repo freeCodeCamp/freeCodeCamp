@@ -27,5 +27,8 @@
     "mongodb": "6.10.0",
     "nanoid": "4.0.2"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@freecodecamp/seed-exams": "file:"
+  }
 }

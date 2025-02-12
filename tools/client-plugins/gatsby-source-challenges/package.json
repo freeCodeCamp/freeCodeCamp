@@ -21,5 +21,8 @@
   "devDependencies": {
     "chokidar": "3.6.0",
     "readdirp": "3.6.0"
+  },
+  "dependencies": {
+    "@freecodecamp/gatsby-source-challenges": "file:"
   }
 }

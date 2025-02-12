@@ -32,5 +32,8 @@
     "prettier": "3.2.5",
     "ts-node": "10.9.2",
     "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "@freecodecamp/curriculum-helper-scripts": "file:"
   }
 }

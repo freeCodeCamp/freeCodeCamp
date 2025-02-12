@@ -52,6 +52,7 @@
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
+    "@freecodecamp/browser-scripts": "file:",
     "react": "16",
     "react-dom": "16",
     "xterm": "^5.2.1"
