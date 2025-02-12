@@ -29,6 +29,8 @@ Change the callback function for the `y` attribute to set the bars right-side-up
 The first `rect` should have a `y` value of `64`.
 
 ```js
+assert.exists(h); 
+assert.exists(dataset); 
 assert.strictEqual(
   document.querySelectorAll('rect')[0]?.getAttribute('y'),
   (h - dataset[0] * 3).toString()
@@ -38,6 +40,8 @@ assert.strictEqual(
 The second `rect` should have a `y` value of `7`.
 
 ```js
+assert.exists(h); 
+assert.exists(dataset); 
 assert.strictEqual(
   document.querySelectorAll('rect')[1]?.getAttribute('y'),
   (h - dataset[1] * 3).toString()
@@ -47,6 +51,8 @@ assert.strictEqual(
 The third `rect` should have a `y` value of `34`.
 
 ```js
+assert.exists(h);
+assert.exists(dataset);  
 assert.strictEqual(
   document.querySelectorAll('rect')[2]?.getAttribute('y'),
   (h - dataset[2] * 3).toString()
@@ -56,6 +62,8 @@ assert.strictEqual(
 The fourth `rect` should have a `y` value of `49`.
 
 ```js
+assert.exists(h); 
+assert.exists(dataset); 
 assert.strictEqual(
   document.querySelectorAll('rect')[3]?.getAttribute('y'),
   (h - dataset[3] * 3).toString()
@@ -65,6 +73,8 @@ assert.strictEqual(
 The fifth `rect` should have a `y` value of `25`.
 
 ```js
+assert.exists(h); 
+assert.exists(dataset); 
 assert.strictEqual(
   document.querySelectorAll('rect')[4]?.getAttribute('y'),
   (h - dataset[4] * 3).toString()
@@ -74,6 +84,8 @@ assert.strictEqual(
 The sixth `rect` should have a `y` value of `46`.
 
 ```js
+assert.exists(h); 
+assert.exists(dataset); 
 assert.strictEqual(
   document.querySelectorAll('rect')[5]?.getAttribute('y'),
   (h - dataset[5] * 3).toString()
@@ -83,6 +95,8 @@ assert.strictEqual(
 The seventh `rect` should have a `y` value of `13`.
 
 ```js
+assert.exists(h); 
+assert.exists(dataset); 
 assert.strictEqual(
   document.querySelectorAll('rect')[6]?.getAttribute('y'),
   (h - dataset[6] * 3).toString()
@@ -92,6 +106,8 @@ assert.strictEqual(
 The eighth `rect` should have a `y` value of `58`.
 
 ```js
+assert.exists(h); 
+assert.exists(dataset); 
 assert.strictEqual(
   document.querySelectorAll('rect')[7]?.getAttribute('y'),
   (h - dataset[7] * 3).toString()
@@ -101,6 +117,8 @@ assert.strictEqual(
 The ninth `rect` should have a `y` value of `73`.
 
 ```js
+assert.exists(h); 
+assert.exists(dataset); 
 assert.strictEqual(
   document.querySelectorAll('rect')[8]?.getAttribute('y'),
   (h - dataset[8] * 3).toString()

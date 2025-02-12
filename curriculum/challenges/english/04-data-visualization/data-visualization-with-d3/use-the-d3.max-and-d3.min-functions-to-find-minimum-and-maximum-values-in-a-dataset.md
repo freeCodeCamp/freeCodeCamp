@@ -45,6 +45,7 @@ The `positionData` array holds sub arrays of x, y, and z coordinates. Use a D3 m
 The text in the `h2` should be `8`.
 
 ```js
+assert.exists(output); 
 assert.strictEqual(output, 8);
 assert.strictEqual(document.querySelector('h2')?.textContent, '8');
 ```

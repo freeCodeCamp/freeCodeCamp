@@ -45,6 +45,7 @@ assert.match(code, /\.scaleLinear/g);
 The `output` variable should call `scale` with an argument of `50`.
 
 ```js
+assert.exists(output); 
 assert.strictEqual(output, 50);
 assert.match(code, /scale\(\s*?50\s*?\)/g);
 ```

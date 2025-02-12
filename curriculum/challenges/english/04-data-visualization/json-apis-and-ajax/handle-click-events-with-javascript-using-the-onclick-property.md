@@ -35,7 +35,7 @@ assert.match(code, /document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g);
 Your code should add an `onclick` event handler.
 
 ```js
-assert.isFunction(document.getElementById('getMessage').onclick);
+assert.isFunction(document.getElementById('getMessage')?.onclick);
 ```
 
 # --seed--
