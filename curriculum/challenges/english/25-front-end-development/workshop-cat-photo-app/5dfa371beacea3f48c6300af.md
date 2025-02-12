@@ -47,9 +47,9 @@ There should be an `h2` element with the text `Cat Lists` above the last `h3` el
 ```js
 const secondSectionLastElemNode = document.querySelectorAll('main > section')[1]
   ?.lastElementChild;
+assert.equal( secondSectionLastElemNode?.nodeName, 'H3');
 assert.equal(
-  secondSectionLastElemNode.nodeName === 'H3' &&
-    secondSectionLastElemNode.previousElementSibling.innerText
+ secondSectionLastElemNode?.previousElementSibling.innerText
       .toLowerCase()
       .replace(/\s+/g, ' '), 'cat lists'
 );
