@@ -23,7 +23,7 @@ Listen to the audio and complete the sentence below.
 
 ### --feedback--
 
-This word is used to avoid repeating the verb "update" from the previous sentence.
+This word is used to avoid repeating the verb `update` from the previous sentence.
 
 ---
 
@@ -35,11 +35,11 @@ This word means to postpone or make something happen later than planned.
 
 # --explanation--
 
-Instead of saying `If we update the software, it might delay other projects.`, James shortens it to `If we do`. The word `do` in this context is used to avoid repeating the verb or a complete phrase used in from the previous sentence. For example:
+Instead of saying `If we update the software, it might delay other projects.`, James shortens it to `If we do`. The word `do` is often used to avoid repeating the verb or a complete phrase used in from the previous sentence. For example:
 
 `She wants to join the meeting, and if she does, she'll need the link.` - Instead of saying `if she joins the meeting`, you can use `does` to replace it and this way you can avoid the repetition.
 
-The word `delay` means to make something happen later than planned. For example:
+`To delay` means to make something happen later than planned. For example:
 
 `The flight was delayed due to bad weather.` - This means the flight was postponed and did not leave on time.
 

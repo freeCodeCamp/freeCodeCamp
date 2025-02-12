@@ -51,7 +51,7 @@ James is not rejecting the idea altogether; he is actually asking Maria's opinio
 
 # --explanation--
 
-The word `update` in this context means to modify or improve software by releasing a new version. Updates can include bug fixes, new features, or performance improvements. For example:
+`To update` means to modify or improve software by releasing a new version. Updates can include bug fixes, new features, or performance improvements. For example:
 
 `The company released an update to fix security vulnerabilities in the app.` - This means a new version was launched to address security issues.
 

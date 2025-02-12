@@ -23,7 +23,7 @@ To fix the problem immediately.
 
 ### --feedback--
 
-Maria is not asking that James fix the issue right away.
+Maria is not asking James to fix the issue right away.
 
 ---
 
@@ -43,7 +43,7 @@ To ignore the problem for now.
 
 ### --feedback--
 
-Maria is not asking that James ignore the issue.
+Maria is not asking James to ignore the issue.
 
 ## --video-solution--
 
@@ -51,9 +51,11 @@ Maria is not asking that James ignore the issue.
 
 # --explanation--
 
-The word `can` is commonly used to make polite requests, asking someone to do something in an informal way. In this case, Maria is requesting James to investigate the problem. For example:
+`Can` is commonly used to make polite requests, asking someone to do something in an informal way. For example:
 
 `Can you send me the report by noon?` - This is a polite way to ask someone to send a report.
+
+In this dialogue, Maria is requesting James to investigate the problem.
 
 # --scene--
 

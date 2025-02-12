@@ -27,7 +27,7 @@ Because it would make decision-making faster.
 
 ### --feedback--
 
-Brian is not saying that agreement is beneficial — he is concerned about missing details.
+Brian is not saying that agreement is beneficial.
 
 ---
 
@@ -43,7 +43,7 @@ Because no one would share their opinions.
 
 ### --feedback--
 
-Brian is talking about not noticing some details, not about people refusing to share their opinions.
+Brian isn't talking about people refusing to share their opinions.
 
 ## --video-solution--
 
@@ -51,9 +51,11 @@ Brian is talking about not noticing some details, not about people refusing to s
 
 # --explanation--
 
-The structure `if + verb in the Simple Past` followed by `might` in the consequence clause is used to describe a hypothetical situation with a possible outcome. In this case, `If we all agreed on everything, we might miss important details` expresses a possible negative consequence of complete agreement. For example:
+The structure `if + verb in the Simple Past` followed by `might` in the consequence clause is used to describe a hypothetical situation with a possible outcome. For example:
 
 `If you studied more, you might pass the exam.` - This means there is a possibility of passing if the person studies more.
+
+In this dialogue, `If we all agreed on everything, we might miss important details` expresses a possible negative consequence of complete agreement.
 
 # --scene--
 

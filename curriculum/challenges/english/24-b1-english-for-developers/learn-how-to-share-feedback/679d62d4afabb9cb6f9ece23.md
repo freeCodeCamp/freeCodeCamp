@@ -51,9 +51,11 @@ Maria does not say they should avoid updating.
 
 # --explanation--
 
-The phrase `lead to problems` means that an action or decision could result in difficulties or negative consequences. In this case, Maria is concerned that rushing could create additional issues. For example:
+`To lead to problems` means that an action or decision could result in difficulties or negative consequences. For example:
 
 `Skipping the testing phase can lead to serious problems in the software.` - This means that not testing properly might cause major technical issues.
+
+In this dialogue, Maria is concerned that rushing could create additional issues.
 
 # --scene--
 

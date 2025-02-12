@@ -23,7 +23,7 @@ Listen to the audio and complete the sentence below.
 
 ### --feedback--
 
-This is the -ing form of the verb `say`, used after the preposition `by` to indicate the method of starting.
+This is the `-ing` form of the verb `say`, used after the preposition `by` to indicate the method of starting.
 
 ---
 
@@ -39,7 +39,7 @@ When a verb follows a preposition, it must take the `-ing` form (gerund). In thi
 
 `She improved her skills by practicing regularly.` - Here, `practicing` follows the preposition `by`, showing how she improved her skills.
 
-Bob compliments Jessica for her work in `QA`. `QA` stands for `Quality Assurance`. It refers to the process of ensuring that products or services meet specific quality standards and function correctly. For example:
+Bob compliments Jessica for her work in `QA`. `QA` stands for `Quality Assurance`. It refers to the process of ensuring that products or services meet specific quality standards and function correctly. Another example:
 
 `The QA team identified several bugs during testing.` - This means that the people responsible for making sure the quality of the software is good managed to detect bugs in the software before its release.
 

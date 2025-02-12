@@ -51,9 +51,13 @@ Not listening to people doesn't make them agree with everything — it can make 
 
 # --explanation--
 
-The phrase `to feel valued` describes the sensation you have when you believe that your thoughts, efforts, and contributions are appreciated. What Brian suggests is that if team members' opinions are ignored, they may feel unimportant. If team members feel valued, they are more likely to stay engaged and contribute new ideas. On the other hand, if people feel like their opinions don’t matter, they might become disengaged and lose motivation to contribute, which can harm overall teamwork and productivity. For example:
+`To feel valued` describes the sensation you have when you believe that your thoughts, efforts, and contributions are appreciated. For example:
 
 `The project manager always dedicates some time during the meeting to hear what we have to say. This makes everyone in the team feel valued.` - This means the attitude of the project manager is bringing good results to the team.
+
+What Brian suggests is that if team members' opinions are ignored, they may feel unimportant. If team members feel valued, they are more likely to stay engaged and contribute new ideas.
+
+On the other hand, if people feel like their opinions don't matter, they might become disengaged and lose motivation to contribute, which can harm overall teamwork and productivity.
 
 # --scene--
 
