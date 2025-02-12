@@ -3,7 +3,6 @@
 // is not included in the build (it's a dev dependency).
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="./reset.d.ts" />
-import { randomBytes } from 'crypto';
 import { FastifyRequest } from 'fastify';
 import { isEmpty } from 'lodash';
 
@@ -67,7 +66,6 @@ const envToLogger = {
 const start = async () => {
   const fastify = await build({
     logger: envToLogger[FREECODECAMP_NODE_ENV] ?? true,
-    genReqId: () => randomBytes(8).toString('hex'),
     disableRequestLogging: true
   });
   try {

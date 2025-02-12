@@ -1,3 +1,5 @@
+import { randomBytes } from 'crypto';
+
 import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
@@ -98,6 +100,11 @@ export const build = async (
   // Watch when implementing in client
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
 
+  fastify.setChildLoggerFactory((logger, bindings, opts) => {
+    // This ensures that each req or reply log includes a unique ID
+    bindings.reqId = randomBytes(8).toString('hex');
+    return logger.child(bindings, opts);
+  });
   fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
 
   void fastify.register(redirectWithMessage);
