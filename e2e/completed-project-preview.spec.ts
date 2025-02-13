@@ -2,25 +2,9 @@ import { execSync } from 'node:child_process';
 
 import { test, expect, Page } from '@playwright/test';
 
-import tributePageCSS from './fixtures/tribute-page-css.json';
-import tributePageHTML from './fixtures/tribute-page-html.json';
+import tributePage from './fixtures/tribute-page.json';
+
 import { authedRequest } from './utils/request';
-
-const htmlFile = {
-  contents: tributePageHTML['tribute-page-html'].contents,
-  key: 'indexhtml',
-  ext: 'html',
-  name: 'index',
-  history: ['index.html']
-};
-
-const cssFile = {
-  contents: tributePageCSS['tribute-page-css'].contents,
-  key: 'stylescss',
-  ext: 'css',
-  name: 'styles',
-  history: ['styles.css']
-};
 
 const unlockedProfile = {
   isLocked: false,
@@ -62,9 +46,9 @@ test.describe('Completed project preview', () => {
       method: 'post',
       endpoint: '/modern-challenge-completed',
       data: {
-        id: tributePageHTML['tribute-page-html'].id,
+        id: tributePage.id,
         challengeType: 14,
-        files: [htmlFile, cssFile]
+        files: [tributePage.htmlFile, tributePage.cssFile]
       }
     });
 
