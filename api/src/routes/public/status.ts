@@ -23,7 +23,7 @@ export const statusRoute: FastifyPluginCallbackTypebox = (
       req.headers['x-real-ip'] ||
       req.ip ||
       'IP not found';
-    const params = isEmpty(req.params) ? 'PARAMS not found' : req.params;
+    const query = isEmpty(req.query) ? 'QUERY not found' : req.query;
 
     fastify.log
       .child({
@@ -31,7 +31,7 @@ export const statusRoute: FastifyPluginCallbackTypebox = (
         REQ_ID: reqId,
         HEADERS: headers,
         IP: ip,
-        PARAMS: params
+        QUERY: query
       })
       .debug('returning a ping');
     return { msg: 'pong' };

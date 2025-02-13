@@ -35,10 +35,10 @@ const ExamResultsModal = ({
   },
   isOpen,
   closeModal
-}: ExamResultsModalProps): JSX.Element => {
+}: ExamResultsModalProps): JSX.Element | null => {
   const { t } = useTranslation();
 
-  if (!examResults) return <></>;
+  if (!examResults) return null;
 
   const {
     numberOfCorrectAnswers,

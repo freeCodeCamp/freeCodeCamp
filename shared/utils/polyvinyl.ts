@@ -1,7 +1,7 @@
 // originally based off of https://github.com/gulpjs/vinyl
 import invariant from 'invariant';
 
-const exts = ['js', 'html', 'css', 'jsx', 'ts'] as const;
+const exts = ['js', 'html', 'css', 'jsx', 'ts', 'py'] as const;
 export type Ext = (typeof exts)[number];
 
 export type IncompleteChallengeFile = {
