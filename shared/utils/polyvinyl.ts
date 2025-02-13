@@ -113,7 +113,7 @@ export function setContent(
   return {
     ...poly,
     contents,
-    source: source ?? null
+    source
   };
 }
 
