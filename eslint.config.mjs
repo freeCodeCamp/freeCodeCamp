@@ -114,6 +114,7 @@ export default tseslint.config(
       ],
 
       'react/prop-types': 'off',
+      'react/jsx-no-useless-fragment': 'error',
       'no-only-tests/no-only-tests': 'error',
       'no-unused-vars': 'off',
       'no-unused-expressions': 'error', // This is so the js rules are more in line with the ts rules
@@ -169,10 +170,7 @@ export default tseslint.config(
     extends: [
       testingLibraryPlugin.configs['flat/react'],
       jestDomPlugin.configs['flat/recommended']
-    ],
-    rules: {
-      'import/named': 2
-    }
+    ]
   },
   {
     files: ['e2e/*.ts'],

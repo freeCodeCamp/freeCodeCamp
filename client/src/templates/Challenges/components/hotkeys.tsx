@@ -226,19 +226,17 @@ function Hotkeys({
   // allowChanges is necessary if the handlers depend on props (in this case
   // canFocusEditor)
   return (
-    <>
-      <HotKeys
-        id='editor-layout'
-        data-playwright-test-label='hotkeys'
-        allowChanges={true}
-        handlers={handlers}
-        innerRef={containerRef}
-        keyMap={keyMap}
-      >
-        {children}
-        <GlobalHotKeys />
-      </HotKeys>
-    </>
+    <HotKeys
+      id='editor-layout'
+      data-playwright-test-label='hotkeys'
+      allowChanges={true}
+      handlers={handlers}
+      innerRef={containerRef}
+      keyMap={keyMap}
+    >
+      {children}
+      <GlobalHotKeys />
+    </HotKeys>
   );
 }
 
