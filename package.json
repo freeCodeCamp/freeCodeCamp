@@ -141,6 +141,12 @@
   "pnpm": {
     "patchedDependencies": {
       "@fastify/oauth2@7.8.1": "patches/@fastify__oauth2@7.8.1.patch"
+    },
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "react-scrollable-anchor>react": "17",
+        "react-scrollable-anchor>react-dom": "17"
+      }
     }
   }
 }
