@@ -14,7 +14,7 @@ export const statusRoute: FastifyPluginCallbackTypebox = (
   done
 ) => {
   fastify.get('/status/ping', async (req, _reply) => {
-    req.log.debug({ req }, 'returning a ping');
+    req.log.child({ req }).debug('returning a ping');
     return { msg: 'pong' };
   });
 
