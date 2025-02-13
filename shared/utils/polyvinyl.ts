@@ -19,7 +19,7 @@ export type ChallengeFile = IncompleteChallengeFile & {
   head: string;
   tail: string;
   seed?: string;
-  source?: string | null;
+  source?: string;
   path: string;
   history: string[];
 };
@@ -107,7 +107,7 @@ function checkPoly(poly: ChallengeFile) {
 export function setContent(
   contents: string,
   poly: ChallengeFile,
-  source?: string | null
+  source?: string
 ): ChallengeFile {
   checkPoly(poly);
   return {
