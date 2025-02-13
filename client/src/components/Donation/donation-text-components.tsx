@@ -64,15 +64,13 @@ export const ThankYouMessage = ({
 const OtherWaysToSupport = (): JSX.Element => {
   const { t } = useTranslation();
   return (
-    <>
-      <p>
-        <Trans i18nKey='donate.if-support-further'>
-          <a href={t('links:donate.one-time-external-url')}>placeholder</a>
-          <a href={t('links:donate.mail-check-url')}>placeholder</a>
-          <a href={t('links:donate.other-ways-url')}>placeholder</a>
-        </Trans>
-      </p>
-    </>
+    <p>
+      <Trans i18nKey='donate.if-support-further'>
+        <a href={t('links:donate.one-time-external-url')}>placeholder</a>
+        <a href={t('links:donate.mail-check-url')}>placeholder</a>
+        <a href={t('links:donate.other-ways-url')}>placeholder</a>
+      </Trans>
+    </p>
   );
 };
 
@@ -148,11 +146,7 @@ export const DonationFaqText = (): JSX.Element => {
     },
     {
       Q: t('donate.does-crypto'),
-      A: (
-        <>
-          <p>{t('donate.yes-cryptocurrency')}</p>
-        </>
-      )
+      A: <p>{t('donate.yes-cryptocurrency')}</p>
     },
 
     {
@@ -192,11 +186,7 @@ export const DonationFaqText = (): JSX.Element => {
     { Q: t('donate.how-update'), A: <p>{t('donate.forward-receipt')}</p> },
     {
       Q: t('donate.anything-else'),
-      A: (
-        <>
-          <p>{t('donate.other-support')}</p>
-        </>
-      )
+      A: <p>{t('donate.other-support')}</p>
     }
   ];
 

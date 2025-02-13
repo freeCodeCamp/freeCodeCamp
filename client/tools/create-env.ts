@@ -112,11 +112,11 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   checkClientLocale();
   checkCurriculumLocale();
   if (fs.existsSync(`${configPath}/env.json`)) {
-    /* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment */
-    const { showUpcomingChanges } = require(`${configPath}/env.json`);
-    /* eslint-enable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment */
+    const { showUpcomingChanges } = JSON.parse(
+      fs.readFileSync(`${configPath}/env.json`, 'utf-8')
+    ) as { showUpcomingChanges: boolean };
+
     if (env['showUpcomingChanges'] !== showUpcomingChanges) {
-      /* eslint-enable @typescript-eslint/no-unsafe-member-access */
       console.log('Feature flags have been changed, cleaning client cache.');
       const child = spawn('pnpm', ['run', '-w', 'clean:client']);
       child.stdout.setEncoding('utf8');

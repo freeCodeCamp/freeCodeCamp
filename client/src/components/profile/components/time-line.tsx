@@ -240,7 +240,7 @@ function TimelineInner({
   );
 }
 
-/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
+/* eslint-disable @typescript-eslint/no-unsafe-assignment,  @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
 function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   const {
     allChallengeNode: { edges }

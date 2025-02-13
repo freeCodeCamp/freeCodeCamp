@@ -153,7 +153,7 @@ export function Scene({
     canPauseRef.current = false;
   };
 
-  const playScene = useCallback(() => {
+  const handlePlay = useCallback(() => {
     const updateCurrentTime = () => {
       const time = Date.now() - startRef.current;
       setCurrentTime(time);
@@ -207,9 +207,9 @@ export function Scene({
       },
       duration + sToMs(audio.startTime)
     );
-  }, [isPlaying, sceneIsReady, audio, duration]);
+  }, [audio, duration, isPlaying, sceneIsReady]);
 
-  const resetScene = useCallback(() => {
+  const handleStop = useCallback(() => {
     usedCommandsRef.current.clear();
     pause();
     audioRef.current.currentTime = audio.startTimestamp || 0;
@@ -222,12 +222,27 @@ export function Scene({
     setBackground(initBackground);
   }, [audio, initCharacters, initBackground]);
 
+  const onNotify = useCallback(
+    (eventType: 'play' | 'stop') => {
+      if (eventType === 'play') {
+        handlePlay();
+      } else {
+        handleStop();
+      }
+    },
+    [handlePlay, handleStop]
+  );
+
+  const resetScene = useCallback(() => {
+    sceneSubject.notify('stop');
+  }, [sceneSubject]);
+
   useEffect(() => {
-    sceneSubject.attach(playScene);
+    sceneSubject.attach(onNotify);
     return () => {
-      sceneSubject.detach(playScene);
+      sceneSubject.detach(onNotify);
     };
-  }, [playScene, sceneSubject]);
+  }, [onNotify, sceneSubject]);
 
   useEffect(() => {
     if (isEmpty(sortedCommands)) return;
@@ -306,8 +321,8 @@ export function Scene({
                     name={character}
                     position={position}
                     opacity={opacity}
+                    sceneSubject={sceneSubject}
                     isTalking={isTalking}
-                    isBlinking={isPlaying}
                   />
                 );
               }
@@ -328,7 +343,7 @@ export function Scene({
               <div className='scene-start-screen'>
                 <button
                   className='scene-start-btn scene-play-btn'
-                  onClick={() => sceneSubject.notify()}
+                  onClick={() => sceneSubject.notify('play')}
                 >
                   <img
                     src={`${images}/play-button.png`}

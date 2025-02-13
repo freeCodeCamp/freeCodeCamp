@@ -1,3 +1,5 @@
+// TODO: enable this, since strings don't make good errors.
+/* eslint-disable @typescript-eslint/only-throw-error */
 /* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import {
   EnvAnswer,
@@ -32,7 +34,7 @@ export function checkPrerequisites(
 
 export type UserExam = Omit<
   EnvExam,
-  'questionSets' | 'config' | 'id' | 'prerequisites'
+  'questionSets' | 'config' | 'id' | 'prerequisites' | 'deprecated'
 > & {
   config: Omit<EnvExam['config'], 'tags' | 'questionSets'>;
   questionSets: (Omit<EnvQuestionSet, 'questions'> & {
@@ -292,6 +294,7 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
     (acc, curr) => {
       // If type is already in accumulator, add to it.
       const typeIndex = acc.findIndex(a => a[0]?.type === curr.type);
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       acc[typeIndex]?.push(curr) ?? acc.push([curr]);
       return acc;
     },

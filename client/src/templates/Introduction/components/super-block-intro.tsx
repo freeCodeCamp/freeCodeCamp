@@ -15,7 +15,7 @@ export const ConditionalDonationAlert = ({
   superBlock,
   onCertificationDonationAlertClick,
   isDonating
-}: SuperBlockIntroProps): JSX.Element => {
+}: SuperBlockIntroProps): JSX.Element | null => {
   const { t } = useTranslation();
 
   const betaCertifications: SuperBlocks[] = [];
@@ -60,7 +60,7 @@ export const ConditionalDonationAlert = ({
       </Alert>
     );
 
-  return <></>;
+  return null;
 };
 
 function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {

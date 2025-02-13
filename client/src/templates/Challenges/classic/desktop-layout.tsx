@@ -233,7 +233,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     } else if (!isAdvancing && !showPreviewPane && !showPreviewPortal) {
       togglePane('showPreviewPane');
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const challengeFile = getChallengeFile();

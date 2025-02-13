@@ -56,9 +56,9 @@ module.exports = {
 
     if (files.length > 10) {
       completedStages.add('css');
-      return 'pnpm run stylelint --fix .';
+      return 'stylelint --fix ./**/*.css';
     } else {
-      return files.map(filename => `stylelint '${filename}'`);
+      return files.map(filename => `stylelint --fix '${filename}'`);
     }
   }
 };
