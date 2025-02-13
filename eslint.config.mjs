@@ -170,10 +170,7 @@ export default tseslint.config(
     extends: [
       testingLibraryPlugin.configs['flat/react'],
       jestDomPlugin.configs['flat/recommended']
-    ],
-    rules: {
-      'import/named': 2
-    }
+    ]
   },
   {
     files: ['e2e/*.ts'],
