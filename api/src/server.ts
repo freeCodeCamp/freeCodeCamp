@@ -31,6 +31,7 @@ const requestSerializer = (req: FastifyRequest) => {
   const remotePort = req.socket.remotePort || 'REMOTE_PORT not found';
 
   return {
+    REQ_ID: req.id,
     METHOD: method,
     URL: url,
     IP: ip,
@@ -53,7 +54,12 @@ const envToLogger = {
     },
     level: FCC_API_LOG_LEVEL || 'info',
     serializers: {
-      req: requestSerializer
+      req: (req: FastifyRequest) => {
+        return {
+          method: req.method,
+          url: req.url
+        };
+      }
     }
     // No need to redact in development
   },
