@@ -21,6 +21,75 @@ interface CalendarData {
   count: number;
 }
 
+export const generateCalendarData = (pages: PageData[]): CalendarData[] => {
+  let dayCounter = pages[0].startOfCalendar;
+  const data: CalendarData[] = [];
+
+  while (dayCounter <= pages[pages.length - 1].endOfCalendar) {
+    data.push({ date: startOfDay(dayCounter), count: 0 });
+    dayCounter = addDays(dayCounter, 1);
+  }
+  return data;
+};
+
+export const calculateStreaks = (
+  calendarData: CalendarData[],
+  timestamps: number[]
+) => {
+  let longestStreak = 0;
+  let currentStreak = 0;
+  let lastIndex = -1;
+
+  timestamps.forEach(stamp => {
+    const index = calendarData.findIndex(day =>
+      isEqual(day.date, startOfDay(stamp))
+    );
+
+    if (index >= 0) {
+      calendarData[index].count++;
+
+      if (index !== lastIndex) {
+        if (calendarData[index - 1] && calendarData[index - 1].count > 0) {
+          currentStreak++;
+        } else {
+          currentStreak = 1;
+        }
+
+        if (currentStreak > longestStreak) {
+          longestStreak = currentStreak;
+        }
+      }
+
+      lastIndex = index;
+    }
+  });
+
+  if (
+    calendarData.length &&
+    calendarData[calendarData.length - 1].count === 0
+  ) {
+    currentStreak = 0;
+  }
+
+  return { longestStreak, currentStreak };
+};
+
+export const generatePages = (
+  startOfTimestamps: Date,
+  endOfCalendar: Date
+): PageData[] => {
+  let startOfCalendar;
+  const pages: PageData[] = [];
+
+  do {
+    startOfCalendar = addDays(addMonths(endOfCalendar, -6), 1);
+    pages.push({ startOfCalendar, endOfCalendar });
+    endOfCalendar = addDays(startOfCalendar, -1);
+  } while (startOfTimestamps < startOfCalendar);
+
+  return pages.reverse();
+};
+
 function Stats({ points, calendar }: StatsProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -38,79 +107,14 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
 
     const newCalendarData = generateCalendarData(pages);
 
-    calculateStreaks(newCalendarData, timestamps);
-  }, [calendar]);
+    const { longestStreak, currentStreak } = calculateStreaks(
+      newCalendarData,
+      timestamps
+    );
 
-  const generatePages = (
-    startOfTimestamps: Date,
-    endOfCalendar: Date
-  ): PageData[] => {
-    let startOfCalendar;
-    const pages: PageData[] = [];
-
-    do {
-      startOfCalendar = addDays(addMonths(endOfCalendar, -6), 1);
-      pages.push({ startOfCalendar, endOfCalendar });
-      endOfCalendar = addDays(startOfCalendar, -1);
-    } while (startOfTimestamps < startOfCalendar);
-
-    return pages.reverse();
-  };
-
-  const generateCalendarData = (pages: PageData[]): CalendarData[] => {
-    let dayCounter = pages[0].startOfCalendar;
-    const data: CalendarData[] = [];
-
-    while (dayCounter <= pages[pages.length - 1].endOfCalendar) {
-      data.push({ date: startOfDay(dayCounter), count: 0 });
-      dayCounter = addDays(dayCounter, 1);
-    }
-
-    return data;
-  };
-
-  const calculateStreaks = (
-    calendarData: CalendarData[],
-    timestamps: number[]
-  ) => {
-    let longestStreak = 0;
-    let currentStreak = 0;
-    let lastIndex = -1;
-
-    timestamps.forEach(stamp => {
-      const index = calendarData.findIndex(day =>
-        isEqual(day.date, startOfDay(stamp))
-      );
-
-      if (index >= 0) {
-        calendarData[index].count++;
-
-        if (index !== lastIndex) {
-          if (calendarData[index - 1] && calendarData[index - 1].count > 0) {
-            currentStreak++;
-          } else {
-            currentStreak = 1;
-          }
-
-          if (currentStreak > longestStreak) {
-            longestStreak = currentStreak;
-          }
-        }
-
-        lastIndex = index;
-      }
-    });
-
-    if (
-      calendarData.length &&
-      calendarData[calendarData.length - 1].count === 0
-    ) {
-      currentStreak = 0;
-    }
-
-    setCurrentStreak(currentStreak);
     setLongestStreak(longestStreak);
-  };
+    setCurrentStreak(currentStreak);
+  }, [calendar]);
 
   return (
     <FullWidthRow>
