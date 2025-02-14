@@ -2,8 +2,7 @@ import { execSync } from 'child_process';
 import { test, expect, Page } from '@playwright/test';
 import { SuperBlocks } from '../shared/config/curriculum';
 import translations from '../client/i18n/locales/english/translations.json';
-import tributePageHtml from './fixtures/tribute-page-html.json';
-import tributePageCss from './fixtures/tribute-page-css.json';
+import tributePage from './fixtures/tribute-page.json';
 import curriculum from './fixtures/js-ads-projects.json';
 import { authedRequest } from './utils/request';
 
@@ -255,8 +254,8 @@ test.describe('Completion modal should be shown after submitting a project', () 
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     const tributeContent = [
-      tributePageHtml['tribute-page-html'].contents,
-      tributePageCss['tribute-page-css'].contents
+      tributePage.htmlFile.contents,
+      tributePage.cssFile.contents
     ];
 
     await page.goto(

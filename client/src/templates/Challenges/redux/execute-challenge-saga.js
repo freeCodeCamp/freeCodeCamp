@@ -354,13 +354,18 @@ function* previewProjectSolutionSaga({ payload }) {
   try {
     if (canBuildChallenge(challengeData)) {
       const buildData = yield buildChallengeData(challengeData);
+      if (buildData.error) throw Error(buildData.error);
+
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
         yield call(updateProjectPreview, buildData, document);
+      } else {
+        throw Error('Project does not have a preview');
       }
     }
   } catch (err) {
-    console.log(err);
+    console.error('Unable to show project preview');
+    console.error(err);
   }
 }
 
