@@ -371,55 +371,51 @@ export function Scene({
               }
             )}
 
-            <div className='scene-bottom-bar'>
-              <button
-                className='scene-start-btn scene-play-btn'
-                onClick={() =>
-                  sceneSubject.notify(isPlaying ? 'pause' : 'play')
-                }
-              >
-                {isPlaying ? (
-                  <>
-                    <span className='sr-only'>{t('buttons.pause-scene')}</span>
-                    <FontAwesomeIcon icon={faCirclePause} size='3x' />
-                  </>
-                ) : (
-                  <>
-                    <span className='sr-only'>{t('buttons.play-scene')}</span>
-                    <FontAwesomeIcon icon={faCirclePlay} size='3x' />
-                  </>
-                )}
-              </button>
-
+            {showDialogue && (alwaysShowDialogue || accessibilityOn) && (
               <div
                 className={`scene-dialogue-wrap ${
                   dialogue.align ? `scene-dialogue-align-${dialogue.align}` : ''
                 }`}
               >
-                {showDialogue && (alwaysShowDialogue || accessibilityOn) && (
-                  <>
-                    <div className='scene-dialogue-label'>{dialogue.label}</div>
-                    <div className='scene-dialogue-text'>{dialogue.text}</div>
-                  </>
-                )}
+                <div className='scene-dialogue-label'>{dialogue.label}</div>
+                <div className='scene-dialogue-text'>{dialogue.text}</div>
               </div>
-
-              {alwaysShowDialogue ? (
-                <div className='scene-a11y-btn'></div>
-              ) : (
-                <button
-                  className='scene-start-btn scene-a11y-btn'
-                  aria-label={t('buttons.closed-caption')}
-                  aria-pressed={accessibilityOn}
-                  onClick={() => setAccessibilityOn(!accessibilityOn)}
-                >
-                  <ClosedCaptionsIcon
-                    fill={accessibilityOn ? 'var(--gray-00)' : 'var(--gray-15)'}
-                  />
-                </button>
-              )}
-            </div>
+            )}
           </>
+        )}
+      </div>
+
+      <div className='scene-controls'>
+        <button
+          className='scene-btn scene-play-btn'
+          onClick={() => sceneSubject.notify(isPlaying ? 'pause' : 'play')}
+        >
+          {isPlaying ? (
+            <>
+              <span className='sr-only'>{t('buttons.pause-scene')}</span>
+              <FontAwesomeIcon icon={faCirclePause} size='3x' />
+            </>
+          ) : (
+            <>
+              <span className='sr-only'>{t('buttons.play-scene')}</span>
+              <FontAwesomeIcon icon={faCirclePlay} size='3x' />
+            </>
+          )}
+        </button>
+
+        {alwaysShowDialogue ? (
+          <div className='scene-a11y-btn'></div>
+        ) : (
+          <button
+            className='scene-btn scene-a11y-btn'
+            aria-label={t('buttons.closed-caption')}
+            aria-pressed={accessibilityOn}
+            onClick={() => setAccessibilityOn(!accessibilityOn)}
+          >
+            <ClosedCaptionsIcon
+              fill={accessibilityOn ? 'var(--gray-00)' : 'var(--gray-15)'}
+            />
+          </button>
         )}
       </div>
       <Spacer size='m' />
