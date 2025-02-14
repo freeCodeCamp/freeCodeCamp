@@ -15,11 +15,11 @@ import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
-import {
+import type {
+  ChallengeData,
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
-  CompletedChallenge,
   ResizeProps,
   SavedChallenge,
   SavedChallengeFiles,
@@ -113,7 +113,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   pageContext: {
     challengeMeta: ChallengeMeta;
     projectPreview: {
-      challengeData: CompletedChallenge;
+      challengeData: ChallengeData;
     };
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
