@@ -26,7 +26,7 @@ import { WorkerExecutor } from './worker-executor';
 interface BuildChallengeData extends Context {
   challengeType: number;
   challengeFiles?: ChallengeFile[];
-  required: { src: string }[];
+  required: { src?: string }[];
   template: string;
   url: string;
 }
@@ -234,6 +234,10 @@ export async function buildDOMChallenge(
   );
   const isMultifile = challengeFiles.length > 1;
 
+  const requiresReact16 = required.some(({ src }) =>
+    src?.includes('https://unpkg.com/react@16')
+  );
+
   // I'm reasonably sure this is fine, but we need to migrate transformers to
   // TypeScript to be sure.
   const transformers: ApplyFunctionProps[] = (isMultifile && hasJsx
@@ -263,7 +267,7 @@ export async function buildDOMChallenge(
     challengeType: challengeTypes.html,
     build: concatHtml(toBuild),
     sources: buildSourceMap(finalFiles),
-    loadEnzyme: hasJsx,
+    loadEnzyme: requiresReact16,
     error
   };
 }

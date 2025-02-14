@@ -4,14 +4,16 @@ import invariant from 'invariant';
 const exts = ['js', 'html', 'css', 'jsx', 'ts', 'py'] as const;
 export type Ext = (typeof exts)[number];
 
-export type IncompleteChallengeFile = {
+export interface IncompleteChallengeFile {
   fileKey: string;
   ext: Ext;
   name: string;
   contents: string;
-};
+  head?: string;
+  tail?: string;
+}
 
-export type ChallengeFile = IncompleteChallengeFile & {
+export interface ChallengeFile extends IncompleteChallengeFile {
   editableRegionBoundaries?: number[];
   editableContents?: string;
   usesMultifileEditor?: boolean;
@@ -22,7 +24,7 @@ export type ChallengeFile = IncompleteChallengeFile & {
   source?: string | null;
   path: string;
   history: string[];
-};
+}
 
 type PolyProps = {
   name: string;
@@ -118,12 +120,14 @@ export function setContent(
 
 // This is currently only used to add back properties that are not stored in the
 // database.
-export function regeneratePathAndHistory(file: IncompleteChallengeFile) {
+export function regenerateMissingProperties(file: IncompleteChallengeFile) {
   const newPath = file.name + '.' + file.ext;
   const newFile = {
     ...file,
     path: newPath,
-    history: [newPath]
+    history: [newPath],
+    head: file.head ?? '',
+    tail: file.tail ?? ''
   };
   return newFile;
 }
