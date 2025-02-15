@@ -33,7 +33,7 @@ on:
 
 jobs:
   build:
-    name: Build (Image)
+    name: Build & Push
     runs-on: ubuntu-24.04
     permissions:
       contents: read

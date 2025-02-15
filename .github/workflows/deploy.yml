@@ -1,49 +1,63 @@
-name: CD -- Deploy - API (Docker Swarm)
+name: CD -- Deploy - API
 
 on:
   workflow_dispatch:
+    inputs:
+      fcc_api_log_level:
+        description: 'Log level for the API'
+        type: choice
+        options:
+          - debug
+          - info
+          - warn
+        default: info
 
 jobs:
   static:
+    name: Set Static Data
     runs-on: ubuntu-24.04
     outputs:
       site_tld: ${{ steps.static_data.outputs.site_tld }}
-      environment_long: ${{ steps.static_data.outputs.environment_long }}
-      environment_short: ${{ steps.static_data.outputs.environment_short }}
-
+      environment: ${{ steps.static_data.outputs.environment }}
+      fcc_api_log_level: ${{ steps.static_data.outputs.fcc_api_log_level }}
     steps:
-      - name: Set site_tld
+      - name: Set Static Data
         id: static_data
         run: |
           if [ "${{ github.ref }}" == "refs/heads/prod-staging" ]; then
             echo "site_tld=dev" >> $GITHUB_OUTPUT
-            echo "environment_long=staging" >> $GITHUB_OUTPUT
-            echo "environment_short=stg" >> $GITHUB_OUTPUT
+            echo "environment=stg" >> $GITHUB_OUTPUT
+            echo "fcc_api_log_level=${{ inputs.fcc_api_log_level || 'info' }}" >> $GITHUB_OUTPUT
           elif [ "${{ github.ref }}" == "refs/heads/prod-current" ]; then
             echo "site_tld=org" >> $GITHUB_OUTPUT
-            echo "environment_long=production" >> $GITHUB_OUTPUT
-            echo "environment_short=prd" >> $GITHUB_OUTPUT
+            echo "environment=prd" >> $GITHUB_OUTPUT
+            echo "fcc_api_log_level=${{ inputs.fcc_api_log_level || 'info' }}" >> $GITHUB_OUTPUT
           else
             echo "site_tld=dev" >> $GITHUB_OUTPUT
-            echo "environment_long=staging" >> $GITHUB_OUTPUT
-            echo "environment_short=stg" >> $GITHUB_OUTPUT
+            echo "environment=stg" >> $GITHUB_OUTPUT
+            echo "fcc_api_log_level=${{ inputs.fcc_api_log_level || 'info' }}" >> $GITHUB_OUTPUT
           fi
 
   build:
-    name: Build & Push Docker Image
+    name: Build & Push
     needs: static
     uses: ./.github/workflows/docker-docr.yml
     with:
       site_tld: ${{ needs.static.outputs.site_tld }}
       app: api
+    secrets: inherit
 
   deploy:
+    name: Deploy to Docker Swarm -- ${{ needs.static.outputs.environment }}
     runs-on: ubuntu-24.04
     needs: [static, build]
+    env:
+      TS_USERNAME: ${{ secrets.TS_USERNAME }}
+      TS_MACHINE_NAME: ${{ secrets.TS_MACHINE_NAME }}
     permissions:
       deployments: write
     environment:
-      name: ${{ needs.static.outputs.environment_long }}
+      name: ${{ needs.static.outputs.environment }}
       url: https://api.freecodecamp.${{ needs.static.outputs.site_tld }}/status/ping?version=${{ needs.build.outputs.tagname }}
 
     steps:
@@ -66,73 +80,49 @@ jobs:
 
       - name: Check connection
         run: |
-          tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Machine not found"; exit 1; }
+          tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Error: Machine not found"; exit 1; }
           ssh $TS_USERNAME@$TS_MACHINE_NAME "uptime"
 
       - name: Deploy with Docker Stack
         env:
-          # These are set in the "Environment" secrets
-          API_LOCATION: ${{ secrets.API_LOCATION }}
-          AUTH0_CLIENT_ID: ${{ secrets.AUTH0_CLIENT_ID }}
-          AUTH0_CLIENT_SECRET: ${{ secrets.AUTH0_CLIENT_SECRET }}
-          AUTH0_DOMAIN: ${{ secrets.AUTH0_DOMAIN }}
-          COOKIE_DOMAIN: ${{ secrets.COOKIE_DOMAIN }}
-          COOKIE_SECRET: ${{ secrets.COOKIE_SECRET }}
-          DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
-          FCC_API_LOG_LEVEL: ${{ secrets.FCC_API_LOG_LEVEL }}
-          GROWTHBOOK_FASTIFY_API_HOST: ${{ secrets.GROWTHBOOK_FASTIFY_API_HOST }}
-          GROWTHBOOK_FASTIFY_CLIENT_KEY: ${{ secrets.GROWTHBOOK_FASTIFY_CLIENT_KEY }}
-          HOME_LOCATION: ${{ secrets.HOME_LOCATION }}
-          JWT_SECRET: ${{ secrets.JWT_SECRET }}
-          MONGOHQ_URL: ${{ secrets.MONGOHQ_URL }}
-          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
-          SES_ID: ${{ secrets.SES_ID }}
-          SES_SECRET: ${{ secrets.SES_SECRET }}
-          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          # These are set in the "Environment" specifc secrets
+          AGE_ENCRYPTED_ASC_SECRETS: ${{ secrets.AGE_ENCRYPTED_ASC_SECRETS }}
+          AGE_SECRET_KEY: ${{ secrets.AGE_SECRET_KEY }}
           # These are set in the static job above
-          DEPLOYMENT_ENV: ${{ needs.static.outputs.site_tld }}
+          STACK_NAME: ${{ needs.static.outputs.environment }}-api
           DEPLOYMENT_VERSION: ${{ needs.build.outputs.tagname }}
-          SENTRY_ENVIRONMENT: api-${{ needs.static.outputs.site_tld }}
-          STACK_NAME: ${{ needs.static.outputs.environment_short }}-api
+          FCC_API_LOG_LEVEL: ${{ needs.static.outputs.fcc_api_log_level }}
         run: |
           ssh $TS_USERNAME@$TS_MACHINE_NAME /bin/bash << EOF
+            set -e
+            cd /home/${TS_USERNAME}/docker-swarm-config/stacks/api || { echo "Error: Failed to change directory"; exit 1; }
+            which age > /dev/null || { echo "Error: age not installed"; exit 1; }
 
-            cd /home/${TS_USERNAME}/docker-swarm-config/stacks/api || { echo "Failed to change directory"; exit 1; }
-            echo "Debug: Current directory: \$(pwd)"
+            # Decrypt secrets
+            echo "${AGE_ENCRYPTED_ASC_SECRETS}" > secrets.age.asc
+            echo "${AGE_SECRET_KEY}" > age.key && chmod 600 age.key
+            age --identity age.key --decrypt secrets.age.asc > .env
+            rm -f age.key secrets.age.asc
 
-            echo "API_LOCATION=${API_LOCATION}" >> .env.tmp
-            echo "AUTH0_CLIENT_ID=${AUTH0_CLIENT_ID}" >> .env.tmp
-            echo "AUTH0_CLIENT_SECRET=${AUTH0_CLIENT_SECRET}" >> .env.tmp
-            echo "AUTH0_DOMAIN=${AUTH0_DOMAIN}" >> .env.tmp
-            echo "COOKIE_DOMAIN=${COOKIE_DOMAIN}" >> .env.tmp
-            echo "COOKIE_SECRET=${COOKIE_SECRET}" >> .env.tmp
-            echo "DOCKER_REGISTRY=${DOCKER_REGISTRY}" >> .env.tmp
-            echo "FCC_API_LOG_LEVEL=${FCC_API_LOG_LEVEL}" >> .env.tmp
-            echo "GROWTHBOOK_FASTIFY_API_HOST=${GROWTHBOOK_FASTIFY_API_HOST}" >> .env.tmp
-            echo "GROWTHBOOK_FASTIFY_CLIENT_KEY=${GROWTHBOOK_FASTIFY_CLIENT_KEY}" >> .env.tmp
-            echo "HOME_LOCATION=${HOME_LOCATION}" >> .env.tmp
-            echo "JWT_SECRET=${JWT_SECRET}" >> .env.tmp
-            echo "MONGOHQ_URL=${MONGOHQ_URL}" >> .env.tmp
-            echo "SENTRY_DSN=${SENTRY_DSN}" >> .env.tmp
-            echo "SES_ID=${SES_ID}" >> .env.tmp
-            echo "SES_SECRET=${SES_SECRET}" >> .env.tmp
-            echo "STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}" >> .env.tmp
+            # Add deployment variables
+            {
+              echo "DEPLOYMENT_VERSION=${DEPLOYMENT_VERSION}"
+              echo "FCC_API_LOG_LEVEL=${FCC_API_LOG_LEVEL}"
+            } >> .env
 
-            echo "DEPLOYMENT_ENV=${DEPLOYMENT_ENV}" >> .env.tmp
-            echo "DEPLOYMENT_VERSION=${DEPLOYMENT_VERSION}" >> .env.tmp
-            echo "SENTRY_ENVIRONMENT=${SENTRY_ENVIRONMENT}" >> .env.tmp
+            # Export environment variables with proper escaping
+            while IFS='=' read -r key value; do
+              if [[ -n \$key && ! \$key =~ ^# ]]; then
+                export "\${key}=\${value}"
+              fi
+            done < .env
+            rm -f .env
 
-            set -a
-            source .env.tmp || { echo "Failed to source .env.tmp"; exit 1; }
-            set +a
-            rm -f .env.tmp
+            # Validate environment and config
+            env | grep -E 'DOMAIN|DEPLOYMENT' || { echo "Error: Required environment variables not found"; exit 1; }
+            docker stack config -c stack-api.yml > /dev/null || { echo "Error: Invalid stack configuration"; exit 1; }
 
-            echo "Debug: Sanity check variables: "
-            env | grep -E '^DEPLOYMENT' || { echo 'Vars not found'; exit 1; }
-            echo "Debug: Sanity check config: "
-            docker stack config -c stack-api.yml | rg 'DOMAIN' || { echo 'Invalid stack config'; exit 1; }
-
-            # Dump the stack config to a file for debugging, this will be replaced with a deploy command
-            docker stack config -c stack-api.yml > /tmp/stack-api-${DEPLOYMENT_VERSION}.yml
+            # Deploy
+            docker stack deploy -c stack-api.yml --prune --with-registry-auth --detach=false ${STACK_NAME}
           EOF
         shell: bash
