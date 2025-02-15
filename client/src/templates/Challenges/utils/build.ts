@@ -3,7 +3,7 @@ import frameRunnerData from '../../../../../client/config/browser-scripts/frame-
 import jsTestEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
 import pyTestEvaluatorData from '../../../../../client/config/browser-scripts/python-test-evaluator.json';
 
-import { ChallengeFile, ChallengeMeta } from '../../../redux/prop-types';
+import type { ChallengeFile } from '../../../redux/prop-types';
 import { concatHtml } from '../rechallenge/builders';
 import {
   getTransformers,
@@ -107,7 +107,8 @@ export const buildFunctions = {
   [challengeTypes.colab]: buildBackendChallenge,
   [challengeTypes.python]: buildPythonChallenge,
   [challengeTypes.multifilePythonCertProject]: buildPythonChallenge,
-  [challengeTypes.lab]: buildDOMChallenge
+  [challengeTypes.lab]: buildDOMChallenge,
+  [challengeTypes.jsLab]: buildJSChallenge
 };
 
 export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
@@ -393,7 +394,11 @@ export function updateProjectPreview(
   }
 }
 
-export function challengeHasPreview({ challengeType }: ChallengeMeta): boolean {
+export function challengeHasPreview({
+  challengeType
+}: {
+  challengeType: number;
+}): boolean {
   return (
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
@@ -411,6 +416,7 @@ export function isJavaScriptChallenge({
 }): boolean {
   return (
     challengeType === challengeTypes.js ||
-    challengeType === challengeTypes.jsProject
+    challengeType === challengeTypes.jsProject ||
+    challengeType === challengeTypes.jsLab
   );
 }
