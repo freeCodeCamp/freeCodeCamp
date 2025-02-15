@@ -46,14 +46,14 @@ const ref = fetch;
 fetch = () => Promise.resolve({ json: () => catData });
 async () => {
   try {
-    document.getElementById('getMessage')?.click();
+    document.getElementById('getMessage').click();
     await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
   } catch (error) {
     console.log(error);
   } finally {
     fetch = ref;
     assert.equal(
-      document.getElementById('message')?.textContent,
+      document.getElementById('message').textContent,
       JSON.stringify(catData)
     );
   }

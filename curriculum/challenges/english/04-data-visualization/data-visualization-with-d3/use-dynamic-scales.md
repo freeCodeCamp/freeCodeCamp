@@ -52,7 +52,6 @@ Use the `yScale` variable to create a linear y-axis scale. The domain should sta
 The text in the `h2` should be `30`.
 
 ```js
-assert.exists(output); 
 assert.strictEqual(output, 30);
 assert.strictEqual(document.querySelector('h2')?.textContent, '30');
 ```
@@ -60,14 +59,12 @@ assert.strictEqual(document.querySelector('h2')?.textContent, '30');
 The `domain()` of yScale should be equivalent to `[0, 411]`.
 
 ```js
-assert.exists(yScale); 
 assert.deepEqual(yScale.domain(), [0, 411]);
 ```
 
 The `range()` of yScale should be equivalent to `[470, 30]`.
 
 ```js
-assert.exists(yScale); 
 assert.deepEqual(yScale.range(), [470, 30]);
 ```
 

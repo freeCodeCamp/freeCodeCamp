@@ -47,7 +47,6 @@ assert.match(code, /\.domain/g);
 The `domain()` of the `scale` should be set to `[250, 500]`.
 
 ```js
-assert.exists(scale); 
 assert.deepEqual(scale.domain(), [250, 500]);
 ```
 
@@ -60,7 +59,6 @@ assert.match(code, /\.range/g);
 The `range()` of the `scale` should be set to `[10, 150]`.
 
 ```js
-assert.exists(scale); 
 assert.deepEqual(scale.range(), [10, 150]);
 ```
 
