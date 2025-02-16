@@ -30,6 +30,7 @@ type MultiTierDonationFormProps = {
   defaultTheme?: LocalStorageThemes;
   isAnimationEnabled?: boolean;
 };
+
 function SelectionTabs({
   donationAmount,
   setDonationAmount,
