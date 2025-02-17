@@ -11,6 +11,9 @@ on:
           - info
           - warn
         default: info
+  push:
+    branches:
+      - prod-*
 
 jobs:
   static:
