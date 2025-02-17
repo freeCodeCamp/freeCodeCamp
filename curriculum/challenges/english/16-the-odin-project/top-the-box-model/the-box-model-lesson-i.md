@@ -29,7 +29,7 @@ The `content-box` model and the `border-box` model are the same and have no diff
 
 ---
 
-In the `border-box` model, the width and height apply only to the content, while in the `content-box` model, they include padding and border
+In the `border-box` model, the width and height apply only to the content, while in the `content-box` model, they include padding and border.
 
 ## --video-solution--
 
