@@ -2606,7 +2606,7 @@
       "lab-sentence-maker": {
         "title": "Build a Sentence Maker",
         "intro": [
-          "In this lab, you'll create different stories by assigning different words to different variables."
+          "In this lab, you will continue practicing with strings and concatenation by creating and customizing various stories."
         ]
       },
       "lecture-working-with-data-types": {
