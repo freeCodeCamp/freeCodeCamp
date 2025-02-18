@@ -58,7 +58,7 @@ describe('Should Calculate Streaks correctly', () => {
     );
   };
 
-  test('Should return a longest streak of 5 days', () => {
+  test('Should return a longest streak of 5 days when the user has not completed a challenge in a while', () => {
     const timeStamps = handleTimeStamps(calendar1);
     const startOfTimestamps = startOfDay(new Date(timeStamps[0]));
     const endOfCalendar = startOfDay(Date.now());
@@ -76,7 +76,7 @@ describe('Should Calculate Streaks correctly', () => {
     expect(currentStreak).toBe(0);
   });
 
-  test('Should return a current streak of 3 days', () => {
+  test('Should return a longest streak of 3 days when the current streak is 3 days', () => {
     const timeStamps = handleTimeStamps(calendar2);
     const startOfTimestamps = startOfDay(new Date(timeStamps[0]));
     const endOfCalendar = startOfDay(new Date(2025, 0, 14));
@@ -94,7 +94,7 @@ describe('Should Calculate Streaks correctly', () => {
     expect(currentStreak).toBe(3);
   });
 
-  test('should return a streak of 1 day', () => {
+  test('Should return a longenst/current streak of 1 day when the user has recently completed their first challenge', () => {
     const timeStamps = handleTimeStamps({
       '1736496000': 1 // 2025-01-10 08:00:00 UTC
     });
@@ -114,7 +114,7 @@ describe('Should Calculate Streaks correctly', () => {
     expect(currentStreak).toBe(1);
   });
 
-  test('should return a current streak of 2 days with a longest streak of 3 days', () => {
+  test('Should return a current streak of 2 days with a longest streak of 3 days when the longest streak is longer than the current one', () => {
     const timeStamps = handleTimeStamps(calendar3);
     const startOfTimestamps = startOfDay(new Date(timeStamps[0]));
     const endOfCalendar = startOfDay(new Date(2025, 0, 15));
@@ -132,7 +132,7 @@ describe('Should Calculate Streaks correctly', () => {
     expect(currentStreak).toBe(2);
   });
 
-  test('should return a streak of 0 days if no challenges have been completed', () => {
+  test('Should return a streak of 0 days if no challenges have been completed', () => {
     const timeStamps = handleTimeStamps({});
     const startOfTimestamps = startOfDay(new Date(timeStamps[0]));
     const endOfCalendar = startOfDay(Date.now());
