@@ -112,7 +112,7 @@ export default tseslint.config(
           maxDepth: 2
         }
       ],
-
+      'react/jsx-no-target-blank': 'off',
       'react/prop-types': 'off',
       'react/jsx-no-useless-fragment': 'error',
       'no-only-tests/no-only-tests': 'error',

@@ -1,6 +1,6 @@
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import type { TFunction } from 'i18next';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -53,6 +53,16 @@ function DonatePage({
   t,
   donationFormState
 }: DonatePageProps) {
+  const faqRef = useRef<HTMLDivElement | null>(null);
+
+  const handleScrollToFaq = () => {
+    if (faqRef.current) {
+      faqRef.current.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.warn('FAQ section not available for scrolling.');
+    }
+  };
+
   useEffect(() => {
     callGA({
       event: 'donation_view',
@@ -87,8 +97,28 @@ function DonatePage({
               </Col>
             </Row>
           </main>
+
+          {/* Implementation of donation FAQ button */}
+          <div style={{ marginTop: '20px', textAlign: 'center' }}>
+            <button
+              onClick={handleScrollToFaq}
+              style={{
+                border: '4px solid red',
+                backgroundColor: 'transparent',
+                color: 'red',
+                padding: '10px 20px',
+                fontSize: '18px',
+                cursor: 'pointer',
+                textAlign: 'center',
+                display: 'inline-block'
+              }}
+            >
+              I need help with my donation
+            </button>
+          </div>
         </Container>
       </Container>
+
       <Container className='donate-supporter-page-section'>
         <Row>
           <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
@@ -126,7 +156,7 @@ function DonatePage({
       <Container className='donate-supporter-page-section'>
         <Row>
           <Col lg={10} lgOffset={0} md={8} mdOffset={2} sm={10}>
-            <DonationFaqText />
+            <DonationFaqText ref={faqRef} />
           </Col>
         </Row>
         <Spacer size='l' />

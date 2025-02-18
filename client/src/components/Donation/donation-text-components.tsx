@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
 import { Spacer } from '@freecodecamp/ui';
@@ -100,7 +100,7 @@ const FaqItem = (
   );
 };
 
-export const DonationFaqText = (): JSX.Element => {
+export const DonationFaqText = forwardRef<HTMLDivElement, object>((_, ref) => {
   const { t } = useTranslation();
   const faqItems = [
     { Q: t('donate.get-help'), A: <p>{t('donate.forward-receipt')}</p> },
@@ -194,10 +194,14 @@ export const DonationFaqText = (): JSX.Element => {
     <>
       <h2 data-playwright-test-label='faq-head'>{t('donate.faq')}</h2>
       <Spacer size='xs' />
-      {faqItems.map((item, iterator) => FaqItem(item.Q, item.A, iterator))}
+      <div ref={ref}>
+        {faqItems.map((item, iterator) => FaqItem(item.Q, item.A, iterator))}
+      </div>
     </>
   );
-};
+});
+
+DonationFaqText.displayName = 'DonationFaqText';
 
 export const SupportBenefitsText = ({
   isSupportersPage
