@@ -28,7 +28,7 @@ assert.lengthOf(code.match(/<\/figure>/g), 2);
 There should be a `figure` element right above the last `section` element's closing tag.
 
 ```js
-assert.equal(document.querySelectorAll('main > section')[1].lastElementChild.nodeName, 'FIGURE');
+assert.equal(document.querySelectorAll('main > section')[1]?.lastElementChild.nodeName, 'FIGURE');
 ```
 
 The Cats `img` element should be nested in the `figure` element.
@@ -46,8 +46,8 @@ The Cats `img` element should have an `alt` attribute with the value `Five cats 
 const catsImg = document.querySelectorAll('figure > img')[1];
 assert.match(
   catsImg
-    .getAttribute('alt')
-    .replace(/\s+/g, ' '),
+    ?.getAttribute('alt')
+    ?.replace(/\s+/g, ' '),
     /^Five cats looking around a field\.?$/i
 );
 ```

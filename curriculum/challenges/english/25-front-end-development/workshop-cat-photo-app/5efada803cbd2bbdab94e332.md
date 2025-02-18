@@ -20,13 +20,13 @@ assert.isAtLeast(document.querySelectorAll('figure').length, 2);
 Your second `figure` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
 ```js
-assert.isAtLeast(code.match(/<\/figure>/g).length, 2);
+assert.isAtLeast(code.match(/<\/figure>/g)?.length, 2);
 ```
 
 There should be a second `figure` element right above the second `section` element's closing tag. You have them in the wrong order.
 
 ```js
-assert.equal(document.querySelectorAll('main > section')[1].lastElementChild.nodeName, 'FIGURE');
+assert.equal(document.querySelectorAll('main > section')[1]?.lastElementChild.nodeName, 'FIGURE');
 ```
 
 You should have a third `img` element nested in the `figure` element.
