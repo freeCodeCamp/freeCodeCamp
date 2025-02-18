@@ -2578,7 +2578,6 @@
           "Open up this page to review concepts around the basics of CSS, responsive web design, animations, accessibility and more."
         ]
       },
-      "wvjx": { "title": "127", "intro": [] },
       "lecture-working-with-code-editors-and-ides": {
         "title": "Working with Code Editors and IDEs",
         "intro": [
@@ -2607,7 +2606,7 @@
       "lab-sentence-maker": {
         "title": "Build a Sentence Maker",
         "intro": [
-          "In this lab, you'll create different stories by assigning different words to different variables."
+          "In this lab, you will continue practicing with strings and concatenation by creating and customizing various stories."
         ]
       },
       "lecture-working-with-data-types": {
@@ -3338,7 +3337,7 @@
       "lecture-understanding-asynchronous-programming": {
         "title": "Understanding Asynchronous Programming",
         "intro": [
-          "In these lecture videos, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>asnyc</code> keyword works, the <code>Fetch</code> API, promises, async/await, the <code>Geolocation</code> API, and much more."
+          "In these lecture videos, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>async</code> keyword works, the <code>Fetch</code> API, promises, <code>async/await</code>, the <code>Geolocation</code> API, and much more."
         ]
       },
       "workshop-fcc-authors-page": {
