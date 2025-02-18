@@ -123,7 +123,6 @@ export function Scene({
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [sceneIsReady, setSceneIsReady] = useState(false);
-  const [showDialogue, setShowDialogue] = useState(false);
   const [accessibilityOn, setAccessibilityOn] = useState(false);
   const [characters, setCharacters] = useState(initCharacters);
   const [dialogue, setDialogue] = useState(initDialogue);
@@ -197,7 +196,6 @@ export function Scene({
     // means to resume we need to set the startRef to the current time minus
     // the time we've already played.
     startClocktimeRef.current = Date.now() - pausedAt;
-    setShowDialogue(true);
     updateCurrentTime();
 
     const audioStartDelay = sToMs(audio.startTime) - pausedAt;
@@ -265,7 +263,6 @@ export function Scene({
     usedCommandsRef.current.clear();
     startClocktimeRef.current = 0;
     setCurrentTime(0);
-    setShowDialogue(false);
     setDialogue(initDialogue);
     setCharacters(initCharacters);
     setBackground(initBackground);
@@ -371,7 +368,7 @@ export function Scene({
               }
             )}
 
-            {showDialogue && (alwaysShowDialogue || accessibilityOn) && (
+            {(alwaysShowDialogue || accessibilityOn) && (
               <div
                 className={`scene-dialogue-wrap ${
                   dialogue.align ? `scene-dialogue-align-${dialogue.align}` : ''
@@ -413,7 +410,9 @@ export function Scene({
             onClick={() => setAccessibilityOn(!accessibilityOn)}
           >
             <ClosedCaptionsIcon
-              fill={accessibilityOn ? 'var(--gray-00)' : 'var(--gray-15)'}
+              fill={
+                accessibilityOn ? 'var(--tertiary-color)' : 'var(--gray-45)'
+              }
             />
           </button>
         )}
