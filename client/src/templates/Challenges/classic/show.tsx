@@ -269,10 +269,7 @@ function ShowClassic({
     return isValidLayout ? reflexLayout : BASE_LAYOUT;
   };
 
-  const onPreviewResize = () => {
-    console.log('onPreviewResize');
-    xtermFitRef.current?.fit();
-  };
+  const onPreviewResize = () => xtermFitRef.current?.fit();
 
   // layout: Holds the information of the panes sizes for desktop view
   const [layout, setLayout] = useState(getLayoutState());
