@@ -1605,11 +1605,15 @@
       },
       "learn-how-to-share-feedback": {
         "title": "Learn How to Share Feedback",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will see ways of telling other people how you feel about their work, highlighting both their strengths and points for improvement."
+        ]
       },
       "learn-how-to-share-your-opinion": {
         "title": "Learn How to Share Your Opinion",
-        "intro": ["", ""]
+        "intro": [
+          "This course will show you how to express your ideas and feeling towards topics in a discussion."
+        ]
       },
       "learn-how-to-express-agreement": {
         "title": "Learn How to Express Agreement",
