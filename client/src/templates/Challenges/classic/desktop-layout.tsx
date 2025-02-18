@@ -233,7 +233,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     } else if (!isAdvancing && !showPreviewPane && !showPreviewPortal) {
       togglePane('showPreviewPane');
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const challengeFile = getChallengeFile();
@@ -241,17 +240,15 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const isMultifileProject =
     challengeType === challengeTypes.multifileCertProject ||
     challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeType == challengeTypes.lab;
+    challengeType === challengeTypes.lab ||
+    challengeType === challengeTypes.jsLab;
+  const isProjectStyle = projectBasedChallenge || isMultifileProject;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
   const displayNotes = projectBasedChallenge ? showNotes && !!notes : false;
-  const displayEditorConsole = !(projectBasedChallenge || isMultifileProject)
-    ? true
-    : false;
-  const displayPreviewConsole =
-    (projectBasedChallenge || isMultifileProject) && showConsole;
-  const hasVerticalResizableCodePane =
-    !isMultifileProject && !projectBasedChallenge;
+  const displayEditorConsole = !isProjectStyle;
+  const displayPreviewConsole = !displayEditorConsole && showConsole;
+
   const {
     codePane,
     editorPane,
@@ -266,7 +263,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   return (
     <div className='desktop-layout' data-playwright-test-label='desktop-layout'>
-      {(projectBasedChallenge || isMultifileProject) && (
+      {isProjectStyle && (
         <ActionRow
           hasPreview={hasPreview}
           hasNotes={!!notes}
@@ -311,7 +308,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
             >
               <ReflexElement
                 name='codePane'
-                {...(hasVerticalResizableCodePane && { flex: codePane.flex })}
+                {...(displayEditorConsole && { flex: codePane.flex })}
                 {...reflexProps}
                 {...resizeProps}
               >
@@ -358,7 +355,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
             data-playwright-test-label='preview-pane'
           >
             <ReflexContainer orientation='horizontal'>
-              {displayPreviewPane && <ReflexElement>{preview}</ReflexElement>}
+              {displayPreviewPane && (
+                <ReflexElement {...reflexProps}>{preview}</ReflexElement>
+              )}
               {displayPreviewPane && displayPreviewConsole && (
                 <ReflexSplitter propagate={true} {...resizeProps} />
               )}

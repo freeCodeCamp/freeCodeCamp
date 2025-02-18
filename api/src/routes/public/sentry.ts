@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { type FastifyInstance, type FastifyReply } from 'fastify';
 
@@ -29,9 +28,6 @@ export const sentryRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
-/**
- * Creates a new event in Sentry.
- */
 function postSentryEventHandler(
   this: FastifyInstance,
   req: UpdateReqType<typeof schemas.sentryPostEvent>,

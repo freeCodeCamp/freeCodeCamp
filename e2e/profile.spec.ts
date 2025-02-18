@@ -177,7 +177,6 @@ test.describe('Profile component', () => {
     test('should not show portfolio when empty', async ({ page }) => {
       // @certifieduser doesn't have portfolio information
       await expect(
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         page.getByText(translations.profile.projects)
       ).not.toBeVisible();
     });

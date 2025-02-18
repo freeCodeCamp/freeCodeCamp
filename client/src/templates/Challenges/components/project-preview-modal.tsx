@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Button, Modal } from '@freecodecamp/ui';
 
-import type { CompletedChallenge } from '../../../redux/prop-types';
+import type { ChallengeData } from '../../../redux/prop-types';
 import {
   closeModal,
   setEditorFocusability,
@@ -15,14 +15,14 @@ import Preview from './preview';
 import './project-preview-modal.css';
 
 interface ProjectPreviewMountedPayload {
-  challengeData: CompletedChallenge | null;
+  challengeData: ChallengeData | null;
 }
 
 interface Props {
   closeModal: (arg: string) => void;
   isOpen: boolean;
   projectPreviewMounted: (payload: ProjectPreviewMountedPayload) => void;
-  challengeData: CompletedChallenge | null;
+  challengeData: ChallengeData | null;
   setEditorFocusability: (focusability: boolean) => void;
   previewTitle: string;
   closeText: string;
@@ -60,7 +60,7 @@ function ProjectPreviewModal({
       open={isOpen}
     >
       <Modal.Header closeButtonClassNames='close'>{previewTitle}</Modal.Header>
-      <Modal.Body>
+      <Modal.Body className='project-preview-modal-body'>
         <Preview
           previewId={projectPreviewId}
           previewMounted={() => projectPreviewMounted({ challengeData })}
