@@ -167,13 +167,6 @@ export function Scene({
     setSceneIsReady(true);
   };
 
-  const handlePause = useCallback(() => {
-    isPlayingSceneRef.current = false;
-    pausedAtRef.current = currentTime;
-    pauseAudio();
-    pauseAnimation();
-  }, [currentTime]);
-
   const handlePlay = useCallback(() => {
     const pausedAt = pausedAtRef.current;
     const updateCurrentTime = () => {
@@ -248,16 +241,25 @@ export function Scene({
     }, audioStartDelay);
   }, [audio, duration, isPlaying, resetAudio, sceneIsReady]);
 
-  const playScene = useCallback(
-    (eventType: 'play' | 'pause') => {
-      if (eventType === 'pause') {
-        handlePause();
-      } else if (eventType === 'play') {
-        handlePlay();
-      }
-    },
-    [handlePause, handlePlay]
-  );
+  const handlePause = useCallback(() => {
+    isPlayingSceneRef.current = false;
+    pausedAtRef.current = currentTime;
+    pauseAudio();
+    pauseAnimation();
+  }, [currentTime]);
+
+  const handleStop = useCallback(() => {
+    usedCommandsRef.current.clear();
+    pauseAudio();
+    pauseAnimation();
+    audioRef.current.currentTime = audio.startTimestamp || 0;
+    setCurrentTime(0);
+    setIsPlaying(false);
+    isPlayingSceneRef.current = false;
+    setDialogue(initDialogue);
+    setCharacters(initCharacters);
+    setBackground(initBackground);
+  }, [audio, initCharacters, initBackground]);
 
   const resetAnimation = useCallback(() => {
     usedCommandsRef.current.clear();
@@ -274,12 +276,25 @@ export function Scene({
     pausedAtRef.current = 0;
   };
 
+  const onNotify = useCallback(
+    (eventType: 'play' | 'pause' | 'stop') => {
+      if (eventType === 'play') {
+        handlePlay();
+      } else if (eventType === 'pause') {
+        handlePause();
+      } else {
+        handleStop();
+      }
+    },
+    [handlePlay, handlePause, handleStop]
+  );
+
   useEffect(() => {
-    sceneSubject.attach(playScene);
+    sceneSubject.attach(onNotify);
     return () => {
-      sceneSubject.detach(playScene);
+      sceneSubject.detach(onNotify);
     };
-  }, [playScene, sceneSubject]);
+  }, [onNotify, sceneSubject]);
 
   useEffect(() => {
     if (isEmpty(sortedCommands)) return;
@@ -362,7 +377,7 @@ export function Scene({
                     position={position}
                     opacity={opacity}
                     isTalking={isPlaying && isTalking}
-                    isBlinking={isPlaying}
+                    sceneSubject={sceneSubject}
                   />
                 );
               }

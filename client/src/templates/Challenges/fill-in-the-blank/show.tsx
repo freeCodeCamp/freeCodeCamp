@@ -178,7 +178,7 @@ const ShowFillInTheBlank = ({
   };
 
   const handlePlayScene = () => {
-    sceneSubject.notify();
+    sceneSubject.notify('play');
   };
 
   const blockNameTitle = `${t(

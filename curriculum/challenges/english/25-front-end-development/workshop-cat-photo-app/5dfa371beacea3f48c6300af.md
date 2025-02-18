@@ -26,7 +26,7 @@ There should be an `h3` element right above the second `section` element's closi
 
 ```js
 assert.equal(
-  document.querySelectorAll('main > section')[1].lastElementChild.nodeName,
+  document.querySelectorAll('main > section')[1]?.lastElementChild.nodeName,
     'H3'
 );
 ```
@@ -37,7 +37,7 @@ The `h3` element right above the second `section` element's closing tag should h
 assert.equal(
   document
     .querySelectorAll('main > section')[1]
-    .lastElementChild.innerText.toLowerCase()
+    ?.lastElementChild.innerText.toLowerCase()
     .replace(/\s+/g, ' '), 'things cats love:'
 );
 ```
@@ -46,10 +46,10 @@ There should be an `h2` element with the text `Cat Lists` above the last `h3` el
 
 ```js
 const secondSectionLastElemNode = document.querySelectorAll('main > section')[1]
-  .lastElementChild;
+  ?.lastElementChild;
+assert.equal( secondSectionLastElemNode?.nodeName, 'H3');
 assert.equal(
-  secondSectionLastElemNode.nodeName === 'H3' &&
-    secondSectionLastElemNode.previousElementSibling.innerText
+ secondSectionLastElemNode?.previousElementSibling.innerText
       .toLowerCase()
       .replace(/\s+/g, ' '), 'cat lists'
 );

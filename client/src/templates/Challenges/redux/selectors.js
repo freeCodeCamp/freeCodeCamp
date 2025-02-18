@@ -20,11 +20,10 @@ export const completedChallengesIdsSelector = createSelector(
   completedChallengesSelector,
   completedChallenges => completedChallenges.map(node => node.id)
 );
-export const isChallengeCompletedSelector = state => {
-  const completedChallenges = completedChallengesSelector(state);
-  const { id: currentChallengeId } = challengeMetaSelector(state);
-  return completedChallenges.some(({ id }) => id === currentChallengeId);
-};
+export const isChallengeCompletedSelector = createSelector(
+  [completedChallengesIdsSelector, challengeMetaSelector],
+  (ids, meta) => ids.includes(meta.id)
+);
 export const isCodeLockedSelector = state => state[ns].isCodeLocked;
 export const isCompletionModalOpenSelector = state =>
   state[ns].modal.completion;
@@ -61,15 +60,7 @@ export const userCompletedExamSelector = state => state[ns].userCompletedExam;
 export const challengeDataSelector = state => {
   const { challengeType } = challengeMetaSelector(state);
   let challengeData = { challengeType };
-  if (
-    challengeType === challengeTypes.js ||
-    challengeType === challengeTypes.jsProject
-  ) {
-    challengeData = {
-      ...challengeData,
-      challengeFiles: challengeFilesSelector(state)
-    };
-  } else if (challengeType === challengeTypes.backend) {
+  if (challengeType === challengeTypes.backend) {
     const { solution: url = {} } = projectFormValuesSelector(state);
     challengeData = {
       ...challengeData,
@@ -97,7 +88,10 @@ export const challengeDataSelector = state => {
     challengeType === challengeTypes.multifileCertProject ||
     challengeType === challengeTypes.multifilePythonCertProject ||
     challengeType === challengeTypes.python ||
-    challengeType === challengeTypes.lab
+    challengeType === challengeTypes.lab ||
+    challengeType === challengeTypes.js ||
+    challengeType === challengeTypes.jsProject ||
+    challengeType === challengeTypes.jsLab
   ) {
     const { required = [], template = '' } = challengeMetaSelector(state);
     challengeData = {

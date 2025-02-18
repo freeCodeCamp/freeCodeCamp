@@ -77,7 +77,6 @@ app.start = _.once(function () {
       log('DB connection closed');
       // exit process
       // this may close kept alive sockets
-      // eslint-disable-next-line no-process-exit
       process.exit(0);
     });
   });

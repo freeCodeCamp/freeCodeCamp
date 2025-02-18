@@ -127,7 +127,6 @@ describe('auth0 routes', () => {
 
       const res = await superRequest('/mobile-login', {
         method: 'GET',
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         setCookies: firstRes.get('Set-Cookie')
       })
         .set('Authorization', 'Bearer does-not-matter')

@@ -8,7 +8,7 @@ dashedName: welcome-message-from-quincy
 
 # --description--
 
-Watch the video and complete the assignment below.
+Watch the video or read the transcript and complete the assignment below.
 
 # --transcript--
 
