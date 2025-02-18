@@ -158,6 +158,7 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
 };
 
 const StepPreview = ({
+  dimensions,
   disableIframe,
   previewMounted,
   challengeType,
@@ -165,10 +166,11 @@ const StepPreview = ({
 }: Pick<PreviewProps, 'disableIframe' | 'previewMounted'> & {
   challengeType: number;
   xtermFitRef: React.MutableRefObject<FitAddon | null>;
+  dimensions?: { width: number; height: number };
 }) => {
   return challengeType === challengeTypes.python ||
     challengeType === challengeTypes.multifilePythonCertProject ? (
-    <XtermTerminal xtermFitRef={xtermFitRef} />
+    <XtermTerminal dimensions={dimensions} xtermFitRef={xtermFitRef} />
   ) : (
     <Preview disableIframe={disableIframe} previewMounted={previewMounted} />
   );
