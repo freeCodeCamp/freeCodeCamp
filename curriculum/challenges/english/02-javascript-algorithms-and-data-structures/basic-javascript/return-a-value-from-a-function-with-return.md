@@ -1,7 +1,7 @@
 ---
 id: 56533eb9ac21ba0edf2244c2
 title: Return a Value from a Function with Return
-challengeType:
+challengeType: 1
 forumTopicId: 18271
 dashedName: return-a-value-from-a-function-with-return
 ---
