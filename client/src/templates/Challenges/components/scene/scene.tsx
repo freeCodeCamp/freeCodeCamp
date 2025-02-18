@@ -389,12 +389,12 @@ export function Scene({
         >
           {isPlaying ? (
             <>
-              <span className='sr-only'>{t('buttons.pause-scene')}</span>
+              <span className='sr-only'>{t('buttons.pause')}</span>
               <FontAwesomeIcon icon={faCirclePause} size='3x' />
             </>
           ) : (
             <>
-              <span className='sr-only'>{t('buttons.play-scene')}</span>
+              <span className='sr-only'>{t('buttons.play')}</span>
               <FontAwesomeIcon icon={faCirclePlay} size='3x' />
             </>
           )}
