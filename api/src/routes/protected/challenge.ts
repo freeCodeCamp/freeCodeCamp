@@ -698,19 +698,16 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             ] as CompletedChallenge;
             const oldResults = oldChallenge?.examResults as ExamResults;
 
-            const newChallenge = oldChallenge;
-            newChallenge ? (newChallenge.examResults = examResults) : null;
-
             // only update if it's a better result
             if (percentCorrect > oldResults.percentCorrect) {
-              const updatedChallege = {
+              const updatedChallenge = {
                 id,
                 challengeType: oldChallenge.challengeType,
                 completedDate: oldChallenge.completedDate,
                 examResults
               };
 
-              newCompletedChallenges[alreadyCompletedIndex] = updatedChallege;
+              newCompletedChallenges[alreadyCompletedIndex] = updatedChallenge;
 
               // TODO(Post-MVP): Try to DRY the updates.
               // updateUserChallengeData, for all its faults, handles the

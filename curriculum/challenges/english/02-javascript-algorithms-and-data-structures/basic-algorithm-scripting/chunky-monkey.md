@@ -90,7 +90,7 @@ function chunkArrayInGroups(arr, size) {
   return arr;
 }
 
-chunkArrayInGroups(["a", "b", "c", "d"], 2);
+chunkArrayInGroups(['a', 'b', 'c', 'd'], 2);
 ```
 
 # --solutions--
@@ -106,5 +106,5 @@ function chunkArrayInGroups(arr, size) {
   return out;
 }
 
-chunkArrayInGroups(["a", "b", "c", "d"], 2);
+chunkArrayInGroups(['a', 'b', 'c', 'd'], 2);
 ```

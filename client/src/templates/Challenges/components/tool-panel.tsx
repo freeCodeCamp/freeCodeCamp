@@ -84,18 +84,16 @@ function ToolPanel({
           </Button>
         </>
       )}
-      <>
-        <Spacer size='xxs' />
-        <Button block={true} variant='primary' onClick={openResetModal}>
-          {isMobile
-            ? t(canSaveToDB(challengeType) ? 'buttons.revert' : 'buttons.reset')
-            : t(
-                canSaveToDB(challengeType)
-                  ? 'buttons.revert-to-saved-code'
-                  : 'buttons.reset-lesson'
-              )}
-        </Button>
-      </>
+      <Spacer size='xxs' />
+      <Button block={true} variant='primary' onClick={openResetModal}>
+        {isMobile
+          ? t(canSaveToDB(challengeType) ? 'buttons.revert' : 'buttons.reset')
+          : t(
+              canSaveToDB(challengeType)
+                ? 'buttons.revert-to-saved-code'
+                : 'buttons.reset-lesson'
+            )}
+      </Button>
       <Spacer size='xxs' />
       <Dropdown dropup>
         <Dropdown.Toggle

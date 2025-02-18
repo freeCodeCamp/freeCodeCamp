@@ -45,7 +45,7 @@ You should not mutate `arr`.
 ```js
 const arr = ['a', false, 0, 'Naomi'];
 bouncer(arr);
-assert.deepEqual(arr, ['a', false, 0, 'Naomi'])
+assert.deepEqual(arr, ['a', false, 0, 'Naomi']);
 ```
 
 # --seed--
@@ -57,7 +57,7 @@ function bouncer(arr) {
   return arr;
 }
 
-bouncer([7, "ate", "", false, 9]);
+bouncer([7, 'ate', '', false, 9]);
 ```
 
 # --solutions--
@@ -67,5 +67,5 @@ function bouncer(arr) {
   return arr.filter(e => e);
 }
 
-bouncer([7, "ate", "", false, 9]);
+bouncer([7, 'ate', '', false, 9]);
 ```

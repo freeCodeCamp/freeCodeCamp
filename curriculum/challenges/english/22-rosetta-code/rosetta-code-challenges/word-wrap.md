@@ -12,7 +12,7 @@ Even today, with proportional fonts and complex layouts, there are still cases w
 
 # --instructions--
 
-Write a function that can wrap this text to any number of characters. As an example, the text wrapped to 80 characters should look like the following:
+Write a function that can wrap this text to any number of characters. Note that the input text already contains line breaks, which your function should handle appropriately. As an example, the text wrapped to 80 characters should look like the following:
 
 <pre>
 Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX
@@ -23,37 +23,37 @@ than a simple minimum length algorithm.
 
 # --hints--
 
-wrap should be a function.
+`wrap` should be a function.
 
 ```js
 assert.equal(typeof wrap, 'function');
 ```
 
-wrap should return a string.
+`wrap` should return a string.
 
 ```js
 assert.equal(typeof wrap('abc', 10), 'string');
 ```
 
-wrap(80) should return 4 lines.
+`wrap(text,80)` should return 4 lines.
 
 ```js
 assert(wrapped80.split('\n').length === 4);
 ```
 
-Your `wrap` function should return our expected text.
+Your `wrap` function should return the expected text.
 
 ```js
 assert.equal(wrapped80.split('\n')[0], firstRow80);
 ```
 
-wrap(42) should return 7 lines.
+`wrap(text,42)` should return 7 lines.
 
 ```js
 assert(wrapped42.split('\n').length === 7);
 ```
 
-Your `wrap` function should return our expected text.
+Your `wrap` function should return the expected text.
 
 ```js
 assert.equal(wrapped42.split('\n')[0], firstRow42);

@@ -300,16 +300,11 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
           return;
         }
         it(`${superBlock} should have the same order in every meta`, function () {
-          const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
-            showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
-          });
+          const firstOrder = getSuperOrder(filteredMeta[0].superBlock);
           assert.isNumber(firstOrder);
           assert.isTrue(
             filteredMeta.every(
-              el =>
-                getSuperOrder(el.superBlock, {
-                  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
-                }) === firstOrder
+              el => getSuperOrder(el.superBlock) === firstOrder
             ),
             'The superOrder properties are mismatched.'
           );

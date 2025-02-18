@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
 import { Col, Row, Modal, Spacer } from '@freecodecamp/ui';
@@ -129,7 +129,9 @@ const AnimationContainer = ({
 }: {
   secondsRemaining: number;
 }) => {
+  const animationKey = useRef(Date.now()).current;
   const newBearAnimation = useFeature('new-bear-animation').on;
+  const animationSrc = `${newBearAnimation ? donationAnimationB : donationAnimation}?t=${animationKey}`;
   const { t } = useTranslation();
   return (
     <>
@@ -174,9 +176,9 @@ const AnimationContainer = ({
           )}
         </div>
         <img
-          key={Date.now()}
+          key={animationKey}
           alt=''
-          src={newBearAnimation ? donationAnimationB : donationAnimation}
+          src={animationSrc}
           id={'donation-animation'}
           data-playwright-test-label='donation-animation'
         />
@@ -252,25 +254,16 @@ function DonationModalBody({
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setSecondsRemaining(prevSeconds => {
-        if (prevSeconds > 0) {
-          return prevSeconds - 1;
-        } else {
-          setIsAnimationVisible(false);
-          clearInterval(interval);
-          return 0;
-        }
-      });
+    const intervalId = setInterval(() => {
+      setSecondsRemaining(prevSeconds => prevSeconds - 1);
     }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (secondsRemaining === 0) {
+    if (secondsRemaining <= 0) {
+      setIsAnimationVisible(false);
       setCanClose(true);
+      clearInterval(intervalId);
     }
+    return () => clearInterval(intervalId);
   }, [secondsRemaining, setCanClose]);
 
   return (

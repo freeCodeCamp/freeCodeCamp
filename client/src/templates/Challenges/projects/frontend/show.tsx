@@ -8,13 +8,11 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
-import { useFeature } from '@growthbook/growthbook-react';
 
 import LearnLayout from '../../../../components/layouts/learn';
 import {
   ChallengeNode,
   ChallengeMeta,
-  NavigationPaths,
   Test
 } from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/challenge-description';
@@ -64,7 +62,6 @@ interface ProjectProps {
   openCompletionModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
-    nextCurriculumPaths: NavigationPaths;
   };
   t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
@@ -82,7 +79,6 @@ const ShowFrontEndProject = (props: ProjectProps) => {
     }
   };
 
-  const showNextCurriculum = useFeature('fcc-10').on;
   const container = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -93,15 +89,13 @@ const ShowFrontEndProject = (props: ProjectProps) => {
           challenge: { fields, title, challengeType, helpCategory }
         }
       },
-      pageContext: { challengeMeta, nextCurriculumPaths },
+      pageContext: { challengeMeta },
       initTests,
       updateChallengeMeta
     } = props;
     initTests(fields.tests);
     const challengePaths = getChallengePaths({
-      showNextCurriculum,
-      currentCurriculumPaths: challengeMeta,
-      nextCurriculumPaths
+      currentCurriculumPaths: challengeMeta
     });
     updateChallengeMeta({
       ...challengeMeta,

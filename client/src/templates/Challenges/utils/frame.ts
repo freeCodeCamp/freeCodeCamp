@@ -161,6 +161,7 @@ export const runTestInTestFrame = async function (
     return await Promise.race([
       new Promise<
         { pass: boolean } | { err: { message: string; stack?: string } }
+        // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
       >((_, reject) => setTimeout(() => reject('timeout'), timeout)),
       contentDocument.__runTest(test)
     ]);
@@ -201,7 +202,6 @@ const mountFrame =
     const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
     if (oldFrame) {
       element.className = oldFrame.className || hiddenFrameClassName;
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       oldFrame.parentNode!.replaceChild(element, oldFrame);
       // only test frames can be added (and hidden) here, other frames must be
       // added by react
@@ -358,6 +358,7 @@ const initPreviewFrame = () => (frameContext: Context) => frameContext;
 const waitForFrame = (frameContext: Context) => {
   return new Promise((resolve, reject) => {
     if (!frameContext.document) {
+      // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
       reject(DOCUMENT_NOT_FOUND_ERROR);
     } else if (frameContext.document.readyState === 'loading') {
       frameContext.document.addEventListener('DOMContentLoaded', resolve);

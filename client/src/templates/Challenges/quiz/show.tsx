@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { useLocation } from '@reach/router';
+import { useLocation, navigate as reachNavigate } from '@gatsbyjs/reach-router';
 import {
   Container,
   Col,
@@ -17,17 +17,11 @@ import {
   useQuiz,
   Spacer
 } from '@freecodecamp/ui';
-import { useFeature } from '@growthbook/growthbook-react';
 
 // Local Utilities
 import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
 import LearnLayout from '../../../components/layouts/learn';
-import {
-  ChallengeNode,
-  ChallengeMeta,
-  NavigationPaths,
-  Test
-} from '../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
@@ -81,7 +75,6 @@ interface ShowQuizProps {
   isChallengeCompleted: boolean;
   pageContext: {
     challengeMeta: ChallengeMeta;
-    nextCurriculumPaths: NavigationPaths;
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
@@ -109,7 +102,7 @@ const ShowQuiz = ({
       }
     }
   },
-  pageContext: { challengeMeta, nextCurriculumPaths },
+  pageContext: { challengeMeta },
   initTests,
   updateChallengeMeta,
   isChallengeCompleted,
@@ -134,7 +127,6 @@ const ShowQuiz = ({
   const [showUnanswered, setShowUnanswered] = useState(false);
 
   const [exitConfirmed, setExitConfirmed] = useState(false);
-  const showNextCurriculum = useFeature('fcc-10').on;
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -184,9 +176,10 @@ const ShowQuiz = ({
       correct: t('learn.quiz.correct-answer'),
       incorrect: t('learn.quiz.incorrect-answer')
     },
-    passingGrade: 85,
+    passingGrade: 90,
     onSuccess: () => {
-      openCompletionModal(), setIsPassed(true);
+      openCompletionModal();
+      setIsPassed(true);
     },
     onFailure: () => setIsPassed(false)
   });
@@ -199,9 +192,7 @@ const ShowQuiz = ({
   useEffect(() => {
     initTests(tests);
     const challengePaths = getChallengePaths({
-      showNextCurriculum,
-      currentCurriculumPaths: challengeMeta,
-      nextCurriculumPaths
+      currentCurriculumPaths: challengeMeta
     });
     updateChallengeMeta({
       ...challengeMeta,
@@ -262,7 +253,9 @@ const ShowQuiz = ({
       return;
     }
 
-    void navigate(`${curLocation.pathname}`);
+    // We need to use Reach Router, because the pathname is already prefixed
+    // with the language and Gatsby's navigate will prefix it again.
+    void reachNavigate(`${curLocation.pathname}`);
     openExitQuizModal();
   }, [curLocation.pathname, hasSubmitted, exitConfirmed, openExitQuizModal]);
 
@@ -327,16 +320,14 @@ const ShowQuiz = ({
               </div>
               <Spacer size='m' />
               {!isPassed ? (
-                <>
-                  <Button
-                    block={true}
-                    variant='primary'
-                    onClick={handleFinishQuiz}
-                    disabled={hasSubmitted}
-                  >
-                    {t('buttons.finish-quiz')}
-                  </Button>
-                </>
+                <Button
+                  block={true}
+                  variant='primary'
+                  onClick={handleFinishQuiz}
+                  disabled={hasSubmitted}
+                >
+                  {t('buttons.finish-quiz')}
+                </Button>
               ) : (
                 <Button
                   block={true}

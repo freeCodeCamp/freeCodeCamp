@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import fs from 'fs';
 import { join } from 'path';
 import ObjectID from 'bson-objectid';

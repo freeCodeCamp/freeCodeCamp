@@ -20,6 +20,13 @@ jest.mock('../../../../../shared/utils/is-audited', () => ({
   isAuditedSuperBlock: jest.fn().mockReturnValueOnce(true)
 }));
 
+jest.mock('../redux', () => ({
+  makeExpandedBlockSelector: jest.fn(() => jest.fn(() => true)),
+  completedChallengesSelector: jest.fn(() => [
+    { id: 'mockId', title: 'mockTitle' }
+  ])
+}));
+
 const defaultProps = {
   block: 'test-block',
   blockType: null,
@@ -69,7 +76,7 @@ const defaultProps = {
       },
       sourceInstanceName: 'mockSourceInstanceName',
       superOrder: 1,
-      superBlock: SuperBlocks.RespWebDesign,
+      superBlock: SuperBlocks.FullStackDeveloper,
       tail: ['mockTail'],
       template: 'mockTemplate',
       tests: [] as Test[],
@@ -84,9 +91,9 @@ const defaultProps = {
     }
   ],
   completedChallengeIds: ['testchallengeIds'],
-  isExpanded: false,
+  isExpanded: true,
   t: jest.fn((key: string) => [key]),
-  superBlock: SuperBlocks.RespWebDesign,
+  superBlock: SuperBlocks.FullStackDeveloper,
   toggleBlock: jest.fn()
 };
 

@@ -14,7 +14,6 @@ import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
 import Caret from '../../../assets/icons/caret';
 import { Link } from '../../../components/helpers';
 import { completedChallengesSelector } from '../../../redux/selectors';
-import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isGridBased, isProjectBased } from '../../../utils/curriculum-layout';
@@ -26,10 +25,9 @@ import BlockIntros from './block-intros';
 import BlockHeader from './block-header';
 
 import '../intro.css';
+import './block.css';
 
 const { curriculumLocale } = envData;
-
-type Challenge = ChallengeNode['challenge'];
 
 const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.block);
@@ -37,7 +35,7 @@ const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
   return createSelector(
     expandedSelector,
     completedChallengesSelector,
-    (isExpanded: boolean, completedChallenges: CompletedChallenge[]) => ({
+    (isExpanded: boolean, completedChallenges: { id: string }[]) => ({
       isExpanded,
       completedChallengeIds: completedChallenges.map(({ id }) => id)
     })
@@ -47,10 +45,20 @@ const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ toggleBlock }, dispatch);
 
+interface ChallengeInfo {
+  id: string;
+  title: string;
+  fields: { slug: string };
+  dashedName: string;
+  challengeType: number;
+  blockLayout: BlockLayouts;
+  superBlock: SuperBlocks;
+}
+
 interface BlockProps {
   block: string;
   blockType: BlockTypes | null;
-  challenges: Challenge[];
+  challenges: ChallengeInfo[];
   completedChallengeIds: string[];
   isExpanded: boolean;
   superBlock: SuperBlocks;
@@ -107,7 +115,7 @@ class Block extends Component<BlockProps> {
       return isProjectBased(challenge.challengeType, block);
     });
 
-    const isGridBlock = challenges.some(challenge => {
+    const isGridSuperBlock = challenges.some(challenge => {
       return isGridBased(superBlock, challenge.challengeType);
     });
 
@@ -123,16 +131,17 @@ class Block extends Component<BlockProps> {
     const expandText = t('intro:misc-text.expand');
     const collapseText = t('intro:misc-text.collapse');
 
-    const isBlockCompleted = completedCount === extendedChallenges.length;
+    const isBlockCompleted = completedCount === challenges.length;
 
     const percentageCompleted = Math.floor(
-      (completedCount / extendedChallenges.length) * 100
+      (completedCount / challenges.length) * 100
     );
 
     // since the Blocks are not components, we need link to exist even if it's
     // not being used to render anything
     const link = challenges[0]?.fields.slug || '';
     const blockLayout = challenges[0]?.blockLayout;
+    const isGridBlock = blockLayout === BlockLayouts.ChallengeGrid;
 
     const isEmptyBlock = !challenges.length;
 
@@ -140,7 +149,7 @@ class Block extends Component<BlockProps> {
       if (completedCount === 0) {
         return t('learn.not-started');
       }
-      if (completedCount === extendedChallenges.length) {
+      if (isBlockCompleted) {
         return t('learn.completed');
       }
       return `${percentageCompleted}% ${t('learn.completed')}`;
@@ -186,12 +195,12 @@ class Block extends Component<BlockProps> {
               <span
                 aria-hidden='true'
                 className='map-completed-count'
-              >{`${completedCount}/${extendedChallenges.length}`}</span>
+              >{`${completedCount}/${challenges.length}`}</span>
               <span className='sr-only'>
                 ,{' '}
                 {t('learn.challenges-completed', {
                   completedCount,
-                  totalChallenges: extendedChallenges.length
+                  totalChallenges: challenges.length
                 })}
               </span>
             </div>
@@ -256,26 +265,30 @@ class Block extends Component<BlockProps> {
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
           />
-          {!isAudited && (
-            <div className='tags-wrapper'>
-              <Link
-                className='cert-tag'
-                to={t('links:help-translate-link-url')}
-              >
-                {t('misc.translation-pending')}
-              </Link>
-            </div>
-          )}
+
           {isExpanded && (
-            <div id={`${block}-panel`}>
-              <BlockIntros intros={blockIntroArr} />
-              <Challenges
-                challenges={extendedChallenges}
-                isProjectBlock={isProjectBlock}
-                isGridMap={true}
-                blockTitle={blockTitle}
-              />
-            </div>
+            <>
+              {!isAudited && (
+                <div className='tags-wrapper'>
+                  <Link
+                    className='cert-tag'
+                    to={t('links:help-translate-link-url')}
+                  >
+                    {t('misc.translation-pending')}
+                  </Link>
+                </div>
+              )}
+
+              <div id={`${block}-panel`}>
+                <BlockIntros intros={blockIntroArr} />
+                <Challenges
+                  challenges={extendedChallenges}
+                  isProjectBlock={isProjectBlock}
+                  isGridMap={true}
+                  blockTitle={blockTitle}
+                />
+              </div>
+            </>
           )}
         </div>
       </ScrollableAnchor>
@@ -331,104 +344,9 @@ class Block extends Component<BlockProps> {
     );
 
     /**
-     * ChallengeListBlock displays challenges in a list.
-     * Created for the new Full Stack Developer Certification,
-     * so we can play with it without affecting the existing block layouts.
+     * AccordionBlock is used as the block layout in new accordion style superblocks.
      */
-    const ChallengeListBlock = (
-      <>
-        <ScrollableAnchor id={block}>
-          <span className='hide-scrollable-anchor'></span>
-        </ScrollableAnchor>
-        <div
-          className={`block block-grid challenge-list-block ${isExpanded ? 'open' : ''}`}
-        >
-          <BlockHeader
-            blockDashed={block}
-            blockTitle={blockTitle}
-            blockType={blockType}
-            completedCount={completedCount}
-            courseCompletionStatus={courseCompletionStatus()}
-            handleClick={this.handleBlockClick}
-            isCompleted={isBlockCompleted}
-            isExpanded={isExpanded}
-            percentageCompleted={percentageCompleted}
-            blockIntroArr={blockIntroArr}
-          />
-          {!isAudited && (
-            <div className='tags-wrapper'>
-              <Link
-                className='cert-tag'
-                to={t('links:help-translate-link-url')}
-              >
-                {t('misc.translation-pending')}
-              </Link>
-            </div>
-          )}
-          {isExpanded && (
-            <div id={`${block}-panel`}>
-              <Challenges
-                challenges={extendedChallenges}
-                isProjectBlock={isProjectBlock}
-              />
-            </div>
-          )}
-        </div>
-      </>
-    );
-
-    /**
-     * LinkBlock displays the block as a single link.
-     * This layout is used if the block has a single challenge.
-     * Created for the new Full Stack Developer Certification,
-     * so we can play with it without affecting the existing block layouts.
-     */
-    const LinkBlock = (
-      <>
-        <ScrollableAnchor id={block}>
-          <span className='hide-scrollable-anchor'></span>
-        </ScrollableAnchor>
-        <div className='block block-grid grid-project-block grid-project-block-no-margin'>
-          <div className='tags-wrapper'>
-            {!isAudited && (
-              <Link
-                className='cert-tag'
-                to={t('links:help-translate-link-url')}
-              >
-                {t('misc.translation-pending')}{' '}
-              </Link>
-            )}
-          </div>
-          <div className='title-wrapper map-title'>
-            <h3 className='block-grid-title'>
-              <Link
-                className='block-header'
-                onClick={() => {
-                  this.handleBlockClick();
-                }}
-                to={link}
-              >
-                <CheckMark isCompleted={isBlockCompleted} />
-                {blockType && <BlockLabel blockType={blockType} />}
-                {blockTitle}
-                <span className='sr-only'>
-                  {isBlockCompleted
-                    ? `, ${t('learn.completed')}`
-                    : `, ${t('learn.not-completed')}`}
-                </span>
-              </Link>
-            </h3>
-          </div>
-          <BlockIntros intros={blockIntroArr} />
-        </div>
-      </>
-    );
-
-    /**
-     * ChallengeGridBlock displays challenges in a grid.
-     * This layout is specifically used for the new Full Stack Developer Certification.
-     */
-    const ChallengeGridBlock = (
+    const AccordionBlock = (
       <>
         <ScrollableAnchor id={block}>
           <span className='hide-scrollable-anchor'></span>
@@ -448,24 +366,30 @@ class Block extends Component<BlockProps> {
             percentageCompleted={percentageCompleted}
             blockIntroArr={blockIntroArr}
           />
-          {!isAudited && (
-            <div className='tags-wrapper'>
-              <Link
-                className='cert-tag'
-                to={t('links:help-translate-link-url')}
-              >
-                {t('misc.translation-pending')}
-              </Link>
-            </div>
-          )}
+
           {isExpanded && (
-            <div id={`${block}-panel`} className='challenge-grid-block-panel'>
-              <Challenges
-                challenges={extendedChallenges}
-                isProjectBlock={isProjectBlock}
-                isGridMap={true}
-                blockTitle={blockTitle}
-              />
+            <div className='accordion-block-expanded'>
+              {!isAudited && (
+                <div className='tags-wrapper'>
+                  <Link
+                    className='cert-tag'
+                    to={t('links:help-translate-link-url')}
+                  >
+                    {t('misc.translation-pending')}
+                  </Link>
+                </div>
+              )}
+              <div
+                id={`${block}-panel`}
+                className={isGridBlock ? 'challenge-grid-block-panel' : ''}
+              >
+                <Challenges
+                  challenges={extendedChallenges}
+                  isProjectBlock={false}
+                  isGridMap={isGridBlock}
+                  blockTitle={blockTitle}
+                />
+              </div>
             </div>
           )}
         </div>
@@ -473,9 +397,9 @@ class Block extends Component<BlockProps> {
     );
 
     const layoutToComponent = {
-      [BlockLayouts.ChallengeGrid]: ChallengeGridBlock,
-      [BlockLayouts.ChallengeList]: ChallengeListBlock,
-      [BlockLayouts.Link]: LinkBlock,
+      [BlockLayouts.ChallengeGrid]: AccordionBlock,
+      [BlockLayouts.ChallengeList]: AccordionBlock,
+      [BlockLayouts.Link]: AccordionBlock,
       [BlockLayouts.ProjectList]: ProjectListBlock,
       [BlockLayouts.LegacyLink]: LegacyLinkBlock,
       [BlockLayouts.LegacyChallengeList]: LegacyChallengeListBlock,
@@ -486,7 +410,7 @@ class Block extends Component<BlockProps> {
       !isEmptyBlock && (
         <>
           {layoutToComponent[blockLayout]}
-          {(!isGridBlock || isProjectBlock) &&
+          {(!isGridSuperBlock || isProjectBlock) &&
             superBlock !== SuperBlocks.FullStackDeveloper && (
               <Spacer size='m' />
             )}

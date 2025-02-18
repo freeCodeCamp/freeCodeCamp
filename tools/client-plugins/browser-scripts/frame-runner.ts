@@ -41,8 +41,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     JSON.stringify(a) === JSON.stringify(b);
 
   // Hardcode Deep Freeze dependency
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const DeepFreeze = (o: Record<string, any>) => {
+  const DeepFreeze = (o: Record<string, unknown>) => {
     Object.freeze(o);
     Object.getOwnPropertyNames(o).forEach(function (prop) {
       if (
@@ -51,8 +50,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         (typeof o[prop] === 'object' || typeof o[prop] === 'function') &&
         !Object.isFrozen(o[prop])
       ) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        DeepFreeze(o[prop]);
+        DeepFreeze(o[prop] as Record<string, unknown>);
       }
     });
     return o;
@@ -73,7 +71,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
       import(/* webpackChunkName: "enzyme" */ 'enzyme'),
       import(/* webpackChunkName: "enzyme-adapter" */ 'enzyme-adapter-react-16')
     ]);
-    /* eslint-enable no-inline-comments */
 
     Enzyme.configure({ adapter: new Adapter16() });
     /* eslint-enable prefer-const */
@@ -96,12 +93,13 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
             const test: unknown = eval(testString);
             resolve(test);
           } catch (err) {
-            reject(err);
+            reject(err as Error);
           }
         })
       );
       const test = await testPromise;
       if (typeof test === 'function') {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         await test(e.getUserInput);
       }
       return { pass: true };

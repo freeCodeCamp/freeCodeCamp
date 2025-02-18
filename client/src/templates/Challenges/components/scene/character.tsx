@@ -3,13 +3,14 @@ import { Characters, CharacterPosition } from '../../../../redux/prop-types';
 import { characterAssets } from './scene-assets';
 
 import './character.css';
+import { SceneSubject } from './scene-subject';
 
 interface CharacterProps {
   position: CharacterPosition;
   opacity: number;
   name: Characters;
-  isBlinking: boolean;
   isTalking: boolean;
+  sceneSubject: SceneSubject;
 }
 
 interface CharacterStyles {
@@ -19,66 +20,94 @@ interface CharacterStyles {
   opacity?: number;
 }
 
+function getRandomInt(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 export function Character({
   position,
   opacity,
   name,
-  isBlinking,
-  isTalking
+  isTalking,
+  sceneSubject
 }: CharacterProps): JSX.Element {
   const [eyesAreOpen, setEyesAreOpen] = useState(true);
   const [mouthIsOpen, setMouthIsOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const onNotify = (eventType: 'play' | 'stop') => {
+    if (eventType === 'play') {
+      setIsPlaying(true);
+    } else {
+      setIsPlaying(false);
+    }
+  };
 
   useEffect(() => {
-    let blinkInterval: NodeJS.Timeout | null = null;
-    let talkInterval: NodeJS.Timeout | null = null;
+    sceneSubject.attach(onNotify);
+    return () => {
+      sceneSubject.detach(onNotify);
+    };
+  }, [sceneSubject]);
 
-    if (isBlinking) {
-      const msBetweenIntervals = Math.floor(Math.random() * 3000) + 2000;
-      blinkInterval = setInterval(() => {
-        const msBlinkDelay = Math.floor(Math.random() * 1000);
-        setTimeout(() => {
-          setEyesAreOpen(false);
+  useEffect(() => {
+    if (!isPlaying) return;
+    let blinkTimeoutId: NodeJS.Timeout;
 
-          setTimeout(() => {
-            setEyesAreOpen(true);
-          }, 30); // always unblink after 30ms
-        }, msBlinkDelay);
-      }, msBetweenIntervals);
-    }
+    const blinkPeriod = getRandomInt(2000, 5000);
+    const blinkIntervalId = setInterval(() => {
+      const blinkJitter = getRandomInt(0, 1000);
+      blinkTimeoutId = setTimeout(() => {
+        setEyesAreOpen(false);
+
+        blinkTimeoutId = setTimeout(() => {
+          setEyesAreOpen(true);
+        }, 30); // always unblink after 30ms
+      }, blinkJitter);
+    }, blinkPeriod);
+
+    // Clear intervals when component is unmounted or conditions change
+    return () => {
+      setEyesAreOpen(true);
+      clearInterval(blinkIntervalId);
+      clearTimeout(blinkTimeoutId);
+    };
+  }, [isPlaying]);
+
+  useEffect(() => {
+    if (!isPlaying) return;
+    let talkIntervalId: NodeJS.Timeout;
+    let mouthOpenTimeoutId: NodeJS.Timeout;
+    let mouthCloseTimeoutId: NodeJS.Timeout;
 
     if (isTalking) {
       const talk = () => {
         const openTimeout = getRandomInt(0, 100);
         const closeTimeout = getRandomInt(150, 300);
 
-        setTimeout(() => {
+        mouthOpenTimeoutId = setTimeout(() => {
           setMouthIsOpen(true);
         }, openTimeout);
 
-        setTimeout(() => {
+        mouthCloseTimeoutId = setTimeout(() => {
           setMouthIsOpen(false);
         }, closeTimeout);
       };
 
       talk();
-      talkInterval = setInterval(() => {
+      talkIntervalId = setInterval(() => {
         talk();
       }, 300);
     }
 
-    function getRandomInt(min: number, max: number): number {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
     // Clear intervals when component is unmounted or conditions change
     return () => {
-      setEyesAreOpen(true);
       setMouthIsOpen(false);
-      if (blinkInterval) clearInterval(blinkInterval);
-      if (talkInterval) clearInterval(talkInterval);
+      clearInterval(talkIntervalId);
+      clearTimeout(mouthOpenTimeoutId);
+      clearTimeout(mouthCloseTimeoutId);
     };
-  }, [isBlinking, isTalking]);
+  }, [isTalking, isPlaying]);
 
   const characterWrapStyles: CharacterStyles = {
     opacity

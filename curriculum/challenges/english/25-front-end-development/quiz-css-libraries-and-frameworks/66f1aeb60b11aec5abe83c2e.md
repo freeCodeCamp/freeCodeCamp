@@ -7,7 +7,7 @@ dashedName: quiz-css-libraries-and-frameworks
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -17,23 +17,23 @@ To pass the quiz, you must correctly answer at least 17 of the 20 questions belo
 
 #### --text--
 
-What is a CSS framework? 
+What is a CSS framework?
 
 #### --distractors--
 
-A set of CSS rules
+A set of CSS rules.
 
 ---
 
-A JavaScript library  
+A JavaScript library.
 
 ---
 
-A coding language
+A coding language.
 
 #### --answer--
 
-A library for CSS styles
+A library for CSS styles.
 
 ### --question--
 
@@ -65,19 +65,19 @@ What is a key advantage of using a CSS framework?
 
 #### --distractors--
 
-Provides predefined templates
+Provides predefined templates.
 
 ---
 
-Reduces loading speed
+Reduces loading speed.
 
 ---
 
-Increases code complexity
+Increases code complexity.
 
 #### --answer--
 
-Simplifies design consistency
+Simplifies design consistency.
 
 ### --question--
 
@@ -87,19 +87,19 @@ What is a disadvantage of CSS frameworks?
 
 #### --distractors--
 
-Too few components
+Too few components.
 
 ---
 
-No customization options
+No customization options.
 
 ---
 
-Improved browser support
+Improved browser support.
 
 #### --answer--
 
-Can bloat CSS files
+Can bloat CSS files.
 
 ### --question--
 
@@ -131,19 +131,19 @@ What is the primary purpose of the `.container` class in Bootstrap?
 
 #### --distractors--
 
-To add padding to elements
+To add padding to elements.
 
 ---
 
-To apply a background color
+To apply a background color.
 
 ---
 
-To center text
+To center text.
 
 #### --answer--
 
-To create a fixed-width responsive container
+To create a fixed-width responsive container.
 
 ### --question--
 
@@ -153,19 +153,19 @@ What does SCSS stand for?
 
 #### --distractors--
 
-Super Cascading Style Sheets
+Super Cascading Style Sheets.
 
 ---
 
-Structured CSS
+Structured CSS.
 
 ---
 
-Simple CSS
+Simple CSS.
 
 #### --answer--
 
-Sassy CSS
+Sassy CSS.
 
 ### --question--
 
@@ -175,19 +175,19 @@ What benefit do preprocessors like Sass provide?
 
 #### --distractors--
 
-Adds JavaScript functionality
+Adds JavaScript functionality.
 
 ---
 
-Directly edits HTML
+Directly edits HTML.
 
 ---
 
-Eliminates CSS
+Eliminates CSS.
 
 #### --answer--
 
-Nesting of styles
+Nesting of styles.
 
 ### --question--
 
@@ -201,11 +201,11 @@ Comments
 
 ---
 
-CSS variables
+CSS variables.
 
 ---
 
-Inline CSS
+Inline CSS.
 
 #### --answer--
 
@@ -219,19 +219,19 @@ What is Bootstrap known for?
 
 #### --distractors--
 
-Static design
+Static design.
 
 ---
 
-Focus on accessibility
+Focus on accessibility.
 
 ---
 
-No JavaScript support
+No JavaScript support.
 
 #### --answer--
 
-Mobile-first approach
+Mobile-first approach.
 
 ### --question--
 
@@ -241,19 +241,19 @@ What does Tailwind CSS focus on?
 
 #### --distractors--
 
-Component-based styling
+Component-based styling.
 
 ---
 
-Image optimization
+Image optimization.
 
 ---
 
-Mobile responsiveness
+Mobile responsiveness.
 
 #### --answer--
 
-Utility-first design
+Utility-first design.
 
 ### --question--
 
@@ -263,19 +263,19 @@ What does a CSS framework typically include?
 
 #### --distractors--
 
-JavaScript functions
+JavaScript functions.
 
 ---
 
-HTML templates
+HTML templates.
 
 ---
 
-Database management
+Database management.
 
 #### --answer--
 
-Predefined styles and components
+Predefined styles and components.
 
 ### --question--
 
@@ -307,15 +307,15 @@ What is a main feature of preprocessors?
 
 #### --distractors--
 
-Linear CSS
+Linear CSS.
 
 ---
 
-Uncompiled styles
+Uncompiled styles.
 
 ---
 
-Built-in animations
+Built-in animations.
 
 #### --answer--
 
@@ -329,19 +329,19 @@ Which of the following is a drawback of Tailwind CSS?
 
 #### --distractors--
 
-Limited utility classes
+Limited utility classes.
 
 ---
 
-Lack of documentation
+Lack of documentation.
 
 ---
 
-Hard to learn
+Hard to learn.
 
 #### --answer--
 
-Verbose class names
+Verbose class names.
 
 ### --question--
 
@@ -395,19 +395,19 @@ What does Bootstrap's grid system help with?
 
 #### --distractors--
 
-CSS animations
+CSS animations.
 
 ---
 
-JavaScript functions
+JavaScript functions.
 
 ---
 
-Image loading
+Image loading.
 
 #### --answer--
 
-Responsive layout
+Responsive layout.
 
 ### --question--
 
@@ -439,17 +439,17 @@ Why might developers choose Materialize?
 
 #### --distractors--
 
-Strong community support
+Strong community support.
 
 ---
 
-Easy integration with HTML
+Easy integration with HTML.
 
 ---
 
-Comprehensive animation support
+Comprehensive animation support.
 
 #### --answer--
 
-Focus on material design principles
+Focus on material design principles.
 

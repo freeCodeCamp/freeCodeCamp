@@ -2,8 +2,7 @@ import path from 'path';
 import fs from 'fs';
 
 import readdirp from 'readdirp';
-// TODO: remove chai and use jest's assertion errors
-import { AssertionError } from 'chai';
+
 import { SuperBlocks } from '../../../shared/config/curriculum';
 import {
   superblockSchemaValidator,
@@ -46,10 +45,9 @@ describe('external curriculum data build', () => {
     const result = validateAvailableSuperBlocks(availableSuperblocks);
 
     if (result.error) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-      throw new AssertionError(
-        result.error.message,
-        `file: available-superblocks.json`
+      throw Error(
+        `file: available-superblocks.json
+${result.error.message}`
       );
     }
   });
@@ -72,11 +70,8 @@ describe('external curriculum data build', () => {
         const result = validateSuperBlock(JSON.parse(fileContent));
 
         if (result.error) {
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-          throw new AssertionError(
-            result.error.message,
-            `file: ${fileInArray}`
-          );
+          throw Error(`file: ${fileInArray}
+${result.error.message}`);
         }
       });
   });
@@ -86,7 +81,7 @@ describe('external curriculum data build', () => {
       ({ dashedName }) => dashedName
     );
 
-    const isUpcoming = ['b1-english-for-developers', 'full-stack-developer'];
+    const isUpcoming = ['full-stack-developer'];
 
     // TODO: this is a hack, we should have a single source of truth for the
     // list of superblocks that are available.

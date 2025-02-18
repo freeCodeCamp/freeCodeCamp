@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
-import { useFeature } from '@growthbook/growthbook-react';
 
 import {
   type SuperBlocks,
@@ -15,10 +14,7 @@ import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink } from '../helpers';
 import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
-import {
-  showUpcomingChanges,
-  showNewCurriculum
-} from '../../../config/env.json';
+import { showUpcomingChanges } from '../../../config/env.json';
 
 import './map.css';
 
@@ -61,7 +57,6 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Professional]: 'landing.professional-certs-heading',
   [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
   [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
-  [SuperBlockStage.New]: '', // TODO: add translation
   [SuperBlockStage.Next]: 'landing.next-heading',
   [SuperBlockStage.NextEnglish]: 'landing.next-english-heading',
   [SuperBlockStage.Upcoming]: 'landing.upcoming-heading'
@@ -96,38 +91,36 @@ function MapLi({
   index: number;
 }) {
   return (
-    <>
-      <li
-        data-test-label='curriculum-map-button'
-        data-playwright-test-label='curriculum-map-button'
-      >
-        <div className='progress-icon-wrapper'>
-          <div
-            className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
-          >
-            <RibbonIcon
-              value={index + 1}
-              showNumbers={showNumbers}
-              isCompleted={completed}
-              isClaimed={claimed}
-            />
-          </div>
-        </div>
-
-        <ButtonLink
-          block
-          size='large'
-          className='map-superblock-link'
-          href={`/learn/${superBlock}/`}
+    <li
+      data-test-label='curriculum-map-button'
+      data-playwright-test-label='curriculum-map-button'
+    >
+      <div className='progress-icon-wrapper'>
+        <div
+          className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
         >
-          <div style={linkSpacingStyle}>
-            <SuperBlockIcon className='map-icon' superBlock={superBlock} />
-            {getSuperBlockTitleForMap(superBlock)}
-          </div>
-          {landing && <LinkButton />}
-        </ButtonLink>
-      </li>
-    </>
+          <RibbonIcon
+            value={index + 1}
+            showNumbers={showNumbers}
+            isCompleted={completed}
+            isClaimed={claimed}
+          />
+        </div>
+      </div>
+
+      <ButtonLink
+        block
+        size='large'
+        className='map-superblock-link'
+        href={`/learn/${superBlock}/`}
+      >
+        <div style={linkSpacingStyle}>
+          <SuperBlockIcon className='map-icon' superBlock={superBlock} />
+          {getSuperBlockTitleForMap(superBlock)}
+        </div>
+        {landing && <LinkButton />}
+      </ButtonLink>
+    </li>
   );
 }
 
@@ -139,7 +132,6 @@ function Map({
   allChallenges
 }: MapProps): React.ReactElement {
   const { t } = useTranslation();
-  const showNextCurriculum = useFeature('fcc-10').on;
 
   const allSuperblockChallengesCompleted = (superblock: SuperBlocks) => {
     // array of all challenge ID's in the superblock
@@ -167,9 +159,7 @@ function Map({
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
       {getStageOrder({
-        showNewCurriculum,
-        showUpcomingChanges,
-        showNextCurriculum
+        showUpcomingChanges
       }).map(stage => (
         <Fragment key={stage}>
           <h2 className={forLanding ? 'big-heading' : ''}>

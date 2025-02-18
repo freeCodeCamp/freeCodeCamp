@@ -5,10 +5,6 @@ const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
-const {
-  superBlockStages,
-  SuperBlockStage
-} = require('../shared/config/curriculum');
 const env = require('./config/env.json');
 const {
   createChallengePages,
@@ -143,14 +139,6 @@ exports.createPages = async function createPages({
     ({ node }) => node
   );
 
-  const inCurrentCurriculum = superBlock =>
-    !superBlockStages[SuperBlockStage.Next].includes(superBlock) &&
-    !superBlockStages[SuperBlockStage.NextEnglish].includes(superBlock);
-
-  const currentChallengeNodes = allChallengeNodes.filter(node =>
-    inCurrentCurriculum(node.challenge.superBlock)
-  );
-
   const createIdToNextPathMap = nodes =>
     nodes.reduce((map, node, index) => {
       const nextNode = nodes[index + 1];
@@ -167,25 +155,17 @@ exports.createPages = async function createPages({
       return map;
     }, {});
 
-  const idToNextPathCurrentCurriculum = createIdToNextPathMap(
-    currentChallengeNodes
-  );
+  const idToNextPathCurrentCurriculum =
+    createIdToNextPathMap(allChallengeNodes);
 
-  const idToPrevPathCurrentCurriculum = createIdToPrevPathMap(
-    currentChallengeNodes
-  );
-
-  const idToNextPathNextCurriculum = createIdToNextPathMap(allChallengeNodes);
-
-  const idToPrevPathNextCurriculum = createIdToPrevPathMap(allChallengeNodes);
+  const idToPrevPathCurrentCurriculum =
+    createIdToPrevPathMap(allChallengeNodes);
 
   // Create challenge pages.
   result.data.allChallengeNode.edges.forEach(
     createChallengePages(createPage, {
       idToNextPathCurrentCurriculum,
-      idToPrevPathCurrentCurriculum,
-      idToNextPathNextCurriculum,
-      idToPrevPathNextCurriculum
+      idToPrevPathCurrentCurriculum
     })
   );
 
@@ -325,6 +305,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       msTrophyId: String
       fillInTheBlank: FillInTheBlank
       scene: Scene
+      transcript: String
       quizzes: [Quiz]
     }
     type FileContents {
