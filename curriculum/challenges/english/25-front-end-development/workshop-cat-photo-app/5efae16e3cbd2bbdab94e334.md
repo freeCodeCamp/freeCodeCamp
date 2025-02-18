@@ -26,7 +26,7 @@ assert.lengthOf(code.match(/<\/figcaption\>/g), 2);
 There should be a `figure` element right above the second `section` element's closing tag.
 
 ```js
-assert.equal(document.querySelectorAll('main > section')[1].lastElementChild.nodeName, 'FIGURE');
+assert.equal(document.querySelectorAll('main > section')[1]?.lastElementChild.nodeName, 'FIGURE');
 ```
 
 The last `img` element should be nested in the `figure` element.
@@ -60,7 +60,7 @@ The `figcaption` element nested in the `figure` element should be below the `img
 
 ```js
 assert.equal(
-  document.querySelectorAll('figcaption')[1].previousElementSibling.nodeName,
+  document.querySelectorAll('figcaption')[1]?.previousElementSibling.nodeName,
     'IMG'
 );
 ```
@@ -71,7 +71,7 @@ The `figcaption` element should have the text `Cats hate other cats.` You have o
 assert.match(
   document
     .querySelectorAll('figcaption')[1]
-    .innerText.toLowerCase(),
+    ?.innerText.toLowerCase(),
     /Cats hate other cats\.?$/i
 );
 ```
