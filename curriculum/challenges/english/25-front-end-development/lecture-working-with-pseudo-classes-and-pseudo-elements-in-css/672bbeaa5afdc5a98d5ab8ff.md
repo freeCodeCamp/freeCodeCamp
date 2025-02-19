@@ -8,7 +8,7 @@ dashedName: what-are-examples-of-location-pseudo-classes
 
 # --description--
 
-Watch the lecture video and answer the questions below.
+Watch the video or read the transcript and answer the questions below.
 
 # --transcript--
 
@@ -37,7 +37,7 @@ a:link {
 
 In this case, any link the user hasn't clicked yet will appear magenta. Once the user clicks the link, the `:link` style no longer applies, and the `:visited` pseudo-class takes over. The `:visited` pseudo-class comes into play after the user clicks the link, so you can use it to target links the user has already clicked. 
 
-Here is an example of changing the visited link state to the color purple:
+Here is an example of changing the visited link state to the color `purple`:
 
 ```css
 a:visited {
@@ -49,7 +49,7 @@ The `:visited` pseudo-class helps users distinguish between links they have visi
 
 The `:any-link` pseudo-class is a combination of the `:link` and `:visited` pseudo-classes. So it matches any anchor element with an `href` attribute, regardless of whether it's visited or not.
 
-Here is an example of changing the link color for the `:any-link` pseudo-class to crimson:
+Here is an example of changing the link color for the `:any-link` pseudo-class to `crimson`:
 
 ```css
 a:any-link {

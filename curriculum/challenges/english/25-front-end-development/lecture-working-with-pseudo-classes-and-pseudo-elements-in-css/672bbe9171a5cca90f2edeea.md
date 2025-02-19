@@ -8,7 +8,7 @@ dashedName: what-are-examples-of-element-user-action-pseudo-classes
 
 # --description--
 
-Watch the lecture video and answer the questions below.
+Watch the video or read the transcript and answer the questions below.
 
 # --transcript--
 
@@ -94,17 +94,14 @@ Here's how you can use the `:checked` pseudo-class to indicate to the user that 
 }
 ```
 
-In this example, we are using the `appearance` property set to `none` to remove the default styling applied by the browser to checkbox inputs. When the user checks the box, it will have a background color of red.
+In this example, we are using the `appearance` property set to `none` to remove the default styling applied by the browser to checkbox inputs. When the user checks the box, it will have a background color of `red`.
 
 Other examples of action pseudo-classes are:
 
-`:focus-within`: for applying styles to an element when it or any of its descendants have focus.
-
-`:enabled`: for targeting form buttons or other elements that are currently enabled.
-
-`:disabled`: for targeting form buttons or other elements that are disabled.
-
-`:target`: for applying styles to an element that is the target of a URL fragment (the part of a URL after the `#` symbol).
+- `:focus-within`: for applying styles to an element when it or any of its descendants have focus.
+- `:enabled`: for targeting form buttons or other elements that are currently enabled.
+- `:disabled`: for targeting form buttons or other elements that are disabled.
+- `:target`: for applying styles to an element that is the target of a URL fragment (the part of a URL after the `#` symbol).
 
 # --questions--
 
