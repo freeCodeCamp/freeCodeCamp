@@ -2569,10 +2569,6 @@
           "Відкрийте цю сторінку, щоб пригадати основи CSS, адаптивного вебдизайну, анімацій, доступності тощо."
         ]
       },
-      "wvjx": {
-        "title": "127",
-        "intro": []
-      },
       "lecture-working-with-code-editors-and-ides": {
         "title": "Робота з редакторами коду та IDE",
         "intro": [
@@ -2601,7 +2597,7 @@
       "lab-sentence-maker": {
         "title": "Створіть творця речень",
         "intro": [
-          "У цій лабораторній роботі ви створите різноманітні історії, призначаючи різні слова до різних змінних."
+          "In this lab, you will continue practicing with strings and concatenation by creating and customizing various stories."
         ]
       },
       "lecture-working-with-data-types": {
@@ -3336,7 +3332,7 @@
       "lecture-understanding-asynchronous-programming": {
         "title": "Знайомство з асинхронним програмуванням",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь про асинхронне програмування в JavaScript. Ви дізнаєтесь про відмінності між синхронним і асинхронним програмуванням, як працює ключове слово <code>async</code>, <code>Fetch</code> API, проміси, async/await, <code>Geolocation</code> API та багато іншого."
+          "In these lecture videos, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>async</code> keyword works, the <code>Fetch</code> API, promises, <code>async/await</code>, the <code>Geolocation</code> API, and much more."
         ]
       },
       "workshop-fcc-authors-page": {
