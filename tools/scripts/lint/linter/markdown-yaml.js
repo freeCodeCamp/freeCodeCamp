@@ -11,7 +11,7 @@ module.exports = {
       // TODO since the parser only looks for yml, should we reject yaml blocks?
       .forEach(codeBlock => {
         try {
-          yaml.safeLoad(codeBlock.content);
+          yaml.load(codeBlock.content);
         } catch (e) {
           onError({
             lineNumber: codeBlock.lineNumber,
