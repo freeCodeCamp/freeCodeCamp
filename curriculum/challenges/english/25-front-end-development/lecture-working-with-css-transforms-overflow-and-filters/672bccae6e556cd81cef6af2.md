@@ -38,7 +38,7 @@ In CSS when two vertical margins come into contact with each other they'll colla
 <div class="box2">Box 2</div>
 ```
 
-In this example, you might expect the total space between box one and box two to be 50 pixels, 20 pixels plus 30 pixels. However, due to margin collapsing the actual space will be 30 pixels which is the larger of the two margins.
+In this example, you might expect the total space between `.box1` and `.box2` to be 50 pixels (20 pixels plus 30 pixels). However, due to margin collapsing the actual space will be 30 pixels, which is the larger of the two margins.
 
 As we saw in the previous examples, margins of the adjacent sibling elements will collapse. This is the most straight forward case of margin collapsing. Let's explore more cases where margin collapsing can occur. 
 
@@ -61,7 +61,7 @@ Margins can also collapse between a parent element and its first or last child. 
 </div>
 ```
 
-In this case you might expect the child to be 70 pixels from the top, 40 pixels plus 30 pixels. However, the margins collapse and the larger margin 40 pixels is used.
+In this case you might expect the child to be 70 pixels from the top (40 pixels plus 30 pixels). However, the margins collapse and the larger margin 40 pixels is used.
 
 If an element has no content, padding, or border, its top and bottom margins can collapse into a single margin. 
 
@@ -81,9 +81,9 @@ If an element has no content, padding, or border, its top and bottom margins can
 <div class="next-block">Next block</div>
 ```
 
-In this example the empty blocks top and bottom margins collapse into a single 30 pixels margin the larger of the two.
+In this example the `empty-block`s top and bottom margins collapse into a single 30 pixels margin, the larger of the two.
 
-Here's another example of preventing collapse using padding. 
+Here's another example of preventing collapse using padding: 
 
 ```html
 <style>
@@ -105,7 +105,7 @@ Here's another example of preventing collapse using padding.
 
 In this case the one pixel padding on the parent prevents the margin from collapsing resulting in a total space of 71 pixels from the top of the parent to the top of the child content.
 
-Understanding margin collapsing is important for precise control over spacing in CSS. While it can sometimes lead to unexpected results, it's a feature designed to create more aesthetic and consistent spacing in documents. By knowing when margin collapsing occurs and how to prevent it when necessary, you can create more predictable and maintainable layouts in your web designs.
+Understanding margin collapsing is important for precise control over layout and spacing in CSS. While it can sometimes lead to unexpected results, it's a feature designed to create more aesthetic and consistent spacing in documents. By knowing when margin collapsing occurs and how to prevent it when necessary, you can create more predictable and maintainable layouts in your web designs.
 
 # --questions--
 
