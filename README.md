@@ -6,13 +6,13 @@
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 [![Discord](https://img.shields.io/discord/692816967895220344?logo=discord&label=Discord&color=5865F2)](https://discord.gg/PRyKn3Vbay)
 
-## freeCodeCamp.org's open-source codebase and curriculum
+## freeCodeCamp.org's open-source codebase and curriculum:
 
 [freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) charity](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 40,000 people get their first developer job.
 
 Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
-## Table of Contents
+## Table of Contents:
 
 - [Certifications](#certifications)
 - [The Learning Platform](#the-learning-platform)
@@ -22,7 +22,7 @@ Our full-stack web development and machine learning curriculum is completely fre
 - [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
 - [License](#license)
 
-### Certifications
+### Certifications:
 
 freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginner programmer around 300 hours to earn.
 
