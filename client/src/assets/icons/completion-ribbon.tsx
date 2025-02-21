@@ -28,7 +28,7 @@ export const RibbonIcon = ({
       className={properClassName}
     >
       {isClaimed && (
-        <>
+        <React.Fragment>
           <path
             d='M24.8 36.3L35.3 29L44.3 42L35.5 41L33.4 49.3L24.8 36.3Z'
             fill='var(--secondary-color)'
@@ -37,7 +37,7 @@ export const RibbonIcon = ({
             d='M9.1 29L19.6 36.3L11 49.3L8.9 41L0.1 42L9.1 29Z'
             fill='var(--secondary-color)'
           />
-        </>
+        </React.Fragment>
       )}
 
       <circle
