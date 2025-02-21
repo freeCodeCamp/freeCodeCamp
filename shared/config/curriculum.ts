@@ -49,8 +49,8 @@ export enum SuperBlockStage {
 }
 
 const defaultStageOrder = [
-  SuperBlockStage.Core,
   SuperBlockStage.Next,
+  SuperBlockStage.Core,
   SuperBlockStage.English,
   SuperBlockStage.NextEnglish,
   SuperBlockStage.Professional,
@@ -73,6 +73,7 @@ export type StageMap = {
 
 // Groups of superblocks in learn map. This should include all superblocks.
 export const superBlockStages: StageMap = {
+  [SuperBlockStage.Next]: [SuperBlocks.FullStackDeveloper],
   [SuperBlockStage.Core]: [
     SuperBlocks.RespWebDesignNew,
     SuperBlocks.JsAlgoDataStructNew,
@@ -87,7 +88,6 @@ export const superBlockStages: StageMap = {
     SuperBlocks.MachineLearningPy,
     SuperBlocks.CollegeAlgebraPy
   ],
-  [SuperBlockStage.Next]: [SuperBlocks.FullStackDeveloper],
   [SuperBlockStage.English]: [SuperBlocks.A2English],
   [SuperBlockStage.NextEnglish]: [SuperBlocks.B1English],
   [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
