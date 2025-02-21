@@ -620,15 +620,7 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-classroom-mode',
     {
-      schema: schemas.updateMyClassroomMode,
-      errorHandler: (error, request, reply) => {
-        if (error.validation) {
-          void reply.code(403);
-          void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      schema: schemas.updateMyClassroomMode
     },
     async (req, reply) => {
       try {
