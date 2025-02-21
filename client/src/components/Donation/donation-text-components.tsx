@@ -7,7 +7,7 @@ import Caret from '../../assets/icons/caret';
 import GreenPass from '../../assets/icons/green-pass';
 
 const POBOX = (
-  <>
+  <React.Fragment>
     <code>Free Code Camp, Inc.</code>
     <br />
     <code>3905 Hedgcoxe Rd</code>
@@ -15,13 +15,13 @@ const POBOX = (
     <code>PO Box 250352</code>
     <br />
     <code>Plano, TX 75025</code>
-  </>
+  </React.Fragment>
 );
 
 export const CtaText = (): JSX.Element => {
   const { t } = useTranslation();
   return (
-    <>
+    <React.Fragment>
       <h1 data-playwright-test-label='main-head' id='content-start'>
         {t('donate.help-more')}
       </h1>
@@ -33,7 +33,7 @@ export const CtaText = (): JSX.Element => {
       <p data-playwright-test-label='donate-text-3'>
         {t('donate.why-donate-2')}
       </p>
-    </>
+    </React.Fragment>
   );
 };
 
@@ -46,18 +46,18 @@ export const ThankYouMessage = ({
 }): JSX.Element => {
   const { t } = useTranslation();
   return (
-    <>
+    <React.Fragment>
       <h1 data-playwright-test-label='main-head'>
         {t('donate.thank-you-continued')}
       </h1>
       {(askForDonation || thankContributon) && (
-        <>
+        <React.Fragment>
           <Spacer size='m' />
           <p>{t('donate.crucial-contribution')}</p>
-        </>
+        </React.Fragment>
       )}
       {askForDonation && <OtherWaysToSupport />}
-    </>
+    </React.Fragment>
   );
 };
 
@@ -107,7 +107,7 @@ export const DonationFaqText = (): JSX.Element => {
     {
       Q: t('donate.how-transparent'),
       A: (
-        <>
+        <React.Fragment>
           <p>{t('donate.very-transparent')}</p>
           <p>
             <Trans i18nKey='donate.download-irs'>
@@ -119,29 +119,29 @@ export const DonationFaqText = (): JSX.Element => {
               <a href={t('links:donate.download-990-url')}>placeholder</a>
             </Trans>
           </p>
-        </>
+        </React.Fragment>
       )
     },
     {
       Q: t('donate.how-efficient'),
       A: (
-        <>
+        <React.Fragment>
           <p>{t('donate.fcc-budget')}</p>
           <p>{t('donate.help-millions')}</p>
-        </>
+        </React.Fragment>
       )
     },
     {
       Q: t('donate.how-one-time'),
       A: (
-        <>
+        <React.Fragment>
           <p>
             <Trans i18nKey='donate.one-time'>
               <a href={t('links:donate.one-time-url')}>placeholder</a>
             </Trans>
           </p>
           <p>{t('donate.wire-transfer')}</p>
-        </>
+        </React.Fragment>
       )
     },
     {
@@ -152,34 +152,34 @@ export const DonationFaqText = (): JSX.Element => {
     {
       Q: t('donate.can-check'),
       A: (
-        <>
+        <React.Fragment>
           <p>{t('donate.yes-check')}</p>
           <p>{POBOX}</p>
-        </>
+        </React.Fragment>
       )
     },
     {
       Q: t('donate.how-matching-gift'),
       A: (
-        <>
+        <React.Fragment>
           <p>{t('donate.employers-vary')}</p>
           <p>{t('donate.some-volunteer')}</p>
           <p>{t('donate.help-matching-gift')}</p>
-        </>
+        </React.Fragment>
       )
     },
     { Q: t('donate.how-endowment'), A: <p>{t('donate.endowment')}</p> },
     {
       Q: t('donate.how-legacy'),
       A: (
-        <>
+        <React.Fragment>
           <p>{t('donate.we-honored')}</p>
           <blockquote>
             <p>{t('donate.legacy-gift-message')}</p>
           </blockquote>
           <p>{t('donate.thank-wikimedia')}</p>
           <p>{t('donate.legacy-gift-questions')}</p>
-        </>
+        </React.Fragment>
       )
     },
     { Q: t('donate.how-stock'), A: <p>{t('donate.welcome-stock')}</p> },
@@ -191,11 +191,11 @@ export const DonationFaqText = (): JSX.Element => {
   ];
 
   return (
-    <>
+    <React.Fragment>
       <h2 data-playwright-test-label='faq-head'>{t('donate.faq')}</h2>
       <Spacer size='xs' />
       {faqItems.map((item, iterator) => FaqItem(item.Q, item.A, iterator))}
-    </>
+    </React.Fragment>
   );
 };
 
@@ -206,14 +206,14 @@ export const SupportBenefitsText = ({
 }): JSX.Element => {
   const { t } = useTranslation();
   return (
-    <>
+    <React.Fragment>
       <h2>
         {isSupportersPage
           ? t('donate.exclusive-features')
           : t('donate.support-benefits-title')}
       </h2>
       <BenefitsList />
-    </>
+    </React.Fragment>
   );
 };
 
@@ -248,7 +248,7 @@ export const CurrentInitiativesText = ({
 }): JSX.Element => {
   const { t } = useTranslation();
   return (
-    <>
+    <React.Fragment>
       <h2>
         {isSupportersPage
           ? t('donate.your-donation-helps-followings')
@@ -260,14 +260,14 @@ export const CurrentInitiativesText = ({
         <li>{t('donate.current-initiatives-3')}</li>
         <li>{t('donate.current-initiatives-4')}</li>
       </ul>
-    </>
+    </React.Fragment>
   );
 };
 
 export const CommunityAchievementsText = (): JSX.Element => {
   const { t } = useTranslation();
   return (
-    <>
+    <React.Fragment>
       <h2>{t('donate.community-achivements-title')}</h2>
       <ul>
         <li>
@@ -291,7 +291,7 @@ export const CommunityAchievementsText = (): JSX.Element => {
           </Trans>
         </li>
       </ul>
-    </>
+    </React.Fragment>
   );
 };
 
@@ -302,11 +302,11 @@ export const GetSupporterBenefitsText = ({
 }): JSX.Element => {
   const { t } = useTranslation();
   return (
-    <>
+    <React.Fragment>
       <Spacer size='l' />
       <p>{t('donate.as-you-see')}</p>
       {!isDonating ? <p>{t('donate.get-benefits')}</p> : null}
-    </>
+    </React.Fragment>
   );
 };
 
