@@ -26,10 +26,10 @@ const AppMountNotifier = ({
   const { i18n } = useTranslation();
 
   return (
-    <>
+    <React.Fragment>
       <Helmet htmlAttributes={{ lang: i18n.language }} />
       {children}
-    </>
+    </React.Fragment>
   );
 };
 
