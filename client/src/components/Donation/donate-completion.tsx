@@ -48,10 +48,10 @@ function DonateCompletion({
           />
         )}
         {success && (
-          <>
+          <React.Fragment>
             <p>{t('donate.free-tech')}</p>
             {isSignedIn && (
-              <>
+              <React.Fragment>
                 <p>{t('donate.visit-supporters')}</p>
 
                 <Link
@@ -62,9 +62,9 @@ function DonateCompletion({
                 >
                   {t('buttons.go-to-supporters')}
                 </Link>
-              </>
+              </React.Fragment>
             )}
-          </>
+          </React.Fragment>
         )}
         {error && <p>{error}</p>}
       </div>
