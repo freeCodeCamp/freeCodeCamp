@@ -912,6 +912,15 @@ Happy coding!
         expect(user?.location).toEqual('');
         expect(user?.picture).toEqual('');
       });
+
+      test('PUT returns 400 status code with invalid about settings', async () => {
+        const response = await superPut('/update-my-about').send({
+          about: { no: 'objects' }
+        });
+
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
     });
 
     describe('/update-my-honesty', () => {
@@ -1005,6 +1014,15 @@ Happy coding!
         });
 
         expect(response.statusCode).toEqual(200);
+      });
+
+      test('PUT returns 400 status code with invalid classroom mode', async () => {
+        const response = await superPut('/update-my-classroom-mode').send({
+          isClassroomAccount: 'invalid'
+        });
+
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
       });
 
       test('After updating the classroom mode, the user should have this property set', async () => {

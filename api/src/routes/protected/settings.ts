@@ -1,19 +1,5 @@
-import {
-  TypeBoxTypeProvider,
-  type FastifyPluginCallbackTypebox
-} from '@fastify/type-provider-typebox';
-import type {
-  ContextConfigDefault,
-  FastifyError,
-  FastifyInstance,
-  FastifyReply,
-  FastifyRequest,
-  RawReplyDefaultExpression,
-  RawRequestDefaultExpression,
-  RawServerDefault,
-  RouteGenericInterface
-} from 'fastify';
-import { ResolveFastifyReplyType } from 'fastify/types/type-provider';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import type { FastifyInstance } from 'fastify';
 import { differenceInMinutes } from 'date-fns';
 import validator from 'validator';
 
@@ -110,44 +96,19 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  type CommonResponseSchema = {
-    response: { 400: (typeof schemas.updateMyProfileUI.response)[400] };
-  };
-
-  // TODO: figure out if there's a nicer way to generate this type
-  type UpdateReplyType = FastifyReply<
-    RawServerDefault,
-    RawRequestDefaultExpression<RawServerDefault>,
-    RawReplyDefaultExpression<RawServerDefault>,
-    RouteGenericInterface,
-    ContextConfigDefault,
-    CommonResponseSchema,
-    TypeBoxTypeProvider,
-    ResolveFastifyReplyType<
-      TypeBoxTypeProvider,
-      CommonResponseSchema,
-      RouteGenericInterface
-    >
-  >;
-
-  function updateErrorHandler(
-    error: FastifyError,
-    request: FastifyRequest,
-    reply: UpdateReplyType
-  ) {
+  fastify.setErrorHandler((error, request, reply) => {
     if (error.validation) {
       void reply.code(400);
       void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
     } else {
-      fastify.errorHandler(error, request, reply);
+      throw error;
     }
-  }
+  });
 
   fastify.put(
     '/update-my-profileui',
     {
-      schema: schemas.updateMyProfileUI,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyProfileUI
     },
     async (req, reply) => {
       try {
@@ -325,8 +286,7 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-theme',
     {
-      schema: schemas.updateMyTheme,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyTheme
     },
     async (req, reply) => {
       try {
@@ -353,8 +313,7 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-socials',
     {
-      schema: schemas.updateMySocials,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMySocials
     },
     async (req, reply) => {
       const valid = (['twitter', 'githubProfile', 'linkedin'] as const).every(
@@ -514,8 +473,7 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-keyboard-shortcuts',
     {
-      schema: schemas.updateMyKeyboardShortcuts,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyKeyboardShortcuts
     },
     async (req, reply) => {
       try {
@@ -542,8 +500,7 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-quincy-email',
     {
-      schema: schemas.updateMyQuincyEmail,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyQuincyEmail
     },
     async (req, reply) => {
       try {
@@ -570,8 +527,7 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-honesty',
     {
-      schema: schemas.updateMyHonesty,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyHonesty
     },
     async (req, reply) => {
       try {
@@ -598,8 +554,7 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-privacy-terms',
     {
-      schema: schemas.updateMyPrivacyTerms,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyPrivacyTerms
     },
     async (req, reply) => {
       try {
@@ -627,8 +582,7 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-portfolio',
     {
-      schema: schemas.updateMyPortfolio,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyPortfolio
     },
     async (req, reply) => {
       try {
@@ -666,15 +620,7 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-classroom-mode',
     {
-      schema: schemas.updateMyClassroomMode,
-      errorHandler: (error, request, reply) => {
-        if (error.validation) {
-          void reply.code(403);
-          void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      schema: schemas.updateMyClassroomMode
     },
     async (req, reply) => {
       try {
