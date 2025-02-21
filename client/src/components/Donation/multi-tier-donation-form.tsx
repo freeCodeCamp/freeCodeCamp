@@ -178,7 +178,7 @@ const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
   }, [showDonateForm, setShowHeaderAndFooter]);
 
   return (
-    <>
+    <React.Fragment>
       <div {...(showDonateForm && { className: 'hide' })}>
         <SelectionTabs
           donationAmount={donationAmount}
@@ -196,7 +196,7 @@ const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
           paymentContext={paymentContext}
         />
       </div>
-    </>
+    </React.Fragment>
   );
 };
 
