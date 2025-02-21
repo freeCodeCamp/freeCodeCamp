@@ -11,7 +11,7 @@ function GreenNotCompleted(props: GreenNotCompletedProps): JSX.Element {
   const { t } = useTranslation();
   const { hushScreenReaderText = false, ...rest } = props;
   return (
-    <>
+    <React.Fragment>
       {!hushScreenReaderText && (
         <span className='sr-only'>{t('icons.not-passed')}</span>
       )}
@@ -36,7 +36,7 @@ function GreenNotCompleted(props: GreenNotCompletedProps): JSX.Element {
           />
         </g>
       </svg>
-    </>
+    </React.Fragment>
   );
 }
 
