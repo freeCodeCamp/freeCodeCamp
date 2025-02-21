@@ -103,7 +103,7 @@ function ShowUser({
   }
 
   return (
-    <>
+    <React.Fragment>
       <Helmet>
         <title>{t('report.portfolio')} | freeCodeCamp.org</title>
       </Helmet>
@@ -138,7 +138,7 @@ function ShowUser({
           </form>
         </Col>
       </Row>
-    </>
+    </React.Fragment>
   );
 }
 
