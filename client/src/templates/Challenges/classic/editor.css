@@ -291,6 +291,10 @@ textarea.inputarea {
 .code-details-summary {
   display: list-item;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .editor-upper-jaw pre code {
