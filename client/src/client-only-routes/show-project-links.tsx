@@ -115,7 +115,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       ] as const;
 
       return (
-        <>
+        <React.Fragment>
           {certs.map((cert, ind) => {
             const certLocation = `/certification/${username}/${cert.name}`;
 
@@ -129,13 +129,13 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
               </tr>
             );
           })}
-        </>
+        </React.Fragment>
       );
     }
 
     const projects = certsToProjects[certSlug];
     return (
-      <>
+      <React.Fragment>
         {projects.map(({ link, title, id }) => (
           <tr key={id}>
             <td className='col-xs-8'>
@@ -146,7 +146,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
             <td className='col-xs-4'>{getProjectSolution(id, title)}</td>
           </tr>
         ))}
-      </>
+      </React.Fragment>
     );
   };
 
