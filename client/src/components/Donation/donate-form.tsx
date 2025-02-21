@@ -219,7 +219,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       isSignedIn && (isMinimalForm || !isDonating) && threeChallengesCompleted;
 
     const confirmationWithEditAmount = (
-      <>
+      <React.Fragment>
         <b>
           {t('donate.confirm-multitier', {
             usd: formattedAmountLabel(donationAmount)
@@ -233,7 +233,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
         >
           {t('donate.edit-amount')}
         </button>
-      </>
+      </React.Fragment>
     );
 
     const confirmationClass = () => {
@@ -242,7 +242,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       return '';
     };
     return (
-      <>
+      <React.Fragment>
         <div className={confirmationClass()}>{confirmationWithEditAmount}</div>
         <Spacer size={editAmount ? 'xs' : 'm'} />
         <fieldset
@@ -281,7 +281,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
             />
           )}
           {showMinimalPayments && (
-            <>
+            <React.Fragment>
               <div className='separator'>{t('donate.or-card')}</div>
               <StripeCardForm
                 onDonationStateChange={this.onDonationStateChange}
@@ -290,10 +290,10 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
                 t={t}
                 theme={priorityTheme}
               />
-            </>
+            </React.Fragment>
           )}
         </fieldset>
-      </>
+      </React.Fragment>
     );
   }
 
@@ -323,7 +323,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
 
     // keep payment provider elements on DOM during processing and redirect to avoid errors.
     return (
-      <>
+      <React.Fragment>
         {(processing || redirecting) && (
           <DonateCompletion
             processing={processing}
@@ -337,7 +337,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
         <div className={processing || redirecting ? 'hide' : ''}>
           {isMinimalForm ? this.renderButtonGroup() : this.renderPageForm()}
         </div>
-      </>
+      </React.Fragment>
     );
   }
 }
