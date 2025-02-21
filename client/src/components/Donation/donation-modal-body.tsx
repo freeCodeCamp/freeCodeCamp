@@ -51,7 +51,7 @@ function ModalHeader({
       <Row className='text-center'>
         <Col sm={10} smOffset={1} xs={12}>
           {recentlyClaimedBlock !== null && (
-            <>
+            <React.Fragment>
               <b>
                 {t('donate.nicely-done', {
                   block: t(
@@ -60,7 +60,7 @@ function ModalHeader({
                 })}
               </b>
               <Spacer size='xs' />
-            </>
+            </React.Fragment>
           )}
 
           <Modal.Header showCloseButton={false} borderless>
@@ -134,7 +134,7 @@ const AnimationContainer = ({
   const animationSrc = `${newBearAnimation ? donationAnimationB : donationAnimation}?t=${animationKey}`;
   const { t } = useTranslation();
   return (
-    <>
+    <React.Fragment>
       <div style={{ opacity: 0, position: 'absolute' }}>
         <p>{t('donate.animation-description')}</p>
         <span aria-live='polite'>
@@ -144,7 +144,7 @@ const AnimationContainer = ({
       <div className='donation-animation-container' aria-hidden='true'>
         <div className='donation-animation-bullet-points'>
           {newBearAnimation ? (
-            <>
+            <React.Fragment>
               <p className='donation-animation-bullet-1-b'>
                 {t('donate.become-supporter')}
               </p>
@@ -157,9 +157,9 @@ const AnimationContainer = ({
               <p className='donation-animation-bullet-4-b'>
                 {t('donate.help-millions-learn')}
               </p>
-            </>
+            </React.Fragment>
           ) : (
-            <>
+            <React.Fragment>
               <p className='donation-animation-bullet-1'>
                 {t('donate.become-supporter')}
               </p>
@@ -172,7 +172,7 @@ const AnimationContainer = ({
               <p className='donation-animation-bullet-4'>
                 {t('donate.help-millions-learn')}
               </p>
-            </>
+            </React.Fragment>
           )}
         </div>
         <img
@@ -183,7 +183,7 @@ const AnimationContainer = ({
           data-playwright-test-label='donation-animation'
         />
       </div>
-    </>
+    </React.Fragment>
   );
 };
 
