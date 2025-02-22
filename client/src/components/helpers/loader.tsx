@@ -39,10 +39,10 @@ function Loader({
     >
       {showSpinner && <Spinner name='line-scale-pulse-out' />}
       {showMessage && fullScreen && (
-        <>
+        <React.Fragment>
           <br />
           <p className='text-center'>{t('misc.slow-load-msg')}</p>
-        </>
+        </React.Fragment>
       )}
     </div>
   );
