@@ -74,7 +74,7 @@ function ProgressInner({
   }, [isProgressInViewport]);
 
   return (
-    <>
+    <React.Fragment>
       <div className='completion-block-name'>{title}</div>
       <div
         className='progress-bar-wrap'
@@ -84,7 +84,7 @@ function ProgressInner({
         <ProgressBar now={shownPercent} />
       </div>
       <div className='completion-block-meta'>{meta}</div>
-    </>
+    </React.Fragment>
   );
 }
 
