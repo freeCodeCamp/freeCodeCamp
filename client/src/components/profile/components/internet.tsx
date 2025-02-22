@@ -122,7 +122,7 @@ const InternetSettings = ({
   const isDisabled = isFormPristine() || !isFormValid();
 
   return (
-    <>
+    <React.Fragment>
       <SectionHeader>{t('settings.headings.internet')}</SectionHeader>
       <FullWidthRow>
         <form
@@ -229,7 +229,7 @@ const InternetSettings = ({
           </BlockSaveButton>
         </form>
       </FullWidthRow>
-    </>
+    </React.Fragment>
   );
 };
 
