@@ -21,7 +21,7 @@ const LearnAlert = ({
   const progressAlertDefault = (text: string, value?: number) => (
     <Alert variant='info' className='annual-donation-alert'>
       {value && (
-        <>
+        <React.Fragment>
           <div className='text-center'>
             <h2>{t('learn.donation-heading')}</h2>
             <Spacer size='xs' />
@@ -32,7 +32,7 @@ const LearnAlert = ({
               <ProgressBar now={value} />
             </div>
           </div>
-        </>
+        </React.Fragment>
       )}
       <p>{text}</p>
       <Spacer size='m' />
