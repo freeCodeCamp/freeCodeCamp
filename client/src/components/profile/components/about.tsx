@@ -158,7 +158,7 @@ const AboutSettings = ({
   };
 
   return (
-    <>
+    <React.Fragment>
       <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
       <FullWidthRow>
         <form
@@ -229,7 +229,7 @@ const AboutSettings = ({
           </BlockSaveButton>
         </form>
       </FullWidthRow>
-    </>
+    </React.Fragment>
   );
 };
 
