@@ -34,7 +34,7 @@ export default function ScrollbarWidthSettings(): JSX.Element {
   /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 
   return (
-    <>
+    <React.Fragment>
       <label htmlFor='scrollbar-width-slider'>
         {t('settings.scrollbar-width')}:
         <span
@@ -79,7 +79,7 @@ export default function ScrollbarWidthSettings(): JSX.Element {
         </div>
       </div>
       <Spacer size='m' />
-    </>
+    </React.Fragment>
   );
 }
 
