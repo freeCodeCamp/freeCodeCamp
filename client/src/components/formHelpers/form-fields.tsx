@@ -86,7 +86,7 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
     ) : null;
   };
   return (
-    <>
+    <React.Fragment>
       {formFields
         .filter(formField => !ignored.includes(formField.name))
         .map(({ name, label }) => (
@@ -126,7 +126,7 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
             }}
           </Field>
         ))}
-    </>
+    </React.Fragment>
   );
 }
 
