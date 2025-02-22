@@ -61,7 +61,7 @@ function LearnLayout({
   }
 
   return (
-    <>
+    <React.Fragment>
       <Helmet>
         <meta content='noindex' name='robots' />
       </Helmet>
@@ -72,7 +72,7 @@ function LearnLayout({
         {children}
       </main>
       <DonateModal />
-    </>
+    </React.Fragment>
   );
 }
 
