@@ -32,10 +32,10 @@ class CertificationLayout extends Component<CertificationProps> {
     const { children } = this.props;
 
     return (
-      <>
+      <React.Fragment>
         <Helmet bodyAttributes={{ class: 'light-palette' }} />
         {children}
-      </>
+      </React.Fragment>
     );
   }
 }
