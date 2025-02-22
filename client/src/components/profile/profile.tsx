@@ -169,7 +169,7 @@ function UserProfile({
   } = user;
 
   return (
-    <>
+    <React.Fragment>
       {isSessionUser && (
         <EditModal
           user={user}
@@ -207,7 +207,7 @@ function UserProfile({
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}
       <Spacer size='m' />
-    </>
+    </React.Fragment>
   );
 }
 
@@ -227,7 +227,7 @@ function Profile({
   const showUserProfile = !isLocked || isSessionUser;
 
   return (
-    <>
+    <React.Fragment>
       <Helmet>
         <title>{t('buttons.profile')} | freeCodeCamp.org</title>
       </Helmet>
@@ -255,7 +255,7 @@ function Profile({
         )}
         <Spacer size='m' />
       </Container>
-    </>
+    </React.Fragment>
   );
 }
 
