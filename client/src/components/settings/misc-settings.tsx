@@ -27,7 +27,7 @@ const MiscSettings = ({
   const { t } = useTranslation();
 
   return (
-    <>
+    <React.Fragment>
       <Spacer size='m' />
       <FullWidthRow>
         <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
@@ -51,7 +51,7 @@ const MiscSettings = ({
           {t('settings.reset-editor-layout')}
         </Button>
       </FullWidthRow>
-    </>
+    </React.Fragment>
   );
 };
 
