@@ -42,10 +42,10 @@ function OfflineWarning({
   }
 
   return showWarning ? (
-    <>
+    <React.Fragment>
       <div className='offline-warning alert-info'>{message}</div>
       <div style={{ height: `38px` }} />
-    </>
+    </React.Fragment>
   ) : null;
 }
 
