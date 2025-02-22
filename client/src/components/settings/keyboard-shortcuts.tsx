@@ -18,7 +18,7 @@ export default function KeyboardShortcutsSettings({
   const { t } = useTranslation();
 
   return (
-    <>
+    <React.Fragment>
       <ToggleButtonSetting
         action={t('settings.labels.keyboard-shortcuts')}
         explain={explain}
@@ -31,7 +31,7 @@ export default function KeyboardShortcutsSettings({
         }}
       />
       <Spacer size='m' />
-    </>
+    </React.Fragment>
   );
 }
 
