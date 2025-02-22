@@ -349,11 +349,11 @@ const PortfolioSettings = (props: PortfolioProps) => {
           </Button>
         </form>
         {index + 1 !== arr.length && (
-          <>
+          <React.Fragment>
             <Spacer size='m' />
             <hr />
             <Spacer size='m' />
-          </>
+          </React.Fragment>
         )}
       </FullWidthRow>
     );
