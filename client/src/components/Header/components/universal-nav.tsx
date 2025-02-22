@@ -81,7 +81,7 @@ const UniversalNav = ({
             <SkeletonSprite />
           </div>
         ) : (
-          <>
+          <React.Fragment>
             <LanguageList />
             <MenuButton
               displayMenu={displayMenu}
@@ -98,7 +98,7 @@ const UniversalNav = ({
               user={user}
             />
             <AuthOrProfile user={user} />
-          </>
+          </React.Fragment>
         )}
       </div>
     </nav>
