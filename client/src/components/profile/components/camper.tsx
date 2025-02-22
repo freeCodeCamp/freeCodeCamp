@@ -45,7 +45,7 @@ function Camper({
   const { t } = useTranslation();
   const isTopContributor = yearsTopContributor.filter(Boolean).length > 0;
   return (
-    <>
+    <React.Fragment>
       <div className='bio-container'>
         <Bio
           joinDate={joinDate}
@@ -99,7 +99,7 @@ function Camper({
           </section>
         </FullWidthRow>
       )}
-    </>
+    </React.Fragment>
   );
 }
 
