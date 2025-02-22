@@ -98,7 +98,7 @@ function Certificates({
             </h3>
             <Spacer size='m' />
             {legacyCerts && (
-              <>
+              <React.Fragment>
                 <ul aria-labelledby='legacy-certifications'>
                   {legacyCerts
                     .filter(({ show }) => show)
@@ -111,7 +111,7 @@ function Certificates({
                     ))}
                 </ul>
                 <Spacer size='m' />
-              </>
+              </React.Fragment>
             )}
           </div>
         )}
