@@ -34,16 +34,16 @@ const Intro = ({
   const { t } = useTranslation();
   if (pending && !complete) {
     return (
-      <>
+      <React.Fragment>
         <Spacer size='m' />
         <Loader />
         <Spacer size='m' />
-      </>
+      </React.Fragment>
     );
   } else if (isSignedIn) {
     const { quote, author } = randomQuote();
     return (
-      <>
+      <React.Fragment>
         <Spacer size='m' />
         <h1 id='content-start' className='text-center'>
           {name
@@ -77,11 +77,11 @@ const Intro = ({
         ) : (
           ''
         )}
-      </>
+      </React.Fragment>
     );
   } else {
     return (
-      <>
+      <React.Fragment>
         <Spacer size='m' />
         <h1
           id='content-start'
@@ -95,7 +95,7 @@ const Intro = ({
         <Spacer size='m' />
         <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
         <Spacer size='m' />
-      </>
+      </React.Fragment>
     );
   }
 };
