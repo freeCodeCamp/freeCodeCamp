@@ -1,8 +1,8 @@
 ---
 id: 67b5b3dfdec8df1a5f326bc0
-title: Task 111
+title: Task 110
 challengeType: 22
-dashedName: task-111
+dashedName: task-110
 ---
 
 <!-- (audio) Maria: We've chosen a subtle color palette, but maybe adding some brighter tones would help. -->
