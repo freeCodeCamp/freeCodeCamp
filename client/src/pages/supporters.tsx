@@ -72,7 +72,7 @@ function ConditionalContent({
     );
   } else if (isSignedIn && isDonating) {
     return (
-      <>
+      <React.Fragment>
         <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
           <div className='supporter-badge-container'>
             <SupporterBadge />
@@ -84,7 +84,7 @@ function ConditionalContent({
           <Spacer size='m' />
           <SupportBenefitsText isSupportersPage={true} />
         </Col>
-      </>
+      </React.Fragment>
     );
   } else
     return (
@@ -104,7 +104,7 @@ function SupportersPage({ isSignedIn, isDonating }: SupportersPageProps) {
   const { t } = useTranslation();
 
   return (
-    <>
+    <React.Fragment>
       <Helmet>
         <title>{t('misc.supporters-page-title')} | freeCodeCamp.org</title>
       </Helmet>
@@ -139,7 +139,7 @@ function SupportersPage({ isSignedIn, isDonating }: SupportersPageProps) {
         </Row>
         <Spacer size='l' />
       </Container>
-    </>
+    </React.Fragment>
   );
 }
 
