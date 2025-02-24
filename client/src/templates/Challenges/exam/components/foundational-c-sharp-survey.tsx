@@ -129,7 +129,7 @@ function FoundationalCSharpSurvey({
   const cantSubmitSurvey = surveyResponses.some(q => q.responseIndex === null);
 
   return (
-    <>
+    <React.Fragment>
       <Modal.Header closeButtonClassNames='close'>
         {t('survey.foundational-c-sharp.title')}
       </Modal.Header>
@@ -183,7 +183,7 @@ function FoundationalCSharpSurvey({
           {t('survey.misc.exit')}
         </Button>
       </Modal.Footer>
-    </>
+    </React.Fragment>
   );
 }
 
