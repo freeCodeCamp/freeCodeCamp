@@ -86,7 +86,7 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
   } = superBlockIntroObj;
 
   return (
-    <>
+    <React.Fragment>
       <h1 id='content-start' className='text-center big-heading'>
         {i18nSuperBlock}
       </h1>
@@ -106,7 +106,7 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
         onCertificationDonationAlertClick={onCertificationDonationAlertClick}
         isDonating={isDonating}
       />
-    </>
+    </React.Fragment>
   );
 }
 
