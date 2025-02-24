@@ -71,21 +71,21 @@ function IndexPage({
     );
     growthbook.getFeatureValue('landing-aa-test', false);
     return (
-      <>
+      <React.Fragment>
         <SEO title={t('metaTags:title')} />
         <Landing
           allChallenges={allChallenges}
           showLandingPageRedesign={showLandingPageRedesign}
           showBenefitsSection={showBenefitsSection}
         />
-      </>
+      </React.Fragment>
     );
   } else {
     return (
-      <>
+      <React.Fragment>
         <SEO title={t('metaTags:title')} />
         <Loader fullScreen={true} />
-      </>
+      </React.Fragment>
     );
   }
 }
