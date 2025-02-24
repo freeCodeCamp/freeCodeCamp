@@ -31,7 +31,7 @@ function ToolPanel({
   return (
     <div>
       {guideUrl && (
-        <>
+        <React.Fragment>
           <Button
             block={true}
             variant='primary'
@@ -41,7 +41,7 @@ function ToolPanel({
             {t('buttons.get-hint')}
           </Button>
           <Spacer size='xxs' />
-        </>
+        </React.Fragment>
       )}
       <Button block={true} variant='primary' onClick={openHelpModal}>
         {t('buttons.ask-for-help')}
