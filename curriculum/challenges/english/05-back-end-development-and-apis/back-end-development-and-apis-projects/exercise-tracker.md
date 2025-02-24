@@ -4,6 +4,7 @@ title: Exercise Tracker
 challengeType: 4
 forumTopicId: 301505
 dashedName: exercise-tracker
+solutionLink: https://exercise-tracker.freecodecamp.rocks
 ---
 
 # --description--

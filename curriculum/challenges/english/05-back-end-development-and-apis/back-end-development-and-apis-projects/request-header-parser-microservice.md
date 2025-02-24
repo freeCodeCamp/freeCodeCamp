@@ -4,6 +4,7 @@ title: Request Header Parser Microservice
 challengeType: 4
 forumTopicId: 301507
 dashedName: request-header-parser-microservice
+solutionLink: https://request-header-parser-microservice.freecodecamp.rocks
 ---
 
 # --description--

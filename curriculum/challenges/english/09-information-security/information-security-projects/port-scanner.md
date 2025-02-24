@@ -5,6 +5,7 @@ challengeType: 10
 forumTopicId: 462372
 helpCategory: Python
 dashedName: port-scanner
+solutionLink: https://empty.com
 ---
 
 # --description--

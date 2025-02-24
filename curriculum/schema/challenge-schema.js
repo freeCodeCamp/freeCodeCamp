@@ -277,6 +277,15 @@ const schema = Joi.object()
       commands: Joi.array().items(commandJoi)
     }),
     solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
+    solutionLink: Joi.string().when('challengeType', {
+      is: [
+        challengeTypes.backEndProject,
+        challengeTypes.frontEndProject,
+        challengeTypes.pythonProject,
+        challengeTypes.codeAllyCert
+      ],
+      then: Joi.string().required()
+    }),
     superBlock: Joi.string().regex(slugWithSlashRE),
     superOrder: Joi.number(),
     suborder: Joi.number(),

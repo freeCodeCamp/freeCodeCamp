@@ -4,6 +4,7 @@ title: Build a Random Quote Machine
 challengeType: 3
 forumTopicId: 301374
 dashedName: build-a-random-quote-machine
+solutionLink: https://random-quote-machine.freecodecamp.rocks
 ---
 
 # --description--

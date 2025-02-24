@@ -4,6 +4,7 @@ title: Rock Paper Scissors
 challengeType: 10
 forumTopicId: 462376
 dashedName: rock-paper-scissors
+solutionLink: https://empty.com
 ---
 
 # --description--

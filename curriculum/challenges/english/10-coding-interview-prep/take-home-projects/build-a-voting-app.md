@@ -4,6 +4,7 @@ title: Build a Voting App
 challengeType: 4
 forumTopicId: 302359
 dashedName: build-a-voting-app
+solutionLink: https://voting-app.freecodecamp.rocks/
 ---
 
 # --description--

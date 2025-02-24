@@ -4,6 +4,7 @@ title: Anonymous Message Board
 challengeType: 4
 forumTopicId: 301568
 dashedName: anonymous-message-board
+solutionLink: https://anonymous-message-board.freecodecamp.rocks
 ---
 
 # --description--

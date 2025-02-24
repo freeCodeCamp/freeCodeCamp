@@ -4,6 +4,7 @@ title: Build a Celestial Bodies Database
 challengeType: 13
 url: freeCodeCamp/learn-celestial-bodies-database
 dashedName: build-a-celestial-bodies-database
+solutionLink: https://empty.com
 ---
 
 # --description--

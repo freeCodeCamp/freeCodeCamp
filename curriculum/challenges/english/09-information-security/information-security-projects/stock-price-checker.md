@@ -4,6 +4,7 @@ title: Stock Price Checker
 challengeType: 4
 forumTopicId: 301572
 dashedName: stock-price-checker
+solutionLink: https://stock-price-checker.freecodecamp.rocks
 ---
 
 # --description--

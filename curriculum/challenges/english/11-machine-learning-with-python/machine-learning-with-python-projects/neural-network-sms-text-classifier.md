@@ -4,6 +4,7 @@ title: Neural Network SMS Text Classifier
 challengeType: 10
 forumTopicId: 462380
 dashedName: neural-network-sms-text-classifier
+solutionLink: https://empty.com
 ---
 
 # --description--

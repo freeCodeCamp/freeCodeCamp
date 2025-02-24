@@ -4,6 +4,7 @@ title: Page View Time Series Visualizer
 challengeType: 10
 forumTopicId: 462369
 dashedName: page-view-time-series-visualizer
+solutionLink: https://empty.com
 ---
 
 # --description--

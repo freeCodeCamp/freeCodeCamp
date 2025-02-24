@@ -4,6 +4,7 @@ title: Build a Periodic Table Database
 challengeType: 13
 url: freeCodeCamp/learn-periodic-table-database
 dashedName: build-a-periodic-table-database
+solutionLink: https://empty.com
 ---
 
 # --description--

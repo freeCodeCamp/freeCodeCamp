@@ -4,6 +4,7 @@ title: Build a Drum Machine
 challengeType: 3
 forumTopicId: 301370
 dashedName: build-a-drum-machine
+solutionLink: https://drum-machine.freecodecamp.rocks
 ---
 
 # --description--

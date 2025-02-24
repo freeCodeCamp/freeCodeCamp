@@ -4,6 +4,7 @@ title: Book Recommendation Engine using KNN
 challengeType: 10
 forumTopicId: 462378
 dashedName: book-recommendation-engine-using-knn
+solutionLink: https://empty.com
 ---
 
 # --description--

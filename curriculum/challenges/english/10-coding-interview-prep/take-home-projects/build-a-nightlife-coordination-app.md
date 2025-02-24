@@ -4,6 +4,7 @@ title: Build a Nightlife Coordination App
 challengeType: 4
 forumTopicId: 302351
 dashedName: build-a-nightlife-coordination-app
+solutionLink: https://yoyo44.herokuapp.com/
 ---
 
 # --description--

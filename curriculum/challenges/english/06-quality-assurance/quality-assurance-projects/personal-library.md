@@ -4,6 +4,7 @@ title: Personal Library
 challengeType: 4
 forumTopicId: 301571
 dashedName: personal-library
+solutionLink: https://personal-library.freecodecamp.rocks
 ---
 
 # --description--

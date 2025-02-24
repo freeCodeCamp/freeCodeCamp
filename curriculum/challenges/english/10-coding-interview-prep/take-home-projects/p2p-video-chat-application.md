@@ -4,6 +4,7 @@ title: P2P Video Chat Application
 challengeType: 4
 forumTopicId: 302366
 dashedName: p2p-video-chat-application
+solutionLink: https://p2p-video-chat-application.freecodecamp.rocks
 ---
 
 # --description--
