@@ -23,7 +23,7 @@ function Assignments({
 }: AssignmentsProps): JSX.Element {
   const { t } = useTranslation();
   return (
-    <>
+    <React.Fragment>
       <ChallengeHeading
         heading={t('learn.assignments', { count: assignments.length })}
       />
@@ -43,15 +43,15 @@ function Assignments({
         ))}
       </div>
       {!allAssignmentsCompleted && (
-        <>
+        <React.Fragment>
           <Spacer size='m' />
           <div className='assignments-not-complete'>
             {t('learn.assignment-not-complete', { count: assignments.length })}
           </div>
-        </>
+        </React.Fragment>
       )}
       <Spacer size='m' />
-    </>
+    </React.Fragment>
   );
 }
 
