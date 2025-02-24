@@ -86,15 +86,15 @@ function LinkMsUser({
   const showWarning = !isPristine && !isValid;
 
   return !isSignedIn ? (
-    <>
+    <React.Fragment>
       <ChallengeHeading heading={t('learn.ms.link-header')} />
       <Spacer size='xs' />
 
       <p>{t('learn.ms.link-signin')}</p>
       <Login />
-    </>
+    </React.Fragment>
   ) : msUsername ? (
-    <>
+    <React.Fragment>
       <p>{t('learn.ms.linked', { msUsername })}</p>
       <Button
         block={true}
@@ -104,7 +104,7 @@ function LinkMsUser({
       >
         {t('buttons.unlink-account')}
       </Button>
-    </>
+    </React.Fragment>
   ) : (
     <div>
       <ChallengeHeading heading={'learn.ms.link-header'} />
