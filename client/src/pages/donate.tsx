@@ -63,7 +63,7 @@ function DonatePage({
   return showLoading ? (
     <Loader fullScreen={true} />
   ) : (
-    <>
+    <React.Fragment>
       <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
       <Container fluid={true} className='gradient-container'>
         <Container className='donate-supporter-page-section'>
@@ -131,7 +131,7 @@ function DonatePage({
         </Row>
         <Spacer size='l' />
       </Container>
-    </>
+    </React.Fragment>
   );
 }
 
