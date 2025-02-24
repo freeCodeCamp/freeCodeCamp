@@ -28,7 +28,7 @@ function MultipleChoiceQuestions({
   const { t } = useTranslation();
 
   return (
-    <>
+    <React.Fragment>
       <ChallengeHeading
         heading={
           questions.length > 1 ? t('learn.questions') : t('learn.question')
@@ -112,7 +112,7 @@ function MultipleChoiceQuestions({
         </div>
       ))}
       <Spacer size='m' />
-    </>
+    </React.Fragment>
   );
 }
 
