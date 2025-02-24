@@ -27,7 +27,7 @@ function ChallengeTranscript({
   }
 
   return (
-    <>
+    <React.Fragment>
       <details data-testid='challenge-transcript' open={isOpen}>
         <summary
           onClick={toggleExpandedState}
@@ -40,7 +40,7 @@ function ChallengeTranscript({
         <PrismFormatted className={'line-numbers'} text={transcript} />
       </details>
       <Spacer size='m' />
-    </>
+    </React.Fragment>
   );
 }
 
