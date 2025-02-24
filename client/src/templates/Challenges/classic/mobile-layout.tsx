@@ -210,7 +210,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     // but still needs a way to switch between the different tabs.
 
     return (
-      <>
+      <React.Fragment>
         <Tabs
           id='mobile-layout'
           onKeyDown={this.handleKeyDown}
@@ -325,7 +325,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             {preview}
           </PreviewPortal>
         )}
-      </>
+      </React.Fragment>
     );
   }
 }
