@@ -15,7 +15,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
 }) => {
   const { t } = useTranslation();
   return (
-    <>
+    <React.Fragment>
       <a
         data-testid='ShareTemplateWrapperTestID'
         className='btn fade-in'
@@ -64,6 +64,6 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         {t('buttons.share-on-threads')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
-    </>
+    </React.Fragment>
   );
 };
