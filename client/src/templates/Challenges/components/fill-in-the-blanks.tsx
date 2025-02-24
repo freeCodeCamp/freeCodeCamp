@@ -40,7 +40,7 @@ function FillInTheBlanks({
   const blankAnswers = blanks.map(b => b.answer);
 
   return (
-    <>
+    <React.Fragment>
       <ChallengeHeading heading={t('learn.fill-in-the-blank.heading')} />
       <Spacer size='xs' />
       <div className='fill-in-the-blank-wrap'>
@@ -95,7 +95,7 @@ function FillInTheBlanks({
         )}
         {showFeedback && feedback && <PrismFormatted text={feedback} />}
       </div>
-    </>
+    </React.Fragment>
   );
 }
 
