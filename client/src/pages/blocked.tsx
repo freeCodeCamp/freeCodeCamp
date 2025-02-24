@@ -4,7 +4,7 @@ import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 function BlockedPage(): JSX.Element {
   return (
-    <>
+    <React.Fragment>
       <Helmet title={`Access Denied | freeCodeCamp.org`} />
       <Container className='text-center'>
         <Spacer size='l' />
@@ -40,7 +40,7 @@ function BlockedPage(): JSX.Element {
         </Row>
         <Spacer size='l' />
       </Container>
-    </>
+    </React.Fragment>
   );
 }
 
