@@ -15,7 +15,7 @@ function ChallengeExplanation({
   const { t } = useTranslation();
 
   return (
-    <>
+    <React.Fragment>
       <details>
         <summary className='challenge-summary'>
           {t('learn.explanation')}
@@ -24,7 +24,7 @@ function ChallengeExplanation({
         <PrismFormatted className={'line-numbers'} text={explanation} />
       </details>
       <Spacer size='m' />
-    </>
+    </React.Fragment>
   );
 }
 
