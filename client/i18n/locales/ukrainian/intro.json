@@ -1606,13 +1606,13 @@
       "learn-how-to-share-feedback": {
         "title": "Дізнайтесь, як ділитись фідбеком",
         "intro": [
-          "In this course, you will see ways of telling other people how you feel about their work, highlighting both their strengths and points for improvement."
+          "У цьому курсі ви дізнаєтесь, як ділитись зворотним зв’язком щодо роботи, підкреслюючи сильні сторони і моменти для покращення."
         ]
       },
       "learn-how-to-share-your-opinion": {
         "title": "Дізнайтесь, як ділитись своєю думкою",
         "intro": [
-          "This course will show you how to express your ideas and feeling towards topics in a discussion."
+          "У цьому курсі ви дізнаєтесь, як ділитись своїми ідеями і емоціями під час дискусії."
         ]
       },
       "learn-how-to-express-agreement": {
@@ -2597,7 +2597,7 @@
       "lab-sentence-maker": {
         "title": "Створіть творця речень",
         "intro": [
-          "In this lab, you will continue practicing with strings and concatenation by creating and customizing various stories."
+          "У цій лабораторній роботі ви продовжите працювати з рядками і конкатенацією, створюючи та налаштовуючи різні історії."
         ]
       },
       "lecture-working-with-data-types": {
@@ -2922,7 +2922,7 @@
       "workshop-library-manager": {
         "title": "Створіть менеджера бібліотеки",
         "intro": [
-          "У цьому практичному занятті ви дізнаєтесь про методи вищого порядку для роботи з масивами, створивши менеджера бібліотеки."
+          "In this workshop, you will learn higher order array methods by building a library manager."
         ]
       },
       "lab-book-organizer": {
@@ -3170,7 +3170,7 @@
       "lecture-working-with-maps-and-sets": {
         "title": "Робота з map та set",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь про <code>Map</code> та <code>Set</code> в JavaScript. Ви також дізнаєтесь, як вони відрізняються від <code>WeakSets</code> та <code>WeakMaps</code>."
+          "In these lecture videos, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>."
         ]
       },
       "workshop-plant-nursery-catalog": {
@@ -3332,7 +3332,7 @@
       "lecture-understanding-asynchronous-programming": {
         "title": "Знайомство з асинхронним програмуванням",
         "intro": [
-          "In these lecture videos, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>async</code> keyword works, the <code>Fetch</code> API, promises, <code>async/await</code>, the <code>Geolocation</code> API, and much more."
+          "У цих відеолекціях ви дізнаєтесь про асинхронне програмування в JavaScript. Ви дізнаєтесь про відмінності між синхронним і асинхронним програмуванням, як працює ключове слово <code>async</code>, <code>Fetch</code> API, проміси, <code>async/await</code>, <code>Geolocation</code> API та багато іншого."
         ]
       },
       "workshop-fcc-authors-page": {
