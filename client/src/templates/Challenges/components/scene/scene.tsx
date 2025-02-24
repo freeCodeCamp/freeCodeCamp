@@ -309,7 +309,7 @@ export function Scene({
         {!sceneIsReady ? (
           <Loader />
         ) : (
-          <>
+          <React.Fragment>
             {characters.map(
               (
                 { character, position = {}, opacity = 1, isTalking = false },
@@ -367,7 +367,7 @@ export function Scene({
                 )}
               </div>
             )}
-          </>
+          </React.Fragment>
         )}
       </div>
       <Spacer size='m' />
