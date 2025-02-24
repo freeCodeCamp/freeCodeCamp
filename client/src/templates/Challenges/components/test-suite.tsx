@@ -25,7 +25,7 @@ function TestSuite({ tests }: TestSuiteProps): JSX.Element {
   const testSuiteTests = tests.filter(isTestSuiteTest);
 
   return (
-    <>
+    <React.Fragment>
       <h2 className='challenge-test-suite-heading'>
         {t('learn.editor-tabs.tests')}
       </h2>
@@ -63,7 +63,7 @@ function TestSuite({ tests }: TestSuiteProps): JSX.Element {
           );
         })}
       </ul>
-    </>
+    </React.Fragment>
   );
 }
 
