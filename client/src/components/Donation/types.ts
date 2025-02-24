@@ -1,4 +1,5 @@
 import type { PaymentIntentResult } from '@stripe/stripe-js';
+import { SuperBlocks } from '../../../../shared/config/curriculum';
 
 export type PaymentContext = 'modal' | 'donate page' | 'certificate';
 export type PaymentProvider = 'patreon' | 'paypal' | 'stripe' | 'stripe card';
@@ -28,3 +29,9 @@ export interface DonationApprovalData {
     paypal: boolean;
   };
 }
+
+export type DonatableSectionRecentlyCompleted = null | {
+  section: string;
+  title: string;
+  superBlock: SuperBlocks;
+};

@@ -53,8 +53,7 @@ export const defaultDonationFormState = {
 const initialState = {
   appUsername: '',
   isRandomCompletionThreshold: false,
-  recentlyClaimedBlock: null,
-  recentlyClaimedModule: null,
+  donatableSectionRecentlyCompleted: null,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
   examInProgress: false,
   isProcessing: false,
@@ -144,11 +143,8 @@ export const reducer = handleActions(
     [actionTypes.allowSectionDonationRequests]: (state, { payload }) => {
       return {
         ...state,
-        recentlyClaimedBlock: {
+        donatableSectionRecentlyCompleted: {
           block: payload.block,
-          superBlock: payload.superBlock
-        },
-        recentlyClaimedModule: {
           module: payload.module,
           superBlock: payload.superBlock
         }
@@ -298,8 +294,7 @@ export const reducer = handleActions(
     }),
     [actionTypes.preventSectionDonationRequests]: state => ({
       ...state,
-      recentlyClaimedBlock: null,
-      recentlyClaimedModule: null
+      donatableSectionRecentlyCompleted: null
     }),
     [actionTypes.setIsRandomCompletionThreshold]: (state, { payload }) => ({
       ...state,

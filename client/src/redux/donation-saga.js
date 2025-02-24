@@ -22,6 +22,7 @@ import {
   getSessionChallengeData,
   saveCurrentCount
 } from '../utils/session-storage';
+
 import { actionTypes as appTypes } from './action-types';
 import {
   openDonationModal,
@@ -34,8 +35,7 @@ import {
 } from './actions';
 import {
   isDonatingSelector,
-  recentlyClaimedBlockSelector,
-  recentlyClaimedModuleSelector,
+  donatableSectionRecentlyCompletedSelector,
   shouldRequestDonationSelector,
   isSignedInSelector,
   completedChallengesSelector
@@ -49,19 +49,25 @@ function* showDonateModalSaga() {
   const MODAL_SHOWN_KEY = 'modalShownTimestamp';
   const modalShownTimestamp = sessionStorage.getItem(MODAL_SHOWN_KEY);
   const isModalRecentlyShown = Date.now() - modalShownTimestamp < 20000;
+  const shouldShowModal = shouldRequestDonation || isModalRecentlyShown;
+  const donatableSectionRecentlyCompleted = yield select(
+    donatableSectionRecentlyCompletedSelector
+  );
 
-  if (shouldRequestDonation || isModalRecentlyShown) {
+  if (shouldShowModal) {
     yield delay(200);
-    const recentlyClaimedBlock = yield select(recentlyClaimedBlockSelector);
-    const recentlyClaimedModule = yield select(recentlyClaimedModuleSelector);
     yield put(openDonationModal());
     sessionStorage.setItem(MODAL_SHOWN_KEY, Date.now());
     yield take(appTypes.closeDonationModal);
-    if (recentlyClaimedBlock || recentlyClaimedModule) {
-      yield put(preventSectionDonationRequests());
-    } else {
+    if (!donatableSectionRecentlyCompleted) {
       yield call(saveCurrentCount);
     }
+  }
+
+  /* users can complete donatable section but have less than 10 completed challenge
+     to show the donation modal.*/
+  if (donatableSectionRecentlyCompleted) {
+    yield put(preventSectionDonationRequests());
   }
 }
 

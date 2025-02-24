@@ -10,30 +10,24 @@ import { useFeature } from '@growthbook/growthbook-react';
 import { closeDonationModal } from '../../redux/actions';
 import {
   isDonationModalOpenSelector,
-  recentlyClaimedBlockSelector,
-  recentlyClaimedModuleSelector
+  donatableSectionRecentlyCompletedSelector
 } from '../../redux/selectors';
-import { SuperBlocks } from '../../../../shared/config/curriculum';
+
 import { isLocationSuperBlock } from '../../utils/path-parsers';
 import { playTone } from '../../utils/tone';
 import callGA from '../../analytics/call-ga';
+import { DonatableSectionRecentlyCompleted } from './types';
 import DonationModalBody from './donation-modal-body';
-
-type RecentlyClaimedBlock = null | { block: string; superBlock: SuperBlocks };
-type RecentlyClaimedModule = null | { module: string; superBlock: SuperBlocks };
 
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
-  recentlyClaimedBlockSelector,
-  recentlyClaimedModuleSelector,
+  donatableSectionRecentlyCompletedSelector,
   (
     show: boolean,
-    recentlyClaimedBlock: RecentlyClaimedBlock,
-    recentlyClaimedModule: RecentlyClaimedModule
+    donatableSectionRecentlyCompleted: DonatableSectionRecentlyCompleted
   ) => ({
     show,
-    recentlyClaimedBlock,
-    recentlyClaimedModule
+    donatableSectionRecentlyCompleted
   })
 );
 
@@ -44,8 +38,7 @@ type DonateModalProps = {
   activeDonors?: number;
   closeDonationModal: typeof closeDonationModal;
   location?: WindowLocation;
-  recentlyClaimedBlock: RecentlyClaimedBlock;
-  recentlyClaimedModule: RecentlyClaimedModule;
+  donatableSectionRecentlyCompleted: DonatableSectionRecentlyCompleted;
   show: boolean;
 };
 
@@ -53,8 +46,7 @@ function DonateModal({
   show,
   closeDonationModal,
   location,
-  recentlyClaimedBlock,
-  recentlyClaimedModule
+  donatableSectionRecentlyCompleted
 }: DonateModalProps): JSX.Element {
   const [canClose, setCanClose] = useState(false);
   const isA11yFeatureEnabled = useFeature('a11y-donation-modal').on;
@@ -66,11 +58,11 @@ function DonateModal({
       callGA({
         event: 'donation_view',
         action: `Displayed ${
-          recentlyClaimedBlock !== null ? 'Block' : 'Progress'
+          donatableSectionRecentlyCompleted !== null ? 'Block' : 'Progress'
         } Donation Modal`
       });
     }
-  }, [show, recentlyClaimedBlock]);
+  }, [show, donatableSectionRecentlyCompleted]);
 
   const handleModalHide = () => {
     // If modal is open on a SuperBlock page
@@ -87,8 +79,7 @@ function DonateModal({
     <Modal size='large' onClose={handleModalHide} open={show}>
       <DonationModalBody
         closeDonationModal={closeDonationModal}
-        recentlyClaimedBlock={recentlyClaimedBlock}
-        recentlyClaimedModule={recentlyClaimedModule}
+        donatableSectionRecentlyCompleted={donatableSectionRecentlyCompleted}
         setCanClose={setCanClose}
       />
     </Modal>

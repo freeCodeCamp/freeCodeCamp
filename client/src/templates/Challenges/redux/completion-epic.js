@@ -251,29 +251,22 @@ export default function completionEpic(action$, state$) {
         : nextChallengePath;
 
       const canAllowDonationRequest = (state, action) => {
-        if (action.type === submitActionTypes.submitComplete) {
-          if (
-            (superBlock !== SuperBlocks.FullStackDeveloper &&
-              isBlockNewlyCompletedSelector(state)) ||
-            (superBlock === SuperBlocks.FullStackDeveloper &&
-              isModuleNewlyCompletedSelector(state))
-          ) {
-            return true;
-          }
-        }
-
-        return false;
+        if (action.type !== submitActionTypes.submitComplete) return null;
+        const donationData =
+          superBlock !== SuperBlocks.FullStackDeveloper
+            ? isBlockNewlyCompletedSelector(state) && { block, superBlock }
+            : isModuleNewlyCompletedSelector(state) && { module, superBlock };
+        return donationData ? allowSectionDonationRequests(donationData) : null;
       };
 
       return submitter(type, state).pipe(
         concat(
           of(setIsAdvancing(!isLastChallengeInBlock), setIsProcessing(false))
         ),
-        mergeMap(x =>
-          canAllowDonationRequest(state, x)
-            ? of(x, allowSectionDonationRequests({ superBlock, block, module }))
-            : of(x)
-        ),
+        mergeMap(x => {
+          const donationAction = canAllowDonationRequest(state, x);
+          return donationAction ? of(x, donationAction) : of(x);
+        }),
         mergeMap(x => of(x, setRenderStartTime(Date.now()))),
         tap(res => {
           if (res.type !== submitActionTypes.updateFailed) {

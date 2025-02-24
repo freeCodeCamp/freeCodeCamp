@@ -1,5 +1,4 @@
 import { Certification } from '../../../shared/config/certification-settings';
-import { SuperBlocks } from '../../../shared/config/curriculum';
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
 import { ns as MainApp } from './action-types';
@@ -23,10 +22,20 @@ export const isDonationModalOpenSelector = state =>
   state[MainApp].showDonationModal;
 export const isSignoutModalOpenSelector = state =>
   state[MainApp].showSignoutModal;
-export const recentlyClaimedBlockSelector = state =>
-  state[MainApp].recentlyClaimedBlock;
-export const recentlyClaimedModuleSelector = state =>
-  state[MainApp].recentlyClaimedModule;
+export const donatableSectionRecentlyCompletedSelector = state => {
+  const donatableSectionRecentlyCompletedState =
+    state[MainApp].donatableSectionRecentlyCompleted;
+
+  if (donatableSectionRecentlyCompletedState) {
+    const { block, module, superBlock } =
+      donatableSectionRecentlyCompletedState;
+    if (module) return { section: 'module', title: module, superBlock };
+    else if (block) return { section: 'block', title: block, superBlock };
+  }
+
+  return null;
+};
+
 export const donationFormStateSelector = state =>
   state[MainApp].donationFormState;
 export const updateCardStateSelector = state => state[MainApp].updateCardState;
@@ -38,8 +47,8 @@ export const showCertFetchStateSelector = state =>
 export const shouldRequestDonationSelector = state => {
   const completedChallengeCount = completedChallengesSelector(state).length;
   const isDonating = isDonatingSelector(state);
-  const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
-  const recentlyClaimedModule = recentlyClaimedModuleSelector(state);
+  const donatableSectionRecentlyCompleted =
+    donatableSectionRecentlyCompletedSelector(state);
   const isRandomCompletionThreshold =
     isRandomCompletionThresholdSelector(state);
 
@@ -51,17 +60,7 @@ export const shouldRequestDonationSelector = state => {
   if (completedChallengeCount < 10) return false;
 
   // a block or module has been completed
-  if (
-    recentlyClaimedBlock &&
-    recentlyClaimedBlock.superBlock !== SuperBlocks.FullStackDeveloper
-  )
-    return true;
-
-  if (
-    recentlyClaimedModule &&
-    recentlyClaimedModule.superBlock === SuperBlocks.FullStackDeveloper
-  )
-    return true;
+  if (donatableSectionRecentlyCompleted) return true;
 
   const sessionChallengeData = getSessionChallengeData();
   /*
