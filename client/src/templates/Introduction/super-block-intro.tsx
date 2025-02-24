@@ -235,7 +235,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <Helmet>
         <title>{i18nTitle} | freeCodeCamp.org</title>
       </Helmet>
@@ -294,10 +294,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 </div>
               )}
               {!isSignedIn && !signInLoading && (
-                <>
+                <React.Fragment>
                   <Spacer size='l' />
                   <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-                </>
+                </React.Fragment>
               )}
               <Spacer size='l' />
               <h3
@@ -314,7 +314,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
         </main>
       </Container>
       <DonateModal location={props.location} />
-    </>
+    </React.Fragment>
   );
 };
 
