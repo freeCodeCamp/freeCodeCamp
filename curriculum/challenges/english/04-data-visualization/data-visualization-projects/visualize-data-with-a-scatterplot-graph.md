@@ -4,6 +4,7 @@ title: Visualize Data with a Scatterplot Graph
 challengeType: 3
 forumTopicId: 301467
 dashedName: visualize-data-with-a-scatterplot-graph
+solutionLink: https://scatterplot-graph.freecodecamp.rocks
 ---
 
 # --description--

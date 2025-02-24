@@ -4,6 +4,7 @@ title: Map Data Across the Globe
 challengeType: 3
 forumTopicId: 302365
 dashedName: map-data-across-the-globe
+solutionLink: https://codepen.io/freeCodeCamp/full/mVEJag
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: Visualize Data with a Heat Map
 challengeType: 3
 forumTopicId: 301466
 dashedName: visualize-data-with-a-heat-map
+solutionLink: https://heat-map.freecodecamp.rocks
 ---
 
 # --description--

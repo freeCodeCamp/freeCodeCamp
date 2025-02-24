@@ -4,6 +4,7 @@ title: Visualize Data with a Treemap Diagram
 challengeType: 3
 forumTopicId: 301468
 dashedName: visualize-data-with-a-treemap-diagram
+solutionLink: https://treemap-diagram.freecodecamp.rocks
 ---
 
 # --description--

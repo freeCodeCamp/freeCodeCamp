@@ -4,6 +4,7 @@ title: Build the Game of Life
 challengeType: 3
 forumTopicId: 302362
 dashedName: build-the-game-of-life
+solutionLink: https://codepen.io/freeCodeCamp/full/mVEJag
 ---
 
 # --description--

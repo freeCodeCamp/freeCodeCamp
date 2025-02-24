@@ -4,6 +4,7 @@ title: Build a freeCodeCamp Forum Homepage
 challengeType: 3
 forumTopicId: 302349
 dashedName: build-a-freecodecamp-forum-homepage
+solutionLink: https://codepen.io/freeCodeCamp/full/JqdoMV
 ---
 
 # --description--

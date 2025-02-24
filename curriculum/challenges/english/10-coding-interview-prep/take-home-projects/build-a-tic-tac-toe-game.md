@@ -4,6 +4,7 @@ title: Build a Tic Tac Toe Game
 challengeType: 3
 forumTopicId: 302358
 dashedName: build-a-tic-tac-toe-game
+solutionLink: https://codepen.io/freeCodeCamp/full/KzXQgy
 ---
 
 # --description--
