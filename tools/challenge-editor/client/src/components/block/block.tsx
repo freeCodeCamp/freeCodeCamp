@@ -87,7 +87,7 @@ const Block = () => {
           </Link>
         </p>
       ) : isTaskBasedSuperblock ? (
-        <>
+        <React.Fragment>
           <p>
             Looking to add or remove challenges? Navigate to <br />
             <code>
@@ -123,9 +123,9 @@ const Block = () => {
             Refresh the page after running a command to see the changes
             reflected.
           </p>
-        </>
+        </React.Fragment>
       ) : (
-        <>
+        <React.Fragment>
           <p>
             Looking to add or remove challenges? Navigate to <br />
             <code>
@@ -153,7 +153,7 @@ const Block = () => {
             Refresh the page after running a command to see the changes
             reflected.
           </p>
-        </>
+        </React.Fragment>
       )}
     </div>
   );
