@@ -228,7 +228,7 @@ const ShowGeneric = ({
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
               {videoId && (
-                <>
+                <React.Fragment>
                   <VideoPlayer
                     bilibiliIds={bilibiliIds}
                     onVideoLoad={handleVideoIsLoaded}
@@ -238,7 +238,7 @@ const ShowGeneric = ({
                     videoLocaleIds={videoLocaleIds}
                   />
                   <Spacer size='m' />
-                </>
+                </React.Fragment>
               )}
             </Col>
 
@@ -248,13 +248,13 @@ const ShowGeneric = ({
               {transcript && <ChallengeTranscript transcript={transcript} />}
 
               {instructions && (
-                <>
+                <React.Fragment>
                   <ChallengeDescription
                     instructions={instructions}
                     superBlock={superBlock}
                   />
                   <Spacer size='m' />
-                </>
+                </React.Fragment>
               )}
 
               {assignments.length > 0 && (
