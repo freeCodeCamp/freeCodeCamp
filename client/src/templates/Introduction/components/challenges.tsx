@@ -87,7 +87,7 @@ function Challenges({
   );
 
   return isGridMap ? (
-    <>
+    <React.Fragment>
       {firstIncompleteChallenge && (
         <div className='challenge-jump-link'>
           <ButtonLink size='small' href={firstIncompleteChallenge.fields.slug}>
@@ -132,7 +132,7 @@ function Challenges({
           ))}
         </ul>
       </nav>
-    </>
+    </React.Fragment>
   ) : (
     <ul className={`map-challenges-ul`}>
       {challenges.map(challenge => (
