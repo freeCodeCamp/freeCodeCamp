@@ -218,10 +218,10 @@ const ShowFillInTheBlank = ({
               {transcript && <ChallengeTranscript transcript={transcript} />}
 
               {instructions && (
-                <>
+                <React.Fragment>
                   <PrismFormatted text={instructions} />
                   <Spacer size='xs' />
-                </>
+                </React.Fragment>
               )}
 
               {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
