@@ -94,7 +94,7 @@ export function SolutionDisplayWidget({
     </Button>
   );
   const MissingSolutionComponentForCertification = (
-    <>{t('certification.project.no-solution')}</>
+    <React.Fragment>{t('certification.project.no-solution')}</React.Fragment>
   );
   const ShowUserCode = (
     <Button block={true} variant='primary' onClick={showUserCode}>
@@ -191,7 +191,7 @@ export function SolutionDisplayWidget({
   );
   const MissingSolutionComponent =
     displayContext === 'settings' ? (
-      <>{t('certification.project.no-solution')}</>
+      <React.Fragment>{t('certification.project.no-solution')}</React.Fragment>
     ) : null;
 
   const displayComponents =
