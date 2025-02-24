@@ -24,7 +24,7 @@ function SolutionViewer({ challengeFiles, solution }: Props): JSX.Element {
     : challengeFiles;
 
   return (
-    <>
+    <React.Fragment>
       {solutions.map(({ fileKey, ext, contents }) => (
         <Panel variant='primary' className='solution-viewer' key={fileKey}>
           <Panel.Heading>{ext.toUpperCase()}</Panel.Heading>
@@ -43,7 +43,7 @@ function SolutionViewer({ challengeFiles, solution }: Props): JSX.Element {
           </Panel.Body>
         </Panel>
       ))}
-    </>
+    </React.Fragment>
   );
 }
 export default SolutionViewer;
