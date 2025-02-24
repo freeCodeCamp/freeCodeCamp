@@ -59,11 +59,11 @@ function ConditionalContent({
 
   if (isSignedIn && !isDonating) {
     return (
-      <>
+      <React.Fragment>
         <h1 className='text-center'>{t('learn.donation-record-not-found')}</h1>
         <Spacer size='m' />
         <p className='text-center'>{t('learn.contact-support-mistake')}</p>
-      </>
+      </React.Fragment>
     );
   } else if (isSignedIn && isDonating) {
     const { success, error, redirecting } = updateCardState;
@@ -78,20 +78,20 @@ function ConditionalContent({
       );
     } else
       return (
-        <>
+        <React.Fragment>
           <Spacer size='m' />
           <Button block={true} onClick={handleClick}>
             {t('buttons.update-card')}
           </Button>
-        </>
+        </React.Fragment>
       );
   } else
     return (
-      <>
+      <React.Fragment>
         <h1 className='text-center'>{t('learn.sign-in-card-update')}</h1>
         <Spacer size='m' />
         <BigCallToAction text={t('buttons.sign-in')} />
-      </>
+      </React.Fragment>
     );
 }
 
@@ -118,7 +118,7 @@ function UpdateStripeCard({
   }, [isUpdateSuccessful, updateCardComplete]);
 
   return (
-    <>
+    <React.Fragment>
       <Helmet>
         <title>{t('misc.update-your-card')} | freeCodeCamp.org</title>
       </Helmet>
@@ -136,7 +136,7 @@ function UpdateStripeCard({
           </Col>
         </Row>
       </Container>
-    </>
+    </React.Fragment>
   );
 }
 
