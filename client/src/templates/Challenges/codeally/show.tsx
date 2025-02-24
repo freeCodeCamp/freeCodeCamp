@@ -315,7 +315,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
 
               <Spacer size='m' />
               {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
-                <>
+                <React.Fragment>
                   <div className='ca-description'>
                     {t('learn.complete-both-steps')}
                   </div>
@@ -330,7 +330,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
                   <Spacer size='m' />
                   <PrismFormatted text={instructions} />
                   <Spacer size='m' />
-                </>
+                </React.Fragment>
               )}
               <Alert variant='info'>
                 <Trans
@@ -372,7 +372,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
                 onClick={startCourse}
               />
               {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
-                <>
+                <React.Fragment>
                   <hr />
                   <Spacer size='m' />
                   <ChallengeHeading
@@ -392,7 +392,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
                     onSubmit={handleSubmit}
                     updateSolutionForm={updateSolutionFormValues}
                   />
-                </>
+                </React.Fragment>
               )}
               <Spacer size='xxs' />
               <ProjectToolPanel />
