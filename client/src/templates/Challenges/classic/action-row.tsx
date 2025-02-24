@@ -80,7 +80,7 @@ const ActionRow = ({
             </button>
           )}
           {hasPreview && (
-            <>
+            <React.Fragment>
               <button
                 data-playwright-test-label='preview-pane-button'
                 aria-expanded={!!showPreviewPane}
@@ -96,7 +96,7 @@ const ActionRow = ({
                 <span className='sr-only'>{getPreviewBtnsSrText().portal}</span>
                 <FontAwesomeIcon icon={faWindowRestore} />
               </button>
-            </>
+            </React.Fragment>
           )}
         </div>
       </div>
