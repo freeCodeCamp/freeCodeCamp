@@ -77,12 +77,12 @@ function ToolPanel({
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
       {isSignedIn && canSaveToDB(challengeType) && (
-        <>
+        <React.Fragment>
           <Spacer size='xxs' />
           <Button block={true} variant='primary' onClick={saveChallenge}>
             {isMobile ? t('buttons.save') : t('buttons.save-code')}
           </Button>
-        </>
+        </React.Fragment>
       )}
       <Spacer size='xxs' />
       <Button block={true} variant='primary' onClick={openResetModal}>
