@@ -48,7 +48,7 @@ const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
 const {
-  createHeader,
+  createContent,
   testId
 } = require('../../client/src/templates/Challenges/utils/frame');
 const { SuperBlocks } = require('../../shared/config/curriculum');
@@ -657,7 +657,7 @@ async function getWorkerEvaluator(build, sources, code, runsInPythonWorker) {
 
 async function initializeTestRunner(build, sources, code, loadEnzyme) {
   await page.reload();
-  await page.setContent(createHeader(testId) + build);
+  await page.setContent(createContent(testId, { build, sources }));
   await page.evaluate(
     async (code, sources, loadEnzyme) => {
       const getUserInput = fileName => sources[fileName];

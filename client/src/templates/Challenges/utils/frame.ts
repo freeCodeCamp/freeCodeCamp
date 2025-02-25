@@ -89,7 +89,7 @@ const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 // The "fcc-hide-header" class on line 95 is added to ensure that the CSSHelper class ignores this style element
 // during tests, preventing CSS-related test failures.
 
-export const createHeader = (id = mainPreviewId) =>
+const createHeader = (id = mainPreviewId) =>
   `
   <base href='' />
   <style class="fcc-hide-header">
@@ -368,20 +368,24 @@ const waitForFrame = (frameContext: Context) => {
   });
 };
 
-const writeContentToFrame = (frameContext: Context) => {
+export const createContent = (
+  id: string,
+  { build, sources }: { build: string; sources: Source }
+) => {
   // DOCTYPE should be the first thing written to the frame, so if the user code
   // includes a DOCTYPE declaration, we need to find it and write it first.
-  const doctype =
-    frameContext.sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
-  const content =
-    doctype + createHeader(frameContext.element.id) + frameContext.build;
+  const doctype = sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
+  return doctype + createHeader(id) + build;
+};
+
+const writeContentToFrame = (id: string) => (frameContext: Context) => {
   const frame = frameContext.document;
 
   // it's possible, if the preview is rapidly opened and closed, for the frame
   // to be null at this point.
   if (frame) {
     frame.open();
-    frame.write(content);
+    frame.write(createContent(id, frameContext));
     frame.close();
   }
   return frameContext;
@@ -459,7 +463,7 @@ const createFramer = ({
     updateWindowFunctions ?? noop,
     updateProxyConsole(proxyLogger),
     updateWindowI18next,
-    writeContentToFrame,
+    writeContentToFrame(id),
     restoreScrollPosition,
     init(frameReady, proxyLogger)
   ) as (args: Context) => void;
