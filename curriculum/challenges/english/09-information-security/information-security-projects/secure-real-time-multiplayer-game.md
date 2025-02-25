@@ -4,6 +4,7 @@ title: Secure Real Time Multiplayer Game
 challengeType: 4
 forumTopicId: 462375
 dashedName: secure-real-time-multiplayer-game
+solutionLink: https://secure-real-time-multiplayer-game.freecodecamp.rocks
 ---
 
 # --description--
