@@ -37,12 +37,12 @@ const errorHandling: FastifyPluginCallback = (fastify, _options, done) => {
       error.code === 'FST_CSRF_INVALID_TOKEN' ||
       error.code === 'FST_CSRF_MISSING_SECRET';
 
-    if (isCSRFError) {
-      // log nothing, since we don't want to fill up the logs with CSRF errors
-    } else if (reply.statusCode >= 500) {
-      logger.error(error);
-    } else {
-      logger.warn(error);
+    if (!isCSRFError) {
+      if (reply.statusCode >= 500) {
+        logger.error(error);
+      } else {
+        logger.warn(error);
+      }
     }
 
     const message =
