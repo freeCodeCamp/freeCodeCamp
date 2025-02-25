@@ -29,7 +29,7 @@ Add a click event handler inside of the `DOMContentLoaded` function for the elem
 Your code should use the `document.getElementById` method to select the element whose id is `getMessage`.
 
 ```js
-assert.match(code, /document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g);
+assert.match(code, /document\s*\.getElementById\(\s*('|")getMessage\1\s*\)/g);
 ```
 
 Your code should add an `onclick` event handler.

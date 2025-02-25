@@ -46,7 +46,7 @@ The `output` variable should call `scale` with an argument of `50`.
 
 ```js
 assert.strictEqual(output, 50);
-assert.match(code, /scale\(\s*?50\s*?\)/g);
+assert.match(code, /scale\(\s*50\s*\)/g);
 ```
 
 # --seed--

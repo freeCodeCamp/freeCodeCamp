@@ -61,7 +61,7 @@ You should display the user's position within the `div` element with `id="data"`
 ```js
 assert.match(
   code,
-  /document\.getElementById\(\s*?('|")data\1\s*?\)\.innerHTML/g
+  /document\.getElementById\(\s*('|")data\1\s*\)\.innerHTML/g
 );
 ```
 

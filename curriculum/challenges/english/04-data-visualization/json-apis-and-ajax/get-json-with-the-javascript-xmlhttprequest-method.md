@@ -52,7 +52,7 @@ Your code should use the `open` method to initialize a `GET` request to the free
 ```js
 assert.match(
   code,
-  /\.open\(\s*?('|")GET\1\s*?,\s*?('|")\/json\/cats\.json\2\s*?,\s*?true\s*?\)/g
+  /\.open\(\s*('|")GET\1\s*,\s*('|")\/json\/cats\.json\2\s*,\s*true\s*\)/g
 );
 ```
 
@@ -67,7 +67,7 @@ Your code should have an `onload` event handler set to a function.
 ```js
 assert.match(
   code,
-  /\.onload\s*=\s*(function|\(\s*?\))\s*?(\(\s*?\)|\=\>)\s*?{/g
+  /\.onload\s*=\s*(function|\(\s*\))\s*(\(\s*\)|\=\>)\s*{/g
 );
 ```
 

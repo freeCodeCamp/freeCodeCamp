@@ -44,13 +44,13 @@ Update the code so it makes a `POST` request to the API endpoint. Then type your
 Your code should create a new `XMLHttpRequest`.
 
 ```js
-assert.match(code, /new\s+?XMLHttpRequest\(\s*?\)/g);
+assert.match(code, /new\s*XMLHttpRequest\(\s*\)/g);
 ```
 
 Your code should use the `open` method to initialize a `POST` request to the server.
 
 ```js
-assert.match(code, /\.open\(\s*?('|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g);
+assert.match(code, /\.open\(\s*('|")POST\1\s*,\s*url\s*,\s*true\s*\)/g);
 ```
 
 Your code should use the `setRequestHeader` method.
@@ -58,14 +58,14 @@ Your code should use the `setRequestHeader` method.
 ```js
 assert.match(
   code,
-  /\.setRequestHeader\(\s*?('|")Content-Type\1\s*?,\s*?('|")application\/json;\s*charset=UTF-8\2\s*?\)/g
+  /\.setRequestHeader\(\s*('|")Content-Type\1\s*,\s*('|")application\/json;\s*charset=UTF-8\2\s*\)/g
 );
 ```
 
 Your code should have an `onreadystatechange` event handler set to a function.
 
 ```js
-assert.match(code, /\.onreadystatechange\s*?=/g);
+assert.match(code, /\.onreadystatechange\s*=/g);
 ```
 
 Your code should get the element with class `message` and change its `textContent` to `userName loves cats`
@@ -80,7 +80,7 @@ assert.match(
 Your code should use the `send` method.
 
 ```js
-assert.match(code, /\.send\(\s*?body\s*?\)/g);
+assert.match(code, /\.send\(\s*body\s*\)/g);
 ```
 
 # --seed--
