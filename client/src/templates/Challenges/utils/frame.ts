@@ -368,7 +368,15 @@ const waitForFrame = (frameContext: Context) => {
   });
 };
 
-function writeToFrame(content: string, frame?: FrameDocument) {
+const writeContentToFrame = (frameContext: Context) => {
+  // DOCTYPE should be the first thing written to the frame, so if the user code
+  // includes a DOCTYPE declaration, we need to find it and write it first.
+  const doctype =
+    frameContext.sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
+  const content =
+    doctype + createHeader(frameContext.element.id) + frameContext.build;
+  const frame = frameContext.document;
+
   // it's possible, if the preview is rapidly opened and closed, for the frame
   // to be null at this point.
   if (frame) {
@@ -376,17 +384,10 @@ function writeToFrame(content: string, frame?: FrameDocument) {
     frame.write(content);
     frame.close();
   }
-}
+  return frameContext;
+};
 
-const writeContentToFrame = (frameContext: Context) => {
-  const doctype =
-    frameContext.sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
-
-  writeToFrame(
-    doctype + createHeader(frameContext.element.id) + frameContext.build,
-    frameContext.document
-  );
-
+const restoreScrollPosition = (frameContext: Context) => {
   scrollManager.registerScrollEventListener(frameContext.element);
 
   if (scrollManager.getPreviewScrollPosition()) {
@@ -459,5 +460,6 @@ const createFramer = ({
     updateProxyConsole(proxyLogger),
     updateWindowI18next,
     writeContentToFrame,
+    restoreScrollPosition,
     init(frameReady, proxyLogger)
   ) as (args: Context) => void;
