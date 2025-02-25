@@ -16,6 +16,10 @@ export interface Source {
   original: { [key: string]: string | null };
 }
 
+interface Hooks {
+  beforeAll?: string;
+}
+
 export interface Context {
   window?: Window &
     typeof globalThis & { i18nContent?: i18n; __pyodide: unknown };
@@ -23,6 +27,7 @@ export interface Context {
   element: HTMLIFrameElement;
   build: string;
   sources: Source;
+  hooks?: Hooks;
   loadEnzyme?: () => void;
 }
 
@@ -136,6 +141,18 @@ const createHeader = (id = mainPreviewId) =>
     }, false);
   </script>
 `;
+
+const createBeforeAllScript = (beforeAll?: string) => {
+  if (!beforeAll) return '';
+
+  return `
+<script>
+  (() => {
+    ${beforeAll};
+  })();
+</script>
+    `;
+};
 
 type TestResult =
   | { pass: boolean }
@@ -370,12 +387,14 @@ const waitForFrame = (frameContext: Context) => {
 
 export const createContent = (
   id: string,
-  { build, sources }: { build: string; sources: Source }
+  { build, sources, hooks }: { build: string; sources: Source; hooks?: Hooks }
 ) => {
   // DOCTYPE should be the first thing written to the frame, so if the user code
   // includes a DOCTYPE declaration, we need to find it and write it first.
   const doctype = sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
-  return doctype + createHeader(id) + build;
+  return (
+    doctype + createBeforeAllScript(hooks?.beforeAll) + createHeader(id) + build
+  );
 };
 
 const writeContentToFrame = (id: string) => (frameContext: Context) => {
