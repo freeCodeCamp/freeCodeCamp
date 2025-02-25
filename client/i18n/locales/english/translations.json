@@ -110,7 +110,16 @@
     "closed-caption": "Closed caption",
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
-    "share-on-threads": "Share on Threads"
+    "share-on-threads": "Share on Threads",
+    "start": "Start",
+    "go-to-archive": "Go to archive"
+  },
+  "daily-coding-challenge": {
+    "level": {
+      "1": "Beginner",
+      "2": "Intermediate",
+      "3": "Advanced"
+    }
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",

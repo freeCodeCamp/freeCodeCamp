@@ -16,6 +16,7 @@ import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink } from '../helpers';
 import { showUpcomingChanges } from '../../../config/env.json';
+import DailyCodingChallenge from '../daily-coding-challenge/daily-coding-challenge';
 
 import './map.css';
 
@@ -190,24 +191,36 @@ function Map({
         }
 
         return (
-          <Fragment key={stage}>
-            <h2 className={forLanding ? 'big-heading' : ''}>
-              {t(superBlockHeadings[stage])}
-            </h2>
-            <ul key={stage}>
-              {superblocks.map((superblock, i) => (
-                <MapLi
-                  key={superblock}
-                  superBlock={superblock}
-                  landing={forLanding}
-                  index={i}
-                  claimed={isClaimed(superblock)}
-                  completed={allSuperblockChallengesCompleted(superblock)}
-                />
-              ))}
-            </ul>
-            <Spacer size='m' />
-          </Fragment>
+          <>
+            {
+              /*Show the daily coding challenge above the core curriculum */
+              stage === SuperBlockStage.Core && (
+                <>
+                  <DailyCodingChallenge forLanding={forLanding} />
+                  <Spacer size='m' />
+                </>
+              )
+            }
+
+            <Fragment key={stage}>
+              <h2 className={forLanding ? 'big-heading' : ''}>
+                {t(superBlockHeadings[stage])}
+              </h2>
+              <ul key={stage}>
+                {superblocks.map((superblock, i) => (
+                  <MapLi
+                    key={superblock}
+                    superBlock={superblock}
+                    landing={forLanding}
+                    index={i}
+                    claimed={isClaimed(superblock)}
+                    completed={allSuperblockChallengesCompleted(superblock)}
+                  />
+                ))}
+              </ul>
+              <Spacer size='m' />
+            </Fragment>
+          </>
         );
       })}
     </div>
