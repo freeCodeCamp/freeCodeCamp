@@ -35,8 +35,8 @@ interface Block<T> {
 
 export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.RespWebDesignNew, public: true },
-  { dashedName: SuperBlocks.MachineLearningPy, public: true },
   { dashedName: SuperBlocks.DataAnalysisPy, public: true },
+  { dashedName: SuperBlocks.MachineLearningPy, public: true },
   { dashedName: SuperBlocks.CollegeAlgebraPy, public: true },
   { dashedName: SuperBlocks.A2English, public: true },
   { dashedName: SuperBlocks.B1English, public: true },
