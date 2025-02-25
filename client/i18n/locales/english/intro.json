@@ -2602,10 +2602,10 @@
           "In this workshop, you'll build a magazine article. You'll practice how to use CSS Grid, including concepts like grid rows and grid columns."
         ]
       },
-      "lab-magazine-layout": {
-        "title": "Design a Magazine Layout",
+      "lab-newspaper-layout": {
+        "title": "Design a Newspaper Layout",
         "intro": [
-          "In this lab, you will design a magazine layout using CSS Grid, including concepts like grid rows and grid columns."
+          "In this lab, you will design a newspaper layout using CSS Grid, including concepts like grid rows and grid columns."
         ]
       },
       "lecture-debugging-css": {
