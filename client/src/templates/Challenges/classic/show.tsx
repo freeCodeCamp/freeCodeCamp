@@ -15,11 +15,11 @@ import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
-import {
+import type {
+  ChallengeData,
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
-  CompletedChallenge,
   ResizeProps,
   SavedChallenge,
   SavedChallengeFiles,
@@ -63,6 +63,7 @@ import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -113,7 +114,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   pageContext: {
     challengeMeta: ChallengeMeta;
     projectPreview: {
-      challengeData: CompletedChallenge;
+      challengeData: ChallengeData;
     };
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
@@ -157,6 +158,7 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
 };
 
 const StepPreview = ({
+  dimensions,
   disableIframe,
   previewMounted,
   challengeType,
@@ -164,10 +166,11 @@ const StepPreview = ({
 }: Pick<PreviewProps, 'disableIframe' | 'previewMounted'> & {
   challengeType: number;
   xtermFitRef: React.MutableRefObject<FitAddon | null>;
+  dimensions?: { width: number; height: number };
 }) => {
   return challengeType === challengeTypes.python ||
     challengeType === challengeTypes.multifilePythonCertProject ? (
-    <XtermTerminal xtermFitRef={xtermFitRef} />
+    <XtermTerminal dimensions={dimensions} xtermFitRef={xtermFitRef} />
   ) : (
     <Preview disableIframe={disableIframe} previewMounted={previewMounted} />
   );
@@ -240,18 +243,8 @@ function ShowClassic({
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
-  const showConsole = challengeType === challengeTypes.js;
-  // TODO: show preview should NOT be computed like this. That determination is
-  // made during the build (at least twice!). It should be either a prop or
-  // computed from challengeType
-  const showPreview = [
-    challengeTypes.html,
-    challengeTypes.modern,
-    challengeTypes.multifileCertProject,
-    challengeTypes.multifilePythonCertProject,
-    challengeTypes.python,
-    challengeTypes.lab
-  ].includes(challengeType);
+  const openConsole = isJavaScriptChallenge({ challengeType });
+  const hasPreview = challengeHasPreview({ challengeType });
   const getLayoutState = () => {
     const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout | null;
 
@@ -462,7 +455,7 @@ function ShowClassic({
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             hasEditableBoundaries={hasEditableBoundaries}
-            hasPreview={showPreview}
+            hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: null,
               hasDemo: demoType === 'onClick'
@@ -497,7 +490,7 @@ function ShowClassic({
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             hasEditableBoundaries={hasEditableBoundaries}
-            hasPreview={showPreview}
+            hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
               hasDemo: demoType === 'onClick'
@@ -519,7 +512,7 @@ function ShowClassic({
               <Output defaultOutput={defaultOutput} output={output} />
             }
             windowTitle={windowTitle}
-            startWithConsoleShown={showConsole}
+            startWithConsoleShown={openConsole}
           />
         )}
         <CompletionModal />

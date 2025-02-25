@@ -139,7 +139,7 @@ function getBlockOrder(blockName, superBlockStructure) {
       `The block "${blockName}" does not appear in the superblock structure.`
     );
 
-  return index + 1;
+  return index;
 }
 exports.createSuperOrder = createSuperOrder;
 exports.getSuperOrder = getSuperOrder;

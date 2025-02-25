@@ -1,17 +1,19 @@
 // originally based off of https://github.com/gulpjs/vinyl
 import invariant from 'invariant';
 
-const exts = ['js', 'html', 'css', 'jsx', 'ts'] as const;
+const exts = ['js', 'html', 'css', 'jsx', 'ts', 'py'] as const;
 export type Ext = (typeof exts)[number];
 
-export type IncompleteChallengeFile = {
+export interface IncompleteChallengeFile {
   fileKey: string;
   ext: Ext;
   name: string;
   contents: string;
-};
+  head?: string;
+  tail?: string;
+}
 
-export type ChallengeFile = IncompleteChallengeFile & {
+export interface ChallengeFile extends IncompleteChallengeFile {
   editableRegionBoundaries?: number[];
   editableContents?: string;
   usesMultifileEditor?: boolean;
@@ -19,10 +21,10 @@ export type ChallengeFile = IncompleteChallengeFile & {
   head: string;
   tail: string;
   seed?: string;
-  source?: string | null;
+  source?: string;
   path: string;
   history: string[];
-};
+}
 
 type PolyProps = {
   name: string;
@@ -103,27 +105,30 @@ function checkPoly(poly: ChallengeFile) {
   );
 }
 
-// setContent will lose source if set
+// setContent will lose source if not supplied
 export function setContent(
   contents: string,
-  poly: ChallengeFile
+  poly: ChallengeFile,
+  source?: string
 ): ChallengeFile {
   checkPoly(poly);
   return {
     ...poly,
     contents,
-    source: null
+    source
   };
 }
 
 // This is currently only used to add back properties that are not stored in the
 // database.
-export function regeneratePathAndHistory(file: IncompleteChallengeFile) {
+export function regenerateMissingProperties(file: IncompleteChallengeFile) {
   const newPath = file.name + '.' + file.ext;
   const newFile = {
     ...file,
     path: newPath,
-    history: [newPath]
+    history: [newPath],
+    head: file.head ?? '',
+    tail: file.tail ?? ''
   };
   return newFile;
 }
@@ -157,9 +162,7 @@ export async function transformContents(
   polyP: ChallengeFile | Promise<ChallengeFile>
 ) {
   const poly = await polyP;
-  const newPoly = setContent(await wrap(poly.contents), poly);
-  // if no source exist, set the original contents as source
-  newPoly.source = poly.source || poly.contents;
+  const newPoly = setContent(await wrap(poly.contents), poly, poly.source);
   return newPoly;
 }
 
@@ -179,9 +182,11 @@ export async function transformHeadTailAndContents(
 }
 
 // createSource(poly: PolyVinyl) => PolyVinyl
-export function createSource(poly: Pick<ChallengeFile, 'contents' | 'source'>) {
+export function createSource<Rest>(
+  poly: Pick<ChallengeFile, 'contents' | 'source'> & Rest
+): Rest & { contents: string; source: string } {
   return {
     ...poly,
-    source: poly.source || poly.contents
+    source: poly.source ?? poly.contents
   };
 }

@@ -16,6 +16,7 @@ const landingPageElements = {
 } as const;
 
 const superBlocks = [
+  intro[SuperBlocks.FullStackDeveloper].title,
   intro[SuperBlocks.RespWebDesignNew].title,
   intro[SuperBlocks.JsAlgoDataStructNew].title,
   intro[SuperBlocks.FrontEndDevLibs].title,
@@ -28,7 +29,6 @@ const superBlocks = [
   intro[SuperBlocks.InfoSec].title,
   intro[SuperBlocks.MachineLearningPy].title,
   intro[SuperBlocks.CollegeAlgebraPy].title,
-  intro[SuperBlocks.FullStackDeveloper].title,
   intro[SuperBlocks.A2English].title,
   intro[SuperBlocks.B1English].title,
   intro[SuperBlocks.FoundationalCSharp].title,
@@ -201,12 +201,13 @@ test.describe('Landing Page', () => {
     }
   });
 
-  test('Has links to all curriculum', async ({ page }) => {
+  test('Links to all superblocks in order', async ({ page }) => {
     const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
     await expect(curriculumBtns).toHaveCount(superBlocks.length);
     for (let index = 0; index < superBlocks.length; index++) {
       const btn = curriculumBtns.nth(index);
-      await expect(btn).toContainText(superBlocks[index]);
+      const link = btn.getByRole('link', { name: superBlocks[index] });
+      await expect(link).toBeVisible();
     }
   });
 
