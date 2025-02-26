@@ -58,6 +58,15 @@ describe('calculateStreaks', () => {
     expect(currentStreak).toBe(0);
   });
 
+  test('Should calculate longest streak, regardless of how long ago they were', () => {
+    jest.setSystemTime(new Date(2030, 0, 15));
+    const { longestStreak, currentStreak } =
+      calculateStreaks(oldStreakCalendar);
+
+    expect(longestStreak).toBe(5);
+    expect(currentStreak).toBe(0);
+  });
+
   test('Should return a longest streak of 3 days when the current streak is 3 days', () => {
     jest.setSystemTime(new Date(2025, 0, 14));
     const { longestStreak, currentStreak } =

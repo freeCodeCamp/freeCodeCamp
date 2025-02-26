@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { startOfDay, addDays, addMonths, isEqual } from 'date-fns';
+import { startOfDay, addDays, isEqual } from 'date-fns';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 import { last } from 'lodash-es';
+import { uniq } from 'lodash';
 
 import { FullWidthRow } from '../../helpers';
 
@@ -13,24 +14,6 @@ interface StatsProps {
   calendar: Record<string, number>;
 }
 
-interface CalendarData {
-  date: Date;
-  count: number;
-}
-
-const generateCalendarData = (endOfCalendar: Date): CalendarData[] => {
-  const startOfCalendar = addDays(addMonths(endOfCalendar, -6), 1);
-  let currentDay = startOfCalendar;
-  const lastDay = endOfCalendar;
-  const data: CalendarData[] = [];
-
-  while (currentDay <= lastDay) {
-    data.push({ date: startOfDay(currentDay), count: 0 });
-    currentDay = addDays(currentDay, 1);
-  }
-  return data;
-};
-
 export const calculateStreaks = (calendar: Record<string, number>) => {
   const timestamps = Object.keys(calendar).map(
     stamp => Number.parseInt(stamp, 10) * 1000
@@ -38,35 +21,43 @@ export const calculateStreaks = (calendar: Record<string, number>) => {
 
   const today = startOfDay(Date.now());
 
-  const calendarData = generateCalendarData(today);
+  const dayStamps = uniq(timestamps.map(stamp => startOfDay(stamp)));
 
-  let longestStreak = 0;
-  let currentStreak = 0;
-  let lastIndex = -1;
+  const { longestStreak, currentStreak } = dayStamps.reduce<{
+    currentStreak: number;
+    longestStreak: number;
+    previousDay: Date | null;
+  }>(
+    (acc, day) => {
+      if (!acc.previousDay) {
+        return {
+          ...acc,
+          previousDay: day,
+          currentStreak: 1,
+          longestStreak: Math.max(1, acc.longestStreak)
+        };
+      } else {
+        const isConsecutive = isEqual(addDays(acc.previousDay, 1), day);
+        const currentStreak = isConsecutive ? acc.currentStreak + 1 : 1;
+        const longestStreak = Math.max(acc.longestStreak, currentStreak);
 
-  timestamps.forEach(stamp => {
-    const index = calendarData.findIndex(day =>
-      isEqual(day.date, startOfDay(stamp))
-    );
-
-    if (index >= 0) {
-      calendarData[index].count++;
-
-      if (index !== lastIndex) {
-        const yesterday = calendarData[index - 1];
-        currentStreak = yesterday?.count > 0 ? currentStreak + 1 : 1;
-        longestStreak = Math.max(longestStreak, currentStreak);
+        return {
+          currentStreak,
+          longestStreak,
+          previousDay: day
+        };
       }
+    },
+    { currentStreak: 0, longestStreak: 0, previousDay: null }
+  );
 
-      lastIndex = index;
-    }
-  });
+  const lastDay = last(dayStamps);
 
-  const lastTimestamp = last(timestamps);
-
-  if (lastTimestamp && !isEqual(startOfDay(lastTimestamp), today)) {
-    currentStreak = 0;
-  }
+  if (!lastDay || !isEqual(lastDay, today))
+    return {
+      longestStreak,
+      currentStreak: 0
+    };
 
   return { longestStreak, currentStreak };
 };
