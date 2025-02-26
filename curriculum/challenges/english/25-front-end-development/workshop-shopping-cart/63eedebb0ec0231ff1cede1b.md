@@ -1,28 +1,41 @@
 ---
-id: 63f03686c5ea863533ec71f4
-title: Step 49
+id: 63eedebb0ec0231ff1cede1b
+title: Step 24
 challengeType: 0
-dashedName: step-49
+dashedName: step-24
 ---
 
 # --description--
 
-Declare a variable `tax` and assign it the value of calling your new `.calculateTaxes()` method, passing `subTotal` as the argument.
+You’re on the right track! However, let’s take a moment to address a common issue when working with objects in JavaScript.
+
+When you try to access an object property that doesn’t exist, JavaScript returns `undefined`. If you then attempt to perform arithmetic operations on `undefined`, it can lead to unexpected results, such as `NaN`.
+
+To prevent this, you can use the `||` (logical OR) operator to provide a default value.
+
+```js
+  let scores = {}; 
+  let players = ["Alice", "Bob", "Charlie"];
+
+  players.forEach(player => {
+    // Ensure each player's score starts at 0 if not already set
+    scores[player] = scores[player] || 0;
+  });
+
+  console.log(scores); // { Alice: 0, Bob: 0, Charlie: 0 }
+```
+
+Now, let’s apply this concept to your `totalCountPerProduct` object. Before updating the value, make sure that each `dessert.id` property is initialized properly.
+
+Initialize `totalCountPerProduct[dessert.id]` with a default value of `0` using the `||` operator.
 
 # --hints--
 
-Use `const` to declare a variable named `tax`.
+Initialize `totalCountPerProduct[dessert.id]` with `0` as a default value using `||` at the end of the expression.
 
 ```js
-const afterCalculateTotal = code.split('calculateTotal')[1];
-assert.match(afterCalculateTotal, /const\s+tax\s*=/);
-```
-
-Assign the value of calling your new `.calculateTaxes()` method, passing `subTotal` as the argument, to the `tax` variable. Remember to use the `this` keyword.
-
-```js
-const afterCalculateTotal = code.split('calculateTotal')[1];
-assert.match(afterCalculateTotal, /const\s+tax\s*=\s*this\s*\.\s*calculateTaxes\s*\(\s*subTotal\s*\)/);
+const cart = new ShoppingCart();
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*\|\|\s*0\s*/);
 ```
 
 # --seed--
@@ -292,6 +305,7 @@ class ShoppingCart {
     this.taxRate = 8.25;
   }
 
+--fcc-editable-region--
   addItem(id, products) {
     const product = products.find((item) => item.id === id);
     const { name, price } = product;
@@ -299,55 +313,9 @@ class ShoppingCart {
 
     const totalCountPerProduct = {};
     this.items.forEach((dessert) => {
-      totalCountPerProduct[dessert.id] = (totalCountPerProduct[dessert.id] || 0) + 1;
+      totalCountPerProduct[dessert.id] = totalCountPerProduct[dessert.id]
     })
-
-    const currentProductCount = totalCountPerProduct[product.id];
-    const currentProductCountSpan = document.getElementById(`product-count-for-id${id}`);
-
-    currentProductCount > 1 
-      ? currentProductCountSpan.textContent = `${currentProductCount}x`
-      : productsContainer.innerHTML += `
-      <div id="dessert${id}" class="product">
-        <p>
-          <span class="product-count" id="product-count-for-id${id}"></span>${name}
-        </p>
-        <p>${price}</p>
-      </div>
-      `;
-  }
-
-  getCounts() {
-    return this.items.length;
-  }
-
-  calculateTaxes(amount) {
-    return parseFloat(((this.taxRate / 100) * amount).toFixed(2));
-  }
-
---fcc-editable-region--
-  calculateTotal() {
-    const subTotal = this.items.reduce((total, item) => total + item.price, 0);
-
   }
 --fcc-editable-region--
 };
-
-const cart = new ShoppingCart();
-const addToCartBtns = document.getElementsByClassName("add-to-cart-btn");
-
-[...addToCartBtns].forEach(
-  (btn) => {
-    btn.addEventListener("click", (event) => {
-      cart.addItem(Number(event.target.id), products);
-      totalNumberOfItems.textContent = cart.getCounts();
-    })
-  }
-);
-
-cartBtn.addEventListener("click", () => {
-  isCartShowing = !isCartShowing;
-  showHideCartSpan.textContent = isCartShowing ? "Hide" : "Show";
-  cartContainer.style.display = isCartShowing ? "block" : "none";
-});
 ```
