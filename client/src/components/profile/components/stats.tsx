@@ -21,7 +21,7 @@ interface CalendarData {
   count: number;
 }
 
-export const generateCalendarData = (pages: PageData[]): CalendarData[] => {
+const generateCalendarData = (pages: PageData[]): CalendarData[] => {
   let dayCounter = pages[0].startOfCalendar;
   const data: CalendarData[] = [];
 
@@ -32,18 +32,33 @@ export const generateCalendarData = (pages: PageData[]): CalendarData[] => {
   return data;
 };
 
-export const calculateStreaks = (
-  calendarData: CalendarData[],
-  timestamps: number[]
-) => {
+export const calculateStreaks = (calendar: Record<string, number>) => {
+  const timestamps = Object.keys(calendar).map(
+    stamp => Number.parseInt(stamp, 10) * 1000
+  );
+
+  const startOfTimestamps = startOfDay(new Date(timestamps[0]));
+  const endOfCalendar = startOfDay(Date.now());
+
+  const pages = generatePages(startOfTimestamps, endOfCalendar);
+  console.log('pages', pages);
+  const calendarData = generateCalendarData(pages);
+
+  console.log('calendarData', calendarData[calendarData.length - 1]);
+
   let longestStreak = 0;
   let currentStreak = 0;
   let lastIndex = -1;
 
   timestamps.forEach(stamp => {
+    console.log('stamp', stamp);
+    console.log('startOfDay(stamp)');
+    console.log(startOfDay(stamp).toISOString());
     const index = calendarData.findIndex(day =>
       isEqual(day.date, startOfDay(stamp))
     );
+
+    console.log('index', index);
 
     if (index >= 0) {
       calendarData[index].count++;
@@ -74,7 +89,7 @@ export const calculateStreaks = (
   return { longestStreak, currentStreak };
 };
 
-export const generatePages = (
+const generatePages = (
   startOfTimestamps: Date,
   endOfCalendar: Date
 ): PageData[] => {
@@ -97,20 +112,7 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
   const [longestStreak, setLongestStreak] = useState(0);
 
   useEffect(() => {
-    const timestamps = Object.keys(calendar).map(
-      stamp => Number.parseInt(stamp, 10) * 1000
-    );
-    const startOfTimestamps = startOfDay(new Date(timestamps[0]));
-    const endOfCalendar = startOfDay(Date.now());
-
-    const pages = generatePages(startOfTimestamps, endOfCalendar);
-
-    const newCalendarData = generateCalendarData(pages);
-
-    const { longestStreak, currentStreak } = calculateStreaks(
-      newCalendarData,
-      timestamps
-    );
+    const { longestStreak, currentStreak } = calculateStreaks(calendar);
 
     setLongestStreak(longestStreak);
     setCurrentStreak(currentStreak);
