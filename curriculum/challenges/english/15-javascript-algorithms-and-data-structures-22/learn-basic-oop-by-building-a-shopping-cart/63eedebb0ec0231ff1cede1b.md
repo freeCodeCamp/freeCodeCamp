@@ -9,59 +9,33 @@ dashedName: step-23a
 
 You’re on the right track! However, let’s take a moment to address a common issue when working with objects in JavaScript.
 
-When you try to access an object property that doesn’t exist, JavaScript returns `undefined`. If you then try to perform arithmetic operations on `undefined`, it can lead to unexpected results, such as `NaN`.
+When you try to access an object property that doesn’t exist, JavaScript returns `undefined`. If you then attempt to perform arithmetic operations on `undefined`, it can lead to unexpected results, such as `NaN`.
 
 To prevent this, you can use the `||` (logical OR) operator to provide a default value.
 
 ```js
-  let book = {};
+  let scores = {}; 
+  let players = ["Alice", "Bob", "Charlie"];
 
-  // Set 'numberOfCopy' to 0 if it is not already defined
-  book[numberOfCopy] = book[numberOfCopy] || 0;
+  players.forEach(player => {
+    // Ensure each player's score starts at 0 if not already set
+    scores[player] = scores[player] || 0;
+  });
 
-  console.log(book[numberOfCopy]); // 0
+  console.log(scores); // 0
 ```
 
-Now, let’s apply this concept to your `totalCountPerProduct` object. Before updating the value, make sure that each dessert.id property is initialized properly.
+Now, let’s apply this concept to your `totalCountPerProduct` object. Before updating the value, make sure that each `dessert.id` property is initialized properly.
 
-Intialize your totalCountPerProduct[dessert.id] with `0` as a default value using `||`
+Initialize `totalCountPerProduct[dessert.id]` with a default value of `0` using the `||` operator.
 
 # --hints--
 
-You should use dot notation to access the `id` property of `dessert`.
+Initialize `totalCountPerProduct[dessert.id]` with `0` as a default value using `||` at the end of the expression.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /dessert\.id/);
-```
-
-You should use bracket notation to access the property of `totalCountPerProduct` that corresponds to `dessert.id`.
-
-```js
-const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]/);
-```
-
-You should use the assignment operator to update the value of the property of `totalCountPerProduct` that corresponds to `dessert.id`.
-
-```js
-const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=/);
-```
-
-You are missing `0` as a default value at the end of the expression.
-
-```js
-const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=\s*\(\s*totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*\|\|/);
-```
-
-
-You should initialize `totalCountPerProduct[dessert.id]` with `0` as a default value using `||` at the end of the expression.
-
-```js
-const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=\s*\(\s*totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*\|\|\s*0\s*\)/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*\|\|\s*0\s*/);
 ```
 
 # --seed--
