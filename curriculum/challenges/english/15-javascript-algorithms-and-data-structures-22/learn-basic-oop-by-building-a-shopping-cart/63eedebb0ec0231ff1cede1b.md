@@ -22,7 +22,7 @@ To prevent this, you can use the `||` (logical OR) operator to provide a default
     scores[player] = scores[player] || 0;
   });
 
-  console.log(scores); // 0
+  console.log(scores); // { Alice: 0, Bob: 0, Charlie: 0 }
 ```
 
 Now, let’s apply this concept to your `totalCountPerProduct` object. Before updating the value, make sure that each `dessert.id` property is initialized properly.
