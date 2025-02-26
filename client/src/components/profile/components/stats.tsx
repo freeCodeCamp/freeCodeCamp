@@ -15,51 +15,33 @@ interface StatsProps {
 }
 
 export const calculateStreaks = (calendar: Record<string, number>) => {
+  // calendar keys are timestamps in seconds and we need them in milliseconds
   const timestamps = Object.keys(calendar).map(
     stamp => Number.parseInt(stamp, 10) * 1000
   );
+  const days = uniq(timestamps.map(stamp => startOfDay(stamp)));
 
-  const today = startOfDay(Date.now());
-
-  const dayStamps = uniq(timestamps.map(stamp => startOfDay(stamp)));
-
-  const { longestStreak, currentStreak } = dayStamps.reduce<{
-    currentStreak: number;
-    longestStreak: number;
-    previousDay: Date | null;
-  }>(
+  const { longestStreak, currentStreak } = days.reduce(
     (acc, day) => {
-      if (!acc.previousDay) {
-        return {
-          ...acc,
-          previousDay: day,
-          currentStreak: 1,
-          longestStreak: Math.max(1, acc.longestStreak)
-        };
-      } else {
-        const isConsecutive = isEqual(addDays(acc.previousDay, 1), day);
-        const currentStreak = isConsecutive ? acc.currentStreak + 1 : 1;
-        const longestStreak = Math.max(acc.longestStreak, currentStreak);
+      const isConsecutive = isEqual(addDays(acc.previousDay, 1), day);
+      const currentStreak = isConsecutive ? acc.currentStreak + 1 : 1;
+      const longestStreak = Math.max(acc.longestStreak, currentStreak);
 
-        return {
-          currentStreak,
-          longestStreak,
-          previousDay: day
-        };
-      }
+      return {
+        currentStreak,
+        longestStreak,
+        previousDay: day
+      };
     },
-    { currentStreak: 0, longestStreak: 0, previousDay: null }
+    // the site didn't exist in 1970, so we can be confident no streak started
+    // then
+    { currentStreak: 0, longestStreak: 0, previousDay: new Date(0) }
   );
 
-  const lastDay = last(dayStamps);
+  const lastDay = last(days);
+  const streakExpired = !lastDay || !isEqual(lastDay, startOfDay(Date.now()));
 
-  if (!lastDay || !isEqual(lastDay, today))
-    return {
-      longestStreak,
-      currentStreak: 0
-    };
-
-  return { longestStreak, currentStreak };
+  return { longestStreak, currentStreak: streakExpired ? 0 : currentStreak };
 };
 
 function Stats({ points, calendar }: StatsProps): JSX.Element {
