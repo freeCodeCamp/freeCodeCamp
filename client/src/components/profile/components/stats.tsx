@@ -11,23 +11,20 @@ interface StatsProps {
   calendar: Record<string, number>;
 }
 
-interface PageData {
-  startOfCalendar: Date;
-  endOfCalendar: Date;
-}
-
 interface CalendarData {
   date: Date;
   count: number;
 }
 
-const generateCalendarData = (pages: PageData[]): CalendarData[] => {
-  let dayCounter = pages[0].startOfCalendar;
+const generateCalendarData = (endOfCalendar: Date): CalendarData[] => {
+  const startOfCalendar = addDays(addMonths(endOfCalendar, -6), 1);
+  let currentDay = startOfCalendar;
+  const lastDay = endOfCalendar;
   const data: CalendarData[] = [];
 
-  while (dayCounter <= pages[pages.length - 1].endOfCalendar) {
-    data.push({ date: startOfDay(dayCounter), count: 0 });
-    dayCounter = addDays(dayCounter, 1);
+  while (currentDay <= lastDay) {
+    data.push({ date: startOfDay(currentDay), count: 0 });
+    currentDay = addDays(currentDay, 1);
   }
   return data;
 };
@@ -37,28 +34,18 @@ export const calculateStreaks = (calendar: Record<string, number>) => {
     stamp => Number.parseInt(stamp, 10) * 1000
   );
 
-  const startOfTimestamps = startOfDay(new Date(timestamps[0]));
   const endOfCalendar = startOfDay(Date.now());
 
-  const pages = generatePages(startOfTimestamps, endOfCalendar);
-  console.log('pages', pages);
-  const calendarData = generateCalendarData(pages);
-
-  console.log('calendarData', calendarData[calendarData.length - 1]);
+  const calendarData = generateCalendarData(endOfCalendar);
 
   let longestStreak = 0;
   let currentStreak = 0;
   let lastIndex = -1;
 
   timestamps.forEach(stamp => {
-    console.log('stamp', stamp);
-    console.log('startOfDay(stamp)');
-    console.log(startOfDay(stamp).toISOString());
     const index = calendarData.findIndex(day =>
       isEqual(day.date, startOfDay(stamp))
     );
-
-    console.log('index', index);
 
     if (index >= 0) {
       calendarData[index].count++;
@@ -87,22 +74,6 @@ export const calculateStreaks = (calendar: Record<string, number>) => {
   }
 
   return { longestStreak, currentStreak };
-};
-
-const generatePages = (
-  startOfTimestamps: Date,
-  endOfCalendar: Date
-): PageData[] => {
-  let startOfCalendar;
-  const pages: PageData[] = [];
-
-  do {
-    startOfCalendar = addDays(addMonths(endOfCalendar, -6), 1);
-    pages.push({ startOfCalendar, endOfCalendar });
-    endOfCalendar = addDays(startOfCalendar, -1);
-  } while (startOfTimestamps < startOfCalendar);
-
-  return pages.reverse();
 };
 
 function Stats({ points, calendar }: StatsProps): JSX.Element {
