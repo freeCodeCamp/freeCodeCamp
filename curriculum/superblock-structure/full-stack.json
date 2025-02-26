@@ -586,6 +586,7 @@
           "dashedName": "react-state-hooks-and-routing",
           "comingSoon": true,
           "blocks": [
+            { "dashedName": "lab-color-picker" },
             { "dashedName": "quiz-react-state-and-hooks" },
             { "dashedName": "quiz-advanced-react" }
           ]
