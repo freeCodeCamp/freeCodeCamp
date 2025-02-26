@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { startOfDay, addDays, addMonths, isEqual } from 'date-fns';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
+import { last } from 'lodash-es';
+
 import { FullWidthRow } from '../../helpers';
 
 import './stats.css';
@@ -34,9 +36,9 @@ export const calculateStreaks = (calendar: Record<string, number>) => {
     stamp => Number.parseInt(stamp, 10) * 1000
   );
 
-  const endOfCalendar = startOfDay(Date.now());
+  const today = startOfDay(Date.now());
 
-  const calendarData = generateCalendarData(endOfCalendar);
+  const calendarData = generateCalendarData(today);
 
   let longestStreak = 0;
   let currentStreak = 0;
@@ -51,25 +53,18 @@ export const calculateStreaks = (calendar: Record<string, number>) => {
       calendarData[index].count++;
 
       if (index !== lastIndex) {
-        if (calendarData[index - 1] && calendarData[index - 1].count > 0) {
-          currentStreak++;
-        } else {
-          currentStreak = 1;
-        }
-
-        if (currentStreak > longestStreak) {
-          longestStreak = currentStreak;
-        }
+        const yesterday = calendarData[index - 1];
+        currentStreak = yesterday?.count > 0 ? currentStreak + 1 : 1;
+        longestStreak = Math.max(longestStreak, currentStreak);
       }
 
       lastIndex = index;
     }
   });
 
-  if (
-    calendarData.length &&
-    calendarData[calendarData.length - 1].count === 0
-  ) {
+  const lastTimestamp = last(timestamps);
+
+  if (lastTimestamp && !isEqual(startOfDay(lastTimestamp), today)) {
     currentStreak = 0;
   }
 
