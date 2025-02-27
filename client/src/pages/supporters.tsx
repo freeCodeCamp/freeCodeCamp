@@ -62,7 +62,7 @@ function ConditionalContent({
     return (
       <Col md={12}>
         <Spacer size='l' />
-        <h1 id='content-start' className='text-center'>
+        <h1 id='content-start' className='text-center text-3xl md:text-4xl lg:text-5xl'>
           {t('learn.donation-record-not-found')}
         </h1>
         <Spacer size='m' />
@@ -90,7 +90,7 @@ function ConditionalContent({
     return (
       <Col md={12}>
         <Spacer size='l' />
-        <h1 id='content-start' className='text-center'>
+        <h1 id='content-start' className='text-center text-3xl md:text-4xl lg:text-5xl'>
           {t('learn.sign-in-see-benefits')}
         </h1>
         <Spacer size='l' />

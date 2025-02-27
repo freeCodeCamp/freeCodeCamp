@@ -10,7 +10,7 @@ function BlockedPage(): JSX.Element {
         <Spacer size='l' />
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-            <h1 id='content-start' data-playwright-test-label='main-heading'>
+            <h1 id='content-start' data-playwright-test-label='main-heading' className='text-center text-3xl md:text-4xl lg:text-5xl'>
               We can&apos;t log you in.
             </h1>
             <Spacer size='l' />
