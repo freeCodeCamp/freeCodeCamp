@@ -39,6 +39,7 @@ See below for an example of a cash-in-drawer array:
 ```
 
 Note:
+
 - Your code is not automatically saved. Be sure to click the "Save your Code" button to save your progress.
 
 # --hints--
