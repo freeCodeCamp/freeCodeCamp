@@ -16,6 +16,9 @@ Write a function which takes a <a href="https://www.freecodecamp.org/news/how-to
 
 All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
 
+Note:
+- Your code is not automatically saved. Be sure to click the "Save your Code" button to save your progress.
+
 # --hints--
 
 `rot13("SERR PBQR PNZC")` should decode to the string `FREE CODE CAMP`
