@@ -1,6 +1,6 @@
-import { assert, AssertionError } from 'chai';
+import chai from 'chai';
 import { toString as __toString } from 'lodash-es';
-import * as __helpers from '@freecodecamp/curriculum-helpers';
+import * as curriculumHelpers from '@freecodecamp/curriculum-helpers';
 import { format as __format } from './utils/format';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
@@ -84,6 +84,12 @@ const __utils = (() => {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const DeepEqual = (a: unknown, b: unknown) =>
   JSON.stringify(a) === JSON.stringify(b);
+
+// We can't simply import these because of how webpack names them when building
+// the bundle. Since both assert and __helpers have to exist in the global
+// scope, we have to declare them.
+const assert = chai.assert;
+const __helpers = curriculumHelpers;
 
 // We freeze to prevent learners from getting the tester into a weird
 // state by modifying these objects.
