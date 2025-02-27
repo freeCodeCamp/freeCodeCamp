@@ -2,7 +2,7 @@ const parseFixture = require('../__fixtures__/parse-fixture');
 
 const addBeforeHook = require('./add-before-hook');
 
-describe('add-seed plugin', () => {
+describe('add-before-hook plugin', () => {
   let withBeforeHookAST,
     withEmptyHookAST,
     withInvalidHookAST,
