@@ -29,7 +29,7 @@ This two-word phrase refers to different situations that represent how a person 
 
 `User scenarios` refers to different situations that describe how users interact with a product to achieve a goal. It helps teams test and improve the user experience. For example:
 
-- `We created user scenarios to see how customers navigate the checkout process.` – This means the team simulated different ways users complete a purchase to identify any issues.  
+`We created user scenarios to see how customers navigate the checkout process.` – This means the team simulated different ways users complete a purchase to identify any issues.  
 
 # --scene--
 
@@ -51,7 +51,7 @@ This two-word phrase refers to different situations that represent how a person 
     "audio": {
       "filename": "B1_10-1.mp3",
       "startTime": 1,
-      "startTimestamp": 21.16,
+      "startTimestamp": 20.86,
       "finishTimestamp": 26.68
     }
   },
@@ -64,7 +64,7 @@ This two-word phrase refers to different situations that represent how a person 
     {
       "character": "Linda",
       "startTime": 1,
-      "finishTime": 6.52,
+      "finishTime": 6.82,
       "dialogue": {
         "text": "Absolutely. And I can also prepare some user scenarios for testing so we can ensure a smooth user experience.",
         "align": "center"
@@ -73,7 +73,7 @@ This two-word phrase refers to different situations that represent how a person 
     {
       "character": "Linda",
       "opacity": 0,
-      "startTime": 7.02
+      "startTime": 7.32
     }
   ]
 }

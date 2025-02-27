@@ -53,7 +53,13 @@ Linda does not talk about redesigning the interface.
 
 # --explanation--  
 
-Linda says, `I can also prepare some user scenarios for testing`, which clearly shows that she is taking responsibility for this task.  
+Listen for key words that indicate what Linda is offering to do.  
+
+`I can also` – This shows she is volunteering to contribute.  
+
+`Prepare some user scenarios for testing` – This clearly states the task she is taking responsibility for.  
+
+`Ensure a smooth user experience` – This explains why testing is important and reinforces her commitment to the project.  
 
 # --scene--
 
@@ -75,7 +81,7 @@ Linda says, `I can also prepare some user scenarios for testing`, which clearly 
     "audio": {
       "filename": "B1_10-1.mp3",
       "startTime": 1,
-      "startTimestamp": 21.16,
+      "startTimestamp": 20.86,
       "finishTimestamp": 26.68
     }
   },
@@ -88,7 +94,7 @@ Linda says, `I can also prepare some user scenarios for testing`, which clearly 
     {
       "character": "Linda",
       "startTime": 1,
-      "finishTime": 6.52,
+      "finishTime": 6.82,
       "dialogue": {
         "text": "Absolutely. And I can also prepare some user scenarios for testing so we can ensure a smooth user experience.",
         "align": "center"
@@ -97,7 +103,7 @@ Linda says, `I can also prepare some user scenarios for testing`, which clearly 
     {
       "character": "Linda",
       "opacity": 0,
-      "startTime": 7.02
+      "startTime": 7.32
     }
   ]
 }
