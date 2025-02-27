@@ -1,6 +1,6 @@
-import chai from 'chai';
+import { assert, AssertionError } from 'chai';
 import { toString as __toString } from 'lodash-es';
-import * as helpers from '@freecodecamp/curriculum-helpers';
+import * as __helpers from '@freecodecamp/curriculum-helpers';
 import { format as __format } from './utils/format';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
@@ -59,7 +59,7 @@ const __utils = (() => {
   }
 
   function log(...msgs: Error[]) {
-    if (msgs && msgs[0] && !(msgs[0] instanceof chai.AssertionError)) {
+    if (msgs && msgs[0] && !(msgs[0] instanceof AssertionError)) {
       // discards the stack trace via toString as it only useful to debug the
       // site, not a specific challenge.
       console.log(...msgs.map(msg => msg.toString()));
@@ -80,10 +80,17 @@ const __utils = (() => {
   };
 })();
 
-// We freeze these two to prevent learners from getting the tester into a weird
-// state.
+// Fake Deep Equal dependency
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const DeepEqual = (a: unknown, b: unknown) =>
+  JSON.stringify(a) === JSON.stringify(b);
+
+// We freeze to prevent learners from getting the tester into a weird
+// state by modifying these objects.
 Object.freeze(self);
 Object.freeze(__utils);
+Object.freeze(assert);
+Object.freeze(__helpers);
 
 interface TestEvaluatorEvent extends MessageEvent {
   data: {
@@ -104,18 +111,8 @@ interface TestEvaluatorEvent extends MessageEvent {
 /* Run the test if there is one.  If not just evaluate the user code */
 ctx.onmessage = async (e: TestEvaluatorEvent) => {
   /* eslint-disable @typescript-eslint/no-unused-vars */
-  const code = (e.data?.code?.contents || '').slice();
-  const editableContents = (e.data?.code?.editableContents || '').slice();
-
-  const assert = chai.assert;
-  const __helpers = helpers;
-  // Similarly to self and __utils, if the learner tries to modify these, weird
-  // behavior may result. Freezing them means they get an error instead.
-  Object.freeze(assert);
-  Object.freeze(__helpers);
-  // Fake Deep Equal dependency
-  const DeepEqual = (a: unknown, b: unknown) =>
-    JSON.stringify(a) === JSON.stringify(b);
+  const code = e.data?.code?.contents || '';
+  const editableContents = e.data?.code?.editableContents || '';
 
   // Build errors should be reported, but only once:
   __utils.toggleProxyLogger(e.data.firstTest);
