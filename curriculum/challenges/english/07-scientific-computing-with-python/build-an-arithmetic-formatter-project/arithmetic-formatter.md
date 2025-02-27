@@ -69,6 +69,7 @@ The function will return the correct conversion if the supplied problems are pro
   - There should be dashes at the bottom of each problem. The dashes should run along the entire length of each problem individually. (The example above shows what this should look like.)
 
 Notes: 
+
 - Open the browser console with F12 to see a more verbose output of the tests.
 - Your code is not automatically saved. Be sure to click the "Save your Code" button to save your progress.
 
