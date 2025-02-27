@@ -16,7 +16,7 @@ import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink } from '../helpers';
 import { showUpcomingChanges } from '../../../config/env.json';
-import DailyCodingChallenge from '../daily-coding-challenge/daily-coding-challenge';
+import DailyCodingChallengeWidget from '../daily-coding-challenge/widget';
 
 import './map.css';
 
@@ -194,9 +194,9 @@ function Map({
           <>
             {
               /*Show the daily coding challenge above the core curriculum */
-              stage === SuperBlockStage.Core && (
+              stage === SuperBlockStage.Extra && (
                 <>
-                  <DailyCodingChallenge forLanding={forLanding} />
+                  <DailyCodingChallengeWidget forLanding={forLanding} />
                   <Spacer size='m' />
                 </>
               )

@@ -20,7 +20,12 @@ export default function layoutSelector({
     location: { pathname }
   } = props;
 
-  const isChallenge = !!props.pageContext?.challengeMeta;
+  const isChallenge =
+    !!props.pageContext?.challengeMeta ||
+    props.location.pathname === '/learn/daily-coding-challenge';
+
+  const isDailyChallenge =
+    props.location.pathname === '/learn/daily-coding-challenge';
 
   if (element.type === FourOhFourPage) {
     return (
@@ -38,6 +43,7 @@ export default function layoutSelector({
         pathname={pathname}
         showFooter={false}
         isChallenge={true}
+        isDailyChallenge={isDailyChallenge}
         usesMultifileEditor={
           props.data?.challengeNode?.challenge?.usesMultifileEditor
         }

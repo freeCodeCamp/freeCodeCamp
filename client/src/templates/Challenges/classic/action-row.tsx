@@ -7,7 +7,7 @@ import EditorTabs from './editor-tabs';
 interface ActionRowProps {
   hasNotes: boolean;
   hasPreview: boolean;
-  isProjectBasedChallenge: boolean;
+  isProjectBasedChallenge?: boolean;
   showConsole: boolean;
   showNotes: boolean;
   showInstructions: boolean;

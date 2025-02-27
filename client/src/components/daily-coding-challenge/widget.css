@@ -9,8 +9,9 @@
 
 .daily-coding-challenge-right {
   flex-grow: 1;
-  border: 2px solid var(--primary-color);
-  padding: 2rem
+  border: 1px solid var(--primary-color);
+  /* background-color: var(--primary-background); */
+  padding: 2rem;
 }
 
 .daily-coding-challenge-info {

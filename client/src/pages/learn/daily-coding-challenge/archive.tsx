@@ -1,7 +1,33 @@
 import React from 'react';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import Map from '../../../components/Map';
+import DailyCodingChallengeStatus from '../../../components/daily-coding-challenge/status';
+import DailyCodingChallengeCalendar from '../../../components/daily-coding-challenge/calendar';
 
 function Archive(): JSX.Element {
-  return <div>Archive of all daily challenges</div>;
+  return (
+    <Container>
+      <Row>
+        <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+          <Spacer size='m' />
+          <h1 className='text-center'>Daily Coding Challenges</h1>
+          <Spacer size='m' />
+          <DailyCodingChallengeStatus />
+          <Spacer size='l' />
+          <h1 className='text-center'>Archive</h1>
+        </Col>
+        <Col md={12} sm={12} xs={12}>
+          <Spacer size='m' />
+          <DailyCodingChallengeCalendar />
+        </Col>
+        <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+          <Spacer size='l' />
+          <Map />
+          <Spacer size='l' />
+        </Col>
+      </Row>
+    </Container>
+  );
 }
 
 Archive.displayName = 'Archive';

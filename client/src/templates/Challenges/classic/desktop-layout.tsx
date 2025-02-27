@@ -27,11 +27,11 @@ interface DesktopLayoutProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   editor: ReactElement | null;
-  hasEditableBoundaries: boolean;
+  hasEditableBoundaries?: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
-  isFirstStep: boolean;
+  isFirstStep?: boolean;
   layoutState: {
     codePane: Pane;
     editorPane: Pane;
@@ -40,7 +40,7 @@ interface DesktopLayoutProps {
     previewPane: Pane;
     testsPane: Pane;
   };
-  notes: string;
+  notes?: string;
   onPreviewResize: () => void;
   preview: ReactElement;
   resizeProps: ResizeProps;
