@@ -59,7 +59,7 @@ const __utils = (() => {
   }
 
   function log(...msgs: Error[]) {
-    if (msgs && msgs[0] && !(msgs[0] instanceof AssertionError)) {
+    if (msgs && msgs[0] && !(msgs[0] instanceof chai.AssertionError)) {
       // discards the stack trace via toString as it only useful to debug the
       // site, not a specific challenge.
       console.log(...msgs.map(msg => msg.toString()));
