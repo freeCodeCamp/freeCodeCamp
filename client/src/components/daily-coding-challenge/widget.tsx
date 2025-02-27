@@ -4,22 +4,23 @@ import { Spacer, Button, Dropdown, MenuItem } from '@freecodecamp/ui';
 
 import { RibbonIcon } from '../../assets/icons/completion-ribbon';
 
-import './daily-coding-challenge.css';
+import './widget.css';
 
-interface DailyCodingChallengeProps
+interface DailyCodingChallengeWidgetProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   forLanding: boolean;
 }
 
-function DailyCodingChallenge({
+function DailyCodingChallengeWidget({
   forLanding
-}: DailyCodingChallengeProps): JSX.Element {
+}: DailyCodingChallengeWidgetProps): JSX.Element {
   const [difficulty, setDifficulty] = useState<string>('1');
   const { t } = useTranslation();
 
   // Midnight US Central Time is used to determine the release of new daily challenges
   const todaysDate = new Date();
 
+  // format "dd-mm-yyyy" - e.g. "02-28-2025"
   const usCentralDateForApi = new Intl.DateTimeFormat('en-US', {
     timeZone: 'America/Chicago',
     month: '2-digit',
@@ -29,6 +30,7 @@ function DailyCodingChallenge({
     .format(todaysDate)
     .replace(/\//g, '-');
 
+  // format "weekday, shortMonth day" e.g. "Friday, Feb 28"
   const usCentralDateForDisplay = new Intl.DateTimeFormat('en-US', {
     timeZone: 'America/Chicago',
     weekday: 'long',
@@ -122,6 +124,6 @@ function DailyCodingChallenge({
   );
 }
 
-DailyCodingChallenge.displayName = 'DailyCodingChallenge';
+DailyCodingChallengeWidget.displayName = 'DailyCodingChallengeWidget';
 
-export default DailyCodingChallenge;
+export default DailyCodingChallengeWidget;

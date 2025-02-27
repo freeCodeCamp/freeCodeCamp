@@ -22,7 +22,7 @@ export interface ChallengeFile extends IncompleteChallengeFile {
   tail: string;
   seed?: string;
   source?: string;
-  path: string;
+  path?: string;
   history: string[];
 }
 

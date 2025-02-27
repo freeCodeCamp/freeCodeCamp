@@ -1,0 +1,5 @@
+.daily-coding-challenge-status {
+  background: var(--primary-background);
+  border: 1px solid var(--quaternary-background);
+  padding: 1em;
+}

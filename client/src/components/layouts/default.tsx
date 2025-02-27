@@ -112,6 +112,7 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   pathname: string;
   showFooter?: boolean;
   isChallenge?: boolean;
+  isDailyChallenge?: boolean;
   usesMultifileEditor?: boolean;
   block?: string;
   examInProgress: boolean;
@@ -130,6 +131,7 @@ function DefaultLayout({
   removeFlashMessage,
   showFooter = true,
   isChallenge = false,
+  isDailyChallenge = false,
   usesMultifileEditor,
   block,
   superBlock,
@@ -288,6 +290,7 @@ function DefaultLayout({
           ) : null}
           <SignoutModal />
           {isChallenge &&
+            !isDailyChallenge &&
             !examInProgress &&
             (isRenderBreadcrumb ? (
               <div className='breadcrumbs-demo'>
