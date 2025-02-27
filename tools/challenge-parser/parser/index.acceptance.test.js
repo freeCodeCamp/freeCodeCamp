@@ -65,4 +65,11 @@ describe('challenge parser', () => {
     );
     expect(parsed).toMatchSnapshot();
   });
+
+  it('should parse md with hooks', async () => {
+    const parsed = await parseMD(
+      path.resolve(__dirname, '__fixtures__/with-hooks.md')
+    );
+    expect(parsed).toMatchSnapshot();
+  });
 });
