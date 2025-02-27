@@ -23,7 +23,7 @@ Listen to the audio and complete the sentence below.
 
 ### --feedback--
 
-This means something that is not strong or obvious. It’s something gentle or soft that you might not notice right away.
+This means something that is not strong or obvious. It's something gentle or soft that you might not notice right away.
 
 ---
 
@@ -31,7 +31,7 @@ This means something that is not strong or obvious. It’s something gentle or s
 
 ### --feedback--
 
-This refers to the range of colors used in a design or artwork. In this case, a "color palette" refers to the selection of colors chosen for the design of the app or project.
+This refers to the range of colors used in a design or artwork. In this case, a `color palette` refers to the selection of colors chosen for the design of the app or project.
 
 # --explanation--
 

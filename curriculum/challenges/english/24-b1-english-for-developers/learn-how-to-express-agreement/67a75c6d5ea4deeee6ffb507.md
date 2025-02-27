@@ -25,7 +25,7 @@ Prepare user scenarios for testing.
 
 ---  
 
-Suggest skipping the testing phase.  
+Skip the testing phase.  
 
 ### --feedback--  
 

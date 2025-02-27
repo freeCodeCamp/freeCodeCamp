@@ -27,7 +27,7 @@ This two-word phrase refers to different situations that represent how a person 
 
 # --explanation--
 
-The phrase `user scenarios` refers to different situations that describe how users interact with a product to achieve a goal. It helps teams test and improve the user experience. For example:
+`User scenarios` refers to different situations that describe how users interact with a product to achieve a goal. It helps teams test and improve the user experience. For example:
 
 - `We created user scenarios to see how customers navigate the checkout process.` – This means the team simulated different ways users complete a purchase to identify any issues.  
 
