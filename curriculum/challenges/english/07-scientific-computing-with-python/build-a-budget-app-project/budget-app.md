@@ -78,6 +78,7 @@ Percentage spent by category
 ```
 
 Notes:
+
 - Open the browser console with F12 to see a more verbose output of the tests.
 - Your code is not automatically saved. Be sure to click the "Save your Code" button to save your progress.
 
