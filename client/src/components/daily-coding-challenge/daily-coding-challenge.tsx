@@ -103,7 +103,7 @@ function DailyCodingChallenge({
           <div>
             <Button
               block={true}
-              href={`/daily-coding-challenge?date=${usCentralDateForApi}&level=${difficulyLevels[difficulty]}`}
+              href={`/learn/daily-coding-challenge?date=${usCentralDateForApi}&level=${difficulyLevels[difficulty]}`}
             >
               {t(`buttons.start`)}
             </Button>
@@ -112,7 +112,7 @@ function DailyCodingChallenge({
           <Spacer size='s' />
 
           <div>
-            <Button block={true} href='/daily-coding-challenge/archive'>
+            <Button block={true} href='/learn/daily-coding-challenge/archive'>
               {t(`buttons.go-to-archive`)}
             </Button>
           </div>
