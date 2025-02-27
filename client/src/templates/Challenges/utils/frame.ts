@@ -145,13 +145,9 @@ const createHeader = (id = mainPreviewId) =>
 const createBeforeAllScript = (beforeAll?: string) => {
   if (!beforeAll) return '';
 
-  return `
-<script>
-  (() => {
-    ${beforeAll};
-  })();
-</script>
-    `;
+  return `<script>
+  ${beforeAll};
+</script>`;
 };
 
 type TestResult =
