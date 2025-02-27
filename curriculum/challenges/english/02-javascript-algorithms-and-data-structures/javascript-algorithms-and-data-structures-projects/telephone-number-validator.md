@@ -17,6 +17,7 @@ The user may fill out the form field any way they choose as long as it has the f
 For this challenge you will be presented with a string such as `800-692-7753` or `8oo-six427676;laskdjf`. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is `1`. Return `true` if the string is a valid US phone number; otherwise return `false`.
 
 Note:
+
 - Your code is not automatically saved. Be sure to click the "Save your Code" button to save your progress.
 
 # --hints--
