@@ -28,6 +28,9 @@ Convert the given number into a roman numeral.
 
 All roman numerals answers should be provided in upper-case.
 
+Note:
+- Your code is not automatically saved. Be sure to click the "Save your Code" button to save your progress.
+
 # --hints--
 
 `convertToRoman(2)` should return the string `II`.
