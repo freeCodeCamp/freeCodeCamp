@@ -30,7 +30,9 @@ dashedName: build-a-technical-documentation-page
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
-**Note:** Be sure to add `<link rel="stylesheet" href="styles.css">` in your HTML to link your stylesheet and apply your CSS
+Notes: 
+- Be sure to add `<link rel="stylesheet" href="styles.css">` in your HTML to link your stylesheet and apply your CSS.
+- Your code is not automatically saved. Be sure to click the "Save your Code" button to save your progress.
 
 # --hints--
 
