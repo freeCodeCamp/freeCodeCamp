@@ -73,6 +73,7 @@ process.on('uncaughtException', err => {
 // some errors *may* not be reported, since cleanup is triggered by the first
 // error and that starts shutting down the browser and the server.
 const handleRejection = err => {
+  console.error('Unhandled rejection:');
   // setting the error code because node does not (yet) exit with a non-zero
   // code on unhandled exceptions.
   process.exitCode = 1;
@@ -631,7 +632,7 @@ async function getContextEvaluator(build, sources, code, loadEnzyme) {
     evaluate: async (testString, timeout) =>
       Promise.race([
         new Promise((_, reject) =>
-          setTimeout(() => reject('timeout'), timeout)
+          setTimeout(() => reject(Error('timeout')), timeout)
         ),
         await page.evaluate(async testString => {
           return await document.__runTest(testString);
