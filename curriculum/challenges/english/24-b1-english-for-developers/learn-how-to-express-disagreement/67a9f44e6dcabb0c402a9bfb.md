@@ -60,3 +60,51 @@ Bob asks, `Do you think that's a good idea?` This is a way to ask for someone's 
 - `How do you feel about this plan?`
 
 In this dialogue, Bob is referring to employees using the remote work stipend for office furniture. Instead of stating his own opinion, he is asking Anna what she thinks.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company1-boardroom.png",
+    "characters": [
+      {
+        "character": "Bob",
+        "position": {
+          "x": 50,
+          "y": 15,
+          "z": 1.2
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "B1_11-1.mp3",
+      "startTime": 1,
+      "startTimestamp": 8.6,
+      "finishTimestamp": 10.04
+    }
+  },
+  "commands": [
+    {
+      "character": "Bob",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Bob",
+      "startTime": 1,
+      "finishTime": 2.44,
+      "dialogue": {
+        "text": "Do you think that's a good idea?",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Bob",
+      "opacity": 0,
+      "startTime": 2.94
+    }
+  ]
+}
+```

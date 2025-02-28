@@ -56,3 +56,51 @@ A `computer upgrade` means improving a computer by adding or replacing parts lik
 - `I need a computer upgrade to run the latest software.` - The speaker's current computer is not powerful enough, so they need a better one.
 
 - `After the computer upgrade, everything runs much faster.` -  The system's performance improved after updating or replacing components.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company1-boardroom.png",
+    "characters": [
+      {
+        "character": "Anna",
+        "position": {
+          "x": 50,
+          "y": 15,
+          "z": 1.2
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "B1_11-1.mp3",
+      "startTime": 1,
+      "startTimestamp": 12.26,
+      "finishTimestamp": 15.8
+    }
+  },
+  "commands": [
+    {
+      "character": "Anna",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Anna",
+      "startTime": 1,
+      "finishTime": 4.54,
+      "dialogue": {
+        "text": "While furniture is important, many people mentioned that their computers need upgrades.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Anna",
+      "opacity": 0,
+      "startTime": 5.04
+    }
+  ]
+}
+```
