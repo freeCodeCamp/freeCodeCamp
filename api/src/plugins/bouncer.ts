@@ -21,7 +21,7 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
       if (!req.user) {
         const logger = fastify.log.child({ req });
 
-        logger.info(
+        logger.debug(
           'User tried to access a protected route without being authenticated.'
         );
 
@@ -38,7 +38,7 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
     async function (req: FastifyRequest, reply: FastifyReply) {
       const logger = fastify.log.child({ req });
       if (!req.user) {
-        logger.info(
+        logger.debug(
           'User tried to access a protected route without being authenticated.'
         );
         const { origin } = getRedirectParams(req);
@@ -59,7 +59,7 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
 
         const { returnTo } = getRedirectParams(req);
 
-        logger.info(`User is being redirected to: ${returnTo}`);
+        logger.debug(`User is being redirected to: ${returnTo}`);
 
         await reply.redirect(returnTo);
       }
