@@ -4,6 +4,7 @@ title: Cat and Dog Image Classifier
 challengeType: 10
 forumTopicId: 462377
 dashedName: cat-and-dog-image-classifier
+solutionLink: https://empty.com
 ---
 
 # --description--
