@@ -5,6 +5,5 @@ export const allowedOrigins = [
   'https://beta.freecodecamp.dev',
   'https://beta.freecodecamp.org',
   'https://chinese.freecodecamp.dev',
-  'https://chinese.freecodecamp.org',
-  'http://localhost:8000'
+  'https://chinese.freecodecamp.org'
 ];

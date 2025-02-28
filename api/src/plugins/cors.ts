@@ -21,7 +21,7 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
       // separately. If we switch to that approach we can replace use
       // @fastify/cors instead.
       void reply.header('Access-Control-Allow-Origin', HOME_LOCATION);
-      logger.warn(`Received request from disallowed origin: ${origin}`);
+      logger.debug(`Received request from disallowed origin: ${origin}`);
     }
 
     void reply
