@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-113
 ---
 
-<!-- (audio) Anna: I see your point, but flexibility might be better. -->
+<!-- (audio) Anna: I see your point, but flexibility might be better. Think about it. -->
 
 # --instructions--
 
@@ -54,3 +54,51 @@ Anna does not fully agree with Bob.
 Anna uses `I see your point, but` to show that she understands Bob's concern while presenting a different opinion.
 
 She believes that flexibility is a better solution than sticking with one category.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company1-boardroom.png",
+    "characters": [
+      {
+        "character": "Anna",
+        "position": {
+          "x": 50,
+          "y": 15,
+          "z": 1.2
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "B1_11-3.mp3",
+      "startTime": 1,
+      "startTimestamp": 31.78,
+      "finishTimestamp": 35.08
+    }
+  },
+  "commands": [
+    {
+      "character": "Anna",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Anna",
+      "startTime": 1,
+      "finishTime": 4.3,
+      "dialogue": {
+        "text": "I see your point, but flexibility might be better. Think about it.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Anna",
+      "opacity": 0,
+      "startTime": 4.8
+    }
+  ]
+}
+```
