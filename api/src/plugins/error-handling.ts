@@ -21,6 +21,10 @@ const errorHandling: FastifyPluginCallback = (fastify, _options, done) => {
     // test environments)
     skipInit: !SENTRY_DSN,
     errorResponse: (error, request, reply) => {
+      const logger = fastify.log.child({ request });
+
+      logger.debug(error, 'Error caught by Sentry');
+
       const accepts = request.accepts().type(['json', 'html']);
       const isCSRFError =
         error.code === 'FST_CSRF_INVALID_TOKEN' ||
