@@ -81,7 +81,7 @@ const anchorParent = document.querySelector('a[href="https://www.freecatphotoapp
 assert.strictEqual(anchorParent.tagName,"P")
 ```
 
-Your `p` element should have the text `View more ` (with a space after it).
+Your `p` element should have the text `View more` (with a space after it).
 
 ```js
 const textContent = document.querySelector('a[href="https://www.freecatphotoapp.com"]').parentNode.textContent;
