@@ -28,7 +28,8 @@ Camper Cat happens to be both a coding ninja and an actual ninja, who is buildin
 Your `img` tag should have an `alt` attribute and it should not be empty.
 
 ```js
-assert.isNotEmpty(document.querySelector('img')?.getAttribute('alt'));
+const img = document.querySelector('img');
+assert.isNotEmpty(img && img.getAttribute('alt'));
 ```
 
 # --seed--
