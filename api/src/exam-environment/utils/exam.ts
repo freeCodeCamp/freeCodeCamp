@@ -428,26 +428,24 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
         const questionSet = shuffledQuestionSets.find(qs => {
           if (qs.type === questionSetConfig.type) {
             if (qs.questions.length >= questionSetConfig.numberOfQuestions) {
-              if (qs.questions.length >= questionSetConfig.numberOfQuestions) {
-                // Find questionSetConfig.numberOfQuestions who have `questionSetConfig.numberOfCorrectAnswers` and `questionSetConfig.numberOfIncorrectAnswers`
-                const questions = qs.questions.filter(q => {
-                  const numberOfCorrectAnswers = q.answers.filter(
-                    a => a.isCorrect
-                  ).length;
-                  const numberOfIncorrectAnswers = q.answers.filter(
-                    a => !a.isCorrect
-                  ).length;
-                  return (
-                    numberOfCorrectAnswers >=
-                      questionSetConfig.numberOfCorrectAnswers &&
-                    numberOfIncorrectAnswers >=
-                      questionSetConfig.numberOfIncorrectAnswers
-                  );
-                });
+              // Find questionSetConfig.numberOfQuestions who have `questionSetConfig.numberOfCorrectAnswers` and `questionSetConfig.numberOfIncorrectAnswers`
+              const questions = qs.questions.filter(q => {
+                const numberOfCorrectAnswers = q.answers.filter(
+                  a => a.isCorrect
+                ).length;
+                const numberOfIncorrectAnswers = q.answers.filter(
+                  a => !a.isCorrect
+                ).length;
+                return (
+                  numberOfCorrectAnswers >=
+                    questionSetConfig.numberOfCorrectAnswers &&
+                  numberOfIncorrectAnswers >=
+                    questionSetConfig.numberOfIncorrectAnswers
+                );
+              });
 
-                if (questions.length >= questionSetConfig.numberOfQuestions) {
-                  return true;
-                }
+              if (questions.length >= questionSetConfig.numberOfQuestions) {
+                return true;
               }
             }
           }
