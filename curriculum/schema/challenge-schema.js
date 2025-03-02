@@ -280,6 +280,9 @@ const schema = Joi.object()
     superBlock: Joi.string().regex(slugWithSlashRE),
     superOrder: Joi.number(),
     suborder: Joi.number(),
+    hooks: Joi.object().keys({
+      beforeAll: Joi.string().allow('')
+    }),
     tests: Joi.array()
       .items(
         // public challenges

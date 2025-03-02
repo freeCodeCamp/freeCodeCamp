@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add-before-hook plugin should have an output to match the snapshot 1`] = `
+{
+  "hooks": {
+    "beforeAll": "// before all code
+function foo() {
+  return 'bar';
+}
+foo();",
+  },
+}
+`;

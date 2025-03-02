@@ -13,7 +13,6 @@ dotenvConfig({ path: envPath });
  */
 export default defineConfig({
   testDir: 'e2e',
-  testMatch: '!(mobile)*.spec.ts',
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
