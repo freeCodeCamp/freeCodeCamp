@@ -585,7 +585,13 @@ async function createTestRunner(
         loadEnzyme,
         hooks: challenge.hooks
       })
-    : getWorkerEvaluator({ build, sources, code, runsInPythonWorker }));
+    : getWorkerEvaluator({
+        build,
+        sources,
+        code,
+        runsInPythonWorker,
+        hooks: challenge.hooks
+      }));
 
   return async ({ text, testString }) => {
     try {
@@ -651,7 +657,8 @@ async function getWorkerEvaluator({
   build,
   sources,
   code,
-  runsInPythonWorker
+  runsInPythonWorker,
+  hooks
 }) {
   // The python worker clears the globals between tests, so it should be fine
   // to use the same evaluator for all tests. TODO: check if this is true for
@@ -661,8 +668,10 @@ async function getWorkerEvaluator({
     : new WorkerExecutor(javaScriptTestEvaluator, { terminateWorker: true });
   return {
     evaluate: async (testString, timeout) =>
-      await testWorker.execute({ testString, build, code, sources }, timeout)
-        .done
+      await testWorker.execute(
+        { testString, build, code, sources, hooks },
+        timeout
+      ).done
   };
 }
 
