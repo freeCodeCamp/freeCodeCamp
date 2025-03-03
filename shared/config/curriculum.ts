@@ -44,17 +44,15 @@ export enum SuperBlockStage {
   Extra,
   Legacy,
   Upcoming,
-  Next,
-  NextEnglish
+  Next
 }
 
 const defaultStageOrder = [
   SuperBlockStage.Core,
   SuperBlockStage.English,
-  SuperBlockStage.NextEnglish,
-  SuperBlockStage.Professional,
   SuperBlockStage.Extra,
   SuperBlockStage.Legacy,
+  SuperBlockStage.Professional,
   SuperBlockStage.Next
 ];
 
@@ -76,7 +74,6 @@ export const superBlockStages: StageMap = {
   [SuperBlockStage.Core]: [SuperBlocks.FullStackDeveloper],
 
   [SuperBlockStage.English]: [SuperBlocks.A2English, SuperBlocks.B1English],
-  [SuperBlockStage.NextEnglish]: [],
   [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStage.Extra]: [
     SuperBlocks.TheOdinProject,
