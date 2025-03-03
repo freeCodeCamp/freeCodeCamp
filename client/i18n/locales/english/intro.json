@@ -3721,6 +3721,13 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "build-an-otp-generator": {
+        "title": "Build an OTP Generator",
+        "intro": [
+          "In this lab you'll build an OTP generator.",
+          "You'll practice using the useEffect hooks to create a timer and generate a random OTP."
+        ]
       }
     }
   },
