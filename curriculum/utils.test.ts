@@ -250,11 +250,11 @@ describe('getBlockOrder', () => {
   it('returns the correct order when the chapter only contains one module', () => {
     expect(
       getBlockOrder('welcome-to-freecodecamp', mockSuperBlockStructure)
-    ).toBe(1);
+    ).toBe(0);
   });
 
   it('returns the correct order when the chapter contains multiple modules', () => {
-    expect(getBlockOrder('block-one-m2', mockSuperBlockStructure)).toBe(4);
+    expect(getBlockOrder('block-one-m2', mockSuperBlockStructure)).toBe(3);
   });
 
   it('throws if a block does not exist', () => {

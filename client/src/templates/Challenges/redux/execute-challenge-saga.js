@@ -55,6 +55,7 @@ import {
   challengeDataSelector,
   challengeMetaSelector,
   challengeTestsSelector,
+  challengeHooksSelector,
   isBuildEnabledSelector,
   isExecutingSelector,
   portalDocumentSelector,
@@ -110,6 +111,7 @@ export function* executeChallengeSaga({ payload }) {
     const tests = (yield select(challengeTestsSelector)).map(
       ({ text, testString }) => ({ text, testString })
     );
+    const hooks = yield select(challengeHooksSelector);
     yield put(updateTests(tests));
 
     yield fork(takeEveryLog, consoleProxy);
@@ -128,7 +130,7 @@ export function* executeChallengeSaga({ payload }) {
     const document = yield getContext('document');
     const testRunner = yield call(
       getTestRunner,
-      buildData,
+      { ...buildData, hooks },
       { proxyLogger },
       document
     );
