@@ -173,7 +173,7 @@ function Map({
                 landing={forLanding}
                 index={i}
                 claimed={isClaimed(superblock)}
-                showProgressionLines={stage === SuperBlockStage.Core}
+                // showProgressionLines={stage === SuperBlockStage.Core}
                 showNumbers={stage === SuperBlockStage.Core}
                 completed={allSuperblockChallengesCompleted(superblock)}
               />
