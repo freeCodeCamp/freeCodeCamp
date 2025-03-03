@@ -6,8 +6,36 @@
   "superBlock": "b1-english-for-developers",
   "challengeOrder": [
     {
-      "id": "6660a0a59e62cf6096f8d6fc",
-      "title": "Dialogue 1: I'm Tom"
+      "id": "67c4549694c835707f80511c",
+      "title": "Dialogue 1: Comparing Software Features"
+    },
+    {
+      "id": "67c458143245e17538916792",
+      "title": "Task 1"
+    },
+    {
+      "id": "67c458aa5ff69775e78e0eef",
+      "title": "Task 2"
+    },
+    {
+      "id": "67c45d89b3e95f78bbafae99",
+      "title": "Task 3"
+    },
+    {
+      "id": "67c46712acd4437e34f1c739",
+      "title": "Task 4"
+    },
+    {
+      "id": "67c5aa6418f9869ac89e3f16",
+      "title": "Task 5"
+    },
+    {
+      "id": "67c5aba6c97f6b9bcc1ff518",
+      "title": "Task 6"
+    },
+    {
+      "id": "67c5b03dd9706d9e3f9a97b2",
+      "title": "Task 7"
     }
   ],
   "helpCategory": "English",
