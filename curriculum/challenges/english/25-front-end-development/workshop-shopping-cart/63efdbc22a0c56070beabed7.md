@@ -45,7 +45,7 @@ const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]/);
 ```
 
-Initialize `totalCountPerProduct[dessert.id]` with `0` as a default value using `||` operator at the end of the expression.
+You should initialize `totalCountPerProduct[dessert.id]` with `0` as a default value using `||` operator at the end of the expression.
 
 ```js
 const cart = new ShoppingCart();
