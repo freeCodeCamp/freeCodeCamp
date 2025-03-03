@@ -25,7 +25,7 @@ To prevent this, you can use the `||` (logical OR) operator to provide a default
   console.log(scores); // { Alice: 0, Bob: 0, Charlie: 0 }
 ```
 
-Now, let’s apply this concept to your `totalCountPerProduct` object in the `forEach` callback. Before updating the value, make sure that each `dessert.id` property is initialized properly.
+Now, let’s apply this concept to your `totalCountPerProduct` object in the `forEach` callback. Make sure that each `dessert.id` property is initialized properly.
 
 Initialize `totalCountPerProduct[dessert.id]` with a default value of `0` using the `||` operator.
 
