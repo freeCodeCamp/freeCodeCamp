@@ -109,8 +109,6 @@ ctx.onmessage = async (e: TestEvaluatorEvent) => {
   /* eslint-disable @typescript-eslint/no-unused-vars */
   const code = (e.data?.code?.contents || '').slice();
   const editableContents = (e.data?.code?.editableContents || '').slice();
-  console.log('message received', JSON.stringify(e.data));
-  console.log('beforeEach', e.data.hooks?.beforeEach);
 
   const assert = chai.assert;
   const __helpers = helpers;
