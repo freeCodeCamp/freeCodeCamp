@@ -170,9 +170,11 @@ describe('getSuperOrder', () => {
 });
 
 describe('getSuperBlockFromPath', () => {
-  const directories = fs.readdirSync(
-    path.join(__dirname, './challenges/english')
-  );
+  const junkRegex = /^\./; // Ignore Thumbs.db and .DS_Store
+
+  const directories = fs
+    .readdirSync(path.join(__dirname, './challenges/english'))
+    .filter(item => !junkRegex.test(item));
 
   it('handles all the directories in ./challenges/english', () => {
     expect.assertions(24);
