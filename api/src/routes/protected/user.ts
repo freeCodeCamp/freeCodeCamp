@@ -469,7 +469,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
       const logger = fastify.log.child({ req });
       // This is one of the most requested routes. To avoid spamming the logs
       // with this route, we'll log requests at the debug level.
-      logger.debug('GET /user/get-session-user');
+      logger.debug({ userId: req.user?.id });
       try {
         const userTokenP = fastify.prisma.userToken.findFirst({
           where: { userId: req.user!.id }
