@@ -21,8 +21,6 @@ What does Linda offer to do?
 
 Prepare user scenarios for testing.  
 
-### --feedback--  
-
 ---  
 
 Skip the testing phase.  
