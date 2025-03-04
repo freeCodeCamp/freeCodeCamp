@@ -1710,7 +1710,8 @@
     "intro": [
       "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
       "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
-      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
+      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer.",
+      "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
     ],
     "chapters": {
       "freecodecamp": "Welcome",
@@ -2921,7 +2922,7 @@
       "workshop-library-manager": {
         "title": "Build a Library Manager",
         "intro": [
-          "In this workshop, you will learn higher order array methods by building a library manager"
+          "In this workshop, you will learn higher order array methods by building a library manager."
         ]
       },
       "lab-book-organizer": {
@@ -3171,7 +3172,7 @@
       "lecture-working-with-maps-and-sets": {
         "title": "Working with Maps and Sets",
         "intro": [
-          "In these lecture videos, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>"
+          "In these lecture videos, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>."
         ]
       },
       "workshop-plant-nursery-catalog": {
@@ -3337,7 +3338,7 @@
       "lecture-understanding-asynchronous-programming": {
         "title": "Understanding Asynchronous Programming",
         "intro": [
-          "In these lecture videos, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>asnyc</code> keyword works, the <code>Fetch</code> API, promises, async/await, the <code>Geolocation</code> API, and much more."
+          "In these lecture videos, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>async</code> keyword works, the <code>Fetch</code> API, promises, <code>async/await</code>, the <code>Geolocation</code> API, and much more."
         ]
       },
       "workshop-fcc-authors-page": {

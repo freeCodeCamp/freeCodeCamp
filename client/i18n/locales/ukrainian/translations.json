@@ -105,7 +105,8 @@
     "update-card": "Оновити картку",
     "donate-now": "Задонатити",
     "confirm-amount": "Підтвердити суму",
-    "play-scene": "Натисніть «Відтворити»",
+    "play": "Відтворити відео",
+    "pause": "Зупинити відео",
     "closed-caption": "Приховані субтитри",
     "share-on-x": "Поділитись на X",
     "share-on-bluesky": "Поділитись на BlueSky",
@@ -1171,7 +1172,7 @@
     "focus-instructions-panel": "Панель інструкцій щодо фокусування",
     "navigate-previous": "Перейти до попередньої вправи",
     "navigate-next": "Перейти до наступної вправи",
-    "play-scene": "Відтворити"
+    "play-video": "Відтворити відео"
   },
   "signout": {
     "heading": "Вийти з облікового запису",
