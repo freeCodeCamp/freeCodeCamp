@@ -16,6 +16,10 @@ export interface Source {
   original: { [key: string]: string | null };
 }
 
+interface Hooks {
+  beforeAll?: string;
+}
+
 export interface Context {
   window?: Window &
     typeof globalThis & { i18nContent?: i18n; __pyodide: unknown };
@@ -23,6 +27,7 @@ export interface Context {
   element: HTMLIFrameElement;
   build: string;
   sources: Source;
+  hooks?: Hooks;
   loadEnzyme?: () => void;
 }
 
@@ -89,7 +94,7 @@ const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 // The "fcc-hide-header" class on line 95 is added to ensure that the CSSHelper class ignores this style element
 // during tests, preventing CSS-related test failures.
 
-export const createHeader = (id = mainPreviewId) =>
+const createHeader = (id = mainPreviewId) =>
   `
   <base href='' />
   <style class="fcc-hide-header">
@@ -136,6 +141,14 @@ export const createHeader = (id = mainPreviewId) =>
     }, false);
   </script>
 `;
+
+const createBeforeAllScript = (beforeAll?: string) => {
+  if (!beforeAll) return '';
+
+  return `<script>
+  ${beforeAll};
+</script>`;
+};
 
 type TestResult =
   | { pass: boolean }
@@ -368,25 +381,32 @@ const waitForFrame = (frameContext: Context) => {
   });
 };
 
-function writeToFrame(content: string, frame?: FrameDocument) {
+export const createContent = (
+  id: string,
+  { build, sources, hooks }: { build: string; sources: Source; hooks?: Hooks }
+) => {
+  // DOCTYPE should be the first thing written to the frame, so if the user code
+  // includes a DOCTYPE declaration, we need to find it and write it first.
+  const doctype = sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
+  return (
+    doctype + createBeforeAllScript(hooks?.beforeAll) + createHeader(id) + build
+  );
+};
+
+const writeContentToFrame = (id: string) => (frameContext: Context) => {
+  const frame = frameContext.document;
+
   // it's possible, if the preview is rapidly opened and closed, for the frame
   // to be null at this point.
   if (frame) {
     frame.open();
-    frame.write(content);
+    frame.write(createContent(id, frameContext));
     frame.close();
   }
-}
+  return frameContext;
+};
 
-const writeContentToFrame = (frameContext: Context) => {
-  const doctype =
-    frameContext.sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
-
-  writeToFrame(
-    doctype + createHeader(frameContext.element.id) + frameContext.build,
-    frameContext.document
-  );
-
+const restoreScrollPosition = (frameContext: Context) => {
   scrollManager.registerScrollEventListener(frameContext.element);
 
   if (scrollManager.getPreviewScrollPosition()) {
@@ -458,6 +478,7 @@ const createFramer = ({
     updateWindowFunctions ?? noop,
     updateProxyConsole(proxyLogger),
     updateWindowI18next,
-    writeContentToFrame,
+    writeContentToFrame(id),
+    restoreScrollPosition,
     init(frameReady, proxyLogger)
   ) as (args: Context) => void;
