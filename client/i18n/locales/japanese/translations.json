@@ -105,7 +105,8 @@
     "update-card": "カード情報を更新",
     "donate-now": "寄付する",
     "confirm-amount": "金額を選択",
-    "play-scene": "再生",
+    "play": "動画を再生",
+    "pause": "動画を一時停止",
     "closed-caption": "クローズドキャプション",
     "share-on-x": "X でシェア",
     "share-on-bluesky": "Bluesky でシェア",
@@ -1171,7 +1172,7 @@
     "focus-instructions-panel": "手順書パネルにフォーカス",
     "navigate-previous": "前の課題へ移動",
     "navigate-next": "次の課題へ移動",
-    "play-scene": "シーンを再生"
+    "play-video": "動画を再生"
   },
   "signout": {
     "heading": "アカウントからサインアウト",

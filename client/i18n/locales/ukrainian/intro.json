@@ -1697,7 +1697,7 @@
       "Цей курс надає комплексний шлях, щоб стати сертифікованим Full Stack розробником. У ньому охоплено всі технології, необхідні для створення сучасних масштабованих програм від початку до кінця.",
       "Завдяки поєднанню інтерактивних уроків, практичних завдань та реальних проєктів, ви опануєте як Front End, так і Back End. Ви працюватимете з HTML, CSS і JavaScript для створення адаптивних інтерфейсів, досліджуватимете React і TypeScript для створення складних вебзастосунків та навчитеся керувати даними за допомогою реляційних баз даних. На стороні Back End ви використовуватимете Git, Npm, Node.js і Python для створення потужних серверних рішень.",
       "Наприкінці курсу ви отримаєте практичні навички та досвід, які дозволять впевнено розробляти повноцінні вебзастосунки, що підготує вас до успішної кар’єри Full Stack розробника.",
-      "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
+      "Для отримання цієї сертифікації потрібно багато часу і зусиль. Якщо ви розпочнете зараз, то будете готові до решти матеріалу і кінцевого екзамену як тільки ми опублікуємо їх протягом найближчих місяців."
     ],
     "chapters": {
       "freecodecamp": "Вітання",
@@ -2923,7 +2923,7 @@
       "workshop-library-manager": {
         "title": "Створіть менеджера бібліотеки",
         "intro": [
-          "In this workshop, you will learn higher order array methods by building a library manager."
+          "У цьому практичному занятті ви дізнаєтесь про методи вищого порядку для роботи з масивами, створивши менеджера бібліотеки."
         ]
       },
       "lab-book-organizer": {
@@ -3171,7 +3171,7 @@
       "lecture-working-with-maps-and-sets": {
         "title": "Робота з map та set",
         "intro": [
-          "In these lecture videos, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>."
+          "У цих відеолекціях ви дізнаєтесь про <code>Map</code> та <code>Set</code> в JavaScript. Ви також дізнаєтесь, як вони відрізняються від <code>WeakSets</code> та <code>WeakMaps</code>."
         ]
       },
       "workshop-plant-nursery-catalog": {
