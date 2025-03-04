@@ -135,7 +135,7 @@ const h2 = document.querySelectorAll('H2')[3];
 assert(h2?.innerText == 'More Recipes');
 ```
 
-You should have an `ul` element nested with `li` elements nested with `a` elements that link to other recipes.
+You should have an `ul` element nested with `li` elements that contain `a` elements that link to other recipes.
 
 ```js
 const headers = document.querySelectorAll("h2");
@@ -164,7 +164,7 @@ headers.forEach(header => {
 Your anchor elements linking to the recipes should have an `href` attribute with the value set to `#`.
 
 ```js
-const anchorTags = document.querySelectorAll("a") || [];
+const anchorTags = document.querySelectorAll("a");
 
 const allAnchorsHaveHrefHash = [...anchorTags].every(function(anchorTag) {
   return anchorTag.hasAttribute("href") && anchorTag.getAttribute("href") === "#";
