@@ -23,7 +23,7 @@ She will ignore them.
 
 ### --feedback--
 
-Maria acknowledges James’s point and plans to take action.
+Maria acknowledges James's point and plans to take action.
 
 ---
 
@@ -35,7 +35,7 @@ Maria wants to improve communication, not dismiss concerns.
 
 ---
 
-She will cancel the team’s check-ins.
+She will cancel the team's check-ins.
 
 ### --feedback--
 
