@@ -79,7 +79,7 @@ assert.equal(code.match(/<\/button>/g).length ,code.match(/<button/g).length);
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -149,7 +149,7 @@ assert.equal(code.match(/<\/button>/g).length ,code.match(/<button/g).length);
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
