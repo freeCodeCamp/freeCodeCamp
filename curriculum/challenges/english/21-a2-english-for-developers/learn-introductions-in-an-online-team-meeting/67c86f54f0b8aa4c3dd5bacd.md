@@ -42,7 +42,7 @@ Place the following phrases in the correct spot:
 
 These three words express ownership of a duty or task. The first word is a pronoun, the second is a verb in contraction form, and the third is a preposition indicating duty.  
 
----  
+---
 
 `He's responsible for`  
 
@@ -50,7 +50,7 @@ These three words express ownership of a duty or task. The first word is a prono
 
 These three words describe someone else's role in a task. The first word is a pronoun, the second is a contraction of `is`, and the third is a preposition indicating duty.  
 
----  
+---
 
 `She and I`  
 
@@ -58,7 +58,7 @@ These three words describe someone else's role in a task. The first word is a pr
 
 These three words introduce two people as the subject of the sentence. The first is a pronoun for a female, the second is a conjunction, and the third is a pronoun referring to oneself.  
 
----  
+---
 
 `She works in`  
 
@@ -66,7 +66,7 @@ These three words introduce two people as the subject of the sentence. The first
 
 These three words indicate a person's professional field or area. The first word is a pronoun, the second is a verb, and the third is a preposition showing location or specialization.  
 
----  
+---
 
 `We're excited`  
 
@@ -74,7 +74,7 @@ These three words indicate a person's professional field or area. The first word
 
 These two words express enthusiasm about something. The first word is a pronoun, and the second is a contraction of `are` and an adjective meaning thrilled or eager.  
 
----  
+---
 
 `let's get started`  
 
