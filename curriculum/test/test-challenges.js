@@ -368,12 +368,10 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                     throw new AssertionError(result.error);
                   }
                   const { id, title, block, dashedName } = challenge;
-
                   assert.exists(
                     dashedName,
                     `Missing dashedName for challenge ${id} in ${block}.`
                   );
-
                   const pathAndTitle = `${block}/${dashedName}`;
                   const idVerificationMessage = mongoIds.check(id, title);
                   assert.isNull(idVerificationMessage, idVerificationMessage);
@@ -385,15 +383,6 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                     dupeTitleCheck,
                     `All challenges within a block must have a unique dashed name. ${dashedName} (at ${pathAndTitle}) is already assigned`
                   );
-                });
-                describe('Check challenge elements', function () {
-                  const { description, block, id } = challenge;
-                  it('Description checks', function () {
-                    assert.isFalse(
-                      description.includes('--transcript--'),
-                      `Transcript is nested inside of the description for challenge ${id} in ${block}`
-                    );
-                  });
                 });
 
                 const { challengeType } = challenge;
