@@ -10,7 +10,7 @@ const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 function plugin() {
   return transformer;
   function transformer(tree, file) {
-    const description = getSection(tree, '--desc--');
+    const description = getSection(tree, '--description--');
 
     if (getSection(description, '--transcript--').length > 0) {
       throw Error('transcript should not be nested inside of the description');
