@@ -29,8 +29,6 @@ Maria does not mention Bob's schedule.
 
 Her most recent meeting with Bob.  
 
-### --feedback--
-
 ---
 
 A future project deadline.  
