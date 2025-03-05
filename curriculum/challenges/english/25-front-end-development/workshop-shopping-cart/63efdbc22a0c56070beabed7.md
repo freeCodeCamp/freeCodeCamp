@@ -18,11 +18,8 @@ To prevent this, you can use the `||` (logical OR) operator to provide a default
   let players = ["Alice", "Bob", "Charlie"];
 
   players.forEach(player => {
-    // Ensure each player's score starts at 0 if not already set
     scores[player] = scores[player] || 0;
   });
-
-  console.log(scores); // { Alice: 0, Bob: 0, Charlie: 0 }
 ```
 
 Now, let’s apply this concept to your `totalCountPerProduct` object in the `forEach` callback. Make sure that each `dessert.id` property is initialized properly.
