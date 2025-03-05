@@ -73,7 +73,7 @@ Your code should get the element with class `message` and change its `textConten
 ```js
 assert.match(
   code,
-  /document\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\.textContent\s*?=\s*?.+?\.userName\s*?\+\s*?.+?\.suffix/g
+  /document\.getElementsByClassName\(\s*('|")message\1\s*\)\[0\]\.textContent\s*=\s*.+?\.userName\s*\+\s*.+?\.suffix/g
 );
 ```
 
