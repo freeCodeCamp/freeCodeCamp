@@ -38,7 +38,7 @@ Place the following phrases in the correct spot:
 
 `I'm responsible for`  
 
-### --feedback--  
+### --feedback--
 
 These three words express ownership of a duty or task. The first word is a pronoun, the second is a verb in contraction form, and the third is a preposition indicating duty.  
 
@@ -46,7 +46,7 @@ These three words express ownership of a duty or task. The first word is a prono
 
 `He's responsible for`  
 
-### --feedback--  
+### --feedback--
 
 These three words describe someone else's role in a task. The first word is a pronoun, the second is a contraction of `is`, and the third is a preposition indicating duty.  
 
@@ -54,7 +54,7 @@ These three words describe someone else's role in a task. The first word is a pr
 
 `She and I`  
 
-### --feedback--  
+### --feedback--
 
 These three words introduce two people as the subject of the sentence. The first is a pronoun for a female, the second is a conjunction, and the third is a pronoun referring to oneself.  
 
@@ -62,7 +62,7 @@ These three words introduce two people as the subject of the sentence. The first
 
 `She works in`  
 
-### --feedback--  
+### --feedback--
 
 These three words indicate a person's professional field or area. The first word is a pronoun, the second is a verb, and the third is a preposition showing location or specialization.  
 
@@ -70,7 +70,7 @@ These three words indicate a person's professional field or area. The first word
 
 `We're excited`  
 
-### --feedback--  
+### --feedback--
 
 These two words express enthusiasm about something. The first word is a pronoun, and the second is a contraction of `are` and an adjective meaning thrilled or eager.  
 
@@ -78,6 +78,6 @@ These two words express enthusiasm about something. The first word is a pronoun,
 
 `let's get started`  
 
-### --feedback--  
+### --feedback--
 
 These three words are used to begin an activity. The first word is a contraction of `let` and `us`, the second is a verb, and the third is the past participle of `start`.  
