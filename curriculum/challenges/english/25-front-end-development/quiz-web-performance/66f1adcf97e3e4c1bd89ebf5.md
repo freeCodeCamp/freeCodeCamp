@@ -165,13 +165,13 @@ It provides a detailed table of performance metrics for the user.
 
 #### --answer--
 
-It lets developers track how efficiently a webpage loads and responds—directly from code.
+It lets developers track how efficiently a webpage loads and responds directly from code.
 
 ### --question--
 
 #### --text--
 
-What strategy can effectively enhance perceived performance?
+Which strategy can effectively enhance perceived performance?
 
 #### --distractors--
 
@@ -303,7 +303,7 @@ Which of the following APIs gives you high-precision timestamps (in milliseconds
 
 #### --text--
 
-Which of the following APIs gives you a breakdown of every stage of page loading—from DNS lookup to `DOMContentLoaded`?
+Which of the following APIs gives you a breakdown of every stage of page loading from DNS lookup to `DOMContentLoaded`?
 
 #### --distractors--
 
@@ -325,7 +325,7 @@ Performance Timing API
 
 #### --text--
 
-Which of the following listens for performance events—such as layout shifts, long tasks, and user interactions?
+Which of the following listens for performance events such as layout shifts, long tasks, and user interactions?
 
 #### --distractors--
 
@@ -428,25 +428,25 @@ Which of the following is the correct way to lazy load an image?
 #### --distractors--
 
 ```html
-<img src="placeholder.jpg" data-src="real-image.jpg" lazy="loading">
+<img src="placeholder.jpg" lazy="loading">
 ```
 
 ---
 
 ```html
-<img src="placeholder.jpg" data-src="real-image.jpg" load="lazy">
+<img src="placeholder.jpg" load="lazy">
 ```
 
 ---
 
 ```html
-<img src="placeholder.jpg" data-src="real-image.jpg" lazy="load">
+<img src="placeholder.jpg" lazy="load">
 ```
 
 #### --answer--
 
 ```html
-<img src="placeholder.jpg" data-src="real-image.jpg" loading="lazy">
+<img src="placeholder.jpg" loading="lazy">
 ```
 
 ### --question--
