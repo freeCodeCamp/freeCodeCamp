@@ -10,14 +10,10 @@ import { customNanoid } from '../../utils/ids';
 import { encodeUserToken } from '../../utils/tokens';
 import { trimTags } from '../../utils/validation';
 import { generateReportEmail } from '../../utils/email-templates';
-import { splitUser } from '../helpers/user-utils';
 import {
-  normalizeChallenges,
-  normalizeFlags,
   normalizeProfileUI,
   normalizeSurveys,
-  normalizeTwitter,
-  removeNulls
+  normalizeTwitter
 } from '../../utils/normalize';
 import type { UpdateReqType } from '../../utils';
 import {
@@ -559,8 +555,6 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           ? encodeUserToken(userToken.id)
           : undefined;
 
-        const [flags, rest] = splitUser(user);
-
         const {
           username,
           usernameDisplay,
@@ -573,15 +567,14 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           name,
           theme,
           ...publicUser
-        } = rest;
+        } = user;
 
         await res.send({
           user: {
             [username]: {
-              ...removeNulls(publicUser),
-              ...normalizeFlags(flags),
-              currentChallengeId: currentChallengeId ?? '',
-              completedChallenges: normalizeChallenges(completedChallenges),
+              ...publicUser,
+              currentChallengeId,
+              completedChallenges,
               completedChallengeCount: completedChallenges.length,
               // This assertion is necessary until the database is normalized.
               calendar: getCalendar(
