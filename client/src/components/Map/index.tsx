@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import {
   type SuperBlocks,
@@ -38,10 +39,17 @@ interface MapProps {
   currentCerts: CurrentCert[];
   claimedCertifications?: ClaimedCertifications;
   completedChallengeIds: string[];
-  allChallenges: {
-    id: string;
-    superBlock: SuperBlocks;
-  }[];
+}
+
+interface Data {
+  allChallengeNode: {
+    nodes: {
+      challenge: {
+        id: string;
+        superBlock: SuperBlocks;
+      };
+    }[];
+  };
 }
 
 const linkSpacingStyle = {
@@ -128,11 +136,25 @@ function Map({
   forLanding = false,
   isSignedIn,
   currentCerts,
-  completedChallengeIds,
-  allChallenges
+  completedChallengeIds
 }: MapProps): React.ReactElement {
   const { t } = useTranslation();
+  const {
+    allChallengeNode: { nodes: challengeNodes }
+  }: Data = useStaticQuery(graphql`
+    query {
+      allChallengeNode {
+        nodes {
+          challenge {
+            id
+            superBlock
+          }
+        }
+      }
+    }
+  `);
 
+  const allChallenges = challengeNodes.map(node => node.challenge);
   const allSuperblockChallengesCompleted = (superblock: SuperBlocks) => {
     // array of all challenge ID's in the superblock
     const allSuperblockChallenges = allChallenges
