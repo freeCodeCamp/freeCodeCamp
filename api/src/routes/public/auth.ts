@@ -45,7 +45,7 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
 
     const logger = fastify.log.child({ req });
 
-    logger.info({ email }, 'Mobile app login attempt');
+    logger.info('Mobile app login attempt');
 
     if (!email) {
       logger.error('Could not get email from Auth0 to log in');
