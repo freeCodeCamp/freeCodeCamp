@@ -1,8 +1,8 @@
 ---
 id: 655b37ecf9da446bd1dcff4f
-title: Task 95
+title: Task 96
 challengeType: 22
-dashedName: task-95
+dashedName: task-96
 ---
 
 <!-- (Audio)
