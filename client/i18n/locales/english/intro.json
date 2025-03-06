@@ -3448,11 +3448,11 @@
       "ffpt": { "title": "279", "intro": [] },
       "lrof": { "title": "280", "intro": [] },
       "vyzp": { "title": "281", "intro": [] },
-      "review-react-routing-and-state-management": {
-        "title": "React Routing and State Management Review",
+      "review-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Review",
         "intro": [
-          "Before you take the routing and state management quiz, you should review everything you've learned so far.",
-          "Open up this page, to review all of the concepts taught including routing, state management, prop drilling and more."
+          "Before you take the React forms, data fetching and routing quiz, you should review everything you've learned so far.",
+          "Open up this page, to review all of the concepts taught including routing, forms, state management, prop drilling, data fetching and more."
         ]
       },
       "quiz-advanced-react": {
