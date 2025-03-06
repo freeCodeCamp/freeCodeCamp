@@ -3448,7 +3448,13 @@
       "ffpt": { "title": "279", "intro": [] },
       "lrof": { "title": "280", "intro": [] },
       "vyzp": { "title": "281", "intro": [] },
-      "zagz": { "title": "282", "intro": [] },
+      "review-react-routing-and-state-management": {
+        "title": "React Routing and State Management Review",
+        "intro": [
+          "Before you take the routing and state management quiz, you should review everything you've learned so far.",
+          "Open up this page, to review all of the concepts taught including routing, state management, prop drilling and more."
+        ]
+      },
       "quiz-advanced-react": {
         "title": "Advanced React Quiz",
         "intro": [

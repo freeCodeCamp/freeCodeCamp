@@ -1,0 +1,10 @@
+{
+  "name": "React Routing and State Management Review",
+  "isUpcomingChange": true,
+  "blockType": "review",
+  "blockLayout": "link",
+  "dashedName": "review-react-routing-and-state-management",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67c9e932c6c4234532d46394", "title": "React Routing and State Management Review" }],
+  "helpCategory": "JavaScript"
+}
