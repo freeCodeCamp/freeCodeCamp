@@ -83,37 +83,37 @@ model user {
   emailVerifyTTL               DateTime?
   externalId                   String?
   githubProfile                String?
-  is2018DataVisCert            Boolean
-  is2018FullStackCert          Boolean
-  isApisMicroservicesCert      Boolean
-  isBackEndCert                Boolean
-  isBanned                     Boolean
-  isCheater                    Boolean
-  isClassroomAccount           Boolean
-  isCollegeAlgebraPyCertV8     Boolean
-  isDataAnalysisPyCertV7       Boolean
-  isDataVisCert                Boolean
-  isDonating                   Boolean
-  isFoundationalCSharpCertV8   Boolean
-  isFrontEndCert               Boolean
-  isFrontEndLibsCert           Boolean
-  isFullStackCert              Boolean
-  isHonest                     Boolean
-  isInfosecCertV7              Boolean
-  isInfosecQaCert              Boolean
-  isJsAlgoDataStructCert       Boolean
-  isJsAlgoDataStructCertV8     Boolean
-  isMachineLearningPyCertV7    Boolean
-  isQaCertV7                   Boolean
-  isRelationalDatabaseCertV8   Boolean
-  isRespWebDesignCert          Boolean
-  isSciCompPyCertV7            Boolean
-  keyboardShortcuts            Boolean
+  is2018DataVisCert            Boolean                       @default(false)
+  is2018FullStackCert          Boolean                       @default(false)
+  isApisMicroservicesCert      Boolean                       @default(false)
+  isBackEndCert                Boolean                       @default(false)
+  isBanned                     Boolean                       @default(false)
+  isCheater                    Boolean                       @default(false)
+  isClassroomAccount           Boolean                       @default(false)
+  isCollegeAlgebraPyCertV8     Boolean                       @default(false)
+  isDataAnalysisPyCertV7       Boolean                       @default(false)
+  isDataVisCert                Boolean                       @default(false)
+  isDonating                   Boolean                       @default(false)
+  isFoundationalCSharpCertV8   Boolean                       @default(false)
+  isFrontEndCert               Boolean                       @default(false)
+  isFrontEndLibsCert           Boolean                       @default(false)
+  isFullStackCert              Boolean                       @default(false)
+  isHonest                     Boolean                       @default(false)
+  isInfosecCertV7              Boolean                       @default(false)
+  isInfosecQaCert              Boolean                       @default(false)
+  isJsAlgoDataStructCert       Boolean                       @default(false)
+  isJsAlgoDataStructCertV8     Boolean                       @default(false)
+  isMachineLearningPyCertV7    Boolean                       @default(false)
+  isQaCertV7                   Boolean                       @default(false)
+  isRelationalDatabaseCertV8   Boolean                       @default(false)
+  isRespWebDesignCert          Boolean                       @default(false)
+  isSciCompPyCertV7            Boolean                       @default(false)
+  keyboardShortcuts            Boolean                       @default(false)
   lastUpdatedAtInMS            Int
   linkedin                     String?
   location                     String?
   name                         String?
-  needsModeration              Boolean
+  needsModeration              Boolean                       @default(false)
   newEmail                     String?
   partiallyCompletedChallenges PartiallyCompletedChallenge[]
   picture                      String?
@@ -151,6 +151,8 @@ model EnvExam {
   config        EnvConfig
   /// ObjectIds for required challenges/blocks to take the exam
   prerequisites String[]         @db.ObjectId
+  /// If `deprecated`, the exam should no longer be considered for users
+  deprecated    Boolean
 
   // Relations
   generatedExams EnvGeneratedExam[]
@@ -375,7 +377,7 @@ model ExamEnvironmentAuthorizationToken {
   userId   String   @unique @db.ObjectId
 
   // Relations
-  user user @relation(fields: [userId], references: [id])
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model sessions {
