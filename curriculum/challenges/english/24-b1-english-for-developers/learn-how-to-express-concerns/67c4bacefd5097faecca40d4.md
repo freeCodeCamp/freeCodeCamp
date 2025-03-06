@@ -60,7 +60,7 @@ Using negatives in questions with auxiliary or modal verbs (such as `wouldn't`, 
 ```json
 {
   "setup": {
-    "background": "company1-boardroom.png",
+    "background": "company2-boardroom.png",
     "characters": [
       {
         "character": "Bob",
