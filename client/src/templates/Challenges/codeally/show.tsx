@@ -3,17 +3,16 @@ import { graphql } from 'gatsby';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
-import { Trans, withTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Alert, Spacer } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
-import ChallengeHeading from '../components/challenge-heading';
 import PrismFormatted from '../components/prism-formatted';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
@@ -51,6 +50,11 @@ import { postUserToken } from '../../../utils/ajax';
 
 import './codeally.css';
 import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
+import RdbVmInstructions from './rdb-vm-instructions';
+import RdbStep1Instructions from './rdb-step-1-instructions';
+import RdbStep2Instructions from './rdb-step-2-instructions';
+import RdbGitpodAlert from './rdb-gitpod-alert';
+import RdbLogoutAlert from './rdb-logout-alert';
 
 // Redux
 const mapStateToProps = createSelector(
@@ -280,117 +284,49 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
               <Spacer size='m' />
               <PrismFormatted text={description} />
               <Spacer size='m' />
-              <div className='ca-description'>
-                <p>{t('learn.gitpod.intro')}</p>
-
-                <ol>
-                  <li>
-                    <Trans i18nKey='learn.gitpod.step-1'>
-                      <a
-                        href='https://github.com/join'
-                        rel='noopener noreferrer'
-                        target='_blank'
-                        title={t('learn.source-code-link')}
-                      >
-                        placeholder
-                      </a>
-                    </Trans>
-                  </li>
-
-                  <li>{t('learn.gitpod.step-2')}</li>
-                  <li>{t('learn.gitpod.step-3')}</li>
-                  <li>
-                    {t('learn.gitpod.step-4')}
-                    <ul>
-                      <li>{t('learn.gitpod.step-5')}</li>
-                      <li>{t('learn.gitpod.step-6')}</li>
-                      <li>{t('learn.gitpod.step-7')}</li>
-                      <li>{t('learn.gitpod.step-8')}</li>
-                    </ul>
-                  </li>
-
-                  <li>{t('learn.gitpod.step-9')}</li>
-                </ol>
-              </div>
-
+              <RdbVmInstructions />
               <Spacer size='m' />
-              {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
+              {isSignedIn && challengeType === challengeTypes.codeAllyCert ? (
                 <>
                   <div className='ca-description'>
                     {t('learn.complete-both-steps')}
                   </div>
                   <hr />
                   <Spacer size='m' />
-                  <ChallengeHeading
-                    heading={t('learn.step-1')}
+                  <RdbStep1Instructions
+                    course={title}
+                    instructions={instructions}
                     isCompleted={isPartiallyCompleted || isCompleted}
                   />
-                  <Spacer size='m' />
-                  <div className='ca-description'>{t('learn.runs-in-vm')}</div>
-                  <Spacer size='m' />
-                  <PrismFormatted text={instructions} />
-                  <Spacer size='m' />
-                </>
-              )}
-              <Alert variant='info'>
-                <Trans
-                  values={{ course: title }}
-                  i18nKey='learn.gitpod.continue-project'
-                >
-                  <a
-                    href='https://gitpod.io/workspaces'
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    placeholder
-                  </a>
-                </Trans>
-                <Spacer size='m' />
-                <Trans i18nKey='learn.gitpod.learn-more'>
-                  <a
-                    href='https://forum.freecodecamp.org/t/using-gitpod-in-the-curriculum/668669'
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    placeholder
-                  </a>
-                </Trans>
-              </Alert>
-              {isSignedIn && (
-                <Alert variant='danger'>
-                  {t('learn.gitpod.logout-warning', { course: title })}
-                </Alert>
-              )}
-              <CodeAllyButton
-                text={
-                  challengeType === challengeTypes.codeAllyCert
-                    ? t('buttons.click-start-project')
-                    : t('buttons.click-start-course')
-                }
-                // `this.startCourse` being an async callback is acceptable
-                //eslint-disable-next-line @typescript-eslint/no-misused-promises
-                onClick={startCourse}
-              />
-              {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
-                <>
-                  <hr />
-                  <Spacer size='m' />
-                  <ChallengeHeading
-                    heading={t('learn.step-2')}
-                    isCompleted={isCompleted}
-                  />
-                  <Spacer size='m' />
-                  <div className='ca-description'>
-                    {t('learn.submit-public-url')}
-                  </div>
-                  <Spacer size='m' />
-                  <PrismFormatted text={notes} />
-                  <Spacer size='m' />
-                  <SolutionForm
+                  {isSignedIn && <RdbLogoutAlert course={title} />}
+                  <CodeAllyButton
                     challengeType={challengeType}
-                    description={description}
-                    onSubmit={handleSubmit}
-                    updateSolutionForm={updateSolutionFormValues}
+                    //eslint-disable-next-line @typescript-eslint/no-misused-promises
+                    onClick={startCourse}
+                  />
+                  {challengeType === challengeTypes.codeAllyCert && (
+                    <>
+                      <RdbStep2Instructions
+                        isCompleted={isCompleted}
+                        notes={notes}
+                      />
+                      <SolutionForm
+                        challengeType={challengeType}
+                        description={description}
+                        onSubmit={handleSubmit}
+                        updateSolutionForm={updateSolutionFormValues}
+                      />
+                    </>
+                  )}
+                </>
+              ) : (
+                <>
+                  <RdbGitpodAlert course={title} />
+                  {isSignedIn && <RdbLogoutAlert course={title} />}
+                  <CodeAllyButton
+                    challengeType={challengeType}
+                    //eslint-disable-next-line @typescript-eslint/no-misused-promises
+                    onClick={startCourse}
                   />
                 </>
               )}
