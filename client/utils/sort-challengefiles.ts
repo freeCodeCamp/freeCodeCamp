@@ -1,4 +1,6 @@
-exports.sortChallengeFiles = function sortChallengeFiles(challengeFiles) {
+import { ChallengeFile } from '../src/redux/prop-types';
+
+export const sortChallengeFiles = (challengeFiles: ChallengeFile[]) => {
   const xs = challengeFiles.slice();
   xs.sort((a, b) => {
     if (a.history[0] === 'index.jsx') return -1;
