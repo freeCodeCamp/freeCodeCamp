@@ -9,6 +9,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
@@ -268,7 +269,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     }
   };
 
-  const gitpodDeprecated = true;
+  const gitpodDeprecated = useFeature('gitpod-deprecated').on;
 
   return (
     <Hotkeys containerRef={container}>
