@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-// import { Trans, useTranslation } from 'react-i18next';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { Spacer, Button } from '@freecodecamp/ui';
 import { postUserToken } from '../../../utils/ajax';
 import { createFlashMessage } from '../../../components/Flash/redux';
@@ -42,6 +41,7 @@ interface RdbLocalInstructionsProps {
   createFlashMessage: typeof createFlashMessage;
   isSignedIn: boolean;
   updateUserToken: (arg0: string) => void;
+  url: string;
   userToken: string | null;
 }
 
@@ -50,9 +50,12 @@ function RdbLocalInstructions({
   createFlashMessage,
   isSignedIn,
   updateUserToken,
+  url,
   userToken
 }: RdbLocalInstructionsProps): JSX.Element {
   const { t } = useTranslation();
+
+  const coderoadTutorial = `https://raw.githubusercontent.com/${url}/main/tutorial.json`;
 
   const generateUserToken = async () => {
     const createUserTokenResponse = await postUserToken();
@@ -85,6 +88,23 @@ function RdbLocalInstructions({
     );
   };
 
+  const copyUrl = () => {
+    navigator.clipboard.writeText(coderoadTutorial ?? '').then(
+      () => {
+        createFlashMessage({
+          type: 'success',
+          message: FlashMessages.CourseUrlCopied
+        });
+      },
+      () => {
+        createFlashMessage({
+          type: 'danger',
+          message: FlashMessages.CourseUrlCopyError
+        });
+      }
+    );
+  };
+
   return (
     <div className='ca-description'>
       <p>{t('learn.local.intro')}</p>
@@ -95,17 +115,17 @@ function RdbLocalInstructions({
           </Link>
         </li>
         <li>
-          <Link external={true} to='https://code.visualstudio.com/download'>
-            VS Code
-          </Link>{' '}
-          and the{' '}
-          <Link
-            external={true}
-            to='https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers'
-          >
-            Dev Containers
-          </Link>{' '}
-          extension
+          <Trans i18nKey='learn.local.download-vscode'>
+            <Link external={true} to='https://code.visualstudio.com/download'>
+              placeholder
+            </Link>
+            <Link
+              external={true}
+              to='https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers'
+            >
+              placeholder
+            </Link>
+          </Trans>
         </li>
         <li>
           <Link external={true} to='https://git-scm.com/downloads'>
@@ -114,50 +134,51 @@ function RdbLocalInstructions({
         </li>
       </ul>
       <Spacer size='m' />
-      <p>Then, do these to start the course:</p>
+      <p>{t('learn.local.heading')}</p>
       <ol>
         <li>
-          Open a terminal and clone the RDB Alpha repo with{' '}
-          <code>git clone https://github.com/freeCodeCamp/rdb-alpha</code> if
-          you don&apos;t already have it
+          <Trans i18nKey='learn.local.step-1'>
+            <code>placeholder</code>
+          </Trans>
         </li>
         <li>
-          Navigate to the <code>rdb-alpha</code> directory in the terminal with{' '}
-          <code>cd rdb-alpha</code>, and open VSCode with <code>code .</code>
+          <Trans i18nKey='learn.local.step-2'>
+            <code>placeholder</code>
+            <code>placeholder</code>
+            <code>placeholder</code>
+          </Trans>
         </li>
         {isSignedIn && (
           <>
             <Spacer size='s' />
-            <p>
-              If you want to save your progress to your freeCodeCamp account, do
-              the following:
-            </p>
+            <p>{t('learn.local.sub-step-heading')}</p>
             <ol>
-              <li>Generate a user token if you don&apos;t already have one:</li>
+              <li>{t('learn.local.sub-step-1')}</li>
+              <Spacer size='xxs' />
               <Button
                 disabled={!!userToken}
                 block={true}
                 onClick={() => void generateUserToken()}
               >
-                Generate User Token
+                {t('learn.local.generate-token-btn')}
               </Button>
               <Spacer size='xs' />
-              <li>Copy your user token:</li>
+              <li>{t('learn.local.sub-step-2')}</li>
+              <Spacer size='xxs' />
               <Button
                 disabled={!userToken}
                 block={true}
-                onClick={() => void copyUserToken()}
+                onClick={copyUserToken}
               >
-                Copy User Token
+                {t('learn.local.copy-token-btn')}
               </Button>
               <Spacer size='xs' />
               <li>
-                In the VSCode with that opened, find and open the{' '}
-                <code>Dockerfile</code>. At the bottom of the file, paste your
-                token in as the value for the{' '}
-                <code>CODEROAD_WEBHOOK_TOKEN</code> variable. It should look
-                like this:{' '}
-                <code>ENV CODEROAD_WEBHOOK_TOKEN=your-token-here</code>
+                <Trans i18nKey='learn.local.sub-step-3'>
+                  <code>placeholder</code>
+                  <code>placeholder</code>
+                  <code>placeholder</code>
+                </Trans>
               </li>
               <Spacer size='xs' />
               <RdbLocalLogoutAlert course={course} />
@@ -166,32 +187,29 @@ function RdbLocalInstructions({
           </>
         )}
         <li>
-          Open the command palette in VSCode by pressing Press Ctrl / Cmd +
-          Shift + P or going to the &quot;View&quot; menu and clicking
-          &quot;Command Paletta...&quot; and enter{' '}
-          <code>Dev Containers: Rebuild and Reopen in Container</code>
+          <Trans i18nKey='learn.local.step-3'>
+            <code>placeholder</code>
+          </Trans>
         </li>
+        <li>{t('learn.local.step-4')}</li>
         <li>
-          A new VS Code window will open and begin building the Docker image. It
-          will take several minutes the first time.
+          <Trans i18nKey='learn.local.step-5'>
+            <code>placeholder</code>
+          </Trans>
         </li>
+        <li>{t('learn.local.step-6')}</li>
         <li>
-          Once it is finished building, press Ctrl / Cmd + Shift + P and enter
-          <code>CodeRoad: Start</code> to open CodeRoad
+          <Trans i18nKey='learn.local.step-7'>
+            <code>{{ url: coderoadTutorial }}</code>
+          </Trans>
         </li>
-        <li>In the CodeRoad window, click &quot;Start New Tutorial&quot;</li>
-        <li>
-          Enter{' '}
-          <code>
-            https://raw.githubusercontent.com/freeCodeCamp/learn-bash-by-building-a-boilerplate/main/tutorial.json
-          </code>{' '}
-          in the input
-        </li>
-        <li>In CodeRoad, click the &quot;Start&quot; button to begin</li>
-        <li>
-          Follow the instructions in CodeRoad to complete the course. Note: You
-          may need to restart the terminal for the tests to pass
-        </li>
+        <Spacer size='xxs' />
+        <Button block={true} onClick={copyUrl}>
+          {t('learn.local.copy-url')}
+        </Button>
+        <Spacer size='xs' />
+        <li>{t('learn.local.step-8')}</li>
+        <li>{t('learn.local.step-9')}</li>
       </ol>
     </div>
   );

@@ -131,7 +131,8 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
           notes,
           superBlock,
           title,
-          translationPending
+          translationPending,
+          url
         }
       }
     },
@@ -267,7 +268,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     }
   };
 
-  const gitpodDeprecated = false;
+  const gitpodDeprecated = true;
 
   return (
     <Hotkeys containerRef={container}>
@@ -291,7 +292,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
 
               {gitpodDeprecated ? (
                 <>
-                  <RdbLocalInstructions course={title} />
+                  <RdbLocalInstructions course={title} url={url} />
                   <Spacer size='m' />
                   {isSignedIn &&
                     challengeType === challengeTypes.codeAllyCert && (

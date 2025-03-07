@@ -11,6 +11,8 @@ export enum FlashMessages {
   CodeSaveError = 'flash.code-save-error',
   CodeSaveLess = 'flash.code-save-less',
   CompleteProjectFirst = 'flash.complete-project-first',
+  CourseUrlCopied = 'flash.course-url-copied',
+  CourseUrlCopyError = 'flash.course-url-copy-error',
   DeleteTokenErr = 'flash.delete-token-err',
   EmailValid = 'flash.email-valid',
   GenerateExamError = 'flash.generate-exam-error',
