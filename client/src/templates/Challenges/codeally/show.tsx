@@ -47,14 +47,17 @@ import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 import { postUserToken } from '../../../utils/ajax';
-
-import './codeally.css';
 import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
-import RdbVmInstructions from './rdb-vm-instructions';
+
+import RdbGitpodContinueAlert from './rdb-gitpod-continue-alert';
+import RdbGitpodInstructions from './rdb-gitpod-instructions';
+import RdbGitpodLogoutAlert from './rdb-gitpod-logout-alert';
+import RdbLocalInstructions from './rdb-local-instructions';
+import RdbLocalLogoutAlert from './rdb-local-logout-alert';
 import RdbStep1Instructions from './rdb-step-1-instructions';
 import RdbStep2Instructions from './rdb-step-2-instructions';
-import RdbGitpodAlert from './rdb-gitpod-alert';
-import RdbLogoutAlert from './rdb-logout-alert';
+
+import './codeally.css';
 
 // Redux
 const mapStateToProps = createSelector(
@@ -265,6 +268,8 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     }
   };
 
+  const gitpodDeprecated = true;
+
   return (
     <Hotkeys containerRef={container}>
       <LearnLayout>
@@ -284,7 +289,11 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
               <Spacer size='m' />
               <PrismFormatted text={description} />
               <Spacer size='m' />
-              <RdbVmInstructions />
+              {gitpodDeprecated ? (
+                <RdbLocalInstructions course={title} />
+              ) : (
+                <RdbGitpodInstructions />
+              )}
               <Spacer size='m' />
               {isSignedIn && challengeType === challengeTypes.codeAllyCert ? (
                 <>
@@ -298,7 +307,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
                     instructions={instructions}
                     isCompleted={isPartiallyCompleted || isCompleted}
                   />
-                  {isSignedIn && <RdbLogoutAlert course={title} />}
+                  {isSignedIn && <RdbLocalLogoutAlert course={title} />}
                   <CodeAllyButton
                     challengeType={challengeType}
                     //eslint-disable-next-line @typescript-eslint/no-misused-promises
@@ -320,15 +329,17 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
                   )}
                 </>
               ) : (
-                <>
-                  <RdbGitpodAlert course={title} />
-                  {isSignedIn && <RdbLogoutAlert course={title} />}
-                  <CodeAllyButton
-                    challengeType={challengeType}
-                    //eslint-disable-next-line @typescript-eslint/no-misused-promises
-                    onClick={startCourse}
-                  />
-                </>
+                !gitpodDeprecated && (
+                  <>
+                    <RdbGitpodContinueAlert course={title} />
+                    {isSignedIn && <RdbGitpodLogoutAlert course={title} />}
+                    <CodeAllyButton
+                      challengeType={challengeType}
+                      //eslint-disable-next-line @typescript-eslint/no-misused-promises
+                      onClick={startCourse}
+                    />
+                  </>
+                )
               )}
               <Spacer size='xxs' />
               <ProjectToolPanel />

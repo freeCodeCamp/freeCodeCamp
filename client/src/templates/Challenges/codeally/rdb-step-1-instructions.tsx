@@ -4,7 +4,7 @@ import { Spacer } from '@freecodecamp/ui';
 
 import ChallengeHeading from '../components/challenge-heading';
 import PrismFormatted from '../components/prism-formatted';
-import RdbGitpodAlert from './rdb-gitpod-alert';
+import RdbGitpodAlert from './rdb-gitpod-continue-alert';
 
 interface RdbStep1InstructionsProps {
   course: string;

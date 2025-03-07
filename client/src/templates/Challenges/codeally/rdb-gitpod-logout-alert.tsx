@@ -2,11 +2,13 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@freecodecamp/ui';
 
-interface RdbGitpodAlertProps {
+interface RdbGitpodLogoutAlertProps {
   course: string;
 }
 
-function RdbLogoutAlert({ course }: RdbGitpodAlertProps): JSX.Element {
+function RdbGitpodLogoutAlert({
+  course
+}: RdbGitpodLogoutAlertProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -16,6 +18,6 @@ function RdbLogoutAlert({ course }: RdbGitpodAlertProps): JSX.Element {
   );
 }
 
-RdbLogoutAlert.displayName = 'RdbLogoutAlert';
+RdbGitpodLogoutAlert.displayName = 'RdbGitpodLogoutAlert';
 
-export default RdbLogoutAlert;
+export default RdbGitpodLogoutAlert;

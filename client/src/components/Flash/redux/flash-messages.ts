@@ -66,6 +66,8 @@ export enum FlashMessages {
   UsernameUpdated = 'flash.username-updated',
   UsernameUsed = 'flash.username-used',
   UserNotCertified = 'flash.user-not-certified',
+  UserTokenCopied = 'flash.user-token-copied',
+  UserTokenCopyError = 'flash.user-token-copy-error',
   WrongName = 'flash.wrong-name',
   WrongUpdating = 'flash.wrong-updating',
   WentWrong = 'flash.went-wrong'

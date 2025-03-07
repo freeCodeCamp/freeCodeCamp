@@ -510,6 +510,10 @@
       "learn-more": "Learn more about <0>Gitpod workspaces.</0>",
       "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account."
     },
+    "local": {
+      "intro": "This course runs in a virtual Linux machine on your computer. To run the course, you first need to download each of the following prerequisites if you don't already have them:",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your user token will be deleted and your progress will not be saved to your freeCodeCamp account."
+    },
     "step-1": "Step 1: Complete the project",
     "step-2": "Step 2: Submit your code",
     "submit-public-url": "When you have completed the project, save all the required files into a public repository and submit the URL to it below.",
@@ -919,6 +923,8 @@
     "generate-exam-error": "An error occurred trying to generate your exam.",
     "cert-not-found": "The certification {{certSlug}} does not exist.",
     "reset-editor-layout": "Your editor layout has been reset.",
+    "user-token-copied": "User token copied to clipboard",
+    "user-token-copy-error": "Something went wrong trying to copy your token",
     "ms": {
       "transcript": {
         "link-err-1": "Please include a Microsoft transcript URL in the request.",
@@ -1150,7 +1156,16 @@
     "delete-p2": "If you suspect your token has been compromised, you can delete it to make it unusable. Progress on previously submitted lessons will not be lost.",
     "delete-p3": "You will need to create a new token to save future progress on the curriculum sections that use a virtual machine.",
     "no-thanks": "No thanks, I would like to keep my token",
-    "yes-please": "Yes please, I would like to delete my token"
+    "yes-please": "Yes please, I would like to delete my token",
+
+    "user-token": "User Token",
+    "note": "Your user token is used to save your progress of the relational database courses to your freeCodeCamp account. Do not share this token with anyone.",
+    "invalidation": "If you generate a new token, your old token will be invalidated.",
+    "generate-user-token": "Generate User Token",
+    "error": "There was an error generating your token, please try again in a moment.",
+    "your-user-token": "Your User Token is: {{token}}",
+    "copied": "Token copied to clipboard",
+    "copy-error": "Error copying token to clipboard"
   },
   "exam-token": {
     "exam-token": "Exam Token",

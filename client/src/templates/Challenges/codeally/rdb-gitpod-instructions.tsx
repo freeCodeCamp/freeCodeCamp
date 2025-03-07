@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 
-function RdbVmInstructions(): JSX.Element {
+function RdbGitpodInstructions(): JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -37,6 +37,6 @@ function RdbVmInstructions(): JSX.Element {
   );
 }
 
-RdbVmInstructions.displayName = 'RdbVmInstructions';
+RdbGitpodInstructions.displayName = 'RdbGitpodInstructions';
 
-export default RdbVmInstructions;
+export default RdbGitpodInstructions;

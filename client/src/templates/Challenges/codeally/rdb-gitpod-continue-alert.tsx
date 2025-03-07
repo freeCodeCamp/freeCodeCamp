@@ -2,11 +2,13 @@ import React from 'react';
 import { Trans } from 'react-i18next';
 import { Alert, Spacer } from '@freecodecamp/ui';
 
-interface RdbGitpodAlertProps {
+interface RdbGitpodContinueAlertProps {
   course: string;
 }
 
-function RdbGitpodAlert({ course }: RdbGitpodAlertProps): JSX.Element {
+function RdbGitpodContinueAlert({
+  course
+}: RdbGitpodContinueAlertProps): JSX.Element {
   return (
     <Alert variant='info'>
       <Trans values={{ course }} i18nKey='learn.gitpod.continue-project'>
@@ -32,6 +34,6 @@ function RdbGitpodAlert({ course }: RdbGitpodAlertProps): JSX.Element {
   );
 }
 
-RdbGitpodAlert.displayName = 'RdbGitpodAlert';
+RdbGitpodContinueAlert.displayName = 'RdbGitpodContinueAlert';
 
-export default RdbGitpodAlert;
+export default RdbGitpodContinueAlert;
