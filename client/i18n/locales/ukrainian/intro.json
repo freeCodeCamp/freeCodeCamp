@@ -1606,13 +1606,13 @@
       "learn-how-to-share-feedback": {
         "title": "Дізнайтесь, як ділитись фідбеком",
         "intro": [
-          "In this course, you will see ways of telling other people how you feel about their work, highlighting both their strengths and points for improvement."
+          "У цьому курсі ви дізнаєтесь, як ділитись зворотним зв’язком щодо роботи, підкреслюючи сильні сторони і моменти для покращення."
         ]
       },
       "learn-how-to-share-your-opinion": {
         "title": "Дізнайтесь, як ділитись своєю думкою",
         "intro": [
-          "This course will show you how to express your ideas and feeling towards topics in a discussion."
+          "У цьому курсі ви дізнаєтесь, як ділитись своїми ідеями і емоціями під час дискусії."
         ]
       },
       "learn-how-to-express-agreement": {
@@ -1696,7 +1696,8 @@
     "intro": [
       "Цей курс надає комплексний шлях, щоб стати сертифікованим Full Stack розробником. У ньому охоплено всі технології, необхідні для створення сучасних масштабованих програм від початку до кінця.",
       "Завдяки поєднанню інтерактивних уроків, практичних завдань та реальних проєктів, ви опануєте як Front End, так і Back End. Ви працюватимете з HTML, CSS і JavaScript для створення адаптивних інтерфейсів, досліджуватимете React і TypeScript для створення складних вебзастосунків та навчитеся керувати даними за допомогою реляційних баз даних. На стороні Back End ви використовуватимете Git, Npm, Node.js і Python для створення потужних серверних рішень.",
-      "Наприкінці курсу ви отримаєте практичні навички та досвід, які дозволять впевнено розробляти повноцінні вебзастосунки, що підготує вас до успішної кар’єри Full Stack розробника."
+      "Наприкінці курсу ви отримаєте практичні навички та досвід, які дозволять впевнено розробляти повноцінні вебзастосунки, що підготує вас до успішної кар’єри Full Stack розробника.",
+      "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
     ],
     "chapters": {
       "freecodecamp": "Вітання",
@@ -2569,10 +2570,6 @@
           "Відкрийте цю сторінку, щоб пригадати основи CSS, адаптивного вебдизайну, анімацій, доступності тощо."
         ]
       },
-      "wvjx": {
-        "title": "127",
-        "intro": []
-      },
       "lecture-working-with-code-editors-and-ides": {
         "title": "Робота з редакторами коду та IDE",
         "intro": [
@@ -2601,7 +2598,7 @@
       "lab-sentence-maker": {
         "title": "Створіть творця речень",
         "intro": [
-          "У цій лабораторній роботі ви створите різноманітні історії, призначаючи різні слова до різних змінних."
+          "У цій лабораторній роботі ви продовжите працювати з рядками і конкатенацією, створюючи та налаштовуючи різні історії."
         ]
       },
       "lecture-working-with-data-types": {
@@ -2926,7 +2923,7 @@
       "workshop-library-manager": {
         "title": "Створіть менеджера бібліотеки",
         "intro": [
-          "У цьому практичному занятті ви дізнаєтесь про методи вищого порядку для роботи з масивами, створивши менеджера бібліотеки."
+          "In this workshop, you will learn higher order array methods by building a library manager."
         ]
       },
       "lab-book-organizer": {
@@ -3174,7 +3171,7 @@
       "lecture-working-with-maps-and-sets": {
         "title": "Робота з map та set",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь про <code>Map</code> та <code>Set</code> в JavaScript. Ви також дізнаєтесь, як вони відрізняються від <code>WeakSets</code> та <code>WeakMaps</code>."
+          "In these lecture videos, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>."
         ]
       },
       "workshop-plant-nursery-catalog": {
@@ -3336,7 +3333,7 @@
       "lecture-understanding-asynchronous-programming": {
         "title": "Знайомство з асинхронним програмуванням",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь про асинхронне програмування в JavaScript. Ви дізнаєтесь про відмінності між синхронним і асинхронним програмуванням, як працює ключове слово <code>async</code>, <code>Fetch</code> API, проміси, async/await, <code>Geolocation</code> API та багато іншого."
+          "У цих відеолекціях ви дізнаєтесь про асинхронне програмування в JavaScript. Ви дізнаєтесь про відмінності між синхронним і асинхронним програмуванням, як працює ключове слово <code>async</code>, <code>Fetch</code> API, проміси, <code>async/await</code>, <code>Geolocation</code> API та багато іншого."
         ]
       },
       "workshop-fcc-authors-page": {
