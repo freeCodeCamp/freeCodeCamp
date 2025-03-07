@@ -3432,7 +3432,7 @@
       "quiz-react-state-and-hooks": {
         "title": "React State and Hooks Quiz",
         "intro": [
-          "Test what you've learned about React State and Hooks with this quiz."
+          "Test what you've learned about React's <code>useState</code> and <code>useEffect</code> hooks with this quiz."
         ]
       },
       "ftmi": { "title": "275", "intro": [] },
