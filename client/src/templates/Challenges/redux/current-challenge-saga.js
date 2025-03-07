@@ -1,10 +1,7 @@
-import { put, takeEvery, select, call } from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
 import store from 'store';
 
 import { randomCompliment } from '../../../utils/get-words';
-import { setRenderStartTime } from '../../../redux/actions';
-import { renderStartTimeSelector } from '../../../redux/selectors';
-import callGA from '../../../analytics/call-ga';
 import { CURRENT_CHALLENGE_KEY } from './action-types';
 import { updateSuccessMessage } from './actions';
 
