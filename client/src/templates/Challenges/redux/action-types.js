@@ -8,6 +8,7 @@ export const actionTypes = createTypes(
   [
     'createFiles',
     'createQuestion',
+    'initHooks',
     'initTests',
     'initConsole',
     'initLogs',

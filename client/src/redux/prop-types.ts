@@ -172,6 +172,7 @@ export type ChallengeNode = {
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
+    hooks?: { beforeAll: string };
     id: string;
     instructions: string;
     isComingSoon: boolean;
@@ -366,7 +367,7 @@ export type SavedChallengeFile = {
 
 export type SavedChallengeFiles = SavedChallengeFile[];
 
-export type CompletedChallenge = {
+export interface CompletedChallenge {
   id: string;
   solution?: string | null;
   githubLink?: string;
@@ -376,7 +377,11 @@ export type CompletedChallenge = {
     | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
     | null;
   examResults?: GeneratedExamResults;
-};
+}
+
+export interface ChallengeData extends CompletedChallenge {
+  challengeFiles: ChallengeFile[] | null;
+}
 
 export type FileKey =
   | 'scriptjs'

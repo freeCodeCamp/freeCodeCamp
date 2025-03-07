@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import {
   FeatureDefinition,
   GrowthBook,
@@ -42,7 +42,7 @@ const mapStateToProps = createSelector(
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 interface GrowthBookWrapper extends StateProps {
-  children: ReactNode;
+  children: JSX.Element;
 }
 
 interface UserAttributes {
