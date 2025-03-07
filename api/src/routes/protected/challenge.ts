@@ -99,7 +99,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       const tutorialOrg = tutorialRepo?.split('/')?.[0];
 
       if (tutorialOrg !== 'freeCodeCamp') {
-        logger.warn('Tutorial not hosted on freeCodeCamp GitHub account');
+        logger.warn({ tutorialId }, 'Tutorial not hosted on freeCodeCamp GitHub account');
         void reply.code(400);
         return {
           type: 'error',
