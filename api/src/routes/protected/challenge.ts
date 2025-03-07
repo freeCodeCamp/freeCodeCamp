@@ -80,7 +80,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req });
-      logger.info(`User ${req.user?.id} submitted a coderoad challenge`);
+      logger.info(
+        { userId: req.user?.id },
+        'User submitted a coderoad challenge'
+      );
 
       const { 'coderoad-user-token': encodedUserToken } = req.headers;
       const { tutorialId } = req.body;
@@ -99,7 +102,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       const tutorialOrg = tutorialRepo?.split('/')?.[0];
 
       if (tutorialOrg !== 'freeCodeCamp') {
-        logger.warn({ tutorialId }, 'Tutorial not hosted on freeCodeCamp GitHub account');
+        logger.warn(
+          { tutorialId },
+          'Tutorial not hosted on freeCodeCamp GitHub account'
+        );
         void reply.code(400);
         return {
           type: 'error',
@@ -118,7 +124,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (!challenge) {
-        logger.warn(`Tutorial repo, ${tutorialRepo}, is not valid`);
+        logger.warn({ tutorialRepo }, 'Tutorial repo is not valid');
         void reply.code(400);
         return { type: 'error', msg: 'Tutorial name is not valid' } as const;
       }
@@ -306,7 +312,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async req => {
       const logger = fastify.log.child({ req });
-      logger.info(`User ${req.user?.id} submitted a backend challenge`);
+      logger.info(
+        { userId: req.user?.id },
+        `User submitted a backend challenge`
+      );
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
         where: { id: req.user?.id },
@@ -359,7 +368,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       const logger = fastify.log.child({ req });
       // This is another highly used route, so debug log level is used to
       // avoid excessive logging
-      logger.debug(`User ${req.user?.id} submitted a modern challenge`);
+      logger.debug(
+        { userId: req.user?.id },
+        'User submitted a modern challenge'
+      );
 
       const { id, files, challengeType } = req.body;
 
@@ -420,7 +432,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req });
-      logger.info(`User ${req.user?.id} saved a challenge`);
+      logger.info({ userId: req.user?.id }, 'User saved a challenge');
 
       const { files, id: challengeId } = req.body;
       const user = await fastify.prisma.user.findUniqueOrThrow({
@@ -481,7 +493,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       const logger = fastify.log.child({ req });
       logger.info(
-        `User ${req.user?.id} requested an exam with id ${req.params.id}`
+        { userId: req.user?.id, examId: req.params.id },
+        'User requested an exam'
       );
 
       const { id } = req.params;
@@ -580,7 +593,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       const logger = fastify.log.child({ req });
       logger.info(
-        `User ${req.user?.id} submitted a Microsoft trophy challenge`
+        { userId: req.user?.id },
+        'User submitted a Microsoft trophy challenge'
       );
       try {
         const challengeId = req.body.id;
@@ -685,7 +699,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req });
-      logger.info(`User ${req.user?.id} submitted an exam challenge`);
+
+      logger.info({ userId: req.user?.id }, 'User submitted an exam challenge');
 
       try {
         const userId = req.user?.id;
