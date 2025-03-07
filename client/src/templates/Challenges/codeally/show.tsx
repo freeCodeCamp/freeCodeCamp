@@ -53,7 +53,6 @@ import RdbGitpodContinueAlert from './rdb-gitpod-continue-alert';
 import RdbGitpodInstructions from './rdb-gitpod-instructions';
 import RdbGitpodLogoutAlert from './rdb-gitpod-logout-alert';
 import RdbLocalInstructions from './rdb-local-instructions';
-import RdbLocalLogoutAlert from './rdb-local-logout-alert';
 import RdbStep1Instructions from './rdb-step-1-instructions';
 import RdbStep2Instructions from './rdb-step-2-instructions';
 
@@ -268,7 +267,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     }
   };
 
-  const gitpodDeprecated = true;
+  const gitpodDeprecated = false;
 
   return (
     <Hotkeys containerRef={container}>
@@ -289,36 +288,70 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
               <Spacer size='m' />
               <PrismFormatted text={description} />
               <Spacer size='m' />
+
               {gitpodDeprecated ? (
-                <RdbLocalInstructions course={title} />
-              ) : (
-                <RdbGitpodInstructions />
-              )}
-              <Spacer size='m' />
-              {isSignedIn && challengeType === challengeTypes.codeAllyCert ? (
                 <>
-                  <div className='ca-description'>
-                    {t('learn.complete-both-steps')}
-                  </div>
-                  <hr />
+                  <RdbLocalInstructions course={title} />
                   <Spacer size='m' />
-                  <RdbStep1Instructions
-                    course={title}
-                    instructions={instructions}
-                    isCompleted={isPartiallyCompleted || isCompleted}
-                  />
-                  {isSignedIn && <RdbLocalLogoutAlert course={title} />}
-                  <CodeAllyButton
-                    challengeType={challengeType}
-                    //eslint-disable-next-line @typescript-eslint/no-misused-promises
-                    onClick={startCourse}
-                  />
-                  {challengeType === challengeTypes.codeAllyCert && (
+                  {isSignedIn &&
+                    challengeType === challengeTypes.codeAllyCert && (
+                      <>
+                        <div className='ca-description'>
+                          {t('learn.complete-both-steps')}
+                        </div>
+                        <hr />
+                        <Spacer size='m' />
+                        <RdbStep1Instructions
+                          instructions={instructions}
+                          isCompleted={isPartiallyCompleted || isCompleted}
+                        />
+                        <hr />
+                        <Spacer size='m' />
+                        <RdbStep2Instructions
+                          isCompleted={isCompleted}
+                          notes={notes}
+                        />
+                        <Spacer size='m' />
+                        <SolutionForm
+                          challengeType={challengeType}
+                          description={description}
+                          onSubmit={handleSubmit}
+                          updateSolutionForm={updateSolutionFormValues}
+                        />
+                      </>
+                    )}
+                </>
+              ) : (
+                <>
+                  <RdbGitpodInstructions />
+                  <Spacer size='m' />
+                  {isSignedIn &&
+                  challengeType === challengeTypes.codeAllyCert ? (
                     <>
+                      <div className='ca-description'>
+                        {t('learn.complete-both-steps')}
+                      </div>
+                      <hr />
+                      <Spacer size='m' />
+                      <RdbStep1Instructions
+                        instructions={instructions}
+                        isCompleted={isPartiallyCompleted || isCompleted}
+                      />
+                      <Spacer size='m' />
+                      <RdbGitpodContinueAlert course={title} />
+                      {isSignedIn && <RdbGitpodLogoutAlert course={title} />}
+                      <CodeAllyButton
+                        challengeType={challengeType}
+                        //eslint-disable-next-line @typescript-eslint/no-misused-promises
+                        onClick={startCourse}
+                      />
+                      <hr />
+                      <Spacer size='m' />
                       <RdbStep2Instructions
                         isCompleted={isCompleted}
                         notes={notes}
                       />
+                      <Spacer size='m' />
                       <SolutionForm
                         challengeType={challengeType}
                         description={description}
@@ -326,22 +359,21 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
                         updateSolutionForm={updateSolutionFormValues}
                       />
                     </>
+                  ) : (
+                    <>
+                      <RdbGitpodContinueAlert course={title} />
+                      {isSignedIn && <RdbGitpodLogoutAlert course={title} />}
+                      <CodeAllyButton
+                        challengeType={challengeType}
+                        //eslint-disable-next-line @typescript-eslint/no-misused-promises
+                        onClick={startCourse}
+                      />
+                    </>
                   )}
+                  <Spacer size='xxs' />
                 </>
-              ) : (
-                !gitpodDeprecated && (
-                  <>
-                    <RdbGitpodContinueAlert course={title} />
-                    {isSignedIn && <RdbGitpodLogoutAlert course={title} />}
-                    <CodeAllyButton
-                      challengeType={challengeType}
-                      //eslint-disable-next-line @typescript-eslint/no-misused-promises
-                      onClick={startCourse}
-                    />
-                  </>
-                )
               )}
-              <Spacer size='xxs' />
+
               <ProjectToolPanel />
               <br />
               <Spacer size='m' />

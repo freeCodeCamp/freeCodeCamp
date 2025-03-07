@@ -4,16 +4,13 @@ import { Spacer } from '@freecodecamp/ui';
 
 import ChallengeHeading from '../components/challenge-heading';
 import PrismFormatted from '../components/prism-formatted';
-import RdbGitpodAlert from './rdb-gitpod-continue-alert';
 
 interface RdbStep1InstructionsProps {
-  course: string;
   instructions: string;
   isCompleted: boolean;
 }
 
 function RdbStep1Instructions({
-  course,
   instructions,
   isCompleted
 }: RdbStep1InstructionsProps): JSX.Element {
@@ -26,8 +23,6 @@ function RdbStep1Instructions({
       <div className='ca-description'>{t('learn.runs-in-vm')}</div>
       <Spacer size='m' />
       <PrismFormatted text={instructions} />
-      <Spacer size='m' />
-      <RdbGitpodAlert course={course} />
     </>
   );
 }

@@ -17,7 +17,7 @@ import {
 import { updateUserToken } from '../../../redux/actions';
 import { Link } from '../../../components/helpers';
 
-import RdbLogoutAlert from './rdb-gitpod-logout-alert';
+import RdbLocalLogoutAlert from './rdb-local-logout-alert';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -141,6 +141,7 @@ function RdbLocalInstructions({
               >
                 Generate User Token
               </Button>
+              <Spacer size='xs' />
               <li>Copy your user token:</li>
               <Button
                 disabled={!userToken}
@@ -149,6 +150,7 @@ function RdbLocalInstructions({
               >
                 Copy User Token
               </Button>
+              <Spacer size='xs' />
               <li>
                 In the VSCode with that opened, find and open the{' '}
                 <code>Dockerfile</code>. At the bottom of the file, paste your
@@ -158,7 +160,7 @@ function RdbLocalInstructions({
                 <code>ENV CODEROAD_WEBHOOK_TOKEN=your-token-here</code>
               </li>
               <Spacer size='xs' />
-              <RdbLogoutAlert course={course} />
+              <RdbLocalLogoutAlert course={course} />
             </ol>
             <Spacer size='s' />
           </>
