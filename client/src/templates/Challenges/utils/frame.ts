@@ -22,8 +22,11 @@ interface Hooks {
 
 export interface Context {
   window?: Window &
-    typeof globalThis & { i18nContent?: i18n; __pyodide: unknown };
-  document?: FrameDocument | PythonDocument;
+    typeof globalThis & {
+      i18nContent?: i18n;
+      __pyodide: unknown;
+      document: FrameDocument | PythonDocument;
+    };
   element: HTMLIFrameElement;
   build: string;
   sources: Source;
@@ -197,6 +200,7 @@ const createFrame =
   (document: Document, id: string, title?: string) =>
   (frameContext: Context) => {
     const frame = document.createElement('iframe');
+    frame.srcdoc = createContent(id, frameContext);
     frame.id = id;
     if (typeof title === 'string') {
       frame.title = i18next.t('misc.iframe-preview', { title });
@@ -225,7 +229,6 @@ const mountFrame =
     return {
       ...frameContext,
       element,
-      document: element.contentDocument,
       window: element.contentWindow
     };
   };
@@ -310,7 +313,7 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
       // provide the file name and get the original source
       const getUserInput = (fileName: string) =>
         toString(sources[fileName as keyof typeof sources]);
-      await frameContext.document?.__initTestFrame({
+      await frameContext.window?.document?.__initTestFrame({
         code: sources,
         getUserInput,
         loadEnzyme
@@ -348,11 +351,9 @@ const initMainFrame =
           };
         }
 
-        if (
-          frameContext.document &&
-          '__initPythonFrame' in frameContext.document
-        ) {
-          await frameContext.document?.__initPythonFrame();
+        const document = frameContext.window?.document;
+        if (document && '__initPythonFrame' in document) {
+          await document.__initPythonFrame();
         }
         if (frameReady) frameReady();
       })
@@ -369,15 +370,19 @@ function handleDocumentNotFound(err: string) {
 const initPreviewFrame = () => (frameContext: Context) => frameContext;
 
 const waitForFrame = (frameContext: Context) => {
-  return new Promise((resolve, reject) => {
-    if (!frameContext.document) {
+  return new Promise<void>((resolve, reject) => {
+    const rejectId = setTimeout(() => {
       // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
       reject(DOCUMENT_NOT_FOUND_ERROR);
-    } else if (frameContext.document.readyState === 'loading') {
-      frameContext.document.addEventListener('DOMContentLoaded', resolve);
-    } else {
-      resolve(null);
-    }
+    }, 10000);
+
+    // We have to add the listener to the frame, not its contentWindow, because
+    // the the latter does not receive the load event in Safari. It does not
+    // matter which we use for Chrome and Firefox.
+    frameContext.element?.addEventListener('load', () => {
+      clearTimeout(rejectId);
+      resolve();
+    });
   });
 };
 
@@ -391,19 +396,6 @@ export const createContent = (
   return (
     doctype + createBeforeAllScript(hooks?.beforeAll) + createHeader(id) + build
   );
-};
-
-const writeContentToFrame = (id: string) => (frameContext: Context) => {
-  const frame = frameContext.document;
-
-  // it's possible, if the preview is rapidly opened and closed, for the frame
-  // to be null at this point.
-  if (frame) {
-    frame.open();
-    frame.write(createContent(id, frameContext));
-    frame.close();
-  }
-  return frameContext;
 };
 
 const restoreScrollPosition = (frameContext: Context) => {
@@ -478,7 +470,6 @@ const createFramer = ({
     updateWindowFunctions ?? noop,
     updateProxyConsole(proxyLogger),
     updateWindowI18next,
-    writeContentToFrame(id),
     restoreScrollPosition,
     init(frameReady, proxyLogger)
   ) as (args: Context) => void;
