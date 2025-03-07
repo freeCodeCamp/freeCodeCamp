@@ -33,26 +33,9 @@ function* updateSuccessMessageSaga() {
   yield put(updateSuccessMessage(randomCompliment()));
 }
 
-function* sendRenderTimeSaga({ payload }) {
-  /*
-    This saga sends the difference between a challenge submission time 
-    and next challenge's description change time to google analytics.
-  */
-  const renderStartTime = yield select(renderStartTimeSelector);
-  if (renderStartTime) {
-    const challengeRenderTime = payload - renderStartTime;
-    yield put(setRenderStartTime(null));
-    yield call(callGA, {
-      event: 'render_time',
-      render_time_msec: challengeRenderTime
-    });
-  }
-}
-
 export function createCurrentChallengeSaga(types) {
   return [
     takeEvery(types.challengeMounted, currentChallengeSaga),
-    takeEvery(types.challengeMounted, updateSuccessMessageSaga),
-    takeEvery(types.sendRenderTime, sendRenderTimeSaga)
+    takeEvery(types.challengeMounted, updateSuccessMessageSaga)
   ];
 }
