@@ -3,13 +3,14 @@ import { Characters, CharacterPosition } from '../../../../redux/prop-types';
 import { characterAssets } from './scene-assets';
 
 import './character.css';
+import { SceneSubject } from './scene-subject';
 
 interface CharacterProps {
   position: CharacterPosition;
   opacity: number;
   name: Characters;
-  isBlinking: boolean;
   isTalking: boolean;
+  sceneSubject: SceneSubject;
 }
 
 interface CharacterStyles {
@@ -27,29 +28,43 @@ export function Character({
   position,
   opacity,
   name,
-  isBlinking,
-  isTalking
+  isTalking,
+  sceneSubject
 }: CharacterProps): JSX.Element {
   const [eyesAreOpen, setEyesAreOpen] = useState(true);
   const [mouthIsOpen, setMouthIsOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const onNotify = (eventType: 'play' | 'pause' | 'stop') => {
+    if (eventType === 'play') {
+      setIsPlaying(true);
+    } else {
+      setIsPlaying(false);
+    }
+  };
 
   useEffect(() => {
-    let blinkIntervalId: NodeJS.Timeout;
+    sceneSubject.attach(onNotify);
+    return () => {
+      sceneSubject.detach(onNotify);
+    };
+  }, [sceneSubject]);
+
+  useEffect(() => {
+    if (!isPlaying) return;
     let blinkTimeoutId: NodeJS.Timeout;
 
-    if (isBlinking) {
-      const blinkPeriod = getRandomInt(2000, 5000);
-      blinkIntervalId = setInterval(() => {
-        const blinkJitter = getRandomInt(0, 1000);
-        blinkTimeoutId = setTimeout(() => {
-          setEyesAreOpen(false);
+    const blinkPeriod = getRandomInt(2000, 5000);
+    const blinkIntervalId = setInterval(() => {
+      const blinkJitter = getRandomInt(0, 1000);
+      blinkTimeoutId = setTimeout(() => {
+        setEyesAreOpen(false);
 
-          blinkTimeoutId = setTimeout(() => {
-            setEyesAreOpen(true);
-          }, 30); // always unblink after 30ms
-        }, blinkJitter);
-      }, blinkPeriod);
-    }
+        blinkTimeoutId = setTimeout(() => {
+          setEyesAreOpen(true);
+        }, 30); // always unblink after 30ms
+      }, blinkJitter);
+    }, blinkPeriod);
 
     // Clear intervals when component is unmounted or conditions change
     return () => {
@@ -57,9 +72,10 @@ export function Character({
       clearInterval(blinkIntervalId);
       clearTimeout(blinkTimeoutId);
     };
-  }, [isBlinking]);
+  }, [isPlaying]);
 
   useEffect(() => {
+    if (!isPlaying) return;
     let talkIntervalId: NodeJS.Timeout;
     let mouthOpenTimeoutId: NodeJS.Timeout;
     let mouthCloseTimeoutId: NodeJS.Timeout;
@@ -91,7 +107,7 @@ export function Character({
       clearTimeout(mouthOpenTimeoutId);
       clearTimeout(mouthCloseTimeoutId);
     };
-  }, [isTalking]);
+  }, [isTalking, isPlaying]);
 
   const characterWrapStyles: CharacterStyles = {
     opacity

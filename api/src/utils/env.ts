@@ -6,7 +6,7 @@ import { LogLevel } from 'fastify';
 const envPath = path.resolve(__dirname, '../../../.env');
 const { error } = config({ path: envPath });
 
-if (error) {
+if (error && process.env.FREECODECAMP_NODE_ENV !== 'production') {
   console.warn(`
   ----------------------------------------------------
   Warning: .env file not found.
@@ -138,6 +138,10 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   );
 }
 
+if (process.env.FCC_ENABLE_EXAM_ENVIRONMENT === 'true') {
+  assert.ok(process.env.SCREENSHOT_SERVICE_LOCATION);
+}
+
 export const HOME_LOCATION = process.env.HOME_LOCATION;
 // Mailhog is used in development and test environments, hence the localhost
 // default.
@@ -204,3 +208,5 @@ function undefinedOrBool(val: string | undefined): undefined | boolean {
 
   return val === 'true';
 }
+export const SCREENSHOT_SERVICE_LOCATION =
+  process.env.SCREENSHOT_SERVICE_LOCATION;

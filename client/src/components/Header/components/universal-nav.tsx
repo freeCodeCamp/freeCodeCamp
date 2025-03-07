@@ -7,7 +7,7 @@ import { Link, SkeletonSprite } from '../../helpers';
 import { SEARCH_EXPOSED_WIDTH } from '../../../../config/misc';
 import FreeCodeCampLogo from '../../../assets/icons/freecodecamp-logo';
 import MenuButton from './menu-button';
-import NavLinks, { type NavLinksProps } from './nav-links';
+import NavLinks from './nav-links';
 import AuthOrProfile from './auth-or-profile';
 import LanguageList from './language-list';
 
@@ -18,12 +18,19 @@ const SearchBarOptimized = Loadable(
   () => import('../../search/searchBar/search-bar-optimized')
 );
 
-type UniversalNavProps = Omit<
-  NavLinksProps,
-  'toggleTheme' | 'openSignoutModal'
-> & {
+type UniversalNavProps = {
+  displayMenu: boolean;
+  showMenu: () => void;
+  hideMenu: () => void;
+  menuButtonRef: React.RefObject<HTMLButtonElement>;
+  user: {
+    isDonating: boolean;
+    username: string;
+    picture: string;
+    yearsTopContributor: string[];
+  };
   fetchState: { pending: boolean };
-  searchBarRef?: React.RefObject<HTMLDivElement>;
+  searchBarRef: React.RefObject<HTMLDivElement>;
   pathname: string;
 };
 const UniversalNav = ({
@@ -81,7 +88,6 @@ const UniversalNav = ({
               hideMenu={hideMenu}
               innerRef={menuButtonRef}
               showMenu={showMenu}
-              user={user}
             />
             {!isSearchExposedWidth && search}
             <NavLinks

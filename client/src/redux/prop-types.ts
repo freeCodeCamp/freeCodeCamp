@@ -130,8 +130,8 @@ interface SetupCharacter {
 interface SetupAudio {
   filename: string;
   startTime: number;
-  startTimestamp?: number;
-  finishTimestamp?: number;
+  startTimestamp: number | null;
+  finishTimestamp: number | null;
 }
 
 interface SceneSetup {
@@ -151,21 +151,6 @@ export interface PrerequisiteChallenge {
   title: string;
   slug?: string;
 }
-
-export type ExtendedChallenge = {
-  block: string;
-  challengeType: number;
-  dashedName: string;
-  fields: {
-    slug: string;
-  };
-  id: string;
-  isCompleted: boolean;
-  order: number;
-  superBlock: SuperBlocks;
-  stepNumber: number;
-  title: string;
-};
 
 export type ChallengeNode = {
   challenge: {
@@ -187,6 +172,7 @@ export type ChallengeNode = {
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
+    hooks?: { beforeAll: string };
     id: string;
     instructions: string;
     isComingSoon: boolean;
@@ -381,7 +367,7 @@ export type SavedChallengeFile = {
 
 export type SavedChallengeFiles = SavedChallengeFile[];
 
-export type CompletedChallenge = {
+export interface CompletedChallenge {
   id: string;
   solution?: string | null;
   githubLink?: string;
@@ -391,7 +377,11 @@ export type CompletedChallenge = {
     | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
     | null;
   examResults?: GeneratedExamResults;
-};
+}
+
+export interface ChallengeData extends CompletedChallenge {
+  challengeFiles: ChallengeFile[] | null;
+}
 
 export type FileKey =
   | 'scriptjs'

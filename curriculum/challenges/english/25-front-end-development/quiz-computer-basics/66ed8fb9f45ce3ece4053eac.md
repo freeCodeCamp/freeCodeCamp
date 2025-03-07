@@ -7,7 +7,7 @@ dashedName: quiz-computer-basics
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -25,7 +25,7 @@ Processor
 
 ---
 
-Graphics Card
+Graphics Card.
 
 ---
 
@@ -39,23 +39,23 @@ Motherboard
 
 #### --text--
 
-Which is not a conventional way to connect a keyboard to the computer?
+What are browser developer tools?
 
 #### --distractors--
 
-USB Receiver
+Tools for editing browser settings and managing user profiles.
 
 ---
 
-Bluetooth
+Utilities for blocking ads and improving web page performance.
 
 ---
 
-USB Cable
+Software for managing browser extensions and plug-ins.
 
 #### --answer--
 
-Ethernet Cable
+Built-in features in browsers that help developers debug and inspect websites.
 
 ### --question--
 
@@ -77,7 +77,7 @@ Cable
 
 #### --answer--
 
-Fiber Optic
+Fiber Optic.
 
 ### --question--
 
@@ -87,25 +87,25 @@ Which of the following is NOT a safe practice when signing in?
 
 #### --distractors--
 
-Using a fingerprint or face scanner
+Using a fingerprint or face scanner.
 
 ---
 
-Making a long and complex password like `@ppl3_+B@nana34823`
+Making a long and complex password like `@ppl3_+B@nana34823`.
 
 ---
 
-Utilizing a physical USB security key
+Setting up two-factor authentication (2FA).
 
 #### --answer--
 
-Saving passwords in the browser on a public computer
+Using passwords based on personal information like your birthday.
 
 ### --question--
 
 #### --text--
 
-Which of the following is not a Web Browser?
+Which of the following is NOT a Web Browser?
 
 #### --distractors--
 
@@ -113,15 +113,15 @@ Safari
 
 ---
 
-Opera GX
+Opera
 
 ---
 
-DuckDuckGo
+Microsoft Edge.
 
 #### --answer--
 
-Google Drive
+Google Drive.
 
 ### --question--
 
@@ -131,11 +131,11 @@ When you need to edit a piece of code, which of the following are you most likel
 
 #### --distractors--
 
-Node Package Manager
+Node Package Manager.
 
 ---
 
-Microsoft Edge
+Microsoft Edge.
 
 ---
 
@@ -143,13 +143,13 @@ Github
 
 #### --answer--
 
-Visual Studio Code
+Visual Studio Code.
 
 ### --question--
 
 #### --text--
 
-Which of the following stores and accesses files on the hard drive?
+Which of the following is used primarily for managing files stored on a local hard drive?
 
 #### --distractors--
 
@@ -157,59 +157,59 @@ Dropbox
 
 ---
 
-Microsoft OneDrive
+Microsoft OneDrive.
 
 ---
 
-Google Drive
+Google Drive.
 
 #### --answer--
 
-Windows File Explorer
+Windows File Explorer.
 
 ### --question--
 
 #### --text--
 
-What is not a good practice when naming files for later use?
+What is NOT a good practice when naming files?
 
 #### --distractors--
 
-Putting an underscore or hyphen between words
+Putting an underscore or hyphen between words.
 
 ---
 
-Use a casing style such as camelCase and sticking with it
+Use a casing style such as camelCase and sticking with it.
 
 ---
 
-Putting a version number at the end of a document like `summaryReport_v2.docx`
+Putting a version number at the end of a document like `summaryReport_v2.docx`.
 
 #### --answer--
 
-Being lazy and pounding your keyboard like `asdfloweiueld` to get it over with
+Using non-descriptive names like `file1.txt`.
 
 ### --question--
 
 #### --text--
 
-Which of the following is a way to move files?
+What does the term "domain name" refer to?
 
 #### --distractors--
 
-Using `Ctrl + X` and `Ctrl + V` (or `Command + X` and `Command + V` on Mac)
+A type of software that manages website files and databases.
 
 ---
 
-Dragging the file and dropping it at the destination
+The physical location of a web server in a data center.
 
 ---
 
-Using a terminal command such as `move` (`mv` on Mac)
+None of the other choices.
 
 #### --answer--
 
-All of the other choices
+The address used to identify websites on the internet.
 
 ### --question--
 
@@ -219,47 +219,47 @@ Which of the following is a way to send a file to the Recycle Bin/Trash?
 
 #### --distractors--
 
-All of the other choices
+All of the other choices.
 
 ---
 
-Pressing the `Backspace` key on the keyboard
+Pressing the `Backspace` key on the keyboard.
 
 ---
 
-Moving it to an Archived folder
+Moving it to an Archived folder.
 
 #### --answer--
 
-Pressing the `Delete` key on the keyboard (`Command + Delete` on Mac)
+Right-click on it and select the Delete/Move to trash option.
 
 ### --question--
 
 #### --text--
 
-Which of the following is not a feature when searching for files locally?
+What is a RAM?
 
 #### --distractors--
 
-Using boolean operators like `AND`, `OR`, and `NOT`
+A network protocol used for transferring files between devices.
 
 ---
 
-Using filters like `*.jpg`
+A permanent storage device used for saving files and applications.
 
 ---
 
-Using Cortana on Windows or Spotlight Search on Mac
+A component in a computer responsible for generating graphics and rendering images.
 
 #### --answer--
 
-Typing the name of the file into your Web Browser and hitting `Enter`
+A temporary memory for fast data access by the processor.
 
 ### --question--
 
 #### --text--
 
-What file type will be best suited for writing documentation?
+What file type will be best suited for writing a `README` file?
 
 #### --distractors--
 
@@ -281,37 +281,37 @@ What file type will be best suited for writing documentation?
 
 #### --text--
 
-Which of the following is not a configuration file?
+What is an Integrated Development Environment (IDE)?
 
 #### --distractors--
 
-`.env`
+A platform designed for deploying and hosting web applications.
 
 ---
 
-`.build`
+A type of hardware device used for testing and debugging electronic circuits.
 
 ---
 
-`.yaml` or `.yml`
+A version control system that helps developers track changes in source code during software development.
 
 #### --answer--
 
-`.log`
+A program that integrates tools for writing, debugging, and running code.
 
 ### --question--
 
 #### --text--
 
-A piece of software that allows you to look at online content is called a:
+What is a piece of software that allows you to look at online content called?
 
 #### --distractors--
 
-Internet Content Displayer
+Internet Content Displayer.
 
 ---
 
-Search Engine
+Search Engine.
 
 ---
 
@@ -319,21 +319,21 @@ Website
 
 #### --answer--
 
-Web Browser
+Web Browser.
 
 ### --question--
 
 #### --text--
 
-A piece of software that lists web pages related to a user's query is a called a:
+What is a piece of software that lists web pages related to a user's query called?
 
 #### --distractors--
 
-Page Finder
+Page Finder.
 
 ---
 
-Web Browser
+Web Browser.
 
 ---
 
@@ -341,17 +341,17 @@ Website
 
 #### --answer--
 
-Search Engine
+Search Engine.
 
 ### --question--
 
 #### --text--
 
-A set of one or more web pages under one domain name is called a:
+What is a set of one or more web pages under one domain name called?
 
 #### --distractors--
 
-Web Browser
+Web Browser.
 
 ---
 
@@ -359,7 +359,7 @@ Hyperlink
 
 ---
 
-Search Engine
+Search Engine.
 
 #### --answer--
 
@@ -369,15 +369,15 @@ Website
 
 #### --text--
 
-To search for an exact phrase, you should use what character?
+To search for an exact phrase, what should you enclose your search query with?
 
 #### --distractors--
 
-Backtick
+Backticks
 
 ---
 
-Parenthesis
+Parentheses
 
 ---
 
@@ -385,71 +385,71 @@ Brackets
 
 #### --answer--
 
-Quotation marks
+Quotation marks.
 
 ### --question--
 
 #### --text--
 
-Which is not a way to install a Web Browser?
+Which is NOT a way to install a Web Browser?
 
 #### --distractors--
 
-Using a Package Manager
+Using a Package Manager.
 
 ---
 
-Directly downloading from the website
+Directly downloading from the website.
 
 ---
 
-Using an App Store like Microsoft Store
+Using an App Store like Microsoft Store.
 
 #### --answer--
 
-Pressing the Network/Internet button in Settings
+Pressing the Network/Internet button in Settings.
 
 ### --question--
 
 #### --text--
 
-Which of these peripherals is an input device?
+Which of the following formats does NOT preserve image quality after compression?
 
 #### --distractors--
 
-Projector
+All of the other choices.
 
 ---
 
-Speakers
+PNG
 
 ---
 
-Monitor
+SVG
 
 #### --answer--
 
-Microphone
+JPEG
 
 ### --question--
 
 #### --text--
 
-Which of the following lists of parts can all be found in the circuit board?
+Which of the following parts can be found in the circuit board?
 
 #### --distractors--
 
-Printer, Router, USB Ports
+Printer and Router.
 
 ---
 
-Mouse, Keyboard, Monitor
+Mouse and Keyboard.
 
 ---
 
-Motherboard, Hard Drive, GPU
+Hard Drive and GPU.
 
 #### --answer--
 
-BIOS/UEFI Chip, CPU, RAM
+CPU and RAM.
 

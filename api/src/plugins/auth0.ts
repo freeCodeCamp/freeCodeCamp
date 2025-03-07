@@ -112,7 +112,8 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         if (error instanceof Error && error.message === 'Invalid state') {
           fastify.log.error('Auth failed: invalid state');
         } else {
-          fastify.log.error('Auth failed', error);
+          fastify.log.error('Auth failed:');
+          fastify.log.error(error);
           fastify.Sentry.captureException(error);
         }
         // It's important _not_ to redirect to /signin here, as that could

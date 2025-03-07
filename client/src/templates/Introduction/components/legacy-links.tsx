@@ -24,16 +24,14 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
 
   if (isOldRespCert(superBlock)) {
     return (
-      <>
-        <Alert variant='info'>
-          <p>
-            {t('intro:misc-text.legacy-desc')}{' '}
-            <Link sameTab={false} to={`/learn/2022/responsive-web-design`}>
-              {t('intro:misc-text.legacy-go-back')}
-            </Link>
-          </p>
-        </Alert>
-      </>
+      <Alert variant='info'>
+        <p>
+          {t('intro:misc-text.legacy-desc')}{' '}
+          <Link sameTab={false} to={`/learn/2022/responsive-web-design`}>
+            {t('intro:misc-text.legacy-go-back')}
+          </Link>
+        </p>
+      </Alert>
     );
   } else if (isRelationalDbCert(superBlock)) {
     return (
@@ -53,11 +51,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
       </Alert>
     );
   } else {
-    return (
-      <>
-        <GitpodNote superBlock={superBlock} />
-      </>
-    );
+    return <GitpodNote superBlock={superBlock} />;
   }
 }
 

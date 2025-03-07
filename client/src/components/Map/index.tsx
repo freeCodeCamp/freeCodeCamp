@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import {
   type SuperBlocks,
@@ -38,10 +39,17 @@ interface MapProps {
   currentCerts: CurrentCert[];
   claimedCertifications?: ClaimedCertifications;
   completedChallengeIds: string[];
-  allChallenges: {
-    id: string;
-    superBlock: SuperBlocks;
-  }[];
+}
+
+interface Data {
+  allChallengeNode: {
+    nodes: {
+      challenge: {
+        id: string;
+        superBlock: SuperBlocks;
+      };
+    }[];
+  };
 }
 
 const linkSpacingStyle = {
@@ -57,7 +65,6 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Professional]: 'landing.professional-certs-heading',
   [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
   [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
-  [SuperBlockStage.New]: '', // TODO: add translation
   [SuperBlockStage.Next]: 'landing.next-heading',
   [SuperBlockStage.NextEnglish]: 'landing.next-english-heading',
   [SuperBlockStage.Upcoming]: 'landing.upcoming-heading'
@@ -92,38 +99,36 @@ function MapLi({
   index: number;
 }) {
   return (
-    <>
-      <li
-        data-test-label='curriculum-map-button'
-        data-playwright-test-label='curriculum-map-button'
-      >
-        <div className='progress-icon-wrapper'>
-          <div
-            className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
-          >
-            <RibbonIcon
-              value={index + 1}
-              showNumbers={showNumbers}
-              isCompleted={completed}
-              isClaimed={claimed}
-            />
-          </div>
-        </div>
-
-        <ButtonLink
-          block
-          size='large'
-          className='map-superblock-link'
-          href={`/learn/${superBlock}/`}
+    <li
+      data-test-label='curriculum-map-button'
+      data-playwright-test-label='curriculum-map-button'
+    >
+      <div className='progress-icon-wrapper'>
+        <div
+          className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
         >
-          <div style={linkSpacingStyle}>
-            <SuperBlockIcon className='map-icon' superBlock={superBlock} />
-            {getSuperBlockTitleForMap(superBlock)}
-          </div>
-          {landing && <LinkButton />}
-        </ButtonLink>
-      </li>
-    </>
+          <RibbonIcon
+            value={index + 1}
+            showNumbers={showNumbers}
+            isCompleted={completed}
+            isClaimed={claimed}
+          />
+        </div>
+      </div>
+
+      <ButtonLink
+        block
+        size='large'
+        className='map-superblock-link'
+        href={`/learn/${superBlock}/`}
+      >
+        <div style={linkSpacingStyle}>
+          <SuperBlockIcon className='map-icon' superBlock={superBlock} />
+          {getSuperBlockTitleForMap(superBlock)}
+        </div>
+        {landing && <LinkButton />}
+      </ButtonLink>
+    </li>
   );
 }
 
@@ -131,11 +136,25 @@ function Map({
   forLanding = false,
   isSignedIn,
   currentCerts,
-  completedChallengeIds,
-  allChallenges
+  completedChallengeIds
 }: MapProps): React.ReactElement {
   const { t } = useTranslation();
+  const {
+    allChallengeNode: { nodes: challengeNodes }
+  }: Data = useStaticQuery(graphql`
+    query {
+      allChallengeNode {
+        nodes {
+          challenge {
+            id
+            superBlock
+          }
+        }
+      }
+    }
+  `);
 
+  const allChallenges = challengeNodes.map(node => node.challenge);
   const allSuperblockChallengesCompleted = (superblock: SuperBlocks) => {
     // array of all challenge ID's in the superblock
     const allSuperblockChallenges = allChallenges

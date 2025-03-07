@@ -90,7 +90,7 @@ ctx.onmessage = async (e: PythonRunEvent) => {
             eval(testString);
           resolve(test);
         } catch (err) {
-          reject(err);
+          reject(err as Error);
         }
       }
     );
