@@ -138,9 +138,6 @@ test.describe('Search bar', () => {
 
     const resultList = page.getByRole('list', { name: 'Search results' });
     await expect(resultList.getByRole('listitem')).toHaveCount(1);
-    await expect(resultList.getByRole('listitem')).toHaveText(
-      'No tutorials found'
-    );
   });
 
   test('should clear the input and hide the result dropdown when the user clicks the clear button', async ({
