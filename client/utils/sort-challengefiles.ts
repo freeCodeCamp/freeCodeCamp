@@ -1,18 +1,18 @@
-export function sortChallengeFiles<WithHistory extends { history: string[] }>(
-  challengeFiles: WithHistory[]
-): WithHistory[] {
+export function sortChallengeFiles<File extends { fileKey: string }>(
+  challengeFiles: File[]
+): File[] {
   const xs = challengeFiles.slice();
   xs.sort((a, b) => {
-    if (a.history[0] === 'index.jsx') return -1;
-    if (b.history[0] === 'index.jsx') return 1;
-    if (a.history[0] === 'index.html') return -1;
-    if (b.history[0] === 'index.html') return 1;
-    if (a.history[0] === 'styles.css') return -1;
-    if (b.history[0] === 'styles.css') return 1;
-    if (a.history[0] === 'script.js') return -1;
-    if (b.history[0] === 'script.js') return 1;
-    if (a.history[0] === 'index.ts') return -1;
-    if (b.history[0] === 'index.ts') return 1;
+    if (a.fileKey === 'indexjsx') return -1;
+    if (b.fileKey === 'indexjsx') return 1;
+    if (a.fileKey === 'indexhtml') return -1;
+    if (b.fileKey === 'indexhtml') return 1;
+    if (a.fileKey === 'stylescss') return -1;
+    if (b.fileKey === 'stylescss') return 1;
+    if (a.fileKey === 'scriptjs') return -1;
+    if (b.fileKey === 'scriptjs') return 1;
+    if (a.fileKey === 'indexts') return -1;
+    if (b.fileKey === 'indexts') return 1;
     return 0;
   });
   return xs;
