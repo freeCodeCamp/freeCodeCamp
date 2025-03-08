@@ -941,10 +941,10 @@
     "generate-exam-error": "An error occurred trying to generate your exam.",
     "cert-not-found": "The certification {{certSlug}} does not exist.",
     "reset-editor-layout": "Your editor layout has been reset.",
-    "user-token-copied": "User token copied to clipboard",
-    "user-token-copy-error": "Something went wrong trying to copy your token",
-    "course-url-copied": "Course URL copied",
-    "course-url-copy-error": "Something went wrong trying to copy the course URL",
+    "user-token-copied": "User token copied to clipboard.",
+    "user-token-copy-error": "Something went wrong trying to copy your token.",
+    "course-url-copied": "Course URL copied to clipboard.",
+    "course-url-copy-error": "Something went wrong trying to copy the course URL.",
     "ms": {
       "transcript": {
         "link-err-1": "Please include a Microsoft transcript URL in the request.",
