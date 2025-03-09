@@ -3449,10 +3449,10 @@
       "lrof": { "title": "280", "intro": [] },
       "vyzp": { "title": "281", "intro": [] },
       "zagz": { "title": "282", "intro": [] },
-      "quiz-advanced-react": {
-        "title": "Advanced React Quiz",
+      "quiz-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Quiz",
         "intro": [
-          "Test what you've learned about Advanced React with this quiz."
+          "Test what you've learned about routing, forms, and data fetching with this quiz."
         ]
       },
       "zdsj": { "title": "284", "intro": [] },
