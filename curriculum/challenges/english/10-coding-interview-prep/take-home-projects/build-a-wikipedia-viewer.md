@@ -4,6 +4,7 @@ title: Build a Wikipedia Viewer
 challengeType: 3
 forumTopicId: 302360
 dashedName: build-a-wikipedia-viewer
+solutionLink: https://codepen.io/freeCodeCamp/full/wGqEga
 ---
 
 # --description--

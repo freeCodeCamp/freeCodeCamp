@@ -4,6 +4,7 @@ title: Build a Markdown Previewer
 challengeType: 3
 forumTopicId: 301372
 dashedName: build-a-markdown-previewer
+solutionLink: https://markdown-previewer.freecodecamp.rocks
 ---
 
 # --description--
