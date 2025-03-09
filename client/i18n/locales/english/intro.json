@@ -3423,7 +3423,12 @@
         "intro": ["Test your knowledge of React basics with this quiz."]
       },
       "rugw": { "title": "267", "intro": [] },
-      "rmpy": { "title": "268", "intro": [] },
+      "workshop-toggle-text-app": {
+        "title": "Toggle Text App",
+        "intro": [
+          "In this workshop, you will continute to learn about the <code>useState()</code> by building an application that hides and shows a piece of text on the screen."
+        ]
+      },
       "dbta": { "title": "269", "intro": [] },
       "rnfe": { "title": "271", "intro": [] },
       "xdyh": { "title": "270", "intro": [] },

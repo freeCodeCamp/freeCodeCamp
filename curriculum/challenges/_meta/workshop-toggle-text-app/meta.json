@@ -1,0 +1,12 @@
+{
+  "name": "Toggle Text App",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-toggle-text-app",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67cd33334277c108f5e0cb21", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}
