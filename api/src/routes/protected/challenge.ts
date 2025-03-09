@@ -1,7 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 import { uniqBy, matches } from 'lodash';
-import { CompletedExam, ExamResults } from '@prisma/client';
+import { CompletedChallenge, CompletedExam } from '@prisma/client';
 import isURL from 'validator/lib/isURL';
 
 import { challengeTypes } from '../../../../shared/config/challenge-types';
@@ -11,7 +11,6 @@ import {
   multifileCertProjectIds,
   multifilePythonCertProjectIds,
   updateUserChallengeData,
-  type CompletedChallenge,
   saveUserChallengeData,
   msTrophyChallenges
 } from '../../utils/common-challenge-functions';
@@ -166,7 +165,13 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         } else {
           await updateUserChallengeData(fastify, user, challengeId, {
             id: challengeId,
-            completedDate
+            completedDate,
+            challengeType: null,
+            githubLink: null,
+            isManuallyApproved: null,
+            solution: null,
+            files: [],
+            examResults: null
           });
         }
       } catch {
@@ -238,11 +243,14 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const challenge = {
-        challengeType,
+        challengeType: challengeType ?? null,
         solution,
-        githubLink,
+        githubLink: githubLink || null,
         id: projectId,
-        completedDate: Date.now()
+        completedDate: Date.now(),
+        files: [],
+        isManuallyApproved: null,
+        examResults: null
       };
       const progressTimestamps = user.progressTimestamps as ProgressTimestamp[];
       const points = getPoints(progressTimestamps);
@@ -288,9 +296,15 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         | null;
       const points = getPoints(progressTimestamps);
 
-      const completedChallenge = {
+      const completedChallenge: CompletedChallenge = {
         completedDate: Date.now(),
-        ...req.body
+        id: req.body.id,
+        solution: null,
+        githubLink: null,
+        files: [],
+        challengeType: null,
+        isManuallyApproved: null,
+        examResults: null
       };
 
       const { alreadyCompleted } = await updateUserChallengeData(
@@ -335,8 +349,13 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
       const completedChallenge: CompletedChallenge = {
         id,
-        files,
-        completedDate: Date.now()
+        files: files || [],
+        completedDate: Date.now(),
+        challengeType: null,
+        githubLink: null,
+        isManuallyApproved: null,
+        solution: null,
+        examResults: null
       };
 
       if (challengeType === challengeTypes.multifileCertProject) {
@@ -548,10 +567,15 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const progressTimestamps =
           user.progressTimestamps as ProgressTimestamp[];
 
-        const completedChallenge = {
+        const completedChallenge: CompletedChallenge = {
           id: challengeId,
           solution: msTrophyStatus.msUserAchievementsApiUrl,
-          completedDate: Date.now()
+          completedDate: Date.now(),
+          githubLink: null,
+          isManuallyApproved: null,
+          examResults: null,
+          challengeType: null,
+          files: []
         };
 
         const { alreadyCompleted, completedDate } =
@@ -669,14 +693,18 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const newCompletedChallenges: CompletedChallenge[] =
           completedChallenges;
         const newCompletedExams: CompletedExam[] = completedExams;
-        const newProgressTimeStamps = progressTimestamps as ProgressTimestamp[];
+        const newProgressTimeStamps = progressTimestamps;
         const completedDate = Date.now();
 
         const newCompletedChallenge = {
           id,
           challengeType,
           completedDate,
-          examResults
+          examResults,
+          solution: null,
+          githubLink: null,
+          files: [],
+          isManuallyApproved: null
         };
 
         // Always push to completedExams[] to keep a record of all exams taken.
@@ -693,10 +721,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         if (examResults.passed) {
           if (alreadyCompleted) {
             const { percentCorrect } = examResults;
-            const oldChallenge = completedChallenges[
-              alreadyCompletedIndex
-            ] as CompletedChallenge;
-            const oldResults = oldChallenge?.examResults as ExamResults;
+            // Safety: Index is found from indexee
+            const oldChallenge = completedChallenges[alreadyCompletedIndex]!;
+            // Safety: As this is an exam challenge, the exam results must exist
+            const oldResults = oldChallenge.examResults!;
 
             // only update if it's a better result
             if (percentCorrect > oldResults.percentCorrect) {
@@ -704,7 +732,11 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
                 id,
                 challengeType: oldChallenge.challengeType,
                 completedDate: oldChallenge.completedDate,
-                examResults
+                examResults,
+                solution: null,
+                githubLink: null,
+                files: [],
+                isManuallyApproved: null
               };
 
               newCompletedChallenges[alreadyCompletedIndex] = updatedChallenge;
