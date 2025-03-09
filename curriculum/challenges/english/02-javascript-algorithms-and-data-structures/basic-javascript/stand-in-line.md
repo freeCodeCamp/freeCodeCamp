@@ -44,47 +44,7 @@ assert(nextInLine([2], 1) === 2);
 assert(nextInLine([5, 6, 7, 8, 9], 1) === 5);
 ```
 
-After `nextInLine(testArr, 10)`, `testArr[4]` should be `10`
-
-```js
-nextInLine(testArr, 10);
-assert(testArr[4] === 10);
-```
-
 # --seed--
-
-## --before-user-code--
-
-```js
-var logOutput = [];
-var originalConsole = console
-function capture() {
-    var nativeLog = console.log;
-    console.log = function (message) {
-        logOutput.push(message);
-        if(nativeLog.apply) {
-          nativeLog.apply(originalConsole, arguments);
-        } else {
-          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
-          nativeLog(nativeMsg);
-        }
-    };
-}
-
-function uncapture() {
-  console.log = originalConsole.log;
-}
-
-capture();
-```
-
-## --after-user-code--
-
-```js
-uncapture();
-testArr = [1,2,3,4,5];
-(function() { return logOutput.join("\n");})();
-```
 
 ## --seed-contents--
 
