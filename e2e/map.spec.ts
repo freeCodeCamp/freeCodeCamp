@@ -56,7 +56,7 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'foundational-c-sharp-with-microsoft',
-    name: '(New) Foundational C# with Microsoft Certification'
+    name: 'Free Foundational C# with Microsoft Certification'
   },
   { slug: 'the-odin-project', name: 'The Odin Project - freeCodeCamp Remix' },
   { slug: 'coding-interview-prep', name: 'Coding Interview Prep' },

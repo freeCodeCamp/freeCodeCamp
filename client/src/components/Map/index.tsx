@@ -66,7 +66,6 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
   [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
   [SuperBlockStage.Next]: 'landing.next-heading',
-  [SuperBlockStage.NextEnglish]: 'landing.next-english-heading',
   [SuperBlockStage.Upcoming]: 'landing.upcoming-heading'
 };
 
@@ -182,28 +181,33 @@ function Map({
     <div className='map-ui' data-test-label='curriculum-map'>
       {getStageOrder({
         showUpcomingChanges
-      }).map(stage => (
-        <Fragment key={stage}>
-          <h2 className={forLanding ? 'big-heading' : ''}>
-            {t(superBlockHeadings[stage])}
-          </h2>
-          <ul key={stage}>
-            {superBlockStages[stage].map((superblock, i) => (
-              <MapLi
-                key={superblock}
-                superBlock={superblock}
-                landing={forLanding}
-                index={i}
-                claimed={isClaimed(superblock)}
-                showProgressionLines={stage === SuperBlockStage.Core}
-                showNumbers={stage === SuperBlockStage.Core}
-                completed={allSuperblockChallengesCompleted(superblock)}
-              />
-            ))}
-          </ul>
-          <Spacer size='m' />
-        </Fragment>
-      ))}
+      }).map(stage => {
+        const superblocks = superBlockStages[stage];
+        if (superblocks.length === 0) {
+          return null;
+        }
+
+        return (
+          <Fragment key={stage}>
+            <h2 className={forLanding ? 'big-heading' : ''}>
+              {t(superBlockHeadings[stage])}
+            </h2>
+            <ul key={stage}>
+              {superblocks.map((superblock, i) => (
+                <MapLi
+                  key={superblock}
+                  superBlock={superblock}
+                  landing={forLanding}
+                  index={i}
+                  claimed={isClaimed(superblock)}
+                  completed={allSuperblockChallengesCompleted(superblock)}
+                />
+              ))}
+            </ul>
+            <Spacer size='m' />
+          </Fragment>
+        );
+      })}
     </div>
   );
 }
