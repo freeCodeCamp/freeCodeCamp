@@ -22,8 +22,20 @@ export const isDonationModalOpenSelector = state =>
   state[MainApp].showDonationModal;
 export const isSignoutModalOpenSelector = state =>
   state[MainApp].showSignoutModal;
-export const recentlyClaimedBlockSelector = state =>
-  state[MainApp].recentlyClaimedBlock;
+export const donatableSectionRecentlyCompletedSelector = state => {
+  const donatableSectionRecentlyCompletedState =
+    state[MainApp].donatableSectionRecentlyCompleted;
+
+  if (donatableSectionRecentlyCompletedState) {
+    const { block, module, superBlock } =
+      donatableSectionRecentlyCompletedState;
+    if (module) return { section: 'module', title: module, superBlock };
+    else if (block) return { section: 'block', title: block, superBlock };
+  }
+
+  return null;
+};
+
 export const donationFormStateSelector = state =>
   state[MainApp].donationFormState;
 export const updateCardStateSelector = state => state[MainApp].updateCardState;
@@ -35,7 +47,8 @@ export const showCertFetchStateSelector = state =>
 export const shouldRequestDonationSelector = state => {
   const completedChallengeCount = completedChallengesSelector(state).length;
   const isDonating = isDonatingSelector(state);
-  const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
+  const donatableSectionRecentlyCompleted =
+    donatableSectionRecentlyCompletedSelector(state);
   const isRandomCompletionThreshold =
     isRandomCompletionThresholdSelector(state);
 
@@ -46,8 +59,8 @@ export const shouldRequestDonationSelector = state => {
   // not before the 11th challenge has mounted)
   if (completedChallengeCount < 10) return false;
 
-  // a block has been completed
-  if (recentlyClaimedBlock) return true;
+  // a block or module has been completed
+  if (donatableSectionRecentlyCompleted) return true;
 
   const sessionChallengeData = getSessionChallengeData();
   /*
@@ -256,6 +269,7 @@ export const certificatesByNameSelector = username => state => {
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
 export const allChallengesInfoSelector = state =>
   state[MainApp].allChallengesInfo;
+export const completionStateSelector = state => state[MainApp].completionState;
 export const userProfileFetchStateSelector = state =>
   state[MainApp].userProfileFetchState;
 export const usernameSelector = state => state[MainApp].appUsername;
