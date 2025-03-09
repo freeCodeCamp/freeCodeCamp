@@ -51,6 +51,10 @@ Your application should show different messages depending on the price of the it
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
+Note:
+
+- Your code is not automatically saved. Be sure to click the "Save your Code" button to save your progress.
+
 # --hints--
 
 You should have the HTML file link to the JavaScript file.

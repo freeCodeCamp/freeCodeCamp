@@ -41,7 +41,11 @@ In this project, you'll build an app that will search for Pokémon by name or ID
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
-**Note:** When running the tests there will be a slight delay. Please wait a few seconds to allow the tests to finish. Do not refresh the page before they are done.
+Notes: 
+
+- When running the tests there will be a slight delay. Please wait a few seconds to allow the tests to finish. Do not refresh the page before they are done.
+- Your code is not automatically saved. Be sure to click the "Save your Code" button to save your progress.
+
 
 # --hints--
 
