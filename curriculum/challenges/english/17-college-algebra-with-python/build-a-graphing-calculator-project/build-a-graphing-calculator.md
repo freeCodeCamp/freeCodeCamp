@@ -3,6 +3,7 @@ id: 63d83ffd39c73468b059cd40
 title: "Build a Graphing Calculator"
 challengeType: 10
 dashedName: build-a-graphing-calculator
+solutionLink: https://empty.com
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: Build a 25 + 5 Clock
 challengeType: 3
 forumTopicId: 301373
 dashedName: build-a-25--5-clock
+solutionLink: https://25--5-clock.freecodecamp.rocks
 ---
 
 # --description--

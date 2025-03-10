@@ -4,6 +4,7 @@ title: Demographic Data Analyzer
 challengeType: 10
 forumTopicId: 462367
 dashedName: demographic-data-analyzer
+solutionLink: https://empty.com
 ---
 
 # --description--

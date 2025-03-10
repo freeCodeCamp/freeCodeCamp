@@ -5,6 +5,7 @@ challengeType: 10
 forumTopicId: 462374
 helpCategory: Python
 dashedName: sha-1-password-cracker
+solutionLink: https://empty.com
 ---
 
 # --description--

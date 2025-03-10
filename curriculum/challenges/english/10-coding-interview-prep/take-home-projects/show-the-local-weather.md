@@ -4,6 +4,7 @@ title: Show the Local Weather
 challengeType: 3
 forumTopicId: 302368
 dashedName: show-the-local-weather
+solutionLink: https://codepen.io/freeCodeCamp/full/bELRjV
 ---
 
 # --description--

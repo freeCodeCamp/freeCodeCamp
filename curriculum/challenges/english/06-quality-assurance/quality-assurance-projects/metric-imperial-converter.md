@@ -4,6 +4,7 @@ title: Metric-Imperial Converter
 challengeType: 4
 forumTopicId: 301570
 dashedName: metric-imperial-converter
+solutionLink: https://metric-imperial-converter.freecodecamp.rocks
 ---
 
 # --description--

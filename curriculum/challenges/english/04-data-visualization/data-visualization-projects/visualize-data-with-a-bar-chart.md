@@ -4,6 +4,7 @@ title: Visualize Data with a Bar Chart
 challengeType: 3
 forumTopicId: 301464
 dashedName: visualize-data-with-a-bar-chart
+solutionLink: https://bar-chart.freecodecamp.rocks
 ---
 
 # --description--

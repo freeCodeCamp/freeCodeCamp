@@ -4,6 +4,7 @@ title: Build a JavaScript Calculator
 challengeType: 3
 forumTopicId: 301371
 dashedName: build-a-javascript-calculator
+solutionLink: https://javascript-calculator.freecodecamp.rocks
 ---
 
 # --description--
