@@ -756,8 +756,8 @@
   "search": {
     "label": "Search",
     "placeholder": {
-      "default": "Search our tutorials",
-      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+      "default": "Search our news articles, tutorials, and books",
+      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
     },
     "see-results": "See all results for {{searchQuery}}",
     "no-tutorials": "No tutorials found",
