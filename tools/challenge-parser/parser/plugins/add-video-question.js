@@ -10,6 +10,18 @@ const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 function plugin() {
   return transformer;
   function transformer(tree, file) {
+    const description = getSection(tree, '--description--');
+
+    const instructions = getSection(tree, '--instructions--');
+
+    if (getSection(description).length > 0) {
+      throw Error('The description heading should not have any sub-elements');
+    }
+
+    if (getSection(instructions).length > 0) {
+      throw Error('The instructions heading should not have any sub-elements');
+    }
+
     const allQuestionNodes = getSection(tree, '--questions--');
 
     if (allQuestionNodes.length > 0) {
