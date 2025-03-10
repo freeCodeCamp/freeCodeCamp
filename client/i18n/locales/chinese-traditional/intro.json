@@ -3445,7 +3445,7 @@
       "quiz-react-state-and-hooks": {
         "title": "React State and Hooks Quiz",
         "intro": [
-          "Test what you've learned about React State and Hooks with this quiz."
+          "Test what you've learned about React's <code>useState</code> and <code>useEffect</code> hooks with this quiz."
         ]
       },
       "ftmi": {
@@ -3496,7 +3496,8 @@
       "review-web-performance": {
         "title": "Web Performance Review",
         "intro": [
-          "Review the Web Performance concepts to prepare for the upcoming quiz."
+          "Before you take the web performance quiz, you should review everything you've learned so far.",
+          "Open up this page, to review all of the concepts taught including INP, key metrics for measuring performance, Performance Web APIs and more."
         ]
       },
       "quiz-web-performance": {
