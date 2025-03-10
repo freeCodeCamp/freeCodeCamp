@@ -12,8 +12,14 @@ function plugin() {
   function transformer(tree, file) {
     const description = getSection(tree, '--description--');
 
-    if (getSection(description, '--transcript--').length > 0) {
-      throw Error('transcript should not be nested inside of the description');
+    const instructions = getSection(tree, '--instructions--');
+
+    if (getSection(description).length > 0) {
+      throw Error('The description heading should not have any sub-elements');
+    }
+
+    if (getSection(instructions).length > 0) {
+      throw Error('The instructions heading should not have any sub-elements');
     }
 
     const allQuestionNodes = getSection(tree, '--questions--');
