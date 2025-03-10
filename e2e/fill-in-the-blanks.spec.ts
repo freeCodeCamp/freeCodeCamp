@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Fill in the blanks challenge', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(
-      '/learn/a2-english-for-developers/learn-greetings-in-your-first-day-at-the-office/task-46'
+      '/learn/a2-english-for-developers/learn-greetings-in-your-first-day-at-the-office/task-47'
     );
   });
 
