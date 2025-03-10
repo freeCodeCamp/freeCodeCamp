@@ -9,6 +9,12 @@ import rootEpic from './root-epic';
 import rootReducer from './root-reducer';
 import rootSaga from './root-saga';
 
+declare const module: {
+  hot?: {
+    accept: (path: string, callback: () => void) => void;
+  };
+};
+
 const { environment } = envData;
 
 const clientSide = isBrowser();
@@ -46,11 +52,15 @@ export const createStore = (preloadedState = {}) => {
     );
   }
   sagaMiddleware.run(rootSaga);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   epicMiddleware.run(rootEpic);
+
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./root-reducer', () => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-require-imports
       const nextRootReducer = require('./root-reducer');
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       store.replaceReducer(nextRootReducer);
     });
   }
