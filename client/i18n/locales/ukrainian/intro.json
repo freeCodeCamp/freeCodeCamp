@@ -1618,7 +1618,7 @@
       "learn-how-to-express-agreement": {
         "title": "Дізнайтесь, як виражати згоду",
         "intro": [
-          "In this course, you will learn to express agreement in different professional settings."
+          "У цьому курсі ви навчитесь виражати згоду в будь-якій ситуації на роботі."
         ]
       },
       "learn-how-to-express-disagreement": {
@@ -3452,7 +3452,9 @@
       },
       "quiz-react-state-and-hooks": {
         "title": "Тест «Стани та хуки в React»",
-        "intro": ["Перевірте, що ви дізнались про стани та хуки в React."]
+        "intro": [
+          "Перевірте, що ви дізнались про хуки <code>useState</code> та <code>useEffect</code> в React."
+        ]
       },
       "ftmi": {
         "title": "275",
@@ -3500,7 +3502,8 @@
       "review-web-performance": {
         "title": "Повторення вебпродуктивності",
         "intro": [
-          "Пригадайте поняття з теми «Вебпродуктивність», щоб підготуватись до тесту."
+          "Перш ніж перейти до тесту «Вебпродуктивність», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати INP, ключові метрики для вимірювання продуктивності, API для вебпродуктивності та багато іншого."
         ]
       },
       "quiz-web-performance": {
