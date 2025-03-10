@@ -107,13 +107,19 @@ async function tokenMetaHandler(
   req: UpdateReqType<typeof schemas.examEnvironmentTokenMeta>,
   reply: FastifyReply
 ) {
+  const logger = this.log.child({ req });
   const { 'exam-environment-authorization-token': encodedToken } = req.headers;
+  logger.info({ encodedToken });
 
   let payload: JwtPayload;
   try {
     payload = jwt.verify(encodedToken, JWT_SECRET) as JwtPayload;
   } catch (e) {
     // Server refuses to brew (verify) coffee (jwts) with a teapot (random strings)
+    logger.warn(
+      { examEnvironmentAuthorizationTokenError: e },
+      'Invalid token provided.'
+    );
     void reply.code(418);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(JSON.stringify(e))
@@ -121,6 +127,13 @@ async function tokenMetaHandler(
   }
 
   if (!isObjectID(payload.examEnvironmentAuthorizationToken)) {
+    logger.warn(
+      {
+        examEnvironmentAuthorizationToken:
+          payload.examEnvironmentAuthorizationToken
+      },
+      'Token is not an object id.'
+    );
     void reply.code(418);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
@@ -137,6 +150,7 @@ async function tokenMetaHandler(
 
   if (!token) {
     // Endpoint is valid, but resource does not exists
+    logger.warn('Token does not appear to exist.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
@@ -161,6 +175,8 @@ async function postExamGeneratedExamHandler(
   req: UpdateReqType<typeof schemas.examEnvironmentPostExamGeneratedExam>,
   reply: FastifyReply
 ) {
+  const logger = this.log.child({ req });
+  logger.info({ userId: req.user?.id });
   // Get exam from DB
   const examId = req.body.examId;
   const maybeExam = await mapErr(
@@ -172,10 +188,12 @@ async function postExamGeneratedExamHandler(
   );
   if (maybeExam.hasError) {
     if (maybeExam.error instanceof PrismaClientValidationError) {
+      logger.warn({ examError: maybeExam.error }, 'Invalid exam id given.');
       void reply.code(400);
       return reply.send(ERRORS.FCC_EINVAL_EXAM_ID(maybeExam.error.message));
     }
 
+    logger.error({ examError: maybeExam.error });
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
@@ -185,6 +203,7 @@ async function postExamGeneratedExamHandler(
   const exam = maybeExam.data;
 
   if (!exam) {
+    logger.warn({ examId }, 'No exam with given id.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM('Invalid exam id given.')
@@ -196,6 +215,10 @@ async function postExamGeneratedExamHandler(
   const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
 
   if (!isExamPrerequisitesMet) {
+    logger.warn(
+      { examId: exam.id },
+      'User has not completed prerequisites to take exam.'
+    );
     void reply.code(403);
     // TODO: Consider sending unmet prerequisites
     return reply.send(
@@ -216,6 +239,10 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeExamAttempts.hasError) {
+    logger.error(
+      { examAttemptsError: maybeExamAttempts.error },
+      'Unable to query exam attempts.'
+    );
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExamAttempts.error))
@@ -238,6 +265,10 @@ async function postExamGeneratedExamHandler(
         examExpirationTime + exam.config.retakeTimeInMS < Date.now();
 
       if (!retakeAllowed) {
+        logger.warn(
+          { examExpirationTime },
+          'User has completed exam too recently to retake.'
+        );
         void reply.code(429);
         // TODO: Consider sending last completed time
         return reply.send(
@@ -259,6 +290,10 @@ async function postExamGeneratedExamHandler(
       );
 
       if (generated.hasError) {
+        logger.error(
+          { generatedError: generated.error },
+          'Unable to query generated exam.'
+        );
         void reply.code(500);
         return reply.send(
           ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(generated.error))
@@ -266,6 +301,10 @@ async function postExamGeneratedExamHandler(
       }
 
       if (generated.data === null) {
+        logger.error(
+          { generatedExamId: lastAttempt.generatedExamId },
+          'Generated exam not found.'
+        );
         void reply.code(500);
         return reply.send(
           ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
@@ -301,6 +340,7 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeGeneratedExams.hasError) {
+    logger.error({ generatedExamsError: maybeGeneratedExams.error });
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(maybeGeneratedExams.error)
@@ -310,12 +350,10 @@ async function postExamGeneratedExamHandler(
   const generatedExams = maybeGeneratedExams.data;
 
   if (generatedExams.length === 0) {
+    const errMessage = `Unable to provide a generated exam. Either all generated exams have been exhausted, or all generated exams are deprecated.`;
+    logger.error({ examId: exam.id }, errMessage);
     void reply.code(500);
-    return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
-        `Unable to provide a generated exam. Either all generated exams have been exhausted, or all generated exams are deprecated.`
-      )
-    );
+    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(errMessage));
   }
 
   const randomGeneratedExam =
@@ -330,6 +368,7 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeGeneratedExam.hasError) {
+    logger.error({ generatedExamError: maybeGeneratedExam.error });
     void reply.code(500);
     return reply.send(
       // TODO: Consider more specific code
@@ -343,6 +382,10 @@ async function postExamGeneratedExamHandler(
   const generatedExam = maybeGeneratedExam.data;
 
   if (generatedExam === null) {
+    logger.error(
+      { generatedExamId: randomGeneratedExam.id },
+      'Generated exam not found.'
+    );
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(`Unable to locate generated exam.`)
@@ -364,6 +407,7 @@ async function postExamGeneratedExamHandler(
   );
 
   if (attempt.hasError) {
+    logger.error({ attemptError: attempt.error });
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT_CREATE_EXAM_ATTEMPT(
@@ -378,6 +422,7 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeUserExam.hasError) {
+    logger.error({ userExamError: maybeUserExam.error });
     await this.prisma.envExamAttempt.delete({
       where: {
         id: attempt.data.id
@@ -413,6 +458,8 @@ async function postExamAttemptHandler(
   req: UpdateReqType<typeof schemas.examEnvironmentPostExamAttempt>,
   reply: FastifyReply
 ) {
+  const logger = this.log.child({ req });
+  logger.info({ userId: req.user?.id });
   const { attempt } = req.body;
 
   const user = req.user!;
@@ -427,6 +474,10 @@ async function postExamAttemptHandler(
   );
 
   if (maybeAttempts.hasError) {
+    logger.error(
+      { error: maybeAttempts.error },
+      'User attempt cannot be linked to an exam attempt.'
+    );
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
@@ -436,6 +487,7 @@ async function postExamAttemptHandler(
   const attempts = maybeAttempts.data;
 
   if (attempts.length === 0) {
+    logger.warn({ examId: attempt.examId }, 'No attempts found for user.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
@@ -457,6 +509,7 @@ async function postExamAttemptHandler(
   );
 
   if (maybeExam.hasError) {
+    logger.error({ examError: maybeExam.error });
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
@@ -466,6 +519,7 @@ async function postExamAttemptHandler(
   const exam = maybeExam.data;
 
   if (exam === null) {
+    logger.warn({ examId: attempt.examId }, 'Invalid exam id given.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM('Invalid exam id given.')
@@ -476,6 +530,10 @@ async function postExamAttemptHandler(
     latestAttempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
 
   if (isAttemptExpired) {
+    logger.warn(
+      { examAttemptId: latestAttempt.id },
+      'Attempt has exceeded submission time.'
+    );
     void reply.code(403);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
@@ -494,6 +552,7 @@ async function postExamAttemptHandler(
   );
 
   if (maybeGeneratedExam.hasError) {
+    logger.error({ generatedExamError: maybeGeneratedExam.error });
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeGeneratedExam.error))
@@ -503,6 +562,10 @@ async function postExamAttemptHandler(
   const generatedExam = maybeGeneratedExam.data;
 
   if (generatedExam === null) {
+    logger.warn(
+      { generatedExamId: latestAttempt.generatedExamId },
+      'Generated exam not found.'
+    );
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_GENERATED_EXAM(
@@ -536,6 +599,10 @@ async function postExamAttemptHandler(
   );
 
   if (maybeValidExamAttempt.hasError) {
+    logger.warn(
+      { validExamAttemptError: maybeValidExamAttempt.error },
+      'Invalid exam attempt.'
+    );
     void reply.code(400);
     const message =
       maybeValidExamAttempt.error instanceof Error
@@ -545,6 +612,7 @@ async function postExamAttemptHandler(
   }
 
   if (maybeUpdatedAttempt.hasError) {
+    logger.error({ updatedAttemptError: maybeUpdatedAttempt.error });
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUpdatedAttempt.error))
@@ -564,9 +632,12 @@ async function postScreenshotHandler(
   req: UpdateReqType<typeof schemas.examEnvironmentPostScreenshot>,
   reply: FastifyReply
 ) {
+  const logger = this.log.child({ req });
+  logger.info({ userId: req.user?.id });
   const isMultipart = req.isMultipart();
 
   if (!isMultipart) {
+    logger.warn('Request is not multipart form data.');
     void reply.code(400);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_SCREENSHOT(
@@ -579,6 +650,7 @@ async function postScreenshotHandler(
   const imgData = await req.file();
 
   if (!imgData) {
+    logger.warn('No image provided.');
     void reply.code(400);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_SCREENSHOT('No image provided.')
@@ -594,6 +666,10 @@ async function postScreenshotHandler(
   );
 
   if (maybeAttempt.hasError) {
+    logger.error(
+      { error: maybeAttempt.error },
+      'User screenshot cannot be linked to an exam attempt.'
+    );
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempt.error))
@@ -603,6 +679,7 @@ async function postScreenshotHandler(
   const attempt = maybeAttempt.data;
 
   if (attempt.length === 0) {
+    logger.warn('No exam attempts found for user.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
@@ -615,6 +692,7 @@ async function postScreenshotHandler(
 
   // Verify image is JPG using magic number
   if (imgBinary[0] !== 0xff || imgBinary[1] !== 0xd8 || imgBinary[2] !== 0xff) {
+    logger.warn('Invalid image format');
     void reply.code(400);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_SCREENSHOT('Invalid image format.')
@@ -642,6 +720,9 @@ async function getExams(
   req: UpdateReqType<typeof schemas.examEnvironmentExams>,
   reply: FastifyReply
 ) {
+  const logger = this.log.child({ req });
+  logger.info({ user: req.user });
+
   const user = req.user!;
   const exams = await this.prisma.envExam.findMany({
     where: {
