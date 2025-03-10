@@ -61,13 +61,18 @@ export function createUserInput(email: string): Prisma.userCreateInput {
     emailVerified: true, // this should be true until a user changes their email address
     // TODO(Post-MVP): remove externalId?
     externalId,
+    githubProfile: '',
     isBanned: false,
     isCheater: false,
+    isClassroomAccount: false,
     isDonating: false,
     isHonest: false,
     keyboardShortcuts: false,
+    lastUpdatedAtInMS: Date.now(),
+    linkedin: '',
     location: '',
     name: '',
+    newEmail: null,
     unsubscribeId: nanoid(),
     picture: '',
     portfolio: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
@@ -83,10 +88,13 @@ export function createUserInput(email: string): Prisma.userCreateInput {
       showPortfolio: false,
       showTimeLine: false
     },
+    rand: Math.random(),
     sendQuincyEmail: false,
     theme: 'default',
+    twitter: '',
     username,
     usernameDisplay: username,
+    website: '',
     yearsTopContributor: [], // TODO: Omit this from the document? (prisma will always return []),
     ...createResetProperties()
   };
