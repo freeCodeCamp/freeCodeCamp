@@ -16,7 +16,6 @@ import {
 } from '../redux/selectors';
 
 import callGA from '../analytics/call-ga';
-import { SuperBlocks } from '../../../shared/config/curriculum';
 
 interface FetchState {
   pending: boolean;
@@ -57,14 +56,6 @@ interface LearnPageProps {
         fields: Slug;
       };
     };
-    allChallengeNode: {
-      nodes: {
-        challenge: {
-          id: string;
-          superBlock: SuperBlocks;
-        };
-      }[];
-    };
   };
 }
 
@@ -77,8 +68,7 @@ function LearnPage({
       challenge: {
         fields: { slug }
       }
-    },
-    allChallengeNode: { nodes: challengeNodes }
+    }
   }
 }: LearnPageProps) {
   const { t } = useTranslation();
@@ -105,7 +95,7 @@ function LearnPage({
               onLearnDonationAlertClick={onLearnDonationAlertClick}
               isDonating={isDonating}
             />
-            <Map allChallenges={challengeNodes.map(node => node.challenge)} />
+            <Map />
             <Spacer size='l' />
           </Col>
         </Row>
@@ -130,14 +120,6 @@ export const query = graphql`
       challenge {
         fields {
           slug
-        }
-      }
-    }
-    allChallengeNode {
-      nodes {
-        challenge {
-          id
-          superBlock
         }
       }
     }

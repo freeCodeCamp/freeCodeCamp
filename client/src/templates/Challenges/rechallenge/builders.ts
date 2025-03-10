@@ -1,7 +1,7 @@
 import { template as _template } from 'lodash-es';
 
 interface ConcatHTMLOptions {
-  required?: { src: string; link?: string }[];
+  required?: { src?: string; link?: string }[];
   template?: string;
   contents?: string;
   testRunner?: string;

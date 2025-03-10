@@ -55,7 +55,7 @@ function SearchHits({
         <SearchBarFooter
           hasHits={!noHits}
           query={results?.query}
-          selectedIndex={selectedIndex}
+          isSelected={selectedIndex === allHits.length}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         />

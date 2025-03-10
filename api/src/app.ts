@@ -2,6 +2,7 @@ import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
+import { GrowthBook } from '@growthbook/growthbook';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import uriResolver from 'fast-uri';
@@ -28,6 +29,7 @@ import errorHandling from './plugins/error-handling';
 import csrf from './plugins/csrf';
 import notFound from './plugins/not-found';
 import shadowCapture from './plugins/shadow-capture';
+import growthBook from './plugins/growth-book';
 
 import * as publicRoutes from './routes/public';
 import * as protectedRoutes from './routes/protected';
@@ -39,10 +41,13 @@ import {
   FCC_ENABLE_SWAGGER_UI,
   FCC_ENABLE_SHADOW_CAPTURE,
   FCC_ENABLE_EXAM_ENVIRONMENT,
-  FCC_ENABLE_SENTRY_ROUTES
+  FCC_ENABLE_SENTRY_ROUTES,
+  GROWTHBOOK_FASTIFY_API_HOST,
+  GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 import {
+  examEnvironmentMultipartRoutes,
   examEnvironmentOpenRoutes,
   examEnvironmentValidatedTokenRoutes
 } from './exam-environment/routes/exam-environment';
@@ -54,6 +59,12 @@ type FastifyInstanceWithTypeProvider = FastifyInstance<
   FastifyBaseLogger,
   TypeBoxTypeProvider
 >;
+
+declare module 'fastify' {
+  interface FastifyInstance {
+    gb: GrowthBook;
+  }
+}
 
 // Options that fastify uses
 const ajv = new Ajv({
@@ -99,12 +110,17 @@ export const build = async (
   await fastify.register(cookies);
   await fastify.register(csrf);
 
+  await fastify.register(growthBook, {
+    apiHost: GROWTHBOOK_FASTIFY_API_HOST,
+    clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
+  });
+
   const provider =
     EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
   void fastify.register(mailer, { provider });
 
   // Swagger plugin
-  if (FCC_ENABLE_SWAGGER_UI) {
+  if (FCC_ENABLE_SWAGGER_UI ?? fastify.gb.isOn('swagger-ui')) {
     void fastify.register(fastifySwagger, {
       openapi: {
         openapi: '3.1.0',
@@ -132,7 +148,7 @@ export const build = async (
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
   }
 
-  if (FCC_ENABLE_SHADOW_CAPTURE) {
+  if (FCC_ENABLE_SHADOW_CAPTURE ?? fastify.gb.isOn('shadow-capture')) {
     void fastify.register(shadowCapture);
   }
 
@@ -189,17 +205,18 @@ export const build = async (
     }
   });
 
-  if (FCC_ENABLE_EXAM_ENVIRONMENT) {
+  if (FCC_ENABLE_EXAM_ENVIRONMENT ?? fastify.gb.isOn('exam-environment')) {
     void fastify.register(function (fastify, _opts, done) {
       fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
 
       void fastify.register(examEnvironmentValidatedTokenRoutes);
+      void fastify.register(examEnvironmentMultipartRoutes);
       done();
     });
     void fastify.register(examEnvironmentOpenRoutes);
   }
 
-  if (FCC_ENABLE_SENTRY_ROUTES) {
+  if (FCC_ENABLE_SENTRY_ROUTES ?? fastify.gb.isOn('sentry-routes')) {
     void fastify.register(publicRoutes.sentryRoutes);
   }
 

@@ -13,6 +13,7 @@ import { ChallengeContent } from '../../../interfaces/challenge-content';
 import SaveChallenge from '../buttons/save-challenge';
 import './editor.css';
 import { API_LOCATION } from '../../utils/handle-request';
+import { superBlockNameMap } from '../../utils/block-name-translator';
 
 const Editor = () => {
   const [error, setError] = useState<Error | null>(null);
@@ -86,6 +87,15 @@ const Editor = () => {
       />
       <p>
         <Link to={`/${superblock || ''}/${block || ''}`}>Return to Block</Link>
+      </p>
+      <p>
+        <Link
+          to={`${import.meta.env.CHALLENGE_EDITOR_LEARN_CLIENT_LOCATION}/learn/${superBlockNameMap[superblock || '']}/${block || ''}/${items.name.replace(/[\s]+/g, '-').toLowerCase() || ''}`}
+          target='_blank'
+        >
+          View Live Version of the Challenge in your running development
+          environment
+        </Link>
       </p>
     </div>
   );

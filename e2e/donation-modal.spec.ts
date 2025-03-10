@@ -3,6 +3,7 @@ import { test, expect, type Page } from '@playwright/test';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
 import { clearEditor, focusEditor } from './utils/editor';
+import { allowTrailingSlash } from './utils/url';
 
 const slowExpect = expect.configure({ timeout: 25000 });
 
@@ -22,7 +23,9 @@ const completeFrontEndCert = async (page: Page, number?: number) => {
   const loopNumber = number || projects.length;
   for (let i = 0; i < loopNumber; i++) {
     await page.waitForURL(
-      `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i]}`
+      allowTrailingSlash(
+        `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i]}`
+      )
     );
     await page
       .getByRole('textbox', { name: 'solution' })
@@ -92,7 +95,7 @@ const completeChallenges = async ({
 }) => {
   await page.goto(challenges[0].url);
   for (const challenge of challenges.slice(0, number)) {
-    await page.waitForURL(challenge.url);
+    await page.waitForURL(allowTrailingSlash(challenge.url));
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
     await page.evaluate(
@@ -274,7 +277,9 @@ test.describe('Donation modal appearance logic - New user', () => {
 
 test.describe('Donation modal appearance logic - Certified user claiming a new block', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
-  execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user');
+  test.beforeEach(() =>
+    execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user')
+  );
 
   test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
     page,

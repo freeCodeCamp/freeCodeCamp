@@ -6,14 +6,12 @@ import type { TFunction } from 'i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
-import { useFeature } from '@growthbook/growthbook-react';
 
 import LearnLayout from '../../../../components/layouts/learn';
 import { isSignedInSelector } from '../../../../redux/selectors';
 import {
   ChallengeMeta,
   ChallengeNode,
-  NavigationPaths,
   Test
 } from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/challenge-description';
@@ -87,7 +85,6 @@ interface BackEndProps {
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMeta;
-    nextCurriculumPaths: NavigationPaths;
   };
   t: TFunction;
   tests: Test[];
@@ -97,7 +94,6 @@ interface BackEndProps {
 }
 
 const ShowBackEnd = (props: BackEndProps) => {
-  const showNextCurriculum = useFeature('fcc-10').on;
   const container = useRef<HTMLElement>(null);
 
   const handleSubmit = ({
@@ -124,14 +120,12 @@ const ShowBackEnd = (props: BackEndProps) => {
           }
         }
       },
-      pageContext: { challengeMeta, nextCurriculumPaths }
+      pageContext: { challengeMeta }
     } = props;
     initConsole();
     initTests(tests);
     const challengePaths = getChallengePaths({
-      showNextCurriculum,
-      currentCurriculumPaths: challengeMeta,
-      nextCurriculumPaths
+      currentCurriculumPaths: challengeMeta
     });
     updateChallengeMeta({
       ...challengeMeta,

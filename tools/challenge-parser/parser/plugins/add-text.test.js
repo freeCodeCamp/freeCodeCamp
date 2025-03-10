@@ -84,7 +84,6 @@ describe('add-text', () => {
     expect(file.data[instructionsId]).toBe(instructionsSectionText);
   });
 
-  // eslint-disable-next-line max-len
   it('should add nothing if a section id does not appear in the md', () => {
     const plugin = addText([missingId]);
     plugin(mockAST, file);
@@ -110,7 +109,6 @@ describe('add-text', () => {
     expect(file.data[descriptionId]).toEqual(expect.stringContaining(expected));
   });
 
-  // eslint-disable-next-line max-len
   it('should not add paragraphs when html elements are separated by whitespace', () => {
     const plugin = addText([instructionsId]);
     plugin(realisticAST, file);

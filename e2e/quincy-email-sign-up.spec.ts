@@ -3,6 +3,7 @@ import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
+import { allowTrailingSlash } from './utils/url';
 
 const apiLocation = process.env.API_LOCATION || 'http://localhost:3000';
 
@@ -73,7 +74,7 @@ test.describe('Email sign-up page when user is not signed in', () => {
 
     // The user is signed in and automatically redirected to /learn after clicking the button.
     // We wait for this navigation to complete before moving onto the next.
-    await page.waitForURL('**/learn');
+    await page.waitForURL(allowTrailingSlash('/learn'));
     await expect(
       page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
     ).toBeVisible();
@@ -144,7 +145,7 @@ test.describe('Email sign-up page when user is signed in', () => {
 
     // The user is signed in and automatically redirected to /learn after clicking the button.
     // We wait for the navigation to complete.
-    await page.waitForURL('**/learn');
+    await page.waitForURL('/learn');
     await expect(
       page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
     ).toBeVisible();
@@ -180,7 +181,7 @@ test.describe('Email sign-up page when user is signed in', () => {
 
     // The user is signed in and automatically redirected to /learn after clicking the button.
     // We wait for the navigation to complete.
-    await page.waitForURL('**/learn');
+    await page.waitForURL('/learn');
     await expect(
       page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
     ).toBeVisible();

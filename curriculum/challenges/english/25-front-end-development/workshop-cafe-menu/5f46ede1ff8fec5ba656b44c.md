@@ -1,8 +1,8 @@
 ---
 id: 5f46ede1ff8fec5ba656b44c
-title: Step 77
+title: Step 78
 challengeType: 0
-dashedName: step-77
+dashedName: step-78
 ---
 
 # --description--
@@ -72,10 +72,12 @@ assert(code.match(/\/\*\s*FOOTER\s*\*\//i));
       </main>
       <hr class="bottom-line">
       <footer>
-        <p>
-          <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
-        </p>
-        <p>123 Free Code Camp Drive</p>
+        <address>
+          <p>
+            <a href="https://www.freecodecamp.org" target="_blank">Visit our website</a>
+          </p>
+          <p>123 Free Code Camp Drive</p>
+        </address>
       </footer>
     </div>
   </body>

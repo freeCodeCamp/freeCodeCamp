@@ -1,6 +1,3 @@
-// utils are not typed (yet), so we have to disable some checks
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import fs from 'fs';
 import path from 'path';
 import { config } from 'dotenv';
@@ -141,14 +138,7 @@ describe('getSuperOrder', () => {
   });
 
   it.skip('returns unique numbers for all current curriculum', () => {
-    if (
-      process.env.SHOW_NEW_CURRICULUM !== 'true' &&
-      process.env.SHOW_UPCOMING_CHANGES !== 'true'
-    ) {
-      expect.assertions(17);
-    } else if (process.env.SHOW_NEW_CURRICULUM !== 'true') {
-      expect.assertions(17);
-    } else if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
+    if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
       expect.assertions(17);
     } else {
       expect.assertions(19);
@@ -172,15 +162,7 @@ describe('getSuperOrder', () => {
     expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(15);
     expect(getSuperOrder(SuperBlocks.JsAlgoDataStruct)).toBe(16);
 
-    if (
-      process.env.SHOW_NEW_CURRICULUM === 'true' &&
-      process.env.SHOW_UPCOMING_CHANGES === 'true'
-    ) {
-      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
-      expect(getSuperOrder(SuperBlocks.FullStackDeveloper)).toBe(18);
-    } else if (process.env.SHOW_NEW_CURRICULUM === 'true') {
-      return;
-    } else if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
+    if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
       expect(getSuperOrder(SuperBlocks.FullStackDeveloper)).toBe(18);
     }
@@ -188,9 +170,10 @@ describe('getSuperOrder', () => {
 });
 
 describe('getSuperBlockFromPath', () => {
-  const directories = fs.readdirSync(
-    path.join(__dirname, './challenges/english')
-  );
+  const englishFolder = path.join(__dirname, './challenges/english');
+  const directories = fs
+    .readdirSync(englishFolder)
+    .filter(item => fs.lstatSync(path.join(englishFolder, item)).isDirectory());
 
   it('handles all the directories in ./challenges/english', () => {
     expect.assertions(24);
@@ -268,11 +251,11 @@ describe('getBlockOrder', () => {
   it('returns the correct order when the chapter only contains one module', () => {
     expect(
       getBlockOrder('welcome-to-freecodecamp', mockSuperBlockStructure)
-    ).toBe(1);
+    ).toBe(0);
   });
 
   it('returns the correct order when the chapter contains multiple modules', () => {
-    expect(getBlockOrder('block-one-m2', mockSuperBlockStructure)).toBe(4);
+    expect(getBlockOrder('block-one-m2', mockSuperBlockStructure)).toBe(3);
   });
 
   it('throws if a block does not exist', () => {

@@ -142,7 +142,7 @@ void (async () => {
       actionShouldFail = true;
     }
   }
-  actionShouldFail ? process.exit(1) : process.exit(0);
+  process.exit(actionShouldFail ? 1 : 0);
 })();
 
 async function auditChallengeFiles(

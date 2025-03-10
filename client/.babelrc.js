@@ -38,10 +38,12 @@ const config = {
       'prismjs',
       {
         languages: [
+          'bash',
           'clike',
           'css',
           'html',
           'javascript',
+          'json',
           'jsx',
           'markup',
           'mathml',

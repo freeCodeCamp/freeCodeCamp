@@ -339,7 +339,8 @@ export const exam: EnvExam = {
   id: examId,
   config,
   questionSets,
-  prerequisites: ['67112fe1c994faa2c26d0b1d']
+  prerequisites: ['67112fe1c994faa2c26d0b1d'],
+  deprecated: false
 };
 
 export async function seedEnvExam() {
@@ -377,5 +378,11 @@ export async function clearEnvExam() {
 export async function seedEnvExamAttempt() {
   await fastifyTestInstance.prisma.envExamAttempt.create({
     data: examAttempt
+  });
+}
+
+export async function seedExamEnvExamAuthToken() {
+  return fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.create({
+    data: { userId: defaultUserId, expireAt: new Date(Date.now() + 60000) }
   });
 }

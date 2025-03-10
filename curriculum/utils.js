@@ -43,9 +43,7 @@ function createSuperOrder(superBlocks) {
 }
 
 const flatSuperBlockMap = generateSuperBlockList({
-  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM === 'true',
-  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true',
-  showNextCurriculum: true
+  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
 });
 const superOrder = createSuperOrder(flatSuperBlockMap);
 
@@ -141,7 +139,7 @@ function getBlockOrder(blockName, superBlockStructure) {
       `The block "${blockName}" does not appear in the superblock structure.`
     );
 
-  return index + 1;
+  return index;
 }
 exports.createSuperOrder = createSuperOrder;
 exports.getSuperOrder = getSuperOrder;

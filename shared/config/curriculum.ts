@@ -30,9 +30,6 @@ export enum SuperBlocks {
 }
 
 /*
- * SuperBlockStages.New = SHOW_NEW_CURRICULUM === 'true'
- * 'New' -> shown only on english staging at the moment
- *
  * SuperBlockStages.Upcoming = SHOW_UPCOMING_CHANGES === 'true'
  * 'Upcoming' is for development -> not shown on stag or prod anywhere
  *
@@ -46,35 +43,24 @@ export enum SuperBlockStage {
   Professional,
   Extra,
   Legacy,
-  New,
   Upcoming,
-  Next,
-  NextEnglish
+  Next
 }
 
 const defaultStageOrder = [
   SuperBlockStage.Core,
-  SuperBlockStage.Next,
   SuperBlockStage.English,
-  SuperBlockStage.NextEnglish,
-  SuperBlockStage.Professional,
   SuperBlockStage.Extra,
-  SuperBlockStage.Legacy
+  SuperBlockStage.Legacy,
+  SuperBlockStage.Professional,
+  SuperBlockStage.Next
 ];
 
 export function getStageOrder({
-  showNewCurriculum,
-  showUpcomingChanges,
-  showNextCurriculum
+  showUpcomingChanges
 }: Config): SuperBlockStage[] {
-  const isCurrentStage = (stage: SuperBlockStage) =>
-    !(stage === SuperBlockStage.Next) &&
-    !(stage === SuperBlockStage.NextEnglish);
-  const stageOrder = showNextCurriculum
-    ? [...defaultStageOrder]
-    : [...defaultStageOrder.filter(isCurrentStage)];
+  const stageOrder = [...defaultStageOrder];
 
-  if (showNewCurriculum) stageOrder.push(SuperBlockStage.New);
   if (showUpcomingChanges) stageOrder.push(SuperBlockStage.Upcoming);
   return stageOrder;
 }
@@ -85,7 +71,17 @@ export type StageMap = {
 
 // Groups of superblocks in learn map. This should include all superblocks.
 export const superBlockStages: StageMap = {
-  [SuperBlockStage.Core]: [
+  [SuperBlockStage.Core]: [SuperBlocks.FullStackDeveloper],
+
+  [SuperBlockStage.English]: [SuperBlocks.A2English, SuperBlocks.B1English],
+  [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
+  [SuperBlockStage.Extra]: [
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.RosettaCode
+  ],
+  [SuperBlockStage.Legacy]: [
     SuperBlocks.RespWebDesignNew,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.FrontEndDevLibs,
@@ -97,24 +93,12 @@ export const superBlockStages: StageMap = {
     SuperBlocks.DataAnalysisPy,
     SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
-    SuperBlocks.CollegeAlgebraPy
-  ],
-  [SuperBlockStage.Next]: [SuperBlocks.FullStackDeveloper],
-  [SuperBlockStage.English]: [SuperBlocks.A2English],
-  [SuperBlockStage.NextEnglish]: [SuperBlocks.B1English],
-  [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
-  [SuperBlockStage.Extra]: [
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.RosettaCode
-  ],
-  [SuperBlockStage.Legacy]: [
+    SuperBlocks.CollegeAlgebraPy,
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.PythonForEverybody
   ],
-  [SuperBlockStage.New]: [],
+  [SuperBlockStage.Next]: [],
   [SuperBlockStage.Upcoming]: []
 };
 
@@ -257,9 +241,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 Object.freeze(notAuditedSuperBlocks);
 
 type Config = {
-  showNewCurriculum: boolean;
   showUpcomingChanges: boolean;
-  showNextCurriculum: boolean;
 };
 
 export function generateSuperBlockList(config: Config): SuperBlocks[] {
@@ -279,9 +261,7 @@ export function getAuditedSuperBlocks({
 
   // To find the audited superblocks, we need to start with all superblocks.
   const flatSuperBlockMap = generateSuperBlockList({
-    showNewCurriculum: true,
-    showUpcomingChanges: true,
-    showNextCurriculum: true
+    showUpcomingChanges: true
   });
   const auditedSuperBlocks = flatSuperBlockMap.filter(
     superBlock =>

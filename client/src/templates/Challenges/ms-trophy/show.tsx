@@ -7,16 +7,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { useFeature } from '@growthbook/growthbook-react';
 
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import LearnLayout from '../../../components/layouts/learn';
-import {
-  ChallengeNode,
-  ChallengeMeta,
-  NavigationPaths,
-  Test
-} from '../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
@@ -83,7 +77,6 @@ interface MsTrophyProps {
   openHelpModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
-    nextCurriculumPaths: NavigationPaths;
   };
   submitChallenge: () => void;
   t: TFunction;
@@ -91,7 +84,6 @@ interface MsTrophyProps {
 }
 
 function MsTrophy(props: MsTrophyProps) {
-  const showNextCurriculum = useFeature('fcc-10').on;
   const container = useRef<HTMLElement>(null);
   const {
     data: {
@@ -113,15 +105,13 @@ function MsTrophy(props: MsTrophyProps) {
           }
         }
       },
-      pageContext: { challengeMeta, nextCurriculumPaths },
+      pageContext: { challengeMeta },
       initTests,
       updateChallengeMeta
     } = props;
     initTests(tests);
     const challengePaths = getChallengePaths({
-      showNextCurriculum,
-      currentCurriculumPaths: challengeMeta,
-      nextCurriculumPaths
+      currentCurriculumPaths: challengeMeta
     });
     updateChallengeMeta({
       ...challengeMeta,

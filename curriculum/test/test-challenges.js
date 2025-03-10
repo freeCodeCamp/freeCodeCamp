@@ -48,7 +48,7 @@ const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
 const {
-  createHeader,
+  createContent,
   testId
 } = require('../../client/src/templates/Challenges/utils/frame');
 const { SuperBlocks } = require('../../shared/config/curriculum');
@@ -73,6 +73,7 @@ process.on('uncaughtException', err => {
 // some errors *may* not be reported, since cleanup is triggered by the first
 // error and that starts shutting down the browser and the server.
 const handleRejection = err => {
+  console.error('Unhandled rejection:');
   // setting the error code because node does not (yet) exit with a non-zero
   // code on unhandled exceptions.
   process.exitCode = 1;
@@ -300,16 +301,11 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
           return;
         }
         it(`${superBlock} should have the same order in every meta`, function () {
-          const firstOrder = getSuperOrder(filteredMeta[0].superBlock, {
-            showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
-          });
+          const firstOrder = getSuperOrder(filteredMeta[0].superBlock);
           assert.isNumber(firstOrder);
           assert.isTrue(
             filteredMeta.every(
-              el =>
-                getSuperOrder(el.superBlock, {
-                  showNewCurriculum: process.env.SHOW_NEW_CURRICULUM
-                }) === firstOrder
+              el => getSuperOrder(el.superBlock) === firstOrder
             ),
             'The superOrder properties are mismatched.'
           );
@@ -582,8 +578,14 @@ async function createTestRunner(
   const runsInPythonWorker = buildFunction === buildPythonChallenge;
 
   const evaluator = await (runsInBrowser
-    ? getContextEvaluator(build, sources, code, loadEnzyme)
-    : getWorkerEvaluator(build, sources, code, runsInPythonWorker));
+    ? getContextEvaluator({
+        build,
+        sources,
+        code,
+        loadEnzyme,
+        hooks: challenge.hooks
+      })
+    : getWorkerEvaluator({ build, sources, code, runsInPythonWorker }));
 
   return async ({ text, testString }) => {
     try {
@@ -629,14 +631,14 @@ function replaceChallengeFilesContentsWithSolutions(
   });
 }
 
-async function getContextEvaluator(build, sources, code, loadEnzyme) {
-  await initializeTestRunner(build, sources, code, loadEnzyme);
+async function getContextEvaluator(config) {
+  await initializeTestRunner(config);
 
   return {
     evaluate: async (testString, timeout) =>
       Promise.race([
         new Promise((_, reject) =>
-          setTimeout(() => reject('timeout'), timeout)
+          setTimeout(() => reject(Error('timeout')), timeout)
         ),
         await page.evaluate(async testString => {
           return await document.__runTest(testString);
@@ -645,7 +647,12 @@ async function getContextEvaluator(build, sources, code, loadEnzyme) {
   };
 }
 
-async function getWorkerEvaluator(build, sources, code, runsInPythonWorker) {
+async function getWorkerEvaluator({
+  build,
+  sources,
+  code,
+  runsInPythonWorker
+}) {
   // The python worker clears the globals between tests, so it should be fine
   // to use the same evaluator for all tests. TODO: check if this is true for
   // sys, since sys.modules is not being reset.
@@ -659,9 +666,15 @@ async function getWorkerEvaluator(build, sources, code, runsInPythonWorker) {
   };
 }
 
-async function initializeTestRunner(build, sources, code, loadEnzyme) {
+async function initializeTestRunner({
+  build,
+  sources,
+  code,
+  loadEnzyme,
+  hooks
+}) {
   await page.reload();
-  await page.setContent(createHeader(testId) + build);
+  await page.setContent(createContent(testId, { build, sources, hooks }));
   await page.evaluate(
     async (code, sources, loadEnzyme) => {
       const getUserInput = fileName => sources[fileName];

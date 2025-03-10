@@ -1,20 +1,16 @@
 import { graphql } from 'gatsby';
 import React, { useEffect, useRef, useState } from 'react';
-import { useFeature } from '@growthbook/growthbook-react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import { isEqual } from 'lodash';
+import store from 'store';
+import { YouTubeEvent } from 'react-youtube';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
-import {
-  ChallengeNode,
-  ChallengeMeta,
-  NavigationPaths,
-  Test
-} from '../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
@@ -34,6 +30,7 @@ import { getChallengePaths } from '../utils/challenge-paths';
 import Scene from '../components/scene/scene';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import ChallengeExplanation from '../components/challenge-explanation';
+import ChallengeTranscript from '../components/challenge-transcript';
 import HelpModal from '../components/help-modal';
 import { SceneSubject } from '../components/scene/scene-subject';
 
@@ -66,7 +63,6 @@ interface ShowQuizProps {
   openHelpModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
-    nextCurriculumPaths: NavigationPaths;
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
@@ -89,6 +85,7 @@ const ShowGeneric = ({
         instructions,
         questions,
         title,
+        transcript,
         translationPending,
         scene,
         superBlock,
@@ -97,7 +94,7 @@ const ShowGeneric = ({
       }
     }
   },
-  pageContext: { challengeMeta, nextCurriculumPaths },
+  pageContext: { challengeMeta },
   initTests,
   updateChallengeMeta,
   openCompletionModal,
@@ -114,9 +111,7 @@ const ShowGeneric = ({
   useEffect(() => {
     initTests(tests);
     const challengePaths = getChallengePaths({
-      showNextCurriculum,
-      currentCurriculumPaths: challengeMeta,
-      nextCurriculumPaths
+      currentCurriculumPaths: challengeMeta
     });
     updateChallengeMeta({
       ...challengeMeta,
@@ -134,7 +129,13 @@ const ShowGeneric = ({
   // video
   const [videoIsLoaded, setVideoIsLoaded] = useState(false);
 
-  const handleVideoIsLoaded = () => {
+  const handleVideoIsLoaded = (e: YouTubeEvent) => {
+    const playbackRate = Number(store.get('fcc-yt-playback-rate')) || 1;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const player = e.target;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    player.setPlaybackRate(playbackRate);
+
     setVideoIsLoaded(true);
   };
 
@@ -160,8 +161,6 @@ const ShowGeneric = ({
   const [hasAnsweredMcqCorrectly, sethasAnsweredMcqCorrectly] = useState(true);
 
   const [showFeedback, setShowFeedback] = useState(false);
-
-  const showNextCurriculum = useFeature('fcc-10').on;
 
   const handleMcqOptionChange = (
     questionIndex: number,
@@ -199,7 +198,7 @@ const ShowGeneric = ({
     <Hotkeys
       executeChallenge={handleSubmit}
       containerRef={container}
-      playScene={scene ? () => sceneSubject.notify() : undefined}
+      playScene={scene ? () => sceneSubject.notify('play') : undefined}
     >
       <LearnLayout>
         <Helmet
@@ -215,6 +214,8 @@ const ShowGeneric = ({
               {title}
             </ChallengeTitle>
 
+            <Spacer size='m' />
+
             {description && (
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription
@@ -227,28 +228,34 @@ const ShowGeneric = ({
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
               {videoId && (
-                <VideoPlayer
-                  bilibiliIds={bilibiliIds}
-                  onVideoLoad={handleVideoIsLoaded}
-                  title={title}
-                  videoId={videoId}
-                  videoIsLoaded={videoIsLoaded}
-                  videoLocaleIds={videoLocaleIds}
-                />
+                <>
+                  <VideoPlayer
+                    bilibiliIds={bilibiliIds}
+                    onVideoLoad={handleVideoIsLoaded}
+                    title={title}
+                    videoId={videoId}
+                    videoIsLoaded={videoIsLoaded}
+                    videoLocaleIds={videoLocaleIds}
+                  />
+                  <Spacer size='m' />
+                </>
               )}
             </Col>
 
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {instructions && (
-                <ChallengeDescription
-                  instructions={instructions}
-                  superBlock={superBlock}
-                />
-              )}
+              {transcript && <ChallengeTranscript transcript={transcript} />}
 
-              <Spacer size='m' />
+              {instructions && (
+                <>
+                  <ChallengeDescription
+                    instructions={instructions}
+                    superBlock={superBlock}
+                  />
+                  <Spacer size='m' />
+                </>
+              )}
 
               {assignments.length > 0 && (
                 <Assignments
@@ -373,6 +380,7 @@ export const query = graphql`
         }
         superBlock
         title
+        transcript
         translationPending
         videoId
         videoId

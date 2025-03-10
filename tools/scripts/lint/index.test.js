@@ -43,7 +43,6 @@ describe('markdown linter', () => {
   it('should write to the console describing the problem', done => {
     function callback() {
       const expected =
-        // eslint-disable-next-line max-len
         'badYML.md: 19: yaml-linter YAML code blocks should be valid [bad indentation of a mapping entry at line 3, column 17:\n          testString: testString\n                    ^] [Context: "```yml"]';
       expect(console.log.mock.calls.length).toBe(1);
       expect(console.log.mock.calls[0][0]).toEqual(

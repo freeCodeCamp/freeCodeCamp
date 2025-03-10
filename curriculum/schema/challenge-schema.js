@@ -91,7 +91,8 @@ const questionJoi = Joi.object().keys({
         feedback: Joi.string().allow(null)
       })
     )
-    .required(),
+    .required()
+    .unique('answer'),
   solution: Joi.number().required()
 });
 
@@ -101,15 +102,24 @@ const quizJoi = Joi.object().keys({
       Joi.object().keys({
         text: Joi.string().required(),
         distractors: Joi.array()
-          .items(Joi.string().required())
-          .min(3)
-          .max(3)
-          .required(),
+          .items(
+            Joi.valid(Joi.ref('...answer')).forbidden(),
+            Joi.string().required()
+          )
+          .length(3)
+          .required()
+          .unique(),
         answer: Joi.string().required()
       })
     )
-    .min(20)
-    .max(20)
+    .custom((value, helpers) => {
+      return value.length === 10 || value.length === 20
+        ? value
+        : helpers.error('array.invalidLength');
+    })
+    .messages({
+      'array.invalidLength': 'Quiz must have exactly 10 or 20 questions.'
+    })
     .required()
 });
 
@@ -145,7 +155,7 @@ const schema = Joi.object()
       otherwise: Joi.optional()
     }),
     certification: Joi.string().regex(slugWithSlashRE),
-    challengeType: Joi.number().min(0).max(25).required(),
+    challengeType: Joi.number().min(0).max(26).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -264,12 +274,32 @@ const schema = Joi.object()
     }),
     scene: Joi.object().keys({
       setup: setupJoi.required(),
-      commands: Joi.array().items(commandJoi)
+      commands: Joi.array()
+        .items(commandJoi)
+        .unique(
+          (a, b) =>
+            a.dialogue &&
+            b.dialogue &&
+            !(
+              (a.startTime < b.startTime &&
+                a.finishTime < b.finishTime &&
+                a.finishTime <= b.startTime) ||
+              (b.startTime < a.startTime &&
+                b.finishTime < a.finishTime &&
+                b.finishTime <= a.startTime)
+            )
+        )
+        .messages({
+          'array.unique': 'Dialogues must not have overlapping times.'
+        })
     }),
     solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
     superBlock: Joi.string().regex(slugWithSlashRE),
     superOrder: Joi.number(),
     suborder: Joi.number(),
+    hooks: Joi.object().keys({
+      beforeAll: Joi.string().allow('')
+    }),
     tests: Joi.array()
       .items(
         // public challenges
@@ -287,6 +317,10 @@ const schema = Joi.object()
       .required(),
     template: Joi.string().allow(''),
     title: Joi.string().required(),
+    transcript: Joi.when('challengeType', {
+      is: [challengeTypes.generic, challengeTypes.video],
+      then: Joi.string()
+    }),
     translationPending: Joi.bool().required(),
     url: Joi.when('challengeType', {
       is: [challengeTypes.codeAllyPractice, challengeTypes.codeAllyCert],

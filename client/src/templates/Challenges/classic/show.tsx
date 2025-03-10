@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { HandlerProps } from 'react-reflex';
 import { useMediaQuery } from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
-import { createStructuredSelector } from 'reselect';
 import store from 'store';
 import { editor } from 'monaco-editor';
 import type { FitAddon } from 'xterm-addon-fit';
@@ -16,13 +15,13 @@ import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
-import {
+import type {
+  ChallengeData,
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
-  CompletedChallenge,
-  NavigationPaths,
   ResizeProps,
+  SavedChallenge,
   SavedChallengeFiles,
   Test
 } from '../../../redux/prop-types';
@@ -46,6 +45,7 @@ import {
   executeChallenge,
   initConsole,
   initTests,
+  initHooks,
   initVisibleEditors,
   previewMounted,
   updateChallengeMeta,
@@ -64,6 +64,7 @@ import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -73,11 +74,11 @@ import { mergeChallengeFiles } from './saved-challenges';
 import './classic.css';
 import '../components/test-frame.css';
 
-const mapStateToProps = createStructuredSelector({
-  challengeFiles: challengeFilesSelector,
-  output: consoleOutputSelector,
-  isChallengeCompleted: isChallengeCompletedSelector,
-  savedChallenges: savedChallengesSelector
+const mapStateToProps = (state: unknown) => ({
+  challengeFiles: challengeFilesSelector(state) as ChallengeFiles,
+  output: consoleOutputSelector(state) as string[],
+  isChallengeCompleted: isChallengeCompletedSelector(state) as boolean,
+  savedChallenges: savedChallengesSelector(state) as SavedChallenge[]
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -86,6 +87,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       createFiles,
       initConsole,
       initTests,
+      initHooks,
       initVisibleEditors,
       updateChallengeMeta,
       challengeMounted,
@@ -108,21 +110,21 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;
+  initHooks: (hooks?: { beforeAll: string }) => void;
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMeta;
-    nextCurriculumPaths: NavigationPaths;
     projectPreview: {
-      challengeData: CompletedChallenge;
+      challengeData: ChallengeData;
     };
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
   setEditorFocusability: (canFocus: boolean) => void;
   setIsAdvancing: (arg: boolean) => void;
-  savedChallenges: CompletedChallenge[];
+  savedChallenges: SavedChallenge[];
 }
 
 interface ReflexLayout {
@@ -159,6 +161,7 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
 };
 
 const StepPreview = ({
+  dimensions,
   disableIframe,
   previewMounted,
   challengeType,
@@ -166,10 +169,11 @@ const StepPreview = ({
 }: Pick<PreviewProps, 'disableIframe' | 'previewMounted'> & {
   challengeType: number;
   xtermFitRef: React.MutableRefObject<FitAddon | null>;
+  dimensions?: { width: number; height: number };
 }) => {
   return challengeType === challengeTypes.python ||
     challengeType === challengeTypes.multifilePythonCertProject ? (
-    <XtermTerminal xtermFitRef={xtermFitRef} />
+    <XtermTerminal dimensions={dimensions} xtermFitRef={xtermFitRef} />
   ) : (
     <Preview disableIframe={disableIframe} previewMounted={previewMounted} />
   );
@@ -192,6 +196,7 @@ function ShowClassic({
         title,
         description,
         instructions,
+        hooks,
         fields: { tests, blockName },
         challengeType,
         hasEditableBoundaries,
@@ -208,7 +213,6 @@ function ShowClassic({
   pageContext: {
     challengeMeta,
     challengeMeta: { isFirstStep, nextChallengePath },
-    nextCurriculumPaths,
     projectPreview: { challengeData }
   },
   createFiles,
@@ -216,6 +220,7 @@ function ShowClassic({
   challengeMounted,
   initConsole,
   initTests,
+  initHooks,
   initVisibleEditors,
   updateChallengeMeta,
   openModal,
@@ -236,7 +241,6 @@ function ShowClassic({
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
-  const showNextCurriculum = useFeature('fcc-10').on;
 
   const guideUrl = getGuideUrl({ forumTopicId, title });
 
@@ -244,18 +248,8 @@ function ShowClassic({
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
-  const showConsole = challengeType === challengeTypes.js;
-  // TODO: show preview should NOT be computed like this. That determination is
-  // made during the build (at least twice!). It should be either a prop or
-  // computed from challengeType
-  const showPreview = [
-    challengeTypes.html,
-    challengeTypes.modern,
-    challengeTypes.multifileCertProject,
-    challengeTypes.multifilePythonCertProject,
-    challengeTypes.python,
-    challengeTypes.lab
-  ].includes(challengeType);
+  const openConsole = isJavaScriptChallenge({ challengeType });
+  const hasPreview = challengeHasPreview({ challengeType });
   const getLayoutState = () => {
     const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout | null;
 
@@ -370,6 +364,7 @@ function ShowClassic({
     );
 
     initTests(tests);
+    initHooks(hooks);
 
     initVisibleEditors();
 
@@ -378,9 +373,7 @@ function ShowClassic({
     // freeform, so the preview is shown on demand.
     if (demoType === 'onLoad') openModal('projectPreview');
     const challengePaths = getChallengePaths({
-      showNextCurriculum,
-      currentCurriculumPaths: challengeMeta,
-      nextCurriculumPaths
+      currentCurriculumPaths: challengeMeta
     });
 
     updateChallengeMeta({
@@ -468,7 +461,7 @@ function ShowClassic({
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             hasEditableBoundaries={hasEditableBoundaries}
-            hasPreview={showPreview}
+            hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: null,
               hasDemo: demoType === 'onClick'
@@ -503,7 +496,7 @@ function ShowClassic({
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             hasEditableBoundaries={hasEditableBoundaries}
-            hasPreview={showPreview}
+            hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
               hasDemo: demoType === 'onClick'
@@ -525,7 +518,7 @@ function ShowClassic({
               <Output defaultOutput={defaultOutput} output={output} />
             }
             windowTitle={windowTitle}
-            startWithConsoleShown={showConsole}
+            startWithConsoleShown={openConsole}
           />
         )}
         <CompletionModal />
@@ -569,6 +562,9 @@ export const query = graphql`
         superBlock
         translationPending
         forumTopicId
+        hooks {
+          beforeAll
+        }
         fields {
           blockName
           slug
