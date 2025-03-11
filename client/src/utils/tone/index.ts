@@ -84,6 +84,8 @@ const toneUrls = {
   [FlashMessages.UserNotCertified]: TRY_AGAIN,
   [FlashMessages.UserTokenCopied]: CHAL_COMP,
   [FlashMessages.UserTokenCopyError]: TRY_AGAIN,
+  [FlashMessages.UserTokenGenerated]: CHAL_COMP,
+  [FlashMessages.UserTokenGenerateError]: TRY_AGAIN,
   [FlashMessages.WrongName]: TRY_AGAIN,
   [FlashMessages.WrongUpdating]: TRY_AGAIN,
   [FlashMessages.WentWrong]: TRY_AGAIN

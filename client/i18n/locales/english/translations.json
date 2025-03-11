@@ -941,6 +941,8 @@
     "generate-exam-error": "An error occurred trying to generate your exam.",
     "cert-not-found": "The certification {{certSlug}} does not exist.",
     "reset-editor-layout": "Your editor layout has been reset.",
+    "user-token-generated": "A user token was created for you.",
+    "user-token-generate-error": "Something went wrong trying to generate a user token for you.",
     "user-token-copied": "User token copied to clipboard.",
     "user-token-copy-error": "Something went wrong trying to copy your token.",
     "course-url-copied": "Course URL copied to clipboard.",

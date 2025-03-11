@@ -52,10 +52,14 @@ function RdbLocalInstructions({
 
     if (data?.userToken) {
       updateUserToken(data.userToken);
+      createFlashMessage({
+        type: 'success',
+        message: FlashMessages.UserTokenGenerated
+      });
     } else {
       createFlashMessage({
         type: 'danger',
-        message: FlashMessages.StartProjectErr
+        message: FlashMessages.UserTokenGenerateError
       });
     }
   };
@@ -187,11 +191,7 @@ function RdbLocalInstructions({
           </Trans>
         </li>
         <li>{t('learn.local.step-6')}</li>
-        <li>
-          <Trans i18nKey='learn.local.step-7'>
-            <code>{{ url: coderoadTutorial }}</code>
-          </Trans>
-        </li>
+        <li>{t('learn.local.step-7')}</li>
         <Spacer size='xxs' />
         <Button block={true} onClick={copyUrl}>
           {t('learn.local.copy-url')}
