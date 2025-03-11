@@ -105,7 +105,8 @@
     "update-card": "更新你的卡片",
     "donate-now": "立即捐款",
     "confirm-amount": "确认金额",
-    "play-scene": "点击播放",
+    "play": "Play Video",
+    "pause": "Pause Video",
     "closed-caption": "关闭标题",
     "share-on-x": "分享到 X",
     "share-on-bluesky": "分享到 BlueSky",
@@ -1171,7 +1172,7 @@
     "focus-instructions-panel": "聚焦指示面板",
     "navigate-previous": "跳转至上一个练习",
     "navigate-next": "跳转至下一个练习",
-    "play-scene": "播放场景"
+    "play-video": "Play Video"
   },
   "signout": {
     "heading": "注销你的账户",
