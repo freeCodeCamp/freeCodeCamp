@@ -77,7 +77,7 @@ A `computer upgrade` means improving a computer by adding or replacing parts lik
     "audio": {
       "filename": "B1_11-1.mp3",
       "startTime": 1,
-      "startTimestamp": 12.26,
+      "startTimestamp": 12.06,
       "finishTimestamp": 15.8
     }
   },
@@ -90,7 +90,7 @@ A `computer upgrade` means improving a computer by adding or replacing parts lik
     {
       "character": "Anna",
       "startTime": 1,
-      "finishTime": 4.54,
+      "finishTime": 4.74,
       "dialogue": {
         "text": "While furniture is important, many people mentioned that their computers need upgrades.",
         "align": "center"
@@ -99,7 +99,7 @@ A `computer upgrade` means improving a computer by adding or replacing parts lik
     {
       "character": "Anna",
       "opacity": 0,
-      "startTime": 5.04
+      "startTime": 5.24
     }
   ]
 }

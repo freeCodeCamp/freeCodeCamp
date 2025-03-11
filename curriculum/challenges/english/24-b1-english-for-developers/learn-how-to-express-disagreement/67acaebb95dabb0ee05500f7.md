@@ -53,7 +53,7 @@ A `setback` is something that delays or prevents progress. Slow or inefficient c
     "audio": {
       "filename": "B1_11-1.mp3",
       "startTime": 1,
-      "startTimestamp": 35.98,
+      "startTimestamp": 35.78,
       "finishTimestamp": 39.68
     }
   },
@@ -66,7 +66,7 @@ A `setback` is something that delays or prevents progress. Slow or inefficient c
     {
       "character": "Anna",
       "startTime": 1,
-      "finishTime": 4.7,
+      "finishTime": 4.9,
       "dialogue": {
         "text": "If people are working with outdated computers, it can be a setback for productivity.",
         "align": "center"
@@ -75,7 +75,7 @@ A `setback` is something that delays or prevents progress. Slow or inefficient c
     {
       "character": "Anna",
       "opacity": 0,
-      "startTime": 5.2
+      "startTime": 5.4
     }
   ]
 }
