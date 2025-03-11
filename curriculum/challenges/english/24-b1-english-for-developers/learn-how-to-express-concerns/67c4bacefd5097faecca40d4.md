@@ -51,7 +51,7 @@ If working extra hours will improve the situation.
 
 # --explanation--
 
-Using negatives in questions with auxiliary or modal verbs (such as `wouldn't`, `isn't`, `doesn't`), which require direct `yes`/`no` answers, suggests that the speaker expects the answer to be positive — he assumes, in this case, that working extra hours will help. For example:
+Using negatives in questions with auxiliary or modal verbs (such as `wouldn't`, `isn't`, `doesn't`), which require direct `yes`/`no` answers, suggests that the speaker expects the answer to be positive — Bob assumes, in this case, that working extra hours will help. Another example:
 
 `Doesn't this plan seem like a good idea?` - The speaker expects the listener to agree that the plan is good.
 

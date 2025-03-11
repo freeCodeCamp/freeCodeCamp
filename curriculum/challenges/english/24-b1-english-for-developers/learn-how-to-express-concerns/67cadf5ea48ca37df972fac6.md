@@ -51,7 +51,7 @@ Maria does not mention additional meetings.
 
 # --explanation--
 
-`First` is used when you want to number actions in order of importance or time. In this case, Maria is listing what the team needs, starting with what seems to be the most important request (having more support). For example:
+`First` is used when you want to number actions in order of importance or time. In this case, Maria is listing what the team needs, starting with what seems to be the most important request (having more support). Another example:
 
 `First, we should analyze the problem. Then, we can discuss solutions.` - This means analyzing the problem comes before anything else.
 

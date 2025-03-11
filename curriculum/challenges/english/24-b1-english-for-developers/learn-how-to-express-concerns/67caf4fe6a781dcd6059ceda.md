@@ -15,7 +15,7 @@ Listen to the audio and complete the sentence below.
 
 ## --sentence--
 
-`Maria: It'd be BLANK if we had more BLANK check-ins.`  
+`It'd be BLANK if we had more BLANK check-ins.`  
 
 ## --blanks--
 
