@@ -76,7 +76,7 @@ She believes that flexibility is a better solution than sticking with one catego
       "filename": "B1_11-3.mp3",
       "startTime": 1,
       "startTimestamp": 31.78,
-      "finishTimestamp": 35.08
+      "finishTimestamp": 34.88
     }
   },
   "commands": [
@@ -88,7 +88,7 @@ She believes that flexibility is a better solution than sticking with one catego
     {
       "character": "Anna",
       "startTime": 1,
-      "finishTime": 4.3,
+      "finishTime": 4.1,
       "dialogue": {
         "text": "I see your point, but flexibility might be better. Think about it.",
         "align": "center"
@@ -97,7 +97,7 @@ She believes that flexibility is a better solution than sticking with one catego
     {
       "character": "Anna",
       "opacity": 0,
-      "startTime": 4.8
+      "startTime": 4.7
     }
   ]
 }
