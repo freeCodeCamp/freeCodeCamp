@@ -59,7 +59,7 @@ He argues that being in the same physical space makes it easier for employees to
     "audio": {
       "filename": "B1_11-2.mp3",
       "startTime": 1,
-      "startTimestamp": 42.72,
+      "startTimestamp": 42.52,
       "finishTimestamp": 45.7
     }
   },
@@ -72,7 +72,7 @@ He argues that being in the same physical space makes it easier for employees to
     {
       "character": "David",
       "startTime": 1,
-      "finishTime": 3.98,
+      "finishTime": 4.18,
       "dialogue": {
         "text": "It builds team spirit and makes problem solving easier.",
         "align": "center"
@@ -81,7 +81,7 @@ He argues that being in the same physical space makes it easier for employees to
     {
       "character": "David",
       "opacity": 0,
-      "startTime": 4.48
+      "startTime": 4.68
     }
   ]
 }
