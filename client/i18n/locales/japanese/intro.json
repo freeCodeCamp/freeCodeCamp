@@ -672,11 +672,11 @@
           "この 40 のレッスンから成るコースでは、城の絵を作りながら、ターミナルでファイルを編集する方法を学びます。"
         ]
       },
-      "learn-relational-databases-by-building-a-mario-database": {
-        "title": "リレーショナルデータベースの学習: マリオデータベースを作成する",
+      "learn-relational-databases-by-building-a-database-of-video-game-characters": {
+        "title": "Learn Relational Databases by Building a Database of Video Game Characters",
         "intro": [
-          "リレーショナルデータベースは、関係モデルにもとづいて互いに関連付けられたテーブルを用いて、データを整理します。",
-          "この 165 のレッスンから成るコースでは、テレビゲームのキャラクターのデータが入った PostgreSQL データベースを作成することで、リレーショナルデータベースの基礎を学習します。"
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
@@ -1335,7 +1335,7 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(新) Microsoft 連携・基礎 C#",
+    "title": "Free Foundational C# with Microsoft",
     "intro": [
       "このコースは、C# プログラミングについての総合的な入門講座です。中心となる概念、構文、ソフトウェア開発における実践的な応用例などをカバーします。",
       "以下のハンズオン演習とプロジェクトを通して、変数、データ型、制御構造、オブジェクト指向プログラミングの原則など、C# の基礎を学習します。",
@@ -3375,7 +3375,7 @@
         "title": "JavaScript Review",
         "intro": [
           "Before you take the JavaScript prep exam, you should review everything you've learned about JavaScript.",
-          "Open up this page, to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
+          "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
       "kagw": {
@@ -3493,14 +3493,17 @@
         "title": "281",
         "intro": []
       },
-      "zagz": {
-        "title": "282",
-        "intro": []
-      },
-      "quiz-advanced-react": {
-        "title": "Advanced React Quiz",
+      "review-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Review",
         "intro": [
-          "Test what you've learned about Advanced React with this quiz."
+          "Before you take the React forms, data fetching and routing quiz, you should review everything you've learned so far.",
+          "Open up this page, to review all of the concepts taught including routing, forms, state management, prop drilling, data fetching and more."
+        ]
+      },
+      "quiz-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Quiz",
+        "intro": [
+          "Test what you've learned about routing, forms, and data fetching with this quiz."
         ]
       },
       "zdsj": {
@@ -3511,7 +3514,7 @@
         "title": "Web Performance Review",
         "intro": [
           "Before you take the web performance quiz, you should review everything you've learned so far.",
-          "Open up this page, to review all of the concepts taught including INP, key metrics for measuring performance, Performance Web APIs and more."
+          "Open up this page to review all of the concepts taught including INP, key metrics for measuring performance, Performance Web APIs and more."
         ]
       },
       "quiz-web-performance": {
@@ -3613,8 +3616,8 @@
         "title": "306",
         "intro": []
       },
-      "workshop-mario-database": {
-        "title": "Build a Mario Database",
+      "workshop-database-of-video-game-characters": {
+        "title": "Build a Database of Video Game Characters",
         "intro": [
           "A relational database organizes data into tables that are linked together through relationships.",
           "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."

@@ -672,11 +672,11 @@
           "У цьому курсі з 40 уроків ви вивчите як редагувати файли в терміналі за допомогою Nano під час будівництва замку."
         ]
       },
-      "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Вивчіть реляційні бази даних, створивши базу даних «Mario»",
+      "learn-relational-databases-by-building-a-database-of-video-game-characters": {
+        "title": "Learn Relational Databases by Building a Database of Video Game Characters",
         "intro": [
-          "Реляційна база даних організовує дані в таблиці, які пов’язані між собою через спорідненість.",
-          "В цьому курсі з 165 уроків ви вивчите основи реляційної бази даних, створивши базу даних PostgreSQL, наповнену персонажами з відеоігор."
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
@@ -1327,7 +1327,7 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(Нове) Основи C# з Microsoft",
+    "title": "Основи C# з Microsoft (безоплатно)",
     "intro": [
       "Цей курс пропонує всебічне знайомство з мовою програмування C#, розглядаючи основні поняття, синтаксис та практичне застосування у розробці програмного забезпечення.",
       "Завдяки практичним вправам та проєктам ви вивчите основи C#, включно зі змінними, типами даних, структурами керування та принципами об’єктноорієнтованого програмування.",
@@ -3487,13 +3487,18 @@
         "title": "281",
         "intro": []
       },
-      "zagz": {
-        "title": "282",
-        "intro": []
+      "review-react-forms-data-fetching-and-routing": {
+        "title": "Повторення форм, обробки даних і маршрутизації в React",
+        "intro": [
+          "Перш ніж перейти до тесту «Форми, обробка даних і маршрутизація в React», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати маршрутизацію, форми, керування станом, передачу пропсів, обробку даних та багато іншого."
+        ]
       },
-      "quiz-advanced-react": {
-        "title": "Тест «Advanced React»",
-        "intro": ["Перевірте, що ви дізнались про Advanced React."]
+      "quiz-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Quiz",
+        "intro": [
+          "Test what you've learned about routing, forms, and data fetching with this quiz."
+        ]
       },
       "zdsj": {
         "title": "284",
@@ -3605,11 +3610,11 @@
         "title": "306",
         "intro": []
       },
-      "workshop-mario-database": {
-        "title": "Створіть базу даних «Mario»",
+      "workshop-database-of-video-game-characters": {
+        "title": "Build a Database of Video Game Characters",
         "intro": [
-          "Реляційна база даних організовує дані в таблиці, які пов’язані між собою через спорідненість.",
-          "У цьому практичному занятті зі 165 уроків ви вивчите основи реляційної бази даних, створивши базу даних PostgreSQL, наповнену персонажами з відеоігор."
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
         ]
       },
       "lab-celestial-bodies-database": {

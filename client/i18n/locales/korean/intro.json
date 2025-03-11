@@ -672,8 +672,8 @@
           "In this 40-lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
         ]
       },
-      "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Learn Relational Databases by Building a Mario Database",
+      "learn-relational-databases-by-building-a-database-of-video-game-characters": {
+        "title": "Learn Relational Databases by Building a Database of Video Game Characters",
         "intro": [
           "A relational database organizes data into tables that are linked together through relationships.",
           "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
@@ -1335,7 +1335,7 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(New) Foundational C# with Microsoft",
+    "title": "Free Foundational C# with Microsoft",
     "intro": [
       "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
       "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
@@ -3375,7 +3375,7 @@
         "title": "JavaScript Review",
         "intro": [
           "Before you take the JavaScript prep exam, you should review everything you've learned about JavaScript.",
-          "Open up this page, to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
+          "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
       "kagw": {
@@ -3493,14 +3493,17 @@
         "title": "281",
         "intro": []
       },
-      "zagz": {
-        "title": "282",
-        "intro": []
-      },
-      "quiz-advanced-react": {
-        "title": "Advanced React Quiz",
+      "review-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Review",
         "intro": [
-          "Test what you've learned about Advanced React with this quiz."
+          "Before you take the React forms, data fetching and routing quiz, you should review everything you've learned so far.",
+          "Open up this page, to review all of the concepts taught including routing, forms, state management, prop drilling, data fetching and more."
+        ]
+      },
+      "quiz-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Quiz",
+        "intro": [
+          "Test what you've learned about routing, forms, and data fetching with this quiz."
         ]
       },
       "zdsj": {
@@ -3511,7 +3514,7 @@
         "title": "Web Performance Review",
         "intro": [
           "Before you take the web performance quiz, you should review everything you've learned so far.",
-          "Open up this page, to review all of the concepts taught including INP, key metrics for measuring performance, Performance Web APIs and more."
+          "Open up this page to review all of the concepts taught including INP, key metrics for measuring performance, Performance Web APIs and more."
         ]
       },
       "quiz-web-performance": {
@@ -3613,8 +3616,8 @@
         "title": "306",
         "intro": []
       },
-      "workshop-mario-database": {
-        "title": "Build a Mario Database",
+      "workshop-database-of-video-game-characters": {
+        "title": "Build a Database of Video Game Characters",
         "intro": [
           "A relational database organizes data into tables that are linked together through relationships.",
           "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
