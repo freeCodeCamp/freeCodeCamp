@@ -59,9 +59,6 @@ export const initializeTheme = createAction(actionTypes.initializeTheme);
 export const updateAllChallengesInfo = createAction(
   actionTypes.updateAllChallengesInfo
 );
-export const updateAllChallengesInfoWithCompletionState = createAction(
-  actionTypes.updateAllChallengesInfoWithCompletionState
-);
 
 export const postCharge = createAction(actionTypes.postCharge);
 export const postChargeProcessing = createAction(

@@ -1,4 +1,7 @@
+import { createSelector } from 'reselect';
+
 import { Certification } from '../../../shared/config/certification-settings';
+import superBlockStructure from '../../../curriculum/superblock-structure/full-stack.json';
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
 import { ns as MainApp } from './action-types';
@@ -269,7 +272,75 @@ export const certificatesByNameSelector = username => state => {
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
 export const allChallengesInfoSelector = state =>
   state[MainApp].allChallengesInfo;
-export const completionStateSelector = state => state[MainApp].completionState;
+
+export const completedChallengesIdsSelector = createSelector(
+  completedChallengesSelector,
+  completedChallenges => completedChallenges.map(node => node.id)
+);
+
+export const completionStateSelector = createSelector(
+  [allChallengesInfoSelector, completedChallengesIdsSelector],
+  (allChallengesInfo, completedChallengesIds) => {
+    const chapters = superBlockStructure.chapters;
+    const { challengeNodes } = allChallengesInfo;
+
+    const getCompletionState = ({
+      chapters,
+      challenges,
+      completedChallengesIds
+    }) => {
+      const populateBlocks = blocks =>
+        blocks.map(block => {
+          const blockChallenges = challenges.filter(
+            ({ block: blockName }) => blockName === block.dashedName
+          );
+
+          const completedBlockChallenges = blockChallenges.every(({ id }) =>
+            completedChallengesIds.includes(id)
+          );
+
+          return {
+            name: block.dashedName,
+            isCompleted:
+              completedBlockChallenges.length === blockChallenges.length
+          };
+        });
+
+      const populateModules = modules =>
+        modules.map(module => {
+          const blocks = populateBlocks(module.blocks);
+          const isCompleted = blocks.every(block => block.isCompleted === true);
+
+          return {
+            name: module.dashedName,
+            blocks,
+            isCompleted
+          };
+        });
+
+      const allChapters = chapters.map(chapter => {
+        const modules = populateModules(chapter.modules);
+        const isCompleted = modules.every(
+          module => module.isCompleted === true
+        );
+
+        return {
+          name: chapter.dashedName,
+          modules: populateModules(chapter.modules),
+          isCompleted
+        };
+      });
+
+      return allChapters;
+    };
+
+    return getCompletionState({
+      chapters,
+      challenges: challengeNodes.map(({ challenge }) => challenge),
+      completedChallengesIds
+    });
+  }
+);
 export const userProfileFetchStateSelector = state =>
   state[MainApp].userProfileFetchState;
 export const usernameSelector = state => state[MainApp].appUsername;

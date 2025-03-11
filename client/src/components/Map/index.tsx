@@ -21,7 +21,8 @@ import './map.css';
 
 import {
   isSignedInSelector,
-  currentCertsSelector
+  currentCertsSelector,
+  completedChallengesIdsSelector
 } from '../../redux/selectors';
 
 import { RibbonIcon } from '../../assets/icons/completion-ribbon';
@@ -31,7 +32,6 @@ import {
   certSlugTypeMap,
   superBlockCertTypeMap
 } from '../../../../shared/config/certification-settings';
-import { completedChallengesIdsSelector } from '../../templates/Challenges/redux/selectors';
 
 interface MapProps {
   forLanding?: boolean;

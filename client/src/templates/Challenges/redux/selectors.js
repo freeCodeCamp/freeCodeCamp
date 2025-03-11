@@ -4,7 +4,8 @@ import {
   completedChallengesSelector,
   allChallengesInfoSelector,
   isSignedInSelector,
-  completionStateSelector
+  completionStateSelector,
+  completedChallengesIdsSelector
 } from '../../../redux/selectors';
 import {
   getCurrentBlockIds,
@@ -18,10 +19,6 @@ export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeHooksSelector = state => state[ns].challengeHooks;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => state[ns].consoleOut;
-export const completedChallengesIdsSelector = createSelector(
-  completedChallengesSelector,
-  completedChallenges => completedChallenges.map(node => node.id)
-);
 export const isChallengeCompletedSelector = createSelector(
   [completedChallengesIdsSelector, challengeMetaSelector],
   (ids, meta) => ids.includes(meta.id)

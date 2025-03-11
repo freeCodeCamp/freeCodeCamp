@@ -48,8 +48,10 @@ function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
   const MODAL_SHOWN_KEY = 'modalShownTimestamp';
   const modalShownTimestamp = sessionStorage.getItem(MODAL_SHOWN_KEY);
-  const isModalRecentlyShown = Date.now() - modalShownTimestamp < 20000;
-  const shouldShowModal = shouldRequestDonation || isModalRecentlyShown;
+  // If the modal has been shown in the last 20 seconds, the animation should
+  // still be running:
+  const isAnimationRunning = Date.now() - modalShownTimestamp < 20000;
+  const shouldShowModal = shouldRequestDonation || isAnimationRunning;
   const donatableSectionRecentlyCompleted = yield select(
     donatableSectionRecentlyCompletedSelector
   );
