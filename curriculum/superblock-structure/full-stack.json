@@ -587,7 +587,7 @@
             { "dashedName": "build-an-otp-generator" },
             { "dashedName": "quiz-react-state-and-hooks" },
             { "dashedName": "review-react-forms-data-fetching-and-routing" },
-            { "dashedName": "quiz-advanced-react" }
+            { "dashedName": "quiz-react-forms-data-fetching-and-routing" }
           ]
         },
         {
@@ -651,7 +651,7 @@
         {
           "dashedName": "relational-databases",
           "blocks": [
-            { "dashedName": "workshop-mario-database" },
+            { "dashedName": "workshop-database-of-video-game-characters" },
             { "dashedName": "lab-celestial-bodies-database" },
             { "dashedName": "review-relational-database" },
             { "dashedName": "quiz-relational-database" }

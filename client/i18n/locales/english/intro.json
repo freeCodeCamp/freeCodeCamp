@@ -672,8 +672,8 @@
           "In this 40-lesson course, you will learn how to edit files in the terminal with Nano while building a castle."
         ]
       },
-      "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Learn Relational Databases by Building a Mario Database",
+      "learn-relational-databases-by-building-a-database-of-video-game-characters": {
+        "title": "Learn Relational Databases by Building a Database of Video Game Characters",
         "intro": [
           "A relational database organizes data into tables that are linked together through relationships.",
           "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
@@ -3428,7 +3428,13 @@
       "rnfe": { "title": "271", "intro": [] },
       "xdyh": { "title": "270", "intro": [] },
       "vjgg": { "title": "272", "intro": [] },
-      "ceds": { "title": "273", "intro": [] },
+      "review-react-state-and-hooks": {
+        "title": "React State and Hooks Review",
+        "intro": [
+          "Before you're quizzed on React state and hooks, you should review what you've learned.",
+          "Open up this page to review working with state, custom hooks and more."
+        ]
+      },
       "quiz-react-state-and-hooks": {
         "title": "React State and Hooks Quiz",
         "intro": [
@@ -3455,10 +3461,10 @@
           "Open up this page, to review all of the concepts taught including routing, forms, state management, prop drilling, data fetching and more."
         ]
       },
-      "quiz-advanced-react": {
-        "title": "Advanced React Quiz",
+      "quiz-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Quiz",
         "intro": [
-          "Test what you've learned about Advanced React with this quiz."
+          "Test what you've learned about routing, forms, and data fetching with this quiz."
         ]
       },
       "zdsj": { "title": "284", "intro": [] },
@@ -3538,8 +3544,8 @@
         "intro": ["Test what you've learned bash commands with this quiz."]
       },
       "voks": { "title": "306", "intro": [] },
-      "workshop-mario-database": {
-        "title": "Build a Mario Database",
+      "workshop-database-of-video-game-characters": {
+        "title": "Build a Database of Video Game Characters",
         "intro": [
           "A relational database organizes data into tables that are linked together through relationships.",
           "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
