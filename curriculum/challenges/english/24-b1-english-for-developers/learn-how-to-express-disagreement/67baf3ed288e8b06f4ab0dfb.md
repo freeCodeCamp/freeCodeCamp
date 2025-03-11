@@ -21,17 +21,17 @@ Listen to the audio and complete the sentence below.
 
 `team spirit`
 
-### --feedback--
+### --feedback--  
 
-This phrase refers to the sense of unity and connection among coworkers.
+These two words together refer to the sense of unity and cooperation among coworkers. The first word refers to a group working together, and the second word relates to shared enthusiasm or motivation.
 
 ---
 
 `problem-solving`
 
-### --feedback--
+### --feedback--  
 
-This phrase refers to the process of finding solutions to challenges. This is a compound word, remember to use `-`.
+This compound word refers to the process of finding solutions to challenges. The first part refers to an issue that needs to be fixed, and the second part is a verb meaning finding a solution. Remember to use `-` between the two parts.
 
 # --explanation--
 
