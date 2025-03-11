@@ -105,7 +105,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "play-scene": "Press Play",
+    "play": "Play Video",
+    "pause": "Pause Video",
     "closed-caption": "Closed caption",
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
@@ -164,13 +165,12 @@
       "cta": "Start Learning Now (it's free)"
     },
     "certification-heading": "Earn free verified certifications in:",
-    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
+    "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "Learn English for Developers:",
-    "professional-certs-heading": "Earn free professional certifications:",
+    "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
-    "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
+    "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "Try our beta curriculum:",
-    "next-english-heading": "Try our latest English curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "faq": "Frequently asked questions:",
     "faqs": [
@@ -1171,7 +1171,7 @@
     "focus-instructions-panel": "Focus Instructions Panel",
     "navigate-previous": "Navigate To Previous Exercise",
     "navigate-next": "Navigate To Next Exercise",
-    "play-scene": "Play Scene"
+    "play-video": "Play Video"
   },
   "signout": {
     "heading": "Sign out of your account",

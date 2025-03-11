@@ -55,6 +55,7 @@ import {
   challengeDataSelector,
   challengeMetaSelector,
   challengeTestsSelector,
+  challengeHooksSelector,
   isBuildEnabledSelector,
   isExecutingSelector,
   portalDocumentSelector,
@@ -110,6 +111,7 @@ export function* executeChallengeSaga({ payload }) {
     const tests = (yield select(challengeTestsSelector)).map(
       ({ text, testString }) => ({ text, testString })
     );
+    const hooks = yield select(challengeHooksSelector);
     yield put(updateTests(tests));
 
     yield fork(takeEveryLog, consoleProxy);
@@ -128,7 +130,7 @@ export function* executeChallengeSaga({ payload }) {
     const document = yield getContext('document');
     const testRunner = yield call(
       getTestRunner,
-      buildData,
+      { ...buildData, hooks },
       { proxyLogger },
       document
     );
@@ -354,13 +356,18 @@ function* previewProjectSolutionSaga({ payload }) {
   try {
     if (canBuildChallenge(challengeData)) {
       const buildData = yield buildChallengeData(challengeData);
+      if (buildData.error) throw Error(buildData.error);
+
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
         yield call(updateProjectPreview, buildData, document);
+      } else {
+        throw Error('Project does not have a preview');
       }
     }
   } catch (err) {
-    console.log(err);
+    console.error('Unable to show project preview');
+    console.error(err);
   }
 }
 

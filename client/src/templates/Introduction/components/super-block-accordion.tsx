@@ -261,17 +261,15 @@ export const SuperBlockAccordion = ({
         // show coming soon on production, and all the challenges in dev
         if (chapter.comingSoon && !showUpcomingChanges) {
           return (
-            <>
-              <ComingSoon key={chapter.name}>
-                {Object.values(FsdChapters).includes(chapter.name) && (
-                  <ChapterIcon
-                    className='map-icon'
-                    chapter={chapter.name as FsdChapters}
-                  />
-                )}
-                {t(`intro:full-stack-developer.chapters.${chapter.name}`)}
-              </ComingSoon>
-            </>
+            <ComingSoon key={chapter.name}>
+              {Object.values(FsdChapters).includes(chapter.name) && (
+                <ChapterIcon
+                  className='map-icon'
+                  chapter={chapter.name as FsdChapters}
+                />
+              )}
+              {t(`intro:full-stack-developer.chapters.${chapter.name}`)}
+            </ComingSoon>
           );
         }
 

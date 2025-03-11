@@ -97,13 +97,13 @@
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.19.0",
     "@playwright/test": "^1.47.1",
-    "@testing-library/dom": "9.3.4",
-    "@testing-library/jest-dom": "5.17.0",
+    "@testing-library/dom": "10.4.0",
+    "@testing-library/jest-dom": "6.6.3",
     "@types/jest": "29.5.12",
     "@types/lodash": "4.14.202",
     "@types/node": "20.12.8",
     "@types/testing-library__jest-dom": "^5.14.5",
-    "@typescript-eslint/eslint-plugin": "7.1.1",
+    "@typescript-eslint/eslint-plugin": "8.24.0",
     "@typescript-eslint/parser": "8.23.0",
     "babel-jest": "29.7.0",
     "eslint": "9.19.0",
@@ -132,10 +132,21 @@
     "prismjs": "1.29.0",
     "stylelint": "16.14.1",
     "ts-node": "10.9.2",
-    "typescript": "5.4.5",
+    "typescript": "5.7.3",
     "typescript-eslint": "^8.23.0",
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c"
+  "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c",
+  "pnpm": {
+    "patchedDependencies": {
+      "@fastify/oauth2@7.8.1": "patches/@fastify__oauth2@7.8.1.patch"
+    },
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "react-scrollable-anchor>react": "17",
+        "react-scrollable-anchor>react-dom": "17"
+      }
+    }
+  }
 }

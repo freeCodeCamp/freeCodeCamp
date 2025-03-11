@@ -3,7 +3,7 @@ import frameRunnerData from '../../../../../client/config/browser-scripts/frame-
 import jsTestEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
 import pyTestEvaluatorData from '../../../../../client/config/browser-scripts/python-test-evaluator.json';
 
-import { ChallengeFile, ChallengeMeta } from '../../../redux/prop-types';
+import type { ChallengeFile } from '../../../redux/prop-types';
 import { concatHtml } from '../rechallenge/builders';
 import {
   getTransformers,
@@ -26,7 +26,7 @@ import { WorkerExecutor } from './worker-executor';
 interface BuildChallengeData extends Context {
   challengeType: number;
   challengeFiles?: ChallengeFile[];
-  required: { src: string }[];
+  required: { src?: string }[];
   template: string;
   url: string;
 }
@@ -107,7 +107,8 @@ export const buildFunctions = {
   [challengeTypes.colab]: buildBackendChallenge,
   [challengeTypes.python]: buildPythonChallenge,
   [challengeTypes.multifilePythonCertProject]: buildPythonChallenge,
-  [challengeTypes.lab]: buildDOMChallenge
+  [challengeTypes.lab]: buildDOMChallenge,
+  [challengeTypes.jsLab]: buildJSChallenge
 };
 
 export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
@@ -234,6 +235,10 @@ export async function buildDOMChallenge(
   );
   const isMultifile = challengeFiles.length > 1;
 
+  const requiresReact16 = required.some(({ src }) =>
+    src?.includes('https://unpkg.com/react@16')
+  );
+
   // I'm reasonably sure this is fine, but we need to migrate transformers to
   // TypeScript to be sure.
   const transformers: ApplyFunctionProps[] = (isMultifile && hasJsx
@@ -263,7 +268,7 @@ export async function buildDOMChallenge(
     challengeType: challengeTypes.html,
     build: concatHtml(toBuild),
     sources: buildSourceMap(finalFiles),
-    loadEnzyme: hasJsx,
+    loadEnzyme: requiresReact16,
     error
   };
 }
@@ -389,7 +394,11 @@ export function updateProjectPreview(
   }
 }
 
-export function challengeHasPreview({ challengeType }: ChallengeMeta): boolean {
+export function challengeHasPreview({
+  challengeType
+}: {
+  challengeType: number;
+}): boolean {
   return (
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
@@ -402,9 +411,12 @@ export function challengeHasPreview({ challengeType }: ChallengeMeta): boolean {
 
 export function isJavaScriptChallenge({
   challengeType
-}: ChallengeMeta): boolean {
+}: {
+  challengeType: number;
+}): boolean {
   return (
     challengeType === challengeTypes.js ||
-    challengeType === challengeTypes.jsProject
+    challengeType === challengeTypes.jsProject ||
+    challengeType === challengeTypes.jsLab
   );
 }
