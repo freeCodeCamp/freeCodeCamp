@@ -18,23 +18,15 @@ import { Link } from '../../../components/helpers';
 
 import RdbLocalLogoutAlert from './rdb-local-logout-alert';
 
-const mapStateToProps = createSelector(
-  isSignedInSelector,
-  userTokenSelector,
-  (isSignedIn: boolean, userToken: string | null) => ({
-    isSignedIn,
-    userToken
-  })
-);
+const mapStateToProps = (state: unknown) => ({
+  isSignedIn: isSignedInSelector(state),
+  userToken: userTokenSelector(state) as string | null
+});
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(
-    {
-      createFlashMessage,
-      updateUserToken
-    },
-    dispatch
-  );
+const mapDispatchToProps = {
+  createFlashMessage,
+  updateUserToken
+};
 
 interface RdbLocalInstructionsProps {
   course: string;
