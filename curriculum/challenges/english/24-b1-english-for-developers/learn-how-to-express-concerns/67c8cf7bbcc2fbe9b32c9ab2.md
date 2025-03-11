@@ -78,7 +78,7 @@ When using the verb `suggest`, use the following verb in the `-ing` form instead
       "filename": "B1_12-2.mp3",
       "startTime": 1,
       "startTimestamp": 57.14,
-      "finishTimestamp": 61.46
+      "finishTimestamp": 61.36
     }
   },
   "commands": [
@@ -90,7 +90,7 @@ When using the verb `suggest`, use the following verb in the `-ing` form instead
     {
       "character": "Maria",
       "startTime": 1,
-      "finishTime": 3,
+      "finishTime": 2.9,
       "dialogue": {
         "text": "That's a good point. I'll suggest having more",
         "align": "center"
@@ -99,7 +99,7 @@ When using the verb `suggest`, use the following verb in the `-ing` form instead
     {
       "character": "Maria",
       "startTime": 3,
-      "finishTime": 5.32,
+      "finishTime": 5.22,
       "dialogue": {
         "text": "regular check-ins with the team to improve communication.",
         "align": "center"
@@ -108,7 +108,7 @@ When using the verb `suggest`, use the following verb in the `-ing` form instead
     {
       "character": "Maria",
       "opacity": 0,
-      "startTime": 5.82
+      "startTime": 5.72
     }
   ]
 }
