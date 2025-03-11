@@ -527,8 +527,8 @@
       "step-4": "A new VS Code window will open and begin building the Docker image. It will take several minutes the first time.",
       "step-5": "Once it is finished building, open the command palette again and enter <0>CodeRoad: Start</0> to open CodeRoad.",
       "step-6": "In the CodeRoad window, click \"Start New Tutorial\" and then the \"URL\" tab at the top.",
-      "step-7": "Enter <0>{{url}}</0> in the URL input and click \"Load\".",
-      "copy-url": "Copy URL",
+      "step-7": "Copy the course URL below, paste it in the URL input, and click \"Load\".",
+      "copy-url": "Copy Course URL",
       "step-8": "Click \"Start\" to begin.",
       "step-9": "Follow the instructions in CodeRoad to complete the course. Note: You may need to restart the terminal once for terminal settings to take effect and the tests to pass."
     },
