@@ -584,6 +584,7 @@
           "dashedName": "react-state-hooks-and-routing",
           "comingSoon": true,
           "blocks": [
+            { "dashedName": "review-react-state-and-hooks" },
             { "dashedName": "quiz-react-state-and-hooks" },
             { "dashedName": "review-react-forms-data-fetching-and-routing" },
             { "dashedName": "quiz-react-forms-data-fetching-and-routing" }
