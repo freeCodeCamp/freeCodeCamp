@@ -644,7 +644,7 @@ assert.exists(resultsDiv);
 
 const validPatterns = [
   '1 XXX-XXX-XXXX',
-  '1 (XXX)XXX-XXXX',
+  '1 (XXX) XXX-XXXX',
   '1(XXX)XXX-XXXX',
   '1 XXX XXX XXXX',
   'XXXXXXXXXX',
