@@ -1,8 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import type { Dispatch } from 'redux';
-import { createSelector } from 'reselect';
 import { Trans, useTranslation } from 'react-i18next';
 import { Spacer, Button } from '@freecodecamp/ui';
 import { postUserToken } from '../../../utils/ajax';
