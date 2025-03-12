@@ -20,7 +20,7 @@ import {
   formatProjectCompletedValidation
 } from '../../utils/error-formatting';
 import { getChallenges } from '../../utils/get-challenges';
-import { ProgressTimestamp, getPoints } from '../../utils/progress';
+import { getPoints } from '../../utils/progress';
 import {
   validateExamFromDbSchema,
   validateGeneratedExamSchema,
@@ -252,7 +252,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         isManuallyApproved: null,
         examResults: null
       };
-      const progressTimestamps = user.progressTimestamps as ProgressTimestamp[];
+      const progressTimestamps = user.progressTimestamps;
       const points = getPoints(progressTimestamps);
 
       const { alreadyCompleted, completedDate } = await updateUserChallengeData(
@@ -291,9 +291,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         select: userChallengeSelect
       });
-      const progressTimestamps = user.progressTimestamps as
-        | ProgressTimestamp[]
-        | null;
+      const progressTimestamps = user.progressTimestamps;
       const points = getPoints(progressTimestamps);
 
       const completedChallenge: CompletedChallenge = {
@@ -342,9 +340,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         where: { id: req.user?.id },
         select: userChallengeSelect
       });
-      const RawProgressTimestamp = user.progressTimestamps as
-        | ProgressTimestamp[]
-        | null;
+      const RawProgressTimestamp = user.progressTimestamps;
       const points = getPoints(RawProgressTimestamp);
 
       const completedChallenge: CompletedChallenge = {
@@ -564,8 +560,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           select: userChallengeSelect
         });
 
-        const progressTimestamps =
-          user.progressTimestamps as ProgressTimestamp[];
+        const progressTimestamps = user.progressTimestamps;
 
         const completedChallenge: CompletedChallenge = {
           id: challengeId,

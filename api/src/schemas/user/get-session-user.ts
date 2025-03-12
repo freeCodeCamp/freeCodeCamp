@@ -1,7 +1,5 @@
-import { TSchema, Type } from '@fastify/type-provider-typebox';
-import { examResults, profileUI, savedChallenge } from '../types';
-
-const Nullable = (T: TSchema) => Type.Union([T, Type.Null()]);
+import { Type } from '@fastify/type-provider-typebox';
+import { examResults, Nullable, profileUI, savedChallenge } from '../types';
 
 export const getSessionUser = {
   response: {

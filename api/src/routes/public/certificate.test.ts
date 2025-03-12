@@ -36,8 +36,9 @@ describe('certificate routes', () => {
             isHonest: true,
             isBanned: false,
             isCheater: false,
-
-            profileUI: { isLocked: false, showCerts: true, showTimeLine: true }
+            profileUI: {
+              update: { isLocked: false, showCerts: true, showTimeLine: true }
+            }
           }
         });
       });
@@ -149,7 +150,9 @@ describe('certificate routes', () => {
           where: { id: defaultUserId },
           data: {
             // All properties need to be defined, as this op SETs `profileUI`
-            profileUI: { isLocked: true, showTimeLine: true, showCerts: true }
+            profileUI: {
+              update: { isLocked: true, showTimeLine: true, showCerts: true }
+            }
           }
         });
         const response = await superRequest(
@@ -173,7 +176,9 @@ describe('certificate routes', () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: {
-            profileUI: { showCerts: false, showTimeLine: true, isLocked: false }
+            profileUI: {
+              update: { showCerts: false, showTimeLine: true, isLocked: false }
+            }
           }
         });
         const response = await superRequest(
@@ -197,7 +202,9 @@ describe('certificate routes', () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: {
-            profileUI: { showTimeLine: false, showCerts: true, isLocked: false }
+            profileUI: {
+              update: { showTimeLine: false, showCerts: true, isLocked: false }
+            }
           }
         });
         const response = await superRequest(
@@ -223,10 +230,12 @@ describe('certificate routes', () => {
           where: { id: defaultUserId },
           data: {
             profileUI: {
-              showTimeLine: true,
-              showCerts: true,
-              isLocked: false,
-              showName: false
+              update: {
+                showTimeLine: true,
+                showCerts: true,
+                isLocked: false,
+                showName: false
+              }
             },
             isJsAlgoDataStructCert: true,
             completedChallenges: [
@@ -256,10 +265,12 @@ describe('certificate routes', () => {
           where: { id: defaultUserId },
           data: {
             profileUI: {
-              showTimeLine: true,
-              showCerts: true,
-              isLocked: false,
-              showName: true
+              update: {
+                showTimeLine: true,
+                showCerts: true,
+                isLocked: false,
+                showName: true
+              }
             },
             isJsAlgoDataStructCert: true,
             completedChallenges: [

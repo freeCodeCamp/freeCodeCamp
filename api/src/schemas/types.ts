@@ -1,4 +1,11 @@
-import { Type } from '@fastify/type-provider-typebox';
+import { TSchema, Type } from '@fastify/type-provider-typebox';
+
+/**
+ * Helper function to create a nullable type.
+ * @param T Non-null schema type.
+ * @returns Type union of T and null.
+ */
+export const Nullable = (T: TSchema) => Type.Union([T, Type.Null()]);
 
 export const genericError = Type.Object({
   message: Type.Literal('flash.generic-error'),

@@ -10,17 +10,9 @@ import { customNanoid } from '../../utils/ids';
 import { encodeUserToken } from '../../utils/tokens';
 import { trimTags } from '../../utils/validation';
 import { generateReportEmail } from '../../utils/email-templates';
-import {
-  normalizeProfileUI,
-  normalizeSurveys,
-  normalizeTwitter
-} from '../../utils/normalize';
+import { normalizeSurveys, normalizeTwitter } from '../../utils/normalize';
 import type { UpdateReqType } from '../../utils';
-import {
-  getCalendar,
-  getPoints,
-  ProgressTimestamp
-} from '../../utils/progress';
+import { getCalendar, getPoints } from '../../utils/progress';
 import { JWT_SECRET } from '../../utils/env';
 
 /**
@@ -577,14 +569,10 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               completedChallenges,
               completedChallengeCount: completedChallenges.length,
               // This assertion is necessary until the database is normalized.
-              calendar: getCalendar(
-                progressTimestamps as ProgressTimestamp[] | null
-              ),
+              calendar: getCalendar(progressTimestamps),
               // This assertion is necessary until the database is normalized.
-              points: getPoints(
-                progressTimestamps as ProgressTimestamp[] | null
-              ),
-              profileUI: normalizeProfileUI(profileUI),
+              points: getPoints(progressTimestamps),
+              profileUI,
               // TODO(Post-MVP) remove this and just use emailVerified
               isEmailVerified: user.emailVerified,
               joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
