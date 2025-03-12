@@ -7,7 +7,7 @@
   "challengeOrder": [
     {
       "id": "67c4549694c835707f80511c",
-      "title": "Dialogue 1: Comparing Software Features"
+      "title": "dialogue-1-comparing-software-features"
     },
     {
       "id": "67c458143245e17538916792",
@@ -228,6 +228,26 @@
     {
       "id": "67cc381c8f52d36a5f7c3327",
       "title": "Task 55"
+    },
+    {
+      "id": "67d18fa67ecd91f232304fa9",
+      "title": "dialogue-2-comparing-tech-companies"
+    },
+    {
+      "id": "67d190c0e40bb4f35d4b2f63",
+      "title": "Task 56"
+    },
+    {
+      "id": "67d193430af402f4f8e2ff6f",
+      "title": "Task 57"
+    },
+    {
+      "id": "67d1946f2733aaf5d014a50f",
+      "title": "Task 58"
+    },
+    {
+      "id": "67d19ac277d6a3f96fa709f2",
+      "title": "Task 59"
     }
   ],
   "helpCategory": "English",
