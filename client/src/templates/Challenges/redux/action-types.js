@@ -38,7 +38,6 @@ export const actionTypes = createTypes(
     'storePortalWindow',
     'removePortalWindow',
     'challengeMounted',
-    'sendRenderTime',
     'checkChallenge',
     'resetChallenge',
     'stopResetting',
