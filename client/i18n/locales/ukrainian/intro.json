@@ -673,10 +673,10 @@
         ]
       },
       "learn-relational-databases-by-building-a-database-of-video-game-characters": {
-        "title": "Learn Relational Databases by Building a Database of Video Game Characters",
+        "title": "Вивчіть реляційні бази даних, створивши базу даних з персонажами відеоігор",
         "intro": [
-          "A relational database organizes data into tables that are linked together through relationships.",
-          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+          "Реляційна база даних організовує дані в таблиці, які пов’язані між собою через спорідненість.",
+          "У цьому курсі зі 165 уроків ви вивчите основи реляційної бази даних, створивши базу даних PostgreSQL, наповнену персонажами з відеоігор."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
@@ -3446,9 +3446,12 @@
         "title": "272",
         "intro": []
       },
-      "ceds": {
-        "title": "273",
-        "intro": []
+      "review-react-state-and-hooks": {
+        "title": "Повторення станів та хуків у React",
+        "intro": [
+          "Перш ніж перейти до тесту «Стани та хуки в React», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати, як працювати зі станами, кастомними хуками та багато іншого."
+        ]
       },
       "quiz-react-state-and-hooks": {
         "title": "Тест «Стани та хуки в React»",
@@ -3495,9 +3498,9 @@
         ]
       },
       "quiz-react-forms-data-fetching-and-routing": {
-        "title": "React Forms, Data Fetching and Routing Quiz",
+        "title": "Тест «Форми, обробка даних і маршрутизація в React»",
         "intro": [
-          "Test what you've learned about routing, forms, and data fetching with this quiz."
+          "Перевірте, що ви дізнались про форми, обробку даних і маршрутизацію."
         ]
       },
       "zdsj": {
@@ -3611,10 +3614,10 @@
         "intro": []
       },
       "workshop-database-of-video-game-characters": {
-        "title": "Build a Database of Video Game Characters",
+        "title": "Створіть базу даних з персонажами відеоігор",
         "intro": [
-          "A relational database organizes data into tables that are linked together through relationships.",
-          "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+          "Реляційна база даних організовує дані в таблиці, які пов’язані між собою через спорідненість.",
+          "У цьому практичному занятті зі 165 уроків ви вивчите основи реляційної бази даних, створивши базу даних PostgreSQL, наповнену персонажами з відеоігор."
         ]
       },
       "lab-celestial-bodies-database": {
