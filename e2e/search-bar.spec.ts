@@ -133,11 +133,15 @@ test.describe('Search bar', () => {
     page,
     isMobile
   }) => {
+    const query = 'test'
     await mockAlgolia({ page, hitsPerPage: 0 });
-    await search({ page, isMobile, query: 'test' });
+    await search({ page, isMobile, query });
 
     const resultList = page.getByRole('list', { name: 'Search results' });
     await expect(resultList.getByRole('listitem')).toHaveCount(1);
+    await expect(resultList.getByRole('listitem')).toHaveText(
+      `We could not find anything relating to ${query}`
+    );
   });
 
   test('should clear the input and hide the result dropdown when the user clicks the clear button', async ({
