@@ -1,0 +1,10 @@
+{
+  "name": "Working with State and Responding to Events in React",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-state-and-responding-to-events-in-react",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67d1a3fea729e274dc33d04d", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

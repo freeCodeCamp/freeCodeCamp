@@ -3422,7 +3422,12 @@
         "title": "React Basics Quiz",
         "intro": ["Test your knowledge of React basics with this quiz."]
       },
-      "rugw": { "title": "267", "intro": [] },
+      "lecture-working-with-state-and-responding-to-events-in-react": {
+        "title": "Working with State and Responding to Events in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with state and responding to events with React."
+        ]
+      },
       "rmpy": { "title": "268", "intro": [] },
       "dbta": { "title": "269", "intro": [] },
       "rnfe": { "title": "271", "intro": [] },
