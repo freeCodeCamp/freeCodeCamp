@@ -587,8 +587,19 @@
             {
               "dashedName": "lecture-working-with-state-and-responding-to-events-in-react"
             },
+            {
+              "dashedName": "lecture-understanding-effects-and-referencing-values-in-react"
+            },
             { "dashedName": "review-react-state-and-hooks" },
             { "dashedName": "quiz-react-state-and-hooks" },
+            { "dashedName": "lecture-working-with-forms-in-react" },
+            {
+              "dashedName": "lecture-working-with-data-fetching-and-memoization-in-react"
+            },
+            {
+              "dashedName": "lecture-routing-react-frameworks-and-dependecy-management-tools"
+            },
+            { "dashedName": "lecture-react-strategies-and-debugging" },
             { "dashedName": "review-react-forms-data-fetching-and-routing" },
             { "dashedName": "quiz-react-forms-data-fetching-and-routing" }
           ]

@@ -1,0 +1,10 @@
+{
+  "name": "React Strategies and Debugging",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-react-strategies-and-debugging",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67d1ad82cff954a854bcbcaa", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}
