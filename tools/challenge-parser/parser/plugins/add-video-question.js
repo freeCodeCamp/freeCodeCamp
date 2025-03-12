@@ -14,12 +14,34 @@ function plugin() {
 
     const instructions = getSection(tree, '--instructions--');
 
-    if (getSection(description).length > 0) {
-      throw Error('The description heading should not have any sub-elements');
+    if (description.length > 0) {
+      description.forEach(function (node) {
+        if (
+          node.type === 'heading' &&
+          node.type === 'text' &&
+          node.value.startsWith('--') &&
+          node.value.endsWith('--')
+        ) {
+          throw Error(
+            'The description heading should not have any sub-elements'
+          );
+        }
+      });
     }
 
-    if (getSection(instructions).length > 0) {
-      throw Error('The instructions heading should not have any sub-elements');
+    if (instructions.length > 0) {
+      instructions.forEach(function (node) {
+        if (
+          node.type === 'heading' &&
+          node.type === 'text' &&
+          node.value.startsWith('--') &&
+          node.value.endsWith('--')
+        ) {
+          throw Error(
+            'The instruction heading should not have any sub-elements'
+          );
+        }
+      });
     }
 
     const allQuestionNodes = getSection(tree, '--questions--');

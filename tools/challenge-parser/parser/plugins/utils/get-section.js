@@ -20,7 +20,8 @@ function _getSection(tree) {
         return (
           child.type === 'text' &&
           child.value.startsWith('--') &&
-          child.value.endsWith('--')
+          child.value.endsWith('--') &&
+          node.type === 'heading'
         );
       } else {
         return false;
