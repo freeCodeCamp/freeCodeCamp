@@ -36,6 +36,7 @@ describe('certificate routes', () => {
             isHonest: true,
             isBanned: false,
             isCheater: false,
+
             profileUI: { isLocked: false, showCerts: true, showTimeLine: true }
           }
         });
