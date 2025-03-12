@@ -3500,7 +3500,12 @@
           "Test what you've learned about routing, forms, and data fetching with this quiz."
         ]
       },
-      "zdsj": { "title": "284", "intro": [] },
+      "lecture-understanding-performance-in-web-applications": {
+        "title": "Understanding Performance in Web Applications",
+        "intro": [
+          "In these lecture videos, you will learn performance in web applications."
+        ]
+      },
       "review-web-performance": {
         "title": "Web Performance Review",
         "intro": [
@@ -3514,7 +3519,12 @@
           "Test what you've learned about Web Performance with this quiz."
         ]
       },
-      "mbpv": { "title": "287", "intro": [] },
+      "lecture-working-with-css-libraries-and-frameworks": {
+        "title": "Working with CSS Libraries and Frameworks",
+        "intro": [
+          "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
+        ]
+      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -3527,7 +3537,18 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
-      "khuu": { "title": "290", "intro": [] },
+      "lecture-understanding-the-different-types-of-testing": {
+        "title": "Understanding the Different Types of Testing",
+        "intro": [
+          "In these lecture videos, you will learn about the different types of testing."
+        ]
+      },
+      "lecture-understanding-test-automation": {
+        "title": "Understanding Test Automation",
+        "intro": [
+          "In these lecture videos, you will learn about test automation."
+        ]
+      },
       "review-testing": {
         "title": "Testing Review",
         "intro": ["Review testing concepts to prepare for the upcoming quiz."]
@@ -3535,6 +3556,12 @@
       "quiz-testing": {
         "title": "Testing Quiz",
         "intro": ["Test what you've learned on testing with this quiz."]
+      },
+      "lecture-introduction-to-typescript": {
+        "title": "Introduction to Typescript",
+        "intro": [
+          "In these lecture videos, you will learn what Typescript is and how to use it."
+        ]
       },
       "trvf": { "title": "293", "intro": [] },
       "kwmg": { "title": "294", "intro": [] },

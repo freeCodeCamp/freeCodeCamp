@@ -1,0 +1,10 @@
+{
+  "name": "Working with CSS Libraries and Frameworks",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-css-libraries-and-frameworks",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67d1d74780981f521b8ac090", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}

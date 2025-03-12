@@ -1,0 +1,10 @@
+{
+  "name": "Understanding the Different Types of Testing",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-the-different-types-of-testing",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67d1d844d84c8b540297bbe4", "title": "Step 1" }],
+  "helpCategory": "JavaScript"
+}

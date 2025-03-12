@@ -608,6 +608,9 @@
           "dashedName": "performance",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-performance-in-web-applications"
+            },
             { "dashedName": "review-web-performance" },
             { "dashedName": "quiz-web-performance" }
           ]
@@ -616,6 +619,9 @@
           "dashedName": "css-libraries-and-frameworks",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-css-libraries-and-frameworks"
+            },
             { "dashedName": "review-css-libraries-and-frameworks" },
             { "dashedName": "quiz-css-libraries-and-frameworks" }
           ]
@@ -624,6 +630,10 @@
           "dashedName": "testing",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-the-different-types-of-testing"
+            },
+            { "dashedName": "lecture-understanding-test-automation" },
             { "dashedName": "review-testing" },
             { "dashedName": "quiz-testing" }
           ]
@@ -632,6 +642,7 @@
           "dashedName": "typescript-fundamentals",
           "comingSoon": true,
           "blocks": [
+            { "dashedName": "lecture-introduction-to-typescript" },
             { "dashedName": "review-typescript" },
             { "dashedName": "quiz-typescript" }
           ]
