@@ -3426,7 +3426,7 @@
       "workshop-toggle-text-app": {
         "title": "Toggle Text App",
         "intro": [
-          "In this workshop, you will continute to learn about the <code>useState()</code> by building an application that hides and shows a piece of text on the screen."
+          "In this workshop, you will continute to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
         ]
       },
       "dbta": { "title": "269", "intro": [] },
