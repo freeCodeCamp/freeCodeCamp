@@ -149,7 +149,6 @@ describe('certificate routes', () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: {
-            // All properties need to be defined, as this op SETs `profileUI`
             profileUI: {
               update: { isLocked: true, showTimeLine: true, showCerts: true }
             }
