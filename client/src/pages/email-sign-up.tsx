@@ -114,7 +114,7 @@ function AcceptPrivacyTerms({
   const { t } = useTranslation();
   const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
   const acceptTermsRef = useRef(acceptTerms);
-  const newAccount = isSignedIn && completedChallengeCount > 1;
+  const newAccount = isSignedIn && completedChallengeCount < 1;
 
   useEffect(() => {
     acceptedPrivacyRef.current = acceptedPrivacyTerms;
