@@ -41,7 +41,7 @@ Place the following phrases in the correct spot:
 
 ### --feedback--
 
-These three words express ownership of a duty or task. The first word is a pronoun, the second is a verb in contraction form, and the third is a preposition indicating duty.  
+This expresses ownership of a duty or task. It begins with a pronoun, followed by a contracted verb, then a preposition indicating duty.  
 
 ---
 
@@ -49,7 +49,7 @@ These three words express ownership of a duty or task. The first word is a prono
 
 ### --feedback--
 
-These three words describe someone else's role in a task. The first word is a pronoun, the second is a contraction of `is`, and the third is a preposition indicating duty.  
+This describes someone else's role in a task. It begins with a pronoun, followed by the contraction of `is` then a preposition indicating duty.  
 
 ---
 
@@ -57,7 +57,7 @@ These three words describe someone else's role in a task. The first word is a pr
 
 ### --feedback--
 
-These three words introduce two people as the subject of the sentence. The first is a pronoun for a female, the second is a conjunction, and the third is a pronoun referring to oneself.  
+This introduces two people as the subject of the sentence. It begins with the pronoun for a third person female followed by a conjunction and then the pronoun referring to oneself.  
 
 ---
 
@@ -65,7 +65,7 @@ These three words introduce two people as the subject of the sentence. The first
 
 ### --feedback--
 
-These three words indicate a person's professional field or area. The first word is a pronoun, the second is a verb, and the third is a preposition showing location or specialization.  
+This indicates a person's professional field or area. It begins with a pronoun followed by a verb and then a preposition showing location or specialization.
 
 ---
 
@@ -73,7 +73,7 @@ These three words indicate a person's professional field or area. The first word
 
 ### --feedback--
 
-These two words express enthusiasm about something. The first word is a pronoun, and the second is a contraction of `are` and an adjective meaning thrilled or eager.  
+This expresses enthusiasm about something. It begins with a pronoun, followed by a contraction of `are` and then an adjective meaning "thrilled" or "eager".  
 
 ---
 
@@ -81,4 +81,4 @@ These two words express enthusiasm about something. The first word is a pronoun,
 
 ### --feedback--
 
-These three words are used to begin an activity. The first word is a contraction of `let` and `us`, the second is a verb, and the third is the past participle of `start`.  
+This is used to begin an activity. It begins with a contraction of `let` and `us` followed by a verb, and then the past participle of `start`.
