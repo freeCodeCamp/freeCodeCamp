@@ -5,6 +5,19 @@
   "isUpcomingChange": true,
   "dashedName": "lecture-working-with-data-fetching-and-memoization-in-react",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "67d1a99d10fd509c88faf3bf", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "67d1a99d10fd509c88faf3bf",
+      "title": "How Does Data Fetching Work in React?"
+    },
+    {
+      "id": "67d2f4ddb4a4306fdf5bbaee",
+      "title": "How Does Routing Work in React?"
+    },
+    {
+      "id": "67d2f51ff2c927713caa24fa",
+      "title": "What Are React Frameworks, and Why Are They Commonly Used in the Industry?"
+    }
+  ],
   "helpCategory": "JavaScript"
 }

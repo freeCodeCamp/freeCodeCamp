@@ -1,9 +1,9 @@
 ---
 id: 67d1ad82cff954a854bcbcaa
-title: React Strategies and Debugging
+title: What Is Prop Drilling?
 challengeType: 11
 videoId: nVAaxZ34khk
-dashedName: lecture-react-strategies-and-debugging
+dashedName: what-is-prop-drilling
 ---
 
 # --description--
