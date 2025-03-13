@@ -139,7 +139,7 @@ test.describe('Search bar', () => {
     const resultList = page.getByRole('list', { name: 'Search results' });
     await expect(resultList.getByRole('listitem')).toHaveCount(1);
     await expect(resultList.getByRole('listitem')).toHaveText(
-      'We could not find anything relating to <0>{{query}}</0>'
+      'No results found'
     );
   });
 

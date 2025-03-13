@@ -783,7 +783,7 @@
     },
     "see-results": "See all results for {{searchQuery}}",
     "try": "Looking for something? Try the search bar on this page.",
-    "no-results": "We could not find anything relating to <0>{{query}}</0>",
+    "no-results": "No results found",
     "result-list": "Search results"
   },
   "misc": {
