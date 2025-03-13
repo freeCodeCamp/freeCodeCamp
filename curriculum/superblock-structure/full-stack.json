@@ -415,12 +415,6 @@
             { "dashedName": "workshop-storytelling-app" },
             { "dashedName": "lab-favorite-icon-toggler" },
             {
-              "dashedName": "review-dom-manipulation-and-click-events-with-javascript"
-            },
-            {
-              "dashedName": "quiz-dom-manipulation-and-click-event-with-javascript"
-            },
-            {
               "dashedName": "lecture-understanding-the-event-object-and-event-delegation"
             },
             { "dashedName": "workshop-music-instrument-filter" },
@@ -429,8 +423,12 @@
             { "dashedName": "workshop-rps-game" },
             { "dashedName": "lab-palindrome-checker" },
             { "dashedName": "lab-football-team-cards" },
-            { "dashedName": "review-javascript-events" },
-            { "dashedName": "quiz-javascript-events" }
+            {
+              "dashedName": "review-dom-manipulation-and-click-events-with-javascript"
+            },
+            {
+              "dashedName": "quiz-dom-manipulation-and-click-event-with-javascript"
+            }
           ]
         },
         {
@@ -587,8 +585,10 @@
           "comingSoon": true,
           "blocks": [
             { "dashedName": "lab-color-picker" },
+            { "dashedName": "review-react-state-and-hooks" },
             { "dashedName": "quiz-react-state-and-hooks" },
-            { "dashedName": "quiz-advanced-react" }
+            { "dashedName": "review-react-forms-data-fetching-and-routing" },
+            { "dashedName": "quiz-react-forms-data-fetching-and-routing" }
           ]
         },
         {
@@ -652,7 +652,7 @@
         {
           "dashedName": "relational-databases",
           "blocks": [
-            { "dashedName": "workshop-mario-database" },
+            { "dashedName": "workshop-database-of-video-game-characters" },
             { "dashedName": "lab-celestial-bodies-database" },
             { "dashedName": "review-relational-database" },
             { "dashedName": "quiz-relational-database" }

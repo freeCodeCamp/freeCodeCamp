@@ -1,4 +1,3 @@
-// eslint-disable-next-line filenames-simple/naming-convention
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';

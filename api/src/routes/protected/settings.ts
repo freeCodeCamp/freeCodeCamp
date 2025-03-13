@@ -1,19 +1,5 @@
-import {
-  TypeBoxTypeProvider,
-  type FastifyPluginCallbackTypebox
-} from '@fastify/type-provider-typebox';
-import type {
-  ContextConfigDefault,
-  FastifyError,
-  FastifyInstance,
-  FastifyReply,
-  FastifyRequest,
-  RawReplyDefaultExpression,
-  RawRequestDefaultExpression,
-  RawServerDefault,
-  RouteGenericInterface
-} from 'fastify';
-import { ResolveFastifyReplyType } from 'fastify/types/type-provider';
+import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import type { FastifyInstance } from 'fastify';
 import { differenceInMinutes } from 'date-fns';
 import validator from 'validator';
 
@@ -110,46 +96,24 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  type CommonResponseSchema = {
-    response: { 400: (typeof schemas.updateMyProfileUI.response)[400] };
-  };
-
-  // TODO: figure out if there's a nicer way to generate this type
-  type UpdateReplyType = FastifyReply<
-    RawServerDefault,
-    RawRequestDefaultExpression<RawServerDefault>,
-    RawReplyDefaultExpression<RawServerDefault>,
-    RouteGenericInterface,
-    ContextConfigDefault,
-    CommonResponseSchema,
-    TypeBoxTypeProvider,
-    ResolveFastifyReplyType<
-      TypeBoxTypeProvider,
-      CommonResponseSchema,
-      RouteGenericInterface
-    >
-  >;
-
-  function updateErrorHandler(
-    error: FastifyError,
-    request: FastifyRequest,
-    reply: UpdateReplyType
-  ) {
+  fastify.setErrorHandler((error, request, reply) => {
+    const logger = fastify.log.child({ req: request });
     if (error.validation) {
+      logger.warn({ validationError: error.validation });
       void reply.code(400);
       void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
     } else {
-      fastify.errorHandler(error, request, reply);
+      throw error;
     }
-  }
+  });
 
   fastify.put(
     '/update-my-profileui',
     {
-      schema: schemas.updateMyProfileUI,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyProfileUI
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -174,7 +138,8 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           type: 'success'
         } as const;
       } catch (err) {
-        fastify.log.error(err);
+        logger.error('Error updating profileUI');
+        logger.error(err);
         fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
@@ -202,7 +167,9 @@ Happy coding!
       attachValidation: true
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
       if (req.validationError) {
+        logger.warn(`Invalid email ${req.body.email}`);
         void reply.code(400);
         return { message: 'Email format is invalid', type: 'danger' } as const;
       }
@@ -223,6 +190,9 @@ Happy coding!
       const isVerifiedEmail = user.emailVerified;
       const isOwnEmail = newEmail === currentEmailFormatted;
       if (isOwnEmail && isVerifiedEmail) {
+        logger.warn(
+          'New email address is already associated with this account'
+        );
         void reply.code(400);
         return reply.send({
           type: 'info',
@@ -238,6 +208,9 @@ You can update a new email address instead.`
       });
 
       if (isResendUpdateToSameEmail && isLinkSentWithinLimitTTL) {
+        logger.warn(
+          'Email confirmation link has been sent within the last 5 minutes'
+        );
         void reply.code(429);
         return reply.send({
           type: 'info',
@@ -250,6 +223,9 @@ ${isLinkSentWithinLimitTTL}`
         (await fastify.prisma.user.count({ where: { email: newEmail } })) > 0;
 
       if (isEmailAlreadyTaken && !isOwnEmail) {
+        logger.warn(
+          'New email address is already associated with another account'
+        );
         void reply.code(400);
         return reply.send({
           type: 'info',
@@ -277,6 +253,9 @@ ${isLinkSentWithinLimitTTL}`
         });
 
         if (tooManyRequestsMessage) {
+          logger.warn(
+            'Email confirmation link has been sent within the last 5 minutes'
+          );
           void reply.code(429);
           return reply.send({
             type: 'info',
@@ -314,7 +293,8 @@ ${isLinkSentWithinLimitTTL}`
           type: 'info'
         });
       } catch (err) {
-        fastify.log.error(err);
+        logger.error(`Error updating user ${user.id}'s email address`);
+        logger.error(err);
         fastify.Sentry.captureException(err);
         void reply.code(500);
         await reply.send({ message: 'flash.wrong-updating', type: 'danger' });
@@ -325,10 +305,10 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-theme',
     {
-      schema: schemas.updateMyTheme,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyTheme
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -342,7 +322,8 @@ ${isLinkSentWithinLimitTTL}`
           type: 'success'
         } as const;
       } catch (err) {
-        fastify.log.error(err);
+        logger.error(`Error updating user ${req.user?.id}'s theme`);
+        logger.error(err);
         fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
@@ -353,15 +334,24 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-socials',
     {
-      schema: schemas.updateMySocials,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMySocials
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
+
+      const socials = {
+        twitter: req.body.twitter,
+        githubProfile: req.body.githubProfile,
+        linkedin: req.body.linkedin,
+        website: req.body.website
+      };
+
       const valid = (['twitter', 'githubProfile', 'linkedin'] as const).every(
-        key => validateSocialUrl(req.body[key], key)
+        key => validateSocialUrl(socials[key], key)
       );
 
       if (!valid) {
+        logger.warn({ socials }, `Invalid social URL`);
         void reply.code(400);
         return reply.send({
           message: 'flash.wrong-updating',
@@ -373,10 +363,10 @@ ${isLinkSentWithinLimitTTL}`
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
           data: {
-            website: req.body.website,
-            twitter: req.body.twitter,
-            githubProfile: req.body.githubProfile,
-            linkedin: req.body.linkedin
+            website: socials.website,
+            twitter: socials.twitter,
+            githubProfile: socials.githubProfile,
+            linkedin: socials.linkedin
           }
         });
 
@@ -385,7 +375,8 @@ ${isLinkSentWithinLimitTTL}`
           type: 'success'
         } as const;
       } catch (err) {
-        fastify.log.error(err);
+        logger.error(`Error updating user ${req.user?.id}'s socials`);
+        logger.error(err);
         fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
@@ -400,6 +391,8 @@ ${isLinkSentWithinLimitTTL}`
       attachValidation: true
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
+
       try {
         const user = await fastify.prisma.user.findFirstOrThrow({
           where: { id: req.user?.id }
@@ -416,6 +409,7 @@ ${isLinkSentWithinLimitTTL}`
           newUsernameDisplay === oldUsernameDisplay;
 
         if (usernameUnchanged) {
+          logger.warn('Username is unchanged');
           void reply.code(400);
           return {
             message: 'flash.username-used',
@@ -424,6 +418,7 @@ ${isLinkSentWithinLimitTTL}`
         }
 
         if (req.validationError) {
+          logger.warn(`Bad request. Supplied username: ${req.body.username}`);
           void reply.code(400);
           return {
             message: req.validationError.message,
@@ -434,6 +429,7 @@ ${isLinkSentWithinLimitTTL}`
         const validation = isValidUsername(newUsername);
 
         if (!validation.valid) {
+          logger.warn(`Invalid username ${newUsername}. ${validation.error}`);
           void reply.code(400);
           return reply.send({
             // TODO(Post-MVP): custom validation errors.
@@ -450,6 +446,7 @@ ${isLinkSentWithinLimitTTL}`
               });
 
         if (usernameTaken || isRestricted(newUsername)) {
+          logger.warn(`Username ${newUsername} is taken or restricted`);
           void reply.code(400);
           return reply.send({
             message: 'flash.username-taken',
@@ -471,7 +468,7 @@ ${isLinkSentWithinLimitTTL}`
           variables: { username: newUsernameDisplay }
         });
       } catch (err) {
-        fastify.log.error(err);
+        logger.error(err);
         fastify.Sentry.captureException(err);
         void reply.code(500);
         await reply.send({ message: 'flash.wrong-updating', type: 'danger' });
@@ -485,6 +482,7 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyAbout
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
       const hasProtocol = isPictureWithProtocol(req.body.picture);
 
       try {
@@ -503,7 +501,7 @@ ${isLinkSentWithinLimitTTL}`
           type: 'success'
         } as const;
       } catch (err) {
-        fastify.log.error(err);
+        logger.error(err);
         fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
@@ -514,10 +512,10 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-keyboard-shortcuts',
     {
-      schema: schemas.updateMyKeyboardShortcuts,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyKeyboardShortcuts
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -531,7 +529,7 @@ ${isLinkSentWithinLimitTTL}`
           type: 'success'
         } as const;
       } catch (err) {
-        fastify.log.error(err);
+        logger.error(err);
         fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
@@ -542,10 +540,10 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-quincy-email',
     {
-      schema: schemas.updateMyQuincyEmail,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyQuincyEmail
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -559,7 +557,7 @@ ${isLinkSentWithinLimitTTL}`
           type: 'success'
         } as const;
       } catch (err) {
-        fastify.log.error(err);
+        logger.error(err);
         fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
@@ -570,10 +568,10 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-honesty',
     {
-      schema: schemas.updateMyHonesty,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyHonesty
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -587,7 +585,7 @@ ${isLinkSentWithinLimitTTL}`
           type: 'success'
         } as const;
       } catch (err) {
-        fastify.log.error(err);
+        logger.error(err);
         fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
@@ -598,10 +596,10 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-privacy-terms',
     {
-      schema: schemas.updateMyPrivacyTerms,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyPrivacyTerms
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -616,7 +614,7 @@ ${isLinkSentWithinLimitTTL}`
           type: 'success'
         } as const;
       } catch (err) {
-        fastify.log.error(err);
+        logger.error(err);
         fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
@@ -627,10 +625,10 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-portfolio',
     {
-      schema: schemas.updateMyPortfolio,
-      errorHandler: updateErrorHandler
+      schema: schemas.updateMyPortfolio
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
       try {
         // TODO(Post-MVP): make all properties required in the schema and use
         // req.body.portfolio directly.
@@ -655,7 +653,7 @@ ${isLinkSentWithinLimitTTL}`
           type: 'success'
         } as const;
       } catch (err) {
-        fastify.log.error(err);
+        logger.error(err);
         fastify.Sentry.captureException(err);
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
@@ -666,17 +664,10 @@ ${isLinkSentWithinLimitTTL}`
   fastify.put(
     '/update-my-classroom-mode',
     {
-      schema: schemas.updateMyClassroomMode,
-      errorHandler: (error, request, reply) => {
-        if (error.validation) {
-          void reply.code(403);
-          void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
-        } else {
-          fastify.errorHandler(error, request, reply);
-        }
-      }
+      schema: schemas.updateMyClassroomMode
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
       try {
         const classroomMode = req.body.isClassroomAccount;
 
@@ -692,7 +683,7 @@ ${isLinkSentWithinLimitTTL}`
           type: 'success'
         } as const;
       } catch (err) {
-        fastify.log.error(err);
+        logger.error(err);
         fastify.Sentry.captureException(err);
         void reply.code(403);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
@@ -762,7 +753,9 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.confirmEmail,
       errorHandler(error, request, reply) {
+        const logger = fastify.log.child({ req: request });
         if (error.validation) {
+          logger.warn({ validationError: error.validation });
           const { origin } = getRedirectParams(request);
           void reply.redirectWithMessage(origin, redirectMessage);
         } else {
@@ -771,10 +764,12 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
       const email = Buffer.from(req.query.email, 'base64').toString();
 
       const { origin } = getRedirectParams(req);
       if (!isEmail(email)) {
+        logger.warn(`Invalid email ${email}`);
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 
@@ -783,11 +778,13 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (!authToken) {
+        logger.warn('No token found');
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 
       // TODO(Post-MVP): clean up expired auth tokens.
       if (isExpired(authToken)) {
+        logger.info('Token expired');
         return reply.redirectWithMessage(origin, expirationMessage);
       }
 

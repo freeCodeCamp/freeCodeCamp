@@ -7,7 +7,7 @@ dashedName: quiz-web-performance
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -51,7 +51,7 @@ Page Load Time (PLT)
 
 ---
 
-Largest Contentful Paint (LCP)
+Last Contentful Paint (LCP)
 
 #### --answer--
 
@@ -61,45 +61,45 @@ First Contentful Paint (FCP)
 
 #### --text--
 
-What best describes the critical rendering path in the browser?
+Which of the following is NOT a way to reduce page loading times?
 
 #### --distractors--
 
-The order in which images are loaded into the browser's cache.
+Optimizing Media Assets.
 
 ---
 
-The way JavaScript is executed before any CSS is applied.
+Leveraging Browser Caching.
 
 ---
 
-The priority level given to different elements in the DOM.
+Minifying and Compress Files.
 
 #### --answer--
 
-The sequence of steps a browser follows to fetch, decode, and display HTML, CSS, and JavaScript.
+Using only JPEG files.
 
 ### --question--
 
 #### --text--
 
-Which of the following factors NEGATIVELY impacts a website's perceived performance?
+What is "time to usable"?
 
 #### --distractors--
 
-Utilizing CSS sprites to combine multiple images.
+It is the interval from when a user requests a page to when they can interact with forms on the page.
 
 ---
 
-Loading scripts asynchronously to improve loading speed.
+It is the time it takes for all images and animations to become available and usable. 
 
 ---
 
-Using web fonts that preload for immediate use.
+This is the time it takes for all CSS and JavaScript animations to load on the screen.
 
 #### --answer--
 
-Running long, blocking JavaScript operations that delay rendering.
+It is the interval from when a user requests a page to when they can meaningfully interact with it.
 
 ### --question--
 
@@ -127,51 +127,51 @@ The time it takes for the first piece of text or image to render.
 
 #### --text--
 
-How does reducing the number of critical resources affect web performance?
+Which of the following is NOT a commonly used performance measurement tool?
 
 #### --distractors--
 
-It ensures that all resources are loaded simultaneously.
+Chrome DevTools
 
 ---
 
-It reduces the overall size of the web page for better performance.
+Lighthouse
 
 ---
 
-It makes the browser load images more quickly but doesn't impact other resources.
+WebPageTest
 
 #### --answer--
 
-It shortens the critical rendering path, leading to faster page rendering.
+WebMeasure
 
 ### --question--
 
 #### --text--
 
-Which statement best describes Cumulative Layout Shift (CLS)?
+What are Performance Web APIs used for?
 
 #### --distractors--
 
-It measures how quickly the page responds after user interactions.
+It is used to measure the performance for CSS animations only.
 
 ---
 
-Time spent waiting for JavaScript to execute.
+It is used to automatically speed up the performance for a web page.
 
 ---
 
-The duration between content being painted and the page becoming interactive.
+It provides a detailed table of performance metrics for the user.
 
 #### --answer--
 
-The unexpected movement of web page elements during loading, affecting layout stability.
+It lets developers track how efficiently a webpage loads and responds directly from code.
 
 ### --question--
 
 #### --text--
 
-What strategy can effectively enhance perceived performance?
+Which strategy can effectively enhance perceived performance?
 
 #### --distractors--
 
@@ -193,23 +193,23 @@ Displaying a loading skeleton while content is being fetched.
 
 #### --text--
 
-What is the key performance benefit of utilizing a Content Delivery Network (CDN)?
+Which of the following refers to the time it takes for a request to travel between the browser and the server?
 
 #### --distractors--
 
-It ensures all resources are loaded without delays.
+rendering
 
 ---
 
-It minimizes the use of CSS files, improving speed.
+INP
 
 ---
 
-It eliminates the need for caching altogether.
+CDN
 
 #### --answer--
 
-It reduces latency by serving content from geographically closer servers.
+latency
 
 ### --question--
 
@@ -237,23 +237,23 @@ It speeds up the parsing of HTML.
 
 #### --text--
 
-Which metric assesses the stability of visual content on a web page?
+Which of the following shows how long the main thread is blocked by heavy JavaScript tasks?
 
 #### --distractors--
 
-First Input Delay (FID)
+Source order
 
 ---
 
-Time to First Byte (TTFB)
+Bounce rate
 
 ---
 
-Largest Contentful Paint (LCP)
+WebPageTest
 
 #### --answer--
 
-Cumulative Layout Shift (CLS)
+Total Blocking Time
 
 ### --question--
 
@@ -281,19 +281,19 @@ The time between a user's interaction and the browser responding by rendering th
 
 #### --text--
 
-Which Web API is effective for measuring performance in JavaScript?
+Which of the following APIs gives you high-precision timestamps (in milliseconds) to measure how long different parts of your site take to load?
 
 #### --distractors--
 
-`window.getPerformanceStatistics()`
+`performance.delay()`
 
 ---
 
-`document.performance()`
+`performance.previous()`
 
 ---
 
-`window.performance.now()`
+`performance.next()`
 
 #### --answer--
 
@@ -303,51 +303,83 @@ Which Web API is effective for measuring performance in JavaScript?
 
 #### --text--
 
-What is considered a good practice to enhance JavaScript performance?
+Which of the following APIs gives you a breakdown of every stage of page loading from DNS lookup to `DOMContentLoaded`?
 
 #### --distractors--
 
-Placing all JavaScript code in the `<head>` tag for immediate execution.
+Permit Timing API
 
 ---
 
-Using `eval()` to dynamically execute JavaScript code.
+Performance Text API
 
 ---
 
-Adding multiple `setTimeout()` calls for handling asynchronous tasks.
+Perform Timing API
 
 #### --answer--
 
-Utilizing event delegation to manage multiple events efficiently.
+Performance Timing API
 
 ### --question--
 
 #### --text--
 
-How does the Critical Path Length affect page load times?
+Which of the following listens for performance events such as layout shifts, long tasks, and user interactions?
 
 #### --distractors--
 
-It increases the amount of data transferred during page load.
+```js
+const observer = new PermitObserve((list) => {  
+  list.getEntries().forEach((entry) => {  
+    console.log(`Long task detected: ${entry.duration}ms`);  
+  });  
+});  
+
+observer.observe({ type: "longtask", buffered: true });
+```
 
 ---
 
-It complicates the loading process by introducing more JavaScript files.
+```js
+const observer = new PerformObserver((list) => {  
+  list.getEntries().forEach((entry) => {  
+    console.log(`Long task detected: ${entry.duration}ms`);  
+  });  
+});  
+
+observer.observe({ type: "longtask", buffered: true });
+```
 
 ---
 
-It has no impact on how quickly a page loads.
+```js
+const observer = new PermitObserver((list) => {  
+  list.getEntries().forEach((entry) => {  
+    console.log(`Long task detected: ${entry.duration}ms`);  
+  });  
+});  
+
+observer.observe({ type: "longtask", buffered: true });
+```
 
 #### --answer--
 
-A shorter critical path allows the browser to render the page more quickly.
+```js
+const observer = new PerformanceObserver((list) => {  
+  list.getEntries().forEach((entry) => {  
+    console.log(`Long task detected: ${entry.duration}ms`);  
+  });  
+});  
+
+observer.observe({ type: "longtask", buffered: true });
+```
 
 ### --question--
 
 #### --text--
 
-In what way does lazy loading images enhance page performance?
+How does lazy loading images enhance page performance?
 
 #### --distractors--
 
@@ -363,73 +395,81 @@ It preloads images to prevent any loading delays.
 
 #### --answer--
 
-It delays loading non-essential images until they are in view, improving initial load time.
+It delays loading non-essential images until they are in view.
 
 ### --question--
 
 #### --text--
 
-Which performance technique effectively reduces latency?
+What is code splitting?
 
 #### --distractors--
 
-Inlining all JavaScript code into HTML for immediate execution.
+It involves splitting your React code into modules that perform only critical tasks
 
 ---
 
-Using larger image resolutions for high-definition displays.
+It involves splitting your HTML code into modules that perform only non-critical tasks.
 
 ---
 
-Deferring CSS that affects page layout.
+It involves splitting your CSS code into modules that perform critical and non-critical tasks.
 
 #### --answer--
 
-Minimizing DNS lookups by limiting external resource calls.
+It involves splitting your JavaScript code into modules that perform critical and non-critical tasks.
 
 ### --question--
 
 #### --text--
 
-How does reducing render-blocking resources enhance performance?
+Which of the following is the correct way to lazy load an image?
 
 #### --distractors--
 
-It caches all CSS files for future use, speeding up load times.
+```html
+<img src="placeholder.jpg" lazy="loading">
+```
 
 ---
 
-It enables JavaScript to execute without any delays.
+```html
+<img src="placeholder.jpg" load="lazy">
+```
 
 ---
 
-It reduces the amount of HTML the browser needs to process.
+```html
+<img src="placeholder.jpg" lazy="load">
+```
 
 #### --answer--
 
-It allows the browser to render content sooner, improving time to first paint.
+```html
+<img src="placeholder.jpg" loading="lazy">
+```
 
 ### --question--
 
 #### --text--
 
-What significantly impacts Time to First Byte (TTFB)?
+Which of the following is NOT a way to improve INP?
 
 #### --distractors--
 
-The position of CSS files within the HTML document.
+Reducing the main thread work by breaking up long JavaScript tasks.
 
 ---
 
-The number of images on the page.
+Optimizing event handlers.
 
 ---
 
-The amount of JavaScript executed on page load.
+Deferring or lazy-loading heavy assets.
 
 #### --answer--
 
-The server response time to the initial HTTP request.
+Using only PNG and JPEG images.
 
 ### --question--
 
@@ -447,7 +487,7 @@ It minimizes the amount of JavaScript used on a webpage.
 
 ---
 
-It decreases the number of CSS files needed.
+It decreases the number of CSS files needed and makes your CSS run faster.
 
 #### --answer--
 

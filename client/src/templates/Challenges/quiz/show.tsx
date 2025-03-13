@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { useLocation, navigate as reachNavigate } from '@reach/router';
+import { useLocation, navigate as reachNavigate } from '@gatsbyjs/reach-router';
 import {
   Container,
   Col,
@@ -176,9 +176,10 @@ const ShowQuiz = ({
       correct: t('learn.quiz.correct-answer'),
       incorrect: t('learn.quiz.incorrect-answer')
     },
-    passingGrade: 85,
+    passingGrade: 90,
     onSuccess: () => {
-      openCompletionModal(), setIsPassed(true);
+      openCompletionModal();
+      setIsPassed(true);
     },
     onFailure: () => setIsPassed(false)
   });
@@ -319,16 +320,14 @@ const ShowQuiz = ({
               </div>
               <Spacer size='m' />
               {!isPassed ? (
-                <>
-                  <Button
-                    block={true}
-                    variant='primary'
-                    onClick={handleFinishQuiz}
-                    disabled={hasSubmitted}
-                  >
-                    {t('buttons.finish-quiz')}
-                  </Button>
-                </>
+                <Button
+                  block={true}
+                  variant='primary'
+                  onClick={handleFinishQuiz}
+                  disabled={hasSubmitted}
+                >
+                  {t('buttons.finish-quiz')}
+                </Button>
               ) : (
                 <Button
                   block={true}

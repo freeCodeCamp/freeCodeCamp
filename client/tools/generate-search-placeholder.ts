@@ -81,7 +81,7 @@ export const generateSearchPlaceholder = async (
         )
       });
     }
-  } catch (err) {
+  } catch (_err) {
     if (environment === 'production') {
       console.warn(`
   ----------------------------------------------------------

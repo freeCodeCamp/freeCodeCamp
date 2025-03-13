@@ -1,6 +1,3 @@
-// utils are not typed (yet), so we have to disable some checks
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import fs from 'fs';
 import path from 'path';
 import { config } from 'dotenv';
@@ -173,9 +170,10 @@ describe('getSuperOrder', () => {
 });
 
 describe('getSuperBlockFromPath', () => {
-  const directories = fs.readdirSync(
-    path.join(__dirname, './challenges/english')
-  );
+  const englishFolder = path.join(__dirname, './challenges/english');
+  const directories = fs
+    .readdirSync(englishFolder)
+    .filter(item => fs.lstatSync(path.join(englishFolder, item)).isDirectory());
 
   it('handles all the directories in ./challenges/english', () => {
     expect.assertions(24);
@@ -253,11 +251,11 @@ describe('getBlockOrder', () => {
   it('returns the correct order when the chapter only contains one module', () => {
     expect(
       getBlockOrder('welcome-to-freecodecamp', mockSuperBlockStructure)
-    ).toBe(1);
+    ).toBe(0);
   });
 
   it('returns the correct order when the chapter contains multiple modules', () => {
-    expect(getBlockOrder('block-one-m2', mockSuperBlockStructure)).toBe(4);
+    expect(getBlockOrder('block-one-m2', mockSuperBlockStructure)).toBe(3);
   });
 
   it('throws if a block does not exist', () => {

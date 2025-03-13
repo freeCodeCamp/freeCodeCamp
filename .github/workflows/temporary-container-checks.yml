@@ -55,24 +55,6 @@ jobs:
             --build-arg FREECODECAMP_NODE_ENV=development \
             -f docker/web/Dockerfile .
 
-  build-api:
-    name: Build Api (Container)
-    runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        node-version: [20.x]
-
-    steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-        with:
-          submodules: 'recursive'
-
-      - name: Create Image
-        run: |
-          docker build \
-            -f docker/api-server/Dockerfile .
-
   build-new-api:
     name: Build New Api (Container)
     runs-on: ubuntu-22.04
