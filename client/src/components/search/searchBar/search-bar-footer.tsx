@@ -19,7 +19,7 @@ const SearchBarFooter = ({
   onMouseLeave
 }: SearchBarFooterProps) => {
   const { t } = useTranslation();
-  const title = t('search.no-tutorials');
+  const title = t('search.no-results');
 
   if (!query) {
     return null;
