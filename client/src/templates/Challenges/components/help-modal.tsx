@@ -33,15 +33,15 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-export const generateSearchLink = (title: string, block: string) => {
-  const blockWithoutHyphens = block.replace(/-/g, ' ');
-
-  const query = /^(step|task)\s*\d*$/i.test(title)
-    ? encodeURIComponent(`${blockWithoutHyphens} - ${title}`)
-    : encodeURIComponent(title);
-  const search = `${forumLocation}/search?q=${query}`;
-  return search;
-};
+  export const generateSearchLink = (title: string, block: string) => {
+   
+    const blockTitle = block.replace(/-/g, ' ');
+  
+    const query = /^(step|task)\s*\d*$/i.test(title)
+      ? encodeURIComponent(`${blockTitle} - ${title}`)
+      : encodeURIComponent(title);
+    return `${forumLocation}/search?q=${query}`;
+  };
 
 interface CheckboxProps {
   name: string;
