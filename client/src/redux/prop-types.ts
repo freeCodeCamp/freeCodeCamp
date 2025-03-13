@@ -298,6 +298,7 @@ export type User = {
   picture: string;
   points: number;
   portfolio: PortfolioProjectData[];
+  career: Career[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
@@ -322,6 +323,7 @@ export type ProfileUI = {
   showPoints: boolean;
   showPortfolio: boolean;
   showTimeLine: boolean;
+  showCareer: boolean;
 };
 
 export type ClaimedCertifications = {
@@ -413,6 +415,15 @@ export type PortfolioProjectData = {
   title: string;
   url: string;
   image: string;
+  description: string;
+};
+
+export type Career = {
+  title: string;
+  company: string;
+  location: string;
+  start_date: string;
+  end_date: string;
   description: string;
 };
 
