@@ -12,11 +12,11 @@
     },
     {
       "id": "67d2f4ddb4a4306fdf5bbaee",
-      "title": "How Does Routing Work in React?"
+      "title": "What Is Memoization, and How Does the useMemo Hook Work?"
     },
     {
       "id": "67d2f51ff2c927713caa24fa",
-      "title": "What Are React Frameworks, and Why Are They Commonly Used in the Industry?"
+      "title": "How Do the useCallback Hook and React.memo Work?"
     }
   ],
   "helpCategory": "JavaScript"

@@ -1,9 +1,9 @@
 ---
 id: 67d2f4ddb4a4306fdf5bbaee
-title: How Does Routing Work in React?
+title: What Is Memoization, and How Does the useMemo Hook Work?
 challengeType: 11
 videoId: nVAaxZ34khk
-dashedName: how-does-routing-work-in-react
+dashedName: what-is-memoization-and-how-does-the-usememo-hook-work
 ---
 
 # --description--
