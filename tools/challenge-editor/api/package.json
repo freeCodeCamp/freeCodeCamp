@@ -4,7 +4,7 @@
   "private": true,
   "description": "Editor to help with new challenge structure",
   "scripts": {
-    "start": "ts-node server.ts",
+    "start": "tsx server.ts",
     "postinstall": "shx cp ./sample.env ./.env"
   },
   "author": "freeCodeCamp",
@@ -12,8 +12,7 @@
   "dependencies": {
     "cors": "2.8.5",
     "express": "4.18.2",
-    "gray-matter": "4.0.3",
-    "ts-node": "10.9.2"
+    "gray-matter": "4.0.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
