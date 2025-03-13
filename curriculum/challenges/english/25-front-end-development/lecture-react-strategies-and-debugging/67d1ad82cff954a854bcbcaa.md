@@ -70,7 +70,7 @@ It happens when props are passed through multiple levels unnecessarily.
 
 ---
 
-Passing props from a parent to deeply nested child components, even if some don't need them.
+Passing props from a parent to deeply nested child components.
 
 ---
 
