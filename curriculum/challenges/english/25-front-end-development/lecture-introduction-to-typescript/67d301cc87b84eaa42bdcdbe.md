@@ -14,20 +14,108 @@ Watch the lecture video and answer the questions below.
 
 ## --text--
 
-What Is a tsconfig File, and Why Is It Important to Include in Your TypeScript Projects? question?
+Which property in the `tsconfig.json` file affects how the compiler behaves?
 
 ## --answers--
 
-Answer 1
+`rootDir`
+
+### --feedback--
+
+This property is an object containing options for the compiler.
 
 ---
 
-Answer 2
+`compilerOptions`
 
 ---
 
-Answer 3
+`exclude`
+
+### --feedback--
+
+This property is an object containing options for the compiler.
+
+---
+
+`lib`
+
+### --feedback--
+
+This property is an object containing options for the compiler.
 
 ## --video-solution--
 
-1
+2
+
+## --text--
+
+What does the `strict` option in the `tsconfig.json` file do?
+
+## --answers--
+
+It only checks for nullable types.
+
+### --feedback--
+
+This option enables various checks, including handling of nullable types.
+
+---
+
+It enforces the use of CommonJS modules.
+
+### --feedback--
+
+This option enables various checks, including handling of nullable types.
+
+---
+
+It toggles several type-checking options.
+
+---
+
+It excludes test files from compilation.
+
+### --feedback--
+
+This option enables various checks, including handling of nullable types.
+
+## --video-solution--
+
+3
+
+## --text--
+
+What is the purpose of the `exclude` array in the `tsconfig.json` file?
+
+## --answers--
+
+To specify which files to compile.
+
+### --feedback--
+
+You can use this to exclude test code from compilation.
+
+---
+
+To list additional libraries to include.
+
+### --feedback--
+
+You can use this to exclude test code from compilation.
+
+---
+
+To ignore certain files during compilation.
+
+---
+
+To define output directories for compiled files.
+
+### --feedback--
+
+You can use this to exclude test code from compilation.
+
+## --video-solution--
+
+3
