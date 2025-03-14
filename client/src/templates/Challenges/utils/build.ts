@@ -403,7 +403,8 @@ export function challengeHasPreview({
     challengeType === challengeTypes.multifilePythonCertProject ||
     challengeType === challengeTypes.python ||
     challengeType === challengeTypes.lab ||
-    challengeType === challengeTypes.pyLab
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy
   );
 }
 

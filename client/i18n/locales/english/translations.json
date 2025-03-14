@@ -112,15 +112,12 @@
     "share-on-bluesky": "Share on BlueSky",
     "share-on-threads": "Share on Threads",
     "start": "Start",
-    "go-to-todays": "Go to today's challenge",
-    "go-to-archive": "Go to archive"
+    "go-to-today": "Go to Today's Coding Challenge",
+    "go-to-archive": "Go to archive",
+    "go-to-archive-long": "Go to Daily Coding Challenge Archive"
   },
   "daily-coding-challenge": {
-    "level": {
-      "1": "Beginner",
-      "2": "Intermediate",
-      "3": "Advanced"
-    }
+    "not-found": "Daily Coding Challenge Not Found."
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
