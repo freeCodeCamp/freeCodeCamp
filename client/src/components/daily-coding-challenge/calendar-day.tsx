@@ -3,7 +3,7 @@ import { Link } from '../helpers';
 // import GreenPass from '../../assets/icons/green-pass';
 import CheckMark from '../../templates/Introduction/components/check-mark';
 
-import './calendar-day.css';
+// import './calendar-day.css';
 
 interface CalendarDayProps {
   dayNumber: number;
