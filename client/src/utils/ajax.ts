@@ -183,7 +183,7 @@ export function getUserProfile(
   username: string
 ): Promise<ResponseWithData<UserProfileResponse>> {
   const responseWithData = get<{ entities?: ApiUser; result?: string }>(
-    `/api/users/get-public-profile?username=${username}`
+    `/users/get-public-profile?username=${username}`
   );
   return responseWithData.then(({ response, data }) => {
     const { result, user } = parseApiResponseToClientUser({
@@ -216,7 +216,7 @@ export function getShowCert(
 export function getUsernameExists(
   username: string
 ): Promise<ResponseWithData<boolean>> {
-  return get(`/api/users/exists?username=${username}`);
+  return get(`/users/exists?username=${username}`);
 }
 
 export function getGenerateExam(
