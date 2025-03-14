@@ -3452,7 +3452,7 @@
         ]
       },
       "ffpt": { "title": "279", "intro": [] },
-      "build-an-otp-generator": {
+      "lab-otp-generator": {
         "title": "Build an OTP Generator",
         "intro": [
           "In this lab you'll build an OTP generator.",

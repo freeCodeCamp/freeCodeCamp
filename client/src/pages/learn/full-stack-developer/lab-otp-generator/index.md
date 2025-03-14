@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Build an OTP Generator
-block: build-an-otp-generator
+block: lab-otp-generator
 superBlock: full-stack-developer
 ---
 

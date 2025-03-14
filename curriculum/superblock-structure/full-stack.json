@@ -584,7 +584,7 @@
           "dashedName": "react-state-hooks-and-routing",
           "comingSoon": true,
           "blocks": [
-            { "dashedName": "build-an-otp-generator" },
+            { "dashedName": "lab-otp-generator" },
             { "dashedName": "review-react-state-and-hooks" },
             { "dashedName": "quiz-react-state-and-hooks" },
             { "dashedName": "review-react-forms-data-fetching-and-routing" },
