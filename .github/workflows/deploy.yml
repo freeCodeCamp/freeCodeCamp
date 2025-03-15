@@ -15,7 +15,7 @@ on:
 jobs:
   static:
     name: Set Static Data
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     outputs:
       site_tld: ${{ steps.static_data.outputs.site_tld }}
       environment: ${{ steps.static_data.outputs.environment }}
@@ -49,7 +49,7 @@ jobs:
 
   deploy:
     name: Deploy to Docker Swarm -- ${{ needs.static.outputs.environment }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     needs: [static, build]
     env:
       TS_USERNAME: ${{ secrets.TS_USERNAME }}
