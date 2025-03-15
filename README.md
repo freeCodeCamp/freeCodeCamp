@@ -251,6 +251,15 @@ We appreciate responsible disclosure of vulnerabilities that might impact the in
 
 The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
 
+## Git Collaboration Workflow
+
+If you're contributing to this project, follow these steps to ensure a smooth collaboration:
+
+1. **Fork the repository** if you're not part of the main team.
+2. **Clone the repository** to your local machine:
+   ```bash
+   git clone https://github.com/freeCodeCamp/freeCodeCamp.git
+
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
 Recent Contributions:
