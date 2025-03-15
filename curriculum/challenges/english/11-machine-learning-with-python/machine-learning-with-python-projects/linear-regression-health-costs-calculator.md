@@ -4,6 +4,7 @@ title: Linear Regression Health Costs Calculator
 challengeType: 10
 forumTopicId: 462379
 dashedName: linear-regression-health-costs-calculator
+solutionLink: https://empty.com
 ---
 
 # --description--

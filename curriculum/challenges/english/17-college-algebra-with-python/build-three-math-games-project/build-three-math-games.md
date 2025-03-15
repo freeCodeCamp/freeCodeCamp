@@ -3,6 +3,7 @@ id: 63d8401039c73468b059cd41
 title: "Build Three Math Games"
 challengeType: 10
 dashedName: build-three-math-games
+solutionLink: https://empty.com
 ---
 
 # --description--

@@ -4,6 +4,7 @@ title: File Metadata Microservice
 challengeType: 4
 forumTopicId: 301506
 dashedName: file-metadata-microservice
+solutionLink: https://file-metadata-microservice.freecodecamp.rocks
 ---
 
 # --description--

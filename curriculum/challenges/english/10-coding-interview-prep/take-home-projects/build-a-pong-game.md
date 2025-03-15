@@ -4,6 +4,7 @@ title: Build a Pong Game
 challengeType: 3
 forumTopicId: 302353
 dashedName: build-a-pong-game
+solutionLink: https://codepen.io/freeCodeCamp/full/XpKrrW
 ---
 
 # --description--
