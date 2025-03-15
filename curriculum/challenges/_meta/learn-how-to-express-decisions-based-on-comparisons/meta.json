@@ -7,7 +7,7 @@
   "challengeOrder": [
     {
       "id": "67c4549694c835707f80511c",
-      "title": "dialogue-1-comparing-software-features"
+      "title": "Dialogue 1: Comparing Software Features"
     },
     {
       "id": "67c458143245e17538916792",
@@ -231,7 +231,7 @@
     },
     {
       "id": "67d18fa67ecd91f232304fa9",
-      "title": "dialogue-2-comparing-tech-companies"
+      "title": "Dialogue 2: Comparing Tech Companies"
     },
     {
       "id": "67d190c0e40bb4f35d4b2f63",
@@ -416,6 +416,26 @@
     {
       "id": "67d55566080f25133c73ff1c",
       "title": "Task 101"
+    },
+    {
+      "id": "67d57db13cd7aa1c85a6bae0",
+      "title": "Dialogue 3: Deciding on the Best Solution"
+    },
+    {
+      "id": "67d57eab0a8f091da1491c0a",
+      "title": "Task 102"
+    },
+    {
+      "id": "67d58671f097b320efd4614b",
+      "title": "Task 103"
+    },
+    {
+      "id": "67d587aac74ffb22b4488e1a",
+      "title": "Task 104"
+    },
+    {
+      "id": "67d5883f27772c23fc9e977c",
+      "title": "Task 105"
     }
   ],
   "helpCategory": "English",
