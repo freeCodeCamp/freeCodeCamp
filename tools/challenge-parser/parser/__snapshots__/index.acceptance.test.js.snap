@@ -710,3 +710,44 @@ if(let x of xs) {
   ],
 }
 `;
+
+exports[`challenge parser should parse md with hooks 1`] = `
+{
+  "assignments": [],
+  "description": "<section id="description">
+<p>Paragraph 1</p>
+<pre><code class="language-html">code example
+</code></pre>
+</section>",
+  "hooks": {
+    "beforeAll": "// before all code
+function foo() {
+  return 'bar';
+}
+foo();",
+    "beforeEach": "// before each code
+function foo() {
+  return 'bar';
+}
+foo();",
+  },
+  "solutions": [],
+  "tests": [
+    {
+      "testString": "// test code",
+      "text": "<p>First hint</p>",
+    },
+    {
+      "testString": "// more test code",
+      "text": "<p>Second hint with <code>code</code></p>",
+    },
+    {
+      "testString": "// more test code
+if(let x of xs) {
+  console.log(x);
+}",
+      "text": "<p>Third <em>hint</em> with <code>code</code> and <code>inline code</code></p>",
+    },
+  ],
+}
+`;
