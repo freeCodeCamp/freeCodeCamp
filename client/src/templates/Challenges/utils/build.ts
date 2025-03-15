@@ -231,7 +231,7 @@ export async function buildDOMChallenge(
   const isMultifile = challengeFiles.length > 1;
 
   const requiresReact16 = required.some(({ src }) =>
-    src?.includes('https://unpkg.com/react@16')
+    src?.includes('https://cdn.jsdelivr.net/npm/react@16')
   );
 
   // I'm reasonably sure this is fine, but we need to migrate transformers to
