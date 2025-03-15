@@ -10,7 +10,6 @@ import {
 } from '../redux/selectors';
 import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
-import { FileKey } from '../../../redux/prop-types';
 import Editor, { type EditorProps } from './editor';
 
 export type VisibleEditors = {
@@ -146,7 +145,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     containerRef={containerRef}
                     description={targetEditor === key ? description : ''}
                     editorRef={editorRef}
-                    fileKey={key as FileKey}
+                    fileKey={key}
                     initialTests={initialTests}
                     isMobileLayout={isMobileLayout}
                     isUsingKeyboardInTablist={isUsingKeyboardInTablist}

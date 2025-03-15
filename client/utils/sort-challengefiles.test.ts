@@ -1,5 +1,5 @@
-const { challengeFiles } = require('./__fixtures__/challenges');
-const { sortChallengeFiles } = require('./sort-challengefiles');
+import { challengeFiles } from './__fixtures__/challenges';
+import { sortChallengeFiles } from './sort-challengefiles';
 
 describe('sort-files', () => {
   describe('sortChallengeFiles', () => {
