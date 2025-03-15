@@ -32,9 +32,6 @@ jobs:
     name: API (Legacy) - [${{ needs.setup-jobs.outputs.tgt_env_short }}]
     needs: [setup-jobs]
     runs-on: ubuntu-24.04
-    strategy:
-      matrix:
-        node-version: [20]
     permissions:
       deployments: write
       contents: read

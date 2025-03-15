@@ -76,9 +76,6 @@ jobs:
   build-new-api:
     name: Build New Api (Container)
     runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        node-version: [20]
 
     steps:
       - name: Checkout Source Files
