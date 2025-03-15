@@ -1,4 +1,7 @@
+import { createSelector } from 'reselect';
+
 import { Certification } from '../../../shared/config/certification-settings';
+import superBlockStructure from '../../../curriculum/superblock-structure/full-stack.json';
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
 import { ns as MainApp } from './action-types';
@@ -22,8 +25,20 @@ export const isDonationModalOpenSelector = state =>
   state[MainApp].showDonationModal;
 export const isSignoutModalOpenSelector = state =>
   state[MainApp].showSignoutModal;
-export const recentlyClaimedBlockSelector = state =>
-  state[MainApp].recentlyClaimedBlock;
+export const donatableSectionRecentlyCompletedSelector = state => {
+  const donatableSectionRecentlyCompletedState =
+    state[MainApp].donatableSectionRecentlyCompleted;
+
+  if (donatableSectionRecentlyCompletedState) {
+    const { block, module, superBlock } =
+      donatableSectionRecentlyCompletedState;
+    if (module) return { section: 'module', title: module, superBlock };
+    else if (block) return { section: 'block', title: block, superBlock };
+  }
+
+  return null;
+};
+
 export const donationFormStateSelector = state =>
   state[MainApp].donationFormState;
 export const updateCardStateSelector = state => state[MainApp].updateCardState;
@@ -35,7 +50,8 @@ export const showCertFetchStateSelector = state =>
 export const shouldRequestDonationSelector = state => {
   const completedChallengeCount = completedChallengesSelector(state).length;
   const isDonating = isDonatingSelector(state);
-  const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
+  const donatableSectionRecentlyCompleted =
+    donatableSectionRecentlyCompletedSelector(state);
   const isRandomCompletionThreshold =
     isRandomCompletionThresholdSelector(state);
 
@@ -46,8 +62,8 @@ export const shouldRequestDonationSelector = state => {
   // not before the 11th challenge has mounted)
   if (completedChallengeCount < 10) return false;
 
-  // a block has been completed
-  if (recentlyClaimedBlock) return true;
+  // a block or module has been completed
+  if (donatableSectionRecentlyCompleted) return true;
 
   const sessionChallengeData = getSessionChallengeData();
   /*
@@ -256,6 +272,75 @@ export const certificatesByNameSelector = username => state => {
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
 export const allChallengesInfoSelector = state =>
   state[MainApp].allChallengesInfo;
+
+export const completedChallengesIdsSelector = createSelector(
+  completedChallengesSelector,
+  completedChallenges => completedChallenges.map(node => node.id)
+);
+
+export const completionStateSelector = createSelector(
+  [allChallengesInfoSelector, completedChallengesIdsSelector],
+  (allChallengesInfo, completedChallengesIds) => {
+    const chapters = superBlockStructure.chapters;
+    const { challengeNodes } = allChallengesInfo;
+
+    const getCompletionState = ({
+      chapters,
+      challenges,
+      completedChallengesIds
+    }) => {
+      const populateBlocks = blocks =>
+        blocks.map(block => {
+          const blockChallenges = challenges.filter(
+            ({ block: blockName }) => blockName === block.dashedName
+          );
+
+          const completedBlockChallenges = blockChallenges.every(({ id }) =>
+            completedChallengesIds.includes(id)
+          );
+
+          return {
+            name: block.dashedName,
+            isCompleted:
+              completedBlockChallenges.length === blockChallenges.length
+          };
+        });
+
+      const populateModules = modules =>
+        modules.map(module => {
+          const blocks = populateBlocks(module.blocks);
+          const isCompleted = blocks.every(block => block.isCompleted === true);
+
+          return {
+            name: module.dashedName,
+            blocks,
+            isCompleted
+          };
+        });
+
+      const allChapters = chapters.map(chapter => {
+        const modules = populateModules(chapter.modules);
+        const isCompleted = modules.every(
+          module => module.isCompleted === true
+        );
+
+        return {
+          name: chapter.dashedName,
+          modules: populateModules(chapter.modules),
+          isCompleted
+        };
+      });
+
+      return allChapters;
+    };
+
+    return getCompletionState({
+      chapters,
+      challenges: challengeNodes.map(({ challenge }) => challenge),
+      completedChallengesIds
+    });
+  }
+);
 export const userProfileFetchStateSelector = state =>
   state[MainApp].userProfileFetchState;
 export const usernameSelector = state => state[MainApp].appUsername;

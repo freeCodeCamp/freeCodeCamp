@@ -8,14 +8,14 @@ export const tryToShowDonationModal = createAction(
   actionTypes.tryToShowDonationModal
 );
 
-export const allowBlockDonationRequests = createAction(
-  actionTypes.allowBlockDonationRequests
+export const allowSectionDonationRequests = createAction(
+  actionTypes.allowSectionDonationRequests
 );
 export const setRenderStartTime = createAction(actionTypes.setRenderStartTime);
 export const closeDonationModal = createAction(actionTypes.closeDonationModal);
 export const openDonationModal = createAction(actionTypes.openDonationModal);
-export const preventBlockDonationRequests = createAction(
-  actionTypes.preventBlockDonationRequests
+export const preventSectionDonationRequests = createAction(
+  actionTypes.preventSectionDonationRequests
 );
 export const setIsRandomCompletionThreshold = createAction(
   actionTypes.setIsRandomCompletionThreshold
