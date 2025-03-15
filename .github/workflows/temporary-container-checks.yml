@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [20]
 
     steps:
       - name: Checkout Source Files
@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [20]
 
     steps:
       - name: Checkout Source Files
