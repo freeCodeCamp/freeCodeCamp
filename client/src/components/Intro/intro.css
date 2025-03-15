@@ -24,7 +24,6 @@
   border: none;
 }
 
-.intro-description strong,
 .intro-description p {
   font-size: 1.17rem;
 }
@@ -35,7 +34,6 @@
     border: none;
   }
 
-  .intro-description strong,
   .intro-description p {
     font-size: 1rem;
   }
