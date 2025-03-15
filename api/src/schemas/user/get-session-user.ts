@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { examResults, profileUI, savedChallenge } from '../types';
+import { examResults, Nullable, profileUI, savedChallenge } from '../types';
 
 export const getSessionUser = {
   response: {
@@ -7,16 +7,16 @@ export const getSessionUser = {
       user: Type.Record(
         Type.String(),
         Type.Object({
-          about: Type.String(),
+          about: Nullable(Type.String()),
           acceptedPrivacyTerms: Type.Boolean(),
           calendar: Type.Record(Type.Number(), Type.Literal(1)),
           completedChallenges: Type.Array(
             Type.Object({
               id: Type.String(),
               completedDate: Type.Number(),
-              solution: Type.Optional(Type.String()),
-              githubLink: Type.Optional(Type.String()),
-              challengeType: Type.Optional(Type.Number()),
+              solution: Nullable(Type.String()),
+              githubLink: Nullable(Type.String()),
+              challengeType: Nullable(Type.Number()),
               // Technically, files is optional, but the db default was [] and
               // the client treats null, undefined and [] equivalently.
               // TODO(Post-MVP): make this optional.
@@ -29,8 +29,8 @@ export const getSessionUser = {
                   path: Type.Optional(Type.String())
                 })
               ),
-              isManuallyApproved: Type.Optional(Type.Boolean()),
-              examResults: Type.Optional(examResults)
+              isManuallyApproved: Nullable(Type.Boolean()),
+              examResults: Nullable(examResults)
             })
           ),
           completedExams: Type.Array(
@@ -53,10 +53,10 @@ export const getSessionUser = {
             })
           ),
           completedChallengeCount: Type.Number(),
-          currentChallengeId: Type.String(),
+          currentChallengeId: Nullable(Type.String()),
           email: Type.String(),
           emailVerified: Type.Boolean(),
-          githubProfile: Type.Optional(Type.String()),
+          githubProfile: Nullable(Type.String()),
           id: Type.String(),
           is2018DataVisCert: Type.Boolean(),
           is2018FullStackCert: Type.Boolean(),
@@ -82,28 +82,28 @@ export const getSessionUser = {
           isRespWebDesignCert: Type.Boolean(),
           isSciCompPyCertV7: Type.Boolean(),
           keyboardShortcuts: Type.Boolean(),
-          linkedin: Type.Optional(Type.String()),
+          linkedin: Nullable(Type.String()),
           location: Type.String(),
           name: Type.String(),
           partiallyCompletedChallenges: Type.Array(
             Type.Object({ id: Type.String(), completedDate: Type.Number() })
           ),
-          picture: Type.String(), // TODO(Post-MVP): format as url/uri?
+          picture: Nullable(Type.String()), // TODO(Post-MVP): format as url/uri?
           points: Type.Number(),
           portfolio: Type.Array(
             Type.Object({
-              description: Type.String(),
+              description: Nullable(Type.String()),
               id: Type.String(),
-              image: Type.String(),
-              title: Type.String(),
-              url: Type.String()
+              image: Nullable(Type.String()),
+              title: Nullable(Type.String()),
+              url: Nullable(Type.String())
             })
           ),
           profileUI: Type.Optional(profileUI),
           sendQuincyEmail: Type.Boolean(),
           theme: Type.String(),
           twitter: Type.Optional(Type.String()),
-          website: Type.Optional(Type.String()),
+          website: Nullable(Type.String()),
           yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
           isEmailVerified: Type.Boolean(),
           joinDate: Type.String(),

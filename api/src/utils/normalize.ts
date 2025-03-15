@@ -1,11 +1,6 @@
 /* This module's job is to parse the database output and prepare it for
 serialization */
-import {
-  ProfileUI,
-  CompletedChallenge,
-  ExamResults,
-  type Survey
-} from '@prisma/client';
+import { CompletedChallenge, ExamResults, type Survey } from '@prisma/client';
 import _ from 'lodash';
 
 type NullToUndefined<T> = T extends null ? undefined : T;
@@ -37,31 +32,6 @@ export const normalizeTwitter = (
     url = `https://twitter.com/${handleOrUrl.replace(/^@/, '')}`;
   }
   return url ?? handleOrUrl;
-};
-
-/**
- * Ensure that the user's profile UI settings are valid.
- *
- * @param maybeProfileUI A null or the user's profile UI settings.
- * @returns The input with nulls removed or a default value if there is no input.
- */
-export const normalizeProfileUI = (
-  maybeProfileUI: ProfileUI | null
-): NoNullProperties<ProfileUI> => {
-  return maybeProfileUI
-    ? removeNulls(maybeProfileUI)
-    : {
-        isLocked: true,
-        showAbout: false,
-        showCerts: false,
-        showDonation: false,
-        showHeatMap: false,
-        showLocation: false,
-        showName: false,
-        showPoints: false,
-        showPortfolio: false,
-        showTimeLine: false
-      };
 };
 
 /**

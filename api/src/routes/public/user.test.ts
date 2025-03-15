@@ -38,7 +38,8 @@ const testUserData: Prisma.userCreateInput = {
           contents: 'test2',
           ext: 'html',
           key: 'html-test',
-          name: 'test2'
+          name: 'test2',
+          path: ''
         }
       ]
     },
@@ -86,9 +87,9 @@ const testUserData: Prisma.userCreateInput = {
         {
           contents: 'test-contents',
           ext: 'js',
-          history: ['indexjs'],
           key: 'indexjs',
-          name: 'test-name'
+          name: 'test-name',
+          path: ''
         }
       ]
     }
@@ -96,19 +97,6 @@ const testUserData: Prisma.userCreateInput = {
   yearsTopContributor: ['2018'],
   twitter: '@foobar',
   linkedin: 'linkedin.com/foobar'
-};
-
-const minimalUserData: Prisma.userCreateInput = {
-  about: 'I am a test user',
-  acceptedPrivacyTerms: true,
-  email: testUserData.email,
-  emailVerified: true,
-  externalId: '1234567890',
-  isDonating: false,
-  picture: 'https://www.freecodecamp.org/cat.png',
-  sendQuincyEmail: true,
-  username: 'testuser',
-  unsubscribeId: '1234567890'
 };
 
 const lockedProfileUI = {
@@ -122,6 +110,24 @@ const lockedProfileUI = {
   showPoints: false,
   showPortfolio: false,
   showTimeLine: false
+};
+
+const minimalUserData: Prisma.userCreateInput = {
+  about: 'I am a test user',
+  acceptedPrivacyTerms: true,
+  email: testUserData.email,
+  emailVerified: true,
+  externalId: '1234567890',
+  isDonating: false,
+  picture: 'https://www.freecodecamp.org/cat.png',
+  sendQuincyEmail: true,
+  username: 'testuser',
+  unsubscribeId: '1234567890',
+  lastUpdatedAtInMS: Date.now(),
+  profileUI: lockedProfileUI,
+  rand: Math.random(),
+  theme: 'default',
+  usernameDisplay: 'Test User'
 };
 
 const publicUserData = {
@@ -226,11 +232,6 @@ describe('userRoutes', () => {
       const profilelessUsername = 'profileless-user';
       const lockedUsername = 'locked-user';
       const publicUsername = 'public-user';
-      const lockedUserProfileUI = {
-        isLocked: true,
-        showAbout: true,
-        showPortfolio: false
-      };
       const unlockedUserProfileUI = {
         isLocked: false,
         showAbout: true,
@@ -257,7 +258,7 @@ describe('userRoutes', () => {
             ...minimalUserData,
             email: lockedUsername,
             username: lockedUsername,
-            profileUI: lockedUserProfileUI
+            profileUI: lockedProfileUI
           }
         });
         await fastifyTestInstance.prisma.user.create({
@@ -323,7 +324,7 @@ describe('userRoutes', () => {
               user: {
                 [lockedUsername]: {
                   isLocked: true,
-                  profileUI: lockedUserProfileUI,
+                  profileUI: lockedProfileUI,
                   username: lockedUsername
                 }
               }
