@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
+  '@fastify/csrf-protection@6.4.1':
+    hash: elxrdbqdtcfdnqaccvz7u6zxb4
+    path: patches/@fastify__csrf-protection@6.4.1.patch
   '@fastify/oauth2@7.8.1':
     hash: fjqma2r6xxjavghcsvyjlkhmyy
     path: patches/@fastify__oauth2@7.8.1.patch
@@ -166,7 +169,7 @@ importers:
         version: 9.4.0
       '@fastify/csrf-protection':
         specifier: 6.4.1
-        version: 6.4.1
+        version: 6.4.1(patch_hash=elxrdbqdtcfdnqaccvz7u6zxb4)
       '@fastify/multipart':
         specifier: ^8.3.0
         version: 8.3.1
@@ -19096,7 +19099,7 @@ snapshots:
       cookie-signature: 1.2.1
       fastify-plugin: 4.5.1
 
-  '@fastify/csrf-protection@6.4.1':
+  '@fastify/csrf-protection@6.4.1(patch_hash=elxrdbqdtcfdnqaccvz7u6zxb4)':
     dependencies:
       '@fastify/csrf': 6.2.0
       '@fastify/error': 3.4.1
