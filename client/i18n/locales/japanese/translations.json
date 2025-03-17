@@ -232,7 +232,6 @@
     ]
   },
   "settings": {
-    "profile-note": "注: プロフィール設定はプロフィールページに移動しました。",
     "share-projects": "あなたの freeCodeCamp 以外のプロジェクトや記事、承認されたプルリクエストをシェアしましょう。",
     "privacy": "この設定セクションでは、あなたの freeCodeCamp 公開ポートフォリオに表示する項目を制御できます。変更を保存するには「保存」をクリックしてください。",
     "data": "アカウントに保存されているデータを確認するには、下の「データをダウンロード」ボタンをクリックしてください",
@@ -778,13 +777,12 @@
   "search": {
     "label": "検索",
     "placeholder": {
-      "default": "記事を検索",
-      "numbered": "{{ roundedTotalRecords }} 件以上の記事から検索"
+      "default": "Search our news articles, tutorials, and books",
+      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
     },
     "see-results": "{{searchQuery}} のすべての結果を見る",
-    "no-tutorials": "記事が見つかりませんでした",
     "try": "何かお探しですか？このページの検索バーを試してみてください。",
-    "no-results": "<0>{{query}}</0> に関するものは見つかりませんでした",
+    "no-results": "No results found",
     "result-list": "検索結果"
   },
   "misc": {

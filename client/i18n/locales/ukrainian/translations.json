@@ -232,7 +232,6 @@
     ]
   },
   "settings": {
-    "profile-note": "Примітка: налаштування перенесено на сторінку профілю.",
     "share-projects": "Діліться своїми проєктами, статтями або прийнятими пул реквестами, які не відносяться до freeCodeCamp.",
     "privacy": "Налаштування в цьому розділі дозволяють керувати тим, що зображається на публічному портфоліо freeCodeCamp. Натисніть «Зберегти», щоб зберегти свої зміни.",
     "data": "Щоб побачити, які дані ми зберігаємо на вашому обліковому записі, натисніть кнопку «Завантажити мої дані» нижче",
@@ -778,13 +777,12 @@
   "search": {
     "label": "Пошук",
     "placeholder": {
-      "default": "Шукати серед публікацій",
-      "numbered": "Шукати серед {{ roundedTotalRecords }}+ публікацій"
+      "default": "Search our news articles, tutorials, and books",
+      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
     },
     "see-results": "Переглянути всі результати для {{searchQuery}}",
-    "no-tutorials": "Не знайдено жодного уроку",
     "try": "Шукаєте щось? Спробуйте пошуковий рядок на цій сторінці.",
-    "no-results": "Ми не змогли знайти нічого, що стосується <0>{{query}}</0>",
+    "no-results": "No results found",
     "result-list": "Результати пошуку"
   },
   "misc": {
