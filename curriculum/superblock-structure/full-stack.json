@@ -711,7 +711,12 @@
     {
       "dashedName": "python",
       "comingSoon": true,
-      "modules": []
+      "modules": [
+        {
+          "dashedName": "python-basics",
+          "blocks": [{ "dashedName": "lab-rpg-character" }]
+        }
+      ]
     },
     {
       "chapterType": "exam",
