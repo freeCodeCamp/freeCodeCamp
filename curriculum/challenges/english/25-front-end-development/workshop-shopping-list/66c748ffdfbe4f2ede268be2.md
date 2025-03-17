@@ -9,11 +9,13 @@ dashedName: step-20
 
 In this final step of the workshop, log the final grocery list to the console.
 
+To do this, call the `getShoppingListMsg` function with the `shoppingList` array as an argument inside `console.log`.
+
 And with this last step your grocery list is complete!
 
 # --hints--
 
-You should call the `getShoppingListMsg` function inside of the `console.log`.
+You should call `getShoppingListMsg(shoppingList)` inside of the `console.log`.
 
 ```js
 assert.lengthOf(code.match(/console\.log\(\s*getShoppingListMsg\(\s*shoppingList\s*\)\s*\)/g), 7);
