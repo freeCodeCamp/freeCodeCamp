@@ -232,7 +232,6 @@
     ]
   },
   "settings": {
-    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Shiriki miradi yako isiyo ya bure yaCodeCamp, makala, au maombi ya kuvuta yaliyokubaliwa.",
     "privacy": "Mipangilio katika sehemu hii hukuwezesha kudhibiti kile kinachoonyeshwa kwenye jalada lako la umma la freeCodeCamp. Bonyeza save ili kuhifadhi mabadiliko yako.",
     "data": "Ili kuona ni data gani tunayoshikilia kwenye akaunti yako, bofya kitufe cha \"Pakua data yako\" hapa chini",
@@ -778,13 +777,12 @@
   "search": {
     "label": "Tafuta",
     "placeholder": {
-      "default": "Search our tutorials",
-      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+      "default": "Search our news articles, tutorials, and books",
+      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
     },
     "see-results": "Tazama matokeo yote ya {{searchQuery}}",
-    "no-tutorials": "Hakuna mafunzo yaliyopatikana",
     "try": "Unatafuta kitu? Jaribu upau wa kutafutia kwenye ukurasa huu.",
-    "no-results": "Hatukuweza kupata chochote kinachohusiana na <0>{{query}}</0>",
+    "no-results": "No results found",
     "result-list": "Search results"
   },
   "misc": {
