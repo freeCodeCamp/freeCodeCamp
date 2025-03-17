@@ -381,7 +381,11 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
               <Spacer size='m' />
             </Col>
             <CompletionModal />
-            <HelpModal challengeTitle={title} challengeBlock={block} />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={block}
+              superBlock={superBlock}
+            />
           </Row>
         </Container>
       </LearnLayout>
