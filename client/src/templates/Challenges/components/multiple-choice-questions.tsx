@@ -57,7 +57,7 @@ function MultipleChoiceQuestions({
                     htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
                   >
                     <input
-                      name='quiz'
+                      name={`quiz-${questionIndex}`}
                       checked={selectedOptions[questionIndex] === answerIndex}
                       className='sr-only'
                       onChange={() =>
