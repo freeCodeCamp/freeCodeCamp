@@ -1,5 +1,7 @@
 import { generateSearchLink } from './help-modal';
 
+jest.unmock('react-i18next');
+
 describe('generateSearchLink', () => {
   it("should return a link with search query containing block name and challenge title if the title includes 'step'", () => {
     const link = generateSearchLink(
