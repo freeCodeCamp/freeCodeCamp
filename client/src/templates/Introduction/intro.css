@@ -337,6 +337,10 @@ button.map-title {
   margin-bottom: 0;
 }
 
+.block-grid .block-description {
+  padding: 18px 15px;
+}
+
 a.map-grid-item.challenge-completed {
   background: var(--highlight-background);
   position: relative;
