@@ -15,7 +15,7 @@ Listen to the audio and complete the sentence below.
 
 ## --sentence--
 
-`SafeGuard is BLANK security, so it might not integrate as easily with other platforms.`
+`Not really. SafeGuard is BLANK security, so it might not integrate as easily with other platforms.`
 
 ## --blanks--
 
