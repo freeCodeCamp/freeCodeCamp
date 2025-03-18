@@ -31,7 +31,7 @@ SafeGuard costs more when integrated.
 
 ### --feedback--
 
-Jake doesn’t mention the cost.
+Jake doesn't mention the cost.
 
 ---
 
@@ -43,7 +43,7 @@ SafeGuard is not flexible with integration.
 
 ### --feedback--
 
-Jake doesn’t mention flexibility but focuses on the need for extra work.
+Jake doesn't mention flexibility but focuses on the need for extra work.
 
 ## --video-solution--
 
