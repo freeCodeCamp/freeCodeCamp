@@ -39,7 +39,7 @@ interface CancelEvent extends MessageEvent {
   };
 }
 
-const TS_VERSION = '5'; // hardcoding for now, in the future this may be dynamic
+const TS_VERSION = '5.7.3'; // hardcoding for now, in the future this may be dynamic. Must be fully specified version
 
 let tsEnv: VirtualTypeScriptEnvironment | null = null;
 let compilerHost: CompilerHost | null = null;
@@ -50,7 +50,7 @@ importScripts('https://cdn.jsdelivr.net/npm/@typescript/vfs@1.6.0/dist/vfs.globa
 
 function importTS(version: string) {
   if (cachedVersion == version) return;
-  importScripts('https://cdn.jsdelivr.net/npm/typescript@' + version);
+  importScripts(`https://cdnjs.cloudflare.com/ajax/libs/typescript/${version}/typescript.min.js`);
   cachedVersion = version;
 }
 
