@@ -63,7 +63,7 @@ Modal verbs are always followed by the base form of the verb (without `to`).
     "audio": {
       "filename": "B1_14-1.mp3",
       "startTime": 1,
-      "startTimestamp": 4.22,
+      "startTimestamp": 4.02,
       "finishTimestamp": 6.62
     }
   },
@@ -76,7 +76,7 @@ Modal verbs are always followed by the base form of the verb (without `to`).
     {
       "character": "Jessica",
       "startTime": 1,
-      "finishTime": 3.4,
+      "finishTime": 3.6,
       "dialogue": {
         "text": "There are a few things you must do to ensure compliance.",
         "align": "center"
@@ -85,7 +85,7 @@ Modal verbs are always followed by the base form of the verb (without `to`).
     {
       "character": "Jessica",
       "opacity": 0,
-      "startTime": 3.9
+      "startTime": 4.1
     }
   ]
 }
