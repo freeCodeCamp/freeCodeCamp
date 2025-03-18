@@ -42,3 +42,51 @@ Securing critical systems is usually the first priority before assessing individ
 `Not yet.` means Jake hasn't checked which files were compromised.
 
 `We should focus on the critical systems first.` means that instead of looking at files, the team should prioritize protecting essential parts of the system.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-center.png",
+    "characters": [
+      {
+        "character": "Lisa",
+        "position": {
+          "x": 50,
+          "y": 15,
+          "z": 1.2
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "B1_14-3.mp3",
+      "startTime": 1,
+      "startTimestamp": 38.02,
+      "finishTimestamp": 39.88
+    }
+  },
+  "commands": [
+    {
+      "character": "Lisa",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Lisa",
+      "startTime": 1,
+      "finishTime": 2.86,
+      "dialogue": {
+        "text": "Have you checked which files were compromised?",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Lisa",
+      "opacity": 0,
+      "startTime": 3.36
+    }
+  ]
+}
+```

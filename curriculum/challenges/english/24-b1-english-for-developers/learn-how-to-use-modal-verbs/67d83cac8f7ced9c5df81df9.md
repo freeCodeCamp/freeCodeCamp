@@ -40,3 +40,51 @@ This verb is the `Past Perfect` form, used to talk about something that could ha
 `Have taken` is the `Past Perfect` form of `take`, used to talk about a possible past action. For example:
 
 `The attacker might have taken sensitive files.` - We don't know for sure, but it is possible.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-center.png",
+    "characters": [
+      {
+        "character": "Lisa",
+        "position": {
+          "x": 50,
+          "y": 15,
+          "z": 1.2
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "B1_14-3.mp3",
+      "startTime": 1,
+      "startTimestamp": 53.8,
+      "finishTimestamp": 57.7
+    }
+  },
+  "commands": [
+    {
+      "character": "Lisa",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Lisa",
+      "startTime": 1,
+      "finishTime": 4.9,
+      "dialogue": {
+        "text": "This will help us understand the extent of the breach and what they might have taken.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Lisa",
+      "opacity": 0,
+      "startTime": 5.4
+    }
+  ]
+}
+```
