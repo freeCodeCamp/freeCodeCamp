@@ -672,11 +672,11 @@
           "在第 40 課中，你將學習如何在構建城堡時編輯終端中的文件。"
         ]
       },
-      "learn-relational-databases-by-building-a-mario-database": {
-        "title": "通過創建 Mario 數據庫學習關係型數據庫",
+      "learn-relational-databases-by-building-a-database-of-video-game-characters": {
+        "title": "Learn Relational Databases by Building a Database of Video Game Characters",
         "intro": [
-          "一個關係數據庫將數據保存到通過關係連接起來的表格中。",
-          "在第 165 課中，你將通過創建一個充滿視頻遊戲字符的 PostgreSQL 數據庫來學習關係數據庫的基礎知識。"
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
@@ -1323,7 +1323,7 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "（新）微軟基礎 C# ",
+    "title": "Free Foundational C# with Microsoft",
     "intro": [
       "本課程全面介紹 C# 編程，涵蓋其核心概念、語法和在軟件開發中的實際應用。",
       "通過實踐練習和項目，你將學習 C# 的基礎知識，包括變量、數據類型、控制結構和麪向對象編程原理。",
@@ -1617,11 +1617,15 @@
       },
       "learn-how-to-express-agreement": {
         "title": "Learn How to Express Agreement",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to express agreement in different professional settings."
+        ]
       },
       "learn-how-to-express-disagreement": {
         "title": "Learn How to Express Disagreement",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to express disagreement in different professional settings."
+        ]
       },
       "learn-how-to-express-concerns": {
         "title": "Learn How to Express Concerns",
@@ -1696,7 +1700,8 @@
     "intro": [
       "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
       "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
-      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
+      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer.",
+      "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
     ],
     "chapters": {
       "freecodecamp": "Welcome",
@@ -3358,7 +3363,7 @@
         "title": "JavaScript Review",
         "intro": [
           "Before you take the JavaScript prep exam, you should review everything you've learned about JavaScript.",
-          "Open up this page, to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
+          "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
       "kagw": {
@@ -3435,14 +3440,17 @@
         "title": "272",
         "intro": []
       },
-      "ceds": {
-        "title": "273",
-        "intro": []
+      "review-react-state-and-hooks": {
+        "title": "React State and Hooks Review",
+        "intro": [
+          "Before you're quizzed on React state and hooks, you should review what you've learned.",
+          "Open up this page to review working with state, custom hooks and more."
+        ]
       },
       "quiz-react-state-and-hooks": {
         "title": "React State and Hooks Quiz",
         "intro": [
-          "Test what you've learned about React State and Hooks with this quiz."
+          "Test what you've learned about React's <code>useState</code> and <code>useEffect</code> hooks with this quiz."
         ]
       },
       "ftmi": {
@@ -3476,14 +3484,17 @@
         "title": "281",
         "intro": []
       },
-      "zagz": {
-        "title": "282",
-        "intro": []
-      },
-      "quiz-advanced-react": {
-        "title": "Advanced React Quiz",
+      "review-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Review",
         "intro": [
-          "Test what you've learned about Advanced React with this quiz."
+          "Before you take the React forms, data fetching and routing quiz, you should review everything you've learned so far.",
+          "Open up this page, to review all of the concepts taught including routing, forms, state management, prop drilling, data fetching and more."
+        ]
+      },
+      "quiz-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Quiz",
+        "intro": [
+          "Test what you've learned about routing, forms, and data fetching with this quiz."
         ]
       },
       "zdsj": {
@@ -3493,7 +3504,8 @@
       "review-web-performance": {
         "title": "Web Performance Review",
         "intro": [
-          "Review the Web Performance concepts to prepare for the upcoming quiz."
+          "Before you take the web performance quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including INP, key metrics for measuring performance, Performance Web APIs and more."
         ]
       },
       "quiz-web-performance": {
@@ -3595,8 +3607,8 @@
         "title": "306",
         "intro": []
       },
-      "workshop-mario-database": {
-        "title": "Build a Mario Database",
+      "workshop-database-of-video-game-characters": {
+        "title": "Build a Database of Video Game Characters",
         "intro": [
           "A relational database organizes data into tables that are linked together through relationships.",
           "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
