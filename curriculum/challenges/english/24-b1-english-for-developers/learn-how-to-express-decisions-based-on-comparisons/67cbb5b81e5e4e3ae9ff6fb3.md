@@ -51,7 +51,9 @@ Jake doesn't mention flexibility but focuses on the need for extra work.
 
 # --explanation--
 
-`Extra work` means additional effort or time needed to achieve a goal. Jake is suggesting that `if integration is crucial` (very important), you might face challenges with SafeGuard, and therefore, additional work or effort will be required to integrate it with other platforms. 
+`Extra work` means additional effort or time needed to achieve a goal.
+
+Jake is suggesting that `if integration is crucial` (very important), Sophie might face challenges with SafeGuard, and therefore, additional work or effort will be required to integrate it with other platforms. 
 
 # --scene--
 
@@ -73,7 +75,7 @@ Jake doesn't mention flexibility but focuses on the need for extra work.
     "audio": {
       "filename": "B1_13-1.mp3",
       "startTime": 1,
-      "startTimestamp": 63.08,
+      "startTimestamp": 62.88,
       "finishTimestamp": 67.4
     }
   },
@@ -86,7 +88,7 @@ Jake doesn't mention flexibility but focuses on the need for extra work.
     {
       "character": "Jake",
       "startTime": 1,
-      "finishTime": 5.32,
+      "finishTime": 5.34,
       "dialogue": {
         "text": "If integration is crucial, you might have to do some extra work with Safeguard.",
         "align": "center"
@@ -95,7 +97,7 @@ Jake doesn't mention flexibility but focuses on the need for extra work.
     {
       "character": "Jake",
       "opacity": 0,
-      "startTime": 5.82
+      "startTime": 5.84
     }
   ]
 }

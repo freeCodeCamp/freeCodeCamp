@@ -79,7 +79,7 @@ This comparative adjective means more pleasant or attractive.
 
 ### --feedback--  
 
-This adverb means "a little" or "to a small degree".
+This adverb means a little or to a small degree.
 
 ---
 
