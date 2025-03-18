@@ -46,11 +46,15 @@ let compilerHost: CompilerHost | null = null;
 let cachedVersion: string | null = null;
 
 // NOTE: vfs.globals must only be imported once, otherwise it will throw.
-importScripts('https://cdn.jsdelivr.net/npm/@typescript/vfs@1.6.0/dist/vfs.globals.js');
+importScripts(
+  'https://cdn.jsdelivr.net/npm/@typescript/vfs@1.6.0/dist/vfs.globals.js'
+);
 
 function importTS(version: string) {
   if (cachedVersion == version) return;
-  importScripts(`https://cdnjs.cloudflare.com/ajax/libs/typescript/${version}/typescript.min.js`);
+  importScripts(
+    `https://cdnjs.cloudflare.com/ajax/libs/typescript/${version}/typescript.min.js`
+  );
   cachedVersion = version;
 }
 
