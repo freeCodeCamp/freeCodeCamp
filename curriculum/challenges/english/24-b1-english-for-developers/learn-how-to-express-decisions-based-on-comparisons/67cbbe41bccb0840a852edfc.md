@@ -23,7 +23,7 @@ Listen to the audio and complete the sentence below.
 
 ### --feedback--
 
-This three-word phrase is used to acknowledge and show appreciation for receiving useful or important information. It’s often used when you learn something helpful.
+This three-word phrase is used to acknowledge and show appreciation for receiving useful or important information. It's often used when you learn something helpful.
 
 ---
 
