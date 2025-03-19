@@ -11,8 +11,24 @@
       "title": "What Is the Overall Purpose of Testing Your Applications?"
     },
     {
+      "id": "67db30fedfa0b22a1a2a570c",
+      "title": "What Is the Software Development Life Cycle, and How Does It Relate to Testing?"
+    },
+    {
       "id": "67d2ff1996e4ae9e67170502",
       "title": "What Is Unit Testing?"
+    },
+    {
+      "id": "67db31349f3ace2c5c803c33",
+      "title": "What Are BDD and TDD?"
+    },
+    {
+      "id": "67db3180830cf02eb662ecaf",
+      "title": "How Do Assertions Work in Unit Testing?"
+    },
+    {
+      "id": "67db31c7ed46f430ce6c2da6",
+      "title": "What Are the Differences Between Mocking, Faking, and Stubbing? "
     },
     {
       "id": "67d2ff33452ce69ea169c872",
@@ -41,6 +57,18 @@
     {
       "id": "67d2ff93d213d5a0c17ecfa2",
       "title": "What Is Accessibility Testing?"
+    },
+    {
+      "id": "67db3238375ff8340ee1ff90",
+      "title": "What Is A/B Testing?"
+    },
+    {
+      "id": "67db3248eceee03588a22b8f",
+      "title": "What Is Alpha and Beta Testing?"
+    },
+    {
+      "id": "67db32542c7075361b06024c",
+      "title": "What Is Regression Testing?"
     }
   ],
   "helpCategory": "JavaScript"
