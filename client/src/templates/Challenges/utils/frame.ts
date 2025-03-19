@@ -131,7 +131,11 @@ const createHeader = (id = mainPreviewId) =>
         if (!href || href[0] !== '#' && !href.match(/^https?:\\/\\//)) {
           e.preventDefault();
         }
-      }
+
+        if (href[0] === '#') {
+          e.preventDefault();
+        }
+        
     }, false);
     document.addEventListener('submit', function(e) {
       const action = e.target.getAttribute('action');
