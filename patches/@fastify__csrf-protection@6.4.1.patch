@@ -1,0 +1,46 @@
+diff --git a/index.js b/index.js
+index a183decaf9ec2403a483c7b80cee3c41122c3c25..e5f6b046e43879b31d2b149d7e0cebf941e1c09e 100644
+--- a/index.js
++++ b/index.js
+@@ -14,7 +14,8 @@ const defaultOptions = {
+   sessionKey: '_csrf',
+   getToken: getTokenDefault,
+   getUserInfo: getUserInfoDefault,
+-  sessionPlugin: '@fastify/cookie'
++  sessionPlugin: '@fastify/cookie',
++  logLevel: 'warn'
+ }
+ 
+ async function fastifyCsrfProtection (fastify, opts) {
+@@ -24,7 +25,8 @@ async function fastifyCsrfProtection (fastify, opts) {
+     sessionKey,
+     getToken,
+     getUserInfo,
+-    sessionPlugin
++    sessionPlugin,
++    logLevel
+   } = Object.assign({}, defaultOptions, opts)
+ 
+   const csrfOpts = opts && opts.csrfOpts ? opts.csrfOpts : {}
+@@ -34,6 +36,7 @@ async function fastifyCsrfProtection (fastify, opts) {
+   assert(typeof getToken === 'function', 'getToken should be a function')
+   assert(typeof getUserInfo === 'function', 'getUserInfo should be a function')
+   assert(typeof cookieOpts === 'object', 'cookieOpts should be a object')
++  assert(typeof logLevel === 'string', 'logLevel should be a string')
+   assert(
+     ['@fastify/cookie', '@fastify/session', '@fastify/secure-session'].includes(sessionPlugin),
+     "sessionPlugin should be one of the following: '@fastify/cookie', '@fastify/session', '@fastify/secure-session'"
+@@ -113,11 +116,11 @@ async function fastifyCsrfProtection (fastify, opts) {
+   function csrfProtection (req, reply, next) {
+     const secret = getSecret(req, reply)
+     if (!secret) {
+-      req.log.warn('Missing csrf secret')
++      req.log[logLevel]('Missing csrf secret')
+       return reply.send(new MissingCSRFSecretError())
+     }
+     if (!tokens.verify(secret, getToken(req), getUserInfo(req))) {
+-      req.log.warn('Invalid csrf token')
++      req.log[logLevel]('Invalid csrf token')
+       return reply.send(new InvalidCSRFTokenError())
+     }
+     next()

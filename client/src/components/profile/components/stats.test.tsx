@@ -46,11 +46,23 @@ const twoStreakCalendar = {
   '1736946000': 1 // 2025-01-15 13:00:00 UTC
 };
 
+const multipleEntriesInOneDay = {
+  // Two on Jan 13, 2025
+  '1736755200': 1, // 2025-01-13 08:00:00 UTC
+  '1736755500': 1, // 2025-01-13 08:05:00 UTC
+  // Two on Jan 14, 2025
+  '1736845200': 1, // 2025-01-14 09:00:00 UTC
+  '1736845500': 1, // 2025-01-14 09:05:00 UTC
+  // Two on Jan 15, 2025
+  '1736946000': 1, // 2025-01-15 13:00:00 UTC
+  '1736946300': 1 // 2025-01-15 13:05:00 UTC
+};
+
 jest.useFakeTimers();
 
 describe('calculateStreaks', () => {
-  test('Should return a longest streak of 5 days when the user has not completed a challenge in a while', () => {
-    jest.setSystemTime(new Date(2025, 0, 15));
+  beforeEach(() => jest.setSystemTime(new Date(2025, 0, 15)));
+  test('Should return 0 for the current streak if the user has not made progress today', () => {
     const { longestStreak, currentStreak } =
       calculateStreaks(oldStreakCalendar);
 
@@ -77,10 +89,8 @@ describe('calculateStreaks', () => {
   });
 
   test('Should return a longest and current streaks of 1 day when the user has recently completed their first challenge', () => {
-    const now = new Date(2025, 0, 15);
-    jest.setSystemTime(now);
     const calendar = {
-      [now.valueOf() / 1000]: 1
+      [Date.now() / 1000]: 1
     };
 
     const { longestStreak, currentStreak } = calculateStreaks(calendar);
@@ -102,5 +112,14 @@ describe('calculateStreaks', () => {
 
     expect(longestStreak).toBe(0);
     expect(currentStreak).toBe(0);
+  });
+
+  test('Should handle multiple entries in one day', () => {
+    const { longestStreak, currentStreak } = calculateStreaks(
+      multipleEntriesInOneDay
+    );
+
+    expect(longestStreak).toBe(3);
+    expect(currentStreak).toBe(3);
   });
 });

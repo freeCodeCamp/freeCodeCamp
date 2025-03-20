@@ -1,0 +1,10 @@
+{
+  "name": "React State and Hooks Review",
+  "isUpcomingChange": true,
+  "blockType": "review",
+  "blockLayout": "link",
+  "dashedName": "review-react-state-and-hooks",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67c2bbd476f6e540b4c0b0d4", "title": "React State and Hooks Review" }],
+  "helpCategory": "JavaScript"
+}

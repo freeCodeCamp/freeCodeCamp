@@ -24,9 +24,6 @@ jobs:
   build-client:
     name: Build Client (Container)
     runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        node-version: [20.x]
 
     steps:
       - name: Checkout Source Files
@@ -58,9 +55,6 @@ jobs:
   build-new-api:
     name: Build New Api (Container)
     runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        node-version: [20.x]
 
     steps:
       - name: Checkout Source Files

@@ -3,7 +3,7 @@ import { startOfDay, addDays, isEqual } from 'date-fns';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 import { last } from 'lodash-es';
-import { uniq } from 'lodash';
+import { uniqBy } from 'lodash';
 
 import { FullWidthRow } from '../../helpers';
 
@@ -19,7 +19,10 @@ export const calculateStreaks = (calendar: Record<string, number>) => {
   const timestamps = Object.keys(calendar).map(
     stamp => Number.parseInt(stamp, 10) * 1000
   );
-  const days = uniq(timestamps.map(stamp => startOfDay(stamp)));
+  const days = uniqBy(
+    timestamps.map(stamp => startOfDay(stamp)),
+    day => day.getTime()
+  );
 
   const { longestStreak, currentStreak } = days.reduce(
     (acc, day) => {
