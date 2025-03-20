@@ -3447,7 +3447,9 @@
       },
       "ftmi": { "title": "275", "intro": [] },
       "sgau": { "title": "276", "intro": [] },
-      "clak": { "title": "277", "intro": [] },
+      "lab-react-forms": { "title": "Build an Event RSVP Component", "intro": [
+        "Practice what you have learnt about working with Forms in React."
+      ] },
       "lab-weather-app": {
         "title": "Build a Weather App",
         "intro": [
