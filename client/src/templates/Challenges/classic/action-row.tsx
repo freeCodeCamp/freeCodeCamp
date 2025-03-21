@@ -7,7 +7,9 @@ import EditorTabs from './editor-tabs';
 interface ActionRowProps {
   hasNotes: boolean;
   hasPreview: boolean;
+  isDailyChallenge: boolean;
   isProjectBasedChallenge?: boolean;
+  setDailyChallengeLanguage: (language: 'javascript' | 'python') => void;
   showConsole: boolean;
   showNotes: boolean;
   showInstructions: boolean;
@@ -25,7 +27,9 @@ const ActionRow = ({
   showPreviewPortal,
   showConsole,
   showInstructions,
-  isProjectBasedChallenge
+  isProjectBasedChallenge,
+  isDailyChallenge,
+  setDailyChallengeLanguage
 }: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
 
@@ -54,6 +58,7 @@ const ActionRow = ({
   return (
     <div className='action-row' data-playwright-test-label='action-row'>
       <div className='tabs-row' data-playwright-test-label='tabs-row'>
+        {/* left */}
         {!isProjectBasedChallenge && (
           <button
             data-playwright-test-label='instructions-button'
@@ -64,6 +69,18 @@ const ActionRow = ({
           </button>
         )}
         <EditorTabs data-playwright-test-label='editor-tabs' />
+        {/* middle */}
+        {isDailyChallenge && (
+          <>
+            <button onClick={() => setDailyChallengeLanguage('javascript')}>
+              JavaScript
+            </button>
+            <button onClick={() => setDailyChallengeLanguage('python')}>
+              Python
+            </button>
+          </>
+        )}
+        {/* right */}
         <div className='panel-display-tabs'>
           <button
             aria-expanded={!!showConsole}

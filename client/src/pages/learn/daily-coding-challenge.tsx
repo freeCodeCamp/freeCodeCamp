@@ -240,7 +240,7 @@ function formatChallengeData({
             date,
             id: challengeId,
             title,
-            // challengeType: 27,
+            // challengeType: 23,
             challengeType: 28,
             helpCategory: 'Daily Coding Challenges',
             description,
@@ -309,6 +309,9 @@ function DailyCodingChallenge(): JSX.Element {
   const [challengeFound, setChallengeFound] = useState(false);
   const [challengeProps, setChallengeProps] =
     useState<null | FormattedChallengeData>(null);
+  const [dailyChallengeLanguage, setDailyChallengeLanguage] = useState<
+    'javascript' | 'python'
+  >('javascript');
 
   // dates in US Central time
   // firstDay is the first day a daily challenge became available
@@ -365,12 +368,21 @@ function DailyCodingChallenge(): JSX.Element {
     fetchChallenge(dateParam);
   }, [dateParam, firstDay, today]); // Ensure useEffect re-runs if these dependencies change
 
+  // store the language in local
+  // get language from local storage and set in redux?
+  //
+
   return isLoading ? (
     <Loader />
   ) : !challengeFound || !challengeProps ? (
     <DailyCodingChallengeNotFound />
   ) : (
-    <ShowClassic {...challengeProps.python} />
+    <ShowClassic
+      isDailyChallenge={true}
+      dailyChallengeLanguage={dailyChallengeLanguage}
+      setDailyChallengeLanguage={setDailyChallengeLanguage}
+      {...challengeProps[dailyChallengeLanguage]}
+    />
   );
 }
 

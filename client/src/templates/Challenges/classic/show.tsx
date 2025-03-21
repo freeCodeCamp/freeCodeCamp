@@ -113,6 +113,9 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   initHooks: (hooks?: { beforeAll: string }) => void;
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
+  dailyChallengeLanguage: 'javascript' | 'python';
+  isDailyChallenge?: boolean;
+  setDailyChallengeLanguage: (language: 'javascript' | 'python') => void;
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMeta;
@@ -224,6 +227,9 @@ function ShowClassic({
   initTests,
   initHooks,
   initVisibleEditors,
+  dailyChallengeLanguage,
+  isDailyChallenge = false,
+  setDailyChallengeLanguage,
   updateChallengeMeta,
   openModal,
   setIsAdvancing,
@@ -352,7 +358,7 @@ function ShowClassic({
       window.removeEventListener('resize', setHtmlHeight);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dailyChallengeLanguage]);
 
   const initializeComponent = (title: string): void => {
     initConsole('');
@@ -503,6 +509,8 @@ function ShowClassic({
               toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
               hasDemo: demoType === 'onClick'
             })}
+            isDailyChallenge={isDailyChallenge}
+            setDailyChallengeLanguage={setDailyChallengeLanguage}
             isFirstStep={isFirstStep}
             layoutState={layout}
             notes={notes}

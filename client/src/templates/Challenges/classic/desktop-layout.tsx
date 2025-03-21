@@ -31,6 +31,8 @@ interface DesktopLayoutProps {
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
+  isDailyChallenge: boolean;
+  setDailyChallengeLanguage: (language: 'javascript' | 'python') => void;
   isFirstStep?: boolean;
   layoutState: {
     codePane: Pane;
@@ -92,7 +94,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     setShowPreviewPane,
     setShowPreviewPortal,
     portalWindow,
-    startWithConsoleShown
+    startWithConsoleShown,
+    isDailyChallenge,
+    setDailyChallengeLanguage
   } = props;
 
   const initialShowState = (key: string, defaultValue: boolean): boolean => {
@@ -232,7 +236,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     challengeType === challengeTypes.multifilePythonCertProject ||
     challengeType === challengeTypes.lab ||
     challengeType === challengeTypes.jsLab ||
-    challengeType === challengeTypes.pyLab;
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengeJs ||
+    challengeType === challengeTypes.dailyChallengePy;
   const isProjectStyle = projectBasedChallenge || isMultifileProject;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
@@ -258,6 +264,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         <ActionRow
           hasPreview={hasPreview}
           hasNotes={!!notes}
+          isDailyChallenge={isDailyChallenge}
+          setDailyChallengeLanguage={setDailyChallengeLanguage}
           isProjectBasedChallenge={projectBasedChallenge}
           showConsole={showConsole}
           showNotes={showNotes}
