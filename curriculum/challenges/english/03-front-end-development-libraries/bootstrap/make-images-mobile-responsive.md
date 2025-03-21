@@ -89,7 +89,7 @@ assert.lengthOf(code.match(/<img/g), 2);
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -151,7 +151,7 @@ assert.lengthOf(code.match(/<img/g), 2);
 
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>

@@ -172,6 +172,7 @@ export type ChallengeNode = {
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
+    hooks?: { beforeAll: string };
     id: string;
     instructions: string;
     isComingSoon: boolean;

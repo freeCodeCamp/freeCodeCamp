@@ -1,8 +1,4 @@
-// We need to use the triple-slash directive to ensure that ts-node uses the
-// reset.d.ts file. It's not possible to import the file directly because it
-// is not included in the build (it's a dev dependency).
-// eslint-disable-next-line @typescript-eslint/triple-slash-reference
-/// <reference path="./reset.d.ts" />
+import './instrument';
 
 import { randomBytes } from 'crypto';
 

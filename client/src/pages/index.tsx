@@ -1,8 +1,6 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import { useTranslation } from 'react-i18next';
 import { useGrowthBook } from '@growthbook/growthbook-react';
-import { SuperBlocks } from '../../../shared/config/curriculum';
 import SEO from '../components/seo';
 import { Loader } from '../components/helpers';
 import LandingTop from '../components/landing/components/landing-top';
@@ -14,29 +12,12 @@ import Faq from '../components/landing/components/faq';
 import Benefits from '../components/landing/components/benefits';
 import '../components/landing/landing.css';
 
-type Challenge = {
-  id: string;
-  superBlock: SuperBlocks;
-};
-
-type Props = {
-  data: {
-    allChallengeNode: {
-      nodes: {
-        challenge: Challenge;
-      }[];
-    };
-  };
-};
-
 type LandingProps = {
-  allChallenges: Challenge[];
   showLandingPageRedesign: boolean;
   showBenefitsSection: boolean;
 };
 
 const Landing = ({
-  allChallenges,
   showLandingPageRedesign,
   showBenefitsSection
 }: LandingProps) => (
@@ -47,19 +28,14 @@ const Landing = ({
     {showBenefitsSection ? <Benefits /> : <AsSeenIn />}
 
     <Testimonials />
-    <Certifications allChallenges={allChallenges} />
+    <Certifications />
     <Faq />
   </main>
 );
 
-function IndexPage({
-  data: {
-    allChallengeNode: { nodes: challengeNodes }
-  }
-}: Props): JSX.Element {
+function IndexPage(): JSX.Element {
   const { t } = useTranslation();
   const growthbook = useGrowthBook();
-  const allChallenges = challengeNodes.map(node => node.challenge);
   if (growthbook && growthbook.ready) {
     const showLandingPageRedesign = growthbook.getFeatureValue(
       'landing-page-redesign',
@@ -74,7 +50,6 @@ function IndexPage({
       <>
         <SEO title={t('metaTags:title')} />
         <Landing
-          allChallenges={allChallenges}
           showLandingPageRedesign={showLandingPageRedesign}
           showBenefitsSection={showBenefitsSection}
         />
@@ -93,16 +68,3 @@ function IndexPage({
 IndexPage.displayName = 'IndexPage';
 
 export default IndexPage;
-
-export const query = graphql`
-  query AllChallengeNode {
-    allChallengeNode {
-      nodes {
-        challenge {
-          id
-          superBlock
-        }
-      }
-    }
-  }
-`;
