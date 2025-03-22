@@ -44,6 +44,10 @@ Roman numerals are based on seven symbols and can be written using various combi
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
+Note:
+
+- Your code is not automatically saved. Be sure to click the "Save your Code" button to save your progress.
+
 # --hints--
 
 You should have an `input` element with an `id` of `"number"`.

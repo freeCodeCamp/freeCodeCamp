@@ -10,7 +10,10 @@ dashedName: build-a-palindrome-checker
 
 A <dfn>palindrome</dfn> is a word or phrase that can be read the same way forwards and backwards, ignoring punctuation, case, and spacing.
 
-**Note:** You'll need to remove **all non-alphanumeric characters** (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.
+Notes: 
+
+- You'll need to remove **all non-alphanumeric characters** (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.
+- Your code is not automatically saved. Be sure to click the "Save your Code" button to save your progress.
 
 **Objective:** Build an app that is functionally similar to <a href="https://palindrome-checker.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://palindrome-checker.freecodecamp.rocks</a>.
 
