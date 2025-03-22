@@ -132,6 +132,11 @@ const createHeader = (id = mainPreviewId) =>
           e.preventDefault();
         }
       }
+
+        if (href[0] === '#') {
+          e.preventDefault();
+        }
+        
     }, false);
     document.addEventListener('submit', function(e) {
       const action = e.target.getAttribute('action');
