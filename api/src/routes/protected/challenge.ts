@@ -67,16 +67,24 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/coderoad-challenge-completed',
     {
       schema: schemas.coderoadChallengeCompleted,
-      errorHandler(error, request, reply) {
+      errorHandler(error, req, reply) {
+        const logger = fastify.log.child({ req });
         if (error.validation) {
+          logger.warn({ validationError: error.validation });
           void reply.code(400);
           return formatCoderoadChallengeCompletedValidation(error.validation);
         } else {
-          fastify.errorHandler(error, request, reply);
+          fastify.errorHandler(error, req, reply);
         }
       }
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
+      logger.info(
+        { userId: req.user?.id },
+        'User submitted a coderoad challenge'
+      );
+
       const { 'coderoad-user-token': encodedUserToken } = req.headers;
       const { tutorialId } = req.body;
 
@@ -85,6 +93,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const payload = jwt.verify(encodedUserToken, JWT_SECRET) as JwtPayload;
         userToken = payload.userToken;
       } catch {
+        logger.warn('Invalid user token');
         void reply.code(400);
         return { type: 'error', msg: `invalid user token` } as const;
       }
@@ -93,6 +102,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       const tutorialOrg = tutorialRepo?.split('/')?.[0];
 
       if (tutorialOrg !== 'freeCodeCamp') {
+        logger.warn(
+          { tutorialId },
+          'Tutorial not hosted on freeCodeCamp GitHub account'
+        );
         void reply.code(400);
         return {
           type: 'error',
@@ -111,6 +124,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (!challenge) {
+        logger.warn({ tutorialRepo }, 'Tutorial repo is not valid');
         void reply.code(400);
         return { type: 'error', msg: 'Tutorial name is not valid' } as const;
       }
@@ -122,6 +136,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (!tokenInfo) {
+          logger.warn('User token not found');
           void reply.code(400);
           return { type: 'error', msg: 'User token not found' } as const;
         }
@@ -133,6 +148,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (!user) {
+          logger.warn('User not found');
           void reply.code(400);
           return {
             type: 'error',
@@ -169,8 +185,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             completedDate
           });
         }
-      } catch {
+      } catch (error) {
         // TODO(Post-MVP): don't catch, just let Sentry handle this.
+        logger.error(error);
+        fastify.Sentry.captureException(error);
         void reply.code(400);
         return {
           type: 'error',
@@ -188,16 +206,20 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/project-completed',
     {
       schema: schemas.projectCompleted,
-      errorHandler(error, request, reply) {
+      errorHandler(error, req, reply) {
+        const logger = fastify.log.child({ req });
         if (error.validation) {
+          logger.warn({ validationError: error.validation });
           void reply.code(400);
           return formatProjectCompletedValidation(error.validation);
         } else {
-          fastify.errorHandler(error, request, reply);
+          fastify.errorHandler(error, req, reply);
         }
       }
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req: req });
+      logger.info(`User ${req.user?.id} submitted a project`);
       // TODO: considering validation is determined by `challengeType`, it should not come from the client
       //       Determine `challengeType` by `id`
       const { id: projectId, challengeType, solution, githubLink } = req.body;
@@ -208,12 +230,17 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       // - `githubLink` needs to exist and be valid URL
       if (challengeType === challengeTypes.backEndProject) {
         if (!solution || !isURL(githubLink + '')) {
+          logger.warn(
+            { solution, githubLink },
+            'Invalid backEndProject submission'
+          );
           return void reply.code(403).send({
             type: 'error',
             message: 'That does not appear to be a valid challenge submission.'
           });
         }
       } else if (solution && !isURL(solution + '')) {
+        logger.warn({ solution }, 'Invalid solution URL');
         return void reply.code(403).send({
           type: 'error',
           message: 'That does not appear to be a valid challenge submission.'
@@ -229,6 +256,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         challengeType === challengeTypes.codeAllyCert &&
         !canSubmitCodeRoadCertProject(projectId, user)
       ) {
+        logger.warn(
+          { projectId, user },
+          'User tried to submit a codeRoad cert project before completing the required challenges'
+        );
         void reply.code(403);
         return {
           type: 'error',
@@ -269,7 +300,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.backendChallengeCompleted,
       errorHandler(error, request, reply) {
+        const logger = fastify.log.child({ req: request });
         if (error.validation) {
+          logger.warn({ validationError: error.validation });
           void reply.code(400);
           return formatProjectCompletedValidation(error.validation);
         } else {
@@ -278,6 +311,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async req => {
+      const logger = fastify.log.child({ req });
+      logger.info(
+        { userId: req.user?.id },
+        `User submitted a backend challenge`
+      );
+
       const user = await fastify.prisma.user.findUniqueOrThrow({
         where: { id: req.user?.id },
 
@@ -312,16 +351,28 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/modern-challenge-completed',
     {
       schema: schemas.modernChallengeCompleted,
-      errorHandler(error, request, reply) {
+      errorHandler(error, req, reply) {
         if (error.validation) {
+          const logger = fastify.log.child({ req });
+          // This is another highly used route, so debug log level is used to
+          // avoid excessive logging
+          logger.debug({ validationError: error.validation });
           void reply.code(400);
           return formatProjectCompletedValidation(error.validation);
         } else {
-          fastify.errorHandler(error, request, reply);
+          fastify.errorHandler(error, req, reply);
         }
       }
     },
     async req => {
+      const logger = fastify.log.child({ req });
+      // This is another highly used route, so debug log level is used to
+      // avoid excessive logging
+      logger.debug(
+        { userId: req.user?.id },
+        'User submitted a modern challenge'
+      );
+
       const { id, files, challengeType } = req.body;
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
@@ -368,16 +419,21 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/save-challenge',
     {
       schema: schemas.saveChallenge,
-      errorHandler(error, request, reply) {
+      errorHandler(error, req, reply) {
+        const logger = fastify.log.child({ req });
         if (error.validation) {
+          logger.warn({ validationError: error.validation });
           void reply.code(400);
           return formatProjectCompletedValidation(error.validation);
         } else {
-          fastify.errorHandler(error, request, reply);
+          fastify.errorHandler(error, req, reply);
         }
       }
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
+      logger.info({ userId: req.user?.id }, 'User saved a challenge');
+
       const { files, id: challengeId } = req.body;
       const user = await fastify.prisma.user.findUniqueOrThrow({
         where: { id: req.user?.id }
@@ -391,6 +447,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         !multifileCertProjectIds.includes(challengeId) &&
         !multifilePythonCertProjectIds.includes(challengeId)
       ) {
+        logger.warn(
+          {
+            challengeId
+          },
+          'User tried to save a challenge that is not saveable'
+        );
         return void reply
           .code(400)
           .send('That challenge type is not saveable.');
@@ -417,16 +479,24 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/exam/:id',
     {
       schema: schemas.exam,
-      errorHandler(error, request, reply) {
+      errorHandler(error, req, reply) {
+        const logger = fastify.log.child({ req });
         if (error.validation) {
+          logger.warn({ validationError: error.validation });
           void reply.code(400);
           return { error: `Valid 'id' not found in request parameters.` };
         } else {
-          fastify.errorHandler(error, request, reply);
+          fastify.errorHandler(error, req, reply);
         }
       }
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
+      logger.info(
+        { userId: req.user?.id, examId: req.params.id },
+        'User requested an exam'
+      );
+
       const { id } = req.params;
 
       const { completedChallenges } =
@@ -440,6 +510,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (!examFromDb) {
+        logger.warn(
+          { examId: id },
+          'User requested an exam that does not exist'
+        );
         void reply.code(500);
         return {
           error: 'An error occurred trying to get the exam from the database.'
@@ -449,6 +523,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       const validExamFromDbSchema = validateExamFromDbSchema(examFromDb);
 
       if ('error' in validExamFromDbSchema) {
+        logger.warn(
+          { examId: id, validationError: validExamFromDbSchema.error },
+          'Error validating exam from database'
+        );
         void reply.code(500);
         return {
           error:
@@ -465,6 +543,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       );
 
       if (completedPrerequisites.length !== prerequisiteIds.length) {
+        logger.warn(
+          { examId: id, prerequisites, completedPrerequisites },
+          'User has not completed all prerequisites for exam'
+        );
         void reply.code(403);
         return {
           error: `You have not completed the required challenges to start the '${title}'.`
@@ -478,7 +560,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       );
 
       if (validGeneratedExamSchema.error) {
-        fastify.log.error(validGeneratedExamSchema.error);
+        logger.error(
+          validGeneratedExamSchema.error,
+          'Error validating generated exam'
+        );
         fastify.Sentry.captureException(validGeneratedExamSchema.error);
         void reply.code(500);
         return { error: 'An error occurred trying to randomize the exam.' };
@@ -494,16 +579,23 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/ms-trophy-challenge-completed',
     {
       schema: schemas.msTrophyChallengeCompleted,
-      errorHandler(error, request, reply) {
+      errorHandler(error, req, reply) {
+        const logger = fastify.log.child({ req });
         if (error.validation) {
+          logger.warn({ validationError: error.validation });
           void reply.code(400);
           void reply.send({ type: 'error', message: 'flash.ms.trophy.err-2' });
         } else {
-          fastify.errorHandler(error, request, reply);
+          fastify.errorHandler(error, req, reply);
         }
       }
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
+      logger.info(
+        { userId: req.user?.id },
+        'User submitted a Microsoft trophy challenge'
+      );
       try {
         const challengeId = req.body.id;
         const challenge = msTrophyChallenges.find(
@@ -511,6 +603,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         );
 
         if (!challenge) {
+          logger.warn(
+            { challengeId },
+            'User tried to submit a Microsoft trophy challenge that does not exist'
+          );
           return reply
             .code(400)
             .send({ type: 'error', message: 'flash.ms.trophy.err-2' });
@@ -521,6 +617,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (!msUser || !msUser.msUsername) {
+          logger.warn(
+            { hasMsUser: !!msUser },
+            'User tried to submit a Microsoft trophy challenge without a Microsoft username'
+          );
           return reply
             .code(403)
             .send({ type: 'error', message: 'flash.ms.trophy.err-1' });
@@ -537,6 +637,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (msTrophyStatus.type === 'error') {
+          logger.warn('Error verifying trophy with Microsoft');
           return reply.code(403).send(msTrophyStatus);
         }
 
@@ -568,7 +669,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           completedDate
         };
       } catch (error) {
-        fastify.log.error(error);
+        logger.error(error);
         fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
@@ -583,18 +684,24 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/exam-challenge-completed',
     {
       schema: schemas.examChallengeCompleted,
-      errorHandler(error, request, reply) {
+      errorHandler(error, req, reply) {
+        const logger = fastify.log.child({ req });
         if (error.validation) {
+          logger.warn({ validationError: error.validation });
           void reply.code(400);
           void reply.send({
             error: 'Valid request body not found in attempt to submit exam.'
           });
         } else {
-          fastify.errorHandler(error, request, reply);
+          fastify.errorHandler(error, req, reply);
         }
       }
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
+
+      logger.info({ userId: req.user?.id }, 'User submitted an exam challenge');
+
       try {
         const userId = req.user?.id;
         const { userCompletedExam, id, challengeType } = req.body;
@@ -614,6 +721,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (!examFromDb) {
+          logger.warn(
+            { examId: id },
+            'User tried to submit an exam that does not exist'
+          );
           void reply.code(400);
           return {
             error: 'An error occurred trying to get the exam from the database.'
@@ -622,6 +733,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         const validExamFromDbSchema = validateExamFromDbSchema(examFromDb);
         if ('error' in validExamFromDbSchema) {
+          logger.warn(
+            { examId: id, validationError: validExamFromDbSchema.error },
+            'Error validating exam from database'
+          );
           void reply.code(500);
           return {
             error:
@@ -637,6 +752,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         );
 
         if (completedPrerequisites.length !== prerequisiteIds.length) {
+          logger.warn(
+            { examId: id, prerequisites, completedPrerequisites },
+            'User has not completed all prerequisites for exam'
+          );
           void reply.code(403);
           return {
             error: `You have not completed the required challenges to start the '${title}'.`
@@ -648,7 +767,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           numberOfQuestionsInExam
         );
         if ('error' in validUserCompletedExam) {
-          fastify.log.error(validUserCompletedExam.error);
+          logger.error(validUserCompletedExam.error);
           void reply.code(400);
           return {
             error: 'An error occurred validating the submitted exam.'
@@ -659,7 +778,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         const validExamResults = validateExamResultsSchema(examResults);
         if ('error' in validExamResults) {
-          fastify.log.error(validExamResults.error);
+          logger.error(validExamResults.error);
           void reply.code(500);
           return {
             error: 'An error occurred validating the submitted exam.'
@@ -765,7 +884,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           examResults
         };
       } catch (error) {
-        fastify.log.error(error);
+        logger.error(error);
         fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
@@ -779,8 +898,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/submit-quiz-attempt',
     {
       schema: schemas.submitQuizAttempt,
-      errorHandler(error, request, reply) {
+      errorHandler(error, req, reply) {
+        const logger = fastify.log.child({ req });
         if (error.validation) {
+          logger.warn({ validationError: error.validation });
           void reply.code(400);
           void reply.send({
             type: 'error',
@@ -788,7 +909,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
               'That does not appear to be a valid quiz attempt submission.'
           });
         } else {
-          fastify.errorHandler(error, request, reply);
+          fastify.errorHandler(error, req, reply);
         }
       }
     },
