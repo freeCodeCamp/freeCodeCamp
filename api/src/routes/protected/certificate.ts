@@ -413,8 +413,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
             'Congratulations on completing all of the freeCodeCamp certifications!',
           text: renderCertifiedEmail({
             username: updatedUser.username,
-            // Safety: `user.name` is required to exist earlier. TODO: Assert
-            name: updatedUser.name as string
+            name: user.name
           })
         };
 

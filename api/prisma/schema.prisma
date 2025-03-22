@@ -15,139 +15,124 @@ type File {
   ext      String
   key      String
   name     String
-  path     String? // Undefined | Null
+  path     String
 }
 
 type CompletedChallenge {
-  challengeType      Int?         @db.Int // Null | Undefined
-  completedDate      Float // TODO(Post-MVP): Change to DateTime
+  challengeType      Int?         @db.Int
+  completedDate      Int
   files              File[]
-  githubLink         String? // Undefined
+  githubLink         String?
   id                 String
-  isManuallyApproved Boolean? // Undefined
-  solution           String? // Null | Undefined
-  examResults        ExamResults? // Undefined
+  isManuallyApproved Boolean?
+  solution           String?
+  examResults        ExamResults?
 }
 
 type PartiallyCompletedChallenge {
   id            String
-  completedDate Float
+  completedDate Int
 }
 
 type Portfolio {
-  description String
+  description String?
   id          String
-  image       String
-  title       String
-  url         String
+  image       String?
+  title       String?
+  url         String?
 }
 
 type ProfileUI {
-  isLocked      Boolean? // Undefined
-  showAbout     Boolean? // Undefined
-  showCerts     Boolean? // Undefined
-  showDonation  Boolean? // Undefined
-  showHeatMap   Boolean? // Undefined
-  showLocation  Boolean? // Undefined
-  showName      Boolean? // Undefined
-  showPoints    Boolean? // Undefined
-  showPortfolio Boolean? // Undefined
-  showTimeLine  Boolean? // Undefined
-}
-
-type SavedChallengeFile {
-  contents String
-  ext      String
-  history  String[]
-  key      String
-  name     String
+  isLocked      Boolean
+  showAbout     Boolean
+  showCerts     Boolean
+  showDonation  Boolean
+  showHeatMap   Boolean
+  showLocation  Boolean
+  showName      Boolean
+  showPoints    Boolean
+  showPortfolio Boolean
+  showTimeLine  Boolean
 }
 
 type SavedChallenge {
-  files         SavedChallengeFile[]
+  files         File[]
   id            String
-  lastSavedDate Float
+  lastSavedDate Int
 }
 
 type QuizAttempt {
-  challengeId String
-  quizId      String
-  timestamp   Float
+  challengeId String @db.ObjectId
+  quizId      String @db.ObjectId
+  timestamp   Int
 }
 
-/// Corresponds to the `user` collection.
+/// Corresponds to the \`user\` collection.
 model user {
   id                           String                        @id @default(auto()) @map("_id") @db.ObjectId
-  about                        String
+  about                        String?
   acceptedPrivacyTerms         Boolean
   completedChallenges          CompletedChallenge[]
-  completedExams               CompletedExam[] // Undefined
-  quizAttempts                 QuizAttempt[] // Undefined
+  completedExams               CompletedExam[]
+  quizAttempts                 QuizAttempt[]
   currentChallengeId           String?
-  donationEmails               String[] // Undefined | String[] (only possible for built in Types like String)
-  email                        String
-  emailAuthLinkTTL             DateTime? // Null | Undefined
+  donationEmails               String[]
+  email                        String                        @unique
+  emailAuthLinkTTL             DateTime?
   emailVerified                Boolean
-  emailVerifyTTL               DateTime? // Null | Undefined
-  externalId                   String
-  githubProfile                String? // Undefined
-  isApisMicroservicesCert      Boolean? // Undefined
-  isBackEndCert                Boolean? // Undefined
-  isBanned                     Boolean? // Undefined
-  isCheater                    Boolean? // Undefined
-  isDataAnalysisPyCertV7       Boolean? // Undefined
-  isDataVisCert                Boolean? // Undefined
-  isDonating                   Boolean
-  isFoundationalCSharpCertV8   Boolean? // Undefined
-  isFrontEndCert               Boolean? // Undefined
-  isFrontEndLibsCert           Boolean? // Undefined
-  isFullStackCert              Boolean? // Undefined
-  isHonest                     Boolean?
-  isInfosecCertV7              Boolean? // Undefined
-  isInfosecQaCert              Boolean? // Undefined
-  isJsAlgoDataStructCert       Boolean? // Undefined
-  isJsAlgoDataStructCertV8     Boolean? // Undefined
-  isMachineLearningPyCertV7    Boolean? // Undefined
-  isQaCertV7                   Boolean? // Undefined
-  isRelationalDatabaseCertV8   Boolean? // Undefined
-  isRespWebDesignCert          Boolean? // Undefined
-  isSciCompPyCertV7            Boolean? // Undefined
-  is2018DataVisCert            Boolean? // Undefined
-  is2018FullStackCert          Boolean? // Undefined
-  isCollegeAlgebraPyCertV8     Boolean? // Undefined
-  // isUpcomingPythonCertV8    Boolean? // Undefined. It is in the db but has never been used.
-  keyboardShortcuts            Boolean? // Undefined
-  linkedin                     String? // Null | Undefined
-  location                     String? // Null
-  name                         String? // Null
-  needsModeration              Boolean? // Undefined
-  newEmail                     String? // Null | Undefined
-  partiallyCompletedChallenges PartiallyCompletedChallenge[] // Undefined | PartiallyCompletedChallenge[]
-  password                     String? // Undefined
-  picture                      String
+  emailVerifyTTL               DateTime?
+  externalId                   String?
+  githubProfile                String?
+  is2018DataVisCert            Boolean                       @default(false)
+  is2018FullStackCert          Boolean                       @default(false)
+  isApisMicroservicesCert      Boolean                       @default(false)
+  isBackEndCert                Boolean                       @default(false)
+  isBanned                     Boolean                       @default(false)
+  isCheater                    Boolean                       @default(false)
+  isClassroomAccount           Boolean                       @default(false)
+  isCollegeAlgebraPyCertV8     Boolean                       @default(false)
+  isDataAnalysisPyCertV7       Boolean                       @default(false)
+  isDataVisCert                Boolean                       @default(false)
+  isDonating                   Boolean                       @default(false)
+  isFoundationalCSharpCertV8   Boolean                       @default(false)
+  isFrontEndCert               Boolean                       @default(false)
+  isFrontEndLibsCert           Boolean                       @default(false)
+  isFullStackCert              Boolean                       @default(false)
+  isHonest                     Boolean                       @default(false)
+  isInfosecCertV7              Boolean                       @default(false)
+  isInfosecQaCert              Boolean                       @default(false)
+  isJsAlgoDataStructCert       Boolean                       @default(false)
+  isJsAlgoDataStructCertV8     Boolean                       @default(false)
+  isMachineLearningPyCertV7    Boolean                       @default(false)
+  isQaCertV7                   Boolean                       @default(false)
+  isRelationalDatabaseCertV8   Boolean                       @default(false)
+  isRespWebDesignCert          Boolean                       @default(false)
+  isSciCompPyCertV7            Boolean                       @default(false)
+  keyboardShortcuts            Boolean                       @default(false)
+  lastUpdatedAtInMS            Int
+  linkedin                     String?
+  location                     String?
+  name                         String?
+  needsModeration              Boolean                       @default(false)
+  newEmail                     String?
+  partiallyCompletedChallenges PartiallyCompletedChallenge[]
+  picture                      String?
   portfolio                    Portfolio[]
-  profileUI                    ProfileUI? // Undefined
-  progressTimestamps           Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE
+  profileUI                    ProfileUI
+  progressTimestamps           Int[]
   /// A random number between 0 and 1.
   ///
   /// Valuable for selectively performing random logic.
-  rand                         Float?
-  savedChallenges              SavedChallenge[] // Undefined | SavedChallenge[]
+  rand                         Float
+  savedChallenges              SavedChallenge[]
   sendQuincyEmail              Boolean
-  theme                        String? // Undefined
-  timezone                     String? // Undefined
-  twitter                      String? // Null | Undefined
+  theme                        String
+  twitter                      String?
   unsubscribeId                String
-  /// Used to track the number of times the user's record was written to.
-  ///
-  /// This has the main benefit of allowing concurrent ops to check for race conditions.
-  updateCount                  Int?                          @default(0)
-  username                     String // TODO(Post-MVP): make this unique
-  usernameDisplay              String? // Undefined
-  verificationToken            String? // Undefined
-  website                      String? // Undefined
-  yearsTopContributor          String[] // Undefined | String[]
-  isClassroomAccount           Boolean? // Undefined
+  username                     String                        @unique
+  usernameDisplay              String
+  website                      String?
+  yearsTopContributor          String[]
 
   // Relations
   examAttempts                      EnvExamAttempt[]
@@ -206,8 +191,8 @@ type EnvAudio {
   captions String?
   /// URL to audio file
   ///
-  /// Expected in the format: `<url>#t=<start_time_in_seconds>,<end_time_in_seconds>`
-  /// Where `start_time_in_seconds` and `end_time_in_seconds` are optional floats.
+  /// Expected in the format: \`<url>#t=<start_time_in_seconds>,<end_time_in_seconds>\`
+  /// Where \`start_time_in_seconds\` and \`end_time_in_seconds\` are optional floats.
   url      String
 }
 
@@ -313,7 +298,7 @@ model EnvGeneratedExam {
   /// Foreign key to exam
   examId       String                    @db.ObjectId
   questionSets EnvGeneratedQuestionSet[]
-  /// If `deprecated`, the generation should not longer be considered for users
+  /// If \`deprecated\`, the generation should not longer be considered for users
   deprecated   Boolean
 
   // Relations
@@ -379,7 +364,7 @@ model UserToken {
 model ExamEnvironmentAuthorizationToken {
   /// An ObjectId is used to provide access to the created timestamp
   id       String   @id @default(auto()) @map("_id") @db.ObjectId
-  /// Used to set an `expireAt` index to delete documents
+  /// Used to set an \`expireAt\` index to delete documents
   expireAt DateTime @db.Date
   userId   String   @unique @db.ObjectId
 
@@ -415,9 +400,9 @@ model Exam {
 }
 
 type CompletedExam {
-  id            String
+  id            String      @db.ObjectId
   challengeType Int
-  completedDate Float // TODO(Post-MVP): Change to DateTime?
+  completedDate Int
   examResults   ExamResults
 }
 
@@ -425,7 +410,7 @@ type ExamResults {
   numberOfCorrectAnswers  Int
   numberOfQuestionsInExam Int
   percentCorrect          Float
-  passingPercent          Int
+  passingPercent          Float
   passed                  Boolean
   examTimeInSeconds       Int
 }
