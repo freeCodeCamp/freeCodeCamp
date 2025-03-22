@@ -29,7 +29,7 @@ const testProtectTimeout = 1500;
 const loopsPerTimeoutCheck = 100;
 const testLoopsPerTimeoutCheck = 2000;
 // const MODULE_TRANSFORM_PLUGIN = 'transform-modules-commonjs';
-const TRANSFORM_MODULES = [];
+const TRANSFORM_MODULES = ['transform-modules-umd'];
 
 function loopProtectCB(line) {
   console.log(
@@ -232,12 +232,9 @@ async function transformScript(documentElement, { useModules }) {
     // We could use babel standalone to transform inline code in the preview,
     // but that generates a warning that's shown to learner. By removing the
     // type attribute and transforming the code we can avoid that warning.
-    if (script.type === 'module') {
-      return;
-    }
 
     if (isBabel && !hasSource) {
-      script.setAttribute('type', 'module');
+      script.removeAttribute('type');
       script.setAttribute('data-type', 'text/babel');
     }
 
