@@ -210,7 +210,11 @@ const ShowBackEnd = (props: BackEndProps) => {
               <Spacer size='m' />
             </Col>
             <CompletionModal />
-            <HelpModal challengeTitle={title} challengeBlock={blockName} />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={blockName}
+              superBlock={superBlock}
+            />
           </Row>
         </Container>
       </LearnLayout>

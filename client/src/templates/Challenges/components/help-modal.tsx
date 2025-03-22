@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
 import { Button, FormControl, Modal, Spacer } from '@freecodecamp/ui';
 
+import i18next from 'i18next';
 import envData from '../../../../config/env.json';
 import { createQuestion, closeModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';
@@ -17,6 +18,7 @@ interface HelpModalProps {
   isOpen?: boolean;
   challengeTitle: string;
   challengeBlock: string;
+  superBlock: string;
 }
 
 const { forumLocation } = envData;
@@ -33,12 +35,14 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-export const generateSearchLink = (title: string, block: string) => {
-  const blockWithoutHyphens = block.replace(/-/g, ' ');
+export const generateSearchLink = (
+  title: string,
+  block: string,
+  superBlock: string
+) => {
+  const titleText = i18next.t(`intro:${superBlock}.blocks.${block}.title`);
+  const query = encodeURIComponent(`${titleText} - ${title}`);
 
-  const query = /^(step|task)\s*\d*$/i.test(title)
-    ? encodeURIComponent(`${blockWithoutHyphens} - ${title}`)
-    : encodeURIComponent(title);
   const search = `${forumLocation}/search?q=${query}`;
   return search;
 };
@@ -93,6 +97,7 @@ function HelpModal({
   createQuestion,
   isOpen,
   challengeBlock,
+  superBlock,
   challengeTitle
 }: HelpModalProps): JSX.Element {
   const { t } = useTranslation();
@@ -178,7 +183,11 @@ function HelpModal({
                   setSimilarQuestionsCheckbox(event.target.checked)
                 }
                 value={similarQuestionsCheckbox}
-                href={generateSearchLink(challengeTitle, challengeBlock)}
+                href={generateSearchLink(
+                  challengeTitle,
+                  challengeBlock,
+                  superBlock
+                )}
               />
             </fieldset>
 
@@ -255,7 +264,11 @@ function HelpModal({
                 <p>
                   <Trans i18nKey='learn.rsa-forum'>
                     <a
-                      href={generateSearchLink(challengeTitle, challengeBlock)}
+                      href={generateSearchLink(
+                        challengeTitle,
+                        challengeBlock,
+                        superBlock
+                      )}
                       rel='noopener noreferrer'
                       target='_blank'
                     >
