@@ -4,6 +4,7 @@ title: Build a Number Guessing Game
 challengeType: 13
 url: freeCodeCamp/learn-number-guessing-game
 dashedName: build-a-number-guessing-game
+solutionLink: https://empty.com
 ---
 
 # --description--

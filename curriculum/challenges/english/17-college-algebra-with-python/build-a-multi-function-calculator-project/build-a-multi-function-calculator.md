@@ -3,6 +3,7 @@ id: 63d83ff239c73468b059cd3f
 title: "Build a Multi-Function Calculator"
 challengeType: 10
 dashedName: build-a-multi-function-calculator
+solutionLink: https://empty.com
 ---
 
 # --description--
