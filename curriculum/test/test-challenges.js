@@ -208,9 +208,11 @@ async function setup() {
   }
 
   if (process.env.FCC_CHALLENGE_ID) {
-    console.log(`\nChallenge Id being tested: ${process.env.FCC_CHALLENGE_ID}`);
+    console.log(
+      `\nChallenge Id being tested: ${process.env.FCC_CHALLENGE_ID.trim()}`
+    );
     const challengeIndex = challenges.findIndex(
-      challenge => challenge.id === process.env.FCC_CHALLENGE_ID
+      challenge => challenge.id === process.env.FCC_CHALLENGE_ID.trim()
     );
     if (challengeIndex === -1) {
       throw new Error(

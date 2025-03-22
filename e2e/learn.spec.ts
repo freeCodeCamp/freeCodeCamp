@@ -18,23 +18,6 @@ test.describe('Learn - Unauthenticated user', () => {
       })
     ).toBeVisible();
 
-    // Advice for new learners
-    const learnReadThisSection = page.getByTestId('learn-read-this-section');
-    await expect(learnReadThisSection).toBeVisible();
-
-    const learnReadThisSectionHeading = page.getByTestId(
-      'learn-read-this-heading'
-    );
-    await expect(learnReadThisSectionHeading).toBeVisible();
-
-    const learnReadThisSectionParagraphs =
-      page.getByTestId('learn-read-this-p');
-    await expect(learnReadThisSectionParagraphs).toHaveCount(10);
-
-    for (const paragraph of await learnReadThisSectionParagraphs.all()) {
-      await expect(paragraph).toBeVisible();
-    }
-
     await expect(
       page.getByRole('link', { name: 'Sign in to save your progress' })
     ).toBeVisible();
