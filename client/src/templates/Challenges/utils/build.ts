@@ -153,11 +153,11 @@ export function getTestRunner(
 }
 
 function getJSTestRunner(
-  { build, sources }: BuildChallengeData,
+  { build, sources, hooks }: BuildChallengeData,
   { proxyLogger }: TestRunnerConfig
 ) {
   return getWorkerTestRunner(
-    { build, sources },
+    { build, sources, hooks },
     { proxyLogger },
     jsWorkerExecutor
   );
@@ -175,7 +175,11 @@ function getPyTestRunner(
 }
 
 function getWorkerTestRunner(
-  { build, sources }: Pick<BuildChallengeData, 'build' | 'sources'>,
+  {
+    build,
+    sources,
+    hooks
+  }: Pick<BuildChallengeData, 'build' | 'sources' | 'hooks'>,
   { proxyLogger }: TestRunnerConfig,
   workerExecutor: WorkerExecutor
 ) {
@@ -192,7 +196,7 @@ function getWorkerTestRunner(
 
   return (testString: string, testTimeout: number, firstTest = true) => {
     const result = workerExecutor.execute(
-      { build, testString, code, sources, firstTest },
+      { build, testString, code, sources, firstTest, hooks },
       testTimeout
     ) as TestWorkerExecutor;
 
