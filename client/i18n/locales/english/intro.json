@@ -3456,7 +3456,13 @@
         ]
       },
       "ffpt": { "title": "279", "intro": [] },
-      "lrof": { "title": "280", "intro": [] },
+      "lab-otp-generator": {
+        "title": "Build an OTP Generator",
+        "intro": [
+          "In this lab you'll build an OTP generator.",
+          "You'll practice using the useEffect hooks to create a timer and generate a random OTP."
+        ]
+      },
       "vyzp": { "title": "281", "intro": [] },
       "review-react-forms-data-fetching-and-routing": {
         "title": "React Forms, Data Fetching and Routing Review",
