@@ -4,7 +4,6 @@ import { Spacer } from '@freecodecamp/ui';
 import { randomQuote } from '../../utils/get-words';
 import Login from '../Header/components/login';
 import { Link, Loader } from '../helpers';
-import IntroDescription from './components/intro-description';
 
 import './intro.css';
 import LearnAlert from './learn-alert';
@@ -83,15 +82,9 @@ const Intro = ({
     return (
       <>
         <Spacer size='m' />
-        <h1
-          id='content-start'
-          className='text-center'
-          data-playwright-test-label='learn-heading'
-        >
+        <h1 id='content-start' className='text-center'>
           {t('learn.heading')}
         </h1>
-        <Spacer size='m' />
-        <IntroDescription />
         <Spacer size='m' />
         <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
         <Spacer size='m' />
