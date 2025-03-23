@@ -1,4 +1,4 @@
-name: CD -- Deploy API (Legacy) & Clients
+name: CD - Deploy API (Legacy) & Clients
 
 on:
   workflow_dispatch:
