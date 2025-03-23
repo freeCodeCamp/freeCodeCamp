@@ -12,8 +12,59 @@ jobs:
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }} # prd, stg
       tgt_env_long: ${{ steps.setup.outputs.tgt_env_long }} # production, staging
     steps:
+      - name: Validate
+        id: check
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const workflows = ['node.js-tests.yml'];
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const branch = context.ref.replace('refs/heads/', '');
+            const sha = context.sha;
+
+            for (const workflow_id of workflows) {
+              console.log(`\nChecking workflow ${workflow_id} for branch ${branch} at commit ${sha}`);
+
+              const response = await github.rest.actions.listWorkflowRuns({
+                owner,
+                repo,
+                workflow_id,
+                branch,
+                head_sha: sha,
+                status: 'completed',
+                per_page: 1
+              });
+
+              if (response.data.workflow_runs.length === 0) {
+                core.setFailed(`No completed workflow runs found for ${workflow_id} on branch ${branch}`);
+                return false;
+              }
+
+              const latestRun = response.data.workflow_runs[0];
+              console.log(`Latest run: ${latestRun.html_url}`);
+              console.log(`Status: ${latestRun.status}`);
+              console.log(`Conclusion: ${latestRun.conclusion}`);
+
+              if (latestRun.status !== 'completed') {
+                core.setFailed(`Latest workflow run is not completed. Current status: ${latestRun.status}`);
+                return false;
+              }
+
+              if (latestRun.conclusion !== 'success') {
+                const failureMessage = `Workflow ${workflow_id} failed on branch ${branch} at commit ${sha}. ` +
+                  `Latest run: ${latestRun.html_url}. Conclusion: ${latestRun.conclusion}`;
+                core.setFailed(failureMessage);
+                return false;
+              }
+            }
+
+            console.log('\nAll workflow checks passed!');
+            return true;
+
       - name: Setup
         id: setup
+        if: ${{ steps.check.outputs.result == 'true' }}
         run: |
           case "${{ github.ref }}" in
             "refs/heads/prod-current")
