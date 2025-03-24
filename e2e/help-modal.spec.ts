@@ -241,7 +241,7 @@ test.describe('Help Modal component', () => {
     });
     await expect(link).toHaveAttribute(
       'href',
-      'https://forum.freecodecamp.org/search?q=Write%20Your%20First%20Code%20Using%20C%23%20-%20Write%20Your%20First%20C%23%20Code'
+      'https://forum.freecodecamp.org/search?q=Write%20Your%20First%20Code%20Using%20C%23%20-%20Write%20Your%20First%20C%23%20Code%20in%3Atitle'
     );
     await expect(link).toHaveAttribute('target', '_blank');
     await expect(link).toHaveAttribute('rel', 'noopener noreferrer');

@@ -41,7 +41,8 @@ export const generateSearchLink = (
   superBlock: string
 ) => {
   const titleText = i18next.t(`intro:${superBlock}.blocks.${block}.title`);
-  const query = encodeURIComponent(`${titleText} - ${title}`);
+  const selector = 'in:title';
+  const query = encodeURIComponent(`${titleText} - ${title} ${selector}`);
 
   const search = `${forumLocation}/search?q=${query}`;
   return search;
