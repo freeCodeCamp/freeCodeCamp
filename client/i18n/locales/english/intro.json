@@ -1643,7 +1643,9 @@
       },
       "learn-how-to-express-concerns": {
         "title": "Learn How to Express Concerns",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to inform other people that you are worried about things that might happen to your projects and tasks."
+        ]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Learn How to Express Decisions Based on Comparisons",

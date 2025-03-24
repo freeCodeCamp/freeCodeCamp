@@ -232,7 +232,6 @@
     ]
   },
   "settings": {
-    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Condividi i tuoi progetti non-freeCodeCamp, articoli o pull request accettate.",
     "privacy": "Le impostazioni di questa sezione ti permettono di controllare quello che viene mostrato sul tuo portfolio pubblico di freeCodeCamp. Premi salva per salvare le tue modifiche.",
     "data": "Per vedere quali dati teniamo nel tuo account, clicca sul pulsante \"Scarica i tuoi dati\" qui sotto",
@@ -778,13 +777,12 @@
   "search": {
     "label": "Cerca",
     "placeholder": {
-      "default": "Search our tutorials",
-      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+      "default": "Search our news articles, tutorials, and books",
+      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
     },
     "see-results": "Vedi tutti i risultati per {{searchQuery}}",
-    "no-tutorials": "Nessun tutorial trovato",
     "try": "Cerchi qualcosa? Prova la barra di ricerca su questa pagina.",
-    "no-results": "Non è stato possibile trovare nulla relativo a <0>{{query}}</0>",
+    "no-results": "No results found",
     "result-list": "Search results"
   },
   "misc": {

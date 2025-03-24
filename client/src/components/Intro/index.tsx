@@ -55,7 +55,7 @@ const Intro = ({
           <blockquote className='blockquote' data-testid='quote-block'>
             <span>
               <q data-playwright-test-label='random-quote'>{quote}</q>
-              <footer className='quote-author blockquote-footer'>
+              <footer className='quote-author'>
                 <cite data-playwright-test-label='random-author'>{author}</cite>
               </footer>
             </span>

@@ -232,7 +232,6 @@
     ]
   },
   "settings": {
-    "profile-note": "注意：個人資料設置已移至個人主頁。",
     "share-projects": "分享你在 freeCodeCamp 之外做的項目，寫的文章或者在 GitHub 上被接受的 pull requests。",
     "privacy": "你可以在本節的設置中管理哪些內容可以展示在 freeCodeCamp 公開作品集，點擊“保存”以存儲你的修改。",
     "data": "請點擊下面的“下載你的數據”按鈕，查看我們在你的賬戶上保存的數據",
@@ -778,13 +777,12 @@
   "search": {
     "label": "搜索",
     "placeholder": {
-      "default": "搜索我們的教程",
-      "numbered": "搜索 {{ roundedTotalRecords }}+ 篇教程"
+      "default": "Search our news articles, tutorials, and books",
+      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
     },
     "see-results": "查看 {{searchQuery}} 的所有結果",
-    "no-tutorials": "未找到教程",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",
-    "no-results": "我們未找到關於 <0>{{query}}</0> 的任何信息",
+    "no-results": "No results found",
     "result-list": "搜索結果"
   },
   "misc": {
