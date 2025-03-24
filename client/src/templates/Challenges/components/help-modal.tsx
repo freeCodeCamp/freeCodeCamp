@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
 import { Button, FormControl, Modal, Spacer } from '@freecodecamp/ui';
 
-import i18next from 'i18next';
+import { t } from 'i18next';
 import envData from '../../../../config/env.json';
 import { createQuestion, closeModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';
@@ -40,7 +40,7 @@ export const generateSearchLink = (
   block: string,
   superBlock: string
 ) => {
-  const titleText = i18next.t(`intro:${superBlock}.blocks.${block}.title`);
+  const titleText = t(`intro:${superBlock}.blocks.${block}.title`);
   const selector = 'in:title';
   const query = encodeURIComponent(`${titleText} - ${title} ${selector}`);
 
