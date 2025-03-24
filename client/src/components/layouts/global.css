@@ -35,9 +35,7 @@ legend {
   margin-bottom: 20px;
   font-size: 21px;
   line-height: inherit;
-  color: #333;
   border: 0;
-  border-bottom: 1px solid #e5e5e5;
 }
 
 /* TODO: Move this rule to @freecodecamp/ui. */
@@ -45,25 +43,9 @@ blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
   font-size: 17.5px;
-  border-left: 5px solid #eeeeee;
+  border-left: 5px solid var(--quaternary-background);
 }
 
-/* TODO: Move this rule to @freecodecamp/ui. */
-blockquote footer,
-blockquote small,
-blockquote .small {
-  display: block;
-  font-size: 80%;
-  line-height: 1.42857143;
-  color: var(--gray-45);
-}
-
-/* TODO: Move this rule to @freecodecamp/ui. */
-blockquote footer:before,
-blockquote small:before,
-blockquote .small:before {
-  content: '\2014 \00A0';
-}
 
 /* TODO: Move this rule to @freecodecamp/ui. */
 ul {
