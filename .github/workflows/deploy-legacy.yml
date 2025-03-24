@@ -11,6 +11,7 @@ jobs:
       site_tld: ${{ steps.setup.outputs.site_tld }} # org, dev
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }} # prd, stg
       tgt_env_long: ${{ steps.setup.outputs.tgt_env_long }} # production, staging
+      tgt_env_branch: ${{ steps.setup.outputs.tgt_env_branch }} # prod-current, prod-staging
     steps:
       - name: Setup
         id: setup
@@ -20,11 +21,13 @@ jobs:
               echo "site_tld=org" >> $GITHUB_OUTPUT
               echo "tgt_env_short=prd" >> $GITHUB_OUTPUT
               echo "tgt_env_long=production" >> $GITHUB_OUTPUT
+              echo "tgt_env_branch=prod-current" >> $GITHUB_OUTPUT
               ;;
             *)
               echo "site_tld=dev" >> $GITHUB_OUTPUT
               echo "tgt_env_short=stg" >> $GITHUB_OUTPUT
               echo "tgt_env_long=staging" >> $GITHUB_OUTPUT
+              echo "tgt_env_branch=prod-staging" >> $GITHUB_OUTPUT
               ;;
           esac
 
@@ -68,7 +71,7 @@ jobs:
 
       - name: Deploy API
         run: |
-          export GIT_SOURCE_BRANCH=prod-${{ needs.setup-jobs.outputs.tgt_env_long }}
+          export GIT_SOURCE_BRANCH=${{ needs.setup-jobs.outputs.tgt_env_branch }}
           for i in {1..3}; do
             TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-api-${i}
             ssh $TS_USERNAME@$TS_MACHINE_NAME /bin/bash << EOF
@@ -76,17 +79,14 @@ jobs:
               echo "Deploying API (Legacy) to $TS_MACHINE_NAME"
 
               cd /home/$TS_USERNAME/freeCodeCamp
-              if [ $? -ne 0 ]; then echo "::error::Failed to change to working directory"; exit 1; fi
 
               # Environment setup
               export NVM_DIR=\$HOME/.nvm && [ -s "\$NVM_DIR/nvm.sh" ] && source "\$NVM_DIR/nvm.sh" && \
               nvm ls | grep 'default' && \
               echo "Node.js version:" && node --version
-              if [ $? -ne 0 ]; then echo "::error::Failed during environment setup"; exit 1; fi
 
               # Stop all PM2 services
               pm2 stop all
-              if [ $? -ne 0 ]; then echo "::error::Failed to stop PM2 services"; exit 1; fi
 
               # Git operations
               git status && \
@@ -95,7 +95,6 @@ jobs:
               git checkout -f $GIT_SOURCE_BRANCH && \
               git reset --hard origin/$GIT_SOURCE_BRANCH && \
               git status
-              if [ $? -ne 0 ]; then echo "::error::Failed during git operations"; exit 1; fi
 
               # Build
               npm i -g pnpm@9 && \
@@ -105,14 +104,16 @@ jobs:
               pnpm prebuild && \
               pnpm build:curriculum && \
               pnpm build:server
-              if [ $? -ne 0 ]; then echo "::error::Failed during build process"; exit 1; fi
 
               # Server reload
               pnpm reload:server && \
               pm2 ls && \
               pm2 save
-              if [ $? -ne 0 ]; then echo "::error::Failed during server reload"; exit 1; fi
           EOF
+            if [ $? -ne 0 ]; then
+              echo "::error::Deployment to $TS_MACHINE_NAME failed"
+              exit 1
+            fi
           done
 
   client:
@@ -260,19 +261,15 @@ jobs:
             tar -xzf $CLIENT_DST -C /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES --strip-components=2 && \
             rm $CLIENT_DST && \
             du -sh /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES
-            if [ $? -ne 0 ]; then echo "::error::Failed to extract client archive"; exit 1; fi
 
             cd /home/$TS_USERNAME/client
-            if [ $? -ne 0 ]; then echo "::error::Failed to change to working directory"; exit 1; fi
 
             # Environment setup
             export NVM_DIR=\$HOME/.nvm && [ -s "\$NVM_DIR/nvm.sh" ] && source "\$NVM_DIR/nvm.sh" && \
             nvm ls | grep 'default' && \
             echo "Node.js version:" && node --version
-            if [ $? -ne 0 ]; then echo "::error::Failed during environment setup"; exit 1; fi
 
             npm install -g serve@13
-            if [ $? -ne 0 ]; then echo "::error::Failed to install serve"; exit 1; fi
 
             # Primary client setup
             rm -f client-start-primary.sh && \
@@ -280,7 +277,6 @@ jobs:
             chmod +x client-start-primary.sh && \
             pm2 delete client-primary || true && \
             pm2 start ./client-start-primary.sh --name client-primary
-            if [ $? -ne 0 ]; then echo "::error::Failed to setup primary client"; exit 1; fi
 
             # Secondary client setup
             rm -f client-start-secondary.sh && \
@@ -288,6 +284,9 @@ jobs:
             chmod +x client-start-secondary.sh && \
             pm2 delete client-secondary || true && \
             pm2 start ./client-start-secondary.sh --name client-secondary
-            if [ $? -ne 0 ]; then echo "::error::Failed to setup secondary client"; exit 1; fi
           EOF
+            if [ $? -ne 0 ]; then
+              echo "::error::Deployment to $TS_MACHINE_NAME failed"
+              exit 1
+            fi
           done
