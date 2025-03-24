@@ -14,7 +14,6 @@ jobs:
     steps:
       - name: Setup
         id: setup
-        if: ${{ steps.check.outputs.result == 'true' }}
         run: |
           case "${{ github.ref }}" in
             "refs/heads/prod-current")
@@ -202,7 +201,7 @@ jobs:
           PATREON_CLIENT_ID: ${{ secrets.PATREON_CLIENT_ID }}
           PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
           STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
-          SHOW_UPCOMING_CHANGES: ${{ vars.SHOW_UPCOMING_CHANGES }}
+          SHOW_UPCOMING_CHANGES: ${{ vars.SHOW_UPCOMING_CHANGES || 'false' }}
           FREECODECAMP_NODE_ENV: production
           # The below is used in ecosystem.config.js file for the API -- to be removed later
           DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
