@@ -1182,9 +1182,9 @@
       "Проєкт «Odin» був створений розробником Еріком Траутманом у 2013 році. Протягом років з’явилася відкрита спільнота, яка доглядає за проєктом та розширює його.",
       "freeCodeCamp розширив відкриту навчальну програму, щоб зробити її інтерактивною у браузері. Проєкт міститиме тести, щоб оцінити ваш код та переконатись, що ви зрозуміли основні поняття.",
       "Якщо ви хочете отримати оригінальний досвід налаштування проєкту на локальному комп’ютері, див. першоджерело проєкту на <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project</a>. Велика подяка спільноті проєкту «Odin» за підтримку цього цінного навчального ресурсу для розробників з усього світу.",
-      "Цей курс неофіційний та не підтримується The Odin Project. До навчальної програми проєкту було внесено зміни, а весь навчальний матеріал курсу підлягає ліцензуванню <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
+      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
       "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; Проєкт «Odin»</a>",
-      "Цей курс містить матеріал з <a href='javascript.info'>JavaScript.info</a>, що підлягає ліцензуванню <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
+      "This course includes content from <a href='https://javascript.info/' target='_blank' rel='noopener noreferrer nofollow'>JavaScript.info</a>, which is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>."
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1623,11 +1623,15 @@
       },
       "learn-how-to-express-disagreement": {
         "title": "Дізнайтесь, як виражати незгоду",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви навчитесь виражати незгоду в будь-якій ситуації на роботі."
+        ]
       },
       "learn-how-to-express-concerns": {
         "title": "Дізнайтесь, як виражати занепокоєння",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви навчитеся ділитись переживаннями щодо своїх проєктів і завдань."
+        ]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Дізнайтесь, як виражати вибір на основі порівняння",
@@ -3964,7 +3968,7 @@
   },
   "misc-text": {
     "certification": "Сертифікація «{{cert}}»",
-    "browse-other": "Перегляньте інші безоплатні сертифікації\n(ми рекомендуємо виконувати їх послідовно)",
+    "browse-other": "Browse our other free certifications",
     "courses": "Курси",
     "steps": "Кроки",
     "expand": "Розгорнути курс",

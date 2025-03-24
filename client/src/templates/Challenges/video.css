@@ -150,3 +150,10 @@ input:focus-visible + .video-quiz-input-visible {
 .mcq-prism-incorrect code {
   color: var(--danger-color);
 }
+
+/* Override the default styles of `legend` element */
+.mcq-question-text {
+  border: none;
+  color: var(--primary-color);
+  margin: 0;
+}
