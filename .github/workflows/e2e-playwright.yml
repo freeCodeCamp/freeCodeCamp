@@ -181,14 +181,14 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
-          name: playwright-report-${{ matrix.browsers }}
+          name: playwright-report-old-api-${{ matrix.browsers }}
           path: playwright/reporter
           retention-days: 30
       - name: Upload screenshots
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: screenshots-${{ matrix.browsers }}
+          name: screenshots-old-api-${{ matrix.browsers }}
           path: playwright/test-results
           retention-days: 14
 
