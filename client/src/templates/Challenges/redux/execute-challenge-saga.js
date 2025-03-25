@@ -135,6 +135,7 @@ export function* executeChallengeSaga({ payload }) {
       document
     );
     const testResults = yield executeTests(testRunner, tests);
+    console.log('testResults', testResults);
     yield put(updateTests(testResults));
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
