@@ -171,19 +171,28 @@ function getContentDocument<T extends Document = FrameDocument>(
   return frameDocument as T;
 }
 
+function getContentWindow(document: Document, id: string) {
+  const frame = document.getElementById(id);
+  if (!frame) return null;
+  return (frame as HTMLIFrameElement).contentWindow;
+}
+
 export const runTestInTestFrame = async function (
   document: Document,
   test: string,
   timeout: number
 ): Promise<TestResult | undefined> {
+  console.log('runTestInTestFrame');
   const contentDocument = getContentDocument(document, testId);
+  const runner = getContentWindow(document, testId)?.FCCSandbox.testRunner;
+  console.log('runner', runner);
   if (contentDocument) {
     return await Promise.race([
       new Promise<
         { pass: boolean } | { err: { message: string; stack?: string } }
         // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
       >((_, reject) => setTimeout(() => reject('timeout'), timeout)),
-      contentDocument.__runTest(test)
+      runner.runTest(test)
     ]);
   }
 };
@@ -314,9 +323,14 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
   waitForFrame(frameContext)
     .then(async () => {
       const { sources, loadEnzyme } = frameContext;
-      await frameContext.window?.document?.__initTestFrame({
+      // provide the file name and get the original source
+
+      console.log('FCCSandbox', frameContext.window?.FCCSandbox);
+      await frameContext.window?.FCCSandbox.createTestRunner({
+        type: 'frame',
         code: sources,
-        loadEnzyme
+        source: sources.contents,
+        assetPath: '/js/test-runner/',
       });
 
       if (frameReady) frameReady();
@@ -362,6 +376,7 @@ const initMainFrame =
   };
 
 function handleDocumentNotFound(err: string) {
+  console.log('Document not found', err);
   if (err !== DOCUMENT_NOT_FOUND_ERROR) {
     console.log(err);
   }

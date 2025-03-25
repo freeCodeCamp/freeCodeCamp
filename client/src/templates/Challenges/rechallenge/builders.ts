@@ -35,7 +35,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
 
   // The script has an id so that tests can look for it, if needed.
   const testRunnerScript = testRunner
-    ? `<script id="fcc-test-runner" src='${testRunner}' type='text/javascript'></script>`
+    ? `<script type="text/javascript" id="fcc-test-runner" src='/js/test-runner/index.mjs'></script>`
     : '';
 
   return `<head>${head}</head>${
