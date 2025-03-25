@@ -13,7 +13,7 @@ const isMarker = node => {
       child.value.endsWith('--') &&
       node.type === 'heading'
     );
-  };
+  }
   return false;
 };
 
