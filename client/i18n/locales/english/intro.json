@@ -3558,9 +3558,9 @@
         "intro": ["Test what you've learned on testing with this quiz."]
       },
       "lecture-introduction-to-typescript": {
-        "title": "Introduction to Typescript",
+        "title": "Introduction to TypeScript",
         "intro": [
-          "In these lecture videos, you will learn what Typescript is and how to use it."
+          "In these lecture videos, you will learn what TypeScript is and how to use it."
         ]
       },
       "trvf": { "title": "293", "intro": [] },
