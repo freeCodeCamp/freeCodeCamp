@@ -2,9 +2,16 @@ name: CD - Deploy API (Legacy) & Clients
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: [CI - Node.js]
+    types:
+      - completed
+    branches:
+      - prod-*
 
 jobs:
   setup-jobs:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Setup Jobs
     runs-on: ubuntu-22.04
     outputs:
@@ -12,10 +19,12 @@ jobs:
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }} # prd, stg
       tgt_env_long: ${{ steps.setup.outputs.tgt_env_long }} # production, staging
       tgt_env_branch: ${{ steps.setup.outputs.tgt_env_branch }} # prod-current, prod-staging
+      chat_webhook_url: ${{ steps.setup.outputs.chat_webhook_url }}
     steps:
       - name: Setup
         id: setup
         run: |
+          echo "chat_webhook_url=${{ secrets.GOOGLE_CHAT_WEBHOOK_URL }}/?threadKey=${{ github.run_id }}" >> $GITHUB_OUTPUT
           case "${{ github.ref }}" in
             "refs/heads/prod-current")
               echo "site_tld=org" >> $GITHUB_OUTPUT
@@ -31,9 +40,32 @@ jobs:
               ;;
           esac
 
+      - name: Notify new deployment
+        run: |
+          MESSAGE="Deploying API (Legacy) to ${{ steps.setup.outputs.tgt_env_long }}.
+          curl -X POST -H "Content-Type: application/json" -d "{\"text\": \"$MESSAGE\"}" ${{ steps.setup.outputs.chat_webhook_url }}
+
+          MESSAGE="Approve or Reject: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          curl -X POST -H "Content-Type: application/json" -d "{\"text\": \"$MESSAGE\"}" ${{ steps.setup.outputs.chat_webhook_url }}
+
+  approve-jobs:
+    name: Approve or Reject
+    needs: [setup-jobs]
+    runs-on: ubuntu-22.04
+    permissions:
+      deployments: write
+      contents: read
+    environment:
+      name: noop
+    steps:
+      - name: Notify Status
+        run: |
+          MESSAGE="Approved. Proceeding with deployment."
+          curl -X POST -H "Content-Type: application/json" -d "{\"text\": \"$MESSAGE\"}" ${{ needs.setup-jobs.outputs.chat_webhook_url }}
+
   api:
     name: API (Legacy) - [${{ needs.setup-jobs.outputs.tgt_env_short }}]
-    needs: [setup-jobs]
+    needs: [setup-jobs, approve-jobs]
     runs-on: ubuntu-22.04
     permissions:
       deployments: write
@@ -118,7 +150,7 @@ jobs:
 
   client:
     name: Clients - [${{ needs.setup-jobs.outputs.tgt_env_short }}] [${{ matrix.lang-name-short }}]
-    needs: [setup-jobs, api]
+    needs: [setup-jobs, approve-jobs, api]
     runs-on: ubuntu-22.04
     strategy:
       matrix:
