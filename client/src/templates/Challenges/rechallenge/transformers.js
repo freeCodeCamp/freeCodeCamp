@@ -28,8 +28,7 @@ const protectTimeout = 100;
 const testProtectTimeout = 1500;
 const loopsPerTimeoutCheck = 100;
 const testLoopsPerTimeoutCheck = 2000;
-// const MODULE_TRANSFORM_PLUGIN = 'transform-modules-commonjs';
-const TRANSFORM_MODULES = ['transform-modules-umd'];
+const MODULE_TRANSFORM_PLUGIN = 'transform-modules-umd';
 
 function loopProtectCB(line) {
   console.log(
@@ -90,12 +89,8 @@ async function loadPresetReact() {
   };
 }
 
-const babelTransformCode = options => code => {
-  // console.log(code);
-  const transform = Babel.transform(code, options);
-  // console.log(transform.code);
-  return transform.code;
-};
+const babelTransformCode = options => code =>
+  Babel.transform(code, options).code;
 
 const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 
@@ -139,7 +134,7 @@ const getJSXModuleTranspiler = loopProtectOptions => async challengeFile => {
   const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
   const babelOptions = {
     ...baseOptions,
-    plugins: [...baseOptions.plugins, ...TRANSFORM_MODULES],
+    plugins: [...baseOptions.plugins, MODULE_TRANSFORM_PLUGIN],
     moduleId: 'index' // TODO: this should be dynamic
   };
   return transformContents(babelTransformCode(babelOptions), challengeFile);
@@ -222,7 +217,7 @@ async function transformScript(documentElement, { useModules }) {
 
     const options = {
       ...baseOptions,
-      ...(useModules && { plugins: TRANSFORM_MODULES })
+      ...(useModules && { plugins: [MODULE_TRANSFORM_PLUGIN] })
     };
 
     // The type has to be removed, otherwise the browser will ignore the script.
@@ -232,7 +227,6 @@ async function transformScript(documentElement, { useModules }) {
     // We could use babel standalone to transform inline code in the preview,
     // but that generates a warning that's shown to learner. By removing the
     // type attribute and transforming the code we can avoid that warning.
-
     if (isBabel && !hasSource) {
       script.removeAttribute('type');
       script.setAttribute('data-type', 'text/babel');
@@ -266,10 +260,10 @@ export const embedFilesInHtml = async function (challengeFiles) {
 
     const jsxScript =
       documentElement.querySelector(
-        `script[type="text/babel"][src="index.jsx"]`
+        `script[data-plugins="${MODULE_TRANSFORM_PLUGIN}"][type="text/babel"][src="index.jsx"]`
       ) ??
       documentElement.querySelector(
-        `script[type="text/babel"][src="./index.jsx"]`
+        `script[data-plugins="${MODULE_TRANSFORM_PLUGIN}"][type="text/babel"][src="./index.jsx"]`
       );
 
     if (link) {

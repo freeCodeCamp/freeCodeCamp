@@ -78,17 +78,17 @@ function translateGeneric({ text }, config, regexBefore, regexAfter) {
   const regex = new RegExp(regexBefore + '(.*?)' + regexAfter, 'gms');
   const matches = text.matchAll(regex);
 
-  //   for (const [match, before, comment, after] of matches) {
-  //     if (knownComments.includes(comment)) {
-  //       text = text.replace(match, `${before}${dict[comment][lang]}${after}`);
-  //     } else if (comment.trim()) {
-  //       throw `The comment
-  // ${comment}
-  // does not appear in the comment dictionary.
-  // When updating or adding a comment it must have the same text in the English challenges and the comment dictionary.
-  // `;
-  //     }
-  //   }
+  for (const [match, before, comment, after] of matches) {
+    if (knownComments.includes(comment)) {
+      text = text.replace(match, `${before}${dict[comment][lang]}${after}`);
+    } else if (comment.trim()) {
+      throw `The comment
+${comment}
+does not appear in the comment dictionary.
+When updating or adding a comment it must have the same text in the English challenges and the comment dictionary.
+`;
+    }
+  }
 
   return { text };
 }
