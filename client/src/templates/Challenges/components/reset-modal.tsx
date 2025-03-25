@@ -15,6 +15,7 @@ interface ResetModalProps {
   isOpen: boolean;
   challengeType: number;
   reset: () => void;
+  lessonTitle: string;
 }
 
 const mapStateToProps = createSelector(
@@ -41,7 +42,8 @@ function ResetModal({
   reset,
   close,
   challengeType,
-  isOpen
+  isOpen,
+  lessonTitle
 }: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
   if (isOpen) {
