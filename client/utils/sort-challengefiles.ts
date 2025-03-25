@@ -1,8 +1,7 @@
 export function sortChallengeFiles<File extends { fileKey: string }>(
   challengeFiles: File[]
 ): File[] {
-  const xs = challengeFiles.slice();
-  xs.sort((a, b) => {
+  return challengeFiles.toSorted((a, b) => {
     if (a.fileKey === 'indexjsx') return -1;
     if (b.fileKey === 'indexjsx') return 1;
     if (a.fileKey === 'indexhtml') return -1;
@@ -15,5 +14,4 @@ export function sortChallengeFiles<File extends { fileKey: string }>(
     if (b.fileKey === 'indexts') return 1;
     return 0;
   });
-  return xs;
 }
