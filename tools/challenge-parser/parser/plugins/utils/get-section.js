@@ -13,9 +13,8 @@ const isMarker = node => {
       child.value.endsWith('--') &&
       node.type === 'heading'
     );
-  } else {
-    return false;
-  }
+  };
+  return false;
 };
 
 function _getSection(tree) {
