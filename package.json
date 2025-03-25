@@ -57,7 +57,6 @@
     "lint:ts": "tsc && tsc -p shared && tsc -p api && tsc -p client",
     "lint:prettier": "prettier --list-different .",
     "lint:css": "stylelint '**/*.css'",
-    "reload:server": "pm2 reload api-server/ecosystem.config.js",
     "preseed": "npm-run-all create:shared",
     "playwright:install-build-tools": "npx playwright install --with-deps",
     "rename-challenges": "tsx tools/challenge-helper-scripts/rename-challenge-files.ts",
