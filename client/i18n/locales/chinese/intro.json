@@ -1182,9 +1182,9 @@
       "The Odin Project 由开发人员 Erik Trautman 创建于 2013 年。多年来，开源社区不断维护和扩展该项目。",
       "freeCodeCamp 在开源课程的基础上进行了扩展，使其可以在浏览器中交互运行，并通过测试来评估你的代码，确保你理解了关键概念。",
       "如果你想体验在本地计算机上配置运行所有 The Odin Project，可以在 <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project 网站</a> 上查看原始的 Odin Project。衷心感谢 The Odin Project 社区持续为世界各地的开发人员维护这一宝贵的学习资源。",
-      "本课程为非官方课程，未经 The Odin Project 认可。本课程对 The Odin Project 课程内容进行了更改。本课程的所有教学材料均采用 CC-BY-SA-NC 4.0 许可协议。",
+      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
       "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
-      "此课程包含来自 <a href='javascript.info'>JavaScript.info</a> 的内容，采用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a> 许可。"
+      "This course includes content from <a href='https://javascript.info/' target='_blank' rel='noopener noreferrer nofollow'>JavaScript.info</a>, which is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>."
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1629,7 +1629,9 @@
       },
       "learn-how-to-express-concerns": {
         "title": "Learn How to Express Concerns",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to inform other people that you are worried about things that might happen to your projects and tasks."
+        ]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Learn How to Express Decisions Based on Comparisons",
@@ -3954,7 +3956,7 @@
   },
   "misc-text": {
     "certification": "{{cert}} 认证",
-    "browse-other": "浏览我们的其他免费认证\n（我们建议你按顺序学习）",
+    "browse-other": "Browse our other free certifications",
     "courses": "课程",
     "steps": "步骤",
     "expand": "展开课程",
