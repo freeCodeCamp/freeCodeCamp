@@ -146,10 +146,10 @@ async function createFirstChallenge( //ignore the naming, I only left it as it i
   }
   
   return `---
-          id: ${Meta.challengeId}
-          title: ${Meta.title}
+          id: ${newMeta.challengeId}
+          title: ${newMeta.title}
           challengeType: 8
-          dashedName: ${Meta.dashedName}
+          dashedName: ${newMeta.dashedName}
           ---
           
           # --description--
