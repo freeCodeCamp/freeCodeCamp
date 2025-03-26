@@ -570,8 +570,7 @@ async function createTestRunner(
 
   const code = {
     contents: sources.index,
-    editableContents: sources.editableContents,
-    original: sources.original
+    editableContents: sources.editableContents
   };
 
   const buildFunction = buildFunctions[challenge.challengeType];

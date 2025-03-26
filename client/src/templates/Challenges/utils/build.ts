@@ -74,22 +74,18 @@ const applyFunction =
 const composeFunctions = (...fns: ApplyFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
-// TODO: split this into at least two functions. One to create 'original' i.e.
-// the source and another to create the contents.
 function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
   // TODO: rename sources.index to sources.contents.
   const source: Source | undefined = challengeFiles?.reduce(
     (sources, challengeFile) => {
       sources.index += challengeFile.source || '';
       sources.contents = sources.index;
-      sources.original[challengeFile.history[0]] = challengeFile.source ?? null;
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },
     {
       index: '',
-      editableContents: '',
-      original: {}
+      editableContents: ''
     } as Source
   );
   return source;
@@ -181,8 +177,7 @@ function getWorkerTestRunner(
 ) {
   const code = {
     contents: sources.index,
-    editableContents: sources.editableContents,
-    original: sources.original
+    editableContents: sources.editableContents
   };
 
   interface TestWorkerExecutor extends WorkerExecutor {
