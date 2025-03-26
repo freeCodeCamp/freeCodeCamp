@@ -112,14 +112,14 @@ async function createMetaJson(
 
 async function createIntroMD(superBlock: string, block: string, title: string) {
   const introMD = `---
-title: Introduction to the ${title}
-block: ${block}
-superBlock: ${superBlock}
+title: Introduction to the ${Meta.title}
+block: ${Meta.block}
+superBlock: ${Meta.superBlock}
 ---
 
-## Introduction to the ${title}
+## Introduction to the ${Meta.title}
 
-This page is for the ${title}.
+This page is for the ${Meta.title}.
 `;
   const dirPath = path.resolve(
     __dirname,
@@ -146,10 +146,10 @@ async function createFirstChallenge( //ignore the naming, I only left it as it i
   }
   
   return `---
-          id: ${challengeId}
-          title: ${title}
+          id: ${Meta.challengeId}
+          title: ${Meta.title}
           challengeType: 8
-          dashedName: ${dashedName}
+          dashedName: ${Meta.dashedName}
           ---
           
           # --description--
