@@ -421,7 +421,6 @@
             { "dashedName": "lab-real-time-counter" },
             { "dashedName": "lab-lightbox-viewer" },
             { "dashedName": "workshop-rps-game" },
-            { "dashedName": "lab-palindrome-checker" },
             { "dashedName": "lab-football-team-cards" },
             {
               "dashedName": "review-dom-manipulation-and-click-events-with-javascript"
@@ -445,6 +444,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-regular-expressions" },
             { "dashedName": "workshop-spam-filter" },
+            { "dashedName": "lab-palindrome-checker" },
             { "dashedName": "lab-markdown-to-html-converter" },
             { "dashedName": "lab-regex-sandbox" },
             { "dashedName": "review-javascript-regular-expressions" },
@@ -584,8 +584,10 @@
           "dashedName": "react-state-hooks-and-routing",
           "comingSoon": true,
           "blocks": [
+            { "dashedName": "review-react-state-and-hooks" },
             { "dashedName": "quiz-react-state-and-hooks" },
-            { "dashedName": "quiz-advanced-react" }
+            { "dashedName": "review-react-forms-data-fetching-and-routing" },
+            { "dashedName": "quiz-react-forms-data-fetching-and-routing" }
           ]
         },
         {
@@ -649,7 +651,7 @@
         {
           "dashedName": "relational-databases",
           "blocks": [
-            { "dashedName": "workshop-mario-database" },
+            { "dashedName": "workshop-database-of-video-game-characters" },
             { "dashedName": "lab-celestial-bodies-database" },
             { "dashedName": "review-relational-database" },
             { "dashedName": "quiz-relational-database" }

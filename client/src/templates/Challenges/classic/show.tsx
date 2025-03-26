@@ -45,6 +45,7 @@ import {
   executeChallenge,
   initConsole,
   initTests,
+  initHooks,
   initVisibleEditors,
   previewMounted,
   updateChallengeMeta,
@@ -86,6 +87,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       createFiles,
       initConsole,
       initTests,
+      initHooks,
       initVisibleEditors,
       updateChallengeMeta,
       challengeMounted,
@@ -108,6 +110,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;
+  initHooks: (hooks?: { beforeAll: string }) => void;
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
   output: string[];
@@ -193,6 +196,7 @@ function ShowClassic({
         title,
         description,
         instructions,
+        hooks,
         fields: { tests, blockName },
         challengeType,
         hasEditableBoundaries,
@@ -216,6 +220,7 @@ function ShowClassic({
   challengeMounted,
   initConsole,
   initTests,
+  initHooks,
   initVisibleEditors,
   updateChallengeMeta,
   openModal,
@@ -359,6 +364,7 @@ function ShowClassic({
     );
 
     initTests(tests);
+    initHooks(hooks);
 
     initVisibleEditors();
 
@@ -516,7 +522,11 @@ function ShowClassic({
           />
         )}
         <CompletionModal />
-        <HelpModal challengeTitle={title} challengeBlock={blockName} />
+        <HelpModal
+          challengeTitle={title}
+          challengeBlock={blockName}
+          superBlock={superBlock}
+        />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal challengeType={challengeType} />
         <ProjectPreviewModal
@@ -556,6 +566,9 @@ export const query = graphql`
         superBlock
         translationPending
         forumTopicId
+        hooks {
+          beforeAll
+        }
         fields {
           blockName
           slug

@@ -20,7 +20,7 @@
   "main": "none",
   "scripts": {
     "preinstall": "npx -y only-allow pnpm",
-    "audit-challenges": "pnpm run create:shared && ts-node tools/challenge-auditor/index.ts",
+    "audit-challenges": "pnpm run create:shared && tsx tools/challenge-auditor/index.ts",
     "analyze-bundle": "webpack-bundle-analyzer",
     "prebuild": "npm-run-all create:shared",
     "build": "npm-run-all -p build:*",
@@ -47,7 +47,7 @@
     "format": "run-s format:eslint format:prettier",
     "format:eslint": "eslint . --fix",
     "format:prettier": "prettier --write .",
-    "i18n-sync": "ts-node ./tools/scripts/sync-i18n.ts",
+    "i18n-sync": "tsx ./tools/scripts/sync-i18n.ts",
     "knip": "npx -y knip@5 --include files",
     "knip:all": "npx -y knip@5 ",
     "prelint": "pnpm run -F=client predevelop",
@@ -57,10 +57,9 @@
     "lint:ts": "tsc && tsc -p shared && tsc -p api && tsc -p client",
     "lint:prettier": "prettier --list-different .",
     "lint:css": "stylelint '**/*.css'",
-    "reload:server": "pm2 reload api-server/ecosystem.config.js",
     "preseed": "npm-run-all create:shared",
     "playwright:install-build-tools": "npx playwright install --with-deps",
-    "rename-challenges": "ts-node tools/challenge-helper-scripts/rename-challenge-files.ts",
+    "rename-challenges": "tsx tools/challenge-helper-scripts/rename-challenge-files.ts",
     "seed": "pnpm seed:surveys && pnpm seed:exams && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user",
     "seed:certified-user": "pnpm seed:surveys && pnpm seed:exams && pnpm seed:ms-username && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user --certified-user",
     "seed:exams": "DEBUG=fcc:* node tools/scripts/seed-exams/create-exams",
@@ -131,7 +130,7 @@
     "prettier": "3.2.5",
     "prismjs": "1.29.0",
     "stylelint": "16.14.1",
-    "ts-node": "10.9.2",
+    "tsx": "4.19.1",
     "typescript": "5.7.3",
     "typescript-eslint": "^8.23.0",
     "webpack-bundle-analyzer": "4.10.1",
@@ -140,7 +139,8 @@
   "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c",
   "pnpm": {
     "patchedDependencies": {
-      "@fastify/oauth2@7.8.1": "patches/@fastify__oauth2@7.8.1.patch"
+      "@fastify/oauth2@7.8.1": "patches/@fastify__oauth2@7.8.1.patch",
+      "@fastify/csrf-protection@6.4.1": "patches/@fastify__csrf-protection@6.4.1.patch"
     },
     "peerDependencyRules": {
       "allowedVersions": {

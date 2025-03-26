@@ -18,7 +18,7 @@ exports[`<Profile/> renders correctly 1`] = `
         class="mx-[-15px] "
       >
         <div
-          class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+          class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]   "
         >
           <div
             class="h-[90px]"
@@ -202,7 +202,7 @@ exports[`<Profile/> renders correctly 1`] = `
               class="mx-[-15px] "
             >
               <div
-                class="social-icons-row min-h-[1px] px-[15px]          "
+                class="social-icons-row min-h-[1px] px-[15px]         "
               >
                 <a
                   aria-label="aria.linkedin"

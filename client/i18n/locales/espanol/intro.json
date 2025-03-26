@@ -300,7 +300,7 @@
     }
   },
   "javascript-algorithms-and-data-structures-v8": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "Algoritmos y estructuras de datos de JavaScript",
     "intro": [
       "Los desarrolladores usan HTML y CSS para controlar el contenido y estilo de una página. También usan JavaScript para hacer interactiva la página.",
       "En esta certificación de Algoritmos de JavaScript y Estructura de Datos, aprenderas los fundamentos de JavaScript, como variables, arreglos, objetos, bucles, funciones, DOM y mucho más.",
@@ -614,7 +614,7 @@
         "title": "Base de datos de la Tabla Periódica",
         "intro": [
           "Este es uno de los proyectos necesarios para obtener su certificación.",
-          "For this project, you will create a Bash script to get information about chemical elements from a periodic table database."
+          "Para este proyecto, crearás un script Bash para obtener información sobre elementos químicos desde una base de datos de la tabla periódica."
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
@@ -672,11 +672,11 @@
           "En este curso de 40 lecciones, aprenderás cómo editar archivos en la terminal con Nano mientras construyes un castillo."
         ]
       },
-      "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Aprende bases de datos relacionales construyendo una base de datos Mario",
+      "learn-relational-databases-by-building-a-database-of-video-game-characters": {
+        "title": "Learn Relational Databases by Building a Database of Video Game Characters",
         "intro": [
-          "Una base de datos relacional organiza datos en tablas que están enlazadas a través de relaciones.",
-          "En este curso de 165 lecciones, aprenderá los fundamentos de una base de datos relacional creando una base de datos PostgreSQL llena de caracteres de videojuego."
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
@@ -772,9 +772,9 @@
     }
   },
   "scientific-computing-with-python": {
-    "title": "Scientific Computing with Python",
+    "title": "Computación científica con Python",
     "intro": [
-      "The Scientific Computing with Python curriculum will equip you with the skills to analyze and manipulate data using Python, a powerful and versatile programming language. You'll learn key concepts like data structures, algorithm, Object Oriented Programming, and how to perform complex calculations using a variety of tools.",
+      "El programa de computación científica con Python te brindará las habilidades para analizar y manipular datos utilizando Python, un lenguaje de programación potente y versátil. Aprenderás conceptos clave como estructuras de datos, algoritmos, programación orientada a objetos y cómo realizar cálculos complejos utilizando una variedad de herramientas.",
       "Este curso guia te guiará hacia los fundamentos de la computación cientifica, incluyendo las estructuras de datos y algoritmos."
     ],
     "note": "",
@@ -1158,8 +1158,8 @@
     "title": "Preparación de Entrevistas de Programación",
     "intro": [
       "Si está buscando ejercicios gratuitos de programación para prepararse para tu próxima entrevista de trabajo, aquí los tenemos.",
-      "This section contains dozens of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio.",
-      "This work incorporates material from <a href=\"https://www.wikipedia.org/\" target=\"_blank\">Wikipedia</a>, which is licensed under the <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\">Creative Commons Attribution-ShareAlike License 4.0</a>. The original content might have been modified and adapted. For the unaltered version and additional details, see the original page on <a href=\"https://www.wikipedia.org/\" target\"_blank\">Wikipedia</a>."
+      "Esta sección contiene docenas de desafíos de codificación que ponen a prueba tus conocimientos de algoritmos, estructuras de datos y matemáticas. También incluye una serie de proyectos para llevar a casa que puedes utilizar para fortalecer tus habilidades o agregar a tu portafolio.",
+      "Este trabajo incorpora material de <a href=\"https://www.wikipedia.org/\" target=\"_blank\">Wikipedia</a>, que se encuentra bajo la licencia <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\">Creative Commons Attribution-ShareAlike License \"4,0\"</a>. El contenido original puede haber sido modificado y adaptado. Para ver la versión inalterada y obtener más detalles, consulte la página original en <a href=\"https://www.wikipedia.org/\" target\"_blank\">Wikipedia</a>."
     ],
     "note": "El Proyecto Euler y el Proyecto Roseta de Codigo han sido trasladados a sus propio cursos. Volviendo al plan de estudio podemos ver la lista de cursos que nosotros ofrecemos.",
     "blocks": {
@@ -1187,14 +1187,14 @@
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project - freeCodeCamp Remix",
+    "title": "El Proyecto Odin: Remix de freeCodeCamp",
     "intro": [
       "El Proyecto Odin fue creado en 2013 por un solitario desarrollador, Erik Trautman. A través de los años, ha surgido una comunidad de código abierto para mantener y ampliar el proyecto.",
       "freeCodeCamp ha ampliado el plan de estudios para el código abierto y hacer que se ejecute de forma interactiva en el navegador, con pruebas para evaluar tu código y garantizar que hayas comprendido los conceptos clave.",
       "Si tu quieres la experiencia original de toda la configuración del Proyecto Odin para ejecutarlo dentro de tu computadora local, tu puedes verificar el Proyecto Odin original en <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>sitio web del Proyecto Odin</a>. Un abrazo gracias a la comunidad de El Proyecto Odin por continuar este valioso recurso de aprendizaje para desarrolladores al rededor de todo el mundo.",
-      "Este curso no es oficial, y estamos respaldados por El Proyecto Odin. Se han realizado cambios en el contenido del plan de estudios del Proyecto Odin y todo el material instructivo de este curso tiene licencia bajo <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
+      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
       "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; El Proyecto Odin</a>",
-      "Este curso incluye contenido de <a href='javascript.info'>JavaScript.info</a>, bajo la licencia de <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
+      "This course includes content from <a href='https://javascript.info/' target='_blank' rel='noopener noreferrer nofollow'>JavaScript.info</a>, which is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>."
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1337,7 +1337,7 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(Nuevo) C# básico con Microsoft",
+    "title": "Free Foundational C# with Microsoft",
     "intro": [
       "Este curso ofrece una introducción completa a la programación en C#, abarcando sus conceptos básicos, sintaxis y aplicación práctica en el desarrollo de software.",
       "A través de ejercicios prácticos y proyectos, aprenderá los fundamentos de C#, incluyendo variables, tipos de datos, estructuras de control y principios de programación orientados a objetos.",
@@ -1561,9 +1561,9 @@
         ]
       },
       "a2-english-for-developers-certification-exam": {
-        "title": "A2 English for Developers Certification Exam",
+        "title": "Examen de certificación de inglés A2 para desarrolladores",
         "intro": [
-          "This exam is required to claim the A2 English for Developers Certification."
+          "Este examen es necesario para obtener la Certificación A2 de Inglés para Desarrolladores."
         ]
       }
     }
@@ -1571,77 +1571,81 @@
   "b1-english-for-developers": {
     "title": "B1 Inglés para desarrolladores (Beta)",
     "intro": [
-      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the B1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
-      "It will help you strengthen your foundational skills while introducing more complex grammar and usage. You'll learn how to describe places and things, share past experiences, and confidently use tenses like Present Perfect and Future. Practical communication strategies are included as well, such as managing conversations, expressing opinions, and building agreement or disagreement in discussions.",
-      "You'll also focus on applying these skills in professional and technical settings. You'll practice vocabulary and phrases essential for developers, such as describing code, participating in stand-up meetings, and discussing tech trends. Advanced topics include conditionals, comparative structures, and conversation management, so you can prepare for real-world interactions in the tech industry.",
-      "This entire B1-level curriculum includes 73 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
+      "En este programa de inglés para desarrolladores, aprenderás los conceptos básicos de la comunicación en inglés. Seguirás el nivel B1 del Marco Común Europeo de Referencia (MCER). Y nos hemos centrado en el vocabulario que resulta especialmente útil para los desarrolladores.",
+      "Te ayudará a fortalecer tus habilidades básicas mientras introduces gramática y usos más complejos. Aprenderás a describir lugares y cosas, compartir experiencias pasadas y usar con confianza tiempos verbales como presente perfecto y futuro. También se incluyen estrategias prácticas de comunicación, como gestionar conversaciones, expresar opiniones y generar acuerdos o desacuerdos en discusiones.",
+      "También te concentrarás en aplicar estas habilidades en entornos profesionales y técnicos. Practicarás vocabulario y frases esenciales para los desarrolladores, como describir códigos, participar en reuniones de pie y analizar tendencias tecnológicas. Los temas avanzados incluyen condicionales, estructuras comparativas y gestión de conversaciones, para que puedas prepararte para interacciones del mundo real en la industria tecnológica.",
+      "Este programa completo de nivel B1 incluye 73 diálogos diferentes. Cada uno está diseñado para ampliar tu vocabulario y aumentar tu confianza al hablar en un entorno tecnológico profesional."
     ],
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Aprende a describir lugares y acontecimientos",
         "intro": [
-          "This course will show you ways of talking about places and events conversationally."
+          "Este curso le mostrará formas de hablar sobre lugares y eventos de manera conversacional."
         ]
       },
       "learn-how-to-talk-about-past-experiences": {
         "title": "Aprende a hablar de experiencias pasadas",
         "intro": [
-          "In this course, you will learn how to share experiences that you had in the past."
+          "En este curso aprenderás a compartir experiencias que tuviste en el pasado."
         ]
       },
       "learn-how-to-talk-about-past-activities": {
         "title": "Aprende a hablar de actividades pasadas",
-        "intro": [
-          "In this course, you will learn how talk about things that you did."
-        ]
+        "intro": ["En este curso aprenderás a hablar sobre cosas que hiciste."]
       },
       "learn-present-perfect-while-talking-about-accessibility": {
         "title": "Aprende el presente perfecto hablando de accesibilidad",
         "intro": [
-          "In this course, you will learn to use the Present Perfect structure and learn a bit more about accessibility."
+          "En este curso aprenderás a utilizar la estructura presente perfecto y aprenderás un poco más sobre accesibilidad."
         ]
       },
       "learn-how-to-plan-future-events": {
         "title": "Aprende a planificar eventos futuros",
         "intro": [
-          "In this course, you will learn to use the different forms of the future to plan for upcoming events."
+          "En este curso aprenderás a utilizar las diferentes formas del futuro para planificar los próximos eventos."
         ]
       },
       "learn-future-continuous-while-describing-actions": {
         "title": "Aprende el futuro continuo describiendo acciones",
         "intro": [
-          "In this course, you will learn to use the Future Continuous tense, and how to describe actions to be performed."
+          "En este curso aprenderás a utilizar el tiempo futuro continuo y cómo describir acciones a realizar."
         ]
       },
       "learn-how-to-use-conditionals": {
         "title": "Aprende a utilizar los condicionales",
         "intro": [
-          "In this course, you will learn to use the conditional sentences to describe hypothetical outcomes depending on the fact that certain conditions are met."
+          "En este curso, aprenderás a usar los condicionales para describir resultados hipotéticos dependiendo si ciertas condiciones se cumplen."
         ]
       },
       "learn-how-to-share-feedback": {
         "title": "Aprende a compartir opiniones",
         "intro": [
-          "In this course, you will see ways of telling other people how you feel about their work, highlighting both their strengths and points for improvement."
+          "En este curso, aprenderás formas de expresar tu opinión sobre el trabajo de otras personas, resaltando tanto sus fortalezas como sus puntos a mejorar."
         ]
       },
       "learn-how-to-share-your-opinion": {
         "title": "Aprende a compartir tu opinión",
         "intro": [
-          "This course will show you how to express your ideas and feeling towards topics in a discussion."
+          "Este curso le mostrará como puede expresar sus ideas y sentimientos hacía temas una discusión."
         ]
       },
       "learn-how-to-express-agreement": {
         "title": "Aprende a expresar tu acuerdo",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to express agreement in different professional settings."
+        ]
       },
       "learn-how-to-express-disagreement": {
         "title": "Aprende a expresar desacuerdos",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to express disagreement in different professional settings."
+        ]
       },
       "learn-how-to-express-concerns": {
         "title": "Aprende a expresar tus preocupaciones",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to inform other people that you are worried about things that might happen to your projects and tasks."
+        ]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Aprende a expresar decisiones basadas en comparaciones",
@@ -1708,39 +1712,40 @@
     }
   },
   "full-stack-developer": {
-    "title": "Certified Full Stack Developer Curriculum",
+    "title": "Plan de estudio de desarrollador certificado Full Stack",
     "intro": [
-      "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
-      "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
-      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
+      "Este curso ofrece un camino integral para convertirse en un desarrollador Full Stack certificado, cubriendo todas las tecnologías esenciales necesarias para crear aplicaciones web modernas y escalables de principio a fin.",
+      "A través de una combinación de lecciones interactivas, ejercicios de codificación y proyectos del mundo real, dominarás el desarrollo frontend y backend. Trabajarás con HTML, CSS y JavaScript para crear interfaces de usuario responsivas, explorarás React y TypeScript para aplicaciones web avanzadas y aprenderás a administrar datos con bases de datos relacionales. Y en el backend, usarás Git, Npm, Node.js y Python para crear soluciones potentes del lado del servidor.",
+      "Al finalizar este curso, tendrás las habilidades prácticas y la experiencia para desarrollar con confianza aplicaciones web completas, preparándote para una carrera exitosa como desarrollador Full Stack.",
+      "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
     ],
     "chapters": {
-      "freecodecamp": "Welcome",
+      "freecodecamp": "Bienvenido",
       "html": "HTML",
       "css": "CSS",
       "javascript": "JavaScript",
-      "frontend-libraries": "Front End Libraries",
-      "relational-databases": "Relational Databases",
-      "backend-javascript": "Backend JavaScript",
+      "frontend-libraries": "Librerias Front End",
+      "relational-databases": "Bases de datos relacionales",
+      "backend-javascript": "JavaScript de back-end",
       "python": "Python",
-      "exam-certified-full-stack-developer": "Certified Full Stack Developer Exam"
+      "exam-certified-full-stack-developer": "Examen de desarrollador certificado Full Stack"
     },
     "modules": {
-      "getting-started-with-freecodecamp": "Getting Started with freeCodeCamp",
-      "basic-html": "Basic HTML",
-      "semantic-html": "Semantic HTML",
-      "html-forms-and-tables": "Forms and Tables",
-      "html-and-accessibility": "Accessibility",
-      "review-html": "HTML Review",
-      "exam-html": "HTML Exam",
-      "computer-basics": "Computer Basics",
-      "basic-css": "Basic CSS",
-      "design-for-developers": "Design",
-      "absolute-and-relative-units": "Absolute and Relative Units",
-      "pseudo-classes-and-elements": "Pseudo Classes and Elements",
-      "css-colors": "Colors",
-      "styling-forms": "Styling Forms",
-      "css-box-model": "The Box Model",
+      "getting-started-with-freecodecamp": "Empezar a utilizar freeCodeCamp",
+      "basic-html": "HTML básico",
+      "semantic-html": "Semántica de HTML",
+      "html-forms-and-tables": "Formularios y tablas",
+      "html-and-accessibility": "Accesibilidad",
+      "review-html": "Revisión de HTML",
+      "exam-html": "Examen de HTML",
+      "computer-basics": "Conceptos básicos de informática",
+      "basic-css": "CSS básico",
+      "design-for-developers": "Diseño",
+      "absolute-and-relative-units": "Unidades absolutas y relativas",
+      "pseudo-classes-and-elements": "Pseudoclases y elementos",
+      "css-colors": "Colores",
+      "styling-forms": "Formas de estilo",
+      "css-box-model": "El modelo de caja",
       "css-flexbox": "Flexbox",
       "css-typography": "Typography",
       "css-and-accessibility": "Accessibility",
@@ -2583,10 +2588,6 @@
           "Open up this page to review concepts around the basics of CSS, responsive web design, animations, accessibility and more."
         ]
       },
-      "wvjx": {
-        "title": "127",
-        "intro": []
-      },
       "lecture-working-with-code-editors-and-ides": {
         "title": "Working with Code Editors and IDEs",
         "intro": [
@@ -2615,7 +2616,7 @@
       "lab-sentence-maker": {
         "title": "Build a Sentence Maker",
         "intro": [
-          "In this lab, you'll create different stories by assigning different words to different variables."
+          "In this lab, you will continue practicing with strings and concatenation by creating and customizing various stories."
         ]
       },
       "lecture-working-with-data-types": {
@@ -2930,7 +2931,7 @@
       "workshop-library-manager": {
         "title": "Build a Library Manager",
         "intro": [
-          "In this workshop, you will learn higher order array methods by building a library manager"
+          "In this workshop, you will learn higher order array methods by building a library manager."
         ]
       },
       "lab-book-organizer": {
@@ -3180,7 +3181,7 @@
       "lecture-working-with-maps-and-sets": {
         "title": "Working with Maps and Sets",
         "intro": [
-          "In these lecture videos, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>"
+          "In these lecture videos, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>."
         ]
       },
       "workshop-plant-nursery-catalog": {
@@ -3346,7 +3347,7 @@
       "lecture-understanding-asynchronous-programming": {
         "title": "Understanding Asynchronous Programming",
         "intro": [
-          "In these lecture videos, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>asnyc</code> keyword works, the <code>Fetch</code> API, promises, async/await, the <code>Geolocation</code> API, and much more."
+          "In these lecture videos, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>async</code> keyword works, the <code>Fetch</code> API, promises, <code>async/await</code>, the <code>Geolocation</code> API, and much more."
         ]
       },
       "workshop-fcc-authors-page": {
@@ -3378,7 +3379,7 @@
         "title": "JavaScript Review",
         "intro": [
           "Before you take the JavaScript prep exam, you should review everything you've learned about JavaScript.",
-          "Open up this page, to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
+          "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
       "kagw": {
@@ -3455,14 +3456,17 @@
         "title": "272",
         "intro": []
       },
-      "ceds": {
-        "title": "273",
-        "intro": []
+      "review-react-state-and-hooks": {
+        "title": "React State and Hooks Review",
+        "intro": [
+          "Before you're quizzed on React state and hooks, you should review what you've learned.",
+          "Open up this page to review working with state, custom hooks and more."
+        ]
       },
       "quiz-react-state-and-hooks": {
         "title": "React State and Hooks Quiz",
         "intro": [
-          "Test what you've learned about React State and Hooks with this quiz."
+          "Test what you've learned about React's <code>useState</code> and <code>useEffect</code> hooks with this quiz."
         ]
       },
       "ftmi": {
@@ -3496,14 +3500,17 @@
         "title": "281",
         "intro": []
       },
-      "zagz": {
-        "title": "282",
-        "intro": []
-      },
-      "quiz-advanced-react": {
-        "title": "Advanced React Quiz",
+      "review-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Review",
         "intro": [
-          "Test what you've learned about Advanced React with this quiz."
+          "Before you take the React forms, data fetching and routing quiz, you should review everything you've learned so far.",
+          "Open up this page, to review all of the concepts taught including routing, forms, state management, prop drilling, data fetching and more."
+        ]
+      },
+      "quiz-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Quiz",
+        "intro": [
+          "Test what you've learned about routing, forms, and data fetching with this quiz."
         ]
       },
       "zdsj": {
@@ -3513,7 +3520,8 @@
       "review-web-performance": {
         "title": "Web Performance Review",
         "intro": [
-          "Review the Web Performance concepts to prepare for the upcoming quiz."
+          "Before you take the web performance quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including INP, key metrics for measuring performance, Performance Web APIs and more."
         ]
       },
       "quiz-web-performance": {
@@ -3615,8 +3623,8 @@
         "title": "306",
         "intro": []
       },
-      "workshop-mario-database": {
-        "title": "Build a Mario Database",
+      "workshop-database-of-video-game-characters": {
+        "title": "Build a Database of Video Game Characters",
         "intro": [
           "A relational database organizes data into tables that are linked together through relationships.",
           "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
@@ -3962,7 +3970,7 @@
   },
   "misc-text": {
     "certification": "Certificación de {{cert}}",
-    "browse-other": "Navega por nuestras otras certificaciones gratuitas\n(recomendamos hacerlo en orden)",
+    "browse-other": "Browse our other free certifications",
     "courses": "Cursos",
     "steps": "Pasos",
     "expand": "Expandir cursos",

@@ -174,7 +174,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
   const superBlockWithAccordionView = [SuperBlocks.FullStackDeveloper];
 
-  const getChosenBlock = (): string => {
+  const getInitiallyExpandedBlock = (): string => {
     // if coming from breadcrumb click
     if (
       location.state &&
@@ -207,7 +207,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
       if (!isEmpty(completedChallenges)) {
         const lastCompletedChallengeId = last(completedChallenges)?.id;
 
-        const lastCompletedChallenge = allChallenges.find(
+        const lastCompletedChallenge = superBlockChallenges.find(
           ({ id }) => id === lastCompletedChallengeId
         );
 
@@ -222,10 +222,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     const { resetExpansion, toggleBlock } = props;
 
     resetExpansion();
-    return toggleBlock(getChosenBlock());
+    return toggleBlock(getInitiallyExpandedBlock());
   };
 
-  const chosenBlock = getChosenBlock();
+  const initialExpandedBlock = getInitiallyExpandedBlock();
 
   const onCertificationDonationAlertClick = () => {
     callGA({
@@ -262,7 +262,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 <SuperBlockAccordion
                   challenges={superBlockChallenges}
                   superBlock={superBlock}
-                  chosenBlock={chosenBlock}
+                  chosenBlock={initialExpandedBlock}
                   completedChallengeIds={completedChallenges.map(c => c.id)}
                 />
               ) : (
@@ -307,7 +307,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 {t(`intro:misc-text.browse-other`)}
               </h3>
               <Spacer size='m' />
-              <Map allChallenges={allChallenges} />
+              <Map />
               <Spacer size='l' />
             </Col>
           </Row>

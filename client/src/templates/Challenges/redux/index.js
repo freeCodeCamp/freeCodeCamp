@@ -120,6 +120,10 @@ export const reducer = handleActions(
       ...state,
       challengeTests: payload
     }),
+    [actionTypes.initHooks]: (state, { payload }) => ({
+      ...state,
+      challengeHooks: payload
+    }),
     [actionTypes.updateTests]: (state, { payload }) => ({
       ...state,
       challengeTests: payload

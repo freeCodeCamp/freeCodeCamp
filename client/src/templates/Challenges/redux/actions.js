@@ -22,6 +22,7 @@ export const createFiles = createAction(
 
 export const createQuestion = createAction(actionTypes.createQuestion);
 export const initTests = createAction(actionTypes.initTests);
+export const initHooks = createAction(actionTypes.initHooks);
 export const updateTests = createAction(actionTypes.updateTests);
 export const cancelTests = createAction(actionTypes.cancelTests);
 export const initConsole = createAction(actionTypes.initConsole);
@@ -70,7 +71,6 @@ export const storePortalWindow = createAction(actionTypes.storePortalWindow);
 export const removePortalWindow = createAction(actionTypes.removePortalWindow);
 
 export const challengeMounted = createAction(actionTypes.challengeMounted);
-export const sendRenderTime = createAction(actionTypes.sendRenderTime);
 export const checkChallenge = createAction(actionTypes.checkChallenge);
 export const executeChallenge = createAction(actionTypes.executeChallenge);
 export const executeChallengeComplete = createAction(

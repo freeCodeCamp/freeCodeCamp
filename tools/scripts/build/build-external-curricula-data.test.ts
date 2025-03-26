@@ -81,13 +81,7 @@ ${result.error.message}`);
       ({ dashedName }) => dashedName
     );
 
-    const isUpcoming = ['full-stack-developer'];
-
-    // TODO: this is a hack, we should have a single source of truth for the
-    // list of superblocks that are available.
-    const publicSuperBlockNames = Object.values(SuperBlocks).filter(
-      x => !isUpcoming.includes(x)
-    );
+    const publicSuperBlockNames = Object.values(SuperBlocks);
 
     expect(dashedNames).toEqual(expect.arrayContaining(publicSuperBlockNames));
     expect(Object.keys(orderedSuperBlockInfo)).toHaveLength(
