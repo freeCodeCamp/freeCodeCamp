@@ -3599,7 +3599,8 @@
       "lab-tic-tac-toe": {
         "title": "Tic-Tac-Toe",
         "intro": [
-          "TODO: Shaun is not apt at coming up with intros. Please send help."
+          "TODO: Shaun is not apt at coming up with intros.",
+          "Please send help."
         ]
       },
       "lecture-react-strategies-and-debugging": {
