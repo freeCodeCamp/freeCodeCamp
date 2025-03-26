@@ -53,6 +53,15 @@ export const getSessionUser = {
             })
           ),
           completedChallengeCount: Type.Number(),
+          completedDailyCodingChallenges: Type.Array(
+            Type.Object({
+              id: Type.String(),
+              completedDate: Type.Number(),
+              completedLanguages: Type.Array(
+                Type.Union([Type.Literal('javascript'), Type.Literal('python')])
+              )
+            })
+          ),
           currentChallengeId: Type.String(),
           email: Type.String(),
           emailVerified: Type.Boolean(),

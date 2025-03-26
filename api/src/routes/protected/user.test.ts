@@ -77,6 +77,13 @@ const testUserData: Prisma.userCreateInput = {
       }
     }
   ],
+  completedDailyCodingChallenges: [
+    {
+      id: '5900f36e1000cf542c50fe80',
+      completedDate: 1742941672524,
+      completedLanguages: ['python', 'javascript']
+    }
+  ],
   partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   completedExams: [],
   quizAttempts: [
@@ -217,6 +224,13 @@ const publicUserData = {
       }
     }
   ],
+  completedDailyCodingChallenges: [
+    {
+      id: '5900f36e1000cf542c50fe80',
+      completedDate: 1742941672524,
+      completedLanguages: ['python', 'javascript']
+    }
+  ],
   completedExams: testUserData.completedExams,
   completedSurveys: [], // TODO: add surveys
   quizAttempts: testUserData.quizAttempts,
@@ -289,6 +303,7 @@ const baseProgressData = {
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
   completedChallenges: [],
+  completedDailyCodingChallenges: [],
   completedExams: [],
   savedChallenges: [],
   partiallyCompletedChallenges: [],
@@ -734,6 +749,7 @@ describe('userRoutes', () => {
           // missing in the user document.
           currentChallengeId: '',
           completedChallenges: [],
+          completedDailyCodingChallenges: [],
           completedExams: [],
           completedSurveys: [],
           partiallyCompletedChallenges: [],

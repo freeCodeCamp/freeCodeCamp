@@ -481,6 +481,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             about: true,
             acceptedPrivacyTerms: true,
             completedChallenges: true,
+            completedDailyCodingChallenges: true,
             completedExams: true,
             currentChallengeId: true,
             quizAttempts: true,
@@ -565,6 +566,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           username,
           usernameDisplay,
           completedChallenges,
+          completedDailyCodingChallenges,
           progressTimestamps,
           twitter,
           profileUI,
@@ -583,6 +585,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               currentChallengeId: currentChallengeId ?? '',
               completedChallenges: normalizeChallenges(completedChallenges),
               completedChallengeCount: completedChallenges.length,
+              completedDailyCodingChallenges,
               // This assertion is necessary until the database is normalized.
               calendar: getCalendar(
                 progressTimestamps as ProgressTimestamp[] | null

@@ -365,6 +365,119 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
   );
 
   fastify.post(
+    '/daily-coding-challenge-completed',
+    {
+      schema: schemas.dailyCodingChallengeCompleted,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400);
+          void reply.send({
+            type: 'error',
+            message: 'That does not appear to be a valid challenge submission.'
+          });
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async req => {
+      const { id, language } = req.body;
+
+      const user = await fastify.prisma.user.findUniqueOrThrow({
+        where: { id: req.user?.id },
+        select: {
+          completedDailyCodingChallenges: true,
+          progressTimestamps: true
+        }
+      });
+
+      const { completedDailyCodingChallenges, progressTimestamps = [] } = user;
+
+      const points = getPoints(progressTimestamps as ProgressTimestamp[]);
+      const oldCompletedChallenge = completedDailyCodingChallenges.find(
+        c => c.id === id
+      );
+
+      const alreadyCompleted = !!oldCompletedChallenge;
+      const languageAlreadyCompleted =
+        oldCompletedChallenge?.completedLanguages.includes(language);
+
+      if (alreadyCompleted) {
+        const { completedDate, completedLanguages } = oldCompletedChallenge;
+
+        if (languageAlreadyCompleted) {
+          // alreadyCompleted && languageAlreadyCompleted, no need to change anything in the database
+          return {
+            alreadyCompleted,
+            points,
+            completedDate,
+            completedDailyCodingChallenges
+          };
+        } else {
+          // alreadyCompleted && !languageAlreadyCompleted, add the language to the record
+          const newCompletedChallenge = {
+            id,
+            completedDate,
+            // Set to avoid duplicates
+            completedLanguages: [...new Set([...completedLanguages, language])]
+          };
+
+          const newCompletedChallenges = completedDailyCodingChallenges.map(
+            c => (c.id === id ? newCompletedChallenge : c)
+          );
+
+          await fastify.prisma.user.update({
+            where: { id: req.user?.id },
+            data: {
+              completedDailyCodingChallenges: newCompletedChallenges
+            }
+          });
+
+          return {
+            alreadyCompleted,
+            points,
+            completedDate,
+            completedDailyCodingChallenges: newCompletedChallenges
+          };
+        }
+      } else {
+        // !alreadyCompleted, add new record for completed challenge
+        const newCompletedDate = Date.now();
+
+        const newCompletedChallenge = {
+          id,
+          completedDate: newCompletedDate,
+          // Set to avoid duplicates
+          completedLanguages: [...new Set([language])]
+        };
+
+        // Set to avoid duplicates
+        const newCompletedChallenges = [
+          ...new Set([...completedDailyCodingChallenges, newCompletedChallenge])
+        ];
+
+        const newProgressTimestamps = Array.isArray(progressTimestamps)
+          ? [...progressTimestamps, newCompletedDate]
+          : [newCompletedDate];
+
+        await fastify.prisma.user.update({
+          where: { id: req.user?.id },
+          data: {
+            completedDailyCodingChallenges: newCompletedChallenges,
+            progressTimestamps: newProgressTimestamps
+          }
+        });
+
+        return {
+          alreadyCompleted,
+          points: points + 1,
+          completedDate: newCompletedDate,
+          completedDailyCodingChallenges: newCompletedChallenges
+        };
+      }
+    }
+  );
+
+  fastify.post(
     '/save-challenge',
     {
       schema: schemas.saveChallenge,
