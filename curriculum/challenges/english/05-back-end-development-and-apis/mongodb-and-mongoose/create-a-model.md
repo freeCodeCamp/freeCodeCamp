@@ -43,8 +43,7 @@ Now, create a model from the `personSchema` and assign it to the existing variab
 Creating an instance from a mongoose schema should succeed
 
 ```js
-(getUserInput) =>
-  $.post(getUserInput('url') + '/_api/mongoose-model', {
+  $.post(code + '/_api/mongoose-model', {
     name: 'Mike',
     age: 28,
     favoriteFoods: ['pizza', 'cheese']

@@ -93,7 +93,6 @@ assert(noWhiteSpace.includes('const'))
 The action creators and the reducer should reference the `LOGIN` and `LOGOUT` constants.
 
 ```js
-(getUserInput) =>
   assert(
     (function () {
       const noWhiteSpace = __helpers.removeWhiteSpace(

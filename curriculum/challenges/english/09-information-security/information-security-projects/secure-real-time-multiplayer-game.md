@@ -34,13 +34,11 @@ Make sure that your game is secure! Include these security measures:
 You can provide your own project, not the example URL.
 
 ```js
-(getUserInput) => {
   assert(
     !/.*\/secure-real-time-multiplayer-game\.freecodecamp\.rocks/.test(
-      getUserInput('url')
+      code
     )
   );
-};
 ```
 
 Multiple players can connect to a server and play.
@@ -130,8 +128,8 @@ Players can disconnect from the game at any time.
 Prevent the client from trying to guess / sniff the MIME type.
 
 ```js
-async (getUserInput) => {
-  const data = await fetch(getUserInput('url') + '/_api/app-info');
+async () => {
+  const data = await fetch(code + '/_api/app-info');
   const parsed = await data.json();
   assert.equal(parsed.headers['x-content-type-options'], 'nosniff');
 };
@@ -140,8 +138,8 @@ async (getUserInput) => {
 Prevent cross-site scripting (XSS) attacks.
 
 ```js
-async (getUserInput) => {
-  const data = await fetch(getUserInput('url') + '/_api/app-info');
+async () => {
+  const data = await fetch(code + '/_api/app-info');
   const parsed = await data.json();
   assert.equal(parsed.headers['x-xss-protection'], '1; mode=block');
 };
@@ -150,8 +148,8 @@ async (getUserInput) => {
 Nothing from the website is cached in the client.
 
 ```js
-async (getUserInput) => {
-  const data = await fetch(getUserInput('url') + '/_api/app-info');
+async () => {
+  const data = await fetch(code + '/_api/app-info');
   const parsed = await data.json();
   assert.equal(parsed.headers['surrogate-control'], 'no-store');
   assert.equal(
@@ -166,8 +164,8 @@ async (getUserInput) => {
 The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as a security measure).
 
 ```js
-async (getUserInput) => {
-  const data = await fetch(getUserInput('url') + '/_api/app-info');
+async () => {
+  const data = await fetch(code + '/_api/app-info');
   const parsed = await data.json();
   assert.equal(parsed.headers['x-powered-by'], 'PHP 7.4.3');
 };

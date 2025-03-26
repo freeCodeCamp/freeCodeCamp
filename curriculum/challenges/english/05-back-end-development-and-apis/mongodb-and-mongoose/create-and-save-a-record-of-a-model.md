@@ -28,8 +28,7 @@ person.save(function(err, data) {
 Creating and saving a db item should succeed
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/create-and-save-person').then(
+  $.get(code + '/_api/create-and-save-person').then(
     (data) => {
       assert.isString(data.name, '"item.name" should be a String');
       assert.isNumber(data.age, '28', '"item.age" should be a Number');
