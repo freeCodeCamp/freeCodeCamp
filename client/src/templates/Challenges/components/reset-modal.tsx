@@ -58,7 +58,7 @@ function ResetModal({
         <p>
           {canSaveToDB(challengeType)
             ? t('learn.revert-warn')
-            : t('learn.reset-warn', {title: lessonTitle})}
+            : t('learn.reset-warn', {title: document.querySelectorAll('div.challenge-title h1#content-start')})}
         </p>
         <p>
           <em>{t('learn.reset-warn-2')}</em>
