@@ -155,7 +155,7 @@
         "title": "通過創建鋼琴學習響應式網頁設計",
         "intro": [
           "響應式設計使得你的網頁適應不同屏幕尺寸的顯示。",
-          "在本課程中，你將圍繞一架鋼琴編寫代碼學習 CSS 響應式設計。你將同時學會媒體條件和僞選擇器的知識。"
+          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -2427,7 +2427,7 @@
         "title": "Design a Piano",
         "intro": [
           "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
       "lab-technical-documentation-page": {

@@ -155,7 +155,7 @@
         "title": "Erlerne responsives Webdesign, indem du ein Klavier erstellst",
         "intro": [
           "Responsives Design beschreibt, wie deine Webseite auf unterschiedlich großen Bildschirmen aussehen soll.",
-          "In diesem Kurs wirst du CSS und responsives Design verwenden, um ein Klavier zu programmieren. Außerdem erfährst du mehr über Media-Queries und Pseudoselektoren."
+          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -2441,7 +2441,7 @@
         "title": "Design a Piano",
         "intro": [
           "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
       "lab-technical-documentation-page": {

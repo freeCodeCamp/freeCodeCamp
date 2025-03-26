@@ -155,7 +155,7 @@
         "title": "通过创建钢琴学习响应式网页设计",
         "intro": [
           "响应式设计使得你的网页适应不同屏幕尺寸的显示。",
-          "在本课程中，你将围绕一架钢琴编写代码学习 CSS 响应式设计。你将同时学会媒体条件和伪选择器的知识。"
+          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -2427,7 +2427,7 @@
         "title": "Design a Piano",
         "intro": [
           "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
       "lab-technical-documentation-page": {
