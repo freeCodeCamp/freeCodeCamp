@@ -20,7 +20,6 @@ export interface InitTestFrameArg {
     editableContents?: string;
     original?: { [id: string]: string | null };
   };
-  getUserInput?: (fileName: string) => string;
   loadEnzyme?: () => void;
 }
 
