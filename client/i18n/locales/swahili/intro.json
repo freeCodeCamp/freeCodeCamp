@@ -155,7 +155,7 @@
         "title": "Jifunze Responsive Web Design kwa Kutengeneza Piano",
         "intro": [
           "Responsive Design huambia ukurasa wako wa tovuti jinsi unavyopaswa kuonekana kwenye skrini za ukubwa tofauti.",
-          "Katika kozi hii, utatumia CSS na Muundo Msikivu kutengenza piano. Pia utajifunza zaidi kuhusu media quries na pseudo selectors."
+          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -2441,7 +2441,7 @@
         "title": "Design a Piano",
         "intro": [
           "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
       "lab-technical-documentation-page": {

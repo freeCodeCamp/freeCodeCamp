@@ -155,7 +155,7 @@
         "title": "Вивчіть адаптивний вебдизайн, створивши піаніно",
         "intro": [
           "Адаптивний дизайн каже вашій вебсторінці, як вона має виглядати на екранах різного розміру.",
-          "У цьому курсі ви використовуватимете CSS та адаптивний дизайн для програмування піаніно. До того ж, ви більше дізнаєтесь про медіазапити та псевдоселектори."
+          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -2427,7 +2427,7 @@
         "title": "Розробіть піаніно",
         "intro": [
           "Адаптивний дизайн повідомляє вебсторінці, як вона має виглядати на екранах різного розміру.",
-          "У цьому практичному занятті ви використовуватимете CSS та адаптивний дизайн, щоб створити піаніно. До того ж, ви більше дізнаєтесь про медіазапити та псевдоселектори."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
       "lab-technical-documentation-page": {
