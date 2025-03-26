@@ -146,6 +146,13 @@ const updatedMultiFileCertProjectBody = {
   ]
 };
 
+const dailyCodingChallengeId = '5900f36e1000cf542c50fe80';
+const dailyCodingChallengeBody = {
+  id: dailyCodingChallengeId,
+  challengeType: 27,
+  language: 'javascript'
+};
+
 describe('challengeRoutes', () => {
   setupServer();
   describe('Authenticated user', () => {
@@ -908,6 +915,226 @@ describe('challengeRoutes', () => {
             ]
           });
           expect(resUpdate.statusCode).toBe(200);
+        });
+      });
+    });
+
+    describe('/daily-coding-challenge-completed', () => {
+      describe('validation', () => {
+        test('POST rejects requests without an id', async () => {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          const { id, ...noIdReqBody } = dailyCodingChallengeBody;
+          const response = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send(noIdReqBody);
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects requests without a challengeType', async () => {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          const { challengeType, ...noChallengeTypeReqBody } =
+            dailyCodingChallengeBody;
+          const response = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send(noChallengeTypeReqBody);
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects requests without a language', async () => {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          const { language, ...noLanguageReqBody } = dailyCodingChallengeBody;
+          const response = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send(noLanguageReqBody);
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects requests without valid ObjectIDs', async () => {
+          const response = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send({
+            ...dailyCodingChallengeBody,
+            id: 'not-a-valid-id'
+          });
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects requests without valid challengeType', async () => {
+          const response = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send({
+            ...dailyCodingChallengeBody,
+            challengeType: 'not-a-valid-challenge-type'
+          });
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects requests without valid coding language', async () => {
+          const response = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send({
+            ...dailyCodingChallengeBody,
+            language: 'not-a-valid-language'
+          });
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+      });
+
+      describe('handling', () => {
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              completedDailyCodingChallenges: [],
+              progressTimestamps: []
+            }
+          });
+        });
+
+        test('POST correctly handles multiple requests', async () => {
+          const now = Date.now();
+
+          const res1 = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send(dailyCodingChallengeBody);
+
+          const user1 = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          const completedDate =
+            user1.completedDailyCodingChallenges[0]?.completedDate;
+
+          // should have correct completedDate
+          expect(completedDate).toBeGreaterThanOrEqual(now);
+          expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+          expect(user1).toMatchObject({
+            // should add completedDailyCodingChallenge to database with correct info
+            completedDailyCodingChallenges: [
+              {
+                id: dailyCodingChallengeId,
+                completedDate,
+                completedLanguages: ['javascript']
+              }
+            ],
+            // should add to progressTimestamps
+            progressTimestamps: [completedDate]
+          });
+
+          // should have correct response
+          expect(res1.statusCode).toBe(200);
+          expect(res1.body).toStrictEqual({
+            alreadyCompleted: false,
+            points: 1,
+            completedDate,
+            completedDailyCodingChallenges: [
+              {
+                id: dailyCodingChallengeId,
+                completedDate,
+                completedLanguages: ['javascript']
+              }
+            ]
+          });
+
+          const res2 = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send(dailyCodingChallengeBody);
+
+          const user2 = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          // should not add 'javascript' again, should not update completedDate
+          expect(user2).toMatchObject({
+            completedDailyCodingChallenges: [
+              {
+                id: dailyCodingChallengeId,
+                completedDate,
+                completedLanguages: ['javascript']
+              }
+            ],
+            // should not add to progressTimestamps
+            progressTimestamps: [completedDate]
+          });
+
+          // should have correct response
+          expect(res2.statusCode).toBe(200);
+          expect(res2.body).toStrictEqual({
+            alreadyCompleted: true,
+            points: 1,
+            completedDate,
+            completedDailyCodingChallenges: [
+              {
+                id: dailyCodingChallengeId,
+                completedDate,
+                completedLanguages: ['javascript']
+              }
+            ]
+          });
+
+          const res3 = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send({
+            ...dailyCodingChallengeBody,
+            language: 'python'
+          });
+
+          const user3 = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          // should add 'python' to completedLanguages + should not update completedDate
+          expect(user3).toMatchObject({
+            completedDailyCodingChallenges: [
+              {
+                id: dailyCodingChallengeId,
+                completedDate,
+                completedLanguages: ['javascript', 'python']
+              }
+            ],
+            // should not add to progressTimestamps
+            progressTimestamps: [completedDate]
+          });
+
+          // should have correct response
+          expect(res3.statusCode).toBe(200);
+          expect(res3.body).toStrictEqual({
+            alreadyCompleted: true,
+            points: 1,
+            completedDate,
+            completedDailyCodingChallenges: [
+              {
+                id: dailyCodingChallengeId,
+                completedDate,
+                completedLanguages: ['javascript', 'python']
+              }
+            ]
+          });
         });
       });
     });
@@ -1848,6 +2075,7 @@ describe('challengeRoutes', () => {
       { path: '/project-completed', method: 'POST' },
       { path: '/backend-challenge-completed', method: 'POST' },
       { path: '/modern-challenge-completed', method: 'POST' },
+      { path: '/daily-coding-challenge-completed', method: 'POST' },
       { path: '/save-challenge', method: 'POST' },
       { path: '/exam/647e22d18acb466c97ccbef8', method: 'GET' },
       { path: '/ms-trophy-challenge-completed', method: 'POST' },
