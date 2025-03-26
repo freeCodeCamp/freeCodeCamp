@@ -36,7 +36,6 @@ interface CreateProjectArgs {
   superBlock: SuperBlocks;
   block: string;
   helpCategory: string;
-  order: number;
   title?: string;
 }
 
@@ -44,7 +43,6 @@ async function createProject(
   superBlock: SuperBlocks,
   block: string,
   helpCategory: string,
-  order: number,
   title?: string
 ) {
   if (!title) {
@@ -58,7 +56,6 @@ async function createProject(
     block,
     title,
     helpCategory,
-    order,
     challengeId
   );
   // TODO: remove once we stop relying on markdown in the client.
@@ -91,7 +88,6 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  order: number,
   challengeId: ObjectID
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
@@ -99,10 +95,9 @@ async function createMetaJson(
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  newMeta.order = order;
   newMeta.superBlock = superBlock;
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
+  newMeta.challengeOrder = [{ id: challengeId.toString(), title: title }];
   const newMetaDir = path.resolve(metaDir, block);
   if (!existsSync(newMetaDir)) {
     await withTrace(fs.mkdir, newMetaDir);
@@ -124,7 +119,7 @@ superBlock: ${superBlock}
 
 ## Introduction to the ${title}
 
-This is a test for the new project-based curriculum.
+This page is for the ${title}.
 `;
   const dirPath = path.resolve(
     __dirname,
@@ -137,7 +132,7 @@ This is a test for the new project-based curriculum.
   void withTrace(fs.writeFile, filePath, introMD, { encoding: 'utf8' });
 }
 
-async function createFirstChallenge(
+async function createFirstChallenge( //ignore the naming, I only left it as it is to prevent bugs. Let's call this thing createQuiz, shall we?
   superBlock: SuperBlocks,
   block: string
 ): Promise<ObjectID> {
@@ -149,23 +144,43 @@ async function createFirstChallenge(
   if (!existsSync(newChallengeDir)) {
     await withTrace(fs.mkdir, newChallengeDir);
   }
-  // TODO: would be nice if the extension made sense for the challenge, but, at
-  // least until react I think they're all going to be html anyway.
-  const challengeSeeds = {
-    indexhtml: {
-      contents: '',
-      ext: 'html',
-      editableRegionBoundaries: [0, 2]
-    }
-  };
-  // including trailing slash for compatibility with createStepFile
-  return createStepFile({
-    projectPath: newChallengeDir + '/',
-    stepNum: 1,
-    challengeType: 0,
-    challengeSeeds,
-    isFirstChallenge: true
-  });
+  
+  return `---
+          id: ${challengeId}
+          title: ${title}
+          challengeType: 8
+          dashedName: ${dashedName}
+          ---
+          
+          # --description--
+          
+          To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+          
+          # --quizzes--
+          
+          ## --quiz--
+          
+          ### --question--
+          
+          #### --text--
+          
+          Question goes here
+          
+          #### --distractors--
+          
+          Distractor 1 goes here 
+          
+          ---
+          
+          Distractor 2 goes here 
+          
+          ---
+          
+          Distractor 3 goes here 
+          
+          #### --answer--
+          
+          answer goes here`;
 }
 
 function parseJson<JsonSchema>(filePath: string) {
@@ -214,19 +229,6 @@ void prompt([
     default: 'HTML-CSS',
     type: 'list',
     choices: helpCategories
-  },
-  {
-    name: 'order',
-    message: 'Which position does this appear in the certificate?',
-    default: 42,
-    validate: (order: string) => {
-      return parseInt(order, 10) > 0
-        ? true
-        : 'Order must be an number greater than zero.';
-    },
-    filter: (order: string) => {
-      return parseInt(order, 10);
-    }
   }
 ])
   .then(
@@ -234,10 +236,9 @@ void prompt([
       superBlock,
       block,
       title,
-      helpCategory,
-      order
+      helpCategory
     }: CreateProjectArgs) =>
-      await createProject(superBlock, block, helpCategory, order, title)
+      await createProject(superBlock, block, helpCategory, 42, title)
   )
   .then(() =>
     console.log(
