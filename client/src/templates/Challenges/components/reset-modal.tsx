@@ -43,7 +43,7 @@ function ResetModal({
   close,
   challengeType,
   isOpen,
-  lessonTitle
+  //lessonTitle
 }: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
   if (isOpen) {
