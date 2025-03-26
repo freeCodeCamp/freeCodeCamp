@@ -42,7 +42,7 @@ function ResetModal({
   reset,
   close,
   challengeType,
-  isOpen,
+  isOpen
   //lessonTitle
 }: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
@@ -58,7 +58,11 @@ function ResetModal({
         <p>
           {canSaveToDB(challengeType)
             ? t('learn.revert-warn')
-            : t('learn.reset-warn', {title: document.querySelectorAll('div.challenge-title h1#content-start')})}
+            : t('learn.reset-warn', {
+                title:
+                  document.querySelector('div.challenge-title h1#content-start')
+                    ?.innerHTML || 'The current lesson'
+              })}
         </p>
         <p>
           <em>{t('learn.reset-warn-2')}</em>
