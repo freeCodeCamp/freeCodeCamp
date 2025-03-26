@@ -112,14 +112,14 @@ async function createMetaJson(
 
 async function createIntroMD(superBlock: string, block: string, title: string) {
   const introMD = `---
-title: Introduction to the ${Meta.title}
-block: ${Meta.block}
-superBlock: ${Meta.superBlock}
+title: Introduction to the ${title}
+block: ${block}
+superBlock: ${superBlock}
 ---
 
-## Introduction to the ${Meta.title}
+## Introduction to the ${title}
 
-This page is for the ${Meta.title}.
+This page is for the ${title}.
 `;
   const dirPath = path.resolve(
     __dirname,
