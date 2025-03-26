@@ -13,7 +13,6 @@ export interface Source {
   index: string;
   contents?: string;
   editableContents: string;
-  original: { [key: string]: string | null };
 }
 
 interface Hooks {
