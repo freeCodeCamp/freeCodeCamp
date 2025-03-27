@@ -1,0 +1,43 @@
+{
+  "name": "Understanding Test Automation",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-test-automation",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67d1d8eee34b02592220bf59",
+      "title": "What Does the Typical Process Look Like for Performing Automated Tests?"
+    },
+    {
+      "id": "67d3002007a497a2e305c1f3",
+      "title": "What Are Some Tools You Can Use to Run Automated Tests?"
+    },
+    {
+      "id": "67d3003531cf16a362db2c68",
+      "title": "How Can Accessibility Testing Be Automated?"
+    },
+    {
+      "id": "67d30063b546dea3cacbfce9",
+      "title": "How Can You Use a Combination of Physical Devices and Virtual Machines for Automated Testing?"
+    },
+    {
+      "id": "67d3008f8d6a99a49187077c",
+      "title": "What Are Some Cloud-Based Services You Can Use for Automated Cross-Browser Functional Testing?"
+    },
+    {
+      "id": "67d300a81c5870a55155848c",
+      "title": "What Is CI/CD, and How Does It Work?"
+    },
+    {
+      "id": "67d300c21a1da3a5c281d928",
+      "title": "How Can You Set Up Automated Tests on GitHub?"
+    },
+    {
+      "id": "67d300ef009a77a641543b7a",
+      "title": "How Can You Work with Tools Like CircleCI or Travis CI?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

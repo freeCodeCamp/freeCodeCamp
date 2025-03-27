@@ -3360,6 +3360,13 @@
           "For this lab you'll practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
         ]
       },
+      "lab-weather-app": {
+        "title": "Build a Weather App",
+        "intro": [
+          "In this lab you'll build a Weather App using an API",
+          "You'll practice how to fetch data from the API, store and display it on your app."
+        ]
+      },
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
@@ -3426,10 +3433,20 @@
         "title": "React Basics Quiz",
         "intro": ["Test your knowledge of React basics with this quiz."]
       },
-      "rugw": { "title": "267", "intro": [] },
+      "lecture-working-with-state-and-responding-to-events-in-react": {
+        "title": "Working with State and Responding to Events in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with state and responding to events with React."
+        ]
+      },
       "rmpy": { "title": "268", "intro": [] },
       "dbta": { "title": "269", "intro": [] },
-      "rnfe": { "title": "271", "intro": [] },
+      "lecture-understanding-effects-and-referencing-values-in-react": {
+        "title": "Understanding Effects and Referencing Values in React",
+        "intro": [
+          "In these lecture videos, you will learn about effects and referencing values with React."
+        ]
+      },
       "xdyh": { "title": "270", "intro": [] },
       "vjgg": { "title": "272", "intro": [] },
       "review-react-state-and-hooks": {
@@ -3445,19 +3462,35 @@
           "Test what you've learned about React's <code>useState</code> and <code>useEffect</code> hooks with this quiz."
         ]
       },
-      "ftmi": { "title": "275", "intro": [] },
+      "lecture-working-with-forms-in-react": {
+        "title": "Working with Forms in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with forms in React."
+        ]
+      },
       "sgau": { "title": "276", "intro": [] },
       "clak": { "title": "277", "intro": [] },
-      "lab-weather-app": {
-        "title": "Build a Weather App",
+      "lecture-working-with-data-fetching-and-memoization-in-react": {
+        "title": "Working with Data Fetching and Memoization in React",
         "intro": [
-          "In this lab you'll build a Weather App using an API",
-          "You'll practice how to fetch data from the API, store and display it on your app."
+          "In these lecture videos, you will learn about data fetching and memoization in React."
         ]
       },
       "ffpt": { "title": "279", "intro": [] },
       "lrof": { "title": "280", "intro": [] },
+      "lecture-routing-react-frameworks-and-dependecy-management-tools": {
+        "title": "Routing, React Frameworks, and Dependency Management Tools",
+        "intro": [
+          "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
+        ]
+      },
       "vyzp": { "title": "281", "intro": [] },
+      "lecture-react-strategies-and-debugging": {
+        "title": "React Strategies and Debugging",
+        "intro": [
+          "In these lecture videos, you will learn about different strategies and debugging in React."
+        ]
+      },
       "review-react-forms-data-fetching-and-routing": {
         "title": "React Forms, Data Fetching and Routing Review",
         "intro": [
@@ -3471,7 +3504,12 @@
           "Test what you've learned about routing, forms, and data fetching with this quiz."
         ]
       },
-      "zdsj": { "title": "284", "intro": [] },
+      "lecture-understanding-performance-in-web-applications": {
+        "title": "Understanding Performance in Web Applications",
+        "intro": [
+          "In these lecture videos, you will learn performance in web applications."
+        ]
+      },
       "review-web-performance": {
         "title": "Web Performance Review",
         "intro": [
@@ -3485,7 +3523,12 @@
           "Test what you've learned about Web Performance with this quiz."
         ]
       },
-      "mbpv": { "title": "287", "intro": [] },
+      "lecture-working-with-css-libraries-and-frameworks": {
+        "title": "Working with CSS Libraries and Frameworks",
+        "intro": [
+          "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
+        ]
+      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -3498,7 +3541,18 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
-      "khuu": { "title": "290", "intro": [] },
+      "lecture-understanding-the-different-types-of-testing": {
+        "title": "Understanding the Different Types of Testing",
+        "intro": [
+          "In these lecture videos, you will learn about the different types of testing."
+        ]
+      },
+      "lecture-understanding-test-automation": {
+        "title": "Understanding Test Automation",
+        "intro": [
+          "In these lecture videos, you will learn about test automation."
+        ]
+      },
       "review-testing": {
         "title": "Testing Review",
         "intro": ["Review testing concepts to prepare for the upcoming quiz."]
@@ -3506,6 +3560,12 @@
       "quiz-testing": {
         "title": "Testing Quiz",
         "intro": ["Test what you've learned on testing with this quiz."]
+      },
+      "lecture-introduction-to-typescript": {
+        "title": "Introduction to TypeScript",
+        "intro": [
+          "In these lecture videos, you will learn what TypeScript is and how to use it."
+        ]
       },
       "trvf": { "title": "293", "intro": [] },
       "kwmg": { "title": "294", "intro": [] },
