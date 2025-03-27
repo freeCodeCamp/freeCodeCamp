@@ -15,7 +15,7 @@ interface ResetModalProps {
   isOpen: boolean;
   challengeType: number;
   reset: () => void;
-  lessonTitle: string;
+  challengeTitle: string;
 }
 
 const mapStateToProps = createSelector(
@@ -43,7 +43,7 @@ function ResetModal({
   close,
   challengeType,
   isOpen,
-  lessonTitle
+  challengeTitle
 }: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
   if (isOpen) {
@@ -59,7 +59,7 @@ function ResetModal({
           {canSaveToDB(challengeType)
             ? t('learn.revert-warn')
             : t('learn.reset-warn', {
-                title: lessonTitle
+                title: challengeTitle
               })}
         </p>
         <p>
