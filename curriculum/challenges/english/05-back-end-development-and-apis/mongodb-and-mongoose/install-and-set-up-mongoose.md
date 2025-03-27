@@ -33,8 +33,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 "mongoose version ^5.11.15" dependency should be in package.json
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/file/package.json').then(
+  $.get(code + '/_api/file/package.json').then(
     (data) => {
       var packJson = JSON.parse(data);
       assert.property(packJson.dependencies, 'mongoose');
@@ -53,8 +52,7 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 "mongoose" should be connected to a database
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/is-mongoose-ok').then(
+  $.get(code + '/_api/is-mongoose-ok').then(
     (data) => {
       assert.isTrue(data.isMongooseOk, 'mongoose is not connected');
     },

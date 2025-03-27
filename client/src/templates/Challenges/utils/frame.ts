@@ -1,4 +1,4 @@
-import { toString, flow } from 'lodash-es';
+import { flow } from 'lodash-es';
 import i18next, { type i18n } from 'i18next';
 
 import { format } from '../../../utils/format';
@@ -309,12 +309,8 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
   waitForFrame(frameContext)
     .then(async () => {
       const { sources, loadEnzyme } = frameContext;
-      // provide the file name and get the original source
-      const getUserInput = (fileName: string) =>
-        toString(sources[fileName as keyof typeof sources]);
       await frameContext.window?.document?.__initTestFrame({
         code: sources,
-        getUserInput,
         loadEnzyme
       });
 

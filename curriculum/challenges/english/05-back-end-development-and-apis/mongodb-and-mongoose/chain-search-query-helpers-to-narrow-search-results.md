@@ -19,9 +19,8 @@ Modify the `queryChain` function to find people who like the food specified by t
 Chaining query helpers should succeed
 
 ```js
-(getUserInput) =>
   $.ajax({
-    url: getUserInput('url') + '/_api/query-tools',
+    url: code + '/_api/query-tools',
     type: 'POST',
     contentType: 'application/json',
     data: JSON.stringify([

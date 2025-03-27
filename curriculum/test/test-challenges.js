@@ -677,17 +677,12 @@ async function initializeTestRunner({
   await page.reload();
   await page.setContent(createContent(testId, { build, sources, hooks }));
   await page.evaluate(
-    async (code, sources, loadEnzyme) => {
-      const getUserInput = fileName => sources[fileName];
-      // TODO: use frame's functions directly, so it behaves more like the
-      // client.
+    async (sources, loadEnzyme) => {
       await document.__initTestFrame({
         code: sources,
-        getUserInput,
         loadEnzyme
       });
     },
-    code,
     sources,
     loadEnzyme
   );

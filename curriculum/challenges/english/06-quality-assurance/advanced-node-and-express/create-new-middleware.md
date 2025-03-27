@@ -40,8 +40,8 @@ Submit your page when you think you've got it right. If you're running into erro
 The middleware `ensureAuthenticated` should be implemented and attached to the `/profile` route.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/server.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(
@@ -60,8 +60,8 @@ async (getUserInput) => {
 An unauthenticated GET request to `/profile` should correctly redirect to `/`.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/profile", getUserInput("url"));
+async () => {
+  const url = new URL("/profile", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(

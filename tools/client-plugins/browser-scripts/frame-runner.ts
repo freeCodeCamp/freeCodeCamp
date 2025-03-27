@@ -25,10 +25,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     return out;
   };
 
-  if (!e.getUserInput) {
-    e.getUserInput = () => code;
-  }
-
   /* eslint-disable @typescript-eslint/no-unused-vars */
   // Fake Deep Equal dependency
   const DeepEqual = (a: Record<string, unknown>, b: Record<string, unknown>) =>
@@ -94,7 +90,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
       const test = await testPromise;
       if (typeof test === 'function') {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-        await test(e.getUserInput);
+        await test();
       }
       return { pass: true };
     } catch (err) {

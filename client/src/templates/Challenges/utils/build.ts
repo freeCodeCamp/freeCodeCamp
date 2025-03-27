@@ -304,7 +304,7 @@ function buildBackendChallenge({ url }: BuildChallengeData) {
   return {
     challengeType: challengeTypes.backend,
     build: concatHtml({ testRunner: frameRunnerSrc }),
-    sources: { url }
+    sources: { contents: url }
   };
 }
 
