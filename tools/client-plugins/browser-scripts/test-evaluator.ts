@@ -110,6 +110,9 @@ interface TestEvaluatorEvent extends MessageEvent {
     sources: {
       [fileName: string]: unknown;
     };
+    hooks?: {
+      beforeEach?: string;
+    };
   };
 }
 
@@ -130,7 +133,9 @@ ctx.onmessage = async (e: TestEvaluatorEvent) => {
     try {
       // Logging is proxyed after the build to catch console.log messages
       // generated during testing.
-      testResult = (await eval(`${e.data.build}
+      // TODO: try using an IIFE once you have a test that needs you to declare a var.
+      testResult = (await eval(`${e.data.hooks?.beforeEach ?? ''};
+${e.data.build}
 __utils.flushLogs();
 __userCodeWasExecuted = true;
 __utils.toggleProxyLogger(true);
