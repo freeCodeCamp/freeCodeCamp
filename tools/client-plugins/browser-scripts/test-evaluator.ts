@@ -107,9 +107,6 @@ interface TestEvaluatorEvent extends MessageEvent {
     firstTest: unknown;
     testString: string;
     build: string;
-    sources: {
-      [fileName: string]: unknown;
-    };
   };
 }
 
@@ -123,18 +120,17 @@ ctx.onmessage = async (e: TestEvaluatorEvent) => {
   __utils.toggleProxyLogger(e.data.firstTest);
   /* eslint-enable @typescript-eslint/no-unused-vars */
   try {
-    let testResult;
     // This can be reassigned by the eval inside the try block, so it should be declared as a let
     // eslint-disable-next-line prefer-const
     let __userCodeWasExecuted = false;
     try {
       // Logging is proxyed after the build to catch console.log messages
       // generated during testing.
-      testResult = (await eval(`${e.data.build}
+      await eval(`${e.data.build}
 __utils.flushLogs();
 __userCodeWasExecuted = true;
 __utils.toggleProxyLogger(true);
-(async () => {${e.data.testString}})()`)) as unknown;
+(async () => {${e.data.testString}})()`);
     } catch (err) {
       if (__userCodeWasExecuted) {
         // rethrow error, since test failed.
@@ -151,13 +147,7 @@ __utils.toggleProxyLogger(true);
       }
       // the tests may not require working code, so they are evaluated even if
       // the user code does not get executed.
-      testResult = eval(e.data.testString) as unknown;
-    }
-    if (typeof testResult === 'function') {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-      await testResult((fileName: string) =>
-        __toString(e.data.sources[fileName])
-      );
+      eval(e.data.testString);
     }
     __utils.flushLogs();
     ctx.postMessage({ pass: true });
