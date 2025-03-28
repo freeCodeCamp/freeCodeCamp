@@ -1,5 +1,5 @@
 import React from 'react';
-import { withTranslation, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -18,10 +18,14 @@ interface ChallengeInfo {
   challengeType: number;
 }
 
-interface Challenges {
+interface ChallengesProps {
   challenges: ChallengeInfo[];
   isProjectBlock: boolean;
-  isGridMap?: boolean;
+}
+
+interface GridMapChallengesProps {
+  challenges: ChallengeInfo[];
+  isProjectBlock: boolean;
   blockTitle?: string | null;
 }
 
@@ -46,6 +50,30 @@ const CertChallenge = ({ challenge }: { challenge: ChallengeInfo }) => (
   </Link>
 );
 
+export function ChallengesList({
+  challenges,
+  isProjectBlock
+}: ChallengesProps): JSX.Element {
+  return (
+    <ul className={`map-challenges-ul`}>
+      {challenges.map(challenge => (
+        <li
+          className={`map-challenge-title ${
+            isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
+          }`}
+          id={challenge.dashedName}
+          key={'map-challenge' + challenge.fields.slug}
+        >
+          {!isProjectBlock ? (
+            <ListChallenge challenge={challenge} />
+          ) : (
+            <CertChallenge challenge={challenge} />
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+}
 // Step or Task challenge
 const GridChallenge = ({ challenge }: { challenge: ChallengeInfo }) => {
   const { t } = useTranslation();
@@ -70,12 +98,13 @@ const GridChallenge = ({ challenge }: { challenge: ChallengeInfo }) => {
   );
 };
 
-function Challenges({
+const LinkToFirstIncompleteChallenge = ({
   challenges,
-  isProjectBlock,
-  isGridMap = false,
   blockTitle
-}: Challenges): JSX.Element {
+}: {
+  challenges: ChallengeInfo[];
+  blockTitle?: string | null;
+}) => {
   const { t } = useTranslation();
 
   const firstIncompleteChallenge = challenges.find(
@@ -85,26 +114,34 @@ function Challenges({
   const isChallengeStarted = !!challenges.find(
     challenge => challenge.isCompleted
   );
+  return firstIncompleteChallenge ? (
+    <div className='challenge-jump-link'>
+      <ButtonLink size='small' href={firstIncompleteChallenge.fields.slug}>
+        {!isChallengeStarted
+          ? t('buttons.start-project')
+          : t('buttons.resume-project')}{' '}
+        {blockTitle && <span className='sr-only'>{blockTitle}</span>}
+      </ButtonLink>
+    </div>
+  ) : null;
+};
 
-  return isGridMap ? (
+export const GridMapChallenges = ({
+  challenges,
+  blockTitle,
+  isProjectBlock
+}: GridMapChallengesProps) => {
+  const { t } = useTranslation();
+
+  return (
     <>
-      {firstIncompleteChallenge && (
-        <div className='challenge-jump-link'>
-          <ButtonLink size='small' href={firstIncompleteChallenge.fields.slug}>
-            {!isChallengeStarted
-              ? t('buttons.start-project')
-              : t('buttons.resume-project')}{' '}
-            {blockTitle && <span className='sr-only'>{blockTitle}</span>}
-          </ButtonLink>
-        </div>
-      )}
+      <LinkToFirstIncompleteChallenge
+        challenges={challenges}
+        blockTitle={blockTitle}
+      />
       <nav
         aria-label={
-          blockTitle
-            ? challenges[0].superBlock === SuperBlocks.A2English
-              ? t('aria.dialogues-and-tasks-for', { blockTitle })
-              : t('aria.steps-for', { blockTitle })
-            : t('aria.steps')
+          blockTitle ? t('aria.steps-for', { blockTitle }) : t('aria.steps')
         }
       >
         <ul className={`map-challenges-ul map-challenges-grid`}>
@@ -120,11 +157,8 @@ function Challenges({
               id={challenge.dashedName}
               key={`map-challenge ${challenge.fields.slug}`}
             >
-              {!isProjectBlock &&
-              challenge.challengeType !== challengeTypes.dialogue ? (
+              {!isProjectBlock ? (
                 <GridChallenge challenge={challenge} />
-              ) : challenge.challengeType === challengeTypes.dialogue ? (
-                <ListChallenge challenge={challenge} />
               ) : (
                 <CertChallenge challenge={challenge} />
               )}
@@ -133,27 +167,48 @@ function Challenges({
         </ul>
       </nav>
     </>
-  ) : (
-    <ul className={`map-challenges-ul`}>
-      {challenges.map(challenge => (
-        <li
-          className={`map-challenge-title ${
-            isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
-          }`}
-          id={challenge.dashedName}
-          key={'map-challenge' + challenge.fields.slug}
-        >
-          {!isProjectBlock ? (
-            <ListChallenge challenge={challenge} />
-          ) : (
-            <CertChallenge challenge={challenge} />
-          )}
-        </li>
-      ))}
-    </ul>
   );
-}
+};
 
-Challenges.displayName = 'Challenges';
+export const ChallengesWithDialogs = ({
+  challenges,
+  blockTitle
+}: GridMapChallengesProps) => {
+  const { t } = useTranslation();
 
-export default withTranslation()(Challenges);
+  return (
+    <>
+      <LinkToFirstIncompleteChallenge
+        challenges={challenges}
+        blockTitle={blockTitle}
+      />
+      <nav
+        aria-label={
+          blockTitle
+            ? t('aria.dialogues-and-tasks-for', { blockTitle })
+            : t('aria.steps')
+        }
+      >
+        <ul className={`map-challenges-ul map-challenges-grid `}>
+          {challenges.map(challenge => (
+            <li
+              className={`map-challenge-title map-challenge-title-grid ${
+                challenge.challengeType === challengeTypes.dialogue
+                  ? 'map-dialogue-wrap'
+                  : 'map-challenge-wrap'
+              }`}
+              id={challenge.dashedName}
+              key={`map-challenge ${challenge.fields.slug}`}
+            >
+              {challenge.challengeType === challengeTypes.dialogue ? (
+                <ListChallenge challenge={challenge} />
+              ) : (
+                <GridChallenge challenge={challenge} />
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </>
+  );
+};

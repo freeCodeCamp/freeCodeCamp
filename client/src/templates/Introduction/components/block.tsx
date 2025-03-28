@@ -25,7 +25,11 @@ import {
   BlockTypes
 } from '../../../../../shared-dist/config/blocks';
 import CheckMark from './check-mark';
-import Challenges from './challenges';
+import {
+  GridMapChallenges,
+  ChallengesList,
+  ChallengesWithDialogs
+} from './challenges';
 import BlockLabel from './block-label';
 import BlockIntros from './block-intros';
 import BlockHeader from './block-header';
@@ -202,7 +206,7 @@ export class Block extends Component<BlockProps> {
             </div>
           </button>
           {isExpanded && (
-            <Challenges
+            <ChallengesList
               challenges={extendedChallenges}
               isProjectBlock={isProjectBlock}
             />
@@ -234,7 +238,7 @@ export class Block extends Component<BlockProps> {
             )}
           </div>
           <BlockIntros intros={blockIntroArr} />
-          <Challenges
+          <ChallengesList
             challenges={extendedChallenges}
             isProjectBlock={isProjectBlock}
           />
@@ -277,10 +281,56 @@ export class Block extends Component<BlockProps> {
 
               <div id={`${block}-panel`}>
                 <BlockIntros intros={blockIntroArr} />
-                <Challenges
+                <GridMapChallenges
                   challenges={extendedChallenges}
                   isProjectBlock={isProjectBlock}
-                  isGridMap={true}
+                  blockTitle={blockTitle}
+                />
+              </div>
+            </>
+          )}
+        </div>
+      </ScrollableAnchor>
+    );
+
+    /**
+     * TaskGridBlock displays tasks in a grid and dialogues separately.
+     * This layout is used for task-based blocks.
+     * Example: https://www.freecodecamp.org/learn/a2-english-for-developers/#learn-greetings-in-your-first-day-at-the-office
+     */
+    const TaskGridBlock = (
+      <ScrollableAnchor id={block}>
+        <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
+          <BlockHeader
+            blockDashed={block}
+            blockTitle={blockTitle}
+            blockType={blockType}
+            completedCount={completedCount}
+            courseCompletionStatus={courseCompletionStatus()}
+            handleClick={this.handleBlockClick}
+            isCompleted={isBlockCompleted}
+            isExpanded={isExpanded}
+            percentageCompleted={percentageCompleted}
+          />
+
+          {isExpanded && (
+            <>
+              {!isAudited && (
+                <div className='tags-wrapper'>
+                  <Link
+                    className='cert-tag'
+                    to={t('links:help-translate-link-url')}
+                  >
+                    {t('misc.translation-pending')}
+                  </Link>
+                </div>
+              )}
+
+              <div id={`${block}-panel`}>
+                <BlockIntros intros={blockIntroArr} />
+                <ChallengesWithDialogs
+                  challenges={extendedChallenges}
+                  isProjectBlock={isProjectBlock}
                   blockTitle={blockTitle}
                 />
               </div>
@@ -379,12 +429,18 @@ export class Block extends Component<BlockProps> {
                 id={`${block}-panel`}
                 className={isGridBlock ? 'challenge-grid-block-panel' : ''}
               >
-                <Challenges
-                  challenges={extendedChallenges}
-                  isProjectBlock={false}
-                  isGridMap={isGridBlock}
-                  blockTitle={blockTitle}
-                />
+                {isGridBlock ? (
+                  <GridMapChallenges
+                    challenges={extendedChallenges}
+                    blockTitle={blockTitle}
+                    isProjectBlock={isProjectBlock}
+                  />
+                ) : (
+                  <ChallengesList
+                    challenges={extendedChallenges}
+                    isProjectBlock={isProjectBlock}
+                  />
+                )}
               </div>
             </div>
           )}
