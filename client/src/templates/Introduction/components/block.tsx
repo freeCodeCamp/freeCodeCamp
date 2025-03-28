@@ -399,7 +399,8 @@ class Block extends Component<BlockProps> {
       [BlockLayouts.ProjectList]: ProjectListBlock,
       [BlockLayouts.LegacyLink]: LegacyLinkBlock,
       [BlockLayouts.LegacyChallengeList]: LegacyChallengeListBlock,
-      [BlockLayouts.LegacyChallengeGrid]: LegacyChallengeGridBlock
+      [BlockLayouts.LegacyChallengeGrid]: LegacyChallengeGridBlock,
+      [BlockLayouts.DialogueGrid]: LegacyChallengeGridBlock
     };
 
     return (

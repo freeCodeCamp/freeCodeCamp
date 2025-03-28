@@ -10,6 +10,7 @@ const frameDocument = document as FrameDocument;
 frameDocument.__initTestFrame = initTestFrame;
 
 async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const code = (e.code.contents || '').slice();
 
   const editableContents = (e.code.editableContents || '').slice();

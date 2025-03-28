@@ -142,6 +142,7 @@ const schema = Joi.object()
     blockLayout: Joi.valid(
       'challenge-list',
       'challenge-grid',
+      'dialogue-grid',
       'link',
       'project-list',
       'legacy-challenge-list',
