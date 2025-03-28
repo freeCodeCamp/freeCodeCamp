@@ -127,10 +127,18 @@ const createHeader = (id = mainPreviewId) =>
       }
       if (element) {
         const href = element.getAttribute('href');
-        if (!href || href[0] !== '#' && !href.match(/^https?:\\/\\//)) {
+        if (!href || href[0] != '#' && !href.match(/^https?:\\/\\//)) {
           e.preventDefault();
         }
       }
+
+        if (href[0] === '#') {
+          e.preventDefault();
+          stopImmediatePropagation();
+          const el = document.getElementById(href.split("").shift().join(""));
+          el.scrollIntoView();
+        }
+        
     }, false);
     document.addEventListener('submit', function(e) {
       const action = e.target.getAttribute('action');
