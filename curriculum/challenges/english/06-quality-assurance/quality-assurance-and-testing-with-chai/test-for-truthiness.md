@@ -29,8 +29,7 @@ Within `tests/1_unit-tests.js` under the test labeled `#4` in the `Basic Asserti
 All tests should pass.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(
+  $.get(code + '/_api/get-tests?type=unit&n=3').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -43,8 +42,7 @@ All tests should pass.
 You should choose the correct method for the first assertion - `isTrue` vs. `isNotTrue`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(
+  $.get(code + '/_api/get-tests?type=unit&n=3').then(
     (data) => {
       assert.equal(data.assertions[0].method, 'isTrue', 'True is true');
     },
@@ -57,8 +55,7 @@ You should choose the correct method for the first assertion - `isTrue` vs. `isN
 You should choose the correct method for the second assertion - `isTrue` vs. `isNotTrue`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(
+  $.get(code + '/_api/get-tests?type=unit&n=3').then(
     (data) => {
       assert.equal(
         data.assertions[1].method,
@@ -75,8 +72,7 @@ You should choose the correct method for the second assertion - `isTrue` vs. `is
 You should choose the correct method for the third assertion - `isTrue` vs. `isNotTrue`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(
+  $.get(code + '/_api/get-tests?type=unit&n=3').then(
     (data) => {
       assert.equal(
         data.assertions[2].method,

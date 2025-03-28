@@ -60,7 +60,7 @@ assert(
 The spread operator should be used to return new state.
 
 ```js
-(getUserInput) => assert(getUserInput('index').includes('...state'));
+assert(code.includes('...state'));
 ```
 
 # --seed--

@@ -155,7 +155,7 @@
         "title": "レスポンシブウェブデザインの学習: ピアノを作成する",
         "intro": [
           "レスポンシブデザインはウェブページに異なるサイズのスクリーンでどのように見える必要があるかを伝えます。",
-          "このコースでは、CSS とレスポンシブデザインを用いてピアノをコーディングします。メディアクエリと疑似セレクターについてもさらに学習します。"
+          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -1192,9 +1192,9 @@
       "The Odin Project was created in 2013 by a lone developer, Erik Trautman. Over the years, an open source community has sprung up to maintain and expand the project.",
       "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
       "If you want the original experience of configuring all of The Odin Project to run on your local computer, you can check out the original Odin Project on <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project website</a>. A huge thanks to The Odin Project community for continuing to maintain this valuable learning resource for developers all around the world.",
-      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
+      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
       "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
-      "This course includes content from <a href='javascript.info'>JavaScript.info</a>, which is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
+      "This course includes content from <a href='https://javascript.info/' target='_blank' rel='noopener noreferrer nofollow'>JavaScript.info</a>, which is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>."
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1643,7 +1643,9 @@
       },
       "learn-how-to-express-concerns": {
         "title": "Learn How to Express Concerns",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to inform other people that you are worried about things that might happen to your projects and tasks."
+        ]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Learn How to Express Decisions Based on Comparisons",
@@ -2439,7 +2441,7 @@
         "title": "Design a Piano",
         "intro": [
           "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
       "lab-technical-documentation-page": {
@@ -3968,7 +3970,7 @@
   },
   "misc-text": {
     "certification": "{{cert}} 認定",
-    "browse-other": "他の無料の認定講座を閲覧する\n(上から順に受講することをお勧めします)",
+    "browse-other": "Browse our other free certifications",
     "courses": "コース一覧",
     "steps": "ステップ",
     "expand": "コースを展開",

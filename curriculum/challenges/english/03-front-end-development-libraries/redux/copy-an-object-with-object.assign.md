@@ -68,7 +68,7 @@ assert(
 `Object.assign` should be used to return new state.
 
 ```js
-(getUserInput) => assert(getUserInput('index').includes('Object.assign'));
+assert(code.includes('Object.assign'));
 ```
 
 # --seed--

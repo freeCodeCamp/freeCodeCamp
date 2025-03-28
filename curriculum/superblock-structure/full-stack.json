@@ -584,9 +584,23 @@
           "dashedName": "react-state-hooks-and-routing",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-state-and-responding-to-events-in-react"
+            },
             { "dashedName": "workshop-toggle-text-app" },
+            {
+              "dashedName": "lecture-understanding-effects-and-referencing-values-in-react"
+            },
             { "dashedName": "review-react-state-and-hooks" },
             { "dashedName": "quiz-react-state-and-hooks" },
+            { "dashedName": "lecture-working-with-forms-in-react" },
+            {
+              "dashedName": "lecture-working-with-data-fetching-and-memoization-in-react"
+            },
+            {
+              "dashedName": "lecture-routing-react-frameworks-and-dependecy-management-tools"
+            },
+            { "dashedName": "lecture-react-strategies-and-debugging" },
             { "dashedName": "review-react-forms-data-fetching-and-routing" },
             { "dashedName": "quiz-react-forms-data-fetching-and-routing" }
           ]
@@ -595,6 +609,9 @@
           "dashedName": "performance",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-performance-in-web-applications"
+            },
             { "dashedName": "review-web-performance" },
             { "dashedName": "quiz-web-performance" }
           ]
@@ -603,6 +620,9 @@
           "dashedName": "css-libraries-and-frameworks",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-css-libraries-and-frameworks"
+            },
             { "dashedName": "review-css-libraries-and-frameworks" },
             { "dashedName": "quiz-css-libraries-and-frameworks" }
           ]
@@ -611,6 +631,10 @@
           "dashedName": "testing",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-the-different-types-of-testing"
+            },
+            { "dashedName": "lecture-understanding-test-automation" },
             { "dashedName": "review-testing" },
             { "dashedName": "quiz-testing" }
           ]
@@ -619,6 +643,7 @@
           "dashedName": "typescript-fundamentals",
           "comingSoon": true,
           "blocks": [
+            { "dashedName": "lecture-introduction-to-typescript" },
             { "dashedName": "review-typescript" },
             { "dashedName": "quiz-typescript" }
           ]

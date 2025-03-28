@@ -1,4 +1,4 @@
-name: Docker -- DOCR
+name: CD - Docker - DOCR
 
 on:
   workflow_dispatch:
