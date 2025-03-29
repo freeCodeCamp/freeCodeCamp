@@ -107,7 +107,7 @@ buttonElements.forEach(button => {
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Favorite Icon Toggler</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
