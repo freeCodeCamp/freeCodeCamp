@@ -4,6 +4,7 @@ title: Use the Twitch JSON API
 challengeType: 3
 forumTopicId: 19541
 dashedName: use-the-twitch-json-api
+solutionLink: https://codepen.io/freeCodeCamp/full/Myvqmo
 ---
 
 # --description--

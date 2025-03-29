@@ -4,6 +4,7 @@ title: URL Shortener Microservice
 challengeType: 4
 forumTopicId: 301509
 dashedName: url-shortener-microservice
+solutionLink: https://url-shortener-microservice.freecodecamp.rocks
 ---
 
 # --description--
