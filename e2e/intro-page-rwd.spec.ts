@@ -20,9 +20,7 @@ test.describe('Certification intro page', () => {
 
     await page.goto('/learn/2022/responsive-web-design');
 
-    await expect(page).toHaveTitle(
-      'Responsive Web Design Certification | freeCodeCamp.org'
-    );
+    await expect(page).toHaveTitle('Responsive Web Design | freeCodeCamp.org');
     await expect(superBlockText).toBeVisible();
     await expect(firstBlockText).toBeVisible();
     await expect(secondBlockText).not.toBeVisible();
