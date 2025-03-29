@@ -4,27 +4,25 @@ const findAllAfter = require('unist-util-find-all-after');
 const between = require('unist-util-find-all-between');
 const { findAll } = require('./find-all');
 
+const isMarker = node => {
+  if (node.children && node.children[0]) {
+    const child = node.children[0];
+    return (
+      child.type === 'text' &&
+      child.value.startsWith('--') &&
+      child.value.endsWith('--') &&
+      node.type === 'heading'
+    );
+  }
+  return false;
+};
+
 function _getSection(tree) {
   return start => {
     if (!start) return [];
 
     const isEnd = node => {
-      return (
-        node.type === 'heading' && node.depth <= start.depth && isMarker(node)
-      );
-    };
-
-    const isMarker = node => {
-      if (node.children && node.children[0]) {
-        const child = node.children[0];
-        return (
-          child.type === 'text' &&
-          child.value.startsWith('--') &&
-          child.value.endsWith('--')
-        );
-      } else {
-        return false;
-      }
+      return node.depth <= start.depth && isMarker(node);
     };
 
     const end = findAfter(tree, start, isEnd);
@@ -56,4 +54,4 @@ function getAllSections(tree, marker) {
   return starts.map(_getSection(tree));
 }
 
-module.exports = { getSection, getAllSections };
+module.exports = { getSection, getAllSections, isMarker };
