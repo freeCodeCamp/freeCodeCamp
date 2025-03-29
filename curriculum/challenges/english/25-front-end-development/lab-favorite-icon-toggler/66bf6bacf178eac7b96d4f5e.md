@@ -18,7 +18,7 @@ Fulfill the user stories below and get all the tests to pass to complete the lab
 2. The unordered list should have the class `item-list`.
 3. The three list items should contain the item name followed by a `button` element with the class `favorite-icon`.
 4. The `button` element should contain the code `&#9825;` initially to represent an empty heart.
-5. When a button element containing a heart is clicked, you should add the `filled` class to the clicked `button` if it's not already present, and remove it, if it is.
+5. When a `button` element containing a heart is clicked, you should add the `filled` class to the clicked `button` if it's not already present, and remove it, if it is.
 6. When a `button` element containing a heart is clicked, the heart symbol should toggle between `&#9825;` (empty heart) and `&#10084;` (filled heart), depending on its current state.
 
 **Note:** Be sure to link your JavaScript file in your HTML. (Ex. `<script src="script.js"></script>`)
@@ -49,7 +49,7 @@ Your individual list items should contain the item name.
 assert.exists(document.querySelector('ul li').textContent);
 ```
 
-Your individual list item should contain a `button` element with the class `favorite-icon`
+Your individual list item should contain a `button` element with the class `favorite-icon`.
 
 ```js
 assert.exists(document.querySelector('ul li button.favorite-icon'));
