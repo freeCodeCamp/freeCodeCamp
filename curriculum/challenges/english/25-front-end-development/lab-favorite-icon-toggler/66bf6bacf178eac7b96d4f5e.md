@@ -197,6 +197,10 @@ h1 {
     border: none;
     cursor: pointer;
 }
+
+.filled {
+    color: #D22B2B;
+}
 ```
 
 ```js
