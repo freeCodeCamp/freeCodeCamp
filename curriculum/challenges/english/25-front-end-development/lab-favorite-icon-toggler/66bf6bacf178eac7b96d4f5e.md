@@ -50,7 +50,7 @@ assert.exists(document.querySelector('ul li').textContent);
 
 ```
 
-Your individual list item should contain a  `button` element with the class `favorite-icon`
+Your individual list item should contain a `button` element with the class `favorite-icon`.
 
 ```js
 assert.exists(document.querySelector('ul li button.favorite-icon'));
