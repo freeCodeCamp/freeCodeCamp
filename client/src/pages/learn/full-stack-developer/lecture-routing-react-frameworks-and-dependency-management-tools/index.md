@@ -1,6 +1,6 @@
 ---
 title: Introduction to Routing, React Frameworks, and Dependency Management Tools
-block: lecture-routing-react-frameworks-and-dependecy-management-tools
+block: lecture-routing-react-frameworks-and-dependency-management-tools
 superBlock: full-stack-developer
 ---
 
