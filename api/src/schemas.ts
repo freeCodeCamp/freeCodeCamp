@@ -6,6 +6,7 @@ export { backendChallengeCompleted } from './schemas/challenge/backend-challenge
 export { coderoadChallengeCompleted } from './schemas/challenge/coderoad-challenge-completed';
 export { exam } from './schemas/challenge/exam';
 export { examChallengeCompleted } from './schemas/challenge/exam-challenge-completed';
+export { dailyCodingChallengeCompleted } from './schemas/challenge/daily-coding-challenge-completed';
 export { modernChallengeCompleted } from './schemas/challenge/modern-challenge-completed';
 export { msTrophyChallengeCompleted } from './schemas/challenge/ms-trophy-challenge-completed';
 export { projectCompleted } from './schemas/challenge/project-completed';
