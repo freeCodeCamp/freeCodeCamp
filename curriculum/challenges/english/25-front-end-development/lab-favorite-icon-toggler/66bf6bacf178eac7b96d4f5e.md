@@ -10,7 +10,7 @@ demoType: onClick
 
 In this lab you will use JavaScript click events to toggle the appearance of a favorite icon. When the heart icon is clicked, the appearance of the heart changes from empty to filled, and vice versa.
 
-Fulfill the user stories below and get all the tests to pass to complete the lab. **Do not copy this demo project**.
+Fulfill the user stories below and get all the tests to pass to complete the lab.
 
 **User Stories:**
 
