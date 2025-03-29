@@ -1,25 +1,22 @@
-export type ProgressTimestamp = number | { timestamp: number } | null;
+import { user } from '@prisma/client';
+
 export type Calendar = Record<number, 1>;
 /**
  * Converts a ProgressTimestamp array to a object with keys based on the timestamps.
+ *
+ * TODO: Destroy this function. Client change needed.
  *
  * @param progressTimestamps The ProgressTimestamp array.
  * @returns The object with keys based on the timestamps.
  */
 export const getCalendar = (
-  progressTimestamps: ProgressTimestamp[] | null
+  progressTimestamps: user['progressTimestamps']
 ): Calendar => {
   const calendar: Calendar = {};
 
-  progressTimestamps?.forEach(progress => {
-    if (progress === null) return;
-    if (typeof progress === 'number') {
-      calendar[Math.floor(progress / 1000)] = 1;
-    } else {
-      calendar[Math.floor(progress.timestamp / 1000)] = 1;
-    }
+  progressTimestamps.forEach(progress => {
+    calendar[Math.floor(progress / 1000)] = 1;
   });
-
   return calendar;
 };
 
@@ -30,7 +27,7 @@ export const getCalendar = (
  * @returns The number of points.
  */
 export const getPoints = (
-  progressTimestamps: ProgressTimestamp[] | null
+  progressTimestamps: user['progressTimestamps']
 ): number => {
-  return progressTimestamps?.length ?? 1;
+  return progressTimestamps.length;
 };

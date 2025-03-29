@@ -184,7 +184,7 @@ importers:
         version: 1.10.2
       '@fastify/type-provider-typebox':
         specifier: 3.6.0
-        version: 3.6.0(@sinclair/typebox@0.32.14)
+        version: 3.6.0(@sinclair/typebox@0.34.14)
       '@growthbook/growthbook':
         specifier: 1.3.1
         version: 1.3.1
@@ -4366,8 +4366,8 @@ packages:
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
 
-  '@sinclair/typebox@0.32.14':
-    resolution: {integrity: sha512-EC77Mw8huT2z9YlYbWfpIQgN6shZE1tH4NP4/Trig8UBel9FZNMZRJ42ubJI8PLor2uIU+waLml1dce5ReCOPg==}
+  '@sinclair/typebox@0.34.14':
+    resolution: {integrity: sha512-TJ7Al17j3+by5y2QkTLcF/oBVMbgXBhILVgi9PuwpxQVZZvGh5BFRzWbJPmZVNKpbRLjuMzFuRwR+tdFPqCkvA==}
 
   '@sindresorhus/is@0.14.0':
     resolution: {integrity: sha512-9NET910DNaIPngYnLLPeg+Ogzqsi9uM4mSboU5y6p8S5DzMTVEsJZrawi+BoDNUVBa2DhJqQYUFvMDfgU062LQ==}
@@ -19181,9 +19181,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@fastify/type-provider-typebox@3.6.0(@sinclair/typebox@0.32.14)':
+  '@fastify/type-provider-typebox@3.6.0(@sinclair/typebox@0.34.14)':
     dependencies:
-      '@sinclair/typebox': 0.32.14
+      '@sinclair/typebox': 0.34.14
 
   '@fortawesome/fontawesome-common-types@6.7.1': {}
 
@@ -20413,7 +20413,7 @@ snapshots:
 
   '@sinclair/typebox@0.27.8': {}
 
-  '@sinclair/typebox@0.32.14': {}
+  '@sinclair/typebox@0.34.14': {}
 
   '@sindresorhus/is@0.14.0': {}
 

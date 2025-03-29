@@ -1,42 +1,22 @@
-import { Portfolio } from '@prisma/client';
+import { Portfolio, ProfileUI } from '@prisma/client';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
 
 import { isRestricted } from '../helpers/is-restricted';
 import * as schemas from '../../schemas';
-import { splitUser } from '../helpers/user-utils';
+// import { splitUser } from '../helpers/user-utils';
 import {
   normalizeChallenges,
   NormalizedChallenge,
-  normalizeFlags,
-  normalizeProfileUI,
   normalizeTwitter,
   removeNulls
 } from '../../utils/normalize';
-import {
-  Calendar,
-  getCalendar,
-  getPoints,
-  ProgressTimestamp
-} from '../../utils/progress';
+import { Calendar, getCalendar, getPoints } from '../../utils/progress';
 import { challengeTypes } from '../../../../shared/config/challenge-types';
 
-type ProfileUI = Partial<{
-  isLocked: boolean;
-  showAbout: boolean;
-  showCerts: boolean;
-  showDonation: boolean;
-  showHeatMap: boolean;
-  showLocation: boolean;
-  showName: boolean;
-  showPoints: boolean;
-  showPortfolio: boolean;
-  showTimeLine: boolean;
-}>;
-
 type RawUser = {
-  about: string;
+  about: string | null;
   completedChallenges: NormalizedChallenge[];
   calendar: Calendar;
   id: string;
@@ -135,9 +115,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         return reply.send({});
       }
 
-      const [flags, rest] = splitUser(user);
-
-      const publicUser = _.omit(rest, [
+      const publicUser = _.omit(user, [
         'currentChallengeId',
         'email',
         'emailVerified',
@@ -154,10 +132,8 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         'isBanned'
       ]);
 
-      const normalizedProfileUI = normalizeProfileUI(user.profileUI);
-
       void reply.code(200);
-      if (normalizedProfileUI.isLocked) {
+      if (user.profileUI.isLocked) {
         // TODO(Post-MVP): just return isLocked: true and either a null user
         // or no user at all. (see other TODO in the else branch below)
         return reply.send({
@@ -165,7 +141,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
             user: {
               [user.username]: {
                 isLocked: true,
-                profileUI: normalizedProfileUI,
+                profileUI: user.profileUI,
                 username: user.username
               }
             }
@@ -173,9 +149,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           result: user.username
         });
       } else {
-        const progressTimestamps = user.progressTimestamps as
-          | ProgressTimestamp[]
-          | null;
+        const progressTimestamps = user.progressTimestamps;
         const sharedUser = replacePrivateData({
           ...user,
           calendar: getCalendar(progressTimestamps),
@@ -183,15 +157,13 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           location: user.location ?? '',
           joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
           name: user.name ?? '',
-          points: getPoints(progressTimestamps),
-          profileUI: normalizedProfileUI
+          points: getPoints(progressTimestamps)
         });
 
         const returnedUser = {
           ...removeNulls(publicUser),
-          ...normalizeFlags(flags),
           ...sharedUser,
-          profileUI: normalizedProfileUI,
+          profileUI: user.profileUI,
           // TODO: should this always be returned? Shouldn't some privacy
           // setting control it? Same applies to website, githubProfile,
           // and linkedin.

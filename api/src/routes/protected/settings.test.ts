@@ -665,7 +665,7 @@ Happy coding!
       test('PUT returns an error when the username is already used', async () => {
         await fastifyTestInstance.prisma.user.create({
           data: {
-            email: 'an@ran.dom',
+            ...createUserInput('an@ran.dom'),
             username: 'sembauke',
             about: 'about',
             acceptedPrivacyTerms: true,
