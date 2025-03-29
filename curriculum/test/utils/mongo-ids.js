@@ -1516,7 +1516,12 @@ const duplicatedProjectIds = [
   /*** Legacy Only ***/
 
   // Caesars Cipher
-  '56533eb9ac21ba0edf2244e2'
+  '56533eb9ac21ba0edf2244e2',
+
+  /* Python */
+
+  // Budget App
+  '5e44413e903586ffb414c94e'
 ];
 
 class MongoIds {

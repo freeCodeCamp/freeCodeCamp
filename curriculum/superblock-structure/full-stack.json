@@ -736,7 +736,7 @@
     {
       "dashedName": "python",
       "comingSoon": true,
-      "modules": []
+      "modules": ["add here"]
     },
     {
       "chapterType": "exam",
