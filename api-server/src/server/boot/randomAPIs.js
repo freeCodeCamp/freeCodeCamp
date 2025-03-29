@@ -17,6 +17,9 @@ module.exports = function (app) {
   router.get('/ue/:unsubscribeId', unsubscribeById);
   router.get('/resubscribe/:unsubscribeId', resubscribe);
   router.get('/api/users/get-public-profile', blockUserAgent, getPublicProfile);
+  router.get('/users/get-public-profile', blockUserAgent, getPublicProfile);
+  const getUserExists = createGetUserExists(app);
+  router.get('/users/exists', getUserExists);
 
   app.use(router);
 
@@ -166,6 +169,17 @@ module.exports = function (app) {
       },
       result: user.username
     });
+  }
+
+  function createGetUserExists(app) {
+    const User = app.models.User;
+    return function getUserExists(req, res) {
+      const username = req.query.username.toLowerCase();
+
+      User.doesExist(username, null).then(exists => {
+        res.send({ exists });
+      });
+    };
   }
 
   function prepUserForPublish(user, profileUI) {
