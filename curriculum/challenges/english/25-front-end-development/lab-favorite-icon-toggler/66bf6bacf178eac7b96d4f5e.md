@@ -21,6 +21,8 @@ Fulfill the user stories below and get all the tests to pass to complete the lab
 5. When a button element containing a heart is clicked, you should add the `filled` class to the clicked `button` if it's not already present, and remove it, if it is.
 6. When a `button` element containing a heart is clicked, the heart symbol should toggle between `&#9825;` (empty heart) and `&#10084;` (filled heart), depending on its current state.
 
+**Note:** Be sure to link your JavaScript file in your HTML. (Ex. `<script src="script.js"></script>`)
+
 # --hints--
 
 You should have an unordered list.
