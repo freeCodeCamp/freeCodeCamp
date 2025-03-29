@@ -192,7 +192,9 @@ h1 {
 }
 
 .favorite-icon {
-    font-size: 20px;
+    font-size: 1.25rem;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
 }
 ```
