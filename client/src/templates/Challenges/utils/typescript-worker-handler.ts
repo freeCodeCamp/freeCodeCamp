@@ -1,5 +1,5 @@
 import typeScriptWorkerData from '../../../../config/browser-scripts/typescript-worker.json';
-import { awaitResponse } from './worker-messenger';
+import { awaitResponse } from './awaitable-messenger';
 
 const typeScriptWorkerSrc = `/js/${typeScriptWorkerData.filename}.js`;
 
@@ -14,7 +14,7 @@ function getTypeScriptWorker(): Worker {
 
 export function compileTypeScriptCode(code: string): Promise<string> {
   return awaitResponse({
-    worker: getTypeScriptWorker(),
+    messenger: getTypeScriptWorker(),
     message: { type: 'compile', code },
     onMessage: (data, onSuccess, onFailure) => {
       if (data.type === 'compiled') {
@@ -32,7 +32,7 @@ export function compileTypeScriptCode(code: string): Promise<string> {
 
 export function checkTSServiceIsReady(): Promise<boolean> {
   return awaitResponse({
-    worker: getTypeScriptWorker(),
+    messenger: getTypeScriptWorker(),
     message: { type: 'check-is-ready' },
     onMessage: (data, onSuccess) => {
       if (data.type === 'ready') {
