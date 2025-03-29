@@ -179,11 +179,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-button {
-  border: none;
-  background-color: transparent;
-}
-
 .item-list {
     list-style-type: none;
     padding: 0;
