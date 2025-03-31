@@ -18,6 +18,8 @@ import {
 import {
   canSaveToDB,
   challengeTypes,
+  isDailyCodingChallenge,
+  getDailyCodingChallengeLanguage,
   submitTypes
 } from '../../../../../shared/config/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
@@ -103,7 +105,11 @@ function postChallenge(update) {
 }
 
 function submitModern(type, state) {
-  const challengeType = state.challenge.challengeMeta.challengeType;
+  // const challengeType = state.challenge.challengeMeta.challengeType;
+
+  console.log('state.challenge');
+  console.log(state.challenge);
+
   const tests = challengeTestsSelector(state);
   if (tests.length === 0 || tests.every(test => test.pass && !test.err)) {
     if (type === actionTypes.checkChallenge) {
@@ -111,26 +117,52 @@ function submitModern(type, state) {
     }
 
     if (type === actionTypes.submitChallenge) {
-      const { id, block } = challengeMetaSelector(state);
-      const challengeFiles = challengeFilesSelector(state);
+      const { id, block, challengeType } = challengeMetaSelector(state);
 
-      let body;
-      if (
-        block === 'javascript-algorithms-and-data-structures-projects' ||
-        canSaveToDB(challengeType)
-      ) {
-        body = standardizeRequestBody({ id, challengeType, challengeFiles });
-      } else {
-        body = {
+      console.log(`${id} ${block} ${challengeType}`);
+      let update;
+
+      // if isDailyCodingChallenge
+      if (isDailyCodingChallenge(challengeType)) {
+        console.log('dailyChallenge');
+
+        const language = getDailyCodingChallengeLanguage(challengeType);
+
+        const body = {
           id,
-          challengeType
+          challengeType,
+          language
+        };
+
+        console.log('body');
+        console.log(body);
+
+        update = {
+          endpoint: '/daily-coding-challenge-completed',
+          payload: body
+        };
+      } else {
+        console.log('modernChallenge');
+        const challengeFiles = challengeFilesSelector(state);
+
+        let body;
+        if (
+          block === 'javascript-algorithms-and-data-structures-projects' ||
+          canSaveToDB(challengeType)
+        ) {
+          body = standardizeRequestBody({ id, challengeType, challengeFiles });
+        } else {
+          body = {
+            id,
+            challengeType
+          };
+        }
+
+        update = {
+          endpoint: '/modern-challenge-completed',
+          payload: body
         };
       }
-
-      const update = {
-        endpoint: '/modern-challenge-completed',
-        payload: body
-      };
       return postChallenge(update);
     }
   }

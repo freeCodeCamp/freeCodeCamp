@@ -4,41 +4,6 @@ import CalendarDay from './calendar-day';
 
 import './calendar.css';
 
-// const dailyChallengeData = [
-//   {
-//     date: '02-20-2025',
-//     title: 'Challenge 1'
-//   },
-//   {
-//     date: '02-21-2025',
-//     title: 'Challenge 1'
-//   },
-//   {
-//     date: '02-22-2025',
-//     title: 'Challenge 1'
-//   },
-//   {
-//     date: '02-23-2025',
-//     title: 'Challenge 1'
-//   },
-//   {
-//     date: '02-24-2025',
-//     title: 'Challenge 1'
-//   },
-//   {
-//     date: '02-25-2025',
-//     title: 'Challenge 1'
-//   },
-//   {
-//     date: '02-26-2025',
-//     title: 'Challenge 1'
-//   },
-//   {
-//     date: '02-27-2025',
-//     title: 'Challenge 1'
-//   }
-// ];
-
 const now = new Date();
 
 // Month in "02" format (e.g., "02" for February)
