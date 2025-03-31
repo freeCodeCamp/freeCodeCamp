@@ -20,13 +20,14 @@ interface ChallengeInfo {
 
 interface ChallengesProps {
   challenges: ChallengeInfo[];
-  isProjectBlock: boolean;
 }
 
-interface GridMapChallengesProps {
-  challenges: ChallengeInfo[];
+interface BlockTitleProps {
+  blockTitle: string;
+}
+
+interface IsProjectBlockProps {
   isProjectBlock: boolean;
-  blockTitle?: string | null;
 }
 
 const CheckMark = ({ isCompleted }: { isCompleted: boolean }) =>
@@ -53,7 +54,7 @@ const CertChallenge = ({ challenge }: { challenge: ChallengeInfo }) => (
 export function ChallengesList({
   challenges,
   isProjectBlock
-}: ChallengesProps): JSX.Element {
+}: ChallengesProps & { isProjectBlock: boolean }): JSX.Element {
   return (
     <ul className={`map-challenges-ul`}>
       {challenges.map(challenge => (
@@ -101,10 +102,7 @@ const GridChallenge = ({ challenge }: { challenge: ChallengeInfo }) => {
 const LinkToFirstIncompleteChallenge = ({
   challenges,
   blockTitle
-}: {
-  challenges: ChallengeInfo[];
-  blockTitle?: string | null;
-}) => {
+}: ChallengesProps & BlockTitleProps) => {
   const { t } = useTranslation();
 
   const firstIncompleteChallenge = challenges.find(
@@ -130,7 +128,7 @@ export const GridMapChallenges = ({
   challenges,
   blockTitle,
   isProjectBlock
-}: GridMapChallengesProps) => {
+}: ChallengesProps & BlockTitleProps & IsProjectBlockProps) => {
   const { t } = useTranslation();
 
   return (
@@ -173,7 +171,7 @@ export const GridMapChallenges = ({
 export const ChallengesWithDialogs = ({
   challenges,
   blockTitle
-}: GridMapChallengesProps) => {
+}: ChallengesProps & BlockTitleProps) => {
   const { t } = useTranslation();
 
   return (
