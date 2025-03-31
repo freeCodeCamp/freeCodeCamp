@@ -105,7 +105,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "play-scene": "Press Play",
+    "play": "Play Video",
+    "pause": "Pause Video",
     "closed-caption": "Closed caption",
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
@@ -164,13 +165,12 @@
       "cta": "Start Learning Now (it's free)"
     },
     "certification-heading": "Pata vyeti vilivyoidhinishwa bila malipo katika:",
-    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
+    "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "Learn English for Developers:",
-    "professional-certs-heading": "Earn free professional certifications:",
+    "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
-    "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
+    "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "Try our beta curriculum:",
-    "next-english-heading": "Try our latest English curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "faq": "Maswali yanayoulizwa mara kwa mara:",
     "faqs": [
@@ -232,7 +232,6 @@
     ]
   },
   "settings": {
-    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Shiriki miradi yako isiyo ya bure yaCodeCamp, makala, au maombi ya kuvuta yaliyokubaliwa.",
     "privacy": "Mipangilio katika sehemu hii hukuwezesha kudhibiti kile kinachoonyeshwa kwenye jalada lako la umma la freeCodeCamp. Bonyeza save ili kuhifadhi mabadiliko yako.",
     "data": "Ili kuona ni data gani tunayoshikilia kwenye akaunti yako, bofya kitufe cha \"Pakua data yako\" hapa chini",
@@ -402,21 +401,7 @@
     "welcome-1": "Karibu tena, {{name}}.",
     "welcome-2": "Karibu katika freeCodeCamp.org",
     "start-at-beginning": "Ikiwa wewe ni mgeni katika coding, tunapendekeza <0>uanze mwanzo</0>.",
-    "read-this": {
-      "heading": "Tafadhali punguza mwendo na usome hii.",
-      "p1": "freeCodeCamp ni njia iliyothibitishwa kwa kazi yako ya kwanza ya msanidi programu.",
-      "p2": "Zaidi ya watu 40,000 wamepata kazi za wasanidi programu baada ya kukamilisha hili - ikiwa ni pamoja na katika makampuni makubwa kama Google na Microsoft.",
-      "p3": "Iwapo wewe ni mgeni katika upangaji programu, tunapendekeza uanze mwanzoni na upate uidhinishaji huu kwa mpangilio.",
-      "p4": "Ili kupata kila cheti, unda miradi yake 5 inayohitajika na upitie majaribio yake yote.",
-      "p5": "Unaweza kuongeza vyeti hivi kwenye wasifu wako au LinkedIn. Lakini muhimu zaidi kuliko vyeti ni mazoezi unayopata njiani.",
-      "p6": "Ikiwa unahisi kuzidiwa, hiyo ni kawaida. Programming ni ngumu.",
-      "p7": "Mazoezi ni ufunguo. Fanya mazoezi, fanya mazoezi, fanya mazoezi.",
-      "p8": "Na mtaala huu utakupa maelfu ya masaa ya mazoezi ya programu kwa mikono.",
-      "p9": "Na kama ungependa kujifunza zaidi nadharia ya hisabati na sayansi ya kompyuta, pia tuna maelfu ya saa za kozi za video kwenye <0>kituo cha YouTube cha freeCodeCamp</0>.",
-      "p10": "Ikiwa unataka kupata kazi ya msanidi programu au wateja wa kujitegemea, ujuzi wa programu utakuwa sehemu tu ya fumbo. Pia unahitaji kujenga mtandao wako wa kibinafsi na sifa yako kama msanidi programu.",
-      "p11": "Unaweza kufanya hivi kwenye LinkedIn na GitHub, na pia kwenye <0>jukwaa la freeCodeCamp</0>.",
-      "p12": "Happy Coding!"
-    },
+    "happy-coding": "Happy coding!",
     "upcoming-lessons": "Masomo Yajayo",
     "learn": "Jifunze",
     "add-subtitles": "Saidia kuboresha au kuongeza manukuu",
@@ -460,7 +445,7 @@
     "rsa": "Soma, tafuta, uliza",
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Anza upya somo hili?",
-    "reset-warn": "Je, una uhakika ungependa kuanza upya somo hili? Vihariri na majaribio vitawekwa upya.",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone.",
     "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Kidokezo: Ikiwa kivinjari kidogo kinafunika msimbo, bofya na uburute ili kuisogeza. Pia, jisikie huru kusimamisha na kuhariri msimbo katika video wakati wowote.",
@@ -508,6 +493,28 @@
       "continue-project": "Clicking the button below will start a new project. If you have previously started the {{course}} course, go to <0>your Gitpod dashboard</0> to continue.",
       "learn-more": "Learn more about <0>Gitpod workspaces.</0>",
       "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account."
+    },
+    "local": {
+      "intro": "This course runs in a virtual Linux machine on your computer. To run the course, you first need to download each of the following if you don't already have them:",
+      "download-vscode": "<0>VS Code</0> and the <1>Dev Containers</1> extension",
+      "heading": "Then, follow these instructions to start the course:",
+      "step-1": "Open a terminal and clone the RDB Alpha repo if you don't already have it with <0>git clone https://github.com/freeCodeCamp/rdb-alpha</0>",
+      "step-2": "Navigate to the <0>rdb-alpha</0> directory in the terminal with <1>cd rdb-alpha</1>, and open VS Code with <2>code .</2>",
+      "sub-step-heading": "If you want to save your progress to your freeCodeCamp account, do the following:",
+      "sub-step-1": "Generate a user token if you don't already have one:",
+      "generate-token-btn": "Generate User Token",
+      "sub-step-2": "Copy your user token:",
+      "copy-token-btn": "Copy User Token",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your user token will be deleted and your progress will not be saved to your freeCodeCamp account.",
+      "sub-step-3": "In the VS Code that opened, find and open the file named <0>Dockerfile</0>. At the bottom of the file, paste your token in as the value for the <1>CODEROAD_WEBHOOK_TOKEN</1> variable. It should look like this: <2>ENV CODEROAD_WEBHOOK_TOKEN=your-token-here</2>",
+      "step-3": "Open the command palette in VS Code by expanding the \"View\" menu and clicking \"Command Palette...\" and enter <0>Dev Containers: Rebuild and Reopen in Container</0> in the input.",
+      "step-4": "A new VS Code window will open and begin building the Docker image. It will take several minutes the first time.",
+      "step-5": "Once it is finished building, open the command palette again and enter <0>CodeRoad: Start</0> to open CodeRoad.",
+      "step-6": "In the CodeRoad window, click \"Start New Tutorial\" and then the \"URL\" tab at the top.",
+      "step-7": "Copy the course URL below, paste it in the URL input, and click \"Load\".",
+      "copy-url": "Copy Course URL",
+      "step-8": "Click \"Start\" to begin.",
+      "step-9": "Follow the instructions in CodeRoad to complete the course. Note: You may need to restart the terminal once for terminal settings to take effect and the tests to pass."
     },
     "step-1": "Hatua ya 1: Kamilisha mradi",
     "step-2": "Hatua ya 2: Wasilisha msimbo wako",
@@ -756,13 +763,12 @@
   "search": {
     "label": "Tafuta",
     "placeholder": {
-      "default": "Search our tutorials",
-      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+      "default": "Search our news articles, tutorials, and books",
+      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
     },
     "see-results": "Tazama matokeo yote ya {{searchQuery}}",
-    "no-tutorials": "Hakuna mafunzo yaliyopatikana",
     "try": "Unatafuta kitu? Jaribu upau wa kutafutia kwenye ukurasa huu.",
-    "no-results": "Hatukuweza kupata chochote kinachohusiana na <0>{{query}}</0>",
+    "no-results": "No results found",
     "result-list": "Search results"
   },
   "misc": {
@@ -775,7 +781,7 @@
     "brand-new-account": "Karibu kwenye akaunti yako mpya kabisa ya freeCodeCamp. Tuanze.",
     "duplicate-account-warning": "Ikiwa ulitaka kuingia katika akaunti iliyopo badala ya kufungua akaunti hii, <0>bofya hapa ili kufuta akaunti hii</0> na ujaribu anwani nyingine ya barua pepe.",
     "quincy": "- Quincy Larson, mwalimu aliyeanzisha freeCodeCamp.org",
-    "email-blast": "Kila Ijumaa mimi hutuma barua pepe na viungo 5 kuhusu programu na sayansi ya kompyuta. Ninatuma hizi kwa takriban watu milioni 6. Je, ungependa nikutumie hii pia?",
+    "email-blast": "Each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Sasisha anwani yako ya barua pepe",
     "update-email-2": "Sasisha anwani yako ya barua pepe hapa:",
     "email": "Barua pepe",
@@ -918,6 +924,12 @@
     "generate-exam-error": "Hitilafu ilitokea wakati wa kujaribu kuunda mtihani wako.",
     "cert-not-found": "The certification {{certSlug}} does not exist.",
     "reset-editor-layout": "Your editor layout has been reset.",
+    "user-token-generated": "A user token was created for you.",
+    "user-token-generate-error": "Something went wrong trying to generate a user token for you.",
+    "user-token-copied": "User token copied to clipboard.",
+    "user-token-copy-error": "Something went wrong trying to copy your token.",
+    "course-url-copied": "Course URL copied to clipboard.",
+    "course-url-copy-error": "Something went wrong trying to copy the course URL.",
     "ms": {
       "transcript": {
         "link-err-1": "Please include a Microsoft transcript URL in the request.",
@@ -969,7 +981,8 @@
     "publicly-visible-url": "Kumbuka kuwasilisha URL ya programu inayoonekana hadharani.",
     "ms-learn-link": "Tafadhali tumia kiungo halali cha kombe la Microsoft Learn.",
     "path-url": "Labda unataka kuwasilisha njia ya mizizi yaani https://example.com, sio https://example.com/path",
-    "source-code-link-required": "Remember to submit the link to your source code."
+    "source-code-link-required": "Remember to submit the link to your source code.",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "Mkurugenzi Mtendaji, freeCodeCamp.org",
@@ -1171,7 +1184,7 @@
     "focus-instructions-panel": "Lenga Paneli ya Maelekezo",
     "navigate-previous": "Navigate To Previous Exercise",
     "navigate-next": "Navigate To Next Exercise",
-    "play-scene": "Play Scene"
+    "play-video": "Play Video"
   },
   "signout": {
     "heading": "Ondoka kwenye akaunti yako",

@@ -198,7 +198,7 @@ assert(telephoneCheck('11 555-555-5555') === false);
 
 const validPatterns = [
   '1 XXX-XXX-XXXX',
-  '1 (XXX)XXX-XXXX',
+  '1 (XXX) XXX-XXXX',
   '1(XXX)XXX-XXXX',
   '1 XXX XXX XXXX',
   'XXXXXXXXXX',

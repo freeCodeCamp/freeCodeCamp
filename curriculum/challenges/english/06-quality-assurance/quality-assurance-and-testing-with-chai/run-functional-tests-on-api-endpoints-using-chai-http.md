@@ -51,8 +51,7 @@ There should be no URL query. Without a name URL query, the endpoint responds wi
 All tests should pass
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(
+  $.get(code + '/_api/get-tests?type=functional&n=0').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -65,8 +64,7 @@ All tests should pass
 You should test for `res.status` == 200
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(
+  $.get(code + '/_api/get-tests?type=functional&n=0').then(
     (data) => {
       assert.equal(data.assertions[0].method, 'equal');
       assert.equal(data.assertions[0].args[0], 'res.status');
@@ -81,8 +79,7 @@ You should test for `res.status` == 200
 You should test for `res.text` == `'hello Guest'`
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(
+  $.get(code + '/_api/get-tests?type=functional&n=0').then(
     (data) => {
       assert.equal(data.assertions[1].method, 'equal');
       assert.equal(data.assertions[1].args[0], 'res.text');

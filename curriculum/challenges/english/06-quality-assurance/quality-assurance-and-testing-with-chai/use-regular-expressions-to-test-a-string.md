@@ -21,8 +21,7 @@ Within `tests/1_unit-tests.js` under the test labeled `#15` in the `Strings` sui
 All tests should pass.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=14').then(
+  $.get(code + '/_api/get-tests?type=unit&n=14').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -35,8 +34,7 @@ All tests should pass.
 You should choose the correct method for the first assertion - `match` vs. `notMatch`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=14').then(
+  $.get(code + '/_api/get-tests?type=unit&n=14').then(
     (data) => {
       assert.equal(
         data.assertions[0].method,
@@ -53,8 +51,7 @@ You should choose the correct method for the first assertion - `match` vs. `notM
 You should choose the correct method for the second assertion - `match` vs. `notMatch`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=14').then(
+  $.get(code + '/_api/get-tests?type=unit&n=14').then(
     (data) => {
       assert.equal(
         data.assertions[1].method,

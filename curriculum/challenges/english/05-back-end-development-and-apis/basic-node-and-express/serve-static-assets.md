@@ -25,8 +25,7 @@ Now your app should be able to serve a CSS stylesheet. Note that the `/public/st
 Your app should serve asset files from the `/public` directory to the `/public` path
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/public/style.css').then(
+  $.get(code + '/public/style.css').then(
     (data) => {
       assert.match(
         data,
@@ -43,8 +42,7 @@ Your app should serve asset files from the `/public` directory to the `/public` 
 Your app should not serve files from any other folders except from `/public` directory 
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/server.js').then(
+  $.get(code + '/server.js').then(
     (data) => {
        assert.equal(
         data?.status + '',

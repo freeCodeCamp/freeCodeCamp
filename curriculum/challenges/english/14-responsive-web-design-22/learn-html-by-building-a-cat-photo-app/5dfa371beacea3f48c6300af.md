@@ -33,6 +33,12 @@ assert(
 );
 ```
 
+Your `h3` element should have a closing tag. Closing tags have a `/` just after the `<` character.
+
+```js
+assert.lengthOf(code.match(/<\/h3>/g), 1);
+```
+
 The `h3` element right above the second `section` element's closing tag should have the text `Things cats love:`. Make sure to include the colon at the end of the text.
 
 ```js

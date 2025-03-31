@@ -21,9 +21,8 @@ Modify the `createManyPeople` function to create many people using `Model.create
 Creating many db items at once should succeed
 
 ```js
-(getUserInput) =>
   $.ajax({
-    url: getUserInput('url') + '/_api/create-many-people',
+    url: code + '/_api/create-many-people',
     type: 'POST',
     contentType: 'application/json',
     data: JSON.stringify([

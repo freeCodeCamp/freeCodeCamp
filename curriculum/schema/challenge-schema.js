@@ -142,6 +142,7 @@ const schema = Joi.object()
     blockLayout: Joi.valid(
       'challenge-list',
       'challenge-grid',
+      'dialogue-grid',
       'link',
       'project-list',
       'legacy-challenge-list',
@@ -274,7 +275,24 @@ const schema = Joi.object()
     }),
     scene: Joi.object().keys({
       setup: setupJoi.required(),
-      commands: Joi.array().items(commandJoi)
+      commands: Joi.array()
+        .items(commandJoi)
+        .unique(
+          (a, b) =>
+            a.dialogue &&
+            b.dialogue &&
+            !(
+              (a.startTime < b.startTime &&
+                a.finishTime < b.finishTime &&
+                a.finishTime <= b.startTime) ||
+              (b.startTime < a.startTime &&
+                b.finishTime < a.finishTime &&
+                b.finishTime <= a.startTime)
+            )
+        )
+        .messages({
+          'array.unique': 'Dialogues must not have overlapping times.'
+        })
     }),
     solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
     superBlock: Joi.string().regex(slugWithSlashRE),

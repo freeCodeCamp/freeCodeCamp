@@ -7,7 +7,24 @@ dashedName: step-23
 
 # --description--
 
-In your `forEach` callback, you need to update the `totalCountPerProduct` object. Using the `id` of the current `dessert` as your property, update the value of the property to be the current value plus one. Do not use the addition assignment operator for this.
+You’re on the right track! However, let’s take a moment to address a common issue when working with objects in JavaScript.
+
+When you try to access an object property that doesn’t exist, JavaScript returns `undefined`. If you then attempt to perform arithmetic operations on `undefined`, it can lead to unexpected results, such as `NaN`.
+
+To prevent this, you can use the `||` (logical OR) operator to provide a default value.
+
+```js
+  let scores = {}; 
+  let players = ["Alice", "Bob", "Charlie"];
+
+  players.forEach(player => {
+    scores[player] = scores[player] || 0;
+  });
+```
+
+Now, let’s apply this concept to your `totalCountPerProduct` object in the `forEach` callback. Make sure that each `dessert.id` property is initialized properly.
+
+Initialize `totalCountPerProduct[dessert.id]` with a default value of `0` using the `||` operator.
 
 # --hints--
 
@@ -25,20 +42,12 @@ const cart = new ShoppingCart();
 assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]/);
 ```
 
-You should use the assignment operator to update the value of the property of `totalCountPerProduct` that corresponds to `dessert.id`.
+You should initialize `totalCountPerProduct[dessert.id]` with `0` as a default value using `||` operator at the end of the expression.
 
 ```js
 const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=/);
+assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*\|\|\s*0\s*/);
 ```
-
-You should update the value of `totalCountPerProduct` to be the current value plus one.
-
-```js
-const cart = new ShoppingCart();
-assert.match(cart.addItem.toString(), /totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*=\s*totalCountPerProduct\s*\[\s*dessert\.id\s*\]\s*\+\s*1/);
-```
-
 
 # --seed--
 

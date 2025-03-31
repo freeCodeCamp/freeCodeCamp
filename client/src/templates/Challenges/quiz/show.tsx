@@ -176,7 +176,7 @@ const ShowQuiz = ({
       correct: t('learn.quiz.correct-answer'),
       incorrect: t('learn.quiz.incorrect-answer')
     },
-    passingGrade: 90,
+    passingPercent: 90,
     onSuccess: () => {
       openCompletionModal();
       setIsPassed(true);

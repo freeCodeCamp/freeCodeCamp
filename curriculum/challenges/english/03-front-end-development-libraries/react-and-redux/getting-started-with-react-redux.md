@@ -34,10 +34,9 @@ assert(
 The `DisplayMessages` constructor should be called properly with `super`, passing in `props`.
 
 ```js
-(getUserInput) =>
-  assert(
+assert(
     (function () {
-      const noWhiteSpace = __helpers.removeWhiteSpace(getUserInput('index'));
+      const noWhiteSpace = __helpers.removeWhiteSpace(code);
       return (
         noWhiteSpace.includes('constructor(props)') &&
         noWhiteSpace.includes('super(props')
