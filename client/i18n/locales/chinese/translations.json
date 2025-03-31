@@ -445,7 +445,7 @@
     "rsa": "阅读，搜索，提问",
     "rsa-forum": "<strong>在发布新帖子之前</strong> ，请<0>查看你的问题是否已经在论坛上被回答过</0>。",
     "reset": "重置这一节课程？",
-    "reset-warn": "你确定要重置这一节课程吗？编辑器和测试将被重置。",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "这个操作不可撤销。",
     "revert-warn": "你确定要还原这个课程吗？你的最新更改将被撤销，代码将恢复到最近保存的版本。",
     "scrimba-tip": "注意：如果这个小浏览器窗口覆盖了代码，点击拖动它。同时，你可以随时暂停，在视频中编辑代码。",
@@ -981,7 +981,8 @@
     "publicly-visible-url": "记得要提交一个公开可见的app URL",
     "ms-learn-link": "请使用有效的 Microsoft Learn 奖杯链接。",
     "path-url": "你可能想要提交根路径，即 https://example.com，而不是 https://example.com/path。",
-    "source-code-link-required": "记得提交源代码链接。"
+    "source-code-link-required": "记得提交源代码链接。",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "执行董事，freeCodeCamp.org",
