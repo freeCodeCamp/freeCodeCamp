@@ -6,6 +6,7 @@ import type {
   FrameDocument,
   PythonDocument
 } from '../../../../../tools/client-plugins/browser-scripts';
+import { challengeTypes } from '../../../../../shared/config/challenge-types';
 
 const utilsFormat: <T>(x: T) => string = format;
 
@@ -30,6 +31,7 @@ export interface Context {
   build: string;
   sources: Source;
   hooks?: Hooks;
+  challengeType: number;
   loadEnzyme?: () => void;
 }
 
@@ -212,8 +214,11 @@ export const runPythonInFrame = function (
 const createFrame =
   (document: Document, id: string, title?: string) =>
   (frameContext: Context) => {
+    const isTestFrame = id === testId;
     const frame = document.createElement('iframe');
-    frame.srcdoc = createContent(id, frameContext);
+    frame.srcdoc = isTestFrame
+      ? `<script type="text/javascript" id="fcc-test-runner" src='/js/test-runner/index.mjs'></script>`
+      : createContent(id, frameContext);
     frame.id = id;
     if (typeof title === 'string') {
       frame.title = i18next.t('misc.iframe-preview', { title });
@@ -325,12 +330,15 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
       const { sources, loadEnzyme } = frameContext;
       // provide the file name and get the original source
 
+      const type =
+        frameContext.challengeType === challengeTypes.html ? 'frame' : 'worker';
+
       console.log('FCCSandbox', frameContext.window?.FCCSandbox);
       await frameContext.window?.FCCSandbox.createTestRunner({
-        type: 'frame',
+        type,
         code: sources,
         source: sources.contents,
-        assetPath: '/js/test-runner/',
+        assetPath: '/js/test-runner/'
       });
 
       if (frameReady) frameReady();
