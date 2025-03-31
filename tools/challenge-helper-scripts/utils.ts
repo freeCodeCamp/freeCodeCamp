@@ -10,6 +10,7 @@ import {
   isTaskChallenge,
   getTaskNumberFromTitle
 } from './helpers/task-helpers';
+import { getQuizTemplate } from './helpers/get-quiz-template';
 
 interface Options {
   stepNum: number;
@@ -17,6 +18,12 @@ interface Options {
   projectPath?: string;
   challengeSeeds?: Record<string, ChallengeSeed>;
   isFirstChallenge?: boolean;
+}
+
+interface QuizOptions {
+  challengeType: number;
+  projectPath?: string;
+  title: string;
 }
 
 const createStepFile = ({
@@ -48,6 +55,22 @@ const createChallengeFile = (
   path = getProjectPath()
 ): void => {
   fs.writeFileSync(`${path}${filename}.md`, template);
+};
+
+const createQuizFile = ({
+  challengeType,
+  projectPath = getProjectPath(),
+  title
+}: QuizOptions): ObjectID => {
+  const challengeId = new ObjectID();
+  const template = getQuizTemplate({
+    challengeId,
+    challengeType,
+    title
+  });
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, template);
+  return challengeId;
 };
 
 interface InsertOptions {
@@ -225,5 +248,6 @@ export {
   insertStepIntoMeta,
   deleteChallengeFromMeta,
   deleteStepFromMeta,
-  validateBlockName
+  validateBlockName,
+  createQuizFile
 };
