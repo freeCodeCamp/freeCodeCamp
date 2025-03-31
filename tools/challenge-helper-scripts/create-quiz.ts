@@ -19,7 +19,6 @@ const helpCategories = [
 ] as const;
 
 interface QuizAnswers {
-  certSlug: string;
   superBlock: SuperBlocks;
   quizName: string;
   dashedName: string;
@@ -56,7 +55,10 @@ async function createQuizMeta(
   challengeId: string
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
-  const baseMeta = await fs.readFile(path.resolve(__dirname, './base-meta.json'), 'utf-8');
+  const baseMeta = await fs.readFile(
+    path.resolve(__dirname, './base-meta.json'),
+    'utf-8'
+  );
   const metaContent: Meta = JSON.parse(baseMeta);
 
   const quizMeta = {
@@ -158,17 +160,11 @@ function myFunction() {}`;
 async function createNewQuiz() {
   try {
     const {
-      certSlug,
       superBlock,
       quizName,
       dashedName,
       helpCategory
     } = await prompt<QuizAnswers>([
-      {
-        name: 'certSlug',
-        message: 'What certification does this belong to? (e.g. responsive-web-design)',
-        validate: (input: string) => !!input.trim() || 'Required field'
-      },
       {
         name: 'superBlock',
         message: 'What superBlock does this belong to?',
