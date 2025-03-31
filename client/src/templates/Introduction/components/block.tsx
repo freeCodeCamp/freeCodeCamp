@@ -330,7 +330,6 @@ export class Block extends Component<BlockProps> {
                 <BlockIntros intros={blockIntroArr} />
                 <ChallengesWithDialogs
                   challenges={extendedChallenges}
-                  isProjectBlock={isProjectBlock}
                   blockTitle={blockTitle}
                 />
               </div>
