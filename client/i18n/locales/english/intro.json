@@ -3469,7 +3469,10 @@
         ]
       },
       "sgau": { "title": "276", "intro": [] },
-      "clak": { "title": "277", "intro": [] },
+      "lab-currency-converter": {
+        "title": "Build a Currency Converter",
+        "intro": ["TODO: Something something currency converter."]
+      },
       "lecture-working-with-data-fetching-and-memoization-in-react": {
         "title": "Working with Data Fetching and Memoization in React",
         "intro": [
