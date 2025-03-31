@@ -201,7 +201,7 @@ async function createNewQuiz() {
     ]);
 
     console.log(`
-
+ Quiz created successfully!
 Run "pnpm run clean:client" to see your changes.
     `);
   } catch (error) {
