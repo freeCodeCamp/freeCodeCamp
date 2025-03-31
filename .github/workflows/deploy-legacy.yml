@@ -2,9 +2,16 @@ name: CD - Deploy API (Legacy) & Clients
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: [CI - Node.js]
+    types:
+      - completed
+    branches:
+      - prod-*
 
 jobs:
   setup-jobs:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Setup Jobs
     runs-on: ubuntu-22.04
     outputs:
