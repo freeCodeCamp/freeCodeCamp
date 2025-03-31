@@ -7,7 +7,7 @@ type QuizOptions = {
   title: string;
 };
 
-// Build the base markdown for a step
+// Build the base markdown for a quiz
 function getQuizTemplate({
   challengeId,
   challengeType,
