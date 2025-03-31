@@ -148,7 +148,7 @@ async function setup() {
     host: '127.0.0.1',
     port: '8080',
     root: path.resolve(__dirname, 'stubs'),
-    mount: [['/js', path.join(clientPath, 'static/js')]],
+    mount: [['/dist', path.join(clientPath, 'static/js/test-runner')]],
     open: false,
     logLevel: 0
   });
@@ -550,13 +550,22 @@ async function createTestRunner(
   const runsInBrowser = buildFunction === buildDOMChallenge;
   const runsInPythonWorker = buildFunction === buildPythonChallenge;
 
+  // TODO: use same logic in client when determining "type"
+  const usesJSWorker =
+    challenge.challengeType === challengeTypes.js ||
+    challenge.challengeType === challengeTypes.jsLab ||
+    challenge.challengeType === challengeTypes.jsProject;
+
+  console.log('runsInBrowser', runsInBrowser);
+  console.log('usesJSWorker', usesJSWorker);
+
   const evaluator = await (runsInBrowser
     ? getContextEvaluator({
         // passing in challengeId so it's easier to debug timeouts
         challengeId: challenge.id,
         build,
         sources,
-        code,
+        type: usesJSWorker ? 'worker' : 'frame',
         loadEnzyme,
         hooks: challenge.hooks
       })
@@ -569,6 +578,8 @@ async function createTestRunner(
         throw err;
       }
     } catch (err) {
+      console.error('Error in test:');
+      console.error(err);
       // add more info to the error so the failing test can be identified.
       text = 'Test text: ' + text;
       const newMessage = solutionFromNext
@@ -626,7 +637,7 @@ ${testString}
           )
         ),
         await page.evaluate(async testString => {
-          return await document.__runTest(testString);
+          return await window.FCCSandbox.testRunner.runTest(testString);
         }, testString)
       ])
   };
@@ -651,17 +662,24 @@ async function getWorkerEvaluator({
   };
 }
 
-async function initializeTestRunner({ build, sources, loadEnzyme, hooks }) {
+async function initializeTestRunner({
+  build,
+  sources,
+  type,
+  hooks
+}) {
   await page.reload();
-  await page.setContent(createContent(testId, { build, sources, hooks }));
+  const source = createContent(testId, { build, sources, hooks });
   await page.evaluate(
-    async (sources, loadEnzyme) => {
-      await document.__initTestFrame({
-        code: sources,
-        loadEnzyme
+    async (sources, source, type) => {
+      await window.FCCSandbox.createTestRunner({
+        source,
+        type,
+        code: sources
       });
     },
     sources,
-    loadEnzyme
+    source,
+    type
   );
 }
