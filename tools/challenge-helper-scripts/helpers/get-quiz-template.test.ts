@@ -1,9 +1,7 @@
 import ObjectID from 'bson-objectid';
 import { getQuizTemplate } from './get-quiz-template';
 
-// Note: evaluates at highlevel the process
-
-describe('getStepTemplate util', () => {
+describe('getQuizTemplate util', () => {
   it('should be able to create a markdown', () => {
     const baseOutput = `---
 id: 60d4ebe4801158d1abe1b18f

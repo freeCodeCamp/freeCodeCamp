@@ -139,9 +139,6 @@ async function createQuizChallenge(
   if (!existsSync(newChallengeDir)) {
     await withTrace(fs.mkdir, newChallengeDir);
   }
-  // TODO: would be nice if the extension made sense for the challenge, but, at
-  // least until react I think they're all going to be html anyway.
-  // including trailing slash for compatibility with createStepFile
   return createQuizFile({
     challengeType: 8,
     projectPath: newChallengeDir + '/',
