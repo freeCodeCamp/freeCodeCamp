@@ -3548,12 +3548,6 @@
           "In these lecture videos, you will learn about the different types of testing."
         ]
       },
-      "lecture-understanding-test-automation": {
-        "title": "Understanding Test Automation",
-        "intro": [
-          "In these lecture videos, you will learn about test automation."
-        ]
-      },
       "review-testing": {
         "title": "Testing Review",
         "intro": ["Review testing concepts to prepare for the upcoming quiz."]
