@@ -163,3 +163,21 @@ export const submitTypes = {
 export const canSaveToDB = (challengeType: number): boolean =>
   challengeType === challengeTypes.multifileCertProject ||
   challengeType === challengeTypes.multifilePythonCertProject;
+
+export const dailyCodingChallengeTypes = [
+  challengeTypes.dailyChallengeJs,
+  challengeTypes.dailyChallengePy
+];
+
+export const isDailyCodingChallenge = (challengeType: number): boolean =>
+  dailyCodingChallengeTypes.includes(challengeType);
+
+// coding language for daily coding challenge types
+export const dailyCodingChallengeLanguage = {
+  [challengeTypes.dailyChallengeJs]: 'javascript',
+  [challengeTypes.dailyChallengePy]: 'python'
+};
+
+export const getDailyCodingChallengeLanguage = (
+  challengeType: number
+): string => dailyCodingChallengeLanguage[challengeType];
