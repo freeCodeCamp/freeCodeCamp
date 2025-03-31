@@ -445,7 +445,7 @@
     "rsa": "Soma, tafuta, uliza",
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Anza upya somo hili?",
-    "reset-warn": "Je, una uhakika ungependa kuanza upya somo hili? Vihariri na majaribio vitawekwa upya.",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone.",
     "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Kidokezo: Ikiwa kivinjari kidogo kinafunika msimbo, bofya na uburute ili kuisogeza. Pia, jisikie huru kusimamisha na kuhariri msimbo katika video wakati wowote.",
@@ -981,7 +981,8 @@
     "publicly-visible-url": "Kumbuka kuwasilisha URL ya programu inayoonekana hadharani.",
     "ms-learn-link": "Tafadhali tumia kiungo halali cha kombe la Microsoft Learn.",
     "path-url": "Labda unataka kuwasilisha njia ya mizizi yaani https://example.com, sio https://example.com/path",
-    "source-code-link-required": "Remember to submit the link to your source code."
+    "source-code-link-required": "Remember to submit the link to your source code.",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "Mkurugenzi Mtendaji, freeCodeCamp.org",

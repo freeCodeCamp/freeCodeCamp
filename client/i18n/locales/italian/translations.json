@@ -445,7 +445,7 @@
     "rsa": "Leggi, cerca, chiedi",
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Vuoi resettare questa lezione?",
-    "reset-warn": "Sei sicuro di voler resettare questa lezione? Gli editor e i test saranno resettati.",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone.",
     "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Suggerimento: Se il mini-browser copre il codice, fare clic e trascinalo per spostarlo. Inoltre, sentiti libero di fermare e modificare il codice nel video in qualsiasi momento.",
@@ -981,7 +981,8 @@
     "publicly-visible-url": "Ricorda di inviare un URL dell'app visibile pubblicamente.",
     "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "Probabilmente vuoi inviare il percorso root, ovvero https://example.com, non https://example.com/percorso",
-    "source-code-link-required": "Remember to submit the link to your source code."
+    "source-code-link-required": "Remember to submit the link to your source code.",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "Direttore esecutivo, freeCodeCamp.org",
