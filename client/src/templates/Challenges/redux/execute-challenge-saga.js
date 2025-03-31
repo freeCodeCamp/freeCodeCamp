@@ -301,9 +301,12 @@ export function* previewChallengeSaga(action) {
           yield call(updatePreview, buildData, finalDocument, proxyLogger);
         }
       } else if (isJavaScriptChallenge(challengeData)) {
-        const runUserCode = getTestRunner(buildData, {
-          proxyLogger
-        });
+        const runUserCode = yield call(
+          getTestRunner,
+          buildData,
+          { proxyLogger },
+          document
+        );
         // without a testString the testRunner just evaluates the user's code
         yield call(runUserCode, null, previewTimeout);
       }

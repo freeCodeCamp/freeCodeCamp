@@ -1,6 +1,5 @@
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import frameRunnerData from '../../../../../client/config/browser-scripts/frame-runner.json';
-import jsTestEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
 import pyTestEvaluatorData from '../../../../../client/config/browser-scripts/python-test-evaluator.json';
 
 import type { ChallengeFile } from '../../../redux/prop-types';
@@ -38,7 +37,6 @@ interface BuildOptions {
   usesTestRunner?: boolean;
 }
 
-const { filename: jsTestEvaluator } = jsTestEvaluatorData;
 const { filename: pyTestEvaluator } = pyTestEvaluatorData;
 
 const frameRunnerSrc = `/js/${frameRunnerData.filename}.js`;
@@ -46,9 +44,6 @@ const frameRunnerSrc = `/js/${frameRunnerData.filename}.js`;
 const pythonWorkerExecutor = new WorkerExecutor(pyTestEvaluator, {
   terminateWorker: false,
   maxWorkers: 1
-});
-const jsWorkerExecutor = new WorkerExecutor(jsTestEvaluator, {
-  terminateWorker: true
 });
 
 type ApplyFunctionProps = (
@@ -128,7 +123,7 @@ export async function buildChallenge(
 }
 
 const testRunners = {
-  [challengeTypes.js]: getJSTestRunner,
+  [challengeTypes.js]: getDOMTestRunner,
   [challengeTypes.html]: getDOMTestRunner,
   [challengeTypes.backend]: getDOMTestRunner,
   [challengeTypes.pythonProject]: getDOMTestRunner,
@@ -152,17 +147,6 @@ export function getTestRunner(
     return testRunner(buildData, runnerConfig, document);
   }
   throw new Error(`Cannot get test runner for challenge type ${challengeType}`);
-}
-
-function getJSTestRunner(
-  { build, sources }: BuildChallengeData,
-  { proxyLogger }: TestRunnerConfig
-) {
-  return getWorkerTestRunner(
-    { build, sources },
-    { proxyLogger },
-    jsWorkerExecutor
-  );
 }
 
 function getPyTestRunner(
@@ -247,7 +231,6 @@ export async function buildDOMChallenge(
     : getTransformers(options)) as unknown as ApplyFunctionProps[];
 
   const pipeLine = composeFunctions(...transformers);
-  const usesTestRunner = options?.usesTestRunner ?? false;
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
   const contents = (await embedFilesInHtml(finalFiles)) as string;
@@ -255,12 +238,11 @@ export async function buildDOMChallenge(
   // if there is an error, we just build the test runner so that it can be
   // used to run tests against the code without actually running the code.
   const toBuild = error
-    ? { ...(usesTestRunner && { testRunner: frameRunnerSrc }) }
+    ? {}
     : {
         required,
         template,
-        contents,
-        ...(usesTestRunner && { testRunner: frameRunnerSrc })
+        contents
       };
 
   return {
