@@ -118,7 +118,7 @@ const LinkToFirstIncompleteChallenge = ({
         {!isChallengeStarted
           ? t('buttons.start-project')
           : t('buttons.resume-project')}{' '}
-        {blockTitle && <span className='sr-only'>{blockTitle}</span>}
+        <span className='sr-only'>{blockTitle}</span>
       </ButtonLink>
     </div>
   ) : null;
@@ -137,11 +137,7 @@ export const GridMapChallenges = ({
         challenges={challenges}
         blockTitle={blockTitle}
       />
-      <nav
-        aria-label={
-          blockTitle ? t('aria.steps-for', { blockTitle }) : t('aria.steps')
-        }
-      >
+      <nav aria-label={t('aria.steps-for', { blockTitle })}>
         <ul className={`map-challenges-ul map-challenges-grid`}>
           {challenges.map(challenge => (
             <li
@@ -180,14 +176,8 @@ export const ChallengesWithDialogs = ({
         challenges={challenges}
         blockTitle={blockTitle}
       />
-      <nav
-        aria-label={
-          blockTitle
-            ? t('aria.dialogues-and-tasks-for', { blockTitle })
-            : t('aria.steps')
-        }
-      >
-        <ul className={`map-challenges-ul map-challenges-grid `}>
+      <nav aria-label={t('aria.dialogues-and-tasks-for', { blockTitle })}>
+        <ul className={`map-challenges-ul map-challenges-grid`}>
           {challenges.map(challenge => (
             <li
               className={`map-challenge-title map-challenge-title-grid ${
