@@ -13,8 +13,8 @@ function DailyCodingChallengeNotFound(): JSX.Element {
   const { t } = useTranslation();
   const quote = randomQuote();
 
-  const todaysDate = new Date();
-  const usCentralDate = formatDateUsCentral(todaysDate);
+  const today = new Date();
+  const usCentralDate = formatDateUsCentral(today);
 
   return (
     <Container>

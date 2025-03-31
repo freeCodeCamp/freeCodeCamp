@@ -154,7 +154,7 @@ export interface PrerequisiteChallenge {
 
 export type ChallengeNode = {
   challenge: {
-    block?: string;
+    block: string;
     blockType?: BlockTypes;
     blockLayout?: BlockLayouts;
     certification?: string;
@@ -202,7 +202,7 @@ export type ChallengeNode = {
     };
     sourceInstanceName?: string;
     superOrder?: number;
-    superBlock?: SuperBlocks;
+    superBlock: SuperBlocks | 'daily-coding-challenge';
     tail?: string[];
     template?: string;
     tests?: Test[];

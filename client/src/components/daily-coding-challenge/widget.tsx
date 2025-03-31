@@ -105,7 +105,7 @@ function DailyCodingChallengeWidget({
           <div>
             <Button
               block={true}
-              href={`/learn/daily-coding-challenge?date=${usCentralDateForApi}&level=${difficulyLevels[difficulty]}`}
+              href={`/learn/daily-coding-challenge?date=${usCentralDateForApi}`}
             >
               {t(`buttons.start`)}
             </Button>

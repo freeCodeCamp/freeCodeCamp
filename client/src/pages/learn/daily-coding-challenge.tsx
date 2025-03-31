@@ -4,6 +4,9 @@ import { Loader } from '../../components/helpers';
 import { ChallengeNode } from '../../redux/prop-types';
 import DailyCodingChallengeNotFound from '../../components/daily-coding-challenge/not-found';
 import { formatDateUsCentral } from '../../components/daily-coding-challenge/helpers';
+import envData from '../../../config/env.json';
+
+const { dailyChallengeApiLocation } = envData;
 
 interface ChallengeTests {
   text: string;
@@ -61,24 +64,36 @@ function formatChallengeData({
 }: ChallengeDataFromDb) {
   console.log('formatting challenge data...');
 
+  const baseChallengeProps = {
+    date,
+    id: challengeId,
+    title,
+    helpCategory: 'Daily Coding Challenges',
+    description,
+    instructions,
+    superBlock: 'daily-coding-challenges',
+    block: 'daily-coding-challenge',
+    usesMultifileEditor: true
+  };
+
+  const pageContext = {
+    challengeMeta: {
+      id: challengeId
+    }
+  };
+
   const props = {
     javascript: {
       data: {
         challengeNode: {
           challenge: {
-            date,
-            id: challengeId,
-            title,
+            ...baseChallengeProps,
             // challengeType: 26,
             challengeType: 27,
-            helpCategory: 'Daily Coding Challenges',
-            description,
-            instructions,
             fields: {
               blockName: 'daily-coding-challenges',
               tests: javascript.tests
             },
-            usesMultifileEditor: true,
             challengeFiles: [
               {
                 name: 'script',
@@ -93,29 +108,19 @@ function formatChallengeData({
           }
         }
       },
-      pageContext: {
-        challengeMeta: {
-          id: challengeId
-        }
-      }
+      pageContext
     },
     python: {
       data: {
         challengeNode: {
           challenge: {
-            date,
-            id: challengeId,
-            title,
+            ...baseChallengeProps,
             // challengeType: 23,
             challengeType: 28,
-            helpCategory: 'Daily Coding Challenges',
-            description,
-            instructions,
             fields: {
               blockName: 'daily-coding-challenges',
               tests: python.tests
             },
-            usesMultifileEditor: true,
             challengeFiles: [
               {
                 fileKey: 'mainpy',
@@ -127,20 +132,11 @@ function formatChallengeData({
                 editableRegionBoundaries: [],
                 history: ['main.py']
               }
-            ],
-            pageContext: {
-              challengeMeta: {
-                id: challengeId
-              }
-            }
+            ]
           }
         }
       },
-      pageContext: {
-        challengeMeta: {
-          id: challengeId
-        }
-      }
+      pageContext
     }
   };
 
@@ -190,8 +186,7 @@ function DailyCodingChallenge(): JSX.Element {
     try {
       console.log('fetching challenge...');
       const response = await fetch(
-        // Todo: move this to env
-        `http://localhost:3400/api/daily-challenge/date/${date}`
+        `${dailyChallengeApiLocation}/api/daily-challenge/date/${date}`
       );
       const challengeData = await response.json();
 
@@ -231,9 +226,8 @@ function DailyCodingChallenge(): JSX.Element {
       return;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    fetchChallenge(dateParam);
-  }, [dateParam, firstDay, today]); // Ensure useEffect re-runs if these dependencies change
+    void fetchChallenge(dateParam);
+  }, [dateParam, firstDay, today]);
 
   return isLoading ? (
     <Loader />

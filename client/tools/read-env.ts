@@ -20,6 +20,7 @@ if (error) {
 const {
   HOME_LOCATION: homeLocation,
   API_LOCATION: apiLocation,
+  DAILY_CHALLENGE_API_LOCATION: dailyChallengeApiLocation,
   FORUM_LOCATION: forumLocation,
   NEWS_LOCATION: newsLocation,
   RADIO_LOCATION: radioLocation,
@@ -38,6 +39,7 @@ const {
 const locations = {
   homeLocation,
   apiLocation,
+  dailyChallengeApiLocation,
   forumLocation,
   newsLocation,
   radioLocation: !radioLocation

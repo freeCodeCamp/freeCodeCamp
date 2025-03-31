@@ -4191,6 +4191,14 @@
       }
     }
   },
+  "daily-coding-challenges": {
+    "title": "Daily Coding Challenges",
+    "blocks": {
+      "daily-coding-challenge": {
+        "title": "Daily Coding Challenge"
+      }
+    }
+  },
   "misc-text": {
     "browse-other": "Browse our other free certifications",
     "courses": "Courses",
