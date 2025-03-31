@@ -196,7 +196,7 @@ function ShowClassic({
     challengeNode: {
       challenge: {
         challengeFiles: seedChallengeFiles,
-        block = undefined,
+        block,
         demoType,
         title,
         description,
@@ -205,7 +205,7 @@ function ShowClassic({
         fields: { tests, blockName },
         challengeType,
         hasEditableBoundaries = undefined,
-        superBlock = undefined,
+        superBlock,
         helpCategory,
         forumTopicId = undefined,
         usesMultifileEditor = undefined,

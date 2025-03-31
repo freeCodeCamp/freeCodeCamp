@@ -1,74 +1,32 @@
-import React from 'react';
-import { Spacer } from '@freecodecamp/ui';
+import React, { useEffect, useState } from 'react';
+import { Button, Spacer } from '@freecodecamp/ui';
+import { useTranslation } from 'react-i18next';
+import { Loader } from '../helpers';
+import envData from '../../../config/env.json';
 import CalendarDay from './calendar-day';
 
 import './calendar.css';
 
-const now = new Date();
+const { dailyChallengeApiLocation } = envData;
 
-// Month in "02" format (e.g., "02" for February)
-const monthNumber = new Intl.DateTimeFormat('en-US', {
-  month: '2-digit',
-  timeZone: 'America/Chicago'
-}).format(now);
+const getMonthInfo = (monthIndex: number, year: number) => {
+  // month - 1 = month index, 1 = the first of the month
+  const date = new Date(year, monthIndex, 1);
+  const firstOfMonthWeekdayIndex = date.getDay();
+  const numberOfDays = new Date(year, monthIndex + 1, 0).getDate();
 
-// Month in full name format (e.g., "February")
-const monthFull = new Intl.DateTimeFormat('en-US', {
-  month: 'long',
-  timeZone: 'America/Chicago'
-}).format(now);
-
-// Month in abbreviated name format (e.g., "Feb")
-// const monthShort = new Intl.DateTimeFormat('en-US', {
-//   month: 'short',
-//   timeZone: 'America/Chicago'
-// }).format(now);
-
-// Year in "YYYY" format (e.g., "2025")
-const year = new Intl.DateTimeFormat('en-US', {
-  year: 'numeric',
-  timeZone: 'America/Chicago'
-}).format(now);
-
-// Day of the week in full name (e.g., "Friday")
-// const dayOfWeekFull = new Intl.DateTimeFormat('en-US', {
-//   weekday: 'long',
-//   timeZone: 'America/Chicago'
-// }).format(now);
-
-// Day of the week in abbreviated name (e.g., "Fri")
-// const dayOfWeekShort = new Intl.DateTimeFormat('en-US', {
-//   weekday: 'short',
-//   timeZone: 'America/Chicago'
-// }).format(now);
-
-// Day of the week in the first two letters (e.g., "Fr")
-// const dayOfWeekMin = dayOfWeekShort.slice(0, 2); // First 2 letters, e.g., Mo, Tu
-
-// Day of the month in "DD" format (e.g., "28")
-// const dayNumber = new Intl.DateTimeFormat('en-US', {
-//   day: '2-digit',
-//   timeZone: 'America/Chicago'
-// }).format(now);
-
-// Day of the week as a number (0 = Sunday, 1 = Monday, ..., 6 = Saturday)
-const dayOfWeekNumber = new Date(now).getDay();
-
-// Total number of days in the current month (e.g., 28 for February)
-const yearNumber = parseInt(year, 10);
-const monthIndex = parseInt(monthNumber, 10) - 1; // JS months are 0-based
-const daysInMonth = new Date(yearNumber, monthIndex + 1, 0).getDate();
-
-function DailyCodingChallengeCalendar(): JSX.Element {
   const days: JSX.Element[] = [];
-  for (let i = 0; i <= dayOfWeekNumber; i++) {
-    days.push(<CalendarDay key={i} dayNumber={0} />);
+
+  // add empty days before the first of the month
+  for (let i = 0; i < firstOfMonthWeekdayIndex; i++) {
+    days.push(<CalendarDay key={`empty-${i}`} dayNumber={0} />);
   }
 
-  for (let day = 1; day <= daysInMonth; day++) {
+  // add all the actual days of the month
+  for (let day = 1; day <= numberOfDays; day++) {
     days.push(
       <CalendarDay
-        key={day}
+        key={`day-${day}`}
         dayNumber={day}
         isCompleted={day > 20}
         isAvailable={true}
@@ -76,9 +34,103 @@ function DailyCodingChallengeCalendar(): JSX.Element {
     );
   }
 
-  return (
+  return {
+    days,
+    index: date.getMonth(),
+    name: date.toLocaleString('en-US', { month: 'long' }),
+    year: date.getFullYear()
+  };
+};
+
+function DailyCodingChallengeCalendar(): JSX.Element {
+  const { t } = useTranslation();
+
+  const today = new Date();
+
+  const monthIndex =
+    parseInt(
+      today.toLocaleString('en-US', {
+        timeZone: 'America/Chicago',
+        month: '2-digit'
+      }),
+      10
+    ) - 1;
+
+  const year = parseInt(
+    today.toLocaleString('en-US', {
+      timeZone: 'America/Chicago',
+      year: 'numeric'
+    }),
+    10
+  );
+
+  // Initial month info for today US Central because challenges
+  // are released at midnight US Central - so don't show the
+  // local month, show the US Central month
+  const initialMonthInfo = getMonthInfo(monthIndex, year);
+  const [monthInfo, setMonthInfo] = useState(initialMonthInfo);
+  const [isLoading, setIsLoading] = useState(true);
+  const [dailyChallenges, setDailyChallenges] = useState([]);
+
+  // we just need to change the month, the year can stay the same
+  // because it just rolls over, e.g. 12, 2024 will be Jan, 2025
+  const nextMonth = () => {
+    setMonthInfo(prev => getMonthInfo(prev.index + 1, prev.year));
+  };
+
+  const prevMonth = () => {
+    setMonthInfo(prev => getMonthInfo(prev.index - 1, prev.year));
+  };
+
+  const fetchChallenges = async () => {
+    try {
+      console.log('fetching challenges...');
+      const response = await fetch(
+        `${dailyChallengeApiLocation}/api/daily-challenge/all`
+      );
+      const challenges = await response.json();
+
+      // Todo: validate challenge data
+
+      if (challenges) {
+        console.log(challenges);
+        setDailyChallenges(dailyChallenges);
+        setIsLoading(false);
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    void fetchChallenges();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return isLoading ? (
+    <Loader />
+  ) : (
     <>
-      <h2 className='text-center'>{monthFull}</h2>
+      <div className='text-center'>
+        <Button
+          aria-label={t('aria.previous-month')}
+          // disabled={pageNo === 1}
+          onClick={prevMonth}
+        >
+          &lt;
+        </Button>
+
+        <h2 className='text-center'>{monthInfo.name}</h2>
+        <Button
+          aria-label={t('aria.next-month')}
+          // disabled={pageNo === 1}
+          onClick={nextMonth}
+        >
+          &gt;
+        </Button>
+      </div>
       <Spacer size='m' />
       <div className='calendar-weekday-labels'>
         <div>S</div>
@@ -90,7 +142,7 @@ function DailyCodingChallengeCalendar(): JSX.Element {
         <div>S</div>
       </div>
       <Spacer size='s' />
-      <div className='calendar-grid'>{days}</div>
+      <div className='calendar-grid'>{monthInfo.days}</div>
     </>
   );
 }
