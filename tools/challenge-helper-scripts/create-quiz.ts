@@ -142,7 +142,8 @@ async function createQuizChallenge(
   return createQuizFile({
     challengeType: 8,
     projectPath: newChallengeDir + '/',
-    title: title
+    title: title,
+    dashedName: block
   });
 }
 

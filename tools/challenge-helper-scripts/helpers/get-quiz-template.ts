@@ -5,13 +5,15 @@ type QuizOptions = {
   challengeId: ObjectID;
   challengeType: number;
   title: string;
+  dashedName: string;
 };
 
 // Build the base markdown for a quiz
 function getQuizTemplate({
   challengeId,
   challengeType,
-  title
+  title,
+  dashedName
 }: QuizOptions): string {
   const quizDescription = `To pass the quiz, you must correctly answer at least 18 of the 20 questions below.`;
 
@@ -19,7 +21,7 @@ function getQuizTemplate({
 id: ${challengeId.toString()}
 title: ${title}
 challengeType: ${challengeType}
-dashedName: quiz-${title.toLowerCase().replace('quiz', '').trim().split(' ').join('-')}
+dashedName: ${dashedName}
 ---
 
 # --description--

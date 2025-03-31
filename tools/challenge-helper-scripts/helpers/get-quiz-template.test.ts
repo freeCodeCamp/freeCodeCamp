@@ -44,7 +44,8 @@ answer goes here
     const props = {
       challengeId: new ObjectID('60d4ebe4801158d1abe1b18f'),
       challengeType: 8,
-      title: 'CSS Basics Quiz'
+      title: 'CSS Basics Quiz',
+      dashedName: 'quiz-css-basics'
     };
 
     expect(getQuizTemplate(props)).toEqual(baseOutput);
