@@ -76,20 +76,24 @@ export function ChallengesList({
   );
 }
 // Step or Task challenge
-const GridChallenge = ({ challenge }: { challenge: ChallengeInfo }) => {
+const GridChallenge = ({
+  challenge,
+  isTask = false
+}: {
+  challenge: ChallengeInfo;
+  isTask?: boolean;
+}) => {
   const { t } = useTranslation();
 
   return (
     <Link
       to={challenge.fields.slug}
       className={`map-grid-item ${
-        +challenge.isCompleted ? 'challenge-completed' : ''
+        challenge.isCompleted ? 'challenge-completed' : ''
       }`}
     >
       <span className='sr-only'>
-        {challenge.superBlock === SuperBlocks.A2English
-          ? t('aria.task')
-          : t('aria.step')}
+        {isTask ? t('aria.task') : t('aria.step')}
       </span>
       <span>{challenge.stepNumber}</span>
       <span className='sr-only'>
@@ -191,7 +195,7 @@ export const ChallengesWithDialogs = ({
               {challenge.challengeType === challengeTypes.dialogue ? (
                 <ListChallenge challenge={challenge} />
               ) : (
-                <GridChallenge challenge={challenge} />
+                <GridChallenge challenge={challenge} isTask />
               )}
             </li>
           ))}
