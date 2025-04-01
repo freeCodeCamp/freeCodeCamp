@@ -368,18 +368,23 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     '/daily-coding-challenge-completed',
     {
       schema: schemas.dailyCodingChallengeCompleted,
-      errorHandler(error, request, reply) {
+      errorHandler(error, req, reply) {
+        const logger = fastify.log.child({ req });
         if (error.validation) {
+          logger.warn({ validationError: error.validation });
           void reply.code(400);
           void reply.send({
             type: 'error',
             message: 'That does not appear to be a valid challenge submission.'
           });
-          fastify.errorHandler(error, request, reply);
+          fastify.errorHandler(error, req, reply);
         }
       }
     },
     async req => {
+      const logger = fastify.log.child({ req });
+      logger.info(`User ${req.user?.id} submitted a daily coding challenge`);
+
       const { id, language } = req.body;
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
