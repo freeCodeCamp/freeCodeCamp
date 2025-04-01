@@ -327,7 +327,7 @@ const updateWindowI18next = (frameContext: Context) => {
 const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
   waitForFrame(frameContext)
     .then(async () => {
-      const { sources, loadEnzyme } = frameContext;
+      const { sources, loadEnzyme, build, hooks } = frameContext;
       // provide the file name and get the original source
 
       const type =
@@ -337,7 +337,7 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
       await frameContext.window?.FCCSandbox.createTestRunner({
         type,
         code: sources,
-        source: sources.contents,
+        source: createContent(testId, { build, sources, hooks }),
         assetPath: '/js/test-runner/'
       });
 
