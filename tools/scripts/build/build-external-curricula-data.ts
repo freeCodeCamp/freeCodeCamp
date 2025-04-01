@@ -96,28 +96,26 @@ export function buildExtCurriculumData(
       if (blockNames.length === 0) continue;
 
       superBlock[superBlockKey] = <GeneratedCurriculumProps>{};
-      superBlock[superBlockKey]['intro'] =
-        getSuperBlockDescription(superBlockKey);
-      superBlock[superBlockKey]['blocks'] = {};
+      superBlock[superBlockKey].intro = getSuperBlockDescription(superBlockKey);
+      superBlock[superBlockKey].blocks = {};
 
-      for (let j = 0; j < blockNames.length; j++) {
-        superBlock[superBlockKey]['blocks'][blockNames[j]] = <
+      for (const blockName of blockNames) {
+        superBlock[superBlockKey]['blocks'][blockName] = <
           Block<Record<string, unknown>>
         >{};
 
-        superBlock[superBlockKey]['blocks'][blockNames[j]]['desc'] =
-          getBlockDescription(superBlockKey, blockNames[j]);
+        superBlock[superBlockKey]['blocks'][blockName]['desc'] =
+          getBlockDescription(superBlockKey, blockName);
 
-        superBlock[superBlockKey]['blocks'][blockNames[j]]['challenges'] =
-          curriculum[superBlockKey]['blocks'][blockNames[j]]['meta'];
+        superBlock[superBlockKey]['blocks'][blockName]['challenges'] =
+          curriculum[superBlockKey]['blocks'][blockName]['meta'];
 
         const blockChallenges =
-          curriculum[superBlockKey]['blocks'][blockNames[j]]['challenges'];
+          curriculum[superBlockKey]['blocks'][blockName]['challenges'];
 
-        for (let k = 0; k < blockChallenges.length; k++) {
-          const challenge = blockChallenges[k];
-          const challengeId = challenge['id'];
-          const challengePath = `challenges/${superBlockKey}/${blockNames[j]}/${challengeId}`;
+        for (const challenge of blockChallenges) {
+          const challengeId = challenge.id;
+          const challengePath = `challenges/${superBlockKey}/${blockName}/${challengeId}`;
 
           writeToFile(challengePath, challenge);
         }
