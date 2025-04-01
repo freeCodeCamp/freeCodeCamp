@@ -21,6 +21,7 @@
   "scripts": {
     "test": "mocha --delay --reporter progress --bail",
     "create-project": "tsx create-project"
+    "create-new-quiz": "ts-node ./tools/challenge-helper-scripts/create-quiz.ts"
   },
   "devDependencies": {
     "@types/glob": "^8.0.1",
@@ -31,5 +32,7 @@
     "inquirer": "8.2.6",
     "prettier": "3.2.5",
     "typescript": "5.2.2"
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.11.0"
   }
 }
