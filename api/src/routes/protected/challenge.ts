@@ -414,29 +414,31 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           };
         } else {
           // alreadyCompleted && !languageAlreadyCompleted, add the language to the record
-          const newCompletedChallenge = {
-            id,
-            completedDate,
-            // Set to avoid duplicates
-            completedLanguages: [...new Set([...completedLanguages, language])]
-          };
-
-          const newCompletedChallenges = completedDailyCodingChallenges.map(
-            c => (c.id === id ? newCompletedChallenge : c)
-          );
-
-          await fastify.prisma.user.update({
-            where: { id: req.user?.id },
-            data: {
-              completedDailyCodingChallenges: newCompletedChallenges
-            }
-          });
+          const { completedDailyCodingChallenges } =
+            await fastify.prisma.user.update({
+              where: { id: req.user?.id },
+              select: {
+                completedDailyCodingChallenges: true
+              },
+              data: {
+                completedDailyCodingChallenges: {
+                  updateMany: {
+                    where: { id },
+                    data: {
+                      completedLanguages: [
+                        ...new Set([...completedLanguages, language])
+                      ]
+                    }
+                  }
+                }
+              }
+            });
 
           return {
             alreadyCompleted,
             points,
             completedDate,
-            completedDailyCodingChallenges: newCompletedChallenges
+            completedDailyCodingChallenges
           };
         }
       } else {
@@ -446,13 +448,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const newCompletedChallenge = {
           id,
           completedDate: newCompletedDate,
-          // Set to avoid duplicates
-          completedLanguages: [...new Set([language])]
+          completedLanguages: [language]
         };
 
-        // Set to avoid duplicates
         const newCompletedChallenges = [
-          ...new Set([...completedDailyCodingChallenges, newCompletedChallenge])
+          ...completedDailyCodingChallenges,
+          newCompletedChallenge
         ];
 
         const newProgressTimestamps = Array.isArray(progressTimestamps)
