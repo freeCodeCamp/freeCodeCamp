@@ -6,7 +6,7 @@ import {
   buildExtCurriculumData,
   Curriculum,
   CurriculumProps
-} from './build-external-curricula-data';
+} from './build-external-curricula-data-v3';
 
 const globalConfigPath = path.resolve(__dirname, '../../../shared/config');
 
@@ -14,7 +14,7 @@ const globalConfigPath = path.resolve(__dirname, '../../../shared/config');
 // across all languages.
 void getChallengesForLang('english')
   .then((result: Record<string, unknown>) => {
-    buildExtCurriculumData('v1', result as Curriculum<CurriculumProps>);
+    buildExtCurriculumData('v3', result as Curriculum<CurriculumProps>);
     return result;
   })
   .then(JSON.stringify)
