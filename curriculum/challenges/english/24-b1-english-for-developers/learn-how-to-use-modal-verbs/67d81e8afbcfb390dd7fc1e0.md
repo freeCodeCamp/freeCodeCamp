@@ -63,7 +63,7 @@ Securing critical systems is usually the first priority before assessing individ
     "audio": {
       "filename": "B1_14-3.mp3",
       "startTime": 1,
-      "startTimestamp": 38.02,
+      "startTimestamp": 37.82,
       "finishTimestamp": 39.88
     }
   },
@@ -76,7 +76,7 @@ Securing critical systems is usually the first priority before assessing individ
     {
       "character": "Lisa",
       "startTime": 1,
-      "finishTime": 2.86,
+      "finishTime": 3.06,
       "dialogue": {
         "text": "Have you checked which files were compromised?",
         "align": "center"
@@ -85,7 +85,7 @@ Securing critical systems is usually the first priority before assessing individ
     {
       "character": "Lisa",
       "opacity": 0,
-      "startTime": 3.36
+      "startTime": 3.56
     }
   ]
 }
