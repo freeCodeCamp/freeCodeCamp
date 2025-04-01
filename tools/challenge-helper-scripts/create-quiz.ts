@@ -14,11 +14,7 @@ const helpCategories = [
   'HTML-CSS',
   'JavaScript',
   'Backend Development',
-  'Python',
-  'English',
-  'Odin',
-  'Euler',
-  'Rosetta'
+  'Python'
 ] as const;
 
 type BlockInfo = {
@@ -171,13 +167,13 @@ void prompt([
   {
     name: 'superBlock',
     message: 'Which certification does this belong to?',
-    default: SuperBlocks.RespWebDesign,
+    default: SuperBlocks.FullStackDeveloper,
     type: 'list',
     choices: Object.values(SuperBlocks)
   },
   {
     name: 'block',
-    message: 'What is the dashed name (in kebab-case) for this project?',
+    message: 'What is the dashed name (in kebab-case) for this quiz?',
     validate: validateBlockName,
     filter: (block: string) => {
       return block.toLowerCase().trim();
