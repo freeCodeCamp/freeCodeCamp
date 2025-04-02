@@ -3494,7 +3494,7 @@
         "title": "280",
         "intro": []
       },
-      "lecture-routing-react-frameworks-and-dependecy-management-tools": {
+      "lecture-routing-react-frameworks-and-dependency-management-tools": {
         "title": "Routing, React Frameworks, and Dependency Management Tools",
         "intro": [
           "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
@@ -3565,12 +3565,6 @@
         "title": "Understanding the Different Types of Testing",
         "intro": [
           "In these lecture videos, you will learn about the different types of testing."
-        ]
-      },
-      "lecture-understanding-test-automation": {
-        "title": "Understanding Test Automation",
-        "intro": [
-          "In these lecture videos, you will learn about test automation."
         ]
       },
       "review-testing": {
