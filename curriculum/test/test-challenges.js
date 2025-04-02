@@ -308,7 +308,7 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
           c => c.superBlock === superBlock
         );
         superBlockChallenges.forEach((challenge, id) => {
-          console.log('testing challenge', id);
+          console.log('testing challenge', challenge.id);
           // When testing single challenge, in project based curriculum,
           // challenge to test (current challenge) might not have solution.
           // Instead seed from next challenge is tested against tests from
@@ -702,22 +702,24 @@ async function getWorkerEvaluator({
 async function initializeTestRunner({ build, sources, type, hooks }) {
   await page.reload();
   const source =
-    type === 'frame' ? createContent(testId, { build, sources, hooks }) : build;
+    type === 'frame' ? createContent(testId, { build, sources }) : build;
 
   // console.log('sources', sources);
   // console.log('source', source);
   // console.log('type', type);
 
   await page.evaluate(
-    async (sources, source, type) => {
+    async (sources, source, type, hooks) => {
       await window.FCCSandbox.createTestRunner({
         source,
         type,
-        code: sources
+        code: sources,
+        hooks
       });
     },
     sources,
     source,
-    type
+    type,
+    hooks
   );
 }

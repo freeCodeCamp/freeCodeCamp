@@ -338,7 +338,8 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
         type,
         code: sources,
         source: createContent(testId, { build, sources, hooks }),
-        assetPath: '/js/test-runner/'
+        assetPath: '/js/test-runner/',
+        hooks
       });
 
       if (frameReady) frameReady();
@@ -411,13 +412,13 @@ const waitForFrame = (frameContext: Context) => {
 
 export const createContent = (
   id: string,
-  { build, sources, hooks }: { build: string; sources: Source; hooks?: Hooks }
+  { build, sources }: { build: string; sources: Source; hooks?: Hooks }
 ) => {
   // DOCTYPE should be the first thing written to the frame, so if the user code
   // includes a DOCTYPE declaration, we need to find it and write it first.
   const doctype = sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
   return (
-    doctype + createBeforeAllScript(hooks?.beforeAll) + createHeader(id) + build
+    doctype + createHeader(id) + build
   );
 };
 
