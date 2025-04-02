@@ -105,6 +105,7 @@
     "@typescript-eslint/eslint-plugin": "8.24.0",
     "@typescript-eslint/parser": "8.23.0",
     "babel-jest": "29.7.0",
+    "cross-env": "^7.0.3",
     "eslint": "9.19.0",
     "eslint-config-prettier": "10.0.1",
     "eslint-import-resolver-typescript": "^3.5.5",
