@@ -33,12 +33,14 @@ interface CreateQuizArgs {
   block: string;
   helpCategory: string;
   title?: string;
+  questionCount: number;
 }
 
 async function createQuiz(
   superBlock: SuperBlocks,
   block: string,
   helpCategory: string,
+  questionCount: number,
   title?: string
 ) {
   if (!title) {
@@ -46,7 +48,12 @@ async function createQuiz(
   }
   void updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createQuizChallenge(superBlock, block, title);
+  const challengeId = await createQuizChallenge(
+    superBlock,
+    block,
+    title,
+    questionCount
+  );
   void createMetaJson(superBlock, block, title, helpCategory, challengeId);
   // TODO: remove once we stop relying on markdown in the client.
   void createIntroMD(superBlock, block, title);
@@ -125,7 +132,8 @@ This page is for the ${title}
 async function createQuizChallenge(
   superBlock: SuperBlocks,
   block: string,
-  title: string
+  title: string,
+  questionCount: number
 ): Promise<ObjectID> {
   const superBlockSubPath = getSuperBlockSubPath(superBlock);
   const newChallengeDir = path.resolve(
@@ -139,7 +147,8 @@ async function createQuizChallenge(
     challengeType: 8,
     projectPath: newChallengeDir + '/',
     title: title,
-    dashedName: block
+    dashedName: block,
+    questionCount: questionCount
   });
 }
 
@@ -189,11 +198,24 @@ void prompt([
     default: 'HTML-CSS',
     type: 'list',
     choices: helpCategories
+  },
+  {
+    name: 'questionCount',
+    message: 'Should this quiz have either ten or twenty questions?',
+    default: 20,
+    type: 'list',
+    choices: [10, 20]
   }
 ])
   .then(
-    async ({ superBlock, block, title, helpCategory }: CreateQuizArgs) =>
-      await createQuiz(superBlock, block, helpCategory, title)
+    async ({
+      superBlock,
+      block,
+      title,
+      helpCategory,
+      questionCount
+    }: CreateQuizArgs) =>
+      await createQuiz(superBlock, block, helpCategory, questionCount, title)
   )
   .then(() =>
     console.log(

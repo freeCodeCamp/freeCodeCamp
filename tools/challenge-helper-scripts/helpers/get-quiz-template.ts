@@ -6,6 +6,7 @@ type QuizOptions = {
   challengeType: number;
   title: string;
   dashedName: string;
+  questionCount: number;
 };
 
 // Build the base markdown for a quiz
@@ -13,9 +14,11 @@ function getQuizTemplate({
   challengeId,
   challengeType,
   title,
-  dashedName
+  dashedName,
+  questionCount
 }: QuizOptions): string {
-  const quizDescription = `To pass the quiz, you must correctly answer at least 18 of the 20 questions below.`;
+  const minimumCorrect = questionCount == 20 ? '18' : '9';
+  const quizDescription = `To pass the quiz, you must correctly answer at least ${minimumCorrect} of the ${questionCount} questions below.`;
 
   return `---
 id: ${challengeId.toString()}

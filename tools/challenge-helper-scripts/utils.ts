@@ -25,6 +25,7 @@ interface QuizOptions {
   projectPath?: string;
   title: string;
   dashedName: string;
+  questionCount: number;
 }
 
 const createStepFile = ({
@@ -62,14 +63,16 @@ const createQuizFile = ({
   challengeType,
   projectPath = getProjectPath(),
   title,
-  dashedName
+  dashedName,
+  questionCount
 }: QuizOptions): ObjectID => {
   const challengeId = new ObjectID();
   const template = getQuizTemplate({
     challengeId,
     challengeType,
     title,
-    dashedName
+    dashedName,
+    questionCount
   });
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, template);
