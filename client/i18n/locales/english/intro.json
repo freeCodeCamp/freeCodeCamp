@@ -1982,7 +1982,10 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": { "title": "30", "intro": [] },
+      "qpra": {
+        "title": "30",
+        "intro": []
+      },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
@@ -3386,7 +3389,10 @@
           "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
-      "kagw": { "title": "258", "intro": [] },
+      "kagw": {
+        "title": "258",
+        "intro": []
+      },
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
@@ -3439,16 +3445,28 @@
           "In these lecture videos, you will learn about working with state and responding to events with React."
         ]
       },
-      "rmpy": { "title": "268", "intro": [] },
-      "dbta": { "title": "269", "intro": [] },
+      "rmpy": {
+        "title": "268",
+        "intro": []
+      },
+      "dbta": {
+        "title": "269",
+        "intro": []
+      },
       "lecture-understanding-effects-and-referencing-values-in-react": {
         "title": "Understanding Effects and Referencing Values in React",
         "intro": [
           "In these lecture videos, you will learn about effects and referencing values with React."
         ]
       },
-      "xdyh": { "title": "270", "intro": [] },
-      "vjgg": { "title": "272", "intro": [] },
+      "xdyh": {
+        "title": "270",
+        "intro": []
+      },
+      "vjgg": {
+        "title": "272",
+        "intro": []
+      },
       "review-react-state-and-hooks": {
         "title": "React State and Hooks Review",
         "intro": [
@@ -3468,23 +3486,38 @@
           "In these lecture videos, you will learn about working with forms in React."
         ]
       },
-      "sgau": { "title": "276", "intro": [] },
-      "clak": { "title": "277", "intro": [] },
+      "sgau": {
+        "title": "276",
+        "intro": []
+      },
+      "clak": {
+        "title": "277",
+        "intro": []
+      },
       "lecture-working-with-data-fetching-and-memoization-in-react": {
         "title": "Working with Data Fetching and Memoization in React",
         "intro": [
           "In these lecture videos, you will learn about data fetching and memoization in React."
         ]
       },
-      "ffpt": { "title": "279", "intro": [] },
-      "lrof": { "title": "280", "intro": [] },
+      "ffpt": {
+        "title": "279",
+        "intro": []
+      },
+      "lrof": {
+        "title": "280",
+        "intro": []
+      },
       "lecture-routing-react-frameworks-and-dependency-management-tools": {
         "title": "Routing, React Frameworks, and Dependency Management Tools",
         "intro": [
           "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
         ]
       },
-      "vyzp": { "title": "281", "intro": [] },
+      "vyzp": {
+        "title": "281",
+        "intro": []
+      },
       "lecture-react-strategies-and-debugging": {
         "title": "React Strategies and Debugging",
         "intro": [
@@ -3562,11 +3595,26 @@
           "In these lecture videos, you will learn what TypeScript is and how to use it."
         ]
       },
-      "trvf": { "title": "293", "intro": [] },
-      "kwmg": { "title": "294", "intro": [] },
-      "nodx": { "title": "295", "intro": [] },
-      "erfj": { "title": "296", "intro": [] },
-      "muyw": { "title": "297", "intro": [] },
+      "trvf": {
+        "title": "293",
+        "intro": []
+      },
+      "kwmg": {
+        "title": "294",
+        "intro": []
+      },
+      "nodx": {
+        "title": "295",
+        "intro": []
+      },
+      "erfj": {
+        "title": "296",
+        "intro": []
+      },
+      "muyw": {
+        "title": "297",
+        "intro": []
+      },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
@@ -3583,8 +3631,14 @@
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
-      "rdzk": { "title": "301", "intro": [] },
-      "vtpz": { "title": "302", "intro": [] },
+      "rdzk": {
+        "title": "301",
+        "intro": []
+      },
+      "vtpz": {
+        "title": "302",
+        "intro": []
+      },
       "workshop-bash-boilerplate": {
         "title": "Build a Boilerplate",
         "intro": [
@@ -3602,7 +3656,10 @@
         "title": "Bash Commands Quiz",
         "intro": ["Test what you've learned bash commands with this quiz."]
       },
-      "voks": { "title": "306", "intro": [] },
+      "voks": {
+        "title": "306",
+        "intro": []
+      },
       "workshop-database-of-video-game-characters": {
         "title": "Build a Database of Video Game Characters",
         "intro": [
@@ -3628,7 +3685,10 @@
           "Test what you've learned on relational databases with this quiz."
         ]
       },
-      "pexz": { "title": "311", "intro": [] },
+      "pexz": {
+        "title": "311",
+        "intro": []
+      },
       "workshop-bash-five-programs": {
         "title": "Build Five Programs",
         "intro": [
@@ -3646,7 +3706,10 @@
         "title": "Bash Scripting Quiz",
         "intro": ["Test what you've learned on bash scripting in this quiz."]
       },
-      "tkgg": { "title": "315", "intro": [] },
+      "tkgg": {
+        "title": "315",
+        "intro": []
+      },
       "workshop-sql-student-database-part-1": {
         "title": "Build a Student Database: Part 1",
         "intro": [
@@ -3696,7 +3759,10 @@
         "title": "Bash and SQL Quiz",
         "intro": ["Test what you've learned in this quiz on Bash and SQL."]
       },
-      "eeez": { "title": "324", "intro": [] },
+      "eeez": {
+        "title": "324",
+        "intro": []
+      },
       "workshop-castle": {
         "title": "Build a Castle",
         "intro": [
@@ -3712,7 +3778,10 @@
         "title": "Nano Quiz",
         "intro": ["Test what you've learned on Nano with this quiz ."]
       },
-      "rhhl": { "title": "328", "intro": [] },
+      "rhhl": {
+        "title": "328",
+        "intro": []
+      },
       "workshop-sql-reference-object": {
         "title": "Build an SQL Reference Object",
         "intro": [
@@ -3746,55 +3815,200 @@
           "Review relational databases concepts to prepare for the upcoming quiz."
         ]
       },
-      "thsj": { "title": "335", "intro": [] },
-      "uwum": { "title": "336", "intro": [] },
-      "asfv": { "title": "337", "intro": [] },
-      "bvfx": { "title": "338", "intro": [] },
-      "buzx": { "title": "339", "intro": [] },
-      "ynqt": { "title": "340", "intro": [] },
-      "prlo": { "title": "341", "intro": [] },
-      "jsnd": { "title": "342", "intro": [] },
-      "sxdc": { "title": "343", "intro": [] },
-      "pegc": { "title": "344", "intro": [] },
-      "mzae": { "title": "345", "intro": [] },
-      "gjbf": { "title": "346", "intro": [] },
-      "hzab": { "title": "347", "intro": [] },
-      "ggea": { "title": "348", "intro": [] },
-      "vgvz": { "title": "349", "intro": [] },
-      "hfwi": { "title": "350", "intro": [] },
-      "rnwr": { "title": "351", "intro": [] },
-      "zhhp": { "title": "352", "intro": [] },
-      "movb": { "title": "353", "intro": [] },
-      "ngor": { "title": "354", "intro": [] },
-      "gora": { "title": "355", "intro": [] },
-      "xdly": { "title": "356", "intro": [] },
-      "pzmc": { "title": "357", "intro": [] },
-      "oeqv": { "title": "358", "intro": [] },
-      "mfwu": { "title": "359", "intro": [] },
-      "dfcd": { "title": "360", "intro": [] },
-      "dfwl": { "title": "361", "intro": [] },
-      "adzm": { "title": "362", "intro": [] },
-      "kaui": { "title": "363", "intro": [] },
-      "zpjj": { "title": "364", "intro": [] },
-      "ghfk": { "title": "365", "intro": [] },
-      "ukem": { "title": "366", "intro": [] },
-      "sdjg": { "title": "367", "intro": [] },
-      "qjov": { "title": "368", "intro": [] },
-      "hjku": { "title": "370", "intro": [] },
-      "kegi": { "title": "377", "intro": [] },
-      "vnfu": { "title": "379", "intro": [] },
-      "rlli": { "title": "380", "intro": [] },
-      "rjpv": { "title": "381", "intro": [] },
-      "xbri": { "title": "382", "intro": [] },
-      "xfrd": { "title": "383", "intro": [] },
-      "nkjt": { "title": "384", "intro": [] },
-      "pgjj": { "title": "385", "intro": [] },
-      "exom": { "title": "386", "intro": [] },
-      "bvqc": { "title": "387", "intro": [] },
-      "xish": { "title": "388", "intro": [] },
+      "thsj": {
+        "title": "335",
+        "intro": []
+      },
+      "uwum": {
+        "title": "336",
+        "intro": []
+      },
+      "asfv": {
+        "title": "337",
+        "intro": []
+      },
+      "bvfx": {
+        "title": "338",
+        "intro": []
+      },
+      "buzx": {
+        "title": "339",
+        "intro": []
+      },
+      "ynqt": {
+        "title": "340",
+        "intro": []
+      },
+      "prlo": {
+        "title": "341",
+        "intro": []
+      },
+      "jsnd": {
+        "title": "342",
+        "intro": []
+      },
+      "sxdc": {
+        "title": "343",
+        "intro": []
+      },
+      "pegc": {
+        "title": "344",
+        "intro": []
+      },
+      "mzae": {
+        "title": "345",
+        "intro": []
+      },
+      "gjbf": {
+        "title": "346",
+        "intro": []
+      },
+      "hzab": {
+        "title": "347",
+        "intro": []
+      },
+      "ggea": {
+        "title": "348",
+        "intro": []
+      },
+      "vgvz": {
+        "title": "349",
+        "intro": []
+      },
+      "hfwi": {
+        "title": "350",
+        "intro": []
+      },
+      "rnwr": {
+        "title": "351",
+        "intro": []
+      },
+      "zhhp": {
+        "title": "352",
+        "intro": []
+      },
+      "movb": {
+        "title": "353",
+        "intro": []
+      },
+      "ngor": {
+        "title": "354",
+        "intro": []
+      },
+      "gora": {
+        "title": "355",
+        "intro": []
+      },
+      "xdly": {
+        "title": "356",
+        "intro": []
+      },
+      "pzmc": {
+        "title": "357",
+        "intro": []
+      },
+      "oeqv": {
+        "title": "358",
+        "intro": []
+      },
+      "mfwu": {
+        "title": "359",
+        "intro": []
+      },
+      "dfcd": {
+        "title": "360",
+        "intro": []
+      },
+      "dfwl": {
+        "title": "361",
+        "intro": []
+      },
+      "adzm": {
+        "title": "362",
+        "intro": []
+      },
+      "kaui": {
+        "title": "363",
+        "intro": []
+      },
+      "zpjj": {
+        "title": "364",
+        "intro": []
+      },
+      "ghfk": {
+        "title": "365",
+        "intro": []
+      },
+      "ukem": {
+        "title": "366",
+        "intro": []
+      },
+      "sdjg": {
+        "title": "367",
+        "intro": []
+      },
+      "qjov": {
+        "title": "368",
+        "intro": []
+      },
+      "hjku": {
+        "title": "370",
+        "intro": []
+      },
+      "kegi": {
+        "title": "377",
+        "intro": []
+      },
+      "vnfu": {
+        "title": "379",
+        "intro": []
+      },
+      "rlli": {
+        "title": "380",
+        "intro": []
+      },
+      "rjpv": {
+        "title": "381",
+        "intro": []
+      },
+      "xbri": {
+        "title": "382",
+        "intro": []
+      },
+      "xfrd": {
+        "title": "383",
+        "intro": []
+      },
+      "nkjt": {
+        "title": "384",
+        "intro": []
+      },
+      "pgjj": {
+        "title": "385",
+        "intro": []
+      },
+      "exom": {
+        "title": "386",
+        "intro": []
+      },
+      "bvqc": {
+        "title": "387",
+        "intro": []
+      },
+      "xish": {
+        "title": "388",
+        "intro": []
+      },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store keys/value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
       }
     }
   },
