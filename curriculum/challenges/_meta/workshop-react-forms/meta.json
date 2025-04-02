@@ -1,0 +1,84 @@
+{
+  "name": "Build a Superhero Application Form",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockLayout": "challenge-grid",
+  "dashedName": "workshop-react-forms",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67ebb3c1f3d0046ac7afcbc0",
+      "title": "Step 1"
+    },
+    {
+      "id": "67ebbcc1a3382fff9f3acc52",
+      "title": "Step 2"
+    },
+    {
+      "id": "67ebbf730d448c1d98d8dffc",
+      "title": "Step 3"
+    },
+    {
+      "id": "67ebc0e1c183cb2d743e513b",
+      "title": "Step 4"
+    },
+    {
+      "id": "67ebc1d57b0d863821af8ef2",
+      "title": "Step 5"
+    },
+    {
+      "id": "67ebcc81e9810012e0440695",
+      "title": "Step 6"
+    },
+    {
+      "id": "67ebce795c47dc291aaf12e9",
+      "title": "Step 7"
+    },
+    {
+      "id": "67ebd3fe712a39661dc28a3a",
+      "title": "Step 8"
+    },
+    {
+      "id": "67ebd5cd45b45a7a21e76a05",
+      "title": "Step 9"
+    },
+    {
+      "id": "67ebd7a9e173c18f30cb41fc",
+      "title": "Step 10"
+    },
+    {
+      "id": "67ebd88b19bc9199103d02f3",
+      "title": "Step 11"
+    },
+    {
+      "id": "67ebda4160060bac061253b1",
+      "title": "Step 12"
+    },
+    {
+      "id": "67ebdbbcde7feebcc4c3b8d9",
+      "title": "Step 13"
+    },
+    {
+      "id": "67ebdebca8dcefddf1a859d3",
+      "title": "Step 14"
+    },
+    {
+      "id": "67ebecccc2c0576c675cdb9c",
+      "title": "Step 15"
+    },
+    {
+      "id": "67ebf0db6ac6c4137dcb7f51",
+      "title": "Step 16"
+    },
+    {
+      "id": "67ebf1e8f56ce61f5212affe",
+      "title": "Step 17"
+    },
+    {
+      "id": "67ebf31d9d02782d26b4deac",
+      "title": "Step 18"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

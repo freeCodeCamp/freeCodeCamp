@@ -1,0 +1,185 @@
+---
+id: 67ebdbbcde7feebcc4c3b8d9
+title: Step 13
+challengeType: 0
+dashedName: step-13
+---
+
+# --description--
+
+Map through the `powersOptions` array with a parater of `power`. Inside the map, create a `label` element with a `key` of `power`. Inside that `label`, create an `input` of type `checkbox` and a `value` of `power`.
+
+To finally display those items from the `powersOptions` array next to each checkbox, create a `span` element just before the clsoing `label` with a text of `{power}`.
+
+# --hints--
+
+Test 1
+
+```js
+
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Superhero Application Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.3/babel.min.js"></script>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      src="index.jsx"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      data-presets="react"
+      data-type="module"
+    >
+      import { SuperheroForm } from './index.jsx';
+      ReactDOM.createRoot(document.getElementById('root')).render(<SuperheroForm />);
+    </script>
+  </body>
+</html>
+```
+
+```css
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(30deg, #ff9999 50%, #6699ff 50%)
+}
+
+.form-wrap {
+  background-color: white;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid black;
+  box-shadow: 5px 5px 10px black;
+}
+
+.form-wrap h2,
+.form-wrap p {
+  text-align: center;
+}
+
+.form-wrap p {
+  position: relative;
+  top: -18px;
+}
+
+.section {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.submit-wrap {
+  text-align: center;
+}
+
+.submit-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+.submit-btn:disabled {
+  cursor: not-allowed;
+}
+```
+
+```jsx
+const { useState } = React;
+
+export const SuperheroForm = () => {
+
+  const powerSourceOptions = [
+    'Bitten by a strange creature',
+    'Radioactive exposure',
+    'Science experiment',
+    'Alien heritage',
+    'Ancient artifact discovery',
+    'Other'
+  ];
+
+  const powersOptions = [
+    'Super Strength',
+    'Super Speed',
+    'Flight',
+    'Invisibility',
+    'Telekinesis',
+    'Other'
+  ];
+
+  const [heroName, setHeroName] = React.useState('');
+  const [realName, setRealName] = React.useState('');
+  const [powerSource, setPowerSource] = React.useState('');
+  const [powers, setPowers] = React.useState([]);
+
+  return (
+    <div className='form-wrap'>
+      <h2>Superhero Application Form</h2>
+      <p>Please complete all fields</p>
+      <form>
+        <div className='section'>
+        <label>
+          Hero Name
+          <input
+            type='text'
+            value={heroName}
+            onChange={e => setHeroName(e.target.value)}
+          />
+        </label>
+        <label>
+          Real Name
+          <input
+            type='password'
+            value={realName}
+            onChange={e => setRealName(e.target.value)}
+          />
+        </label>
+        </div>
+        <label className='section column'>
+          How did you get your powers?
+          <select value={powerSource} onChange={e => setPowerSource(e.target.value)}>
+            <option value=''>
+              Select one...
+            </option>
+           {powerSourceOptions.map(source => (
+             <option key={source} value={source}>
+                {source}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className='section column'>
+          List your powers (select all that apply):
+          --fcc-editable-region--
+
+          --fcc-editable-region--
+        </label>
+      </form>
+    </div>
+  )
+};
+```
