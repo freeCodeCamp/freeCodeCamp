@@ -135,29 +135,29 @@ export function buildExtCurriculumData(
     const chapters: Chapter[] = fullStackSuperBlockStructure.chapters;
     const blocksWithData = curriculum[superBlockKey].blocks;
 
-    const allChapters = chapters.map(chapter => {
-      return {
-        dashedName: chapter.dashedName,
-        comingSoon: chapter.comingSoon,
-        chapterType: chapter.chapterType,
-        modules: chapter.modules.map(module => {
-          return {
+    const allChapters = chapters.map(chapter => ({
+      dashedName: chapter.dashedName,
+      comingSoon: chapter.comingSoon,
+      chapterType: chapter.chapterType,
+      modules: chapter.comingSoon
+        ? []
+        : chapter.modules.map(module => ({
             dashedName: module.dashedName,
             comingSoon: module.comingSoon,
             moduleType: module.moduleType,
-            blocks: module.blocks.map(block => {
-              const blockData = blocksWithData[block.dashedName];
+            blocks: module.comingSoon
+              ? []
+              : module.blocks.map(block => {
+                  const blockData = blocksWithData[block.dashedName];
 
-              return {
-                dashedName: block.dashedName,
-                intro: getBlockDescription(superBlockKey, block.dashedName),
-                meta: blockData.meta
-              };
-            })
-          };
-        })
-      };
-    });
+                  return {
+                    dashedName: block.dashedName,
+                    intro: getBlockDescription(superBlockKey, block.dashedName),
+                    meta: blockData.meta
+                  };
+                })
+          }))
+    }));
 
     const superBlock = {
       [superBlockKey]: {
@@ -191,7 +191,7 @@ export function buildExtCurriculumData(
   }
 
   function buildChallengeFiles(superBlockKey: SuperBlocks) {
-    const blocks = Object.keys(curriculum[superBlockKey]['blocks']);
+    const blocks = Object.keys(curriculum[superBlockKey].blocks);
 
     for (const block of blocks) {
       const challenges = curriculum[superBlockKey]['blocks'][block].challenges;
