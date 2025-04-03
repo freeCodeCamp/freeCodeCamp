@@ -18,7 +18,7 @@ Fulfill the user stories below and get all the tests to pass to complete the lab
 2. The unordered list should have the class `item-list`.
 3. The three list items should contain the item name followed by a `button` element with the class `favorite-icon`.
 4. The `button` element should contain the code `&#9825;` initially to represent an empty heart.
-5. You should create a `filled` class should contain style information. 
+5. You should create a `filled` class that should contain style information.
 6. When a `button` element containing a heart is clicked, you should add the `filled` class to the clicked `button` if it's not already present, and remove it, if it is.
 7. When a `button` element containing a heart is clicked, the heart symbol should toggle between `&#9825;` (empty heart) and `&#10084;` (filled heart), depending on its current state.
 
@@ -72,7 +72,7 @@ The `filled` class should contain style information.
 ```js
 const filled = new __helpers.CSSHelp(document).getStyle('.filled');
 assert.exists(filled); 
-assert.isNotEmpty(filled); 
+assert.isNotEmpty([...filled]); 
 ```
 
 When the `button` element is clicked, and it contains the class `filled`, you should remove the class `filled` from the `button` element and change the innerHTML of the `button` element to `&#9825;`.
