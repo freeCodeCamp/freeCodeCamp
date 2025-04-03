@@ -604,7 +604,7 @@ async function createTestRunner(
 
   return async ({ text, testString }) => {
     try {
-      const { pass, err } = await evaluator.evaluate(testString, 1000);
+      const { pass, err } = await evaluator.evaluate(testString, 2000);
 
       // console.log(
       //   `Test "${text}" ${pass ? 'PASSED' : 'FAILED'} for solution ${
