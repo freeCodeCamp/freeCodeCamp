@@ -3,22 +3,7 @@ import { createAction } from 'redux-actions';
 import { getLines } from '../../../../../shared/utils/get-lines';
 import { actionTypes } from './action-types';
 
-export const createFiles = createAction(
-  actionTypes.createFiles,
-  challengeFiles =>
-    challengeFiles.map(challengeFile => ({
-      ...challengeFile,
-      seed: challengeFile.contents.slice(),
-      editableContents: getLines(
-        challengeFile.contents,
-        challengeFile.editableRegionBoundaries
-      ),
-      editableRegionBoundaries:
-        challengeFile.editableRegionBoundaries?.slice() ?? [],
-      seedEditableRegionBoundaries:
-        challengeFile.editableRegionBoundaries?.slice() ?? []
-    }))
-);
+export const createFiles = createAction(actionTypes.createFiles);
 
 export const createQuestion = createAction(actionTypes.createQuestion);
 export const initTests = createAction(actionTypes.initTests);
@@ -50,7 +35,6 @@ export const logsToConsole = createAction(actionTypes.logsToConsole);
 export const disableBuildOnError = createAction(
   actionTypes.disableBuildOnError
 );
-export const storedCodeFound = createAction(actionTypes.storedCodeFound);
 export const noStoredCodeFound = createAction(actionTypes.noStoredCodeFound);
 export const saveEditorContent = createAction(actionTypes.saveEditorContent);
 export const setIsAdvancing = createAction(actionTypes.setIsAdvancing);
