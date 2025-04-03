@@ -333,10 +333,12 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
       const type =
         frameContext.challengeType === challengeTypes.html ? 'frame' : 'worker';
 
+      const source = type === 'frame' ? createContent(testId, { build, sources}) : build;
+
       await frameContext.window?.FCCSandbox.createTestRunner({
         type,
         code: sources,
-        source: createContent(testId, { build, sources }),
+        source,
         assetPath: '/js/test-runner/',
         hooks
       });
@@ -416,9 +418,7 @@ export const createContent = (
   // DOCTYPE should be the first thing written to the frame, so if the user code
   // includes a DOCTYPE declaration, we need to find it and write it first.
   const doctype = sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
-  return (
-    doctype + createHeader(id) + build
-  );
+  return doctype + createHeader(id) + build;
 };
 
 const restoreScrollPosition = (frameContext: Context) => {
