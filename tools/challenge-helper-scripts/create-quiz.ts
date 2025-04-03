@@ -3,7 +3,7 @@ import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
-import { SuperBlocks } from '../../shared/config/curriculum';
+import { SuperBlocks } from '../../shared/config/superblocks'; // Fixed import
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
 
@@ -22,7 +22,7 @@ interface QuizAnswers {
   superBlock: SuperBlocks;
   quizName: string;
   dashedName: string;
-  helpCategory: string;
+  helpCategory: typeof helpCategories[number];
 }
 
 async function createQuizIntroJson(
@@ -36,6 +36,11 @@ async function createQuizIntroJson(
   );
   const introContent = JSON.parse(await fs.readFile(introJsonPath, 'utf-8'));
   
+  // Handle new superBlocks
+  if (!introContent[superBlock]) {
+    introContent[superBlock] = { blocks: {} };
+  }
+
   introContent[superBlock].blocks[dashedName] = {
     title,
     intro: ['', '']
@@ -43,7 +48,7 @@ async function createQuizIntroJson(
 
   await fs.writeFile(
     introJsonPath,
-    await format(JSON.stringify(introContent), { parser: 'json' })
+    await format(JSON.stringify(introContent, null, 2), { parser: 'json' })
   );
 }
 
@@ -69,7 +74,7 @@ async function createQuizMeta(
     superBlock,
     blockType: 'quiz',
     blockLayout: 'link',
-    isUpcomingChange: true,
+    isUpcomingChange: false, // Production-ready
     challengeOrder: [{ id: challengeId, title }]
   };
 
@@ -78,12 +83,12 @@ async function createQuizMeta(
   
   await fs.writeFile(
     path.join(quizMetaDir, 'meta.json'),
-    await format(JSON.stringify(quizMeta), { parser: 'json' })
+    await format(JSON.stringify(quizMeta, null, 2), { parser: 'json' })
   );
 }
 
 async function createQuizIndexMD(
-  superBlock: string,
+  superBlock: SuperBlocks,
   dashedName: string,
   title: string
 ) {
@@ -166,26 +171,29 @@ async function createNewQuiz() {
       helpCategory
     } = await prompt<QuizAnswers>([
       {
-        name: 'superBlock',
-        message: 'What superBlock does this belong to?',
         type: 'list',
-        choices: Object.values(SuperBlocks)
+        name: 'superBlock',
+        message: 'Select the certification superBlock:',
+        choices: Object.values(SuperBlocks).filter(
+          sb => sb !== SuperBlocks.Upcoming
+        )
       },
       {
         name: 'quizName',
-        message: 'What is the quiz name? (e.g. CSS Basics)',
-        validate: (input: string) => !!input.trim() || 'Required field'
+        message: 'Enter the quiz name (e.g. "CSS Basics"):',
+        validate: (input: string) => 
+          input.trim().length > 0 || 'Please enter a quiz name'
       },
       {
         name: 'dashedName',
-        message: 'What is the dashed name? (must start with "quiz-")',
+        message: 'Enter the dashed name (must start with "quiz-"):',
         validate: (input: string) => 
           input.startsWith('quiz-') || 'Must start with "quiz-"'
       },
       {
-        name: 'helpCategory',
-        message: 'Select help category:',
         type: 'list',
+        name: 'helpCategory',
+        message: 'Select the help category:',
         choices: helpCategories
       }
     ]);
@@ -201,11 +209,16 @@ async function createNewQuiz() {
     ]);
 
     console.log(`
- Quiz created successfully!
+✅ Quiz created successfully!
 Run "pnpm run clean:client" to see your changes.
-    `);
+Files created:
+- curriculum/challenges/english/${getSuperBlockSubPath(superBlock)}/${dashedName}/${challengeId}.md
+- client/src/pages/learn/${superBlock}/${dashedName}/index.md
+- curriculum/challenges/_meta/${dashedName}/meta.json
+`);
   } catch (error) {
-    console.error('Error creating quiz:', error);
+    console.error('❌ Error creating quiz:');
+    console.error(error instanceof Error ? error.message : error);
     process.exit(1);
   }
 }
