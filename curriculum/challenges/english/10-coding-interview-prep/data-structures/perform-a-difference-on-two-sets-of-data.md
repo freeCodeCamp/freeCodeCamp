@@ -28,22 +28,17 @@ assert(
 Your `difference` method should return the proper collection.
 
 ```js
-assert(
-  (function () {
-    var setA = new Set();
-    var setB = new Set();
-    setA.add('a');
-    setA.add('b');
-    setA.add('c');
-    setB.add('c');
-    setB.add('d');
-    var differenceSetAB = setA.difference(setB);
-    return (
-      differenceSetAB.size() === 2 &&
-      DeepEqual(differenceSetAB.values(), ['a', 'b'])
-    );
-  })()
-);
+var setA = new Set();
+var setB = new Set();
+setA.add('a');
+setA.add('b');
+setA.add('c');
+setB.add('c');
+setB.add('d');
+var differenceSetAB = setA.difference(setB);
+
+assert.equal(differenceSetAB.size(), 2)
+assert.deepEqual(differenceSetAB.values(), ['a', 'b'])
 ```
 
 # --seed--

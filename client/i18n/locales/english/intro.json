@@ -308,11 +308,11 @@
     ],
     "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
     "blocks": {
-      "build-a-pokemon-search-app-project": {
-        "title": "Build a Pokémon Search App Project",
+      "build-an-rpg-creature-search-app-project": {
+        "title": "Build an RPG Creature Search App Project",
         "intro": [
           "This is one of the required projects to earn your certification.",
-          "For this project, you will build a Pokémon search app."
+          "For this project, you will build an RPG creature search app."
         ]
       },
       "build-a-cash-register-project": {
@@ -1335,7 +1335,7 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "Free Foundational C# with Microsoft",
+    "title": "Free Foundational C# with Microsoft Certification",
     "intro": [
       "This course offers a comprehensive introduction to C# programming, covering its core concepts, syntax, and practical application in software development.",
       "Through hands-on exercises and projects, you will learn the fundamentals of C#, including variables, data types, control structures, and object-oriented programming principles.",
@@ -1388,7 +1388,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers (Beta)",
+    "title": "A2 English for Developers (Beta) Certification",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
@@ -1567,7 +1567,7 @@
     }
   },
   "b1-english-for-developers": {
-    "title": "B1 English for Developers (Beta)",
+    "title": "B1 English for Developers (Beta) Certification",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the B1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "It will help you strengthen your foundational skills while introducing more complex grammar and usage. You'll learn how to describe places and things, share past experiences, and confidently use tenses like Present Perfect and Future. Practical communication strategies are included as well, such as managing conversations, expressing opinions, and building agreement or disagreement in discussions.",
@@ -3478,7 +3478,7 @@
       },
       "ffpt": { "title": "279", "intro": [] },
       "lrof": { "title": "280", "intro": [] },
-      "lecture-routing-react-frameworks-and-dependecy-management-tools": {
+      "lecture-routing-react-frameworks-and-dependency-management-tools": {
         "title": "Routing, React Frameworks, and Dependency Management Tools",
         "intro": [
           "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
@@ -3546,12 +3546,6 @@
         "title": "Understanding the Different Types of Testing",
         "intro": [
           "In these lecture videos, you will learn about the different types of testing."
-        ]
-      },
-      "lecture-understanding-test-automation": {
-        "title": "Understanding Test Automation",
-        "intro": [
-          "In these lecture videos, you will learn about test automation."
         ]
       },
       "review-testing": {
@@ -3805,7 +3799,6 @@
     }
   },
   "misc-text": {
-    "certification": "{{cert}} Certification",
     "browse-other": "Browse our other free certifications",
     "courses": "Courses",
     "steps": "Steps",
