@@ -145,9 +145,9 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
             values={dataToDisplay}
           />
           <ReactTooltip className='react-tooltip' effect='solid' html={true} />
-          <Row className='text-center'>
+          <Row className='text-center p-2'>
             <button
-              className='heatmap-nav-btn'
+              className='heatmap-nav-btn p-2'
               disabled={!pages[this.state.pageIndex - 1]}
               // eslint-disable-next-line @typescript-eslint/unbound-method
               onClick={this.prevPage}
@@ -159,7 +159,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
             </button>
             <span>{title}</span>
             <button
-              className='heatmap-nav-btn'
+              className='heatmap-nav-btn p-2'
               disabled={!pages[this.state.pageIndex + 1]}
               // eslint-disable-next-line @typescript-eslint/unbound-method
               onClick={this.nextPage}
