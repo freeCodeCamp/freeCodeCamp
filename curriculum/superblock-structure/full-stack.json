@@ -744,14 +744,11 @@
         {
           "dashedName": "python-loops-and-sequences",
           "blocks": [
-            { "dashedName": "lecture-working-with-lists-and-tuples" },
-            { "dashedName": "review-lists-and-tuples" },
-            { "dashedName": "quiz-lists-and-tuples" },
-            { "dashedName": "lecture-working-with-loops-in-python" },
+            { "dashedName": "lecture-working-with-loops and sequences" },
             { "dashedName": "workshop-placeholder-loops-and-sequences" },
             { "dashedName": "lab-placeholder-loops-and-sequences" },
-            { "dashedName": "review-python-loops" },
-            { "dashedName": "quiz-python-loops" }
+            { "dashedName": "review-loops-and-sequences" },
+            { "dashedName": "quiz-loops-and-sequences" }
           ]
         },
         {

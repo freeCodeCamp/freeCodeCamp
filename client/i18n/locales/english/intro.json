@@ -3777,20 +3777,8 @@
         "title": "Python Basics Quiz",
         "intro": ["Learn about Python Basics Quiz in these lectures."]
       },
-      "lecture-working-with-lists-and-tuples": {
-        "title": "Working with Lists and Tuples",
-        "intro": [""]
-      },
-      "review-lists-and-tuples": {
-        "title": "Lists and Tuples Review",
-        "intro": [""]
-      },
-      "quiz-lists-and-tuples": {
-        "title": "Lists and Tuples Quiz",
-        "intro": [""]
-      },
-      "lecture-working-with-loops-in-python": {
-        "title": "Working with Loops",
+      "lecture-working-with-loops-and-sequences": {
+        "title": "Working with Loops and Sequences",
         "intro": [""]
       },
       "workshop-placeholder-loops-and-sequences": {
@@ -3801,12 +3789,12 @@
         "title": "Placeholder - waiting for title",
         "intro": [""]
       },
-      "review-python-loops": {
-        "title": "Loops Review",
+      "review-loops-and-sequences": {
+        "title": "Loops and Sequences Review",
         "intro": [""]
       },
-      "quiz-python-loops": {
-        "title": "Loops Quiz",
+      "quiz-loops-and-sequences": {
+        "title": "Loops and Sequences Quiz",
         "intro": [""]
       },
       "lecture-working-with-dictionaries-and-sets": {
