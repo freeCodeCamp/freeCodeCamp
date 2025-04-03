@@ -395,9 +395,6 @@ describe('userRoutes', () => {
       it('should reject with a 400 status code if the username param is missing or empty', async () => {
         const res = await superGet('/users/exists');
 
-        console.log(res);
-        console.log(res.body);
-
         expect(res.body).toStrictEqual({
           type: 'danger',
           message: 'username parameter is required'
