@@ -83,7 +83,8 @@ a.portfolio-card:focus img {
 
 .timeline-pagination_list_item > button {
   outline-color: transparent;
-  padding: 0 3px;
+  height : 44px;
+  width: 44px;
 }
 
 .timeline-row {
