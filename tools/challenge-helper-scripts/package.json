@@ -20,7 +20,7 @@
   "main": "utils.js",
   "scripts": {
     "test": "mocha --delay --reporter progress --bail",
-    "create-project": "tsx create-project"
+    "create-project": "tsx create-project",
     "create-new-quiz": "tsx create-quiz"
   },
   "devDependencies": {
