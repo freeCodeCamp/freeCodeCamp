@@ -1,6 +1,5 @@
 import { createAction } from 'redux-actions';
 
-import { getLines } from '../../../../../shared/utils/get-lines';
 import { actionTypes } from './action-types';
 
 export const createFiles = createAction(actionTypes.createFiles);
