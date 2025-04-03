@@ -850,6 +850,12 @@
           "moduleType": "review",
           "dashedName": "review-python",
           "blocks": [{ "dashedName": "review-python" }]
+        },
+        {
+          "moduleType": "exam",
+          "comingSoon": true,
+          "dashedName": "exam-python",
+          "blocks": []
         }
       ]
     },

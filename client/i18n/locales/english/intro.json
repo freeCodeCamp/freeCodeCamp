@@ -1799,7 +1799,8 @@
       "python-algorithms": "Algorithms",
       "python-graphs-and-trees": "Graphs and Trees",
       "python-dynamic-programming": "Dynamic Programming",
-      "review-python": "Python Review"
+      "review-python": "Python Review",
+      "exam-python": "Python Exam"
     },
     "blocks": {
       "lecture-welcome-to-freecodecamp": {
@@ -3999,6 +4000,10 @@
       },
       "quiz-dynamic-programming": {
         "title": "Dynamic Programming Quiz",
+        "intro": [""]
+      },
+      "review-python": {
+        "title": "Python Review",
         "intro": [""]
       },
       "exam-certified-full-stack-developer": {
