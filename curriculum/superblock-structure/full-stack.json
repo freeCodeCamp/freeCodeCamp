@@ -816,10 +816,10 @@
           "blocks": [
             { "dashedName": "lecture-searching-and-sorting-algorithms" },
             { "dashedName": "workshop-binary-search" },
-            { "dashedName": "lab-selection-sort" },
+            { "dashedName": "lab-bisection-method" },
             { "dashedName": "workshop-merge-sort" },
             { "dashedName": "lab-quick-sort" },
-            { "dashedName": "workshop-bisection-method" },
+            { "dashedName": "lab-selection-sort" },
             { "dashedName": "lab-luhn-argorithm" },
             { "dashedName": "review-searching-and-sorting-algorithms" },
             { "dashedName": "quiz-searching-and-sorting-algorithms" }

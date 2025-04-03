@@ -3929,8 +3929,8 @@
         "title": "Build a Binary Search",
         "intro": [""]
       },
-      "lab-selection-sort": {
-        "title": "Build a Selection Sort",
+      "lab-bisection-method": {
+        "title": "Build a Bisection Method",
         "intro": [""]
       },
       "workshop-merge-sort": {
@@ -3941,8 +3941,8 @@
         "title": "Build a Quick Sort",
         "intro": [""]
       },
-      "workshop-bisection-method": {
-        "title": "Build a Bisection Method",
+      "lab-selection-sort": {
+        "title": "Build a Selection Sort",
         "intro": [""]
       },
       "lab-luhn-argorithm": {
