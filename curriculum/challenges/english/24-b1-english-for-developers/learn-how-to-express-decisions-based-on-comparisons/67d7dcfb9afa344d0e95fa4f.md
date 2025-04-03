@@ -63,7 +63,7 @@ This means to make something take longer than expected.
     "audio": {
       "filename": "B1_13-3.mp3",
       "startTime": 1,
-      "startTimestamp": 47.18,
+      "startTimestamp": 46.98,
       "finishTimestamp": 51.34
     }
   },
@@ -76,7 +76,7 @@ This means to make something take longer than expected.
     {
       "character": "Sarah",
       "startTime": 1,
-      "finishTime": 5.16,
+      "finishTime": 5.36,
       "dialogue": {
         "text": "However, outsourcing can lead to communication issues which might delay the project.",
         "align": "center"
@@ -85,7 +85,7 @@ This means to make something take longer than expected.
     {
       "character": "Sarah",
       "opacity": 0,
-      "startTime": 5.66
+      "startTime": 5.86
     }
   ]
 }
