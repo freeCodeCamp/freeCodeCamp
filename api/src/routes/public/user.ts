@@ -336,9 +336,10 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       if (req.validationError) {
         logger.warn({ validationError: req.validationError });
         void reply.code(400);
-        // TODO(Post-MVP): return a message telling the requester that their
-        // request was malformed.
-        return await reply.send({ exists: true });
+        return await reply.send({
+          type: 'danger',
+          message: 'username parameter is required'
+        });
       }
 
       const username = req.query.username.toLowerCase();
@@ -369,9 +370,10 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       if (req.validationError) {
         logger.warn({ validationError: req.validationError });
         void reply.code(400);
-        // TODO(Post-MVP): return a message telling the requester that their
-        // request was malformed.
-        return await reply.send({ exists: true });
+        return await reply.send({
+          type: 'danger',
+          message: 'username parameter is required'
+        });
       }
 
       const username = req.query.username.toLowerCase();
