@@ -333,11 +333,10 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
       const type =
         frameContext.challengeType === challengeTypes.html ? 'frame' : 'worker';
 
-      console.log('FCCSandbox', frameContext.window?.FCCSandbox);
       await frameContext.window?.FCCSandbox.createTestRunner({
         type,
         code: sources,
-        source: createContent(testId, { build, sources, hooks }),
+        source: createContent(testId, { build, sources }),
         assetPath: '/js/test-runner/',
         hooks
       });
