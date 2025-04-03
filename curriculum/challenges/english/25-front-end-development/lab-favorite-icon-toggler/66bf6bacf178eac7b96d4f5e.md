@@ -66,6 +66,14 @@ for (let input of inputs) {
 }
 ```
 
+The `filled` class should contain style information. 
+
+```js
+const filled = new __helpers.CSSHelp(document).getStyle('.filled');
+assert.exists(filled); 
+assert.isNotEmpty(filled); 
+```
+
 When the `button` element is clicked, and it contains the class `filled`, you should remove the class `filled` from the `button` element and change the innerHTML of the `button` element to `&#9825;`.
 
 ```js
