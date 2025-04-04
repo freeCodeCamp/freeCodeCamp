@@ -28,11 +28,7 @@ function FillInTheBlanks({
 
   const getInputClass = (index: number): string => {
     let cls = 'fill-in-the-blank-input';
-
-    if (answersCorrect[index] === false) {
-      cls += ' incorrect-blank-answer';
-    }
-
+    if (answersCorrect[index] === false) cls += ' incorrect-blank-answer';
     return cls;
   };
 
@@ -44,46 +40,37 @@ function FillInTheBlanks({
       <ChallengeHeading heading={t('learn.fill-in-the-blank.heading')} />
       <Spacer size='xs' />
       <div className='fill-in-the-blank-wrap'>
-        {paragraphs.map((p, i) => {
-          return (
-            // both keys, i and j, are stable between renders, since
-            // the paragraphs are static.
-            <p key={i}>
-              {p.map((node, j) => {
-                const { type, value } = node;
-                if (type === 'text') {
-                  return value;
-                }
-
-                // If a blank is answered correctly, render the answer as part of the sentence.
-                if (type === 'blank' && answersCorrect[value] === true) {
-                  return (
-                    <span key={j} className='correct-blank-answer'>
-                      {blankAnswers[value]}
-                    </span>
-                  );
-                }
-
+        {paragraphs.map((p, i) => (
+          <p key={i}>
+            {p.map((node, j) => {
+              const { type, value } = node;
+              if (type === 'text') return value;
+              if (type === 'blank' && answersCorrect[value] === true) {
                 return (
-                  <input
-                    key={j}
-                    type='text'
-                    maxLength={blankAnswers[value].length + 3}
-                    className={getInputClass(value)}
-                    onChange={handleInputChange}
-                    data-index={node.value}
-                    size={blankAnswers[value].length}
-                    autoComplete='off'
-                    aria-label={t('learn.fill-in-the-blank.blank')}
-                    {...(answersCorrect[value] === false
-                      ? { 'aria-invalid': 'true' }
-                      : {})}
-                  />
+                  <span key={j} className='correct-blank-answer'>
+                    {blankAnswers[value]}
+                  </span>
                 );
-              })}
-            </p>
-          );
-        })}
+              }
+              return (
+                <input
+                  key={j}
+                  type='text'
+                  maxLength={blankAnswers[value].length + 3}
+                  className={getInputClass(value)}
+                  onChange={handleInputChange}
+                  data-index={node.value}
+                  size={blankAnswers[value].length}
+                  autoComplete='off'
+                  aria-label={t('learn.fill-in-the-blank.blank')}
+                  {...(answersCorrect[value] === false && {
+                    'aria-invalid': 'true'
+                  })}
+                />
+              );
+            })}
+          </p>
+        ))}
       </div>
       <Spacer size='m' />
       <div aria-live='polite'>
@@ -100,5 +87,4 @@ function FillInTheBlanks({
 }
 
 FillInTheBlanks.displayName = 'FillInTheBlanks';
-
 export default FillInTheBlanks;
