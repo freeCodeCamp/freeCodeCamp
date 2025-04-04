@@ -148,7 +148,10 @@ async function setup() {
     host: '127.0.0.1',
     port: '8080',
     root: path.resolve(__dirname, 'stubs'),
-    mount: [['/dist', path.join(clientPath, 'static/js/test-runner')]],
+    mount: [
+      ['/dist', path.join(clientPath, 'static/js/test-runner')],
+      ['/js', path.join(clientPath, 'static/js')]
+    ],
     open: false,
     logLevel: 0
   });
