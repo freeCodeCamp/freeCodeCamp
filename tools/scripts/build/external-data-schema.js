@@ -1,8 +1,11 @@
 const Joi = require('joi');
+const { SuperBlocks } = require('../../../shared/config/curriculum');
 
-const blockSchema = Joi.object({}).keys({
-  desc: Joi.array().min(1),
-  challenges: Joi.object({}).keys({
+const slugRE = new RegExp('^[a-z0-9-]+$');
+
+const blockSchema = Joi.object().keys({
+  intro: Joi.array().min(1),
+  meta: Joi.object({}).keys({
     name: Joi.string(),
     isUpcomingChange: Joi.bool(),
     usesMultifileEditor: Joi.bool().optional(),
@@ -45,14 +48,42 @@ const blockSchema = Joi.object({}).keys({
   })
 });
 
-const subSchema = Joi.object({}).keys({
-  intro: Joi.array(),
-  blocks: Joi.object({}).pattern(Joi.string(), Joi.object().concat(blockSchema))
-});
-
-const schema = Joi.object({}).pattern(
+const blockBasedCurriculumSchema = Joi.object().pattern(
   Joi.string(),
-  Joi.object().concat(subSchema)
+  Joi.object().keys({
+    intro: Joi.array(),
+    blocks: Joi.array().items(blockSchema)
+  })
+);
+
+const chapterBasedCurriculumSchema = Joi.object().pattern(
+  Joi.string(),
+  Joi.object().keys({
+    intro: Joi.array(),
+    chapters: Joi.array().items(
+      Joi.object().keys({
+        dashedName: Joi.string().regex(slugRE).required(),
+        comingSoon: Joi.boolean().optional(),
+        chapterType: Joi.valid('exam').optional(),
+        modules: Joi.array()
+          .items(
+            Joi.object().keys({
+              moduleType: Joi.valid('review', 'exam').optional(),
+              comingSoon: Joi.boolean().optional(),
+              dashedName: Joi.string().regex(slugRE).required(),
+              blocks: Joi.array().items(
+                Joi.object()
+                  .keys({
+                    dashedName: Joi.string().regex(slugRE).required()
+                  })
+                  .concat(blockSchema)
+              )
+            })
+          )
+          .required()
+      })
+    )
+  })
 );
 
 const availableSuperBlocksSchema = Joi.object({
@@ -65,8 +96,15 @@ const availableSuperBlocksSchema = Joi.object({
   )
 });
 
-exports.superblockSchemaValidator = () => superblock =>
-  schema.validate(superblock);
+exports.superblockSchemaValidator = () => superblock => {
+  const superBlockName = Object.keys(superblock)[0];
+
+  if (superBlockName === SuperBlocks.FullStackDeveloper) {
+    return chapterBasedCurriculumSchema.validate(superblock);
+  }
+
+  return blockBasedCurriculumSchema.validate(superblock);
+};
 
 exports.availableSuperBlocksValidator = () => data =>
   availableSuperBlocksSchema.validate(data);
