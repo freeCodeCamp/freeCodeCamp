@@ -3570,7 +3570,8 @@
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
-          "Review Typescript concepts to prepare for the upcoming quiz."
+          "Before you take the TypeScript quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including data types in TypeScript, generics, type narrowing and more."
         ]
       },
       "quiz-typescript": {
