@@ -1,12 +1,12 @@
 {
-  "name": "Build a Tic Tac Toe Game",
+  "name": "Build a Tic-Tac-Toe Game",
   "usesMultifileEditor": true,
   "dashedName": "lab-tic-tac-toe",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "67e3a6b7f60b4085588189e6",
-      "title": "Build an Tic Tac Toe Game"
+      "title": "Build a Tic-Tac-Toe Game"
     }
   ],
   "helpCategory": "JavaScript",

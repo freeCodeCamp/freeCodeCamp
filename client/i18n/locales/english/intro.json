@@ -3509,10 +3509,10 @@
         ]
       },
       "lab-tic-tac-toe": {
-        "title": "Tic-Tac-Toe",
+        "title": "Build a Tic-Tac-Toe Game",
         "intro": [
-          "TODO: Shaun is not apt at coming up with intros.",
-          "Please send help."
+          "In this lab, you'll build a Tic-Tac-Toe game using React.",
+          "You'll practice managing state, handling user interactions, and updating the UI dynamically."
         ]
       },
       "lecture-react-strategies-and-debugging": {
