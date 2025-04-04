@@ -528,7 +528,7 @@ async () => {
         timeZone: "UTC", weekday: "short", month: "short",
         day: "2-digit", year: "numeric"
       }).replaceAll(',', ''),
-      new Date(currentDate.setDate(currentDate.getDate() + 1)).toLocaleDateString("en-US", {
+      new Date(currentDate.setDate(currentDate.getDate() + 2)).toLocaleDateString("en-US", {
         timeZone: "UTC", weekday: "short", month: "short",
         day: "2-digit", year: "numeric"
       }).replaceAll(',', '')
