@@ -102,11 +102,12 @@ describe('certificate routes', () => {
         expect(response.status).toBe(500);
       });
 
+      // TODO: Is this now a useless check? Or, should the route be changed to check `name === ""`?
       test('should return 400 if user has not set a `name`', async () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: {
-            name: null
+            name: ''
           }
         });
 
