@@ -18,6 +18,7 @@ import {
 import { stringifyDonationEvents } from '../utils/analytics-strings';
 import { stripe } from '../utils/stripe';
 import { PaymentProvider } from '../../../shared/config/donation-settings';
+import { chapterBasedSuperBlocks } from '../../../shared/config/curriculum';
 import {
   getSessionChallengeData,
   saveCurrentCount
@@ -52,7 +53,7 @@ function* showDonateModalSaga() {
   if (
     shouldRequestDonation &&
     recentlyClaimedBlock &&
-    recentlyClaimedBlock.superBlock === 'full-stack-developer'
+    chapterBasedSuperBlocks.includes(recentlyClaimedBlock.superBlock)
   ) {
     yield put(preventBlockDonationRequests());
   } else if (shouldRequestDonation || isModalRecentlyShown) {

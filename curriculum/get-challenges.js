@@ -15,6 +15,7 @@ const {
 
 const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
 const { createPoly } = require('../shared/utils/polyvinyl');
+const { chapterBasedSuperBlocks } = require('../shared/config/curriculum');
 const {
   getSuperOrder,
   getSuperBlockFromDir,
@@ -287,16 +288,12 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
-function isSuperBlockWithChapters(superBlock) {
-  return superBlock === 'full-stack-developer';
-}
-
 // This is a slightly weird abstraction, but it lets us define helper functions
 // without passing around a ton of arguments.
 function generateChallengeCreator(lang, englishPath, i18nPath) {
   function addMetaToChallenge(challenge, meta) {
     function addChapterAndModuleToChallenge(challenge) {
-      if (isSuperBlockWithChapters(challenge.superBlock)) {
+      if (chapterBasedSuperBlocks.includes(challenge.superBlock)) {
         challenge.chapter = getChapterFromBlock(
           challenge.block,
           fullStackSuperBlockStructure
@@ -329,7 +326,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     challenge.blockType = meta.blockType;
     challenge.blockLayout = meta.blockLayout;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
-    challenge.order = isSuperBlockWithChapters(meta.superBlock)
+    challenge.order = chapterBasedSuperBlocks.includes(meta.superBlock)
       ? getBlockOrder(meta.dashedName, fullStackSuperBlockStructure)
       : meta.order;
 

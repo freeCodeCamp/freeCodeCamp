@@ -240,6 +240,9 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 
 Object.freeze(notAuditedSuperBlocks);
 
+export const chapterBasedSuperBlocks = [SuperBlocks.FullStackDeveloper];
+Object.freeze(chapterBasedSuperBlocks);
+
 type Config = {
   showUpcomingChanges: boolean;
 };

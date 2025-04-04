@@ -11,7 +11,10 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
-import { SuperBlocks } from '../../../../shared/config/curriculum';
+import {
+  chapterBasedSuperBlocks,
+  SuperBlocks
+} from '../../../../shared/config/curriculum';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
@@ -172,8 +175,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     cert => superBlockToCertMap[superBlock] === cert.certSlug
   );
 
-  const superBlockWithAccordionView = [SuperBlocks.FullStackDeveloper];
-
   const getInitiallyExpandedBlock = (): string => {
     // if coming from breadcrumb click
     if (
@@ -258,7 +259,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 {t(`intro:misc-text.courses`)}
               </h2>
               <Spacer size='m' />
-              {superBlockWithAccordionView.includes(superBlock) ? (
+              {chapterBasedSuperBlocks.includes(superBlock) ? (
                 <SuperBlockAccordion
                   challenges={superBlockChallenges}
                   superBlock={superBlock}
