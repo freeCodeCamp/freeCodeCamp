@@ -862,7 +862,12 @@
     {
       "dashedName": "backend-javascript",
       "comingSoon": true,
-      "modules": []
+      "modules": [
+        {
+          "dashedName": "object-oriented-programming",
+          "blocks": [{ "dashedName": "lab-polygon-area-calculator" }]
+        }
+      ]
     },
     {
       "chapterType": "exam",

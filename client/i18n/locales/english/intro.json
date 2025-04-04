@@ -3596,6 +3596,12 @@
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
+      "lab-polygon-area-calculator": {
+        "title": "Build a Polygon Area Calculator",
+        "intro": [
+          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
+        ]
+      },
       "rdzk": { "title": "301", "intro": [] },
       "vtpz": { "title": "302", "intro": [] },
       "workshop-bash-boilerplate": {
