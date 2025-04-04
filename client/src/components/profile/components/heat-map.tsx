@@ -155,6 +155,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
               style={{
                 visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
               }}
+              aria-label={t('aria.previous-page')}
             >
               &lt;
             </button>
@@ -167,6 +168,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
               style={{
                 visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
               }}
+              aria-label={t('aria.next-page')}
             >
               &gt;
             </button>
