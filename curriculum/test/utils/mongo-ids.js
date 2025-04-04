@@ -1511,17 +1511,17 @@ const duplicatedProjectIds = [
   // Number Guessing Game
   '602da04c22201c65d2a019f4',
 
+  /*** Full Stack Python ***/
+
+  // Budget App
+  '5e44413e903586ffb414c94e',
+
   /*** Back End JavaScript ***/
 
   /*** Legacy Only ***/
 
   // Caesars Cipher
-  '56533eb9ac21ba0edf2244e2',
-
-  /* Python */
-
-  // Budget App
-  '5e44413e903586ffb414c94e'
+  '56533eb9ac21ba0edf2244e2'
 ];
 
 class MongoIds {
