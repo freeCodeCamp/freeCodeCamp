@@ -1,5 +1,4 @@
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
-import frameRunnerData from '../../../../../client/config/browser-scripts/frame-runner.json';
 import pyTestEvaluatorData from '../../../../../client/config/browser-scripts/python-test-evaluator.json';
 
 import type { ChallengeFile } from '../../../redux/prop-types';
@@ -38,8 +37,6 @@ interface BuildOptions {
 }
 
 const { filename: pyTestEvaluator } = pyTestEvaluatorData;
-
-const frameRunnerSrc = `/js/${frameRunnerData.filename}.js`;
 
 const pythonWorkerExecutor = new WorkerExecutor(pyTestEvaluator, {
   terminateWorker: false,
@@ -291,7 +288,7 @@ export async function buildJSChallenge(
 function buildBackendChallenge({ url }: BuildChallengeData) {
   return {
     challengeType: challengeTypes.backend,
-    build: concatHtml({ testRunner: frameRunnerSrc }),
+    build: '',
     sources: { contents: url }
   };
 }
