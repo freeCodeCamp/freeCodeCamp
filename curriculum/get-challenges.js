@@ -368,9 +368,9 @@ async function buildChallenges({ path: filePath }, curriculum, lang, filters) {
     ? await parseCert(englishPath)
     : await createChallenge(filePath, meta);
 
-  if (filters?.challengeId && challenge.id !== filters.challengeId) {
-    return;
-  }
+  // this builds the entire block, even if we only want one challenge, which is
+  // inefficient, but finding the next challenge without building the whole
+  // block is fiddly.
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
 }
 
