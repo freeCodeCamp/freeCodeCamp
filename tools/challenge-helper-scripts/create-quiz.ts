@@ -3,10 +3,11 @@ import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
-import { SuperBlocks } from '../../shared/config/superblocks'; // Fixed import
+import { SuperBlocks } from '../../shared/config/superblocks'; // Corrected import path
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
 
+// Available help categories for quizzes
 const helpCategories = [
   'HTML-CSS',
   'JavaScript',
@@ -18,11 +19,26 @@ const helpCategories = [
   'Rosetta'
 ] as const;
 
+/**
+ * Interface for user answers during quiz creation
+ */
 interface QuizAnswers {
   superBlock: SuperBlocks;
   quizName: string;
   dashedName: string;
   helpCategory: typeof helpCategories[number];
+}
+
+/**
+ * Type definition for intro.json structure
+ */
+interface IntroContent {
+  [key: string]: {
+    blocks: Record<string, {
+      title: string;
+      intro: string[];
+    }>;
+  };
 }
 
 async function createQuizIntroJson(
@@ -34,24 +50,38 @@ async function createQuizIntroJson(
     __dirname,
     '../../client/i18n/locales/english/intro.json'
   );
-  const introContent = JSON.parse(await fs.readFile(introJsonPath, 'utf-8'));
   
-  // Handle new superBlocks
+  // Read and parse intro.json with proper typing
+  const introContent: IntroContent = JSON.parse(
+    await fs.readFile(introJsonPath, 'utf-8')
+  );
+  
+  // Initialize superBlock if it doesn't exist
   if (!introContent[superBlock]) {
     introContent[superBlock] = { blocks: {} };
   }
 
+  // Add new quiz entry
   introContent[superBlock].blocks[dashedName] = {
     title,
-    intro: ['', '']
+    intro: ['', ''] // Placeholder intro text
   };
 
+  // Write formatted JSON back to file
   await fs.writeFile(
     introJsonPath,
-    await format(JSON.stringify(introContent, null, 2), { parser: 'json' })
+    await format(JSON.stringify(introContent, null, 2), { parser: 'json' }
   );
 }
 
+/**
+ * Creates meta.json for the quiz
+ * @param superBlock - Certification superBlock
+ * @param dashedName - Dashed quiz name
+ * @param title - Quiz title
+ * @param helpCategory - Help category for the quiz
+ * @param challengeId - Generated MongoDB ObjectID
+ */
 async function createQuizMeta(
   superBlock: SuperBlocks,
   dashedName: string,
@@ -64,9 +94,11 @@ async function createQuizMeta(
     path.resolve(__dirname, './base-meta.json'),
     'utf-8'
   );
-  const metaContent: Meta = JSON.parse(baseMeta);
+  
+  // Parse with Meta type assertion
+  const metaContent: Meta = JSON.parse(baseMeta) as Meta;
 
-  const quizMeta = {
+  const quizMeta: Meta = {
     ...metaContent,
     name: title,
     dashedName,
@@ -74,7 +106,7 @@ async function createQuizMeta(
     superBlock,
     blockType: 'quiz',
     blockLayout: 'link',
-    isUpcomingChange: false, // Production-ready
+    isUpcomingChange: false, // Must be false for production
     challengeOrder: [{ id: challengeId, title }]
   };
 
@@ -83,10 +115,16 @@ async function createQuizMeta(
   
   await fs.writeFile(
     path.join(quizMetaDir, 'meta.json'),
-    await format(JSON.stringify(quizMeta, null, 2), { parser: 'json' })
+    await format(JSON.stringify(quizMeta, null, 2), { parser: 'json' }
   );
 }
 
+/**
+ * Creates the intro markdown file for the quiz
+ * @param superBlock - Certification superBlock
+ * @param dashedName - Dashed quiz name
+ * @param title - Quiz title
+ */
 async function createQuizIndexMD(
   superBlock: SuperBlocks,
   dashedName: string,
@@ -110,6 +148,13 @@ This page contains the quiz for ${title}.`;
   await fs.writeFile(path.join(dirPath, 'index.md'), content);
 }
 
+/**
+ * Creates the quiz challenge file with sample content
+ * @param superBlock - Certification superBlock
+ * @param dashedName - Dashed quiz name
+ * @param challengeId - Generated MongoDB ObjectID
+ * @param title - Quiz title
+ */
 async function createQuizChallengeFile(
   superBlock: SuperBlocks,
   dashedName: string,
@@ -162,8 +207,12 @@ function myFunction() {}`;
   await fs.writeFile(path.join(challengeDir, `${challengeId}.md`), content);
 }
 
+/**
+ * Main function that orchestrates quiz creation
+ */
 async function createNewQuiz() {
   try {
+    // Prompt user for quiz details
     const {
       superBlock,
       quizName,
@@ -175,7 +224,7 @@ async function createNewQuiz() {
         name: 'superBlock',
         message: 'Select the certification superBlock:',
         choices: Object.values(SuperBlocks).filter(
-          sb => sb !== SuperBlocks.Upcoming
+          sb => sb !== SuperBlocks.Upcoming // Exclude upcoming superblocks
         )
       },
       {
@@ -201,6 +250,7 @@ async function createNewQuiz() {
     const title = `${quizName} Quiz`;
     const challengeId = new ObjectID().toString();
 
+    // Execute all file creation steps in parallel
     await Promise.all([
       createQuizIntroJson(superBlock, dashedName, title),
       createQuizMeta(superBlock, dashedName, title, helpCategory, challengeId),
@@ -223,4 +273,5 @@ Files created:
   }
 }
 
+// Execute the script
 void createNewQuiz();
