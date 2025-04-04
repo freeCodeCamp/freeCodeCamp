@@ -1,16 +1,24 @@
-name: CD -- Deploy API (Legacy) & Clients
+name: CD - Deploy API (Legacy) & Clients
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: [CI - Node.js]
+    types:
+      - completed
+    branches:
+      - prod-*
 
 jobs:
   setup-jobs:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Setup Jobs
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     outputs:
-      site_tld: ${{ steps.setup.outputs.site_tld }} # Used to define URLs like api.freecodecamp.org, forum.freecodecamp.dev, etc.
-      environment: ${{ steps.setup.outputs.environment }} # Used to define the environment (prd, stg, etc.)
-      deployment_env: ${{ steps.setup.outputs.deployment_env }} # Used to define the deployment environment (production, staging, etc.)
+      site_tld: ${{ steps.setup.outputs.site_tld }} # org, dev
+      tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }} # prd, stg
+      tgt_env_long: ${{ steps.setup.outputs.tgt_env_long }} # production, staging
+      tgt_env_branch: ${{ steps.setup.outputs.tgt_env_branch }} # prod-current, prod-staging
     steps:
       - name: Setup
         id: setup
@@ -18,28 +26,27 @@ jobs:
           case "${{ github.ref }}" in
             "refs/heads/prod-current")
               echo "site_tld=org" >> $GITHUB_OUTPUT
-              echo "environment=prd" >> $GITHUB_OUTPUT
-              echo "deployment_env=production" >> $GITHUB_OUTPUT
+              echo "tgt_env_short=prd" >> $GITHUB_OUTPUT
+              echo "tgt_env_long=production" >> $GITHUB_OUTPUT
+              echo "tgt_env_branch=prod-current" >> $GITHUB_OUTPUT
               ;;
             *)
               echo "site_tld=dev" >> $GITHUB_OUTPUT
-              echo "environment=stg" >> $GITHUB_OUTPUT
-              echo "deployment_env=staging" >> $GITHUB_OUTPUT
+              echo "tgt_env_short=stg" >> $GITHUB_OUTPUT
+              echo "tgt_env_long=staging" >> $GITHUB_OUTPUT
+              echo "tgt_env_branch=prod-staging" >> $GITHUB_OUTPUT
               ;;
           esac
 
   api:
-    name: Build & Deploy API (Legacy)
+    name: API (Legacy) - [${{ needs.setup-jobs.outputs.tgt_env_short }}]
     needs: [setup-jobs]
-    runs-on: ubuntu-24.04
-    strategy:
-      matrix:
-        node-version: [20.x]
+    runs-on: ubuntu-22.04
     permissions:
       deployments: write
       contents: read
     environment:
-      name: ${{ needs.setup-jobs.outputs.environment }}-api-legacy
+      name: ${{ needs.setup-jobs.outputs.tgt_env_short }}-api-legacy
     env:
       TS_USERNAME: ${{ secrets.TS_USERNAME }}
       TS_MACHINE_NAME_PREFIX: ${{ secrets.TS_MACHINE_NAME_PREFIX }}
@@ -49,96 +56,120 @@ jobs:
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
-          hostname: gha-${{needs.setup-jobs.outputs.environment}}-api-legacy-ci-${{ github.run_id }}
+          hostname: gha-${{needs.setup-jobs.outputs.tgt_env_short}}-api-legacy-ci-${{ github.run_id }}
           tags: tag:ci
           version: latest
 
-      - name: Configure SSH
-        # This is a workaround to avoid the SSH warning about known hosts & strict host key checking.
-        # It's not a problem for us, because we're using Tailscale to connect.
+      - name: Configure SSH & Check Connection
         run: |
           mkdir -p ~/.ssh
           echo "Host *
             UserKnownHostsFile=/dev/null
             StrictHostKeyChecking no" > ~/.ssh/config
+          chmod 644 ~/.ssh/config
 
-      - name: Check connection
-        run: |
           for i in {1..3}; do
             TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-api-${i}
-            tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Error: Machine not found"; exit 1; }
+            tailscale status | grep -q "$TS_MACHINE_NAME"
             ssh $TS_USERNAME@$TS_MACHINE_NAME "uptime"
           done
 
-      # - name: Deploy API
-      #   run: |
-      #     export GIT_SOURCE_BRANCH=prod-${{ needs.setup-jobs.outputs.environment }}
-      #     ssh $TS_USERNAME@$TS_MACHINE_NAME /bin/bash << EOF
-      #       set -e
-      #       cd /home/${TS_USERNAME}/freeCodeCamp || { echo "::error::Failed to change directory"; exit 1; }
+      - name: Deploy API
+        # [NOTE] Use backslashes for expansion on remote machine, example: \$NVM_DIR, etc.
+        run: |
+          GIT_SOURCE_BRANCH=${{ needs.setup-jobs.outputs.tgt_env_branch }}
+          for i in {1..3}; do
+            TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-api-${i}
+            REMOTE_SCRIPT="
+              set -e
+              echo -e '\nLOG:Deploying API (Legacy) to $TS_MACHINE_NAME...'
 
-      #       pm2 stop all
+              echo -e '\nLOG:Environment setup...'
+              cd /home/$TS_USERNAME/freeCodeCamp
+              export NVM_DIR=\$HOME/.nvm && [ -s "\$NVM_DIR/nvm.sh" ] && source "\$NVM_DIR/nvm.sh"
+              echo -e '\nLOG:Checking available Node.js versions...'
+              nvm ls | grep 'default'
+              echo -e '\nLOG:Checking Node.js version...'
+              node --version
 
-      #       git status || { echo "::error::Failed to check git status"; exit 1; }
-      #       git clean -f || { echo "::error::Failed to clean git"; exit 1; }
-      #       git fetch --all --prune || { echo "::error::Failed to fetch git"; exit 1; }
-      #       git checkout -f $GIT_SOURCE_BRANCH || { echo "::error::Failed to checkout branch"; exit 1; }
+              echo -e '\nLOG:Stopping all PM2 services...'
+              pm2 stop all
 
-      #       git reset --hard origin/${GIT_SOURCE_BRANCH} || { echo "::error::Failed to reset git"; exit 1; }
-      #       git status || { echo "::error::Failed to check git status"; exit 1; }
+              echo -e '\nLOG:Git operations...'
+              git status
+              git clean -f
+              git fetch --all --prune
+              git checkout -f $GIT_SOURCE_BRANCH
+              git reset --hard origin/$GIT_SOURCE_BRANCH
+              git status
 
-      #       npm i -g pnpm@9 || { echo "::error::Failed to install pnpm"; exit 1; }
+              echo -e '\nLOG:Building...'
+              npm i -g pnpm@9
+              pnpm clean:packages
+              pnpm clean:server
+              pnpm install
+              pnpm prebuild
+              pnpm build:curriculum
+              pnpm build:server
+              echo -e '\nLOG:Build completed.'
 
-      #       pnpm clean:packages || { echo "::error::Failed to clean packages"; exit 1; }
-      #       pnpm clean:server || { echo "::error::Failed to clean server"; exit 1; }
-      #       pnpm install || { echo "::error::Failed to install dependencies"; exit 1; }
-      #       pnpm prebuild || { echo "::error::Failed prebuild"; exit 1; }
-      #       pnpm build:curriculum || { echo "::error::Failed to build curriculum"; exit 1; }
-      #       pnpm build:server || { echo "::error::Failed to build server"; exit 1; }
+              echo -e '\nLOG:Starting PM2 reload...'
+              pm2 reload './api-server/ecosystem.config.js'
+              echo -e '\nLOG:PM2 reload completed.'
 
-      #       pnpm reload:server || { echo "::error::Failed to reload server"; exit 1; }
-      #       pm2 ls || { echo "::error::Failed to list PM2 processes"; exit 1; }
-
-      #       pm2 save || { echo "::error::Failed to save PM2 processes"; exit 1; }
-      #     EOF
+              pm2 ls
+              pm2 save
+              echo -e '\nLOG:Finished deployment.'
+            "
+            ssh $TS_USERNAME@$TS_MACHINE_NAME "$REMOTE_SCRIPT"
+          done
 
   client:
-    name: Build Client
+    name: Clients - [${{ needs.setup-jobs.outputs.tgt_env_short }}] [${{ matrix.lang-name-short }}]
     needs: [setup-jobs, api]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [20.x]
-        lang:
+        node-version: [20]
+        lang-name-full:
           - english
           - chinese
           - espanol
+          - chinese-traditional
+          - italian
+          - portuguese
+          - ukrainian
+          - japanese
+          - german
+          - swahili
         include:
-          - lang: english
-            short-name: eng
-          - lang: chinese
-            short-name: chn
-          - lang: espanol
-            short-name: esp
+          - lang-name-full: english
+            lang-name-short: eng
+          - lang-name-full: chinese
+            lang-name-short: chn
+          - lang-name-full: espanol
+            lang-name-short: esp
+          - lang-name-full: chinese-traditional
+            lang-name-short: cnt
+          - lang-name-full: italian
+            lang-name-short: ita
+          - lang-name-full: portuguese
+            lang-name-short: por
+          - lang-name-full: ukrainian
+            lang-name-short: ukr
+          - lang-name-full: japanese
+            lang-name-short: jpn
+          - lang-name-full: german
+            lang-name-short: ger
+          - lang-name-full: swahili
+            lang-name-short: swa
 
     permissions:
       deployments: write
       contents: read
     environment:
-      name: ${{ needs.setup-jobs.outputs.environment }}-clients
+      name: ${{ needs.setup-jobs.outputs.tgt_env_short }}-clients
     env:
-      API_LOCATION: 'https://api.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}'
-      ALGOLIA_APIKEY: ${{ secrets.ALGOLIA_APIKEY }}
-      ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
-      GROWTHBOOK_URI: ${{ secrets.GROWTHBOOK_URI }}
-      FORUM_LOCATION: 'https://forum.freecodecamp.org'
-      PATREON_CLIENT_ID: ${{ secrets.PATREON_CLIENT_ID }}
-      PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
-      STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
-      SHOW_UPCOMING_CHANGES: ${{ vars.SHOW_UPCOMING_CHANGES }}
-      # The below is used in ecosystem.config.js file for the API -- to be removed later
-      DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.deployment_env }}
-      # The above is used in ecosystem.config.js file for the API -- to be removed later
       TS_USERNAME: ${{ secrets.TS_USERNAME }}
       TS_MACHINE_NAME_PREFIX: ${{ secrets.TS_MACHINE_NAME_PREFIX }}
 
@@ -150,8 +181,6 @@ jobs:
 
       - name: Setup pnpm
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
-        with:
-          version: 9
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
@@ -159,86 +188,122 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
 
-      - name: Prepare language specific ENV
+      - name: Language specific ENV - [${{ matrix.lang-name-full }}]
         run: |
-          if [ "${{ matrix.lang }}" = "english" ]; then
+          if [ "${{ matrix.lang-name-full }}" = "english" ]; then
             echo "HOME_LOCATION=https://www.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}" >> $GITHUB_ENV
             echo "NEWS_LOCATION=https://www.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}/news" >> $GITHUB_ENV
           else
-            echo "HOME_LOCATION=https://www.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}/${{ matrix.lang }}" >> $GITHUB_ENV
-            echo "NEWS_LOCATION=https://www.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}/${{ matrix.lang }}/news" >> $GITHUB_ENV
+            echo "HOME_LOCATION=https://www.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}/${{ matrix.lang-name-full }}" >> $GITHUB_ENV
+            echo "NEWS_LOCATION=https://www.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}/${{ matrix.lang-name-full }}/news" >> $GITHUB_ENV
           fi
-          echo "CLIENT_LOCALE=${{ matrix.lang }}" >> $GITHUB_ENV
-          echo "CURRICULUM_LOCALE=${{ matrix.lang }}" >> $GITHUB_ENV
+          echo "CLIENT_LOCALE=${{ matrix.lang-name-full }}" >> $GITHUB_ENV
+          echo "CURRICULUM_LOCALE=${{ matrix.lang-name-full }}" >> $GITHUB_ENV
 
       - name: Install and Build
+        env:
+          API_LOCATION: 'https://api.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}'
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          GROWTHBOOK_URI: ${{ secrets.GROWTHBOOK_URI }}
+          FORUM_LOCATION: 'https://forum.freecodecamp.org'
+          PATREON_CLIENT_ID: ${{ secrets.PATREON_CLIENT_ID }}
+          PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
+          STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
+          SHOW_UPCOMING_CHANGES: ${{ vars.SHOW_UPCOMING_CHANGES || 'false' }}
+          FREECODECAMP_NODE_ENV: production
+          # The below is used in ecosystem.config.js file for the API -- to be removed later
+          DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
+          # The above is used in ecosystem.config.js file for the API -- to be removed later
         run: |
-          # pnpm install
-          # pnpm run build
-          mkdir -p client/public
-          touch client/public/test-${{ matrix.short-name }}.txt
+          pnpm install
+          pnpm run build
 
-      # We tar them for performance reasons - uploading a lot of files is slow.
       - name: Tar Files
-        run: tar -czf client-${{ matrix.short-name }}.tar client/public
+        run: tar -czf client-${{ matrix.lang-name-short }}.tar client/public
 
       - name: Setup and connect to Tailscale network
         uses: tailscale/github-action@v3
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
-          hostname: gha-${{needs.setup-jobs.outputs.environment}}-clients-ci-${{ github.run_id }}
+          hostname: gha-${{needs.setup-jobs.outputs.tgt_env_short}}-clients-ci-${{ github.run_id }}
           tags: tag:ci
           version: latest
 
-      - name: Configure SSH
-        # This is a workaround to avoid the SSH warning about known hosts & strict host key checking.
-        # It's not a problem for us, because we're using Tailscale to connect.
+      - name: Configure SSH & Check Connection
         run: |
           mkdir -p ~/.ssh
           echo "Host *
             UserKnownHostsFile=/dev/null
             StrictHostKeyChecking no" > ~/.ssh/config
+          chmod 644 ~/.ssh/config
 
-      - name: Check connection
-        run: |
           for i in {0..1}; do
-            TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-${{ matrix.short-name }}-${i}
-            tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Error: Machine not found"; exit 1; }
+            TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-${{ matrix.lang-name-short }}-${i}
+            tailscale status | grep -q "$TS_MACHINE_NAME"
             ssh $TS_USERNAME@$TS_MACHINE_NAME "uptime"
           done
 
-      # - name: Upload and Deploy
-      #   run: |
-      #     for i in {0..1}; do
+      - name: Upload and Deploy
+        run: |
+          for i in {0..1}; do
+            TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-${{ matrix.lang-name-short }}-${i}
+            CURRENT_DATE=$(date +%Y%m%d)
+            CLIENT_SRC=client-${{ matrix.lang-name-short }}.tar
+            CLIENT_DST=/tmp/client-${{ matrix.lang-name-short }}-${CURRENT_DATE}-${{ github.run_id }}.tar
+            CLIENT_BINARIES=${{needs.setup-jobs.outputs.tgt_env_short}}-release-$CURRENT_DATE-${{ github.run_id }}
 
-      #       TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-${{ matrix.short-name }}-${i}
-      #       scp client-${{ matrix.short-name }}.tar $TS_USERNAME@$TS_MACHINE_NAME:/tmp/${{ github.run_id }}-client-${{ matrix.short-name }}.tar || { echo "::error::Failed to upload client archive"; exit 1; }
+            echo -e "\nLOG:Uploading client archive to $TS_MACHINE_NAME..."
+            scp $CLIENT_SRC $TS_USERNAME@$TS_MACHINE_NAME:$CLIENT_DST
 
-      #       ssh $TS_USERNAME@$TS_MACHINE_NAME /bin/bash << EOF
-      #         set -e
+            REMOTE_SCRIPT="
+              set -e
+              echo -e '\nLOG: Deploying client - $CLIENT_BINARIES to $TS_MACHINE_NAME...'
 
-      #         export CURRENT_DATE=$(date +%Y%m%d)
-      #         export CLIENT_BINARIES=gha-${{needs.setup-jobs.outputs.environment}}-release-${CURRENT_DATE}-${{ github.run_id }}
+              echo -e '\nLOG:Extracting client archive...'
+              mkdir -p /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES
+              tar -xzf $CLIENT_DST -C /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES --strip-components=2
 
-      #         mkdir -p /home/${TS_USERNAME}/client/releases/${CLIENT_BINARIES} || { echo "::error::Failed to create client release directory"; exit 1; }
-      #         tar -xzf /tmp/${{ github.run_id }}-client-${{ matrix.short-name }}.tar -C /home/${TS_USERNAME}/client/releases/${CLIENT_BINARIES} || { echo "::error::Failed to extract client archive"; exit 1; }
-      #         rm /tmp/${{ github.run_id }}-client-${{ matrix.short-name }}.tar
+              echo -e '\nLOG:Cleaning up client archive...'
+              rm $CLIENT_DST
 
-      #         cd /home/${TS_USERNAME}/client || { echo "::error::Failed to change to client directory"; exit 1; }
-      #         npm install -g serve@13 || { echo "::error::Failed to install serve"; exit 1; }
+              echo -e '\nLOG:Checking client archive size...'
+              du -sh /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES
 
-      #         rm -f client-start-primary.sh
-      #         echo "serve -c ../../serve.json releases/${CLIENT_BINARIES} -p 50505" >> client-start-primary.sh || { echo "::error::Failed to create primary script"; exit 1; }
-      #         chmod +x client-start-primary.sh || { echo "::error::Failed to make primary script executable"; exit 1; }
-      #         pm2 delete client-primary || true
-      #         pm2 start  ./client-start-primary.sh --name client-primary || { echo "::error::Failed to start primary client"; exit 1; }
+              echo -e '\nLOG:Environment setup...'
+              cd /home/$TS_USERNAME/client
+              export NVM_DIR=\$HOME/.nvm && [ -s "\$NVM_DIR/nvm.sh" ] && source "\$NVM_DIR/nvm.sh"
+              echo -e '\nLOG:Checking available Node.js versions...'
+              nvm ls | grep 'default'
+              echo -e '\nLOG:Checking Node.js version...'
+              node --version
 
-      #         rm -f client-start-secondary.sh
-      #         echo "serve -c ../../serve.json releases/${CLIENT_BINARIES} -p 52525" >> client-start-secondary.sh || { echo "::error::Failed to create secondary script"; exit 1; }
-      #         chmod +x client-start-secondary.sh || { echo "::error::Failed to make secondary script executable"; exit 1; }
-      #         pm2 delete client-secondary || true
-      #         pm2 start  ./client-start-secondary.sh --name client-secondary || { echo "::error::Failed to start secondary client"; exit 1; }
-      #       EOF
+              echo -e '\nLOG:Installing serve...'
+              npm install -g serve@13
 
-      #     done
+              echo -e '\nLOG:Primary client setup...'
+              rm -f client-start-primary.sh
+              echo \"serve -c ../../serve.json releases/$CLIENT_BINARIES -p 50505\" >> client-start-primary.sh
+              chmod +x client-start-primary.sh
+              pm2 delete client-primary || true
+              pm2 start ./client-start-primary.sh --name client-primary
+              echo -e '\nLOG:Primary client setup completed.'
+
+              pm2 ls
+
+              echo -e '\nLOG:Secondary client setup...'
+              rm -f client-start-secondary.sh
+              echo \"serve -c ../../serve.json releases/$CLIENT_BINARIES -p 52525\" >> client-start-secondary.sh
+              chmod +x client-start-secondary.sh
+              pm2 delete client-secondary || true
+              pm2 start ./client-start-secondary.sh --name client-secondary
+              echo -e '\nLOG:Secondary client setup completed.'
+
+              pm2 ls
+              pm2 save
+
+              echo -e '\nLOG:Finished deployment.'
+            "
+            ssh $TS_USERNAME@$TS_MACHINE_NAME "$REMOTE_SCRIPT"
+          done

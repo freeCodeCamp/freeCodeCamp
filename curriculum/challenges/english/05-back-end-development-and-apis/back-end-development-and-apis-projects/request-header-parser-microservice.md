@@ -19,20 +19,17 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 You should provide your own project, not the example URL.
 
 ```js
-(getUserInput) => {
   assert(
     !/.*\/request-header-parser-microservice\.freecodecamp\.rocks/.test(
-      getUserInput('url')
+      code
     )
   );
-};
 ```
 
 A request to `/api/whoami` should return a JSON object with your IP address in the `ipaddress` key.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/api/whoami').then(
+  $.get(code + '/api/whoami').then(
     (data) => assert(data.ipaddress && data.ipaddress.length > 0),
     (xhr) => {
       throw new Error(xhr.responseText);
@@ -43,8 +40,7 @@ A request to `/api/whoami` should return a JSON object with your IP address in t
 A request to `/api/whoami` should return a JSON object with your preferred language in the `language` key.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/api/whoami').then(
+  $.get(code + '/api/whoami').then(
     (data) => assert(data.language && data.language.length > 0),
     (xhr) => {
       throw new Error(xhr.responseText);
@@ -55,8 +51,7 @@ A request to `/api/whoami` should return a JSON object with your preferred langu
 A request to `/api/whoami` should return a JSON object with your software in the `software` key.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/api/whoami').then(
+  $.get(code + '/api/whoami').then(
     (data) => assert(data.software && data.software.length > 0),
     (xhr) => {
       throw new Error(xhr.responseText);

@@ -232,7 +232,6 @@
     ]
   },
   "settings": {
-    "profile-note": "注: プロフィール設定はプロフィールページに移動しました。",
     "share-projects": "あなたの freeCodeCamp 以外のプロジェクトや記事、承認されたプルリクエストをシェアしましょう。",
     "privacy": "この設定セクションでは、あなたの freeCodeCamp 公開ポートフォリオに表示する項目を制御できます。変更を保存するには「保存」をクリックしてください。",
     "data": "アカウントに保存されているデータを確認するには、下の「データをダウンロード」ボタンをクリックしてください",
@@ -402,21 +401,7 @@
     "welcome-1": "{{name}} さん、おかえりなさい。",
     "welcome-2": "freeCodeCamp.org へようこそ",
     "start-at-beginning": "プログラミングを学ぶのが初めての場合、<0>最初から始める</0>ことをおすすめします。",
-    "read-this": {
-      "heading": "一度立ち止まって、まずはこちらをお読みください。",
-      "p1": "freeCodeCamp は、あなたがソフトウェア開発者として初めての仕事を得るための、実績のある道です。",
-      "p2": "40,000 人以上の人々が、カリキュラム修了後に開発者の仕事に就きました。その中には Google や Microsoft などの大手企業も含まれます。",
-      "p3": "プログラミングに触れるのが初めてなら、カリキュラムの最初から始めて、以下の認定証を上から順に取得することをおすすめします。",
-      "p4": "それぞれの認定証を取得するには、必須の認定プロジェクト 5 つを完成させ、すべてのテストが成功する状態にしてください。",
-      "p5": "取得した認定証は、履歴書や LinkedIn に追加できます。しかし認定証よりも大事なことは、その過程で得る経験です。",
-      "p6": "圧倒される思いがするとしても当然です。プログラミングは難しいのです。",
-      "p7": "練習こそが鍵になります。練習、練習、練習です。",
-      "p8": "このカリキュラムでは、何千時間もの実践的なプログラミングの経験を積むことができます。",
-      "p9": "また、数学やコンピュータサイエンス理論をより深く学びたいなら、<0>freeCodeCamp の YouTube チャンネル</0> にも何千時間もの動画コースがあります。",
-      "p10": "開発の仕事やフリーランスの顧客を得たいなら、プログラミングスキルはパズルの一部にすぎません。人とのつながりや開発者としての評判を得ることも必要です。",
-      "p11": "そのためには LinkedIn や GitHub、そして <0>freeCodeCamp フォーラム</0> も活用してください。",
-      "p12": "コーディングを楽しみましょう！Happy coding!"
-    },
+    "happy-coding": "Happy coding!",
     "upcoming-lessons": "このコースのレッスン",
     "learn": "学習",
     "add-subtitles": "字幕の改善や追加を支援する",
@@ -460,7 +445,7 @@
     "rsa": "読む (Read)、検索する (Search)、質問する (Ask)",
     "rsa-forum": "<strong>新しい投稿を作成する前に</strong>、<0>すでに同じ質問がフォーラムで回答されていないか確認</0>してください。",
     "reset": "このレッスンをリセットしますか？",
-    "reset-warn": "本当にこのレッスンをリセットしてもよろしいですか？エディターとテストがリセットされます。",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "この操作は取り消すことが出来ません.",
     "revert-warn": "このレッスンを復元してよろしいですか？直近の変更を取り消し、最後に保存したバージョンのコードに戻します。",
     "scrimba-tip": "ヒント: ミニブラウザがコードを覆ってしまう場合は、クリックとドラッグで移動させてください。また、いつでも遠慮なくビデオを停止させてコードを編集してください。",
@@ -778,13 +763,12 @@
   "search": {
     "label": "検索",
     "placeholder": {
-      "default": "記事を検索",
-      "numbered": "{{ roundedTotalRecords }} 件以上の記事から検索"
+      "default": "Search our news articles, tutorials, and books",
+      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
     },
     "see-results": "{{searchQuery}} のすべての結果を見る",
-    "no-tutorials": "記事が見つかりませんでした",
     "try": "何かお探しですか？このページの検索バーを試してみてください。",
-    "no-results": "<0>{{query}}</0> に関するものは見つかりませんでした",
+    "no-results": "No results found",
     "result-list": "検索結果"
   },
   "misc": {
@@ -797,7 +781,7 @@
     "brand-new-account": "freeCodeCamp アカウントを新規登録しました。",
     "duplicate-account-warning": "新規登録ではなく既存のアカウントにサインインする場合には、<0>こちらをクリックしてこのアカウントを削除し</0>、他のメールアドレスをお試しください。",
     "quincy": "- freeCodeCamp.org を設立した教師、Quincy Larson",
-    "email-blast": "毎週金曜日に Quincy から、プログラミングやコンピュータサイエンスに関する 5 件のリンクをメールで配信しています。現在約 6 百万人を対象に配信しています。あなたにもお送りしましょうか？",
+    "email-blast": "Each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "メールアドレスを更新",
     "update-email-2": "メールアドレスの更新はこちら:",
     "email": "Eメール",
@@ -997,7 +981,8 @@
     "publicly-visible-url": "公開されたアプリの URL を提出してください。",
     "ms-learn-link": "有効な Microsoft Learn トロフィーのリンクを使用してください。",
     "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。",
-    "source-code-link-required": "ソースコードのリンクを提出してください。"
+    "source-code-link-required": "ソースコードのリンクを提出してください。",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",

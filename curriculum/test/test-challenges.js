@@ -208,9 +208,11 @@ async function setup() {
   }
 
   if (process.env.FCC_CHALLENGE_ID) {
-    console.log(`\nChallenge Id being tested: ${process.env.FCC_CHALLENGE_ID}`);
+    console.log(
+      `\nChallenge Id being tested: ${process.env.FCC_CHALLENGE_ID.trim()}`
+    );
     const challengeIndex = challenges.findIndex(
-      challenge => challenge.id === process.env.FCC_CHALLENGE_ID
+      challenge => challenge.id === process.env.FCC_CHALLENGE_ID.trim()
     );
     if (challengeIndex === -1) {
       throw new Error(
@@ -568,8 +570,7 @@ async function createTestRunner(
 
   const code = {
     contents: sources.index,
-    editableContents: sources.editableContents,
-    original: sources.original
+    editableContents: sources.editableContents
   };
 
   const buildFunction = buildFunctions[challenge.challengeType];
@@ -579,6 +580,8 @@ async function createTestRunner(
 
   const evaluator = await (runsInBrowser
     ? getContextEvaluator({
+        // passing in challengeId so it's easier to debug timeouts
+        challengeId: challenge.id,
         build,
         sources,
         code,
@@ -638,7 +641,17 @@ async function getContextEvaluator(config) {
     evaluate: async (testString, timeout) =>
       Promise.race([
         new Promise((_, reject) =>
-          setTimeout(() => reject(Error('timeout')), timeout)
+          setTimeout(
+            () =>
+              reject(
+                Error(`timeout in challenge
+${config.challengeId}
+while evaluating test:
+${testString}
+`)
+              ),
+            timeout
+          )
         ),
         await page.evaluate(async testString => {
           return await document.__runTest(testString);
@@ -676,17 +689,12 @@ async function initializeTestRunner({
   await page.reload();
   await page.setContent(createContent(testId, { build, sources, hooks }));
   await page.evaluate(
-    async (code, sources, loadEnzyme) => {
-      const getUserInput = fileName => sources[fileName];
-      // TODO: use frame's functions directly, so it behaves more like the
-      // client.
+    async (sources, loadEnzyme) => {
       await document.__initTestFrame({
         code: sources,
-        getUserInput,
         loadEnzyme
       });
     },
-    code,
     sources,
     loadEnzyme
   );
