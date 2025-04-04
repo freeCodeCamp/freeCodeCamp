@@ -13,8 +13,10 @@ import { getUserById as _getUserById } from '../utils/user-stats';
 const authRE = /^\/auth\//;
 const confirmEmailRE = /^\/confirm-email$/;
 const newsShortLinksRE = /^\/n\/|^\/p\//;
-const publicUserRE = /^\/api\/users\/get-public-profile$/;
-const publicUsernameRE = /^\/api\/users\/exists$/;
+const publicApiUserRE = /^\/api\/users\/get-public-profile$/;
+const publicUserRE = /^\/users\/get-public-profile$/;
+const publicApiUsernameRE = /^\/api\/users\/exists$/;
+const publicUsernameRE = /^\/users\/exists$/;
 const resubscribeRE = /^\/resubscribe\//;
 const showCertRE = /^\/certificate\/showCert\//;
 // note: signin may not have a trailing slash
@@ -32,7 +34,9 @@ const _pathsAllowedREs = [
   authRE,
   confirmEmailRE,
   newsShortLinksRE,
+  publicApiUserRE,
   publicUserRE,
+  publicApiUsernameRE,
   publicUsernameRE,
   resubscribeRE,
   showCertRE,

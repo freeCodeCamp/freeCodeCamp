@@ -9,7 +9,9 @@ export const userExists = {
       exists: Type.Boolean()
     }),
     400: Type.Object({
-      exists: Type.Literal(true)
+      type: Type.Literal('danger'),
+      message: Type.Literal('username parameter is required')
+      // message: Type.Literal("'username' parameter is required")
     })
   }
 };
