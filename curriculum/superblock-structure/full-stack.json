@@ -862,7 +862,7 @@
     {
       "dashedName": "backend-javascript",
       "comingSoon": true,
-      "modules": ["add here"]
+      "modules": []
     },
     {
       "chapterType": "exam",
