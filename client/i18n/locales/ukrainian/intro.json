@@ -155,7 +155,7 @@
         "title": "Вивчіть адаптивний вебдизайн, створивши піаніно",
         "intro": [
           "Адаптивний дизайн каже вашій вебсторінці, як вона має виглядати на екранах різного розміру.",
-          "У цьому курсі ви використовуватимете CSS та адаптивний дизайн для програмування піаніно. До того ж, ви більше дізнаєтесь про медіазапити та псевдоселектори."
+          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -2427,7 +2427,7 @@
         "title": "Розробіть піаніно",
         "intro": [
           "Адаптивний дизайн повідомляє вебсторінці, як вона має виглядати на екранах різного розміру.",
-          "У цьому практичному занятті ви використовуватимете CSS та адаптивний дизайн, щоб створити піаніно. До того ж, ви більше дізнаєтесь про медіазапити та псевдоселектори."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
       "lab-technical-documentation-page": {
@@ -3355,6 +3355,13 @@
           "У цій лабораторній роботі ви застосуєте асинхронний JavaScript, щоб створити власну таблицю лідерів freeCodeCamp."
         ]
       },
+      "lab-weather-app": {
+        "title": "Створіть застосунок з прогнозом погоди",
+        "intro": [
+          "У цій лабораторній роботі ви створите застосунок з прогнозом погоди, використовуючи API.",
+          "Ви будете практикуватись отримувати дані з API, зберігати та відтворювати їх у застосунку."
+        ]
+      },
       "review-asynchronous-javascript": {
         "title": "Повторення асинхронного JavaScript",
         "intro": [
@@ -3426,9 +3433,11 @@
           "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Основи React»."
         ]
       },
-      "rugw": {
-        "title": "267",
-        "intro": []
+      "lecture-working-with-state-and-responding-to-events-in-react": {
+        "title": "Working with State and Responding to Events in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with state and responding to events with React."
+        ]
       },
       "rmpy": {
         "title": "268",
@@ -3438,9 +3447,11 @@
         "title": "269",
         "intro": []
       },
-      "rnfe": {
-        "title": "271",
-        "intro": []
+      "lecture-understanding-effects-and-referencing-values-in-react": {
+        "title": "Understanding Effects and Referencing Values in React",
+        "intro": [
+          "In these lecture videos, you will learn about effects and referencing values with React."
+        ]
       },
       "xdyh": {
         "title": "270",
@@ -3463,9 +3474,11 @@
           "Перевірте, що ви дізнались про хуки <code>useState</code> та <code>useEffect</code> в React."
         ]
       },
-      "ftmi": {
-        "title": "275",
-        "intro": []
+      "lecture-working-with-forms-in-react": {
+        "title": "Working with Forms in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with forms in React."
+        ]
       },
       "sgau": {
         "title": "276",
@@ -3475,11 +3488,10 @@
         "title": "277",
         "intro": []
       },
-      "lab-weather-app": {
-        "title": "Створіть застосунок з прогнозом погоди",
+      "lecture-working-with-data-fetching-and-memoization-in-react": {
+        "title": "Working with Data Fetching and Memoization in React",
         "intro": [
-          "У цій лабораторній роботі ви створите застосунок з прогнозом погоди, використовуючи API.",
-          "Ви будете практикуватись отримувати дані з API, зберігати та відтворювати їх у застосунку."
+          "In these lecture videos, you will learn about data fetching and memoization in React."
         ]
       },
       "ffpt": {
@@ -3490,9 +3502,21 @@
         "title": "280",
         "intro": []
       },
+      "lecture-routing-react-frameworks-and-dependency-management-tools": {
+        "title": "Routing, React Frameworks, and Dependency Management Tools",
+        "intro": [
+          "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
+        ]
+      },
       "vyzp": {
         "title": "281",
         "intro": []
+      },
+      "lecture-react-strategies-and-debugging": {
+        "title": "React Strategies and Debugging",
+        "intro": [
+          "In these lecture videos, you will learn about different strategies and debugging in React."
+        ]
       },
       "review-react-forms-data-fetching-and-routing": {
         "title": "Повторення форм, обробки даних і маршрутизації в React",
@@ -3507,9 +3531,11 @@
           "Перевірте, що ви дізнались про форми, обробку даних і маршрутизацію."
         ]
       },
-      "zdsj": {
-        "title": "284",
-        "intro": []
+      "lecture-understanding-performance-in-web-applications": {
+        "title": "Understanding Performance in Web Applications",
+        "intro": [
+          "In these lecture videos, you will learn performance in web applications."
+        ]
       },
       "review-web-performance": {
         "title": "Повторення вебпродуктивності",
@@ -3522,14 +3548,17 @@
         "title": "Тест «Вебпродуктивність»",
         "intro": ["Перевірте, що ви дізнались про вебпродуктивність."]
       },
-      "mbpv": {
-        "title": "287",
-        "intro": []
+      "lecture-working-with-css-libraries-and-frameworks": {
+        "title": "Working with CSS Libraries and Frameworks",
+        "intro": [
+          "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
+        ]
       },
       "review-css-libraries-and-frameworks": {
         "title": "Повторення бібліотек та фреймворків CSS",
         "intro": [
-          "Пригадайте поняття з теми «Бібліотеки та фреймворки CSS», щоб підготуватись до тесту."
+          "Before you take the CSS libraries and frameworks quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including CSS frameworks, CSS preprocessors, Sass and more."
         ]
       },
       "quiz-css-libraries-and-frameworks": {
@@ -3538,9 +3567,11 @@
           "Перевірте, що ви дізнались про бібліотеки та фреймворки CSS."
         ]
       },
-      "khuu": {
-        "title": "290",
-        "intro": []
+      "lecture-understanding-the-different-types-of-testing": {
+        "title": "Understanding the Different Types of Testing",
+        "intro": [
+          "In these lecture videos, you will learn about the different types of testing."
+        ]
       },
       "review-testing": {
         "title": "Повторення тестування",
@@ -3551,6 +3582,12 @@
       "quiz-testing": {
         "title": "Тест «Тестування»",
         "intro": ["Перевірте, що ви дізнались про тестування."]
+      },
+      "lecture-introduction-to-typescript": {
+        "title": "Introduction to TypeScript",
+        "intro": [
+          "In these lecture videos, you will learn what TypeScript is and how to use it."
+        ]
       },
       "trvf": {
         "title": "293",

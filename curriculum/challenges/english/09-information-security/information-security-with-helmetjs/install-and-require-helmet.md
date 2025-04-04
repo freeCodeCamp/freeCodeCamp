@@ -27,8 +27,7 @@ Helmet version `3.21.3` has already been installed, so require it as `helmet` in
 `helmet` version `3.21.3` should be in `package.json`
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
+  $.get(code + '/_api/package.json').then(
     (data) => {
       const packJson = JSON.parse(data);
       const helmet = packJson.dependencies.helmet;

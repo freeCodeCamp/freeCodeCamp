@@ -445,7 +445,7 @@
     "rsa": "読む (Read)、検索する (Search)、質問する (Ask)",
     "rsa-forum": "<strong>新しい投稿を作成する前に</strong>、<0>すでに同じ質問がフォーラムで回答されていないか確認</0>してください。",
     "reset": "このレッスンをリセットしますか？",
-    "reset-warn": "本当にこのレッスンをリセットしてもよろしいですか？エディターとテストがリセットされます。",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "この操作は取り消すことが出来ません.",
     "revert-warn": "このレッスンを復元してよろしいですか？直近の変更を取り消し、最後に保存したバージョンのコードに戻します。",
     "scrimba-tip": "ヒント: ミニブラウザがコードを覆ってしまう場合は、クリックとドラッグで移動させてください。また、いつでも遠慮なくビデオを停止させてコードを編集してください。",
@@ -981,7 +981,8 @@
     "publicly-visible-url": "公開されたアプリの URL を提出してください。",
     "ms-learn-link": "有効な Microsoft Learn トロフィーのリンクを使用してください。",
     "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。",
-    "source-code-link-required": "ソースコードのリンクを提出してください。"
+    "source-code-link-required": "ソースコードのリンクを提出してください。",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",
