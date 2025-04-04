@@ -23,6 +23,7 @@ require('@babel/register')({
   only: [clientPath]
 });
 const {
+  buildBackendChallenge,
   buildDOMChallenge,
   buildPythonChallenge,
   buildChallenge,
@@ -578,7 +579,9 @@ async function createTestRunner(
 
   const buildFunction = buildFunctions[challenge.challengeType];
 
-  const runsInBrowser = buildFunction === buildDOMChallenge;
+  const runsInBrowser =
+    buildFunction === buildDOMChallenge ||
+    buildFunction === buildBackendChallenge;
   const runsInPythonWorker = buildFunction === buildPythonChallenge;
 
   // TODO: use same logic in client when determining "type"
