@@ -4,6 +4,7 @@ title: Mean-Variance-Standard Deviation Calculator
 challengeType: 10
 forumTopicId: 462366
 dashedName: mean-variance-standard-deviation-calculator
+solutionLink: https://empty.com
 ---
 
 # --description--

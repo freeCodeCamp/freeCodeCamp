@@ -4,6 +4,7 @@ title: Build a Pinterest Clone
 challengeType: 4
 forumTopicId: 302352
 dashedName: build-a-pinterest-clone
+solutionLink: https://build-a-pinterest-clone.freecodecamp.rocks/
 ---
 
 # --description--

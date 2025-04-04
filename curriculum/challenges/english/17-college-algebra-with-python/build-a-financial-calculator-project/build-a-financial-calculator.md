@@ -3,6 +3,7 @@ id: 63d8401e39c73468b059cd42
 title: "Build a Financial Calculator"
 challengeType: 10
 dashedName: build-a-financial-calculator
+solutionLink: https://empty.com
 ---
 
 # --description--
