@@ -1,0 +1,37 @@
+{
+  "name": "Fruit Search App",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-fruit-search-app",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67ec2f7924ade2450c06bcd8",
+      "title": "Step 1"
+    },
+    {
+      "id": "67ec46b46f232344ebf3c114",
+      "title": "Step 2"
+    },
+    {
+      "id": "67ec4a95b609c071f7747be0",
+      "title": "Step 3"
+    },
+    {
+      "id": "67ecfbfe17c7d24465e0de88",
+      "title": "Step 4"
+    },
+    {
+      "id": "67ed044dc76cf4a441618f2c",
+      "title": "Step 5"
+    },
+    {
+      "id": "67ed0e7faf1f2d130a275a82",
+      "title": "Step 6"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
