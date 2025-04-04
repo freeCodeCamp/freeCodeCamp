@@ -435,21 +435,21 @@ JPEG
 
 #### --text--
 
-Which of the following parts can be found in the circuit board?
+Which of the following parts is located in a socket on the motherboard?
 
 #### --distractors--
 
-Printer and Router.
+The Router.
 
 ---
 
-Mouse and Keyboard.
+The Keyboard.
 
 ---
 
-Hard Drive and GPU.
+The Hard Drive (HDD).
 
 #### --answer--
 
-CPU and RAM.
+The CPU.
 

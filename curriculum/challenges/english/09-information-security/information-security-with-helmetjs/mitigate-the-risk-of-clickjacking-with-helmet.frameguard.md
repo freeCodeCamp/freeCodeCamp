@@ -23,8 +23,7 @@ Use `helmet.frameguard()` passing with the configuration object `{action: 'deny'
 helmet.frameguard() middleware should be mounted correctly
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/app-info').then(
+  $.get(code + '/_api/app-info').then(
     (data) => {
       assert.include(
         data.appStack,
@@ -41,8 +40,7 @@ helmet.frameguard() middleware should be mounted correctly
 helmet.frameguard() 'action' should be set to 'DENY'
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/app-info').then(
+  $.get(code + '/_api/app-info').then(
     (data) => {
       assert.property(data.headers, 'x-frame-options');
       assert.equal(data.headers['x-frame-options'], 'DENY');

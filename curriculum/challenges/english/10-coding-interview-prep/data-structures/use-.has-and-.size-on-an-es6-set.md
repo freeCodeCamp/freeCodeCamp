@@ -37,12 +37,8 @@ In this exercise we will pass an array and a value to the checkSet() function. Y
 `checkSet([4, 5, 6], 3)` should return [ false, 3 ]
 
 ```js
-assert(
-  (function () {
-    var test = checkSet([4, 5, 6], 3);
-    return DeepEqual(test, [false, 3]);
-  })()
-);
+var test = checkSet([4, 5, 6], 3);
+assert.deepEqual(test, [false, 3]);
 ```
 
 # --seed--

@@ -155,7 +155,7 @@
         "title": "Aprenda design responsivo para a web criando um piano",
         "intro": [
           "O design responsivo diz à sua página da web como ela deve ficar em telas de tamanho diferente.",
-          "Neste curso, você vai usar o Design Responsivo e o CSS para codificar um piano. Você também vai aprender mais sobre consultas de mídia e pseudosseletores."
+          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -672,11 +672,11 @@
           "Neste curso de 40 aulas, você aprenderá a editar arquivos no terminal com o nano e construirá um castelo."
         ]
       },
-      "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Aprenda bancos de dados relacionais criando um banco de dados sobre Mario",
+      "learn-relational-databases-by-building-a-database-of-video-game-characters": {
+        "title": "Learn Relational Databases by Building a Database of Video Game Characters",
         "intro": [
-          "Um banco de dados relacional organiza dados em tabelas que são ligadas entre si através de relações.",
-          "Neste curso de 165 aulas, você aprenderá o essencial sobre bancos de dados relacionais, criando um banco de dados PostgreSQL com vários personagens de videogame."
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
@@ -1192,9 +1192,9 @@
       "O Odin Project foi criado em 2013 por um único desenvolvedor, Erik Trautman. Ao longo dos anos, uma comunidade de código aberto surgiu para manter e expandir o projeto.",
       "O freeCodeCamp expandiu o currículo de código aberto para ser executado de maneira interativa no navegador, com testes para avaliar seu código e garantir que você tenha entendido os conceitos principais.",
       "Se você quiser a experiência original de configurar todo o Odin Project para ser executado no seu computador local, você pode conferir o Odin Project original no <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>site do projeto</a>. Agradecemos imensamente à comunidade do Odin Project por continuar a manter esse valioso recurso de aprendizagem para desenvolvedores de todo o mundo.",
-      "Este curso não é oficial e não endossado pelo Odin Project. Foram feitas alterações no conteúdo curricular do Odin Project e todo o material instrucional do curso está licenciado sob a <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
+      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
       "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
-      "Este curso inclui conteúdo de <a href='javascript.info'>JavaScript.info</a>, que está sob a licença<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
+      "This course includes content from <a href='https://javascript.info/' target='_blank' rel='noopener noreferrer nofollow'>JavaScript.info</a>, which is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>."
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1335,7 +1335,7 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(Novo) Fundamentos de C# com a Microsoft",
+    "title": "Free Foundational C# with Microsoft",
     "intro": [
       "Este curso oferece uma introdução abrangente à programação em C#, cobrindo seus conceitos principais, sintaxe e aplicação prática em desenvolvimento de software.",
       "Através de exercícios e projetos práticos, você aprenderá os fundamentos de C#, incluindo variáveis, tipos de dados, estruturas de controle e princípios de programação orientada a objetos.",
@@ -1637,11 +1637,15 @@
       },
       "learn-how-to-express-disagreement": {
         "title": "Aprenda a expressar discordância",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to express disagreement in different professional settings."
+        ]
       },
       "learn-how-to-express-concerns": {
         "title": "Aprenda a expressar preocupações",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to inform other people that you are worried about things that might happen to your projects and tasks."
+        ]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Aprenda a expressar decisões com base em comparações",
@@ -2437,7 +2441,7 @@
         "title": "Design a Piano",
         "intro": [
           "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
       "lab-technical-documentation-page": {
@@ -3359,6 +3363,13 @@
           "For this lab you'll practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
         ]
       },
+      "lab-weather-app": {
+        "title": "Build a Weather App",
+        "intro": [
+          "In this lab you'll build a Weather App using an API",
+          "You'll practice how to fetch data from the API, store and display it on your app."
+        ]
+      },
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
@@ -3375,7 +3386,7 @@
         "title": "JavaScript Review",
         "intro": [
           "Before you take the JavaScript prep exam, you should review everything you've learned about JavaScript.",
-          "Open up this page, to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
+          "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
       "kagw": {
@@ -3428,9 +3439,11 @@
         "title": "React Basics Quiz",
         "intro": ["Test your knowledge of React basics with this quiz."]
       },
-      "rugw": {
-        "title": "267",
-        "intro": []
+      "lecture-working-with-state-and-responding-to-events-in-react": {
+        "title": "Working with State and Responding to Events in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with state and responding to events with React."
+        ]
       },
       "rmpy": {
         "title": "268",
@@ -3440,9 +3453,11 @@
         "title": "269",
         "intro": []
       },
-      "rnfe": {
-        "title": "271",
-        "intro": []
+      "lecture-understanding-effects-and-referencing-values-in-react": {
+        "title": "Understanding Effects and Referencing Values in React",
+        "intro": [
+          "In these lecture videos, you will learn about effects and referencing values with React."
+        ]
       },
       "xdyh": {
         "title": "270",
@@ -3452,9 +3467,12 @@
         "title": "272",
         "intro": []
       },
-      "ceds": {
-        "title": "273",
-        "intro": []
+      "review-react-state-and-hooks": {
+        "title": "React State and Hooks Review",
+        "intro": [
+          "Before you're quizzed on React state and hooks, you should review what you've learned.",
+          "Open up this page to review working with state, custom hooks and more."
+        ]
       },
       "quiz-react-state-and-hooks": {
         "title": "React State and Hooks Quiz",
@@ -3462,9 +3480,11 @@
           "Test what you've learned about React's <code>useState</code> and <code>useEffect</code> hooks with this quiz."
         ]
       },
-      "ftmi": {
-        "title": "275",
-        "intro": []
+      "lecture-working-with-forms-in-react": {
+        "title": "Working with Forms in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with forms in React."
+        ]
       },
       "sgau": {
         "title": "276",
@@ -3474,11 +3494,10 @@
         "title": "277",
         "intro": []
       },
-      "lab-weather-app": {
-        "title": "Build a Weather App",
+      "lecture-working-with-data-fetching-and-memoization-in-react": {
+        "title": "Working with Data Fetching and Memoization in React",
         "intro": [
-          "In this lab you'll build a Weather App using an API",
-          "You'll practice how to fetch data from the API, store and display it on your app."
+          "In these lecture videos, you will learn about data fetching and memoization in React."
         ]
       },
       "ffpt": {
@@ -3489,29 +3508,46 @@
         "title": "280",
         "intro": []
       },
+      "lecture-routing-react-frameworks-and-dependency-management-tools": {
+        "title": "Routing, React Frameworks, and Dependency Management Tools",
+        "intro": [
+          "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
+        ]
+      },
       "vyzp": {
         "title": "281",
         "intro": []
       },
-      "zagz": {
-        "title": "282",
-        "intro": []
-      },
-      "quiz-advanced-react": {
-        "title": "Advanced React Quiz",
+      "lecture-react-strategies-and-debugging": {
+        "title": "React Strategies and Debugging",
         "intro": [
-          "Test what you've learned about Advanced React with this quiz."
+          "In these lecture videos, you will learn about different strategies and debugging in React."
         ]
       },
-      "zdsj": {
-        "title": "284",
-        "intro": []
+      "review-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Review",
+        "intro": [
+          "Before you take the React forms, data fetching and routing quiz, you should review everything you've learned so far.",
+          "Open up this page, to review all of the concepts taught including routing, forms, state management, prop drilling, data fetching and more."
+        ]
+      },
+      "quiz-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Quiz",
+        "intro": [
+          "Test what you've learned about routing, forms, and data fetching with this quiz."
+        ]
+      },
+      "lecture-understanding-performance-in-web-applications": {
+        "title": "Understanding Performance in Web Applications",
+        "intro": [
+          "In these lecture videos, you will learn performance in web applications."
+        ]
       },
       "review-web-performance": {
         "title": "Web Performance Review",
         "intro": [
           "Before you take the web performance quiz, you should review everything you've learned so far.",
-          "Open up this page, to review all of the concepts taught including INP, key metrics for measuring performance, Performance Web APIs and more."
+          "Open up this page to review all of the concepts taught including INP, key metrics for measuring performance, Performance Web APIs and more."
         ]
       },
       "quiz-web-performance": {
@@ -3520,14 +3556,17 @@
           "Test what you've learned about Web Performance with this quiz."
         ]
       },
-      "mbpv": {
-        "title": "287",
-        "intro": []
+      "lecture-working-with-css-libraries-and-frameworks": {
+        "title": "Working with CSS Libraries and Frameworks",
+        "intro": [
+          "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
+        ]
       },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
-          "Review the CSS Libraries and Frameworks concepts to prepare for the upcoming quiz."
+          "Before you take the CSS libraries and frameworks quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including CSS frameworks, CSS preprocessors, Sass and more."
         ]
       },
       "quiz-css-libraries-and-frameworks": {
@@ -3536,9 +3575,11 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
-      "khuu": {
-        "title": "290",
-        "intro": []
+      "lecture-understanding-the-different-types-of-testing": {
+        "title": "Understanding the Different Types of Testing",
+        "intro": [
+          "In these lecture videos, you will learn about the different types of testing."
+        ]
       },
       "review-testing": {
         "title": "Testing Review",
@@ -3547,6 +3588,12 @@
       "quiz-testing": {
         "title": "Testing Quiz",
         "intro": ["Test what you've learned on testing with this quiz."]
+      },
+      "lecture-introduction-to-typescript": {
+        "title": "Introduction to TypeScript",
+        "intro": [
+          "In these lecture videos, you will learn what TypeScript is and how to use it."
+        ]
       },
       "trvf": {
         "title": "293",
@@ -3613,8 +3660,8 @@
         "title": "306",
         "intro": []
       },
-      "workshop-mario-database": {
-        "title": "Build a Mario Database",
+      "workshop-database-of-video-game-characters": {
+        "title": "Build a Database of Video Game Characters",
         "intro": [
           "A relational database organizes data into tables that are linked together through relationships.",
           "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
@@ -3960,7 +4007,7 @@
   },
   "misc-text": {
     "certification": "Certificação {{cert}}",
-    "browse-other": "Navegue por nossas outras certificações gratuitas\n(recomendamos fazer isto em sequência)",
+    "browse-other": "Browse our other free certifications",
     "courses": "Cursos",
     "steps": "Passos",
     "expand": "Expandir o curso",
