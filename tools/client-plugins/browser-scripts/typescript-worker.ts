@@ -39,7 +39,8 @@ interface CancelEvent extends MessageEvent {
   };
 }
 
-const TS_VERSION = '5.7.3'; // hardcoding for now, in the future this may be dynamic. Must be fully specified version
+// Pin at the latest TS version available as cdnjs doesn't support version range.
+const TS_VERSION = '5.7.3';
 
 let tsEnv: VirtualTypeScriptEnvironment | null = null;
 let compilerHost: CompilerHost | null = null;
