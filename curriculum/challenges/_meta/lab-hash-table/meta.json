@@ -1,0 +1,10 @@
+{
+  "name": "Build a Hash Table",
+  "isUpcomingChange": true,
+  "dashedName": "lab-hash-table",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67ed03ac474c48692f41749e", "title": "Build a Hash Table" }],
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "blockType": "lab"
+}
