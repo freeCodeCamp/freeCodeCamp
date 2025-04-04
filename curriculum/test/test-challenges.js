@@ -712,17 +712,19 @@ async function initializeTestRunner({ build, sources, type, hooks }) {
   // console.log('type', type);
 
   await page.evaluate(
-    async (sources, source, type, hooks) => {
+    async (sources, source, type, hooks, loadEnzyme) => {
       await window.FCCSandbox.createTestRunner({
         source,
         type,
         code: sources,
-        hooks
+        hooks,
+        loadEnzyme
       });
     },
     sources,
     source,
     type,
-    hooks
+    hooks,
+    loadEnzyme
   );
 }
