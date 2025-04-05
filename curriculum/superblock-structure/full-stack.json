@@ -862,12 +862,7 @@
     {
       "dashedName": "backend-javascript",
       "comingSoon": true,
-      "modules": [
-        {
-          "dashedName": "python-basics",
-          "blocks": [{ "dashedName": "lab-rpg-character" }]
-        }
-      ]
+      "modules": []
     },
     {
       "chapterType": "exam",
