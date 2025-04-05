@@ -225,6 +225,7 @@ export default function completionEpic(action$, state$) {
         nextChallengePath,
         challengeType,
         superBlock,
+        blockType,
         block,
         module,
         blockHashSlug
@@ -252,10 +253,17 @@ export default function completionEpic(action$, state$) {
 
       const canAllowDonationRequest = (state, action) => {
         if (action.type !== submitActionTypes.submitComplete) return null;
+
         const donationData =
-          superBlock !== SuperBlocks.FullStackDeveloper
-            ? isBlockNewlyCompletedSelector(state) && { block, superBlock }
-            : isModuleNewlyCompletedSelector(state) && { module, superBlock };
+          superBlock === SuperBlocks.FullStackDeveloper &&
+          blockType !== 'review' &&
+          isModuleNewlyCompletedSelector(state)
+            ? { module, superBlock }
+            : superBlock !== SuperBlocks.FullStackDeveloper &&
+                isBlockNewlyCompletedSelector(state)
+              ? { block, superBlock }
+              : null;
+
         return donationData ? allowSectionDonationRequests(donationData) : null;
       };
 

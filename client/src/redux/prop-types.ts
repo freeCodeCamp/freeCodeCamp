@@ -398,6 +398,7 @@ export type ChallengeMeta = {
   superBlock: SuperBlocks;
   title?: string;
   challengeType?: number;
+  blockType?: BlockTypes;
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;

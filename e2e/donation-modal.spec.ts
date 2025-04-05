@@ -330,6 +330,20 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
       .filter({ hasText: 'Become a Supporter' });
     await expect(donationModal).toBeHidden();
   });
+
+  test('should not appear if FSD review module is completed', async ({
+    page
+  }) => {
+    await page.goto('/learn/full-stack-developer/review-html/review-html');
+    await page.getByRole('checkbox', { name: /Review/ }).click();
+    await page.getByRole('button', { name: 'Submit', exact: true }).click();
+    await page.getByRole('button', { name: /Submit and go/ }).click();
+    await page.waitForTimeout(1000);
+    const donationModal = page
+      .getByRole('dialog')
+      .filter({ hasText: 'Become a Supporter' });
+    await expect(donationModal).toBeHidden();
+  });
 });
 
 test.describe('Donation modal appearance logic - Certified user claiming a new module', () => {
