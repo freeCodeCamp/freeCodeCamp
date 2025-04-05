@@ -39,8 +39,7 @@ If you are using Gitpod, make sure the app is running and the preview window is 
 `package.json` should have a valid "author" key
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
+  $.get(code + '/_api/package.json').then(
     (data) => {
       var packJson = JSON.parse(data);
       assert(packJson.author, '"author" is missing');

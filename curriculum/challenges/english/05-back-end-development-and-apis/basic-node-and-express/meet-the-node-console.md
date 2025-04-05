@@ -37,8 +37,7 @@ Modify the `myApp.js` file to log "Hello World" to the console.
 `"Hello World"` should be in the console
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/hello-console').then(
+  $.get(code + '/_api/hello-console').then(
     (data) => {
       assert.isTrue(data.passed, '"Hello World" is not in the server console');
     },

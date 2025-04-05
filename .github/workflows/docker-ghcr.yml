@@ -1,4 +1,4 @@
-name: Docker -- GHCR - Gitpod
+name: CD - Docker - GHCR (Gitpod)
 
 on:
   workflow_dispatch:
