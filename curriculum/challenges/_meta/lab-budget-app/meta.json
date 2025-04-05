@@ -11,5 +11,6 @@
     }
   ],
   "helpCategory": "Python",
-  "blockLayout": "link"
+  "blockLayout": "link",
+  "blockType": "lab"
 }
