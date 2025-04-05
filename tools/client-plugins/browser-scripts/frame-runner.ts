@@ -27,10 +27,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   };
 
   /* eslint-disable @typescript-eslint/no-unused-vars */
-  // Fake Deep Equal dependency
-  const DeepEqual = (a: Record<string, unknown>, b: Record<string, unknown>) =>
-    JSON.stringify(a) === JSON.stringify(b);
-
   // Hardcode Deep Freeze dependency
   const DeepFreeze = (o: Record<string, unknown>) => {
     Object.freeze(o);

@@ -580,6 +580,8 @@ async function createTestRunner(
 
   const evaluator = await (runsInBrowser
     ? getContextEvaluator({
+        // passing in challengeId so it's easier to debug timeouts
+        challengeId: challenge.id,
         build,
         sources,
         code,
@@ -639,7 +641,17 @@ async function getContextEvaluator(config) {
     evaluate: async (testString, timeout) =>
       Promise.race([
         new Promise((_, reject) =>
-          setTimeout(() => reject(Error('timeout')), timeout)
+          setTimeout(
+            () =>
+              reject(
+                Error(`timeout in challenge
+${config.challengeId}
+while evaluating test:
+${testString}
+`)
+              ),
+            timeout
+          )
         ),
         await page.evaluate(async testString => {
           return await document.__runTest(testString);
