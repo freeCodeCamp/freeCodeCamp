@@ -88,4 +88,16 @@ ${result.error.message}`);
       publicSuperBlockNames.length
     );
   });
+
+  test('challenge files should be created and in the correct directory', () => {
+    expect(
+      fs.existsSync(`${clientStaticPath}/curriculum-data/${VERSION}/challenges`)
+    ).toBe(true);
+
+    expect(
+      fs.readdirSync(
+        `${clientStaticPath}/curriculum-data/${VERSION}/challenges`
+      ).length
+    ).toBeGreaterThan(0);
+  });
 });
