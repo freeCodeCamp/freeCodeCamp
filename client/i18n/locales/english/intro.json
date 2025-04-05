@@ -3849,7 +3849,9 @@
       },
       "lab-budget-app": {
         "title": "Build a Budget App",
-        "intro": ["Still need an intro, adding this to show in the diff"]
+        "intro": [
+          "In this lab you will build a budget app and practice creating a class and methods for that class."
+        ]
       },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",

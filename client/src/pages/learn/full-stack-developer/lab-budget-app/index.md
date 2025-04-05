@@ -1,9 +1,9 @@
 ---
-title: Introduction to the Build a Budget App Project
+title: Introduction to the Build a Budget App
 block: lab-budget-app
 superBlock: full-stack-developer
 ---
 
-## Introduction to the Build a Budget App Project
+## Introduction to the Build a Budget App
 
-Build a Budget App Project
+In this lab you will build a budget app and practice creating a class and methods for that class.
