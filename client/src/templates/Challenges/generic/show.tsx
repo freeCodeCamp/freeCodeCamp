@@ -118,6 +118,7 @@ const ShowGeneric = ({
       title,
       challengeType,
       helpCategory,
+      blockType,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);

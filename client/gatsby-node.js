@@ -112,6 +112,8 @@ exports.createPages = async function createPages({
               superOrder
               template
               usesMultifileEditor
+              chapter
+              module
             }
           }
         }
