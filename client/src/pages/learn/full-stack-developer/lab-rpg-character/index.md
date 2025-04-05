@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build an RPG Character
 
-This is a test for the new project-based curriculum.
+In this lab, you will practice basic python by building an RPG character.
