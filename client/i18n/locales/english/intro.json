@@ -3980,9 +3980,12 @@
         "title": "Build a Linked List Class",
         "intro": [""]
       },
-      "lab-hash-table-class": {
-        "title": "Build an Hash Table Class",
-        "intro": [""]
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store keys/value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
       },
       "review-data-structures": {
         "title": "Data Structures Review",
@@ -4079,13 +4082,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "lab-hash-table": {
-        "title": "Build a Hash Table",
-        "intro": [
-          "A hash table is a data structure that is used to store keys/value pairs and is optimized for quick lookups.",
-          "In this lab, you will use your knowledge about data structures to build a hash table."
-        ]
       }
     }
   },
