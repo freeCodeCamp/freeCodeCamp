@@ -155,7 +155,7 @@
         "title": "Impara il Design Responsivo creando un pianoforte",
         "intro": [
           "Il design responsivo dice alle tue pagine che aspetto devono avere su schermi di diverse dimensioni.",
-          "In questo corso, utilizzerai CSS e il design responsivo per creare un pianoforte. Scoprirai anche di più sulle media query e sugli pseudo selettori."
+          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -2441,7 +2441,7 @@
         "title": "Design a Piano",
         "intro": [
           "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
       "lab-technical-documentation-page": {
@@ -3363,6 +3363,13 @@
           "For this lab you'll practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
         ]
       },
+      "lab-weather-app": {
+        "title": "Build a Weather App",
+        "intro": [
+          "In this lab you'll build a Weather App using an API",
+          "You'll practice how to fetch data from the API, store and display it on your app."
+        ]
+      },
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
@@ -3432,9 +3439,11 @@
         "title": "React Basics Quiz",
         "intro": ["Test your knowledge of React basics with this quiz."]
       },
-      "rugw": {
-        "title": "267",
-        "intro": []
+      "lecture-working-with-state-and-responding-to-events-in-react": {
+        "title": "Working with State and Responding to Events in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with state and responding to events with React."
+        ]
       },
       "rmpy": {
         "title": "268",
@@ -3444,9 +3453,11 @@
         "title": "269",
         "intro": []
       },
-      "rnfe": {
-        "title": "271",
-        "intro": []
+      "lecture-understanding-effects-and-referencing-values-in-react": {
+        "title": "Understanding Effects and Referencing Values in React",
+        "intro": [
+          "In these lecture videos, you will learn about effects and referencing values with React."
+        ]
       },
       "xdyh": {
         "title": "270",
@@ -3469,9 +3480,11 @@
           "Test what you've learned about React's <code>useState</code> and <code>useEffect</code> hooks with this quiz."
         ]
       },
-      "ftmi": {
-        "title": "275",
-        "intro": []
+      "lecture-working-with-forms-in-react": {
+        "title": "Working with Forms in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with forms in React."
+        ]
       },
       "sgau": {
         "title": "276",
@@ -3481,11 +3494,10 @@
         "title": "277",
         "intro": []
       },
-      "lab-weather-app": {
-        "title": "Build a Weather App",
+      "lecture-working-with-data-fetching-and-memoization-in-react": {
+        "title": "Working with Data Fetching and Memoization in React",
         "intro": [
-          "In this lab you'll build a Weather App using an API",
-          "You'll practice how to fetch data from the API, store and display it on your app."
+          "In these lecture videos, you will learn about data fetching and memoization in React."
         ]
       },
       "ffpt": {
@@ -3496,9 +3508,21 @@
         "title": "280",
         "intro": []
       },
+      "lecture-routing-react-frameworks-and-dependency-management-tools": {
+        "title": "Routing, React Frameworks, and Dependency Management Tools",
+        "intro": [
+          "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
+        ]
+      },
       "vyzp": {
         "title": "281",
         "intro": []
+      },
+      "lecture-react-strategies-and-debugging": {
+        "title": "React Strategies and Debugging",
+        "intro": [
+          "In these lecture videos, you will learn about different strategies and debugging in React."
+        ]
       },
       "review-react-forms-data-fetching-and-routing": {
         "title": "React Forms, Data Fetching and Routing Review",
@@ -3513,9 +3537,11 @@
           "Test what you've learned about routing, forms, and data fetching with this quiz."
         ]
       },
-      "zdsj": {
-        "title": "284",
-        "intro": []
+      "lecture-understanding-performance-in-web-applications": {
+        "title": "Understanding Performance in Web Applications",
+        "intro": [
+          "In these lecture videos, you will learn performance in web applications."
+        ]
       },
       "review-web-performance": {
         "title": "Web Performance Review",
@@ -3530,14 +3556,17 @@
           "Test what you've learned about Web Performance with this quiz."
         ]
       },
-      "mbpv": {
-        "title": "287",
-        "intro": []
+      "lecture-working-with-css-libraries-and-frameworks": {
+        "title": "Working with CSS Libraries and Frameworks",
+        "intro": [
+          "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
+        ]
       },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
-          "Review the CSS Libraries and Frameworks concepts to prepare for the upcoming quiz."
+          "Before you take the CSS libraries and frameworks quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including CSS frameworks, CSS preprocessors, Sass and more."
         ]
       },
       "quiz-css-libraries-and-frameworks": {
@@ -3546,9 +3575,11 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
-      "khuu": {
-        "title": "290",
-        "intro": []
+      "lecture-understanding-the-different-types-of-testing": {
+        "title": "Understanding the Different Types of Testing",
+        "intro": [
+          "In these lecture videos, you will learn about the different types of testing."
+        ]
       },
       "review-testing": {
         "title": "Testing Review",
@@ -3557,6 +3588,12 @@
       "quiz-testing": {
         "title": "Testing Quiz",
         "intro": ["Test what you've learned on testing with this quiz."]
+      },
+      "lecture-introduction-to-typescript": {
+        "title": "Introduction to TypeScript",
+        "intro": [
+          "In these lecture videos, you will learn what TypeScript is and how to use it."
+        ]
       },
       "trvf": {
         "title": "293",

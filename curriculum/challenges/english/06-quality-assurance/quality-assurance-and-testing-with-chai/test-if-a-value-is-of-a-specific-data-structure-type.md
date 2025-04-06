@@ -21,8 +21,7 @@ Within `tests/1_unit-tests.js` under the test labeled `#17` in the `Objects` sui
 All tests should pass.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(
+  $.get(code + '/_api/get-tests?type=unit&n=16').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -35,8 +34,7 @@ All tests should pass.
 You should choose the correct method for the first assertion - `typeOf` vs. `notTypeOf`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(
+  $.get(code + '/_api/get-tests?type=unit&n=16').then(
     (data) => {
       assert.equal(
         data.assertions[0].method,
@@ -53,8 +51,7 @@ You should choose the correct method for the first assertion - `typeOf` vs. `not
 You should choose the correct method for the second assertion - `typeOf` vs. `notTypeOf`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(
+  $.get(code + '/_api/get-tests?type=unit&n=16').then(
     (data) => {
       assert.equal(
         data.assertions[1].method,
@@ -71,8 +68,7 @@ You should choose the correct method for the second assertion - `typeOf` vs. `no
 You should choose the correct method for the third assertion - `typeOf` vs. `notTypeOf`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(
+  $.get(code + '/_api/get-tests?type=unit&n=16').then(
     (data) => {
       assert.equal(
         data.assertions[2].method,
@@ -89,8 +85,7 @@ You should choose the correct method for the third assertion - `typeOf` vs. `not
 You should choose the correct method for the fourth assertion - `typeOf` vs. `notTypeOf`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(
+  $.get(code + '/_api/get-tests?type=unit&n=16').then(
     (data) => {
       assert.equal(
         data.assertions[3].method,
@@ -107,8 +102,7 @@ You should choose the correct method for the fourth assertion - `typeOf` vs. `no
 You should choose the correct method for the fifth assertion - `typeOf` vs. `notTypeOf`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=16').then(
+  $.get(code + '/_api/get-tests?type=unit&n=16').then(
     (data) => {
       assert.equal(
         data.assertions[4].method,

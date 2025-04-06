@@ -29,8 +29,8 @@ Submit your page when you think you've got it right. If you're running into erro
 Server should handle the event disconnect from a socket.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/server.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(data, /socket.on.*('|")disconnect('|")/s, '');
@@ -40,8 +40,8 @@ async (getUserInput) => {
 Your client should be listening for `'user count'` event.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/public/client.js", getUserInput("url"));
+async () => {
+  const url = new URL("/public/client.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(

@@ -2,9 +2,16 @@ name: CD - Deploy API (Legacy) & Clients
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: [CI - Node.js]
+    types:
+      - completed
+    branches:
+      - prod-*
 
 jobs:
   setup-jobs:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Setup Jobs
     runs-on: ubuntu-22.04
     outputs:
@@ -55,65 +62,66 @@ jobs:
 
       - name: Configure SSH & Check Connection
         run: |
-          mkdir -p ~/.ssh && \
+          mkdir -p ~/.ssh
           echo "Host *
             UserKnownHostsFile=/dev/null
-            StrictHostKeyChecking no" > ~/.ssh/config && \
+            StrictHostKeyChecking no" > ~/.ssh/config
           chmod 644 ~/.ssh/config
-          if [ $? -ne 0 ]; then echo "::error::Failed to configure SSH"; exit 1; fi
 
           for i in {1..3}; do
             TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-api-${i}
-            tailscale status | grep -q "$TS_MACHINE_NAME" && \
+            tailscale status | grep -q "$TS_MACHINE_NAME"
             ssh $TS_USERNAME@$TS_MACHINE_NAME "uptime"
-            if [ $? -ne 0 ]; then echo "::error::Failed to check connection"; exit 1; fi
           done
 
       - name: Deploy API
+        # [NOTE] Use backslashes for expansion on remote machine, example: \$NVM_DIR, etc.
         run: |
-          export GIT_SOURCE_BRANCH=${{ needs.setup-jobs.outputs.tgt_env_branch }}
+          GIT_SOURCE_BRANCH=${{ needs.setup-jobs.outputs.tgt_env_branch }}
           for i in {1..3}; do
             TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-api-${i}
-            ssh $TS_USERNAME@$TS_MACHINE_NAME /bin/bash << EOF
+            REMOTE_SCRIPT="
               set -e
-              echo "Deploying API (Legacy) to $TS_MACHINE_NAME"
+              echo -e '\nLOG:Deploying API (Legacy) to $TS_MACHINE_NAME...'
 
+              echo -e '\nLOG:Environment setup...'
               cd /home/$TS_USERNAME/freeCodeCamp
+              export NVM_DIR=\$HOME/.nvm && [ -s "\$NVM_DIR/nvm.sh" ] && source "\$NVM_DIR/nvm.sh"
+              echo -e '\nLOG:Checking available Node.js versions...'
+              nvm ls | grep 'default'
+              echo -e '\nLOG:Checking Node.js version...'
+              node --version
 
-              # Environment setup
-              export NVM_DIR=\$HOME/.nvm && [ -s "\$NVM_DIR/nvm.sh" ] && source "\$NVM_DIR/nvm.sh" && \
-              nvm ls | grep 'default' && \
-              echo "Node.js version:" && node --version
-
-              # Stop all PM2 services
+              echo -e '\nLOG:Stopping all PM2 services...'
               pm2 stop all
 
-              # Git operations
-              git status && \
-              git clean -f && \
-              git fetch --all --prune && \
-              git checkout -f $GIT_SOURCE_BRANCH && \
-              git reset --hard origin/$GIT_SOURCE_BRANCH && \
+              echo -e '\nLOG:Git operations...'
+              git status
+              git clean -f
+              git fetch --all --prune
+              git checkout -f $GIT_SOURCE_BRANCH
+              git reset --hard origin/$GIT_SOURCE_BRANCH
               git status
 
-              # Build
-              npm i -g pnpm@9 && \
-              pnpm clean:packages && \
-              pnpm clean:server && \
-              pnpm install && \
-              pnpm prebuild && \
-              pnpm build:curriculum && \
+              echo -e '\nLOG:Building...'
+              npm i -g pnpm@9
+              pnpm clean:packages
+              pnpm clean:server
+              pnpm install
+              pnpm prebuild
+              pnpm build:curriculum
               pnpm build:server
+              echo -e '\nLOG:Build completed.'
 
-              # Server reload
-              pnpm reload:server && \
-              pm2 ls && \
+              echo -e '\nLOG:Starting PM2 reload...'
+              pm2 reload './api-server/ecosystem.config.js'
+              echo -e '\nLOG:PM2 reload completed.'
+
+              pm2 ls
               pm2 save
-          EOF
-            if [ $? -ne 0 ]; then
-              echo "::error::Deployment to $TS_MACHINE_NAME failed"
-              exit 1
-            fi
+              echo -e '\nLOG:Finished deployment.'
+            "
+            ssh $TS_USERNAME@$TS_MACHINE_NAME "$REMOTE_SCRIPT"
           done
 
   client:
@@ -225,18 +233,16 @@ jobs:
 
       - name: Configure SSH & Check Connection
         run: |
-          mkdir -p ~/.ssh && \
+          mkdir -p ~/.ssh
           echo "Host *
             UserKnownHostsFile=/dev/null
-            StrictHostKeyChecking no" > ~/.ssh/config && \
+            StrictHostKeyChecking no" > ~/.ssh/config
           chmod 644 ~/.ssh/config
-          if [ $? -ne 0 ]; then echo "::error::Failed to configure SSH"; exit 1; fi
 
           for i in {0..1}; do
             TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-${{ matrix.lang-name-short }}-${i}
-            tailscale status | grep -q "$TS_MACHINE_NAME" && \
+            tailscale status | grep -q "$TS_MACHINE_NAME"
             ssh $TS_USERNAME@$TS_MACHINE_NAME "uptime"
-            if [ $? -ne 0 ]; then echo "::error::Failed to check connection"; exit 1; fi
           done
 
       - name: Upload and Deploy
@@ -248,44 +254,56 @@ jobs:
             CLIENT_DST=/tmp/client-${{ matrix.lang-name-short }}-${CURRENT_DATE}-${{ github.run_id }}.tar
             CLIENT_BINARIES=${{needs.setup-jobs.outputs.tgt_env_short}}-release-$CURRENT_DATE-${{ github.run_id }}
 
-            # Upload client archive
+            echo -e "\nLOG:Uploading client archive to $TS_MACHINE_NAME..."
             scp $CLIENT_SRC $TS_USERNAME@$TS_MACHINE_NAME:$CLIENT_DST
-            if [ $? -ne 0 ]; then echo "::error::Failed to upload client archive"; exit 1; fi
 
-            ssh $TS_USERNAME@$TS_MACHINE_NAME /bin/bash << EOF
+            REMOTE_SCRIPT="
               set -e
+              echo -e '\nLOG: Deploying client - $CLIENT_BINARIES to $TS_MACHINE_NAME...'
 
-              # Extract client archive
-              mkdir -p /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES && \
-              tar -xzf $CLIENT_DST -C /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES --strip-components=2 && \
-              rm $CLIENT_DST && \
+              echo -e '\nLOG:Extracting client archive...'
+              mkdir -p /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES
+              tar -xzf $CLIENT_DST -C /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES --strip-components=2
+
+              echo -e '\nLOG:Cleaning up client archive...'
+              rm $CLIENT_DST
+
+              echo -e '\nLOG:Checking client archive size...'
               du -sh /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES
 
+              echo -e '\nLOG:Environment setup...'
               cd /home/$TS_USERNAME/client
+              export NVM_DIR=\$HOME/.nvm && [ -s "\$NVM_DIR/nvm.sh" ] && source "\$NVM_DIR/nvm.sh"
+              echo -e '\nLOG:Checking available Node.js versions...'
+              nvm ls | grep 'default'
+              echo -e '\nLOG:Checking Node.js version...'
+              node --version
 
-              # Environment setup
-              export NVM_DIR=\$HOME/.nvm && [ -s "\$NVM_DIR/nvm.sh" ] && source "\$NVM_DIR/nvm.sh" && \
-              nvm ls | grep 'default' && \
-              echo "Node.js version:" && node --version
-
+              echo -e '\nLOG:Installing serve...'
               npm install -g serve@13
 
-              # Primary client setup
-              rm -f client-start-primary.sh && \
-              echo "serve -c ../../serve.json releases/$CLIENT_BINARIES -p 50505" >> client-start-primary.sh && \
-              chmod +x client-start-primary.sh && \
-              pm2 delete client-primary || true && \
+              echo -e '\nLOG:Primary client setup...'
+              rm -f client-start-primary.sh
+              echo \"serve -c ../../serve.json releases/$CLIENT_BINARIES -p 50505\" >> client-start-primary.sh
+              chmod +x client-start-primary.sh
+              pm2 delete client-primary || true
               pm2 start ./client-start-primary.sh --name client-primary
+              echo -e '\nLOG:Primary client setup completed.'
 
-              # Secondary client setup
-              rm -f client-start-secondary.sh && \
-              echo "serve -c ../../serve.json releases/$CLIENT_BINARIES -p 52525" >> client-start-secondary.sh && \
-              chmod +x client-start-secondary.sh && \
-              pm2 delete client-secondary || true && \
+              pm2 ls
+
+              echo -e '\nLOG:Secondary client setup...'
+              rm -f client-start-secondary.sh
+              echo \"serve -c ../../serve.json releases/$CLIENT_BINARIES -p 52525\" >> client-start-secondary.sh
+              chmod +x client-start-secondary.sh
+              pm2 delete client-secondary || true
               pm2 start ./client-start-secondary.sh --name client-secondary
-          EOF
-            if [ $? -ne 0 ]; then
-              echo "::error::Deployment to $TS_MACHINE_NAME failed"
-              exit 1
-            fi
+              echo -e '\nLOG:Secondary client setup completed.'
+
+              pm2 ls
+              pm2 save
+
+              echo -e '\nLOG:Finished deployment.'
+            "
+            ssh $TS_USERNAME@$TS_MACHINE_NAME "$REMOTE_SCRIPT"
           done

@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import { WindowLocation } from '@gatsbyjs/reach-router';
 import { graphql } from 'gatsby';
 import { uniq, isEmpty, last } from 'lodash-es';
@@ -11,7 +12,6 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 import { SuperBlocks } from '../../../../shared/config/curriculum';
-import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
@@ -166,7 +166,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     [superBlockChallenges, allCompletedChallenges]
   );
 
-  const i18nTitle = getSuperBlockTitleForMap(superBlock);
+  const i18nTitle = i18next.t(`intro:${superBlock}.title`);
 
   const showCertification = liveCerts.some(
     cert => superBlockToCertMap[superBlock] === cert.certSlug

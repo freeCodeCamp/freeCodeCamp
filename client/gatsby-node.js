@@ -106,6 +106,7 @@ exports.createPages = async function createPages({
                 contents
                 ext
                 history
+                fileKey
               }
               superBlock
               superOrder

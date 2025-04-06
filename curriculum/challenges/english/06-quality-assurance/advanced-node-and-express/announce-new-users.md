@@ -41,8 +41,8 @@ Submit your page when you think you've got it right. If you're running into erro
 Event `'user'` should be emitted with `username`, `currentUsers`, and `connected`.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/server.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
   // Regex is lenient to match both `username` and `name` as the key on purpose.
@@ -57,8 +57,8 @@ async (getUserInput) => {
 Client should properly handle and display the new data from event `'user'`.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/public/client.js", getUserInput("url"));
+async () => {
+  const url = new URL("/public/client.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(

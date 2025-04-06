@@ -528,7 +528,7 @@ function ShowClassic({
           superBlock={superBlock}
         />
         <VideoModal videoUrl={videoUrl} />
-        <ResetModal challengeType={challengeType} />
+        <ResetModal challengeType={challengeType} challengeTitle={title} />
         <ProjectPreviewModal
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}

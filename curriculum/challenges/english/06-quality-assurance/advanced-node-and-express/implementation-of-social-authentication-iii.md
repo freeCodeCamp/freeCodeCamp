@@ -50,8 +50,8 @@ Submit your page when you think you've got it right. If you're running into erro
 GitHub strategy setup should be complete.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/auth.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/auth.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(
