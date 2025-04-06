@@ -83,7 +83,7 @@ TPGi Color Contrast Analyzer
 
 #### --text--
 
-Why should you NOT use `display: none` and `visually: hidden` to visually hide content?
+Why should you NOT use `display: none` and `visibility: hidden` to visually hide content?
 
 #### --distractors--
 
