@@ -3773,7 +3773,10 @@
       },
       "review-python-basics": {
         "title": "Python Basics Review",
-        "intro": ["Learn about Python Basics Review in these lectures."]
+        "intro": [
+          "Before you're quizzed on Python basics, you should review what you've learned about it.",
+          ""
+        ]
       },
       "quiz-python-basics": {
         "title": "Python Basics Quiz",
@@ -3793,7 +3796,10 @@
       },
       "review-loops-and-sequences": {
         "title": "Loops and Sequences Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
+          ""
+        ]
       },
       "quiz-loops-and-sequences": {
         "title": "Loops and Sequences Quiz",
@@ -3816,8 +3822,11 @@
         "intro": [""]
       },
       "review-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets Review",
-        "intro": [""]
+        "title": "Dictionaries and Sets review",
+        "intro": [
+          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
+          ""
+        ]
       },
       "quiz-dictionaries-and-sets": {
         "title": "Dictionaries and Sets Quiz",
@@ -3833,12 +3842,12 @@
       },
       "review-error-handling": {
         "title": "Error Handling Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on Cerror handling, you should review what you've learned about it.",
+          ""
+        ]
       },
-      "quiz-error-handling": {
-        "title": "Error Handling Quiz",
-        "intro": [""]
-      },
+      "quiz-error-handling": { "title": "Error Handling Quiz", "intro": [""] },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
         "intro": [""]
@@ -3847,13 +3856,13 @@
         "title": "Placeholder - waiting for title",
         "intro": [""]
       },
-      "lab-budget-app": {
-        "title": "Build a Budget App",
-        "intro": [""]
-      },
+      "lab-budget-app": { "title": "Build a Budget App", "intro": [""] },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on classes and objects, you should review what you've learned about them.",
+          ""
+        ]
       },
       "quiz-classes-and-objects": {
         "title": "Classes and Objects Quiz",
@@ -3891,13 +3900,13 @@
         "title": "Placeholder - Waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-oop-3": {
-        "title": "",
-        "intro": [""]
-      },
+      "lab-placeholder-oop-3": { "title": "", "intro": [""] },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
+          ""
+        ]
       },
       "quiz-object-oriented-programming": {
         "title": "Object Oriented Programming Quiz",
@@ -3917,7 +3926,10 @@
       },
       "review-data-structures": {
         "title": "Data Structures Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on data structures, you should review what you've learned about them.",
+          ""
+        ]
       },
       "quiz-data-structures": {
         "title": "Data Structures Quiz",
@@ -3935,14 +3947,8 @@
         "title": "Build a Bisection Method",
         "intro": [""]
       },
-      "workshop-merge-sort": {
-        "title": "Build a Merge Sort",
-        "intro": [""]
-      },
-      "lab-quick-sort": {
-        "title": "Build a Quick Sort",
-        "intro": [""]
-      },
+      "workshop-merge-sort": { "title": "Build a Merge Sort", "intro": [""] },
+      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
       "lab-selection-sort": {
         "title": "Build a Selection Sort",
         "intro": [""]
@@ -3953,7 +3959,10 @@
       },
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
+          ""
+        ]
       },
       "quiz-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Quiz",
@@ -3981,7 +3990,10 @@
       },
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
+          ""
+        ]
       },
       "quiz-graphs-and-trees": {
         "title": "Graphs and Trees Review",
@@ -3997,7 +4009,10 @@
       },
       "review-dynamic-programming": {
         "title": "Dynamic Programming Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
+          ""
+        ]
       },
       "quiz-dynamic-programming": {
         "title": "Dynamic Programming Quiz",
@@ -4005,7 +4020,10 @@
       },
       "review-python": {
         "title": "Python Review",
-        "intro": [""]
+        "intro": [
+          "Review Python concepts to prepare for the upcoming quiz.",
+          ""
+        ]
       },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
