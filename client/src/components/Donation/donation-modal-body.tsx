@@ -6,6 +6,7 @@ import { closeDonationModal } from '../../redux/actions';
 import { PaymentContext } from '../../../../shared/config/donation-settings'; //
 import donationAnimation from '../../assets/images/donation-bear-animation.svg';
 import donationAnimationB from '../../assets/images/new-bear-animation.svg';
+import supporterBearBlock from '../../assets/images/supporter-bear-block.svg';
 import supporterBear from '../../assets/images/supporter-bear.svg';
 import callGA from '../../analytics/call-ga';
 import MultiTierDonationForm from './multi-tier-donation-form';
@@ -20,13 +21,25 @@ type DonationModalBodyProps = {
   setCanClose: (canClose: boolean) => void;
 };
 
-const Illustration = () => {
+const Illustration = ({
+  recentlyClaimedBlock,
+  useShortDonationBlocks
+}: {
+  recentlyClaimedBlock: RecentlyClaimedBlock;
+  useShortDonationBlocks: boolean;
+}) => {
   const { t } = useTranslation();
+  const showNewBearIllustration =
+    useShortDonationBlocks && recentlyClaimedBlock;
   return (
     <img
-      alt={t('donate.flying-bear')}
+      alt={
+        showNewBearIllustration
+          ? t('bear-completion-alt')
+          : t('donate.flying-bear')
+      }
       id={'supporter-bear'}
-      src={supporterBear}
+      src={showNewBearIllustration ? supporterBearBlock : supporterBear}
     />
   );
 };
@@ -195,7 +208,8 @@ const BecomeASupporterConfirmation = ({
   showForm,
   setShowHeaderAndFooter,
   handleProcessing,
-  setShowForm
+  setShowForm,
+  useShortDonationBlocks
 }: {
   recentlyClaimedBlock: RecentlyClaimedBlock;
   showHeaderAndFooter: boolean;
@@ -205,11 +219,15 @@ const BecomeASupporterConfirmation = ({
   setShowHeaderAndFooter: (arg: boolean) => void;
   handleProcessing: () => void;
   setShowForm: (arg: boolean) => void;
+  useShortDonationBlocks: boolean;
 }) => {
   return (
     <div className='no-delay-fade-in'>
       <div className='donation-icon-container'>
-        <Illustration />
+        <Illustration
+          recentlyClaimedBlock={recentlyClaimedBlock}
+          useShortDonationBlocks={useShortDonationBlocks}
+        />
       </div>
       <ModalHeader
         recentlyClaimedBlock={recentlyClaimedBlock}
@@ -248,23 +266,34 @@ function DonationModalBody({
   const [isAnimationVisible, setIsAnimationVisible] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [secondsRemaining, setSecondsRemaining] = useState(20);
+  const useShortDonationBlocks = useFeature('short-donation-blocks').on;
 
   const handleProcessing = () => {
     setDonationAttempted(true);
   };
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setSecondsRemaining(prevSeconds => prevSeconds - 1);
-    }, 1000);
-
-    if (secondsRemaining <= 0) {
+    let intervalId: NodeJS.Timeout;
+    if (useShortDonationBlocks && recentlyClaimedBlock) {
       setIsAnimationVisible(false);
       setCanClose(true);
-      clearInterval(intervalId);
+    } else {
+      intervalId = setInterval(() => {
+        setSecondsRemaining(prevSeconds => prevSeconds - 1);
+      }, 1000);
+      if (secondsRemaining <= 0) {
+        setIsAnimationVisible(false);
+        setCanClose(true);
+        clearInterval(intervalId);
+      }
     }
     return () => clearInterval(intervalId);
-  }, [secondsRemaining, setCanClose]);
+  }, [
+    secondsRemaining,
+    setCanClose,
+    recentlyClaimedBlock,
+    useShortDonationBlocks
+  ]);
 
   return (
     <Modal.Body borderless alignment='start'>
@@ -281,6 +310,7 @@ function DonationModalBody({
             setShowHeaderAndFooter={setShowHeaderAndFooter}
             handleProcessing={handleProcessing}
             setShowForm={setShowForm}
+            useShortDonationBlocks={useShortDonationBlocks}
           />
         )}
       </div>
