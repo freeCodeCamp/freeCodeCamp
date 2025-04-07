@@ -2,7 +2,7 @@
 id: 67d2f4ddb4a4306fdf5bbaee
 title: What Is Memoization, and How Does the useMemo Hook Work?
 challengeType: 11
-videoId: nVAaxZ34khk
+videoId: 2X7LD_6P4eI
 dashedName: what-is-memoization-and-how-does-the-usememo-hook-work
 ---
 
@@ -20,31 +20,31 @@ This can be especially problematic in apps with complex state management, large 
 
 This gives rise to the need to optimize your React app for better performance by minimizing redundant computations and ensuring smoother interactions.
 
-React solves this problem with a process called "Memoization", a technique which caches values and functions to prevent unnecessary recalculations, so your app can be faster and more responsive.
+React solves this problem with a process called Memoization, a technique which caches values and functions to prevent unnecessary recalculations, so your app can be faster and more responsive.
 
 By definition, memoization is an optimization technique in which the result of expensive function calls are cached (remembered) based on specific arguments. When the same arguments are provided again, the cached result is returned instead of re-computing the function.
 
 The memoization process happens this way:
 
-store the results of function calls along with their input arguments
+- Store the results of function calls along with their input arguments.
 
-before executing the function, check if the result for the current arguments already exists in the cache
+- Before executing the function, check if the result for the current arguments already exists in the cache.
 
-if it exists, return the cached result instead of running the computation again
+- If it exists, return the cached result instead of running the computation again.
 
-if it doesn't exist, compute the result, store it in the cache, and then return it
+- If it doesn't exist, compute the result, store it in the cache, and then return it.
 
-To improve developer experience with memoization, React provides three tools – React.memo (or memo), useMemo and useCallback. 
+To improve developer experience with memoization, React provides three tools – `React.memo` (or `memo`), `useMemo` and `useCallback`. 
 
-As you might guess, both useMemo and useCallback are hooks, but React.memo is a component wrapper, a higher-order function (HOC).
+As you might guess, both `useMemo` and `useCallback` are hooks, but `React.memo` is a component wrapper, a higher-order function (HOC).
 
-In the next lecture, we will take a look at how the useCallback hook and React.memo work.
+In the next lecture, we will take a look at how the `useCallback` hook and `React.memo` work.
 
-useMemo lets you memoize computed values while useCallback does the same for function references.
+`useMemo` lets you memoize computed values while `useCallback` does the same for function references.
 
 If you're wondering what computed values and function references are, "computed values" refer to the result of executing a function, while function references are the pointers to functions – the function object in memory.
 
-Let's see how to use the useMemo hook first. Here's the basic syntax of the useMemo hook:
+Let's see how to use the `useMemo` hook first. Here's the basic syntax of the `useMemo` hook:
 
 ```js
 const memoizedValue = useMemo(
@@ -55,7 +55,7 @@ const memoizedValue = useMemo(
 );
 ```
 
-You can see all that's needed is to wrap the useMemo hook around the function. Here's the same syntax with arrow function syntax:
+You can see all that's needed is to wrap the `useMemo` hook around the function. Here's the same syntax with arrow function syntax:
 
 ```js
 function ExpensiveSquare({ num }) {
@@ -74,9 +74,9 @@ function ExpensiveSquare({ num }) {
 export default ExpensiveSquare;
 ```
 
-This ExpensiveSquare component will receive a num prop which it will use to calculate the square.
+This `ExpensiveSquare` component will receive a `num` prop which it will use to calculate the square.
 
-Here's the App component where the ExpensiveSquare is being used:
+Here's the `App` component where the `ExpensiveSquare` is being used:
 
 ```js
 import { useState, useEffect } from "react";
@@ -103,11 +103,11 @@ function App() {
 export default App;
 ```
 
-The timer in the useEffect, running every second, will make the calculateSquare function runs any time it runs, even when you don't increase the num state variable:
+The `timer` in the `useEffect`, running every second, will make the `calculateSquare` function runs any time it runs, even when you don't increase the `num` state variable:
 
-To solve this problem, we can use the useMemo hook by wrapping the function call in it and specifying the num variable as the dependency. 
+To solve this problem, we can use the `useMemo` hook by wrapping the function call in it and specifying the `num` variable as the dependency. 
 
-This will make sure the function is memoized by caching the result, so calculation happens only when num change, not when anything changes in the component it's being used in:
+This will make sure the function is memoized by caching the result, so calculation happens only when `num` change, not when anything changes in the component it's being used in:
 
 ```js
 // import the useMemo hook
@@ -133,7 +133,7 @@ function ExpensiveSquare({ num }) {
 export default ExpensiveSquare;
 ```
 
-The calculateSquare function call is not running any time the timer changes anymore but on the initial render and when num changes:
+The `calculateSquare` function call is not running any time `timer` changes anymore but on the initial render and when `num` changes:
 
 # --questions--
 
