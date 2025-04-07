@@ -29,7 +29,7 @@ This is used to apologize for something that happened. Don't forget to capitaliz
 
 `To be sorry for something` is used when apologizing for an action that may have caused inconvenience or harm. For example:
 
-`I'm sorry for being late to the meeting.` - This means the speaker regrets arriving late and is apologizing. Notice that `being` is in the `-ing`form as it is right after `for` (a preposition).
+`I'm sorry for being late to the meeting.` - This means the speaker regrets arriving late and is apologizing. Notice that `being` is in the `-ing` form as it is right after `for` (a preposition).
 
 # --scene--
 
