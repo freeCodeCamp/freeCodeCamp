@@ -104,7 +104,6 @@ Placeholder distractor 3
 #### --answer--
 
 Placeholder answer
-
 `.repeat(options.questionCount)}
 `;
 
