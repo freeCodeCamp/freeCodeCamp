@@ -51,7 +51,7 @@ Jessica thinks the issue is important, but she also wants to respect the meeting
 
 # --explanation--
 
-`So we can` is used to show purpose — it means the next thing you mention is what you intend to do It explains why someone is doing something. For example:
+`So we can` is used to show purpose — it means the next thing you mention is what you intend to do. It explains why someone is doing something. For example:
 
 `I'll finish this now so we can start the next task.` – This means the speaker wants to finish one thing to begin another soon.
 
