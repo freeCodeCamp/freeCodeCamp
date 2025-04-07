@@ -53,7 +53,7 @@ James is not making a request.
 
 In conversation, you often omit words when the meaning is clear. In `Talk to you later`, the subject `I'll` (contraction of `I will`) is left out. The full sentence would be `I'll talk to you later`. This kind of omission is common in casual speech. Another example:
 
-`See you tomorrow!` - This is a shorter way of saying `I'll see you tomorrow.`
+`See you tomorrow!` - This is a shorter way of saying `I'll see you tomorrow`.
 
 # --scene--
 
