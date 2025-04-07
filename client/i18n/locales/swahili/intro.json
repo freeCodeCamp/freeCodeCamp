@@ -308,11 +308,11 @@
     ],
     "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
     "blocks": {
-      "build-a-pokemon-search-app-project": {
-        "title": "Build a Pokémon Search App Project",
+      "build-an-rpg-creature-search-app-project": {
+        "title": "Build an RPG Creature Search App Project",
         "intro": [
           "This is one of the required projects to earn your certification.",
-          "For this project, you will build a Pokémon search app."
+          "For this project, you will build an RPG creature search app."
         ]
       },
       "build-a-cash-register-project": {
@@ -1335,7 +1335,7 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "Free Foundational C# with Microsoft",
+    "title": "Free Foundational C# with Microsoft Certification",
     "intro": [
       "Kozi hii inatoa utangulizi wa kina wa utayarishaji wa C#, unaojumuisha dhana zake za msingi, sintaksia, na matumizi ya vitendo katika ukuzaji programu.",
       "Kupitia mazoezi na miradi ya vitendo, utajifunza misingi ya C#, ikijumuisha variables, data types, control structures, na kanuni za object-oriented programming.",
@@ -1388,7 +1388,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers (Beta)",
+    "title": "A2 English for Developers (Beta) Certification",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
@@ -1567,7 +1567,7 @@
     }
   },
   "b1-english-for-developers": {
-    "title": "B1 English for Developers (Beta)",
+    "title": "B1 English for Developers (Beta) Certification",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the B1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "It will help you strengthen your foundational skills while introducing more complex grammar and usage. You'll learn how to describe places and things, share past experiences, and confidently use tenses like Present Perfect and Future. Practical communication strategies are included as well, such as managing conversations, expressing opinions, and building agreement or disagreement in discussions.",
@@ -1788,7 +1788,19 @@
       "exam-front-end-libraries": "Front End Libraries Exam",
       "sql-and-bash": "SQL and Bash",
       "git": "Git",
-      "security-and-privacy": "Security and Privacy"
+      "security-and-privacy": "Security and Privacy",
+      "python-basics": "Python Basics",
+      "python-loops-and-sequences": "Loops and Sequences",
+      "python-dictionaries-and-sets": "Dictionaries and Sets",
+      "python-error-handling": "Error Handling",
+      "python-classes-and-objects": "Classes and Objects",
+      "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
+      "python-linear-data-structures": "Linear Data Structures",
+      "python-algorithms": "Algorithms",
+      "python-graphs-and-trees": "Graphs and Trees",
+      "python-dynamic-programming": "Dynamic Programming",
+      "review-python": "Python Review",
+      "exam-python": "Python Exam"
     },
     "blocks": {
       "lecture-welcome-to-freecodecamp": {
@@ -3618,7 +3630,8 @@
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
-          "Review Typescript concepts to prepare for the upcoming quiz."
+          "Before you take the TypeScript quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including data types in TypeScript, generics, type narrowing and more."
         ]
       },
       "quiz-typescript": {
@@ -3815,189 +3828,253 @@
           "Review relational databases concepts to prepare for the upcoming quiz."
         ]
       },
-      "thsj": {
-        "title": "335",
-        "intro": []
+      "lecture-introduction-to-python": {
+        "title": "Introduction to Python",
+        "intro": ["Learn about Introduction to Python in these lectures."]
       },
-      "uwum": {
-        "title": "336",
-        "intro": []
+      "workshop-caesar-cipher": {
+        "title": "Build a Caesar Cipher",
+        "intro": ["Learn about Build a Caesar Cipher in these lectures."]
       },
-      "asfv": {
-        "title": "337",
-        "intro": []
+      "lab-rpg-character": {
+        "title": "Build an RPG character",
+        "intro": ["Learn about Build an RPG character in these lectures."]
       },
-      "bvfx": {
-        "title": "338",
-        "intro": []
+      "review-python-basics": {
+        "title": "Python Basics Review",
+        "intro": ["Learn about Python Basics Review in these lectures."]
       },
-      "buzx": {
-        "title": "339",
-        "intro": []
+      "quiz-python-basics": {
+        "title": "Python Basics Quiz",
+        "intro": ["Learn about Python Basics Quiz in these lectures."]
       },
-      "ynqt": {
-        "title": "340",
-        "intro": []
+      "lecture-working-with-loops-and-sequences": {
+        "title": "Working with Loops and Sequences",
+        "intro": [""]
       },
-      "prlo": {
-        "title": "341",
-        "intro": []
+      "workshop-placeholder-loops-and-sequences": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "jsnd": {
-        "title": "342",
-        "intro": []
+      "lab-placeholder-loops-and-sequences": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
       },
-      "sxdc": {
-        "title": "343",
-        "intro": []
+      "review-loops-and-sequences": {
+        "title": "Loops and Sequences Review",
+        "intro": [""]
       },
-      "pegc": {
-        "title": "344",
-        "intro": []
+      "quiz-loops-and-sequences": {
+        "title": "Loops and Sequences Quiz",
+        "intro": [""]
       },
-      "mzae": {
-        "title": "345",
-        "intro": []
+      "lecture-working-with-dictionaries-and-sets": {
+        "title": "Working with Dictionaries and Sets",
+        "intro": [""]
       },
-      "gjbf": {
-        "title": "346",
-        "intro": []
+      "lecture-working-with-modules": {
+        "title": "Working with Modules",
+        "intro": [""]
       },
-      "hzab": {
-        "title": "347",
-        "intro": []
+      "workshop-placeholder-dictionaries-and-sets": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
       },
-      "ggea": {
-        "title": "348",
-        "intro": []
+      "lab-placeholder-dictionaries-and-sets": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
       },
-      "vgvz": {
-        "title": "349",
-        "intro": []
+      "review-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Review",
+        "intro": [""]
       },
-      "hfwi": {
-        "title": "350",
-        "intro": []
+      "quiz-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Quiz",
+        "intro": [""]
       },
-      "rnwr": {
-        "title": "351",
-        "intro": []
+      "lecture-understanding-error-handling": {
+        "title": "Understanding Error Handling",
+        "intro": [""]
       },
-      "zhhp": {
-        "title": "352",
-        "intro": []
+      "lab-isbn-validator": {
+        "title": "Debug a ISBN Validator",
+        "intro": [""]
       },
-      "movb": {
-        "title": "353",
-        "intro": []
+      "review-error-handling": {
+        "title": "Error Handling Review",
+        "intro": [""]
       },
-      "ngor": {
-        "title": "354",
-        "intro": []
+      "quiz-error-handling": {
+        "title": "Error Handling Quiz",
+        "intro": [""]
       },
-      "gora": {
-        "title": "355",
-        "intro": []
+      "lecture-classes-and-objects": {
+        "title": "Classes and Objects",
+        "intro": [""]
       },
-      "xdly": {
-        "title": "356",
-        "intro": []
+      "workshop-placeholder-classes-and-objects": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
       },
-      "pzmc": {
-        "title": "357",
-        "intro": []
+      "lab-budget-app": {
+        "title": "Build a Budget App",
+        "intro": [""]
       },
-      "oeqv": {
-        "title": "358",
-        "intro": []
+      "review-classes-and-objects": {
+        "title": "Classes and Objects Review",
+        "intro": [""]
       },
-      "mfwu": {
-        "title": "359",
-        "intro": []
+      "quiz-classes-and-objects": {
+        "title": "Classes and Objects Quiz",
+        "intro": [""]
       },
-      "dfcd": {
-        "title": "360",
-        "intro": []
+      "lecture-understanding-object-oriented-programming-and-encapsulation": {
+        "title": "Understanding Object Oriented Programming and Encapsulation",
+        "intro": [""]
       },
-      "dfwl": {
-        "title": "361",
-        "intro": []
+      "workshop-placeholder-oop-1": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "adzm": {
-        "title": "362",
-        "intro": []
+      "lab-placeholder-oop-1": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "kaui": {
-        "title": "363",
-        "intro": []
+      "lecture-understanding-inheritance-and-polymorphism": {
+        "title": "Understanding Inheritance and polymorphism",
+        "intro": [""]
       },
-      "zpjj": {
-        "title": "364",
-        "intro": []
+      "workshop-placeholder-oop-2": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "ghfk": {
-        "title": "365",
-        "intro": []
+      "lab-polygon-area-calculator": {
+        "title": "Build a Polygon Area Calculator",
+        "intro": [""]
       },
-      "ukem": {
-        "title": "366",
-        "intro": []
+      "lecture-understanding-abstraction": {
+        "title": "Understanding abstraction",
+        "intro": [""]
       },
-      "sdjg": {
-        "title": "367",
-        "intro": []
+      "workshop-placeholder-oop-3": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "qjov": {
-        "title": "368",
-        "intro": []
+      "lab-placeholder-oop-3": {
+        "title": "",
+        "intro": [""]
       },
-      "hjku": {
-        "title": "370",
-        "intro": []
+      "review-object-oriented-programming": {
+        "title": "Object Oriented Programming Review",
+        "intro": [""]
       },
-      "kegi": {
-        "title": "377",
-        "intro": []
+      "quiz-object-oriented-programming": {
+        "title": "Object Oriented Programming Quiz",
+        "intro": [""]
       },
-      "vnfu": {
-        "title": "379",
-        "intro": []
+      "lecture-working-with-common-data-structures": {
+        "title": "Working with common data structures",
+        "intro": [""]
       },
-      "rlli": {
-        "title": "380",
-        "intro": []
+      "workshop-linked-list-class": {
+        "title": "Build a Linked List Class",
+        "intro": [""]
       },
-      "rjpv": {
-        "title": "381",
-        "intro": []
+      "lab-hash-table-class": {
+        "title": "Build an Hash Table Class",
+        "intro": [""]
       },
-      "xbri": {
-        "title": "382",
-        "intro": []
+      "review-data-structures": {
+        "title": "Data Structures Review",
+        "intro": [""]
       },
-      "xfrd": {
-        "title": "383",
-        "intro": []
+      "quiz-data-structures": {
+        "title": "Data Structures Quiz",
+        "intro": [""]
       },
-      "nkjt": {
-        "title": "384",
-        "intro": []
+      "lecture-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms",
+        "intro": [""]
       },
-      "pgjj": {
-        "title": "385",
-        "intro": []
+      "workshop-binary-search": {
+        "title": "Build a Binary Search",
+        "intro": [""]
       },
-      "exom": {
-        "title": "386",
-        "intro": []
+      "lab-bisection-method": {
+        "title": "Build a Bisection Method",
+        "intro": [""]
       },
-      "bvqc": {
-        "title": "387",
-        "intro": []
+      "workshop-merge-sort": {
+        "title": "Build a Merge Sort",
+        "intro": [""]
       },
-      "xish": {
-        "title": "388",
-        "intro": []
+      "lab-quick-sort": {
+        "title": "Build a Quick Sort",
+        "intro": [""]
+      },
+      "lab-selection-sort": {
+        "title": "Build a Selection Sort",
+        "intro": [""]
+      },
+      "lab-luhn-argorithm": {
+        "title": "Build a Luhn Algorithm",
+        "intro": [""]
+      },
+      "review-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Review",
+        "intro": [""]
+      },
+      "quiz-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Quiz",
+        "intro": [""]
+      },
+      "lecture-understanding-graphs-and-trees": {
+        "title": "Understanding Graphs and Trees",
+        "intro": [""]
+      },
+      "workshop-shortest-path-algorithm": {
+        "title": "Build a Shortest Path Algorithm",
+        "intro": [""]
+      },
+      "lab-adjacency-list-matrix-converter": {
+        "title": "Build an Adjacency List/Matrix Converter",
+        "intro": [""]
+      },
+      "workshop-breadth-first-search": {
+        "title": "Build a Breadth First Search",
+        "intro": [""]
+      },
+      "lab-depth-first-search": {
+        "title": "Build a Depth First Search",
+        "intro": [""]
+      },
+      "review-graphs-and-trees": {
+        "title": "Graphs and Trees Review",
+        "intro": [""]
+      },
+      "quiz-graphs-and-trees": {
+        "title": "Graphs and Trees Review",
+        "intro": [""]
+      },
+      "lecture-understanding-dynamic-programming": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [""]
+      },
+      "lab-nth-fibonacci-number": {
+        "title": "Build an Nth Fibonacci Number Calculator",
+        "intro": [""]
+      },
+      "review-dynamic-programming": {
+        "title": "Dynamic Programming Review",
+        "intro": [""]
+      },
+      "quiz-dynamic-programming": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [""]
+      },
+      "review-python": {
+        "title": "Python Review",
+        "intro": [""]
       },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
@@ -4006,7 +4083,6 @@
     }
   },
   "misc-text": {
-    "certification": "Uthibitishaji wa {{cert}}",
     "browse-other": "Browse our other free certifications",
     "courses": "Kozi",
     "steps": "Hatua",
