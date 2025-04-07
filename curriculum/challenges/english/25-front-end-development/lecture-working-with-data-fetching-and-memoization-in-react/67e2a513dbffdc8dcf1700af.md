@@ -220,19 +220,111 @@ And once you do that, everything works fine:
 
 ## --text--
 
-What Is the useOptimistic Hook, and How Does It Work? question?
+What is the purpose of the `useOptimistic` hook?
 
 ## --answers--
 
-Answer 1
+It allows components to fetch data from the server before rendering the UI.
+
+### --feedback--
+
+This hook ensures the UI reflects expected changes before an async operation completes.
 
 ---
 
-Answer 2
+It helps manage optimistic updates by updating the UI immediately while waiting for an async operation, like a server response.
 
 ---
 
-Answer 3
+It enables automatic error handling and rollback for failed API requests in React applications.
+
+### --feedback--
+
+This hook ensures the UI reflects expected changes before an async operation completes.
+
+---
+
+It optimizes state updates by batching them together to improve performance.
+
+### --feedback--
+
+This hook ensures the UI reflects expected changes before an async operation completes.
+
+## --video-solution--
+
+2
+
+## --text--
+
+How is the `useOptimistic` hook different from a loading state?
+
+## --answers--
+
+A loading state shows UI feedback while waiting for a response, whereas `useOptimistic` updates the UI immediately based on an expected outcome.
+
+---
+
+A loading state modifies server data instantly while `useOptimistic` only updates the client UI.
+
+### --feedback--
+
+One updates the UI before the server even knows about the request.
+
+---
+
+The `useOptimistic` hook is used for handling errors, whereas a loading state is only for showing spinners.
+
+### --feedback--
+
+One updates the UI before the server even knows about the request.
+
+---
+
+Both are the same, but `useOptimistic` provides automatic retries for failed requests.
+
+### --feedback--
+
+One updates the UI before the server even knows about the request.
+
+## --video-solution--
+
+1
+
+## --text--
+
+What does `addOptimistic` do in the `useOptimistic` hook syntax below?
+
+```js
+const [optimisticState, addOptimistic] = useOptimistic(actualState, updateFunction);
+```
+
+## --answers--
+
+It applies the optimistic update before the actual state changes, providing a smoother user experience.
+
+---
+
+It fetches the real state from the server and updates the UI accordingly.
+
+### --feedback--
+
+This function updates the UI before the actual state changes.
+
+---
+
+It replaces the actual state with a temporary state after receiving a server response.
+
+### --feedback--
+
+This function updates the UI before the actual state changes.
+
+---
+
+It validates server data before applying the optimistic update to the UI.
+
+### --feedback--
+
+This function updates the UI before the actual state changes.
 
 ## --video-solution--
 
