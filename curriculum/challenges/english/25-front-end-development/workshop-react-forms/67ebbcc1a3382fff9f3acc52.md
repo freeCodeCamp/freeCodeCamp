@@ -13,10 +13,42 @@ Return a `div` element with a `className` of `form-wrap`. Inside the `div`, crea
 
 # --hints--
 
-Test 1
+You should have a `div` element.
 
 ```js
+assert.exists(document.querySelector("div"));
+```
 
+Your `div` element should have a `className` of `form-wrap`.
+
+```js
+assert.exists(document.querySelector("div.form-wrap"));
+```
+
+You should create an `h2` element inside your `div` element.
+
+```js
+assert.exists(document.querySelector(".form-wrap > h2"));
+```
+
+Your `h2` element should have the text `"Superhero Application Form"`.
+
+```js
+const h2El = document.querySelector("h2")
+assert.equal(h2El.textContent, "Superhero Application Form");
+```
+
+You should create a `p` element inside your `div` element. Make sure it comes after the `h2`.
+
+```js
+assert.exists(document.querySelector(".form-wrap > h2 + p"));
+```
+
+Your `p` element should have the text `"Please complete all fields"`.
+
+```js
+const pEl = document.querySelector("p")
+assert.equal(pEl.textContent, "Please complete all fields");
 ```
 
 # --seed--
@@ -118,8 +150,10 @@ export const SuperheroForm = () => {
   const [powerSource, setPowerSource] = React.useState('');
   const [powers, setPowers] = React.useState([]);
 
---fcc-editable-region--
-
---fcc-editable-region--
+  return (
+    --fcc-editable-region--
+    
+    --fcc-editable-region--
+  )
 };
 ```

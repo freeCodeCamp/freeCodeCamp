@@ -18,10 +18,25 @@ So, begin by creating the state variables and setter functions you need: `heroNa
 
 # --hints--
 
-Test 1
+You should use the array destructuring syntax to set a `heroName` state variable and a `setHeroName` setter.
 
 ```js
+assert.match(code, /(const|let)\s+\[\s*(heroName)\s*,\s*(setHeroName)\s*\]\s*/);
+```
 
+You `heroName` `useState` should have an intial value of empty string.
+
+```js
+async () => {
+  const abuseState = __helpers.spyOn(React, "useState");
+  const script = [...document.querySelectorAll("script")].find((s) => s.dataset.src ===  "index.jsx").innerText;
+  const exports = {};
+  const _a = eval(script);
+  const _b = await __helpers.prepTestComponent(exports.SuperheroForm);
+  assert.equal(abuseState.calls[0], "");
+  console.log("script: ", script)
+  console.log("state: ", abuseState)
+}
 ```
 
 # --seed--
@@ -120,5 +135,9 @@ export const SuperheroForm = () => {
   --fcc-editable-region--
 
   --fcc-editable-region--
+
+  return (
+    
+  )
 };
 ```
