@@ -104,7 +104,29 @@ Placeholder distractor 3
 #### --answer--
 
 Placeholder answer
-`.repeat(options.questionCount!)}
+
+`.repeat(options.questionCount! - 1)}
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
 `;
 
 const getVideoChallengeTemplate = (

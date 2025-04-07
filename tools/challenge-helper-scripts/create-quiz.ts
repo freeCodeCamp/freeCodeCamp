@@ -204,7 +204,7 @@ void prompt([
     message: 'Should this quiz have either ten or twenty questions?',
     default: 20,
     type: 'list',
-    choices: [10, 20]
+    choices: [20, 10]
   }
 ])
   .then(
