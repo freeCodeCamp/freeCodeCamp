@@ -39,9 +39,9 @@ This doesn't relate to the question about setting the deadline.
 
 `Not yet.` is a short and natural way to say that something hasn't happened or been completed up to the present moment, but it may happen in the future. For example:
 
-- Person A: `Have you sent the email?` - Here, the person is asking about an email that should be sent.
+- Person 1: `Have you sent the email?` - Here, the person is asking about an email that should be sent.
 
-- Person B: `Not yet.` – This means the email hasn't been sent, but that the person still plans to send it.
+- Person 2: `Not yet.` – This means the email hasn't been sent, but that the person still plans to send it.
 
 # --scene--
 
