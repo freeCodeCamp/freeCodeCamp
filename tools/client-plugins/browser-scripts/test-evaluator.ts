@@ -80,11 +80,6 @@ const __utils = (() => {
   };
 })();
 
-// Fake Deep Equal dependency
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const DeepEqual = (a: unknown, b: unknown) =>
-  JSON.stringify(a) === JSON.stringify(b);
-
 // We can't simply import these because of how webpack names them when building
 // the bundle. Since both assert and __helpers have to exist in the global
 // scope, we have to declare them.

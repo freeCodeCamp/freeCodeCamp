@@ -146,6 +146,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
           />
           <ReactTooltip className='react-tooltip' effect='solid' html={true} />
           <Row className='text-center'>
+            <Spacer size='xs' />
             <button
               className='heatmap-nav-btn'
               disabled={!pages[this.state.pageIndex - 1]}
@@ -170,7 +171,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
               &gt;
             </button>
           </Row>
-          <Spacer size='m' />
+          <Spacer size='xs' />
         </section>
       </FullWidthRow>
     );
