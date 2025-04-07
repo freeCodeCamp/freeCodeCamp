@@ -144,7 +144,7 @@ async function createQuizChallenge(
     await withTrace(fs.mkdir, newChallengeDir);
   }
   return createQuizFile({
-    challengeType: 8,
+    challengeType: '8',
     projectPath: newChallengeDir + '/',
     title: title,
     dashedName: block,

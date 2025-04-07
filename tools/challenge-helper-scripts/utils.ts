@@ -10,7 +10,7 @@ import {
   isTaskChallenge,
   getTaskNumberFromTitle
 } from './helpers/task-helpers';
-import { getQuizTemplate } from './helpers/get-quiz-template';
+import { getTemplate } from './helpers/get-challenge-template';
 
 interface Options {
   stepNum: number;
@@ -21,7 +21,7 @@ interface Options {
 }
 
 interface QuizOptions {
-  challengeType: number;
+  challengeType: string;
   projectPath?: string;
   title: string;
   dashedName: string;
@@ -67,7 +67,9 @@ const createQuizFile = ({
   questionCount
 }: QuizOptions): ObjectID => {
   const challengeId = new ObjectID();
-  const template = getQuizTemplate({
+  const template = getTemplate(challengeType);
+
+  const quizText = template({
     challengeId,
     challengeType,
     title,
@@ -75,7 +77,7 @@ const createQuizFile = ({
     questionCount
   });
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, template);
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, quizText);
   return challengeId;
 };
 
