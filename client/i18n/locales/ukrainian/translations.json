@@ -401,7 +401,7 @@
     "welcome-1": "З поверненням, {{name}}.",
     "welcome-2": "Ласкаво просимо до freeCodeCamp.org",
     "start-at-beginning": "Якщо ви новачок у програмуванні, ми рекомендуємо <0>почати з початку</0>.",
-    "happy-coding": "Happy coding!",
+    "happy-coding": "Щасливого програмування!",
     "upcoming-lessons": "Майбутні уроки",
     "learn": "Навчання",
     "add-subtitles": "Допомогти покращити або додати субтитри",
@@ -456,9 +456,6 @@
     "sign-in-see-benefits": "Увійдіть, щоб побачити переваги донорів",
     "card-has-been-updated": "Вашу картку успішно оновлено.",
     "contact-support-mistake": "Якщо виникла помилка, будь ласка, зв’яжіться з нами на donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "Сертифікація «{{title}}»"
-    },
     "editor-tabs": {
       "code": "Код",
       "tests": "Тести",
