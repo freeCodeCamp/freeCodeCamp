@@ -10,7 +10,7 @@ interface ChallengeOptions {
   title: string;
   dashedName: string;
   challengeType: string;
-  questionCount: number;
+  questionCount?: number;
 }
 
 const buildFrontMatter = ({
@@ -77,7 +77,7 @@ const getQuizChallengeTemplate = (
 
 # --description--
 
-To pass the quiz, you must correctly answer at least ${options.questionCount == 20 ? '18' : '9'} of the ${options.questionCount.toString()} questions below.
+To pass the quiz, you must correctly answer at least ${options.questionCount! == 20 ? '18' : '9'} of the ${options.questionCount!.toString()} questions below.
 
 # --quizzes--
 
@@ -104,7 +104,7 @@ Placeholder distractor 3
 #### --answer--
 
 Placeholder answer
-`.repeat(options.questionCount)}
+`.repeat(options.questionCount!)}
 `;
 
 const getVideoChallengeTemplate = (
