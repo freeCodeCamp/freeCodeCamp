@@ -3777,7 +3777,9 @@
       },
       "quiz-python-basics": {
         "title": "Python Basics Quiz",
-        "intro": ["Learn about Python Basics Quiz in these lectures."]
+        "intro": [
+          "Test what you've learned about Python basics with this quiz."
+        ]
       },
       "lecture-working-with-loops-and-sequences": {
         "title": "Working with Loops and Sequences",
@@ -3797,7 +3799,9 @@
       },
       "quiz-loops-and-sequences": {
         "title": "Loops and Sequences Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about loops and sequences in Python with this quiz."
+        ]
       },
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Working with Dictionaries and Sets",
@@ -3821,7 +3825,9 @@
       },
       "quiz-dictionaries-and-sets": {
         "title": "Dictionaries and Sets Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about dictionaries and sets in Python with this quiz."
+        ]
       },
       "lecture-understanding-error-handling": {
         "title": "Understanding Error Handling",
@@ -3837,7 +3843,9 @@
       },
       "quiz-error-handling": {
         "title": "Error Handling Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about Error Handling in Python with this quiz."
+        ]
       },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
@@ -3847,17 +3855,16 @@
         "title": "Placeholder - waiting for title",
         "intro": [""]
       },
-      "lab-budget-app": {
-        "title": "Build a Budget App",
-        "intro": [""]
-      },
+      "lab-budget-app": { "title": "Build a Budget App", "intro": [""] },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",
         "intro": [""]
       },
       "quiz-classes-and-objects": {
         "title": "Classes and Objects Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about classes and objects in Python with this quiz."
+        ]
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Understanding Object Oriented Programming and Encapsulation",
@@ -3891,17 +3898,16 @@
         "title": "Placeholder - Waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-oop-3": {
-        "title": "",
-        "intro": [""]
-      },
+      "lab-placeholder-oop-3": { "title": "", "intro": [""] },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
         "intro": [""]
       },
       "quiz-object-oriented-programming": {
         "title": "Object Oriented Programming Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about object oriented programming in python with this quiz."
+        ]
       },
       "lecture-working-with-common-data-structures": {
         "title": "Working with common data structures",
@@ -3921,7 +3927,9 @@
       },
       "quiz-data-structures": {
         "title": "Data Structures Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about data structures in Python with this quiz."
+        ]
       },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
@@ -3935,14 +3943,8 @@
         "title": "Build a Bisection Method",
         "intro": [""]
       },
-      "workshop-merge-sort": {
-        "title": "Build a Merge Sort",
-        "intro": [""]
-      },
-      "lab-quick-sort": {
-        "title": "Build a Quick Sort",
-        "intro": [""]
-      },
+      "workshop-merge-sort": { "title": "Build a Merge Sort", "intro": [""] },
+      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
       "lab-selection-sort": {
         "title": "Build a Selection Sort",
         "intro": [""]
@@ -3957,7 +3959,9 @@
       },
       "quiz-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+        ]
       },
       "lecture-understanding-graphs-and-trees": {
         "title": "Understanding Graphs and Trees",
@@ -3984,8 +3988,10 @@
         "intro": [""]
       },
       "quiz-graphs-and-trees": {
-        "title": "Graphs and Trees Review",
-        "intro": [""]
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Test what you've learned about graphs and trees in Python with this quiz."
+        ]
       },
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
@@ -4001,12 +4007,11 @@
       },
       "quiz-dynamic-programming": {
         "title": "Dynamic Programming Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about dynamic programming in python with this quiz."
+        ]
       },
-      "review-python": {
-        "title": "Python Review",
-        "intro": [""]
-      },
+      "review-python": { "title": "Python Review", "intro": [""] },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
