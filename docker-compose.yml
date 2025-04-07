@@ -21,19 +21,19 @@ services:
     ports:
       - '1025:1025'
       - '8025:8025'
-  api:
-    restart: unless-stopped
-    depends_on:
-      - mongo
-      - mailhog
-    image: fcc-api
-    env_file:
-      - .env
-    environment:
-      # The api cannot connect to mongodb or mailhog via localhost from inside the
-      # container, so we have to override these variables.
-      - MONGOHQ_URL=mongodb://mongo:27017/freecodecamp?directConnection=true
-      - MAILHOG_HOST=mailhog
-      - HOST=0.0.0.0
-    ports:
-      - '3000:3000'
+  # api:
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - mongo
+  #     - mailhog
+  #   image: fcc-api
+  #   env_file:
+  #     - .env
+  #   environment:
+  #     # The api cannot connect to mongodb or mailhog via localhost from inside the
+  #     # container, so we have to override these variables.
+  #     - MONGOHQ_URL=mongodb://mongo:27017/freecodecamp?directConnection=true
+  #     - MAILHOG_HOST=mailhog
+  #     - HOST=0.0.0.0
+  #   ports:
+  #     - '3000:3000'
