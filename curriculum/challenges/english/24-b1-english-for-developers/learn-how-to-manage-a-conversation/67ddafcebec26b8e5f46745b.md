@@ -27,7 +27,7 @@ This means in addition to something or other than what has already been mentione
 
 # --explanation--
 
-`Else` in the expression `Anything else` is used to ask if there is something in addition to what has already been said or done. For example:
+`Else` in the expression `anything else` is used to ask if there is something in addition to what has already been said or done. For example:
 
 `Would you like anything else with your order?` - Here, you are asking if the other person wants something in addition to what they already asked for.
 
