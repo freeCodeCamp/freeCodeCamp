@@ -3941,7 +3941,10 @@
       },
       "workshop-merge-sort": {
         "title": "Build a Merge Sort",
-        "intro": [""]
+        "intro": [
+          "The Merge Sort Algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll learn how to interact with data structures by sorting a list of random numbers using the Merge Sort Algorithm."
+        ]
       },
       "lab-quick-sort": {
         "title": "Build a Quick Sort",
