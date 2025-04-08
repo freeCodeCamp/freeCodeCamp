@@ -16,15 +16,15 @@ What is prop drilling?
 
 Prop drilling is the most basic approach to state management in React applications. It looks simple, but can get messy quickly, and is very hard to scale.
 
-Let’s look at what prop drilling is, why it’s a problem, and a good replacement for it as an application grows.
+Let's look at what prop drilling is, why it's a problem, and a good replacement for it as an application grows.
 
 Prop drilling is the process of passing props from a parent component to deeply nested child components, even when some of the child components don't need the props.
 
-For example, say you have three components named `Parent`, `Child`, and `Grandchild`. If you want to use some data in the `Grandchild` component, but it’s in the `Parent` component, you’d need to pass it from the `Parent` to the `Child` component, then from the `Child` to the `Grandchild` component.
+For example, say you have three components named `Parent`, `Child`, and `Grandchild`. If you want to use some data in the `Grandchild` component, but it's in the `Parent` component, you'd need to pass it from the `Parent` to the `Child` component, then from the `Child` to the `Grandchild` component.
 
 Or if the data is even further up the chain, the data might have to be passed to the `Parent` component, too.
 
-Here, the data I want to display is the string `Hello, Prop Drilling!`. It’s assigned to the greeting variable in the root `App` component:
+Here, the data I want to display is the string `Hello, Prop Drilling!`. It's assigned to the greeting variable in the root `App` component:
 
 ```jsx
 import "./App.css";
@@ -51,7 +51,7 @@ const Parent = ({ greeting }) => {
 export default Parent;
 ```
 
-And here’s the `Child` component that passes it to the `Grandchild` component:
+And here's the `Child` component that passes it to the `Grandchild` component:
 
 ```jsx
 import Grandchild from "./Grandchild";
@@ -73,7 +73,7 @@ const Grandchild = ({ greeting }) => {
 export default Grandchild;
 ```
 
-Here’s what it looks like in the browser:
+Here's what it looks like in the browser:
 
 [Image showing the rendered page with a single `h1` element that has the text `Hello, Prop Drilling!`]
 
@@ -115,7 +115,7 @@ export default App;
 
 To avoid prop drilling, especially in large, complex applications, consider using the Context API or state management libraries like Redux and Redux Toolkit, Zustand, Recoil, and others.
 
-You’ll learn more about these in the coming lectures.
+You'll learn more about these in the coming lectures.
 
 # --questions--
 
