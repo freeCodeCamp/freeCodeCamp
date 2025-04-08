@@ -4,6 +4,16 @@
   text-align: center;
 }
 
+.calendar-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-head h2 {
+  min-width: 200px;
+}
+
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
