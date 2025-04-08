@@ -223,6 +223,7 @@ Accepted languages are ${curriculumLangs.join(', ')}`);
     filteredCurriculum = {
       [target]: curriculum[target]
     };
+    updatedFilters.superBlock = target;
   } else if (filters?.block) {
     const target = stringSimilarity.findBestMatch(filters.block, blocks)
       .bestMatch.target;
