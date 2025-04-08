@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Object Oriented Programming Review
 
-This is a test for the new project-based curriculum.
+Before you're quizzed on object oriented programming, you should review what you've learned about it. [Add more details]

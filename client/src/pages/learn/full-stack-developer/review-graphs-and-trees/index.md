@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Graphs and Trees Review
 
-This is a test for the new project-based curriculum.
+Before you're quizzed on graphs and trees, you should review what you've learned about them. [Add more details]

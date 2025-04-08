@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Classes and Objects Review
 
-This is a test for the new project-based curriculum.
+Before you're quizzed on classes and objects, you should review what you've learned about them. [Add more details]

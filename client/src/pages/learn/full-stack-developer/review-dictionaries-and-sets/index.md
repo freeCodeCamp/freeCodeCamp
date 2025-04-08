@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Dictionaries and Sets review
 
-This is a test for the new project-based curriculum.
+Before you're quizzed on dictionaries and sets, you should review what you've learned about them. [Add more details]

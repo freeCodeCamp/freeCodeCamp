@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Python Review
 
-This is a test for the new project-based curriculum.
+Review Python concepts to prepare for the upcoming quiz.

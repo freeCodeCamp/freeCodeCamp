@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Searching and Sorting Algorithms Review
 
-This is a test for the new project-based curriculum.
+Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them. [Add more details]

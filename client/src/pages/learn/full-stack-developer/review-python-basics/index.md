@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Python Basics Review
 
-This is a test for the new project-based curriculum.
+efore you're quizzed on Python basics, you should review what you've learned about it. [Add more details]
