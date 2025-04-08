@@ -456,9 +456,6 @@
     "sign-in-see-benefits": "Inicia sesión para ver tus beneficios de ser apoyo",
     "card-has-been-updated": "Tu tarjeta ha sido actualizada correctamente.",
     "contact-support-mistake": "Si crees que ha habido un error, por favor contáctanos a donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "Certificación {{title}}"
-    },
     "editor-tabs": {
       "code": "Código",
       "tests": "Pruebas",

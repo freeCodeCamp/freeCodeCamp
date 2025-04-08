@@ -7,16 +7,16 @@
   "template": "<body><div id='root'></div><div id='challenge-node'></div>${ source || '' }</body>",
   "required": [
     {
-      "src": "https://unpkg.com/react@16.4.0/umd/react.production.min.js"
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/react/16.4.0/umd/react.production.min.js"
     },
     {
-      "src": "https://unpkg.com/react-dom@16.4.0/umd/react-dom.production.min.js"
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom.production.min.js"
     },
     {
-      "src": "https://unpkg.com/react-dom@16.4.0/umd/react-dom-test-utils.production.min.js"
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom-test-utils.production.min.js"
     },
     {
-      "src": "https://unpkg.com/react-dom@16.4.0/umd/react-dom-server.browser.production.min.js"
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom-server.browser.production.min.js"
     }
   ],
   "superBlock": "front-end-development-libraries",
