@@ -8,11 +8,11 @@ dashedName: what-is-the-useoptimistic-hook-and-how-does-it-work
 
 # --description--
 
-Watch the lecture video and answer the questions below.
+Watch the video or read the transcript and answer the questions below.
 
 # --transcript--
 
-How does data fetching work in React?
+What is the `useOptimistic` hook and how does it work?
 
 Recent versions of React introduced server components and server actions to shift some of the rendering and logic responsibilities to the server.
 
