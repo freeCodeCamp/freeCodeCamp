@@ -9,6 +9,7 @@ import { SuperBlocks } from '../../shared/config/curriculum';
 import { createStepFile, validateBlockName } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
+import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 
 const helpCategories = [
   'HTML-CSS',
@@ -36,7 +37,10 @@ interface CreateProjectArgs {
   superBlock: SuperBlocks;
   block: string;
   helpCategory: string;
-  order: number;
+  blockType?: string;
+  blockLayout?: string;
+  questionCount?: number;
+  order?: number;
   title?: string;
 }
 
@@ -44,12 +48,21 @@ async function createProject(
   superBlock: SuperBlocks,
   block: string,
   helpCategory: string,
-  order: number,
+  blockType?: string,
+  blockLayout?: string,
+  questionCount?: number,
+  order?: number,
   title?: string
 ) {
+  if (blockType === BlockTypes.quiz) {
+    createQuiz(superBlock, block, helpCategory, questionCount, title);
+    return;
+  }
+
   if (!title) {
     title = block;
   }
+
   void updateIntroJson(superBlock, block, title);
 
   const challengeId = await createFirstChallenge(superBlock, block);
@@ -58,8 +71,10 @@ async function createProject(
     block,
     title,
     helpCategory,
+    challengeId,
     order,
-    challengeId
+    blockType,
+    blockLayout
   );
   // TODO: remove once we stop relying on markdown in the client.
   void createIntroMD(superBlock, block, title);
@@ -91,15 +106,22 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  order: number,
-  challengeId: ObjectID
+  challengeId: ObjectID,
+  order?: number,
+  blockType?: string,
+  blockLayout?: string
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
   const newMeta = await parseJson<Meta>('./base-meta.json');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  newMeta.order = order;
+  if (superBlock !== SuperBlocks.FullStackDeveloper) {
+    newMeta.order = order!;
+  } else {
+    newMeta.blockType = blockType!;
+    newMeta.blockLayout = blockLayout!;
+  }
   newMeta.superBlock = superBlock;
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
@@ -192,7 +214,7 @@ void prompt([
   {
     name: 'superBlock',
     message: 'Which certification does this belong to?',
-    default: SuperBlocks.RespWebDesign,
+    default: SuperBlocks.FullStackDeveloper,
     type: 'list',
     choices: Object.values(SuperBlocks)
   },
@@ -216,6 +238,33 @@ void prompt([
     choices: helpCategories
   },
   {
+    name: 'blockType',
+    message: 'Choose a block type',
+    default: BlockTypes.lab,
+    type: 'list',
+    choices: Object.values(BlockTypes),
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper
+  },
+  {
+    name: 'blockLayout',
+    message: 'Choose a block layout',
+    default: BlockLayouts.ChallengeList,
+    type: 'list',
+    choices: Object.values(BlockLayouts),
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper
+  },
+  {
+    name: 'questionCount',
+    message: 'Choose a question count',
+    default: 20,
+    type: 'list',
+    choices: [10, 20],
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    when: answers => answers.blockType === BlockTypes.quiz
+  },
+  {
     name: 'order',
     message: 'Which position does this appear in the certificate?',
     default: 42,
@@ -224,6 +273,8 @@ void prompt([
         ? true
         : 'Order must be an number greater than zero.';
     },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    when: answers => answers.superBlock !== SuperBlocks.FullStackDeveloper,
     filter: (order: string) => {
       return parseInt(order, 10);
     }
@@ -235,9 +286,21 @@ void prompt([
       block,
       title,
       helpCategory,
+      blockType,
+      blockLayout,
+      questionCount,
       order
     }: CreateProjectArgs) =>
-      await createProject(superBlock, block, helpCategory, order, title)
+      await createProject(
+        superBlock,
+        block,
+        helpCategory,
+        blockType,
+        blockLayout,
+        questionCount,
+        order,
+        title
+      )
   )
   .then(() =>
     console.log(
