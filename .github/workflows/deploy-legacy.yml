@@ -142,6 +142,7 @@ jobs:
     needs: [setup-jobs, api]
     runs-on: ubuntu-22.04
     strategy:
+      fail-fast: false
       matrix:
         node-version: [20]
         lang-name-full:
@@ -176,7 +177,6 @@ jobs:
             lang-name-short: ger
           - lang-name-full: swahili
             lang-name-short: swa
-
     permissions:
       deployments: write
       contents: read
