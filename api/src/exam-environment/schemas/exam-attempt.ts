@@ -29,3 +29,31 @@ export const examEnvironmentPostExamAttempt = {
     500: STANDARD_ERROR
   }
 };
+
+const examEnvAttempt = Type.Object({});
+
+export const examEnvironmentGetExamAttempts = {
+  params: Type.Object({
+    attemptId: Type.Optional(
+      Type.String({ format: 'objectid', maxLength: 24, minLength: 24 })
+    )
+  }),
+  headers: Type.Object({
+    'exam-environment-authorization-token': Type.String()
+  }),
+  response: {
+    200: Type.Object({
+      envExamAttempt: Type.Union([Type.Array(examEnvAttempt), examEnvAttempt]),
+      result: Type.Optional(
+        Type.Object({
+          score: Type.Number(),
+          passingPercent: Type.Number()
+        })
+      )
+    }),
+    400: STANDARD_ERROR,
+    403: STANDARD_ERROR,
+    404: STANDARD_ERROR,
+    500: STANDARD_ERROR
+  }
+};
