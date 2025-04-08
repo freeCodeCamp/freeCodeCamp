@@ -5,11 +5,12 @@ import { useTranslation } from 'react-i18next';
 import EditorTabs from './editor-tabs';
 
 interface ActionRowProps {
+  dailyCodingChallengeLanguage: 'javascript' | 'python';
   hasNotes: boolean;
   hasPreview: boolean;
-  isDailyChallenge: boolean;
+  isDailyCodingChallenge: boolean;
   isProjectBasedChallenge?: boolean;
-  setDailyChallengeLanguage: (language: 'javascript' | 'python') => void;
+  setDailyCodingChallengeLanguage: (language: 'javascript' | 'python') => void;
   showConsole: boolean;
   showNotes: boolean;
   showInstructions: boolean;
@@ -28,8 +29,9 @@ const ActionRow = ({
   showConsole,
   showInstructions,
   isProjectBasedChallenge,
-  isDailyChallenge,
-  setDailyChallengeLanguage
+  isDailyCodingChallenge,
+  dailyCodingChallengeLanguage,
+  setDailyCodingChallengeLanguage
 }: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
 
@@ -59,29 +61,39 @@ const ActionRow = ({
     <div className='action-row' data-playwright-test-label='action-row'>
       <div className='tabs-row' data-playwright-test-label='tabs-row'>
         {/* left */}
-        {!isProjectBasedChallenge && (
-          <button
-            data-playwright-test-label='instructions-button'
-            aria-expanded={!!showInstructions}
-            onClick={() => togglePane('showInstructions')}
-          >
-            {t('learn.editor-tabs.instructions')}
-          </button>
-        )}
-        <EditorTabs data-playwright-test-label='editor-tabs' />
+        <div className='tabs-row-left'>
+          {!isProjectBasedChallenge && (
+            <button
+              data-playwright-test-label='instructions-button'
+              aria-expanded={!!showInstructions}
+              onClick={() => togglePane('showInstructions')}
+            >
+              {t('learn.editor-tabs.instructions')}
+            </button>
+          )}
+          <EditorTabs data-playwright-test-label='editor-tabs' />
+        </div>
         {/* middle */}
-        {isDailyChallenge && (
-          <>
-            <button onClick={() => setDailyChallengeLanguage('javascript')}>
-              JavaScript
-            </button>
-            <button onClick={() => setDailyChallengeLanguage('python')}>
-              Python
-            </button>
-          </>
-        )}
+        <div className='tabs-row-middle'>
+          {isDailyCodingChallenge && (
+            <>
+              <button
+                aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
+                onClick={() => setDailyCodingChallengeLanguage('javascript')}
+              >
+                JavaScript
+              </button>
+              <button
+                aria-expanded={dailyCodingChallengeLanguage === 'python'}
+                onClick={() => setDailyCodingChallengeLanguage('python')}
+              >
+                Python
+              </button>
+            </>
+          )}
+        </div>
         {/* right */}
-        <div className='panel-display-tabs'>
+        <div className='tabs-row-right panel-display-tabs'>
           <button
             aria-expanded={!!showConsole}
             onClick={() => togglePane('showConsole')}

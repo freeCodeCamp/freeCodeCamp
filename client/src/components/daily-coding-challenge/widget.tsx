@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Spacer, Button, Dropdown, MenuItem } from '@freecodecamp/ui';
+import { Spacer, Button } from '@freecodecamp/ui';
 
 import { RibbonIcon } from '../../assets/icons/completion-ribbon';
 
 import './widget.css';
+import { formatDateUsCentral, formatDateUsCentralForDisplay } from './helpers';
 
 interface DailyCodingChallengeWidgetProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -14,40 +15,12 @@ interface DailyCodingChallengeWidgetProps
 function DailyCodingChallengeWidget({
   forLanding
 }: DailyCodingChallengeWidgetProps): JSX.Element {
-  const [difficulty, setDifficulty] = useState<string>('1');
   const { t } = useTranslation();
 
   // Midnight US Central Time is used to determine the release of new daily challenges
   const todaysDate = new Date();
-
-  // format "dd-mm-yyyy" - e.g. "02-28-2025"
-  const usCentralDateForApi = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/Chicago',
-    month: '2-digit',
-    day: '2-digit',
-    year: 'numeric'
-  })
-    .format(todaysDate)
-    .replace(/\//g, '-');
-
-  // format "weekday, shortMonth day" e.g. "Friday, Feb 28"
-  const usCentralDateForDisplay = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/Chicago',
-    weekday: 'long',
-    month: 'short',
-    day: 'numeric'
-  }).format(todaysDate);
-
-  function handleDifficultyChange(e: React.ChangeEvent<HTMLOptionElement>) {
-    e.preventDefault();
-    setDifficulty(e.target.value);
-  }
-
-  const difficulyLevels: Record<string, string> = {
-    1: 'Beginner',
-    2: 'Intermediate',
-    3: 'Advanced'
-  };
+  const usCentralDateForApi = formatDateUsCentral(todaysDate);
+  const usCentralDateForDisplay = formatDateUsCentralForDisplay(todaysDate);
 
   return (
     <>
@@ -65,42 +38,12 @@ function DailyCodingChallengeWidget({
         </div>
         <div className='daily-coding-challenge-right'>
           <div className='daily-coding-challenge-info'>
-            <div className='daily-coding-challenge-title-and-date'>
-              <div className='daily-coding-challenge-title'>Ceasars Cipher</div>
-              <div className='daily-coding-challenge-date'>
-                {usCentralDateForDisplay}
-              </div>
+            <div className='daily-coding-challenge-date'>
+              {usCentralDateForDisplay}
             </div>
-
-            <Dropdown>
-              <Dropdown.Toggle>{difficulyLevels[difficulty]}</Dropdown.Toggle>
-              <Dropdown.Menu>
-                <MenuItem
-                  variant='primary'
-                  value={1}
-                  onClick={handleDifficultyChange}
-                >
-                  {t(`daily-coding-challenge.level[${difficulty}]`)}
-                </MenuItem>
-                <MenuItem
-                  variant='primary'
-                  value={2}
-                  onClick={handleDifficultyChange}
-                >
-                  {t(`daily-coding-challenge.level[${difficulty}]`)}
-                </MenuItem>
-                <MenuItem
-                  variant='primary'
-                  value={3}
-                  onClick={handleDifficultyChange}
-                >
-                  {t(`daily-coding-challenge.level[${difficulty}]`)}
-                </MenuItem>
-              </Dropdown.Menu>
-            </Dropdown>
           </div>
 
-          <Spacer size='m' />
+          <Spacer size='s' />
 
           <div>
             <Button
@@ -111,7 +54,7 @@ function DailyCodingChallengeWidget({
             </Button>
           </div>
 
-          <Spacer size='s' />
+          <Spacer size='xs' />
 
           <div>
             <Button block={true} href='/learn/daily-coding-challenge/archive'>

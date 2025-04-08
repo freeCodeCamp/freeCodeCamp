@@ -10,7 +10,7 @@
 .daily-coding-challenge-right {
   flex-grow: 1;
   border: 1px solid var(--primary-color);
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .daily-coding-challenge-info {
@@ -19,15 +19,6 @@
   align-items: flex-end;
 }
 
-.daily-coding-challenge-title-and-date {
-  min-width: 50%;
-}
-
-.daily-coding-challenge-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
 .daily-coding-challenge-date {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
 }

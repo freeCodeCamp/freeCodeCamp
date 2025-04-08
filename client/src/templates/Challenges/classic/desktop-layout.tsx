@@ -31,8 +31,9 @@ interface DesktopLayoutProps {
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
-  isDailyChallenge: boolean;
-  setDailyChallengeLanguage: (language: 'javascript' | 'python') => void;
+  isDailyCodingChallenge: boolean;
+  dailyCodingChallengeLanguage: 'javascript' | 'python';
+  setDailyCodingChallengeLanguage: (language: 'javascript' | 'python') => void;
   isFirstStep?: boolean;
   layoutState: {
     codePane: Pane;
@@ -95,8 +96,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     setShowPreviewPortal,
     portalWindow,
     startWithConsoleShown,
-    isDailyChallenge,
-    setDailyChallengeLanguage
+    isDailyCodingChallenge,
+    dailyCodingChallengeLanguage,
+    setDailyCodingChallengeLanguage
   } = props;
 
   const initialShowState = (key: string, defaultValue: boolean): boolean => {
@@ -264,8 +266,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         <ActionRow
           hasPreview={hasPreview}
           hasNotes={!!notes}
-          isDailyChallenge={isDailyChallenge}
-          setDailyChallengeLanguage={setDailyChallengeLanguage}
+          isDailyCodingChallenge={isDailyCodingChallenge}
+          dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+          setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
           isProjectBasedChallenge={projectBasedChallenge}
           showConsole={showConsole}
           showNotes={showNotes}
