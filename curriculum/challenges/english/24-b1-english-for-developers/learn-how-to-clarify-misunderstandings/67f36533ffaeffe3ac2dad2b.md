@@ -19,11 +19,11 @@ What is Jessica explaining?
 
 ## --answers--
 
-There was a problem with the current update’s schedule.
+There was a problem with the current update's schedule.
 
 ### --feedback--
 
-Jessica is talking about the feature’s timing, not the schedule of the update itself.
+Jessica is talking about the feature's timing, not the schedule of the update itself.
 
 ---
 
@@ -43,7 +43,7 @@ The feature was mistakenly included in this update.
 
 ### --feedback--
 
-Jessica doesn’t say the feature was mistakenly included.
+Jessica doesn't say the feature was mistakenly included.
 
 ## --video-solution--
 
@@ -53,7 +53,7 @@ Jessica doesn’t say the feature was mistakenly included.
 
 Jessica says, `The budget tracking feature is planned for the next update`, explaining that the feature is not included in the current update but will be added in the next one.
 
-This clears up the confusion about the feature’s timing.
+This clears up the confusion about the feature's timing.
 
 # --scene--
 

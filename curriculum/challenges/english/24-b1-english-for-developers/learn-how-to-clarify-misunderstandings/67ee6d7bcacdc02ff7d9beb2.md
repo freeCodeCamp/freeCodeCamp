@@ -57,7 +57,7 @@ This two-word phrase refers to the way software or websites respond to actions, 
 
 `Event handling` refers to how a program or website manages user actions like clicks, keyboard presses, or mouse movements. For example:
 
-`There's an issue with event handling` - This mean the software isn’t responding properly to user actions.
+`There's an issue with event handling` - This mean the software isn't responding properly to user actions.
 
 # --scene--
 
