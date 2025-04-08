@@ -1,5 +1,4 @@
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
-import pyTestEvaluatorData from '../../../../../client/config/browser-scripts/python-test-evaluator.json';
 
 import type { ChallengeFile } from '../../../redux/prop-types';
 import { concatHtml } from '../rechallenge/builders';
@@ -19,7 +18,6 @@ import {
   Context,
   Source
 } from './frame';
-import { WorkerExecutor } from './worker-executor';
 
 interface BuildChallengeData extends Context {
   challengeType: number;
@@ -35,13 +33,6 @@ interface BuildOptions {
   disableLoopProtectPreview: boolean;
   usesTestRunner?: boolean;
 }
-
-const { filename: pyTestEvaluator } = pyTestEvaluatorData;
-
-const pythonWorkerExecutor = new WorkerExecutor(pyTestEvaluator, {
-  terminateWorker: false,
-  maxWorkers: 1
-});
 
 type ApplyFunctionProps = (
   file: ChallengeFile
@@ -119,18 +110,20 @@ export async function buildChallenge(
   throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
 
+// TODD: replace this with a check that challengeType is one of the keys (i.e.
+// js, html, etc) since all the test runners are the same.
 const testRunners = {
   [challengeTypes.js]: getDOMTestRunner,
   [challengeTypes.html]: getDOMTestRunner,
   [challengeTypes.backend]: getDOMTestRunner,
   [challengeTypes.pythonProject]: getDOMTestRunner,
-  [challengeTypes.python]: getPyTestRunner,
+  [challengeTypes.python]: getDOMTestRunner,
   [challengeTypes.multifileCertProject]: getDOMTestRunner,
-  [challengeTypes.multifilePythonCertProject]: getPyTestRunner,
+  [challengeTypes.multifilePythonCertProject]: getDOMTestRunner,
   [challengeTypes.lab]: getDOMTestRunner,
-  [challengeTypes.pyLab]: getPyTestRunner,
-  [challengeTypes.dailyChallengeJs]: getJSTestRunner,
-  [challengeTypes.dailyChallengePy]: getPyTestRunner
+  [challengeTypes.pyLab]: getDOMTestRunner,
+  [challengeTypes.dailyChallengeJs]: getDOMTestRunner,
+  [challengeTypes.dailyChallengePy]: getDOMTestRunner
 };
 
 export function getTestRunner(
@@ -144,43 +137,6 @@ export function getTestRunner(
     return testRunner(buildData, runnerConfig, document);
   }
   throw new Error(`Cannot get test runner for challenge type ${challengeType}`);
-}
-
-function getPyTestRunner(
-  { build, sources }: BuildChallengeData,
-  { proxyLogger }: TestRunnerConfig
-) {
-  return getWorkerTestRunner(
-    { build, sources },
-    { proxyLogger },
-    pythonWorkerExecutor
-  );
-}
-
-function getWorkerTestRunner(
-  { build, sources }: Pick<BuildChallengeData, 'build' | 'sources'>,
-  { proxyLogger }: TestRunnerConfig,
-  workerExecutor: WorkerExecutor
-) {
-  const code = {
-    contents: sources.index,
-    editableContents: sources.editableContents
-  };
-
-  interface TestWorkerExecutor extends WorkerExecutor {
-    on: (event: string, listener: (...args: string[]) => void) => void;
-    done: () => void;
-  }
-
-  return (testString: string, testTimeout: number, firstTest = true) => {
-    const result = workerExecutor.execute(
-      { build, testString, code, sources, firstTest },
-      testTimeout
-    ) as TestWorkerExecutor;
-
-    result.on('LOG', proxyLogger);
-    return result.done;
-  };
 }
 
 async function getDOMTestRunner(
@@ -302,13 +258,15 @@ export async function buildPythonChallenge({
   );
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
+  const sources = buildSourceMap(finalFiles);
 
   return {
     challengeType:
       challengeFiles[0].editableRegionBoundaries?.length === 0
         ? challengeTypes.multifilePythonCertProject
         : challengeTypes.python,
-    sources: buildSourceMap(finalFiles),
+    sources,
+    build: sources?.contents,
     error
   };
 }

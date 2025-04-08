@@ -596,17 +596,15 @@ async function createTestRunner(
   // console.log('challengeId', challenge.id);
   // console.log('build, sources', build, sources);
 
-  const evaluator = await (runsInBrowser || usesJSWorker
-    ? getContextEvaluator({
-        // passing in challengeId so it's easier to debug timeouts
-        challengeId: challenge.id,
-        build,
-        sources,
-        type: usesJSWorker ? 'worker' : 'frame',
-        loadEnzyme,
-        hooks: challenge.hooks
-      })
-    : getWorkerEvaluator({ build, sources, code, runsInPythonWorker }));
+  const evaluator = await getContextEvaluator({
+    // passing in challengeId so it's easier to debug timeouts
+    challengeId: challenge.id,
+    build,
+    sources,
+    type: usesJSWorker ? 'worker' : runsInPythonWorker ? 'python' : 'frame',
+    loadEnzyme,
+    hooks: challenge.hooks
+  });
 
   return async ({ text, testString }) => {
     try {
