@@ -35,7 +35,7 @@ This preposition connects related topic or subject.
 
 # --explanation--
 
-`Ssk about` means to request information related to a specific topic. For example:
+`Ask about` means to request information related to a specific topic. For example:
 
 `I asked about the new feature.` – You wanted information on the feature. 
 
