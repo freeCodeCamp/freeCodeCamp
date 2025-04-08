@@ -113,7 +113,7 @@ function DailyCodingChallengeCalendar(): JSX.Element {
     <Loader />
   ) : (
     <>
-      <div className='text-center'>
+      <div className='calendar-head'>
         <Button
           aria-label={t('aria.previous-month')}
           // disabled={pageNo === 1}
