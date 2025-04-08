@@ -257,6 +257,8 @@ type EnvConfig {
   questionSets   EnvQuestionSetConfig[]
   /// Duration after exam completion before a retake is allowed in milliseconds
   retakeTimeInMS Int
+  /// Passing percent for the exam
+  passingPercent Int
 }
 
 /// Configuration for a set of questions in the Exam Environment App
@@ -295,7 +297,9 @@ model EnvExamAttempt {
   questionSets  EnvQuestionSetAttempt[]
   /// Time exam was started as milliseconds since epoch
   startTimeInMS Int
-  needsRetake   Boolean
+  /// Until an attempt has been graded, this is `null`.
+  /// Once graded, the attempt is marked as needing a retake or not
+  needsRetake   Boolean?
 
   // Relations
   user          user             @relation(fields: [userId], references: [id], onDelete: Cascade)

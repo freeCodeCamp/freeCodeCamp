@@ -45,6 +45,14 @@ export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
       },
       postExamAttemptHandler
     );
+    fastify.get(
+      '/exam-environment/exam/attempts/:attemptId',
+      {
+        schema: schemas.examEnvironmentGetExamAttempts
+      },
+      getExamAttemptsHandler
+    );
+
     done();
   };
 
@@ -753,4 +761,124 @@ async function getExams(
   return reply.send({
     exams: availableExams
   });
+}
+
+/**
+ * Gets exam attempts filtering by attempt id.
+ *
+ * If an attempt is completed, the result is included.
+ *
+ * If an attempt for a given exam is marked `needsRetake`, check it is the latest attempt for the given exam.
+ */
+async function getExamAttemptsHandler(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.examEnvironmentGetExamAttempts>,
+  reply: FastifyReply
+) {
+  const logger = this.log.child({ req });
+  logger.info({ user: req.user });
+
+  const user = req.user!;
+  const { attemptId } = req.params;
+
+  // If attempt id is given, only return that attempt
+  if (attemptId) {
+    const maybeAttempt = await mapErr(
+      this.prisma.envExamAttempt.findUnique({
+        where: {
+          id: attemptId,
+          // This _should_ be unnecessary
+          userId: user.id
+        }
+      })
+    );
+
+    if (maybeAttempt.hasError) {
+      logger.error({ attemptError: maybeAttempt.error });
+      void reply.code(500);
+      return reply.send(
+        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempt.error))
+      );
+    }
+
+    const attempt = maybeAttempt.data;
+
+    if (!attempt) {
+      logger.warn({ attemptId }, 'No exam attempt found.');
+      void reply.code(404);
+      return reply.send(
+        ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
+          'No exam attempt found.'
+        )
+      );
+    }
+
+    const maybeExam = await mapErr(
+      this.prisma.envExam.findUnique({
+        where: {
+          id: attempt.examId
+        }
+      })
+    );
+
+    if (maybeExam.hasError) {
+      logger.error({ examError: maybeExam.error });
+      void reply.code(500);
+      return reply.send(
+        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
+      );
+    }
+
+    const exam = maybeExam.data;
+
+    if (exam === null) {
+      logger.error({ examId: attempt.examId }, 'Invalid exam id in attempt.');
+      void reply.code(500);
+      return reply.send(
+        ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(
+          'Invalid exam id in attempt.'
+        )
+      );
+    }
+
+    // If attempt is still in progress, return without result
+    const isAttemptExpired =
+      attempt.startTimeInMS + exam.config.totalTimeInMS > Date.now();
+    if (!isAttemptExpired) {
+      return reply.send({
+        envExamAttempt: attempt
+      });
+    }
+
+    // If attempt is completed, but has not been graded, return without result
+    if (attempt.needsRetake === null) {
+      return reply.send({
+        envExamAttempt: attempt
+      });
+    }
+
+    // If attempt is completed, but has been determined to need a retake, TODO:
+    // - Send reason for retake?
+    if (attempt.needsRetake) {
+      return reply.send({
+        envExamAttempt: attempt
+      });
+    }
+
+    const score = null;
+
+    const result = {
+      score,
+      passingPercent: exam.config.passingPercent
+    };
+
+    const envExamAttempt = {
+      ...attempt,
+      result
+    };
+
+    return reply.send({
+      envExamAttempt
+    });
+  }
 }
