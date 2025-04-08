@@ -10,6 +10,7 @@ import { createStepFile, validateBlockName } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
 import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
+import { createQuiz } from "./create-quiz";
 
 const helpCategories = [
   'HTML-CSS',
