@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Python Review
 
-Review Python concepts to prepare for the upcoming quiz.
+Review Python concepts to prepare for the upcoming exam.
