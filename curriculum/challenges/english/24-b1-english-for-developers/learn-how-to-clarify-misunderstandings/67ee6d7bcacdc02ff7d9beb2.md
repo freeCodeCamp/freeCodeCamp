@@ -15,7 +15,7 @@ Listen to the audio and complete the sentence below.
 
 ## --sentence--
 
-`It could be a JavaScript issue. Maybe BLANK a BLANK BLANK the event handling.`
+`It could be a JavaScript issue. Maybe BLANK a BLANK BLANK the BLANK.`
 
 ## --blanks--
 
