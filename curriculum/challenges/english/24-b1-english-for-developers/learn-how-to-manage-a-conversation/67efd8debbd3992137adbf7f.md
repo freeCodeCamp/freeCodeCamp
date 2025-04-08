@@ -29,7 +29,7 @@ Preceded by `on your`, this refers to a specific person's situation, side, or lo
 
 `On your end` is used to refer to someone's situation or what is happening with them, often in a conversation or work context. For example:
 
-`Let me know if you need any help on your end.` – This means the speaker wants to know if the other person need help on their work or situation.
+`Let me know if you need any help on your end.` – This means the speaker wants to know if the other person needs help on their work or situation.
 
 # --scene--
 

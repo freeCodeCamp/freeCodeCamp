@@ -35,7 +35,7 @@ After the check-in with Sarah, Brian decides to write to Bob, from management, t
 
 `Brian`
 
-Based on the Subject line, why did Brian write this email?
+Based on the `Subject` line, why did Brian write this email?
 
 ## --answers--
 
@@ -72,4 +72,3 @@ Brian already spoke to Sarah. He is now sharing that update with management.
 # --explanation--
 
 The `Subject` line normally brings the topics which are going to be dealt with in the body of the message. Read this line to find out the correct answer for this question.
-
