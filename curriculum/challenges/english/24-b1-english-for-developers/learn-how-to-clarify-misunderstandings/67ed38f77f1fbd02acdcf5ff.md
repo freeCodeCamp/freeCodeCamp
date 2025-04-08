@@ -51,7 +51,7 @@ This two-word phrase is used to ask about what is happening or what the situatio
     "audio": {
       "filename": "B1_16-2.mp3",
       "startTime": 1,
-      "startTimestamp": 7.92,
+      "startTimestamp": 7.62,
       "finishTimestamp": 9.1
     }
   },
@@ -64,7 +64,7 @@ This two-word phrase is used to ask about what is happening or what the situatio
     {
       "character": "Lisa",
       "startTime": 1,
-      "finishTime": 2.18,
+      "finishTime": 2.48,
       "dialogue": {
         "text": "Sure, Mark. What's going on?",
         "align": "center"
@@ -73,7 +73,7 @@ This two-word phrase is used to ask about what is happening or what the situatio
     {
       "character": "Lisa",
       "opacity": 0,
-      "startTime": 2.68
+      "startTime": 2.98
     }
   ]
 }

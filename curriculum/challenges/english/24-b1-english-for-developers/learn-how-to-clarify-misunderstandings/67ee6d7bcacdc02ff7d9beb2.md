@@ -23,7 +23,7 @@ Listen to the audio and complete the sentence below.
 
 ### --feedback--
 
-This word is used to talk about the existence of something or to say that something is present or happening. This is a compound word. Remember to use `-`.
+This word is used to talk about the existence of something or to say that something is present or happening. It's the contraction of `there is`.
 
 ---
 
@@ -79,7 +79,7 @@ This two-word phrase refers to the way software or websites respond to actions, 
     "audio": {
       "filename": "B1_16-2.mp3",
       "startTime": 1,
-      "startTimestamp": 31.58,
+      "startTimestamp": 31.38,
       "finishTimestamp": 35.2
     }
   },
@@ -92,7 +92,7 @@ This two-word phrase refers to the way software or websites respond to actions, 
     {
       "character": "Lisa",
       "startTime": 1,
-      "finishTime": 4.62,
+      "finishTime": 4.82,
       "dialogue": {
         "text": "It could be a JavaScript issue. Maybe there's a problem with the event handling.",
         "align": "center"
@@ -101,7 +101,7 @@ This two-word phrase refers to the way software or websites respond to actions, 
     {
       "character": "Lisa",
       "opacity": 0,
-      "startTime": 5.12
+      "startTime": 5.32
     }
   ]
 }
