@@ -8,11 +8,11 @@ dashedName: what-is-memoization-and-how-does-the-usememo-hook-work
 
 # --description--
 
-Watch the lecture video and answer the questions below.
+Watch the video or read the transcript and answer the questions below.
 
 # --transcript--
 
-How does data fetching work in React?
+What is memoization and how does the `useMemo` hook work?
 
 As your React app gets larger, unnecessary re-renders and expensive calculations can slow down performance, leading to slow UI updates and increased resource usage.
 
@@ -20,7 +20,7 @@ This can be especially problematic in apps with complex state management, large 
 
 This gives rise to the need to optimize your React app for better performance by minimizing redundant computations and ensuring smoother interactions.
 
-React solves this problem with a process called Memoization, a technique which caches values and functions to prevent unnecessary recalculations, so your app can be faster and more responsive.
+React solves this problem with a process called memoization, a technique which caches values and functions to prevent unnecessary recalculations, so your app can be faster and more responsive.
 
 By definition, memoization is an optimization technique in which the result of expensive function calls are cached (remembered) based on specific arguments. When the same arguments are provided again, the cached result is returned instead of re-computing the function.
 
@@ -42,7 +42,7 @@ In the next lecture, we will take a look at how the `useCallback` hook and `Reac
 
 `useMemo` lets you memoize computed values while `useCallback` does the same for function references.
 
-If you're wondering what computed values and function references are, "computed values" refer to the result of executing a function, while function references are the pointers to functions – the function object in memory.
+If you're wondering what computed values and function references are, computed values refer to the result of executing a function, while function references are the pointers to functions – the function object in memory.
 
 Let's see how to use the `useMemo` hook first. Here's the basic syntax of the `useMemo` hook:
 
@@ -55,7 +55,9 @@ const memoizedValue = useMemo(
 );
 ```
 
-You can see all that's needed is to wrap the `useMemo` hook around the function. Here's the same syntax with arrow function syntax:
+You can see all that's needed is to wrap the `useMemo` hook around the function.
+
+This `ExpensiveSquare` component will receive a `num` prop which it will use to calculate the square:
 
 ```js
 function ExpensiveSquare({ num }) {
@@ -73,8 +75,6 @@ function ExpensiveSquare({ num }) {
 }
 export default ExpensiveSquare;
 ```
-
-This `ExpensiveSquare` component will receive a `num` prop which it will use to calculate the square.
 
 Here's the `App` component where the `ExpensiveSquare` is being used:
 
@@ -103,11 +103,9 @@ function App() {
 export default App;
 ```
 
-The `timer` in the `useEffect`, running every second, will make the `calculateSquare` function runs any time it runs, even when you don't increase the `num` state variable:
+The `timer` in the `useEffect`, running every second, will make the `calculateSquare` function runs any time it runs, even when you don't increase the `num` state variable.
 
-To solve this problem, we can use the `useMemo` hook by wrapping the function call in it and specifying the `num` variable as the dependency. 
-
-This will make sure the function is memoized by caching the result, so calculation happens only when `num` change, not when anything changes in the component it's being used in:
+To solve this problem, we can use the `useMemo` hook by wrapping the function call in it and specifying the `num` variable as the dependency:
 
 ```js
 // import the useMemo hook
@@ -133,7 +131,9 @@ function ExpensiveSquare({ num }) {
 export default ExpensiveSquare;
 ```
 
-The `calculateSquare` function call is not running any time `timer` changes anymore but on the initial render and when `num` changes:
+This will make sure the function is memoized by caching the result, so calculation happens only when `num` change, not when anything changes in the component it's being used in.
+
+The `calculateSquare` function call is not running any time `timer` changes anymore but on the initial render and when `num` changes.
 
 # --questions--
 
