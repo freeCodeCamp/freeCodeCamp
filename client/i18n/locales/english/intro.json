@@ -3775,7 +3775,7 @@
         "title": "Python Basics Review",
         "intro": [
           "Before you're quizzed on Python basics, you should review what you've learned about it.",
-          ""
+          "[Add more details]"
         ]
       },
       "quiz-python-basics": {
@@ -3798,7 +3798,7 @@
         "title": "Loops and Sequences Review",
         "intro": [
           "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
-          ""
+          "[Add more details]"
         ]
       },
       "quiz-loops-and-sequences": {
@@ -3825,7 +3825,7 @@
         "title": "Dictionaries and Sets review",
         "intro": [
           "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
-          ""
+          "[Add more details]"
         ]
       },
       "quiz-dictionaries-and-sets": {
@@ -3844,7 +3844,7 @@
         "title": "Error Handling Review",
         "intro": [
           "Before you're quizzed on Cerror handling, you should review what you've learned about it.",
-          ""
+          "[Add more details]"
         ]
       },
       "quiz-error-handling": { "title": "Error Handling Quiz", "intro": [""] },
@@ -3861,7 +3861,7 @@
         "title": "Classes and Objects Review",
         "intro": [
           "Before you're quizzed on classes and objects, you should review what you've learned about them.",
-          ""
+          "[Add more details]"
         ]
       },
       "quiz-classes-and-objects": {
@@ -3905,7 +3905,7 @@
         "title": "Object Oriented Programming Review",
         "intro": [
           "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
-          ""
+          "[Add more details]"
         ]
       },
       "quiz-object-oriented-programming": {
@@ -3928,7 +3928,7 @@
         "title": "Data Structures Review",
         "intro": [
           "Before you're quizzed on data structures, you should review what you've learned about them.",
-          ""
+          "[Add more details]"
         ]
       },
       "quiz-data-structures": {
@@ -3961,7 +3961,7 @@
         "title": "Searching and Sorting Algorithms Review",
         "intro": [
           "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
-          ""
+          "[Add more details]"
         ]
       },
       "quiz-searching-and-sorting-algorithms": {
@@ -3992,7 +3992,7 @@
         "title": "Graphs and Trees Review",
         "intro": [
           "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
-          ""
+          "[Add more details]"
         ]
       },
       "quiz-graphs-and-trees": {
@@ -4011,7 +4011,7 @@
         "title": "Dynamic Programming Review",
         "intro": [
           "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
-          ""
+          "[Add more details]"
         ]
       },
       "quiz-dynamic-programming": {
