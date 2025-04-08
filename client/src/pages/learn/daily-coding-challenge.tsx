@@ -3,7 +3,6 @@ import ShowClassic from '../../templates/Challenges/classic/show';
 import { Loader } from '../../components/helpers';
 import { ChallengeNode } from '../../redux/prop-types';
 import DailyCodingChallengeNotFound from '../../components/daily-coding-challenge/not-found';
-import { formatDateUsCentral } from '../../components/daily-coding-challenge/helpers';
 import envData from '../../../config/env.json';
 
 const { dailyChallengeApiLocation } = envData;
@@ -62,8 +61,6 @@ function formatChallengeData({
   javascript,
   python
 }: ChallengeDataFromDb) {
-  console.log('formatting challenge data...');
-
   const baseChallengeProps = {
     date,
     id: challengeId,
@@ -140,29 +137,21 @@ function formatChallengeData({
     }
   };
 
-  console.log(props);
   return props;
 }
 
 function isValidDate(dateString: string) {
-  console.log(`isValidDate? ${dateString}`);
   const regex = /^\d{2}-\d{2}-\d{4}$/;
   if (!regex.test(dateString)) return false;
 
   const [month, day, year] = dateString.split('-').map(Number);
   const date = new Date(year, month - 1, day);
 
-  // Check if date is valid
   return (
     date.getFullYear() === year &&
     date.getMonth() === month - 1 &&
     date.getDate() === day
   );
-}
-
-function dateHasChallenge(firstDay: string, today: string, dateString: string) {
-  console.log(`dateHasChallenge? ${dateString}`);
-  return dateString >= firstDay && dateString <= today;
 }
 
 function DailyCodingChallenge(): JSX.Element {
@@ -171,20 +160,13 @@ function DailyCodingChallenge(): JSX.Element {
   const [challengeFound, setChallengeFound] = useState(false);
   const [challengeProps, setChallengeProps] =
     useState<null | FormattedChallengeData>(null);
-  const [dailyChallengeLanguage, setDailyChallengeLanguage] = useState<
-    'javascript' | 'python'
-  >('javascript');
-
-  // dates in US Central time
-  // firstDay is the first day a daily challenge became available
-  const firstDay = formatDateUsCentral(new Date('03-08-2025'));
-  const today = formatDateUsCentral(new Date());
+  const [dailyCodingChallengeLanguage, setDailyCodingChallengeLanguage] =
+    useState<'javascript' | 'python'>('javascript');
 
   const dateParam = new URLSearchParams(window.location.search).get('date');
 
   const fetchChallenge = async (date: string) => {
     try {
-      console.log('fetching challenge...');
       const response = await fetch(
         `${dailyChallengeApiLocation}/api/daily-challenge/date/${date}`
       );
@@ -216,18 +198,14 @@ function DailyCodingChallenge(): JSX.Element {
 
   useEffect(() => {
     // If the date param is invalid, stop loading/fetching and show the not found page
-    if (
-      !dateParam ||
-      !isValidDate(dateParam) ||
-      !dateHasChallenge(firstDay, today, dateParam)
-    ) {
+    if (!dateParam || !isValidDate(dateParam)) {
       setIsLoading(false);
       setChallengeFound(false);
       return;
     }
 
     void fetchChallenge(dateParam);
-  }, [dateParam, firstDay, today]);
+  }, [dateParam]);
 
   return isLoading ? (
     <Loader />
@@ -235,10 +213,10 @@ function DailyCodingChallenge(): JSX.Element {
     <DailyCodingChallengeNotFound />
   ) : (
     <ShowClassic
-      isDailyChallenge={true}
-      dailyChallengeLanguage={dailyChallengeLanguage}
-      setDailyChallengeLanguage={setDailyChallengeLanguage}
-      {...challengeProps[dailyChallengeLanguage]}
+      isDailyCodingChallenge={true}
+      dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+      setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
+      {...challengeProps[dailyCodingChallengeLanguage]}
     />
   );
 }
