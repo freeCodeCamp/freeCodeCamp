@@ -52,7 +52,7 @@ This means at the present time and shows the situation could change later.
       "filename": "B1_15-1.mp3",
       "startTime": 1,
       "startTimestamp": 42.46,
-      "finishTimestamp": 44.74
+      "finishTimestamp": 44.64
     }
   },
   "commands": [
@@ -64,7 +64,7 @@ This means at the present time and shows the situation could change later.
     {
       "character": "Alice",
       "startTime": 1,
-      "finishTime": 3.28,
+      "finishTime": 3.18,
       "dialogue": {
         "text": "I think that's it for now. Thanks for your help.",
         "align": "center"
@@ -73,7 +73,7 @@ This means at the present time and shows the situation could change later.
     {
       "character": "Alice",
       "opacity": 0,
-      "startTime": 3.78
+      "startTime": 3.68
     }
   ]
 }

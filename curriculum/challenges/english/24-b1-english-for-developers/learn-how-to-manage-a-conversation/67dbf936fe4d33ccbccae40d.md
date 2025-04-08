@@ -52,7 +52,7 @@ This is used to apologize for something that happened. Don't forget to capitaliz
       "filename": "B1_15-1.mp3",
       "startTime": 1,
       "startTimestamp": 0,
-      "finishTimestamp": 2.82
+      "finishTimestamp": 2.55
     }
   },
   "commands": [
@@ -64,7 +64,7 @@ This is used to apologize for something that happened. Don't forget to capitaliz
     {
       "character": "Alice",
       "startTime": 1,
-      "finishTime": 3.82,
+      "finishTime": 3.55,
       "dialogue": {
         "text": "Hey, James. Sorry for the interruption earlier.",
         "align": "center"
@@ -73,7 +73,7 @@ This is used to apologize for something that happened. Don't forget to capitaliz
     {
       "character": "Alice",
       "opacity": 0,
-      "startTime": 4.32
+      "startTime": 4.05
     }
   ]
 }
