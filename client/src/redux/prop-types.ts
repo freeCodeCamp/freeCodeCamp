@@ -379,6 +379,12 @@ export interface CompletedChallenge {
   examResults?: GeneratedExamResults;
 }
 
+export interface CompletedDailyCodingChallenge {
+  id: string;
+  completedDate: number;
+  completedLanguages: ('javascript' | 'python')[];
+}
+
 export interface ChallengeData extends CompletedChallenge {
   challengeFiles: ChallengeFile[] | null;
 }
