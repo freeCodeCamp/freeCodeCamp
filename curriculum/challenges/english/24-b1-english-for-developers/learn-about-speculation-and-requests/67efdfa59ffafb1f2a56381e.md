@@ -39,8 +39,8 @@ This answer does not match the prompt because Jake doesn't mind discussing the i
 
 Jessica asks, `Do you have any ideas?`, which is a way of inviting someone to share their thoughts or opinions.
 
-`Sure, Jessica` is a way to show that you're open to discussing the issue. Another example:  
+`Sure, Jessica` is a way to show that you're open to discussing the issue. Another example:
 
-- Person 1: `Do you have any ideas how to fix it?` -  This person is asking for suggestions or solutions.
+- Person 1: `Do you have any ideas how to fix it?` - This person is asking for suggestions or solutions.
 
 - Person 2: `Sure. We could check the server logs and see what's wrong.` - This person is saying yes, and is ready to share a suggestion.
