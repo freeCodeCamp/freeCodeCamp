@@ -30,7 +30,14 @@ export const examEnvironmentPostExamAttempt = {
   }
 };
 
-const examEnvAttempt = Type.Object({});
+const examEnvAttempt = Type.Object({
+  result: Type.Optional(
+    Type.Object({
+      score: Type.Number(),
+      passingPercent: Type.Number()
+    })
+  )
+});
 
 export const examEnvironmentGetExamAttempts = {
   params: Type.Object({
@@ -42,15 +49,7 @@ export const examEnvironmentGetExamAttempts = {
     'exam-environment-authorization-token': Type.String()
   }),
   response: {
-    200: Type.Object({
-      envExamAttempt: Type.Union([Type.Array(examEnvAttempt), examEnvAttempt]),
-      result: Type.Optional(
-        Type.Object({
-          score: Type.Number(),
-          passingPercent: Type.Number()
-        })
-      )
-    }),
+    200: Type.Union([examEnvAttempt, Type.Array(examEnvAttempt)]),
     400: STANDARD_ERROR,
     403: STANDARD_ERROR,
     404: STANDARD_ERROR,
