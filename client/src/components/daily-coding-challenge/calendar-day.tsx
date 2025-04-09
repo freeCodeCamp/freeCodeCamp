@@ -3,10 +3,9 @@ import { Link } from '../helpers';
 // import GreenPass from '../../assets/icons/green-pass';
 import CheckMark from '../../templates/Introduction/components/check-mark';
 
-// import './calendar-day.css';
-
 interface CalendarDayProps {
   dayNumber: number;
+  date?: string;
   isCompleted?: boolean;
   isAvailable?: boolean;
 }
@@ -17,8 +16,9 @@ interface CalendarDayProps {
 
 function DailyCodingChallengeCalendarDay({
   dayNumber,
+  date,
   isCompleted = false,
-  isAvailable
+  isAvailable = false
 }: CalendarDayProps): JSX.Element {
   return dayNumber === 0 ? (
     // dayNumber === 0 -> render nothing
@@ -26,7 +26,7 @@ function DailyCodingChallengeCalendarDay({
   ) : isAvailable ? (
     // isAvailable -> render link to challenge
     <Link
-      to='/learn/daily-coding-challenge?date=03-03-2025&level=Beginner'
+      to={`/learn/daily-coding-challenge?date=${date}`}
       className='calendar-day'
     >
       <span className='calendar-day-number'>{dayNumber}</span>
