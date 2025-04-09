@@ -456,9 +456,6 @@
     "sign-in-see-benefits": "登錄以查看你的支持者權益",
     "card-has-been-updated": "你的卡片已經更新成功。",
     "contact-support-mistake": "如果你覺得有錯誤，請發郵件至 donors@freecodecamp.org 聯繫我們",
-    "cert-map-estimates": {
-      "certs": "{{title}} 認證"
-    },
     "editor-tabs": {
       "code": "編程",
       "tests": "測試",
