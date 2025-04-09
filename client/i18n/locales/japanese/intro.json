@@ -1649,7 +1649,9 @@
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Learn How to Express Decisions Based on Comparisons",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to compare things like tools or companies using words like better, faster, and the best. You will also practice having friendly conversations to give opinions and make decisions"
+        ]
       },
       "learn-how-to-use-modal-verbs": {
         "title": "Learn How to Use Modal Verbs",
@@ -1869,7 +1871,8 @@
       "quiz-basic-html": {
         "title": "Basic HTML Quiz",
         "intro": [
-          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
+          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-importance-of-semantic-html": {
@@ -1900,7 +1903,8 @@
       "quiz-semantic-html": {
         "title": "Semantic HTML Quiz",
         "intro": [
-          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
+          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-working-with-forms": {
@@ -1958,7 +1962,8 @@
       "quiz-html-tables-and-forms": {
         "title": "HTML Tables and Forms Quiz",
         "intro": [
-          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools."
+          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-importance-of-accessibility-and-good-html-structure": {
@@ -1984,7 +1989,8 @@
       "quiz-html-accessibility": {
         "title": "HTML Accessibility Quiz",
         "intro": [
-          "The following quiz will test your knowledge on the accessibility concepts you have learned so far."
+          "The following quiz will test your knowledge on the accessibility concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "review-html": {
@@ -3846,7 +3852,9 @@
       },
       "quiz-python-basics": {
         "title": "Python Basics Quiz",
-        "intro": ["Learn about Python Basics Quiz in these lectures."]
+        "intro": [
+          "Test what you've learned about Python basics with this quiz."
+        ]
       },
       "lecture-working-with-loops-and-sequences": {
         "title": "Working with Loops and Sequences",
@@ -3866,7 +3874,9 @@
       },
       "quiz-loops-and-sequences": {
         "title": "Loops and Sequences Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about loops and sequences in Python with this quiz."
+        ]
       },
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Working with Dictionaries and Sets",
@@ -3890,7 +3900,9 @@
       },
       "quiz-dictionaries-and-sets": {
         "title": "Dictionaries and Sets Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about dictionaries and sets in Python with this quiz."
+        ]
       },
       "lecture-understanding-error-handling": {
         "title": "Understanding Error Handling",
@@ -3906,7 +3918,9 @@
       },
       "quiz-error-handling": {
         "title": "Error Handling Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about Error Handling in Python with this quiz."
+        ]
       },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
@@ -3926,7 +3940,9 @@
       },
       "quiz-classes-and-objects": {
         "title": "Classes and Objects Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about classes and objects in Python with this quiz."
+        ]
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Understanding Object Oriented Programming and Encapsulation",
@@ -3970,7 +3986,9 @@
       },
       "quiz-object-oriented-programming": {
         "title": "Object Oriented Programming Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about object oriented programming in python with this quiz."
+        ]
       },
       "lecture-working-with-common-data-structures": {
         "title": "Working with common data structures",
@@ -3990,7 +4008,9 @@
       },
       "quiz-data-structures": {
         "title": "Data Structures Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about data structures in Python with this quiz."
+        ]
       },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
@@ -4026,7 +4046,9 @@
       },
       "quiz-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+        ]
       },
       "lecture-understanding-graphs-and-trees": {
         "title": "Understanding Graphs and Trees",
@@ -4053,8 +4075,10 @@
         "intro": [""]
       },
       "quiz-graphs-and-trees": {
-        "title": "Graphs and Trees Review",
-        "intro": [""]
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Test what you've learned about graphs and trees in Python with this quiz."
+        ]
       },
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
@@ -4070,7 +4094,9 @@
       },
       "quiz-dynamic-programming": {
         "title": "Dynamic Programming Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about dynamic programming in python with this quiz."
+        ]
       },
       "review-python": {
         "title": "Python Review",
