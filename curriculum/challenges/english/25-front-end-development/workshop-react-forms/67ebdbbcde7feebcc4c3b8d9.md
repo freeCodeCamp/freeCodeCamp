@@ -1,11 +1,13 @@
 ---
 id: 67ebdbbcde7feebcc4c3b8d9
-title: Step 14
+title: Step 13
 challengeType: 0
-dashedName: step-14
+dashedName: step-13
 ---
 
 # --description--
+
+There will be six checkboxes, so it's also best to create an array for them and map through them to display them as checkboxes. For that, a `powersOptions` array has been provided for you.
 
 Map through the `powersOptions` array with a parater of `power`. Inside the map, create a `label` element with a `key` of `power`. Inside that `label`, create an `input` of type `checkbox` and a `value` of `power`.
 
