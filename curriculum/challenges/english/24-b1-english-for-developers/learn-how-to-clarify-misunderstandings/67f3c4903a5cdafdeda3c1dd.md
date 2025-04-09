@@ -1,7 +1,7 @@
 ---
 id: 67f3c4903a5cdafdeda3c1dd
 title: Task 143
-challengeType: 19
+challengeType: 22
 dashedName: task-143
 ---
 

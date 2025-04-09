@@ -47,46 +47,46 @@ This word means to be grateful for something. It shows thanks for help, support,
 
 ```json
 {
-  "setup": {
-    "background": "company2-center.png",
-    "characters": [
-      {
-        "character": "Mark",
-        "position": {
-          "x": 50,
-          "y": 0,
-          "z": 1.4
-        },
-        "opacity": 0
-      }
-    ],
-    "audio": {
-      "filename": "B1_16-2.mp3",
-      "startTime": 1,
-      "startTimestamp": 66.06,
-      "finishTimestamp": 69.26
-    }
-  },
-  "commands": [
-    {
-      "character": "Mark",
-      "opacity": 1,
-      "startTime": 0
-    },
-    {
-      "character": "Mark",
-      "startTime": 1,
-      "finishTime": 4.2,
-      "dialogue": {
-        "text": "Yeah, that sounds good. Thanks for your help, Lisa. I appreciate it.",
-        "align": "center"
-      }
-    },
-    {
-      "character": "Mark",
-      "opacity": 0,
-      "startTime": 4.7
-    }
-  ]
+  "setup": {
+    "background": "company2-center.png",
+    "characters": [
+      {
+        "character": "Mark",
+        "position": {
+          "x": 50,
+          "y": 0,
+          "z": 1.4
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "B1_16-2.mp3",
+      "startTime": 1,
+      "startTimestamp": 66.06,
+      "finishTimestamp": 69.26
+    }
+  },
+  "commands": [
+    {
+      "character": "Mark",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Mark",
+      "startTime": 1,
+      "finishTime": 4.2,
+      "dialogue": {
+        "text": "Yeah, that sounds good. Thanks for your help, Lisa. I appreciate it.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Mark",
+      "opacity": 0,
+      "startTime": 4.7
+    }
+  ]
 }
 ```
