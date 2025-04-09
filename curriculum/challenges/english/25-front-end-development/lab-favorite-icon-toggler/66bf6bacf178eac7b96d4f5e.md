@@ -207,10 +207,6 @@ h1 {
 .filled {
   color: #d22b2b;
 }
-
-.filled {
-    color: #D22B2B;
-}
 ```
 
 ```js
