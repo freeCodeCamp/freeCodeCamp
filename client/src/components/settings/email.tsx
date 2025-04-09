@@ -194,7 +194,9 @@ function EmailSettings({
         >
           <FormGroup controlId='current-email'>
             <ControlLabel>{t('settings.email.current')}</ControlLabel>
-            <FormControl.Static>{currentEmail}</FormControl.Static>
+            <FormControl.Static>
+              <h2 className='text-center'>{currentEmail}</h2>
+            </FormControl.Static>
           </FormGroup>
           <div role='group' aria-label={t('settings.email.heading')}>
             <FormGroup
