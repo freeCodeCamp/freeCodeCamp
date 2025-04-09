@@ -308,11 +308,11 @@
     ],
     "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
     "blocks": {
-      "build-a-pokemon-search-app-project": {
-        "title": "Build a Pokémon Search App Project",
+      "build-an-rpg-creature-search-app-project": {
+        "title": "Build an RPG Creature Search App Project",
         "intro": [
           "This is one of the required projects to earn your certification.",
-          "For this project, you will build a Pokémon search app."
+          "For this project, you will build an RPG creature search app."
         ]
       },
       "build-a-cash-register-project": {
@@ -1649,7 +1649,9 @@
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Learn How to Express Decisions Based on Comparisons",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to compare things like tools or companies using words like better, faster, and the best. You will also practice having friendly conversations to give opinions and make decisions"
+        ]
       },
       "learn-how-to-use-modal-verbs": {
         "title": "Learn How to Use Modal Verbs",
@@ -1788,7 +1790,19 @@
       "exam-front-end-libraries": "Front End Libraries Exam",
       "sql-and-bash": "SQL and Bash",
       "git": "Git",
-      "security-and-privacy": "Security and Privacy"
+      "security-and-privacy": "Security and Privacy",
+      "python-basics": "Python Basics",
+      "python-loops-and-sequences": "Loops and Sequences",
+      "python-dictionaries-and-sets": "Dictionaries and Sets",
+      "python-error-handling": "Error Handling",
+      "python-classes-and-objects": "Classes and Objects",
+      "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
+      "python-linear-data-structures": "Linear Data Structures",
+      "python-algorithms": "Algorithms",
+      "python-graphs-and-trees": "Graphs and Trees",
+      "python-dynamic-programming": "Dynamic Programming",
+      "review-python": "Python Review",
+      "exam-python": "Python Exam"
     },
     "blocks": {
       "lecture-welcome-to-freecodecamp": {
@@ -1857,7 +1871,8 @@
       "quiz-basic-html": {
         "title": "Basic HTML Quiz",
         "intro": [
-          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
+          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-importance-of-semantic-html": {
@@ -1888,7 +1903,8 @@
       "quiz-semantic-html": {
         "title": "Semantic HTML Quiz",
         "intro": [
-          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
+          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-working-with-forms": {
@@ -1946,7 +1962,8 @@
       "quiz-html-tables-and-forms": {
         "title": "HTML Tables and Forms Quiz",
         "intro": [
-          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools."
+          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-importance-of-accessibility-and-good-html-structure": {
@@ -1972,7 +1989,8 @@
       "quiz-html-accessibility": {
         "title": "HTML Accessibility Quiz",
         "intro": [
-          "The following quiz will test your knowledge on the accessibility concepts you have learned so far."
+          "The following quiz will test your knowledge on the accessibility concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "review-html": {
@@ -3570,7 +3588,8 @@
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
-          "Review Typescript concepts to prepare for the upcoming quiz."
+          "Before you take the TypeScript quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including data types in TypeScript, generics, type narrowing and more."
         ]
       },
       "quiz-typescript": {
@@ -3746,52 +3765,259 @@
           "Review relational databases concepts to prepare for the upcoming quiz."
         ]
       },
-      "thsj": { "title": "335", "intro": [] },
-      "uwum": { "title": "336", "intro": [] },
-      "asfv": { "title": "337", "intro": [] },
-      "bvfx": { "title": "338", "intro": [] },
-      "buzx": { "title": "339", "intro": [] },
-      "ynqt": { "title": "340", "intro": [] },
-      "prlo": { "title": "341", "intro": [] },
-      "jsnd": { "title": "342", "intro": [] },
-      "sxdc": { "title": "343", "intro": [] },
-      "pegc": { "title": "344", "intro": [] },
-      "mzae": { "title": "345", "intro": [] },
-      "gjbf": { "title": "346", "intro": [] },
-      "hzab": { "title": "347", "intro": [] },
-      "ggea": { "title": "348", "intro": [] },
-      "vgvz": { "title": "349", "intro": [] },
-      "hfwi": { "title": "350", "intro": [] },
-      "rnwr": { "title": "351", "intro": [] },
-      "zhhp": { "title": "352", "intro": [] },
-      "movb": { "title": "353", "intro": [] },
-      "ngor": { "title": "354", "intro": [] },
-      "gora": { "title": "355", "intro": [] },
-      "xdly": { "title": "356", "intro": [] },
-      "pzmc": { "title": "357", "intro": [] },
-      "oeqv": { "title": "358", "intro": [] },
-      "mfwu": { "title": "359", "intro": [] },
-      "dfcd": { "title": "360", "intro": [] },
-      "dfwl": { "title": "361", "intro": [] },
-      "adzm": { "title": "362", "intro": [] },
-      "kaui": { "title": "363", "intro": [] },
-      "zpjj": { "title": "364", "intro": [] },
-      "ghfk": { "title": "365", "intro": [] },
-      "ukem": { "title": "366", "intro": [] },
-      "sdjg": { "title": "367", "intro": [] },
-      "qjov": { "title": "368", "intro": [] },
-      "hjku": { "title": "370", "intro": [] },
-      "kegi": { "title": "377", "intro": [] },
-      "vnfu": { "title": "379", "intro": [] },
-      "rlli": { "title": "380", "intro": [] },
-      "rjpv": { "title": "381", "intro": [] },
-      "xbri": { "title": "382", "intro": [] },
-      "xfrd": { "title": "383", "intro": [] },
-      "nkjt": { "title": "384", "intro": [] },
-      "pgjj": { "title": "385", "intro": [] },
-      "exom": { "title": "386", "intro": [] },
-      "bvqc": { "title": "387", "intro": [] },
-      "xish": { "title": "388", "intro": [] },
+      "lecture-introduction-to-python": {
+        "title": "Introduction to Python",
+        "intro": ["Learn about Introduction to Python in these lectures."]
+      },
+      "workshop-caesar-cipher": {
+        "title": "Build a Caesar Cipher",
+        "intro": ["Learn about Build a Caesar Cipher in these lectures."]
+      },
+      "lab-rpg-character": {
+        "title": "Build an RPG character",
+        "intro": ["Learn about Build an RPG character in these lectures."]
+      },
+      "review-python-basics": {
+        "title": "Python Basics Review",
+        "intro": ["Learn about Python Basics Review in these lectures."]
+      },
+      "quiz-python-basics": {
+        "title": "Python Basics Quiz",
+        "intro": [
+          "Test what you've learned about Python basics with this quiz."
+        ]
+      },
+      "lecture-working-with-loops-and-sequences": {
+        "title": "Working with Loops and Sequences",
+        "intro": [""]
+      },
+      "workshop-placeholder-loops-and-sequences": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lab-placeholder-loops-and-sequences": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
+      },
+      "review-loops-and-sequences": {
+        "title": "Loops and Sequences Review",
+        "intro": [""]
+      },
+      "quiz-loops-and-sequences": {
+        "title": "Loops and Sequences Quiz",
+        "intro": [
+          "Test what you've learned about loops and sequences in Python with this quiz."
+        ]
+      },
+      "lecture-working-with-dictionaries-and-sets": {
+        "title": "Working with Dictionaries and Sets",
+        "intro": [""]
+      },
+      "lecture-working-with-modules": {
+        "title": "Working with Modules",
+        "intro": [""]
+      },
+      "workshop-placeholder-dictionaries-and-sets": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
+      },
+      "lab-placeholder-dictionaries-and-sets": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
+      },
+      "review-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Review",
+        "intro": [""]
+      },
+      "quiz-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Quiz",
+        "intro": [
+          "Test what you've learned about dictionaries and sets in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-error-handling": {
+        "title": "Understanding Error Handling",
+        "intro": [""]
+      },
+      "lab-isbn-validator": {
+        "title": "Debug a ISBN Validator",
+        "intro": [""]
+      },
+      "review-error-handling": {
+        "title": "Error Handling Review",
+        "intro": [""]
+      },
+      "quiz-error-handling": {
+        "title": "Error Handling Quiz",
+        "intro": [
+          "Test what you've learned about Error Handling in Python with this quiz."
+        ]
+      },
+      "lecture-classes-and-objects": {
+        "title": "Classes and Objects",
+        "intro": [""]
+      },
+      "workshop-placeholder-classes-and-objects": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
+      },
+      "lab-budget-app": { "title": "Build a Budget App", "intro": [""] },
+      "review-classes-and-objects": {
+        "title": "Classes and Objects Review",
+        "intro": [""]
+      },
+      "quiz-classes-and-objects": {
+        "title": "Classes and Objects Quiz",
+        "intro": [
+          "Test what you've learned about classes and objects in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-object-oriented-programming-and-encapsulation": {
+        "title": "Understanding Object Oriented Programming and Encapsulation",
+        "intro": [""]
+      },
+      "workshop-placeholder-oop-1": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lab-placeholder-oop-1": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lecture-understanding-inheritance-and-polymorphism": {
+        "title": "Understanding Inheritance and polymorphism",
+        "intro": [""]
+      },
+      "workshop-placeholder-oop-2": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lab-polygon-area-calculator": {
+        "title": "Build a Polygon Area Calculator",
+        "intro": [""]
+      },
+      "lecture-understanding-abstraction": {
+        "title": "Understanding abstraction",
+        "intro": [""]
+      },
+      "workshop-placeholder-oop-3": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lab-placeholder-oop-3": { "title": "", "intro": [""] },
+      "review-object-oriented-programming": {
+        "title": "Object Oriented Programming Review",
+        "intro": [""]
+      },
+      "quiz-object-oriented-programming": {
+        "title": "Object Oriented Programming Quiz",
+        "intro": [
+          "Test what you've learned about object oriented programming in python with this quiz."
+        ]
+      },
+      "lecture-working-with-common-data-structures": {
+        "title": "Working with common data structures",
+        "intro": [""]
+      },
+      "workshop-linked-list-class": {
+        "title": "Build a Linked List Class",
+        "intro": [""]
+      },
+      "lab-hash-table-class": {
+        "title": "Build an Hash Table Class",
+        "intro": [""]
+      },
+      "review-data-structures": {
+        "title": "Data Structures Review",
+        "intro": [""]
+      },
+      "quiz-data-structures": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in Python with this quiz."
+        ]
+      },
+      "lecture-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms",
+        "intro": [""]
+      },
+      "workshop-binary-search": {
+        "title": "Build a Binary Search",
+        "intro": [""]
+      },
+      "lab-bisection-method": {
+        "title": "Build a Bisection Method",
+        "intro": [""]
+      },
+      "workshop-merge-sort": { "title": "Build a Merge Sort", "intro": [""] },
+      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
+      "lab-selection-sort": {
+        "title": "Build a Selection Sort",
+        "intro": [""]
+      },
+      "lab-luhn-argorithm": {
+        "title": "Build a Luhn Algorithm",
+        "intro": [""]
+      },
+      "review-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Review",
+        "intro": [""]
+      },
+      "quiz-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Quiz",
+        "intro": [
+          "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-graphs-and-trees": {
+        "title": "Understanding Graphs and Trees",
+        "intro": [""]
+      },
+      "workshop-shortest-path-algorithm": {
+        "title": "Build a Shortest Path Algorithm",
+        "intro": [""]
+      },
+      "lab-adjacency-list-matrix-converter": {
+        "title": "Build an Adjacency List/Matrix Converter",
+        "intro": [""]
+      },
+      "workshop-breadth-first-search": {
+        "title": "Build a Breadth First Search",
+        "intro": [""]
+      },
+      "lab-depth-first-search": {
+        "title": "Build a Depth First Search",
+        "intro": [""]
+      },
+      "review-graphs-and-trees": {
+        "title": "Graphs and Trees Review",
+        "intro": [""]
+      },
+      "quiz-graphs-and-trees": {
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Test what you've learned about graphs and trees in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-dynamic-programming": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [""]
+      },
+      "lab-nth-fibonacci-number": {
+        "title": "Build an Nth Fibonacci Number Calculator",
+        "intro": [""]
+      },
+      "review-dynamic-programming": {
+        "title": "Dynamic Programming Review",
+        "intro": [""]
+      },
+      "quiz-dynamic-programming": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in python with this quiz."
+        ]
+      },
+      "review-python": { "title": "Python Review", "intro": [""] },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]

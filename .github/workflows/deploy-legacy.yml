@@ -11,7 +11,6 @@ on:
 
 jobs:
   setup-jobs:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Setup Jobs
     runs-on: ubuntu-22.04
     outputs:
@@ -23,8 +22,22 @@ jobs:
       - name: Setup
         id: setup
         run: |
-          case "${{ github.ref }}" in
-            "refs/heads/prod-current")
+          if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
+            BRANCH="${{ github.event.workflow_run.head_branch }}"
+          else
+            BRANCH="${{ github.ref_name }}"
+          fi
+
+          if [[ "${{ github.event.workflow_run.conclusion }}" != "success" ]]; then
+            echo "Node.js test run failed. Check logs in its workflow run. Exiting."
+            exit 1
+          fi
+
+          echo "Node.js test run succeeded. Continuing..."
+          echo "Current branch: $BRANCH"
+
+          case "$BRANCH" in
+            "prod-current")
               echo "site_tld=org" >> $GITHUB_OUTPUT
               echo "tgt_env_short=prd" >> $GITHUB_OUTPUT
               echo "tgt_env_long=production" >> $GITHUB_OUTPUT
@@ -129,6 +142,7 @@ jobs:
     needs: [setup-jobs, api]
     runs-on: ubuntu-22.04
     strategy:
+      fail-fast: false
       matrix:
         node-version: [20]
         lang-name-full:
@@ -163,7 +177,6 @@ jobs:
             lang-name-short: ger
           - lang-name-full: swahili
             lang-name-short: swa
-
     permissions:
       deployments: write
       contents: read
