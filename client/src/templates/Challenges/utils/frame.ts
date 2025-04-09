@@ -1,4 +1,4 @@
-import { toString, flow } from 'lodash-es';
+import { flow } from 'lodash-es';
 import i18next, { type i18n } from 'i18next';
 
 import { format } from '../../../utils/format';
@@ -13,7 +13,6 @@ export interface Source {
   index: string;
   contents?: string;
   editableContents: string;
-  original: { [key: string]: string | null };
 }
 
 interface Hooks {
@@ -130,6 +129,15 @@ const createHeader = (id = mainPreviewId) =>
         const href = element.getAttribute('href');
         if (!href || href[0] !== '#' && !href.match(/^https?:\\/\\//)) {
           e.preventDefault();
+        }
+        else if (href.match(/^#.+/)) {
+          e.preventDefault();
+          const scrollId = href.substring(1);
+          const scrollElem = document.getElementById(scrollId);
+
+          if (scrollElem) {
+            scrollElem.scrollIntoView();
+          }
         }
       }
     }, false);
@@ -310,12 +318,8 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
   waitForFrame(frameContext)
     .then(async () => {
       const { sources, loadEnzyme } = frameContext;
-      // provide the file name and get the original source
-      const getUserInput = (fileName: string) =>
-        toString(sources[fileName as keyof typeof sources]);
       await frameContext.window?.document?.__initTestFrame({
         code: sources,
-        getUserInput,
         loadEnzyme
       });
 

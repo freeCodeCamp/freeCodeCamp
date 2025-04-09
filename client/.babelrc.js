@@ -49,6 +49,8 @@ const config = {
           'mathml',
           'pug',
           'python',
+          'scss',
+          'sass',
           'sql',
           'svg',
           'typescript',

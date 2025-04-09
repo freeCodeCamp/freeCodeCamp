@@ -11,7 +11,6 @@ dashedName: american-british-translator
 Build a full stack JavaScript app that is functionally similar to this: <a href="https://american-british-translator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://american-british-translator.freecodecamp.rocks/</a>. Working on this project will involve you writing your code using one of the following methods:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
--   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-american-british-english-translator/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project. Learn <a href="https://forum.freecodecamp.org/t/how-to-use-gitpod-in-the-curriculum/668669#how-can-i-share-my-workspace-to-get-help-8" target="_blank" rel="noopener noreferrer nofollow">how to share your Gitpod workspace to get help</a>.
 -   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 # --instructions--
@@ -64,19 +63,17 @@ Write the following tests in `tests/2_functional-tests.js`:
 You should provide your own project, not the example URL.
 
 ```js
-(getUserInput) => {
   assert(
     !/.*\/american-british-translator\.freecodecamp\.rocks/.test(
-      getUserInput('url')
+      code
     )
   );
-};
 ```
 
 You can `POST` to `/api/translate` with a body containing `text` with the text to translate and `locale` with either `american-to-british` or `british-to-american`. The returned object should contain the submitted `text` and `translation` with the translated text.
 
 ```js
-async (getUserInput) => {
+async () => {
   try {
     const text = 'Mangoes are my favorite fruit.';
     const locale = 'american-to-british';
@@ -85,7 +82,7 @@ async (getUserInput) => {
       translation:
         'Mangoes are my <span class="highlight">favourite</span> fruit.'
     };
-    let data = await fetch(getUserInput('url') + '/api/translate', {
+    let data = await fetch(code + '/api/translate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
@@ -104,7 +101,7 @@ async (getUserInput) => {
 The `/api/translate` route should handle the way time is written in American and British English. For example, ten thirty is written as "10.30" in British English and "10:30" in American English. The `span` element should wrap the entire time string, i.e. `<span class="highlight">10:30</span>`.
 
 ```js
-async (getUserInput) => {
+async () => {
   try {
     const text = 'Lunch is at 12:15 today.';
     const locale = 'american-to-british';
@@ -112,7 +109,7 @@ async (getUserInput) => {
       text: text,
       translation: 'Lunch is at <span class="highlight">12.15</span> today.'
     };
-    let data = await fetch(getUserInput('url') + '/api/translate', {
+    let data = await fetch(code + '/api/translate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
@@ -131,7 +128,7 @@ async (getUserInput) => {
 The `/api/translate` route should also handle the way titles/honorifics are abbreviated in American and British English. For example, Doctor Wright is abbreviated as "Dr Wright" in British English and "Dr. Wright" in American English. See `/components/american-to-british-titles.js` for the different titles your application should handle.
 
 ```js
-async (getUserInput) => {
+async () => {
   try {
     const text = 'Dr. Grosh will see you now.';
     const locale = 'american-to-british';
@@ -139,7 +136,7 @@ async (getUserInput) => {
       text: text,
       translation: '<span class="highlight">Dr</span> Grosh will see you now.'
     };
-    let data = await fetch(getUserInput('url') + '/api/translate', {
+    let data = await fetch(code + '/api/translate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
@@ -158,7 +155,7 @@ async (getUserInput) => {
 Wrap any translated spelling or terms with `<span class="highlight">...</span>` tags so they appear in green.
 
 ```js
-async (getUserInput) => {
+async () => {
   try {
     const text = 'Mangoes are my favorite fruit.';
     const locale = 'american-to-british';
@@ -167,7 +164,7 @@ async (getUserInput) => {
       translation:
         'Mangoes are my <span class="highlight">favourite</span> fruit.'
     };
-    let data = await fetch(getUserInput('url') + '/api/translate', {
+    let data = await fetch(code + '/api/translate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
@@ -186,10 +183,10 @@ async (getUserInput) => {
 If one or more of the required fields is missing, return `{ error: 'Required field(s) missing' }`.
 
 ```js
-async (getUserInput) => {
+async () => {
   try {
     const locale = 'american-to-british';
-    let data = await fetch(getUserInput('url') + '/api/translate', {
+    let data = await fetch(code + '/api/translate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ locale })
@@ -207,10 +204,10 @@ async (getUserInput) => {
 If `text` is empty, return `{ error: 'No text to translate' }`
 
 ```js
-async (getUserInput) => {
+async () => {
   try {
     const locale = 'american-to-british';
-    let data = await fetch(getUserInput('url') + '/api/translate', {
+    let data = await fetch(code + '/api/translate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: '', locale })
@@ -228,11 +225,11 @@ async (getUserInput) => {
 If `locale` does not match one of the two specified locales, return `{ error: 'Invalid value for locale field' }`.
 
 ```js
-async (getUserInput) => {
+async () => {
   try {
     const text = "Ceci n'est pas une pipe";
     const locale = 'french-to-american';
-    let data = await fetch(getUserInput('url') + '/api/translate', {
+    let data = await fetch(code + '/api/translate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text, locale })
@@ -250,14 +247,14 @@ async (getUserInput) => {
 If `text` requires no translation, return `"Everything looks good to me!"` for the `translation` value.
 
 ```js
-async (getUserInput) => {
+async () => {
   try {
     const locale = 'british-to-american';
     const output = {
       text: 'SaintPeter and nhcarrigan give their regards!',
       translation: 'Everything looks good to me!'
     };
-    let data = await fetch(getUserInput('url') + '/api/translate', {
+    let data = await fetch(code + '/api/translate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ text: output.text, locale })
@@ -277,9 +274,9 @@ async (getUserInput) => {
 All 24 unit tests are complete and passing.
 
 ```js
-async (getUserInput) => {
+async () => {
   try {
-    const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
+    const getTests = await $.get(code + '/_api/get-tests');
     assert.isArray(getTests);
     const unitTests = getTests.filter((test) => {
       return !!test.context.match(/Unit Tests/gi);
@@ -302,9 +299,9 @@ async (getUserInput) => {
 All 6 functional tests are complete and passing.
 
 ```js
-async (getUserInput) => {
+async () => {
   try {
-    const getTests = await $.get(getUserInput('url') + '/_api/get-tests');
+    const getTests = await $.get(code + '/_api/get-tests');
     assert.isArray(getTests);
     const functTests = getTests.filter((test) => {
       return !!test.context.match(/Functional Tests/gi);

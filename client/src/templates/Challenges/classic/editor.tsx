@@ -25,10 +25,9 @@ import {
   isSignedInSelector,
   themeSelector
 } from '../../../redux/selectors';
-import {
+import type {
   ChallengeFiles,
   Dimensions,
-  FileKey,
   ResizeProps,
   Test
 } from '../../../redux/prop-types';
@@ -85,7 +84,7 @@ export interface EditorProps {
   dimensions?: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
-  fileKey: FileKey;
+  fileKey: string;
   canFocusOnMountRef: MutableRefObject<boolean>;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
@@ -108,7 +107,7 @@ export interface EditorProps {
   showProjectPreview: boolean;
   previewOpen: boolean;
   updateFile: (object: {
-    fileKey: FileKey;
+    fileKey: string;
     editorValue: string;
     editableRegionBoundaries?: number[];
   }) => void;

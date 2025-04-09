@@ -341,8 +341,7 @@ function* updatePython(challengeData) {
   interruptCodeExecution();
   const code = {
     contents: buildData.sources.index,
-    editableContents: buildData.sources.editableContents,
-    original: buildData.sources.original
+    editableContents: buildData.sources.editableContents
   };
 
   runPythonCode(code);
