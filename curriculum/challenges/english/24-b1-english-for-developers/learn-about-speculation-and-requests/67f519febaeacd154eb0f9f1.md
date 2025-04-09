@@ -15,7 +15,7 @@ Listen to the audio and complete the sentence below.
 
 ## --sentence--
 
-`For now, let's gather more information and stay BLANK.`  
+`For now, let's gather more information and stay BLANK.`
 
 ## --blanks--
 
