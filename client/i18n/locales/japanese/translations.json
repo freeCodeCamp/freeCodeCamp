@@ -456,9 +456,6 @@
     "sign-in-see-benefits": "サポーター特典を見るにはサインインしてください。",
     "card-has-been-updated": "カード情報が更新されました。",
     "contact-support-mistake": "ご不明な点がございましたら、donors@freecodecamp.org までお問い合わせください。",
-    "cert-map-estimates": {
-      "certs": "{{title}} 認定講座"
-    },
     "editor-tabs": {
       "code": "コード",
       "tests": "テスト",

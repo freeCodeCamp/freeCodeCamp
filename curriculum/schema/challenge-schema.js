@@ -2,7 +2,10 @@ const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
 const { challengeTypes } = require('../../shared/config/challenge-types');
-const { SuperBlocks } = require('../../shared/config/curriculum');
+const {
+  SuperBlocks,
+  chapterBasedSuperBlocks
+} = require('../../shared/config/curriculum');
 const {
   availableCharacters,
   availableBackgrounds,
@@ -128,7 +131,7 @@ const schema = Joi.object()
     block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
     blockType: Joi.when('superBlock', {
-      is: [SuperBlocks.FullStackDeveloper],
+      is: chapterBasedSuperBlocks,
       then: Joi.valid(
         'workshop',
         'lab',
@@ -151,7 +154,7 @@ const schema = Joi.object()
     ).required(),
     challengeOrder: Joi.number(),
     chapter: Joi.string().when('superBlock', {
-      is: 'full-stack-developer',
+      is: chapterBasedSuperBlocks,
       then: Joi.required(),
       otherwise: Joi.optional()
     }),
@@ -211,7 +214,7 @@ const schema = Joi.object()
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
     module: Joi.string().when('superBlock', {
-      is: 'full-stack-developer',
+      is: chapterBasedSuperBlocks,
       then: Joi.required(),
       otherwise: Joi.optional()
     }),
