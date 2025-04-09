@@ -3856,7 +3856,8 @@
         "title": "Error Handling Review",
         "intro": [
           "Before you're quizzed on Cerror handling, you should review what you've learned about it.",
-          "[Add more details]"]
+          "[Add more details]"
+        ]
       },
       "quiz-error-handling": {
         "title": "Error Handling Quiz",
