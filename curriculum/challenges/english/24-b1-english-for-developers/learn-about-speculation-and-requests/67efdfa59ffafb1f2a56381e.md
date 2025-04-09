@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-55
 ---
 
-<!-- (audio) Jessica: Hey, Jake. We had a security breach reported last night. I wanted to discuss what might have caused it. Do you have any ideas? -->
+<!-- (audio) Jessica: Hey Jake, we had a security breach reported last night. I wanted to discuss what might have caused it. Do you have any ideas? -->
 
 <!-- SPEAKING -->
 
@@ -44,3 +44,51 @@ Jessica asks, `Do you have any ideas?`, which is a way of inviting someone to sh
 - Person 1: `Do you have any ideas how to fix it?` - This person is asking for suggestions or solutions.
 
 - Person 2: `Sure. We could check the server logs and see what's wrong.` - This person is saying yes, and is ready to share a suggestion.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-center.png",
+    "characters": [
+      {
+        "character": "Jessica",
+        "position": {
+          "x": 50,
+          "y": 15,
+          "z": 1.2
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "B1_17-2.mp3",
+      "startTime": 1,
+      "startTimestamp": 0,
+      "finishTimestamp": 6.44
+    }
+  },
+  "commands": [
+    {
+      "character": "Jessica",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Jessica",
+      "startTime": 1,
+      "finishTime": 7.44,
+      "dialogue": {
+        "text": "Hey Jake, we had a security breach reported last night. I wanted to discuss what might have caused it. Do you have any ideas?",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Jessica",
+      "opacity": 0,
+      "startTime": 7.94
+    }
+  ]
+}
+```
