@@ -152,7 +152,9 @@ export const SuperheroForm = () => {
 
   return (
     --fcc-editable-region--
-    
+    <>
+      
+    </>
     --fcc-editable-region--
   )
 };
