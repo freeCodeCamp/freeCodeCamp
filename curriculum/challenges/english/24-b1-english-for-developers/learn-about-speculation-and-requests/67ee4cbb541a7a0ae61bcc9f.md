@@ -58,3 +58,51 @@ No, but it should still be fixed.
 - Person 2: `It's not a big deal. I'll take notes for you.` - Missing the meeting is okay, and this person can help.
 
 Sophie also says `we should fix it before it causes problems`, meaning it's better to fix it now before it becomes serious.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-center.png",
+    "characters": [
+      {
+        "character": "Sophie",
+        "position": {
+          "x": 50,
+          "y": 0,
+          "z": 1.4
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "B1_17-1.mp3",
+      "startTime": 1,
+      "startTimestamp": 5.72,
+      "finishTimestamp": 8.5
+    }
+  },
+  "commands": [
+    {
+      "character": "Sophie",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Sophie",
+      "startTime": 1,
+      "finishTime": 3.78,
+      "dialogue": {
+        "text": "It's not a big deal, but we should fix it before it causes problems.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Sophie",
+      "opacity": 0,
+      "startTime": 4.28
+    }
+  ]
+}
+```
