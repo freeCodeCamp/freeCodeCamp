@@ -6,7 +6,7 @@ import {
   buildExtCurriculumData,
   Curriculum,
   CurriculumProps
-} from './build-external-curricula-data-v3';
+} from './build-external-curricula-data';
 
 const globalConfigPath = path.resolve(__dirname, '../../../shared/config');
 
