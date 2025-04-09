@@ -1,5 +1,8 @@
 const Joi = require('joi');
-const { SuperBlocks } = require('../../../shared/config/curriculum');
+const {
+  SuperBlocks,
+  chapterBasedSuperBlocks
+} = require('../../../shared/config/curriculum');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 
@@ -96,14 +99,14 @@ const availableSuperBlocksSchema = Joi.object({
   )
 });
 
-exports.superblockSchemaValidator = () => superblock => {
-  const superBlockName = Object.keys(superblock)[0];
+exports.superblockSchemaValidator = () => superBlock => {
+  const superBlockName = Object.keys(superBlock)[0];
 
-  if (superBlockName === SuperBlocks.FullStackDeveloper) {
-    return chapterBasedCurriculumSchema.validate(superblock);
+  if (chapterBasedSuperBlocks.includes(superBlockName)) {
+    return chapterBasedCurriculumSchema.validate(superBlock);
   }
 
-  return blockBasedCurriculumSchema.validate(superblock);
+  return blockBasedCurriculumSchema.validate(superBlock);
 };
 
 exports.availableSuperBlocksValidator = () => data =>
