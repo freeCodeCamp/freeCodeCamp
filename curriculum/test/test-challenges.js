@@ -8,7 +8,6 @@ const Mocha = require('mocha');
 const mockRequire = require('mock-require');
 const spinner = require('ora')();
 const puppeteer = require('puppeteer');
-const stringSimilarity = require('string-similarity');
 
 // lodash-es can't easily be used in node environments, so we just mock it out
 // for the original lodash in testing.
