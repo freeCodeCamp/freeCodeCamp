@@ -23,13 +23,20 @@ export interface CurriculumProps {
   blocks: Record<string, Block<ChallengeNode['challenge'][]>>;
 }
 
+interface Block<T> {
+  desc: string[];
+  intro: string[];
+  challenges: T;
+  meta: Record<string, unknown>;
+}
+
 type GeneratedCurriculumProps =
   | GeneratedBlockBasedCurriculumProps
   | GeneratedChapterBasedCurriculumProps;
 
 interface GeneratedBlockBasedCurriculumProps {
   intro: string[];
-  blocks: Record<string, Block<Record<string, unknown>>>;
+  blocks: GeneratedBlock[];
 }
 
 interface GeneratedChapterBasedCurriculumProps {
@@ -54,13 +61,6 @@ interface GeneratedModule {
 interface GeneratedBlock {
   dashedName: string;
   intro: string;
-  meta: Record<string, unknown>;
-}
-
-interface Block<T> {
-  desc: string[];
-  intro: string[];
-  challenges: T;
   meta: Record<string, unknown>;
 }
 
