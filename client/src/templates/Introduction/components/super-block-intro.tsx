@@ -15,7 +15,7 @@ export const ConditionalDonationAlert = ({
   superBlock,
   onCertificationDonationAlertClick,
   isDonating
-}: SuperBlockIntroProps): JSX.Element => {
+}: SuperBlockIntroProps): JSX.Element | null => {
   const { t } = useTranslation();
 
   const betaCertifications: SuperBlocks[] = [];
@@ -48,8 +48,6 @@ export const ConditionalDonationAlert = ({
   if (!isDonating && unfinishedCertifications.includes(superBlock))
     return (
       <Alert variant='info' className='annual-donation-alert'>
-        <p>{t('donate.unfinished-certification-2')}</p>
-        <hr />
         <p>
           <Trans i18nKey='donate.consider-donating-2'>
             <Link className='inline' to='/donate'>
@@ -60,7 +58,7 @@ export const ConditionalDonationAlert = ({
       </Alert>
     );
 
-  return <></>;
+  return null;
 };
 
 function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {

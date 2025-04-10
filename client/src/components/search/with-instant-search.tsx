@@ -1,7 +1,7 @@
-import { Location } from '@reach/router';
-import type { WindowLocation } from '@reach/router';
+import { Location } from '@gatsbyjs/reach-router';
+import type { WindowLocation } from '@gatsbyjs/reach-router';
 import type { SearchOptions } from 'instantsearch.js';
-import algoliasearch from 'algoliasearch/lite';
+import algoliasearch, { type SearchClient } from 'algoliasearch/lite';
 import React, { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 import { connect } from 'react-redux';
@@ -18,31 +18,32 @@ import {
   updateSearchQuery
 } from './redux';
 
+const mockSearchClient = {
+  // When Algolia is not configured, the client will still render,
+  // the result query is returned to the search component as a mock
+  //(mainly for testing without relying on Playwright fuffill route as
+  // there is no request made without a key).
+  search: (request: Array<{ indexName: string; params: SearchOptions }>) => {
+    return Promise.resolve({
+      results: [
+        {
+          hits: [],
+          query: request[0].params?.query === 'test' ? 'test' : '',
+          params:
+            'highlightPostTag=__%2Fais-highlight__&highlightPreTag=__ais-highlight__&hitsPerPage=5&query=sdefpuhsdfpiouhdsfgp',
+          index: 'news'
+        }
+      ]
+    });
+  }
+  // TODO: mock this in the tests.
+} as unknown as SearchClient;
+
 // If a key is missing, searches will fail, but the client will still render.
 const searchClient =
   algoliaAppId && algoliaAPIKey
     ? algoliasearch(algoliaAppId, algoliaAPIKey)
-    : {
-        // When Algolia is not configured, the client will still render,
-        // the result query is returned to the search component as a mock
-        //(mainly for testing without relying on Playwright fuffill route as
-        // there is no request made without a key).
-        search: (
-          request: Array<{ indexName: string; params: SearchOptions }>
-        ) => {
-          return Promise.resolve({
-            results: [
-              {
-                hits: [],
-                query: request[0].params?.query === 'test' ? 'test' : '',
-                params:
-                  'highlightPostTag=__%2Fais-highlight__&highlightPreTag=__ais-highlight__&hitsPerPage=5&query=sdefpuhsdfpiouhdsfgp',
-                index: 'news'
-              }
-            ]
-          });
-        }
-      };
+    : mockSearchClient;
 
 const mapStateToProps = createSelector(
   searchQuerySelector,

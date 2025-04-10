@@ -7,10 +7,10 @@ const ENV_EXAM_ID = args[0];
 const NUMBER_OF_EXAMS_TO_GENERATE = Number(args[1]);
 
 if (!ENV_EXAM_ID) {
-  throw 'First argument must be the EnvExam _id';
+  throw Error('First argument must be the EnvExam _id');
 }
 if (!NUMBER_OF_EXAMS_TO_GENERATE) {
-  throw 'Second argument must be an unsigned integer';
+  throw Error('Second argument must be an unsigned integer');
 }
 
 const prisma = new PrismaClient({

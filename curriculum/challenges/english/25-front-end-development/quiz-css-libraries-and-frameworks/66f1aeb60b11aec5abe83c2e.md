@@ -7,7 +7,7 @@ dashedName: quiz-css-libraries-and-frameworks
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 9 of the 10 questions below.
 
 # --quizzes--
 
@@ -17,67 +17,45 @@ To pass the quiz, you must correctly answer at least 17 of the 20 questions belo
 
 #### --text--
 
-What is a CSS framework? 
+What is a CSS framework?
 
 #### --distractors--
 
-A set of CSS rules
+A tool to fix CSS errors.
 
 ---
 
-A JavaScript library  
+A tool to lint CSS files.
 
 ---
 
-A coding language
+A formatter for CSS files.
 
 #### --answer--
 
-A library for CSS styles
+A library for CSS styles.
 
 ### --question--
 
 #### --text--
 
-Which of these is a popular CSS framework?
+Which of the following is a popular utility-first CSS framework?
 
 #### --distractors--
 
-JavaScript
+Template CSS
 
 ---
 
-SQL
+Loading CSS
 
 ---
 
-HTML
+Minimal CSS
 
 #### --answer--
 
-Bootstrap
-
-### --question--
-
-#### --text--
-
-What is a key advantage of using a CSS framework?
-
-#### --distractors--
-
-Provides predefined templates
-
----
-
-Reduces loading speed
-
----
-
-Increases code complexity
-
-#### --answer--
-
-Simplifies design consistency
+Tailwind CSS
 
 ### --question--
 
@@ -87,63 +65,19 @@ What is a disadvantage of CSS frameworks?
 
 #### --distractors--
 
-Too few components
+Too few components.
 
 ---
 
-No customization options
+No customization options.
 
 ---
 
-Improved browser support
+Improved browser support.
 
 #### --answer--
 
-Can bloat CSS files
-
-### --question--
-
-#### --text--
-
-Which framework uses utility classes extensively?
-
-#### --distractors--
-
-Materialize
-
----
-
-Bootstrap
-
----
-
-Foundation
-
-#### --answer--
-
-Tailwind
-
-### --question--
-
-#### --text--
-
-What is the primary purpose of the `.container` class in Bootstrap?
-
-#### --distractors--
-
-To add padding to elements
-
----
-
-To apply a background color
-
----
-
-To center text
-
-#### --answer--
-
-To create a fixed-width responsive container
+Can bloat CSS files.
 
 ### --question--
 
@@ -153,41 +87,19 @@ What does SCSS stand for?
 
 #### --distractors--
 
-Super Cascading Style Sheets
+Super Cascading Style Sheets.
 
 ---
 
-Structured CSS
+Structured CSS.
 
 ---
 
-Simple CSS
+Simple CSS.
 
 #### --answer--
 
-Sassy CSS
-
-### --question--
-
-#### --text--
-
-What benefit do preprocessors like Sass provide?
-
-#### --distractors--
-
-Adds JavaScript functionality
-
----
-
-Directly edits HTML
-
----
-
-Eliminates CSS
-
-#### --answer--
-
-Nesting of styles
+Sassy CSS.
 
 ### --question--
 
@@ -201,11 +113,11 @@ Comments
 
 ---
 
-CSS variables
+CSS linting.
 
 ---
 
-Inline CSS
+Inline CSS.
 
 #### --answer--
 
@@ -215,155 +127,63 @@ Mixins
 
 #### --text--
 
-What is Bootstrap known for?
+Which of the following is the correct way to use utility classes in Tailwind CSS?
 
 #### --distractors--
 
-Static design
+```html
+<button class="color-blue text-color font-size allow-hover round-btn">
+  Button
+</button>
+```
 
 ---
 
-Focus on accessibility
+```html
+<button class="blue text font-size hover round-btn margin-full">
+  Button
+</button>
+```
 
 ---
 
-No JavaScript support
+
+```html
+<button class="set-blue set-text set-font set-hover round-btn padding-full">
+  Button
+</button>
+```
 
 #### --answer--
 
-Mobile-first approach
+
+```html
+<button class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700">
+  Button
+</button>
+```
 
 ### --question--
 
 #### --text--
 
-What does Tailwind CSS focus on?
+What are the two types of CSS frameworks?
 
 #### --distractors--
 
-Component-based styling
+Tablet first CSS frameworks and Component-based CSS frameworks.
 
 ---
 
-Image optimization
+Utility-first CSS frameworks and Lazy loading CSS frameworks.
 
 ---
 
-Mobile responsiveness
+Minimal CSS frameworks and Utility-first CSS frameworks.
 
 #### --answer--
 
-Utility-first design
-
-### --question--
-
-#### --text--
-
-What does a CSS framework typically include?
-
-#### --distractors--
-
-JavaScript functions
-
----
-
-HTML templates
-
----
-
-Database management
-
-#### --answer--
-
-Predefined styles and components
-
-### --question--
-
-#### --text--
-
-In Tailwind CSS, which class is used to add margin to an element?
-
-#### --distractors--
-
-`m-4`
-
----
-
-`padding-4`
-
----
-
-`margin-4`
-
-#### --answer--
-
-`mt-4`
-
-### --question--
-
-#### --text--
-
-What is a main feature of preprocessors?
-
-#### --distractors--
-
-Linear CSS
-
----
-
-Uncompiled styles
-
----
-
-Built-in animations
-
-#### --answer--
-
-Variables
-
-### --question--
-
-#### --text--
-
-Which of the following is a drawback of Tailwind CSS?
-
-#### --distractors--
-
-Limited utility classes
-
----
-
-Lack of documentation
-
----
-
-Hard to learn
-
-#### --answer--
-
-Verbose class names
-
-### --question--
-
-#### --text--
-
-Which CSS framework has strong community support?
-
-#### --distractors--
-
-Tailwind
-
----
-
-Materialize
-
----
-
-Bulma
-
-#### --answer--
-
-Bootstrap
+Utility-first CSS frameworks and Component-based CSS frameworks.
 
 ### --question--
 
@@ -391,65 +211,91 @@ What is the file extension for SCSS?
 
 #### --text--
 
-What does Bootstrap's grid system help with?
+Which of the following is the correct way to define a variable in SCSS?
 
 #### --distractors--
 
-CSS animations
+```css
+#primary-color: #3498eb;
+
+header {
+  background-color: #primary-color;
+}
+```
 
 ---
 
-JavaScript functions
+```css
+>primary-color: #3498eb;
+
+header {
+  background-color: >primary-color;
+}
+```
 
 ---
 
-Image loading
+```css
+?primary-color: #3498eb;
+
+header {
+  background-color: ?primary-color;
+}
+```
 
 #### --answer--
 
-Responsive layout
+```css
+$primary-color: #3498eb;
+
+header {
+  background-color: $primary-color;
+}
+```
 
 ### --question--
 
 #### --text--
 
-Which Tailwind class would you use to set the text color to red?
+Which of the following is the correct way to define a mixin?
 
 #### --distractors--
 
-`text-red`
+```css
+--mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
 
 ---
 
-`red-text`
+```css
+>mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
 
 ---
 
-`color-red`
+```css
+mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
 
 #### --answer--
 
-`text-red-500`
-
-### --question--
-
-#### --text--
-
-Why might developers choose Materialize?
-
-#### --distractors--
-
-Strong community support
-
----
-
-Easy integration with HTML
-
----
-
-Comprehensive animation support
-
-#### --answer--
-
-Focus on material design principles
+```css
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
 

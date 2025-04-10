@@ -3,14 +3,23 @@ import { withTranslation, useTranslation } from 'react-i18next';
 
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
-import { ExtendedChallenge } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import { Link } from '../../../components/helpers';
 import { ButtonLink } from '../../../components/helpers/button-link';
 
+interface ChallengeInfo {
+  isCompleted: boolean;
+  fields: { slug: string };
+  dashedName: string;
+  title: string;
+  stepNumber: number;
+  superBlock: SuperBlocks;
+  challengeType: number;
+}
+
 interface Challenges {
-  challenges: ExtendedChallenge[];
+  challenges: ChallengeInfo[];
   isProjectBlock: boolean;
   isGridMap?: boolean;
   blockTitle?: string | null;
@@ -19,7 +28,7 @@ interface Challenges {
 const CheckMark = ({ isCompleted }: { isCompleted: boolean }) =>
   isCompleted ? <GreenPass /> : <GreenNotCompleted />;
 
-const ListChallenge = ({ challenge }: { challenge: ExtendedChallenge }) => (
+const ListChallenge = ({ challenge }: { challenge: ChallengeInfo }) => (
   <Link to={challenge.fields.slug}>
     <span className='map-badge'>
       <CheckMark isCompleted={challenge.isCompleted} />
@@ -28,7 +37,7 @@ const ListChallenge = ({ challenge }: { challenge: ExtendedChallenge }) => (
   </Link>
 );
 
-const CertChallenge = ({ challenge }: { challenge: ExtendedChallenge }) => (
+const CertChallenge = ({ challenge }: { challenge: ChallengeInfo }) => (
   <Link to={challenge.fields.slug}>
     {challenge.title}
     <span className='map-badge map-project-checkmark'>
@@ -38,7 +47,7 @@ const CertChallenge = ({ challenge }: { challenge: ExtendedChallenge }) => (
 );
 
 // Step or Task challenge
-const GridChallenge = ({ challenge }: { challenge: ExtendedChallenge }) => {
+const GridChallenge = ({ challenge }: { challenge: ChallengeInfo }) => {
   const { t } = useTranslation();
 
   return (

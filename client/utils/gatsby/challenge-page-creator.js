@@ -1,5 +1,4 @@
 const path = require('path');
-const { sortChallengeFiles } = require('../sort-challengefiles');
 const { viewTypes } = require('../../../shared/config/challenge-types');
 
 const backend = path.resolve(
@@ -87,6 +86,8 @@ exports.createChallengePages = function (
       disableLoopProtectPreview,
       certification,
       superBlock,
+      chapter,
+      module,
       block,
       fields: { slug, blockHashSlug },
       required = [],
@@ -109,6 +110,8 @@ exports.createChallengePages = function (
           disableLoopProtectTests,
           disableLoopProtectPreview,
           superBlock,
+          chapter,
+          module,
           block,
           isFirstStep: getIsFirstStepInBlock(index, allChallengeEdges),
           template,
@@ -138,15 +141,16 @@ function getProjectPreviewConfig(challenge, allChallengeEdges) {
     .filter(({ node: { challenge } }) => challenge.block === block)
     .map(({ node: { challenge } }) => challenge);
   const lastChallenge = challengesInBlock[challengesInBlock.length - 1];
-  const solutionToLastChallenge = sortChallengeFiles(
-    lastChallenge.solutions[0] ?? []
-  );
-  const lastChallengeFiles = sortChallengeFiles(
-    lastChallenge.challengeFiles ?? []
-  );
-  const projectPreviewChallengeFiles = lastChallengeFiles.map((file, id) => ({
+  const solutionFiles = lastChallenge.solutions[0] ?? [];
+  const lastChallengeFiles = lastChallenge.challengeFiles ?? [];
+
+  const findFileByKey = (key, files) =>
+    files.find(file => file.fileKey === key);
+
+  const projectPreviewChallengeFiles = lastChallengeFiles.map(file => ({
     ...file,
-    contents: solutionToLastChallenge[id]?.contents ?? file.contents
+    contents:
+      findFileByKey(file.fileKey, solutionFiles)?.contents ?? file.contents
   }));
 
   return {

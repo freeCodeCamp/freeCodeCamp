@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 const { ObjectId } = require('mongodb');
 
 const blankUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb9');
@@ -6,13 +5,15 @@ const publicUserId = new ObjectId('663b839b24a8b29f57728b13');
 const demoUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb5');
 const fullyCertifiedUserId = new ObjectId('5fa2db00a25c1c1fa49ce067');
 const almostFullyCertifiedUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb9');
+const unclaimedUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb1');
 
 const userIds = [
   blankUserId,
   publicUserId,
   demoUserId,
   fullyCertifiedUserId,
-  almostFullyCertifiedUserId
+  almostFullyCertifiedUserId,
+  unclaimedUserId
 ];
 
 module.exports.blankUser = {
@@ -12250,6 +12251,18 @@ module.exports.fullyCertifiedUser = {
       id: '671144cdcc01d73f7dd79dc9',
       challengeType: 0,
       files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '6734ddabad59e593a49afafe'
+    },
+    {
+      completedDate: 1729240849345,
+      id: '6734e2c5780912abd874e79c'
+    },
+    {
+      completedDate: 1729240849345,
+      id: '6763500bd5a85d5898cc21a9'
     }
   ],
   completedExams: [
@@ -12292,6 +12305,12 @@ module.exports.fullyCertifiedUser = {
   emailVerifyTTL: null,
   externalId: '',
   unsubscribeId: 'tBX8stC5jiustPBteF2mV'
+};
+
+module.exports.unclaimedUser = {
+  ...module.exports.fullyCertifiedUser,
+  id: unclaimedUserId,
+  isFrontEndLibsCert: false
 };
 
 module.exports.almostFullyCertifiedUser = {

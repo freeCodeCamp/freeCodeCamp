@@ -70,11 +70,10 @@ assert(
 The `authReducer` function should handle multiple action types with a `switch` statement.
 
 ```js
-(getUserInput) =>
-  assert(
-    getUserInput('index').toString().includes('switch') &&
-      getUserInput('index').toString().includes('case') &&
-      getUserInput('index').toString().includes('default')
+assert(
+    code.toString().includes('switch') &&
+      code.toString().includes('case') &&
+      code.toString().includes('default')
   );
 ```
 

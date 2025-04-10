@@ -180,7 +180,7 @@ describe('auth0 plugin', () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
         token: 'any token'
       });
-      userinfoSpy.mockResolvedValueOnce(Promise.reject('any error'));
+      userinfoSpy.mockResolvedValueOnce(Promise.reject(Error('any error')));
 
       const res = await fastify.inject({
         method: 'GET',

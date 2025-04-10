@@ -1,8 +1,8 @@
 ---
 id: 66a97ca8c4cbae7d0bb6e0ad
-title: Step 31
+title: Step 32
 challengeType: 0
-dashedName: step-31
+dashedName: step-32
 ---
 
 # --description--
@@ -122,7 +122,7 @@ assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value=
         <fieldset>
           <legend>Personal Information</legend>
           <label for="full-name">Name (required):</label>
-          <input type="text" id="full-name" name="name" placeholder="Ex. John Doe" required>
+          <input type="text" id="full-name" name="name" placeholder="Ex. John Doe" required size="20">
 
           <label for="email">Email address (required):</label>
           <input
@@ -131,6 +131,7 @@ assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value=
             id="email"
             type="email"
             name="email"
+            size="20"
           />
           <label for="age">Age (optional):</label>
           <input type="number" name="age" id="age" min="3" max="100" />

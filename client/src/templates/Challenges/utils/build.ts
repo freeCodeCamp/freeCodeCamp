@@ -3,7 +3,7 @@ import frameRunnerData from '../../../../../client/config/browser-scripts/frame-
 import jsTestEvaluatorData from '../../../../../client/config/browser-scripts/test-evaluator.json';
 import pyTestEvaluatorData from '../../../../../client/config/browser-scripts/python-test-evaluator.json';
 
-import { ChallengeFile, ChallengeMeta } from '../../../redux/prop-types';
+import type { ChallengeFile } from '../../../redux/prop-types';
 import { concatHtml } from '../rechallenge/builders';
 import {
   getTransformers,
@@ -26,7 +26,7 @@ import { WorkerExecutor } from './worker-executor';
 interface BuildChallengeData extends Context {
   challengeType: number;
   challengeFiles?: ChallengeFile[];
-  required: { src: string }[];
+  required: { src?: string }[];
   template: string;
   url: string;
 }
@@ -51,7 +51,9 @@ const jsWorkerExecutor = new WorkerExecutor(jsTestEvaluator, {
   terminateWorker: true
 });
 
-type ApplyFunctionProps = (file: ChallengeFile) => Promise<ChallengeFile>;
+type ApplyFunctionProps = (
+  file: ChallengeFile
+) => Promise<ChallengeFile> | ChallengeFile;
 
 const applyFunction =
   (fn: ApplyFunctionProps) => async (file: ChallengeFile) => {
@@ -72,22 +74,18 @@ const applyFunction =
 const composeFunctions = (...fns: ApplyFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
-// TODO: split this into at least two functions. One to create 'original' i.e.
-// the source and another to create the contents.
 function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
   // TODO: rename sources.index to sources.contents.
   const source: Source | undefined = challengeFiles?.reduce(
     (sources, challengeFile) => {
       sources.index += challengeFile.source || '';
       sources.contents = sources.index;
-      sources.original[challengeFile.history[0]] = challengeFile.source;
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },
     {
       index: '',
-      editableContents: '',
-      original: {}
+      editableContents: ''
     } as Source
   );
   return source;
@@ -105,7 +103,8 @@ export const buildFunctions = {
   [challengeTypes.colab]: buildBackendChallenge,
   [challengeTypes.python]: buildPythonChallenge,
   [challengeTypes.multifilePythonCertProject]: buildPythonChallenge,
-  [challengeTypes.lab]: buildDOMChallenge
+  [challengeTypes.lab]: buildDOMChallenge,
+  [challengeTypes.jsLab]: buildJSChallenge
 };
 
 export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
@@ -113,8 +112,6 @@ export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
   return Object.prototype.hasOwnProperty.call(buildFunctions, challengeType);
 }
 
-// TODO: Figure out and (hopefully) simplify the return type.
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export async function buildChallenge(
   challengeData: BuildChallengeData,
   options: BuildOptions
@@ -137,8 +134,7 @@ const testRunners = {
   [challengeTypes.multifilePythonCertProject]: getPyTestRunner,
   [challengeTypes.lab]: getDOMTestRunner
 };
-// TODO: Figure out and (hopefully) simplify the return type.
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+
 export function getTestRunner(
   buildData: BuildChallengeData,
   runnerConfig: TestRunnerConfig,
@@ -181,8 +177,7 @@ function getWorkerTestRunner(
 ) {
   const code = {
     contents: sources.index,
-    editableContents: sources.editableContents,
-    original: sources.original
+    editableContents: sources.editableContents
   };
 
   interface TestWorkerExecutor extends WorkerExecutor {
@@ -235,11 +230,15 @@ export async function buildDOMChallenge(
   );
   const isMultifile = challengeFiles.length > 1;
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const transformers =
-    isMultifile && hasJsx
-      ? getMultifileJSXTransformers(options)
-      : getTransformers(options);
+  const requiresReact16 = required.some(({ src }) =>
+    src?.includes('https://cdnjs.cloudflare.com/ajax/libs/react/16.')
+  );
+
+  // I'm reasonably sure this is fine, but we need to migrate transformers to
+  // TypeScript to be sure.
+  const transformers: ApplyFunctionProps[] = (isMultifile && hasJsx
+    ? getMultifileJSXTransformers(options)
+    : getTransformers(options)) as unknown as ApplyFunctionProps[];
 
   const pipeLine = composeFunctions(...transformers);
   const usesTestRunner = options?.usesTestRunner ?? false;
@@ -264,7 +263,7 @@ export async function buildDOMChallenge(
     challengeType: challengeTypes.html,
     build: concatHtml(toBuild),
     sources: buildSourceMap(finalFiles),
-    loadEnzyme: hasJsx,
+    loadEnzyme: requiresReact16,
     error
   };
 }
@@ -274,7 +273,9 @@ export async function buildJSChallenge(
   options: BuildOptions
 ): Promise<BuildResult> {
   if (!challengeFiles) throw Error('No challenge files provided');
-  const pipeLine = composeFunctions(...getTransformers(options));
+  const pipeLine = composeFunctions(
+    ...(getTransformers(options) as unknown as ApplyFunctionProps[])
+  );
 
   const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
@@ -303,7 +304,7 @@ function buildBackendChallenge({ url }: BuildChallengeData) {
   return {
     challengeType: challengeTypes.backend,
     build: concatHtml({ testRunner: frameRunnerSrc }),
-    sources: { url }
+    sources: { contents: url }
   };
 }
 
@@ -311,7 +312,9 @@ export async function buildPythonChallenge({
   challengeFiles
 }: BuildChallengeData): Promise<BuildResult> {
   if (!challengeFiles) throw new Error('No challenge files provided');
-  const pipeLine = composeFunctions(...getPythonTransformers());
+  const pipeLine = composeFunctions(
+    ...(getPythonTransformers() as unknown as ApplyFunctionProps[])
+  );
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
 
@@ -386,7 +389,11 @@ export function updateProjectPreview(
   }
 }
 
-export function challengeHasPreview({ challengeType }: ChallengeMeta): boolean {
+export function challengeHasPreview({
+  challengeType
+}: {
+  challengeType: number;
+}): boolean {
   return (
     challengeType === challengeTypes.html ||
     challengeType === challengeTypes.modern ||
@@ -399,9 +406,12 @@ export function challengeHasPreview({ challengeType }: ChallengeMeta): boolean {
 
 export function isJavaScriptChallenge({
   challengeType
-}: ChallengeMeta): boolean {
+}: {
+  challengeType: number;
+}): boolean {
   return (
     challengeType === challengeTypes.js ||
-    challengeType === challengeTypes.jsProject
+    challengeType === challengeTypes.jsProject ||
+    challengeType === challengeTypes.jsLab
   );
 }

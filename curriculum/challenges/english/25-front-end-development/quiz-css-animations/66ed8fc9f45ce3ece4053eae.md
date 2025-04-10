@@ -7,7 +7,7 @@ dashedName: quiz-css-animations
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -17,51 +17,51 @@ To pass the quiz, you must correctly answer at least 17 of the 20 questions belo
 
 #### --text--
 
-Which CSS property is used for 2D/3D transformations?
+What is the purpose of the `transform` property in CSS?
 
 #### --distractors--
 
-`position`
+To change the visibility of an element.
 
 ---
 
-`transition`
+To apply a visual effect to text.
 
 ---
 
-`display`
+To set the dimensions of an element.
 
 #### --answer--
 
-`transform`
+To modify the position, size, and shape of an element.
 
 ### --question--
 
 #### --text--
 
-What does `matrix()` allow you to control?
+How does the CSS `animation-direction` property affect an animation?
 
 #### --distractors--
 
-Only scaling
+It specifies if an animation should be repeated.
 
 ---
 
-Only translation
+It sets the duration of the animation.
 
 ---
 
-Only rotation
+It defines the speed of the animation.
 
 #### --answer--
 
-Multiple transformations at once
+It defines how an animation should play.
 
 ### --question--
 
 #### --text--
 
-Which property ensures the animation runs 3 times?
+Which CSS property makes an animation run 3 times?
 
 #### --distractors--
 
@@ -83,7 +83,7 @@ Which property ensures the animation runs 3 times?
 
 #### --text--
 
-Which timing function makes the animation run with the same speed from start to end?
+Which CSS timing function makes an animation run at a consistent speed from start to end?
 
 #### --distractors--
 
@@ -95,7 +95,7 @@ Which timing function makes the animation run with the same speed from start to 
 
 ---
 
-`cubic-bezier`
+`ease-in-out`
 
 #### --answer--
 
@@ -105,161 +105,172 @@ Which timing function makes the animation run with the same speed from start to 
 
 #### --text--
 
-What does `@keyframes` define?
+What does the `@keyframes` at-rule define in CSS?
 
 #### --distractors--
 
-CSS colors
+The colors of a CSS gradient.
 
 ---
 
-CSS transitions
+The angles of a CSS rotation.
 
 ---
 
-CSS text styles
+The dimensions of an element.
 
 #### --answer--
 
-CSS animation sequences
+The stages of a CSS animation.
 
 ### --question--
 
 #### --text--
 
-What does `translate()` do?
+What is the purpose of the `translateX()` function in CSS?
 
 #### --distractors--
 
-Changes opacity
+It changes the opacity of the element.
 
 ---
 
-Rotates the element
+It rotates the element.
 
 ---
 
-Skews the element
+It repositions the element vertically.
 
 #### --answer--
 
-Moves the element
+It repositions the element horizontally.
 
 ### --question--
 
 #### --text--
 
-What does accessibility focus on in web design?
+Which of the following is NOT a potential concern with CSS animations?
 
 #### --distractors--
 
-Color choice
+They may cause discomfort or physical harm to certain users.
 
 ---
 
-Responsiveness
+Users may find them distracting.
 
 ---
 
-Layout complexity
+Overuse can lead to poor performance.
 
 #### --answer--
 
-Usability for all users
+They can enhance user experience.
 
 ### --question--
 
 #### --text--
 
-Where is `@keyframes` written?
+Where is the `@keyframes` at-rule defined?
 
 #### --distractors--
 
-Inside HTML tags
+Within the `body` element of an HTML file.
 
 ---
 
-Inside CSS selectors
+Within the `head` element of an HTML file.
 
 ---
 
-In JavaScript
+Within a CSS class definition.
 
 #### --answer--
 
-In CSS
+At the top level, outside of any CSS selectors.
 
 ### --question--
 
 #### --text--
 
-Which property will pause the animation?
+Which CSS property allows you to pause and resume an animation?
 
 #### --distractors--
 
-`animation-timing-function: paused`
+`animation-timing-function`
 
 ---
 
-`animation-stop`
+`animation-delay`
 
 ---
 
-`animation-direction: paused`
+`animation-direction`
 
 #### --answer--
 
-`animation-play-state: paused`
+`animation-play-state`
 
 ### --question--
 
 #### --text--
 
-Why is providing video captions important?
+What value should be assigned to the `animation-name` property in CSS?
 
 #### --distractors--
 
-To improve SEO
+The duration of the animation in seconds.
 
 ---
 
-To comply with web standards
+The timing function used for the animation.
 
 ---
 
-To enhance visuals
+The delay before the animation starts in seconds.
 
 #### --answer--
 
-To provide accessibility for hearing impaired users
+The name of the animation defined by the `@keyframes`.
 
 ### --question--
 
 #### --text--
 
-Which attribute is used for form field accessibility?
+What does this `@keyframe` at-rule do to the animated element?
+
+```css
+@keyframes animation {
+  0% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+```
 
 #### --distractors--
 
-`placeholder`
+It rotates the element 90 degrees clockwise.
 
 ---
 
-`action`
+It changes the color of the element to blue.
 
 ---
 
-`method`
+It scales the element to 50% of its initial size and then to 100% of its initial size.
 
 #### --answer--
 
-`label`
+It moves the element horizontally from -50px to 100px, relative to its starting point.
 
 ### --question--
 
 #### --text--
 
-Which property defines how an animation progresses over time?
+Which CSS property defines how an animation progresses over time?
 
 #### --distractors--
 
@@ -281,63 +292,85 @@ Which property defines how an animation progresses over time?
 
 #### --text--
 
-What effect does `step-start` have on an animation?
+Which CSS property is used to specify that an animation should take 5 seconds to complete?
 
 #### --distractors--
 
-Smoothly transitions between steps.
+```css
+animation-name: 5s;
+```
 
 ---
 
-Repeats the animation infinitely with no delay.
+```css
+animation-delay: 5s;
+```
 
 ---
 
-Fades in and out during each step.
+```css
+animation-timing-function: 5s;
+```
 
 #### --answer--
 
-Jumps immediately to the next frame.
+```css
+animation-duration: 5s;
+```
 
 ### --question--
 
 #### --text--
 
-What is the purpose of focus indicators?
+What does `50%` represent in the following CSS `@keyframe` at-rule?
+
+```css
+@keyframes animation {
+  0% {
+    transform: translateX(-50px);
+  }
+  50% {
+    transform: translateX(25px);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+```
 
 #### --distractors--
 
-To show hidden elements.
+The starting point of the animation.
 
 ---
 
-To enhance font styles.
+The ending point of the animation.
 
 ---
 
-To adjust the layout.
+The speed of the animation.
 
 #### --answer--
 
-To highlight focused elements
+The halfway point of the animation.
 
 ### --question--
 
 #### --text--
 
-What will happen when this animation `transform: translateX(200px)` is applied?
+What will happen when the property `transform: translateX(200px);` is applied?
 
 #### --distractors--
 
-The element will move left.
+The element will move 200px to the left.
 
 ---
 
-`The element will move 200px to the bottom.
+The element will move 200px to the bottom.
 
 ---
 
-The element will rotate 200 degrees.
+The element will rotate 200 degrees clockwise.
 
 #### --answer--
 
@@ -351,29 +384,29 @@ How will the animation behave if `animation-iteration-count` is set to `infinite
 
 #### --distractors--
 
-The animation will run once and stop.
+It will run once and stop.
 
 ---
 
-The animation will pause after the first iteration.
+It will pause after the first iteration.
 
 ---
 
-The animation will stop after three iterations.
+It will stop after three iterations.
 
 #### --answer--
 
-The animation will repeat indefinitely.
+It will repeat indefinitely.
 
 ### --question--
 
 #### --text--
 
-Which `keyframe` selector defines the halfway point of an animation?
+Which `@keyframes` selector specifies the starting point of an animation?
 
 #### --distractors--
 
-`0%`
+`50%`
 
 ---
 
@@ -385,57 +418,57 @@ Which `keyframe` selector defines the halfway point of an animation?
 
 #### --answer--
 
-`50%`
+`0%`
 
 ### --question--
 
 #### --text--
 
-What does the animation shorthand property include?
+What properties can be specified using the `animation` shorthand CSS property?
 
 #### --distractors--
 
-Only animation name
+Only the name of the animation.
 
 ---
 
-Only animation timing
+The name and duration of the animation.
 
 ---
 
-Only animation duration
+The name, duration, and delay of the animation.
 
 #### --answer--
 
-All animation properties
+All animation properties.
 
 ### --question--
 
 #### --text--
 
-What is the effect of using the `ease-in-out` timing function?
+Which CSS property is used to apply an animation defined by an `@keyframes` at-rule?
 
 #### --distractors--
 
-The animation will start fast and end slow
+`animation-duration`
 
 ---
 
-The animation will run at a constant speed.
+`apply`
 
 ---
 
-The animation will loop infinitely.
+`translate`
 
 #### --answer--
 
-The animation will start slow, speed up, then slow down.
+`animation`
 
 ### --question--
 
 #### --text--
 
-Which property prevents the animation from running immediately?
+Which CSS property allows you to set a time before the animation begins?
 
 #### --distractors--
 

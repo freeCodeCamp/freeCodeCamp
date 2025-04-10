@@ -17,7 +17,7 @@ export const defaultDonation: DonationConfig = {
 export const defaultTierAmount: DonationAmount = 2000;
 
 export const onetimeSKUConfig = {
-  live: [
+  production: [
     { amount: '15000', id: 'sku_IElisJHup0nojP' },
     { amount: '10000', id: 'sku_IEliodY88lglPk' },
     { amount: '7500', id: 'sku_IEli9AXW8DwNtT' },
@@ -48,7 +48,7 @@ export const donationSubscriptionConfig = {
 // Shared paypal configuration
 // keep the 5 dollars for the modal
 export const paypalConfigTypes = {
-  live: {
+  production: {
     month: {
       500: { planId: 'P-6B636789V3105190KMTJFH7A' },
       1000: { planId: 'P-53P76823N8780520DMVTWF3I' },
@@ -125,7 +125,7 @@ export enum PaymentProvider {
 }
 
 const stripeProductIds = {
-  live: {
+  production: {
     month: {
       500: 'prod_Cc9bIxB2NvjpLy',
       1000: 'prod_BuiSxWk7jGSFlJ',
@@ -144,6 +144,6 @@ const stripeProductIds = {
 };
 
 export const allStripeProductIdsArray = [
-  ...Object.values(stripeProductIds['live']['month']),
+  ...Object.values(stripeProductIds['production']['month']),
   ...Object.values(stripeProductIds['staging']['month'])
 ];

@@ -2,7 +2,7 @@ const parseFixture = require('../__fixtures__/parse-fixture');
 const addText = require('./add-text');
 
 describe('add-text', () => {
-  let realisticAST, mockAST;
+  let realisticAST, mockAST, withSubSectionAST;
   const descriptionId = 'description';
   const instructionsId = 'instructions';
   const missingId = 'missing';
@@ -11,6 +11,7 @@ describe('add-text', () => {
   beforeAll(async () => {
     realisticAST = await parseFixture('realistic.md');
     mockAST = await parseFixture('simple.md');
+    withSubSectionAST = await parseFixture('with-subsection.md');
   });
 
   beforeEach(() => {
@@ -41,6 +42,16 @@ describe('add-text', () => {
     expect(() => {
       addText([]);
     }).toThrow(expectedError);
+  });
+
+  it('throws when there is a sub-section in one of the sections', () => {
+    const plugin = addText([instructionsId, descriptionId]);
+
+    expect(() => {
+      plugin(withSubSectionAST, file);
+    }).toThrow(
+      'The --description-- section should not have any subsections. Found subsection --not-allowed--'
+    );
   });
 
   it('should add a string relating to the section id to `file.data`', () => {
@@ -84,7 +95,6 @@ describe('add-text', () => {
     expect(file.data[instructionsId]).toBe(instructionsSectionText);
   });
 
-  // eslint-disable-next-line max-len
   it('should add nothing if a section id does not appear in the md', () => {
     const plugin = addText([missingId]);
     plugin(mockAST, file);
@@ -110,7 +120,6 @@ describe('add-text', () => {
     expect(file.data[descriptionId]).toEqual(expect.stringContaining(expected));
   });
 
-  // eslint-disable-next-line max-len
   it('should not add paragraphs when html elements are separated by whitespace', () => {
     const plugin = addText([instructionsId]);
     plugin(realisticAST, file);

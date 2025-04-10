@@ -13,7 +13,6 @@ export default function getCsurf() {
   return function csrf(req, res, next) {
     const { path } = req;
     if (
-      // eslint-disable-next-line max-len
       /^\/donate\/charge-stripe$|^\/donate\/create-stripe-payment-intent$|^\/coderoad-challenge-completed$/.test(
         path
       )

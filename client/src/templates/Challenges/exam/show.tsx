@@ -505,16 +505,12 @@ function ShowExam(props: ShowExamProps) {
                 <Alert variant='info'>
                   <p>{t('learn.exam.qualified')}</p>
                 </Alert>
+              ) : !prerequisitesComplete ? (
+                <MissingPrerequisites
+                  missingPrerequisites={missingPrerequisites}
+                />
               ) : (
-                <>
-                  {!prerequisitesComplete ? (
-                    <MissingPrerequisites
-                      missingPrerequisites={missingPrerequisites}
-                    />
-                  ) : (
-                    <FoundationalCSharpSurveyAlert />
-                  )}
-                </>
+                <FoundationalCSharpSurveyAlert />
               )}
               <PrismFormatted text={description} />
               <Spacer size='m' />
@@ -532,7 +528,11 @@ function ShowExam(props: ShowExamProps) {
               </Button>
             </Col>
             <CompletionModal />
-            <HelpModal challengeTitle={title} challengeBlock={blockName} />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={blockName}
+              superBlock={superBlock}
+            />
           </Row>
         </Container>
       </LearnLayout>

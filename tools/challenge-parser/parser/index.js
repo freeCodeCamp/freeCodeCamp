@@ -7,6 +7,7 @@ const addFillInTheBlank = require('./plugins/add-fill-in-the-blank');
 const addFrontmatter = require('./plugins/add-frontmatter');
 const addSeed = require('./plugins/add-seed');
 const addSolution = require('./plugins/add-solution');
+const addBeforeHook = require('./plugins/add-before-hook');
 const addTests = require('./plugins/add-tests');
 const addText = require('./plugins/add-text');
 const addVideoQuestion = require('./plugins/add-video-question');
@@ -52,6 +53,7 @@ const processor = unified()
   .use(addAssignment)
   .use(addScene)
   .use(addQuizzes)
+  .use(addBeforeHook)
   .use(addTests)
   .use(addText, [
     'description',

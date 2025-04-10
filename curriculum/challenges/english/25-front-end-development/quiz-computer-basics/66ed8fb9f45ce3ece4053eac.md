@@ -7,7 +7,7 @@ dashedName: quiz-computer-basics
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -25,7 +25,7 @@ Processor
 
 ---
 
-Graphics Card
+Graphics Card.
 
 ---
 
@@ -77,7 +77,7 @@ Cable
 
 #### --answer--
 
-Fiber Optic
+Fiber Optic.
 
 ### --question--
 
@@ -117,11 +117,11 @@ Opera
 
 ---
 
-Microsoft Edge
+Microsoft Edge.
 
 #### --answer--
 
-Google Drive
+Google Drive.
 
 ### --question--
 
@@ -131,11 +131,11 @@ When you need to edit a piece of code, which of the following are you most likel
 
 #### --distractors--
 
-Node Package Manager
+Node Package Manager.
 
 ---
 
-Microsoft Edge
+Microsoft Edge.
 
 ---
 
@@ -143,7 +143,7 @@ Github
 
 #### --answer--
 
-Visual Studio Code
+Visual Studio Code.
 
 ### --question--
 
@@ -157,15 +157,15 @@ Dropbox
 
 ---
 
-Microsoft OneDrive
+Microsoft OneDrive.
 
 ---
 
-Google Drive
+Google Drive.
 
 #### --answer--
 
-Windows File Explorer
+Windows File Explorer.
 
 ### --question--
 
@@ -307,11 +307,11 @@ What is a piece of software that allows you to look at online content called?
 
 #### --distractors--
 
-Internet Content Displayer
+Internet Content Displayer.
 
 ---
 
-Search Engine
+Search Engine.
 
 ---
 
@@ -319,7 +319,7 @@ Website
 
 #### --answer--
 
-Web Browser
+Web Browser.
 
 ### --question--
 
@@ -329,11 +329,11 @@ What is a piece of software that lists web pages related to a user's query calle
 
 #### --distractors--
 
-Page Finder
+Page Finder.
 
 ---
 
-Web Browser
+Web Browser.
 
 ---
 
@@ -341,7 +341,7 @@ Website
 
 #### --answer--
 
-Search Engine
+Search Engine.
 
 ### --question--
 
@@ -351,7 +351,7 @@ What is a set of one or more web pages under one domain name called?
 
 #### --distractors--
 
-Web Browser
+Web Browser.
 
 ---
 
@@ -359,7 +359,7 @@ Hyperlink
 
 ---
 
-Search Engine
+Search Engine.
 
 #### --answer--
 
@@ -385,7 +385,7 @@ Brackets
 
 #### --answer--
 
-Quotation marks
+Quotation marks.
 
 ### --question--
 
@@ -435,21 +435,21 @@ JPEG
 
 #### --text--
 
-Which of the following parts can be found in the circuit board?
+Which of the following parts is located in a socket on the motherboard?
 
 #### --distractors--
 
-Printer and Router.
+The Router.
 
 ---
 
-Mouse and Keyboard.
+The Keyboard.
 
 ---
 
-Hard Drive and GPU.
+The Hard Drive (HDD).
 
 #### --answer--
 
-CPU and RAM.
+The CPU.
 

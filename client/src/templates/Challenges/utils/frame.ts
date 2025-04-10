@@ -1,4 +1,4 @@
-import { toString, flow } from 'lodash-es';
+import { flow } from 'lodash-es';
 import i18next, { type i18n } from 'i18next';
 
 import { format } from '../../../utils/format';
@@ -13,16 +13,23 @@ export interface Source {
   index: string;
   contents?: string;
   editableContents: string;
-  original: { [key: string]: string | null };
+}
+
+interface Hooks {
+  beforeAll?: string;
 }
 
 export interface Context {
   window?: Window &
-    typeof globalThis & { i18nContent?: i18n; __pyodide: unknown };
-  document?: FrameDocument | PythonDocument;
+    typeof globalThis & {
+      i18nContent?: i18n;
+      __pyodide: unknown;
+      document: FrameDocument | PythonDocument;
+    };
   element: HTMLIFrameElement;
   build: string;
   sources: Source;
+  hooks?: Hooks;
   loadEnzyme?: () => void;
 }
 
@@ -89,7 +96,7 @@ const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 // The "fcc-hide-header" class on line 95 is added to ensure that the CSSHelper class ignores this style element
 // during tests, preventing CSS-related test failures.
 
-export const createHeader = (id = mainPreviewId) =>
+const createHeader = (id = mainPreviewId) =>
   `
   <base href='' />
   <style class="fcc-hide-header">
@@ -123,6 +130,15 @@ export const createHeader = (id = mainPreviewId) =>
         if (!href || href[0] !== '#' && !href.match(/^https?:\\/\\//)) {
           e.preventDefault();
         }
+        else if (href.match(/^#.+/)) {
+          e.preventDefault();
+          const scrollId = href.substring(1);
+          const scrollElem = document.getElementById(scrollId);
+
+          if (scrollElem) {
+            scrollElem.scrollIntoView();
+          }
+        }
       }
     }, false);
     document.addEventListener('submit', function(e) {
@@ -136,6 +152,14 @@ export const createHeader = (id = mainPreviewId) =>
     }, false);
   </script>
 `;
+
+const createBeforeAllScript = (beforeAll?: string) => {
+  if (!beforeAll) return '';
+
+  return `<script>
+  ${beforeAll};
+</script>`;
+};
 
 type TestResult =
   | { pass: boolean }
@@ -161,6 +185,7 @@ export const runTestInTestFrame = async function (
     return await Promise.race([
       new Promise<
         { pass: boolean } | { err: { message: string; stack?: string } }
+        // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
       >((_, reject) => setTimeout(() => reject('timeout'), timeout)),
       contentDocument.__runTest(test)
     ]);
@@ -183,6 +208,7 @@ const createFrame =
   (document: Document, id: string, title?: string) =>
   (frameContext: Context) => {
     const frame = document.createElement('iframe');
+    frame.srcdoc = createContent(id, frameContext);
     frame.id = id;
     if (typeof title === 'string') {
       frame.title = i18next.t('misc.iframe-preview', { title });
@@ -201,7 +227,6 @@ const mountFrame =
     const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
     if (oldFrame) {
       element.className = oldFrame.className || hiddenFrameClassName;
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       oldFrame.parentNode!.replaceChild(element, oldFrame);
       // only test frames can be added (and hidden) here, other frames must be
       // added by react
@@ -212,7 +237,6 @@ const mountFrame =
     return {
       ...frameContext,
       element,
-      document: element.contentDocument,
       window: element.contentWindow
     };
   };
@@ -294,12 +318,8 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
   waitForFrame(frameContext)
     .then(async () => {
       const { sources, loadEnzyme } = frameContext;
-      // provide the file name and get the original source
-      const getUserInput = (fileName: string) =>
-        toString(sources[fileName as keyof typeof sources]);
-      await frameContext.document?.__initTestFrame({
+      await frameContext.window?.document?.__initTestFrame({
         code: sources,
-        getUserInput,
         loadEnzyme
       });
 
@@ -335,11 +355,9 @@ const initMainFrame =
           };
         }
 
-        if (
-          frameContext.document &&
-          '__initPythonFrame' in frameContext.document
-        ) {
-          await frameContext.document?.__initPythonFrame();
+        const document = frameContext.window?.document;
+        if (document && '__initPythonFrame' in document) {
+          await document.__initPythonFrame();
         }
         if (frameReady) frameReady();
       })
@@ -356,36 +374,35 @@ function handleDocumentNotFound(err: string) {
 const initPreviewFrame = () => (frameContext: Context) => frameContext;
 
 const waitForFrame = (frameContext: Context) => {
-  return new Promise((resolve, reject) => {
-    if (!frameContext.document) {
+  return new Promise<void>((resolve, reject) => {
+    const rejectId = setTimeout(() => {
+      // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
       reject(DOCUMENT_NOT_FOUND_ERROR);
-    } else if (frameContext.document.readyState === 'loading') {
-      frameContext.document.addEventListener('DOMContentLoaded', resolve);
-    } else {
-      resolve(null);
-    }
+    }, 10000);
+
+    // We have to add the listener to the frame, not its contentWindow, because
+    // the the latter does not receive the load event in Safari. It does not
+    // matter which we use for Chrome and Firefox.
+    frameContext.element?.addEventListener('load', () => {
+      clearTimeout(rejectId);
+      resolve();
+    });
   });
 };
 
-function writeToFrame(content: string, frame?: FrameDocument) {
-  // it's possible, if the preview is rapidly opened and closed, for the frame
-  // to be null at this point.
-  if (frame) {
-    frame.open();
-    frame.write(content);
-    frame.close();
-  }
-}
-
-const writeContentToFrame = (frameContext: Context) => {
-  const doctype =
-    frameContext.sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
-
-  writeToFrame(
-    doctype + createHeader(frameContext.element.id) + frameContext.build,
-    frameContext.document
+export const createContent = (
+  id: string,
+  { build, sources, hooks }: { build: string; sources: Source; hooks?: Hooks }
+) => {
+  // DOCTYPE should be the first thing written to the frame, so if the user code
+  // includes a DOCTYPE declaration, we need to find it and write it first.
+  const doctype = sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
+  return (
+    doctype + createBeforeAllScript(hooks?.beforeAll) + createHeader(id) + build
   );
+};
 
+const restoreScrollPosition = (frameContext: Context) => {
   scrollManager.registerScrollEventListener(frameContext.element);
 
   if (scrollManager.getPreviewScrollPosition()) {
@@ -457,6 +474,6 @@ const createFramer = ({
     updateWindowFunctions ?? noop,
     updateProxyConsole(proxyLogger),
     updateWindowI18next,
-    writeContentToFrame,
+    restoreScrollPosition,
     init(frameReady, proxyLogger)
   ) as (args: Context) => void;

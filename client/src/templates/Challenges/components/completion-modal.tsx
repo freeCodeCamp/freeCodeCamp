@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -8,11 +7,13 @@ import { createSelector } from 'reselect';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import Login from '../../../components/Header/components/login';
-import { isSignedInSelector } from '../../../redux/selectors';
+import {
+  isSignedInSelector,
+  completedChallengesIdsSelector
+} from '../../../redux/selectors';
 import { ChallengeFiles } from '../../../redux/prop-types';
 import { closeModal, submitChallenge } from '../redux/actions';
 import {
-  completedChallengesIdsSelector,
   isCompletionModalOpenSelector,
   successMessageSelector,
   challengeFilesSelector,

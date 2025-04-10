@@ -178,7 +178,7 @@ const ShowFillInTheBlank = ({
   };
 
   const handlePlayScene = () => {
-    sceneSubject.notify();
+    sceneSubject.notify('play');
   };
 
   const blockNameTitle = `${t(
@@ -258,7 +258,11 @@ const ShowFillInTheBlank = ({
               <Spacer size='l' />
             </Col>
             <CompletionModal />
-            <HelpModal challengeTitle={title} challengeBlock={blockName} />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={blockName}
+              superBlock={superBlock}
+            />
           </Row>
         </Container>
         <ShortcutsModal />

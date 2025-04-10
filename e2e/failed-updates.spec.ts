@@ -1,6 +1,5 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
-import { ChallengeData } from '../tools/challenge-editor/api/interfaces/challenge-data';
 
 const failedUpdates = [
   {
@@ -16,8 +15,8 @@ const failedUpdates = [
 ];
 const storeKey = 'fcc-failed-updates';
 
-function getCompletedIds(completedChallenges: ChallengeData[]): string[] {
-  return completedChallenges.map((challenge: ChallengeData) => challenge.id);
+function getCompletedIds(completedChallenges: { id: string }[]): string[] {
+  return completedChallenges.map(challenge => challenge.id);
 }
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 

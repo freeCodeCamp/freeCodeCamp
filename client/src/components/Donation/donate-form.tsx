@@ -298,11 +298,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
   }
 
   renderPageForm() {
-    return (
-      <>
-        <div>{this.renderButtonGroup()}</div>
-      </>
-    );
+    return <div>{this.renderButtonGroup()}</div>;
   }
 
   render() {

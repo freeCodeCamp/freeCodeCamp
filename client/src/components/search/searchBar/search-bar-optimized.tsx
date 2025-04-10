@@ -3,11 +3,12 @@ import { useTranslation } from 'react-i18next';
 import Magnifier from '../../../assets/icons/magnifier';
 import InputReset from '../../../assets/icons/input-reset';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
-import type { SearchBarProps } from './search-bar';
 
 const SearchBarOptimized = ({
   innerRef
-}: Pick<SearchBarProps, 'innerRef'>): JSX.Element => {
+}: {
+  innerRef: React.RefObject<HTMLDivElement>;
+}): JSX.Element => {
   const { t } = useTranslation();
   // TODO: Refactor this fallback when all translation files are synced
   const searchPlaceholder = t('search-bar:placeholder').startsWith(

@@ -31,6 +31,7 @@ function getComponentNameAndProps(
   const LayoutReactComponent = layoutSelector({
     element: { type: elementType, props: {}, key: '' },
     props: {
+      data: {},
       location: {
         pathname
       },

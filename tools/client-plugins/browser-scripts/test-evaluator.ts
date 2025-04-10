@@ -1,6 +1,6 @@
 import chai from 'chai';
 import { toString as __toString } from 'lodash-es';
-import * as helpers from '@freecodecamp/curriculum-helpers';
+import * as curriculumHelpers from '@freecodecamp/curriculum-helpers';
 import { format as __format } from './utils/format';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
@@ -80,60 +80,52 @@ const __utils = (() => {
   };
 })();
 
-// We freeze these two to prevent learners from getting the tester into a weird
-// state.
+// We can't simply import these because of how webpack names them when building
+// the bundle. Since both assert and __helpers have to exist in the global
+// scope, we have to declare them.
+const assert = chai.assert;
+const __helpers = curriculumHelpers;
+
+// We freeze to prevent learners from getting the tester into a weird
+// state by modifying these objects.
 Object.freeze(self);
 Object.freeze(__utils);
+Object.freeze(assert);
+Object.freeze(__helpers);
 
 interface TestEvaluatorEvent extends MessageEvent {
   data: {
     code: {
       contents: string;
       editableContents: string;
-      original: { [id: string]: string };
     };
     firstTest: unknown;
     testString: string;
     build: string;
-    sources: {
-      [fileName: string]: unknown;
-    };
   };
 }
 
 /* Run the test if there is one.  If not just evaluate the user code */
 ctx.onmessage = async (e: TestEvaluatorEvent) => {
   /* eslint-disable @typescript-eslint/no-unused-vars */
-  const code = (e.data?.code?.contents || '').slice();
-  const editableContents = (e.data?.code?.editableContents || '').slice();
-
-  const assert = chai.assert;
-  const __helpers = helpers;
-  // Similarly to self and __utils, if the learner tries to modify these, weird
-  // behavior may result. Freezing them means they get an error instead.
-  Object.freeze(assert);
-  Object.freeze(__helpers);
-  // Fake Deep Equal dependency
-  const DeepEqual = (a: unknown, b: unknown) =>
-    JSON.stringify(a) === JSON.stringify(b);
+  const code = e.data?.code?.contents || '';
+  const editableContents = e.data?.code?.editableContents || '';
 
   // Build errors should be reported, but only once:
   __utils.toggleProxyLogger(e.data.firstTest);
   /* eslint-enable @typescript-eslint/no-unused-vars */
   try {
-    let testResult;
     // This can be reassigned by the eval inside the try block, so it should be declared as a let
     // eslint-disable-next-line prefer-const
     let __userCodeWasExecuted = false;
-    /* eslint-disable no-eval */
     try {
       // Logging is proxyed after the build to catch console.log messages
       // generated during testing.
-      testResult = (await eval(`${e.data.build}
+      await eval(`${e.data.build}
 __utils.flushLogs();
 __userCodeWasExecuted = true;
 __utils.toggleProxyLogger(true);
-${e.data.testString}`)) as unknown;
+(async () => {${e.data.testString}})()`);
     } catch (err) {
       if (__userCodeWasExecuted) {
         // rethrow error, since test failed.
@@ -150,13 +142,7 @@ ${e.data.testString}`)) as unknown;
       }
       // the tests may not require working code, so they are evaluated even if
       // the user code does not get executed.
-      testResult = eval(e.data.testString) as unknown;
-    }
-    /* eslint-enable no-eval */
-    if (typeof testResult === 'function') {
-      await testResult((fileName: string) =>
-        __toString(e.data.sources[fileName])
-      );
+      eval(e.data.testString);
     }
     __utils.flushLogs();
     ctx.postMessage({ pass: true });
@@ -171,7 +157,9 @@ ${e.data.testString}`)) as unknown;
     ctx.postMessage({
       err: {
         message: (err as Error).message,
-        stack: (err as Error).stack
+        stack: (err as Error).stack,
+        expected: (err as { expected?: string }).expected,
+        actual: (err as { actual?: string }).actual
       }
     });
   }

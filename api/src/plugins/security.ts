@@ -5,7 +5,11 @@ import { FREECODECAMP_NODE_ENV } from '../utils/env';
 
 const securityHeaders: FastifyPluginCallback = (fastify, _options, done) => {
   // OWASP recommended headers
-  fastify.addHook('onRequest', async (_request, reply) => {
+  fastify.addHook('onRequest', async (req, reply) => {
+    const logger = fastify.log.child({ req });
+
+    logger.debug('Adding security headers to response');
+
     void reply
       .header('Cache-Control', 'no-store')
       .header('Content-Security-Policy', "frame-ancestors 'none'")

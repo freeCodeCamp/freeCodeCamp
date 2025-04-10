@@ -45,7 +45,7 @@ function validateMetaData(): void {
     const filePath = `${getProjectPath()}${id}.md`;
     try {
       fs.accessSync(filePath);
-    } catch (e) {
+    } catch (_e) {
       throw new Error(
         `The file
 ${filePath}

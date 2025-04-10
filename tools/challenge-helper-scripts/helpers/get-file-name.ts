@@ -12,7 +12,7 @@ export const getFileName = async (id: string): Promise<string | null> => {
     let frontMatter = null;
     try {
       frontMatter = matter.read(`${path}${file}`);
-    } catch (err) {
+    } catch (_err) {
       frontMatter = null;
     }
     if (String(frontMatter?.data.id) === id) {

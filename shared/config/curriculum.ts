@@ -44,18 +44,16 @@ export enum SuperBlockStage {
   Extra,
   Legacy,
   Upcoming,
-  Next,
-  NextEnglish
+  Next
 }
 
 const defaultStageOrder = [
   SuperBlockStage.Core,
-  SuperBlockStage.Next,
   SuperBlockStage.English,
-  SuperBlockStage.NextEnglish,
-  SuperBlockStage.Professional,
   SuperBlockStage.Extra,
-  SuperBlockStage.Legacy
+  SuperBlockStage.Legacy,
+  SuperBlockStage.Professional,
+  SuperBlockStage.Next
 ];
 
 export function getStageOrder({
@@ -73,7 +71,17 @@ export type StageMap = {
 
 // Groups of superblocks in learn map. This should include all superblocks.
 export const superBlockStages: StageMap = {
-  [SuperBlockStage.Core]: [
+  [SuperBlockStage.Core]: [SuperBlocks.FullStackDeveloper],
+
+  [SuperBlockStage.English]: [SuperBlocks.A2English, SuperBlocks.B1English],
+  [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
+  [SuperBlockStage.Extra]: [
+    SuperBlocks.TheOdinProject,
+    SuperBlocks.CodingInterviewPrep,
+    SuperBlocks.ProjectEuler,
+    SuperBlocks.RosettaCode
+  ],
+  [SuperBlockStage.Legacy]: [
     SuperBlocks.RespWebDesignNew,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.FrontEndDevLibs,
@@ -85,23 +93,12 @@ export const superBlockStages: StageMap = {
     SuperBlocks.DataAnalysisPy,
     SuperBlocks.InfoSec,
     SuperBlocks.MachineLearningPy,
-    SuperBlocks.CollegeAlgebraPy
-  ],
-  [SuperBlockStage.Next]: [SuperBlocks.FullStackDeveloper],
-  [SuperBlockStage.English]: [SuperBlocks.A2English],
-  [SuperBlockStage.NextEnglish]: [SuperBlocks.B1English],
-  [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
-  [SuperBlockStage.Extra]: [
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.RosettaCode
-  ],
-  [SuperBlockStage.Legacy]: [
+    SuperBlocks.CollegeAlgebraPy,
     SuperBlocks.RespWebDesign,
     SuperBlocks.JsAlgoDataStruct,
     SuperBlocks.PythonForEverybody
   ],
+  [SuperBlockStage.Next]: [],
   [SuperBlockStage.Upcoming]: []
 };
 
@@ -242,6 +239,9 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 };
 
 Object.freeze(notAuditedSuperBlocks);
+
+export const chapterBasedSuperBlocks = [SuperBlocks.FullStackDeveloper];
+Object.freeze(chapterBasedSuperBlocks);
 
 type Config = {
   showUpcomingChanges: boolean;

@@ -101,7 +101,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
   done
 ) => {
   fastify.get(
-    '/api/users/get-public-profile',
+    '/users/get-public-profile',
     {
       schema: schemas.getPublicProfile,
       onRequest: (req, reply, done) => {
@@ -120,6 +120,8 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
+      logger.info({ username: req.query.username });
       // TODO(Post-MVP): look for duplicates unless we can make username unique in the db.
       const user = await fastify.prisma.user.findFirst({
         where: { username: req.query.username }
@@ -128,6 +130,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (!user) {
+        logger.warn('User not found');
         void reply.code(404);
         return reply.send({});
       }
@@ -210,22 +213,29 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
   );
 
   fastify.get(
-    '/api/users/exists',
+    '/users/exists',
     {
       schema: schemas.userExists,
       attachValidation: true
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req });
+
       if (req.validationError) {
+        logger.warn({ validationError: req.validationError });
         void reply.code(400);
-        // TODO(Post-MVP): return a message telling the requester that their
-        // request was malformed.
-        return await reply.send({ exists: true });
+        return await reply.send({
+          type: 'danger',
+          message: 'username parameter is required'
+        });
       }
 
       const username = req.query.username.toLowerCase();
 
-      if (isRestricted(username)) return await reply.send({ exists: true });
+      if (isRestricted(username)) {
+        logger.info({ username }, 'Restricted username');
+        return await reply.send({ exists: true });
+      }
 
       const exists =
         (await fastify.prisma.user.count({

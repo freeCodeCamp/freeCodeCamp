@@ -118,6 +118,7 @@ const ShowGeneric = ({
       title,
       challengeType,
       helpCategory,
+      blockType,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -198,7 +199,7 @@ const ShowGeneric = ({
     <Hotkeys
       executeChallenge={handleSubmit}
       containerRef={container}
-      playScene={scene ? () => sceneSubject.notify() : undefined}
+      playScene={scene ? () => sceneSubject.notify('play') : undefined}
     >
       <LearnLayout>
         <Helmet
@@ -296,7 +297,11 @@ const ShowGeneric = ({
               <Spacer size='l' />
             </Col>
             <CompletionModal />
-            <HelpModal challengeTitle={title} challengeBlock={blockName} />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={blockName}
+              superBlock={superBlock}
+            />
           </Row>
         </Container>
       </LearnLayout>

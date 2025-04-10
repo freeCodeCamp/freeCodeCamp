@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-an-api-response-using-chai-http-iv---put-met
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. Learn <a href="https://forum.freecodecamp.org/t/how-to-use-gitpod-in-the-curriculum/668669#how-can-i-share-my-workspace-to-get-help-8" target="_blank" rel="noopener noreferrer nofollow">how to share your Gitpod workspace to get help</a>.
+As a reminder, this project is being built upon the following starter project cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 This exercise is similar to the previous one.
 
@@ -40,8 +40,7 @@ Follow the assertion order above - we rely on it. Also, be sure to remove `asser
 All tests should pass
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(
+  $.get(code + '/_api/get-tests?type=functional&n=3').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -54,8 +53,7 @@ All tests should pass
 You should test for `res.status` to be 200
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(
+  $.get(code + '/_api/get-tests?type=functional&n=3').then(
     (data) => {
       assert.equal(data.assertions[0].method, 'equal');
       assert.equal(data.assertions[0].args[0], 'res.status');
@@ -70,8 +68,7 @@ You should test for `res.status` to be 200
 You should test for `res.type` to be `'application/json'`
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(
+  $.get(code + '/_api/get-tests?type=functional&n=3').then(
     (data) => {
       assert.equal(data.assertions[1].method, 'equal');
       assert.equal(data.assertions[1].args[0], 'res.type');
@@ -86,8 +83,7 @@ You should test for `res.type` to be `'application/json'`
 You should test for `res.body.name` to be `'Giovanni'`
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(
+  $.get(code + '/_api/get-tests?type=functional&n=3').then(
     (data) => {
       assert.equal(data.assertions[2].method, 'equal');
       assert.equal(data.assertions[2].args[0], 'res.body.name');
@@ -102,8 +98,7 @@ You should test for `res.body.name` to be `'Giovanni'`
 You should test for `res.body.surname` to be `'da Verrazzano'`
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=3').then(
+  $.get(code + '/_api/get-tests?type=functional&n=3').then(
     (data) => {
       assert.equal(data.assertions[3].method, 'equal');
       assert.equal(data.assertions[3].args[0], 'res.body.surname');

@@ -2,11 +2,24 @@ import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
-test.describe('When it renders', () => {
+test.describe('Should be shown automatically', () => {
   test.beforeEach(async ({ page }) => {
     const urlWithProjectPreview =
       '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-1';
     await page.goto(urlWithProjectPreview);
+  });
+
+  test('it should contain a non-empty preview frame', async ({ page }) => {
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['project-preview-title']
+    });
+    await expect(dialog).toBeVisible();
+    const previewFrame = dialog.frameLocator('#fcc-project-preview-frame');
+    await expect(
+      // This is a part of the Cat Photo App that we expect to see. Essentially,
+      // it's a proxy for "not empty"
+      previewFrame.getByRole('heading', { name: 'Cat Photos' })
+    ).toBeVisible();
   });
 
   test('it can be closed by the Start Coding! button', async ({ page }) => {
@@ -36,7 +49,34 @@ test.describe('When it renders', () => {
   });
 });
 
-test.describe('It should on appear', () => {
+test.describe('Should be shown manually', () => {
+  test.beforeEach(async ({ page }) => {
+    const urlWithProjectPreview =
+      '/learn/full-stack-developer/lab-drum-machine/build-drum-machine';
+    await page.goto(urlWithProjectPreview);
+  });
+
+  test("when the user clicks on 'this example project'", async ({ page }) => {
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['demo-project-title']
+    });
+    await expect(dialog).not.toBeVisible();
+    await page
+      .getByRole('button', {
+        name: 'this example project'
+      })
+      .click();
+    await expect(dialog).toBeVisible();
+    const previewFrame = dialog.frameLocator('#fcc-project-preview-frame');
+    await expect(
+      // This is a part of the Drum Machine that we expect to see. Essentially,
+      // it's a proxy for "not empty"
+      previewFrame.getByText('Power: On')
+    ).toBeVisible();
+  });
+});
+
+test.describe('Should not render', () => {
   test('on the second step of a project', async ({ page }) => {
     await page.goto(
       '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'

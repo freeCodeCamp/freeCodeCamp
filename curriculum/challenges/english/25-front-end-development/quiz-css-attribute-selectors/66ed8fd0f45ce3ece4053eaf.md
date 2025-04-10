@@ -7,7 +7,7 @@ dashedName: quiz-css-attribute-selectors
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 9 of the 10 questions below.
 
 # --quizzes--
 
@@ -17,50 +17,40 @@ To pass the quiz, you must correctly answer at least 17 of the 20 questions belo
 
 #### --text--
 
-Which selector would target all `option` elements where the value attribute starts with `"A"`?
+What are CSS attribute selectors used for?
 
 #### --distractors--
 
-```css
-option[value$="A"] { font-size: 14px; }
-```
+To apply styles to elements based on their tag name.
 
 ---
 
-```css
-option[value*="A"] { font-size: 14px; }
-```
+To apply styles to elements based on their class name.
 
 ---
 
-```css
-option[value~="A"] { font-size: 14px; }
-```
+To apply styles to elements based on their parent element.
 
 #### --answer--
 
-```css
-option[value^="A"] { font-size: 14px; }
-```
+To apply styles to elements based on their attributes.
 
 ### --question--
 
 #### --text--
 
-Which of the following will not match this CSS rule?
+Which of the following will NOT be selected by this CSS selector?
 
-```html
-<style>
+```css
 [title~="flower"] {
   border: 5px solid yellow;
 }
-</style>
 ```
 
 #### --distractors--
 
 ```html
-<img src="img1.jpg" title="klematis flower" width="150" height="113">
+<img src="img1.jpg" title="clematis flower" width="150" height="113">
 ```
 
 ---
@@ -85,539 +75,231 @@ Which of the following will not match this CSS rule?
 
 #### --text--
 
-Which selector will target all elements with a `lang` attribute starting with `"fr"`?
+Which CSS selector matches all `p` elements with a `lang` attribute set to `"fr"`?
 
 #### --distractors--
 
 ```css
-[lang*="fr"] { color: blue; }
+p[lang-="fr"] { color: blue; }
 ```
 
 ---
 
 ```css
-[lang="fr"] { color: blue; }
+p[lang~="fr"] { color: blue; }
 ```
 
 ---
 
 ```css
-[lang~="fr"] { color: blue; }
+p[lang=="fr"] { color: blue; }
 ```
 
 #### --answer--
 
 ```css
-[lang^="fr"] { color: blue; }
+p[lang="fr"] { color: blue; }
 ```
 
 ### --question--
 
 #### --text--
 
-How would you style all `a` elements where the `title` attribute starts with `"Read"`?
+Which CSS selector matches all `a` elements with an `href` attribute?
 
 #### --distractors--
 
 ```css
-a[title$="Read"] { color: blue; }
+a(href) { color: green; }
 ```
 
 ---
 
 ```css
-a[title~="Read"] { color: blue; }
+a { color: green; }
 ```
 
 ---
 
 ```css
-a[title*="Read"] { color: blue; }
+a[href~=""] { color: green; }
 ```
 
 #### --answer--
 
 ```css
-a[title^="Read"] { color: blue; }
+a[href] { color: blue; }
 ```
 
 ### --question--
 
 #### --text--
 
-How would you target all `input` elements with an `id` attribute that ends with `"field"`?
+Which CSS selector matches all ordered lists with uppercase Roman numerals?
 
 #### --distractors--
 
 ```css
-input[id^="field"] { border-color: red; }
+ol[type="a"] { border-color: black; }
 ```
 
 ---
 
 ```css
- input[id*="field"] { border-color: red; }
+ol[type="A"] { border-color: black; }
 ```
 
 ---
 
 ```css
-input[id~="field"] { border-color: red; }
+ol[type="i"] { border-color: black; }
 ```
 
 #### --answer--
 
 ```css
-input[id$="field"] { border-color: red; }
+ol[type="I"] { border-color: black; }
 ```
 
 ### --question--
 
 #### --text--
 
-Which selector targets all elements with a `lang` attribute set to `"en-US"`?
+What is the `data-lang` attribute commonly used for?
+
+#### --distractors--
+
+To specify the language of the document.
+
+---
+
+To define the character encoding of the document.
+
+---
+
+To set the language of an element based on its parent element.
+
+#### --answer--
+
+To apply styles to elements based on this custom data attribute.
+
+### --question--
+
+#### --text--
+
+Which CSS selector should you use to style `img` elements only if their `alt` attribute is equal to `"code"`?
 
 #### --distractors--
 
 ```css
-[lang*="en"] { color: black; }
+img[alt~="code"] { border: 1px solid red; }
 ```
 
 ---
 
 ```css
-[lang$="US"] { color: black; }
+img[alt=="code"] { border: 1px solid red; }
 ```
 
 ---
 
 ```css
-[lang~="en"] { color: black; }
+img[alt*="code"] { border: 1px solid red; }
 ```
 
 #### --answer--
 
 ```css
-[lang="en-US"] { color: black; }
+img[alt="code"] { border: 1px solid red; }
 ```
 
 ### --question--
 
 #### --text--
 
-Which selector targets `a` elements where the href attribute contains `"https"`?
+Which CSS selector matches ordered lists with a numerical numbering type?
 
 #### --distractors--
 
 ```css
-a[href^="https"] { text-decoration: none; }
+ol[type="i"] { color: purple; }
 ```
 
 ---
 
 ```css
-a[href~="https"] { text-decoration: none; }
+ol[type="I"] { color: purple; }
 ```
 
 ---
 
 ```css
-a[href$="https"] { text-decoration: none; }
+ol[type="a"] { color: purple; }
 ```
 
 #### --answer--
 
 ```css
-a[href*="https"] { text-decoration: none; }
+ol[type="1"] { color: purple; }
 ```
 
 ### --question--
 
 #### --text--
 
-How would you target all elements with a lang attribute that starts with `"es"` but not `"es-MX"`?
+Which of the following CSS selectors would you use to style `a` elements with both `href` and `title` attributes?
 
 #### --distractors--
 
 ```css
-[lang*="es"]:not([lang="es-MX"]) { color: red; }
+a[href] a[title] { text-decoration: underline dotted; }
 ```
 
 ---
 
 ```css
-[lang~="es"]:not([lang="es-MX"]) { color: red; }
+a[href]a[title] { text-decoration: underline dotted; }
 ```
 
 ---
 
 ```css
-[lang$="es"]:not([lang="es-MX"]) { color: red; }
+a[href].[title] { text-decoration: underline dotted; }
 ```
 
 #### --answer--
 
 ```css
-[lang^="es"]:not([lang="es-MX"]) { color: red; }
+a[href][title] { text-decoration: underline dotted; }
 ```
 
 ### --question--
 
 #### --text--
 
-You want to style the `img` elements only if their `alt` attribute does not contain the word `"thumbnail"`. Which selector would achieve this?
+Which CSS selector would you use if you are developing a website for a restaurant and want to style all elements with the `menu-item` class that have a `data-special` attribute?
 
 #### --distractors--
 
 ```css
-img[alt$="thumbnail"] { border: 1px solid red; }
+menu-item[data-special] { background-color: blue; }
 ```
 
 ---
 
 ```css
-img[alt^="thumbnail"] { border: 1px solid red; }
+#menu-item[data-special] { background-color: blue; }
 ```
 
 ---
 
 ```css
-img[alt*="thumbnail"] { border: 1px solid red; }
+[data-special="menu-item"] { background-color: blue; }
 ```
 
 #### --answer--
 
 ```css
-img:not([alt*="thumbnail"]) { border: 1px solid red; }
-```
-
-### --question--
-
-#### --text--
-
-You're implementing an accessibility feature where `button` elements with a `data-tooltip` attribute should show a dotted underline. However, you want to exclude `button` elements where `data-tooltip` is exactly `"off"`. How would you write the selector?
-
-#### --distractors--
-
-```css
-button[data-tooltip="off"] { text-decoration: none; }
-```
-
----
-
-```css
-button[data-tooltip*="off"] { text-decoration: underline dotted; }
-```
-
----
-
-```css
-button[data-tooltip$="off"] { text-decoration: underline dotted; }
-```
-
-#### --answer--
-
-```css
-button[data-tooltip]:not([data-tooltip="off"]) { text-decoration: underline dotted; }
-```
-
-### --question--
-
-#### --text--
-
-You need to style all links (`a`) that point to image files by selecting `href` attributes ending with `.jpg`, `.png`, or `.gif`. Which selector works best?
-
-#### --distractors--
-
-```css
-a[href*=".jpg"], a[href*=".png"], a[href*=".gif"] { border-bottom: 2px solid green; }
-```
-
----
-
-```css
-a[href$=".jpg"], a[href~=".png"], a[href^=".gif"] { border-bottom: 2px solid green; }
-```
-
----
-
-```css
-a[href*="image"] { border-bottom: 2px solid green; }
-```
-
-#### --answer--
-
-```css
-a[href$=".jpg"], a[href$=".png"], a[href$=".gif"] { border-bottom: 2px solid green; }
-```
-
-### --question--
-
-#### --text--
-
-How would you target `section` elements that have a `data-theme` attribute containing the word `"dark"` but exclude those where it ends with `"-light"`?
-
-#### --distractors--
-
-```css
-section[data-theme="dark"]:not([data-theme$="-light"]) { background-color: black; }
-```
-
----
-
-```css
-section[data-theme*="dark"]:not([data-theme*="-light"]) { background-color: black; }
-```
-
----
-
-```css
-section[data-theme^="dark"]:not([data-theme$="-light"]) { background-color: black; }
-```
-
-#### --answer--
-
-```css
-section[data-theme*="dark"]:not([data-theme$="-light"]) { background-color: black; }
-```
-
-### --question--
-
-#### --text--
-
-You want to style ordered lists (`ol`) where the `type` attribute is set to `"i"` (for Roman numerals). Which of the following selectors would you use?
-
-#### --distractors--
-
-```css
-ol[type$="i"] { color: darkgreen; }
-```
-
----
-
-```css
- ol[type*="i"] { color: darkgreen; }
-```
-
----
-
-```css
-ol[type^="i"] { color: darkgreen; }
-```
-
-#### --answer--
-
-```css
-ol[type="i"] { color: darkgreen; }
-```
-
-### --question--
-
-#### --text--
-
-You want to create a highlight effect for all external links (links that point to another domain) by checking for `href` attributes that do not start with your domain (`"freecodecamp.org"`). How would you do this?
-
-#### --distractors--
-
-```css
- a[href^="https://freecodecamp.org"] { color: inherit; }
-```
-
----
-
-```css
-a[href$="freecodecamp.org"] { color: inherit; }
-```
-
----
-
-```css
-a[href*="freecodecamp.org"] { color: inherit; }
-```
-
-#### --answer--
-
-```css
-a:not([href^="https://freecodecamp.org"]) { color: orange; }
-```
-
-### --question--
-
-#### --text--
-
-You need to select ordered lists (`ol`) that use the `type="1"` (for numerical listing). Which of the following selectors is correct?
-
-#### --distractors--
-
-```css
-ol[type*="1"] { font-weight: bold; }
-```
-
----
-
-```css
-ol[type$="1"] { font-weight: bold; }
-```
-
----
-
-```css
-ol[type~="1"] { font-weight: bold; }
-```
-
-#### --answer--
-
-```css
- ol[type="1"] { font-weight: bold; }
-```
-
-### --question--
-
-#### --text--
-
-Suppose, on freeCodeCamp's forum, each discussion has a `data-status` attribute that could be `"open"` or `"closed"`. You want to highlight all open discussions. How would you select these discussions?
-
-#### --distractors--
-
-```css
-div[data-status$="open"] { border: 2px solid green; }
-```
-
----
-
-```css
-div[data-status^="open"] { border: 2px solid green; }
-```
-
----
-
-```css
-div[data-status*="open"] { border: 2px solid green; }
-```
-
-#### --answer--
-
-```css
-div[data-status="open"] { border: 2px solid green; }
-```
-
-### --question--
-
-#### --text--
-
- You want to style `textarea` elements in your form, but only those with a `maxlength` attribute. Which selector would work?
-
-#### --distractors--
-
-```css
-textarea[maxlength="true"] { border-color: darkred; }
-```
-
----
-
-```css
-textarea[maxlength^="true"] { border-color: darkred; }
-```
-
----
-
-```css
-textarea[maxlength*="true"] { border-color: darkred; }
-```
-
-#### --answer--
-
-```css
-textarea[maxlength] { border-color: darkred; }
-```
-
-### --question--
-
-#### --text--
-
-Suppose, on freeCodeCamp's course catalog, each course has a `data-completion` attribute representing the percentage completed. You want to style courses where this attribute ends with `"100"`, indicating full completion. Which selector would work?
-
-#### --distractors--
-
-```css
-div[data-completion="100"] { font-weight: bold; }
-```
-
----
-
-```css
-div[data-completion*="100"] { font-weight: bold; }
-```
-
----
-
-```css
-div[data-completion^="100"] { font-weight: bold; }
-```
-
-#### --answer--
-
-```css
-div[data-completion$="100"] { font-weight: bold; }
-```
-
-### --question--
-
-#### --text--
-
-You're building a job portal and want to style job listings where the `data-role` attribute contains `"developer"`. How would you write this selector?
-
-#### --distractors--
-
-```css
-div[data-role="developer"] { background-color: lightgreen; }
-```
-
----
-
-```css
-div[data-role^="developer"] { background-color: lightgreen; }
-```
-
----
-
-```css
-div[data-role$="developer"] { background-color: lightgreen; }
-```
-
-#### --answer--
-
-```css
-div[data-role*="developer"] { background-color: lightgreen; }
-```
-
-### --question--
-
-#### --text--
-
-You want to style lists that have a type attribute with a value ending in `"square"`, indicating they use square bullets. Which selector would you use?
-
-#### --distractors--
-
-```css
-ul[type*="square"] { list-style-type: square; }
-```
-
----
-
-```css
-ul[type="square"] { list-style-type: square; }
-```
-
----
-
-```css
-ul[type~="square"] { list-style-type: square; }
-```
-
-#### --answer--
-
-```css
-ul[type$="square"] { list-style-type: square; }
+.menu-item[data-special] { background-color: blue; }
 ```
 

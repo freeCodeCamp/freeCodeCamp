@@ -1,3 +1,5 @@
+import { execSync } from 'node:child_process';
+
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
@@ -5,6 +7,10 @@ import { allowTrailingSlash } from './utils/url';
 
 const nextChallengeURL =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
+
+test.beforeAll(() => {
+  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+});
 
 test.beforeEach(async ({ page }) => {
   await page.goto(

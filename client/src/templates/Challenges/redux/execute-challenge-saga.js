@@ -55,6 +55,7 @@ import {
   challengeDataSelector,
   challengeMetaSelector,
   challengeTestsSelector,
+  challengeHooksSelector,
   isBuildEnabledSelector,
   isExecutingSelector,
   portalDocumentSelector,
@@ -110,6 +111,7 @@ export function* executeChallengeSaga({ payload }) {
     const tests = (yield select(challengeTestsSelector)).map(
       ({ text, testString }) => ({ text, testString })
     );
+    const hooks = yield select(challengeHooksSelector);
     yield put(updateTests(tests));
 
     yield fork(takeEveryLog, consoleProxy);
@@ -128,7 +130,7 @@ export function* executeChallengeSaga({ payload }) {
     const document = yield getContext('document');
     const testRunner = yield call(
       getTestRunner,
-      buildData,
+      { ...buildData, hooks },
       { proxyLogger },
       document
     );
@@ -306,7 +308,6 @@ export function* previewChallengeSaga(action) {
   } catch (err) {
     if (err[0] === 'timeout') {
       // TODO: translate the error
-      // eslint-disable-next-line no-ex-assign
       err[0] = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
     }
     // If the preview fails, the most useful thing to do is to show the learner
@@ -340,8 +341,7 @@ function* updatePython(challengeData) {
   interruptCodeExecution();
   const code = {
     contents: buildData.sources.index,
-    editableContents: buildData.sources.editableContents,
-    original: buildData.sources.original
+    editableContents: buildData.sources.editableContents
   };
 
   runPythonCode(code);
@@ -355,13 +355,18 @@ function* previewProjectSolutionSaga({ payload }) {
   try {
     if (canBuildChallenge(challengeData)) {
       const buildData = yield buildChallengeData(challengeData);
+      if (buildData.error) throw Error(buildData.error);
+
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
         yield call(updateProjectPreview, buildData, document);
+      } else {
+        throw Error('Project does not have a preview');
       }
     }
   } catch (err) {
-    console.log(err);
+    console.error('Unable to show project preview');
+    console.error(err);
   }
 }
 

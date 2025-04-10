@@ -25,10 +25,9 @@ import {
   isSignedInSelector,
   themeSelector
 } from '../../../redux/selectors';
-import {
+import type {
   ChallengeFiles,
   Dimensions,
-  FileKey,
   ResizeProps,
   Test
 } from '../../../redux/prop-types';
@@ -47,8 +46,7 @@ import {
   initTests,
   stopResetting,
   openModal,
-  resetAttempts,
-  sendRenderTime
+  resetAttempts
 } from '../redux/actions';
 import {
   attemptsSelector,
@@ -86,7 +84,7 @@ export interface EditorProps {
   dimensions?: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
-  fileKey: FileKey;
+  fileKey: string;
   canFocusOnMountRef: MutableRefObject<boolean>;
   initTests: (tests: Test[]) => void;
   initialTests: Test[];
@@ -98,7 +96,6 @@ export interface EditorProps {
   openResetModal: () => void;
   resizeProps: ResizeProps;
   saveChallenge: () => void;
-  sendRenderTime: (renderTime: number) => void;
   saveEditorContent: () => void;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
@@ -110,7 +107,7 @@ export interface EditorProps {
   showProjectPreview: boolean;
   previewOpen: boolean;
   updateFile: (object: {
-    fileKey: FileKey;
+    fileKey: string;
     editorValue: string;
     editableRegionBoundaries?: number[];
   }) => void;
@@ -180,7 +177,6 @@ const mapDispatchToProps = {
   initTests,
   stopResetting,
   resetAttempts,
-  sendRenderTime,
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset')
 };
@@ -226,7 +222,7 @@ const defineMonacoThemes = (
     inherit: true,
     // TODO: Use actual color from style-guide
     colors: {
-      'editor.background': options.usesMultifileEditor ? '#eee' : '#fff',
+      'editor.background': options.usesMultifileEditor ? '#eeeeee' : '#ffffff',
       'editor.lineHighlightBorder': '#cee8fc'
     },
     rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
@@ -286,9 +282,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
-    renderIndentGuides:
-      props.challengeType === challengeTypes.python ||
-      props.challengeType === challengeTypes.multifilePythonCertProject,
+    guides: {
+      highlightActiveIndentation:
+        props.challengeType === challengeTypes.python ||
+        props.challengeType === challengeTypes.multifilePythonCertProject
+    },
     minimap: {
       enabled: false
     },
@@ -502,8 +500,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     // Make toggle tab setting in editor permanent
     const tabFocusHotkeys =
       OS === 2 /* Macintosh/iOS */
-        ? monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KEY_M
-        : monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_M;
+        ? monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KeyM
+        : monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyM;
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       'editor.action.toggleTabFocusMode',
@@ -545,8 +543,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       id: 'save-editor-content',
       label: 'Save editor content',
       keybindings: [
-        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S,
-        monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_S
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyS
       ],
       run:
         canSaveToDB(props.challengeType) && props.isSignedIn
@@ -559,8 +557,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       id: 'toggle-accessibility',
       label: 'Toggle Accessibility Mode',
       keybindings: [
-        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_E,
-        monaco.KeyMod.WinCtrl | monaco.KeyCode.KEY_E
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyE,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyE
       ],
       run: () => {
         const currentAccessibility = storedAccessibilityMode();
@@ -578,7 +576,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       id: 'toggle-aria-roledescription',
       label: 'Toggle aria-roledescription',
       keybindings: [
-        monaco.KeyMod.Shift | monaco.KeyMod.Alt | monaco.KeyCode.KEY_R
+        monaco.KeyMod.Shift | monaco.KeyMod.Alt | monaco.KeyCode.KeyR
       ],
       run: toggleAriaRoledescription
     });
@@ -635,9 +633,11 @@ const Editor = (props: EditorProps): JSX.Element => {
   const setAriaRoledescription = (value: boolean) => {
     const textareas = document.querySelectorAll('.monaco-editor textarea');
     textareas.forEach(textarea => {
-      value
-        ? textarea.setAttribute('aria-roledescription', 'editor')
-        : textarea.removeAttribute('aria-roledescription');
+      if (value) {
+        textarea.setAttribute('aria-roledescription', 'editor');
+      } else {
+        textarea.removeAttribute('aria-roledescription');
+      }
     });
     store.set('ariaRoledescription', value);
   };
@@ -680,9 +680,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!editor) return;
     const domNode = createDescription(editor);
 
-    // make sure the overlayWidget has resized before using it to set the height
+    // make sure the content widget has resized before using it to set the height
 
     domNode.style.width = `${getEditorContentWidth(editor)}px`;
+    domNode.style.display = 'block';
+    domNode.style.visibility = 'visible';
 
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the content widget (i.e. trigger it via onDomNodeTop). If
@@ -694,12 +696,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       // This is called when the editor dimensions change and AFTER the
       // text in the editor has shifted.
       onDomNodeTop: () => {
-        // The return value for getTopLineNumber includes the height of
-        // the content widget so we need to remove it.
         dataRef.current.descriptionZoneTop =
           editor.getTopForLineNumber(getLineBeforeEditableRegion() + 1) -
           domNode.offsetHeight;
-        dataRef.current.descriptionWidget &&
+        if (dataRef.current.descriptionWidget)
           editor.layoutContentWidget(dataRef.current.descriptionWidget);
       }
     };
@@ -922,6 +922,7 @@ const Editor = (props: EditorProps): JSX.Element => {
           monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges
       }
     };
+
     return model.deltaDecorations([], [lineDecoration]);
   }
 
@@ -1055,14 +1056,13 @@ const Editor = (props: EditorProps): JSX.Element => {
       // itself.
       return null;
     };
-    // Only the description content widget uses this method but it
-    // is harmless to pass it to the overlay widget.
+
     const afterRender = () => {
       if (getTop) {
         domNode.style.left = '0';
       }
-      domNode.style.visibility = 'visible';
     };
+
     return {
       getId,
       getDomNode,
@@ -1219,11 +1219,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   }, [props.challengeFiles, props.isResetting]);
 
   useEffect(() => {
-    props.sendRenderTime(Date.now());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.description]);
-
-  useEffect(() => {
     const { showProjectPreview, previewOpen } = props;
     if (!previewOpen && showProjectPreview) {
       const description = document.getElementsByClassName(
@@ -1247,7 +1242,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       );
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.tests]);
 
   useEffect(() => {
@@ -1258,7 +1252,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!isTabTrapped()) {
       setMonacoTabTrapped(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.dimensions]);
 
   function updateDescriptionZone() {

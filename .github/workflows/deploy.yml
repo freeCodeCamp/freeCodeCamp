@@ -1,0 +1,128 @@
+name: CD - Deploy - API
+
+on:
+  workflow_dispatch:
+    inputs:
+      fcc_api_log_level:
+        description: 'Log level for the API'
+        type: choice
+        options:
+          - debug
+          - info
+          - warn
+        default: info
+
+jobs:
+  static:
+    name: Set Static Data
+    runs-on: ubuntu-22.04
+    outputs:
+      site_tld: ${{ steps.static_data.outputs.site_tld }}
+      environment: ${{ steps.static_data.outputs.environment }}
+      fcc_api_log_level: ${{ steps.static_data.outputs.fcc_api_log_level }}
+    steps:
+      - name: Set Static Data
+        id: static_data
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/prod-staging" ]; then
+            echo "site_tld=dev" >> $GITHUB_OUTPUT
+            echo "environment=stg" >> $GITHUB_OUTPUT
+            echo "fcc_api_log_level=${{ inputs.fcc_api_log_level || 'info' }}" >> $GITHUB_OUTPUT
+          elif [ "${{ github.ref }}" == "refs/heads/prod-current" ]; then
+            echo "site_tld=org" >> $GITHUB_OUTPUT
+            echo "environment=prd" >> $GITHUB_OUTPUT
+            echo "fcc_api_log_level=${{ inputs.fcc_api_log_level || 'info' }}" >> $GITHUB_OUTPUT
+          else
+            echo "site_tld=dev" >> $GITHUB_OUTPUT
+            echo "environment=stg" >> $GITHUB_OUTPUT
+            echo "fcc_api_log_level=${{ inputs.fcc_api_log_level || 'info' }}" >> $GITHUB_OUTPUT
+          fi
+
+  build:
+    name: Build & Push
+    needs: static
+    uses: ./.github/workflows/docker-docr.yml
+    with:
+      site_tld: ${{ needs.static.outputs.site_tld }}
+      app: api
+    secrets: inherit
+
+  deploy:
+    name: Deploy to Docker Swarm -- ${{ needs.static.outputs.environment }}
+    runs-on: ubuntu-22.04
+    needs: [static, build]
+    env:
+      TS_USERNAME: ${{ secrets.TS_USERNAME }}
+      TS_MACHINE_NAME: ${{ secrets.TS_MACHINE_NAME }}
+    permissions:
+      deployments: write
+    environment:
+      name: ${{ needs.static.outputs.environment }}
+      url: https://api.freecodecamp.${{ needs.static.outputs.site_tld }}/status/ping?version=${{ needs.build.outputs.tagname }}
+
+    steps:
+      - name: Setup and connect to Tailscale network
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+          version: latest
+
+      - name: Configure SSH
+        # This is a workaround to avoid the SSH warning about known hosts & strict host key checking.
+        # It's not a problem for us, because we're using Tailscale to connect.
+        run: |
+          mkdir -p ~/.ssh
+          echo "Host *
+            UserKnownHostsFile=/dev/null
+            StrictHostKeyChecking no" > ~/.ssh/config
+
+      - name: Check connection
+        run: |
+          tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Error: Machine not found"; exit 1; }
+          ssh $TS_USERNAME@$TS_MACHINE_NAME "uptime"
+
+      - name: Deploy with Docker Stack
+        env:
+          # These are set in the "Environment" specifc secrets
+          AGE_ENCRYPTED_ASC_SECRETS: ${{ secrets.AGE_ENCRYPTED_ASC_SECRETS }}
+          AGE_SECRET_KEY: ${{ secrets.AGE_SECRET_KEY }}
+          # These are set in the static job above
+          STACK_NAME: ${{ needs.static.outputs.environment }}-api
+          DEPLOYMENT_VERSION: ${{ needs.build.outputs.tagname }}
+          FCC_API_LOG_LEVEL: ${{ needs.static.outputs.fcc_api_log_level }}
+        run: |
+          ssh $TS_USERNAME@$TS_MACHINE_NAME /bin/bash << EOF
+            set -e
+            cd /home/${TS_USERNAME}/docker-swarm-config/stacks/api || { echo "Error: Failed to change directory"; exit 1; }
+            which age > /dev/null || { echo "Error: age not installed"; exit 1; }
+
+            # Decrypt secrets
+            echo "${AGE_ENCRYPTED_ASC_SECRETS}" > secrets.age.asc
+            echo "${AGE_SECRET_KEY}" > age.key && chmod 600 age.key
+            age --identity age.key --decrypt secrets.age.asc > .env
+            rm -f age.key secrets.age.asc
+
+            # Add deployment variables
+            {
+              echo "DEPLOYMENT_VERSION=${DEPLOYMENT_VERSION}"
+              echo "FCC_API_LOG_LEVEL=${FCC_API_LOG_LEVEL}"
+            } >> .env
+
+            # Export environment variables with proper escaping
+            while IFS='=' read -r key value; do
+              if [[ -n \$key && ! \$key =~ ^# ]]; then
+                export "\${key}=\${value}"
+              fi
+            done < .env
+            rm -f .env
+
+            # Validate environment and config
+            env | grep -E 'DOMAIN|DEPLOYMENT' || { echo "Error: Required environment variables not found"; exit 1; }
+            docker stack config -c stack-api.yml > /dev/null || { echo "Error: Invalid stack configuration"; exit 1; }
+
+            # Deploy
+            docker stack deploy -c stack-api.yml --prune --with-registry-auth --detach=false ${STACK_NAME}
+          EOF
+        shell: bash

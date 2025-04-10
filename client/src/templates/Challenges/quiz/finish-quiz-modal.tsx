@@ -13,8 +13,7 @@ interface FinishQuizModalProps {
 }
 
 const mapStateToProps = (state: unknown) => ({
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-  isFinishQuizModalOpen: isFinishQuizModalOpenSelector(state)
+  isFinishQuizModalOpen: isFinishQuizModalOpenSelector(state) as boolean
 });
 
 const mapDispatchToProps = {

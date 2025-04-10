@@ -7,7 +7,7 @@ dashedName: quiz-css-accessibility
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 9 of the 10 questions below.
 
 # --quizzes--
 
@@ -17,121 +17,55 @@ To pass the quiz, you must correctly answer at least 17 of the 20 questions belo
 
 #### --text--
 
-Which property changes the background color in CSS?
+Why do you need to have good color contrast on your webpage?
 
 #### --distractors--
 
-`bg-color`
+To make the page more vibrant.
 
 ---
 
-`color-bg`
+To meet requirements for search engine optimization (SEO).
 
 ---
 
-`fill-color`
+To make important elements of the page stand out.
 
 #### --answer--
 
-`background-color`
+To make the page content accessible and readable.
 
 ### --question--
 
 #### --text--
 
-Which CSS property controls the width of an element?
+Which of the following tools allows you to enter background and foreground colors and check their contrast ratio?
 
 #### --distractors--
 
-`size`
+TPGi Color Contrast Analyzer
 
 ---
 
-`dimension`
+Figma
 
 ---
 
-`area`
+Canva
 
 #### --answer--
 
-`width`
+WebAIM's Color Contrast Checker
 
 ### --question--
 
 #### --text--
 
-Which tool can help inspect element styles in a web browser?
+Which of the following tools allows you to pick background and foreground colors from a live webpage and check for their contrast ratio?
 
 #### --distractors--
 
-Adobe Photoshop
-
----
-
-Microsoft Word
-
----
-
-Notepad
-
-#### --answer--
-
-Chrome DevTools
-
-### --question--
-
-#### --text--
-
-Which property is essential for setting custom fonts in CSS?
-
-#### --distractors--
-
-`font-weight`
-
----
-
-`text-align`
-
----
-
-`text-transform`
-
-#### --answer--
-
-`font-family`
-
-### --question--
-
-#### --text--
-
-What does the  `:hover` pseudo-class indicate? 
-
-#### --distractors--
-
-Active state
-
----
-
-Element is focused
-
----
-
-Element is hidden
-
-#### --answer--
-
-Mouse is over the element
-
-### --question--
-
-#### --text--
-
-Which online tool checks color contrast accessibility?
-
-#### --distractors--
-
-ColorZilla
+Figma
 
 ---
 
@@ -139,317 +73,178 @@ Canva
 
 ---
 
-Figma
+WebAIM's Color Contrast Checker
 
 #### --answer--
 
-Contrast checker
+TPGi Color Contrast Analyzer
 
 ### --question--
 
 #### --text--
 
-What is the purpose of the `alt` attribute in images?
+Why should you NOT use `display: none` and `visibility: hidden` to visually hide content?
 
 #### --distractors--
 
-To change image size
+These methods make it so that only assistive technologies like screen readers can access the hidden content.
 
 ---
 
-To add a title
+These methods make it so that the content is only hidden until users move their mouse over the content.
 
 ---
 
-To change image color
+These methods do not work with some browsers.
 
 #### --answer--
 
-To provide a text alternative
+These methods remove the content from the accessibility tree, making it impossible for screen readers to access the hidden content.
 
 ### --question--
 
 #### --text--
 
-What is a screen reader?
+What is an accessibility tree?
 
 #### --distractors--
 
-A browser for disabled users
+A visual representation of the layout of a webpage.
 
 ---
 
-A CSS tool
+A structure used by screen readers to read the text content of a webpage.
 
 ---
 
-A web development library
+A copy of the DOM tree.
 
 #### --answer--
 
-A text-to-speech software
+A structure used by screen readers to interpret and interact with the content on a webpage.
 
 ### --question--
 
 #### --text--
 
-What does the 'Inspect Element' feature do?
+Which of the following ensures that an image has a minimum width of `400px`, but becomes wider when the viewport width is greater than `1000px`?
 
 #### --distractors--
 
-Edits text directly
+```css
+img {
+  width: max(400px, 10vw);
+}
+```
 
 ---
 
-Downloads files
+```css
+img {
+  width: max(400px, 30vw);
+}
+```
 
 ---
 
-Modifies images
+```css
+img {
+  width: max(400px, 20vw);
+}
+```
 
 #### --answer--
 
-Displays CSS and HTML
+```css
+img {
+  width: max(400px, 40vw);
+}
+```
 
 ### --question--
 
 #### --text--
 
-Which CSS property controls text size?
+Which of the following `scroll-behavior` value allows a smooth scrolling behavior?
 
 #### --distractors--
 
-`text-size`
+`auto`
 
 ---
 
-`size-font`
+`inherit`
 
 ---
 
-`text-style`
+`revert`
 
 #### --answer--
 
-`font-size`
+`smooth`
 
 ### --question--
 
 #### --text--
 
-What does the `opacity` property do in CSS?
+Which of the following features is used to detect the user's animation preference?
 
 #### --distractors--
 
-Changes text size
+`prefers-contrast`
 
 ---
 
-Adds a border
+`display-mode`
 
 ---
 
-Sets the element's position
+`animation`
 
 #### --answer--
 
-Controls element transparency
+`prefers-reduce-motion`
 
 ### --question--
 
 #### --text--
 
-Which CSS property controls the spacing between lines of text?
+Which of the following is an accessibility issue of the `placeholder` attribute in an `input` element?
 
 #### --distractors--
 
-`letter-spacing`
+Placeholder text prevents screen readers from reading the input label text.
 
 ---
 
-`line-spacing`
+Placeholder text prevents screen readers from reading the input value.
 
 ---
 
-`word-spacing`
+Placeholder text is too small to be readable.
 
 #### --answer--
 
-`line-height`
+Placeholder text can be confused with an actual input value.
 
 ### --question--
 
 #### --text--
 
-What is a common use for `aria-hidden="true"`?
+What does the `hidden` attribute do?
 
 #### --distractors--
 
-To show content
+It hides content and reveals on hover.
 
 ---
 
-To display on mobile
+It hides content only from the accessibility tree.
 
 ---
 
-To increase visibility
+It hides content visually, but the content is available in the accessibility tree.
 
 #### --answer--
 
-To hide content from screen readers
-
-### --question--
-
-#### --text--
-
-What is the `flex` property used for?
-
-#### --distractors--
-
-Changing text color
-
----
-
-Adjusting font size
-
----
-
-Adding animations
-
-#### --answer--
-
-Creating responsive layouts
-
-### --question--
-
-#### --text--
-
-What does ARIA stand for?
-
-#### --distractors--
-
-Advanced Responsive Interactive Applications
-
----
-
-Augmented Real-time Interface Accessibility
-
----
-
-Adaptive Resource Integration Architecture
-
-#### --answer--
-
-Accessible Rich Internet Applications
-
-### --question--
-
-#### --text--
-
-What does CSS stand for?
-
-#### --distractors--
-
-Creative Style Sheets
-
----
-
-Colorful Style Sheets
-
----
-
-Computer Style Sheets
-
-#### --answer--
-
-Cascading Style Sheets
-
-### --question--
-
-#### --text--
-
-What is the minimum contrast ratio for graphics?
-
-#### --distractors--
-
-1.5:1
-
----
-
-4.5:1
-
----
-
-0:1
-
-#### --answer--
-
-3:1
-
-### --question--
-
-#### --text--
-
-Which property helps with responsive design?
-
-#### --distractors--
-
-`position`
-
----
-
-`width`
-
----
-
-`overflow`
-
-#### --answer--
-
-`max-width`
-
-### --question--
-
-#### --text--
-
-Which property aligns text in CSS?
-
-#### --distractors--
-
-`align-text`
-
----
-
-`justify-text`
-
----
-
-`text-position`
-
-#### --answer--
-
-`text-align`
-
-### --question--
-
-#### --text--
-
-What is the `outline` property most commonly used to configure?
-
-#### --distractors--
-
-Border of an element
-
----
-
-Margin of an element
-
----
-
-Padding of an element
-
-#### --answer--
-
-Focus indicator around an element
-
+It hides content both visually and from the accessibility tree.
