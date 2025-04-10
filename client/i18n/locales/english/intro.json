@@ -3801,7 +3801,10 @@
       },
       "review-python-basics": {
         "title": "Python Basics Review",
-        "intro": ["Learn about Python Basics Review in these lectures."]
+        "intro": [
+          "Before you're quizzed on Python basics, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
       },
       "quiz-python-basics": {
         "title": "Python Basics Quiz",
@@ -3823,7 +3826,10 @@
       },
       "review-loops-and-sequences": {
         "title": "Loops and Sequences Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-loops-and-sequences": {
         "title": "Loops and Sequences Quiz",
@@ -3848,8 +3854,11 @@
         "intro": [""]
       },
       "review-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets Review",
-        "intro": [""]
+        "title": "Dictionaries and Sets review",
+        "intro": [
+          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-dictionaries-and-sets": {
         "title": "Dictionaries and Sets Quiz",
@@ -3867,7 +3876,10 @@
       },
       "review-error-handling": {
         "title": "Error Handling Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on error handling, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
       },
       "quiz-error-handling": {
         "title": "Error Handling Quiz",
@@ -3886,7 +3898,10 @@
       "lab-budget-app": { "title": "Build a Budget App", "intro": [""] },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on classes and objects, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-classes-and-objects": {
         "title": "Classes and Objects Quiz",
@@ -3929,7 +3944,10 @@
       "lab-placeholder-oop-3": { "title": "", "intro": [""] },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
       },
       "quiz-object-oriented-programming": {
         "title": "Object Oriented Programming Quiz",
@@ -3951,7 +3969,10 @@
       },
       "review-data-structures": {
         "title": "Data Structures Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on data structures, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-data-structures": {
         "title": "Data Structures Quiz",
@@ -3983,7 +4004,10 @@
       },
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Quiz",
@@ -4013,7 +4037,10 @@
       },
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-graphs-and-trees": {
         "title": "Graphs and Trees Quiz",
@@ -4031,7 +4058,10 @@
       },
       "review-dynamic-programming": {
         "title": "Dynamic Programming Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
       },
       "quiz-dynamic-programming": {
         "title": "Dynamic Programming Quiz",
@@ -4039,7 +4069,10 @@
           "Test what you've learned about dynamic programming in python with this quiz."
         ]
       },
-      "review-python": { "title": "Python Review", "intro": [""] },
+      "review-python": {
+        "title": "Python Review",
+        "intro": ["Review Python concepts to prepare for the upcoming exam."]
+      },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
