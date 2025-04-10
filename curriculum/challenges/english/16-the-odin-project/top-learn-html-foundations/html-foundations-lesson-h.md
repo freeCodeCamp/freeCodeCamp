@@ -13,19 +13,19 @@ HTML and CSS are primarily concerned with presenting information. They are not u
     
 ## --text--
 
-What is the main purpose of HTML and CSS in web development?
+What is one way in which JavaScript is different than HTML and CSS?
 
 ## --answers--
 
-They are used to build complex application logic.
+JavaScript is primarily concerned with presenting information.
 
 ---
 
-They structure and style content on webpages.
+JavaScript makes webpages take actions.
 
 ---
 
-They are programming languages used for dynamic functionality.
+You do not need HTML/CSS if you know JavaScript.
 
 ## --video-solution--
 
