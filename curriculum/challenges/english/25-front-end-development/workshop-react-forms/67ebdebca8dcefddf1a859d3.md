@@ -15,11 +15,18 @@ For the `onChange`, it will be a separate function, so set it to `handlePowersCh
 
 # --hints--
 
-Test 1
+You should set the checkbox `checked` state to reflect whether the current `power` value exists in the powers array.
 
 ```js
-
+assert.match(code, /checked=\{powers\.includes\(power\)\}/)
 ```
+
+You should set the checkbox `onChange` attribute to `{handlePowersChange}`.
+
+```js
+assert.match(code, /onChange=\{handlePowersChange\}/)
+```
+
 
 # --seed--
 
@@ -179,13 +186,13 @@ export const SuperheroForm = () => {
 
           {powersOptions.map(power => (
             <label key={power}>
+          --fcc-editable-region--
               <input
                 type='checkbox'
                 value={power}
-          --fcc-editable-region--
 
-          --fcc-editable-region--                
               />
+          --fcc-editable-region--                
               <span>{power}</span>
             </label>
           ))}

@@ -27,7 +27,7 @@ assert.match(code, /(const|let)\s+\[\s*heroName\s*,\s*setHeroName\s*\]/);
 Your `heroName` `useState` should have an intial value of empty string.
 
 ```js
-assert.match(code, /(const|let)\s+\[\s*heroName\s*,\s*setHeroName\s*\]\s*=\s*useState\(('|")\s*('|")\)/)
+assert.match(code, /(const|let)\s+\[\s*heroName\s*,\s*setHeroName\s*\]\s*=\s*(React.)?useState\(("|')\s*("|')\)?/)
 ```
 
 You should use the array destructuring syntax to set a `realName` state variable and a `setRealName` setter.
@@ -39,7 +39,7 @@ assert.match(code, /(const|let)\s+\[\s*realName\s*,\s*setRealName\s*\]/);
 Your `realName` `useState` should have an intial value of empty string.
 
 ```js
-assert.match(code, /(const|let)\s+\[\s*realName\s*,\s*setRealName\s*\]\s*=\s*useState\(('|")\s*('|")\)/)
+assert.match(code, /(const|let)\s+\[\s*realName\s*,\s*setRealName\s*\]\s*=\s*(React.)useState\(('|")\s*('|")\);?/)
 ```
 
 You should use the array destructuring syntax to set a `powerSource` state variable and a `setPowerSource` setter.
@@ -51,7 +51,7 @@ assert.match(code, /(const|let)\s+\[\s*powerSource\s*,\s*setPowerSource\s*\]/);
 Your `powerSource` `useState` should have an intial value of empty string.
 
 ```js
-assert.match(code, /(const|let)\s+\[\s*powerSource\s*,\s*setPowerSource\s*\]\s*=\s*useState\(('|")\s*('|")\)/)
+assert.match(code, /(const|let)\s+\[\s*powerSource\s*,\s*setPowerSource\s*\]\s*=\s*(React.)?useState\(('|")\s*('|")\);?/)
 ```
 
 You should use the array destructuring syntax to set a `powers` state variable and a `setPowers` setter.
@@ -63,7 +63,7 @@ assert.match(code, /(const|let)\s+\[\s*powers\s*,\s*setPowers\s*\]/);
 Your `powers` `useState` should have an intial value of empty array.
 
 ```js
-assert.match(code, /(const|let)\s+\[\s*powers\s*,\s*setPowers\s*\]\s*=\s*useState\(\[\s*\]\)/)
+assert.match(code, /(const|let)\s+\[\s*powers\s*,\s*setPowers\s*\]\s*=\s*(React.)?useState\(\[\s*\]\);?/)
 ```
 
 # --seed--

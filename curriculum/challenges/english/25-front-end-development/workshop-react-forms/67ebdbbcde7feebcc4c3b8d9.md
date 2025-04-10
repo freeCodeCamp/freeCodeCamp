@@ -9,16 +9,40 @@ dashedName: step-13
 
 There will be six checkboxes, so it's also best to create an array for them and map through them to display them as checkboxes. For that, a `powersOptions` array has been provided for you.
 
-Map through the `powersOptions` array with a parater of `power`. Inside the map, create a `label` element with a `key` of `power`. Inside that `label`, create an `input` of type `checkbox` and a `value` of `power`.
+Map through the `powersOptions` array with a parameter of `power`. Inside the map, create a `label` element with a `key` of `power`. Inside that `label`, create an `input` of type `checkbox` and a `value` of `power`.
 
 To finally display those items from the `powersOptions` array next to each checkbox, create a `span` element just before the clsoing `label` with a text of `{power}`.
 
 # --hints--
 
-Test 1
+You should map through `powersOptions`.
 
 ```js
+assert.match(code, /\{powersOptions\.map\(/)
+```
 
+YOu should use `power` as the parameter of your map.
+
+```js
+assert.match(code, /\{powersOptions\.map\((?:power\s*=>\s*\(|function\(power\)\s*\{)(\s*return\s*\()?/)
+```
+
+You should create a `label` element with a `key` of `power`.
+
+```js
+assert.match(code, /\{powersOptions\.map\((?:power\s*=>\s*\(|function\(power\)\s*\{)(\s*return\s*\()?\s*<label\s+key=\{power\}>\s*/)
+```
+
+You should create an `input` of `type` `checkbox` and a `value` of `power`.
+
+```js
+assert.match(code, /\{powersOptions\.map\((?:power\s*=>\s*\(|function\(power\)\s*\{)(\s*return\s*\()?\s*<label\s+key=\{power\}>\s*<input\s*type=("|')checkbox("|')\s*value=\{power\}\s*\/>\s*/)
+```
+
+You should create a `span` element with `{power}` as its text content.
+
+```js
+assert.match(code, /\{powersOptions\.map\((?:power\s*=>\s*\(|function\(power\)\s*\{)(\s*return\s*\()?\s*<label\s+key=\{power\}>\s*<input\s*type=("|')checkbox("|')\s*value=\{power\}\s*\/>\s*<span>\{power\}<\/span>\s*<\/label>\s*\);?\s*(\)\}|\}\)\})\s*/)
 ```
 
 # --seed--

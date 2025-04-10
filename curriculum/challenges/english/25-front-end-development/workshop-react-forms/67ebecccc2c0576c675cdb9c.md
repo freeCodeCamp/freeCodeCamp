@@ -17,10 +17,10 @@ Remember all of that should be inside the `setPowers` setter function, and you c
 
 # --hints--
 
-Test 1
+You should create an `handlePowersChange` function.
 
 ```js
-
+assert.isFunction(handlePowersChange)
 ```
 
 # --seed--
