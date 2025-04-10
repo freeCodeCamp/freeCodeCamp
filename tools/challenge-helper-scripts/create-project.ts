@@ -6,11 +6,11 @@ import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
 import { SuperBlocks } from '../../shared/config/curriculum';
+import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import { createStepFile, validateBlockName } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
-import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
-import { createQuiz } from "./create-quiz";
+import { createQuiz } from './create-quiz';
 
 const helpCategories = [
   'HTML-CSS',
@@ -56,7 +56,7 @@ async function createProject(
   title?: string
 ) {
   if (blockType === BlockTypes.quiz) {
-    createQuiz(superBlock, block, helpCategory, questionCount, title);
+    await createQuiz(superBlock, block, helpCategory, questionCount!, title);
     return;
   }
 

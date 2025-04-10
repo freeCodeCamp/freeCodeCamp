@@ -36,7 +36,7 @@ interface CreateQuizArgs {
   questionCount: number;
 }
 
-async function createQuiz(
+export async function createQuiz(
   superBlock: SuperBlocks,
   block: string,
   helpCategory: string,
