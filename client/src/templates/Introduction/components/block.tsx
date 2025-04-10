@@ -28,7 +28,7 @@ import CheckMark from './check-mark';
 import {
   GridMapChallenges,
   ChallengesList,
-  ChallengesWithDialogs
+  ChallengesWithDialogues
 } from './challenges';
 import BlockLabel from './block-label';
 import BlockIntros from './block-intros';
@@ -328,7 +328,7 @@ export class Block extends Component<BlockProps> {
 
               <div id={`${block}-panel`}>
                 <BlockIntros intros={blockIntroArr} />
-                <ChallengesWithDialogs
+                <ChallengesWithDialogues
                   challenges={extendedChallenges}
                   blockTitle={blockTitle}
                 />
