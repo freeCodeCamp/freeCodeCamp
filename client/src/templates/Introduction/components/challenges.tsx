@@ -168,7 +168,7 @@ export const GridMapChallenges = ({
   );
 };
 
-export const ChallengesWithDialogs = ({
+export const ChallengesWithDialogues = ({
   challenges,
   blockTitle
 }: ChallengesProps & BlockTitleProps) => {
