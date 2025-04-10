@@ -1,6 +1,9 @@
 const Joi = require('joi');
 
-const { SuperBlocks } = require('../../shared/config/curriculum');
+const {
+  SuperBlocks,
+  chapterBasedSuperBlocks
+} = require('../../shared/config/curriculum');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
@@ -33,7 +36,7 @@ const schema = Joi.object()
       .valid(...Object.values(SuperBlocks))
       .required(),
     order: Joi.number().when('superBlock', {
-      is: 'full-stack-developer',
+      is: chapterBasedSuperBlocks,
       then: Joi.forbidden(),
       otherwise: Joi.required()
     }),

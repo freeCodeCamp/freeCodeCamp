@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
 import { Col, Row, Modal, Spacer } from '@freecodecamp/ui';
 import { closeDonationModal } from '../../redux/actions';
-import { PaymentContext } from '../../../../shared/config/donation-settings'; //
+import { PaymentContext } from '../../../../shared/config/donation-settings';
 import donationAnimation from '../../assets/images/donation-bear-animation.svg';
 import donationAnimationB from '../../assets/images/new-bear-animation.svg';
 import supporterBearBlock from '../../assets/images/supporter-bear-block.svg';
@@ -11,26 +11,25 @@ import supporterBear from '../../assets/images/supporter-bear.svg';
 import callGA from '../../analytics/call-ga';
 import MultiTierDonationForm from './multi-tier-donation-form';
 import { ModalBenefitList } from './donation-text-components';
-
-type RecentlyClaimedBlock = null | { block: string; superBlock: string };
+import { DonatableSectionRecentlyCompleted } from './types';
 
 type DonationModalBodyProps = {
   activeDonors?: number;
   closeDonationModal: typeof closeDonationModal;
-  recentlyClaimedBlock: RecentlyClaimedBlock;
+  donatableSectionRecentlyCompleted: DonatableSectionRecentlyCompleted;
   setCanClose: (canClose: boolean) => void;
 };
 
 const Illustration = ({
-  recentlyClaimedBlock,
+  donatableSectionRecentlyCompleted,
   useShortDonationBlocks
 }: {
-  recentlyClaimedBlock: RecentlyClaimedBlock;
+  donatableSectionRecentlyCompleted: DonatableSectionRecentlyCompleted;
   useShortDonationBlocks: boolean;
 }) => {
   const { t } = useTranslation();
   const showNewBearIllustration =
-    useShortDonationBlocks && recentlyClaimedBlock;
+    useShortDonationBlocks && donatableSectionRecentlyCompleted;
   return (
     <img
       alt={
@@ -45,37 +44,38 @@ const Illustration = ({
 };
 
 function ModalHeader({
-  recentlyClaimedBlock,
   showHeaderAndFooter,
   donationAttempted,
-  showForm
+  showForm,
+  donatableSectionRecentlyCompleted
 }: {
-  recentlyClaimedBlock: RecentlyClaimedBlock;
+  donatableSectionRecentlyCompleted: DonatableSectionRecentlyCompleted;
   showHeaderAndFooter: boolean;
   donationAttempted: boolean;
   showForm: boolean;
 }) {
   const { t } = useTranslation();
-
+  const { section, superBlock, title } =
+    donatableSectionRecentlyCompleted || {};
   if (!showHeaderAndFooter || donationAttempted) {
     return null;
   } else if (!showForm) {
     return (
       <Row className='text-center'>
         <Col sm={10} smOffset={1} xs={12}>
-          {recentlyClaimedBlock !== null && (
+          {donatableSectionRecentlyCompleted && (
             <>
               <b>
                 {t('donate.nicely-done', {
-                  block: t(
-                    `intro:${recentlyClaimedBlock.superBlock}.blocks.${recentlyClaimedBlock.block}.title`
-                  )
+                  block:
+                    section === 'module'
+                      ? t(`intro:${superBlock}.${section}s.${title}`)
+                      : t(`intro:${superBlock}.${section}s.${title}.title`)
                 })}
               </b>
               <Spacer size='xs' />
             </>
           )}
-
           <Modal.Header showCloseButton={false} borderless>
             {t('donate.modal-benefits-title')}
           </Modal.Header>
@@ -201,7 +201,6 @@ const AnimationContainer = ({
 };
 
 const BecomeASupporterConfirmation = ({
-  recentlyClaimedBlock,
   showHeaderAndFooter,
   closeDonationModal,
   donationAttempted,
@@ -209,9 +208,10 @@ const BecomeASupporterConfirmation = ({
   setShowHeaderAndFooter,
   handleProcessing,
   setShowForm,
-  useShortDonationBlocks
+  useShortDonationBlocks,
+  donatableSectionRecentlyCompleted
 }: {
-  recentlyClaimedBlock: RecentlyClaimedBlock;
+  donatableSectionRecentlyCompleted: DonatableSectionRecentlyCompleted;
   showHeaderAndFooter: boolean;
   closeDonationModal: () => void;
   donationAttempted: boolean;
@@ -225,12 +225,12 @@ const BecomeASupporterConfirmation = ({
     <div className='no-delay-fade-in'>
       <div className='donation-icon-container'>
         <Illustration
-          recentlyClaimedBlock={recentlyClaimedBlock}
+          donatableSectionRecentlyCompleted={donatableSectionRecentlyCompleted}
           useShortDonationBlocks={useShortDonationBlocks}
         />
       </div>
       <ModalHeader
-        recentlyClaimedBlock={recentlyClaimedBlock}
+        donatableSectionRecentlyCompleted={donatableSectionRecentlyCompleted}
         showHeaderAndFooter={showHeaderAndFooter}
         donationAttempted={donationAttempted}
         showForm={showForm}
@@ -258,7 +258,7 @@ const BecomeASupporterConfirmation = ({
 
 function DonationModalBody({
   closeDonationModal,
-  recentlyClaimedBlock,
+  donatableSectionRecentlyCompleted,
   setCanClose
 }: DonationModalBodyProps): JSX.Element {
   const [donationAttempted, setDonationAttempted] = useState(false);
@@ -274,7 +274,7 @@ function DonationModalBody({
 
   useEffect(() => {
     let intervalId: NodeJS.Timeout;
-    if (useShortDonationBlocks && recentlyClaimedBlock) {
+    if (useShortDonationBlocks && donatableSectionRecentlyCompleted) {
       setIsAnimationVisible(false);
       setCanClose(true);
     } else {
@@ -291,7 +291,7 @@ function DonationModalBody({
   }, [
     secondsRemaining,
     setCanClose,
-    recentlyClaimedBlock,
+    donatableSectionRecentlyCompleted,
     useShortDonationBlocks
   ]);
 
@@ -302,7 +302,9 @@ function DonationModalBody({
           <AnimationContainer secondsRemaining={secondsRemaining} />
         ) : (
           <BecomeASupporterConfirmation
-            recentlyClaimedBlock={recentlyClaimedBlock}
+            donatableSectionRecentlyCompleted={
+              donatableSectionRecentlyCompleted
+            }
             showHeaderAndFooter={showHeaderAndFooter}
             closeDonationModal={closeDonationModal}
             donationAttempted={donationAttempted}

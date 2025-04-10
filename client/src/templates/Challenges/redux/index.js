@@ -22,6 +22,7 @@ const initialState = {
     superBlock: '',
     block: '',
     blockHashSlug: '/',
+    blockType: '',
     id: '',
     isLastChallengeInBlock: false,
     nextChallengePath: '/',
@@ -150,10 +151,30 @@ export const reducer = handleActions(
         ? state.consoleOut
         : state.consoleOut.concat(payload, state.logsOut)
     }),
-    [actionTypes.initVisibleEditors]: state => ({
-      ...state,
-      visibleEditors: { [getTargetEditor(state.challengeFiles)]: true }
-    }),
+    [actionTypes.initVisibleEditors]: state => {
+      let persistingVisibleEditors = {};
+      const prevVisibleEditorKeys = Object.keys(state.visibleEditors);
+      if (prevVisibleEditorKeys.length > 1) {
+        // Restore states of relevant visible editors for the current challengeFiles
+        persistingVisibleEditors = prevVisibleEditorKeys
+          .filter(editorKey => {
+            return state.challengeFiles.find(
+              challengeFile => challengeFile.fileKey === editorKey
+            );
+          })
+          .reduce((visibleEditors, key) => {
+            visibleEditors[key] = state.visibleEditors[key];
+            return visibleEditors;
+          }, {});
+      }
+      return {
+        ...state,
+        visibleEditors: {
+          ...persistingVisibleEditors,
+          [getTargetEditor(state.challengeFiles)]: true
+        }
+      };
+    },
     [actionTypes.updateChallengeMeta]: (state, { payload }) => ({
       ...state,
       challengeMeta: { ...payload }
