@@ -3453,9 +3453,9 @@
       },
       "ffpt": { "title": "279", "intro": [] },
       "lab-one-time-password-generator": {
-        "title": "Build an OTP Generator",
+        "title": "Build a One-Time Password Generator",
         "intro": [
-          "In this lab you'll build an OTP generator.",
+          "In this lab you'll build a one-time password generator.",
           "You'll practice using the useEffect hooks to create a timer and generate a random OTP."
         ]
       },
