@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Build an OTP Generator
-block: lab-otp-generator
+block: lab-one-time-password-generator
 superBlock: full-stack-developer
 ---
 

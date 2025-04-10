@@ -2,7 +2,7 @@
   "name": "Build an OTP Generator",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "dashedName": "lab-otp-generator",
+  "dashedName": "lab-one-time-password-generator",
   "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "67c562286b29447da020d407", "title": "Build an OTP Generator" }],
   "blockType": "lab",
