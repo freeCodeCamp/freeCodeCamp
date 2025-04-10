@@ -266,6 +266,7 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
       return;
     }
   } catch (e) {
+    console.error(e);
     console.log(`failed to create superBlock from ${superBlockDir}`);
     process.exit(1);
   }
