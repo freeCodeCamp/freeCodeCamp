@@ -445,7 +445,7 @@
     "rsa": "Leia, pesquise, pergunte",
     "rsa-forum": "<strong>Antes de fazer uma nova publicação</strong>, certifique-se de que sua pergunta <0>ainda não foi respondida no fórum</0>.",
     "reset": "Reiniciar esta aula?",
-    "reset-warn": "Tem certeza de que deseja reiniciar esta lição? Os editores e testes serão reiniciados.",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "Isto não pode ser desfeito.",
     "revert-warn": "Tem certeza que deseja reverter esta lição? As alterações mais recentes serão desfeitas e o código será revertido para a versão salva mais recentemente.",
     "scrimba-tip": "Dica: se o minibrowser estiver cobrindo o código, clique e arraste para movê-lo. Além disso, sinta-se à vontade para parar e editar o código no vídeo a qualquer momento.",
@@ -456,9 +456,6 @@
     "sign-in-see-benefits": "Faça o login para ver seus benefícios como apoiador",
     "card-has-been-updated": "Seu cartão foi atualizado com sucesso.",
     "contact-support-mistake": "Se você acha que houve um erro, entre em contato conosco pelo e-mail donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "Certificação {{title}}"
-    },
     "editor-tabs": {
       "code": "Código",
       "tests": "Testes",
@@ -981,7 +978,8 @@
     "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível.",
     "ms-learn-link": "Use um link de troféu válido do Microsoft Learn.",
     "path-url": "Você provavelmente vai querer enviar o caminho raiz, ou seja, https://example.com em vez de https://example.com/path",
-    "source-code-link-required": "Lembre-se de enviar o link do seu código-fonte."
+    "source-code-link-required": "Lembre-se de enviar o link do seu código-fonte.",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "Diretor executivo, freeCodeCamp.org",

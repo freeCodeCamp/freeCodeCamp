@@ -222,7 +222,7 @@ describe('userRoutes', () => {
       superGet = createSuperRequest({ method: 'GET' });
     });
 
-    describe('/api/users/get-public-profile', () => {
+    describe('/users/get-public-profile', () => {
       const profilelessUsername = 'profileless-user';
       const lockedUsername = 'locked-user';
       const publicUsername = 'public-user';
@@ -281,7 +281,7 @@ describe('userRoutes', () => {
       describe('GET', () => {
         test('returns 400 status code if the user agent is blocked', async () => {
           const response = await superGet(
-            '/api/users/get-public-profile?username=public-user'
+            '/users/get-public-profile?username=public-user'
           ).set('User-Agent', 'curl');
 
           expect(response.text).toBe(
@@ -291,14 +291,14 @@ describe('userRoutes', () => {
         });
 
         test('returns 400 status code if the username param is missing', async () => {
-          const res = await superGet('/api/users/get-public-profile');
+          const res = await superGet('/users/get-public-profile');
           // TODO(Post-MVP): return something more informative
           expect(res.body).toStrictEqual({});
           expect(res.statusCode).toBe(400);
         });
 
         test('returns 400 status code if the username param is empty', async () => {
-          const res = await superGet('/api/users/get-public-profile?username=');
+          const res = await superGet('/users/get-public-profile?username=');
           // TODO(Post-MVP): return something more informative
           expect(res.body).toStrictEqual({});
           expect(res.statusCode).toBe(400);
@@ -306,7 +306,7 @@ describe('userRoutes', () => {
 
         test('returns 404 status code for non-existent user', async () => {
           const response = await superGet(
-            '/api/users/get-public-profile?username=non-existent'
+            '/users/get-public-profile?username=non-existent'
           );
           // TODO(Post-MVP): return something more informative
           expect(response.body).toStrictEqual({});
@@ -315,7 +315,7 @@ describe('userRoutes', () => {
 
         test('returns 200 status code with a locked profile if the profile is private', async () => {
           const response = await superGet(
-            `/api/users/get-public-profile?username=${lockedUsername}`
+            `/users/get-public-profile?username=${lockedUsername}`
           );
 
           expect(response.body).toStrictEqual({
@@ -335,7 +335,7 @@ describe('userRoutes', () => {
 
         test('returns 200 status code locked profile if the profile is missing', async () => {
           const response = await superGet(
-            `/api/users/get-public-profile?username=${profilelessUsername}`
+            `/users/get-public-profile?username=${profilelessUsername}`
           );
 
           expect(response.body).toStrictEqual({
@@ -360,7 +360,7 @@ describe('userRoutes', () => {
               where: { email: publicUsername }
             });
           const response = await superGet(
-            `/api/users/get-public-profile?username=${publicUsername}`
+            `/users/get-public-profile?username=${publicUsername}`
           );
 
           // TODO: create a fixture for this without 'completedSurveys', ideally
@@ -385,52 +385,58 @@ describe('userRoutes', () => {
         });
       });
     });
-    describe('GET /api/users/exists', () => {
+    describe('GET /users/exists', () => {
       beforeAll(async () => {
         await fastifyTestInstance.prisma.user.create({
           data: minimalUserData
         });
       });
 
-      it('should return { exists: true } with a 400 status code if the username param is missing or empty', async () => {
-        const res = await superGet('/api/users/exists');
+      it('should reject with a 400 status code if the username param is missing or empty', async () => {
+        const res = await superGet('/users/exists');
 
-        expect(res.body).toStrictEqual({ exists: true });
+        expect(res.body).toStrictEqual({
+          type: 'danger',
+          message: 'username parameter is required'
+        });
         expect(res.statusCode).toBe(400);
 
-        const res2 = await superGet('/api/users/exists?username=');
+        const res2 = await superGet('/users/exists?username=');
 
-        expect(res2.body).toStrictEqual({ exists: true });
+        expect(res2.body).toStrictEqual({
+          type: 'danger',
+          message: 'username parameter is required'
+        });
         expect(res2.statusCode).toBe(400);
       });
 
       it('should return { exists: true } if the username exists', async () => {
-        const res = await superGet('/api/users/exists?username=testuser');
+        const res = await superGet('/users/exists?username=testuser');
 
         expect(res.body).toStrictEqual({ exists: true });
         expect(res.statusCode).toBe(200);
       });
 
       it('should ignore case when checking for username existence', async () => {
-        const res = await superGet('/api/users/exists?username=TeStUsEr');
+        const res = await superGet('/users/exists?username=TeStUsEr');
 
         expect(res.body).toStrictEqual({ exists: true });
         expect(res.statusCode).toBe(200);
       });
 
       it('should return { exists: false } if the username does not exist', async () => {
-        const res = await superGet('/api/users/exists?username=nonexistent');
+        const res = await superGet('/users/exists?username=nonexistent');
 
         expect(res.body).toStrictEqual({ exists: false });
         expect(res.statusCode).toBe(200);
       });
 
       it('should return { exists: true } if the username is restricted (ignoring case)', async () => {
-        const res = await superGet('/api/users/exists?username=pRofIle');
+        const res = await superGet('/users/exists?username=pRofIle');
 
         expect(res.body).toStrictEqual({ exists: true });
 
-        const res2 = await superGet('/api/users/exists?username=flAnge');
+        const res2 = await superGet('/users/exists?username=flAnge');
 
         expect(res2.body).toStrictEqual({ exists: true });
       });
