@@ -244,7 +244,7 @@ Accepted languages are ${curriculumLangs.join(', ')}`);
     const blocksWithMeta = blocksWithParent.filter(
       ({ blockData }) => blockData.meta
     );
-    const container = blocksWithMeta.filter(({ block, blockData }) => {
+    const container = blocksWithMeta.filter(({ blockData }) => {
       return blockData.meta.challengeOrder.some(
         ({ id }) => id === filters.challengeId
       );
