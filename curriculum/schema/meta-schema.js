@@ -28,7 +28,11 @@ const schema = Joi.object()
       'review',
       'quiz',
       'exam'
-    ),
+    ).when('superBlock', {
+      is: 'full-stack-developer',
+      then: Joi.required(),
+      otherwise: Joi.optional()
+    }),
     isUpcomingChange: Joi.boolean().required(),
     dashedName: Joi.string().regex(slugRE).required(),
     superBlock: Joi.string()
