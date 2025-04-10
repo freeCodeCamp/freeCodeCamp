@@ -14,7 +14,7 @@ import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
 import ChallengeTranscript from '../challenge-transcript';
-import { sounds, images, backgrounds, characterAssets } from './scene-assets';
+import { sounds, backgrounds, characterAssets } from './scene-assets';
 import Character from './character';
 import { SceneSubject } from './scene-subject';
 
@@ -415,7 +415,6 @@ export function Scene({
           </>
         )}
       </div>
-      <ChallengeTranscript transcript={transcriptText} />
       <div className='scene-controls'>
         <button
           className='scene-btn scene-play-btn'
@@ -451,6 +450,7 @@ export function Scene({
           </button>
         )}
       </div>
+      <ChallengeTranscript transcript={transcriptText} />
       <Spacer size='m' />
     </Col>
   );
