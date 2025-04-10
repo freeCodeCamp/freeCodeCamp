@@ -8,6 +8,8 @@ export const endpoints: Endpoints = [
   ['/refetch-user-completed-challenges', 'POST'],
   ['/certificate/verify-can-claim-cert', 'GET'],
   ['/api/github', 'GET'],
+  ['/api/users/exists', 'GET'],
+  ['/api/users/get-public-profile', 'GET'],
   ['/account', 'GET']
 ];
 
