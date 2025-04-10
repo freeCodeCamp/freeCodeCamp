@@ -51,10 +51,7 @@ const {
   createContent,
   testId
 } = require('../../client/src/templates/Challenges/utils/frame');
-const {
-  SuperBlocks,
-  chapterBasedSuperBlocks
-} = require('../../shared/config/curriculum');
+const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -439,7 +436,7 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                     for (const test of tests) {
                       try {
                         await testRunner(test);
-                      } catch (e) {
+                      } catch {
                         fails = true;
                         break;
                       }
@@ -682,13 +679,7 @@ async function getWorkerEvaluator({
   };
 }
 
-async function initializeTestRunner({
-  build,
-  sources,
-  code,
-  loadEnzyme,
-  hooks
-}) {
+async function initializeTestRunner({ build, sources, loadEnzyme, hooks }) {
   await page.reload();
   await page.setContent(createContent(testId, { build, sources, hooks }));
   await page.evaluate(

@@ -66,7 +66,7 @@ function* saveChallengeSaga() {
             })
           );
         }
-      } catch (e) {
+      } catch {
         yield put(
           createFlashMessage({
             type: 'danger',

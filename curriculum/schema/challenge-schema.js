@@ -2,10 +2,7 @@ const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
 const { challengeTypes } = require('../../shared/config/challenge-types');
-const {
-  SuperBlocks,
-  chapterBasedSuperBlocks
-} = require('../../shared/config/curriculum');
+const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
 const {
   availableCharacters,
   availableBackgrounds,
