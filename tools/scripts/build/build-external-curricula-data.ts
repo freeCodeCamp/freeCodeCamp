@@ -153,7 +153,6 @@ export function buildExtCurriculumData(
                   const blockData = blocksWithData[block.dashedName];
 
                   return {
-                    dashedName: block.dashedName,
                     intro: getBlockDescription(superBlockKey, block.dashedName),
                     meta: blockData.meta
                   };

@@ -1,6 +1,5 @@
 const Joi = require('joi');
 const {
-  SuperBlocks,
   chapterBasedSuperBlocks
 } = require('../../../shared/config/curriculum');
 
@@ -74,13 +73,7 @@ const chapterBasedCurriculumSchema = Joi.object().pattern(
               moduleType: Joi.valid('review', 'exam').optional(),
               comingSoon: Joi.boolean().optional(),
               dashedName: Joi.string().regex(slugRE).required(),
-              blocks: Joi.array().items(
-                Joi.object()
-                  .keys({
-                    dashedName: Joi.string().regex(slugRE).required()
-                  })
-                  .concat(blockSchema)
-              )
+              blocks: Joi.array().items(blockSchema)
             })
           )
           .required()
