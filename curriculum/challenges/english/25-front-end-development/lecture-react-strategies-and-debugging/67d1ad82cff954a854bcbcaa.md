@@ -73,9 +73,7 @@ const Grandchild = ({ greeting }) => {
 export default Grandchild;
 ```
 
-Here's what it looks like in the browser:
-
-[Image showing the rendered page with a single `h1` element that has the text `Hello, Prop Drilling!`]
+In the browser, you'll see a page with a single `h1` element that has the text `Hello, Prop Drilling!`.
 
 At first, prop drilling might not seem like such a big deal. But as your app grows, it gets harder to understand, debug, and maintain.
 
