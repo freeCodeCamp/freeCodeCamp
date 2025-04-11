@@ -24,7 +24,7 @@ For example, say you have three components named `Parent`, `Child`, and `Grandch
 
 Or if the data is even further up the chain, the data might have to be passed to the `Parent` component, too.
 
-Here, the data I want to display is the string `Hello, Prop Drilling!`. It's assigned to the greeting variable in the root `App` component:
+Here, the data I want to display is the string `Hello, Prop Drilling!`. It's assigned to the `greeting` variable in the root `App` component:
 
 ```jsx
 import "./App.css";
