@@ -155,7 +155,7 @@
         "title": "Aprende diseño web adaptativo construyendo un piano",
         "intro": [
           "El diseño adaptativo indica a tu página web cómo debe verse en pantallas de distintos tamaños.",
-          "En este curso, usarás CSS y Diseño Adaptativo para programar un piano. También aprenderás más sobre las consultas de medios y pseudoselectores."
+          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -308,11 +308,11 @@
     ],
     "note": "Nota: Algunas extensiones de tu navegador, como bloqueadores de ventanas y bloqueadores de comandos pueden interferir con los ejercicios. Si tienes problemas, te recomendamos deshabilitar las extensiones que modifican o bloquean el contenido de las páginas mientras estés tomando el curso.",
     "blocks": {
-      "build-a-pokemon-search-app-project": {
-        "title": "Crea un proyecto de aplicación de búsqueda de Pokémon",
+      "build-an-rpg-creature-search-app-project": {
+        "title": "Build an RPG Creature Search App Project",
         "intro": [
-          "Este es uno de los proyectos necesarios para obtener su certificación.",
-          "Para este proyecto, construirás una aplicación de búsqueda de Pokémon."
+          "This is one of the required projects to earn your certification.",
+          "For this project, you will build an RPG creature search app."
         ]
       },
       "build-a-cash-register-project": {
@@ -672,11 +672,11 @@
           "En este curso de 40 lecciones, aprenderás cómo editar archivos en la terminal con Nano mientras construyes un castillo."
         ]
       },
-      "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Aprende bases de datos relacionales construyendo una base de datos Mario",
+      "learn-relational-databases-by-building-a-database-of-video-game-characters": {
+        "title": "Learn Relational Databases by Building a Database of Video Game Characters",
         "intro": [
-          "Una base de datos relacional organiza datos en tablas que están enlazadas a través de relaciones.",
-          "En este curso de 165 lecciones, aprenderá los fundamentos de una base de datos relacional creando una base de datos PostgreSQL llena de caracteres de videojuego."
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
@@ -1192,9 +1192,9 @@
       "El Proyecto Odin fue creado en 2013 por un solitario desarrollador, Erik Trautman. A través de los años, ha surgido una comunidad de código abierto para mantener y ampliar el proyecto.",
       "freeCodeCamp ha ampliado el plan de estudios para el código abierto y hacer que se ejecute de forma interactiva en el navegador, con pruebas para evaluar tu código y garantizar que hayas comprendido los conceptos clave.",
       "Si tu quieres la experiencia original de toda la configuración del Proyecto Odin para ejecutarlo dentro de tu computadora local, tu puedes verificar el Proyecto Odin original en <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>sitio web del Proyecto Odin</a>. Un abrazo gracias a la comunidad de El Proyecto Odin por continuar este valioso recurso de aprendizaje para desarrolladores al rededor de todo el mundo.",
-      "Este curso no es oficial, y estamos respaldados por El Proyecto Odin. Se han realizado cambios en el contenido del plan de estudios del Proyecto Odin y todo el material instructivo de este curso tiene licencia bajo <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
+      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
       "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; El Proyecto Odin</a>",
-      "Este curso incluye contenido de <a href='javascript.info'>JavaScript.info</a>, bajo la licencia de <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
+      "This course includes content from <a href='https://javascript.info/' target='_blank' rel='noopener noreferrer nofollow'>JavaScript.info</a>, which is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>."
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1337,7 +1337,7 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(Nuevo) C# básico con Microsoft",
+    "title": "Free Foundational C# with Microsoft Certification",
     "intro": [
       "Este curso ofrece una introducción completa a la programación en C#, abarcando sus conceptos básicos, sintaxis y aplicación práctica en el desarrollo de software.",
       "A través de ejercicios prácticos y proyectos, aprenderá los fundamentos de C#, incluyendo variables, tipos de datos, estructuras de control y principios de programación orientados a objetos.",
@@ -1390,7 +1390,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "Ingles A2 para Desarrolladores (Beta)",
+    "title": "A2 English for Developers (Beta) Certification",
     "intro": [
       "En este plan de estudios de inglés para desarrolladores, aprenderá los conceptos básicos de la comunicación en inglés. Esto seguirá el nivel A2 del Marco Común Europeo de Referencia (MCER). Y nos hemos centrado en vocabulario que es particularmente útil para los desarrolladores.",
       "La primera mitad del plan de estudios te ayudará a sentirte cómodo con la gramática y el uso del inglés. Te brindará toneladas de práctica en tus manos. Aprenderá conceptos básicos de como presentarse, entablar una pequeña charla y discutir sobre tu trabajo.",
@@ -1569,7 +1569,7 @@
     }
   },
   "b1-english-for-developers": {
-    "title": "B1 Inglés para desarrolladores (Beta)",
+    "title": "B1 English for Developers (Beta) Certification",
     "intro": [
       "En este programa de inglés para desarrolladores, aprenderás los conceptos básicos de la comunicación en inglés. Seguirás el nivel B1 del Marco Común Europeo de Referencia (MCER). Y nos hemos centrado en el vocabulario que resulta especialmente útil para los desarrolladores.",
       "Te ayudará a fortalecer tus habilidades básicas mientras introduces gramática y usos más complejos. Aprenderás a describir lugares y cosas, compartir experiencias pasadas y usar con confianza tiempos verbales como presente perfecto y futuro. También se incluyen estrategias prácticas de comunicación, como gestionar conversaciones, expresar opiniones y generar acuerdos o desacuerdos en discusiones.",
@@ -1637,15 +1637,21 @@
       },
       "learn-how-to-express-disagreement": {
         "title": "Aprende a expresar desacuerdos",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to express disagreement in different professional settings."
+        ]
       },
       "learn-how-to-express-concerns": {
         "title": "Aprende a expresar tus preocupaciones",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to inform other people that you are worried about things that might happen to your projects and tasks."
+        ]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Aprende a expresar decisiones basadas en comparaciones",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to compare things like tools or companies using words like better, faster, and the best. You will also practice having friendly conversations to give opinions and make decisions"
+        ]
       },
       "learn-how-to-use-modal-verbs": {
         "title": "Aprende a utilizar los verbos modales",
@@ -1784,7 +1790,19 @@
       "exam-front-end-libraries": "Front End Libraries Exam",
       "sql-and-bash": "SQL and Bash",
       "git": "Git",
-      "security-and-privacy": "Security and Privacy"
+      "security-and-privacy": "Security and Privacy",
+      "python-basics": "Python Basics",
+      "python-loops-and-sequences": "Loops and Sequences",
+      "python-dictionaries-and-sets": "Dictionaries and Sets",
+      "python-error-handling": "Error Handling",
+      "python-classes-and-objects": "Classes and Objects",
+      "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
+      "python-linear-data-structures": "Linear Data Structures",
+      "python-algorithms": "Algorithms",
+      "python-graphs-and-trees": "Graphs and Trees",
+      "python-dynamic-programming": "Dynamic Programming",
+      "review-python": "Python Review",
+      "exam-python": "Python Exam"
     },
     "blocks": {
       "lecture-welcome-to-freecodecamp": {
@@ -1853,7 +1871,8 @@
       "quiz-basic-html": {
         "title": "Basic HTML Quiz",
         "intro": [
-          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
+          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-importance-of-semantic-html": {
@@ -1884,7 +1903,8 @@
       "quiz-semantic-html": {
         "title": "Semantic HTML Quiz",
         "intro": [
-          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
+          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-working-with-forms": {
@@ -1942,7 +1962,8 @@
       "quiz-html-tables-and-forms": {
         "title": "HTML Tables and Forms Quiz",
         "intro": [
-          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools."
+          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-importance-of-accessibility-and-good-html-structure": {
@@ -1968,7 +1989,8 @@
       "quiz-html-accessibility": {
         "title": "HTML Accessibility Quiz",
         "intro": [
-          "The following quiz will test your knowledge on the accessibility concepts you have learned so far."
+          "The following quiz will test your knowledge on the accessibility concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "review-html": {
@@ -2437,7 +2459,7 @@
         "title": "Design a Piano",
         "intro": [
           "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
       "lab-technical-documentation-page": {
@@ -3359,6 +3381,13 @@
           "For this lab you'll practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
         ]
       },
+      "lab-weather-app": {
+        "title": "Build a Weather App",
+        "intro": [
+          "In this lab you'll build a Weather App using an API",
+          "You'll practice how to fetch data from the API, store and display it on your app."
+        ]
+      },
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
@@ -3375,7 +3404,7 @@
         "title": "JavaScript Review",
         "intro": [
           "Before you take the JavaScript prep exam, you should review everything you've learned about JavaScript.",
-          "Open up this page, to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
+          "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
       "kagw": {
@@ -3428,9 +3457,11 @@
         "title": "React Basics Quiz",
         "intro": ["Test your knowledge of React basics with this quiz."]
       },
-      "rugw": {
-        "title": "267",
-        "intro": []
+      "lecture-working-with-state-and-responding-to-events-in-react": {
+        "title": "Working with State and Responding to Events in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with state and responding to events with React."
+        ]
       },
       "rmpy": {
         "title": "268",
@@ -3440,9 +3471,11 @@
         "title": "269",
         "intro": []
       },
-      "rnfe": {
-        "title": "271",
-        "intro": []
+      "lecture-understanding-effects-and-referencing-values-in-react": {
+        "title": "Understanding Effects and Referencing Values in React",
+        "intro": [
+          "In these lecture videos, you will learn about effects and referencing values with React."
+        ]
       },
       "xdyh": {
         "title": "270",
@@ -3452,9 +3485,12 @@
         "title": "272",
         "intro": []
       },
-      "ceds": {
-        "title": "273",
-        "intro": []
+      "review-react-state-and-hooks": {
+        "title": "React State and Hooks Review",
+        "intro": [
+          "Before you're quizzed on React state and hooks, you should review what you've learned.",
+          "Open up this page to review working with state, custom hooks and more."
+        ]
       },
       "quiz-react-state-and-hooks": {
         "title": "React State and Hooks Quiz",
@@ -3462,9 +3498,11 @@
           "Test what you've learned about React's <code>useState</code> and <code>useEffect</code> hooks with this quiz."
         ]
       },
-      "ftmi": {
-        "title": "275",
-        "intro": []
+      "lecture-working-with-forms-in-react": {
+        "title": "Working with Forms in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with forms in React."
+        ]
       },
       "sgau": {
         "title": "276",
@@ -3474,11 +3512,10 @@
         "title": "277",
         "intro": []
       },
-      "lab-weather-app": {
-        "title": "Build a Weather App",
+      "lecture-working-with-data-fetching-and-memoization-in-react": {
+        "title": "Working with Data Fetching and Memoization in React",
         "intro": [
-          "In this lab you'll build a Weather App using an API",
-          "You'll practice how to fetch data from the API, store and display it on your app."
+          "In these lecture videos, you will learn about data fetching and memoization in React."
         ]
       },
       "ffpt": {
@@ -3489,29 +3526,46 @@
         "title": "280",
         "intro": []
       },
+      "lecture-routing-react-frameworks-and-dependency-management-tools": {
+        "title": "Routing, React Frameworks, and Dependency Management Tools",
+        "intro": [
+          "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
+        ]
+      },
       "vyzp": {
         "title": "281",
         "intro": []
       },
-      "zagz": {
-        "title": "282",
-        "intro": []
-      },
-      "quiz-advanced-react": {
-        "title": "Advanced React Quiz",
+      "lecture-react-strategies-and-debugging": {
+        "title": "React Strategies and Debugging",
         "intro": [
-          "Test what you've learned about Advanced React with this quiz."
+          "In these lecture videos, you will learn about different strategies and debugging in React."
         ]
       },
-      "zdsj": {
-        "title": "284",
-        "intro": []
+      "review-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Review",
+        "intro": [
+          "Before you take the React forms, data fetching and routing quiz, you should review everything you've learned so far.",
+          "Open up this page, to review all of the concepts taught including routing, forms, state management, prop drilling, data fetching and more."
+        ]
+      },
+      "quiz-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Quiz",
+        "intro": [
+          "Test what you've learned about routing, forms, and data fetching with this quiz."
+        ]
+      },
+      "lecture-understanding-performance-in-web-applications": {
+        "title": "Understanding Performance in Web Applications",
+        "intro": [
+          "In these lecture videos, you will learn performance in web applications."
+        ]
       },
       "review-web-performance": {
         "title": "Web Performance Review",
         "intro": [
           "Before you take the web performance quiz, you should review everything you've learned so far.",
-          "Open up this page, to review all of the concepts taught including INP, key metrics for measuring performance, Performance Web APIs and more."
+          "Open up this page to review all of the concepts taught including INP, key metrics for measuring performance, Performance Web APIs and more."
         ]
       },
       "quiz-web-performance": {
@@ -3520,14 +3574,17 @@
           "Test what you've learned about Web Performance with this quiz."
         ]
       },
-      "mbpv": {
-        "title": "287",
-        "intro": []
+      "lecture-working-with-css-libraries-and-frameworks": {
+        "title": "Working with CSS Libraries and Frameworks",
+        "intro": [
+          "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
+        ]
       },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
-          "Review the CSS Libraries and Frameworks concepts to prepare for the upcoming quiz."
+          "Before you take the CSS libraries and frameworks quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including CSS frameworks, CSS preprocessors, Sass and more."
         ]
       },
       "quiz-css-libraries-and-frameworks": {
@@ -3536,9 +3593,11 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
-      "khuu": {
-        "title": "290",
-        "intro": []
+      "lecture-understanding-the-different-types-of-testing": {
+        "title": "Understanding the Different Types of Testing",
+        "intro": [
+          "In these lecture videos, you will learn about the different types of testing."
+        ]
       },
       "review-testing": {
         "title": "Testing Review",
@@ -3547,6 +3606,12 @@
       "quiz-testing": {
         "title": "Testing Quiz",
         "intro": ["Test what you've learned on testing with this quiz."]
+      },
+      "lecture-introduction-to-typescript": {
+        "title": "Introduction to TypeScript",
+        "intro": [
+          "In these lecture videos, you will learn what TypeScript is and how to use it."
+        ]
       },
       "trvf": {
         "title": "293",
@@ -3571,7 +3636,8 @@
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
-          "Review Typescript concepts to prepare for the upcoming quiz."
+          "Before you take the TypeScript quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including data types in TypeScript, generics, type narrowing and more."
         ]
       },
       "quiz-typescript": {
@@ -3613,8 +3679,8 @@
         "title": "306",
         "intro": []
       },
-      "workshop-mario-database": {
-        "title": "Build a Mario Database",
+      "workshop-database-of-video-game-characters": {
+        "title": "Build a Database of Video Game Characters",
         "intro": [
           "A relational database organizes data into tables that are linked together through relationships.",
           "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
@@ -3768,189 +3834,273 @@
           "Review relational databases concepts to prepare for the upcoming quiz."
         ]
       },
-      "thsj": {
-        "title": "335",
-        "intro": []
+      "lecture-introduction-to-python": {
+        "title": "Introduction to Python",
+        "intro": ["Learn about Introduction to Python in these lectures."]
       },
-      "uwum": {
-        "title": "336",
-        "intro": []
+      "workshop-caesar-cipher": {
+        "title": "Build a Caesar Cipher",
+        "intro": ["Learn about Build a Caesar Cipher in these lectures."]
       },
-      "asfv": {
-        "title": "337",
-        "intro": []
+      "lab-rpg-character": {
+        "title": "Build an RPG character",
+        "intro": ["Learn about Build an RPG character in these lectures."]
       },
-      "bvfx": {
-        "title": "338",
-        "intro": []
+      "review-python-basics": {
+        "title": "Python Basics Review",
+        "intro": ["Learn about Python Basics Review in these lectures."]
       },
-      "buzx": {
-        "title": "339",
-        "intro": []
+      "quiz-python-basics": {
+        "title": "Python Basics Quiz",
+        "intro": [
+          "Test what you've learned about Python basics with this quiz."
+        ]
       },
-      "ynqt": {
-        "title": "340",
-        "intro": []
+      "lecture-working-with-loops-and-sequences": {
+        "title": "Working with Loops and Sequences",
+        "intro": [""]
       },
-      "prlo": {
-        "title": "341",
-        "intro": []
+      "workshop-placeholder-loops-and-sequences": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "jsnd": {
-        "title": "342",
-        "intro": []
+      "lab-placeholder-loops-and-sequences": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
       },
-      "sxdc": {
-        "title": "343",
-        "intro": []
+      "review-loops-and-sequences": {
+        "title": "Loops and Sequences Review",
+        "intro": [""]
       },
-      "pegc": {
-        "title": "344",
-        "intro": []
+      "quiz-loops-and-sequences": {
+        "title": "Loops and Sequences Quiz",
+        "intro": [
+          "Test what you've learned about loops and sequences in Python with this quiz."
+        ]
       },
-      "mzae": {
-        "title": "345",
-        "intro": []
+      "lecture-working-with-dictionaries-and-sets": {
+        "title": "Working with Dictionaries and Sets",
+        "intro": [""]
       },
-      "gjbf": {
-        "title": "346",
-        "intro": []
+      "lecture-working-with-modules": {
+        "title": "Working with Modules",
+        "intro": [""]
       },
-      "hzab": {
-        "title": "347",
-        "intro": []
+      "workshop-placeholder-dictionaries-and-sets": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
       },
-      "ggea": {
-        "title": "348",
-        "intro": []
+      "lab-placeholder-dictionaries-and-sets": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
       },
-      "vgvz": {
-        "title": "349",
-        "intro": []
+      "review-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Review",
+        "intro": [""]
       },
-      "hfwi": {
-        "title": "350",
-        "intro": []
+      "quiz-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Quiz",
+        "intro": [
+          "Test what you've learned about dictionaries and sets in Python with this quiz."
+        ]
       },
-      "rnwr": {
-        "title": "351",
-        "intro": []
+      "lecture-understanding-error-handling": {
+        "title": "Understanding Error Handling",
+        "intro": [""]
       },
-      "zhhp": {
-        "title": "352",
-        "intro": []
+      "lab-isbn-validator": {
+        "title": "Debug a ISBN Validator",
+        "intro": [""]
       },
-      "movb": {
-        "title": "353",
-        "intro": []
+      "review-error-handling": {
+        "title": "Error Handling Review",
+        "intro": [""]
       },
-      "ngor": {
-        "title": "354",
-        "intro": []
+      "quiz-error-handling": {
+        "title": "Error Handling Quiz",
+        "intro": [
+          "Test what you've learned about Error Handling in Python with this quiz."
+        ]
       },
-      "gora": {
-        "title": "355",
-        "intro": []
+      "lecture-classes-and-objects": {
+        "title": "Classes and Objects",
+        "intro": [""]
       },
-      "xdly": {
-        "title": "356",
-        "intro": []
+      "workshop-placeholder-classes-and-objects": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
       },
-      "pzmc": {
-        "title": "357",
-        "intro": []
+      "lab-budget-app": {
+        "title": "Build a Budget App",
+        "intro": [""]
       },
-      "oeqv": {
-        "title": "358",
-        "intro": []
+      "review-classes-and-objects": {
+        "title": "Classes and Objects Review",
+        "intro": [""]
       },
-      "mfwu": {
-        "title": "359",
-        "intro": []
+      "quiz-classes-and-objects": {
+        "title": "Classes and Objects Quiz",
+        "intro": [
+          "Test what you've learned about classes and objects in Python with this quiz."
+        ]
       },
-      "dfcd": {
-        "title": "360",
-        "intro": []
+      "lecture-understanding-object-oriented-programming-and-encapsulation": {
+        "title": "Understanding Object Oriented Programming and Encapsulation",
+        "intro": [""]
       },
-      "dfwl": {
-        "title": "361",
-        "intro": []
+      "workshop-placeholder-oop-1": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "adzm": {
-        "title": "362",
-        "intro": []
+      "lab-placeholder-oop-1": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "kaui": {
-        "title": "363",
-        "intro": []
+      "lecture-understanding-inheritance-and-polymorphism": {
+        "title": "Understanding Inheritance and polymorphism",
+        "intro": [""]
       },
-      "zpjj": {
-        "title": "364",
-        "intro": []
+      "workshop-placeholder-oop-2": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "ghfk": {
-        "title": "365",
-        "intro": []
+      "lab-polygon-area-calculator": {
+        "title": "Build a Polygon Area Calculator",
+        "intro": [""]
       },
-      "ukem": {
-        "title": "366",
-        "intro": []
+      "lecture-understanding-abstraction": {
+        "title": "Understanding abstraction",
+        "intro": [""]
       },
-      "sdjg": {
-        "title": "367",
-        "intro": []
+      "workshop-placeholder-oop-3": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "qjov": {
-        "title": "368",
-        "intro": []
+      "lab-placeholder-oop-3": {
+        "title": "",
+        "intro": [""]
       },
-      "hjku": {
-        "title": "370",
-        "intro": []
+      "review-object-oriented-programming": {
+        "title": "Object Oriented Programming Review",
+        "intro": [""]
       },
-      "kegi": {
-        "title": "377",
-        "intro": []
+      "quiz-object-oriented-programming": {
+        "title": "Object Oriented Programming Quiz",
+        "intro": [
+          "Test what you've learned about object oriented programming in python with this quiz."
+        ]
       },
-      "vnfu": {
-        "title": "379",
-        "intro": []
+      "lecture-working-with-common-data-structures": {
+        "title": "Working with common data structures",
+        "intro": [""]
       },
-      "rlli": {
-        "title": "380",
-        "intro": []
+      "workshop-linked-list-class": {
+        "title": "Build a Linked List Class",
+        "intro": [""]
       },
-      "rjpv": {
-        "title": "381",
-        "intro": []
+      "lab-hash-table-class": {
+        "title": "Build an Hash Table Class",
+        "intro": [""]
       },
-      "xbri": {
-        "title": "382",
-        "intro": []
+      "review-data-structures": {
+        "title": "Data Structures Review",
+        "intro": [""]
       },
-      "xfrd": {
-        "title": "383",
-        "intro": []
+      "quiz-data-structures": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in Python with this quiz."
+        ]
       },
-      "nkjt": {
-        "title": "384",
-        "intro": []
+      "lecture-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms",
+        "intro": [""]
       },
-      "pgjj": {
-        "title": "385",
-        "intro": []
+      "workshop-binary-search": {
+        "title": "Build a Binary Search",
+        "intro": [""]
       },
-      "exom": {
-        "title": "386",
-        "intro": []
+      "lab-bisection-method": {
+        "title": "Build a Bisection Method",
+        "intro": [""]
       },
-      "bvqc": {
-        "title": "387",
-        "intro": []
+      "workshop-merge-sort": {
+        "title": "Build a Merge Sort",
+        "intro": [""]
       },
-      "xish": {
-        "title": "388",
-        "intro": []
+      "lab-quick-sort": {
+        "title": "Build a Quick Sort",
+        "intro": [""]
+      },
+      "lab-selection-sort": {
+        "title": "Build a Selection Sort",
+        "intro": [""]
+      },
+      "lab-luhn-argorithm": {
+        "title": "Build a Luhn Algorithm",
+        "intro": [""]
+      },
+      "review-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Review",
+        "intro": [""]
+      },
+      "quiz-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Quiz",
+        "intro": [
+          "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-graphs-and-trees": {
+        "title": "Understanding Graphs and Trees",
+        "intro": [""]
+      },
+      "workshop-shortest-path-algorithm": {
+        "title": "Build a Shortest Path Algorithm",
+        "intro": [""]
+      },
+      "lab-adjacency-list-matrix-converter": {
+        "title": "Build an Adjacency List/Matrix Converter",
+        "intro": [""]
+      },
+      "workshop-breadth-first-search": {
+        "title": "Build a Breadth First Search",
+        "intro": [""]
+      },
+      "lab-depth-first-search": {
+        "title": "Build a Depth First Search",
+        "intro": [""]
+      },
+      "review-graphs-and-trees": {
+        "title": "Graphs and Trees Review",
+        "intro": [""]
+      },
+      "quiz-graphs-and-trees": {
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Test what you've learned about graphs and trees in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-dynamic-programming": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [""]
+      },
+      "lab-nth-fibonacci-number": {
+        "title": "Build an Nth Fibonacci Number Calculator",
+        "intro": [""]
+      },
+      "review-dynamic-programming": {
+        "title": "Dynamic Programming Review",
+        "intro": [""]
+      },
+      "quiz-dynamic-programming": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in python with this quiz."
+        ]
+      },
+      "review-python": {
+        "title": "Python Review",
+        "intro": [""]
       },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
@@ -3959,8 +4109,7 @@
     }
   },
   "misc-text": {
-    "certification": "Certificación de {{cert}}",
-    "browse-other": "Navega por nuestras otras certificaciones gratuitas\n(recomendamos hacerlo en orden)",
+    "browse-other": "Browse our other free certifications",
     "courses": "Cursos",
     "steps": "Pasos",
     "expand": "Expandir cursos",

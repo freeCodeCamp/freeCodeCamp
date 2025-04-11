@@ -155,7 +155,7 @@
         "title": "Вивчіть адаптивний вебдизайн, створивши піаніно",
         "intro": [
           "Адаптивний дизайн каже вашій вебсторінці, як вона має виглядати на екранах різного розміру.",
-          "У цьому курсі ви використовуватимете CSS та адаптивний дизайн для програмування піаніно. До того ж, ви більше дізнаєтесь про медіазапити та псевдоселектори."
+          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -308,11 +308,11 @@
     ],
     "note": "Примітка: деякі розширення браузера (наприклад, блокувальники реклами та скриптів) можуть втручатися в тести. Якщо ви зіткнулися з подібною проблемою, ми рекомендуємо вимкнути розширення, які змінюють або блокують вміст сторінок під час виконання курсу.",
     "blocks": {
-      "build-a-pokemon-search-app-project": {
-        "title": "Проєкт «Створіть застосунок Pokémon Search»",
+      "build-an-rpg-creature-search-app-project": {
+        "title": "Build an RPG Creature Search App Project",
         "intro": [
           "Цей проєкт потрібно виконати, щоб отримати сертифікацію.",
-          "У цьому проєкті ви створите застосунок з пошуку покемонів."
+          "For this project, you will build an RPG creature search app."
         ]
       },
       "build-a-cash-register-project": {
@@ -672,11 +672,11 @@
           "У цьому курсі з 40 уроків ви вивчите як редагувати файли в терміналі за допомогою Nano під час будівництва замку."
         ]
       },
-      "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Вивчіть реляційні бази даних, створивши базу даних «Mario»",
+      "learn-relational-databases-by-building-a-database-of-video-game-characters": {
+        "title": "Вивчіть реляційні бази даних, створивши базу даних з персонажами відеоігор",
         "intro": [
           "Реляційна база даних організовує дані в таблиці, які пов’язані між собою через спорідненість.",
-          "В цьому курсі з 165 уроків ви вивчите основи реляційної бази даних, створивши базу даних PostgreSQL, наповнену персонажами з відеоігор."
+          "У цьому курсі зі 165 уроків ви вивчите основи реляційної бази даних, створивши базу даних PostgreSQL, наповнену персонажами з відеоігор."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
@@ -1184,7 +1184,7 @@
       "Якщо ви хочете отримати оригінальний досвід налаштування проєкту на локальному комп’ютері, див. першоджерело проєкту на <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project</a>. Велика подяка спільноті проєкту «Odin» за підтримку цього цінного навчального ресурсу для розробників з усього світу.",
       "Цей курс неофіційний та не підтримується The Odin Project. До навчальної програми проєкту було внесено зміни, а весь навчальний матеріал курсу підлягає ліцензуванню <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
       "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; Проєкт «Odin»</a>",
-      "Цей курс містить матеріал з <a href='javascript.info'>JavaScript.info</a>, що підлягає ліцензуванню <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
+      "Цей курс містить матеріал з <a href='https://javascript.info/' target='_blank' rel='noopener noreferrer nofollow'>JavaScript.info</a>, що підлягає ліцензуванню <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>."
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1327,7 +1327,7 @@
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(Нове) Основи C# з Microsoft",
+    "title": "Безоплатна сертифікація «Основи C# з Microsoft»",
     "intro": [
       "Цей курс пропонує всебічне знайомство з мовою програмування C#, розглядаючи основні поняття, синтаксис та практичне застосування у розробці програмного забезпечення.",
       "Завдяки практичним вправам та проєктам ви вивчите основи C#, включно зі змінними, типами даних, структурами керування та принципами об’єктноорієнтованого програмування.",
@@ -1380,7 +1380,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "Англійська мова рівня A2 для розробників (бета-версія)",
+    "title": "Сертифікація «Англійська мова A2 для розробників» (бета)",
     "intro": [
       "У цьому курсі з вивчення англійської мови для розробників ви опануєте основи англійської комунікації. Курс створено відповідно до загальноєвропейських рекомендацій з мовної освіти рівня A2 (CEFR). Ми зосередилися на словниковому запасі, що є особливо корисним для розробників.",
       "Перша частина допоможе освоїти граматику та використання англійської мови. Ви виконаєте багато практичних вправ, дізнавшись основи (наприклад, представлення себе, проведення коротких розмов і обговорення роботи).",
@@ -1559,7 +1559,7 @@
     }
   },
   "b1-english-for-developers": {
-    "title": "Англійська мова рівня B1 для розробників (бета-версія)",
+    "title": "Сертифікація «Англійська мова B1 для розробників» (бета)",
     "intro": [
       "У цьому курсі з вивчення англійської мови для розробників ви опануєте основи англійської комунікації. Курс створено відповідно до загальноєвропейських рекомендацій з мовної освіти рівня B1 (CEFR). Ми зосередилися на словниковому запасі, що є особливо корисним для розробників.",
       "Курс допоможе зміцнити базові знання, одночасно ознайомлюючи із більш складною граматикою та використанням. Ви навчитесь описувати місця та речі, ділитися досвідом і впевнено використовувати часи, серед яких теперішній доконаний та простий майбутній. А також отримаєте практичні поради: як вести розмову, ділитись думкою та висловлювати згоду чи незгоду.",
@@ -1623,15 +1623,21 @@
       },
       "learn-how-to-express-disagreement": {
         "title": "Дізнайтесь, як виражати незгоду",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви навчитесь виражати незгоду в будь-якій ситуації на роботі."
+        ]
       },
       "learn-how-to-express-concerns": {
         "title": "Дізнайтесь, як виражати занепокоєння",
-        "intro": ["", ""]
+        "intro": [
+          "У цьому курсі ви навчитеся ділитись переживаннями щодо своїх проєктів і завдань."
+        ]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Дізнайтесь, як виражати вибір на основі порівняння",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to compare things like tools or companies using words like better, faster, and the best. You will also practice having friendly conversations to give opinions and make decisions"
+        ]
       },
       "learn-how-to-use-modal-verbs": {
         "title": "Дізнайтесь, як використовувати модальні дієслова",
@@ -1770,7 +1776,19 @@
       "exam-front-end-libraries": "Екзамен «Бібліотеки для Front End»",
       "sql-and-bash": "SQL та Bash",
       "git": "Git",
-      "security-and-privacy": "Безпека та приватність"
+      "security-and-privacy": "Безпека та приватність",
+      "python-basics": "Python Basics",
+      "python-loops-and-sequences": "Loops and Sequences",
+      "python-dictionaries-and-sets": "Dictionaries and Sets",
+      "python-error-handling": "Error Handling",
+      "python-classes-and-objects": "Classes and Objects",
+      "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
+      "python-linear-data-structures": "Linear Data Structures",
+      "python-algorithms": "Algorithms",
+      "python-graphs-and-trees": "Graphs and Trees",
+      "python-dynamic-programming": "Dynamic Programming",
+      "review-python": "Python Review",
+      "exam-python": "Python Exam"
     },
     "blocks": {
       "lecture-welcome-to-freecodecamp": {
@@ -1839,7 +1857,8 @@
       "quiz-basic-html": {
         "title": "Тест «Основи HTML»",
         "intro": [
-          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Основи HTML»."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Основи HTML».",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-importance-of-semantic-html": {
@@ -1870,7 +1889,8 @@
       "quiz-semantic-html": {
         "title": "Тест «Семантичний HTML»",
         "intro": [
-          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Семантичний HTML»."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Семантичний HTML».",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-working-with-forms": {
@@ -1928,7 +1948,8 @@
       "quiz-html-tables-and-forms": {
         "title": "Тест «Таблиці та форми в HTML»",
         "intro": [
-          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Форми, таблиці та інструменти в HTML»."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Форми, таблиці та інструменти в HTML».",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-importance-of-accessibility-and-good-html-structure": {
@@ -1954,7 +1975,8 @@
       "quiz-html-accessibility": {
         "title": "Тест «Доступність в HTML»",
         "intro": [
-          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Доступність»."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Доступність».",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "review-html": {
@@ -2423,7 +2445,7 @@
         "title": "Розробіть піаніно",
         "intro": [
           "Адаптивний дизайн повідомляє вебсторінці, як вона має виглядати на екранах різного розміру.",
-          "У цьому практичному занятті ви використовуватимете CSS та адаптивний дизайн, щоб створити піаніно. До того ж, ви більше дізнаєтесь про медіазапити та псевдоселектори."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
       "lab-technical-documentation-page": {
@@ -3351,6 +3373,13 @@
           "У цій лабораторній роботі ви застосуєте асинхронний JavaScript, щоб створити власну таблицю лідерів freeCodeCamp."
         ]
       },
+      "lab-weather-app": {
+        "title": "Створіть застосунок з прогнозом погоди",
+        "intro": [
+          "У цій лабораторній роботі ви створите застосунок з прогнозом погоди, використовуючи API.",
+          "Ви будете практикуватись отримувати дані з API, зберігати та відтворювати їх у застосунку."
+        ]
+      },
       "review-asynchronous-javascript": {
         "title": "Повторення асинхронного JavaScript",
         "intro": [
@@ -3422,9 +3451,11 @@
           "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Основи React»."
         ]
       },
-      "rugw": {
-        "title": "267",
-        "intro": []
+      "lecture-working-with-state-and-responding-to-events-in-react": {
+        "title": "Working with State and Responding to Events in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with state and responding to events with React."
+        ]
       },
       "rmpy": {
         "title": "268",
@@ -3434,9 +3465,11 @@
         "title": "269",
         "intro": []
       },
-      "rnfe": {
-        "title": "271",
-        "intro": []
+      "lecture-understanding-effects-and-referencing-values-in-react": {
+        "title": "Understanding Effects and Referencing Values in React",
+        "intro": [
+          "In these lecture videos, you will learn about effects and referencing values with React."
+        ]
       },
       "xdyh": {
         "title": "270",
@@ -3446,9 +3479,12 @@
         "title": "272",
         "intro": []
       },
-      "ceds": {
-        "title": "273",
-        "intro": []
+      "review-react-state-and-hooks": {
+        "title": "Повторення станів та хуків у React",
+        "intro": [
+          "Перш ніж перейти до тесту «Стани та хуки в React», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати, як працювати зі станами, кастомними хуками та багато іншого."
+        ]
       },
       "quiz-react-state-and-hooks": {
         "title": "Тест «Стани та хуки в React»",
@@ -3456,9 +3492,11 @@
           "Перевірте, що ви дізнались про хуки <code>useState</code> та <code>useEffect</code> в React."
         ]
       },
-      "ftmi": {
-        "title": "275",
-        "intro": []
+      "lecture-working-with-forms-in-react": {
+        "title": "Робота з формами в React",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати з формами в React."
+        ]
       },
       "sgau": {
         "title": "276",
@@ -3468,11 +3506,10 @@
         "title": "277",
         "intro": []
       },
-      "lab-weather-app": {
-        "title": "Створіть застосунок з прогнозом погоди",
+      "lecture-working-with-data-fetching-and-memoization-in-react": {
+        "title": "Working with Data Fetching and Memoization in React",
         "intro": [
-          "У цій лабораторній роботі ви створите застосунок з прогнозом погоди, використовуючи API.",
-          "Ви будете практикуватись отримувати дані з API, зберігати та відтворювати їх у застосунку."
+          "In these lecture videos, you will learn about data fetching and memoization in React."
         ]
       },
       "ffpt": {
@@ -3483,21 +3520,40 @@
         "title": "280",
         "intro": []
       },
+      "lecture-routing-react-frameworks-and-dependency-management-tools": {
+        "title": "Routing, React Frameworks, and Dependency Management Tools",
+        "intro": [
+          "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
+        ]
+      },
       "vyzp": {
         "title": "281",
         "intro": []
       },
-      "zagz": {
-        "title": "282",
-        "intro": []
+      "lecture-react-strategies-and-debugging": {
+        "title": "Стратегії та налагодження в React",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про різні стратегії і налагодження в React."
+        ]
       },
-      "quiz-advanced-react": {
-        "title": "Тест «Advanced React»",
-        "intro": ["Перевірте, що ви дізнались про Advanced React."]
+      "review-react-forms-data-fetching-and-routing": {
+        "title": "Повторення форм, обробки даних і маршрутизації в React",
+        "intro": [
+          "Перш ніж перейти до тесту «Форми, обробка даних і маршрутизація в React», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати маршрутизацію, форми, керування станом, передачу пропсів, обробку даних та багато іншого."
+        ]
       },
-      "zdsj": {
-        "title": "284",
-        "intro": []
+      "quiz-react-forms-data-fetching-and-routing": {
+        "title": "Тест «Форми, обробка даних і маршрутизація в React»",
+        "intro": [
+          "Перевірте, що ви дізнались про форми, обробку даних і маршрутизацію."
+        ]
+      },
+      "lecture-understanding-performance-in-web-applications": {
+        "title": "Understanding Performance in Web Applications",
+        "intro": [
+          "In these lecture videos, you will learn performance in web applications."
+        ]
       },
       "review-web-performance": {
         "title": "Повторення вебпродуктивності",
@@ -3510,14 +3566,17 @@
         "title": "Тест «Вебпродуктивність»",
         "intro": ["Перевірте, що ви дізнались про вебпродуктивність."]
       },
-      "mbpv": {
-        "title": "287",
-        "intro": []
+      "lecture-working-with-css-libraries-and-frameworks": {
+        "title": "Working with CSS Libraries and Frameworks",
+        "intro": [
+          "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
+        ]
       },
       "review-css-libraries-and-frameworks": {
         "title": "Повторення бібліотек та фреймворків CSS",
         "intro": [
-          "Пригадайте поняття з теми «Бібліотеки та фреймворки CSS», щоб підготуватись до тесту."
+          "Before you take the CSS libraries and frameworks quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including CSS frameworks, CSS preprocessors, Sass and more."
         ]
       },
       "quiz-css-libraries-and-frameworks": {
@@ -3526,9 +3585,11 @@
           "Перевірте, що ви дізнались про бібліотеки та фреймворки CSS."
         ]
       },
-      "khuu": {
-        "title": "290",
-        "intro": []
+      "lecture-understanding-the-different-types-of-testing": {
+        "title": "Understanding the Different Types of Testing",
+        "intro": [
+          "In these lecture videos, you will learn about the different types of testing."
+        ]
       },
       "review-testing": {
         "title": "Повторення тестування",
@@ -3539,6 +3600,12 @@
       "quiz-testing": {
         "title": "Тест «Тестування»",
         "intro": ["Перевірте, що ви дізнались про тестування."]
+      },
+      "lecture-introduction-to-typescript": {
+        "title": "Вступ до TypeScript",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про TypeScript і як його використовувати."
+        ]
       },
       "trvf": {
         "title": "293",
@@ -3563,7 +3630,8 @@
       "review-typescript": {
         "title": "Повторення Typescript",
         "intro": [
-          "Пригадайте поняття з теми «Typescript», щоб підготуватись до тесту."
+          "Before you take the TypeScript quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including data types in TypeScript, generics, type narrowing and more."
         ]
       },
       "quiz-typescript": {
@@ -3605,8 +3673,8 @@
         "title": "306",
         "intro": []
       },
-      "workshop-mario-database": {
-        "title": "Створіть базу даних «Mario»",
+      "workshop-database-of-video-game-characters": {
+        "title": "Створіть базу даних з персонажами відеоігор",
         "intro": [
           "Реляційна база даних організовує дані в таблиці, які пов’язані між собою через спорідненість.",
           "У цьому практичному занятті зі 165 уроків ви вивчите основи реляційної бази даних, створивши базу даних PostgreSQL, наповнену персонажами з відеоігор."
@@ -3762,189 +3830,273 @@
           "Пригадайте поняття з теми «Реляційні бази даних», щоб підготуватись до тесту."
         ]
       },
-      "thsj": {
-        "title": "335",
-        "intro": []
+      "lecture-introduction-to-python": {
+        "title": "Introduction to Python",
+        "intro": ["Learn about Introduction to Python in these lectures."]
       },
-      "uwum": {
-        "title": "336",
-        "intro": []
+      "workshop-caesar-cipher": {
+        "title": "Build a Caesar Cipher",
+        "intro": ["Learn about Build a Caesar Cipher in these lectures."]
       },
-      "asfv": {
-        "title": "337",
-        "intro": []
+      "lab-rpg-character": {
+        "title": "Build an RPG character",
+        "intro": ["Learn about Build an RPG character in these lectures."]
       },
-      "bvfx": {
-        "title": "338",
-        "intro": []
+      "review-python-basics": {
+        "title": "Python Basics Review",
+        "intro": ["Learn about Python Basics Review in these lectures."]
       },
-      "buzx": {
-        "title": "339",
-        "intro": []
+      "quiz-python-basics": {
+        "title": "Python Basics Quiz",
+        "intro": [
+          "Test what you've learned about Python basics with this quiz."
+        ]
       },
-      "ynqt": {
-        "title": "340",
-        "intro": []
+      "lecture-working-with-loops-and-sequences": {
+        "title": "Working with Loops and Sequences",
+        "intro": [""]
       },
-      "prlo": {
-        "title": "341",
-        "intro": []
+      "workshop-placeholder-loops-and-sequences": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "jsnd": {
-        "title": "342",
-        "intro": []
+      "lab-placeholder-loops-and-sequences": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
       },
-      "sxdc": {
-        "title": "343",
-        "intro": []
+      "review-loops-and-sequences": {
+        "title": "Loops and Sequences Review",
+        "intro": [""]
       },
-      "pegc": {
-        "title": "344",
-        "intro": []
+      "quiz-loops-and-sequences": {
+        "title": "Loops and Sequences Quiz",
+        "intro": [
+          "Test what you've learned about loops and sequences in Python with this quiz."
+        ]
       },
-      "mzae": {
-        "title": "345",
-        "intro": []
+      "lecture-working-with-dictionaries-and-sets": {
+        "title": "Working with Dictionaries and Sets",
+        "intro": [""]
       },
-      "gjbf": {
-        "title": "346",
-        "intro": []
+      "lecture-working-with-modules": {
+        "title": "Working with Modules",
+        "intro": [""]
       },
-      "hzab": {
-        "title": "347",
-        "intro": []
+      "workshop-placeholder-dictionaries-and-sets": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
       },
-      "ggea": {
-        "title": "348",
-        "intro": []
+      "lab-placeholder-dictionaries-and-sets": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
       },
-      "vgvz": {
-        "title": "349",
-        "intro": []
+      "review-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Review",
+        "intro": [""]
       },
-      "hfwi": {
-        "title": "350",
-        "intro": []
+      "quiz-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Quiz",
+        "intro": [
+          "Test what you've learned about dictionaries and sets in Python with this quiz."
+        ]
       },
-      "rnwr": {
-        "title": "351",
-        "intro": []
+      "lecture-understanding-error-handling": {
+        "title": "Understanding Error Handling",
+        "intro": [""]
       },
-      "zhhp": {
-        "title": "352",
-        "intro": []
+      "lab-isbn-validator": {
+        "title": "Debug a ISBN Validator",
+        "intro": [""]
       },
-      "movb": {
-        "title": "353",
-        "intro": []
+      "review-error-handling": {
+        "title": "Error Handling Review",
+        "intro": [""]
       },
-      "ngor": {
-        "title": "354",
-        "intro": []
+      "quiz-error-handling": {
+        "title": "Error Handling Quiz",
+        "intro": [
+          "Test what you've learned about Error Handling in Python with this quiz."
+        ]
       },
-      "gora": {
-        "title": "355",
-        "intro": []
+      "lecture-classes-and-objects": {
+        "title": "Classes and Objects",
+        "intro": [""]
       },
-      "xdly": {
-        "title": "356",
-        "intro": []
+      "workshop-placeholder-classes-and-objects": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
       },
-      "pzmc": {
-        "title": "357",
-        "intro": []
+      "lab-budget-app": {
+        "title": "Build a Budget App",
+        "intro": [""]
       },
-      "oeqv": {
-        "title": "358",
-        "intro": []
+      "review-classes-and-objects": {
+        "title": "Classes and Objects Review",
+        "intro": [""]
       },
-      "mfwu": {
-        "title": "359",
-        "intro": []
+      "quiz-classes-and-objects": {
+        "title": "Classes and Objects Quiz",
+        "intro": [
+          "Test what you've learned about classes and objects in Python with this quiz."
+        ]
       },
-      "dfcd": {
-        "title": "360",
-        "intro": []
+      "lecture-understanding-object-oriented-programming-and-encapsulation": {
+        "title": "Understanding Object Oriented Programming and Encapsulation",
+        "intro": [""]
       },
-      "dfwl": {
-        "title": "361",
-        "intro": []
+      "workshop-placeholder-oop-1": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "adzm": {
-        "title": "362",
-        "intro": []
+      "lab-placeholder-oop-1": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "kaui": {
-        "title": "363",
-        "intro": []
+      "lecture-understanding-inheritance-and-polymorphism": {
+        "title": "Understanding Inheritance and polymorphism",
+        "intro": [""]
       },
-      "zpjj": {
-        "title": "364",
-        "intro": []
+      "workshop-placeholder-oop-2": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "ghfk": {
-        "title": "365",
-        "intro": []
+      "lab-polygon-area-calculator": {
+        "title": "Build a Polygon Area Calculator",
+        "intro": [""]
       },
-      "ukem": {
-        "title": "366",
-        "intro": []
+      "lecture-understanding-abstraction": {
+        "title": "Understanding abstraction",
+        "intro": [""]
       },
-      "sdjg": {
-        "title": "367",
-        "intro": []
+      "workshop-placeholder-oop-3": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
       },
-      "qjov": {
-        "title": "368",
-        "intro": []
+      "lab-placeholder-oop-3": {
+        "title": "",
+        "intro": [""]
       },
-      "hjku": {
-        "title": "370",
-        "intro": []
+      "review-object-oriented-programming": {
+        "title": "Object Oriented Programming Review",
+        "intro": [""]
       },
-      "kegi": {
-        "title": "377",
-        "intro": []
+      "quiz-object-oriented-programming": {
+        "title": "Object Oriented Programming Quiz",
+        "intro": [
+          "Test what you've learned about object oriented programming in python with this quiz."
+        ]
       },
-      "vnfu": {
-        "title": "379",
-        "intro": []
+      "lecture-working-with-common-data-structures": {
+        "title": "Working with common data structures",
+        "intro": [""]
       },
-      "rlli": {
-        "title": "380",
-        "intro": []
+      "workshop-linked-list-class": {
+        "title": "Build a Linked List Class",
+        "intro": [""]
       },
-      "rjpv": {
-        "title": "381",
-        "intro": []
+      "lab-hash-table-class": {
+        "title": "Build an Hash Table Class",
+        "intro": [""]
       },
-      "xbri": {
-        "title": "382",
-        "intro": []
+      "review-data-structures": {
+        "title": "Data Structures Review",
+        "intro": [""]
       },
-      "xfrd": {
-        "title": "383",
-        "intro": []
+      "quiz-data-structures": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in Python with this quiz."
+        ]
       },
-      "nkjt": {
-        "title": "384",
-        "intro": []
+      "lecture-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms",
+        "intro": [""]
       },
-      "pgjj": {
-        "title": "385",
-        "intro": []
+      "workshop-binary-search": {
+        "title": "Build a Binary Search",
+        "intro": [""]
       },
-      "exom": {
-        "title": "386",
-        "intro": []
+      "lab-bisection-method": {
+        "title": "Build a Bisection Method",
+        "intro": [""]
       },
-      "bvqc": {
-        "title": "387",
-        "intro": []
+      "workshop-merge-sort": {
+        "title": "Build a Merge Sort",
+        "intro": [""]
       },
-      "xish": {
-        "title": "388",
-        "intro": []
+      "lab-quick-sort": {
+        "title": "Build a Quick Sort",
+        "intro": [""]
+      },
+      "lab-selection-sort": {
+        "title": "Build a Selection Sort",
+        "intro": [""]
+      },
+      "lab-luhn-argorithm": {
+        "title": "Build a Luhn Algorithm",
+        "intro": [""]
+      },
+      "review-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Review",
+        "intro": [""]
+      },
+      "quiz-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Quiz",
+        "intro": [
+          "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-graphs-and-trees": {
+        "title": "Understanding Graphs and Trees",
+        "intro": [""]
+      },
+      "workshop-shortest-path-algorithm": {
+        "title": "Build a Shortest Path Algorithm",
+        "intro": [""]
+      },
+      "lab-adjacency-list-matrix-converter": {
+        "title": "Build an Adjacency List/Matrix Converter",
+        "intro": [""]
+      },
+      "workshop-breadth-first-search": {
+        "title": "Build a Breadth First Search",
+        "intro": [""]
+      },
+      "lab-depth-first-search": {
+        "title": "Build a Depth First Search",
+        "intro": [""]
+      },
+      "review-graphs-and-trees": {
+        "title": "Graphs and Trees Review",
+        "intro": [""]
+      },
+      "quiz-graphs-and-trees": {
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Test what you've learned about graphs and trees in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-dynamic-programming": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [""]
+      },
+      "lab-nth-fibonacci-number": {
+        "title": "Build an Nth Fibonacci Number Calculator",
+        "intro": [""]
+      },
+      "review-dynamic-programming": {
+        "title": "Dynamic Programming Review",
+        "intro": [""]
+      },
+      "quiz-dynamic-programming": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in python with this quiz."
+        ]
+      },
+      "review-python": {
+        "title": "Python Review",
+        "intro": [""]
       },
       "exam-certified-full-stack-developer": {
         "title": "Екзамен «Сертифікований Full Stack розробник»",
@@ -3955,8 +4107,7 @@
     }
   },
   "misc-text": {
-    "certification": "Сертифікація «{{cert}}»",
-    "browse-other": "Перегляньте інші безоплатні сертифікації\n(ми рекомендуємо виконувати їх послідовно)",
+    "browse-other": "Перегляньте інші безоплатні сертифікації",
     "courses": "Курси",
     "steps": "Кроки",
     "expand": "Розгорнути курс",

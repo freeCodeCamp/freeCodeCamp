@@ -45,8 +45,8 @@ Submit your page when you think you've got it right. If you're running into erro
 `currentUsers` should be defined.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/server.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(
@@ -60,8 +60,8 @@ async (getUserInput) => {
 Server should emit the current user count at each new connection.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/server.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(
@@ -75,8 +75,8 @@ async (getUserInput) => {
 Your client should be listening for `'user count'` event.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/public/client.js", getUserInput("url"));
+async () => {
+  const url = new URL("/public/client.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(

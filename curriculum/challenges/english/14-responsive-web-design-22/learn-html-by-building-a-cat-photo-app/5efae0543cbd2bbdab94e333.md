@@ -35,9 +35,15 @@ The Cats `img` element should be nested in the `figure` element.
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
-assert(
-  catsImg &&
-    catsImg.getAttribute('src').toLowerCase() === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
+assert.exists(catsImg);
+```
+
+The third image should have a `src` attribute set to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg`.
+
+```js
+const catsImg = document.querySelectorAll('figure > img')[1];
+assert.strictEqual(
+  catsImg?.src?.toLowerCase(), 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
 );
 ```
 

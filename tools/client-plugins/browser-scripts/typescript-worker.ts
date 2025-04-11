@@ -39,18 +39,23 @@ interface CancelEvent extends MessageEvent {
   };
 }
 
-const TS_VERSION = '5'; // hardcoding for now, in the future this may be dynamic
+// Pin at the latest TS version available as cdnjs doesn't support version range.
+const TS_VERSION = '5.7.3';
 
 let tsEnv: VirtualTypeScriptEnvironment | null = null;
 let compilerHost: CompilerHost | null = null;
 let cachedVersion: string | null = null;
 
 // NOTE: vfs.globals must only be imported once, otherwise it will throw.
-importScripts('https://unpkg.com/@typescript/vfs@1.6.0/dist/vfs.globals.js');
+importScripts(
+  'https://cdn.jsdelivr.net/npm/@typescript/vfs@1.6.0/dist/vfs.globals.js'
+);
 
 function importTS(version: string) {
   if (cachedVersion == version) return;
-  importScripts('https://unpkg.com/typescript@' + version);
+  importScripts(
+    `https://cdnjs.cloudflare.com/ajax/libs/typescript/${version}/typescript.min.js`
+  );
   cachedVersion = version;
 }
 

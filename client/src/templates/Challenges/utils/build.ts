@@ -74,22 +74,18 @@ const applyFunction =
 const composeFunctions = (...fns: ApplyFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
-// TODO: split this into at least two functions. One to create 'original' i.e.
-// the source and another to create the contents.
 function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
   // TODO: rename sources.index to sources.contents.
   const source: Source | undefined = challengeFiles?.reduce(
     (sources, challengeFile) => {
       sources.index += challengeFile.source || '';
       sources.contents = sources.index;
-      sources.original[challengeFile.history[0]] = challengeFile.source ?? null;
       sources.editableContents += challengeFile.editableContents || '';
       return sources;
     },
     {
       index: '',
-      editableContents: '',
-      original: {}
+      editableContents: ''
     } as Source
   );
   return source;
@@ -181,8 +177,7 @@ function getWorkerTestRunner(
 ) {
   const code = {
     contents: sources.index,
-    editableContents: sources.editableContents,
-    original: sources.original
+    editableContents: sources.editableContents
   };
 
   interface TestWorkerExecutor extends WorkerExecutor {
@@ -236,7 +231,7 @@ export async function buildDOMChallenge(
   const isMultifile = challengeFiles.length > 1;
 
   const requiresReact16 = required.some(({ src }) =>
-    src?.includes('https://unpkg.com/react@16')
+    src?.includes('https://cdnjs.cloudflare.com/ajax/libs/react/16.')
   );
 
   // I'm reasonably sure this is fine, but we need to migrate transformers to
@@ -309,7 +304,7 @@ function buildBackendChallenge({ url }: BuildChallengeData) {
   return {
     challengeType: challengeTypes.backend,
     build: concatHtml({ testRunner: frameRunnerSrc }),
-    sources: { url }
+    sources: { contents: url }
   };
 }
 

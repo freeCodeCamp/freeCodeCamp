@@ -7,11 +7,13 @@ import { createSelector } from 'reselect';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import Login from '../../../components/Header/components/login';
-import { isSignedInSelector } from '../../../redux/selectors';
+import {
+  isSignedInSelector,
+  completedChallengesIdsSelector
+} from '../../../redux/selectors';
 import { ChallengeFiles } from '../../../redux/prop-types';
 import { closeModal, submitChallenge } from '../redux/actions';
 import {
-  completedChallengesIdsSelector,
   isCompletionModalOpenSelector,
   successMessageSelector,
   challengeFilesSelector,

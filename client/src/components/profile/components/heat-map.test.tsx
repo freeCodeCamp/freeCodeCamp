@@ -36,14 +36,6 @@ afterEach(() => {
 });
 
 describe('<HeatMap/>', () => {
-  // Removing the snapshot matching, because they are different every time
-  /*
-  it('renders correctly', () => {
-    const { container } = render(<HeatMap {...props} />);
-    expect(container).toMatchSnapshot();
-  });
-  */
-
   it('displays the correct title', () => {
     render(<HeatMap {...props} />);
 

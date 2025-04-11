@@ -10,7 +10,7 @@ dashedName: mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet-xs
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. Learn <a href="https://forum.freecodecamp.org/t/how-to-use-gitpod-in-the-curriculum/668669#how-can-i-share-my-workspace-to-get-help-8" target="_blank" rel="noopener noreferrer nofollow">how to share your Gitpod workspace to get help</a>.
+As a reminder, this project is being built upon the following starter project cloned from <a href="https://github.com/freeCodeCamp/boilerplate-infosec/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Cross-site scripting (XSS) is a frequent type of attack where malicious scripts are injected into vulnerable pages, with the purpose of stealing sensitive data like session cookies, or passwords.
 
@@ -29,8 +29,7 @@ Use `helmet.xssFilter()` to sanitize input sent to your server.
 helmet.xssFilter() middleware should be mounted correctly
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/app-info').then(
+  $.get(code + '/_api/app-info').then(
     (data) => {
       assert.include(data.appStack, 'xXssProtection');
       assert.property(data.headers, 'x-xss-protection');

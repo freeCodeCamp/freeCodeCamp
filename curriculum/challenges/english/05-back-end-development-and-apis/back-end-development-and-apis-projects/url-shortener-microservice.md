@@ -11,7 +11,6 @@ dashedName: url-shortener-microservice
 Build a full stack JavaScript app that is functionally similar to this: <a href="https://url-shortener-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://url-shortener-microservice.freecodecamp.rocks</a>. Working on this project will involve you writing your code using one of the following methods:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-urlshortener/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
--   Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-project-urlshortener/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete your project. Learn <a href="https://forum.freecodecamp.org/t/how-to-use-gitpod-in-the-curriculum/668669#how-can-i-share-my-workspace-to-get-help-8" target="_blank" rel="noopener noreferrer nofollow">how to share your Gitpod workspace to get help</a>.
 -   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 # --instructions--
@@ -23,20 +22,18 @@ Build a full stack JavaScript app that is functionally similar to this: <a href=
 You should provide your own project, not the example URL.
 
 ```js
-(getUserInput) => {
   assert(
     !/.*\/url-shortener-microservice\.freecodecamp\.rocks/.test(
-      getUserInput('url')
+      code
     )
   );
-};
 ```
 
 You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
-async (getUserInput) => {
-  const url = getUserInput('url');
+async () => {
+  const url = code;
   const urlVariable = Date.now();
   const fullUrl = `${url}/?v=${urlVariable}`
   const res = await fetch(url + '/api/shorturl', {
@@ -57,8 +54,8 @@ async (getUserInput) => {
 When you visit `/api/shorturl/<short_url>`, you will be redirected to the original URL.
 
 ```js
-async (getUserInput) => {
-  const url = getUserInput('url');
+async () => {
+  const url = code;
   const urlVariable = Date.now();
   const fullUrl = `${url}/?v=${urlVariable}`
   let shortenedUrlVariable;
@@ -89,8 +86,8 @@ async (getUserInput) => {
 If you pass an invalid URL that doesn't follow the valid `http://www.example.com` format, the JSON response will contain `{ error: 'invalid url' }`
 
 ```js
-async (getUserInput) => {
-  const url = getUserInput('url');
+async () => {
+  const url = code;
   const res = await fetch(url + '/api/shorturl', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
