@@ -8,7 +8,6 @@ const Mocha = require('mocha');
 const mockRequire = require('mock-require');
 const spinner = require('ora')();
 const puppeteer = require('puppeteer');
-const stringSimilarity = require('string-similarity');
 
 // lodash-es can't easily be used in node environments, so we just mock it out
 // for the original lodash in testing.
@@ -51,10 +50,7 @@ const {
   createContent,
   testId
 } = require('../../client/src/templates/Challenges/utils/frame');
-const {
-  SuperBlocks,
-  chapterBasedSuperBlocks
-} = require('../../shared/config/curriculum');
+const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -62,6 +58,28 @@ const createPseudoWorker = require('./utils/pseudo-worker');
 const { sortChallenges } = require('./utils/sort-challenges');
 
 const { flatten, isEmpty, cloneDeep } = lodash;
+
+if (
+  [
+    process.env.FCC_BLOCK,
+    process.env.FCC_CHALLENGE_ID,
+    process.env.FCC_SUPERBLOCK
+  ].filter(Boolean).length > 1
+) {
+  throw new Error(
+    `Please use at most single input from: block, challenge id, superblock.`
+  );
+}
+
+const testFilter = {
+  block: process.env.FCC_BLOCK ? process.env.FCC_BLOCK.trim() : undefined,
+  challengeId: process.env.FCC_CHALLENGE_ID
+    ? process.env.FCC_CHALLENGE_ID.trim()
+    : undefined,
+  superBlock: process.env.FCC_SUPERBLOCK
+    ? process.env.FCC_SUPERBLOCK.trim()
+    : undefined
+};
 
 // rethrow unhandled rejections to make sure the tests exit with non-zero code
 process.on('unhandledRejection', err => handleRejection(err));
@@ -125,18 +143,6 @@ setup()
   .catch(err => handleRejection(err));
 
 async function setup() {
-  if (
-    [
-      process.env.FCC_BLOCK,
-      process.env.FCC_CHALLENGE_ID,
-      process.env.FCC_SUPERBLOCK
-    ].filter(Boolean).length > 1
-  ) {
-    throw new Error(
-      `Please use at most single input from: block, challenge id, superblock.`
-    );
-  }
-
   // liveServer starts synchronously
   liveServer.start({
     host: '127.0.0.1',
@@ -168,59 +174,21 @@ async function setup() {
 
   const lang = testedLang();
 
-  let challenges = await getChallenges(lang);
+  let challenges = await getChallenges(lang, testFilter);
 
   // the next few statements create a list of all blocks and superblocks
   // as they appear in the list of challenges
-  const blocks = challenges.map(({ block }) => block);
   const superBlocks = challenges.map(({ superBlock }) => superBlock);
-  const targetBlockStrings = [...new Set(blocks.filter(el => Boolean(el)))];
   const targetSuperBlockStrings = [
     ...new Set(superBlocks.filter(el => Boolean(el)))
   ];
 
-  // the next few statements will filter challenges based on command variables
-  if (process.env.FCC_SUPERBLOCK) {
-    const filter = stringSimilarity.findBestMatch(
-      process.env.FCC_SUPERBLOCK,
-      targetSuperBlockStrings
-    ).bestMatch.target;
-
-    console.log(`\nsuperBlock being tested: ${filter}`);
-    challenges = challenges.filter(
-      challenge => challenge.superBlock === filter
-    );
-
-    if (!challenges.length) {
-      throw new Error(`No challenges found with superBlock "${filter}"`);
-    }
-  }
-
-  if (process.env.FCC_BLOCK) {
-    const filter = stringSimilarity.findBestMatch(
-      process.env.FCC_BLOCK,
-      targetBlockStrings
-    ).bestMatch.target;
-
-    console.log(`\nblock being tested: ${filter}`);
-    challenges = challenges.filter(challenge => challenge.block === filter);
-
-    if (!challenges.length) {
-      throw new Error(`No challenges found with block "${filter}"`);
-    }
-  }
-
-  if (process.env.FCC_CHALLENGE_ID) {
-    console.log(
-      `\nChallenge Id being tested: ${process.env.FCC_CHALLENGE_ID.trim()}`
-    );
+  if (testFilter.challengeId) {
     const challengeIndex = challenges.findIndex(
-      challenge => challenge.id === process.env.FCC_CHALLENGE_ID.trim()
+      challenge => challenge.id === testFilter.challengeId
     );
     if (challengeIndex === -1) {
-      throw new Error(
-        `No challenge found with id "${process.env.FCC_CHALLENGE_ID}"`
-      );
+      throw new Error(`No challenge found with id "${testFilter.challengeId}"`);
     }
     const { solutions = [] } = challenges[challengeIndex];
     if (isEmpty(solutions)) {
@@ -272,16 +240,17 @@ function runTests(challengeData) {
   run();
 }
 
-async function getChallenges(lang) {
-  const challenges = await getChallengesForLang(lang).then(curriculum =>
-    Object.keys(curriculum)
-      .map(key => curriculum[key].blocks)
-      .reduce((challengeArray, superBlock) => {
-        const challengesForBlock = Object.keys(superBlock).map(
-          key => superBlock[key].challenges
-        );
-        return [...challengeArray, ...flatten(challengesForBlock)];
-      }, [])
+async function getChallenges(lang, filters) {
+  const challenges = await getChallengesForLang(lang, filters).then(
+    curriculum =>
+      Object.keys(curriculum)
+        .map(key => curriculum[key].blocks)
+        .reduce((challengeArray, superBlock) => {
+          const challengesForBlock = Object.keys(superBlock).map(
+            key => superBlock[key].challenges
+          );
+          return [...challengeArray, ...flatten(challengesForBlock)];
+        }, [])
   );
   // This matches the order Gatsby uses (via a GraphQL query). Ideally both
   // should be sourced and sorted using a single query, but we're not there yet.
@@ -439,7 +408,7 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                     for (const test of tests) {
                       try {
                         await testRunner(test);
-                      } catch (e) {
+                      } catch {
                         fails = true;
                         break;
                       }
@@ -682,13 +651,7 @@ async function getWorkerEvaluator({
   };
 }
 
-async function initializeTestRunner({
-  build,
-  sources,
-  code,
-  loadEnzyme,
-  hooks
-}) {
+async function initializeTestRunner({ build, sources, loadEnzyme, hooks }) {
   await page.reload();
   await page.setContent(createContent(testId, { build, sources, hooks }));
   await page.evaluate(
