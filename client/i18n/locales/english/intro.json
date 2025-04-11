@@ -3480,7 +3480,12 @@
           "In these lecture videos, you will learn about working with forms in React."
         ]
       },
-      "sgau": { "title": "276", "intro": [] },
+      "workshop-react-forms": {
+        "title": "Build a Superhero Application Form",
+        "intro": [
+          "In this workshop, you'll learn how to work with forms in React by building a superhero application form."
+        ]
+      },
       "clak": { "title": "277", "intro": [] },
       "lecture-working-with-data-fetching-and-memoization-in-react": {
         "title": "Working with Data Fetching and Memoization in React",
@@ -4010,10 +4015,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-react-forms": {
-        "title": "Build a Superhero Application Form",
-        "intro": ["", ""]
       }
     }
   },
