@@ -39,7 +39,7 @@ function App() {
 export default App;
 ```
 
-You can see the `Parent` component is also receiving the greeting variable as the value of a greeting prop. Here's the `Parent` component passing it into the `Child` component as the value of another `greeting` prop in the `Child`:
+You can see the `Parent` component is also receiving the `greeting` variable as the value of a `greeting` prop. Here's the `Parent` component passing it into the `Child` component as the value of another `greeting` prop in the `Child`:
 
 ```jsx
 import Child from "./Child";
