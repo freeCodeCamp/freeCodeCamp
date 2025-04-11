@@ -111,7 +111,7 @@ const Grandchild = ({ greeting, response }) => {
 export default App;
 ```
 
-[Image showing the rendered page with an `h1` element that has the text `Hello, Prop Drilling!` and an `h2` element that has the text `I'm not here to play!`]
+In the browser, you'll see a page with an `h1` element that has the text `Hello, Prop Drilling!` and an `h2` element that has the text `I'm not here to play!`.
 
 To avoid prop drilling, especially in large, complex applications, consider using the Context API or state management libraries like Redux and Redux Toolkit, Zustand, Recoil, and others.
 
