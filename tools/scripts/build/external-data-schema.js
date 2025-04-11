@@ -1,8 +1,13 @@
 const Joi = require('joi');
+const {
+  chapterBasedSuperBlocks
+} = require('../../../shared/config/curriculum');
 
-const blockSchema = Joi.object({}).keys({
-  desc: Joi.array().min(1),
-  challenges: Joi.object({}).keys({
+const slugRE = new RegExp('^[a-z0-9-]+$');
+
+const blockSchema = Joi.object().keys({
+  intro: Joi.array().min(1),
+  meta: Joi.object({}).keys({
     name: Joi.string().required(),
     isUpcomingChange: Joi.bool().required(),
     usesMultifileEditor: Joi.bool().optional(),
@@ -20,7 +25,7 @@ const blockSchema = Joi.object({}).keys({
       'Rosetta'
     ).required(),
     order: Joi.number().when('superBlock', {
-      is: 'full-stack-developer',
+      is: chapterBasedSuperBlocks,
       then: Joi.forbidden(),
       otherwise: Joi.required()
     }),
@@ -45,7 +50,7 @@ const blockSchema = Joi.object({}).keys({
       'quiz',
       'exam'
     ).when('superBlock', {
-      is: 'full-stack-developer',
+      is: chapterBasedSuperBlocks,
       then: Joi.required(),
       otherwise: Joi.optional()
     }),
@@ -61,14 +66,36 @@ const blockSchema = Joi.object({}).keys({
   })
 });
 
-const subSchema = Joi.object({}).keys({
-  intro: Joi.array(),
-  blocks: Joi.object({}).pattern(Joi.string(), Joi.object().concat(blockSchema))
-});
-
-const schema = Joi.object({}).pattern(
+const blockBasedCurriculumSchema = Joi.object().pattern(
   Joi.string(),
-  Joi.object().concat(subSchema)
+  Joi.object().keys({
+    intro: Joi.array(),
+    blocks: Joi.array().items(blockSchema)
+  })
+);
+
+const chapterBasedCurriculumSchema = Joi.object().pattern(
+  Joi.string(),
+  Joi.object().keys({
+    intro: Joi.array(),
+    chapters: Joi.array().items(
+      Joi.object().keys({
+        dashedName: Joi.string().regex(slugRE).required(),
+        comingSoon: Joi.boolean().optional(),
+        chapterType: Joi.valid('exam').optional(),
+        modules: Joi.array()
+          .items(
+            Joi.object().keys({
+              moduleType: Joi.valid('review', 'exam').optional(),
+              comingSoon: Joi.boolean().optional(),
+              dashedName: Joi.string().regex(slugRE).required(),
+              blocks: Joi.array().items(blockSchema)
+            })
+          )
+          .required()
+      })
+    )
+  })
 );
 
 const availableSuperBlocksSchema = Joi.object({
@@ -81,8 +108,15 @@ const availableSuperBlocksSchema = Joi.object({
   )
 });
 
-exports.superblockSchemaValidator = () => superblock =>
-  schema.validate(superblock);
+exports.superblockSchemaValidator = () => superBlock => {
+  const superBlockName = Object.keys(superBlock)[0];
+
+  if (chapterBasedSuperBlocks.includes(superBlockName)) {
+    return chapterBasedCurriculumSchema.validate(superBlock);
+  }
+
+  return blockBasedCurriculumSchema.validate(superBlock);
+};
 
 exports.availableSuperBlocksValidator = () => data =>
   availableSuperBlocksSchema.validate(data);

@@ -10,7 +10,7 @@ import {
 } from './external-data-schema';
 import { orderedSuperBlockInfo } from './build-external-curricula-data';
 
-const VERSION = 'v1';
+const VERSION = 'v3';
 
 describe('external curriculum data build', () => {
   const clientStaticPath = path.resolve(__dirname, '../../../client/static');
