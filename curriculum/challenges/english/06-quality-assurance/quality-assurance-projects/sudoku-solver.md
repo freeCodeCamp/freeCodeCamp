@@ -4,6 +4,7 @@ title: Sudoku Solver
 challengeType: 4
 forumTopicId: 462357
 dashedName: sudoku-solver
+solutionLink: https://sudoku-solver.freecodecamp.rocks
 ---
 
 # --description--

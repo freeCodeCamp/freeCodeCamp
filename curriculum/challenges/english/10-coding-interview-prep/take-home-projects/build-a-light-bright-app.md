@@ -4,6 +4,7 @@ title: Build a Light-Bright App
 challengeType: 3
 forumTopicId: 302350
 dashedName: build-a-light-bright-app
+solutionLink: https://codepen.io/freeCodeCamp/full/eyLYXE
 ---
 
 # --description--

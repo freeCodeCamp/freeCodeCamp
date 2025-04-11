@@ -4,6 +4,7 @@ title: Manage a Book Trading Club
 challengeType: 4
 forumTopicId: 302364
 dashedName: manage-a-book-trading-club
+solutionLink: https://manage-a-book-trading-club.freecodecamp.rocks
 ---
 
 # --description--

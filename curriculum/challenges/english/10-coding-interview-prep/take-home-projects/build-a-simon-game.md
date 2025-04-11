@@ -4,6 +4,7 @@ title: Build a Simon Game
 challengeType: 3
 forumTopicId: 302357
 dashedName: build-a-simon-game
+solutionLink: https://codepen.io/freeCodeCamp/full/obYBjE
 ---
 
 # --description--
