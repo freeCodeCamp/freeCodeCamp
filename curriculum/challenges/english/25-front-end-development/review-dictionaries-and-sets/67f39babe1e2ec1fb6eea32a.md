@@ -19,4 +19,4 @@ Describe
 
 # --assignment--
 
-Review the Dicionaries and Sets topics and concepts.
+Review the Dictionaries and Sets topics and concepts.
