@@ -13,9 +13,7 @@ import { getUserById as _getUserById } from '../utils/user-stats';
 const authRE = /^\/auth\//;
 const confirmEmailRE = /^\/confirm-email$/;
 const newsShortLinksRE = /^\/n\/|^\/p\//;
-const publicApiUserRE = /^\/api\/users\/get-public-profile$/;
 const publicUserRE = /^\/users\/get-public-profile$/;
-const publicApiUsernameRE = /^\/api\/users\/exists$/;
 const publicUsernameRE = /^\/users\/exists$/;
 const resubscribeRE = /^\/resubscribe\//;
 const showCertRE = /^\/certificate\/showCert\//;
@@ -34,9 +32,7 @@ const _pathsAllowedREs = [
   authRE,
   confirmEmailRE,
   newsShortLinksRE,
-  publicApiUserRE,
   publicUserRE,
-  publicApiUsernameRE,
   publicUsernameRE,
   resubscribeRE,
   showCertRE,
