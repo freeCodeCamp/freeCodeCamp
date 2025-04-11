@@ -20,7 +20,7 @@ Fulfill the user stories below and get all the tests to pass to complete the lab
 4. The `button` element should contain the code `&#9825;` initially to represent an empty heart.
 5. When a `button` element containing a heart is clicked, you should add a class named `filled` to the clicked `button` if it's not already present, and remove it, if it is.
 6. You should have a class selector that targets the `filled` class and sets some CSS properties.
-7. When a `button` element containing a heart is clicked, you should add the `filled` class to the clicked `button` if it's not already present, and remove it, if it is.
+7. When a `button` element containing a heart is clicked, the heart symbol should toggle between `&#9825;` (empty heart) and `&#10084;` (filled heart), depending on its current state.
 
 **Note:** Be sure to link your JavaScript file in your HTML. (Ex. `<script src="script.js"></script>`)
 
