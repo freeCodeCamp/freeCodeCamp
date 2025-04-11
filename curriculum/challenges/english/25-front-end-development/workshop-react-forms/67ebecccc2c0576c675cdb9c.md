@@ -20,7 +20,19 @@ Remember all of that should be inside the `setPowers` setter function, and you c
 You should create an `handlePowersChange` function.
 
 ```js
-assert.isFunction(handlePowersChange)
+assert.match(code, /\b(?:function\s|const\s+)handlePowersChange\s*(?:=\s*(?:\(e\)|e)\s*=>|\(e\))\s*{\s*/)
+```
+
+You should destructure `value` and `checked` from e.target.
+
+```js
+assert.match(code, /\b(?:function\s|const\s+)handlePowersChange\s*(?:=\s*(?:\(e\)|e)\s*=>|\(e\))\s*{\s*(const|let|var)\s+\{\s*value\s*,\s*checked\s*\}\s*=\s*e\.target;?\s*/)
+```
+
+You should use a ternary operator to check if `checked` is true. If it is, spread in the existing `powers` and `value` into an array. If it is not, filter out the `value` from `powers`.
+
+```js
+assert.match(code, /\b(?:function\s|const\s+)handlePowersChange\s*(?:=\s*(?:\(e\)|e)\s*=>|\(e\))\s*{\s*(const|let|var)\s+\{\s*value\s*,\s*checked\s*\}\s*=\s*e\.target;?\s*setPowers\(checked\s+\?\s+\[\.\.\.powers\,\s*value\]\s*:\s*powers\.filter\((p|power)\s*=>\s*(p|power)\s*\!==\s*value\)\);?\s*\}\s*/)
 ```
 
 # --seed--
