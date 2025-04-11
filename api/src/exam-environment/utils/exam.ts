@@ -104,7 +104,8 @@ export function constructUserExam(
     totalTimeInMS: exam.config.totalTimeInMS,
     name: exam.config.name,
     note: exam.config.note,
-    retakeTimeInMS: exam.config.retakeTimeInMS
+    retakeTimeInMS: exam.config.retakeTimeInMS,
+    passingPercent: exam.config.passingPercent
   };
 
   const userExam: UserExam = {
@@ -573,6 +574,85 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
     questionSets,
     deprecated: false
   };
+}
+
+/**
+ * Calculates the number of correct questions over the number of the total questions given for an attempt.
+ * @returns The score of the exam attempt as a percentage.
+ */
+export function calculateScore(
+  exam: EnvExam,
+  generatedExam: EnvGeneratedExam,
+  attempt: EnvExamAttempt
+) {
+  const attemptQuestionSets = attempt.questionSets;
+  const generatedQuestionSets = generatedExam.questionSets;
+
+  const totalQuestions = generatedQuestionSets.reduce(
+    (total, attemptQuestionSet) => total + attemptQuestionSet.questions.length,
+    0
+  );
+  let correctQuestions = 0;
+  for (const attemptQuestionSet of attemptQuestionSets) {
+    const examQuestionSet = exam.questionSets.find(
+      ({ id }) => id === attemptQuestionSet.id
+    );
+    if (!examQuestionSet) {
+      throw new Error(
+        `Attempt question set ${attemptQuestionSet.id} must exist in exam ${exam.id}`
+      );
+    }
+
+    const generatedQuestionSet = generatedQuestionSets.find(
+      ({ id }) => id === attemptQuestionSet.id
+    );
+    if (!generatedQuestionSet) {
+      throw new Error(
+        `Generated question set ${attemptQuestionSet.id} must exist in generated exam ${generatedExam.id}`
+      );
+    }
+
+    const attemptQuestions = attemptQuestionSet.questions;
+    const examQuestions = examQuestionSet.questions;
+    const generatedQuestions = generatedQuestionSet.questions;
+    for (const attemptQuestion of attemptQuestions) {
+      const examQuestion = examQuestions.find(
+        ({ id }) => id === attemptQuestion.id
+      );
+      if (!examQuestion) {
+        throw new Error(
+          `Attempt question ${attemptQuestion.id} must exist in exam ${exam.id}`
+        );
+      }
+
+      const generatedQuestion = generatedQuestions.find(
+        ({ id }) => id === attemptQuestion.id
+      );
+      if (!generatedQuestion) {
+        throw new Error(
+          `Generated question ${attemptQuestion.id} must exist in generated exam ${generatedExam.id}`
+        );
+      }
+
+      // NOTE: The answers of an attempt is an array for future-proofing when
+      //       checkbox questions are needed.
+      //       This calculation takes x / y , x < y as wholey incorrect.
+      const isQuestionCorrect = generatedQuestion.answers
+        .filter(generatedAnswer => {
+          return !!examQuestion.answers.find(
+            examAnswer =>
+              examAnswer.isCorrect && examAnswer.id === generatedAnswer
+          );
+        })
+        .every(correctAnswer => {
+          attemptQuestion.answers.includes(correctAnswer);
+        });
+
+      correctQuestions += Number(isQuestionCorrect);
+    }
+  }
+
+  return (correctQuestions / totalQuestions) * 100;
 }
 
 function isQuestionSetConfigFulfilled(
