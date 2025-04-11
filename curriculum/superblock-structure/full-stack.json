@@ -590,6 +590,7 @@
             {
               "dashedName": "lecture-understanding-effects-and-referencing-values-in-react"
             },
+            { "dashedName": "workshop-fruit-search-app" },
             { "dashedName": "review-react-state-and-hooks" },
             { "dashedName": "quiz-react-state-and-hooks" },
             { "dashedName": "lecture-working-with-forms-in-react" },
