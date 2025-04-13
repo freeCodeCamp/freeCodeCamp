@@ -1,0 +1,10 @@
+{
+  "name": "Python Review",
+  "isUpcomingChange": true,
+  "dashedName": "review-python",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67f39e391c9b373069def02c", "title": "Python Review" }],
+  "helpCategory": "Python",
+  "blockType": "review",
+  "blockLayout": "link"
+}

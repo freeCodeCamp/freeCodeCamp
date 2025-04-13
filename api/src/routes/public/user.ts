@@ -101,7 +101,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
   done
 ) => {
   fastify.get(
-    '/api/users/get-public-profile',
+    '/users/get-public-profile',
     {
       schema: schemas.getPublicProfile,
       onRequest: (req, reply, done) => {
@@ -213,7 +213,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
   );
 
   fastify.get(
-    '/api/users/exists',
+    '/users/exists',
     {
       schema: schemas.userExists,
       attachValidation: true
@@ -224,9 +224,10 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       if (req.validationError) {
         logger.warn({ validationError: req.validationError });
         void reply.code(400);
-        // TODO(Post-MVP): return a message telling the requester that their
-        // request was malformed.
-        return await reply.send({ exists: true });
+        return await reply.send({
+          type: 'danger',
+          message: 'username parameter is required'
+        });
       }
 
       const username = req.query.username.toLowerCase();
