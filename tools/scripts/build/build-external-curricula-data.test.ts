@@ -1,5 +1,5 @@
 import path from 'path';
-import fs from 'fs';
+import fs, { readFileSync } from 'fs';
 
 import readdirp from 'readdirp';
 
@@ -8,9 +8,19 @@ import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
 } from './external-data-schema';
-import { orderedSuperBlockInfo } from './build-external-curricula-data';
+import {
+  type Curriculum,
+  type SuperBlockIntro,
+  orderedSuperBlockInfo
+} from './build-external-curricula-data';
 
 const VERSION = 'v1';
+const intros = JSON.parse(
+  readFileSync(
+    path.resolve(__dirname, '../../../client/i18n/locales/english/intro.json'),
+    'utf-8'
+  )
+) as SuperBlockIntro;
 
 describe('external curriculum data build', () => {
   const clientStaticPath = path.resolve(__dirname, '../../../client/static');
@@ -73,6 +83,42 @@ ${result.error.message}`
           throw Error(`file: ${fileInArray}
 ${result.error.message}`);
         }
+      });
+  });
+
+  test('super blocks and blocks should have the correct data', async () => {
+    const superBlockFiles = (
+      await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
+        directoryFilter: ['!challenges']
+      })
+    ).map(file => file.path);
+
+    superBlockFiles
+      .filter(file => file !== 'available-superblocks.json')
+      .forEach(file => {
+        const fileContentJson = fs.readFileSync(
+          `${clientStaticPath}/curriculum-data/${VERSION}/${file}`,
+          'utf-8'
+        );
+
+        const fileContent = JSON.parse(
+          fileContentJson
+        ) as Curriculum<SuperBlocks>;
+
+        const superBlock = Object.keys(fileContent)[0] as SuperBlocks;
+
+        // Randomly pick a block to check its data.
+        const blocks = Object.keys(fileContent[superBlock].blocks);
+        const randomBlockIndex = Math.floor(Math.random() * blocks.length);
+        const randomBlock = blocks[randomBlockIndex];
+
+        expect(fileContent[superBlock].intro).toEqual(intros[superBlock].intro);
+        expect(fileContent[superBlock].blocks[randomBlock].desc).toEqual(
+          intros[superBlock].blocks[randomBlock].intro
+        );
+        expect(
+          fileContent[superBlock].blocks[randomBlock].challenges.name
+        ).toEqual(intros[superBlock].blocks[randomBlock].title);
       });
   });
 
