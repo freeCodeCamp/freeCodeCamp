@@ -2001,6 +2001,13 @@
           "You'll practice concepts like <code>alt</code> attributes and aria roles."
         ]
       },
+      "build-a-multimedia-player": {
+        "title": "Build a Multimedia Player",
+        "intro": [
+          "In this lab, you'll build a multimedia player.",
+          "You will practice working with the <code>audio</code> and <code>video</code> elements, the <code>controls</code> attribute, and the <code>aria-label</code> attribute."
+        ]
+      },
       "review-html-accessibility": {
         "title": "HTML Accessibility Review",
         "intro": [
