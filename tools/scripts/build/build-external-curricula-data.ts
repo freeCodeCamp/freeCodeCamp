@@ -4,7 +4,7 @@ import { submitTypes } from '../../../shared/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared/config/curriculum';
 
-export type SuperBlockIntro = {
+export type CurriculumIntros = {
   [keyValue in SuperBlocks]: {
     title: string;
     intro: string[];
@@ -75,7 +75,7 @@ export function buildExtCurriculumData(
   );
   const intros = JSON.parse(
     readFileSync(blockIntroPath, 'utf-8')
-  ) as SuperBlockIntro;
+  ) as CurriculumIntros;
 
   mkdirSync(dataPath, { recursive: true });
 

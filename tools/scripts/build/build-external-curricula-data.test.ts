@@ -10,7 +10,7 @@ import {
 } from './external-data-schema';
 import {
   type Curriculum,
-  type SuperBlockIntro,
+  type CurriculumIntros,
   orderedSuperBlockInfo
 } from './build-external-curricula-data';
 
@@ -20,7 +20,7 @@ const intros = JSON.parse(
     path.resolve(__dirname, '../../../client/i18n/locales/english/intro.json'),
     'utf-8'
   )
-) as SuperBlockIntro;
+) as CurriculumIntros;
 
 describe('external curriculum data build', () => {
   const clientStaticPath = path.resolve(__dirname, '../../../client/static');
