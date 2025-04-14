@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Multimedia Player Lab
-block: build-a-multimedia-player
+block: lab-multimedia-player
 superBlock: full-stack-developer
 ---
 

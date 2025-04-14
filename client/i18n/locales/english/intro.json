@@ -2001,7 +2001,7 @@
           "You'll practice concepts like <code>alt</code> attributes and aria roles."
         ]
       },
-      "build-a-multimedia-player": {
+      "lab-multimedia-player": {
         "title": "Build a Multimedia Player",
         "intro": [
           "In this lab, you'll build a multimedia player.",
