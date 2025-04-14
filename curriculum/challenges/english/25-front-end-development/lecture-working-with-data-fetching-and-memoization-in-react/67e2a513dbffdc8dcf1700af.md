@@ -2,7 +2,7 @@
 id: 67e2a513dbffdc8dcf1700af
 title: What Is the useOptimistic Hook, and How Does It Work?
 challengeType: 11
-videoId: nVAaxZ34khk
+videoId: rUl0O14lWC0
 dashedName: what-is-the-useoptimistic-hook-and-how-does-it-work
 ---
 
@@ -38,7 +38,7 @@ const [optimisticState, addOptimistic] = useOptimistic(actualState, updateFuncti
 
 - `updateFunction` is the function that determines how the optimistic state should update when called.
 
-At first glance, it might seem like the `useOptimistic` hook is just another way to handle loading states in React. But it's much more than that.
+At first glance, it might seem like the `useOptimistic` hook is just another way to handle loading states in React. But it's more than that.
 
 A loading state controls whether you see a spinner, message, or some other indicator in the UI while something happens in the background. 
 
@@ -171,13 +171,9 @@ export default function Tasks() {
 }
 ```
 
-This ensures snappy UI updates by showing instant feedback instead of waiting for a response. Once the task is saved, the pending property is removed, and the final task list updates accordingly.
+This ensures snappy UI updates by showing instant feedback instead of waiting for a response. Once the task is saved, the `pending` property is removed, and the final task list updates accordingly.
 
-Here's the UI:
-
-There are two things happening that are not supposed to happen. First, you can't see the `Adding Task...` text since it appears and disappears too quickly. Next, there's an error occurring after adding the task. 
-
-Here's the error message:
+In the UI, there are two things happening that are not supposed to happen. First, you can't see the `Adding Task...` text since it appears and disappears too quickly. Next, there's an error occurring after adding the task.
 
 There are two things we need to do to address those issues.
 
@@ -216,7 +212,7 @@ async function addTask(formData) {
 }
 ```
 
-And once you do that, everything works fine:
+And once you do that, everything works fine.
 
 # --questions--
 
