@@ -96,38 +96,37 @@ jobs:
         run: |
           REMOTE_SCRIPT="
           set -e
-            echo -e '\nLOG:Deploying API to $TS_MACHINE_NAME...'
-            cd /home/${TS_USERNAME}/docker-swarm-config/stacks/api || { echo "Error: Failed to change directory"; exit 1; }
-            which age > /dev/null || { echo "Error: age not installed"; exit 1; }
+          echo -e '\nLOG:Deploying API to \$TS_MACHINE_NAME...'
+          cd /home/\${TS_USERNAME}/docker-swarm-config/stacks/api || { echo \"Error: Failed to change directory\"; exit 1; }
+          which age > /dev/null || { echo \"Error: age not installed\"; exit 1; }
 
-            echo -e '\nLOG:Decrypting secrets...'
-            echo "${AGE_ENCRYPTED_ASC_SECRETS}" > secrets.age.asc
-            echo "${AGE_SECRET_KEY}" > age.key && chmod 600 age.key
-            age --identity age.key --decrypt secrets.age.asc > .env
-            rm -f age.key secrets.age.asc
+          echo -e '\nLOG:Decrypting secrets...'
+          echo \"\${AGE_ENCRYPTED_ASC_SECRETS}\" > secrets.age.asc
+          echo \"\${AGE_SECRET_KEY}\" > age.key && chmod 600 age.key
+          age --identity age.key --decrypt secrets.age.asc > .env
+          rm -f age.key secrets.age.asc
 
-            echo -e '\nLOG:Adding deployment variables...'
-            {
-              echo "DEPLOYMENT_VERSION=${DEPLOYMENT_VERSION}"
-              echo "FCC_API_LOG_LEVEL=${FCC_API_LOG_LEVEL}"
-            } >> .env
+          echo -e '\nLOG:Adding deployment variables...'
+          {
+            echo \"DEPLOYMENT_VERSION=\${DEPLOYMENT_VERSION}\"
+            echo \"FCC_API_LOG_LEVEL=\${FCC_API_LOG_LEVEL}\"
+          } >> .env
 
-            echo -e '\nLOG:Exporting environment variables...'
-            while IFS='=' read -r key value; do
-              if [[ -n \$key && ! \$key =~ ^# ]]; then
-                export "\${key}=\${value}"
-              fi
-            done < .env
-            rm -f .env
+          echo -e '\nLOG:Exporting environment variables...'
+          while IFS='=' read -r key value; do
+            if [[ -n \$key && ! \$key =~ ^# ]]; then
+              export \"\${key}=\${value}\"
+            fi
+          done < .env
+          rm -f .env
 
-            echo -e '\nLOG:Validating environment and config...'
-            env | grep -E 'DOMAIN|DEPLOYMENT' || { echo "Error: Required environment variables not found"; exit 1; }
-            docker stack config -c stack-api.yml > /dev/null || { echo "Error: Invalid stack configuration"; exit 1; }
+          echo -e '\nLOG:Validating environment and config...'
+          env | grep -E 'DOMAIN|DEPLOYMENT' || { echo \"Error: Required environment variables not found\"; exit 1; }
+          docker stack config -c stack-api.yml > /dev/null || { echo \"Error: Invalid stack configuration\"; exit 1; }
 
-            echo -e '\nLOG:Deploying stack...'
-            docker stack deploy -c stack-api.yml --prune --with-registry-auth --detach=false ${STACK_NAME}
-            echo -e '\nLOG:Finished deployment.'
+          echo -e '\nLOG:Deploying stack...'
+          docker stack deploy -c stack-api.yml --prune --with-registry-auth --detach=false \${STACK_NAME}
+          echo -e '\nLOG:Finished deployment.'
           "
           MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
           ssh $TS_USERNAME@$MACHINE_IP "$REMOTE_SCRIPT"
-        shell: bash
