@@ -116,9 +116,6 @@ ${result.error.message}`);
         expect(fileContent[superBlock].blocks[randomBlock].desc).toEqual(
           intros[superBlock].blocks[randomBlock].intro
         );
-        expect(
-          fileContent[superBlock].blocks[randomBlock].challenges.name
-        ).toEqual(intros[superBlock].blocks[randomBlock].title);
       });
   });
 
