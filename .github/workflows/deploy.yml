@@ -66,6 +66,7 @@ jobs:
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          hostname: gha-${{needs.static.outputs.environment}}-api-ci-${{ github.run_id }}
           tags: tag:ci
           version: latest
 
