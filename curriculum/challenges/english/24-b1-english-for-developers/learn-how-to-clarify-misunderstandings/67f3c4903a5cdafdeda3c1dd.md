@@ -15,7 +15,7 @@ This is a review of the entire dialogue you just studied.
 
 Place the following phrases in the correct spot:
 
-`mix-up`, `on track`, `ironing out`, `misunderstanding`, `supposed`, `confusion`, and `on the same page`.
+`mix-up`, `on track`, `ironing out`, `misunderstanding`, `supposed`, `the confusion`, and `on the same page`.
 
 # --fillInTheBlank--
 
@@ -25,7 +25,7 @@ Place the following phrases in the correct spot:
 
 `David: Sure, Jessica. I thought the testing was complete, but when I looked at the report, it said there were still some issues. What's the story?`
 
-`Jessica: I'm sorry for the BLANK. We've completed the main testing, but we've found some minor bugs in the user interface. We're fixing them, but I get why the report might have been unclear.`
+`Jessica: I'm sorry for BLANK. We've completed the main testing, but we've found some minor bugs in the user interface. We're fixing them, but I get why the report might have been unclear.`
 
 `David: Does that mean the app's launch will be delayed? I thought we were BLANK to release by the end of the week.`
 
@@ -55,11 +55,11 @@ This noun refers to a failure to understand something correctly.
 
 ---
 
-`confusion`
+`the confusion`
 
 ### --feedback--
 
-This noun indicates a lack of clarity or understanding.
+These two words together indicate a lack of clarity or understanding. The first is an article the second is a noun.
 
 ---
 
@@ -83,7 +83,7 @@ These two words describe resolving small problems or details. The first word end
 
 ### --feedback--
 
-This is a past participle used to express expectation or intention.
+This is a `Past Participle` used to express expectation or intention.
 
 ---
 
@@ -99,4 +99,4 @@ This noun describes a mistake or confusion due to things being confused. This is
 
 ### --feedback--
 
-These three words together mean having a mutual understanding. The first word is a preposition.
+These four words together mean having a mutual understanding. The first word is a preposition.

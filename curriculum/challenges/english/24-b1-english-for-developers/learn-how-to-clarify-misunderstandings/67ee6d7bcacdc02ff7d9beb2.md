@@ -53,11 +53,11 @@ This two-word phrase refers to the way software or websites respond to actions, 
 
 `There's a problem with` is used to describe that something is not working correctly. It means there is an issue or difficulty related to a specific thing. For example:
 
-`There's a problem with the network` – This means the network is not functioning properly.
+`There's a problem with the network.` – This means the network is not functioning properly.
 
 `Event handling` refers to how a program or website manages user actions like clicks, keyboard presses, or mouse movements. For example:
 
-`There's an issue with event handling` - This mean the software isn't responding properly to user actions.
+`There's an issue with event handling.` - This mean the software isn't responding properly to user actions.
 
 # --scene--
 
