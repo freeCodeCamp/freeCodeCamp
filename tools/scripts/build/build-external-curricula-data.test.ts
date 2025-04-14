@@ -28,9 +28,11 @@ describe('external curriculum data build', () => {
   });
 
   test('there should be an endpoint to request submit types from', () => {
-    fs.existsSync(
-      `${clientStaticPath}/curriculum-data/${VERSION}/submit-types.json`
-    );
+    expect(
+      fs.existsSync(
+        `${clientStaticPath}/curriculum-data/${VERSION}/submit-types.json`
+      )
+    ).toBe(true);
   });
 
   test('the available-superblocks file should have the correct structure', async () => {

@@ -238,7 +238,7 @@ export function buildExtCurriculumData(
 
   function getSubmitTypes() {
     writeFileSync(
-      `${dataPath}/submit-types.json`,
+      `${dataPath}/${ver}/submit-types.json`,
       JSON.stringify(submitTypes, null, 2)
     );
   }
