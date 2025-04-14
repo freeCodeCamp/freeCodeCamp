@@ -3590,7 +3590,10 @@
       },
       "review-testing": {
         "title": "Testing Review",
-        "intro": ["Review testing concepts to prepare for the upcoming quiz."]
+        "intro": [
+          "Before you take the testing quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including unit testing, end-to-end testing, functional testing and more."
+        ]
       },
       "quiz-testing": {
         "title": "Testing Quiz",
