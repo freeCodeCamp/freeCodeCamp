@@ -5,7 +5,7 @@ challengeType: 22
 dashedName: task-117
 ---
 
-<!-- (Audio) Brian: It save us time and resources. What about timelines? Which option is faster? -->
+<!-- (Audio) Brian: It could save us time and resources. What about timelines? Which option is faster? -->
 
 # --instructions--
 
@@ -15,7 +15,7 @@ Listen to the audio and complete the sentence below.
 
 ## --sentence--
 
-`It BLANK and resources. What about BLANK? Which option is faster?`
+`It could BLANK and resources. What about BLANK? Which option is faster?`
 
 ## --blanks--
 
@@ -63,7 +63,7 @@ This word in the plural form refers to schedules or deadlines for completing a p
     "audio": {
       "filename": "B1_13-3.mp3",
       "startTime": 1,
-      "startTimestamp": 32.54,
+      "startTimestamp": 32.34,
       "finishTimestamp": 37.52
     }
   },
@@ -76,16 +76,16 @@ This word in the plural form refers to schedules or deadlines for completing a p
     {
       "character": "Brian",
       "startTime": 1,
-      "finishTime": 5.98,
+      "finishTime": 6.18,
       "dialogue": {
-        "text": "It save us time and resources. What about timelines? Which option is faster?",
+        "text": "It could save us time and resources. What about timelines? Which option is faster?",
         "align": "center"
       }
     },
     {
       "character": "Brian",
       "opacity": 0,
-      "startTime": 6.48
+      "startTime": 6.68
     }
   ]
 }
