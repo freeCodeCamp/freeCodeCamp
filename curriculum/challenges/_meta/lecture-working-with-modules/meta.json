@@ -1,0 +1,10 @@
+{
+  "name": "Working with Modules",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-modules",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67fe8223e7ec5718c310aa3f", "title": "Step 1" }],
+  "helpCategory": "Python"
+}

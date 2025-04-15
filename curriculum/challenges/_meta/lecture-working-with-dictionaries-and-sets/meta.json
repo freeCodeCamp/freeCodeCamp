@@ -1,0 +1,10 @@
+{
+  "name": "Working with Dictionaries and Sets",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-dictionaries-and-sets",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67fe82082eb80a17798fe086", "title": "Step 1" }],
+  "helpCategory": "Python"
+}

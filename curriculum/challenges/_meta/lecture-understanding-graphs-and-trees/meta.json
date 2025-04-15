@@ -1,0 +1,10 @@
+{
+  "name": "Understanding Graphs and Trees",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-graphs-and-trees",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67fe82f017d39422bd85d589", "title": "Step 1" }],
+  "helpCategory": "Python"
+}

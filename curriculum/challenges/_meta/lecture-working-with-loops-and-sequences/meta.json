@@ -1,0 +1,10 @@
+{
+  "name": "Working with Loops and Sequences",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-loops-and-sequences",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67fe8399c41a212871025f96", "title": "Step 1" }],
+  "helpCategory": "Python"
+}
