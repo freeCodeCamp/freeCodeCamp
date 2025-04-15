@@ -1,0 +1,10 @@
+{
+  "name": "Introduction to Python",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-introduction-to-python",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67fe81c9c6fd3714343a45ad", "title": "What is Python and what are some common uses in the industry?" }],
+  "helpCategory": "Python"
+}
