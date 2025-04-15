@@ -11,6 +11,7 @@ import {
 import {
   type Curriculum,
   type CurriculumIntros,
+  type GeneratedCurriculumProps,
   orderedSuperBlockInfo
 } from './build-external-curricula-data';
 
@@ -111,7 +112,7 @@ ${result.error.message}`);
 
       const fileContent = JSON.parse(
         fileContentJson
-      ) as Curriculum<SuperBlocks>;
+      ) as Curriculum<GeneratedCurriculumProps>;
 
       const superBlock = Object.keys(fileContent)[0] as SuperBlocks;
 
