@@ -99,12 +99,15 @@ const chapterBasedCurriculumSchema = Joi.object().pattern(
 );
 
 const availableSuperBlocksSchema = Joi.object({
-  superblocks: Joi.array().items(
-    Joi.object({
-      dashedName: Joi.string().required(),
-      title: Joi.string().required(),
-      public: Joi.bool().required()
-    })
+  superblocks: Joi.object().pattern(
+    Joi.string(),
+    Joi.array().items(
+      Joi.object({
+        dashedName: Joi.string().required(),
+        title: Joi.string().required(),
+        public: Joi.bool().required()
+      })
+    )
   )
 });
 
