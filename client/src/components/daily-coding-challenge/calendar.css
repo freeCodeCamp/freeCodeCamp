@@ -43,11 +43,23 @@
   color: var(--primary-background);
 }
 
-/* .calendar-day:hover svg *,
-.calendar-day:active svg * {
-  fill: orange;
-  stroke: red;
-} */
+.calendar-day:hover .completed svg circle,
+.calendar-day:active .completed svg circle {
+  fill: var(--primary-background);
+  stroke: var(--primary-background);
+}
+
+.calendar-day:hover .not-completed svg circle,
+.calendar-day:active .not-completed svg circle {
+  fill: var(--primary-color);
+  stroke: var(--primary-background);
+}
+
+.calendar-day:hover svg rect,
+.calendar-day:active svg rect {
+  fill: var(--primary-color);
+  stroke: var(--primary-color);
+}
 
 .calendar-day-number {
   position: absolute;

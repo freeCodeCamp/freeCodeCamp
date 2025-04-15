@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '../helpers';
-// import GreenPass from '../../assets/icons/green-pass';
-import CheckMark from '../../templates/Introduction/components/check-mark';
+import GreenPass from '../../assets/icons/green-pass';
+import GreenNotCompleted from '../../assets/icons/green-not-completed';
 
 interface CalendarDayProps {
   dayNumber: number;
@@ -10,44 +10,40 @@ interface CalendarDayProps {
   isAvailable?: boolean;
 }
 
-// so we need to have a list of days with challenges for the current month
-// if daily challenge doesn't exist, display nothing
-// if day is past today, display nothing
-
 function DailyCodingChallengeCalendarDay({
   dayNumber,
   date,
   isCompleted = false,
   isAvailable = false
 }: CalendarDayProps): JSX.Element {
-  return dayNumber === 0 ? (
-    // dayNumber === 0 -> render nothing
-    <div></div>
-  ) : isAvailable ? (
-    // isAvailable -> render link to challenge
+  // dayNumber = 0 -> render nothing
+  if (dayNumber === 0) return <div></div>;
+
+  if (!isAvailable)
+    return (
+      <div className='calendar-day'>
+        <span className='calendar-day-number'>{dayNumber}</span>
+      </div>
+    );
+
+  // isAvailable -> render link to challenge
+  return (
     <Link
       to={`/learn/daily-coding-challenge?date=${date}`}
       className='calendar-day'
     >
       <span className='calendar-day-number'>{dayNumber}</span>
-      {
-        // isComplete ? (
-        //   // isComplete -> render checkmark
-        //   <GreenPass />
-        // ) : (
-        //   // !isComplete -> render empty circle
-        //   <div className='empty-cirle' aria-label='Incomplete'></div>
-        // )
-      }
-      <span className={isCompleted ? 'completed' : 'not-completed'}>
-        <CheckMark isCompleted={isCompleted} />
-      </span>
+
+      {isCompleted ? (
+        <span className='completed'>
+          <GreenPass />
+        </span>
+      ) : (
+        <span className='not-completed'>
+          <GreenNotCompleted />
+        </span>
+      )}
     </Link>
-  ) : (
-    // render non-link calendar day (daily challenge doesn't exist for that day)
-    <div className='calendar-day'>
-      <span className='calendar-day-number'>{dayNumber}</span>
-    </div>
   );
 }
 

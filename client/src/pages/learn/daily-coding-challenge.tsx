@@ -25,7 +25,7 @@ interface ChallengeLanguageData {
 interface ChallengeDataFromDb {
   challengeId: string;
   title: string;
-  date: string;
+  date: Date;
   description?: string;
   instructions?: string;
   javascript: ChallengeLanguageData;
@@ -140,22 +140,7 @@ function formatChallengeData({
   return props;
 }
 
-function isValidDate(dateString: string) {
-  const regex = /^\d{2}-\d{2}-\d{4}$/;
-  if (!regex.test(dateString)) return false;
-
-  const [month, day, year] = dateString.split('-').map(Number);
-  const date = new Date(year, month - 1, day);
-
-  return (
-    date.getFullYear() === year &&
-    date.getMonth() === month - 1 &&
-    date.getDate() === day
-  );
-}
-
 function DailyCodingChallenge(): JSX.Element {
-  // const [challengeData, setChallengeData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [challengeFound, setChallengeFound] = useState(false);
   const [challengeProps, setChallengeProps] =
@@ -198,7 +183,7 @@ function DailyCodingChallenge(): JSX.Element {
 
   useEffect(() => {
     // If the date param is invalid, stop loading/fetching and show the not found page
-    if (!dateParam || !isValidDate(dateParam)) {
+    if (!dateParam || !/^\d{1,2}-\d{1,2}-\d{4}$/.test(dateParam)) {
       setIsLoading(false);
       setChallengeFound(false);
       return;
@@ -207,11 +192,12 @@ function DailyCodingChallenge(): JSX.Element {
     void fetchChallenge(dateParam);
   }, [dateParam]);
 
-  return isLoading ? (
-    <Loader />
-  ) : !challengeFound || !challengeProps ? (
-    <DailyCodingChallengeNotFound />
-  ) : (
+  if (isLoading) return <Loader />;
+
+  if (!challengeFound || !challengeProps)
+    return <DailyCodingChallengeNotFound />;
+
+  return (
     <ShowClassic
       isDailyCodingChallenge={true}
       dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
