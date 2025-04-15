@@ -131,7 +131,7 @@ function ExpensiveSquare({ num }) {
 export default ExpensiveSquare;
 ```
 
-This will make sure the function is memoized by caching the result, so calculation happens only when `num` change, not when anything changes in the component it's being used in.
+This will make sure the function is memoized by caching the result, so calculation happens only when the `num` variable changes, not when anything changes in the component it's being used in.
 
 The `calculateSquare` function call is not running any time `timer` changes anymore but on the initial render and when `num` changes.
 
