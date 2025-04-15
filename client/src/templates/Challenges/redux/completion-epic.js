@@ -105,11 +105,6 @@ function postChallenge(update) {
 }
 
 function submitModern(type, state) {
-  // const challengeType = state.challenge.challengeMeta.challengeType;
-
-  console.log('state.challenge');
-  console.log(state.challenge);
-
   const tests = challengeTestsSelector(state);
   if (tests.length === 0 || tests.every(test => test.pass && !test.err)) {
     if (type === actionTypes.checkChallenge) {
@@ -119,13 +114,9 @@ function submitModern(type, state) {
     if (type === actionTypes.submitChallenge) {
       const { id, block, challengeType } = challengeMetaSelector(state);
 
-      console.log(`${id} ${block} ${challengeType}`);
       let update;
 
-      // if isDailyCodingChallenge
       if (isDailyCodingChallenge(challengeType)) {
-        console.log('dailyChallenge');
-
         const language = getDailyCodingChallengeLanguage(challengeType);
 
         const body = {
@@ -134,15 +125,11 @@ function submitModern(type, state) {
           language
         };
 
-        console.log('body');
-        console.log(body);
-
         update = {
           endpoint: '/daily-coding-challenge-completed',
           payload: body
         };
       } else {
-        console.log('modernChallenge');
         const challengeFiles = challengeFilesSelector(state);
 
         let body;
