@@ -10,6 +10,8 @@ interface CalendarDayProps {
   isAvailable?: boolean;
 }
 
+// Todo: Change this to render checkmarks for JS and Python
+
 function DailyCodingChallengeCalendarDay({
   dayNumber,
   date,

@@ -2,15 +2,19 @@ import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import store from 'store';
+import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 import EditorTabs from './editor-tabs';
 
 interface ActionRowProps {
-  dailyCodingChallengeLanguage: 'javascript' | 'python';
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
   hasNotes: boolean;
   hasPreview: boolean;
   isDailyCodingChallenge: boolean;
   isProjectBasedChallenge?: boolean;
-  setDailyCodingChallengeLanguage: (language: 'javascript' | 'python') => void;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
   showConsole: boolean;
   showNotes: boolean;
   showInstructions: boolean;
@@ -57,6 +61,11 @@ const ActionRow = ({
     return previewBtnsSrText;
   }
 
+  const handleLanguageChange = (language: DailyCodingChallengeLanguages) => {
+    store.set('dailyCodingChallengeLanguage', language);
+    setDailyCodingChallengeLanguage(language);
+  };
+
   return (
     <div className='action-row' data-playwright-test-label='action-row'>
       <div className='tabs-row' data-playwright-test-label='tabs-row'>
@@ -73,19 +82,19 @@ const ActionRow = ({
           )}
           <EditorTabs data-playwright-test-label='editor-tabs' />
         </div>
-        {/* middle */}
+        {/* middle - only used with daily coding challenges for now */}
         <div className='tabs-row-middle'>
           {isDailyCodingChallenge && (
             <>
               <button
                 aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
-                onClick={() => setDailyCodingChallengeLanguage('javascript')}
+                onClick={() => handleLanguageChange('javascript')}
               >
                 JavaScript
               </button>
               <button
                 aria-expanded={dailyCodingChallengeLanguage === 'python'}
-                onClick={() => setDailyCodingChallengeLanguage('python')}
+                onClick={() => handleLanguageChange('python')}
               >
                 Python
               </button>

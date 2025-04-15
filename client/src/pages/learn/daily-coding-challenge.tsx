@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import store from 'store';
 import ShowClassic from '../../templates/Challenges/classic/show';
 import { Loader } from '../../components/helpers';
-import { ChallengeNode } from '../../redux/prop-types';
+import {
+  ChallengeNode,
+  DailyCodingChallengeLanguages
+} from '../../redux/prop-types';
 import DailyCodingChallengeNotFound from '../../components/daily-coding-challenge/not-found';
 import envData from '../../../config/env.json';
 
@@ -35,6 +39,7 @@ interface ChallengeDataFromDb {
 interface Node {
   challengeNode: ChallengeNode;
 }
+
 interface Data {
   data: Node;
   pageContext: PageContext;
@@ -141,12 +146,17 @@ function formatChallengeData({
 }
 
 function DailyCodingChallenge(): JSX.Element {
+  const initLanguage =
+    (store.get(
+      'dailyCodingChallengeLanguage'
+    ) as DailyCodingChallengeLanguages) ?? 'javascript';
+
   const [isLoading, setIsLoading] = useState(true);
   const [challengeFound, setChallengeFound] = useState(false);
   const [challengeProps, setChallengeProps] =
     useState<null | FormattedChallengeData>(null);
   const [dailyCodingChallengeLanguage, setDailyCodingChallengeLanguage] =
-    useState<'javascript' | 'python'>('javascript');
+    useState<DailyCodingChallengeLanguages>(initLanguage);
 
   const dateParam = new URLSearchParams(window.location.search).get('date');
 
@@ -160,18 +170,13 @@ function DailyCodingChallenge(): JSX.Element {
       // Todo: validate challenge data
 
       if (challengeData) {
-        // && isChallengeValid(result)) {
-        console.log(challengeData);
         const formattedChallengeData = formatChallengeData(
           challengeData as ChallengeDataFromDb
         );
         setChallengeProps(formattedChallengeData as FormattedChallengeData);
-
-        // setChallengeData(result);
         setChallengeFound(true);
       } else {
         setChallengeFound(false);
-        // setIsLoading(false);
       }
     } catch (error) {
       setChallengeFound(false);

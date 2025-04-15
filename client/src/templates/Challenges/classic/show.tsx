@@ -20,6 +20,7 @@ import type {
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
+  DailyCodingChallengeLanguages,
   ResizeProps,
   SavedChallenge,
   SavedChallengeFiles,
@@ -113,9 +114,11 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   initHooks: (hooks?: { beforeAll: string }) => void;
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
-  dailyCodingChallengeLanguage: 'javascript' | 'python';
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
   isDailyCodingChallenge?: boolean;
-  setDailyCodingChallengeLanguage: (language: 'javascript' | 'python') => void;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMeta;
