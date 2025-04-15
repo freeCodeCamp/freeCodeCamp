@@ -10,7 +10,6 @@ interface ChallengeOptions {
   title: string;
   dashedName: string;
   challengeType: string;
-  questionCount?: number;
 }
 
 const buildFrontMatter = ({
@@ -32,9 +31,9 @@ const buildFrontMatterWithVideo = ({
   challengeType
 }: ChallengeOptions) => `---
 id: ${challengeId.toString()}
-videoId: ADD YOUR VIDEO ID HERE!!!
 title: ${sanitizeTitle(title)}
 challengeType: ${challengeType}
+videoId: nVAaxZ34khk
 dashedName: ${dashedName}
 ---`;
 
@@ -77,35 +76,12 @@ const getQuizChallengeTemplate = (
 
 # --description--
 
-To pass the quiz, you must correctly answer at least ${options.questionCount! == 20 ? '18' : '9'} of the ${options.questionCount!.toString()} questions below.
+To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
 
 # --quizzes--
 
 ## --quiz--
 
-${`### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-`.repeat(options.questionCount! - 1)}
 ### --question--
 
 #### --text--
@@ -127,6 +103,425 @@ Placeholder distractor 3
 #### --answer--
 
 Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
 `;
 
 const getVideoChallengeTemplate = (
@@ -135,9 +530,9 @@ const getVideoChallengeTemplate = (
 
 # --description--
 
-${options.title} description.
+Watch the lecture video and answer the questions below.
 
-# --question--
+# --questions--
 
 ## --text--
 
@@ -172,7 +567,7 @@ ${options.title} description.
 
 ${options.title} assignment!
 
-# --question--
+# --questions--
 
 ## --text--
 
