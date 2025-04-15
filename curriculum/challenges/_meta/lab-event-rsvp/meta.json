@@ -1,12 +1,12 @@
 {
-  "name": "Build an Event RSVP Component",
+  "name": "Build an Event RSVP",
   "usesMultifileEditor": true,
-  "dashedName": "lab-react-forms",
+  "dashedName": "lab-event-rsvp",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "67d936de7055982b02baf186",
-      "title": "Build an Event RSVP Component"
+      "title": "Build an Event RSVP"
     }
   ],
   "helpCategory": "JavaScript",

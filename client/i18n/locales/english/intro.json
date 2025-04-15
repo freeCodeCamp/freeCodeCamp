@@ -3530,10 +3530,11 @@
         "title": "276",
         "intro": []
       },
-      "lab-react-forms": {
-        "title": "Build an Event RSVP Component",
+      "lab-event-rsvp": {
+        "title": "Build an Event RSVP",
         "intro": [
-          "Practice what you have learnt about working with Forms in React."
+          "In this lab, you'll build an Event RSVP form using React.",
+          "You'll practice using the useState hook to manage form input and display user responses."
         ]
       },
       "lecture-working-with-data-fetching-and-memoization-in-react": {
@@ -3860,21 +3861,15 @@
       },
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
-        "intro": [
-          "Learn about Introduction to Python in these lectures."
-        ]
+        "intro": ["Learn about Introduction to Python in these lectures."]
       },
       "workshop-caesar-cipher": {
         "title": "Build a Caesar Cipher",
-        "intro": [
-          "Learn about Build a Caesar Cipher in these lectures."
-        ]
+        "intro": ["Learn about Build a Caesar Cipher in these lectures."]
       },
       "lab-rpg-character": {
         "title": "Build an RPG character",
-        "intro": [
-          "Learn about Build an RPG character in these lectures."
-        ]
+        "intro": ["Learn about Build an RPG character in these lectures."]
       },
       "review-python-basics": {
         "title": "Python Basics Review",
@@ -3891,21 +3886,15 @@
       },
       "lecture-working-with-loops-and-sequences": {
         "title": "Working with Loops and Sequences",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "workshop-placeholder-loops-and-sequences": {
         "title": "Placeholder - Waiting for title",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-placeholder-loops-and-sequences": {
         "title": "Placeholder - waiting for title",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "review-loops-and-sequences": {
         "title": "Loops and Sequences Review",
@@ -3922,27 +3911,19 @@
       },
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Working with Dictionaries and Sets",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lecture-working-with-modules": {
         "title": "Working with Modules",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "workshop-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "review-dictionaries-and-sets": {
         "title": "Dictionaries and Sets review",
@@ -3959,15 +3940,11 @@
       },
       "lecture-understanding-error-handling": {
         "title": "Understanding Error Handling",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-isbn-validator": {
         "title": "Debug a ISBN Validator",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "review-error-handling": {
         "title": "Error Handling Review",
@@ -3984,21 +3961,15 @@
       },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "workshop-placeholder-classes-and-objects": {
         "title": "Placeholder - waiting for title",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-budget-app": {
         "title": "Build a Budget App",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",
@@ -4015,57 +3986,39 @@
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Understanding Object Oriented Programming and Encapsulation",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "workshop-placeholder-oop-1": {
         "title": "Placeholder - Waiting for title",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-placeholder-oop-1": {
         "title": "Placeholder - Waiting for title",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and polymorphism",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "workshop-placeholder-oop-2": {
         "title": "Placeholder - Waiting for title",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-polygon-area-calculator": {
         "title": "Build a Polygon Area Calculator",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding abstraction",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "workshop-placeholder-oop-3": {
         "title": "Placeholder - Waiting for title",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-placeholder-oop-3": {
         "title": "",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
@@ -4082,21 +4035,15 @@
       },
       "lecture-working-with-common-data-structures": {
         "title": "Working with common data structures",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "workshop-linked-list-class": {
         "title": "Build a Linked List Class",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-hash-table-class": {
         "title": "Build an Hash Table Class",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "review-data-structures": {
         "title": "Data Structures Review",
@@ -4113,45 +4060,31 @@
       },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "workshop-binary-search": {
         "title": "Build a Binary Search",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-bisection-method": {
         "title": "Build a Bisection Method",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "workshop-merge-sort": {
         "title": "Build a Merge Sort",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-quick-sort": {
         "title": "Build a Quick Sort",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-selection-sort": {
         "title": "Build a Selection Sort",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-luhn-argorithm": {
         "title": "Build a Luhn Algorithm",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
@@ -4168,33 +4101,23 @@
       },
       "lecture-understanding-graphs-and-trees": {
         "title": "Understanding Graphs and Trees",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "workshop-shortest-path-algorithm": {
         "title": "Build a Shortest Path Algorithm",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-adjacency-list-matrix-converter": {
         "title": "Build an Adjacency List/Matrix Converter",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "workshop-breadth-first-search": {
         "title": "Build a Breadth First Search",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-depth-first-search": {
         "title": "Build a Depth First Search",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
@@ -4211,15 +4134,11 @@
       },
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "lab-nth-fibonacci-number": {
         "title": "Build an Nth Fibonacci Number Calculator",
-        "intro": [
-          ""
-        ]
+        "intro": [""]
       },
       "review-dynamic-programming": {
         "title": "Dynamic Programming Review",
@@ -4236,9 +4155,7 @@
       },
       "review-python": {
         "title": "Python Review",
-        "intro": [
-          "Review Python concepts to prepare for the upcoming exam."
-        ]
+        "intro": ["Review Python concepts to prepare for the upcoming exam."]
       },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
