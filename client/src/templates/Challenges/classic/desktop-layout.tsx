@@ -5,7 +5,11 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import store from 'store';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
-import { ChallengeFiles, ResizeProps } from '../../../redux/prop-types';
+import {
+  ChallengeFiles,
+  DailyCodingChallengeLanguages,
+  ResizeProps
+} from '../../../redux/prop-types';
 import {
   removePortalWindow,
   setShowPreviewPortal,
@@ -32,8 +36,10 @@ interface DesktopLayoutProps {
   instructions: ReactElement;
   isAdvancing: boolean;
   isDailyCodingChallenge: boolean;
-  dailyCodingChallengeLanguage: 'javascript' | 'python';
-  setDailyCodingChallengeLanguage: (language: 'javascript' | 'python') => void;
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
   isFirstStep?: boolean;
   layoutState: {
     codePane: Pane;
