@@ -9,43 +9,59 @@ import envData from '../../../config/env.json';
 import CalendarDay from './calendar-day';
 
 import './calendar.css';
-import { formatDateUsCentral } from './helpers';
+import {
+  formatDateUsCentral,
+  getUsCentralMonthIndex,
+  getUsCentralYear,
+  formatDate
+} from './helpers';
 
 const { dailyChallengeApiLocation } = envData;
 
 const mapStateToProps = (state: unknown) => ({
   completedDailyCodingChallenges: completedDailyCodingChallengesSelector(
     state
-  ) as CompletedDailyCodingChallenge
+  ) as CompletedDailyCodingChallenge[]
 });
 
 const getMonthInfo = (
   monthIndex: number,
   year: number,
-  dailyChallengesMap: Map<string, DailyChallengeMap>
+  dailyChallengesMap: DailyChallengesMap
 ) => {
-  const date = new Date(year, monthIndex, 1);
-  const firstOfMonthWeekdayIndex = date.getDay();
-  const numberOfDays = new Date(year, monthIndex + 1, 0).getDate();
+  // date is first of the month for selected month
+  const date = new Date(Date.UTC(year, monthIndex, 1));
+  const firstOfMonthWeekdayIndex = date.getUTCDay();
+
+  // year is possibly incorrect since we sometimes pass monthIndex = 12 for example
+  // to roll over to January, so we get the year again
+  const utcYear = date.getUTCFullYear();
+
+  // day number of last day of the month
+  const numberOfDays = new Date(Date.UTC(year, monthIndex + 1, 0)).getUTCDate();
 
   const days: JSX.Element[] = [];
 
+  // push empty days to before the 1st of the month
   for (let i = 0; i < firstOfMonthWeekdayIndex; i++) {
     days.push(<CalendarDay key={`empty-${i}`} dayNumber={0} />);
   }
 
   for (let day = 1; day <= numberOfDays; day++) {
-    const challengeDate = `${(monthIndex + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}-${year}`;
-    console.log('challengeDate');
-    console.log(challengeDate);
-    const challengeData = dailyChallengesMap.get(challengeDate);
+    const formattedDate = formatDate({
+      month: monthIndex + 1,
+      day,
+      year: utcYear
+    });
+
+    const challengeData = dailyChallengesMap.get(formattedDate);
     const isCompleted = challengeData?.isCompleted || false;
     const isAvailable = challengeData !== undefined;
 
     days.push(
       <CalendarDay
         key={`day-${day}`}
-        date={challengeDate}
+        date={formattedDate}
         dayNumber={day}
         isCompleted={isCompleted}
         isAvailable={isAvailable}
@@ -55,9 +71,12 @@ const getMonthInfo = (
 
   return {
     days,
-    index: date.getMonth(),
-    name: date.toLocaleString('en-US', { month: 'long' }),
-    year: date.getFullYear()
+    index: date.getUTCMonth(),
+    name: date.toLocaleString('en-US', {
+      timeZone: 'UTC',
+      month: 'long'
+    }),
+    year: date.getUTCFullYear()
   };
 };
 
@@ -97,17 +116,15 @@ function DailyCodingChallengeCalendar({
     c => c.id
   );
 
-  // Initial month info for today US Central because challenges
-  // are released at midnight US Central - so don't show the
-  // local month, show the US Central month
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [dailyChallengesMap, setDailyChallengesMap] =
-    useState<DailyChallengesMap>(new Map());
   const [monthInfo, setMonthInfo] = useState<MonthInfo | null>(null);
+  const [dailyChallengesMap, setDailyChallengesMap] = useState(
+    () => new Map<string, DailyChallengeMap>()
+  );
 
   // we just need to change the month, the year can stay the same
-  // because it just rolls over, e.g. 12, 2024 will be Jan, 2025
+  // because it just rolls over, e.g. (index) 12, 2024 will be Jan, 2025
   const nextMonth = () => {
     setMonthInfo(
       m => m && getMonthInfo(m.index + 1, m.year, dailyChallengesMap)
@@ -127,12 +144,24 @@ function DailyCodingChallengeCalendar({
       );
       const challenges = (await response.json()) as DailyChallenge[];
 
+      console.log(challenges);
+
       if (Array.isArray(challenges)) {
         const newDailyChallengesMap = new Map() as DailyChallengesMap;
 
         challenges.forEach(c => {
-          newDailyChallengesMap.set(c.date, {
+          const [year, month, day] = c.date.split('T')[0].split('-');
+
+          // parseInt to remove leading zero's
+          const date = formatDate({
+            month: parseInt(month, 10),
+            day: parseInt(day, 10),
+            year: parseInt(year, 10)
+          });
+
+          newDailyChallengesMap.set(date, {
             ...c,
+            date,
             isCompleted: completedDailyCodingChallengeIds.includes(
               c.challengeId
             )
@@ -141,34 +170,17 @@ function DailyCodingChallengeCalendar({
 
         setDailyChallengesMap(newDailyChallengesMap);
 
-        // After getting the challenges and creating the map, set the initial month info
-
-        // todays month (US Central)
-        const monthIndex =
-          parseInt(
-            today.toLocaleString('en-US', {
-              timeZone: 'America/Chicago',
-              month: '2-digit'
-            }),
-            10
-          ) - 1;
-
-        // todays year (US Central)
-        const year = parseInt(
-          today.toLocaleString('en-US', {
-            timeZone: 'America/Chicago',
-            year: 'numeric'
-          }),
-          10
-        );
-
+        // After getting the challenges and creating the map, set the initial month info -
+        // Display the calendar of the current US Central day because challenges are released
+        // at midnight US Central - so don't show the local month, show the US Central month
+        const usCentralMonthIndex = getUsCentralMonthIndex(today);
+        const usCentralYear = getUsCentralYear(today);
         const initialMonthInfo = getMonthInfo(
-          monthIndex,
-          year,
+          usCentralMonthIndex,
+          usCentralYear,
           newDailyChallengesMap
         );
-        console.log('initialMonthInfo');
-        console.log(initialMonthInfo);
+
         setMonthInfo(initialMonthInfo);
       } else {
         setError(true);
@@ -186,13 +198,40 @@ function DailyCodingChallengeCalendar({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // const hasOlderChallenges = dailyChallenges.some(
-  //   ch => new Date(ch.date).getMonth() < monthInfo.index
-  // );
+  // Todo: these are hideous - revisit - maybe use date objects as dailyChallengeMap keys
+  const hasOlderChallenges = (
+    map: DailyChallengesMap,
+    monthInfo: MonthInfo
+  ): boolean => {
+    const firstOfMonth = new Date(Date.UTC(monthInfo.year, monthInfo.index, 1));
+    for (const dateStr of map.keys()) {
+      const date = new Date(dateStr);
+      if (date < firstOfMonth) return true;
+    }
+    return false;
+  };
 
-  // const hasNewerChallenges = dailyChallenges.some(
-  //   ch => new Date(ch.date).getMonth() > monthInfo.index
-  // );
+  const hasNewerChallenges = (
+    map: DailyChallengesMap,
+    monthInfo: MonthInfo
+  ): boolean => {
+    const lastOfMonth = new Date(
+      Date.UTC(monthInfo.year, monthInfo.index + 1, 0)
+    );
+    for (const dateStr of map.keys()) {
+      const date = new Date(dateStr);
+      if (date > lastOfMonth) return true;
+    }
+    return false;
+  };
+
+  const showPrevButton = monthInfo
+    ? hasOlderChallenges(dailyChallengesMap, monthInfo)
+    : false;
+
+  const showNextButton = monthInfo
+    ? hasNewerChallenges(dailyChallengesMap, monthInfo)
+    : false;
 
   if (isLoading) return <Loader />;
   if (error || !monthInfo) return <div>ERROR!</div>;
@@ -202,7 +241,7 @@ function DailyCodingChallengeCalendar({
       <div className='calendar-head'>
         <Button
           aria-label={t('aria.previous-month')}
-          // disabled={!hasOlderChallenges}
+          disabled={!showPrevButton}
           onClick={prevMonth}
         >
           &lt;
@@ -213,7 +252,7 @@ function DailyCodingChallengeCalendar({
         </h2>
         <Button
           aria-label={t('aria.next-month')}
-          // disabled={!hasNewerChallenges}
+          disabled={!showNextButton}
           onClick={nextMonth}
         >
           &gt;
