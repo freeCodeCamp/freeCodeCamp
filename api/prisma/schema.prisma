@@ -258,7 +258,7 @@ type EnvConfig {
   /// Duration after exam completion before a retake is allowed in milliseconds
   retakeTimeInMS Int
   /// Passing percent for the exam
-  passingPercent Int
+  passingPercent Float
 }
 
 /// Configuration for a set of questions in the Exam Environment App
@@ -297,14 +297,12 @@ model EnvExamAttempt {
   questionSets  EnvQuestionSetAttempt[]
   /// Time exam was started as milliseconds since epoch
   startTimeInMS Int
-  /// Until an attempt has been graded, this is `null`.
-  /// Once graded, the attempt is marked as needing a retake or not
-  needsRetake   Boolean?
 
   // Relations
-  user          user             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  exam          EnvExam          @relation(fields: [examId], references: [id])
-  generatedExam EnvGeneratedExam @relation(fields: [generatedExamId], references: [id])
+  user           user             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exam           EnvExam          @relation(fields: [examId], references: [id])
+  generatedExam  EnvGeneratedExam @relation(fields: [generatedExamId], references: [id])
+  ExamModeration ExamModeration[]
 }
 
 type EnvQuestionSetAttempt {
@@ -489,4 +487,26 @@ model Survey {
 type SurveyResponse {
   question String
   response String
+}
+
+// ----------------------
+
+model ExamModeration {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  /// Whether or not the iteam is approved
+  approved       Boolean?
+  /// Foreign key to exam attempt
+  examAttemptId  String    @db.ObjectId
+  /// Optional feedback/note about the moderation decision
+  feedback       String?
+  /// Date the exam attempt was moderated
+  moderationDate DateTime?
+  /// Foreign key to moderator. This is `null` until the item is moderated.
+  moderatorId    String?   @db.ObjectId
+
+  /// Date the exam attempt was added to the moderation queue
+  submissionDate DateTime
+
+  // Relations
+  examAttempt EnvExamAttempt @relation(fields: [examAttemptId], references: [id])
 }
