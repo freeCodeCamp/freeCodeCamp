@@ -669,8 +669,6 @@ On the border of the element.
 
 The space outside the element.
 
----
-
 ### --question--
 
 #### --text--
