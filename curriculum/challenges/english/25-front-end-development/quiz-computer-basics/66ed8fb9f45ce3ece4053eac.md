@@ -453,8 +453,6 @@ The Hard Drive (HDD).
 
 The CPU.
 
-# --quizzes--
-
 ## --quiz--
 
 ### --question--
@@ -467,10 +465,6 @@ Which of the following is a basic part of the computer?
 
 The word processer.
 
-#### --answer--
-
-The central processing unit.
-
 ---
 
 The task manager.
@@ -479,6 +473,9 @@ The task manager.
 
 The memory manager.
 
+#### --answer--
+
+The central processing unit.
 
 ### --question--
 
@@ -490,10 +487,6 @@ What is a pointing device for a computer?
 
 A stick for pointing at computers.
 
-#### --answer--
-
-An ergonomic keyword.
-
 ---
 
 A retractable device used in PowerPoint presentations.
@@ -501,6 +494,10 @@ A retractable device used in PowerPoint presentations.
 ---
 
 A laser pointer.
+
+#### --answer--
+
+An ergonomic keyword.
 
 ### --question--
 
@@ -532,12 +529,6 @@ What is a best-practice when naming files for a web application?
 
 #### --distractors--
 
-#### --answer--
-
-Using hyphens instead of spaces.
-
----
-
 Using special characters.
 
 ---
@@ -548,6 +539,9 @@ Using spaces to separate the words.
 
 Using generic words.
 
+#### --answer--
+
+Using hyphens instead of spaces.
 
 ### --question--
 
@@ -585,13 +579,13 @@ What is a common file type for a video file?
 
 .mp3
 
-#### --answer--
-
-.mp4
-
 ---
 
 .wav
+
+#### --answer--
+
+.mp4
 
 ### --question--
 
@@ -609,7 +603,7 @@ Which of the following types is commonly used for image files?
 
 ---
 
-.gef
+.gfi
 
 #### --answer--
 
@@ -625,10 +619,6 @@ MicroSoft Edge is supported by which operating system?
 
 Linux
 
-#### --answer--
-
-Windows
-
 ---
 
 MacOS
@@ -636,6 +626,10 @@ MacOS
 ---
 
 Unix
+
+#### --answer--
+
+Windows
 
 ### --question--
 
@@ -691,10 +685,6 @@ Which of the following is not cloud-based hosting service for repositories?
 
 GitHub
 
-#### --answer--
-
-Gitpod
-
 ---
 
 GitLab
@@ -702,6 +692,10 @@ GitLab
 ---
 
 BitBucket
+
+#### --answer--
+
+Gitpod
 
 ### --question--
 
@@ -717,15 +711,13 @@ A tool for writing.
 
 A tool for testing code.
 
-
-#### --answer--
-
-A tool for storing code.
-
 ---
 
 A tool for debugging code.
 
+#### --answer--
+
+A tool for storing code.
 
 ### --question--
 
@@ -759,10 +751,6 @@ What is the built-in way can you use to search for files on your computer?
 
 Google or Firefox.
 
-#### --answer--
-
-Explorer or Finder.
-
 ---
 
 A search engine.
@@ -770,6 +758,10 @@ A search engine.
 ---
 
 GitHub.
+
+#### --answer--
+
+Explorer or Finder.
 
 ### --question--
 
@@ -779,11 +771,6 @@ What is a common search strategy to search for file types?
 
 #### --distractors--
 
-#### --answer--
-
-`filetype:`
-
----
 `site:`
 
 ---
@@ -793,6 +780,10 @@ What is a common search strategy to search for file types?
 ---
 
 `type:`
+
+#### --answer--
+
+`filetype:`
 
 ### --question--
 
@@ -830,13 +821,13 @@ Google or Bing.
 
 Windows or MacOS.
 
-#### --answer--
-
-Explorer or Finder.
-
 ---
 
 Findex or Firefox.
+
+#### --answer--
+
+Explorer or Finder.
 
 ### --question--
 
@@ -845,12 +836,6 @@ Findex or Firefox.
 What is Git?
 
 #### --distractors--
-
-#### --answer--
-
-A version control system for tracking changes and collaborating with others.
-
----
 
 A centralized storeage location for code repositories.
 
@@ -861,6 +846,10 @@ A tool for adding, updating, and removing libraries and project dependencies.
 ---
 
 A cloud-based hosting service for repositories.
+
+#### --answer--
+
+A version control system for tracking changes and collaborating with others.
 
 ### --question--
 
