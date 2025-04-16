@@ -285,5 +285,4 @@ function DailyCodingChallengeCalendar({
 
 DailyCodingChallengeCalendar.displayName = 'DailyCodingChallengeCalendar';
 
-export default connect(mapStateToProps, null)(DailyCodingChallengeCalendar);
-// export default DailyCodingChallengeCalendar;
+export default connect(mapStateToProps)(DailyCodingChallengeCalendar);
