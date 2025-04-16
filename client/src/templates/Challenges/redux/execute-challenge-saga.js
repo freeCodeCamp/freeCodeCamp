@@ -291,7 +291,8 @@ export function* previewChallengeSaga(action) {
         if (
           challengeData.challengeType === challengeTypes.python ||
           challengeData.challengeType ===
-            challengeTypes.multifilePythonCertProject
+            challengeTypes.multifilePythonCertProject ||
+          challengeData.challengeType === challengeTypes.pyLab
         ) {
           yield updatePython(challengeData);
         } else {
@@ -324,7 +325,8 @@ function* updatePreviewSaga(action) {
   const challengeData = yield select(challengeDataSelector);
   if (
     challengeData.challengeType === challengeTypes.python ||
-    challengeData.challengeType === challengeTypes.multifilePythonCertProject
+    challengeData.challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeData.challengeType === challengeTypes.pyLab
   ) {
     yield updatePython(challengeData);
   } else {
