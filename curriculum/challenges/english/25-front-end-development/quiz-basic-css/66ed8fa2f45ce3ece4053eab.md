@@ -485,16 +485,6 @@ Which of the following has the correct structure of a CSS rule?
 
 #### --distractors--
 
-#### --answer--
-
-```css
-body {
-  font-family: Arial;
-}
-```
-
----
-
 ```css
 body [
   font-family: Arial;
@@ -517,6 +507,16 @@ body {
 }
 ```
 
+---
+
+#### --answer--
+
+```css
+body {
+  font-family: Arial;
+}
+```
+
 ### --question--
 
 #### --text--
@@ -527,17 +527,17 @@ What are default browser styles?
 
 HTML elements that have the same styling properites regardless of the browser.
 
+---
+
+They are mandatory styles that you must use for specific HTML elements.
+
+---
+
+They are the color themes for the various browsers.
+
 #### --answer--
 
 Each HTML element has its own browser style applied to it. 
-
----
-
-Are mandatory styles that you must use for specific HTML elements.
-
----
-
-Are the color themes for the various browsers.
 
 ### --question--
 
@@ -575,13 +575,13 @@ The starting height for an element.
 
 The height for an element.
 
-#### --answer--
-
-The minimum height for an element.
-
 ---
 
 The maximum height for an element.
+
+#### --answer--
+
+The minimum height for an element.
 
 ### --question--
 
@@ -615,10 +615,6 @@ Which selector correctly targets `li` elements for an ordered list?
 
 `li {}`
 
-#### --answer--
-
-`ol li {}`
-
 ---
 
 `ul li {}`
@@ -626,6 +622,10 @@ Which selector correctly targets `li` elements for an ordered list?
 ---
 
 `ol + li {}`
+
+#### --answer--
+
+`ol li {}`
 
 ### --question--
 
@@ -641,13 +641,13 @@ Which selector targets the paragraph elements of a `div` element?
 
 `div, p {}`
 
-#### --answer--
-
-`div p {}`
-
 ---
 
 `p, div {}`
+
+#### --answer--
+
+`div p {}`
 
 ### --question--
 
@@ -656,12 +656,6 @@ Which selector targets the paragraph elements of a `div` element?
 Where does the `margin` apply styling properties?
 
 #### --distractors--
-
-#### --answer--
-
-The space outside the element.
-
----
 
 The space inside element.
 
@@ -672,6 +666,12 @@ Between the content and the border.
 ---
 
 On the border of the element.
+
+#### --answer--
+
+The space outside the element.
+
+---
 
 ### --question--
 
@@ -685,17 +685,15 @@ Between the elements border and the surrounding elements.
 
 ---
 
-#### --answer--
-
-The space inside the element.
-
----
-
 The space outside the element.
 
 ---
 
 On the border of the element.
+
+#### --answer--
+
+The space inside the element.
 
 ### --question--
 
@@ -707,10 +705,6 @@ What statement is FALSE about block-level elements?
 
 They can strectch to fit the width of their container.
 
-#### --answer--
-
-They cannot take up the full width available as they are blocked from doing so.
-
 ---
 
 Common inline elements include `div`, `paragraph`, and `section`.
@@ -719,6 +713,10 @@ Common inline elements include `div`, `paragraph`, and `section`.
 
 Block-level elements start on a new line and take up the full width of their container.
 
+#### --answer--
+
+They cannot take up the full width available as they are blocked from doing so.
+
 ### --question--
 
 #### --text--
@@ -726,12 +724,6 @@ Block-level elements start on a new line and take up the full width of their con
 Which statement is FALSE when using the `inline-block` value?
 
 #### --distractors--
-
-#### --answer--
-
-They do not share properties with inline or block level elements.
-
----
 
 `inline-block` elements behave like inline elements.
 
@@ -742,6 +734,10 @@ They can have `width` and `height` properties.
 ---
 
 Elements retain inline flow but allow setting `width` and `height`.
+
+#### --answer--
+
+They do not share properties with inline or block level elements.
 
 ### --question--
 
@@ -777,17 +773,15 @@ What character precedes a class selector name?
 
 ---
 
-#### --answer--
-
-`.`
-
----
-
 `$`
 
 ---
 
 `*`
+
+#### --answer--
+
+`.`
 
 ### --question--
 
@@ -849,13 +843,11 @@ What is the order for applying the `padding` property when using the shorthand s
 
 ---
 
+`right`, `top`, `left`, `bottom`
+
 #### --answer--
 
 `top`, `right`, `bottom`, `left`
-
----
-
-`right`, `top`, `left`, `bottom`
 
 ### --question--
 
@@ -869,17 +861,15 @@ What is the order for applying the `margin` property when using the shorthand sy
 
 ---
 
-#### --answer--
-
-`top`, `right`, `bottom`, `left`
-
----
-
 `right`, `top`, `left`, `bottom`
 
 ---
 
 `top`, `bottom`, `left`, `right`
+
+#### --answer--
+
+`top`, `right`, `bottom`, `left`
 
 ### --question--
 
@@ -913,10 +903,6 @@ What symbol precedes the ID selector?
 
 `.`
 
-#### --answer--
-
-`#`
-
 ---
 
 `*`
@@ -924,4 +910,8 @@ What symbol precedes the ID selector?
 ---
 
 `$`
+
+#### --answer--
+
+`#`
 
