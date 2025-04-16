@@ -87,7 +87,6 @@ describe('/exam-environment/', () => {
           data: {
             examId,
             generatedExamId: mock.oid(),
-            needsRetake: false,
             startTimeInMS: Date.now(),
             userId: defaultUserId
           }
@@ -119,7 +118,6 @@ describe('/exam-environment/', () => {
           data: {
             examId: mock.examId,
             generatedExamId: mock.oid(),
-            needsRetake: false,
             startTimeInMS: Date.now() - (1000 * 60 * 60 * 2 + 1000),
             userId: defaultUserId
           }
@@ -151,7 +149,6 @@ describe('/exam-environment/', () => {
           data: {
             examId: mock.examId,
             generatedExamId: mock.oid(),
-            needsRetake: false,
             startTimeInMS: Date.now(),
             userId: defaultUserId
           }
@@ -217,8 +214,7 @@ describe('/exam-environment/', () => {
             examId: mock.examId,
             generatedExamId: mock.generatedExam.id,
             startTimeInMS: Date.now(),
-            questionSets: [],
-            needsRetake: false
+            questionSets: []
           }
         });
 
