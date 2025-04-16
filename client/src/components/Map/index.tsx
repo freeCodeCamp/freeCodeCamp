@@ -24,8 +24,6 @@ import {
   currentCertsSelector
 } from '../../redux/selectors';
 
-import { RibbonIcon } from '../../assets/icons/completion-ribbon';
-
 import { CurrentCert, ClaimedCertifications } from '../../redux/prop-types';
 import {
   certSlugTypeMap,
@@ -83,19 +81,10 @@ const mapStateToProps = createSelector(
 function MapLi({
   superBlock,
   landing = false,
-  completed,
-  claimed,
-  showProgressionLines = false,
-  showNumbers = false,
-  index
+  
 }: {
   superBlock: SuperBlocks;
   landing: boolean;
-  completed: boolean;
-  claimed: boolean;
-  showProgressionLines?: boolean;
-  showNumbers?: boolean;
-  index: number;
 }) {
   return (
     <li
@@ -186,9 +175,6 @@ function Map({
                   key={superblock}
                   superBlock={superblock}
                   landing={forLanding}
-                  index={i}
-                  claimed={isClaimed(superblock)}
-                  completed={allSuperblockChallengesCompleted(superblock)}
                 />
               ))}
             </ul>
