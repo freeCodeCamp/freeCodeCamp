@@ -63,8 +63,8 @@ This word means to be grateful for something. It shows thanks for help, support,
     "audio": {
       "filename": "B1_16-2.mp3",
       "startTime": 1,
-      "startTimestamp": 66.06,
-      "finishTimestamp": 69.26
+      "startTimestamp": 65.9,
+      "finishTimestamp": 69.1
     }
   },
   "commands": [
