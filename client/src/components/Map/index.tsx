@@ -102,18 +102,6 @@ function MapLi({
       data-test-label='curriculum-map-button'
       data-playwright-test-label='curriculum-map-button'
     >
-      <div className='progress-icon-wrapper'>
-        <div
-          className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
-        >
-          <RibbonIcon
-            value={index + 1}
-            showNumbers={showNumbers}
-            isCompleted={completed}
-            isClaimed={claimed}
-          />
-        </div>
-      </div>
 
       <ButtonLink
         block
