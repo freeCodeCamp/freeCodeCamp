@@ -269,8 +269,28 @@ async function postExamGeneratedExamHandler(
     : null;
 
   if (lastAttempt) {
-    // Camper may not take the exam again, until the previous attempt is graded
-    if (lastAttempt.needsRetake === null) {
+    // Camper may not take the exam again, until the previous attempt is graded.
+    const maybeMod = await mapErr(
+      this.prisma.examModeration.findFirst({
+        where: {
+          examAttemptId: lastAttempt.id,
+          // Where `approved` is null, meaning it is still pending
+          approved: null
+        }
+      })
+    );
+
+    if (maybeMod.hasError) {
+      logger.error({ moderationError: maybeMod.error });
+      void reply.code(500);
+      return reply.send(
+        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeMod.error))
+      );
+    }
+
+    const moderation = maybeMod.data;
+
+    if (moderation === null) {
       logger.warn(
         { examAttemptId: lastAttempt.id },
         'User has an exam attempt awaiting grading.'
@@ -426,8 +446,7 @@ async function postExamGeneratedExamHandler(
         examId: exam.id,
         generatedExamId: generatedExam.id,
         startTimeInMS: Date.now(),
-        questionSets: [],
-        needsRetake: false
+        questionSets: []
       }
     })
   );
@@ -616,10 +635,7 @@ async function postExamAttemptHandler(
         id: latestAttempt.id
       },
       data: {
-        questionSets: databaseAttemptQuestionSets,
-        // If attempt is not valid, immediately flag attempt as needing retake
-        // TODO: If `needsRetake`, prevent further submissions?
-        needsRetake: maybeValidExamAttempt.hasError ? true : undefined
+        questionSets: databaseAttemptQuestionSets
       }
     })
   );
@@ -839,14 +855,46 @@ async function getExamAttemptsHandler(
       return attempt;
     }
 
+    const maybeMod = await mapErr(
+      this.prisma.examModeration.findFirst({
+        where: {
+          examAttemptId: attempt.id,
+          approved: null
+        }
+      })
+    );
+
+    if (maybeMod.hasError) {
+      logger.error({ error: maybeMod.error });
+      void reply.code(500);
+      return reply.send(
+        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeMod.error))
+      );
+    }
+
+    const moderation = maybeMod.data;
+
+    if (moderation === null) {
+      logger.error(
+        { examAttemptId: attempt.id },
+        'ExamModeration record should exist for expired attempt'
+      );
+      void reply.code(500);
+      return reply.send(
+        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+          'Unable to find relevant result for exam attempt.'
+        )
+      );
+    }
+
     // If attempt is completed, but has not been graded, return without result
-    if (attempt.needsRetake === null) {
+    if (moderation.approved === null) {
       return attempt;
     }
 
-    // If attempt is completed, but has been determined to need a retake, TODO:
-    // - Send reason for retake?
-    if (attempt.needsRetake) {
+    // If attempt is completed, but has been determined to need a retake
+    // TODO: Send moderation.feedback?
+    if (moderation.approved === false) {
       return attempt;
     }
 
