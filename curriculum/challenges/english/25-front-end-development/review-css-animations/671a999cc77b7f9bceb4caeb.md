@@ -7,6 +7,8 @@ dashedName: review-css-animations
 
 # --description--
 
+Description placeholder
+
 ## CSS Animation Basics
 
 - **Definition**: CSS animations allow you to create dynamic, visually engaging effects on web pages without the need for JavaScript or complex programming. They provide a way to smoothly transition elements between different styles over a specified duration.

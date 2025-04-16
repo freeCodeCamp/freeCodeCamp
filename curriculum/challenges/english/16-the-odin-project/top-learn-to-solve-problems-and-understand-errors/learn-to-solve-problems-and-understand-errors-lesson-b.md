@@ -7,6 +7,8 @@ dashedName: learn-to-solve-problems-and-understand-errors-lesson-b
 
 # --description--
 
+Description placeholder
+
 ## Understand the problem
 The first step to solving a problem is understanding exactly what the problem is. If you don’t understand the problem, you won’t know when you’ve successfully solved it and may waste a lot of time on a wrong solution.
 
