@@ -2,7 +2,7 @@
 id: 67e2a513dbffdc8dcf1700af
 title: What Is the useOptimistic Hook, and How Does It Work?
 challengeType: 11
-videoId: rUl0O14lWC0
+videoId: ZmjYqlrU4g0
 dashedName: what-is-the-useoptimistic-hook-and-how-does-it-work
 ---
 
