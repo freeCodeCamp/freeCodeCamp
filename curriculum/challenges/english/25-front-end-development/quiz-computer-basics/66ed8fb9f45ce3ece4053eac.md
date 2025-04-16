@@ -17,439 +17,448 @@ To pass the quiz, you must correctly answer at least 18 of the 20 questions belo
 
 #### --text--
 
-What part of a computer is used to connect the other internal components together?
+Which of the following is a basic part of the computer?
 
 #### --distractors--
 
-Processor
-
----
-
-Graphics Card.
-
----
-
-Memory
+The word processer.
 
 #### --answer--
 
-Motherboard
+The central processing unit.
+
+---
+
+The task manager.
+
+---
+
+The memory manager.
+
 
 ### --question--
 
 #### --text--
 
-What are browser developer tools?
+What is a pointing device for a computer?
 
 #### --distractors--
 
-Tools for editing browser settings and managing user profiles.
-
----
-
-Utilities for blocking ads and improving web page performance.
-
----
-
-Software for managing browser extensions and plug-ins.
+A stick for pointing at computers.
 
 #### --answer--
 
-Built-in features in browsers that help developers debug and inspect websites.
+An ergonomic keyword.
+
+---
+
+A retractable device used in PowerPoint presentations.
+
+---
+
+A laser pointer.
 
 ### --question--
 
 #### --text--
 
-Which of the following ISP connections are typically the fastest?
+What is a type of ISP provider?
 
 #### --distractors--
 
-DSL
+Satellite.
 
 ---
 
-Satellite
+Fiber optic.
 
 ---
 
-Cable
+Dial up.
 
 #### --answer--
 
-Fiber Optic.
+Tier 1.
 
 ### --question--
 
 #### --text--
 
-Which of the following is NOT a safe practice when signing in?
+What is a best-practice when naming files for a web application?
 
 #### --distractors--
 
-Using a fingerprint or face scanner.
-
----
-
-Making a long and complex password like `@ppl3_+B@nana34823`.
-
----
-
-Setting up two-factor authentication (2FA).
-
 #### --answer--
 
-Using passwords based on personal information like your birthday.
+Using hyphens instead of spaces.
+
+---
+
+Using special characters.
+
+---
+
+Using spaces to separate the words.
+
+---
+
+Using generic words.
+
 
 ### --question--
 
 #### --text--
 
-Which of the following is NOT a Web Browser?
+Which of the following is a common file type when working with web applications?
 
 #### --distractors--
 
-Safari
+.xls
 
 ---
 
-Opera
+.aud
 
 ---
 
-Microsoft Edge.
+.doc
 
 #### --answer--
 
-Google Drive.
+.css
 
 ### --question--
 
 #### --text--
 
-When you need to edit a piece of code, which of the following are you most likely going to use?
+What is a common file type for a video file?
 
 #### --distractors--
 
-Node Package Manager.
+.vid
 
 ---
 
-Microsoft Edge.
-
----
-
-Github
+.mp3
 
 #### --answer--
 
-Visual Studio Code.
+.mp4
+
+---
+
+.wav
 
 ### --question--
 
 #### --text--
 
-Which of the following is used primarily for managing files stored on a local hard drive?
+Which of the following types is commonly used for image files?
 
 #### --distractors--
 
-Dropbox
+.pix
 
 ---
 
-Microsoft OneDrive.
+.ppg
 
 ---
 
-Google Drive.
+.gef
 
 #### --answer--
 
-Windows File Explorer.
+.svg
 
 ### --question--
 
 #### --text--
 
-What is NOT a good practice when naming files?
+MicroSoft Edge is supported by which operating system?
 
 #### --distractors--
 
-Putting an underscore or hyphen between words.
-
----
-
-Use a casing style such as camelCase and sticking with it.
-
----
-
-Putting a version number at the end of a document like `summaryReport_v2.docx`.
+Linux
 
 #### --answer--
 
-Using non-descriptive names like `file1.txt`.
+Windows
+
+---
+
+MacOS
+
+---
+
+Unix
 
 ### --question--
 
 #### --text--
 
-What does the term "domain name" refer to?
+What is a search engine?
 
 #### --distractors--
 
-A type of software that manages website files and databases.
+A part of the hard drive of a computer.
 
 ---
 
-The physical location of a web server in a data center.
+Advanced software that is only used by academic researchers.
 
 ---
 
-None of the other choices.
+A component search engine.
 
 #### --answer--
 
-The address used to identify websites on the internet.
+A web based tool for searching information on the internet.
 
 ### --question--
 
 #### --text--
 
-Which of the following is a way to send a file to the Recycle Bin/Trash?
+Which of the following is not a type of browser?
 
 #### --distractors--
 
-All of the other choices.
+Chrome
 
 ---
 
-Pressing the `Backspace` key on the keyboard.
+Mozilla Firefox
 
 ---
 
-Moving it to an Archived folder.
+MicroSoft Edge
 
 #### --answer--
 
-Right-click on it and select the Delete/Move to trash option.
+Google
 
 ### --question--
 
 #### --text--
 
-What is a RAM?
+Which of the following is not cloud-based hosting service for repositories?
 
 #### --distractors--
 
-A network protocol used for transferring files between devices.
-
----
-
-A permanent storage device used for saving files and applications.
-
----
-
-A component in a computer responsible for generating graphics and rendering images.
+GitHub
 
 #### --answer--
 
-A temporary memory for fast data access by the processor.
+Gitpod
+
+---
+
+GitLab
+
+---
+
+BitBucket
 
 ### --question--
 
 #### --text--
 
-What file type will be best suited for writing a `README` file?
+Which of the following is not primarily a part of an integrated development environment?
 
 #### --distractors--
 
-`.php`
+A tool for writing.
 
 ---
 
-`.html`
+A tool for testing code.
 
----
-
-`.json`
 
 #### --answer--
 
-`.md`
+A tool for storing code.
+
+---
+
+A tool for debugging code.
+
 
 ### --question--
 
 #### --text--
 
-What is an Integrated Development Environment (IDE)?
+What is a best practice for naming files?
 
 #### --distractors--
 
-A platform designed for deploying and hosting web applications.
+Creating a script that uses the same file names for all your projects.
 
 ---
 
-A type of hardware device used for testing and debugging electronic circuits.
+Naming the main file with the same name as the folder it is in.
 
 ---
 
-A version control system that helps developers track changes in source code during software development.
+Using a unique sequence of numbers at the end of the file name.
 
 #### --answer--
 
-A program that integrates tools for writing, debugging, and running code.
+Using a descriptive name for each file.
 
 ### --question--
 
 #### --text--
 
-What is a piece of software that allows you to look at online content called?
+What is the built-in way can you use to search for files on your computer?
 
 #### --distractors--
 
-Internet Content Displayer.
-
----
-
-Search Engine.
-
----
-
-Website
+Google or Firefox.
 
 #### --answer--
 
-Web Browser.
+Explorer or Finder.
+
+---
+
+A search engine.
+
+---
+
+GitHub.
 
 ### --question--
 
 #### --text--
 
-What is a piece of software that lists web pages related to a user's query called?
+What is a common search strategy to search for file types?
 
 #### --distractors--
 
-Page Finder.
-
----
-
-Web Browser.
-
----
-
-Website
-
 #### --answer--
 
-Search Engine.
+`filetype:`
+
+---
+`site:`
+
+---
+
+`typeof:`
+
+---
+
+`type:`
 
 ### --question--
 
 #### --text--
 
-What is a set of one or more web pages under one domain name called?
+Which of the following is not a common web browser?
 
 #### --distractors--
 
-Web Browser.
+Google
 
 ---
 
-Hyperlink
+Yahoo
 
 ---
 
-Search Engine.
+Bing
 
 #### --answer--
 
-Website
+Chrome
 
 ### --question--
 
 #### --text--
 
-To search for an exact phrase, what should you enclose your search query with?
+Which file managers can you use to create, move, and delete files?
 
 #### --distractors--
 
-Backticks
+Google or Bing.
 
 ---
 
-Parentheses
-
----
-
-Brackets
+Windows or MacOS.
 
 #### --answer--
 
-Quotation marks.
+Explorer or Finder.
+
+---
+
+Findex or Firefox.
 
 ### --question--
 
 #### --text--
 
-Which is NOT a way to install a Web Browser?
+What is Git?
 
 #### --distractors--
 
-Using a Package Manager.
-
----
-
-Directly downloading from the website.
-
----
-
-Using an App Store like Microsoft Store.
-
 #### --answer--
 
-Pressing the Network/Internet button in Settings.
+A version control system for tracking changes and collaborating with others.
+
+---
+
+A centralized storeage location for code repositories.
+
+---
+
+A tool for adding, updating, and removing libraries and project dependencies.
+
+---
+
+A cloud-based hosting service for repositories.
 
 ### --question--
 
 #### --text--
 
-Which of the following formats does NOT preserve image quality after compression?
+What is random access memory?
 
 #### --distractors--
 
-All of the other choices.
+A permanent storeage location that is used to store data.
 
 ---
 
-PNG
+A volatile way to access data in a sequential manner.
 
 ---
 
-SVG
+A processor used for generating passwords.
 
 #### --answer--
 
-JPEG
+A temporary storeage location for the computer's central processing unit.
 
 ### --question--
 
 #### --text--
 
-Which of the following parts is located in a socket on the motherboard?
+What is a file format that is used to compress files?
 
 #### --distractors--
 
-The Router.
+`TTF`
 
 ---
 
-The Keyboard.
+`MOV`
 
 ---
 
-The Hard Drive (HDD).
+`ZAP`
 
 #### --answer--
 
-The CPU.
+`ZIP`
 
