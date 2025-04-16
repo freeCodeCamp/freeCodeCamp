@@ -24,19 +24,12 @@ import {
   currentCertsSelector
 } from '../../redux/selectors';
 
-import { CurrentCert, ClaimedCertifications } from '../../redux/prop-types';
-import {
-  certSlugTypeMap,
-  superBlockCertTypeMap
-} from '../../../../shared/config/certification-settings';
+import { ClaimedCertifications } from '../../redux/prop-types';
 import { completedChallengesIdsSelector } from '../../templates/Challenges/redux/selectors';
 
 interface MapProps {
   forLanding?: boolean;
-  isSignedIn: boolean;
-  currentCerts: CurrentCert[];
   claimedCertifications?: ClaimedCertifications;
-  completedChallengeIds: string[];
 }
 
 interface Data {
@@ -71,11 +64,6 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   currentCertsSelector,
   completedChallengesIdsSelector,
-  (isSignedIn: boolean, currentCerts, completedChallengeIds: string[]) => ({
-    isSignedIn,
-    currentCerts,
-    completedChallengeIds
-  })
 );
 
 function MapLi({
@@ -110,9 +98,6 @@ function MapLi({
 
 function Map({
   forLanding = false,
-  isSignedIn,
-  currentCerts,
-  completedChallengeIds
 }: MapProps): React.ReactElement {
   const { t } = useTranslation();
   const {
@@ -129,8 +114,6 @@ function Map({
       }
     }
   `);
-
-  const allChallenges = challengeNodes.map(node => node.challenge);
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
