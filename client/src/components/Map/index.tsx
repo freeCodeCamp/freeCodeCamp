@@ -5,6 +5,7 @@ import { Spacer } from '@freecodecamp/ui';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 import { graphql, useStaticQuery } from 'gatsby';
+import { useFeature } from '@growthbook/growthbook-react';
 
 import {
   type SuperBlocks,
@@ -180,6 +181,8 @@ function Map({
       : false;
   };
 
+  const showDailyCodingChallenges = useFeature('daily-coding-challenges').on;
+
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
       {getStageOrder({
@@ -193,8 +196,8 @@ function Map({
         return (
           <>
             {
-              /*Show the daily coding challenge above the core curriculum */
-              stage === SuperBlockStage.Extra && (
+              /*Show the daily coding challenge before the "extra" curriculum */
+              showDailyCodingChallenges && stage === SuperBlockStage.Extra && (
                 <>
                   <DailyCodingChallengeWidget forLanding={forLanding} />
                   <Spacer size='m' />
