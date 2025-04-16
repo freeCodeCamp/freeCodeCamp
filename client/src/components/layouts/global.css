@@ -221,15 +221,10 @@ p {
 a {
   color: inherit;
   text-decoration: underline;
-  /* This is required in order to improve text readability in Arabic */
-  text-underline-position: under;
+  
 }
 
-@supports not (text-underline-position: under) {
-  a {
-    text-underline-offset: 1em;
-  }
-}
+
 
 a:hover,
 a:focus {
