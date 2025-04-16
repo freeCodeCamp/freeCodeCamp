@@ -66,22 +66,23 @@ jobs:
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          hostname: gha-${{needs.static.outputs.environment}}-api-ci-${{ github.run_id }}
           tags: tag:ci
           version: latest
 
-      - name: Configure SSH
-        # This is a workaround to avoid the SSH warning about known hosts & strict host key checking.
-        # It's not a problem for us, because we're using Tailscale to connect.
+      - name: Configure SSH & Check Connection
         run: |
           mkdir -p ~/.ssh
           echo "Host *
             UserKnownHostsFile=/dev/null
             StrictHostKeyChecking no" > ~/.ssh/config
-
-      - name: Check connection
-        run: |
+          chmod 644 ~/.ssh/config
+          sleep 10
           tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Error: Machine not found"; exit 1; }
-          ssh $TS_USERNAME@$TS_MACHINE_NAME "uptime"
+          sleep 1
+          MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
+          echo -e "\nLOG:Checking connection to $TS_MACHINE_NAME..."
+          ssh $TS_USERNAME@$MACHINE_IP "uptime"
 
       - name: Deploy with Docker Stack
         env:
@@ -93,36 +94,39 @@ jobs:
           DEPLOYMENT_VERSION: ${{ needs.build.outputs.tagname }}
           FCC_API_LOG_LEVEL: ${{ needs.static.outputs.fcc_api_log_level }}
         run: |
-          ssh $TS_USERNAME@$TS_MACHINE_NAME /bin/bash << EOF
-            set -e
-            cd /home/${TS_USERNAME}/docker-swarm-config/stacks/api || { echo "Error: Failed to change directory"; exit 1; }
-            which age > /dev/null || { echo "Error: age not installed"; exit 1; }
+          REMOTE_SCRIPT="
+          set -e
+          echo -e '\nLOG:Deploying API to \$TS_MACHINE_NAME...'
+          cd /home/\${TS_USERNAME}/docker-swarm-config/stacks/api || { echo \"Error: Failed to change directory\"; exit 1; }
+          which age > /dev/null || { echo \"Error: age not installed\"; exit 1; }
 
-            # Decrypt secrets
-            echo "${AGE_ENCRYPTED_ASC_SECRETS}" > secrets.age.asc
-            echo "${AGE_SECRET_KEY}" > age.key && chmod 600 age.key
-            age --identity age.key --decrypt secrets.age.asc > .env
-            rm -f age.key secrets.age.asc
+          echo -e '\nLOG:Decrypting secrets...'
+          echo \"\${AGE_ENCRYPTED_ASC_SECRETS}\" > secrets.age.asc
+          echo \"\${AGE_SECRET_KEY}\" > age.key && chmod 600 age.key
+          age --identity age.key --decrypt secrets.age.asc > .env
+          rm -f age.key secrets.age.asc
 
-            # Add deployment variables
-            {
-              echo "DEPLOYMENT_VERSION=${DEPLOYMENT_VERSION}"
-              echo "FCC_API_LOG_LEVEL=${FCC_API_LOG_LEVEL}"
-            } >> .env
+          echo -e '\nLOG:Adding deployment variables...'
+          {
+            echo \"DEPLOYMENT_VERSION=\${DEPLOYMENT_VERSION}\"
+            echo \"FCC_API_LOG_LEVEL=\${FCC_API_LOG_LEVEL}\"
+          } >> .env
 
-            # Export environment variables with proper escaping
-            while IFS='=' read -r key value; do
-              if [[ -n \$key && ! \$key =~ ^# ]]; then
-                export "\${key}=\${value}"
-              fi
-            done < .env
-            rm -f .env
+          echo -e '\nLOG:Exporting environment variables...'
+          while IFS='=' read -r key value; do
+            if [[ -n \$key && ! \$key =~ ^# ]]; then
+              export \"\${key}=\${value}\"
+            fi
+          done < .env
+          rm -f .env
 
-            # Validate environment and config
-            env | grep -E 'DOMAIN|DEPLOYMENT' || { echo "Error: Required environment variables not found"; exit 1; }
-            docker stack config -c stack-api.yml > /dev/null || { echo "Error: Invalid stack configuration"; exit 1; }
+          echo -e '\nLOG:Validating environment and config...'
+          env | grep -E 'DOMAIN|DEPLOYMENT' || { echo \"Error: Required environment variables not found\"; exit 1; }
+          docker stack config -c stack-api.yml > /dev/null || { echo \"Error: Invalid stack configuration\"; exit 1; }
 
-            # Deploy
-            docker stack deploy -c stack-api.yml --prune --with-registry-auth --detach=false ${STACK_NAME}
-          EOF
-        shell: bash
+          echo -e '\nLOG:Deploying stack...'
+          docker stack deploy -c stack-api.yml --prune --with-registry-auth --detach=false \${STACK_NAME}
+          echo -e '\nLOG:Finished deployment.'
+          "
+          MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
+          ssh $TS_USERNAME@$MACHINE_IP "$REMOTE_SCRIPT"

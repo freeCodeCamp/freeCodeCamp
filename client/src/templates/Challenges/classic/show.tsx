@@ -172,7 +172,8 @@ const StepPreview = ({
   dimensions?: { width: number; height: number };
 }) => {
   return challengeType === challengeTypes.python ||
-    challengeType === challengeTypes.multifilePythonCertProject ? (
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ? (
     <XtermTerminal dimensions={dimensions} xtermFitRef={xtermFitRef} />
   ) : (
     <Preview disableIframe={disableIframe} previewMounted={previewMounted} />

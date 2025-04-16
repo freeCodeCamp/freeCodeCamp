@@ -456,9 +456,6 @@
     "sign-in-see-benefits": "Sign in to see your supporter benefits",
     "card-has-been-updated": "Your card has been updated successfully.",
     "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "Uthibitishaji wa {{title}}"
-    },
     "editor-tabs": {
       "code": "Code",
       "tests": "Majaribio",
