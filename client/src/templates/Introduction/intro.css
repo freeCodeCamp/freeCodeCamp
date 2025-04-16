@@ -24,6 +24,7 @@
   border: 1px solid;
   position: relative;
   top: 1px;
+  word-break: keep-all;
 }
 
 .block-header:hover .block-label {

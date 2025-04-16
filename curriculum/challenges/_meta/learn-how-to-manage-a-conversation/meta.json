@@ -1,13 +1,561 @@
 {
   "name": "Learn How to Manage a Conversation",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "learn-how-to-manage-a-conversation",
   "order": 14,
   "superBlock": "b1-english-for-developers",
   "challengeOrder": [
     {
       "id": "6660a0f4dbf5a3622399100f",
-      "title": "Dialogue 1: I'm Tom"
+      "title": "Dialogue 1: Picking Up Where We Left Off"
+    },
+    {
+      "id": "67dbf936fe4d33ccbccae40d",
+      "title": "Task 1"
+    },
+    {
+      "id": "67dbfd3346ec99ded52e2d15",
+      "title": "Task 2"
+    },
+    {
+      "id": "67dc0004be58caef2150467e",
+      "title": "Task 3"
+    },
+    {
+      "id": "67dc021123da31f91ff58fea",
+      "title": "Task 4"
+    },
+    {
+      "id": "67dc25f45232bd1af20fe096",
+      "title": "Task 5"
+    },
+    {
+      "id": "67dc279f51b8ee20ea185670",
+      "title": "Task 6"
+    },
+    {
+      "id": "67dc3e08edb3923cf86151ec",
+      "title": "Task 7"
+    },
+    {
+      "id": "67dc416984ff73491eddc9cf",
+      "title": "Task 8"
+    },
+    {
+      "id": "67dc436ea4534555e57a1a48",
+      "title": "Task 9"
+    },
+    {
+      "id": "67dc46e8e4176062fe8c3fd5",
+      "title": "Task 10"
+    },
+    {
+      "id": "67dc4940ceb4d375fc43eaf4",
+      "title": "Task 11"
+    },
+    {
+      "id": "67dc4a9c9f028d7ce4142490",
+      "title": "Task 12"
+    },
+    {
+      "id": "67dc4d1e8f82ed89989c861a",
+      "title": "Task 13"
+    },
+    {
+      "id": "67dd5951a9a3e2bedeb82277",
+      "title": "Task 14"
+    },
+    {
+      "id": "67dd5baa84d2fcc56c09dce3",
+      "title": "Task 15"
+    },
+    {
+      "id": "67dd5cfeacc0cad2fc967438",
+      "title": "Task 16"
+    },
+    {
+      "id": "67dd5dacf47e8ed984dc90da",
+      "title": "Task 17"
+    },
+    {
+      "id": "67dd64fb0e99d1e475cd1931",
+      "title": "Task 18"
+    },
+    {
+      "id": "67dd6e931a972af9da77367e",
+      "title": "Task 19"
+    },
+    {
+      "id": "67dd70e55261f400f601c98a",
+      "title": "Task 20"
+    },
+    {
+      "id": "67dd72f2592a6e0bc85f183e",
+      "title": "Task 21"
+    },
+    {
+      "id": "67dd9df075882b30da414a84",
+      "title": "Task 22"
+    },
+    {
+      "id": "67dd9f9a764e7f37dc99ff96",
+      "title": "Task 23"
+    },
+    {
+      "id": "67dda19b702802496281a71b",
+      "title": "Task 24"
+    },
+    {
+      "id": "67dda2cc03d1d84fe6ba100e",
+      "title": "Task 25"
+    },
+    {
+      "id": "67dda83ac556375e60af6498",
+      "title": "Task 26"
+    },
+    {
+      "id": "67dda9b261401c6aec85c995",
+      "title": "Task 27"
+    },
+    {
+      "id": "67ddaa99f47b4c73b567dbe3",
+      "title": "Task 28"
+    },
+    {
+      "id": "67ddac19ef12617aaa4fa43c",
+      "title": "Task 29"
+    },
+    {
+      "id": "67ddadb130f0638355bc27c4",
+      "title": "Task 30"
+    },
+    {
+      "id": "67ddafcebec26b8e5f46745b",
+      "title": "Task 31"
+    },
+    {
+      "id": "67ddb0b9b04b5097971a98a1",
+      "title": "Task 32"
+    },
+    {
+      "id": "67ddb23caaa58aa09eabf0f8",
+      "title": "Task 33"
+    },
+    {
+      "id": "67ddb3840aaf24a915673347",
+      "title": "Task 34"
+    },
+    {
+      "id": "67ddb52406deb7b0a777092e",
+      "title": "Task 35"
+    },
+    {
+      "id": "67ddb67d2bbf41bb5dce0fb3",
+      "title": "Task 36"
+    },
+    {
+      "id": "67e45ee5759fda650dc876a4",
+      "title": "Task 37"
+    },
+    {
+      "id": "67e469c310a147753ece963e",
+      "title": "Task 38"
+    },
+    {
+      "id": "67e46c53c43ce77a64dcb082",
+      "title": "Task 39"
+    },
+    {
+      "id": "67e4701b6a2fb47ebbbfb367",
+      "title": "Task 40"
+    },
+    {
+      "id": "67e47133ee516081ccf6cf25",
+      "title": "Task 41"
+    },
+    {
+      "id": "67e472949311bf84fb9459f5",
+      "title": "Task 42"
+    },
+    {
+      "id": "67e474419713d2883a29a16d",
+      "title": "Task 43"
+    },
+    {
+      "id": "67e479963d8dd4ac75c664d6",
+      "title": "Dialogue 2: Polite Interruption in a Meeting"
+    },
+    {
+      "id": "67e5441c29f3feeb88b1540e",
+      "title": "Task 44"
+    },
+    {
+      "id": "67e5459bbb3efef7325bf4b7",
+      "title": "Task 45"
+    },
+    {
+      "id": "67e54f0a96a19e0766aab848",
+      "title": "Task 46"
+    },
+    {
+      "id": "67e5503e70fdc30ca9186bcc",
+      "title": "Task 47"
+    },
+    {
+      "id": "67e5a26a0833643ed7c41759",
+      "title": "Task 48"
+    },
+    {
+      "id": "67e5a3f3f13b7249ee723f6f",
+      "title": "Task 49"
+    },
+    {
+      "id": "67e5a4b4451ddb5315a98808",
+      "title": "Task 50"
+    },
+    {
+      "id": "67e5a6e34bfc4b5af2c00ddf",
+      "title": "Task 51"
+    },
+    {
+      "id": "67e5a811b3b677627a84bdd4",
+      "title": "Task 52"
+    },
+    {
+      "id": "67e5ac4aea3cc56e781add80",
+      "title": "Task 53"
+    },
+    {
+      "id": "67e5adf73503787db1e011ad",
+      "title": "Task 54"
+    },
+    {
+      "id": "67e5af7bf56f7084c6af2827",
+      "title": "Task 55"
+    },
+    {
+      "id": "67e5b0b540e0ee8bdad66db1",
+      "title": "Task 56"
+    },
+    {
+      "id": "67e5b22aaf9f129649be3fd9",
+      "title": "Task 57"
+    },
+    {
+      "id": "67e5b4bd96d282a131af619c",
+      "title": "Task 58"
+    },
+    {
+      "id": "67e5b72ba8889aabf3f40b38",
+      "title": "Task 59"
+    },
+    {
+      "id": "67e68dcefa1d83e0757350df",
+      "title": "Task 60"
+    },
+    {
+      "id": "67e68f7c06a010e777bb2230",
+      "title": "Task 61"
+    },
+    {
+      "id": "67e692985d0f84f0197ad4f1",
+      "title": "Task 62"
+    },
+    {
+      "id": "67e6942c40729ff7b9afe3b8",
+      "title": "Task 63"
+    },
+    {
+      "id": "67e695e0c3759e0240a976ef",
+      "title": "Task 64"
+    },
+    {
+      "id": "67e6973adef9de093aac193d",
+      "title": "Task 65"
+    },
+    {
+      "id": "67e698b3f1611a15a0b3af3a",
+      "title": "Task 66"
+    },
+    {
+      "id": "67e69ab793f4191da2f3b5b3",
+      "title": "Task 67"
+    },
+    {
+      "id": "67e69c2de203d22755cc3992",
+      "title": "Task 68"
+    },
+    {
+      "id": "67e69d7c2cff0b2f6f4f7ed0",
+      "title": "Task 69"
+    },
+    {
+      "id": "67e69dec285d40321407b061",
+      "title": "Task 70"
+    },
+    {
+      "id": "67e6a0742481f03cdd8485c3",
+      "title": "Task 71"
+    },
+    {
+      "id": "67e6a1f8a8aad8476778de1e",
+      "title": "Task 72"
+    },
+    {
+      "id": "67e6a61622be1f5310dc6094",
+      "title": "Task 73"
+    },
+    {
+      "id": "67e6a7a9095023622817e273",
+      "title": "Task 74"
+    },
+    {
+      "id": "67e6a8ecaee3ff6cec47cc3e",
+      "title": "Task 75"
+    },
+    {
+      "id": "67e6b1c1e15b627c36ff49d4",
+      "title": "Task 76"
+    },
+    {
+      "id": "67e6b34caf9d31888afa9ef7",
+      "title": "Task 77"
+    },
+    {
+      "id": "67e6b4beb319cf919a08aa9e",
+      "title": "Task 78"
+    },
+    {
+      "id": "67e6b72ff282fea17987003a",
+      "title": "Task 79"
+    },
+    {
+      "id": "67e6ba0d39464da908fa56d4",
+      "title": "Task 80"
+    },
+    {
+      "id": "67e6bda8c8b0fab34a908d9a",
+      "title": "Task 81"
+    },
+    {
+      "id": "67e6d4dd3b7203c7e6791f96",
+      "title": "Task 82"
+    },
+    {
+      "id": "67e6d5e32ac1afc8a326bf73",
+      "title": "Task 83"
+    },
+    {
+      "id": "67e6d7b750d7adc99809aea3",
+      "title": "Task 84"
+    },
+    {
+      "id": "67e6d910d7419dca4ec1edda",
+      "title": "Task 85"
+    },
+    {
+      "id": "67e6d9c1c460d9cb00f55aa3",
+      "title": "Task 86"
+    },
+    {
+      "id": "67e6dcf3540042e4cd10d53a",
+      "title": "Dialogue 3: Project Check-In"
+    },
+    {
+      "id": "67efd0273ee551f00c0b207e",
+      "title": "Task 87"
+    },
+    {
+      "id": "67efd29049008202fce3bfa2",
+      "title": "Task 88"
+    },
+    {
+      "id": "67efd4d6475fc50a9820b4b0",
+      "title": "Task 89"
+    },
+    {
+      "id": "67efd657030da4165db66feb",
+      "title": "Task 90"
+    },
+    {
+      "id": "67efd8debbd3992137adbf7f",
+      "title": "Task 91"
+    },
+    {
+      "id": "67efdb0dc341442c33e43a28",
+      "title": "Task 92"
+    },
+    {
+      "id": "67efdc5676b9613535b4dee4",
+      "title": "Task 93"
+    },
+    {
+      "id": "67efdddc6864ca3f5f3a5316",
+      "title": "Task 94"
+    },
+    {
+      "id": "67efdf7f0c0be147dd8f70a7",
+      "title": "Task 95"
+    },
+    {
+      "id": "67efe27a1ed40f53c48f51d3",
+      "title": "Task 96"
+    },
+    {
+      "id": "67f01c72814eaa8435d1e73c",
+      "title": "Task 97"
+    },
+    {
+      "id": "67f01ddbfa71588ff75f2e9f",
+      "title": "Task 98"
+    },
+    {
+      "id": "67f01f94ced2089a46a29382",
+      "title": "Task 99"
+    },
+    {
+      "id": "67f01fed3d9b359efd8e9c04",
+      "title": "Task 100"
+    },
+    {
+      "id": "67f04b61b3261cc69dad85aa",
+      "title": "Task 101"
+    },
+    {
+      "id": "67f04d8809c711d962f42c6c",
+      "title": "Task 102"
+    },
+    {
+      "id": "67f04ef2be95eedffb5bde99",
+      "title": "Task 103"
+    },
+    {
+      "id": "67f050b1d9c576ebc823935f",
+      "title": "Task 104"
+    },
+    {
+      "id": "67f0524c149e9af2c7e31023",
+      "title": "Task 105"
+    },
+    {
+      "id": "67f053825cc6aefaf23cdc43",
+      "title": "Task 106"
+    },
+    {
+      "id": "67f05488fffeea03ab7d6e3f",
+      "title": "Task 107"
+    },
+    {
+      "id": "67f0557e02670c0d7a2adeea",
+      "title": "Task 108"
+    },
+    {
+      "id": "67f057210790871622c2efa6",
+      "title": "Task 109"
+    },
+    {
+      "id": "67f0587c52866a215c89bd49",
+      "title": "Task 110"
+    },
+    {
+      "id": "67f059995db3542c1cc3c0e4",
+      "title": "Task 111"
+    },
+    {
+      "id": "67f05b27e13f3333efd9167c",
+      "title": "Task 112"
+    },
+    {
+      "id": "67f05cff99a15c3cbc4ac757",
+      "title": "Task 113"
+    },
+    {
+      "id": "67f05ee04d837448b8e4b94f",
+      "title": "Task 114"
+    },
+    {
+      "id": "67f05fb065755b527282d7a7",
+      "title": "Task 115"
+    },
+    {
+      "id": "67f06151744ee95acd3440e3",
+      "title": "Task 116"
+    },
+    {
+      "id": "67f064bc6fa5b96576f183b8",
+      "title": "Task 117"
+    },
+    {
+      "id": "67f0662f8bb126744ddfc1a9",
+      "title": "Task 118"
+    },
+    {
+      "id": "67f067c0ed09447c5b0e29db",
+      "title": "Task 119"
+    },
+    {
+      "id": "67f068d2aae59184cfd6b110",
+      "title": "Task 120"
+    },
+    {
+      "id": "67f069b4d8dce18b274f3b85",
+      "title": "Task 121"
+    },
+    {
+      "id": "67f06abc2ba331930342d05b",
+      "title": "Task 122"
+    },
+    {
+      "id": "67f06c7f408cdea4694364f7",
+      "title": "Task 123"
+    },
+    {
+      "id": "67f06dd4633a5cab7dfb721a",
+      "title": "Task 124"
+    },
+    {
+      "id": "67f06f73454112b328ef4c0f",
+      "title": "Task 125"
+    },
+    {
+      "id": "67f0707288a2f8bce35cadff",
+      "title": "Task 126"
+    },
+    {
+      "id": "67f072c8523542c8520ef17b",
+      "title": "Task 127"
+    },
+    {
+      "id": "67f0736bc7eb04cd0dba4797",
+      "title": "Task 128"
+    },
+    {
+      "id": "67f07ce017b549e3cec9a3a0",
+      "title": "Task 129"
+    },
+    {
+      "id": "67f07fdfe8c5aaef48d3d35a",
+      "title": "Task 130"
+    },
+    {
+      "id": "67f0826fb7a07af670160920",
+      "title": "Task 131"
+    },
+    {
+      "id": "67f08338121a6bf9e146c09f",
+      "title": "Task 132"
+    },
+    {
+      "id": "67f084046cd9590070165296",
+      "title": "Task 133"
+    },
+    {
+      "id": "67f08553782e8a05bcd28688",
+      "title": "Task 134"
+    },
+    {
+      "id": "67f08695d50ac80965dcb3a4",
+      "title": "Task 135"
     }
   ],
   "helpCategory": "English",

@@ -10,13 +10,13 @@ on:
   pull_request:
     branches:
       - 'main'
-      - 'next-**'
+      - 'temp-**' # Temporary branches allowed on Upstream
   # Run on Merge Queue
   merge_group:
     types: [checks_requested]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
   cancel-in-progress: true
 
 permissions:

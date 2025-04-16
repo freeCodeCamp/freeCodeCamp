@@ -14,7 +14,10 @@ import {
   takeLatest
 } from 'redux-saga/effects';
 
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import {
+  canSaveToDB,
+  challengeTypes
+} from '../../../../../shared/config/challenge-types';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
@@ -70,11 +73,8 @@ function* executeCancellableChallengeSaga(payload) {
   const { challengeType, id } = yield select(challengeMetaSelector);
   const { challengeFiles } = yield select(challengeDataSelector);
 
-  // if multifileCertProject, see if body/code size is submittable
-  if (
-    challengeType === challengeTypes.multifileCertProject ||
-    challengeType === challengeTypes.multifilePythonCertProject
-  ) {
+  // if canSaveToDB, see if body/code size is submittable
+  if (canSaveToDB(challengeType)) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 
