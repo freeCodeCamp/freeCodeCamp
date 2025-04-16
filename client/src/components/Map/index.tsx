@@ -131,28 +131,6 @@ function Map({
   `);
 
   const allChallenges = challengeNodes.map(node => node.challenge);
-  const allSuperblockChallengesCompleted = (superblock: SuperBlocks) => {
-    // array of all challenge ID's in the superblock
-    const allSuperblockChallenges = allChallenges
-      .filter(challenge => challenge.superBlock === superblock)
-      .map(challenge => challenge.id);
-
-    return allSuperblockChallenges.every(id =>
-      completedChallengeIds.includes(id)
-    );
-  };
-
-  const isClaimed = (stage: SuperBlocks) => {
-    return isSignedIn
-      ? Boolean(
-          currentCerts?.find(
-            (cert: { certSlug: string }) =>
-              (certSlugTypeMap as { [key: string]: string })[cert.certSlug] ===
-              (superBlockCertTypeMap as { [key: string]: string })[stage]
-          )?.show
-        )
-      : false;
-  };
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
@@ -170,7 +148,7 @@ function Map({
               {t(superBlockHeadings[stage])}
             </h2>
             <ul key={stage}>
-              {superblocks.map((superblock, i) => (
+              {superblocks.map((superblock) => (
                 <MapLi
                   key={superblock}
                   superBlock={superblock}
