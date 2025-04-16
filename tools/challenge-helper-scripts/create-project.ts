@@ -42,6 +42,9 @@ interface CreateProjectArgs {
   blockLayout?: string;
   questionCount?: number;
   order?: number;
+  chapter?: string;
+  position?: number;
+  module?: string;
   title?: string;
 }
 
@@ -53,6 +56,9 @@ async function createProject(
   blockLayout?: string,
   questionCount?: number,
   order?: number,
+  chapter?: string,
+  module?: string,
+  position?: number,
   title?: string
 ) {
   if (blockType === BlockTypes.quiz) {
@@ -79,6 +85,37 @@ async function createProject(
   );
   // TODO: remove once we stop relying on markdown in the client.
   void createIntroMD(superBlock, block, title);
+
+  void updateFullStackJson(chapter!,module!, block, position!);
+}
+
+async function updateFullStackJson(chapterName: string, module: string, block: string, position: number) {
+  const fullStackData = JSON.parse("../curriculum/superblock-structure/full-stack.json");
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  let chapterExists = fullStackData["chapters"].findIndex((chapter) => chapter.dashedName === chapterName) !== -1;
+  if (!chapterExists) {
+    // Inserts the chapter, module and block if the chapter is missing
+    let newChapter = { dashedName: chapterName, modules: [{ dashedName: module, blocks: [{ dashedName: block }] }] };
+    fullStackData['chapters'].push(newChapter);
+  }
+  else {
+    // Chapter is present; is module present
+    // Get the index of the correct chapter
+    const chapterIndex = fullStackData["chapters"].findIndex((chapter) => chapter.dashedName === chapterName);
+    let moduleExists = fullStackData['chapters'][chapterIndex]["modules"].findIndex((module) => module.dashedName === module) !== -1;
+
+    if (!moduleExists) {
+      // Insert the new module and block
+      fullStackData['chapters'][chapterIndex]['modules'].append([{ dashedName: module, blocks: [{ dashedName: block }] }])
+    }
+    else {
+      fullStackData['chapters'][chapterIndex].modules.blocks.splice(position - 1, 0, { dashedName: block })
+      // Insert the new block into the already present module
+    }
+    // Write the new changes to the file
+    const newData = JSON.stringify(fullStackData);
+    await fs.writeFile('../curriculum/superblock-structure/full-stack.json', newData);
+  }
 }
 
 async function updateIntroJson(
@@ -211,6 +248,8 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
+
+
 void prompt([
   {
     name: 'superBlock',
@@ -266,6 +305,40 @@ void prompt([
     when: answers => answers.blockType === BlockTypes.quiz
   },
   {
+    name: 'chapter',
+    message: 'What chapter should this full stack project go in?',
+    validate: validateBlockName,
+    filter: (chapter: string) => {
+      return chapter.toLowerCase().trim();
+    },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper
+  },
+  {
+    name: 'module',
+    message: 'What module should this full stack project go in?',
+    filter: (module: string) => {
+      return module.toLowerCase().trim();
+    },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper
+  },
+  {
+    name: 'position',
+    message: 'Which position does this appear in the module?',
+    default: 5,
+    validate: (order: string) => {
+      return parseInt(order, 10) > 0
+        ? true
+        : 'Order must be an number greater than zero.';
+    },
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper,
+    filter: (order: string) => {
+      return parseInt(order, 10);
+    }
+  },
+  {
     name: 'order',
     message: 'Which position does this appear in the certificate?',
     default: 42,
@@ -290,6 +363,9 @@ void prompt([
       blockType,
       blockLayout,
       questionCount,
+      chapter,
+      module,
+      position,
       order
     }: CreateProjectArgs) =>
       await createProject(
@@ -299,6 +375,9 @@ void prompt([
         blockType,
         blockLayout,
         questionCount,
+        chapter,
+        module,
+        position,
         order,
         title
       )
