@@ -112,12 +112,34 @@
     "share-on-bluesky": "Share on BlueSky",
     "share-on-threads": "Share on Threads",
     "start": "Start",
-    "go-to-today": "Go to Today's Coding Challenge",
+    "go-to-today": "Go to Today's Challenge",
+    "go-to-today-long": "Go to Today's Coding Challenge",
     "go-to-archive": "Go to archive",
     "go-to-archive-long": "Go to Daily Coding Challenge Archive"
   },
-  "daily-coding-challenge": {
+  "daily-coding-challenges": {
+    "title": "Daily Coding Challenges",
     "not-found": "Daily Coding Challenge Not Found."
+  },
+  "weekdays": {
+    "short": {
+      "sunday": "S",
+      "monday": "M",
+      "tuesday": "T",
+      "wednesday": "W",
+      "thursday": "T",
+      "friday": "F",
+      "saturday": "S"
+    },
+    "long": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    }
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
