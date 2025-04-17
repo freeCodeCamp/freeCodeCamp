@@ -70,7 +70,7 @@ function formatChallengeData({
     date,
     id: challengeId,
     title,
-    helpCategory: 'Daily Coding Challenges',
+    // helpCategory: 'Daily Coding Challenges',
     description,
     instructions,
     superBlock: 'daily-coding-challenges',
@@ -90,8 +90,9 @@ function formatChallengeData({
         challengeNode: {
           challenge: {
             ...baseChallengeProps,
+            helpCategory: 'JavaScript',
             // challengeType: 26,
-            challengeType: 27,
+            challengeType: 28,
             fields: {
               blockName: 'daily-coding-challenges',
               tests: javascript.tests
@@ -117,8 +118,9 @@ function formatChallengeData({
         challengeNode: {
           challenge: {
             ...baseChallengeProps,
+            helpCategory: 'Python',
             // challengeType: 23,
-            challengeType: 28,
+            challengeType: 29,
             fields: {
               blockName: 'daily-coding-challenges',
               tests: python.tests

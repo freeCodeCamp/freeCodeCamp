@@ -88,12 +88,14 @@ const ActionRow = ({
             <>
               <button
                 aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
+                disabled={dailyCodingChallengeLanguage === 'javascript'}
                 onClick={() => handleLanguageChange('javascript')}
               >
                 JavaScript
               </button>
               <button
                 aria-expanded={dailyCodingChallengeLanguage === 'python'}
+                disabled={dailyCodingChallengeLanguage === 'python'}
                 onClick={() => handleLanguageChange('python')}
               >
                 Python
