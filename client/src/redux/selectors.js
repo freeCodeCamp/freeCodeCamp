@@ -258,7 +258,7 @@ export const allChallengesInfoSelector = state =>
   state[MainApp].allChallengesInfo;
 export const userProfileFetchStateSelector = state =>
   state[MainApp].userProfileFetchState;
-export const usernameSelector = state => state[MainApp].appUsername;
+export const usernameSelector = state => state[MainApp]?.appUsername;
 export const themeSelector = state => state[MainApp].theme;
 export const userThemeSelector = state => {
   return userSelector(state).theme;
@@ -266,7 +266,7 @@ export const userThemeSelector = state => {
 export const userSelector = state => {
   const username = usernameSelector(state);
 
-  return state[MainApp].user[username] || {};
+  return state[MainApp]?.user[username] || {};
 };
 
 export const renderStartTimeSelector = state => state[MainApp].renderStartTime;
