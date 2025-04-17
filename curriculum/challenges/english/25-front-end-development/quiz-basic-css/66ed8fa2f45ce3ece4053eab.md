@@ -471,7 +471,7 @@ Style and sheets
 
 ---
 
-Properties and values
+Scripts and values
 
 #### --answer--
 
@@ -481,7 +481,7 @@ Selectors and declaration blocks
 
 #### --text--
 
-Which of the following has the correct structure of a CSS rule?
+Which of the following is the correct syntax for a CSS rule?
 
 #### --distractors--
 
@@ -523,7 +523,7 @@ What are default browser styles?
 
 #### --distractors--
 
-HTML elements that have the same styling properites regardless of the browser.
+HTML elements that have the same styling properties regardless of the browser.
 
 ---
 
@@ -535,7 +535,7 @@ They are the color themes for the various browsers.
 
 #### --answer--
 
-Each HTML element has its own browser style applied to it. 
+Browsers apply built-in CSS rules to HTML elements by default.
 
 ### --question--
 
@@ -585,7 +585,7 @@ The minimum height for an element.
 
 #### --text--
 
-Which of the following is TRUE about the universal selector?
+Which of the following is TRUE about the universal selector `*`?
 
 #### --distractors--
 
@@ -673,7 +673,7 @@ The space outside the element.
 
 #### --text--
 
-Where does the `padding` apply property styling?
+Where does the `padding` property apply styling?
 
 #### --distractors--
 
@@ -695,11 +695,11 @@ The space inside the element.
 
 #### --text--
 
-What statement is FALSE about block-level elements?
+Which statement is FALSE about block-level elements?
 
 #### --distractors--
 
-They can strectch to fit the width of their container.
+They can stretch to fit the width of their container.
 
 ---
 
@@ -805,7 +805,7 @@ They always start on new line.
 
 #### --text--
 
-What is internal CSS styles?
+What are internal CSS styles?
 
 #### --distractors--
 
@@ -871,7 +871,7 @@ What is the order for applying the `margin` property when using the shorthand sy
 
 #### --text--
 
-What is inline CSS styles used for?
+What are inline CSS styles used for?
 
 #### --distractors--
 
