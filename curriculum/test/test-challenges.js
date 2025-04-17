@@ -703,7 +703,13 @@ async function getWorkerEvaluator({
   };
 }
 
-async function initializeTestRunner({ build, sources, type, hooks }) {
+async function initializeTestRunner({
+  build,
+  sources,
+  type,
+  hooks,
+  loadEnzyme
+}) {
   await page.reload();
   const source =
     type === 'frame' ? createContent(testId, { build, sources }) : build;
