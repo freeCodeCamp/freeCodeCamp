@@ -84,8 +84,7 @@ assert.isNotEmpty(buttonElements);
 buttonElements.forEach(button => button.classList.add('filled'));
 
 buttonElements.forEach(button => {
-  button.dispatchEvent(new Event('click'));
-  button.dispatchEvent(new Event('change'));
+  button.dispatchEvent(new Event('click', { bubbles: true }));
   assert.isFalse(button.classList.contains('filled'));
   assert.equal(button.innerHTML.charCodeAt(0), 9825);
 });
@@ -100,8 +99,7 @@ assert.isNotEmpty(buttonElements);
 buttonElements.forEach(button => button.classList.remove('filled'));
 
 buttonElements.forEach(button => {
-  button.dispatchEvent(new Event('click'));
-  button.dispatchEvent(new Event('change'));
+  button.dispatchEvent(new Event('click', { bubbles: true }));
   assert.isTrue(button.classList.contains('filled'));
   assert.equal(button.innerHTML.charCodeAt(0), 10084);
 });

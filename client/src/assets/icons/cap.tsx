@@ -9,6 +9,7 @@ function FreeIcon(
       height='60'
       viewBox='0 0 61 60'
       fill='none'
+      aria-hidden='true'
       {...props}
     >
       <path
