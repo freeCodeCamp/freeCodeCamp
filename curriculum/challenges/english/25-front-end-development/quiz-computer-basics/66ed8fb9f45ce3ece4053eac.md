@@ -789,23 +789,23 @@ What is a common search strategy to search for file types?
 
 #### --text--
 
-Which of the following is not a common web browser?
+What is the default page for a website?
 
 #### --distractors--
 
-Google
+styles.css
 
 ---
 
-Yahoo
+main.html
 
 ---
 
-Bing
+home.html
 
 #### --answer--
 
-Chrome
+index.html
 
 ### --question--
 
