@@ -97,7 +97,7 @@ function saveCodeEpic(action$, state$) {
           throw Error('Failed to save to localStorage');
         }
         return action;
-      } catch (e) {
+      } catch {
         return { ...action, error: true };
       }
     }),

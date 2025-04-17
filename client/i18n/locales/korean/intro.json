@@ -1649,51 +1649,75 @@
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Learn How to Express Decisions Based on Comparisons",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to compare things like tools or companies using words like better, faster, and the best. You will also practice having friendly conversations to give opinions and make decisions"
+        ]
       },
       "learn-how-to-use-modal-verbs": {
         "title": "Learn How to Use Modal Verbs",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to talk about rules, describe things that are necessary, and what could happen if they aren't. You'll also practice asking and answering questions clearly, and adding helpful details to your ideas."
+        ]
       },
       "learn-how-to-manage-a-conversation": {
         "title": "Learn How to Manage a Conversation",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to manage conversations at work — like how to continue a talk after a break, change topics politely, or interrupt when needed. You'll also practice using useful expressions to keep the conversation clear, friendly, and organized."
+        ]
       },
       "learn-how-to-clarify-misunderstandings": {
         "title": "Learn How to Clarify Misunderstandings",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to ask for and give explanations when something is not clear, using polite questions and helpful responses. You'll also practice guessing the meaning of new words, describing problems, and clearing up misunderstandings in a friendly and professional way."
+        ]
       },
       "learn-about-speculation-and-requests": {
         "title": "Learn About Speculation and Requests",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to talk about things that should or could have happened in the past, and how to give suggestions or make polite requests. You'll also practice using expressions to guess what might have caused a problem and how to work together to solve it in a clear and respectful way."
+        ]
       },
       "learn-about-adverbial-phrases": {
         "title": "Learn About Adverbial Phrases",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use phrases that give more information about when, where, how often, or how much something happens. You'll also practice using these phrases to describe tasks, talk about plans, and explain results more clearly in your daily work."
+        ]
       },
       "learn-how-to-use-adjectives-in-conversations": {
         "title": "Learn How to Use Adjectives in Conversations",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use adjectives to describe things clearly, compare options, and highlight important details in professional conversations. You'll also practice how to make your ideas stronger and more persuasive."
+        ]
       },
       "learn-determiners-and-advanced-use-of-articles": {
         "title": "Learn Determiners and Advanced Use of Articles",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use determiners to give clear information about quantity, choice, and distribution. You will also practice using articles in more advanced ways, especially in professional conversations about planning, tasks, and resources."
+        ]
       },
       "learn-how-to-use-reported-speech": {
         "title": "Learn How to Use Reported Speech",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to report what someone else said in a clear and natural way. You will also practice using the correct verb tenses and sentence structures to share feedback, explain situations, and talk about past events in professional conversations."
+        ]
       },
       "learn-how-to-use-prepositions-according-to-context": {
         "title": "Learn How to Use Prepositions According to Context",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use prepositions to describe time, place, and direction clearly in everyday work situations. You will also practice talking about schedules, giving directions, and explaining where people or things are located using natural and accurate language."
+        ]
       },
       "learn-how-to-talk-about-numbers-with-a-coworker": {
         "title": "Learn How to Talk About Numbers with a Coworker",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use numbers to talk about tasks, schedules, budgets, and resources in the workplace. You will practice using cardinal and ordinal numbers, percentages, and fractions to organize work, explain progress, and share inventory or financial updates clearly with your team."
+        ]
       },
       "learn-common-phrasal-verbs-and-idioms": {
         "title": "Learn Common Phrasal Verbs and Idioms",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use common phrasal verbs and idioms to sound more natural and confident at work. You will practice using expressions to give opinions, make suggestions, organize meetings, and talk about tasks in everyday professional conversations."
+        ]
       }
     }
   },
@@ -1869,7 +1893,8 @@
       "quiz-basic-html": {
         "title": "Basic HTML Quiz",
         "intro": [
-          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
+          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-importance-of-semantic-html": {
@@ -1900,7 +1925,8 @@
       "quiz-semantic-html": {
         "title": "Semantic HTML Quiz",
         "intro": [
-          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
+          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-working-with-forms": {
@@ -1958,7 +1984,8 @@
       "quiz-html-tables-and-forms": {
         "title": "HTML Tables and Forms Quiz",
         "intro": [
-          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools."
+          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-importance-of-accessibility-and-good-html-structure": {
@@ -1984,7 +2011,8 @@
       "quiz-html-accessibility": {
         "title": "HTML Accessibility Quiz",
         "intro": [
-          "The following quiz will test your knowledge on the accessibility concepts you have learned so far."
+          "The following quiz will test your knowledge on the accessibility concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "review-html": {
@@ -3291,7 +3319,7 @@
       "quiz-javascript-classes": {
         "title": "JavaScript Classes Quiz",
         "intro": [
-          "Test what you've learned about JavaScript Classes with this quiz."
+          "Test what you've learned about JavaScript classes with this quiz."
         ]
       },
       "lecture-understanding-recursion-and-the-call-stack": {
@@ -3842,11 +3870,16 @@
       },
       "review-python-basics": {
         "title": "Python Basics Review",
-        "intro": ["Learn about Python Basics Review in these lectures."]
+        "intro": [
+          "Before you're quizzed on Python basics, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
       },
       "quiz-python-basics": {
         "title": "Python Basics Quiz",
-        "intro": ["Learn about Python Basics Quiz in these lectures."]
+        "intro": [
+          "Test what you've learned about Python basics with this quiz."
+        ]
       },
       "lecture-working-with-loops-and-sequences": {
         "title": "Working with Loops and Sequences",
@@ -3862,11 +3895,16 @@
       },
       "review-loops-and-sequences": {
         "title": "Loops and Sequences Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-loops-and-sequences": {
         "title": "Loops and Sequences Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about loops and sequences in Python with this quiz."
+        ]
       },
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Working with Dictionaries and Sets",
@@ -3885,12 +3923,17 @@
         "intro": [""]
       },
       "review-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets Review",
-        "intro": [""]
+        "title": "Dictionaries and Sets review",
+        "intro": [
+          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-dictionaries-and-sets": {
         "title": "Dictionaries and Sets Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about dictionaries and sets in Python with this quiz."
+        ]
       },
       "lecture-understanding-error-handling": {
         "title": "Understanding Error Handling",
@@ -3902,11 +3945,16 @@
       },
       "review-error-handling": {
         "title": "Error Handling Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on error handling, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
       },
       "quiz-error-handling": {
         "title": "Error Handling Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about Error Handling in Python with this quiz."
+        ]
       },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
@@ -3922,11 +3970,16 @@
       },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on classes and objects, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-classes-and-objects": {
         "title": "Classes and Objects Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about classes and objects in Python with this quiz."
+        ]
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Understanding Object Oriented Programming and Encapsulation",
@@ -3966,11 +4019,16 @@
       },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
       },
       "quiz-object-oriented-programming": {
         "title": "Object Oriented Programming Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about object oriented programming in python with this quiz."
+        ]
       },
       "lecture-working-with-common-data-structures": {
         "title": "Working with common data structures",
@@ -3986,11 +4044,16 @@
       },
       "review-data-structures": {
         "title": "Data Structures Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on data structures, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-data-structures": {
         "title": "Data Structures Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about data structures in Python with this quiz."
+        ]
       },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
@@ -4022,11 +4085,16 @@
       },
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+        ]
       },
       "lecture-understanding-graphs-and-trees": {
         "title": "Understanding Graphs and Trees",
@@ -4050,11 +4118,16 @@
       },
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-graphs-and-trees": {
-        "title": "Graphs and Trees Review",
-        "intro": [""]
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Test what you've learned about graphs and trees in Python with this quiz."
+        ]
       },
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
@@ -4066,15 +4139,20 @@
       },
       "review-dynamic-programming": {
         "title": "Dynamic Programming Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
       },
       "quiz-dynamic-programming": {
         "title": "Dynamic Programming Quiz",
-        "intro": [""]
+        "intro": [
+          "Test what you've learned about dynamic programming in python with this quiz."
+        ]
       },
       "review-python": {
         "title": "Python Review",
-        "intro": [""]
+        "intro": ["Review Python concepts to prepare for the upcoming exam."]
       },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",

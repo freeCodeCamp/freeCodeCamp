@@ -26,6 +26,7 @@ const multifilePythonCertProject = 23;
 const generic = 24;
 const lab = 25;
 const jsLab = 26;
+const pyLab = 27;
 
 export const challengeTypes = {
   html,
@@ -55,7 +56,8 @@ export const challengeTypes = {
   multifilePythonCertProject,
   generic,
   lab,
-  jsLab
+  jsLab,
+  pyLab
 };
 
 export const hasNoSolution = (challengeType: number): boolean => {
@@ -111,7 +113,8 @@ export const viewTypes = {
   [multifilePythonCertProject]: 'classic',
   [generic]: 'generic',
   [lab]: 'classic',
-  [jsLab]: 'classic'
+  [jsLab]: 'classic',
+  [pyLab]: 'classic'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -145,7 +148,8 @@ export const submitTypes = {
   [multifilePythonCertProject]: 'tests',
   [generic]: 'tests',
   [lab]: 'tests',
-  [jsLab]: 'tests'
+  [jsLab]: 'tests',
+  [pyLab]: 'tests'
 };
 
 export const canSaveToDB = (challengeType: number): boolean =>
