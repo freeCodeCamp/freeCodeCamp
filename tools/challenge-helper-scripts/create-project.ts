@@ -7,10 +7,10 @@ import ObjectID from 'bson-objectid';
 
 import { SuperBlocks } from '../../shared/config/curriculum';
 import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
-import { createStepFile, validateBlockName } from './utils';
+import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
-import { createQuiz } from './create-quiz';
+
 
 const helpCategories = [
   'HTML-CSS',
@@ -55,16 +55,13 @@ async function createProject(
   blockType?: string,
   blockLayout?: string,
   questionCount?: number,
-  order?: number,
+  title?: string,
   chapter?: string,
   module?: string,
   position?: number,
-  title?: string
+  order?: number,
 ) {
-  if (blockType === BlockTypes.quiz) {
-    await createQuiz(superBlock, block, helpCategory, questionCount!, title);
-    return;
-  }
+
 
   if (!title) {
     title = block;
@@ -72,21 +69,36 @@ async function createProject(
 
   void updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createFirstChallenge(superBlock, block);
-  void createMetaJson(
-    superBlock,
-    block,
-    title,
-    helpCategory,
-    challengeId,
-    order,
-    blockType,
-    blockLayout
-  );
-  // TODO: remove once we stop relying on markdown in the client.
-  void createIntroMD(superBlock, block, title);
+  if (blockType === BlockTypes.quiz) {
+     const challengeId = await createQuizChallenge(
+       superBlock,
+       block,
+       title,
+       questionCount!
+     );
+    void createMetaJson(superBlock, block, title, helpCategory, challengeId);
+  }
+  else
+  {
+      const challengeId = await createFirstChallenge(superBlock, block);
+      void createMetaJson(
+        superBlock,
+        block,
+        title,
+        helpCategory,
+        challengeId,
+        order,
+        blockType,
+        blockLayout
+      );
+      // TODO: remove once we stop relying on markdown in the client.
 
-  void updateFullStackJson(chapter!,module!, block, position!);
+  }
+  void createIntroMD(superBlock, block, title,blockType!);
+  if (superBlock === SuperBlocks.FullStackDeveloper)
+  {
+      await updateFullStackJson(chapter!,module!, block, position!);
+  }
 }
 
 async function updateFullStackJson(chapterName: string, module: string, block: string, position: number) {
@@ -175,7 +187,7 @@ async function createMetaJson(
   );
 }
 
-async function createIntroMD(superBlock: string, block: string, title: string) {
+async function createIntroMD(superBlock: string, block: string, title: string,blockType: string) {
   const introMD = `---
 title: Introduction to the ${title}
 block: ${block}
@@ -184,7 +196,7 @@ superBlock: ${superBlock}
 
 ## Introduction to the ${title}
 
-This is a test for the new project-based curriculum.
+${blockType === "quiz" ? 'This page is for the ' + title : 'This is a test for the new project-based curriculum.'}
 `;
   const dirPath = path.resolve(
     __dirname,
@@ -225,6 +237,29 @@ async function createFirstChallenge(
     challengeType: 0,
     challengeSeeds,
     isFirstChallenge: true
+  });
+}
+
+async function createQuizChallenge(
+  superBlock: SuperBlocks,
+  block: string,
+  title: string,
+  questionCount: number
+): Promise<ObjectID> {
+  const superBlockSubPath = getSuperBlockSubPath(superBlock);
+  const newChallengeDir = path.resolve(
+    __dirname,
+    `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
+  );
+  if (!existsSync(newChallengeDir)) {
+    await withTrace(fs.mkdir, newChallengeDir);
+  }
+  return createQuizFile({
+    challengeType: '8',
+    projectPath: newChallengeDir + '/',
+    title: title,
+    dashedName: block,
+    questionCount: questionCount
   });
 }
 
@@ -289,7 +324,11 @@ void prompt([
   {
     name: 'blockLayout',
     message: 'Choose a block layout',
-    default: BlockLayouts.ChallengeList,
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    default: answers =>
+      answers.blockType == BlockTypes.quiz
+        ? BlockLayouts.Link
+        : BlockLayouts.ChallengeList,
     type: 'list',
     choices: Object.values(BlockLayouts),
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -307,7 +346,6 @@ void prompt([
   {
     name: 'chapter',
     message: 'What chapter should this full stack project go in?',
-    validate: validateBlockName,
     filter: (chapter: string) => {
       return chapter.toLowerCase().trim();
     },
@@ -327,15 +365,15 @@ void prompt([
     name: 'position',
     message: 'Which position does this appear in the module?',
     default: 5,
-    validate: (order: string) => {
-      return parseInt(order, 10) > 0
+    validate: (position: string) => {
+      return parseInt(position, 10) > 0
         ? true
-        : 'Order must be an number greater than zero.';
+        : 'Position must be an number greater than zero.';
     },
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper,
-    filter: (order: string) => {
-      return parseInt(order, 10);
+    filter: (position: string) => {
+      return parseInt(position, 10);
     }
   },
   {
@@ -375,11 +413,11 @@ void prompt([
         blockType,
         blockLayout,
         questionCount,
+        title,
         chapter,
         module,
         position,
-        order,
-        title
+        order
       )
   )
   .then(() =>
