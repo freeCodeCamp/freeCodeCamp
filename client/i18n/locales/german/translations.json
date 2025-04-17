@@ -232,7 +232,6 @@
     ]
   },
   "settings": {
-    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Teile deine nicht-freeCodeCamp-Projekte, Artikel oder akzeptierte Pull-Requests.",
     "privacy": "Die Einstellungen in diesem Abschnitt ermöglichen es dir, zu kontrollieren, was in deinem öffentlichen freeCodeCamp-Portfolio angezeigt wird. Drücke auf Speichern, um deine Änderungen zu speichern.",
     "data": "Um zu sehen, welche Daten wir in deinem Konto vorhalten, klicke auf den \"Deine Daten herunterladen\" Button unten",
@@ -402,21 +401,7 @@
     "welcome-1": "Willkommen zurück, {{name}}.",
     "welcome-2": "Willkommen auf freeCodeCamp.org",
     "start-at-beginning": "Wenn Programmieren ganz neu für dich ist, schlagen wir vor, <0>am Anfang zu beginnen</0>.",
-    "read-this": {
-      "heading": "Bitte lies dies sorgfältig durch.",
-      "p1": "freeCodeCamp ist ein bewährter Weg zu deinem ersten Softwareentwickler-Job.",
-      "p2": "Mehr als 40.000 Menschen erhielten nach Absolvierung unserer Lehrangebote Arbeit als Entwickler – auch bei großen Unternehmen wie Google und Microsoft.",
-      "p3": "Wenn du neu in der Programmierung bist, empfehlen wir dir, am Anfang zu beginnen und diese Zertifizierungen der Reihe nach zu erwerben.",
-      "p4": "Für jede Zertifizierung sind je 5 Projekte zu erstellen, die eine Reihe automatisierter Tests bestehen müssen.",
-      "p5": "Du kannst diese Zertifizierungen zu deinem Lebenslauf oder LinkedIn hinzufügen. Aber noch wichtiger als die Zertifizierungen ist die Praxis, die du auf deinem Weg bekommst.",
-      "p6": "Es ist normal, sich zwischendurch überwältigt zu fühlen. Programmieren ist schwierig.",
-      "p7": "Übung ist der Schlüssel. Üben, üben, üben.",
-      "p8": "Und dieser Lehrplan wird dir tausende von Stunden praktischer Programmierpraxis geben.",
-      "p9": "Und wenn du mehr Mathematik und Informatik-Theorie lernen möchtest, haben wir auch Tausende von Stunden an Videokursen auf <0>freeCodeCamps YouTube-Kanal</0>.",
-      "p10": "Wenn du einen Entwicklerjob oder Freelance-Kunden bekommen möchtest, werden Programmierkenntnisse nur Teil des Puzzles sein. Du musst auch dein persönliches Netzwerk und deinen Ruf als Entwickler aufbauen.",
-      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
-      "p12": "Viel Spaß beim Programmieren!"
-    },
+    "happy-coding": "Happy coding!",
     "upcoming-lessons": "Bevorstehende Lektionen",
     "learn": "Lernen",
     "add-subtitles": "Hilf mit Untertitel hinzuzufügen oder zu verbessern",
@@ -460,7 +445,7 @@
     "rsa": "Lesen, suchen, fragen",
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Diese Lektion zurücksetzen?",
-    "reset-warn": "Bist du dir sicher, dass du diese Lektion zurücksetzen möchtest? Die Editoren und Tests werden zurückgesetzt.",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone.",
     "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Tipp: Wenn der Mini-Browser den Code verdeckt, kann man ihn mittels Drag-and-drop bewegen. Du kannst jederzeit stoppen und den Code im Video bearbeiten.",
@@ -471,9 +456,6 @@
     "sign-in-see-benefits": "Sign in to see your supporter benefits",
     "card-has-been-updated": "Your card has been updated successfully.",
     "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "{{title}} Zertifizierung"
-    },
     "editor-tabs": {
       "code": "Code",
       "tests": "Tests",
@@ -778,13 +760,12 @@
   "search": {
     "label": "Suchen",
     "placeholder": {
-      "default": "Search our tutorials",
-      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+      "default": "Search our news articles, tutorials, and books",
+      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
     },
     "see-results": "Alle Ergebnisse für {{searchQuery}} ansehen",
-    "no-tutorials": "Keine Tutorials gefunden",
     "try": "Suchst du nach etwas? Versuche es mit der Suchleiste auf dieser Seite.",
-    "no-results": "Wir konnten nichts in Verbindung mit <0>{{query}}</0> finden",
+    "no-results": "No results found",
     "result-list": "Search results"
   },
   "misc": {
@@ -797,7 +778,7 @@
     "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
     "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson, der Lehrer, der freeCodeCamp.org gegründet hat",
-    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
+    "email-blast": "Each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Aktualisiere deine E-Mail-Adresse",
     "update-email-2": "Aktualisiere deine E-Mail-Adresse hier:",
     "email": "E-Mail",
@@ -997,7 +978,8 @@
     "publicly-visible-url": "Denke daran, eine öffentlich sichtbare App-URL einzureichen.",
     "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path",
-    "source-code-link-required": "Remember to submit the link to your source code."
+    "source-code-link-required": "Remember to submit the link to your source code.",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "Geschäftsführender Direktor, freeCodeCamp.org",

@@ -55,7 +55,7 @@ function createPseudoWorker(context) {
             if (this[eventName]) {
               this[eventName](data);
             }
-          } catch (err) {
+          } catch {
             break;
           }
         }

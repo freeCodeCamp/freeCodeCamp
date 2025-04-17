@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
-import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
+import React, { Fragment } from 'react';
 import { Spacer } from '@freecodecamp/ui';
+import { createSelector } from 'reselect';
+import { useTranslation } from 'react-i18next';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import {
@@ -14,14 +15,14 @@ import {
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink } from '../helpers';
-import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
 import { showUpcomingChanges } from '../../../config/env.json';
 
 import './map.css';
 
 import {
   isSignedInSelector,
-  currentCertsSelector
+  currentCertsSelector,
+  completedChallengesIdsSelector
 } from '../../redux/selectors';
 
 import { ClaimedCertifications } from '../../redux/prop-types';
@@ -74,6 +75,8 @@ function MapLi({
   superBlock: SuperBlocks;
   landing: boolean;
 }) {
+  const i18nTitle = i18next.t(`intro:${superBlock}.title`);
+
   return (
     <li
       data-test-label='curriculum-map-button'
@@ -88,7 +91,7 @@ function MapLi({
       >
         <div style={linkSpacingStyle}>
           <SuperBlockIcon className='map-icon' superBlock={superBlock} />
-          {getSuperBlockTitleForMap(superBlock)}
+          {i18nTitle}
         </div>
         {landing && <LinkButton />}
       </ButtonLink>

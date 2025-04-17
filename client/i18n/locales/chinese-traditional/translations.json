@@ -232,7 +232,6 @@
     ]
   },
   "settings": {
-    "profile-note": "注意：個人資料設置已移至個人主頁。",
     "share-projects": "分享你在 freeCodeCamp 之外做的項目，寫的文章或者在 GitHub 上被接受的 pull requests。",
     "privacy": "你可以在本節的設置中管理哪些內容可以展示在 freeCodeCamp 公開作品集，點擊“保存”以存儲你的修改。",
     "data": "請點擊下面的“下載你的數據”按鈕，查看我們在你的賬戶上保存的數據",
@@ -402,21 +401,7 @@
     "welcome-1": "歡迎回來，{{name}}。",
     "welcome-2": "歡迎來到 freeCodeCamp.org",
     "start-at-beginning": "如果你剛開始學習編程，我們建議你<0>從頭開始</0>。",
-    "read-this": {
-      "heading": "請仔細閱讀這裏的內容。",
-      "p1": "freeCodeCamp 是你獲得第一份軟件開發工作的有效途徑。",
-      "p2": "超過 40,000 人在完成這些課程後獲得了開發者工作——包括進入谷歌、微軟、阿里巴巴、騰訊等大型公司。",
-      "p3": "如果你剛開始學習編程，我們建議你從頭開始，按順序獲得認證。",
-      "p4": "要獲得每個認證，需要完成 5 個必做項目，並通過所有測試。",
-      "p5": "你可以將這些認證添加到你的簡歷或 LinkedIn 個人資料。但是你在學習過程中所做的練習比獲得認證更重要。",
-      "p6": "如果你感到沮喪，很正常，因爲編程本來就很難。",
-      "p7": "練習是關鍵。練習，練習，再練習。",
-      "p8": "這套課程需要你進行數千個小時的編程練習。",
-      "p9": "如果你想學習更多數學和計算機科學理論，<0>freeCodeCamp 的 \n YouTube channel</0> 還有數千個小時的視頻課程。",
-      "p10": "如果你想獲得開發者工作或者成爲自由職業開發者找到客戶，那麼除了編程技能，你還需要搭建自己的社交網絡，打造自己作爲開發者的影響力。",
-      "p11": "你還可以在 LinkedIn、Twitter、GitHub 和 <0>freeCodeCamp 論壇</0> 上做到這一點。",
-      "p12": "編程愉快！"
-    },
+    "happy-coding": "Happy coding!",
     "upcoming-lessons": "即將上線的課程",
     "learn": "學習",
     "add-subtitles": "幫助我們完善或添加字幕",
@@ -460,7 +445,7 @@
     "rsa": "閱讀，搜索，提問",
     "rsa-forum": "<strong>在發佈新帖子之前</strong> ，請<0>查看你的問題是否已經在論壇上被回答過</0>。",
     "reset": "重置這一節課程？",
-    "reset-warn": "你確定要重置這一節課程嗎？編輯器和測試將被重置。",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "這個操作不可撤銷。",
     "revert-warn": "你確定要還原這個課程嗎？你的最新更改將被撤銷，代碼將恢復到最近保存的版本。",
     "scrimba-tip": "注意：如果這個小瀏覽器窗口覆蓋了代碼，點擊拖動它。同時，你可以隨時暫停，在視頻中編輯代碼。",
@@ -471,9 +456,6 @@
     "sign-in-see-benefits": "登錄以查看你的支持者權益",
     "card-has-been-updated": "你的卡片已經更新成功。",
     "contact-support-mistake": "如果你覺得有錯誤，請發郵件至 donors@freecodecamp.org 聯繫我們",
-    "cert-map-estimates": {
-      "certs": "{{title}} 認證"
-    },
     "editor-tabs": {
       "code": "編程",
       "tests": "測試",
@@ -778,13 +760,12 @@
   "search": {
     "label": "搜索",
     "placeholder": {
-      "default": "搜索我們的教程",
-      "numbered": "搜索 {{ roundedTotalRecords }}+ 篇教程"
+      "default": "Search our news articles, tutorials, and books",
+      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
     },
     "see-results": "查看 {{searchQuery}} 的所有結果",
-    "no-tutorials": "未找到教程",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",
-    "no-results": "我們未找到關於 <0>{{query}}</0> 的任何信息",
+    "no-results": "No results found",
     "result-list": "搜索結果"
   },
   "misc": {
@@ -797,7 +778,7 @@
     "brand-new-account": "歡迎來到你全新的 freeCodeCamp 賬戶。讓我們開始吧。",
     "duplicate-account-warning": "如果你想登錄一個現有的賬戶，而不是創建這個賬戶，<0>點擊這裏刪除這個賬戶</0>並嘗試另一個電子郵件地址。",
     "quincy": "- Quincy Larson，freeCodeCamp.org 創始人、老師",
-    "email-blast": "每週五我都會給大約 600 萬人發送一封電子郵件，裏面有 5 個關於編程和計算機科學的鏈接。你也想收到我的郵件嗎？",
+    "email-blast": "Each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "更新你的郵件地址",
     "update-email-2": "在這裏更新你的郵件地址：",
     "email": "郵箱",
@@ -997,7 +978,8 @@
     "publicly-visible-url": "記得要提交一個公開可見的app URL",
     "ms-learn-link": "請使用有效的 Microsoft Learn 獎盃鏈接。",
     "path-url": "你可能想要提交根路徑，即 https://example.com，而不是 https://example.com/path。",
-    "source-code-link-required": "記得提交源代碼鏈接。"
+    "source-code-link-required": "記得提交源代碼鏈接。",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "執行董事，freeCodeCamp.org",

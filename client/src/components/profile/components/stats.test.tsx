@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import React from 'react';
 import Stats, { calculateStreaks } from './stats';
 
 const props: { calendar: { [key: number]: number }; points: number } = {
   calendar: {},
-  points: 0
+  points: 10
 };
 
 describe('<Stats/>', () => {
@@ -20,6 +20,17 @@ describe('<Stats/>', () => {
     expect(screen.getByTestId('current-streak')).toHaveTextContent(
       'profile.current-streak'
     );
+  });
+
+  it('displays the correct total points', () => {
+    render(<Stats {...props} />);
+
+    const totalPoints = screen.getByTestId('total-points');
+
+    expect(
+      within(totalPoints).getByText('profile.total-points')
+    ).toBeInTheDocument();
+    expect(within(totalPoints).getByText(props.points)).toBeInTheDocument();
   });
 });
 

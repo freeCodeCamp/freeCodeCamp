@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import { WindowLocation } from '@gatsbyjs/reach-router';
 import { graphql } from 'gatsby';
 import { uniq, isEmpty, last } from 'lodash-es';
@@ -10,8 +11,10 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
-import { SuperBlocks } from '../../../../shared/config/curriculum';
-import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
+import {
+  chapterBasedSuperBlocks,
+  SuperBlocks
+} from '../../../../shared/config/curriculum';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
@@ -166,13 +169,11 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     [superBlockChallenges, allCompletedChallenges]
   );
 
-  const i18nTitle = getSuperBlockTitleForMap(superBlock);
+  const i18nTitle = i18next.t(`intro:${superBlock}.title`);
 
   const showCertification = liveCerts.some(
     cert => superBlockToCertMap[superBlock] === cert.certSlug
   );
-
-  const superBlockWithAccordionView = [SuperBlocks.FullStackDeveloper];
 
   const getInitiallyExpandedBlock = (): string => {
     // if coming from breadcrumb click
@@ -258,7 +259,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 {t(`intro:misc-text.courses`)}
               </h2>
               <Spacer size='m' />
-              {superBlockWithAccordionView.includes(superBlock) ? (
+              {chapterBasedSuperBlocks.includes(superBlock) ? (
                 <SuperBlockAccordion
                   challenges={superBlockChallenges}
                   superBlock={superBlock}

@@ -15,10 +15,13 @@ exports[`<Profile/> renders correctly 1`] = `
       class="bio-container"
     >
       <div
+        class="h-[30px]"
+      />
+      <div
         class="mx-[-15px] "
       >
         <div
-          class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+          class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]   "
         >
           <div
             class="h-[90px]"
@@ -187,22 +190,17 @@ exports[`<Profile/> renders correctly 1`] = `
                 string
               </h1>
             </div>
-            
             <div
               class="h-[20px]"
             />
-            
             <div
               class="profile-meta-container"
-            >
-              
-              
-            </div>
+            />
             <div
               class="mx-[-15px] "
             >
               <div
-                class="social-icons-row min-h-[1px] px-[15px]          "
+                class="social-icons-row min-h-[1px] px-[15px]         "
               >
                 <a
                   aria-label="aria.linkedin"

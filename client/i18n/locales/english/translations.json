@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "Here is what our alumni say about freeCodeCamp:",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Shawn Wang</strong> in Singapore",
         "occupation": "Software Engineer at <strong>Amazon</strong>",
         "testimony": "\"It's scary to change careers. I only gained confidence that I could code by working through the hundreds of hours of free lessons on freeCodeCamp. Within a year I had a six-figure job as a Software Engineer. <strong>freeCodeCamp changed my life.</strong>\""
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Sarah Chima</strong> in Nigeria",
         "occupation": "Software Engineer at <strong>ChatDesk</strong>",
         "testimony": "\"<strong>freeCodeCamp was the gateway to my career</strong> as a software developer. The well-structured curriculum took my coding knowledge from a total beginner level to a very confident level. It was everything I needed to land my first dev job at an amazing company.\""
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Emma Bostian</strong> in Sweden",
         "occupation": "Software Engineer at <strong>Spotify</strong>",
         "testimony": "\"I've always struggled with learning JavaScript. I've taken many courses but freeCodeCamp's course was the one which stuck. Studying JavaScript as well as data structures and algorithms on <strong>freeCodeCamp gave me the skills</strong> and confidence I needed to land my dream job as a software engineer at Spotify.\""
@@ -401,21 +404,7 @@
     "welcome-1": "Welcome back, {{name}}.",
     "welcome-2": "Welcome to freeCodeCamp.org",
     "start-at-beginning": "If you are new to coding, we recommend you <0>start at the beginning</0>.",
-    "read-this": {
-      "heading": "Please slow down and read this.",
-      "p1": "freeCodeCamp is a proven path to your first software developer job.",
-      "p2": "More than 40,000 people have gotten developer jobs after completing this – including at big companies like Google and Microsoft.",
-      "p3": "If you are new to programming, we recommend you start at the beginning and earn these certifications in order.",
-      "p4": "To earn each certification, build its 5 required projects and get all their tests to pass.",
-      "p5": "You can add these certifications to your résumé or LinkedIn. But more important than the certifications is the practice you get along the way.",
-      "p6": "If you feel overwhelmed, that is normal. Programming is hard.",
-      "p7": "Practice is the key. Practice, practice, practice.",
-      "p8": "And this curriculum will give you thousands of hours of hands-on programming practice.",
-      "p9": "And if you want to learn more math and computer science theory, we also have thousands of hours of video courses on <0>freeCodeCamp's YouTube channel</0>.",
-      "p10": "If you want to get a developer job or freelance clients, programming skills will be just part of the puzzle. You also need to build your personal network and your reputation as a developer.",
-      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
-      "p12": "Happy coding!"
-    },
+    "happy-coding": "Happy coding!",
     "upcoming-lessons": "Upcoming Lessons",
     "learn": "Learn",
     "add-subtitles": "Help improve or add subtitles",
@@ -459,7 +448,7 @@
     "rsa": "Read, search, ask",
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Reset this lesson?",
-    "reset-warn": "Are you sure you wish to reset this lesson? The editors and tests will be reset.",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone.",
     "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Tip: If the mini-browser is covering the code, click and drag to move it. Also, feel free to stop and edit the code in the video at any time.",
@@ -470,9 +459,6 @@
     "sign-in-see-benefits": "Sign in to see your supporter benefits",
     "card-has-been-updated": "Your card has been updated successfully.",
     "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "{{title}} Certification"
-    },
     "editor-tabs": {
       "code": "Code",
       "tests": "Tests",
@@ -561,7 +547,7 @@
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
       "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct.",
       "finish-modal-header": "Finish Quiz",
-      "finish-modal-body": "Are you sure you want to finish the quiz? You will not be able to change any answers.",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "Yes, I am finished",
       "finish-modal-no": "No, I would like to continue the quiz",
       "exit-modal-header": "Exit Quiz",
@@ -795,7 +781,7 @@
     "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
     "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson, the teacher who founded freeCodeCamp.org",
-    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
+    "email-blast": "Each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Update your email address",
     "update-email-2": "Update your email address here:",
     "email": "Email",
@@ -995,7 +981,8 @@
     "publicly-visible-url": "Remember to submit a publicly visible app URL.",
     "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path",
-    "source-code-link-required": "Remember to submit the link to your source code."
+    "source-code-link-required": "Remember to submit the link to your source code.",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "Executive Director, freeCodeCamp.org",
