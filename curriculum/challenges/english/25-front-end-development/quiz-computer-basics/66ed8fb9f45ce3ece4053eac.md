@@ -745,7 +745,7 @@ Using a descriptive name for each file.
 
 #### --text--
 
-What is the built-in way can you use to search for files on your computer?
+What is the built-in way you can use to search for files on your computer?
 
 #### --distractors--
 
