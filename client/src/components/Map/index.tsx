@@ -24,24 +24,12 @@ import {
   currentCertsSelector,
   completedChallengesIdsSelector
 } from '../../redux/selectors';
-
 import { ClaimedCertifications } from '../../redux/prop-types';
 import { completedChallengesIdsSelector } from '../../templates/Challenges/redux/selectors';
 
 interface MapProps {
   forLanding?: boolean;
   claimedCertifications?: ClaimedCertifications;
-}
-
-interface Data {
-  allChallengeNode: {
-    nodes: {
-      challenge: {
-        id: string;
-        superBlock: SuperBlocks;
-      };
-    }[];
-  };
 }
 
 const linkSpacingStyle = {
@@ -64,13 +52,12 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
 const mapStateToProps = createSelector(
   isSignedInSelector,
   currentCertsSelector,
-  completedChallengesIdsSelector,
+  completedChallengesIdsSelector
 );
 
 function MapLi({
   superBlock,
-  landing = false,
-  
+  landing = false
 }: {
   superBlock: SuperBlocks;
   landing: boolean;
@@ -82,7 +69,6 @@ function MapLi({
       data-test-label='curriculum-map-button'
       data-playwright-test-label='curriculum-map-button'
     >
-
       <ButtonLink
         block
         size='large'
@@ -99,13 +85,9 @@ function MapLi({
   );
 }
 
-function Map({
-  forLanding = false,
-}: MapProps): React.ReactElement {
+function Map({ forLanding = false }: MapProps): React.ReactElement {
   const { t } = useTranslation();
-  const {
-    allChallengeNode: { nodes: challengeNodes }
-  }: Data = useStaticQuery(graphql`
+  useStaticQuery(graphql`
     query {
       allChallengeNode {
         nodes {
@@ -134,7 +116,7 @@ function Map({
               {t(superBlockHeadings[stage])}
             </h2>
             <ul key={stage}>
-              {superblocks.map((superblock) => (
+              {superblocks.map(superblock => (
                 <MapLi
                   key={superblock}
                   superBlock={superblock}
