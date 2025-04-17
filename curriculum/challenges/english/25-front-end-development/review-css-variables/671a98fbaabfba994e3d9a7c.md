@@ -7,8 +7,6 @@ dashedName: review-css-variables
 
 # --description--
 
-Description placeholder
-
 ## CSS Custom Properties (CSS Variables)
 
 - **Definition**: CSS custom properties, also known as CSS variables, are entities defined by CSS authors that contain specific values to be reused throughout a document. They are a powerful feature that allows for more efficient, maintainable, and flexible stylesheets. Custom properties are particularly useful in creating themeable designs. You can define a set of properties for different themes:

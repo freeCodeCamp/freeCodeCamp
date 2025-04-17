@@ -7,8 +7,6 @@ dashedName: review-dom-manipulation-and-click-events-with-javascript
 
 # --description--
 
-Description placeholder
-
 ## Working with the DOM and Web APIs
 
 - **API**: An API (Application Programming Interface) is a set of rules and protocols that allow software applications to communicate with each other and exchange data efficiently.

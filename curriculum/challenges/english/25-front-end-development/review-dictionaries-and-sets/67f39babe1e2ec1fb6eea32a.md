@@ -7,8 +7,6 @@ dashedName: review-dictionaries-and-sets
 
 # --description--
 
-Description placeholder
-
 ## First topic
 
 Describe
