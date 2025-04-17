@@ -7,14 +7,14 @@ import { CompletedDailyCodingChallenge } from '../../redux/prop-types';
 import { Loader } from '../helpers';
 import envData from '../../../config/env.json';
 import CalendarDay from './calendar-day';
-
-import './calendar.css';
 import {
   formatDateUsCentral,
   getUsCentralMonthIndex,
   getUsCentralYear,
   formatDate
 } from './helpers';
+
+import './calendar.css';
 
 const { dailyChallengeApiLocation } = envData;
 
@@ -123,28 +123,12 @@ function DailyCodingChallengeCalendar({
     () => new Map<string, DailyChallengeMap>()
   );
 
-  // we just need to change the month, the year can stay the same
-  // because it just rolls over, e.g. (index) 12, 2024 will be Jan, 2025
-  const nextMonth = () => {
-    setMonthInfo(
-      m => m && getMonthInfo(m.index + 1, m.year, dailyChallengesMap)
-    );
-  };
-
-  const prevMonth = () => {
-    setMonthInfo(
-      m => m && getMonthInfo(m.index - 1, m.year, dailyChallengesMap)
-    );
-  };
-
   const fetchChallenges = async () => {
     try {
       const response = await fetch(
         `${dailyChallengeApiLocation}/api/daily-challenge/all`
       );
       const challenges = (await response.json()) as DailyChallenge[];
-
-      console.log(challenges);
 
       if (Array.isArray(challenges)) {
         const newDailyChallengesMap = new Map() as DailyChallengesMap;
@@ -197,6 +181,20 @@ function DailyCodingChallengeCalendar({
     void fetchChallenges();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // we just need to change the month, the year can stay the same
+  // because it just rolls over, e.g. (index) 12, 2024 will be Jan, 2025
+  const nextMonth = () => {
+    setMonthInfo(
+      m => m && getMonthInfo(m.index + 1, m.year, dailyChallengesMap)
+    );
+  };
+
+  const prevMonth = () => {
+    setMonthInfo(
+      m => m && getMonthInfo(m.index - 1, m.year, dailyChallengesMap)
+    );
+  };
 
   // Todo: these are hideous - revisit - maybe use date objects as dailyChallengeMap keys
   const hasOlderChallenges = (
@@ -260,13 +258,14 @@ function DailyCodingChallengeCalendar({
       </div>
       <Spacer size='m' />
       <div className='calendar-weekday-labels'>
-        <div>S</div>
-        <div>M</div>
-        <div>T</div>
-        <div>W</div>
-        <div>T</div>
-        <div>F</div>
-        <div>S</div>
+        {/* Todo: use long/short days based on window size */}
+        <div>{t('weekdays.short.sunday')}</div>
+        <div>{t('weekdays.short.monday')}</div>
+        <div>{t('weekdays.short.tuesday')}</div>
+        <div>{t('weekdays.short.wednesday')}</div>
+        <div>{t('weekdays.short.thursday')}</div>
+        <div>{t('weekdays.short.friday')}</div>
+        <div>{t('weekdays.short.saturday')}</div>
       </div>
       <Spacer size='s' />
       <div className='calendar-grid'>{monthInfo.days}</div>
@@ -276,7 +275,7 @@ function DailyCodingChallengeCalendar({
           block={true}
           href={`/learn/daily-coding-challenge?date=${todayUsCentral}`}
         >
-          Go To Todays Challenge
+          {t('buttons.go-to-today')}
         </Button>
       </Col>
     </>

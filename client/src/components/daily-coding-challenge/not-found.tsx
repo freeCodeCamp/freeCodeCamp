@@ -30,7 +30,7 @@ function DailyCodingChallengeNotFound(): JSX.Element {
           <Helmet title={t('404.page-not-found') + ' | freeCodeCamp.org'} />
           <img alt={t('404.not-found')} src={notFoundLogo} />
           <Spacer size='m' />
-          <h1 id='content-start'>{t('daily-coding-challenge.not-found')}</h1>
+          <h1 id='content-start'>{t('daily-coding-challenges.not-found')}</h1>
           <Spacer size='m' />
           <div>
             <p>{t('404.heres-a-quote')}</p>
@@ -46,7 +46,7 @@ function DailyCodingChallengeNotFound(): JSX.Element {
               block={true}
               href={`/learn/daily-coding-challenge?date=${usCentralDate}`}
             >
-              {t(`buttons.go-to-today`)}
+              {t(`buttons.go-to-today-long`)}
             </Button>
             <Spacer size='xs' />
             <Button block={true} href='/learn/daily-coding-challenge/archive'>
