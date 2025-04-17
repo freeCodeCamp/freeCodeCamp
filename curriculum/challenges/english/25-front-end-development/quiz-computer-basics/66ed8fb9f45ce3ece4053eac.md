@@ -463,7 +463,7 @@ Which of the following is a basic part of the computer?
 
 #### --distractors--
 
-The word processer.
+The word processor. 
 
 ---
 
@@ -497,7 +497,7 @@ A laser pointer.
 
 #### --answer--
 
-An ergonomic keyword.
+A mouse or touchpad.
 
 ### --question--
 
@@ -657,11 +657,11 @@ A web based tool for searching information on the internet.
 
 #### --text--
 
-Which of the following is not a type of browser?
+Which of the following is NOT a type of browser?
 
 #### --distractors--
 
-Chrome
+Google Chrome
 
 ---
 
@@ -673,13 +673,13 @@ MicroSoft Edge
 
 #### --answer--
 
-Google
+GitHub
 
 ### --question--
 
 #### --text--
 
-Which of the following is not cloud-based hosting service for repositories?
+Which of the following is NOT a cloud-based hosting service for repositories?
 
 #### --distractors--
 
@@ -837,7 +837,7 @@ What is Git?
 
 #### --distractors--
 
-A centralized storeage location for code repositories.
+A centralized storage location for code repositories.
 
 ---
 
@@ -859,7 +859,7 @@ What is random access memory?
 
 #### --distractors--
 
-A permanent storeage location that is used to store data.
+A permanent storage location that is used to store data.
 
 ---
 
@@ -871,13 +871,13 @@ A processor used for generating passwords.
 
 #### --answer--
 
-A temporary storeage location for the computer's central processing unit.
+A temporary storage location for the computer's central processing unit.
 
 ### --question--
 
 #### --text--
 
-What is a file format that is used to compress files?
+Which file format is used to compress files?
 
 #### --distractors--
 
