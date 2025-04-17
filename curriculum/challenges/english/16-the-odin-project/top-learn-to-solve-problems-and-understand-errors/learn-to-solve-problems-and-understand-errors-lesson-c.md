@@ -7,8 +7,6 @@ dashedName: learn-to-solve-problems-and-understand-errors-lesson-c
 
 # --description--
 
-Description placeholder
-
 ## Psuedocode
 
 Pseudocode is writing out the logic for your program in natural language instead of code. It helps you slow down and think through the steps your program will have to go through to solve the problem.
