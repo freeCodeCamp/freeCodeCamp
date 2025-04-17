@@ -703,7 +703,7 @@ They can stretch to fit the width of their container.
 
 ---
 
-Common inline elements include `div`, `paragraph`, and `section`.
+Common block level elements include `div`, `paragraph`, and `section`.
 
 ---
 
