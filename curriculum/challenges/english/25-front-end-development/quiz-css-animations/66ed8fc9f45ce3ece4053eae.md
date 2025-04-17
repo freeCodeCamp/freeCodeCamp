@@ -486,3 +486,464 @@ Which CSS property allows you to set a time before the animation begins?
 
 `animation-delay`
 
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What does the CSS `animation-delay` property do?
+
+#### --distractors--
+
+Sets how long the animation lasts
+
+---
+
+Specifies the timing function
+
+---
+
+Defines animation direction
+
+#### --answer--
+
+Delays the start of the animation
+
+### --question--
+
+#### --text--
+
+What does `animation-fill-mode: forwards` do?
+
+#### --distractors--
+
+Starts the animation halfway
+
+---
+
+Resets the element to its original state after the animation
+
+---
+
+Repeats the animation indefinitely
+
+#### --answer--
+
+Keeps the element at its end state after the animation
+
+### --question--
+
+#### --text--
+
+Which value of `animation-direction` makes the animation play backward?
+
+#### --distractors--
+
+normal
+
+---
+
+alternate
+
+---
+
+backwards
+
+#### --answer--
+
+reverse
+
+### --question--
+
+#### --text--
+
+Which `animation-direction` value alternates between forward and backward each cycle?
+
+#### --distractors--
+
+reverse
+
+---
+
+normal
+
+---
+
+backwards
+
+#### --answer--
+
+alternate
+
+### --question--
+
+#### --text--
+
+What is the default `animation-iteration-count` if you don’t specify one?
+
+#### --distractors--
+
+infinite
+
+---
+
+0
+
+---
+
+none
+
+#### --answer--
+
+1
+
+### --question--
+
+#### --text--
+
+Which property sets how many times an `animation` repeats?
+
+#### --distractors--
+
+`animation-duration`
+
+---
+
+`animation-count`
+
+---
+
+`animation-delay`
+
+#### --answer--
+
+`animation-iteration-count`
+
+### --question--
+
+#### --text--
+
+Which media query detects users who prefer reduced motion?
+
+#### --distractors--
+
+`@media (motion-preference: low)`
+
+---
+
+`@media (reduced-motion: true)`
+
+---
+
+`@media (no-motion: yes)`
+
+#### --answer--
+
+`@media (prefers-reduced-motion: reduce)`
+
+### --question--
+
+#### --text--
+
+Inside the `reduced‑motion` media query, which declaration disables transitions?
+
+#### --distractors--
+
+`animation: none;`
+
+---
+
+`transition: remove;`
+
+---
+
+`animation-play-state: paused;`
+
+#### --answer--
+
+`transition: none;`
+
+### --question--
+
+#### --text--
+
+What does `animation-play-state: paused` do?
+
+#### --distractors--
+
+Reverses the animation
+
+---
+
+Hides the element during animation
+
+---
+
+Restarts the animation
+
+#### --answer--
+
+Pauses the animation
+
+### --question--
+
+#### --text--
+
+Which unit can you use for `animation-duration` besides `s`?
+
+#### --distractors--
+
+`px`
+
+---
+
+`%`
+
+---
+
+`deg`
+
+#### --answer--
+
+`ms`
+
+### --question--
+
+#### --text--
+
+How do you apply multiple animations to one element?
+
+#### --distractors--
+
+Use multiple `@keyframes` rules only
+
+---
+
+Nest animation properties
+
+---
+
+Semicolon‑separate values in `animation-delay`
+
+#### --answer--
+
+Comma‑separate values in `animation-name`
+
+### --question--
+
+#### --text--
+
+In `animation: slide 2s ease-in 1s infinite alternate paused;`, what does `alternate` specify?
+
+#### --distractors--
+
+The timing function
+
+---
+
+The fill mode
+
+---
+
+The delay before starting
+
+#### --answer--
+
+That direction alternates each iteration
+
+### --question--
+
+#### --text--
+
+Which of these is a valid `animation-fill-mode` value?
+
+#### --distractors--
+
+repeat
+
+---
+
+loop
+
+---
+
+cycle
+
+#### --answer--
+
+both
+
+### --question--
+
+#### --text--
+
+Which property is NOT part of the `animation` shorthand?
+
+#### --distractors--
+
+animation-delay
+
+---
+
+animation-timing-function
+
+---
+
+animation-direction
+
+#### --answer--
+
+animation-transform
+
+### --question--
+
+#### --text--
+
+What does the `@keyframes` rule define?
+
+#### --distractors--
+
+The timing function of an animation
+
+---
+
+The default state of an element
+
+---
+
+The media queries for animations
+
+#### --answer--
+
+The sequence of styles at different points in an animation
+
+### --question--
+
+#### --text--
+
+Which property is used for simple two‑state changes instead of a full `animation`?
+
+#### --distractors--
+
+`animation`
+
+---
+
+`transform`
+
+---
+
+`@keyframes`
+
+#### --answer--
+
+`transition`
+
+### --question--
+
+#### --text--
+
+In a keyframes rule, what does `100%` represent?
+
+#### --distractors--
+
+The start of the animation
+
+---
+
+The halfway point
+
+---
+
+The easing function
+
+#### --answer--
+
+The end of the animation
+
+### --question--
+
+#### --text--
+
+Which property controls the pace of an `animation` over its duration?
+
+#### --distractors--
+
+`animation-duration`
+
+---
+
+`animation-delay`
+
+---
+
+`animation-iteration-count`
+
+#### --answer--
+
+`animation-timing-function`
+
+### --question--
+
+#### --text--
+
+What does `animation: none` do?
+
+#### --distractors--
+
+Sets animation duration to default
+
+---
+
+Resets animation direction to normal
+
+---
+
+Pauses the animation
+
+#### --answer--
+
+Disables all animations on the element
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct syntax to slide an element in from the left?
+
+#### --distractors--
+
+```js
+@keyframes slide-in {
+  0    { transform: translate(-100%); }
+  100  { transform: translate(0); }
+}
+```
+
+---
+
+```js
+@keyframes slide-in {
+  from { translateX(-100%); }
+  to   { translateX(0); }
+}
+```
+
+---
+
+```js
+@keyframes slide-in {
+  start { transform: moveX(-100%); }
+  end   { transform: moveX(0); }
+}
+```
+
+#### --answer--
+
+```js
+@keyframes slide-in {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+```
