@@ -21,9 +21,10 @@ function DailyCodingChallengeCalendarDay({
   // dayNumber = 0 -> render nothing
   if (dayNumber === 0) return <div></div>;
 
+  // todo: add aria labels
   if (!isAvailable)
     return (
-      <div className='calendar-day'>
+      <div className='calendar-day not-available'>
         <span className='calendar-day-number'>{dayNumber}</span>
       </div>
     );
@@ -32,7 +33,7 @@ function DailyCodingChallengeCalendarDay({
   return (
     <Link
       to={`/learn/daily-coding-challenge?date=${date}`}
-      className='calendar-day'
+      className='calendar-day available'
     >
       <span className='calendar-day-number'>{dayNumber}</span>
 
