@@ -8,6 +8,7 @@ import {
 } from '../../redux/prop-types';
 import DailyCodingChallengeNotFound from '../../components/daily-coding-challenge/not-found';
 import envData from '../../../config/env.json';
+import { isValidDateParam } from '../../components/daily-coding-challenge/helpers';
 
 const { dailyChallengeApiLocation } = envData;
 
@@ -73,7 +74,7 @@ function formatChallengeData({
     // helpCategory: 'Daily Coding Challenges',
     description,
     instructions,
-    superBlock: 'daily-coding-challenges',
+    superBlock: 'daily-coding-challenge',
     block: 'daily-coding-challenge',
     usesMultifileEditor: true
   };
@@ -94,7 +95,7 @@ function formatChallengeData({
             // challengeType: 26,
             challengeType: 28,
             fields: {
-              blockName: 'daily-coding-challenges',
+              blockName: 'daily-coding-challenge',
               tests: javascript.tests
             },
             challengeFiles: [
@@ -122,7 +123,7 @@ function formatChallengeData({
             // challengeType: 23,
             challengeType: 29,
             fields: {
-              blockName: 'daily-coding-challenges',
+              blockName: 'daily-coding-challenge',
               tests: python.tests
             },
             challengeFiles: [
@@ -160,7 +161,8 @@ function DailyCodingChallenge(): JSX.Element {
   const [dailyCodingChallengeLanguage, setDailyCodingChallengeLanguage] =
     useState<DailyCodingChallengeLanguages>(initLanguage);
 
-  const dateParam = new URLSearchParams(window.location.search).get('date');
+  const dateParam =
+    new URLSearchParams(window.location.search).get('date') || '';
 
   const fetchChallenge = async (date: string) => {
     try {
@@ -190,7 +192,7 @@ function DailyCodingChallenge(): JSX.Element {
 
   useEffect(() => {
     // If the date param is invalid, stop loading/fetching and show the not found page
-    if (!dateParam || !/^\d{1,2}-\d{1,2}-\d{4}$/.test(dateParam)) {
+    if (!isValidDateParam(dateParam)) {
       setIsLoading(false);
       setChallengeFound(false);
       return;

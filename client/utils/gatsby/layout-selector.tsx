@@ -20,13 +20,13 @@ export default function layoutSelector({
     location: { pathname }
   } = props;
 
-  const isChallenge =
-    !!props.pageContext?.challengeMeta ||
-    props.location.pathname === '/learn/daily-coding-challenge';
-
   const isDailyChallenge =
     props.location.pathname === '/learn/daily-coding-challenge';
 
+  const isChallenge = !!props.pageContext?.challengeMeta || isDailyChallenge;
+
+  console.log(isDailyChallenge);
+  console.log(isChallenge);
   if (element.type === FourOhFourPage) {
     return (
       <DefaultLayout pathname={pathname} showFooter={true}>
