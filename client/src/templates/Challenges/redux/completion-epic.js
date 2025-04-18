@@ -61,7 +61,13 @@ function postChallenge(update) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ data }) => {
-      const { type, savedChallenges, message, examResults } = data;
+      const {
+        type,
+        completedDailyCodingChallenges,
+        savedChallenges,
+        message,
+        examResults
+      } = data;
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
@@ -77,6 +83,7 @@ function postChallenge(update) {
       let actions = [
         submitComplete({
           submittedChallenge: payloadWithClientProperties,
+          completedDailyCodingChallenges,
           savedChallenges: mapFilesToChallengeFiles(savedChallenges),
           examResults
         }),

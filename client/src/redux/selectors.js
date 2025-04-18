@@ -280,6 +280,11 @@ export const completedChallengesIdsSelector = createSelector(
   completedChallenges => completedChallenges.map(node => node.id)
 );
 
+export const completedDailyCodingChallengesIdsSelector = createSelector(
+  completedDailyCodingChallengesSelector,
+  completedChallenges => completedChallenges.map(node => node.id)
+);
+
 export const completionStateSelector = createSelector(
   [allChallengesInfoSelector, completedChallengesIdsSelector],
   (allChallengesInfo, completedChallengesIds) => {
