@@ -3560,9 +3560,12 @@
           "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
         ]
       },
-      "vyzp": {
-        "title": "281",
-        "intro": []
+      "lab-tic-tac-toe": {
+        "title": "Build a Tic-Tac-Toe Game",
+        "intro": [
+          "In this lab, you'll build a Tic-Tac-Toe game using React.",
+          "You'll practice managing state, handling user interactions, and updating the UI dynamically."
+        ]
       },
       "lecture-react-strategies-and-debugging": {
         "title": "React Strategies and Debugging",

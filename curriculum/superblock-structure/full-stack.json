@@ -1088,13 +1088,16 @@
               "dashedName": "lab-event-rsvp"
             },
             {
-              "dashedName": "lab-currency-converter"
-            },
-            {
               "dashedName": "lecture-working-with-data-fetching-and-memoization-in-react"
             },
             {
+              "dashedName": "lab-currency-converter"
+            },
+            {
               "dashedName": "lecture-routing-react-frameworks-and-dependency-management-tools"
+            },
+            {
+              "dashedName": "lab-tic-tac-toe"
             },
             {
               "dashedName": "lecture-react-strategies-and-debugging"
