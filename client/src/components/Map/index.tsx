@@ -25,7 +25,6 @@ import {
   completedChallengesIdsSelector
 } from '../../redux/selectors';
 import { ClaimedCertifications } from '../../redux/prop-types';
-import { completedChallengesIdsSelector } from '../../templates/Challenges/redux/selectors';
 
 interface MapProps {
   forLanding?: boolean;
