@@ -9,7 +9,7 @@ dashedName: step-2
 
 You can get into fleshing out the form now and handle the submission later.
 
-Return a `div` element with a `className` of `form-wrap`. Inside the `div`, create a `h2` element with the text `"Superhero Application Form"` and a `p` element with the text `"Please complete all fields"`.
+Return a `div` element with a `className` of `form-wrap`. Inside the `div`, create a `h2` element with the text `Superhero Application Form` and a `p` element with the text `Please complete all fields`.
 
 # --hints--
 
@@ -31,7 +31,7 @@ You should create an `h2` element inside your `div` element.
 assert.exists(document.querySelector(".form-wrap > h2"));
 ```
 
-Your `h2` element should have the text `"Superhero Application Form"`.
+Your `h2` element should have the text `Superhero Application Form`.
 
 ```js
 const h2El = document.querySelector("h2")
@@ -44,7 +44,7 @@ You should create a `p` element inside your `div` element. Make sure it comes af
 assert.exists(document.querySelector(".form-wrap > h2 + p"));
 ```
 
-Your `p` element should have the text `"Please complete all fields"`.
+Your `p` element should have the text `Please complete all fields`.
 
 ```js
 const pEl = document.querySelector("p")
