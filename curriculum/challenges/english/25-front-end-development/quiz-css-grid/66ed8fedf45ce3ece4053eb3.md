@@ -548,3 +548,386 @@ Which of the following is the correct way to use the `minmax()` function?
 }
 ```
 
+## --quiz--
+
+### --question--
+
+#### --text--
+What is the purpose of CSS Grid?
+
+#### --distractors--
+To style tables using CSS.
+
+---
+
+To create fixed-width layouts only.
+
+---
+
+To stack elements vertically using float.
+
+#### --answer--
+To create two-dimensional layouts using rows and columns.
+
+### --question--
+
+#### --text--
+How do you turn a `<div>` into a grid container?
+
+#### --distractors--
+`grid-template: active;`
+
+---
+
+`display: grid-layout;`
+
+---
+
+`grid: enable;`
+
+#### --answer--
+`display: grid;`
+
+### --question--
+
+#### --text--
+What does the `grid-template-columns` property define?
+
+#### --distractors--
+The total width of the grid container.
+
+---
+
+How many items fit in each column.
+
+---
+
+Which elements go in which columns.
+
+#### --answer--
+The number and size of the columns in the grid.
+
+### --question--
+
+#### --text--
+Which value allows a grid column to take up a portion of remaining space?
+
+#### --distractors--
+`auto-fit`
+
+---
+
+`auto`
+
+---
+
+`px`
+
+#### --answer--
+`fr`
+
+### --question--
+
+#### --text--
+Which CSS property sets the number and size of the rows in a grid?
+
+#### --distractors--
+`grid-rows`
+
+---
+
+`row-template`
+
+---
+
+`grid-row-count`
+
+#### --answer--
+`grid-template-rows`
+
+### --question--
+
+#### --text--
+How do you make all grid items stretch to fill their grid areas?
+
+#### --distractors--
+`justify-content: stretch;`
+
+---
+
+`align-self: fill;`
+
+---
+
+`place-content: fit;`
+
+#### --answer--
+`align-items: stretch;`
+
+### --question--
+
+#### --text--
+What does the `gap` property do in a grid layout?
+
+#### --distractors--
+Adds margin inside each grid item.
+
+---
+
+Creates spacing around the grid container.
+
+---
+
+Offsets the grid position from the top.
+
+#### --answer--
+Creates space between grid tracks.
+
+### --question--
+
+#### --text--
+Which shorthand defines both `row-gap` and `column-gap`?
+
+#### --distractors--
+`grid-spacing`
+
+---
+
+`gap-size`
+
+---
+
+`grid-gap`
+
+#### --answer--
+`gap`
+
+### --question--
+
+#### --text--
+How can you define flexible track sizes within a range?
+
+#### --distractors--
+By using `fr` units only.
+
+---
+
+By setting min-width and max-width on each item.
+
+---
+
+With `auto` and fixed `px` values together.
+
+#### --answer--
+By using the `minmax()` function.
+
+### --question--
+
+#### --text--
+Which statement best describes the difference between an explicit and implicit grid?
+
+#### --distractors--
+Explicit grids adjust automatically; implicit ones require manual sizes.
+
+---
+
+Implicit grids only appear when using `grid-area`.
+
+---
+
+Explicit grids are created with `grid-auto-flow`.
+
+#### --answer--
+Explicit grids are defined using template properties; implicit grids are created when content exceeds the defined layout.
+
+### --question--
+
+#### --text--
+Which property sets a name for a grid item's location?
+
+#### --distractors--
+`grid-name`
+
+---
+
+`grid-identifier`
+
+---
+
+`area-set`
+
+#### --answer--
+`grid-area`
+
+### --question--
+
+#### --text--
+What does `grid-template-areas` do?
+
+#### --distractors--
+Assigns specific items to start at a grid line.
+
+---
+
+Specifies default gaps between areas.
+
+---
+
+Controls flow direction for rows.
+
+#### --answer--
+Defines named layout areas in the grid.
+
+### --question--
+
+#### --text--
+You set `grid-template-areas`, but an item doesn't appear. Why?
+
+#### --distractors--
+You didn't use `grid-template-columns`.
+
+---
+
+The layout must use `grid-auto-flow` to render.
+
+---
+
+The item must be wrapped in a `section`.
+
+#### --answer--
+It is missing a matching `grid-area` name.
+
+### --question--
+
+#### --text--
+How can you center all content in a grid cell both vertically and horizontally?
+
+#### --distractors--
+`text-align: center;`
+
+---
+
+`place-content: center;`
+
+---
+
+`align-content: middle;`
+
+#### --answer--
+`place-items: center;`
+
+### --question--
+
+#### --text--
+How do you make a grid item span two columns?
+
+#### --distractors--
+`grid-column: span two;`
+
+---
+
+`grid-column: auto / 2;`
+
+---
+
+`column-span: 2;`
+
+#### --answer--
+`grid-column: span 2;`
+
+### --question--
+
+#### --text--
+What does `grid-auto-flow: row dense;` do?
+
+#### --distractors--
+Aligns all items to the start of the row.
+
+---
+
+Places all items on the same row.
+
+---
+
+Overwrites the grid template layout.
+
+#### --answer--
+Fills in gaps in row order, even if it means reordering items.
+
+### --question--
+
+#### --text--
+How does `auto-fit` behave in this rule?  
+`grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))`
+
+#### --distractors--
+It limits the grid to one column.
+
+---
+
+It creates fixed 150px columns.
+
+---
+
+It forces each item to the same width.
+
+#### --answer--
+It fills the container with as many columns as possible, hiding empty ones.
+
+### --question--
+
+#### --text--
+Which value with `grid-auto-columns` makes implicit columns flexible?
+
+#### --distractors--
+`grid-auto-columns: fixed;`
+
+---
+
+`grid-auto-columns: 150px auto;`
+
+---
+
+`grid-auto-columns: fill;`
+
+#### --answer--
+`grid-auto-columns: 1fr;`
+
+### --question--
+
+#### --text--
+When does `justify-items: stretch` not affect layout?
+
+#### --distractors--
+When `gap` is greater than 0.
+
+---
+
+When the container has a width of `auto`.
+
+---
+
+When using `fr` units for rows.
+
+#### --answer--
+When grid items have a fixed width.
+
+### --question--
+
+#### --text--
+What does this code create?  
+`grid-template: auto 1fr auto / 200px 1fr`
+
+#### --distractors--
+A 2-column layout without rows.
+
+---
+
+A 3x3 uniform grid.
+
+---
+
+A 1-row, 2-column layout.
+
+#### --answer--
+A grid with 3 rows and 2 columns.
