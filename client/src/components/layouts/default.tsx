@@ -59,6 +59,7 @@ import './global.css';
 import './variables.css';
 import './rtl-layout.css';
 import { LocalStorageThemes } from '../../redux/types';
+import DailyChallengeBreadCrumb from '../../templates/Challenges/components/daily-challenge-bread-crumb';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -180,6 +181,11 @@ function DefaultLayout({
 
   const isJapanese = clientLocale === 'japanese';
 
+  console.log('isRenderBreadcrumb ' + isRenderBreadcrumb);
+  console.log('examInProgress ' + examInProgress);
+  console.log('isChallenge ' + isChallenge);
+  console.log('isDailyChallenge ' + isDailyChallenge);
+
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
@@ -289,7 +295,12 @@ function DefaultLayout({
             />
           ) : null}
           <SignoutModal />
-          {isChallenge &&
+          {isDailyChallenge ? (
+            <div className='breadcrumbs-demo'>
+              <DailyChallengeBreadCrumb />
+            </div>
+          ) : (
+            isChallenge &&
             !isDailyChallenge &&
             !examInProgress &&
             (isRenderBreadcrumb ? (
@@ -301,7 +312,8 @@ function DefaultLayout({
               </div>
             ) : (
               <Spacer size={isExSmallViewportHeight ? 'xxs' : 'xs'} />
-            ))}
+            ))
+          )}
           {fetchState.complete && children}
         </div>
         {showFooter && <Footer />}

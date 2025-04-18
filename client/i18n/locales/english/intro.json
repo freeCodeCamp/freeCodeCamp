@@ -4191,8 +4191,8 @@
       }
     }
   },
-  "daily-coding-challenges": {
-    "title": "Daily Coding Challenges",
+  "daily-coding-challenge": {
+    "title": "Daily Coding Challenge",
     "blocks": {
       "daily-coding-challenge": {
         "title": "Daily Coding Challenge"

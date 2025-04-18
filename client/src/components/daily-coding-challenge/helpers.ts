@@ -49,6 +49,19 @@ export function formatDateUTC(dateObj: Date) {
   return `${month}-${day}-${year}`;
 }
 
+// in the format M-D-YYYY
+export function formatLongDateUTC(dateString: string) {
+  const [month, day, year] = dateString.split('-').map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day));
+
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: 'UTC',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  }).format(date);
+}
+
 interface formatDateProps {
   month: number;
   day: number;
@@ -57,4 +70,8 @@ interface formatDateProps {
 
 export function formatDate({ month, day, year }: formatDateProps) {
   return `${month}-${day}-${year}`;
+}
+
+export function isValidDateParam(dateString: string) {
+  return /^\d{1,2}-\d{1,2}-\d{4}$/.test(dateString);
 }
