@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '../helpers';
 import GreenPass from '../../assets/icons/green-pass';
 import GreenNotCompleted from '../../assets/icons/green-not-completed';
+import { formatLongDateUTC } from './helpers';
 
 interface CalendarDayProps {
   dayNumber: number;
@@ -21,11 +22,15 @@ function DailyCodingChallengeCalendarDay({
   // dayNumber = 0 -> render nothing
   if (dayNumber === 0) return <div></div>;
 
-  // todo: add aria labels
   if (!isAvailable)
     return (
-      <div className='calendar-day not-available'>
-        <span className='calendar-day-number'>{dayNumber}</span>
+      <div
+        className='calendar-day not-available'
+        aria-label={`${date && formatLongDateUTC(date)}, ('aria.not-available')`}
+      >
+        <span className='calendar-day-number' aria-hidden='true'>
+          {dayNumber}
+        </span>
       </div>
     );
 
@@ -34,8 +39,11 @@ function DailyCodingChallengeCalendarDay({
     <Link
       to={`/learn/daily-coding-challenge?date=${date}`}
       className='calendar-day available'
+      aria-label={`${date && formatLongDateUTC(date)}`}
     >
-      <span className='calendar-day-number'>{dayNumber}</span>
+      <span className='calendar-day-number' aria-hidden='true'>
+        {dayNumber}
+      </span>
 
       {isCompleted ? (
         <span className='completed'>

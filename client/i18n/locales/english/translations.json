@@ -881,7 +881,8 @@
     "opens-new-window": "Opens in new window",
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
-    "edit-my-profile": "Edit my profile"
+    "edit-my-profile": "Edit my profile",
+    "not-available": "Not available"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
