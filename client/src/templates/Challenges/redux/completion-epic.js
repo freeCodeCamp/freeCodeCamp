@@ -280,9 +280,15 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      let pathToNavigateTo = isLastChallengeInBlock
-        ? blockHashSlug
-        : nextChallengePath;
+      let pathToNavigateTo = nextChallengePath;
+
+      if (isLastChallengeInBlock) {
+        pathToNavigateTo = blockHashSlug;
+      }
+
+      if (isDailyCodingChallenge(challengeType)) {
+        pathToNavigateTo = '/learn/daily-coding-challenge/archive';
+      }
 
       const canAllowDonationRequest = (state, action) => {
         if (action.type !== submitActionTypes.submitComplete) return null;
