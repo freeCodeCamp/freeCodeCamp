@@ -1,0 +1,67 @@
+{
+  "name": "Understanding Performance in Web Applications",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-performance-in-web-applications",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67d1d6af27858c4f487d3f4c",
+      "title": "What Is the Difference Between Real Performance and Perceived Performance?"
+    },
+    {
+      "id": "67d2f6a63acd9e781b4b5061",
+      "title": "What Are the Key Performance Concepts?"
+    },
+    {
+      "id": "67d2f6b17844ae7898583eb3",
+      "title": "What Is INP?"
+    },
+    {
+      "id": "67d2f6cea4916d78d5a27ad3",
+      "title": "How to Measure and Improve INP?"
+    },
+    {
+      "id": "67d2f6e2836565795d789ab7",
+      "title": "How Does a Browser Render a Page?"
+    },
+    {
+      "id": "67d2f70278179479d3eed390",
+      "title": "How Does Performance Impact Sustainability?"
+    },
+    {
+      "id": "67d2f7183a537d7a4908a9ff",
+      "title": "What Are Some Ways to Reduce Page Loading Times?"
+    },
+    {
+      "id": "67d2f738dcef5d7abfe4243a",
+      "title": "How Do You Improve \"Time to Usable\"?"
+    },
+    {
+      "id": "67d2f759154eac7b4d5cb1bf",
+      "title": "How to Improve the Perceived Performance of Features?"
+    },
+    {
+      "id": "67d2f778a856c37bd31c5022",
+      "title": "What Are Some Key Metrics for Measuring Performance?"
+    },
+    {
+      "id": "67d2f7a69809807c59a44002",
+      "title": "What Are Some Common Performance Measurement Tools?"
+    },
+    {
+      "id": "67d2f7cf63fafe7d20270498",
+      "title": "How Can You Use Performance Web APIs to Create Your Own Performance Measurement Tools?"
+    },
+    {
+      "id": "67d2f7e9d895bf7dcef00408",
+      "title": "What Are Some Techniques for Improving CSS Performance?"
+    },
+    {
+      "id": "67d2f80313efe77e43182e86",
+      "title": "What Are Some Techniques for Improving JavaScript Performance?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

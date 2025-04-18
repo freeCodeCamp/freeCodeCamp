@@ -40,6 +40,7 @@
     "clean:server": "rm -rf ./api-server/lib",
     "create:shared": "tsc -p shared",
     "create-new-project": "cd ./tools/challenge-helper-scripts/ && pnpm run create-project",
+    "create-new-quiz": "cd ./tools/challenge-helper-scripts/ && pnpm run create-quiz",
     "predevelop": "npm-run-all -p create:shared -s build:curriculum",
     "develop": "npm-run-all -p develop:*",
     "develop:client": "cd ./client && pnpm run develop",
@@ -57,7 +58,6 @@
     "lint:ts": "tsc && tsc -p shared && tsc -p api && tsc -p client",
     "lint:prettier": "prettier --list-different .",
     "lint:css": "stylelint '**/*.css'",
-    "reload:server": "pm2 reload api-server/ecosystem.config.js",
     "preseed": "npm-run-all create:shared",
     "playwright:install-build-tools": "npx playwright install --with-deps",
     "rename-challenges": "tsx tools/challenge-helper-scripts/rename-challenge-files.ts",
@@ -85,7 +85,7 @@
     "test-utils": "jest utils",
     "prepare": "husky",
     "playwright:run": "playwright test",
-    "playwright:watch": "playwright test --ui"
+    "playwright:watch": "playwright test --ui-port=0"
   },
   "dependencies": {
     "dotenv": "16.4.5"

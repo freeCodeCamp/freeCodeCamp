@@ -6,108 +6,108 @@
   "superBlock": "b1-english-for-developers",
   "challengeOrder": [
     {
-     "id": "6660a06837f9bb5f3e7a7892",
-     "title": "Dialogue 1: Balancing Priorities"
+      "id": "6660a06837f9bb5f3e7a7892",
+      "title": "Dialogue 1: Balancing Priorities"
     },
     {
-     "id": "67a9e4fd6cc3ad082d69e473",
-     "title": "Task 1"
+      "id": "67a9e4fd6cc3ad082d69e473",
+      "title": "Task 1"
     },
     {
-     "id": "67a9e9b1f5745009e9a2db71",
-     "title": "Task 2"
+      "id": "67a9e9b1f5745009e9a2db71",
+      "title": "Task 2"
     },
     {
-     "id": "67a9ed9e70ebbe0aab99892f",
-     "title": "Task 3"
+      "id": "67a9ed9e70ebbe0aab99892f",
+      "title": "Task 3"
     },
     {
-     "id": "67a9efcabf0dac0baa0ec536",
-     "title": "Task 4"
+      "id": "67a9efcabf0dac0baa0ec536",
+      "title": "Task 4"
     },
     {
-     "id": "67a9f44e6dcabb0c402a9bfb",
-     "title": "Task 5"
+      "id": "67a9f44e6dcabb0c402a9bfb",
+      "title": "Task 5"
     },
     {
-     "id": "67a9f64823ab730da3376358",
-     "title": "Task 6"
+      "id": "67a9f64823ab730da3376358",
+      "title": "Task 6"
     },
     {
-     "id": "67a9fa160bd8b30e98d6873a",
-     "title": "Task 7"
+      "id": "67a9fa160bd8b30e98d6873a",
+      "title": "Task 7"
     },
     {
-     "id": "67aa23adedb02b11aaceda26",
-     "title": "Task 8"
+      "id": "67aa23adedb02b11aaceda26",
+      "title": "Task 8"
     },
     {
-     "id": "67aa2a25108ade129ff33602",
-     "title": "Task 9"
+      "id": "67aa2a25108ade129ff33602",
+      "title": "Task 9"
     },
     {
-     "id": "67aa2c929366ab13601f213e",
-     "title": "Task 10"
+      "id": "67aa2c929366ab13601f213e",
+      "title": "Task 10"
     },
     {
-     "id": "67aa2d7fddb1d1142d322192",
-     "title": "Task 11"
+      "id": "67aa2d7fddb1d1142d322192",
+      "title": "Task 11"
     },
     {
-     "id": "67ac66c90efa10043b842da5",
-     "title": "Task 12"
+      "id": "67ac66c90efa10043b842da5",
+      "title": "Task 12"
     },
     {
-     "id": "67ac68484638ef0532d3c989",
-     "title": "Task 13"
+      "id": "67ac68484638ef0532d3c989",
+      "title": "Task 13"
     },
     {
-     "id": "67ac69ab3f68a305f27cf267",
-     "title": "Task 14"
+      "id": "67ac69ab3f68a305f27cf267",
+      "title": "Task 14"
     },
     {
-     "id": "67ac6af6a64e3e06db16832a",
-     "title": "Task 15"
+      "id": "67ac6af6a64e3e06db16832a",
+      "title": "Task 15"
     },
     {
-     "id": "67ac6c0b9c84b607bbf9e2c7",
-     "title": "Task 16"
+      "id": "67ac6c0b9c84b607bbf9e2c7",
+      "title": "Task 16"
     },
     {
-     "id": "67ac6d9dcc833b084ca5af39",
-     "title": "Task 17"
+      "id": "67ac6d9dcc833b084ca5af39",
+      "title": "Task 17"
     },
     {
-     "id": "67ac6f29ec44360934e11caf",
-     "title": "Task 18"
+      "id": "67ac6f29ec44360934e11caf",
+      "title": "Task 18"
     },
     {
-     "id": "67ac73910ad52c09dca4cef9",
-     "title": "Task 19"
+      "id": "67ac73910ad52c09dca4cef9",
+      "title": "Task 19"
     },
     {
-     "id": "67acadeeed60950e553784da",
-     "title": "Task 20"
+      "id": "67acadeeed60950e553784da",
+      "title": "Task 20"
     },
     {
-     "id": "67acaebb95dabb0ee05500f7",
-     "title": "Task 21"
+      "id": "67acaebb95dabb0ee05500f7",
+      "title": "Task 21"
     },
     {
-     "id": "67acb00f45a3380fb0a1ac1e",
-     "title": "Task 22"
+      "id": "67acb00f45a3380fb0a1ac1e",
+      "title": "Task 22"
     },
     {
-     "id": "67acb31f4e94b6106c23df4d",
-     "title": "Task 23"
+      "id": "67acb31f4e94b6106c23df4d",
+      "title": "Task 23"
     },
     {
-     "id": "67acb6b67780d7116047f80f",
-     "title": "Task 24"
+      "id": "67acb6b67780d7116047f80f",
+      "title": "Task 24"
     },
     {
-     "id": "67acb8285b01d71220db1208",
-     "title": "Task 25"
+      "id": "67acb8285b01d71220db1208",
+      "title": "Task 25"
     },
     {
       "id": "67acb913f7932312f489dbea",
@@ -563,5 +563,5 @@
     }
   ],
   "helpCategory": "English",
-  "blockLayout": "legacy-challenge-grid"
+  "blockLayout": "dialogue-grid"
 }

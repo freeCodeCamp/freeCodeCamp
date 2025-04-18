@@ -40,8 +40,7 @@ assert(
 The rendered `h1` tag should include a reference to `{name}`.
 
 ```js
-(getUserInput) =>
-  assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(getUserInput('index')));
+assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(code));
 ```
 
 The rendered `h1` heading element should contain text rendered from the component's state.

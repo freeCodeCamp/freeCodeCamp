@@ -198,7 +198,7 @@ export type ChallengeNode = {
     required: Required[];
     scene: FullScene;
     solutions: {
-      [T in FileKey]: FileKeyChallenge;
+      [T: string]: FileKeyChallenge;
     };
     sourceInstanceName: string;
     superOrder: number;
@@ -383,13 +383,6 @@ export interface ChallengeData extends CompletedChallenge {
   challengeFiles: ChallengeFile[] | null;
 }
 
-export type FileKey =
-  | 'scriptjs'
-  | 'indexts'
-  | 'indexhtml'
-  | 'stylescss'
-  | 'indexjsx';
-
 export type ChallengeMeta = {
   block: string;
   id: string;
@@ -398,6 +391,7 @@ export type ChallengeMeta = {
   superBlock: SuperBlocks;
   title?: string;
   challengeType?: number;
+  blockType?: BlockTypes;
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
@@ -421,7 +415,7 @@ export type FileKeyChallenge = {
   ext: Ext;
   head: string;
   id: string;
-  key: FileKey;
+  key: string;
   name: string;
   tail: string;
 };
