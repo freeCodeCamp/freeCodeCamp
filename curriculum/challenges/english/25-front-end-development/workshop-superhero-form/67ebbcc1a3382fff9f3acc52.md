@@ -1,42 +1,54 @@
 ---
-id: 67ebc0e1c183cb2d743e513b
-title: Step 4
+id: 67ebbcc1a3382fff9f3acc52
+title: Step 2
 challengeType: 0
-dashedName: step-4
+dashedName: step-2
 ---
 
 # --description--
 
-Time to create the labels and inputs. Create a `label` with the text `Hero Name` and an `input` element of type `text` inside it.
+You can get into fleshing out the form now and handle the submission later.
 
-Connect the `Hero Name` `input` to the `heroName` state variable by giving it a `value` of attribute set to `heroName`.
+Return a `div` element with a `className` of `form-wrap`. Inside the `div`, create a `h2` element with the text `Superhero Application Form` and a `p` element with the text `Please complete all fields`.
 
 # --hints--
 
-You should create a `label` element.
+You should have a `div` element.
 
 ```js
-assert.exists(document.querySelector("label"));
+assert.exists(document?.querySelector("div"));
 ```
 
-Your `label` element should have `Hero Name` as its text.
+Your `div` element should have a `className` of `form-wrap`.
 
 ```js
-const labelEl = document.querySelector("label")
-assert.equal(labelEl.textContent, "Hero Name");
+assert.exists(document?.querySelector("div.form-wrap"));
 ```
 
-You should create an `input` of type `text` element inside your `label` element.
+You should create an `h2` element inside your `div` element.
 
 ```js
-const inputEl = document.querySelector("label > input");
-assert.equal(inputEl.getAttribute("type"), "text");
+assert.exists(document?.querySelector(".form-wrap > h2"));
 ```
 
-Your `input` element should have its value set to the `heroName` state variable.
+Your `h2` element should have the text `Superhero Application Form`.
 
 ```js
-assert.match(code, /value=\{heroName\}/)
+const h2El = document?.querySelector("h2")
+assert.equal(h2El?.textContent, "Superhero Application Form");
+```
+
+You should create a `p` element inside your `div` element. Make sure it comes after the `h2`.
+
+```js
+assert.exists(document?.querySelector(".form-wrap > h2 + p"));
+```
+
+Your `p` element should have the text `Please complete all fields`.
+
+```js
+const pEl = document?.querySelector("p")
+assert.equal(pEl?.textContent, "Please complete all fields");
 ```
 
 # --seed--
@@ -139,17 +151,11 @@ export const SuperheroForm = () => {
   const [powers, setPowers] = React.useState([]);
 
   return (
-    <div className='form-wrap'>
-      <h2>Superhero Application Form</h2>
-      <p>Please complete all fields</p>
-      <form>
-        <div className='section'>
-        --fcc-editable-region--
-
-        --fcc-editable-region--
-        </div>
-      </form>
-    </div>
+    --fcc-editable-region--
+    <>
+      
+    </>
+    --fcc-editable-region--
   )
 };
 ```

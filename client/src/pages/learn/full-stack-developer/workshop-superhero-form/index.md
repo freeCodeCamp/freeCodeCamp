@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Superhero Application Form
 
-This is a test for the new project-based curriculum.
+This is workshop will cover how to work with forms in React.

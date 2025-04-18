@@ -1,30 +1,48 @@
 ---
-id: 67ebd88b19bc9199103d02f3
-title: Step 12
+id: 67ebdbbcde7feebcc4c3b8d9
+title: Step 13
 challengeType: 0
-dashedName: step-12
+dashedName: step-13
 ---
 
 # --description--
 
-The next `input` is a checkbox to check all super hero powers that applies to the user.
+There will be six checkboxes, so it's also best to create an array for them and map through them to display them as checkboxes. For that, a `powersOptions` array has been provided for you.
 
-Create a `label` element with a `className` of `section` and `column`, and a text of `"List your powers (select all that apply):"`.
+Map through the `powersOptions` array with a parameter of `power`. Inside the map, create a `label` element with a `key` of `power`. Inside that `label`, create an `input` of type `checkbox` and a `value` of `power`.
+
+To finally display those items from the `powersOptions` array next to each checkbox, create a `span` element just before the clsoing `label` with a text of `{power}`.
 
 # --hints--
 
-You shold create a `label` element with a `className` of `section` and `column`.
+You should map through `powersOptions`.
 
 ```js
-const labelEl = document.querySelectorAll("label.section.column");
-assert.equal(labelEl.length, 2)
+assert.match(code, /\{powersOptions\.map\(/)
 ```
 
-Your `label` element should have the text `"List your powers (select all that apply):"`.
+YOu should use `power` as the parameter of your map.
 
 ```js
-const labelEl = document.querySelectorAll("label.section.column");
-assert.equal(labelEl[1].textContent, "List your powers (select all that apply):")
+assert.match(code, /\{powersOptions\.map\((?:power\s*=>\s*\(|function\(power\)\s*\{)(\s*return\s*\()?/)
+```
+
+You should create a `label` element with a `key` of `power`.
+
+```js
+assert.match(code, /\{powersOptions\.map\((?:power\s*=>\s*\(|function\(power\)\s*\{)(\s*return\s*\()?\s*<label\s+key=\{power\}>\s*/)
+```
+
+You should create an `input` of `type` `checkbox` and a `value` of `power`.
+
+```js
+assert.match(code, /\{powersOptions\.map\((?:power\s*=>\s*\(|function\(power\)\s*\{)(\s*return\s*\()?\s*<label\s+key=\{power\}>\s*<input\s*type=("|')checkbox("|')\s*value=\{power\}\s*\/>\s*/)
+```
+
+You should create a `span` element with `{power}` as its text content.
+
+```js
+assert.match(code, /\{powersOptions\.map\((?:power\s*=>\s*\(|function\(power\)\s*\{)(\s*return\s*\()?\s*<label\s+key=\{power\}>\s*<input\s*type=("|')checkbox("|')\s*value=\{power\}\s*\/>\s*<span>\{power\}<\/span>\s*<\/label>\s*\);?\s*(\)\}|\}\)\})\s*/)
 ```
 
 # --seed--
@@ -130,6 +148,15 @@ export const SuperheroForm = () => {
     'Other'
   ];
 
+  const powersOptions = [
+    'Super Strength',
+    'Super Speed',
+    'Flight',
+    'Invisibility',
+    'Telekinesis',
+    'Other'
+  ];
+
   const [heroName, setHeroName] = React.useState('');
   const [realName, setRealName] = React.useState('');
   const [powerSource, setPowerSource] = React.useState('');
@@ -162,7 +189,7 @@ export const SuperheroForm = () => {
           How did you get your powers?
           <select value={powerSource} onChange={e => setPowerSource(e.target.value)}>
             <option value=''>
-              Select one...
+              Select one
             </option>
            {powerSourceOptions.map(source => (
              <option key={source} value={source}>
@@ -171,9 +198,12 @@ export const SuperheroForm = () => {
             ))}
           </select>
         </label>
-        --fcc-editable-region--
+        <label className='section column'>
+          List your powers (select all that apply):
+          --fcc-editable-region--
 
-        --fcc-editable-region--
+          --fcc-editable-region--
+        </label>
       </form>
     </div>
   )

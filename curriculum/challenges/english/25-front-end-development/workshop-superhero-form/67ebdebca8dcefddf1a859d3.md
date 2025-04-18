@@ -1,36 +1,32 @@
 ---
-id: 67ebf1e8f56ce61f5212affe
-title: Step 17
+id: 67ebdebca8dcefddf1a859d3
+title: Step 14
 challengeType: 0
-dashedName: step-17
+dashedName: step-14
 ---
 
 # --description--
 
-Create a `button` element with the `className` `submit-btn` and a `type` of `submit`. Give the button the text `"Join the League"`.
+Now you should add the `checked` attribute to each checkbox to know which item is checked, so you can also handle the setter function.
 
-After you do that, try to submit the form and see what happens.
+Add a `checked` attribute to the checkbox `input`. Use the `includes` method to verify if the current `power` is in the `powers` array, so React knows whether to mark it as checked or not.
+
+For the `onChange`, it will be a separate function, so set it to `handlePowersChange` for now. This will lead to an error you will fix in the next step.
 
 # --hints--
 
-You should create a `button` element.
+You should set the checkbox `checked` state to reflect whether the current `power` value exists in the powers array.
 
 ```js
-assert.exists(document.querySelector("button"));
+assert.match(code, /checked=\{powers\.includes\(power\)\}/)
 ```
 
-Your button element should have a `className` attribute set to `submit-btn`.
+You should set the checkbox `onChange` attribute to `{handlePowersChange}`.
 
 ```js
-assert.exists(document.querySelector("button.submit-btn"));
+assert.match(code, /onChange=\{handlePowersChange\}/)
 ```
 
-Your `button` element should have `"Join the League"` as its text.
-
-```js
-const btnEl = document.querySelector("button")
-assert.equal(btnEl.textContent, "Join the League");
-```
 
 # --seed--
 
@@ -149,16 +145,11 @@ export const SuperheroForm = () => {
   const [powerSource, setPowerSource] = React.useState('');
   const [powers, setPowers] = React.useState([]);
 
-  const handlePowersChange = e => {
-    const { value, checked } = e.target;
-    setPowers(checked ? [...powers, value] : powers.filter(p => p !== value));
-  }
-
   return (
     <div className='form-wrap'>
       <h2>Superhero Application Form</h2>
       <p>Please complete all fields</p>
-       <form method='post' action='https://superhero-application-form.freecodecamp.org'>
+      <form>
         <div className='section'>
         <label>
           Hero Name
@@ -181,7 +172,7 @@ export const SuperheroForm = () => {
           How did you get your powers?
           <select value={powerSource} onChange={e => setPowerSource(e.target.value)}>
             <option value=''>
-              Select one...
+              Select one
             </option>
            {powerSourceOptions.map(source => (
              <option key={source} value={source}>
@@ -195,19 +186,17 @@ export const SuperheroForm = () => {
 
           {powersOptions.map(power => (
             <label key={power}>
+          --fcc-editable-region--
               <input
                 type='checkbox'
                 value={power}
-                checked={powers.includes(power)}
-                onChange={handlePowersChange}
+
               />
+          --fcc-editable-region--                
               <span>{power}</span>
             </label>
           ))}
         </label>
-        --fcc-editable-region--
-
-        --fcc-editable-region--
       </form>
     </div>
   )

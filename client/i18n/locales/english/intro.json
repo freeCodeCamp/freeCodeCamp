@@ -3483,7 +3483,7 @@
       "workshop-superhero-form": {
         "title": "Build a Superhero Application Form",
         "intro": [
-          "In this workshop, you'll learn how to work with forms in React by building a superhero application form."
+          "In this workshop, you practice how to work with forms in React by building a superhero application form."
         ]
       },
       "clak": { "title": "277", "intro": [] },

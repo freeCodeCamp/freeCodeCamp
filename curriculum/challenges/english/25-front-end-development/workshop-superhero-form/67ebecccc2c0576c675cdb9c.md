@@ -1,32 +1,39 @@
 ---
-id: 67ebdebca8dcefddf1a859d3
-title: Step 14
+id: 67ebecccc2c0576c675cdb9c
+title: Step 15
 challengeType: 0
-dashedName: step-14
+dashedName: step-15
 ---
 
 # --description--
 
-Now you should add the `checked` attribute to each checkbox to know which item is checked, so you can also handle the setter function.
+To fix that error, create an `handlePowersChange` function with an `e` parameter.
 
-Add a `checked` attribute to the checkbox `input`. Use the `includes` method to verify if the current `power` is in the `powers` array, so React knows whether to mark it as checked or not.
+Inside the function, destructure `value` and `checked` from `e.target`. This will extract the `value` representing the checked `power`, and the `checked` indicating whether the checkbox is checked or not.
 
-For the `onChange`, it will be a separate function, so set it to `handlePowersChange` for now. This will lead to an error you will fix in the next step.
+To finally set the checked power(s), use a ternary to check if `checked` is true. If it is, spread in the existing `powers` into an array and add the `value` to it. If it is not true, filter out the `value` from `powers`.
+
+Remember all of that should be inside the `setPowers` setter function, and you can also use an `if` statement.
 
 # --hints--
 
-You should set the checkbox `checked` state to reflect whether the current `power` value exists in the powers array.
+You should create an `handlePowersChange` function.
 
 ```js
-assert.match(code, /checked=\{powers\.includes\(power\)\}/)
+assert.match(code, /\b(?:function\s|const\s+)handlePowersChange\s*(?:=\s*(?:\(e\)|e)\s*=>|\(e\))\s*{\s*/)
 ```
 
-You should set the checkbox `onChange` attribute to `{handlePowersChange}`.
+You should destructure `value` and `checked` from e.target.
 
 ```js
-assert.match(code, /onChange=\{handlePowersChange\}/)
+assert.match(code, /\b(?:function\s|const\s+)handlePowersChange\s*(?:=\s*(?:\(e\)|e)\s*=>|\(e\))\s*{\s*(const|let|var)\s+\{\s*value\s*,\s*checked\s*\}\s*=\s*e\.target;?\s*/)
 ```
 
+You should use a ternary operator to check if `checked` is true. If it is, spread in the existing `powers` and `value` into an array. If it is not, filter out the `value` from `powers`.
+
+```js
+assert.match(code, /\b(?:function\s|const\s+)handlePowersChange\s*(?:=\s*(?:\(e\)|e)\s*=>|\(e\))\s*{\s*(const|let|var)\s+\{\s*value\s*,\s*checked\s*\}\s*=\s*e\.target;?\s*setPowers\(checked\s+\?\s+\[\.\.\.powers\,\s*value\]\s*:\s*powers\.filter\((p|power)\s*=>\s*(p|power)\s*\!==\s*value\)\);?\s*\}\s*/)
+```
 
 # --seed--
 
@@ -145,6 +152,10 @@ export const SuperheroForm = () => {
   const [powerSource, setPowerSource] = React.useState('');
   const [powers, setPowers] = React.useState([]);
 
+  --fcc-editable-region--
+
+  --fcc-editable-region--
+
   return (
     <div className='form-wrap'>
       <h2>Superhero Application Form</h2>
@@ -172,7 +183,7 @@ export const SuperheroForm = () => {
           How did you get your powers?
           <select value={powerSource} onChange={e => setPowerSource(e.target.value)}>
             <option value=''>
-              Select one...
+              Select one
             </option>
            {powerSourceOptions.map(source => (
              <option key={source} value={source}>
@@ -186,13 +197,12 @@ export const SuperheroForm = () => {
 
           {powersOptions.map(power => (
             <label key={power}>
-          --fcc-editable-region--
               <input
                 type='checkbox'
                 value={power}
-
+                checked={powers.includes(power)}
+                onChange={handlePowersChange}
               />
-          --fcc-editable-region--                
               <span>{power}</span>
             </label>
           ))}
