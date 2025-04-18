@@ -3530,9 +3530,12 @@
         "title": "276",
         "intro": []
       },
-      "clak": {
-        "title": "277",
-        "intro": []
+      "lab-event-rsvp": {
+        "title": "Build an Event RSVP",
+        "intro": [
+          "In this lab, you'll build an Event RSVP form using React.",
+          "You'll practice using the useState hook to manage form input and display user responses."
+        ]
       },
       "lecture-working-with-data-fetching-and-memoization-in-react": {
         "title": "Working with Data Fetching and Memoization in React",
@@ -3540,7 +3543,10 @@
           "In these lecture videos, you will learn about data fetching and memoization in React."
         ]
       },
-      "ffpt": { "title": "279", "intro": [] },
+      "ffpt": {
+        "title": "279",
+        "intro": []
+      },
       "lab-currency-converter": {
         "title": "Build a Currency Converter",
         "intro": [
@@ -3970,7 +3976,10 @@
         "title": "Placeholder - waiting for title",
         "intro": [""]
       },
-      "lab-budget-app": { "title": "Build a Budget App", "intro": [""] },
+      "lab-budget-app": {
+        "title": "Build a Budget App",
+        "intro": [""]
+      },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",
         "intro": [
@@ -4016,7 +4025,10 @@
         "title": "Placeholder - Waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-oop-3": { "title": "", "intro": [""] },
+      "lab-placeholder-oop-3": {
+        "title": "",
+        "intro": [""]
+      },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
         "intro": [
@@ -4067,8 +4079,14 @@
         "title": "Build a Bisection Method",
         "intro": [""]
       },
-      "workshop-merge-sort": { "title": "Build a Merge Sort", "intro": [""] },
-      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
+      "workshop-merge-sort": {
+        "title": "Build a Merge Sort",
+        "intro": [""]
+      },
+      "lab-quick-sort": {
+        "title": "Build a Quick Sort",
+        "intro": [""]
+      },
       "lab-selection-sort": {
         "title": "Build a Selection Sort",
         "intro": [""]

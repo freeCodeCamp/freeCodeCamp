@@ -1085,19 +1085,22 @@
               "dashedName": "lecture-working-with-forms-in-react"
             },
             {
-              "dashedName": "lab-currency-converter"
+              "dashedName": "lab-event-rsvp"
             },
             {
               "dashedName": "lecture-working-with-data-fetching-and-memoization-in-react"
             },
             {
+              "dashedName": "lab-currency-converter"
+            },
+            {
               "dashedName": "lecture-routing-react-frameworks-and-dependency-management-tools"
             },
             {
-              "dashedName": "lecture-react-strategies-and-debugging"
+              "dashedName": "lab-tic-tac-toe"
             },
             {
-              "dashedName": "lab-tic-tac-toe"
+              "dashedName": "lecture-react-strategies-and-debugging"
             },
             {
               "dashedName": "review-react-forms-data-fetching-and-routing"
