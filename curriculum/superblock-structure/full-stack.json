@@ -595,6 +595,9 @@
             { "dashedName": "workshop-superhero-form" },
             { "dashedName": "lecture-working-with-forms-in-react" },
             {
+              "dashedName": "lab-currency-converter"
+            },
+            {
               "dashedName": "lecture-working-with-data-fetching-and-memoization-in-react"
             },
             {
