@@ -181,11 +181,6 @@ function DefaultLayout({
 
   const isJapanese = clientLocale === 'japanese';
 
-  console.log('isRenderBreadcrumb ' + isRenderBreadcrumb);
-  console.log('examInProgress ' + examInProgress);
-  console.log('isChallenge ' + isChallenge);
-  console.log('isDailyChallenge ' + isDailyChallenge);
-
   if (fetchState.pending) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
