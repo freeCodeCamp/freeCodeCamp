@@ -799,7 +799,7 @@ Common inline elements include `span` and `img`.
 
 #### --answer--
 
-They always start on new line.
+They always start on a new line.
 
 ### --question--
 
