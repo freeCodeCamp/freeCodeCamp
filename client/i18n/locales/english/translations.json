@@ -114,12 +114,13 @@
     "start": "Start",
     "go-to-today": "Go to Today's Challenge",
     "go-to-today-long": "Go to Today's Coding Challenge",
-    "go-to-archive": "Go to archive",
+    "go-to-archive": "Go to Archive",
     "go-to-archive-long": "Go to Daily Coding Challenge Archive"
   },
   "daily-coding-challenges": {
     "title": "Daily Coding Challenges",
-    "not-found": "Daily Coding Challenge Not Found."
+    "not-found": "Daily Coding Challenge Not Found.",
+    "release-note": "New challenges are released at midnight US Central time (UTC-06:00)"
   },
   "weekdays": {
     "short": {

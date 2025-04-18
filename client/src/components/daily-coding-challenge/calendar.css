@@ -32,31 +32,36 @@
   background-color: var(--primary-background);
 }
 
-.calendar-day:hover,
-.calendar-day:active {
+.not-available:hover,
+.not-available:active {
+  cursor: not-allowed;
+}
+
+.available:hover,
+.available:active {
   cursor: pointer;
   background-color: var(--primary-color);
 }
 
-.calendar-day:hover .calendar-day-number,
-.calendar-day:active .calendar-day-number {
+.available:hover .calendar-day-number,
+.available:active .calendar-day-number {
   color: var(--primary-background);
 }
 
-.calendar-day:hover .completed svg circle,
-.calendar-day:active .completed svg circle {
+.available:hover .completed svg circle,
+.available:active .completed svg circle {
   fill: var(--primary-background);
   stroke: var(--primary-background);
 }
 
-.calendar-day:hover .not-completed svg circle,
-.calendar-day:active .not-completed svg circle {
+.available:hover .not-completed svg circle,
+.available:active .not-completed svg circle {
   fill: var(--primary-color);
   stroke: var(--primary-background);
 }
 
-.calendar-day:hover svg rect,
-.calendar-day:active svg rect {
+.available:hover svg rect,
+.available:active svg rect {
   fill: var(--primary-color);
   stroke: var(--primary-color);
 }

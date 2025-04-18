@@ -2,10 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button, Col, Spacer } from '@freecodecamp/ui';
-import { completedDailyCodingChallengesSelector } from '../../redux/selectors';
+import {
+  completedDailyCodingChallengesSelector,
+  isSignedInSelector
+} from '../../redux/selectors';
 import { CompletedDailyCodingChallenge } from '../../redux/prop-types';
 import { Loader } from '../helpers';
 import envData from '../../../config/env.json';
+import Login from '../Header/components/login';
 import CalendarDay from './calendar-day';
 import {
   formatDateUsCentral,
@@ -21,7 +25,8 @@ const { dailyChallengeApiLocation } = envData;
 const mapStateToProps = (state: unknown) => ({
   completedDailyCodingChallenges: completedDailyCodingChallengesSelector(
     state
-  ) as CompletedDailyCodingChallenge[]
+  ) as CompletedDailyCodingChallenge[],
+  isSignedIn: isSignedInSelector(state)
 });
 
 const getMonthInfo = (
@@ -82,6 +87,7 @@ const getMonthInfo = (
 
 interface DailyCodingChallengeCalendarProps {
   completedDailyCodingChallenges: CompletedDailyCodingChallenge[];
+  isSignedIn: boolean;
 }
 
 interface DailyChallenge {
@@ -105,7 +111,8 @@ interface MonthInfo {
 }
 
 function DailyCodingChallengeCalendar({
-  completedDailyCodingChallenges
+  completedDailyCodingChallenges,
+  isSignedIn
 }: DailyCodingChallengeCalendarProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -129,6 +136,8 @@ function DailyCodingChallengeCalendar({
         `${dailyChallengeApiLocation}/api/daily-challenge/all`
       );
       const challenges = (await response.json()) as DailyChallenge[];
+
+      // todo: validate challenge data?
 
       if (Array.isArray(challenges)) {
         const newDailyChallengesMap = new Map() as DailyChallengesMap;
@@ -270,6 +279,8 @@ function DailyCodingChallengeCalendar({
       <Spacer size='s' />
       <div className='calendar-grid'>{monthInfo.days}</div>
       <Spacer size='l' />
+      <p className='text-center'>{t('daily-coding-challenges.release-note')}</p>
+      <Spacer size='m' />
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
         <Button
           block={true}
@@ -277,6 +288,12 @@ function DailyCodingChallengeCalendar({
         >
           {t('buttons.go-to-today')}
         </Button>
+        {!isSignedIn && (
+          <div className='completion-modal-login-btn'>
+            <Spacer size='xs' />
+            <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
+          </div>
+        )}
       </Col>
     </>
   );

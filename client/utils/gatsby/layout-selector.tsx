@@ -25,8 +25,6 @@ export default function layoutSelector({
 
   const isChallenge = !!props.pageContext?.challengeMeta || isDailyChallenge;
 
-  console.log(isDailyChallenge);
-  console.log(isChallenge);
   if (element.type === FourOhFourPage) {
     return (
       <DefaultLayout pathname={pathname} showFooter={true}>

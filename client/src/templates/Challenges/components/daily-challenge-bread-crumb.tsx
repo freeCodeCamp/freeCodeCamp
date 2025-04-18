@@ -4,29 +4,29 @@ import { useTranslation } from 'react-i18next';
 import { Link } from '../../../components/helpers/index';
 
 import './challenge-title.css';
-// import {
-//   isValidDateParam,
-//   formatDate
-// } from '../../../components/daily-coding-challenge/helpers';
+import {
+  isValidDateParam,
+  formatDate,
+  formatLongDateUTC
+} from '../../../components/daily-coding-challenge/helpers';
 
 function DailyChallengeBreadCrumb(): JSX.Element {
-  // const dateParam =
-  //   new URLSearchParams(window.location.search).get('date') || '';
-  // let displayDate = '';
+  const dateParam =
+    new URLSearchParams(window.location.search).get('date') || '';
+  let displayDate = '';
 
-  // if (isValidDateParam(dateParam)) {
-  //   const [year, month, day] = dateParam.split('-');
-  //   const date = formatDate({
-  //     month: parseInt(month, 10),
-  //     day: parseInt(day, 10),
-  //     year: parseInt(year, 10)
-  //   });
+  if (isValidDateParam(dateParam)) {
+    const [year, month, day] = dateParam.split('-');
+    const date = formatDate({
+      month: parseInt(month, 10),
+      day: parseInt(day, 10),
+      year: parseInt(year, 10)
+    });
 
-  //   displayDate = formatLongDateUTC(date);
+    console.log(date);
 
-  // } else {
-
-  // }
+    displayDate = formatLongDateUTC(date);
+  }
 
   const { t } = useTranslation();
   return (
@@ -42,7 +42,7 @@ function DailyChallengeBreadCrumb(): JSX.Element {
         </li>
         <li className='breadcrumb-right'>
           <Link to={`/learn/daily-coding-challenge/archive`}>
-            April 1, 2025
+            {displayDate}
           </Link>
         </li>
       </ol>
