@@ -3485,14 +3485,14 @@
           "In these lecture videos, you will learn about working with state and responding to events with React."
         ]
       },
-      "rmpy": {
-        "title": "268",
-        "intro": []
+      "lab-color-picker": {
+        "title": "Build a Color Picker App",
+        "intro": [
+          "In this lab you'll build a Color Picker.",
+          "You'll practice using state and hooks to manage the properties of an element."
+        ]
       },
-      "dbta": {
-        "title": "269",
-        "intro": []
-      },
+      "dbta": { "title": "269", "intro": [] },
       "lecture-understanding-effects-and-referencing-values-in-react": {
         "title": "Understanding Effects and Referencing Values in React",
         "intro": [
