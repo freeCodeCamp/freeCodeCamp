@@ -4,7 +4,7 @@ import { genericError } from '../types';
 export const reportUser = {
   body: Type.Object({
     username: Type.String(),
-    reportDescription: Type.String()
+    reportDescription: Type.String({ minLength: 1 })
   }),
   response: {
     200: Type.Object({
@@ -16,8 +16,8 @@ export const reportUser = {
     }),
     404: Type.Object({
       type: Type.Literal('danger'),
-      message: Type.Literal('flash.report-err')
+      message: Type.Literal('flash.report-error')
     }),
-    default: genericError
+    500: genericError
   }
 };

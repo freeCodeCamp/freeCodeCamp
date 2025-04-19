@@ -203,7 +203,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         void reply.code(404);
         return {
           type: 'danger',
-          message: 'flash.report-err'
+          message: 'flash.report-error'
         } as const;
       }
 
