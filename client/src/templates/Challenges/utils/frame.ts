@@ -381,7 +381,7 @@ const waitForFrame = (frameContext: Context) => {
     }, 10000);
 
     // We have to add the listener to the frame, not its contentWindow, because
-    // the the latter does not receive the load event in Safari. It does not
+    // the latter does not receive the load event in Safari. It does not
     // matter which we use for Chrome and Firefox.
     frameContext.element?.addEventListener('load', () => {
       clearTimeout(rejectId);

@@ -16,6 +16,7 @@ import {
   msTrophyVerified
 } from '../../../utils/error-messages';
 import {
+  canSaveToDB,
   challengeTypes,
   submitTypes
 } from '../../../../../shared/config/challenge-types';
@@ -116,8 +117,7 @@ function submitModern(type, state) {
       let body;
       if (
         block === 'javascript-algorithms-and-data-structures-projects' ||
-        challengeType === challengeTypes.multifileCertProject ||
-        challengeType === challengeTypes.multifilePythonCertProject
+        canSaveToDB(challengeType)
       ) {
         body = standardizeRequestBody({ id, challengeType, challengeFiles });
       } else {

@@ -90,7 +90,8 @@ export const challengeDataSelector = state => {
     challengeType === challengeTypes.lab ||
     challengeType === challengeTypes.js ||
     challengeType === challengeTypes.jsProject ||
-    challengeType === challengeTypes.jsLab
+    challengeType === challengeTypes.jsLab ||
+    challengeType === challengeTypes.pyLab
   ) {
     const { required = [], template = '' } = challengeMetaSelector(state);
     challengeData = {

@@ -285,7 +285,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     guides: {
       highlightActiveIndentation:
         props.challengeType === challengeTypes.python ||
-        props.challengeType === challengeTypes.multifilePythonCertProject
+        props.challengeType === challengeTypes.multifilePythonCertProject ||
+        props.challengeType === challengeTypes.pyLab
     },
     minimap: {
       enabled: false
@@ -307,7 +308,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     },
     tabSize:
       props.challengeType !== challengeTypes.python &&
-      props.challengeType !== challengeTypes.multifilePythonCertProject
+      props.challengeType !== challengeTypes.multifilePythonCertProject &&
+      props.challengeType !== challengeTypes.pyLab
         ? 2
         : 4,
     dragAndDrop: true,
