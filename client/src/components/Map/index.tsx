@@ -25,8 +25,6 @@ import {
   completedChallengesIdsSelector
 } from '../../redux/selectors';
 
-import { RibbonIcon } from '../../assets/icons/completion-ribbon';
-
 import { CurrentCert, ClaimedCertifications } from '../../redux/prop-types';
 import {
   certSlugTypeMap,
@@ -83,11 +81,7 @@ const mapStateToProps = createSelector(
 function MapLi({
   superBlock,
   landing = false,
-  completed,
-  claimed,
-  showProgressionLines = false,
-  showNumbers = false,
-  index
+  showProgressionLines = false
 }: {
   superBlock: SuperBlocks;
   landing: boolean;
@@ -107,14 +101,7 @@ function MapLi({
       <div className='progress-icon-wrapper'>
         <div
           className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
-        >
-          <RibbonIcon
-            value={index + 1}
-            showNumbers={showNumbers}
-            isCompleted={completed}
-            isClaimed={claimed}
-          />
-        </div>
+        ></div>
       </div>
 
       <ButtonLink
