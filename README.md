@@ -47,7 +47,7 @@ Here are our twelve core certifications:
 - [Learn Typography by Building a Nutrition Label](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-typography-by-building-a-nutrition-label)
 - [Learn Accessibility by Building a Quiz](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-accessibility-by-building-a-quiz)
 - [Learn More About CSS Pseudo Selectors by Building A Balance Sheet](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet)
-- [Learn Intermediate CSS by Building a Picasso Painting](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-intermediate-css-by-building-a-picasso-painting)
+- [Learn Intermediate CSS by Building a Cat Painting](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-intermediate-css-by-building-a-cat-painting)
 - [Learn Responsive Web Design by Building a Piano](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-responsive-web-design-by-building-a-piano)
 - [Learn CSS Variables by Building a City Skyline](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-variables-by-building-a-city-skyline)
 - [Learn CSS Grid by Building a Magazine](https://www.freecodecamp.org/learn/2022/responsive-web-design/#learn-css-grid-by-building-a-magazine)
@@ -78,7 +78,7 @@ Here are our twelve core certifications:
 - [Learn Asynchronous Programming by Building an fCC Forum Leaderboard](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard)
   <br />
   <br />
-  **Projects**: [Palindrome Checker](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker), [Roman Numeral Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-roman-numeral-converter-project/build-a-roman-numeral-converter), [Telephone Number Validator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-telephone-number-validator-project/build-a-telephone-number-validator), [Cash Register](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-cash-register-project/build-a-cash-register), [Pokémon Search App](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-pokemon-search-app-project/build-a-pokemon-search-app)
+  **Projects**: [Palindrome Checker](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker), [Roman Numeral Converter](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-roman-numeral-converter-project/build-a-roman-numeral-converter), [Telephone Number Validator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-telephone-number-validator-project/build-a-telephone-number-validator), [Cash Register](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-a-cash-register-project/build-a-cash-register), [RPG Creature Search App](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/build-an-rpg-creature-search-app-project/build-an-rpg-creature-search-app)
 
 #### 3. [Front End Libraries Certification](https://www.freecodecamp.org/learn/front-end-development-libraries/)
 
@@ -103,7 +103,7 @@ Here are our twelve core certifications:
 #### 5. [Relational Database](https://www.freecodecamp.org/learn/relational-database/)
 
 - [Learn Bash by Building a Boilerplate](https://www.freecodecamp.org/learn/relational-database/#learn-bash-by-building-a-boilerplate)
-- [Learn Relational Databases by Building a Mario Database](https://www.freecodecamp.org/learn/relational-database/#learn-relational-databases-by-building-a-mario-database)
+- [Learn Relational Databases by Building a Database of Video Game Characters](https://www.freecodecamp.org/learn/relational-database/#learn-relational-databases-by-building-a-database-of-video-game-characters)
 - [Learn Bash Scripting by Building Five Programs](https://www.freecodecamp.org/learn/relational-database/#learn-bash-scripting-by-building-five-programs)
 - [Learn SQL by Building a Student Database: Part 1](https://www.freecodecamp.org/learn/relational-database/#learn-sql-by-building-a-student-database-part-1)
 - [Learn SQL by Building a Student Database: Part 2](https://www.freecodecamp.org/learn/relational-database/#learn-sql-by-building-a-student-database-part-2)

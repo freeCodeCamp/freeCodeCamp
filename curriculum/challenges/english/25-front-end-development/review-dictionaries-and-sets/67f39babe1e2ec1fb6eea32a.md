@@ -7,8 +7,6 @@ dashedName: review-dictionaries-and-sets
 
 # --description--
 
-Review the concepts below to prepare for the upcoming quiz.
-
 ## First topic
 
 Describe
