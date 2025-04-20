@@ -135,8 +135,10 @@ jobs:
           REMOTE_SCRIPT="
             set -e
             echo -e '\nLOG:Deploying API to $TS_MACHINE_NAME...'
-            cd /home/$TS_USERNAME/docker-swarm-config/stacks/api || { echo \"Error: Failed to change directory\"; exit 1; }
-            which age > /dev/null || { echo \"Error: age not installed\"; exit 1; }
+            cd /home/$TS_USERNAME/docker-swarm-config/stacks/api
+
+            echo -e '\nLOG:Checking if age is installed...'
+            which age > /dev/null
 
             echo -e '\nLOG:Decrypting secrets...'
             echo \"$AGE_ENCRYPTED_ASC_SECRETS\" > secrets.age.asc
@@ -182,16 +184,16 @@ jobs:
               echo \"Error: Version mismatch. Expected: $DEPLOYMENT_VERSION, Got: \$DEPLOYMENT_VERSION\"
               exit 1
             fi
-            env | grep -E 'DOMAIN|DEPLOYMENT' || { echo \"Error: Required environment variables not found\"; exit 1; }
+            env | grep -E 'DOMAIN|DEPLOYMENT'
 
             echo -e '\nLOG:Checking stack configuration...'
-            CONFIG_OUTPUT="/dev/null"
+            CONFIG_OUTPUT=\"/dev/null\"
             if [[ \"\$FCC_API_LOG_LEVEL\" == \"debug\" ]]; then
-              CONFIG_FILENAME="debug-docker-stack-config-\${DEPLOYMENT_VERSION}.yml"
-              echo -e '\nLOG:Saving stack configuration to $CONFIG_FILENAME for debugging...'
-              CONFIG_OUTPUT="\$CONFIG_FILENAME"
+              CONFIG_FILENAME=\"debug-docker-stack-config-\${DEPLOYMENT_VERSION}.yml\"
+              echo -e '\nLOG:Saving stack configuration to \$CONFIG_FILENAME for debugging...'
+              CONFIG_OUTPUT=\"\$CONFIG_FILENAME\"
             fi
-            docker stack config -c stack-api.yml > "$CONFIG_OUTPUT" || { echo \"Error: Invalid stack configuration\"; exit 1; }
+            docker stack config -c stack-api.yml > \$CONFIG_OUTPUT
 
             echo -e '\nLOG:Deploying stack...'
             docker stack deploy -c stack-api.yml --prune --with-registry-auth --detach=false $STACK_NAME
