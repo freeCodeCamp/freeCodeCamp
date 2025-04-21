@@ -1,8 +1,26 @@
 # Working on the new api
 
+## Initial setup
+
+To run the api in isolation (without setting up the client), first go to the root of the repo and run the following commands:
+
+```bash
+cp sample.env .env # if you haven't already created .env
+pnpm install
+pnpm predevelop
+```
+
+If you have a MongoDB replica set running on port 27017, you can start the api with:
+
+```bash
+pnpm run develop:api
+```
+
+otherwise, the next section will explain how to set up a local MongoDB instance.
+
 ## Connecting to local database
 
-The api uses the ORM Prisma and it needs the MongoDB instance to be a replica set.
+The api uses the ORM Prisma and it needs the MongoDB instance to be a replica set. There are two easy ways to set up a MongoDB replica set, either using MongoDB Atlas or running it locally with Docker. Both are described below.
 
 ### Atlas
 
@@ -10,11 +28,10 @@ If you use MongoDB Atlas, the set is managed for you.
 
 ### Local
 
-The simplest way to run a replica set locally is to use the docker-compose file
-in /tools.
+To start a local MongoDB replica set first make sure to stop any existing MongoDB instances or that they use different ports (the api connects to port 27017 by default, per the .env file). Then you can use the provided Docker Compose file to everything up.
 
 ```bash
-cd tools
+cd api/tools
 docker compose up -d
 ```
 
@@ -30,7 +47,7 @@ pnpm seed
 If you have any issues connecting to the database (e.g. MongoServerError: not primary), try removing the volume and recreating the containers.
 
 ```bash
-cd tools
+cd api/tools
 docker compose down -v
 docker compose up -d
 ```
