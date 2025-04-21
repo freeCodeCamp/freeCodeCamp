@@ -11,7 +11,6 @@ import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
 
-
 const helpCategories = [
   'HTML-CSS',
   'JavaScript',
@@ -48,6 +47,24 @@ interface CreateProjectArgs {
   title?: string;
 }
 
+interface FullStackBlock {
+  dashedName: string;
+}
+
+interface FullStackModule {
+  dashedName: string;
+  blocks: FullStackBlock[];
+}
+
+interface FullStackChapter {
+  dashedName: string;
+  modules: FullStackModule[];
+}
+
+interface FullStackData {
+  chapters: FullStackChapter[];
+}
+
 async function createProject(
   superBlock: SuperBlocks,
   block: string,
@@ -59,10 +76,8 @@ async function createProject(
   chapter?: string,
   module?: string,
   position?: number,
-  order?: number,
+  order?: number
 ) {
-
-
   if (!title) {
     title = block;
   }
@@ -70,63 +85,88 @@ async function createProject(
   void updateIntroJson(superBlock, block, title);
 
   if (blockType === BlockTypes.quiz) {
-     const challengeId = await createQuizChallenge(
-       superBlock,
-       block,
-       title,
-       questionCount!
-     );
+    const challengeId = await createQuizChallenge(
+      superBlock,
+      block,
+      title,
+      questionCount!
+    );
     void createMetaJson(superBlock, block, title, helpCategory, challengeId);
+  } else {
+    const challengeId = await createFirstChallenge(superBlock, block);
+    void createMetaJson(
+      superBlock,
+      block,
+      title,
+      helpCategory,
+      challengeId,
+      order,
+      blockType,
+      blockLayout
+    );
+    // TODO: remove once we stop relying on markdown in the client.
   }
-  else
-  {
-      const challengeId = await createFirstChallenge(superBlock, block);
-      void createMetaJson(
-        superBlock,
-        block,
-        title,
-        helpCategory,
-        challengeId,
-        order,
-        blockType,
-        blockLayout
-      );
-      // TODO: remove once we stop relying on markdown in the client.
-
-  }
-  void createIntroMD(superBlock, block, title,blockType!);
-  if (superBlock === SuperBlocks.FullStackDeveloper)
-  {
-      await updateFullStackJson(chapter!,module!, block, position!);
+  void createIntroMD(superBlock, block, title, blockType!);
+  if (superBlock === SuperBlocks.FullStackDeveloper) {
+    await updateFullStackJson(chapter!, module!, block, position!);
   }
 }
 
-async function updateFullStackJson(chapterName: string, module: string, block: string, position: number) {
-  const fullStackData = JSON.parse("../curriculum/superblock-structure/full-stack.json");
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  let chapterExists = fullStackData["chapters"].findIndex((chapter) => chapter.dashedName === chapterName) !== -1;
+async function updateFullStackJson(
+  chapterName: string,
+  moduleName: string,
+  block: string,
+  position: number
+) {
+  const fullStackData = JSON.parse(
+    '../curriculum/superblock-structure/full-stack.json'
+  ) as FullStackData;
+
+  const chapterExists =
+    fullStackData['chapters'].findIndex(
+      (chapter: FullStackChapter) => chapter.dashedName === chapterName
+    ) !== -1;
   if (!chapterExists) {
     // Inserts the chapter, module and block if the chapter is missing
-    let newChapter = { dashedName: chapterName, modules: [{ dashedName: module, blocks: [{ dashedName: block }] }] };
+    const newChapter = {
+      dashedName: chapterName,
+      modules: [{ dashedName: moduleName, blocks: [{ dashedName: block }] }]
+    };
     fullStackData['chapters'].push(newChapter);
-  }
-  else {
+  } else {
     // Chapter is present; is module present
     // Get the index of the correct chapter
-    const chapterIndex = fullStackData["chapters"].findIndex((chapter) => chapter.dashedName === chapterName);
-    let moduleExists = fullStackData['chapters'][chapterIndex]["modules"].findIndex((module) => module.dashedName === module) !== -1;
+    const chapterIndex = fullStackData['chapters'].findIndex(
+      (chapter: FullStackChapter) => chapter.dashedName === chapterName
+    );
+    const moduleExists =
+      fullStackData['chapters'][chapterIndex]['modules'].findIndex(
+        (module: FullStackModule) => module.dashedName === moduleName
+      ) !== -1;
 
     if (!moduleExists) {
       // Insert the new module and block
-      fullStackData['chapters'][chapterIndex]['modules'].append([{ dashedName: module, blocks: [{ dashedName: block }] }])
-    }
-    else {
-      fullStackData['chapters'][chapterIndex].modules.blocks.splice(position - 1, 0, { dashedName: block })
+      fullStackData['chapters'][chapterIndex]['modules'].push({
+        dashedName: moduleName,
+        blocks: [{ dashedName: block }]
+      });
+    } else {
+      const moduleIndex = fullStackData['chapters'][chapterIndex][
+        'modules'
+      ].findIndex(
+        (module: FullStackModule) => module.dashedName === moduleName
+      );
+      fullStackData['chapters'][chapterIndex]['modules'][moduleIndex][
+        'blocks'
+      ].splice(position - 1, 0, { dashedName: block });
       // Insert the new block into the already present module
     }
     // Write the new changes to the file
     const newData = JSON.stringify(fullStackData);
-    await fs.writeFile('../curriculum/superblock-structure/full-stack.json', newData);
+    await fs.writeFile(
+      '../curriculum/superblock-structure/full-stack.json',
+      newData
+    );
   }
 }
 
@@ -187,7 +227,12 @@ async function createMetaJson(
   );
 }
 
-async function createIntroMD(superBlock: string, block: string, title: string,blockType: string) {
+async function createIntroMD(
+  superBlock: string,
+  block: string,
+  title: string,
+  blockType: string
+) {
   const introMD = `---
 title: Introduction to the ${title}
 block: ${block}
@@ -196,7 +241,7 @@ superBlock: ${superBlock}
 
 ## Introduction to the ${title}
 
-${blockType === "quiz" ? 'This page is for the ' + title : 'This is a test for the new project-based curriculum.'}
+${blockType === 'quiz' ? 'This page is for the ' + title : 'This is a test for the new project-based curriculum.'}
 `;
   const dirPath = path.resolve(
     __dirname,
@@ -283,8 +328,6 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
-
-
 void prompt([
   {
     name: 'superBlock',
@@ -324,8 +367,8 @@ void prompt([
   {
     name: 'blockLayout',
     message: 'Choose a block layout',
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    default: answers =>
+
+    default: (answers: { blockType: BlockTypes }) =>
       answers.blockType == BlockTypes.quiz
         ? BlockLayouts.Link
         : BlockLayouts.ChallengeList,
