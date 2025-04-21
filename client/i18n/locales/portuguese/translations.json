@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "Veja o que os nossos ex-alunos dizem sobre o freeCodeCamp:",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Shawn Wang</strong> em Singapura",
         "occupation": "Engenheiro de software na <strong>Amazon</strong>",
         "testimony": "\"É assustador mudar de carreira. Só consegui ganhar confiança de que poderia programar através da prática de centenas de horas de aulas gratuitas no freeCodeCamp. Em um ano, eu já tinha um trabalho com salário de 6 dígitos como engenheiro de software. O <strong>freeCodeCamp mudou minha vida.</strong>\""
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Sarah Chima</strong> na Nigéria",
         "occupation": "Engenheira de software na <strong>ChatDesk</strong>",
         "testimony": "\"O <strong>freeCodeCamp foi o que alavancou a minha carreira</strong> como desenvolvedora de software. O currículo bem estruturado levou meu conhecimento de programação de um nível de iniciante a um nível em que eu me sentia confiante. Era tudo o que eu precisava para conseguir o meu primeiro trabalho de desenvolvimento em uma empresa incrível.\""
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Emma Bostian</strong> na Suécia",
         "occupation": "Engenheira de software na <strong>Spotify</strong>",
         "testimony": "\"Eu sempre tive dificuldade em aprender JavaScript. Eu fiz muitos cursos, mas o curso do freeCodeCamp foi aquele que prendeu minha atenção. Estudar JavaScript, bem como algoritmos e estruturas de dados no <strong>freeCodeCamp me deu as habilidades</strong> e a confiança que eu precisava para conseguir o trabalho dos meus sonhos como engenheira de software na Spotify.\""
@@ -544,7 +547,7 @@
       "unanswered-questions": "As seguintes perguntas não foram respondidas: {{ unansweredQuestions }}. Você precisa responder a todas as perguntas.",
       "have-n-correct-questions": "Você acertou {{ correctAnswerCount }} de {{ total }} perguntas.",
       "finish-modal-header": "Terminar o questionário",
-      "finish-modal-body": "Tem certeza de que deseja finalizar o questionário? Você não será capaz de alterar respostas depois disso.",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "Sim, eu terminei",
       "finish-modal-no": "Não, quero continuar no questionário",
       "exit-modal-header": "Sair do questionário",
