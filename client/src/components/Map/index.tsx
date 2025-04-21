@@ -80,14 +80,12 @@ const mapStateToProps = createSelector(
 
 function MapLi({
   superBlock,
-  landing = false,
-  showProgressionLines = false
+  landing = false
 }: {
   superBlock: SuperBlocks;
   landing: boolean;
   completed: boolean;
   claimed: boolean;
-  showProgressionLines?: boolean;
   showNumbers?: boolean;
   index: number;
 }) {
@@ -98,12 +96,6 @@ function MapLi({
       data-test-label='curriculum-map-button'
       data-playwright-test-label='curriculum-map-button'
     >
-      <div className='progress-icon-wrapper'>
-        <div
-          className={`progress-icon${showProgressionLines ? ' show-progression-lines' : ''}`}
-        ></div>
-      </div>
-
       <ButtonLink
         block
         size='large'
