@@ -23,7 +23,7 @@ Listen to the audio and complete the sentence below.
 
 ### --feedback--
 
-This two-words phrase refers to a weakness in a system that can be exploited.
+This two-word phrase refers to a security flaw in a system that lacks a fix or update to address it and can be exploited.
 
 # --explanation--
 
