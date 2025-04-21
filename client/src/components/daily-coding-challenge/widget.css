@@ -1,18 +1,3 @@
-.daily-coding-challenge-wrap {
-  display: flex;
-  align-items: center;
-}
-
-.daily-coding-challenge-left {
-  width: 4rem;
-}
-
-.daily-coding-challenge-right {
-  flex-grow: 1;
-  border: 1px solid var(--primary-color);
-  padding: 1rem;
-}
-
 .daily-coding-challenge-info {
   display: flex;
   justify-content: space-between;
@@ -21,4 +6,15 @@
 
 .daily-coding-challenge-date {
   font-size: 1.2rem;
+}
+
+.release-note {
+  font-size: 0.8rem;
+}
+
+.daily-coding-challenge-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
 }
