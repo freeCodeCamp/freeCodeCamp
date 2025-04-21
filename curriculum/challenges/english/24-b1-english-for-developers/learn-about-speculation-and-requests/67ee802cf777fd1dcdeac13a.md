@@ -80,7 +80,7 @@ Comments help others understand the code and remind you of important details whe
       "filename": "B1_17-1.mp3",
       "startTime": 1,
       "startTimestamp": 25.54,
-      "finishTimestamp": 28.56
+      "finishTimestamp": 28.48
     }
   },
   "commands": [

@@ -77,7 +77,7 @@ A `test suite` is a collection of tests that check if a program works correctly.
     "audio": {
       "filename": "B1_17-1.mp3",
       "startTime": 1,
-      "startTimestamp": 42.62,
+      "startTimestamp": 42.42,
       "finishTimestamp": 45.94
     }
   },
@@ -90,7 +90,7 @@ A `test suite` is a collection of tests that check if a program works correctly.
     {
       "character": "Sophie",
       "startTime": 1,
-      "finishTime": 4.32,
+      "finishTime": 4.52,
       "dialogue": {
         "text": "Great. Also, you should have run the test suite before submitting your code.",
         "align": "center"
@@ -99,7 +99,7 @@ A `test suite` is a collection of tests that check if a program works correctly.
     {
       "character": "Sophie",
       "opacity": 0,
-      "startTime": 4.82
+      "startTime": 5.02
     }
   ]
 }
