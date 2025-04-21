@@ -119,6 +119,7 @@
   },
   "daily-coding-challenges": {
     "title": "Daily Coding Challenges",
+    "map-title": "Try the coding challenge of the day:",
     "not-found": "Daily Coding Challenge Not Found.",
     "release-note": "New challenges are released at midnight US Central time (UTC-06:00)"
   },
