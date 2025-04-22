@@ -4,24 +4,26 @@ import { submitTypes } from '../../../shared/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared/config/curriculum';
 
-type Intro = { [keyValue in SuperBlocks]: IntroProps };
+export type CurriculumIntros = {
+  [keyValue in SuperBlocks]: {
+    title: string;
+    intro: string[];
+    blocks: Record<string, { title: string; intro: string[] }>;
+  };
+};
+
 export type Curriculum<T> = {
   [keyValue in SuperBlocks]: T extends CurriculumProps
     ? CurriculumProps
     : GeneratedCurriculumProps;
 };
 
-interface IntroProps extends CurriculumProps {
-  title: string;
-  intro: string[];
-}
-
 export interface CurriculumProps {
   intro: string[];
   blocks: Record<string, Block<ChallengeNode['challenge'][]>>;
 }
 
-interface GeneratedCurriculumProps {
+export interface GeneratedCurriculumProps {
   intro: string[];
   blocks: Record<string, Block<Record<string, unknown>>>;
 }
@@ -71,6 +73,9 @@ export function buildExtCurriculumData(
     __dirname,
     '../../../client/i18n/locales/english/intro.json'
   );
+  const intros = JSON.parse(
+    readFileSync(blockIntroPath, 'utf-8')
+  ) as CurriculumIntros;
 
   mkdirSync(dataPath, { recursive: true });
 
@@ -85,7 +90,7 @@ export function buildExtCurriculumData(
     writeToFile('available-superblocks', {
       superblocks: orderedSuperBlockInfo.map(x => ({
         ...x,
-        title: getSuperBlockTitle(x.dashedName)
+        title: intros[x.dashedName].title
       }))
     });
 
@@ -96,7 +101,7 @@ export function buildExtCurriculumData(
       if (blockNames.length === 0) continue;
 
       superBlock[superBlockKey] = <GeneratedCurriculumProps>{};
-      superBlock[superBlockKey].intro = getSuperBlockDescription(superBlockKey);
+      superBlock[superBlockKey].intro = intros[superBlockKey]['intro'];
       superBlock[superBlockKey].blocks = {};
 
       for (const blockName of blockNames) {
@@ -105,7 +110,7 @@ export function buildExtCurriculumData(
         >{};
 
         superBlock[superBlockKey]['blocks'][blockName]['desc'] =
-          getBlockDescription(superBlockKey, blockName);
+          intros[superBlockKey]['blocks'][blockName]['intro'];
 
         superBlock[superBlockKey]['blocks'][blockName]['challenges'] =
           curriculum[superBlockKey]['blocks'][blockName]['meta'];
@@ -129,30 +134,6 @@ export function buildExtCurriculumData(
     const filePath = `${dataPath}/${ver}/${fileName}.json`;
     mkdirSync(dirname(filePath), { recursive: true });
     writeFileSync(filePath, JSON.stringify(data, null, 2));
-  }
-
-  function getBlockDescription(
-    superBlockKeys: SuperBlocks,
-    blockKey: string
-  ): string[] {
-    const intros = JSON.parse(readFileSync(blockIntroPath, 'utf-8')) as Intro;
-
-    return intros[superBlockKeys]['blocks'][blockKey]['intro'];
-  }
-
-  function getSuperBlockDescription(superBlockKey: SuperBlocks): string[] {
-    const superBlockIntro = JSON.parse(
-      readFileSync(blockIntroPath, 'utf-8')
-    ) as Intro;
-    return superBlockIntro[superBlockKey]['intro'];
-  }
-
-  function getSuperBlockTitle(superBlock: SuperBlocks): string {
-    const superBlocks = JSON.parse(
-      readFileSync(blockIntroPath, 'utf-8')
-    ) as Intro;
-
-    return superBlocks[superBlock].title;
   }
 
   function getSubmitTypes() {
