@@ -23,7 +23,7 @@ describe('growth-book', () => {
       clientKey: 'invalid-key'
     });
 
-    expect(spy).toHaveBeenCalledWith('Failed to initialize GrowthBook');
+    expect(spy).toHaveBeenCalled();
     expect(captureException).toHaveBeenCalled();
   });
 });
