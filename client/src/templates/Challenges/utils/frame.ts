@@ -130,6 +130,15 @@ const createHeader = (id = mainPreviewId) =>
         if (!href || href[0] !== '#' && !href.match(/^https?:\\/\\//)) {
           e.preventDefault();
         }
+        else if (href.match(/^#.+/)) {
+          e.preventDefault();
+          const scrollId = href.substring(1);
+          const scrollElem = document.getElementById(scrollId);
+
+          if (scrollElem) {
+            scrollElem.scrollIntoView();
+          }
+        }
       }
     }, false);
     document.addEventListener('submit', function(e) {
@@ -372,7 +381,7 @@ const waitForFrame = (frameContext: Context) => {
     }, 10000);
 
     // We have to add the listener to the frame, not its contentWindow, because
-    // the the latter does not receive the load event in Safari. It does not
+    // the latter does not receive the load event in Safari. It does not
     // matter which we use for Chrome and Firefox.
     frameContext.element?.addEventListener('load', () => {
       clearTimeout(rejectId);

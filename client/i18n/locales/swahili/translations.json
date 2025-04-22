@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "Hivi ndivyo wahitimu wetu wanasema kuhusu freeCodeCamp:",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Shawn Wang</strong> akiwa Singapore",
         "occupation": "Mhandisi wa Programu katika <strong>Amazon</strong>",
         "testimony": "\"Inatisha kubadili taaluma. Nilipata tu kujiamini kwamba ningeweza kuweka msimbo kwa kufanya kazi kwa mamia ya saa za masomo ya bure kwenye freeCodeCamp. Ndani ya mwaka mmoja nilikuwa na kazi ya takwimu sita kama Mhandisi wa Programu. <strong>freeCodeCamp ilibadilisha maisha yangu.</strong>\""
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Sarah Chima</strong> nchini Nigeria",
         "occupation": "Mhandisi wa Programu katika <strong>ChatDesk</strong>",
         "testimony": "\"<strong>freeCodeCamp ilikuwa lango la kazi yangu</strong> kama msanidi programu. Mtaala ulioandaliwa vyema ulichukua ujuzi wangu wa usimbaji kutoka kiwango cha wanaoanza hadi kiwango cha uhakika sana. Ilikuwa kila kitu nilichohitaji ili kupata kazi yangu ya kwanza katika kampuni ya ajabu.\""
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Emma Bostian</strong> nchini Uswidi",
         "occupation": "Mhandisi wa Programu katika <strong>Spotify</strong>",
         "testimony": "\"Siku zote nimekuwa nikijitahidi kujifunza JavaScript. Nimesoma kozi nyingi lakini kozi ya freeCodeCamp ndiyo iliyokwama. Kusoma JavaScript pamoja na miundo ya data na algoriti katika <strong>freeCodeCamp kulinipa ujuzi</strong> na kujiamini niliyohitaji kupata kazi yangu ya ndoto kama mhandisi wa programu huko Spotify.\""
@@ -456,9 +459,6 @@
     "sign-in-see-benefits": "Sign in to see your supporter benefits",
     "card-has-been-updated": "Your card has been updated successfully.",
     "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "Uthibitishaji wa {{title}}"
-    },
     "editor-tabs": {
       "code": "Code",
       "tests": "Majaribio",
@@ -547,7 +547,7 @@
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
       "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct.",
       "finish-modal-header": "Finish Quiz",
-      "finish-modal-body": "Are you sure you want to finish the quiz? You will not be able to change any answers.",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "Yes, I am finished",
       "finish-modal-no": "No, I would like to continue the quiz",
       "exit-modal-header": "Exit Quiz",

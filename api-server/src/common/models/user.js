@@ -381,30 +381,6 @@ export default function initializeUser(User) {
     return User.count(where).then(count => count > 0);
   };
 
-  User.remoteMethod('doesExist', {
-    description: 'checks whether a user exists using email or username',
-    accepts: [
-      {
-        arg: 'username',
-        type: 'string'
-      },
-      {
-        arg: 'email',
-        type: 'string'
-      }
-    ],
-    returns: [
-      {
-        arg: 'exists',
-        type: 'boolean'
-      }
-    ],
-    http: {
-      path: '/exists',
-      verb: 'get'
-    }
-  });
-
   User.about = function about(username, cb) {
     if (!username) {
       // Zalgo!!

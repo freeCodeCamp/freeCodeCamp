@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "Das sagen unsere Absolventen zu freeCodeCamp:",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Shawn Wang</strong> in Singapur",
         "occupation": "Softwareentwickler bei <strong>Amazon</strong>",
         "testimony": "\"Es ist beängstigend, den Beruf zu wechseln. Ich habe erst durch die hunderte Stunden an kostenlosen Lektionen auf freeCodeCamp das Vertrauen gewonnen, dass ich coden kann. Innerhalb eines Jahres hatte ich einen Job mit sechsstelligen Gehalt als Software Entwickler. <strong>freeCodeCamp hat mein Leben verändert.</strong>\""
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Sarah Chima</strong> in Nigeria",
         "occupation": "Softwareentwicklerin bei <strong>ChatDesk</strong>",
         "testimony": "\"<strong>freeCodeCamp war das Tor zu meiner Karriere</strong> als Softwareentwickler. Der gut strukturierte Lehrplan brachte meine Programmierkenntnisse von einem totalen Anfängerlevel auf ein sehr sicheres Niveau. Es war alles, was ich brauchte, um meinen ersten Entwicklerjob bei einer großartigen Firma zu bekommen.\""
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Emma Bostian</strong> in Schweden",
         "occupation": "Softwareentwicklerin bei <strong>Spotify</strong>",
         "testimony": "\"Ich habe immer damit gekämpft, JavaScript zu lernen. Ich habe viele Kurse belegt, aber der Kurs von freeCodeCamp war derjenige, der am meisten hängen blieb. Das Lernen von JavaScript sowie Datenstrukturen und Algorithmen auf <strong>freeCodeCamp gab mir die Fähigkeiten</strong> und das Selbstvertrauen, das ich brauchte, um meinen Traumjob als Softwareentwicklerin bei Spotify zu bekommen.\""
@@ -456,9 +459,6 @@
     "sign-in-see-benefits": "Sign in to see your supporter benefits",
     "card-has-been-updated": "Your card has been updated successfully.",
     "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "{{title}} Zertifizierung"
-    },
     "editor-tabs": {
       "code": "Code",
       "tests": "Tests",
@@ -547,7 +547,7 @@
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
       "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct.",
       "finish-modal-header": "Finish Quiz",
-      "finish-modal-body": "Are you sure you want to finish the quiz? You will not be able to change any answers.",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "Yes, I am finished",
       "finish-modal-no": "No, I would like to continue the quiz",
       "exit-modal-header": "Exit Quiz",

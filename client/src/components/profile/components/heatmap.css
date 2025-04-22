@@ -1,5 +1,7 @@
 .heatmap-nav-btn {
   margin: 0 20px;
+  width: 44px;
+  height: 44px;
 }
 
 .react-calendar-heatmap-month-label {

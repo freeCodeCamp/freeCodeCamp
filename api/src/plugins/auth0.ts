@@ -78,18 +78,18 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
     });
 
     // TODO: use a schema to validate the query params.
-    fastify.get('/auth/auth0/callback', async function (request, reply) {
-      const { error, error_description } = request.query as Record<
-        string,
-        string
-      >;
+    fastify.get('/auth/auth0/callback', async function (req, reply) {
+      const logger = fastify.log.child({ req });
+
+      const { error, error_description } = req.query as Record<string, string>;
       if (error === 'access_denied') {
         const blockedByLaw =
           error_description === 'Access denied from your location';
-
         if (blockedByLaw) {
+          logger.info('Access denied due to user location');
           return reply.redirect(`${HOME_LOCATION}/blocked`);
         } else {
+          logger.info('Authentication failed for user:' + error_description);
           return reply.redirectWithMessage(`${HOME_LOCATION}/learn`, {
             type: 'info',
             content: error_description ?? 'Authentication failed'
@@ -97,23 +97,22 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         }
       }
 
-      const { returnTo, pathPrefix, origin } = getLoginRedirectParams(request);
+      const { returnTo, pathPrefix, origin } = getLoginRedirectParams(req);
       const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
 
       let token;
       try {
         token = (
-          await this.auth0OAuth.getAccessTokenFromAuthorizationCodeFlow(request)
+          await this.auth0OAuth.getAccessTokenFromAuthorizationCodeFlow(req)
         ).token;
       } catch (error) {
         // This is the plugin's error message. If it changes, we will either
         // have to update the test or write custom state create/verify
         // functions.
         if (error instanceof Error && error.message === 'Invalid state') {
-          fastify.log.error('Auth failed: invalid state');
+          logger.error('Auth failed: invalid state');
         } else {
-          fastify.log.error('Auth failed:');
-          fastify.log.error(error);
+          logger.error(error, 'Auth failed');
           fastify.Sentry.captureException(error);
         }
         // It's important _not_ to redirect to /signin here, as that could
@@ -132,7 +131,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         email = userinfo.email;
         if (typeof email !== 'string') throw Error('Invalid userinfo response');
       } catch (error) {
-        fastify.log.error('Auth failed', error);
+        logger.error({ error }, 'Auth failed');
         fastify.Sentry.captureException(error);
         return reply.redirect('/signin');
       }

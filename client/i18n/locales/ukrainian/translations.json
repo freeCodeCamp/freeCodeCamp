@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "Ось що наші випускники говорять про freeCodeCamp:",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Шон Вонг</strong> з Сінгапуру",
         "occupation": "Інженер програмного забезпечення в <strong>Amazon</strong>",
         "testimony": "«Змінювати професію — страшно. Я набув впевненості в програмуванні лише після того, як пройшов сотні годин безоплатних занять на freeCodeCamp. І вже за рік я отримав роботу інженера програмного забезпечення з шестизначною зарплатою. <strong>freeCodeCamp змінив моє життя.</strong>»"
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Сара Чіма</strong> з Нігерії",
         "occupation": "Інженерка програмного забезпечення в <strong>ChatDesk</strong>",
         "testimony": "«<strong>freeCodeCamp став для мене пропуском у професію</strong> інженерки програмного забезпечення. Гарно структурована навчальна програма дозволила покращити мої знання з програмування з початкового рівня до дуже впевненого. Це все, що було потрібно, щоб знайти свою першу роботу розробниці програмного забезпечення у чудовій компанії.»"
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Емма Бостіан</strong> зі Швеції",
         "occupation": "Інженерка програмного забезпечення в <strong>Spotify</strong>",
         "testimony": "«У мене завжди виникали труднощі при вивченні JavaScript. Я проходила багато курсів, але з курсом від freeCodeCamp я залишилася надовго. Вивчення JavaScript, а також структур даних та алгоритмів на <strong>freeCodeCamp дало мені необхідні навички</strong> і впевненість, щоб знайти роботу своєї мрії: інженерка програмного забезпечення у Spotify.»"
@@ -401,7 +404,7 @@
     "welcome-1": "З поверненням, {{name}}.",
     "welcome-2": "Ласкаво просимо до freeCodeCamp.org",
     "start-at-beginning": "Якщо ви новачок у програмуванні, ми рекомендуємо <0>почати з початку</0>.",
-    "happy-coding": "Happy coding!",
+    "happy-coding": "Щасливого програмування!",
     "upcoming-lessons": "Майбутні уроки",
     "learn": "Навчання",
     "add-subtitles": "Допомогти покращити або додати субтитри",
@@ -445,7 +448,7 @@
     "rsa": "Читати, шукати, питати",
     "rsa-forum": "<strong>Перш ніж робити новий допис,</strong> будь ласка, <0>перевірте, чи на ваше запитання ще не відповіли на форумі</0>.",
     "reset": "Скинути цей урок?",
-    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
+    "reset-warn": "Ви впевнені, що хочете скинути урок «{{title}}»? Редактори та тести буде скинуто.",
     "reset-warn-2": "Цю дію неможливо скасувати.",
     "revert-warn": "Ви впевнені, що хочете скинути цей урок? Останні зміни буде скасовано, а код буде відновлено до останньої збереженої версії.",
     "scrimba-tip": "Порада: якщо мінібраузер закриває код, то натисніть та перетягніть його у сторону. Також не соромтеся зупинятися та редагувати код у відео у будь-який час.",
@@ -456,9 +459,6 @@
     "sign-in-see-benefits": "Увійдіть, щоб побачити переваги донорів",
     "card-has-been-updated": "Вашу картку успішно оновлено.",
     "contact-support-mistake": "Якщо виникла помилка, будь ласка, зв’яжіться з нами на donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "Сертифікація «{{title}}»"
-    },
     "editor-tabs": {
       "code": "Код",
       "tests": "Тести",
@@ -547,7 +547,7 @@
       "unanswered-questions": "Ви не відповіли на такі запитання: {{ unansweredQuestions }}. Потрібно дати відповідь на всі запитання.",
       "have-n-correct-questions": "Ви правильно відповіли на {{ correctAnswerCount }} з {{ total }} запитань.",
       "finish-modal-header": "Завершити тест",
-      "finish-modal-body": "Впевнені, що хочете завершити тест? Ви не зможете змінити свої відповіді.",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "Так, завершити тест",
       "finish-modal-no": "Ні, я хочу продовжити",
       "exit-modal-header": "Покинути тест",
