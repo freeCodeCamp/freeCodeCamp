@@ -17,6 +17,10 @@ describe('cors', () => {
     await fastify.register(cors);
   });
 
+  afterAll(async () => {
+    await fastify.close();
+  });
+
   it('should not log for /status/* routes', async () => {
     const logger = fastify.log.child({ req: { url: '/status/ping' } });
     const spies = LOG_LEVELS.map(level => jest.spyOn(logger, level));
