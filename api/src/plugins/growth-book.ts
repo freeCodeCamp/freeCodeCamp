@@ -13,10 +13,7 @@ const growthBook: FastifyPluginAsync<Options> = async (fastify, options) => {
   const res = await gb.init({ timeout: 3000 });
 
   if (res.error) {
-    fastify.log.error(
-      { error: res.error.message },
-      'Failed to initialize GrowthBook'
-    );
+    fastify.log.error(res.error, 'Failed to initialize GrowthBook');
     fastify.Sentry.captureException(res.error);
   }
 
