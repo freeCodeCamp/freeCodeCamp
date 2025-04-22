@@ -127,10 +127,18 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
     'client_secret_from_auth0_dashboard',
     'The Auth0 client secret should be changed from the default value.'
   );
+  assert.ok(
+    process.env.GROWTHBOOK_FASTIFY_API_HOST,
+    'GROWTHBOOK_FASTIFY_API_HOST should be set.'
+  );
   assert.notEqual(
     process.env.GROWTHBOOK_FASTIFY_API_HOST,
     'fastify_api_sdk_api_host_from_growthbook_dashboard',
     'The GROWTHBOOK_FASTIFY_API_HOST env should be changed from the default value.'
+  );
+  assert.ok(
+    process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY,
+    'GROWTHBOOK_FASTIFY_CLIENT_KEY should be set.'
   );
   assert.notEqual(
     process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY,
