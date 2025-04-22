@@ -89,8 +89,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           logger.info('Access denied due to user location');
           return reply.redirect(`${HOME_LOCATION}/blocked`);
         } else {
-          logger.error('Authentication failed for user:' + error_description);
-
+          logger.info('Authentication failed for user:' + error_description);
           return reply.redirectWithMessage(`${HOME_LOCATION}/learn`, {
             type: 'info',
             content: error_description ?? 'Authentication failed'
@@ -113,8 +112,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         if (error instanceof Error && error.message === 'Invalid state') {
           logger.error('Auth failed: invalid state');
         } else {
-          logger.error('Auth failed:');
-          logger.error(error);
+          logger.error(error, 'Auth failed');
           fastify.Sentry.captureException(error);
         }
         // It's important _not_ to redirect to /signin here, as that could
