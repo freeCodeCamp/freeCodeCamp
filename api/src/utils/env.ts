@@ -90,6 +90,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.notEqual(process.env.COOKIE_SECRET, 'a_cookie_secret');
   assert.ok(process.env.SENTRY_DSN);
   assert.ok(process.env.SENTRY_ENVIRONMENT);
+  assert.ok(process.env.DEPLOYMENT_VERSION);
   // The following values can exist in development, but production-like
   // environments need to override the defaults.
   assert.notEqual(
@@ -210,3 +211,4 @@ function undefinedOrBool(val: string | undefined): undefined | boolean {
 }
 export const SCREENSHOT_SERVICE_LOCATION =
   process.env.SCREENSHOT_SERVICE_LOCATION;
+export const DEPLOYMENT_VERSION = process.env.DEPLOYMENT_VERSION || 'unknown';
