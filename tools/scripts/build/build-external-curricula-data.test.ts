@@ -20,7 +20,7 @@ import {
   orderedSuperBlockInfo
 } from './build-external-curricula-data';
 
-const VERSION = 'v3';
+const VERSION = 'v2';
 const intros = JSON.parse(
   readFileSync(
     path.resolve(__dirname, '../../../client/i18n/locales/english/intro.json'),
