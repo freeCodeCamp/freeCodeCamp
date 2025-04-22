@@ -13,14 +13,6 @@
   flex-direction: row;
 }
 
-.map-ui ul li .progress-icon-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
 .map-ui ul .progress-icon {
   width: 4rem;
   display: flex;
