@@ -3,7 +3,11 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import { EnvExamAttempt } from '@prisma/client';
 import fastifyMultipart from '@fastify/multipart';
 import { PrismaClientValidationError } from '@prisma/client/runtime/library';
-import { type FastifyInstance, type FastifyReply } from 'fastify';
+import {
+  FastifyBaseLogger,
+  type FastifyInstance,
+  type FastifyReply
+} from 'fastify';
 import jwt from 'jsonwebtoken';
 
 import * as schemas from '../schemas';
@@ -816,135 +820,6 @@ async function getExamAttemptsHandler(
   const user = req.user!;
   const { attemptId } = req.params;
 
-  const constructEnvExamAttempt = async (attempt: EnvExamAttempt) => {
-    const maybeExam = await mapErr(
-      this.prisma.envExam.findUnique({
-        where: {
-          id: attempt.examId
-        }
-      })
-    );
-
-    if (maybeExam.hasError) {
-      logger.error({ examError: maybeExam.error });
-      void reply.code(500);
-      return reply.send(
-        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
-      );
-    }
-
-    const exam = maybeExam.data;
-
-    if (exam === null) {
-      logger.error(
-        { examId: attempt.examId, attemptId: attempt.id },
-        'Invalid exam id in attempt.'
-      );
-      void reply.code(500);
-      return reply.send(
-        ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(
-          'Invalid exam id in attempt.'
-        )
-      );
-    }
-
-    // If attempt is still in progress, return without result
-    const isAttemptExpired =
-      attempt.startTimeInMS + exam.config.totalTimeInMS > Date.now();
-    if (!isAttemptExpired) {
-      return attempt;
-    }
-
-    const maybeMod = await mapErr(
-      this.prisma.examModeration.findFirst({
-        where: {
-          examAttemptId: attempt.id,
-          approved: null
-        }
-      })
-    );
-
-    if (maybeMod.hasError) {
-      logger.error({ error: maybeMod.error });
-      void reply.code(500);
-      return reply.send(
-        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeMod.error))
-      );
-    }
-
-    const moderation = maybeMod.data;
-
-    if (moderation === null) {
-      logger.error(
-        { examAttemptId: attempt.id },
-        'ExamModeration record should exist for expired attempt'
-      );
-      void reply.code(500);
-      return reply.send(
-        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
-          'Unable to find relevant result for exam attempt.'
-        )
-      );
-    }
-
-    // If attempt is completed, but has not been graded, return without result
-    if (moderation.approved === null) {
-      return attempt;
-    }
-
-    // If attempt is completed, but has been determined to need a retake
-    // TODO: Send moderation.feedback?
-    if (moderation.approved === false) {
-      return attempt;
-    }
-
-    const maybeGeneratedExam = await mapErr(
-      this.prisma.envGeneratedExam.findUnique({
-        where: {
-          id: attempt.generatedExamId
-        }
-      })
-    );
-
-    if (maybeGeneratedExam.hasError) {
-      logger.error({ generatedExamError: maybeGeneratedExam.error });
-      void reply.code(500);
-      return reply.send(
-        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
-          JSON.stringify(maybeGeneratedExam.error)
-        )
-      );
-    }
-
-    const generatedExam = maybeGeneratedExam.data;
-
-    if (!generatedExam) {
-      logger.error(
-        { attemptId: attempt.id, generatedExamId: attempt.generatedExamId },
-        'Unable to find generated exam associated with exam attempt'
-      );
-      void reply.code(500);
-      return reply.send(
-        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
-          'Unable to find generated exam associated with exam attempt'
-        )
-      );
-    }
-
-    const score = calculateScore(exam, generatedExam, attempt);
-
-    const result = {
-      score,
-      passingPercent: exam.config.passingPercent
-    };
-
-    const envExamAttempt = {
-      ...attempt,
-      result
-    };
-    return envExamAttempt;
-  };
-
   // If attempt id is given, only return that attempt
   if (attemptId) {
     const maybeAttempt = await mapErr(
@@ -977,7 +852,16 @@ async function getExamAttemptsHandler(
       );
     }
 
-    const envExamAttempt = constructEnvExamAttempt(attempt);
+    const { error, envExamAttempt } = await constructEnvExamAttempt(
+      this,
+      attempt,
+      logger
+    );
+
+    if (error) {
+      void reply.code(error.code);
+      return reply.send(error.data);
+    }
 
     return reply.send({
       envExamAttempt
@@ -1013,9 +897,162 @@ async function getExamAttemptsHandler(
   }
 
   for (const attempt of attempts) {
-    const envExamAttempt = await constructEnvExamAttempt(attempt);
+    const { error, envExamAttempt } = await constructEnvExamAttempt(
+      this,
+      attempt,
+      logger
+    );
+    if (error) {
+      void reply.code(error.code);
+      return reply.send(error.data);
+    }
     envExamAttempts.push(envExamAttempt);
   }
 
   return reply.send(envExamAttempts);
+}
+
+async function constructEnvExamAttempt(
+  fastify: FastifyInstance,
+  attempt: EnvExamAttempt,
+  logger: FastifyBaseLogger
+) {
+  const maybeExam = await mapErr(
+    fastify.prisma.envExam.findUnique({
+      where: {
+        id: attempt.examId
+      }
+    })
+  );
+
+  if (maybeExam.hasError) {
+    logger.error({ examError: maybeExam.error });
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
+      }
+    };
+  }
+
+  const exam = maybeExam.data;
+
+  if (exam === null) {
+    logger.error(
+      { examId: attempt.examId, attemptId: attempt.id },
+      'Invalid exam id in attempt.'
+    );
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(
+          'Invalid exam id in attempt.'
+        )
+      }
+    };
+  }
+
+  // If attempt is still in progress, return without result
+  const isAttemptExpired =
+    attempt.startTimeInMS + exam.config.totalTimeInMS > Date.now();
+  if (!isAttemptExpired) {
+    return { envExamAttempt: attempt, error: null };
+  }
+
+  const maybeMod = await mapErr(
+    fastify.prisma.examModeration.findFirst({
+      where: {
+        examAttemptId: attempt.id,
+        approved: null
+      }
+    })
+  );
+
+  if (maybeMod.hasError) {
+    logger.error({ error: maybeMod.error });
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeMod.error))
+      }
+    };
+  }
+
+  const moderation = maybeMod.data;
+
+  if (moderation === null) {
+    logger.error(
+      { examAttemptId: attempt.id },
+      'ExamModeration record should exist for expired attempt'
+    );
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+          'Unable to find relevant result for exam attempt.'
+        )
+      }
+    };
+  }
+
+  // If attempt is completed, but has not been graded, return without result
+  if (moderation.approved === null) {
+    return { envExamAttempt: attempt, error: null };
+  }
+
+  // If attempt is completed, but has been determined to need a retake
+  // TODO: Send moderation.feedback?
+  if (moderation.approved === false) {
+    return { envExamAttempt: attempt, error: null };
+  }
+
+  const maybeGeneratedExam = await mapErr(
+    fastify.prisma.envGeneratedExam.findUnique({
+      where: {
+        id: attempt.generatedExamId
+      }
+    })
+  );
+
+  if (maybeGeneratedExam.hasError) {
+    logger.error({ generatedExamError: maybeGeneratedExam.error });
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+          JSON.stringify(maybeGeneratedExam.error)
+        )
+      }
+    };
+  }
+
+  const generatedExam = maybeGeneratedExam.data;
+
+  if (!generatedExam) {
+    logger.error(
+      { attemptId: attempt.id, generatedExamId: attempt.generatedExamId },
+      'Unable to find generated exam associated with exam attempt'
+    );
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+          'Unable to find generated exam associated with exam attempt'
+        )
+      }
+    };
+  }
+
+  const score = calculateScore(exam, generatedExam, attempt);
+
+  const result = {
+    score,
+    passingPercent: exam.config.passingPercent
+  };
+
+  const envExamAttempt = {
+    ...attempt,
+    result
+  };
+  return { error: null, envExamAttempt };
 }
