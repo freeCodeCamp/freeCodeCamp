@@ -78,7 +78,7 @@ import '../components/test-frame.css';
 const mapStateToProps = (state: unknown) => ({
   challengeFiles: challengeFilesSelector(state) as ChallengeFiles,
   output: consoleOutputSelector(state) as string[],
-  isChallengeCompleted: isChallengeCompletedSelector(state) as boolean,
+  isChallengeCompleted: isChallengeCompletedSelector(state),
   savedChallenges: savedChallengesSelector(state) as SavedChallenge[]
 });
 
