@@ -430,23 +430,23 @@ Which of the following is a correct example of using sticky positioning?
 
 #### --text--
 
-What is the difference between sticky and fixed positioning?
+What happens to an element with `position: sticky` when it reaches its threshold?
 
 #### --distractors--
 
-Sticky elements can only be used in table layouts while fixed elements can be used in any type of CSS layout.
+It becomes fixed relative to the viewport.
 
 ---
 
-Sticky elements will always remain in the same position while fixed elements will stick to a certain point then behave like relative elements.
+It disappears from the document flow.
 
 ---
 
-Fixed elements will be positioned relative to its normal position while sticky elements will only stick to a certain point then behave like relative elements.
+It overlaps all other elements on the page.
 
 #### --answer--
 
-Fixed elements will remain in the same position on the screen while sticky elements will only stick to a certain point then behave like relative elements.
+It sticks to its nearest scrollable ancestor until scrolling past the threshold.
 
 ### --question--
 
@@ -628,3 +628,527 @@ Which of the following is the default value of the `position` property?
 
 `static`
 
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What is the default value of the `position` property in CSS?
+
+#### --distractors--
+
+`absolute`
+
+---
+
+`relative`
+
+---
+
+`fixed`
+
+#### --answer--
+
+`static`
+
+### --question--
+
+#### --text--
+
+Which CSS property is used to control the stacking order of elements?
+
+#### --distractors--
+
+`position`
+
+---
+
+`display`
+
+---
+
+`float`
+
+#### --answer--
+
+`z-index`
+
+### --question--
+
+#### --text--
+
+What happens to an element with `position: absolute`?
+
+#### --distractors--
+
+It remains in the normal document flow.
+
+---
+
+It sticks to the viewport when scrolling.
+
+---
+
+It overlaps other elements without any control.
+
+#### --answer--
+
+It is removed from the normal document flow and positioned relative to its nearest positioned ancestor.
+
+### --question--
+
+#### --text--
+
+Which value of the `position` property allows an element to move relative to its normal position?
+
+#### --distractors--
+
+`absolute`
+
+---
+
+`fixed`
+
+---
+
+`static`
+
+#### --answer--
+
+`relative`
+
+### --question--
+
+#### --text--
+
+What is the effect of `position: fixed` on an element?
+
+#### --distractors--
+
+It moves the element relative to its parent.
+
+---
+
+It keeps the element in the normal document flow.
+
+---
+
+It positions the element relative to its nearest ancestor.
+
+#### --answer--
+
+It positions the element relative to the viewport and keeps it fixed during scrolling.
+
+### --question--
+
+#### --text--
+
+Which value of the `position` property allows an element to stick to a defined position when scrolling past a certain point?
+
+#### --distractors--
+
+`absolute`
+
+---
+
+`relative`
+
+---
+
+`fixed`
+
+#### --answer--
+
+`sticky`
+
+### --question--
+
+#### --text--
+
+What is the purpose of the `z-index` property in CSS?
+
+#### --distractors--
+
+To control the horizontal alignment of elements.
+
+---
+
+To define the visibility of elements.
+
+---
+
+To set the background color of elements.
+
+#### --answer--
+
+To control the vertical stacking order of overlapping elements.
+
+### --question--
+
+#### --text--
+
+Which of the following is an example of using `position: relative`?
+
+#### --distractors--
+
+```css
+.box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+```
+
+---
+
+```css
+.box {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+```
+
+---
+
+```css
+.box {
+  position: static;
+}
+```
+
+#### --answer--
+
+```css
+.box {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+```
+
+### --question--
+
+#### --text--
+
+What happens to an element with `position: static`?
+
+#### --distractors--
+
+It is removed from the normal document flow.
+
+---
+
+It overlaps other elements.
+
+---
+
+It sticks to the viewport during scrolling.
+
+#### --answer--
+
+It follows the normal document flow.
+
+### --question--
+
+#### --text--
+
+Which of the following is true about `position: absolute`?
+
+#### --distractors--
+
+It positions the element relative to the viewport.
+
+---
+
+It keeps the element in the normal document flow.
+
+---
+
+It positions the element relative to the document root.
+
+#### --answer--
+
+It positions the element relative to its nearest positioned ancestor.
+
+### --question--
+
+#### --text--
+
+What is the difference between `position: fixed` and `position: sticky`?
+
+#### --distractors--
+
+`fixed` positions the element relative to its parent, while `sticky` positions it relative to the viewport.
+
+---
+
+`fixed` keeps the element in the normal flow, while `sticky` removes it.
+
+---
+
+`fixed` allows scrolling, while `sticky` does not.
+
+#### --answer--
+
+`fixed` positions the element relative to the viewport, while `sticky` positions it relative to its nearest scrollable ancestor.
+
+### --question--
+
+#### --text--
+
+Which of the following is an example of using `z-index`?
+
+#### --distractors--
+
+```css
+.box {
+  position: static;
+  z-index: 10;
+}
+```
+
+---
+
+```css
+.box {
+  position: relative;
+}
+```
+
+---
+
+```css
+.box {
+  position: absolute;
+}
+```
+
+#### --answer--
+
+```css
+.box {
+  position: absolute;
+  z-index: 5;
+}
+```
+
+### --question--
+
+#### --text--
+
+What is the default stacking context in CSS?
+
+#### --distractors--
+
+The `body` element.
+
+---
+
+The `html` element.
+
+---
+
+The `viewport`.
+
+#### --answer--
+
+The root element of the document.
+
+### --question--
+
+#### --text--
+
+Which of the following is true about `position: sticky`?
+
+#### --distractors--
+
+It positions the element relative to the viewport.
+
+---
+
+It removes the element from the normal flow.
+
+---
+
+It keeps the element fixed at all times.
+
+#### --answer--
+
+It positions the element relative to its nearest scrollable ancestor and becomes fixed when scrolling past a threshold.
+
+### --question--
+
+#### --text--
+
+What is the effect of `position: relative` on an element?
+
+#### --distractors--
+
+It removes the element from the normal flow.
+
+---
+
+It positions the element relative to the viewport.
+
+---
+
+It keeps the element fixed during scrolling.
+
+#### --answer--
+
+It offsets the element from its normal position without removing it from the document flow.
+
+### --question--
+
+#### --text--
+
+Which of the following is an example of using `position: fixed`?
+
+#### --distractors--
+
+```css
+.box {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+```
+
+---
+
+```css
+.box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+```
+
+---
+
+```css
+.box {
+  position: static;
+}
+```
+
+#### --answer--
+
+```css
+.box {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+```
+
+### --question--
+
+#### --text--
+
+What is the purpose of `position: absolute`?
+
+#### --distractors--
+
+To keep the element in the normal flow.
+
+---
+
+To position the element relative to the viewport.
+
+---
+
+To make the element sticky.
+
+#### --answer--
+
+To position the element relative to its nearest positioned ancestor.
+
+### --question--
+
+#### --text--
+
+Which of the following is an example of using `position: sticky`?
+
+#### --distractors--
+
+```css
+.box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+```
+
+---
+
+```css
+.box {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+```
+
+---
+
+```css
+.box {
+  position: static;
+}
+```
+
+#### --answer--
+
+```css
+.box {
+  position: sticky;
+  top: 10px;
+}
+```
+
+### --question--
+
+#### --text--
+
+What is the effect of `z-index: -1` on an element?
+
+#### --distractors--
+
+It makes the element invisible.
+
+---
+
+It positions the element above all other elements.
+
+---
+
+It removes the element from the document flow.
+
+#### --answer--
+
+It positions the element behind other elements with a higher `z-index` value.
+
+### --question--
+
+#### --text--
+
+Which CSS property is used to make an element overlap other elements?
+
+#### --distractors--
+
+`position`
+
+---
+
+`float`
+
+---
+
+`display`
+
+#### --answer--
+
+`z-index`
