@@ -66,7 +66,7 @@ Jessica asks, `Do you have any ideas?`, which is a way of inviting someone to sh
       "filename": "B1_17-2.mp3",
       "startTime": 1,
       "startTimestamp": 0,
-      "finishTimestamp": 6.44
+      "finishTimestamp": 6.38
     }
   },
   "commands": [
@@ -78,7 +78,7 @@ Jessica asks, `Do you have any ideas?`, which is a way of inviting someone to sh
     {
       "character": "Jessica",
       "startTime": 1,
-      "finishTime": 7.44,
+      "finishTime": 7.38,
       "dialogue": {
         "text": "Hey Jake, we had a security breach reported last night. I wanted to discuss what might have caused it. Do you have any ideas?",
         "align": "center"
@@ -87,7 +87,7 @@ Jessica asks, `Do you have any ideas?`, which is a way of inviting someone to sh
     {
       "character": "Jessica",
       "opacity": 0,
-      "startTime": 7.94
+      "startTime": 7.88
     }
   ]
 }
