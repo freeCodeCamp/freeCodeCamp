@@ -152,6 +152,7 @@ model user {
   // Relations
   examAttempts                      EnvExamAttempt[]
   examEnvironmentAuthorizationToken ExamEnvironmentAuthorizationToken?
+  Permission                        Permission[]
 }
 
 // -----------------------------------
@@ -471,4 +472,25 @@ model Survey {
 type SurveyResponse {
   question String
   response String
+}
+
+model AccessPermission {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  teacherId String   @db.ObjectId
+  studentId String   @db.ObjectId
+  grantedAt DateTime @db.Date
+}
+
+model Permission {
+  userId String @id @map("_id") @db.ObjectId
+  roles  Role[]
+
+  // Relations
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum Role {
+  Admin
+  Teacher
+  Student
 }
