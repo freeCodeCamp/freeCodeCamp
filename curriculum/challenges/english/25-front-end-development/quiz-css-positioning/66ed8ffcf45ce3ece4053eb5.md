@@ -430,23 +430,23 @@ Which of the following is a correct example of using sticky positioning?
 
 #### --text--
 
-What happens to an element with `position: sticky` when it reaches its threshold?
+What is the difference between sticky and fixed positioning?
 
 #### --distractors--
 
-It becomes fixed relative to the viewport.
+Sticky elements can only be used in table layouts while fixed elements can be used in any type of CSS layout.
 
 ---
 
-It disappears from the document flow.
+Sticky elements will always remain in the same position while fixed elements will stick to a certain point then behave like relative elements.
 
 ---
 
-It overlaps all other elements on the page.
+Fixed elements will be positioned relative to its normal position while sticky elements will only stick to a certain point then behave like relative elements.
 
 #### --answer--
 
-It sticks to its nearest scrollable ancestor until scrolling past the threshold.
+Fixed elements will remain in the same position on the screen while sticky elements will only stick to a certain point then behave like relative elements.
 
 ### --question--
 
