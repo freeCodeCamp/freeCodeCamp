@@ -548,3 +548,477 @@ Which of the following is the correct way to use the `minmax()` function?
 }
 ```
 
+## --quiz--
+
+### --question--
+
+#### --text--
+
+CSS Grid is considered a two-dimensional layout system. Which two axes does it operate on?
+
+#### --distractors--
+
+Horizontal and vertical
+
+---
+
+Block and inline
+
+---
+
+X and Y
+
+#### --answer--
+
+Row and column
+
+### --question--
+
+#### --text--
+
+Which CSS property creates a gap between grid rows?
+
+#### --distractors--
+
+column-gap
+
+---
+
+gap
+
+---
+
+grid-gap
+
+#### --answer--
+
+row-gap
+
+### --question--
+
+#### --text--
+
+Which CSS property creates a gap between grid columns?
+
+#### --distractors--
+
+row-gap
+
+---
+
+gap
+
+---
+
+grid-gap
+
+#### --answer--
+
+column-gap
+
+### --question--
+
+#### --text--
+
+What is the purpose of the `grid-auto-columns` property?
+
+#### --distractors--
+
+It sets the width of explicit grid columns.
+
+---
+
+It defines the gaps between implicitly created columns.
+
+---
+
+It controls how items are auto-placed in the grid.
+
+#### --answer--
+
+It sets the size for columns created implicitly.
+
+### --question--
+
+#### --text--
+
+What does the `grid-auto-rows` property do?
+
+#### --distractors--
+
+Specifies the size for rows defined via `grid-template-rows`.
+
+---
+
+Controls alignment of rows within the grid container.
+
+---
+
+Sets the number of rows in the explicit grid.
+
+#### --answer--
+
+Sets the size for rows created implicitly.
+
+### --question--
+
+#### --text--
+
+The `place-items` shorthand property controls which two CSS Grid properties?
+
+#### --distractors--
+
+`align-content` and `justify-content`
+
+---
+
+`grid-gap` and `gap`
+
+---
+
+`grid-template-rows` and `grid-template-columns`
+
+#### --answer--
+
+`align-items` and `justify-items`
+
+### --question--
+
+#### --text--
+
+What is the purpose of the `repeat()` function in CSS Grid?
+
+#### --distractors--
+
+It repeats CSS rules for responsive breakpoints.
+
+---
+
+It repeats keyframe animations for grid transitions.
+
+---
+
+It repeats grid-area names in the template string.
+
+#### --answer--
+
+It repeats track listings (rows or columns) a specified number of times.
+
+### --question--
+
+#### --text--
+
+Which of the following correctly creates three columns each taking up one fraction of the available space?
+
+#### --distractors--
+
+```css
+grid-template-columns: repeat(1fr, 3);
+```
+
+---
+
+```css
+grid-template-columns: repeat(3);
+```
+
+---
+
+```css
+grid-template-columns: repeat(3) 1fr;
+```
+
+#### --answer--
+
+```css
+grid-template-columns: repeat(3, 1fr);
+```
+
+### --question--
+
+#### --text--
+
+What happens when you place a grid item outside of the explicit grid boundaries?
+
+#### --distractors--
+
+The item is ignored by the grid layout.
+
+---
+
+A layout error is thrown by the browser.
+
+---
+
+The item wraps to the next line outside the grid.
+
+#### --answer--
+
+New rows or columns are generated automatically in the implicit grid.
+
+### --question--
+
+#### --text--
+
+Which CSS rule will make a grid item span across all columns in its container?
+
+#### --distractors--
+
+```css
+grid-column: span all;
+```
+
+---
+
+```css
+grid-column: 1 / 1;
+```
+
+---
+
+```css
+grid-column: -1 / 1;
+```
+
+#### --answer--
+
+```css
+grid-column: 1 / -1;
+```
+
+### --question--
+
+#### --text--
+
+Given a `grid-template-areas` definition, how do you place an element into the area named "main"?
+
+#### --distractors--
+
+```css
+grid-template-areas: main;
+```
+
+---
+
+```css
+area: main;
+```
+
+---
+
+```css
+grid-area: container(main);
+```
+
+#### --answer--
+
+```css
+grid-area: main;
+```
+
+### --question--
+
+#### --text--
+
+What is the effect of `grid-template-rows: auto 1fr auto;` in a grid container?
+
+#### --distractors--
+
+All three rows will automatically size based on content.
+
+---
+
+All rows will each take up one fraction of the available space.
+
+---
+
+The first row occupies one fraction, middle is auto, and last is one fraction.
+
+#### --answer--
+
+The first and last rows size to their content, and the middle row fills the remaining space.
+
+### --question--
+
+#### --text--
+
+Which browser tool allows you to toggle and edit CSS properties in real time?
+
+#### --distractors--
+
+Terminal
+
+---
+
+Text Editor
+
+---
+
+Network Inspector
+
+#### --answer--
+
+Developer Tools (DevTools)
+
+### --question--
+
+#### --text--
+
+Which online service can you use to validate your CSS against official specifications?
+
+#### --distractors--
+
+W3C HTML Validator
+
+---
+
+ESLint
+
+---
+
+Stylelint
+
+#### --answer--
+
+W3C CSS Validator
+
+### --question--
+
+#### --text--
+
+In DevTools, which feature lets you simulate different screen sizes to test responsiveness?
+
+#### --distractors--
+
+Color Picker
+
+---
+
+Network Throttling
+
+---
+
+Performance Monitor
+
+#### --answer--
+
+Device Toolbar (Responsive Design Mode)
+
+### --question--
+
+#### --text--
+
+When used in a track size (e.g., `grid-template-columns: auto 1fr;`), what does the `auto` keyword do?
+
+#### --distractors--
+
+Sizes the track to one fraction of the remaining space.
+
+---
+
+Sets the track size to a fixed default pixel value.
+
+---
+
+Creates a minimum gap between tracks.
+
+#### --answer--
+
+Sizes the track based on its content.
+
+### --question--
+
+#### --text--
+
+What does the `grid-row` shorthand property do for a grid item?
+
+#### --distractors--
+
+Defines the size of explicit grid rows in the container.
+
+---
+
+Sets the number of rows in the grid template.
+
+---
+
+Specifies the row and column gap between items.
+
+#### --answer--
+
+Specifies the grid item's start and end row lines (row-based placement).
+
+### --question--
+
+#### --text--
+
+Which property is used to set line names and track sizing for grid columns?
+
+#### --distractors--
+
+`grid-template-rows`
+
+---
+
+`grid-auto-columns`
+
+---
+
+`gap`
+
+#### --answer--
+
+`grid-template-columns`
+
+### --question--
+
+#### --text--
+
+Which CSS snippet creates a 30px wide first column and a flexible second column?
+
+#### --distractors--
+
+```css
+grid-template-columns: 1fr 30px;
+```
+
+---
+
+```css
+grid-template-columns: 30px;
+```
+
+---
+
+```css
+grid-template-columns: [30px] 1fr;
+```
+
+#### --answer--
+
+```css
+grid-template-columns: 30px 1fr;
+```
+
+### --question--
+
+#### --text--
+
+In a `grid-template-areas` definition, what does repeating an area name twice in a row (e.g., `"header header"`) indicate?
+
+#### --distractors--
+
+It creates two separate grid areas named "header" side by side.
+
+---
+
+It duplicates the header content automatically.
+
+---
+
+It merges both rows into a single header section.
+
+#### --answer--
+
+It makes the "header" area span across two columns.
+
