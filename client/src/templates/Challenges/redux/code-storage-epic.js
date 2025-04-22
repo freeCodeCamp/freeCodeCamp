@@ -8,6 +8,10 @@ import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { savedChallengesSelector } from '../../../redux/selectors';
 import { actionTypes as appTypes } from '../../../redux/action-types';
+import {
+  getIsDailyCodingChallenge,
+  getDailyCodingChallengeLanguage
+} from '../../../../../shared/config/challenge-types';
 import { actionTypes } from './action-types';
 import { noStoredCodeFound, updateFile } from './actions';
 import { challengeFilesSelector, challengeMetaSelector } from './selectors';
@@ -84,13 +88,21 @@ function saveCodeEpic(action$, state$) {
     // do not save challenge if code is locked
     map(action => {
       const state = state$.value;
-      const { id } = challengeMetaSelector(state);
+      const { id, challengeType } = challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
       try {
-        store.set(id, challengeFiles);
+        const isDailyCodingChallenge = getIsDailyCodingChallenge(challengeType);
+
+        const storageId = isDailyCodingChallenge
+          ? id + getDailyCodingChallengeLanguage(challengeType)
+          : id;
+
+        store.set(storageId, challengeFiles);
+
+        const stored = store.get(storageId);
         const fileKey = challengeFiles[0].fileKey;
         if (
-          store.get(id).find(challengeFile => challengeFile.fileKey === fileKey)
+          stored.find(challengeFile => challengeFile.fileKey === fileKey)
             .contents !==
           challengeFiles.find(challengeFile => challengeFile.fileKey).contents
         ) {
@@ -130,7 +142,15 @@ function loadCodeEpic(action$, state$) {
       const fileKeys = challengeFiles.map(x => x.fileKey);
       const invalidForLegacy = fileKeys.length > 1;
       const { title: legacyKey } = challenge;
-      const codeFound = getCode(id);
+
+      const isDailyCodingChallenge = getIsDailyCodingChallenge(
+        challenge.challengeType
+      );
+      const storageId = isDailyCodingChallenge
+        ? id + getDailyCodingChallengeLanguage(challenge.challengeType)
+        : id;
+
+      const codeFound = getCode(storageId);
 
       // first check if the store (which is synchronized with the db) has saved
       // code
@@ -180,7 +200,7 @@ function loadCodeEpic(action$, state$) {
             // Repair the store, by replacing old style code with the repaired
             // file
             store.set(id, [indexjsCode]);
-          } else {
+          } else if (!getIsDailyCodingChallenge(challenge.challengeType)) {
             // The stored code is neither old code nor new, so we do not know
             // how to handle it.  The safest option is to delete it.
             store.remove(id);

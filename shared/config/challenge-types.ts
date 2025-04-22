@@ -169,7 +169,7 @@ export const dailyCodingChallengeTypes = [
   challengeTypes.dailyChallengePy
 ];
 
-export const isDailyCodingChallenge = (challengeType: number): boolean =>
+export const getIsDailyCodingChallenge = (challengeType: number): boolean =>
   dailyCodingChallengeTypes.includes(challengeType);
 
 // coding language for daily coding challenge types
