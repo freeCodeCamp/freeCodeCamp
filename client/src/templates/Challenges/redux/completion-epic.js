@@ -18,7 +18,7 @@ import {
 import {
   canSaveToDB,
   challengeTypes,
-  isDailyCodingChallenge,
+  getIsDailyCodingChallenge,
   getDailyCodingChallengeLanguage,
   submitTypes
 } from '../../../../../shared/config/challenge-types';
@@ -123,7 +123,7 @@ function submitModern(type, state) {
 
       let update;
 
-      if (isDailyCodingChallenge(challengeType)) {
+      if (getIsDailyCodingChallenge(challengeType)) {
         const language = getDailyCodingChallengeLanguage(challengeType);
 
         const body = {
@@ -286,7 +286,7 @@ export default function completionEpic(action$, state$) {
         pathToNavigateTo = blockHashSlug;
       }
 
-      if (isDailyCodingChallenge(challengeType)) {
+      if (getIsDailyCodingChallenge(challengeType)) {
         pathToNavigateTo = '/learn/daily-coding-challenge/archive';
       }
 

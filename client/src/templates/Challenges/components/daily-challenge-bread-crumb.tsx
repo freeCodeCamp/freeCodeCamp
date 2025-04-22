@@ -16,14 +16,12 @@ function DailyChallengeBreadCrumb(): JSX.Element {
   let displayDate = '';
 
   if (isValidDateParam(dateParam)) {
-    const [year, month, day] = dateParam.split('-');
+    const [month, day, year] = dateParam.split('-');
     const date = formatDate({
       month: parseInt(month, 10),
       day: parseInt(day, 10),
       year: parseInt(year, 10)
     });
-
-    console.log(date);
 
     displayDate = formatLongDateUTC(date);
   }
