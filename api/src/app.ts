@@ -2,7 +2,6 @@ import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
-import { GrowthBook } from '@growthbook/growthbook';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import uriResolver from 'fast-uri';
@@ -59,12 +58,6 @@ type FastifyInstanceWithTypeProvider = FastifyInstance<
   FastifyBaseLogger,
   TypeBoxTypeProvider
 >;
-
-declare module 'fastify' {
-  interface FastifyInstance {
-    gb: GrowthBook;
-  }
-}
 
 // Options that fastify uses
 const ajv = new Ajv({
