@@ -70,7 +70,7 @@ ${result.error.message}`
     }
   });
 
-  test('the files generated should have the correct schema', async () => {
+  test('the super block files generated should have the correct schema', async () => {
     const fileArray = (
       await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
         directoryFilter: ['!challenges'],
