@@ -905,6 +905,7 @@
     "unlink-success": "You've successfully unlinked your {{website}}",
     "provide-username": "Check if you have provided a username and a report",
     "report-sent": "A report was sent to the team with {{email}} in copy",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "The certification you tried to view does not exist",
     "create-token-err": "An error occurred while creating your user token",
     "delete-token-err": "An error occurred while deleting your user token",
