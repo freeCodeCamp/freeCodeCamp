@@ -1,13 +1,15 @@
 ---
-id: 67ff89b745907449e0e5bae4
-title: Step 26
+id: 6808baa8f8dcaf4f50a7acaa
+title: Step 18
 challengeType: 0
-dashedName: step-26
+dashedName: step-18
 ---
 
 # --description--
 
-Finally, move your `console.log` statement inside the `useMemo` callback function, just above the `return` statement.
+For the truthy condition, if `prev` includes `item`, return a filtered array with `item` removed.
+
+Chain the `filter` method to `prev` and pass it an arrow function that takes `i` as an argument. Inside the function, check that `i` is not strictly equal to `item`. This will return a new array with all items except `item`.
 
 # --hints--
 
@@ -145,7 +147,7 @@ li {
 ```
 
 ```jsx
-const { useState, useMemo } = React;
+const { useState } = React;
 
 const items = [
   "Apples",
@@ -164,18 +166,15 @@ export const ShoppingList = () => {
   const [query, setQuery] = useState("");
   const [selectedItems, setSelectedItems] = useState([]);
 
-  --fcc-editable-region--
-  console.log("Filtering items...");
-  const filteredItems = useMemo(() => {
-    return items.filter((item) =>
-      item.toLowerCase().includes(query.toLowerCase())
-    );
-  }, [query]);
-  --fcc-editable-region--
+  const filteredItems = items.filter((item) => 
+    item.toLowerCase().includes(query.toLowerCase())
+  );
 
   const toggleItem = (item) => {
     setSelectedItems((prev) =>
-      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
+      --fcc-editable-region--
+      prev.includes(item) ? null : null
+      --fcc-editable-region--
     );
   };
 
@@ -193,24 +192,17 @@ export const ShoppingList = () => {
         /> 
         <p id="search-description">Type to filter the list below:</p>
         <ul>
-          {filteredItems.map((item) => {
-            const isChecked = selectedItems.includes(item);
-            return (
-              <li
-                key={item}
-                style={{ textDecoration: isChecked ? "line-through" : "none" }}
-              >
-                <label>
-                  <input
-                    type="checkbox"
-                    onChange={() => toggleItem(item)}
-                    checked={isChecked}
-                  />
-                  {item}
-                </label>
-              </li>
-            );
-          })}
+          {filteredItems.map((item) => 
+            <li key={item}>
+              <label>
+                <input
+                  type="checkbox"
+                  onChange={() => toggleItem(item)}
+                />
+                {item}
+              </label>
+            </li>
+          )}
         </ul>
       </form>
     </div>
