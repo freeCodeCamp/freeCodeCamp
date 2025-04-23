@@ -553,6 +553,9 @@ async function postExamAttemptHandler(
     this.prisma.envExam.findUnique({
       where: {
         id: attempt.examId
+      },
+      select: {
+        config: true
       }
     })
   );
@@ -743,6 +746,10 @@ async function postScreenshotHandler(
     this.prisma.envExam.findUnique({
       where: {
         id: latestAttempt.examId
+      },
+      select: {
+        id: true,
+        config: true
       }
     })
   );
