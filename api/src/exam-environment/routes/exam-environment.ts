@@ -825,16 +825,29 @@ async function getExams(
   logger.info({ user: req.user });
 
   const user = req.user!;
-  const exams = await this.prisma.envExam.findMany({
-    where: {
-      deprecated: false
-    },
-    select: {
-      id: true,
-      config: true,
-      prerequisites: true
-    }
-  });
+  const maybeExams = await mapErr(
+    this.prisma.envExam.findMany({
+      where: {
+        deprecated: false
+      },
+      select: {
+        id: true,
+        config: true,
+        prerequisites: true
+      }
+    })
+  );
+
+  if (maybeExams.hasError) {
+    logger.error(maybeExams.error);
+    this.Sentry.captureException(maybeExams.error);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExams.error))
+    );
+  }
+
+  const exams = maybeExams.data;
 
   const availableExams = exams.map(exam => {
     const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
