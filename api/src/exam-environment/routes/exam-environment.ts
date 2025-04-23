@@ -202,7 +202,7 @@ async function postExamGeneratedExamHandler(
   );
   if (maybeExam.hasError) {
     if (maybeExam.error instanceof PrismaClientValidationError) {
-      logger.warn({ examError: maybeExam.error }, 'Invalid exam id given.');
+      logger.warn(maybeExam.error, 'Invalid exam id given.');
       void reply.code(400);
       return reply.send(ERRORS.FCC_EINVAL_EXAM_ID(maybeExam.error.message));
     }
@@ -528,10 +528,8 @@ async function postExamAttemptHandler(
   );
 
   if (maybeAttempts.hasError) {
-    logger.error(
-      { error: maybeAttempts.error },
-      'User attempt cannot be linked to an exam attempt.'
-    );
+    logger.error(maybeAttempts.error);
+    this.Sentry.captureException(maybeAttempts.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
@@ -566,7 +564,7 @@ async function postExamAttemptHandler(
   );
 
   if (maybeExam.hasError) {
-    logger.error({ examError: maybeExam.error });
+    logger.error(maybeExam.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
@@ -609,7 +607,7 @@ async function postExamAttemptHandler(
   );
 
   if (maybeGeneratedExam.hasError) {
-    logger.error({ generatedExamError: maybeGeneratedExam.error });
+    logger.error(maybeGeneratedExam.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeGeneratedExam.error))
@@ -720,10 +718,7 @@ async function postScreenshotHandler(
   );
 
   if (maybeAttempts.hasError) {
-    logger.error(
-      maybeAttempts.error,
-      'User screenshot cannot be linked to any exam attempts.'
-    );
+    logger.error(maybeAttempts.error);
     this.Sentry.captureException(maybeAttempts.error);
     void reply.code(500);
     return reply.send(
@@ -776,7 +771,7 @@ async function postScreenshotHandler(
         examId: latestAttempt.examId,
         attemptId: latestAttempt.id
       },
-      message: 'Attempt could not be related to an exam.'
+      message: 'Unreachable. Attempt could not be related to an exam.'
     };
     logger.error(error.data, error.message);
     this.Sentry.captureException(error.data);
@@ -1023,10 +1018,10 @@ async function constructEnvExamAttempt(
   if (exam === null) {
     const error = {
       data: { examId: attempt.examId, attemptId: attempt.id },
-      message: 'Invalid exam id in attempt.'
+      message: 'Unreachable. Invalid exam id in attempt.'
     };
     logger.error(error.data, error.message);
-    fastify.Sentry.captureException(error.data);
+    fastify.Sentry.captureException(error);
 
     return {
       error: {
@@ -1068,16 +1063,15 @@ async function constructEnvExamAttempt(
   if (moderation === null) {
     const error = {
       data: { examAttemptId: attempt.id },
-      message: 'ExamModeration record should exist for expired attempt'
+      message:
+        'Unreachable. ExamModeration record should exist for expired attempt'
     };
     logger.error(error.data, error.message);
-    fastify.Sentry.captureException(error.data);
+    fastify.Sentry.captureException(error);
     return {
       error: {
         code: 500,
-        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
-          'Unable to find relevant result for exam attempt.'
-        )
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message)
       }
     };
   }
@@ -1119,10 +1113,11 @@ async function constructEnvExamAttempt(
   if (!generatedExam) {
     const error = {
       data: { attemptId: attempt.id, generatedExamId: attempt.generatedExamId },
-      message: 'Unable to find generated exam associated with exam attempt'
+      message:
+        'Unreachable. Unable to find generated exam associated with exam attempt'
     };
     logger.error(error.data, error.message);
-    fastify.Sentry.captureException(error.data);
+    fastify.Sentry.captureException(error);
     return {
       error: {
         code: 500,
