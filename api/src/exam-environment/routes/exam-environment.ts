@@ -716,6 +716,7 @@ async function postScreenshotHandler(
       maybeAttempts.error,
       'User screenshot cannot be linked to any exam attempts.'
     );
+    this.Sentry.captureException(maybeAttempts.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
@@ -747,7 +748,8 @@ async function postScreenshotHandler(
   );
 
   if (maybeExam.hasError) {
-    logger.error({ examError: maybeExam.error });
+    logger.error(maybeExam.error);
+    this.Sentry.captureException(maybeExam.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
@@ -757,15 +759,18 @@ async function postScreenshotHandler(
   const exam = maybeExam.data;
 
   if (exam === null) {
-    logger.warn(
-      { examId: latestAttempt.examId, attemptId: latestAttempt.id },
-      'Attempt could not be related to an exam.'
-    );
+    const error = {
+      data: {
+        examId: latestAttempt.examId,
+        attemptId: latestAttempt.id
+      },
+      message: 'Attempt could not be related to an exam.'
+    };
+    logger.error(error.data, error.message);
+    this.Sentry.captureException(error.data);
     void reply.code(500);
     return reply.send(
-      ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(
-        'Attempt could not be related to an exam.'
-      )
+      ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(error.message)
     );
   }
 
