@@ -14,6 +14,29 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
   const code = (e.code.contents || '').slice();
 
   const editableContents = (e.code.editableContents || '').slice();
+
+  // Handle cross-origin stylesheet access
+  const handleStylesheetAccess = () => {
+    try {
+      const styleSheets = Array.from(document.styleSheets);
+      return styleSheets.map(sheet => {
+        try {
+          // This will throw if the stylesheet is cross-origin
+          return sheet.cssRules;
+        } catch (e) {
+          if (e instanceof DOMException && e.name === 'SecurityError') {
+            // Return null for cross-origin stylesheets
+            return null;
+          }
+          throw e;
+        }
+      });
+    } catch (e) {
+      console.warn('Error accessing stylesheets:', e);
+      return [];
+    }
+  };
+
   // __testEditable allows test authors to run tests against a transitory dom
   // element built using only the code in the editable region.
   const __testEditable = (cb: () => () => unknown) => {
@@ -69,6 +92,9 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     // make sure the dev tools console is open
     // debugger;
     try {
+      // Handle stylesheets before running tests
+      handleStylesheetAccess();
+
       // eval test string to actual JavaScript
       // This return can be a function
       // i.e. function() { assert(true, 'happy coding'); }
