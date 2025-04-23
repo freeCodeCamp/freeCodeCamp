@@ -1,4 +1,6 @@
-import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import type { FastifyInstance, FastifyReply } from 'fastify';
+import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import type { UpdateReqType } from '../../utils';
 
 import { getClassroom } from '../../schemas';
 
@@ -21,39 +23,45 @@ export const classroomRoutes: FastifyPluginCallbackTypebox = (
       schema: getClassroom,
       attachValidation: true
     },
-    async (req, reply) => {
-      const logger = fastify.log.child({ req });
-      const { id } = req.params;
-
-      if (req.validationError) {
-        logger.info(`Invalid classroom id: ${id}`);
-        return reply.status(400).send({
-          message: 'flash.invalid-classroom-id',
-          type: 'info'
-        });
-      }
-
-      const classroom = await fastify.prisma.classroom.findUnique({
-        where: {
-          id
-        },
-        include: {
-          students: {
-            select: {
-              id: true
-            }
-          }
-        }
-      });
-
-      if (!classroom) {
-        logger.info(`Classroom ${id} not found`);
-        return reply.send({ id: null, students: [] });
-      }
-
-      reply.send({ id, students: classroom.students });
-    }
+    getClassroomHandler
   );
 
   done();
 };
+
+async function getClassroomHandler(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof getClassroom>,
+  reply: FastifyReply
+) {
+  const logger = this.log.child({ req });
+  const { id } = req.params;
+
+  if (req.validationError) {
+    logger.info(`Invalid classroom id: ${id}`);
+    return reply.status(400).send({
+      message: 'flash.invalid-classroom-id',
+      type: 'info'
+    });
+  }
+
+  const classroom = await this.prisma.classroom.findUnique({
+    where: {
+      id
+    },
+    include: {
+      students: {
+        select: {
+          id: true
+        }
+      }
+    }
+  });
+
+  if (!classroom) {
+    logger.info(`Classroom ${id} not found`);
+    return reply.send({ id: null, students: [] });
+  }
+
+  reply.send({ id, students: classroom.students });
+}
