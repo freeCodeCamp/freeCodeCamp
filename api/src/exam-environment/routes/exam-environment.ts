@@ -207,7 +207,8 @@ async function postExamGeneratedExamHandler(
       return reply.send(ERRORS.FCC_EINVAL_EXAM_ID(maybeExam.error.message));
     }
 
-    logger.error({ examError: maybeExam.error });
+    logger.error(maybeExam.error);
+    this.Sentry.captureException(maybeExam.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
@@ -254,10 +255,8 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeExamAttempts.hasError) {
-    logger.error(
-      { examAttemptsError: maybeExamAttempts.error },
-      'Unable to query exam attempts.'
-    );
+    logger.error(maybeExamAttempts.error, 'Unable to query exam attempts.');
+    this.Sentry.captureException(maybeExamAttempts.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExamAttempts.error))
@@ -285,7 +284,8 @@ async function postExamGeneratedExamHandler(
     );
 
     if (maybeMod.hasError) {
-      logger.error({ moderationError: maybeMod.error });
+      logger.error(maybeMod.error);
+      this.Sentry.captureException(maybeMod.error);
       void reply.code(500);
       return reply.send(
         ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeMod.error))
@@ -340,10 +340,8 @@ async function postExamGeneratedExamHandler(
       );
 
       if (generated.hasError) {
-        logger.error(
-          { generatedError: generated.error },
-          'Unable to query generated exam.'
-        );
+        logger.error(generated.error, 'Unable to query generated exam.');
+        this.Sentry.captureException(generated.error);
         void reply.code(500);
         return reply.send(
           ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(generated.error))
@@ -351,16 +349,14 @@ async function postExamGeneratedExamHandler(
       }
 
       if (generated.data === null) {
-        logger.error(
-          { generatedExamId: lastAttempt.generatedExamId },
-          'Generated exam not found.'
-        );
+        const error = {
+          data: { generatedExamId: lastAttempt.generatedExamId },
+          message: 'Unreachable. Generated exam not found.'
+        };
+        logger.error(error.data, error.message);
+        this.Sentry.captureException(error.data);
         void reply.code(500);
-        return reply.send(
-          ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
-            'Unreachable. Generated exam not found.'
-          )
-        );
+        return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message));
       }
 
       const userExam = constructUserExam(generated.data, exam);
@@ -390,7 +386,8 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeGeneratedExams.hasError) {
-    logger.error({ generatedExamsError: maybeGeneratedExams.error });
+    logger.error(maybeGeneratedExams.error);
+    this.Sentry.captureException(maybeGeneratedExams.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(maybeGeneratedExams.error)
@@ -400,10 +397,14 @@ async function postExamGeneratedExamHandler(
   const generatedExams = maybeGeneratedExams.data;
 
   if (generatedExams.length === 0) {
-    const errMessage = `Unable to provide a generated exam. Either all generated exams have been exhausted, or all generated exams are deprecated.`;
-    logger.error({ examId: exam.id }, errMessage);
+    const error = {
+      data: { examId: exam.id },
+      message: `Unable to provide a generated exam. Either all generated exams have been exhausted, or all generated exams are deprecated.`
+    };
+    logger.error(error.data, error.message);
+    this.Sentry.captureException(error);
     void reply.code(500);
-    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(errMessage));
+    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message));
   }
 
   const randomGeneratedExam =
@@ -418,7 +419,8 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeGeneratedExam.hasError) {
-    logger.error({ generatedExamError: maybeGeneratedExam.error });
+    logger.error(maybeGeneratedExam.error);
+    this.Sentry.captureException(maybeGeneratedExam.error);
     void reply.code(500);
     return reply.send(
       // TODO: Consider more specific code
@@ -432,14 +434,14 @@ async function postExamGeneratedExamHandler(
   const generatedExam = maybeGeneratedExam.data;
 
   if (generatedExam === null) {
-    logger.error(
-      { generatedExamId: randomGeneratedExam.id },
-      'Generated exam not found.'
-    );
+    const error = {
+      data: { generatedExamId: randomGeneratedExam.id },
+      message: 'Unreachable. Generated exam not found.'
+    };
+    logger.error(error.data, 'Unreachable. Generated exam not found.');
+    this.Sentry.captureException(error);
     void reply.code(500);
-    return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(`Unable to locate generated exam.`)
-    );
+    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message));
   }
 
   // Create exam attempt so, even if user disconnects, their attempt is still recorded:
@@ -456,7 +458,8 @@ async function postExamGeneratedExamHandler(
   );
 
   if (attempt.hasError) {
-    logger.error({ attemptError: attempt.error });
+    logger.error(attempt.error);
+    this.Sentry.captureException(attempt.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT_CREATE_EXAM_ATTEMPT(
@@ -471,12 +474,14 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeUserExam.hasError) {
-    logger.error({ userExamError: maybeUserExam.error });
+    logger.error(maybeUserExam.error);
+    // TODO: Consider handling this failing
     await this.prisma.envExamAttempt.delete({
       where: {
         id: attempt.data.id
       }
     });
+    this.Sentry.captureException(maybeUserExam.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUserExam.error))
