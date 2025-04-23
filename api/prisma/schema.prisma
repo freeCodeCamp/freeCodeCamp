@@ -496,7 +496,7 @@ model ExamModeration {
   /// Whether or not the iteam is approved
   approved       Boolean?
   /// Foreign key to exam attempt
-  examAttemptId  String    @db.ObjectId
+  examAttemptId  String    @unique @db.ObjectId
   /// Optional feedback/note about the moderation decision
   feedback       String?
   /// Date the exam attempt was moderated
@@ -505,8 +505,8 @@ model ExamModeration {
   moderatorId    String?   @db.ObjectId
 
   /// Date the exam attempt was added to the moderation queue
-  submissionDate DateTime
+  submissionDate DateTime @default(now()) @db.Date
 
   // Relations
-  examAttempt EnvExamAttempt @relation(fields: [examAttemptId], references: [id])
+  examAttempt EnvExamAttempt @relation(fields: [examAttemptId], references: [id], onDelete: Cascade)
 }

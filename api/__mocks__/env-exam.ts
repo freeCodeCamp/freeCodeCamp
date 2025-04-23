@@ -23,6 +23,7 @@ export const config: EnvConfig = {
   tags: [],
   name: 'Test Exam',
   note: 'Some exam note...',
+  passingPercent: 80,
   questionSets: [
     {
       type: EnvQuestionType.MultipleChoice,
@@ -254,7 +255,6 @@ export const examAttempt: EnvExamAttempt = {
   examId,
   generatedExamId: generatedExam.id,
   id: oid(),
-  needsRetake: false,
   questionSets: [
     {
       id: generatedExam.questionSets[0]!.id,
