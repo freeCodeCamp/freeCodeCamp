@@ -75,8 +75,14 @@ function clearCodeEpic(action$, state$) {
   return action$.pipe(
     ofType(appTypes.submitComplete, actionTypes.resetChallenge),
     tap(() => {
-      const { id } = challengeMetaSelector(state$.value);
-      store.remove(id);
+      const { challengeType, id } = challengeMetaSelector(state$.value);
+      const isDailyCodingChallenge = getIsDailyCodingChallenge(challengeType);
+
+      const storageId = isDailyCodingChallenge
+        ? id + getDailyCodingChallengeLanguage(challengeType)
+        : id;
+
+      store.remove(storageId);
     }),
     ignoreElements()
   );

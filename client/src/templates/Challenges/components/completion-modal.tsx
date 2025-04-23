@@ -94,6 +94,8 @@ class CompletionModal extends Component<
     state: CompletionModalState
   ): CompletionModalState {
     const { challengeFiles, isOpen } = props;
+    console.log('challengeFiles');
+    console.log(challengeFiles);
     if (!isOpen) {
       return {
         downloadURL: null
