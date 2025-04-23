@@ -294,7 +294,7 @@ async function postExamGeneratedExamHandler(
 
     const moderation = maybeMod.data;
 
-    if (moderation === null) {
+    if (moderation !== null) {
       logger.warn(
         { examAttemptId: lastAttempt.id },
         'User has an exam attempt awaiting grading.'
@@ -638,6 +638,27 @@ async function postExamAttemptHandler(
     validateAttempt(generatedExam, databaseAttemptQuestionSets)
   );
 
+  if (maybeValidExamAttempt.hasError) {
+    logger.warn(
+      { validExamAttemptError: maybeValidExamAttempt.error },
+      'Invalid exam attempt.'
+    );
+    // As attempt is invalid, create moderation record to investigate
+    await this.prisma.examModeration.create({
+      data: {
+        examAttemptId: latestAttempt.id,
+        approved: null
+      }
+    });
+
+    void reply.code(400);
+    const message =
+      maybeValidExamAttempt.error instanceof Error
+        ? maybeValidExamAttempt.error.message
+        : 'Unknown attempt validation error';
+    return reply.send(ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(message));
+  }
+
   // Update attempt in database
   const maybeUpdatedAttempt = await mapErr(
     this.prisma.envExamAttempt.update({
@@ -649,19 +670,6 @@ async function postExamAttemptHandler(
       }
     })
   );
-
-  if (maybeValidExamAttempt.hasError) {
-    logger.warn(
-      { validExamAttemptError: maybeValidExamAttempt.error },
-      'Invalid exam attempt.'
-    );
-    void reply.code(400);
-    const message =
-      maybeValidExamAttempt.error instanceof Error
-        ? maybeValidExamAttempt.error.message
-        : 'Unknown attempt validation error';
-    return reply.send(ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(message));
-  }
 
   if (maybeUpdatedAttempt.hasError) {
     logger.error({ updatedAttemptError: maybeUpdatedAttempt.error });

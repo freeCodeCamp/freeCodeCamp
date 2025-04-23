@@ -199,12 +199,12 @@ describe('/exam-environment/', () => {
         });
         expect(res.status).toBe(400);
 
-        // Database should mark attempt as `needsRetake`
-        const updatedAttempt =
-          await fastifyTestInstance.prisma.envExamAttempt.findUnique({
-            where: { id: attempt.id }
+        // Database should have moderation record for attempt
+        const examModeration =
+          await fastifyTestInstance.prisma.examModeration.findUnique({
+            where: { examAttemptId: attempt.id, approved: null }
           });
-        expect(updatedAttempt).toHaveProperty('needsRetake', true);
+        expect(examModeration).not.toBeNull();
       });
 
       it('should return 200 if request is valid, and update attempt in database', async () => {
@@ -254,6 +254,8 @@ describe('/exam-environment/', () => {
           }
         });
         await mock.seedEnvExam();
+        const a = await fastifyTestInstance.prisma.examModeration.findMany({});
+        expect(a).toHaveLength(0);
       });
 
       it('should return an error if the given exam id is invalid', async () => {
@@ -301,7 +303,7 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(403);
       });
 
-      it('should return an error if the exam has been attempted in the last 24 hours', async () => {
+      it('should return an error if the exam has been attempted too recently to retake', async () => {
         const recentExamAttempt = {
           ...mock.examAttempt,
           // Set start time such that exam has just expired
@@ -334,10 +336,11 @@ describe('/exam-environment/', () => {
             id: recentExamAttempt.id
           },
           data: {
-            // Set start time such that exam has expired, but 24 hours - 1s has passed
+            // Set start time such that exam has expired, but retake time -1s has passed
             startTimeInMS:
               Date.now() -
-              (mock.exam.config.totalTimeInMS + (24 * 60 * 60 * 1000 - 1000))
+              (mock.exam.config.totalTimeInMS +
+                (mock.exam.config.retakeTimeInMS - 1000))
           }
         });
 
@@ -489,7 +492,6 @@ describe('/exam-environment/', () => {
           examId: mock.examId,
           generatedExamId: generatedExam!.id,
           questionSets: [],
-          needsRetake: false,
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           startTimeInMS: expect.any(Number)
         });
@@ -666,6 +668,7 @@ describe('/exam-environment/', () => {
               config: {
                 name: mock.exam.config.name,
                 note: mock.exam.config.note,
+                passingPercent: mock.exam.config.passingPercent,
                 totalTimeInMS: mock.exam.config.totalTimeInMS,
                 retakeTimeInMS: mock.exam.config.retakeTimeInMS
               },
