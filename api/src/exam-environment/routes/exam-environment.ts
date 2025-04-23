@@ -888,7 +888,8 @@ async function getExamAttemptsHandler(
     );
 
     if (maybeAttempt.hasError) {
-      logger.error({ attemptError: maybeAttempt.error });
+      logger.error(maybeAttempt.error);
+      this.Sentry.captureException(maybeAttempt.error);
       void reply.code(500);
       return reply.send(
         ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempt.error))
@@ -934,7 +935,8 @@ async function getExamAttemptsHandler(
   );
 
   if (maybeAttempts.hasError) {
-    logger.error({ attemptsError: maybeAttempts.error });
+    logger.error(maybeAttempts.error);
+    this.Sentry.captureException(maybeAttempts.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
@@ -981,7 +983,8 @@ async function constructEnvExamAttempt(
   );
 
   if (maybeExam.hasError) {
-    logger.error({ examError: maybeExam.error });
+    logger.error(maybeExam.error);
+    fastify.Sentry.captureException(maybeExam.error);
     return {
       error: {
         code: 500,
@@ -993,16 +996,17 @@ async function constructEnvExamAttempt(
   const exam = maybeExam.data;
 
   if (exam === null) {
-    logger.error(
-      { examId: attempt.examId, attemptId: attempt.id },
-      'Invalid exam id in attempt.'
-    );
+    const error = {
+      data: { examId: attempt.examId, attemptId: attempt.id },
+      message: 'Invalid exam id in attempt.'
+    };
+    logger.error(error.data, error.message);
+    fastify.Sentry.captureException(error.data);
+
     return {
       error: {
         code: 500,
-        data: ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(
-          'Invalid exam id in attempt.'
-        )
+        data: ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(error.message)
       }
     };
   }
@@ -1024,7 +1028,8 @@ async function constructEnvExamAttempt(
   );
 
   if (maybeMod.hasError) {
-    logger.error({ error: maybeMod.error });
+    logger.error(maybeMod.error);
+    fastify.Sentry.captureException(maybeMod.error);
     return {
       error: {
         code: 500,
@@ -1036,10 +1041,12 @@ async function constructEnvExamAttempt(
   const moderation = maybeMod.data;
 
   if (moderation === null) {
-    logger.error(
-      { examAttemptId: attempt.id },
-      'ExamModeration record should exist for expired attempt'
-    );
+    const error = {
+      data: { examAttemptId: attempt.id },
+      message: 'ExamModeration record should exist for expired attempt'
+    };
+    logger.error(error.data, error.message);
+    fastify.Sentry.captureException(error.data);
     return {
       error: {
         code: 500,
@@ -1070,7 +1077,8 @@ async function constructEnvExamAttempt(
   );
 
   if (maybeGeneratedExam.hasError) {
-    logger.error({ generatedExamError: maybeGeneratedExam.error });
+    logger.error(maybeGeneratedExam.error);
+    fastify.Sentry.captureException(maybeGeneratedExam.error);
     return {
       error: {
         code: 500,
@@ -1084,16 +1092,16 @@ async function constructEnvExamAttempt(
   const generatedExam = maybeGeneratedExam.data;
 
   if (!generatedExam) {
-    logger.error(
-      { attemptId: attempt.id, generatedExamId: attempt.generatedExamId },
-      'Unable to find generated exam associated with exam attempt'
-    );
+    const error = {
+      data: { attemptId: attempt.id, generatedExamId: attempt.generatedExamId },
+      message: 'Unable to find generated exam associated with exam attempt'
+    };
+    logger.error(error.data, error.message);
+    fastify.Sentry.captureException(error.data);
     return {
       error: {
         code: 500,
-        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
-          'Unable to find generated exam associated with exam attempt'
-        )
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message)
       }
     };
   }
