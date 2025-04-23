@@ -18,9 +18,9 @@ test.describe('when reloading the page', () => {
   }) => {
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
-    const solution = `h1, h2, p {
-  text-align: center;
-}`;
+    // For some reason, fill doesn't work properly on firefox if there are new lines
+    // in the text, hence one line:
+    const solution = `h1, h2, p { text-align: center; }`;
 
     await getEditors(page).fill(solution);
     const editorTextLocator = page
