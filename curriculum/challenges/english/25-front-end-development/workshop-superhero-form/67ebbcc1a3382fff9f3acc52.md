@@ -7,48 +7,58 @@ dashedName: step-2
 
 # --description--
 
-You can get into fleshing out the form now and handle the submission later.
+Before you getting into building out the form itself, you should create the state variables you need first. They are `heroName`, `realName`, `powerSource`, and `powers`.
 
-Return a `div` element with a `className` of `form-wrap`. Inside the `div`, create a `h2` element with the text `Superhero Application Form` and a `p` element with the text `Please complete all fields`.
+`powers` should start with an empty array, and the others start with empty strings.
 
 # --hints--
 
-You should have a `div` element.
+You should use the array destructuring syntax to set a `heroName` state variable and a `setHeroName` setter.
 
 ```js
-assert.exists(document?.querySelector("div"));
+assert.match(code, /(const|let)\s+\[\s*heroName\s*,\s*setHeroName\s*\]/);
 ```
 
-Your `div` element should have a `className` of `form-wrap`.
+Your `heroName` `useState` should have an initial value of empty string.
 
 ```js
-assert.exists(document?.querySelector("div.form-wrap"));
+assert.match(code, /(const|let)\s+\[\s*heroName\s*,\s*setHeroName\s*\]\s*=\s*(React.)?useState\(("|')\s*("|')\)?/)
 ```
 
-You should create an `h2` element inside your `div` element.
+You should use the array destructuring syntax to set a `realName` state variable and a `setRealName` setter.
 
 ```js
-assert.exists(document?.querySelector(".form-wrap > h2"));
+assert.match(code, /(const|let)\s+\[\s*realName\s*,\s*setRealName\s*\]/);
 ```
 
-Your `h2` element should have the text `Superhero Application Form`.
+Your `realName` `useState` should have an initial value of empty string.
 
 ```js
-const h2El = document?.querySelector("h2")
-assert.equal(h2El?.textContent, "Superhero Application Form");
+assert.match(code, /(const|let)\s+\[\s*realName\s*,\s*setRealName\s*\]\s*=\s*(React.)?useState\(('|")\s*('|")\);?/)
 ```
 
-You should create a `p` element inside your `div` element. Make sure it comes after the `h2`.
+You should use the array destructuring syntax to set a `powerSource` state variable and a `setPowerSource` setter.
 
 ```js
-assert.exists(document?.querySelector(".form-wrap > h2 + p"));
+assert.match(code, /(const|let)\s+\[\s*powerSource\s*,\s*setPowerSource\s*\]/);
 ```
 
-Your `p` element should have the text `Please complete all fields`.
+Your `powerSource` `useState` should have an initial value of empty string.
 
 ```js
-const pEl = document?.querySelector("p")
-assert.equal(pEl?.textContent, "Please complete all fields");
+assert.match(code, /(const|let)\s+\[\s*powerSource\s*,\s*setPowerSource\s*\]\s*=\s*(React.)?useState\(('|")\s*('|")\);?/)
+```
+
+You should use the array destructuring syntax to set a `powers` state variable and a `setPowers` setter.
+
+```js
+assert.match(code, /(const|let)\s+\[\s*powers\s*,\s*setPowers\s*\]/);
+```
+
+Your `powers` `useState` should have an intial value of empty array.
+
+```js
+assert.match(code, /(const|let)\s+\[\s*powers\s*,\s*setPowers\s*\]\s*=\s*(React.)?useState\(\[\s*\]\);?/)
 ```
 
 # --seed--
@@ -152,17 +162,15 @@ const { useState } = React;
 
 export const SuperheroForm = () => {
 
-  const [heroName, setHeroName] = useState('');
-  const [realName, setRealName] = useState('');
-  const [powerSource, setPowerSource] = useState('');
-  const [powers, setPowers] = useState([]);
+  --fcc-editable-region--
+  
+  --fcc-editable-region--
 
   return (
-    --fcc-editable-region--
-    <>
-      
-    </>
-    --fcc-editable-region--
+    <div className='form-wrap'>
+      <h2>Superhero Application Form</h2>
+      <p>Please complete all fields</p>
+    </div>
   )
 };
 ```
