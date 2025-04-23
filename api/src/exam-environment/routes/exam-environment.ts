@@ -703,7 +703,7 @@ async function postScreenshotHandler(
     );
   }
 
-  const maybeAttempt = await mapErr(
+  const maybeAttempts = await mapErr(
     this.prisma.envExamAttempt.findMany({
       where: {
         userId: user.id
@@ -711,25 +711,75 @@ async function postScreenshotHandler(
     })
   );
 
-  if (maybeAttempt.hasError) {
+  if (maybeAttempts.hasError) {
     logger.error(
-      { error: maybeAttempt.error },
-      'User screenshot cannot be linked to an exam attempt.'
+      maybeAttempts.error,
+      'User screenshot cannot be linked to any exam attempts.'
     );
     void reply.code(500);
     return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempt.error))
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
     );
   }
 
-  const attempt = maybeAttempt.data;
+  const attempts = maybeAttempts.data;
 
-  if (attempt.length === 0) {
+  if (attempts.length === 0) {
     logger.warn('No exam attempts found for user.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
         `No exam attempts found for user '${user.id}'.`
+      )
+    );
+  }
+
+  const latestAttempt = attempts.reduce((latest, current) =>
+    latest.startTimeInMS > current.startTimeInMS ? latest : current
+  );
+
+  const maybeExam = await mapErr(
+    this.prisma.envExam.findUnique({
+      where: {
+        id: latestAttempt.examId
+      }
+    })
+  );
+
+  if (maybeExam.hasError) {
+    logger.error({ examError: maybeExam.error });
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
+    );
+  }
+
+  const exam = maybeExam.data;
+
+  if (exam === null) {
+    logger.warn(
+      { examId: latestAttempt.examId, attemptId: latestAttempt.id },
+      'Attempt could not be related to an exam.'
+    );
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(
+        'Attempt could not be related to an exam.'
+      )
+    );
+  }
+
+  const isAttemptExpired =
+    latestAttempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
+  if (isAttemptExpired) {
+    logger.warn(
+      { examAttemptId: latestAttempt.id },
+      'Attempt has exceeded submission time.'
+    );
+    void reply.code(403);
+    return reply.send(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
+        'Attempt has exceeded submission time.'
       )
     );
   }
@@ -749,7 +799,7 @@ async function postScreenshotHandler(
 
   const uploadData = {
     image: imgBinary.toString('base64'),
-    examAttemptId: attempt[0]?.id
+    examAttemptId: latestAttempt.id
   };
 
   await fetch(`${SCREENSHOT_SERVICE_LOCATION}/upload`, {
