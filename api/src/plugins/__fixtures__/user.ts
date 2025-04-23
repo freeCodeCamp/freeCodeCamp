@@ -13,6 +13,7 @@ export const newUser = (email: string) => ({
   completedChallenges: [],
   completedExams: [],
   quizAttempts: [],
+  classroomId: null,
   currentChallengeId: '',
   donationEmails: [],
   email,
