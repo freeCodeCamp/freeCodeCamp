@@ -6,5 +6,5 @@
     "noEmit": false
   },
   "include": ["src"],
-  "exclude": ["**/*.test.*", "**/__mocks__/*", "**/__tests__/*", "./tools/**/*"]
+  "exclude": ["**/*.test.*"]
 }
