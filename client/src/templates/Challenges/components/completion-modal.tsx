@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -71,6 +70,13 @@ interface CompletionModalState {
   downloadURL: null | string;
 }
 
+interface DownloadableChallengeFile {
+  name: string;
+  ext: string;
+  contents: string;
+  fileKey: string;
+}
+
 class CompletionModal extends Component<
   CompletionModalsProps,
   CompletionModalState
@@ -100,17 +106,18 @@ class CompletionModal extends Component<
     }
     let newURL = null;
     if (challengeFiles?.length) {
-      const filesForDownload = challengeFiles
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .reduce<string>((allFiles, currentFile: any) => {
-          const beforeText = `** start of ${currentFile.path} **\n\n`;
-          const afterText = `\n\n** end of ${currentFile.path} **\n\n`;
+      const filesForDownload = challengeFiles.reduce<string>(
+        (allFiles, currentFile: DownloadableChallengeFile) => {
+          const beforeText = `** start of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
+          const afterText = `\n\n** end of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
           allFiles +=
             challengeFiles.length > 1
               ? `${beforeText}${currentFile.contents}${afterText}`
               : currentFile.contents;
           return allFiles;
-        }, '');
+        },
+        ''
+      );
       const blob = new Blob([filesForDownload], {
         type: 'text/json'
       });
