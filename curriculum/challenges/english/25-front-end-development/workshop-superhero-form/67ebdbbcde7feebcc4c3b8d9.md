@@ -164,10 +164,10 @@ export const SuperheroForm = () => {
     'Other'
   ];
 
-  const [heroName, setHeroName] = useState('');
-  const [realName, setRealName] = useState('');
-  const [powerSource, setPowerSource] = useState('');
-  const [powers, setPowers] = useState([]);
+  const [heroName, setHeroName] = React.useState('');
+  const [realName, setRealName] = React.useState('');
+  const [powerSource, setPowerSource] = React.useState('');
+  const [powers, setPowers] = React.useState([]);
 
   return (
     <div className='form-wrap'>

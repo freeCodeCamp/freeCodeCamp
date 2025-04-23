@@ -162,9 +162,10 @@ const { useState } = React;
 
 export const SuperheroForm = () => {
 
-  --fcc-editable-region--
-  
-  --fcc-editable-region--
+  const [heroName, setHeroName] = React.useState('');
+  const [realName, setRealName] = React.useState('');
+  const [powerSource, setPowerSource] = React.useState('');
+  const [powers, setPowers] = React.useState([]);
 
   return (
     <div className='form-wrap'>
