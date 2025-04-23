@@ -1,6 +1,12 @@
 import Fastify, { type FastifyInstance } from 'fastify';
 import growthBook from './growth-book';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-return
+jest.mock('../utils/env', () => ({
+  ...jest.requireActual('../utils/env'),
+  FREECODECAMP_NODE_ENV: 'production'
+}));
+
 const captureException = jest.fn();
 
 describe('growth-book', () => {
