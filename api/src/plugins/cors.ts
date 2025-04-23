@@ -22,7 +22,7 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
       // @fastify/cors instead.
       void reply.header('Access-Control-Allow-Origin', HOME_LOCATION);
 
-      if (!req.url?.startsWith('/status/')) {
+      if (origin && !req.url?.startsWith('/status/')) {
         logger.info(`Received request from disallowed origin: ${origin}`);
       }
     }
