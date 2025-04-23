@@ -905,6 +905,7 @@
     "unlink-success": "{{website}} のリンクを解除しました",
     "provide-username": "ユーザー名と報告内容が入力されているか確認してください",
     "report-sent": "報告は {{email}} を CC に入れた状態でチームに送信されました",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "表示しようとした認定証は存在しません",
     "create-token-err": "ユーザートークンの作成中にエラーが発生しました",
     "delete-token-err": "ユーザートークンの削除中にエラーが発生しました",

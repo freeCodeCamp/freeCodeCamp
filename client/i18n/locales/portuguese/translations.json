@@ -905,6 +905,7 @@
     "unlink-success": "Você desvinculou seu {{website}} com sucesso",
     "provide-username": "Verifique se você forneceu um nome de usuário e um relatório",
     "report-sent": "Um relatório foi enviado para a equipe com {{email}} em cópia",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "A certificação que você tentou visualizar não existe",
     "create-token-err": "Ocorreu um erro ao criar seu token de usuário",
     "delete-token-err": "Ocorreu um erro ao excluir seu token de usuário",

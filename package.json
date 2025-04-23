@@ -19,7 +19,6 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {
-    "preinstall": "npx -y only-allow pnpm",
     "audit-challenges": "pnpm run create:shared && tsx tools/challenge-auditor/index.ts",
     "analyze-bundle": "webpack-bundle-analyzer",
     "prebuild": "npm-run-all create:shared",

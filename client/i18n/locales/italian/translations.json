@@ -905,6 +905,7 @@
     "unlink-success": "Hai scollegato correttamente il tuo {{website}}",
     "provide-username": "Spunta la casella se hai fornito un nome utente e un report",
     "report-sent": "Un report è stato inviato al team con {{email}} in copia",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "La certificazione che hai cercato di visualizzare non esiste",
     "create-token-err": "Un errore è occorso durante la creazione del tuo token",
     "delete-token-err": "Un errore è occorso durante la cancellazione del tuo token",

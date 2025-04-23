@@ -905,6 +905,7 @@
     "unlink-success": "你已成功取消 {{website}} 鏈接",
     "provide-username": "檢查你是否提供用戶名和報告",
     "report-sent": "已通過 {{email}} 向團隊發送副本報告",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "你嘗試查看的認證不存在",
     "create-token-err": "創建用戶令牌時出錯",
     "delete-token-err": "刪除用戶令牌時出錯",
