@@ -2022,10 +2022,7 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": {
-        "title": "30",
-        "intro": []
-      },
+      "qpra": { "title": "30", "intro": [] },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
@@ -3429,10 +3426,7 @@
           "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
-      "kagw": {
-        "title": "258",
-        "intro": []
-      },
+      "kagw": { "title": "258", "intro": [] },
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
@@ -3499,14 +3493,8 @@
           "In these lecture videos, you will learn about effects and referencing values with React."
         ]
       },
-      "xdyh": {
-        "title": "270",
-        "intro": []
-      },
-      "vjgg": {
-        "title": "272",
-        "intro": []
-      },
+      "xdyh": { "title": "270", "intro": [] },
+      "vjgg": { "title": "272", "intro": [] },
       "review-react-state-and-hooks": {
         "title": "React State and Hooks Review",
         "intro": [
@@ -3526,10 +3514,7 @@
           "In these lecture videos, you will learn about working with forms in React."
         ]
       },
-      "sgau": {
-        "title": "276",
-        "intro": []
-      },
+      "sgau": { "title": "276", "intro": [] },
       "lab-event-rsvp": {
         "title": "Build an Event RSVP",
         "intro": [
@@ -3543,10 +3528,7 @@
           "In these lecture videos, you will learn about data fetching and memoization in React."
         ]
       },
-      "ffpt": {
-        "title": "279",
-        "intro": []
-      },
+      "ffpt": { "title": "279", "intro": [] },
       "lab-currency-converter": {
         "title": "Build a Currency Converter",
         "intro": [
@@ -3647,26 +3629,11 @@
           "In these lecture videos, you will learn what TypeScript is and how to use it."
         ]
       },
-      "trvf": {
-        "title": "293",
-        "intro": []
-      },
-      "kwmg": {
-        "title": "294",
-        "intro": []
-      },
-      "nodx": {
-        "title": "295",
-        "intro": []
-      },
-      "erfj": {
-        "title": "296",
-        "intro": []
-      },
-      "muyw": {
-        "title": "297",
-        "intro": []
-      },
+      "trvf": { "title": "293", "intro": [] },
+      "kwmg": { "title": "294", "intro": [] },
+      "nodx": { "title": "295", "intro": [] },
+      "erfj": { "title": "296", "intro": [] },
+      "muyw": { "title": "297", "intro": [] },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
@@ -3684,14 +3651,8 @@
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
-      "rdzk": {
-        "title": "301",
-        "intro": []
-      },
-      "vtpz": {
-        "title": "302",
-        "intro": []
-      },
+      "rdzk": { "title": "301", "intro": [] },
+      "vtpz": { "title": "302", "intro": [] },
       "workshop-bash-boilerplate": {
         "title": "Build a Boilerplate",
         "intro": [
@@ -3709,10 +3670,7 @@
         "title": "Bash Commands Quiz",
         "intro": ["Test what you've learned bash commands with this quiz."]
       },
-      "voks": {
-        "title": "306",
-        "intro": []
-      },
+      "voks": { "title": "306", "intro": [] },
       "workshop-database-of-video-game-characters": {
         "title": "Build a Database of Video Game Characters",
         "intro": [
@@ -3738,10 +3696,7 @@
           "Test what you've learned on relational databases with this quiz."
         ]
       },
-      "pexz": {
-        "title": "311",
-        "intro": []
-      },
+      "pexz": { "title": "311", "intro": [] },
       "workshop-bash-five-programs": {
         "title": "Build Five Programs",
         "intro": [
@@ -3759,10 +3714,7 @@
         "title": "Bash Scripting Quiz",
         "intro": ["Test what you've learned on bash scripting in this quiz."]
       },
-      "tkgg": {
-        "title": "315",
-        "intro": []
-      },
+      "tkgg": { "title": "315", "intro": [] },
       "workshop-sql-student-database-part-1": {
         "title": "Build a Student Database: Part 1",
         "intro": [
@@ -3812,10 +3764,7 @@
         "title": "Bash and SQL Quiz",
         "intro": ["Test what you've learned in this quiz on Bash and SQL."]
       },
-      "eeez": {
-        "title": "324",
-        "intro": []
-      },
+      "eeez": { "title": "324", "intro": [] },
       "workshop-castle": {
         "title": "Build a Castle",
         "intro": [
@@ -3831,10 +3780,7 @@
         "title": "Nano Quiz",
         "intro": ["Test what you've learned on Nano with this quiz ."]
       },
-      "rhhl": {
-        "title": "328",
-        "intro": []
-      },
+      "rhhl": { "title": "328", "intro": [] },
       "workshop-sql-reference-object": {
         "title": "Build an SQL Reference Object",
         "intro": [
@@ -3978,10 +3924,7 @@
         "title": "Placeholder - waiting for title",
         "intro": [""]
       },
-      "lab-budget-app": {
-        "title": "Build a Budget App",
-        "intro": [""]
-      },
+      "lab-budget-app": { "title": "Build a Budget App", "intro": [""] },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",
         "intro": [
@@ -4027,10 +3970,7 @@
         "title": "Placeholder - Waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-oop-3": {
-        "title": "",
-        "intro": [""]
-      },
+      "lab-placeholder-oop-3": { "title": "", "intro": [""] },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
         "intro": [
@@ -4081,14 +4021,8 @@
         "title": "Build a Bisection Method",
         "intro": [""]
       },
-      "workshop-merge-sort": {
-        "title": "Build a Merge Sort",
-        "intro": [""]
-      },
-      "lab-quick-sort": {
-        "title": "Build a Quick Sort",
-        "intro": [""]
-      },
+      "workshop-merge-sort": { "title": "Build a Merge Sort", "intro": [""] },
+      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
       "lab-selection-sort": {
         "title": "Build a Selection Sort",
         "intro": [""]
@@ -4171,6 +4105,10 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "workshop-superhero-application-form": {
+        "title": "Build a Superhero Application Form",
+        "intro": ["", ""]
       }
     }
   },
