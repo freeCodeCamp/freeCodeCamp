@@ -64,6 +64,7 @@ function EmailSettings({
     confirmNewEmail: '',
     isPristine: true
   });
+  const [isValidatingDomain, setIsValidatingDomain] = useState(false);
 
   function handleSubmit(e: React.FormEvent): void {
     e.preventDefault();
@@ -84,7 +85,23 @@ function EmailSettings({
     };
   }
 
-  function getValidationForNewEmail(): EmailValidation {
+  async function validateEmailDomain(email: string): Promise<boolean> {
+    if (!isEmail(email)) return false;
+    setIsValidatingDomain(true);
+    try {
+      const response = await fetch(
+        `/validate/email?email=${encodeURIComponent(email)}`
+      );
+      const { isValid } = (await response.json()) as { isValid: boolean };
+      return isValid;
+    } catch (_error) {
+      return false;
+    } finally {
+      setIsValidatingDomain(false);
+    }
+  }
+
+  async function getValidationForNewEmail(): Promise<EmailValidation> {
     const { newEmail, currentEmail } = emailForm;
     if (!maybeEmailRE.test(newEmail)) {
       return {
@@ -98,14 +115,22 @@ function EmailSettings({
         message: t('validation.same-email')
       };
     }
-    if (isEmail(newEmail)) {
-      return { state: 'success', message: '' };
-    } else {
+    if (!isEmail(newEmail)) {
       return {
         state: 'error',
         message: t('validation.invalid-email')
       };
     }
+
+    const isValidDomain = await validateEmailDomain(newEmail);
+    if (!isValidDomain) {
+      return {
+        state: 'error',
+        message: t('validation.invalid-email-domain')
+      };
+    }
+
+    return { state: 'success', message: '' };
   }
 
   function getValidationForConfirmEmail(): EmailValidation {
@@ -133,16 +158,19 @@ function EmailSettings({
   const { newEmail, confirmNewEmail, currentEmail, isPristine } = emailForm;
 
   const { state: newEmailValidation, message: newEmailValidationMessage } =
-    getValidationForNewEmail();
+    await getValidationForNewEmail();
 
   const {
     state: confirmEmailValidation,
     message: confirmEmailValidationMessage
   } = getValidationForConfirmEmail();
+
   const isDisabled =
     newEmailValidation !== 'success' ||
     confirmEmailValidation !== 'success' ||
-    isPristine;
+    isPristine ||
+    isValidatingDomain;
+
   if (!currentEmail) {
     return (
       <div>
@@ -241,7 +269,7 @@ function EmailSettings({
             bgSize='large'
             {...(isDisabled && { tabIndex: -1 })}
           >
-            {t('buttons.save')}{' '}
+            {isValidatingDomain ? t('buttons.validating') : t('buttons.save')}{' '}
             <span className='sr-only'>{t('settings.email.heading')}</span>
           </BlockSaveButton>
         </form>

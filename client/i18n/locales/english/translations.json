@@ -110,7 +110,12 @@
     "closed-caption": "Closed caption",
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
-    "share-on-threads": "Share on Threads"
+    "share-on-threads": "Share on Threads",
+    "save": "Save",
+    "validating": "Validating...",
+    "edit": "Edit",
+    "no-thanks": "No thanks",
+    "yes-please": "Yes please"
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -329,11 +334,11 @@
     },
     "honesty": {
       "p1": "Before you can claim a verified certification, you must accept our Academic Honesty Pledge, which reads:",
-      "p2": "\"I understand that plagiarism means copying someone else’s work and presenting the work as if it were my own, without clearly attributing the original author.\"",
+      "p2": "\"I understand that plagiarism means copying someone else's work and presenting the work as if it were my own, without clearly attributing the original author.\"",
       "p3": "\"I understand that plagiarism is an act of intellectual dishonesty, and that people usually get kicked out of university or fired from their jobs if they get caught plagiarizing.\"",
       "p4": "\"Aside from using open source libraries such as jQuery and Bootstrap, and short snippets of code which are clearly attributed to their original author, 100% of the code in my projects was written by me, or along with another person going through the freeCodeCamp curriculum with whom I was pair programming in real time.\"",
-      "p5": "\"I pledge that I did not plagiarize any of my freeCodeCamp.org work. I understand that freeCodeCamp.org’s team will audit my projects to confirm this.\"",
-      "p6": "In the situations where we discover instances of unambiguous plagiarism, we will replace the person in question’s certification with a message that \"Upon review, this account has been flagged for academic dishonesty.\"",
+      "p5": "\"I pledge that I did not plagiarize any of my freeCodeCamp.org work. I understand that freeCodeCamp.org's team will audit my projects to confirm this.\"",
+      "p6": "In the situations where we discover instances of unambiguous plagiarism, we will replace the person in question's certification with a message that \"Upon review, this account has been flagged for academic dishonesty.\"",
       "p7": "As an academic institution that grants achievement-based certifications, we take academic honesty very seriously. If you have any questions about this policy, or suspect that someone has violated it, you can email <0>{{email}}</0> and we will investigate."
     }
   },
@@ -730,7 +735,7 @@
     "community-achivements-3": "Merged <0>2,455</0> code contributions into our open source repositories on GitHub",
     "community-achivements-4": "Translated <0>1.5</0> million words to make our curriculum and tutorials more accessible to speakers of many world languages",
     "as-you-see": "As you can see, we're getting things done. So you can rest assured that we'll put your donations to good use.",
-    "get-benefits": "Get the benefits and the knowledge that you’re helping our charity change education for the better. Become a supporter today.",
+    "get-benefits": "Get the benefits and the knowledge that you're helping our charity change education for the better. Become a supporter today.",
     "modal-benefits-title": "Support us",
     "help-us-more-certifications": "Help us build more certifications",
     "remove-donation-popups": "Remove donation popups",
@@ -979,7 +984,11 @@
     "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path",
     "source-code-link-required": "Remember to submit the link to your source code.",
-    "source-code-link-public": "Source code link must be publicly visible."
+    "source-code-link-public": "Source code link must be publicly visible.",
+    "invalid-email": "Please enter a valid email address",
+    "invalid-email-domain": "The email domain does not exist or cannot receive emails",
+    "email-mismatch": "The emails do not match",
+    "same-email": "This is your current email"
   },
   "certification": {
     "executive": "Executive Director, freeCodeCamp.org",
