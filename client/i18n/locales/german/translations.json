@@ -905,6 +905,7 @@
     "unlink-success": "Du hast deine {{website}} erfolgreich entfernt",
     "provide-username": "Prüfe, ob du einen Benutzernamen und einen Bericht angegeben hast",
     "report-sent": "Ein Bericht wurde an das Team mit {{email}} in Kopie gesendet",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "Die Zertifizierung, die du einsehen wolltest, existiert nicht",
     "create-token-err": "Beim Erstellen deines Benutzer-Tokens ist ein Fehler aufgetreten",
     "delete-token-err": "Beim Löschen deines Benutzer-Tokens ist ein Fehler aufgetreten",
