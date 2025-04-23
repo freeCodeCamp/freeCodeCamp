@@ -20,7 +20,7 @@ assert.notEmpty(new __helpers.CSSHelp(document).getStyle('.face')?.top);
 You should give `.face` a `top` of `--fcc-expected--`, but found `--fcc-actual--`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.face')?.top, '15%');
+assert.strictEqual(new __helpers.CSSHelp(document).getStyle('.face')?.top, '15%');
 ```
 
 # --seed--
