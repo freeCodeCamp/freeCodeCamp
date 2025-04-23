@@ -1,0 +1,10 @@
+{
+  "name": "Build an RPG Character",
+  "isUpcomingChange": true,
+  "dashedName": "lab-rpg-character",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67d83df6f82eda3868dd2a84", "title": "Build an RPG Character" }],
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "blockType": "lab"
+}
