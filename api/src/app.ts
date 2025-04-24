@@ -1,3 +1,5 @@
+import { randomBytes } from 'crypto';
+import { isEmpty } from 'lodash';
 import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
@@ -9,6 +11,7 @@ import Fastify, {
   FastifyBaseLogger,
   FastifyHttpOptions,
   FastifyInstance,
+  FastifyRequest,
   RawReplyDefaultExpression,
   RawRequestDefaultExpression,
   RawServerDefault
@@ -42,7 +45,9 @@ import {
   FCC_ENABLE_EXAM_ENVIRONMENT,
   FCC_ENABLE_SENTRY_ROUTES,
   GROWTHBOOK_FASTIFY_API_HOST,
-  GROWTHBOOK_FASTIFY_CLIENT_KEY
+  GROWTHBOOK_FASTIFY_CLIENT_KEY,
+  FREECODECAMP_NODE_ENV,
+  FCC_API_LOG_LEVEL
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 import {
@@ -77,6 +82,67 @@ ajv.addFormat('objectid', {
   type: 'string',
   validate: (str: string) => isObjectID(str)
 });
+
+const requestSerializer = (req: FastifyRequest) => {
+  const method = req.method || 'METHOD not found';
+  const url = req.url || 'URL not found';
+  const headers = req.headers || 'HEADERS not found';
+  const xForwardedFor = Array.isArray(req.headers['x-forwarded-for'])
+    ? req.headers['x-forwarded-for'][0]
+    : req.headers['x-forwarded-for'];
+  const ip =
+    xForwardedFor || req.headers['x-real-ip'] || req.ip || 'IP not found';
+  const query = isEmpty(req.query) ? 'QUERY not found' : req.query;
+  const hostname = req.hostname || 'HOSTNAME not found';
+  const remotePort = req.socket.remotePort || 'REMOTE_PORT not found';
+
+  return {
+    REQ_ID: req.id,
+    METHOD: method,
+    URL: url,
+    IP: ip,
+    HOSTNAME: hostname,
+    REMOTE_PORT: remotePort,
+    QUERY: query,
+    HEADERS: headers
+  };
+};
+
+const envToLogger = {
+  development: {
+    transport: {
+      target: 'pino-pretty',
+      options: {
+        singleLine: true,
+        translateTime: 'HH:MM:ss Z',
+        ignore: 'pid,hostname'
+      }
+    },
+    level: FCC_API_LOG_LEVEL || 'info',
+    serializers: {
+      req: (req: FastifyRequest) => {
+        return {
+          method: req.method,
+          url: req.url
+        };
+      }
+    }
+    // No need to redact in development
+  },
+  production: {
+    level: FCC_API_LOG_LEVEL || 'info',
+    serializers: {
+      req: requestSerializer
+    },
+    redact: ['req.HEADERS.cookie']
+  }
+};
+
+export const buildOptions = {
+  logger: envToLogger[FREECODECAMP_NODE_ENV] ?? true,
+  genReqId: () => randomBytes(8).toString('hex'),
+  disableRequestLogging: true
+};
 
 /**
  * Top-level wrapper to instantiate the API server. This is where all middleware and
