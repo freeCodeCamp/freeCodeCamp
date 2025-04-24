@@ -4,6 +4,7 @@ import { build } from './src/app';
 import { createUserInput } from './src/utils/create-user';
 import { examJson } from './__mocks__/exam';
 import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf';
+import { buildOptions } from './src/server';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -158,7 +159,11 @@ const indexData: IndexData[] = [
 export function setupServer(): void {
   let fastify: FastifyTestInstance;
   beforeAll(async () => {
-    fastify = await build();
+    if (process.env.FCC_ENABLE_TEST_LOGGING !== 'true') {
+      // @ts-expect-error Disable logging by unsetting logger
+      buildOptions.logger = undefined;
+    }
+    fastify = await build(buildOptions);
     await fastify.ready();
 
     // Prisma does not support TTL indexes in the schema yet, so, to avoid

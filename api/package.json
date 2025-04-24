@@ -70,6 +70,7 @@
     "develop": "tsx watch --clear-screen=false src/server.ts",
     "start": "FREECODECAMP_NODE_ENV=production node dist/server.js",
     "test": "jest --force-exit",
+    "test-with-logging": "FCC_ENABLE_TEST_LOGGING=true pnpm run test",
     "prisma": "dotenv -e ../.env prisma",
     "postinstall": "prisma generate",
     "generate-exams": "tsx tools/exam-environment/generate/index.ts",
