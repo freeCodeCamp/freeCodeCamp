@@ -50,7 +50,6 @@ export const defaultDonationFormState = {
 };
 
 const initialState = {
-  appUsername: '',
   isRandomCompletionThreshold: false,
   donatableSectionRecentlyCompleted: null,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
@@ -61,7 +60,7 @@ const initialState = {
   showCertFetchState: {
     ...defaultFetchState
   },
-  user: {},
+  user: { sessionUser: null },
   userFetchState: {
     ...defaultFetchState
   },
@@ -107,8 +106,8 @@ function spreadThePayloadOnUser(state, payload) {
     ...state,
     user: {
       ...state.user,
-      [state.appUsername]: {
-        ...state.user[state.appUsername],
+      sessionUser: {
+        ...state.user.sessionUser,
         ...payload
       }
     }
@@ -118,13 +117,12 @@ function spreadThePayloadOnUser(state, payload) {
 export const reducer = handleActions(
   {
     [actionTypes.acceptTermsComplete]: (state, { payload }) => {
-      const { appUsername } = state;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             // TODO: the user accepts the privacy terms in practice during auth
             // however, it's currently being used to track if they've accepted
             // or rejected the newsletter. Ideally this should be migrated,
@@ -132,7 +130,7 @@ export const reducer = handleActions(
             acceptedPrivacyTerms: true,
             sendQuincyEmail:
               payload === null
-                ? state.user[appUsername].sendQuincyEmail
+                ? state.user.sessionUser.sendQuincyEmail
                 : payload
           }
         }
@@ -175,13 +173,12 @@ export const reducer = handleActions(
       donationFormState: { ...defaultDonationFormState, processing: true }
     }),
     [actionTypes.postChargeComplete]: state => {
-      const { appUsername } = state;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             isDonating: true
           }
         },
@@ -205,16 +202,12 @@ export const reducer = handleActions(
       ...state,
       userProfileFetchState: { ...defaultFetchState }
     }),
-    [actionTypes.fetchUserComplete]: (
-      state,
-      { payload: { user, username } }
-    ) => ({
+    [actionTypes.fetchUserComplete]: (state, { payload: { user } }) => ({
       ...state,
       user: {
         ...state.user,
-        [username]: { ...user, sessionUser: true }
+        sessionUser: user
       },
-      appUsername: username,
       currentChallengeId:
         user.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY),
       userFetchState: {
@@ -291,8 +284,7 @@ export const reducer = handleActions(
     }),
     [actionTypes.resetUserData]: state => ({
       ...state,
-      appUsername: '',
-      user: {}
+      user: { ...state.user, sessionUser: null }
     }),
     [actionTypes.openSignoutModal]: state => ({
       ...state,
@@ -335,15 +327,14 @@ export const reducer = handleActions(
       let submittedchallenges = [
         { ...submittedChallenge, completedDate: Date.now() }
       ];
-      const { appUsername } = state;
 
       return examResults && !examResults.passed
         ? {
             ...state,
             user: {
               ...state.user,
-              [appUsername]: {
-                ...state.user[appUsername],
+              sessionUser: {
+                ...state.user.sessionUser,
                 examResults
               }
             }
@@ -352,12 +343,12 @@ export const reducer = handleActions(
             ...state,
             user: {
               ...state.user,
-              [appUsername]: {
-                ...state.user[appUsername],
+              sessionUser: {
+                ...state.user.sessionUser,
                 completedChallenges: uniqBy(
                   [
                     ...submittedchallenges,
-                    ...state.user[appUsername].completedChallenges
+                    ...state.user.sessionUser.completedChallenges
                   ],
                   'id'
                 ),
@@ -369,13 +360,12 @@ export const reducer = handleActions(
           };
     },
     [actionTypes.setMsUsername]: (state, { payload }) => {
-      const { appUsername } = state;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             msUsername: payload
           }
         }
@@ -388,26 +378,24 @@ export const reducer = handleActions(
       };
     },
     [actionTypes.updateUserToken]: (state, { payload }) => {
-      const { appUsername } = state;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             userToken: payload
           }
         }
       };
     },
     [actionTypes.deleteUserTokenComplete]: state => {
-      const { appUsername } = state;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             userToken: null
           }
         }
@@ -426,13 +414,12 @@ export const reducer = handleActions(
       };
     },
     [actionTypes.clearExamResults]: state => {
-      const { appUsername } = state;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             examResults: null
           }
         }
@@ -442,14 +429,13 @@ export const reducer = handleActions(
       state,
       { payload: { surveyResults } }
     ) => {
-      const { appUsername } = state;
-      const { completedSurveys = [] } = state.user[appUsername];
+      const { completedSurveys = [] } = state.user.sessionUser;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             completedSurveys: [...completedSurveys, surveyResults]
           }
         }
@@ -460,13 +446,12 @@ export const reducer = handleActions(
       currentChallengeId: payload
     }),
     [actionTypes.saveChallengeComplete]: (state, { payload }) => {
-      const { appUsername } = state;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             savedChallenges: payload
           }
         }
@@ -478,8 +463,8 @@ export const reducer = handleActions(
             ...state,
             user: {
               ...state.user,
-              [state.appUsername]: {
-                ...state.user[state.appUsername],
+              sessionUser: {
+                ...state.user.sessionUser,
                 username: payload
               }
             }
@@ -511,8 +496,8 @@ export const reducer = handleActions(
             ...state,
             user: {
               ...state.user,
-              [state.appUsername]: {
-                ...state.user[state.appUsername],
+              sessionUser: {
+                ...state.user.sessionUser,
                 profileUI: { ...payload }
               }
             }

@@ -49,9 +49,8 @@ const analyticsDataMock = {
 
 const signedInStoreMock = {
   app: {
-    appUsername: 'devuser',
     user: {
-      devuser: {
+      sessionUser: {
         completedChallenges: [
           {
             id: 'bd7123c8c441eddfaeb5bdef',
@@ -81,11 +80,8 @@ const signedInStoreMock = {
 
 const signedOutStoreMock = {
   app: {
-    appUsername: '',
     user: {
-      '': {
-        completedChallenges: []
-      }
+      sessionUser: null
     }
   }
 };
@@ -162,11 +158,8 @@ describe('donation-saga', () => {
 
     const signedOutStoreMock = {
       app: {
-        appUsername: '',
         user: {
-          '': {
-            completedChallenges: []
-          }
+          sessionUser: null
         }
       }
     };
