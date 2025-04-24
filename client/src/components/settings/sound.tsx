@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useState, useEffect, useRef } from 'react';
 import store from 'store';
 import { useTranslation } from 'react-i18next';
 
@@ -21,6 +21,32 @@ export default function SoundSettings({
     (store.get('soundVolume') as number) ?? 50
   );
   const [mayPlay, setMayPlay] = useState(true);
+  const [isAmbientSoundOn, setAmbientSoundOn] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    if (!audioRef.current) {
+      // replace with link for audio
+      audioRef.current = new Audio(
+        'https://campfire-mode.freecodecamp.org/chal-comp.mp3'
+      );
+      audioRef.current.loop = true;
+    }
+
+    if (isAmbientSoundOn) {
+      audioRef.current.volume = volumeDisplay / 100;
+      audioRef.current.play().catch(e => {
+        console.warn('Audio playback failed:', e);
+      });
+    } else {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+
+    return () => {
+      audioRef.current?.pause();
+    };
+  }, [isAmbientSoundOn, volumeDisplay]);
 
   function handleVolumeChange(event: ChangeEvent<HTMLInputElement>) {
     const inputValue = Number(event.target.value);
@@ -52,15 +78,13 @@ export default function SoundSettings({
         }}
       />
       <ToggleButtonSetting
-        action='Ambient Mode'
+        action='Ambient Sound' // will need to add translations for action and explain
         explain='This adds an ambient campfire sound throughout the website while Campfire Mode is on.'
-        flag={sound}
-        flagName='sound'
+        flag={isAmbientSoundOn}
+        flagName='ambientSound'
         offLabel={t('buttons.off')}
         onLabel={t('buttons.on')}
-        toggleFlag={() => {
-          toggleSoundMode(sound ? false : true);
-        }}
+        toggleFlag={() => setAmbientSoundOn(prev => !prev)}
       />
       <label htmlFor='volumeslider'>
         {t('settings.sound-volume')}{' '}
