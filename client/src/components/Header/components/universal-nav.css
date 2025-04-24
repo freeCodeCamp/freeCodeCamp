@@ -7,11 +7,12 @@
   height: var(--header-height);
   justify-content: space-between;
   padding: 0 5px;
+  forced-color-adjust: none;
 }
 
-@media (min-width: 401px) {
+@media (forced-colors) {
   .universal-nav {
-    padding: 0 15px;
+    background-color: var(--gray-90);
   }
 }
 
