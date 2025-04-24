@@ -698,6 +698,66 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(200);
       });
     });
+
+    describe('GET /exam-environment/exam/attempts/:attemptId', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
+      });
+
+      it('should return 404 if the attempt does not exist', async () => {
+        const attemptId = mock.oid();
+        const res = await superGet(
+          `/exam-environment/exam/attempts/${attemptId}`
+        ).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toStrictEqual({
+          code: 'FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
+        });
+        expect(res.status).toBe(404);
+      });
+
+      it('should return 404 if the attempt belongs to another user', async () => {
+        const otherUserAttempt =
+          await fastifyTestInstance.prisma.envExamAttempt.create({
+            data: { ...mock.examAttempt, userId: mock.oid() }
+          });
+        const res = await superGet(
+          `/exam-environment/exam/attempts/${otherUserAttempt.id}`
+        ).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toStrictEqual({
+          code: 'FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT', // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
+        });
+        expect(res.status).toBe(404);
+      });
+
+      it('should return 200 with the envExamAttempt if the attempt exists and belongs to the user', async () => {
+        const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
+          data: { ...mock.examAttempt, userId: defaultUserId }
+        });
+
+        const res = await superGet(
+          `/exam-environment/exam/attempts/${attempt.id}`
+        ).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toEqual({
+          envExamAttempt: attempt
+        });
+        expect(res.status).toBe(200);
+      });
+    });
   });
 
   describe('Authenticated user without exam environment authorization token', () => {
