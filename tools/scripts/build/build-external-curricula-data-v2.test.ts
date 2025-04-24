@@ -18,7 +18,7 @@ import {
   type GeneratedBlockBasedCurriculumProps,
   type GeneratedChapterBasedCurriculumProps,
   orderedSuperBlockInfo
-} from './build-external-curricula-data';
+} from './build-external-curricula-data-v2';
 
 const VERSION = 'v2';
 const intros = JSON.parse(

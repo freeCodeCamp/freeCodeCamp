@@ -7,7 +7,7 @@ import {
   SuperBlockStage
 } from '../../../shared/config/curriculum';
 import fullStackSuperBlockStructure from '../../../curriculum/superblock-structure/full-stack.json';
-import type { Chapter } from './../../../shared/config/chapters';
+import type { Chapter } from '../../../shared/config/chapters';
 
 export type CurriculumIntros = {
   [keyValue in SuperBlocks]: {
@@ -68,6 +68,8 @@ interface GeneratedBlock {
   intro: string;
   meta: Record<string, unknown>;
 }
+
+const ver = 'v2';
 
 const staticFolderPath = resolve(__dirname, '../../../client/static');
 const dataPath = `${staticFolderPath}/curriculum-data/`;
@@ -226,8 +228,7 @@ export const superBlockDashedNames = Object.keys(orderedSuperBlockInfo).reduce(
   [] as SuperBlocks[]
 );
 
-export function buildExtCurriculumData(
-  ver: string,
+export function buildExtCurriculumDataV2(
   curriculum: Curriculum<CurriculumProps>
 ): void {
   mkdirSync(dataPath, { recursive: true });

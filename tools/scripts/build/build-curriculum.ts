@@ -3,10 +3,10 @@ import path from 'path';
 
 import { getChallengesForLang } from '../../../curriculum/get-challenges';
 import {
-  buildExtCurriculumData,
+  buildExtCurriculumDataV2,
   Curriculum,
   CurriculumProps
-} from './build-external-curricula-data';
+} from './build-external-curricula-data-v2';
 
 const globalConfigPath = path.resolve(__dirname, '../../../shared/config');
 
@@ -14,7 +14,7 @@ const globalConfigPath = path.resolve(__dirname, '../../../shared/config');
 // across all languages.
 void getChallengesForLang('english')
   .then((result: Record<string, unknown>) => {
-    buildExtCurriculumData('v2', result as Curriculum<CurriculumProps>);
+    buildExtCurriculumDataV2(result as Curriculum<CurriculumProps>);
     return result;
   })
   .then(JSON.stringify)
