@@ -51,19 +51,17 @@ export default function SoundSettings({
           toggleSoundMode(sound ? false : true);
         }}
       />
-      {sound && (
-        <ToggleButtonSetting
-          action='Ambient Mode'
-          explain='This adds an ambient campfire sound throughout the website while Campfire Mode is on.'
-          flag={sound}
-          flagName='sound'
-          offLabel={t('buttons.off')}
-          onLabel={t('buttons.on')}
-          toggleFlag={() => {
-            toggleSoundMode(sound ? false : true);
-          }}
-        />
-      )}
+      <ToggleButtonSetting
+        action='Ambient Mode'
+        explain='This adds an ambient campfire sound throughout the website while Campfire Mode is on.'
+        flag={sound}
+        flagName='sound'
+        offLabel={t('buttons.off')}
+        onLabel={t('buttons.on')}
+        toggleFlag={() => {
+          toggleSoundMode(sound ? false : true);
+        }}
+      />
       <label htmlFor='volumeslider'>
         {t('settings.sound-volume')}{' '}
         <span aria-hidden='true'>{volumeDisplay}</span>
