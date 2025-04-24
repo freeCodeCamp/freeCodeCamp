@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { MONGOHQ_URL } from '../../utils/env';
+import { MONGOHQ_URL } from '../../../src/utils/env';
 
 const args = process.argv.slice(2);
 const ENV_EXAM_ID = args[0];

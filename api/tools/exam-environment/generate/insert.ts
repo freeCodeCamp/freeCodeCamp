@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 import { EnvExam, PrismaClient } from '@prisma/client';
-import { MONGOHQ_URL } from '../../utils/env';
+import { MONGOHQ_URL } from '../../../src/utils/env';
 
 const args = process.argv.slice(2);
 const EXAM_JSON_PATH = args[0];
