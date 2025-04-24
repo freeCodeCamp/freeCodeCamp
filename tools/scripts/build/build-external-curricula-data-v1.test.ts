@@ -13,7 +13,7 @@ import {
   type CurriculumIntros,
   type GeneratedCurriculumProps,
   orderedSuperBlockInfo
-} from './build-external-curricula-data';
+} from './build-external-curricula-data-v1';
 
 const VERSION = 'v1';
 const intros = JSON.parse(
