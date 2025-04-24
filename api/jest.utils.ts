@@ -1,10 +1,9 @@
 import request from 'supertest';
 
-import { build } from './src/app';
+import { build, buildOptions } from './src/app';
 import { createUserInput } from './src/utils/create-user';
 import { examJson } from './__mocks__/exam';
 import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf';
-import { buildOptions } from './src/server';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
