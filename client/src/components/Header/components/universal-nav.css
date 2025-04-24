@@ -16,6 +16,12 @@
   }
 }
 
+@media (min-width: 401px) {
+  .universal-nav {
+    padding: 0 15px;
+  }
+}
+
 .universal-nav a {
   text-decoration: none;
 }
