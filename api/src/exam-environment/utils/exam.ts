@@ -11,8 +11,11 @@ import {
   EnvQuestionSet,
   EnvQuestionSetAttempt
 } from '@prisma/client';
+import type { FastifyBaseLogger, FastifyInstance } from 'fastify';
 import { type Static } from '@fastify/type-provider-typebox';
 import * as schemas from '../schemas';
+import { mapErr } from '../../utils';
+import { ERRORS } from './errors';
 
 interface CompletedChallengeId {
   completedChallenges: {
@@ -721,3 +724,162 @@ function shuffleArray<T>(array: Array<T>) {
   return array;
 }
 /* eslint-enable jsdoc/require-description-complete-sentence */
+
+/**
+ * From an exam attempt, construct the attempt with result (if ready).
+ *
+ * @param fastify - Fastify instance.
+ * @param attempt - The exam attempt.
+ * @param logger - Logger instance.
+ * @returns The exam attempt with result or an error.
+ */
+export async function constructEnvExamAttempt(
+  fastify: FastifyInstance,
+  attempt: EnvExamAttempt,
+  logger: FastifyBaseLogger
+) {
+  const maybeExam = await mapErr(
+    fastify.prisma.envExam.findUnique({
+      where: {
+        id: attempt.examId
+      }
+    })
+  );
+
+  if (maybeExam.hasError) {
+    logger.error(maybeExam.error);
+    fastify.Sentry.captureException(maybeExam.error);
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
+      }
+    };
+  }
+
+  const exam = maybeExam.data;
+
+  if (exam === null) {
+    const error = {
+      data: { examId: attempt.examId, attemptId: attempt.id },
+      message: 'Unreachable. Invalid exam id in attempt.'
+    };
+    logger.error(error.data, error.message);
+    fastify.Sentry.captureException(error);
+
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(error.message)
+      }
+    };
+  }
+
+  // If attempt is still in progress, return without result
+  const isAttemptExpired =
+    attempt.startTimeInMS + exam.config.totalTimeInMS > Date.now();
+  if (!isAttemptExpired) {
+    return { envExamAttempt: attempt, error: null };
+  }
+
+  const maybeMod = await mapErr(
+    fastify.prisma.examModeration.findFirst({
+      where: {
+        examAttemptId: attempt.id,
+        approved: null
+      }
+    })
+  );
+
+  if (maybeMod.hasError) {
+    logger.error(maybeMod.error);
+    fastify.Sentry.captureException(maybeMod.error);
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeMod.error))
+      }
+    };
+  }
+
+  const moderation = maybeMod.data;
+
+  if (moderation === null) {
+    const error = {
+      data: { examAttemptId: attempt.id },
+      message:
+        'Unreachable. ExamModeration record should exist for expired attempt'
+    };
+    logger.error(error.data, error.message);
+    fastify.Sentry.captureException(error);
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message)
+      }
+    };
+  }
+
+  // If attempt is completed, but has not been graded, return without result
+  if (moderation.approved === null) {
+    return { envExamAttempt: attempt, error: null };
+  }
+
+  // If attempt is completed, but has been determined to need a retake
+  // TODO: Send moderation.feedback?
+  if (moderation.approved === false) {
+    return { envExamAttempt: attempt, error: null };
+  }
+
+  const maybeGeneratedExam = await mapErr(
+    fastify.prisma.envGeneratedExam.findUnique({
+      where: {
+        id: attempt.generatedExamId
+      }
+    })
+  );
+
+  if (maybeGeneratedExam.hasError) {
+    logger.error(maybeGeneratedExam.error);
+    fastify.Sentry.captureException(maybeGeneratedExam.error);
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+          JSON.stringify(maybeGeneratedExam.error)
+        )
+      }
+    };
+  }
+
+  const generatedExam = maybeGeneratedExam.data;
+
+  if (!generatedExam) {
+    const error = {
+      data: { attemptId: attempt.id, generatedExamId: attempt.generatedExamId },
+      message:
+        'Unreachable. Unable to find generated exam associated with exam attempt'
+    };
+    logger.error(error.data, error.message);
+    fastify.Sentry.captureException(error);
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message)
+      }
+    };
+  }
+
+  const score = calculateScore(exam, generatedExam, attempt);
+
+  const result = {
+    score,
+    passingPercent: exam.config.passingPercent
+  };
+
+  const envExamAttempt = {
+    ...attempt,
+    result
+  };
+  return { error: null, envExamAttempt };
+}
