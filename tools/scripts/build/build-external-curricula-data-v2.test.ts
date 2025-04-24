@@ -10,7 +10,7 @@ import {
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
-} from './external-data-schema';
+} from './external-data-schema-v2';
 import {
   type CurriculumIntros,
   type Curriculum,

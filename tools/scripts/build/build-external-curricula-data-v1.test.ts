@@ -7,7 +7,7 @@ import { SuperBlocks } from '../../../shared/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
-} from './external-data-schema';
+} from './external-data-schema-v1';
 import {
   type Curriculum,
   type CurriculumIntros,
