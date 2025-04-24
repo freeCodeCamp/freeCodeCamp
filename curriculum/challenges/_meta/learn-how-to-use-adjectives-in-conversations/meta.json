@@ -6,8 +6,20 @@
   "superBlock": "b1-english-for-developers",
   "challengeOrder": [
     {
-      "id": "6660a291d63e8f6cce869657",
-      "title": "Dialogue 1: I'm Tom"
+      "id": "680505e55719e4680b0923b3",
+      "title": "Dialogue 1: Negotiating Inventory Needs"
+    },
+    {
+      "id": "6805083435c58a70b9556209",
+      "title": "Task 1"
+    },
+    {
+      "id": "680a47355eb2535f8019d713",
+      "title": "Task 2"
+    },
+    {
+      "id": "680a4136484ad852c85fd800",
+      "title": "Task 3"
     }
   ],
   "helpCategory": "English",
