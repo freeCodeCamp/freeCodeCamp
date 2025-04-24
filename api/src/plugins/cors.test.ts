@@ -32,4 +32,16 @@ describe('cors', () => {
       expect(spy).not.toHaveBeenCalled();
     });
   });
+
+  it('should not log if the origin is undefined', async () => {
+    const logger = fastify.log.child({ req: { url: '/api/some-endpoint' } });
+    const spies = LOG_LEVELS.map(level => jest.spyOn(logger, level));
+    await fastify.inject({
+      url: '/api/some-endpoint'
+    });
+
+    spies.forEach(spy => {
+      expect(spy).not.toHaveBeenCalled();
+    });
+  });
 });
