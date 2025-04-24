@@ -14,7 +14,7 @@ function* fetchSessionUser() {
     } = yield call(getSessionUser);
     const appUser = user[result] || {};
 
-    yield put(fetchUserComplete({ user: appUser, username: result }));
+    yield put(fetchUserComplete({ user: appUser }));
   } catch (e) {
     console.log('failed to fetch user', e);
     yield put(fetchUserError(e));

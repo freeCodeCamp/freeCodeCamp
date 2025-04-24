@@ -20,7 +20,7 @@ export const isRandomCompletionThresholdSelector = state =>
 export const isDonatingSelector = state => userSelector(state).isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
-export const isSignedInSelector = state => !!state[MainApp].appUsername;
+export const isSignedInSelector = state => !!state[MainApp].user.sessionUser;
 export const isDonationModalOpenSelector = state =>
   state[MainApp].showDonationModal;
 export const isSignoutModalOpenSelector = state =>
@@ -118,7 +118,7 @@ export const userByNameSelector = username => state => {
 };
 
 export const currentCertsSelector = state =>
-  certificatesByNameSelector(state[MainApp]?.appUsername)(state)?.currentCerts;
+  certificatesByNameSelector(usernameSelector(state))(state)?.currentCerts;
 
 export const certificatesByNameSelector = username => state => {
   const {
@@ -343,15 +343,11 @@ export const completionStateSelector = createSelector(
 );
 export const userProfileFetchStateSelector = state =>
   state[MainApp].userProfileFetchState;
-export const usernameSelector = state => state[MainApp].appUsername;
+export const usernameSelector = state => userSelector(state).username ?? '';
 export const themeSelector = state => state[MainApp].theme;
 export const userThemeSelector = state => {
   return userSelector(state).theme;
 };
-export const userSelector = state => {
-  const username = usernameSelector(state);
-
-  return state[MainApp].user[username] || {};
-};
+export const userSelector = state => state[MainApp].user.sessionUser || {};
 
 export const renderStartTimeSelector = state => state[MainApp].renderStartTime;
