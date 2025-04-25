@@ -20,7 +20,6 @@ import './map.css';
 
 import {
   isSignedInSelector,
-  currentCertsSelector,
   completedChallengesIdsSelector
 } from '../../redux/selectors';
 
@@ -48,11 +47,9 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
-  currentCertsSelector,
   completedChallengesIdsSelector,
-  (isSignedIn: boolean, currentCerts, completedChallengeIds: string[]) => ({
+  (isSignedIn: boolean, completedChallengeIds: string[]) => ({
     isSignedIn,
-    currentCerts,
     completedChallengeIds
   })
 );

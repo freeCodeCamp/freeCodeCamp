@@ -9,12 +9,9 @@ import {
 
 function* fetchSessionUser() {
   try {
-    const {
-      data: { user = {}, result = '' }
-    } = yield call(getSessionUser);
-    const appUser = user[result] || {};
+    const { data: user } = yield call(getSessionUser);
 
-    yield put(fetchUserComplete({ user: appUser }));
+    yield put(fetchUserComplete({ user }));
   } catch (e) {
     console.log('failed to fetch user', e);
     yield put(fetchUserError(e));
@@ -25,13 +22,8 @@ function* fetchOtherUser({ payload: maybeUser = '' }) {
   try {
     const maybeUserLC = maybeUser.toLowerCase();
 
-    const {
-      data: { entities: { user = {} } = {}, result = '' }
-    } = yield call(getUserProfile, maybeUserLC);
-    const otherUser = user[result] || {};
-    yield put(
-      fetchProfileForUserComplete({ user: otherUser, username: result })
-    );
+    const { data: otherUser } = yield call(getUserProfile, maybeUserLC);
+    yield put(fetchProfileForUserComplete({ user: otherUser }));
   } catch (e) {
     yield put(fetchProfileForUserError(e));
   }

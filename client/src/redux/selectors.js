@@ -1,6 +1,5 @@
 import { createSelector } from 'reselect';
 
-import { Certification } from '../../../shared/config/certification-settings';
 import superBlockStructure from '../../../curriculum/superblock-structure/full-stack.json';
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
@@ -110,163 +109,14 @@ export const isProcessingSelector = state => {
 };
 
 export const userByNameSelector = username => state => {
-  const { user } = state[MainApp];
-  // return initial state empty user empty object instead of empty
-  // object literal to prevent components from re-rendering unnecessarily
-  // TODO: confirm if "initialState" can be moved here or action-types.js
-  return user[username] ?? {};
-};
-
-export const currentCertsSelector = state =>
-  certificatesByNameSelector(usernameSelector(state))(state)?.currentCerts;
-
-export const certificatesByNameSelector = username => state => {
-  const {
-    isRespWebDesignCert,
-    is2018DataVisCert,
-    isFrontEndLibsCert,
-    isJsAlgoDataStructCert,
-    isApisMicroservicesCert,
-    isInfosecQaCert,
-    isQaCertV7,
-    isInfosecCertV7,
-    isFrontEndCert,
-    isBackEndCert,
-    isDataVisCert,
-    isFullStackCert,
-    isSciCompPyCertV7,
-    isDataAnalysisPyCertV7,
-    isMachineLearningPyCertV7,
-    isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8,
-    isJsAlgoDataStructCertV8
-  } = userByNameSelector(username)(state);
-  return {
-    hasModernCert:
-      isRespWebDesignCert ||
-      is2018DataVisCert ||
-      isFrontEndLibsCert ||
-      isApisMicroservicesCert ||
-      isQaCertV7 ||
-      isInfosecCertV7 ||
-      isFullStackCert ||
-      isSciCompPyCertV7 ||
-      isDataAnalysisPyCertV7 ||
-      isMachineLearningPyCertV7 ||
-      isRelationalDatabaseCertV8 ||
-      isCollegeAlgebraPyCertV8 ||
-      isFoundationalCSharpCertV8 ||
-      isJsAlgoDataStructCertV8,
-    hasLegacyCert:
-      isFrontEndCert ||
-      isJsAlgoDataStructCert ||
-      isBackEndCert ||
-      isDataVisCert ||
-      isInfosecQaCert,
-    isFullStackCert,
-    currentCerts: [
-      {
-        show: isRespWebDesignCert,
-        title: 'Responsive Web Design Certification',
-        certSlug: Certification.RespWebDesign
-      },
-      {
-        show: isJsAlgoDataStructCertV8,
-        title: 'JavaScript Algorithms and Data Structures Certification',
-        certSlug: Certification.JsAlgoDataStructNew
-      },
-      {
-        show: isFrontEndLibsCert,
-        title: 'Front End Development Libraries Certification',
-        certSlug: Certification.FrontEndDevLibs
-      },
-      {
-        show: is2018DataVisCert,
-        title: 'Data Visualization Certification',
-        certSlug: Certification.DataVis
-      },
-      {
-        show: isRelationalDatabaseCertV8,
-        title: 'Relational Database Certification',
-        certSlug: Certification.RelationalDb
-      },
-      {
-        show: isApisMicroservicesCert,
-        title: 'Back End Development and APIs Certification',
-        certSlug: Certification.BackEndDevApis
-      },
-      {
-        show: isQaCertV7,
-        title: 'Quality Assurance Certification',
-        certSlug: Certification.QualityAssurance
-      },
-      {
-        show: isSciCompPyCertV7,
-        title: 'Scientific Computing with Python Certification',
-        certSlug: Certification.SciCompPy
-      },
-      {
-        show: isDataAnalysisPyCertV7,
-        title: 'Data Analysis with Python Certification',
-        certSlug: Certification.DataAnalysisPy
-      },
-      {
-        show: isInfosecCertV7,
-        title: 'Information Security Certification',
-        certSlug: Certification.InfoSec
-      },
-      {
-        show: isMachineLearningPyCertV7,
-        title: 'Machine Learning with Python Certification',
-        certSlug: Certification.MachineLearningPy
-      },
-      {
-        show: isCollegeAlgebraPyCertV8,
-        title: 'College Algebra with Python Certification',
-        certSlug: Certification.CollegeAlgebraPy
-      },
-      {
-        show: isFoundationalCSharpCertV8,
-        title: 'Foundational C# with Microsoft Certification',
-        certSlug: Certification.FoundationalCSharp
-      }
-    ],
-    legacyCerts: [
-      {
-        show: isFrontEndCert,
-        title: 'Front End Certification',
-        certSlug: Certification.LegacyFrontEnd
-      },
-      {
-        show: isJsAlgoDataStructCert,
-        title: 'Legacy JavaScript Algorithms and Data Structures Certification',
-        certSlug: Certification.JsAlgoDataStruct
-      },
-      {
-        show: isBackEndCert,
-        title: 'Back End Certification',
-        certSlug: Certification.LegacyBackEnd
-      },
-      {
-        show: isDataVisCert,
-        title: 'Data Visualization Certification',
-        certSlug: Certification.LegacyDataVis
-      },
-      {
-        show: isInfosecQaCert,
-        title: 'Information Security and Quality Assurance Certification',
-        // Keep the current public profile cert slug
-        certSlug: Certification.LegacyInfoSecQa
-      },
-      {
-        show: isFullStackCert,
-        title: 'Full Stack Certification',
-        // Keep the current public profile cert slug
-        certSlug: Certification.LegacyFullStack
-      }
-    ]
-  };
+  // TODO: does this handle the case where the user has been fetched, but does
+  // not exist?
+  const sessionUser = userSelector(state);
+  const otherUser = otherUserSelector(state);
+  const isSessionUser = sessionUser.username === username;
+  const isOtherUser = otherUser.username === username;
+  const user = isSessionUser ? sessionUser : isOtherUser ? otherUser : null;
+  return user;
 };
 
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
@@ -349,5 +199,6 @@ export const userThemeSelector = state => {
   return userSelector(state).theme;
 };
 export const userSelector = state => state[MainApp].user.sessionUser || {};
+export const otherUserSelector = state => state[MainApp].user.otherUser || {};
 
 export const renderStartTimeSelector = state => state[MainApp].renderStartTime;

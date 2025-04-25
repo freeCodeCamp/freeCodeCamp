@@ -60,7 +60,7 @@ const initialState = {
   showCertFetchState: {
     ...defaultFetchState
   },
-  user: { sessionUser: null },
+  user: { sessionUser: null, otherUser: null },
   userFetchState: {
     ...defaultFetchState
   },
@@ -209,7 +209,7 @@ export const reducer = handleActions(
         sessionUser: user
       },
       currentChallengeId:
-        user.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY),
+        user?.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY),
       userFetchState: {
         pending: false,
         complete: true,
@@ -228,15 +228,13 @@ export const reducer = handleActions(
     }),
     [actionTypes.fetchProfileForUserComplete]: (
       state,
-      { payload: { user, username } }
+      { payload: { user } }
     ) => {
-      const previousUserObject =
-        username in state.user ? state.user[username] : {};
       return {
         ...state,
         user: {
           ...state.user,
-          [username]: { ...previousUserObject, ...user }
+          otherUser: user
         },
         userProfileFetchState: {
           ...defaultFetchState,
