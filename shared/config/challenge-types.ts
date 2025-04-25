@@ -172,7 +172,6 @@ export const dailyCodingChallengeTypes = [
 export const getIsDailyCodingChallenge = (challengeType: number): boolean =>
   dailyCodingChallengeTypes.includes(challengeType);
 
-// coding language for daily coding challenge types
 export const dailyCodingChallengeLanguages = {
   [challengeTypes.dailyChallengeJs]: 'javascript',
   [challengeTypes.dailyChallengePy]: 'python'
