@@ -22,7 +22,8 @@ import {
   userFetchStateSelector,
   isDonatingSelector,
   usernameSelector,
-  userByNameSelector
+  createUserByNameSelector,
+  isSignedInSelector
 } from '../redux/selectors';
 import { UserFetchState, MaybeUser } from '../redux/prop-types';
 import { liveCerts } from '../../config/cert-and-project-map';
@@ -67,6 +68,7 @@ interface ShowCertificationProps {
   };
   isDonating: boolean;
   isValidCert: boolean;
+  isSignedIn: boolean;
   location: {
     pathname: string;
   };
@@ -91,7 +93,7 @@ const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
 
   const { username } = props;
 
-  const userByNameSelector2 = userByNameSelector(username) as (
+  const userByNameSelector = createUserByNameSelector(username) as (
     state: unknown
   ) => MaybeUser;
 
@@ -99,16 +101,18 @@ const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
     showCertSelector,
     showCertFetchStateSelector,
     usernameSelector,
-    userByNameSelector2,
+    userByNameSelector,
     userFetchStateSelector,
     isDonatingSelector,
+    isSignedInSelector,
     (
       cert: Cert,
       fetchState: ShowCertificationProps['fetchState'],
       signedInUserName: string,
       user: MaybeUser,
       userFetchState: UserFetchState,
-      isDonating: boolean
+      isDonating: boolean,
+      isSignedIn: boolean
     ) => ({
       cert,
       fetchState,
@@ -116,7 +120,8 @@ const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
       signedInUserName,
       user,
       userFetchState,
-      isDonating
+      isDonating,
+      isSignedIn
     })
   );
 };
@@ -297,12 +302,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       userFetchState: { complete: userComplete },
       signedInUserName,
       isDonating,
+      isSignedIn,
       cert: { username = '' },
       fetchProfileForUser,
       user
     } = props;
 
-    const isSessionUser = signedInUserName === username;
+    const isSessionUser = isSignedIn && signedInUserName === username;
 
     if (isEmpty(user) && username) {
       fetchProfileForUser(username);

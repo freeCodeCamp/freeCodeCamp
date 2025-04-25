@@ -26,7 +26,7 @@ import {
   isSignedInSelector,
   userTokenSelector
 } from '../redux/selectors';
-import { User } from '../redux/prop-types';
+import type { MaybeUser } from '../redux/prop-types';
 import {
   submitNewAbout,
   updateMyHonesty,
@@ -50,7 +50,7 @@ type ShowSettingsProps = {
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   updateIsHonest: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
-  user: User;
+  user: MaybeUser;
   verifyCert: typeof verifyCert;
   path?: string;
   userToken: string | null;
@@ -61,7 +61,12 @@ const mapStateToProps = createSelector(
   userSelector,
   isSignedInSelector,
   userTokenSelector,
-  (showLoading: boolean, user: User, isSignedIn, userToken: string | null) => ({
+  (
+    showLoading: boolean,
+    user: MaybeUser,
+    isSignedIn,
+    userToken: string | null
+  ) => ({
     showLoading,
     user,
     isSignedIn,
@@ -91,34 +96,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     toggleSoundMode,
     toggleKeyboardShortcuts,
     resetEditorLayout,
-    user: {
-      completedChallenges,
-      email,
-      is2018DataVisCert,
-      isApisMicroservicesCert,
-      isJsAlgoDataStructCert,
-      isBackEndCert,
-      isDataVisCert,
-      isFrontEndCert,
-      isInfosecQaCert,
-      isQaCertV7,
-      isInfosecCertV7,
-      isFrontEndLibsCert,
-      isFullStackCert,
-      isRespWebDesignCert,
-      isSciCompPyCertV7,
-      isDataAnalysisPyCertV7,
-      isMachineLearningPyCertV7,
-      isRelationalDatabaseCertV8,
-      isCollegeAlgebraPyCertV8,
-      isFoundationalCSharpCertV8,
-      isJsAlgoDataStructCertV8,
-      isEmailVerified,
-      isHonest,
-      sendQuincyEmail,
-      username,
-      keyboardShortcuts
-    },
+    user,
     navigate,
     showLoading,
     updateQuincyEmail,
@@ -126,11 +104,12 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     verifyCert,
     userToken
   } = props;
+
   const isSignedInRef = useRef(isSignedIn);
 
   const examTokenFlag = useFeatureIsOn('exam-token-widget');
 
-  if (showLoading) {
+  if (showLoading || !user) {
     return <Loader fullScreen={true} />;
   }
 
@@ -138,6 +117,36 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     navigate(`${apiLocation}/signin`);
     return <Loader fullScreen={true} />;
   }
+
+  const {
+    completedChallenges,
+    email,
+    is2018DataVisCert,
+    isApisMicroservicesCert,
+    isJsAlgoDataStructCert,
+    isBackEndCert,
+    isDataVisCert,
+    isFrontEndCert,
+    isInfosecQaCert,
+    isQaCertV7,
+    isInfosecCertV7,
+    isFrontEndLibsCert,
+    isFullStackCert,
+    isRespWebDesignCert,
+    isSciCompPyCertV7,
+    isDataAnalysisPyCertV7,
+    isMachineLearningPyCertV7,
+    isRelationalDatabaseCertV8,
+    isCollegeAlgebraPyCertV8,
+    isFoundationalCSharpCertV8,
+    isJsAlgoDataStructCertV8,
+    isEmailVerified,
+    isHonest,
+    sendQuincyEmail,
+    username,
+    keyboardShortcuts
+  } = user;
+
   const sound = (store.get('fcc-sound') as boolean) ?? false;
   const editorLayout = (store.get('challenge-layout') as boolean) ?? false;
   return (
