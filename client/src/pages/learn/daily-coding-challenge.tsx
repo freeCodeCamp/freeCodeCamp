@@ -81,7 +81,9 @@ function formatChallengeData({
 
   const pageContext = {
     challengeMeta: {
-      id: challengeId
+      id: challengeId,
+      superBlock: 'daily-coding-challenge',
+      block: 'daily-coding-challenge'
     }
   };
 
