@@ -1,42 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
 
-import { certificatesByNameSelector } from '../../../redux/selectors';
-import type { CurrentCert } from '../../../redux/prop-types';
+import type { CurrentCert, User } from '../../../redux/prop-types';
 import { FullWidthRow, ButtonLink } from '../../helpers';
+import { getCertifications } from './utils/certification';
+
 import './certifications.css';
 
-const mapStateToProps = (
-  state: Record<string, unknown>,
-  props: CertificationProps
-) =>
-  createSelector(
-    certificatesByNameSelector(props.username.toLowerCase()),
-    ({
-      hasModernCert,
-      hasLegacyCert,
-      currentCerts,
-      legacyCerts
-    }: Pick<
-      CertificationProps,
-      'hasModernCert' | 'hasLegacyCert' | 'currentCerts' | 'legacyCerts'
-    >) => ({
-      hasModernCert,
-      hasLegacyCert,
-      currentCerts,
-      legacyCerts
-    })
-  )(state);
-
 interface CertificationProps {
-  currentCerts?: CurrentCert[];
-  hasLegacyCert?: boolean;
-  hasModernCert?: boolean;
-  legacyCerts?: CurrentCert[];
-  username: string;
+  user: User;
 }
 
 interface CertButtonProps {
@@ -62,13 +35,12 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
   );
 }
 
-function Certificates({
-  currentCerts,
-  legacyCerts,
-  hasLegacyCert,
-  hasModernCert,
-  username
-}: CertificationProps): JSX.Element {
+function Certificates({ user }: CertificationProps): JSX.Element {
+  const { username } = user;
+
+  const { currentCerts, legacyCerts, hasLegacyCert, hasModernCert } =
+    getCertifications(user);
+
   const { t } = useTranslation();
   return (
     <FullWidthRow className='profile-certifications'>
@@ -122,4 +94,4 @@ function Certificates({
 
 Certificates.displayName = 'Certifications';
 
-export default connect(mapStateToProps)(Certificates);
+export default Certificates;

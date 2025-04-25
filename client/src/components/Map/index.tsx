@@ -21,22 +21,23 @@ import './map.css';
 
 import {
   isSignedInSelector,
-  currentCertsSelector,
-  completedChallengesIdsSelector
+  completedChallengesIdsSelector,
+  userSelector
 } from '../../redux/selectors';
 
 import { RibbonIcon } from '../../assets/icons/completion-ribbon';
 
-import { CurrentCert, ClaimedCertifications } from '../../redux/prop-types';
+import type { ClaimedCertifications, User } from '../../redux/prop-types';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
 } from '../../../../shared/config/certification-settings';
+import { getCertifications } from '../profile/components/utils/certification';
 
 interface MapProps {
   forLanding?: boolean;
   isSignedIn: boolean;
-  currentCerts: CurrentCert[];
+  user: User;
   claimedCertifications?: ClaimedCertifications;
   completedChallengeIds: string[];
 }
@@ -71,11 +72,11 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
-  currentCertsSelector,
+  userSelector,
   completedChallengesIdsSelector,
-  (isSignedIn: boolean, currentCerts, completedChallengeIds: string[]) => ({
+  (isSignedIn: boolean, user: User, completedChallengeIds: string[]) => ({
     isSignedIn,
-    currentCerts,
+    user,
     completedChallengeIds
   })
 );
@@ -136,7 +137,7 @@ function MapLi({
 function Map({
   forLanding = false,
   isSignedIn,
-  currentCerts,
+  user,
   completedChallengeIds
 }: MapProps): React.ReactElement {
   const { t } = useTranslation();
@@ -154,6 +155,8 @@ function Map({
       }
     }
   `);
+
+  const { currentCerts } = getCertifications(user);
 
   const allChallenges = challengeNodes.map(node => node.challenge);
   const allSuperblockChallengesCompleted = (superblock: SuperBlocks) => {

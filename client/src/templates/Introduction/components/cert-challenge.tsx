@@ -12,14 +12,14 @@ import { SuperBlocks } from '../../../../../shared/config/curriculum';
 
 import {
   isSignedInSelector,
-  userFetchStateSelector,
-  currentCertsSelector
+  userFetchStateSelector
 } from '../../../redux/selectors';
-import { User, Steps } from '../../../redux/prop-types';
+import { User } from '../../../redux/prop-types';
 import {
   type CertTitle,
   liveCerts
 } from '../../../../config/cert-and-project-map';
+import { getCertifications } from '../../../components/profile/components/utils/certification';
 
 interface CertChallengeProps {
   // TODO: create enum/reuse SuperBlocks enum somehow
@@ -31,7 +31,6 @@ interface CertChallengeProps {
     error: null | string;
   };
   isSignedIn: boolean;
-  currentCerts: Steps['currentCerts'];
   superBlock: SuperBlocks;
   title: CertTitle;
   user: User;
@@ -39,15 +38,9 @@ interface CertChallengeProps {
 
 const mapStateToProps = (state: unknown) => {
   return createSelector(
-    currentCertsSelector,
     userFetchStateSelector,
     isSignedInSelector,
-    (
-      currentCerts,
-      fetchState: CertChallengeProps['fetchState'],
-      isSignedIn
-    ) => ({
-      currentCerts,
+    (fetchState: CertChallengeProps['fetchState'], isSignedIn) => ({
       fetchState,
       isSignedIn
     })
@@ -55,16 +48,18 @@ const mapStateToProps = (state: unknown) => {
 };
 
 const CertChallenge = ({
-  currentCerts,
   superBlock,
   title,
   fetchState,
   isSignedIn,
-  user: { username }
+  user
 }: CertChallengeProps): JSX.Element => {
   const { t } = useTranslation();
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
+
+  const { currentCerts } = getCertifications(user);
+  const { username } = user;
 
   const cert = liveCerts.find(x => x.title === title);
   if (!cert) throw Error(`Certification ${title} not found`);

@@ -8,6 +8,7 @@ import {
   takeLatest
 } from 'redux-saga/effects';
 import store from 'store';
+import { navigate } from 'gatsby';
 
 import {
   certTypeIdMap,
@@ -69,6 +70,8 @@ function* submitNewUsernameSaga({ payload: username }) {
   try {
     const { data } = yield call(putUpdateMyUsername, username);
     yield put(submitNewUsernameComplete({ ...data, username }));
+    // When the username is updated, the user would otherwise still be on their old profile:
+    navigate(`/${username}`);
     yield put(createFlashMessage(data));
   } catch (e) {
     yield put(submitNewUsernameError(e));
