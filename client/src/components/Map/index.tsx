@@ -20,14 +20,13 @@ import { showUpcomingChanges } from '../../../config/env.json';
 import './map.css';
 
 import {
-  isSignedInSelector,
   completedChallengesIdsSelector,
   userSelector
 } from '../../redux/selectors';
 
 import { RibbonIcon } from '../../assets/icons/completion-ribbon';
 
-import type { ClaimedCertifications, User } from '../../redux/prop-types';
+import type { ClaimedCertifications, MaybeUser } from '../../redux/prop-types';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
@@ -36,8 +35,7 @@ import { getCertifications } from '../profile/components/utils/certification';
 
 interface MapProps {
   forLanding?: boolean;
-  isSignedIn: boolean;
-  user: User;
+  user: MaybeUser;
   claimedCertifications?: ClaimedCertifications;
   completedChallengeIds: string[];
 }
@@ -71,11 +69,9 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
 };
 
 const mapStateToProps = createSelector(
-  isSignedInSelector,
   userSelector,
   completedChallengesIdsSelector,
-  (isSignedIn: boolean, user: User, completedChallengeIds: string[]) => ({
-    isSignedIn,
+  (user: MaybeUser, completedChallengeIds: string[]) => ({
     user,
     completedChallengeIds
   })
@@ -136,7 +132,6 @@ function MapLi({
 
 function Map({
   forLanding = false,
-  isSignedIn,
   user,
   completedChallengeIds
 }: MapProps): React.ReactElement {
@@ -156,8 +151,6 @@ function Map({
     }
   `);
 
-  const { currentCerts } = getCertifications(user);
-
   const allChallenges = challengeNodes.map(node => node.challenge);
   const allSuperblockChallengesCompleted = (superblock: SuperBlocks) => {
     // array of all challenge ID's in the superblock
@@ -171,9 +164,9 @@ function Map({
   };
 
   const isClaimed = (stage: SuperBlocks) => {
-    return isSignedIn
+    return user
       ? Boolean(
-          currentCerts?.find(
+          getCertifications(user).currentCerts?.find(
             (cert: { certSlug: string }) =>
               (certSlugTypeMap as { [key: string]: string })[cert.certSlug] ===
               (superBlockCertTypeMap as { [key: string]: string })[stage]

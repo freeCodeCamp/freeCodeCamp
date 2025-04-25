@@ -6,20 +6,20 @@ import { getSessionChallengeData } from '../utils/session-storage';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
-  userSelector(state).savedChallenges || [];
+  userSelector(state)?.savedChallenges || [];
 export const completedChallengesSelector = state =>
-  userSelector(state).completedChallenges || [];
-export const userIdSelector = state => userSelector(state).id;
+  userSelector(state)?.completedChallenges || [];
+export const userIdSelector = state => userSelector(state)?.id;
 export const partiallyCompletedChallengesSelector = state =>
-  userSelector(state).partiallyCompletedChallenges || [];
+  userSelector(state)?.partiallyCompletedChallenges || [];
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
 export const isRandomCompletionThresholdSelector = state =>
   state[MainApp].isRandomCompletionThreshold;
-export const isDonatingSelector = state => userSelector(state).isDonating;
+export const isDonatingSelector = state => userSelector(state)?.isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
-export const isSignedInSelector = state => !!state[MainApp].user.sessionUser;
+export const isSignedInSelector = state => !!userSelector(state);
 export const isDonationModalOpenSelector = state =>
   state[MainApp].showDonationModal;
 export const isSignoutModalOpenSelector = state =>
@@ -87,22 +87,16 @@ export const shouldRequestDonationSelector = state => {
   }
 };
 
-export const userTokenSelector = state => {
-  return userSelector(state).userToken;
-};
+export const userTokenSelector = state => userSelector(state)?.userToken;
 
-export const examInProgressSelector = state => {
-  return state[MainApp].examInProgress;
-};
+export const examInProgressSelector = state => state[MainApp].examInProgress;
 
-export const examResultsSelector = state => userSelector(state).examResults;
+export const examResultsSelector = state => userSelector(state)?.examResults;
 
-export const msUsernameSelector = state => {
-  return userSelector(state).msUsername;
-};
+export const msUsernameSelector = state => userSelector(state)?.msUsername;
 
 export const completedSurveysSelector = state =>
-  userSelector(state).completedSurveys || [];
+  userSelector(state)?.completedSurveys || [];
 
 export const isProcessingSelector = state => {
   return state[MainApp].isProcessing;
@@ -113,8 +107,8 @@ export const userByNameSelector = username => state => {
   // not exist?
   const sessionUser = userSelector(state);
   const otherUser = otherUserSelector(state);
-  const isSessionUser = sessionUser.username === username;
-  const isOtherUser = otherUser.username === username;
+  const isSessionUser = sessionUser?.username === username;
+  const isOtherUser = otherUser?.username === username;
   const user = isSessionUser ? sessionUser : isOtherUser ? otherUser : null;
   return user;
 };
@@ -193,12 +187,11 @@ export const completionStateSelector = createSelector(
 );
 export const userProfileFetchStateSelector = state =>
   state[MainApp].userProfileFetchState;
-export const usernameSelector = state => userSelector(state).username ?? '';
+export const usernameSelector = state => userSelector(state)?.username ?? '';
 export const themeSelector = state => state[MainApp].theme;
-export const userThemeSelector = state => {
-  return userSelector(state).theme;
-};
-export const userSelector = state => state[MainApp].user.sessionUser || {};
-export const otherUserSelector = state => state[MainApp].user.otherUser || {};
+export const userThemeSelector = state => userSelector(state)?.theme;
+
+export const userSelector = state => state[MainApp].user.sessionUser;
+export const otherUserSelector = state => state[MainApp].user.otherUser;
 
 export const renderStartTimeSelector = state => state[MainApp].renderStartTime;

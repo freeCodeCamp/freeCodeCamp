@@ -7,8 +7,8 @@ import { createSelector } from 'reselect';
 import type {
   ChallengeFiles,
   Test,
-  User,
-  ChallengeMeta
+  ChallengeMeta,
+  MaybeUser
 } from '../../../redux/prop-types';
 import { userSelector } from '../../../redux/selectors';
 import {
@@ -49,7 +49,7 @@ const mapStateToProps = createSelector(
     canFocusEditor: boolean,
     challengeFiles: ChallengeFiles,
     tests: Test[],
-    user: User,
+    user: MaybeUser,
     { nextChallengePath, prevChallengePath }: ChallengeMeta
   ) => ({
     isHelpModalOpen,
@@ -59,7 +59,7 @@ const mapStateToProps = createSelector(
     canFocusEditor,
     challengeFiles,
     tests,
-    user,
+    keyboardShortcuts: !!user?.keyboardShortcuts,
     nextChallengePath,
     prevChallengePath
   })
@@ -101,7 +101,7 @@ export type HotkeysProps = Pick<
     setIsAdvancing: (arg0: boolean) => void;
     openShortcutsModal: () => void;
     playScene?: () => void;
-    user: User;
+    keyboardShortcuts: boolean;
   };
 
 function Hotkeys({
@@ -121,7 +121,7 @@ function Hotkeys({
   usesMultifileEditor,
   openShortcutsModal,
   playScene,
-  user: { keyboardShortcuts },
+  keyboardShortcuts,
   isHelpModalOpen,
   isResetModalOpen,
   isShortcutsModalOpen,

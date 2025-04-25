@@ -23,18 +23,18 @@ interface FetchState {
   errored: boolean;
 }
 
-interface User {
+type MaybeUser = {
   name: string;
   username: string;
   completedChallengeCount: number;
   isDonating: boolean;
-}
+} | null;
 
 const mapStateToProps = createSelector(
   userFetchStateSelector,
   isSignedInSelector,
   userSelector,
-  (fetchState: FetchState, isSignedIn: boolean, user: User) => ({
+  (fetchState: FetchState, isSignedIn: boolean, user: MaybeUser) => ({
     fetchState,
     isSignedIn,
     user
@@ -49,7 +49,7 @@ interface LearnPageProps {
   isSignedIn: boolean;
   fetchState: FetchState;
   state: Record<string, unknown>;
-  user: User;
+  user: MaybeUser;
   data: {
     challengeNode: {
       challenge: {
@@ -59,10 +59,12 @@ interface LearnPageProps {
   };
 }
 
+const EMPTY_USER = { name: '', completedChallengeCount: 0, isDonating: false };
+
 function LearnPage({
   isSignedIn,
   fetchState: { pending, complete },
-  user: { name = '', completedChallengeCount = 0, isDonating = false },
+  user,
   data: {
     challengeNode: {
       challenge: {
@@ -71,6 +73,8 @@ function LearnPage({
     }
   }
 }: LearnPageProps) {
+  const { name, completedChallengeCount, isDonating } = user ?? EMPTY_USER;
+
   const { t } = useTranslation();
 
   const onLearnDonationAlertClick = () => {
