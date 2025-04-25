@@ -1,8 +1,6 @@
 import i18next from 'i18next';
-import { connect } from 'react-redux';
 import React, { Fragment } from 'react';
 import { Spacer } from '@freecodecamp/ui';
-import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -17,12 +15,6 @@ import { ButtonLink } from '../helpers';
 import { showUpcomingChanges } from '../../../config/env.json';
 
 import './map.css';
-
-import {
-  isSignedInSelector,
-  completedChallengesIdsSelector
-} from '../../redux/selectors';
-
 interface MapProps {
   forLanding?: boolean;
 }
@@ -44,15 +36,6 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Upcoming]: 'landing.upcoming-heading',
   [SuperBlockStage.Catalog]: 'landing.catalog-heading'
 };
-
-const mapStateToProps = createSelector(
-  isSignedInSelector,
-  completedChallengesIdsSelector,
-  (isSignedIn: boolean, completedChallengeIds: string[]) => ({
-    isSignedIn,
-    completedChallengeIds
-  })
-);
 
 function MapLi({
   superBlock,
@@ -121,4 +104,4 @@ function Map({ forLanding = false }: MapProps) {
 
 Map.displayName = 'Map';
 
-export default connect(mapStateToProps)(Map);
+export default Map;

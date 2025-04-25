@@ -9,7 +9,7 @@ import { closeModal } from '../redux/actions';
 import { isShortcutsModalOpenSelector } from '../redux/selectors';
 import { updateMyKeyboardShortcuts } from '../../../redux/settings/actions';
 import { userSelector } from '../../../redux/selectors';
-import { User } from '../../../redux/prop-types';
+import type { MaybeUser } from '../../../redux/prop-types';
 import KeyboardShortcutsSettings from '../../../components/settings/keyboard-shortcuts';
 
 import './shortcuts-modal.css';
@@ -19,13 +19,16 @@ interface ShortcutsModalProps {
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   isOpen: boolean;
   t: (text: string) => string;
-  user: User;
+  keyboardShortcuts: boolean;
 }
 
 const mapStateToProps = createSelector(
   isShortcutsModalOpenSelector,
   userSelector,
-  (isOpen: boolean, user: User) => ({ isOpen, user })
+  (isOpen: boolean, user: MaybeUser) => ({
+    isOpen,
+    keyboardShortcuts: !!user?.keyboardShortcuts
+  })
 );
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
@@ -42,7 +45,7 @@ function ShortcutsModal({
   toggleKeyboardShortcuts,
   isOpen,
   t,
-  user: { keyboardShortcuts }
+  keyboardShortcuts
 }: ShortcutsModalProps): JSX.Element {
   return (
     <Modal onClose={closeShortcutsModal} open={isOpen}>
