@@ -102,7 +102,7 @@ export const isProcessingSelector = state => {
   return state[MainApp].isProcessing;
 };
 
-export const userByNameSelector = username => state => {
+export const createUserByNameSelector = username => state => {
   // TODO: does this handle the case where the user has been fetched, but does
   // not exist?
   const sessionUser = userSelector(state);

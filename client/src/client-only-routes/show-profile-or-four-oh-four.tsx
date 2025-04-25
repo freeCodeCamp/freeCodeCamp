@@ -10,7 +10,7 @@ import { fetchProfileForUser } from '../redux/actions';
 import {
   userSelector,
   userProfileFetchStateSelector,
-  userByNameSelector
+  createUserByNameSelector
 } from '../redux/selectors';
 import { MaybeUser } from '../redux/prop-types';
 import { Socials } from '../components/profile/components/internet';
@@ -32,7 +32,9 @@ const makeMapStateToProps =
   (state: unknown, { maybeUser = '' }) => {
     const username = maybeUser.toLowerCase();
     const requestedUser = (
-      userByNameSelector as (maybeUser: string) => (state: unknown) => MaybeUser
+      createUserByNameSelector as (
+        maybeUser: string
+      ) => (state: unknown) => MaybeUser
     )(username)(state);
     const sessionUser = userSelector(state) as MaybeUser;
     const isSessionUser = username === sessionUser?.username;
