@@ -43,20 +43,23 @@ function DailyCodingChallengeWidget({
           {forLanding && <LinkButton />}
         </ButtonLink>
 
-        <Spacer size='xs' />
+        {!forLanding && (
+          <>
+            <Spacer size='xs' />
 
-        <ButtonLink
-          block={true}
-          size='large'
-          className='map-superblock-link'
-          href='/learn/daily-coding-challenge/archive'
-        >
-          <div className='daily-coding-challenge-button'>
-            <CalendarIcon className='map-icon' />
-            {t(`buttons.go-to-archive`)}
-          </div>
-          {forLanding && <LinkButton />}
-        </ButtonLink>
+            <ButtonLink
+              block={true}
+              size='large'
+              className='map-superblock-link'
+              href='/learn/daily-coding-challenge/archive'
+            >
+              <div className='daily-coding-challenge-button'>
+                <CalendarIcon className='map-icon' />
+                {t(`buttons.go-to-archive`)}
+              </div>
+            </ButtonLink>
+          </>
+        )}
       </div>
     </>
   );
