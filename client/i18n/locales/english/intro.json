@@ -4091,7 +4091,7 @@
       },
       "lab-selection-sort": {
         "title": "Build a Selection Sort",
-        "intro": [""]
+        "intro": ["", ""]
       },
       "lab-luhn-argorithm": {
         "title": "Build a Luhn Algorithm",
