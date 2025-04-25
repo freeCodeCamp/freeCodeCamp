@@ -187,7 +187,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       } catch (error) {
         // TODO(Post-MVP): don't catch, just let Sentry handle this.
-        logger.error(error);
+        logger.error(error, 'Error submitting coderoad challenge');
         fastify.Sentry.captureException(error);
         void reply.code(400);
         return {
@@ -669,7 +669,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           completedDate
         };
       } catch (error) {
-        logger.error(error);
+        logger.error(error, 'Error submitting Microsoft trophy challenge');
         fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
@@ -884,7 +884,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           examResults
         };
       } catch (error) {
-        logger.error(error);
+        logger.error(error, 'Error submitting exam challenge');
         fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
