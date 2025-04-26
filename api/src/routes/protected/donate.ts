@@ -90,8 +90,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           isDonating: true
         } as const;
       } catch (error) {
-        logger.error(`User ${req.user?.id} failed to donate`);
-        logger.error(error);
+        logger.error(error, `User ${req.user?.id} failed to donate`);
         fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
@@ -227,8 +226,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           isDonating: true
         });
       } catch (error) {
-        logger.error(`User ${req.user?.id} failed to donate`);
-        logger.error(error);
+        logger.error(error, `User ${req.user?.id} failed to donate`);
         fastify.Sentry.captureException(error);
         void reply.code(500);
         return reply.send({
