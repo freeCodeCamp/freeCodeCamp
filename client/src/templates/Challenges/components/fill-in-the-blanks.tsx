@@ -75,9 +75,9 @@ function FillInTheBlanks({
                     size={blankAnswers[value].length}
                     autoComplete='off'
                     aria-label={t('learn.fill-in-the-blank.blank')}
-                    {...(answersCorrect[value] === false
-                      ? { 'aria-invalid': 'true' }
-                      : {})}
+                    {...(answersCorrect[value] === false && {
+                      'aria-invalid': 'true'
+                    })}
                   />
                 );
               })}
