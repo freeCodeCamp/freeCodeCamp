@@ -554,440 +554,438 @@ Which of the following is the correct way to use the `minmax()` function?
 
 #### --text--
 
-What is the purpose of CSS Grid?
+Which property controls the alignment of grid items along the inline (row) axis?
 
 #### --distractors--
 
-To style tables using CSS.
+`align-content`
 
 ---
 
-To create fixed-width layouts only.
+`place-items`
 
 ---
 
-To stack elements vertically using float.
+`grid-align`
 
 #### --answer--
 
-To create two-dimensional layouts using rows and columns.
+`justify-items`
 
 ### --question--
 
 #### --text--
 
-How do you turn a `<div>` into a grid container?
+What does the `grid-auto-rows` property control?
 
 #### --distractors--
 
-`grid-template: active;`
+The height of explicitly defined rows.
 
 ---
 
-`display: grid-layout;`
+The maximum width of grid columns.
 
 ---
 
-`grid: enable;`
+The spacing between rows.
 
 #### --answer--
 
-`display: grid;`
+The size of implicitly created rows.
 
 ### --question--
 
 #### --text--
 
-What does the `grid-template-columns` property define?
+Which property would you use to make a grid item span multiple rows?
 
 #### --distractors--
 
-The total width of the grid container.
+`grid-row-span`
 
 ---
 
-How many items fit in each column.
+`row-span`
 
 ---
 
-Which elements go in which columns.
+`span-rows`
 
 #### --answer--
 
-The number and size of the columns in the grid.
+`grid-row`
 
 ### --question--
 
 #### --text--
 
-Which value allows a grid column to take up a portion of remaining space?
+What is the purpose of the `place-content` shorthand property?
 
 #### --distractors--
 
-`auto-fit`
+To position the grid container within its parent.
 
 ---
 
-`auto`
+To align all items to the center of their cells.
 
 ---
 
-`px`
+To set both `grid-template-rows` and `grid-template-columns`.
 
 #### --answer--
 
-`fr`
+To align the grid content along both block and inline axes.
 
 ### --question--
 
 #### --text--
 
-Which CSS property sets the number and size of the rows in a grid?
+Which value for `grid-auto-flow` would make new items fill columns first?
 
 #### --distractors--
 
-`grid-rows`
+`row`
 
 ---
 
-`row-template`
+`dense`
 
 ---
 
-`grid-row-count`
+`row dense`
 
 #### --answer--
 
-`grid-template-rows`
+`column`
 
 ### --question--
 
 #### --text--
 
-How do you make all grid items stretch to fill their grid areas?
+What does `align-content: space-between` do in a grid container?
 
 #### --distractors--
 
-`justify-content: stretch;`
+Centers all items with equal space around them.
 
 ---
 
-`align-self: fill;`
+Distributes items to start at the beginning and end of the container.
 
 ---
 
-`place-content: fit;`
+Stretches items to fill the container height.
 
 #### --answer--
 
-`align-items: stretch;`
+Distributes extra space evenly between grid tracks.
 
 ### --question--
 
 #### --text--
 
-What does the `gap` property do in a grid layout?
+How can you make a grid item start at column line 2 and end at column line 4?
 
 #### --distractors--
 
-Adds margin inside each grid item.
+`grid-column: 2 / span 2;`
 
 ---
 
-Creates spacing around the grid container.
+`grid-column: start 2 / end 4;`
 
 ---
 
-Offsets the grid position from the top.
+`grid-column: from 2 to 4;`
 
 #### --answer--
 
-Creates space between grid tracks.
+`grid-column: 2 / 4;`
 
 ### --question--
 
 #### --text--
 
-Which shorthand defines both `row-gap` and `column-gap`?
+What is the effect of `grid-template-columns: 1fr 2fr 1fr`?
 
 #### --distractors--
 
-`grid-spacing`
+Creates three equal-width columns.
 
 ---
 
-`gap-size`
+Makes the middle column twice as wide as the others.
 
 ---
 
-`grid-gap`
+Forces all columns to be exactly 1fr wide.
 
 #### --answer--
 
-`gap`
+Creates three columns where the middle is twice as wide as the sides.
 
 ### --question--
 
 #### --text--
 
-How can you define flexible track sizes within a range?
+Which property would you use to override alignment for a specific grid item?
 
 #### --distractors--
 
-By using `fr` units only.
+`grid-item-align`
 
 ---
 
-By setting min-width and max-width on each item.
+`align-self`
 
 ---
 
-With `auto` and fixed `px` values together.
+`item-placement`
 
 #### --answer--
 
-By using the `minmax()` function.
+`justify-self`
 
 ### --question--
 
 #### --text--
 
-Which statement best describes the difference between an explicit and implicit grid?
+What does `repeat(3, minmax(100px, 1fr))` create?
 
 #### --distractors--
 
-Explicit grids adjust automatically; implicit ones require manual sizes.
+Three columns that can't shrink below 100px.
 
 ---
 
-Implicit grids only appear when using `grid-area`.
+Three fixed 100px columns.
 
 ---
 
-Explicit grids are created with `grid-auto-flow`.
+Three rows with maximum height of 1fr.
 
 #### --answer--
 
-Explicit grids are defined using template properties; implicit grids are created when content exceeds the defined layout.
+Three columns that grow proportionally but won't shrink below 100px.
 
 ### --question--
 
 #### --text--
 
-Which property sets a name for a grid item's location?
+How does `auto-fill` differ from `auto-fit` in grid layouts?
 
 #### --distractors--
 
-`grid-name`
+`auto-fill` creates more tracks than needed.
 
 ---
 
-`grid-identifier`
+`auto-fit` only works with fixed sizes.
 
 ---
 
-`area-set`
+`auto-fill` ignores the minmax function.
 
 #### --answer--
 
-`grid-area`
+`auto-fill` creates empty tracks while `auto-fit` collapses them.
 
 ### --question--
 
 #### --text--
 
-What does `grid-template-areas` do?
+Which property controls the order of grid items visually?
 
 #### --distractors--
 
-Assigns specific items to start at a grid line.
+`grid-order`
 
 ---
 
-Specifies default gaps between areas.
+`item-position`
 
 ---
 
-Controls flow direction for rows.
+`flow-order`
 
 #### --answer--
 
-Defines named layout areas in the grid.
+`order`
 
 ### --question--
 
 #### --text--
 
-You set `grid-template-areas`, but an item doesn't appear. Why?
+What is the purpose of the `subgrid` value?
 
 #### --distractors--
 
-You didn't use `grid-template-columns`.
+To create nested grids with independent tracks.
 
 ---
 
-The layout must use `grid-auto-flow` to render.
+To make a grid item inherit its parent's track sizing.
 
 ---
 
-The item must be wrapped in a `section`.
+To automatically fill empty grid areas.
 
 #### --answer--
 
-It is missing a matching `grid-area` name.
+To align a nested grid with its parent's tracks.
 
 ### --question--
 
 #### --text--
 
-How can you center all content in a grid cell both vertically and horizontally?
+How can you create asymmetric grid layouts?
 
 #### --distractors--
 
-`text-align: center;`
+By using only `fr` units.
 
 ---
 
-`place-content: center;`
+By mixing different length units in `grid-template-columns`.
 
 ---
 
-`align-content: middle;`
+By setting `grid-asymmetric: true`.
 
 #### --answer--
 
-`place-items: center;`
+By defining different sizes for each track.
 
 ### --question--
 
 #### --text--
 
-How do you make a grid item span two columns?
+What does `grid-column-start: 2` do to a grid item?
 
 #### --distractors--
 
-`grid-column: span two;`
+Makes it span 2 columns.
 
 ---
 
-`grid-column: auto / 2;`
+Offsets it by 2 pixels.
 
 ---
 
-`column-span: 2;`
+Positions it starting at the second vertical grid line.
 
 #### --answer--
 
-`grid-column: span 2;`
+Makes it start at the second column line.
 
 ### --question--
 
 #### --text--
 
-What does `grid-auto-flow: row dense;` do?
+Which property would you use to control overflow behavior in grid tracks?
 
 #### --distractors--
 
-Aligns all items to the start of the row.
+`grid-overflow`
 
 ---
 
-Places all items on the same row.
+`track-sizing`
 
 ---
 
-Overwrites the grid template layout.
+`fit-content`
 
 #### --answer--
 
-Fills in gaps in row order, even if it means reordering items.
+`minmax()`
 
 ### --question--
 
 #### --text--
 
-How does `auto-fit` behave in this rule?  
-`grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))`
+How do you make grid items align to the end of their grid area vertically?
 
 #### --distractors--
 
-It limits the grid to one column.
+`align-grid: end;`
 
 ---
 
-It creates fixed 150px columns.
+`justify-items: flex-end;`
 
 ---
 
-It forces each item to the same width.
+`grid-align: bottom;`
 
 #### --answer--
 
-It fills the container with as many columns as possible, hiding empty ones.
+`align-items: end;`
 
 ### --question--
 
 #### --text--
 
-Which value with `grid-auto-columns` makes implicit columns flexible?
+What is the effect of `grid-template: 100px 1fr / 200px 1fr`?
 
 #### --distractors--
 
-`grid-auto-columns: fixed;`
+Creates two rows and two columns with specific sizes.
 
 ---
 
-`grid-auto-columns: 150px auto;`
+Makes all items 100px tall and 200px wide.
 
 ---
 
-`grid-auto-columns: fill;`
+Sets minimum sizes for rows and columns.
 
 #### --answer--
 
-`grid-auto-columns: 1fr;`
+Defines two rows (100px and flexible) and two columns (200px and flexible).
 
 ### --question--
 
 #### --text--
 
-When does `justify-items: stretch` not affect layout?
+Which property controls the stacking order of grid items?
 
 #### --distractors--
 
-When `gap` is greater than 0.
+`grid-layer`
 
 ---
 
-When the container has a width of `auto`.
+`stack-order`
 
 ---
 
-When using `fr` units for rows.
+`item-index`
 
 #### --answer--
 
-When grid items have a fixed width.
+`z-index`
 
 ### --question--
 
 #### --text--
 
-What does this code create?  
-`grid-template: auto 1fr auto / 200px 1fr`
+How can you ensure a grid item stays in the first column regardless of grid changes?
 
 #### --distractors--
 
-A 2-column layout without rows.
+`grid-column: fixed;`
 
 ---
 
-A 3x3 uniform grid.
+`grid-column: first;`
 
 ---
 
-A 1-row, 2-column layout.
+`grid-lock: column;`
 
 #### --answer--
 
-A grid with 3 rows and 2 columns.
+`grid-column: 1;`
