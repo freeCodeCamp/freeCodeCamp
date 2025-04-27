@@ -535,7 +535,7 @@ They are the color themes for the various browsers.
 
 #### --answer--
 
-Browsers apply built-in CSS rules to HTML elements by default.
+The CSS rules that browsers apply automatically.
 
 ### --question--
 
@@ -805,7 +805,7 @@ They always start on a new line.
 
 #### --text--
 
-What are internal CSS styles?
+Where are internal CSS styles accessed?
 
 #### --distractors--
 
@@ -821,7 +821,7 @@ They are stored inside the `body` element when there is only one web page to sty
 
 #### --answer--
 
-They are useful when creating short code examples.
+They are written within the `style` section within the `head` element.
 
 ### --question--
 
