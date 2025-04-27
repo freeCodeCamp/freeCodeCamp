@@ -525,7 +525,7 @@ Tier 1.
 
 #### --text--
 
-What is a best-practice when naming files for a web application?
+What is a best practice when naming files for a web application?
 
 #### --distractors--
 
@@ -551,19 +551,19 @@ Which of the following is a common file type when working with web applications?
 
 #### --distractors--
 
-.xls
+`.xls`
 
 ---
 
-.aud
+`.aud`
 
 ---
 
-.doc
+`.doc`
 
 #### --answer--
 
-.css
+`.css`
 
 ### --question--
 
@@ -573,19 +573,19 @@ What is a common file type for a video file?
 
 #### --distractors--
 
-.vid
+`.vid`
 
 ---
 
-.mp3
+`.mp3`
 
 ---
 
-.wav
+`.wav`
 
 #### --answer--
 
-.mp4
+`.mp4`
 
 ### --question--
 
@@ -595,25 +595,25 @@ Which of the following types is commonly used for image files?
 
 #### --distractors--
 
-.pix
+`.pix`
 
 ---
 
-.ppg
+`.ppg`
 
 ---
 
-.gfi
+`.gfi`
 
 #### --answer--
 
-.svg
+`.svg`
 
 ### --question--
 
 #### --text--
 
-MicroSoft Edge is supported by which operating system?
+Microsoft Edge is supported by which operating system?
 
 #### --distractors--
 
@@ -647,7 +647,7 @@ Advanced software that is only used by academic researchers.
 
 ---
 
-A component search engine.
+A tool for finding web components.
 
 #### --answer--
 
@@ -669,7 +669,7 @@ Mozilla Firefox
 
 ---
 
-MicroSoft Edge
+Microsoft Edge
 
 #### --answer--
 
@@ -761,7 +761,7 @@ GitHub.
 
 #### --answer--
 
-Explorer or Finder.
+The file explorer.
 
 ### --question--
 
@@ -793,19 +793,19 @@ What is the default page for a website?
 
 #### --distractors--
 
-styles.css
+`styles.css`
 
 ---
 
-main.html
+`main.html`
 
 ---
 
-home.html
+`home.html`
 
 #### --answer--
 
-index.html
+`index.html`
 
 ### --question--
 
