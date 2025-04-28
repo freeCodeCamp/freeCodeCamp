@@ -902,7 +902,6 @@ async function getExamAttemptsHandler(
       this.prisma.envExamAttempt.findUnique({
         where: {
           id: attemptId,
-          // This _should_ be unnecessary
           userId: user.id
         }
       })
