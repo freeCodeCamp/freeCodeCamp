@@ -26,7 +26,7 @@ import {
 
 import { RibbonIcon } from '../../assets/icons/completion-ribbon';
 
-import type { ClaimedCertifications, MaybeUser } from '../../redux/prop-types';
+import type { ClaimedCertifications, User } from '../../redux/prop-types';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
@@ -35,7 +35,7 @@ import { getCertifications } from '../profile/components/utils/certification';
 
 interface MapProps {
   forLanding?: boolean;
-  user: MaybeUser;
+  user: User | null;
   claimedCertifications?: ClaimedCertifications;
   completedChallengeIds: string[];
 }
@@ -71,7 +71,7 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
 const mapStateToProps = createSelector(
   userSelector,
   completedChallengesIdsSelector,
-  (user: MaybeUser, completedChallengeIds: string[]) => ({
+  (user: User | null, completedChallengeIds: string[]) => ({
     user,
     completedChallengeIds
   })

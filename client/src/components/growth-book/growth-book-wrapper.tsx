@@ -9,7 +9,7 @@ import { createSelector } from 'reselect';
 import { userSelector, userFetchStateSelector } from '../../redux/selectors';
 import envData from '../../../config/env.json';
 import defaultGrowthBookFeatures from '../../../config/growthbook-features-default.json';
-import type { MaybeUser, UserFetchState } from '../../redux/prop-types';
+import type { User, UserFetchState } from '../../redux/prop-types';
 import { getUUID } from '../../utils/growthbook-cookie';
 import callGA from '../../analytics/call-ga';
 import GrowthBookReduxConnector from './growth-book-redux-connector';
@@ -28,7 +28,7 @@ declare global {
 const mapStateToProps = createSelector(
   userSelector,
   userFetchStateSelector,
-  (user: MaybeUser, userFetchState: UserFetchState) => ({
+  (user: User | null, userFetchState: UserFetchState) => ({
     user,
     userFetchState
   })

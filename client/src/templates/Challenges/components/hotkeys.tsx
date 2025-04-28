@@ -8,7 +8,7 @@ import type {
   ChallengeFiles,
   Test,
   ChallengeMeta,
-  MaybeUser
+  User
 } from '../../../redux/prop-types';
 import { userSelector } from '../../../redux/selectors';
 import {
@@ -49,7 +49,7 @@ const mapStateToProps = createSelector(
     canFocusEditor: boolean,
     challengeFiles: ChallengeFiles,
     tests: Test[],
-    user: MaybeUser,
+    user: User | null,
     { nextChallengePath, prevChallengePath }: ChallengeMeta
   ) => ({
     isHelpModalOpen,

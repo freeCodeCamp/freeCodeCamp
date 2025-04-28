@@ -26,7 +26,7 @@ import {
   isSignedInSelector,
   userTokenSelector
 } from '../redux/selectors';
-import type { MaybeUser } from '../redux/prop-types';
+import type { User } from '../redux/prop-types';
 import {
   submitNewAbout,
   updateMyHonesty,
@@ -50,7 +50,7 @@ type ShowSettingsProps = {
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   updateIsHonest: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
-  user: MaybeUser;
+  user: User | null;
   verifyCert: typeof verifyCert;
   path?: string;
   userToken: string | null;
@@ -63,7 +63,7 @@ const mapStateToProps = createSelector(
   userTokenSelector,
   (
     showLoading: boolean,
-    user: MaybeUser,
+    user: User | null,
     isSignedIn,
     userToken: string | null
   ) => ({

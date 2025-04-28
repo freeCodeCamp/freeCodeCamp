@@ -27,7 +27,7 @@ import { isSignedInSelector, userSelector } from '../redux/selectors';
 import { hardGoTo as navigate } from '../redux/actions';
 import { updateMyEmail } from '../redux/settings/actions';
 import { maybeEmailRE } from '../utils';
-import { MaybeUser } from '../redux/prop-types';
+import type { User } from '../redux/prop-types';
 
 const { apiLocation } = envData;
 
@@ -42,7 +42,7 @@ interface ShowUpdateEmailProps {
 const mapStateToProps = createSelector(
   userSelector,
   isSignedInSelector,
-  (user: MaybeUser, isSignedIn) => ({
+  (user: User | null, isSignedIn) => ({
     isNewEmail: !user?.email || user.emailVerified,
     isSignedIn
   })

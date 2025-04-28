@@ -113,9 +113,7 @@ type ApiUserResponse = {
   result?: string;
 };
 
-type MaybeUser = User | null;
-
-function parseApiResponseToClientUser(data: ApiUserResponse): MaybeUser {
+function parseApiResponseToClientUser(data: ApiUserResponse): User | null {
   const userData = data.user?.[data?.result ?? ''];
   let completedChallenges: CompletedChallenge[] = [];
   let savedChallenges: SavedChallenge[] = [];
@@ -146,7 +144,7 @@ function mapKeyToFileKey<K>(
   return files.map(({ key, ...rest }) => ({ ...rest, fileKey: key }));
 }
 
-export function getSessionUser(): Promise<ResponseWithData<MaybeUser>> {
+export function getSessionUser(): Promise<ResponseWithData<User | null>> {
   const responseWithData: Promise<ResponseWithData<ApiUserResponse>> = get(
     '/user/get-session-user'
   );
@@ -166,7 +164,7 @@ type UserProfileResponse = {
 };
 export function getUserProfile(
   username: string
-): Promise<ResponseWithData<MaybeUser>> {
+): Promise<ResponseWithData<User | null>> {
   const responseWithData = get<UserProfileResponse>(
     `/users/get-public-profile?username=${username}`
   );
