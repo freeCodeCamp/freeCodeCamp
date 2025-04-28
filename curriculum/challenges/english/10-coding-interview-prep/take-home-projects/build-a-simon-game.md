@@ -1,9 +1,9 @@
 ---
 id: bd7158d8c442eddfaeb5bd1c
-title: Build a Simon Game
+title: Build a Memory Light Game
 challengeType: 3
 forumTopicId: 302357
-dashedName: build-a-simon-game
+dashedName: build-a-memory-light-game
 ---
 
 # --description--
@@ -28,7 +28,12 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 
 **User Story:** I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
 
-**Hint:** Here are mp3s you can use for each button: `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound1.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound2.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound3.mp3`, `https://cdn.freecodecamp.org/curriculum/take-home-projects/simonSound4.mp3`.
+**Hint:** Here are mp3s you can use for each button:
+
+- `https://cdn.freecodecamp.org/curriculum/take-home-projects/memory-light-game/sound-1.mp3`
+- `https://cdn.freecodecamp.org/curriculum/take-home-projects/memory-light-game/sound-2.mp3`
+- `https://cdn.freecodecamp.org/curriculum/take-home-projects/memory-light-game/sound-3.mp3`
+- `https://cdn.freecodecamp.org/curriculum/take-home-projects/memory-light-game/sound-4.mp3`.
 
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 
