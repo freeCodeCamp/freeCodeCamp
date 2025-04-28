@@ -36,7 +36,7 @@ describe('/exam-environment/', () => {
       const setCookies = await devLogin();
       superPost = createSuperRequest({ method: 'POST', setCookies });
       superGet = createSuperRequest({ method: 'GET', setCookies });
-      await mock.seedEnvExam();
+      // await mock.seedEnvExam();
       // Add exam environment authorization token
       const res = await superPost('/user/exam-environment/token');
       expect(res.status).toBe(201);
@@ -48,6 +48,10 @@ describe('/exam-environment/', () => {
 
     afterAll(async () => {
       await mock.clearEnvExam();
+    });
+
+    beforeEach(async () => {
+      await mock.seedEnvExam();
     });
 
     describe('POST /exam-environment/exam/attempt', () => {
@@ -701,7 +705,11 @@ describe('/exam-environment/', () => {
 
     describe('GET /exam-environment/exam/attempts/:attemptId', () => {
       afterEach(async () => {
+        // If attempt is deleted, moderation record should cascade
         await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
+        const moderationRecords =
+          await fastifyTestInstance.prisma.examModeration.findMany({});
+        expect(moderationRecords).toHaveLength(0);
       });
 
       it('should return 404 if the attempt does not exist', async () => {
@@ -771,7 +779,7 @@ describe('/exam-environment/', () => {
       });
 
       it('should return 404 if no attempt id is given, and the user has zero attempts', async () => {
-        const res = await superGet('/exam-environment/exam/attempts').set(
+        const res = await superGet('/exam-environment/exam/attempts/').set(
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
         );
@@ -789,14 +797,12 @@ describe('/exam-environment/', () => {
           data: { ...mock.examAttempt, userId: defaultUserId }
         });
 
-        const res = await superGet('/exam-environment/exam/attempts').set(
+        const res = await superGet('/exam-environment/exam/attempts/').set(
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
         );
 
-        expect(res.body).toEqual({
-          envExamAttempts: [attempt]
-        });
+        expect(res.body).toEqual([attempt]);
         expect(res.status).toBe(200);
       });
 
