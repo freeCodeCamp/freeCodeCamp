@@ -36,8 +36,8 @@ jobs:
 
       - name: Check if commits are made on GitHub Web UI
         id: check-commits
-        if: steps.pr_author.outputs.result.is_allow_listed == true
         run: |
+          echo steps.pr_author.outputs.result
           PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           COMMITS_URL="https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/commits"
           IS_GITHUB_COMMIT=$(curl --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "$COMMITS_URL" | jq '[.[] | .commit.committer.name] | any(.[]; . == "GitHub")')
