@@ -779,7 +779,7 @@ export async function constructEnvExamAttempt(
   const isAttemptExpired =
     attempt.startTimeInMS + exam.config.totalTimeInMS > Date.now();
   if (!isAttemptExpired) {
-    return { envExamAttempt: attempt, error: null };
+    return { envExamAttempt: { ...attempt, result: null }, error: null };
   }
 
   const maybeMod = await mapErr(
@@ -822,13 +822,13 @@ export async function constructEnvExamAttempt(
 
   // If attempt is completed, but has not been graded, return without result
   if (moderation.approved === null) {
-    return { envExamAttempt: attempt, error: null };
+    return { envExamAttempt: { ...attempt, result: null }, error: null };
   }
 
   // If attempt is completed, but has been determined to need a retake
   // TODO: Send moderation.feedback?
   if (moderation.approved === false) {
-    return { envExamAttempt: attempt, error: null };
+    return { envExamAttempt: { ...attempt, result: null }, error: null };
   }
 
   const maybeGeneratedExam = await mapErr(

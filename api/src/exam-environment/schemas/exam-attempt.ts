@@ -31,19 +31,31 @@ export const examEnvironmentPostExamAttempt = {
 };
 
 const examEnvAttempt = Type.Object({
-  result: Type.Optional(
+  startTimeInMS: Type.Number(),
+  questionSets: Type.Array(
+    Type.Object({
+      id: Type.String({ format: 'objectid' }),
+      questions: Type.Array(
+        Type.Object({
+          id: Type.String({ format: 'objectid' }),
+          answers: Type.Array(Type.String()),
+          submissionTimeInMS: Type.Number()
+        })
+      )
+    })
+  ),
+  result: Type.Union([
+    Type.Null(),
     Type.Object({
       score: Type.Number(),
       passingPercent: Type.Number()
     })
-  )
+  ])
 });
 
 export const examEnvironmentGetExamAttempts = {
   params: Type.Object({
-    attemptId: Type.Optional(
-      Type.String({ format: 'objectid', maxLength: 24, minLength: 24 })
-    )
+    attemptId: Type.Optional(Type.String({ format: 'objectid' }))
   }),
   headers: Type.Object({
     'exam-environment-authorization-token': Type.String()
