@@ -36,6 +36,21 @@ function checkCurriculumLocale() {
   }
 }
 
+function checkDeploymentEnv() {
+  if (!process.env.DEPLOYMENT_ENV) throw Error('DEPLOYMENT_ENV is not set');
+  if (!['staging', 'production'].includes(process.env.DEPLOYMENT_ENV)) {
+    throw Error(`
+
+${process.env.DEPLOYMENT_ENV} is not a valid value for DEPLOYMENT_ENV.
+Only 'staging' and 'production' are valid deployment environments.
+`);
+  }
+}
+
+checkClientLocale();
+checkCurriculumLocale();
+checkDeploymentEnv();
+
 if (FREECODECAMP_NODE_ENV !== 'development') {
   const locationKeys = [
     'homeLocation',
@@ -105,12 +120,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   SHOW_UPCOMING_CHANGES should never be 'true' in production
 
   `);
-
-  checkClientLocale();
-  checkCurriculumLocale();
 } else {
-  checkClientLocale();
-  checkCurriculumLocale();
   if (fs.existsSync(`${configPath}/env.json`)) {
     const { showUpcomingChanges } = JSON.parse(
       fs.readFileSync(`${configPath}/env.json`, 'utf-8')

@@ -16,7 +16,6 @@ interface PythonRunEvent extends MessageEvent {
     code: {
       contents: string;
       editableContents: string;
-      original: { [id: string]: string };
     };
     firstTest: unknown;
     testString: string;

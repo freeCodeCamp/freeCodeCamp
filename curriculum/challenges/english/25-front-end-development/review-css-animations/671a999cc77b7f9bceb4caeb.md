@@ -7,12 +7,10 @@ dashedName: review-css-animations
 
 # --description--
 
-Review the concepts below to prepare for the upcoming quiz.
-
-## CSS Animation Basics 
+## CSS Animation Basics
 
 - **Definition**: CSS animations allow you to create dynamic, visually engaging effects on web pages without the need for JavaScript or complex programming. They provide a way to smoothly transition elements between different styles over a specified duration.
-- **The `@keyframes` Rule**: This rule defines the stages and styles of the animation. It specifies what styles the element should have at various points during the animation. 
+- **The `@keyframes` Rule**: This rule defines the stages and styles of the animation. It specifies what styles the element should have at various points during the animation.
 
 ```css
 @keyframes slide-in {

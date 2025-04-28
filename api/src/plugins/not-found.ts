@@ -14,17 +14,19 @@ import { getRedirectParams } from '../utils/redirection';
 const fourOhFour: FastifyPluginCallback = (fastify, _options, done) => {
   // If the request accepts JSON and does not specifically prefer text/html,
   // this will return a 404 JSON response. Everything else will be redirected.
-  fastify.setNotFoundHandler((request, reply) => {
-    const accepted = request.accepts().type(['json', 'html']);
+  fastify.setNotFoundHandler((req, reply) => {
+    const logger = fastify.log.child({ req });
+    logger.info('User requested path that does not exist');
 
+    const accepted = req.accepts().type(['json', 'html']);
     if (accepted == 'json') {
       void reply.code(404).send({ error: 'path not found' });
     } else {
-      const { origin } = getRedirectParams(request);
+      const { origin } = getRedirectParams(req);
       void reply.status(302);
       void reply.redirectWithMessage(`${origin}/404`, {
         type: 'danger',
-        content: `We couldn't find path ${request.url}`
+        content: `We couldn't find path ${req.url}`
       });
     }
   });
