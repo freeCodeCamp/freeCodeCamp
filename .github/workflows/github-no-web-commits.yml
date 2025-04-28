@@ -1,14 +1,6 @@
 name: GitHub - No Commits on GitHub Web
 on:
-  pull_request_target:
-    types:
-      - opened
-      - reopened
-      # The "synchronize" type may not be used because code review commits,
-      # from GitHub UI might be acceptable. Enable this if you want to block
-      # all commits from GitHub UI.
-      #
-      # - synchronize
+  push:
 
 jobs:
   has-web-commits:
