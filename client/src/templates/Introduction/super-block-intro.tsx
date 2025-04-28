@@ -27,7 +27,7 @@ import {
   userFetchStateSelector,
   signInLoadingSelector
 } from '../../redux/selectors';
-import type { MaybeUser } from '../../redux/prop-types';
+import type { User } from '../../redux/prop-types';
 import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '../../../../shared/config/certification-settings';
 import { BlockLayouts, BlockTypes } from '../../../../shared/config/blocks';
@@ -84,7 +84,7 @@ type SuperBlockProps = {
   resetExpansion: () => void;
   toggleBlock: (arg0: string) => void;
   tryToShowDonationModal: () => void;
-  user: MaybeUser;
+  user: User | null;
 };
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
@@ -101,7 +101,7 @@ const mapStateToProps = (state: Record<string, unknown>) => {
       isSignedIn,
       signInLoading: boolean,
       fetchState: FetchState,
-      user: MaybeUser
+      user: User | null
     ) => ({
       currentChallengeId,
       isSignedIn,

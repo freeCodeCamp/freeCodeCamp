@@ -25,7 +25,7 @@ import {
   themeSelector
 } from '../../redux/selectors';
 import { LocalStorageThemes, DonateFormState } from '../../redux/types';
-import type { CompletedChallenge, MaybeUser } from '../../redux/prop-types';
+import type { CompletedChallenge, User } from '../../redux/prop-types';
 import { CENTS_IN_DOLLAR, formattedAmountLabel } from './utils';
 import DonateCompletion from './donate-completion';
 import PatreonButton from './patreon-button';
@@ -91,7 +91,7 @@ const mapStateToProps = createSelector(
     isSignedIn: DonateFormProps['isSignedIn'],
     isDonating: DonateFormProps['isDonating'],
     donationFormState: DonateFormState,
-    user: MaybeUser,
+    user: User | null,
     completedChallenges: CompletedChallenge[],
     theme: LocalStorageThemes
   ) => ({

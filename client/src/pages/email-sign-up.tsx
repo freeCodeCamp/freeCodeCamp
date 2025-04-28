@@ -17,9 +17,9 @@ import {
   userSelector,
   isSignedInSelector
 } from '../redux/selectors';
+import type { User } from '../redux/prop-types';
 
 import './email-sign-up.css';
-import { MaybeUser } from '../redux/prop-types';
 interface AcceptPrivacyTermsProps {
   acceptTerms: (accept: boolean | null) => void;
   acceptedPrivacyTerms: boolean;
@@ -32,7 +32,7 @@ const mapStateToProps = createSelector(
   userSelector,
   isSignedInSelector,
   signInLoadingSelector,
-  (user: MaybeUser, isSignedIn: boolean, showLoading: boolean) => ({
+  (user: User | null, isSignedIn: boolean, showLoading: boolean) => ({
     acceptedPrivacyTerms: !!user?.acceptedPrivacyTerms,
     isSignedIn,
     showLoading,

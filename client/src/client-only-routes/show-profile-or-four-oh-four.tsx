@@ -12,7 +12,7 @@ import {
   userProfileFetchStateSelector,
   createUserByNameSelector
 } from '../redux/selectors';
-import { MaybeUser } from '../redux/prop-types';
+import type { User } from '../redux/prop-types';
 import { Socials } from '../components/profile/components/internet';
 
 interface ShowProfileOrFourOhFourProps {
@@ -22,7 +22,7 @@ interface ShowProfileOrFourOhFourProps {
   updateMySocials: (formValues: Socials) => void;
   isSessionUser: boolean;
   maybeUser?: string;
-  requestedUser: MaybeUser;
+  requestedUser: User | null;
   showLoading: boolean;
 }
 
@@ -33,9 +33,9 @@ const makeMapStateToProps =
     const requestedUser = (
       createUserByNameSelector as (
         maybeUser: string
-      ) => (state: unknown) => MaybeUser
+      ) => (state: unknown) => User | null
     )(username)(state);
-    const sessionUser = userSelector(state) as MaybeUser;
+    const sessionUser = userSelector(state) as User | null;
     const isSessionUser = username === sessionUser?.username;
     const fetchState = userProfileFetchStateSelector(state) as {
       pending: boolean;

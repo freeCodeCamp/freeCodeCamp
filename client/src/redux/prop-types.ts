@@ -338,8 +338,6 @@ export type User = {
   yearsTopContributor: string[];
 } & ClaimedCertifications;
 
-export type MaybeUser = User | null;
-
 export type ProfileUI = {
   isLocked: boolean;
   showAbout: boolean;

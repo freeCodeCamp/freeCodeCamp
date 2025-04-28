@@ -25,7 +25,7 @@ import {
   createUserByNameSelector,
   isSignedInSelector
 } from '../redux/selectors';
-import { UserFetchState, MaybeUser } from '../redux/prop-types';
+import type { UserFetchState, User } from '../redux/prop-types';
 import { liveCerts } from '../../config/cert-and-project-map';
 import {
   certificateMissingErrorMessage,
@@ -80,7 +80,7 @@ interface ShowCertificationProps {
     certSlug: string;
   }) => void;
   signedInUserName: string;
-  user: MaybeUser;
+  user: User | null;
   userFetchState: UserFetchState;
   userFullName: string;
   username: string;
@@ -95,7 +95,7 @@ const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
 
   const userByNameSelector = createUserByNameSelector(username) as (
     state: unknown
-  ) => MaybeUser;
+  ) => User | null;
 
   return createSelector(
     showCertSelector,
@@ -109,7 +109,7 @@ const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
       cert: Cert,
       fetchState: ShowCertificationProps['fetchState'],
       signedInUserName: string,
-      user: MaybeUser,
+      user: User | null,
       userFetchState: UserFetchState,
       isDonating: boolean,
       isSignedIn: boolean
