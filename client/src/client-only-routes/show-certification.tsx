@@ -381,8 +381,6 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     completionTime
   } = cert;
 
-  console.log('user', user);
-
   const displayName = userFullName ?? username;
 
   const certDate = new Date(date);

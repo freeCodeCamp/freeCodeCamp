@@ -103,8 +103,6 @@ export const isProcessingSelector = state => {
 };
 
 export const createUserByNameSelector = username => state => {
-  // TODO: does this handle the case where the user has been fetched, but does
-  // not exist?
   const sessionUser = userSelector(state);
   const otherUser = otherUserSelector(state);
   const isSessionUser = sessionUser?.username === username;
