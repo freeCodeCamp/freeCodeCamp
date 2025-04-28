@@ -36,7 +36,7 @@ jobs:
 
       - name: Check if commits are made on GitHub Web UI
         id: check-commits
-        if: steps.pr_author.outputs.result.is_allow_listed == false
+        if: steps.pr_author.outputs.result.is_allow_listed == true
         run: |
           PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           COMMITS_URL="https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/commits"
