@@ -17,68 +17,72 @@
       "title": "Step 2"
     },
     {
-      "id": "680900675ae3d54ee19590c4",
+      "id": "680fc849a6f2be0a8597c593",
       "title": "Step 3"
     },
     {
-      "id": "680900675ae3d54ee19590c5",
+      "id": "680900675ae3d54ee19590c4",
       "title": "Step 4"
     },
     {
-      "id": "680900675ae3d54ee19590c6",
+      "id": "680900675ae3d54ee19590c5",
       "title": "Step 5"
     },
     {
-      "id": "680900675ae3d54ee19590c7",
+      "id": "680900675ae3d54ee19590c6",
       "title": "Step 6"
     },
     {
-      "id": "680900675ae3d54ee19590c8",
+      "id": "680900675ae3d54ee19590c7",
       "title": "Step 7"
     },
     {
-      "id": "680900675ae3d54ee19590c9",
+      "id": "680900675ae3d54ee19590c8",
       "title": "Step 8"
     },
     {
-      "id": "680900675ae3d54ee19590ca",
+      "id": "680900675ae3d54ee19590c9",
       "title": "Step 9"
     },
     {
-      "id": "680900675ae3d54ee19590cb",
+      "id": "680900675ae3d54ee19590ca",
       "title": "Step 10"
     },
     {
-      "id": "680900675ae3d54ee19590cc",
+      "id": "680900675ae3d54ee19590cb",
       "title": "Step 11"
     },
     {
-      "id": "680900675ae3d54ee19590cd",
+      "id": "680900675ae3d54ee19590cc",
       "title": "Step 12"
     },
     {
-      "id": "680900675ae3d54ee19590ce",
+      "id": "680900675ae3d54ee19590cd",
       "title": "Step 13"
     },
     {
-      "id": "680900675ae3d54ee19590cf",
+      "id": "680900675ae3d54ee19590ce",
       "title": "Step 14"
     },
     {
-      "id": "680900675ae3d54ee19590d0",
+      "id": "680900675ae3d54ee19590cf",
       "title": "Step 15"
     },
     {
-      "id": "680900675ae3d54ee19590d1",
+      "id": "680900675ae3d54ee19590d0",
       "title": "Step 16"
     },
     {
-      "id": "680900675ae3d54ee19590d2",
+      "id": "680900675ae3d54ee19590d1",
       "title": "Step 17"
     },
     {
-      "id": "680900675ae3d54ee19590d3",
+      "id": "680900675ae3d54ee19590d2",
       "title": "Step 18"
+    },
+    {
+      "id": "680900675ae3d54ee19590d3",
+      "title": "Step 19"
     }
   ],
   "helpCategory": "JavaScript"
