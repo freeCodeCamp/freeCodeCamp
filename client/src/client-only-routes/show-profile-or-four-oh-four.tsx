@@ -15,7 +15,6 @@ import {
 import { MaybeUser } from '../redux/prop-types';
 import { Socials } from '../components/profile/components/internet';
 
-// TODO: INFER THE TYPE from connect
 interface ShowProfileOrFourOhFourProps {
   fetchProfileForUser: (username: string) => void;
   updateMyPortfolio: () => void;
