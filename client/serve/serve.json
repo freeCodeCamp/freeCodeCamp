@@ -106,6 +106,10 @@
     {
       "source": "/learn/project-euler/project-euler-problems-1-to-100/problem-1-multiples-of-3-and-5",
       "destination": "/learn/project-euler/project-euler-problems-1-to-100/problem-1-multiples-of-3-or-5"
+    },
+    {
+      "source": "/learn/coding-interview-prep/take-home-projects/build-a-simon-game",
+      "destination": "/learn/coding-interview-prep/take-home-projects/build-a-memory-light-game"
     }
   ]
 }
