@@ -13,6 +13,7 @@ import {
 } from '@prisma/client';
 import type { FastifyBaseLogger, FastifyInstance } from 'fastify';
 import { type Static } from '@fastify/type-provider-typebox';
+import { omit } from 'lodash';
 import * as schemas from '../schemas';
 import { mapErr } from '../../utils';
 import { ERRORS } from './errors';
@@ -779,7 +780,10 @@ export async function constructEnvExamAttempt(
   const isAttemptExpired =
     attempt.startTimeInMS + exam.config.totalTimeInMS > Date.now();
   if (!isAttemptExpired) {
-    return { envExamAttempt: { ...attempt, result: null }, error: null };
+    return {
+      envExamAttempt: { ...omitAttemptReferenceIds(attempt), result: null },
+      error: null
+    };
   }
 
   const maybeMod = await mapErr(
@@ -822,13 +826,19 @@ export async function constructEnvExamAttempt(
 
   // If attempt is completed, but has not been graded, return without result
   if (moderation.approved === null) {
-    return { envExamAttempt: { ...attempt, result: null }, error: null };
+    return {
+      envExamAttempt: { ...omitAttemptReferenceIds(attempt), result: null },
+      error: null
+    };
   }
 
   // If attempt is completed, but has been determined to need a retake
   // TODO: Send moderation.feedback?
   if (moderation.approved === false) {
-    return { envExamAttempt: { ...attempt, result: null }, error: null };
+    return {
+      envExamAttempt: { ...omitAttemptReferenceIds(attempt), result: null },
+      error: null
+    };
   }
 
   const maybeGeneratedExam = await mapErr(
@@ -878,8 +888,12 @@ export async function constructEnvExamAttempt(
   };
 
   const envExamAttempt = {
-    ...attempt,
+    ...omitAttemptReferenceIds(attempt),
     result
   };
   return { error: null, envExamAttempt };
+}
+
+function omitAttemptReferenceIds(attempt: EnvExamAttempt) {
+  return omit(attempt, ['examId', 'id', 'generatedExamId', 'userId']);
 }

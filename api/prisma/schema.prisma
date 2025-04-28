@@ -300,7 +300,7 @@ model EnvExamAttempt {
 
   // Relations
   user           user             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  exam           EnvExam          @relation(fields: [examId], references: [id])
+  exam           EnvExam          @relation(fields: [examId], references: [id], onDelete: Cascade)
   generatedExam  EnvGeneratedExam @relation(fields: [generatedExamId], references: [id])
   ExamModeration ExamModeration[]
 }
@@ -333,7 +333,7 @@ model EnvGeneratedExam {
   deprecated   Boolean
 
   // Relations
-  exam           EnvExam          @relation(fields: [examId], references: [id])
+  exam           EnvExam          @relation(fields: [examId], references: [id], onDelete: Cascade)
   EnvExamAttempt EnvExamAttempt[]
 }
 

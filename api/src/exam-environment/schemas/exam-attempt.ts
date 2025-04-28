@@ -4,14 +4,14 @@ import { STANDARD_ERROR } from '../utils/errors';
 export const examEnvironmentPostExamAttempt = {
   body: Type.Object({
     attempt: Type.Object({
-      examId: Type.String(),
+      examId: Type.String({ format: 'objectid' }),
       questionSets: Type.Array(
         Type.Object({
-          id: Type.String(),
+          id: Type.String({ format: 'objectid' }),
           questions: Type.Array(
             Type.Object({
-              id: Type.String(),
-              answers: Type.Array(Type.String())
+              id: Type.String({ format: 'objectid' }),
+              answers: Type.Array(Type.String({ format: 'objectid' }))
             })
           )
         })
@@ -34,10 +34,10 @@ const examEnvAttempt = Type.Object({
   startTimeInMS: Type.Number(),
   questionSets: Type.Array(
     Type.Object({
-      id: Type.String({ format: 'objectid' }),
+      id: Type.String(),
       questions: Type.Array(
         Type.Object({
-          id: Type.String({ format: 'objectid' }),
+          id: Type.String(),
           answers: Type.Array(Type.String()),
           submissionTimeInMS: Type.Number()
         })
@@ -61,7 +61,10 @@ export const examEnvironmentGetExamAttempts = {
     'exam-environment-authorization-token': Type.String()
   }),
   response: {
-    200: Type.Union([examEnvAttempt, Type.Array(examEnvAttempt)]),
+    200: Type.Union([
+      Type.Object({ envExamAttempt: examEnvAttempt }),
+      Type.Array(examEnvAttempt)
+    ]),
     400: STANDARD_ERROR,
     403: STANDARD_ERROR,
     404: STANDARD_ERROR,
