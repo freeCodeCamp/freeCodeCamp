@@ -4,7 +4,6 @@ import React, { Fragment } from 'react';
 import { Spacer } from '@freecodecamp/ui';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
-import { graphql, useStaticQuery } from 'gatsby';
 
 import {
   type SuperBlocks,
@@ -25,29 +24,8 @@ import {
   completedChallengesIdsSelector
 } from '../../redux/selectors';
 
-import { CurrentCert, ClaimedCertifications } from '../../redux/prop-types';
-import {
-  certSlugTypeMap,
-  superBlockCertTypeMap
-} from '../../../../shared/config/certification-settings';
-
 interface MapProps {
   forLanding?: boolean;
-  isSignedIn: boolean;
-  currentCerts: CurrentCert[];
-  claimedCertifications?: ClaimedCertifications;
-  completedChallengeIds: string[];
-}
-
-interface Data {
-  allChallengeNode: {
-    nodes: {
-      challenge: {
-        id: string;
-        superBlock: SuperBlocks;
-      };
-    }[];
-  };
 }
 
 const linkSpacingStyle = {
@@ -84,10 +62,6 @@ function MapLi({
 }: {
   superBlock: SuperBlocks;
   landing: boolean;
-  completed: boolean;
-  claimed: boolean;
-  showNumbers?: boolean;
-  index: number;
 }) {
   const i18nTitle = i18next.t(`intro:${superBlock}.title`);
 
@@ -112,51 +86,8 @@ function MapLi({
   );
 }
 
-function Map({
-  forLanding = false,
-  isSignedIn,
-  currentCerts,
-  completedChallengeIds
-}: MapProps): React.ReactElement {
+function Map({ forLanding = false }: MapProps) {
   const { t } = useTranslation();
-  const {
-    allChallengeNode: { nodes: challengeNodes }
-  }: Data = useStaticQuery(graphql`
-    query {
-      allChallengeNode {
-        nodes {
-          challenge {
-            id
-            superBlock
-          }
-        }
-      }
-    }
-  `);
-
-  const allChallenges = challengeNodes.map(node => node.challenge);
-  const allSuperblockChallengesCompleted = (superblock: SuperBlocks) => {
-    // array of all challenge ID's in the superblock
-    const allSuperblockChallenges = allChallenges
-      .filter(challenge => challenge.superBlock === superblock)
-      .map(challenge => challenge.id);
-
-    return allSuperblockChallenges.every(id =>
-      completedChallengeIds.includes(id)
-    );
-  };
-
-  const isClaimed = (stage: SuperBlocks) => {
-    return isSignedIn
-      ? Boolean(
-          currentCerts?.find(
-            (cert: { certSlug: string }) =>
-              (certSlugTypeMap as { [key: string]: string })[cert.certSlug] ===
-              (superBlockCertTypeMap as { [key: string]: string })[stage]
-          )?.show
-        )
-      : false;
-  };
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
@@ -174,14 +105,11 @@ function Map({
               {t(superBlockHeadings[stage])}
             </h2>
             <ul key={stage}>
-              {superblocks.map((superblock, i) => (
+              {superblocks.map(superblock => (
                 <MapLi
                   key={superblock}
                   superBlock={superblock}
                   landing={forLanding}
-                  index={i}
-                  claimed={isClaimed(superblock)}
-                  completed={allSuperblockChallengesCompleted(superblock)}
                 />
               ))}
             </ul>
