@@ -109,7 +109,7 @@ export function* executeChallengeSaga({ payload }) {
     yield put(initConsole(i18next.t('learn.running-tests')));
     // reset tests to initial state
     const tests = (yield select(challengeTestsSelector)).map(
-      ({ text, testString }) => ({ text, testString })
+      ({ text, testString }) => ({ text, testString, running: true })
     );
     const hooks = yield select(challengeHooksSelector);
     yield put(updateTests(tests));
@@ -197,8 +197,8 @@ function* buildChallengeData(challengeData, options) {
 function* executeTests(testRunner, tests, testTimeout = 5000) {
   const testResults = [];
   for (let i = 0; i < tests.length; i++) {
-    const { text, testString } = tests[i];
-    const newTest = { text, testString };
+    const { text, testString, running } = tests[i];
+    const newTest = { text, testString, running };
     // only the last test outputs console.logs to avoid log duplication.
     const firstTest = i === 1;
     try {
@@ -208,6 +208,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         testTimeout,
         firstTest
       );
+      newTest.running = false;
       if (pass) {
         newTest.pass = true;
       } else {
