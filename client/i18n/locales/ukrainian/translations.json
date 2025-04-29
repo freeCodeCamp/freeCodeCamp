@@ -905,6 +905,7 @@
     "unlink-success": "Ви успішно від’єдналися від {{website}}",
     "provide-username": "Перевірте, чи ви вказали ім’я користувача та звіт",
     "report-sent": "Звіт був відправлений команді з {{email}} в копії",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "Такої сертифікації не існує",
     "create-token-err": "Під час створення токена користувача сталася помилка",
     "delete-token-err": "Під час видалення токена користувача сталася помилка",

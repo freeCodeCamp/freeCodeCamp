@@ -35,6 +35,8 @@ interface Block<T> {
   meta: Record<string, unknown>;
 }
 
+const ver = 'v1';
+
 export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.RespWebDesignNew, public: true },
   { dashedName: SuperBlocks.DataAnalysisPy, public: true },
@@ -63,8 +65,7 @@ export const orderedSuperBlockInfo = [
 
 const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);
 
-export function buildExtCurriculumData(
-  ver: string,
+export function buildExtCurriculumDataV1(
   curriculum: Curriculum<CurriculumProps>
 ): void {
   const staticFolderPath = resolve(__dirname, '../../../client/static');

@@ -70,12 +70,13 @@
     "develop": "tsx watch --clear-screen=false src/server.ts",
     "start": "FREECODECAMP_NODE_ENV=production node dist/server.js",
     "test": "jest --force-exit",
+    "test-with-logging": "FCC_ENABLE_TEST_LOGGING=true pnpm run test",
     "prisma": "dotenv -e ../.env prisma",
     "postinstall": "prisma generate",
-    "generate-exams": "tsx src/exam-environment/generate/index.ts",
-    "deprecate-exam": "tsx src/exam-environment/generate/deprecate.ts",
-    "insert-exam": "tsx src/exam-environment/generate/insert.ts",
-    "seed:env-exam": "tsx src/exam-environment/seed/index.ts"
+    "generate-exams": "tsx tools/exam-environment/generate/index.ts",
+    "deprecate-exam": "tsx tools/exam-environment/generate/deprecate.ts",
+    "insert-exam": "tsx tools/exam-environment/generate/insert.ts",
+    "seed:env-exam": "tsx tools/exam-environment/seed/index.ts"
   },
   "version": "0.0.1"
 }
