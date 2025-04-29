@@ -703,7 +703,7 @@ describe('/exam-environment/', () => {
       });
     });
 
-    describe('GET /exam-environment/exam/attempts/:attemptId', () => {
+    describe('GET /exam-environment/exam/attempt/:attemptId', () => {
       afterEach(async () => {
         // If attempt is deleted, moderation record should cascade
         await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
@@ -715,7 +715,7 @@ describe('/exam-environment/', () => {
       it('should return 404 if the attempt does not exist', async () => {
         const attemptId = mock.oid();
         const res = await superGet(
-          `/exam-environment/exam/attempts/${attemptId}`
+          `/exam-environment/exam/attempt/${attemptId}`
         ).set(
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
@@ -735,7 +735,7 @@ describe('/exam-environment/', () => {
             data: { ...mock.examAttempt, userId: mock.oid() }
           });
         const res = await superGet(
-          `/exam-environment/exam/attempts/${otherUserAttempt.id}`
+          `/exam-environment/exam/attempt/${otherUserAttempt.id}`
         ).set(
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
@@ -760,7 +760,7 @@ describe('/exam-environment/', () => {
         });
 
         const res = await superGet(
-          `/exam-environment/exam/attempts/${attempt.id}`
+          `/exam-environment/exam/attempt/${attempt.id}`
         ).set(
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
@@ -778,8 +778,8 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(200);
       });
 
-      it('should return 404 if no attempt id is given, and the user has zero attempts', async () => {
-        const res = await superGet('/exam-environment/exam/attempts/').set(
+      it('should return 400 if no attempt id is given', async () => {
+        const res = await superGet('/exam-environment/exam/attempt/').set(
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
         );
@@ -792,42 +792,26 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(404);
       });
 
-      it('should return 200 with all attempts if no attempt id is given, and the user has attempts', async () => {
-        const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
-          data: { ...mock.examAttempt, userId: defaultUserId }
-        });
-
-        const res = await superGet('/exam-environment/exam/attempts/').set(
-          'exam-environment-authorization-token',
-          examEnvironmentAuthorizationToken
-        );
-
-        expect(res.body).toEqual([attempt]);
-        expect(res.status).toBe(200);
-      });
-
-      it('should return the attempt(s) without results, if the attempt has not been moderated', async () => {
+      it('should return the attempt without results, if the attempt has not been moderated', async () => {
         const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
           data: { ...mock.examAttempt, userId: defaultUserId }
         });
 
         const res = await superGet(
-          `/exam-environment/exam/attempts/${attempt.id}`
+          `/exam-environment/exam/attempt/${attempt.id}`
         ).set(
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
         );
 
         expect(res.body).toEqual({
-          envExamAttempt: {
-            ...attempt,
-            result: null
-          }
+          ...attempt,
+          result: null
         });
         expect(res.status).toBe(200);
       });
 
-      it('should return the attempt(s) with results, if the attempt has been moderated', async () => {
+      it('should return the attempt with results, if the attempt has been moderated', async () => {
         const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
           data: { ...mock.examAttempt, userId: defaultUserId }
         });
@@ -840,21 +824,117 @@ describe('/exam-environment/', () => {
         });
 
         const res = await superGet(
-          `/exam-environment/exam/attempts/${attempt.id}`
+          `/exam-environment/exam/attempt/${attempt.id}`
         ).set(
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
         );
 
         expect(res.body).toEqual({
-          envExamAttempt: {
+          ...attempt,
+          result: {
+            score: 50,
+            passingPercent: 80
+          }
+        });
+        expect(res.status).toBe(200);
+      });
+    });
+
+    describe('GET /exam-environment/exam/attempts', () => {
+      afterEach(async () => {
+        // If attempt is deleted, moderation record should cascade
+        await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
+        const moderationRecords =
+          await fastifyTestInstance.prisma.examModeration.findMany({});
+        expect(moderationRecords).toHaveLength(0);
+      });
+
+      it('should return 404 if no attempts exist', async () => {
+        const res = await superGet(`/exam-environment/exam/attempts`).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toStrictEqual({
+          code: 'FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
+        });
+        expect(res.status).toBe(404);
+      });
+
+      it('should return 200 with the attempts if they exist and belong to the user', async () => {
+        const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
+          data: { ...mock.examAttempt, userId: defaultUserId }
+        });
+        await fastifyTestInstance.prisma.examModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            approved: null
+          }
+        });
+
+        const res = await superGet(`/exam-environment/exam/attempts`).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        const envExamAttempt = {
+          result: null,
+          startTimeInMS: attempt.startTimeInMS,
+          questionSets: attempt.questionSets
+        };
+
+        expect(res.body).toEqual([envExamAttempt]);
+        expect(res.status).toBe(200);
+      });
+
+      it('should return the attempts without results, if they have not been moderated', async () => {
+        const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
+          data: { ...mock.examAttempt, userId: defaultUserId }
+        });
+
+        const res = await superGet(`/exam-environment/exam/attempts`).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toEqual([
+          {
+            ...attempt,
+            result: null
+          }
+        ]);
+        expect(res.status).toBe(200);
+      });
+
+      it('should return the attempts with results, if they have been moderated', async () => {
+        const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
+          data: { ...mock.examAttempt, userId: defaultUserId }
+        });
+
+        await fastifyTestInstance.prisma.examModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            approved: true
+          }
+        });
+
+        const res = await superGet(`/exam-environment/exam/attempts`).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toEqual([
+          {
             ...attempt,
             result: {
               score: 50,
               passingPercent: 80
             }
           }
-        });
+        ]);
         expect(res.status).toBe(200);
       });
     });

@@ -1,6 +1,7 @@
 export {
   examEnvironmentPostExamAttempt,
-  examEnvironmentGetExamAttempts
+  examEnvironmentGetExamAttempts,
+  examEnvironmentGetExamAttempt
 } from './exam-attempt';
 export { examEnvironmentPostExamGeneratedExam } from './exam-generated-exam';
 export { examEnvironmentPostScreenshot } from './screenshot';
