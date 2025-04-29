@@ -54,17 +54,27 @@ const examEnvAttempt = Type.Object({
 });
 
 export const examEnvironmentGetExamAttempts = {
+  headers: Type.Object({
+    'exam-environment-authorization-token': Type.String()
+  }),
+  response: {
+    200: Type.Array(examEnvAttempt),
+    400: STANDARD_ERROR,
+    403: STANDARD_ERROR,
+    404: STANDARD_ERROR,
+    500: STANDARD_ERROR
+  }
+};
+
+export const examEnvironmentGetExamAttempt = {
   params: Type.Object({
-    attemptId: Type.Optional(Type.String({ format: 'objectid' }))
+    attemptId: Type.String({ format: 'objectid' })
   }),
   headers: Type.Object({
     'exam-environment-authorization-token': Type.String()
   }),
   response: {
-    200: Type.Union([
-      Type.Object({ envExamAttempt: examEnvAttempt }),
-      Type.Array(examEnvAttempt)
-    ]),
+    200: Type.Object(examEnvAttempt),
     400: STANDARD_ERROR,
     403: STANDARD_ERROR,
     404: STANDARD_ERROR,

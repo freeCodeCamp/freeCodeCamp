@@ -47,11 +47,18 @@ export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
       postExamAttemptHandler
     );
     fastify.get(
-      '/exam-environment/exam/attempts/:attemptId',
+      '/exam-environment/exam/attempts',
       {
         schema: schemas.examEnvironmentGetExamAttempts
       },
       getExamAttemptsHandler
+    );
+    fastify.get(
+      '/exam-environment/exam/attempt/:attemptId',
+      {
+        schema: schemas.examEnvironmentGetExamAttempt
+      },
+      getExamAttemptHandler
     );
 
     done();
@@ -881,7 +888,7 @@ async function getExams(
 }
 
 /**
- * Gets exam attempts filtering by attempt id.
+ * Gets all exam attempts owned by authz user.
  *
  * If an attempt is completed, the result is included.
  */
@@ -894,55 +901,6 @@ async function getExamAttemptsHandler(
   logger.info({ user: req.user });
 
   const user = req.user!;
-  const { attemptId } = req.params;
-
-  // If attempt id is given, only return that attempt
-  if (attemptId) {
-    const maybeAttempt = await mapErr(
-      this.prisma.envExamAttempt.findUnique({
-        where: {
-          id: attemptId,
-          userId: user.id
-        }
-      })
-    );
-
-    if (maybeAttempt.hasError) {
-      logger.error(maybeAttempt.error);
-      this.Sentry.captureException(maybeAttempt.error);
-      void reply.code(500);
-      return reply.send(
-        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempt.error))
-      );
-    }
-
-    const attempt = maybeAttempt.data;
-
-    if (!attempt) {
-      logger.warn({ attemptId }, 'No exam attempt found.');
-      void reply.code(404);
-      return reply.send(
-        ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
-          'No exam attempt found.'
-        )
-      );
-    }
-
-    const { error, envExamAttempt } = await constructEnvExamAttempt(
-      this,
-      attempt,
-      logger
-    );
-
-    if (error) {
-      void reply.code(error.code);
-      return reply.send(error.data);
-    }
-
-    return reply.send({
-      envExamAttempt
-    });
-  }
 
   // Send all relevant exam attempts
   const envExamAttempts = [];
@@ -987,4 +945,63 @@ async function getExamAttemptsHandler(
   }
 
   return reply.send(envExamAttempts);
+}
+
+/**
+ * Gets the requested exam attempt by id owned by authz user.
+ *
+ * If the attempt is completed, the result is included.
+ */
+async function getExamAttemptHandler(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.examEnvironmentGetExamAttempt>,
+  reply: FastifyReply
+) {
+  const logger = this.log.child({ req });
+  logger.info({ user: req.user });
+
+  const user = req.user!;
+  const { attemptId } = req.params;
+
+  // If attempt id is given, only return that attempt
+  const maybeAttempt = await mapErr(
+    this.prisma.envExamAttempt.findUnique({
+      where: {
+        id: attemptId,
+        userId: user.id
+      }
+    })
+  );
+
+  if (maybeAttempt.hasError) {
+    logger.error(maybeAttempt.error);
+    this.Sentry.captureException(maybeAttempt.error);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempt.error))
+    );
+  }
+
+  const attempt = maybeAttempt.data;
+
+  if (!attempt) {
+    logger.warn({ attemptId }, 'No exam attempt found.');
+    void reply.code(404);
+    return reply.send(
+      ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT('No exam attempt found.')
+    );
+  }
+
+  const { error, envExamAttempt } = await constructEnvExamAttempt(
+    this,
+    attempt,
+    logger
+  );
+
+  if (error) {
+    void reply.code(error.code);
+    return reply.send(error.data);
+  }
+
+  return reply.send(envExamAttempt);
 }
