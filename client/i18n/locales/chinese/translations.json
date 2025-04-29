@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "freeCodeCamp 校友感言：",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Shawn Wang</strong> 新加坡",
         "occupation": "<strong>亚马逊</strong>软件工程师",
         "testimony": "\"转行挺困难的。我在学习了 freeCodeCamp 的数百个小时的免费课程之后，才对自己转行成为开发者有了信心。在一年内，我成为了一名年薪 6 位数的软件工程师。<strong>freeCodeCamp 改变了我的生活。</strong>\""
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Sarah Chima</strong> 尼日利亚",
         "occupation": "<strong>ChatDesk</strong> 软件工程师",
         "testimony": "\"<strong>通过在 freeCodeCamp 学习，我转行成为一名软件工程师。</strong>它的精心设计的课程帮助我从一个完全的新手成长为非常自信的开发者。正是因为 freeCodeCamp 的学习资源和社区的帮助，我在一家很棒的公司获得了第一份开发工作。\""
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Emma Bostian</strong> 瑞典",
         "occupation": "<strong>Spotify</strong> 软件工程师",
         "testimony": "\"我一直努力学习 JavaScript，尝试了许多课程，最后是 freeCodeCamp 的课程吸引了我。在 freeCodeCamp 学习 JavaScript、数据结构和算法，<strong>我不仅掌握了技能，</strong>还变得更自信，所以才能获得理想中的工作，成为 Spotify 的一名软件工程师。\""
@@ -544,7 +547,7 @@
       "unanswered-questions": "以下问题尚未回答：{{ unansweredQuestions }}。你必须回答所有问题。",
       "have-n-correct-questions": "你答对了 {{ total }} 个问题中的 {{ correctAnswerCount }} 个。",
       "finish-modal-header": "完成测验",
-      "finish-modal-body": "你确定要完成测验吗？完成后将无法修改任何答案。",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "是的，我已经完成了",
       "finish-modal-no": "不，我想继续测验",
       "exit-modal-header": "退出测验",
@@ -902,6 +905,7 @@
     "unlink-success": "你已成功取消 {{website}} 链接",
     "provide-username": "检查你是否提供用户名和报告",
     "report-sent": "已通过 {{email}} 向团队发送副本报告",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "你尝试查看的认证不存在",
     "create-token-err": "创建用户令牌时出错",
     "delete-token-err": "删除用户令牌时出错",

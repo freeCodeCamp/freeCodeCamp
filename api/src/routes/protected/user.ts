@@ -19,7 +19,7 @@ import {
   normalizeTwitter,
   removeNulls
 } from '../../utils/normalize';
-import type { UpdateReqType } from '../../utils';
+import { mapErr, type UpdateReqType } from '../../utils';
 import {
   getCalendar,
   getPoints,
@@ -176,21 +176,45 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       });
       const { username, reportDescription: report } = req.body;
 
-      if (!username || !report) {
-        logger.warn('Missing username or reportDescription');
-        void reply.code(400);
+      // TODO: `findUnique` once db migration forces unique usernames
+      const maybeReportedUsers = await mapErr(
+        fastify.prisma.user.findMany({
+          where: { username }
+        })
+      );
+
+      if (maybeReportedUsers.hasError) {
+        logger.error(
+          { error: maybeReportedUsers.error, username },
+          'Error finding reported user.'
+        );
+        fastify.Sentry.captureException(maybeReportedUsers.error);
+        void reply.code(500);
         return {
           type: 'danger',
-          message: 'flash.provide-username'
+          message: 'flash.generic-error'
         } as const;
       }
+
+      const reportedUsers = maybeReportedUsers.data;
+
+      if (reportedUsers.length !== 1) {
+        logger.warn({ username }, 'Reported user not found');
+        void reply.code(404);
+        return {
+          type: 'danger',
+          message: 'flash.report-error'
+        } as const;
+      }
+
+      const reportedUser = reportedUsers[0]!;
 
       await fastify.sendEmail({
         from: 'team@freecodecamp.org',
         to: 'support@freecodecamp.org',
         cc: user.email,
-        subject: `Abuse Report : Reporting ${username}'s profile.`,
-        text: generateReportEmail(user, username, report)
+        subject: `Abuse Report : Reporting ${reportedUser.username}'s profile.`,
+        text: generateReportEmail(user, reportedUser, report)
       });
 
       return {
