@@ -381,7 +381,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       }
     },
-    async req => {
+    async (req, reply) => {
       const logger = fastify.log.child({ req });
       logger.info(`User ${req.user?.id} submitted a daily coding challenge`);
 
@@ -411,12 +411,13 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         if (languageAlreadyCompleted) {
           // alreadyCompleted && languageAlreadyCompleted, no need to change anything in the database
-          return {
+          void reply.send({
             alreadyCompleted,
             points,
             completedDate,
             completedDailyCodingChallenges
-          };
+          });
+          return;
         } else {
           // alreadyCompleted && !languageAlreadyCompleted, add the language to the record
           const { completedDailyCodingChallenges } =
@@ -438,13 +439,13 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
                 }
               }
             });
-
-          return {
+          void reply.send({
             alreadyCompleted,
             points,
             completedDate,
             completedDailyCodingChallenges
-          };
+          });
+          return;
         }
       } else {
         // !alreadyCompleted, add new record for completed challenge
@@ -472,13 +473,13 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             progressTimestamps: newProgressTimestamps
           }
         });
-
-        return {
+        void reply.send({
           alreadyCompleted,
           points: points + 1,
           completedDate: newCompletedDate,
           completedDailyCodingChallenges: newCompletedChallenges
-        };
+        });
+        return;
       }
     }
   );
