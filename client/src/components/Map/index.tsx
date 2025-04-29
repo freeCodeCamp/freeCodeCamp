@@ -5,6 +5,7 @@ import { Spacer } from '@freecodecamp/ui';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 import { graphql, useStaticQuery } from 'gatsby';
+import { useFeature } from '@growthbook/growthbook-react';
 
 import {
   type SuperBlocks,
@@ -16,6 +17,7 @@ import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink } from '../helpers';
 import { showUpcomingChanges } from '../../../config/env.json';
+import DailyCodingChallengeWidget from '../daily-coding-challenge/widget';
 
 import './map.css';
 
@@ -179,6 +181,8 @@ function Map({
       : false;
   };
 
+  const showDailyCodingChallenges = useFeature('daily-coding-challenges').on;
+
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
       {getStageOrder({
@@ -190,24 +194,36 @@ function Map({
         }
 
         return (
-          <Fragment key={stage}>
-            <h2 className={forLanding ? 'big-heading' : ''}>
-              {t(superBlockHeadings[stage])}
-            </h2>
-            <ul key={stage}>
-              {superblocks.map((superblock, i) => (
-                <MapLi
-                  key={superblock}
-                  superBlock={superblock}
-                  landing={forLanding}
-                  index={i}
-                  claimed={isClaimed(superblock)}
-                  completed={allSuperblockChallengesCompleted(superblock)}
-                />
-              ))}
-            </ul>
-            <Spacer size='m' />
-          </Fragment>
+          <>
+            {
+              /*Show the daily coding challenge before the "extra" curriculum */
+              showDailyCodingChallenges && stage === SuperBlockStage.Extra && (
+                <>
+                  <DailyCodingChallengeWidget forLanding={forLanding} />
+                  <Spacer size='m' />
+                </>
+              )
+            }
+
+            <Fragment key={stage}>
+              <h2 className={forLanding ? 'big-heading' : ''}>
+                {t(superBlockHeadings[stage])}
+              </h2>
+              <ul key={stage}>
+                {superblocks.map((superblock, i) => (
+                  <MapLi
+                    key={superblock}
+                    superBlock={superblock}
+                    landing={forLanding}
+                    index={i}
+                    claimed={isClaimed(superblock)}
+                    completed={allSuperblockChallengesCompleted(superblock)}
+                  />
+                ))}
+              </ul>
+              <Spacer size='m' />
+            </Fragment>
+          </>
         );
       })}
     </div>

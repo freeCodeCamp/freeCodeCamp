@@ -110,7 +110,38 @@
     "closed-caption": "Closed caption",
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
-    "share-on-threads": "Share on Threads"
+    "share-on-threads": "Share on Threads",
+    "start": "Start",
+    "go-to-today": "Go to Today's Challenge",
+    "go-to-today-long": "Go to Today's Coding Challenge",
+    "go-to-archive": "Go to Archive",
+    "go-to-archive-long": "Go to Daily Coding Challenge Archive"
+  },
+  "daily-coding-challenges": {
+    "title": "Daily Coding Challenges",
+    "map-title": "Try the coding challenge of the day:",
+    "not-found": "Daily Coding Challenge Not Found.",
+    "release-note": "New challenges are released at midnight US Central time (UTC-06:00)"
+  },
+  "weekdays": {
+    "short": {
+      "sunday": "S",
+      "monday": "M",
+      "tuesday": "T",
+      "wednesday": "W",
+      "thursday": "T",
+      "friday": "F",
+      "saturday": "S"
+    },
+    "long": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    }
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -825,6 +856,8 @@
     "github": "Link to {{username}}'s GitHub",
     "website": "Link to {{username}}'s website",
     "twitter": "Link to {{username}}'s Twitter",
+    "next-month": "Go to next month",
+    "previous-month": "Go to previous month",
     "first-page": "Go to first page",
     "previous-page": "Go to previous page",
     "next-page": "Go to next page",
@@ -849,7 +882,8 @@
     "opens-new-window": "Opens in new window",
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
-    "edit-my-profile": "Edit my profile"
+    "edit-my-profile": "Edit my profile",
+    "not-available": "Not available"
   },
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",

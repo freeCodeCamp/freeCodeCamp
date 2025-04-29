@@ -20,6 +20,7 @@ import type {
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
+  DailyCodingChallengeLanguages,
   ResizeProps,
   SavedChallenge,
   SavedChallengeFiles,
@@ -77,7 +78,7 @@ import '../components/test-frame.css';
 const mapStateToProps = (state: unknown) => ({
   challengeFiles: challengeFilesSelector(state) as ChallengeFiles,
   output: consoleOutputSelector(state) as string[],
-  isChallengeCompleted: isChallengeCompletedSelector(state) as boolean,
+  isChallengeCompleted: isChallengeCompletedSelector(state),
   savedChallenges: savedChallengesSelector(state) as SavedChallenge[]
 });
 
@@ -113,11 +114,16 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   initHooks: (hooks?: { beforeAll: string }) => void;
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
+  isDailyCodingChallenge?: boolean;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
   output: string[];
   pageContext: {
     challengeMeta: ChallengeMeta;
-    projectPreview: {
-      challengeData: ChallengeData;
+    projectPreview?: {
+      challengeData?: ChallengeData;
     };
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
@@ -173,7 +179,8 @@ const StepPreview = ({
 }) => {
   return challengeType === challengeTypes.python ||
     challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeType === challengeTypes.pyLab ? (
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy ? (
     <XtermTerminal dimensions={dimensions} xtermFitRef={xtermFitRef} />
   ) : (
     <Preview disableIframe={disableIframe} previewMounted={previewMounted} />
@@ -200,21 +207,21 @@ function ShowClassic({
         hooks,
         fields: { tests, blockName },
         challengeType,
-        hasEditableBoundaries,
+        hasEditableBoundaries = undefined,
         superBlock,
         helpCategory,
-        forumTopicId,
-        usesMultifileEditor,
-        notes,
-        videoUrl,
-        translationPending
+        forumTopicId = undefined,
+        usesMultifileEditor = undefined,
+        notes = undefined,
+        videoUrl = undefined,
+        translationPending = undefined
       }
     }
   },
   pageContext: {
     challengeMeta,
     challengeMeta: { isFirstStep, nextChallengePath },
-    projectPreview: { challengeData }
+    projectPreview: { challengeData = undefined } = { challengeData: undefined }
   },
   createFiles,
   cancelTests,
@@ -223,6 +230,9 @@ function ShowClassic({
   initTests,
   initHooks,
   initVisibleEditors,
+  dailyCodingChallengeLanguage,
+  isDailyCodingChallenge = false,
+  setDailyCodingChallengeLanguage,
   updateChallengeMeta,
   openModal,
   setIsAdvancing,
@@ -351,7 +361,7 @@ function ShowClassic({
       window.removeEventListener('resize', setHtmlHeight);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dailyCodingChallengeLanguage]);
 
   const initializeComponent = (title: string): void => {
     initConsole('');
@@ -502,6 +512,9 @@ function ShowClassic({
               toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
               hasDemo: demoType === 'onClick'
             })}
+            isDailyCodingChallenge={isDailyCodingChallenge}
+            dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+            setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
             isFirstStep={isFirstStep}
             layoutState={layout}
             notes={notes}
