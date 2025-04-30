@@ -122,7 +122,7 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
       {showPortfolio ? (
         <PortfolioProjects portfolioProjects={portfolio} />
       ) : null}
-      {showCerts ? <Certifications username={username} /> : null}
+      {showCerts ? <Certifications user={user} /> : null}
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />
       ) : null}

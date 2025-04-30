@@ -12,7 +12,6 @@ export type FlashMessageArg = {
 export interface State {
   [FlashApp]: FlashState;
   [MainApp]: {
-    appUsername: string;
     recentlyClaimedBlock: null | string;
     showMultipleProgressModals: boolean;
     currentChallengId: string;

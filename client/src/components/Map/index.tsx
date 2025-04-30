@@ -20,23 +20,22 @@ import { showUpcomingChanges } from '../../../config/env.json';
 import './map.css';
 
 import {
-  isSignedInSelector,
-  currentCertsSelector,
-  completedChallengesIdsSelector
+  completedChallengesIdsSelector,
+  userSelector
 } from '../../redux/selectors';
 
 import { RibbonIcon } from '../../assets/icons/completion-ribbon';
 
-import { CurrentCert, ClaimedCertifications } from '../../redux/prop-types';
+import type { ClaimedCertifications, User } from '../../redux/prop-types';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
 } from '../../../../shared/config/certification-settings';
+import { getCertifications } from '../profile/components/utils/certification';
 
 interface MapProps {
   forLanding?: boolean;
-  isSignedIn: boolean;
-  currentCerts: CurrentCert[];
+  user: User | null;
   claimedCertifications?: ClaimedCertifications;
   completedChallengeIds: string[];
 }
@@ -70,12 +69,10 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
 };
 
 const mapStateToProps = createSelector(
-  isSignedInSelector,
-  currentCertsSelector,
+  userSelector,
   completedChallengesIdsSelector,
-  (isSignedIn: boolean, currentCerts, completedChallengeIds: string[]) => ({
-    isSignedIn,
-    currentCerts,
+  (user: User | null, completedChallengeIds: string[]) => ({
+    user,
     completedChallengeIds
   })
 );
@@ -135,8 +132,7 @@ function MapLi({
 
 function Map({
   forLanding = false,
-  isSignedIn,
-  currentCerts,
+  user,
   completedChallengeIds
 }: MapProps): React.ReactElement {
   const { t } = useTranslation();
@@ -168,9 +164,9 @@ function Map({
   };
 
   const isClaimed = (stage: SuperBlocks) => {
-    return isSignedIn
+    return user
       ? Boolean(
-          currentCerts?.find(
+          getCertifications(user).currentCerts?.find(
             (cert: { certSlug: string }) =>
               (certSlugTypeMap as { [key: string]: string })[cert.certSlug] ===
               (superBlockCertTypeMap as { [key: string]: string })[stage]

@@ -21,10 +21,11 @@ import {
   showCertFetchStateSelector,
   userFetchStateSelector,
   isDonatingSelector,
-  userByNameSelector,
-  usernameSelector
+  usernameSelector,
+  createUserByNameSelector,
+  isSignedInSelector
 } from '../redux/selectors';
-import { UserFetchState, User } from '../redux/prop-types';
+import type { UserFetchState, User } from '../redux/prop-types';
 import { liveCerts } from '../../config/cert-and-project-map';
 import {
   certificateMissingErrorMessage,
@@ -67,6 +68,7 @@ interface ShowCertificationProps {
   };
   isDonating: boolean;
   isValidCert: boolean;
+  isSignedIn: boolean;
   location: {
     pathname: string;
   };
@@ -78,41 +80,48 @@ interface ShowCertificationProps {
     certSlug: string;
   }) => void;
   signedInUserName: string;
-  user: User;
+  user: User | null;
   userFetchState: UserFetchState;
   userFullName: string;
   username: string;
 }
 
-const requestedUserSelector = (state: unknown, { username = '' }) =>
-  userByNameSelector(username.toLowerCase())(state) as User;
-
 const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
   const isValidCert = liveCerts.some(
     ({ certSlug }) => String(certSlug) === props.certSlug
   );
+
+  const { username } = props;
+
+  const userByNameSelector = createUserByNameSelector(username) as (
+    state: unknown
+  ) => User | null;
+
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
     usernameSelector,
+    userByNameSelector,
     userFetchStateSelector,
     isDonatingSelector,
-    requestedUserSelector,
+    isSignedInSelector,
     (
       cert: Cert,
       fetchState: ShowCertificationProps['fetchState'],
       signedInUserName: string,
+      user: User | null,
       userFetchState: UserFetchState,
       isDonating: boolean,
-      user: User
+      isSignedIn: boolean
     ) => ({
       cert,
       fetchState,
       isValidCert,
       signedInUserName,
+      user,
       userFetchState,
       isDonating,
-      user
+      isSignedIn
     })
   );
 };
@@ -293,24 +302,19 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       userFetchState: { complete: userComplete },
       signedInUserName,
       isDonating,
+      isSignedIn,
       cert: { username = '' },
       fetchProfileForUser,
       user
     } = props;
 
-    if (!signedInUserName || signedInUserName !== username) {
-      if (isEmpty(user) && username) {
-        fetchProfileForUser(username);
-      }
+    const isSessionUser = isSignedIn && signedInUserName === username;
+
+    if (isEmpty(user) && username) {
+      fetchProfileForUser(username);
     }
 
-    if (
-      !isDonationDisplayed &&
-      userComplete &&
-      signedInUserName &&
-      signedInUserName === username &&
-      !isDonating
-    ) {
+    if (!isDonationDisplayed && userComplete && isSessionUser && !isDonating) {
       setIsDonationDisplayed(true);
       callGA({
         event: 'donation_view',
@@ -341,7 +345,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     isValidCert,
     createFlashMessage,
     signedInUserName,
-    location: { pathname }
+    location: { pathname },
+    user
   } = props;
   const { pending, complete, errored } = fetchState;
 
@@ -359,7 +364,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     return <RedirectHome />;
   }
 
-  if (pending) {
+  if (pending || !user) {
     return <Loader fullScreen={true} />;
   }
 
@@ -375,8 +380,6 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     certSlug,
     completionTime
   } = cert;
-
-  const { user } = props;
 
   const displayName = userFullName ?? username;
 
