@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "Ecco cosa dicono i nostri allievi su freeCodeCamp:",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Shawn Wang</strong>, Singapore",
         "occupation": "Software Engineer presso <strong>Amazon</strong>",
         "testimony": "\"È spaventoso cambiare lavoro. Ho però guadagnato la fiducia in me stesso che avrei potuto programmare seguendo e lavorando sulle centinaia di ore di lezioni gratuite su freeCodeCamp. Nel giro di un anno ho avuto un lavoro a sei cifre come Ingegnere del Software. <strong>freeCodeCamp ha cambiato la mia vita.</strong>\""
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Sarah Chima</strong>, Nigeria",
         "occupation": "Software Engineer presso <strong>ChatDesk</strong>",
         "testimony": "\"<strong>freeCodeCamp è stata la porta di accesso per la mia carriera</strong> come sviluppatore di software. Il curriculum ben strutturato ha portato la mia conoscenza della programmazione da un livello di principiante totale ad un livello molto avanzato. E 'stato tutto quello che mi serviva per ottenere il mio primo lavoro di sviluppatore in un'Azienda sorprendente.\""
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Emma Bostian</strong>, Svezia",
         "occupation": "Software Engineer presso <strong>Spotify</strong>",
         "testimony": "\"Ho sempre lottato con l'apprendimento di JavaScript. Ho seguito molti corsi ma il corso di freeCodeCamp è stato quello che mi ha sbloccato. Studiare JavaScript così come strutture di dati e algoritmi su <strong>freeCodeCamp mi ha dato le competenze</strong> e la fiducia di cui avevo bisogno per ottenere il mio lavoro da sogno come Ingegnere del Software presso Spotify.\""
@@ -456,9 +459,6 @@
     "sign-in-see-benefits": "Sign in to see your supporter benefits",
     "card-has-been-updated": "Your card has been updated successfully.",
     "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "Certificazione {{title}}"
-    },
     "editor-tabs": {
       "code": "Codice",
       "tests": "Test",
@@ -547,7 +547,7 @@
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
       "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct.",
       "finish-modal-header": "Finish Quiz",
-      "finish-modal-body": "Are you sure you want to finish the quiz? You will not be able to change any answers.",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "Yes, I am finished",
       "finish-modal-no": "No, I would like to continue the quiz",
       "exit-modal-header": "Exit Quiz",
@@ -905,6 +905,7 @@
     "unlink-success": "Hai scollegato correttamente il tuo {{website}}",
     "provide-username": "Spunta la casella se hai fornito un nome utente e un report",
     "report-sent": "Un report è stato inviato al team con {{email}} in copia",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "La certificazione che hai cercato di visualizzare non esiste",
     "create-token-err": "Un errore è occorso durante la creazione del tuo token",
     "delete-token-err": "Un errore è occorso durante la cancellazione del tuo token",
