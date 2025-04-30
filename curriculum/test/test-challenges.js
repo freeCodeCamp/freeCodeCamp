@@ -677,9 +677,13 @@ ${testString}
             timeout
           )
         ),
-        await page.evaluate(async testString => {
-          return await window.FCCSandbox.testRunner.runTest(testString);
-        }, testString)
+        await page.evaluate(
+          async (testString, type) => {
+            return await window.FCCSandbox.getRunner(type).runTest(testString);
+          },
+          testString,
+          config.type
+        )
       ])
   };
 }
