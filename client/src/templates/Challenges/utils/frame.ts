@@ -182,11 +182,12 @@ function getContentWindow(document: Document, id: string) {
 export const runTestInTestFrame = async function (
   document: Document,
   test: string,
-  timeout: number
+  timeout: number,
+  type: 'frame' | 'worker' | 'python'
 ): Promise<TestResult | undefined> {
   console.log('runTestInTestFrame');
   const contentDocument = getContentDocument(document, testId);
-  const runner = getContentWindow(document, testId)?.FCCSandbox.testRunner;
+  const runner = getContentWindow(document, testId)?.FCCSandbox.getRunner(type);
   console.log('runner', runner);
   if (contentDocument) {
     return await Promise.race([
@@ -333,7 +334,8 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
       const type =
         frameContext.challengeType === challengeTypes.html ? 'frame' : 'worker';
 
-      const source = type === 'frame' ? createContent(testId, { build, sources}) : build;
+      const source =
+        type === 'frame' ? createContent(testId, { build, sources }) : build;
 
       await frameContext.window?.FCCSandbox.createTestRunner({
         type,

@@ -148,7 +148,7 @@ async function getDOMTestRunner(
     createTestFramer(document, proxyLogger, resolve)(buildData)
   );
   return (testString: string, testTimeout: number) =>
-    runTestInTestFrame(document, testString, testTimeout);
+    runTestInTestFrame(document, testString, testTimeout, "frame");
 }
 
 type BuildResult = {
