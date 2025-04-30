@@ -714,7 +714,6 @@ async function initializeTestRunner({
   hooks,
   loadEnzyme
 }) {
-  await page.reload();
   const source =
     type === 'frame' ? createContent(testId, { build, sources }) : build;
 
