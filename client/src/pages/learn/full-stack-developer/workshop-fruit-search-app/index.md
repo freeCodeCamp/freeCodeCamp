@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Introduction to the Fruit Search App
 
-This is a test for the new project-based curriculum.
+In this workshop, you will continute to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically.

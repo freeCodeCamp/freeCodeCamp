@@ -11,14 +11,18 @@ After the form, add a `div` element with an `id` of `results` that will display 
 
 # --hints--
 
-You should have a `div` element with the `id` `results`.
+You should have a `div` element with the `id` `results` after the form.
 
 ```js
 const searchContainer = document.getElementById("search-container");
 assert.exists(searchContainer);
 
-const resultsDiv = searchContainer.querySelector("#results");
-assert.exists(resultsDiv);
+const children = [...searchContainer.children];
+
+assert.strictEqual(children.length, 2);
+assert.strictEqual(children[0].tagName, "FORM");
+
+const resultsDiv = children[1];
 assert.strictEqual(resultsDiv.tagName, "DIV");
 assert.strictEqual(resultsDiv.getAttribute("id"), "results");
 ```
