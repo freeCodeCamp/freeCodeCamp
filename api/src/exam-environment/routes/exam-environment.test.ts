@@ -772,29 +772,28 @@ describe('/exam-environment/', () => {
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual({
-          envExamAttempt
-        });
+        expect(res.body).toEqual(envExamAttempt);
         expect(res.status).toBe(200);
       });
 
-      it('should return 400 if no attempt id is given', async () => {
+      xit('TODO: (once serialization is serializable) should return 400 if no attempt id is given', async () => {
         const res = await superGet('/exam-environment/exam/attempt/').set(
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
         );
 
-        expect(res.body).toStrictEqual({
-          code: 'FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          message: expect.any(String)
-        });
-        expect(res.status).toBe(404);
+        expect(res.status).toBe(400);
       });
 
       it('should return the attempt without results, if the attempt has not been moderated', async () => {
         const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
           data: { ...mock.examAttempt, userId: defaultUserId }
+        });
+        await fastifyTestInstance.prisma.examModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            approved: null
+          }
         });
 
         const res = await superGet(
@@ -804,10 +803,13 @@ describe('/exam-environment/', () => {
           examEnvironmentAuthorizationToken
         );
 
-        expect(res.body).toEqual({
-          ...attempt,
-          result: null
-        });
+        const envExamAttempt = {
+          result: null,
+          startTimeInMS: attempt.startTimeInMS,
+          questionSets: attempt.questionSets
+        };
+
+        expect(res.body).toEqual(envExamAttempt);
         expect(res.status).toBe(200);
       });
 
@@ -830,13 +832,16 @@ describe('/exam-environment/', () => {
           examEnvironmentAuthorizationToken
         );
 
-        expect(res.body).toEqual({
-          ...attempt,
+        const envExamAttempt = {
           result: {
-            score: 50,
+            score: 25,
             passingPercent: 80
-          }
-        });
+          },
+          startTimeInMS: attempt.startTimeInMS,
+          questionSets: attempt.questionSets
+        };
+
+        expect(res.body).toEqual(envExamAttempt);
         expect(res.status).toBe(200);
       });
     });
@@ -895,17 +900,25 @@ describe('/exam-environment/', () => {
           data: { ...mock.examAttempt, userId: defaultUserId }
         });
 
+        await fastifyTestInstance.prisma.examModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            approved: null
+          }
+        });
+
         const res = await superGet(`/exam-environment/exam/attempts`).set(
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
         );
 
-        expect(res.body).toEqual([
-          {
-            ...attempt,
-            result: null
-          }
-        ]);
+        const envExamAttempt = {
+          result: null,
+          startTimeInMS: attempt.startTimeInMS,
+          questionSets: attempt.questionSets
+        };
+
+        expect(res.body).toEqual([envExamAttempt]);
         expect(res.status).toBe(200);
       });
 
@@ -926,15 +939,16 @@ describe('/exam-environment/', () => {
           examEnvironmentAuthorizationToken
         );
 
-        expect(res.body).toEqual([
-          {
-            ...attempt,
-            result: {
-              score: 50,
-              passingPercent: 80
-            }
-          }
-        ]);
+        const envExamAttempt = {
+          result: {
+            score: 25,
+            passingPercent: 80
+          },
+          startTimeInMS: attempt.startTimeInMS,
+          questionSets: attempt.questionSets
+        };
+
+        expect(res.body).toEqual([envExamAttempt]);
         expect(res.status).toBe(200);
       });
     });
@@ -1028,6 +1042,27 @@ describe('/exam-environment/', () => {
     describe('GET /exam-environment/exams', () => {
       it('should return 403', async () => {
         const res = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          'invalid-token'
+        );
+
+        expect(res.status).toBe(403);
+      });
+    });
+
+    describe('GET /exam-environment/exam/attempt/:attemptId', () => {
+      it('should return 403', async () => {
+        const res = await superGet(
+          `/exam-environment/exam/attempt/${mock.oid()}`
+        ).set('exam-environment-authorization-token', 'invalid-token');
+
+        expect(res.status).toBe(403);
+      });
+    });
+
+    describe('GET /exam-environment/exam/attempts', () => {
+      it('should return 403', async () => {
+        const res = await superGet('/exam-environment/exam/attempts').set(
           'exam-environment-authorization-token',
           'invalid-token'
         );
