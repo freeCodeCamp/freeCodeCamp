@@ -236,6 +236,9 @@ const ShowQuiz = ({
     void navigate(exitPathname);
     closeExitQuizModal();
   };
+  const handleRepeatQuiz = () => {
+    window.location.reload();
+  };
 
   const onWindowClose = useCallback(
     (event: BeforeUnloadEvent) => {
@@ -337,24 +340,37 @@ const ShowQuiz = ({
                 {errorMessage}
               </div>
               <Spacer size='m' />
-              {!isPassed ? (
+              {hasSubmitted && validated ? (
+                correctAnswerCount >= 18 ? (
+                  <>
+                    <h3>Congratulations! You passed the quiz.</h3>
+                    <Button
+                      block
+                      variant='success'
+                      onClick={handleExitQuizModalBtnClick}
+                    >
+                      {t('buttons.exit-quiz')}
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <h3>Oops! You didn’t pass. Try again!</h3>
+                    <Button block variant='primary' onClick={handleRepeatQuiz}>
+                      Repeat the quiz
+                    </Button>
+                  </>
+                )
+              ) : (
                 <Button
-                  block={true}
+                  block
                   variant='primary'
                   onClick={handleFinishQuiz}
                   disabled={hasSubmitted}
                 >
                   {t('buttons.finish-quiz')}
                 </Button>
-              ) : (
-                <Button
-                  block={true}
-                  variant='primary'
-                  onClick={handleSubmitAndGo}
-                >
-                  {t('buttons.submit-and-go')}
-                </Button>
               )}
+
               <Spacer size='xxs' />
               <Button block={true} variant='primary' onClick={handleExitQuiz}>
                 {t('buttons.exit-quiz')}
