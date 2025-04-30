@@ -11,6 +11,11 @@
   text-align: center;
 }
 
+.sk-spinner
+{
+  color: var(--primary-color);
+}
+
 .challenge-test-suite code {
   white-space: pre-wrap;
   overflow-wrap: anywhere;

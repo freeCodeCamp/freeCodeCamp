@@ -34,7 +34,7 @@ function TestSuite({ tests }: TestSuiteProps): JSX.Element {
           ({ err, pass = false, text = '', running }, index) => {
             const isInitial = !pass && !err && !running;
             const statusIcon = running ? (
-              <Spinner name='line-scale-pulse-out' />
+              <Spinner name='line-scale-pulse-out' fadeIn='none' />
             ) : pass && !err ? (
               <GreenPass data-playwright-test-label='test-pass-icon' />
             ) : (
