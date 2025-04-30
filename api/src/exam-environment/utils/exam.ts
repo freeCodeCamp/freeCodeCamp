@@ -649,7 +649,7 @@ export function calculateScore(
           );
         })
         .every(correctAnswer => {
-          attemptQuestion.answers.includes(correctAnswer);
+          return attemptQuestion.answers.includes(correctAnswer);
         });
 
       correctQuestions += Number(isQuestionCorrect);
@@ -789,8 +789,7 @@ export async function constructEnvExamAttempt(
   const maybeMod = await mapErr(
     fastify.prisma.examModeration.findFirst({
       where: {
-        examAttemptId: attempt.id,
-        approved: null
+        examAttemptId: attempt.id
       }
     })
   );
