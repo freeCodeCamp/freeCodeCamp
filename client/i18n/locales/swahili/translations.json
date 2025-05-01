@@ -905,6 +905,7 @@
     "unlink-success": "Umefanikiwa kutenganisha {{website}} yako",
     "provide-username": "Angalia ikiwa umetoa jina la mtumiaji na ripoti",
     "report-sent": "Ripoti ilitumwa kwa timu ikiwa na nakala ya {{email}}",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "Cheti ulichojaribu kutazama hakipo",
     "create-token-err": "Hitilafu ilitokea wakati wa kuunda tokeni yako ya mtumiaji",
     "delete-token-err": "Hitilafu ilitokea wakati wa kufuta tokeni yako ya mtumiaji",
