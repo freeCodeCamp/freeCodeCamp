@@ -197,8 +197,8 @@ function* buildChallengeData(challengeData, options) {
 function* executeTests(testRunner, tests, testTimeout = 5000) {
   const testResults = [];
   for (let i = 0; i < tests.length; i++) {
-    const { text, testString, running } = tests[i];
-    const newTest = { text, testString, running };
+    const { text, testString } = tests[i];
+    const newTest = { text, testString, running: false };
     // only the last test outputs console.logs to avoid log duplication.
     const firstTest = i === 1;
     try {
@@ -208,7 +208,6 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         testTimeout,
         firstTest
       );
-      newTest.running = false;
       if (pass) {
         newTest.pass = true;
       } else {
