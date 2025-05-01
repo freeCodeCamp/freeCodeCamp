@@ -514,89 +514,89 @@ Delays the start of the animation
 
 #### --text--
 
-What does `animation-fill-mode: forwards` do?
+Which animation property specifies how the element should be styled before and after the animation?
 
 #### --distractors--
 
-Starts the animation halfway
+`animation-delay`
 
 ---
 
-Resets the element to its original state after the animation
+`animation-direction`
 
 ---
 
-Repeats the animation indefinitely
+`animation-iteration-count`
 
 #### --answer--
 
-Keeps the element at its end state after the animation
+`animation-fill-mode`
 
 ### --question--
 
 #### --text--
 
-Which value of `animation-direction` makes the animation play backward?
+Why should CSS animations be used in moderation?
 
 #### --distractors--
 
-normal
+They automatically improve browser compatibility
 
 ---
 
-alternate
+They increase the site’s SEO ranking
 
 ---
 
-backwards
+They optimize server response times
 
 #### --answer--
 
-reverse
+They can lead to poor performance and may be distracting or problematic for users with certain accessibility needs
 
 ### --question--
 
 #### --text--
 
-Which `animation-direction` value alternates between forward and backward each cycle?
+Which animation property determines whether the animation should play forwards, backwards, or alternate?
 
 #### --distractors--
 
-reverse
+animation-fill-mode
 
 ---
 
-normal
+animation-delay
 
 ---
 
-backwards
+animation-timing-function
 
 #### --answer--
 
-alternate
+animation-direction
 
 ### --question--
 
 #### --text--
 
-What is the default `animation-iteration-count` if you don’t specify one?
+What CSS media query detects if the user has requested minimal animations or motion effects?
 
 #### --distractors--
 
-infinite
+@media (reduce-motion: true)
 
 ---
 
-0
+@media (min-motion-preference: low)
 
 ---
 
-none
+@media (motion-preferences: reduced)
 
 #### --answer--
 
-1
+@media (prefers-reduced-motion: reduce)
 
 ### --question--
 
@@ -668,111 +668,111 @@ Inside the `reduced‑motion` media query, which declaration disables transition
 
 #### --text--
 
-What does `animation-play-state: paused` do?
+What does the `animation-play-state` property allow you to do?
 
 #### --distractors--
 
-Reverses the animation
+Set how many times the animation repeats
 
 ---
 
-Hides the element during animation
+Specify how long the animation takes to complete
 
 ---
 
-Restarts the animation
+Determine the direction in which the animation plays
 
 #### --answer--
 
-Pauses the animation
+Pause and resume the animation
 
 ### --question--
 
 #### --text--
 
-Which unit can you use for `animation-duration` besides `s`?
+As a general rule, what content should be avoided to reduce seizure risk?
 
 #### --distractors--
 
-`px`
+Any content that changes color
 
 ---
 
-`%`
+Any movement of elements
 
 ---
 
-`deg`
+Any use of the transform property
 
 #### --answer--
 
-`ms`
+Content that flashes more than three times per second
 
 ### --question--
 
 #### --text--
 
-How do you apply multiple animations to one element?
+Why is the `!important` declaration used in the CSS rules?
 
 #### --distractors--
 
-Use multiple `@keyframes` rules only
+To prevent other media queries from loading
 
 ---
 
-Nest animation properties
+To limit styles to the first child element
 
 ---
 
-Semicolon‑separate values in `animation-delay`
+To debug CSS more easily
 
 #### --answer--
 
-Comma‑separate values in `animation-name`
+To ensure these rules take precedence over other styles
 
 ### --question--
 
 #### --text--
 
-In `animation: slide 2s ease-in 1s infinite alternate paused;`, what does `alternate` specify?
+What does `animation-iteration-count: 1 !important;` ensure in CSS?
 
 #### --distractors--
 
-The timing function
+That animations are paused
 
 ---
 
-The fill mode
+That animations run infinitely
 
 ---
 
-The delay before starting
+That animations reverse direction each cycle
 
 #### --answer--
 
-That direction alternates each iteration
+That any looping animations only play once
 
 ### --question--
 
 #### --text--
 
-Which of these is a valid `animation-fill-mode` value?
+What type of animation content can trigger seizures in people with photosensitive epilepsy?
 
 #### --distractors--
 
-repeat
+Slow fading transitions
 
 ---
 
-loop
+Background-color changes
 
 ---
 
-cycle
+Single-direction transforms
 
 #### --answer--
 
-both
+Rapid flashing or strobing effects that flash more than three times per second
 
 ### --question--
 
@@ -822,23 +822,23 @@ The sequence of styles at different points in an animation
 
 #### --text--
 
-Which property is used for simple two‑state changes instead of a full `animation`?
+What is the goal of using the `prefers-reduced-motion` media query in animations?
 
 #### --distractors--
 
-`animation`
+To completely remove all motion from the website
 
 ---
 
-`transform`
+To force animations to run at double speed
 
 ---
 
-`@keyframes`
+To disable all CSS styles globally
 
 #### --answer--
 
-`transition`
+Use a low-motion approach that respects user settings for comfortable accessibility.
 
 ### --question--
 
@@ -888,23 +888,23 @@ Which property controls the pace of an `animation` over its duration?
 
 #### --text--
 
-What does `animation: none` do?
+What should developers consider when implementing animations to maintain accessibility?
 
 #### --distractors--
 
-Sets animation duration to default
+Using only JavaScript for all animations
 
 ---
 
-Resets animation direction to normal
+Adding as many animations as possible for engagement
 
 ---
 
-Pauses the animation
+Using only large, unexpected movements
 
 #### --answer--
 
-Disables all animations on the element
+Use purposeful animation, avoid sudden large motions, provide controls, and implement `prefers-reduced-motion`
 
 ### --question--
 
