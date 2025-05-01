@@ -9,11 +9,11 @@ dashedName: step-18
 
 For the truthy condition, if `prev` includes `item`, return a filtered array with `item` removed.
 
-Chain the `filter` method to `prev` and pass it an anonymous function that takes `i` as an argument. Inside the function, check that `i` is not strictly equal to `item`. This will return a new array with all items except `item`.
+Chain the `filter()` method to `prev` and pass it an anonymous function that takes `i` as an argument. Inside the function, check that `i` is not strictly equal to `item`. This will return a new array with all items except `item`.
 
 # --hints--
 
-You should chain the `filter` method to `prev` and pass it an anonymous function that takes `i` as an argument.
+You should chain the `filter()` method to `prev` and pass it an anonymous function that takes `i` as an argument.
 
 ```js
 const script = [...document.querySelectorAll("script")].find((s) => s.dataset.src ===  "index.jsx").innerText;
@@ -24,7 +24,7 @@ const shoppingListString = exports.ShoppingList.toString();
 assert.match(shoppingListString, /prev\.includes\s*\(\s*item\s*\)\s*\?\s*prev\.filter\s*\(function\s*\(\s*i\s*\)\s*{/);
 ```
 
-Inside the anonymous `filter` function, you should check that `i` is not strictly equal to `item`. Remember to return the result of that check.
+Inside the anonymous `filter()` function, you should check that `i` is not strictly equal to `item`. Remember to return the result of that check.
 
 ```js
 const script = [...document.querySelectorAll("script")].find((s) => s.dataset.src ===  "index.jsx").innerText;
