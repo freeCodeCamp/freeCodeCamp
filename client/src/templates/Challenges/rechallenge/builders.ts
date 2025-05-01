@@ -33,14 +33,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
     })
     .join('\n');
 
-  // The script has an id so that tests can look for it, if needed.
-  const testRunnerScript = testRunner
-    ? `<script type="text/javascript" id="fcc-test-runner" src='/js/test-runner/index.mjs'></script>`
-    : '';
-
-  return `<head>${head}</head>${
-    embedSource({ source: contents }) || ''
-  }${testRunnerScript}`;
+  return `<head>${head}</head>${embedSource({ source: contents }) || ''}`;
 }
 
 export function createPythonTerminal(pythonRunnerSrc: string): string {
