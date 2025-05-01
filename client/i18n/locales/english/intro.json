@@ -3584,7 +3584,7 @@
       "workshop-shopping-list-app": {
         "title": "Build a Shopping List App",
         "intro": [
-          "In this workshop, you'll use the <code>useMemo</code> and <code>useCallback</code> hooks in React to build a simple shopping list app. You'll learn more about state and the lifecycle of React components, and how to use memoization to reduce re-renders and make your apps more efficient."
+          "In this workshop, you'll use the <code>useMemo()</code> and <code>useCallback()</code> hooks in React to build a simple shopping list app. You'll learn more about state and the lifecycle of React components, and how to use memoization to reduce re-renders and make your apps more efficient."
         ]
       },
       "lab-currency-converter": {
