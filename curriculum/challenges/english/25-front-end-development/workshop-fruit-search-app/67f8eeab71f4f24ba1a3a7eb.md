@@ -1,8 +1,8 @@
 ---
 id: 67f8eeab71f4f24ba1a3a7eb
-title: Step 9
+title: Step 10
 challengeType: 0
-dashedName: step-9
+dashedName: step-10
 ---
 
 # --description--
@@ -107,9 +107,13 @@ export function FruitsSearch() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
 
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
     <div id="search-container">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="search-input">Search for fruits:</label>
         <input
           id="search-input"
