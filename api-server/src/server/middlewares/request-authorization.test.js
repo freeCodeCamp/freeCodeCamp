@@ -39,9 +39,7 @@ describe('request-authorization', () => {
     const authRE = /^\/auth\//;
     const confirmEmailRE = /^\/confirm-email$/;
     const newsShortLinksRE = /^\/n\/|^\/p\//;
-    const publicApiUserRE = /^\/api\/users\/get-public-profile$/;
     const publicUserRE = /^\/users\/get-public-profile$/;
-    const publicApiUsernameRE = /^\/api\/users\/exists$/;
     const publicUsernameRE = /^\/users\/exists$/;
     const resubscribeRE = /^\/resubscribe\//;
     const showCertRE = /^\/certificate\/showCert\//;
@@ -55,9 +53,7 @@ describe('request-authorization', () => {
       authRE,
       confirmEmailRE,
       newsShortLinksRE,
-      publicApiUserRE,
       publicUserRE,
-      publicApiUsernameRE,
       publicUsernameRE,
       resubscribeRE,
       showCertRE,

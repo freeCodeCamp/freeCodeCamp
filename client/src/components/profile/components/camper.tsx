@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 import type { User } from '../../../redux/prop-types';
 import { FullWidthRow } from '../../helpers';
 import './camper.css';
@@ -29,6 +30,7 @@ function Camper({
   return (
     <>
       <div className='bio-container'>
+        <Spacer size={'m'} />
         <Bio
           user={user}
           setIsEditing={setIsEditing}

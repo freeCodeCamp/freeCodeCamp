@@ -2,12 +2,6 @@ name: CD - Deploy API (Legacy) & Clients
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: [CI - Node.js]
-    types:
-      - completed
-    branches:
-      - prod-*
 
 jobs:
   setup-jobs:
@@ -22,20 +16,8 @@ jobs:
       - name: Setup
         id: setup
         run: |
-          if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
-            BRANCH="${{ github.event.workflow_run.head_branch }}"
-          else
-            BRANCH="${{ github.ref_name }}"
-          fi
-
-          if [[ "${{ github.event.workflow_run.conclusion }}" != "success" ]]; then
-            echo "Node.js test run failed. Check logs in its workflow run. Exiting."
-            exit 1
-          fi
-
-          echo "Node.js test run succeeded. Continuing..."
+          BRANCH="${{ github.ref_name }}"
           echo "Current branch: $BRANCH"
-
           case "$BRANCH" in
             "prod-current")
               echo "site_tld=org" >> $GITHUB_OUTPUT
@@ -80,11 +62,13 @@ jobs:
             UserKnownHostsFile=/dev/null
             StrictHostKeyChecking no" > ~/.ssh/config
           chmod 644 ~/.ssh/config
-
+          sleep 10
           for i in {1..3}; do
             TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-api-${i}
-            tailscale status | grep -q "$TS_MACHINE_NAME"
-            ssh $TS_USERNAME@$TS_MACHINE_NAME "uptime"
+            tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Machine not found"; exit 1; }
+            sleep 1
+            MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
+            ssh $TS_USERNAME@$MACHINE_IP "uptime"
           done
 
       - name: Deploy API
@@ -134,7 +118,8 @@ jobs:
               pm2 save
               echo -e '\nLOG:Finished deployment.'
             "
-            ssh $TS_USERNAME@$TS_MACHINE_NAME "$REMOTE_SCRIPT"
+            MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
+            ssh $TS_USERNAME@$MACHINE_IP "$REMOTE_SCRIPT"
           done
 
   client:
@@ -251,11 +236,13 @@ jobs:
             UserKnownHostsFile=/dev/null
             StrictHostKeyChecking no" > ~/.ssh/config
           chmod 644 ~/.ssh/config
-
+          sleep 10
           for i in {0..1}; do
             TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-${{ matrix.lang-name-short }}-${i}
-            tailscale status | grep -q "$TS_MACHINE_NAME"
-            ssh $TS_USERNAME@$TS_MACHINE_NAME "uptime"
+            tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Machine not found"; exit 1; }
+            sleep 1
+            MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
+            ssh $TS_USERNAME@$MACHINE_IP "uptime"
           done
 
       - name: Upload and Deploy
@@ -268,7 +255,8 @@ jobs:
             CLIENT_BINARIES=${{needs.setup-jobs.outputs.tgt_env_short}}-release-$CURRENT_DATE-${{ github.run_id }}
 
             echo -e "\nLOG:Uploading client archive to $TS_MACHINE_NAME..."
-            scp $CLIENT_SRC $TS_USERNAME@$TS_MACHINE_NAME:$CLIENT_DST
+            MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
+            scp $CLIENT_SRC $TS_USERNAME@$MACHINE_IP:$CLIENT_DST
 
             REMOTE_SCRIPT="
               set -e
@@ -318,5 +306,5 @@ jobs:
 
               echo -e '\nLOG:Finished deployment.'
             "
-            ssh $TS_USERNAME@$TS_MACHINE_NAME "$REMOTE_SCRIPT"
+            ssh $TS_USERNAME@$MACHINE_IP "$REMOTE_SCRIPT"
           done
