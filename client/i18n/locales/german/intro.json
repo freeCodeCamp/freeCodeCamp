@@ -3485,9 +3485,18 @@
           "In these lecture videos, you will learn about working with state and responding to events with React."
         ]
       },
-      "rmpy": {
-        "title": "268",
-        "intro": []
+      "workshop-toggle-text-app": {
+        "title": "Toggle Text App",
+        "intro": [
+          "In this workshop, you will continute to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
+        ]
+      },
+      "lab-color-picker": {
+        "title": "Build a Color Picker App",
+        "intro": [
+          "In this lab you'll build a Color Picker.",
+          "You'll practice using state and hooks to manage the properties of an element."
+        ]
       },
       "dbta": {
         "title": "269",
@@ -3530,9 +3539,12 @@
         "title": "276",
         "intro": []
       },
-      "clak": {
-        "title": "277",
-        "intro": []
+      "lab-event-rsvp": {
+        "title": "Build an Event RSVP",
+        "intro": [
+          "In this lab, you'll build an Event RSVP form using React.",
+          "You'll practice using the useState hook to manage form input and display user responses."
+        ]
       },
       "lecture-working-with-data-fetching-and-memoization-in-react": {
         "title": "Working with Data Fetching and Memoization in React",
@@ -3544,9 +3556,12 @@
         "title": "279",
         "intro": []
       },
-      "lrof": {
-        "title": "280",
-        "intro": []
+      "lab-currency-converter": {
+        "title": "Build a Currency Converter",
+        "intro": [
+          "For this lab, you'll build a currency converter app.",
+          "You'll use React state, memoization, and controlled components to convert between currencies."
+        ]
       },
       "lecture-routing-react-frameworks-and-dependency-management-tools": {
         "title": "Routing, React Frameworks, and Dependency Management Tools",
@@ -3554,9 +3569,12 @@
           "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
         ]
       },
-      "vyzp": {
-        "title": "281",
-        "intro": []
+      "lab-tic-tac-toe": {
+        "title": "Build a Tic-Tac-Toe Game",
+        "intro": [
+          "In this lab, you'll build a Tic-Tac-Toe game using React.",
+          "You'll practice managing state, handling user interactions, and updating the UI dynamically."
+        ]
       },
       "lecture-react-strategies-and-debugging": {
         "title": "React Strategies and Debugging",
@@ -3623,7 +3641,10 @@
       },
       "review-testing": {
         "title": "Testing Review",
-        "intro": ["Review testing concepts to prepare for the upcoming quiz."]
+        "intro": [
+          "Before you take the testing quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including unit testing, end-to-end testing, functional testing and more."
+        ]
       },
       "quiz-testing": {
         "title": "Testing Quiz",
@@ -3866,7 +3887,9 @@
       },
       "lab-rpg-character": {
         "title": "Build an RPG character",
-        "intro": ["Learn about Build an RPG character in these lectures."]
+        "intro": [
+          "In this lab you will practice basic python by building an RPG character."
+        ]
       },
       "review-python-basics": {
         "title": "Python Basics Review",
@@ -3966,7 +3989,9 @@
       },
       "lab-budget-app": {
         "title": "Build a Budget App",
-        "intro": [""]
+        "intro": [
+          "In this lab you will build a budget app and practice creating a class and methods for that class."
+        ]
       },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",

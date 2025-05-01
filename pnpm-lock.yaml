@@ -1132,8 +1132,8 @@ importers:
         specifier: 7.23.3
         version: 7.23.3(@babel/core@7.23.7)
       '@freecodecamp/curriculum-helpers':
-        specifier: 3.10.0
-        version: 3.10.0
+        specifier: 4.0.0
+        version: 4.0.0
       '@types/chai':
         specifier: 4.3.12
         version: 4.3.12
@@ -3411,8 +3411,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6
       react: '>=16.3'
 
-  '@freecodecamp/curriculum-helpers@3.10.0':
-    resolution: {integrity: sha512-IezurRNPAW3FCtwUHN+TVeTzBBhQYfvMyMafmU1y0qVZLkHOlivwFh/yyQhP3I6iXIGurGkHuLq/B2yBBpWTsg==}
+  '@freecodecamp/curriculum-helpers@4.0.0':
+    resolution: {integrity: sha512-qzjE2vMmnWhYW0NxCpBDqTs38XUIndHexvWJV6h5aT35aFt6VzmqOCzgzaWkBAf16cVUez8Owyk7Dv6XSyQGew==}
     engines: {pnpm: '>= 10'}
 
   '@freecodecamp/loop-protect@3.0.0':
@@ -19273,7 +19273,7 @@ snapshots:
       prop-types: 15.8.1
       react: 17.0.2
 
-  '@freecodecamp/curriculum-helpers@3.10.0':
+  '@freecodecamp/curriculum-helpers@4.0.0':
     dependencies:
       browserify: 17.0.0
 
@@ -23854,7 +23854,7 @@ snapshots:
       lodash.isplainobject: 4.0.6
       lodash.isstring: 4.0.1
       p-throttle: 4.1.1
-      qs: 6.11.2
+      qs: 6.14.0
 
   convert-hrtime@3.0.0: {}
 
@@ -30888,7 +30888,7 @@ snapshots:
     dependencies:
       is-ssh: 1.4.0
       protocols: 1.4.8
-      qs: 6.11.2
+      qs: 6.14.0
       query-string: 6.14.0
 
   parse-srcset@1.0.2: {}
@@ -34401,7 +34401,7 @@ snapshots:
   url@0.11.3:
     dependencies:
       punycode: 1.4.1
-      qs: 6.11.2
+      qs: 6.14.0
 
   urlpattern-polyfill@10.0.0: {}
 

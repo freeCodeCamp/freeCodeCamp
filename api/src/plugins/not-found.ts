@@ -16,10 +16,9 @@ const fourOhFour: FastifyPluginCallback = (fastify, _options, done) => {
   // this will return a 404 JSON response. Everything else will be redirected.
   fastify.setNotFoundHandler((req, reply) => {
     const logger = fastify.log.child({ req });
+    logger.info('User requested path that does not exist');
+
     const accepted = req.accepts().type(['json', 'html']);
-
-    logger.debug('User requested path that does not exist');
-
     if (accepted == 'json') {
       void reply.code(404).send({ error: 'path not found' });
     } else {
