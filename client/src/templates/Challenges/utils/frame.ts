@@ -31,7 +31,7 @@ export interface Context {
   build: string;
   sources: Source;
   hooks?: Hooks;
-  challengeType: number;
+  type: 'frame' | 'worker' | 'python';
   loadEnzyme?: () => void;
 }
 
@@ -151,14 +151,6 @@ const createHeader = (id = mainPreviewId) =>
   </script>
 `;
 
-const createBeforeAllScript = (beforeAll?: string) => {
-  if (!beforeAll) return '';
-
-  return `<script>
-  ${beforeAll};
-</script>`;
-};
-
 type TestResult =
   | { pass: boolean }
   | { err: { message: string; stack?: string } };
@@ -218,7 +210,7 @@ const createFrame =
     const isTestFrame = id === testId;
     const frame = document.createElement('iframe');
     frame.srcdoc = isTestFrame
-      ? `<script type="text/javascript" id="fcc-test-runner" src='/js/test-runner/index.mjs'></script>`
+      ? `<script type="text/javascript" id="fcc-test-runner" src='/js/test-runner/index.js'></script>`
       : createContent(id, frameContext);
     frame.id = id;
     if (typeof title === 'string') {
@@ -328,11 +320,8 @@ const updateWindowI18next = (frameContext: Context) => {
 const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
   waitForFrame(frameContext)
     .then(async () => {
-      const { sources, loadEnzyme, build, hooks } = frameContext;
+      const { sources, loadEnzyme, build, hooks, type } = frameContext;
       // provide the file name and get the original source
-
-      const type =
-        frameContext.challengeType === challengeTypes.html ? 'frame' : 'worker';
 
       const source =
         type === 'frame' ? createContent(testId, { build, sources }) : build;
@@ -342,7 +331,8 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
         code: sources,
         source,
         assetPath: '/js/test-runner/',
-        hooks
+        hooks,
+        loadEnzyme
       });
 
       if (frameReady) frameReady();

@@ -110,45 +110,41 @@ export async function buildChallenge(
   throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
 
-// TODD: replace this with a check that challengeType is one of the keys (i.e.
-// js, html, etc) since all the test runners are the same.
-const testRunners = {
-  [challengeTypes.js]: getDOMTestRunner,
-  [challengeTypes.html]: getDOMTestRunner,
-  [challengeTypes.backend]: getDOMTestRunner,
-  [challengeTypes.pythonProject]: getDOMTestRunner,
-  [challengeTypes.python]: getDOMTestRunner,
-  [challengeTypes.multifileCertProject]: getDOMTestRunner,
-  [challengeTypes.multifilePythonCertProject]: getDOMTestRunner,
-  [challengeTypes.lab]: getDOMTestRunner,
-  [challengeTypes.pyLab]: getDOMTestRunner,
-  [challengeTypes.dailyChallengeJs]: getDOMTestRunner,
-  [challengeTypes.dailyChallengePy]: getDOMTestRunner
+const runnerTypes: Record<number, 'worker' | 'frame' | 'python'> = {
+  [challengeTypes.js]: 'worker',
+  [challengeTypes.html]: 'frame',
+  [challengeTypes.backend]: 'frame',
+  [challengeTypes.pythonProject]: 'python',
+  [challengeTypes.python]: 'python',
+  [challengeTypes.multifileCertProject]: 'frame',
+  [challengeTypes.multifilePythonCertProject]: 'frame',
+  [challengeTypes.lab]: 'frame',
+  [challengeTypes.pyLab]: 'python',
+  [challengeTypes.dailyChallengeJs]: 'worker',
+  [challengeTypes.dailyChallengePy]: 'python'
 };
 
-export function getTestRunner(
+export async function getTestRunner(
   buildData: BuildChallengeData,
   runnerConfig: TestRunnerConfig,
   document: Document
 ) {
   const { challengeType } = buildData;
-  const testRunner = testRunners[challengeType];
-  if (testRunner) {
-    return testRunner(buildData, runnerConfig, document);
+  const type = runnerTypes[challengeType];
+  if (!type) {
+    throw new Error(
+      `Cannot get test runner for challenge type ${challengeType}`
+    );
   }
-  throw new Error(`Cannot get test runner for challenge type ${challengeType}`);
-}
-
-async function getDOMTestRunner(
-  buildData: BuildChallengeData,
-  { proxyLogger }: TestRunnerConfig,
-  document: Document
-) {
   await new Promise<void>(resolve =>
-    createTestFramer(document, proxyLogger, resolve)(buildData)
+    createTestFramer(
+      document,
+      runnerConfig.proxyLogger,
+      resolve,
+    )({...buildData, type})
   );
   return (testString: string, testTimeout: number) =>
-    runTestInTestFrame(document, testString, testTimeout, "frame");
+    runTestInTestFrame(document, testString, testTimeout, type);
 }
 
 type BuildResult = {
