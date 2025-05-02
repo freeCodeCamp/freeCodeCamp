@@ -486,3 +486,344 @@ Which CSS property allows you to set a time before the animation begins?
 
 `animation-delay`
 
+## --quiz--
+
+### --question--
+
+#### --text--
+What does the `transition-duration` property specify?
+
+#### --distractors--
+It sets which CSS properties will transition.
+
+* * *
+It defines the delay before the transition starts.
+
+* * *
+It determines the speed curve of the transition.
+
+#### --answer--
+It specifies how long the transition should take to complete.
+
+### --question--
+
+#### --text--
+Which property determines which CSS properties will undergo a transition?
+
+#### --distractors--
+`transition-duration`
+
+* * *
+`transition-timing-function`
+
+* * *
+`transition-delay`
+
+#### --answer--
+`transition-property`
+
+### --question--
+
+#### --text--
+What is the shorthand CSS property for setting `transition-property`, `transition-duration`, `transition-timing-function`, and `transition-delay`?
+
+#### --distractors--
+`transform`
+
+* * *
+`animation`
+
+* * *
+`transition-style`
+
+#### --answer--
+`transition`
+
+### --question--
+
+#### --text--
+What timing function begins the transition slowly and accelerates towards the end?
+
+#### --distractors--
+`linear`
+
+* * *
+`ease-out`
+
+* * *
+`ease-in-out`
+
+#### --answer--
+`ease-in`
+
+### --question--
+
+#### --text--
+Which function divides the transition into a specified number of abrupt intervals?
+
+#### --distractors--
+`linear`
+
+* * *
+`cubic-bezier()`
+
+* * *
+`ease-in`
+
+#### --answer--
+`steps()`
+
+### --question--
+
+#### --text--
+How can you create a custom easing curve for transitions?
+
+#### --distractors--
+`steps()`
+
+* * *
+`ease-in-out`
+
+* * *
+`step-start`
+
+#### --answer--
+`cubic-bezier()`
+
+### --question--
+
+#### --text--
+Which CSS function rotates an element by 45 degrees?
+
+#### --distractors--
+`transform: translate(45deg)`
+
+* * *
+`animation: rotate(45deg)`
+
+* * *
+`transform: scale(45deg)`
+
+#### --answer--
+`transform: rotate(45deg)`
+
+### --question--
+
+#### --text--
+Which property changes the point around which a transform is applied?
+
+#### --distractors--
+`transform`
+
+* * *
+`transform-style`
+
+* * *
+`perspective-origin`
+
+#### --answer--
+`transform-origin`
+
+### --question--
+
+#### --text--
+How do you make an element twice as large using transforms?
+
+#### --distractors--
+`transform: translate(2)`
+
+* * *
+`transform: skew(2)`
+
+* * *
+`animation: scale(2)`
+
+#### --answer--
+`transform: scale(2)`
+
+### --question--
+
+#### --text--
+Which at-rule allows you to define an animation in CSS?
+
+#### --distractors--
+`@media`
+
+* * *
+`@supports`
+
+* * *
+`@viewport`
+
+#### --answer--
+`@keyframes`
+
+### --question--
+
+#### --text--
+Which property names the animation to use from a `@keyframes` rule?
+
+#### --distractors--
+`animation-duration`
+
+* * *
+`animation-fill-mode`
+
+* * *
+`animation-delay`
+
+#### --answer--
+`animation-name`
+
+### --question--
+
+#### --text--
+What does the `animation-duration` property control?
+
+#### --distractors--
+The element’s initial delay before style changes.
+
+* * *
+The number of times the animation repeats.
+
+* * *
+The animation’s easing function.
+
+#### --answer--
+How long it takes to complete one cycle of the animation.
+
+### --question--
+
+#### --text--
+Which value of `animation-iteration-count` makes an animation loop indefinitely?
+
+#### --distractors--
+`1`
+
+* * *
+`0`
+
+* * *
+`alternate`
+
+#### --answer--
+`infinite`
+
+### --question--
+
+#### --text--
+Which `animation-direction` value plays the animation forwards and then backwards on every other cycle?
+
+#### --distractors--
+`reverse`
+
+* * *
+`alternate-reverse`
+
+* * *
+`normal`
+
+#### --answer--
+`alternate`
+
+### --question--
+
+#### --text--
+Which property ensures an animated element retains the styles set in the final keyframe after the animation ends?
+
+#### --distractors--
+`animation-direction`
+
+* * *
+`animation-play-state`
+
+* * *
+`animation-iteration-count`
+
+#### --answer--
+`animation-fill-mode`
+
+### --question--
+
+#### --text--
+How can you pause an animation in CSS?
+
+#### --distractors--
+Set `animation-iteration-count: 0`
+
+* * *
+Use `animation-fill-mode: paused`
+
+* * *
+Use `animation-delay: 9999s`
+
+#### --answer--
+Set `animation-play-state: paused`
+
+### --question--
+
+#### --text--
+Which shorthand property allows setting multiple animation properties, including name, duration, timing function, and delay?
+
+#### --distractors--
+`transition`
+
+* * *
+`transform`
+
+* * *
+`animation-name`
+
+#### --answer--
+`animation`
+
+### --question--
+
+#### --text--
+Which transform function moves an element 100 pixels to the left?
+
+#### --distractors--
+`transform: translateY(-100px)`
+
+* * *
+`transform: move(-100px, 0)`
+
+* * *
+`transform: shift(-100px)`
+
+#### --answer--
+`transform: translateX(-100px)`
+
+### --question--
+
+#### --text--
+How do you delay the start of an animation by 2 seconds?
+
+#### --distractors--
+`animation-duration: 2s`
+
+* * *
+`transition-delay: 2s`
+
+* * *
+`delay: 2s`
+
+#### --answer--
+`animation-delay: 2s`
+
+### --question--
+
+#### --text--
+Which pseudo-class is commonly used with `transition` to animate hover effects?
+
+#### --distractors--
+`:active`
+
+* * *
+`:focus`
+
+* * *
+`:visited`
+
+#### --answer--
+`:hover`
