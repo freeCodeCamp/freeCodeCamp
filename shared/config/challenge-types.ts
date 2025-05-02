@@ -179,4 +179,4 @@ export const dailyCodingChallengeLanguages = {
 
 export const getDailyCodingChallengeLanguage = (
   challengeType: number
-): string => dailyCodingChallengeLanguages[challengeType];
+): string | undefined => dailyCodingChallengeLanguages[challengeType];
