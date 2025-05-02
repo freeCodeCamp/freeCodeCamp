@@ -1,0 +1,17 @@
+{
+  "name": "Daily Coding Challenge JavaScript",
+  "isUpcomingChange": true,
+  "dashedName": "daily-coding-challenge-javascript",
+  "usesMultifileEditor": true,
+  "helpCategory": "JavaScript",
+  "order": 0,
+  "disableLoopProtectTests": true,
+  "superBlock": "dev-playground",
+  "challengeOrder": [
+    {
+      "id": "6814d8e1516e86b171929de4",
+      "title": "JavaScript Coding Challenge"
+    }
+  ],
+  "blockLayout": "legacy-link"
+}

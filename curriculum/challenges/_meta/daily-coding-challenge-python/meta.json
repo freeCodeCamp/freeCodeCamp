@@ -1,0 +1,16 @@
+{
+  "name": "Daily Coding Challenge Python",
+  "isUpcomingChange": true,
+  "dashedName": "daily-coding-challenge-python",
+  "usesMultifileEditor": true,
+  "helpCategory": "Python",
+  "order": 1,
+  "superBlock": "dev-playground",
+  "challengeOrder": [
+    {
+      "id": "6814d93d516e86b171929de5",
+      "title": "Python Coding Challenge"
+    }
+  ],
+  "blockLayout": "legacy-link"
+}

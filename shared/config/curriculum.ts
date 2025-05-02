@@ -26,7 +26,8 @@ export enum SuperBlocks {
   A2English = 'a2-english-for-developers',
   B1English = 'b1-english-for-developers',
   RosettaCode = 'rosetta-code',
-  PythonForEverybody = 'python-for-everybody'
+  PythonForEverybody = 'python-for-everybody',
+  DevPlayground = 'dev-playground'
 }
 
 /*
@@ -99,7 +100,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.PythonForEverybody
   ],
   [SuperBlockStage.Next]: [],
-  [SuperBlockStage.Upcoming]: []
+  [SuperBlockStage.Upcoming]: [SuperBlocks.DevPlayground]
 };
 
 Object.freeze(superBlockStages);
