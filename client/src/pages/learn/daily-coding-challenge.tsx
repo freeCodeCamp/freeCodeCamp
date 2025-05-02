@@ -12,6 +12,7 @@ import { isValidDateParam } from '../../components/daily-coding-challenge/helper
 
 const { dailyChallengeApiLocation } = envData;
 
+/* Types for data coming from Daily Challenge API */
 interface ChallengeTests {
   text: string;
   testString: string;
@@ -30,13 +31,14 @@ interface ChallengeLanguageData {
 interface ChallengeDataFromDb {
   challengeId: string;
   title: string;
-  date: Date;
+  date: string;
   description?: string;
   instructions?: string;
   javascript: ChallengeLanguageData;
   python: ChallengeLanguageData;
 }
 
+/* Types for use in the show classic component */
 interface Node {
   challengeNode: ChallengeNode;
 }
@@ -58,6 +60,14 @@ interface FormattedChallengeData {
   python: Data;
 }
 
+function formatDescription(str: string) {
+  return `<section id="description">\n${str}\n</section>`;
+}
+
+function formatInstructions(str: string) {
+  return `<section id="instructions">\n<p>${str}</p>\n</section>`;
+}
+
 function formatChallengeData({
   date,
   challengeId,
@@ -72,8 +82,8 @@ function formatChallengeData({
     id: challengeId,
     title,
     // helpCategory: 'Daily Coding Challenges',
-    description,
-    instructions,
+    description: description && formatDescription(description),
+    instructions: instructions && formatInstructions(instructions),
     superBlock: 'daily-coding-challenge',
     block: 'daily-coding-challenge',
     usesMultifileEditor: true
@@ -113,7 +123,12 @@ function formatChallengeData({
           }
         }
       },
-      pageContext
+      pageContext: {
+        challengeMeta: {
+          ...pageContext.challengeMeta,
+          disableLoopProtectTests: true
+        }
+      }
     },
     python: {
       data: {
