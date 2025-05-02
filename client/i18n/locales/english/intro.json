@@ -4031,7 +4031,10 @@
         "title": "Placeholder - Waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-oop-3": { "title": "", "intro": [""] },
+      "lab-placeholder-oop-3": {
+        "title": "",
+        "intro": [""]
+      },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
         "intro": [
