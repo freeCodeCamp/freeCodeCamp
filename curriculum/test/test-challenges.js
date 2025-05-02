@@ -601,7 +601,7 @@ async function createTestRunner(
     challengeId: challenge.id,
     build,
     sources,
-    type: usesJSWorker ? 'worker' : runsInPythonWorker ? 'python' : 'frame',
+    type: usesJSWorker ? 'javascript' : runsInPythonWorker ? 'python' : 'dom',
     loadEnzyme,
     hooks: challenge.hooks
   });

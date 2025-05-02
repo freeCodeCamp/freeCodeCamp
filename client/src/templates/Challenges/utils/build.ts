@@ -110,17 +110,17 @@ export async function buildChallenge(
   throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
 
-const runnerTypes: Record<number, 'worker' | 'frame' | 'python'> = {
-  [challengeTypes.js]: 'worker',
-  [challengeTypes.html]: 'frame',
-  [challengeTypes.backend]: 'frame',
+const runnerTypes: Record<number, 'javascript' | 'dom' | 'python'> = {
+  [challengeTypes.js]: 'javascript',
+  [challengeTypes.html]: 'dom',
+  [challengeTypes.backend]: 'dom',
   [challengeTypes.pythonProject]: 'python',
   [challengeTypes.python]: 'python',
-  [challengeTypes.multifileCertProject]: 'frame',
-  [challengeTypes.multifilePythonCertProject]: 'frame',
-  [challengeTypes.lab]: 'frame',
+  [challengeTypes.multifileCertProject]: 'dom',
+  [challengeTypes.multifilePythonCertProject]: 'dom',
+  [challengeTypes.lab]: 'dom',
   [challengeTypes.pyLab]: 'python',
-  [challengeTypes.dailyChallengeJs]: 'worker',
+  [challengeTypes.dailyChallengeJs]: 'javascript',
   [challengeTypes.dailyChallengePy]: 'python'
 };
 

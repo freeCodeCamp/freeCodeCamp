@@ -31,7 +31,7 @@ export interface Context {
   build: string;
   sources: Source;
   hooks?: Hooks;
-  type: 'frame' | 'worker' | 'python';
+  type: 'dom' | 'javascript' | 'python';
   loadEnzyme?: () => void;
 }
 
@@ -175,11 +175,11 @@ export const runTestInTestFrame = async function (
   document: Document,
   test: string,
   timeout: number,
-  type: 'frame' | 'worker' | 'python'
+  type: 'dom' | 'javascript' | 'python'
 ): Promise<TestResult | undefined> {
   console.log('runTestInTestFrame');
   const contentDocument = getContentDocument(document, testId);
-  const runner = getContentWindow(document, testId)?.FCCSandbox.getRunner(type);
+  const runner = window?.FCCSandbox.getRunner(type);
   console.log('runner', runner);
   if (contentDocument) {
     return await Promise.race([
@@ -204,14 +204,27 @@ export const runPythonInFrame = function (
   void contentDocument?.__runPython(code);
 };
 
+const loadTestRunner = async (document: Document) => {
+  const done = new Promise<void>((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = '/js/test-runner/index.js';
+    script.onload = () => {
+      console.log('LOADED');
+      resolve();
+    };
+    script.onerror = () => reject(new Error('Test runner failed to load'));
+    document.head.appendChild(script);
+  });
+  return done;
+};
+
 const createFrame =
   (document: Document, id: string, title?: string) =>
   (frameContext: Context) => {
     const isTestFrame = id === testId;
     const frame = document.createElement('iframe');
-    frame.srcdoc = isTestFrame
-      ? `<script type="text/javascript" id="fcc-test-runner" src='/js/test-runner/index.js'></script>`
-      : createContent(id, frameContext);
+
+    frame.srcdoc = isTestFrame ? '' : createContent(id, frameContext);
     frame.id = id;
     if (typeof title === 'string') {
       frame.title = i18next.t('misc.iframe-preview', { title });
@@ -324,9 +337,9 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
       // provide the file name and get the original source
 
       const source =
-        type === 'frame' ? createContent(testId, { build, sources }) : build;
-
-      await frameContext.window?.FCCSandbox.createTestRunner({
+        type === 'dom' ? createContent(testId, { build, sources }) : build;
+      await loadTestRunner(document);
+      await window?.FCCSandbox.createTestRunner({
         type,
         code: sources,
         source,
