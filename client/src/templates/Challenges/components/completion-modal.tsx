@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -71,6 +70,12 @@ interface CompletionModalState {
   downloadURL: null | string;
 }
 
+interface DownloadableChallengeFile {
+  name: string;
+  ext: string;
+  contents: string;
+}
+
 class CompletionModal extends Component<
   CompletionModalsProps,
   CompletionModalState
@@ -100,18 +105,8 @@ class CompletionModal extends Component<
     }
     let newURL = null;
     if (challengeFiles?.length) {
-      const filesForDownload = challengeFiles
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .reduce<string>((allFiles, currentFile: any) => {
-          const beforeText = `** start of ${currentFile.path} **\n\n`;
-          const afterText = `\n\n** end of ${currentFile.path} **\n\n`;
-          allFiles +=
-            challengeFiles.length > 1
-              ? `${beforeText}${currentFile.contents}${afterText}`
-              : currentFile.contents;
-          return allFiles;
-        }, '');
-      const blob = new Blob([filesForDownload], {
+      const allFileContents = combineFileData(challengeFiles);
+      const blob = new Blob([allFileContents], {
         type: 'text/json'
       });
       newURL = URL.createObjectURL(blob);
@@ -242,3 +237,18 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(withTranslation()(CompletionModal));
+
+export function combineFileData(challengeFiles: DownloadableChallengeFile[]) {
+  return challengeFiles.reduce<string>(function (
+    allFiles: string,
+    currentFile: DownloadableChallengeFile
+  ) {
+    const beforeText = `** start of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
+    const afterText = `\n\n** end of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
+    allFiles +=
+      challengeFiles.length > 0
+        ? `${beforeText}${currentFile.contents}${afterText}`
+        : currentFile.contents;
+    return allFiles;
+  }, '');
+}

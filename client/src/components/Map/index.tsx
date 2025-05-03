@@ -4,7 +4,6 @@ import React, { Fragment } from 'react';
 import { Spacer } from '@freecodecamp/ui';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
-import { graphql, useStaticQuery } from 'gatsby';
 
 import {
   type SuperBlocks,
@@ -25,31 +24,8 @@ import {
   completedChallengesIdsSelector
 } from '../../redux/selectors';
 
-import { RibbonIcon } from '../../assets/icons/completion-ribbon';
-
-import { CurrentCert, ClaimedCertifications } from '../../redux/prop-types';
-import {
-  certSlugTypeMap,
-  superBlockCertTypeMap
-} from '../../../../shared/config/certification-settings';
-
 interface MapProps {
   forLanding?: boolean;
-  isSignedIn: boolean;
-  currentCerts: CurrentCert[];
-  claimedCertifications?: ClaimedCertifications;
-  completedChallengeIds: string[];
-}
-
-interface Data {
-  allChallengeNode: {
-    nodes: {
-      challenge: {
-        id: string;
-        superBlock: SuperBlocks;
-      };
-    }[];
-  };
 }
 
 const linkSpacingStyle = {
@@ -82,20 +58,10 @@ const mapStateToProps = createSelector(
 
 function MapLi({
   superBlock,
-  landing = false,
-  completed,
-  claimed,
-  showProgressionLines = false,
-  showNumbers = false,
-  index
+  landing = false
 }: {
   superBlock: SuperBlocks;
   landing: boolean;
-  completed: boolean;
-  claimed: boolean;
-  showProgressionLines?: boolean;
-  showNumbers?: boolean;
-  index: number;
 }) {
   const i18nTitle = i18next.t(`intro:${superBlock}.title`);
 
@@ -104,6 +70,7 @@ function MapLi({
       data-test-label='curriculum-map-button'
       data-playwright-test-label='curriculum-map-button'
     >
+<<<<<<< HEAD
       <div>
         <div>
           <RibbonIcon
@@ -115,6 +82,8 @@ function MapLi({
         </div>
       </div>
 
+=======
+>>>>>>> 7e72a817bc2bec73d59d00ab0d4b57afde02020b
       <ButtonLink
         block
         size='large'
@@ -131,13 +100,9 @@ function MapLi({
   );
 }
 
-function Map({
-  forLanding = false,
-  isSignedIn,
-  currentCerts,
-  completedChallengeIds
-}: MapProps): React.ReactElement {
+function Map({ forLanding = false }: MapProps) {
   const { t } = useTranslation();
+<<<<<<< HEAD
   const {
     allChallengeNode: { nodes: challengeNodes }
   }: Data = useStaticQuery(graphql`
@@ -176,6 +141,8 @@ function Map({
       )
       : false;
   };
+=======
+>>>>>>> 7e72a817bc2bec73d59d00ab0d4b57afde02020b
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
@@ -193,14 +160,11 @@ function Map({
               {t(superBlockHeadings[stage])}
             </h2>
             <ul key={stage}>
-              {superblocks.map((superblock, i) => (
+              {superblocks.map(superblock => (
                 <MapLi
                   key={superblock}
                   superBlock={superblock}
                   landing={forLanding}
-                  index={i}
-                  claimed={isClaimed(superblock)}
-                  completed={allSuperblockChallengesCompleted(superblock)}
                 />
               ))}
             </ul>
