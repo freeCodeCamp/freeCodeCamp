@@ -1,16 +1,18 @@
-import { graphql } from 'gatsby';
-import React, { useState, useEffect, useRef } from 'react';
+import { graphql, navigate } from 'gatsby';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { HandlerProps } from 'react-reflex';
 import { useMediaQuery } from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
+import { useLocation, navigate as reachNavigate } from '@gatsbyjs/reach-router';
 import store from 'store';
 import { editor } from 'monaco-editor';
 import type { FitAddon } from 'xterm-addon-fit';
 
 import { useFeature } from '@growthbook/growthbook-react';
+import { Button, Modal, Spacer } from '@freecodecamp/ui';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
@@ -65,6 +67,7 @@ import envData from '../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
+import { usePageLeave } from '../hooks';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -95,6 +98,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       cancelTests,
       previewMounted,
       openModal,
+      openExitQuizModal: () => openModal('exitQuiz'),
       setEditorFocusability,
       setIsAdvancing
     },
@@ -122,6 +126,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
+  openExitQuizModal: () => void;
   setEditorFocusability: (canFocus: boolean) => void;
   setIsAdvancing: (arg: boolean) => void;
   savedChallenges: SavedChallenge[];
@@ -197,7 +202,7 @@ function ShowClassic({
         description,
         instructions,
         hooks,
-        fields: { tests, blockName },
+        fields: { tests, blockName, blockHashSlug },
         challengeType,
         hasEditableBoundaries,
         superBlock,
@@ -231,7 +236,12 @@ function ShowClassic({
   executeChallenge,
   previewMounted
 }: ShowClassicProps) {
+  // console.log('Classic Alondra');
   const { t } = useTranslation();
+  const curLocation = useLocation();
+  const [showExitModal, setShowExitModal] = useState(false);
+  const [exitConfirmed, setExitConfirmed] = useState(false);
+  const [exitPathname, setExitPathname] = useState(blockHashSlug);
   const [resizing, setResizing] = useState(false);
   const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
@@ -443,6 +453,49 @@ function ShowClassic({
     );
   };
 
+  const handleExitProjectModalBtnClick = () => {
+    setExitConfirmed(true);
+    void navigate(exitPathname);
+    setShowExitModal(false);
+  };
+
+  const closeExitProjectModal = () => {
+    setExitConfirmed(false);
+    setShowExitModal(false);
+  };
+
+  const onWindowClose = useCallback(
+    (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      window.confirm(t('misc.navigation-warning'));
+    },
+    [t]
+  );
+
+  const onHistoryChange = useCallback(
+    (targetPathname: string) => {
+      if (exitConfirmed) return;
+
+      const newPathname = targetPathname.startsWith('/learn')
+        ? blockHashSlug
+        : targetPathname;
+
+      // Save the pathname of the page the user wants to navigate to before we block the navigation.
+      setExitPathname(newPathname);
+
+      // We need to use Reach Router, because the pathname is already prefixed
+      // with the language and Gatsby's navigate will prefix it again.
+      void reachNavigate(`${curLocation.pathname}`);
+      setShowExitModal(true);
+    },
+    [curLocation.pathname, exitConfirmed, blockHashSlug]
+  );
+
+  usePageLeave({
+    onWindowClose,
+    onHistoryChange
+  });
+
   return (
     <Hotkeys
       challengeType={challengeType}
@@ -522,6 +575,38 @@ function ShowClassic({
           />
         )}
         <CompletionModal />
+        {showExitModal && (
+          <Modal
+            open={true}
+            onClose={() => setShowExitModal(false)}
+            variant='danger'
+          >
+            <Modal.Header closeButtonClassNames='close'>
+              Exit Project
+            </Modal.Header>
+            <Modal.Body alignment='center'>
+              Are you sure you want to leave? Any unsaved changes will be lost.
+            </Modal.Body>
+            <Spacer size='m' />
+            <Modal.Footer>
+              <Button
+                block
+                variant='primary'
+                onClick={() => closeExitProjectModal()}
+              >
+                No, I would like to continue working
+              </Button>
+              <Spacer size='xxs' />
+              <Button
+                block
+                variant='danger'
+                onClick={() => handleExitProjectModalBtnClick()}
+              >
+                Yes, I want to leave the project
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        )}
         <HelpModal
           challengeTitle={title}
           challengeBlock={blockName}
@@ -570,6 +655,7 @@ export const query = graphql`
           beforeAll
         }
         fields {
+          blockHashSlug
           blockName
           slug
           tests {
