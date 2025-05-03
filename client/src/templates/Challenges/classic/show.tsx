@@ -236,7 +236,6 @@ function ShowClassic({
   executeChallenge,
   previewMounted
 }: ShowClassicProps) {
-  // console.log('Classic Alondra');
   const { t } = useTranslation();
   const curLocation = useLocation();
   const [showExitModal, setShowExitModal] = useState(false);
@@ -587,7 +586,7 @@ function ShowClassic({
             <Modal.Body alignment='center'>
               Are you sure you want to leave? Any unsaved changes will be lost.
             </Modal.Body>
-            <Spacer size='m' />
+            <Spacer size='xxs' />
             <Modal.Footer>
               <Button
                 block
