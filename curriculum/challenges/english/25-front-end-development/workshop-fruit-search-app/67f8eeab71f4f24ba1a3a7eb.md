@@ -102,7 +102,6 @@ body {
 ```jsx
 const { useState, useEffect } = React;
 
---fcc-editable-region--
 export function FruitsSearch() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
@@ -113,6 +112,7 @@ export function FruitsSearch() {
 
   return (
     <div id="search-container">
+    --fcc-editable-region--
       <form onSubmit={handleSubmit}>
         <label htmlFor="search-input">Search for fruits:</label>
         <input
@@ -123,7 +123,7 @@ export function FruitsSearch() {
         />
       </form>
     </div>
+    --fcc-editable-region--
   );
---fcc-editable-region--
 }
 ```
