@@ -177,10 +177,8 @@ export const runTestInTestFrame = async function (
   timeout: number,
   type: 'dom' | 'javascript' | 'python'
 ): Promise<TestResult | undefined> {
-  console.log('runTestInTestFrame');
   const contentDocument = getContentDocument(document, testId);
   const runner = window?.FCCSandbox.getRunner(type);
-  console.log('runner', runner);
   if (contentDocument) {
     return await Promise.race([
       new Promise<
