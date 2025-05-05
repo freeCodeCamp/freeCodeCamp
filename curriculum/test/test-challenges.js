@@ -312,7 +312,6 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
           c => c.superBlock === superBlock
         );
         superBlockChallenges.forEach((challenge, id) => {
-          console.log('testing challenge', challenge.id);
           // When testing single challenge, in project based curriculum,
           // challenge to test (current challenge) might not have solution.
           // Instead seed from next challenge is tested against tests from
@@ -579,9 +578,6 @@ async function createTestRunner(
 
   const buildFunction = buildFunctions[challenge.challengeType];
 
-  const runsInBrowser =
-    buildFunction === buildDOMChallenge ||
-    buildFunction === buildBackendChallenge;
   const runsInPythonWorker = buildFunction === buildPythonChallenge;
 
   // TODO: use same logic in client when determining "type"
@@ -608,7 +604,7 @@ async function createTestRunner(
 
   return async ({ text, testString }) => {
     try {
-      const { pass, err } = await evaluator.evaluate(testString, 2000);
+      const { pass, err } = await evaluator.evaluate(testString, 5000);
 
       // console.log(
       //   `Test "${text}" ${pass ? 'PASSED' : 'FAILED'} for solution ${
@@ -685,25 +681,6 @@ ${testString}
           config.type
         )
       ])
-  };
-}
-
-async function getWorkerEvaluator({
-  build,
-  sources,
-  code,
-  runsInPythonWorker
-}) {
-  // The python worker clears the globals between tests, so it should be fine
-  // to use the same evaluator for all tests. TODO: check if this is true for
-  // sys, since sys.modules is not being reset.
-  const testWorker = runsInPythonWorker
-    ? pythonWorker
-    : new WorkerExecutor(javaScriptTestEvaluator, { terminateWorker: true });
-  return {
-    evaluate: async (testString, timeout) =>
-      await testWorker.execute({ testString, build, code, sources }, timeout)
-        .done
   };
 }
 
