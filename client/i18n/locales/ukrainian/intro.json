@@ -3479,6 +3479,12 @@
           "У цих відеолекціях ви дізнаєтесь, як працювати зі станом та відповідати на подію в React."
         ]
       },
+      "workshop-toggle-text-app": {
+        "title": "Toggle Text App",
+        "intro": [
+          "In this workshop, you will continute to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
+        ]
+      },
       "lab-color-picker": {
         "title": "Створіть застосунок для пошуку кольору",
         "intro": [
@@ -3969,7 +3975,9 @@
       },
       "lab-budget-app": {
         "title": "Створіть застосунок для ведення бюджету",
-        "intro": [""]
+        "intro": [
+          "In this lab you will build a budget app and practice creating a class and methods for that class."
+        ]
       },
       "review-classes-and-objects": {
         "title": "Повторення класів та об’єктів",
