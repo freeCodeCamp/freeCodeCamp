@@ -2006,6 +2006,8 @@
         "intro": [
           "In this lab, you'll create a movie review page.",
           "You'll practice concepts like semantic HTML, <code>alt</code> attributes, accessible lists, and hiding decorative content from screen readers using <code>aria-hidden</code>."
+        ]
+      },
       "lab-multimedia-player": {
         "title": "Build a Multimedia Player",
         "intro": [
