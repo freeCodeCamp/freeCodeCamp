@@ -19,7 +19,7 @@ import {
   normalizeTwitter,
   removeNulls
 } from '../../utils/normalize';
-import type { UpdateReqType } from '../../utils';
+import { mapErr, type UpdateReqType } from '../../utils';
 import {
   getCalendar,
   getPoints,
@@ -64,7 +64,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.deleteMyAccount
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       logger.info(`User ${req.user?.id} requested account deletion`);
       await fastify.prisma.userToken.deleteMany({
         where: { userId: req.user!.id }
@@ -89,8 +89,8 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.resetMyProgress
     },
-    async req => {
-      const logger = fastify.log.child({ req });
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
       logger.info(`User ${req.user?.id} requested progress reset`);
       await fastify.prisma.userToken.deleteMany({
         where: { userId: req.user!.id }
@@ -110,8 +110,8 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
   // TODO(Post-MVP): POST -> PUT
-  fastify.post('/user/user-token', async req => {
-    const logger = fastify.log.child({ req });
+  fastify.post('/user/user-token', async (req, reply) => {
+    const logger = fastify.log.child({ req, res: reply });
     logger.info(`User ${req.user?.id} requested a new user token`);
 
     await fastify.prisma.userToken.deleteMany({
@@ -139,7 +139,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.deleteUserToken
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       logger.info(`User ${req.user?.id} requested token deletion`);
 
       const { count } = await fastify.prisma.userToken.deleteMany({
@@ -168,7 +168,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       logger.info(`User ${req.user?.id} reported user ${req.body.username}`);
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
@@ -176,21 +176,45 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       });
       const { username, reportDescription: report } = req.body;
 
-      if (!username || !report) {
-        logger.warn('Missing username or reportDescription');
-        void reply.code(400);
+      // TODO: `findUnique` once db migration forces unique usernames
+      const maybeReportedUsers = await mapErr(
+        fastify.prisma.user.findMany({
+          where: { username }
+        })
+      );
+
+      if (maybeReportedUsers.hasError) {
+        logger.error(
+          { error: maybeReportedUsers.error, username },
+          'Error finding reported user.'
+        );
+        fastify.Sentry.captureException(maybeReportedUsers.error);
+        void reply.code(500);
         return {
           type: 'danger',
-          message: 'flash.provide-username'
+          message: 'flash.generic-error'
         } as const;
       }
+
+      const reportedUsers = maybeReportedUsers.data;
+
+      if (reportedUsers.length !== 1) {
+        logger.warn({ username }, 'Reported user not found');
+        void reply.code(404);
+        return {
+          type: 'danger',
+          message: 'flash.report-error'
+        } as const;
+      }
+
+      const reportedUser = reportedUsers[0]!;
 
       await fastify.sendEmail({
         from: 'team@freecodecamp.org',
         to: 'support@freecodecamp.org',
         cc: user.email,
-        subject: `Abuse Report : Reporting ${username}'s profile.`,
-        text: generateReportEmail(user, username, report)
+        subject: `Abuse Report : Reporting ${reportedUser.username}'s profile.`,
+        text: generateReportEmail(user, reportedUser, report)
       });
 
       return {
@@ -207,7 +231,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.deleteMsUsername
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       logger.info(`User ${req.user?.id} requested unlinking of msUsername`);
 
       try {
@@ -234,7 +258,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.postMsUsername,
       errorHandler(error, req, reply) {
-        const logger = fastify.log.child({ req });
+        const logger = fastify.log.child({ req, res: reply });
         if (error.validation) {
           logger.warn({ validationError: error.validation });
           void reply.code(400).send({
@@ -247,7 +271,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       logger.info(`User ${req.user?.id} requested linking of msUsername`);
 
       try {
@@ -343,7 +367,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       logger.info(`User ${req.user?.id} submitted a survey`);
       try {
         const user = await fastify.prisma.user.findUniqueOrThrow({
@@ -466,7 +490,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.getSessionUser
     },
     async (req, res) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res });
       // This is one of the most requested routes. To avoid spamming the logs
       // with this route, we'll log requests at the debug level.
       logger.debug({ userId: req.user?.id });

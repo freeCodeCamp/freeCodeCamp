@@ -1655,47 +1655,69 @@
       },
       "learn-how-to-use-modal-verbs": {
         "title": "Learn How to Use Modal Verbs",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to talk about rules, describe things that are necessary, and what could happen if they aren't. You'll also practice asking and answering questions clearly, and adding helpful details to your ideas."
+        ]
       },
       "learn-how-to-manage-a-conversation": {
         "title": "Learn How to Manage a Conversation",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to manage conversations at work — like how to continue a talk after a break, change topics politely, or interrupt when needed. You'll also practice using useful expressions to keep the conversation clear, friendly, and organized."
+        ]
       },
       "learn-how-to-clarify-misunderstandings": {
         "title": "Learn How to Clarify Misunderstandings",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to ask for and give explanations when something is not clear, using polite questions and helpful responses. You'll also practice guessing the meaning of new words, describing problems, and clearing up misunderstandings in a friendly and professional way."
+        ]
       },
       "learn-about-speculation-and-requests": {
         "title": "Learn About Speculation and Requests",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to talk about things that should or could have happened in the past, and how to give suggestions or make polite requests. You'll also practice using expressions to guess what might have caused a problem and how to work together to solve it in a clear and respectful way."
+        ]
       },
       "learn-about-adverbial-phrases": {
         "title": "Learn About Adverbial Phrases",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use phrases that give more information about when, where, how often, or how much something happens. You'll also practice using these phrases to describe tasks, talk about plans, and explain results more clearly in your daily work."
+        ]
       },
       "learn-how-to-use-adjectives-in-conversations": {
         "title": "Learn How to Use Adjectives in Conversations",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use adjectives to describe things clearly, compare options, and highlight important details in professional conversations. You'll also practice how to make your ideas stronger and more persuasive."
+        ]
       },
       "learn-determiners-and-advanced-use-of-articles": {
         "title": "Learn Determiners and Advanced Use of Articles",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use determiners to give clear information about quantity, choice, and distribution. You will also practice using articles in more advanced ways, especially in professional conversations about planning, tasks, and resources."
+        ]
       },
       "learn-how-to-use-reported-speech": {
         "title": "Learn How to Use Reported Speech",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to report what someone else said in a clear and natural way. You will also practice using the correct verb tenses and sentence structures to share feedback, explain situations, and talk about past events in professional conversations."
+        ]
       },
       "learn-how-to-use-prepositions-according-to-context": {
         "title": "Learn How to Use Prepositions According to Context",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use prepositions to describe time, place, and direction clearly in everyday work situations. You will also practice talking about schedules, giving directions, and explaining where people or things are located using natural and accurate language."
+        ]
       },
       "learn-how-to-talk-about-numbers-with-a-coworker": {
         "title": "Learn How to Talk About Numbers with a Coworker",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use numbers to talk about tasks, schedules, budgets, and resources in the workplace. You will practice using cardinal and ordinal numbers, percentages, and fractions to organize work, explain progress, and share inventory or financial updates clearly with your team."
+        ]
       },
       "learn-common-phrasal-verbs-and-idioms": {
         "title": "Learn Common Phrasal Verbs and Idioms",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use common phrasal verbs and idioms to sound more natural and confident at work. You will practice using expressions to give opinions, make suggestions, organize meetings, and talk about tasks in everyday professional conversations."
+        ]
       }
     }
   },
@@ -1977,6 +1999,13 @@
         "intro": [
           "In this lab, you'll create an accessible checkout page.",
           "You'll practice concepts like <code>alt</code> attributes and aria roles."
+        ]
+      },
+      "lab-multimedia-player": {
+        "title": "Build a Multimedia Player",
+        "intro": [
+          "In this lab, you'll build a multimedia player.",
+          "You will practice working with the <code>audio</code> and <code>video</code> elements, the <code>controls</code> attribute, and the <code>aria-label</code> attribute."
         ]
       },
       "review-html-accessibility": {
@@ -3297,7 +3326,7 @@
       "quiz-javascript-classes": {
         "title": "JavaScript Classes Quiz",
         "intro": [
-          "Test what you've learned about JavaScript Classes with this quiz."
+          "Test what you've learned about JavaScript classes with this quiz."
         ]
       },
       "lecture-understanding-recursion-and-the-call-stack": {
@@ -3463,9 +3492,18 @@
           "In these lecture videos, you will learn about working with state and responding to events with React."
         ]
       },
-      "rmpy": {
-        "title": "268",
-        "intro": []
+      "workshop-toggle-text-app": {
+        "title": "Toggle Text App",
+        "intro": [
+          "In this workshop, you will continute to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
+        ]
+      },
+      "lab-color-picker": {
+        "title": "Build a Color Picker App",
+        "intro": [
+          "In this lab you'll build a Color Picker.",
+          "You'll practice using state and hooks to manage the properties of an element."
+        ]
       },
       "dbta": {
         "title": "269",
@@ -3508,9 +3546,12 @@
         "title": "276",
         "intro": []
       },
-      "clak": {
-        "title": "277",
-        "intro": []
+      "lab-event-rsvp": {
+        "title": "Build an Event RSVP",
+        "intro": [
+          "In this lab, you'll build an Event RSVP form using React.",
+          "You'll practice using the useState hook to manage form input and display user responses."
+        ]
       },
       "lecture-working-with-data-fetching-and-memoization-in-react": {
         "title": "Working with Data Fetching and Memoization in React",
@@ -3522,9 +3563,12 @@
         "title": "279",
         "intro": []
       },
-      "lrof": {
-        "title": "280",
-        "intro": []
+      "lab-currency-converter": {
+        "title": "Build a Currency Converter",
+        "intro": [
+          "For this lab, you'll build a currency converter app.",
+          "You'll use React state, memoization, and controlled components to convert between currencies."
+        ]
       },
       "lecture-routing-react-frameworks-and-dependency-management-tools": {
         "title": "Routing, React Frameworks, and Dependency Management Tools",
@@ -3532,9 +3576,12 @@
           "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
         ]
       },
-      "vyzp": {
-        "title": "281",
-        "intro": []
+      "lab-tic-tac-toe": {
+        "title": "Build a Tic-Tac-Toe Game",
+        "intro": [
+          "In this lab, you'll build a Tic-Tac-Toe game using React.",
+          "You'll practice managing state, handling user interactions, and updating the UI dynamically."
+        ]
       },
       "lecture-react-strategies-and-debugging": {
         "title": "React Strategies and Debugging",
@@ -3601,7 +3648,10 @@
       },
       "review-testing": {
         "title": "Testing Review",
-        "intro": ["Review testing concepts to prepare for the upcoming quiz."]
+        "intro": [
+          "Before you take the testing quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including unit testing, end-to-end testing, functional testing and more."
+        ]
       },
       "quiz-testing": {
         "title": "Testing Quiz",
@@ -3844,11 +3894,16 @@
       },
       "lab-rpg-character": {
         "title": "Build an RPG character",
-        "intro": ["Learn about Build an RPG character in these lectures."]
+        "intro": [
+          "In this lab you will practice basic python by building an RPG character."
+        ]
       },
       "review-python-basics": {
         "title": "Python Basics Review",
-        "intro": ["Learn about Python Basics Review in these lectures."]
+        "intro": [
+          "Before you're quizzed on Python basics, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
       },
       "quiz-python-basics": {
         "title": "Python Basics Quiz",
@@ -3870,7 +3925,10 @@
       },
       "review-loops-and-sequences": {
         "title": "Loops and Sequences Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-loops-and-sequences": {
         "title": "Loops and Sequences Quiz",
@@ -3895,8 +3953,11 @@
         "intro": [""]
       },
       "review-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets Review",
-        "intro": [""]
+        "title": "Dictionaries and Sets review",
+        "intro": [
+          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-dictionaries-and-sets": {
         "title": "Dictionaries and Sets Quiz",
@@ -3914,7 +3975,10 @@
       },
       "review-error-handling": {
         "title": "Error Handling Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on error handling, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
       },
       "quiz-error-handling": {
         "title": "Error Handling Quiz",
@@ -3932,11 +3996,16 @@
       },
       "lab-budget-app": {
         "title": "Build a Budget App",
-        "intro": [""]
+        "intro": [
+          "In this lab you will build a budget app and practice creating a class and methods for that class."
+        ]
       },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on classes and objects, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-classes-and-objects": {
         "title": "Classes and Objects Quiz",
@@ -3982,7 +4051,10 @@
       },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
       },
       "quiz-object-oriented-programming": {
         "title": "Object Oriented Programming Quiz",
@@ -4004,7 +4076,10 @@
       },
       "review-data-structures": {
         "title": "Data Structures Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on data structures, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-data-structures": {
         "title": "Data Structures Quiz",
@@ -4042,7 +4117,10 @@
       },
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Quiz",
@@ -4072,7 +4150,10 @@
       },
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
       },
       "quiz-graphs-and-trees": {
         "title": "Graphs and Trees Quiz",
@@ -4090,7 +4171,10 @@
       },
       "review-dynamic-programming": {
         "title": "Dynamic Programming Review",
-        "intro": [""]
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
       },
       "quiz-dynamic-programming": {
         "title": "Dynamic Programming Quiz",
@@ -4100,7 +4184,7 @@
       },
       "review-python": {
         "title": "Python Review",
-        "intro": [""]
+        "intro": ["Review Python concepts to prepare for the upcoming exam."]
       },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",

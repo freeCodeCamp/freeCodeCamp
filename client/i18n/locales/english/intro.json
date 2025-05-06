@@ -2001,6 +2001,13 @@
           "You'll practice concepts like <code>alt</code> attributes and aria roles."
         ]
       },
+      "lab-multimedia-player": {
+        "title": "Build a Multimedia Player",
+        "intro": [
+          "In this lab, you'll build a multimedia player.",
+          "You will practice working with the <code>audio</code> and <code>video</code> elements, the <code>controls</code> attribute, and the <code>aria-label</code> attribute."
+        ]
+      },
       "review-html-accessibility": {
         "title": "HTML Accessibility Review",
         "intro": [
@@ -2022,7 +2029,10 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": { "title": "30", "intro": [] },
+      "qpra": {
+        "title": "30",
+        "intro": []
+      },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
@@ -3426,7 +3436,10 @@
           "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
-      "kagw": { "title": "258", "intro": [] },
+      "kagw": {
+        "title": "258",
+        "intro": []
+      },
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
@@ -3479,16 +3492,25 @@
           "In these lecture videos, you will learn about working with state and responding to events with React."
         ]
       },
-      "rmpy": { "title": "268", "intro": [] },
-      "dbta": { "title": "269", "intro": [] },
+      "workshop-toggle-text-app": {
+        "title": "Toggle Text App",
+        "intro": [
+          "In this workshop, you will continute to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
+        ]
+      },
+      "lab-color-picker": {
+        "title": "Build a Color Picker App",
+        "intro": [
+          "In this lab you'll build a Color Picker.",
+          "You'll practice using state and hooks to manage the properties of an element."
+        ]
+      },
       "lecture-understanding-effects-and-referencing-values-in-react": {
         "title": "Understanding Effects and Referencing Values in React",
         "intro": [
           "In these lecture videos, you will learn about effects and referencing values with React."
         ]
       },
-      "xdyh": { "title": "270", "intro": [] },
-      "vjgg": { "title": "272", "intro": [] },
       "lab-one-time-password-generator": {
         "title": "Build a One-Time Password Generator",
         "intro": [
@@ -3515,23 +3537,47 @@
           "In these lecture videos, you will learn about working with forms in React."
         ]
       },
-      "sgau": { "title": "276", "intro": [] },
-      "clak": { "title": "277", "intro": [] },
+      "sgau": {
+        "title": "276",
+        "intro": []
+      },
+      "lab-event-rsvp": {
+        "title": "Build an Event RSVP",
+        "intro": [
+          "In this lab, you'll build an Event RSVP form using React.",
+          "You'll practice using the useState hook to manage form input and display user responses."
+        ]
+      },
       "lecture-working-with-data-fetching-and-memoization-in-react": {
         "title": "Working with Data Fetching and Memoization in React",
         "intro": [
           "In these lecture videos, you will learn about data fetching and memoization in React."
         ]
       },
-      "ffpt": { "title": "279", "intro": [] },
-      "lrof": { "title": "280", "intro": [] },
+      "ffpt": {
+        "title": "279",
+        "intro": []
+      },
+      "lab-currency-converter": {
+        "title": "Build a Currency Converter",
+        "intro": [
+          "For this lab, you'll build a currency converter app.",
+          "You'll use React state, memoization, and controlled components to convert between currencies."
+        ]
+      },
       "lecture-routing-react-frameworks-and-dependency-management-tools": {
         "title": "Routing, React Frameworks, and Dependency Management Tools",
         "intro": [
           "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
         ]
       },
-      "vyzp": { "title": "281", "intro": [] },
+      "lab-tic-tac-toe": {
+        "title": "Build a Tic-Tac-Toe Game",
+        "intro": [
+          "In this lab, you'll build a Tic-Tac-Toe game using React.",
+          "You'll practice managing state, handling user interactions, and updating the UI dynamically."
+        ]
+      },
       "lecture-react-strategies-and-debugging": {
         "title": "React Strategies and Debugging",
         "intro": [
@@ -3597,7 +3643,10 @@
       },
       "review-testing": {
         "title": "Testing Review",
-        "intro": ["Review testing concepts to prepare for the upcoming quiz."]
+        "intro": [
+          "Before you take the testing quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including unit testing, end-to-end testing, functional testing and more."
+        ]
       },
       "quiz-testing": {
         "title": "Testing Quiz",
@@ -3609,11 +3658,26 @@
           "In these lecture videos, you will learn what TypeScript is and how to use it."
         ]
       },
-      "trvf": { "title": "293", "intro": [] },
-      "kwmg": { "title": "294", "intro": [] },
-      "nodx": { "title": "295", "intro": [] },
-      "erfj": { "title": "296", "intro": [] },
-      "muyw": { "title": "297", "intro": [] },
+      "trvf": {
+        "title": "293",
+        "intro": []
+      },
+      "kwmg": {
+        "title": "294",
+        "intro": []
+      },
+      "nodx": {
+        "title": "295",
+        "intro": []
+      },
+      "erfj": {
+        "title": "296",
+        "intro": []
+      },
+      "muyw": {
+        "title": "297",
+        "intro": []
+      },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
@@ -3631,8 +3695,14 @@
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
-      "rdzk": { "title": "301", "intro": [] },
-      "vtpz": { "title": "302", "intro": [] },
+      "rdzk": {
+        "title": "301",
+        "intro": []
+      },
+      "vtpz": {
+        "title": "302",
+        "intro": []
+      },
       "workshop-bash-boilerplate": {
         "title": "Build a Boilerplate",
         "intro": [
@@ -3650,7 +3720,10 @@
         "title": "Bash Commands Quiz",
         "intro": ["Test what you've learned bash commands with this quiz."]
       },
-      "voks": { "title": "306", "intro": [] },
+      "voks": {
+        "title": "306",
+        "intro": []
+      },
       "workshop-database-of-video-game-characters": {
         "title": "Build a Database of Video Game Characters",
         "intro": [
@@ -3676,7 +3749,10 @@
           "Test what you've learned on relational databases with this quiz."
         ]
       },
-      "pexz": { "title": "311", "intro": [] },
+      "pexz": {
+        "title": "311",
+        "intro": []
+      },
       "workshop-bash-five-programs": {
         "title": "Build Five Programs",
         "intro": [
@@ -3694,7 +3770,10 @@
         "title": "Bash Scripting Quiz",
         "intro": ["Test what you've learned on bash scripting in this quiz."]
       },
-      "tkgg": { "title": "315", "intro": [] },
+      "tkgg": {
+        "title": "315",
+        "intro": []
+      },
       "workshop-sql-student-database-part-1": {
         "title": "Build a Student Database: Part 1",
         "intro": [
@@ -3744,7 +3823,10 @@
         "title": "Bash and SQL Quiz",
         "intro": ["Test what you've learned in this quiz on Bash and SQL."]
       },
-      "eeez": { "title": "324", "intro": [] },
+      "eeez": {
+        "title": "324",
+        "intro": []
+      },
       "workshop-castle": {
         "title": "Build a Castle",
         "intro": [
@@ -3760,7 +3842,10 @@
         "title": "Nano Quiz",
         "intro": ["Test what you've learned on Nano with this quiz ."]
       },
-      "rhhl": { "title": "328", "intro": [] },
+      "rhhl": {
+        "title": "328",
+        "intro": []
+      },
       "workshop-sql-reference-object": {
         "title": "Build an SQL Reference Object",
         "intro": [
@@ -3804,7 +3889,9 @@
       },
       "lab-rpg-character": {
         "title": "Build an RPG character",
-        "intro": ["Learn about Build an RPG character in these lectures."]
+        "intro": [
+          "In this lab you will practice basic python by building an RPG character."
+        ]
       },
       "review-python-basics": {
         "title": "Python Basics Review",
@@ -3902,7 +3989,12 @@
         "title": "Placeholder - waiting for title",
         "intro": [""]
       },
-      "lab-budget-app": { "title": "Build a Budget App", "intro": [""] },
+      "lab-budget-app": {
+        "title": "Build a Budget App",
+        "intro": [
+          "In this lab you will build a budget app and practice creating a class and methods for that class."
+        ]
+      },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",
         "intro": [
@@ -3948,7 +4040,10 @@
         "title": "Placeholder - Waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-oop-3": { "title": "", "intro": [""] },
+      "lab-placeholder-oop-3": {
+        "title": "",
+        "intro": [""]
+      },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
         "intro": [
@@ -3999,8 +4094,14 @@
         "title": "Build a Bisection Method",
         "intro": [""]
       },
-      "workshop-merge-sort": { "title": "Build a Merge Sort", "intro": [""] },
-      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
+      "workshop-merge-sort": {
+        "title": "Build a Merge Sort",
+        "intro": [""]
+      },
+      "lab-quick-sort": {
+        "title": "Build a Quick Sort",
+        "intro": [""]
+      },
       "lab-selection-sort": {
         "title": "Build a Selection Sort",
         "intro": [""]

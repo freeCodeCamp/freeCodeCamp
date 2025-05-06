@@ -108,7 +108,7 @@ export interface EditorProps {
   previewOpen: boolean;
   updateFile: (object: {
     fileKey: string;
-    editorValue: string;
+    contents: string;
     editableRegionBoundaries?: number[];
   }) => void;
   usesMultifileEditor: boolean;
@@ -285,7 +285,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     guides: {
       highlightActiveIndentation:
         props.challengeType === challengeTypes.python ||
-        props.challengeType === challengeTypes.multifilePythonCertProject
+        props.challengeType === challengeTypes.multifilePythonCertProject ||
+        props.challengeType === challengeTypes.pyLab
     },
     minimap: {
       enabled: false
@@ -307,7 +308,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     },
     tabSize:
       props.challengeType !== challengeTypes.python &&
-      props.challengeType !== challengeTypes.multifilePythonCertProject
+      props.challengeType !== challengeTypes.multifilePythonCertProject &&
+      props.challengeType !== challengeTypes.pyLab
         ? 2
         : 4,
     dragAndDrop: true,
@@ -844,7 +846,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   }
 
-  const onChange = (editorValue: string) => {
+  const onChange = (contents: string) => {
     const { updateFile, fileKey, isResetting } = props;
     if (isResetting) return;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
@@ -871,7 +873,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       });
     }
-    updateFile({ fileKey, editorValue, editableRegionBoundaries });
+    updateFile({ fileKey, contents, editableRegionBoundaries });
   };
 
   function createBreadcrumb(): HTMLElement {

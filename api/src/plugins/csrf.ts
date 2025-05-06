@@ -23,16 +23,16 @@ const csrf: FastifyPluginCallback = (fastify, _options, done) => {
     // tokens since we know we can provide this one
     getToken: req => req.headers[CSRF_HEADER] as string,
     cookieOpts: { signed: false, sameSite: 'strict' },
-    logLevel: 'debug'
+    logLevel: 'debug' // TODO: change to trace
   });
 
   // All routes except signout should add a CSRF token to the response
   fastify.addHook('onRequest', (req, reply, done) => {
-    const logger = fastify.log.child({ req });
+    const logger = fastify.log.child({ req, res: reply });
     const isSignout = req.url === '/signout' || req.url === '/signout/';
 
     if (!isSignout) {
-      logger.debug('Adding CSRF token to response');
+      logger.trace('Adding CSRF token to response');
       const token = reply.generateCsrf();
       void reply.setCookie(CSRF_COOKIE, token, {
         sameSite: 'strict',
