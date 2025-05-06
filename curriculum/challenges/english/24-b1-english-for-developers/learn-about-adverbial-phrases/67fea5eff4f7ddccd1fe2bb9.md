@@ -27,7 +27,7 @@ This refers to something happening once a week.
 
 # --explanation--
 
-`Weekly` is an adverbial phrase used to describe something that happens only once every week. It indicates the frequency of an event or action occurring on a weekly basis. For example:
+`Weekly` is used to describe something that happens only once every week. It indicates the frequency of an event or action occurring on a weekly basis. For example:
 
 `The team has weekly meetings to discuss project progress.` – This means the meetings happen every week.
 

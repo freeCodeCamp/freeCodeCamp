@@ -27,7 +27,7 @@ This is used to show that something happens earlier in time than something else.
 
 # --explanation--
 
-`Before` is used as an adverb to show that one action happens earlier than another. For example:
+`Before` is used to show that one action happens earlier than another. For example:
 
 - `Please save your work before you close the program.` – This means saving should happen earlier than closing the program.
 
