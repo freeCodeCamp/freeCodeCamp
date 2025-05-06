@@ -19,7 +19,6 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {
-    "preinstall": "npx -y only-allow pnpm",
     "audit-challenges": "pnpm run create:shared && tsx tools/challenge-auditor/index.ts",
     "analyze-bundle": "webpack-bundle-analyzer",
     "prebuild": "npm-run-all create:shared",
@@ -40,6 +39,7 @@
     "clean:server": "rm -rf ./api-server/lib",
     "create:shared": "tsc -p shared",
     "create-new-project": "cd ./tools/challenge-helper-scripts/ && pnpm run create-project",
+    "create-new-quiz": "cd ./tools/challenge-helper-scripts/ && pnpm run create-quiz",
     "predevelop": "npm-run-all -p create:shared -s build:curriculum",
     "develop": "npm-run-all -p develop:*",
     "develop:client": "cd ./client && pnpm run develop",

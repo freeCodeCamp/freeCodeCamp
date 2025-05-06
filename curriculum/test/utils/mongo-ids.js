@@ -1511,6 +1511,11 @@ const duplicatedProjectIds = [
   // Number Guessing Game
   '602da04c22201c65d2a019f4',
 
+  /*** Full Stack Python ***/
+
+  // Budget App
+  '5e44413e903586ffb414c94e',
+
   /*** Back End JavaScript ***/
 
   /*** Legacy Only ***/

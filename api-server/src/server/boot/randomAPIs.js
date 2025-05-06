@@ -16,7 +16,6 @@ module.exports = function (app) {
   router.get('/unsubscribe/:email', unsubscribeDeprecated);
   router.get('/ue/:unsubscribeId', unsubscribeById);
   router.get('/resubscribe/:unsubscribeId', resubscribe);
-  router.get('/api/users/get-public-profile', blockUserAgent, getPublicProfile);
   router.get('/users/get-public-profile', blockUserAgent, getPublicProfile);
   const getUserExists = createGetUserExists(app);
   router.get('/users/exists', getUserExists);

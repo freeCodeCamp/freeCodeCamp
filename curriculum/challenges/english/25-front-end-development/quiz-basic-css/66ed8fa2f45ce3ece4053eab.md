@@ -453,3 +453,461 @@ Top, Bottom, Right, Left.
 
 Top, Right, Bottom, Left.
 
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What are the main parts of a CSS rule?
+
+#### --distractors--
+
+Elements and attributes
+
+---
+
+Style and sheets
+
+---
+
+Scripts and values
+
+#### --answer--
+
+Selectors and declaration blocks
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct syntax for a CSS rule?
+
+#### --distractors--
+
+```css
+body [
+  font-family: Arial;
+]
+```
+
+---
+
+```css
+font-family {
+  body: Arial;
+}
+```
+
+---
+
+```css
+body {
+  font-family; Arial:
+}
+```
+
+#### --answer--
+
+```css
+body {
+  font-family: Arial;
+}
+```
+
+### --question--
+
+#### --text--
+
+What are default browser styles?
+
+#### --distractors--
+
+HTML elements that have the same styling properties regardless of the browser.
+
+---
+
+They are mandatory styles that you must use for specific HTML elements.
+
+---
+
+They are the color themes for the various browsers.
+
+#### --answer--
+
+The CSS rules that browsers apply automatically.
+
+### --question--
+
+#### --text--
+
+What is the default value for the `width` property?
+
+#### --distractors--
+
+`none`
+
+---
+
+`0`
+
+---
+
+`100%`
+
+#### --answer--
+
+`auto`
+
+### --question--
+
+#### --text--
+
+What does the `min-height` property specify?
+
+#### --distractors--
+
+The starting height for an element.
+
+---
+
+The height for an element.
+
+---
+
+The maximum height for an element.
+
+#### --answer--
+
+The minimum height for an element.
+
+### --question--
+
+#### --text--
+
+Which of the following is TRUE about the universal selector `*`?
+
+#### --distractors--
+
+It has the highest specificity because it can style all the elements on a page.
+
+---
+
+It contributes 1 to all parts of the specificity value. 
+
+---
+
+It cannot reset styles across different browsers.
+
+#### --answer--
+
+It has the lowest specificity value of any selector.
+
+### --question--
+
+#### --text--
+
+Which selector correctly targets `li` elements for an ordered list?
+
+#### --distractors--
+
+`li {}`
+
+---
+
+`ul li {}`
+
+---
+
+`ol + li {}`
+
+#### --answer--
+
+`ol li {}`
+
+### --question--
+
+#### --text--
+
+Which selector targets the paragraph elements of a `div` element?
+
+#### --distractors--
+
+`p div {}`
+
+---
+
+`div, p {}`
+
+---
+
+`p, div {}`
+
+#### --answer--
+
+`div p {}`
+
+### --question--
+
+#### --text--
+
+Where does the `margin` apply styling properties?
+
+#### --distractors--
+
+The space inside element.
+
+---
+
+Between the content and the border.
+
+---
+
+On the border of the element.
+
+#### --answer--
+
+The space outside the element.
+
+### --question--
+
+#### --text--
+
+Where does the `padding` property apply styling?
+
+#### --distractors--
+
+Between the elements border and the surrounding elements.
+
+---
+
+The space outside the element.
+
+---
+
+On the border of the element.
+
+#### --answer--
+
+The space inside the element.
+
+### --question--
+
+#### --text--
+
+Which statement is FALSE about block-level elements?
+
+#### --distractors--
+
+They can stretch to fit the width of their container.
+
+---
+
+Common block level elements include `div`, `paragraph`, and `section`.
+
+---
+
+Block-level elements start on a new line and take up the full width of their container.
+
+#### --answer--
+
+They cannot take up the full width available as they are blocked from doing so.
+
+### --question--
+
+#### --text--
+
+Which statement is FALSE when using the `inline-block` value?
+
+#### --distractors--
+
+`inline-block` elements behave like inline elements.
+
+---
+
+They can have `width` and `height` properties.
+
+---
+
+Elements retain inline flow but allow setting `width` and `height`.
+
+#### --answer--
+
+They do not share properties with inline or block level elements.
+
+### --question--
+
+#### --text--
+
+Which is TRUE about the `!important` keyword?
+
+#### --distractors--
+
+They are used to make comments for an important CSS property.
+
+---
+
+They make sure a CSS property has the correct syntax.
+
+---
+
+They make CSS rules easier to maintain.
+
+#### --answer--
+
+They override the specificity of other selectors.
+
+### --question--
+
+#### --text--
+
+What character precedes a class selector name?
+
+#### --distractors--
+
+`#`
+
+---
+
+`$`
+
+---
+
+`*`
+
+#### --answer--
+
+`.`
+
+### --question--
+
+#### --text--
+
+Which is FALSE about inline level elements?
+
+#### --distractors--
+
+They take up only as much space as they need.
+
+---
+
+They do not start on a new line.
+
+---
+
+Common inline elements include `span` and `img`.
+
+#### --answer--
+
+They always start on a new line.
+
+### --question--
+
+#### --text--
+
+Where are internal CSS styles accessed?
+
+#### --distractors--
+
+They are styles that are important to the project, so are not shared externally.
+
+---
+
+Since they form the core styling of the project, they are saved in the `styles.css` file so other web pages can access them.
+
+---
+
+They are stored inside the `body` element when there is only one web page to style.
+
+#### --answer--
+
+They are written within the `style` section within the `head` element.
+
+### --question--
+
+#### --text--
+
+What is the order for applying the `padding` property when using the shorthand syntax? 
+
+#### --distractors--
+
+`top`, `bottom`, `left`, `right`
+
+---
+
+`left`, `right`, `top`, `bottom`
+
+---
+
+`right`, `top`, `left`, `bottom`
+
+#### --answer--
+
+`top`, `right`, `bottom`, `left`
+
+### --question--
+
+#### --text--
+
+What is the order for applying the `margin` property when using the shorthand syntax? 
+
+#### --distractors--
+
+`left`, `right`, `top`, `bottom`
+
+---
+
+`right`, `top`, `left`, `bottom`
+
+---
+
+`top`, `bottom`, `left`, `right`
+
+#### --answer--
+
+`top`, `right`, `bottom`, `left`
+
+### --question--
+
+#### --text--
+
+What are inline CSS styles used for?
+
+#### --distractors--
+
+They are used to style inline elements only.
+
+---
+
+They are used to style elements only when they all appear on the same line of the browser viewport.
+
+---
+
+They are used to resolve the issue with separation of concerns.
+
+#### --answer--
+
+They are used to directly style within the element, instead of using internal or external CSS.
+
+### --question--
+
+#### --text--
+
+What symbol precedes the ID selector?
+
+#### --distractors--
+
+`.`
+
+---
+
+`*`
+
+---
+
+`$`
+
+#### --answer--
+
+`#`
+

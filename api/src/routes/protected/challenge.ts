@@ -68,7 +68,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.coderoadChallengeCompleted,
       errorHandler(error, req, reply) {
-        const logger = fastify.log.child({ req });
+        const logger = fastify.log.child({ req, res: reply });
         if (error.validation) {
           logger.warn({ validationError: error.validation });
           void reply.code(400);
@@ -79,7 +79,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       logger.info(
         { userId: req.user?.id },
         'User submitted a coderoad challenge'
@@ -187,7 +187,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       } catch (error) {
         // TODO(Post-MVP): don't catch, just let Sentry handle this.
-        logger.error(error);
+        logger.error(error, 'Error submitting coderoad challenge');
         fastify.Sentry.captureException(error);
         void reply.code(400);
         return {
@@ -207,7 +207,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.projectCompleted,
       errorHandler(error, req, reply) {
-        const logger = fastify.log.child({ req });
+        const logger = fastify.log.child({ req, res: reply });
         if (error.validation) {
           logger.warn({ validationError: error.validation });
           void reply.code(400);
@@ -310,8 +310,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       }
     },
-    async req => {
-      const logger = fastify.log.child({ req });
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
       logger.info(
         { userId: req.user?.id },
         `User submitted a backend challenge`
@@ -353,7 +353,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.modernChallengeCompleted,
       errorHandler(error, req, reply) {
         if (error.validation) {
-          const logger = fastify.log.child({ req });
+          const logger = fastify.log.child({ req, res: reply });
           // This is another highly used route, so debug log level is used to
           // avoid excessive logging
           logger.debug({ validationError: error.validation });
@@ -364,8 +364,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
       }
     },
-    async req => {
-      const logger = fastify.log.child({ req });
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
       // This is another highly used route, so debug log level is used to
       // avoid excessive logging
       logger.debug(
@@ -420,7 +420,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.saveChallenge,
       errorHandler(error, req, reply) {
-        const logger = fastify.log.child({ req });
+        const logger = fastify.log.child({ req, res: reply });
         if (error.validation) {
           logger.warn({ validationError: error.validation });
           void reply.code(400);
@@ -431,7 +431,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       logger.info({ userId: req.user?.id }, 'User saved a challenge');
 
       const { files, id: challengeId } = req.body;
@@ -480,7 +480,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.exam,
       errorHandler(error, req, reply) {
-        const logger = fastify.log.child({ req });
+        const logger = fastify.log.child({ req, res: reply });
         if (error.validation) {
           logger.warn({ validationError: error.validation });
           void reply.code(400);
@@ -491,7 +491,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       logger.info(
         { userId: req.user?.id, examId: req.params.id },
         'User requested an exam'
@@ -580,7 +580,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.msTrophyChallengeCompleted,
       errorHandler(error, req, reply) {
-        const logger = fastify.log.child({ req });
+        const logger = fastify.log.child({ req, res: reply });
         if (error.validation) {
           logger.warn({ validationError: error.validation });
           void reply.code(400);
@@ -591,7 +591,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       logger.info(
         { userId: req.user?.id },
         'User submitted a Microsoft trophy challenge'
@@ -669,7 +669,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           completedDate
         };
       } catch (error) {
-        logger.error(error);
+        logger.error(error, 'Error submitting Microsoft trophy challenge');
         fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
@@ -685,7 +685,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.examChallengeCompleted,
       errorHandler(error, req, reply) {
-        const logger = fastify.log.child({ req });
+        const logger = fastify.log.child({ req, res: reply });
         if (error.validation) {
           logger.warn({ validationError: error.validation });
           void reply.code(400);
@@ -698,7 +698,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
 
       logger.info({ userId: req.user?.id }, 'User submitted an exam challenge');
 
@@ -884,7 +884,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           examResults
         };
       } catch (error) {
-        logger.error(error);
+        logger.error(error, 'Error submitting exam challenge');
         fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
@@ -899,7 +899,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.submitQuizAttempt,
       errorHandler(error, req, reply) {
-        const logger = fastify.log.child({ req });
+        const logger = fastify.log.child({ req, res: reply });
         if (error.validation) {
           logger.warn({ validationError: error.validation });
           void reply.code(400);

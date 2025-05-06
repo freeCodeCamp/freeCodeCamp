@@ -31,7 +31,7 @@ You should not change your existing `body` element. Make sure you did not delete
 assert.lengthOf(document.querySelectorAll('body'), 1);
 ```
 
-Your `div` tag should be nested in the `body`.
+Your `div` element should be nested in the `body`.
 
 ```js
 assert.equal(document.querySelector('div')?.parentElement?.tagName, 'BODY');
@@ -79,4 +79,3 @@ h1, h2, p {
   text-align: center;
 }
 ```
-

@@ -28,8 +28,8 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.updateStripeCard
     },
-    async req => {
-      const logger = fastify.log.child({ req });
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
       const donation = await fastify.prisma.donation.findFirst({
         where: { userId: req.user?.id, provider: 'stripe' }
       });
@@ -62,7 +62,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.addDonation
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       try {
         const user = await fastify.prisma.user.findUnique({
           where: { id: req.user?.id }
@@ -90,8 +90,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           isDonating: true
         } as const;
       } catch (error) {
-        logger.error(`User ${req.user?.id} failed to donate`);
-        logger.error(error);
+        logger.error(error, `User ${req.user?.id} failed to donate`);
         fastify.Sentry.captureException(error);
         void reply.code(500);
         return {
@@ -108,7 +107,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.chargeStripeCard
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       try {
         const { paymentMethodId, amount, duration } = req.body;
         const id = req.user!.id;
@@ -227,8 +226,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           isDonating: true
         });
       } catch (error) {
-        logger.error(`User ${req.user?.id} failed to donate`);
-        logger.error(error);
+        logger.error(error, `User ${req.user?.id} failed to donate`);
         fastify.Sentry.captureException(error);
         void reply.code(500);
         return reply.send({
