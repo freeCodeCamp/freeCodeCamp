@@ -1,3 +1,4 @@
+import { randomBytes } from 'crypto';
 import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
@@ -45,6 +46,7 @@ import {
   GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env';
 import { isObjectID } from './utils/validation';
+import { getLogger } from './utils/logger';
 import {
   examEnvironmentMultipartRoutes,
   examEnvironmentOpenRoutes,
@@ -77,6 +79,12 @@ ajv.addFormat('objectid', {
   type: 'string',
   validate: (str: string) => isObjectID(str)
 });
+
+export const buildOptions = {
+  logger: getLogger(),
+  genReqId: () => randomBytes(8).toString('hex'),
+  disableRequestLogging: true
+};
 
 /**
  * Top-level wrapper to instantiate the API server. This is where all middleware and
