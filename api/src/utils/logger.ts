@@ -24,6 +24,7 @@ const serializersPretty = {
 
 const serializersDefault = {
   req: (req: FastifyRequest) => {
+    const id = req.id || 'ID not found';
     const method = req.method || 'METHOD not found';
     const url = req.url || 'URL not found';
     const xForwardedFor = Array.isArray(req.headers['x-forwarded-for'])
@@ -45,7 +46,8 @@ const serializersDefault = {
       REQ_IP: ip,
       REQ_USER_AGENT: userAgent,
       REQ_COUNTRY: country,
-      REQ_QUERY: query
+      REQ_QUERY: query,
+      REQ_ID: id
     };
   },
   res: (reply: FastifyReply) => {
