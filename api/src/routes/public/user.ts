@@ -120,7 +120,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, reply });
       logger.info({ username: req.query.username });
       // TODO(Post-MVP): look for duplicates unless we can make username unique in the db.
       const user = await fastify.prisma.user.findFirst({
@@ -219,10 +219,12 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       attachValidation: true
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
 
       if (req.validationError) {
-        logger.warn({ validationError: req.validationError });
+        logger.warn('Validation error', {
+          validationError: req.validationError
+        });
         void reply.code(400);
         return await reply.send({
           type: 'danger',

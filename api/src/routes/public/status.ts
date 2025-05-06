@@ -15,13 +15,13 @@ export const statusRoute: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.get('/status/ping', async (req, _reply) => {
-    fastify.log.child({ req }).debug('pong');
+  fastify.get('/status/ping', async (req, res) => {
+    fastify.log.child({ req, res }).debug('Replying to ping');
     return { msg: 'pong' };
   });
 
-  fastify.get('/status/version', async (req, _reply) => {
-    fastify.log.child({ req }).debug('version');
+  fastify.get('/status/version', async (req, res) => {
+    fastify.log.child({ req, res }).debug('Sending version');
     return { version: DEPLOYMENT_VERSION };
   });
 
