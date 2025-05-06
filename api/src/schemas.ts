@@ -42,3 +42,4 @@ export { resetMyProgress } from './schemas/user/reset-my-progress';
 export { submitSurvey } from './schemas/user/submit-survey';
 export { userExamEnvironmentToken } from './schemas/user/exam-environment-token';
 export { sentryPostEvent } from './schemas/sentry/event';
+export { getClassroom } from './schemas/classroom/';

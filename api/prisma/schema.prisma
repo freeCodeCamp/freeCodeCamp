@@ -152,6 +152,13 @@ model user {
   // Relations
   examAttempts                      EnvExamAttempt[]
   examEnvironmentAuthorizationToken ExamEnvironmentAuthorizationToken?
+  classroom                         classroom?                         @relation(fields: [classroomId], references: [id])
+  classroomId                       String?                            @db.ObjectId
+}
+
+model classroom {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  students user[]
 }
 
 // -----------------------------------
