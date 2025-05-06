@@ -35,6 +35,7 @@ const foundationalCSharpBase =
 const fullStackDeveloperBase = '/learn/full-stack-developer';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
+const a2SpanishBase = '/learn/a2-professional-spanish';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -833,6 +834,19 @@ const allStandardCerts = [
         title: "Dialogue 1: I'm Tom",
         link: `${b1EnglishBase}/learn-how-to-describe-places-and-events/dialogue-1-im-tom`,
         certSlug: Certification.B1English
+      }
+    ]
+  },
+  {
+    id: '681a6b22e5a782fe3459984a',
+    title: 'A2 Professional Spanish',
+    certSlug: Certification.A2Spanish,
+    projects: [
+      {
+        id: '681a8796e5a782fe3459984b',
+        title: 'Diálogo 1: Soy Tomás',
+        link: `${a2SpanishBase}/learn-greetings-in-professional-settings/dialogo-1-soy-tomas`,
+        certSlug: Certification.A2Spanish
       }
     ]
   }

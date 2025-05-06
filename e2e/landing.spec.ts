@@ -19,6 +19,7 @@ const superBlocks = [
   intro[SuperBlocks.FullStackDeveloper].title,
   intro[SuperBlocks.A2English].title,
   intro[SuperBlocks.B1English].title,
+  intro[SuperBlocks.A2Spanish].title,
   intro[SuperBlocks.TheOdinProject].title,
   intro[SuperBlocks.CodingInterviewPrep].title,
   intro[SuperBlocks.ProjectEuler].title,

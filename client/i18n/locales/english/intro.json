@@ -4193,6 +4193,17 @@
       }
     }
   },
+  "a2-professional-spanish": {
+    "title": "A2 Professional Spanish Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "practice-greetings-on-your-first-day-at-the-office": {
+        "title": "Practice Greetings On Your First Day At The Office",
+        "intro": ["", ""]
+      }
+    }
+  },
   "misc-text": {
     "browse-other": "Browse our other free certifications",
     "courses": "Courses",
