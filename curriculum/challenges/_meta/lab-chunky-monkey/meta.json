@@ -1,0 +1,11 @@
+{
+  "name": "Chunky Monkey Lab",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-chunky-monkey",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "a9bd25c716030ec90084d8a1", "title": "Chunky Monkey Algorithm" }],
+  "helpCategory": "JavaScript"
+}
