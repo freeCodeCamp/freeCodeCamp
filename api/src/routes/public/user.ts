@@ -222,9 +222,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       const logger = fastify.log.child({ req, res: reply });
 
       if (req.validationError) {
-        logger.warn('Validation error', {
-          validationError: req.validationError
-        });
+        logger.warn('Validation error: No username provided');
         void reply.code(400);
         return await reply.send({
           type: 'danger',
@@ -235,7 +233,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       const username = req.query.username.toLowerCase();
 
       if (isRestricted(username)) {
-        logger.info({ username }, 'Restricted username');
+        logger.info(`Restricted username: ${username}`);
         return await reply.send({ exists: true });
       }
 
@@ -244,6 +242,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           where: { username }
         })) > 0;
 
+      logger.info(`User exists for username: ${username}`);
       await reply.send({ exists });
     }
   );
