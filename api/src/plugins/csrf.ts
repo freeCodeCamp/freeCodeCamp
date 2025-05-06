@@ -28,7 +28,7 @@ const csrf: FastifyPluginCallback = (fastify, _options, done) => {
 
   // All routes except signout should add a CSRF token to the response
   fastify.addHook('onRequest', (req, reply, done) => {
-    const logger = fastify.log.child({ req });
+    const logger = fastify.log.child({ req, res: reply });
     const isSignout = req.url === '/signout' || req.url === '/signout/';
 
     if (!isSignout) {
