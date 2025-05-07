@@ -80,7 +80,7 @@ Your anchor (`a`) element should link to `https://freecatphotoapp.com`. You have
 
 ```js
 assert.equal(
-  document.querySelectorAll('a')[2]?.getAttribute('href'),
+  document.querySelectorAll('a')[2]?.getAttribute('href').trim(),
     'https://freecatphotoapp.com'
 );
 ```
