@@ -32,7 +32,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.certSlug
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       const username = req.params.username.toLowerCase();
       const certSlug = req.params.certSlug;
 

@@ -194,6 +194,9 @@ importers:
       '@sentry/node':
         specifier: 9.1.0
         version: 9.1.0
+      '@types/pino':
+        specifier: ^7.0.5
+        version: 7.0.5
       ajv:
         specifier: 8.12.0
         version: 8.12.0
@@ -236,6 +239,9 @@ importers:
       nodemailer:
         specifier: 6.9.10
         version: 6.9.10
+      pino:
+        specifier: ^9.6.0
+        version: 9.6.0
       pino-pretty:
         specifier: 10.2.3
         version: 10.2.3
@@ -5134,6 +5140,10 @@ packages:
   '@types/pg@8.6.1':
     resolution: {integrity: sha512-1Kc4oAGzAl7uqUStZCDvaLFqZrW9qWSjXOmBfdgyBP5La7Us6Mg4GBvRlSoaZMhQF/zSj1C8CtKMBkoiT8eL8w==}
 
+  '@types/pino@7.0.5':
+    resolution: {integrity: sha512-wKoab31pknvILkxAF8ss+v9iNyhw5Iu/0jLtRkUD74cNfOOLJNnqfFKAv0r7wVaTQxRZtWrMpGfShwwBjOcgcg==}
+    deprecated: This is a stub types definition. pino provides its own type definitions, so you do not need this installed.
+
   '@types/prismjs@1.26.0':
     resolution: {integrity: sha512-ZTaqn/qSqUuAq1YwvOFQfVW1AR/oQJlLSZVustdjwI+GZ8kr0MSHBj0tsXPW1EqHubx50gtBEjbPGsdZwQwCjQ==}
 
@@ -8526,6 +8536,7 @@ packages:
 
   formidable@2.1.2:
     resolution: {integrity: sha512-CM3GuJ57US06mlpQ47YcunuUZ9jpm8Vx+P2CGt2j7HpgkKZO/DJYQ0Bobim8G6PFQmK5lOqOOdUXboU+h73A4g==}
+    deprecated: 'ACTION REQUIRED: SWITCH TO v3 - v1 and v2 are VULNERABLE! v1 is DEPRECATED FOR OVER 2 YEARS! Use formidable@latest or try formidable-mini for fresh projects'
 
   forwarded-parse@2.1.2:
     resolution: {integrity: sha512-alTFZZQDKMporBH77856pXgzhEzaUVmLCDk+egLgIgHst3Tpndzz8MnKe+GzRJRfvVdn69HhpW7cmXzvtLvJAw==}
@@ -15351,6 +15362,7 @@ packages:
   yurnalist@2.1.0:
     resolution: {integrity: sha512-PgrBqosQLM3gN2xBFIMDLACRTV9c365VqityKKpSTWpwR+U4LAFR3rSVyEoscWlu3EzX9+Y0I86GXUKxpHFl6w==}
     engines: {node: '>=4.0.0'}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   zod@3.23.8:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
@@ -21568,6 +21580,10 @@ snapshots:
       '@types/node': 20.12.8
       pg-protocol: 1.8.0
       pg-types: 2.2.0
+
+  '@types/pino@7.0.5':
+    dependencies:
+      pino: 9.6.0
 
   '@types/prismjs@1.26.0': {}
 
@@ -32595,7 +32611,7 @@ snapshots:
 
   send@1.2.0:
     dependencies:
-      debug: 4.3.7
+      debug: 4.4.0
       encodeurl: 2.0.0
       escape-html: 1.0.3
       etag: 1.8.1
