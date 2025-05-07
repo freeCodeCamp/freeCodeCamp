@@ -10,7 +10,7 @@ dashedName: add-items-to-an-array-with-push-and-unshift
 
 An array's length, like the data types it can contain, is not fixed. Arrays can be defined with a length of any number of elements, and elements can be added or removed over time; in other words, arrays are <dfn>mutable</dfn>. In this challenge, we will look at two methods with which we can programmatically modify an array: `Array.push()` and `Array.unshift()`.
 
-Both methods take one or more elements as parameters and add those elements to the array the method is being called on; the `push()` method adds elements to the end of an array, and `unshift()` adds elements to the beginning. Consider the following:
+Both methods take one or more elements as parameters and add those elements to the array the method is being called on; the `push()` method adds elements to the end of an array, and `unshift()` adds elements to the beginning. Note that the order in which you call these methods matters—elements added with `unshift()` will appear before those added with `push()` in the final array.Consider the following:
 
 ```js
 let twentyThree = 'XXIII';
