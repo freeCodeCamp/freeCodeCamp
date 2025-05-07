@@ -6,7 +6,6 @@ import type {
   FrameDocument,
   PythonDocument
 } from '../../../../../tools/client-plugins/browser-scripts';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
 
 const utilsFormat: <T>(x: T) => string = format;
 
@@ -165,29 +164,20 @@ function getContentDocument<T extends Document = FrameDocument>(
   return frameDocument as T;
 }
 
-function getContentWindow(document: Document, id: string) {
-  const frame = document.getElementById(id);
-  if (!frame) return null;
-  return (frame as HTMLIFrameElement).contentWindow;
-}
-
 export const runTestInTestFrame = async function (
   document: Document,
   test: string,
   timeout: number,
   type: 'dom' | 'javascript' | 'python'
 ): Promise<TestResult | undefined> {
-  const contentDocument = getContentDocument(document, testId);
   const runner = window?.FCCSandbox.getRunner(type);
-  if (contentDocument) {
-    return await Promise.race([
-      new Promise<
-        { pass: boolean } | { err: { message: string; stack?: string } }
-        // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
-      >((_, reject) => setTimeout(() => reject('timeout'), timeout)),
-      runner.runTest(test)
-    ]);
-  }
+
+  return await Promise.race([
+    new Promise<
+      { pass: boolean } | { err: { message: string; stack?: string } }
+    >((_, reject) => setTimeout(() => reject('timeout'), timeout)),
+    runner.runTest(test)
+  ]);
 };
 
 export const runPythonInFrame = function (
@@ -203,8 +193,16 @@ export const runPythonInFrame = function (
 };
 
 const loadTestRunner = async (document: Document) => {
+  const TEST_RUNNER_ID = 'fcc-test-runner';
   const done = new Promise<void>((resolve, reject) => {
+    const oldScript = document.getElementById(TEST_RUNNER_ID);
+    if (oldScript) {
+      // if the script is already loaded, we don't need to load it again
+      resolve();
+      return;
+    }
     const script = document.createElement('script');
+    script.id = TEST_RUNNER_ID;
     script.src = '/js/test-runner/index.js';
     script.onload = () => {
       console.log('LOADED');
