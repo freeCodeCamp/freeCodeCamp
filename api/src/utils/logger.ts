@@ -19,6 +19,12 @@ const serializersPretty = {
       REQ_METHOD: req.method,
       REQ_URL: req.url
     };
+  },
+  res: (res: FastifyReply) => {
+    return {
+      RES_STATUS_CODE: res.statusCode,
+      RES_ELAPSED_TIME: res.elapsedTime
+    };
   }
 };
 
@@ -50,10 +56,10 @@ const serializersDefault = {
       REQ_ID: id
     };
   },
-  res: (reply: FastifyReply) => {
+  res: (res: FastifyReply) => {
     return {
-      RES_STATUS_CODE: reply.statusCode,
-      RES_RESPONSE_TIME: reply.elapsedTime
+      RES_STATUS_CODE: res.statusCode,
+      RES_ELAPSED_TIME: res.elapsedTime
     };
   }
 };
