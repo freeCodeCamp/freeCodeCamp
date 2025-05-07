@@ -1,7 +1,7 @@
 ---
 id: af2170cad53daa0770fabdea
 title: Mutations
-challengeType: 1
+challengeType: 26
 dashedName: mutations
 ---
 
