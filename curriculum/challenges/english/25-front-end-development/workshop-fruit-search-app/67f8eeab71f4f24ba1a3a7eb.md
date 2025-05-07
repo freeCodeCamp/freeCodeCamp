@@ -11,7 +11,7 @@ After the form, add a `div` element with an `id` of `results` that will display 
 
 # --hints--
 
-You should have a `div` element with the `id` `results` after the form.
+You should have a `div` element with the `id` of `results` after the form.
 
 ```js
 const searchContainer = document.getElementById("search-container");
