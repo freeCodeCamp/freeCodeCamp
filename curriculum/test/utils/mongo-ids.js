@@ -1516,15 +1516,15 @@ const duplicatedProjectIds = [
   // Budget App
   '5e44413e903586ffb414c94e',
 
+  // Polygon area calculator
+  '5e444147903586ffb414c94f',
+
   /*** Back End JavaScript ***/
 
   /*** Legacy Only ***/
 
   // Caesars Cipher
-  '56533eb9ac21ba0edf2244e2',
-
-  // Polygon area calculator
-  '5e444147903586ffb414c94f'
+  '56533eb9ac21ba0edf2244e2'
 ];
 
 class MongoIds {
