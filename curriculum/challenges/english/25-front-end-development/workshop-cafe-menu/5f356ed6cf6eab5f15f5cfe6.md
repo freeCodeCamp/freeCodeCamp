@@ -7,7 +7,7 @@ dashedName: step-20
 
 # --description--
 
-The `div` element is used mainly for design layout purposes unlike the other content elements you have used so far. Add a `div` element inside the `body` element and then move all the other elements inside the new `div`.
+The `div` element is used mainly for design layout purposes, unlike the other content elements you have used so far. Add a `div` element inside the `body` element and then move all the other elements inside the new `div`.
 
 Inside the opening `div` tag, add the `id` attribute with a value of `menu`.
 
@@ -22,7 +22,7 @@ assert.strictEqual(document.querySelector('div')?.id, 'menu');
 You should have a closing `</div>` tag.
 
 ```js
-assert(code.match(/<\/div>/i));
+assert.match(code, /<\/div>/i);
 ```
 
 You should not change your existing `body` element. Make sure you did not delete the closing tag.
@@ -31,7 +31,7 @@ You should not change your existing `body` element. Make sure you did not delete
 assert.lengthOf(document.querySelectorAll('body'), 1);
 ```
 
-Your `div` tag should be nested in the `body`.
+Your `div` element should be nested in the `body`.
 
 ```js
 assert.equal(document.querySelector('div')?.parentElement?.tagName, 'BODY');
@@ -79,4 +79,3 @@ h1, h2, p {
   text-align: center;
 }
 ```
-

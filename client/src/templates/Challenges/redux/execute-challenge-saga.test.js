@@ -10,7 +10,7 @@ const initialState = {
 };
 
 // We're not testing the reducer here, so just return the initial state
-function reducer(state = initialState, _action) {
+function reducer(state = initialState) {
   return state;
 }
 

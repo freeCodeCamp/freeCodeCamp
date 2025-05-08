@@ -11,7 +11,6 @@ dashedName: learn-how-javascript-assertions-work
 Working on these challenges will involve you writing your code using one of the following methods:
 
 - Clone <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
-- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges. Learn <a href="https://forum.freecodecamp.org/t/how-to-use-gitpod-in-the-curriculum/668669#how-can-i-share-my-workspace-to-get-help-8" target="_blank" rel="noopener noreferrer nofollow">how to share your Gitpod workspace to get help</a>.
 - Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 # --instructions--
@@ -23,8 +22,7 @@ Within `tests/1_unit-tests.js` under the test labeled `#1` in the `Basic Asserti
 All tests should pass.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(
+  $.get(code + '/_api/get-tests?type=unit&n=0').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -37,8 +35,7 @@ All tests should pass.
 You should choose the correct method for the first assertion - `isNull` vs. `isNotNull`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(
+  $.get(code + '/_api/get-tests?type=unit&n=0').then(
     (data) => {
       assert.equal(data.assertions[0].method, 'isNull', 'Null is null');
     },
@@ -51,8 +48,7 @@ You should choose the correct method for the first assertion - `isNull` vs. `isN
 You should choose the correct method for the second assertion - `isNull` vs. `isNotNull`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=0').then(
+  $.get(code + '/_api/get-tests?type=unit&n=0').then(
     (data) => {
       assert.equal(data.assertions[1].method, 'isNotNull', '1 is not null');
     },

@@ -4,7 +4,6 @@ const addBeforeHook = require('./add-before-hook');
 
 describe('add-before-hook plugin', () => {
   let withBeforeHookAST,
-    withEmptyHookAST,
     withInvalidHookAST,
     withAnotherInvalidHookAST,
     withNonJSHookAST;
@@ -14,7 +13,6 @@ describe('add-before-hook plugin', () => {
 
   beforeAll(async () => {
     withBeforeHookAST = await parseFixture('with-before-hook.md');
-    withEmptyHookAST = await parseFixture('with-empty-before-hook.md');
     withInvalidHookAST = await parseFixture('with-invalid-before-hook.md');
     withAnotherInvalidHookAST = await parseFixture(
       'with-another-invalid-before-hook.md'

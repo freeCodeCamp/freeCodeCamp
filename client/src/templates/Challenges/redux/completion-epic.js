@@ -16,12 +16,13 @@ import {
   msTrophyVerified
 } from '../../../utils/error-messages';
 import {
+  canSaveToDB,
   challengeTypes,
   submitTypes
 } from '../../../../../shared/config/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
-  allowBlockDonationRequests,
+  allowSectionDonationRequests,
   setIsProcessing,
   setRenderStartTime,
   submitComplete,
@@ -32,6 +33,7 @@ import { isSignedInSelector, userSelector } from '../../../redux/selectors';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import postUpdate$ from '../utils/post-update';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { actionTypes } from './action-types';
 import {
   closeModal,
@@ -46,7 +48,8 @@ import {
   challengeTestsSelector,
   userCompletedExamSelector,
   projectFormValuesSelector,
-  isBlockNewlyCompletedSelector
+  isBlockNewlyCompletedSelector,
+  isModuleNewlyCompletedSelector
 } from './selectors';
 
 function postChallenge(update) {
@@ -56,7 +59,7 @@ function postChallenge(update) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ data }) => {
-      const { savedChallenges, message, examResults } = data;
+      const { type, savedChallenges, message, examResults } = data;
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
@@ -79,8 +82,15 @@ function postChallenge(update) {
         submitChallengeComplete()
       ];
 
-      if (message && challengeType === challengeTypes.msTrophy) {
-        actions = [createFlashMessage(data), submitChallengeError()];
+      if (
+        type === 'error' ||
+        (message && challengeType === challengeTypes.msTrophy)
+      ) {
+        actions = [];
+        if (message) {
+          actions.push(createFlashMessage(data));
+        }
+        actions.push(submitChallengeError());
       } else if (challengeType === challengeTypes.msTrophy) {
         actions.push(createFlashMessage(msTrophyVerified));
       }
@@ -107,8 +117,7 @@ function submitModern(type, state) {
       let body;
       if (
         block === 'javascript-algorithms-and-data-structures-projects' ||
-        challengeType === challengeTypes.multifileCertProject ||
-        challengeType === challengeTypes.multifilePythonCertProject
+        canSaveToDB(challengeType)
       ) {
         body = standardizeRequestBody({ id, challengeType, challengeFiles });
       } else {
@@ -223,7 +232,9 @@ export default function completionEpic(action$, state$) {
         nextChallengePath,
         challengeType,
         superBlock,
+        blockType,
         block,
+        module,
         blockHashSlug
       } = challengeMetaSelector(state);
       // Default to submitChallengeComplete since we do not want the user to
@@ -247,19 +258,30 @@ export default function completionEpic(action$, state$) {
         ? blockHashSlug
         : nextChallengePath;
 
-      const canAllowDonationRequest = (state, action) =>
-        isBlockNewlyCompletedSelector(state) &&
-        action.type === submitActionTypes.submitComplete;
+      const canAllowDonationRequest = (state, action) => {
+        if (action.type !== submitActionTypes.submitComplete) return null;
+
+        const donationData =
+          superBlock === SuperBlocks.FullStackDeveloper &&
+          blockType !== 'review' &&
+          isModuleNewlyCompletedSelector(state)
+            ? { module, superBlock }
+            : superBlock !== SuperBlocks.FullStackDeveloper &&
+                isBlockNewlyCompletedSelector(state)
+              ? { block, superBlock }
+              : null;
+
+        return donationData ? allowSectionDonationRequests(donationData) : null;
+      };
 
       return submitter(type, state).pipe(
         concat(
           of(setIsAdvancing(!isLastChallengeInBlock), setIsProcessing(false))
         ),
-        mergeMap(x =>
-          canAllowDonationRequest(state, x)
-            ? of(x, allowBlockDonationRequests({ superBlock, block }))
-            : of(x)
-        ),
+        mergeMap(x => {
+          const donationAction = canAllowDonationRequest(state, x);
+          return donationAction ? of(x, donationAction) : of(x);
+        }),
         mergeMap(x => of(x, setRenderStartTime(Date.now()))),
         tap(res => {
           if (res.type !== submitActionTypes.updateFailed) {

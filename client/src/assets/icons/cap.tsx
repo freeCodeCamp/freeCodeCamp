@@ -1,5 +1,5 @@
 import React from 'react';
-function FreeIcon(
+function CapIcon(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   return (
@@ -9,6 +9,7 @@ function FreeIcon(
       height='60'
       viewBox='0 0 61 60'
       fill='none'
+      aria-hidden='true'
       {...props}
     >
       <path
@@ -23,6 +24,6 @@ function FreeIcon(
   );
 }
 
-FreeIcon.displayName = 'FreeIcon';
+CapIcon.displayName = 'CapIcon';
 
-export default FreeIcon;
+export default CapIcon;

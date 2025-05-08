@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "lib": ["WebWorker", "DOM", "DOM.Iterable", "ES2020"],
-    "target": "es2020",
+    "lib": ["WebWorker", "DOM", "DOM.Iterable", "es2023"],
+    "target": "ES2023",
     "module": "es2020",
     "moduleResolution": "node",
     "allowJs": true,
@@ -22,12 +22,5 @@
     "utils/**/*",
     "tools/**/*",
     "config/**/*"
-  ], // since ts-node compiles ts on the fly and then uses node, it needs to
-  // compile the scripts to commonjs (or node will complain about the requires)
-  "ts-node": {
-    "compilerOptions": {
-      "module": "commonjs"
-    },
-    "transpileOnly": true
-  }
+  ]
 }

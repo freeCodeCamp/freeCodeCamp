@@ -95,7 +95,7 @@ assert.equal(code.match(/<\/span>/g).length,code.match(/<span/g).length);
   </div>
   <p>Things cats love:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -155,7 +155,7 @@ assert.equal(code.match(/<\/span>/g).length,code.match(/<span/g).length);
   </div>
   <p>Things cats <span class="text-danger">love</span>:</p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>

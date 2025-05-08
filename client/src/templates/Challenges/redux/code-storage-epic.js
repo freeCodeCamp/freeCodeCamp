@@ -9,7 +9,7 @@ import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { savedChallengesSelector } from '../../../redux/selectors';
 import { actionTypes as appTypes } from '../../../redux/action-types';
 import { actionTypes } from './action-types';
-import { noStoredCodeFound, storedCodeFound } from './actions';
+import { noStoredCodeFound, updateFile } from './actions';
 import { challengeFilesSelector, challengeMetaSelector } from './selectors';
 
 const legacyPrefixes = [
@@ -97,7 +97,7 @@ function saveCodeEpic(action$, state$) {
           throw Error('Failed to save to localStorage');
         }
         return action;
-      } catch (e) {
+      } catch {
         return { ...action, error: true };
       }
     }),
@@ -200,7 +200,9 @@ function loadCodeEpic(action$, state$) {
         }
       }
       if (finalFiles) {
-        return of(storedCodeFound(finalFiles));
+        // update the contents, rather than replacing the entire file, so that
+        // we do not lose the seed values.
+        return of(...finalFiles.map(file => updateFile(file)));
       }
       return of(noStoredCodeFound());
     })

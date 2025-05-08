@@ -36,7 +36,7 @@ jobs:
 
       - name: Check if commits are made on GitHub Web UI
         id: check-commits
-        if: steps.pr_author.outputs.result.is_allow_listed == 'false'
+        if: steps.pr_author.outputs.is_allow_listed == 'false'
         run: |
           PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           COMMITS_URL="https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/commits"
@@ -47,7 +47,7 @@ jobs:
 
       - name: Add comment on PR if commits are made on GitHub Web UI
         uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
-        if: steps.pr_author.outputs.result.is_allow_listed == 'false' && env.IS_GITHUB_COMMIT == 'true'
+        if: steps.pr_author.outputs.is_allow_listed == 'false' && env.IS_GITHUB_COMMIT == 'true'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |

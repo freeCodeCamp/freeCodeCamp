@@ -38,16 +38,15 @@ assert(store.getState().login === false);
 The `store.dispatch()` method should be used to dispatch an action of type `LOGIN`.
 
 ```js
-(getUserInput) =>
-  assert(
+assert(
     (function () {
-      let noWhiteSpace = getUserInput('index').replace(/\s/g, '');
+      let noWhiteSpace = code.replace(/\s/g, '');
       return (
         noWhiteSpace.includes('store.dispatch(loginAction())') ||
         noWhiteSpace.includes("store.dispatch({type: 'LOGIN'})") === true
       );
     })()
-  );
+);
 ```
 
 # --seed--

@@ -39,8 +39,8 @@ describe('request-authorization', () => {
     const authRE = /^\/auth\//;
     const confirmEmailRE = /^\/confirm-email$/;
     const newsShortLinksRE = /^\/n\/|^\/p\//;
-    const publicUserRE = /^\/api\/users\/get-public-profile$/;
-    const publicUsernameRE = /^\/api\/users\/exists$/;
+    const publicUserRE = /^\/users\/get-public-profile$/;
+    const publicUsernameRE = /^\/users\/exists$/;
     const resubscribeRE = /^\/resubscribe\//;
     const showCertRE = /^\/certificate\/showCert\//;
     // note: signin may not have a trailing slash

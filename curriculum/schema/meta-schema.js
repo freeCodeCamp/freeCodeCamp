@@ -1,6 +1,9 @@
 const Joi = require('joi');
 
-const { SuperBlocks } = require('../../shared/config/curriculum');
+const {
+  SuperBlocks,
+  chapterBasedSuperBlocks
+} = require('../../shared/config/curriculum');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
@@ -11,6 +14,7 @@ const schema = Joi.object()
     blockLayout: Joi.valid(
       'challenge-list',
       'challenge-grid',
+      'dialogue-grid',
       'link',
       'project-list',
       'legacy-challenge-list',
@@ -24,7 +28,11 @@ const schema = Joi.object()
       'review',
       'quiz',
       'exam'
-    ),
+    ).when('superBlock', {
+      is: 'full-stack-developer',
+      then: Joi.required(),
+      otherwise: Joi.optional()
+    }),
     isUpcomingChange: Joi.boolean().required(),
     dashedName: Joi.string().regex(slugRE).required(),
     superBlock: Joi.string()
@@ -32,7 +40,7 @@ const schema = Joi.object()
       .valid(...Object.values(SuperBlocks))
       .required(),
     order: Joi.number().when('superBlock', {
-      is: 'full-stack-developer',
+      is: chapterBasedSuperBlocks,
       then: Joi.forbidden(),
       otherwise: Joi.required()
     }),

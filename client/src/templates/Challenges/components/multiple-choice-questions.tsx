@@ -35,8 +35,10 @@ function MultipleChoiceQuestions({
         }
       />
       {questions.map((question, questionIndex) => (
-        <div key={questionIndex}>
-          <PrismFormatted className={'line-numbers'} text={question.text} />
+        <fieldset key={questionIndex}>
+          <legend className='mcq-question-text'>
+            <PrismFormatted className={'line-numbers'} text={question.text} />
+          </legend>
           <div className='video-quiz-options'>
             {question.answers.map(({ answer }, answerIndex) => {
               const isSubmittedAnswer =
@@ -57,7 +59,7 @@ function MultipleChoiceQuestions({
                     htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
                   >
                     <input
-                      name='quiz'
+                      name={`mc-question-${questionIndex}`}
                       checked={selectedOptions[questionIndex] === answerIndex}
                       className='sr-only'
                       onChange={() =>
@@ -109,7 +111,7 @@ function MultipleChoiceQuestions({
             })}
           </div>
           <Spacer size='m' />
-        </div>
+        </fieldset>
       ))}
       <Spacer size='m' />
     </>

@@ -1,0 +1,12 @@
+{
+  "name": "Dictionaries and Sets Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-dictionaries-and-sets",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "67f412ac59601c4151b763da", "title": "Dictionaries and Sets Quiz" }
+  ],
+  "helpCategory": "Python"
+}

@@ -50,10 +50,10 @@ type PaypalButtonState = {
 const {
   paypalClientId,
   deploymentEnv
-}: { paypalClientId: string | null; deploymentEnv: 'staging' | 'live' } =
+}: { paypalClientId: string | null; deploymentEnv: 'staging' | 'production' } =
   envData as {
     paypalClientId: string | null;
-    deploymentEnv: 'staging' | 'live';
+    deploymentEnv: 'staging' | 'production';
   };
 
 class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {

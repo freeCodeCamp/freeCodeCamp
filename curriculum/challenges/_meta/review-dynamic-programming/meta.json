@@ -1,0 +1,10 @@
+{
+  "name": "Dynamic Programming Review",
+  "isUpcomingChange": true,
+  "dashedName": "review-dynamic-programming",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67f39e2119042d2f2ca926ff", "title": "Dynamic Programming Review" }],
+  "helpCategory": "Python",
+  "blockType": "review",
+  "blockLayout": "link"
+}

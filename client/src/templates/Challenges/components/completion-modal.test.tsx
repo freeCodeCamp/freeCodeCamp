@@ -14,8 +14,7 @@ import {
   isBlockNewlyCompletedSelector
 } from '../redux/selectors';
 import { buildChallenge, getTestRunner } from '../utils/build';
-import CompletionModal from './completion-modal';
-
+import CompletionModal, { combineFileData } from './completion-modal';
 jest.mock('../../../analytics');
 jest.mock('../../../utils/fire-confetti');
 jest.mock('../../../components/Progress');
@@ -146,6 +145,33 @@ describe('<CompletionModal />', () => {
       expect(
         getCompletedPercentage(fakeCompletedChallengesIds, currentBlockIds, id)
       ).toBe(100);
+    });
+  });
+
+  describe('File Download Content', () => {
+    it('Should label each section appropriately', () => {
+      const indexHtml = {
+        name: 'index',
+        ext: 'html',
+        contents: 'some html elements'
+      };
+      const stylesCSS = {
+        name: 'styles',
+        ext: 'css',
+        contents: 'some css styles'
+      };
+      const scriptJS = {
+        name: 'script',
+        ext: 'js',
+        contents: 'some javascript'
+      };
+      const result = combineFileData([indexHtml, stylesCSS, scriptJS]);
+      expect(result).toContain('** start of index.html **');
+      expect(result).toContain('** end of index.html **');
+      expect(result).toContain('** start of styles.css **');
+      expect(result).toContain('** end of styles.css **');
+      expect(result).toContain('** start of script.js **');
+      expect(result).toContain('** end of script.js **');
     });
   });
 });

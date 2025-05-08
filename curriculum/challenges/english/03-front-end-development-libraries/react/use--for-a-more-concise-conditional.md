@@ -78,7 +78,7 @@ async () => {
 The render method should use the `&&` logical operator to check the condition of `this.state.display`.
 
 ```js
-(getUserInput) => assert(getUserInput('index').includes('&&'));
+assert(code.includes('&&'));
 ```
 
 # --seed--

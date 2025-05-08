@@ -35,9 +35,15 @@ The Cats `img` element should be nested in the `figure` element.
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
-assert(
-  catsImg &&
-    catsImg.getAttribute('src').toLowerCase() === 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
+assert.exists(catsImg);
+```
+
+The third image should have a `src` attribute set to `https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg`.
+
+```js
+const catsImg = document.querySelectorAll('figure > img')[1];
+assert.strictEqual(
+  catsImg?.src?.toLowerCase(), 'https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg'
 );
 ```
 
@@ -45,12 +51,7 @@ The Cats `img` element should have an `alt` attribute with the value `Five cats 
 
 ```js
 const catsImg = document.querySelectorAll('figure > img')[1];
-assert(
-  catsImg
-    .getAttribute('alt')
-    .replace(/\s+/g, ' ')
-    .match(/^Five cats looking around a field\.?$/i)
-);
+assert.match(catsImg?.getAttribute('alt')?.replace(/\s+/g, ' '), /^Five cats looking around a field\.?$/i);
 ```
 
 # --seed--
@@ -72,7 +73,7 @@ assert(
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
         <ul>
-          <li>cat nip</li>
+          <li>catnip</li>
           <li>laser pointers</li>
           <li>lasagna</li>
         </ul>

@@ -21,8 +21,7 @@ Serve the object `{"message": "Hello json"}` as a response, in JSON format, to G
 The endpoint `/json` should serve the JSON object `{"message": "Hello json"}`
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/json').then(
+  $.get(code + '/json').then(
     (data) => {
       assert.equal(
         data.message,

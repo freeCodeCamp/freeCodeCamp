@@ -5,7 +5,7 @@ exports[`should check certification page consistency 1`] = `
   className="mx-[-15px] "
 >
   <div
-    className=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+    className=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]   "
   >
     <section
       className="card"

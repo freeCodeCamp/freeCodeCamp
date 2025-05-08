@@ -11,7 +11,6 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 Working on these challenges will involve you writing your code using one of the following methods:
 
 - Clone <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
-- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges. Learn <a href="https://forum.freecodecamp.org/t/how-to-use-gitpod-in-the-curriculum/668669#how-can-i-share-my-workspace-to-get-help-8" target="_blank" rel="noopener noreferrer nofollow">how to share your Gitpod workspace to get help</a>.
 - Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 The `package.json` file is the center of any Node.js project or npm package. It stores information about your project. It consists of a single JSON object where information is stored in key-value pairs. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information.
@@ -32,15 +31,12 @@ Add your name as the `author` of the project in the `package.json` file.
 
 **Note:** Remember that you’re writing JSON, so all field names must use double-quotes (") and be separated with a comma (,).
 
-If you are using Gitpod, make sure the app is running and the preview window is open. Copy the preview window's URL and paste it into the Solution Link input below.
-
 # --hints--
 
 `package.json` should have a valid "author" key
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/package.json').then(
+  $.get(code + '/_api/package.json').then(
     (data) => {
       var packJson = JSON.parse(data);
       assert(packJson.author, '"author" is missing');

@@ -1,0 +1,10 @@
+{
+  "name": "Loops and Sequences Review",
+  "isUpcomingChange": true,
+  "dashedName": "review-loops-and-sequences",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67f39b91583dec1e1eddbb9e", "title": "Loops and Sequences Review" }],
+  "helpCategory": "Python",
+  "blockType": "review",
+  "blockLayout": "link"
+}

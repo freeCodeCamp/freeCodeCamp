@@ -3,7 +3,7 @@ import { useLocation, globalHistory } from '@gatsbyjs/reach-router';
 
 interface Props {
   onWindowClose: (event: BeforeUnloadEvent) => void;
-  onHistoryChange: () => void;
+  onHistoryChange: (targetPathname: string) => void;
 }
 
 export const usePageLeave = ({ onWindowClose, onHistoryChange }: Props) => {
@@ -20,7 +20,7 @@ export const usePageLeave = ({ onWindowClose, onHistoryChange }: Props) => {
         action === 'PUSH' && location.pathname !== curLocation.pathname;
 
       if (isBack || isRouteChanged) {
-        onHistoryChange();
+        onHistoryChange(location.pathname);
       }
     });
 

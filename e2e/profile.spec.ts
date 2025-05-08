@@ -120,31 +120,6 @@ test.describe('Profile component', () => {
       ).toContain('Among most prolific volunteers');
     });
 
-    test('renders total points correctly', async ({ page }) => {
-      await expect(page.getByText('Total Points:')).toBeVisible();
-    });
-
-    // The date range computation in this test doesn't match the implementation code,
-    // and causes the test to fail in some cases.
-    // We would want to mock system time to keep the test stable,
-    // but Playwright currently doesn't offer a built-in mechanism for this.
-    // Ref: https://github.com/microsoft/playwright/issues/6347
-    test.skip('renders the heat map correctly', async ({ page }) => {
-      const today = new Date();
-      const currentMonth = today.toLocaleString('en-US', { month: 'short' });
-      const sixMonthsAgo = new Date(today.setMonth(today.getMonth() - 6));
-      const sixMonthsAgoMonth = sixMonthsAgo.toLocaleString('en-US', {
-        month: 'short'
-      });
-      const dateRange = `${sixMonthsAgoMonth} ${sixMonthsAgo.getFullYear()} - ${currentMonth} ${today.getFullYear()}`;
-
-      await expect(page.getByText(dateRange)).toBeVisible();
-      await expect(page.locator('.react-calendar-heatmap')).toBeVisible();
-      // Streak should be a non-negative integer
-      await expect(page.getByText(/Longest Streak: [0-9]\d*$/)).toBeVisible();
-      await expect(page.getByText(/Current Streak: [0-9]\d*$/)).toBeVisible();
-    });
-
     test('displays certifications correctly', async ({ page }) => {
       await expect(
         page.getByRole('heading', { name: 'freeCodeCamp Certifications' })

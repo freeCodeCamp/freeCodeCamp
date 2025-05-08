@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Lightbox Viewer
 
-In this lab, you will build a lighbox viewer for viewing images in a focused mode.
+In this lab, you will build a lightbox viewer for viewing images in a focused mode.

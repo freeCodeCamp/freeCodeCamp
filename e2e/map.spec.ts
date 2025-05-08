@@ -8,39 +8,39 @@ test.beforeEach(async ({ page }) => {
 const LANDING_PAGE_LINKS = [
   {
     slug: '2022/responsive-web-design',
-    name: 'Responsive Web Design Certification'
+    name: 'Responsive Web Design'
   },
   {
     slug: 'javascript-algorithms-and-data-structures-v8',
-    name: 'JavaScript Algorithms and Data Structures Certification'
+    name: 'JavaScript Algorithms and Data Structures'
   },
   {
     slug: 'front-end-development-libraries',
-    name: 'Front End Development Libraries Certification'
+    name: 'Front End Development Libraries'
   },
-  { slug: 'data-visualization', name: 'Data Visualization Certification' },
-  { slug: 'relational-database', name: 'Relational Database Certification' },
+  { slug: 'data-visualization', name: 'Data Visualization' },
+  { slug: 'relational-database', name: 'Relational Database' },
   {
     slug: 'back-end-development-and-apis',
-    name: 'Back End Development and APIs Certification'
+    name: 'Back End Development and APIs'
   },
-  { slug: 'quality-assurance', name: 'Quality Assurance Certification' },
+  { slug: 'quality-assurance', name: 'Quality Assurance' },
   {
     slug: 'scientific-computing-with-python',
-    name: 'Scientific Computing with Python Certification'
+    name: 'Scientific Computing with Python'
   },
   {
     slug: 'data-analysis-with-python',
-    name: 'Data Analysis with Python Certification'
+    name: 'Data Analysis with Python'
   },
-  { slug: 'information-security', name: 'Information Security Certification' },
+  { slug: 'information-security', name: 'Information Security' },
   {
     slug: 'machine-learning-with-python',
-    name: 'Machine Learning with Python Certification'
+    name: 'Machine Learning with Python'
   },
   {
     slug: 'college-algebra-with-python',
-    name: 'College Algebra with Python Certification'
+    name: 'College Algebra with Python'
   },
   {
     slug: 'full-stack-developer',
@@ -56,7 +56,7 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'foundational-c-sharp-with-microsoft',
-    name: '(New) Foundational C# with Microsoft Certification'
+    name: 'Free Foundational C# with Microsoft Certification'
   },
   { slug: 'the-odin-project', name: 'The Odin Project - freeCodeCamp Remix' },
   { slug: 'coding-interview-prep', name: 'Coding Interview Prep' },
@@ -68,7 +68,7 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'javascript-algorithms-and-data-structures',
-    name: 'Legacy JavaScript Algorithms and Data Structures Certification'
+    name: 'Legacy JavaScript Algorithms and Data Structures'
   },
   { slug: 'python-for-everybody', name: 'Legacy Python for Everybody' }
 ];

@@ -172,7 +172,8 @@ const StepPreview = ({
   dimensions?: { width: number; height: number };
 }) => {
   return challengeType === challengeTypes.python ||
-    challengeType === challengeTypes.multifilePythonCertProject ? (
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ? (
     <XtermTerminal dimensions={dimensions} xtermFitRef={xtermFitRef} />
   ) : (
     <Preview disableIframe={disableIframe} previewMounted={previewMounted} />
@@ -522,9 +523,13 @@ function ShowClassic({
           />
         )}
         <CompletionModal />
-        <HelpModal challengeTitle={title} challengeBlock={blockName} />
+        <HelpModal
+          challengeTitle={title}
+          challengeBlock={blockName}
+          superBlock={superBlock}
+        />
         <VideoModal videoUrl={videoUrl} />
-        <ResetModal challengeType={challengeType} />
+        <ResetModal challengeType={challengeType} challengeTitle={title} />
         <ProjectPreviewModal
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}

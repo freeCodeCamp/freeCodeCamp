@@ -92,7 +92,7 @@ assert.lengthOf(code.match(/<\/i/g),4);
   </div>
   <p>Things cats <span class="text-danger">love:</span></p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>
@@ -169,7 +169,7 @@ assert.lengthOf(code.match(/<\/i/g),4);
   </div>
   <p>Things cats <span class="text-danger">love:</span></p>
   <ul>
-    <li>cat nip</li>
+    <li>catnip</li>
     <li>laser pointers</li>
     <li>lasagna</li>
   </ul>

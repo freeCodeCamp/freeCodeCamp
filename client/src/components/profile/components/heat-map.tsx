@@ -146,6 +146,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
           />
           <ReactTooltip className='react-tooltip' effect='solid' html={true} />
           <Row className='text-center'>
+            <Spacer size='xs' />
             <button
               className='heatmap-nav-btn'
               disabled={!pages[this.state.pageIndex - 1]}
@@ -154,6 +155,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
               style={{
                 visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
               }}
+              aria-label={t('aria.previous-page')}
             >
               &lt;
             </button>
@@ -166,11 +168,12 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
               style={{
                 visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
               }}
+              aria-label={t('aria.next-page')}
             >
               &gt;
             </button>
           </Row>
-          <Spacer size='m' />
+          <Spacer size='xs' />
         </section>
       </FullWidthRow>
     );

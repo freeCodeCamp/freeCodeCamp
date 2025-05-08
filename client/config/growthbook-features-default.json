@@ -94,8 +94,5 @@
         "name": "prod-show-benefits"
       }
     ]
-  },
-  "fcc-10": {
-    "defaultValue": true
   }
 }

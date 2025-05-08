@@ -1,0 +1,12 @@
+{
+  "name": "Python Basics Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-python-basics",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "67f41242431cbf3db8ca79c7", "title": "Python Basics Quiz" }
+  ],
+  "helpCategory": "Python"
+}

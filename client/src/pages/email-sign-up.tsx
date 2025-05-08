@@ -7,7 +7,6 @@ import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 
-import IntroDescription from '../components/Intro/components/intro-description';
 import createRedirect from '../components/create-redirect';
 import { Loader, Link } from '../components/helpers';
 import { apiLocation } from '../../config/env.json';
@@ -115,6 +114,7 @@ function AcceptPrivacyTerms({
   const { t } = useTranslation();
   const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
   const acceptTermsRef = useRef(acceptTerms);
+  const newAccount = isSignedIn && completedChallengeCount < 1;
 
   useEffect(() => {
     acceptedPrivacyRef.current = acceptedPrivacyTerms;
@@ -130,29 +130,29 @@ function AcceptPrivacyTerms({
         <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
       </Helmet>
       <Container>
-        {isSignedIn && completedChallengeCount < 1 ? (
+        <Row>
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+            <Spacer size='l' />
+            <h1 className='text-center'>
+              {newAccount
+                ? t('misc.brand-new-account')
+                : t('misc.email-signup')}
+            </h1>
+            <Spacer size='xs' />
+          </Col>
+        </Row>
+        {newAccount && (
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer size='l' />
-              <h1 className='text-center'>{t('misc.brand-new-account')}</h1>
-              <Spacer size='xs' />
               <p>
                 <Trans i18nKey='misc.duplicate-account-warning'>
                   <Link className='inline' to='/settings#danger-zone' />
                 </Trans>
               </p>
+              <hr />
             </Col>
           </Row>
-        ) : (
-          ''
         )}
-        <Row>
-          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Spacer size='xs' />
-            <IntroDescription />
-            <hr />
-          </Col>
-        </Row>
         <Row className='email-sign-up'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size='xs' />

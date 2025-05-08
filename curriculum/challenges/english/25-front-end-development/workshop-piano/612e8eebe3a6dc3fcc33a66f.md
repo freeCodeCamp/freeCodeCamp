@@ -14,25 +14,25 @@ Now target your `#piano` element with an `id` selector. Set its `background-colo
 You should have a `#piano` selector.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#piano'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('#piano'));
 ```
 
 Your `#piano` selector should have the `background-color` property set to `#00471b`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#piano')?.backgroundColor === 'rgb(0, 71, 27)');
+assert.equal(new __helpers.CSSHelp(document).getStyle('#piano')?.backgroundColor, 'rgb(0, 71, 27)');
 ```
 
 Your `#piano` selector should have a `width` property set to `992px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#piano')?.width === '992px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('#piano')?.width, '992px');
 ```
 
 Your `#piano` selector should have the `height` set to `290px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('#piano')?.height === '290px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('#piano')?.height, '290px');
 ```
 
 # --seed--

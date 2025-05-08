@@ -10,7 +10,6 @@ import {
 } from '../redux/selectors';
 import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
-import { FileKey } from '../../../redux/prop-types';
 import Editor, { type EditorProps } from './editor';
 
 export type VisibleEditors = {
@@ -99,10 +98,11 @@ const MultifileEditor = (props: MultifileEditorProps) => {
 
   const editorKeys = [];
 
+  // The order of the keys should match the order set by sortChallengeFiles
+  if (indexjsx) editorKeys.push('indexjsx');
   if (indexhtml) editorKeys.push('indexhtml');
   if (stylescss) editorKeys.push('stylescss');
   if (scriptjs) editorKeys.push('scriptjs');
-  if (indexjsx) editorKeys.push('indexjsx');
   if (mainpy) editorKeys.push('mainpy');
   if (indexts) editorKeys.push('indexts');
 
@@ -145,7 +145,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     containerRef={containerRef}
                     description={targetEditor === key ? description : ''}
                     editorRef={editorRef}
-                    fileKey={key as FileKey}
+                    fileKey={key}
                     initialTests={initialTests}
                     isMobileLayout={isMobileLayout}
                     isUsingKeyboardInTablist={isUsingKeyboardInTablist}

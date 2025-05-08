@@ -21,8 +21,7 @@ Modify the `findAndUpdate` function to find a person by `Name` and set the perso
 findOneAndUpdate an item should succeed
 
 ```js
-(getUserInput) =>
-  $.post(getUserInput('url') + '/_api/find-one-update', {
+  $.post(code + '/_api/find-one-update', {
     name: 'Dorian Gray',
     age: 35,
     favoriteFoods: ['unknown']

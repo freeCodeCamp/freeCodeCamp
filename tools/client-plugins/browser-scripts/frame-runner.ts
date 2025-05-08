@@ -10,14 +10,9 @@ const frameDocument = document as FrameDocument;
 frameDocument.__initTestFrame = initTestFrame;
 
 async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const code = (e.code.contents || '').slice();
-  const __file = (id?: string) => {
-    if (id && e.code.original) {
-      return e.code.original[id];
-    } else {
-      return code;
-    }
-  };
+
   const editableContents = (e.code.editableContents || '').slice();
   // __testEditable allows test authors to run tests against a transitory dom
   // element built using only the code in the editable region.
@@ -31,15 +26,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     return out;
   };
 
-  if (!e.getUserInput) {
-    e.getUserInput = () => code;
-  }
-
   /* eslint-disable @typescript-eslint/no-unused-vars */
-  // Fake Deep Equal dependency
-  const DeepEqual = (a: Record<string, unknown>, b: Record<string, unknown>) =>
-    JSON.stringify(a) === JSON.stringify(b);
-
   // Hardcode Deep Freeze dependency
   const DeepFreeze = (o: Record<string, unknown>) => {
     Object.freeze(o);
@@ -100,7 +87,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
       const test = await testPromise;
       if (typeof test === 'function') {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-        await test(e.getUserInput);
+        await test();
       }
       return { pass: true };
     } catch (err) {

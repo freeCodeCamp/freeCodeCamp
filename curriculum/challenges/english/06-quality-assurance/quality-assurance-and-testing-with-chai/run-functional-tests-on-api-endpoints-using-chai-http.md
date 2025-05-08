@@ -8,7 +8,7 @@ dashedName: run-functional-tests-on-api-endpoints-using-chai-http
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. Learn <a href="https://forum.freecodecamp.org/t/how-to-use-gitpod-in-the-curriculum/668669#how-can-i-share-my-workspace-to-get-help-8" target="_blank" rel="noopener noreferrer nofollow">how to share your Gitpod workspace to get help</a>.
+As a reminder, this project is being built upon the following starter project cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 Mocha allows you to test asynchronous operations like calls to API endpoints with a plugin called `chai-http`.
 
@@ -51,8 +51,7 @@ There should be no URL query. Without a name URL query, the endpoint responds wi
 All tests should pass
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(
+  $.get(code + '/_api/get-tests?type=functional&n=0').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -65,8 +64,7 @@ All tests should pass
 You should test for `res.status` == 200
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(
+  $.get(code + '/_api/get-tests?type=functional&n=0').then(
     (data) => {
       assert.equal(data.assertions[0].method, 'equal');
       assert.equal(data.assertions[0].args[0], 'res.status');
@@ -81,8 +79,7 @@ You should test for `res.status` == 200
 You should test for `res.text` == `'hello Guest'`
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=functional&n=0').then(
+  $.get(code + '/_api/get-tests?type=functional&n=0').then(
     (data) => {
       assert.equal(data.assertions[1].method, 'equal');
       assert.equal(data.assertions[1].args[0], 'res.text');

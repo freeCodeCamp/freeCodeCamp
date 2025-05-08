@@ -221,14 +221,6 @@ p {
 a {
   color: inherit;
   text-decoration: underline;
-  /* This is required in order to improve text readability in Arabic */
-  text-underline-position: under;
-}
-
-@supports not (text-underline-position: under) {
-  a {
-    text-underline-offset: 1em;
-  }
 }
 
 a:hover,
@@ -448,8 +440,7 @@ fieldset[disabled] .btn {
   fill: var(--quaternary-background);
 }
 
-.map-superblock-link.btn-lg:hover .map-icon .inverted-color,
-.map-arrow-icon {
+.map-superblock-link.btn-lg:hover .map-icon .inverted-color {
   fill: var(--secondary-color);
 }
 
@@ -457,10 +448,6 @@ fieldset[disabled] .btn {
   width: 35px;
   max-height: 45px;
   margin-inline: 5px;
-}
-
-.map-arrow-icon {
-  stroke: var(--secondary-color);
 }
 
 .cert-header-icon {

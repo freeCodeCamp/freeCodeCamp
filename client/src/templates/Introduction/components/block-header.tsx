@@ -34,35 +34,37 @@ function BlockHeader({
   blockIntroArr
 }: BlockHeaderProps): JSX.Element {
   return (
-    <h3 className='block-grid-title'>
-      <button
-        aria-expanded={isExpanded ? 'true' : 'false'}
-        aria-controls={`${blockDashed}-panel`}
-        className='block-header'
-        onClick={handleClick}
-      >
-        <span className='block-header-button-text map-title'>
-          <CheckMark isCompleted={isCompleted} />
-          {blockType && <BlockLabel blockType={blockType} />}
-          <span>
-            {blockTitle}
-            <span className='sr-only'>, {courseCompletionStatus}</span>
+    <>
+      <h3 className='block-grid-title'>
+        <button
+          aria-expanded={isExpanded ? 'true' : 'false'}
+          aria-controls={`${blockDashed}-panel`}
+          className='block-header'
+          onClick={handleClick}
+        >
+          <span className='block-header-button-text map-title'>
+            <CheckMark isCompleted={isCompleted} />
+            {blockType && <BlockLabel blockType={blockType} />}
+            <span>
+              {blockTitle}
+              <span className='sr-only'>, {courseCompletionStatus}</span>
+            </span>
+            <DropDown />
           </span>
-          <DropDown />
-        </span>
-        {isExpanded && !isEmpty(blockIntroArr) && (
-          <BlockIntros intros={blockIntroArr as string[]} />
-        )}
-        {!isExpanded && !isCompleted && completedCount > 0 && (
-          <div aria-hidden='true' className='progress-wrapper'>
-            <div>
-              <ProgressBar now={percentageCompleted} />
+          {!isExpanded && !isCompleted && completedCount > 0 && (
+            <div aria-hidden='true' className='progress-wrapper'>
+              <div>
+                <ProgressBar now={percentageCompleted} />
+              </div>
+              <span>{`${percentageCompleted}%`}</span>
             </div>
-            <span>{`${percentageCompleted}%`}</span>
-          </div>
-        )}
-      </button>
-    </h3>
+          )}
+        </button>
+      </h3>
+      {isExpanded && !isEmpty(blockIntroArr) && (
+        <BlockIntros intros={blockIntroArr as string[]} />
+      )}
+    </>
   );
 }
 

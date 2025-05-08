@@ -8,7 +8,7 @@ dashedName: use-assert-isok-and-assert-isnotok
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. Learn <a href="https://forum.freecodecamp.org/t/how-to-use-gitpod-in-the-curriculum/668669#how-can-i-share-my-workspace-to-get-help-8" target="_blank" rel="noopener noreferrer nofollow">how to share your Gitpod workspace to get help</a>.
+As a reminder, this project is being built upon the following starter project cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `isOk()` will test for a truthy value, and `isNotOk()` will test for a falsy value.
 
@@ -23,8 +23,7 @@ Within `tests/1_unit-tests.js` under the test labeled `#3` in the `Basic Asserti
 All tests should pass.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(
+  $.get(code + '/_api/get-tests?type=unit&n=2').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -37,8 +36,7 @@ All tests should pass.
 You should choose the correct method for the first assertion - `isOk` vs. `isNotOk`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(
+  $.get(code + '/_api/get-tests?type=unit&n=2').then(
     (data) => {
       assert.equal(data.assertions[0].method, 'isNotOk', 'Null is falsy');
     },
@@ -51,8 +49,7 @@ You should choose the correct method for the first assertion - `isOk` vs. `isNot
 You should choose the correct method for the second assertion - `isOk` vs. `isNotOk`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(
+  $.get(code + '/_api/get-tests?type=unit&n=2').then(
     (data) => {
       assert.equal(data.assertions[1].method, 'isOk', 'A string is truthy');
     },
@@ -65,8 +62,7 @@ You should choose the correct method for the second assertion - `isOk` vs. `isNo
 You should choose the correct method for the third assertion - `isOk` vs. `isNotOk`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=2').then(
+  $.get(code + '/_api/get-tests?type=unit&n=2').then(
     (data) => {
       assert.equal(data.assertions[2].method, 'isOk', 'true is truthy');
     },

@@ -65,8 +65,8 @@ Submit your page when you think you've got it right. If you're running into erro
 You should have a `/register` route and display a registration form on the home page.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/server.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(
@@ -85,8 +85,8 @@ async (getUserInput) => {
 Registering should work.
 
 ```js
-async (getUserInput) => {
-  const url = getUserInput('url');
+async () => {
+  const url = code;
   const user = `freeCodeCampTester${Date.now()}`;
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
@@ -113,8 +113,8 @@ async (getUserInput) => {
 Login should work.
 
 ```js
-async (getUserInput) => {
-  const url = getUserInput('url');
+async () => {
+  const url = code;
   const user = `freeCodeCampTester${Date.now()}`;
   const xhttpReg = new XMLHttpRequest();
   xhttpReg.onreadystatechange = function () {
@@ -162,9 +162,8 @@ async (getUserInput) => {
 Logout should work.
 
 ```js
-(getUserInput) =>
   $.ajax({
-    url: getUserInput('url') + '/logout',
+    url: code + '/logout',
     type: 'GET',
     xhrFields: { withCredentials: true }
   }).then(
@@ -180,9 +179,8 @@ Logout should work.
 Profile should no longer work after logout.
 
 ```js
-(getUserInput) =>
   $.ajax({
-    url: getUserInput('url') + '/profile',
+    url: code + '/profile',
     type: 'GET',
     crossDomain: true,
     xhrFields: { withCredentials: true }

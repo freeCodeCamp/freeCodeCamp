@@ -77,10 +77,9 @@ assert(
 The `rootReducer` should be a function that combines the `counterReducer` and the `authReducer`.
 
 ```js
-(getUserInput) =>
-  assert(
+assert(
     (function () {
-      const noWhiteSpace = __helpers.removeWhiteSpace(getUserInput('index'));
+      const noWhiteSpace = __helpers.removeWhiteSpace(code);
       return (
         typeof rootReducer === 'function' &&
         noWhiteSpace.includes('Redux.combineReducers')

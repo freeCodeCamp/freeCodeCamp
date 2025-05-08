@@ -31,8 +31,7 @@ There are also a couple of other methods which are used to negotiate a connectio
 Test 1 : Your API endpoint should respond with the correct name
 
 ```js
-(getUserInput) =>
-  $.post(getUserInput('url') + '/name', { first: 'Mick', last: 'Jagger' }).then(
+  $.post(code + '/name', { first: 'Mick', last: 'Jagger' }).then(
     (data) => {
       assert.equal(
         data.name,
@@ -49,8 +48,7 @@ Test 1 : Your API endpoint should respond with the correct name
 Test 2 : Your API endpoint should respond with the correct name
 
 ```js
-(getUserInput) =>
-  $.post(getUserInput('url') + '/name', {
+  $.post(code + '/name', {
     first: 'Keith',
     last: 'Richards'
   }).then(

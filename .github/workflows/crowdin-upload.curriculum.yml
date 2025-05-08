@@ -2,8 +2,8 @@ name: i18n - Upload Curriculum
 on:
   workflow_dispatch:
   schedule:
-    # runs every weekday at 11:30 AM UTC
-    - cron: '30 11 * * 1-5'
+    # runs every weekday at 7:30 AM UTC
+    - cron: '30 7 * * 1-5'
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

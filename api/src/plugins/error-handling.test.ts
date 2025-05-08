@@ -170,7 +170,10 @@ describe('errorHandling', () => {
       url: '/test'
     });
 
-    expect(logSpy).toHaveBeenCalledWith(Error('a very bad thing happened'));
+    expect(logSpy).toHaveBeenCalledWith(
+      Error('a very bad thing happened'),
+      'Error in request'
+    );
   });
 
   it('should call fastify.log.warn when a bad request error occurs', async () => {
@@ -181,7 +184,10 @@ describe('errorHandling', () => {
       url: '/test-bad-request'
     });
 
-    expect(logSpy).toHaveBeenCalledWith(Error('a very bad thing happened'));
+    expect(logSpy).toHaveBeenCalledWith(
+      Error('a very bad thing happened'),
+      'CSRF error in request'
+    );
   });
 
   it('should NOT log when a CSRF error is thrown', async () => {

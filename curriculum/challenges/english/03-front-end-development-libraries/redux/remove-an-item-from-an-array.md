@@ -19,15 +19,9 @@ The reducer and action creator were modified to remove an item from an array bas
 The Redux store should exist and initialize with a state equal to `[0,1,2,3,4,5]`
 
 ```js
-assert(
-  (function () {
-    const initialState = store.getState();
-    return (
-      Array.isArray(initialState) === true &&
-      DeepEqual(initialState, [0, 1, 2, 3, 4, 5])
-    );
-  })()
-);
+const initialState = store.getState();
+assert.isArray(initialState) 
+assert.deepEqual(initialState, [0, 1, 2, 3, 4, 5])
 ```
 
 `removeItem` and `immutableReducer` both should be functions.
@@ -41,26 +35,22 @@ assert(
 Dispatching the `removeItem` action creator should remove items from the state and should NOT mutate state.
 
 ```js
-assert(
-  (function () {
-    const initialState = store.getState();
-    const isFrozen = DeepFreeze(initialState);
-    store.dispatch(removeItem(3));
-    const state_1 = store.getState();
-    store.dispatch(removeItem(2));
-    const state_2 = store.getState();
-    store.dispatch(removeItem(0));
-    store.dispatch(removeItem(0));
-    store.dispatch(removeItem(0));
-    const state_3 = store.getState();
-    return (
-      isFrozen &&
-      DeepEqual(state_1, [0, 1, 2, 4, 5]) &&
-      DeepEqual(state_2, [0, 1, 4, 5]) &&
-      DeepEqual(state_3, [5])
-    );
-  })()
-);
+const initialState = store.getState();
+const isFrozen = !!DeepFreeze(initialState);
+store.dispatch(removeItem(3));
+const state_1 = store.getState();
+store.dispatch(removeItem(2));
+const state_2 = store.getState();
+store.dispatch(removeItem(0));
+store.dispatch(removeItem(0));
+store.dispatch(removeItem(0));
+const state_3 = store.getState();
+
+assert(isFrozen)
+assert.deepEqual(state_1, [0, 1, 2, 4, 5]) 
+assert.deepEqual(state_2, [0, 1, 4, 5]) 
+assert.deepEqual(state_3, [5])
+
 ```
 
 # --seed--

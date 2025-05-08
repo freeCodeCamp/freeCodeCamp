@@ -128,6 +128,8 @@ const ShowQuiz = ({
 
   const [exitConfirmed, setExitConfirmed] = useState(false);
 
+  const [exitPathname, setExitPathname] = useState(blockHashSlug);
+
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
@@ -176,7 +178,7 @@ const ShowQuiz = ({
       correct: t('learn.quiz.correct-answer'),
       incorrect: t('learn.quiz.incorrect-answer')
     },
-    passingGrade: 90,
+    passingPercent: 90,
     onSuccess: () => {
       openCompletionModal();
       setIsPassed(true);
@@ -231,7 +233,7 @@ const ShowQuiz = ({
 
   const handleExitQuizModalBtnClick = () => {
     setExitConfirmed(true);
-    void navigate(blockHashSlug);
+    void navigate(exitPathname);
     closeExitQuizModal();
   };
 
@@ -243,21 +245,37 @@ const ShowQuiz = ({
     [t]
   );
 
-  const onHistoryChange = useCallback(() => {
-    // We don't block navigation in the following cases.
-    // - When campers have submitted the quiz:
-    //   - If they don't pass, the Finish Quiz button is disabled, there isn't anything for them to do other than leaving the page
-    //   - If they pass, the Submit-and-go button shows up, and campers should be allowed to leave the page
-    // - When they have clicked the exit button on the exit modal
-    if (hasSubmitted || exitConfirmed) {
-      return;
-    }
+  const onHistoryChange = useCallback(
+    (targetPathname: string) => {
+      // We don't block navigation in the following cases.
+      // - When campers have submitted the quiz:
+      //   - If they don't pass, the Finish Quiz button is disabled, there isn't anything for them to do other than leaving the page
+      //   - If they pass, the Submit-and-go button shows up, and campers should be allowed to leave the page
+      // - When they have clicked the exit button on the exit modal
+      if (hasSubmitted || exitConfirmed) {
+        return;
+      }
 
-    // We need to use Reach Router, because the pathname is already prefixed
-    // with the language and Gatsby's navigate will prefix it again.
-    void reachNavigate(`${curLocation.pathname}`);
-    openExitQuizModal();
-  }, [curLocation.pathname, hasSubmitted, exitConfirmed, openExitQuizModal]);
+      const newPathname = targetPathname.startsWith('/learn')
+        ? blockHashSlug
+        : targetPathname;
+
+      // Save the pathname of the page the user wants to navigate to before we block the navigation.
+      setExitPathname(newPathname);
+
+      // We need to use Reach Router, because the pathname is already prefixed
+      // with the language and Gatsby's navigate will prefix it again.
+      void reachNavigate(`${curLocation.pathname}`);
+      openExitQuizModal();
+    },
+    [
+      curLocation.pathname,
+      hasSubmitted,
+      exitConfirmed,
+      openExitQuizModal,
+      blockHashSlug
+    ]
+  );
 
   usePageLeave({
     onWindowClose,

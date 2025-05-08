@@ -106,11 +106,14 @@ exports.createPages = async function createPages({
                 contents
                 ext
                 history
+                fileKey
               }
               superBlock
               superOrder
               template
               usesMultifileEditor
+              chapter
+              module
             }
           }
         }

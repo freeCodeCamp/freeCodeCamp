@@ -266,7 +266,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       const { certSlug } = req.body;
 
       if (!isKnownCertSlug(certSlug) || !isCertAllowed(certSlug)) {

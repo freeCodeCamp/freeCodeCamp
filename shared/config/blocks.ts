@@ -16,6 +16,8 @@ export enum BlockLayouts {
   Link = 'link',
   ChallengeGrid = 'challenge-grid',
 
+  DialogueGrid = 'dialogue-grid',
+
   /**
    * ChallengeList displays challenges in a list.
    * This layout is used in backend blocks, The Odin Project blocks, and blocks in legacy certification.

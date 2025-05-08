@@ -1,4 +1,4 @@
-name: Docker -- GHCR - Gitpod
+name: CD - Docker - GHCR (Gitpod)
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-push-image:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       contents: read
       packages: write

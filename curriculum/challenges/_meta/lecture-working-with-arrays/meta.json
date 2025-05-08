@@ -25,6 +25,10 @@
     {
       "id": "6732aedd2d92e30923b9bc24",
       "title": "What Is Array Destructuring, and How Does It Work?"
+    },
+    {
+      "id": "6732b2a6de5a1c15edf05b75",
+      "title": "How Can You Use String and Array Methods to Reverse a String?"
     }
   ],
   "helpCategory": "JavaScript"

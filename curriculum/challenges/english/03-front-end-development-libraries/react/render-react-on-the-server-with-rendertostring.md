@@ -21,10 +21,9 @@ The `renderToString()` method is provided on `ReactDOMServer`, which is availabl
 The `App` component should render to a string using `ReactDOMServer.renderToString`.
 
 ```js
-(getUserInput) =>
+() =>
   assert(
-    getUserInput('index')
-      .replace(/ /g, '')
+    code.replace(/ /g, '')
       .includes('ReactDOMServer.renderToString(<App/>)') &&
       Enzyme.mount(React.createElement(App)).children().name() === 'div'
   );

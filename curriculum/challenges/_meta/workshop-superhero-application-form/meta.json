@@ -1,0 +1,97 @@
+{
+  "name": "Build a Superhero Application Form",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "dashedName": "workshop-superhero-application-form",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6808fe91a5cb0c3355f23027",
+      "title": "Step 1"
+    },
+    {
+      "id": "680900675ae3d54ee19590c3",
+      "title": "Step 2"
+    },
+    {
+      "id": "680fc849a6f2be0a8597c593",
+      "title": "Step 3"
+    },
+    {
+      "id": "680900675ae3d54ee19590c4",
+      "title": "Step 4"
+    },
+    {
+      "id": "680900675ae3d54ee19590c5",
+      "title": "Step 5"
+    },
+    {
+      "id": "680900675ae3d54ee19590c6",
+      "title": "Step 6"
+    },
+    {
+      "id": "680900675ae3d54ee19590c7",
+      "title": "Step 7"
+    },
+    {
+      "id": "680900675ae3d54ee19590c8",
+      "title": "Step 8"
+    },
+    {
+      "id": "680900675ae3d54ee19590c9",
+      "title": "Step 9"
+    },
+    {
+      "id": "680900675ae3d54ee19590ca",
+      "title": "Step 10"
+    },
+    {
+      "id": "680900675ae3d54ee19590cb",
+      "title": "Step 11"
+    },
+    {
+      "id": "680900675ae3d54ee19590cc",
+      "title": "Step 12"
+    },
+    {
+      "id": "680900675ae3d54ee19590cd",
+      "title": "Step 13"
+    },
+    {
+      "id": "680900675ae3d54ee19590ce",
+      "title": "Step 14"
+    },
+    {
+      "id": "68148d280ee30e5a567a0e2d",
+      "title": "Step 15"
+    },
+    {
+      "id": "680900675ae3d54ee19590cf",
+      "title": "Step 16"
+    },
+    {
+      "id": "680900675ae3d54ee19590d0",
+      "title": "Step 17"
+    },
+    {
+      "id": "68149b101d905a6fc2fcd6d8",
+      "title": "Step 18"
+    },
+    {
+      "id": "680900675ae3d54ee19590d1",
+      "title": "Step 19"
+    },
+    {
+      "id": "680900675ae3d54ee19590d2",
+      "title": "Step 20"
+    },
+    {
+      "id": "680900675ae3d54ee19590d3",
+      "title": "Step 21"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

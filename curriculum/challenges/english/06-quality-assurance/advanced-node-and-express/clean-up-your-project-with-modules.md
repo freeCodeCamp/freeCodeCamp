@@ -33,8 +33,8 @@ Submit your page when you think you've got it right. If you're running into erro
 Modules should be present.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/server.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(

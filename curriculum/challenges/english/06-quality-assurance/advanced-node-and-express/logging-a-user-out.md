@@ -37,8 +37,8 @@ Submit your page when you think you've got it right. If you're running into erro
 `req.logout()` should be called in your `/logout` route.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/server.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(
@@ -52,8 +52,8 @@ async (getUserInput) => {
 `/logout` should redirect to the home page.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/logout", getUserInput("url"));
+async () => {
+  const url = new URL("/logout", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(

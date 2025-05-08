@@ -42,7 +42,11 @@ test('should render the modal content correctly', async ({ page }) => {
     })
   ).toBeVisible();
 
-  await expect(page.getByText(translations.learn['reset-warn'])).toBeVisible();
+  await expect(
+    page.getByText(
+      'Are you sure you wish to reset this lesson (Step 3)? The code editors and tests will be reset.'
+    )
+  ).toBeVisible();
 });
 
 test('User can reset challenge', async ({ page, isMobile, browserName }) => {

@@ -1,0 +1,10 @@
+{
+  "name": "Object Oriented Programming Review",
+  "isUpcomingChange": true,
+  "dashedName": "review-object-oriented-programming",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67f39dac6c3fac29c3d54918", "title": "Object Oriented Programming Review" }],
+  "helpCategory": "Python",
+  "blockType": "review",
+  "blockLayout": "link"
+}

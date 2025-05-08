@@ -123,6 +123,157 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
+const DonationCloseBtn = ({ onClick }: { onClick: () => void }) => {
+  const { t } = useTranslation();
+
+  return (
+    <div>
+      <Button block={true} size='small' variant='primary' onClick={onClick}>
+        {t('buttons.close')}
+      </Button>
+    </div>
+  );
+};
+
+const DonationSection = ({
+  isDonationSubmitted,
+  handleProcessing,
+  hideDonationSection
+}: {
+  isDonationSubmitted: boolean;
+  handleProcessing: () => void;
+  hideDonationSection: () => void;
+}) => {
+  const { t } = useTranslation();
+
+  return (
+    <div
+      className='donation-section'
+      data-playwright-test-label='donation-section'
+    >
+      <Spacer size='l' />
+      {!isDonationSubmitted && (
+        <Row>
+          <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+            <p data-playwright-test-label='donation-text'>
+              {t('donate.only-you')}
+            </p>
+          </Col>
+        </Row>
+      )}
+      <Row>
+        <Col
+          lg={8}
+          lgOffset={2}
+          sm={10}
+          smOffset={1}
+          xs={12}
+          data-playwright-test-label='donation-form'
+        >
+          <MultiTierDonationForm
+            defaultTheme={LocalStorageThemes.Light}
+            handleProcessing={handleProcessing}
+            isMinimalForm={true}
+            paymentContext={PaymentContext.Certificate}
+          />
+        </Col>
+      </Row>
+      <Spacer size='m' />
+      <Row>
+        <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
+          {isDonationSubmitted && (
+            <DonationCloseBtn onClick={hideDonationSection} />
+          )}
+        </Col>
+      </Row>
+      <Spacer size='l' />
+    </div>
+  );
+};
+
+const ShareCertBtns = ({
+  username,
+  certDate,
+  certTitle,
+  certSlug,
+  certURL
+}: {
+  username: string;
+  certDate: Date;
+  certTitle: string;
+  certSlug: CertSlug;
+  certURL: string;
+}) => {
+  const { t } = useTranslation();
+
+  const certYear = certDate.getFullYear();
+  const certMonth = certDate.getMonth();
+  const urlFriendlyCertTitle = encodeURIComponent(certTitle);
+  const linkedInCredentialId = `${username}-${linkedInCredentialIds[certSlug]}`;
+
+  return (
+    <Row className='text-center'>
+      <Col xs={12}>
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${urlFriendlyCertTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
+            certMonth + 1
+          }&certUrl=${certURL}&certId=${linkedInCredentialId}`}
+          target='_blank'
+          data-playwright-test-label='linkedin-share-btn'
+        >
+          {t('profile.add-linkedin')}
+        </Button>
+        <Spacer size='m' />
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
+            certTitle: urlFriendlyCertTitle,
+            certURL
+          })}`}
+          target='_blank'
+          data-playwright-test-label='twitter-share-btn'
+        >
+          {t('profile.add-twitter')}
+        </Button>
+        <Spacer size='m' />
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          href={`https://bsky.app/intent/compose?text=${t('profile.tweet', {
+            certTitle: urlFriendlyCertTitle,
+            certURL
+          })}`}
+          target='_blank'
+          data-playwright-test-label='bluesky-share-btn'
+        >
+          {t('profile.add-bluesky')}
+        </Button>
+        <Spacer size='m' />
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          href={`https://threads.net/intent/post?text=${t('profile.tweet', {
+            certTitle: urlFriendlyCertTitle,
+            certURL
+          })}`}
+          target='_blank'
+          data-playwright-test-label='thread-share-btn'
+        >
+          {t('profile.add-threads')}
+        </Button>
+      </Col>
+      <Spacer size='l' />
+    </Row>
+  );
+};
+
 const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   const { t } = useTranslation();
   const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
@@ -230,135 +381,22 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   const displayName = userFullName ?? username;
 
   const certDate = new Date(date);
-  const certYear = certDate.getFullYear();
-  const certMonth = certDate.getMonth();
+
   const certURL = `https://freecodecamp.org${pathname}`;
-
-  const donationCloseBtn = (
-    <div>
-      <Button
-        block={true}
-        size='small'
-        variant='primary'
-        onClick={hideDonationSection}
-      >
-        {t('buttons.close')}
-      </Button>
-    </div>
-  );
-
-  const donationSection = (
-    <div
-      className='donation-section'
-      data-playwright-test-label='donation-section'
-    >
-      <Spacer size='l' />
-      {!isDonationSubmitted && (
-        <Row>
-          <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-            <p data-playwright-test-label='donation-text'>
-              {t('donate.only-you')}
-            </p>
-          </Col>
-        </Row>
-      )}
-      <Row>
-        <Col
-          lg={8}
-          lgOffset={2}
-          sm={10}
-          smOffset={1}
-          xs={12}
-          data-playwright-test-label='donation-form'
-        >
-          <MultiTierDonationForm
-            defaultTheme={LocalStorageThemes.Light}
-            handleProcessing={handleProcessing}
-            isMinimalForm={true}
-            paymentContext={PaymentContext.Certificate}
-          />
-        </Col>
-      </Row>
-      <Spacer size='m' />
-      <Row>
-        <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
-          {isDonationSubmitted && donationCloseBtn}
-        </Col>
-      </Row>
-      <Spacer size='l' />
-    </div>
-  );
-
-  const urlFriendlyCertTitle = encodeURIComponent(certTitle);
-  const linkedInCredentialId = `${username}-${linkedInCredentialIds[certSlug]}`;
-
-  const shareCertBtns = (
-    <Row className='text-center'>
-      <Col xs={12}>
-        <Button
-          block={true}
-          size='large'
-          variant='primary'
-          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${urlFriendlyCertTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
-            certMonth + 1
-          }&certUrl=${certURL}&certId=${linkedInCredentialId}`}
-          target='_blank'
-          data-playwright-test-label='linkedin-share-btn'
-        >
-          {t('profile.add-linkedin')}
-        </Button>
-        <Spacer size='m' />
-        <Button
-          block={true}
-          size='large'
-          variant='primary'
-          href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
-            certTitle: urlFriendlyCertTitle,
-            certURL: certURL
-          })}`}
-          target='_blank'
-          data-playwright-test-label='twitter-share-btn'
-        >
-          {t('profile.add-twitter')}
-        </Button>
-        <Spacer size='m' />
-        <Button
-          block={true}
-          size='large'
-          variant='primary'
-          href={`https://bsky.app/intent/compose?text=${t('profile.tweet', {
-            certTitle: urlFriendlyCertTitle,
-            certURL: certURL
-          })}`}
-          target='_blank'
-          data-playwright-test-label='bluesky-share-btn'
-        >
-          {t('profile.add-bluesky')}
-        </Button>
-        <Spacer size='m' />
-        <Button
-          block={true}
-          size='large'
-          variant='primary'
-          href={`https://threads.net/intent/post?text=${t('profile.tweet', {
-            certTitle: urlFriendlyCertTitle,
-            certURL: certURL
-          })}`}
-          target='_blank'
-          data-playwright-test-label='thread-share-btn'
-        >
-          {t('profile.add-threads')}
-        </Button>
-      </Col>
-      <Spacer size='l' />
-    </Row>
-  );
 
   const isMicrosoftCert = certSlug === Certification.FoundationalCSharp;
 
   return (
     <Container className='certificate-outer-wrapper'>
-      {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
+      {isDonationDisplayed && !isDonationClosed ? (
+        <DonationSection
+          hideDonationSection={hideDonationSection}
+          handleProcessing={handleProcessing}
+          isDonationSubmitted={isDonationSubmitted}
+        />
+      ) : (
+        ''
+      )}
       <div
         className='certificate-wrapper'
         data-playwright-test-label='cert-wrapper'
@@ -511,7 +549,17 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         data-playwright-test-label='cert-links'
       >
         <Spacer size='l' />
-        {signedInUserName === username ? shareCertBtns : ''}
+        {signedInUserName === username ? (
+          <ShareCertBtns
+            username={username}
+            certDate={certDate}
+            certSlug={certSlug}
+            certTitle={certTitle}
+            certURL={certURL}
+          />
+        ) : (
+          ''
+        )}
         <Spacer size='l' />
         <ShowProjectLinks certSlug={certSlug} name={displayName} user={user} />
         <Spacer size='l' />

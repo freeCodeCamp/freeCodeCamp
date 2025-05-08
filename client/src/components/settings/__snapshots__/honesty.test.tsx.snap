@@ -9,7 +9,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
       class="mx-[-15px] "
     >
       <div
-        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]   "
       >
         <h2
           class="text-center"
@@ -23,7 +23,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
       class="mx-[-15px] "
     >
       <div
-        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]   "
       >
         <div
           class="border-1 border-solid shadow-sm mb-6 border-background-tertiary honesty-panel"
@@ -76,7 +76,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
       class="mx-[-15px] "
     >
       <div
-        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]   "
       >
         <h2
           class="text-center"
@@ -90,7 +90,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
       class="mx-[-15px] "
     >
       <div
-        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]   "
       >
         <div
           class="border-1 border-solid shadow-sm mb-6 border-background-tertiary honesty-panel"

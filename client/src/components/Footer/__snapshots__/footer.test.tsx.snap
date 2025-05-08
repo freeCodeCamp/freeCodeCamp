@@ -327,7 +327,7 @@ exports[`<Footer /> matches snapshot 1`] = `
           footer.mobile-app
         </h2>
         <div
-          className=" min-h-[1px] px-[15px]  md:w-2/3    md:ml-[16.6%]    "
+          className=" min-h-[1px] px-[15px]  md:w-2/3    md:ml-[16.6%]   "
         >
           <ul
             aria-labelledby="mobile-app"

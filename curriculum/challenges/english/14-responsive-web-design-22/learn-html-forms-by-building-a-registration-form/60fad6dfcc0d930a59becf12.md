@@ -9,7 +9,7 @@ dashedName: step-43
 
 The HTML for the registration form is finished. Now, you can spruce it up a bit.
 
-Start by changing the font to `Tahoma`, and the font size to `16px` in the `body`.
+Start by adding `Tahoma` as the font with a font size of `16px` in the `body` selector.
 
 # --hints--
 

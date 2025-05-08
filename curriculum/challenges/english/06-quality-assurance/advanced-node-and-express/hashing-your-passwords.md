@@ -31,8 +31,8 @@ Submit your page when you think you've got it right. If you're running into erro
 BCrypt should be a dependency.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/package.json", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/package.json", code);
   const res = await fetch(url);
   const packJson = await res.json()
   assert.property(
@@ -46,8 +46,8 @@ async (getUserInput) => {
 BCrypt should be correctly required and implemented.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/server.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(
