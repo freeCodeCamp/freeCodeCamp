@@ -72,7 +72,7 @@ function isLogLevel(level: string): level is LogLevel {
 }
 
 const _FCC_API_LOG_LEVEL = process.env.FCC_API_LOG_LEVEL || 'info';
-const _FCC_API_LOG_TRANSPORT = process.env.FCC_API_LOG_TRANSPORT || 'default ';
+const _FCC_API_LOG_TRANSPORT = process.env.FCC_API_LOG_TRANSPORT || 'default';
 
 assert.ok(
   isLogLevel(_FCC_API_LOG_LEVEL),
