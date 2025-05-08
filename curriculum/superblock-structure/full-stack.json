@@ -450,13 +450,27 @@
         {
           "dashedName": "css-grid",
           "blocks": [
-            { "dashedName": "lecture-working-with-css-grid" },
-            { "dashedName": "workshop-magazine" },
-            { "dashedName": "lab-newspaper-layout" },
-            { "dashedName": "lecture-debugging-css" },
-            { "dashedName": "lab-product-landing-page" },
-            { "dashedName": "review-css-grid" },
-            { "dashedName": "quiz-css-grid" }
+            {
+              "dashedName": "lecture-working-with-css-grid"
+            },
+            {
+              "dashedName": "workshop-magazine"
+            },
+            {
+              "dashedName": "lab-newspaper-layout"
+            },
+            {
+              "dashedName": "lecture-debugging-css"
+            },
+            {
+              "dashedName": "lab-product-landing-page"
+            },
+            {
+              "dashedName": "review-css-grid"
+            },
+            {
+              "dashedName": "quiz-css-grid"
+            }
           ]
         },
         {
