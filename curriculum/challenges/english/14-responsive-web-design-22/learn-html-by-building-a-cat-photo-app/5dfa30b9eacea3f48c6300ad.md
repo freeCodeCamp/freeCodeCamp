@@ -5,6 +5,7 @@ challengeType: 0
 dashedName: step-17
 ---
 
+
 # --description--
 
 In previous steps you used an anchor element to turn text into a link. Other types of content can also be turned into a link by wrapping it in anchor tags. 
