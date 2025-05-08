@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Caesar Cipher
 
-This is a test for the new project-based curriculum.
+In this workshop, you'll build a Caesar cipher using basic Python concepts such as strings, conditionals, functions, and more.
