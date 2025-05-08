@@ -21,7 +21,8 @@
   "scripts": {
     "test": "mocha --delay --reporter progress --bail",
     "create-project": "tsx create-project",
-    "create-quiz": "tsx create-quiz"
+    "create-quiz": "tsx create-quiz",
+    "generate-daily-challenge": "tsx generate-daily-challenge"
   },
   "devDependencies": {
     "@types/glob": "^8.0.1",

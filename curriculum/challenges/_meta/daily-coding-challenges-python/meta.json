@@ -1,0 +1,52 @@
+{
+  "name": "Daily Coding Challenges Python",
+  "isUpcomingChange": true,
+  "dashedName": "daily-coding-challenges-python",
+  "usesMultifileEditor": true,
+  "helpCategory": "Python",
+  "order": 1,
+  "superBlock": "dev-playground",
+  "challengeOrder": [
+    {
+      "id": "6814d93d516e86b171929de5",
+      "title": "Python Challenge 1"
+    },
+    {
+      "id": "681cb1b1dab50c87ddb2e51c",
+      "title": "Python Challenge 2"
+    },
+    {
+      "id": "681cb1b1dab50c87ddb2e51d",
+      "title": "Python Challenge 3"
+    },
+    {
+      "id": "681cb1b1dab50c87ddb2e51e",
+      "title": "Python Challenge 4"
+    },
+    {
+      "id": "681cb1b1dab50c87ddb2e51f",
+      "title": "Python Challenge 5"
+    },
+    {
+      "id": "681cb1b2dab50c87ddb2e520",
+      "title": "Python Challenge 6"
+    },
+    {
+      "id": "681cb1b2dab50c87ddb2e521",
+      "title": "Python Challenge 7"
+    },
+    {
+      "id": "681cb1b2dab50c87ddb2e522",
+      "title": "Python Challenge 8"
+    },
+    {
+      "id": "681cb1b2dab50c87ddb2e523",
+      "title": "Python Challenge 9"
+    },
+    {
+      "id": "681cb1b3dab50c87ddb2e524",
+      "title": "Python Challenge 10"
+    }
+  ],
+  "blockLayout": "legacy-link"
+}

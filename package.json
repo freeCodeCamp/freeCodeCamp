@@ -47,6 +47,7 @@
     "format": "run-s format:eslint format:prettier",
     "format:eslint": "eslint . --fix",
     "format:prettier": "prettier --write .",
+    "generate-daily-challenge": "cd ./tools/challenge-helper-scripts/ && pnpm run generate-daily-challenge",
     "i18n-sync": "tsx ./tools/scripts/sync-i18n.ts",
     "knip": "npx -y knip@5 --include files",
     "knip:all": "npx -y knip@5 ",

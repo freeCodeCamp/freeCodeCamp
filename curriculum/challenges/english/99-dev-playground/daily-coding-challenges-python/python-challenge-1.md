@@ -1,8 +1,8 @@
 ---
 id: 6814d93d516e86b171929de5
-title: Python Coding Challenge
+title: Python Coding Challenge 1
 challengeType: 29
-dashedName: python-coding-challenge
+dashedName: python-coding-challenge-1
 ---
 
 # --description--
@@ -13,67 +13,67 @@ Given a string, determine whether the number of vowels in the first half of the 
 - If there's an odd number of characters in the string, ignore the center character.
 
 # --hints--
-
-`isBalanced("racecar")` should return `True`.
+      
+`is_balanced("racecar")` should return `True`
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertTrue(is_balanced("racecar"))`);
+TestCase().assertTrue(is_balanced("racecar"))`)
 }})
 ```
 
-`isBalanced("lorem ipsum")` should return `True`.
+`is_balanced("lorem ipsum")` should return `True`
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertTrue(is_balanced("lorem ipsum"))`);
+TestCase().assertTrue(is_balanced("lorem ipsum"))`)
 }})
 ```
 
-`isBalanced("kitty ipsum")` should return `False`.
+`is_balanced("kitty ipsum")` should return `False`
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertFalse(is_balanced("kitty ipsum"))`);
+TestCase().assertFalse(is_balanced("kitty ipsum"))`)
 }})
 ```
 
-`isBalanced("string")` should return `False`.
+`is_balanced("string")` should return `False`
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertFalse(is_balanced("string"))`);
+TestCase().assertFalse(is_balanced("string"))`)
 }})
 ```
 
-`isBalanced(" ")` should return `True`.
+`is_balanced(" ")` should return `True`
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertTrue(is_balanced(" "))`);
+TestCase().assertTrue(is_balanced(" "))`)
 }})
 ```
 
-`isBalanced("abcdefghijklmnopqrstuvwxyz")` should return `False`.
+`is_balanced("abcdefghijklmnopqrstuvwxyz")` should return `False`
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertFalse(is_balanced("abcdefghijklmnopqrstuvwxyz"))`);
+TestCase().assertFalse(is_balanced("abcdefghijklmnopqrstuvwxyz"))`)
 }})
 ```
 
-`isBalanced("123a#b!E&*456-o.U")` should return `True`.
+`is_balanced("123a#b!E&#x26;*456-o.U")` should return `True`
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertTrue(is_balanced("123a#b!E&*456-o.U"))`);
+TestCase().assertTrue(is_balanced("123a#b!E&*456-o.U"))`)
 }})
 ```
 
@@ -83,7 +83,7 @@ TestCase().assertTrue(is_balanced("123a#b!E&*456-o.U"))`);
 
 ```py
 def is_balanced(s):
-
+  
     return s
 
 ```
@@ -92,7 +92,7 @@ def is_balanced(s):
 
 ```py
 def is_balanced(s):
-
+  
     return s
 
 ```

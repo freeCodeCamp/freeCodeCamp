@@ -1,0 +1,53 @@
+{
+  "name": "Daily Coding Challenges JavaScript",
+  "isUpcomingChange": true,
+  "dashedName": "daily-coding-challenges-javascript",
+  "usesMultifileEditor": true,
+  "helpCategory": "JavaScript",
+  "order": 0,
+  "disableLoopProtectTests": true,
+  "superBlock": "dev-playground",
+  "challengeOrder": [
+    {
+      "id": "6814d8e1516e86b171929de4",
+      "title": "JavaScript Challenge 1"
+    },
+    {
+      "id": "681cb05adab50c87ddb2e513",
+      "title": "JavaScript Challenge 2"
+    },
+    {
+      "id": "681cb1a2dab50c87ddb2e514",
+      "title": "JavaScript Challenge 3"
+    },
+    {
+      "id": "681cb1afdab50c87ddb2e515",
+      "title": "JavaScript Challenge 4"
+    },
+    {
+      "id": "681cb1afdab50c87ddb2e516",
+      "title": "JavaScript Challenge 5"
+    },
+    {
+      "id": "681cb1afdab50c87ddb2e517",
+      "title": "JavaScript Challenge 6"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e518",
+      "title": "JavaScript Challenge 7"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e519",
+      "title": "JavaScript Challenge 8"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e51a",
+      "title": "JavaScript Challenge 9"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e51b",
+      "title": "JavaScript Challenge 10"
+    }
+  ],
+  "blockLayout": "legacy-link"
+}
