@@ -1544,6 +1544,9 @@ const duplicatedProjectIds = [
   '6569c1aeecaf95e25a3e2573',
   '6569c2cbf6c993ea8cd85682',
 
+  // Polygon area calculator
+  '5e444147903586ffb414c94f',
+
   /*** Back End JavaScript ***/
 
   /*** Legacy Only ***/

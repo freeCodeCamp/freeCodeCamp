@@ -79,7 +79,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
 
     // TODO: use a schema to validate the query params.
     fastify.get('/auth/auth0/callback', async function (req, reply) {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
 
       const { error, error_description } = req.query as Record<string, string>;
       if (error === 'access_denied') {
