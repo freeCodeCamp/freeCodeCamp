@@ -2901,13 +2901,13 @@
         ]
       },
       "lab-mutations": {
-        "title": "Mutations Algorithm",
+        "title": "Implement the Mutations Algorithm",
         "intro": [
           "In this lab you will practice iterating over two different strings to compare their characters."
         ]
       },
       "lab-chunky-monkey": {
-        "title": "Chunky Monkey Algorithm",
+        "title": "Implement the Chunky Monkey Algorithm",
         "intro": [
           "In this lab you will practice dividing an array in smaller arrays with the technique of your choice."
         ]
