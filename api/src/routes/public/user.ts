@@ -222,8 +222,10 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       const logger = fastify.log.child({ req, res: reply });
 
       if (req.validationError) {
-        logger.warn('Validation error: No username provided');
         void reply.code(400);
+        logger
+          .child({ res: reply })
+          .warn('Validation error: No username provided');
         return await reply.send({
           type: 'danger',
           message: 'username parameter is required'
