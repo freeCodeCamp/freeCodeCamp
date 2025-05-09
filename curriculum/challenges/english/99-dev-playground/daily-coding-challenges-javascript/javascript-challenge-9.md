@@ -1,13 +1,13 @@
 ---
 id: 681cb1b0dab50c87ddb2e51a
-title: JavaScript Coding Challenge 9
+title: JavaScript Challenge 9
 challengeType: 28
-dashedName: javascript-coding-challenge-9
+dashedName: javascript-challenge-9
 ---
 
 # --description--
 
-JavaScript Coding Challenge 9
+JavaScript Challenge 9
 
 # --hints--
 

@@ -1,13 +1,13 @@
 ---
-id: 6814d8e1516e86b171929de4
-title: JavaScript Challenge 2
+id: 681cb05adab50c87ddb2e513
+title: "JavaScript Challenge 2: Base Check"
 challengeType: 28
 dashedName: javascript-challenge-2
 ---
 
 # --description--
 
-Given a string representing a number, and an integer base (from 2 to 36), determine whether the number is valid in that base.
+Given a string representing a number (`n`), and an integer (`base`) from 2 to 36, determine whether the number is valid in that base.
 
 - The string may contain integers, and uppercase or lowercase characters.
 - The check should be case-insensitive.
@@ -125,7 +125,7 @@ assert.isTrue(isValidNumber("z", 36))
 ```js
 function isValidNumber(n, base) {
 
-  return n;
+  return true;
 }
 ```
 
@@ -133,7 +133,6 @@ function isValidNumber(n, base) {
 
 ```js
 function isValidNumber(n, base) {
-
-  return n;
+  return new RegExp(`^[${'0123456789abcdefghijklmnopqrstuvwxyz'.substring(0, base)}]+\$`, "i").test(n);
 }
 ```

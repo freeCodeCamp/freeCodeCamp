@@ -1,19 +1,19 @@
 ---
 id: 6814d93d516e86b171929de5
-title: Python Coding Challenge 1
+title: "Python Challenge 1: Vowel Balance"
 challengeType: 29
-dashedName: python-coding-challenge-1
+dashedName: python-challenge-1
 ---
 
 # --description--
 
-Given a string, determine whether the number of vowels in the first half of the string is equal to the number of vowels in the second half.
+Given a string (`s`), determine whether the number of vowels in the first half of the string is equal to the number of vowels in the second half.
 
 - The string can contain any characters.
 - If there's an odd number of characters in the string, ignore the center character.
 
 # --hints--
-      
+
 `is_balanced("racecar")` should return `True`
 
 ```js
@@ -84,7 +84,7 @@ TestCase().assertTrue(is_balanced("123a#b!E&*456-o.U"))`)
 ```py
 def is_balanced(s):
   
-    return s
+    return True
 
 ```
 
@@ -92,7 +92,15 @@ def is_balanced(s):
 
 ```py
 def is_balanced(s):
-  
-    return s
+    vowels = set("aeiouAEIOU")
+    n = len(s)
+    half = n // 2
 
+    first_half = s[:half]
+    second_half = s[-half:]
+
+    def count_vowels(sub):
+        return sum(1 for char in sub if char in vowels)
+
+    return count_vowels(first_half) == count_vowels(second_half)
 ```

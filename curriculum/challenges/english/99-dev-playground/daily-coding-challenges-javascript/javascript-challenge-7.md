@@ -1,13 +1,13 @@
 ---
 id: 681cb1b0dab50c87ddb2e518
-title: JavaScript Coding Challenge 7
+title: JavaScript Challenge 7
 challengeType: 28
-dashedName: javascript-coding-challenge-7
+dashedName: javascript-challenge-7
 ---
 
 # --description--
 
-JavaScript Coding Challenge 7
+JavaScript Challenge 7
 
 # --hints--
 

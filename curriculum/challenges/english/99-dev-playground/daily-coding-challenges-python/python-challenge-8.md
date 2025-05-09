@@ -1,8 +1,8 @@
 ---
 id: 681cb1b2dab50c87ddb2e522
-title: Python Coding Challenge 8
+title: Python Challenge 8
 challengeType: 29
-dashedName: python-coding-challenge-8
+dashedName: python-challenge-8
 ---
 
 # --description--
@@ -10,7 +10,7 @@ dashedName: python-coding-challenge-8
 Description
 
 # --hints--
-      
+
 Passing test
 
 ```js

@@ -1,13 +1,13 @@
 ---
-id: 6814d93d516e86b171929de5
-title: Python Coding Challenge 2
+id: 681cb1b1dab50c87ddb2e51c
+title: "Python Challenge 2: Base Check"
 challengeType: 29
-dashedName: python-coding-challenge-2
+dashedName: python-challenge-2
 ---
 
 # --description--
 
-Given a string representing a number, and an integer base (from 2 to 36), determine whether the number is valid in that base.
+Given a string representing a number (`n`), and an integer (`base`) from 2 to 36, determine whether the number is valid in that base.
 
 - The string may contain integers, and uppercase or lowercase characters.
 - The check should be case-insensitive.
@@ -21,15 +21,6 @@ Given a string representing a number, and an integer base (from 2 to 36), determ
   - Base 36: 0-9 and A-Z
 
 # --hints--
-
-`is_balanced("racecar")` should return `True`
-
-```js
-({test: () => { runPython(`
-from unittest import TestCase
-TestCase().assertTrue(is_balanced("racecar"))`)
-}})
-```
 
 `is_valid_number("10101", 2)` should return `True`.
 
@@ -91,7 +82,7 @@ TestCase().assertFalse(is_valid_number("ABC", 10))`)
 ({test: () => { runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("ABC", 16))`)
-})
+}})
 ```
 
 `is_valid_number("Z", 36)` should return `True`.
@@ -154,7 +145,7 @@ TestCase().assertFalse(is_valid_number("abc", 10))`)
 ({test: () => { runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("abc", 16))`)
-})
+}})
 ```
 
 `is_valid_number("AbC", 16)` should return `True`.
@@ -163,7 +154,7 @@ TestCase().assertTrue(is_valid_number("abc", 16))`)
 ({test: () => { runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("AbC", 16))`)
-})
+}})
 ```
 
 `is_valid_number("z", 36)` should return `True`.
@@ -182,7 +173,7 @@ TestCase().assertTrue(is_valid_number("z", 36))`)
 ```py
 def is_valid_number(n, base):
   
-    return s
+    return True
 
 ```
 
@@ -190,7 +181,14 @@ def is_valid_number(n, base):
 
 ```py
 def is_valid_number(n, base):
-  
-    return s
+    allChars = "0123456789abcdefghijklmnopqrstuvwxyz";
+    newN = n.lower()
 
+    availableChars = allChars[0:base]
+
+    for char in newN:
+        if char not in availableChars:
+            return False
+
+    return True
 ```

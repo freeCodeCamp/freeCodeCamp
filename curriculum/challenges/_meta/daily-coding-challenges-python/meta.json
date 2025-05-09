@@ -6,6 +6,7 @@
   "helpCategory": "Python",
   "order": 1,
   "superBlock": "dev-playground",
+  "blockLayout": "legacy-challenge-list",
   "challengeOrder": [
     {
       "id": "6814d93d516e86b171929de5",
@@ -47,6 +48,5 @@
       "id": "681cb1b3dab50c87ddb2e524",
       "title": "Python Challenge 10"
     }
-  ],
-  "blockLayout": "legacy-link"
+  ]
 }

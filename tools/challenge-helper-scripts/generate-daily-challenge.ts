@@ -1,14 +1,10 @@
 /*
-  Script to generate the daily challenge data from graphql using the challenges in the dev playground
+  Script to generate the daily challenge data from graphql using the challenges in the dev playground superblock.
+  Fill in the two values below and run the script to generate the data for the daily challenge database.
 */
 
-import ObjectID from 'bson-objectid';
-
-// Enter the challenge title here
-const CHALLENGE_TITLE = 'Base Check';
-
-// If the challenge already exists, enter the ID here
-const CHALLENGE_ID = '';
+// From challenge number in dev playground superblock - e.g. "1" in "JavaScript Challenge 1"
+const CHALLENGE_NUMBER = 1;
 
 const GRAPHQL_ENDPOINT = 'http://localhost:8000/___graphql';
 
@@ -25,6 +21,8 @@ type QueryResult = {
 };
 
 type Challenge = {
+  id: string;
+  title: string;
   description: string;
   instructions?: string;
   fields: {
@@ -39,12 +37,18 @@ type Challenge = {
   }[];
 };
 
+const jsTitleRE = new RegExp(`^JavaScript Challenge ${CHALLENGE_NUMBER}:`);
+const pyTitleRE = new RegExp(`^Python Challenge ${CHALLENGE_NUMBER}:`);
+
+// Use the JS ID for the challenges
 const queryJavaScript = `
 query {
-  allChallengeNode(filter: {challenge: {id: {eq: "6814d8e1516e86b171929de4"}}}) {
+  allChallengeNode(filter: {challenge: {block: {eq: "daily-coding-challenges-javascript"}, title: {regex: ${jsTitleRE}}}}) {
     edges {
       node {
         challenge {
+          id
+          title
           description
           instructions
           fields {
@@ -66,7 +70,7 @@ query {
 
 const queryPython = `
 query {
-  allChallengeNode(filter: {challenge: {id: {eq: "6814d93d516e86b171929de5"}}}) {
+  allChallengeNode(filter: {challenge: {block: {eq: "daily-coding-challenges-python"}, title: {regex: ${pyTitleRE}}}}) {
     edges {
       node {
         challenge {
@@ -127,9 +131,14 @@ async function fetchGraphQL() {
       throw Error('JavaScript and Python instructions do not match');
     }
 
+    // todo: check title
+
     const challengeData = {
-      challengeId: CHALLENGE_ID || new ObjectID(),
-      title: CHALLENGE_TITLE,
+      challengeId: jsData.id,
+      title: jsData.title.replace(
+        `JavaScript Challenge ${CHALLENGE_NUMBER}: `,
+        ''
+      ),
       description: removeSection(jsData.description),
       ...(jsData.instructions && {
         instructions: removeSection(jsData.instructions)

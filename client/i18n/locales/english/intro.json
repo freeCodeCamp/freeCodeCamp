@@ -4195,17 +4195,13 @@
     "title": "Dev Playground",
     "intro": ["Playground for creating and testing challenges"],
     "blocks": {
-      "daily-coding-challenge-javascript": {
-        "title": "Daily Coding Challenge JavaScript",
-        "intro": [
-          "Place to create and play with daily JavaScript coding challenges."
-        ]
+      "daily-coding-challenges-javascript": {
+        "title": "Daily Coding Challenges JavaScript",
+        "intro": ["Place to create JavaScript daily coding challenges."]
       },
-      "daily-coding-challenge-python": {
-        "title": "Daily Coding Challenge Python",
-        "intro": [
-          "Place to create and play with daily Python coding challenges."
-        ]
+      "daily-coding-challenges-python": {
+        "title": "Daily Coding Challenges Python",
+        "intro": ["Place to create Python daily coding challenges."]
       }
     }
   },
