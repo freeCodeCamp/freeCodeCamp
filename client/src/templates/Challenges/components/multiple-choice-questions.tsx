@@ -85,11 +85,13 @@ function MultipleChoiceQuestions({
                     <div
                       className={`video-quiz-option-label mcq-feedback ${isCorrect ? 'mcq-correct' : 'mcq-incorrect'}`}
                     >
-                      <p>
-                        {isCorrect
-                          ? t('learn.quiz.correct-answer')
-                          : t('learn.quiz.incorrect-answer')}
-                      </p>
+                      {!feedback && (
+                        <p>
+                          {isCorrect
+                            ? t('learn.quiz.correct-answer')
+                            : t('learn.quiz.incorrect-answer')}
+                        </p>
+                      )}
                       {feedback && (
                         <p>
                           <PrismFormatted
