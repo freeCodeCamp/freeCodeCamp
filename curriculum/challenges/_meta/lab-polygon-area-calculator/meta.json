@@ -1,0 +1,10 @@
+{
+  "name": "Build a Polygon Area Calculator",
+  "isUpcomingChange": true,
+  "dashedName": "lab-polygon-area-calculator",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "5e444147903586ffb414c94f", "title": "Build a Polygon Area Calculator" }],
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "blockType": "lab"
+}

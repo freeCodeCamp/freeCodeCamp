@@ -1516,6 +1516,9 @@ const duplicatedProjectIds = [
   // Budget App
   '5e44413e903586ffb414c94e',
 
+  // Polygon area calculator
+  '5e444147903586ffb414c94f',
+
   /*** Back End JavaScript ***/
 
   /*** Legacy Only ***/
