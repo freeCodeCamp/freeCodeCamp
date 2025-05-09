@@ -3505,20 +3505,18 @@
           "You'll practice using state and hooks to manage the properties of an element."
         ]
       },
-      "dbta": { "title": "269", "intro": [] },
       "lecture-understanding-effects-and-referencing-values-in-react": {
         "title": "Understanding Effects and Referencing Values in React",
         "intro": [
           "In these lecture videos, you will learn about effects and referencing values with React."
         ]
       },
-      "xdyh": {
-        "title": "270",
-        "intro": []
-      },
-      "vjgg": {
-        "title": "272",
-        "intro": []
+      "lab-one-time-password-generator": {
+        "title": "Build a One-Time Password Generator",
+        "intro": [
+          "In this lab you'll build a one-time password generator.",
+          "You'll practice using the useEffect hooks to create a timer and generate a random OTP."
+        ]
       },
       "review-react-state-and-hooks": {
         "title": "React State and Hooks Review",
