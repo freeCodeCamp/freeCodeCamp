@@ -36,7 +36,7 @@ export const XtermTerminal = ({
       // Setting convertEol so that \n is converted to \r\n. Otherwise the terminal
       // will interpret \n as line feed and just move the cursor to the next line.
       // convertEol makes every \n a \r\n.
-      term = new Terminal({ convertEol: true });
+      term = new Terminal({ convertEol: true, screenReaderMode: true });
       const fitAddon = new FitAddon();
       xtermFitRef.current = fitAddon;
       term.loadAddon(fitAddon);
