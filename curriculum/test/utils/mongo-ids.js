@@ -1524,7 +1524,10 @@ const duplicatedProjectIds = [
   /*** Legacy Only ***/
 
   // Caesars Cipher
-  '56533eb9ac21ba0edf2244e2'
+  '56533eb9ac21ba0edf2244e2',
+
+  'a9bd25c716030ec90084d8a1',
+  'af2170cad53daa0770fabdea'
 ];
 
 class MongoIds {
