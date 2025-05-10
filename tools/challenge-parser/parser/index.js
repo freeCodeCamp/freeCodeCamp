@@ -17,7 +17,7 @@ const restoreDirectives = require('./plugins/restore-directives');
 const tableAndStrikeThrough = require('./plugins/table-and-strikethrough');
 const addScene = require('./plugins/add-scene');
 const addQuizzes = require('./plugins/add-quizzes');
-
+const sectionVerifier = require('./plugins/section-verifier');
 // by convention, anything that adds to file.data has the name add<name>.
 const processor = unified()
   // add the remark parser
@@ -55,13 +55,15 @@ const processor = unified()
   .use(addQuizzes)
   .use(addBeforeHook)
   .use(addTests)
+
   .use(addText, [
     'description',
     'instructions',
     'notes',
     'explanation',
     'transcript'
-  ]);
+  ])
+  .use(sectionVerifier, ['description', 'instructions']);
 
 exports.parseMD = function parseMD(filename) {
   return new Promise((resolve, reject) => {
