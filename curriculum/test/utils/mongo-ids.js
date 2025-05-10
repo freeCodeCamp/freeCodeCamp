@@ -1042,6 +1042,9 @@ const duplicatedProjectIds = [
 
   /*** JavaScript ***/
 
+  // Algorithms to labs
+  '579e2a2c335b9d72dd32e05c',
+
   // Local Storage ToDo App
 
   '64e4e4c4ec263b62ae7bf54d',
