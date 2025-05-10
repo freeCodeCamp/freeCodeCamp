@@ -4,6 +4,7 @@ title: Medical Data Visualizer
 challengeType: 10
 forumTopicId: 462368
 dashedName: medical-data-visualizer
+solutionLink: https://empty.com
 ---
 
 # --description--

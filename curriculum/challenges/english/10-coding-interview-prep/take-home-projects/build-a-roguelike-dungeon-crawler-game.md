@@ -4,6 +4,7 @@ title: Build a Roguelike Dungeon Crawler Game
 challengeType: 3
 forumTopicId: 302355
 dashedName: build-a-roguelike-dungeon-crawler-game
+solutionLink: https://codepen.io/freeCodeCamp/full/MEZPNd
 ---
 
 # --description--

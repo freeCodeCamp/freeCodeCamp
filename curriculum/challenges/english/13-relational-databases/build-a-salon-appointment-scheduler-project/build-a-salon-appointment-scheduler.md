@@ -4,6 +4,7 @@ title: Build a Salon Appointment Scheduler
 challengeType: 13
 url: freeCodeCamp/learn-salon-appointment-scheduler
 dashedName: build-a-salon-appointment-scheduler
+solutionLink: https://empty.com
 ---
 
 # --description--
