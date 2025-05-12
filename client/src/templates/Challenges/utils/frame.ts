@@ -332,8 +332,7 @@ const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
       const { sources, loadEnzyme, build, hooks, type } = frameContext;
       // provide the file name and get the original source
 
-      const source =
-        type === 'dom' ? createContent(testId, { build, sources }) : build;
+      const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
       await loadTestRunner(document);
       await window?.FCCSandbox.createTestRunner({
         type,
@@ -412,14 +411,24 @@ const waitForFrame = (frameContext: Context) => {
   });
 };
 
-export const createContent = (
-  id: string,
-  { build, sources }: { build: string; sources: Source; hooks?: Hooks }
-) => {
+export const prefixDoctype = ({
+  build,
+  sources
+}: {
+  build: string;
+  sources: Source;
+}) => {
   // DOCTYPE should be the first thing written to the frame, so if the user code
   // includes a DOCTYPE declaration, we need to find it and write it first.
   const doctype = sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
-  return doctype + createHeader(id) + build;
+  return doctype + build;
+};
+
+const createContent = (
+  id: string,
+  { build, sources }: { build: string; sources: Source; hooks?: Hooks }
+) => {
+  return prefixDoctype({ build: createHeader(id) + build, sources });
 };
 
 const restoreScrollPosition = (frameContext: Context) => {
