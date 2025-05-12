@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Hash Table
 
-This is a test for the new project-based curriculum.
+A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups. In this lab, you will use your knowledge about data structures to build a hash table.

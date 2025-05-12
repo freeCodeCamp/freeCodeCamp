@@ -4062,7 +4062,7 @@
       "lab-hash-table": {
         "title": "Build a Hash Table",
         "intro": [
-          "A hash table is a data structure that is used to store keys/value pairs and is optimized for quick lookups.",
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
           "In this lab, you will use your knowledge about data structures to build a hash table."
         ]
       },
