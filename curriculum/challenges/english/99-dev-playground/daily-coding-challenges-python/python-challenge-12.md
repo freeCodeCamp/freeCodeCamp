@@ -7,7 +7,12 @@ dashedName: python-challenge-12
 
 # --description--
 
-Description
+Given a secret message string, and an integer representing the number of letters that were used to shift the string. Return the decoded string.
+
+- A positive number means the message was shifted forward in the alphabet.
+- A negative number means the message was shifted backward the alphabet.
+- Case matters, decoded characters should retain the case of their encoded couterparts.
+- Non-alpha characters should not get decoded.
 
 # --hints--
 

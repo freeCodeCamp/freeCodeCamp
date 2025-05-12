@@ -14,7 +14,6 @@ Given a secret message string, and an integer representing the number of letters
 - Case matters, decoded characters should retain the case of their encoded couterparts.
 - Non-alpha characters should not get decoded.
 
-
 # --hints--
 
 `decode("Xlmw mw e wigvix qiwweki.", 4)` should return `This is a secret message.`
