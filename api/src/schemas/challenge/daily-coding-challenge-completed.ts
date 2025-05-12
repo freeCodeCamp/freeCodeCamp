@@ -1,10 +1,14 @@
 import { Type } from '@fastify/type-provider-typebox';
+import { DailyCodingChallengeLanguage } from '@prisma/client';
+
+const languages = Object.values(DailyCodingChallengeLanguage).map(k =>
+  Type.Literal(k)
+);
 
 export const dailyCodingChallengeCompleted = {
   body: Type.Object({
     id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
-    challengeType: Type.Number(),
-    language: Type.Union([Type.Literal('javascript'), Type.Literal('python')])
+    language: Type.Union(languages)
   }),
   response: {
     200: Type.Object({
@@ -15,9 +19,7 @@ export const dailyCodingChallengeCompleted = {
         Type.Object({
           id: Type.String(),
           completedDate: Type.Number(),
-          completedLanguages: Type.Array(
-            Type.Union([Type.Literal('javascript'), Type.Literal('python')])
-          )
+          languages: Type.Array(Type.Union(languages))
         })
       )
     }),

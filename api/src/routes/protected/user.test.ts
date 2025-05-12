@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import type { Prisma } from '@prisma/client';
+import { DailyCodingChallengeLanguage, type Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
 
@@ -81,7 +81,10 @@ const testUserData: Prisma.userCreateInput = {
     {
       id: '5900f36e1000cf542c50fe80',
       completedDate: 1742941672524,
-      completedLanguages: ['python', 'javascript']
+      languages: [
+        DailyCodingChallengeLanguage.python,
+        DailyCodingChallengeLanguage.javascript
+      ]
     }
   ],
   partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
@@ -228,7 +231,10 @@ const publicUserData = {
     {
       id: '5900f36e1000cf542c50fe80',
       completedDate: 1742941672524,
-      completedLanguages: ['python', 'javascript']
+      languages: [
+        DailyCodingChallengeLanguage.python,
+        DailyCodingChallengeLanguage.javascript
+      ]
     }
   ],
   completedExams: testUserData.completedExams,

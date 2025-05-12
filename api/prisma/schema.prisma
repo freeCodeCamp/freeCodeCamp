@@ -29,15 +29,17 @@ type CompletedChallenge {
   examResults        ExamResults? // Undefined
 }
 
-enum CompletedLanguage {
+enum DailyCodingChallengeLanguage {
   javascript
   python
 }
 
 type CompletedDailyCodingChallenge {
-  id                 String
-  completedDate      Float // TODO(Post-MVP): Change to DateTime
-  completedLanguages CompletedLanguage[]
+  id            String                         @db.ObjectId
+  /// Date in milliseconds since epoch
+  /// This is not a DateTime, because DateTime does not serialize directly to JSON
+  completedDate Int
+  languages     DailyCodingChallengeLanguage[]
 }
 
 type PartiallyCompletedChallenge {
