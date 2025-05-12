@@ -1,6 +1,6 @@
 ---
 id: 681cb1b0dab50c87ddb2e51b
-title: "JavaScript Challenge 10: 3 Finder"
+title: "JavaScript Challenge 10: 3 Strikes"
 challengeType: 28
 dashedName: javascript-challenge-10
 ---

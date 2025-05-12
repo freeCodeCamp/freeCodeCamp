@@ -1,6 +1,6 @@
 ---
 id: 681cb1b3dab50c87ddb2e524
-title: "Python Challenge 10: 3 Finder"
+title: "Python Challenge 10: 3 Strikes"
 challengeType: 29
 dashedName: python-challenge-10
 ---

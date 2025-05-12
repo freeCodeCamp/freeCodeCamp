@@ -7,9 +7,9 @@ dashedName: python-challenge-4
 
 # --description--
 
-Given a string, remove all spaces from the string, then insert two spaces between every character and convert all letters to uppercase.
+Given a string, remove all spaces from the string, insert two spaces between every character, convert all alphabetical letters to uppercase, and return the result.
 
-- The function should handle any characters.
+- Non-alphabetical characters should remain unchanged (except for spaces).
 
 # --hints--
 

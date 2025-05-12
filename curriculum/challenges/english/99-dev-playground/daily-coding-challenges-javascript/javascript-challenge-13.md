@@ -1,20 +1,53 @@
 ---
 id: 6821ebc9237de8297eaee78f
-title: "JavaScript Challenge 13"
+title: "JavaScript Challenge 13: Unnatural Prime"
 challengeType: 28
 dashedName: javascript-challenge-13
 ---
 
 # --description--
 
-Description
+Given an integer, determine if that number is a prime number or a negative prime number.
+
+- A prime number is a positive integer greater than 1 that is only divisible by 1 and itself.
+- A negative prime number is the negative version of a positive prime number.
 
 # --hints--
 
-`decode("Xlmw mw e wigvix qiwweki.", 4)` should return `This is a secret message.`
+`isUnnaturalPrime(1)` should return `false`.
 
 ```js
-assert.equal(decode("Xlmw mw e wigvix qiwweki.", 4), "This is a secret message.");
+assert.isFalse(isUnnaturalPrime(1));
+```
+
+`isUnnaturalPrime(1)` should return `false`.
+
+```js
+assert.isFalse(isUnnaturalPrime(1));
+```
+
+`isUnnaturalPrime(1)` should return `false`.
+
+```js
+assert.isFalse(isUnnaturalPrime(1));
+```
+
+`isUnnaturalPrime(1)` should return `false`.
+
+```js
+assert.isFalse(isUnnaturalPrime(1));
+```
+
+`isUnnaturalPrime(1)` should return `false`.
+
+```js
+assert.isFalse(isUnnaturalPrime(1));
+```
+
+`isUnnaturalPrime(1)` should return `false`.
+
+```js
+assert.isFalse(isUnnaturalPrime(1));
 ```
 
 # --seed--
@@ -22,17 +55,17 @@ assert.equal(decode("Xlmw mw e wigvix qiwweki.", 4), "This is a secret message."
 ## --seed-contents--
 
 ```js
-function decode(message, shift) {
+function isUnnaturalPrime(n) {
 
-  return message;
+  return n;
 }
 ```
 
 # --solutions--
 
 ```js
-function decode(message, shift) {
+function isUnnaturalPrime(n) {
 
-  return message;
+  return n;
 }
 ```

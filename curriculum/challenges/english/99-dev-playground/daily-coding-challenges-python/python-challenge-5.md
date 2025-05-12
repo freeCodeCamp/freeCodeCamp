@@ -7,7 +7,7 @@ dashedName: python-challenge-5
 
 # --description--
 
-Given a string, return a string where each word is transformed using the following constraints:
+Given a string, return a jumbled version of that string where each word is transformed using the following constraints:
 
 - The first and last letter of the words remain in place
 - All letters between the first and last letter are sorted alphabetically.
