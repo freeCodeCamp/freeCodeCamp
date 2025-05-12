@@ -496,19 +496,19 @@ What does the CSS `animation-delay` property do?
 
 #### --distractors--
 
-Sets how long the animation lasts
+Sets how long the animation lasts.
 
 ---
 
-Specifies the timing function
+Specifies the timing function.
 
 ---
 
-Defines animation direction
+Defines animation direction.
 
 #### --answer--
 
-Delays the start of the animation
+Delays the start of the animation.
 
 ### --question--
 
@@ -540,19 +540,19 @@ Why should CSS animations be used in moderation?
 
 #### --distractors--
 
-They automatically improve browser compatibility
+Too many CSS animations can lead to styles breaking as well as inconsistent styles across different browsers. 
 
 ---
 
-They increase the site’s SEO ranking
+Too many CSS animations can lead to lower or non existent rankings in search engine results.
 
 ---
 
-They optimize server response times
+Too many CSS animations will automatically crash the server and increase the likelihood for security risks. 
 
 #### --answer--
 
-They can lead to poor performance and may be distracting or problematic for users with certain accessibility needs
+Too many CSS animations can lead to poor performance and may be distracting or problematic for users with certain accessibility needs.
 
 ### --question--
 
@@ -562,41 +562,41 @@ Which animation property determines whether the animation should play forwards, 
 
 #### --distractors--
 
-animation-fill-mode
+`animation-fill-mode`
 
 ---
 
-animation-delay
+`animation-delay`
 
 ---
 
-animation-timing-function
+`animation-timing-function`
 
 #### --answer--
 
-animation-direction
+`animation-direction`
 
 ### --question--
 
 #### --text--
 
-What CSS media query detects if the user has requested minimal animations or motion effects?
+Which CSS media query detects if the user has requested minimal animations or motion effects?
 
 #### --distractors--
 
-@media (reduce-motion: true)
+`reduce-motion`
 
 ---
 
-@media (min-motion-preference: low)
+`min-motion-preference`
 
 ---
 
-@media (motion-preferences: reduced)
+`motion-preferences`
 
 #### --answer--
 
-@media (prefers-reduced-motion: reduce)
+`prefers-reduced-motion`
 
 ### --question--
 
@@ -624,23 +624,23 @@ Which property sets how many times an `animation` repeats?
 
 #### --text--
 
-Which media query detects users who prefer reduced motion?
+Which CSS rule is used to define the stages and styles of an animation at various points during its duration?
 
 #### --distractors--
 
-`@media (motion-preference: low)`
+`@style`
 
 ---
 
-`@media (reduced-motion: true)`
+`@transition`
 
 ---
 
-`@media (no-motion: yes)`
+`@transform`
 
 #### --answer--
 
-`@media (prefers-reduced-motion: reduce)`
+`@keyframes`
 
 ### --question--
 
@@ -672,41 +672,41 @@ What does the `animation-play-state` property allow you to do?
 
 #### --distractors--
 
-Set how many times the animation repeats
+Set how many times the animation repeats.
 
 ---
 
-Specify how long the animation takes to complete
+Specify how long the animation takes to complete.
 
 ---
 
-Determine the direction in which the animation plays
+Determine the direction in which the animation plays.
 
 #### --answer--
 
-Pause and resume the animation
+Pause and resume the animation.
 
 ### --question--
 
 #### --text--
 
-As a general rule, what content should be avoided to reduce seizure risk?
+Which of the following is a good practice when working with animations?
 
 #### --distractors--
 
-Any content that changes color
+Use as many flashing colors and rapid movements as possible to grab attention.
 
 ---
 
-Any movement of elements
+Avoid testing animations on different devices or screen sizes.
 
 ---
 
-Any use of the transform property
+Make animations last as long as possible to ensure users notice them.
 
 #### --answer--
 
-Content that flashes more than three times per second
+Avoid content that flashes more than three times per second to prevent triggering seizures or causing discomfort.
 
 ### --question--
 
@@ -716,19 +716,19 @@ Why is the `!important` declaration used in the CSS rules?
 
 #### --distractors--
 
-To prevent other media queries from loading
+To prevent other media queries from loading.
 
 ---
 
-To limit styles to the first child element
+To limit styles to the first child element.
 
 ---
 
-To debug CSS more easily
+To debug CSS more easily.
 
 #### --answer--
 
-To ensure these rules take precedence over other styles
+To ensure these rules take precedence over other styles.
 
 ### --question--
 
@@ -738,41 +738,41 @@ What does `animation-iteration-count: 1 !important;` ensure in CSS?
 
 #### --distractors--
 
-That animations are paused
+That animations are paused.
 
 ---
 
-That animations run infinitely
+That animations run infinitely.
 
 ---
 
-That animations reverse direction each cycle
+That animations reverse direction each cycle.
 
 #### --answer--
 
-That any looping animations only play once
+That any looping animations only play once.
 
 ### --question--
 
 #### --text--
 
-What type of animation content can trigger seizures in people with photosensitive epilepsy?
+What CSS property is used to specify how long an animation should take to complete?
 
 #### --distractors--
 
-Slow fading transitions
+`animation-delay`
 
 ---
 
-Background-color changes
+`animation-timing-function`
 
 ---
 
-Single-direction transforms
+`animation-iteration-count`
 
 #### --answer--
 
-Rapid flashing or strobing effects that flash more than three times per second
+`animation-duration`
 
 ### --question--
 
@@ -782,19 +782,19 @@ Which property is NOT part of the `animation` shorthand?
 
 #### --distractors--
 
-animation-delay
+`animation-delay`
 
 ---
 
-animation-timing-function
+`animation-timing-function`
 
 ---
 
-animation-direction
+`animation-direction`
 
 #### --answer--
 
-animation-transform
+`animation-transform`
 
 ### --question--
 
@@ -804,41 +804,52 @@ What does the `@keyframes` rule define?
 
 #### --distractors--
 
-The timing function of an animation
+The timing function of an animation.
 
 ---
 
-The default state of an element
+The default state of an element.
 
 ---
 
-The media queries for animations
+The media queries for animations.
 
 #### --answer--
 
-The sequence of styles at different points in an animation
+The sequence of styles at different points in an animation.
 
 ### --question--
 
 #### --text--
 
-What is the goal of using the `prefers-reduced-motion` media query in animations?
+What does this `@keyframe` at-rule do to the animated element?
+
+```css
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+```
 
 #### --distractors--
 
-To completely remove all motion from the website
+It scales the element up from 0% to 100%.
 
 ---
 
-To force animations to run at double speed
+It moves the element from left to right.
 
 ---
 
-To disable all CSS styles globally
+It changes the text color to black.
 
 #### --answer--
 
-Use a low-motion approach that respects user settings for comfortable accessibility.
+It makes the element fade in by gradually increasing its transparency.
 
 ### --question--
 
@@ -848,19 +859,19 @@ In a keyframes rule, what does `100%` represent?
 
 #### --distractors--
 
-The start of the animation
+The start of the animation.
 
 ---
 
-The halfway point
+The halfway point.
 
 ---
 
-The easing function
+The easing function.
 
 #### --answer--
 
-The end of the animation
+The end of the animation.
 
 ### --question--
 
@@ -892,19 +903,19 @@ What should developers consider when implementing animations to maintain accessi
 
 #### --distractors--
 
-Using only JavaScript for all animations
+Rely entirely on JavaScript for all animations.
 
 ---
 
-Adding as many animations as possible for engagement
+Add frequent and intense animations for impact.
 
 ---
 
-Using only large, unexpected movements
+Include only bold, fast, and surprising effects.
 
 #### --answer--
 
-Use purposeful animation, avoid sudden large motions, provide controls, and implement `prefers-reduced-motion`
+Use subtle, intentional effects, honor preferences, and offer user control.
 
 ### --question--
 
@@ -914,36 +925,52 @@ Which of the following is the correct syntax to slide an element in from the lef
 
 #### --distractors--
 
-```js
+```css
 @keyframes slide-in {
-  0    { transform: translate(-100%); }
-  100  { transform: translate(0); }
+  0 { 
+    transform: translate(-100%); 
+  }
+  100 { 
+    transform: translate(0); 
+  }
 }
 ```
 
 ---
 
-```js
+```css
 @keyframes slide-in {
-  from { translateX(-100%); }
-  to   { translateX(0); }
+  from { 
+    translateX(-100%); 
+  }
+  to { 
+    translateX(0); 
+  }
 }
 ```
 
 ---
 
-```js
+```css
 @keyframes slide-in {
-  start { transform: moveX(-100%); }
-  end   { transform: moveX(0); }
+  start { 
+    transform: moveX(-100%); 
+  }
+  end { 
+    transform: moveX(0); 
+  }
 }
 ```
 
 #### --answer--
 
-```js
+```css
 @keyframes slide-in {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(0); }
+  0% { 
+    transform: translateX(-100%); 
+  }
+  100% { 
+    transform: translateX(0); 
+  }
 }
 ```
