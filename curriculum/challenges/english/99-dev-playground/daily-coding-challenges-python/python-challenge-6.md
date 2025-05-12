@@ -1,22 +1,69 @@
 ---
 id: 681cb1b2dab50c87ddb2e520
-title: Python Challenge 6
+title: "Python Challenge 6: Anagram Checker"
 challengeType: 29
 dashedName: python-challenge-6
 ---
 
 # --description--
 
-Description
+Given two strings, determine if the they are anagrams of each other (contain the same characters in any order).
+
+- Ignore casing and white space.
 
 # --hints--
 
-Passing test
+`areAnagrams("listen", "silent")` should return `true`.
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertTrue(True)`)
+TestCase().assertTrue(are_anagrams("listen", "silent"))`)
+}})
+```
+
+`areAnagrams("School master", "The classroom")` should return `true`.
+
+```js
+({test: () => { runPython(`
+from unittest import TestCase
+TestCase().assertTrue(are_anagrams("School master", "The classroom"))`)
+}})
+```
+
+`areAnagrams("A gentleman", "Elegant man")` should return `true`.
+
+```js
+({test: () => { runPython(`
+from unittest import TestCase
+TestCase().assertTrue(are_anagrams("A gentleman", "Elegant man"))`)
+}})
+```
+
+`areAnagrams("Hello", "World")` should return `false`.
+
+```js
+({test: () => { runPython(`
+from unittest import TestCase
+TestCase().assertFalse(are_anagrams("Hello", "World"))`)
+}})
+```
+
+`areAnagrams("apple", "banana")` should return `false`.
+
+```js
+({test: () => { runPython(`
+from unittest import TestCase
+TestCase().assertFalse(are_anagrams("apple", "banana"))`)
+}})
+```
+
+`areAnagrams("cat", "dog")` should return `false`.
+
+```js
+({test: () => { runPython(`
+from unittest import TestCase
+TestCase().assertFalse(are_anagrams("cat", "dog"))`)
 }})
 ```
 
@@ -25,17 +72,17 @@ TestCase().assertTrue(True)`)
 ## --seed-contents--
 
 ```py
-def seed(s):
-  
-    return s
+def are_anagrams(str1, str2):
 
+    return str1
 ```
 
 # --solutions--
 
 ```py
-def seed(s):
-  
-    return s
-
+def are_anagrams(str1, str2):
+    def clean(s):
+        return sorted(s.replace(" ", "").lower())
+    
+    return clean(str1) == clean(str2)
 ```

@@ -7,9 +7,9 @@ dashedName: python-challenge-3
 
 # --description--
 
-Given a named CSS color string, generate a random hexadecimal (hex) color code that is dominant in the given color. 
+Given a named CSS color string, generate a random hexadecimal (hex) color code that is dominant in the given color.
 
-- The function should handle `red`, `green`, or `blue` as an input parameter.
+- The function should handle `red`, `green`, or `blue` as an input argument.
 - If the input is not one of those, the function should return `Invalid color`.
 - The function should return a random six character hex color code where the input color value is greater than any of the others.
 - Example of valid outputs for a given input:
@@ -167,9 +167,8 @@ TestCase().assertNotEqual(hex1, hex2)`);
 
 ```py
 def generate_hex(color):
-  
-    return color
 
+    return color
 ```
 
 # --solutions--

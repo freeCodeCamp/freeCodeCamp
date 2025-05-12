@@ -7,7 +7,7 @@ dashedName: python-challenge-2
 
 # --description--
 
-Given a string representing a number (`n`), and an integer (`base`) from 2 to 36, determine whether the number is valid in that base.
+Given a string representing a number, and an integer from 2 to 36, determine whether the number is valid in that base.
 
 - The string may contain integers, and uppercase or lowercase characters.
 - The check should be case-insensitive.
@@ -172,9 +172,8 @@ TestCase().assertTrue(is_valid_number("z", 36))`)
 
 ```py
 def is_valid_number(n, base):
-  
-    return True
 
+    return n
 ```
 
 # --solutions--

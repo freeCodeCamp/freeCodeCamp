@@ -7,7 +7,7 @@ dashedName: javascript-challenge-2
 
 # --description--
 
-Given a string representing a number (`n`), and an integer (`base`) from 2 to 36, determine whether the number is valid in that base.
+Given a string representing a number, and an integer from 2 to 36, determine whether the number is valid in that base.
 
 - The string may contain integers, and uppercase or lowercase characters.
 - The check should be case-insensitive.
@@ -125,7 +125,7 @@ assert.isTrue(isValidNumber("z", 36))
 ```js
 function isValidNumber(n, base) {
 
-  return true;
+  return n;
 }
 ```
 

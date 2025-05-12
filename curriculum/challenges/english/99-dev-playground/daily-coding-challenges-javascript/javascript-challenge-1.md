@@ -7,50 +7,50 @@ dashedName: javascript-challenge-1
 
 # --description--
 
-Given a string (`s`), determine whether the number of vowels in the first half of the string is equal to the number of vowels in the second half.
+Given a string, determine whether the number of vowels in the first half of the string is equal to the number of vowels in the second half.
 
 - The string can contain any characters.
 - If there's an odd number of characters in the string, ignore the center character.
 
 # --hints--
 
-`isBalanced("racecar")` should return `true`
+`isBalanced("racecar")` should return `true`.
 
 ```js
 assert.isTrue(isBalanced("racecar"));
 ```
 
-`isBalanced("lorem ipsum")` should return `true`
+`isBalanced("lorem ipsum")` should return `true`.
 
 ```js
 assert.isTrue(isBalanced("lorem ipsum"));
 ```
 
-`isBalanced("kitty ipsum")` should return `false`
+`isBalanced("kitty ipsum")` should return `false`.
 
 ```js
 assert.isFalse(isBalanced("kitty ipsum"));
 ```
 
-`isBalanced("string")` should return `false`
+`isBalanced("string")` should return `false`.
 
 ```js
 assert.isFalse(isBalanced("string"));
 ```
 
-`isBalanced(" ")` should return `true`
+`isBalanced(" ")` should return `true`.
 
 ```js
 assert.isTrue(isBalanced(" "));
 ```
 
-`isBalanced("abcdefghijklmnopqrstuvwxyz")` should return `false`
+`isBalanced("abcdefghijklmnopqrstuvwxyz")` should return `false`.
 
 ```js
 assert.isFalse(isBalanced("abcdefghijklmnopqrstuvwxyz"));
 ```
 
-`isBalanced("123a#b!E&#x26;*456-o.U")` should return `true`
+`isBalanced("123a#b!E&#x26;*456-o.U")` should return `true`.
 
 ```js
 assert.isTrue(isBalanced("123a#b!E&*456-o.U"));
@@ -63,7 +63,7 @@ assert.isTrue(isBalanced("123a#b!E&*456-o.U"));
 ```js
 function isBalanced(s) {
 
-  return true;
+  return s;
 }
 ```
 

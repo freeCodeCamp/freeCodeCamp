@@ -13,31 +13,31 @@ Given a string, remove all spaces from the string, then insert two spaces betwee
 
 # --hints--
 
-`spaceJam("freeCodeCamp")` should return `F  R  E  E  C  O  D  E  C  A  M  P`
+`spaceJam("freeCodeCamp")` should return `F  R  E  E  C  O  D  E  C  A  M  P`.
 
 ```js
 assert.equal(spaceJam("freeCodeCamp"), "F  R  E  E  C  O  D  E  C  A  M  P");
 ```
 
-`spaceJam("   free   Code   Camp   ")` should return `F  R  E  E  C  O  D  E  C  A  M  P`
+`spaceJam("   free   Code   Camp   ")` should return `F  R  E  E  C  O  D  E  C  A  M  P`.
 
 ```js
 assert.equal(spaceJam("   free   Code   Camp   "), "F  R  E  E  C  O  D  E  C  A  M  P");
 ```
 
-`spaceJam("Hello World?!")` should return `H  E  L  L  O  W  O  R  L  D  ?  !`
+`spaceJam("Hello World?!")` should return `H  E  L  L  O  W  O  R  L  D  ?  !`.
 
 ```js
 assert.equal(spaceJam("Hello World?!"), "H  E  L  L  O  W  O  R  L  D  ?  !");
 ```
 
-`spaceJam("C@t$ & D0g$")` should return `C  @  T  $  &  D  0  G  $`
+`spaceJam("C@t$ & D0g$")` should return `C  @  T  $  &  D  0  G  $`.
 
 ```js
 assert.equal(spaceJam("C@t$ & D0g$"), "C  @  T  $  &  D  0  G  $");
 ```
 
-`spaceJam("allyourbase")` should return `A  L  L  Y  O  U  R  B  A  S  E`
+`spaceJam("allyourbase")` should return `A  L  L  Y  O  U  R  B  A  S  E`.
 
 ```js
 assert.equal(spaceJam("all your base"), "A  L  L  Y  O  U  R  B  A  S  E");
@@ -48,17 +48,16 @@ assert.equal(spaceJam("all your base"), "A  L  L  Y  O  U  R  B  A  S  E");
 ## --seed-contents--
 
 ```js
-function spaceJam(str) {
+function spaceJam(s) {
 
-  return true;
+  return s;
 }
 ```
 
 # --solutions--
 
 ```js
-function spaceJam(str) {
-
-  return str.toUpperCase().replace(/\s+/g, '').split('').join('  ');
+function spaceJam(s) {
+  return s.toUpperCase().replace(/\s+/g, '').split('').join('  ');
 }
 ```

@@ -7,9 +7,9 @@ dashedName: javascript-challenge-3
 
 # --description--
 
-Given a named CSS color string, generate a random hexadecimal (hex) color code that is dominant in the given color. 
+Given a named CSS color string, generate a random hexadecimal (hex) color code that is dominant in the given color.
 
-- The function should handle `red`, `green`, or `blue` as an input parameter.
+- The function should handle `red`, `green`, or `blue` as an input argument.
 - If the input is not one of those, the function should return `Invalid color`.
 - The function should return a random six character hex color code where the input color value is greater than any of the others.
 - Example of valid outputs for a given input:
@@ -142,7 +142,7 @@ assert.notEqual(hex1, hex2);
 ```js
 function generateHex(color) {
 
-  return true;
+  return color;
 }
 ```
 
@@ -150,7 +150,7 @@ function generateHex(color) {
 
 ```js
 function generateHex(color) {
-  const toHex = (n) => n.toString(16).padStart(2, "0").toUpperCase();
+  const toHex = n => n.toString(16).padStart(2, "0").toUpperCase();
 
   const dominant = Math.floor(Math.random() * 86) + 170;
   const weak1 = Math.floor(Math.random() * 170);
@@ -158,7 +158,7 @@ function generateHex(color) {
 
   let r, g, b;
 
-  switch (color.toLowerCase()) {
+  switch (color) {
     case "red":
       r = dominant;
       g = weak1;
