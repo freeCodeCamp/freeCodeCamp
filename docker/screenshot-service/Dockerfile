@@ -5,7 +5,7 @@ ARG PROJECT_DIR=tools/screenshot-service
 FROM node:20-alpine AS builder
 ARG PROJECT_DIR
 
-RUN npm i -g pnpm@9
+RUN npm i -g pnpm@10
 USER node
 WORKDIR /home/node/build
 
@@ -20,7 +20,7 @@ RUN pnpm -F=./${PROJECT_DIR} build
 FROM node:20-alpine AS deps
 ARG PROJECT_DIR
 
-RUN npm i -g pnpm@9
+RUN npm i -g pnpm@10
 USER node
 WORKDIR /home/node/build
 
