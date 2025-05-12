@@ -1,12 +1,9 @@
 import React, { ReactNode, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-// TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
 
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
-// TODO: See if there's a nice way to incorporate the structure into data Gatsby
-// sources from the curriculum, rather than importing it directly.
 import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
@@ -25,6 +22,7 @@ interface ChapterProps {
   isExpanded: boolean;
   totalSteps: number;
   completedSteps: number;
+  isInProgress: boolean;
 }
 
 interface ModuleProps {
@@ -70,13 +68,11 @@ const chapters = superBlockStructure.chapters;
 
 const isLinkModule = (name: string) => {
   const module = modules.find(module => module.dashedName === name);
-
   return module?.moduleType === 'review';
 };
 
 const isLinkChapter = (name: string) => {
   const chapter = chapters.find(chapter => chapter.dashedName === name);
-
   return chapter?.chapterType === 'exam';
 };
 
@@ -89,7 +85,6 @@ const getBlockToChapterMap = () => {
       });
     });
   });
-
   return blockToChapterMap;
 };
 
@@ -100,7 +95,6 @@ const getBlockToModuleMap = () => {
       blockToModuleMap.set(block.dashedName, module.dashedName);
     });
   });
-
   return blockToModuleMap;
 };
 
@@ -112,7 +106,8 @@ const Chapter = ({
   children,
   isExpanded,
   totalSteps,
-  completedSteps
+  completedSteps,
+  isInProgress
 }: ChapterProps) => {
   const { t } = useTranslation();
   const isComplete = completedSteps === totalSteps;
@@ -129,6 +124,11 @@ const Chapter = ({
             chapter={dashedName as FsdChapters}
           />
           {t(`intro:full-stack-developer.chapters.${dashedName}`)}
+          {isInProgress && (
+            <span style={{ fontSize: '0.75rem', color: 'lightgreen', marginLeft: '0.5rem', fontWeight: '500' }}>
+              🟢 In progress
+            </span>
+          )}
         </div>
         <div className='chapter-button-right'>
           <span className='chapter-steps'>
@@ -251,14 +251,12 @@ export const SuperBlockAccordion = ({
     return { allChapters };
   }, [challenges]);
 
-  // Expand the outer layers in order to reveal the chosen block.
   const expandedChapter = blockToChapterMap.get(chosenBlock);
   const expandedModule = blockToModuleMap.get(chosenBlock);
 
   return (
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
-        // show coming soon on production, and all the challenges in dev
         if (chapter.comingSoon && !showUpcomingChanges) {
           return (
             <ComingSoon key={chapter.name}>
@@ -296,6 +294,10 @@ export const SuperBlockAccordion = ({
           completedChallengeIds.filter(id => chapterStepIdsSet.has(id))
         ).size;
 
+        const isInProgress =
+          completedStepsInChapter > 0 &&
+          completedStepsInChapter < chapterStepIds.length;
+
         return (
           <Chapter
             key={chapter.name}
@@ -303,9 +305,9 @@ export const SuperBlockAccordion = ({
             isExpanded={expandedChapter === chapter.name}
             totalSteps={chapterStepIds.length}
             completedSteps={completedStepsInChapter}
+            isInProgress={isInProgress}
           >
             {chapter.modules.map(module => {
-              // show coming soon on production, and all the challenges in dev
               if (module.comingSoon && !showUpcomingChanges) {
                 return (
                   <ComingSoon key={chapter.name}>
@@ -345,7 +347,6 @@ export const SuperBlockAccordion = ({
                   completedSteps={completedStepsInModule}
                 >
                   {module.blocks.map(block => (
-                    // maybe TODO: allow blocks to be "coming soon"
                     <li key={block.name}>
                       <Block
                         block={block.name}

@@ -196,14 +196,21 @@ function Map({
             </h2>
             <ul key={stage}>
               {superblocks.map((superblock, i) => (
-                <MapLi
-                  key={superblock}
-                  superBlock={superblock}
-                  landing={forLanding}
-                  index={i}
-                  claimed={isClaimed(superblock)}
-                  completed={allSuperblockChallengesCompleted(superblock)}
-                />
+               <MapLi
+               key={superblock}
+               superBlock={superblock}
+               landing={forLanding}
+               index={i}
+               claimed={isClaimed(superblock)}
+               completed={allSuperblockChallengesCompleted(superblock)}
+               inProgress={
+                 !allSuperblockChallengesCompleted(superblock) &&
+                 allChallenges
+                   .filter(ch => ch.superBlock === superblock)
+                   .some(ch => completedChallengeIds.includes(ch.id))
+               }
+             />
+             
               ))}
             </ul>
             <Spacer size='m' />
