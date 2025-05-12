@@ -44,7 +44,7 @@
       "title": "Step 9"
     },
     {
-      "id": "67116d7584d0b469b14579c1",
+      "id": "682264d807fe00058c1ea013",
       "title": "Step 10"
     },
     {
@@ -52,16 +52,28 @@
       "title": "Step 11"
     },
     {
-      "id": "67116d7584d0b469b14579c3",
+      "id": "6822694e3d34c807feeaba50",
       "title": "Step 12"
     },
     {
-      "id": "67116d7584d0b469b14579c4",
+      "id": "68226c92f138dd09cd5b9722",
       "title": "Step 13"
     },
     {
-      "id": "67190ce4fe18911edc2018d2",
+      "id": "67116d7584d0b469b14579c3",
       "title": "Step 14"
+    },
+    {
+      "id": "682277e2d3a05f0c5cf34d19",
+      "title": "Step 15"
+    },
+    {
+      "id": "67116d7584d0b469b14579c4",
+      "title": "Step 16"
+    },
+    {
+      "id": "67190ce4fe18911edc2018d2",
+      "title": "Step 17"
     }
   ],
   "helpCategory": "JavaScript",
