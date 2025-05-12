@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import type { Prisma } from '@prisma/client';
+import { DailyCodingChallengeLanguage, type Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
 
@@ -76,6 +76,16 @@ const testUserData: Prisma.userCreateInput = {
         passed: false,
         examTimeInSeconds: 0
       }
+    }
+  ],
+  completedDailyCodingChallenges: [
+    {
+      id: '5900f36e1000cf542c50fe80',
+      completedDate: 1742941672524,
+      languages: [
+        DailyCodingChallengeLanguage.python,
+        DailyCodingChallengeLanguage.javascript
+      ]
     }
   ],
   partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
@@ -218,6 +228,16 @@ const publicUserData = {
       }
     }
   ],
+  completedDailyCodingChallenges: [
+    {
+      id: '5900f36e1000cf542c50fe80',
+      completedDate: 1742941672524,
+      languages: [
+        DailyCodingChallengeLanguage.python,
+        DailyCodingChallengeLanguage.javascript
+      ]
+    }
+  ],
   completedExams: testUserData.completedExams,
   completedSurveys: [], // TODO: add surveys
   quizAttempts: testUserData.quizAttempts,
@@ -290,6 +310,7 @@ const baseProgressData = {
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
   completedChallenges: [],
+  completedDailyCodingChallenges: [],
   completedExams: [],
   savedChallenges: [],
   partiallyCompletedChallenges: [],
@@ -735,6 +756,7 @@ describe('userRoutes', () => {
           // missing in the user document.
           currentChallengeId: '',
           completedChallenges: [],
+          completedDailyCodingChallenges: [],
           completedExams: [],
           completedSurveys: [],
           partiallyCompletedChallenges: [],
