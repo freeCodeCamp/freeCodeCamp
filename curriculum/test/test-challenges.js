@@ -48,8 +48,7 @@ const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
 const {
-  createContent,
-  testId
+  prefixDoctype
 } = require('../../client/src/templates/Challenges/utils/frame');
 const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
 const ChallengeTitles = require('./utils/challenge-titles');
@@ -691,8 +690,7 @@ async function initializeTestRunner({
   hooks,
   loadEnzyme
 }) {
-  const source =
-    type === 'frame' ? createContent(testId, { build, sources }) : build;
+  const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
 
   // console.log('sources', sources);
   // console.log('source', source);
