@@ -147,6 +147,25 @@
         "react-scrollable-anchor>react": "17",
         "react-scrollable-anchor>react-dom": "17"
       }
-    }
+    },
+    "onlyBuiltDependencies": [
+      "@freecodecamp/ui",
+      "@prisma/client",
+      "@prisma/engines",
+      "core-js",
+      "ejs",
+      "es5-ext",
+      "esbuild",
+      "gatsby",
+      "gatsby-cli",
+      "gatsby-telemetry",
+      "lmdb",
+      "msgpackr-extract",
+      "msw",
+      "nodemon",
+      "prisma",
+      "puppeteer",
+      "sharp"
+    ]
   }
 }
