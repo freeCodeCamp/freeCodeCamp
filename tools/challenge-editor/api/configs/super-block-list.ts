@@ -93,6 +93,6 @@ export const superBlockList = [
   },
   {
     name: 'A2 Professional Spanish (Beta)',
-    path: '26-professional-spanish'
+    path: '26-a2-professional-spanish'
   }
 ];

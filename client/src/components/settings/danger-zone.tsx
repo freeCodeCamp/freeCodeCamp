@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { Panel, Button, Spacer } from '@freecodecamp/ui';
+
 import { deleteAccount, resetProgress } from '../../redux/settings/actions';
 import { FullWidthRow } from '../helpers';
 import DeleteModal from './delete-modal';
