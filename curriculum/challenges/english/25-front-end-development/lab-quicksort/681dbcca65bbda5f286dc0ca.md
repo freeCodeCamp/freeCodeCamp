@@ -51,11 +51,25 @@ assert _test_list == [20, 3, 14, 1, 5]
 `quick_sort([20, 3, 14, 1, 5])` should return `[1, 3, 5, 14, 20]`.
 
 ```js
-({ test: () => runPython(`
-_test_list = [20, 3, 14, 1, 5]
-quick_sort(_test_list)
-assert _test_list == [1, 3, 5, 14, 20]
-`) })
+({ test: () => runPython(`assert quick_sort([20, 3, 14, 1, 5]) == [1, 3, 5, 14, 20]`) })
+```
+
+`quick_sort([83, 4, 24, 2])` should return `[2, 4, 24, 83]`.
+
+```js
+({ test: () => runPython(`assert quick_sort([83, 4, 24, 2]) == [2, 4, 24, 83]`) })
+```
+
+`quick_sort([4, 42, 16, 23, 15, 8])` should return `[4, 8, 15, 16, 23, 42]`.
+
+```js
+({ test: () => runPython(`assert quick_sort([4, 42, 16, 23, 15, 8]) == [4, 8, 15, 16, 23, 42]`) })
+```
+
+`quick_sort([])` should return an empty list.
+
+```js
+({ test: () => runPython(`assert quick_sort([]) == []`) })
 ```
 
 You should not use the `sorted()` function in your code.
