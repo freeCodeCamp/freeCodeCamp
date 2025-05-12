@@ -191,10 +191,7 @@ class Block extends Component<BlockProps> {
             </div>
             <div className='map-title-completed course-title'>
               <CheckMark isCompleted={isBlockCompleted} />
-              <span
-                aria-hidden='true'
-                className='map-completed-count'
-              >{`${completedCount}/${challenges.length}`}</span>
+              <span aria-hidden='true'>{`${completedCount}/${challenges.length}`}</span>
               <span className='sr-only'>
                 ,{' '}
                 {t('learn.challenges-completed', {
