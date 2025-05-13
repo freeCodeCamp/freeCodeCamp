@@ -206,7 +206,18 @@ const schema = Joi.object()
     }),
     forumTopicId: Joi.number(),
     id: Joi.objectId().required(),
-    instructions: Joi.string().allow(''),
+    instructions: Joi.string().when('challengeType', {
+      is: [
+        challengeTypes.backend,
+        challengeTypes.backEndProject,
+        challengeTypes.modern,
+        challengeTypes.pythonProject,
+        challengeTypes.codeAllyCert,
+        challengeTypes.fillInTheBlank
+      ],
+      then: Joi.string().required(),
+      otherwise: Joi.string().allow('')
+    }),
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
