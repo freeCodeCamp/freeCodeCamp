@@ -23,27 +23,15 @@ require('@babel/register')({
   only: [clientPath]
 });
 const {
-  buildBackendChallenge,
-  buildDOMChallenge,
   buildPythonChallenge,
   buildChallenge,
   buildFunctions
 } = require('../../client/src/templates/Challenges/utils/build');
 const {
-  WorkerExecutor
-} = require('../../client/src/templates/Challenges/utils/worker-executor');
-const {
   challengeTypes,
   hasNoSolution
 } = require('../../shared/config/challenge-types');
-// the config files are created during the build, but not before linting
-const javaScriptTestEvaluator =
-  require('../../client/config/browser-scripts/test-evaluator.json').filename;
-const pythonTestEvaluator =
-  require('../../client/config/browser-scripts/python-test-evaluator.json').filename;
-
 const { getLines } = require('../../shared/utils/get-lines');
-
 const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
@@ -135,8 +123,6 @@ spinner.text = 'Populate tests.';
 
 let browser;
 let page;
-// This worker can be reused since it clears its environment between tests.
-let pythonWorker;
 
 setup()
   .then(runTests)
@@ -169,9 +155,6 @@ async function setup() {
   });
   global.Worker = createPseudoWorker(await newPageContext(browser));
 
-  pythonWorker = new WorkerExecutor(pythonTestEvaluator, {
-    terminateWorker: false
-  });
   page = await newPageContext(browser);
   await page.setViewport({ width: 300, height: 150 });
 
@@ -390,9 +373,6 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                 const timePerTest =
                   challengeType === challengeTypes.python ? 10000 : 5000;
                 it('Test suite must fail on the initial contents', async function () {
-                  // console.log(
-                  //   `Setting up "${tests[0].text}" for initial contents`
-                  // );
                   // TODO: some tests take a surprisingly long time to setup the
                   // test runner, so this timeout is large while we investigate.
                   this.timeout(timePerTest * tests.length + 20000);
@@ -414,30 +394,17 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                     console.error(e);
                     fails = true;
                   }
-                  // console.log('created test runner');
                   if (!fails) {
                     for (const test of tests) {
                       try {
-                        // console.log(
-                        //   `Running test "${test.text}" for initial contents`
-                        // );
                         await testRunner(test);
-                        // console.log(
-                        //   `Test "${test.text}" PASSED for initial contents`
-                        // );
                       } catch {
-                        // console.error(
-                        //   `Test "${test.text}" failed for initial contents`
-                        // );
-                        // console.error(e);
                         fails = true;
                         break;
                       }
                     }
                   }
                   console.error = oldConsoleError;
-                  // console.log('test runner finished');
-                  // console.log('fails', fails);
                   assert(
                     fails,
                     'Test suite does not fail on the initial contents'
@@ -522,7 +489,6 @@ seed goes here
                     it(`Solution ${
                       index + 1
                     } must pass the tests`, async function () {
-                      // console.log('testing solution', index + 1);
                       this.timeout(timePerTest * tests.length + 2000);
                       const testRunner = await createTestRunner(
                         challenge,
@@ -531,13 +497,7 @@ seed goes here
                         solutionFromNext
                       );
                       for (const test of tests) {
-                        // console.log(
-                        //   `Running test "${test.text}" for solution ${index + 1}`
-                        // );
                         await testRunner(test);
-                        // console.log(
-                        //   `Test "${test.text}" passed for solution ${index + 1}`
-                        // );
                       }
                     });
                   });
@@ -570,11 +530,6 @@ async function createTestRunner(
     { usesTestRunner: true }
   );
 
-  const code = {
-    contents: sources.index,
-    editableContents: sources.editableContents
-  };
-
   const buildFunction = buildFunctions[challenge.challengeType];
 
   const runsInPythonWorker = buildFunction === buildPythonChallenge;
@@ -584,12 +539,6 @@ async function createTestRunner(
     challenge.challengeType === challengeTypes.js ||
     challenge.challengeType === challengeTypes.jsLab ||
     challenge.challengeType === challengeTypes.jsProject;
-
-  // console.log('challengeType', challenge.challengeType);
-  // console.log('runsInBrowser', runsInBrowser);
-  // console.log('usesJSWorker', usesJSWorker);
-  // console.log('challengeId', challenge.id);
-  // console.log('build, sources', build, sources);
 
   const evaluator = await getContextEvaluator({
     // passing in challengeId so it's easier to debug timeouts
@@ -604,19 +553,10 @@ async function createTestRunner(
   return async ({ text, testString }) => {
     try {
       const { pass, err } = await evaluator.evaluate(testString, 5000);
-
-      // console.log(
-      //   `Test "${text}" ${pass ? 'PASSED' : 'FAILED'} for solution ${
-      //     solutionFromNext ? 'from next challenge' : 'from current challenge'
-      //   }`
-      // );
       if (!pass) {
         throw err;
       }
     } catch (err) {
-      // console.error('Error in test:');
-      // console.error(err);
-      // add more info to the error so the failing test can be identified.
       text = 'Test text: ' + text;
       const newMessage = solutionFromNext
         ? 'Check next step for solution!\n' + text
@@ -691,10 +631,6 @@ async function initializeTestRunner({
   loadEnzyme
 }) {
   const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
-
-  // console.log('sources', sources);
-  // console.log('source', source);
-  // console.log('type', type);
 
   await page.evaluate(
     async (sources, source, type, hooks, loadEnzyme) => {
