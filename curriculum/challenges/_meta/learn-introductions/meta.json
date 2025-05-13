@@ -1,12 +1,12 @@
 {
-  "name": "Learn Greetings in Professional Settings",
+  "name": "Learn Introductions",
   "isUpcomingChange": true,
-  "dashedName": "learn-greetings-in-professional-settings",
-  "order": 0,
+  "dashedName": "learn-introductions",
+  "order": 1,
   "superBlock": "a2-professional-spanish",
   "challengeOrder": [
     {
-      "id": "681a8796e5a782fe3459984b",
+      "id": "6823914bc8a5c9c820230d99",
       "title": "Dialogue 1: Soy Tomás"
     }
   ],
