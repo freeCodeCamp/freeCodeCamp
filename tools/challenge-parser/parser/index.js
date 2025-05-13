@@ -17,6 +17,9 @@ const tableAndStrikeThrough = require('./plugins/table-and-strikethrough');
 const addScene = require('./plugins/add-scene');
 const addQuizzes = require('./plugins/add-quizzes');
 
+// Import the section-verifier plugin
+const sectionVerifier = require('./plugins/section-verifier');
+
 // by convention, anything that adds to file.data has the name add<name>.
 const processor = unified()
   // add the remark parser
@@ -59,7 +62,9 @@ const processor = unified()
     'notes',
     'explanation',
     'transcript'
-  ]);
+  ])
+  // Add sectionVerifier plugin to validate required markdown headings
+  .use(sectionVerifier);
 
 exports.parseMD = function parseMD(filename) {
   return new Promise((resolve, reject) => {
