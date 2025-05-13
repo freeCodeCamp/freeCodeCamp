@@ -77,10 +77,9 @@ export const scrollManager = new ScrollManager();
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
 export const mainPreviewId = 'fcc-main-frame';
-// the test frame is responsible for running the assert tests
-export const testId = 'fcc-test-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
+const ASSET_PATH = '/js/test-runner/';
 
 const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 
@@ -180,28 +179,30 @@ export const runTestInTestFrame = async function (
   ]);
 };
 
-export const prepTestRunner = async ({sources, loadEnzyme, build, hooks, type}: {
+export const prepTestRunner = async ({
+  sources,
+  loadEnzyme,
+  build,
+  hooks,
+  type
+}: {
   sources: Source;
   loadEnzyme?: boolean;
   build: string;
   hooks?: Hooks;
   type: 'dom' | 'javascript' | 'python';
-} ) => {
-
-  // provide the file name and get the original source
-
+}) => {
   const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
   await loadTestRunner(document);
   await window?.FCCSandbox.createTestRunner({
     type,
     code: sources,
     source,
-    assetPath: '/js/test-runner/',
+    assetPath: ASSET_PATH,
     hooks,
     loadEnzyme
   });
-
-}
+};
 
 export const runPythonInFrame = function (
   document: Document,
@@ -226,11 +227,9 @@ const loadTestRunner = async (document: Document) => {
     }
     const script = document.createElement('script');
     script.id = TEST_RUNNER_ID;
-    script.src = '/js/test-runner/index.js';
-    script.onload = () => {
-      console.log('LOADED');
-      resolve();
-    };
+    script.src = ASSET_PATH + '/index.js';
+    script.onload = () => resolve();
+
     script.onerror = err => {
       console.error(err);
       reject(new Error('Test runner failed to load'));
@@ -243,10 +242,9 @@ const loadTestRunner = async (document: Document) => {
 const createFrame =
   (document: Document, id: string, title?: string) =>
   (frameContext: Context) => {
-    const isTestFrame = id === testId;
     const frame = document.createElement('iframe');
 
-    frame.srcdoc = isTestFrame ? '' : createContent(id, frameContext);
+    frame.srcdoc = createContent(id, frameContext);
     frame.id = id;
     if (typeof title === 'string') {
       frame.title = i18next.t('misc.iframe-preview', { title });
@@ -258,19 +256,15 @@ const createFrame =
     };
   };
 
-const hiddenFrameClassName = 'hide-test-frame';
 const mountFrame =
-  (document: Document, id: string) => (frameContext: Context) => {
+  (document: Document) => (frameContext: Context) => {
     const { element }: { element: HTMLIFrameElement } = frameContext;
     const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
     if (oldFrame) {
-      element.className = oldFrame.className || hiddenFrameClassName;
+      element.className = oldFrame.className
       oldFrame.parentNode!.replaceChild(element, oldFrame);
       // only test frames can be added (and hidden) here, other frames must be
       // added by react
-    } else if (id === testId) {
-      element.className = hiddenFrameClassName;
-      document.body.appendChild(element);
     }
     return {
       ...frameContext,
@@ -339,7 +333,6 @@ const updateWindowI18next = (frameContext: Context) => {
   }
   return frameContext;
 };
-
 
 const initMainFrame =
   (frameReady?: () => void, proxyLogger?: ProxyLogger) =>
@@ -477,7 +470,7 @@ const createFramer = ({
 }) =>
   flow(
     createFrame(document, id, frameTitle),
-    mountFrame(document, id),
+    mountFrame(document),
     updateWindowFunctions ?? noop,
     updateProxyConsole(proxyLogger),
     updateWindowI18next,
