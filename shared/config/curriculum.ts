@@ -74,11 +74,7 @@ export type StageMap = {
 export const superBlockStages: StageMap = {
   [SuperBlockStage.Core]: [SuperBlocks.FullStackDeveloper],
 
-  [SuperBlockStage.English]: [
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A2Spanish
-  ],
+  [SuperBlockStage.English]: [SuperBlocks.A2English, SuperBlocks.B1English],
   [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStage.Extra]: [
     SuperBlocks.TheOdinProject,
@@ -104,7 +100,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.PythonForEverybody
   ],
   [SuperBlockStage.Next]: [],
-  [SuperBlockStage.Upcoming]: []
+  [SuperBlockStage.Upcoming]: [SuperBlocks.A2Spanish]
 };
 
 Object.freeze(superBlockStages);
