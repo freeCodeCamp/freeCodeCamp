@@ -9,14 +9,14 @@ import {
   getMultifileJSXTransformers
 } from '../rechallenge/transformers';
 import {
-  createTestFramer,
   runTestInTestFrame,
   createMainPreviewFramer,
   createProjectPreviewFramer,
   ProxyLogger,
   TestRunnerConfig,
   Context,
-  Source
+  Source,
+  prepTestRunner
 } from './frame';
 
 interface BuildChallengeData extends Context {
@@ -136,13 +136,8 @@ export async function getTestRunner(
       `Cannot get test runner for challenge type ${challengeType}`
     );
   }
-  await new Promise<void>(resolve =>
-    createTestFramer(
-      document,
-      runnerConfig.proxyLogger,
-      resolve,
-    )({...buildData, type})
-  );
+  await prepTestRunner({ ...buildData, type });
+
   return (testString: string, testTimeout: number) =>
     runTestInTestFrame(document, testString, testTimeout, type);
 }

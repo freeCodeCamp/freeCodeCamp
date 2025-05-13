@@ -31,7 +31,7 @@ export interface Context {
   sources: Source;
   hooks?: Hooks;
   type: 'dom' | 'javascript' | 'python';
-  loadEnzyme?: () => void;
+  loadEnzyme?: boolean;
 }
 
 export interface TestRunnerConfig {
@@ -180,6 +180,29 @@ export const runTestInTestFrame = async function (
   ]);
 };
 
+export const prepTestRunner = async ({sources, loadEnzyme, build, hooks, type}: {
+  sources: Source;
+  loadEnzyme?: boolean;
+  build: string;
+  hooks?: Hooks;
+  type: 'dom' | 'javascript' | 'python';
+} ) => {
+
+  // provide the file name and get the original source
+
+  const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
+  await loadTestRunner(document);
+  await window?.FCCSandbox.createTestRunner({
+    type,
+    code: sources,
+    source,
+    assetPath: '/js/test-runner/',
+    hooks,
+    loadEnzyme
+  });
+
+}
+
 export const runPythonInFrame = function (
   document: Document,
   code: string,
@@ -208,7 +231,10 @@ const loadTestRunner = async (document: Document) => {
       console.log('LOADED');
       resolve();
     };
-    script.onerror = () => reject(new Error('Test runner failed to load'));
+    script.onerror = err => {
+      console.error(err);
+      reject(new Error('Test runner failed to load'));
+    };
     document.head.appendChild(script);
   });
   return done;
@@ -252,18 +278,6 @@ const mountFrame =
       window: element.contentWindow
     };
   };
-
-// Tests should not use functions that directly interact with the user, so
-// they're overridden. If tests need to spy on these functions, they can supply
-// the spy themselves.
-const overrideUserInteractions = (frameContext: Context) => {
-  if (frameContext.window) {
-    frameContext.window.prompt = () => null;
-    frameContext.window.alert = () => {};
-    frameContext.window.confirm = () => false;
-  }
-  return frameContext;
-};
 
 const noop = <T>(x: T) => x;
 
@@ -326,28 +340,6 @@ const updateWindowI18next = (frameContext: Context) => {
   return frameContext;
 };
 
-const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
-  waitForFrame(frameContext)
-    .then(async () => {
-      const { sources, loadEnzyme, build, hooks, type } = frameContext;
-      // provide the file name and get the original source
-
-      const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
-      await loadTestRunner(document);
-      await window?.FCCSandbox.createTestRunner({
-        type,
-        code: sources,
-        source,
-        assetPath: '/js/test-runner/',
-        hooks,
-        loadEnzyme
-      });
-
-      if (frameReady) frameReady();
-    })
-    .catch(handleDocumentNotFound);
-  return frameContext;
-};
 
 const initMainFrame =
   (frameReady?: () => void, proxyLogger?: ProxyLogger) =>
@@ -464,20 +456,6 @@ export const createProjectPreviewFramer = (
     id: projectPreviewId,
     init: initPreviewFrame,
     frameTitle
-  });
-
-export const createTestFramer = (
-  document: Document,
-  proxyLogger: ProxyLogger,
-  frameReady: () => void
-): ((args: Context) => void) =>
-  createFramer({
-    document,
-    id: testId,
-    init: initTestFrame,
-    proxyLogger,
-    frameReady,
-    updateWindowFunctions: overrideUserInteractions
   });
 
 const createFramer = ({
