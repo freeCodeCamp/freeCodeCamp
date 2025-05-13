@@ -23,8 +23,9 @@ export function getReturnTo(
   let params;
   try {
     params = jwt.verify(encryptedParams, secret);
-  } catch (_e) {
+  } catch (e) {
     // TODO: report to Sentry? Probably not. Remove entirely?
+    console.log(e);
     // something went wrong, use default params
     params = {
       returnTo: `${_homeLocation}/learn`,
