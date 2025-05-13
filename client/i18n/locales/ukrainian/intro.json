@@ -3536,9 +3536,11 @@
           "У цих відеолекціях ви дізнаєтесь, як працювати з формами в React."
         ]
       },
-      "sgau": {
-        "title": "276",
-        "intro": []
+      "workshop-superhero-application-form": {
+        "title": "Build a Superhero Application Form",
+        "intro": [
+          "In this workshop, you will build a superhero application form."
+        ]
       },
       "lab-event-rsvp": {
         "title": "Створіть RSVP-запрошення",
@@ -4019,7 +4021,9 @@
       },
       "lab-polygon-area-calculator": {
         "title": "Створіть калькулятор площі багатокутника",
-        "intro": [""]
+        "intro": [
+          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
+        ]
       },
       "lecture-understanding-abstraction": {
         "title": "Знайомство з абстракцією",
