@@ -137,7 +137,7 @@ export type Characters =
   | 'Nomes'
   | 'René'
   | 'Sebastián'
-  | 'Tomás'
+  | 'Diego'
   | 'Valeria';
 
 interface SetupCharacter {

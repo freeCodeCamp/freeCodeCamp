@@ -225,6 +225,6 @@ export const characterAssets = {
   Nomes: characterImages.npcGirl,
   René: characterImages.npcMan,
   Sebastián: characterImages.david,
-  Tomás: characterImages.tom,
+  Diego: characterImages.tom,
   Valeria: characterImages.alice
 };

@@ -40,7 +40,7 @@ const availableCharacters = [
   'Nomes',
   'René',
   'Sebastián',
-  'Tomás',
+  'Diego',
   'Valeria'
 ];
 
