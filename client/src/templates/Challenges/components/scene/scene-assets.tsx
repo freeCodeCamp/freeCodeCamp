@@ -7,7 +7,7 @@ const images = `${domain}/images`;
 export const backgrounds = `${images}/backgrounds`;
 export const characters = `${images}/characters`;
 
-// All the folders on our CDN. Do not add to this unless we add more characters there.
+// All the character folders on our CDN. Do not add to this unless we add more characters there.
 const character = {
   alice: `${characters}/alice`,
   anna: `${characters}/anna`,
