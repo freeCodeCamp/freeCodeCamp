@@ -1836,6 +1836,13 @@
           "Quincy will welcome you to the platform and talk about how the certification works. Quincy will also provide tips on how to learn effectively."
         ]
       },
+      "lab-debug-camperbots-profile-page": {
+        "title": "Debug Camperbot's Profile Page",
+        "intro": [
+          "Camperbot is learning how to code too and needs some help with their HTML.",
+          "In this lab, you will help camperbot find and fix the errors in their code."
+        ]
+      },
       "lecture-what-is-html": {
         "title": "What is HTML?",
         "intro": [
