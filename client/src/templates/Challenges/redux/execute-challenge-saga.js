@@ -312,7 +312,10 @@ export function* previewChallengeSaga(action) {
           document
         );
         // without a testString the testRunner just evaluates the user's code
-        yield call(runUserCode, null, previewTimeout);
+        const out = yield call(runUserCode, null, previewTimeout);
+
+        if (out)
+          yield put(updateConsole(out.logs?.map(log => log.msg).join('\n')));
       }
     }
   } catch (err) {
