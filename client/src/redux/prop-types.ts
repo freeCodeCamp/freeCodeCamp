@@ -96,6 +96,7 @@ interface SceneCommand {
 }
 
 export type Characters =
+  // English
   | 'Alice'
   | 'Amy'
   | 'Anna'
@@ -118,7 +119,26 @@ export type Characters =
   | 'Sarah'
   | 'Second Candidate'
   | 'Sophie'
-  | 'Tom';
+  | 'Tom'
+
+  // Spanish
+  | 'Ángela'
+  | 'Camila'
+  | 'Carlos'
+  | 'Elena'
+  | 'Esteban'
+  | 'Joaquín'
+  | 'Julieta'
+  | 'Luis'
+  | 'Luna'
+  | 'Marisol'
+  | 'Mateo'
+  | 'Noelia'
+  | 'Nomes'
+  | 'René'
+  | 'Sebastián'
+  | 'Tomás'
+  | 'Valeria';
 
 interface SetupCharacter {
   character: Characters;

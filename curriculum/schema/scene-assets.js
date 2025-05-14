@@ -1,4 +1,5 @@
 const availableCharacters = [
+  // English
   'Alice',
   'Amy',
   'Anna',
@@ -21,7 +22,26 @@ const availableCharacters = [
   'Sarah',
   'Second Candidate',
   'Sophie',
-  'Tom'
+  'Tom',
+
+  // Spanish
+  'Ángela',
+  'Camila',
+  'Carlos',
+  'Elena',
+  'Esteban',
+  'Joaquín',
+  'Julieta',
+  'Luis',
+  'Luna',
+  'Marisol',
+  'Mateo',
+  'Noelia',
+  'Nomes',
+  'René',
+  'Sebastián',
+  'Tomás',
+  'Valeria'
 ];
 
 const availableBackgrounds = [
