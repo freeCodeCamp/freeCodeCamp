@@ -2920,7 +2920,7 @@
       "lab-slice-and-splice": {
         "title": "Implement the Slice and Splice Algorithm",
         "intro": [
-          "In this lab you will practice merging an array with an other."
+          "In this lab, you will practice merging an array with another."
         ]
       },
       "lab-pyramid-generator": {
