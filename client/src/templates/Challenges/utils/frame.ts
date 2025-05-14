@@ -194,6 +194,8 @@ export const prepTestRunner = async ({
 }) => {
   const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
   await loadTestRunner(document);
+  console.log('AFTER LOAD TEST RUNNER');
+  console.log('FCCSandbox', window?.FCCSandbox);
   await window?.FCCSandbox.createTestRunner({
     type,
     code: sources,
@@ -216,24 +218,39 @@ export const runPythonInFrame = function (
   void contentDocument?.__runPython(code);
 };
 
-const loadTestRunner = async (document: Document) => {
-  const TEST_RUNNER_ID = 'fcc-test-runner';
-  const done = new Promise<void>((resolve, reject) => {
-    const oldScript = document.getElementById(TEST_RUNNER_ID);
-    if (oldScript) {
-      // if the script is already loaded, we don't need to load it again
-      resolve();
-      return;
-    }
-    const script = document.createElement('script');
-    script.id = TEST_RUNNER_ID;
-    script.src = ASSET_PATH + '/index.js';
-    script.onload = () => resolve();
+const TEST_RUNNER_ID = 'fcc-test-runner';
+const createRunnerScript = (document: Document) => {
+  const script = document.createElement('script');
+  script.src = ASSET_PATH + 'index.js';
+  script.id = TEST_RUNNER_ID;
+  return script;
+};
 
-    script.onerror = err => {
+const loadTestRunner = async (document: Document) => {
+  const done = new Promise<void>((resolve, reject) => {
+    const alreadyLoaded = !!window?.FCCSandbox;
+
+    if (alreadyLoaded) return resolve();
+
+    const script =
+      document.getElementById(TEST_RUNNER_ID) ?? createRunnerScript(document);
+
+    const errorListener = (err: ErrorEvent) => {
       console.error(err);
       reject(new Error('Test runner failed to load'));
     };
+
+    script.addEventListener(
+      'load',
+      () => {
+        // Since it's loaded, we no longer need to listen for errors
+        script.removeEventListener('error', errorListener);
+        resolve();
+      },
+      { once: true }
+    );
+    script.addEventListener('error', errorListener, { once: true });
+
     document.head.appendChild(script);
   });
   return done;
@@ -256,22 +273,21 @@ const createFrame =
     };
   };
 
-const mountFrame =
-  (document: Document) => (frameContext: Context) => {
-    const { element }: { element: HTMLIFrameElement } = frameContext;
-    const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
-    if (oldFrame) {
-      element.className = oldFrame.className
-      oldFrame.parentNode!.replaceChild(element, oldFrame);
-      // only test frames can be added (and hidden) here, other frames must be
-      // added by react
-    }
-    return {
-      ...frameContext,
-      element,
-      window: element.contentWindow
-    };
+const mountFrame = (document: Document) => (frameContext: Context) => {
+  const { element }: { element: HTMLIFrameElement } = frameContext;
+  const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
+  if (oldFrame) {
+    element.className = oldFrame.className;
+    oldFrame.parentNode!.replaceChild(element, oldFrame);
+    // only test frames can be added (and hidden) here, other frames must be
+    // added by react
+  }
+  return {
+    ...frameContext,
+    element,
+    window: element.contentWindow
   };
+};
 
 const noop = <T>(x: T) => x;
 
