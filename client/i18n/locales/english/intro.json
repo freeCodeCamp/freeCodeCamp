@@ -1840,14 +1840,14 @@
         "title": "Debug Camperbot's Profile Page",
         "intro": [
           "Camperbot is learning how to code too and needs some help with their HTML.",
-          "In this lab, you will help camperbot find and fix the errors in their code."
+          "In this lab, you will help Camperbot find and fix the errors in their code."
         ]
       },
       "lecture-what-is-html": {
-        "title": "What is HTML?",
+        "title": "Understanding HTML attributes and the HTML boilerplate",
         "intro": [
-          "In this lecture video, you will learn about HTML (HyperText Markup Language), a markup language for creating web pages.",
-          "You will learn about HTML's role on the web, the basic syntax, and what HTML attributes are."
+          "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."
         ]
       },
       "workshop-cat-photo-app": {
