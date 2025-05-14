@@ -199,15 +199,20 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
   for (let i = 0; i < tests.length; i++) {
     const { text, testString } = tests[i];
     const newTest = { text, testString, running: false };
-    // only the last test outputs console.logs to avoid log duplication.
-    const firstTest = i === 1;
+    // only the first test outputs console.logs to avoid log duplication.
+    const firstTest = i === 0;
     try {
-      const { pass, err } = yield call(
+      const { pass, err, logs } = yield call(
         testRunner,
         testString,
-        testTimeout,
-        firstTest
+        testTimeout
       );
+
+      const logString = logs.map(log => log.msg).join('\n');
+      if (firstTest) {
+        yield put(updateLogs(logString));
+      }
+
       if (pass) {
         newTest.pass = true;
       } else {
