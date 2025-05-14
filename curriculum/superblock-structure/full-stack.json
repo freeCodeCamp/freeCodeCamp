@@ -1,24 +1,14 @@
 {
   "chapters": [
     {
-      "dashedName": "freecodecamp",
-      "modules": [
-        {
-          "dashedName": "getting-started-with-freecodecamp",
-          "blocks": [
-            {
-              "dashedName": "lecture-welcome-to-freecodecamp"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "dashedName": "html",
       "modules": [
         {
           "dashedName": "basic-html",
           "blocks": [
+            {
+              "dashedName": "workshop-curriculum-outline"
+            },
             {
               "dashedName": "lecture-what-is-html"
             },
