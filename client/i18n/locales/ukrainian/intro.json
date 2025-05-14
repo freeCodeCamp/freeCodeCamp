@@ -1987,6 +1987,13 @@
           "Ви будете практикуватись працювати з різними поняттями, серед яких атрибути <code>alt</code> та aria-ролі."
         ]
       },
+      "lab-multimedia-player": {
+        "title": "Build a Multimedia Player",
+        "intro": [
+          "In this lab, you'll build a multimedia player.",
+          "You will practice working with the <code>audio</code> and <code>video</code> elements, the <code>controls</code> attribute, and the <code>aria-label</code> attribute."
+        ]
+      },
       "review-html-accessibility": {
         "title": "Повторення доступності в HTML",
         "intro": [
@@ -3529,9 +3536,11 @@
           "У цих відеолекціях ви дізнаєтесь, як працювати з формами в React."
         ]
       },
-      "sgau": {
-        "title": "276",
-        "intro": []
+      "workshop-superhero-application-form": {
+        "title": "Build a Superhero Application Form",
+        "intro": [
+          "In this workshop, you will build a superhero application form."
+        ]
       },
       "lab-event-rsvp": {
         "title": "Створіть RSVP-запрошення",
@@ -4012,7 +4021,9 @@
       },
       "lab-polygon-area-calculator": {
         "title": "Створіть калькулятор площі багатокутника",
-        "intro": [""]
+        "intro": [
+          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
+        ]
       },
       "lecture-understanding-abstraction": {
         "title": "Знайомство з абстракцією",

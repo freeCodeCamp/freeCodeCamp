@@ -72,10 +72,16 @@ function isLogLevel(level: string): level is LogLevel {
 }
 
 const _FCC_API_LOG_LEVEL = process.env.FCC_API_LOG_LEVEL || 'info';
+const _FCC_API_LOG_TRANSPORT = process.env.FCC_API_LOG_TRANSPORT || 'default';
 
 assert.ok(
   isLogLevel(_FCC_API_LOG_LEVEL),
   `FCC_API_LOG_LEVEL must be one of ${LOG_LEVELS.join(', ')}. Found ${_FCC_API_LOG_LEVEL}`
+);
+
+assert.ok(
+  _FCC_API_LOG_TRANSPORT === 'pretty' || _FCC_API_LOG_TRANSPORT === 'default',
+  `FCC_API_LOG_TRANSPORT must be one of 'pretty' or 'default'. Found ${_FCC_API_LOG_TRANSPORT}`
 );
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
@@ -178,6 +184,7 @@ export const FCC_ENABLE_SWAGGER_UI = undefinedOrBool(
 export const FCC_ENABLE_DEV_LOGIN_MODE =
   process.env.FCC_ENABLE_DEV_LOGIN_MODE === 'true';
 export const FCC_API_LOG_LEVEL = _FCC_API_LOG_LEVEL;
+export const FCC_API_LOG_TRANSPORT = _FCC_API_LOG_TRANSPORT;
 export const FCC_ENABLE_SHADOW_CAPTURE = undefinedOrBool(
   process.env.FCC_ENABLE_SHADOW_CAPTURE
 );

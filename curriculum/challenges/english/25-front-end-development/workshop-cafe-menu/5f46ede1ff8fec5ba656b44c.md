@@ -14,7 +14,7 @@ Next, you are going to be styling the `footer` element. To keep the CSS organize
 You should have a CSS comment with the text `FOOTER`.
 
 ```js
-assert(code.match(/\/\*\s*FOOTER\s*\*\//i));
+assert.match(code, /\/\*\s*FOOTER\s*\*\//i);
 ```
 
 # --seed--
