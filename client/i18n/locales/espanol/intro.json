@@ -3505,10 +3505,6 @@
           "You'll practice using state and hooks to manage the properties of an element."
         ]
       },
-      "dbta": {
-        "title": "269",
-        "intro": []
-      },
       "lecture-understanding-effects-and-referencing-values-in-react": {
         "title": "Understanding Effects and Referencing Values in React",
         "intro": [
@@ -4074,9 +4070,12 @@
         "title": "Build a Linked List Class",
         "intro": [""]
       },
-      "lab-hash-table-class": {
-        "title": "Build an Hash Table Class",
-        "intro": [""]
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
       },
       "review-data-structures": {
         "title": "Data Structures Review",
