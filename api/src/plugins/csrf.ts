@@ -23,7 +23,7 @@ const csrf: FastifyPluginCallback = (fastify, _options, done) => {
     // tokens since we know we can provide this one
     getToken: req => req.headers[CSRF_HEADER] as string,
     cookieOpts: { signed: false, sameSite: 'strict' },
-    logLevel: 'debug' // TODO: change to trace
+    logLevel: 'trace' // TODO: change to silent once that's supported.
   });
 
   // All routes except signout should add a CSRF token to the response
