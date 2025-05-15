@@ -1,0 +1,10 @@
+{
+  "name": "Working with Common Data Structures",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-common-data-structures",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67fe82c80880e82048fd3e71", "title": "Step 1" }],
+  "helpCategory": "Python"
+}
