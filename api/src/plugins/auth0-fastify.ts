@@ -3,6 +3,7 @@ import fp from 'fastify-plugin';
 import { ApiClient, VerifyAccessTokenError } from '@auth0/auth0-api-js';
 import { AUTH0_DOMAIN } from '../utils/env';
 import { findOrCreateUser } from '../routes/helpers/auth-helpers';
+import { parseBearerToken } from '../utils/tokens';
 
 interface AuthRouteOptions {
   scopes?: string | string[];
@@ -94,7 +95,17 @@ function auth0FastifApi(
 
   fastify.decorate('requireAuth', function (opts: AuthRouteOptions = {}) {
     return async function (request: FastifyRequest, reply: FastifyReply) {
-      const accessToken = getToken(request);
+      const authorizationHeader = request.headers.authorization;
+      if (!authorizationHeader) {
+        return replyWithError(
+          reply,
+          400,
+          'invalid_request',
+          'No Authorization provided'
+        );
+      }
+
+      const accessToken = parseBearerToken(authorizationHeader);
 
       if (!accessToken) {
         return replyWithError(
@@ -139,14 +150,6 @@ function auth0FastifApi(
       }
     };
   });
-}
-
-function getToken(request: FastifyRequest): string | undefined {
-  const parts = request.headers.authorization?.split(' ');
-
-  return parts?.length === 2 && parts[0]?.toLowerCase() === 'bearer'
-    ? parts[1]
-    : undefined;
 }
 
 export default fp(auth0FastifApi);

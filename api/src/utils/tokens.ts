@@ -66,3 +66,18 @@ export const isExpired = (token: Token | DbToken): boolean => {
   const created = new Date(token.created);
   return Date.now() > created.getTime() + token.ttl;
 };
+
+/**
+ * Parse a bearer token from an authorization header.
+ * @param authorizationHeader The authorization header to parse.
+ * @returns The token if the header is valid, null otherwise.
+ */
+export function parseBearerToken(authorizationHeader: string) {
+  const [bearer, token] = authorizationHeader.split(' ');
+
+  if (bearer?.toLowerCase() !== 'bearer' || !token) {
+    return null;
+  }
+
+  return token;
+}
