@@ -5,7 +5,7 @@ challengeType: 22
 dashedName: task-46
 ---
 
-<!-- (Audio) Josh: I’ll draft a new quote with these specifics and send it over to you by tomorrow. Does that work for you? -->
+<!-- (Audio) Josh: I'll draft a new quote with these specifics and send it over to you by tomorrow. Does that work for you? -->
 
 # --instructions--
 
@@ -15,7 +15,7 @@ Listen to the audio and complete the sentence below.
 
 ## --sentence--
 
-`I’ll draft a new quote with these specifics and send it over to you by tomorrow. BLANK for you?`
+`I'll draft a new quote with these specifics and send it over to you by tomorrow. BLANK for you?`
 
 ## --blanks--
 

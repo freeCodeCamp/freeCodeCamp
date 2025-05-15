@@ -27,7 +27,7 @@ Jessica sent an email to the team the next day, summarizing her conversation wit
 
 `- Stability`
 
-`We both agreed the new version is much more stable. It doesn’t crash as often, and we’ve seen fewer serious problems. Most of the remaining issues are small.`
+`We both agreed the new version is much more stable. It doesn't crash as often, and we've seen fewer serious problems. Most of the remaining issues are small.`
 
 `- Performance and Data Handling`
 
@@ -43,13 +43,13 @@ Jessica sent an email to the team the next day, summarizing her conversation wit
 
 `- Feedback and Next Steps`
 
-`This feedback will help guide our future updates. Please review this report and let me know if you have additional input. We’ll use this to plan our next phase of improvements.`
+`This feedback will help guide our future updates. Please review this report and let me know if you have additional input. We'll use this to plan our next phase of improvements.`
 
 `Thanks,`
 
 `Jessica`
 
-What did Jessica report about the software’s stability?
+What did Jessica report about the software's stability?
 
 ## --answers--
 
@@ -85,6 +85,6 @@ Jessica reports fewer problems and less crashing, not frequent bugs.
 
 # --explanation--
 
-In the `Stability` section, Jessica says the new version `doesn’t crash as often` and they’ve seen `fewer serious problems`
+In the `Stability` section, Jessica says the new version `doesn't crash as often` and they've seen `fewer serious problems`
 
 This means it is more reliable and stable than before.
