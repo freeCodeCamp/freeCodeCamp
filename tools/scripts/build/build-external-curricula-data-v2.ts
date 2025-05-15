@@ -103,6 +103,11 @@ export const orderedSuperBlockInfo: Record<
       dashedName: SuperBlocks.B1English,
       public: true,
       title: intros[SuperBlocks.B1English].title
+    },
+    {
+      dashedName: SuperBlocks.A2Spanish,
+      public: true,
+      title: intros[SuperBlocks.A2Spanish].title
     }
   ],
 
