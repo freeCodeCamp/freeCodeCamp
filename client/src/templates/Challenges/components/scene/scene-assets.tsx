@@ -222,7 +222,7 @@ export const characterAssets = {
   Marisol: characterImages.linda,
   Mateo: characterImages.npcBoy,
   Noelia: characterImages.npcWoman,
-  Nomes: characterImages.npcGirl,
+  Alex: characterImages.npcGirl,
   René: characterImages.npcMan,
   Sebastián: characterImages.david,
   Diego: characterImages.tom,

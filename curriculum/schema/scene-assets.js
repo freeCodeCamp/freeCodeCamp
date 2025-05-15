@@ -37,7 +37,7 @@ const availableCharacters = [
   'Marisol',
   'Mateo',
   'Noelia',
-  'Nomes',
+  'Alex',
   'René',
   'Sebastián',
   'Diego',

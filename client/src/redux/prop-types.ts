@@ -134,7 +134,7 @@ export type Characters =
   | 'Marisol'
   | 'Mateo'
   | 'Noelia'
-  | 'Nomes'
+  | 'Alex'
   | 'René'
   | 'Sebastián'
   | 'Diego'
