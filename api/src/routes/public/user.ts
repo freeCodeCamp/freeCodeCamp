@@ -120,7 +120,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, reply });
+      const logger = fastify.log.child({ req, res: reply });
       logger.info({ username: req.query.username });
       // TODO(Post-MVP): look for duplicates unless we can make username unique in the db.
       const user = await fastify.prisma.user.findFirst({
@@ -244,7 +244,11 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           where: { username }
         })) > 0;
 
-      logger.info(`User exists for username: ${username}`);
+      if (exists) {
+        logger.info(`User exists for username: ${username}`);
+      } else {
+        logger.info(`User does not exist for username: ${username}`);
+      }
       await reply.send({ exists });
     }
   );
