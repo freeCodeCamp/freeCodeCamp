@@ -122,6 +122,7 @@ export type Characters =
   | 'Tom'
 
   // Spanish
+  | 'Alex'
   | 'Ángela'
   | 'Camila'
   | 'Carlos'
@@ -134,7 +135,6 @@ export type Characters =
   | 'Marisol'
   | 'Mateo'
   | 'Noelia'
-  | 'Alex'
   | 'René'
   | 'Sebastián'
   | 'Diego'

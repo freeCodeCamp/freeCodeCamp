@@ -25,6 +25,7 @@ const availableCharacters = [
   'Tom',
 
   // Spanish
+  'Alex',
   'Ángela',
   'Camila',
   'Carlos',
@@ -37,7 +38,6 @@ const availableCharacters = [
   'Marisol',
   'Mateo',
   'Noelia',
-  'Alex',
   'René',
   'Sebastián',
   'Diego',
