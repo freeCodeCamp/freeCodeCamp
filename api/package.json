@@ -4,6 +4,7 @@
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
   "dependencies": {
+    "@auth0/auth0-api-js": "1.0.1",
     "@aws-sdk/client-ses": "3.521.0",
     "@fastify/accepts": "4.3.0",
     "@fastify/cookie": "9.4.0",

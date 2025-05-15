@@ -24,6 +24,7 @@ import { isObjectID } from '../../utils/validation';
  */
 export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
   (fastify, _options, done) => {
+    fastify.addHook('preHandler', fastify.requireAuth());
     fastify.get(
       '/exam-environment/exams',
       {
@@ -58,6 +59,7 @@ export const examEnvironmentMultipartRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
+  fastify.addHook('preHandler', fastify.requireAuth());
   void fastify.register(fastifyMultipart);
 
   fastify.post(
@@ -211,7 +213,34 @@ async function postExamGeneratedExamHandler(
   }
 
   // Check user has completed prerequisites
-  const user = req.user!;
+  const maybeUser = await mapErr(
+    this.prisma.user.findUnique({
+      where: {
+        id: req.user!.id
+      },
+      select: {
+        id: true,
+        completedChallenges: true
+      }
+    })
+  );
+
+  if (maybeUser.hasError) {
+    logger.error({ userError: maybeUser.error });
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUser.error))
+    );
+  }
+
+  const user = maybeUser.data;
+
+  if (user === null) {
+    logger.warn({ userId: req.user?.id }, 'User not found.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT('User not found.'));
+  }
+
   const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
 
   if (!isExamPrerequisitesMet) {
@@ -723,7 +752,33 @@ async function getExams(
   const logger = this.log.child({ req });
   logger.info({ user: req.user });
 
-  const user = req.user!;
+  const maybeUser = await mapErr(
+    this.prisma.user.findUnique({
+      where: {
+        id: req.user!.id
+      },
+      select: {
+        completedChallenges: true
+      }
+    })
+  );
+
+  if (maybeUser.hasError) {
+    logger.error({ userError: maybeUser.error });
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUser.error))
+    );
+  }
+
+  const user = maybeUser.data;
+
+  if (user === null) {
+    logger.warn({ userId: req.user?.id }, 'User not found.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT('User not found.'));
+  }
+
   const exams = await this.prisma.envExam.findMany({
     where: {
       deprecated: false

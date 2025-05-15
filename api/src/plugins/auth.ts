@@ -14,7 +14,7 @@ declare module 'fastify' {
 
   interface FastifyRequest {
     // TODO: is the full user the correct type here?
-    user: user | null;
+    user: Pick<user, 'id'> | null;
     accessDeniedMessage: { type: 'info'; content: string } | null;
   }
 
@@ -69,7 +69,8 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     if (isExpired(accessToken)) return setAccessDenied(req, TOKEN_EXPIRED);
 
     const user = await fastify.prisma.user.findUnique({
-      where: { id: accessToken.userId }
+      where: { id: accessToken.userId },
+      select: { id: true }
     });
     if (!user) return setAccessDenied(req, TOKEN_INVALID);
     req.user = user;
