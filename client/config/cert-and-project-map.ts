@@ -844,8 +844,9 @@ const allStandardCerts = [
     projects: [
       {
         id: '681a8796e5a782fe3459984b',
-        title: 'Dialogue 1: Soy Tomás',
-        link: `${a2SpanishBase}/learn-greetings-in-professional-settings/dialogue-1-soy-tomas`,
+        title: 'Dialogue 1: PLACEHOLDER',
+        link: `${a2SpanishBase}/talk-about-who-you-are-by-using-key-verbs
+/text-1`,
         certSlug: Certification.A2Spanish
       }
     ]
