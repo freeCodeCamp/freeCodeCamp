@@ -1,0 +1,136 @@
+{
+  "version": "v1.0.0",
+  "entity": {
+    "type": "organisation",
+    "role": "owner",
+    "name": "freeCodeCamp",
+    "email": "team@freecodecamp.org",
+    "phone": "+1-415-663-6049",
+    "description": "freeCodeCamp is a 501(c)(3) tax-exempt charity that helps people learn math, programming, and computer science for free. Since 2014, more than 40,000 graduates have gotten developer jobs at companies like Google, Microsoft, and Amazon. We provide thousands of hours of coding curriculum, all open source and accessible to everyone.",
+    "webpageUrl": {
+      "url": "https://www.freecodecamp.org"
+    }
+  },
+  "projects": [
+    {
+      "guid": "freecodecamp-core-curriculum",
+      "name": "freeCodeCamp Core Curriculum",
+      "description": "An open-source curriculum that teaches full-stack web development, Python, data science, and machine learning. The curriculum includes interactive coding challenges, projects, and certification paths — all accessible online for free. It’s the most-starred GitHub repo in the world, with over 400,000 stars and tens of thousands of contributors.",
+      "webpageUrl": {
+        "url": "https://www.freecodecamp.org/learn"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+        "wellKnown": "https://github.com/freeCodeCamp/freeCodeCamp/raw/refs/heads/main/.github/.well-known/funding-manifest-urls"
+      },
+      "licenses": [
+        "spdx:BSD-3-Clause"
+      ],
+      "tags": [
+        "education",
+        "programming",
+        "full-stack",
+        "python",
+        "machine-learning",
+        "open-source",
+        "developer-tools",
+        "nonprofit",
+        "javascript",
+        "certification"
+      ]
+    },
+    {
+      "guid": "freecodecamp-learn-platform",
+      "name": "freeCodeCamp Learning Platform",
+      "description": "The freeCodeCamp Learning Platform is an open-source web application that delivers our interactive curriculum to millions of learners worldwide. It includes features like code editors, project submission systems, exam environments, and certification tracking, all designed to provide a highly-accessible learning experience.",
+      "webpageUrl": {
+        "url": "https://www.freecodecamp.org"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+        "wellKnown": "https://github.com/freeCodeCamp/freeCodeCamp/raw/refs/heads/main/.github/.well-known/funding-manifest-urls"
+      },
+      "licenses": [
+        "spdx:BSD-3-Clause"
+      ],
+      "tags": [
+        "education",
+        "web-platform",
+        "open-source",
+        "developer-tools",
+        "nonprofit",
+        "javascript",
+        "learning"
+      ]
+    }
+  ],
+  "funding": {
+    "channels": [
+      {
+        "guid": "github-sponsors",
+        "type": "payment-provider",
+        "address": "https://github.com/sponsors/freeCodeCamp",
+        "description": "Support freeCodeCamp via GitHub Sponsors."
+      },
+      {
+        "guid": "donate-page",
+        "type": "payment-provider",
+        "address": "https://donate.freecodecamp.org",
+        "description": "Donate directly through our official donation page."
+      }
+    ],
+    "plans": [
+      {
+        "guid": "monthly-donations",
+        "status": "active",
+        "name": "Monthly Support Plan",
+        "description": "Join over 11,000 monthly donors supporting freeCodeCamp's mission to provide free coding education.",
+        "amount": 0,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": [
+          "donate-page",
+          "github-sponsors"
+        ]
+      },
+      {
+        "guid": "one-time-donations",
+        "status": "active",
+        "name": "One-Time Donation",
+        "description": "Make a one-time contribution to support our charity's open source development work.",
+        "amount": 0,
+        "currency": "USD",
+        "frequency": "one-time",
+        "channels": [
+          "donate-page"
+        ]
+      }
+    ],
+    "history": [
+      {
+        "year": 2023,
+        "income": 2170474,
+        "expenses": 1425284,
+        "taxes": 0,
+        "currency": "USD",
+        "description": "Revenue: $2.17M; Expenses: $1.43M; Net Assets: $6.9M."
+      },
+      {
+        "year": 2022,
+        "income": 4278462,
+        "expenses": 1390551,
+        "taxes": 0,
+        "currency": "USD",
+        "description": "Revenue: $4.28M; Expenses: $1.39M; Net Assets: $4.99M."
+      },
+      {
+        "year": 2021,
+        "income": 3236638,
+        "expenses": 881167,
+        "taxes": 0,
+        "currency": "USD",
+        "description": "Revenue: $3.24M; Expenses: $881K; Net Assets: $2.69M."
+      }
+    ]
+  }
+}

@@ -3499,10 +3499,6 @@
           "Ви будете використовувати стани та хуки, щоб керувати властивостями елемента."
         ]
       },
-      "dbta": {
-        "title": "269",
-        "intro": []
-      },
       "lecture-understanding-effects-and-referencing-values-in-react": {
         "title": "Знайомство з ефектами та посиланнями на значення в React",
         "intro": [
@@ -3536,9 +3532,11 @@
           "У цих відеолекціях ви дізнаєтесь, як працювати з формами в React."
         ]
       },
-      "sgau": {
-        "title": "276",
-        "intro": []
+      "workshop-superhero-application-form": {
+        "title": "Build a Superhero Application Form",
+        "intro": [
+          "In this workshop, you will build a superhero application form."
+        ]
       },
       "lab-event-rsvp": {
         "title": "Створіть RSVP-запрошення",
@@ -4019,7 +4017,9 @@
       },
       "lab-polygon-area-calculator": {
         "title": "Створіть калькулятор площі багатокутника",
-        "intro": [""]
+        "intro": [
+          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
+        ]
       },
       "lecture-understanding-abstraction": {
         "title": "Знайомство з абстракцією",
@@ -4054,9 +4054,12 @@
         "title": "Створіть клас «Linked List»",
         "intro": [""]
       },
-      "lab-hash-table-class": {
-        "title": "Створіть клас «Hash Table»",
-        "intro": [""]
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
       },
       "review-data-structures": {
         "title": "Повторення структур даних",

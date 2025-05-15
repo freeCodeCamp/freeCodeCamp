@@ -1081,6 +1081,9 @@
               "dashedName": "quiz-react-state-and-hooks"
             },
             {
+              "dashedName": "workshop-superhero-application-form"
+            },
+            {
               "dashedName": "lecture-working-with-forms-in-react"
             },
             {
@@ -1385,7 +1388,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-common-data-structures" },
             { "dashedName": "workshop-linked-list-class" },
-            { "dashedName": "lab-hash-table-class" },
+            { "dashedName": "lab-hash-table" },
             { "dashedName": "review-data-structures" },
             { "dashedName": "quiz-data-structures" }
           ]
