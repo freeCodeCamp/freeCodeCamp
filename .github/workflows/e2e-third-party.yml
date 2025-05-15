@@ -1,18 +1,14 @@
 name: CI - E2E - 3rd party donation tests
 
-# These are only run on prod-* branches to test the 3rd party donation flow
-
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'prod-**'
 
-  # to test this ad-hoc
-  workflow_dispatch:
-
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ !contains(github.ref, 'main') && !contains(github.ref, 'prod-') }}
 
 jobs:
   do-everything:
