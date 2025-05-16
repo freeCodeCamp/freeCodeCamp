@@ -35,6 +35,7 @@ import {
   verifyTrophyWithMicrosoft
 } from '../helpers/challenge-helpers';
 import { UpdateReqType } from '../../utils';
+import { normalizeDate } from '../../utils/normalize';
 
 interface JwtPayload {
   userToken: string;
@@ -263,13 +264,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           'User tried to submit a codeRoad cert project before completing the required challenges'
         );
         void reply.code(403);
-        return {
+        return reply.send({
           type: 'error',
           message:
             'You have to complete the project before you can submit a URL.'
-        } as const;
+        });
       }
-
       const challenge = {
         challengeType,
         solution,
@@ -287,13 +287,13 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         challenge
       );
 
-      return {
+      reply.send({
         alreadyCompleted,
         // TODO(Post-MVP): audit the client and remove this if the client does
         // not use it.
-        completedDate,
+        completedDate: normalizeDate(completedDate),
         points: alreadyCompleted ? points : points + 1
-      };
+      });
     }
   );
 
@@ -685,11 +685,11 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             completedChallenge
           );
 
-        return {
+        reply.send({
           alreadyCompleted,
           points: getPoints(progressTimestamps) + (alreadyCompleted ? 0 : 1),
-          completedDate
-        };
+          completedDate: normalizeDate(completedDate)
+        });
       } catch (error) {
         logger.error(error, 'Error submitting Microsoft trophy challenge');
         fastify.Sentry.captureException(error);
@@ -808,7 +808,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         }
 
         const newCompletedChallenges: CompletedChallenge[] =
-          completedChallenges;
+          completedChallenges.map(c => {
+            const { completedDate, ...rest } = c;
+            return { completedDate: normalizeDate(completedDate), ...rest };
+          });
         const newCompletedExams: CompletedExam[] = completedExams;
         const newProgressTimeStamps = progressTimestamps as ProgressTimestamp[];
         const completedDate = Date.now();

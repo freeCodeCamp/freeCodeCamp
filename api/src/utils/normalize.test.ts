@@ -2,7 +2,8 @@ import {
   normalizeTwitter,
   normalizeProfileUI,
   normalizeChallenges,
-  normalizeFlags
+  normalizeFlags,
+  normalizeDate
 } from './normalize';
 
 describe('normalize', () => {
@@ -154,6 +155,24 @@ describe('normalize', () => {
         showCerts: true,
         showDonation: false
       });
+    });
+  });
+
+  describe('validateDate', () => {
+    it('should return the date as a number', () => {
+      expect(normalizeDate(1)).toEqual(1);
+      expect(normalizeDate({ $date: '2023-10-01T00:00:00Z' })).toEqual(
+        1696118400000
+      );
+    });
+
+    it('should throw an error if the date is not in the expected shape', () => {
+      expect(() => normalizeDate('2023-10-01T00:00:00Z')).toThrow(
+        'Unexpected date value: "2023-10-01T00:00:00Z"'
+      );
+      expect(() => normalizeDate({ date: '123' })).toThrow(
+        'Unexpected date value: {"date":"123"}'
+      );
     });
   });
 });

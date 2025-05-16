@@ -1,10 +1,11 @@
 /* This module's job is to parse the database output and prepare it for
 serialization */
-import {
+import type {
   ProfileUI,
   CompletedChallenge,
   ExamResults,
-  type Survey
+  Survey,
+  Prisma
 } from '@prisma/client';
 import _ from 'lodash';
 
@@ -37,6 +38,27 @@ export const normalizeTwitter = (
     url = `https://twitter.com/${handleOrUrl.replace(/^@/, '')}`;
   }
   return url ?? handleOrUrl;
+};
+
+/**
+ * Normalizes a date value to a timestamp number.
+ *
+ * @param date An object with a $date string or a number.
+ * @returns The date as a timestamp number.
+ */
+export const normalizeDate = (date?: Prisma.JsonValue): number => {
+  if (typeof date === 'number') {
+    return date;
+  } else if (
+    date &&
+    typeof date === 'object' &&
+    '$date' in date &&
+    typeof date.$date === 'string'
+  ) {
+    return new Date(date.$date).getTime();
+  } else {
+    throw Error('Unexpected date value: ' + JSON.stringify(date));
+  }
 };
 
 /**
@@ -114,7 +136,15 @@ export const normalizeChallenges = (
     return { ...rest, files: noNullFiles };
   });
 
-  return noNullPath;
+  const withNumberDates = noNullPath.map(challenge => {
+    const { completedDate, ...rest } = challenge;
+    return {
+      ...rest,
+      completedDate: normalizeDate(completedDate)
+    };
+  });
+
+  return withNumberDates;
 };
 
 type NormalizedSurvey = {
