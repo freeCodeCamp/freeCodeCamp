@@ -114,9 +114,6 @@ export function* executeChallengeSaga({ payload }) {
     const hooks = yield select(challengeHooksSelector);
     yield put(updateTests(tests));
 
-    yield fork(takeEveryLog, consoleProxy);
-    const proxyLogger = args => consoleProxy.put(args);
-
     const challengeData = yield select(challengeDataSelector);
     const challengeMeta = yield select(challengeMetaSelector);
     // The buildData is used even if there are build errors, so that lessons
@@ -127,13 +124,7 @@ export function* executeChallengeSaga({ payload }) {
       disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview,
       usesTestRunner: true
     });
-    const document = yield getContext('document');
-    const testRunner = yield call(
-      getTestRunner,
-      { ...buildData, hooks },
-      { proxyLogger },
-      document
-    );
+    const testRunner = yield call(getTestRunner, { ...buildData, hooks });
     const testResults = yield executeTests(testRunner, tests);
     yield put(updateTests(testResults));
 
@@ -167,14 +158,6 @@ export function* executeChallengeSaga({ payload }) {
     yield put(executeChallengeComplete());
     consoleProxy.close();
   }
-}
-
-function* takeEveryLog(channel) {
-  // TODO: move all stringifying and escaping into the reducer so there is a
-  // single place responsible for formatting the logs.
-  yield takeEvery(channel, function* (args) {
-    yield put(updateLogs(escape(args)));
-  });
 }
 
 function* takeEveryConsole(channel) {
@@ -305,12 +288,7 @@ export function* previewChallengeSaga(action) {
           yield call(updatePreview, buildData, finalDocument, proxyLogger);
         }
       } else if (isJavaScriptChallenge(challengeData)) {
-        const runUserCode = yield call(
-          getTestRunner,
-          buildData,
-          { proxyLogger },
-          document
-        );
+        const runUserCode = yield call(getTestRunner, buildData);
         // without a testString the testRunner just evaluates the user's code
         const out = yield call(runUserCode, null, previewTimeout);
 

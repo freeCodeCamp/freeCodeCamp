@@ -13,7 +13,6 @@ import {
   createMainPreviewFramer,
   createProjectPreviewFramer,
   ProxyLogger,
-  TestRunnerConfig,
   Context,
   Source,
   prepTestRunner
@@ -124,11 +123,7 @@ const runnerTypes: Record<number, 'javascript' | 'dom' | 'python'> = {
   [challengeTypes.dailyChallengePy]: 'python'
 };
 
-export async function getTestRunner(
-  buildData: BuildChallengeData,
-  runnerConfig: TestRunnerConfig,
-  document: Document
-) {
+export async function getTestRunner(buildData: BuildChallengeData) {
   const { challengeType } = buildData;
   const type = runnerTypes[challengeType];
   if (!type) {
@@ -139,7 +134,7 @@ export async function getTestRunner(
   await prepTestRunner({ ...buildData, type });
 
   return (testString: string, testTimeout: number) =>
-    runTestInTestFrame(document, testString, testTimeout, type);
+    runTestInTestFrame(testString, testTimeout, type);
 }
 
 type BuildResult = {

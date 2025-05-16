@@ -34,10 +34,6 @@ export interface Context {
   loadEnzyme?: boolean;
 }
 
-export interface TestRunnerConfig {
-  proxyLogger: ProxyLogger;
-}
-
 export type ProxyLogger = (msg: string) => void;
 
 type InitFrame = (
@@ -164,7 +160,6 @@ function getContentDocument<T extends Document = FrameDocument>(
 }
 
 export const runTestInTestFrame = async function (
-  document: Document,
   test: string,
   timeout: number,
   type: 'dom' | 'javascript' | 'python'
