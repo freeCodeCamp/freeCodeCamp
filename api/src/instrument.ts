@@ -13,6 +13,5 @@ Sentry.init({
   environment: SENTRY_ENVIRONMENT,
   maxValueLength: 8192, // the default is 250, which is too small.
   beforeSend: (event, hint) =>
-    shouldIgnoreError(hint.originalException as FastifyError) ? null : event,
-  sendDefaultPii: true
+    shouldIgnoreError(hint.originalException as FastifyError) ? null : event
 });
