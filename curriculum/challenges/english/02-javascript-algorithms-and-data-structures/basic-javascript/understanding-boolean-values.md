@@ -21,22 +21,16 @@ Modify the `welcomeToBooleans` function so that it returns `true` instead of `fa
 The `welcomeToBooleans()` function should return a Boolean (`true` or `false`) value.
 
 ```js
-assert(typeof welcomeToBooleans() === 'boolean');
+assert.isBoolean(welcomeToBooleans());
 ```
 
 `welcomeToBooleans()` should return `true`.
 
 ```js
-assert(welcomeToBooleans() === true);
+assert.isTrue(welcomeToBooleans());
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-welcomeToBooleans();
-```
 
 ## --seed-contents--
 

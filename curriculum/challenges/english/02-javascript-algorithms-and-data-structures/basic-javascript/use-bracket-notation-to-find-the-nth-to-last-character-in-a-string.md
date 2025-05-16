@@ -32,22 +32,16 @@ Use <dfn>bracket notation</dfn> to find the second-to-last character in the `las
 `secondToLastLetterOfLastName` should be the letter `c`.
 
 ```js
-assert(secondToLastLetterOfLastName === 'c');
+assert.strictEqual(secondToLastLetterOfLastName, 'c');
 ```
 
 You should use `.length` to get the second last letter.
 
 ```js
-assert(__helpers.removeJSComments(code).match(/\.length/g).length > 0);
+assert.match(__helpers.removeJSComments(code), /\.length/g);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(v){return v;})(secondToLastLetterOfLastName);
-```
 
 ## --seed-contents--
 

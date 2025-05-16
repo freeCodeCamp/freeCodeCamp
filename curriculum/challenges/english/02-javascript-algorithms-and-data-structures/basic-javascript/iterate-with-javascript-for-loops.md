@@ -43,7 +43,7 @@ Use a `for` loop to push the values 1 through 5 onto `myArray`.
 You should be using a `for` loop for this.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /for\s*\([^)]+?\)/);
 ```
 
 `myArray` should equal `[1, 2, 3, 4, 5]`.
@@ -53,12 +53,6 @@ assert.deepEqual(myArray, [1, 2, 3, 4, 5]);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-if (typeof myArray !== "undefined"){(function(){return myArray;})();}
-```
 
 ## --seed-contents--
 

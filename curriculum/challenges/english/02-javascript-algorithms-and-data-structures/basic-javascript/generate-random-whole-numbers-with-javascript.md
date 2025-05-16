@@ -33,43 +33,34 @@ Use this technique to generate and return a random whole number in the range fro
 The result of `randomWholeNum` should be a whole number.
 
 ```js
-assert(
-  typeof randomWholeNum() === 'number' &&
-    (function () {
-      var r = randomWholeNum();
-      return Math.floor(r) === r;
-    })()
-);
+assert.isNumber(randomWholeNum());
+const randomNumber = randomWholeNum(); 
+assert.strictEqual(randomNumber, Math.floor(randomNumber)); 
 ```
 
 You should use `Math.random` to generate a random number.
 
 ```js
-assert(__helpers.removeJSComments(code).match(/Math.random/g).length >= 1);
+assert.match(__helpers.removeJSComments(code),/Math.random/g);
 ```
 
 You should have multiplied the result of `Math.random` by 10 to make it a number in the range from zero to nine.
 
 ```js
-assert(
-  __helpers.removeJSComments(code).match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g) ||
-    __helpers.removeJSComments(code).match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g)
+const cleanCode = __helpers.removeJSComments(code); 
+assert.isTrue(
+  cleanCode.match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g) ||
+  cleanCode.match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g)
 );
 ```
 
 You should use `Math.floor` to remove the decimal part of the number.
 
 ```js
-assert(__helpers.removeJSComments(code).match(/Math.floor/g).length >= 1);
+assert.match(__helpers.removeJSComments(code),/Math.floor/g);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(){return randomWholeNum();})();
-```
 
 ## --seed-contents--
 

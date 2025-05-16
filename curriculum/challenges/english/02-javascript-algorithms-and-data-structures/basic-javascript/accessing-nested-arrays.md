@@ -47,27 +47,16 @@ Using dot and bracket notation, set the variable `secondTree` to the second elem
 `secondTree` should equal the string `pine`.
 
 ```js
-assert(secondTree === 'pine');
+assert.strictEqual(secondTree, 'pine');
 ```
 
 Your code should use dot and bracket notation to access `myPlants`.
 
 ```js
-assert(/=\s*myPlants\[1\].list\[1\]/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /=\s*myPlants\[1\].list\[1\]/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(x) {
-  if(typeof x != 'undefined') {
-    return "secondTree = " + x;
-  }
-  return "secondTree is undefined";
-})(secondTree);
-```
 
 ## --seed-contents--
 

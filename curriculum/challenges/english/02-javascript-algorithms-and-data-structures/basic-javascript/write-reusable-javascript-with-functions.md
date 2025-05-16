@@ -36,13 +36,15 @@ You can call or <dfn>invoke</dfn> this function by using its name followed by pa
 `reusableFunction` should be a function.
 
 ```js
-assert(typeof reusableFunction === 'function');
+assert.isFunction(reusableFunction);
 ```
 
 If `reusableFunction` is called, it should output the string `Hi World` to the console.
 
 ```js
-assert(testConsole());
+const spy = __helpers.spyOn(console, "log");
+reusableFunction();
+assert.sameDeepOrderedMembers(spy.calls, [["Hi World"]]); 
 ```
 
 You should call `reusableFunction` once it is defined.
@@ -50,39 +52,11 @@ You should call `reusableFunction` once it is defined.
 ```js
 const functionStr = reusableFunction && __helpers.removeWhiteSpace(reusableFunction.toString());
 const codeWithoutFunction = __helpers.removeWhiteSpace(__helpers.removeJSComments(code)).replace(/reusableFunction\(\)\{/g, '');
-assert(/reusableFunction\(\)/.test(codeWithoutFunction));
+assert.match(codeWithoutFunction, /reusableFunction\(\)/)
 ```
 
 # --seed--
 
-## --after-user-code--
-
-```js
-
-function testConsole() {
-  var logOutput = "";
-  var originalConsole = console;
-  var nativeLog = console.log;
-  var hiWorldWasLogged = false;
-  console.log = function (message) {
-    if(message === 'Hi World')  {
-      console.warn(message)
-      hiWorldWasLogged = true;
-    }
-    if(message && message.trim) logOutput = message.trim();
-    if(nativeLog.apply) {
-      nativeLog.apply(originalConsole, arguments);
-    } else {
-      var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
-      nativeLog(nativeMsg);
-    }
-  };
-  reusableFunction();
-  console.log = nativeLog;
-  return hiWorldWasLogged;
-}
-
-```
 
 ## --seed-contents--
 

@@ -35,46 +35,19 @@ You will also need to account for spaces in your string, so that the final sente
 `wordBlanks` should be a string.
 
 ```js
-assert(typeof wordBlanks === 'string');
+assert.isString(wordBlanks);
 ```
 
 You should not change the values assigned to `myNoun`, `myVerb`, `myAdjective` or `myAdverb`.
 
 ```js
-assert(
-  myNoun === 'dog' &&
-    myVerb === 'ran' &&
-    myAdjective === 'big' &&
-    myAdverb === 'quickly'
-);
+assert.strictEqual(myNoun, 'dog'); 
+assert.strictEqual(myVerb, 'ran'); 
+assert.strictEqual(myAdjective, 'big'); 
+assert.strictEqual(myAdverb, 'quickly'); 
 ```
 
 You should not directly use the values `dog`, `ran`, `big`, or `quickly` to create `wordBlanks`.
-
-```js
-const newCode = removeAssignments(__helpers.removeJSComments(code));
-assert(
-  !/dog/.test(newCode) &&
-    !/ran/.test(newCode) &&
-    !/big/.test(newCode) &&
-    !/quickly/.test(newCode)
-);
-```
-
-`wordBlanks` should contain all of the words assigned to the variables `myNoun`, `myVerb`, `myAdjective` and `myAdverb` separated by non-word characters (and any additional words of your choice).
-
-```js
-assert(
-  /\bdog\b/.test(wordBlanks) &&
-    /\bbig\b/.test(wordBlanks) &&
-    /\bran\b/.test(wordBlanks) &&
-    /\bquickly\b/.test(wordBlanks)
-);
-```
-
-# --seed--
-
-## --after-user-code--
 
 ```js
 const removeAssignments = str => str
@@ -82,7 +55,24 @@ const removeAssignments = str => str
   .replace(/myAdjective\s*=\s*["']big["']/g, '')
   .replace(/myVerb\s*=\s*["']ran["']/g, '')
   .replace(/myAdverb\s*=\s*["']quickly["']/g, '');
+
+const newCode = removeAssignments(__helpers.removeJSComments(code));
+assert.notMatch(newCode, /dog/);
+assert.notMatch(newCode, /ran/);
+assert.notMatch(newCode, /big/);
+assert.notMatch(newCode, /quickly/);
 ```
+
+`wordBlanks` should contain all of the words assigned to the variables `myNoun`, `myVerb`, `myAdjective` and `myAdverb` separated by non-word characters (and any additional words of your choice).
+
+```js
+assert.match(wordBlanks, /\bdog\b/);
+assert.match(wordBlanks, /\bbig\b/);
+assert.match(wordBlanks, /\bran\b/);
+assert.match(wordBlanks, /\bquickly\b/);
+```
+
+# --seed--
 
 ## --seed-contents--
 

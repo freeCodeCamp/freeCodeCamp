@@ -30,43 +30,16 @@ Modify the data stored at index `0` of `myArray` to a value of `45`.
 `myArray` should now be `[45, 64, 99]`.
 
 ```js
-assert(
-  (function () {
-    if (
-      typeof myArray != 'undefined' &&
-      myArray[0] == 45 &&
-      myArray[1] == 64 &&
-      myArray[2] == 99
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  })()
-);
+assert.sameDeepOrderedMembers(myArray, [45, 64, 99]);
 ```
 
 You should be using correct index to modify the value in `myArray`.
 
 ```js
-assert(
-  (function () {
-    if (__helpers.removeJSComments(code).match(/myArray\[0\]\s*=\s*/g)) {
-      return true;
-    } else {
-      return false;
-    }
-  })()
-);
+assert.match(__helpers.removeJSComments(code), /myArray\[0\]\s*=\s*/g);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-if(typeof myArray !== "undefined"){(function(){return myArray;})();}
-```
 
 ## --seed-contents--
 

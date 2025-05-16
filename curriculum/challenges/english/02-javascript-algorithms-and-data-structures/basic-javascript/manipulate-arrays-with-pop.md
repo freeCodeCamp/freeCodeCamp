@@ -32,44 +32,22 @@ Use the `.pop()` function to remove the last item from `myArray` and assign the 
 `myArray` should only contain `[["John", 23]]`.
 
 ```js
-assert(
-  (function (d) {
-    if (d[0][0] == 'John' && d[0][1] === 23 && d[1] == undefined) {
-      return true;
-    } else {
-      return false;
-    }
-  })(myArray)
-);
+assert.sameDeepOrderedMembers(myArray, [["John", 23]]);
 ```
 
 You should use `pop()` on `myArray`.
 
 ```js
-assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/);
 ```
 
 `removedFromMyArray` should only contain `["cat", 2]`.
 
 ```js
-assert(
-  (function (d) {
-    if (d[0] == 'cat' && d[1] === 2 && d[2] == undefined) {
-      return true;
-    } else {
-      return false;
-    }
-  })(removedFromMyArray)
-);
+assert.sameDeepOrderedMembers(removedFromMyArray, ["cat", 2]);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-if (typeof removedFromMyArray !== 'undefined') (function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
-```
 
 ## --seed-contents--
 

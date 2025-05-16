@@ -32,22 +32,16 @@ Use <dfn>bracket notation</dfn> to find the last character in the `lastName` var
 `lastLetterOfLastName` should be the letter `e`.
 
 ```js
-assert(lastLetterOfLastName === 'e');
+assert.strictEqual(lastLetterOfLastName, 'e');
 ```
 
 You should use `.length` to get the last letter.
 
 ```js
-assert(__helpers.removeJSComments(code).match(/\.length/g).length > 0);
+assert.match(__helpers.removeJSComments(code), /\.length/g);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(v){return v;})(lastLetterOfLastName);
-```
 
 ## --seed-contents--
 

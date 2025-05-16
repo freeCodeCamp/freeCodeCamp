@@ -34,22 +34,16 @@ Use bracket notation to find the first character in the `lastName` variable and 
 The `firstLetterOfLastName` variable should have the value of `L`.
 
 ```js
-assert(firstLetterOfLastName === 'L');
+assert.strictEqual(firstLetterOfLastName, 'L');
 ```
 
 You should use bracket notation.
 
 ```js
-assert(__helpers.removeJSComments(code).match(/firstLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
+assert.match(__helpers.removeJSComments(code),/firstLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(v){return v;})(firstLetterOfLastName);
-```
 
 ## --seed-contents--
 

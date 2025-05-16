@@ -29,79 +29,37 @@ Then we can call `testFun` like this: `testFun("Hello", "World");`. We have pass
 `functionWithArgs` should be a function.
 
 ```js
-assert(typeof functionWithArgs === 'function');
+assert.isFunction(functionWithArgs);
 ```
 
 `functionWithArgs(1,2)` should output `3`.
 
 ```js
 if (typeof functionWithArgs === 'function') {
-  capture();
+  const spy = __helpers.spyOn(console, "log");
   functionWithArgs(1, 2);
-  uncapture();
+  assert.sameDeepOrderedMembers(spy.calls, [[3]]); 
 }
-assert(logOutput == 3);
 ```
 
 `functionWithArgs(7,9)` should output `16`.
 
 ```js
 if (typeof functionWithArgs === 'function') {
-  capture();
+  const spy = __helpers.spyOn(console, "log");
   functionWithArgs(7, 9);
-  uncapture();
+  assert.sameDeepOrderedMembers(spy.calls, [[16]]); 
 }
-assert(logOutput == 16);
 ```
 
 You should call `functionWithArgs` with two numbers after you define it.
 
 ```js
-assert(
-  /functionWithArgs\([-+]?\d*\.?\d*,[-+]?\d*\.?\d*\)/.test(
-    __helpers.removeJSComments(code).replace(/\s/g, '')
-  )
-);
+const cleanCode = __helpers.removeWhiteSpace(__helpers.removeJSComments(code)); 
+assert.match(cleanCode, /functionWithArgs\([-+]?\d*\.?\d*,[-+]?\d*\.?\d*\)/);
 ```
 
 # --seed--
-
-## --before-user-code--
-
-```js
-var logOutput = "";
-var originalConsole = console
-function capture() {
-    var nativeLog = console.log;
-    console.log = function (message) {
-        if(message) logOutput = JSON.stringify(message).trim();
-        if(nativeLog.apply) {
-          nativeLog.apply(originalConsole, arguments);
-        } else {
-          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
-          nativeLog(nativeMsg);
-        }
-    };
-}
-
-function uncapture() {
-  console.log = originalConsole.log;
-}
-
-capture();
-```
-
-## --after-user-code--
-
-```js
-uncapture();
-
-if (typeof functionWithArgs !== "function") { 
-  (function() { return "functionWithArgs is not defined"; })();
-} else {
-  (function() { return logOutput || "console.log never called"; })();
-}
-```
 
 ## --seed-contents--
 

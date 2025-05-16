@@ -41,13 +41,13 @@ Add a new album to the `myMusic` array. Add `artist` and `title` strings, `relea
 `myMusic` should be an array
 
 ```js
-assert(Array.isArray(myMusic));
+assert.isArray(myMusic);
 ```
 
 `myMusic` should have at least two elements
 
 ```js
-assert(myMusic.length > 1);
+assert.isAtLeast(myMusic.length, 2);
 ```
 
 The elements in the `myMusic` array should be objects
@@ -59,7 +59,7 @@ myMusic.forEach(object => {assert.typeOf(object, 'object')})
 Your object in `myMusic` should have at least 4 properties
 
 ```js
-myMusic.forEach(object => {assert(Object.keys(object).length > 3); });
+myMusic.forEach(object => {assert.isAtLeast(Object.keys(object), 4); });
 ```
 
 Your object in `myMusic` should contain the property `artist` which is a string
@@ -67,7 +67,7 @@ Your object in `myMusic` should contain the property `artist` which is a string
 ```js
 myMusic.forEach(object => {
   assert.containsAllKeys(object, ['artist']);
-  assert.typeOf(object.artist, 'string')
+  assert.isString(object.artist)
 })
 ```
 
@@ -76,7 +76,7 @@ Your object in `myMusic` should contain the property `title` which is a string
 ```js
 myMusic.forEach(object => {
   assert.containsAllKeys(object, ['title']);
-  assert.typeOf(object.title, 'string')
+  assert.isString(object.title)
 })
 ```
 
@@ -85,7 +85,7 @@ Your object in `myMusic` should contain the property `release_year` which is a n
 ```js
 myMusic.forEach(object => {
   assert.containsAllKeys(object, ['release_year']);
-  assert.typeOf(object.release_year, 'number')
+  assert.isNumber(object.release_year)
 })
 ```
 
@@ -94,7 +94,7 @@ Your object in `myMusic` should contain a `formats` property which is an array
 ```js
 myMusic.forEach(object => {
   assert.containsAllKeys(object, ['formats']);
-  assert.typeOf(object.formats, 'array')
+  assert.isArray(object.formats)
 })
 ```
 
@@ -103,19 +103,13 @@ myMusic.forEach(object => {
 ```js
 myMusic.forEach(object => {
   object.formats.forEach(format => {
-    assert.typeOf(format, 'string')
+    assert.isString(format)
   });
   assert.isAtLeast(object.formats.length, 2)
 })
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(x){ if (Array.isArray(x)) { return JSON.stringify(x); } return "myMusic is not an array"})(myMusic);
-```
 
 ## --seed-contents--
 

@@ -32,22 +32,16 @@ Let's try to set `thirdLetterOfLastName` to equal the third letter of the `lastN
 The `thirdLetterOfLastName` variable should have the value of `v`.
 
 ```js
-assert(thirdLetterOfLastName === 'v');
+assert.strictEqual(thirdLetterOfLastName, 'v');
 ```
 
 You should use bracket notation.
 
 ```js
-assert(__helpers.removeJSComments(code).match(/thirdLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/));
+assert.match(__helpers.removeJSComments(code), /thirdLetterOfLastName\s*=\s*lastName\s*\[\s*\d\s*\]/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(v){return v;})(thirdLetterOfLastName);
-```
 
 ## --seed-contents--
 

@@ -25,16 +25,11 @@ Create a nested array called `myArray`.
 `myArray` should have at least one array nested within another array.
 
 ```js
-assert(Array.isArray(myArray) && myArray.some(Array.isArray));
+assert.isArray(myArray);
+assert.isTrue(myArray.some(Array.isArray))
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-if(typeof myArray !== "undefined"){(function(){return myArray;})();}
-```
 
 ## --seed-contents--
 

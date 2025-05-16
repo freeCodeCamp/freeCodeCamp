@@ -46,22 +46,16 @@ assert(/I am a "double quoted" string inside "double quotes(\."|"\.)$/.test(mySt
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(){
-  if(typeof myStr === 'string') {
-    console.log("myStr = \"" + myStr + "\"");
-  } else {
-    console.log("myStr is undefined");
-  }
-})();
-```
-
 ## --seed-contents--
 
 ```js
 const myStr = ""; // Change this line
+
+if(typeof myStr === 'string') {
+  console.log("myStr = \"" + myStr + "\"");
+} else {
+  console.log("myStr is undefined");
+}
 ```
 
 # --solutions--

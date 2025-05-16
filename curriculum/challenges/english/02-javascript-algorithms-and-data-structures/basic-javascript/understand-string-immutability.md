@@ -33,22 +33,16 @@ Correct the assignment to `myStr` so it contains the string value of `Hello Worl
 `myStr` should have a value of the string `Hello World`.
 
 ```js
-assert(myStr === 'Hello World');
+assert.strictEqual(myStr, 'Hello World');
 ```
 
 You should not change the code above the specified comment.
 
 ```js
-assert(/myStr = "Jello World"/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /myStr = "Jello World"/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(v){return "myStr = " + v;})(myStr);
-```
 
 ## --seed-contents--
 

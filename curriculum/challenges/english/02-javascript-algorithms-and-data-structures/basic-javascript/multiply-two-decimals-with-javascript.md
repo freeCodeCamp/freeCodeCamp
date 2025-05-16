@@ -21,22 +21,16 @@ Change the `0.0` so that product will equal `5.0`.
 The variable `product` should equal `5.0`.
 
 ```js
-assert(product === 5.0);
+assert.strictEqual(product, 5.0);
 ```
 
 You should use the `*` operator
 
 ```js
-assert(/\*/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /\*/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(y){return 'product = '+y;})(product);
-```
 
 ## --seed-contents--
 

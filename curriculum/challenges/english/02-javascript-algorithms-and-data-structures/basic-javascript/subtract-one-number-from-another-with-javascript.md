@@ -28,22 +28,17 @@ Change the `0` so the difference is `12`.
 The variable `difference` should be equal to `12`.
 
 ```js
-assert(difference === 12);
+assert.strictEqual(difference, 12);
 ```
 
 You should only subtract one number from `45`.
 
 ```js
-assert(/difference=45-33;?/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code))));
+const cleanCode = __helpers.removeWhiteSpace(__helpers.removeJSComments(code));
+assert.match(cleanCode, /difference=45-33;?/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(z){return 'difference = '+z;})(difference);
-```
 
 ## --seed-contents--
 

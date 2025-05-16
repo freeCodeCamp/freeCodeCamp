@@ -39,40 +39,34 @@ Read the values of the properties `an entree` and `the drink` of `testObj` using
 `entreeValue` should be a string
 
 ```js
-assert(typeof entreeValue === 'string');
+assert.isString(entreeValue);
 ```
 
 The value of `entreeValue` should be the string `hamburger`
 
 ```js
-assert(entreeValue === 'hamburger');
+assert.strictEqual(entreeValue, 'hamburger');
 ```
 
 `drinkValue` should be a string
 
 ```js
-assert(typeof drinkValue === 'string');
+assert.isString(drinkValue);
 ```
 
 The value of `drinkValue` should be the string `water`
 
 ```js
-assert(drinkValue === 'water');
+assert.strictEqual(drinkValue, 'water');
 ```
 
 You should use bracket notation twice
 
 ```js
-assert(__helpers.removeJSComments(code).match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
+assert.isAbove(__helpers.removeJSComments(code).match(/testObj\s*?\[('|")[^'"]+\1\]/g).length, 1);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(a,b) { return "entreeValue = '" + a + "', drinkValue = '" + b + "'"; })(entreeValue,drinkValue);
-```
 
 ## --seed-contents--
 

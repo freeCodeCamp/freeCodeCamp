@@ -25,28 +25,24 @@ Modify the new array `myArray` so that it contains both a string and a number (i
 `myArray` should be an array.
 
 ```js
-assert(typeof myArray == 'object');
+assert.isArray(myArray);
 ```
 
 The first item in `myArray` should be a string.
 
 ```js
-assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string');
+assert.exists(myArray[0]);
+assert.isString(myArray[0]);
 ```
 
 The second item in `myArray` should be a number.
 
 ```js
-assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');
+assert.exists(myArray[1]);
+assert.isNumber(myArray[1]);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(z){return z;})(myArray);
-```
 
 ## --seed-contents--
 

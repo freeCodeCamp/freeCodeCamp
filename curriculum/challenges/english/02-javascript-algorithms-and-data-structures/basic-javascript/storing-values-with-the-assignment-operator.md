@@ -34,30 +34,17 @@ Assign the value `7` to variable `a`.
 You should not change code above the specified comment.
 
 ```js
-assert(/var a;/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /var a;/)
 ```
 
 `a` should have a value of 7.
 
 ```js
-assert(typeof a === 'number' && a === 7);
+assert.isNumber(a);
+assert.strictEqual(a, 7);
 ```
 
 # --seed--
-
-## --before-user-code--
-
-```js
-if (typeof a != 'undefined') {
-  a = undefined;
-}
-```
-
-## --after-user-code--
-
-```js
-(function(a){return "a = " + a;})(a);
-```
 
 ## --seed-contents--
 

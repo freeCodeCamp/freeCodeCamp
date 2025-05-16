@@ -33,31 +33,10 @@ Push `["dog", 3]` onto the end of the `myArray` variable.
 `myArray` should now equal `[["John", 23], ["cat", 2], ["dog", 3]]`.
 
 ```js
-assert(
-  (function (d) {
-    if (
-      d[2] != undefined &&
-      d[0][0] == 'John' &&
-      d[0][1] === 23 &&
-      d[2][0] == 'dog' &&
-      d[2][1] === 3 &&
-      d[2].length == 2
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  })(myArray)
-);
+assert.sameDeepOrderedMembers(myArray, [["John", 23], ["cat", 2], ["dog", 3]]);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);
-```
 
 ## --seed-contents--
 

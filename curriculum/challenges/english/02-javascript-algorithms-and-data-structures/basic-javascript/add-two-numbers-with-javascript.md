@@ -31,22 +31,16 @@ Change the `0` so that sum will equal `20`.
 `sum` should equal `20`.
 
 ```js
-assert(sum === 20);
+assert.strictEqual(sum, 20);
 ```
 
 You should use the `+` operator.
 
 ```js
-assert(/\+/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /\+/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(z){return 'sum = '+z;})(sum);
-```
 
 ## --seed-contents--
 

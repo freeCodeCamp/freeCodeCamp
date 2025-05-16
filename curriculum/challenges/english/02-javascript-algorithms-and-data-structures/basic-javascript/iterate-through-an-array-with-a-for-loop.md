@@ -29,34 +29,29 @@ Declare and initialize a variable `total` to `0`. Use a `for` loop to add the va
 `total` should be declared and initialized to 0.
 
 ```js
-assert(__helpers.removeJSComments(code).match(/(var|let|const)\s*?total\s*=\s*0.*?;?/));
+assert.match(__helpers.removeJSComments(code), /(var|let|const)\s*?total\s*=\s*0.*?;?/);
 ```
 
 `total` should equal 20.
 
 ```js
-assert(total === 20);
+assert.strictEqual(total, 20);
 ```
 
 You should use a `for` loop to iterate through `myArr`.
 
 ```js
-assert(/for\s*\(/g.test(__helpers.removeJSComments(code)) && /myArr\s*\[/g.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /for\s*\(/g);
+assert.match(__helpers.removeJSComments(code), /myArr\s*\[/g);
 ```
 
 You should not attempt to directly assign the value 20 to `total`.
 
 ```js
-assert(!__helpers.removeWhiteSpace(__helpers.removeJSComments(code)).match(/total[=+-]0*[1-9]+/gm));
+assert.notMatch(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)), /total[=+-]0*[1-9]+/gm);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(){if(typeof total !== 'undefined') { return "total = " + total; } else { return "total is undefined";}})()
-```
 
 ## --seed-contents--
 
