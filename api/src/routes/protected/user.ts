@@ -308,8 +308,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
 
         const msApiRes = await fetch(transcriptUrl);
 
-        console.log(msApiRes);
-
         if (!msApiRes.ok) {
           logger.warn(
             { status: msApiRes.status },
