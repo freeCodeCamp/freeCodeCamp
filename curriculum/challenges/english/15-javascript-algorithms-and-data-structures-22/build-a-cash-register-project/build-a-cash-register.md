@@ -51,6 +51,35 @@ Your application should show different messages depending on the price of the it
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
+# --before-all--
+
+```js
+const _money = [
+  ['ONE HUNDRED', 10000],
+  ['TWENTY', 2000],
+  ['TEN', 1000],
+  ['FIVE', 500],
+  ['ONE', 100],
+  ['QUARTER', 25],
+  ['DIME', 10],
+  ['NICKEL', 5]
+];
+const _denomRegexes = [
+  /PENNY/,
+  /NICKEL/,
+  /DIME/,
+  /QUARTER/,
+  /ONE [^H]/,
+  /FIVE/,
+  /TEN/,
+  /TWENTY/,
+  /ONE HUNDRED/
+];
+function _randomNumber(max) {
+  return Math.floor(Math.random() * (max + 1));
+}
+```
+
 # --hints--
 
 You should have the HTML file link to the JavaScript file.
@@ -583,35 +612,6 @@ assert.isTrue(!notExpected.some(regex => result.match(new RegExp(regex, 'i'))));
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const _money = [
-  ['ONE HUNDRED', 10000],
-  ['TWENTY', 2000],
-  ['TEN', 1000],
-  ['FIVE', 500],
-  ['ONE', 100],
-  ['QUARTER', 25],
-  ['DIME', 10],
-  ['NICKEL', 5]
-];
-const _denomRegexes = [
-  /PENNY/,
-  /NICKEL/,
-  /DIME/,
-  /QUARTER/,
-  /ONE [^H]/,
-  /FIVE/,
-  /TEN/,
-  /TWENTY/,
-  /ONE HUNDRED/
-];
-function _randomNumber(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-```
 
 ## --seed-contents--
 

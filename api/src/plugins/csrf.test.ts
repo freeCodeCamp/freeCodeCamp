@@ -12,7 +12,7 @@ jest.mock('../utils/env', () => ({
 }));
 
 async function setupServer() {
-  const fastify = Fastify();
+  const fastify = Fastify({ logger: true });
   await fastify.register(cookies);
   await fastify.register(csrf);
   // @ts-expect-error - @fastify/csrf-protection needs to update their types

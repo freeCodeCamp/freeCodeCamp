@@ -3499,10 +3499,6 @@
           "Ви будете використовувати стани та хуки, щоб керувати властивостями елемента."
         ]
       },
-      "dbta": {
-        "title": "269",
-        "intro": []
-      },
       "lecture-understanding-effects-and-referencing-values-in-react": {
         "title": "Знайомство з ефектами та посиланнями на значення в React",
         "intro": [
@@ -4058,9 +4054,12 @@
         "title": "Створіть клас «Linked List»",
         "intro": [""]
       },
-      "lab-hash-table-class": {
-        "title": "Створіть клас «Hash Table»",
-        "intro": [""]
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
       },
       "review-data-structures": {
         "title": "Повторення структур даних",
