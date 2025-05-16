@@ -59,7 +59,7 @@ myMusic.forEach(object => {assert.typeOf(object, 'object')})
 Your object in `myMusic` should have at least 4 properties
 
 ```js
-myMusic.forEach(object => {assert.isAtLeast(Object.keys(object), 4); });
+myMusic.forEach(object => {assert.isAtLeast(Object.keys(object).length, 4); });
 ```
 
 Your object in `myMusic` should contain the property `artist` which is a string

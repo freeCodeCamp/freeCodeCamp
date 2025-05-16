@@ -49,8 +49,8 @@ You should have multiplied the result of `Math.random` by 10 to make it a number
 ```js
 const cleanCode = __helpers.removeJSComments(code); 
 assert.isTrue(
-  cleanCode.match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g) ||
-  cleanCode.match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g)
+  cleanCode.match(/\s*?Math.random\s*?\(\s*?\)\s*?\*\s*?10[\D]\s*?/g).length > 0 ||
+  cleanCode.match(/\s*?10\s*?\*\s*?Math.random\s*?\(\s*?\)\s*?/g).length > 0
 );
 ```
 
