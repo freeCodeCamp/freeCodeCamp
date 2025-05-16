@@ -7,7 +7,15 @@
   "challengeOrder": [
     {
       "id": "6660a2f4e01ea36f7c3758fa",
-      "title": "Dialogue 1: I'm Tom"
+      "title": "Dialogue 1: Security Incident Debrief"
+    },
+    {
+      "id": "68272177369758aa9461184b",
+      "title": "Task 1"
+    },
+    {
+      "id": "682726a66dbb0bbb047b8667",
+      "title": "Task 2"
     }
   ],
   "helpCategory": "English",
