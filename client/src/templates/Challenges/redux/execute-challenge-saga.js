@@ -202,14 +202,14 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
     // only the first test outputs console.logs to avoid log duplication.
     const firstTest = i === 0;
     try {
-      const { pass, err, logs } = yield call(
-        testRunner,
-        testString,
-        testTimeout
-      );
+      const {
+        pass,
+        err,
+        logs = []
+      } = yield call(testRunner, testString, testTimeout);
 
       const logString = logs.map(log => log.msg).join('\n');
-      if (firstTest) {
+      if (firstTest && logString) {
         yield put(updateLogs(logString));
       }
 
