@@ -128,7 +128,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         const userinfo = (await fastify.auth0OAuth.userinfo(token)) as {
           email: string;
         };
-        logger.debug(`Auth0 userinfo: ${JSON.stringify(userinfo)}`);
+        logger.info(`Auth0 userinfo: ${JSON.stringify(userinfo)}`);
         email = userinfo.email;
         if (typeof email !== 'string') {
           const msg = `Invalid userinfo email: ${JSON.stringify(userinfo)}`;
