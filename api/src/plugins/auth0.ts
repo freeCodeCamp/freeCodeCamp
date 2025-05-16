@@ -112,7 +112,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         if (error instanceof Error && error.message === 'Invalid state') {
           logger.error('Auth failed: invalid state');
         } else {
-          logger.error(error, 'Auth failed');
+          logger.error(error, 'Failed to get access token from Auth0');
           fastify.Sentry.captureException(error);
         }
         // It's important _not_ to redirect to /signin here, as that could
@@ -135,7 +135,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           throw Error(msg);
         }
       } catch (error) {
-        logger.error({ error }, 'Auth failed');
+        logger.error(error, 'Failed to get userinfo from Auth0');
         fastify.Sentry.captureException(error);
         return reply.redirect('/signin');
       }
