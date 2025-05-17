@@ -6,7 +6,7 @@ export const examEnvironmentPostExamGeneratedExam = {
     examId: Type.String()
   }),
   headers: Type.Object({
-    'exam-environment-authorization-token': Type.String()
+    authorization: Type.String()
   }),
   response: {
     200: Type.Object({

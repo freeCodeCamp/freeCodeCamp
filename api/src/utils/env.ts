@@ -51,6 +51,7 @@ assert.ok(isAllowedProvider(_EMAIL_PROVIDER));
 assert.ok(process.env.AUTH0_CLIENT_ID);
 assert.ok(process.env.AUTH0_CLIENT_SECRET);
 assert.ok(process.env.AUTH0_DOMAIN);
+assert.ok(process.env.AUTH0_AUDIENCE);
 assert.ok(process.env.API_LOCATION);
 assert.ok(process.env.JWT_SECRET);
 assert.ok(process.env.STRIPE_SECRET_KEY);
@@ -171,6 +172,7 @@ export const MONGOHQ_URL =
 
 export const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
+export const AUTH0_AUDIENCE = process.env.AUTH0_AUDIENCE;
 export const AUTH0_CLIENT_SECRET = process.env.AUTH0_CLIENT_SECRET;
 export const EMAIL_PROVIDER = _EMAIL_PROVIDER;
 export const PORT = process.env.PORT || '3000';
