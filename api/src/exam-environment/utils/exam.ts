@@ -11,8 +11,12 @@ import {
   EnvQuestionSet,
   EnvQuestionSetAttempt
 } from '@prisma/client';
+import type { FastifyBaseLogger, FastifyInstance } from 'fastify';
 import { type Static } from '@fastify/type-provider-typebox';
+import { omit } from 'lodash';
 import * as schemas from '../schemas';
+import { mapErr } from '../../utils';
+import { ERRORS } from './errors';
 
 interface CompletedChallengeId {
   completedChallenges: {
@@ -104,7 +108,8 @@ export function constructUserExam(
     totalTimeInMS: exam.config.totalTimeInMS,
     name: exam.config.name,
     note: exam.config.note,
-    retakeTimeInMS: exam.config.retakeTimeInMS
+    retakeTimeInMS: exam.config.retakeTimeInMS,
+    passingPercent: exam.config.passingPercent
   };
 
   const userExam: UserExam = {
@@ -575,6 +580,85 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
   };
 }
 
+/**
+ * Calculates the number of correct questions over the number of the total questions given for an attempt.
+ * @returns The score of the exam attempt as a percentage.
+ */
+export function calculateScore(
+  exam: EnvExam,
+  generatedExam: EnvGeneratedExam,
+  attempt: EnvExamAttempt
+) {
+  const attemptQuestionSets = attempt.questionSets;
+  const generatedQuestionSets = generatedExam.questionSets;
+
+  const totalQuestions = generatedQuestionSets.reduce(
+    (total, attemptQuestionSet) => total + attemptQuestionSet.questions.length,
+    0
+  );
+  let correctQuestions = 0;
+  for (const attemptQuestionSet of attemptQuestionSets) {
+    const examQuestionSet = exam.questionSets.find(
+      ({ id }) => id === attemptQuestionSet.id
+    );
+    if (!examQuestionSet) {
+      throw new Error(
+        `Attempt question set ${attemptQuestionSet.id} must exist in exam ${exam.id}`
+      );
+    }
+
+    const generatedQuestionSet = generatedQuestionSets.find(
+      ({ id }) => id === attemptQuestionSet.id
+    );
+    if (!generatedQuestionSet) {
+      throw new Error(
+        `Generated question set ${attemptQuestionSet.id} must exist in generated exam ${generatedExam.id}`
+      );
+    }
+
+    const attemptQuestions = attemptQuestionSet.questions;
+    const examQuestions = examQuestionSet.questions;
+    const generatedQuestions = generatedQuestionSet.questions;
+    for (const attemptQuestion of attemptQuestions) {
+      const examQuestion = examQuestions.find(
+        ({ id }) => id === attemptQuestion.id
+      );
+      if (!examQuestion) {
+        throw new Error(
+          `Attempt question ${attemptQuestion.id} must exist in exam ${exam.id}`
+        );
+      }
+
+      const generatedQuestion = generatedQuestions.find(
+        ({ id }) => id === attemptQuestion.id
+      );
+      if (!generatedQuestion) {
+        throw new Error(
+          `Generated question ${attemptQuestion.id} must exist in generated exam ${generatedExam.id}`
+        );
+      }
+
+      // NOTE: The answers of an attempt is an array for future-proofing when
+      //       checkbox questions are needed.
+      //       This calculation takes x / y , x < y as wholey incorrect.
+      const isQuestionCorrect = generatedQuestion.answers
+        .filter(generatedAnswer => {
+          return !!examQuestion.answers.find(
+            examAnswer =>
+              examAnswer.isCorrect && examAnswer.id === generatedAnswer
+          );
+        })
+        .every(correctAnswer => {
+          return attemptQuestion.answers.includes(correctAnswer);
+        });
+
+      correctQuestions += Number(isQuestionCorrect);
+    }
+  }
+
+  return (correctQuestions / totalQuestions) * 100;
+}
+
 function isQuestionSetConfigFulfilled(
   questionSetConfig: EnvConfig['questionSets'][number] & {
     questionSets: EnvQuestionSet[];
@@ -641,3 +725,174 @@ function shuffleArray<T>(array: Array<T>) {
   return array;
 }
 /* eslint-enable jsdoc/require-description-complete-sentence */
+
+/**
+ * From an exam attempt, construct the attempt with result (if ready).
+ *
+ * @param fastify - Fastify instance.
+ * @param attempt - The exam attempt.
+ * @param logger - Logger instance.
+ * @returns The exam attempt with result or an error.
+ */
+export async function constructEnvExamAttempt(
+  fastify: FastifyInstance,
+  attempt: EnvExamAttempt,
+  logger: FastifyBaseLogger
+) {
+  const maybeExam = await mapErr(
+    fastify.prisma.envExam.findUnique({
+      where: {
+        id: attempt.examId
+      }
+    })
+  );
+
+  if (maybeExam.hasError) {
+    logger.error(maybeExam.error);
+    fastify.Sentry.captureException(maybeExam.error);
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
+      }
+    };
+  }
+
+  const exam = maybeExam.data;
+
+  if (exam === null) {
+    const error = {
+      data: { examId: attempt.examId, attemptId: attempt.id },
+      message: 'Unreachable. Invalid exam id in attempt.'
+    };
+    logger.error(error.data, error.message);
+    fastify.Sentry.captureException(error);
+
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(error.message)
+      }
+    };
+  }
+
+  // If attempt is still in progress, return without result
+  const isAttemptExpired =
+    attempt.startTimeInMS + exam.config.totalTimeInMS > Date.now();
+  if (!isAttemptExpired) {
+    return {
+      envExamAttempt: { ...omitAttemptReferenceIds(attempt), result: null },
+      error: null
+    };
+  }
+
+  const maybeMod = await mapErr(
+    fastify.prisma.examModeration.findFirst({
+      where: {
+        examAttemptId: attempt.id
+      }
+    })
+  );
+
+  if (maybeMod.hasError) {
+    logger.error(maybeMod.error);
+    fastify.Sentry.captureException(maybeMod.error);
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeMod.error))
+      }
+    };
+  }
+
+  const moderation = maybeMod.data;
+
+  if (moderation === null) {
+    const error = {
+      data: { examAttemptId: attempt.id },
+      message:
+        'Unreachable. ExamModeration record should exist for expired attempt'
+    };
+    logger.error(error.data, error.message);
+    fastify.Sentry.captureException(error);
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message)
+      }
+    };
+  }
+
+  // If attempt is completed, but has not been graded, return without result
+  if (moderation.approved === null) {
+    return {
+      envExamAttempt: { ...omitAttemptReferenceIds(attempt), result: null },
+      error: null
+    };
+  }
+
+  // If attempt is completed, but has been determined to need a retake
+  // TODO: Send moderation.feedback?
+  if (moderation.approved === false) {
+    return {
+      envExamAttempt: { ...omitAttemptReferenceIds(attempt), result: null },
+      error: null
+    };
+  }
+
+  const maybeGeneratedExam = await mapErr(
+    fastify.prisma.envGeneratedExam.findUnique({
+      where: {
+        id: attempt.generatedExamId
+      }
+    })
+  );
+
+  if (maybeGeneratedExam.hasError) {
+    logger.error(maybeGeneratedExam.error);
+    fastify.Sentry.captureException(maybeGeneratedExam.error);
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+          JSON.stringify(maybeGeneratedExam.error)
+        )
+      }
+    };
+  }
+
+  const generatedExam = maybeGeneratedExam.data;
+
+  if (!generatedExam) {
+    const error = {
+      data: { attemptId: attempt.id, generatedExamId: attempt.generatedExamId },
+      message:
+        'Unreachable. Unable to find generated exam associated with exam attempt'
+    };
+    logger.error(error.data, error.message);
+    fastify.Sentry.captureException(error);
+    return {
+      error: {
+        code: 500,
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message)
+      }
+    };
+  }
+
+  const score = calculateScore(exam, generatedExam, attempt);
+
+  const result = {
+    score,
+    passingPercent: exam.config.passingPercent
+  };
+
+  const envExamAttempt = {
+    ...omitAttemptReferenceIds(attempt),
+    result
+  };
+  return { error: null, envExamAttempt };
+}
+
+function omitAttemptReferenceIds(attempt: EnvExamAttempt) {
+  return omit(attempt, ['examId', 'id', 'generatedExamId', 'userId']);
+}
