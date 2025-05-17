@@ -200,6 +200,7 @@ export type ChallengeNode = {
     solutions: {
       [T: string]: FileKeyChallenge;
     };
+    solutionLink: string | null;
     sourceInstanceName: string;
     superOrder: number;
     superBlock: SuperBlocks;

@@ -4,6 +4,7 @@ title: Visualize Data with a Choropleth Map
 challengeType: 3
 forumTopicId: 301465
 dashedName: visualize-data-with-a-choropleth-map
+solutionLink: https://choropleth-map.freecodecamp.rocks
 ---
 
 # --description--
