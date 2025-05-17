@@ -68,12 +68,16 @@
       "title": "Step 15"
     },
     {
-      "id": "67116d7584d0b469b14579c4",
+      "id": "6827deed7fc01f074c90fc0d",
       "title": "Step 16"
     },
     {
-      "id": "67190ce4fe18911edc2018d2",
+      "id": "6827e10547fdd308bca1c73d",
       "title": "Step 17"
+    },
+    {
+      "id": "67116d7584d0b469b14579c4",
+      "title": "Step 18"
     }
   ],
   "helpCategory": "JavaScript",
