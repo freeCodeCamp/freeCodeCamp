@@ -199,15 +199,20 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
   for (let i = 0; i < tests.length; i++) {
     const { text, testString } = tests[i];
     const newTest = { text, testString, running: false };
-    // only the last test outputs console.logs to avoid log duplication.
-    const firstTest = i === 1;
+    // only the first test outputs console.logs to avoid log duplication.
+    const firstTest = i === 0;
     try {
-      const { pass, err } = yield call(
+      const { pass, err, logs } = yield call(
         testRunner,
         testString,
-        testTimeout,
-        firstTest
+        testTimeout
       );
+
+      const logString = logs.map(log => log.msg).join('\n');
+      if (firstTest) {
+        yield put(updateLogs(logString));
+      }
+
       if (pass) {
         newTest.pass = true;
       } else {
@@ -299,11 +304,17 @@ export function* previewChallengeSaga(action) {
           yield call(updatePreview, buildData, finalDocument, proxyLogger);
         }
       } else if (isJavaScriptChallenge(challengeData)) {
-        const runUserCode = getTestRunner(buildData, {
-          proxyLogger
-        });
+        const runUserCode = yield call(
+          getTestRunner,
+          buildData,
+          { proxyLogger },
+          document
+        );
         // without a testString the testRunner just evaluates the user's code
-        yield call(runUserCode, null, previewTimeout);
+        const out = yield call(runUserCode, null, previewTimeout);
+
+        if (out)
+          yield put(updateConsole(out.logs?.map(log => log.msg).join('\n')));
       }
     }
   } catch (err) {
