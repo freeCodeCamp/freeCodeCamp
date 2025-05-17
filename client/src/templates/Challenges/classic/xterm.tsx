@@ -43,7 +43,19 @@ export const XtermTerminal = ({
       if (termContainerRef.current) term.open(termContainerRef.current);
       fitAddon.fit();
 
-      const print = (text?: string) => term?.writeln(`${text ?? ''}`);
+      // xterm does provide a11y support via the `screenReaderMode` option.
+      // However, the mode only works best if the user interacts with the terminal directly.
+      // Since we feed the content to xterm, it's better to control the output a11y ourselves.
+      const termContainerDiv =
+        termContainerRef.current?.querySelector('.xterm');
+      const outputForScreenReader = document.createElement('div');
+      outputForScreenReader.classList.add('sr-only');
+      termContainerDiv?.appendChild(outputForScreenReader);
+
+      const print = (text?: string) => {
+        term?.writeln(`${text ?? ''}`);
+        outputForScreenReader.textContent = text ?? '';
+      };
 
       // TODO: prevent user from moving cursor outside the current input line and
       // handle insertion and deletion properly. While backspace and delete don't
@@ -94,6 +106,8 @@ export const XtermTerminal = ({
         term?.write('\x1bc');
         disposables.forEach(disposable => disposable.dispose());
         disposables.length = 0;
+
+        outputForScreenReader.textContent = '';
       };
       registerTerminal({ print, input, reset });
     }
