@@ -32,12 +32,6 @@ assert(myDecimal % 1 != 0);
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(){if(typeof myDecimal !== "undefined"){return myDecimal;}})();
-```
-
 ## --seed-contents--
 
 ```js

@@ -32,22 +32,16 @@ Update the `myDog` object's name property. Let's change her name from `Coder` to
 You should update `myDog`'s `name` property to equal the string `Happy Coder`.
 
 ```js
-assert(/happy coder/gi.test(myDog.name));
+assert.match(myDog.name, /happy coder/gi)
 ```
 
 You should not edit the `myDog` definition.
 
 ```js
-assert(/"name": "Coder"/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /"name": "Coder"/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(z){return z;})(myDog);
-```
 
 ## --seed-contents--
 
