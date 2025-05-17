@@ -1,0 +1,11 @@
+{
+  "name": "Debug Camperbot's Profile Page",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-debug-camperbots-profile-page",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "6823f9df49cc206af5471a30", "title": "Debug Camperbot's Profile Page" }],
+  "helpCategory": "HTML-CSS"
+}
