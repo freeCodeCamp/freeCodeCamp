@@ -8,11 +8,11 @@ dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
 
 # --description--
 
-Sometimes, bugs occur when a function is called with its arguments in the wrong order. This is especially tricky when the arguments are of the same data type, like two numbers — your code won’t throw an error, but it will produce unexpected results.
+Bugs can happen when a function is called with its arguments in the wrong order. This issue is especially subtle when the arguments have the same data type, such as two numbers — the code won’t throw an error, but it will produce incorrect results.
 
-For example, if a function is supposed to take a base and an exponent and raise the base to that exponent, reversing the two values will give the wrong answer.
+For instance, if a function expects a base and an exponent to calculate the power, swapping these values will yield the wrong answer.
 
-Pay attention to the order of parameters when calling functions, especially when the types match.
+Always ensure you pass arguments in the correct order, particularly when their types are similar.
 
 # --instructions--
 
