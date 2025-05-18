@@ -8,24 +8,32 @@ dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
 
 # --description--
 
-Continuing the discussion on calling functions, the next bug to watch out for is when a function's arguments are supplied in the incorrect order. If the arguments are different types, such as a function expecting an array and an integer, this will likely throw a runtime error. If the arguments are the same type (all integers, for example), then the logic of the code won't make sense. Make sure to supply all required arguments, in the proper order to avoid these issues.
+Sometimes, bugs occur when a function is called with its arguments in the wrong order. This is especially tricky when the arguments are of the same data type, like two numbers — your code won’t throw an error, but it will produce unexpected results.
+
+For example, if a function is supposed to take a base and an exponent and raise the base to that exponent, reversing the two values will give the wrong answer.
+
+Pay attention to the order of parameters when calling functions, especially when the types match.
 
 # --instructions--
 
-The function `raiseToPower` raises a base to an exponent. Unfortunately, it's not called properly - fix the code so the value of `power` is the expected 8.
+The function `raiseToPower` takes two numbers: a base and an exponent, and returns the base raised to that power.
+
+However, the function is currently called with the arguments in the wrong order.
+
+Fix the code so that the variable `power` correctly stores the value of 2 raised to the 3rd power (which is 8).
 
 # --hints--
 
-Your code should fix the variable `power` so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.
+Your code should fix the value of `power` so that it equals 8.
 
 ```js
-assert(power == 8);
+assert(power === 8);
 ```
 
-Your code should use the correct order of the arguments for the `raiseToPower` function call.
+Your code should call `raiseToPower` with the correct order of arguments: base first, then exponent.
 
 ```js
-assert(__helpers.removeJSComments(code).match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
+assert(__helpers.removeJSComments(code).match(/raiseToPower\s*\(\s*base\s*,\s*exp\s*\)/));
 ```
 
 # --seed--
@@ -39,6 +47,7 @@ function raiseToPower(b, e) {
 
 let base = 2;
 let exp = 3;
+
 let power = raiseToPower(exp, base);
 console.log(power);
 ```
@@ -47,11 +56,12 @@ console.log(power);
 
 ```js
 function raiseToPower(b, e) {
- return Math.pow(b, e);
+  return Math.pow(b, e);
 }
 
 let base = 2;
 let exp = 3;
+
 let power = raiseToPower(base, exp);
 console.log(power);
 ```
