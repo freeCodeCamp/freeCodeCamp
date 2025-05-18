@@ -18,7 +18,7 @@ Given a string, remove all spaces from the string, insert two spaces between eve
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertTrue(space_jam("freeCodeCamp"), "F  R  E  E  C  O  D  E  C  A  M  P")`)
+TestCase().assertEqual(space_jam("freeCodeCamp"), "F  R  E  E  C  O  D  E  C  A  M  P")`)
 }})
 ```
 
@@ -27,7 +27,7 @@ TestCase().assertTrue(space_jam("freeCodeCamp"), "F  R  E  E  C  O  D  E  C  A  
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertTrue(space_jam("   free   Code   Camp   "), "F  R  E  E  C  O  D  E  C  A  M  P")`)
+TestCase().assertEqual(space_jam("   free   Code   Camp   "), "F  R  E  E  C  O  D  E  C  A  M  P")`)
 }})
 ```
 
@@ -36,7 +36,7 @@ TestCase().assertTrue(space_jam("   free   Code   Camp   "), "F  R  E  E  C  O  
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertTrue(space_jam("Hello World?!"), "H  E  L  L  O  W  O  R  L  D  ?  !")`)
+TestCase().assertEqual(space_jam("Hello World?!"), "H  E  L  L  O  W  O  R  L  D  ?  !")`)
 }})
 ```
 
@@ -45,7 +45,7 @@ TestCase().assertTrue(space_jam("Hello World?!"), "H  E  L  L  O  W  O  R  L  D 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertTrue(space_jam("C@t$ & D0g$"), "C  @  T  $  &  D  0  G  $")`)
+TestCase().assertEqual(space_jam("C@t$ & D0g$"), "C  @  T  $  &  D  0  G  $")`)
 }})
 ```
 
@@ -54,7 +54,7 @@ TestCase().assertTrue(space_jam("C@t$ & D0g$"), "C  @  T  $  &  D  0  G  $")`)
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertTrue(space_jam("all your base"), "A  L  L  Y  O  U  R  B  A  S  E")`)
+TestCase().assertEqual(space_jam("all your base"), "A  L  L  Y  O  U  R  B  A  S  E")`)
 }})
 ```
 

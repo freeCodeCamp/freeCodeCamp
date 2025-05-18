@@ -1,22 +1,40 @@
 ---
 id: 6821ecb5237de8297eaee7a2
-title: "Python Challenge 20"
+title: "Python Challenge 20: Array Duplicates"
 challengeType: 29
 dashedName: python-challenge-20
 ---
 
 # --description--
 
-Description
+Given an array of integers, return an array of integers that appear more than once in the initial array, in the same order that they appear in the initial array. If no values appear more than once, return an empty array.
 
 # --hints--
 
-`decode("Xlmw mw e wigvix qiwweki.", 4)` should return `This is a secret message.`
+`find_duplicates([1, 2, 3, 4, 5])` should return `[]`.
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertEqual(decode("Xlmw mw e wigvix qiwweki.", 4), "This is a secret message.")`)
+TestCase().assertEqual(find_duplicates([1, 2, 3, 4, 5]), [])`)
+}})
+```
+
+`find_duplicates([1, 2, 3, 4, 1, 2])` should return `[1, 2]`.
+
+```js
+({test: () => { runPython(`
+from unittest import TestCase
+TestCase().assertEqual(find_duplicates([1, 2, 3, 4, 1, 2]), [1, 2])`)
+}})
+```
+
+`find_duplicates([2, 34, 0, 1, -6, 23, 5, 3, 2, 5, 67, -6, 23, 2, 43, 2, 12, 0, 2, 4, 4])` should return `[-6, 0, 2, 4, 5, 23]`.
+
+```js
+({test: () => { runPython(`
+from unittest import TestCase
+TestCase().assertEqual(find_duplicates([2, 34, 0, 1, -6, 23, 5, 3, 2, 5, 67, -6, 23, 2, 43, 2, 12, 0, 2, 4, 4]), [-6, 0, 2, 4, 5, 23])`)
 }})
 ```
 
@@ -25,15 +43,23 @@ TestCase().assertEqual(decode("Xlmw mw e wigvix qiwweki.", 4), "This is a secret
 ## --seed-contents--
 
 ```py
-def decode(message, shift):
+def find_duplicates(arr):
 
-    return message
+    return arr
 ```
 
 # --solutions--
 
 ```py
-def decode(message, shift):
+def find_duplicates(arr):
+    seen = set()
+    duplicates = set()
 
-    return message
+    for num in arr:
+        if num in seen:
+            duplicates.add(num)
+        else:
+            seen.add(num)
+
+    return sorted(duplicates)
 ```

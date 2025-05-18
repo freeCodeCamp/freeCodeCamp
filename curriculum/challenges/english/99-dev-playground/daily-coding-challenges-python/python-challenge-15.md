@@ -1,22 +1,63 @@
 ---
 id: 6821ec9d237de8297eaee79d
-title: "Python Challenge 15"
+title: "Python Challenge 15: camelCase"
 challengeType: 29
 dashedName: python-challenge-15
 ---
 
 # --description--
 
-Description
+Given a string, return its camel case version using the following rules:
+
+- Words in the string argument are separated by one or more characters from the following set: space (` `), dash (`-`), or underscore (`_`). Treat any sequence of these as a word break.
+- The first word should be all lowercase.
+- Each subsequent word should start with an uppercase letter, with the rest of it lowercase.
+- All spaces and separators should be removed.
 
 # --hints--
 
-`decode("Xlmw mw e wigvix qiwweki.", 4)` should return `This is a secret message.`
+`to_camel_case("hello world")` should return `helloWorld`.
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertEqual(decode("Xlmw mw e wigvix qiwweki.", 4), "This is a secret message.")`)
+TestCase().assertEqual(to_camel_case("hello world"), "helloWorld")`)
+}})
+```
+
+`to_camel_case("HELLO WORLD")` should return `helloWorld`.
+
+```js
+({test: () => { runPython(`
+from unittest import TestCase
+TestCase().assertEqual(to_camel_case("HELLO WORLD"), "helloWorld")`)
+}})
+```
+
+`to_camel_case("secret agent-X")` should return `secretAgentX`.
+
+```js
+({test: () => { runPython(`
+from unittest import TestCase
+TestCase().assertEqual(to_camel_case("secret agent-X"), "secretAgentX")`)
+}})
+```
+
+`to_camel_case("FREE cODE cAMP")` should return `freeCodeCamp`.
+
+```js
+({test: () => { runPython(`
+from unittest import TestCase
+TestCase().assertEqual(to_camel_case("FREE cODE cAMP"), "freeCodeCamp")`)
+}})
+```
+
+`to_camel_case("ye old-_-sea  faring_buccaneer_-_with a - peg__leg----and a_parrot_ _named- _squawk")` should return `yeOldSeaFaringBuccaneerWithAPegLegAndAParrotNamedSquawk`.
+
+```js
+({test: () => { runPython(`
+from unittest import TestCase
+TestCase().assertEqual(to_camel_case("ye old-_-sea  faring_buccaneer_-_with a - peg__leg----and a_parrot_ _named- _squawk"), "yeOldSeaFaringBuccaneerWithAPegLegAndAParrotNamedSquawk")`)
 }})
 ```
 
@@ -25,15 +66,23 @@ TestCase().assertEqual(decode("Xlmw mw e wigvix qiwweki.", 4), "This is a secret
 ## --seed-contents--
 
 ```py
-def decode(message, shift):
+def to_camel_case(s):
 
-    return message
+    return s
 ```
 
 # --solutions--
 
 ```py
-def decode(message, shift):
+import re
+def to_camel_case(s):
+    words = re.split(r'[_\- ]+', s)
 
-    return message
+    camel = [
+        words[0].lower() if words else ''
+    ] + [
+        word.capitalize() for word in words[1:]
+    ]
+
+    return ''.join(camel)
 ```

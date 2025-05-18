@@ -57,7 +57,7 @@ function sumOfSquares(n) {
 ```js
 function sumOfSquares(n) {
   let total = 1;
-  for(let i = 2; i <= endpoint; i++) {
+  for(let i = 2; i <= n; i++) {
       total += i * i;
   }
   return total;

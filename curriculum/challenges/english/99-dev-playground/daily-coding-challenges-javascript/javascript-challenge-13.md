@@ -20,34 +20,52 @@ Given an integer, determine if that number is a prime number or a negative prime
 assert.isFalse(isUnnaturalPrime(1));
 ```
 
-`isUnnaturalPrime(1)` should return `false`.
+`isUnnaturalPrime(-1)` should return `false`.
 
 ```js
-assert.isFalse(isUnnaturalPrime(1));
+assert.isFalse(isUnnaturalPrime(-1));
 ```
 
-`isUnnaturalPrime(1)` should return `false`.
+`isUnnaturalPrime(19)` should return `true`.
 
 ```js
-assert.isFalse(isUnnaturalPrime(1));
+assert.isTrue(isUnnaturalPrime(19));
 ```
 
-`isUnnaturalPrime(1)` should return `false`.
+`isUnnaturalPrime(-23)` should return `true`.
 
 ```js
-assert.isFalse(isUnnaturalPrime(1));
+assert.isTrue(isUnnaturalPrime(-23));
 ```
 
-`isUnnaturalPrime(1)` should return `false`.
+`isUnnaturalPrime(0)` should return `false`.
 
 ```js
-assert.isFalse(isUnnaturalPrime(1));
+assert.isFalse(isUnnaturalPrime(0));
 ```
 
-`isUnnaturalPrime(1)` should return `false`.
+`isUnnaturalPrime(97)` should return `true`.
 
 ```js
-assert.isFalse(isUnnaturalPrime(1));
+assert.isTrue(isUnnaturalPrime(97));
+```
+
+`isUnnaturalPrime(-61)` should return `true`.
+
+```js
+assert.isTrue(isUnnaturalPrime(-61));
+```
+
+`isUnnaturalPrime(-61)` should return `false`.
+
+```js
+assert.isFalse(isUnnaturalPrime(99));
+```
+
+`isUnnaturalPrime(-44)` should return `false`.
+
+```js
+assert.isFalse(isUnnaturalPrime(-44));
 ```
 
 # --seed--
@@ -65,7 +83,14 @@ function isUnnaturalPrime(n) {
 
 ```js
 function isUnnaturalPrime(n) {
+  const abs = Math.abs(n);
 
-  return n;
+  if (abs <= 1) return false;
+
+  for (let i = 2; i <= Math.sqrt(abs); i++) {
+    if (abs % i === 0) return false;
+  }
+
+  return true;
 }
 ```

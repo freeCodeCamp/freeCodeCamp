@@ -53,8 +53,9 @@ def factorial(n):
 # --solutions--
 
 ```py
-from math import prod
 def factorial(n):
-
-    return prod(range(1, n+1))
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
 ```
