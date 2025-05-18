@@ -8,50 +8,51 @@ dashedName: catch-arguments-passed-in-the-wrong-order-when-calling-a-function
 
 # --description--
 
-Continuing the discussion on calling functions, the next bug to watch out for is when a function's arguments are supplied in the incorrect order. If the arguments are different types, such as a function expecting an array and an integer, this will likely throw a runtime error. If the arguments are the same type (all integers, for example), then the logic of the code won't make sense. Make sure to supply all required arguments, in the proper order to avoid these issues.
+When calling a function, the order of arguments matters. Imagine a function `sendEmail(to, subject)` — calling it as `sendEmail("Hello", "john@example.com")` would swap the subject and recipient, leading to confusion.
+
+The same concept applies in programming. If you pass arguments in the wrong order, the result may be logically incorrect or completely break your program — especially if the argument types are similar.
+
+This challenge will help you recognize and fix argument order mistakes in function calls.
 
 # --instructions--
 
-The function `raiseToPower` raises a base to an exponent. Unfortunately, it's not called properly - fix the code so the value of `power` is the expected 8.
+The function `raiseToPower(base, exponent)` should return `base` raised to the power of `exponent`.
+
+Currently, it is being called incorrectly. Fix the function call so `power` equals 8, which is `2` raised to the 3rd power.
+
+Be sure the values are passed in the correct order.
 
 # --hints--
 
-Your code should fix the variable `power` so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.
+Your code should correctly set `power` to 8 using the variables `base` and `exp`.
 
 ```js
-assert(power == 8);
-```
+assert(power === 8);
+You should call raiseToPower with base as the first argument and exp as the second.
+assert(/raiseToPower\s*\(\s*base\s*,\s*exp\s*\)/.test(__helpers removeJSComments(code)));
 
-Your code should use the correct order of the arguments for the `raiseToPower` function call.
+--seed--
+--seed-contents--
 
-```js
-assert(__helpers.removeJSComments(code).match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
-```
-
-# --seed--
-
-## --seed-contents--
-
-```js
-function raiseToPower(b, e) {
-  return Math.pow(b, e);
+function raiseToPower(base, exponent) {
+  return Math.pow(base, exponent);
 }
 
 let base = 2;
 let exp = 3;
-let power = raiseToPower(exp, base);
-console.log(power);
-```
 
-# --solutions--
-
-```js
-function raiseToPower(b, e) {
- return Math.pow(b, e);
-}
-
-let base = 2;
-let exp = 3;
 let power = raiseToPower(base, exp);
-console.log(power);
-```
+
+console.log(`${base}^${exp} =`, power); // should print: 2^3 = 8
+
+--solutions--
+
+function raiseToPower(base, exponent) {
+  return Math.pow(base, exponent);
+}
+
+let base = 2;
+let exp = 3;
+
+let power = raiseToPower(base, exp);
+console.log(`${base}^${exp} =`, power); // 2^3 = 8
