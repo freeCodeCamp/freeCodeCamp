@@ -1833,7 +1833,7 @@
         ]
       },
       "lecture-welcome-to-freecodecamp": {
-        "title": "Welcome message from Quincy Larson",
+        "title": "Welcome Message from Quincy Larson",
         "intro": [
           "Hear from Quincy Larson, the founder and teacher of freeCodeCamp.",
           "Quincy will welcome you to the platform and talk about how the certification works. Quincy will also provide tips on how to learn effectively."
@@ -1847,7 +1847,7 @@
         ]
       },
       "lecture-what-is-html": {
-        "title": "Understanding HTML attributes and the HTML boilerplate",
+        "title": "Understanding HTML Attributes and the HTML Boilerplate",
         "intro": [
           "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
           "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."

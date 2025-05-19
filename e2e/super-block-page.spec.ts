@@ -163,7 +163,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       // What is HTML block
       await expect(
         page.getByRole('button', {
-          name: /Lecture What is HTML/
+          name: /Lecture Understanding HTML Attributes and the HTML Boilerplate/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -183,7 +183,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       // First module
       await expect(
         page.getByRole('button', {
-          name: /Basic HTML/
+          name: /Basic HTML \d+ of \d+ steps complete/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
@@ -258,7 +258,7 @@ test.describe('Super Block Page - Unauthenticated User', () => {
       // First module
       await expect(
         page.getByRole('button', {
-          name: 'Basic HTML'
+          name: /Basic HTML \d+ of \d+ steps complete/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
