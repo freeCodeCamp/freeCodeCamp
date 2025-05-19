@@ -277,7 +277,8 @@ export const superBlockToCertMap: {
   [SuperBlocks.CodingInterviewPrep]: null,
   [SuperBlocks.ProjectEuler]: null,
   [SuperBlocks.TheOdinProject]: null,
-  [SuperBlocks.RosettaCode]: null
+  [SuperBlocks.RosettaCode]: null,
+  [SuperBlocks.DevPlayground]: null
 };
 
 export type CertSlug = (typeof Certification)[keyof typeof Certification];
