@@ -3,6 +3,7 @@ import { ObjectId } from 'mongodb';
 import _ from 'lodash';
 import { FastifyInstance, FastifyReply } from 'fastify';
 import jwt from 'jsonwebtoken';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 import * as schemas from '../../schemas';
 import { createResetProperties } from '../../utils/create-user';
@@ -84,9 +85,24 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       await fastify.prisma.survey.deleteMany({
         where: { userId: req.user!.id }
       });
-      await fastify.prisma.user.delete({
-        where: { id: req.user!.id }
-      });
+      try {
+        await fastify.prisma.user.delete({
+          where: { id: req.user!.id }
+        });
+      } catch (err) {
+        if (
+          err instanceof PrismaClientKnownRequestError &&
+          err.code === 'P2025'
+        ) {
+          logger.warn(
+            err,
+            `User with id ${req.user?.id} not found for deletion.`
+          );
+        } else {
+          logger.error(err, 'Error deleting user account');
+          throw err;
+        }
+      }
       reply.clearOurCookies();
 
       return {};

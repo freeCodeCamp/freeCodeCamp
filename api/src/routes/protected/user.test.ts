@@ -464,6 +464,55 @@ describe('userRoutes', () => {
         expect(countAfter).toBe(0);
         expect(res.status).toBe(200);
       });
+
+      test('handles concurrent requests to delete the same user', async () => {
+        const deletePromises = Array.from({ length: 2 }, () =>
+          superPost('/account/delete')
+        );
+
+        const responses = await Promise.all(deletePromises);
+
+        const userCount = await fastifyTestInstance.prisma.user.count({
+          where: { email: testUserData.email }
+        });
+        responses.forEach(response => {
+          expect(response.status).toBe(200);
+          expect(response.body).toStrictEqual({});
+        });
+        expect(userCount).toBe(0);
+      });
+
+      test("only deletes the logged in user's data", async () => {
+        await fastifyTestInstance.prisma.user.create({
+          data: {
+            ...testUserData,
+            email: 'an.random@user'
+          }
+        });
+        expect(await fastifyTestInstance.prisma.user.count()).toBe(2);
+
+        await superPost('/account/delete');
+
+        const userCount = await fastifyTestInstance.prisma.user.count();
+        expect(userCount).toBe(1);
+      });
+
+      test('logs if it is asked to delete a non-existent user', async () => {
+        const spy = jest.spyOn(fastifyTestInstance.log, 'warn');
+
+        const deletePromises = Array.from({ length: 2 }, () =>
+          superPost('/account/delete')
+        );
+
+        await Promise.all(deletePromises);
+
+        expect(spy).toHaveBeenCalledTimes(1);
+        expect(spy.mock.calls[0]).toEqual(
+          expect.arrayContaining([
+            `User with id ${defaultUserId} not found for deletion.`
+          ])
+        );
+      });
     });
 
     describe('/account/reset-progress', () => {
