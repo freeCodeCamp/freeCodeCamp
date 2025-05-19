@@ -25,17 +25,12 @@ assert(typeof rms === 'function');
 `rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])` should equal `6.2048368229954285`.
 
 ```js
+const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const answer1 = 6.2048368229954285;
 assert.equal(rms(arr1), answer1);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const answer1 = 6.2048368229954285;
-```
 
 ## --seed-contents--
 

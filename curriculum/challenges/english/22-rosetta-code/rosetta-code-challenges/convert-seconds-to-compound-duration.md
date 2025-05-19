@@ -61,29 +61,22 @@ assert(typeof convertSeconds === 'function');
 `convertSeconds(7259)` should return `2 hr, 59 sec`.
 
 ```js
-assert.equal(convertSeconds(testCases[0]), results[0]);
+assert.equal(convertSeconds(7259), '2 hr, 59 sec');
 ```
 
 `convertSeconds(86400)` should return `1 d`.
 
 ```js
-assert.equal(convertSeconds(testCases[1]), results[1]);
+assert.equal(convertSeconds(86400), '1 d');
 ```
 
 `convertSeconds(6000000)` should return `9 wk, 6 d, 10 hr, 40 min`.
 
 ```js
-assert.equal(convertSeconds(testCases[2]), results[2]);
+assert.equal(convertSeconds(6000000), '9 wk, 6 d, 10 hr, 40 min');
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const testCases = [7259, 86400, 6000000];
-const results = ['2 hr, 59 sec', '1 d', '9 wk, 6 d, 10 hr, 40 min'];
-```
 
 ## --seed-contents--
 

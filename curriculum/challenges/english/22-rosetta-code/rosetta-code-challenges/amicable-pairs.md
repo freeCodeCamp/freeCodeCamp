@@ -36,32 +36,24 @@ assert(typeof amicablePairsUpTo === 'function');
 `amicablePairsUpTo(300)` should return `[[220,284]]`.
 
 ```js
+const answer300 = [[220, 284]];
 assert.deepEqual(amicablePairsUpTo(300), answer300);
 ```
 
 `amicablePairsUpTo(3000)` should return `[[220,284],[1184,1210],[2620,2924]]`.
 
 ```js
+const answer3000 = [
+  [220, 284],
+  [1184, 1210],
+  [2620, 2924]
+];
 assert.deepEqual(amicablePairsUpTo(3000), answer3000);
 ```
 
 `amicablePairsUpTo(20000)` should return `[[220,284],[1184,1210],[2620,2924],[5020,5564],[6232,6368],[10744,10856],[12285,14595],[17296,18416]]`.
 
 ```js
-assert.deepEqual(amicablePairsUpTo(20000), answer20000);
-```
-
-# --seed--
-
-## --after-user-code--
-
-```js
-const answer300 = [[220, 284]];
-const answer3000 = [
-  [220, 284],
-  [1184, 1210],
-  [2620, 2924]
-];
 const answer20000 = [
   [220, 284],
   [1184, 1210],
@@ -72,7 +64,10 @@ const answer20000 = [
   [12285, 14595],
   [17296, 18416]
 ];
+assert.deepEqual(amicablePairsUpTo(20000), answer20000);
 ```
+
+# --seed--
 
 ## --seed-contents--
 

@@ -49,15 +49,8 @@ assert(typeof pythagoreanMeans === 'function');
 `pythagoreanMeans([1, 2, ..., 10])` should equal the same output above.
 
 ```js
-assert.deepEqual(pythagoreanMeans(range1), answer1);
-```
-
-# --seed--
-
-## --after-user-code--
-
-```js
 const range1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
 const answer1 = {
   values: {
     Arithmetic: 5.5,
@@ -66,7 +59,10 @@ const answer1 = {
   },
   test: 'is A >= G >= H ? yes'
 };
+assert.deepEqual(pythagoreanMeans(range1), answer1);
 ```
+
+# --seed--
 
 ## --seed-contents--
 

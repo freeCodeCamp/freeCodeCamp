@@ -49,35 +49,28 @@ assert(typeof quibble(['ABC']) === 'string');
 `quibble([])` should return "{}".
 
 ```js
-assert.equal(quibble(testCases[0]), results[0]);
+assert.equal(quibble([]), "{}");
 ```
 
 `quibble(["ABC"])` should return `"{ABC}"`.
 
 ```js
-assert.equal(quibble(testCases[1]), results[1]);
+assert.equal(quibble(["ABC"]), "{ABC}");
 ```
 
 `quibble(["ABC", "DEF"])` should return `"{ABC and DEF}"`.
 
 ```js
-assert.equal(quibble(testCases[2]), results[2]);
+assert.equal(quibble(["ABC", "DEF"]), "{ABC and DEF}");
 ```
 
 `quibble(["ABC", "DEF", "G", "H"])` should return `"{ABC, DEF, G and H}"`.
 
 ```js
-assert.equal(quibble(testCases[3]), results[3]);
+assert.equal(quibble(["ABC", "DEF", "G", "H"]), "{ABC, DEF, G and H}");
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const testCases = [[], ["ABC"], ["ABC", "DEF"], ["ABC", "DEF", "G", "H"]];
-const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC, DEF, G and H}"];
-```
 
 ## --seed-contents--
 

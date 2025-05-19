@@ -38,70 +38,64 @@ assert(typeof azSorted === 'function');
 `allEqual(["AA", "AA", "AA", "AA"])` should return true.
 
 ```js
-assert(allEqual(testCases[0]));
+assert(allEqual(['AA', 'AA', 'AA', 'AA']));
 ```
 
 `azSorted(["AA", "AA", "AA", "AA"])` should return false.
 
 ```js
-assert(!azSorted(testCases[0]));
+assert(!azSorted(["AA", "AA", "AA", "AA"]));
 ```
 
 `allEqual(["AA", "ACB", "BB", "CC"])` should return false.
 
 ```js
-assert(!allEqual(testCases[1]));
+assert(!allEqual(["AA", "ACB", "BB", "CC"]));
 ```
 
 `azSorted(["AA", "ACB", "BB", "CC"])` should return true.
 
 ```js
-assert(azSorted(testCases[1]));
+assert(azSorted(["AA", "ACB", "BB", "CC"]));
 ```
 
 `allEqual([])` should return true.
 
 ```js
-assert(allEqual(testCases[2]));
+assert(allEqual([]));
 ```
 
 `azSorted([])` should return true.
 
 ```js
-assert(azSorted(testCases[2]));
+assert(azSorted([]));
 ```
 
 `allEqual(["AA"])` should return true.
 
 ```js
-assert(allEqual(testCases[3]));
+assert(allEqual(["AA"]));
 ```
 
 `azSorted(["AA"])` should return true.
 
 ```js
-assert(azSorted(testCases[3]));
+assert(azSorted(["AA"]));
 ```
 
 `allEqual(["BB", "AA"])` should return false.
 
 ```js
-assert(!allEqual(testCases[4]));
+assert(!allEqual(["BB", "AA"]));
 ```
 
 `azSorted(["BB", "AA"])` should return false.
 
 ```js
-assert(!azSorted(testCases[4]));
+assert(!azSorted(["BB", "AA"]));
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const testCases = [['AA', 'AA', 'AA', 'AA'], ['AA', 'ACB', 'BB', 'CC'], [], ['AA'], ['BB', 'AA']];
-```
 
 ## --seed-contents--
 

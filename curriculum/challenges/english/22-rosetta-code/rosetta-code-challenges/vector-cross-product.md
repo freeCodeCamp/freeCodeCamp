@@ -31,19 +31,14 @@ assert.equal(crossProduct(), null);
 `crossProduct([1, 2, 3], [4, 5, 6])` should return `[-3, 6, -3]`.
 
 ```js
-assert.deepEqual(res12, exp12);
-```
-
-# --seed--
-
-## --after-user-code--
-
-```js
 const tv1 = [1, 2, 3];
 const tv2 = [4, 5, 6];
 const res12 = crossProduct(tv1, tv2);
 const exp12 = [-3, 6, -3];
+assert.deepEqual(res12, exp12);
 ```
+
+# --seed--
 
 ## --seed-contents--
 

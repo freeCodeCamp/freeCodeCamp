@@ -6,31 +6,6 @@ forumTopicId: 302230
 dashedName: balanced-brackets
 ---
 
-# --before-all--
-
-```js
-const testCases = [
-  '[]',
-  ']][[[][][][]][',
-  '[][[[[][][[[]]]]]]',
-  '][',
-  '[[[]]]][[]',
-  '][[]',
-  '][[][]][[[]]',
-  '[[][]]][',
-  '[[[]]][[]]]][][[',
-  '[]][[]]][[[[][]]',
-  '][]][[][',
-  '[[]][[][]]',
-  '[[]]',
-  ']][]][[]][[[',
-  '][]][][[',
-  '][][',
-  '[]]]',
-  ''
-];
-```
-
 # --description--
 
 Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
@@ -56,109 +31,109 @@ assert(typeof isBalanced === 'function');
 `isBalanced("[]")` should return true.
 
 ```js
-assert(isBalanced(testCases[0]));
+assert(isBalanced("[]"));
 ```
 
 `isBalanced("]][[[][][][]][")` should return false.
 
 ```js
-assert(!isBalanced(testCases[1]));
+assert(!isBalanced("]][[[][][][]]["));
 ```
 
 `isBalanced("[][[[[][][[[]]]]]]")` should return true.
 
 ```js
-assert(isBalanced(testCases[2]));
+assert(isBalanced('[][[[[][][[[]]]]]]'));
 ```
 
 `isBalanced("][")` should return false.
 
 ```js
-assert(!isBalanced(testCases[3]));
+assert(!isBalanced("]["));
 ```
 
 `isBalanced("[[[]]]][[]")` should return false.
 
 ```js
-assert(!isBalanced(testCases[4]));
+assert(!isBalanced("[[[]]]][[]"));
 ```
 
 `isBalanced("][[]")` should return false.
 
 ```js
-assert(!isBalanced(testCases[5]));
+assert(!isBalanced("][[]"));
 ```
 
 `isBalanced("][[][]][[[]]")` should return false.
 
 ```js
-assert(!isBalanced(testCases[6]));
+assert(!isBalanced("][[][]][[[]]"));
 ```
 
 `isBalanced("[[][]]][")` should return false.
 
 ```js
-assert(!isBalanced(testCases[7]));
+assert(!isBalanced("[[][]]]["));
 ```
 
 `isBalanced("[[[]]][[]]]][][[")` should return false.
 
 ```js
-assert(!isBalanced(testCases[8]));
+assert(!isBalanced("[[[]]][[]]]][][["));
 ```
 
 `isBalanced("[]][[]]][[[[][]]")` should return false.
 
 ```js
-assert(!isBalanced(testCases[9]));
+assert(!isBalanced("[]][[]]][[[[][]]"));
 ```
 
 `isBalanced("][]][[][")` should return false.
 
 ```js
-assert(!isBalanced(testCases[10]));
+assert(!isBalanced("][]][[]["));
 ```
 
 `isBalanced("[[]][[][]]")` should return true.
 
 ```js
-assert(isBalanced(testCases[11]));
+assert(isBalanced("[[]][[][]]"));
 ```
 
 `isBalanced("[[]]")` should return true.
 
 ```js
-assert(isBalanced(testCases[12]));
+assert(isBalanced("[[]]"));
 ```
 
 `isBalanced("]][]][[]][[[")` should return false.
 
 ```js
-assert(!isBalanced(testCases[13]));
+assert(!isBalanced("]][]][[]][[["));
 ```
 
 `isBalanced("][]][][[")` should return false.
 
 ```js
-assert(!isBalanced(testCases[14]));
+assert(!isBalanced("][]][][["));
 ```
 
 `isBalanced("][][")` should return false.
 
 ```js
-assert(!isBalanced(testCases[15]));
+assert(!isBalanced("][]["));
 ```
 
 `isBalanced("[]]]")` should return false.
 
 ```js
-assert(!isBalanced(testCases[16]));
+assert(!isBalanced("[]]]"));
 ```
 
 `isBalanced("")` should return true.
 
 ```js
-assert(isBalanced(testCases[17]));
+assert(isBalanced(""));
 ```
 
 # --seed--
