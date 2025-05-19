@@ -1998,7 +1998,7 @@
         "title": "Build a Checkout Page",
         "intro": [
           "In this lab, you'll create an accessible checkout page.",
-          "You'll practice concepts like <code>alt</code> attributes and aria roles."
+          "You'll practice concepts like <code>alt</code> attributes and ARIA roles."
         ]
       },
       "lab-movie-review-page": {
