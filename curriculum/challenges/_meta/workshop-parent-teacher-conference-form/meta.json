@@ -1,0 +1,12 @@
+{
+  "name": "Build a Parent Teacher Conference Form",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "dashedName": "workshop-parent-teacher-conference-form",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "682b5e4426902e82d5395ae6", "title": "Step 1" }],
+  "helpCategory": "HTML-CSS"
+}
