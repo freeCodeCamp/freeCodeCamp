@@ -94,5 +94,9 @@ export const superBlockList = [
   {
     name: 'A2 Professional Spanish (Beta)',
     path: '26-a2-professional-spanish'
+  },
+  {
+    name: 'A2 Professional Chinese (Beta)',
+    path: '26-a2-professional-chinese'
   }
 ];

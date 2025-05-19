@@ -30,6 +30,7 @@ export enum Certification {
   A2English = 'a2-english-for-developers-v8',
   B1English = 'b1-english-for-developers-v8',
   A2Spanish = 'a2-professional-spanish-v8',
+  A2Chinese = 'a2-professional-chinese-v8',
   // Legacy certifications
   LegacyFrontEnd = 'legacy-front-end',
   JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
@@ -273,6 +274,7 @@ export const superBlockToCertMap: {
   [SuperBlocks.A2English]: Certification.A2English,
   [SuperBlocks.B1English]: Certification.B1English,
   [SuperBlocks.A2Spanish]: Certification.A2Spanish,
+  [SuperBlocks.A2Chinese]: Certification.A2Chinese,
   [SuperBlocks.PythonForEverybody]: null,
   [SuperBlocks.CodingInterviewPrep]: null,
   [SuperBlocks.ProjectEuler]: null,

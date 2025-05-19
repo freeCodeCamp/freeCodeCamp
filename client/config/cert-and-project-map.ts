@@ -36,6 +36,7 @@ const fullStackDeveloperBase = '/learn/full-stack-developer';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
 const a2SpanishBase = '/learn/a2-professional-spanish';
+const a2ChineseBase = '/learn/a2-professional-chinese';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -848,6 +849,20 @@ const allStandardCerts = [
         link: `${a2SpanishBase}/talk-about-who-you-are-by-using-key-verbs
 /text-1`,
         certSlug: Certification.A2Spanish
+      }
+    ]
+  },
+  {
+    id: '681a6b22e5a782fe3459984a',
+    title: 'A2 Professional Chinese',
+    certSlug: Certification.A2Chinese,
+    projects: [
+      {
+        id: '681a8796e5a782fe3459984b',
+        title: 'Dialogue 1: PLACEHOLDER',
+        link: `${a2ChineseBase}/talk-about-what-you-do-by-using-key-verbs
+/text-1`,
+        certSlug: Certification.A2Chinese
       }
     ]
   }
