@@ -101,7 +101,7 @@ model user {
   donationEmails                 String[] // Undefined | String[] (only possible for built in Types like String)
   email                          String
   emailAuthLinkTTL               DateTime? // Null | Undefined
-  emailVerified                  Boolean
+  emailVerified                  Boolean?
   emailVerifyTTL                 DateTime? // Null | Undefined
   externalId                     String
   githubProfile                  String? // Undefined
