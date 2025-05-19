@@ -5,7 +5,9 @@ import readdirp from 'readdirp';
 
 import {
   chapterBasedSuperBlocks,
-  SuperBlocks
+  SuperBlocks,
+  SuperBlockStage,
+  superBlockStages
 } from '../../../shared/config/curriculum';
 import {
   superblockSchemaValidator,
@@ -201,24 +203,25 @@ ${result.error.message}`);
   });
 
   test('All public SuperBlocks should be present in the SuperBlock object', () => {
-    const publicSuperBlockNames = Object.values(SuperBlocks);
-
-    const superBlockDashedNames = Object.keys(orderedSuperBlockInfo).reduce(
-      (acc, superBlockStage) => {
-        const dashedNames = orderedSuperBlockInfo[superBlockStage].map(
-          superBlock => superBlock.dashedName
-        );
-        acc.push(...dashedNames);
-
-        return acc;
-      },
-      [] as SuperBlocks[]
+    const stages = Object.keys(orderedSuperBlockInfo).map(
+      key => Number(key) as SuperBlockStage
     );
 
-    expect(superBlockDashedNames).toEqual(
-      expect.arrayContaining(publicSuperBlockNames)
-    );
-    expect(superBlockDashedNames).toHaveLength(publicSuperBlockNames.length);
+    expect(stages).not.toContain(SuperBlockStage.Next);
+    expect(stages).not.toContain(SuperBlockStage.Upcoming);
+
+    for (const stage of stages) {
+      const superBlockDashedNames = orderedSuperBlockInfo[stage].map(
+        superBlock => superBlock.dashedName
+      );
+
+      expect(superBlockDashedNames).toEqual(
+        expect.arrayContaining(superBlockStages[stage])
+      );
+      expect(superBlockDashedNames).toHaveLength(
+        superBlockStages[stage].length
+      );
+    }
   });
 
   test('challenge files should be created and in the correct directory', () => {
