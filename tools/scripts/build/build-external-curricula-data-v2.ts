@@ -103,11 +103,6 @@ export const orderedSuperBlockInfo: Record<
       dashedName: SuperBlocks.B1English,
       public: true,
       title: intros[SuperBlocks.B1English].title
-    },
-    {
-      dashedName: SuperBlocks.A2Spanish,
-      public: false,
-      title: intros[SuperBlocks.A2Spanish].title
     }
   ],
 
@@ -217,6 +212,14 @@ export const orderedSuperBlockInfo: Record<
       dashedName: SuperBlocks.FoundationalCSharp,
       public: false,
       title: intros[SuperBlocks.FoundationalCSharp].title
+    }
+  ],
+
+  [SuperBlockStage.Upcoming]: [
+    {
+      dashedName: SuperBlocks.A2Spanish,
+      public: false,
+      title: intros[SuperBlocks.A2Spanish].title
     }
   ]
 };
