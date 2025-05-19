@@ -612,6 +612,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         const [flags, rest] = splitUser(user);
 
         const {
+          emailVerified,
           username,
           usernameDisplay,
           completedChallenges,
@@ -639,13 +640,14 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               calendar: getCalendar(
                 progressTimestamps as ProgressTimestamp[] | null
               ),
+              emailVerified: !!emailVerified,
               // This assertion is necessary until the database is normalized.
               points: getPoints(
                 progressTimestamps as ProgressTimestamp[] | null
               ),
               profileUI: normalizeProfileUI(profileUI),
               // TODO(Post-MVP) remove this and just use emailVerified
-              isEmailVerified: user.emailVerified,
+              isEmailVerified: !!emailVerified,
               joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
               location: location ?? '',
               name: name ?? '',
