@@ -1521,7 +1521,6 @@ const duplicatedProjectIds = [
 
   // Merge sort
   '655cd899f8de09431eabb40c',
-  '6564a9fe51964c229d5b7f4c',
   '6564aee9c077774ea49c3faf',
   '656627b47bd2d2a4afbc945d',
   '657f3a661730891aa64f3568',
