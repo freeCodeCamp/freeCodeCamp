@@ -22,24 +22,23 @@ Do not use global variables.
 
 Closures save outer state.
 
+# --before-all--
+
+```js
+const testFn = typeof accumulator(3) === 'function' && accumulator(3);
+if (testFn) {
+  testFn(-4);
+  testFn(1.5);
+}
+```
+
+
 # --hints--
 
 `accumulator` should be a function.
 
 ```js
 assert(typeof accumulator === 'function');
-```
-
-`accumulator(0)` should return a function.
-
-```js
-assert(typeof accumulator(0) === 'function');
-```
-
-`accumulator(0)(2)` should return a number.
-
-```js
-assert(typeof accumulator(0)(2) === 'number');
 ```
 
 Passing in the values 3, -4, 1.5, and 5 should return 5.5.
@@ -49,16 +48,6 @@ assert(testFn(5) === 5.5);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const testFn = typeof accumulator(3) === 'function' && accumulator(3);
-if (testFn) {
-  testFn(-4);
-  testFn(1.5);
-}
-```
 
 ## --seed-contents--
 

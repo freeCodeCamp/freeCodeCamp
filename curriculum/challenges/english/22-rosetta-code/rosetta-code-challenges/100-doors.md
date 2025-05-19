@@ -31,16 +31,11 @@ assert(Array.isArray(getFinalOpenedDoors(100)));
 `getFinalOpenedDoors` should produce the correct result.
 
 ```js
+const solution = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
 assert.deepEqual(getFinalOpenedDoors(100), solution);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const solution = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
-```
 
 ## --seed-contents--
 

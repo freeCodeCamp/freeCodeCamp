@@ -31,41 +31,7 @@ Implement a function that takes a string of four digits as its argument, with ea
 | <code>solve24("6789");</code> | <code>(6\*8)/(9-7)</code> |
 | <code>solve24("1127");</code> | <code>(1+7)\*(2+1)</code> |
 
-# --hints--
-
-`solve24` should be a function.
-
-```js
-assert(typeof solve24 === 'function');
-```
-
-`solve24("4878")` should return `(7-8/8)*4`, `4*(7-8/8)`, or a similar valid string
-
-```js
-assert(isValidSolution_(solve24(testCases_[0])));
-```
-
-`solve24("1234")` should return `1*2*3*4` or a similar valid string
-
-```js
-assert(isValidSolution_(solve24(testCases_[1])));
-```
-
-`solve24("6789")` should return `(6*8)/(9-7)`, `(8*6)/(9-7)`, or a similar valid string
-
-```js
-assert(isValidSolution_(solve24(testCases_[2])));
-```
-
-`solve24("1127")` should return `(1+7)*(1+2)` or a similar valid string
-
-```js
-assert(isValidSolution_(solve24(testCases_[3])));
-```
-
-# --seed--
-
-## --after-user-code--
+# --before-all--
 
 ```js
 const testCases_ = [
@@ -165,6 +131,40 @@ function isValidSolution_(userSolution) {
   return evaluate_(userSolution) === 24;
 }
 ```
+
+# --hints--
+
+`solve24` should be a function.
+
+```js
+assert(typeof solve24 === 'function');
+```
+
+`solve24("4878")` should return `(7-8/8)*4`, `4*(7-8/8)`, or a similar valid string
+
+```js
+assert(isValidSolution_(solve24(testCases_[0])));
+```
+
+`solve24("1234")` should return `1*2*3*4` or a similar valid string
+
+```js
+assert(isValidSolution_(solve24(testCases_[1])));
+```
+
+`solve24("6789")` should return `(6*8)/(9-7)`, `(8*6)/(9-7)`, or a similar valid string
+
+```js
+assert(isValidSolution_(solve24(testCases_[2])));
+```
+
+`solve24("1127")` should return `(1+7)*(1+2)` or a similar valid string
+
+```js
+assert(isValidSolution_(solve24(testCases_[3])));
+```
+
+# --seed--
 
 ## --seed-contents--
 

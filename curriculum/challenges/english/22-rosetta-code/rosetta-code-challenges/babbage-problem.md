@@ -34,18 +34,10 @@ assert(typeof babbage === 'function');
 `babbage(99736, 269696)` should not return 99736 (there is a smaller answer).
 
 ```js
-assert.equal(babbage(babbageAns, endDigits), answer);
+assert.equal(babbage(99736, 269696), 25264);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const babbageAns = 99736;
-const endDigits = 269696;
-const answer = 25264;
-```
 
 ## --seed-contents--
 
