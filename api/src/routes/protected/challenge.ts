@@ -963,7 +963,7 @@ async function postCoderoadChallengeCompleted(
       };
 
       await this.prisma.user.update({
-        where: { id: req.user?.id },
+        where: { id: userId },
         data: {
           partiallyCompletedChallenges: uniqBy(
             [finalChallenge, ...partiallyCompletedChallenges],
@@ -981,7 +981,7 @@ async function postCoderoadChallengeCompleted(
     // TODO(Post-MVP): don't catch, just let Sentry handle this.
     logger.error(error, 'Error submitting coderoad challenge');
     this.Sentry.captureException(error);
-    void reply.code(400);
+    void reply.code(500);
     return reply.send({
       type: 'error',
       msg: 'An error occurred trying to submit the challenge'
