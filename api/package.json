@@ -75,10 +75,11 @@
     "test-with-logging": "FCC_ENABLE_TEST_LOGGING=true pnpm run test",
     "prisma": "dotenv -e ../.env prisma",
     "postinstall": "prisma generate",
-    "generate-exams": "tsx tools/exam-environment/generate/index.ts",
-    "deprecate-exam": "tsx tools/exam-environment/generate/deprecate.ts",
-    "insert-exam": "tsx tools/exam-environment/generate/insert.ts",
-    "seed:env-exam": "tsx tools/exam-environment/seed/index.ts"
+    "exam-env:generate": "tsx tools/exam-environment/generate/index.ts",
+    "exam-env:generate:deprecate": "tsx tools/exam-environment/generate/deprecate.ts",
+    "exam-env:generate:insert": "tsx tools/exam-environment/generate/insert.ts",
+    "exam-env:seed": "tsx tools/exam-environment/seed/index.ts",
+    "exam-env:test": "tsx tools/exam-environment/test/index.ts"
   },
   "version": "0.0.1"
 }
