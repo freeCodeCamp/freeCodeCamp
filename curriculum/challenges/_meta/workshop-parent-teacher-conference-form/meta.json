@@ -7,6 +7,51 @@
   "blockLayout": "challenge-grid",
   "dashedName": "workshop-parent-teacher-conference-form",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "682b5e4426902e82d5395ae6", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "682b5e4426902e82d5395ae6",
+      "title": "Step 1"
+    },
+    {
+      "id": "682b660fc01c7d08a7e686e8",
+      "title": "Step 2"
+    },
+    {
+      "id": "682b67fa52233e0db91eb24d",
+      "title": "Step 3"
+    },
+    {
+      "id": "682b6ed4fc6724107bed6cce",
+      "title": "Step 4"
+    },
+    {
+      "id": "682b70b753f55e11e55b3b3b",
+      "title": "Step 5"
+    },
+    {
+      "id": "682b7958b95e2c15e9509d7f",
+      "title": "Step 6"
+    },
+    {
+      "id": "682b842d83a5b81ad0607435",
+      "title": "Step 7"
+    },
+    {
+      "id": "682b8975f5fb611d32b6bbb3",
+      "title": "Step 8"
+    },
+    {
+      "id": "682b8bcc7119651ea96fd5cf",
+      "title": "Step 9"
+    },
+    {
+      "id": "682b8dcac698311f81552da4",
+      "title": "Step 10"
+    },
+    {
+      "id": "682b94c8db82ed229cac60df",
+      "title": "Step 11"
+    }
+  ],
   "helpCategory": "HTML-CSS"
 }
