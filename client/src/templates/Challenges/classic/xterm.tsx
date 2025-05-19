@@ -1,6 +1,7 @@
 import React, { MutableRefObject, useEffect, useRef } from 'react';
 import type { IDisposable, Terminal } from 'xterm';
 import type { FitAddon } from 'xterm-addon-fit';
+import { useTranslation } from 'react-i18next';
 
 import { registerTerminal } from '../utils/python-worker-handler';
 
@@ -23,6 +24,7 @@ export const XtermTerminal = ({
   dimensions?: { height: number; width: number };
 }) => {
   const termContainerRef = useRef<HTMLDivElement | null>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     void registerServiceWorker();
@@ -49,6 +51,12 @@ export const XtermTerminal = ({
       const termContainerDiv =
         termContainerRef.current?.querySelector('.xterm');
       const outputForScreenReader = document.createElement('div');
+
+      outputForScreenReader.setAttribute('role', 'region');
+      outputForScreenReader.setAttribute(
+        'aria-label',
+        t('aria.terminal-output')
+      );
       outputForScreenReader.classList.add('sr-only');
       termContainerDiv?.appendChild(outputForScreenReader);
 
@@ -117,7 +125,7 @@ export const XtermTerminal = ({
     return () => {
       term?.dispose();
     };
-  }, [xtermFitRef]);
+  }, [xtermFitRef, t]);
 
   useEffect(() => {
     if (xtermFitRef.current) xtermFitRef.current.fit();
