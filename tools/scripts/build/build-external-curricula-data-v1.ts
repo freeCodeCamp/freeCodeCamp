@@ -47,7 +47,6 @@ export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.TheOdinProject, public: true },
   { dashedName: SuperBlocks.RespWebDesign, public: true },
   { dashedName: SuperBlocks.PythonForEverybody, public: true },
-  { dashedName: SuperBlocks.A2Spanish, public: false },
   { dashedName: SuperBlocks.FullStackDeveloper, public: false },
   { dashedName: SuperBlocks.JsAlgoDataStructNew, public: false },
   { dashedName: SuperBlocks.FrontEndDevLibs, public: false },

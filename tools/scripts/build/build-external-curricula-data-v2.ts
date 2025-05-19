@@ -213,14 +213,6 @@ export const orderedSuperBlockInfo: Record<
       public: false,
       title: intros[SuperBlocks.FoundationalCSharp].title
     }
-  ],
-
-  [SuperBlockStage.Upcoming]: [
-    {
-      dashedName: SuperBlocks.A2Spanish,
-      public: false,
-      title: intros[SuperBlocks.A2Spanish].title
-    }
   ]
 };
 
