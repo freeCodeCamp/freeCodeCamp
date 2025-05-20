@@ -853,12 +853,12 @@ const allStandardCerts = [
     ]
   },
   {
-    id: '681a6b22e5a782fe3459984a',
+    id: '682c3153086dd7cabe7f48bc',
     title: 'A2 Professional Chinese',
     certSlug: Certification.A2Chinese,
     projects: [
       {
-        id: '681a8796e5a782fe3459984b',
+        id: '682c2753317b88f1ecdad894',
         title: 'Dialogue 1: PLACEHOLDER',
         link: `${a2ChineseBase}/talk-about-what-you-do-by-using-key-verbs
 /text-1`,

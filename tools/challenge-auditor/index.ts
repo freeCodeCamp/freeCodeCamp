@@ -56,7 +56,7 @@ const superBlockFolderMap = {
   'b1-english-for-developers': '24-b1-english-for-developers',
   'full-stack-developer': '25-front-end-development',
   'a2-professional-spanish': '26-a2-professional-spanish',
-  'a2-professional-chinese': '26-a2-professional-chinese'
+  'a2-professional-chinese': '27-a2-professional-chinese'
 };
 
 // Adding types for getChallengesForLang is possible, but not worth the effort
