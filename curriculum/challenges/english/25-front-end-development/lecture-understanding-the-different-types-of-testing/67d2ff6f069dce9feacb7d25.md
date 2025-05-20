@@ -2,7 +2,7 @@
 id: 67d2ff6f069dce9feacb7d25
 title: What Is Compatibility Testing?
 challengeType: 11
-videoId: nVAaxZ34khk
+videoId: 583-W-c4WNI
 dashedName: what-is-compatibility-testing
 ---
 
@@ -28,7 +28,7 @@ Another type of compatibility testing is for operating systems. You don't want t
 
 The next type of testing is network compatibility testing. You will have users working with different network speeds, protocols, security settings, and more. Therefore, software teams will need to be mindful of all of those different conditions when testing.
 
-Then, there's browser compatibility testing. There are a few popular browsers in the market like Google Chrome, Safari, Firefox, etc. Since all browsers work slightly differently, it's important to test your web application thoroughly and make sure your web applications work consistently across many browsers.
+Then, there's browser compatibility testing. There are a few popular browsers in the market like Google Chrome, Safari, Firefox, and more. Since all browsers work slightly differently, it's important to test your web application thoroughly and make sure your web applications work consistently across many browsers.
 
 The last type of testing is mobile testing. There was a time in web development when most developers didn't think about testing for mobile devices. This was because, in the early 2000s, mobile devices weren't nearly as powerful or widely used as they are today. But now, tens of millions of people visit websites on phones and tablets. So, it is important to ensure that your software applications work on a variety of Android and iOS devices.
 
@@ -58,7 +58,7 @@ Refer to the beginning of the video where this was discussed.
 
 ---
 
-To ensure that your applications work in a variety of different computing environments.
+To ensure that your applications work in a variety of computing environments.
 
 ---
 
@@ -110,11 +110,11 @@ Backwards compatibility
 
 ## --text--
 
-Which of the following is NOT a common type of compatibility testing?
+Which of the following is NOT typically targeted in compatibility testing?
 
 ## --answers--
 
-Mobile
+Mobile operating systems
 
 ### --feedback--
 
@@ -122,11 +122,11 @@ One of these options refers to computer memory.
 
 ---
 
-RAM
+RAM size
 
 ---
 
-Hardware
+Hardware configuration
 
 ### --feedback--
 
@@ -134,7 +134,7 @@ One of these options refers to computer memory.
 
 ---
 
-Network
+Network environments
 
 ### --feedback--
 
