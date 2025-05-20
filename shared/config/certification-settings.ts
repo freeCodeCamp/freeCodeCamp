@@ -80,7 +80,8 @@ export const upcomingCertifications = [
   Certification.FullStackDeveloper,
   Certification.A2English,
   Certification.B1English,
-  Certification.A2Spanish
+  Certification.A2Spanish,
+  Certification.A2Chinese
 ] as const;
 
 export const certTypes = {
@@ -307,7 +308,8 @@ export const linkedInCredentialIds = {
   [Certification.JsAlgoDataStructNew]: 'jaads',
   [Certification.A2English]: 'a2efd',
   [Certification.B1English]: 'b1efd',
-  [Certification.A2Spanish]: 'a2ps'
+  [Certification.A2Spanish]: 'a2ps',
+  [Certification.A2Chinese]: 'a2pc'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';
