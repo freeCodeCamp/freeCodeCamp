@@ -783,7 +783,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(desc);
     desc.innerHTML = description;
     Prism.hooks.add('complete', enhancePrismAccessibility);
-    console.log(props.block);
+
     // To reduce confusion on the first workshop. Will need to find a better solution.
     if (props.block !== 'workshop-curriculum-outline') {
       Prism.hooks.add('complete', makePrismCollapsible);

@@ -1,25 +1,19 @@
 ---
 id: 6823c1a0bcada44f32bf0bdc
-title: Step 3
+title: Step 5
 challengeType: 0
-dashedName: step-3
+dashedName: step-5
 ---
 
 # --description--
 
-The next HTML element you will learn about is the `h2` element. `h2` elements represent subheadings. 
+An `h1` element is the main heading of a webpage and you should only use one per page. `h2` elements represent subheadings. You can have multiple per page and they look like this:
 
 ```html
 <h2>I am a subheading.</h2>
 ```
 
-Unlike the `h1` element, you can use multiple `h2` elements per page. 
-
-Below your `h1` element, add an `h2` element with the following text:
-
-```md
-Full Stack Curriculum
-```
+Turn the `Full Stack Curriculum` text into an `h2` element by surrounding it with opening and closing `h2` tags.
 
 # --hints--
 
@@ -32,15 +26,15 @@ assert.exists(document.querySelector("h2"));
 Your `h2` element should have a closing tag. Closing tags have this syntax: `</elementName>`.
 
 ```js
-assert.match(code, /<\/h2\>/);
+assert.match(code, /<\/h2\s*\>/);
 ```
 
-Your `h2` element's text should be `Full Stack Curriculum`. You can copy the text from the instructions.
+Your `h2` element's text should be `Full Stack Curriculum`.
 
 ```js
-// purposefully removing friction for early users to improve retention
-// this is forgiving of spaces and casing.
-assert.match(code, /Full\s*Stack\s*Curriculum/i);
+// purposefully removing friction for early users to help improve retention in early lessons
+// this if very forgiving of spaces and casing
+assert.match(code, /\<h2\s*\>\s*Full\s*Stack\s*Curriculum\s*\<\/h2\s*\>/i);
 ```
 
 Your `h2` element should be below your `h1` element. 
@@ -54,12 +48,9 @@ assert.exists(document.querySelector("h1 + h2"));
 ## --seed-contents--
 
 ```html
-<html>
-  <body>
-    --fcc-editable-region--
-    <h1>Welcome to freeCodeCamp</h1>
-    
-    --fcc-editable-region--
-  </body>
-</html>  
+<h1>Welcome to freeCodeCamp</h1>
+--fcc-editable-region--
+Full Stack Curriculum
+--fcc-editable-region--
+Learn the skills to become a full stack developer
 ```
