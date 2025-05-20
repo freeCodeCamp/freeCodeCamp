@@ -6,6 +6,7 @@ const mockVerifyTrophyWithMicrosoft = jest.fn();
 import { omit } from 'lodash';
 import { Static } from '@fastify/type-provider-typebox';
 import { DailyCodingChallengeLanguage } from '@prisma/client';
+import request from 'supertest';
 
 import { challengeTypes } from '../../../../shared/config/challenge-types';
 import {
@@ -246,7 +247,11 @@ describe('challengeRoutes', () => {
 
         const token = (tokenResponse.body as { userToken: string }).userToken;
 
-        const response = await superPost('/coderoad-challenge-completed')
+        // This route is special since it does not have CSRF protection OR authN
+        // protection. As such, we use a normal `request` to send the bare
+        // minimum (no extra headers or cookies).
+        const response = await request(fastifyTestInstance.server)
+          .post('/coderoad-challenge-completed')
           .set('coderoad-user-token', token)
           .send({
             tutorialId:
@@ -268,6 +273,28 @@ describe('challengeRoutes', () => {
 
         expect(challengeCompleted).toBe(true);
         expect(response.status).toBe(200);
+      });
+
+      test('Should return an error response if something goes wrong', async () => {
+        jest
+          .spyOn(fastifyTestInstance.prisma.userToken, 'findUnique')
+          .mockImplementationOnce(() => {
+            throw new Error('Database error');
+          });
+        const tokenResponse = await superPost('/user/user-token');
+        const token = (tokenResponse.body as { userToken: string }).userToken;
+
+        const response = await superPost('/coderoad-challenge-completed')
+          .set('coderoad-user-token', token)
+          .send({
+            tutorialId: 'freeCodeCamp/learn-celestial-bodies-database:v1.0.0'
+          });
+
+        expect(response.body).toEqual({
+          msg: 'An error occurred trying to submit the challenge',
+          type: 'error'
+        });
+        expect(response.status).toBe(500);
       });
 
       test('Should complete project with code 200', async () => {
@@ -2049,7 +2076,7 @@ describe('challengeRoutes', () => {
     });
 
     const endpoints: { path: string; method: 'POST' | 'GET' }[] = [
-      { path: '/coderoad-challenge-completed', method: 'POST' },
+      // { path: '/coderoad-challenge-completed', method: 'POST' },
       { path: '/project-completed', method: 'POST' },
       { path: '/backend-challenge-completed', method: 'POST' },
       { path: '/modern-challenge-completed', method: 'POST' },

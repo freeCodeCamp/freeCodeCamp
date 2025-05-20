@@ -192,6 +192,10 @@ export const build = async (
       await fastify.register(protectedRoutes.settingRedirectRoutes);
     });
   });
+
+  // TODO: The route should not handle its own AuthZ
+  await fastify.register(protectedRoutes.challengeTokenRoutes);
+
   // Routes for signed out users:
   void fastify.register(async function (fastify) {
     fastify.addHook('onRequest', fastify.authorize);

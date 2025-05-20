@@ -44,8 +44,11 @@ export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.CollegeAlgebraPy, public: true },
   { dashedName: SuperBlocks.A2English, public: true },
   { dashedName: SuperBlocks.B1English, public: true },
+<<<<<<< HEAD
   { dashedName: SuperBlocks.A2Spanish, public: true },
   { dashedName: SuperBlocks.A2Chinese, public: true },
+=======
+>>>>>>> main
   { dashedName: SuperBlocks.TheOdinProject, public: true },
   { dashedName: SuperBlocks.RespWebDesign, public: true },
   { dashedName: SuperBlocks.PythonForEverybody, public: true },
