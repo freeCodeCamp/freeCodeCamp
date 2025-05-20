@@ -15,7 +15,11 @@ The next HTML element you will learn about is the `h2` element. `h2` elements re
 
 Unlike the `h1` element, you can use multiple `h2` elements per page. 
 
-Below your `h1` element, add an `h2` element with the text `Certified Full Stack Developer Certification`.
+Below your `h1` element, add an `h2` element with the following text:
+
+```md
+Full Stack Curriculum
+```
 
 # --hints--
 
@@ -31,10 +35,12 @@ Your `h2` element should have a closing tag. Closing tags have this syntax: `</e
 assert.match(code, /<\/h2\>/);
 ```
 
-Your `h2` element's text should be `Certified Full Stack Developer Certification`. You have either omitted the text, have a typo, or it is not between the `h2` element's opening and closing tags.
+Your `h2` element's text should be `Full Stack Curriculum`. You can copy the text from the instructions.
 
 ```js
-assert.equal(document.querySelector("h2")?.innerText, "Certified Full Stack Developer Certification");
+// purposefully removing friction for early users to improve retention
+// this is forgiving of spaces and casing.
+assert.match(code, /Full\s*Stack\s*Curriculum/i);
 ```
 
 Your `h2` element should be below your `h1` element. 
