@@ -30,6 +30,7 @@ import csrf from './plugins/csrf';
 import notFound from './plugins/not-found';
 import shadowCapture from './plugins/shadow-capture';
 import growthBook from './plugins/growth-book';
+import Auth0 from './plugins/auth0-fastify';
 
 import * as publicRoutes from './routes/public';
 import * as protectedRoutes from './routes/protected';
@@ -43,7 +44,9 @@ import {
   FCC_ENABLE_EXAM_ENVIRONMENT,
   FCC_ENABLE_SENTRY_ROUTES,
   GROWTHBOOK_FASTIFY_API_HOST,
-  GROWTHBOOK_FASTIFY_CLIENT_KEY
+  GROWTHBOOK_FASTIFY_CLIENT_KEY,
+  AUTH0_DOMAIN,
+  AUTH0_AUDIENCE
 } from './utils/env';
 import { isObjectID } from './utils/validation';
 import { getLogger } from './utils/logger';
@@ -154,6 +157,10 @@ export const build = async (
   }
 
   void fastify.register(auth);
+  void fastify.register(Auth0, {
+    domain: AUTH0_DOMAIN,
+    audience: AUTH0_AUDIENCE
+  });
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
   void fastify.register(bouncer);
@@ -211,13 +218,8 @@ export const build = async (
   });
 
   if (FCC_ENABLE_EXAM_ENVIRONMENT ?? fastify.gb.isOn('exam-environment')) {
-    void fastify.register(function (fastify, _opts, done) {
-      fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
-
-      void fastify.register(examEnvironmentValidatedTokenRoutes);
-      void fastify.register(examEnvironmentMultipartRoutes);
-      done();
-    });
+    void fastify.register(examEnvironmentValidatedTokenRoutes);
+    void fastify.register(examEnvironmentMultipartRoutes);
     void fastify.register(examEnvironmentOpenRoutes);
   }
 

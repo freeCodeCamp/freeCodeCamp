@@ -7,7 +7,10 @@ import jwt from 'jsonwebtoken';
 
 import * as schemas from '../schemas';
 import { mapErr, syncMapErr, UpdateReqType } from '../../utils';
-import { JWT_SECRET, SCREENSHOT_SERVICE_LOCATION } from '../../utils/env';
+import {
+  AUTH0_CLIENT_SECRET,
+  SCREENSHOT_SERVICE_LOCATION
+} from '../../utils/env';
 import {
   checkPrerequisites,
   constructUserExam,
@@ -15,7 +18,7 @@ import {
   validateAttempt
 } from '../utils/exam';
 import { ERRORS } from '../utils/errors';
-import { isObjectID } from '../../utils/validation';
+import { parseBearerToken } from '../../utils/tokens';
 
 /**
  * Wrapper for endpoints related to the exam environment desktop app.
@@ -24,6 +27,7 @@ import { isObjectID } from '../../utils/validation';
  */
 export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
   (fastify, _options, done) => {
+    fastify.addHook('preHandler', fastify.requireAuth());
     fastify.get(
       '/exam-environment/exams',
       {
@@ -58,6 +62,7 @@ export const examEnvironmentMultipartRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
+  fastify.addHook('preHandler', fastify.requireAuth());
   void fastify.register(fastifyMultipart);
 
   fastify.post(
@@ -91,16 +96,22 @@ export const examEnvironmentOpenRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
-interface JwtPayload {
-  examEnvironmentAuthorizationToken: string;
-}
-
 /**
  * Verify an authorization token has been generated for a user.
  *
  * Does not require any authentication.
  *
- * **Note**: This has no guarantees of which user the token is for. Just that one exists in the database.
+ * RANDOM NOTES:
+ * - If a Camper changes their email address, the token will still use the old email address.
+ *   - A new one will need to be generated.
+ *   - https://auth0.com/docs/secure/tokens/refresh-tokens/use-refresh-tokens
+ *   - Old one will need to be invalidated.
+ *     - https://auth0.com/docs/secure/tokens/revoke-tokens
+ *     - Not possible
+ * - We could stick with the `ExamEnvironmentAuthorizationToken` + `access_token` flow?
+ *   - It is much easier to control tokens/sessions when we own the tokens.
+ *
+ * **Note**: This has no guarantees of which user the token is for.
  */
 async function tokenMetaHandler(
   this: FastifyInstance,
@@ -108,12 +119,35 @@ async function tokenMetaHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  const { 'exam-environment-authorization-token': encodedToken } = req.headers;
-  logger.info({ encodedToken });
 
-  let payload: JwtPayload;
+  const authorizationHeader = req.headers['authorization'];
+
+  if (!authorizationHeader) {
+    logger.warn('Authorization header not provided.');
+    void reply.code(400);
+    return reply.send(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+        'Authorization header not provided.'
+      )
+    );
+  }
+
+  const encodedToken = parseBearerToken(authorizationHeader);
+
+  if (!encodedToken) {
+    logger.warn('Invalid authorization header provided.');
+    void reply.code(400);
+    return reply.send(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+        'Invalid authorization header provided.'
+      )
+    );
+  }
+
   try {
-    payload = jwt.verify(encodedToken, JWT_SECRET) as JwtPayload;
+    // TODO: https://{AUTH0_DOMAIN}/.well-known/jwks.json
+    const JWK_PUBLIC_SIGNING_KEY = AUTH0_CLIENT_SECRET;
+    jwt.verify(encodedToken, JWK_PUBLIC_SIGNING_KEY, { algorithms: ['RS256'] });
   } catch (e) {
     // Server refuses to brew (verify) coffee (jwts) with a teapot (random strings)
     logger.warn(
@@ -126,43 +160,8 @@ async function tokenMetaHandler(
     );
   }
 
-  if (!isObjectID(payload.examEnvironmentAuthorizationToken)) {
-    logger.warn(
-      {
-        examEnvironmentAuthorizationToken:
-          payload.examEnvironmentAuthorizationToken
-      },
-      'Token is not an object id.'
-    );
-    void reply.code(418);
-    return reply.send(
-      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
-        'Token is not valid'
-      )
-    );
-  }
-
-  const token = await this.prisma.examEnvironmentAuthorizationToken.findUnique({
-    where: {
-      id: payload.examEnvironmentAuthorizationToken
-    }
-  });
-
-  if (!token) {
-    // Endpoint is valid, but resource does not exists
-    logger.warn('Token does not appear to exist.');
-    void reply.code(404);
-    return reply.send(
-      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
-        'Token does not appear to exist'
-      )
-    );
-  } else {
-    void reply.code(200);
-    return reply.send({
-      expireAt: token.expireAt
-    });
-  }
+  void reply.code(200);
+  return reply.send({});
 }
 
 /**
@@ -211,7 +210,34 @@ async function postExamGeneratedExamHandler(
   }
 
   // Check user has completed prerequisites
-  const user = req.user!;
+  const maybeUser = await mapErr(
+    this.prisma.user.findUnique({
+      where: {
+        id: req.user!.id
+      },
+      select: {
+        id: true,
+        completedChallenges: true
+      }
+    })
+  );
+
+  if (maybeUser.hasError) {
+    logger.error({ userError: maybeUser.error });
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUser.error))
+    );
+  }
+
+  const user = maybeUser.data;
+
+  if (user === null) {
+    logger.warn({ userId: req.user?.id }, 'User not found.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT('User not found.'));
+  }
+
   const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
 
   if (!isExamPrerequisitesMet) {
@@ -723,7 +749,33 @@ async function getExams(
   const logger = this.log.child({ req });
   logger.info({ user: req.user });
 
-  const user = req.user!;
+  const maybeUser = await mapErr(
+    this.prisma.user.findUnique({
+      where: {
+        id: req.user!.id
+      },
+      select: {
+        completedChallenges: true
+      }
+    })
+  );
+
+  if (maybeUser.hasError) {
+    logger.error({ userError: maybeUser.error });
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUser.error))
+    );
+  }
+
+  const user = maybeUser.data;
+
+  if (user === null) {
+    logger.warn({ userId: req.user?.id }, 'User not found.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT('User not found.'));
+  }
+
   const exams = await this.prisma.envExam.findMany({
     where: {
       deprecated: false

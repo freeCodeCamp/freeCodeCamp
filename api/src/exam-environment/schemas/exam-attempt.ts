@@ -19,7 +19,7 @@ export const examEnvironmentPostExamAttempt = {
     })
   }),
   headers: Type.Object({
-    'exam-environment-authorization-token': Type.String()
+    authorization: Type.String()
   }),
   response: {
     // An empty 200 response cannot be typed 🤷‍♂️
