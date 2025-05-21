@@ -648,6 +648,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             [username]: {
               ...removeNulls(publicUser),
               ...normalizeFlags(flags),
+              picture: publicUser.picture ?? '',
               currentChallengeId: currentChallengeId ?? '',
               completedChallenges: normalizeChallenges(completedChallenges),
               completedChallengeCount: completedChallenges.length,
