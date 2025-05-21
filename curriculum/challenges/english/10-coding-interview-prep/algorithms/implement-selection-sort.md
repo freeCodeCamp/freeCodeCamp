@@ -17,13 +17,20 @@ Here we will implement selection sort. Selection sort works by selecting the min
 `selectionSort` should be a function.
 
 ```js
-assert(typeof selectionSort == 'function');
+assert.isFunction(selectionSort);
 ```
 
 `selectionSort` should return a sorted array (least to greatest).
 
 ```js
-assert(
+function isSorted(a){
+  for(let i = 0; i < a.length - 1; i++)
+    if(a[i] > a[i + 1])
+      return false;
+  return true;
+}
+
+assert.isTrue(
   isSorted(
     selectionSort([
       1,
@@ -78,21 +85,6 @@ assert.sameMembers(
 `selectionSort` should not use the built-in `.sort()` method.
 
 ```js
-assert.isFalse(isBuiltInSortUsed());
-```
-
-# --seed--
-
-## --after-user-code--
-
-```js
-function isSorted(a){
-  for(let i = 0; i < a.length - 1; i++)
-    if(a[i] > a[i + 1])
-      return false;
-  return true;
-}
-
 function isBuiltInSortUsed(){
   let sortUsed = false;
   const temp = Array.prototype.sort;
@@ -104,7 +96,10 @@ function isBuiltInSortUsed(){
   }
   return sortUsed;
 }
+assert.isFalse(isBuiltInSortUsed());
 ```
+
+# --seed--
 
 ## --seed-contents--
 
