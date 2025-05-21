@@ -199,6 +199,16 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       const user = await fastify.prisma.user.findUniqueOrThrow({
         where: { id: req.user?.id }
       });
+
+      if (!user.email) {
+        logger.warn('User has no email');
+        void reply.code(403);
+        return reply.send({
+          type: 'danger',
+          message: 'flash.report-error'
+        });
+      }
+
       const { username, reportDescription: report } = req.body;
 
       // TODO: `findUnique` once db migration forces unique usernames
@@ -242,11 +252,11 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         text: generateReportEmail(user, reportedUser, report)
       });
 
-      return {
+      reply.send({
         type: 'info',
         message: 'flash.report-sent',
         variables: { email: user.email }
-      } as const;
+      });
     }
   );
 
@@ -628,6 +638,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         const [flags, rest] = splitUser(user);
 
         const {
+          email,
           emailVerified,
           username,
           usernameDisplay,
@@ -649,6 +660,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               ...removeNulls(publicUser),
               ...normalizeFlags(flags),
               picture: publicUser.picture ?? '',
+              email: email ?? '',
               currentChallengeId: currentChallengeId ?? '',
               completedChallenges: normalizeChallenges(completedChallenges),
               completedChallengeCount: completedChallenges.length,

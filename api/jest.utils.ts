@@ -207,6 +207,10 @@ export const resetDefaultUser = async (): Promise<void> => {
     }
   );
   await fastifyTestInstance.prisma.user.deleteMany({
+    where: { id: defaultUserId }
+  });
+
+  await fastifyTestInstance.prisma.user.deleteMany({
     where: { email: defaultUserEmail }
   });
 
