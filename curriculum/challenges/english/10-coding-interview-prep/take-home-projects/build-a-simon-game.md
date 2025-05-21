@@ -33,7 +33,7 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 - `https://cdn.freecodecamp.org/curriculum/take-home-projects/memory-light-game/sound-1.mp3`
 - `https://cdn.freecodecamp.org/curriculum/take-home-projects/memory-light-game/sound-2.mp3`
 - `https://cdn.freecodecamp.org/curriculum/take-home-projects/memory-light-game/sound-3.mp3`
-- `https://cdn.freecodecamp.org/curriculum/take-home-projects/memory-light-game/sound-4.mp3`.
+- `https://cdn.freecodecamp.org/curriculum/take-home-projects/memory-light-game/sound-4.mp3`
 
 When you are finished, include a link to your project on CodePen and click the "I've completed this challenge" button.
 
