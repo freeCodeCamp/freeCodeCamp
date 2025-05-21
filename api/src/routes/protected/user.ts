@@ -3,6 +3,7 @@ import { ObjectId } from 'mongodb';
 import _ from 'lodash';
 import { FastifyInstance, FastifyReply } from 'fastify';
 import jwt from 'jsonwebtoken';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 import * as schemas from '../../schemas';
 import { createResetProperties } from '../../utils/create-user';
@@ -29,21 +30,30 @@ import { JWT_SECRET } from '../../utils/env';
 
 /**
  * Helper function to get the api url from the shared transcript link.
+ * Example msTranscriptUrl: https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo.
  *
  * @param msTranscript Shared transcript link.
  * @returns Microsoft transcript api url.
  */
-export const getMsTranscriptApiUrl = (msTranscript: string) => {
-  // example msTranscriptUrl: https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo
-  const url = new URL(msTranscript);
-
-  // TODO(Post-MVP): throw if it doesn't match?
-  const transcriptUrlRegex = /\/transcript\/([^/]+)\/?/;
-  const id = transcriptUrlRegex.exec(url.pathname)?.[1];
-  return `https://learn.microsoft.com/api/profiles/transcript/share/${
-    id ?? ''
-  }`;
-};
+export function getMsTranscriptApiUrl(msTranscript: string) {
+  try {
+    const url = new URL(msTranscript);
+    const transcriptUrlRegex = /\/transcript\/([^/]+)\/?/;
+    const id = transcriptUrlRegex.exec(url.pathname)?.[1];
+    if (!id) {
+      return { error: `Invalid transcript URL: ${msTranscript}`, data: null };
+    }
+    return {
+      error: null,
+      data: `https://learn.microsoft.com/api/profiles/transcript/share/${id}`
+    };
+  } catch (e) {
+    return {
+      error: `Invalid transcript URL: ${msTranscript}\n${JSON.stringify(e)}`,
+      data: null
+    };
+  }
+}
 
 /**
  * Wrapper for endpoints related to user account management,
@@ -75,9 +85,24 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       await fastify.prisma.survey.deleteMany({
         where: { userId: req.user!.id }
       });
-      await fastify.prisma.user.delete({
-        where: { id: req.user!.id }
-      });
+      try {
+        await fastify.prisma.user.delete({
+          where: { id: req.user!.id }
+        });
+      } catch (err) {
+        if (
+          err instanceof PrismaClientKnownRequestError &&
+          err.code === 'P2025'
+        ) {
+          logger.warn(
+            err,
+            `User with id ${req.user?.id} not found for deletion.`
+          );
+        } else {
+          logger.error(err, 'Error deleting user account');
+          throw err;
+        }
+      }
       reply.clearOurCookies();
 
       return {};
@@ -272,16 +297,32 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
-      logger.info(`User ${req.user?.id} requested linking of msUsername`);
+      logger.info(
+        `User ${req.user?.id} requested linking of msUsername "${req.body.msTranscriptUrl}"`
+      );
 
       try {
         const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id: req.user?.id }
         });
 
-        const msApiRes = await fetch(
-          getMsTranscriptApiUrl(req.body.msTranscriptUrl)
+        const maybeTranscriptUrl = getMsTranscriptApiUrl(
+          req.body.msTranscriptUrl
         );
+
+        if (maybeTranscriptUrl.error !== null) {
+          logger.warn(
+            { error: maybeTranscriptUrl.error },
+            'Unable to parse Microsoft transcript URL'
+          );
+          return reply
+            .status(400)
+            .send({ type: 'error', message: 'flash.ms.transcript.link-err-1' });
+        }
+
+        const transcriptUrl = maybeTranscriptUrl.data;
+
+        const msApiRes = await fetch(transcriptUrl);
 
         if (!msApiRes.ok) {
           logger.warn(
@@ -587,6 +628,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         const [flags, rest] = splitUser(user);
 
         const {
+          emailVerified,
           username,
           usernameDisplay,
           completedChallenges,
@@ -606,6 +648,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             [username]: {
               ...removeNulls(publicUser),
               ...normalizeFlags(flags),
+              picture: publicUser.picture ?? '',
               currentChallengeId: currentChallengeId ?? '',
               completedChallenges: normalizeChallenges(completedChallenges),
               completedChallengeCount: completedChallenges.length,
@@ -614,13 +657,14 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               calendar: getCalendar(
                 progressTimestamps as ProgressTimestamp[] | null
               ),
+              emailVerified: !!emailVerified,
               // This assertion is necessary until the database is normalized.
               points: getPoints(
                 progressTimestamps as ProgressTimestamp[] | null
               ),
               profileUI: normalizeProfileUI(profileUI),
               // TODO(Post-MVP) remove this and just use emailVerified
-              isEmailVerified: user.emailVerified,
+              isEmailVerified: !!emailVerified,
               joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
               location: location ?? '',
               name: name ?? '',
