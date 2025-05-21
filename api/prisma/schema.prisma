@@ -138,7 +138,7 @@ model user {
   newEmail                       String? // Null | Undefined
   partiallyCompletedChallenges   PartiallyCompletedChallenge[] // Undefined | PartiallyCompletedChallenge[]
   password                       String? // Undefined
-  picture                        String
+  picture                        String?
   portfolio                      Portfolio[]
   profileUI                      ProfileUI? // Undefined
   progressTimestamps             Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE

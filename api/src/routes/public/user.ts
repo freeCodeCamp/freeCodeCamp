@@ -191,6 +191,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           ...removeNulls(publicUser),
           ...normalizeFlags(flags),
           ...sharedUser,
+          picture: user.picture ?? '',
           profileUI: normalizedProfileUI,
           // TODO: should this always be returned? Shouldn't some privacy
           // setting control it? Same applies to website, githubProfile,
