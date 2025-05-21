@@ -7,7 +7,27 @@
   "challengeOrder": [
     {
       "id": "6660a357a167db7129dad153",
-      "title": "Dialogue 1: I'm Tom"
+      "title": "Dialogue 1: Milestone planning"
+    },
+    {
+      "id": "682e305bcecd99771260981c",
+      "title": "Task 1"
+    },
+    {
+      "id": "682e37806ee3e080bd4253a9",
+      "title": "Task 2"
+    },
+    {
+      "id": "682e395825fc3b84124612d0",
+      "title": "Task 3"
+    },
+    {
+      "id": "682e3ae471ff0586fc626644",
+      "title": "Task 4"
+    },
+    {
+      "id": "682e3c07ef842c8981b1688c",
+      "title": "Task 5"
     }
   ],
   "helpCategory": "English",
