@@ -1042,6 +1042,10 @@ const duplicatedProjectIds = [
 
   /*** JavaScript ***/
 
+  // Sum all numbers in range challenge (used in JS fundamentals review module)
+
+  'a3566b1109230028080c9345',
+
   // Local Storage ToDo App
 
   '64e4e4c4ec263b62ae7bf54d',
