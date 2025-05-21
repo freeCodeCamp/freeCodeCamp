@@ -1984,7 +1984,7 @@
         "title": "Створіть платіжну сторінку",
         "intro": [
           "У цій лабораторній роботі ви створите доступну платіжну сторінку.",
-          "Ви будете практикуватись працювати з різними поняттями, серед яких атрибути <code>alt</code> та aria-ролі."
+          "You'll practice concepts like <code>alt</code> attributes and ARIA roles."
         ]
       },
       "lab-movie-review-page": {
@@ -3922,7 +3922,7 @@
         "title": "Повторення циклів та послідовностей",
         "intro": [
           "Перш ніж перейти до тесту «Цикли та послідовності», повторіть основні поняття.",
-          "[Add more details]"
+          "Open up this page to review concepts around loops, lists, tuples and some of their common methods."
         ]
       },
       "quiz-loops-and-sequences": {
