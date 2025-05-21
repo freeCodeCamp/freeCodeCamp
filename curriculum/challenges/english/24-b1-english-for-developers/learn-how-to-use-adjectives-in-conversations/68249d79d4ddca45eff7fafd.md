@@ -75,7 +75,7 @@ She also says the feedback `should help`, meaning it will guide their next steps
     "audio": {
       "filename": "B1_19-3.mp3",
       "startTime": 1,
-      "startTimestamp": 86.76,
+      "startTimestamp": 86.26,
       "finishTimestamp": 93.52
     }
   },
@@ -88,7 +88,7 @@ She also says the feedback `should help`, meaning it will guide their next steps
     {
       "character": "Jessica",
       "startTime": 1,
-      "finishTime": 5.4,
+      "finishTime": 5.9,
       "dialogue": {
         "text": "Fantastic, James. I'll put all this information into a report and talk about it with the team tomorrow.",
         "align": "center"
@@ -96,7 +96,7 @@ She also says the feedback `should help`, meaning it will guide their next steps
     },
     {
       "character": "Jessica",
-      "startTime": 5.76,
+      "startTime": 6.26,
       "finishTime": 7.76,
       "dialogue": {
         "text": "This feedback should help us know what to do next.",
@@ -106,7 +106,7 @@ She also says the feedback `should help`, meaning it will guide their next steps
     {
       "character": "Jessica",
       "opacity": 0,
-      "startTime": 8.26
+      "startTime": 8.76
     }
   ]
 }
