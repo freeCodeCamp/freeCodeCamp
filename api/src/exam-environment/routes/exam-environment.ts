@@ -276,7 +276,7 @@ async function postExamGeneratedExamHandler(
   if (lastAttempt) {
     // Camper may not take the exam again, until the previous attempt is graded.
     const maybeMod = await mapErr(
-      this.prisma.examModeration.findFirst({
+      this.prisma.envExamModeration.findFirst({
         where: {
           examAttemptId: lastAttempt.id,
           // Where `approved` is null, meaning it is still pending
@@ -646,7 +646,7 @@ async function postExamAttemptHandler(
       'Invalid exam attempt.'
     );
     // As attempt is invalid, create moderation record to investigate
-    await this.prisma.examModeration.create({
+    await this.prisma.envExamModeration.create({
       data: {
         examAttemptId: latestAttempt.id,
         approved: null
