@@ -81,12 +81,14 @@ const chapterBasedCurriculumSchema = Joi.object().pattern(
     chapters: Joi.array().items(
       Joi.object().keys({
         dashedName: Joi.string().regex(slugRE).required(),
+        name: Joi.string().required(),
         comingSoon: Joi.boolean().optional(),
         chapterType: Joi.valid('exam').optional(),
         modules: Joi.array()
           .items(
             Joi.object().keys({
               moduleType: Joi.valid('review', 'exam').optional(),
+              name: Joi.string().required(),
               comingSoon: Joi.boolean().optional(),
               dashedName: Joi.string().regex(slugRE).required(),
               blocks: Joi.array().items(blockSchema)
