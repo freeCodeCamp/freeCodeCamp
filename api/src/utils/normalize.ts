@@ -61,6 +61,29 @@ export const normalizeDate = (date?: Prisma.JsonValue): number => {
   }
 };
 
+// eslint-disable-next-line jsdoc/require-jsdoc
+export const normalizeChallengeType = (
+  challengeType?: Prisma.JsonValue
+): number | null => {
+  if (typeof challengeType === 'number') {
+    return challengeType;
+  } else if (typeof challengeType === 'string') {
+    const parsed = parseInt(challengeType, 10);
+    if (isNaN(parsed)) {
+      throw Error(
+        'Unexpected challengeType value: ' + JSON.stringify(challengeType)
+      );
+    }
+    return parseInt(challengeType, 10);
+  } else if (challengeType === null) {
+    return null;
+  } else {
+    throw Error(
+      'Unexpected challengeType value: ' + JSON.stringify(challengeType)
+    );
+  }
+};
+
 /**
  * Ensure that the user's profile UI settings are valid.
  *
@@ -125,9 +148,16 @@ export type NormalizedChallenge = {
 export const normalizeChallenges = (
   completedChallenges: CompletedChallenge[]
 ): NormalizedChallenge[] => {
-  const noNullProps = completedChallenges.map(challenge =>
-    removeNulls(challenge)
-  );
+  const fixedDateAndType = completedChallenges.map(challenge => {
+    const { completedDate, challengeType, ...rest } = challenge;
+    return {
+      ...rest,
+      completedDate: normalizeDate(completedDate),
+      challengeType: normalizeChallengeType(challengeType)
+    };
+  });
+
+  const noNullProps = fixedDateAndType.map(challenge => removeNulls(challenge));
   // files.path is optional
   const noNullPath = noNullProps.map(challenge => {
     const { files, ...rest } = challenge;
@@ -136,15 +166,7 @@ export const normalizeChallenges = (
     return { ...rest, files: noNullFiles };
   });
 
-  const withNumberDates = noNullPath.map(challenge => {
-    const { completedDate, ...rest } = challenge;
-    return {
-      ...rest,
-      completedDate: normalizeDate(completedDate)
-    };
-  });
-
-  return withNumberDates;
+  return noNullPath;
 };
 
 type NormalizedSurvey = {
