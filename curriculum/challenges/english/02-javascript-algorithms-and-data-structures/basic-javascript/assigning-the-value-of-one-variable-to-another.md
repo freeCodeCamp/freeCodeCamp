@@ -17,7 +17,7 @@ var myNum;
 myNum = myVar;
 ```
 
-The above declares a `myVar` variable with no value, then assigns it the value `5`. Next, a variable named `myNum` is declared with no value. Then, the contents of `myVar` (which is `5`) is assigned to the variable `myNum`. Now, `myNum` also has the value of `5`.
+The above declares a `myVar` variable with no value, then assigns it the value `5`. Next, a variable named `myNum` is declared with no value. Then, the contents of `myVar` (which is `5`) is assigned to the variable `myNum`. Now, `myNum` also has the value of `5`. It's important to understand that myNum now holds its own copy of the value `5`. If myVar were to be reassigned a different value later, myNum would still retain the value it was assigned initially.
 
 # --instructions--
 
@@ -28,13 +28,17 @@ Assign the contents of `a` to variable `b`.
 You should not change code above the specified comment.
 
 ```js
-assert(/var a;/.test(__helpers.removeJSComments(code)) && /a = 7;/.test(__helpers.removeJSComments(code)) && /var b;/.test(__helpers.removeJSComments(code)));
+assert(
+  /var a;/.test(__helpers.removeJSComments(code)) &&
+    /a = 7;/.test(__helpers.removeJSComments(code)) &&
+    /var b;/.test(__helpers.removeJSComments(code))
+);
 ```
 
 `b` should have a value of `7`.
 
 ```js
-assert(typeof b === 'number' && b === 7);
+assert(typeof b === "number" && b === 7);
 ```
 
 `a` should be assigned to `b` with `=`.
@@ -48,10 +52,10 @@ assert(/b\s*=\s*a\s*/g.test(__helpers.removeJSComments(code)));
 ## --before-user-code--
 
 ```js
-if (typeof a != 'undefined') {
+if (typeof a != "undefined") {
   a = undefined;
 }
-if (typeof b != 'undefined') {
+if (typeof b != "undefined") {
   b = undefined;
 }
 ```
@@ -59,8 +63,14 @@ if (typeof b != 'undefined') {
 ## --after-user-code--
 
 ```js
-(function(a, b) {
-  return 'a = ' + a + ', b = ' + b;
+(function (a, b) {
+  return (
+    "The variable 'a' has the value: " +
+    a +
+    ". After assigning 'a' to 'b', the variable 'b' now also has the value: " +
+    b +
+    "."
+  );
 })(a, b);
 ```
 
@@ -73,6 +83,7 @@ a = 7;
 var b;
 
 // Only change code below this line
+// Now, assign the value of a to b
 ```
 
 # --solutions--
