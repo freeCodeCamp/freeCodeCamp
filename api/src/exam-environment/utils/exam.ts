@@ -778,7 +778,7 @@ export async function constructEnvExamAttempt(
 
   // If attempt is still in progress, return without result
   const isAttemptExpired =
-    attempt.startTimeInMS + exam.config.totalTimeInMS > Date.now();
+    attempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
   if (!isAttemptExpired) {
     return {
       envExamAttempt: { ...omitAttemptReferenceIds(attempt), result: null },
@@ -787,7 +787,7 @@ export async function constructEnvExamAttempt(
   }
 
   const maybeMod = await mapErr(
-    fastify.prisma.examModeration.findFirst({
+    fastify.prisma.envExamModeration.findFirst({
       where: {
         examAttemptId: attempt.id
       }
