@@ -815,8 +815,10 @@ describe('/exam-environment/', () => {
       });
 
       it('should return the attempt with results, if the attempt has been moderated', async () => {
+        const examAttempt = structuredClone(mock.examAttempt);
+        examAttempt.startTimeInMS = Date.now() - mock.exam.config.totalTimeInMS;
         const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
-          data: { ...mock.examAttempt, userId: defaultUserId }
+          data: examAttempt
         });
 
         await fastifyTestInstance.prisma.envExamModeration.create({
@@ -924,8 +926,10 @@ describe('/exam-environment/', () => {
       });
 
       it('should return the attempts with results, if they have been moderated', async () => {
+        const examAttempt = structuredClone(mock.examAttempt);
+        examAttempt.startTimeInMS = Date.now() - mock.exam.config.totalTimeInMS;
         const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
-          data: { ...mock.examAttempt, userId: defaultUserId }
+          data: examAttempt
         });
 
         await fastifyTestInstance.prisma.envExamModeration.create({
