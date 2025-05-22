@@ -14,7 +14,8 @@ import {
   setupServer,
   superRequest,
   createSuperRequest,
-  defaultUsername
+  defaultUsername,
+  resetDefaultUser
 } from '../../../jest.utils';
 import { JWT_SECRET } from '../../utils/env';
 import {
@@ -864,7 +865,8 @@ describe('userRoutes', () => {
           .mockImplementation(jest.fn());
       });
 
-      afterEach(() => {
+      afterEach(async () => {
+        await resetDefaultUser();
         jest.clearAllMocks();
       });
 
@@ -888,6 +890,24 @@ describe('userRoutes', () => {
         });
 
         expect(response.statusCode).toBe(400);
+      });
+
+      test('POST returns 403 for users with no email', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: testUserData.email },
+          data: { email: null }
+        });
+
+        const response = await superPost('/user/report-user').send({
+          username: testUserData.username,
+          reportDescription: 'Test Report'
+        });
+
+        expect(response.statusCode).toBe(403);
+        expect(response.body).toStrictEqual({
+          type: 'danger',
+          message: 'flash.report-error'
+        });
       });
 
       test('POST sanitises report description', async () => {

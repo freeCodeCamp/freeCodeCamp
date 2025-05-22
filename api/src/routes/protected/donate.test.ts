@@ -1,4 +1,3 @@
-import type { Prisma } from '@prisma/client';
 import {
   createSuperRequest,
   devLogin,
@@ -11,9 +10,8 @@ import { createUserInput } from '../../utils/create-user';
 const testEWalletEmail = 'baz@bar.com';
 const testSubscriptionId = 'sub_test_id';
 const testCustomerId = 'cust_test_id';
-const userWithoutProgress: Prisma.userCreateInput =
-  createUserInput(defaultUserEmail);
-const userWithProgress: Prisma.userCreateInput = {
+const userWithoutProgress = createUserInput(defaultUserEmail);
+const userWithProgress = {
   ...createUserInput(defaultUserEmail),
   completedChallenges: [
     {
@@ -269,6 +267,23 @@ describe('Donate', () => {
           }
         });
         expect(failResponse.status).toBe(400);
+      });
+
+      it('should return 403 if the user has no email', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: userWithProgress.email },
+          data: { email: null }
+        });
+        const response = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
+        expect(response.body).toEqual({
+          error: {
+            type: 'EmailRequiredError',
+            message: 'User has not provided an email address'
+          }
+        });
+        expect(response.status).toBe(403);
       });
 
       it('should return 500 if Stripe encountes an error', async () => {

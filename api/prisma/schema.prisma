@@ -99,7 +99,7 @@ model user {
   quizAttempts                   QuizAttempt[] // Undefined
   currentChallengeId             String?
   donationEmails                 String[] // Undefined | String[] (only possible for built in Types like String)
-  email                          String
+  email                          String?
   emailAuthLinkTTL               DateTime? // Null | Undefined
   emailVerified                  Boolean?
   emailVerifyTTL                 DateTime? // Null | Undefined
