@@ -344,11 +344,11 @@
     }
   },
   "exam": {
-    "download-header": "Download the freeCodeCamp Exam Evironment App",
+    "download-header": "Download the freeCodeCamp Exam Environment App",
     "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
-    "version": "The Latest version of our app is: {{version}}, make sure it is up to date.",
-    "download-details": "Download the app manually",
-    "unable-to-detect-os": "We were unable to detect your operating system. Please download the app manually below.",
+    "version": "The latest version of our app is: {{version}}.",
+    "download-details": "Manually download the app",
+    "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
     "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
   },
   "profile": {
