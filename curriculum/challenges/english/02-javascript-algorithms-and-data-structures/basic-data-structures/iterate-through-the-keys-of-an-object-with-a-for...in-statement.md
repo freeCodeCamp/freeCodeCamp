@@ -50,34 +50,13 @@ We've defined a function `countOnline` which accepts one argument, `allUsers`. U
 The function `countOnline` should use a `for in` statement to iterate through the object keys of the object passed to it.
 
 ```js
-assert(
-  __helpers.removeJSComments(code).match(
+assert.match(
+  __helpers.removeJSComments(code),
     /for\s*\(\s*(var|let|const)\s+[a-zA-Z_$]\w*\s+in\s+[a-zA-Z_$]\w*\s*\)/
-  )
 );
 ```
 
 The function `countOnline` should return `1` when the object `{ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }` is passed to it
-
-```js
-assert(countOnline(usersObj1) === 1);
-```
-
-The function `countOnline` should return `2` when the object `{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }` is passed to it
-
-```js
-assert(countOnline(usersObj2) === 2);
-```
-
-The function `countOnline` should return `0` when the object `{ Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } }` is passed to it
-
-```js
-assert(countOnline(usersObj3) === 0);
-```
-
-# --seed--
-
-## --after-user-code--
 
 ```js
 const usersObj1 = {
@@ -91,7 +70,12 @@ const usersObj1 = {
     online: false
   }
 }
+assert.equal(countOnline(usersObj1), 1);
+```
 
+The function `countOnline` should return `2` when the object `{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }` is passed to it
+
+```js
 const usersObj2 = {
   Alan: {
     online: true
@@ -103,8 +87,12 @@ const usersObj2 = {
     online: true
   }
 }
+assert.equal(countOnline(usersObj2), 2);
+```
 
+The function `countOnline` should return `0` when the object `{ Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } }` is passed to it
 
+```js
 const usersObj3 = {
   Alan: {
     online: false
@@ -116,7 +104,10 @@ const usersObj3 = {
     online: false
   }
 }
+assert.equal(countOnline(usersObj3), 0);
 ```
+
+# --seed--
 
 ## --seed-contents--
 

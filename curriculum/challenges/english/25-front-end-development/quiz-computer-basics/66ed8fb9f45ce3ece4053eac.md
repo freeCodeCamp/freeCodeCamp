@@ -139,7 +139,7 @@ Microsoft Edge.
 
 ---
 
-Github
+GitHub
 
 #### --answer--
 

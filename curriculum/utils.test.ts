@@ -176,7 +176,7 @@ describe('getSuperBlockFromPath', () => {
     .filter(item => fs.lstatSync(path.join(englishFolder, item)).isDirectory());
 
   it('handles all the directories in ./challenges/english', () => {
-    expect.assertions(24);
+    expect.assertions(25);
 
     for (const directory of directories) {
       expect(() => getSuperBlockFromDir(directory)).not.toThrow();
@@ -184,7 +184,7 @@ describe('getSuperBlockFromPath', () => {
   });
 
   it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
-    expect.assertions(24);
+    expect.assertions(25);
 
     const superBlockPaths = directories.filter(x => x !== '00-certifications');
 

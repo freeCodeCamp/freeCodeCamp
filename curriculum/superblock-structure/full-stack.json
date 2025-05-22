@@ -1,24 +1,20 @@
 {
   "chapters": [
     {
-      "dashedName": "freecodecamp",
-      "modules": [
-        {
-          "dashedName": "getting-started-with-freecodecamp",
-          "blocks": [
-            {
-              "dashedName": "lecture-welcome-to-freecodecamp"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "dashedName": "html",
       "modules": [
         {
           "dashedName": "basic-html",
           "blocks": [
+            {
+              "dashedName": "workshop-curriculum-outline"
+            },
+            {
+              "dashedName": "lecture-welcome-to-freecodecamp"
+            },
+            {
+              "dashedName": "lab-debug-camperbots-profile-page"
+            },
             {
               "dashedName": "lecture-what-is-html"
             },
@@ -110,6 +106,7 @@
               "dashedName": "lecture-importance-of-accessibility-and-good-html-structure"
             },
             { "dashedName": "lab-checkout-page" },
+            { "dashedName": "lab-movie-review-page" },
             { "dashedName": "lab-multimedia-player" },
             { "dashedName": "review-html-accessibility" },
             { "dashedName": "quiz-html-accessibility" }
@@ -718,6 +715,9 @@
             },
             {
               "dashedName": "lab-password-generator"
+            },
+            {
+              "dashedName": "lab-sum-all-numbers-algorithm"
             },
             {
               "dashedName": "review-javascript-fundamentals"
@@ -1386,7 +1386,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-common-data-structures" },
             { "dashedName": "workshop-linked-list-class" },
-            { "dashedName": "lab-hash-table-class" },
+            { "dashedName": "lab-hash-table" },
             { "dashedName": "review-data-structures" },
             { "dashedName": "quiz-data-structures" }
           ]

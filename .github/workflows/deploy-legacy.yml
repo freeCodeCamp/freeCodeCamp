@@ -101,7 +101,7 @@ jobs:
               git status
 
               echo -e '\nLOG:Building...'
-              npm i -g pnpm@9
+              npm i -g pnpm@10
               pnpm clean:packages
               pnpm clean:server
               pnpm install

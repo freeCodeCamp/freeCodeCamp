@@ -20,13 +20,26 @@ type File {
 
 type CompletedChallenge {
   challengeType      Int?         @db.Int // Null | Undefined
-  completedDate      Float // TODO(Post-MVP): Change to DateTime
+  completedDate      Json // DateTime | Float, but not, as far as we know, Null
   files              File[]
   githubLink         String? // Undefined
   id                 String
   isManuallyApproved Boolean? // Undefined
   solution           String? // Null | Undefined
   examResults        ExamResults? // Undefined
+}
+
+enum DailyCodingChallengeLanguage {
+  javascript
+  python
+}
+
+type CompletedDailyCodingChallenge {
+  id            String                         @db.ObjectId
+  /// Date in milliseconds since epoch
+  /// This is not a DateTime, because DateTime does not serialize directly to JSON
+  completedDate Int
+  languages     DailyCodingChallengeLanguage[]
 }
 
 type PartiallyCompletedChallenge {
@@ -77,77 +90,78 @@ type QuizAttempt {
 
 /// Corresponds to the `user` collection.
 model user {
-  id                           String                        @id @default(auto()) @map("_id") @db.ObjectId
-  about                        String
-  acceptedPrivacyTerms         Boolean
-  completedChallenges          CompletedChallenge[]
-  completedExams               CompletedExam[] // Undefined
-  quizAttempts                 QuizAttempt[] // Undefined
-  currentChallengeId           String?
-  donationEmails               String[] // Undefined | String[] (only possible for built in Types like String)
-  email                        String
-  emailAuthLinkTTL             DateTime? // Null | Undefined
-  emailVerified                Boolean
-  emailVerifyTTL               DateTime? // Null | Undefined
-  externalId                   String
-  githubProfile                String? // Undefined
-  isApisMicroservicesCert      Boolean? // Undefined
-  isBackEndCert                Boolean? // Undefined
-  isBanned                     Boolean? // Undefined
-  isCheater                    Boolean? // Undefined
-  isDataAnalysisPyCertV7       Boolean? // Undefined
-  isDataVisCert                Boolean? // Undefined
-  isDonating                   Boolean
-  isFoundationalCSharpCertV8   Boolean? // Undefined
-  isFrontEndCert               Boolean? // Undefined
-  isFrontEndLibsCert           Boolean? // Undefined
-  isFullStackCert              Boolean? // Undefined
-  isHonest                     Boolean?
-  isInfosecCertV7              Boolean? // Undefined
-  isInfosecQaCert              Boolean? // Undefined
-  isJsAlgoDataStructCert       Boolean? // Undefined
-  isJsAlgoDataStructCertV8     Boolean? // Undefined
-  isMachineLearningPyCertV7    Boolean? // Undefined
-  isQaCertV7                   Boolean? // Undefined
-  isRelationalDatabaseCertV8   Boolean? // Undefined
-  isRespWebDesignCert          Boolean? // Undefined
-  isSciCompPyCertV7            Boolean? // Undefined
-  is2018DataVisCert            Boolean? // Undefined
-  is2018FullStackCert          Boolean? // Undefined
-  isCollegeAlgebraPyCertV8     Boolean? // Undefined
-  // isUpcomingPythonCertV8    Boolean? // Undefined. It is in the db but has never been used.
-  keyboardShortcuts            Boolean? // Undefined
-  linkedin                     String? // Null | Undefined
-  location                     String? // Null
-  name                         String? // Null
-  needsModeration              Boolean? // Undefined
-  newEmail                     String? // Null | Undefined
-  partiallyCompletedChallenges PartiallyCompletedChallenge[] // Undefined | PartiallyCompletedChallenge[]
-  password                     String? // Undefined
-  picture                      String
-  portfolio                    Portfolio[]
-  profileUI                    ProfileUI? // Undefined
-  progressTimestamps           Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE
+  id                             String                          @id @default(auto()) @map("_id") @db.ObjectId
+  about                          String
+  acceptedPrivacyTerms           Boolean
+  completedChallenges            CompletedChallenge[]
+  completedDailyCodingChallenges CompletedDailyCodingChallenge[]
+  completedExams                 CompletedExam[] // Undefined
+  quizAttempts                   QuizAttempt[] // Undefined
+  currentChallengeId             String?
+  donationEmails                 String[] // Undefined | String[] (only possible for built in Types like String)
+  email                          String?
+  emailAuthLinkTTL               DateTime? // Null | Undefined
+  emailVerified                  Boolean?
+  emailVerifyTTL                 DateTime? // Null | Undefined
+  externalId                     String
+  githubProfile                  String? // Undefined
+  isApisMicroservicesCert        Boolean? // Undefined
+  isBackEndCert                  Boolean? // Undefined
+  isBanned                       Boolean? // Undefined
+  isCheater                      Boolean? // Undefined
+  isDataAnalysisPyCertV7         Boolean? // Undefined
+  isDataVisCert                  Boolean? // Undefined
+  isDonating                     Boolean
+  isFoundationalCSharpCertV8     Boolean? // Undefined
+  isFrontEndCert                 Boolean? // Undefined
+  isFrontEndLibsCert             Boolean? // Undefined
+  isFullStackCert                Boolean? // Undefined
+  isHonest                       Boolean?
+  isInfosecCertV7                Boolean? // Undefined
+  isInfosecQaCert                Boolean? // Undefined
+  isJsAlgoDataStructCert         Boolean? // Undefined
+  isJsAlgoDataStructCertV8       Boolean? // Undefined
+  isMachineLearningPyCertV7      Boolean? // Undefined
+  isQaCertV7                     Boolean? // Undefined
+  isRelationalDatabaseCertV8     Boolean? // Undefined
+  isRespWebDesignCert            Boolean? // Undefined
+  isSciCompPyCertV7              Boolean? // Undefined
+  is2018DataVisCert              Boolean? // Undefined
+  is2018FullStackCert            Boolean? // Undefined
+  isCollegeAlgebraPyCertV8       Boolean? // Undefined
+  // isUpcomingPythonCertV8         Boolean? // Undefined. It is in the db but has never been used.
+  keyboardShortcuts              Boolean? // Undefined
+  linkedin                       String? // Null | Undefined
+  location                       String? // Null
+  name                           String? // Null
+  needsModeration                Boolean? // Undefined
+  newEmail                       String? // Null | Undefined
+  partiallyCompletedChallenges   PartiallyCompletedChallenge[] // Undefined | PartiallyCompletedChallenge[]
+  password                       String? // Undefined
+  picture                        String?
+  portfolio                      Portfolio[]
+  profileUI                      ProfileUI? // Undefined
+  progressTimestamps             Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE
   /// A random number between 0 and 1.
   ///
   /// Valuable for selectively performing random logic.
-  rand                         Float?
-  savedChallenges              SavedChallenge[] // Undefined | SavedChallenge[]
-  sendQuincyEmail              Boolean
-  theme                        String? // Undefined
-  timezone                     String? // Undefined
-  twitter                      String? // Null | Undefined
-  unsubscribeId                String
+  rand                           Float?
+  savedChallenges                SavedChallenge[] // Undefined | SavedChallenge[]
+  sendQuincyEmail                Boolean
+  theme                          String? // Undefined
+  timezone                       String? // Undefined
+  twitter                        String? // Null | Undefined
+  unsubscribeId                  String
   /// Used to track the number of times the user's record was written to.
   ///
   /// This has the main benefit of allowing concurrent ops to check for race conditions.
-  updateCount                  Int?                          @default(0)
-  username                     String // TODO(Post-MVP): make this unique
-  usernameDisplay              String? // Undefined
-  verificationToken            String? // Undefined
-  website                      String? // Undefined
-  yearsTopContributor          String[] // Undefined | String[]
-  isClassroomAccount           Boolean? // Undefined
+  updateCount                    Int?                            @default(0)
+  username                       String // TODO(Post-MVP): make this unique
+  usernameDisplay                String? // Undefined
+  verificationToken              String? // Undefined
+  website                        String? // Undefined
+  yearsTopContributor            String[] // Undefined | String[]
+  isClassroomAccount             Boolean? // Undefined
 
   // Relations
   examAttempts                      EnvExamAttempt[]
