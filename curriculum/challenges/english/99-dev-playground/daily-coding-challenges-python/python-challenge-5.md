@@ -9,7 +9,7 @@ dashedName: python-challenge-5
 
 Given a string, return a jumbled version of that string where each word is transformed using the following constraints:
 
-- The first and last letter of the words remain in place
+- The first and last letters of the words remain in place
 - All letters between the first and last letter are sorted alphabetically.
 - The input strings will contain no punctuation, and will be entirely lowercase.
 

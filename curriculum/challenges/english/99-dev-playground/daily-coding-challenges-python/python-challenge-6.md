@@ -7,7 +7,7 @@ dashedName: python-challenge-6
 
 # --description--
 
-Given two strings, determine if the they are anagrams of each other (contain the same characters in any order).
+Given two strings, determine if they are anagrams of each other (contain the same characters in any order).
 
 - Ignore casing and white space.
 
