@@ -11,7 +11,7 @@ Given a named CSS color string, generate a random hexadecimal (hex) color code t
 
 - The function should handle `red`, `green`, or `blue` as an input argument.
 - If the input is not one of those, the function should return `Invalid color`.
-- The function should return a random six character hex color code where the input color value is greater than any of the others.
+- The function should return a random six-character hex color code where the input color value is greater than any of the others.
 - Example of valid outputs for a given input:
 
 | Input   | Output   |
@@ -31,7 +31,7 @@ TestCase().assertEqual(generate_hex("yellow"), "Invalid color")`);
 }})
 ```
 
-`generate_hex("red")` should return a six character string.
+`generate_hex("red")` should return a six-character string.
 
 ```js
 ({test: () => { runPython(`
@@ -40,7 +40,7 @@ TestCase().assertEqual(len(generate_hex("red")), 6)`);
 }})
 ```
 
-`generate_hex("red")` should return a valid six character hex color code.
+`generate_hex("red")` should return a valid six-character hex color code.
 
 ```js
 ({test: () => { runPython(`
