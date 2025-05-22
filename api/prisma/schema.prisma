@@ -299,10 +299,10 @@ model EnvExamAttempt {
   startTimeInMS Int
 
   // Relations
-  user           user             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  exam           EnvExam          @relation(fields: [examId], references: [id], onDelete: Cascade)
-  generatedExam  EnvGeneratedExam @relation(fields: [generatedExamId], references: [id])
-  ExamModeration ExamModeration[]
+  user           user                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exam           EnvExam             @relation(fields: [examId], references: [id], onDelete: Cascade)
+  generatedExam  EnvGeneratedExam    @relation(fields: [generatedExamId], references: [id])
+  ExamModeration EnvExamModeration[]
 }
 
 type EnvQuestionSetAttempt {
@@ -491,7 +491,7 @@ type SurveyResponse {
 
 // ----------------------
 
-model ExamModeration {
+model EnvExamModeration {
   id             String    @id @default(auto()) @map("_id") @db.ObjectId
   /// Whether or not the iteam is approved
   approved       Boolean?

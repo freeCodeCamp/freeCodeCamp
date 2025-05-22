@@ -36,7 +36,6 @@ describe('/exam-environment/', () => {
       const setCookies = await devLogin();
       superPost = createSuperRequest({ method: 'POST', setCookies });
       superGet = createSuperRequest({ method: 'GET', setCookies });
-      // await mock.seedEnvExam();
       // Add exam environment authorization token
       const res = await superPost('/user/exam-environment/token');
       expect(res.status).toBe(201);
@@ -205,7 +204,7 @@ describe('/exam-environment/', () => {
 
         // Database should have moderation record for attempt
         const examModeration =
-          await fastifyTestInstance.prisma.examModeration.findUnique({
+          await fastifyTestInstance.prisma.envExamModeration.findUnique({
             where: { examAttemptId: attempt.id, approved: null }
           });
         expect(examModeration).not.toBeNull();
@@ -258,7 +257,9 @@ describe('/exam-environment/', () => {
           }
         });
         await mock.seedEnvExam();
-        const a = await fastifyTestInstance.prisma.examModeration.findMany({});
+        const a = await fastifyTestInstance.prisma.envExamModeration.findMany(
+          {}
+        );
         expect(a).toHaveLength(0);
       });
 
@@ -708,7 +709,7 @@ describe('/exam-environment/', () => {
         // If attempt is deleted, moderation record should cascade
         await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
         const moderationRecords =
-          await fastifyTestInstance.prisma.examModeration.findMany({});
+          await fastifyTestInstance.prisma.envExamModeration.findMany({});
         expect(moderationRecords).toHaveLength(0);
       });
 
@@ -752,7 +753,7 @@ describe('/exam-environment/', () => {
         const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
           data: { ...mock.examAttempt, userId: defaultUserId }
         });
-        await fastifyTestInstance.prisma.examModeration.create({
+        await fastifyTestInstance.prisma.envExamModeration.create({
           data: {
             examAttemptId: attempt.id,
             approved: null
@@ -789,7 +790,7 @@ describe('/exam-environment/', () => {
         const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
           data: { ...mock.examAttempt, userId: defaultUserId }
         });
-        await fastifyTestInstance.prisma.examModeration.create({
+        await fastifyTestInstance.prisma.envExamModeration.create({
           data: {
             examAttemptId: attempt.id,
             approved: null
@@ -818,7 +819,7 @@ describe('/exam-environment/', () => {
           data: { ...mock.examAttempt, userId: defaultUserId }
         });
 
-        await fastifyTestInstance.prisma.examModeration.create({
+        await fastifyTestInstance.prisma.envExamModeration.create({
           data: {
             examAttemptId: attempt.id,
             approved: true
@@ -851,7 +852,7 @@ describe('/exam-environment/', () => {
         // If attempt is deleted, moderation record should cascade
         await fastifyTestInstance.prisma.envExamAttempt.deleteMany();
         const moderationRecords =
-          await fastifyTestInstance.prisma.examModeration.findMany({});
+          await fastifyTestInstance.prisma.envExamModeration.findMany({});
         expect(moderationRecords).toHaveLength(0);
       });
 
@@ -873,7 +874,7 @@ describe('/exam-environment/', () => {
         const attempt = await fastifyTestInstance.prisma.envExamAttempt.create({
           data: { ...mock.examAttempt, userId: defaultUserId }
         });
-        await fastifyTestInstance.prisma.examModeration.create({
+        await fastifyTestInstance.prisma.envExamModeration.create({
           data: {
             examAttemptId: attempt.id,
             approved: null
@@ -900,7 +901,7 @@ describe('/exam-environment/', () => {
           data: { ...mock.examAttempt, userId: defaultUserId }
         });
 
-        await fastifyTestInstance.prisma.examModeration.create({
+        await fastifyTestInstance.prisma.envExamModeration.create({
           data: {
             examAttemptId: attempt.id,
             approved: null
@@ -927,7 +928,7 @@ describe('/exam-environment/', () => {
           data: { ...mock.examAttempt, userId: defaultUserId }
         });
 
-        await fastifyTestInstance.prisma.examModeration.create({
+        await fastifyTestInstance.prisma.envExamModeration.create({
           data: {
             examAttemptId: attempt.id,
             approved: true
