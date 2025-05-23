@@ -48,92 +48,38 @@ You can set these object properties to whatever values you want, as long as `nam
 `myDog` should contain the property `name` and it should be a `string`.
 
 ```js
-assert(
-  (function (z) {
-    if (
-      z.hasOwnProperty('name') &&
-      z.name !== undefined &&
-      typeof z.name === 'string'
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  })(myDog)
-);
+assert.property(myDog, 'name'); 
+assert.isString(myDog.name); 
 ```
 
 `myDog` should contain the property `legs` and it should be a `number`.
 
 ```js
-assert(
-  (function (z) {
-    if (
-      z.hasOwnProperty('legs') &&
-      z.legs !== undefined &&
-      typeof z.legs === 'number'
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  })(myDog)
-);
+assert.property(myDog, 'legs');
+assert.isNumber(myDog.legs); 
 ```
 
 `myDog` should contain the property `tails` and it should be a `number`.
 
 ```js
-assert(
-  (function (z) {
-    if (
-      z.hasOwnProperty('tails') &&
-      z.tails !== undefined &&
-      typeof z.tails === 'number'
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  })(myDog)
-);
+assert.property(myDog, 'tails'); 
+assert.isNumber(myDog.tails); 
 ```
 
 `myDog` should contain the property `friends` and it should be an `array`.
 
 ```js
-assert(
-  (function (z) {
-    if (
-      z.hasOwnProperty('friends') &&
-      z.friends !== undefined &&
-      Array.isArray(z.friends)
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  })(myDog)
-);
+assert.property(myDog, 'friends');
+assert.isArray(myDog.friends); 
 ```
 
 `myDog` should only contain all the given properties.
 
 ```js
-assert(
-  (function (z) {
-    return Object.keys(z).length === 4;
-  })(myDog)
-);
+assert.containsAllKeys(myDog, ['name', 'legs', 'tails', 'friends']); 
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(z){return z;})(myDog);
-```
 
 ## --seed-contents--
 
