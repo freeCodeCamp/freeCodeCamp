@@ -35,7 +35,7 @@ import {
   verifyTrophyWithMicrosoft
 } from '../helpers/challenge-helpers';
 import { UpdateReqType } from '../../utils';
-import { normalizeDate } from '../../utils/normalize';
+import { normalizeChallengeType, normalizeDate } from '../../utils/normalize';
 
 interface JwtPayload {
   userToken: string;
@@ -670,8 +670,13 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         const newCompletedChallenges: CompletedChallenge[] =
           completedChallenges.map(c => {
-            const { completedDate, ...rest } = c;
-            return { completedDate: normalizeDate(completedDate), ...rest };
+            const { completedDate, challengeType, ...rest } = c;
+
+            return {
+              completedDate: normalizeDate(completedDate),
+              challengeType: normalizeChallengeType(challengeType),
+              ...rest
+            };
           });
         const newCompletedExams: CompletedExam[] = completedExams;
         const newProgressTimeStamps = progressTimestamps as ProgressTimestamp[];
