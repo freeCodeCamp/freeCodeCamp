@@ -1,0 +1,18 @@
+{
+  "name": "daily-challenges",
+  "version": "1.0.0",
+  "main": "seed-daily-challenges.js",
+  "scripts": {
+    "seed": "tsx seed-daily-challenges.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "dotenv": "16.4.5",
+    "mongodb": "6.10.0",
+    "tsx": "4.19.1",
+    "typescript": "5.8.2"
+  },
+  "type": "module"
+}
