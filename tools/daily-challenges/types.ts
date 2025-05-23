@@ -9,3 +9,21 @@ export type QueryResult = {
     };
   };
 };
+
+export type Challenge = {
+  id: string;
+  title: string;
+  date: Date;
+  description: string;
+  instructions?: string;
+  fields: {
+    tests: {
+      testString: string;
+      text: string;
+    }[];
+  };
+  challengeFiles: {
+    contents: string;
+    filekey: string;
+  }[];
+};
