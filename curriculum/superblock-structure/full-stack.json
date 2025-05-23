@@ -684,6 +684,8 @@
             {
               "dashedName": "lab-factorial-calculator"
             },
+            { "dashedName": "lab-mutations" },
+            { "dashedName": "lab-chunky-monkey" },
             {
               "dashedName": "review-javascript-loops"
             },
