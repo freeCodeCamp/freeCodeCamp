@@ -173,10 +173,16 @@ const ShowGeneric = ({
             <PrismFormatted
               className='quiz-answer-label'
               text={answer.answer}
+              text={answer.answer}
             />
           ),
           value: index + 1, // distractors get values starting from 1
-          feedback: <PrismFormatted text={answer.feedback || ''} />
+          feedback: (
+            <PrismFormatted
+              className='quiz-feedback-label'
+              text={answer.feedback || ''}
+            />
+          )
         }));
 
       const answer = {
@@ -184,13 +190,19 @@ const ShowGeneric = ({
           <PrismFormatted
             className='quiz-answer-label'
             text={question.answers[answerIndex].answer}
+            text={question.answers[answerIndex].answer}
           />
         ),
         value: distractors.length + 1 // correct answer value is after distractors
       };
 
       return {
-        question: <PrismFormatted text={question.text} />,
+        question: (
+          <PrismFormatted
+            className='quiz-question-label'
+            text={question.text}
+          />
+        ),
         answers: shuffleArray([...distractors, answer]),
         correctAnswer: answer.value
       };
