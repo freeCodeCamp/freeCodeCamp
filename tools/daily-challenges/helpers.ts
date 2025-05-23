@@ -1,49 +1,10 @@
-/*
-  Helper function to get the daily challenge data from the dev-playground superblock using GraphQL.
-  The main client needs to be running with upcoming changes shown to get info from GraphQL
-*/
-import { ObjectId } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
+import { QueryResult } from './types';
 
 const GRAPHQL_ENDPOINT = 'http://localhost:8000/___graphql';
 
-type QueryResult = {
-  data: {
-    allChallengeNode: {
-      edges: {
-        node: {
-          challenge: Challenge;
-        };
-      }[];
-    };
-  };
-};
-
-type Challenge = {
-  id: string;
-  title: string;
-  description: string;
-  instructions?: string;
-  fields: {
-    tests: {
-      testString: string;
-      text: string;
-    }[];
-  };
-  challengeFiles: {
-    contents: string;
-    filekey: string;
-  }[];
-};
-
-// Remove the <section id="description/instructions"> that our parser adds.
-function removeSection(str: string) {
-  return str
-    .replace(/^<section id="(description|instructions)">\n?/, '')
-    .replace(/\n?<\/section>$/, '');
-}
-
 // Query challenge from graphQL - note that the main client needs to be running with upcomingChanges shown.
-async function queryGraphQL(query: string) {
+export async function queryGraphQL(query: string) {
   const response = await fetch(GRAPHQL_ENDPOINT, {
     method: 'POST',
     headers: {
@@ -62,7 +23,9 @@ async function queryGraphQL(query: string) {
   return challenge;
 }
 
-export async function fetchChallenge(challengeNumber: number) {
+// TODO: Refactor this so it gets all the challenges with one query.
+// Or maybe two, one for JS and one for Python.
+export async function fetchChallenge(challengeNumber: number, date: Date) {
   const jsTitleRE = `/^JavaScript Challenge ${challengeNumber}:/`;
   const pyTitleRE = `/^Python Challenge ${challengeNumber}:/`;
 
@@ -122,11 +85,15 @@ query {
   const pyChallenge = await queryGraphQL(pythonQuery);
 
   if (pyChallenge.description !== jsChallenge.description) {
-    throw Error('JavaScript and Python descriptions do not match');
+    throw Error(
+      `JavaScript and Python descriptions do not match for challenge ${challengeNumber}`
+    );
   }
 
   if (pyChallenge.instructions !== jsChallenge.instructions) {
-    throw Error('JavaScript and Python instructions do not match');
+    throw Error(
+      `JavaScript and Python instructions do not match ${challengeNumber}`
+    );
   }
 
   const {
@@ -148,6 +115,7 @@ query {
   const challengeData = {
     _id: new ObjectId(`${id}`),
     title: title.replace(`JavaScript Challenge ${challengeNumber}: `, ''),
+    date,
     description: removeSection(description),
     ...(instructions && {
       instructions: removeSection(instructions)
@@ -163,4 +131,25 @@ query {
   };
 
   return challengeData;
+}
+
+export function handleError(err: Error, client: MongoClient) {
+  if (err) {
+    console.error('Oh noes!! Error seeding Daily Challenges.');
+    console.error(err);
+    try {
+      client.close();
+    } catch {
+      // no-op
+    } finally {
+      process.exit(1);
+    }
+  }
+}
+
+// Remove the <section id="description/instructions"> that our parser adds.
+export function removeSection(str: string) {
+  return str
+    .replace(/^<section id="(description|instructions)">\n?/, '')
+    .replace(/\n?<\/section>$/, '');
 }
