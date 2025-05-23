@@ -91,6 +91,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.26.5",
+    "@babel/preset-env": "^7.27.1",
     "@babel/preset-react": "7.26.3",
     "@eslint/compat": "^1.2.6",
     "@eslint/eslintrc": "^3.2.0",
