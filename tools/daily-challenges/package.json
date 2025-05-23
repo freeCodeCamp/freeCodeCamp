@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "seed-daily-challenges.js",
   "scripts": {
-    "seed": "tsx seed-daily-challenges.ts"
+    "seed-daily-challenges": "tsx seed-daily-challenges.ts"
   },
   "author": "",
   "license": "ISC",
