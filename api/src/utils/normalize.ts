@@ -61,7 +61,12 @@ export const normalizeDate = (date?: Prisma.JsonValue): number => {
   }
 };
 
-// eslint-disable-next-line jsdoc/require-jsdoc
+/**
+ * Normalizes a challenge type value to a number.
+ *
+ * @param challengeType A JSON value that can be a number, string, or null.
+ * @returns The challenge type as a number or null.
+ */
 export const normalizeChallengeType = (
   challengeType?: Prisma.JsonValue
 ): number | null => {
