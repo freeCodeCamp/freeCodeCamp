@@ -1,5 +1,7 @@
 import fastifyOauth2, { type OAuth2Namespace } from '@fastify/oauth2';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import { Type } from '@sinclair/typebox';
+import { Value } from '@sinclair/typebox/value';
 import fp from 'fastify-plugin';
 
 import {
@@ -22,6 +24,14 @@ declare module 'fastify' {
     auth0OAuth: OAuth2Namespace;
   }
 }
+
+const Auth0ErrorSchema = Type.Object({
+  data: Type.Object({
+    payload: Type.Object({
+      error: Type.String()
+    })
+  })
+});
 
 /**
  * Fastify plugin for Auth0 authentication. This uses fastify-plugin to expose
@@ -111,6 +121,9 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         // functions.
         if (error instanceof Error && error.message === 'Invalid state') {
           logger.error('Auth failed: invalid state');
+        } else if (Value.Check(Auth0ErrorSchema, error)) {
+          const errorType = error.data.payload.error;
+          logger.error(error, 'Auth failed: ' + errorType);
         } else {
           logger.error(error, 'Failed to get access token from Auth0');
           fastify.Sentry.captureException(error);

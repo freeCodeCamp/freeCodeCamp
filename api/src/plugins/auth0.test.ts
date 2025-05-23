@@ -137,6 +137,33 @@ describe('auth0 plugin', () => {
       expect(res.statusCode).toBe(302);
     });
 
+    it('should log expected Auth0 errors', async () => {
+      jest.spyOn(fastify.log, 'error');
+      const auth0Error = Error('Response Error: 403 Forbidden');
+      // @ts-expect-error - mocking a hapi/boom error
+      auth0Error.data = {
+        payload: {
+          error: 'invalid_grant'
+        }
+      };
+
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
+        auth0Error
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=invalid'
+      });
+
+      expect(fastify.log.error).toHaveBeenCalledWith(
+        auth0Error,
+        'Auth failed: invalid_grant'
+      );
+
+      expect(res.statusCode).toBe(302);
+    });
+
     it('should not create a user if the state is invalid', async () => {
       await fastify.inject({
         method: 'GET',
