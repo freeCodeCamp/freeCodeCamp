@@ -1,4 +1,4 @@
-Script to seed the daily challenges.
+Script to seed the daily challenges. Used to seed challenges for local or production databases.
 
 To run:
 
