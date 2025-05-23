@@ -116,12 +116,14 @@ const ShowGeneric = ({
   const [initialQuizData] = useState(
     questions.map(question => {
       let currentIndex = 0;
-      const correctAnswer = question.answers[question.solution];
+      const correctAnswer = question.answers[question.solution - 1];
       const filteredAnswers = question.answers.filter(
-        x => x.answer !== question.answers[question.solution].answer
+        x => x.answer !== correctAnswer.answer
       );
+
       const distractors = filteredAnswers.map(distractor => {
         currentIndex++;
+
         return {
           label: (
             <PrismFormatted
@@ -138,6 +140,7 @@ const ShowGeneric = ({
         };
       });
 
+      console.log('Answer value: ' + question.solution);
       const answer = {
         label: (
           <PrismFormatted
@@ -145,7 +148,7 @@ const ShowGeneric = ({
             text={removeParagraphTags(correctAnswer.answer)}
           />
         ),
-        value: question.solution
+        value: 4
       };
 
       return {
