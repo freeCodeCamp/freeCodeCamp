@@ -3,7 +3,7 @@
   It gets the daily challenge data from the dev-playground superblock using GraphQL.
   The main client needs to be running with upcoming changes shown to get the info from GraphQL.
   Run the curriculum tests on the dev-playground superblock before seeding to make sure they pass.
-  TODO: Add some more validation before seeding - e.g: does the correct number of cdallenges exist,
+  TODO: Add some more validation before seeding - e.g: does the correct number of challenges exist,
   do the tests pass, is the data the right shape, etc.
 */
 

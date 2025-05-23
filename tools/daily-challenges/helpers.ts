@@ -111,7 +111,6 @@ query {
   } = pyChallenge;
 
   // Use the JS challenge info for the new challenge meta - e.g. title, description, etc
-  // TODO: Add challenge date
   const challengeData = {
     _id: new ObjectId(`${id}`),
     title: title.replace(`JavaScript Challenge ${challengeNumber}: `, ''),
