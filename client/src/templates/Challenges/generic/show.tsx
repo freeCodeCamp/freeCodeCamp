@@ -3,10 +3,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
-import { isEqual } from 'lodash';
+import { Container, Col, Row, Button, Spacer, useQuiz } from '@freecodecamp/ui';
 import store from 'store';
 import { YouTubeEvent } from 'react-youtube';
+import PrismFormatted from '../components/prism-formatted';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
@@ -37,6 +37,7 @@ import { SceneSubject } from '../components/scene/scene-subject';
 // Styles
 import './show.css';
 import '../video.css';
+import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
 
 // Redux Setup
 const mapStateToProps = (state: unknown) => ({
@@ -66,6 +67,10 @@ interface ShowQuizProps {
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   updateSolutionFormValues: () => void;
+}
+
+function removeParagraphTags(text: string): string {
+  return text.replace(/^<p>|<\/p>$/g, '');
 }
 
 const ShowGeneric = ({
@@ -107,6 +112,49 @@ const ShowGeneric = ({
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
+
+  const [initialQuizData] = useState(
+    questions.map(question => {
+      let currentIndex = 0;
+      const correctAnswer = question.answers[question.solution];
+      const filteredAnswers = question.answers.filter(
+        x => x.answer !== question.answers[question.solution].answer
+      );
+      const distractors = filteredAnswers.map(distractor => {
+        currentIndex++;
+        return {
+          label: (
+            <PrismFormatted
+              className='quiz-answer-label'
+              text={removeParagraphTags(distractor.answer)}
+            />
+          ),
+          value: currentIndex,
+          feedback: (
+            <PrismFormatted
+              text={removeParagraphTags(distractor.feedback || '')}
+            />
+          )
+        };
+      });
+
+      const answer = {
+        label: (
+          <PrismFormatted
+            className='quiz-answer-label'
+            text={removeParagraphTags(correctAnswer.answer)}
+          />
+        ),
+        value: question.solution
+      };
+
+      return {
+        question: <PrismFormatted text={question.text} />,
+        answers: shuffleArray([...distractors, answer]),
+        correctAnswer: answer.value
+      };
+    })
+  );
 
   useEffect(() => {
     initTests(tests);
@@ -151,53 +199,27 @@ const ShowGeneric = ({
     setAssignmentsCompleted(a => (isCompleted ? a + 1 : a - 1));
   };
 
-  // multiple choice questions
-  const [selectedMcqOptions, setSelectedMcqOptions] = useState(
-    questions.map<number | null>(() => null)
-  );
-  const [submittedMcqAnswers, setSubmittedMcqAnswers] = useState(
-    questions.map<number | null>(() => null)
-  );
-
   const [hasAnsweredMcqCorrectly, sethasAnsweredMcqCorrectly] = useState(true);
-
-  const [showFeedback, setShowFeedback] = useState(false);
-
-  const handleMcqOptionChange = (
-    questionIndex: number,
-    answerIndex: number
-  ): void => {
-    setSelectedMcqOptions(prev =>
-      prev.map((option, index) =>
-        index === questionIndex ? answerIndex : option
-      )
-    );
-  };
-
-  const handleSubmit = () => {
-    const hasCompletedAssignments =
-      assignments.length === 0 || allAssignmentsCompleted;
-    const mcqSolutions = questions.map(question => question.solution - 1);
-    const mcqCorrect = isEqual(mcqSolutions, selectedMcqOptions);
-
-    setSubmittedMcqAnswers(selectedMcqOptions);
-    setShowFeedback(true);
-    if (hasCompletedAssignments && mcqCorrect) {
-      openCompletionModal();
-    }
-
-    if (mcqSolutions.length > selectedMcqOptions.length || !mcqCorrect) {
-      sethasAnsweredMcqCorrectly(false);
-    } else {
-      sethasAnsweredMcqCorrectly(true);
-    }
-  };
 
   const sceneSubject = new SceneSubject();
 
+  const { questions: quizData, validateAnswers } = useQuiz({
+    initialQuestions: initialQuizData,
+    validationMessages: {
+      correct: t('learn.quiz.correct-answer'),
+      incorrect: t('learn.quiz.incorrect-answer')
+    },
+    passingPercent: 100,
+    onSuccess: () => {
+      openCompletionModal();
+      sethasAnsweredMcqCorrectly(true);
+    },
+    onFailure: () => sethasAnsweredMcqCorrectly(false)
+  });
+
   return (
     <Hotkeys
-      executeChallenge={handleSubmit}
+      executeChallenge={validateAnswers}
       containerRef={container}
       playScene={scene ? () => sceneSubject.notify('play') : undefined}
     >
@@ -267,13 +289,7 @@ const ShowGeneric = ({
               )}
 
               {questions.length > 0 && (
-                <MultipleChoiceQuestions
-                  questions={questions}
-                  selectedOptions={selectedMcqOptions}
-                  handleOptionChange={handleMcqOptionChange}
-                  submittedMcqAnswers={submittedMcqAnswers}
-                  showFeedback={showFeedback}
-                />
+                <MultipleChoiceQuestions questions={quizData} />
               )}
 
               {explanation ? (
@@ -284,7 +300,7 @@ const ShowGeneric = ({
                 <p className='text-center'>{t('learn.answered-mcq')}</p>
               )}
 
-              <Button block={true} variant='primary' onClick={handleSubmit}>
+              <Button block={true} variant='primary' onClick={validateAnswers}>
                 {blockType === BlockTypes.review
                   ? t('buttons.submit')
                   : t('buttons.check-answer')}
