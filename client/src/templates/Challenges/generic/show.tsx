@@ -140,7 +140,6 @@ const ShowGeneric = ({
         };
       });
 
-      console.log('Answer value: ' + question.solution);
       const answer = {
         label: (
           <PrismFormatted
