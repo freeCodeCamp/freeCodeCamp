@@ -74,7 +74,7 @@ export const normalizeChallengeType = (
         'Unexpected challengeType value: ' + JSON.stringify(challengeType)
       );
     }
-    return parseInt(challengeType, 10);
+    return parsed;
   } else if (challengeType === null) {
     return null;
   } else {
