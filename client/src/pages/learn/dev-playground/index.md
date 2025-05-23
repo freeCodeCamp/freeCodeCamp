@@ -6,4 +6,4 @@ certification: dev-playground
 
 ## Introduction to the Dev Playground
 
-Playground for creating testing new challenges
+Playground for creating and testing new challenges
