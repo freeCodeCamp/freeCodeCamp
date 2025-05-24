@@ -23,7 +23,7 @@ Declining an invitation
 
 ### --feedback--
 
-This option is incorrect because the phrase is not a response indicating refusal; instead, it is an invitation being extended.
+The phrase is not a response indicating refusal; instead, it is an invitation being extended.
 
 ---
 
@@ -35,7 +35,7 @@ Expressing gratitude
 
 ### --feedback--
 
-This option is incorrect because the phrase is more about offering an invitation than expressing thanks.
+The phrase is more about offering an invitation than expressing thanks.
 
 ---
 
@@ -43,7 +43,7 @@ Asking for information
 
 ### --feedback--
 
-This option is incorrect because the phrase is not seeking information; rather, it is an invitation to join an event.
+The phrase is not seeking information; rather, it is an invitation to join an event.
 
 ## --video-solution--
 

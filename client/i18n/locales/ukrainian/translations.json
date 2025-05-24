@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "Ось що наші випускники говорять про freeCodeCamp:",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Шон Вонг</strong> з Сінгапуру",
         "occupation": "Інженер програмного забезпечення в <strong>Amazon</strong>",
         "testimony": "«Змінювати професію — страшно. Я набув впевненості в програмуванні лише після того, як пройшов сотні годин безоплатних занять на freeCodeCamp. І вже за рік я отримав роботу інженера програмного забезпечення з шестизначною зарплатою. <strong>freeCodeCamp змінив моє життя.</strong>»"
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Сара Чіма</strong> з Нігерії",
         "occupation": "Інженерка програмного забезпечення в <strong>ChatDesk</strong>",
         "testimony": "«<strong>freeCodeCamp став для мене пропуском у професію</strong> інженерки програмного забезпечення. Гарно структурована навчальна програма дозволила покращити мої знання з програмування з початкового рівня до дуже впевненого. Це все, що було потрібно, щоб знайти свою першу роботу розробниці програмного забезпечення у чудовій компанії.»"
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Емма Бостіан</strong> зі Швеції",
         "occupation": "Інженерка програмного забезпечення в <strong>Spotify</strong>",
         "testimony": "«У мене завжди виникали труднощі при вивченні JavaScript. Я проходила багато курсів, але з курсом від freeCodeCamp я залишилася надовго. Вивчення JavaScript, а також структур даних та алгоритмів на <strong>freeCodeCamp дало мені необхідні навички</strong> і впевненість, щоб знайти роботу своєї мрії: інженерка програмного забезпечення у Spotify.»"
@@ -544,7 +547,7 @@
       "unanswered-questions": "Ви не відповіли на такі запитання: {{ unansweredQuestions }}. Потрібно дати відповідь на всі запитання.",
       "have-n-correct-questions": "Ви правильно відповіли на {{ correctAnswerCount }} з {{ total }} запитань.",
       "finish-modal-header": "Завершити тест",
-      "finish-modal-body": "Впевнені, що хочете завершити тест? Ви не зможете змінити свої відповіді.",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "Так, завершити тест",
       "finish-modal-no": "Ні, я хочу продовжити",
       "exit-modal-header": "Покинути тест",
@@ -902,6 +905,7 @@
     "unlink-success": "Ви успішно від’єдналися від {{website}}",
     "provide-username": "Перевірте, чи ви вказали ім’я користувача та звіт",
     "report-sent": "Звіт був відправлений команді з {{email}} в копії",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "Такої сертифікації не існує",
     "create-token-err": "Під час створення токена користувача сталася помилка",
     "delete-token-err": "Під час видалення токена користувача сталася помилка",
@@ -1110,6 +1114,8 @@
       "b1-english-for-developers-cert": "Сертифікація «Англійська мова B1 для розробників»",
       "full-stack-developer-v9": "Full Stack розробник",
       "full-stack-developer-v9-cert": "Сертифікація «Full Stack розробник»",
+      "a2-professional-spanish": "A2 Professional Spanish",
+      "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
       "legacy-front-end": "Front End (стара версія)",
       "legacy-front-end-cert": "Сертифікація «Front End» (стара версія)",
       "legacy-back-end": "Back End (стара версія)",

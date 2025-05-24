@@ -140,7 +140,7 @@ const LowerJawTips = ({
         className='test-status fade-in'
         aria-hidden={showFeedback}
       >
-        <Fail aria-hidden='true' />
+        <Fail />
         <p>{learnEncouragementText}</p>
       </div>
       <div

@@ -13,7 +13,7 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ !contains(github.ref, 'main') && !contains(github.ref, 'prod-') }}
 
 jobs:
   build-client:
@@ -112,7 +112,7 @@ jobs:
 
     services:
       mongodb:
-        image: mongo:4.4
+        image: mongo:8.0
         ports:
           - 27017:27017
       # We need mailhog to catch any emails the api tries to send.

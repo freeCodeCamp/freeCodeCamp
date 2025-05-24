@@ -11,6 +11,7 @@ import superBlockStructure from '../../../../../curriculum/superblock-structure/
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
 import { FsdChapters } from '../../../../../shared/config/chapters';
+import { type Module } from '../../../../../shared/config/modules';
 import envData from '../../../../config/env.json';
 import Block from './block';
 import CheckMark from './check-mark';
@@ -47,21 +48,12 @@ interface Challenge {
   superBlock: SuperBlocks;
 }
 
-interface SuperBlockAccordionPropsViewProps {
+interface SuperBlockAccordionProps {
   challenges: Challenge[];
   superBlock: SuperBlocks;
   chosenBlock: string;
   completedChallengeIds: string[];
 }
-
-type Module = {
-  dashedName: string;
-  comingSoon?: boolean;
-  blocks: {
-    dashedName: string;
-  }[];
-  moduleType?: string;
-};
 
 const modules = superBlockStructure.chapters.flatMap<Module>(
   ({ modules }) => modules
@@ -222,7 +214,7 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock,
   completedChallengeIds
-}: SuperBlockAccordionPropsViewProps) => {
+}: SuperBlockAccordionProps) => {
   const { t } = useTranslation();
   const { allChapters } = useMemo(() => {
     const populateBlocks = (blocks: { dashedName: string }[]) =>

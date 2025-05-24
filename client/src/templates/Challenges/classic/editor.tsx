@@ -108,7 +108,7 @@ export interface EditorProps {
   previewOpen: boolean;
   updateFile: (object: {
     fileKey: string;
-    editorValue: string;
+    contents: string;
     editableRegionBoundaries?: number[];
   }) => void;
   usesMultifileEditor: boolean;
@@ -783,7 +783,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(desc);
     desc.innerHTML = description;
     Prism.hooks.add('complete', enhancePrismAccessibility);
-    Prism.hooks.add('complete', makePrismCollapsible);
+
+    // To reduce confusion on the first workshop. Will need to find a better solution.
+    if (props.block !== 'workshop-curriculum-outline') {
+      Prism.hooks.add('complete', makePrismCollapsible);
+    }
     Prism.highlightAllUnder(desc);
 
     // Since the description can be resized without React knowing about it, the
@@ -846,7 +850,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   }
 
-  const onChange = (editorValue: string) => {
+  const onChange = (contents: string) => {
     const { updateFile, fileKey, isResetting } = props;
     if (isResetting) return;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
@@ -873,7 +877,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       });
     }
-    updateFile({ fileKey, editorValue, editableRegionBoundaries });
+    updateFile({ fileKey, contents, editableRegionBoundaries });
   };
 
   function createBreadcrumb(): HTMLElement {

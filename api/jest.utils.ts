@@ -1,6 +1,6 @@
 import request from 'supertest';
 
-import { build } from './src/app';
+import { build, buildOptions } from './src/app';
 import { createUserInput } from './src/utils/create-user';
 import { examJson } from './__mocks__/exam';
 import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf';
@@ -158,7 +158,11 @@ const indexData: IndexData[] = [
 export function setupServer(): void {
   let fastify: FastifyTestInstance;
   beforeAll(async () => {
-    fastify = await build();
+    if (process.env.FCC_ENABLE_TEST_LOGGING !== 'true') {
+      // @ts-expect-error Disable logging by unsetting logger
+      buildOptions.logger = undefined;
+    }
+    fastify = await build(buildOptions);
     await fastify.ready();
 
     // Prisma does not support TTL indexes in the schema yet, so, to avoid
@@ -202,6 +206,10 @@ export const resetDefaultUser = async (): Promise<void> => {
       where: { userId: defaultUserId }
     }
   );
+  await fastifyTestInstance.prisma.user.deleteMany({
+    where: { id: defaultUserId }
+  });
+
   await fastifyTestInstance.prisma.user.deleteMany({
     where: { email: defaultUserEmail }
   });

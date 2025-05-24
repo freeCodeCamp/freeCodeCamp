@@ -91,6 +91,7 @@ const createCertifiedMap = ({
   [Certification.FullStackDeveloper]: false,
   [Certification.A2English]: false,
   [Certification.B1English]: false,
+  [Certification.A2Spanish]: false,
   [Certification.JsAlgoDataStructNew]: isJsAlgoDataStructCertV8
 });
 

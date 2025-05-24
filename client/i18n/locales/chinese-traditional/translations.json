@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "freeCodeCamp 校友感言：",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Shawn Wang</strong> 新加坡",
         "occupation": "<strong>亞馬遜</strong>軟件工程師",
         "testimony": "\"轉行挺困難的。我在學習了 freeCodeCamp 的數百個小時的免費課程之後，纔對自己轉行成爲開發者有了信心。在一年內，我成爲了一名年薪 6 位數的軟件工程師。<strong>freeCodeCamp 改變了我的生活。</strong>\""
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Sarah Chima</strong> 尼日利亞",
         "occupation": "<strong>ChatDesk</strong> 軟件工程師",
         "testimony": "\"<strong>通過在 freeCodeCamp 學習，我轉行成爲一名軟件工程師。</strong>它的精心設計的課程幫助我從一個完全的新手成長爲非常自信的開發者。正是因爲 freeCodeCamp 的學習資源和社區的幫助，我在一家很棒的公司獲得了第一份開發工作。\""
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Emma Bostian</strong> 瑞典",
         "occupation": "<strong>Spotify</strong> 軟件工程師",
         "testimony": "\"我一直努力學習 JavaScript，嘗試了許多課程，最後是 freeCodeCamp 的課程吸引了我。在 freeCodeCamp 學習 JavaScript、數據結構和算法，<strong>我不僅掌握了技能，</strong>還變得更自信，所以才能獲得理想中的工作，成爲 Spotify 的一名軟件工程師。\""
@@ -544,7 +547,7 @@
       "unanswered-questions": "以下問題尚未回答：{{ unansweredQuestions }}。你必須回答所有問題。",
       "have-n-correct-questions": "你答對了 {{ total }} 個問題中的 {{ correctAnswerCount }} 個。",
       "finish-modal-header": "完成測驗",
-      "finish-modal-body": "你確定要完成測驗嗎？完成後將無法修改任何答案。",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "是的，我已經完成了",
       "finish-modal-no": "不，我想繼續測驗",
       "exit-modal-header": "退出測驗",
@@ -902,6 +905,7 @@
     "unlink-success": "你已成功取消 {{website}} 鏈接",
     "provide-username": "檢查你是否提供用戶名和報告",
     "report-sent": "已通過 {{email}} 向團隊發送副本報告",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "你嘗試查看的認證不存在",
     "create-token-err": "創建用戶令牌時出錯",
     "delete-token-err": "刪除用戶令牌時出錯",
@@ -1110,6 +1114,8 @@
       "b1-english-for-developers-cert": "開發者 B1 英語認證",
       "full-stack-developer-v9": "全棧開發者",
       "full-stack-developer-v9-cert": "全棧開發者認證",
+      "a2-professional-spanish": "A2 Professional Spanish",
+      "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
       "legacy-front-end": "舊版前端",
       "legacy-front-end-cert": "舊版前端認證",
       "legacy-back-end": "舊版後端",

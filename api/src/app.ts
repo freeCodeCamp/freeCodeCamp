@@ -1,8 +1,8 @@
+import { randomBytes } from 'crypto';
 import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
-import { GrowthBook } from '@growthbook/growthbook';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import uriResolver from 'fast-uri';
@@ -46,6 +46,7 @@ import {
   GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env';
 import { isObjectID } from './utils/validation';
+import { getLogger } from './utils/logger';
 import {
   examEnvironmentMultipartRoutes,
   examEnvironmentOpenRoutes,
@@ -59,12 +60,6 @@ type FastifyInstanceWithTypeProvider = FastifyInstance<
   FastifyBaseLogger,
   TypeBoxTypeProvider
 >;
-
-declare module 'fastify' {
-  interface FastifyInstance {
-    gb: GrowthBook;
-  }
-}
 
 // Options that fastify uses
 const ajv = new Ajv({
@@ -84,6 +79,12 @@ ajv.addFormat('objectid', {
   type: 'string',
   validate: (str: string) => isObjectID(str)
 });
+
+export const buildOptions = {
+  logger: getLogger(),
+  genReqId: () => randomBytes(8).toString('hex'),
+  disableRequestLogging: true
+};
 
 /**
  * Top-level wrapper to instantiate the API server. This is where all middleware and
@@ -191,6 +192,10 @@ export const build = async (
       await fastify.register(protectedRoutes.settingRedirectRoutes);
     });
   });
+
+  // TODO: The route should not handle its own AuthZ
+  await fastify.register(protectedRoutes.challengeTokenRoutes);
+
   // Routes for signed out users:
   void fastify.register(async function (fastify) {
     fastify.addHook('onRequest', fastify.authorize);
