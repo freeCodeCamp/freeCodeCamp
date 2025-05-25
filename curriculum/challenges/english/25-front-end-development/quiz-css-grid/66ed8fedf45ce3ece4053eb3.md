@@ -730,7 +730,7 @@ Creates three columns where the middle is twice as wide as the sides.
 
 #### --text--
 
-How would you create a grid with 3 equal columns and a 20px gap between them?
+How would you create a grid with 3 equal columns and a `20px` gap between them?
 
 #### --distractors--
 
