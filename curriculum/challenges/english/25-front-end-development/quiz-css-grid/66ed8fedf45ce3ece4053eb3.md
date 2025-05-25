@@ -857,7 +857,7 @@ Creates columns that are exactly 1fr wide regardless of content.
 
 ---
 
-Creates a maximum of one column per 150px of available width.
+Creates a maximum of one column per `150px` of available width.
 
 #### --answer--
 
