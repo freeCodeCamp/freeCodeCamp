@@ -853,7 +853,7 @@ Creates fixed 150px columns that overflow the container.
 
 ---
 
-Creates columns that are exactly 1fr wide regardless of content.
+Creates columns that are exactly `1fr` wide regardless of content.
 
 ---
 
