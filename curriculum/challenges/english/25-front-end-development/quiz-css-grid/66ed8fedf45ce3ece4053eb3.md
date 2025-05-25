@@ -789,7 +789,7 @@ Three rows with maximum height of 1fr.
 
 #### --answer--
 
-Three columns that grow proportionally but won't shrink below 100px.
+Three columns that grow proportionally but won't shrink below `100px`.
 
 ### --question--
 
