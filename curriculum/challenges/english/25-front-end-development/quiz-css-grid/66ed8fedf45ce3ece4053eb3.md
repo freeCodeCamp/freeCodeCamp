@@ -716,7 +716,7 @@ Creates three equal-width columns.
 
 ---
 
-Makes the middle column twice as wide as the others.
+Makes the middle column three times as wide as the others.
 
 ---
 
