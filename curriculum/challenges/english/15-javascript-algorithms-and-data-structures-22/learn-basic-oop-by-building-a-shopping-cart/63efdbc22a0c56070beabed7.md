@@ -218,96 +218,46 @@ const cartTotal = document.getElementById("total");
 const showHideCartSpan = document.getElementById("show-hide-cart");
 let isCartShowing = false;
 
-const products = [
-  {
-    id: 1,
-    name: "Vanilla Cupcakes (6 Pack)",
-    price: 12.99,
-    category: "Cupcake",
-  },
-  {
-    id: 2,
-    name: "French Macaron",
-    price: 3.99,
-    category: "Macaron",
-  },
-  {
-    id: 3,
-    name: "Pumpkin Cupcake",
-    price: 3.99,
-    category: "Cupcake",
-  },
-  {
-    id: 4,
-    name: "Chocolate Cupcake",
-    price: 5.99,
-    category: "Cupcake",
-  },
-  {
-    id: 5,
-    name: "Chocolate Pretzels (4 Pack)",
-    price: 10.99,
-    category: "Pretzel",
-  },
-  {
-    id: 6,
-    name: "Strawberry Ice Cream",
-    price: 2.99,
-    category: "Ice Cream",
-  },
-  {
-    id: 7,
-    name: "Chocolate Macarons (4 Pack)",
-    price: 9.99,
-    category: "Macaron",
-  },
-  {
-    id: 8,
-    name: "Strawberry Pretzel",
-    price: 4.99,
-    category: "Pretzel",
-  },
-  {
-    id: 9,
-    name: "Butter Pecan Ice Cream",
-    price: 2.99,
-    category: "Ice Cream",
-  },
-  {
-    id: 10,
-    name: "Rocky Road Ice Cream",
-    price: 2.99,
-    category: "Ice Cream",
-  },
-  {
-    id: 11,
-    name: "Vanilla Macarons (5 Pack)",
-    price: 11.99,
-    category: "Macaron",
-  },
-  {
-    id: 12,
-    name: "Lemon Cupcakes (4 Pack)",
-    price: 12.99,
-    category: "Cupcake",
-  },
-];
-
-products.forEach(
-  ({ name, id, price, category }) => {
-    dessertCards.innerHTML += `
+class Dessert {
+  constructor(id, name, price, category) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.category = category;
+  }
+  render() {
+    return `
       <div class="dessert-card">
-        <h2>${name}</h2>
-        <p class="dessert-price">$${price}</p>
-        <p class="product-category">Category: ${category}</p>
+        <h2>${this.name}</h2>
+        <p class="dessert-price">$${this.price}</p>
+        <p class="product-category">Category: ${this.category}</p>
         <button 
-          id="${id}" 
+          id="${this.id}" 
           class="btn add-to-cart-btn">Add to cart
         </button>
       </div>
     `;
   }
-);
+}
+
+const products = [
+  new Dessert(1, "Vanilla Cupcakes (6 Pack)", 12.99, "Cupcake"),
+  new Dessert(2, "French Macaron", 3.99, "Macaron"),
+  new Dessert(3, "Pumpkin Cupcake", 3.99, "Cupcake"),
+  new Dessert(4, "Chocolate Cupcake", 5.99, "Cupcake"),
+  new Dessert(5, "Chocolate Pretzels (4 Pack)", 10.99, "Pretzel"),
+  new Dessert(6, "Strawberry Ice Cream", 2.99, "Ice Cream"),
+  new Dessert(7, "Chocolate Macarons (4 Pack)", 9.99, "Macaron"),
+  new Dessert(8, "Strawberry Pretzel", 4.99, "Pretzel"),
+  new Dessert(9, "Butter Pecan Ice Cream", 2.99, "Ice Cream"),
+  new Dessert(10, "Rocky Road Ice Cream", 2.99, "Ice Cream"),
+  new Dessert(11, "Vanilla Macarons (5 Pack)", 11.99, "Macaron"),
+  new Dessert(12, "Lemon Cupcakes (4 Pack)", 12.99, "Cupcake"),
+];
+
+products.forEach(dessert => {
+  dessertCards.innerHTML += dessert.render();
+});
 
 class ShoppingCart {
   constructor() {
