@@ -634,7 +634,29 @@ Which of the following is the default value of the `position` property?
 
 #### --text--
 
-What is the default value of the `position` property in CSS?
+Which CSS property can be used to hide an element without removing it from the document flow?
+
+#### --distractors--
+
+`display: none`
+
+---
+
+`position: absolute`
+
+---
+
+`z-index: -1`
+
+#### --answer--
+
+`visibility: hidden`
+
+### --question--
+
+#### --text--
+
+Which CSS property allows you to offset an element from its normal position without removing it from the document flow?
 
 #### --distractors--
 
@@ -642,37 +664,15 @@ What is the default value of the `position` property in CSS?
 
 ---
 
-`relative`
-
----
-
 `fixed`
 
-#### --answer--
+---
 
 `static`
 
-### --question--
-
-#### --text--
-
-Which CSS property is used to control the stacking order of elements?
-
-#### --distractors--
-
-`position`
-
----
-
-`display`
-
----
-
-`float`
-
 #### --answer--
 
-`z-index`
+`relative`
 
 ### --question--
 
