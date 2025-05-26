@@ -777,7 +777,7 @@ What does `repeat(3, minmax(100px, 1fr))` create?
 
 #### --distractors--
 
-Three columns that can't shrink below 100px.
+Three columns that can't shrink below `100px`.
 
 ---
 
