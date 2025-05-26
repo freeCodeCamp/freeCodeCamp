@@ -958,7 +958,7 @@ The container will have two rows, each with a height of 1fr.
 
 #### --answer--
 
-The container will have three columns where the first is 100px, the second takes up 1 fraction of the remaining space, and the third takes up 2 fractions of the remaining space, and two rows where the first row has auto height and the second row is 150px tall.
+The container will have three columns: 100px, 1fr and 2fr wide and two rows: one auto and one with 150px height.
 
 ### --question--
 
