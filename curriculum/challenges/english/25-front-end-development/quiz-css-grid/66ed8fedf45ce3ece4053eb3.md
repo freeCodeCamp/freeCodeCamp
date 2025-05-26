@@ -849,7 +849,7 @@ What does this CSS accomplish?
 
 #### --distractors--
 
-Creates fixed 150px columns that overflow the container.
+Creates fixed `150px` columns that overflow the container.
 
 ---
 
