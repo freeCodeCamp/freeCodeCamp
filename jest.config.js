@@ -18,7 +18,7 @@ module.exports = {
   transform: {
     '^.+\\.[jt]sx?$': '<rootDir>/jest.transform.js'
   },
-  roots: ['.', './client', './api'],
+  roots: ['.', './client'],
   transformIgnorePatterns: ['node_modules/.pnpm/(?!(nanoid|uuid)@)'],
   setupFilesAfterEnv: ['./jest.setup.js'],
   testEnvironment: 'jsdom',

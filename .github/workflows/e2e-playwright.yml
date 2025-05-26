@@ -98,7 +98,7 @@ jobs:
           path: api-artifact.tar
 
   playwright-run-api:
-    name: Run Playwright Tests (with API)
+    name: Run Playwright Tests
     runs-on: ubuntu-22.04
     needs: [build-client, build-api]
     strategy:
