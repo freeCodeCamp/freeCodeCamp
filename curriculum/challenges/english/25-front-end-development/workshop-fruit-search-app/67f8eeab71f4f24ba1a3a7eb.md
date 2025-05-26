@@ -122,8 +122,9 @@ export function FruitsSearch() {
           onChange={(e) => setQuery(e.target.value)}
         />
       </form>
-    </div>
+      
     --fcc-editable-region--
+    </div>
   );
 }
 ```
