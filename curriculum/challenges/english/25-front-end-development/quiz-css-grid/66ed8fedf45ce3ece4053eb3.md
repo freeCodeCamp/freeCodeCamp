@@ -781,7 +781,7 @@ Three columns that can't shrink below `100px`.
 
 ---
 
-Three fixed 100px columns.
+Three fixed `100px` columns.
 
 ---
 
