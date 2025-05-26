@@ -116,6 +116,7 @@ const runnerTypes: Record<number, 'javascript' | 'dom' | 'python'> = {
   [challengeTypes.multifileCertProject]: 'dom',
   [challengeTypes.multifilePythonCertProject]: 'dom',
   [challengeTypes.lab]: 'dom',
+  [challengeTypes.jsLab]: 'javascript',
   [challengeTypes.pyLab]: 'python'
 };
 
