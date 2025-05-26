@@ -10,8 +10,7 @@ interface ConcatHTMLOptions {
 export function concatHtml({
   required = [],
   template,
-  contents,
-  testRunner
+  contents
 }: ConcatHTMLOptions): string {
   const embedSource = template
     ? _template(template)
