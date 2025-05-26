@@ -2019,6 +2019,12 @@
           "In these lecture videos, you will learn about working with ARIA roles."
         ]
       },
+      "lecture-accessible-media-elements": {
+        "title": "Working with Accessible Media Elements",
+        "intro": [
+          "In these lecture videos, you will learn about how to create accessible links, audio and video content."
+        ]
+      },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
         "intro": [

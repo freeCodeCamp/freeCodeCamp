@@ -37,22 +37,6 @@
     {
       "id": "672a538c029f9e8c1687460e",
       "title": "How Does Proper Heading Level Structure Affect Accessibility?"
-    },
-    {
-      "id": "672a55b5c0c14493328fe36e",
-      "title": "When Is the alt Attribute Needed, and What Are Some Examples of Good Alt Text?"
-    },
-    {
-      "id": "672a55dd1d86bc939606e204",
-      "title": "What Are the Accessibility Benefits for Good Link Text, and What Are Examples of Good Link Text?"
-    },
-    {
-      "id": "672a55eb7791559421ff0cd3",
-      "title": "What Are Good Ways to Make Audio and Video Content Accessible?"
-    },
-    {
-      "id": "672a55fbc2d95a9453151caf",
-      "title": "What Are Some Ways to Make Web Applications Keyboard Accessible?"
     }
   ],
   "helpCategory": "HTML-CSS"
