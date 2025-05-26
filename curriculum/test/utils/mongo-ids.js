@@ -1042,6 +1042,10 @@ const duplicatedProjectIds = [
 
   /*** JavaScript ***/
 
+  // Sum all numbers in range challenge (used in JS fundamentals review module)
+
+  'a3566b1109230028080c9345',
+
   // Local Storage ToDo App
 
   '64e4e4c4ec263b62ae7bf54d',
@@ -1516,12 +1520,12 @@ const duplicatedProjectIds = [
   // Budget App
   '5e44413e903586ffb414c94e',
 
+  // Polygon area calculator
+  '5e444147903586ffb414c94f'
+
   /*** Back End JavaScript ***/
 
   /*** Legacy Only ***/
-
-  // Caesars Cipher
-  '56533eb9ac21ba0edf2244e2'
 ];
 
 class MongoIds {

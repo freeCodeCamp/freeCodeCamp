@@ -28,8 +28,8 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.updateStripeCard
     },
-    async req => {
-      const logger = fastify.log.child({ req });
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
       const donation = await fastify.prisma.donation.findFirst({
         where: { userId: req.user?.id, provider: 'stripe' }
       });
@@ -62,7 +62,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.addDonation
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       try {
         const user = await fastify.prisma.user.findUnique({
           where: { id: req.user?.id }
@@ -107,7 +107,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.chargeStripeCard
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       try {
         const { paymentMethodId, amount, duration } = req.body;
         const id = req.user!.id;
@@ -117,6 +117,17 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         });
 
         const { email, name } = user;
+
+        if (!email) {
+          logger.warn(`User ${id} has no email`);
+          void reply.code(403);
+          return reply.send({
+            error: {
+              type: 'EmailRequiredError',
+              message: 'User has not provided an email address'
+            }
+          });
+        }
         const threeChallengesCompleted = user.completedChallenges.length >= 3;
 
         if (!threeChallengesCompleted) {

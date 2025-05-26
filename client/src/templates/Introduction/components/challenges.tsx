@@ -30,7 +30,7 @@ const CheckMark = ({ isCompleted }: { isCompleted: boolean }) =>
 
 const ListChallenge = ({ challenge }: { challenge: ChallengeInfo }) => (
   <Link to={challenge.fields.slug}>
-    <span className='map-badge'>
+    <span>
       <CheckMark isCompleted={challenge.isCompleted} />
     </span>
     {challenge.title}
@@ -40,7 +40,7 @@ const ListChallenge = ({ challenge }: { challenge: ChallengeInfo }) => (
 const CertChallenge = ({ challenge }: { challenge: ChallengeInfo }) => (
   <Link to={challenge.fields.slug}>
     {challenge.title}
-    <span className='map-badge map-project-checkmark'>
+    <span className='map-project-checkmark'>
       <CheckMark isCompleted={challenge.isCompleted} />
     </span>
   </Link>
@@ -107,10 +107,10 @@ function Challenges({
             : t('aria.steps')
         }
       >
-        <ul className={`map-challenges-ul map-challenges-grid `}>
+        <ul className={`map-challenges-ul map-challenges-grid`}>
           {challenges.map(challenge => (
             <li
-              className={`map-challenge-title map-challenge-title-grid ${
+              className={`map-challenge-title ${
                 isProjectBlock
                   ? 'map-project-wrap'
                   : challenge.challengeType === challengeTypes.dialogue

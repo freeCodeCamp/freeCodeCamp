@@ -28,14 +28,20 @@ describe('findOrCreateUser', () => {
   });
 
   it('should send a message to Sentry if there are multiple users with the same email', async () => {
-    await fastify.prisma.user.create({ data: createUserInput(email) });
-    await fastify.prisma.user.create({ data: createUserInput(email) });
+    const user1 = await fastify.prisma.user.create({
+      data: createUserInput(email)
+    });
+    const user2 = await fastify.prisma.user.create({
+      data: createUserInput(email)
+    });
+
+    const ids = [user1.id, user2.id];
 
     await findOrCreateUser(fastify, email);
 
     expect(captureException).toHaveBeenCalledTimes(1);
     expect(captureException).toHaveBeenCalledWith(
-      new Error('Multiple user records found for: test@user.com')
+      new Error(`Multiple user records found for: ${ids.join(', ')}`)
     );
   });
 
