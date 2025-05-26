@@ -2007,6 +2007,12 @@
           "In these lecture videos, you will learn about accessibility and its importance, assistive tools for people with disabilities, HTML attributes that let you create inclusive websites, accessibility best practices, and much more."
         ]
       },
+      "lecture-accessible-tables-forms": {
+        "title": "Best Accessibility Practices for Tables and Forms",
+        "intro": [
+          "In these lecture videos, you will learn about how to create accessible tables and forms."
+        ]
+      },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
         "intro": [

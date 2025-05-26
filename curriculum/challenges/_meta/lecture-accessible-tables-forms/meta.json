@@ -1,0 +1,19 @@
+{
+  "name": "Best Accessibility Practices for Tables and Forms",
+  "isUpcomingChange": false,
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "lecture-accessible-tables-forms",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [   
+    {
+      "id": "672a539b887ec68c593cdc4b",
+      "title": "What Are Best Practices for Tables and Accessibility?"
+    },
+    {
+      "id": "672a53ae8f1ad28c8a1ed0f0",
+      "title": "Why Is It Important for Inputs to Have an Associated Label?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
