@@ -861,7 +861,7 @@ Creates a maximum of one column per `150px` of available width.
 
 #### --answer--
 
-Creates flexible columns that are at least 150px and collapse when space is limited.
+Creates flexible columns that are at least `150px` and collapse when space is limited.
 
 ### --question--
 
