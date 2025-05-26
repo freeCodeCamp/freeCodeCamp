@@ -849,7 +849,9 @@
     "opens-new-window": "Opens in new window",
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
-    "edit-my-profile": "Edit my profile"
+    "edit-my-profile": "Edit my profile",
+    "editor-a11y-off": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
+    "editor-a11y-on": "{{editorName}} editor content. Accessibility mode set to true. Press Ctrl+E to disable or press Alt+F1 for more options."
   },
   "flash": {
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
