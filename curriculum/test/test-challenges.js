@@ -23,9 +23,8 @@ require('@babel/register')({
   only: [clientPath]
 });
 const {
-  buildPythonChallenge,
   buildChallenge,
-  buildFunctions
+  runnerTypes
 } = require('../../client/src/templates/Challenges/utils/build');
 const {
   challengeTypes,
@@ -530,22 +529,12 @@ async function createTestRunner(
     { usesTestRunner: true }
   );
 
-  const buildFunction = buildFunctions[challenge.challengeType];
-
-  const runsInPythonWorker = buildFunction === buildPythonChallenge;
-
-  // TODO: use same logic in client when determining "type"
-  const usesJSWorker =
-    challenge.challengeType === challengeTypes.js ||
-    challenge.challengeType === challengeTypes.jsLab ||
-    challenge.challengeType === challengeTypes.jsProject;
-
   const evaluator = await getContextEvaluator({
     // passing in challengeId so it's easier to debug timeouts
     challengeId: challenge.id,
     build,
     sources,
-    type: usesJSWorker ? 'javascript' : runsInPythonWorker ? 'python' : 'dom',
+    type: runnerTypes[challenge.challengeType],
     loadEnzyme,
     hooks: challenge.hooks
   });
