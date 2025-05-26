@@ -111,10 +111,12 @@ const runnerTypes: Record<number, 'javascript' | 'dom' | 'python'> = {
   [challengeTypes.js]: 'javascript',
   [challengeTypes.html]: 'dom',
   [challengeTypes.backend]: 'dom',
+  [challengeTypes.jsProject]: 'javascript',
   [challengeTypes.pythonProject]: 'python',
   [challengeTypes.python]: 'python',
+  [challengeTypes.modern]: 'dom',
   [challengeTypes.multifileCertProject]: 'dom',
-  [challengeTypes.multifilePythonCertProject]: 'dom',
+  [challengeTypes.multifilePythonCertProject]: 'python',
   [challengeTypes.lab]: 'dom',
   [challengeTypes.jsLab]: 'javascript',
   [challengeTypes.pyLab]: 'python'
@@ -146,7 +148,12 @@ type BuildResult = {
 // abstraction (function, class, whatever) and then create the various functions
 // out of it.
 export async function buildDOMChallenge(
-  { challengeFiles, required = [], template = '' }: BuildChallengeData,
+  {
+    challengeFiles,
+    required = [],
+    template = '',
+    challengeType
+  }: BuildChallengeData,
   options?: BuildOptions
 ): Promise<BuildResult> {
   // TODO: make this required in the schema.
@@ -182,9 +189,7 @@ export async function buildDOMChallenge(
       };
 
   return {
-    // TODO: Stop overwriting challengeType with 'html'. Figure out why it's
-    // necessary at the moment.
-    challengeType: challengeTypes.html,
+    challengeType,
     build: concatHtml(toBuild),
     sources: buildSourceMap(finalFiles),
     loadEnzyme: requiresReact16,
@@ -193,7 +198,10 @@ export async function buildDOMChallenge(
 }
 
 export async function buildJSChallenge(
-  { challengeFiles }: { challengeFiles?: ChallengeFile[] },
+  {
+    challengeFiles,
+    challengeType
+  }: { challengeFiles?: ChallengeFile[]; challengeType: number },
   options: BuildOptions
 ): Promise<BuildResult> {
   if (!challengeFiles) throw Error('No challenge files provided');
@@ -207,7 +215,7 @@ export async function buildJSChallenge(
   const toBuild = error ? [] : finalFiles;
 
   return {
-    challengeType: challengeTypes.js,
+    challengeType,
     build: toBuild
       .reduce(
         (body, challengeFile) => [
@@ -224,16 +232,17 @@ export async function buildJSChallenge(
   };
 }
 
-function buildBackendChallenge({ url }: BuildChallengeData) {
+function buildBackendChallenge({ url, challengeType }: BuildChallengeData) {
   return {
-    challengeType: challengeTypes.backend,
+    challengeType,
     build: '',
     sources: { contents: url }
   };
 }
 
 export async function buildPythonChallenge({
-  challengeFiles
+  challengeFiles,
+  challengeType
 }: BuildChallengeData): Promise<BuildResult> {
   if (!challengeFiles) throw new Error('No challenge files provided');
   const pipeLine = composeFunctions(
@@ -244,10 +253,7 @@ export async function buildPythonChallenge({
   const sources = buildSourceMap(finalFiles);
 
   return {
-    challengeType:
-      challengeFiles[0].editableRegionBoundaries?.length === 0
-        ? challengeTypes.multifilePythonCertProject
-        : challengeTypes.python,
+    challengeType,
     sources,
     build: sources?.contents,
     error
