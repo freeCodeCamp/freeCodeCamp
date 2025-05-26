@@ -785,7 +785,7 @@ Three fixed `100px` columns.
 
 ---
 
-Three rows with maximum height of 1fr.
+Three rows with maximum height of `1fr`.
 
 #### --answer--
 
