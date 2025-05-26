@@ -2013,6 +2013,12 @@
           "In these lecture videos, you will learn about how to create accessible tables and forms."
         ]
       },
+      "lecture-introduction-to-aria": {
+        "title": "Introduction to ARIA",
+        "intro": [
+          "In these lecture videos, you will learn about working with ARIA roles."
+        ]
+      },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
         "intro": [
