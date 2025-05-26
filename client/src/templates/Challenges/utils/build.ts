@@ -109,7 +109,7 @@ export async function buildChallenge(
   throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
 
-const runnerTypes: Record<number, 'javascript' | 'dom' | 'python'> = {
+export const runnerTypes: Record<number, 'javascript' | 'dom' | 'python'> = {
   [challengeTypes.js]: 'javascript',
   [challengeTypes.html]: 'dom',
   [challengeTypes.backend]: 'dom',
