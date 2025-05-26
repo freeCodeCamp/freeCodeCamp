@@ -933,7 +933,7 @@ Which property would you use to control overflow behavior in grid tracks?
 
 #### --text--
 
-You have the following grid container setup:
+What will be the result for the following code?
 
 ```css
 .container {
