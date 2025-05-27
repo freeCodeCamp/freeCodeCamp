@@ -132,7 +132,7 @@
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
   "pnpm": {
     "patchedDependencies": {
       "@fastify/oauth2@7.8.1": "patches/@fastify__oauth2@7.8.1.patch",
