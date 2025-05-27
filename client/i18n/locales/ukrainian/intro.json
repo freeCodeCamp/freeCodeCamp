@@ -1730,7 +1730,6 @@
       "Для отримання цієї сертифікації потрібно багато часу і зусиль. Якщо ви розпочнете зараз, то будете готові до решти матеріалу і кінцевого екзамену як тільки ми опублікуємо їх протягом найближчих місяців."
     ],
     "chapters": {
-      "freecodecamp": "Вітання",
       "html": "HTML",
       "css": "CSS",
       "javascript": "JavaScript",
@@ -1741,7 +1740,6 @@
       "exam-certified-full-stack-developer": "Екзамен «Сертифікований Full Stack розробник»"
     },
     "modules": {
-      "getting-started-with-freecodecamp": "Початок роботи з freeCodeCamp",
       "basic-html": "Основи HTML",
       "semantic-html": "Семантичний HTML",
       "html-forms-and-tables": "Форми та таблиці",
@@ -1813,17 +1811,32 @@
       "exam-python": "Екзамен «Python»"
     },
     "blocks": {
-      "lecture-welcome-to-freecodecamp": {
-        "title": "Вітаємо на freeCodeCamp",
+      "workshop-curriculum-outline": {
+        "title": "Build a Curriculum Outline",
         "intro": [
-          "Перегляньте ці відео, щоб дізнатись про freeCodeCamp: завдяки цій спільноті мільйони людей навчились програмувати та стали розробниками."
+          "Welcome to freeCodeCamp!",
+          "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
+        ]
+      },
+      "lecture-welcome-to-freecodecamp": {
+        "title": "Welcome Message from Quincy Larson",
+        "intro": [
+          "Hear from Quincy Larson, the founder and teacher of freeCodeCamp.",
+          "Quincy will welcome you to the platform and talk about how the certification works. Quincy will also provide tips on how to learn effectively."
+        ]
+      },
+      "lab-debug-camperbots-profile-page": {
+        "title": "Debug Camperbot's Profile Page",
+        "intro": [
+          "Camperbot is learning how to code too and needs some help with their HTML.",
+          "In this lab, you will help Camperbot find and fix the errors in their code."
         ]
       },
       "lecture-what-is-html": {
-        "title": "Що таке HTML?",
+        "title": "Understanding HTML Attributes and the HTML Boilerplate",
         "intro": [
-          "У цій відеолекції ви ознайомитесь з HTML (мовою розмітки гіпертексту) — мовою розмітки для створення вебсторінок.",
-          "Ви дізнаєтесь, яку роль відіграє HTML у мережі, а також про базовий синтаксис та атрибути HTML."
+          "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."
         ]
       },
       "workshop-cat-photo-app": {
@@ -2959,6 +2972,12 @@
         "title": "Створіть генератор паролів",
         "intro": [
           "У цій лабораторній роботі ви створите застосунок для генерації паролів на основі вхідних даних користувача."
+        ]
+      },
+      "lab-sum-all-numbers-algorithm": {
+        "title": "Design a Sum All Numbers Algorithm",
+        "intro": [
+          "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
         ]
       },
       "review-javascript-fundamentals": {
