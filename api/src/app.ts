@@ -81,7 +81,7 @@ ajv.addFormat('objectid', {
 });
 
 export const buildOptions = {
-  logger: getLogger(),
+  loggerInstance: process.env.NODE_ENV === 'test' ? undefined : getLogger(),
   genReqId: () => randomBytes(8).toString('hex'),
   disableRequestLogging: true
 };
