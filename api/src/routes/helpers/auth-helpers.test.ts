@@ -2,6 +2,7 @@ import Fastify, { FastifyInstance } from 'fastify';
 
 import db from '../../db/prisma';
 import { createUserInput } from '../../utils/create-user';
+import { checkCanConnectToDb } from '../../../jest.utils';
 import { findOrCreateUser } from './auth-helpers';
 
 const captureException = jest.fn();
@@ -9,6 +10,7 @@ const captureException = jest.fn();
 async function setupServer() {
   const fastify = Fastify();
   await fastify.register(db);
+  await checkCanConnectToDb(fastify.prisma);
   // @ts-expect-error we're mocking the Sentry plugin
   fastify.Sentry = { captureException };
   return fastify;
