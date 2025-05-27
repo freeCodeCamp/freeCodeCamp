@@ -244,11 +244,15 @@ function ShowClassic({
   });
 
   const guideUrl = getGuideUrl({ forumTopicId, title });
+  const [isSaved, setIsSaved] = useState(true);
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+  const leaveMessage = t(
+    'Are you sure you want to leave this page? Unsaved changes may be lost.'
+  );
   const openConsole = isJavaScriptChallenge({ challengeType });
   const hasPreview = challengeHasPreview({ challengeType });
   const getLayoutState = () => {
@@ -353,6 +357,95 @@ function ShowClassic({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // detect if user has unsaved contents
+  useEffect(() => {
+    let isFileSaved = true;
+
+    const savedChallengeFiles = savedChallenges[0]?.challengeFiles;
+
+    if (!challengeFiles) return;
+
+    for (let index = 0; index < challengeFiles.length; index++) {
+      const hasChangedContentAfterSave =
+        savedChallengeFiles &&
+        savedChallengeFiles[index]?.contents != challengeFiles[index]?.contents;
+
+      if (!savedChallengeFiles || hasChangedContentAfterSave) {
+        isFileSaved = false;
+      }
+    }
+
+    setIsSaved(isFileSaved);
+  }, [savedChallenges, challengeFiles]);
+
+  // prevent following links if the user has unsaved content
+  useEffect(() => {
+    const handleLinkClick = (event: MouseEvent) => {
+      if (isSaved) {
+        document.removeEventListener('click', handleLinkClick, true);
+        return;
+      }
+
+      const target = event.target as HTMLElement;
+      const anchor = target.closest('a');
+      if (!anchor) return;
+
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+
+      const allowLeave = window.confirm(leaveMessage);
+
+      if (!allowLeave) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    };
+
+    document.addEventListener('click', handleLinkClick, true);
+
+    return () => {
+      document.removeEventListener('click', handleLinkClick, true);
+    };
+  }, [isSaved, leaveMessage]);
+
+  const stopWindowCloseHandler =
+    (leaveMessage: string) => (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      window.confirm(leaveMessage);
+    };
+
+  const stopBrowserBackHandler = (leaveMessage: string) => () => {
+    window.confirm(leaveMessage);
+  };
+
+  const stopWindowCloseRef = useRef<(e: BeforeUnloadEvent) => void>();
+  const stopBrowserBackRef = useRef<() => void>();
+
+  useEffect(() => {
+    stopWindowCloseRef.current = stopWindowCloseHandler(leaveMessage);
+    stopBrowserBackRef.current = stopBrowserBackHandler(leaveMessage);
+  }, [leaveMessage]);
+
+  useEffect(() => {
+    const stopWindowClose = stopWindowCloseRef.current;
+    const stopBrowserBack = stopBrowserBackRef.current;
+
+    if (!isSaved) {
+      // Prevent page close
+      window.addEventListener('beforeunload', stopWindowClose!);
+      // Prevent browser back
+      window.addEventListener('popstate', stopBrowserBack!);
+    } else {
+      window.removeEventListener('beforeunload', stopWindowClose!);
+      window.removeEventListener('popstate', stopBrowserBack!);
+    }
+
+    return () => {
+      window.removeEventListener('beforeunload', stopWindowClose!);
+      window.removeEventListener('popstate', stopBrowserBack!);
+    };
+  }, [isSaved]);
+
   const initializeComponent = (title: string): void => {
     initConsole('');
 
@@ -386,6 +479,9 @@ function ShowClassic({
     });
     challengeMounted(challengeMeta.id);
     setIsAdvancing(false);
+
+    /* window.addEventListener('beforeunload', stopWindowCloseRef.current);
+    window.addEventListener('popstate', stopBrowserBackRef.current); */
   };
 
   const renderInstructionsPanel = ({
