@@ -421,8 +421,8 @@ importers:
         specifier: 5.25.1
         version: 5.25.1(gatsby@3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.5.5)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2))
       i18next:
-        specifier: 22.5.1
-        version: 22.5.1
+        specifier: 25.2.1
+        version: 25.2.1(typescript@5.2.2)
       instantsearch.js:
         specifier: 4.75.3
         version: 4.75.3(algoliasearch@4.22.1)
@@ -487,8 +487,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(react@17.0.2)
       react-i18next:
-        specifier: 12.3.1
-        version: 12.3.1(i18next@22.5.1)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+        specifier: 15.5.2
+        version: 15.5.2(i18next@25.2.1(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)
       react-instantsearch:
         specifier: 7.13.6
         version: 7.13.6(algoliasearch@4.22.1)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -662,8 +662,8 @@ importers:
         specifier: 1.1.32
         version: 1.1.32(gatsby@3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.5.5)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2))
       i18next-fs-backend:
-        specifier: 2.3.2
-        version: 2.3.2
+        specifier: 2.6.0
+        version: 2.6.0
       jest-json-schema-extended:
         specifier: 1.0.1
         version: 1.0.1
@@ -818,7 +818,7 @@ importers:
         version: 17.0.19
       '@uiw/react-codemirror':
         specifier: 3.2.10
-        version: 3.2.10(@babel/runtime@7.23.9)(codemirror@5.65.16)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+        version: 3.2.10(@babel/runtime@7.27.3)(codemirror@5.65.16)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       shx:
         specifier: 0.3.4
         version: 0.3.4
@@ -2340,6 +2340,10 @@ packages:
 
   '@babel/runtime@7.23.9':
     resolution: {integrity: sha512-0CX6F+BI2s9dkUqr08KFrAIZgNFj75rdBU/DjCyYLIaV/quFjkk6T+EJ2LkZHyZTbEV4L5p97mNkUsHl2wLFAw==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/runtime@7.27.3':
+    resolution: {integrity: sha512-7EYtGezsdiDMyY80+65EzwiGmcJqpmcZCojSXaRgdrBaGtWTgDZKq69cPIVped6MkIM78cTQ2GOiEYjwOlG4xw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/standalone@7.23.7':
@@ -6452,14 +6456,6 @@ packages:
   debounce@1.2.1:
     resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
 
-  debug@2.2.0:
-    resolution: {integrity: sha512-X0rGvJcskG1c3TgSCPqHJ0XJgwlcvOC7elJ5Y0hYuKBZoVqWpAMfLOeIh2UI/DCQ5ruodIjvsugZtjUYUw2pUw==}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
     peerDependencies:
@@ -8421,11 +8417,16 @@ packages:
   hyphenate-style-name@1.0.4:
     resolution: {integrity: sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==}
 
-  i18next-fs-backend@2.3.2:
-    resolution: {integrity: sha512-LIwUlkqDZnUI8lnUxBnEj8K/FrHQTT/Sc+1rvDm9E8YvvY5YxzoEAASNx+W5M9DfD5s77lI5vSAFWeTp26B/3Q==}
+  i18next-fs-backend@2.6.0:
+    resolution: {integrity: sha512-3ZlhNoF9yxnM8pa8bWp5120/Ob6t4lVl1l/tbLmkml/ei3ud8IWySCHt2lrY5xWRlSU5D9IV2sm5bEbGuTqwTw==}
 
-  i18next@22.5.1:
-    resolution: {integrity: sha512-8TGPgM3pAD+VRsMtUMNknRz3kzqwp/gPALrWMsDnmC1mKqJwpWyooQRLMcbTwq8z8YwSmuj+ZYvc+xCuEpkssA==}
+  i18next@25.2.1:
+    resolution: {integrity: sha512-+UoXK5wh+VlE1Zy5p6MjcvctHXAhRwQKCxiJD8noKZzIXmnAX8gdHX5fLPA3MEVxEN4vbZkQFy8N0LyD9tUqPw==}
+    peerDependencies:
+      typescript: ^5
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
@@ -10258,9 +10259,6 @@ packages:
     resolution: {integrity: sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==}
     engines: {node: '>=10'}
 
-  ms@0.7.1:
-    resolution: {integrity: sha512-lRLiIR9fSNpnP6TC4v8+4OU7oStC01esuNowdQ34L+Gk8e5Puoc88IqJ+XAY/B3Mn2ZKis8l8HX90oU8ivzUHg==}
-
   ms@2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
 
@@ -11509,17 +11507,20 @@ packages:
     peerDependencies:
       react: '>= 0.14.0'
 
-  react-i18next@12.3.1:
-    resolution: {integrity: sha512-5v8E2XjZDFzK7K87eSwC7AJcAkcLt5xYZ4+yTPDAW1i7C93oOY1dnr4BaQM7un4Hm+GmghuiPvevWwlca5PwDA==}
+  react-i18next@15.5.2:
+    resolution: {integrity: sha512-ePODyXgmZQAOYTbZXQn5rRsSBu3Gszo69jxW6aKmlSgxKAI1fOhDwSu6bT4EKHciWPKQ7v7lPrjeiadR6Gi+1A==}
     peerDependencies:
-      i18next: '>= 19.0.0'
+      i18next: '>= 23.2.3'
       react: '>= 16.8.0'
       react-dom: '*'
       react-native: '*'
+      typescript: ^5
     peerDependenciesMeta:
       react-dom:
         optional: true
       react-native:
+        optional: true
+      typescript:
         optional: true
 
   react-instantsearch-core@7.13.6:
@@ -16680,6 +16681,8 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.0
 
+  '@babel/runtime@7.27.3': {}
+
   '@babel/standalone@7.23.7': {}
 
   '@babel/template@7.22.15':
@@ -19899,9 +19902,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@uiw/react-codemirror@3.2.10(@babel/runtime@7.23.9)(codemirror@5.65.16)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@uiw/react-codemirror@3.2.10(@babel/runtime@7.27.3)(codemirror@5.65.16)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       codemirror: 5.65.16
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
@@ -21951,10 +21954,6 @@ snapshots:
   dateformat@4.6.3: {}
 
   debounce@1.2.1: {}
-
-  debug@2.2.0:
-    dependencies:
-      ms: 0.7.1
 
   debug@2.6.9:
     dependencies:
@@ -25017,11 +25016,13 @@ snapshots:
 
   hyphenate-style-name@1.0.4: {}
 
-  i18next-fs-backend@2.3.2: {}
+  i18next-fs-backend@2.6.0: {}
 
-  i18next@22.5.1:
+  i18next@25.2.1(typescript@5.2.2):
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
+    optionalDependencies:
+      typescript: 5.2.2
 
   iconv-lite@0.4.24:
     dependencies:
@@ -27482,8 +27483,6 @@ snapshots:
 
   mrmime@1.0.1: {}
 
-  ms@0.7.1: {}
-
   ms@2.0.0: {}
 
   ms@2.1.2: {}
@@ -28835,14 +28834,15 @@ snapshots:
       prop-types: 15.8.1
       react: 17.0.2
 
-  react-i18next@12.3.1(i18next@22.5.1)(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
+  react-i18next@15.5.2(i18next@25.2.1(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2):
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       html-parse-stringify: 3.0.1
-      i18next: 22.5.1
+      i18next: 25.2.1(typescript@5.2.2)
       react: 17.0.2
     optionalDependencies:
       react-dom: 17.0.2(react@17.0.2)
+      typescript: 5.2.2
 
   react-instantsearch-core@7.13.6(algoliasearch@4.22.1)(react@17.0.2):
     dependencies:
@@ -29910,7 +29910,7 @@ snapshots:
   snapdragon@0.8.2:
     dependencies:
       base: 0.11.2
-      debug: 2.2.0
+      debug: 2.6.9
       define-property: 0.2.5
       extend-shallow: 2.0.1
       map-cache: 0.2.2
