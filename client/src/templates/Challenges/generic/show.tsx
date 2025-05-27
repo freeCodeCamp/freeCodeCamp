@@ -37,7 +37,6 @@ import { SceneSubject } from '../components/scene/scene-subject';
 // Styles
 import './show.css';
 import '../video.css';
-import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
 
 // Redux Setup
 const mapStateToProps = (state: unknown) => ({
@@ -152,7 +151,7 @@ const ShowGeneric = ({
 
       return {
         question: <PrismFormatted text={question.text} />,
-        answers: shuffleArray([...distractors, answer]),
+        answers: [...distractors, answer],
         correctAnswer: answer.value
       };
     })
