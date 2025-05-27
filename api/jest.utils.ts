@@ -159,13 +159,13 @@ export async function checkCanConnectToDb(
   prisma: FastifyTestInstance['prisma']
 ): Promise<void> {
   const countP = prisma.user.count();
-  const delay = new Promise((_resolve, reject) =>
+  const delayedRejection = new Promise((_resolve, reject) =>
     setTimeout(
       () => reject(Error('unable to connect to Mongodb (timeout)')),
       1000
     )
   );
-  await Promise.all([countP, delay]);
+  await Promise.race([countP, delayedRejection]);
 }
 
 export function setupServer(): void {
