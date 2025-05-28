@@ -202,7 +202,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
         throw err;
       }
     } catch (err) {
-      const { actual, expected, errorType } = err;
+      const { actual, expected, type } = err;
 
       newTest.message = text
         .replace('--fcc-expected--', expected)
@@ -210,9 +210,9 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
-      } else if (errorType) {
+      } else if (type) {
         const msgKey =
-          errorType === 'indentation'
+          type === 'IndentationError'
             ? 'learn.indentation-error'
             : 'learn.syntax-error';
         newTest.message = `<p>${i18next.t(msgKey)}</p>`;
