@@ -169,8 +169,8 @@ export const runTestInTestFrame = async function (
   return await Promise.race([
     new Promise<
       { pass: boolean } | { err: { message: string; stack?: string } }
-    >((_, reject) => setTimeout(() => reject('timeout'), timeout)),
-    runner.runTest(test)
+    >((_, reject) => setTimeout(() => reject(Error('timeout')), timeout)),
+    runner?.runTest(test)
   ]);
 };
 
