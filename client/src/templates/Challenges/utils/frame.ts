@@ -165,7 +165,7 @@ export const runTestInTestFrame = async function (
   timeout: number,
   type: 'dom' | 'javascript' | 'python'
 ): Promise<TestResult | undefined> {
-  const runner = window?.FCCSandbox.getRunner(type);
+  const runner = window?.FCCTestRunner.getRunner(type);
 
   return await Promise.race([
     new Promise<
@@ -190,7 +190,7 @@ export const prepTestRunner = async ({
 }) => {
   const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
   await loadTestRunner(document);
-  await window?.FCCSandbox.createTestRunner({
+  await window?.FCCTestRunner.createTestRunner({
     type,
     code: sources,
     source,
@@ -222,7 +222,7 @@ const createRunnerScript = (document: Document) => {
 
 const loadTestRunner = async (document: Document) => {
   const done = new Promise<void>((resolve, reject) => {
-    const alreadyLoaded = !!window?.FCCSandbox;
+    const alreadyLoaded = !!window?.FCCTestRunner;
 
     if (alreadyLoaded) return resolve();
 
