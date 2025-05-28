@@ -190,8 +190,6 @@ export const prepTestRunner = async ({
 }) => {
   const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
   await loadTestRunner(document);
-  console.log('AFTER LOAD TEST RUNNER');
-  console.log('FCCSandbox', window?.FCCSandbox);
   await window?.FCCSandbox.createTestRunner({
     type,
     code: sources,
