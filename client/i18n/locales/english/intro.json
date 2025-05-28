@@ -2927,6 +2927,18 @@
           "You'll practice using loops and conditionals to calculate the factorial of a number."
         ]
       },
+      "lab-mutations": {
+        "title": "Implement the Mutations Algorithm",
+        "intro": [
+          "In this lab, you will practice iterating over two different strings to compare their characters."
+        ]
+      },
+      "lab-chunky-monkey": {
+        "title": "Implement the Chunky Monkey Algorithm",
+        "intro": [
+          "In this lab, you will practice dividing an array into smaller arrays with the technique of your choice."
+        ]
+      },
       "review-javascript-loops": {
         "title": "JavaScript Loops Review",
         "intro": [
