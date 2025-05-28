@@ -23,6 +23,7 @@ export const ConditionalDonationAlert = ({
   const unfinishedCertifications = [
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A2Spanish,
     SuperBlocks.FullStackDeveloper
   ];
 
@@ -69,14 +70,12 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
     title: string;
     intro: string[];
     note: string;
-  } = t<
-    string,
-    string & {
-      title: string;
-      intro: string[];
-      note: string;
-    }
-  >(`intro:${superBlock}`);
+  } = t(`intro:${superBlock}`, { returnObjects: true }) as {
+    title: string;
+    intro: string[];
+    note: string;
+  };
+
   const {
     title: i18nSuperBlock,
     intro: superBlockIntroText,

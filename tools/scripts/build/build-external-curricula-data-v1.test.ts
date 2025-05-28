@@ -3,7 +3,11 @@ import fs, { readFileSync } from 'fs';
 
 import readdirp from 'readdirp';
 
-import { SuperBlocks } from '../../../shared/config/curriculum';
+import {
+  SuperBlocks,
+  SuperBlockStage,
+  superBlockStages
+} from '../../../shared/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -133,7 +137,14 @@ ${result.error.message}`);
       ({ dashedName }) => dashedName
     );
 
-    const publicSuperBlockNames = Object.values(SuperBlocks);
+    const publicSuperBlockNames = Object.entries(superBlockStages)
+      .filter(([key]) => {
+        const stage = Number(key) as SuperBlockStage;
+        return (
+          stage !== SuperBlockStage.Next && stage !== SuperBlockStage.Upcoming
+        );
+      })
+      .flatMap(([, superBlocks]) => superBlocks);
 
     expect(dashedNames).toEqual(expect.arrayContaining(publicSuperBlockNames));
     expect(Object.keys(orderedSuperBlockInfo)).toHaveLength(
