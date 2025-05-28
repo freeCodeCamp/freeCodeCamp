@@ -1798,6 +1798,7 @@
       "review-javascript-fundamentals": "JavaScript Fundamentals Review",
       "higher-order-functions-and-callbacks": "Higher Order Functions and Callbacks",
       "dom-manipulation-and-events": "DOM Manipulation and Events",
+      "js-a11y": "JavaScript and Accessibility",
       "debugging-javascript": "Debugging",
       "basic-regex": "Basic Regex",
       "form-validation": "Form Validation",
@@ -3136,6 +3137,13 @@
         "title": "DOM Manipulation and Click Events with JavaScript Quiz",
         "intro": [
           "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
+        ]
+      },
+      "review-js-a11y": {
+        "title": "JavaScript and Accessibility review",
+        "intro": [
+          "Before you're quizzed on JavaScript and accessibility, you should review what you've learned about it.",
+          "Open up this page to review concepts including how to work with the <code>aria-expanded</code>, <code>aria-live</code>, and <code>aria-controls</code> attributes."
         ]
       },
       "lecture-debugging-techniques": {
