@@ -13,7 +13,8 @@ export const examEnvironmentExams = {
             name: Type.String(),
             note: Type.String(),
             totalTimeInMS: Type.Number(),
-            retakeTimeInMS: Type.Number()
+            retakeTimeInMS: Type.Number(),
+            passingPercent: Type.Number()
           }),
           canTake: Type.Boolean()
         })
