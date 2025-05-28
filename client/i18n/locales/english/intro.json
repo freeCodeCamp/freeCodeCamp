@@ -2239,6 +2239,12 @@
           "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
         ]
       },
+      "workshop-parent-teacher-conference-form": {
+        "title": "Build a Parent Teacher Conference Form",
+        "intro": [
+          "In this workshop, you will build a parent teacher conference form and practice adding custom styles for radio buttons."
+        ]
+      },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
         "intro": [
