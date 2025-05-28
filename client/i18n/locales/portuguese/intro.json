@@ -1167,14 +1167,16 @@
         "title": "Algoritmos",
         "intro": [
           "Esses exercícios de programação gratuitos ensinam alguns algoritmos comuns que você provavelmente encontrará na vida real. Eles são uma grande oportunidade para melhorar suas habilidades de lógica e programação.",
-          "Estes algoritmos são frequentemente usados em entrevistas de trabalho para testar as habilidades de um candidato. Nós vamos oferecer explicações claras e concisas sobre como esses vários algoritmos funcionam para que você possa implementar uma solução para cada um."
+          "Estes algoritmos são frequentemente usados em entrevistas de trabalho para testar as habilidades de um candidato. Nós vamos oferecer explicações claras e concisas sobre como esses vários algoritmos funcionam para que você possa implementar uma solução para cada um.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "data-structures": {
         "title": "Estruturas de dados",
         "intro": [
           "Esses cursos de programação gratuitos têm o objetivo de ajudá-lo a lidar com estruturas de dados grandes e complexas com as quais você ainda não está familiarizado.",
-          "Trabalhando com os cursos abaixo, você aprenderá sobre cada tipo de estrutura de dados e implementará algoritmos para reforçar seu entendimento sobre eles."
+          "Trabalhando com os cursos abaixo, você aprenderá sobre cada tipo de estrutura de dados e implementará algoritmos para reforçar seu entendimento sobre eles.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "take-home-projects": {
@@ -1305,31 +1307,36 @@
       "project-euler-problems-1-to-100": {
         "title": "Problemas do Projeto Euler de 1 a 100",
         "intro": [
-          "Neste primeiro conjunto de desafios, você usará conceitos matemáticos como a sequência de Fibonacci, teoria dos números primos e análise combinatória para escrever algoritmos eficientes para resolver esses problemas."
+          "Neste primeiro conjunto de desafios, você usará conceitos matemáticos como a sequência de Fibonacci, teoria dos números primos e análise combinatória para escrever algoritmos eficientes para resolver esses problemas.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-101-to-200": {
         "title": "Problemas do Projeto Euler de 101 a 200",
         "intro": [
-          "Neste conjunto de desafios, você vai desenvolver as habilidades que aprendeu na primeira parte do curso e usar conceitos mais avançados, como computação vetorial, pirâmide de Pascal e o algoritmo RSA para resolver esses problemas de modo eficiente."
+          "Neste conjunto de desafios, você vai desenvolver as habilidades que aprendeu na primeira parte do curso e usar conceitos mais avançados, como computação vetorial, pirâmide de Pascal e o algoritmo RSA para resolver esses problemas de modo eficiente.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-201-to-300": {
         "title": "Problemas do Projeto Euler de 201 a 300",
         "intro": [
-          "Neste conjunto de desafios, você continuará a desenvolver as habilidades que aprendeu anteriormente e usará conceitos como o teorema dos binômios, números de Hamming e a sequência de Collatz para desenvolver ainda mais suas habilidades matemáticas e de resolução de problemas."
+          "Neste conjunto de desafios, você continuará a desenvolver as habilidades que aprendeu anteriormente e usará conceitos como o teorema dos binômios, números de Hamming e a sequência de Collatz para desenvolver ainda mais suas habilidades matemáticas e de resolução de problemas.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-301-to-400": {
         "title": "Problemas do Projeto Euler de 301 a 400",
         "intro": [
-          "Aqui, você continuará a exercitar suas habilidades matemáticas e algorítmicas ao usar conceitos como a teoria combinatória dos jogos, operações bitwise e a sequência autodescritiva de Golomb para desenvolver soluções eficientes para estes problemas."
+          "Aqui, você continuará a exercitar suas habilidades matemáticas e algorítmicas ao usar conceitos como a teoria combinatória dos jogos, operações bitwise e a sequência autodescritiva de Golomb para desenvolver soluções eficientes para estes problemas.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-401-to-480": {
         "title": "Problemas do Projeto Euler de 401 a 480",
         "intro": [
-          "Neste conjunto final de desafios, você precisará utilizar tudo o que aprendeu até este ponto e usar conceitos avançados como divisores unitários, a rotina de Kaprekar e muito mais para resolver estes problemas complexos."
+          "Neste conjunto final de desafios, você precisará utilizar tudo o que aprendeu até este ponto e usar conceitos avançados como divisores unitários, a rotina de Kaprekar e muito mais para resolver estes problemas complexos.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       }
     }
@@ -1731,7 +1738,10 @@
     "blocks": {
       "rosetta-code-challenges": {
         "title": "Desafios do Rosetta Code",
-        "intro": ["Estes são os desafios para o Rosetta Code."]
+        "intro": [
+          "Estes são os desafios para o Rosetta Code.",
+          "NOTE: These challenges support JavaScript only solutions."
+        ]
       }
     }
   },

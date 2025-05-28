@@ -1167,14 +1167,16 @@
         "title": "Algorithms",
         "intro": [
           "Mazoezi haya ya programu bila malipo yatakufundisha kuhusu algoriti za kawaida ambazo unaweza kukutana nazo katika maisha halisi. Hii ni fursa nzuri ya kuboresha ujuzi wako wa mantiki na programu.",
-          "Algoriti hizi hutumiwa mara kwa mara katika usaili wa kazi ili kupima ujuzi wa mtahiniwa. Tutakupa maelezo wazi na mafupi ya jinsi algoriti hizi tofauti hufanya kazi ili uweze kutekeleza suluhisho kwa kila moja."
+          "Algoriti hizi hutumiwa mara kwa mara katika usaili wa kazi ili kupima ujuzi wa mtahiniwa. Tutakupa maelezo wazi na mafupi ya jinsi algoriti hizi tofauti hufanya kazi ili uweze kutekeleza suluhisho kwa kila moja.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "data-structures": {
         "title": "Data Structures",
         "intro": [
           "Kozi hizi za upangaji bila malipo zinakusudiwa kukusaidia kukabiliana na miundo mikubwa na changamano ya data ambayo huenda bado huifahamu.",
-          "Ukipitia kozi zilizo hapa chini, utajifunza kuhusu kila aina ya muundo wa data, na utekeleze algoriti za kuimarisha uelewa wako kuzihusu."
+          "Ukipitia kozi zilizo hapa chini, utajifunza kuhusu kila aina ya muundo wa data, na utekeleze algoriti za kuimarisha uelewa wako kuzihusu.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "take-home-projects": {
@@ -1305,31 +1307,36 @@
       "project-euler-problems-1-to-100": {
         "title": "Mradi wa Euler Matatizo 1 hadi 100",
         "intro": [
-          "Katika seti hii ya kwanza ya changamoto, utatumia dhana za hisabati kama vile mfuatano wa Fibonacci, nadharia ya nambari kuu, na viunganishi kuandika algoriti bora za kutatua matatizo haya."
+          "Katika seti hii ya kwanza ya changamoto, utatumia dhana za hisabati kama vile mfuatano wa Fibonacci, nadharia ya nambari kuu, na viunganishi kuandika algoriti bora za kutatua matatizo haya.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-101-to-200": {
         "title": "Mradi wa Euler Matatizo 101 hadi 200",
         "intro": [
-          "Katika seti hii ya changamoto, utaendeleza ujuzi uliojifunza katika sehemu ya kwanza ya kozi na kutumia dhana za hali ya juu zaidi kama vile ukokotoaji wa vekta, piramidi ya Pascal, na algoriti ya RSA ili kutatua matatizo haya kwa ufanisi."
+          "Katika seti hii ya changamoto, utaendeleza ujuzi uliojifunza katika sehemu ya kwanza ya kozi na kutumia dhana za hali ya juu zaidi kama vile ukokotoaji wa vekta, piramidi ya Pascal, na algoriti ya RSA ili kutatua matatizo haya kwa ufanisi.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-201-to-300": {
         "title": "Mradi wa Euler Matatizo 201 hadi 300",
         "intro": [
-          "Katika kundi hili la changamoto, utaendelea kukuza ujuzi uliojifunza hapo awali na kutumia dhana kama vile nadharia ya binomial, nambari za Hamming, na mfuatano wa Collatz ili kukuza zaidi ujuzi wako wa hesabu na utatuzi wa matatizo."
+          "Katika kundi hili la changamoto, utaendelea kukuza ujuzi uliojifunza hapo awali na kutumia dhana kama vile nadharia ya binomial, nambari za Hamming, na mfuatano wa Collatz ili kukuza zaidi ujuzi wako wa hesabu na utatuzi wa matatizo.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-301-to-400": {
         "title": "Mradi wa Euler Matatizo 301 hadi 400",
         "intro": [
-          "Hapa utaendelea kubadilisha ujuzi wako wa hisabati na algoriti unapotumia dhana kama vile nadharia ya mchezo mseto, utendakazi wa busara kidogo, na mfuatano wa kujieleza wa Golomb ili kutengeneza suluhu bora kwa matatizo haya."
+          "Hapa utaendelea kubadilisha ujuzi wako wa hisabati na algoriti unapotumia dhana kama vile nadharia ya mchezo mseto, utendakazi wa busara kidogo, na mfuatano wa kujieleza wa Golomb ili kutengeneza suluhu bora kwa matatizo haya.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-401-to-480": {
         "title": "Mradi wa Euler Matatizo 401 hadi 480",
         "intro": [
-          "Katika seti hii ya mwisho ya changamoto, utahitaji kutumia kila kitu ulichojifunza hadi kufikia hatua hii na kutumia dhana za hali ya juu kama vile vigawanyiko vya umoja, utaratibu wa Kaprekar, na mengi zaidi kutatua matatizo haya changamano."
+          "Katika seti hii ya mwisho ya changamoto, utahitaji kutumia kila kitu ulichojifunza hadi kufikia hatua hii na kutumia dhana za hali ya juu kama vile vigawanyiko vya umoja, utaratibu wa Kaprekar, na mengi zaidi kutatua matatizo haya changamano.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       }
     }
@@ -1731,7 +1738,10 @@
     "blocks": {
       "rosetta-code-challenges": {
         "title": "Rosetta Code Challenges",
-        "intro": ["These are the challenges for Rosetta Code."]
+        "intro": [
+          "These are the challenges for Rosetta Code.",
+          "NOTE: These challenges support JavaScript only solutions."
+        ]
       }
     }
   },
