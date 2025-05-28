@@ -68,11 +68,7 @@ module.exports = (env = {}) => {
         patterns: [
           './node_modules/sass.js/dist/sass.sync.js',
           // TODO: copy this into the css folder, not the js folder
-          './node_modules/xterm/css/xterm.css',
-          {
-            from: './node_modules/@freecodecamp/curriculum-helpers/dist/test-runner',
-            to: 'test-runner'
-          }
+          './node_modules/xterm/css/xterm.css'
         ]
       }),
       new webpack.ProvidePlugin({
