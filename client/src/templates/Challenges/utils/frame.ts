@@ -1,5 +1,6 @@
 import { flow } from 'lodash-es';
 import i18next, { type i18n } from 'i18next';
+import { version } from '@freecodecamp/curriculum-helpers/package.json';
 
 import { format } from '../../../utils/format';
 import type {
@@ -75,7 +76,7 @@ export const scrollManager = new ScrollManager();
 export const mainPreviewId = 'fcc-main-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
-const ASSET_PATH = '/js/test-runner/';
+const ASSET_PATH = `/js/${version}/test-runner/`;
 
 const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 

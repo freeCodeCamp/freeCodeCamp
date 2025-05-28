@@ -5,6 +5,9 @@ const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const {
+  version: helperVersion
+} = require('@freecodecamp/curriculum-helpers/package.json');
 
 const env = require('./config/env.json');
 const {
@@ -244,7 +247,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
       patterns: [
         {
           from: './node_modules/@freecodecamp/curriculum-helpers/dist/test-runner',
-          to: 'js/test-runner'
+          to: `js/${helperVersion}/test-runner`
         }
       ]
     })
