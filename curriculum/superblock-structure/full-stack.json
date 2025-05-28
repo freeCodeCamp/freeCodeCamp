@@ -796,6 +796,9 @@
           "blocks": [
             {
               "dashedName": "review-js-a11y"
+            },
+            {
+              "dashedName": "quiz-js-a11y"
             }
           ]
         },

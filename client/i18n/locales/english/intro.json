@@ -3146,6 +3146,12 @@
           "Open up this page to review concepts including how to work with the <code>aria-expanded</code>, <code>aria-live</code>, and <code>aria-controls</code> attributes."
         ]
       },
+      "quiz-js-a11y": {
+        "title": "JavaScript and Accessibility Quiz",
+        "intro": [
+          "Test your knowledge of JavaScript and Accessibility best practices with this quiz."
+        ]
+      },
       "lecture-debugging-techniques": {
         "title": "Debugging Techniques",
         "intro": [
