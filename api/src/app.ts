@@ -176,6 +176,7 @@ export const build = async (
       await fastify.register(protectedRoutes.protectedCertificateRoutes);
       await fastify.register(protectedRoutes.settingRoutes);
       await fastify.register(protectedRoutes.userRoutes);
+      await fastify.register(protectedRoutes.classroomRoutes);
     });
 
     // CSRF protection disabled:
