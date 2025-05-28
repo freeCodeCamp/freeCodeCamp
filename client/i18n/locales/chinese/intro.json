@@ -1157,14 +1157,16 @@
         "title": "算法",
         "intro": [
           "这些免费的编程练习将教你一些现实生活中可能会遇到的常见算法。它们是提高你的逻辑和编程技能的绝佳机会。",
-          "这些算法经常在工作面试中被用来测试候选人的技能。我们将为你提供简洁明了的解释，说明不同算法是如何运行的，以便你为每道算法题目编写解决方案。"
+          "这些算法经常在工作面试中被用来测试候选人的技能。我们将为你提供简洁明了的解释，说明不同算法是如何运行的，以便你为每道算法题目编写解决方案。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "data-structures": {
         "title": "数据结构",
         "intro": [
           "这些免费的编程课程旨在帮助你处理可能你还不太熟悉的大型的、复杂的数据结构。",
-          "通过下面的课程，你将学习不同类型的数据结构，并通过算法来增强你对它们的理解。"
+          "通过下面的课程，你将学习不同类型的数据结构，并通过算法来增强你对它们的理解。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "take-home-projects": {
@@ -1293,31 +1295,36 @@
       "project-euler-problems-1-to-100": {
         "title": "欧拉计划问题 1 - 100",
         "intro": [
-          "在这第一组挑战中，你将使用斐波那契数列、素数定理和离散数学这样的数学概念编写算法来解决这些问题。"
+          "在这第一组挑战中，你将使用斐波那契数列、素数定理和离散数学这样的数学概念编写算法来解决这些问题。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-101-to-200": {
         "title": "欧拉计划问题 101 - 200",
         "intro": [
-          "在这一系列的挑战中，你将在课程第一部分的基础上，结合更高级的概念，如矢量计算方法、杨辉三角（帕斯卡三角）和 RSA 算法来有效地解决这些问题。"
+          "在这一系列的挑战中，你将在课程第一部分的基础上，结合更高级的概念，如矢量计算方法、杨辉三角（帕斯卡三角）和 RSA 算法来有效地解决这些问题。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-201-to-300": {
         "title": "欧拉计划问题 201 - 300",
         "intro": [
-          "在这组挑战中，你将继续利用你之前学到的技能，并使用二项式定理、汉明和考拉兹序列等概念来进一步提升你的数学和解决问题的技能。"
+          "在这组挑战中，你将继续利用你之前学到的技能，并使用二项式定理、汉明和考拉兹序列等概念来进一步提升你的数学和解决问题的技能。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-301-to-400": {
         "title": "欧拉计划问题 301 - 400",
         "intro": [
-          "在这里，你将继续发挥你的数学和算法技能，使用组合博弈论、位运算和 Golomb 的自描述序列等概念来开发这些问题的有效解决方案。"
+          "在这里，你将继续发挥你的数学和算法技能，使用组合博弈论、位运算和 Golomb 的自描述序列等概念来开发这些问题的有效解决方案。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-401-to-480": {
         "title": "欧拉计划问题 401 - 480",
         "intro": [
-          "在这最后一组挑战中，你将需要使用你目前所学到的一切，并使用像元因数、卡普雷卡尔算法等等高级概念来解决这些复杂问题。"
+          "在这最后一组挑战中，你将需要使用你目前所学到的一切，并使用像元因数、卡普雷卡尔算法等等高级概念来解决这些复杂问题。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       }
     }
@@ -1717,7 +1724,10 @@
     "blocks": {
       "rosetta-code-challenges": {
         "title": "罗塞塔代码挑战",
-        "intro": ["这些是罗赛塔代码的挑战。"]
+        "intro": [
+          "这些是罗赛塔代码的挑战。",
+          "NOTE: These challenges support JavaScript only solutions."
+        ]
       }
     }
   },

@@ -1167,14 +1167,16 @@
         "title": "Algoritmi",
         "intro": [
           "Questi esercizi di programmazione gratuiti ti aiuteranno a comprendere alcuni algoritmi comuni che probabilmente incontrerai nella vita reale. Sono una grande opportunità per migliorare le tue competenze logiche e di programmazione.",
-          "Questi algoritmi sono spesso utilizzati nei colloqui di lavoro per testare le abilità di un candidato. Ti forniremo spiegazioni chiare e concise su come funzionano in modo che tu possa implementare una soluzione per ciascuno di essi."
+          "Questi algoritmi sono spesso utilizzati nei colloqui di lavoro per testare le abilità di un candidato. Ti forniremo spiegazioni chiare e concise su come funzionano in modo che tu possa implementare una soluzione per ciascuno di essi.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "data-structures": {
         "title": "Strutture Dati",
         "intro": [
           "Questi corsi di programmazione gratuita sono pensati per aiutarti a gestire strutture dati grandi e complesse con le quali potresti non essere ancora familiare.",
-          "Con questi corsi scoprirai i vari tipi di struttura di dati e imparerai a implementare degli algoritmi per rafforzare la tua comprensione di essi."
+          "Con questi corsi scoprirai i vari tipi di struttura di dati e imparerai a implementare degli algoritmi per rafforzare la tua comprensione di essi.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "take-home-projects": {
@@ -1305,31 +1307,36 @@
       "project-euler-problems-1-to-100": {
         "title": "Problemi del Progetto Eulero da 1 a 100",
         "intro": [
-          "In questa prima serie di sfide, utilizzerai concetti matematici come la sequenza di Fibonacci, la teoria dei numeri primi e la combinatoria per scrivere algoritmi efficienti per risolvere dei problemi."
+          "In questa prima serie di sfide, utilizzerai concetti matematici come la sequenza di Fibonacci, la teoria dei numeri primi e la combinatoria per scrivere algoritmi efficienti per risolvere dei problemi.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-101-to-200": {
         "title": "Problemi del Progetto Eulero da 101 a 200",
         "intro": [
-          "In questa serie di sfide, ti baserai sulle competenze che hai acquisito nella prima parte del corso e utilizzerai concetti più avanzati come il calcolo vettoriale, la piramide di Pascal e l'algoritmo RSA per risolvere dei problemi in modo efficiente."
+          "In questa serie di sfide, ti baserai sulle competenze che hai acquisito nella prima parte del corso e utilizzerai concetti più avanzati come il calcolo vettoriale, la piramide di Pascal e l'algoritmo RSA per risolvere dei problemi in modo efficiente.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-201-to-300": {
         "title": "Problemi del Progetto Eulero da 201 a 300",
         "intro": [
-          "In questa serie di sfide, continuerai a usare ciò che hai imparato in precedenza e a utilizzare concetti come il teorema binomiale, i numeri di Hamming e la sequenza di Collatz per affinare ulteriormente le tue abilità matematiche e di problem solving."
+          "In questa serie di sfide, continuerai a usare ciò che hai imparato in precedenza e a utilizzare concetti come il teorema binomiale, i numeri di Hamming e la sequenza di Collatz per affinare ulteriormente le tue abilità matematiche e di problem solving.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-301-to-400": {
         "title": "Problemi del Progetto Eulero da 301 a 400",
         "intro": [
-          "Qui continuerai a modellare le tue abilità matematiche e algoritmiche utilizzando concetti come la teoria dei giochi combinatoria, le operazioni bitwise e la sequenza auto-descrittiva di Golomb per sviluppare soluzioni efficienti a questi problemi."
+          "Qui continuerai a modellare le tue abilità matematiche e algoritmiche utilizzando concetti come la teoria dei giochi combinatoria, le operazioni bitwise e la sequenza auto-descrittiva di Golomb per sviluppare soluzioni efficienti a questi problemi.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-401-to-480": {
         "title": "Problemi del Progetto Eulero da 401 a 480",
         "intro": [
-          "In questa serie finale di sfide, avrai bisogno di attingere a tutto quello che hai imparato fino a questo punto e utilizzare concetti avanzati come i divisori unitari, l'algoritmo di Kaprekar e molto altro ancora per risolvere problemi complessi."
+          "In questa serie finale di sfide, avrai bisogno di attingere a tutto quello che hai imparato fino a questo punto e utilizzare concetti avanzati come i divisori unitari, l'algoritmo di Kaprekar e molto altro ancora per risolvere problemi complessi.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       }
     }
@@ -1731,7 +1738,10 @@
     "blocks": {
       "rosetta-code-challenges": {
         "title": "Rosetta Code Challenges",
-        "intro": ["These are the challenges for Rosetta Code."]
+        "intro": [
+          "These are the challenges for Rosetta Code.",
+          "NOTE: These challenges support JavaScript only solutions."
+        ]
       }
     }
   },
