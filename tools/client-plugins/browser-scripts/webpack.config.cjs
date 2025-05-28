@@ -14,11 +14,8 @@ module.exports = (env = {}) => {
     cache: __DEV__ ? { type: 'filesystem' } : false,
     mode: __DEV__ ? 'development' : 'production',
     entry: {
-      'frame-runner': './frame-runner.ts',
       'sass-compile': './sass-compile.ts',
-      'test-evaluator': './test-evaluator.ts',
       'python-worker': './python-worker.ts',
-      'python-test-evaluator': './python-test-evaluator.ts',
       'typescript-worker': './typescript-worker.ts'
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
@@ -72,7 +69,10 @@ module.exports = (env = {}) => {
           './node_modules/sass.js/dist/sass.sync.js',
           // TODO: copy this into the css folder, not the js folder
           './node_modules/xterm/css/xterm.css',
-          { from: './node_modules/@freecodecamp/curriculum-helpers/dist/test-runner', to: 'test-runner' }
+          {
+            from: './node_modules/@freecodecamp/curriculum-helpers/dist/test-runner',
+            to: 'test-runner'
+          }
         ]
       }),
       new webpack.ProvidePlugin({
