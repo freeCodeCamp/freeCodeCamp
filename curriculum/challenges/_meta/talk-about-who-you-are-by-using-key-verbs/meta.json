@@ -7,7 +7,7 @@
   "challengeOrder": [
     {
       "id": "681a8796e5a782fe3459984b",
-      "title": "Dialogue 1: ¿Quién soy y cómo estoy hoy?"
+      "title": "Dialogue 1: This Is Me"
     },
     {
       "id": "6837240347d21a28450d25e5",
@@ -80,6 +80,10 @@
     {
       "id": "6837987d524053be7269e190",
       "title": "Task 18"
+    },
+    {
+      "id": "6838e4a978d4434de103489e",
+      "title": "Task 19"
     }
   ],
   "helpCategory": "English",
