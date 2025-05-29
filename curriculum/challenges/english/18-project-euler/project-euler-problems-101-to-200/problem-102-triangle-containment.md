@@ -28,13 +28,13 @@ Using the `triangles` array containing coordinates of triangles, find the number
 `triangleContainment(exampleTriangles)` should return a number.
 
 ```js
-assert(typeof triangleContainment(_exampleTriangles) === 'number');
+assert.isNumber(triangleContainment(exampleTriangles));
 ```
 
 `triangleContainment(exampleTriangles)` should return `1`.
 
 ```js
-assert.strictEqual(triangleContainment(_exampleTriangles), 1);
+assert.strictEqual(triangleContainment(exampleTriangles), 1);
 ```
 
 `triangleContainment(testTriangles1)` should return `19`.
