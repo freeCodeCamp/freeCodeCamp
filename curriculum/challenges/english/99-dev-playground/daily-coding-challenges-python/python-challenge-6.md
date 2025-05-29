@@ -13,7 +13,7 @@ Given two strings, determine if they are anagrams of each other (contain the sam
 
 # --hints--
 
-`areAnagrams("listen", "silent")` should return `true`.
+`are_anagrams("listen", "silent")` should return `true`.
 
 ```js
 ({test: () => { runPython(`
@@ -22,7 +22,7 @@ TestCase().assertTrue(are_anagrams("listen", "silent"))`)
 }})
 ```
 
-`areAnagrams("School master", "The classroom")` should return `true`.
+`are_anagrams("School master", "The classroom")` should return `true`.
 
 ```js
 ({test: () => { runPython(`
@@ -31,7 +31,7 @@ TestCase().assertTrue(are_anagrams("School master", "The classroom"))`)
 }})
 ```
 
-`areAnagrams("A gentleman", "Elegant man")` should return `true`.
+`are_anagrams("A gentleman", "Elegant man")` should return `true`.
 
 ```js
 ({test: () => { runPython(`
@@ -40,7 +40,7 @@ TestCase().assertTrue(are_anagrams("A gentleman", "Elegant man"))`)
 }})
 ```
 
-`areAnagrams("Hello", "World")` should return `false`.
+`are_anagrams("Hello", "World")` should return `false`.
 
 ```js
 ({test: () => { runPython(`
@@ -49,7 +49,7 @@ TestCase().assertFalse(are_anagrams("Hello", "World"))`)
 }})
 ```
 
-`areAnagrams("apple", "banana")` should return `false`.
+`are_anagrams("apple", "banana")` should return `false`.
 
 ```js
 ({test: () => { runPython(`
@@ -58,7 +58,7 @@ TestCase().assertFalse(are_anagrams("apple", "banana"))`)
 }})
 ```
 
-`areAnagrams("cat", "dog")` should return `false`.
+`are_anagrams("cat", "dog")` should return `false`.
 
 ```js
 ({test: () => { runPython(`

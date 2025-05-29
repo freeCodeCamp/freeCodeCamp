@@ -24,21 +24,21 @@ TestCase().assertTrue(is_balanced("racecar"))`)
 }})
 ```
 
-`is_balanced("lorem ipsum")` should return `True`.
+`is_balanced("Lorem Ipsum")` should return `True`.
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertTrue(is_balanced("lorem ipsum"))`)
+TestCase().assertTrue(is_balanced("Lorem Ipsum"))`)
 }})
 ```
 
-`is_balanced("kitty ipsum")` should return `False`.
+`is_balanced("Kitty Ipsum")` should return `False`.
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertFalse(is_balanced("kitty ipsum"))`)
+TestCase().assertFalse(is_balanced("Kitty Ipsum"))`)
 }})
 ```
 
@@ -69,12 +69,12 @@ TestCase().assertFalse(is_balanced("abcdefghijklmnopqrstuvwxyz"))`)
 }})
 ```
 
-`is_balanced("123a#b!E&#x26;*456-o.U")` should return `True`.
+`is_balanced("123A#b!E&#x26;*456-o.U")` should return `True`.
 
 ```js
 ({test: () => { runPython(`
 from unittest import TestCase
-TestCase().assertTrue(is_balanced("123a#b!E&*456-o.U"))`)
+TestCase().assertTrue(is_balanced("123A#b!E&*456-o.U"))`)
 }})
 ```
 

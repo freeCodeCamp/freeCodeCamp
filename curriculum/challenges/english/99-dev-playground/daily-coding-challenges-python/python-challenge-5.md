@@ -15,7 +15,7 @@ Given a string, return a jumbled version of that string where each word is trans
 
 # --hints--
 
-`jbelmu("hello world")` should return `hello wlord`.
+`jbelmu("hello world")` should return `"hello wlord"`.
 
 ```js
 ({test: () => { runPython(`
@@ -24,7 +24,7 @@ TestCase().assertEqual(jbelmu("hello world"), "hello wlord")`)
 }})
 ```
 
-`jbelmu("i love jumbled text")` should return `i love jbelmud text`.
+`jbelmu("i love jumbled text")` should return `"i love jbelmud text"`.
 
 ```js
 ({test: () => { runPython(`
@@ -33,7 +33,7 @@ TestCase().assertEqual(jbelmu("i love jumbled text"), "i love jbelmud text")`)
 }})
 ```
 
-`jbelmu("freecodecamp is my favorite place to learn to code")` should return `faccdeeemorp is my faiortve pacle to laern to cdoe`.
+`jbelmu("freecodecamp is my favorite place to learn to code")` should return `"faccdeeemorp is my faiortve pacle to laern to cdoe"`.
 
 ```js
 ({test: () => { runPython(`
@@ -42,7 +42,7 @@ TestCase().assertEqual(jbelmu("freecodecamp is my favorite place to learn to cod
 }})
 ```
 
-`jbelmu("the quick brown fox jumps over the lazy dog")` should return `the qciuk borwn fox jmpus oevr the lazy dog`.
+`jbelmu("the quick brown fox jumps over the lazy dog")` should return `"the qciuk borwn fox jmpus oevr the lazy dog"`.
 
 ```js
 ({test: () => { runPython(`

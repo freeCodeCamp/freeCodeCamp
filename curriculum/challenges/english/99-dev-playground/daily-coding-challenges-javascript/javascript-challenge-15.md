@@ -16,31 +16,31 @@ Given a string, return its camel case version using the following rules:
 
 # --hints--
 
-`toCamelCase("hello world")` should return `helloWorld`.
+`toCamelCase("hello world")` should return `"helloWorld"`.
 
 ```js
 assert.equal(toCamelCase("hello world"), "helloWorld");
 ```
 
-`toCamelCase("HELLO WORLD")` should return `helloWorld`.
+`toCamelCase("HELLO WORLD")` should return `"helloWorld"`.
 
 ```js
 assert.equal(toCamelCase("HELLO WORLD"), "helloWorld");
 ```
 
-`toCamelCase("secret agent-X")` should return `secretAgentX`.
+`toCamelCase("secret agent-X")` should return `"secretAgentX"`.
 
 ```js
 assert.equal(toCamelCase("secret agent-X"), "secretAgentX");
 ```
 
-`toCamelCase("FREE cODE cAMP")` should return `freeCodeCamp`.
+`toCamelCase("FREE cODE cAMP")` should return `"freeCodeCamp"`.
 
 ```js
 assert.equal(toCamelCase("FREE cODE cAMP"), "freeCodeCamp");
 ```
 
-`toCamelCase("ye old-_-sea  faring_buccaneer_-_with a - peg__leg----and a_parrot_ _named- _squawk")` should return `yeOldSeaFaringBuccaneerWithAPegLegAndAParrotNamedSquawk`.
+`toCamelCase("ye old-_-sea  faring_buccaneer_-_with a - peg__leg----and a_parrot_ _named- _squawk")` should return `"yeOldSeaFaringBuccaneerWithAPegLegAndAParrotNamedSquawk"`.
 
 ```js
 assert.equal(toCamelCase("ye old-_-sea  faring_buccaneer_-_with a - peg__leg----and a_parrot_ _named- _squawk"), "yeOldSeaFaringBuccaneerWithAPegLegAndAParrotNamedSquawk");

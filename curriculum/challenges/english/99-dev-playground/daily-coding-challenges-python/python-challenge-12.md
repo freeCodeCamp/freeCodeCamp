@@ -16,7 +16,7 @@ Given a secret message string, and an integer representing the number of letters
 
 # --hints--
 
-`decode("Xlmw mw e wigvix qiwweki.", 4)` should return `This is a secret message.`
+`decode("Xlmw mw e wigvix qiwweki.", 4)` should return `"This is a secret message."`
 
 ```js
 ({test: () => { runPython(`
@@ -25,7 +25,7 @@ TestCase().assertEqual(decode("Xlmw mw e wigvix qiwweki.", 4), "This is a secret
 }})
 ```
 
-`decode("Byffi Qilfx!", 20)` should return `Hello World!`
+`decode("Byffi Qilfx!", 20)` should return `"Hello World!"`
 
 ```js
 ({test: () => { runPython(`
@@ -34,7 +34,7 @@ TestCase().assertEqual(decode("Byffi Qilfx!", 20), "Hello World!")`)
 }})
 ```
 
-`decode("Zqd xnt njzx?", -1)` should return `Are you okay?`
+`decode("Zqd xnt njzx?", -1)` should return `"Are you okay?"`
 
 ```js
 ({test: () => { runPython(`
@@ -43,7 +43,7 @@ TestCase().assertEqual(decode("Zqd xnt njzx?", -1), "Are you okay?")`)
 }})
 ```
 
-`decode("oannLxmnLjvy", 9)` should return `freeCodeCamp`
+`decode("oannLxmnLjvy", 9)` should return `"freeCodeCamp"`
 
 ```js
 ({test: () => { runPython(`

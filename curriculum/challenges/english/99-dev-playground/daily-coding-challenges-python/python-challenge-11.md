@@ -7,13 +7,13 @@ dashedName: python-challenge-11
 
 # --description--
 
-Given a number of miles ran, and a time in MM:SS (minutes:seconds) it took to run those miles, return a string for the average time it took to run each mile in the format MM:SS.
+Given a number of miles ran, and a time in `"MM:SS"` (minutes:seconds) it took to run those miles, return a string for the average time it took to run each mile in the format `"MM:SS"`.
 
 - Add leading zeros when needed.
 
 # --hints--
 
-`mile_pace(3, "24:00")` should return `08:00`.
+`mile_pace(3, "24:00")` should return `"08:00"`.
 
 ```js
 ({test: () => { runPython(`
@@ -22,7 +22,7 @@ TestCase().assertEqual(mile_pace(3, "24:00"), "08:00")`)
 }})
 ```
 
-`mile_pace(1, "06:45")` should return `06:45`.
+`mile_pace(1, "06:45")` should return `"06:45"`.
 
 ```js
 ({test: () => { runPython(`
@@ -31,7 +31,7 @@ TestCase().assertEqual(mile_pace(1, "06:45"), "06:45")`)
 }})
 ```
 
-`mile_pace(2, "07:00")` should return `03:30`.
+`mile_pace(2, "07:00")` should return `"03:30"`.
 
 ```js
 ({test: () => { runPython(`
@@ -40,7 +40,7 @@ TestCase().assertEqual(mile_pace(2, "07:00"), "03:30")`)
 }})
 ```
 
-`mile_pace(26.2, "120:35")` should return `04:36`.
+`mile_pace(26.2, "120:35")` should return `"04:36"`.
 
 ```js
 ({test: () => { runPython(`

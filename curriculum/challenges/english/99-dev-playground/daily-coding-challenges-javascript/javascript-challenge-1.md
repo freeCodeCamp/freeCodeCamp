@@ -21,16 +21,16 @@ Given a string, determine whether the number of vowels in the first half of the 
 assert.isTrue(isBalanced("racecar"));
 ```
 
-`isBalanced("lorem ipsum")` should return `true`.
+`isBalanced("Lorem Ipsum")` should return `true`.
 
 ```js
-assert.isTrue(isBalanced("lorem ipsum"));
+assert.isTrue(isBalanced("Lorem Ipsum"));
 ```
 
-`isBalanced("kitty ipsum")` should return `false`.
+`isBalanced("Kitty Ipsum")` should return `false`.
 
 ```js
-assert.isFalse(isBalanced("kitty ipsum"));
+assert.isFalse(isBalanced("Kitty Ipsum"));
 ```
 
 `isBalanced("string")` should return `false`.
@@ -51,10 +51,10 @@ assert.isTrue(isBalanced(" "));
 assert.isFalse(isBalanced("abcdefghijklmnopqrstuvwxyz"));
 ```
 
-`isBalanced("123a#b!E&#x26;*456-o.U")` should return `true`.
+`isBalanced("123A#b!E&#x26;*456-o.U")` should return `true`.
 
 ```js
-assert.isTrue(isBalanced("123a#b!E&*456-o.U"));
+assert.isTrue(isBalanced("123A#b!E&*456-o.U"));
 ```
 
 # --seed--
