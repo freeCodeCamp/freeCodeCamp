@@ -486,3 +486,491 @@ Which CSS property allows you to set a time before the animation begins?
 
 `animation-delay`
 
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What does the CSS `animation-delay` property do?
+
+#### --distractors--
+
+Sets how long the animation lasts.
+
+---
+
+Specifies the timing function.
+
+---
+
+Defines animation direction.
+
+#### --answer--
+
+Delays the start of the animation.
+
+### --question--
+
+#### --text--
+
+Which animation property specifies how the element should be styled before and after the animation?
+
+#### --distractors--
+
+`animation-delay`
+
+---
+
+`animation-direction`
+
+---
+
+`animation-iteration-count`
+
+#### --answer--
+
+`animation-fill-mode`
+
+### --question--
+
+#### --text--
+
+Why should CSS animations be used in moderation?
+
+#### --distractors--
+
+Too many CSS animations can lead to styles breaking as well as inconsistent styles across different browsers. 
+
+---
+
+Too many CSS animations can lead to lower or non existent rankings in search engine results.
+
+---
+
+Too many CSS animations will automatically crash the server and increase the likelihood for security risks. 
+
+#### --answer--
+
+Too many CSS animations can lead to poor performance and may be distracting or problematic for users with certain accessibility needs.
+
+### --question--
+
+#### --text--
+
+Which animation property determines whether the animation should play forwards, backwards, or alternate?
+
+#### --distractors--
+
+`animation-fill-mode`
+
+---
+
+`animation-delay`
+
+---
+
+`animation-timing-function`
+
+#### --answer--
+
+`animation-direction`
+
+### --question--
+
+#### --text--
+
+Which CSS media query detects if the user has requested minimal animations or motion effects?
+
+#### --distractors--
+
+`reduce-motion`
+
+---
+
+`min-motion-preference`
+
+---
+
+`motion-preferences`
+
+#### --answer--
+
+`prefers-reduced-motion`
+
+### --question--
+
+#### --text--
+
+Which property sets how many times an `animation` repeats?
+
+#### --distractors--
+
+`animation-duration`
+
+---
+
+`animation-count`
+
+---
+
+`animation-delay`
+
+#### --answer--
+
+`animation-iteration-count`
+
+### --question--
+
+#### --text--
+
+Which CSS rule is used to define the stages and styles of an animation at various points during its duration?
+
+#### --distractors--
+
+`@style`
+
+---
+
+`@transition`
+
+---
+
+`@transform`
+
+#### --answer--
+
+`@keyframes`
+
+### --question--
+
+#### --text--
+
+Inside the `reduced‑motion` media query, which declaration disables transitions?
+
+#### --distractors--
+
+`animation: none;`
+
+---
+
+`transition: remove;`
+
+---
+
+`animation-play-state: paused;`
+
+#### --answer--
+
+`transition: none;`
+
+### --question--
+
+#### --text--
+
+What does the `animation-play-state` property allow you to do?
+
+#### --distractors--
+
+Set how many times the animation repeats.
+
+---
+
+Specify how long the animation takes to complete.
+
+---
+
+Determine the direction in which the animation plays.
+
+#### --answer--
+
+Pause and resume the animation.
+
+### --question--
+
+#### --text--
+
+Which of the following is a good practice when working with animations?
+
+#### --distractors--
+
+Use as many flashing colors and rapid movements as possible to grab attention.
+
+---
+
+Avoid testing animations on different devices or screen sizes.
+
+---
+
+Make animations last as long as possible to ensure users notice them.
+
+#### --answer--
+
+Avoid content that flashes more than three times per second to prevent triggering seizures or causing discomfort.
+
+### --question--
+
+#### --text--
+
+Why is the `!important` declaration used in the CSS rules?
+
+#### --distractors--
+
+To prevent other media queries from loading.
+
+---
+
+To limit styles to the first child element.
+
+---
+
+To debug CSS more easily.
+
+#### --answer--
+
+To ensure these rules take precedence over other styles.
+
+### --question--
+
+#### --text--
+
+What does `animation-iteration-count: 1 !important;` ensure in CSS?
+
+#### --distractors--
+
+That animations are paused.
+
+---
+
+That animations run infinitely.
+
+---
+
+That animations reverse direction each cycle.
+
+#### --answer--
+
+That any looping animations only play once.
+
+### --question--
+
+#### --text--
+
+What CSS property is used to specify how long an animation should take to complete?
+
+#### --distractors--
+
+`animation-delay`
+
+---
+
+`animation-timing-function`
+
+---
+
+`animation-iteration-count`
+
+#### --answer--
+
+`animation-duration`
+
+### --question--
+
+#### --text--
+
+Which property is NOT part of the `animation` shorthand?
+
+#### --distractors--
+
+`animation-delay`
+
+---
+
+`animation-timing-function`
+
+---
+
+`animation-direction`
+
+#### --answer--
+
+`animation-transform`
+
+### --question--
+
+#### --text--
+
+What does the `@keyframes` rule define?
+
+#### --distractors--
+
+The timing function of an animation.
+
+---
+
+The default state of an element.
+
+---
+
+The media queries for animations.
+
+#### --answer--
+
+The sequence of styles at different points in an animation.
+
+### --question--
+
+#### --text--
+
+What does this `@keyframe` at-rule do to the animated element?
+
+```css
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+```
+
+#### --distractors--
+
+It scales the element up from 0% to 100%.
+
+---
+
+It moves the element from left to right.
+
+---
+
+It changes the text color to black.
+
+#### --answer--
+
+It makes the element fade in by gradually increasing its transparency.
+
+### --question--
+
+#### --text--
+
+In a keyframes rule, what does `100%` represent?
+
+#### --distractors--
+
+The start of the animation.
+
+---
+
+The halfway point.
+
+---
+
+The easing function.
+
+#### --answer--
+
+The end of the animation.
+
+### --question--
+
+#### --text--
+
+Which property controls the pace of an `animation` over its duration?
+
+#### --distractors--
+
+`animation-duration`
+
+---
+
+`animation-delay`
+
+---
+
+`animation-iteration-count`
+
+#### --answer--
+
+`animation-timing-function`
+
+### --question--
+
+#### --text--
+
+What should developers consider when implementing animations to maintain accessibility?
+
+#### --distractors--
+
+Rely entirely on JavaScript for all animations.
+
+---
+
+Add frequent and intense animations for impact.
+
+---
+
+Include only bold, fast, and surprising effects.
+
+#### --answer--
+
+Use subtle, intentional effects, honor preferences, and offer user control.
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct syntax to slide an element in from the left?
+
+#### --distractors--
+
+```css
+@keyframes slide-in {
+  0 { 
+    transform: translate(-100%); 
+  }
+  100 { 
+    transform: translate(0); 
+  }
+}
+```
+
+---
+
+```css
+@keyframes slide-in {
+  from { 
+    translateX(-100%); 
+  }
+  to { 
+    translateX(0); 
+  }
+}
+```
+
+---
+
+```css
+@keyframes slide-in {
+  start { 
+    transform: moveX(-100%); 
+  }
+  end { 
+    transform: moveX(0); 
+  }
+}
+```
+
+#### --answer--
+
+```css
+@keyframes slide-in {
+  0% { 
+    transform: translateX(-100%); 
+  }
+  100% { 
+    transform: translateX(0); 
+  }
+}
+```

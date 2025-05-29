@@ -10,7 +10,7 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
   });
 
   fastify.addHook('onRequest', async (req, reply) => {
-    const logger = fastify.log.child({ req });
+    const logger = fastify.log.child({ req, res: reply });
     const origin = req.headers.origin;
     if (origin && allowedOrigins.includes(origin)) {
       // Do we want to log allowed origins?

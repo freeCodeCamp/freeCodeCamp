@@ -1167,14 +1167,16 @@
         "title": "Algoritmos",
         "intro": [
           "Esses exercícios de programação gratuitos ensinam alguns algoritmos comuns que você provavelmente encontrará na vida real. Eles são uma grande oportunidade para melhorar suas habilidades de lógica e programação.",
-          "Estes algoritmos são frequentemente usados em entrevistas de trabalho para testar as habilidades de um candidato. Nós vamos oferecer explicações claras e concisas sobre como esses vários algoritmos funcionam para que você possa implementar uma solução para cada um."
+          "Estes algoritmos são frequentemente usados em entrevistas de trabalho para testar as habilidades de um candidato. Nós vamos oferecer explicações claras e concisas sobre como esses vários algoritmos funcionam para que você possa implementar uma solução para cada um.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "data-structures": {
         "title": "Estruturas de dados",
         "intro": [
           "Esses cursos de programação gratuitos têm o objetivo de ajudá-lo a lidar com estruturas de dados grandes e complexas com as quais você ainda não está familiarizado.",
-          "Trabalhando com os cursos abaixo, você aprenderá sobre cada tipo de estrutura de dados e implementará algoritmos para reforçar seu entendimento sobre eles."
+          "Trabalhando com os cursos abaixo, você aprenderá sobre cada tipo de estrutura de dados e implementará algoritmos para reforçar seu entendimento sobre eles.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "take-home-projects": {
@@ -1305,31 +1307,36 @@
       "project-euler-problems-1-to-100": {
         "title": "Problemas do Projeto Euler de 1 a 100",
         "intro": [
-          "Neste primeiro conjunto de desafios, você usará conceitos matemáticos como a sequência de Fibonacci, teoria dos números primos e análise combinatória para escrever algoritmos eficientes para resolver esses problemas."
+          "Neste primeiro conjunto de desafios, você usará conceitos matemáticos como a sequência de Fibonacci, teoria dos números primos e análise combinatória para escrever algoritmos eficientes para resolver esses problemas.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-101-to-200": {
         "title": "Problemas do Projeto Euler de 101 a 200",
         "intro": [
-          "Neste conjunto de desafios, você vai desenvolver as habilidades que aprendeu na primeira parte do curso e usar conceitos mais avançados, como computação vetorial, pirâmide de Pascal e o algoritmo RSA para resolver esses problemas de modo eficiente."
+          "Neste conjunto de desafios, você vai desenvolver as habilidades que aprendeu na primeira parte do curso e usar conceitos mais avançados, como computação vetorial, pirâmide de Pascal e o algoritmo RSA para resolver esses problemas de modo eficiente.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-201-to-300": {
         "title": "Problemas do Projeto Euler de 201 a 300",
         "intro": [
-          "Neste conjunto de desafios, você continuará a desenvolver as habilidades que aprendeu anteriormente e usará conceitos como o teorema dos binômios, números de Hamming e a sequência de Collatz para desenvolver ainda mais suas habilidades matemáticas e de resolução de problemas."
+          "Neste conjunto de desafios, você continuará a desenvolver as habilidades que aprendeu anteriormente e usará conceitos como o teorema dos binômios, números de Hamming e a sequência de Collatz para desenvolver ainda mais suas habilidades matemáticas e de resolução de problemas.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-301-to-400": {
         "title": "Problemas do Projeto Euler de 301 a 400",
         "intro": [
-          "Aqui, você continuará a exercitar suas habilidades matemáticas e algorítmicas ao usar conceitos como a teoria combinatória dos jogos, operações bitwise e a sequência autodescritiva de Golomb para desenvolver soluções eficientes para estes problemas."
+          "Aqui, você continuará a exercitar suas habilidades matemáticas e algorítmicas ao usar conceitos como a teoria combinatória dos jogos, operações bitwise e a sequência autodescritiva de Golomb para desenvolver soluções eficientes para estes problemas.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-401-to-480": {
         "title": "Problemas do Projeto Euler de 401 a 480",
         "intro": [
-          "Neste conjunto final de desafios, você precisará utilizar tudo o que aprendeu até este ponto e usar conceitos avançados como divisores unitários, a rotina de Kaprekar e muito mais para resolver estes problemas complexos."
+          "Neste conjunto final de desafios, você precisará utilizar tudo o que aprendeu até este ponto e usar conceitos avançados como divisores unitários, a rotina de Kaprekar e muito mais para resolver estes problemas complexos.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       }
     }
@@ -1731,7 +1738,10 @@
     "blocks": {
       "rosetta-code-challenges": {
         "title": "Desafios do Rosetta Code",
-        "intro": ["Estes são os desafios para o Rosetta Code."]
+        "intro": [
+          "Estes são os desafios para o Rosetta Code.",
+          "NOTE: These challenges support JavaScript only solutions."
+        ]
       }
     }
   },
@@ -1744,7 +1754,6 @@
       "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
     ],
     "chapters": {
-      "freecodecamp": "Welcome",
       "html": "HTML",
       "css": "CSS",
       "javascript": "JavaScript",
@@ -1755,7 +1764,6 @@
       "exam-certified-full-stack-developer": "Certified Full Stack Developer Exam"
     },
     "modules": {
-      "getting-started-with-freecodecamp": "Getting Started with freeCodeCamp",
       "basic-html": "Basic HTML",
       "semantic-html": "Semantic HTML",
       "html-forms-and-tables": "Forms and Tables",
@@ -1827,17 +1835,32 @@
       "exam-python": "Python Exam"
     },
     "blocks": {
-      "lecture-welcome-to-freecodecamp": {
-        "title": "Welcome to freeCodeCamp",
+      "workshop-curriculum-outline": {
+        "title": "Build a Curriculum Outline",
         "intro": [
-          "Watch these videos to learn what freeCodeCamp is, and how millions of people have learned to code and gotten developer jobs using it."
+          "Welcome to freeCodeCamp!",
+          "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
+        ]
+      },
+      "lecture-welcome-to-freecodecamp": {
+        "title": "Welcome Message from Quincy Larson",
+        "intro": [
+          "Hear from Quincy Larson, the founder and teacher of freeCodeCamp.",
+          "Quincy will welcome you to the platform and talk about how the certification works. Quincy will also provide tips on how to learn effectively."
+        ]
+      },
+      "lab-debug-camperbots-profile-page": {
+        "title": "Debug Camperbot's Profile Page",
+        "intro": [
+          "Camperbot is learning how to code too and needs some help with their HTML.",
+          "In this lab, you will help Camperbot find and fix the errors in their code."
         ]
       },
       "lecture-what-is-html": {
-        "title": "What is HTML?",
+        "title": "Understanding HTML Attributes and the HTML Boilerplate",
         "intro": [
-          "In this lecture video, you will be introduced to HTML (HyperText Markup Language), a markup language for creating web pages.",
-          "You will learn about HTML's role on the web, the basic syntax, and what HTML attributes are."
+          "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."
         ]
       },
       "workshop-cat-photo-app": {
@@ -1998,7 +2021,21 @@
         "title": "Build a Checkout Page",
         "intro": [
           "In this lab, you'll create an accessible checkout page.",
-          "You'll practice concepts like <code>alt</code> attributes and aria roles."
+          "You'll practice concepts like <code>alt</code> attributes and ARIA roles."
+        ]
+      },
+      "lab-movie-review-page": {
+        "title": "Design a Movie Review Page",
+        "intro": [
+          "In this lab, you'll create a movie review page.",
+          "You'll practice concepts like semantic HTML, <code>alt</code> attributes, accessible lists, and hiding decorative content from screen readers using <code>aria-hidden</code>."
+        ]
+      },
+      "lab-multimedia-player": {
+        "title": "Build a Multimedia Player",
+        "intro": [
+          "In this lab, you'll build a multimedia player.",
+          "You will practice working with the <code>audio</code> and <code>video</code> elements, the <code>controls</code> attribute, and the <code>aria-label</code> attribute."
         ]
       },
       "review-html-accessibility": {
@@ -2949,6 +2986,12 @@
           "In this lab, you'll build a password generator app based on the user's input."
         ]
       },
+      "lab-sum-all-numbers-algorithm": {
+        "title": "Design a Sum All Numbers Algorithm",
+        "intro": [
+          "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
+        ]
+      },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
         "intro": [
@@ -3485,16 +3528,18 @@
           "In these lecture videos, you will learn about working with state and responding to events with React."
         ]
       },
+      "workshop-toggle-text-app": {
+        "title": "Toggle Text App",
+        "intro": [
+          "In this workshop, you will continute to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
+        ]
+      },
       "lab-color-picker": {
         "title": "Build a Color Picker App",
         "intro": [
           "In this lab you'll build a Color Picker.",
           "You'll practice using state and hooks to manage the properties of an element."
         ]
-      },
-      "dbta": {
-        "title": "269",
-        "intro": []
       },
       "lecture-understanding-effects-and-referencing-values-in-react": {
         "title": "Understanding Effects and Referencing Values in React",
@@ -3529,9 +3574,11 @@
           "In these lecture videos, you will learn about working with forms in React."
         ]
       },
-      "sgau": {
-        "title": "276",
-        "intro": []
+      "workshop-superhero-application-form": {
+        "title": "Build a Superhero Application Form",
+        "intro": [
+          "In this workshop, you will build a superhero application form."
+        ]
       },
       "lab-event-rsvp": {
         "title": "Build an Event RSVP",
@@ -3914,7 +3961,7 @@
         "title": "Loops and Sequences Review",
         "intro": [
           "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
-          "[Add more details]"
+          "Open up this page to review concepts around loops, lists, tuples and some of their common methods."
         ]
       },
       "quiz-loops-and-sequences": {
@@ -3983,7 +4030,9 @@
       },
       "lab-budget-app": {
         "title": "Build a Budget App",
-        "intro": [""]
+        "intro": [
+          "In this lab you will build a budget app and practice creating a class and methods for that class."
+        ]
       },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",
@@ -4020,7 +4069,9 @@
       },
       "lab-polygon-area-calculator": {
         "title": "Build a Polygon Area Calculator",
-        "intro": [""]
+        "intro": [
+          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
+        ]
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding abstraction",
@@ -4055,9 +4106,12 @@
         "title": "Build a Linked List Class",
         "intro": [""]
       },
-      "lab-hash-table-class": {
-        "title": "Build an Hash Table Class",
-        "intro": [""]
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
       },
       "review-data-structures": {
         "title": "Data Structures Review",
@@ -4174,6 +4228,25 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      }
+    }
+  },
+  "a2-professional-spanish": {
+    "title": "A2 Professional Spanish Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "talk-about-who-you-are-by-using-key-verbs": {
+        "title": "Talk About Who You Are by Using Key Verbs",
+        "intro": [
+          "Learn how to introduce yourself in Spanish in a simple and professional way. In this module you'll learn how to say who you are, where you are from, what you do, how you feel, and what you like or don't like."
+        ]
+      },
+      "get-to-know-others-by-asking-simple-questions": {
+        "title": "Get to Know Others by Asking Simple Questions",
+        "intro": [
+          "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
+        ]
       }
     }
   },
