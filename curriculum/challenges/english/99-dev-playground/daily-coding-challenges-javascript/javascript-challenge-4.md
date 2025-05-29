@@ -13,31 +13,31 @@ Given a string, remove all spaces from the string, insert two spaces between eve
 
 # --hints--
 
-`spaceJam("freeCodeCamp")` should return `F  R  E  E  C  O  D  E  C  A  M  P`.
+`spaceJam("freeCodeCamp")` should return `"F  R  E  E  C  O  D  E  C  A  M  P"`.
 
 ```js
 assert.equal(spaceJam("freeCodeCamp"), "F  R  E  E  C  O  D  E  C  A  M  P");
 ```
 
-`spaceJam("   free   Code   Camp   ")` should return `F  R  E  E  C  O  D  E  C  A  M  P`.
+`spaceJam("   free   Code   Camp   ")` should return `"F  R  E  E  C  O  D  E  C  A  M  P"`.
 
 ```js
 assert.equal(spaceJam("   free   Code   Camp   "), "F  R  E  E  C  O  D  E  C  A  M  P");
 ```
 
-`spaceJam("Hello World?!")` should return `H  E  L  L  O  W  O  R  L  D  ?  !`.
+`spaceJam("Hello World?!")` should return `"H  E  L  L  O  W  O  R  L  D  ?  !"`.
 
 ```js
 assert.equal(spaceJam("Hello World?!"), "H  E  L  L  O  W  O  R  L  D  ?  !");
 ```
 
-`spaceJam("C@t$ & D0g$")` should return `C  @  T  $  &  D  0  G  $`.
+`spaceJam("C@t$ & D0g$")` should return `"C  @  T  $  &  D  0  G  $"`.
 
 ```js
 assert.equal(spaceJam("C@t$ & D0g$"), "C  @  T  $  &  D  0  G  $");
 ```
 
-`spaceJam("allyourbase")` should return `A  L  L  Y  O  U  R  B  A  S  E`.
+`spaceJam("allyourbase")` should return `"A  L  L  Y  O  U  R  B  A  S  E"`.
 
 ```js
 assert.equal(spaceJam("all your base"), "A  L  L  Y  O  U  R  B  A  S  E");

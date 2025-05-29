@@ -16,25 +16,25 @@ Given a secret message string, and an integer representing the number of letters
 
 # --hints--
 
-`decode("Xlmw mw e wigvix qiwweki.", 4)` should return `This is a secret message.`
+`decode("Xlmw mw e wigvix qiwweki.", 4)` should return `"This is a secret message."`
 
 ```js
 assert.equal(decode("Xlmw mw e wigvix qiwweki.", 4), "This is a secret message.");
 ```
 
-`decode("Byffi Qilfx!", 20)` should return `Hello World!`
+`decode("Byffi Qilfx!", 20)` should return `"Hello World!"`
 
 ```js
 assert.equal(decode("Byffi Qilfx!", 20), "Hello World!");
 ```
 
-`decode("Zqd xnt njzx?", -1)` should return `Are you okay?`
+`decode("Zqd xnt njzx?", -1)` should return `"Are you okay?"`
 
 ```js
 assert.equal(decode("Zqd xnt njzx?", -1), "Are you okay?");
 ```
 
-`decode("oannLxmnLjvy", 9)` should return `freeCodeCamp`
+`decode("oannLxmnLjvy", 9)` should return `"freeCodeCamp"`
 
 ```js
 assert.equal(decode("oannLxmnLjvy", 9), "freeCodeCamp");

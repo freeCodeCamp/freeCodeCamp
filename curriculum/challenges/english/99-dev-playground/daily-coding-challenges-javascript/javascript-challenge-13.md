@@ -56,7 +56,7 @@ assert.isTrue(isUnnaturalPrime(97));
 assert.isTrue(isUnnaturalPrime(-61));
 ```
 
-`isUnnaturalPrime(-61)` should return `false`.
+`isUnnaturalPrime(99)` should return `false`.
 
 ```js
 assert.isFalse(isUnnaturalPrime(99));

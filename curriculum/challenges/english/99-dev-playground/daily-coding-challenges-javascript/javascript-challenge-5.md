@@ -15,25 +15,25 @@ Given a string, return a jumbled version of that string where each word is trans
 
 # --hints--
 
-`jbelmu("hello world")` should return `hello wlord`.
+`jbelmu("hello world")` should return `"hello wlord"`.
 
 ```js
 assert.equal(jbelmu("hello world"), "hello wlord");
 ```
 
-`jbelmu("i love jumbled text")` should return `i love jbelmud text`.
+`jbelmu("i love jumbled text")` should return `"i love jbelmud text"`.
 
 ```js
 assert.equal(jbelmu("i love jumbled text"), "i love jbelmud text");
 ```
 
-`jbelmu("freecodecamp is my favorite place to learn to code")` should return `faccdeeemorp is my faiortve pacle to laern to cdoe`.
+`jbelmu("freecodecamp is my favorite place to learn to code")` should return `"faccdeeemorp is my faiortve pacle to laern to cdoe"`.
 
 ```js
 assert.equal(jbelmu("freecodecamp is my favorite place to learn to code"), "faccdeeemorp is my faiortve pacle to laern to cdoe");
 ```
 
-`jbelmu("the quick brown fox jumps over the lazy dog")` should return `the qciuk borwn fox jmpus oevr the lazy dog`.
+`jbelmu("the quick brown fox jumps over the lazy dog")` should return `"the qciuk borwn fox jmpus oevr the lazy dog"`.
 
 ```js
 assert.equal(jbelmu("the quick brown fox jumps over the lazy dog"), "the qciuk borwn fox jmpus oevr the lazy dog");

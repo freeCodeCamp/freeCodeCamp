@@ -180,7 +180,7 @@ def is_valid_number(n, base):
 
 ```py
 def is_valid_number(n, base):
-    allChars = "0123456789abcdefghijklmnopqrstuvwxyz";
+    allChars = "0123456789abcdefghijklmnopqrstuvwxyz"
     newN = n.lower()
 
     availableChars = allChars[0:base]

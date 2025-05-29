@@ -16,19 +16,19 @@ Given a string that contains properly nested parentheses, return the decoded ver
 
 # --hints--
 
-`decode("(f(b(dc)e)a)")` should return `abcdef`.
+`decode("(f(b(dc)e)a)")` should return `"abcdef"`.
 
 ```js
 assert.equal(decode("(f(b(dc)e)a)"), "abcdef");
 ```
 
-`decode("((is?)(a(t d)h)e(n y( uo)r)aC)")` should return `Can you read this?`.
+`decode("((is?)(a(t d)h)e(n y( uo)r)aC)")` should return `"Can you read this?"`.
 
 ```js
 assert.equal(decode("((is?)(a(t d)h)e(n y( uo)r)aC)"), "Can you read this?");
 ```
 
-`decode("f(Ce(re))o((e(aC)m)d)p")` should return `freeCodeCamp`.
+`decode("f(Ce(re))o((e(aC)m)d)p")` should return `"freeCodeCamp"`.
 
 ```js
 assert.equal(decode("f(Ce(re))o((e(aC)m)d)p"), "freeCodeCamp");

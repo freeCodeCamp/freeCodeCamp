@@ -13,15 +13,15 @@ Here are some example outputs for a given input:
 
 | Input   | Output   |
 |---------|----------|
-| `rgb(255, 255, 255)`| `#ffffff` |
-| `rgb(1, 2, 3)` | `#010203` |
+| `"rgb(255, 255, 255)"`| `"#ffffff"` |
+| `"rgb(1, 2, 3)"` | `"#010203"` |
 
 - Make any letters lowercase.
 - Return a `#` followed by six characters. Don't use any shorthand values.
 
 # --hints--
 
-`rgb_to_hex("rgb(255, 255, 255)")` should return `#ffffff`.
+`rgb_to_hex("rgb(255, 255, 255)")` should return `"#ffffff"`.
 
 ```js
 ({test: () => { runPython(`
@@ -30,7 +30,7 @@ TestCase().assertEqual(rgb_to_hex("rgb(255, 255, 255)"), "#ffffff")`)
 }})
 ```
 
-`rgb_to_hex("rgb(1, 11, 111)")` should return `#010b6f`.
+`rgb_to_hex("rgb(1, 11, 111)")` should return `"#010b6f"`.
 
 ```js
 ({test: () => { runPython(`
@@ -39,7 +39,7 @@ TestCase().assertEqual(rgb_to_hex("rgb(1, 11, 111)"), "#010b6f")`)
 }})
 ```
 
-`rgb_to_hex("rgb(173, 216, 230)")` should return `#add8e6`.
+`rgb_to_hex("rgb(173, 216, 230)")` should return `"#add8e6"`.
 
 ```js
 ({test: () => { runPython(`
@@ -48,7 +48,7 @@ TestCase().assertEqual(rgb_to_hex("rgb(173, 216, 230)"), "#add8e6")`)
 }})
 ```
 
-`rgb_to_hex("rgb(79, 123, 201)")` should return `#4f7bc9`.
+`rgb_to_hex("rgb(79, 123, 201)")` should return `"#4f7bc9"`.
 
 ```js
 ({test: () => { runPython(`
