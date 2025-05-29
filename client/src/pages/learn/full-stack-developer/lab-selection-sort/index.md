@@ -1,9 +1,9 @@
 ---
-title: Introduction to the Build a Selection Sort
+title: Introduction to the Implement a Selection Sort Algorithm
 block: lab-selection-sort
 superBlock: full-stack-developer
 ---
 
-## Introduction to the Build a Selection Sort
+## Introduction to the Implement a Selection Sort Algorithm
 
-This is a test for the new project-based curriculum.
+In this lab you will implement a selection sort algorithm.
