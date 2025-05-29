@@ -123,12 +123,6 @@
               "dashedName": "review-html"
             }
           ]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-html",
-          "blocks": []
         }
       ]
     },
@@ -513,12 +507,6 @@
               "dashedName": "review-css"
             }
           ]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-css",
-          "blocks": []
         }
       ]
     },
@@ -1024,12 +1012,6 @@
               "dashedName": "review-javascript"
             }
           ]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-javascript",
-          "blocks": []
         }
       ]
     },
@@ -1180,12 +1162,6 @@
               "dashedName": "review-front-end-libraries"
             }
           ]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-front-end-libraries",
-          "blocks": []
         }
       ]
     },
@@ -1312,12 +1288,6 @@
           "moduleType": "review",
           "dashedName": "review-python",
           "blocks": [{ "dashedName": "review-python" }]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-python",
-          "blocks": []
         }
       ]
     },
