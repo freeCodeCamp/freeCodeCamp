@@ -366,12 +366,22 @@ function ShowClassic({
     if (!challengeFiles) return;
 
     for (let index = 0; index < challengeFiles.length; index++) {
-      const hasChangedContentAfterSave =
-        savedChallengeFiles &&
-        savedChallengeFiles[index]?.contents != challengeFiles[index]?.contents;
+      const currentContent = challengeFiles[index]?.contents;
+      const savedContent = savedChallengeFiles?.[index]?.contents;
 
-      if (!savedChallengeFiles || hasChangedContentAfterSave) {
+      if (!savedContent && currentContent) {
         isFileSaved = false;
+        break;
+      }
+
+      if (savedContent && !currentContent) {
+        isFileSaved = false;
+        break;
+      }
+
+      if (savedContent && currentContent !== savedContent) {
+        isFileSaved = false;
+        break;
       }
     }
 
@@ -479,9 +489,6 @@ function ShowClassic({
     });
     challengeMounted(challengeMeta.id);
     setIsAdvancing(false);
-
-    /* window.addEventListener('beforeunload', stopWindowCloseRef.current);
-    window.addEventListener('popstate', stopBrowserBackRef.current); */
   };
 
   const renderInstructionsPanel = ({
