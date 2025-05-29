@@ -11,7 +11,10 @@ import { editor } from 'monaco-editor';
 import type { FitAddon } from 'xterm-addon-fit';
 
 import { useFeature } from '@growthbook/growthbook-react';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import {
+  challengeTypes,
+  canSaveToDB
+} from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
@@ -357,24 +360,24 @@ function ShowClassic({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // detect if user has unsaved contents
+  // detect if user has unsaved contents if the challenge can be saved
   useEffect(() => {
+    if (!canSaveToDB(challengeType)) return;
+
     let isFileSaved = true;
 
-    const savedChallengeFiles = savedChallenges[0]?.challengeFiles;
+    const savedChallengeFiles = savedChallenges.find(
+      challenge => challenge.id === challengeMeta.id
+    )?.challengeFiles;
 
     if (!challengeFiles) return;
 
     for (let index = 0; index < challengeFiles.length; index++) {
       const currentContent = challengeFiles[index]?.contents;
       const savedContent = savedChallengeFiles?.[index]?.contents;
+      const seedContent = seedChallengeFiles?.[index]?.contents;
 
-      if (!savedContent && currentContent) {
-        isFileSaved = false;
-        break;
-      }
-
-      if (savedContent && !currentContent) {
+      if (!savedContent && currentContent !== seedContent) {
         isFileSaved = false;
         break;
       }
@@ -386,7 +389,13 @@ function ShowClassic({
     }
 
     setIsSaved(isFileSaved);
-  }, [savedChallenges, challengeFiles]);
+  }, [
+    savedChallenges,
+    challengeFiles,
+    seedChallengeFiles,
+    challengeMeta,
+    challengeType
+  ]);
 
   // prevent following links if the user has unsaved content
   useEffect(() => {
