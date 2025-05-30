@@ -6,8 +6,60 @@
   "superBlock": "b1-english-for-developers",
   "challengeOrder": [
     {
-      "id": "6660a31ec50f1f703adffda9",
-      "title": "Dialogue 1: I'm Tom"
+      "id": "68395e556692e01cc32dabdc",
+      "title": "Dialogue 1: Office Relocation"
+    },
+    {
+      "id": "68395e9923705c2391ce3f08",
+      "title": "Task 1"
+    },
+    {
+      "id": "6839603c0ecba12ebea8602c",
+      "title": "Task 2"
+    },
+    {
+      "id": "68396127ba217435070f98ea",
+      "title": "Task 3"
+    },
+    {
+      "id": "68397f8f63f8cb50372f1af4",
+      "title": "Task 4"
+    },
+    {
+      "id": "6839800ebc7bab5255634038",
+      "title": "Task 5"
+    },
+    {
+      "id": "68397e39c982e94d53c22b32",
+      "title": "Task 6"
+    },
+    {
+      "id": "683981e2af72ab55ae05d238",
+      "title": "Task 7"
+    },
+    {
+      "id": "683982686e23c95771fa7071",
+      "title": "Task 8"
+    },
+    {
+      "id": "683983a1a67cd85a930ad212",
+      "title": "Task 9"
+    },
+    {
+      "id": "6839874364d5a162ea3d0478",
+      "title": "Task 10"
+    },
+    {
+      "id": "6839882689fed465c055d3f5",
+      "title": "Task 11"
+    },
+    {
+      "id": "6839892e6b47096ad94d5841",
+      "title": "Task 12"
+    },
+    {
+      "id": "683989650019f26bde6441e5",
+      "title": "Task 13"
     }
   ],
   "helpCategory": "English",
