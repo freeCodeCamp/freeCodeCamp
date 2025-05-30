@@ -54,7 +54,8 @@ const superBlockFolderMap = {
   'rosetta-code': '22-rosetta-code',
   'python-for-everybody': '23-python-for-everybody',
   'b1-english-for-developers': '24-b1-english-for-developers',
-  'full-stack-developer': '25-front-end-development'
+  'full-stack-developer': '25-front-end-development',
+  'a2-professional-spanish': '26-a2-professional-spanish'
 };
 
 // Adding types for getChallengesForLang is possible, but not worth the effort

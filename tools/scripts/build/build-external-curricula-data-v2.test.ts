@@ -5,7 +5,9 @@ import readdirp from 'readdirp';
 
 import {
   chapterBasedSuperBlocks,
-  SuperBlocks
+  SuperBlocks,
+  SuperBlockStage,
+  superBlockStages
 } from '../../../shared/config/curriculum';
 import {
   superblockSchemaValidator,
@@ -17,6 +19,7 @@ import {
   type GeneratedCurriculumProps,
   type GeneratedBlockBasedCurriculumProps,
   type GeneratedChapterBasedCurriculumProps,
+  type ChapterBasedCurriculumIntros,
   orderedSuperBlockInfo
 } from './build-external-curricula-data-v2';
 
@@ -174,6 +177,10 @@ ${result.error.message}`);
         superBlock
       ] as GeneratedChapterBasedCurriculumProps;
 
+      const superBlockIntros = intros[
+        superBlock
+      ] as ChapterBasedCurriculumIntros[SuperBlocks];
+
       // Randomly pick a chapter.
       const chapters = superBlockData.chapters;
       const randomChapterIndex = Math.floor(Math.random() * chapters.length);
@@ -188,37 +195,52 @@ ${result.error.message}`);
       const blocks = randomModule.blocks;
       const randomBlockIndex = Math.floor(Math.random() * blocks.length);
 
-      expect(superBlockData.intro).toEqual(intros[superBlock].intro);
+      // Check super block data
+      expect(superBlockData.intro).toEqual(superBlockIntros.intro);
+
+      // Check chapter data
+      expect(superBlockData.chapters[randomChapterIndex].name).toEqual(
+        superBlockIntros.chapters[randomChapterIndex]
+      );
+
+      // Check module data
+      expect(
+        superBlockData.chapters[randomChapterIndex].modules[randomModuleIndex]
+          .name
+      ).toEqual(superBlockIntros.modules[randomModuleIndex]);
+
+      // Check block data
       expect(
         superBlockData.chapters[randomChapterIndex].modules[randomModuleIndex]
           .blocks[randomBlockIndex].intro
-      ).toEqual(intros[superBlock].blocks[randomBlockIndex].intro);
+      ).toEqual(superBlockIntros.blocks[randomBlockIndex].intro);
       expect(
         superBlockData.chapters[randomChapterIndex].modules[randomModuleIndex]
           .blocks[randomBlockIndex].meta.name
-      ).toEqual(intros[superBlock].blocks[randomBlockIndex].title);
+      ).toEqual(superBlockIntros.blocks[randomBlockIndex].title);
     });
   });
 
   test('All public SuperBlocks should be present in the SuperBlock object', () => {
-    const publicSuperBlockNames = Object.values(SuperBlocks);
-
-    const superBlockDashedNames = Object.keys(orderedSuperBlockInfo).reduce(
-      (acc, superBlockStage) => {
-        const dashedNames = orderedSuperBlockInfo[superBlockStage].map(
-          superBlock => superBlock.dashedName
-        );
-        acc.push(...dashedNames);
-
-        return acc;
-      },
-      [] as SuperBlocks[]
+    const stages = Object.keys(orderedSuperBlockInfo).map(
+      key => Number(key) as SuperBlockStage
     );
 
-    expect(superBlockDashedNames).toEqual(
-      expect.arrayContaining(publicSuperBlockNames)
-    );
-    expect(superBlockDashedNames).toHaveLength(publicSuperBlockNames.length);
+    expect(stages).not.toContain(SuperBlockStage.Next);
+    expect(stages).not.toContain(SuperBlockStage.Upcoming);
+
+    for (const stage of stages) {
+      const superBlockDashedNames = orderedSuperBlockInfo[stage].map(
+        superBlock => superBlock.dashedName
+      );
+
+      expect(superBlockDashedNames).toEqual(
+        expect.arrayContaining(superBlockStages[stage])
+      );
+      expect(superBlockDashedNames).toHaveLength(
+        superBlockStages[stage].length
+      );
+    }
   });
 
   test('challenge files should be created and in the correct directory', () => {

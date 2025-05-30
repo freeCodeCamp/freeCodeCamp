@@ -133,11 +133,7 @@ const createHeader = (id = mainPreviewId) =>
         else if (href.match(/^#.+/)) {
           e.preventDefault();
           const scrollId = href.substring(1);
-          const scrollElem = document.getElementById(scrollId);
-
-          if (scrollElem) {
-            scrollElem.scrollIntoView();
-          }
+          window.location.hash = scrollId;
         }
       }
     }, false);

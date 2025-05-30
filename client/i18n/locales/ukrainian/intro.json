@@ -1157,14 +1157,16 @@
         "title": "Алгоритми",
         "intro": [
           "Ці безоплатні вправи з програмування навчать вас загальних алгоритмів, з якими ви скоріш за все зіткнетеся в житті. Це чудова можливість вдосконалити як логіку, так і програмувальні навички.",
-          "Подібні алгоритми часто використовують на співбесідах, щоб перевірити навички кандидатів. Ми чітко пояснимо, як саме функціонують різноманітні алгоритми, щоб ви могли підібрати рішення до кожного."
+          "Подібні алгоритми часто використовують на співбесідах, щоб перевірити навички кандидатів. Ми чітко пояснимо, як саме функціонують різноманітні алгоритми, щоб ви могли підібрати рішення до кожного.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "data-structures": {
         "title": "Структура даних",
         "intro": [
           "Ці безплатні курси програмування спрямовані на те, щоб допомогти вам у роботі з численними структурами даних, з якими ви ще не стикалися.",
-          "Під час роботи з цими курсами, ви вивчите кожний тип структур даних та реалізуєте алгоритми, щоб зрозуміти їх краще."
+          "Під час роботи з цими курсами, ви вивчите кожний тип структур даних та реалізуєте алгоритми, щоб зрозуміти їх краще.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "take-home-projects": {
@@ -1297,31 +1299,36 @@
       "project-euler-problems-1-to-100": {
         "title": "Проєкт Ейлера. Завдання 1-100",
         "intro": [
-          "У першому наборі завдань ви використовуватимете послідовність Фібоначчі, теорему про розподіл простих чисел та комбінаторику, щоб написати алгоритми для розв’язку завдань."
+          "У першому наборі завдань ви використовуватимете послідовність Фібоначчі, теорему про розподіл простих чисел та комбінаторику, щоб написати алгоритми для розв’язку завдань.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-101-to-200": {
         "title": "Проєкт Ейлера. Завдання 101-200",
         "intro": [
-          "У цьому наборі завдань ви закріпите знання з першої частини курсу та використовуватимете обчислення вектора, трикутник Паскаля й алгоритм RSA, щоб розв’язати завдання."
+          "У цьому наборі завдань ви закріпите знання з першої частини курсу та використовуватимете обчислення вектора, трикутник Паскаля й алгоритм RSA, щоб розв’язати завдання.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-201-to-300": {
         "title": "Проєкт Ейлера. Завдання 201-300",
         "intro": [
-          "У цьому наборі завдань ви продовжите розвивати навички з попередніх завдань та використовуватимете біном Ньютона, числа Гемінґа й послідовність Коллатца."
+          "У цьому наборі завдань ви продовжите розвивати навички з попередніх завдань та використовуватимете біном Ньютона, числа Гемінґа й послідовність Коллатца.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-301-to-400": {
         "title": "Проєкт Ейлера. Завдання 301-400",
         "intro": [
-          "Тут ви продовжите працювати над своїми навичками, використовуючи комбінаторну теорію ігор, бітові операції та послідовність Ґоломба."
+          "Тут ви продовжите працювати над своїми навичками, використовуючи комбінаторну теорію ігор, бітові операції та послідовність Ґоломба.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-401-to-480": {
         "title": "Проєкт Ейлера. Завдання 401-480",
         "intro": [
-          "У кінцевому наборі завдань ви підкреслите свої знання та використовуватимете унітарні дільники, програму Капрекара та багато іншого, щоб розв’язати складні завдання."
+          "У кінцевому наборі завдань ви підкреслите свої знання та використовуватимете унітарні дільники, програму Капрекара та багато іншого, щоб розв’язати складні завдання.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       }
     }
@@ -1717,7 +1724,10 @@
     "blocks": {
       "rosetta-code-challenges": {
         "title": "Завдання з «Rosetta Code»",
-        "intro": ["Перелік завдань з «Rosetta Code»."]
+        "intro": [
+          "Перелік завдань з «Rosetta Code».",
+          "NOTE: These challenges support JavaScript only solutions."
+        ]
       }
     }
   },
@@ -1730,7 +1740,6 @@
       "Для отримання цієї сертифікації потрібно багато часу і зусиль. Якщо ви розпочнете зараз, то будете готові до решти матеріалу і кінцевого екзамену як тільки ми опублікуємо їх протягом найближчих місяців."
     ],
     "chapters": {
-      "freecodecamp": "Вітання",
       "html": "HTML",
       "css": "CSS",
       "javascript": "JavaScript",
@@ -1741,7 +1750,6 @@
       "exam-certified-full-stack-developer": "Екзамен «Сертифікований Full Stack розробник»"
     },
     "modules": {
-      "getting-started-with-freecodecamp": "Початок роботи з freeCodeCamp",
       "basic-html": "Основи HTML",
       "semantic-html": "Семантичний HTML",
       "html-forms-and-tables": "Форми та таблиці",
@@ -1813,17 +1821,32 @@
       "exam-python": "Екзамен «Python»"
     },
     "blocks": {
-      "lecture-welcome-to-freecodecamp": {
-        "title": "Вітаємо на freeCodeCamp",
+      "workshop-curriculum-outline": {
+        "title": "Build a Curriculum Outline",
         "intro": [
-          "Перегляньте ці відео, щоб дізнатись про freeCodeCamp: завдяки цій спільноті мільйони людей навчились програмувати та стали розробниками."
+          "Welcome to freeCodeCamp!",
+          "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
+        ]
+      },
+      "lecture-welcome-to-freecodecamp": {
+        "title": "Welcome Message from Quincy Larson",
+        "intro": [
+          "Hear from Quincy Larson, the founder and teacher of freeCodeCamp.",
+          "Quincy will welcome you to the platform and talk about how the certification works. Quincy will also provide tips on how to learn effectively."
+        ]
+      },
+      "lab-debug-camperbots-profile-page": {
+        "title": "Debug Camperbot's Profile Page",
+        "intro": [
+          "Camperbot is learning how to code too and needs some help with their HTML.",
+          "In this lab, you will help Camperbot find and fix the errors in their code."
         ]
       },
       "lecture-what-is-html": {
-        "title": "Що таке HTML?",
+        "title": "Understanding HTML Attributes and the HTML Boilerplate",
         "intro": [
-          "У цій відеолекції ви ознайомитесь з HTML (мовою розмітки гіпертексту) — мовою розмітки для створення вебсторінок.",
-          "Ви дізнаєтесь, яку роль відіграє HTML у мережі, а також про базовий синтаксис та атрибути HTML."
+          "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."
         ]
       },
       "workshop-cat-photo-app": {
@@ -1984,7 +2007,14 @@
         "title": "Створіть платіжну сторінку",
         "intro": [
           "У цій лабораторній роботі ви створите доступну платіжну сторінку.",
-          "Ви будете практикуватись працювати з різними поняттями, серед яких атрибути <code>alt</code> та aria-ролі."
+          "You'll practice concepts like <code>alt</code> attributes and ARIA roles."
+        ]
+      },
+      "lab-movie-review-page": {
+        "title": "Design a Movie Review Page",
+        "intro": [
+          "In this lab, you'll create a movie review page.",
+          "You'll practice concepts like semantic HTML, <code>alt</code> attributes, accessible lists, and hiding decorative content from screen readers using <code>aria-hidden</code>."
         ]
       },
       "lab-multimedia-player": {
@@ -2223,9 +2253,9 @@
         ]
       },
       "lab-colored-boxes": {
-        "title": "Створіть кольорові коробки",
+        "title": "Створіть кольорові блоки",
         "intro": [
-          "У цій лабораторній роботі ви створите кольорову сітку та попрактикуєтесь додавати кольори фону до елементів сітки, використовуючи шістнадцяткові коди, RGB та визначені назви."
+          "У цій лабораторній роботі ви створите кольорову сітку та попрактикуєтесь додавати кольори фону до елементів, використовуючи шістнадцяткові коди, RGB і визначені назви."
         ]
       },
       "review-css-colors": {
@@ -2286,7 +2316,7 @@
         ]
       },
       "lab-confidential-email-page": {
-        "title": "Створіть сторінку конфіденційної пошти",
+        "title": "Створіть конфіденційний лист",
         "intro": [
           "У цій лабораторній роботі ви створите вебсторінку, використовуючи HTML, та замаскуєте вміст за допомогою властивостей CSS."
         ]
@@ -2954,6 +2984,12 @@
           "У цій лабораторній роботі ви створите застосунок для генерації паролів на основі вхідних даних користувача."
         ]
       },
+      "lab-sum-all-numbers-algorithm": {
+        "title": "Design a Sum All Numbers Algorithm",
+        "intro": [
+          "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
+        ]
+      },
       "review-javascript-fundamentals": {
         "title": "Повторення основ JavaScript",
         "intro": [
@@ -3499,10 +3535,6 @@
           "Ви будете використовувати стани та хуки, щоб керувати властивостями елемента."
         ]
       },
-      "dbta": {
-        "title": "269",
-        "intro": []
-      },
       "lecture-understanding-effects-and-referencing-values-in-react": {
         "title": "Знайомство з ефектами та посиланнями на значення в React",
         "intro": [
@@ -3536,9 +3568,11 @@
           "У цих відеолекціях ви дізнаєтесь, як працювати з формами в React."
         ]
       },
-      "sgau": {
-        "title": "276",
-        "intro": []
+      "workshop-superhero-application-form": {
+        "title": "Build a Superhero Application Form",
+        "intro": [
+          "In this workshop, you will build a superhero application form."
+        ]
       },
       "lab-event-rsvp": {
         "title": "Створіть RSVP-запрошення",
@@ -3917,7 +3951,7 @@
         "title": "Повторення циклів та послідовностей",
         "intro": [
           "Перш ніж перейти до тесту «Цикли та послідовності», повторіть основні поняття.",
-          "[Add more details]"
+          "Open up this page to review concepts around loops, lists, tuples and some of their common methods."
         ]
       },
       "quiz-loops-and-sequences": {
@@ -4019,7 +4053,9 @@
       },
       "lab-polygon-area-calculator": {
         "title": "Створіть калькулятор площі багатокутника",
-        "intro": [""]
+        "intro": [
+          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
+        ]
       },
       "lecture-understanding-abstraction": {
         "title": "Знайомство з абстракцією",
@@ -4054,9 +4090,12 @@
         "title": "Створіть клас «Linked List»",
         "intro": [""]
       },
-      "lab-hash-table-class": {
-        "title": "Створіть клас «Hash Table»",
-        "intro": [""]
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
       },
       "review-data-structures": {
         "title": "Повторення структур даних",
@@ -4172,6 +4211,25 @@
         "title": "Екзамен «Сертифікований Full Stack розробник»",
         "intro": [
           "Складіть цей екзамен, щоб стати сертифікованим Full Stack розробником."
+        ]
+      }
+    }
+  },
+  "a2-professional-spanish": {
+    "title": "A2 Professional Spanish Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "talk-about-who-you-are-by-using-key-verbs": {
+        "title": "Talk About Who You Are by Using Key Verbs",
+        "intro": [
+          "Learn how to introduce yourself in Spanish in a simple and professional way. In this module you'll learn how to say who you are, where you are from, what you do, how you feel, and what you like or don't like."
+        ]
+      },
+      "get-to-know-others-by-asking-simple-questions": {
+        "title": "Get to Know Others by Asking Simple Questions",
+        "intro": [
+          "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
         ]
       }
     }

@@ -1,23 +1,18 @@
 name: CI - Node.js
 
 on:
-  # Run on push events, but only for the below branches
   push:
     branches:
       - 'main'
       - 'prod-**'
-  # Run on pull requests, but only for the below targets
   pull_request:
     branches:
       - 'main'
       - 'temp-**' # Temporary branches allowed on Upstream
-  # Run on Merge Queue
-  merge_group:
-    types: [checks_requested]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ !contains(github.ref, 'main') && !contains(github.ref, 'prod-') }}
 
 permissions:
   contents: read
