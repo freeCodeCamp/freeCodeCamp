@@ -3571,7 +3571,12 @@
           "In these lecture videos, you will learn about effects and referencing values with React."
         ]
       },
-      "xdyh": { "title": "270", "intro": [] },
+      "workshop-fruit-search-app": {
+        "title": "Build a Fruit Search App",
+        "intro": [
+          "In this workshop, you will continute to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
+        ]
+      },
       "vjgg": { "title": "272", "intro": [] },
       "review-react-state-and-hooks": {
         "title": "React State and Hooks Review",
