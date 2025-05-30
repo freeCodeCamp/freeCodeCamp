@@ -110,6 +110,14 @@
     {
       "source": "/learn/coding-interview-prep/take-home-projects/build-a-simon-game",
       "destination": "/learn/coding-interview-prep/take-home-projects/build-a-memory-light-game"
+    },
+    {
+      "source": "/learn/relational-database/learn-relational-databases-by-building-a-mario-database/build-a-mario-database",
+      "destination": "/learn/relational-database/learn-relational-databases-by-building-a-database-of-video-game-characters/build-a-database-of-video-game-characters"
+    },
+    {
+      "source": "/learn/relational-database/learn/javascript-algorithms-and-data-structures-v8/build-a-pokemon-search-app-project/build-a-pokemon-search-app",
+      "destination": "/learn/javascript-algorithms-and-data-structures-v8/build-an-rpg-creature-search-app-project/build-an-rpg-creature-search-app"
     }
   ]
 }
