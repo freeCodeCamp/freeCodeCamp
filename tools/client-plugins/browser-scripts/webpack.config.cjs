@@ -14,11 +14,8 @@ module.exports = (env = {}) => {
     cache: __DEV__ ? { type: 'filesystem' } : false,
     mode: __DEV__ ? 'development' : 'production',
     entry: {
-      'frame-runner': './frame-runner.ts',
       'sass-compile': './sass-compile.ts',
-      'test-evaluator': './test-evaluator.ts',
       'python-worker': './python-worker.ts',
-      'python-test-evaluator': './python-test-evaluator.ts',
       'typescript-worker': './typescript-worker.ts'
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
