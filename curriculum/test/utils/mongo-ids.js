@@ -1523,33 +1523,6 @@ const duplicatedProjectIds = [
   // Polygon area calculator
   '5e444147903586ffb414c94f',
 
-  // Merge sort
-  '655cd899f8de09431eabb40c',
-  '6564aee9c077774ea49c3faf',
-  '656627b47bd2d2a4afbc945d',
-  '657f3a661730891aa64f3568',
-  '656639771fed09b5c0e8fe71',
-  '6577254891048c8f2c19e961',
-  '656680b0fc79f2c38a34d90e',
-  '656702f8b4cbd8cbf0a433c6',
-  '656706afd65547d22bee0b68',
-  '656707e11e671ed54c96f7ec',
-  '6577562501feabdf0984a184',
-  '656709e50ed928da35260276',
-  '657823a9f4f372518614c8b7',
-  '65670d1ef177e7e2b76d9528',
-  '656710d1e0ec62253426db24',
-  '6569b0a63423f65dd30888df',
-  '6569b19d31a09b65b4bc390a',
-  '6569b20f829b7e69d43c232a',
-  '6569b4e0bd29d17d4b53b16c',
-  '6569b743630ee592a65a7e2f',
-  '657f59751d5a5c9b069ae0f3',
-  '6569c05b9166f9d5bb36c09e',
-  '6569c166d708dcdf7c8fd34c',
-  '6569c1aeecaf95e25a3e2573',
-  '6569c2cbf6c993ea8cd85682',
-  
   /*** Back End JavaScript ***/
 
   /*** Legacy Only ***/
