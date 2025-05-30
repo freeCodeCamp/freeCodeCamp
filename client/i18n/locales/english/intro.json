@@ -2834,7 +2834,7 @@
       "lab-truncate-string": {
         "title": "Implement the Truncate String Algorithm",
         "intro": [
-          "In this lab you will practice truncating a string at a certain length."
+          "In this lab, you will practice truncating a string at a certain length."
         ]
       },
       "review-javascript-functions": {

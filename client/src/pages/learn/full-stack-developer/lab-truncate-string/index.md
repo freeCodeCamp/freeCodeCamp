@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Implement the Truncate String Algorithm
 
-This is a test for the new project-based curriculum.
+In this lab, you will practice truncating a string to a certain length.
