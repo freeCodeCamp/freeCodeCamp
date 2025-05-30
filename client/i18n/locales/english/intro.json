@@ -3742,7 +3742,9 @@
       },
       "workshop-caesar-cipher": {
         "title": "Build a Caesar Cipher",
-        "intro": ["Learn about Build a Caesar Cipher in these lectures."]
+        "intro": [
+          "In this workshop, you'll build a Caesar cipher using basic Python concepts such as strings, conditionals, functions, and more."
+        ]
       },
       "lab-rpg-character": {
         "title": "Build an RPG character",
