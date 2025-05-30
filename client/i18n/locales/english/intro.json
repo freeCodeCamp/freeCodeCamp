@@ -3956,8 +3956,10 @@
       "workshop-merge-sort": { "title": "Build a Merge Sort", "intro": [""] },
       "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
       "lab-selection-sort": {
-        "title": "Implement a Selection Sort Algorithm",
-        "intro": ["In this lab you will implement a selection sort algorithm."]
+        "title": "Implement the Selection Sort Algorithm",
+        "intro": [
+          "In this lab you will implement the selection sort algorithm."
+        ]
       },
       "lab-luhn-argorithm": {
         "title": "Build a Luhn Algorithm",
