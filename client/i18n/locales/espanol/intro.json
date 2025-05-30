@@ -1167,14 +1167,16 @@
         "title": "Algoritmos",
         "intro": [
           "Estos ejercicios de programación gratuita le enseñarán algunos algoritmos comunes que probablemente encontrará en la vida real. Son una gran oportunidad para mejorar su lógica y habilidades de programación.",
-          "Estos algoritmos se utilizan frecuentemente en entrevistas de trabajo para probar las habilidades de un candidato. Le daremos explicaciones claras y concisas de cómo funcionan estos diferentes algoritmos para que pueda implementar una solución para cada uno."
+          "Estos algoritmos se utilizan frecuentemente en entrevistas de trabajo para probar las habilidades de un candidato. Le daremos explicaciones claras y concisas de cómo funcionan estos diferentes algoritmos para que pueda implementar una solución para cada uno.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "data-structures": {
         "title": "Estructuras de datos",
         "intro": [
           "Estos cursos de programación gratuita están pensados para ayudarle a manejar estructuras de datos grandes y complejas con las que todavía no esté familiarizado.",
-          "Realizando los cursos siguientes, aprenderás sobre cada tipo de estructura de datos, e implementarás algoritmos para reforzar tu entendimiento de ellos."
+          "Realizando los cursos siguientes, aprenderás sobre cada tipo de estructura de datos, e implementarás algoritmos para reforzar tu entendimiento de ellos.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "take-home-projects": {
@@ -1191,7 +1193,7 @@
     "intro": [
       "El Proyecto Odin fue creado en 2013 por un solitario desarrollador, Erik Trautman. A través de los años, ha surgido una comunidad de código abierto para mantener y ampliar el proyecto.",
       "freeCodeCamp ha ampliado el plan de estudios para el código abierto y hacer que se ejecute de forma interactiva en el navegador, con pruebas para evaluar tu código y garantizar que hayas comprendido los conceptos clave.",
-      "Si tu quieres la experiencia original de toda la configuración del Proyecto Odin para ejecutarlo dentro de tu computadora local, tu puedes verificar el Proyecto Odin original en <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>sitio web del Proyecto Odin</a>. Un abrazo gracias a la comunidad de El Proyecto Odin por continuar este valioso recurso de aprendizaje para desarrolladores al rededor de todo el mundo.",
+      "Si tu quieres la experiencia original de toda la configuración del Proyecto Odin para ejecutarlo dentro de tu computadora local, tu puedes verificar el Proyecto Odin original en <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>sitio web del Proyecto Odin</a>. Un abrazo gracias a la comunidad de El Proyecto Odin por continuar este valioso recurso de aprendizaje para desarrolladores alrededor de todo el mundo.",
       "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
       "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; El Proyecto Odin</a>",
       "This course includes content from <a href='https://javascript.info/' target='_blank' rel='noopener noreferrer nofollow'>JavaScript.info</a>, which is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>."
@@ -1307,31 +1309,36 @@
       "project-euler-problems-1-to-100": {
         "title": "Proyectos Euler del 1 a 100",
         "intro": [
-          "En este primer conjunto de desafíos, utilizarás conceptos matemáticos como la secuencia de Fibonacci, teoría de números primos, y combinatorios para escribir algoritmos eficientes para resolver estos problemas."
+          "En este primer conjunto de desafíos, utilizarás conceptos matemáticos como la secuencia de Fibonacci, teoría de números primos, y combinatorios para escribir algoritmos eficientes para resolver estos problemas.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-101-to-200": {
         "title": "Proyectos Euler del 101 a 200",
         "intro": [
-          "En este conjunto de desafíos, basarás las habilidades que aprendiste en la primera parte del curso y usarás conceptos más avanzados como el cálculo del vector, La pirámide, y el algoritmo RSA para resolver estos problemas de forma eficiente."
+          "En este conjunto de desafíos, basarás las habilidades que aprendiste en la primera parte del curso y usarás conceptos más avanzados como el cálculo del vector, La pirámide, y el algoritmo RSA para resolver estos problemas de forma eficiente.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-201-to-300": {
         "title": "Proyectos Euler del 201 a 300",
         "intro": [
-          "En este conjunto de desafíos, continuarás construyendo sobre las habilidades que aprendiste anteriormente y usarás conceptos como el teorema binomial, Números de estancamiento, y la secuencia de Collatz para desarrollar aún más tus habilidades de matemáticas y resolución de problemas."
+          "En este conjunto de desafíos, continuarás construyendo sobre las habilidades que aprendiste anteriormente y usarás conceptos como el teorema binomial, Números de estancamiento, y la secuencia de Collatz para desarrollar aún más tus habilidades de matemáticas y resolución de problemas.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-301-to-400": {
         "title": "Proyectos Euler del 301 a 400",
         "intro": [
-          "Aquí continuarás exprimiendo tus habilidades matemáticas y algorítmicas mientras usas conceptos como teoría de juegos combinatorios, las operaciones bitwise y la secuencia autodescriptiva de Golomb para desarrollar soluciones eficientes a estos problemas."
+          "Aquí continuarás exprimiendo tus habilidades matemáticas y algorítmicas mientras usas conceptos como teoría de juegos combinatorios, las operaciones bitwise y la secuencia autodescriptiva de Golomb para desarrollar soluciones eficientes a estos problemas.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-401-to-480": {
         "title": "Proyecto Euler Problemas 401 a 480",
         "intro": [
-          "En este último conjunto de desafíos, necesitarás aprovechar todo lo que aprendiste hasta este punto y utilizar conceptos avanzados como divisores unitarios, la rutina de Kaprekar y mucho más para resolver estos problemas complejos."
+          "En este último conjunto de desafíos, necesitarás aprovechar todo lo que aprendiste hasta este punto y utilizar conceptos avanzados como divisores unitarios, la rutina de Kaprekar y mucho más para resolver estos problemas complejos.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       }
     }
@@ -1731,7 +1738,10 @@
     "blocks": {
       "rosetta-code-challenges": {
         "title": "Desafíos de Código Roseta",
-        "intro": ["Estos son los desafíos para Código Roseta."]
+        "intro": [
+          "Estos son los desafíos para Código Roseta.",
+          "NOTE: These challenges support JavaScript only solutions."
+        ]
       }
     }
   },
@@ -1744,7 +1754,6 @@
       "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
     ],
     "chapters": {
-      "freecodecamp": "Bienvenido",
       "html": "HTML",
       "css": "CSS",
       "javascript": "JavaScript",
@@ -1755,7 +1764,6 @@
       "exam-certified-full-stack-developer": "Examen de desarrollador certificado Full Stack"
     },
     "modules": {
-      "getting-started-with-freecodecamp": "Empezar a utilizar freeCodeCamp",
       "basic-html": "HTML básico",
       "semantic-html": "Semántica de HTML",
       "html-forms-and-tables": "Formularios y tablas",
@@ -1827,17 +1835,32 @@
       "exam-python": "Python Exam"
     },
     "blocks": {
-      "lecture-welcome-to-freecodecamp": {
-        "title": "Welcome to freeCodeCamp",
+      "workshop-curriculum-outline": {
+        "title": "Build a Curriculum Outline",
         "intro": [
-          "Watch these videos to learn what freeCodeCamp is, and how millions of people have learned to code and gotten developer jobs using it."
+          "Welcome to freeCodeCamp!",
+          "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
+        ]
+      },
+      "lecture-welcome-to-freecodecamp": {
+        "title": "Welcome Message from Quincy Larson",
+        "intro": [
+          "Hear from Quincy Larson, the founder and teacher of freeCodeCamp.",
+          "Quincy will welcome you to the platform and talk about how the certification works. Quincy will also provide tips on how to learn effectively."
+        ]
+      },
+      "lab-debug-camperbots-profile-page": {
+        "title": "Debug Camperbot's Profile Page",
+        "intro": [
+          "Camperbot is learning how to code too and needs some help with their HTML.",
+          "In this lab, you will help Camperbot find and fix the errors in their code."
         ]
       },
       "lecture-what-is-html": {
-        "title": "What is HTML?",
+        "title": "Understanding HTML Attributes and the HTML Boilerplate",
         "intro": [
-          "In this lecture video, you will be introduced to HTML (HyperText Markup Language), a markup language for creating web pages.",
-          "You will learn about HTML's role on the web, the basic syntax, and what HTML attributes are."
+          "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."
         ]
       },
       "workshop-cat-photo-app": {
@@ -2961,6 +2984,12 @@
         "title": "Build a Password Generator App",
         "intro": [
           "In this lab, you'll build a password generator app based on the user's input."
+        ]
+      },
+      "lab-sum-all-numbers-algorithm": {
+        "title": "Design a Sum All Numbers Algorithm",
+        "intro": [
+          "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
         ]
       },
       "review-javascript-fundamentals": {

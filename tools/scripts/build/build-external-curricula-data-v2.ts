@@ -9,10 +9,24 @@ import {
 import fullStackSuperBlockStructure from '../../../curriculum/superblock-structure/full-stack.json';
 import type { Chapter } from '../../../shared/config/chapters';
 
-export type CurriculumIntros = {
+export type CurriculumIntros =
+  | BlockBasedCurriculumIntros
+  | ChapterBasedCurriculumIntros;
+
+type BlockBasedCurriculumIntros = {
   [keyValue in SuperBlocks]: {
     title: string;
     intro: string[];
+    blocks: Record<string, { title: string; intro: string[] }>;
+  };
+};
+
+export type ChapterBasedCurriculumIntros = {
+  [keyValue in SuperBlocks]: {
+    title: string;
+    intro: string[];
+    chapters: Record<string, string>;
+    modules: Record<string, string>;
     blocks: Record<string, { title: string; intro: string[] }>;
   };
 };
@@ -51,6 +65,7 @@ export interface GeneratedChapterBasedCurriculumProps {
 
 interface GeneratedChapter {
   dashedName: string;
+  name: string;
   comingSoon?: boolean;
   modules: GeneratedModule[];
   chapterType?: string;
@@ -58,6 +73,7 @@ interface GeneratedChapter {
 
 interface GeneratedModule {
   dashedName: string;
+  name: string;
   comingSoon?: boolean;
   blocks: GeneratedBlock[];
   moduleType?: string;
@@ -260,25 +276,30 @@ export function buildExtCurriculumDataV2(
     const chapters: Chapter[] = fullStackSuperBlockStructure.chapters;
     const blocksWithData = curriculum[superBlockKey].blocks;
 
+    const superBlockIntros = intros[
+      superBlockKey
+    ] as ChapterBasedCurriculumIntros[SuperBlocks];
+
     // Skip upcoming chapter/module as the metadata of their blocks
     // is not included in the `curriculum` object.
     const allChapters = chapters.map(chapter => ({
       dashedName: chapter.dashedName,
+      name: superBlockIntros.chapters[chapter.dashedName],
       comingSoon: chapter.comingSoon,
       chapterType: chapter.chapterType,
       modules: chapter.comingSoon
         ? []
         : chapter.modules.map(module => ({
             dashedName: module.dashedName,
+            name: superBlockIntros.modules[module.dashedName],
             comingSoon: module.comingSoon,
             moduleType: module.moduleType,
             blocks: module.comingSoon
               ? []
               : module.blocks.map(block => {
                   const blockData = blocksWithData[block.dashedName];
-
                   return {
-                    intro: intros[superBlockKey].blocks[block.dashedName].intro,
+                    intro: superBlockIntros.blocks[block.dashedName].intro,
                     meta: blockData.meta
                   };
                 })

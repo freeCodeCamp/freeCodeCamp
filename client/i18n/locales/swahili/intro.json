@@ -1167,14 +1167,16 @@
         "title": "Algorithms",
         "intro": [
           "Mazoezi haya ya programu bila malipo yatakufundisha kuhusu algoriti za kawaida ambazo unaweza kukutana nazo katika maisha halisi. Hii ni fursa nzuri ya kuboresha ujuzi wako wa mantiki na programu.",
-          "Algoriti hizi hutumiwa mara kwa mara katika usaili wa kazi ili kupima ujuzi wa mtahiniwa. Tutakupa maelezo wazi na mafupi ya jinsi algoriti hizi tofauti hufanya kazi ili uweze kutekeleza suluhisho kwa kila moja."
+          "Algoriti hizi hutumiwa mara kwa mara katika usaili wa kazi ili kupima ujuzi wa mtahiniwa. Tutakupa maelezo wazi na mafupi ya jinsi algoriti hizi tofauti hufanya kazi ili uweze kutekeleza suluhisho kwa kila moja.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "data-structures": {
         "title": "Data Structures",
         "intro": [
           "Kozi hizi za upangaji bila malipo zinakusudiwa kukusaidia kukabiliana na miundo mikubwa na changamano ya data ambayo huenda bado huifahamu.",
-          "Ukipitia kozi zilizo hapa chini, utajifunza kuhusu kila aina ya muundo wa data, na utekeleze algoriti za kuimarisha uelewa wako kuzihusu."
+          "Ukipitia kozi zilizo hapa chini, utajifunza kuhusu kila aina ya muundo wa data, na utekeleze algoriti za kuimarisha uelewa wako kuzihusu.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "take-home-projects": {
@@ -1305,31 +1307,36 @@
       "project-euler-problems-1-to-100": {
         "title": "Mradi wa Euler Matatizo 1 hadi 100",
         "intro": [
-          "Katika seti hii ya kwanza ya changamoto, utatumia dhana za hisabati kama vile mfuatano wa Fibonacci, nadharia ya nambari kuu, na viunganishi kuandika algoriti bora za kutatua matatizo haya."
+          "Katika seti hii ya kwanza ya changamoto, utatumia dhana za hisabati kama vile mfuatano wa Fibonacci, nadharia ya nambari kuu, na viunganishi kuandika algoriti bora za kutatua matatizo haya.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-101-to-200": {
         "title": "Mradi wa Euler Matatizo 101 hadi 200",
         "intro": [
-          "Katika seti hii ya changamoto, utaendeleza ujuzi uliojifunza katika sehemu ya kwanza ya kozi na kutumia dhana za hali ya juu zaidi kama vile ukokotoaji wa vekta, piramidi ya Pascal, na algoriti ya RSA ili kutatua matatizo haya kwa ufanisi."
+          "Katika seti hii ya changamoto, utaendeleza ujuzi uliojifunza katika sehemu ya kwanza ya kozi na kutumia dhana za hali ya juu zaidi kama vile ukokotoaji wa vekta, piramidi ya Pascal, na algoriti ya RSA ili kutatua matatizo haya kwa ufanisi.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-201-to-300": {
         "title": "Mradi wa Euler Matatizo 201 hadi 300",
         "intro": [
-          "Katika kundi hili la changamoto, utaendelea kukuza ujuzi uliojifunza hapo awali na kutumia dhana kama vile nadharia ya binomial, nambari za Hamming, na mfuatano wa Collatz ili kukuza zaidi ujuzi wako wa hesabu na utatuzi wa matatizo."
+          "Katika kundi hili la changamoto, utaendelea kukuza ujuzi uliojifunza hapo awali na kutumia dhana kama vile nadharia ya binomial, nambari za Hamming, na mfuatano wa Collatz ili kukuza zaidi ujuzi wako wa hesabu na utatuzi wa matatizo.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-301-to-400": {
         "title": "Mradi wa Euler Matatizo 301 hadi 400",
         "intro": [
-          "Hapa utaendelea kubadilisha ujuzi wako wa hisabati na algoriti unapotumia dhana kama vile nadharia ya mchezo mseto, utendakazi wa busara kidogo, na mfuatano wa kujieleza wa Golomb ili kutengeneza suluhu bora kwa matatizo haya."
+          "Hapa utaendelea kubadilisha ujuzi wako wa hisabati na algoriti unapotumia dhana kama vile nadharia ya mchezo mseto, utendakazi wa busara kidogo, na mfuatano wa kujieleza wa Golomb ili kutengeneza suluhu bora kwa matatizo haya.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-401-to-480": {
         "title": "Mradi wa Euler Matatizo 401 hadi 480",
         "intro": [
-          "Katika seti hii ya mwisho ya changamoto, utahitaji kutumia kila kitu ulichojifunza hadi kufikia hatua hii na kutumia dhana za hali ya juu kama vile vigawanyiko vya umoja, utaratibu wa Kaprekar, na mengi zaidi kutatua matatizo haya changamano."
+          "Katika seti hii ya mwisho ya changamoto, utahitaji kutumia kila kitu ulichojifunza hadi kufikia hatua hii na kutumia dhana za hali ya juu kama vile vigawanyiko vya umoja, utaratibu wa Kaprekar, na mengi zaidi kutatua matatizo haya changamano.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       }
     }
@@ -1731,7 +1738,10 @@
     "blocks": {
       "rosetta-code-challenges": {
         "title": "Rosetta Code Challenges",
-        "intro": ["These are the challenges for Rosetta Code."]
+        "intro": [
+          "These are the challenges for Rosetta Code.",
+          "NOTE: These challenges support JavaScript only solutions."
+        ]
       }
     }
   },
@@ -1744,7 +1754,6 @@
       "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
     ],
     "chapters": {
-      "freecodecamp": "Welcome",
       "html": "HTML",
       "css": "CSS",
       "javascript": "JavaScript",
@@ -1755,7 +1764,6 @@
       "exam-certified-full-stack-developer": "Certified Full Stack Developer Exam"
     },
     "modules": {
-      "getting-started-with-freecodecamp": "Getting Started with freeCodeCamp",
       "basic-html": "Basic HTML",
       "semantic-html": "Semantic HTML",
       "html-forms-and-tables": "Forms and Tables",
@@ -1827,17 +1835,32 @@
       "exam-python": "Python Exam"
     },
     "blocks": {
-      "lecture-welcome-to-freecodecamp": {
-        "title": "Welcome to freeCodeCamp",
+      "workshop-curriculum-outline": {
+        "title": "Build a Curriculum Outline",
         "intro": [
-          "Watch these videos to learn what freeCodeCamp is, and how millions of people have learned to code and gotten developer jobs using it."
+          "Welcome to freeCodeCamp!",
+          "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
+        ]
+      },
+      "lecture-welcome-to-freecodecamp": {
+        "title": "Welcome Message from Quincy Larson",
+        "intro": [
+          "Hear from Quincy Larson, the founder and teacher of freeCodeCamp.",
+          "Quincy will welcome you to the platform and talk about how the certification works. Quincy will also provide tips on how to learn effectively."
+        ]
+      },
+      "lab-debug-camperbots-profile-page": {
+        "title": "Debug Camperbot's Profile Page",
+        "intro": [
+          "Camperbot is learning how to code too and needs some help with their HTML.",
+          "In this lab, you will help Camperbot find and fix the errors in their code."
         ]
       },
       "lecture-what-is-html": {
-        "title": "What is HTML?",
+        "title": "Understanding HTML Attributes and the HTML Boilerplate",
         "intro": [
-          "In this lecture video, you will be introduced to HTML (HyperText Markup Language), a markup language for creating web pages.",
-          "You will learn about HTML's role on the web, the basic syntax, and what HTML attributes are."
+          "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."
         ]
       },
       "workshop-cat-photo-app": {
@@ -2961,6 +2984,12 @@
         "title": "Build a Password Generator App",
         "intro": [
           "In this lab, you'll build a password generator app based on the user's input."
+        ]
+      },
+      "lab-sum-all-numbers-algorithm": {
+        "title": "Design a Sum All Numbers Algorithm",
+        "intro": [
+          "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
         ]
       },
       "review-javascript-fundamentals": {
