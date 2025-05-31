@@ -7,7 +7,23 @@
   "challengeOrder": [
     {
       "id": "6660a3787b34f972a9776968",
-      "title": "Dialogue 1: I'm Tom"
+      "title": "Dialogue 1: Reviewing HR Policies"
+    },
+    {
+      "id": "683b041e315a2b231b6be69e",
+      "title": "Task 1"
+    },
+    {
+      "id": "683b085d99b1793026400536",
+      "title": "Task 2"
+    },
+    {
+      "id": "683b0bb5e604f23fb461e6f5",
+      "title": "Task 3"
+    },
+    {
+      "id": "683b0ef61411d548a71183ec",
+      "title": "Task 4"
     }
   ],
   "helpCategory": "English",
