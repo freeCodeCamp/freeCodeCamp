@@ -782,6 +782,18 @@
           ]
         },
         {
+          "dashedName": "js-a11y",
+          "comingSoon": true,
+          "blocks": [
+            {
+              "dashedName": "review-js-a11y"
+            },
+            {
+              "dashedName": "quiz-js-a11y"
+            }
+          ]
+        },
+        {
           "dashedName": "debugging-javascript",
           "blocks": [
             {
