@@ -35,44 +35,36 @@ Convert the assignments for `a`, `b`, and `c` to use the `+=` operator.
 `a` should equal `15`.
 
 ```js
-assert(a === 15);
+assert.strictEqual(a, 15);
 ```
 
 `b` should equal `26`.
 
 ```js
-assert(b === 26);
+assert.strictEqual(b, 26);
 ```
 
 `c` should equal `19`.
 
 ```js
-assert(c === 19);
+assert.strictEqual(c, 19);
 ```
 
 You should use the `+=` operator for each variable.
 
 ```js
-assert(__helpers.removeJSComments(code).match(/\+=/g).length === 3);
+assert.lengthOf(__helpers.removeJSComments(code).match(/\+=/g), 3); 
 ```
 
 You should not modify the code above the specified comment.
 
 ```js
-assert(
-  /let a = 3;/.test(__helpers.removeJSComments(code)) &&
-    /let b = 17;/.test(__helpers.removeJSComments(code)) &&
-    /let c = 12;/.test(__helpers.removeJSComments(code))
-);
+assert.match(__helpers.removeJSComments(code), /let a = 3;/);
+assert.match(__helpers.removeJSComments(code), /let b = 17;/);
+assert.match(__helpers.removeJSComments(code), /let c = 12;/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
-```
 
 ## --seed-contents--
 

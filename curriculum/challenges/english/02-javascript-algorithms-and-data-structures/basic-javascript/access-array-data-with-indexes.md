@@ -33,42 +33,18 @@ Create a variable called `myData` and set it to equal the first value of `myArra
 The variable `myData` should equal the first value of `myArray`.
 
 ```js
-assert(
-  (function () {
-    if (
-      typeof myArray !== 'undefined' &&
-      typeof myData !== 'undefined' &&
-      myArray[0] === myData
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  })()
-);
+assert.exists(myArray); 
+assert.exists(myData);
+assert.strictEqual(myArray[0],myData); 
 ```
 
 The data in variable `myArray` should be accessed using bracket notation.
 
 ```js
-assert(
-  (function () {
-    if (__helpers.removeJSComments(code).match(/\s*=\s*myArray\[0\]/g)) {
-      return true;
-    } else {
-      return false;
-    }
-  })()
-);
+assert.match(__helpers.removeJSComments(code), /\s*=\s*myArray\[0\]/g);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-if(typeof myArray !== "undefined" && typeof myData !== "undefined"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}
-```
 
 ## --seed-contents--
 

@@ -30,42 +30,16 @@ Use the `.shift()` function to remove the first item from `myArray` and assign t
 `myArray` should now equal `[["dog", 3]]`.
 
 ```js
-assert(
-  (function (d) {
-    if (d[0][0] == 'dog' && d[0][1] === 3 && d[1] == undefined) {
-      return true;
-    } else {
-      return false;
-    }
-  })(myArray)
-);
+assert.sameDeepOrderedMembers(myArray, [["dog", 3]]);
 ```
 
 `removedFromMyArray` should contain `["John", 23]`.
 
 ```js
-assert(
-  (function (d) {
-    if (
-      d[0] == 'John' &&
-      d[1] === 23 &&
-      typeof removedFromMyArray === 'object'
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  })(removedFromMyArray)
-);
+assert.sameDeepOrderedMembers(removedFromMyArray, ["John", 23]);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-if (typeof removedFromMyArray !== 'undefined') (function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
-```
 
 ## --seed-contents--
 
