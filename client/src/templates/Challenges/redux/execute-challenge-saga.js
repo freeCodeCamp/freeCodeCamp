@@ -292,7 +292,8 @@ export function* previewChallengeSaga(action) {
           challengeData.challengeType === challengeTypes.python ||
           challengeData.challengeType ===
             challengeTypes.multifilePythonCertProject ||
-          challengeData.challengeType === challengeTypes.pyLab
+          challengeData.challengeType === challengeTypes.pyLab ||
+          challengeData.challengeType === challengeTypes.dailyChallengePy
         ) {
           yield updatePython(challengeData);
         } else {
@@ -326,7 +327,8 @@ function* updatePreviewSaga(action) {
   if (
     challengeData.challengeType === challengeTypes.python ||
     challengeData.challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeData.challengeType === challengeTypes.pyLab
+    challengeData.challengeType === challengeTypes.pyLab ||
+    challengeData.challengeType === challengeTypes.dailyChallengePy
   ) {
     yield updatePython(challengeData);
   } else {
