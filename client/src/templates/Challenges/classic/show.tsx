@@ -11,7 +11,10 @@ import { editor } from 'monaco-editor';
 import type { FitAddon } from 'xterm-addon-fit';
 
 import { useFeature } from '@growthbook/growthbook-react';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import {
+  challengeTypes,
+  canSaveToDB
+} from '../../../../../shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
@@ -244,11 +247,15 @@ function ShowClassic({
   });
 
   const guideUrl = getGuideUrl({ forumTopicId, title });
+  const [isSaved, setIsSaved] = useState(true);
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+  const leaveMessage = t(
+    'Are you sure you want to leave this page? Unsaved changes may be lost.'
+  );
   const openConsole = isJavaScriptChallenge({ challengeType });
   const hasPreview = challengeHasPreview({ challengeType });
   const getLayoutState = () => {
@@ -352,6 +359,111 @@ function ShowClassic({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // detect if user has unsaved contents if the challenge can be saved
+  useEffect(() => {
+    if (!canSaveToDB(challengeType)) return;
+
+    let isFileSaved = true;
+
+    const savedChallengeFiles = savedChallenges.find(
+      challenge => challenge.id === challengeMeta.id
+    )?.challengeFiles;
+
+    if (!challengeFiles) return;
+
+    for (let index = 0; index < challengeFiles.length; index++) {
+      const currentContent = challengeFiles[index]?.contents;
+      const savedContent = savedChallengeFiles?.[index]?.contents;
+      const seedContent = seedChallengeFiles?.[index]?.contents;
+
+      if (!savedContent && currentContent !== seedContent) {
+        isFileSaved = false;
+        break;
+      }
+
+      if (savedContent && currentContent !== savedContent) {
+        isFileSaved = false;
+        break;
+      }
+    }
+
+    setIsSaved(isFileSaved);
+  }, [
+    savedChallenges,
+    challengeFiles,
+    seedChallengeFiles,
+    challengeMeta,
+    challengeType
+  ]);
+
+  // prevent following links if the user has unsaved content
+  useEffect(() => {
+    const handleLinkClick = (event: MouseEvent) => {
+      if (isSaved) {
+        document.removeEventListener('click', handleLinkClick, true);
+        return;
+      }
+
+      const target = event.target as HTMLElement;
+      const anchor = target.closest('a');
+      if (!anchor) return;
+
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+
+      const allowLeave = window.confirm(leaveMessage);
+
+      if (!allowLeave) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    };
+
+    document.addEventListener('click', handleLinkClick, true);
+
+    return () => {
+      document.removeEventListener('click', handleLinkClick, true);
+    };
+  }, [isSaved, leaveMessage]);
+
+  const stopWindowCloseHandler =
+    (leaveMessage: string) => (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      window.confirm(leaveMessage);
+    };
+
+  const stopBrowserBackHandler = (leaveMessage: string) => () => {
+    window.confirm(leaveMessage);
+  };
+
+  const stopWindowCloseRef = useRef<(e: BeforeUnloadEvent) => void>();
+  const stopBrowserBackRef = useRef<() => void>();
+
+  useEffect(() => {
+    stopWindowCloseRef.current = stopWindowCloseHandler(leaveMessage);
+    stopBrowserBackRef.current = stopBrowserBackHandler(leaveMessage);
+  }, [leaveMessage]);
+
+  useEffect(() => {
+    const stopWindowClose = stopWindowCloseRef.current;
+    const stopBrowserBack = stopBrowserBackRef.current;
+
+    if (!isSaved) {
+      // Prevent page close
+      window.addEventListener('beforeunload', stopWindowClose!);
+      // Prevent browser back
+      window.addEventListener('popstate', stopBrowserBack!);
+    } else {
+      window.removeEventListener('beforeunload', stopWindowClose!);
+      window.removeEventListener('popstate', stopBrowserBack!);
+    }
+
+    return () => {
+      window.removeEventListener('beforeunload', stopWindowClose!);
+      window.removeEventListener('popstate', stopBrowserBack!);
+    };
+  }, [isSaved]);
 
   const initializeComponent = (title: string): void => {
     initConsole('');
