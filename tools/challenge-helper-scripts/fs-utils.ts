@@ -27,7 +27,8 @@ export function getSuperBlockSubPath(superBlock: SuperBlocks): string {
     [SuperBlocks.PythonForEverybody]: '23-python-for-everybody',
     [SuperBlocks.B1English]: '24-b1-english-for-developers',
     [SuperBlocks.FullStackDeveloper]: '25-front-end-development',
-    [SuperBlocks.A2Spanish]: '26-a2-professional-spanish'
+    [SuperBlocks.A2Spanish]: '26-a2-professional-spanish',
+    [SuperBlocks.A2Chinese]: '27-a2-professional-chinese'
   };
   return pathMap[superBlock];
 }
