@@ -60,46 +60,40 @@ assert(typeof canMakeWord('hi') === 'boolean');
 `canMakeWord("bark")` should return true.
 
 ```js
-assert(canMakeWord(words[0]));
+assert(canMakeWord("bark"));
 ```
 
 `canMakeWord("BooK")` should return false.
 
 ```js
-assert(!canMakeWord(words[1]));
+assert(!canMakeWord("BooK"));
 ```
 
 `canMakeWord("TReAT")` should return true.
 
 ```js
-assert(canMakeWord(words[2]));
+assert(canMakeWord("TReAT"));
 ```
 
 `canMakeWord("COMMON")` should return false.
 
 ```js
-assert(!canMakeWord(words[3]));
+assert(!canMakeWord("COMMON"));
 ```
 
 `canMakeWord("squAD")` should return true.
 
 ```js
-assert(canMakeWord(words[4]));
+assert(canMakeWord("squAD"));
 ```
 
 `canMakeWord("conFUSE")` should return true.
 
 ```js
-assert(canMakeWord(words[5]));
+assert(canMakeWord("conFUSE"));
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const words = ['bark', 'BooK', 'TReAT', 'COMMON', 'squAD', 'conFUSE'];
-```
 
 ## --seed-contents--
 
@@ -134,3 +128,4 @@ function canMakeWord(word) {
   return !length;
 }
 ```
+

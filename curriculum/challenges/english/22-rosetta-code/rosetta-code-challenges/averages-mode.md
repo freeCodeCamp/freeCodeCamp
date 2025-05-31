@@ -25,23 +25,18 @@ assert(typeof mode === 'function');
 `mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])` should equal `[6]`
 
 ```js
+const arr1 = [1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17];
 assert.deepEqual(mode(arr1), [6]);
 ```
 
 `mode([1, 2, 4, 4, 1])` should equal `[1, 4]`.
 
 ```js
+const arr2 = [1, 2, 4, 4, 1];
 assert.deepEqual(mode(arr2).sort(), [1, 4]);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const arr1 = [1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17];
-const arr2 = [1, 2, 4, 4, 1];
-```
 
 ## --seed-contents--
 
