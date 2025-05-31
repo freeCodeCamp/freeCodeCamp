@@ -19,64 +19,83 @@ Within `tests/1_unit-tests.js` under the test labeled `#2` in the `Basic Asserti
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=1').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",1);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(data.state, 'passed');
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct method for the first assertion - `isDefined` vs. `isUndefined`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=1').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",1);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(
         data.assertions[0].method,
         'isDefined',
         'Null is not undefined'
       );
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct method for the second assertion - `isDefined` vs. `isUndefined`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=1').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",1);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(
         data.assertions[1].method,
         'isUndefined',
         'Undefined is undefined'
       );
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct method for the third assertion - `isDefined` vs. `isUndefined`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=1').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",1);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(
         data.assertions[2].method,
         'isDefined',
         'A string is not undefined'
       );
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
-

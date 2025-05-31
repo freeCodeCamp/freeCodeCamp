@@ -22,39 +22,47 @@ Within `tests/1_unit-tests.js` under the test labeled `#1` in the `Basic Asserti
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=0').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const params = new URLSearchParams();
+params.append('type', 'unit');
+params.append('n', 0);
+fetch(code + `/_api/get-tests?${params}`)
+  .then(response => response.json())
+  .then(data => {
+    assert.equal(data.state, 'passed');
+  })
+  .catch(error => {
+    throw new Error(error.message);
+  });
 ```
 
 You should choose the correct method for the first assertion - `isNull` vs. `isNotNull`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=0').then(
-    (data) => {
-      assert.equal(data.assertions[0].method, 'isNull', 'Null is null');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const params = new URLSearchParams();
+params.append('type', 'unit');
+params.append('n', 0);
+fetch(code + `/_api/get-tests?${params}`)
+  .then(response => response.json())
+  .then(data => {
+    assert.equal(data.assertions[0].method, 'isNull', 'Null is null');
+  })
+  .catch(error => {
+    throw new Error(error.message);
+  });
 ```
 
 You should choose the correct method for the second assertion - `isNull` vs. `isNotNull`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=0').then(
-    (data) => {
-      assert.equal(data.assertions[1].method, 'isNotNull', '1 is not null');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const params = new URLSearchParams();
+params.append('type', 'unit');
+params.append('n', 0);
+fetch(code + `/_api/get-tests?${params}`)
+  .then(response => response.json())
+  .then(data => {
+    assert.equal(data.assertions[1].method, 'isNotNull', '1 is not null');
+  })
+  .catch(error => {
+    throw new Error(error.message);
+  });
 ```
-
