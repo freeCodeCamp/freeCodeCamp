@@ -1046,6 +1046,21 @@ importers:
         specifier: 3.6.0
         version: 3.6.0
 
+  tools/daily-challenges:
+    devDependencies:
+      dotenv:
+        specifier: 16.4.5
+        version: 16.4.5
+      mongodb:
+        specifier: 6.10.0
+        version: 6.10.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.3)
+      tsx:
+        specifier: 4.19.1
+        version: 4.19.1
+      typescript:
+        specifier: 5.8.2
+        version: 5.8.2
+
   tools/screenshot-service:
     dependencies:
       '@aws-sdk/client-s3':
