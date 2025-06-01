@@ -3140,7 +3140,7 @@
         ]
       },
       "review-js-a11y": {
-        "title": "JavaScript and Accessibility review",
+        "title": "JavaScript and Accessibility Review",
         "intro": [
           "Before you're quizzed on JavaScript and accessibility, you should review what you've learned about it.",
           "Open up this page to review concepts including how to work with the <code>aria-expanded</code>, <code>aria-live</code>, and <code>aria-controls</code> attributes."

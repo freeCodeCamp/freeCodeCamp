@@ -1,5 +1,5 @@
 ---
-title: Introduction to the JavaScript and Accessibility review
+title: Introduction to the JavaScript and Accessibility Review
 block: review-js-a11y
 superBlock: full-stack-developer
 ---

@@ -1,10 +1,10 @@
 {
-  "name": "JavaScript and Accessibility review",
+  "name": "JavaScript and Accessibility Review",
   "isUpcomingChange": true,
   "blockType": "review",
   "blockLayout": "link",
   "dashedName": "review-js-a11y",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "683766860f71d4a96e429f3a", "title": "JavaScript and Accessibility review" }],
+  "challengeOrder": [{ "id": "683766860f71d4a96e429f3a", "title": "JavaScript and Accessibility Review" }],
   "helpCategory": "JavaScript"
 }
