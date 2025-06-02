@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the JavaScript and Accessibility Quiz
 
-Test your knowledge of JavaScript and Accessibility best practices with this quiz.
+Test your knowledge of JavaScript and accessibility best practices with this quiz.
