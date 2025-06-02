@@ -5,6 +5,43 @@
   "isUpcomingChange": true,
   "dashedName": "lecture-working-with-loops-and-sequences",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "67fe8399c41a212871025f96", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "67fe8399c41a212871025f96",
+      "title": "What are lists and how do they work?"
+    },
+    {
+      "id": "6839e38cdf93ee5a00c79676",
+      "title": "What are some commmon methods used for lists?"
+    },
+    {
+      "id": "6839e3a99ba37f09b9d0059b",
+      "title": "What are tuples and how do they work?"
+    },
+    {
+      "id": "683d6a3fe8c1060ffb1f9b78",
+      "title": "What are some common methods for tuples?"
+    },
+    {
+      "id": "6839e3ea328b630cf5fca9ac",
+      "title": "How do loops work?"
+    },
+    {
+      "id": "6839e41fe8dac60f11f583db",
+      "title": "What are ranges and how can you use them in a loop?"
+    },
+    {
+      "id": "6839e4b003571c149bcda122",
+      "title": "What are the enumerate and zip functions and how do they work?"
+    },
+    {
+      "id": "6839e4d62ae09d1661e4cf9b",
+      "title": "What are list comprehensions and what are some useful functions to work with lists?"
+    },
+    {
+      "id": "6839e4ef24827717b838f54d",
+      "title": "What are lambda functions and how do they work?"
+    }
+  ],
   "helpCategory": "Python"
 }
