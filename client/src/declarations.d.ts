@@ -1,5 +1,3 @@
-import '@freecodecamp/curriculum-helpers/dist/types/main/src';
-
 declare module '@freecodecamp/loop-protect';
 declare module '@freecodecamp/strip-comments';
 declare module '@types/react-redux';

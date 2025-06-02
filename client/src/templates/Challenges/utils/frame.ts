@@ -1,12 +1,24 @@
 import { flow } from 'lodash-es';
 import i18next, { type i18n } from 'i18next';
-import { version } from '@freecodecamp/curriculum-helpers/package.json';
+
+import {
+  version as _helperVersion,
+  type FCCTestRunner
+} from '../../../../../tools/client-plugins/browser-scripts/test-runner';
 
 import { format } from '../../../utils/format';
 import type {
   FrameDocument,
   PythonDocument
 } from '../../../../../tools/client-plugins/browser-scripts';
+
+export const helperVersion = _helperVersion;
+
+declare global {
+  interface Window {
+    FCCTestRunner: FCCTestRunner;
+  }
+}
 
 const utilsFormat: <T>(x: T) => string = format;
 
@@ -76,7 +88,7 @@ export const scrollManager = new ScrollManager();
 export const mainPreviewId = 'fcc-main-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
-const ASSET_PATH = `/js/${version}/test-runner/`;
+const ASSET_PATH = `/js/test-runner/${helperVersion}/`;
 
 const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 

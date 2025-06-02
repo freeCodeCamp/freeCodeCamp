@@ -35,7 +35,8 @@ const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
 const {
-  prefixDoctype
+  prefixDoctype,
+  helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
 const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
 const ChallengeTitles = require('./utils/challenge-titles');
@@ -134,7 +135,10 @@ async function setup() {
     port: '8080',
     root: path.resolve(__dirname, 'stubs'),
     mount: [
-      ['/dist', path.join(clientPath, 'static/js/test-runner')],
+      [
+        '/dist',
+        path.join(clientPath, `static/js/test-runner/${helperVersion}`)
+      ],
       ['/js', path.join(clientPath, 'static/js')]
     ],
     open: false,
@@ -603,7 +607,9 @@ ${testString}
         ),
         await page.evaluate(
           async (testString, type) => {
-            return await window.FCCSandbox.getRunner(type).runTest(testString);
+            return await window.FCCTestRunner.getRunner(type).runTest(
+              testString
+            );
           },
           testString,
           config.type
@@ -623,7 +629,7 @@ async function initializeTestRunner({
 
   await page.evaluate(
     async (sources, source, type, hooks, loadEnzyme) => {
-      await window.FCCSandbox.createTestRunner({
+      await window.FCCTestRunner.createTestRunner({
         source,
         type,
         code: sources,

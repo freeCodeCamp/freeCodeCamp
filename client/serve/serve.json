@@ -20,7 +20,7 @@
       ]
     },
     {
-      "source": "js/*/test-runner/*.js",
+      "source": "js/test-runner/*/*.js",
       "headers": [
         {
           "key": "Cache-Control",

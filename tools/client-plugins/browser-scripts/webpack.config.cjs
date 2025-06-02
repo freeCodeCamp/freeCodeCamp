@@ -2,6 +2,9 @@ const { writeFileSync } = require('fs');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
+const {
+  version: helperVersion
+} = require('@freecodecamp/curriculum-helpers/package.json');
 
 module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
@@ -71,7 +74,7 @@ module.exports = (env = {}) => {
           './node_modules/xterm/css/xterm.css',
           {
             from: './node_modules/@freecodecamp/curriculum-helpers/dist/test-runner',
-            to: 'test-runner'
+            to: `test-runner/${helperVersion}/`
           }
         ]
       }),
