@@ -3966,8 +3966,6 @@
         "title": "Build a Quick Sort",
         "intro": [""]
       },
-      "workshop-merge-sort": { "title": "Build a Merge Sort", "intro": [""] },
-      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
       "lab-selection-sort": {
         "title": "Build a Selection Sort",
         "intro": [""]
