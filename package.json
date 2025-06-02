@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=20",
+    "node": ">=22",
     "pnpm": ">=10"
   },
   "repository": {
