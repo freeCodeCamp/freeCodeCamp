@@ -157,7 +157,6 @@
     "@types/validator": "^13.7.12",
     "autoprefixer": "10.4.17",
     "babel-plugin-macros": "3.1.0",
-    "copy-webpack-plugin": "9.1.0",
     "core-js": "2.6.12",
     "dotenv": "16.4.5",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.32",

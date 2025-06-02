@@ -4,10 +4,6 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const {
-  version: helperVersion
-} = require('@freecodecamp/curriculum-helpers/package.json');
 
 const env = require('./config/env.json');
 const {
@@ -242,14 +238,6 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     }),
     new webpack.ProvidePlugin({
       process: 'process/browser'
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: './node_modules/@freecodecamp/curriculum-helpers/dist/test-runner',
-          to: `js/${helperVersion}/test-runner`
-        }
-      ]
     })
   ];
   // The monaco editor relies on some browser only globals so should not be
