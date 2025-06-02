@@ -1,9 +1,9 @@
 ---
-title: Introduction to the Build a Merge Sort Algorithm
+title: Implement the Merge Sort Algorithm
 block: workshop-merge-sort
 superBlock: full-stack-developer
 ---
 
-## Introduction to the Build a Merge Sort Algorithm
+## Implement the Merge Sort Algorithm
 
-This is a test for the new project-based curriculum.
+The merge sort algorithm is a sorting algorithm based on the divide and conquer principle. In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers.
