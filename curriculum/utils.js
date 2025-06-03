@@ -110,7 +110,7 @@ function getChapterFromBlock(blockName, superBlockStructure) {
       `There is no chapter corresponding to block "${blockName}". It's possible that the block is missing in the superblock structure.`
     );
   }
-  return chapter.dashedName;
+  return { dashedName: chapter.dashedName, comingSoon: chapter.comingSoon };
 }
 
 function getModuleFromBlock(blockName, superBlockStructure) {
@@ -125,7 +125,7 @@ function getModuleFromBlock(blockName, superBlockStructure) {
       `There is no module corresponding to block "${blockName}". It's possible that the block is missing in the superblock structure.`
     );
   }
-  return module.dashedName;
+  return { dashedName: module.dashedName, comingSoon: module.comingSoon };
 }
 
 function getBlockOrder(blockName, superBlockStructure) {

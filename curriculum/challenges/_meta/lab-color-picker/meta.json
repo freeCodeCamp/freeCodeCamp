@@ -1,6 +1,6 @@
 {
     "name": "Build a Color Picker App",
-    "isUpcomingChange": false,
+    "isUpcomingChange": true,
     "usesMultifileEditor": true,
     "dashedName": "lab-color-picker",
     "superBlock": "full-stack-developer",
