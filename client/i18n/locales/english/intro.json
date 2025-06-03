@@ -1290,7 +1290,7 @@
         ]
       },
       "top-build-a-rock-paper-scissors-game": {
-        "title": "Build a Rock Paper Scissor Game",
+        "title": "Build a Rock Paper Scissors Game",
         "intro": [
           "Put your JavaScript skills to the test by building a Rock Paper Scissors game."
         ]
@@ -1787,6 +1787,7 @@
       "css-variables": "Variables",
       "css-grid": "Grid",
       "css-animations": "Animations",
+      "review-css": "CSS Review",
       "exam-css": "CSS Exam",
       "code-editors": "Code Editors",
       "javascript-variables-and-strings": "Variables and Strings",
@@ -1809,6 +1810,7 @@
       "recursion": "Recursion",
       "functional-programming": "Functional Programming",
       "asynchronous-javascript": "Asynchronous JavaScript",
+      "review-javascript": "JavaScript Review",
       "exam-javascript": "JavaScript Exam",
       "react-fundamentals": "React Fundamentals",
       "react-state-hooks-and-routing": "React State, Hooks, and Routing",
@@ -2849,6 +2851,12 @@
           "In this lab you'll use conditional statements and loops to determine if a year is a leap year."
         ]
       },
+      "lab-truncate-string": {
+        "title": "Implement the Truncate String Algorithm",
+        "intro": [
+          "In this lab, you will practice truncating a string at a certain length."
+        ]
+      },
       "review-javascript-functions": {
         "title": "JavaScript Functions Review",
         "intro": [
@@ -3561,7 +3569,7 @@
       "workshop-toggle-text-app": {
         "title": "Toggle Text App",
         "intro": [
-          "In this workshop, you will continute to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
+          "In this workshop, you will continue to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
         ]
       },
       "lab-color-picker": {
@@ -3577,7 +3585,12 @@
           "In these lecture videos, you will learn about effects and referencing values with React."
         ]
       },
-      "xdyh": { "title": "270", "intro": [] },
+      "workshop-fruit-search-app": {
+        "title": "Build a Fruit Search App",
+        "intro": [
+          "In this workshop, you will continue to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
+        ]
+      },
       "vjgg": { "title": "272", "intro": [] },
       "review-react-state-and-hooks": {
         "title": "React State and Hooks Review",
@@ -3617,7 +3630,12 @@
           "In these lecture videos, you will learn about data fetching and memoization in React."
         ]
       },
-      "ffpt": { "title": "279", "intro": [] },
+      "workshop-shopping-list-app": {
+        "title": "Build a Shopping List App",
+        "intro": [
+          "In this workshop, you'll use the <code>useMemo()</code> and <code>useCallback()</code> hooks in React to build a simple shopping list app. You'll learn more about state and the lifecycle of React components, and how to use memoization to reduce re-renders and make your apps more efficient."
+        ]
+      },
       "lab-currency-converter": {
         "title": "Build a Currency Converter",
         "intro": [
@@ -3742,174 +3760,15 @@
       },
       "rdzk": { "title": "301", "intro": [] },
       "vtpz": { "title": "302", "intro": [] },
-      "workshop-bash-boilerplate": {
-        "title": "Build a Boilerplate",
-        "intro": [
-          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
-          "In this 170-lesson workshop, you will learn terminal commands by creating a website boilerplate using only the command line."
-        ]
-      },
-      "review-bash-commands": {
-        "title": "Bash Commands Review",
-        "intro": [
-          "Review the Bash Commands concepts to prepare for the upcoming quiz."
-        ]
-      },
-      "quiz-bash-commands": {
-        "title": "Bash Commands Quiz",
-        "intro": ["Test what you've learned bash commands with this quiz."]
-      },
-      "voks": { "title": "306", "intro": [] },
-      "workshop-database-of-video-game-characters": {
-        "title": "Build a Database of Video Game Characters",
-        "intro": [
-          "A relational database organizes data into tables that are linked together through relationships.",
-          "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
-        ]
-      },
-      "lab-celestial-bodies-database": {
-        "title": "Build a Celestial Bodies Database",
-        "intro": [
-          "For this project, you will build a database of celestial bodies using PostgreSQL."
-        ]
-      },
-      "review-relational-database": {
-        "title": "Relational Database Review",
-        "intro": [
-          "Review the Relational Database concepts to prepare for the upcoming quiz."
-        ]
-      },
-      "quiz-relational-database": {
-        "title": "Relational Database Quiz",
-        "intro": [
-          "Test what you've learned on relational databases with this quiz."
-        ]
-      },
-      "pexz": { "title": "311", "intro": [] },
-      "workshop-bash-five-programs": {
-        "title": "Build Five Programs",
-        "intro": [
-          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
-          "In this 220-lesson workshop, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
-        ]
-      },
-      "review-bash-scripting": {
-        "title": "Bash Scripting Review",
-        "intro": [
-          "Review the bash scripting concepts you've learned to prepare for the upcoming quiz."
-        ]
-      },
-      "quiz-bash-scripting": {
-        "title": "Bash Scripting Quiz",
-        "intro": ["Test what you've learned on bash scripting in this quiz."]
-      },
-      "tkgg": { "title": "315", "intro": [] },
-      "workshop-sql-student-database-part-1": {
-        "title": "Build a Student Database: Part 1",
-        "intro": [
-          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
-          "In this 140-lesson workshop, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
-        ]
-      },
-      "workshop-sql-student-database-part-2": {
-        "title": "Build a Student Database: Part 2",
-        "intro": [
-          "SQL join commands are used to combine information from multiple tables in a relational database",
-          "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
-        ]
-      },
-      "lab-world-cup-database": {
-        "title": "Build a World Cup Database",
-        "intro": [
-          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
-        ]
-      },
-      "workshop-kitty-ipsum-translator": {
-        "title": "Build a Kitty Ipsum Translator",
-        "intro": [
-          "There's more to Bash commands than you might think.",
-          "In this 140-lesson workshop, you will learn some more complex commands, and the details of how commands work."
-        ]
-      },
-      "workshop-bike-rental-shop": {
-        "title": "Build a Bike Rental Shop",
-        "intro": [
-          "In this 210-lesson workshop, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
-        ]
-      },
-      "lab-salon-appointment-scheduler": {
-        "title": "Build a Salon Appointment Scheduler",
-        "intro": [
-          "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
-        ]
-      },
-      "review-bash-and-sql": {
-        "title": "Bash and SQL Review",
-        "intro": [
-          "Review the Bash and SQL concepts to prepare for the upcoming quiz."
-        ]
-      },
-      "quiz-bash-and-sql": {
-        "title": "Bash and SQL Quiz",
-        "intro": ["Test what you've learned in this quiz on Bash and SQL."]
-      },
-      "eeez": { "title": "324", "intro": [] },
-      "workshop-castle": {
-        "title": "Build a Castle",
-        "intro": [
-          "Nano is a program that allows you to edit files right in the terminal.",
-          "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
-        ]
-      },
-      "review-nano": {
-        "title": "Nano Review",
-        "intro": ["Review the Nano concepts to prepare for the upcoming quiz."]
-      },
-      "quiz-nano": {
-        "title": "Nano Quiz",
-        "intro": ["Test what you've learned on Nano with this quiz ."]
-      },
-      "rhhl": { "title": "328", "intro": [] },
-      "workshop-sql-reference-object": {
-        "title": "Build an SQL Reference Object",
-        "intro": [
-          "Git is a version control system that keeps track of all the changes you make to your codebase.",
-          "In this 240-lesson workshop, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
-        ]
-      },
-      "lab-periodic-table-database": {
-        "title": "Build a Periodic Table Database",
-        "intro": [
-          "For this lab, you will create a Bash script to get information about chemical elements from a periodic table database."
-        ]
-      },
-      "lab-number-guessing-game": {
-        "title": "Build a Number Guessing Game",
-        "intro": [
-          "For this lab, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
-        ]
-      },
-      "review-git": {
-        "title": "Git Review",
-        "intro": ["Review Git concepts to prepare for the upcoming quiz."]
-      },
-      "quiz-git": {
-        "title": "Git Quiz",
-        "intro": ["Test what you've learned on Git with this quiz."]
-      },
-      "review-relational-databases": {
-        "title": "Relational Databases Review",
-        "intro": [
-          "Review relational databases concepts to prepare for the upcoming quiz."
-        ]
-      },
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": ["Learn about Introduction to Python in these lectures."]
       },
       "workshop-caesar-cipher": {
         "title": "Build a Caesar Cipher",
-        "intro": ["Learn about Build a Caesar Cipher in these lectures."]
+        "intro": [
+          "In this workshop, you'll build a Caesar cipher using basic Python concepts such as strings, conditionals, functions, and more."
+        ]
       },
       "lab-rpg-character": {
         "title": "Build an RPG character",
@@ -4123,8 +3982,10 @@
       "workshop-merge-sort": { "title": "Build a Merge Sort", "intro": [""] },
       "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
       "lab-selection-sort": {
-        "title": "Build a Selection Sort",
-        "intro": [""]
+        "title": "Implement the Selection Sort Algorithm",
+        "intro": [
+          "In this lab you will implement the selection sort algorithm."
+        ]
       },
       "lab-luhn-argorithm": {
         "title": "Build a Luhn Algorithm",
@@ -4200,6 +4061,167 @@
       "review-python": {
         "title": "Python Review",
         "intro": ["Review Python concepts to prepare for the upcoming exam."]
+      },
+      "workshop-bash-boilerplate": {
+        "title": "Build a Boilerplate",
+        "intro": [
+          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
+          "In this 170-lesson workshop, you will learn terminal commands by creating a website boilerplate using only the command line."
+        ]
+      },
+      "review-bash-commands": {
+        "title": "Bash Commands Review",
+        "intro": [
+          "Review the Bash Commands concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-bash-commands": {
+        "title": "Bash Commands Quiz",
+        "intro": ["Test what you've learned bash commands with this quiz."]
+      },
+      "voks": { "title": "306", "intro": [] },
+      "workshop-database-of-video-game-characters": {
+        "title": "Build a Database of Video Game Characters",
+        "intro": [
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+        ]
+      },
+      "lab-celestial-bodies-database": {
+        "title": "Build a Celestial Bodies Database",
+        "intro": [
+          "For this project, you will build a database of celestial bodies using PostgreSQL."
+        ]
+      },
+      "review-relational-database": {
+        "title": "Relational Database Review",
+        "intro": [
+          "Review the Relational Database concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-relational-database": {
+        "title": "Relational Database Quiz",
+        "intro": [
+          "Test what you've learned on relational databases with this quiz."
+        ]
+      },
+      "pexz": { "title": "311", "intro": [] },
+      "workshop-bash-five-programs": {
+        "title": "Build Five Programs",
+        "intro": [
+          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
+          "In this 220-lesson workshop, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+        ]
+      },
+      "review-bash-scripting": {
+        "title": "Bash Scripting Review",
+        "intro": [
+          "Review the bash scripting concepts you've learned to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-bash-scripting": {
+        "title": "Bash Scripting Quiz",
+        "intro": ["Test what you've learned on bash scripting in this quiz."]
+      },
+      "tkgg": { "title": "315", "intro": [] },
+      "workshop-sql-student-database-part-1": {
+        "title": "Build a Student Database: Part 1",
+        "intro": [
+          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
+          "In this 140-lesson workshop, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+        ]
+      },
+      "workshop-sql-student-database-part-2": {
+        "title": "Build a Student Database: Part 2",
+        "intro": [
+          "SQL join commands are used to combine information from multiple tables in a relational database",
+          "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
+        ]
+      },
+      "lab-world-cup-database": {
+        "title": "Build a World Cup Database",
+        "intro": [
+          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+        ]
+      },
+      "workshop-kitty-ipsum-translator": {
+        "title": "Build a Kitty Ipsum Translator",
+        "intro": [
+          "There's more to Bash commands than you might think.",
+          "In this 140-lesson workshop, you will learn some more complex commands, and the details of how commands work."
+        ]
+      },
+      "workshop-bike-rental-shop": {
+        "title": "Build a Bike Rental Shop",
+        "intro": [
+          "In this 210-lesson workshop, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+        ]
+      },
+      "lab-salon-appointment-scheduler": {
+        "title": "Build a Salon Appointment Scheduler",
+        "intro": [
+          "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+        ]
+      },
+      "review-bash-and-sql": {
+        "title": "Bash and SQL Review",
+        "intro": [
+          "Review the Bash and SQL concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-bash-and-sql": {
+        "title": "Bash and SQL Quiz",
+        "intro": ["Test what you've learned in this quiz on Bash and SQL."]
+      },
+      "eeez": { "title": "324", "intro": [] },
+      "workshop-castle": {
+        "title": "Build a Castle",
+        "intro": [
+          "Nano is a program that allows you to edit files right in the terminal.",
+          "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
+        ]
+      },
+      "review-nano": {
+        "title": "Nano Review",
+        "intro": ["Review the Nano concepts to prepare for the upcoming quiz."]
+      },
+      "quiz-nano": {
+        "title": "Nano Quiz",
+        "intro": ["Test what you've learned on Nano with this quiz ."]
+      },
+      "rhhl": { "title": "328", "intro": [] },
+      "workshop-sql-reference-object": {
+        "title": "Build an SQL Reference Object",
+        "intro": [
+          "Git is a version control system that keeps track of all the changes you make to your codebase.",
+          "In this 240-lesson workshop, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+        ]
+      },
+      "lab-periodic-table-database": {
+        "title": "Build a Periodic Table Database",
+        "intro": [
+          "For this lab, you will create a Bash script to get information about chemical elements from a periodic table database."
+        ]
+      },
+      "lab-number-guessing-game": {
+        "title": "Build a Number Guessing Game",
+        "intro": [
+          "For this lab, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
+        ]
+      },
+      "review-git": {
+        "title": "Git Review",
+        "intro": ["Review Git concepts to prepare for the upcoming quiz."]
+      },
+      "quiz-git": {
+        "title": "Git Quiz",
+        "intro": ["Test what you've learned on Git with this quiz."]
+      },
+      "review-relational-databases": {
+        "title": "Relational Databases Review",
+        "intro": [
+          "Review relational databases concepts to prepare for the upcoming quiz."
+        ]
       },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",

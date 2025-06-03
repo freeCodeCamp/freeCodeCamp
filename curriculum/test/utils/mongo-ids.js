@@ -1050,6 +1050,9 @@ const duplicatedProjectIds = [
 
   'a3566b1109230028080c9345',
 
+  // Truncate a string
+  'ac6993d51946422351508a41',
+
   // Local Storage ToDo App
 
   '64e4e4c4ec263b62ae7bf54d',

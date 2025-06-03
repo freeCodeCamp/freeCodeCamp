@@ -144,13 +144,18 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         logger.info(`Auth0 userinfo: ${JSON.stringify(userinfo)}`);
         email = userinfo.email;
         if (typeof email !== 'string') {
-          const msg = `Invalid userinfo email: ${JSON.stringify(userinfo)}`;
-          throw Error(msg);
+          return reply.redirectWithMessage(returnTo, {
+            type: 'danger',
+            content: 'flash.no-email-in-userinfo'
+          });
         }
       } catch (error) {
         logger.error(error, 'Failed to get userinfo from Auth0');
         fastify.Sentry.captureException(error);
-        return reply.redirect('/signin');
+        return reply.redirectWithMessage(returnTo, {
+          type: 'danger',
+          content: 'flash.generic-error'
+        });
       }
 
       const { id, acceptedPrivacyTerms } = await findOrCreateUser(

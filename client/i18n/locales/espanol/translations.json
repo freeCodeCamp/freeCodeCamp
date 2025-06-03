@@ -852,6 +852,7 @@
     "edit-my-profile": "Edit my profile"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica",
     "really-weird": "Sucedió algo realmente extraño. Si vuelve a ocurrir, considera hacer un reporte del problema en https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "generic-error": "Algo salió mal. Por favor, inténtelo de nuevo en un momento o pónte en contacto con support@freecodecamp.org si el error persiste.",
