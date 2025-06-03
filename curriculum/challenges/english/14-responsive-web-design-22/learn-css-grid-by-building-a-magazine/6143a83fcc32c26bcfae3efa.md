@@ -20,7 +20,7 @@ assert(document.querySelectorAll('section')?.length === 3)
 Your new `section` element should come after your `.text` element.
 
 ```js
-assert.equal(document.querySelectorAll('section')?.[2]?.previousElementSibling?.className, 'text');
+assert(document.querySelectorAll('section')?.[2]?.previousElementSibling?.className === 'text')
 ```
 
 Your new `section` element should have the `class` set to `text text-with-images`.
