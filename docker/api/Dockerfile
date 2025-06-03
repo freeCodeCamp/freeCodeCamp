@@ -1,4 +1,4 @@
-FROM node:20-bookworm AS builder
+FROM node:22-bookworm AS builder
 RUN apt-get update && apt-get install -y jq
 # global installs need root permissions, so have to happen before we switch to
 # the node user
@@ -33,7 +33,7 @@ ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
 RUN pnpm build:curriculum
 RUN pnpm -F=api build
 
-FROM node:20-bookworm AS deps
+FROM node:22-bookworm AS deps
 RUN apt-get update && apt-get install -y jq
 
 WORKDIR /home/node/build
@@ -50,7 +50,7 @@ RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install --prod --ignore-scripts -F=shared -F=api --frozen-lockfile
 RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
-FROM node:20-bookworm
+FROM node:22-bookworm
 USER node
 WORKDIR /home/node/fcc
 COPY --from=builder --chown=node:node /home/node/build/api/dist/ ./
