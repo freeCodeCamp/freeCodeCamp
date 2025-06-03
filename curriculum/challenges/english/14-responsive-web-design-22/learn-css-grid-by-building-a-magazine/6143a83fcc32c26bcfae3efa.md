@@ -14,7 +14,7 @@ Below your `.text` element, create a new `section` element and give it a `class`
 You should create a new `section` element.
 
 ```js
-assert(document.querySelectorAll('section')?.length === 3)
+assertLength(document.querySelectorAll('section'), 3)
 ```
 
 Your new `section` element should come after your `.text` element.
