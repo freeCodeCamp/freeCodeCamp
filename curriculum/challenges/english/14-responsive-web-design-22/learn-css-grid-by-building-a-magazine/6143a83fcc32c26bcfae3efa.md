@@ -14,7 +14,7 @@ Below your `.text` element, create a new `section` element and give it a `class`
 You should create a new `section` element.
 
 ```js
-assert.lengthOf(document.querySelectorAll('section'), 3);
+assert(document.querySelectorAll('section')?.length === 3)
 ```
 
 Your new `section` element should come after your `.text` element.
@@ -26,7 +26,7 @@ assert.equal(document.querySelectorAll('section')?.[2]?.previousElementSibling?.
 Your new `section` element should have the `class` set to `text text-with-images`.
 
 ```js
-assert.equal(document.querySelectorAll('section')?.[2]?.className, 'text text-with-images');
+assert(document.querySelectorAll('section')?.[2]?.className === 'text text-with-images')
 ```
 
 Your new `section` element should have an `article` element.
@@ -44,19 +44,19 @@ assert.exists(document.querySelector('.text-with-images aside'));
 The `article` element should come before the `aside` element.
 
 ```js
-assert.equal(document.querySelector('.text-with-images article')?.nextElementSibling?.localName, 'aside');
+assert(document.querySelector('.text-with-images article')?.nextElementSibling?.localName === 'aside');
 ```
 
 Your `article` element should have the `class` set to `brief-history`.
 
 ```js
-assert.equal(document.querySelector('.text-with-images article')?.className, 'brief-history');
+assert(document.querySelector('.text-with-images article')?.className === 'brief-history');
 ```
 
 Your `aside` element should have the `class` set to `image-wrapper`.
 
 ```js
-assert.equal(document.querySelector('.text-with-images aside')?.className, 'image-wrapper');
+assert(document.querySelector('.text-with-images aside')?.className === 'image-wrapper');
 ```
 
 # --seed--
