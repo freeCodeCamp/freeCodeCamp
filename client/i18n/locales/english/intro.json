@@ -3791,7 +3791,9 @@
       },
       "lecture-working-with-loops-and-sequences": {
         "title": "Working with Loops and Sequences",
-        "intro": [""]
+        "intro": [
+          "Learn about Working with Loops and Sequences in these lectures."
+        ]
       },
       "workshop-placeholder-loops-and-sequences": {
         "title": "Placeholder - Waiting for title",
@@ -3816,11 +3818,13 @@
       },
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Working with Dictionaries and Sets",
-        "intro": [""]
+        "intro": [
+          "Learn about Working with Dictionaries and Sets in these lectures."
+        ]
       },
       "lecture-working-with-modules": {
         "title": "Working with Modules",
-        "intro": [""]
+        "intro": ["Learn about Working with Modules in these lectures."]
       },
       "workshop-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
@@ -3845,7 +3849,7 @@
       },
       "lecture-understanding-error-handling": {
         "title": "Understanding Error Handling",
-        "intro": [""]
+        "intro": ["Learn about Understanding Error Handling in these lectures."]
       },
       "lab-isbn-validator": {
         "title": "Debug a ISBN Validator",
@@ -3866,7 +3870,7 @@
       },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
-        "intro": [""]
+        "intro": ["Learn about Classes and Objects in these lectures."]
       },
       "workshop-placeholder-classes-and-objects": {
         "title": "Placeholder - waiting for title",
@@ -3893,7 +3897,9 @@
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Understanding Object Oriented Programming and Encapsulation",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Object Oriented Programming and Encapsulation in these lectures."
+        ]
       },
       "workshop-placeholder-oop-1": {
         "title": "Placeholder - Waiting for title",
@@ -3905,7 +3911,9 @@
       },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and polymorphism",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Inheritance and polymorphism in these lectures."
+        ]
       },
       "workshop-placeholder-oop-2": {
         "title": "Placeholder - Waiting for title",
@@ -3919,7 +3927,7 @@
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding abstraction",
-        "intro": [""]
+        "intro": ["Learn about Understanding abstraction in these lectures."]
       },
       "workshop-placeholder-oop-3": {
         "title": "Placeholder - Waiting for title",
@@ -3940,8 +3948,10 @@
         ]
       },
       "lecture-working-with-common-data-structures": {
-        "title": "Working with common data structures",
-        "intro": [""]
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about Working with Common Data Structures in these lectures."
+        ]
       },
       "workshop-linked-list-class": {
         "title": "Build a Linked List Class",
@@ -3969,7 +3979,9 @@
       },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
-        "intro": [""]
+        "intro": [
+          "Learn about Searching and Sorting Algorithms in these lectures."
+        ]
       },
       "workshop-binary-search": {
         "title": "Build a Binary Search",
@@ -4006,7 +4018,9 @@
       },
       "lecture-understanding-graphs-and-trees": {
         "title": "Understanding Graphs and Trees",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Graphs and Trees in these lectures."
+        ]
       },
       "workshop-shortest-path-algorithm": {
         "title": "Build a Shortest Path Algorithm",
@@ -4039,7 +4053,9 @@
       },
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Dynamic Programming in these lectures."
+        ]
       },
       "lab-nth-fibonacci-number": {
         "title": "Build an Nth Fibonacci Number Calculator",
