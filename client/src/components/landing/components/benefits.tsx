@@ -17,9 +17,9 @@ const iconsList = [CommunityIcon, FreeIcon, CapIcon, CurriculumIcon];
 
 const Benefits = (): JSX.Element => {
   const { t } = useTranslation();
-  const benefitItems: BenefitsItem[] = t('landing.benefits.list', {
+  const benefitItems = t('landing.benefits.list', {
     returnObjects: true
-  });
+  }) as BenefitsItem[];
 
   return (
     <Container fluid={true} className='benefits-container'>

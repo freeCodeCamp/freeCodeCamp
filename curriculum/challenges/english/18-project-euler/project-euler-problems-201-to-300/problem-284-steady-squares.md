@@ -21,7 +21,7 @@ Find the sum of the digits of all the $n$-digit steady squares in the base 14 nu
 `steadySquares()` should return a string.
 
 ```js
-assert(typeof steadySquares() === 'string');
+assert.isString(steadySquares());
 ```
 
 `steadySquares()` should return the string `5a411d7b`.

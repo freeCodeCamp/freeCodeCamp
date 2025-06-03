@@ -41,18 +41,26 @@ const testArray = [
 `binarySearch` should be a function.
 
 ```js
-assert(typeof binarySearch == 'function');
+assert.isFunction(binarySearch);
 ```
 
 `binarySearch(testArray, 0)` should return `[13, 5, 2, 0]`.
 
 ```js
+const _testArray = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
 assert.deepEqual(binarySearch(_testArray, 0), [13, 5, 2, 0]);
 ```
 
 `binarySearch(testArray, 1)` should return `[13, 5, 2, 0, 1]`.
 
 ```js
+const _testArray = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
 assert.deepEqual(binarySearch(_testArray, 1), [13, 5, 2, 0, 1]);
 ```
 
@@ -60,43 +68,54 @@ assert.deepEqual(binarySearch(_testArray, 1), [13, 5, 2, 0, 1]);
 `binarySearch(testArray, 2)` should return `[13, 5, 2]`.
 
 ```js
+const _testArray = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
 assert.deepEqual(binarySearch(_testArray, 2), [13, 5, 2]);
 ```
 
 `binarySearch(testArray, 6)` should return the string `Value Not Found`.
 
 ```js
+const _testArray = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
 assert.strictEqual(binarySearch(_testArray, 6), 'Value Not Found');
 ```
 
 `binarySearch(testArray, 11)` should return `[13, 5, 10, 11]`.
 
 ```js
+const _testArray = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
 assert.deepEqual(binarySearch(_testArray, 11), [13, 5, 10, 11])
 ```
 
 `binarySearch(testArray, 13)` should return `[13]`.
 
 ```js
+const _testArray = [
+  0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
+  23, 49, 70
+];
 assert.deepEqual(binarySearch(_testArray, 13), [13]);
 ```
 
 `binarySearch(testArray, 70)` should return `[13, 19, 22, 49, 70]`.
 
 ```js
-assert.deepEqual(binarySearch(_testArray, 70), [13, 19, 22, 49, 70]);
-```
-
-# --seed--
-
-## --after-user-code--
-
-```js
 const _testArray = [
   0, 1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
   23, 49, 70
 ];
+assert.deepEqual(binarySearch(_testArray, 70), [13, 19, 22, 49, 70]);
 ```
+
+# --seed--
 
 ## --seed-contents--
 

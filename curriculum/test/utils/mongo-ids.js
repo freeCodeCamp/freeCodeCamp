@@ -1042,6 +1042,17 @@ const duplicatedProjectIds = [
 
   /*** JavaScript ***/
 
+  // Slice and Splice
+
+  '579e2a2c335b9d72dd32e05c',
+
+  // Sum all numbers in range challenge (used in JS fundamentals review module)
+
+  'a3566b1109230028080c9345',
+
+  // Truncate a string
+  'ac6993d51946422351508a41',
+
   // Local Storage ToDo App
 
   '64e4e4c4ec263b62ae7bf54d',
@@ -1523,8 +1534,8 @@ const duplicatedProjectIds = [
 
   /*** Legacy Only ***/
 
-  // Caesars Cipher
-  '56533eb9ac21ba0edf2244e2'
+  'a9bd25c716030ec90084d8a1',
+  'af2170cad53daa0770fabdea'
 ];
 
 class MongoIds {
