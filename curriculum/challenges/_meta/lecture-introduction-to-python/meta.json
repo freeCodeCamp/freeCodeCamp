@@ -8,51 +8,51 @@
   "challengeOrder": [
     {
       "id": "67fe81c9c6fd3714343a45ad",
-      "title": "What is Python and what are some common uses in the industry?"
+      "title": "What Is Python and What Are Some Common Uses in the Industry?"
     },
     {
       "id": "67fe8567f141d632afaeb71b",
-      "title": "How do you install, configure and use Python in your local environment?"
+      "title": "How Do You Install, Configure and Use Python in Your Local Environment?"
     },
     {
       "id": "67fe8597975ea634042cad8f",
-      "title": "How do you declare variables and what are naming conventions to name variables?"
+      "title": "How Do You Declare Variables and What Are Naming Conventions to Name Variables?"
     },
     {
       "id": "67fe8599c83979345ff9a91a",
-      "title": "How does the print function work?"
+      "title": "How Does the Print Function Work?"
     },
     {
       "id": "67fe859a00971c34a23abd43",
-      "title": "What are common data types in Python and how do you get the type of a variable?"
+      "title": "What Are Common Data Types in Python and How Do You Get the Type of a Variable?"
     },
     {
       "id": "67fe859c1ab68734d7c666cb",
-      "title": "How do you work with strings?"
+      "title": "How Do You Work With Strings?"
     },
     {
       "id": "6839b2ddd01ef657b6bf3b76",
-      "title": "What are some common string methods?"
+      "title": "What Are Some Common String Methods?"
     },
     {
       "id": "67fe859e9d3b3635197781c8",
-      "title": "How do you work with integers and floating point numbers?"
+      "title": "How Do You Work With Integers and Floating Point Numbers?"
     },
     {
       "id": "6839b3295323f563efc68f5c",
-      "title": "How do augmented assignments work?"
+      "title": "How Do Augmented Assignments Work?"
     },
     {
       "id": "67fe859f55cd33356e322fd3",
-      "title": "How do functions work in Python?"
+      "title": "How Do Functions Work in Python?"
     },
     {
       "id": "67fe85a1b634a335b18ae09a",
-      "title": "What is scope in Python and how does it work?"
+      "title": "What Is Scope in Python and How Does It Work?"
     },
     {
       "id": "67fe85a3db9bad35f2b6a2bd",
-      "title": "How do conditional statements and logical operators work?"
+      "title": "How Do Conditional Statements and Logical Operators Work?"
     }
   ],
   "helpCategory": "Python"

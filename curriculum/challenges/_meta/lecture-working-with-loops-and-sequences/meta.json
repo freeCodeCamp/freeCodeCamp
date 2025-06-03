@@ -8,39 +8,39 @@
   "challengeOrder": [
     {
       "id": "67fe8399c41a212871025f96",
-      "title": "What are lists and how do they work?"
+      "title": "What Are Lists and How Do They Work?"
     },
     {
       "id": "6839e38cdf93ee5a00c79676",
-      "title": "What are some commmon methods used for lists?"
+      "title": "What Are Some Commmon Methods Used for Lists?"
     },
     {
       "id": "6839e3a99ba37f09b9d0059b",
-      "title": "What are tuples and how do they work?"
+      "title": "What Are Tuples and How Do They Work?"
     },
     {
       "id": "683d6a3fe8c1060ffb1f9b78",
-      "title": "What are some common methods for tuples?"
+      "title": "What Are Some Common Methods for Tuples?"
     },
     {
       "id": "6839e3ea328b630cf5fca9ac",
-      "title": "How do loops work?"
+      "title": "How Do Loops Work?"
     },
     {
       "id": "6839e41fe8dac60f11f583db",
-      "title": "What are ranges and how can you use them in a loop?"
+      "title": "What Are Ranges and How Can You Use Them in a Loop?"
     },
     {
       "id": "6839e4b003571c149bcda122",
-      "title": "What are the enumerate and zip functions and how do they work?"
+      "title": "What Are the Enumerate and Zip Functions and How Do They Work?"
     },
     {
       "id": "6839e4d62ae09d1661e4cf9b",
-      "title": "What are list comprehensions and what are some useful functions to work with lists?"
+      "title": "What Are List Comprehensions and What Are Some Useful Functions to Work With Lists?"
     },
     {
       "id": "6839e4ef24827717b838f54d",
-      "title": "What are lambda functions and how do they work?"
+      "title": "What Are Lambda Functions and How Do They Work?"
     }
   ],
   "helpCategory": "Python"
