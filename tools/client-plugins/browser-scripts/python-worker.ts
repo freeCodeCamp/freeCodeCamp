@@ -8,6 +8,7 @@
 import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
 import pkg from 'pyodide/package.json';
 import type { PyProxy, PythonError } from 'pyodide/ffi';
+import * as helpers from '@freecodecamp/curriculum-helpers';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
   typeof globalThis;
@@ -56,6 +57,15 @@ async function setupPyodide() {
   // weird state. NOTE: this has to come after pyodide is loaded, because
   // pyodide modifies self while loading.
   Object.freeze(self);
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+  pyodide.FS.writeFile(
+    '/home/pyodide/ast_helpers.py',
+    helpers.python.astHelpers,
+    {
+      encoding: 'utf8'
+    }
+  );
 
   ignoreRunMessages = true;
   postMessage({ type: 'stopped' });
