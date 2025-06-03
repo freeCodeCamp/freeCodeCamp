@@ -18,7 +18,7 @@ dictionary = {
 }
 ```
 
-- **`dict()` Constructor**: The `dict()` constructor is an alternative way to build the dictionary. You pass a list of tuples as argument to the `dict()` constructor. These tuples contain the key as the first element and the value as the second element.
+- **`dict()` Constructor**: The `dict()` constructor is an alternative way to build the dictionary. You pass a list of tuples as an argument to the `dict()` constructor. These tuples contain the key as the first element and the value as the second element.
 
 ```python
 pizza = dict([('name', 'Margherita Pizza'), ('price', 8.9), ('calories_per_slice', 250), ('toppings', ['mozzarella', 'basil'])])
@@ -80,7 +80,7 @@ pizza.pop('total_price') # KeyError
 pizza.popitem()
 ```
 
-- **`.update()` Method**: The `.update()` method updates the key-value pairs with the key-value pairs of another dictionary. If they have keys in common, their values are overwritten. New keys will be added to the dictionary as a new key-value pair.
+- **`.update()` Method**: The `.update()` method updates the key-value pairs with the key-value pairs of another dictionary. If they have keys in common, their values are overwritten. New keys will be added to the dictionary as new key-value pairs.
 
 ```python
 pizza.update({ 'price': 15, 'total_time': 25 })
@@ -88,7 +88,7 @@ pizza.update({ 'price': 15, 'total_time': 25 })
 
 ## Looping Over a Dictionary
 
-- **Iterating Over Values**: If you need to iterate over the values in a dictionary, you can write a `for` Loop with `.values()` to get all the values of a dictionary.
+- **Iterating Over Values**: If you need to iterate over the values in a dictionary, you can write a `for` loop with `.values()` to get all the values of a dictionary.
 
 ```python
 products = {
@@ -164,7 +164,7 @@ Headphones 70
 
 - **`enumerate()` Function**: If you need to iterate over a dictionary while keeping track of a counter, you can call the `enumerate()` function. The function returns an `enumerate` object, which assigns an integer to each item, like a counter. You can start the counter from any number, but by default, it starts from 0.
 
-You can assign the index and the item to separate loop variables. This is what you will commonly see and use when you work with `enumerate()`. For example, with `products.items()`, you can get the entire key-value pair in addition to the index:
+Assigning the index and item to separate loop variables is the common way to use `enumerate()`. For example, with `products.items()`, you can get the entire key-value pair in addition to the index:
 
 ```python
 for index, product in enumerate(products.items()):
@@ -246,7 +246,7 @@ print(your_set.issubset(my_set)) # True
 print(my_set.issuperset(your_set)) # True
 ```
 
-- **`.isdisjoint()` Method**: The `.isdisjoint()` method checks if two subsets are disjoint, if they don’t have elements in common.
+- **`.isdisjoint()` Method**: The `.isdisjoint()` method checks if two sets are disjoint, if they don’t have elements in common.
 
 ```python
 print(my_set.isdisjoint(your_set)) # False
@@ -334,7 +334,7 @@ m.sqrt(36)
 from module_name import name1, name2
 ```
 
- Then, you can use these names without the module prefix in your Python script. For example:
+Then, you can use these names without the module prefix in your Python script. For example:
 
 ```python
 from math import radians, sin, cos
