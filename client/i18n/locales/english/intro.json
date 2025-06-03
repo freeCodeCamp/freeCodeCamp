@@ -3810,11 +3810,13 @@
       },
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Working with Dictionaries and Sets",
-        "intro": [""]
+        "intro": [
+          "Learn about Working with Dictionaries and Sets in these lectures."
+        ]
       },
       "lecture-working-with-modules": {
         "title": "Working with Modules",
-        "intro": [""]
+        "intro": ["Learn about Working with Modules in these lectures."]
       },
       "workshop-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
