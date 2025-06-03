@@ -32,13 +32,13 @@ dictionary[key]
 
 ## Common Dictionary Methods
 
-- **`.get()` Method**: The `.get()` method retrieves the value associated with a key. It's similar to the bracket notation, but it lets you set a default value, preventing errors if the key doesn't exist.
+- **`get()` Method**: The `get()` method retrieves the value associated with a key. It's similar to the bracket notation, but it lets you set a default value, preventing errors if the key doesn't exist.
 
 ```python
 dictionary.get(key, default)
 ```
 
-- **`.keys()` and `.values()` Methods**: The `.keys()` and `.values()` methods return a view object with all the keys and values in the dictionary, respectively. A view object is a way to see the content of a dictionary without creating a separate copy of the data.
+- **`keys()` and `values()` Methods**: The `keys()` and `values()` methods return a view object with all the keys and values in the dictionary, respectively. A view object is a way to see the content of a dictionary without creating a separate copy of the data.
 
 ```python
 pizza = {
@@ -54,33 +54,33 @@ pizza.values()
 # dict_values(['Margherita Pizza', 8.9, 250])
 ```
 
-- **`.items()` Method**: The `.items()` method returns a view object with all the key-value pairs in the dictionary, including both the keys and the values.
+- **`items()` Method**: The `items()` method returns a view object with all the key-value pairs in the dictionary, including both the keys and the values.
 
 ```python
 pizza.items()
 # dict_items([('name', 'Margherita Pizza'), ('price', 8.9), ('calories_per_slice', 250)])
 ```
 
-- **`.clear()` Method**: The `.clear()` method removes all the key-value pairs from the dictionary.
+- **`clear()` Method**: The `clear()` method removes all the key-value pairs from the dictionary.
 
 ```python
 pizza.clear()
 ```
 
-- **`.pop()` Method**: The `.pop()` method removes the key-value pair with the key specified as the first argument and returns its value. If the key doesn’t exist, it returns the default value specified as the second argument. If the key doesn’t exist and the default value is not specified, a `KeyError` is raised.
+- **`pop()` Method**: The `pop()` method removes the key-value pair with the key specified as the first argument and returns its value. If the key doesn’t exist, it returns the default value specified as the second argument. If the key doesn’t exist and the default value is not specified, a `KeyError` is raised.
 
 ```python
 pizza.pop('price', 10)
 pizza.pop('total_price') # KeyError
 ```
 
-- **`.popitem()` Method**: In Python 3.7 and above, the `.popitem()` method removes the last inserted item.
+- **`popitem()` Method**: In Python 3.7 and above, the `popitem()` method removes the last inserted item.
 
 ```python
 pizza.popitem()
 ```
 
-- **`.update()` Method**: The `.update()` method updates the key-value pairs with the key-value pairs of another dictionary. If they have keys in common, their values are overwritten. New keys will be added to the dictionary as new key-value pairs.
+- **`update()` Method**: The `update()` method updates the key-value pairs with the key-value pairs of another dictionary. If they have keys in common, their values are overwritten. New keys will be added to the dictionary as new key-value pairs.
 
 ```python
 pizza.update({ 'price': 15, 'total_time': 25 })
@@ -88,7 +88,7 @@ pizza.update({ 'price': 15, 'total_time': 25 })
 
 ## Looping Over a Dictionary
 
-- **Iterating Over Values**: If you need to iterate over the values in a dictionary, you can write a `for` loop with `.values()` to get all the values of a dictionary.
+- **Iterating Over Values**: If you need to iterate over the values in a dictionary, you can write a `for` loop with `values()` to get all the values of a dictionary.
 
 ```python
 products = {
@@ -215,20 +215,20 @@ set() # Set
 
 ## Common Set Methods
 
-- **`.add()` Method**: You can add an element to a set with the `.add()` method, passing the new element as an argument.
+- **`add()` Method**: You can add an element to a set with the `add()` method, passing the new element as an argument.
 
 ```python
 my_set.add(6)
 ```
 
-- **`.remove()` and `.discard()` Methods**: To remove an element from a set, you can either use the `.remove()` method or the `.discard()` method, passing the element you want to remove as an argument. The `.remove()` method will raise a `KeyError` if the element is not found while the `.discard()` method will not.
+- **`remove()` and `discard()` Methods**: To remove an element from a set, you can either use the `remove()` method or the `discard()` method, passing the element you want to remove as an argument. The `remove()` method will raise a `KeyError` if the element is not found while the `discard()` method will not.
 
 ```python
 my_set.remove(4)
 my_set.discard(4)
 ```
 
-- **`.clear()` method**:  The `.clear()` method removes all the elements from the set.
+- **`clear()` method**:  The `clear()` method removes all the elements from the set.
 
 ```python
 my_set.clear()
@@ -236,7 +236,7 @@ my_set.clear()
 
 ## Mathematical Set Operations
 
-- **`.issubset()` and `.issuperset()` Methods**: The `.issubset()` and the `.issuperset()` methods check if a set is a subset or superset of another set, respectively.
+- **`issubset()` and `issuperset()` Methods**: The `issubset()` and the `issuperset()` methods check if a set is a subset or superset of another set, respectively.
 
 ```python
 my_set = {1, 2, 3, 4, 5} 
@@ -246,7 +246,7 @@ print(your_set.issubset(my_set)) # True
 print(my_set.issuperset(your_set)) # True
 ```
 
-- **`.isdisjoint()` Method**: The `.isdisjoint()` method checks if two sets are disjoint, if they don’t have elements in common.
+- **`isdisjoint()` Method**: The `isdisjoint()` method checks if two sets are disjoint, if they don’t have elements in common.
 
 ```python
 print(my_set.isdisjoint(your_set)) # False
