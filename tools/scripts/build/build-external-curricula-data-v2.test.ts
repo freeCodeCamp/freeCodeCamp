@@ -19,6 +19,7 @@ import {
   type GeneratedCurriculumProps,
   type GeneratedBlockBasedCurriculumProps,
   type GeneratedChapterBasedCurriculumProps,
+  type ChapterBasedCurriculumIntros,
   orderedSuperBlockInfo
 } from './build-external-curricula-data-v2';
 
@@ -73,17 +74,24 @@ ${result.error.message}`
   });
 
   test('the super block files generated should have the correct schema', async () => {
+    const superBlocks = Object.values(SuperBlocks);
+
     const fileArray = (
       await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
         directoryFilter: ['!challenges'],
         fileFilter: entry => {
           // The directory contains super block files and other curriculum-related files.
           // We're only interested in super block ones.
-          const superBlocks = Object.values(SuperBlocks);
-          return superBlocks.includes(entry.basename);
+          const isSuperBlock = superBlocks.some(superBlock =>
+            entry.basename.includes(superBlock)
+          );
+
+          return isSuperBlock;
         }
       })
     ).map(file => file.path);
+
+    expect(fileArray.length).toBeGreaterThan(0);
 
     fileArray.forEach(fileInArray => {
       const fileContent = fs.readFileSync(
@@ -101,20 +109,29 @@ ${result.error.message}`);
   });
 
   test('block-based super blocks and blocks should have the correct data', async () => {
+    const superBlocks = Object.values(SuperBlocks);
+
     const superBlockFiles = (
       await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
         directoryFilter: ['!challenges'],
         fileFilter: entry => {
           // The directory contains super block files and other curriculum-related files.
           // We're only interested in super block ones.
-          const superBlocks = Object.values(SuperBlocks);
-          return (
-            superBlocks.includes(entry.basename) &&
-            !chapterBasedSuperBlocks.includes(entry.basename)
+          const isSuperBlock = superBlocks.some(superBlock =>
+            entry.basename.includes(superBlock)
           );
+
+          const isChapterBasedSuperBlock = chapterBasedSuperBlocks.some(
+            chapterBasedSuperBlock =>
+              entry.basename.includes(chapterBasedSuperBlock)
+          );
+
+          return isSuperBlock && !isChapterBasedSuperBlock;
         }
       })
     ).map(file => file.path);
+
+    expect(superBlockFiles.length).toBeGreaterThan(0);
 
     superBlockFiles.forEach(file => {
       const fileContentJson = fs.readFileSync(
@@ -134,32 +151,42 @@ ${result.error.message}`);
       // Randomly pick a block to check its data.
       const blocks = superBlockData.blocks;
       const randomBlockIndex = Math.floor(Math.random() * blocks.length);
+      const randomBlock = blocks[randomBlockIndex];
 
       expect(superBlockData.intro).toEqual(intros[superBlock].intro);
       expect(superBlockData.blocks[randomBlockIndex].intro).toEqual(
-        intros[superBlock].blocks[randomBlockIndex].intro
+        intros[superBlock].blocks[randomBlock.meta.dashedName as string].intro
       );
       expect(superBlockData.blocks[randomBlockIndex].meta.name).toEqual(
-        intros[superBlock].blocks[randomBlockIndex].title
+        intros[superBlock].blocks[randomBlock.meta.dashedName as string].title
       );
     });
   });
 
   test('chapter-based super blocks and blocks should have the correct data', async () => {
+    const superBlocks = Object.values(SuperBlocks);
+
     const superBlockFiles = (
       await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
         directoryFilter: ['!challenges'],
         fileFilter: entry => {
           // The directory contains super block files and other curriculum-related files.
           // We're only interested in super block ones.
-          const superBlocks = Object.values(SuperBlocks);
-          return (
-            superBlocks.includes(entry.basename) &&
-            chapterBasedSuperBlocks.includes(entry.basename)
+          const isSuperBlock = superBlocks.some(superBlock =>
+            entry.basename.includes(superBlock)
           );
+
+          const isChapterBasedSuperBlock = chapterBasedSuperBlocks.some(
+            chapterBasedSuperBlock =>
+              entry.basename.includes(chapterBasedSuperBlock)
+          );
+
+          return isSuperBlock && isChapterBasedSuperBlock;
         }
       })
     ).map(file => file.path);
+
+    expect(superBlockFiles.length).toBeGreaterThan(0);
 
     superBlockFiles.forEach(file => {
       const fileContentJson = fs.readFileSync(
@@ -176,29 +203,56 @@ ${result.error.message}`);
         superBlock
       ] as GeneratedChapterBasedCurriculumProps;
 
+      const superBlockIntros = intros[
+        superBlock
+      ] as ChapterBasedCurriculumIntros[SuperBlocks];
+
       // Randomly pick a chapter.
-      const chapters = superBlockData.chapters;
+      const chapters = superBlockData.chapters.filter(
+        ({ comingSoon }) => !comingSoon
+      );
       const randomChapterIndex = Math.floor(Math.random() * chapters.length);
       const randomChapter = chapters[randomChapterIndex];
 
       // Randomly pick a module.
-      const modules = randomChapter.modules;
+      const modules = randomChapter.modules.filter(
+        ({ comingSoon }) => !comingSoon
+      );
       const randomModuleIndex = Math.floor(Math.random() * modules.length);
       const randomModule = modules[randomModuleIndex];
 
       // Randomly pick a block.
       const blocks = randomModule.blocks;
       const randomBlockIndex = Math.floor(Math.random() * blocks.length);
+      const randomBlock = blocks[randomBlockIndex];
 
-      expect(superBlockData.intro).toEqual(intros[superBlock].intro);
+      // Check super block data
+      expect(superBlockData.intro).toEqual(superBlockIntros.intro);
+
+      // Check chapter data
+      expect(superBlockData.chapters[randomChapterIndex].name).toEqual(
+        superBlockIntros.chapters[randomChapter.dashedName]
+      );
+
+      // Check module data
+      expect(
+        superBlockData.chapters[randomChapterIndex].modules[randomModuleIndex]
+          .name
+      ).toEqual(superBlockIntros.modules[randomModule.dashedName]);
+
+      // Check block data
       expect(
         superBlockData.chapters[randomChapterIndex].modules[randomModuleIndex]
           .blocks[randomBlockIndex].intro
-      ).toEqual(intros[superBlock].blocks[randomBlockIndex].intro);
+      ).toEqual(
+        superBlockIntros.blocks[randomBlock.meta.dashedName as string].intro
+      );
       expect(
         superBlockData.chapters[randomChapterIndex].modules[randomModuleIndex]
           .blocks[randomBlockIndex].meta.name
-      ).toEqual(intros[superBlock].blocks[randomBlockIndex].title);
+      ).toEqual(
+        superBlockIntros.blocks[randomBlock.meta.dashedName as string].title
+      );
     });
   });
 
