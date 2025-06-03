@@ -11,7 +11,7 @@ interface FaqItem {
 
 const Faq = (): JSX.Element => {
   const { t } = useTranslation();
-  const faqItems = t<string, string & FaqItem[]>('landing.faqs');
+  const faqItems = t('landing.faqs', { returnObjects: true }) as FaqItem[];
 
   return (
     <Col

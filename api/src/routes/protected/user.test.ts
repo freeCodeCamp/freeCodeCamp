@@ -14,7 +14,8 @@ import {
   setupServer,
   superRequest,
   createSuperRequest,
-  defaultUsername
+  defaultUsername,
+  resetDefaultUser
 } from '../../../jest.utils';
 import { JWT_SECRET } from '../../utils/env';
 import {
@@ -419,17 +420,17 @@ describe('userRoutes', () => {
       test("POST deletes all the user's cookies", async () => {
         const res = await superPost('/account/delete');
 
-        const setCookie = res.headers['set-cookie'];
+        const setCookie = res.headers['set-cookie'] as string[];
         expect(setCookie).toEqual(
           expect.arrayContaining([
             expect.stringMatching(
-              /^jwt_access_token=; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+              /^_csrf=; Max-Age=0; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
             ),
             expect.stringMatching(
-              /^csrf_token=; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+              /^csrf_token=; Max-Age=0; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
             ),
             expect.stringMatching(
-              /^_csrf=; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+              /^jwt_access_token=; Max-Age=0; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
             )
           ])
         );
@@ -463,6 +464,55 @@ describe('userRoutes', () => {
           await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
         expect(countAfter).toBe(0);
         expect(res.status).toBe(200);
+      });
+
+      test('handles concurrent requests to delete the same user', async () => {
+        const deletePromises = Array.from({ length: 2 }, () =>
+          superPost('/account/delete')
+        );
+
+        const responses = await Promise.all(deletePromises);
+
+        const userCount = await fastifyTestInstance.prisma.user.count({
+          where: { email: testUserData.email }
+        });
+        responses.forEach(response => {
+          expect(response.status).toBe(200);
+          expect(response.body).toStrictEqual({});
+        });
+        expect(userCount).toBe(0);
+      });
+
+      test("only deletes the logged in user's data", async () => {
+        await fastifyTestInstance.prisma.user.create({
+          data: {
+            ...testUserData,
+            email: 'an.random@user'
+          }
+        });
+        expect(await fastifyTestInstance.prisma.user.count()).toBe(2);
+
+        await superPost('/account/delete');
+
+        const userCount = await fastifyTestInstance.prisma.user.count();
+        expect(userCount).toBe(1);
+      });
+
+      test('logs if it is asked to delete a non-existent user', async () => {
+        const spy = jest.spyOn(fastifyTestInstance.log, 'warn');
+
+        const deletePromises = Array.from({ length: 2 }, () =>
+          superPost('/account/delete')
+        );
+
+        await Promise.all(deletePromises);
+
+        expect(spy).toHaveBeenCalledTimes(1);
+        expect(spy.mock.calls[0]).toEqual(
+          expect.arrayContaining([
+            `User with id ${defaultUserId} not found for deletion.`
+          ])
+        );
       });
     });
 
@@ -815,7 +865,8 @@ describe('userRoutes', () => {
           .mockImplementation(jest.fn());
       });
 
-      afterEach(() => {
+      afterEach(async () => {
+        await resetDefaultUser();
         jest.clearAllMocks();
       });
 
@@ -839,6 +890,24 @@ describe('userRoutes', () => {
         });
 
         expect(response.statusCode).toBe(400);
+      });
+
+      test('POST returns 403 for users with no email', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: testUserData.email },
+          data: { email: null }
+        });
+
+        const response = await superPost('/user/report-user').send({
+          username: testUserData.username,
+          reportDescription: 'Test Report'
+        });
+
+        expect(response.statusCode).toBe(403);
+        expect(response.body).toStrictEqual({
+          type: 'danger',
+          message: 'flash.report-error'
+        });
       });
 
       test('POST sanitises report description', async () => {
@@ -973,21 +1042,15 @@ Thanks and regards,
         });
 
         it('handles invalid transcript urls', async () => {
-          mockedFetch.mockImplementationOnce(() =>
-            Promise.resolve({
-              ok: false
-            })
-          );
-
           const response = await superPost('/user/ms-username').send({
             msTranscriptUrl: 'https://www.example.com'
           });
 
           expect(response.body).toStrictEqual({
             type: 'error',
-            message: 'flash.ms.transcript.link-err-2'
+            message: 'flash.ms.transcript.link-err-1'
           });
-          expect(response.statusCode).toBe(404);
+          expect(response.statusCode).toBe(400);
         });
 
         it('handles the case that MS does not return a username', async () => {
@@ -999,7 +1062,8 @@ Thanks and regards,
           );
 
           const response = await superPost('/user/ms-username').send({
-            msTranscriptUrl: 'https://www.example.com'
+            msTranscriptUrl:
+              'https://learn.microsoft.com/en-us/users/not/transcript/8u6ert43q1p'
           });
 
           expect(response.body).toStrictEqual({
@@ -1029,7 +1093,8 @@ Thanks and regards,
           });
 
           const response = await superPost('/user/ms-username').send({
-            msTranscriptUrl: 'https://www.example.com'
+            msTranscriptUrl:
+              'https://learn.microsoft.com/en-us/users/mot01/transcript/8wert4'
           });
 
           expect(response.body).toStrictEqual({
@@ -1052,7 +1117,8 @@ Thanks and regards,
             })
           );
           const response = await superPost('/user/ms-username').send({
-            msTranscriptUrl: 'https://www.example.com'
+            msTranscriptUrl:
+              'https://learn.microsoft.com/en-us/users/mot01/transcript/8ert43q'
           });
 
           expect(response.body).toStrictEqual({
@@ -1074,7 +1140,8 @@ Thanks and regards,
           );
 
           await superPost('/user/ms-username').send({
-            msTranscriptUrl: 'https://www.example.com'
+            msTranscriptUrl:
+              'https://learn.microsoft.com/en-us/users/mot01/transcript/12345'
           });
 
           const linkedAccount =
@@ -1122,10 +1189,12 @@ Thanks and regards,
           });
 
           await superPost('/user/ms-username').send({
-            msTranscriptUrl: 'https://www.example.com'
+            msTranscriptUrl:
+              'https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo'
           });
           await superPost('/user/ms-username').send({
-            msTranscriptUrl: 'https://www.example.com'
+            msTranscriptUrl:
+              'https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo'
           });
 
           const linkedAccounts =
@@ -1311,18 +1380,41 @@ describe('Microsoft helpers', () => {
     const urlWithQueryParamsAndSlash = `${urlWithSlash}?foo=bar`;
 
     it('should extract the transcript id from the url', () => {
-      expect(getMsTranscriptApiUrl(urlWithoutSlash)).toBe(expectedUrl);
+      expect(getMsTranscriptApiUrl(urlWithoutSlash)).toEqual({
+        error: null,
+        data: expectedUrl
+      });
     });
 
     it('should handle trailing slashes', () => {
-      expect(getMsTranscriptApiUrl(urlWithSlash)).toBe(expectedUrl);
+      expect(getMsTranscriptApiUrl(urlWithSlash)).toEqual({
+        error: null,
+        data: expectedUrl
+      });
     });
 
     it('should ignore query params', () => {
-      expect(getMsTranscriptApiUrl(urlWithQueryParams)).toBe(expectedUrl);
-      expect(getMsTranscriptApiUrl(urlWithQueryParamsAndSlash)).toBe(
-        expectedUrl
-      );
+      expect(getMsTranscriptApiUrl(urlWithQueryParams)).toEqual({
+        error: null,
+        data: expectedUrl
+      });
+      expect(getMsTranscriptApiUrl(urlWithQueryParamsAndSlash)).toEqual({
+        error: null,
+        data: expectedUrl
+      });
+    });
+
+    it('should return an error for invalid URLs', () => {
+      const validBadUrl = 'https://www.example.com/invalid-url';
+      expect(getMsTranscriptApiUrl(validBadUrl)).toEqual({
+        error: expect.any(String),
+        data: null
+      });
+      const invalidUrl = ' ';
+      expect(getMsTranscriptApiUrl(invalidUrl)).toEqual({
+        error: expect.any(String),
+        data: null
+      });
     });
   });
 });

@@ -2,6 +2,7 @@ import Fastify, { FastifyInstance } from 'fastify';
 
 import db from '../../db/prisma';
 import { createUserInput } from '../../utils/create-user';
+import { checkCanConnectToDb } from '../../../jest.utils';
 import { findOrCreateUser } from './auth-helpers';
 
 const captureException = jest.fn();
@@ -9,6 +10,7 @@ const captureException = jest.fn();
 async function setupServer() {
   const fastify = Fastify();
   await fastify.register(db);
+  await checkCanConnectToDb(fastify.prisma);
   // @ts-expect-error we're mocking the Sentry plugin
   fastify.Sentry = { captureException };
   return fastify;
@@ -28,14 +30,20 @@ describe('findOrCreateUser', () => {
   });
 
   it('should send a message to Sentry if there are multiple users with the same email', async () => {
-    await fastify.prisma.user.create({ data: createUserInput(email) });
-    await fastify.prisma.user.create({ data: createUserInput(email) });
+    const user1 = await fastify.prisma.user.create({
+      data: createUserInput(email)
+    });
+    const user2 = await fastify.prisma.user.create({
+      data: createUserInput(email)
+    });
+
+    const ids = [user1.id, user2.id];
 
     await findOrCreateUser(fastify, email);
 
     expect(captureException).toHaveBeenCalledTimes(1);
     expect(captureException).toHaveBeenCalledWith(
-      new Error('Multiple user records found for: test@user.com')
+      new Error(`Multiple user records found for: ${ids.join(', ')}`)
     );
   });
 

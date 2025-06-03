@@ -355,11 +355,11 @@ test.describe('Donation modal appearance logic - Certified user claiming a new m
   }) => {
     test.setTimeout(40000);
 
-    // Go to the last lecture of the Welcome to freeCodeCamp block.
+    // Go to the last lecture of the Code Editors block.
     // This lecture is not added to the seed data, so it is not completed.
     // By completing this lecture, we claim both the block and its module.
     await page.goto(
-      '/learn/full-stack-developer/lecture-welcome-to-freecodecamp/how-can-you-build-effective-learning-habits-and-work-smarter'
+      '/learn/full-stack-developer/lecture-working-with-code-editors-and-ides/what-are-some-good-vs-code-extensions-you-can-use-in-your-editor'
     );
 
     // Wait for the page content to render
@@ -372,9 +372,9 @@ test.describe('Donation modal appearance logic - Certified user claiming a new m
       .locator("div[class='video-quiz-options']")
       .all();
 
-    await radioGroups[0].getByRole('radio').nth(2).click({ force: true });
+    await radioGroups[0].getByRole('radio').nth(1).click({ force: true });
     await radioGroups[1].getByRole('radio').nth(2).click({ force: true });
-    await radioGroups[2].getByRole('radio').nth(3).click({ force: true });
+    await radioGroups[2].getByRole('radio').nth(1).click({ force: true });
 
     await page.getByRole('button', { name: /Check your answer/ }).click();
     await page.getByRole('button', { name: /Submit and go/ }).click();
@@ -392,9 +392,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new m
     // Second part of the modal.
     // Use `slowExpect` as we need to wait 20s for this part to show up.
     await slowExpect(
-      donationModal.getByText(
-        'Nicely done. You just completed Getting Started with freeCodeCamp.'
-      )
+      donationModal.getByText('Nicely done. You just completed Code Editors.')
     ).toBeVisible();
   });
 });
