@@ -1,5 +1,4 @@
 import { randomBytes } from 'crypto';
-import { isEmpty } from 'lodash';
 import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
@@ -11,7 +10,6 @@ import Fastify, {
   FastifyBaseLogger,
   FastifyHttpOptions,
   FastifyInstance,
-  FastifyRequest,
   RawReplyDefaultExpression,
   RawRequestDefaultExpression,
   RawServerDefault
@@ -45,11 +43,10 @@ import {
   FCC_ENABLE_EXAM_ENVIRONMENT,
   FCC_ENABLE_SENTRY_ROUTES,
   GROWTHBOOK_FASTIFY_API_HOST,
-  GROWTHBOOK_FASTIFY_CLIENT_KEY,
-  FREECODECAMP_NODE_ENV,
-  FCC_API_LOG_LEVEL
+  GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env';
 import { isObjectID } from './utils/validation';
+import { getLogger } from './utils/logger';
 import {
   examEnvironmentMultipartRoutes,
   examEnvironmentOpenRoutes,
@@ -83,63 +80,8 @@ ajv.addFormat('objectid', {
   validate: (str: string) => isObjectID(str)
 });
 
-const requestSerializer = (req: FastifyRequest) => {
-  const method = req.method || 'METHOD not found';
-  const url = req.url || 'URL not found';
-  const headers = req.headers || 'HEADERS not found';
-  const xForwardedFor = Array.isArray(req.headers['x-forwarded-for'])
-    ? req.headers['x-forwarded-for'][0]
-    : req.headers['x-forwarded-for'];
-  const ip =
-    xForwardedFor || req.headers['x-real-ip'] || req.ip || 'IP not found';
-  const query = isEmpty(req.query) ? 'QUERY not found' : req.query;
-  const hostname = req.hostname || 'HOSTNAME not found';
-  const remotePort = req.socket.remotePort || 'REMOTE_PORT not found';
-
-  return {
-    REQ_ID: req.id,
-    METHOD: method,
-    URL: url,
-    IP: ip,
-    HOSTNAME: hostname,
-    REMOTE_PORT: remotePort,
-    QUERY: query,
-    HEADERS: headers
-  };
-};
-
-const envToLogger = {
-  development: {
-    transport: {
-      target: 'pino-pretty',
-      options: {
-        singleLine: true,
-        translateTime: 'HH:MM:ss Z',
-        ignore: 'pid,hostname'
-      }
-    },
-    level: FCC_API_LOG_LEVEL || 'info',
-    serializers: {
-      req: (req: FastifyRequest) => {
-        return {
-          method: req.method,
-          url: req.url
-        };
-      }
-    }
-    // No need to redact in development
-  },
-  production: {
-    level: FCC_API_LOG_LEVEL || 'info',
-    serializers: {
-      req: requestSerializer
-    },
-    redact: ['req.HEADERS.cookie']
-  }
-};
-
 export const buildOptions = {
-  logger: envToLogger[FREECODECAMP_NODE_ENV] ?? true,
+  loggerInstance: process.env.NODE_ENV === 'test' ? undefined : getLogger(),
   genReqId: () => randomBytes(8).toString('hex'),
   disableRequestLogging: true
 };
@@ -224,7 +166,6 @@ export const build = async (
       // TODO: bounce unauthed requests before checking CSRF token. This will
       // mean moving csrfProtection into custom plugin and testing separately,
       // because it's a pain to mess around with other cookies/hook order.
-      // @ts-expect-error - @fastify/csrf-protection needs to update their types
       // eslint-disable-next-line @typescript-eslint/unbound-method
       fastify.addHook('onRequest', fastify.csrfProtection);
       fastify.addHook('onRequest', fastify.send401IfNoUser);
@@ -250,6 +191,10 @@ export const build = async (
       await fastify.register(protectedRoutes.settingRedirectRoutes);
     });
   });
+
+  // TODO: The route should not handle its own AuthZ
+  await fastify.register(protectedRoutes.challengeTokenRoutes);
+
   // Routes for signed out users:
   void fastify.register(async function (fastify) {
     fastify.addHook('onRequest', fastify.authorize);

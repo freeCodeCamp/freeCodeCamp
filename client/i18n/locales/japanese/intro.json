@@ -1167,14 +1167,16 @@
         "title": "アルゴリズム",
         "intro": [
           "これらの無料のプログラミング演習で、実際に直面しうるいくつかの一般的なアルゴリズムについて学べます。これらは論理的思考力およびプログラミングの技能を向上させる絶好の機会です。",
-          "このようなアルゴリズムは、就職面接で応募者の技能をテストするために頻繁に利用されます。あなたがそれぞれに適した解決策を実装することができるよう、これらのいろいろなアルゴリズムがどのように機能するかについて明解で簡潔に説明します。"
+          "このようなアルゴリズムは、就職面接で応募者の技能をテストするために頻繁に利用されます。あなたがそれぞれに適した解決策を実装することができるよう、これらのいろいろなアルゴリズムがどのように機能するかについて明解で簡潔に説明します。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "data-structures": {
         "title": "データ構造",
         "intro": [
           "これらの無料のプログラミングコースは、まだあなたがあまり馴染みがないかもしれない、大規模で複雑なデータ構造を扱うのに役立つよう意図されています。",
-          "以下のコースに取り組むことで、タイプ別のデータ構造について学習し、理解を深めるためにアルゴリズムを実装します。"
+          "以下のコースに取り組むことで、タイプ別のデータ構造について学習し、理解を深めるためにアルゴリズムを実装します。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "take-home-projects": {
@@ -1305,31 +1307,36 @@
       "project-euler-problems-1-to-100": {
         "title": "プロジェクト・オイラー: 問題 1～100",
         "intro": [
-          "最初の問題セットでは、効率的なアルゴリズムを書くためにフィボナッチ数列、素数理論、組合せ理論のような数学的概念を利用して問題を解いていきます。"
+          "最初の問題セットでは、効率的なアルゴリズムを書くためにフィボナッチ数列、素数理論、組合せ理論のような数学的概念を利用して問題を解いていきます。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-101-to-200": {
         "title": "プロジェクト・オイラー: 問題 101～200",
         "intro": [
-          "この問題セットでは最初のパートで学んだスキルを踏まえて、ベクトル計算、パスカルの三角錐、RSA アルゴリズムなどの高度な概念を利用して効率的に問題を解いていきます。"
+          "この問題セットでは最初のパートで学んだスキルを踏まえて、ベクトル計算、パスカルの三角錐、RSA アルゴリズムなどの高度な概念を利用して効率的に問題を解いていきます。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-201-to-300": {
         "title": "プロジェクト・オイラー: 問題 201～300",
         "intro": [
-          "この問題セットでは、引き続きここまで学んできたスキルを基に、二項定理、ハミング数、コラッツ数列などの概念を利用して、数学と問題解決のスキルを磨いていきます。"
+          "この問題セットでは、引き続きここまで学んできたスキルを基に、二項定理、ハミング数、コラッツ数列などの概念を利用して、数学と問題解決のスキルを磨いていきます。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-301-to-400": {
         "title": "プロジェクト・オイラー: 問題 301～400",
         "intro": [
-          "このパートでは、組合せゲーム理論、ビット演算、ゴロムの自己記述的数列などの概念を利用して効率的な解法を作成しながら、引き続き数学とアルゴリズムのスキルを活用します。"
+          "このパートでは、組合せゲーム理論、ビット演算、ゴロムの自己記述的数列などの概念を利用して効率的な解法を作成しながら、引き続き数学とアルゴリズムのスキルを活用します。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-401-to-480": {
         "title": "プロジェクト・オイラー: 問題 401～480",
         "intro": [
-          "最後の問題セットでは、ここまで学んだすべてのことを活用して、単約数、カプレカ操作などの高度な概念を使って複雑な問題を解いていきます。"
+          "最後の問題セットでは、ここまで学んだすべてのことを活用して、単約数、カプレカ操作などの高度な概念を使って複雑な問題を解いていきます。",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       }
     }
@@ -1731,7 +1738,10 @@
     "blocks": {
       "rosetta-code-challenges": {
         "title": "Rosetta Code Challenges",
-        "intro": ["These are the challenges for Rosetta Code."]
+        "intro": [
+          "These are the challenges for Rosetta Code.",
+          "NOTE: These challenges support JavaScript only solutions."
+        ]
       }
     }
   },
@@ -1744,7 +1754,6 @@
       "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
     ],
     "chapters": {
-      "freecodecamp": "Welcome",
       "html": "HTML",
       "css": "CSS",
       "javascript": "JavaScript",
@@ -1755,7 +1764,6 @@
       "exam-certified-full-stack-developer": "Certified Full Stack Developer Exam"
     },
     "modules": {
-      "getting-started-with-freecodecamp": "Getting Started with freeCodeCamp",
       "basic-html": "Basic HTML",
       "semantic-html": "Semantic HTML",
       "html-forms-and-tables": "Forms and Tables",
@@ -1779,6 +1787,7 @@
       "css-variables": "Variables",
       "css-grid": "Grid",
       "css-animations": "Animations",
+      "review-css": "CSS Review",
       "exam-css": "CSS Exam",
       "code-editors": "Code Editors",
       "javascript-variables-and-strings": "Variables and Strings",
@@ -1801,6 +1810,7 @@
       "recursion": "Recursion",
       "functional-programming": "Functional Programming",
       "asynchronous-javascript": "Asynchronous JavaScript",
+      "review-javascript": "JavaScript Review",
       "exam-javascript": "JavaScript Exam",
       "react-fundamentals": "React Fundamentals",
       "react-state-hooks-and-routing": "React State, Hooks, and Routing",
@@ -1827,17 +1837,32 @@
       "exam-python": "Python Exam"
     },
     "blocks": {
-      "lecture-welcome-to-freecodecamp": {
-        "title": "Welcome to freeCodeCamp",
+      "workshop-curriculum-outline": {
+        "title": "Build a Curriculum Outline",
         "intro": [
-          "Watch these videos to learn what freeCodeCamp is, and how millions of people have learned to code and gotten developer jobs using it."
+          "Welcome to freeCodeCamp!",
+          "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
+        ]
+      },
+      "lecture-welcome-to-freecodecamp": {
+        "title": "Welcome Message from Quincy Larson",
+        "intro": [
+          "Hear from Quincy Larson, the founder and teacher of freeCodeCamp.",
+          "Quincy will welcome you to the platform and talk about how the certification works. Quincy will also provide tips on how to learn effectively."
+        ]
+      },
+      "lab-debug-camperbots-profile-page": {
+        "title": "Debug Camperbot's Profile Page",
+        "intro": [
+          "Camperbot is learning how to code too and needs some help with their HTML.",
+          "In this lab, you will help Camperbot find and fix the errors in their code."
         ]
       },
       "lecture-what-is-html": {
-        "title": "What is HTML?",
+        "title": "Understanding HTML Attributes and the HTML Boilerplate",
         "intro": [
-          "In this lecture video, you will be introduced to HTML (HyperText Markup Language), a markup language for creating web pages.",
-          "You will learn about HTML's role on the web, the basic syntax, and what HTML attributes are."
+          "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."
         ]
       },
       "workshop-cat-photo-app": {
@@ -1994,11 +2019,43 @@
           "In these lecture videos, you will learn about accessibility and its importance, assistive tools for people with disabilities, HTML attributes that let you create inclusive websites, accessibility best practices, and much more."
         ]
       },
+      "lecture-accessible-tables-forms": {
+        "title": "Working with Accessible Tables and Forms",
+        "intro": [
+          "In these lecture videos, you will learn about how to create accessible tables and forms."
+        ]
+      },
+      "lecture-introduction-to-aria": {
+        "title": "Introduction to ARIA",
+        "intro": [
+          "In these lecture videos, you will learn about working with ARIA roles."
+        ]
+      },
+      "lecture-accessible-media-elements": {
+        "title": "Working with Accessible Media Elements",
+        "intro": [
+          "In these lecture videos, you will learn about how to create accessible links, audio and video content."
+        ]
+      },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
         "intro": [
           "In this lab, you'll create an accessible checkout page.",
-          "You'll practice concepts like <code>alt</code> attributes and aria roles."
+          "You'll practice concepts like <code>alt</code> attributes and ARIA roles."
+        ]
+      },
+      "lab-movie-review-page": {
+        "title": "Design a Movie Review Page",
+        "intro": [
+          "In this lab, you'll create a movie review page.",
+          "You'll practice concepts like semantic HTML, <code>alt</code> attributes, accessible lists, and hiding decorative content from screen readers using <code>aria-hidden</code>."
+        ]
+      },
+      "lab-multimedia-player": {
+        "title": "Build a Multimedia Player",
+        "intro": [
+          "In this lab, you'll build a multimedia player.",
+          "You will practice working with the <code>audio</code> and <code>video</code> elements, the <code>controls</code> attribute, and the <code>aria-label</code> attribute."
         ]
       },
       "review-html-accessibility": {
@@ -2797,6 +2854,12 @@
           "In this lab you'll use conditional statements and loops to determine if a year is a leap year."
         ]
       },
+      "lab-truncate-string": {
+        "title": "Implement the Truncate String Algorithm",
+        "intro": [
+          "In this lab, you will practice truncating a string at a certain length."
+        ]
+      },
       "review-javascript-functions": {
         "title": "JavaScript Functions Review",
         "intro": [
@@ -2893,6 +2956,18 @@
           "You'll practice using loops and conditionals to calculate the factorial of a number."
         ]
       },
+      "lab-mutations": {
+        "title": "Implement the Mutations Algorithm",
+        "intro": [
+          "In this lab, you will practice iterating over two different strings to compare their characters."
+        ]
+      },
+      "lab-chunky-monkey": {
+        "title": "Implement the Chunky Monkey Algorithm",
+        "intro": [
+          "In this lab, you will practice dividing an array into smaller arrays with the technique of your choice."
+        ]
+      },
       "review-javascript-loops": {
         "title": "JavaScript Loops Review",
         "intro": [
@@ -2947,6 +3022,12 @@
         "title": "Build a Password Generator App",
         "intro": [
           "In this lab, you'll build a password generator app based on the user's input."
+        ]
+      },
+      "lab-sum-all-numbers-algorithm": {
+        "title": "Design a Sum All Numbers Algorithm",
+        "intro": [
+          "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
         ]
       },
       "review-javascript-fundamentals": {
@@ -3498,19 +3579,17 @@
           "You'll practice using state and hooks to manage the properties of an element."
         ]
       },
-      "dbta": {
-        "title": "269",
-        "intro": []
-      },
       "lecture-understanding-effects-and-referencing-values-in-react": {
         "title": "Understanding Effects and Referencing Values in React",
         "intro": [
           "In these lecture videos, you will learn about effects and referencing values with React."
         ]
       },
-      "xdyh": {
-        "title": "270",
-        "intro": []
+      "workshop-fruit-search-app": {
+        "title": "Build a Fruit Search App",
+        "intro": [
+          "In this workshop, you will continute to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
+        ]
       },
       "vjgg": {
         "title": "272",
@@ -3535,9 +3614,11 @@
           "In these lecture videos, you will learn about working with forms in React."
         ]
       },
-      "sgau": {
-        "title": "276",
-        "intro": []
+      "workshop-superhero-application-form": {
+        "title": "Build a Superhero Application Form",
+        "intro": [
+          "In this workshop, you will build a superhero application form."
+        ]
       },
       "lab-event-rsvp": {
         "title": "Build an Event RSVP",
@@ -3552,9 +3633,11 @@
           "In these lecture videos, you will learn about data fetching and memoization in React."
         ]
       },
-      "ffpt": {
-        "title": "279",
-        "intro": []
+      "workshop-shopping-list-app": {
+        "title": "Build a Shopping List App",
+        "intro": [
+          "In this workshop, you'll use the <code>useMemo()</code> and <code>useCallback()</code> hooks in React to build a simple shopping list app. You'll learn more about state and the lifecycle of React components, and how to use memoization to reduce re-renders and make your apps more efficient."
+        ]
       },
       "lab-currency-converter": {
         "title": "Build a Currency Converter",
@@ -3700,6 +3783,317 @@
       "vtpz": {
         "title": "302",
         "intro": []
+      },
+      "lecture-introduction-to-python": {
+        "title": "Introduction to Python",
+        "intro": ["Learn about Introduction to Python in these lectures."]
+      },
+      "workshop-caesar-cipher": {
+        "title": "Build a Caesar Cipher",
+        "intro": [
+          "In this workshop, you'll build a Caesar cipher using basic Python concepts such as strings, conditionals, functions, and more."
+        ]
+      },
+      "lab-rpg-character": {
+        "title": "Build an RPG character",
+        "intro": [
+          "In this lab you will practice basic python by building an RPG character."
+        ]
+      },
+      "review-python-basics": {
+        "title": "Python Basics Review",
+        "intro": [
+          "Before you're quizzed on Python basics, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-python-basics": {
+        "title": "Python Basics Quiz",
+        "intro": [
+          "Test what you've learned about Python basics with this quiz."
+        ]
+      },
+      "lecture-working-with-loops-and-sequences": {
+        "title": "Working with Loops and Sequences",
+        "intro": [""]
+      },
+      "workshop-placeholder-loops-and-sequences": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lab-placeholder-loops-and-sequences": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
+      },
+      "review-loops-and-sequences": {
+        "title": "Loops and Sequences Review",
+        "intro": [
+          "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
+          "Open up this page to review concepts around loops, lists, tuples and some of their common methods."
+        ]
+      },
+      "quiz-loops-and-sequences": {
+        "title": "Loops and Sequences Quiz",
+        "intro": [
+          "Test what you've learned about loops and sequences in Python with this quiz."
+        ]
+      },
+      "lecture-working-with-dictionaries-and-sets": {
+        "title": "Working with Dictionaries and Sets",
+        "intro": [""]
+      },
+      "lecture-working-with-modules": {
+        "title": "Working with Modules",
+        "intro": [""]
+      },
+      "workshop-placeholder-dictionaries-and-sets": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
+      },
+      "lab-placeholder-dictionaries-and-sets": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
+      },
+      "review-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets review",
+        "intro": [
+          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Quiz",
+        "intro": [
+          "Test what you've learned about dictionaries and sets in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-error-handling": {
+        "title": "Understanding Error Handling",
+        "intro": [""]
+      },
+      "lab-isbn-validator": {
+        "title": "Debug a ISBN Validator",
+        "intro": [""]
+      },
+      "review-error-handling": {
+        "title": "Error Handling Review",
+        "intro": [
+          "Before you're quizzed on error handling, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-error-handling": {
+        "title": "Error Handling Quiz",
+        "intro": [
+          "Test what you've learned about Error Handling in Python with this quiz."
+        ]
+      },
+      "lecture-classes-and-objects": {
+        "title": "Classes and Objects",
+        "intro": [""]
+      },
+      "workshop-placeholder-classes-and-objects": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
+      },
+      "lab-budget-app": {
+        "title": "Build a Budget App",
+        "intro": [
+          "In this lab you will build a budget app and practice creating a class and methods for that class."
+        ]
+      },
+      "review-classes-and-objects": {
+        "title": "Classes and Objects Review",
+        "intro": [
+          "Before you're quizzed on classes and objects, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-classes-and-objects": {
+        "title": "Classes and Objects Quiz",
+        "intro": [
+          "Test what you've learned about classes and objects in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-object-oriented-programming-and-encapsulation": {
+        "title": "Understanding Object Oriented Programming and Encapsulation",
+        "intro": [""]
+      },
+      "workshop-placeholder-oop-1": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lab-placeholder-oop-1": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lecture-understanding-inheritance-and-polymorphism": {
+        "title": "Understanding Inheritance and polymorphism",
+        "intro": [""]
+      },
+      "workshop-placeholder-oop-2": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lab-polygon-area-calculator": {
+        "title": "Build a Polygon Area Calculator",
+        "intro": [
+          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
+        ]
+      },
+      "lecture-understanding-abstraction": {
+        "title": "Understanding abstraction",
+        "intro": [""]
+      },
+      "workshop-placeholder-oop-3": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lab-placeholder-oop-3": {
+        "title": "",
+        "intro": [""]
+      },
+      "review-object-oriented-programming": {
+        "title": "Object Oriented Programming Review",
+        "intro": [
+          "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-object-oriented-programming": {
+        "title": "Object Oriented Programming Quiz",
+        "intro": [
+          "Test what you've learned about object oriented programming in python with this quiz."
+        ]
+      },
+      "lecture-working-with-common-data-structures": {
+        "title": "Working with common data structures",
+        "intro": [""]
+      },
+      "workshop-linked-list-class": {
+        "title": "Build a Linked List Class",
+        "intro": [""]
+      },
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
+      },
+      "review-data-structures": {
+        "title": "Data Structures Review",
+        "intro": [
+          "Before you're quizzed on data structures, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-data-structures": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in Python with this quiz."
+        ]
+      },
+      "lecture-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms",
+        "intro": [""]
+      },
+      "workshop-binary-search": {
+        "title": "Build a Binary Search",
+        "intro": [""]
+      },
+      "lab-bisection-method": {
+        "title": "Build a Bisection Method",
+        "intro": [""]
+      },
+      "workshop-merge-sort": {
+        "title": "Build a Merge Sort",
+        "intro": [""]
+      },
+      "lab-quick-sort": {
+        "title": "Build a Quick Sort",
+        "intro": [""]
+      },
+      "lab-selection-sort": {
+        "title": "Implement the Selection Sort Algorithm",
+        "intro": [
+          "In this lab you will implement the selection sort algorithm."
+        ]
+      },
+      "lab-luhn-argorithm": {
+        "title": "Build a Luhn Algorithm",
+        "intro": [""]
+      },
+      "review-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Review",
+        "intro": [
+          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Quiz",
+        "intro": [
+          "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-graphs-and-trees": {
+        "title": "Understanding Graphs and Trees",
+        "intro": [""]
+      },
+      "workshop-shortest-path-algorithm": {
+        "title": "Build a Shortest Path Algorithm",
+        "intro": [""]
+      },
+      "lab-adjacency-list-matrix-converter": {
+        "title": "Build an Adjacency List/Matrix Converter",
+        "intro": [""]
+      },
+      "workshop-breadth-first-search": {
+        "title": "Build a Breadth First Search",
+        "intro": [""]
+      },
+      "lab-depth-first-search": {
+        "title": "Build a Depth First Search",
+        "intro": [""]
+      },
+      "review-graphs-and-trees": {
+        "title": "Graphs and Trees Review",
+        "intro": [
+          "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-graphs-and-trees": {
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Test what you've learned about graphs and trees in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-dynamic-programming": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [""]
+      },
+      "lab-nth-fibonacci-number": {
+        "title": "Build an Nth Fibonacci Number Calculator",
+        "intro": [""]
+      },
+      "review-dynamic-programming": {
+        "title": "Dynamic Programming Review",
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-dynamic-programming": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in python with this quiz."
+        ]
+      },
+      "review-python": {
+        "title": "Python Review",
+        "intro": ["Review Python concepts to prepare for the upcoming exam."]
       },
       "workshop-bash-boilerplate": {
         "title": "Build a Boilerplate",
@@ -3877,311 +4271,28 @@
           "Review relational databases concepts to prepare for the upcoming quiz."
         ]
       },
-      "lecture-introduction-to-python": {
-        "title": "Introduction to Python",
-        "intro": ["Learn about Introduction to Python in these lectures."]
-      },
-      "workshop-caesar-cipher": {
-        "title": "Build a Caesar Cipher",
-        "intro": ["Learn about Build a Caesar Cipher in these lectures."]
-      },
-      "lab-rpg-character": {
-        "title": "Build an RPG character",
-        "intro": [
-          "In this lab you will practice basic python by building an RPG character."
-        ]
-      },
-      "review-python-basics": {
-        "title": "Python Basics Review",
-        "intro": [
-          "Before you're quizzed on Python basics, you should review what you've learned about it.",
-          "[Add more details]"
-        ]
-      },
-      "quiz-python-basics": {
-        "title": "Python Basics Quiz",
-        "intro": [
-          "Test what you've learned about Python basics with this quiz."
-        ]
-      },
-      "lecture-working-with-loops-and-sequences": {
-        "title": "Working with Loops and Sequences",
-        "intro": [""]
-      },
-      "workshop-placeholder-loops-and-sequences": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
-      },
-      "lab-placeholder-loops-and-sequences": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
-      },
-      "review-loops-and-sequences": {
-        "title": "Loops and Sequences Review",
-        "intro": [
-          "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
-          "[Add more details]"
-        ]
-      },
-      "quiz-loops-and-sequences": {
-        "title": "Loops and Sequences Quiz",
-        "intro": [
-          "Test what you've learned about loops and sequences in Python with this quiz."
-        ]
-      },
-      "lecture-working-with-dictionaries-and-sets": {
-        "title": "Working with Dictionaries and Sets",
-        "intro": [""]
-      },
-      "lecture-working-with-modules": {
-        "title": "Working with Modules",
-        "intro": [""]
-      },
-      "workshop-placeholder-dictionaries-and-sets": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
-      },
-      "lab-placeholder-dictionaries-and-sets": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
-      },
-      "review-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets review",
-        "intro": [
-          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
-          "[Add more details]"
-        ]
-      },
-      "quiz-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets Quiz",
-        "intro": [
-          "Test what you've learned about dictionaries and sets in Python with this quiz."
-        ]
-      },
-      "lecture-understanding-error-handling": {
-        "title": "Understanding Error Handling",
-        "intro": [""]
-      },
-      "lab-isbn-validator": {
-        "title": "Debug a ISBN Validator",
-        "intro": [""]
-      },
-      "review-error-handling": {
-        "title": "Error Handling Review",
-        "intro": [
-          "Before you're quizzed on error handling, you should review what you've learned about it.",
-          "[Add more details]"
-        ]
-      },
-      "quiz-error-handling": {
-        "title": "Error Handling Quiz",
-        "intro": [
-          "Test what you've learned about Error Handling in Python with this quiz."
-        ]
-      },
-      "lecture-classes-and-objects": {
-        "title": "Classes and Objects",
-        "intro": [""]
-      },
-      "workshop-placeholder-classes-and-objects": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
-      },
-      "lab-budget-app": {
-        "title": "Build a Budget App",
-        "intro": [
-          "In this lab you will build a budget app and practice creating a class and methods for that class."
-        ]
-      },
-      "review-classes-and-objects": {
-        "title": "Classes and Objects Review",
-        "intro": [
-          "Before you're quizzed on classes and objects, you should review what you've learned about them.",
-          "[Add more details]"
-        ]
-      },
-      "quiz-classes-and-objects": {
-        "title": "Classes and Objects Quiz",
-        "intro": [
-          "Test what you've learned about classes and objects in Python with this quiz."
-        ]
-      },
-      "lecture-understanding-object-oriented-programming-and-encapsulation": {
-        "title": "Understanding Object Oriented Programming and Encapsulation",
-        "intro": [""]
-      },
-      "workshop-placeholder-oop-1": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
-      },
-      "lab-placeholder-oop-1": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
-      },
-      "lecture-understanding-inheritance-and-polymorphism": {
-        "title": "Understanding Inheritance and polymorphism",
-        "intro": [""]
-      },
-      "workshop-placeholder-oop-2": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
-      },
-      "lab-polygon-area-calculator": {
-        "title": "Build a Polygon Area Calculator",
-        "intro": [""]
-      },
-      "lecture-understanding-abstraction": {
-        "title": "Understanding abstraction",
-        "intro": [""]
-      },
-      "workshop-placeholder-oop-3": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
-      },
-      "lab-placeholder-oop-3": {
-        "title": "",
-        "intro": [""]
-      },
-      "review-object-oriented-programming": {
-        "title": "Object Oriented Programming Review",
-        "intro": [
-          "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
-          "[Add more details]"
-        ]
-      },
-      "quiz-object-oriented-programming": {
-        "title": "Object Oriented Programming Quiz",
-        "intro": [
-          "Test what you've learned about object oriented programming in python with this quiz."
-        ]
-      },
-      "lecture-working-with-common-data-structures": {
-        "title": "Working with common data structures",
-        "intro": [""]
-      },
-      "workshop-linked-list-class": {
-        "title": "Build a Linked List Class",
-        "intro": [""]
-      },
-      "lab-hash-table-class": {
-        "title": "Build an Hash Table Class",
-        "intro": [""]
-      },
-      "review-data-structures": {
-        "title": "Data Structures Review",
-        "intro": [
-          "Before you're quizzed on data structures, you should review what you've learned about them.",
-          "[Add more details]"
-        ]
-      },
-      "quiz-data-structures": {
-        "title": "Data Structures Quiz",
-        "intro": [
-          "Test what you've learned about data structures in Python with this quiz."
-        ]
-      },
-      "lecture-searching-and-sorting-algorithms": {
-        "title": "Searching and Sorting Algorithms",
-        "intro": [""]
-      },
-      "workshop-binary-search": {
-        "title": "Build a Binary Search",
-        "intro": [""]
-      },
-      "lab-bisection-method": {
-        "title": "Build a Bisection Method",
-        "intro": [""]
-      },
-      "workshop-merge-sort": {
-        "title": "Build a Merge Sort",
-        "intro": [""]
-      },
-      "lab-quick-sort": {
-        "title": "Build a Quick Sort",
-        "intro": [""]
-      },
-      "lab-selection-sort": {
-        "title": "Build a Selection Sort",
-        "intro": [""]
-      },
-      "lab-luhn-argorithm": {
-        "title": "Build a Luhn Algorithm",
-        "intro": [""]
-      },
-      "review-searching-and-sorting-algorithms": {
-        "title": "Searching and Sorting Algorithms Review",
-        "intro": [
-          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
-          "[Add more details]"
-        ]
-      },
-      "quiz-searching-and-sorting-algorithms": {
-        "title": "Searching and Sorting Algorithms Quiz",
-        "intro": [
-          "Test what you've learned about searching and sorting algorithms in Python with this quiz."
-        ]
-      },
-      "lecture-understanding-graphs-and-trees": {
-        "title": "Understanding Graphs and Trees",
-        "intro": [""]
-      },
-      "workshop-shortest-path-algorithm": {
-        "title": "Build a Shortest Path Algorithm",
-        "intro": [""]
-      },
-      "lab-adjacency-list-matrix-converter": {
-        "title": "Build an Adjacency List/Matrix Converter",
-        "intro": [""]
-      },
-      "workshop-breadth-first-search": {
-        "title": "Build a Breadth First Search",
-        "intro": [""]
-      },
-      "lab-depth-first-search": {
-        "title": "Build a Depth First Search",
-        "intro": [""]
-      },
-      "review-graphs-and-trees": {
-        "title": "Graphs and Trees Review",
-        "intro": [
-          "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
-          "[Add more details]"
-        ]
-      },
-      "quiz-graphs-and-trees": {
-        "title": "Graphs and Trees Quiz",
-        "intro": [
-          "Test what you've learned about graphs and trees in Python with this quiz."
-        ]
-      },
-      "lecture-understanding-dynamic-programming": {
-        "title": "Understanding Dynamic Programming",
-        "intro": [""]
-      },
-      "lab-nth-fibonacci-number": {
-        "title": "Build an Nth Fibonacci Number Calculator",
-        "intro": [""]
-      },
-      "review-dynamic-programming": {
-        "title": "Dynamic Programming Review",
-        "intro": [
-          "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
-          "[Add more details]"
-        ]
-      },
-      "quiz-dynamic-programming": {
-        "title": "Dynamic Programming Quiz",
-        "intro": [
-          "Test what you've learned about dynamic programming in python with this quiz."
-        ]
-      },
-      "review-python": {
-        "title": "Python Review",
-        "intro": ["Review Python concepts to prepare for the upcoming exam."]
-      },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      }
+    }
+  },
+  "a2-professional-spanish": {
+    "title": "A2 Professional Spanish Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "talk-about-who-you-are-by-using-key-verbs": {
+        "title": "Talk About Who You Are by Using Key Verbs",
+        "intro": [
+          "Learn how to introduce yourself in Spanish in a simple and professional way. In this module you'll learn how to say who you are, where you are from, what you do, how you feel, and what you like or don't like."
+        ]
+      },
+      "get-to-know-others-by-asking-simple-questions": {
+        "title": "Get to Know Others by Asking Simple Questions",
+        "intro": [
+          "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
+        ]
       }
     }
   },
