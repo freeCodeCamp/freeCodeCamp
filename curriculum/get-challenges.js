@@ -390,7 +390,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
 
         if (!meta.isUpcomingChange && chapter.comingSoon) {
           throw Error(
-            `The '${chapter.dashedName}' chapter is 'comingSoon', but it's '${meta.dashedName}' block is not hidden. Set its 'isUpcomingChange' set to 'true' in the 'meta.json' for the block to hide it.`
+            `The '${chapter.dashedName}' chapter is 'comingSoon', but its '${meta.dashedName}' block is not hidden. Set 'isUpcomingChange' to 'true' in the 'meta.json' for the block to hide it.`
           );
         }
 
@@ -403,7 +403,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
 
         if (!meta.isUpcomingChange && module.comingSoon) {
           throw Error(
-            `The '${chapter.dashedName}' module is 'comingSoon', but it's '${meta.dashedName}' block is not hidden. Set its 'isUpcomingChange' set to 'true' in the 'meta.json' for the block to hide it.`
+            `The '${chapter.dashedName}' module is 'comingSoon', but its '${meta.dashedName}' block is not hidden. Set 'isUpcomingChange' to 'true' in the 'meta.json' for the block to hide it.`
           );
         }
 
