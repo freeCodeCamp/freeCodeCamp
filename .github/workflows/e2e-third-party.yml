@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [20]
+        node-version: [22]
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -94,7 +94,7 @@ jobs:
       fail-fast: false
       matrix:
         browsers: [chromium]
-        node-version: [20]
+        node-version: [22]
     services:
       mongodb:
         image: mongo:8.0
