@@ -222,7 +222,7 @@ function SuperBlockIntro({
 
   return (
     <>
-      {showIntroTopB ? introTopA : introTopB}
+      {showIntroTopB ? introTopB : introTopA}
       <ConditionalDonationAlert
         superBlock={superBlock}
         onCertificationDonationAlertClick={onCertificationDonationAlertClick}
