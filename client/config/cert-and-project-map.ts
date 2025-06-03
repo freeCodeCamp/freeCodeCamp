@@ -567,8 +567,8 @@ const allStandardCerts = [
       },
       {
         id: 'bd7158d8c442eddfaeb5bd1c',
-        title: 'Build a Simon Game',
-        link: `${legacyFrontEndTakeHomeBase}/build-a-simon-game`,
+        title: 'Build a Memory Light Game',
+        link: `${legacyFrontEndTakeHomeBase}/build-a-memory-light-game`,
         certSlug: Certification.LegacyFrontEnd
       }
     ]

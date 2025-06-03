@@ -32,7 +32,6 @@ export default tseslint.config(
       'client/static/**/*',
       'client/.cache/**/*',
       'client/public/**/*',
-      'api-server/**/*',
       'shared/**/*.js',
       'docs/**/*.md',
       '**/playwright*.config.ts',

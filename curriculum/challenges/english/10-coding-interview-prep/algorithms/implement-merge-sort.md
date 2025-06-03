@@ -31,6 +31,12 @@ assert.isFunction(mergeSort);
 `mergeSort` should return a sorted array (least to greatest).
 
 ```js
+function isSorted(a){
+  for(let i = 0; i < a.length - 1; i++)
+    if(a[i] > a[i + 1])
+      return false;
+  return true;
+}
 assert.isTrue(
   isSorted(
     mergeSort([
@@ -86,21 +92,6 @@ assert.sameMembers(
 `mergeSort` should not use the built-in `.sort()` method.
 
 ```js
-assert.isFalse(isBuiltInSortUsed());
-```
-
-# --seed--
-
-## --after-user-code--
-
-```js
-function isSorted(a){
-  for(let i = 0; i < a.length - 1; i++)
-    if(a[i] > a[i + 1])
-      return false;
-  return true;
-}
-
 function isBuiltInSortUsed(){
   let sortUsed = false;
   const temp = Array.prototype.sort;
@@ -112,7 +103,10 @@ function isBuiltInSortUsed(){
   }
   return sortUsed;
 }
+assert.isFalse(isBuiltInSortUsed());
 ```
+
+# --seed--
 
 ## --seed-contents--
 

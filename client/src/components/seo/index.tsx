@@ -73,7 +73,10 @@ const SEO: React.FC<SEOProps> = ({ title, children }) => {
     const superBlockIntroObj: {
       title: string;
       intro: string[];
-    } = t(`intro:${superBlock}`, { returnObjects: true });
+    } = t(`intro:${superBlock}`, { returnObjects: true }) as {
+      title: string;
+      intro: string[];
+    };
 
     const { title: i18nTitle, intro: introText } = superBlockIntroObj;
 
