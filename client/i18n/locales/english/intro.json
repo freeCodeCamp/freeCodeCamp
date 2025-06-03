@@ -3563,7 +3563,7 @@
       "workshop-toggle-text-app": {
         "title": "Toggle Text App",
         "intro": [
-          "In this workshop, you will continute to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
+          "In this workshop, you will continue to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
         ]
       },
       "lab-color-picker": {
@@ -3582,7 +3582,7 @@
       "workshop-fruit-search-app": {
         "title": "Build a Fruit Search App",
         "intro": [
-          "In this workshop, you will continute to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
+          "In this workshop, you will continue to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
         ]
       },
       "vjgg": { "title": "272", "intro": [] },
