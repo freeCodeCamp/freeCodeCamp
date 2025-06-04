@@ -3992,7 +3992,12 @@
         "intro": [""]
       },
       "workshop-merge-sort": { "title": "Build a Merge Sort", "intro": [""] },
-      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
+      "lab-quicksort": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort a list of integers."
+        ]
+      },
       "lab-selection-sort": {
         "title": "Implement the Selection Sort Algorithm",
         "intro": [
