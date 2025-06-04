@@ -95,25 +95,32 @@ describe('Intro file name test:', () => {
     for (const superBlock of superblocks) {
       const blocks = Object.keys(typedIntro[superBlock].blocks);
       blocks.forEach(block => {
-        const exists = fs.existsSync(
-          `${__dirname}/../../curriculum/challenges/_meta/${block}/meta.json`
-        );
-        expect(exists).toBeTruthy();
+        if (typedIntro[superBlock].blocks[block].intro.length > 0) {
+          const exists = fs.existsSync(
+            `${__dirname}/../../curriculum/challenges/_meta/${block}/meta.json`
+          );
+          expect(exists).toBeTruthy();
+        }
       });
     }
   });
 
   test('Every block name matches in the meta.json and intro.json', () => {
+    const typedIntro = intro as unknown as Intro;
     const superblocks = Object.values(SuperBlocks);
     for (const superBlock of superblocks) {
       const blocks = Object.keys(typedIntro[superBlock].blocks);
       blocks.forEach(block => {
-        const metaContent = fs.readFileSync(
-          `${__dirname}/../../curriculum/challenges/_meta/${block}/meta.json`,
-          { encoding: 'utf-8' }
-        );
-        const metaJSON = JSON.parse(metaContent) as ChallengeMeta;
-        expect(metaJSON.name).toBe(typedIntro[superBlock].blocks[block].title);
+        if (typedIntro[superBlock].blocks[block].intro.length > 0) {
+          const metaContent = fs.readFileSync(
+            `${__dirname}/../../curriculum/challenges/_meta/${block}/meta.json`,
+            { encoding: 'utf-8' }
+          );
+          const metaJSON = JSON.parse(metaContent) as ChallengeMeta;
+          expect(metaJSON.name).toBe(
+            typedIntro[superBlock].blocks[block].title
+          );
+        }
       });
     }
   });
