@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Implement the Quicksort Algorithm
 
-This is a test for the new project-based curriculum.
+In this lab you will implement the quicksort algorithm to sort a list of integers.
