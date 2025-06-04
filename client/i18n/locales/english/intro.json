@@ -3967,7 +3967,7 @@
       },
       "workshop-binary-search": {
         "title": "Build a Binary Search",
-        "intro": [""]
+        "intro": ["", ""]
       },
       "lab-bisection-method": {
         "title": "Build a Bisection Method",
