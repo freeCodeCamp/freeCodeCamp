@@ -4264,6 +4264,20 @@
       }
     }
   },
+  "dev-playground": {
+    "title": "Dev Playground",
+    "intro": ["Playground for creating and testing challenges"],
+    "blocks": {
+      "daily-coding-challenges-javascript": {
+        "title": "Daily Coding Challenges JavaScript",
+        "intro": ["Place to create JavaScript daily coding challenges."]
+      },
+      "daily-coding-challenges-python": {
+        "title": "Daily Coding Challenges Python",
+        "intro": ["Place to create Python daily coding challenges."]
+      }
+    }
+  },
   "misc-text": {
     "browse-other": "Browse our other free certifications",
     "courses": "Courses",
