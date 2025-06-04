@@ -1042,9 +1042,16 @@ const duplicatedProjectIds = [
 
   /*** JavaScript ***/
 
+  // Slice and Splice
+
+  '579e2a2c335b9d72dd32e05c',
+
   // Sum all numbers in range challenge (used in JS fundamentals review module)
 
   'a3566b1109230028080c9345',
+
+  // Truncate a string
+  'ac6993d51946422351508a41',
 
   // Local Storage ToDo App
 
