@@ -38,6 +38,7 @@
     "clean:packages": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
     "create:shared": "tsc -p shared",
     "create-new-project": "cd ./tools/challenge-helper-scripts/ && pnpm run create-project",
+    "create-new-language-block": "cd ./tools/challenge-helper-scripts/ && pnpm run create-language-block",
     "create-new-quiz": "cd ./tools/challenge-helper-scripts/ && pnpm run create-quiz",
     "predevelop": "npm-run-all -p create:shared -s build:curriculum",
     "develop": "npm-run-all -p develop:*",
