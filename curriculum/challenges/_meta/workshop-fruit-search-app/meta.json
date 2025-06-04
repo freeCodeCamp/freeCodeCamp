@@ -1,0 +1,97 @@
+{
+  "name": "Build a Fruit Search App",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-fruit-search-app",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67ec2f7924ade2450c06bcd8",
+      "title": "Step 1"
+    },
+    {
+      "id": "67ec46b46f232344ebf3c114",
+      "title": "Step 2"
+    },
+    {
+      "id": "67ec4a95b609c071f7747be0",
+      "title": "Step 3"
+    },
+    {
+      "id": "67ecfbfe17c7d24465e0de88",
+      "title": "Step 4"
+    },
+    {
+      "id": "67ed044dc76cf4a441618f2c",
+      "title": "Step 5"
+    },
+    {
+      "id": "67ed0e7faf1f2d130a275a82",
+      "title": "Step 6"
+    },
+    {
+      "id": "67ed4c13de85e0aa05df5145",
+      "title": "Step 7"
+    },
+    {
+      "id": "67f8ec758a740e34432222db",
+      "title": "Step 8"
+    },
+    {
+      "id": "6813fe47f24095890691642f",
+      "title": "Step 9"
+    },
+    {
+      "id": "68245535872ded3cc2900fa8",
+      "title": "Step 10"
+    },
+    {
+      "id": "67f8eeab71f4f24ba1a3a7eb",
+      "title": "Step 11"
+    },
+    {
+      "id": "67f8ef57b9974052e5ef6b30",
+      "title": "Step 12"
+    },
+    {
+      "id": "67f8fd20d0afc3e03122453a",
+      "title": "Step 13"
+    },
+    {
+      "id": "67f90485c192d92ba3ba7e34",
+      "title": "Step 14"
+    },
+    {
+      "id": "67f90574263ebf363f9edd1d",
+      "title": "Step 15"
+    },
+    {
+      "id": "6813e49f0a3ec06c1e80c93b",
+      "title": "Step 16"
+    },
+    {
+      "id": "6813ee1963b142d3cce0889c",
+      "title": "Step 17"
+    },
+    {
+      "id": "6813f04ebe7476ed447c4c89",
+      "title": "Step 18"
+    },
+    {
+      "id": "6813f4dc94d4a31c5702f594",
+      "title": "Step 19"
+    },
+    {
+      "id": "6813f677aa1f742ec3808903",
+      "title": "Step 20"
+    },
+    {
+      "id": "68140ab94fd0ea19c62ca87e",
+      "title": "Step 21"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

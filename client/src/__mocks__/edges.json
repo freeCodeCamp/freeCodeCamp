@@ -19167,11 +19167,11 @@
     "node": {
       "challenge": {
         "fields": {
-          "slug": "/learn/coding-interview-prep/take-home-projects/build-a-simon-game",
+          "slug": "/learn/coding-interview-prep/take-home-projects/build-a-memory-light-game",
           "blockName": "Take Home Projects"
         },
         "id": "bd7158d8c442eddfaeb5bd1c",
-        "title": "Build a Simon Game"
+        "title": "Build a Memory Light Game"
       }
     }
   },

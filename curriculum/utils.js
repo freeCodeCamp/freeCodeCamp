@@ -86,7 +86,8 @@ const directoryToSuperblock = {
   '24-b1-english-for-developers': 'b1-english-for-developers',
   '25-front-end-development': 'full-stack-developer',
   '26-a2-professional-spanish': 'a2-professional-spanish',
-  '27-a2-professional-chinese': 'a2-professional-chinese'
+  '27-a2-professional-chinese': 'a2-professional-chinese',
+  '99-dev-playground': 'dev-playground'
 };
 
 function getSuperBlockFromDir(dir) {
@@ -111,7 +112,7 @@ function getChapterFromBlock(blockName, superBlockStructure) {
       `There is no chapter corresponding to block "${blockName}". It's possible that the block is missing in the superblock structure.`
     );
   }
-  return chapter.dashedName;
+  return { dashedName: chapter.dashedName, comingSoon: chapter.comingSoon };
 }
 
 function getModuleFromBlock(blockName, superBlockStructure) {
@@ -126,7 +127,7 @@ function getModuleFromBlock(blockName, superBlockStructure) {
       `There is no module corresponding to block "${blockName}". It's possible that the block is missing in the superblock structure.`
     );
   }
-  return module.dashedName;
+  return { dashedName: module.dashedName, comingSoon: module.comingSoon };
 }
 
 function getBlockOrder(blockName, superBlockStructure) {
