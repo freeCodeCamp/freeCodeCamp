@@ -852,6 +852,7 @@
     "edit-my-profile": "Editar meu perfil"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "Para solicitar uma certificação, você precisa primeiro concordar com nossa política de honestidade acadêmica",
     "really-weird": "Algo realmente estranho aconteceu. Se acontecer novamente, considere apresentar um problema pelo endereço https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "generic-error": "Algo deu errado. Tente novamente em instantes ou entre em contato com support@freecodecamp.org, se o erro persistir.",
@@ -1114,6 +1115,8 @@
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
       "full-stack-developer-v9": "Full Stack Developer",
       "full-stack-developer-v9-cert": "Full Stack Developer Certification",
+      "a2-professional-spanish": "A2 Professional Spanish",
+      "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
       "legacy-front-end": "Legacy Front End",
       "legacy-front-end-cert": "Legacy Front End Certification",
       "legacy-back-end": "Legacy Back End",

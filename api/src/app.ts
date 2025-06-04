@@ -1,3 +1,4 @@
+import { randomBytes } from 'crypto';
 import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
@@ -45,6 +46,7 @@ import {
   GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env';
 import { isObjectID } from './utils/validation';
+import { getLogger } from './utils/logger';
 import {
   examEnvironmentMultipartRoutes,
   examEnvironmentOpenRoutes,
@@ -77,6 +79,12 @@ ajv.addFormat('objectid', {
   type: 'string',
   validate: (str: string) => isObjectID(str)
 });
+
+export const buildOptions = {
+  loggerInstance: process.env.NODE_ENV === 'test' ? undefined : getLogger(),
+  genReqId: () => randomBytes(8).toString('hex'),
+  disableRequestLogging: true
+};
 
 /**
  * Top-level wrapper to instantiate the API server. This is where all middleware and
@@ -158,7 +166,6 @@ export const build = async (
       // TODO: bounce unauthed requests before checking CSRF token. This will
       // mean moving csrfProtection into custom plugin and testing separately,
       // because it's a pain to mess around with other cookies/hook order.
-      // @ts-expect-error - @fastify/csrf-protection needs to update their types
       // eslint-disable-next-line @typescript-eslint/unbound-method
       fastify.addHook('onRequest', fastify.csrfProtection);
       fastify.addHook('onRequest', fastify.send401IfNoUser);
@@ -184,6 +191,10 @@ export const build = async (
       await fastify.register(protectedRoutes.settingRedirectRoutes);
     });
   });
+
+  // TODO: The route should not handle its own AuthZ
+  await fastify.register(protectedRoutes.challengeTokenRoutes);
+
   // Routes for signed out users:
   void fastify.register(async function (fastify) {
     fastify.addHook('onRequest', fastify.authorize);

@@ -1,4 +1,4 @@
-name: CD - Deploy API (Legacy) & Clients
+name: CD - Deploy - Clients
 
 on:
   workflow_dispatch:
@@ -33,103 +33,14 @@ jobs:
               ;;
           esac
 
-  api:
-    name: API (Legacy) - [${{ needs.setup-jobs.outputs.tgt_env_short }}]
-    needs: [setup-jobs]
-    runs-on: ubuntu-22.04
-    permissions:
-      deployments: write
-      contents: read
-    environment:
-      name: ${{ needs.setup-jobs.outputs.tgt_env_short }}-api-legacy
-    env:
-      TS_USERNAME: ${{ secrets.TS_USERNAME }}
-      TS_MACHINE_NAME_PREFIX: ${{ secrets.TS_MACHINE_NAME_PREFIX }}
-    steps:
-      - name: Setup and connect to Tailscale network
-        uses: tailscale/github-action@v3
-        with:
-          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
-          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
-          hostname: gha-${{needs.setup-jobs.outputs.tgt_env_short}}-api-legacy-ci-${{ github.run_id }}
-          tags: tag:ci
-          version: latest
-
-      - name: Configure SSH & Check Connection
-        run: |
-          mkdir -p ~/.ssh
-          echo "Host *
-            UserKnownHostsFile=/dev/null
-            StrictHostKeyChecking no" > ~/.ssh/config
-          chmod 644 ~/.ssh/config
-          sleep 10
-          for i in {1..3}; do
-            TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-api-${i}
-            tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Machine not found"; exit 1; }
-            sleep 1
-            MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
-            ssh $TS_USERNAME@$MACHINE_IP "uptime"
-          done
-
-      - name: Deploy API
-        # [NOTE] Use backslashes for expansion on remote machine, example: \$NVM_DIR, etc.
-        run: |
-          GIT_SOURCE_BRANCH=${{ needs.setup-jobs.outputs.tgt_env_branch }}
-          for i in {1..3}; do
-            TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-api-${i}
-            REMOTE_SCRIPT="
-              set -e
-              echo -e '\nLOG:Deploying API (Legacy) to $TS_MACHINE_NAME...'
-
-              echo -e '\nLOG:Environment setup...'
-              cd /home/$TS_USERNAME/freeCodeCamp
-              export NVM_DIR=\$HOME/.nvm && [ -s "\$NVM_DIR/nvm.sh" ] && source "\$NVM_DIR/nvm.sh"
-              echo -e '\nLOG:Checking available Node.js versions...'
-              nvm ls | grep 'default'
-              echo -e '\nLOG:Checking Node.js version...'
-              node --version
-
-              echo -e '\nLOG:Stopping all PM2 services...'
-              pm2 stop all
-
-              echo -e '\nLOG:Git operations...'
-              git status
-              git clean -f
-              git fetch --all --prune
-              git checkout -f $GIT_SOURCE_BRANCH
-              git reset --hard origin/$GIT_SOURCE_BRANCH
-              git status
-
-              echo -e '\nLOG:Building...'
-              npm i -g pnpm@9
-              pnpm clean:packages
-              pnpm clean:server
-              pnpm install
-              pnpm prebuild
-              pnpm build:curriculum
-              pnpm build:server
-              echo -e '\nLOG:Build completed.'
-
-              echo -e '\nLOG:Starting PM2 reload...'
-              pm2 reload './api-server/ecosystem.config.js'
-              echo -e '\nLOG:PM2 reload completed.'
-
-              pm2 ls
-              pm2 save
-              echo -e '\nLOG:Finished deployment.'
-            "
-            MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
-            ssh $TS_USERNAME@$MACHINE_IP "$REMOTE_SCRIPT"
-          done
-
   client:
     name: Clients - [${{ needs.setup-jobs.outputs.tgt_env_short }}] [${{ matrix.lang-name-short }}]
-    needs: [setup-jobs, api]
+    needs: [setup-jobs]
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
-        node-version: [20]
+        node-version: [22]
         lang-name-full:
           - english
           - chinese
@@ -172,19 +83,21 @@ jobs:
       TS_MACHINE_NAME_PREFIX: ${{ secrets.TS_MACHINE_NAME_PREFIX }}
 
     steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           submodules: 'recursive'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
-
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        id: pnpm-install
+        with:
+          run_install: false
 
       - name: Language specific ENV - [${{ matrix.lang-name-full }}]
         run: |

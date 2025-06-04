@@ -5,7 +5,6 @@ import { createSelector } from 'reselect';
 import { isDonationModalOpenSelector } from '../../../redux/selectors';
 import {
   canFocusEditorSelector,
-  consoleOutputSelector,
   visibleEditorsSelector
 } from '../redux/selectors';
 import { getTargetEditor } from '../utils/get-target-editor';
@@ -44,17 +43,10 @@ type MultifileEditorProps = Pick<
 const mapStateToProps = createSelector(
   visibleEditorsSelector,
   canFocusEditorSelector,
-  consoleOutputSelector,
   isDonationModalOpenSelector,
-  (
-    visibleEditors: VisibleEditors,
-    canFocus: boolean,
-    output: string[],
-    open
-  ) => ({
+  (visibleEditors: VisibleEditors, canFocus: boolean, open) => ({
     visibleEditors,
-    canFocus: open ? false : canFocus,
-    output
+    canFocus: open ? false : canFocus
   })
 );
 
