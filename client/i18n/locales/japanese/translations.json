@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "freeCodeCamp に対する卒業生の声",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "シンガポールの <strong>Shawn Wang</strong>",
         "occupation": "<strong>Amazon</strong> のソフトウェアエンジニア",
         "testimony": "「キャリアを変えることは恐ろしいです。freeCodeCamp の無料レッスンに何百時間も取り組むことで、自分はコーディングができるという自信を得ました。一年以内に、ソフトウェアエンジニアとして年数十万ドルを稼げる仕事を得ました。<strong>freeCodeCamp は私の人生を変えました。</strong>」"
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "ナイジェリアの <strong>Sarah Chima</strong>",
         "occupation": "<strong>Chatdesk</strong> のソフトウェアエンジニア",
         "testimony": "「ソフトウェアエンジニアとして <strong>freeCodeCamp は私のキャリアの玄関口でした。</strong>よく練られたカリキュラムは私のコーディング知識を初心者レベルからとても強い自信が持てるレベルまで引き上げてくれました。私が素晴らしい会社で最初の開発者としての仕事を得るために必要な全てのものがありました。」"
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "スウェーデンの <strong>Emma Bostian</strong>",
         "occupation": "<strong>Spotify</strong> のソフトウェアエンジニア",
         "testimony": "「私はいつも JavaScript を学ぶことに躓いていました。たくさんのコースを受講しましたが、freeCodeCamp に一番のめり込みました。JavaScript だけでなくデータ構造とアルゴリズムも学べることで、ソフトウェアエンジニアとして Spotify という夢の仕事を得るために必要な自信と<strong>スキルを freeCodeCamp は私に与えてくれました</strong>」"
@@ -456,9 +459,6 @@
     "sign-in-see-benefits": "サポーター特典を見るにはサインインしてください。",
     "card-has-been-updated": "カード情報が更新されました。",
     "contact-support-mistake": "ご不明な点がございましたら、donors@freecodecamp.org までお問い合わせください。",
-    "cert-map-estimates": {
-      "certs": "{{title}} 認定講座"
-    },
     "editor-tabs": {
       "code": "コード",
       "tests": "テスト",
@@ -547,7 +547,7 @@
       "unanswered-questions": "以下の質問が未回答です。すべての質問に回答してください: {{ unansweredQuestions }}",
       "have-n-correct-questions": "{{ total }} 問中 {{ correctAnswerCount }} 問正解しました。",
       "finish-modal-header": "クイズ終了",
-      "finish-modal-body": "クイズを終了してよろしいですか？終了後、回答を変更することはできません。",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "はい、終了します",
       "finish-modal-no": "いいえ、クイズを続行します",
       "exit-modal-header": "クイズを中止",
@@ -852,6 +852,7 @@
     "edit-my-profile": "プロフィールを編集"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "認定証を獲得するには、まず学問的誠実性ポリシーに同意する必要があります。",
     "really-weird": "予期しない問題が発生しました。この問題が何度も発生するようであれば、https://github.com/freeCodeCamp/freeCodeCamp/issues/new への Issue 登録をご検討ください。",
     "generic-error": "問題が発生しました。お手数ですが、時間をおいて再度お試しください。エラーが解消されない場合には support@freecodecamp.org までお問い合わせください。",
@@ -905,6 +906,7 @@
     "unlink-success": "{{website}} のリンクを解除しました",
     "provide-username": "ユーザー名と報告内容が入力されているか確認してください",
     "report-sent": "報告は {{email}} を CC に入れた状態でチームに送信されました",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "表示しようとした認定証は存在しません",
     "create-token-err": "ユーザートークンの作成中にエラーが発生しました",
     "delete-token-err": "ユーザートークンの削除中にエラーが発生しました",
@@ -1113,6 +1115,8 @@
       "b1-english-for-developers-cert": "開発者のための B1 レベル英語認定証",
       "full-stack-developer-v9": "フルスタック開発者",
       "full-stack-developer-v9-cert": "フルスタック開発者認定証",
+      "a2-professional-spanish": "A2 Professional Spanish",
+      "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
       "legacy-front-end": "旧フロントエンド",
       "legacy-front-end-cert": "旧フロントエンド認定証",
       "legacy-back-end": "旧バックエンド",

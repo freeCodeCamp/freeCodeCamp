@@ -27,6 +27,8 @@ assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5]);
 `frankenSplice([1, 2], ["a", "b"], 1)` should return `["a", 1, 2, "b"]`.
 
 ```js
+let testArr1 = [1, 2];
+let testArr2 = ['a', 'b'];
 assert.deepEqual(frankenSplice(testArr1, testArr2, 1), ['a', 1, 2, 'b']);
 ```
 
@@ -52,6 +54,8 @@ assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4]);
 The first array should remain the same after the function runs.
 
 ```js
+let testArr1 = [1, 2];
+let testArr2 = ['a', 'b'];
 frankenSplice(testArr1, testArr2, 1);
 assert.deepEqual(testArr1, [1, 2]);
 ```
@@ -59,18 +63,13 @@ assert.deepEqual(testArr1, [1, 2]);
 The second array should remain the same after the function runs.
 
 ```js
+let testArr1 = [1, 2];
+let testArr2 = ['a', 'b'];
 frankenSplice(testArr1, testArr2, 1);
 assert.deepEqual(testArr2, ['a', 'b']);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-let testArr1 = [1, 2];
-let testArr2 = ['a', 'b'];
-```
 
 ## --seed-contents--
 

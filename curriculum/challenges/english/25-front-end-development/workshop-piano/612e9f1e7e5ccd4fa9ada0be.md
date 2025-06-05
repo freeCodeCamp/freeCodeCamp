@@ -14,13 +14,13 @@ Give the `.key` a `margin` of `2px` and a `float` property set to `left`.
 Your `.key` selector should have a `margin` property set to `2px`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.key')?.margin === '2px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.key')?.margin, '2px');
 ```
 
 Your `.key` selector should have a `float` property set to `left`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.key')?.float === 'left');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.key')?.float, 'left');
 ```
 
 # --seed--

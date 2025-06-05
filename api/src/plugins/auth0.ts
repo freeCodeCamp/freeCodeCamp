@@ -1,5 +1,7 @@
 import fastifyOauth2, { type OAuth2Namespace } from '@fastify/oauth2';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import { Type } from '@sinclair/typebox';
+import { Value } from '@sinclair/typebox/value';
 import fp from 'fastify-plugin';
 
 import {
@@ -22,6 +24,14 @@ declare module 'fastify' {
     auth0OAuth: OAuth2Namespace;
   }
 }
+
+const Auth0ErrorSchema = Type.Object({
+  data: Type.Object({
+    payload: Type.Object({
+      error: Type.String()
+    })
+  })
+});
 
 /**
  * Fastify plugin for Auth0 authentication. This uses fastify-plugin to expose
@@ -79,7 +89,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
 
     // TODO: use a schema to validate the query params.
     fastify.get('/auth/auth0/callback', async function (req, reply) {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
 
       const { error, error_description } = req.query as Record<string, string>;
       if (error === 'access_denied') {
@@ -89,8 +99,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           logger.info('Access denied due to user location');
           return reply.redirect(`${HOME_LOCATION}/blocked`);
         } else {
-          logger.error('Authentication failed for user:' + error_description);
-
+          logger.info('Authentication failed for user:' + error_description);
           return reply.redirectWithMessage(`${HOME_LOCATION}/learn`, {
             type: 'info',
             content: error_description ?? 'Authentication failed'
@@ -112,9 +121,11 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         // functions.
         if (error instanceof Error && error.message === 'Invalid state') {
           logger.error('Auth failed: invalid state');
+        } else if (Value.Check(Auth0ErrorSchema, error)) {
+          const errorType = error.data.payload.error;
+          logger.error(error, 'Auth failed: ' + errorType);
         } else {
-          logger.error('Auth failed:');
-          logger.error(error);
+          logger.error(error, 'Failed to get access token from Auth0');
           fastify.Sentry.captureException(error);
         }
         // It's important _not_ to redirect to /signin here, as that could
@@ -130,12 +141,21 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         const userinfo = (await fastify.auth0OAuth.userinfo(token)) as {
           email: string;
         };
+        logger.info(`Auth0 userinfo: ${JSON.stringify(userinfo)}`);
         email = userinfo.email;
-        if (typeof email !== 'string') throw Error('Invalid userinfo response');
+        if (typeof email !== 'string') {
+          return reply.redirectWithMessage(returnTo, {
+            type: 'danger',
+            content: 'flash.no-email-in-userinfo'
+          });
+        }
       } catch (error) {
-        logger.error({ error }, 'Auth failed');
+        logger.error(error, 'Failed to get userinfo from Auth0');
         fastify.Sentry.captureException(error);
-        return reply.redirect('/signin');
+        return reply.redirectWithMessage(returnTo, {
+          type: 'danger',
+          content: 'flash.generic-error'
+        });
       }
 
       const { id, acceptedPrivacyTerms } = await findOrCreateUser(

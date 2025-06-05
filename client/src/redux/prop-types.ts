@@ -96,6 +96,7 @@ interface SceneCommand {
 }
 
 export type Characters =
+  // English
   | 'Alice'
   | 'Amy'
   | 'Anna'
@@ -118,7 +119,26 @@ export type Characters =
   | 'Sarah'
   | 'Second Candidate'
   | 'Sophie'
-  | 'Tom';
+  | 'Tom'
+
+  // Spanish
+  | 'Alex'
+  | 'Ángela'
+  | 'Camila'
+  | 'Carlos'
+  | 'Elena'
+  | 'Esteban'
+  | 'Joaquín'
+  | 'Julieta'
+  | 'Luis'
+  | 'Luna'
+  | 'Marisol'
+  | 'Mateo'
+  | 'Noelia'
+  | 'René'
+  | 'Sebastián'
+  | 'Diego'
+  | 'Valeria';
 
 interface SetupCharacter {
   character: Characters;
@@ -391,6 +411,7 @@ export type ChallengeMeta = {
   superBlock: SuperBlocks;
   title?: string;
   challengeType?: number;
+  blockType?: BlockTypes;
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;

@@ -10,7 +10,7 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
   });
 
   fastify.addHook('onRequest', async (req, reply) => {
-    const logger = fastify.log.child({ req });
+    const logger = fastify.log.child({ req, res: reply });
     const origin = req.headers.origin;
     if (origin && allowedOrigins.includes(origin)) {
       // Do we want to log allowed origins?
@@ -21,7 +21,10 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
       // separately. If we switch to that approach we can replace use
       // @fastify/cors instead.
       void reply.header('Access-Control-Allow-Origin', HOME_LOCATION);
-      logger.debug(`Received request from disallowed origin: ${origin}`);
+
+      if (origin && !req.url?.startsWith('/status/')) {
+        logger.info(`Received request from disallowed origin: ${origin}`);
+      }
     }
 
     void reply
