@@ -3991,8 +3991,17 @@
         "title": "Build a Bisection Method",
         "intro": [""]
       },
-      "workshop-merge-sort": { "title": "Build a Merge Sort", "intro": [""] },
-      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
+      "workshop-merge-sort": {
+        "title": "Implement the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
+        ]
+      },
+      "lab-quick-sort": {
+        "title": "Build a Quick Sort",
+        "intro": [""]
+      },
       "lab-selection-sort": {
         "title": "Implement the Selection Sort Algorithm",
         "intro": [
