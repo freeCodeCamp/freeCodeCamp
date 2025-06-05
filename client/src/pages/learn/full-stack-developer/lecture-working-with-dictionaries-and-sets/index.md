@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Dictionaries and Sets
 
-Learn about Working with Dictionaries and Sets in these lectures.
+Learn about working with dictionaries and sets in these lectures.
