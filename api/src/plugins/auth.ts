@@ -67,6 +67,11 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     };
 
     if (isExpired(accessToken)) return setAccessDenied(req, TOKEN_EXPIRED);
+    // We're using token.userId since it's possible for the user record to be
+    // malformed and for prisma to throw while trying to find the user.
+    fastify.Sentry.setUser({
+      id: accessToken.userId
+    });
 
     const user = await fastify.prisma.user.findUnique({
       where: { id: accessToken.userId }
@@ -142,6 +147,12 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
         message: 'Token not found'
       };
     }
+    // We're using token.userId since it's possible for the user record to be
+    // malformed and for prisma to throw while trying to find the user.
+
+    fastify.Sentry.setUser({
+      id: token.userId
+    });
 
     const user = await fastify.prisma.user.findUnique({
       where: { id: token.userId }
