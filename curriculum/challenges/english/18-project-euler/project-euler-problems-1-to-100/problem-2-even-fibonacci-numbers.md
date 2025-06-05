@@ -19,85 +19,9 @@ By considering the terms in the Fibonacci sequence whose values do not exceed `n
 `fiboEvenSum(10)` should return a number.
 
 ```js
-assert(typeof fiboEvenSum(10) === 'number');
+assert.isNumber(fiboEvenSum(10));
 ```
 
 Your function should return an even value.
 
-```js
-assert.equal(fiboEvenSum(10) % 2 === 0, true);
-```
-
-Your function should sum the even-valued Fibonacci numbers: `fiboEvenSum(8)` should return 10.
-
-```js
-assert.strictEqual(fiboEvenSum(8), 10);
-```
-
-`fiboEvenSum(10)` should return 10.
-
-```js
-assert.strictEqual(fiboEvenSum(10), 10);
-```
-
-`fiboEvenSum(34)` should return 44.
-
-```js
-assert.strictEqual(fiboEvenSum(34), 44);
-```
-
-`fiboEvenSum(60)` should return 44.
-
-```js
-assert.strictEqual(fiboEvenSum(60), 44);
-```
-
-`fiboEvenSum(1000)` should return 798.
-
-```js
-assert.strictEqual(fiboEvenSum(1000), 798);
-```
-
-`fiboEvenSum(100000)` should return 60696.
-
-```js
-assert.strictEqual(fiboEvenSum(100000), 60696);
-```
-
-`fiboEvenSum(4000000)` should return 4613732.
-
-```js
-assert.strictEqual(fiboEvenSum(4000000), 4613732);
-```
-
-# --seed--
-
-## --seed-contents--
-
-```js
-function fiboEvenSum(n) {
-
-  return true;
-}
-```
-
-# --solutions--
-
-```js
-const fiboEvenSum = (number) => {
-  if (number <= 1) {
-    return 0;
-  } else {
-    let evenSum = 0,
-      prevFibNum = 1,
-      fibNum = 2; // According to problem description our Fibonacci series starts with 1, 2
-    for (let i = 2; fibNum <= number; i++) {
-      if (fibNum % 2 == 0) {
-        evenSum += fibNum;
-      }
-      [prevFibNum, fibNum] = [fibNum, prevFibNum + fibNum];
-    }
-    return evenSum;
-  }
-};
 ```

@@ -17,7 +17,7 @@ What is the largest prime factor of the given `number`?
 `largestPrimeFactor(2)` should return a number.
 
 ```js
-assert(typeof largestPrimeFactor(2) === 'number');
+assert.isNumber(largestPrimeFactor(2));
 ```
 
 `largestPrimeFactor(2)` should return 2.
