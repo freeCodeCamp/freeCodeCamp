@@ -393,7 +393,6 @@ const initMainFrame =
   };
 
 function handleDocumentNotFound(err: string) {
-  console.log('Document not found', err);
   if (err !== DOCUMENT_NOT_FOUND_ERROR) {
     console.log(err);
   }
