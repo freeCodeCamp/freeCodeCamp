@@ -3762,7 +3762,9 @@
       "vtpz": { "title": "302", "intro": [] },
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
-        "intro": ["Learn about Introduction to Python in these lectures."]
+        "intro": [
+          "In these lecture videos, you will learn the fundamentals of Python. You'll learn about variables, data types, operators, control flow, functions, and more."
+        ]
       },
       "workshop-caesar-cipher": {
         "title": "Build a Caesar Cipher",
