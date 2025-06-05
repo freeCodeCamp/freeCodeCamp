@@ -3870,7 +3870,7 @@
       },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
-        "intro": ["Learn about Classes and Objects in these lectures.Learn about Classes and Objects in these lectures."]
+        "intro": ["Learn about Classes and Objects in these lectures."]
       },
       "workshop-placeholder-classes-and-objects": {
         "title": "Placeholder - waiting for title",
@@ -3897,9 +3897,6 @@
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Understanding Object Oriented Programming and Encapsulation",
-        "intro": [
-          "Learn about Understanding Object Oriented Programming and Encapsulation in these lectures."
-        ]
         "intro": [
           "Learn about Understanding Object Oriented Programming and Encapsulation in these lectures."
         ]
@@ -3955,10 +3952,6 @@
         "intro": [
           "Learn about Working with Common Data Structures in these lectures."
         ]
-        "title": "Working with Common Data Structures",
-        "intro": [
-          "Learn about Working with Common Data Structures in these lectures."
-        ]
       },
       "workshop-linked-list-class": {
         "title": "Build a Linked List Class",
@@ -3986,9 +3979,6 @@
       },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
-        "intro": [
-          "Learn about Searching and Sorting Algorithms in these lectures."
-        ]
         "intro": [
           "Learn about Searching and Sorting Algorithms in these lectures."
         ]
@@ -4031,9 +4021,6 @@
         "intro": [
           "Learn about Understanding Graphs and Trees in these lectures."
         ]
-        "intro": [
-          "Learn about Understanding Graphs and Trees in these lectures."
-        ]
       },
       "workshop-shortest-path-algorithm": {
         "title": "Build a Shortest Path Algorithm",
@@ -4066,9 +4053,6 @@
       },
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
-        "intro": [
-          "Learn about Understanding Dynamic Programming in these lectures."
-        ]
         "intro": [
           "Learn about Understanding Dynamic Programming in these lectures."
         ]
