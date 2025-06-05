@@ -63,7 +63,6 @@ $RECYCLE.BIN/
 # Icon must end with two \r
 Icon
 
-
 # Thumbnails
 ._*
 
@@ -172,7 +171,7 @@ utils/slugs.test.js
 ### vim ###
 # Swap
 [._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
+!*.svg # comment out if you don't need vector files
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
@@ -198,7 +197,6 @@ tags
 curriculum/curricula.json
 
 ### Additional Folders ###
-api-server/lib/*
 curriculum/dist
 curriculum/build
 

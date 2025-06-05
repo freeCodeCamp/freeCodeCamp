@@ -852,6 +852,7 @@
     "edit-my-profile": "編輯我的個人資料"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "在申請認證前，你必須先同意我們的《學術誠信條例》",
     "really-weird": "出現了一些奇怪的情況。如果再出現這種情況，請考慮在 https://github.com/freeCodeCamp/freeCodeCamp/issues/new 提交 issue。",
     "generic-error": "出錯了，請稍後再試。如果錯誤仍然存在，請聯繫 support@freecodecamp.org。",
@@ -1114,6 +1115,8 @@
       "b1-english-for-developers-cert": "開發者 B1 英語認證",
       "full-stack-developer-v9": "全棧開發者",
       "full-stack-developer-v9-cert": "全棧開發者認證",
+      "a2-professional-spanish": "A2 Professional Spanish",
+      "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
       "legacy-front-end": "舊版前端",
       "legacy-front-end-cert": "舊版前端認證",
       "legacy-back-end": "舊版後端",

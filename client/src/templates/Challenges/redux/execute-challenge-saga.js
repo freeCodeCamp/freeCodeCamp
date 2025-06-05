@@ -109,7 +109,7 @@ export function* executeChallengeSaga({ payload }) {
     yield put(initConsole(i18next.t('learn.running-tests')));
     // reset tests to initial state
     const tests = (yield select(challengeTestsSelector)).map(
-      ({ text, testString }) => ({ text, testString })
+      ({ text, testString }) => ({ text, testString, running: true })
     );
     const hooks = yield select(challengeHooksSelector);
     yield put(updateTests(tests));
@@ -198,7 +198,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
   const testResults = [];
   for (let i = 0; i < tests.length; i++) {
     const { text, testString } = tests[i];
-    const newTest = { text, testString };
+    const newTest = { text, testString, running: false };
     // only the last test outputs console.logs to avoid log duplication.
     const firstTest = i === 1;
     try {
@@ -292,7 +292,8 @@ export function* previewChallengeSaga(action) {
           challengeData.challengeType === challengeTypes.python ||
           challengeData.challengeType ===
             challengeTypes.multifilePythonCertProject ||
-          challengeData.challengeType === challengeTypes.pyLab
+          challengeData.challengeType === challengeTypes.pyLab ||
+          challengeData.challengeType === challengeTypes.dailyChallengePy
         ) {
           yield updatePython(challengeData);
         } else {
@@ -326,7 +327,8 @@ function* updatePreviewSaga(action) {
   if (
     challengeData.challengeType === challengeTypes.python ||
     challengeData.challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeData.challengeType === challengeTypes.pyLab
+    challengeData.challengeType === challengeTypes.pyLab ||
+    challengeData.challengeType === challengeTypes.dailyChallengePy
   ) {
     yield updatePython(challengeData);
   } else {

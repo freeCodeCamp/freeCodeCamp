@@ -76,7 +76,7 @@ import '../components/test-frame.css';
 
 const mapStateToProps = (state: unknown) => ({
   challengeFiles: challengeFilesSelector(state) as ChallengeFiles,
-  output: consoleOutputSelector(state) as string[],
+  output: consoleOutputSelector(state) as string,
   isChallengeCompleted: isChallengeCompletedSelector(state) as boolean,
   savedChallenges: savedChallengesSelector(state) as SavedChallenge[]
 });
@@ -113,7 +113,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   initHooks: (hooks?: { beforeAll: string }) => void;
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
-  output: string[];
+  output: string;
   pageContext: {
     challengeMeta: ChallengeMeta;
     projectPreview: {
@@ -173,7 +173,8 @@ const StepPreview = ({
 }) => {
   return challengeType === challengeTypes.python ||
     challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeType === challengeTypes.pyLab ? (
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy ? (
     <XtermTerminal dimensions={dimensions} xtermFitRef={xtermFitRef} />
   ) : (
     <Preview disableIframe={disableIframe} previewMounted={previewMounted} />

@@ -5,8 +5,8 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=20",
-    "pnpm": ">=9"
+    "node": ">=22",
+    "pnpm": ">=10"
   },
   "repository": {
     "type": "git",
@@ -26,24 +26,23 @@
     "build-workers": "cd ./client && pnpm run prebuild",
     "build:client": "cd ./client && pnpm run build",
     "build:curriculum": "cd ./curriculum && pnpm run build",
-    "build:server": "cd ./api-server && pnpm run build",
+    "build:api": "cd ./api && pnpm run build",
     "challenge-editor": "npm-run-all -p challenge-editor:*",
     "challenge-editor:client": "cd ./tools/challenge-editor/client && pnpm start",
     "challenge-editor:server": "cd ./tools/challenge-editor/api && pnpm start",
-    "clean": "npm-run-all -p clean:client clean:server clean:curriculum --serial clean:packages",
+    "clean": "npm-run-all -p clean:client clean:api clean:curriculum --serial clean:packages",
     "clean-and-develop": "pnpm run clean && pnpm install && pnpm run develop",
     "clean:api": "cd api && pnpm clean",
     "clean:client": "cd ./client && pnpm run clean",
     "clean:curriculum": "rm -rf ./shared/config/curriculum.json",
     "clean:packages": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
-    "clean:server": "rm -rf ./api-server/lib",
     "create:shared": "tsc -p shared",
     "create-new-project": "cd ./tools/challenge-helper-scripts/ && pnpm run create-project",
     "create-new-quiz": "cd ./tools/challenge-helper-scripts/ && pnpm run create-quiz",
     "predevelop": "npm-run-all -p create:shared -s build:curriculum",
     "develop": "npm-run-all -p develop:*",
     "develop:client": "cd ./client && pnpm run develop",
-    "develop:server": "cd ./api-server && pnpm run develop",
+    "develop:api": "cd ./api && pnpm run develop",
     "format": "run-s format:eslint format:prettier",
     "format:eslint": "eslint . --fix",
     "format:prettier": "prettier --write .",
@@ -69,8 +68,6 @@
     "serve:client": "cd ./client && pnpm run serve",
     "serve:client-ci": "cd ./client && pnpm run serve-ci",
     "start": "npm-run-all create:shared -p develop:server serve:client",
-    "start-ci": "npm-run-all create:shared -p start:server serve:client-ci",
-    "start:server": "pm2 start api-server/ecosystem.config.js",
     "test": "NODE_OPTIONS='--max-old-space-size=7168' run-s create:shared build:curriculum build-workers test:*",
     "test:source": "jest",
     "test:api": "cd api && jest --force-exit",
@@ -79,7 +76,6 @@
     "test-client": "jest client",
     "test-config": "jest config",
     "test-curriculum-js": "jest curriculum",
-    "test-server": "jest api-server",
     "test-tools": "jest tools",
     "test-utils": "jest utils",
     "prepare": "husky",
@@ -136,17 +132,32 @@
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c",
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
   "pnpm": {
-    "patchedDependencies": {
-      "@fastify/oauth2@7.8.1": "patches/@fastify__oauth2@7.8.1.patch",
-      "@fastify/csrf-protection@6.4.1": "patches/@fastify__csrf-protection@6.4.1.patch"
-    },
     "peerDependencyRules": {
       "allowedVersions": {
         "react-scrollable-anchor>react": "17",
         "react-scrollable-anchor>react-dom": "17"
       }
-    }
+    },
+    "onlyBuiltDependencies": [
+      "@freecodecamp/ui",
+      "@prisma/client",
+      "@prisma/engines",
+      "core-js",
+      "ejs",
+      "es5-ext",
+      "esbuild",
+      "gatsby",
+      "gatsby-cli",
+      "gatsby-telemetry",
+      "lmdb",
+      "msgpackr-extract",
+      "msw",
+      "nodemon",
+      "prisma",
+      "puppeteer",
+      "sharp"
+    ]
   }
 }

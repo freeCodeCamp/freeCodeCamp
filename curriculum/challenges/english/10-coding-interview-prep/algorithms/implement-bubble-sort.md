@@ -21,13 +21,19 @@ This method requires multiple iterations through the array and for average and w
 `bubbleSort` should be a function.
 
 ```js
-assert(typeof bubbleSort == 'function');
+assert.isFunction(bubbleSort);
 ```
 
 `bubbleSort` should return a sorted array (least to greatest).
 
 ```js
-assert(
+function isSorted(a){
+  for(let i = 0; i < a.length - 1; i++)
+    if(a[i] > a[i + 1])
+      return false;
+  return true;
+}
+assert.isTrue(
   isSorted(
     bubbleSort([
       1,
@@ -82,21 +88,6 @@ assert.sameMembers(
 `bubbleSort` should not use the built-in `.sort()` method.
 
 ```js
-assert.isFalse(isBuiltInSortUsed());
-```
-
-# --seed--
-
-## --after-user-code--
-
-```js
-function isSorted(a){
-  for(let i = 0; i < a.length - 1; i++)
-    if(a[i] > a[i + 1])
-      return false;
-  return true;
-}
-
 function isBuiltInSortUsed(){
   let sortUsed = false;
   const temp = Array.prototype.sort;
@@ -108,7 +99,10 @@ function isBuiltInSortUsed(){
   }
   return sortUsed;
 }
+assert.isFalse(isBuiltInSortUsed());
 ```
+
+# --seed--
 
 ## --seed-contents--
 
