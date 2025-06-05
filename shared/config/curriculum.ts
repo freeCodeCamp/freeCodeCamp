@@ -133,7 +133,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Chinese]: [
     SuperBlocks.CodingInterviewPrep,
@@ -144,7 +145,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.ChineseTraditional]: [
     SuperBlocks.CodingInterviewPrep,
@@ -155,7 +157,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Italian]: [
     SuperBlocks.FoundationalCSharp,
@@ -166,7 +169,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Portuguese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -175,7 +179,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Ukrainian]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -183,7 +188,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese
+    SuperBlocks.A2Chinese,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Japanese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -192,7 +198,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese
+    SuperBlocks.A2Chinese,
+    SuperBlocks.DevPlayground
   ],
   [Languages.German]: [
     SuperBlocks.RelationalDb,
@@ -210,7 +217,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Swahili]: [
     SuperBlocks.DataVis,
@@ -235,7 +243,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Korean]: [
     SuperBlocks.RespWebDesignNew,
@@ -261,7 +270,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.DataVis,
     SuperBlocks.RelationalDb,
-    SuperBlocks.RosettaCode
+    SuperBlocks.RosettaCode,
+    SuperBlocks.DevPlayground
   ]
 };
 
