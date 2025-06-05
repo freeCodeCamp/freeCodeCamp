@@ -1,6 +1,6 @@
 {
   "name": "Build a One-Time Password Generator",
-  "isUpcomingChange": false,
+  "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "lab-one-time-password-generator",
   "superBlock": "full-stack-developer",
