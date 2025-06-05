@@ -14,7 +14,7 @@ The video for this lecture isn't available yet, one will be available soon. Here
 
 Conditional statements, or conditionals, let you control the flow of your program based on whether certain conditions are true or false.
 
-But before we get into all that, let’s go over the basic building blocks of conditional statements, starting with comparison operators. Comparison operators are operators that let you compare two or more values, and return a boolean value.
+But before we get into all that, let's go over the basic building blocks of conditional statements, starting with comparison operators. Comparison operators are operators that let you compare two or more values, and return a boolean value.
 
 In a previous lecture, you learned that booleans are one of the data types in Python, and can only be `True` or `False`.
 
@@ -43,7 +43,7 @@ print(3 <= 4) # True
 
 These operators can be used in conditionals to compare values and run certain code based on whether the conditional evaluates to `True` or `False`.
 
-In Python, the most basic conditional is the `if` statement. Here’s the basic syntax:
+In Python, the most basic conditional is the `if` statement. Here's the basic syntax:
 
 ```python
 if condition:
@@ -75,7 +75,7 @@ if age >= 18:
     print('You are an adult') # Nothing shows up in the terminal
 ```
 
-But what if you also want to print something if `age` is less than `18`? That’s where the `else` clause comes in. The `else` clause runs when the `if` condition is false. Here's the syntax for an `if…else` statement:
+But what if you also want to print something if `age` is less than `18`? That's where the `else` clause comes in. The `else` clause runs when the `if` condition is false. Here's the syntax for an `if…else` statement:
 
 ```python
 if condition:
@@ -175,7 +175,7 @@ else:
    print('It\'s a weekday')
 ```
 
-Here’s another example that shows short-circuiting:
+Here's another example that shows short-circuiting:
 
 ```python
 def truthy():
@@ -217,7 +217,7 @@ condition8 = truthy() or falsy()
 
 The `not` logical operator inverts a boolean value, and makes `True` values `False`, and `False` values `True`.
 
-Here’s an example:
+Here's an example:
 
 ```python
 is_raining = False
