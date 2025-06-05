@@ -558,11 +558,11 @@ How do you position a grid item within a layout defined by `grid-template-areas`
 
 #### --distractors--
 
-By directly defining the item’s size and location within the grid using grid-template-rows and grid-template-columns.
+By directly defining the item's size and location within the grid using `grid-template-rows` and `grid-template-columns`.
 
 ---
 
-By using the grid-area property and specifying both row and column start and end positions.
+By using the `grid-area` property and specifying both row and column start and end positions.
 
 ---
 
@@ -570,7 +570,7 @@ By setting both `grid-area` and explicit pixel coordinates.
 
 #### --answer--
 
-By assigning the named area to the item's grid-area property.
+By assigning the named area to the item's `grid-area` property.
 
 ### --question--
 
@@ -720,7 +720,7 @@ Makes the middle column three times as wide as the others.
 
 ---
 
-Forces all columns to be exactly 1fr wide.
+Forces all columns to be exactly `1fr` wide.
 
 #### --answer--
 
@@ -946,19 +946,19 @@ What will be the result for the following code?
 
 #### --distractors--
 
-The container will have three columns of equal width, and two rows with 150px height each.
+The container will have three columns of equal width, and two rows with `150px` height each.
 
 ---
 
-The container will have three columns, all with 100px width, and two rows with 150px height.
+The container will have three columns, all with `100px` width, and two rows with `150px` height.
 
 ---
 
-The container will have two rows, each with a height of 1fr.
+The container will have two rows, each with a height of `1fr`.
 
 #### --answer--
 
-The container will have three columns: 100px, 1fr and 2fr wide and two rows: one auto and one with 150px height.
+The container will have three columns: 100px, `1fr` and `2fr` wide and two rows: one auto and one with `150px` height.
 
 ### --question--
 
