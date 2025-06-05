@@ -83,7 +83,8 @@
     "playwright:watch": "playwright test --ui-port=0"
   },
   "dependencies": {
-    "dotenv": "16.4.5"
+    "dotenv": "16.4.5",
+    "invariant": "^2.2.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.26.5",
@@ -101,7 +102,7 @@
     "@typescript-eslint/eslint-plugin": "8.24.0",
     "@typescript-eslint/parser": "8.23.0",
     "babel-jest": "29.7.0",
-    "eslint": "9.19.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "10.0.1",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-filenames-simple": "0.9.0",
@@ -124,9 +125,9 @@
     "markdownlint": "0.33.0",
     "npm-run-all2": "5.0.2",
     "prettier": "3.2.5",
-    "prismjs": "1.29.0",
+    "prismjs": "^1.30.0",
     "stylelint": "16.14.1",
-    "tsx": "4.19.1",
+    "tsx": "^4.19.4",
     "typescript": "5.7.3",
     "typescript-eslint": "^8.23.0",
     "webpack-bundle-analyzer": "4.10.1",
