@@ -3870,7 +3870,7 @@
       },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
-        "intro": ["Learn about Classes and Objects in these lectures."]
+        "intro": ["Learn about Classes and Objects in these lectures.Learn about Classes and Objects in these lectures."]
       },
       "workshop-placeholder-classes-and-objects": {
         "title": "Placeholder - waiting for title",
@@ -3900,6 +3900,9 @@
         "intro": [
           "Learn about Understanding Object Oriented Programming and Encapsulation in these lectures."
         ]
+        "intro": [
+          "Learn about Understanding Object Oriented Programming and Encapsulation in these lectures."
+        ]
       },
       "workshop-placeholder-oop-1": {
         "title": "Placeholder - Waiting for title",
@@ -3910,9 +3913,9 @@
         "intro": [""]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
-        "title": "Understanding Inheritance and polymorphism",
+        "title": "Understanding Inheritance and Polymorphism",
         "intro": [
-          "Learn about Understanding Inheritance and polymorphism in these lectures."
+          "Learn about Understanding Inheritance and Polymorphism in these lectures."
         ]
       },
       "workshop-placeholder-oop-2": {
@@ -3926,8 +3929,8 @@
         ]
       },
       "lecture-understanding-abstraction": {
-        "title": "Understanding abstraction",
-        "intro": ["Learn about Understanding abstraction in these lectures."]
+        "title": "Understanding Abstraction",
+        "intro": ["Learn about Understanding Abstraction in these lectures."]
       },
       "workshop-placeholder-oop-3": {
         "title": "Placeholder - Waiting for title",
@@ -3948,6 +3951,10 @@
         ]
       },
       "lecture-working-with-common-data-structures": {
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about Working with Common Data Structures in these lectures."
+        ]
         "title": "Working with Common Data Structures",
         "intro": [
           "Learn about Working with Common Data Structures in these lectures."
@@ -3979,6 +3986,9 @@
       },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
+        "intro": [
+          "Learn about Searching and Sorting Algorithms in these lectures."
+        ]
         "intro": [
           "Learn about Searching and Sorting Algorithms in these lectures."
         ]
@@ -4021,6 +4031,9 @@
         "intro": [
           "Learn about Understanding Graphs and Trees in these lectures."
         ]
+        "intro": [
+          "Learn about Understanding Graphs and Trees in these lectures."
+        ]
       },
       "workshop-shortest-path-algorithm": {
         "title": "Build a Shortest Path Algorithm",
@@ -4053,6 +4066,9 @@
       },
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
+        "intro": [
+          "Learn about Understanding Dynamic Programming in these lectures."
+        ]
         "intro": [
           "Learn about Understanding Dynamic Programming in these lectures."
         ]
