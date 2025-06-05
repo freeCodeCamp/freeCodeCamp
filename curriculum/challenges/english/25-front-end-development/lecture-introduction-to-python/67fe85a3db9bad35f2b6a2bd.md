@@ -2,7 +2,7 @@
 id: 67fe85a3db9bad35f2b6a2bd
 title: How Do Conditional Statements and Logical Operators Work?
 challengeType: 19
-videoId: nVAaxZ34khk
+# videoId: nVAaxZ34khk
 dashedName: how-do-conditional-statements-and-logical-operators-work
 ---
 
