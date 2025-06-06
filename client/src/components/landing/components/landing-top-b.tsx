@@ -32,11 +32,13 @@ function LandingTop(): JSX.Element {
               id='content-start'
               className='ultra-heading'
               data-test-label='landing-header'
-              data-playwright-test-label='landing-big-heading-1'
+              data-playwright-test-label='big-heading-1-b'
             >
               {t('landing.big-heading-1-b')}
             </h1>
-            <p>{t('landing.advance-career')}</p>
+            <p data-playwright-test-label='advance-career'>
+              {t('landing.advance-career')}
+            </p>
             <Spacer size='m' />
 
             <BigCallToAction />
@@ -52,7 +54,7 @@ function LandingTop(): JSX.Element {
         <Row>
           <Col sm={10} smOffset={1} xs={12} className='brands-container'>
             <Spacer size='l' />
-            <p data-playwright-test-label='landing-h2-heading text-center'>
+            <p data-playwright-test-label='graduates-work'>
               <Trans>landing.graduates-work</Trans>
             </p>
             <Spacer size='s' />

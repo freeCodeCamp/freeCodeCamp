@@ -21,11 +21,8 @@ const LogoRow = (): JSX.Element => {
 
   return (
     <>
-      <p
-        className='logo-row-title'
-        data-playwright-test-label='landing-h2-heading-b'
-      >
-        <Trans>landing.h2-heading-b</Trans>
+      <p className='logo-row-title' data-playwright-test-label='h2-heading'>
+        <Trans>landing.h2-heading</Trans>
       </p>
       <div
         className='logo-row'

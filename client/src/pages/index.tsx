@@ -37,7 +37,7 @@ function IndexPage(): JSX.Element {
     return (
       <>
         <SEO title={t('metaTags:title')} />
-        <Landing showLandingPageRedesign={!showLandingPageRedesign} />
+        <Landing showLandingPageRedesign={showLandingPageRedesign} />
       </>
     );
   } else {
