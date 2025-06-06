@@ -3799,9 +3799,9 @@
         "title": "Placeholder - Waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-loops-and-sequences": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "lab-number-pattern-generator": {
+        "title": "Build a Number Pattern Generator",
+        "intro": ["In this lab you will build a number pattern generator."]
       },
       "review-loops-and-sequences": {
         "title": "Loops and Sequences Review",
@@ -3998,10 +3998,7 @@
           "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
         ]
       },
-      "lab-quick-sort": {
-        "title": "Build a Quick Sort",
-        "intro": [""]
-      },
+      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
       "lab-selection-sort": {
         "title": "Implement the Selection Sort Algorithm",
         "intro": [
