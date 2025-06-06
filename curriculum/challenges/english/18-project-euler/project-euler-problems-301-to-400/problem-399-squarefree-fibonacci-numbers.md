@@ -31,7 +31,7 @@ If it happens that the conjecture is false, then the accepted answer to this pro
 `squarefreeFibonacciNumbers()` should return a string.
 
 ```js
-assert(typeof squarefreeFibonacciNumbers() === 'string');
+asset.isString(squarefreeFibonacciNumbers());
 ```
 
 `squarefreeFibonacciNumbers()` should return the string `1508395636674243,6.5e27330467`.

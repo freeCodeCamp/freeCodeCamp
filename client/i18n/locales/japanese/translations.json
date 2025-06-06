@@ -852,6 +852,7 @@
     "edit-my-profile": "プロフィールを編集"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "認定証を獲得するには、まず学問的誠実性ポリシーに同意する必要があります。",
     "really-weird": "予期しない問題が発生しました。この問題が何度も発生するようであれば、https://github.com/freeCodeCamp/freeCodeCamp/issues/new への Issue 登録をご検討ください。",
     "generic-error": "問題が発生しました。お手数ですが、時間をおいて再度お試しください。エラーが解消されない場合には support@freecodecamp.org までお問い合わせください。",

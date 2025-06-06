@@ -26,8 +26,10 @@ export enum SuperBlocks {
   A2English = 'a2-english-for-developers',
   B1English = 'b1-english-for-developers',
   A2Spanish = 'a2-professional-spanish',
+  A2Chinese = 'a2-professional-chinese',
   RosettaCode = 'rosetta-code',
-  PythonForEverybody = 'python-for-everybody'
+  PythonForEverybody = 'python-for-everybody',
+  DevPlayground = 'dev-playground'
 }
 
 /*
@@ -100,7 +102,11 @@ export const superBlockStages: StageMap = {
     SuperBlocks.PythonForEverybody
   ],
   [SuperBlockStage.Next]: [],
-  [SuperBlockStage.Upcoming]: [SuperBlocks.A2Spanish]
+  [SuperBlockStage.Upcoming]: [
+    SuperBlocks.A2Spanish,
+    SuperBlocks.A2Chinese,
+    SuperBlocks.DevPlayground
+  ]
 };
 
 Object.freeze(superBlockStages);
@@ -126,7 +132,9 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.A2Chinese,
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Chinese]: [
     SuperBlocks.CodingInterviewPrep,
@@ -136,7 +144,9 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.A2Chinese,
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.ChineseTraditional]: [
     SuperBlocks.CodingInterviewPrep,
@@ -146,7 +156,9 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.A2Chinese,
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Italian]: [
     SuperBlocks.FoundationalCSharp,
@@ -156,7 +168,9 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.A2Chinese,
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Portuguese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -164,14 +178,18 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.A2Chinese,
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Ukrainian]: [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
-    SuperBlocks.A2Spanish
+    SuperBlocks.A2Spanish,
+    SuperBlocks.A2Chinese,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Japanese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -179,7 +197,9 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
-    SuperBlocks.A2Spanish
+    SuperBlocks.A2Spanish,
+    SuperBlocks.A2Chinese,
+    SuperBlocks.DevPlayground
   ],
   [Languages.German]: [
     SuperBlocks.RelationalDb,
@@ -196,7 +216,9 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.A2Chinese,
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Swahili]: [
     SuperBlocks.DataVis,
@@ -220,7 +242,9 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
-    SuperBlocks.PythonForEverybody
+    SuperBlocks.A2Chinese,
+    SuperBlocks.PythonForEverybody,
+    SuperBlocks.DevPlayground
   ],
   [Languages.Korean]: [
     SuperBlocks.RespWebDesignNew,
@@ -242,10 +266,12 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
+    SuperBlocks.A2Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.DataVis,
     SuperBlocks.RelationalDb,
-    SuperBlocks.RosettaCode
+    SuperBlocks.RosettaCode,
+    SuperBlocks.DevPlayground
   ]
 };
 

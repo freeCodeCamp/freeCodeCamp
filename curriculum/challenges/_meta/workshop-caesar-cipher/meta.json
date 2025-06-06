@@ -1,0 +1,113 @@
+{
+  "name": "Build a Caesar Cipher",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-caesar-cipher",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "680a3d4c065557260de2ff33",
+      "title": "Step 1"
+    },
+    {
+      "id": "680a41ef5bfdc059cfd9d4b5",
+      "title": "Step 2"
+    },
+    {
+      "id": "680a431692a5f863f726c438",
+      "title": "Step 3"
+    },
+    {
+      "id": "680a549f60f5a3fedfc0edd9",
+      "title": "Step 4"
+    },
+    {
+      "id": "680a5e7f3d47715196b12ca0",
+      "title": "Step 5"
+    },
+    {
+      "id": "680a7e200400089967b8b1f4",
+      "title": "Step 6"
+    },
+    {
+      "id": "680a82806c4c6bc3567f2708",
+      "title": "Step 7"
+    },
+    {
+      "id": "680a836235461fce1ff53b3f",
+      "title": "Step 8"
+    },
+    {
+      "id": "6810869355fa2468f9ebaf9c",
+      "title": "Step 9"
+    },
+    {
+      "id": "6810891bd6de8a87a833df42",
+      "title": "Step 10"
+    },
+    {
+      "id": "6818b80519e6c6c47a8bb6e8",
+      "title": "Step 11"
+    },
+    {
+      "id": "6818e9c7c8dc5694e8f64fc3",
+      "title": "Step 12"
+    },
+    {
+      "id": "6818eb3f98c0bca5af7c8d03",
+      "title": "Step 13"
+    },
+    {
+      "id": "6818ed1adc249bb91d373729",
+      "title": "Step 14"
+    },
+    {
+      "id": "6818fcb250f34e62cab32c39",
+      "title": "Step 15"
+    },
+    {
+      "id": "6819bc0637b80256a33adccc",
+      "title": "Step 16"
+    },
+    {
+      "id": "6819be9055828d65c813eec5",
+      "title": "Step 17"
+    },
+    {
+      "id": "6819c5c9faf2548e556163d5",
+      "title": "Step 18"
+    },
+    {
+      "id": "6819c7beb4a8289c2b4f24d5",
+      "title": "Step 19"
+    },
+    {
+      "id": "6819ca464db219ab86f37dc4",
+      "title": "Step 20"
+    },
+    {
+      "id": "6819cf38880d8cc9b9f6af7a",
+      "title": "Step 21"
+    },
+    {
+      "id": "681a1d60e037127e7c8e0230",
+      "title": "Step 22"
+    },
+    {
+      "id": "681a2a6cf95e82ca30866364",
+      "title": "Step 23"
+    },
+    {
+      "id": "681a2e35c406ade2f0a5f9b2",
+      "title": "Step 24"
+    },
+    {
+      "id": "681a44f4c3235f7d8f428545",
+      "title": "Step 25"
+    }
+  ],
+  "blockLayout": "challenge-grid",
+  "blockType": "workshop",
+  "helpCategory": "Python"
+}

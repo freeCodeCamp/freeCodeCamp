@@ -1,4 +1,4 @@
-FROM node:20-bookworm AS builder
+FROM node:22-bookworm AS builder
 # global installs need root permissions, so have to happen before we switch to
 # the node user
 RUN npm i -g pnpm@10
@@ -11,8 +11,6 @@ COPY --chown=node:node client/ client/
 COPY --chown=node:node shared/ shared/
 COPY --chown=node:node tools/ tools/
 COPY --chown=node:node curriculum/ curriculum/
-# TODO: Remove once `@fastify/oauth2` is fixed
-COPY --chown=node:node patches/ patches/
 
 ARG HOME_LOCATION
 ARG API_LOCATION
@@ -36,7 +34,7 @@ ARG FREECODECAMP_NODE_ENV
 RUN pnpm install --frozen-lockfile
 RUN pnpm build:client
 
-FROM node:20-alpine
+FROM node:22-alpine
 RUN npm i -g serve@13 pm2@4
 USER node
 WORKDIR /home/node/client
