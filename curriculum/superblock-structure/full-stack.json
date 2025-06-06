@@ -1060,11 +1060,19 @@
             {
               "dashedName": "lecture-working-with-state-and-responding-to-events-in-react"
             },
-            { "dashedName": "workshop-toggle-text-app" },
+            {
+              "dashedName": "workshop-toggle-text-app"
+            },
+            {
+              "dashedName": "lab-color-picker"
+            },
             {
               "dashedName": "lecture-understanding-effects-and-referencing-values-in-react"
             },
             { "dashedName": "workshop-fruit-search-app" },
+            {
+              "dashedName": "lab-one-time-password-generator"
+            },
             { "dashedName": "lab-color-picker" },
             {
               "dashedName": "review-react-state-and-hooks"
