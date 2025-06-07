@@ -1294,8 +1294,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     return challengeIsComplete();
   };
 
+  const challengeFile = props.challengeFiles?.find(
+    challengeFile => challengeFile.fileKey === props.fileKey
+  );
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
+      {challengeFile && (
+        <div className='editor-file-name'>{`${challengeFile.name}.${challengeFile.ext}`}</div>
+      )}
       <span className='notranslate'>
         <MonacoEditor
           editorDidMount={editorDidMount}
