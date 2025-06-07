@@ -852,6 +852,7 @@
     "edit-my-profile": "编辑我的个人资料"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "在申请认证前，你必须先同意我们的《学术诚信条例》",
     "really-weird": "出现了一些奇怪的情况。如果再出现这种情况，请考虑在 https://github.com/freeCodeCamp/freeCodeCamp/issues/new 提交 issue。",
     "generic-error": "出错了，请稍后再试。如果错误仍然存在，请联系 support@freecodecamp.org。",
