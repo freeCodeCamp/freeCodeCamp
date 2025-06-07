@@ -46,7 +46,7 @@ If you're wondering what computed values and function references are, computed v
 
 Let's see how to use the `useMemo` hook first. Here's the basic syntax of the `useMemo` hook:
 
-```jsx
+```js
 const memoizedValue = useMemo(
  function () {
    return computeExpensiveValue(a, b);

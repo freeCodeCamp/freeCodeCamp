@@ -26,7 +26,7 @@ The `useOptimistic` hook helps manage "optimistic updates" in the UI, a strategy
 
 Here's the basic syntax of the `useOptimistic` hook:
 
-```jsx
+```js
 const [optimisticState, addOptimistic] = useOptimistic(actualState, updateFunction);
 ```
 
@@ -179,7 +179,7 @@ There are two things we need to do to address those issues.
 
 First, we need to import `startTransition` from React and use it to wrap the line `addOptimisticTask(formData.get('task'))`:
 
-```jsx
+```js
 startTransition(() => {
   addOptimisticTask(formData.get("task"));
 });
@@ -292,7 +292,7 @@ One updates the UI before the server even knows about the request.
 
 What does `addOptimistic` do in the `useOptimistic` hook syntax below?
 
-```jsx
+```js
 const [optimisticState, addOptimistic] = useOptimistic(actualState, updateFunction);
 ```
 
