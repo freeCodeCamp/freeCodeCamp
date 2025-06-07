@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import ObjectID from 'bson-objectid';
 import matter from 'gray-matter';
+import { challengeTypes } from '../../shared/config/challenge-types';
 import { parseMDSync } from '../challenge-parser/parser';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
 import { getProjectPath } from './helpers/get-project-info';
@@ -21,7 +22,6 @@ interface Options {
 }
 
 interface QuizOptions {
-  challengeType: string;
   projectPath?: string;
   title: string;
   dashedName: string;
@@ -60,13 +60,13 @@ const createChallengeFile = (
 };
 
 const createQuizFile = ({
-  challengeType,
   projectPath = getProjectPath(),
   title,
   dashedName,
   questionCount
 }: QuizOptions): ObjectID => {
   const challengeId = new ObjectID();
+  const challengeType = challengeTypes.quiz.toString();
   const template = getTemplate(challengeType);
 
   const quizText = template({
@@ -78,6 +78,26 @@ const createQuizFile = ({
   });
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, quizText);
+  return challengeId;
+};
+
+const createDialogueFile = ({
+  projectPath
+}: {
+  projectPath: string;
+}): ObjectID => {
+  const challengeId = new ObjectID();
+  const challengeType = challengeTypes.dialogue.toString();
+  const template = getTemplate(challengeType);
+
+  const dialogueText = template({
+    challengeId,
+    challengeType,
+    title: "Dialogue 1: I'm Tom",
+    dashedName: 'dialogue-1-im-tom'
+  });
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, dialogueText);
   return challengeId;
 };
 
@@ -247,6 +267,7 @@ const validateBlockName = (block: string): boolean | string => {
 
 export {
   createStepFile,
+  createDialogueFile,
   createChallengeFile,
   updateStepTitles,
   updateTaskMeta,

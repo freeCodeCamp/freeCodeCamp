@@ -5,17 +5,15 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
-import { SuperBlocks } from '../../shared/config/curriculum';
-import { createQuizFile, validateBlockName } from './utils';
+import {
+  SuperBlocks,
+  languageSuperBlocks
+} from '../../shared/config/curriculum';
+import { createDialogueFile, validateBlockName } from './utils';
 import { getSuperBlockSubPath } from './fs-utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 
-const helpCategories = [
-  'HTML-CSS',
-  'JavaScript',
-  'Backend Development',
-  'Python'
-] as const;
+const helpCategories = ['English'] as const;
 
 type BlockInfo = {
   title: string;
@@ -28,19 +26,17 @@ type SuperBlockInfo = {
 
 type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
 
-interface CreateQuizArgs {
+interface CreateBlockArgs {
   superBlock: SuperBlocks;
   block: string;
   helpCategory: string;
   title?: string;
-  questionCount: number;
 }
 
-async function createQuiz(
+async function createLanguageBlock(
   superBlock: SuperBlocks,
   block: string,
   helpCategory: string,
-  questionCount: number,
   title?: string
 ) {
   if (!title) {
@@ -48,12 +44,7 @@ async function createQuiz(
   }
   void updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createQuizChallenge(
-    superBlock,
-    block,
-    title,
-    questionCount
-  );
+  const challengeId = await createDialogueChallenge(superBlock, block);
   void createMetaJson(superBlock, block, title, helpCategory, challengeId);
   // TODO: remove once we stop relying on markdown in the client.
   void createIntroMD(superBlock, block, title);
@@ -88,13 +79,15 @@ async function createMetaJson(
   challengeId: ObjectID
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
-  const newMeta = getBaseMeta('Quiz');
+  const newMeta = getBaseMeta('Language');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
   newMeta.superBlock = superBlock;
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  newMeta.challengeOrder = [{ id: challengeId.toString(), title: title }];
+  newMeta.challengeOrder = [
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+    { id: challengeId.toString(), title: "Dialogue 1: I'm Tom" }
+  ];
   const newMetaDir = path.resolve(metaDir, block);
   if (!existsSync(newMetaDir)) {
     await withTrace(fs.mkdir, newMetaDir);
@@ -129,11 +122,9 @@ This page is for the ${title}
   void withTrace(fs.writeFile, filePath, introMD, { encoding: 'utf8' });
 }
 
-async function createQuizChallenge(
+async function createDialogueChallenge(
   superBlock: SuperBlocks,
-  block: string,
-  title: string,
-  questionCount: number
+  block: string
 ): Promise<ObjectID> {
   const superBlockSubPath = getSuperBlockSubPath(superBlock);
   const newChallengeDir = path.resolve(
@@ -143,13 +134,11 @@ async function createQuizChallenge(
   if (!existsSync(newChallengeDir)) {
     await withTrace(fs.mkdir, newChallengeDir);
   }
-  return createQuizFile({
-    projectPath: newChallengeDir + '/',
-    title: title,
-    dashedName: block,
-    questionCount: questionCount
+  return createDialogueFile({
+    projectPath: newChallengeDir + '/'
   });
 }
+
 function parseJson<JsonSchema>(filePath: string) {
   return withTrace(fs.readFile, filePath, 'utf8').then(
     // unfortunately, withTrace does not correctly infer that the third argument
@@ -174,9 +163,9 @@ void prompt([
   {
     name: 'superBlock',
     message: 'Which certification does this belong to?',
-    default: SuperBlocks.FullStackDeveloper,
+    default: SuperBlocks.A2English,
     type: 'list',
-    choices: Object.values(SuperBlocks)
+    choices: Object.values(languageSuperBlocks)
   },
   {
     name: 'block',
@@ -193,27 +182,14 @@ void prompt([
   {
     name: 'helpCategory',
     message: 'Choose a help category',
-    default: 'HTML-CSS',
+    default: 'English',
     type: 'list',
     choices: helpCategories
-  },
-  {
-    name: 'questionCount',
-    message: 'Should this quiz have either ten or twenty questions?',
-    default: 20,
-    type: 'list',
-    choices: [20, 10]
   }
 ])
   .then(
-    async ({
-      superBlock,
-      block,
-      title,
-      helpCategory,
-      questionCount
-    }: CreateQuizArgs) =>
-      await createQuiz(superBlock, block, helpCategory, questionCount, title)
+    async ({ superBlock, block, helpCategory, title }: CreateBlockArgs) =>
+      await createLanguageBlock(superBlock, block, helpCategory, title)
   )
   .then(() =>
     console.log(
