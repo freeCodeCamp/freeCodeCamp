@@ -27,37 +27,32 @@ assert(typeof towerOfHanoi === 'function');
 `towerOfHanoi(3, ...)` should return 7 moves.
 
 ```js
+const res3 = towerOfHanoi(3, 'A', 'B', 'C');
 assert(res3.length === 7);
 ```
 
 `towerOfHanoi(3, 'A', 'B', 'C')` should return `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']]`.
 
 ```js
+const res3Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 'A'], ['C', 'B'], ['A', 'B']];
 assert.deepEqual(towerOfHanoi(3, 'A', 'B', 'C'), res3Moves);
 ```
 
 `towerOfHanoi(5, "X", "Y", "Z")` 10th move should be Y -> X.
 
 ```js
+const res5 = towerOfHanoi(5, 'X', 'Y', 'Z');
 assert.deepEqual(res5[9], ['Y', 'X']);
 ```
 
 `towerOfHanoi(7, 'A', 'B', 'C')` first ten moves should be `[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B'], ['A','C'], ['B','C'], ['B','A']]`
 
 ```js
+const res7First10Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 'A'], ['C', 'B'], ['A', 'B'], ['A', 'C'], ['B', 'C'], ['B', 'A']];
 assert.deepEqual(towerOfHanoi(7, 'A', 'B', 'C').slice(0, 10), res7First10Moves);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const res3 = towerOfHanoi(3, 'A', 'B', 'C');
-const res3Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 'A'], ['C', 'B'], ['A', 'B']];
-const res5 = towerOfHanoi(5, 'X', 'Y', 'Z');
-const res7First10Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 'A'], ['C', 'B'], ['A', 'B'], ['A', 'C'], ['B', 'C'], ['B', 'A']];
-```
 
 ## --seed-contents--
 

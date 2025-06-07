@@ -47,36 +47,28 @@ assert.equal(typeof ZigZagMatrix(1)[0], 'object');
 ZigZagMatrix(1) should return \[[0]].
 
 ```js
-assert.deepEqual(ZigZagMatrix(1), zm1);
+assert.deepEqual(ZigZagMatrix(1), [[0]]);
 ```
 
 ZigZagMatrix(2) should return \[[0, 1], [2, 3]].
 
 ```js
-assert.deepEqual(ZigZagMatrix(2), zm2);
+assert.deepEqual(ZigZagMatrix(2), [[0, 1], [2, 3]]);
 ```
 
 ZigZagMatrix(5) should return specified matrix.
 
 ```js
-assert.deepEqual(ZigZagMatrix(5), zm5);
-```
-
-# --seed--
-
-## --after-user-code--
-
-```js
-const zm1 = [[0]];
-const zm2 = [[0, 1], [2, 3]];
-const zm5 = [
+assert.deepEqual(ZigZagMatrix(5), [
   [0, 1, 5, 6, 14],
   [2, 4, 7, 13, 15],
   [3, 8, 12, 16, 21],
   [9, 11, 17, 20, 22],
   [10, 18, 19, 23, 24]
-];
+]);
 ```
+
+# --seed--
 
 ## --seed-contents--
 
