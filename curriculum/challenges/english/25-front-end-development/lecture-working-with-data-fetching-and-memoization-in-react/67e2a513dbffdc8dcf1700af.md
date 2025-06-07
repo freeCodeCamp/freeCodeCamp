@@ -26,7 +26,7 @@ The `useOptimistic` hook helps manage "optimistic updates" in the UI, a strategy
 
 Here's the basic syntax of the `useOptimistic` hook:
 
-```js
+```jsx
 const [optimisticState, addOptimistic] = useOptimistic(actualState, updateFunction);
 ```
 
@@ -58,7 +58,7 @@ export async function saveTask(task) {
 
 Here's the code that sets up the `useOptimistic` hook by importing and initializing it, with an `handleSubmit` function that sends an input to the action:
 
-```js
+```jsx
 "use client";
 
 import { useOptimistic } from "react";
@@ -91,7 +91,7 @@ When the form is submitted, the `handleSubmit` function extracts the task and ad
 
 Here's the `TaskList` component:
 
-```js
+```jsx
 "use client";
 import { useOptimistic, startTransition } from "react";
 
@@ -150,7 +150,7 @@ Here, we are looping through the `optimisticTask` parameter to display the task.
 
 Here's the `Task` component that manages the state for the form. It calls the `saveTask` function from the action so it can add the task, and appends the new task once it is received by the server:
 
-```js
+```jsx
 "use client";
 
 import { useState } from "react";
@@ -179,7 +179,7 @@ There are two things we need to do to address those issues.
 
 First, we need to import `startTransition` from React and use it to wrap the line `addOptimisticTask(formData.get('task'))`:
 
-```js
+```jsx
 startTransition(() => {
   addOptimisticTask(formData.get("task"));
 });
@@ -292,7 +292,7 @@ One updates the UI before the server even knows about the request.
 
 What does `addOptimistic` do in the `useOptimistic` hook syntax below?
 
-```js
+```jsx
 const [optimisticState, addOptimistic] = useOptimistic(actualState, updateFunction);
 ```
 
