@@ -171,9 +171,9 @@ const ShowQuiz = ({
       return {
         question: (
           <PrismFormatted 
-   className='quiz-question-label' 
-   text={question.text}
- />
+             className='quiz-question-label' 
+             text={question.text}
+          />
         ),
         answers: shuffleArray([...distractors, answer]),
         correctAnswer: answer.value
