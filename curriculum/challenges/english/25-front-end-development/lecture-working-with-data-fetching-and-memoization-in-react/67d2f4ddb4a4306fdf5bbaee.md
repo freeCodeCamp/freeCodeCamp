@@ -59,7 +59,7 @@ You can see all that's needed is to wrap the `useMemo` hook around the function.
 
 This `ExpensiveSquare` component will receive a `num` prop which it will use to calculate the square:
 
-```js
+```jsx
 function ExpensiveSquare({ num }) {
  function calculateSquare(n) {
    console.log("Calculating square...");
@@ -78,7 +78,7 @@ export default ExpensiveSquare;
 
 Here's the `App` component where the `ExpensiveSquare` is being used:
 
-```js
+```jsx
 import { useState, useEffect } from "react";
 import ExpensiveSquare from "./components/ExpensiveSquare";
 
@@ -107,7 +107,7 @@ The `timer` in the `useEffect`, running every second, will make the `calculateSq
 
 To solve this problem, we can use the `useMemo` hook by wrapping the function call in it and specifying the `num` variable as the dependency:
 
-```js
+```jsx
 // import the useMemo hook
 import { useMemo } from "react";
 
