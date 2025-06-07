@@ -1,8 +1,8 @@
 ---
 id: 6840ad915ebc0fbbb9daf0b4
-title: Task 2
+title: Task 3
 challengeType: 19
-dashedName: task-2
+dashedName: task-3
 ---
 
 <!-- (Audio) Mateo: Hola, Marisol. ¿Cómo estás esta mañana? -->
@@ -35,7 +35,7 @@ Mateo is not asking about her current activity.
 
 ---
 
-How she is feeling
+How she is doing
 
 ---
 
@@ -51,7 +51,7 @@ Mateo does not ask about her destination.
 
 # --explanation--
 
-The phrase `¿Cómo estás?` means "How are you?" or "How are you feeling?" in English. It is used to ask about someone's emotional or physical state, not about the time, actions, or locations.
+The phrase `¿Cómo estás?` means "How are you?" in English. It is used to ask about someone's emotional or physical state, not about the time, actions, or locations.
 
 # --scene--
 
