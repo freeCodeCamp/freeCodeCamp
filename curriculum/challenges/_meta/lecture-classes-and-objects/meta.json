@@ -1,0 +1,10 @@
+{
+  "name": "Classes and Objects",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-classes-and-objects",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "68420bd261d0d35f61922d4b", "title": "Step 1" }],
+  "helpCategory": "Python"
+}
