@@ -170,12 +170,10 @@ const ShowQuiz = ({
 
       return {
         question: (
-          <PrismFormatted
-            className='quiz-question-label'
-            text={removeParagraphTags(question.text)}
-            useSpan
-            noAria
-          />
+          <PrismFormatted 
+   className='quiz-question-label' 
+   text={question.text}
+ />
         ),
         answers: shuffleArray([...distractors, answer]),
         correctAnswer: answer.value
