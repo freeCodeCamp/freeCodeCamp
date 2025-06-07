@@ -419,6 +419,6 @@ function TopContributorBadgeEmblem(
   );
 }
 
-TopContributorBadgeEmblem.displayName = 'TopContibutorBadgeEmblem';
+TopContributorBadgeEmblem.displayName = 'TopContributorBadgeEmblem';
 
 export default TopContributorBadgeEmblem;
