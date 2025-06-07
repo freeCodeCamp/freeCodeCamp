@@ -25,18 +25,18 @@ Remove the `@freecodecamp/example` package from your dependencies.
 `"dependencies"` should not include `"@freecodecamp/example"`.
 
 ```js
-  $.get(code + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
+fetch(code + '/_api/package.json')
+  .then(response => response.json())
+  .then(
+    data => {
       assert.notProperty(
-        packJson.dependencies,
+        data.dependencies,
         '@freecodecamp/example',
         '"dependencies" still includes "@freecodecamp/example"'
       );
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
+    error => {
+      throw new Error(error.message || error.responseText);
     }
   );
 ```
-

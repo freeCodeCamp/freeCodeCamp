@@ -36,14 +36,14 @@ Add your name as the `author` of the project in the `package.json` file.
 `package.json` should have a valid "author" key
 
 ```js
-  $.get(code + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert(packJson.author, '"author" is missing');
+fetch(code + '/_api/package.json')
+  .then(response => response.json())
+  .then(
+    data => {
+      assert.exists(data.author, '"author" is missing');
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
+    error => {
+      throw new Error(error.message || error.responseText);
     }
   );
 ```
-
