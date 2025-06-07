@@ -63,18 +63,6 @@ assert(/myStr\s*=/.test(__helpers.removeJSComments(code)));
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(){
-  if(typeof myStr === 'string') {
-    return 'myStr = "' + myStr + '"';
-  } else {
-    return 'myStr is not a string';
-  }
-})();
-```
-
 ## --seed-contents--
 
 ```js

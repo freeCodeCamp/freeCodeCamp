@@ -31,32 +31,10 @@ Add `["Paul", 35]` to the beginning of the `myArray` variable using `unshift()`.
 `myArray` should now have `[["Paul", 35], ["dog", 3]]`.
 
 ```js
-assert(
-  (function (d) {
-    if (
-      typeof d[0] === 'object' &&
-      d[0][0] == 'Paul' &&
-      d[0][1] === 35 &&
-      d[1][0] != undefined &&
-      d[1][0] == 'dog' &&
-      d[1][1] != undefined &&
-      d[1][1] == 3
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  })(myArray)
-);
+assert.sameDeepOrderedMembers(myArray, [["Paul", 35], ["dog", 3]]);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);
-```
 
 ## --seed-contents--
 

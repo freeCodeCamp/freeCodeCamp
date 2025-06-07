@@ -35,40 +35,34 @@ Read in the property values of `testObj` using dot notation. Set the variable `h
 `hatValue` should be a string
 
 ```js
-assert(typeof hatValue === 'string');
+assert.isString(hatValue);
 ```
 
 The value of `hatValue` should be the string `ballcap`
 
 ```js
-assert(hatValue === 'ballcap');
+assert.strictEqual(hatValue, 'ballcap');
 ```
 
 `shirtValue` should be a string
 
 ```js
-assert(typeof shirtValue === 'string');
+assert.isString(shirtValue, 'string');
 ```
 
 The value of `shirtValue` should be the string `jersey`
 
 ```js
-assert(shirtValue === 'jersey');
+assert.strictEqual(shirtValue, 'jersey');
 ```
 
 You should use dot notation twice
 
 ```js
-assert(__helpers.removeJSComments(code).match(/testObj\.\w+/g).length > 1);
+assert.isAbove(__helpers.removeJSComments(code).match(/testObj\.\w+/g).length, 1);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(a,b) { return "hatValue = '" + a + "', shirtValue = '" + b + "'"; })(hatValue,shirtValue);
-```
 
 ## --seed-contents--
 

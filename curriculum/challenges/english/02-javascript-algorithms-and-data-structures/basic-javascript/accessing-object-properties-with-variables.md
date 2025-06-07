@@ -37,46 +37,40 @@ Set the `playerNumber` variable to `16`. Then, use the variable to look up the p
 `playerNumber` should be a number
 
 ```js
-assert(typeof playerNumber === 'number');
+assert.isNumber(playerNumber);
 ```
 
 The variable `player` should be a string
 
 ```js
-assert(typeof player === 'string');
+assert.isString(player);
 ```
 
 The value of `player` should be the string `Montana`
 
 ```js
-assert(player === 'Montana');
+assert.strictEqual(player, 'Montana');
 ```
 
 You should use bracket notation to access `testObj`
 
 ```js
-assert(/testObj\s*?\[.*?\]/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /testObj\s*?\[.*?\]/);
 ```
 
 You should not assign the value `Montana` to the variable `player` directly.
 
 ```js
-assert(!__helpers.removeJSComments(code).match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
+assert.notMatch(__helpers.removeJSComments(code), /player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi);
 ```
 
 You should be using the variable `playerNumber` in your bracket notation
 
 ```js
-assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /testObj\s*?\[\s*playerNumber\s*\]/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-if(typeof player !== "undefined"){(function(v){return v;})(player);}
-```
 
 ## --seed-contents--
 
