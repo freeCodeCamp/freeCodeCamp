@@ -19,13 +19,13 @@ What is the `n`th lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7
 `lexicographicPermutations(699999)` should return a number.
 
 ```js
-assert(typeof lexicographicPermutations(699999) === 'number');
+assert.isNumber(lexicographicPermutations(699999));
 ```
 
 `lexicographicPermutations(699999)` should return 1938246570.
 
 ```js
-assert(lexicographicPermutations(699999) == 1938246570);
+assert.strictEqual(lexicographicPermutations(699999), 1938246570);
 ```
 
 `lexicographicPermutations(899999)` should return 2536987410.
@@ -37,13 +37,13 @@ assert(lexicographicPermutations(899999) == 2536987410);
 `lexicographicPermutations(900000)` should return 2537014689.
 
 ```js
-assert(lexicographicPermutations(900000) == 2537014689);
+assert.strictEqual(lexicographicPermutations(900000), 2537014689);
 ```
 
 `lexicographicPermutations(999999)` should return 2783915460.
 
 ```js
-assert(lexicographicPermutations(999999) == 2783915460);
+assert.strictEqual(lexicographicPermutations(999999), 2783915460);
 ```
 
 # --seed--
