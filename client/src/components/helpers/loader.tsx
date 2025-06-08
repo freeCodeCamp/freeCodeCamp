@@ -31,10 +31,10 @@ function Loader({
       return () => clearTimeout(timerId);
     }
   }, [messageDelay]);
-
+  const currentTheme = localStorage.getItem('theme');
   return (
     <div
-      className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''}`}
+      className={`${currentTheme === 'dark' ? 'dark-palette' : 'light-palette'} fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''}`}
       data-testid='fcc-loader'
     >
       {showSpinner && <Spinner name='line-scale-pulse-out' />}

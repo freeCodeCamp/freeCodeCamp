@@ -15,8 +15,14 @@
 
 .fcc-loader.full-screen-wrapper {
   height: calc(100vh - var(--header-height, 0px));
+  background-color: var(--secondary-background);
 }
 
 .fcc-loader.full-screen-wrapper .sk-spinner {
   transform: scale(2);
+}
+
+p
+{
+  color: var(--secondary-color);
 }
