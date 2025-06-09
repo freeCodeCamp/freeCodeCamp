@@ -21,7 +21,7 @@ What fraction of the area is not covered by circles after `n` iterations? Give y
 `iterativeCirclePacking(10)` should return a number.
 
 ```js
-assert(typeof iterativeCirclePacking(10) === 'number');
+assert.isNumber(iterativeCirclePacking(10));
 ```
 
 `iterativeCirclePacking(10)` should return `0.00396087`.

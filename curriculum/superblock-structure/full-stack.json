@@ -123,12 +123,6 @@
               "dashedName": "review-html"
             }
           ]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-html",
-          "blocks": []
         }
       ]
     },
@@ -513,12 +507,6 @@
               "dashedName": "review-css"
             }
           ]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-css",
-          "blocks": []
         }
       ]
     },
@@ -625,6 +613,9 @@
               "dashedName": "lab-leap-year-calculator"
             },
             {
+              "dashedName": "lab-truncate-string"
+            },
+            {
               "dashedName": "review-javascript-functions"
             },
             {
@@ -702,6 +693,9 @@
           "blocks": [
             {
               "dashedName": "lecture-understanding-core-javascript-fundamentals"
+            },
+            {
+              "dashedName": "lab-slice-and-splice"
             },
             {
               "dashedName": "lab-pyramid-generator"
@@ -1036,12 +1030,6 @@
               "dashedName": "review-javascript"
             }
           ]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-javascript",
-          "blocks": []
         }
       ]
     },
@@ -1088,6 +1076,7 @@
             {
               "dashedName": "lecture-understanding-effects-and-referencing-values-in-react"
             },
+            { "dashedName": "workshop-fruit-search-app" },
             { "dashedName": "lab-color-picker" },
             {
               "dashedName": "review-react-state-and-hooks"
@@ -1106,6 +1095,9 @@
             },
             {
               "dashedName": "lecture-working-with-data-fetching-and-memoization-in-react"
+            },
+            {
+              "dashedName": "workshop-shopping-list-app"
             },
             {
               "dashedName": "lab-currency-converter"
@@ -1190,135 +1182,6 @@
           "blocks": [
             {
               "dashedName": "review-front-end-libraries"
-            }
-          ]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-front-end-libraries",
-          "blocks": []
-        }
-      ]
-    },
-    {
-      "dashedName": "relational-databases",
-      "comingSoon": true,
-      "modules": [
-        {
-          "dashedName": "bash-fundamentals",
-          "blocks": [
-            {
-              "dashedName": "workshop-bash-boilerplate"
-            },
-            {
-              "dashedName": "review-bash-commands"
-            },
-            {
-              "dashedName": "quiz-bash-commands"
-            }
-          ]
-        },
-        {
-          "dashedName": "relational-databases",
-          "blocks": [
-            {
-              "dashedName": "workshop-database-of-video-game-characters"
-            },
-            {
-              "dashedName": "lab-celestial-bodies-database"
-            },
-            {
-              "dashedName": "review-relational-database"
-            },
-            {
-              "dashedName": "quiz-relational-database"
-            }
-          ]
-        },
-        {
-          "dashedName": "bash-scripting",
-          "blocks": [
-            {
-              "dashedName": "workshop-bash-five-programs"
-            },
-            {
-              "dashedName": "review-bash-scripting"
-            },
-            {
-              "dashedName": "quiz-bash-scripting"
-            }
-          ]
-        },
-        {
-          "dashedName": "sql-and-bash",
-          "blocks": [
-            {
-              "dashedName": "workshop-sql-student-database-part-1"
-            },
-            {
-              "dashedName": "workshop-sql-student-database-part-2"
-            },
-            {
-              "dashedName": "lab-world-cup-database"
-            },
-            {
-              "dashedName": "workshop-kitty-ipsum-translator"
-            },
-            {
-              "dashedName": "workshop-bike-rental-shop"
-            },
-            {
-              "dashedName": "lab-salon-appointment-scheduler"
-            },
-            {
-              "dashedName": "review-bash-and-sql"
-            },
-            {
-              "dashedName": "quiz-bash-and-sql"
-            }
-          ]
-        },
-        {
-          "dashedName": "nano",
-          "blocks": [
-            {
-              "dashedName": "workshop-castle"
-            },
-            {
-              "dashedName": "review-nano"
-            },
-            {
-              "dashedName": "quiz-nano"
-            }
-          ]
-        },
-        {
-          "dashedName": "git",
-          "blocks": [
-            {
-              "dashedName": "workshop-sql-reference-object"
-            },
-            {
-              "dashedName": "lab-periodic-table-database"
-            },
-            {
-              "dashedName": "lab-number-guessing-game"
-            },
-            {
-              "dashedName": "review-git"
-            },
-            {
-              "dashedName": "quiz-git"
-            }
-          ]
-        },
-        {
-          "moduleType": "review",
-          "dashedName": "review-relational-databases",
-          "blocks": [
-            {
-              "dashedName": "review-relational-databases"
             }
           ]
         }
@@ -1447,12 +1310,129 @@
           "moduleType": "review",
           "dashedName": "review-python",
           "blocks": [{ "dashedName": "review-python" }]
+        }
+      ]
+    },
+    {
+      "dashedName": "relational-databases",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "bash-fundamentals",
+          "blocks": [
+            {
+              "dashedName": "workshop-bash-boilerplate"
+            },
+            {
+              "dashedName": "review-bash-commands"
+            },
+            {
+              "dashedName": "quiz-bash-commands"
+            }
+          ]
         },
         {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-python",
-          "blocks": []
+          "dashedName": "relational-databases",
+          "blocks": [
+            {
+              "dashedName": "workshop-database-of-video-game-characters"
+            },
+            {
+              "dashedName": "lab-celestial-bodies-database"
+            },
+            {
+              "dashedName": "review-relational-database"
+            },
+            {
+              "dashedName": "quiz-relational-database"
+            }
+          ]
+        },
+        {
+          "dashedName": "bash-scripting",
+          "blocks": [
+            {
+              "dashedName": "workshop-bash-five-programs"
+            },
+            {
+              "dashedName": "review-bash-scripting"
+            },
+            {
+              "dashedName": "quiz-bash-scripting"
+            }
+          ]
+        },
+        {
+          "dashedName": "sql-and-bash",
+          "blocks": [
+            {
+              "dashedName": "workshop-sql-student-database-part-1"
+            },
+            {
+              "dashedName": "workshop-sql-student-database-part-2"
+            },
+            {
+              "dashedName": "lab-world-cup-database"
+            },
+            {
+              "dashedName": "workshop-kitty-ipsum-translator"
+            },
+            {
+              "dashedName": "workshop-bike-rental-shop"
+            },
+            {
+              "dashedName": "lab-salon-appointment-scheduler"
+            },
+            {
+              "dashedName": "review-bash-and-sql"
+            },
+            {
+              "dashedName": "quiz-bash-and-sql"
+            }
+          ]
+        },
+        {
+          "dashedName": "nano",
+          "blocks": [
+            {
+              "dashedName": "workshop-castle"
+            },
+            {
+              "dashedName": "review-nano"
+            },
+            {
+              "dashedName": "quiz-nano"
+            }
+          ]
+        },
+        {
+          "dashedName": "git",
+          "blocks": [
+            {
+              "dashedName": "workshop-sql-reference-object"
+            },
+            {
+              "dashedName": "lab-periodic-table-database"
+            },
+            {
+              "dashedName": "lab-number-guessing-game"
+            },
+            {
+              "dashedName": "review-git"
+            },
+            {
+              "dashedName": "quiz-git"
+            }
+          ]
+        },
+        {
+          "moduleType": "review",
+          "dashedName": "review-relational-databases",
+          "blocks": [
+            {
+              "dashedName": "review-relational-databases"
+            }
+          ]
         }
       ]
     },

@@ -1,0 +1,57 @@
+---
+id: 6569b19d31a09b65b4bc390a
+title: Step 17
+challengeType: 20
+dashedName: step-17
+---
+
+# --description--
+
+Still within the `while` loop, increment the value of `left_array_index` by 1.
+
+# --hints--
+
+You should increment the current value of `left_array_index` by 1 within the `while` loop. Note that the increment should be done after assigning the left part element to the sorted array.
+
+```js
+({ test: () => assert(runPython(`
+    cond = _Node(_code).find_function("merge_sort").find_whiles()[1].find_body()
+    
+    cond.is_ordered("array[sorted_index] = left_part[left_array_index]", "left_array_index += 1") or cond.is_ordered("array[sorted_index] = left_part[left_array_index]", "left_array_index = left_array_index + 1") or cond.is_ordered("array[sorted_index] = left_part[left_array_index]", "left_array_index = 1 + left_array_index") 
+    `))
+})
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+def merge_sort(array):
+    
+    middle_point = len(array) // 2
+    left_part = array[:middle_point]
+    right_part = array[middle_point:]
+
+    merge_sort(left_part)
+    merge_sort(right_part)
+
+    left_array_index = 0
+    right_array_index = 0
+    sorted_index = 0
+
+    while left_array_index < len(left_part) and right_array_index < len(right_part):
+        if left_part[left_array_index] < right_part[right_array_index]:
+            array[sorted_index] = left_part[left_array_index]
+            left_array_index += 1
+        else:
+            array[sorted_index] = right_part[right_array_index]
+            right_array_index += 1
+        sorted_index += 1
+        
+--fcc-editable-region--
+    while left_array_index < len(left_part):
+        array[sorted_index] = left_part[left_array_index]
+
+--fcc-editable-region--
+```
