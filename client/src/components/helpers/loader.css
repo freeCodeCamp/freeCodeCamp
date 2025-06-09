@@ -22,7 +22,6 @@
   transform: scale(2);
 }
 
-p
-{
+p {
   color: var(--secondary-color);
 }
