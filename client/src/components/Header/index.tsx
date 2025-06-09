@@ -5,7 +5,6 @@
 import React from 'react';
 import { ConnectedProps, connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { User } from '../../redux/prop-types';
 import { examInProgressSelector } from '../../redux/selectors';
 
 import UniversalNav from './components/universal-nav';
@@ -26,7 +25,12 @@ type PropsFromRedux = ConnectedProps<typeof connector>;
 
 type Props = PropsFromRedux & {
   fetchState: { pending: boolean };
-  user: User;
+  user: {
+    isDonating: boolean;
+    username: string;
+    picture: string;
+    yearsTopContributor: string[];
+  };
   skipButtonText: string;
   pathname: string;
 };

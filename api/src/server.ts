@@ -1,35 +1,10 @@
-// We need to use the triple-slash directive to ensure that ts-node uses the
-// reset.d.ts file. It's not possible to import the file directly because it
-// is not included in the build (it's a dev dependency).
-// eslint-disable-next-line @typescript-eslint/triple-slash-reference
-/// <reference path="./reset.d.ts" />
-import { build } from './app';
-import {
-  FREECODECAMP_NODE_ENV,
-  FCC_API_LOG_LEVEL,
-  HOST,
-  PORT
-} from './utils/env';
+import './instrument';
 
-const envToLogger = {
-  development: {
-    transport: {
-      target: 'pino-pretty',
-      options: {
-        translateTime: 'HH:MM:ss Z',
-        ignore: 'pid,hostname'
-      }
-    },
-    level: FCC_API_LOG_LEVEL || 'info'
-  },
-  production: {
-    level: FCC_API_LOG_LEVEL || 'info'
-  },
-  test: undefined
-};
+import { build, buildOptions } from './app';
+import { HOST, PORT } from './utils/env';
 
 const start = async () => {
-  const fastify = await build({ logger: envToLogger[FREECODECAMP_NODE_ENV] });
+  const fastify = await build(buildOptions);
   try {
     const port = Number(PORT);
     fastify.log.info(`Starting server on port ${port}`);

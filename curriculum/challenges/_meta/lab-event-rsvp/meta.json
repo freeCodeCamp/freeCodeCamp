@@ -1,0 +1,16 @@
+{
+  "name": "Build an Event RSVP",
+  "usesMultifileEditor": true,
+  "dashedName": "lab-event-rsvp",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67d936de7055982b02baf186",
+      "title": "Build an Event RSVP"
+    }
+  ],
+  "helpCategory": "JavaScript",
+  "isUpcomingChange": true,
+  "blockLayout": "link",
+  "blockType": "lab"
+}

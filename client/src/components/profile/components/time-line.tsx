@@ -10,9 +10,12 @@ import { Table, Button, Modal, Spacer } from '@freecodecamp/ui';
 import envData from '../../../../config/env.json';
 import { getLangCode } from '../../../../../shared/config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
-import { regeneratePathAndHistory } from '../../../../../shared/utils/polyvinyl';
+import { regenerateMissingProperties } from '../../../../../shared/utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
-import { CompletedChallenge } from '../../../redux/prop-types';
+import type {
+  ChallengeData,
+  CompletedChallenge
+} from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
@@ -160,13 +163,14 @@ function TimelineInner({
     );
   }
 
-  const challengeData: CompletedChallenge | null = completedChallenge
+  const challengeData: ChallengeData | null = completedChallenge
     ? {
         ...completedChallenge,
         // // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         challengeFiles:
-          completedChallenge?.challengeFiles?.map(regeneratePathAndHistory) ??
-          null
+          completedChallenge?.challengeFiles?.map(
+            regenerateMissingProperties
+          ) ?? null
       }
     : null;
 
@@ -240,7 +244,7 @@ function TimelineInner({
   );
 }
 
-/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
+/* eslint-disable @typescript-eslint/no-unsafe-assignment,  @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
 function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   const {
     allChallengeNode: { edges }

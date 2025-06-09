@@ -1,23 +1,18 @@
 name: CI - Node.js
 
 on:
-  # Run on push events, but only for the below branches
   push:
     branches:
       - 'main'
       - 'prod-**'
-  # Run on pull requests, but only for the below targets
   pull_request:
     branches:
       - 'main'
-      - 'next-**'
-  # Run on Merge Queue
-  merge_group:
-    types: [checks_requested]
+      - 'temp-**' # Temporary branches allowed on Upstream
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
+  cancel-in-progress: ${{ !contains(github.ref, 'main') && !contains(github.ref, 'prod-') }}
 
 permissions:
   contents: read
@@ -28,12 +23,12 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [22]
       fail-fast: false
 
     steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           submodules: 'recursive'
 
@@ -45,16 +40,16 @@ jobs:
             exit 1
           fi
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
-        with:
-          version: 9
-
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        id: pnpm-install
+        with:
+          run_install: false
 
       - name: Set Environment variables
         run: |
@@ -85,24 +80,24 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [22]
 
     steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           submodules: 'recursive'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
-        with:
-          version: 9
-
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        id: pnpm-install
+        with:
+          run_install: false
 
       - name: Set freeCodeCamp Environment Variables
         run: |
@@ -121,24 +116,24 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [20.x]
+        node-version: [22]
 
     steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           submodules: 'recursive'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
-        with:
-          version: 9
-
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        id: pnpm-install
+        with:
+          run_install: false
 
       - name: Set Environment variables
         run: |
@@ -148,7 +143,7 @@ jobs:
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
-          mongodb-version: 6.0
+          mongodb-version: 8.0
           mongodb-replica-set: test-rs
           mongodb-port: 27017
 
@@ -171,24 +166,24 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [20.x]
+        node-version: [22]
 
     steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           submodules: 'recursive'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
-        with:
-          version: 9
-
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        id: pnpm-install
+        with:
+          run_install: false
 
       - name: Set Environment variables
         run: |
@@ -199,7 +194,7 @@ jobs:
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
-          mongodb-version: 6.0
+          mongodb-version: 8.0
           mongodb-replica-set: test-rs
           mongodb-port: 27017
 
@@ -222,25 +217,25 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [20.x]
+        node-version: [22]
         locale: [portuguese, italian]
 
     steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           submodules: 'recursive'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d #v3.0.0
-        with:
-          version: 9
-
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        id: pnpm-install
+        with:
+          run_install: false
 
       - name: Set Environment variables
         run: |
@@ -250,7 +245,7 @@ jobs:
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
-          mongodb-version: 6.0
+          mongodb-version: 8.0
           mongodb-replica-set: test-rs
           mongodb-port: 27017
 

@@ -105,7 +105,8 @@
     "update-card": "カード情報を更新",
     "donate-now": "寄付する",
     "confirm-amount": "金額を選択",
-    "play-scene": "再生",
+    "play": "動画を再生",
+    "pause": "動画を一時停止",
     "closed-caption": "クローズドキャプション",
     "share-on-x": "X でシェア",
     "share-on-bluesky": "Bluesky でシェア",
@@ -126,16 +127,19 @@
     "testimonials": {
       "heading": "freeCodeCamp に対する卒業生の声",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "シンガポールの <strong>Shawn Wang</strong>",
         "occupation": "<strong>Amazon</strong> のソフトウェアエンジニア",
         "testimony": "「キャリアを変えることは恐ろしいです。freeCodeCamp の無料レッスンに何百時間も取り組むことで、自分はコーディングができるという自信を得ました。一年以内に、ソフトウェアエンジニアとして年数十万ドルを稼げる仕事を得ました。<strong>freeCodeCamp は私の人生を変えました。</strong>」"
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "ナイジェリアの <strong>Sarah Chima</strong>",
         "occupation": "<strong>Chatdesk</strong> のソフトウェアエンジニア",
         "testimony": "「ソフトウェアエンジニアとして <strong>freeCodeCamp は私のキャリアの玄関口でした。</strong>よく練られたカリキュラムは私のコーディング知識を初心者レベルからとても強い自信が持てるレベルまで引き上げてくれました。私が素晴らしい会社で最初の開発者としての仕事を得るために必要な全てのものがありました。」"
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "スウェーデンの <strong>Emma Bostian</strong>",
         "occupation": "<strong>Spotify</strong> のソフトウェアエンジニア",
         "testimony": "「私はいつも JavaScript を学ぶことに躓いていました。たくさんのコースを受講しましたが、freeCodeCamp に一番のめり込みました。JavaScript だけでなくデータ構造とアルゴリズムも学べることで、ソフトウェアエンジニアとして Spotify という夢の仕事を得るために必要な自信と<strong>スキルを freeCodeCamp は私に与えてくれました</strong>」"
@@ -164,13 +168,12 @@
       "cta": "今すぐ学習を始める (無料)"
     },
     "certification-heading": "以下の検証機能付き認定証を無料で取得できます。",
-    "core-certs-heading": "freeCodeCamp コアカリキュラムの検証機能付き認定証を無料で取得:",
+    "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "開発の現場で使う英語を学ぶ:",
-    "professional-certs-heading": "プロフェッショナル認定証を無料で取得:",
+    "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "就職活動・技術面接に備える:",
-    "legacy-curriculum-heading": "旧カリキュラムを見る:",
+    "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "ベータ版カリキュラムを試す:",
-    "next-english-heading": "最新の英語カリキュラムを試す:",
     "upcoming-heading": "公開予定カリキュラム:",
     "faq": "よくある質問:",
     "faqs": [
@@ -232,7 +235,6 @@
     ]
   },
   "settings": {
-    "profile-note": "注: プロフィール設定はプロフィールページに移動しました。",
     "share-projects": "あなたの freeCodeCamp 以外のプロジェクトや記事、承認されたプルリクエストをシェアしましょう。",
     "privacy": "この設定セクションでは、あなたの freeCodeCamp 公開ポートフォリオに表示する項目を制御できます。変更を保存するには「保存」をクリックしてください。",
     "data": "アカウントに保存されているデータを確認するには、下の「データをダウンロード」ボタンをクリックしてください",
@@ -366,8 +368,8 @@
     "joined": "加入: {{date}}",
     "from": "場所: {{location}}",
     "total-points": "合計ポイント:",
-    "points": "{{count}} ポイント ({{date}})",
-    "points_plural": "{{count}} ポイント ({{date}})",
+    "points_one": "{{count}} ポイント ({{date}})",
+    "points_other": "{{count}} ポイント ({{date}})",
     "page-number": "{{pageNumber}} / {{totalPages}}",
     "edit-my-profile": "プロフィールを編集",
     "add-bluesky": "この認定証を Bluesky で共有",
@@ -402,33 +404,21 @@
     "welcome-1": "{{name}} さん、おかえりなさい。",
     "welcome-2": "freeCodeCamp.org へようこそ",
     "start-at-beginning": "プログラミングを学ぶのが初めての場合、<0>最初から始める</0>ことをおすすめします。",
-    "read-this": {
-      "heading": "一度立ち止まって、まずはこちらをお読みください。",
-      "p1": "freeCodeCamp は、あなたがソフトウェア開発者として初めての仕事を得るための、実績のある道です。",
-      "p2": "40,000 人以上の人々が、カリキュラム修了後に開発者の仕事に就きました。その中には Google や Microsoft などの大手企業も含まれます。",
-      "p3": "プログラミングに触れるのが初めてなら、カリキュラムの最初から始めて、以下の認定証を上から順に取得することをおすすめします。",
-      "p4": "それぞれの認定証を取得するには、必須の認定プロジェクト 5 つを完成させ、すべてのテストが成功する状態にしてください。",
-      "p5": "取得した認定証は、履歴書や LinkedIn に追加できます。しかし認定証よりも大事なことは、その過程で得る経験です。",
-      "p6": "圧倒される思いがするとしても当然です。プログラミングは難しいのです。",
-      "p7": "練習こそが鍵になります。練習、練習、練習です。",
-      "p8": "このカリキュラムでは、何千時間もの実践的なプログラミングの経験を積むことができます。",
-      "p9": "また、数学やコンピュータサイエンス理論をより深く学びたいなら、<0>freeCodeCamp の YouTube チャンネル</0> にも何千時間もの動画コースがあります。",
-      "p10": "開発の仕事やフリーランスの顧客を得たいなら、プログラミングスキルはパズルの一部にすぎません。人とのつながりや開発者としての評判を得ることも必要です。",
-      "p11": "そのためには LinkedIn や GitHub、そして <0>freeCodeCamp フォーラム</0> も活用してください。",
-      "p12": "コーディングを楽しみましょう！Happy coding!"
-    },
+    "happy-coding": "Happy coding!",
     "upcoming-lessons": "このコースのレッスン",
     "learn": "学習",
     "add-subtitles": "字幕の改善や追加を支援する",
     "wrong-answer": "残念、正しい答えではありません。もう一度挑戦してみましょう。",
     "check-answer": "以下のボタンをクリックして解答を確認してください。",
-    "assignment-not-complete": "課題を完了してください",
-    "assignments": "課題",
+    "assignment-not-complete_one": "課題を完了してください",
+    "assignment-not-complete_other": "課題を完了してください",
+    "assignments_one": "課題",
+    "assignments_other": "課題",
     "question": "質問",
     "questions": "質問",
     "answered-mcq": "未回答または不正解の質問があります。",
     "explanation": "解説",
-    "transcript": "Read a transcript of this video",
+    "transcript": "文字起こし",
     "solution-link": "回答のリンク",
     "source-code-link": "ソースコードのリンク",
     "ms-link": "Microsoft のリンク",
@@ -458,7 +448,7 @@
     "rsa": "読む (Read)、検索する (Search)、質問する (Ask)",
     "rsa-forum": "<strong>新しい投稿を作成する前に</strong>、<0>すでに同じ質問がフォーラムで回答されていないか確認</0>してください。",
     "reset": "このレッスンをリセットしますか？",
-    "reset-warn": "本当にこのレッスンをリセットしてもよろしいですか？エディターとテストがリセットされます。",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "この操作は取り消すことが出来ません.",
     "revert-warn": "このレッスンを復元してよろしいですか？直近の変更を取り消し、最後に保存したバージョンのコードに戻します。",
     "scrimba-tip": "ヒント: ミニブラウザがコードを覆ってしまう場合は、クリックとドラッグで移動させてください。また、いつでも遠慮なくビデオを停止させてコードを編集してください。",
@@ -469,9 +459,6 @@
     "sign-in-see-benefits": "サポーター特典を見るにはサインインしてください。",
     "card-has-been-updated": "カード情報が更新されました。",
     "contact-support-mistake": "ご不明な点がございましたら、donors@freecodecamp.org までお問い合わせください。",
-    "cert-map-estimates": {
-      "certs": "{{title}} 認定講座"
-    },
     "editor-tabs": {
       "code": "コード",
       "tests": "テスト",
@@ -507,6 +494,28 @@
       "learn-more": "<0>Gitpod ワークスペースについて詳しくはこちら</0>をご参照ください。",
       "logout-warning": "「{{course}}」コース全体を完了する前に freeCodeCamp からログアウトした場合、freeCodeCamp アカウントに進捗状況が保存されません。"
     },
+    "local": {
+      "intro": "This course runs in a virtual Linux machine on your computer. To run the course, you first need to download each of the following if you don't already have them:",
+      "download-vscode": "<0>VS Code</0> and the <1>Dev Containers</1> extension",
+      "heading": "Then, follow these instructions to start the course:",
+      "step-1": "Open a terminal and clone the RDB Alpha repo if you don't already have it with <0>git clone https://github.com/freeCodeCamp/rdb-alpha</0>",
+      "step-2": "Navigate to the <0>rdb-alpha</0> directory in the terminal with <1>cd rdb-alpha</1>, and open VS Code with <2>code .</2>",
+      "sub-step-heading": "If you want to save your progress to your freeCodeCamp account, do the following:",
+      "sub-step-1": "Generate a user token if you don't already have one:",
+      "generate-token-btn": "Generate User Token",
+      "sub-step-2": "Copy your user token:",
+      "copy-token-btn": "Copy User Token",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your user token will be deleted and your progress will not be saved to your freeCodeCamp account.",
+      "sub-step-3": "In the VS Code that opened, find and open the file named <0>Dockerfile</0>. At the bottom of the file, paste your token in as the value for the <1>CODEROAD_WEBHOOK_TOKEN</1> variable. It should look like this: <2>ENV CODEROAD_WEBHOOK_TOKEN=your-token-here</2>",
+      "step-3": "Open the command palette in VS Code by expanding the \"View\" menu and clicking \"Command Palette...\" and enter <0>Dev Containers: Rebuild and Reopen in Container</0> in the input.",
+      "step-4": "A new VS Code window will open and begin building the Docker image. It will take several minutes the first time.",
+      "step-5": "Once it is finished building, open the command palette again and enter <0>CodeRoad: Start</0> to open CodeRoad.",
+      "step-6": "In the CodeRoad window, click \"Start New Tutorial\" and then the \"URL\" tab at the top.",
+      "step-7": "Copy the course URL below, paste it in the URL input, and click \"Load\".",
+      "copy-url": "Copy Course URL",
+      "step-8": "Click \"Start\" to begin.",
+      "step-9": "Follow the instructions in CodeRoad to complete the course. Note: You may need to restart the terminal once for terminal settings to take effect and the tests to pass."
+    },
     "step-1": "ステップ 1: プロジェクトを完成させる",
     "step-2": "ステップ 2: コードを提出する",
     "submit-public-url": "プロジェクトが完成したら、必須のファイルをすべてパブリックリポジトリに保存し、リポジトリの URL を以下に提出してください。",
@@ -529,8 +538,8 @@
     "if-help-university": "おかげさまで順調に進んでいます。ぜひ、寄付を通してこの先の活動をご支援いただければ幸いです。",
     "preview-external-window": "プレビューは別ウィンドウに表示されています。",
     "fill-in-the-blank": {
-      "heading": "Fill in the blank",
-      "blank": "blank"
+      "heading": "空欄を埋めてください。",
+      "blank": "空欄"
     },
     "quiz": {
       "correct-answer": "正解！",
@@ -538,7 +547,7 @@
       "unanswered-questions": "以下の質問が未回答です。すべての質問に回答してください: {{ unansweredQuestions }}",
       "have-n-correct-questions": "{{ total }} 問中 {{ correctAnswerCount }} 問正解しました。",
       "finish-modal-header": "クイズ終了",
-      "finish-modal-body": "クイズを終了してよろしいですか？終了後、回答を変更することはできません。",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "はい、終了します",
       "finish-modal-no": "いいえ、クイズを続行します",
       "exit-modal-header": "クイズを中止",
@@ -710,7 +719,7 @@
     "support-benefits-2": "サポーターバッジを獲得できます。",
     "support-benefits-3": "プロフィール画像に金色の枠が表示されます。",
     "support-benefits-4": "サポーター向け Discord チャンネルにアクセスできます。<0>freeCodeCamp 公式 Discord に参加</0>した上で、<1>/supporter</1> コマンドを使用してください。",
-    "support-benefits-5": "And more benefits to come soon",
+    "support-benefits-5": "今後も新たな特典を追加予定です。",
     "exclusive-features": "以下のサポーター特典が利用できます:",
     "current-initiatives-title": "freeCodeCamp における現在の取り組み:",
     "your-donation-helps-followings": "いただいた寄付は以下のような取り組みに役立てられます:",
@@ -719,10 +728,10 @@
     "current-initiatives-3": "既存のカリキュラム、チュートリアルの翻訳 (32 の言語を対象に翻訳中)",
     "current-initiatives-4": "コンピューターサイエンスの無料認定学士号の設立",
     "community-achivements-title": "2023 年の freeCodeCamp コミュニティの実績:",
-    "community-achivements-1": "Published <0>193</0> full-length courses on YouTube.",
-    "community-achivements-2": "Published <0>850</0> text-based coding tutorials and <0>5</0> free books through freeCodeCamp Press.",
-    "community-achivements-3": "Merged <0>2,455</0> code contributions into our open source repositories on GitHub",
-    "community-achivements-4": "Translated <0>1.5</0> million words to make our curriculum and tutorials more accessible to speakers of many world languages",
+    "community-achivements-1": "長編 YouTube 講座を <0>193</0> 件投稿",
+    "community-achivements-2": "プログラミングチュートリアル記事を <0>850</0> 件、freeCodeCamp Press として無料の電子書籍を <0>5</0> 冊投稿",
+    "community-achivements-3": "GitHub のオープンソースリポジトリにてコードのコントリビューションを <0>2,455</0> 件マージ",
+    "community-achivements-4": "カリキュラムとチュートリアル記事の多言語化において <0>150 万</0>ワードを翻訳",
     "as-you-see": "皆様からのご寄付のおかげで、上記の活動が成し遂げられました。今後も有効に活用させていただくことをお約束いたします。",
     "get-benefits": "上記のメリットを通して、教育に良い変化をもたらすチャリティー活動を支援している実感が得られることと思います。ぜひサポーター加入をご検討ください。",
     "modal-benefits-title": "寄付のお願い",
@@ -754,13 +763,12 @@
   "search": {
     "label": "検索",
     "placeholder": {
-      "default": "記事を検索",
-      "numbered": "{{ roundedTotalRecords }} 件以上の記事から検索"
+      "default": "Search our news articles, tutorials, and books",
+      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
     },
     "see-results": "{{searchQuery}} のすべての結果を見る",
-    "no-tutorials": "記事が見つかりませんでした",
     "try": "何かお探しですか？このページの検索バーを試してみてください。",
-    "no-results": "<0>{{query}}</0> に関するものは見つかりませんでした",
+    "no-results": "No results found",
     "result-list": "検索結果"
   },
   "misc": {
@@ -773,7 +781,7 @@
     "brand-new-account": "freeCodeCamp アカウントを新規登録しました。",
     "duplicate-account-warning": "新規登録ではなく既存のアカウントにサインインする場合には、<0>こちらをクリックしてこのアカウントを削除し</0>、他のメールアドレスをお試しください。",
     "quincy": "- freeCodeCamp.org を設立した教師、Quincy Larson",
-    "email-blast": "毎週金曜日に Quincy から、プログラミングやコンピュータサイエンスに関する 5 件のリンクをメールで配信しています。現在約 6 百万人を対象に配信しています。あなたにもお送りしましょうか？",
+    "email-blast": "Each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "メールアドレスを更新",
     "update-email-2": "メールアドレスの更新はこちら:",
     "email": "Eメール",
@@ -844,6 +852,7 @@
     "edit-my-profile": "プロフィールを編集"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "認定証を獲得するには、まず学問的誠実性ポリシーに同意する必要があります。",
     "really-weird": "予期しない問題が発生しました。この問題が何度も発生するようであれば、https://github.com/freeCodeCamp/freeCodeCamp/issues/new への Issue 登録をご検討ください。",
     "generic-error": "問題が発生しました。お手数ですが、時間をおいて再度お試しください。エラーが解消されない場合には support@freecodecamp.org までお問い合わせください。",
@@ -897,6 +906,7 @@
     "unlink-success": "{{website}} のリンクを解除しました",
     "provide-username": "ユーザー名と報告内容が入力されているか確認してください",
     "report-sent": "報告は {{email}} を CC に入れた状態でチームに送信されました",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "表示しようとした認定証は存在しません",
     "create-token-err": "ユーザートークンの作成中にエラーが発生しました",
     "delete-token-err": "ユーザートークンの削除中にエラーが発生しました",
@@ -916,6 +926,12 @@
     "generate-exam-error": "試験の準備中にエラーが発生しました。",
     "cert-not-found": "この認定証は存在しません。({{certSlug}})",
     "reset-editor-layout": "エディターレイアウトがリセットされました。",
+    "user-token-generated": "A user token was created for you.",
+    "user-token-generate-error": "Something went wrong trying to generate a user token for you.",
+    "user-token-copied": "User token copied to clipboard.",
+    "user-token-copy-error": "Something went wrong trying to copy your token.",
+    "course-url-copied": "Course URL copied to clipboard.",
+    "course-url-copy-error": "Something went wrong trying to copy the course URL.",
     "ms": {
       "transcript": {
         "link-err-1": "リクエストに Microsoft の成績証明書の URL を含めてください。",
@@ -967,7 +983,8 @@
     "publicly-visible-url": "公開されたアプリの URL を提出してください。",
     "ms-learn-link": "有効な Microsoft Learn トロフィーのリンクを使用してください。",
     "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。",
-    "source-code-link-required": "ソースコードのリンクを提出してください。"
+    "source-code-link-required": "ソースコードのリンクを提出してください。",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",
@@ -1098,6 +1115,8 @@
       "b1-english-for-developers-cert": "開発者のための B1 レベル英語認定証",
       "full-stack-developer-v9": "フルスタック開発者",
       "full-stack-developer-v9-cert": "フルスタック開発者認定証",
+      "a2-professional-spanish": "A2 Professional Spanish",
+      "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
       "legacy-front-end": "旧フロントエンド",
       "legacy-front-end-cert": "旧フロントエンド認定証",
       "legacy-back-end": "旧バックエンド",
@@ -1169,7 +1188,7 @@
     "focus-instructions-panel": "手順書パネルにフォーカス",
     "navigate-previous": "前の課題へ移動",
     "navigate-next": "次の課題へ移動",
-    "play-scene": "シーンを再生"
+    "play-video": "動画を再生"
   },
   "signout": {
     "heading": "アカウントからサインアウト",

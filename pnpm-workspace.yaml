@@ -1,6 +1,5 @@
 packages:
   - 'api'
-  - 'api-server'
   - 'client'
   - 'curriculum'
   - 'shared'
@@ -10,6 +9,7 @@ packages:
   - 'tools/challenge-parser'
   - 'tools/client-plugins/*'
   - 'tools/crowdin'
+  - 'tools/screenshot-service'
   - 'tools/scripts/build'
   - 'tools/scripts/seed'
   - 'tools/scripts/seed-exams'

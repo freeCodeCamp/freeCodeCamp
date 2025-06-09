@@ -1,5 +1,5 @@
 ---
-title: Learn Classes and Object by Building a Sudoku Solver
+title: Learn Classes and Objects by Building a Sudoku Solver
 block: learn-classes-and-objects-by-building-a-sudoku-solver
 superBlock: scientific-computing-with-python
 ---

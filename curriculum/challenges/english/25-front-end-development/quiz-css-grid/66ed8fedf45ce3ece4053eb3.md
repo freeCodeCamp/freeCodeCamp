@@ -7,7 +7,7 @@ dashedName: quiz-css-grid
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -39,45 +39,45 @@ A two-dimensional layout for HTML documents.
 
 #### --text--
 
-Which property and attribute are used to turn an element into a grid container?
+Which of the following is the correct way to create a grid container?
 
 #### --distractors--
 
-`display: grid-area`
+`display: grid-area;`
 
 ---
 
-`grid: grid-template`
+`grid: grid-template;`
 
 ---
 
-`grid-template: set`
+`grid-template: set;`
 
 #### --answer--
 
-`display: grid`
+`display: grid;`
 
 ### --question--
 
 #### --text--
 
-Which one of these options for the `grid-template-columns` property will result in a middle column that is 80 relative units wide, and two columns taking up the remaining space?
+What does the `grid-template-columns` property do?
 
 #### --distractors--
 
-`10% 80rem 10%`
+Defines two columns and three rows for a grid container.
 
 ---
 
-`1fr 8fr 1fr`
+Sets all columns for the grid layout to a fixed length.
 
 ---
 
-`10rem 80rem 10rem`
+Creates a two column grid layout container.
 
 #### --answer--
 
-`1fr 80rem 1fr`
+Defines the number of columns in a grid layout.
 
 ### --question--
 
@@ -95,11 +95,11 @@ Creates a template for creating new grid rows.
 
 ---
 
-Specifies a default row size.
+Specifies a default row size in the grid container.
 
 #### --answer--
 
-Specifies the number and heights of the rows in a grid layout.
+Specifies the number and height for each row in a grid layout.
 
 ### --question--
 
@@ -121,7 +121,7 @@ Sets the minimal size of the element for browser working in full-screen mode.
 
 #### --answer--
 
-Defines a size range between the first and second value.
+Sets the minimum and maximum sizes for a track.
 
 ### --question--
 
@@ -149,45 +149,45 @@ What is the shorthand for the `column-gap` and `row-gap` properties?
 
 #### --text--
 
-Which property defines on which row line the item will start?
+What is the difference between an implicit and explicit grid?
 
 #### --distractors--
 
-`row-start`
+Implicit grids use the `grid-template-columns` property while explicit grids use the `grid-template-rows` property.
 
 ---
 
-`grid-row-begin`
+Explicit grids use the `grid-template-columns` property while implicit grids use the `grid-template-rows` property.
 
 ---
 
-`grid-row`
+Implicit grids use the `grid-template-columns` or `grid-template-rows` properties to create columns while rows and columns are automatically created in explicit grids.
 
 #### --answer--
 
-`grid-row-start`
+Explicit grids use the `grid-template-columns` or `grid-template-rows` properties to create columns while rows and columns are automatically created in implicit grids.
 
 ### --question--
 
 #### --text--
 
-Which property automatically allocates rows based on a fixed size?
+Which of the following units represents a fraction of the space within the grid container?
 
 #### --distractors--
 
-`grid-rows-size`
+`fractional`
 
 ---
 
-`grid-template`
+`frac`
 
 ---
 
-`grid-row`
+`f`
 
 #### --answer--
 
-`grid-auto-rows`
+`fr`
 
 ### --question--
 
@@ -227,7 +227,7 @@ Aligns text in the grid item vertically.
 
 ---
 
-Specifies the number of columns in a grid element.
+Sets two columns for a grid container.
 
 #### --answer--
 
@@ -241,41 +241,41 @@ How do you create four columns of equal width?
 
 #### --distractors--
 
-`grid-template-columns: repeat(4)`
+`grid-template-columns: repeat(4);`
 
 ---
 
-`grid-template-columns: 1, 1, 1, 1,`
+`grid-template-columns: repeat(1, 4);`
 
 ---
 
-`grid-column: repeat(4, 1fr)`
+`grid-template-columns: repeat(1fr, 4);`
 
 #### --answer--
 
-`grid-template-columns: repeat(4, 1fr)`
+`grid-template-columns: repeat(4, 1fr);`
 
 ### --question--
 
 #### --text--
 
-Which property and value will make an element span the full width of the grid?
+What does the `grid-template-areas` property do?
 
 #### --distractors--
 
-`grid-column: 1 / 1`
+It is used to specify where the item begins on a line in the grid container.
 
 ---
 
-`width: 100%`
+It is used to create gaps between tracks in the container.
 
 ---
 
-`grid-column: 100%`
+It is used to repeat sections in the track listing. 
 
 #### --answer--
 
-`grid-column: 1 / -1`
+It is used to provide a name for the items you are going to position on the grid.
 
 ### --question--
 
@@ -303,111 +303,182 @@ Controls how auto-placed elements get inserted to the grid.
 
 #### --text--
 
-What does the secondary value `dense` do in the `grid-auto-flow` property?
+Which of the following is the correct way to use the `grid-template-areas` property?
 
 #### --distractors--
 
-Narrows the grid container to fit to its content width.
+```css
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr; 
+  grid-template-rows: auto 1fr auto; 
+  grid-template-areas: set(
+    "header header"
+    "sidebar main"
+    "footer footer" 
+  );
+  gap: 20px; 
+}
+```
 
 ---
 
-Groups grid items of the same size.
+```css
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr; 
+  grid-template-rows: auto 1fr auto; 
+  grid-template-areas: apply(
+    "header header"
+    "sidebar main"
+    "footer footer" 
+  );
+  gap: 20px; 
+}
+```
 
 ---
 
-Sorts grid items based on their size.
+```css
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr; 
+  grid-template-rows: auto 1fr auto; 
+  grid-template-areas: set-areas;
+  gap: 20px; 
+}
+```
 
 #### --answer--
 
-Place smaller items to fill gaps in the grid.
+```css
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr; 
+  grid-template-rows: auto 1fr auto; 
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer"; 
+  gap: 20px; 
+}
+```
 
 ### --question--
 
 #### --text--
 
-Which one of these options is NOT a unit used for the `gap` property?
+Which of the following is the correct way to work with the `grid-auto-flow` property?
 
 #### --distractors--
 
-`px`
+```css
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: none;
+  grid-auto-columns: 1fr;
+}
+```
 
 ---
 
-`%`
+```css
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: allow;
+  grid-auto-columns: 1fr;
+}
+```
 
 ---
 
-`em`
+```css
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: set;
+  grid-auto-columns: 1fr;
+}
+```
 
 #### --answer--
 
-`fr`
+```css
+.social-icons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+```
 
 ### --question--
 
 #### --text--
 
-How do you make a grid item take up 2 rows using the `grid-row-end` property?
+Which of the following is NOT a valid grid property?
 
 #### --distractors--
 
-`grid-row-end: 2 / 2`
+`gap`
 
 ---
 
-`grid-row-end: -2`
+`grid-column`
 
 ---
 
-`grid-row-end: 2`
+`grid-template-columns`
 
 #### --answer--
 
-`grid-row-end: span 2`
+`grid-set`
 
 ### --question--
 
 #### --text--
 
-Which of these properties is NOT used to align items inside a grid element?
+Which of these properties can be used to center items inside a grid element?
 
 #### --distractors--
 
-`align-items`
+`allow-items`
 
 ---
 
-`place-items`
+`set-items`
 
 ---
-
-`justify-items`
-
-#### --answer--
 
 `center-items`
 
+#### --answer--
+
+`align-items`
+
 ### --question--
 
 #### --text--
 
-Which of these properties can be used as a shorthand for the `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end` properties?
+Which of the following is a correct value to use with the `grid-auto-columns` property?
 
 #### --distractors--
 
-`grid-section`
+`grid-auto-columns: unset-grid;`
 
 ---
 
-`grid-item`
+`grid-auto-columns: revert-grid;`
 
 ---
 
-`grid-row-column`
+`grid-auto-columns: set-content(20%);`
 
 #### --answer--
 
-`grid-area`
+`grid-auto-columns: 1fr;`
 
 ### --question--
 
@@ -435,21 +506,45 @@ Spaces between two adjacent grid lines.
 
 #### --text--
 
-How can you use dev tools to debug the CSS Grid layout?
+Which of the following is the correct way to use the `minmax()` function?
 
 #### --distractors--
 
-To resize the elements to fill out the gaps in the grid.
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(apply);
+}
+```
 
 ---
 
-To drag-and-drop elements inside the grid.
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax();
+}
+```
 
 ---
 
-To automatically fix overlaying grid elements.
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(set);
+}
+```
 
 #### --answer--
 
-To preview the layout of grid lines.
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+}
+```
 

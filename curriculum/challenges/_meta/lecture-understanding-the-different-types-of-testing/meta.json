@@ -1,0 +1,71 @@
+{
+  "name": "Understanding the Different Types of Testing",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-the-different-types-of-testing",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67d1d844d84c8b540297bbe4",
+      "title": "What Is the Overall Purpose of Testing Your Applications?"
+    },
+    {
+      "id": "67db30fedfa0b22a1a2a570c",
+      "title": "What Is the Software Development Life Cycle, and How Does It Relate to Testing?"
+    },
+    {
+      "id": "67d2ff1996e4ae9e67170502",
+      "title": "What Is Unit Testing?"
+    },
+    {
+      "id": "67db31349f3ace2c5c803c33",
+      "title": "What Are BDD and TDD?"
+    },
+    {
+      "id": "67db3180830cf02eb662ecaf",
+      "title": "How Do Assertions Work in Unit Testing?"
+    },
+    {
+      "id": "67db31c7ed46f430ce6c2da6",
+      "title": "What Are the Differences Between Mocking, Faking, and Stubbing? "
+    },
+    {
+      "id": "67d2ff33452ce69ea169c872",
+      "title": "What Is Functional Testing, and How Does It Differ from Unit Testing?"
+    },
+    {
+      "id": "67d2ff4231359d9f21d1437a",
+      "title": "What Is End-to-End Testing?"
+    },
+    {
+      "id": "67d2ff5f14f6ce9f6d3cbe22",
+      "title": "What Is Usability Testing, and What Does the Process Look Like?"
+    },
+    {
+      "id": "67d2ff6f069dce9feacb7d25",
+      "title": "What Is Compatibility Testing?"
+    },
+    {
+      "id": "67d2ff7a461f62a03e3d1861",
+      "title": "What Is Performance Testing?"
+    },
+    {
+      "id": "67d2ff887d2583a079c02e78",
+      "title": "What Is Security Testing?"
+    },
+    {
+      "id": "67db3238375ff8340ee1ff90",
+      "title": "What Is A/B Testing?"
+    },
+    {
+      "id": "67db3248eceee03588a22b8f",
+      "title": "What Is Alpha and Beta Testing?"
+    },
+    {
+      "id": "67db32542c7075361b06024c",
+      "title": "What Is Regression Testing?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

@@ -3,6 +3,7 @@ import { test, expect, type Page } from '@playwright/test';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
 import { clearEditor, focusEditor } from './utils/editor';
+import { allowTrailingSlash } from './utils/url';
 
 const slowExpect = expect.configure({ timeout: 25000 });
 
@@ -22,7 +23,9 @@ const completeFrontEndCert = async (page: Page, number?: number) => {
   const loopNumber = number || projects.length;
   for (let i = 0; i < loopNumber; i++) {
     await page.waitForURL(
-      `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i]}`
+      allowTrailingSlash(
+        `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i]}`
+      )
     );
     await page
       .getByRole('textbox', { name: 'solution' })
@@ -92,7 +95,7 @@ const completeChallenges = async ({
 }) => {
   await page.goto(challenges[0].url);
   for (const challenge of challenges.slice(0, number)) {
-    await page.waitForURL(challenge.url);
+    await page.waitForURL(allowTrailingSlash(challenge.url));
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
     await page.evaluate(
@@ -274,7 +277,9 @@ test.describe('Donation modal appearance logic - New user', () => {
 
 test.describe('Donation modal appearance logic - Certified user claiming a new block', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
-  execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user');
+  test.beforeEach(() =>
+    execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user')
+  );
 
   test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
     page,
@@ -307,6 +312,88 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
 
     await completeFrontEndCert(page, 1);
     await expect(donationModal).toBeHidden();
+  });
+
+  test("should not appear if the user has completed a new FSD block, but the block's module is not completed", async ({
+    page
+  }) => {
+    await page.goto(
+      '/learn/full-stack-developer/review-basic-html/basic-html-review'
+    );
+
+    await page.getByRole('checkbox', { name: /Review/ }).click();
+    await page.getByRole('button', { name: 'Submit', exact: true }).click();
+    await page.getByRole('button', { name: /Submit and go/ }).click();
+
+    const donationModal = page
+      .getByRole('dialog')
+      .filter({ hasText: 'Become a Supporter' });
+    await expect(donationModal).toBeHidden();
+  });
+
+  test('should not appear if FSD review module is completed', async ({
+    page
+  }) => {
+    await page.goto('/learn/full-stack-developer/review-html/review-html');
+    await page.getByRole('checkbox', { name: /Review/ }).click();
+    await page.getByRole('button', { name: 'Submit', exact: true }).click();
+    await page.getByRole('button', { name: /Submit and go/ }).click();
+    await page.waitForTimeout(1000);
+    const donationModal = page
+      .getByRole('dialog')
+      .filter({ hasText: 'Become a Supporter' });
+    await expect(donationModal).toBeHidden();
+  });
+});
+
+test.describe('Donation modal appearance logic - Certified user claiming a new module', () => {
+  test.use({ storageState: 'playwright/.auth/certified-user.json' });
+  execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user');
+
+  test('should appear if the user has just completed a new module', async ({
+    page
+  }) => {
+    test.setTimeout(40000);
+
+    // Go to the last lecture of the Code Editors block.
+    // This lecture is not added to the seed data, so it is not completed.
+    // By completing this lecture, we claim both the block and its module.
+    await page.goto(
+      '/learn/full-stack-developer/lecture-working-with-code-editors-and-ides/what-are-some-good-vs-code-extensions-you-can-use-in-your-editor'
+    );
+
+    // Wait for the page content to render
+    // TODO: Change the selector to `getByRole('radiogroup')` when we have migrated the MCQ component to fcc/ui
+    await expect(page.locator("div[class='video-quiz-options']")).toHaveCount(
+      3
+    );
+
+    const radioGroups = await page
+      .locator("div[class='video-quiz-options']")
+      .all();
+
+    await radioGroups[0].getByRole('radio').nth(1).click({ force: true });
+    await radioGroups[1].getByRole('radio').nth(2).click({ force: true });
+    await radioGroups[2].getByRole('radio').nth(1).click({ force: true });
+
+    await page.getByRole('button', { name: /Check your answer/ }).click();
+    await page.getByRole('button', { name: /Submit and go/ }).click();
+
+    const donationModal = page
+      .getByRole('dialog')
+      .filter({ hasText: 'Become a Supporter' });
+    await expect(donationModal).toBeVisible();
+    await expect(
+      donationModal.getByText(
+        'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.'
+      )
+    ).toBeVisible();
+
+    // Second part of the modal.
+    // Use `slowExpect` as we need to wait 20s for this part to show up.
+    await slowExpect(
+      donationModal.getByText('Nicely done. You just completed Code Editors.')
+    ).toBeVisible();
   });
 });
 

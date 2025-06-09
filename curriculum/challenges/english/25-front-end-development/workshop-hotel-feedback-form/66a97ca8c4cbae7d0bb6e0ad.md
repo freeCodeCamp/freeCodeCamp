@@ -1,8 +1,8 @@
 ---
 id: 66a97ca8c4cbae7d0bb6e0ad
-title: Step 31
+title: Step 32
 challengeType: 0
-dashedName: step-31
+dashedName: step-32
 ---
 
 # --description--
@@ -33,69 +33,69 @@ Don't forget to add the `selected` attribute to the `option` element with the va
 You should have an `option` element with the value set to `"poor"`.
 
 ```js
-assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value="poor"]'));
+assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option[value="poor"]'));
 ```
 
 Your `option` with the `value` of `"poor"` should have the text `"Poor"`.
 
 ```js
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="poor"]').textContent, 'Poor');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="poor"]')?.textContent, 'Poor');
 ```
 
 You should have an `option` element with the `value` set to `"satisfactory"`.
 
 ```js
-assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value="satisfactory"]'));
+assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option[value="satisfactory"]'));
 ```
 
 Your `option` with the `value` of `"satisfactory"` should have the text `"Satisfactory"`.
 
 ```js
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="satisfactory"]').textContent, 'Satisfactory');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="satisfactory"]')?.textContent, 'Satisfactory');
 ```
 
 You should have an `option` element with the `value` set to `"good"`.
 
 ```js
-assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value="good"]'));
+assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option[value="good"]'));
 ```
 
 Your `option` with the `value` of `"good"` should have the text `"Good"`.
 
 ```js
 
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="good"]').textContent, 'Good');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="good"]')?.textContent, 'Good');
 ```
 
 You should have an `option` element with the value set to `"very-good"`.
 
 ```js
-assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value="very-good"]'));
+assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option[value="very-good"]'));
 ```
 
 Your `option` with the `value` of `"very-good"` should have the text `"Very Good"`.
 
 ```js
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="very-good"]').textContent, 'Very Good');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="very-good"]')?.textContent, 'Very Good');
 ```
 
 You should have an `option` element with the value set to `"excellent"`.
 
 ```js
-assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value="excellent"]'));
+assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option[value="excellent"]'));
 ```
 
 Your `option` with the `value` of `"excellent"` should have the text `"Excellent"`.
 
 ```js
 
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="excellent"]').textContent, 'Excellent');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="excellent"]')?.textContent, 'Excellent');
 ```
 
 You should have an `option` element with the `selected` attribute set to `"excellent"`.
 
 ```js
-assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value="excellent"][selected]'));
+assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option[value="excellent"][selected]'));
 ```
 
 # --seed--
@@ -122,7 +122,7 @@ assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value=
         <fieldset>
           <legend>Personal Information</legend>
           <label for="full-name">Name (required):</label>
-          <input type="text" id="full-name" name="name" placeholder="Ex. John Doe" required>
+          <input type="text" id="full-name" name="name" placeholder="Ex. John Doe" required size="20">
 
           <label for="email">Email address (required):</label>
           <input
@@ -131,6 +131,7 @@ assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value=
             id="email"
             type="email"
             name="email"
+            size="20"
           />
           <label for="age">Age (optional):</label>
           <input type="number" name="age" id="age" min="3" max="100" />
@@ -193,7 +194,7 @@ assert(document.querySelector('fieldset:nth-of-type(4) select#food option[value=
 
           --fcc-editable-region--
           <select name="food" id="food">
-
+            
           </select>
           --fcc-editable-region--
         </fieldset>

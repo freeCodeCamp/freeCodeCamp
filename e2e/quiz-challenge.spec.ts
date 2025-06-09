@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { allowTrailingSlash } from './utils/url';
 
 test.describe('Quiz challenge', () => {
   test.beforeEach(async ({ page }) => {
@@ -27,33 +28,113 @@ test.describe('Quiz challenge', () => {
     ).toBeVisible();
   });
 
-  test('should show a confirm finish modal when user clicks the finish button, and disable the quiz once they have confirmed', async ({
+  test('should allow user to complete the block when they pass the quiz', async ({
     page
   }) => {
+    test.setTimeout(20000);
+
     // Wait for the page content to render
     await expect(page.getByRole('radiogroup')).toHaveCount(20);
 
     const radioGroups = await page.getByRole('radiogroup').all();
 
-    for (const radioGroup of radioGroups) {
-      await radioGroup.getByRole('radio').first().click();
+    // Answer 18 questions correctly.
+    // This is enough to pass the quiz, and also allowing us to test the quiz passing criteria.
+    for (let i = 0; i < radioGroups.length; i++) {
+      if (i <= 17) {
+        await radioGroups[i].locator("[role='radio'][data-value='4']").click();
+      } else {
+        await radioGroups[i].locator("[role='radio'][data-value='1']").click();
+      }
     }
 
     await page.getByRole('button', { name: 'Finish the quiz' }).click();
-    await expect(
-      page.getByRole('dialog', { name: 'Finish Quiz' })
-    ).toBeVisible();
-
     await page.getByRole('button', { name: 'Yes, I am finished' }).click();
+
+    // Wait for the finish quiz modal to close
     await expect(
       page.getByRole('dialog', { name: 'Finish Quiz' })
     ).toBeHidden();
 
-    const radios = await page.getByRole('radio').all();
+    // Check that the completion modal shows up
+    await expect(
+      page
+        .getByRole('dialog')
+        .filter({ has: page.getByRole('button', { name: /submit and go/i }) })
+    ).toBeVisible();
 
-    for (const radio of radios) {
-      await expect(radio).toBeDisabled();
+    await page
+      .getByRole('dialog')
+      .getByRole('button', { name: /close/i })
+      .click();
+
+    // Wait for the completion modal to close
+    await expect(page.getByRole('dialog')).toBeHidden();
+
+    // If the user closes the modal without submitting,
+    // the finish quiz button is replaced by the submit one.
+    await expect(
+      page.getByRole('button', { name: 'Finish the quiz' })
+    ).toBeHidden();
+    await expect(
+      page.getByRole('button', { name: /submit and go/i })
+    ).toBeVisible();
+
+    await expect(
+      page.getByText('You have 18 out of 20 questions correct.')
+    ).toBeVisible();
+
+    // Confirm that all options are disabled.
+    // We do this by finding all of the disabled radio elements on the page,
+    // and check if the count matches the total number of quiz answers (4 answers x 20 questions).
+    // This approach is much faster than querying each radio on the page and check if they are disabled.
+    await expect(
+      page.locator("[role='radio'][aria-disabled='true']")
+    ).toHaveCount(4 * 20);
+  });
+
+  test("should not allow user to complete the block when they don't pass the quiz", async ({
+    page
+  }) => {
+    test.setTimeout(20000);
+
+    // Wait for the page content to render
+    await expect(page.getByRole('radiogroup')).toHaveCount(20);
+
+    const radioGroups = await page.getByRole('radiogroup').all();
+
+    // Answer only 10 questions correctly.
+    for (let i = 0; i < radioGroups.length; i++) {
+      if (i <= 9) {
+        await radioGroups[i].locator("[role='radio'][data-value='4']").click();
+      } else {
+        await radioGroups[i].locator("[role='radio'][data-value='1']").click();
+      }
     }
+
+    await page.getByRole('button', { name: 'Finish the quiz' }).click();
+    await page.getByRole('button', { name: 'Yes, I am finished' }).click();
+
+    // Wait for the finish quiz modal to close
+    await expect(
+      page.getByRole('dialog', { name: 'Finish Quiz' })
+    ).toBeHidden();
+
+    await expect(
+      page.getByText('You have 10 out of 20 questions correct.')
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('button', { name: 'Finish the quiz' })
+    ).toBeDisabled();
+
+    // Confirm that all options are disabled.
+    // We do this by finding all of the disabled radio elements on the page,
+    // and check if the count matches the total number of quiz answers (4 answers x 20 questions).
+    // This approach is much faster than querying each radio on the page and check if they are disabled.
+    await expect(
+      page.locator("[role='radio'][aria-disabled='true']")
+    ).toHaveCount(4 * 20);
   });
 
   test('should show a confirm exit modal when user clicks on the exit button', async ({
@@ -66,7 +147,9 @@ test.describe('Quiz challenge', () => {
 
     // The navigation should be blocked, the user should stay on the same page
     await expect(page).toHaveURL(
-      '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html'
+      allowTrailingSlash(
+        '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html'
+      )
     );
 
     await expect(page.getByRole('dialog')).toBeVisible();

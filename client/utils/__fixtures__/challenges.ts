@@ -2,7 +2,6 @@ import { ChallengeFile } from "../../src/redux/prop-types";
 
 export const challengeFiles: ChallengeFile[] = [
   {
-    id: '0',
     contents: 'some ts',
     error: null,
     ext: 'ts',
@@ -14,9 +13,9 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
+    path: 'index.ts',
   },
   {
-    id: '1',
     contents: 'some css',
     error: null,
     ext: 'css',
@@ -28,9 +27,9 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
+    path: 'styles.css',
   },
   {
-    id: '2',
     contents: 'some html',
     error: null,
     ext: 'html',
@@ -42,9 +41,9 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
+    path: 'index.html',
   },
   {
-    id: '3',
     contents: 'some js',
     error: null,
     ext: 'js',
@@ -56,9 +55,9 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
+    path: 'script.js',
   },
   {
-    id: '4',
     contents: 'some jsx',
     error: null,
     ext: 'jsx',
@@ -70,5 +69,6 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
+    path: 'index.jsx',
   }
 ]

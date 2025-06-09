@@ -8,7 +8,7 @@ dashedName: implementation-of-social-authentication-ii
 
 # --description--
 
-The last part of setting up your GitHub authentication is to create the strategy itself. `passport-github@~1.1.0` has already been added as a dependency, so require it in your `auth.js` file as `GithubStrategy` like this: `const GitHubStrategy = require('passport-github').Strategy;`. Do not forget to require and configure `dotenv` to use your environment variables.
+The last part of setting up your GitHub authentication is to create the strategy itself. `passport-github@~1.1.0` has already been added as a dependency, so require it in your `auth.js` file as `GitHubStrategy` like this: `const GitHubStrategy = require('passport-github').Strategy;`. Do not forget to require and configure `dotenv` to use your environment variables.
 
 To set up the GitHub strategy, you have to tell Passport to use an instantiated `GitHubStrategy`, which accepts 2 arguments: an object (containing `clientID`, `clientSecret`, and `callbackURL`) and a function to be called when a user is successfully authenticated, which will determine if the user is new and what fields to save initially in the user's database object. This is common across many strategies, but some may require more information as outlined in that specific strategy's GitHub README. For example, Google requires a *scope* as well which determines what kind of information your request is asking to be returned and asks the user to approve such access.
 
@@ -38,8 +38,8 @@ Submit your page when you think you've got it right. If you're running into erro
 `passport-github` dependency should be added.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/package.json", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/package.json", code);
   const res = await fetch(url);
   const packJson = await res.json();
   assert.property(
@@ -53,8 +53,8 @@ async (getUserInput) => {
 `passport-github` should be required.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/auth.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/auth.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(
@@ -68,8 +68,8 @@ async (getUserInput) => {
 GitHub strategy should be setup correctly thus far.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/auth.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/auth.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(

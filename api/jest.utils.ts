@@ -1,6 +1,6 @@
 import request from 'supertest';
 
-import { build } from './src/app';
+import { build, buildOptions } from './src/app';
 import { createUserInput } from './src/utils/create-user';
 import { examJson } from './__mocks__/exam';
 import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf';
@@ -128,16 +128,6 @@ const indexData: IndexData[] = [
     indexes: [{ key: { userId: 1 }, name: 'userId_1' }]
   },
   {
-    collection: 'UserRateLimit',
-    indexes: [
-      {
-        key: { expirationDate: 1 },
-        name: 'expirationDate_1',
-        expireAfterSeconds: 0
-      }
-    ]
-  },
-  {
     collection: 'UserToken',
     indexes: [{ key: { userId: 1 }, name: 'userId_1' }]
   },
@@ -165,11 +155,30 @@ const indexData: IndexData[] = [
   }
 ];
 
+export async function checkCanConnectToDb(
+  prisma: FastifyTestInstance['prisma']
+): Promise<void> {
+  const countP = prisma.user.count();
+  const delayedRejection = new Promise((_resolve, reject) =>
+    setTimeout(
+      () => reject(Error('unable to connect to Mongodb (timeout)')),
+      1000
+    )
+  );
+  await Promise.race([countP, delayedRejection]);
+}
+
 export function setupServer(): void {
   let fastify: FastifyTestInstance;
   beforeAll(async () => {
-    fastify = await build();
+    if (process.env.FCC_ENABLE_TEST_LOGGING !== 'true') {
+      // @ts-expect-error Disable logging by unsetting logger
+      buildOptions.logger = undefined;
+    }
+    fastify = await build(buildOptions);
     await fastify.ready();
+
+    await checkCanConnectToDb(fastify.prisma);
 
     // Prisma does not support TTL indexes in the schema yet, so, to avoid
     // conflicts with the TTL index in the sessions collection, we need to
@@ -212,6 +221,10 @@ export const resetDefaultUser = async (): Promise<void> => {
       where: { userId: defaultUserId }
     }
   );
+  await fastifyTestInstance.prisma.user.deleteMany({
+    where: { id: defaultUserId }
+  });
+
   await fastifyTestInstance.prisma.user.deleteMany({
     where: { email: defaultUserEmail }
   });

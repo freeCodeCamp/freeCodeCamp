@@ -78,19 +78,6 @@
   }
 }
 
-.footer-row {
-  margin: 0;
-}
-
-.footer-col {
-  padding-inline: 15px;
-  font-size: 16px;
-}
-
-.footer-col a {
-  padding: 5px 0;
-}
-
 .footer-desc-col {
   padding-inline: 15px;
   margin-bottom: 30px;
@@ -150,18 +137,12 @@ p.footer-donation a:hover {
 }
 
 @media (min-width: 500px) {
-  .footer-col {
-    font-size: 15;
-  }
   .mobile-app-container {
     flex-direction: row;
   }
 }
 
 @media (min-width: 800px) {
-  .footer-col {
-    font-size: 16.5;
-  }
   .footer-bottom .our-nonprofit a {
     padding: 5px;
   }

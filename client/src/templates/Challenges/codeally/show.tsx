@@ -3,17 +3,17 @@ import { graphql } from 'gatsby';
 import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
-import { Trans, withTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Alert, Spacer } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
-import ChallengeHeading from '../components/challenge-heading';
 import PrismFormatted from '../components/prism-formatted';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
@@ -48,9 +48,16 @@ import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 import { postUserToken } from '../../../utils/ajax';
+import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
+
+import RdbGitpodContinueAlert from './rdb-gitpod-continue-alert';
+import RdbGitpodInstructions from './rdb-gitpod-instructions';
+import RdbGitpodLogoutAlert from './rdb-gitpod-logout-alert';
+import RdbLocalInstructions from './rdb-local-instructions';
+import RdbStep1Instructions from './rdb-step-1-instructions';
+import RdbStep2Instructions from './rdb-step-2-instructions';
 
 import './codeally.css';
-import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
 
 // Redux
 const mapStateToProps = createSelector(
@@ -125,7 +132,8 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
           notes,
           superBlock,
           title,
-          translationPending
+          translationPending,
+          url
         }
       }
     },
@@ -261,6 +269,8 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     }
   };
 
+  const gitpodDeprecated = useFeature('gitpod-deprecated').on;
+
   return (
     <Hotkeys containerRef={container}>
       <LearnLayout>
@@ -280,127 +290,102 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
               <Spacer size='m' />
               <PrismFormatted text={description} />
               <Spacer size='m' />
-              <div className='ca-description'>
-                <p>{t('learn.gitpod.intro')}</p>
 
-                <ol>
-                  <li>
-                    <Trans i18nKey='learn.gitpod.step-1'>
-                      <a
-                        href='https://github.com/join'
-                        rel='noopener noreferrer'
-                        target='_blank'
-                        title={t('learn.source-code-link')}
-                      >
-                        placeholder
-                      </a>
-                    </Trans>
-                  </li>
-
-                  <li>{t('learn.gitpod.step-2')}</li>
-                  <li>{t('learn.gitpod.step-3')}</li>
-                  <li>
-                    {t('learn.gitpod.step-4')}
-                    <ul>
-                      <li>{t('learn.gitpod.step-5')}</li>
-                      <li>{t('learn.gitpod.step-6')}</li>
-                      <li>{t('learn.gitpod.step-7')}</li>
-                      <li>{t('learn.gitpod.step-8')}</li>
-                    </ul>
-                  </li>
-
-                  <li>{t('learn.gitpod.step-9')}</li>
-                </ol>
-              </div>
-
-              <Spacer size='m' />
-              {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
+              {gitpodDeprecated ? (
                 <>
-                  <div className='ca-description'>
-                    {t('learn.complete-both-steps')}
-                  </div>
-                  <hr />
+                  <RdbLocalInstructions course={title} url={url} />
                   <Spacer size='m' />
-                  <ChallengeHeading
-                    heading={t('learn.step-1')}
-                    isCompleted={isPartiallyCompleted || isCompleted}
-                  />
+                  {isSignedIn &&
+                    challengeType === challengeTypes.codeAllyCert && (
+                      <>
+                        <div className='ca-description'>
+                          {t('learn.complete-both-steps')}
+                        </div>
+                        <hr />
+                        <Spacer size='m' />
+                        <RdbStep1Instructions
+                          instructions={instructions}
+                          isCompleted={isPartiallyCompleted || isCompleted}
+                        />
+                        <hr />
+                        <Spacer size='m' />
+                        <RdbStep2Instructions
+                          isCompleted={isCompleted}
+                          notes={notes}
+                        />
+                        <Spacer size='m' />
+                        <SolutionForm
+                          challengeType={challengeType}
+                          description={description}
+                          onSubmit={handleSubmit}
+                          updateSolutionForm={updateSolutionFormValues}
+                        />
+                      </>
+                    )}
+                </>
+              ) : (
+                <>
+                  <RdbGitpodInstructions />
                   <Spacer size='m' />
-                  <div className='ca-description'>{t('learn.runs-in-vm')}</div>
-                  <Spacer size='m' />
-                  <PrismFormatted text={instructions} />
-                  <Spacer size='m' />
+                  {isSignedIn &&
+                  challengeType === challengeTypes.codeAllyCert ? (
+                    <>
+                      <div className='ca-description'>
+                        {t('learn.complete-both-steps')}
+                      </div>
+                      <hr />
+                      <Spacer size='m' />
+                      <RdbStep1Instructions
+                        instructions={instructions}
+                        isCompleted={isPartiallyCompleted || isCompleted}
+                      />
+                      <Spacer size='m' />
+                      <RdbGitpodContinueAlert course={title} />
+                      {isSignedIn && <RdbGitpodLogoutAlert course={title} />}
+                      <CodeAllyButton
+                        challengeType={challengeType}
+                        //eslint-disable-next-line @typescript-eslint/no-misused-promises
+                        onClick={startCourse}
+                      />
+                      <hr />
+                      <Spacer size='m' />
+                      <RdbStep2Instructions
+                        isCompleted={isCompleted}
+                        notes={notes}
+                      />
+                      <Spacer size='m' />
+                      <SolutionForm
+                        challengeType={challengeType}
+                        description={description}
+                        onSubmit={handleSubmit}
+                        updateSolutionForm={updateSolutionFormValues}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <RdbGitpodContinueAlert course={title} />
+                      {isSignedIn && <RdbGitpodLogoutAlert course={title} />}
+                      <CodeAllyButton
+                        challengeType={challengeType}
+                        //eslint-disable-next-line @typescript-eslint/no-misused-promises
+                        onClick={startCourse}
+                      />
+                    </>
+                  )}
+                  <Spacer size='xxs' />
                 </>
               )}
-              <Alert variant='info'>
-                <Trans
-                  values={{ course: title }}
-                  i18nKey='learn.gitpod.continue-project'
-                >
-                  <a
-                    href='https://gitpod.io/workspaces'
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    placeholder
-                  </a>
-                </Trans>
-                <Spacer size='m' />
-                <Trans i18nKey='learn.gitpod.learn-more'>
-                  <a
-                    href='https://forum.freecodecamp.org/t/using-gitpod-in-the-curriculum/668669'
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    placeholder
-                  </a>
-                </Trans>
-              </Alert>
-              {isSignedIn && (
-                <Alert variant='danger'>
-                  {t('learn.gitpod.logout-warning', { course: title })}
-                </Alert>
-              )}
-              <CodeAllyButton
-                text={
-                  challengeType === challengeTypes.codeAllyCert
-                    ? t('buttons.click-start-project')
-                    : t('buttons.click-start-course')
-                }
-                // `this.startCourse` being an async callback is acceptable
-                //eslint-disable-next-line @typescript-eslint/no-misused-promises
-                onClick={startCourse}
-              />
-              {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
-                <>
-                  <hr />
-                  <Spacer size='m' />
-                  <ChallengeHeading
-                    heading={t('learn.step-2')}
-                    isCompleted={isCompleted}
-                  />
-                  <Spacer size='m' />
-                  <div className='ca-description'>
-                    {t('learn.submit-public-url')}
-                  </div>
-                  <Spacer size='m' />
-                  <PrismFormatted text={notes} />
-                  <Spacer size='m' />
-                  <SolutionForm
-                    challengeType={challengeType}
-                    description={description}
-                    onSubmit={handleSubmit}
-                    updateSolutionForm={updateSolutionFormValues}
-                  />
-                </>
-              )}
-              <Spacer size='xxs' />
+
               <ProjectToolPanel />
               <br />
               <Spacer size='m' />
             </Col>
             <CompletionModal />
-            <HelpModal challengeTitle={title} challengeBlock={block} />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={block}
+              superBlock={superBlock}
+            />
           </Row>
         </Container>
       </LearnLayout>

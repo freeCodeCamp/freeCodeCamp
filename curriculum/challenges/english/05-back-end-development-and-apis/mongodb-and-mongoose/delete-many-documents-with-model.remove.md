@@ -21,9 +21,8 @@ Modify the `removeManyPeople` function to delete all the people whose name is wi
 Deleting many items at once should succeed
 
 ```js
-(getUserInput) =>
   $.ajax({
-    url: getUserInput('url') + '/_api/remove-many-people',
+    url: code + '/_api/remove-many-people',
     type: 'POST',
     contentType: 'application/json',
     data: JSON.stringify([

@@ -15,7 +15,7 @@ export const ConditionalDonationAlert = ({
   superBlock,
   onCertificationDonationAlertClick,
   isDonating
-}: SuperBlockIntroProps): JSX.Element => {
+}: SuperBlockIntroProps): JSX.Element | null => {
   const { t } = useTranslation();
 
   const betaCertifications: SuperBlocks[] = [];
@@ -23,6 +23,8 @@ export const ConditionalDonationAlert = ({
   const unfinishedCertifications = [
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A2Spanish,
+    SuperBlocks.A2Chinese,
     SuperBlocks.FullStackDeveloper
   ];
 
@@ -48,8 +50,6 @@ export const ConditionalDonationAlert = ({
   if (!isDonating && unfinishedCertifications.includes(superBlock))
     return (
       <Alert variant='info' className='annual-donation-alert'>
-        <p>{t('donate.unfinished-certification-2')}</p>
-        <hr />
         <p>
           <Trans i18nKey='donate.consider-donating-2'>
             <Link className='inline' to='/donate'>
@@ -60,7 +60,7 @@ export const ConditionalDonationAlert = ({
       </Alert>
     );
 
-  return <></>;
+  return null;
 };
 
 function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
@@ -71,14 +71,12 @@ function SuperBlockIntro(props: SuperBlockIntroProps): JSX.Element {
     title: string;
     intro: string[];
     note: string;
-  } = t<
-    string,
-    string & {
-      title: string;
-      intro: string[];
-      note: string;
-    }
-  >(`intro:${superBlock}`);
+  } = t(`intro:${superBlock}`, { returnObjects: true }) as {
+    title: string;
+    intro: string[];
+    note: string;
+  };
+
   const {
     title: i18nSuperBlock,
     intro: superBlockIntroText,

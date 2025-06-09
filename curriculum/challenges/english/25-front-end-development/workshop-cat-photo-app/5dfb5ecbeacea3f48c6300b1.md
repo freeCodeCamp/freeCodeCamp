@@ -20,7 +20,7 @@ Here is an example of list items in an unordered list:
 
 Within the `ul` element nest three list items to display three things cats love:
 
-`cat nip`
+`catnip`
 
 `laser pointers`
 
@@ -35,14 +35,14 @@ assert.lengthOf(document.querySelectorAll('li'), 3);
 assert.lengthOf(code.match(/<\/li\>/g), 3);
 ```
 
-You should have three `li` elements with the text `cat nip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
+You should have three `li` elements with the text `catnip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.
 
 ```js
 assert.deepStrictEqual(
   [...document.querySelectorAll('li')]
     .map((item) => item.innerText.toLowerCase())
     .sort((a, b) => a.localeCompare(b)),
-  ['cat nip', 'lasagna', 'laser pointers']
+  ['catnip', 'lasagna', 'laser pointers']
 );
 ```
 

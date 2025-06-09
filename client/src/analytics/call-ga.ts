@@ -54,11 +54,6 @@ interface DonationViewEvent {
   action: DonationViewEventAction;
 }
 
-interface RenderTimeEvent {
-  event: 'render_time';
-  render_time_msec: number;
-}
-
 interface PageViewEvent {
   event: 'pageview';
   pagePath: string;
@@ -96,7 +91,6 @@ export type GAevent =
   | DonationViewEvent
   | DonationEvent
   | DonationRelatedEvent
-  | RenderTimeEvent
   | PageViewEvent
   | ExperimentViewEvent
   | ChallengeFailedEvent

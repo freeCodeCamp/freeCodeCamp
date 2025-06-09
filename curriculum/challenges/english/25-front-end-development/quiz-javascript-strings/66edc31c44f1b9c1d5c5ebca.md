@@ -7,7 +7,7 @@ dashedName: quiz-javascript-strings
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -65,19 +65,19 @@ Which of the following options is the newline character?
 
 #### --distractors--
 
-`'\newline'`
+`\newline`
 
 ---
 
-`'\new'`
+`\new`
 
 ---
 
-`'\line'`
+`\line`
 
 #### --answer--
 
-`'\n'`
+`\n`
 
 ### --question--
 
@@ -205,57 +205,56 @@ developer[2];
 
 #### --text--
 
-How can you obtain the ASCII value of a character in a string?
+How can you obtain the ASCII value of the first character in the string `"hello"`?
 
 #### --distractors--
 
-`str.charCode()`
+`"hello".charCode(0)`
 
 ---
 
-`str.codeAt()`
+`"hello".codeAt(0)`
 
 ---
 
-`str.getCharIndex()`
+`"hello".getCharIndex(0)`
 
 #### --answer--
 
-`str.charCodeAt()`
+`"hello".charCodeAt(0)`
 
 ### --question--
 
 #### --text--
 
-How can you obtain the character corresponding to an ASCII value?
+Which method can you use to obtain the character corresponding to an ASCII value?
 
 #### --distractors--
 
-`String.toASCII()`
+`toASCII()`
 
 ---
 
-`String.toChar()`
+`toChar()`
 
 ---
 
-`String.toCode()`
+`toCode()`
 
 #### --answer--
 
-`String.fromCharCode()`
+`fromCharCode()`
 
 ### --question--
 
 #### --text--
 
-Which of the following `indexOf` examples will correctly return -1?
+Which of the following `indexOf` examples will log `-1` to the console?
 
 #### --distractors--
 
 ```js
 const organization = "freeCodeCamp";
-
 console.log(organization.indexOf("e"));
 ```
 
@@ -263,7 +262,6 @@ console.log(organization.indexOf("e"));
 
 ```js
 const organization = "freeCodeCamp";
-
 console.log(organization.indexOf("f"));
 ```
 
@@ -271,7 +269,6 @@ console.log(organization.indexOf("f"));
 
 ```js
 const organization = "freeCodeCamp";
-
 console.log(organization.indexOf("C"));
 ```
 
@@ -279,7 +276,6 @@ console.log(organization.indexOf("C"));
 
 ```js
 const organization = "freeCodeCamp";
-
 console.log(organization.indexOf("c"));
 ```
 
@@ -287,23 +283,23 @@ console.log(organization.indexOf("c"));
 
 #### --text--
 
-How can you check if the string `"JavaScript"` contains a specific substring?
+How can you check if the string `"JavaScript"` contains `"Script"`?
 
 #### --distractors--
 
-`"JavaScript".has()`
+`"JavaScript".has("Script")`
 
 ---
 
-`"JavaScript".contains()`
+`"JavaScript".contains("Script")`
 
 ---
 
-`"JavaScript".exists()`
+`"JavaScript".exists("Script")`
 
 #### --answer--
 
-`"JavaScript".includes()`
+`"JavaScript".includes("Script")`
 
 ### --question--
 
@@ -313,7 +309,7 @@ Which of the following extracts the substring `"Script"` from the string `"JavaS
 
 #### --distractors--
 
-`"JavaScript".remove(3)`
+`"JavaScript".find(5)`
 
 ---
 
@@ -321,7 +317,7 @@ Which of the following extracts the substring `"Script"` from the string `"JavaS
 
 ---
 
-`"JavaScript".cut(3)`
+`"JavaScript".cut(5)`
 
 #### --answer--
 
@@ -375,23 +371,23 @@ How do you convert the string `"JavaScript"` to lowercase?
 
 #### --text--
 
-Which of the following methods is used to find a specified value in a string and replace it with another value?
+Which of the following will replace `"dogs"` with `"cats"` in the string `"I love dogs"`.
 
 #### --distractors--
 
-`indexOf()`
+`"I love dogs".slice("dogs", "cats")`
 
 ---
 
-`replaceWith()`
+`"I love dogs".replaceWith("dogs", "cats")`
 
 ---
 
-`find()`
+`"I love dogs".find("dogs", "cats")`
 
 #### --answer--
 
-`replace()`
+`"I love dogs".replace("dogs", "cats")`
 
 ### --question--
 
@@ -401,25 +397,25 @@ Which method is used to repeat a string a specified number of times?
 
 #### --distractors--
 
-`str.times()`
+`times()`
 
 ---
 
-`str.repeatTimes()`
+`repeatTimes()`
 
 ---
 
-`str.repeatNumber()`
+`repeatNumber()`
 
 #### --answer--
 
-`str.repeat()`
+`repeat()`
 
 ### --question--
 
 #### --text--
 
-What will the following code return: `'abc'.repeat(3)`?
+What will the following code return: `"abc".repeat(3)`?
 
 #### --distractors--
 
@@ -441,23 +437,23 @@ It will throw an error.
 
 #### --text--
 
-How do you remove whitespace from the beginning and end of a string?
+Which method will remove whitespace from the beginning and end of a string?
 
 #### --distractors--
 
-`str.strip()`
+`strip()`
 
 ---
 
-`str.removeWhitespace()`
+`removeWhitespace()`
 
 ---
 
-`str.trimWhitespace()`
+`trimWhitespace()`
 
 #### --answer--
 
-`str.trim()`
+`trim()`
 
 ### --question--
 

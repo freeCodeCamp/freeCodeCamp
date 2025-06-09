@@ -1,15 +1,7 @@
-import type {
-  FastifyPluginCallback,
-  FastifyPluginAsync,
-  FastifyRequest,
-  RouteOptions
-} from 'fastify';
-import rateLimit, { type FastifyRateLimitStore } from '@fastify/rate-limit';
-// @ts-expect-error - no types
-import MongoStoreRL from 'rate-limit-mongo';
+import type { FastifyPluginCallback, FastifyRequest } from 'fastify';
 import isEmail from 'validator/lib/isEmail';
 
-import { AUTH0_DOMAIN, MONGOHQ_URL } from '../../utils/env';
+import { AUTH0_DOMAIN } from '../../utils/env';
 import { auth0Client } from '../../plugins/auth0';
 import { createAccessToken } from '../../utils/tokens';
 import { findOrCreateUser } from '../helpers/auth-helpers';
@@ -31,75 +23,19 @@ const getEmailFromAuth0 = async (
   return typeof email === 'string' ? email : null;
 };
 
-// TODO: Use Redis! Then we don't need to maintain this store.
-class Store implements FastifyRateLimitStore {
-  mongoStore: MongoStoreRL;
-  // We don't really need this.options, but it's here for consistency with the
-  // custom store in the fastify-rate-limit docs.
-  options: { timeWindow: number };
-  constructor({ timeWindow }: { timeWindow: number }) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-    this.mongoStore = new MongoStoreRL({
-      collectionName: 'UserRateLimit',
-      uri: MONGOHQ_URL,
-      expireTimeMs: timeWindow // timeWindow is Fastify's equivalent of express-rate-limit's expireTimeMs
-    });
-    this.options = { timeWindow };
-  }
-
-  incr(
-    key: string,
-    cb: (err: Error | null, result?: { current: number; ttl: number }) => void
-  ) {
-    // This converts between what rate-limit-mongo calls and what
-    // fastify-rate-limit expects
-    const callbackConverted = (
-      err: Error | null,
-      current: number,
-      expires: Date
-    ) => {
-      const ttl = expires.getTime() - Date.now();
-      cb(err, { current, ttl });
-    };
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-    this.mongoStore.incr(key, callbackConverted);
-  }
-
-  // routeOptions are ignored for now, but this is the signature we need to implement
-  child(
-    routeOptions: RouteOptions & { path: string; prefix: string }
-  ): FastifyRateLimitStore {
-    const childParams = { ...this.options, ...routeOptions };
-    const store = new Store(childParams);
-    return store;
-  }
-}
-
 /**
  * Route handler for Mobile authentication.
  *
  * @param fastify The Fastify instance.
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done Callback to signal that the logic has completed.
  *
  */
-export const mobileAuth0Routes: FastifyPluginAsync = async (
+export const mobileAuth0Routes: FastifyPluginCallback = (
   fastify,
-  _options
+  _options,
+  done
 ) => {
-  // Rate limit for mobile login
-  // 10 requests per 15 minute windows
-  // @ts-expect-error - no types
-  await fastify.register(rateLimit, {
-    timeWindow: 15 * 60 * 1000,
-    max: 10,
-    enableDraftSpec: true, // ratelimit-* instead of x-ratelimit-*
-    keyGenerator: req => {
-      return (req.headers['x-forwarded-for'] as string) || 'localhost';
-    },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-    store: Store
-  });
-
   // TODO(Post-MVP): move this into the app, so that we add this hook once for
   // all auth routes.
   fastify.addHook('onRequest', fastify.redirectIfSignedIn);
@@ -107,13 +43,21 @@ export const mobileAuth0Routes: FastifyPluginAsync = async (
   fastify.get('/mobile-login', async (req, reply) => {
     const email = await getEmailFromAuth0(req);
 
+    const logger = fastify.log.child({ req, res: reply });
+
+    logger.info('Mobile app login attempt');
+
     if (!email) {
+      logger.error('Could not get email from Auth0 to log in');
+
       return reply.status(401).send({
         message: 'We could not log you in, please try again in a moment.',
         type: 'danger'
       });
     }
     if (!isEmail(email)) {
+      logger.error('Email is incorrectly formatted for login');
+
       return reply.status(400).send({
         message: 'The email is incorrectly formatted',
         type: 'danger'
@@ -124,6 +68,8 @@ export const mobileAuth0Routes: FastifyPluginAsync = async (
 
     reply.setAccessTokenCookie(createAccessToken(id));
   });
+
+  done();
 };
 
 /**

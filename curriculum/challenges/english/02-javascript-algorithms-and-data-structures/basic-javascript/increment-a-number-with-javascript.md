@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244ac
 title: Increment a Number with JavaScript
 challengeType: 1
-videoUrl: 'https://scrimba.com/c/ca8GLT9'
 forumTopicId: 18201
 dashedName: increment-a-number-with-javascript
 ---
@@ -39,7 +38,7 @@ You should not use the assignment operator.
 
 ```js
 assert(
-  /let\s*myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/.test(__helpers.removeJSComments(code))
+  /let\s+myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/.test(__helpers.removeJSComments(code))
 );
 ```
 

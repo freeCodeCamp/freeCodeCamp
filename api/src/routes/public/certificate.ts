@@ -13,6 +13,7 @@ import {
   getFallbackFullStackDate,
   isKnownCertSlug
 } from '../helpers/certificate-utils';
+import { normalizeDate } from '../../utils/normalize';
 
 /**
  * Plugin for the unprotected certificate endpoints.
@@ -32,12 +33,12 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.certSlug
     },
     async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
       const username = req.params.username.toLowerCase();
       const certSlug = req.params.certSlug;
 
-      fastify.log.info(`certSlug: ${certSlug}`);
-
       if (!isKnownCertSlug(certSlug)) {
+        logger.warn(`Unknown certSlug: ${certSlug}`);
         void reply.code(404);
         return reply.send({
           messages: [
@@ -87,6 +88,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (user === null) {
+        logger.info(`User ${username} not found.`);
         return reply.send({
           messages: [
             {
@@ -99,6 +101,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (user.isCheater || user.isBanned) {
+        logger.info(`User ${username} is banned or a cheater.`);
         return reply.send({
           messages: [
             {
@@ -110,6 +113,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user.isHonest) {
+        logger.info(`User ${username} has not accepted honesty policy.`);
         return reply.send({
           messages: [
             {
@@ -122,6 +126,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (user.profileUI?.isLocked) {
+        logger.info(`User ${username} has a locked profile.`);
         return reply.send({
           messages: [
             {
@@ -134,6 +139,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user.name) {
+        logger.info(`User ${username} has not added a name.`);
         return reply.send({
           messages: [
             {
@@ -145,6 +151,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user.profileUI?.showCerts) {
+        logger.info(`User ${username} has private certs.`);
         return reply.send({
           messages: [
             {
@@ -157,6 +164,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user.profileUI?.showTimeLine) {
+        logger.info(`User ${username} has private timeline.`);
         return reply.send({
           messages: [
             {
@@ -169,12 +177,16 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user[certType]) {
+        const cert = certTypeTitleMap[certType];
+        logger.info(
+          `User ${username} has not completed the ${cert} certification.`
+        );
         return reply.send({
           messages: [
             {
               type: 'info',
               message: 'flash.user-not-certified',
-              variables: { username, cert: certTypeTitleMap[certType] }
+              variables: { username, cert }
             }
           ]
         });
@@ -211,12 +223,13 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       const { name } = user;
 
       if (!user.profileUI.showName) {
+        logger.info(`User ${username} has private name.`);
         void reply.code(200);
         return reply.send({
           certSlug,
           certTitle,
           username,
-          date: completedDate,
+          date: normalizeDate(completedDate),
           completionTime
         });
       }
@@ -227,7 +240,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         certTitle,
         username,
         name,
-        date: completedDate,
+        date: normalizeDate(completedDate),
         completionTime
       });
     }

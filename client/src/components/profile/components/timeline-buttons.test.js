@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
@@ -24,26 +23,13 @@ jest.mock('gatsby', () => {
       }
     }),
     graphql: jest.fn(),
-    Link: jest
-      .fn()
-      .mockImplementation(
-        ({
-          activeClassName,
-          activeStyle,
-          getProps,
-          innerRef,
-          partiallyActive,
-          ref,
-          replace,
-          to,
-          ...rest
-        }) =>
-          React.createElement('a', {
-            ...rest,
-            href: to,
-            gatsby: 'true'
-          })
-      )
+    Link: jest.fn().mockImplementation(({ to, ...rest }) =>
+      React.createElement('a', {
+        ...rest,
+        href: to,
+        gatsby: 'true'
+      })
+    )
   };
 });
 

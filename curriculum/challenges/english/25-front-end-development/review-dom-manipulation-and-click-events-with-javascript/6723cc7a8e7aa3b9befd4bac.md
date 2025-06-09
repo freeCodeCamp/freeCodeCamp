@@ -7,15 +7,13 @@ dashedName: review-dom-manipulation-and-click-events-with-javascript
 
 # --description--
 
-Review the concepts below to prepare for the upcoming quiz.
+## Working with the DOM and Web APIs
 
-## Working with the DOM and Web API's
-
-- **API**: An API (Application Programming Interface) is a set of rules and protocols that allow software applications to communicate with each other and exchange data efficiently. 
+- **API**: An API (Application Programming Interface) is a set of rules and protocols that allow software applications to communicate with each other and exchange data efficiently.
 - **Web API**: Web APIs are specifically designed for web applications. These types of APIs are often divided into two main categories: browser APIs and third-party APIs.
 - **Browser APIs**: These APIs expose data from the browser. As a web developer, you can access and manipulate this data using JavaScript.
 - **Third-Party APIs**: These are not built into the browser by default. You have to retrieve their code in some way. Usually, they will have detailed documentation explaining how to use their services. An example is the Google Maps API, which you can use to display interactive maps on your website.
-- **DOM**: The DOM stands for Document Object Model. It's a programming interface that lets you interact with HTML documents. With the DOM, you can add, modify, or delete elements on a webpage. The root of the DOM tree is the `<html>` element. It's the top-level container for all the content of an HTML document. All other nodes are descendants of this root node. Then, below the root node, we find other nodes in the hierarchy. A parent node is an element that contains other elements. A child node is an element that is contained within another element.
+- **DOM**: The DOM stands for Document Object Model. It's a programming interface that lets you interact with HTML documents. With the DOM, you can add, modify, or delete elements on a webpage. The root of the DOM tree is the `html` element. It's the top-level container for all the content of an HTML document. All other nodes are descendants of this root node. Then, below the root node, we find other nodes in the hierarchy. A parent node is an element that contains other elements. A child node is an element that is contained within another element.
 - **`navigator` Interface**: This provides information about the browser environment, such as the user agent string, the platform, and the version of the browser. A user agent string is a text string that identifies the browser and operating system being used.
 - **`window` Interface**: This represents the browser window that contains the DOM document. It provides methods and properties for interacting with the browser window, such as resizing the window, opening new windows, and navigating to different URLs.
 
@@ -140,7 +138,7 @@ const lastParagraph = document.querySelector("#example-section p:last-of-type");
 sectionEl.removeChild(lastParagraph);
 ```
 
-## Work with the `setAttribute` Method
+## Work with the `setAttribute()` Method
 
 - **Definition**: This method is used to set the attribute for a given element. If the attribute already exists, then the value is updated. Otherwise, a new attribute is added with a value.
 
@@ -159,7 +157,7 @@ para.setAttribute("class", "my-class");
 
 ## `addEventListener()` and `removeEventListener()` Methods
 
-- **`addEventListener` Method**: This method is used to listen for events. It takes two arguments: the event you want to listen for and a function that will be called when the event occurs. Some common examples of events would be click events, input events, change events, and input events.
+- **`addEventListener` Method**: This method is used to listen for events. It takes two arguments: the event you want to listen for and a function that will be called when the event occurs. Some common examples of events would be click events, input events, and change events.
 
 ```js
 const btn = document.getElementById("btn");
@@ -167,7 +165,7 @@ const btn = document.getElementById("btn");
 btn.addEventListener("click", () => alert("You clicked the button"));
 ```
 
-- **`removeEventListener` Method**: This method is used to remove an event listener that was previously added to an element using the `addEventListener` method. This is useful when you want to stop listening for a particular event on an element.
+- **`removeEventListener()` Method**: This method is used to remove an event listener that was previously added to an element using the `addEventListener()` method. This is useful when you want to stop listening for a particular event on an element.
 
 ```js
 const bodyEl = document.querySelector("body");
@@ -193,6 +191,42 @@ para.addEventListener("mouseover", () => {
 ```html
 <button onclick="alert('Hello World!')">Show alert</button>
 ```
+
+## The Change Event
+
+- **Definition**: The change event is a special event which is fired when the user modifies the value of certain input elements. Examples would include when a checkbox or a radio button is ticked. Or when the user makes a selection from something like a date picker or dropdown menu.
+
+```html
+<label>
+  Choose a programming language:
+  <select class="language" name="language">
+    <option value="">---Select One---</option>
+    <option value="JavaScript">JavaScript</option>
+    <option value="Python">Python</option>
+    <option value="C++">C++</option>
+  </select>
+</label>
+
+<p class="result"></p>
+```
+
+```js 
+const selectEl = document.querySelector(".language");
+const result = document.querySelector(".result");
+
+selectEl.addEventListener("change", (e) => {
+  result.textContent = `You enjoy programming in ${e.target.value}.`;
+});
+```
+
+## Event Bubbling
+
+- **Definition**: Event bubbling, or propagation, refers to how an event "bubbles up" to parent objects when triggered.
+- **`stopPropagation()` Method**: This method prevents further propagation for an event.
+
+## Event Delegation
+
+- **Definition**: Event delegation is the process of listening to events that have bubbled up to a parent, rather than handling them directly on the element that triggered them. 
 
 ## DOMContentLoaded
 
@@ -225,7 +259,7 @@ toggleBtn.addEventListener("click", () => menu.classList.toggle("show"));
 ```
 
 
-## Working with the `setTimeout` and `setInterval` Methods
+## Working with the `setTimeout()` and `setInterval()` Methods
 
 - **`setTimeout()` Method**: This method lets you delay an action for a specified time. 
 
@@ -286,7 +320,7 @@ const animation = square.animate(
 
 ## The Canvas API
 
-- **Definition**: The Canvas API is a powerful tool that lets you and manipulate graphics right inside your JavaScript file. To work with the Canvas API, you first need to provide a `<canvas>` element in HTML. This element acts as a drawing surface you can manipulate with the instance methods and properties of the interfaces in the Canvas API. This API has interfaces like `HTMLCanvasElement`, `CanvasRenderingContext2D`, `CanvasGradient`, `CanvasPattern`, and `TextMetrics` which contain methods and properties you can use to create graphics in your JavaScript file.
+- **Definition**: The Canvas API is a powerful tool that lets you manipulate graphics right inside your JavaScript file. To work with the Canvas API, you first need to provide a `canvas` element in HTML. This element acts as a drawing surface you can manipulate with the instance methods and properties of the interfaces in the Canvas API. This API has interfaces like `HTMLCanvasElement`, `CanvasRenderingContext2D`, `CanvasGradient`, `CanvasPattern`, and `TextMetrics` which contain methods and properties you can use to create graphics in your JavaScript file.
 
 ```html
 <canvas id="my-canvas" width="400" height="400"></canvas>

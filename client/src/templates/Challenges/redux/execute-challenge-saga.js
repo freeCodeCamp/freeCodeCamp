@@ -14,7 +14,10 @@ import {
   takeLatest
 } from 'redux-saga/effects';
 
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import {
+  canSaveToDB,
+  challengeTypes
+} from '../../../../../shared/config/challenge-types';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
@@ -55,6 +58,7 @@ import {
   challengeDataSelector,
   challengeMetaSelector,
   challengeTestsSelector,
+  challengeHooksSelector,
   isBuildEnabledSelector,
   isExecutingSelector,
   portalDocumentSelector,
@@ -69,11 +73,8 @@ function* executeCancellableChallengeSaga(payload) {
   const { challengeType, id } = yield select(challengeMetaSelector);
   const { challengeFiles } = yield select(challengeDataSelector);
 
-  // if multifileCertProject, see if body/code size is submittable
-  if (
-    challengeType === challengeTypes.multifileCertProject ||
-    challengeType === challengeTypes.multifilePythonCertProject
-  ) {
+  // if canSaveToDB, see if body/code size is submittable
+  if (canSaveToDB(challengeType)) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 
@@ -108,8 +109,9 @@ export function* executeChallengeSaga({ payload }) {
     yield put(initConsole(i18next.t('learn.running-tests')));
     // reset tests to initial state
     const tests = (yield select(challengeTestsSelector)).map(
-      ({ text, testString }) => ({ text, testString })
+      ({ text, testString }) => ({ text, testString, running: true })
     );
+    const hooks = yield select(challengeHooksSelector);
     yield put(updateTests(tests));
 
     yield fork(takeEveryLog, consoleProxy);
@@ -128,7 +130,7 @@ export function* executeChallengeSaga({ payload }) {
     const document = yield getContext('document');
     const testRunner = yield call(
       getTestRunner,
-      buildData,
+      { ...buildData, hooks },
       { proxyLogger },
       document
     );
@@ -196,7 +198,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
   const testResults = [];
   for (let i = 0; i < tests.length; i++) {
     const { text, testString } = tests[i];
-    const newTest = { text, testString };
+    const newTest = { text, testString, running: false };
     // only the last test outputs console.logs to avoid log duplication.
     const firstTest = i === 1;
     try {
@@ -289,7 +291,9 @@ export function* previewChallengeSaga(action) {
         if (
           challengeData.challengeType === challengeTypes.python ||
           challengeData.challengeType ===
-            challengeTypes.multifilePythonCertProject
+            challengeTypes.multifilePythonCertProject ||
+          challengeData.challengeType === challengeTypes.pyLab ||
+          challengeData.challengeType === challengeTypes.dailyChallengePy
         ) {
           yield updatePython(challengeData);
         } else {
@@ -306,7 +310,6 @@ export function* previewChallengeSaga(action) {
   } catch (err) {
     if (err[0] === 'timeout') {
       // TODO: translate the error
-      // eslint-disable-next-line no-ex-assign
       err[0] = `The code you have written is taking longer than the ${previewTimeout}ms our challenges allow. You may have created an infinite loop or need to write a more efficient algorithm`;
     }
     // If the preview fails, the most useful thing to do is to show the learner
@@ -323,7 +326,9 @@ function* updatePreviewSaga(action) {
   const challengeData = yield select(challengeDataSelector);
   if (
     challengeData.challengeType === challengeTypes.python ||
-    challengeData.challengeType === challengeTypes.multifilePythonCertProject
+    challengeData.challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeData.challengeType === challengeTypes.pyLab ||
+    challengeData.challengeType === challengeTypes.dailyChallengePy
   ) {
     yield updatePython(challengeData);
   } else {
@@ -340,8 +345,7 @@ function* updatePython(challengeData) {
   interruptCodeExecution();
   const code = {
     contents: buildData.sources.index,
-    editableContents: buildData.sources.editableContents,
-    original: buildData.sources.original
+    editableContents: buildData.sources.editableContents
   };
 
   runPythonCode(code);
@@ -355,13 +359,18 @@ function* previewProjectSolutionSaga({ payload }) {
   try {
     if (canBuildChallenge(challengeData)) {
       const buildData = yield buildChallengeData(challengeData);
+      if (buildData.error) throw Error(buildData.error);
+
       if (challengeHasPreview(challengeData)) {
         const document = yield getContext('document');
         yield call(updateProjectPreview, buildData, document);
+      } else {
+        throw Error('Project does not have a preview');
       }
     }
   } catch (err) {
-    console.log(err);
+    console.error('Unable to show project preview');
+    console.error(err);
   }
 }
 

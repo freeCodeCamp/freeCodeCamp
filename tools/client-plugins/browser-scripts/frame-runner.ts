@@ -10,14 +10,9 @@ const frameDocument = document as FrameDocument;
 frameDocument.__initTestFrame = initTestFrame;
 
 async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const code = (e.code.contents || '').slice();
-  const __file = (id?: string) => {
-    if (id && e.code.original) {
-      return e.code.original[id];
-    } else {
-      return code;
-    }
-  };
+
   const editableContents = (e.code.editableContents || '').slice();
   // __testEditable allows test authors to run tests against a transitory dom
   // element built using only the code in the editable region.
@@ -31,18 +26,9 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
     return out;
   };
 
-  if (!e.getUserInput) {
-    e.getUserInput = () => code;
-  }
-
   /* eslint-disable @typescript-eslint/no-unused-vars */
-  // Fake Deep Equal dependency
-  const DeepEqual = (a: Record<string, unknown>, b: Record<string, unknown>) =>
-    JSON.stringify(a) === JSON.stringify(b);
-
   // Hardcode Deep Freeze dependency
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const DeepFreeze = (o: Record<string, any>) => {
+  const DeepFreeze = (o: Record<string, unknown>) => {
     Object.freeze(o);
     Object.getOwnPropertyNames(o).forEach(function (prop) {
       if (
@@ -51,8 +37,7 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
         (typeof o[prop] === 'object' || typeof o[prop] === 'function') &&
         !Object.isFrozen(o[prop])
       ) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-        DeepFreeze(o[prop]);
+        DeepFreeze(o[prop] as Record<string, unknown>);
       }
     });
     return o;
@@ -73,7 +58,6 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
       import(/* webpackChunkName: "enzyme" */ 'enzyme'),
       import(/* webpackChunkName: "enzyme-adapter" */ 'enzyme-adapter-react-16')
     ]);
-    /* eslint-enable no-inline-comments */
 
     Enzyme.configure({ adapter: new Adapter16() });
     /* eslint-enable prefer-const */
@@ -96,13 +80,14 @@ async function initTestFrame(e: InitTestFrameArg = { code: {} }) {
             const test: unknown = eval(testString);
             resolve(test);
           } catch (err) {
-            reject(err);
+            reject(err as Error);
           }
         })
       );
       const test = await testPromise;
       if (typeof test === 'function') {
-        await test(e.getUserInput);
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        await test();
       }
       return { pass: true };
     } catch (err) {

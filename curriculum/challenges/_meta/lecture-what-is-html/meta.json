@@ -1,16 +1,28 @@
 {
-  "name": "What is HTML?",
+  "name": "Understanding HTML Attributes and the HTML Boilerplate",
   "isUpcomingChange": false,
   "dashedName": "lecture-what-is-html",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "66f6db08d55022680a3cfbc9",
-      "title": "What Is HTML, and What Role Does It Play on the Web?"
+      "title": "What Role Does HTML Play on the Web?"
     },
     {
       "id": "6708143cab2b583ecd3324f5",
       "title": "What Are Attributes, and How Do They Work?"
+    },
+    {
+      "id": "670838977810401844af6fe0",
+      "title": "What Is the Role of the Link Element in HTML, and How Can It Be Used to Link to External Stylesheets?"
+    },
+    {
+      "id": "670838e914096b194b0c51aa",
+      "title": "What Is an HTML Boilerplate, and Why Is It Important?"
+    },
+    {
+      "id": "670839051794aa19fcef6dc8",
+      "title": "What Is UTF-8 Character Encoding, and Why Is It Needed?"
     }
   ],
   "helpCategory": "HTML-CSS",

@@ -7,7 +7,7 @@ dashedName: quiz-css-animations
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -17,51 +17,51 @@ To pass the quiz, you must correctly answer at least 17 of the 20 questions belo
 
 #### --text--
 
-Which CSS property is used for 2D/3D transformations?
+What is the purpose of the `transform` property in CSS?
 
 #### --distractors--
 
-`position`
+To change the visibility of an element.
 
 ---
 
-`transition`
+To apply a visual effect to text.
 
 ---
 
-`display`
+To set the dimensions of an element.
 
 #### --answer--
 
-`transform`
+To modify the position, size, and shape of an element.
 
 ### --question--
 
 #### --text--
 
-What does `matrix()` allow you to control?
+How does the CSS `animation-direction` property affect an animation?
 
 #### --distractors--
 
-Only scaling
+It specifies if an animation should be repeated.
 
 ---
 
-Only translation
+It sets the duration of the animation.
 
 ---
 
-Only rotation
+It defines the speed of the animation.
 
 #### --answer--
 
-Multiple transformations at once
+It defines how an animation should play.
 
 ### --question--
 
 #### --text--
 
-Which property ensures the animation runs 3 times?
+Which CSS property makes an animation run 3 times?
 
 #### --distractors--
 
@@ -83,7 +83,7 @@ Which property ensures the animation runs 3 times?
 
 #### --text--
 
-Which timing function makes the animation run with the same speed from start to end?
+Which CSS timing function makes an animation run at a consistent speed from start to end?
 
 #### --distractors--
 
@@ -95,7 +95,7 @@ Which timing function makes the animation run with the same speed from start to 
 
 ---
 
-`cubic-bezier`
+`ease-in-out`
 
 #### --answer--
 
@@ -105,161 +105,172 @@ Which timing function makes the animation run with the same speed from start to 
 
 #### --text--
 
-What does `@keyframes` define?
+What does the `@keyframes` at-rule define in CSS?
 
 #### --distractors--
 
-CSS colors
+The colors of a CSS gradient.
 
 ---
 
-CSS transitions
+The angles of a CSS rotation.
 
 ---
 
-CSS text styles
+The dimensions of an element.
 
 #### --answer--
 
-CSS animation sequences
+The stages of a CSS animation.
 
 ### --question--
 
 #### --text--
 
-What does `translate()` do?
+What is the purpose of the `translateX()` function in CSS?
 
 #### --distractors--
 
-Changes opacity
+It changes the opacity of the element.
 
 ---
 
-Rotates the element
+It rotates the element.
 
 ---
 
-Skews the element
+It repositions the element vertically.
 
 #### --answer--
 
-Moves the element
+It repositions the element horizontally.
 
 ### --question--
 
 #### --text--
 
-What does accessibility focus on in web design?
+Which of the following is NOT a potential concern with CSS animations?
 
 #### --distractors--
 
-Color choice
+They may cause discomfort or physical harm to certain users.
 
 ---
 
-Responsiveness
+Users may find them distracting.
 
 ---
 
-Layout complexity
+Overuse can lead to poor performance.
 
 #### --answer--
 
-Usability for all users
+They can enhance user experience.
 
 ### --question--
 
 #### --text--
 
-Where is `@keyframes` written?
+Where is the `@keyframes` at-rule defined?
 
 #### --distractors--
 
-Inside HTML tags
+Within the `body` element of an HTML file.
 
 ---
 
-Inside CSS selectors
+Within the `head` element of an HTML file.
 
 ---
 
-In JavaScript
+Within a CSS class definition.
 
 #### --answer--
 
-In CSS
+At the top level, outside of any CSS selectors.
 
 ### --question--
 
 #### --text--
 
-Which property will pause the animation?
+Which CSS property allows you to pause and resume an animation?
 
 #### --distractors--
 
-`animation-timing-function: paused`
+`animation-timing-function`
 
 ---
 
-`animation-stop`
+`animation-delay`
 
 ---
 
-`animation-direction: paused`
+`animation-direction`
 
 #### --answer--
 
-`animation-play-state: paused`
+`animation-play-state`
 
 ### --question--
 
 #### --text--
 
-Why is providing video captions important?
+What value should be assigned to the `animation-name` property in CSS?
 
 #### --distractors--
 
-To improve SEO
+The duration of the animation in seconds.
 
 ---
 
-To comply with web standards
+The timing function used for the animation.
 
 ---
 
-To enhance visuals
+The delay before the animation starts in seconds.
 
 #### --answer--
 
-To provide accessibility for hearing impaired users
+The name of the animation defined by the `@keyframes`.
 
 ### --question--
 
 #### --text--
 
-Which attribute is used for form field accessibility?
+What does this `@keyframe` at-rule do to the animated element?
+
+```css
+@keyframes animation {
+  0% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+```
 
 #### --distractors--
 
-`placeholder`
+It rotates the element 90 degrees clockwise.
 
 ---
 
-`action`
+It changes the color of the element to blue.
 
 ---
 
-`method`
+It scales the element to 50% of its initial size and then to 100% of its initial size.
 
 #### --answer--
 
-`label`
+It moves the element horizontally from -50px to 100px, relative to its starting point.
 
 ### --question--
 
 #### --text--
 
-Which property defines how an animation progresses over time?
+Which CSS property defines how an animation progresses over time?
 
 #### --distractors--
 
@@ -281,63 +292,85 @@ Which property defines how an animation progresses over time?
 
 #### --text--
 
-What effect does `step-start` have on an animation?
+Which CSS property is used to specify that an animation should take 5 seconds to complete?
 
 #### --distractors--
 
-Smoothly transitions between steps.
+```css
+animation-name: 5s;
+```
 
 ---
 
-Repeats the animation infinitely with no delay.
+```css
+animation-delay: 5s;
+```
 
 ---
 
-Fades in and out during each step.
+```css
+animation-timing-function: 5s;
+```
 
 #### --answer--
 
-Jumps immediately to the next frame.
+```css
+animation-duration: 5s;
+```
 
 ### --question--
 
 #### --text--
 
-What is the purpose of focus indicators?
+What does `50%` represent in the following CSS `@keyframe` at-rule?
+
+```css
+@keyframes animation {
+  0% {
+    transform: translateX(-50px);
+  }
+  50% {
+    transform: translateX(25px);
+  }
+  100% {
+    transform: translateX(100px);
+  }
+}
+```
 
 #### --distractors--
 
-To show hidden elements.
+The starting point of the animation.
 
 ---
 
-To enhance font styles.
+The ending point of the animation.
 
 ---
 
-To adjust the layout.
+The speed of the animation.
 
 #### --answer--
 
-To highlight focused elements
+The halfway point of the animation.
 
 ### --question--
 
 #### --text--
 
-What will happen when this animation `transform: translateX(200px)` is applied?
+What will happen when the property `transform: translateX(200px);` is applied?
 
 #### --distractors--
 
-The element will move left.
+The element will move 200px to the left.
 
 ---
 
-`The element will move 200px to the bottom.
+The element will move 200px to the bottom.
 
 ---
 
-The element will rotate 200 degrees.
+The element will rotate 200 degrees clockwise.
 
 #### --answer--
 
@@ -351,29 +384,29 @@ How will the animation behave if `animation-iteration-count` is set to `infinite
 
 #### --distractors--
 
-The animation will run once and stop.
+It will run once and stop.
 
 ---
 
-The animation will pause after the first iteration.
+It will pause after the first iteration.
 
 ---
 
-The animation will stop after three iterations.
+It will stop after three iterations.
 
 #### --answer--
 
-The animation will repeat indefinitely.
+It will repeat indefinitely.
 
 ### --question--
 
 #### --text--
 
-Which `keyframe` selector defines the halfway point of an animation?
+Which `@keyframes` selector specifies the starting point of an animation?
 
 #### --distractors--
 
-`0%`
+`50%`
 
 ---
 
@@ -385,57 +418,57 @@ Which `keyframe` selector defines the halfway point of an animation?
 
 #### --answer--
 
-`50%`
+`0%`
 
 ### --question--
 
 #### --text--
 
-What does the animation shorthand property include?
+What properties can be specified using the `animation` shorthand CSS property?
 
 #### --distractors--
 
-Only animation name
+Only the name of the animation.
 
 ---
 
-Only animation timing
+The name and duration of the animation.
 
 ---
 
-Only animation duration
+The name, duration, and delay of the animation.
 
 #### --answer--
 
-All animation properties
+All animation properties.
 
 ### --question--
 
 #### --text--
 
-What is the effect of using the `ease-in-out` timing function?
+Which CSS property is used to apply an animation defined by an `@keyframes` at-rule?
 
 #### --distractors--
 
-The animation will start fast and end slow
+`animation-duration`
 
 ---
 
-The animation will run at a constant speed.
+`apply`
 
 ---
 
-The animation will loop infinitely.
+`translate`
 
 #### --answer--
 
-The animation will start slow, speed up, then slow down.
+`animation`
 
 ### --question--
 
 #### --text--
 
-Which property prevents the animation from running immediately?
+Which CSS property allows you to set a time before the animation begins?
 
 #### --distractors--
 
@@ -453,3 +486,491 @@ Which property prevents the animation from running immediately?
 
 `animation-delay`
 
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What does the CSS `animation-delay` property do?
+
+#### --distractors--
+
+Sets how long the animation lasts.
+
+---
+
+Specifies the timing function.
+
+---
+
+Defines animation direction.
+
+#### --answer--
+
+Delays the start of the animation.
+
+### --question--
+
+#### --text--
+
+Which animation property specifies how the element should be styled before and after the animation?
+
+#### --distractors--
+
+`animation-delay`
+
+---
+
+`animation-direction`
+
+---
+
+`animation-iteration-count`
+
+#### --answer--
+
+`animation-fill-mode`
+
+### --question--
+
+#### --text--
+
+Why should CSS animations be used in moderation?
+
+#### --distractors--
+
+Too many CSS animations can lead to styles breaking as well as inconsistent styles across different browsers. 
+
+---
+
+Too many CSS animations can lead to lower or non existent rankings in search engine results.
+
+---
+
+Too many CSS animations will automatically crash the server and increase the likelihood for security risks. 
+
+#### --answer--
+
+Too many CSS animations can lead to poor performance and may be distracting or problematic for users with certain accessibility needs.
+
+### --question--
+
+#### --text--
+
+Which animation property determines whether the animation should play forwards, backwards, or alternate?
+
+#### --distractors--
+
+`animation-fill-mode`
+
+---
+
+`animation-delay`
+
+---
+
+`animation-timing-function`
+
+#### --answer--
+
+`animation-direction`
+
+### --question--
+
+#### --text--
+
+Which CSS media query detects if the user has requested minimal animations or motion effects?
+
+#### --distractors--
+
+`reduce-motion`
+
+---
+
+`min-motion-preference`
+
+---
+
+`motion-preferences`
+
+#### --answer--
+
+`prefers-reduced-motion`
+
+### --question--
+
+#### --text--
+
+Which property sets how many times an `animation` repeats?
+
+#### --distractors--
+
+`animation-duration`
+
+---
+
+`animation-count`
+
+---
+
+`animation-delay`
+
+#### --answer--
+
+`animation-iteration-count`
+
+### --question--
+
+#### --text--
+
+Which CSS rule is used to define the stages and styles of an animation at various points during its duration?
+
+#### --distractors--
+
+`@style`
+
+---
+
+`@transition`
+
+---
+
+`@transform`
+
+#### --answer--
+
+`@keyframes`
+
+### --question--
+
+#### --text--
+
+Inside the `reduced‑motion` media query, which declaration disables transitions?
+
+#### --distractors--
+
+`animation: none;`
+
+---
+
+`transition: remove;`
+
+---
+
+`animation-play-state: paused;`
+
+#### --answer--
+
+`transition: none;`
+
+### --question--
+
+#### --text--
+
+What does the `animation-play-state` property allow you to do?
+
+#### --distractors--
+
+Set how many times the animation repeats.
+
+---
+
+Specify how long the animation takes to complete.
+
+---
+
+Determine the direction in which the animation plays.
+
+#### --answer--
+
+Pause and resume the animation.
+
+### --question--
+
+#### --text--
+
+Which of the following is a good practice when working with animations?
+
+#### --distractors--
+
+Use as many flashing colors and rapid movements as possible to grab attention.
+
+---
+
+Avoid testing animations on different devices or screen sizes.
+
+---
+
+Make animations last as long as possible to ensure users notice them.
+
+#### --answer--
+
+Avoid content that flashes more than three times per second to prevent triggering seizures or causing discomfort.
+
+### --question--
+
+#### --text--
+
+Why is the `!important` declaration used in the CSS rules?
+
+#### --distractors--
+
+To prevent other media queries from loading.
+
+---
+
+To limit styles to the first child element.
+
+---
+
+To debug CSS more easily.
+
+#### --answer--
+
+To ensure these rules take precedence over other styles.
+
+### --question--
+
+#### --text--
+
+What does `animation-iteration-count: 1 !important;` ensure in CSS?
+
+#### --distractors--
+
+That animations are paused.
+
+---
+
+That animations run infinitely.
+
+---
+
+That animations reverse direction each cycle.
+
+#### --answer--
+
+That any looping animations only play once.
+
+### --question--
+
+#### --text--
+
+What CSS property is used to specify how long an animation should take to complete?
+
+#### --distractors--
+
+`animation-delay`
+
+---
+
+`animation-timing-function`
+
+---
+
+`animation-iteration-count`
+
+#### --answer--
+
+`animation-duration`
+
+### --question--
+
+#### --text--
+
+Which property is NOT part of the `animation` shorthand?
+
+#### --distractors--
+
+`animation-delay`
+
+---
+
+`animation-timing-function`
+
+---
+
+`animation-direction`
+
+#### --answer--
+
+`animation-transform`
+
+### --question--
+
+#### --text--
+
+What does the `@keyframes` rule define?
+
+#### --distractors--
+
+The timing function of an animation.
+
+---
+
+The default state of an element.
+
+---
+
+The media queries for animations.
+
+#### --answer--
+
+The sequence of styles at different points in an animation.
+
+### --question--
+
+#### --text--
+
+What does this `@keyframe` at-rule do to the animated element?
+
+```css
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+```
+
+#### --distractors--
+
+It scales the element up from 0% to 100%.
+
+---
+
+It moves the element from left to right.
+
+---
+
+It changes the text color to black.
+
+#### --answer--
+
+It makes the element fade in by gradually increasing its transparency.
+
+### --question--
+
+#### --text--
+
+In a keyframes rule, what does `100%` represent?
+
+#### --distractors--
+
+The start of the animation.
+
+---
+
+The halfway point.
+
+---
+
+The easing function.
+
+#### --answer--
+
+The end of the animation.
+
+### --question--
+
+#### --text--
+
+Which property controls the pace of an `animation` over its duration?
+
+#### --distractors--
+
+`animation-duration`
+
+---
+
+`animation-delay`
+
+---
+
+`animation-iteration-count`
+
+#### --answer--
+
+`animation-timing-function`
+
+### --question--
+
+#### --text--
+
+What should developers consider when implementing animations to maintain accessibility?
+
+#### --distractors--
+
+Rely entirely on JavaScript for all animations.
+
+---
+
+Add frequent and intense animations for impact.
+
+---
+
+Include only bold, fast, and surprising effects.
+
+#### --answer--
+
+Use subtle, intentional effects, honor preferences, and offer user control.
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct syntax to slide an element in from the left?
+
+#### --distractors--
+
+```css
+@keyframes slide-in {
+  0 { 
+    transform: translate(-100%); 
+  }
+  100 { 
+    transform: translate(0); 
+  }
+}
+```
+
+---
+
+```css
+@keyframes slide-in {
+  from { 
+    translateX(-100%); 
+  }
+  to { 
+    translateX(0); 
+  }
+}
+```
+
+---
+
+```css
+@keyframes slide-in {
+  start { 
+    transform: moveX(-100%); 
+  }
+  end { 
+    transform: moveX(0); 
+  }
+}
+```
+
+#### --answer--
+
+```css
+@keyframes slide-in {
+  0% { 
+    transform: translateX(-100%); 
+  }
+  100% { 
+    transform: translateX(0); 
+  }
+}
+```

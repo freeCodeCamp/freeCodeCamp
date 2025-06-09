@@ -1,11 +1,9 @@
-import { Router } from '@reach/router';
+import { Router } from '@gatsbyjs/reach-router';
 import { withPrefix } from 'gatsby';
 import React from 'react';
 
-/* eslint-disable max-len */
 import ShowProfileOrFourOhFour from '../client-only-routes/show-profile-or-four-oh-four';
 import FourOhFour from '../components/FourOhFour';
-/* eslint-enable max-len */
 
 function FourOhFourPage(): JSX.Element {
   return (

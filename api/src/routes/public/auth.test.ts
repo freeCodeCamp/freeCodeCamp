@@ -54,24 +54,9 @@ describe('auth0 routes', () => {
       superGet = createSuperRequest({ method: 'GET' });
     });
     beforeEach(async () => {
-      await fastifyTestInstance.prisma.userRateLimit.deleteMany({});
       await fastifyTestInstance.prisma.user.deleteMany({
         where: { email: newUserEmail }
       });
-    });
-
-    it('should be rate-limited', async () => {
-      // Rather than spamming the endpoint, we can check the headers.
-      const res = await superGet('/mobile-login');
-      // These headers are semi-official
-      // https://www.ietf.org/archive/id/draft-polli-ratelimit-headers-02.html
-      // so should not depend on the details of the rate-limiting library
-      expect(res.headers['ratelimit-limit']).toBe('10');
-      expect(res.headers['ratelimit-remaining']).toBe('9');
-      expect(res.headers['ratelimit-reset']).toMatch(/^\d+$/);
-
-      const res2 = await superGet('/mobile-login');
-      expect(res2.headers['ratelimit-remaining']).toBe('8');
     });
 
     it('should return 401 if the authorization header is invalid', async () => {
@@ -142,7 +127,6 @@ describe('auth0 routes', () => {
 
       const res = await superRequest('/mobile-login', {
         method: 'GET',
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         setCookies: firstRes.get('Set-Cookie')
       })
         .set('Authorization', 'Bearer does-not-matter')

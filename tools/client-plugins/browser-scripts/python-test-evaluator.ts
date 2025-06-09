@@ -16,7 +16,6 @@ interface PythonRunEvent extends MessageEvent {
     code: {
       contents: string;
       editableContents: string;
-      original: { [id: string]: string };
     };
     firstTest: unknown;
     testString: string;
@@ -90,7 +89,7 @@ ctx.onmessage = async (e: PythonRunEvent) => {
             eval(testString);
           resolve(test);
         } catch (err) {
-          reject(err);
+          reject(err as Error);
         }
       }
     );

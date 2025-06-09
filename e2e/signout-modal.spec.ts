@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import { allowTrailingSlash } from './utils/url';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
@@ -49,7 +50,7 @@ test.describe('Signout Modal component', () => {
     await expect(
       page.getByRole('dialog', { name: translations.signout.heading })
     ).not.toBeVisible();
-    await expect(page).toHaveURL(/.*\/learn\/?$/);
+    await expect(page).toHaveURL(allowTrailingSlash('/learn'));
   });
 
   test('closes modal after user cancels signing out', async ({ page }) => {

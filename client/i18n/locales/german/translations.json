@@ -105,7 +105,8 @@
     "update-card": "Update your card",
     "donate-now": "Donate Now",
     "confirm-amount": "Confirm amount",
-    "play-scene": "Press Play",
+    "play": "Play Video",
+    "pause": "Pause Video",
     "closed-caption": "Closed caption",
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
@@ -126,16 +127,19 @@
     "testimonials": {
       "heading": "Das sagen unsere Absolventen zu freeCodeCamp:",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Shawn Wang</strong> in Singapur",
         "occupation": "Softwareentwickler bei <strong>Amazon</strong>",
         "testimony": "\"Es ist beängstigend, den Beruf zu wechseln. Ich habe erst durch die hunderte Stunden an kostenlosen Lektionen auf freeCodeCamp das Vertrauen gewonnen, dass ich coden kann. Innerhalb eines Jahres hatte ich einen Job mit sechsstelligen Gehalt als Software Entwickler. <strong>freeCodeCamp hat mein Leben verändert.</strong>\""
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Sarah Chima</strong> in Nigeria",
         "occupation": "Softwareentwicklerin bei <strong>ChatDesk</strong>",
         "testimony": "\"<strong>freeCodeCamp war das Tor zu meiner Karriere</strong> als Softwareentwickler. Der gut strukturierte Lehrplan brachte meine Programmierkenntnisse von einem totalen Anfängerlevel auf ein sehr sicheres Niveau. Es war alles, was ich brauchte, um meinen ersten Entwicklerjob bei einer großartigen Firma zu bekommen.\""
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Emma Bostian</strong> in Schweden",
         "occupation": "Softwareentwicklerin bei <strong>Spotify</strong>",
         "testimony": "\"Ich habe immer damit gekämpft, JavaScript zu lernen. Ich habe viele Kurse belegt, aber der Kurs von freeCodeCamp war derjenige, der am meisten hängen blieb. Das Lernen von JavaScript sowie Datenstrukturen und Algorithmen auf <strong>freeCodeCamp gab mir die Fähigkeiten</strong> und das Selbstvertrauen, das ich brauchte, um meinen Traumjob als Softwareentwicklerin bei Spotify zu bekommen.\""
@@ -164,13 +168,12 @@
       "cta": "Start Learning Now (it's free)"
     },
     "certification-heading": "Erlange kostenlos verifizierte Zertifizierungen in:",
-    "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
+    "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "Learn English for Developers:",
-    "professional-certs-heading": "Earn free professional certifications:",
+    "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
-    "legacy-curriculum-heading": "Explore our Legacy Curriculum:",
+    "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "Try our beta curriculum:",
-    "next-english-heading": "Try our latest English curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "faq": "Frequently asked questions:",
     "faqs": [
@@ -232,7 +235,6 @@
     ]
   },
   "settings": {
-    "profile-note": "Note: the profile settings have been moved to the profile page.",
     "share-projects": "Teile deine nicht-freeCodeCamp-Projekte, Artikel oder akzeptierte Pull-Requests.",
     "privacy": "Die Einstellungen in diesem Abschnitt ermöglichen es dir, zu kontrollieren, was in deinem öffentlichen freeCodeCamp-Portfolio angezeigt wird. Drücke auf Speichern, um deine Änderungen zu speichern.",
     "data": "Um zu sehen, welche Daten wir in deinem Konto vorhalten, klicke auf den \"Deine Daten herunterladen\" Button unten",
@@ -366,8 +368,8 @@
     "joined": "{{date}} beigetreten",
     "from": "From {{location}}",
     "total-points": "Total Points:",
-    "points": "{{count}} Punkt am {{date}}",
-    "points_plural": "{{count}} Punkte am {{date}}",
+    "points_one": "{{count}} point on {{date}}",
+    "points_other": "{{count}} points on {{date}}",
     "page-number": "{{pageNumber}} von {{totalPages}}",
     "edit-my-profile": "Edit My Profile",
     "add-bluesky": "Share this certification on BlueSky",
@@ -402,33 +404,21 @@
     "welcome-1": "Willkommen zurück, {{name}}.",
     "welcome-2": "Willkommen auf freeCodeCamp.org",
     "start-at-beginning": "Wenn Programmieren ganz neu für dich ist, schlagen wir vor, <0>am Anfang zu beginnen</0>.",
-    "read-this": {
-      "heading": "Bitte lies dies sorgfältig durch.",
-      "p1": "freeCodeCamp ist ein bewährter Weg zu deinem ersten Softwareentwickler-Job.",
-      "p2": "Mehr als 40.000 Menschen erhielten nach Absolvierung unserer Lehrangebote Arbeit als Entwickler – auch bei großen Unternehmen wie Google und Microsoft.",
-      "p3": "Wenn du neu in der Programmierung bist, empfehlen wir dir, am Anfang zu beginnen und diese Zertifizierungen der Reihe nach zu erwerben.",
-      "p4": "Für jede Zertifizierung sind je 5 Projekte zu erstellen, die eine Reihe automatisierter Tests bestehen müssen.",
-      "p5": "Du kannst diese Zertifizierungen zu deinem Lebenslauf oder LinkedIn hinzufügen. Aber noch wichtiger als die Zertifizierungen ist die Praxis, die du auf deinem Weg bekommst.",
-      "p6": "Es ist normal, sich zwischendurch überwältigt zu fühlen. Programmieren ist schwierig.",
-      "p7": "Übung ist der Schlüssel. Üben, üben, üben.",
-      "p8": "Und dieser Lehrplan wird dir tausende von Stunden praktischer Programmierpraxis geben.",
-      "p9": "Und wenn du mehr Mathematik und Informatik-Theorie lernen möchtest, haben wir auch Tausende von Stunden an Videokursen auf <0>freeCodeCamps YouTube-Kanal</0>.",
-      "p10": "Wenn du einen Entwicklerjob oder Freelance-Kunden bekommen möchtest, werden Programmierkenntnisse nur Teil des Puzzles sein. Du musst auch dein persönliches Netzwerk und deinen Ruf als Entwickler aufbauen.",
-      "p11": "You can do this on LinkedIn and GitHub, and also on <0>the freeCodeCamp forum</0>.",
-      "p12": "Viel Spaß beim Programmieren!"
-    },
+    "happy-coding": "Happy coding!",
     "upcoming-lessons": "Bevorstehende Lektionen",
     "learn": "Lernen",
     "add-subtitles": "Hilf mit Untertitel hinzuzufügen oder zu verbessern",
     "wrong-answer": "Sorry, das ist nicht die richtige Antwort. Möchtest du noch einen Anlauf wagen?",
     "check-answer": "Klick unten auf den Button, um deine Antwort zu überprüfen.",
-    "assignment-not-complete": "Please complete the assignments",
-    "assignments": "Assignments",
+    "assignment-not-complete_one": "Please complete the assignment",
+    "assignment-not-complete_other": "Please complete the assignments",
+    "assignments_one": "Assignment",
+    "assignments_other": "Assignments",
     "question": "Question",
     "questions": "Questions",
     "answered-mcq": "You have unanswered questions and/or incorrect answers.",
     "explanation": "Explanation",
-    "transcript": "Read a transcript of this video",
+    "transcript": "Transcript",
     "solution-link": "Lösungs-Link",
     "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
@@ -458,7 +448,7 @@
     "rsa": "Lesen, suchen, fragen",
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Diese Lektion zurücksetzen?",
-    "reset-warn": "Bist du dir sicher, dass du diese Lektion zurücksetzen möchtest? Die Editoren und Tests werden zurückgesetzt.",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone.",
     "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Tipp: Wenn der Mini-Browser den Code verdeckt, kann man ihn mittels Drag-and-drop bewegen. Du kannst jederzeit stoppen und den Code im Video bearbeiten.",
@@ -469,9 +459,6 @@
     "sign-in-see-benefits": "Sign in to see your supporter benefits",
     "card-has-been-updated": "Your card has been updated successfully.",
     "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "{{title}} Zertifizierung"
-    },
     "editor-tabs": {
       "code": "Code",
       "tests": "Tests",
@@ -507,6 +494,28 @@
       "learn-more": "Learn more about <0>Gitpod workspaces.</0>",
       "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account."
     },
+    "local": {
+      "intro": "This course runs in a virtual Linux machine on your computer. To run the course, you first need to download each of the following if you don't already have them:",
+      "download-vscode": "<0>VS Code</0> and the <1>Dev Containers</1> extension",
+      "heading": "Then, follow these instructions to start the course:",
+      "step-1": "Open a terminal and clone the RDB Alpha repo if you don't already have it with <0>git clone https://github.com/freeCodeCamp/rdb-alpha</0>",
+      "step-2": "Navigate to the <0>rdb-alpha</0> directory in the terminal with <1>cd rdb-alpha</1>, and open VS Code with <2>code .</2>",
+      "sub-step-heading": "If you want to save your progress to your freeCodeCamp account, do the following:",
+      "sub-step-1": "Generate a user token if you don't already have one:",
+      "generate-token-btn": "Generate User Token",
+      "sub-step-2": "Copy your user token:",
+      "copy-token-btn": "Copy User Token",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your user token will be deleted and your progress will not be saved to your freeCodeCamp account.",
+      "sub-step-3": "In the VS Code that opened, find and open the file named <0>Dockerfile</0>. At the bottom of the file, paste your token in as the value for the <1>CODEROAD_WEBHOOK_TOKEN</1> variable. It should look like this: <2>ENV CODEROAD_WEBHOOK_TOKEN=your-token-here</2>",
+      "step-3": "Open the command palette in VS Code by expanding the \"View\" menu and clicking \"Command Palette...\" and enter <0>Dev Containers: Rebuild and Reopen in Container</0> in the input.",
+      "step-4": "A new VS Code window will open and begin building the Docker image. It will take several minutes the first time.",
+      "step-5": "Once it is finished building, open the command palette again and enter <0>CodeRoad: Start</0> to open CodeRoad.",
+      "step-6": "In the CodeRoad window, click \"Start New Tutorial\" and then the \"URL\" tab at the top.",
+      "step-7": "Copy the course URL below, paste it in the URL input, and click \"Load\".",
+      "copy-url": "Copy Course URL",
+      "step-8": "Click \"Start\" to begin.",
+      "step-9": "Follow the instructions in CodeRoad to complete the course. Note: You may need to restart the terminal once for terminal settings to take effect and the tests to pass."
+    },
     "step-1": "Schritt 1: Das Projekt abschließen",
     "step-2": "Schritt 2: Übermittle deinen Code",
     "submit-public-url": "Wenn du das Projekt fertiggestellt hast, speichere alle benötigten Dateien in einem öffentlichen Repository und gib die URL dazu unten an.",
@@ -538,7 +547,7 @@
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
       "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct.",
       "finish-modal-header": "Finish Quiz",
-      "finish-modal-body": "Are you sure you want to finish the quiz? You will not be able to change any answers.",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "Yes, I am finished",
       "finish-modal-no": "No, I would like to continue the quiz",
       "exit-modal-header": "Exit Quiz",
@@ -754,13 +763,12 @@
   "search": {
     "label": "Suchen",
     "placeholder": {
-      "default": "Search our tutorials",
-      "numbered": "Search {{ roundedTotalRecords }}+ tutorials"
+      "default": "Search our news articles, tutorials, and books",
+      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
     },
     "see-results": "Alle Ergebnisse für {{searchQuery}} ansehen",
-    "no-tutorials": "Keine Tutorials gefunden",
     "try": "Suchst du nach etwas? Versuche es mit der Suchleiste auf dieser Seite.",
-    "no-results": "Wir konnten nichts in Verbindung mit <0>{{query}}</0> finden",
+    "no-results": "No results found",
     "result-list": "Search results"
   },
   "misc": {
@@ -773,7 +781,7 @@
     "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
     "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson, der Lehrer, der freeCodeCamp.org gegründet hat",
-    "email-blast": "By the way, each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
+    "email-blast": "Each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Aktualisiere deine E-Mail-Adresse",
     "update-email-2": "Aktualisiere deine E-Mail-Adresse hier:",
     "email": "E-Mail",
@@ -844,6 +852,7 @@
     "edit-my-profile": "Edit my profile"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "To claim a certification, you must first agree to our academic honesty policy",
     "really-weird": "Etwas wirklich Seltsames ist passiert. Wenn es wieder passiert, erwäge bitte, einen Fehler auf https://github.com/freeCodeCamp/freeCodeCamp/issues/new zu melden.",
     "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
@@ -897,6 +906,7 @@
     "unlink-success": "Du hast deine {{website}} erfolgreich entfernt",
     "provide-username": "Prüfe, ob du einen Benutzernamen und einen Bericht angegeben hast",
     "report-sent": "Ein Bericht wurde an das Team mit {{email}} in Kopie gesendet",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "Die Zertifizierung, die du einsehen wolltest, existiert nicht",
     "create-token-err": "Beim Erstellen deines Benutzer-Tokens ist ein Fehler aufgetreten",
     "delete-token-err": "Beim Löschen deines Benutzer-Tokens ist ein Fehler aufgetreten",
@@ -916,6 +926,12 @@
     "generate-exam-error": "An error occurred trying to generate your exam.",
     "cert-not-found": "The certification {{certSlug}} does not exist.",
     "reset-editor-layout": "Your editor layout has been reset.",
+    "user-token-generated": "A user token was created for you.",
+    "user-token-generate-error": "Something went wrong trying to generate a user token for you.",
+    "user-token-copied": "User token copied to clipboard.",
+    "user-token-copy-error": "Something went wrong trying to copy your token.",
+    "course-url-copied": "Course URL copied to clipboard.",
+    "course-url-copy-error": "Something went wrong trying to copy the course URL.",
     "ms": {
       "transcript": {
         "link-err-1": "Please include a Microsoft transcript URL in the request.",
@@ -967,7 +983,8 @@
     "publicly-visible-url": "Denke daran, eine öffentlich sichtbare App-URL einzureichen.",
     "ms-learn-link": "Please use a valid Microsoft Learn trophy link.",
     "path-url": "You probably want to submit the root path i.e. https://example.com, not https://example.com/path",
-    "source-code-link-required": "Remember to submit the link to your source code."
+    "source-code-link-required": "Remember to submit the link to your source code.",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "Geschäftsführender Direktor, freeCodeCamp.org",
@@ -1098,6 +1115,8 @@
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
       "full-stack-developer-v9": "Full Stack Developer",
       "full-stack-developer-v9-cert": "Full Stack Developer Certification",
+      "a2-professional-spanish": "A2 Professional Spanish",
+      "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
       "legacy-front-end": "Legacy Front End",
       "legacy-front-end-cert": "Legacy Front End Certification",
       "legacy-back-end": "Legacy Back End",
@@ -1169,7 +1188,7 @@
     "focus-instructions-panel": "Fokus-Bedienfeld",
     "navigate-previous": "Navigate To Previous Exercise",
     "navigate-next": "Navigate To Next Exercise",
-    "play-scene": "Play Scene"
+    "play-video": "Play Video"
   },
   "signout": {
     "heading": "Sign out of your account",

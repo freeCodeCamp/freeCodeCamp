@@ -3,14 +3,15 @@ import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
 
-import { ChallengeNode } from '../../../redux/prop-types';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
 // TODO: See if there's a nice way to incorporate the structure into data Gatsby
 // sources from the curriculum, rather than importing it directly.
 import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
 import { ChapterIcon } from '../../../assets/chapter-icon';
+import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
 import { FsdChapters } from '../../../../../shared/config/chapters';
+import { type Module } from '../../../../../shared/config/modules';
 import envData from '../../../../config/env.json';
 import Block from './block';
 import CheckMark from './check-mark';
@@ -34,21 +35,25 @@ interface ModuleProps {
   totalSteps: number;
   completedSteps: number;
 }
-interface SuperBlockTreeViewProps {
-  challenges: ChallengeNode['challenge'][];
+
+interface Challenge {
+  id: string;
+  block: string;
+  blockType: BlockTypes;
+  title: string;
+  fields: { slug: string };
+  dashedName: string;
+  challengeType: number;
+  blockLayout: BlockLayouts;
+  superBlock: SuperBlocks;
+}
+
+interface SuperBlockAccordionProps {
+  challenges: Challenge[];
   superBlock: SuperBlocks;
   chosenBlock: string;
   completedChallengeIds: string[];
 }
-
-type Module = {
-  dashedName: string;
-  comingSoon?: boolean;
-  blocks: {
-    dashedName: string;
-  }[];
-  moduleType?: string;
-};
 
 const modules = superBlockStructure.chapters.flatMap<Module>(
   ({ modules }) => modules
@@ -191,7 +196,7 @@ const LinkBlock = ({
   challenges
 }: {
   superBlock: SuperBlocks;
-  challenges?: ChallengeNode['challenge'][];
+  challenges?: Challenge[];
 }) =>
   challenges?.length ? (
     <li className='link-block'>
@@ -209,7 +214,7 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock,
   completedChallengeIds
-}: SuperBlockTreeViewProps) => {
+}: SuperBlockAccordionProps) => {
   const { t } = useTranslation();
   const { allChapters } = useMemo(() => {
     const populateBlocks = (blocks: { dashedName: string }[]) =>
@@ -248,17 +253,15 @@ export const SuperBlockAccordion = ({
         // show coming soon on production, and all the challenges in dev
         if (chapter.comingSoon && !showUpcomingChanges) {
           return (
-            <>
-              <ComingSoon key={chapter.name}>
-                {Object.values(FsdChapters).includes(chapter.name) && (
-                  <ChapterIcon
-                    className='map-icon'
-                    chapter={chapter.name as FsdChapters}
-                  />
-                )}
-                {t(`intro:full-stack-developer.chapters.${chapter.name}`)}
-              </ComingSoon>
-            </>
+            <ComingSoon key={chapter.name}>
+              {Object.values(FsdChapters).includes(chapter.name) && (
+                <ChapterIcon
+                  className='map-icon'
+                  chapter={chapter.name as FsdChapters}
+                />
+              )}
+              {t(`intro:full-stack-developer.chapters.${chapter.name}`)}
+            </ComingSoon>
           );
         }
 

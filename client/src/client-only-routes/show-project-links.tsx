@@ -6,7 +6,11 @@ import { Table, Spacer } from '@freecodecamp/ui';
 
 import { Link } from '../components/helpers';
 import ProjectModal from '../components/SolutionViewer/project-modal';
-import type { CompletedChallenge, User } from '../redux/prop-types';
+import type {
+  ChallengeData,
+  CompletedChallenge,
+  User
+} from '../redux/prop-types';
 import { certsToProjects } from '../../config/cert-and-project-map';
 
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
@@ -15,7 +19,7 @@ import ExamResultsModal from '../components/SolutionViewer/exam-results-modal';
 
 import { openModal } from '../templates/Challenges/redux/actions';
 
-import { regeneratePathAndHistory } from '../../../shared/utils/polyvinyl';
+import { regenerateMissingProperties } from '../../../shared/utils/polyvinyl';
 import '../components/layouts/project-links.css';
 import { Certification } from '../../../shared/config/certification-settings';
 interface ShowProjectLinksProps {
@@ -106,7 +110,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         { name: Certification.JsAlgoDataStruct },
         { name: Certification.LegacyFrontEnd },
         { name: Certification.LegacyDataVis },
-        { name: Certification.LegacyBackEnd },
+        { name: Certification.BackEndDevApis },
         { name: Certification.LegacyInfoSecQa }
       ] as const;
 
@@ -164,13 +168,14 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     }
   };
 
-  const challengeData: CompletedChallenge | null = completedChallenge
+  const challengeData: ChallengeData | null = completedChallenge
     ? {
         ...completedChallenge,
         // // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         challengeFiles:
-          completedChallenge?.challengeFiles?.map(regeneratePathAndHistory) ??
-          null
+          completedChallenge?.challengeFiles?.map(
+            regenerateMissingProperties
+          ) ?? null
       }
     : null;
 

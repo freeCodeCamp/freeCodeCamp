@@ -57,7 +57,7 @@ const shadowCapture: FastifyPluginCallback = (fastify, _options, done) => {
   done();
 };
 
-/* eslint-disable @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 function captureRequest(req: FastifyRequest) {
   const savedRequest = {
     // @ts-expect-error Exists

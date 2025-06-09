@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { parseBlanks } from './parse-blanks';
 
 describe('parseBlanks', () => {

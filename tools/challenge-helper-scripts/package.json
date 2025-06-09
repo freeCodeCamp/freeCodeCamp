@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": ">=9"
+    "pnpm": ">=10"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,8 @@
   "main": "utils.js",
   "scripts": {
     "test": "mocha --delay --reporter progress --bail",
-    "create-project": "ts-node create-project"
+    "create-project": "tsx create-project",
+    "create-quiz": "tsx create-quiz"
   },
   "devDependencies": {
     "@types/glob": "^8.0.1",
@@ -30,7 +31,6 @@
     "gray-matter": "4.0.3",
     "inquirer": "8.2.6",
     "prettier": "3.2.5",
-    "ts-node": "10.9.2",
     "typescript": "5.2.2"
   }
 }
