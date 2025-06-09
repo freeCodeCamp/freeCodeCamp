@@ -7,6 +7,95 @@
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "683ecb010f4c6bafd428802c", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "683ecb010f4c6bafd428802c",
+      "title": "Step 1"
+    },
+    {
+      "id": "6842aee5bcaf4ab8883f8191",
+      "title": "Step 2"
+    },
+    {
+      "id": "6842d5b537c64266420faf62",
+      "title": "Step 3"
+    },
+    {
+      "id": "6842d659a4ae7973dabab3b0",
+      "title": "Step 4"
+    },
+    {
+      "id": "6842ba0086201089ea268c92",
+      "title": "Step 5"
+    },
+    {
+      "id": "6842c3eee327042f1da17b89",
+      "title": "Step 6"
+    },
+    {
+      "id": "6842ff2b3c45aa4a89785ecb",
+      "title": "Step 7"
+    },
+    {
+      "id": "6846a1f2805ac73ce671a5d8",
+      "title": "Step 8"
+    },
+    {
+      "id": "6846d5b4d1ca2de562d6629c",
+      "title": "Step 9"
+    },
+    {
+      "id": "6846a33f665a435203da0ad7",
+      "title": "Step 10"
+    },
+    {
+      "id": "6846a82852dae0bba941a9a1",
+      "title": "Step 11"
+    },
+    {
+      "id": "6846a902bd25bdcdf6bba268",
+      "title": "Step 12"
+    },
+    {
+      "id": "6846a9d1f115c1de0d357778",
+      "title": "Step 13"
+    },
+    {
+      "id": "6846ab64c43448fcc72b3e9e",
+      "title": "Step 14"
+    },
+    {
+      "id": "6846ac424529900e7327d326",
+      "title": "Step 15"
+    },
+    {
+      "id": "6846b0048f71fc4efd786b42",
+      "title": "Step 16"
+    },
+    {
+      "id": "6846ba7ef391f007fcc37688",
+      "title": "Step 17"
+    },
+    {
+      "id": "6846d5043cc341d7fee2412e",
+      "title": "Step 18"
+    },
+    {
+      "id": "6846e3e61271e1f164636b13",
+      "title": "Step 19"
+    },
+    {
+      "id": "6846e4482d1a78f9cfd25eed",
+      "title": "Step 20"
+    },
+    {
+      "id": "6846e87cfa1500452def10c0",
+      "title": "Step 21"
+    },
+    {
+      "id": "6846ee2d4d66bda7e22362ab",
+      "title": "Step 22"
+    }
+  ],
   "helpCategory": "Python"
 }
