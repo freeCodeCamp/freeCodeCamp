@@ -1282,7 +1282,7 @@
         ]
       },
       "top-build-a-rock-paper-scissors-game": {
-        "title": "Побудуйте гру «Камінь-ножиці-папір»",
+        "title": "Build a Rock Paper Scissors Game",
         "intro": [
           "Випробуйте свої навички по JavaScript, побудувавши гру «Камінь-ножиці-папір»."
         ]
@@ -2983,6 +2983,12 @@
           "У цих відеолекціях ви детальніше розглянете основи JavaScript. Ви дізнаєтесь про різницю між об’єктом-рядком і примітивним рядком, метод <code>toString()</code>, конвенції й загальноприйняті практики найменування змінних, лінтери і форматувальники, замикання та багато іншого."
         ]
       },
+      "lab-slice-and-splice": {
+        "title": "Implement the Slice and Splice Algorithm",
+        "intro": [
+          "In this lab, you will practice merging an array with another."
+        ]
+      },
       "lab-pyramid-generator": {
         "title": "Створіть генератор пірамід",
         "intro": [
@@ -2991,10 +2997,10 @@
         ]
       },
       "lab-gradebook-app": {
-        "title": "Створіть журнал з оцінками",
+        "title": "Створіть відомість з оцінками",
         "intro": [
-          "У цій лабораторній роботі ви створите електронний журнал з оцінками.",
-          "Ви будете практикуватись використовувати умови для визначення підсумкової оцінки учня на основі його балів."
+          "У цій лабораторній роботі ви створите електронну відомість з оцінками.",
+          "Ви будете використовувати умови, щоб визначити підсумкову оцінку студента на основі його балів."
         ]
       },
       "lecture-the-var-keyword-and-hoisting": {
@@ -3112,7 +3118,7 @@
       "lab-lightbox-viewer": {
         "title": "Створіть переглядач Lightbox",
         "intro": [
-          "У цій лабораторній роботі ви створите переглядач lightbox для перегляду зображень у сфокусованому режимі.",
+          "In this lab, you'll build a lightbox viewer for viewing images in a focused mode.",
           "Ви будете практикуватись працювати з подіями натискання та перемиканням класів."
         ]
       },
@@ -3563,7 +3569,7 @@
       "workshop-toggle-text-app": {
         "title": "Toggle Text App",
         "intro": [
-          "In this workshop, you will continute to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
+          "In this workshop, you will continue to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
         ]
       },
       "lab-color-picker": {
@@ -3582,7 +3588,7 @@
       "workshop-fruit-search-app": {
         "title": "Build a Fruit Search App",
         "intro": [
-          "In this workshop, you will continute to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
+          "In this workshop, you will continue to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
         ]
       },
       "vjgg": {
@@ -3803,7 +3809,9 @@
       },
       "lecture-working-with-loops-and-sequences": {
         "title": "Робота з циклами та послідовностями",
-        "intro": [""]
+        "intro": [
+          "Learn about Working with Loops and Sequences in these lectures."
+        ]
       },
       "workshop-placeholder-loops-and-sequences": {
         "title": "Placeholder - Waiting for title",
@@ -3828,11 +3836,13 @@
       },
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Робота зі словниками та наборами",
-        "intro": [""]
+        "intro": [
+          "Learn about Working with Dictionaries and Sets in these lectures."
+        ]
       },
       "lecture-working-with-modules": {
         "title": "Робота з модулями",
-        "intro": [""]
+        "intro": ["Learn about Working with Modules in these lectures."]
       },
       "workshop-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
@@ -3855,7 +3865,7 @@
       },
       "lecture-understanding-error-handling": {
         "title": "Знайомство з обробкою помилок",
-        "intro": [""]
+        "intro": ["Learn about Understanding Error Handling in these lectures."]
       },
       "lab-isbn-validator": {
         "title": "Налагодьте валідатор ISBN",
@@ -3874,7 +3884,7 @@
       },
       "lecture-classes-and-objects": {
         "title": "Класи та об’єкти",
-        "intro": [""]
+        "intro": ["Learn about Classes and Objects in these lectures."]
       },
       "workshop-placeholder-classes-and-objects": {
         "title": "Placeholder - waiting for title",
@@ -3899,7 +3909,9 @@
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Знайомство з об’єктноорієнтованим програмуванням та інкапсуляцією",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Object Oriented Programming and Encapsulation in these lectures."
+        ]
       },
       "workshop-placeholder-oop-1": {
         "title": "Placeholder - Waiting for title",
@@ -3911,7 +3923,9 @@
       },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Знайомство з успадкуванням та поліморфізмом",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Inheritance and polymorphism in these lectures."
+        ]
       },
       "workshop-placeholder-oop-2": {
         "title": "Placeholder - Waiting for title",
@@ -3925,7 +3939,7 @@
       },
       "lecture-understanding-abstraction": {
         "title": "Знайомство з абстракцією",
-        "intro": [""]
+        "intro": ["Learn about Understanding abstraction in these lectures."]
       },
       "workshop-placeholder-oop-3": {
         "title": "Placeholder - Waiting for title",
@@ -3949,8 +3963,10 @@
         ]
       },
       "lecture-working-with-common-data-structures": {
-        "title": "Робота з поширеними структурами даних",
-        "intro": [""]
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about Working with Common Data Structures in these lectures."
+        ]
       },
       "workshop-linked-list-class": {
         "title": "Створіть клас «Linked List»",
@@ -3976,7 +3992,9 @@
       },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Алгоритми пошуку та сортування",
-        "intro": [""]
+        "intro": [
+          "Learn about Searching and Sorting Algorithms in these lectures."
+        ]
       },
       "workshop-binary-search": {
         "title": "Створіть бінарний пошук",
@@ -3987,8 +4005,11 @@
         "intro": [""]
       },
       "workshop-merge-sort": {
-        "title": "Створіть алгоритм сортування злиттям",
-        "intro": [""]
+        "title": "Implement the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
+        ]
       },
       "lab-quick-sort": {
         "title": "Створіть алгоритм швидкого сортування",
@@ -4019,7 +4040,9 @@
       },
       "lecture-understanding-graphs-and-trees": {
         "title": "Знайомство з графами та деревами",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Graphs and Trees in these lectures."
+        ]
       },
       "workshop-shortest-path-algorithm": {
         "title": "Створіть алгоритм найкоротшого шляху",
@@ -4050,7 +4073,9 @@
       },
       "lecture-understanding-dynamic-programming": {
         "title": "Знайомство з динамічним програмуванням",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Dynamic Programming in these lectures."
+        ]
       },
       "lab-nth-fibonacci-number": {
         "title": "Створіть калькулятор n-го числа Фібоначчі",
@@ -4277,6 +4302,39 @@
         "intro": [
           "Дізнайтесь, як ставити запитання і відповідати на них. У цих п’яти коротких діалогах ви будете говорити про рутину, почуття, уподобання, роботу і особисту інформацію. Ви також навчитесь ставити ввічливі запитання, давати коротку відповідь та використовувати заперечення."
         ]
+      }
+    }
+  },
+  "a2-professional-chinese": {
+    "title": "A2 Professional Chinese Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "talk-about-what-you-do-by-using-key-verbs": {
+        "title": "Talk About What You Do by Using Key Verbs",
+        "intro": [
+          "Learn how to introduce yourself in Chinese in a simple and professional way. In this module you'll learn how to say who you are, where you are from, what you do, how you feel, and what you like or don't like."
+        ]
+      },
+      "get-to-know-colleagues-by-asking-simple-questions": {
+        "title": "Get to Know Colleagues by Asking Simple Questions",
+        "intro": [
+          "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
+        ]
+      }
+    }
+  },
+  "dev-playground": {
+    "title": "Dev Playground",
+    "intro": ["Playground for creating and testing challenges"],
+    "blocks": {
+      "daily-coding-challenges-javascript": {
+        "title": "Daily Coding Challenges JavaScript",
+        "intro": ["Place to create JavaScript daily coding challenges."]
+      },
+      "daily-coding-challenges-python": {
+        "title": "Daily Coding Challenges Python",
+        "intro": ["Place to create Python daily coding challenges."]
       }
     }
   },

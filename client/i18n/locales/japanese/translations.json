@@ -849,7 +849,8 @@
     "opens-new-window": "新しいウィンドウで開く",
     "rsa-checkbox": "Read-Search-Ask (読む - 検索する - 質問する) メソッドを試しました",
     "similar-questions-checkbox": "フォーラムで、解決済みの類似質問を検索しました",
-    "edit-my-profile": "プロフィールを編集"
+    "edit-my-profile": "プロフィールを編集",
+    "terminal-output": "Terminal output"
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -1117,6 +1118,8 @@
       "full-stack-developer-v9-cert": "フルスタック開発者認定証",
       "a2-professional-spanish": "A2 Professional Spanish",
       "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
+      "a2-professional-chinese": "A2 Professional Chinese",
+      "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
       "legacy-front-end": "旧フロントエンド",
       "legacy-front-end-cert": "旧フロントエンド認定証",
       "legacy-back-end": "旧バックエンド",
