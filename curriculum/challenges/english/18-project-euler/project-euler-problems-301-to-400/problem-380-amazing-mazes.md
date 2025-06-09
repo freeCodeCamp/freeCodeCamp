@@ -25,7 +25,7 @@ When giving your answer, use a lowercase e to separate mantissa and exponent. E.
 `amazingMazes()` should return a string.
 
 ```js
-assert(typeof amazingMazes() === 'string');
+asset.isString(amazingMazes());
 ```
 
 `amazingMazes()` should return the string `6.3202e25093`.
