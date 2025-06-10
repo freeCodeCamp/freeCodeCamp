@@ -9,7 +9,7 @@ import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
 import { Link } from '../../../components/helpers';
 import CapIcon from '../../../assets/icons/cap';
-import DumbleIcon from '../../../assets/icons/dumble';
+import DumbbellIcon from '../../../assets/icons/dumbbell';
 import CommunityIcon from '../../../assets/icons/community';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import { completedChallengesSelector } from '../../../redux/selectors';
@@ -202,7 +202,7 @@ function SuperBlockIntro({
                 </div>
               </div>
               <div>
-                <DumbleIcon />
+                <DumbbellIcon />
                 <div className='benefit-text'>
                   <h3>{t('misc.fsd-b-benefit-3-title')}</h3>
                   <p>{t('misc.fsd-b-benefit-3-description')}</p>

@@ -1,5 +1,5 @@
 import React from 'react';
-function DumbleIcon(
+function DumbbellIcon(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   return (
@@ -44,6 +44,6 @@ function DumbleIcon(
   );
 }
 
-DumbleIcon.displayName = 'DumbleIcon';
+DumbbellIcon.displayName = 'DumbbellIcon';
 
-export default DumbleIcon;
+export default DumbbellIcon;
