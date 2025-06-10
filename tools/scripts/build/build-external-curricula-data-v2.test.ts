@@ -20,7 +20,8 @@ import {
   type GeneratedBlockBasedCurriculumProps,
   type GeneratedChapterBasedCurriculumProps,
   type ChapterBasedCurriculumIntros,
-  orderedSuperBlockInfo
+  orderedSuperBlockInfo,
+  OrderedSuperBlocks
 } from './build-external-curricula-data-v2';
 
 const VERSION = 'v2';
@@ -55,15 +56,24 @@ describe('external curriculum data build', () => {
   });
 
   test('the available-superblocks file should have the correct structure', async () => {
+    const filteredSuperBlockStages: string[] = Object.keys(SuperBlockStage)
+      .filter(key => isNaN(Number(key))) // Filter out numeric keys to get only the names
+      .filter(name => name !== 'Upcoming' && name !== 'Next') // Filter out 'Upcoming' and 'Next'
+      .map(name => name.toLowerCase());
+
     const validateAvailableSuperBlocks = availableSuperBlocksValidator();
-    const availableSuperblocks: unknown = JSON.parse(
+    const availableSuperblocks = JSON.parse(
       await fs.promises.readFile(
         `${clientStaticPath}/curriculum-data/${VERSION}/available-superblocks.json`,
         'utf-8'
       )
-    );
+    ) as { superblocks: OrderedSuperBlocks };
 
     const result = validateAvailableSuperBlocks(availableSuperblocks);
+
+    expect(Object.keys(availableSuperblocks.superblocks)).toHaveLength(
+      filteredSuperBlockStages.length
+    );
 
     if (result.error) {
       throw Error(

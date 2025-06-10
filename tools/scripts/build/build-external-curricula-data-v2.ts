@@ -92,6 +92,11 @@ enum SuperBlockStage {
   Legacy = 'legacy'
 }
 
+export type OrderedSuperBlocks = Record<
+  string,
+  Array<{ dashedName: SuperBlocks; public: boolean; title: string }>
+>;
+
 const ver = 'v2';
 
 const staticFolderPath = resolve(__dirname, '../../../client/static');
@@ -104,10 +109,7 @@ const intros = JSON.parse(
   readFileSync(blockIntroPath, 'utf-8')
 ) as CurriculumIntros;
 
-export const orderedSuperBlockInfo: Record<
-  string,
-  Array<{ dashedName: SuperBlocks; public: boolean; title: string }>
-> = {
+export const orderedSuperBlockInfo: OrderedSuperBlocks = {
   [SuperBlockStage.Core]: [
     {
       dashedName: SuperBlocks.FullStackDeveloper,
