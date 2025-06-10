@@ -75,6 +75,10 @@ describe('external curriculum data build', () => {
       filteredSuperBlockStages.length
     );
 
+    expect(Object.keys(availableSuperblocks.superblocks)).toEqual(
+      expect.arrayContaining(filteredSuperBlockStages)
+    );
+
     if (result.error) {
       throw Error(
         `file: available-superblocks.json
@@ -273,23 +277,35 @@ ${result.error.message}`);
   });
 
   test('All public SuperBlocks should be present in the SuperBlock object', () => {
-    const stages = Object.keys(orderedSuperBlockInfo).map(
-      key => Number(key) as SuperBlockStage
-    );
+    // Create a mapping from string to shared/config SuperBlockStage enum value
+    // so we can look up the enum value by string.
+    const superBlockStageStringMap: Record<string, SuperBlockStage> = {
+      core: SuperBlockStage.Core,
+      english: SuperBlockStage.English,
+      professional: SuperBlockStage.Professional,
+      extra: SuperBlockStage.Extra,
+      legacy: SuperBlockStage.Legacy,
+      upcoming: SuperBlockStage.Upcoming,
+      next: SuperBlockStage.Next
+    };
 
-    expect(stages).not.toContain(SuperBlockStage.Next);
-    expect(stages).not.toContain(SuperBlockStage.Upcoming);
+    const stages = Object.keys(orderedSuperBlockInfo);
+
+    expect(stages).not.toContain('next');
+    expect(stages).not.toContain('upcoming');
 
     for (const stage of stages) {
       const superBlockDashedNames = orderedSuperBlockInfo[stage].map(
         superBlock => superBlock.dashedName
       );
 
+      const stageValueInNum = superBlockStageStringMap[stage];
+
       expect(superBlockDashedNames).toEqual(
-        expect.arrayContaining(superBlockStages[stage])
+        expect.arrayContaining(superBlockStages[stageValueInNum])
       );
       expect(superBlockDashedNames).toHaveLength(
-        superBlockStages[stage].length
+        superBlockStages[stageValueInNum].length
       );
     }
   });
