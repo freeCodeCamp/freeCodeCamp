@@ -95,6 +95,14 @@ const seed = async () => {
   await dailyCodingChallenges.bulkWrite(bulkOps);
 
   console.log(`Finished writing challenges to database`);
+
+  const count = await dailyCodingChallenges.countDocuments();
+
+  if (count !== EXPECTED_CHALLENGE_COUNT) {
+    throw new Error(
+      `Expected ${EXPECTED_CHALLENGE_COUNT} challenges in the database, but found ${count} documents`
+    );
+  }
 };
 
 seed()
