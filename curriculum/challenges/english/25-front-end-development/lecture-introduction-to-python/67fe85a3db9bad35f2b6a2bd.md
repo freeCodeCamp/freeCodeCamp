@@ -346,8 +346,6 @@ None
 
 False
 
----
-
 ## --video-solution--
 
 4
