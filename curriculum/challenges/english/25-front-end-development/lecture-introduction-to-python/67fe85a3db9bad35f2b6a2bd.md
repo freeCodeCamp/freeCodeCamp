@@ -233,35 +233,35 @@ else:
 
 ## --text--
 
-What do logical operators do? 
+What do comparison operators do?
 
 ## --answers--
 
-Perform mathematical calculations with boolean values.
+Perform mathematical calculations with boolean values
 
 ### --feedback--
 
-They help create more complex decision-making logic by working with multiple conditions.
+These operators check things like equality or which value is greater, and the result is either `True` or `False`.
 
 ---
 
-Convert strings to boolean values.
+Convert strings to boolean values
 
 ### --feedback--
 
-They help create more complex decision-making logic by working with multiple conditions.
+These operators check things like equality or which value is greater, and the result is either `True` or `False`.
 
 ---
 
-Combine multiple conditions within conditional statements.
+Compare two values and return a boolean value
 
 ---
 
-Create loops and iterations.
+Create loops and iterations
 
 ### --feedback--
 
-They help create more complex decision-making logic by working with multiple conditions.
+These operators check things like equality or which value is greater, and the result is either `True` or `False`.
 
 ## --video-solution--
 
@@ -269,72 +269,85 @@ They help create more complex decision-making logic by working with multiple con
 
 ## --text--
 
-What is the primary purpose of comparison operators in programming?
+What will be the result for the following code?
+
+```python
+age = 12
+
+if age >= 18:
+    print('You are an adult')
+elif age >= 13:
+    print('You are a teenager')
+else:
+    print('You are a child') 
+```
 
 ## --answers--
 
-To modify variable values.
+`You are an adult` will be printed to the console.
 
 ### --feedback--
 
-Think about how they evaluate relationships between values.
+Review the last part of the lecture for the correct answer.
 
 ---
 
-To return `True` or `False` based on value comparisons.
-
----
-
-To concatenate strings together.
+`You are a teenager` will be printed to the console.
 
 ### --feedback--
 
-Think about how they evaluate relationships between values.
+Review the last part of the lecture for the correct answer.
 
 ---
 
-To perform mathematical calculations.
+`You are a child` will be printed to the console.
+
+---
+
+An error will be printed to the console.
 
 ### --feedback--
 
-Think about how they evaluate relationships between values.
+Review the last part of the lecture for the correct answer.
 
 ## --video-solution--
 
-2
+3
 
 ## --text--
 
-What happens when Python evaluates the expression `x or y`?
+What will the expression `3 >= 4` evaluate to?
 
 ## --answers--
 
-It returns True only if both `x` and `y` are `True`
+True
 
 ### --feedback--
 
-Think about "short-circuiting" and when Python might not need to check the second value.
+3 is not greater than or equal to 4.
 
 ---
 
-It returns `True` if at least one condition is `True` and may skip evaluating `y`
-
----
-
-It always evaluates both `x` and `y` regardless of their values
+SyntaxError
 
 ### --feedback--
 
-Think about "short-circuiting" and when Python might not need to check the second value.
+3 is not greater than or equal to 4.
 
 ---
 
-It returns `False` if either `x` or `y` is `False`
+None
 
 ### --feedback--
 
-Think about "short-circuiting" and when Python might not need to check the second value.
+3 is not greater than or equal to 4.
+
+---
+
+False
+
+---
 
 ## --video-solution--
 
-2
+4
