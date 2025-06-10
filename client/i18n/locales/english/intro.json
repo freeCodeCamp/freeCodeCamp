@@ -4000,7 +4000,9 @@
       },
       "lab-quicksort": {
         "title": "Implement the Quicksort Algorithm",
-        "intro": ["In this lab you will implement the quicksort algorithm."]
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort a list of integers."
+        ]
       },
       "lab-selection-sort": {
         "title": "Implement the Selection Sort Algorithm",
