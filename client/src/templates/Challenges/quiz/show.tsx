@@ -174,7 +174,6 @@ const ShowQuiz = ({
             className='quiz-question-label'
             text={question.text}
           />
-
         ),
         answers: shuffleArray([...distractors, answer]),
         correctAnswer: answer.value
