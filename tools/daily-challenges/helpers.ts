@@ -1,9 +1,9 @@
 import { MongoClient, ObjectId } from 'mongodb';
-import { QueryResult } from './types';
+import { Challenge, QueryResult } from './types';
 
 const GRAPHQL_ENDPOINT = 'http://localhost:8000/___graphql';
 
-// Query challenge from graphQL - note that the main client needs to be running with upcomingChanges shown.
+// Query graphQL - note that the main client needs to be running to query the challenges
 export async function queryGraphQL(query: string) {
   const response = await fetch(GRAPHQL_ENDPOINT, {
     method: 'POST',
@@ -16,22 +16,19 @@ export async function queryGraphQL(query: string) {
   const json = (await response.json()) as QueryResult;
 
   if (!json?.data?.allChallengeNode?.edges?.length) {
-    throw new Error('Failed to find challenge with GraphQL query');
+    throw new Error('Failed to find any challenges with GraphQL query');
   }
 
-  const challenge = json.data.allChallengeNode.edges[0].node.challenge;
-  return challenge;
+  return json;
 }
 
-// TODO: Refactor this so it gets all the challenges with one query.
-// Or maybe two, one for JS and one for Python.
-export async function fetchChallenge(challengeNumber: number, date: Date) {
-  const jsTitleRE = `/^JavaScript Challenge ${challengeNumber}:/`;
-  const pyTitleRE = `/^Python Challenge ${challengeNumber}:/`;
-
-  const javaScriptQuery = `
+export async function fetchChallenges(language: 'javascript' | 'python') {
+  const query = `
 query {
-  allChallengeNode(filter: {challenge: {block: {eq: "daily-coding-challenges-javascript"}, title: {regex: "${jsTitleRE}" }}}) {
+  allChallengeNode(
+  filter: {challenge: {superBlock: {eq: "dev-playground"}, block: {eq: "daily-coding-challenges-${language}"}}}
+  sort: {order: ASC, fields: challenge___challengeOrder}
+  ) {
     edges {
       node {
         challenge {
@@ -56,68 +53,76 @@ query {
 }
 `;
 
-  const pythonQuery = `
-query {
-  allChallengeNode(filter: {challenge: {block: {eq: "daily-coding-challenges-python"}, title: {regex: "${pyTitleRE}" }}}) {
-    edges {
-      node {
-        challenge {
-          description
-          instructions
-          fields {
-            tests {
-              testString
-              text
-            }
-          }
-          challengeFiles {
-            contents
-            fileKey
-          }
-        }
-      }
-    }
-  }
+  const queryRes = await queryGraphQL(query);
+
+  const challenges = queryRes.data.allChallengeNode.edges.map(
+    ({ node }) => node.challenge
+  );
+
+  return challenges;
 }
-`;
 
-  const jsChallenge = await queryGraphQL(javaScriptQuery);
-  const pyChallenge = await queryGraphQL(pythonQuery);
-
-  if (pyChallenge.description !== jsChallenge.description) {
-    throw Error(
-      `JavaScript and Python descriptions do not match for challenge ${challengeNumber}`
-    );
-  }
-
-  if (pyChallenge.instructions !== jsChallenge.instructions) {
-    throw Error(
-      `JavaScript and Python instructions do not match ${challengeNumber}`
-    );
-  }
-
+export function combineChallenges({
+  jsChallenge,
+  pyChallenge,
+  challengeNumber,
+  date
+}: {
+  jsChallenge: Challenge;
+  pyChallenge: Challenge;
+  challengeNumber: number;
+  date: Date;
+}) {
   const {
-    id,
-    title,
-    description,
-    instructions,
+    id: jsId,
+    title: jsTitle,
+    description: jsDescription,
+    instructions: jsInstructions,
     fields: { tests: jsTests },
     challengeFiles: jsChallengeFiles
   } = jsChallenge;
 
   const {
+    title: pyTitle,
+    description: pyDescription,
+    instructions: pyInstructions,
     fields: { tests: pyTests },
     challengeFiles: pyChallengeFiles
   } = pyChallenge;
 
-  // Use the JS challenge info for the new challenge meta - e.g. title, description, etc
+  if (jsTitle.replace('JavaScript ', '') !== pyTitle.replace('Python ', '')) {
+    throw new Error(
+      `JavaScript and Python titles do not match for challenge ${challengeNumber}: "${jsTitle}" vs "${pyTitle}"`
+    );
+  }
+
+  if (jsDescription !== pyDescription) {
+    throw new Error(
+      `JavaScript and Python descriptions do not match for challenge ${challengeNumber}`
+    );
+  }
+
+  if (jsInstructions !== pyInstructions) {
+    throw new Error(
+      `JavaScript and Python instructions do not match for challenge ${challengeNumber}`
+    );
+  }
+
+  if (jsTests.length !== pyTests.length) {
+    throw new Error(
+      `JavaScript and Python do not have the same number of tests for challenge ${challengeNumber}: ${jsTests.length} JavaScript vs ${pyTests.length} Python tests`
+    );
+  }
+
+  // Use the JS challenge info for the new challenge meta - e.g. id, title, description, etc
   const challengeData = {
-    _id: new ObjectId(`${id}`),
-    title: title.replace(`JavaScript Challenge ${challengeNumber}: `, ''),
+    _id: new ObjectId(`${jsId}`),
+    challengeNumber,
+    title: jsTitle.replace(`JavaScript Challenge ${challengeNumber}: `, ''),
     date,
-    description: removeSection(description),
-    ...(instructions && {
-      instructions: removeSection(instructions)
+    description: removeSection(jsDescription),
+    ...(jsInstructions && {
+      instructions: removeSection(jsInstructions)
     }),
     javascript: {
       tests: jsTests,
