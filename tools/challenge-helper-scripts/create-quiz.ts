@@ -5,9 +5,11 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
-import { SuperBlocks } from '../../shared/config/curriculum';
+import {
+  SuperBlocks,
+  superBlockToFolderMap
+} from '../../shared/config/curriculum';
 import { createQuizFile, validateBlockName } from './utils';
-import { getSuperBlockSubPath } from './fs-utils';
 import { Meta } from './helpers/project-metadata';
 
 const helpCategories = [
@@ -135,7 +137,7 @@ async function createQuizChallenge(
   title: string,
   questionCount: number
 ): Promise<ObjectID> {
-  const superBlockSubPath = getSuperBlockSubPath(superBlock);
+  const superBlockSubPath = superBlockToFolderMap[superBlock];
   const newChallengeDir = path.resolve(
     __dirname,
     `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
