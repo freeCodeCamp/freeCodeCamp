@@ -2,10 +2,7 @@ import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { submitTypes } from '../../../shared/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
-import {
-  SuperBlocks,
-  SuperBlockStage
-} from '../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../shared/config/curriculum';
 import fullStackSuperBlockStructure from '../../../curriculum/superblock-structure/full-stack.json';
 import type { Chapter } from '../../../shared/config/chapters';
 
@@ -83,6 +80,16 @@ interface GeneratedBlock {
   dashedName: string;
   intro: string;
   meta: Record<string, unknown>;
+}
+
+// This enum is based on the `SuperBlockStage` enum in shared/config,
+// but with string value instead of number.
+enum SuperBlockStage {
+  Core = 'core',
+  English = 'english',
+  Professional = 'professional',
+  Extra = 'extra',
+  Legacy = 'legacy'
 }
 
 const ver = 'v2';
