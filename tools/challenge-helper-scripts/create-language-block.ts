@@ -7,10 +7,10 @@ import ObjectID from 'bson-objectid';
 
 import {
   SuperBlocks,
-  languageSuperBlocks
+  languageSuperBlocks,
+  superBlockToFolderMap
 } from '../../shared/config/curriculum';
 import { createDialogueFile, validateBlockName } from './utils';
-import { getSuperBlockSubPath } from './fs-utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 
 const helpCategories = ['English'] as const;
@@ -126,7 +126,7 @@ async function createDialogueChallenge(
   superBlock: SuperBlocks,
   block: string
 ): Promise<ObjectID> {
-  const superBlockSubPath = getSuperBlockSubPath(superBlock);
+  const superBlockSubPath = superBlockToFolderMap[superBlock];
   const newChallengeDir = path.resolve(
     __dirname,
     `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
