@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { useTranslation, Trans } from 'react-i18next';
 import { Alert, Spacer, Container, Row, Col } from '@freecodecamp/ui';
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
@@ -31,12 +30,11 @@ interface SuperBlockIntroProps {
   completedChallenges: CompletedChallenge[];
 }
 
-const mapStateToProps = createSelector(
-  completedChallengesSelector,
-  (completedChallenges: CompletedChallenge[]) => ({
-    completedChallenges
-  })
-);
+const mapStateToProps = (state: unknown) => ({
+  completedChallenges: completedChallengesSelector(
+    state
+  ) as CompletedChallenge[]
+});
 
 export const ConditionalDonationAlert = ({
   superBlock,
@@ -139,7 +137,6 @@ function SuperBlockIntro({
 
   const introTopA = (
     <>
-      {' '}
       <h1 id='content-start' className='text-center big-heading'>
         {i18nSuperBlock}
       </h1>
@@ -159,7 +156,6 @@ function SuperBlockIntro({
 
   const introTopB = (
     <>
-      {' '}
       <SuperBlockIcon className='cert-header-icon' superBlock={superBlock} />
       <Spacer size='m' />
       <h1 id='content-start' className='text-center big-heading'>
@@ -182,7 +178,7 @@ function SuperBlockIntro({
       <Spacer size='l' />
       <Container
         fluid={true}
-        className=' full-width-container super-benefits-container'
+        className='full-width-container super-benefits-container'
       >
         <Container>
           <Row>
