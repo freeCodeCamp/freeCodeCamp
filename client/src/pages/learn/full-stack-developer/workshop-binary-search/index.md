@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Binary Search
 
-This is a test for the new project-based curriculum.
+This is workshop will cover how to build the binary search algorithm in Python.
