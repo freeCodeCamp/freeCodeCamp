@@ -3817,9 +3817,9 @@
         "title": "Placeholder - Waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-loops-and-sequences": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "lab-number-pattern-generator": {
+        "title": "Build a Number Pattern Generator",
+        "intro": ["In this lab you will build a number pattern generator."]
       },
       "review-loops-and-sequences": {
         "title": "Повторення циклів та послідовностей",
@@ -3922,9 +3922,9 @@
         "intro": [""]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
-        "title": "Знайомство з успадкуванням та поліморфізмом",
+        "title": "Understanding Inheritance and Polymorphism",
         "intro": [
-          "Learn about Understanding Inheritance and polymorphism in these lectures."
+          "Learn about Understanding Inheritance and Polymorphism in these lectures."
         ]
       },
       "workshop-placeholder-oop-2": {
@@ -3938,8 +3938,8 @@
         ]
       },
       "lecture-understanding-abstraction": {
-        "title": "Знайомство з абстракцією",
-        "intro": ["Learn about Understanding abstraction in these lectures."]
+        "title": "Understanding Abstraction",
+        "intro": ["Learn about Understanding Abstraction in these lectures."]
       },
       "workshop-placeholder-oop-3": {
         "title": "Placeholder - Waiting for title",
