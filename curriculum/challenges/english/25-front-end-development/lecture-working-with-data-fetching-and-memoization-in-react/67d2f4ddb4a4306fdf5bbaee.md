@@ -48,10 +48,10 @@ Let's see how to use the `useMemo` hook first. Here's the basic syntax of the `u
 
 ```js
 const memoizedValue = useMemo(
- function () {
-   return computeExpensiveValue(a, b);
- },
- [a, b]
+  function () {
+    return computeExpensiveValue(a, b);
+  },
+  [a, b]
 );
 ```
 
@@ -61,17 +61,17 @@ This `ExpensiveSquare` component will receive a `num` prop which it will use to 
 
 ```jsx
 function ExpensiveSquare({ num }) {
- function calculateSquare(n) {
-   console.log("Calculating square...");
-   return n * n;
- }
+  function calculateSquare(n) {
+    console.log("Calculating square...");
+    return n * n;
+  }
 
- const squared = calculateSquare(num);
- return (
-   <p>
-     Square of {num}: {squared}
-   </p>
- );
+  const squared = calculateSquare(num);
+  return (
+    <p>
+      Square of {num}: {squared}
+    </p>
+  );
 }
 export default ExpensiveSquare;
 ```
