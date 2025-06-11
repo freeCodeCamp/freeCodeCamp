@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useTranslation, Trans } from 'react-i18next';
 import { Alert, Spacer, Container, Row, Col } from '@freecodecamp/ui';
-import { connect } from 'react-redux';
+import { ConnectedProps, connect } from 'react-redux';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
@@ -23,12 +23,17 @@ interface SuperBlockIntroQueryData {
   };
 }
 
-interface SuperBlockIntroProps {
+type ReduxProps = ConnectedProps<typeof connector>;
+
+interface ConditionalDonationAlertProps {
   superBlock: SuperBlocks;
   onCertificationDonationAlertClick: () => void;
   isDonating: boolean;
-  completedChallenges: CompletedChallenge[];
 }
+
+interface SuperBlockIntroProps
+  extends ConditionalDonationAlertProps,
+    ReduxProps {}
 
 const mapStateToProps = (state: unknown) => ({
   completedChallenges: completedChallengesSelector(
@@ -36,11 +41,13 @@ const mapStateToProps = (state: unknown) => ({
   ) as CompletedChallenge[]
 });
 
+const connector = connect(mapStateToProps);
+
 export const ConditionalDonationAlert = ({
   superBlock,
   onCertificationDonationAlertClick,
   isDonating
-}: Omit<SuperBlockIntroProps, 'completedChallenges'>): JSX.Element | null => {
+}: ConditionalDonationAlertProps): JSX.Element | null => {
   const { t } = useTranslation();
 
   const betaCertifications: SuperBlocks[] = [];
@@ -230,4 +237,4 @@ function SuperBlockIntro({
 
 SuperBlockIntro.displayName = 'SuperBlockIntro';
 
-export default connect(mapStateToProps)(SuperBlockIntro);
+export default connector(SuperBlockIntro);
