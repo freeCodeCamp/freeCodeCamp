@@ -1,11 +1,11 @@
 ---
-id: 6837834693128690d7e56d0d
-title: Task 27
+id: 6849a1a7b1de052efecedcb6
+title: Task 12
 challengeType: 19
-dashedName: task-27
+dashedName: task-12
 ---
 
-<!-- (Audio) Camila: También soy aficionada a los libros de ciencia ficción. -->
+<!--  (Audio) Camila: Soy Colombiana y soy de Cali. -->
 
 # --instructions--
 
@@ -15,35 +15,35 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-What specific book genre does Camila like?
+In what city was Camila born?
 
 ## --answers--
 
-Mystery books.
+`Bogotá`
 
 ### --feedback--
 
-Camila does not mention mystery books.
+Camila does not mention `Bogotá` as her city of origin.
 
 ---
 
-Fantasy books.
+`Medellín`
 
 ### --feedback--
 
-Camila does not mention fantasy books.
+Camila does not mention `Medellín` as her city of origin.
 
 ---
 
-Science fiction books.
+`Cali`
 
 ---
 
-Romantic books.
+`Barranquilla`
 
 ### --feedback--
 
-Camila does not mention romantic books.
+Camila does not mention `Barranquilla` as her city of origin.
 
 ## --video-solution--
 
@@ -51,9 +51,11 @@ Camila does not mention romantic books.
 
 # --explanation--
 
-`Ciencia ficción` translates to "science fiction". This is a genre of literature, film, and television that covers imaginative and futuristic concepts.
+The phrase `soy de` means "I am from". This is often used to indicate one's place of origin. For example:
 
-The term is a compound of two words: `Ciencia` ("science") and `Ficción` ("fiction").
+`Soy de Madrid.` - I am from Madrid.
+
+Therefore, `Cali` is the city where Camila was born.
 
 # --scene--
 
@@ -75,8 +77,8 @@ The term is a compound of two words: `Ciencia` ("science") and `Ficción` ("fict
     "audio": {
       "filename": "ES_A2_1.1.mp3",
       "startTime": 1,
-      "startTimestamp": 12.66,
-      "finishTimestamp": 16.7
+      "startTimestamp": 6.86,
+      "finishTimestamp": 9.3
     }
   },
   "commands": [
@@ -88,16 +90,16 @@ The term is a compound of two words: `Ciencia` ("science") and `Ficción` ("fict
     {
       "character": "Camila",
       "startTime": 1,
-      "finishTime": 5.16,
+      "finishTime": 3.44,
       "dialogue": {
-        "text": "También soy aficionada a los libros de ciencia ficción.",
+        "text": "Soy colombiana y soy de Cali.",
         "align": "center"
       }
     },
     {
       "character": "Camila",
       "opacity": 0,
-      "startTime": 5.6
+      "startTime": 3.94
     }
   ]
 }
