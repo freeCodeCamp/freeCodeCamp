@@ -18,10 +18,8 @@ function Loader({
 
   const [showSpinner, setShowSpinner] = useState(!loaderDelay);
   const [showMessage, setShowMessage] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    setIsDarkMode(localStorage.getItem('theme') === 'dark');
     if (loaderDelay) {
       const timerId = setTimeout(() => setShowSpinner(true), loaderDelay);
       return () => clearTimeout(timerId);
@@ -36,7 +34,7 @@ function Loader({
   }, [messageDelay]);
   return (
     <div
-      className={`${isDarkMode ? 'dark-palette' : 'light-palette'} fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''}`}
+      className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''}`}
       data-testid='fcc-loader'
     >
       {showSpinner && <Spinner name='line-scale-pulse-out' />}

@@ -1,8 +1,8 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+[⚠️ Suspicious Content] // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Loader /> matches the fullScreen render snapshot 1`] = `
 <div
-  class="light-palette fcc-loader full-screen-wrapper"
+  class="fcc-loader full-screen-wrapper"
   data-testid="fcc-loader"
 >
   <div
@@ -19,7 +19,7 @@ exports[`<Loader /> matches the fullScreen render snapshot 1`] = `
 
 exports[`<Loader /> matches to the default render snapshot 1`] = `
 <div
-  class="light-palette fcc-loader "
+  class="fcc-loader "
   data-testid="fcc-loader"
 >
   <div
