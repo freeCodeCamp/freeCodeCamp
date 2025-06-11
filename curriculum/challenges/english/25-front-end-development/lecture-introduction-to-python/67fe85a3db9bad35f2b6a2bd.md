@@ -141,93 +141,7 @@ else:
     print('You are a toddler or an infant') # You are a toddler or an infant
 ```
 
-Logical operators let you combine multiple conditions or booleans within conditional statements so you can create more complex decision-making logic. There are three logical operators in Python: `and`, `or`, and `not`.
-
-The `and` logical operator takes two operands and returns `True` if both operands are true. Otherwise, it returns `False`.
-
-Here's an example:
-
-```python
-age = 25
-is_citizen = True
-
-if age >= 18 and is_citizen:
-    print('You are eligible to vote') # You are eligible to vote
-else:
-    print('You are not eligible to vote')
-```
-
-The logical `or` operator takes two operands and returns `True` if at least one operand is true, and `False` if both operands are false. If the first operand is `True`, Python will ignore the second condition in a process called "short-circuiting".
-
-The `and` logical operator also uses short-circuiting, but in reverse — if the first operand is `False`, it stops and returns `False` right away.
-
-Here's an example of the `or` logical operator:
-
-```python
-day = 'Saturday'
-
-if day == 'Saturday' or day == 'Sunday':
-   print('It\'s the weekend!') # It's the weekend!
-elif day == 'Monday' or day == 'Tuesday':
-   print('It\'s the start of the week')
-elif day == 'Thursday' or day == 'Friday':
-   print('It\'s almost the weekend')
-else:
-   print('It\'s a weekday')
-```
-
-Here's another example that shows short-circuiting:
-
-```python
-def truthy():
-  print('I\'m truthy!')
-  return True
-
-def falsy():
-  print('I\'m falsy!')
-  return False
-
-condition1 = falsy() and falsy()
-# I'm falsy!
-
-condition2 = falsy() and truthy()
-# I'm falsy!
-
-condition3 = truthy() and truthy()
-# I'm truthy!
-# I'm truthy!
-
-condition4 = truthy() and falsy()
-# I'm truthy!
-# I'm falsy!
-
-condition5 = falsy() or falsy()
-# I'm falsy!
-# I'm falsy!
-
-condition6 = falsy() or truthy()
-# I'm falsy!
-# I'm truthy!
-
-condition7 = truthy() or truthy()
-# I'm truthy!
-
-condition8 = truthy() or falsy()
-# I'm truthy!
-```
-
-The `not` logical operator inverts a boolean value, and makes `True` values `False`, and `False` values `True`.
-
-Here's an example:
-
-```python
-is_raining = False
-
-if not is_raining:
-    print('It\'s not raining. You can go outside!')
-else:
-    print('It\'s raining. Better to stay indoors.')
-```
+Now that you understand how comparison operators and conditional statements work in Python, you can start writing programs that make decisions based on logic and input. Whether you’re comparing values or branching through multiple conditions, these tools are the foundation to writing flexible, responsive code.
 
 # --questions--
 
@@ -245,7 +159,7 @@ These operators check things like equality or which value is greater, and the re
 
 ---
 
-Convert strings to boolean values
+Convert strings to boolean values.
 
 ### --feedback--
 
@@ -253,11 +167,11 @@ These operators check things like equality or which value is greater, and the re
 
 ---
 
-Compare two values and return a boolean value
+Compare two values and return a boolean value.
 
 ---
 
-Create loops and iterations
+Create loops and iterations.
 
 ### --feedback--
 
@@ -320,7 +234,7 @@ What will the expression `3 >= 4` evaluate to?
 
 ## --answers--
 
-True
+`True`
 
 ### --feedback--
 
@@ -328,7 +242,7 @@ True
 
 ---
 
-SyntaxError
+`SyntaxError`
 
 ### --feedback--
 
@@ -336,7 +250,7 @@ SyntaxError
 
 ---
 
-None
+`None`
 
 ### --feedback--
 
@@ -344,7 +258,7 @@ None
 
 ---
 
-False
+`False`
 
 ## --video-solution--
 
