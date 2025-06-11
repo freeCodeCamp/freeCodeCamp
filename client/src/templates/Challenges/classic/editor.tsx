@@ -425,17 +425,25 @@ const Editor = (props: EditorProps): JSX.Element => {
     const storedAccessibilityMode = () => {
       const accessibility = store.get('accessibilityMode') as boolean;
 
+      const isMacOS = navigator.userAgent.includes('Mac OS');
+      const a11yOffText = isMacOS
+        ? t('aria.editor-a11y-off-macos', { editorName: ariaEditorName })
+        : t('aria.editor-a11y-off-non-macos', { editorName: ariaEditorName });
+      const a11yOnText = isMacOS
+        ? t('aria.editor-a11y-on-macos', { editorName: ariaEditorName })
+        : t('aria.editor-a11y-on-non-macos', { editorName: ariaEditorName });
+
       if (!accessibility) {
         store.set('accessibilityMode', false);
 
         editor.updateOptions({
-          ariaLabel: t('aria.editor-a11y-off', { editorName: ariaEditorName })
+          ariaLabel: a11yOffText
         });
       }
 
       if (accessibility) {
         editor.updateOptions({
-          ariaLabel: t('aria.editor-a11y-on', { editorName: ariaEditorName })
+          ariaLabel: a11yOnText
         });
       }
 
