@@ -169,7 +169,7 @@ void prompt([
   },
   {
     name: 'block',
-    message: 'What is the dashed name (in kebab-case) for this quiz?',
+    message: 'What is the dashed name (in kebab-case) for this block?',
     validate: validateBlockName,
     filter: (block: string) => {
       return block.toLowerCase().trim();

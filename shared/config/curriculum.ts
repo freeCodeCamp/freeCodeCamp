@@ -72,7 +72,8 @@ export const folderToSuperBlockMap = Object.fromEntries(
 export const languageSuperBlocks = [
   SuperBlocks.A2English,
   SuperBlocks.B1English,
-  SuperBlocks.A2Spanish
+  SuperBlocks.A2Spanish,
+  SuperBlocks.A2Chinese
 ];
 
 /*
