@@ -1,0 +1,96 @@
+.calendar-weekday-labels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.calendar-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-head h2 {
+  min-width: 200px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+  gap: 4px;
+}
+
+.calendar-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+  min-height: 100px;
+  border: 1px solid var(--tertiary-color);
+  text-align: center;
+  background-color: var(--primary-background);
+}
+
+.not-available:hover,
+.not-available:active {
+  cursor: not-allowed;
+}
+
+.available:hover,
+.available:active {
+  cursor: pointer;
+  background-color: var(--primary-color);
+}
+
+.available:hover .calendar-day-number,
+.available:active .calendar-day-number {
+  color: var(--primary-background);
+}
+
+.available:hover .completed svg circle,
+.available:active .completed svg circle {
+  fill: var(--primary-background);
+  stroke: var(--primary-background);
+}
+
+.available:hover .not-completed svg circle,
+.available:active .not-completed svg circle {
+  fill: var(--primary-color);
+  stroke: var(--primary-background);
+}
+
+.available:hover svg rect,
+.available:active svg rect {
+  fill: var(--primary-color);
+  stroke: var(--primary-color);
+}
+
+.calendar-day-number {
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
+
+.calendar-day svg,
+.empty-cirle {
+  width: calc(10px + 2vw);
+  height: calc(10px + 2vw);
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.empty-cirle {
+  width: calc(10px + 2vw);
+  height: calc(10px + 2vw);
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+}
+
+@media (max-width: 500px) {
+  .calendar-day {
+    min-height: 75px;
+  }
+}

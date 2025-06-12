@@ -6,7 +6,7 @@ import './challenge-description.css';
 type Props = {
   description?: string;
   instructions?: string;
-  superBlock: string;
+  superBlock?: string;
 };
 
 const ChallengeDescription = ({
@@ -15,7 +15,7 @@ const ChallengeDescription = ({
   superBlock
 }: Props) => {
   useEffect(() => {
-    if (isMathJaxAllowed(superBlock)) {
+    if (superBlock && isMathJaxAllowed(superBlock)) {
       initializeMathJax();
     }
   }, [superBlock]);

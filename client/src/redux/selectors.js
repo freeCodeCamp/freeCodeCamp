@@ -10,6 +10,8 @@ export const savedChallengesSelector = state =>
   userSelector(state).savedChallenges || [];
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
+export const completedDailyCodingChallengesSelector = state =>
+  userSelector(state).completedDailyCodingChallenges || [];
 export const userIdSelector = state => userSelector(state).id;
 export const partiallyCompletedChallengesSelector = state =>
   userSelector(state).partiallyCompletedChallenges || [];
@@ -275,6 +277,11 @@ export const allChallengesInfoSelector = state =>
 
 export const completedChallengesIdsSelector = createSelector(
   completedChallengesSelector,
+  completedChallenges => completedChallenges.map(node => node.id)
+);
+
+export const completedDailyCodingChallengesIdsSelector = createSelector(
+  completedDailyCodingChallengesSelector,
   completedChallenges => completedChallenges.map(node => node.id)
 );
 

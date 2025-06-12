@@ -117,7 +117,38 @@
     "share-on-bluesky": "Share on BlueSky",
     "share-on-threads": "Share on Threads",
     "play-scene": "Press Play",
-    "download-latest-version": "Download the Latest Version"
+    "download-latest-version": "Download the Latest Version",
+    "start": "Start",
+    "go-to-today": "Go to Today's Challenge",
+    "go-to-today-long": "Go to Today's Coding Challenge",
+    "go-to-archive": "Go to Archive",
+    "go-to-archive-long": "Go to Daily Coding Challenge Archive"
+  },
+  "daily-coding-challenges": {
+    "title": "Daily Coding Challenges",
+    "map-title": "Try the coding challenge of the day:",
+    "not-found": "Daily Coding Challenge Not Found.",
+    "release-note": "New challenges are released at midnight US Central time (UTC-06:00)"
+  },
+  "weekdays": {
+    "short": {
+      "sunday": "S",
+      "monday": "M",
+      "tuesday": "T",
+      "wednesday": "W",
+      "thursday": "T",
+      "friday": "F",
+      "saturday": "S"
+    },
+    "long": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    }
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -851,6 +882,8 @@
     "github": "Link to {{username}}'s GitHub",
     "website": "Link to {{username}}'s website",
     "twitter": "Link to {{username}}'s Twitter",
+    "next-month": "Go to next month",
+    "previous-month": "Go to previous month",
     "first-page": "Go to first page",
     "previous-page": "Go to previous page",
     "next-page": "Go to next page",
@@ -880,7 +913,8 @@
     "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
-    "terminal-output": "Terminal output"
+    "terminal-output": "Terminal output",
+    "not-available": "Not available"
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",

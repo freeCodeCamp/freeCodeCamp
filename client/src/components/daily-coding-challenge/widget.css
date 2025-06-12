@@ -1,0 +1,20 @@
+.daily-coding-challenge-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.daily-coding-challenge-date {
+  font-size: 1.2rem;
+}
+
+.release-note {
+  font-size: 0.8rem;
+}
+
+.daily-coding-challenge-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}

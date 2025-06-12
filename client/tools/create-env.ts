@@ -55,6 +55,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   const locationKeys = [
     'homeLocation',
     'apiLocation',
+    'dailyChallengeApiLocation',
     'forumLocation',
     'newsLocation',
     'radioLocation'
