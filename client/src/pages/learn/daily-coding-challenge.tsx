@@ -29,7 +29,8 @@ interface ChallengeLanguageData {
 }
 
 interface ChallengeDataFromDb {
-  challengeId: string;
+  _id: string;
+  challengeNumber: number;
   title: string;
   date: string;
   description?: string;
@@ -70,7 +71,8 @@ function formatInstructions(str: string) {
 
 function formatChallengeData({
   date,
-  challengeId,
+  _id,
+  challengeNumber,
   title,
   description,
   instructions,
@@ -79,7 +81,8 @@ function formatChallengeData({
 }: ChallengeDataFromDb) {
   const baseChallengeProps = {
     date,
-    id: challengeId,
+    id: _id,
+    challengeNumber,
     title,
     // helpCategory: 'Daily Coding Challenges',
     description: description && formatDescription(description),
@@ -91,7 +94,7 @@ function formatChallengeData({
 
   const pageContext = {
     challengeMeta: {
-      id: challengeId,
+      id: _id,
       superBlock: 'daily-coding-challenge',
       block: 'daily-coding-challenge'
     }
