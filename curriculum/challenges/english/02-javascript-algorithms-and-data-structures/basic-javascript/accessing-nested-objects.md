@@ -41,7 +41,7 @@ Access the `myStorage` object and assign the contents of the `glove box` propert
 `gloveBoxContents` should equal the string `maps`.
 
 ```js
-assert(gloveBoxContents === 'maps');
+assert.strictEqual(gloveBoxContents, 'maps');
 ```
 
 Your code should use dot notation, where possible, to access `myStorage`.
@@ -74,17 +74,6 @@ assert.deepStrictEqual(myStorage, expectedMyStorage);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(x) { 
-  if(typeof x != 'undefined') { 
-    return "gloveBoxContents = " + x;
-  }
-  return "gloveBoxContents is undefined";
-})(gloveBoxContents);
-```
 
 ## --seed-contents--
 

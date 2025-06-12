@@ -23,28 +23,22 @@ Change `randomFraction` to return a random number instead of returning `0`.
 `randomFraction` should return a random number.
 
 ```js
-assert(typeof randomFraction() === 'number');
+assert.isNumber(randomFraction());
 ```
 
 The number returned by `randomFraction` should be a decimal.
 
 ```js
-assert((randomFraction() + '').match(/\./g));
+assert.match(randomFraction().toString(), /\./g);
 ```
 
 You should be using `Math.random` to generate the random decimal number.
 
 ```js
-assert(__helpers.removeJSComments(code).match(/Math\.random/g).length >= 0);
+assert.match(__helpers.removeJSComments(code),/Math\.random/g);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(){return randomFraction();})();
-```
 
 ## --seed-contents--
 
