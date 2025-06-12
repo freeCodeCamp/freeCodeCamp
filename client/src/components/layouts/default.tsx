@@ -59,6 +59,7 @@ import './global.css';
 import './variables.css';
 import './rtl-layout.css';
 import { LocalStorageThemes } from '../../redux/types';
+import DailyChallengeBreadCrumb from '../../templates/Challenges/components/daily-challenge-bread-crumb';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -112,6 +113,7 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   pathname: string;
   showFooter?: boolean;
   isChallenge?: boolean;
+  isDailyChallenge?: boolean;
   usesMultifileEditor?: boolean;
   block?: string;
   examInProgress: boolean;
@@ -130,6 +132,7 @@ function DefaultLayout({
   removeFlashMessage,
   showFooter = true,
   isChallenge = false,
+  isDailyChallenge = false,
   usesMultifileEditor,
   block,
   superBlock,
@@ -287,7 +290,13 @@ function DefaultLayout({
             />
           ) : null}
           <SignoutModal />
-          {isChallenge &&
+          {isDailyChallenge ? (
+            <div className='breadcrumbs-demo'>
+              <DailyChallengeBreadCrumb />
+            </div>
+          ) : (
+            isChallenge &&
+            !isDailyChallenge &&
             !examInProgress &&
             (isRenderBreadcrumb ? (
               <div className='breadcrumbs-demo'>
@@ -298,7 +307,8 @@ function DefaultLayout({
               </div>
             ) : (
               <Spacer size={isExSmallViewportHeight ? 'xxs' : 'xs'} />
-            ))}
+            ))
+          )}
           {fetchState.complete && children}
         </div>
         {showFooter && <Footer />}
