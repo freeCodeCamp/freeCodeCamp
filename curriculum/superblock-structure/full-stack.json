@@ -695,6 +695,9 @@
               "dashedName": "lecture-understanding-core-javascript-fundamentals"
             },
             {
+              "dashedName": "lab-slice-and-splice"
+            },
+            {
               "dashedName": "lab-pyramid-generator"
             },
             {
@@ -1052,17 +1055,16 @@
         },
         {
           "dashedName": "react-state-hooks-and-routing",
-          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "lecture-working-with-state-and-responding-to-events-in-react"
             },
             { "dashedName": "workshop-toggle-text-app" },
+            { "dashedName": "lab-color-picker" },
             {
               "dashedName": "lecture-understanding-effects-and-referencing-values-in-react"
             },
             { "dashedName": "workshop-fruit-search-app" },
-            { "dashedName": "lab-color-picker" },
             {
               "dashedName": "review-react-state-and-hooks"
             },
@@ -1070,10 +1072,10 @@
               "dashedName": "quiz-react-state-and-hooks"
             },
             {
-              "dashedName": "workshop-superhero-application-form"
+              "dashedName": "lecture-working-with-forms-in-react"
             },
             {
-              "dashedName": "lecture-working-with-forms-in-react"
+              "dashedName": "workshop-superhero-application-form"
             },
             {
               "dashedName": "lab-event-rsvp"
@@ -1106,7 +1108,6 @@
         },
         {
           "dashedName": "performance",
-          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "lecture-understanding-performance-in-web-applications"
@@ -1117,6 +1118,16 @@
             {
               "dashedName": "quiz-web-performance"
             }
+          ]
+        },
+        {
+          "dashedName": "testing",
+          "blocks": [
+            {
+              "dashedName": "lecture-understanding-the-different-types-of-testing"
+            },
+            { "dashedName": "review-testing" },
+            { "dashedName": "quiz-testing" }
           ]
         },
         {
@@ -1134,17 +1145,7 @@
             }
           ]
         },
-        {
-          "dashedName": "testing",
-          "comingSoon": true,
-          "blocks": [
-            {
-              "dashedName": "lecture-understanding-the-different-types-of-testing"
-            },
-            { "dashedName": "review-testing" },
-            { "dashedName": "quiz-testing" }
-          ]
-        },
+
         {
           "dashedName": "typescript-fundamentals",
           "comingSoon": true,
@@ -1191,7 +1192,7 @@
           "blocks": [
             { "dashedName": "lecture-working-with-loops-and-sequences" },
             { "dashedName": "workshop-placeholder-loops-and-sequences" },
-            { "dashedName": "lab-placeholder-loops-and-sequences" },
+            { "dashedName": "lab-number-pattern-generator" },
             { "dashedName": "review-loops-and-sequences" },
             { "dashedName": "quiz-loops-and-sequences" }
           ]

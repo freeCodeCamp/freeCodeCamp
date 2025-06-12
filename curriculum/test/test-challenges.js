@@ -23,32 +23,20 @@ require('@babel/register')({
   only: [clientPath]
 });
 const {
-  buildDOMChallenge,
-  buildPythonChallenge,
   buildChallenge,
-  buildFunctions
+  runnerTypes
 } = require('../../client/src/templates/Challenges/utils/build');
-const {
-  WorkerExecutor
-} = require('../../client/src/templates/Challenges/utils/worker-executor');
 const {
   challengeTypes,
   hasNoSolution
 } = require('../../shared/config/challenge-types');
-// the config files are created during the build, but not before linting
-const javaScriptTestEvaluator =
-  require('../../client/config/browser-scripts/test-evaluator.json').filename;
-const pythonTestEvaluator =
-  require('../../client/config/browser-scripts/python-test-evaluator.json').filename;
-
 const { getLines } = require('../../shared/utils/get-lines');
-
 const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
 const {
-  createContent,
-  testId
+  prefixDoctype,
+  helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
 const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
 const ChallengeTitles = require('./utils/challenge-titles');
@@ -135,8 +123,6 @@ spinner.text = 'Populate tests.';
 
 let browser;
 let page;
-// This worker can be reused since it clears its environment between tests.
-let pythonWorker;
 
 setup()
   .then(runTests)
@@ -148,7 +134,13 @@ async function setup() {
     host: '127.0.0.1',
     port: '8080',
     root: path.resolve(__dirname, 'stubs'),
-    mount: [['/js', path.join(clientPath, 'static/js')]],
+    mount: [
+      [
+        '/dist',
+        path.join(clientPath, `static/js/test-runner/${helperVersion}`)
+      ],
+      ['/js', path.join(clientPath, 'static/js')]
+    ],
     open: false,
     logLevel: 0
   });
@@ -166,9 +158,6 @@ async function setup() {
   });
   global.Worker = createPseudoWorker(await newPageContext(browser));
 
-  pythonWorker = new WorkerExecutor(pythonTestEvaluator, {
-    terminateWorker: false
-  });
   page = await newPageContext(browser);
   await page.setViewport({ width: 300, height: 150 });
 
@@ -401,7 +390,11 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                       challenge.challengeFiles,
                       buildChallenge
                     );
-                  } catch {
+                  } catch (e) {
+                    console.error(
+                      `Error creating test runner for initial contents`
+                    );
+                    console.error(e);
                     fails = true;
                   }
                   if (!fails) {
@@ -540,27 +533,15 @@ async function createTestRunner(
     { usesTestRunner: true }
   );
 
-  const code = {
-    contents: sources.index,
-    editableContents: sources.editableContents
-  };
-
-  const buildFunction = buildFunctions[challenge.challengeType];
-
-  const runsInBrowser = buildFunction === buildDOMChallenge;
-  const runsInPythonWorker = buildFunction === buildPythonChallenge;
-
-  const evaluator = await (runsInBrowser
-    ? getContextEvaluator({
-        // passing in challengeId so it's easier to debug timeouts
-        challengeId: challenge.id,
-        build,
-        sources,
-        code,
-        loadEnzyme,
-        hooks: challenge.hooks
-      })
-    : getWorkerEvaluator({ build, sources, code, runsInPythonWorker }));
+  const evaluator = await getContextEvaluator({
+    // passing in challengeId so it's easier to debug timeouts
+    challengeId: challenge.id,
+    build,
+    sources,
+    type: runnerTypes[challenge.challengeType],
+    loadEnzyme,
+    hooks: challenge.hooks
+  });
 
   return async ({ text, testString }) => {
     try {
@@ -569,7 +550,6 @@ async function createTestRunner(
         throw err;
       }
     } catch (err) {
-      // add more info to the error so the failing test can be identified.
       text = 'Test text: ' + text;
       const newMessage = solutionFromNext
         ? 'Check next step for solution!\n' + text
@@ -625,43 +605,42 @@ ${testString}
             timeout
           )
         ),
-        await page.evaluate(async testString => {
-          return await document.__runTest(testString);
-        }, testString)
+        await page.evaluate(
+          async (testString, type) => {
+            return await window.FCCTestRunner.getRunner(type).runTest(
+              testString
+            );
+          },
+          testString,
+          config.type
+        )
       ])
   };
 }
 
-async function getWorkerEvaluator({
+async function initializeTestRunner({
   build,
   sources,
-  code,
-  runsInPythonWorker
+  type,
+  hooks,
+  loadEnzyme
 }) {
-  // The python worker clears the globals between tests, so it should be fine
-  // to use the same evaluator for all tests. TODO: check if this is true for
-  // sys, since sys.modules is not being reset.
-  const testWorker = runsInPythonWorker
-    ? pythonWorker
-    : new WorkerExecutor(javaScriptTestEvaluator, { terminateWorker: true });
-  return {
-    evaluate: async (testString, timeout) =>
-      await testWorker.execute({ testString, build, code, sources }, timeout)
-        .done
-  };
-}
+  const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
 
-async function initializeTestRunner({ build, sources, loadEnzyme, hooks }) {
-  await page.reload();
-  await page.setContent(createContent(testId, { build, sources, hooks }));
   await page.evaluate(
-    async (sources, loadEnzyme) => {
-      await document.__initTestFrame({
+    async (sources, source, type, hooks, loadEnzyme) => {
+      await window.FCCTestRunner.createTestRunner({
+        source,
+        type,
         code: sources,
+        hooks,
         loadEnzyme
       });
     },
     sources,
+    source,
+    type,
+    hooks,
     loadEnzyme
   );
 }

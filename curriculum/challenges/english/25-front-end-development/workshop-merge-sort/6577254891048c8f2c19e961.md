@@ -1,0 +1,37 @@
+---
+id: 6577254891048c8f2c19e961
+title: Step 6
+challengeType: 20
+dashedName: step-6
+---
+
+# --description--
+
+At the bottom of your function body, call the `merge_sort()` function again. This time, pass in `right_part` as the argument to the function call.
+
+# --hints--
+
+You should call `merge_sort()` with the argument `right_part` at the bottom of your function body.
+
+```js
+({
+    test: () => assert(runPython(`_Node(_code).find_function("merge_sort").is_ordered("merge_sort(left_part)", "merge_sort(right_part)")`
+))
+})
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+--fcc-editable-region--
+def merge_sort(array):
+    middle_point = len(array) // 2
+    left_part = array[:middle_point]
+    right_part = array[middle_point:]
+    
+    merge_sort(left_part)
+
+--fcc-editable-region--
+```

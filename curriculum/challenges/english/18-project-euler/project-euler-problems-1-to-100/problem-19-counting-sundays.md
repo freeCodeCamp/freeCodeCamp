@@ -23,7 +23,7 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 `countingSundays(1943, 1946)` should return a number.
 
 ```js
-assert(typeof countingSundays(1943, 1946) === 'number');
+assert.isNumber(countingSundays(1943, 1946));
 ```
 
 `countingSundays(1943, 1946)` should return 6.

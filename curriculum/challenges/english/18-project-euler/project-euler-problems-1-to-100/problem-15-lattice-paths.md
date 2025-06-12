@@ -19,7 +19,7 @@ How many such routes are there through a given `gridSize`?
 `latticePaths(4)` should return a number.
 
 ```js
-assert(typeof latticePaths(4) === 'number');
+assert.isNumber(latticePaths(4));
 ```
 
 `latticePaths(4)` should return 70.
