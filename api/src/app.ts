@@ -30,6 +30,7 @@ import csrf from './plugins/csrf';
 import notFound from './plugins/not-found';
 import shadowCapture from './plugins/shadow-capture';
 import growthBook from './plugins/growth-book';
+import authorize from './plugins/auth-z';
 
 import * as publicRoutes from './routes/public';
 import * as protectedRoutes from './routes/protected';
@@ -154,6 +155,7 @@ export const build = async (
   }
 
   void fastify.register(auth);
+  void fastify.register(authorize);
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
   void fastify.register(bouncer);
