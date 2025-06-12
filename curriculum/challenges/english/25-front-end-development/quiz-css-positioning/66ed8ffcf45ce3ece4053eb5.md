@@ -628,3 +628,494 @@ Which of the following is the default value of the `position` property?
 
 `static`
 
+## --quiz--
+
+### --question--
+
+#### --text--
+
+Which position value positions the element according to the normal flow, then offsets it without affecting other elements?
+
+#### --distractors--
+
+`sticky`
+
+---
+
+`absolute`
+
+---
+
+`static`
+
+#### --answer--
+
+`relative`
+
+### --question--
+
+#### --text--
+
+Which position value positions the element relative to the nearest positioned ancestor?
+
+#### --distractors--
+
+`static`
+
+---
+
+`relative`
+
+---
+
+`sticky`
+
+#### --answer--
+
+`absolute`
+
+### --question--
+
+#### --text--
+
+When you apply top: 50% to an absolutely positioned element, what does that 50% refer to?
+
+#### --distractors--
+
+`50% of the element’s own height`
+
+---
+
+`50% of the viewport height`
+
+---
+
+`50% of the nearest ancestor’s width`
+
+#### --answer--
+
+`50% of the nearest positioned ancestor’s height`
+
+### --question--
+
+#### --text--
+
+If you set position: absolute on an inline element (like a <span>), what does its display type become according to the spec?
+
+#### --distractors--
+
+`It remains inline by default`
+
+---
+
+`It becomes display: table`
+
+---
+
+`It becomes a flex container`
+
+#### --answer--
+
+`It’s computed as a block‐level box`
+
+### --question--
+
+#### --text--
+
+How does overflow: hidden on a parent affect a child with position: sticky?
+
+#### --distractors--
+
+`It disables sticky behavior entirely`
+
+---
+
+`It makes the child scroll with the page normally`
+
+---
+
+`It forces the child to act like position: fixed`
+
+#### --answer--
+
+`It confines the sticky behavior so the child only sticks within the parent’s bounds` 
+
+### --question--
+
+#### --text--
+
+Which CSS property—alone, without any z-index—can create a new stacking context?
+
+#### --distractors--
+
+`margin`
+
+---
+
+`border`
+
+---
+
+`position: static`
+
+#### --answer--
+
+`transform` 
+
+### --question--
+
+#### --text--
+
+Which ancestor does an absolutely positioned element use as its containing block?
+
+#### --distractors--
+
+`The root <html> element`
+
+---
+
+`The viewport`
+
+---
+
+`The first element with display: block`
+
+#### --answer--
+
+`The nearest ancestor whose position is not static` 
+
+### --question--
+
+#### --text--
+
+Which of these is ignored by position: fixed when determining its containing block?
+
+#### --distractors--
+
+`The <body> element`
+
+---
+
+`A parent with position: relative`
+
+---
+
+`The root element`
+
+#### --answer--
+
+`All ancestors—position: fixed elements are always relative to the viewport` 
+
+### --question--
+
+#### --text--
+
+If two positioned elements overlap without any z-index specified, what determines which one paints on top?
+
+#### --distractors--
+
+`The element with larger width`
+
+---
+
+`Alphabetical order of their class names`
+
+---
+
+`Their position value (absolute over relative)`
+
+#### --answer--
+
+`Their order in the HTML (later elements paint on top)` 
+
+### --question--
+
+#### --text--
+
+Which CSS snippet correctly centers an absolutely positioned box both horizontally and vertically in its container?
+
+#### --distractors--
+
+```css
+.box {
+  position: absolute;
+  margin: auto;
+  width: 50%;
+  height: 50%;
+}
+```
+
+---
+
+```css
+.box {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+}
+```
+
+---
+
+```css
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+#### --answer--
+
+```css
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+
+### --question--
+
+#### --text--
+
+What does float:right do to an element?
+
+#### --distractors--
+
+`Positions the element at the bottom of its container`
+
+---
+
+`Removes the element from the normal flow and sticks it to the right side of the viewport`
+
+---
+
+`Centers the element horizontally`
+
+#### --answer--
+
+`Places the element on the right side of its container, allowing inline content to wrap around it` 
+
+### --question--
+
+#### --text--
+
+Which values can the clear property take to clear both left and right floats?
+
+#### --distractors--
+
+`clear: all-sides;`
+
+---
+
+`clear: both-sides;`
+
+---
+
+`clear: left-right;`
+
+#### --answer--
+
+`Places the element on the right side of its container, allowing inline content to wrap around it` 
+
+### --question--
+
+#### --text--
+
+What happens when you apply `float: left;` to an element in CSS?
+
+#### --distractors--
+
+`It centers the element horizontally inside its container`  
+
+---
+
+`It aligns the element at the bottom of the container`  
+
+---
+
+`It moves the element to the right side of the container`
+
+#### --answer--
+
+`It removes the element from normal flow and positions it to the left, allowing text to wrap around it`
+
+### --question--
+
+#### --text--
+
+What CSS property can be used to move an element below floated elements?
+
+#### --distractors--
+
+`align`  
+
+---
+
+`offset`
+
+---
+
+`position`
+
+#### --answer--
+
+`clear`
+
+### --question--
+
+#### --text--
+
+Which CSS snippet correctly applies a clearfix hack to fix float collapsing?
+
+#### --distractors--
+
+```css
+.clearfix::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+```
+
+---
+
+```css
+.clearfix::after {
+  content: "";
+  display: inline;
+  clear: left;
+}
+```
+
+---
+
+```css
+.clearfix {
+  content: "";
+  display: block;
+}
+```
+
+#### --answer--
+
+```css
+.clearfix {
+  content: "";
+  display: block;
+  clear: both;
+}
+```
+
+### --question--
+
+#### --text--
+
+In static positioning, how are elements arranged on the page?
+
+#### --distractors--
+
+`From right to left and bottom to top`
+
+---
+
+`Randomly depending on screen size`
+
+---
+
+`Stacked based on their z-index by default`
+
+#### --answer--
+
+`From top to bottom and left to right, following normal document flow`
+
+### --question--
+
+#### --text--
+
+What effect does position: relative have on an element?
+
+#### --distractors--
+
+`It removes the element from the document flow`
+
+---
+
+`It makes the element behave like fixed positioning`
+
+---
+
+`It prevents the element from moving`
+
+#### --answer--
+
+`It allows offsetting an element while keeping it in the normal document flow`
+
+### --question--
+
+#### --text--
+
+What best describes position: absolute in CSS?
+
+#### --distractors--
+
+`It keeps the element fixed in place when scrolling`
+
+---
+
+`It stacks the element above all others automatically`
+
+---
+
+`It restricts the element inside its parent container always`
+
+#### --answer--
+
+`It removes the element from the normal flow and positions it relative to the nearest positioned ancestor`
+
+### --question--
+
+#### --text--
+
+What happens when an element is given position: fixed?
+
+#### --distractors--
+
+`It scrolls along with the page`
+
+---
+
+`It remains in normal flow but moves slightly with scrolling`
+
+---
+
+`It positions relative to its parent element`
+
+#### --answer--
+
+`It is positioned relative to the viewport and stays fixed during scrolling`
+
+### --question--
+
+#### --text--
+
+Which property combination would you use to make an element stick at 30px from the top of the viewport while scrolling?
+
+#### --distractors--
+
+`position: fixed; bottom: 30px;`  
+
+---
+
+`position: absolute; top: 30px;`  
+
+---
+
+`position: relative; top: 30px;`
+
+#### --answer--
+
+`position: sticky; top: 30px;`
