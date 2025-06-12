@@ -69,6 +69,13 @@ export const folderToSuperBlockMap = Object.fromEntries(
   Object.entries(superBlockToFolderMap).map(([key, value]) => [value, key])
 );
 
+export const languageSuperBlocks = [
+  SuperBlocks.A2English,
+  SuperBlocks.B1English,
+  SuperBlocks.A2Spanish,
+  SuperBlocks.A2Chinese
+];
+
 /*
  * SuperBlockStages.Upcoming = SHOW_UPCOMING_CHANGES === 'true'
  * 'Upcoming' is for development -> not shown on stag or prod anywhere

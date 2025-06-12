@@ -7,21 +7,13 @@ import ObjectID from 'bson-objectid';
 
 import {
   SuperBlocks,
+  languageSuperBlocks,
   superBlockToFolderMap
 } from '../../shared/config/curriculum';
-import { createStepFile, validateBlockName } from './utils';
+import { createDialogueFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 
-const helpCategories = [
-  'HTML-CSS',
-  'JavaScript',
-  'Backend Development',
-  'Python',
-  'English',
-  'Odin',
-  'Euler',
-  'Rosetta'
-] as const;
+const helpCategories = ['English'] as const;
 
 type BlockInfo = {
   title: string;
@@ -34,19 +26,17 @@ type SuperBlockInfo = {
 
 type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
 
-interface CreateProjectArgs {
+interface CreateBlockArgs {
   superBlock: SuperBlocks;
   block: string;
   helpCategory: string;
-  order: number;
   title?: string;
 }
 
-async function createProject(
+async function createLanguageBlock(
   superBlock: SuperBlocks,
   block: string,
   helpCategory: string,
-  order: number,
   title?: string
 ) {
   if (!title) {
@@ -54,15 +44,8 @@ async function createProject(
   }
   void updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createFirstChallenge(superBlock, block);
-  void createMetaJson(
-    superBlock,
-    block,
-    title,
-    helpCategory,
-    order,
-    challengeId
-  );
+  const challengeId = await createDialogueChallenge(superBlock, block);
+  void createMetaJson(superBlock, block, title, helpCategory, challengeId);
   // TODO: remove once we stop relying on markdown in the client.
   void createIntroMD(superBlock, block, title);
 }
@@ -93,18 +76,18 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  order: number,
   challengeId: ObjectID
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
-  const newMeta = getBaseMeta('Step');
+  const newMeta = getBaseMeta('Language');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  newMeta.order = order;
   newMeta.superBlock = superBlock;
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
+  newMeta.challengeOrder = [
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+    { id: challengeId.toString(), title: "Dialogue 1: I'm Tom" }
+  ];
   const newMetaDir = path.resolve(metaDir, block);
   if (!existsSync(newMetaDir)) {
     await withTrace(fs.mkdir, newMetaDir);
@@ -126,7 +109,7 @@ superBlock: ${superBlock}
 
 ## Introduction to the ${title}
 
-This is a test for the new project-based curriculum.
+This page is for the ${title}
 `;
   const dirPath = path.resolve(
     __dirname,
@@ -139,7 +122,7 @@ This is a test for the new project-based curriculum.
   void withTrace(fs.writeFile, filePath, introMD, { encoding: 'utf8' });
 }
 
-async function createFirstChallenge(
+async function createDialogueChallenge(
   superBlock: SuperBlocks,
   block: string
 ): Promise<ObjectID> {
@@ -151,23 +134,8 @@ async function createFirstChallenge(
   if (!existsSync(newChallengeDir)) {
     await withTrace(fs.mkdir, newChallengeDir);
   }
-
-  // TODO: would be nice if the extension made sense for the challenge, but, at
-  // least until react I think they're all going to be html anyway.
-  const challengeSeeds = {
-    indexhtml: {
-      contents: '',
-      ext: 'html',
-      editableRegionBoundaries: [0, 2]
-    }
-  };
-  // including trailing slash for compatibility with createStepFile
-  return createStepFile({
-    projectPath: newChallengeDir + '/',
-    stepNum: 1,
-    challengeType: 0,
-    challengeSeeds,
-    isFirstChallenge: true
+  return createDialogueFile({
+    projectPath: newChallengeDir + '/'
   });
 }
 
@@ -195,13 +163,13 @@ void prompt([
   {
     name: 'superBlock',
     message: 'Which certification does this belong to?',
-    default: SuperBlocks.RespWebDesign,
+    default: SuperBlocks.A2English,
     type: 'list',
-    choices: Object.values(SuperBlocks)
+    choices: Object.values(languageSuperBlocks)
   },
   {
     name: 'block',
-    message: 'What is the dashed name (in kebab-case) for this project?',
+    message: 'What is the dashed name (in kebab-case) for this block?',
     validate: validateBlockName,
     filter: (block: string) => {
       return block.toLowerCase().trim();
@@ -214,33 +182,14 @@ void prompt([
   {
     name: 'helpCategory',
     message: 'Choose a help category',
-    default: 'HTML-CSS',
+    default: 'English',
     type: 'list',
     choices: helpCategories
-  },
-  {
-    name: 'order',
-    message: 'Which position does this appear in the certificate?',
-    default: 42,
-    validate: (order: string) => {
-      return parseInt(order, 10) > 0
-        ? true
-        : 'Order must be an number greater than zero.';
-    },
-    filter: (order: string) => {
-      return parseInt(order, 10);
-    }
   }
 ])
   .then(
-    async ({
-      superBlock,
-      block,
-      title,
-      helpCategory,
-      order
-    }: CreateProjectArgs) =>
-      await createProject(superBlock, block, helpCategory, order, title)
+    async ({ superBlock, block, helpCategory, title }: CreateBlockArgs) =>
+      await createLanguageBlock(superBlock, block, helpCategory, title)
   )
   .then(() =>
     console.log(
