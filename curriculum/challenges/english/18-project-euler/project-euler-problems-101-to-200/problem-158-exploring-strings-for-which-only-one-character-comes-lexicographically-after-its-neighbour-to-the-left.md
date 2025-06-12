@@ -6,7 +6,7 @@ title: >-
 challengeType: 1
 forumTopicId: 301789
 dashedName: >-
-  problem-158-exploring-strings-for-which-only-one-character-comes-lexicographically-after-its-neighbor-to-the-left
+  problem-158-exploring-strings-for-which-only-one-character-comes-lexicographically-after-its-neighbour-to-the-left
 ---
 
 # --description--
