@@ -114,12 +114,12 @@
   },
   "landing": {
     "big-heading-1": "免費學習編程",
-    "big-heading-1-b": "學習編程",
     "big-heading-2": "構建項目",
+    "big-heading-1-b": "Build Your Skills for Free.",
     "big-heading-3": "獲得認證",
-    "big-heading-4": "完全免費",
-    "h2-heading": "自 2014 年以來，已有超過 40,000 名 freeCodeCamp.org 學員入職科技公司，例如：",
-    "h2-heading-b": "已有超過 <strong>100,000</strong> 名 freeCodeCamp.org 學員<strong>入職</strong>科技公司，例如：",
+    "advance-career": "Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI Engineering, and English for Developers.",
+    "h2-heading": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
+    "graduates-work": "More than <strong>100,000</strong> freeCodeCamp graduates work in companies such as",
     "hero-img-description": "韓國的 freeCodeCamp 學員在當地一個學習小組的交流活動上",
     "hero-img-alt": "一羣人，包括一名白人男子、一名黑人女子和一名亞裔女子，圍在一臺筆記本電腦旁。",
     "hero-img-uis": "一組展示在移動設備和桌面設備上的 freeCodeCamp 編輯器界面的截圖以及認證。",
@@ -849,7 +849,8 @@
     "opens-new-window": "在新窗口打開",
     "rsa-checkbox": "我已經嘗試了 Read-Search-Ask（閱讀-搜索-提問）方法",
     "similar-questions-checkbox": "我已經在論壇上搜索了類似的問題和相應的答案",
-    "edit-my-profile": "編輯我的個人資料"
+    "edit-my-profile": "編輯我的個人資料",
+    "terminal-output": "Terminal output"
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -1117,6 +1118,8 @@
       "full-stack-developer-v9-cert": "全棧開發者認證",
       "a2-professional-spanish": "A2 Professional Spanish",
       "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
+      "a2-professional-chinese": "A2 Professional Chinese",
+      "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
       "legacy-front-end": "舊版前端",
       "legacy-front-end-cert": "舊版前端認證",
       "legacy-back-end": "舊版後端",

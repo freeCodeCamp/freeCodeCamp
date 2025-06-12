@@ -13,7 +13,7 @@ import { ChallengeContent } from '../../../interfaces/challenge-content';
 import SaveChallenge from '../buttons/save-challenge';
 import './editor.css';
 import { API_LOCATION } from '../../utils/handle-request';
-import { superBlockNameMap } from '../../utils/block-name-translator';
+import { folderToSuperBlockMap } from '../../../../../../shared/config/curriculum';
 
 const Editor = () => {
   const [error, setError] = useState<Error | null>(null);
@@ -91,7 +91,7 @@ const Editor = () => {
       </p>
       <p>
         <Link
-          to={`${import.meta.env.CHALLENGE_EDITOR_LEARN_CLIENT_LOCATION}/learn/${superBlockNameMap[superblock || '']}/${block || ''}/${
+          to={`${import.meta.env.CHALLENGE_EDITOR_LEARN_CLIENT_LOCATION}/learn/${folderToSuperBlockMap[superblock || '']}/${block || ''}/${
             items.dashedName
           }`}
           target='_blank'

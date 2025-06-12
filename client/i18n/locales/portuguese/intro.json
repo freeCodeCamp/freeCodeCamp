@@ -1290,7 +1290,7 @@
         ]
       },
       "top-build-a-rock-paper-scissors-game": {
-        "title": "Crie um jogo de pedra, papel e tesoura",
+        "title": "Build a Rock Paper Scissors Game",
         "intro": [
           "Teste suas habilidades em JavaScript criando um jogo de pedra, papel e tesoura."
         ]
@@ -2985,6 +2985,12 @@
           "In these lecture videos, you will learn more about the core JavaScript fundamentals. You will learn how a string object differs from a primitive string, the <code>toString()</code> method, conventions and common practices for naming variables, linters and formatters, closures, and much more."
         ]
       },
+      "lab-slice-and-splice": {
+        "title": "Implement the Slice and Splice Algorithm",
+        "intro": [
+          "In this lab, you will practice merging an array with another."
+        ]
+      },
       "lab-pyramid-generator": {
         "title": "Build a Pyramid Generator",
         "intro": [
@@ -3114,7 +3120,7 @@
       "lab-lightbox-viewer": {
         "title": "Build a Lightbox Viewer",
         "intro": [
-          "In this lab, you'll build a lighbox viewer for viewing images in a focused mode.",
+          "In this lab, you'll build a lightbox viewer for viewing images in a focused mode.",
           "You'll practice click events and toggling classes."
         ]
       },
@@ -3569,7 +3575,7 @@
       "workshop-toggle-text-app": {
         "title": "Toggle Text App",
         "intro": [
-          "In this workshop, you will continute to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
+          "In this workshop, you will continue to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
         ]
       },
       "lab-color-picker": {
@@ -3588,7 +3594,7 @@
       "workshop-fruit-search-app": {
         "title": "Build a Fruit Search App",
         "intro": [
-          "In this workshop, you will continute to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
+          "In this workshop, you will continue to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
         ]
       },
       "vjgg": {
@@ -3815,15 +3821,17 @@
       },
       "lecture-working-with-loops-and-sequences": {
         "title": "Working with Loops and Sequences",
-        "intro": [""]
+        "intro": [
+          "Learn about Working with Loops and Sequences in these lectures."
+        ]
       },
       "workshop-placeholder-loops-and-sequences": {
         "title": "Placeholder - Waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-loops-and-sequences": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "lab-number-pattern-generator": {
+        "title": "Build a Number Pattern Generator",
+        "intro": ["In this lab you will build a number pattern generator."]
       },
       "review-loops-and-sequences": {
         "title": "Loops and Sequences Review",
@@ -3840,11 +3848,13 @@
       },
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Working with Dictionaries and Sets",
-        "intro": [""]
+        "intro": [
+          "Learn about Working with Dictionaries and Sets in these lectures."
+        ]
       },
       "lecture-working-with-modules": {
         "title": "Working with Modules",
-        "intro": [""]
+        "intro": ["Learn about Working with Modules in these lectures."]
       },
       "workshop-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
@@ -3869,7 +3879,7 @@
       },
       "lecture-understanding-error-handling": {
         "title": "Understanding Error Handling",
-        "intro": [""]
+        "intro": ["Learn about Understanding Error Handling in these lectures."]
       },
       "lab-isbn-validator": {
         "title": "Debug a ISBN Validator",
@@ -3890,7 +3900,7 @@
       },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
-        "intro": [""]
+        "intro": ["Learn about Classes and Objects in these lectures."]
       },
       "workshop-placeholder-classes-and-objects": {
         "title": "Placeholder - waiting for title",
@@ -3917,7 +3927,9 @@
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Understanding Object Oriented Programming and Encapsulation",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Object Oriented Programming and Encapsulation in these lectures."
+        ]
       },
       "workshop-placeholder-oop-1": {
         "title": "Placeholder - Waiting for title",
@@ -3928,8 +3940,10 @@
         "intro": [""]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
-        "title": "Understanding Inheritance and polymorphism",
-        "intro": [""]
+        "title": "Understanding Inheritance and Polymorphism",
+        "intro": [
+          "Learn about Understanding Inheritance and Polymorphism in these lectures."
+        ]
       },
       "workshop-placeholder-oop-2": {
         "title": "Placeholder - Waiting for title",
@@ -3942,8 +3956,8 @@
         ]
       },
       "lecture-understanding-abstraction": {
-        "title": "Understanding abstraction",
-        "intro": [""]
+        "title": "Understanding Abstraction",
+        "intro": ["Learn about Understanding Abstraction in these lectures."]
       },
       "workshop-placeholder-oop-3": {
         "title": "Placeholder - Waiting for title",
@@ -3967,8 +3981,10 @@
         ]
       },
       "lecture-working-with-common-data-structures": {
-        "title": "Working with common data structures",
-        "intro": [""]
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about Working with Common Data Structures in these lectures."
+        ]
       },
       "workshop-linked-list-class": {
         "title": "Build a Linked List Class",
@@ -3996,7 +4012,9 @@
       },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
-        "intro": [""]
+        "intro": [
+          "Learn about Searching and Sorting Algorithms in these lectures."
+        ]
       },
       "workshop-binary-search": {
         "title": "Build a Binary Search",
@@ -4007,8 +4025,11 @@
         "intro": [""]
       },
       "workshop-merge-sort": {
-        "title": "Build a Merge Sort",
-        "intro": [""]
+        "title": "Implement the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
+        ]
       },
       "lab-quick-sort": {
         "title": "Build a Quick Sort",
@@ -4039,7 +4060,9 @@
       },
       "lecture-understanding-graphs-and-trees": {
         "title": "Understanding Graphs and Trees",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Graphs and Trees in these lectures."
+        ]
       },
       "workshop-shortest-path-algorithm": {
         "title": "Build a Shortest Path Algorithm",
@@ -4072,7 +4095,9 @@
       },
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Dynamic Programming in these lectures."
+        ]
       },
       "lab-nth-fibonacci-number": {
         "title": "Build an Nth Fibonacci Number Calculator",
@@ -4293,6 +4318,39 @@
         "intro": [
           "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
         ]
+      }
+    }
+  },
+  "a2-professional-chinese": {
+    "title": "A2 Professional Chinese Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "talk-about-what-you-do-by-using-key-verbs": {
+        "title": "Talk About What You Do by Using Key Verbs",
+        "intro": [
+          "Learn how to introduce yourself in Chinese in a simple and professional way. In this module you'll learn how to say who you are, where you are from, what you do, how you feel, and what you like or don't like."
+        ]
+      },
+      "get-to-know-colleagues-by-asking-simple-questions": {
+        "title": "Get to Know Colleagues by Asking Simple Questions",
+        "intro": [
+          "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
+        ]
+      }
+    }
+  },
+  "dev-playground": {
+    "title": "Dev Playground",
+    "intro": ["Playground for creating and testing challenges"],
+    "blocks": {
+      "daily-coding-challenges-javascript": {
+        "title": "Daily Coding Challenges JavaScript",
+        "intro": ["Place to create JavaScript daily coding challenges."]
+      },
+      "daily-coding-challenges-python": {
+        "title": "Daily Coding Challenges Python",
+        "intro": ["Place to create Python daily coding challenges."]
       }
     }
   },

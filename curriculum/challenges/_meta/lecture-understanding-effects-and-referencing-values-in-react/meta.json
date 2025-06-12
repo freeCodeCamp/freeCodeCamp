@@ -2,7 +2,7 @@
   "name": "Understanding Effects and Referencing Values in React",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-effects-and-referencing-values-in-react",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
