@@ -1761,8 +1761,7 @@
       "relational-databases": "Relational Databases",
       "backend-javascript": "Backend JavaScript",
       "python": "Python",
-      "career": "Career",
-      "exam-certified-full-stack-developer": "Certified Full Stack Developer Exam"
+      "career": "Career"
     },
     "modules": {
       "basic-html": "Basic HTML",
@@ -1868,14 +1867,6 @@
           "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
         ]
       },
-      "review-front-end-libraries": {
-        "note": "Coming Fall 2025",
-        "intro": [""]
-      },
-      "exam-front-end-libraries": {
-        "note": "Coming Fall 2025",
-        "intro": [""]
-      },
       "python-basics": {
         "note": "Coming Fall 2025",
         "intro": [
@@ -1935,14 +1926,6 @@
         "intro": [
           "In this module, you will learn about  dynamic programming and practice these concepts by building a fibonacci sequence lab. Then you will take a short quiz to test your knowledge."
         ]
-      },
-      "review-python": {
-        "note": "Coming Fall 2025",
-        "intro": [""]
-      },
-      "exam-python": {
-        "note": "Coming Fall 2025",
-        "intro": [""]
       },
       "bash-fundamentals": {
         "note": "Coming Winter 2025",
