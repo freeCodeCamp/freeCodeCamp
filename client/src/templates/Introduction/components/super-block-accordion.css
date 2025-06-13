@@ -140,6 +140,11 @@
   font-size: 1.25rem;
 }
 
+.super-block-accordion .module-intro {
+  margin-left: 17px;
+  margin-top: 16px;
+}
+
 .full-width-container {
   position: relative;
   left: 50%;
