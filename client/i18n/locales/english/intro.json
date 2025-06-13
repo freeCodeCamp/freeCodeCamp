@@ -3813,9 +3813,9 @@
         "title": "Placeholder - Waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-loops-and-sequences": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "lab-number-pattern-generator": {
+        "title": "Build a Number Pattern Generator",
+        "intro": ["In this lab you will build a number pattern generator."]
       },
       "review-loops-and-sequences": {
         "title": "Loops and Sequences Review",
@@ -3924,9 +3924,9 @@
         "intro": [""]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
-        "title": "Understanding Inheritance and polymorphism",
+        "title": "Understanding Inheritance and Polymorphism",
         "intro": [
-          "Learn about Understanding Inheritance and polymorphism in these lectures."
+          "Learn about Understanding Inheritance and Polymorphism in these lectures."
         ]
       },
       "workshop-placeholder-oop-2": {
@@ -3940,8 +3940,8 @@
         ]
       },
       "lecture-understanding-abstraction": {
-        "title": "Understanding abstraction",
-        "intro": ["Learn about Understanding abstraction in these lectures."]
+        "title": "Understanding Abstraction",
+        "intro": ["Learn about Understanding Abstraction in these lectures."]
       },
       "workshop-placeholder-oop-3": {
         "title": "Placeholder - Waiting for title",
@@ -4012,10 +4012,7 @@
           "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
         ]
       },
-      "lab-quick-sort": {
-        "title": "Build a Quick Sort",
-        "intro": [""]
-      },
+      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
       "lab-selection-sort": {
         "title": "Implement the Selection Sort Algorithm",
         "intro": [
