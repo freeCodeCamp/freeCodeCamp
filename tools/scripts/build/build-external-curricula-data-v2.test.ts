@@ -20,7 +20,8 @@ import {
   type GeneratedBlockBasedCurriculumProps,
   type GeneratedChapterBasedCurriculumProps,
   type ChapterBasedCurriculumIntros,
-  orderedSuperBlockInfo
+  orderedSuperBlockInfo,
+  OrderedSuperBlocks
 } from './build-external-curricula-data-v2';
 
 const VERSION = 'v2';
@@ -55,15 +56,28 @@ describe('external curriculum data build', () => {
   });
 
   test('the available-superblocks file should have the correct structure', async () => {
+    const filteredSuperBlockStages: string[] = Object.keys(SuperBlockStage)
+      .filter(key => isNaN(Number(key))) // Filter out numeric keys to get only the names
+      .filter(name => name !== 'Upcoming' && name !== 'Next') // Filter out 'Upcoming' and 'Next'
+      .map(name => name.toLowerCase());
+
     const validateAvailableSuperBlocks = availableSuperBlocksValidator();
-    const availableSuperblocks: unknown = JSON.parse(
+    const availableSuperblocks = JSON.parse(
       await fs.promises.readFile(
         `${clientStaticPath}/curriculum-data/${VERSION}/available-superblocks.json`,
         'utf-8'
       )
-    );
+    ) as { superblocks: OrderedSuperBlocks };
 
     const result = validateAvailableSuperBlocks(availableSuperblocks);
+
+    expect(Object.keys(availableSuperblocks.superblocks)).toHaveLength(
+      filteredSuperBlockStages.length
+    );
+
+    expect(Object.keys(availableSuperblocks.superblocks)).toEqual(
+      expect.arrayContaining(filteredSuperBlockStages)
+    );
 
     if (result.error) {
       throw Error(
@@ -263,23 +277,35 @@ ${result.error.message}`);
   });
 
   test('All public SuperBlocks should be present in the SuperBlock object', () => {
-    const stages = Object.keys(orderedSuperBlockInfo).map(
-      key => Number(key) as SuperBlockStage
-    );
+    // Create a mapping from string to shared/config SuperBlockStage enum value
+    // so we can look up the enum value by string.
+    const superBlockStageStringMap: Record<string, SuperBlockStage> = {
+      core: SuperBlockStage.Core,
+      english: SuperBlockStage.English,
+      professional: SuperBlockStage.Professional,
+      extra: SuperBlockStage.Extra,
+      legacy: SuperBlockStage.Legacy,
+      upcoming: SuperBlockStage.Upcoming,
+      next: SuperBlockStage.Next
+    };
 
-    expect(stages).not.toContain(SuperBlockStage.Next);
-    expect(stages).not.toContain(SuperBlockStage.Upcoming);
+    const stages = Object.keys(orderedSuperBlockInfo);
+
+    expect(stages).not.toContain('next');
+    expect(stages).not.toContain('upcoming');
 
     for (const stage of stages) {
       const superBlockDashedNames = orderedSuperBlockInfo[stage].map(
         superBlock => superBlock.dashedName
       );
 
+      const stageValueInNum = superBlockStageStringMap[stage];
+
       expect(superBlockDashedNames).toEqual(
-        expect.arrayContaining(superBlockStages[stage])
+        expect.arrayContaining(superBlockStages[stageValueInNum])
       );
       expect(superBlockDashedNames).toHaveLength(
-        superBlockStages[stage].length
+        superBlockStages[stageValueInNum].length
       );
     }
   });
