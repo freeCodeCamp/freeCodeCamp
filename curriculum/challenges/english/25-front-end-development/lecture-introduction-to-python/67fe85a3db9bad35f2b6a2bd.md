@@ -23,12 +23,12 @@ Here's a table with the comparison operators in Python:
 
 | Operator | Name | Description |
 | --- | --- | --- |
-| `==` | Equals | Checks if two values are equal |
-| `!=` | Not equals | Checks if two values are not equal |
+| `==` | Equal | Checks if two values are equal |
+| `!=` | Not equal | Checks if two values are not equal |
 | `>` | Greater than | Checks if the value on the left is greater than the value on the right |
 | `<` | Less than | Checks if the value on the left is less than the value on the right |
-| `>=` | Greater than or equal to | Checks if the value on the left is greater than or equal to the value on the right |
-| `<=` | Less than or equal to | Checks if the value on the left is less than or equal to the value on the right |
+| `>=` | Greater than or equal | Checks if the value on the left is greater than or equal to the value on the right |
+| `<=` | Less than or equal | Checks if the value on the left is less than or equal to the value on the right |
 
 Here are some of those expressions that evaluate to `True` or `False`:
 
