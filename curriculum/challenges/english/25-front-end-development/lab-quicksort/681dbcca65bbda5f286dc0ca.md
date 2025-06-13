@@ -38,6 +38,12 @@ assert len(sig.parameters) == 1
 `) })
 ```
 
+`quick_sort([])` should return an empty list.
+
+```js
+({ test: () => runPython(`assert quick_sort([]) == []`) })
+```
+
 Your `quick_sort` function should not modify the list passed to it as the argument.
 
 ```js
@@ -64,12 +70,6 @@ assert _test_list == [20, 3, 14, 1, 5]
 
 ```js
 ({ test: () => runPython(`assert quick_sort([4, 42, 16, 23, 15, 8]) == [4, 8, 15, 16, 23, 42]`) })
-```
-
-`quick_sort([])` should return an empty list.
-
-```js
-({ test: () => runPython(`assert quick_sort([]) == []`) })
 ```
 
 You should not use the `sorted()` function in your code.
