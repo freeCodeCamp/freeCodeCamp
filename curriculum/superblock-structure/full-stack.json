@@ -1485,6 +1485,11 @@
           "dashedName": "authentication",
           "comingSoon": true,
           "blocks": []
+        },
+        {
+          "dashedName": "tooling-and-deployment",
+          "comingSoon": true,
+          "blocks": []
         }
       ]
     },
