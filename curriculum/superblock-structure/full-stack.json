@@ -1145,7 +1145,6 @@
             }
           ]
         },
-
         {
           "dashedName": "typescript-fundamentals",
           "comingSoon": true,
@@ -1158,6 +1157,16 @@
             },
             {
               "dashedName": "quiz-typescript"
+            }
+          ]
+        },
+        {
+          "moduleType": "review",
+          "comingSoon": true,
+          "dashedName": "review-front-end-libraries",
+          "blocks": [
+            {
+              "dashedName": "review-front-end-libraries"
             }
           ]
         }
@@ -1291,6 +1300,12 @@
             { "dashedName": "review-dynamic-programming" },
             { "dashedName": "quiz-dynamic-programming" }
           ]
+        },
+        {
+          "comingSoon": true,
+          "moduleType": "review",
+          "dashedName": "review-python",
+          "blocks": [{ "dashedName": "review-python" }]
         }
       ]
     },
@@ -1381,6 +1396,9 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "workshop-castle"
+            },
+            {
               "dashedName": "workshop-sql-reference-object"
             },
             {
@@ -1394,6 +1412,16 @@
             },
             {
               "dashedName": "quiz-git"
+            }
+          ]
+        },
+        {
+          "moduleType": "review",
+          "comingSoon": true,
+          "dashedName": "review-relational-databases",
+          "blocks": [
+            {
+              "dashedName": "review-relational-databases"
             }
           ]
         }
@@ -1477,7 +1505,7 @@
         {
           "dashedName": "certified-full-stack-developer-exam",
           "comingSoon": true,
-          "blocks": []
+          "blocks": [{ "dashedName": "exam-certified-full-stack-developer" }]
         }
       ]
     }

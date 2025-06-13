@@ -4421,14 +4421,6 @@
           "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
         ]
       },
-      "review-nano": {
-        "title": "Nano Review",
-        "intro": ["Review the Nano concepts to prepare for the upcoming quiz."]
-      },
-      "quiz-nano": {
-        "title": "Nano Quiz",
-        "intro": ["Test what you've learned on Nano with this quiz ."]
-      },
       "rhhl": { "title": "328", "intro": [] },
       "workshop-sql-reference-object": {
         "title": "Build an SQL Reference Object",

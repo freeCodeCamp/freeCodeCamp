@@ -227,6 +227,7 @@ export const SuperBlockAccordion = ({
       modules: chapter.modules.map((module: Module) => ({
         name: module.dashedName,
         comingSoon: module.comingSoon,
+        moduleType: module.moduleType,
         blocks: populateBlocks(module.blocks)
       }))
     }));
@@ -265,6 +266,10 @@ export const SuperBlockAccordion = ({
           >
             {chapter.modules.map(module => {
               if (module.comingSoon && !showUpcomingChanges) {
+                if (module.moduleType === 'review') {
+                  return null;
+                }
+
                 const { note, intro } = t(
                   `intro:full-stack-developer.module-intros.${module.name}`,
                   { returnObjects: true }
