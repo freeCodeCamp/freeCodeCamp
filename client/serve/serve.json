@@ -20,15 +20,6 @@
       ]
     },
     {
-      "source": "js/test-runner/*/*.js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=172800, immutable"
-        }
-      ]
-    },
-    {
       "source": "{misc/*.js,sw.js,python-input-sw.js}",
       "headers": [
         {

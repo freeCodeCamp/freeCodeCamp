@@ -114,6 +114,9 @@ export function* executeChallengeSaga({ payload }) {
     const hooks = yield select(challengeHooksSelector);
     yield put(updateTests(tests));
 
+    yield fork(takeEveryLog, consoleProxy);
+    const proxyLogger = args => consoleProxy.put(args);
+
     const challengeData = yield select(challengeDataSelector);
     const challengeMeta = yield select(challengeMetaSelector);
     // The buildData is used even if there are build errors, so that lessons
@@ -124,7 +127,13 @@ export function* executeChallengeSaga({ payload }) {
       disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview,
       usesTestRunner: true
     });
-    const testRunner = yield call(getTestRunner, { ...buildData, hooks });
+    const document = yield getContext('document');
+    const testRunner = yield call(
+      getTestRunner,
+      { ...buildData, hooks },
+      { proxyLogger },
+      document
+    );
     const testResults = yield executeTests(testRunner, tests);
     yield put(updateTests(testResults));
 
@@ -160,6 +169,14 @@ export function* executeChallengeSaga({ payload }) {
   }
 }
 
+function* takeEveryLog(channel) {
+  // TODO: move all stringifying and escaping into the reducer so there is a
+  // single place responsible for formatting the logs.
+  yield takeEvery(channel, function* (args) {
+    yield put(updateLogs(escape(args)));
+  });
+}
+
 function* takeEveryConsole(channel) {
   // TODO: move all stringifying and escaping into the reducer so there is a
   // single place responsible for formatting the console output.
@@ -182,27 +199,22 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
   for (let i = 0; i < tests.length; i++) {
     const { text, testString } = tests[i];
     const newTest = { text, testString, running: false };
-    // only the first test outputs console.logs to avoid log duplication.
-    const firstTest = i === 0;
+    // only the last test outputs console.logs to avoid log duplication.
+    const firstTest = i === 1;
     try {
-      const {
-        pass,
-        err,
-        logs = []
-      } = yield call(testRunner, testString, testTimeout);
-
-      const logString = logs.map(log => log.msg).join('\n');
-      if (firstTest && logString) {
-        yield put(updateLogs(logString));
-      }
-
+      const { pass, err } = yield call(
+        testRunner,
+        testString,
+        testTimeout,
+        firstTest
+      );
       if (pass) {
         newTest.pass = true;
       } else {
         throw err;
       }
     } catch (err) {
-      const { actual, expected, type } = err;
+      const { actual, expected, errorType } = err;
 
       newTest.message = text
         .replace('--fcc-expected--', expected)
@@ -210,9 +222,9 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
-      } else if (type) {
+      } else if (errorType) {
         const msgKey =
-          type === 'IndentationError'
+          errorType === 'indentation'
             ? 'learn.indentation-error'
             : 'learn.syntax-error';
         newTest.message = `<p>${i18next.t(msgKey)}</p>`;
@@ -288,12 +300,11 @@ export function* previewChallengeSaga(action) {
           yield call(updatePreview, buildData, finalDocument, proxyLogger);
         }
       } else if (isJavaScriptChallenge(challengeData)) {
-        const runUserCode = yield call(getTestRunner, buildData);
+        const runUserCode = getTestRunner(buildData, {
+          proxyLogger
+        });
         // without a testString the testRunner just evaluates the user's code
-        const out = yield call(runUserCode, null, previewTimeout);
-
-        if (out)
-          yield put(updateConsole(out.logs?.map(log => log.msg).join('\n')));
+        yield call(runUserCode, null, previewTimeout);
       }
     }
   } catch (err) {
