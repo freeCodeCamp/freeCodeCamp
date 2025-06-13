@@ -67,12 +67,6 @@ const isLinkModule = (name: string) => {
   return module?.moduleType === 'review';
 };
 
-const isLinkChapter = (name: string) => {
-  const chapter = chapters.find(chapter => chapter.dashedName === name);
-
-  return chapter?.chapterType === 'exam';
-};
-
 const getBlockToChapterMap = () => {
   const blockToChapterMap = new Map<string, string>();
   chapters.forEach(chapter => {
@@ -247,16 +241,6 @@ export const SuperBlockAccordion = ({
   return (
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
-        if (isLinkChapter(chapter.name)) {
-          return (
-            <LinkBlock
-              key={chapter.name}
-              superBlock={superBlock}
-              challenges={chapter.modules[0]?.blocks[0]?.challenges}
-            />
-          );
-        }
-
         const chapterStepIds: string[] = [];
         chapter.modules.forEach(module => {
           const { blocks } = module;
