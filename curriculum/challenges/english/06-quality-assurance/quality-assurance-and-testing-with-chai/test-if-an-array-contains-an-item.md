@@ -19,47 +19,61 @@ Within `tests/1_unit-tests.js` under the test labeled `#12` in the `Arrays` suit
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=11').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",11);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(data.state, 'passed');
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct method for the first assertion - `include` vs. `notInclude`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=11').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",11);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(
         data.assertions[0].method,
         'notInclude',
         "It's summer in july..."
       );
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct method for the second assertion - `include` vs. `notInclude`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=11').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",11);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(
         data.assertions[1].method,
         'include',
         'JavaScript is a backend language !!'
       );
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
-
