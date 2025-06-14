@@ -26,8 +26,3 @@ The idea behind CSS is that you can use a selector to target an HTML element in 
 
 In this project, you'll see how adding CSS styles to the elements of your application can change it from simple text to something more.
 
-<div role="alert" class="fade alert alert-info show flash-message-enter-active">
-    <p>
-        Note: Some browser extensions may interfere with elements on the page. If the tests fail, try disabling your extensions for the most reliable experience.
-    </p>
-</div>
