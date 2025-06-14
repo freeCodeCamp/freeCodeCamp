@@ -155,7 +155,7 @@ function SuperBlockIntro({
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}
       {superBlockNoteText && (
-        <div className='alert alert-info' style={{ marginTop: '2rem' }}>
+        <div className='alert' style={{ marginTop: '2rem' }}>
           {superBlockNoteText}
         </div>
       )}
@@ -172,7 +172,7 @@ function SuperBlockIntro({
       <Spacer size='m' />
       <p>{t('misc.fsd-b-description')}</p>
       {superBlockNoteText && (
-        <div className='alert alert-info' style={{ marginTop: '2rem' }}>
+        <div className='alert' style={{ marginTop: '2rem' }}>
           {superBlockNoteText}
         </div>
       )}
