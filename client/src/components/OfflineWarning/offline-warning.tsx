@@ -45,7 +45,7 @@ function OfflineWarning({
   return showWarning ? (
     <>
       <Alert variant='info' className='offline-warning'>
-        {message}{' '}
+        {message}
       </Alert>
       <Spacer size='m' />
     </>
