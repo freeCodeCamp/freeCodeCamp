@@ -126,18 +126,13 @@
   top: 1px;
 }
 
-.super-block-accordion .coming-soon {
-  background-color: var(--primary-background);
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  column-gap: 20px;
-  font-size: 1.5em;
-}
-
 .super-block-accordion .coming-soon-module {
   font-size: 1.25rem;
+}
+
+.super-block-accordion .module-intro {
+  margin-left: 17px;
+  margin-top: 16px;
 }
 
 .full-width-container {
