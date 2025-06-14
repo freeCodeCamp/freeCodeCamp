@@ -8,5 +8,26 @@
   "dashedName": "workshop-error-message-component",
   "superBlock": "full-stack-developer",
   "helpCategory": "HTML-CSS",
-  "challengeOrder": [{ "id": "684cc59eed2706fa50e8933c", "title": "Step 1" }]
+  "challengeOrder": [
+    {
+      "id": "684cc59eed2706fa50e8933c",
+      "title": "Step 1"
+    },
+    {
+      "id": "684cca09aac0fc035db4099f",
+      "title": "Step 2"
+    },
+    {
+      "id": "684ccbdc1ef89e042b744e09",
+      "title": "Step 3"
+    },
+    {
+      "id": "684cd027744c2a0520ba4d58",
+      "title": "Step 4"
+    },
+    {
+      "id": "684cd59ec94b5e063bf776f0",
+      "title": "Step 5"
+    }
+  ]
 }
