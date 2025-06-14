@@ -1,0 +1,12 @@
+{
+  "name": "Build an Error Message Component",
+  "isUpcomingChange": true,
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-error-message-component",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "HTML-CSS",
+  "challengeOrder": [{ "id": "684cc59eed2706fa50e8933c", "title": "Step 1" }]
+}
