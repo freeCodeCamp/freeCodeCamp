@@ -329,6 +329,7 @@ export const reducer = handleActions(
     [actionTypes.submitComplete]: (state, { payload }) => {
       const {
         examResults = null,
+        completedDailyCodingChallenges,
         submittedChallenge,
         savedChallenges
       } = payload;
@@ -348,25 +349,36 @@ export const reducer = handleActions(
               }
             }
           }
-        : {
-            ...state,
-            user: {
-              ...state.user,
-              [appUsername]: {
-                ...state.user[appUsername],
-                completedChallenges: uniqBy(
-                  [
-                    ...submittedchallenges,
-                    ...state.user[appUsername].completedChallenges
-                  ],
-                  'id'
-                ),
-                savedChallenges:
-                  savedChallenges ?? savedChallengesSelector(state[MainApp]),
-                examResults
+        : completedDailyCodingChallenges
+          ? {
+              ...state,
+              user: {
+                ...state.user,
+                [appUsername]: {
+                  ...state.user[appUsername],
+                  completedDailyCodingChallenges
+                }
               }
             }
-          };
+          : {
+              ...state,
+              user: {
+                ...state.user,
+                [appUsername]: {
+                  ...state.user[appUsername],
+                  completedChallenges: uniqBy(
+                    [
+                      ...submittedchallenges,
+                      ...state.user[appUsername].completedChallenges
+                    ],
+                    'id'
+                  ),
+                  savedChallenges:
+                    savedChallenges ?? savedChallengesSelector(state[MainApp]),
+                  examResults
+                }
+              }
+            };
     },
     [actionTypes.setMsUsername]: (state, { payload }) => {
       const { appUsername } = state;
