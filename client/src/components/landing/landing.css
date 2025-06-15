@@ -247,19 +247,6 @@ figcaption.caption {
   overflow-x: hidden;
 }
 
-figure.ui-images {
-  position: absolute;
-  left: 50%;
-  height: auto;
-  width: 750px;
-  top: 3vw;
-}
-
-figure.ui-images img {
-  width: 100%;
-  height: auto;
-}
-
 .landing-benefits {
   display: grid;
   grid-template-columns: 1fr; /* Default: 1 column */
