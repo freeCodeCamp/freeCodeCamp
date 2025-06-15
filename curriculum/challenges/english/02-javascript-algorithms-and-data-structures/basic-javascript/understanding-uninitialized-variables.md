@@ -19,38 +19,34 @@ Initialize the three variables `a`, `b`, and `c` with `5`, `10`, and `"I am a"` 
 `a` should be defined and have a final value of `6`.
 
 ```js
-assert(typeof a === 'number' && a === 6);
+assert.isNumber(a); 
+assert.strictEqual(a, 6); 
 ```
 
 `b` should be defined and have a final value of `15`.
 
 ```js
-assert(typeof b === 'number' && b === 15);
+assert.isNumber(b); 
+assert.strictEqual(b, 15); 
 ```
 
 `c` should not contain `undefined` and should have a final value of the string `I am a String!`
 
 ```js
-assert(!/undefined/.test(c) && c === 'I am a String!');
+assert.notMatch(c, /undefined/);
+assert.strictEqual(c, 'I am a String!');
 ```
 
 You should not change code below the specified comment.
 
 ```js
-assert(
-  /a = a \+ 1;/.test(__helpers.removeJSComments(code)) &&
-    /b = b \+ 5;/.test(__helpers.removeJSComments(code)) &&
-    /c = c \+ " String!";/.test(__helpers.removeJSComments(code))
-);
+const commentFreeCode = __helpers.removeJSComments(code);
+assert.match(commentFreeCode, /a = a \+ 1;/);
+assert.match(commentFreeCode, /b = b \+ 5;/);
+assert.match(commentFreeCode, /c = c \+ " String!";/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = '" + c + "'"; })(a,b,c);
-```
 
 ## --seed-contents--
 

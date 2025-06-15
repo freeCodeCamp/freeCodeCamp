@@ -27,22 +27,16 @@ Call the `processArg` function with an argument of `7` and assign its return val
 `processed` should have a value of `2`
 
 ```js
-assert(processed === 2);
+assert.strictEqual(processed, 2);
 ```
 
 You should assign `processArg` to `processed`
 
 ```js
-assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /processed\s*=\s*processArg\(\s*7\s*\)/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(){return "processed = " + processed})();
-```
 
 ## --seed-contents--
 

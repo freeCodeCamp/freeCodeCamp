@@ -29,22 +29,16 @@ Change the `0` so that product will equal `80`.
 The variable `product` should be equal to 80.
 
 ```js
-assert(product === 80);
+assert.strictEqual(product, 80);
 ```
 
 You should use the `*` operator.
 
 ```js
-assert(/\*/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /\*/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(z){return 'product = '+z;})(product);
-```
 
 ## --seed-contents--
 
