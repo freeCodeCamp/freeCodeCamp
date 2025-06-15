@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-
+import { Alert , Spacer } from '@freecodecamp/ui';
 import './offline-warning.css';
 
 const delayInMilliSeconds = 5000;
@@ -43,8 +43,10 @@ function OfflineWarning({
 
   return showWarning ? (
     <>
-      <div className='offline-warning alert-info'>{message}</div>
-      <div style={{ height: `38px` }} />
+
+      <Alert variant='info'>{message}</Alert>
+      <Spacer  size={"m"}/>
+      
     </>
   ) : null;
 }
