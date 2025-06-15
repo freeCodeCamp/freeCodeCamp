@@ -22,7 +22,7 @@ interface Props {
   closeModal: (arg: string) => void;
   isOpen: boolean;
   projectPreviewMounted: (payload: ProjectPreviewMountedPayload) => void;
-  challengeData: ChallengeData | null;
+  challengeData?: ChallengeData | null;
   setEditorFocusability: (focusability: boolean) => void;
   previewTitle: string;
   closeText: string;
@@ -41,7 +41,7 @@ function ProjectPreviewModal({
   closeModal,
   isOpen,
   projectPreviewMounted,
-  challengeData,
+  challengeData = null,
   setEditorFocusability,
   previewTitle,
   closeText
