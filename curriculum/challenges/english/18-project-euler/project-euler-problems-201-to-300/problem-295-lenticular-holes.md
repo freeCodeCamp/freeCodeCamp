@@ -10,7 +10,7 @@ dashedName: problem-295-lenticular-holes
 
 We call the convex area enclosed by two circles a lenticular hole if:
 
-- The centres of both circles are on lattice points.
+- The centers of both circles are on lattice points.
 - The two circles intersect at two distinct lattice points.
 - The interior of the convex area enclosed by both circles does not contain any lattice points.
 

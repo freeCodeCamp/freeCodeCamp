@@ -14,7 +14,7 @@ For any denominator, $d$, there will be $d−1$ proper fractions; for example, w
 
 $$\frac{1}{12}, \frac{2}{12}, \frac{3}{12}, \frac{4}{12}, \frac{5}{12}, \frac{6}{12}, \frac{7}{12}, \frac{8}{12}, \frac{9}{12}, \frac{10}{12}, \frac{11}{12}$$
 
-We shall call a fraction that cannot be cancelled down a resilient fraction.
+We shall call a fraction that cannot be canceled down a resilient fraction.
 
 Furthermore we shall define the resilience of a denominator, $R(d)$, to be the ratio of its proper fractions that are resilient; for example, $R(12) = \frac{4}{11}$.
 
