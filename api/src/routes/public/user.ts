@@ -101,7 +101,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
   done
 ) => {
   fastify.get(
-    '/api/users/get-public-profile',
+    '/users/get-public-profile',
     {
       schema: schemas.getPublicProfile,
       onRequest: (req, reply, done) => {
@@ -120,7 +120,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       logger.info({ username: req.query.username });
       // TODO(Post-MVP): look for duplicates unless we can make username unique in the db.
       const user = await fastify.prisma.user.findFirst({
@@ -191,6 +191,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           ...removeNulls(publicUser),
           ...normalizeFlags(flags),
           ...sharedUser,
+          picture: user.picture ?? '',
           profileUI: normalizedProfileUI,
           // TODO: should this always be returned? Shouldn't some privacy
           // setting control it? Same applies to website, githubProfile,
@@ -213,26 +214,29 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
   );
 
   fastify.get(
-    '/api/users/exists',
+    '/users/exists',
     {
       schema: schemas.userExists,
       attachValidation: true
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
 
       if (req.validationError) {
-        logger.warn({ validationError: req.validationError });
         void reply.code(400);
-        // TODO(Post-MVP): return a message telling the requester that their
-        // request was malformed.
-        return await reply.send({ exists: true });
+        logger
+          .child({ res: reply })
+          .warn('Validation error: No username provided');
+        return await reply.send({
+          type: 'danger',
+          message: 'username parameter is required'
+        });
       }
 
       const username = req.query.username.toLowerCase();
 
       if (isRestricted(username)) {
-        logger.info({ username }, 'Restricted username');
+        logger.info(`Restricted username: ${username}`);
         return await reply.send({ exists: true });
       }
 
@@ -241,6 +245,11 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           where: { username }
         })) > 0;
 
+      if (exists) {
+        logger.info(`User exists for username: ${username}`);
+      } else {
+        logger.info(`User does not exist for username: ${username}`);
+      }
       await reply.send({ exists });
     }
   );

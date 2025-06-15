@@ -114,12 +114,12 @@
   },
   "landing": {
     "big-heading-1": "Jifunze kuandika code - bila malipo.",
-    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "Unda miradi.",
+    "big-heading-1-b": "Build Your Skills for Free.",
     "big-heading-3": "Pata vyeti.",
-    "big-heading-4": "All for free.",
-    "h2-heading": "Tangu 2014, zaidi ya wahitimu 40,000 wa freeCodeCamp.org wamepata kazi katika kampuni za teknolojia ikijumuisha:",
-    "h2-heading-b": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
+    "advance-career": "Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI Engineering, and English for Developers.",
+    "h2-heading": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
+    "graduates-work": "More than <strong>100,000</strong> freeCodeCamp graduates work in companies such as",
     "hero-img-description": "wanafunzi wa freeCodeCamp katika kikundi cha mafunzo nchini Korea Kusini.",
     "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
     "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "Hivi ndivyo wahitimu wetu wanasema kuhusu freeCodeCamp:",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Shawn Wang</strong> akiwa Singapore",
         "occupation": "Mhandisi wa Programu katika <strong>Amazon</strong>",
         "testimony": "\"Inatisha kubadili taaluma. Nilipata tu kujiamini kwamba ningeweza kuweka msimbo kwa kufanya kazi kwa mamia ya saa za masomo ya bure kwenye freeCodeCamp. Ndani ya mwaka mmoja nilikuwa na kazi ya takwimu sita kama Mhandisi wa Programu. <strong>freeCodeCamp ilibadilisha maisha yangu.</strong>\""
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Sarah Chima</strong> nchini Nigeria",
         "occupation": "Mhandisi wa Programu katika <strong>ChatDesk</strong>",
         "testimony": "\"<strong>freeCodeCamp ilikuwa lango la kazi yangu</strong> kama msanidi programu. Mtaala ulioandaliwa vyema ulichukua ujuzi wangu wa usimbaji kutoka kiwango cha wanaoanza hadi kiwango cha uhakika sana. Ilikuwa kila kitu nilichohitaji ili kupata kazi yangu ya kwanza katika kampuni ya ajabu.\""
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Emma Bostian</strong> nchini Uswidi",
         "occupation": "Mhandisi wa Programu katika <strong>Spotify</strong>",
         "testimony": "\"Siku zote nimekuwa nikijitahidi kujifunza JavaScript. Nimesoma kozi nyingi lakini kozi ya freeCodeCamp ndiyo iliyokwama. Kusoma JavaScript pamoja na miundo ya data na algoriti katika <strong>freeCodeCamp kulinipa ujuzi</strong> na kujiamini niliyohitaji kupata kazi yangu ya ndoto kama mhandisi wa programu huko Spotify.\""
@@ -401,21 +404,7 @@
     "welcome-1": "Karibu tena, {{name}}.",
     "welcome-2": "Karibu katika freeCodeCamp.org",
     "start-at-beginning": "Ikiwa wewe ni mgeni katika coding, tunapendekeza <0>uanze mwanzo</0>.",
-    "read-this": {
-      "heading": "Tafadhali punguza mwendo na usome hii.",
-      "p1": "freeCodeCamp ni njia iliyothibitishwa kwa kazi yako ya kwanza ya msanidi programu.",
-      "p2": "Zaidi ya watu 40,000 wamepata kazi za wasanidi programu baada ya kukamilisha hili - ikiwa ni pamoja na katika makampuni makubwa kama Google na Microsoft.",
-      "p3": "Iwapo wewe ni mgeni katika upangaji programu, tunapendekeza uanze mwanzoni na upate uidhinishaji huu kwa mpangilio.",
-      "p4": "Ili kupata kila cheti, unda miradi yake 5 inayohitajika na upitie majaribio yake yote.",
-      "p5": "Unaweza kuongeza vyeti hivi kwenye wasifu wako au LinkedIn. Lakini muhimu zaidi kuliko vyeti ni mazoezi unayopata njiani.",
-      "p6": "Ikiwa unahisi kuzidiwa, hiyo ni kawaida. Programming ni ngumu.",
-      "p7": "Mazoezi ni ufunguo. Fanya mazoezi, fanya mazoezi, fanya mazoezi.",
-      "p8": "Na mtaala huu utakupa maelfu ya masaa ya mazoezi ya programu kwa mikono.",
-      "p9": "Na kama ungependa kujifunza zaidi nadharia ya hisabati na sayansi ya kompyuta, pia tuna maelfu ya saa za kozi za video kwenye <0>kituo cha YouTube cha freeCodeCamp</0>.",
-      "p10": "Ikiwa unataka kupata kazi ya msanidi programu au wateja wa kujitegemea, ujuzi wa programu utakuwa sehemu tu ya fumbo. Pia unahitaji kujenga mtandao wako wa kibinafsi na sifa yako kama msanidi programu.",
-      "p11": "Unaweza kufanya hivi kwenye LinkedIn na GitHub, na pia kwenye <0>jukwaa la freeCodeCamp</0>.",
-      "p12": "Happy Coding!"
-    },
+    "happy-coding": "Happy coding!",
     "upcoming-lessons": "Masomo Yajayo",
     "learn": "Jifunze",
     "add-subtitles": "Saidia kuboresha au kuongeza manukuu",
@@ -459,7 +448,7 @@
     "rsa": "Soma, tafuta, uliza",
     "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Anza upya somo hili?",
-    "reset-warn": "Je, una uhakika ungependa kuanza upya somo hili? Vihariri na majaribio vitawekwa upya.",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone.",
     "revert-warn": "Are you sure you wish to revert this lesson? Your latest changes will be undone and the code reverted to the most recently saved version.",
     "scrimba-tip": "Kidokezo: Ikiwa kivinjari kidogo kinafunika msimbo, bofya na uburute ili kuisogeza. Pia, jisikie huru kusimamisha na kuhariri msimbo katika video wakati wowote.",
@@ -470,9 +459,6 @@
     "sign-in-see-benefits": "Sign in to see your supporter benefits",
     "card-has-been-updated": "Your card has been updated successfully.",
     "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "Uthibitishaji wa {{title}}"
-    },
     "editor-tabs": {
       "code": "Code",
       "tests": "Majaribio",
@@ -561,7 +547,7 @@
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
       "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct.",
       "finish-modal-header": "Finish Quiz",
-      "finish-modal-body": "Are you sure you want to finish the quiz? You will not be able to change any answers.",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "Yes, I am finished",
       "finish-modal-no": "No, I would like to continue the quiz",
       "exit-modal-header": "Exit Quiz",
@@ -795,7 +781,7 @@
     "brand-new-account": "Karibu kwenye akaunti yako mpya kabisa ya freeCodeCamp. Tuanze.",
     "duplicate-account-warning": "Ikiwa ulitaka kuingia katika akaunti iliyopo badala ya kufungua akaunti hii, <0>bofya hapa ili kufuta akaunti hii</0> na ujaribu anwani nyingine ya barua pepe.",
     "quincy": "- Quincy Larson, mwalimu aliyeanzisha freeCodeCamp.org",
-    "email-blast": "Kila Ijumaa mimi hutuma barua pepe na viungo 5 kuhusu programu na sayansi ya kompyuta. Ninatuma hizi kwa takriban watu milioni 6. Je, ungependa nikutumie hii pia?",
+    "email-blast": "Each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Sasisha anwani yako ya barua pepe",
     "update-email-2": "Sasisha anwani yako ya barua pepe hapa:",
     "email": "Barua pepe",
@@ -863,9 +849,11 @@
     "opens-new-window": "Inafungua katika kurasa mpya",
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
-    "edit-my-profile": "Edit my profile"
+    "edit-my-profile": "Edit my profile",
+    "terminal-output": "Terminal output"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "Ili kudai uthibitisho, lazima kwanza ukubali sera yetu ya uaminifu kitaaluma",
     "really-weird": "Kitu cha ajabu kilifanyika, ikiwa kitatokea tena, tafadhali zingatia kuibua suala kwenye https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
@@ -919,6 +907,7 @@
     "unlink-success": "Umefanikiwa kutenganisha {{website}} yako",
     "provide-username": "Angalia ikiwa umetoa jina la mtumiaji na ripoti",
     "report-sent": "Ripoti ilitumwa kwa timu ikiwa na nakala ya {{email}}",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "Cheti ulichojaribu kutazama hakipo",
     "create-token-err": "Hitilafu ilitokea wakati wa kuunda tokeni yako ya mtumiaji",
     "delete-token-err": "Hitilafu ilitokea wakati wa kufuta tokeni yako ya mtumiaji",
@@ -995,7 +984,8 @@
     "publicly-visible-url": "Kumbuka kuwasilisha URL ya programu inayoonekana hadharani.",
     "ms-learn-link": "Tafadhali tumia kiungo halali cha kombe la Microsoft Learn.",
     "path-url": "Labda unataka kuwasilisha njia ya mizizi yaani https://example.com, sio https://example.com/path",
-    "source-code-link-required": "Remember to submit the link to your source code."
+    "source-code-link-required": "Remember to submit the link to your source code.",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "Mkurugenzi Mtendaji, freeCodeCamp.org",
@@ -1126,6 +1116,10 @@
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
       "full-stack-developer-v9": "Full Stack Developer",
       "full-stack-developer-v9-cert": "Full Stack Developer Certification",
+      "a2-professional-spanish": "A2 Professional Spanish",
+      "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
+      "a2-professional-chinese": "A2 Professional Chinese",
+      "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
       "legacy-front-end": "Legacy Front End",
       "legacy-front-end-cert": "Legacy Front End Certification",
       "legacy-back-end": "Legacy Back End",

@@ -1,0 +1,55 @@
+---
+id: 656702f8b4cbd8cbf0a433c6
+title: Step 8
+challengeType: 20
+dashedName: step-8
+---
+
+# --description--
+
+Next, you need to create a loop that continues as long as there are elements remaining in both `left_part` and `right_part`.
+
+For that, create a `while` loop with two conditions: one that checks whether the `left_array_index` is less than the length of `left_part` and another condition that checks whether `right_array_index` is less than the length of `right_part`.
+
+# --hints--
+
+Your `while` loop should check if `left_array_index` is less than the length of `left_part` and if `right_array_index` is less than the length of `right_part`.
+
+```js
+({ test: () => assert(runPython(`
+    cond= _Node(_code).find_function("merge_sort").find_whiles()[0].find_conditions()[0]
+
+    cond.is_equivalent("left_array_index < len(left_part) and right_array_index < len(right_part)") or cond.is_equivalent("right_array_index < len(right_part) and left_array_index < len(left_part)")
+    `))
+}) 
+```
+
+Use the `pass` keyword in the body of the loop.
+
+```js
+({
+    test: () => assert(runPython(`_Node(_code).find_function("merge_sort").find_whiles()[0].find_body().has_pass()`)) 
+})
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+def merge_sort(array):
+    
+    middle_point = len(array) // 2
+    left_part = array[:middle_point]
+    right_part = array[middle_point:]
+
+    merge_sort(left_part)
+    merge_sort(right_part)
+
+    left_array_index = 0
+    right_array_index = 0
+    sorted_index = 0
+--fcc-editable-region--
+    
+--fcc-editable-region--
+```

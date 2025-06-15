@@ -11,7 +11,6 @@ dashedName: set-up-a-template-engine
 Working on these challenges will involve you writing your code using one of the following methods:
 
 - Clone <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
-- Use <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-advancednode/" target="_blank" rel="noopener noreferrer nofollow">our Gitpod starter project</a> to complete these challenges. Learn <a href="https://forum.freecodecamp.org/t/how-to-use-gitpod-in-the-curriculum/668669#how-can-i-share-my-workspace-to-get-help-8" target="_blank" rel="noopener noreferrer nofollow">how to share your Gitpod workspace to get help</a>.
 - Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 A template engine enables you to use static template files (such as those written in *Pug*) in your app. At runtime, the template engine replaces variables in a template file with actual values which can be supplied by your server. Then it transforms the template into a static HTML file that is sent to the client. This approach makes it easier to design an HTML page and allows for displaying variables on the page without needing to make an API call from the client.
@@ -37,8 +36,8 @@ Submit your page when you think you've got it right. If you're running into erro
 Pug should be a dependency.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/package.json", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/package.json", code);
   const res = await fetch(url);
   const packJson = await res.json();
   assert.property(
@@ -52,8 +51,8 @@ async (getUserInput) => {
 View engine should be Pug.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/app", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/app", code);
   const res = await fetch(url);
   const app = await res.json();
   assert.equal(app?.settings?.['view engine'], "pug");
@@ -63,8 +62,8 @@ async (getUserInput) => {
 You should set the `views` property of the application to `./views/pug`.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/app", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/app", code);
   const res = await fetch(url);
   const app = await res.json();
   assert.equal(app?.settings?.views, "./views/pug");
@@ -74,8 +73,8 @@ async (getUserInput) => {
 Use the correct ExpressJS method to render the index page from the response.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/", getUserInput("url"));
+async () => {
+  const url = new URL("/", code);
   const res = await fetch(url);
   const data = await res.text();
       assert.match(
@@ -89,8 +88,8 @@ async (getUserInput) => {
 Pug should be working.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/", getUserInput("url"));
+async () => {
+  const url = new URL("/", code);
   const res = await fetch(url);
   const data = await res.text();
       assert.match(

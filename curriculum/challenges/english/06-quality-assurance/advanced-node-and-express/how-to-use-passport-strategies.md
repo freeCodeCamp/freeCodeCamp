@@ -27,8 +27,8 @@ Submit your page when you think you've got it right. If you're running into erro
 All steps should be correctly implemented in `server.js`.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/_api/server.js", getUserInput("url"));
+async () => {
+  const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(
@@ -52,8 +52,8 @@ async (getUserInput) => {
 A POST request to `/login` should correctly redirect to `/`.
 
 ```js
-async (getUserInput) => {
-  const url = new URL("/login", getUserInput("url"));
+async () => {
+  const url = new URL("/login", code);
   const res = await fetch(url, { method: 'POST' });
   const data = await res.text();
   assert.match(

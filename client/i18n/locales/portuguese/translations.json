@@ -114,12 +114,12 @@
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
-    "big-heading-1-b": "Aprenda a programar.",
     "big-heading-2": "Crie projetos.",
+    "big-heading-1-b": "Build Your Skills for Free.",
     "big-heading-3": "Obtenha certificações.",
-    "big-heading-4": "De graça.",
-    "h2-heading": "Desde 2014, mais de 40.000 pessoas que concluíram o freeCodeCamp.org obtiveram empregos em empresas de tecnologia incluindo:",
-    "h2-heading-b": "Mais de <strong>100 mil pessoas</strong> já concluíram o freeCodeCamp.org e obtiveram <strong>empregos</strong> em empresas de tecnologia, incluindo:",
+    "advance-career": "Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI Engineering, and English for Developers.",
+    "h2-heading": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
+    "graduates-work": "More than <strong>100,000</strong> freeCodeCamp graduates work in companies such as",
     "hero-img-description": "Estudantes do freeCodeCamp em um grupo de estudos local na Coreia do Sul.",
     "hero-img-alt": "Um grupo de pessoas, incluindo um homem branco, uma mulher negra e uma mulher asiática, reunidos ao redor de um laptop.",
     "hero-img-uis": "Um grupo de capturas de tela mostrando a interface de editor do freeCodeCamp em um dispositivo móvel e em um desktop, além de uma certificação.",
@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "Veja o que os nossos ex-alunos dizem sobre o freeCodeCamp:",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Shawn Wang</strong> em Singapura",
         "occupation": "Engenheiro de software na <strong>Amazon</strong>",
         "testimony": "\"É assustador mudar de carreira. Só consegui ganhar confiança de que poderia programar através da prática de centenas de horas de aulas gratuitas no freeCodeCamp. Em um ano, eu já tinha um trabalho com salário de 6 dígitos como engenheiro de software. O <strong>freeCodeCamp mudou minha vida.</strong>\""
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Sarah Chima</strong> na Nigéria",
         "occupation": "Engenheira de software na <strong>ChatDesk</strong>",
         "testimony": "\"O <strong>freeCodeCamp foi o que alavancou a minha carreira</strong> como desenvolvedora de software. O currículo bem estruturado levou meu conhecimento de programação de um nível de iniciante a um nível em que eu me sentia confiante. Era tudo o que eu precisava para conseguir o meu primeiro trabalho de desenvolvimento em uma empresa incrível.\""
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Emma Bostian</strong> na Suécia",
         "occupation": "Engenheira de software na <strong>Spotify</strong>",
         "testimony": "\"Eu sempre tive dificuldade em aprender JavaScript. Eu fiz muitos cursos, mas o curso do freeCodeCamp foi aquele que prendeu minha atenção. Estudar JavaScript, bem como algoritmos e estruturas de dados no <strong>freeCodeCamp me deu as habilidades</strong> e a confiança que eu precisava para conseguir o trabalho dos meus sonhos como engenheira de software na Spotify.\""
@@ -401,21 +404,7 @@
     "welcome-1": "Bem-vindo(a) de volta, {{name}}.",
     "welcome-2": "Boas-vindas ao freeCodeCamp.org",
     "start-at-beginning": "Se você é novo em programação, recomendamos que você <0>comece no início</0>.",
-    "read-this": {
-      "heading": "Primeiramente, vá com calma e leia isto.",
-      "p1": "O freeCodeCamp é um caminho comprovado para o seu primeiro trabalho de desenvolvedor de software.",
-      "p2": "Mais de 40.000 pessoas obtiveram empregos comodesenvolvedores depois de completarem os cursos – inclusive em grandes empresas, como o Google e a Microsoft.",
-      "p3": "Se você for novo em programação, recomendamos que comece do início e obtenha essas certificações em ordem.",
-      "p4": "Para ganhar cada certificação, construa seus 5 projetos necessários e passe em todos os exames.",
-      "p5": "Você pode adicionar estas certificações ao seu curriculum ou LinkedIn. Mais importante do que as certificações, porém, é a prática que você adquire ao longo do caminho.",
-      "p6": "Se você se sentir sobrecarregado, isso é normal. Programar é difícil.",
-      "p7": "Praticar é a chave. Pratique, pratique e pratique.",
-      "p8": "Este currículo dará a você milhares de horas prática de programação \"mão na massa\".",
-      "p9": "Se você quiser aprender mais matemática e teoria da ciência da computação, também temos milhares de horas de cursos em vídeo no canal do YouTube do <0>freeCodeCamp</0>.",
-      "p10": "Se você quiser conseguir um trabalho como desenvolvedor ou ter clientes como freelance, as habilidades de programação serão apenas parte do desafio. Você também precisa construir sua rede pessoal e sua reputação como desenvolvedor.",
-      "p11": "Você pode fazer isso no LinkedIn e GitHub, assim como no <0>fórum do freeCodeCamp </0>.",
-      "p12": "Boa programação!"
-    },
+    "happy-coding": "Happy coding!",
     "upcoming-lessons": "Próximas lições",
     "learn": "Aprender",
     "add-subtitles": "Ajudar a melhorar ou adicionar legendas",
@@ -459,7 +448,7 @@
     "rsa": "Leia, pesquise, pergunte",
     "rsa-forum": "<strong>Antes de fazer uma nova publicação</strong>, certifique-se de que sua pergunta <0>ainda não foi respondida no fórum</0>.",
     "reset": "Reiniciar esta aula?",
-    "reset-warn": "Tem certeza de que deseja reiniciar esta lição? Os editores e testes serão reiniciados.",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "Isto não pode ser desfeito.",
     "revert-warn": "Tem certeza que deseja reverter esta lição? As alterações mais recentes serão desfeitas e o código será revertido para a versão salva mais recentemente.",
     "scrimba-tip": "Dica: se o minibrowser estiver cobrindo o código, clique e arraste para movê-lo. Além disso, sinta-se à vontade para parar e editar o código no vídeo a qualquer momento.",
@@ -470,9 +459,6 @@
     "sign-in-see-benefits": "Faça o login para ver seus benefícios como apoiador",
     "card-has-been-updated": "Seu cartão foi atualizado com sucesso.",
     "contact-support-mistake": "Se você acha que houve um erro, entre em contato conosco pelo e-mail donors@freecodecamp.org",
-    "cert-map-estimates": {
-      "certs": "Certificação {{title}}"
-    },
     "editor-tabs": {
       "code": "Código",
       "tests": "Testes",
@@ -561,7 +547,7 @@
       "unanswered-questions": "As seguintes perguntas não foram respondidas: {{ unansweredQuestions }}. Você precisa responder a todas as perguntas.",
       "have-n-correct-questions": "Você acertou {{ correctAnswerCount }} de {{ total }} perguntas.",
       "finish-modal-header": "Terminar o questionário",
-      "finish-modal-body": "Tem certeza de que deseja finalizar o questionário? Você não será capaz de alterar respostas depois disso.",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "Sim, eu terminei",
       "finish-modal-no": "Não, quero continuar no questionário",
       "exit-modal-header": "Sair do questionário",
@@ -795,7 +781,7 @@
     "brand-new-account": "Boas-vindas à sua nova conta freeCodeCamp. Vamos começar.",
     "duplicate-account-warning": "Se você pretende entrar em uma conta existente ao invés de criar esta conta, <0>clique aqui para excluir esta conta</0> e tente outro endereço de e-mail.",
     "quincy": "- Quincy Larson, o professor que fundou o freeCodeCamp.org",
-    "email-blast": "A propósito, todas as sextas-feiras, eu envio um e-mail com 5 links sobre programação e ciência da computação. Eu envio essas mensagens para cerca de 6 milhões de pessoas. Você gostaria que eu as enviasse para você também?",
+    "email-blast": "Each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "Atualize seu endereço de e-mail",
     "update-email-2": "Atualize seu endereço de e-mail aqui:",
     "email": "E-mail",
@@ -863,9 +849,11 @@
     "opens-new-window": "Abre em uma nova janela",
     "rsa-checkbox": "Eu tentei o método Ler-Pesquisar-Perguntar",
     "similar-questions-checkbox": "Eu pesquisei por perguntas semelhantes que já foram respondidas no fórum",
-    "edit-my-profile": "Editar meu perfil"
+    "edit-my-profile": "Editar meu perfil",
+    "terminal-output": "Terminal output"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "Para solicitar uma certificação, você precisa primeiro concordar com nossa política de honestidade acadêmica",
     "really-weird": "Algo realmente estranho aconteceu. Se acontecer novamente, considere apresentar um problema pelo endereço https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "generic-error": "Algo deu errado. Tente novamente em instantes ou entre em contato com support@freecodecamp.org, se o erro persistir.",
@@ -919,6 +907,7 @@
     "unlink-success": "Você desvinculou seu {{website}} com sucesso",
     "provide-username": "Verifique se você forneceu um nome de usuário e um relatório",
     "report-sent": "Um relatório foi enviado para a equipe com {{email}} em cópia",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "A certificação que você tentou visualizar não existe",
     "create-token-err": "Ocorreu um erro ao criar seu token de usuário",
     "delete-token-err": "Ocorreu um erro ao excluir seu token de usuário",
@@ -995,7 +984,8 @@
     "publicly-visible-url": "Lembre-se de enviar o URL de um aplicativo publicamente visível.",
     "ms-learn-link": "Use um link de troféu válido do Microsoft Learn.",
     "path-url": "Você provavelmente vai querer enviar o caminho raiz, ou seja, https://example.com em vez de https://example.com/path",
-    "source-code-link-required": "Lembre-se de enviar o link do seu código-fonte."
+    "source-code-link-required": "Lembre-se de enviar o link do seu código-fonte.",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "Diretor executivo, freeCodeCamp.org",
@@ -1126,6 +1116,10 @@
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
       "full-stack-developer-v9": "Full Stack Developer",
       "full-stack-developer-v9-cert": "Full Stack Developer Certification",
+      "a2-professional-spanish": "A2 Professional Spanish",
+      "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
+      "a2-professional-chinese": "A2 Professional Chinese",
+      "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
       "legacy-front-end": "Legacy Front End",
       "legacy-front-end-cert": "Legacy Front End Certification",
       "legacy-back-end": "Legacy Back End",

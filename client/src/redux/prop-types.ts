@@ -96,6 +96,7 @@ interface SceneCommand {
 }
 
 export type Characters =
+  // English
   | 'Alice'
   | 'Amy'
   | 'Anna'
@@ -118,7 +119,26 @@ export type Characters =
   | 'Sarah'
   | 'Second Candidate'
   | 'Sophie'
-  | 'Tom';
+  | 'Tom'
+
+  // Spanish
+  | 'Alex'
+  | 'Ángela'
+  | 'Camila'
+  | 'Carlos'
+  | 'Elena'
+  | 'Esteban'
+  | 'Joaquín'
+  | 'Julieta'
+  | 'Luis'
+  | 'Luna'
+  | 'Marisol'
+  | 'Mateo'
+  | 'Noelia'
+  | 'René'
+  | 'Sebastián'
+  | 'Diego'
+  | 'Valeria';
 
 interface SetupCharacter {
   character: Characters;
@@ -198,7 +218,7 @@ export type ChallengeNode = {
     required: Required[];
     scene: FullScene;
     solutions: {
-      [T in FileKey]: FileKeyChallenge;
+      [T: string]: FileKeyChallenge;
     };
     sourceInstanceName: string;
     superOrder: number;
@@ -383,13 +403,6 @@ export interface ChallengeData extends CompletedChallenge {
   challengeFiles: ChallengeFile[] | null;
 }
 
-export type FileKey =
-  | 'scriptjs'
-  | 'indexts'
-  | 'indexhtml'
-  | 'stylescss'
-  | 'indexjsx';
-
 export type ChallengeMeta = {
   block: string;
   id: string;
@@ -398,6 +411,7 @@ export type ChallengeMeta = {
   superBlock: SuperBlocks;
   title?: string;
   challengeType?: number;
+  blockType?: BlockTypes;
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
@@ -421,7 +435,7 @@ export type FileKeyChallenge = {
   ext: Ext;
   head: string;
   id: string;
-  key: FileKey;
+  key: string;
   name: string;
   tail: string;
 };

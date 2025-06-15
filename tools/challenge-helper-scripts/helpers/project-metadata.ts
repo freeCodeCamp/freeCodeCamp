@@ -5,6 +5,8 @@ import { getProjectName, getProjectPath } from './get-project-info';
 
 export type Meta = {
   name: string;
+  blockLayout: string;
+  blockType: string;
   isUpcomingChange: boolean;
   dashedName: string;
   helpCategory: string;

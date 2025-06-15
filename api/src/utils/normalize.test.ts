@@ -2,7 +2,9 @@ import {
   normalizeTwitter,
   normalizeProfileUI,
   normalizeChallenges,
-  normalizeFlags
+  normalizeFlags,
+  normalizeDate,
+  normalizeChallengeType
 } from './normalize';
 
 describe('normalize', () => {
@@ -154,6 +156,41 @@ describe('normalize', () => {
         showCerts: true,
         showDonation: false
       });
+    });
+  });
+
+  describe('normalizeDate', () => {
+    it('should return the date as a number', () => {
+      expect(normalizeDate(1)).toEqual(1);
+      expect(normalizeDate({ $date: '2023-10-01T00:00:00Z' })).toEqual(
+        1696118400000
+      );
+    });
+
+    it('should throw an error if the date is not in the expected shape', () => {
+      expect(() => normalizeDate('2023-10-01T00:00:00Z')).toThrow(
+        'Unexpected date value: "2023-10-01T00:00:00Z"'
+      );
+      expect(() => normalizeDate({ date: '123' })).toThrow(
+        'Unexpected date value: {"date":"123"}'
+      );
+    });
+  });
+
+  describe('normalizeChallengeType', () => {
+    it('should return the challenge type as a number or null', () => {
+      expect(normalizeChallengeType(10)).toEqual(10);
+      expect(normalizeChallengeType('10')).toEqual(10);
+      expect(normalizeChallengeType(null)).toEqual(null);
+    });
+
+    it('should throw an error if the challenge type is not in the expected shape', () => {
+      expect(() => normalizeChallengeType('invalid')).toThrow(
+        'Unexpected challengeType value: "invalid"'
+      );
+      expect(() => normalizeChallengeType({ type: '123' })).toThrow(
+        'Unexpected challengeType value: {"type":"123"}'
+      );
     });
   });
 });

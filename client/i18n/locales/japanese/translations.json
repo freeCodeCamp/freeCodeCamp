@@ -114,12 +114,12 @@
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
-    "big-heading-1-b": "プログラミングを学ぶ。",
     "big-heading-2": "プロジェクトを完成させる。",
+    "big-heading-1-b": "Build Your Skills for Free.",
     "big-heading-3": "認定証を取得する。",
-    "big-heading-4": "すべてが無料です。",
-    "h2-heading": "2014 年以来、4 万人を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業で仕事を得ています。",
-    "h2-heading-b": "<strong>10 万人</strong>を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業に<strong>就職</strong>しました。",
+    "advance-career": "Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI Engineering, and English for Developers.",
+    "h2-heading": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
+    "graduates-work": "More than <strong>100,000</strong> freeCodeCamp graduates work in companies such as",
     "hero-img-description": "韓国のローカル勉強会での freeCodeCamp 受講者",
     "hero-img-alt": "さまざまな人種、性別の人々がノートパソコンの周りに集まっている様子",
     "hero-img-uis": "freeCodeCamp コードエディター (モバイル版およびデスクトップ版) と、認定証のスクリーンショット",
@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "freeCodeCamp に対する卒業生の声",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "シンガポールの <strong>Shawn Wang</strong>",
         "occupation": "<strong>Amazon</strong> のソフトウェアエンジニア",
         "testimony": "「キャリアを変えることは恐ろしいです。freeCodeCamp の無料レッスンに何百時間も取り組むことで、自分はコーディングができるという自信を得ました。一年以内に、ソフトウェアエンジニアとして年数十万ドルを稼げる仕事を得ました。<strong>freeCodeCamp は私の人生を変えました。</strong>」"
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "ナイジェリアの <strong>Sarah Chima</strong>",
         "occupation": "<strong>Chatdesk</strong> のソフトウェアエンジニア",
         "testimony": "「ソフトウェアエンジニアとして <strong>freeCodeCamp は私のキャリアの玄関口でした。</strong>よく練られたカリキュラムは私のコーディング知識を初心者レベルからとても強い自信が持てるレベルまで引き上げてくれました。私が素晴らしい会社で最初の開発者としての仕事を得るために必要な全てのものがありました。」"
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "スウェーデンの <strong>Emma Bostian</strong>",
         "occupation": "<strong>Spotify</strong> のソフトウェアエンジニア",
         "testimony": "「私はいつも JavaScript を学ぶことに躓いていました。たくさんのコースを受講しましたが、freeCodeCamp に一番のめり込みました。JavaScript だけでなくデータ構造とアルゴリズムも学べることで、ソフトウェアエンジニアとして Spotify という夢の仕事を得るために必要な自信と<strong>スキルを freeCodeCamp は私に与えてくれました</strong>」"
@@ -401,21 +404,7 @@
     "welcome-1": "{{name}} さん、おかえりなさい。",
     "welcome-2": "freeCodeCamp.org へようこそ",
     "start-at-beginning": "プログラミングを学ぶのが初めての場合、<0>最初から始める</0>ことをおすすめします。",
-    "read-this": {
-      "heading": "一度立ち止まって、まずはこちらをお読みください。",
-      "p1": "freeCodeCamp は、あなたがソフトウェア開発者として初めての仕事を得るための、実績のある道です。",
-      "p2": "40,000 人以上の人々が、カリキュラム修了後に開発者の仕事に就きました。その中には Google や Microsoft などの大手企業も含まれます。",
-      "p3": "プログラミングに触れるのが初めてなら、カリキュラムの最初から始めて、以下の認定証を上から順に取得することをおすすめします。",
-      "p4": "それぞれの認定証を取得するには、必須の認定プロジェクト 5 つを完成させ、すべてのテストが成功する状態にしてください。",
-      "p5": "取得した認定証は、履歴書や LinkedIn に追加できます。しかし認定証よりも大事なことは、その過程で得る経験です。",
-      "p6": "圧倒される思いがするとしても当然です。プログラミングは難しいのです。",
-      "p7": "練習こそが鍵になります。練習、練習、練習です。",
-      "p8": "このカリキュラムでは、何千時間もの実践的なプログラミングの経験を積むことができます。",
-      "p9": "また、数学やコンピュータサイエンス理論をより深く学びたいなら、<0>freeCodeCamp の YouTube チャンネル</0> にも何千時間もの動画コースがあります。",
-      "p10": "開発の仕事やフリーランスの顧客を得たいなら、プログラミングスキルはパズルの一部にすぎません。人とのつながりや開発者としての評判を得ることも必要です。",
-      "p11": "そのためには LinkedIn や GitHub、そして <0>freeCodeCamp フォーラム</0> も活用してください。",
-      "p12": "コーディングを楽しみましょう！Happy coding!"
-    },
+    "happy-coding": "Happy coding!",
     "upcoming-lessons": "このコースのレッスン",
     "learn": "学習",
     "add-subtitles": "字幕の改善や追加を支援する",
@@ -459,7 +448,7 @@
     "rsa": "読む (Read)、検索する (Search)、質問する (Ask)",
     "rsa-forum": "<strong>新しい投稿を作成する前に</strong>、<0>すでに同じ質問がフォーラムで回答されていないか確認</0>してください。",
     "reset": "このレッスンをリセットしますか？",
-    "reset-warn": "本当にこのレッスンをリセットしてもよろしいですか？エディターとテストがリセットされます。",
+    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "この操作は取り消すことが出来ません.",
     "revert-warn": "このレッスンを復元してよろしいですか？直近の変更を取り消し、最後に保存したバージョンのコードに戻します。",
     "scrimba-tip": "ヒント: ミニブラウザがコードを覆ってしまう場合は、クリックとドラッグで移動させてください。また、いつでも遠慮なくビデオを停止させてコードを編集してください。",
@@ -470,9 +459,6 @@
     "sign-in-see-benefits": "サポーター特典を見るにはサインインしてください。",
     "card-has-been-updated": "カード情報が更新されました。",
     "contact-support-mistake": "ご不明な点がございましたら、donors@freecodecamp.org までお問い合わせください。",
-    "cert-map-estimates": {
-      "certs": "{{title}} 認定講座"
-    },
     "editor-tabs": {
       "code": "コード",
       "tests": "テスト",
@@ -561,7 +547,7 @@
       "unanswered-questions": "以下の質問が未回答です。すべての質問に回答してください: {{ unansweredQuestions }}",
       "have-n-correct-questions": "{{ total }} 問中 {{ correctAnswerCount }} 問正解しました。",
       "finish-modal-header": "クイズ終了",
-      "finish-modal-body": "クイズを終了してよろしいですか？終了後、回答を変更することはできません。",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "はい、終了します",
       "finish-modal-no": "いいえ、クイズを続行します",
       "exit-modal-header": "クイズを中止",
@@ -795,7 +781,7 @@
     "brand-new-account": "freeCodeCamp アカウントを新規登録しました。",
     "duplicate-account-warning": "新規登録ではなく既存のアカウントにサインインする場合には、<0>こちらをクリックしてこのアカウントを削除し</0>、他のメールアドレスをお試しください。",
     "quincy": "- freeCodeCamp.org を設立した教師、Quincy Larson",
-    "email-blast": "毎週金曜日に Quincy から、プログラミングやコンピュータサイエンスに関する 5 件のリンクをメールで配信しています。現在約 6 百万人を対象に配信しています。あなたにもお送りしましょうか？",
+    "email-blast": "Each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
     "update-email-1": "メールアドレスを更新",
     "update-email-2": "メールアドレスの更新はこちら:",
     "email": "Eメール",
@@ -863,9 +849,11 @@
     "opens-new-window": "新しいウィンドウで開く",
     "rsa-checkbox": "Read-Search-Ask (読む - 検索する - 質問する) メソッドを試しました",
     "similar-questions-checkbox": "フォーラムで、解決済みの類似質問を検索しました",
-    "edit-my-profile": "プロフィールを編集"
+    "edit-my-profile": "プロフィールを編集",
+    "terminal-output": "Terminal output"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "認定証を獲得するには、まず学問的誠実性ポリシーに同意する必要があります。",
     "really-weird": "予期しない問題が発生しました。この問題が何度も発生するようであれば、https://github.com/freeCodeCamp/freeCodeCamp/issues/new への Issue 登録をご検討ください。",
     "generic-error": "問題が発生しました。お手数ですが、時間をおいて再度お試しください。エラーが解消されない場合には support@freecodecamp.org までお問い合わせください。",
@@ -919,6 +907,7 @@
     "unlink-success": "{{website}} のリンクを解除しました",
     "provide-username": "ユーザー名と報告内容が入力されているか確認してください",
     "report-sent": "報告は {{email}} を CC に入れた状態でチームに送信されました",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "表示しようとした認定証は存在しません",
     "create-token-err": "ユーザートークンの作成中にエラーが発生しました",
     "delete-token-err": "ユーザートークンの削除中にエラーが発生しました",
@@ -995,7 +984,8 @@
     "publicly-visible-url": "公開されたアプリの URL を提出してください。",
     "ms-learn-link": "有効な Microsoft Learn トロフィーのリンクを使用してください。",
     "path-url": "プロジェクトルートのパスを入力しているか確認してください。多くの場合 https://example.com/path ではなく https://example.com のような形式です。",
-    "source-code-link-required": "ソースコードのリンクを提出してください。"
+    "source-code-link-required": "ソースコードのリンクを提出してください。",
+    "source-code-link-public": "Source code link must be publicly visible."
   },
   "certification": {
     "executive": "freeCodeCamp.org エグゼクティブ・ディレクター",
@@ -1126,6 +1116,10 @@
       "b1-english-for-developers-cert": "開発者のための B1 レベル英語認定証",
       "full-stack-developer-v9": "フルスタック開発者",
       "full-stack-developer-v9-cert": "フルスタック開発者認定証",
+      "a2-professional-spanish": "A2 Professional Spanish",
+      "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
+      "a2-professional-chinese": "A2 Professional Chinese",
+      "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
       "legacy-front-end": "旧フロントエンド",
       "legacy-front-end-cert": "旧フロントエンド認定証",
       "legacy-back-end": "旧バックエンド",

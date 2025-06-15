@@ -21,10 +21,6 @@
     {
       "id": "6732b29b8b7d4f15b94d12ca",
       "title": "What Is a Shallow Copy of an Array, and What Are Some Ways to Create These Copies?"
-    },
-    {
-      "id": "6732b2a6de5a1c15edf05b75",
-      "title": "How Can You Use String and Array Methods to Reverse a String?"
     }
   ],
   "helpCategory": "JavaScript"

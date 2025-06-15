@@ -2,10 +2,10 @@
 ARG PROJECT_DIR=tools/screenshot-service
 
 # Build the app
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 ARG PROJECT_DIR
 
-RUN npm i -g pnpm@9
+RUN npm i -g pnpm@10
 USER node
 WORKDIR /home/node/build
 
@@ -17,10 +17,10 @@ RUN pnpm install --frozen-lockfile --ignore-scripts -F=./${PROJECT_DIR}
 RUN pnpm -F=./${PROJECT_DIR} build
 
 # Install production dependencies
-FROM node:20-alpine AS deps
+FROM node:22-alpine AS deps
 ARG PROJECT_DIR
 
-RUN npm i -g pnpm@9
+RUN npm i -g pnpm@10
 USER node
 WORKDIR /home/node/build
 
@@ -30,7 +30,7 @@ COPY --chown=node:node ${PROJECT_DIR} ${PROJECT_DIR}
 RUN pnpm install --prod --ignore-scripts --frozen-lockfile -F=./${PROJECT_DIR}
 
 # App runner instance
-FROM node:20-alpine AS runner
+FROM node:22-alpine AS runner
 ARG PROJECT_DIR
 
 USER node

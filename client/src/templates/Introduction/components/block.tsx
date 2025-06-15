@@ -1,5 +1,5 @@
 import React, { Component, ReactNode } from 'react';
-import type { DefaultTFuncReturn, TFunction } from 'i18next';
+import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -8,7 +8,10 @@ import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
 
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import {
+  chapterBasedSuperBlocks,
+  SuperBlocks
+} from '../../../../../shared/config/curriculum';
 import envData from '../../../../config/env.json';
 import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
 import Caret from '../../../assets/icons/caret';
@@ -118,12 +121,9 @@ class Block extends Component<BlockProps> {
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock);
 
     const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
-    // the real type of TFunction is the type below, because intro can be an array of strings
-    // type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
-    // But changing the type will require refactoring that isn't worth it for a wrong type.
-    const blockIntroArr = t<string, DefaultTFuncReturn & string[]>(
-      `intro:${superBlock}.blocks.${block}.intro`
-    );
+    const blockIntroArr = t(`intro:${superBlock}.blocks.${block}.intro`, {
+      returnObjects: true
+    }) as string[];
     const expandText = t('intro:misc-text.expand');
     const collapseText = t('intro:misc-text.collapse');
 
@@ -188,10 +188,7 @@ class Block extends Component<BlockProps> {
             </div>
             <div className='map-title-completed course-title'>
               <CheckMark isCompleted={isBlockCompleted} />
-              <span
-                aria-hidden='true'
-                className='map-completed-count'
-              >{`${completedCount}/${challenges.length}`}</span>
+              <span aria-hidden='true'>{`${completedCount}/${challenges.length}`}</span>
               <span className='sr-only'>
                 ,{' '}
                 {t('learn.challenges-completed', {
@@ -399,14 +396,15 @@ class Block extends Component<BlockProps> {
       [BlockLayouts.ProjectList]: ProjectListBlock,
       [BlockLayouts.LegacyLink]: LegacyLinkBlock,
       [BlockLayouts.LegacyChallengeList]: LegacyChallengeListBlock,
-      [BlockLayouts.LegacyChallengeGrid]: LegacyChallengeGridBlock
+      [BlockLayouts.LegacyChallengeGrid]: LegacyChallengeGridBlock,
+      [BlockLayouts.DialogueGrid]: LegacyChallengeGridBlock
     };
 
     return (
       !isEmptyBlock && (
         <>
           {layoutToComponent[blockLayout]}
-          {superBlock !== SuperBlocks.FullStackDeveloper && (
+          {!chapterBasedSuperBlocks.includes(superBlock) && (
             <Spacer size='xs' />
           )}
         </>

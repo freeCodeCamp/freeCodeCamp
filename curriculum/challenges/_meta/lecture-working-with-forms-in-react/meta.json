@@ -1,0 +1,19 @@
+{
+  "name": "Working with Forms in React",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-forms-in-react",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67d1a928ae86929a85c1bb6b",
+      "title": "How Do Forms Work in React?"
+    },
+    {
+      "id": "67e2a4cab99d4e8bc795e99d",
+      "title": "What Is the useActionState Hook, and How Does It Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

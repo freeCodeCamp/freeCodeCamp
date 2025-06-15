@@ -32,7 +32,6 @@ export default tseslint.config(
       'client/static/**/*',
       'client/.cache/**/*',
       'client/public/**/*',
-      'api-server/**/*',
       'shared/**/*.js',
       'docs/**/*.md',
       '**/playwright*.config.ts',
@@ -116,7 +115,6 @@ export default tseslint.config(
       'react/prop-types': 'off',
       'react/jsx-no-useless-fragment': 'error',
       'no-only-tests/no-only-tests': 'error',
-      'no-unused-vars': 'off',
       'no-unused-expressions': 'error', // This is so the js rules are more in line with the ts rules
       'filenames-simple/naming-convention': ['warn']
     }
