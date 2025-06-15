@@ -1,0 +1,39 @@
+.super-block-search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0; /* Remove the padding added by Col */
+}
+
+#super-block-search-input {
+  padding-inline: 36px;
+}
+
+.super-block-search-magnifier {
+  position: absolute;
+  left: 12px;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.super-block-search-reset-btn {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.super-block-search-reset-btn:hover,
+.super-block-search-reset-btn:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}

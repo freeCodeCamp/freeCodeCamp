@@ -2,7 +2,7 @@ import i18next from 'i18next';
 import { WindowLocation } from '@gatsbyjs/reach-router';
 import { graphql } from 'gatsby';
 import { uniq, isEmpty, last } from 'lodash-es';
-import React, { useEffect, memo, useMemo } from 'react';
+import React, { useEffect, memo, useMemo, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -27,10 +27,9 @@ import {
   userFetchStateSelector,
   signInLoadingSelector
 } from '../../redux/selectors';
-import type { User } from '../../redux/prop-types';
+import type { ChallengeNode, User } from '../../redux/prop-types';
 import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '../../../../shared/config/certification-settings';
-import { BlockLayouts, BlockTypes } from '../../../../shared/config/blocks';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
@@ -38,6 +37,7 @@ import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
 import { SuperBlockAccordion } from './components/super-block-accordion';
 import { resetExpansion, toggleBlock } from './redux';
+import SuperBlockSearch from './components/super-block-search';
 
 import './intro.css';
 
@@ -45,23 +45,6 @@ type FetchState = {
   pending: boolean;
   complete: boolean;
   errored: boolean;
-};
-
-type ChallengeNode = {
-  challenge: {
-    fields: { slug: string; blockName: string };
-    id: string;
-    block: string;
-    blockType: BlockTypes;
-    challengeType: number;
-    title: string;
-    order: number;
-    superBlock: SuperBlocks;
-    dashedName: string;
-    blockLayout: BlockLayouts;
-    chapter: string;
-    module: string;
-  };
 };
 
 type SuperBlockProps = {
@@ -122,11 +105,25 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
+const SuperBlockIntroductionPage = ({
+  data: {
+    allChallengeNode: { nodes }
+  },
+  isSignedIn,
+  currentChallengeId,
+  signInLoading,
+  user,
+  pageContext: { superBlock, title, certification },
+  location,
+  tryToShowDonationModal,
+  resetExpansion,
+  toggleBlock
+}: SuperBlockProps) => {
   const { t } = useTranslation();
+
   useEffect(() => {
     initializeExpandedState();
-    props.tryToShowDonationModal();
+    tryToShowDonationModal();
 
     setTimeout(() => {
       configureAnchors({ offset: -40, scrollDuration: 400 });
@@ -138,26 +135,19 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const {
-    data: {
-      allChallengeNode: { nodes }
-    },
-    isSignedIn,
-    currentChallengeId,
-    signInLoading,
-    user,
-    pageContext: { superBlock, title, certification },
-    location
-  } = props;
-
   const allChallenges = useMemo(
     () => nodes.map(({ challenge }) => challenge),
     [nodes]
   );
+
   const superBlockChallenges = useMemo(
     () => allChallenges.filter(c => c.superBlock === superBlock),
     [allChallenges, superBlock]
   );
+
+  const [filteredSuperBlockChallenges, setFilteredSuperBlockChallenges] =
+    useState<ChallengeNode['challenge'][]>(superBlockChallenges);
+
   const blocks = uniq(superBlockChallenges.map(({ block }) => block));
 
   const completedChallenges = useMemo(
@@ -219,8 +209,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   };
 
   const initializeExpandedState = () => {
-    const { resetExpansion, toggleBlock } = props;
-
     resetExpansion();
     return toggleBlock(getInitiallyExpandedBlock());
   };
@@ -258,9 +246,17 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 {t(`intro:misc-text.courses`)}
               </h2>
               <Spacer size='m' />
+
+              <SuperBlockSearch
+                superBlockChallenges={superBlockChallenges}
+                superBlock={superBlock}
+                onFilter={setFilteredSuperBlockChallenges}
+              />
+
+              <Spacer size='m' />
               {chapterBasedSuperBlocks.includes(superBlock) ? (
                 <SuperBlockAccordion
-                  challenges={superBlockChallenges}
+                  challenges={filteredSuperBlockChallenges}
                   superBlock={superBlock}
                   chosenBlock={initialExpandedBlock}
                   completedChallengeIds={completedChallenges.map(c => c.id)}
@@ -268,9 +264,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
               ) : (
                 <div className='block-ui'>
                   {blocks.map(block => {
-                    const blockChallenges = superBlockChallenges.filter(
+                    const blockChallenges = filteredSuperBlockChallenges.filter(
                       c => c.block === block
                     );
+
+                    if (isEmpty(blockChallenges)) {
+                      return null;
+                    }
+
                     const blockType = blockChallenges[0].blockType;
 
                     return (
@@ -313,7 +314,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
           </Row>
         </main>
       </Container>
-      <DonateModal location={props.location} />
+      <DonateModal location={location} />
     </>
   );
 };

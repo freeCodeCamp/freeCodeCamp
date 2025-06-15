@@ -507,6 +507,9 @@
     "sign-in-see-benefits": "Sign in to see your supporter benefits",
     "card-has-been-updated": "Your card has been updated successfully.",
     "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
+    "search-challenges": "Search challenges in the curriculum",
+    "super-block-search-results": "Showing {{resultCount}} results for '{{term}}'.",
+    "super-block-search-no-results": "No results found for '{{term}}'.",
     "editor-tabs": {
       "code": "Code",
       "tests": "Tests",

@@ -255,6 +255,10 @@ export const SuperBlockAccordion = ({
           completedChallengeIds.filter(id => chapterStepIdsSet.has(id))
         ).size;
 
+        if (chapterStepIds.length === 0) {
+          return null;
+        }
+
         return (
           <Chapter
             key={chapter.name}
@@ -327,6 +331,10 @@ export const SuperBlockAccordion = ({
               const completedStepsInModule = new Set(
                 completedChallengeIds.filter(id => moduleStepIdsSet.has(id))
               ).size;
+
+              if (moduleStepIds.length === 0) {
+                return null;
+              }
 
               return (
                 <Module
