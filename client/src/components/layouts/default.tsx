@@ -179,7 +179,22 @@ function DefaultLayout({
   const isJapanese = clientLocale === 'japanese';
 
   if (fetchState.pending) {
-    return <Loader fullScreen={true} messageDelay={5000} />;
+    return (
+      <Helmet
+        bodyAttributes={{
+          class: `${theme}-palette`
+        }}
+        meta={[
+          {
+            name: 'description',
+            content: t('metaTags:description')
+          },
+          { name: 'keywords', content: t('metaTags:keywords') }
+        ]}
+      >
+        <Loader fullScreen={true} messageDelay={5000} />
+      </Helmet>
+    );
   } else {
     return (
       <div className='page-wrapper'>
