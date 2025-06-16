@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useTranslation, Trans } from 'react-i18next';
-import { Alert, Spacer, Container, Row, Col } from '@freecodecamp/ui';
+import { Alert, Spacer, Container, Row, Col, Callout } from '@freecodecamp/ui';
 import { ConnectedProps, connect } from 'react-redux';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
@@ -155,9 +155,10 @@ function SuperBlockIntro({
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}
       {superBlockNoteText && (
-        <div className='alert alert-info' style={{ marginTop: '2rem' }}>
-          {superBlockNoteText}
-        </div>
+        <>
+          <Spacer size='m' />
+          <Callout variant='info'>{superBlockNoteText}</Callout>
+        </>
       )}
     </>
   );
@@ -172,9 +173,10 @@ function SuperBlockIntro({
       <Spacer size='m' />
       <p>{t('misc.fsd-b-description')}</p>
       {superBlockNoteText && (
-        <div className='alert alert-info' style={{ marginTop: '2rem' }}>
-          {superBlockNoteText}
-        </div>
+        <>
+          <Spacer size='m' />
+          <Callout variant='info'>{superBlockNoteText}</Callout>
+        </>
       )}
       <Spacer size='s' />
       <a
