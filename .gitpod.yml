@@ -40,7 +40,7 @@ tasks:
       exit;
 
   - name: db
-    # starting mongod in background, so it doesn't block prebuilds
+    # starting mongodb in background, so it doesn't block prebuilds
     before: >
       cd api/tools &&
       docker compose up -d
