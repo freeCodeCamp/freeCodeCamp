@@ -85,6 +85,6 @@ Jessica reports fewer problems and less crashing, not frequent bugs.
 
 # --explanation--
 
-In the `Stability` section, Jessica says the new version `doesn't crash as often` and they've seen `fewer serious problems`
+In the `Stability` section, Jessica says the new version `doesn't crash as often` and they've seen `fewer serious problems`.
 
 This means it is more reliable and stable than before.
