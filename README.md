@@ -5,6 +5,7 @@
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
 [![Setup Automated](https://img.shields.io/badge/setup-automated-blue?logo=gitpod)](https://gitpod.io/from-referrer/)
 [![Discord](https://img.shields.io/discord/692816967895220344?logo=discord&label=Discord&color=5865F2)](https://discord.gg/PRyKn3Vbay)
+[![Twitter](https://img.shields.io/twitter/follow/freeCodeCamp)](https://x.com/freeCodeCamp)
 
 ## freeCodeCamp.org's open-source codebase and curriculum
 
