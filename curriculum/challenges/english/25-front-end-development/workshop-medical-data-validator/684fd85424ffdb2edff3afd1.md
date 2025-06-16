@@ -1,34 +1,39 @@
 ---
-id: 6846ee2d4d66bda7e22362ab
-title: Step 25
+id: 684fd85424ffdb2edff3afd1
+title: Step 26
 challengeType: 20
-dashedName: step-25
+dashedName: step-26
 ---
 
 # --description--
 
-A regular expression, or regex, is a pattern used to match a sequence of characters in text. The `search()` function from the `re` module takes a regex pattern and a string as its arguments.
+Now you can see `{'patient_id': None}` printed to the terminal because the lowercase `p` does not match `P1001` and the `and` operator returns the first falsy value of the expression.
 
-It returns a corresponding match object if the pattern produces a match. Otherwise it returns `None`.
+You want to ensure that the patient id starts with the letter `p`, but it can be either lowercase or uppercase. To modify the matching behavior of regular expressions, you can use flags. For example, `re.search()` accepts a third argument to specify any flags:
 
 ```py
 import re
 
 greeting = "Hello there!"
-print(re.search('Hi', greeting)) # None
-print(re.search('Hello', greeting)) # <re.Match object; span=(0, 5), match='Hello'>
+print(re.search('hello', greeting)) # None
+
+print(re.search('hello', greeting, re.IGNORECASE))
+# <re.Match object; span=(0, 5), match='Hello'>
 ```
 
-Call `re.search()` with the string `p` as the first argument and `patient_id` as the second argument. Use the `and` operator to add the function call as a second expression to the value of your `patient_id` key.
+Add `re.IGNORECASE` as the third argument to your `re.search()` call. This will make your regex search case insensitive.
 
 # --hints--
 
-Your `constraints` dictionary should have a key `patient_id` with the value of `isinstance(patient_id, str) and re.search('p', patient_id)`.
+You should add `re.IGNORECASE` as the third argument to your `re.search()` call.
 
 ```js
-({ test: () => runPython(`
-assert _Node(_code).find_function("find_invalid_records").find_variable("constraints").is_equivalent("constraints = {'patient_id': isinstance(patient_id, str) and re.search('p', patient_id)}")
-`) })
+({ test: () => assert(runPython(`
+_var = _Node(_code).find_function("find_invalid_records").find_variable("constraints")
+_first = "constraints = {'patient_id': isinstance(patient_id, str) and re.search('p', patient_id, flags=re.IGNORECASE)}"
+_second = "constraints = {'patient_id': isinstance(patient_id, str) and re.search('p', patient_id, re.IGNORECASE)}"
+_var.is_equivalent(_first) or _var.is_equivalent(_second)
+`)) })
 ```
 
 # --seed--
@@ -81,7 +86,7 @@ def find_invalid_records(
 
 --fcc-editable-region--
     constraints = {
-        'patient_id': isinstance(patient_id, str)
+        'patient_id': isinstance(patient_id, str) and re.search('p', patient_id)
     }
 --fcc-editable-region--
 
