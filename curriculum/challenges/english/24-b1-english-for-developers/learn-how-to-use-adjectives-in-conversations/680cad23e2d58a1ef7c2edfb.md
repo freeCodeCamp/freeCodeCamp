@@ -31,13 +31,13 @@ This word is used to point to specific items that are close to the speaker.
 
 ### --feedback--
 
-This phrase means something that can handle a large amount of work, storage, or energy. This is a compound word. Remember to use `-`.
+This compound word means something that can handle a large amount of work, storage, or energy. Remember to use `-`.
 
 # --explanation--
 
 `High-capacity` describes something designed to manage or hold a large amount compared to standard versions. For example:
 
-`We installed high-capacity batteries in the new devices.` – This means the batteries can store more power and last longer, useful in tech equipment.
+`We installed high-capacity batteries in the new devices.` – This means the batteries can store more power and last longer, which is useful in tech equipment.
 
 # --scene--
 
