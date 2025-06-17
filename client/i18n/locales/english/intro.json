@@ -4226,7 +4226,7 @@
         ]
       },
       "lab-luhn-algorithm": {
-        "title": "Implement a Luhn Algorithm",
+        "title": "Implement the Luhn Algorithm",
         "intro": [
           "In this lab, you will implement the Luhn algorithm to validate identification numbers such as credit card numbers."
         ]
