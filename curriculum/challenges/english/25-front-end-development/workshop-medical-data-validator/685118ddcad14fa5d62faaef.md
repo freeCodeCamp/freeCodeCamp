@@ -1,35 +1,35 @@
 ---
-id: 685081f42afaba3a60bdf94f
-title: Step 30
+id: 685118ddcad14fa5d62faaef
+title: Step 33
 challengeType: 20
-dashedName: step-30
+dashedName: step-33
 ---
 
 # --description--
 
-Next, you want to verify that `age` is an integer. So add another key `age` to the `constraints` dictionary. For its value, call `isinstance()` passing `age` and `int` as its arguments.
+Now add a key `diagnosis` to the `constraints` dictionary. For its value, write an expression that checks that `diagnosis` is a either an instance of `str` or is `None`.
 
 # --hints--
 
-Your `constraints` dictionary should have a key `age`.
+Your `constraints` dictionary should have a key `diagnosis`.
 
 ```js
 ({ test: () => assert(runPython(`
 _ast_keys = _Node(_code).find_function("find_invalid_records").find_variable("constraints").tree.value.keys
 _keys = [k.value for k in _ast_keys]
-'age' in _keys
+'diagnosis' in _keys
 `)) })
 ```
 
-The `age` key of your `constraints` dictionary should have the value of `isinstance(age, int)`.
+The `diagnosis` key of your `constraints` dictionary should have the value of `isinstance(diagnosis, str) or diagnosis is None`.
 
 ```js
 ({ test: () => assert(runPython(`
 _target = _Node(_code).find_function("find_invalid_records").find_variable("constraints").tree.value
 _keys = [k.value for k in _target.keys]
-_index = _keys.index('age')
+_index = _keys.index('diagnosis')
 _val = _target.values[_index]
-_Node(_val).is_equivalent("isinstance(age, int)")
+_Node(_val).is_equivalent("isinstance(diagnosis, str) or diagnosis is None")
 `)) })
 ```
 
@@ -83,10 +83,12 @@ def find_invalid_records(
 
 --fcc-editable-region--
     constraints = {
-        'patient_id': isinstance(patient_id, str) and re.fullmatch('p\d+', patient_id, re.IGNORECASE)
+        'patient_id': isinstance(patient_id, str) and re.fullmatch('p\d+', patient_id, re.IGNORECASE),
+        'age': isinstance(age, int) and age >= 18,
+        'gender': isinstance(gender, str) and gender.lower() in ('male', 'female')
+
     }
 --fcc-editable-region--
-
     return constraints
 
 def validate(data):
