@@ -8,7 +8,7 @@ dashedName: problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem
 
 # --description--
 
-A printing shop runs 16 batches (jobs) every week and each batch requires a sheet of special colour-proofing paper of size A5.
+A printing shop runs 16 batches (jobs) every week and each batch requires a sheet of special color-proofing paper of size A5.
 
 Every Monday morning, the foreman opens a new envelope, containing a large sheet of the special paper with size A1.
 

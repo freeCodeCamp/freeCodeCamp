@@ -109,16 +109,36 @@ export async function buildChallenge(
   throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
 
-export const runnerTypes: Record<number, 'javascript' | 'dom' | 'python'> = {
-  [challengeTypes.js]: 'javascript',
+export const runnerTypes: Record<
+  (typeof challengeTypes)[keyof typeof challengeTypes],
+  'javascript' | 'dom' | 'python'
+> = {
   [challengeTypes.html]: 'dom',
+  [challengeTypes.js]: 'javascript',
   [challengeTypes.backend]: 'dom',
-  [challengeTypes.jsProject]: 'javascript',
+  [challengeTypes.zipline]: 'dom',
+  [challengeTypes.frontEndProject]: 'dom',
+  [challengeTypes.backEndProject]: 'dom',
   [challengeTypes.pythonProject]: 'python',
-  [challengeTypes.python]: 'python',
+  [challengeTypes.jsProject]: 'javascript',
   [challengeTypes.modern]: 'dom',
+  [challengeTypes.step]: 'dom',
+  [challengeTypes.quiz]: 'dom',
+  [challengeTypes.invalid]: 'dom',
+  [challengeTypes.video]: 'dom',
+  [challengeTypes.codeAllyPractice]: 'dom',
+  [challengeTypes.codeAllyCert]: 'dom',
   [challengeTypes.multifileCertProject]: 'dom',
+  [challengeTypes.theOdinProject]: 'dom',
+  [challengeTypes.colab]: 'dom',
+  [challengeTypes.exam]: 'dom',
+  [challengeTypes.msTrophy]: 'dom',
+  [challengeTypes.multipleChoice]: 'dom',
+  [challengeTypes.python]: 'python',
+  [challengeTypes.dialogue]: 'dom',
+  [challengeTypes.fillInTheBlank]: 'dom',
   [challengeTypes.multifilePythonCertProject]: 'python',
+  [challengeTypes.generic]: 'dom',
   [challengeTypes.lab]: 'dom',
   [challengeTypes.jsLab]: 'javascript',
   [challengeTypes.pyLab]: 'python',
@@ -128,7 +148,9 @@ export const runnerTypes: Record<number, 'javascript' | 'dom' | 'python'> = {
 
 export async function getTestRunner(buildData: BuildChallengeData) {
   const { challengeType } = buildData;
-  const type = runnerTypes[challengeType];
+  // TODO: Fully type BuildChallengeData
+  const type =
+    runnerTypes[challengeType as unknown as keyof typeof runnerTypes];
   if (!type) {
     throw new Error(
       `Cannot get test runner for challenge type ${challengeType}`
