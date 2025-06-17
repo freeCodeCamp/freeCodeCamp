@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": ">=9"
+    "pnpm": ">=10"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "scripts": {
     "test": "mocha --delay --reporter progress --bail",
     "create-project": "tsx create-project",
+    "create-language-block": "tsx create-language-block",
     "create-quiz": "tsx create-quiz"
   },
   "devDependencies": {

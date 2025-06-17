@@ -286,7 +286,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       highlightActiveIndentation:
         props.challengeType === challengeTypes.python ||
         props.challengeType === challengeTypes.multifilePythonCertProject ||
-        props.challengeType === challengeTypes.pyLab
+        props.challengeType === challengeTypes.pyLab ||
+        props.challengeType === challengeTypes.dailyChallengePy
     },
     minimap: {
       enabled: false
@@ -309,7 +310,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     tabSize:
       props.challengeType !== challengeTypes.python &&
       props.challengeType !== challengeTypes.multifilePythonCertProject &&
-      props.challengeType !== challengeTypes.pyLab
+      props.challengeType !== challengeTypes.pyLab &&
+      props.challengeType !== challengeTypes.dailyChallengePy
         ? 2
         : 4,
     dragAndDrop: true,
@@ -783,7 +785,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(desc);
     desc.innerHTML = description;
     Prism.hooks.add('complete', enhancePrismAccessibility);
-    Prism.hooks.add('complete', makePrismCollapsible);
+
+    // To reduce confusion on the first workshop. Will need to find a better solution.
+    if (props.block !== 'workshop-curriculum-outline') {
+      Prism.hooks.add('complete', makePrismCollapsible);
+    }
     Prism.highlightAllUnder(desc);
 
     // Since the description can be resized without React knowing about it, the

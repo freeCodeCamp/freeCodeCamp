@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=18",
-    "pnpm": ">=9"
+    "pnpm": ">=10"
   },
   "repository": {
     "type": "git",
@@ -29,20 +29,11 @@
     "@babel/plugin-transform-runtime": "7.23.7",
     "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
-    "@freecodecamp/curriculum-helpers": "4.0.0",
-    "@types/chai": "4.3.12",
     "@types/copy-webpack-plugin": "^8.0.1",
-    "@types/enzyme": "3.10.16",
-    "@types/enzyme-adapter-react-16": "1.0.9",
-    "@types/jquery": "3.5.29",
     "@types/lodash-es": "4.17.12",
     "@typescript/vfs": "^1.6.0",
     "babel-loader": "8.3.0",
-    "chai": "4.4.1",
     "copy-webpack-plugin": "9.1.0",
-    "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.8",
-    "jquery": "3.7.1",
     "lodash-es": "4.17.21",
     "process": "0.11.10",
     "pyodide": "^0.23.3",
@@ -52,6 +43,7 @@
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
+    "@freecodecamp/curriculum-helpers": "^4.4.0",
     "react": "16",
     "react-dom": "16",
     "xterm": "^5.2.1"
