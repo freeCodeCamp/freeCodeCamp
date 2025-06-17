@@ -208,13 +208,18 @@ describe('auth0 plugin', () => {
         token: 'any token'
       });
       userinfoSpy.mockResolvedValueOnce(Promise.reject(Error('any error')));
+      const returnTo = 'https://www.freecodecamp.org/espanol/learn';
 
       const res = await fastify.inject({
         method: 'GET',
-        url: '/auth/auth0/callback?state=valid'
+        url: '/auth/auth0/callback?state=valid',
+        cookies: { 'login-returnto': sign(returnTo) }
       });
 
-      expect(res.headers.location).toMatch('/signin');
+      expect(res.headers.location).toMatch(
+        returnTo +
+          `?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+      );
       expect(res.statusCode).toBe(302);
       expect(await fastify.prisma.user.count()).toBe(0);
     });
@@ -224,13 +229,18 @@ describe('auth0 plugin', () => {
         token: 'any token'
       });
       userinfoSpy.mockResolvedValueOnce(Promise.resolve({}));
+      const returnTo = 'https://www.freecodecamp.org/espanol/learn';
 
       const res = await fastify.inject({
         method: 'GET',
-        url: '/auth/auth0/callback?state=valid'
+        url: '/auth/auth0/callback?state=valid',
+        cookies: { 'login-returnto': sign(returnTo) }
       });
 
-      expect(res.headers.location).toMatch('/signin');
+      expect(res.headers.location).toMatch(
+        returnTo +
+          `?${formatMessage({ type: 'danger', content: 'flash.no-email-in-userinfo' })}`
+      );
       expect(res.statusCode).toBe(302);
       expect(await fastify.prisma.user.count()).toBe(0);
     });

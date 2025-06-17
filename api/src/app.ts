@@ -81,7 +81,7 @@ ajv.addFormat('objectid', {
 });
 
 export const buildOptions = {
-  logger: getLogger(),
+  loggerInstance: process.env.NODE_ENV === 'test' ? undefined : getLogger(),
   genReqId: () => randomBytes(8).toString('hex'),
   disableRequestLogging: true
 };
@@ -166,7 +166,6 @@ export const build = async (
       // TODO: bounce unauthed requests before checking CSRF token. This will
       // mean moving csrfProtection into custom plugin and testing separately,
       // because it's a pain to mess around with other cookies/hook order.
-      // @ts-expect-error - @fastify/csrf-protection needs to update their types
       // eslint-disable-next-line @typescript-eslint/unbound-method
       fastify.addHook('onRequest', fastify.csrfProtection);
       fastify.addHook('onRequest', fastify.send401IfNoUser);
@@ -202,7 +201,6 @@ export const build = async (
     // TODO(Post-MVP): add the redirectIfSignedIn hook here, rather than in the
     // mobileAuth0Routes and authRoutes plugins.
     await fastify.register(publicRoutes.mobileAuth0Routes);
-    // TODO: consolidate with LOCAL_MOCK_AUTH
     if (FCC_ENABLE_DEV_LOGIN_MODE) {
       await fastify.register(publicRoutes.devAuthRoutes);
     } else {

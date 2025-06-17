@@ -21,7 +21,7 @@ Evaluate the sum of all the amicable numbers under `n`.
 `sumAmicableNum(1000)` should return a number.
 
 ```js
-assert(typeof sumAmicableNum(1000) === 'number');
+assert.isNumber(sumAmicableNum(1000));
 ```
 
 `sumAmicableNum(1000)` should return 504.
