@@ -120,6 +120,4 @@ def quick_sort(numbers):
         else:
             equal.append(number)
     return quick_sort(lesser) + equal + quick_sort(greater)
-
-print(quick_sort([3, 6, 8, 10, 1, 2, 1]))
 ```
