@@ -9,7 +9,7 @@ dashedName: step-26
 
 Now you can see `{'patient_id': None}` printed to the terminal because the lowercase `p` does not match `P1001` and the `and` operator returns the first falsy value of the expression.
 
-You want to ensure that the patient id starts with the letter `p`, but it can be either lowercase or uppercase. To modify the matching behavior of regular expressions, you can use flags. For example, `re.search()` accepts a third argument to specify any flags:
+You want to ensure that the patient id starts with the letter `p`, but it can be either lowercase or uppercase. To modify the matching behavior of regular expressions, you can use flags. For example, `re.search` accepts a third argument to specify any flags:
 
 ```py
 import re
@@ -21,11 +21,11 @@ print(re.search('hello', greeting, re.IGNORECASE))
 # <re.Match object; span=(0, 5), match='Hello'>
 ```
 
-Add `re.IGNORECASE` as the third argument to your `re.search()` call. This will make your regex search case insensitive.
+Add `re.IGNORECASE` as the third argument to your `re.search` call. This will make your regex search case insensitive.
 
 # --hints--
 
-You should add `re.IGNORECASE` as the third argument to your `re.search()` call.
+You should add `re.IGNORECASE` as the third argument to your `re.search` call.
 
 ```js
 ({ test: () => assert(runPython(`
