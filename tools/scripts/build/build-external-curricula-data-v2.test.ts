@@ -224,38 +224,26 @@ ${result.error.message}`);
         superBlock
       ] as ChapterBasedCurriculumIntros[SuperBlocks];
 
-      // Randomly pick a chapter.
-      const chapters = superBlockData.chapters.filter(
-        ({ comingSoon }) => !comingSoon
-      );
-      const randomChapterIndex = Math.floor(Math.random() * chapters.length);
-      const randomChapter = chapters[randomChapterIndex];
-
-      // Randomly pick a module.
-      const modules = randomChapter.modules.filter(
-        ({ comingSoon }) => !comingSoon
-      );
-      const randomModuleIndex = Math.floor(Math.random() * modules.length);
-      const randomModule = modules[randomModuleIndex];
-
-      // Randomly pick a block.
-      // const blocks = randomModule.blocks;
-      // const randomBlockIndex = Math.floor(Math.random() * blocks.length);
-      // const randomBlock = blocks[randomBlockIndex];
-
       // Check super block data
       expect(superBlockData.intro).toEqual(superBlockIntros.intro);
 
-      // Check chapter data
-      expect(superBlockData.chapters[randomChapterIndex].name).toEqual(
-        superBlockIntros.chapters[randomChapter.dashedName]
-      );
+      // Loop through all chapters
+      superBlockData.chapters
+        .filter(({ comingSoon }) => !comingSoon)
+        .forEach(chapter => {
+          expect(chapter.name).toEqual(
+            superBlockIntros.chapters[chapter.dashedName]
+          );
 
-      // Check module data
-      expect(
-        superBlockData.chapters[randomChapterIndex].modules[randomModuleIndex]
-          .name
-      ).toEqual(superBlockIntros.modules[randomModule.dashedName]);
+          // Loop through all modules in the chapter
+          chapter.modules
+            .filter(({ comingSoon }) => !comingSoon)
+            .forEach(module => {
+              expect(module.name).toEqual(
+                superBlockIntros.modules[module.dashedName]
+              );
+            });
+        });
 
       // Temporary skip these checks to keep CI stable.
       // TODO: uncomment these once https://github.com/freeCodeCamp/freeCodeCamp/issues/60660 is completed.
