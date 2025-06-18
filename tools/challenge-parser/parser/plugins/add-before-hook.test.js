@@ -6,7 +6,11 @@ describe('add-before-hook plugin', () => {
   let withBeforeHookAST,
     withInvalidHookAST,
     withAnotherInvalidHookAST,
-    withNonJSHookAST;
+    withNonJSHookAST,
+    withBeforeEachHookAST,
+    withInvalidBeforeEachHookAST,
+    withAnotherInvalidBeforeEachHookAST,
+    withNonJSBeforeEachHookAST;
 
   const plugin = addBeforeHook();
   let file = { data: {} };
@@ -18,6 +22,16 @@ describe('add-before-hook plugin', () => {
       'with-another-invalid-before-hook.md'
     );
     withNonJSHookAST = await parseFixture('with-non-js-before-hook.md');
+    withBeforeEachHookAST = await parseFixture('with-before-each-hook.md');
+    withInvalidBeforeEachHookAST = await parseFixture(
+      'with-invalid-before-each-hook.md'
+    );
+    withAnotherInvalidBeforeEachHookAST = await parseFixture(
+      'with-another-invalid-before-each-hook.md'
+    );
+    withNonJSBeforeEachHookAST = await parseFixture(
+      'with-non-js-before-each-hook.md'
+    );
   });
 
   beforeEach(() => {
@@ -63,5 +77,32 @@ foo();`);
   it('should have an output to match the snapshot', () => {
     plugin(withBeforeHookAST, file);
     expect(file.data).toMatchSnapshot();
+  });
+
+  it('populates `hooks.beforeEach` with the contents of the code block', () => {
+    plugin(withBeforeEachHookAST, file);
+    expect(file.data.hooks.beforeEach).toBe(`// before each code
+function setup() {
+  return 'initialized';
+}
+setup();`);
+  });
+
+  it('should throw an error if the beforeEach section has more than one child', () => {
+    expect(() => plugin(withInvalidBeforeEachHookAST, file)).toThrow(
+      `#--before-each-- section must only contain a single code block`
+    );
+  });
+
+  it('should throw an error if the beforeEach section does not contain a code block', () => {
+    expect(() => plugin(withAnotherInvalidBeforeEachHookAST, file)).toThrow(
+      `#--before-each-- section must contain a code block`
+    );
+  });
+
+  it('should throw an error if the beforeEach code language is not javascript', () => {
+    expect(() => plugin(withNonJSBeforeEachHookAST, file)).toThrow(
+      `#--before-each-- hook must be written in JavaScript`
+    );
   });
 });
