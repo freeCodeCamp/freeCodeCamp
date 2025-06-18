@@ -16,7 +16,9 @@ export async function queryGraphQL(query: string) {
   const json = (await response.json()) as QueryResult;
 
   if (!json?.data?.allChallengeNode?.edges?.length) {
-    throw new Error('Failed to find any challenges with GraphQL query');
+    throw new Error(
+      'Failed to find any challenges with GraphQL query. The client needs to be running'
+    );
   }
 
   return json;
