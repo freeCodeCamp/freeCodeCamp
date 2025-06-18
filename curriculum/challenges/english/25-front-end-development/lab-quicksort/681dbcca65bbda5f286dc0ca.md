@@ -72,7 +72,7 @@ assert _test_list == [20, 3, 14, 1, 5]
 ({ test: () => runPython(`assert quick_sort([4, 42, 16, 23, 15, 8]) == [4, 8, 15, 16, 23, 42]`) })
 ```
 
-You should not use the `sorted()` function in your code.
+You should not use the built-in `sorted()` function in your code.
 
 ```js
 ({ test: () => runPython(`
@@ -99,20 +99,20 @@ assert not _Node(_code).block_has_call("sort")
 # --solutions--
 
 ```py
-def quick_sort(array):
-    if len(array) == 0:
+def quick_sort(numbers):
+    if not numbers:
         return []
-    pivot = array[0]
+    pivot = numbers[0]
     lesser = []
     equal = []
     greater = []
-    for i in array:
-        if i < pivot:
-            lesser.append(i)
-        elif i > pivot:
-            greater.append(i)
+    for number in numbers:
+        if number < pivot:
+            lesser.append(number)
+        elif number > pivot:
+            greater.append(number)
         else:
-            equal.append(i)
+            equal.append(number)
     return quick_sort(lesser) + equal + quick_sort(greater)
 
 print(quick_sort([3, 6, 8, 10, 1, 2, 1]))
