@@ -2,7 +2,7 @@
   "name": "Understanding the Different Types of Testing",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-the-different-types-of-testing",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
@@ -53,10 +53,6 @@
     {
       "id": "67d2ff887d2583a079c02e78",
       "title": "What Is Security Testing?"
-    },
-    {
-      "id": "67d2ff93d213d5a0c17ecfa2",
-      "title": "What Is Accessibility Testing?"
     },
     {
       "id": "67db3238375ff8340ee1ff90",

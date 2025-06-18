@@ -114,12 +114,12 @@
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати безоплатно.",
-    "big-heading-1-b": "Навчіться програмувати.",
     "big-heading-2": "Створюйте проєкти.",
+    "big-heading-1-b": "Build Your Skills for Free.",
     "big-heading-3": "Отримуйте сертифікації.",
-    "big-heading-4": "Усе безоплатно.",
-    "h2-heading": "З 2014 року понад 40 000 випускників freeCodeCamp.org отримали роботу в технологічних компаніях, серед яких:",
-    "h2-heading-b": "Понад <strong>100 000</strong> випускників freeCodeCamp.org отримали <strong>роботу</strong> в ІТ-компаніях, серед яких:",
+    "advance-career": "Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI Engineering, and English for Developers.",
+    "h2-heading": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
+    "graduates-work": "More than <strong>100,000</strong> freeCodeCamp graduates work in companies such as",
     "hero-img-description": "Cтуденти місцевої навчальної групи freeCodeCamp в Південній Кореї.",
     "hero-img-alt": "Група людей, серед яких білий чоловік, чорна жінка та азійка, зібрались навколо ноутбука.",
     "hero-img-uis": "Декілька знімків екрану, на яких зображено інтерфейс редактора freeCodeCamp на мобільному і настільному пристроях, а також сертифікацію.",
@@ -127,19 +127,19 @@
     "testimonials": {
       "heading": "Ось що наші випускники говорять про freeCodeCamp:",
       "shawn": {
-        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
+        "img-alt": "Шон Вонг — молодий азієць, який посміхається на селфі зі засніженою горою на фоні.",
         "location": "<strong>Шон Вонг</strong> з Сінгапуру",
         "occupation": "Інженер програмного забезпечення в <strong>Amazon</strong>",
         "testimony": "«Змінювати професію — страшно. Я набув впевненості в програмуванні лише після того, як пройшов сотні годин безоплатних занять на freeCodeCamp. І вже за рік я отримав роботу інженера програмного забезпечення з шестизначною зарплатою. <strong>freeCodeCamp змінив моє життя.</strong>»"
       },
       "sarah": {
-        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
+        "img-alt": "Сара Чіма — молода темношкіра жінка, яка посміхається, сидячи в кріслі.",
         "location": "<strong>Сара Чіма</strong> з Нігерії",
         "occupation": "Інженерка програмного забезпечення в <strong>ChatDesk</strong>",
         "testimony": "«<strong>freeCodeCamp став для мене пропуском у професію</strong> інженерки програмного забезпечення. Гарно структурована навчальна програма дозволила покращити мої знання з програмування з початкового рівня до дуже впевненого. Це все, що було потрібно, щоб знайти свою першу роботу розробниці програмного забезпечення у чудовій компанії.»"
       },
       "emma": {
-        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
+        "img-alt": "Емма Бостіан — молода світлошкіра жінка, яка посміхається на фоні зеленого листя.",
         "location": "<strong>Емма Бостіан</strong> зі Швеції",
         "occupation": "Інженерка програмного забезпечення в <strong>Spotify</strong>",
         "testimony": "«У мене завжди виникали труднощі при вивченні JavaScript. Я проходила багато курсів, але з курсом від freeCodeCamp я залишилася надовго. Вивчення JavaScript, а також структур даних та алгоритмів на <strong>freeCodeCamp дало мені необхідні навички</strong> і впевненість, щоб знайти роботу своєї мрії: інженерка програмного забезпечення у Spotify.»"
@@ -495,26 +495,26 @@
       "logout-warning": "Якщо ви вийдете з freeCodeCamp, не завершивши весь курс «{{course}}», ваш прогрес не буде збережено в обліковому записі freeCodeCamp."
     },
     "local": {
-      "intro": "This course runs in a virtual Linux machine on your computer. To run the course, you first need to download each of the following if you don't already have them:",
-      "download-vscode": "<0>VS Code</0> and the <1>Dev Containers</1> extension",
-      "heading": "Then, follow these instructions to start the course:",
-      "step-1": "Open a terminal and clone the RDB Alpha repo if you don't already have it with <0>git clone https://github.com/freeCodeCamp/rdb-alpha</0>",
-      "step-2": "Navigate to the <0>rdb-alpha</0> directory in the terminal with <1>cd rdb-alpha</1>, and open VS Code with <2>code .</2>",
-      "sub-step-heading": "If you want to save your progress to your freeCodeCamp account, do the following:",
-      "sub-step-1": "Generate a user token if you don't already have one:",
-      "generate-token-btn": "Generate User Token",
-      "sub-step-2": "Copy your user token:",
-      "copy-token-btn": "Copy User Token",
-      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your user token will be deleted and your progress will not be saved to your freeCodeCamp account.",
-      "sub-step-3": "In the VS Code that opened, find and open the file named <0>Dockerfile</0>. At the bottom of the file, paste your token in as the value for the <1>CODEROAD_WEBHOOK_TOKEN</1> variable. It should look like this: <2>ENV CODEROAD_WEBHOOK_TOKEN=your-token-here</2>",
-      "step-3": "Open the command palette in VS Code by expanding the \"View\" menu and clicking \"Command Palette...\" and enter <0>Dev Containers: Rebuild and Reopen in Container</0> in the input.",
-      "step-4": "A new VS Code window will open and begin building the Docker image. It will take several minutes the first time.",
-      "step-5": "Once it is finished building, open the command palette again and enter <0>CodeRoad: Start</0> to open CodeRoad.",
-      "step-6": "In the CodeRoad window, click \"Start New Tutorial\" and then the \"URL\" tab at the top.",
-      "step-7": "Copy the course URL below, paste it in the URL input, and click \"Load\".",
-      "copy-url": "Copy Course URL",
-      "step-8": "Click \"Start\" to begin.",
-      "step-9": "Follow the instructions in CodeRoad to complete the course. Note: You may need to restart the terminal once for terminal settings to take effect and the tests to pass."
+      "intro": "Цей курс виконується на віртуальній машині Linux на вашому комп’ютері. Щоб розпочати, потрібно завантажити:",
+      "download-vscode": "<0>VS Code</0> і розширення <1>Dev Containers</1>",
+      "heading": "Потім дотримуйтесь цих інструкцій, щоб розпочати курс:",
+      "step-1": "Відкрийте термінал і клонуйте репозиторій RDB Alpha, виконавши команду <0>git clone https://github.com/freeCodeCamp/rdb-alpha</0>",
+      "step-2": "Перейдіть до директорії <0>rdb-alpha</0> в терміналі за допомогою <1>cd rdb-alpha</1>, а також відкрийте VS Code за допомогою <2>code .</2>",
+      "sub-step-heading": "Якщо хочете зберегти прогрес в обліковому записі freeCodeCamp, зробіть наступне:",
+      "sub-step-1": "Згенеруйте токен користувача, якщо досі цього не зробили:",
+      "generate-token-btn": "Згенерувати токен користувача",
+      "sub-step-2": "Скопіюйте токен користувача:",
+      "copy-token-btn": "Скопіювати токен користувача",
+      "logout-warning": "Якщо ви вийдете з freeCodeCamp, не завершивши весь курс «{{course}}», ваш токен буде видалено, а прогрес не буде збережено в обліковому записі freeCodeCamp.",
+      "sub-step-3": "У відкритому VS Code знайдіть і відкрийте файл під назвою <0>Dockerfile</0>. Внизу файлу вставте свій токен як значення змінної <1>CODEROAD_WEBHOOK_TOKEN</1>. Це має виглядати так: <2>ENV CODEROAD_WEBHOOK_TOKEN=тут-ваш-токен</2>",
+      "step-3": "Відкрийте палітру команд у VS Code, перейшовши до меню «View» та натиснувши «Command Palette...», а потім введіть <0>Dev Containers: Rebuild and Reopen in Container</0>.",
+      "step-4": "Після цього відкриється нове вікно VS Code і розпочнеться створення образу Docker (протягом першого запуску це займе пару хвилин).",
+      "step-5": "Після завершення знову перейдіть до палітри команд і введіть <0>CodeRoad: Start</0>, щоб відкрити CodeRoad.",
+      "step-6": "У вікні CodeRoad натисніть «Start New Tutorial», а потім — на вкладку «URL» зверху.",
+      "step-7": "Скопіюйте посилання на курс нижче, вставте його в «URL» і натисніть «Load».",
+      "copy-url": "Скопіювати посилання на курс",
+      "step-8": "Натисніть «Start», щоб розпочати.",
+      "step-9": "Дотримуйтесь інструкцій в CodeRoad, щоб завершити курс. Примітка: можливо, вам знадобиться перезапустити термінал, щоб застосувати його налаштування і тести були успішними."
     },
     "step-1": "Крок 1: завершіть проєкт",
     "step-2": "Крок 2: відправте код",
@@ -547,7 +547,7 @@
       "unanswered-questions": "Ви не відповіли на такі запитання: {{ unansweredQuestions }}. Потрібно дати відповідь на всі запитання.",
       "have-n-correct-questions": "Ви правильно відповіли на {{ correctAnswerCount }} з {{ total }} запитань.",
       "finish-modal-header": "Завершити тест",
-      "finish-modal-body": "Are you sure you want to finish the quiz?",
+      "finish-modal-body": "Точно завершити тест?",
       "finish-modal-yes": "Так, завершити тест",
       "finish-modal-no": "Ні, я хочу продовжити",
       "exit-modal-header": "Покинути тест",
@@ -763,12 +763,12 @@
   "search": {
     "label": "Пошук",
     "placeholder": {
-      "default": "Search our news articles, tutorials, and books",
-      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
+      "default": "Шукати серед статей, підручників і книг",
+      "numbered": "Шукати серед {{ roundedTotalRecords }}+ статей, підручників і книг"
     },
     "see-results": "Переглянути всі результати для {{searchQuery}}",
     "try": "Шукаєте щось? Спробуйте пошуковий рядок на цій сторінці.",
-    "no-results": "No results found",
+    "no-results": "Нічого не знайдено",
     "result-list": "Результати пошуку"
   },
   "misc": {
@@ -781,7 +781,7 @@
     "brand-new-account": "Вітаємо у новому обліковому записі freeCodeCamp. Розпочнемо!",
     "duplicate-account-warning": "Якщо ви хотіли ввійти у наявний обліковий запис, а не створювати новий, <0>натисніть тут, щоб видалити цей обліковий запис</0> та спробуйте іншу адресу електронної пошти.",
     "quincy": "— Квінсі Ларсон, вчитель, який заснував freeCodeCamp.org",
-    "email-blast": "Each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
+    "email-blast": "Кожної п’ятниці я надсилаю електронний лист із 5 посиланнями про програмування та інформатику. Я відправляю їх приблизно 6 мільйонам людей. Можливо, надсилати ці листи й вам?",
     "update-email-1": "Оновити свою адресу електронної пошти",
     "update-email-2": "Оновіть свою адресу електронної пошти тут:",
     "email": "Адреса електронної пошти",
@@ -849,9 +849,11 @@
     "opens-new-window": "Відкривається у новому вікні",
     "rsa-checkbox": "Я спробував(-ла) метод читати-шукати-питати",
     "similar-questions-checkbox": "Я шукав(-ла) схожі запитання на форумі, на які вже є відповідь",
-    "edit-my-profile": "Редагувати профіль"
+    "edit-my-profile": "Редагувати профіль",
+    "terminal-output": "Terminal output"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "Щоб отримати сертифікацію, ви повинні спочатку погодитись з нашою політикою академічної доброчесності",
     "really-weird": "Щось пішло не так. Якщо це повториться, будь ласка, повідомте про це за посиланням: https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "generic-error": "Щось пішло не так. Будь ласка, спробуйте ще раз, або напишіть на support@freecodecamp.org, якщо помилка не зникає.",
@@ -905,7 +907,7 @@
     "unlink-success": "Ви успішно від’єдналися від {{website}}",
     "provide-username": "Перевірте, чи ви вказали ім’я користувача та звіт",
     "report-sent": "Звіт був відправлений команді з {{email}} в копії",
-    "report-error": "Unable to report this user at this time.",
+    "report-error": "Не вдалось повідомити про цього користувача.",
     "certificate-missing": "Такої сертифікації не існує",
     "create-token-err": "Під час створення токена користувача сталася помилка",
     "delete-token-err": "Під час видалення токена користувача сталася помилка",
@@ -925,10 +927,10 @@
     "generate-exam-error": "Під час спроби створити екзамен виникла помилка.",
     "cert-not-found": "Сертифікація «{{certSlug}}» не існує.",
     "reset-editor-layout": "Редактор скинуто.",
-    "user-token-generated": "A user token was created for you.",
-    "user-token-generate-error": "Something went wrong trying to generate a user token for you.",
-    "user-token-copied": "User token copied to clipboard.",
-    "user-token-copy-error": "Something went wrong trying to copy your token.",
+    "user-token-generated": "Для вас створено токен користувача.",
+    "user-token-generate-error": "Не вдалось згенерувати токен користувача.",
+    "user-token-copied": "Токен користувача скопійовано до буфера обміну.",
+    "user-token-copy-error": "Не вдалось скопіювати токен користувача.",
     "course-url-copied": "Посилання на курс скопійовано до буфера обміну.",
     "course-url-copy-error": "Під час спроби скопіювати посилання виникла помилка.",
     "ms": {
@@ -983,7 +985,7 @@
     "ms-learn-link": "Використайте дійсне трофейне посилання Microsoft Learn.",
     "path-url": "Можливо, ви хочете надіслати кореневий шлях, тобто https://example.com, а не https://example.com/path",
     "source-code-link-required": "Не забудьте надіслати посилання на свій вихідний код.",
-    "source-code-link-public": "Source code link must be publicly visible."
+    "source-code-link-public": "Посилання на початковий код має бути загальнодоступним."
   },
   "certification": {
     "executive": "Виконавчий директор, freeCodeCamp.org",
@@ -1114,6 +1116,10 @@
       "b1-english-for-developers-cert": "Сертифікація «Англійська мова B1 для розробників»",
       "full-stack-developer-v9": "Full Stack розробник",
       "full-stack-developer-v9-cert": "Сертифікація «Full Stack розробник»",
+      "a2-professional-spanish": "Іспанська мова A2 для роботи",
+      "a2-professional-spanish-cert": "Сертифікація «Іспанська мова A2 для роботи»",
+      "a2-professional-chinese": "A2 Professional Chinese",
+      "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
       "legacy-front-end": "Front End (стара версія)",
       "legacy-front-end-cert": "Сертифікація «Front End» (стара версія)",
       "legacy-back-end": "Back End (стара версія)",

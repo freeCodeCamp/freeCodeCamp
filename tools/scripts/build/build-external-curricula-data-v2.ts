@@ -2,17 +2,28 @@ import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { submitTypes } from '../../../shared/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
-import {
-  SuperBlocks,
-  SuperBlockStage
-} from '../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../shared/config/curriculum';
 import fullStackSuperBlockStructure from '../../../curriculum/superblock-structure/full-stack.json';
 import type { Chapter } from '../../../shared/config/chapters';
 
-export type CurriculumIntros = {
+export type CurriculumIntros =
+  | BlockBasedCurriculumIntros
+  | ChapterBasedCurriculumIntros;
+
+type BlockBasedCurriculumIntros = {
   [keyValue in SuperBlocks]: {
     title: string;
     intro: string[];
+    blocks: Record<string, { title: string; intro: string[] }>;
+  };
+};
+
+export type ChapterBasedCurriculumIntros = {
+  [keyValue in SuperBlocks]: {
+    title: string;
+    intro: string[];
+    chapters: Record<string, string>;
+    modules: Record<string, string>;
     blocks: Record<string, { title: string; intro: string[] }>;
   };
 };
@@ -51,6 +62,7 @@ export interface GeneratedChapterBasedCurriculumProps {
 
 interface GeneratedChapter {
   dashedName: string;
+  name: string;
   comingSoon?: boolean;
   modules: GeneratedModule[];
   chapterType?: string;
@@ -58,6 +70,7 @@ interface GeneratedChapter {
 
 interface GeneratedModule {
   dashedName: string;
+  name: string;
   comingSoon?: boolean;
   blocks: GeneratedBlock[];
   moduleType?: string;
@@ -68,6 +81,21 @@ interface GeneratedBlock {
   intro: string;
   meta: Record<string, unknown>;
 }
+
+// This enum is based on the `SuperBlockStage` enum in shared/config,
+// but with string value instead of number.
+enum SuperBlockStage {
+  Core = 'core',
+  English = 'english',
+  Professional = 'professional',
+  Extra = 'extra',
+  Legacy = 'legacy'
+}
+
+export type OrderedSuperBlocks = Record<
+  string,
+  Array<{ dashedName: SuperBlocks; public: boolean; title: string }>
+>;
 
 const ver = 'v2';
 
@@ -81,10 +109,7 @@ const intros = JSON.parse(
   readFileSync(blockIntroPath, 'utf-8')
 ) as CurriculumIntros;
 
-export const orderedSuperBlockInfo: Record<
-  string,
-  Array<{ dashedName: SuperBlocks; public: boolean; title: string }>
-> = {
+export const orderedSuperBlockInfo: OrderedSuperBlocks = {
   [SuperBlockStage.Core]: [
     {
       dashedName: SuperBlocks.FullStackDeveloper,
@@ -260,25 +285,30 @@ export function buildExtCurriculumDataV2(
     const chapters: Chapter[] = fullStackSuperBlockStructure.chapters;
     const blocksWithData = curriculum[superBlockKey].blocks;
 
+    const superBlockIntros = intros[
+      superBlockKey
+    ] as ChapterBasedCurriculumIntros[SuperBlocks];
+
     // Skip upcoming chapter/module as the metadata of their blocks
     // is not included in the `curriculum` object.
     const allChapters = chapters.map(chapter => ({
       dashedName: chapter.dashedName,
+      name: superBlockIntros.chapters[chapter.dashedName],
       comingSoon: chapter.comingSoon,
       chapterType: chapter.chapterType,
       modules: chapter.comingSoon
         ? []
         : chapter.modules.map(module => ({
             dashedName: module.dashedName,
+            name: superBlockIntros.modules[module.dashedName],
             comingSoon: module.comingSoon,
             moduleType: module.moduleType,
             blocks: module.comingSoon
               ? []
               : module.blocks.map(block => {
                   const blockData = blocksWithData[block.dashedName];
-
                   return {
-                    intro: intros[superBlockKey].blocks[block.dashedName].intro,
+                    intro: superBlockIntros.blocks[block.dashedName].intro,
                     meta: blockData.meta
                   };
                 })

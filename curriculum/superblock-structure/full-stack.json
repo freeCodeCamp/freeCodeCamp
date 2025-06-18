@@ -1,24 +1,20 @@
 {
   "chapters": [
     {
-      "dashedName": "freecodecamp",
-      "modules": [
-        {
-          "dashedName": "getting-started-with-freecodecamp",
-          "blocks": [
-            {
-              "dashedName": "lecture-welcome-to-freecodecamp"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "dashedName": "html",
       "modules": [
         {
           "dashedName": "basic-html",
           "blocks": [
+            {
+              "dashedName": "workshop-curriculum-outline"
+            },
+            {
+              "dashedName": "lecture-welcome-to-freecodecamp"
+            },
+            {
+              "dashedName": "lab-debug-camperbots-profile-page"
+            },
             {
               "dashedName": "lecture-what-is-html"
             },
@@ -109,7 +105,11 @@
             {
               "dashedName": "lecture-importance-of-accessibility-and-good-html-structure"
             },
+            { "dashedName": "lecture-accessible-tables-forms" },
+            { "dashedName": "lecture-introduction-to-aria" },
+            { "dashedName": "lecture-accessible-media-elements" },
             { "dashedName": "lab-checkout-page" },
+            { "dashedName": "lab-movie-review-page" },
             { "dashedName": "lab-multimedia-player" },
             { "dashedName": "review-html-accessibility" },
             { "dashedName": "quiz-html-accessibility" }
@@ -123,12 +123,6 @@
               "dashedName": "review-html"
             }
           ]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-html",
-          "blocks": []
         }
       ]
     },
@@ -513,12 +507,6 @@
               "dashedName": "review-css"
             }
           ]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-css",
-          "blocks": []
         }
       ]
     },
@@ -625,6 +613,9 @@
               "dashedName": "lab-leap-year-calculator"
             },
             {
+              "dashedName": "lab-truncate-string"
+            },
+            {
               "dashedName": "review-javascript-functions"
             },
             {
@@ -687,6 +678,8 @@
             {
               "dashedName": "lab-factorial-calculator"
             },
+            { "dashedName": "lab-mutations" },
+            { "dashedName": "lab-chunky-monkey" },
             {
               "dashedName": "review-javascript-loops"
             },
@@ -700,6 +693,9 @@
           "blocks": [
             {
               "dashedName": "lecture-understanding-core-javascript-fundamentals"
+            },
+            {
+              "dashedName": "lab-slice-and-splice"
             },
             {
               "dashedName": "lab-pyramid-generator"
@@ -718,6 +714,9 @@
             },
             {
               "dashedName": "lab-password-generator"
+            },
+            {
+              "dashedName": "lab-sum-all-numbers-algorithm"
             },
             {
               "dashedName": "review-javascript-fundamentals"
@@ -1019,12 +1018,6 @@
               "dashedName": "review-javascript"
             }
           ]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-javascript",
-          "blocks": []
         }
       ]
     },
@@ -1062,16 +1055,16 @@
         },
         {
           "dashedName": "react-state-hooks-and-routing",
-          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "lecture-working-with-state-and-responding-to-events-in-react"
             },
             { "dashedName": "workshop-toggle-text-app" },
+            { "dashedName": "lab-color-picker" },
             {
               "dashedName": "lecture-understanding-effects-and-referencing-values-in-react"
             },
-            { "dashedName": "lab-color-picker" },
+            { "dashedName": "workshop-fruit-search-app" },
             {
               "dashedName": "review-react-state-and-hooks"
             },
@@ -1079,16 +1072,19 @@
               "dashedName": "quiz-react-state-and-hooks"
             },
             {
-              "dashedName": "workshop-superhero-application-form"
+              "dashedName": "lecture-working-with-forms-in-react"
             },
             {
-              "dashedName": "lecture-working-with-forms-in-react"
+              "dashedName": "workshop-superhero-application-form"
             },
             {
               "dashedName": "lab-event-rsvp"
             },
             {
               "dashedName": "lecture-working-with-data-fetching-and-memoization-in-react"
+            },
+            {
+              "dashedName": "workshop-shopping-list-app"
             },
             {
               "dashedName": "lab-currency-converter"
@@ -1112,7 +1108,6 @@
         },
         {
           "dashedName": "performance",
-          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "lecture-understanding-performance-in-web-applications"
@@ -1123,6 +1118,16 @@
             {
               "dashedName": "quiz-web-performance"
             }
+          ]
+        },
+        {
+          "dashedName": "testing",
+          "blocks": [
+            {
+              "dashedName": "lecture-understanding-the-different-types-of-testing"
+            },
+            { "dashedName": "review-testing" },
+            { "dashedName": "quiz-testing" }
           ]
         },
         {
@@ -1140,17 +1145,7 @@
             }
           ]
         },
-        {
-          "dashedName": "testing",
-          "comingSoon": true,
-          "blocks": [
-            {
-              "dashedName": "lecture-understanding-the-different-types-of-testing"
-            },
-            { "dashedName": "review-testing" },
-            { "dashedName": "quiz-testing" }
-          ]
-        },
+
         {
           "dashedName": "typescript-fundamentals",
           "comingSoon": true,
@@ -1175,12 +1170,132 @@
               "dashedName": "review-front-end-libraries"
             }
           ]
+        }
+      ]
+    },
+    {
+      "dashedName": "python",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "python-basics",
+          "blocks": [
+            { "dashedName": "lecture-introduction-to-python" },
+            { "dashedName": "workshop-caesar-cipher" },
+            { "dashedName": "lab-rpg-character" },
+            { "dashedName": "review-python-basics" },
+            { "dashedName": "quiz-python-basics" }
+          ]
         },
         {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-front-end-libraries",
-          "blocks": []
+          "dashedName": "python-loops-and-sequences",
+          "blocks": [
+            { "dashedName": "lecture-working-with-loops-and-sequences" },
+            { "dashedName": "workshop-placeholder-loops-and-sequences" },
+            { "dashedName": "lab-number-pattern-generator" },
+            { "dashedName": "review-loops-and-sequences" },
+            { "dashedName": "quiz-loops-and-sequences" }
+          ]
+        },
+        {
+          "dashedName": "python-dictionaries-and-sets",
+          "blocks": [
+            { "dashedName": "lecture-working-with-dictionaries-and-sets" },
+            { "dashedName": "lecture-working-with-modules" },
+            { "dashedName": "workshop-placeholder-dictionaries-and-sets" },
+            { "dashedName": "lab-placeholder-dictionaries-and-sets" },
+            { "dashedName": "review-dictionaries-and-sets" },
+            { "dashedName": "quiz-dictionaries-and-sets" }
+          ]
+        },
+        {
+          "dashedName": "python-error-handling",
+          "blocks": [
+            { "dashedName": "lecture-understanding-error-handling" },
+            { "dashedName": "lab-isbn-validator" },
+            { "dashedName": "review-error-handling" },
+            { "dashedName": "quiz-error-handling" }
+          ]
+        },
+        {
+          "dashedName": "python-classes-and-objects",
+          "blocks": [
+            { "dashedName": "lecture-classes-and-objects" },
+            { "dashedName": "workshop-placeholder-classes-and-objects" },
+            { "dashedName": "lab-budget-app" },
+            { "dashedName": "review-classes-and-objects" },
+            { "dashedName": "quiz-classes-and-objects" }
+          ]
+        },
+        {
+          "dashedName": "python-object-oriented-programming",
+          "blocks": [
+            {
+              "dashedName": "lecture-understanding-object-oriented-programming-and-encapsulation"
+            },
+            { "dashedName": "workshop-placeholder-oop-1" },
+            { "dashedName": "lab-placeholder-oop-1" },
+            {
+              "dashedName": "lecture-understanding-inheritance-and-polymorphism"
+            },
+            { "dashedName": "workshop-placeholder-oop-2" },
+            { "dashedName": "lab-polygon-area-calculator" },
+            { "dashedName": "lecture-understanding-abstraction" },
+            { "dashedName": "workshop-placeholder-oop-3" },
+            { "dashedName": "lab-placeholder-oop-3" },
+            { "dashedName": "review-object-oriented-programming" },
+            { "dashedName": "quiz-object-oriented-programming" }
+          ]
+        },
+        {
+          "dashedName": "python-linear-data-structures",
+          "blocks": [
+            { "dashedName": "lecture-working-with-common-data-structures" },
+            { "dashedName": "workshop-linked-list-class" },
+            { "dashedName": "lab-hash-table" },
+            { "dashedName": "review-data-structures" },
+            { "dashedName": "quiz-data-structures" }
+          ]
+        },
+        {
+          "dashedName": "python-algorithms",
+          "blocks": [
+            { "dashedName": "lecture-searching-and-sorting-algorithms" },
+            { "dashedName": "workshop-binary-search" },
+            { "dashedName": "lab-bisection-method" },
+            { "dashedName": "workshop-merge-sort" },
+            { "dashedName": "lab-quick-sort" },
+            { "dashedName": "lab-selection-sort" },
+            { "dashedName": "lab-luhn-argorithm" },
+            { "dashedName": "review-searching-and-sorting-algorithms" },
+            { "dashedName": "quiz-searching-and-sorting-algorithms" }
+          ]
+        },
+        {
+          "dashedName": "python-graphs-and-trees",
+          "blocks": [
+            { "dashedName": "lecture-understanding-graphs-and-trees" },
+            { "dashedName": "workshop-shortest-path-algorithm" },
+            { "dashedName": "lab-adjacency-list-matrix-converter" },
+            { "dashedName": "workshop-breadth-first-search" },
+            { "dashedName": "lab-depth-first-search" },
+            { "dashedName": "review-graphs-and-trees" },
+            { "dashedName": "quiz-graphs-and-trees" }
+          ]
+        },
+        {
+          "dashedName": "python-dynamic-programming",
+          "blocks": [
+            { "dashedName": "lecture-understanding-dynamic-programming" },
+            { "dashedName": "lab-nth-fibonacci-number" },
+            { "dashedName": "review-dynamic-programming" },
+            { "dashedName": "quiz-dynamic-programming" }
+          ]
+        },
+        {
+          "moduleType": "review",
+          "dashedName": "review-python",
+          "blocks": [{ "dashedName": "review-python" }]
         }
       ]
     },
@@ -1304,138 +1419,6 @@
               "dashedName": "review-relational-databases"
             }
           ]
-        }
-      ]
-    },
-    {
-      "dashedName": "python",
-      "comingSoon": true,
-      "modules": [
-        {
-          "dashedName": "python-basics",
-          "blocks": [
-            { "dashedName": "lecture-introduction-to-python" },
-            { "dashedName": "workshop-caesar-cipher" },
-            { "dashedName": "lab-rpg-character" },
-            { "dashedName": "review-python-basics" },
-            { "dashedName": "quiz-python-basics" }
-          ]
-        },
-        {
-          "dashedName": "python-loops-and-sequences",
-          "blocks": [
-            { "dashedName": "lecture-working-with-loops-and-sequences" },
-            { "dashedName": "workshop-placeholder-loops-and-sequences" },
-            { "dashedName": "lab-placeholder-loops-and-sequences" },
-            { "dashedName": "review-loops-and-sequences" },
-            { "dashedName": "quiz-loops-and-sequences" }
-          ]
-        },
-        {
-          "dashedName": "python-dictionaries-and-sets",
-          "blocks": [
-            { "dashedName": "lecture-working-with-dictionaries-and-sets" },
-            { "dashedName": "lecture-working-with-modules" },
-            { "dashedName": "workshop-placeholder-dictionaries-and-sets" },
-            { "dashedName": "lab-placeholder-dictionaries-and-sets" },
-            { "dashedName": "review-dictionaries-and-sets" },
-            { "dashedName": "quiz-dictionaries-and-sets" }
-          ]
-        },
-        {
-          "dashedName": "python-error-handling",
-          "blocks": [
-            { "dashedName": "lecture-understanding-error-handling" },
-            { "dashedName": "lab-isbn-validator" },
-            { "dashedName": "review-error-handling" },
-            { "dashedName": "quiz-error-handling" }
-          ]
-        },
-        {
-          "dashedName": "python-classes-and-objects",
-          "blocks": [
-            { "dashedName": "lecture-classes-and-objects" },
-            { "dashedName": "workshop-placeholder-classes-and-objects" },
-            { "dashedName": "lab-budget-app" },
-            { "dashedName": "review-classes-and-objects" },
-            { "dashedName": "quiz-classes-and-objects" }
-          ]
-        },
-        {
-          "dashedName": "python-object-oriented-programming",
-          "blocks": [
-            {
-              "dashedName": "lecture-understanding-object-oriented-programming-and-encapsulation"
-            },
-            { "dashedName": "workshop-placeholder-oop-1" },
-            { "dashedName": "lab-placeholder-oop-1" },
-            {
-              "dashedName": "lecture-understanding-inheritance-and-polymorphism"
-            },
-            { "dashedName": "workshop-placeholder-oop-2" },
-            { "dashedName": "lab-polygon-area-calculator" },
-            { "dashedName": "lecture-understanding-abstraction" },
-            { "dashedName": "workshop-placeholder-oop-3" },
-            { "dashedName": "lab-placeholder-oop-3" },
-            { "dashedName": "review-object-oriented-programming" },
-            { "dashedName": "quiz-object-oriented-programming" }
-          ]
-        },
-        {
-          "dashedName": "python-linear-data-structures",
-          "blocks": [
-            { "dashedName": "lecture-working-with-common-data-structures" },
-            { "dashedName": "workshop-linked-list-class" },
-            { "dashedName": "lab-hash-table-class" },
-            { "dashedName": "review-data-structures" },
-            { "dashedName": "quiz-data-structures" }
-          ]
-        },
-        {
-          "dashedName": "python-algorithms",
-          "blocks": [
-            { "dashedName": "lecture-searching-and-sorting-algorithms" },
-            { "dashedName": "workshop-binary-search" },
-            { "dashedName": "lab-bisection-method" },
-            { "dashedName": "workshop-merge-sort" },
-            { "dashedName": "lab-quick-sort" },
-            { "dashedName": "lab-selection-sort" },
-            { "dashedName": "lab-luhn-argorithm" },
-            { "dashedName": "review-searching-and-sorting-algorithms" },
-            { "dashedName": "quiz-searching-and-sorting-algorithms" }
-          ]
-        },
-        {
-          "dashedName": "python-graphs-and-trees",
-          "blocks": [
-            { "dashedName": "lecture-understanding-graphs-and-trees" },
-            { "dashedName": "workshop-shortest-path-algorithm" },
-            { "dashedName": "lab-adjacency-list-matrix-converter" },
-            { "dashedName": "workshop-breadth-first-search" },
-            { "dashedName": "lab-depth-first-search" },
-            { "dashedName": "review-graphs-and-trees" },
-            { "dashedName": "quiz-graphs-and-trees" }
-          ]
-        },
-        {
-          "dashedName": "python-dynamic-programming",
-          "blocks": [
-            { "dashedName": "lecture-understanding-dynamic-programming" },
-            { "dashedName": "lab-nth-fibonacci-number" },
-            { "dashedName": "review-dynamic-programming" },
-            { "dashedName": "quiz-dynamic-programming" }
-          ]
-        },
-        {
-          "moduleType": "review",
-          "dashedName": "review-python",
-          "blocks": [{ "dashedName": "review-python" }]
-        },
-        {
-          "moduleType": "exam",
-          "comingSoon": true,
-          "dashedName": "exam-python",
-          "blocks": []
         }
       ]
     },

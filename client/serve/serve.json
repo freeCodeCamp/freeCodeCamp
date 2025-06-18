@@ -20,6 +20,15 @@
       ]
     },
     {
+      "source": "js/test-runner/*/*.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=172800, immutable"
+        }
+      ]
+    },
+    {
       "source": "{misc/*.js,sw.js,python-input-sw.js}",
       "headers": [
         {
@@ -106,6 +115,18 @@
     {
       "source": "/learn/project-euler/project-euler-problems-1-to-100/problem-1-multiples-of-3-and-5",
       "destination": "/learn/project-euler/project-euler-problems-1-to-100/problem-1-multiples-of-3-or-5"
+    },
+    {
+      "source": "/learn/coding-interview-prep/take-home-projects/build-a-simon-game",
+      "destination": "/learn/coding-interview-prep/take-home-projects/build-a-memory-light-game"
+    },
+    {
+      "source": "/learn/relational-database/learn-relational-databases-by-building-a-mario-database/build-a-mario-database",
+      "destination": "/learn/relational-database/learn-relational-databases-by-building-a-database-of-video-game-characters/build-a-database-of-video-game-characters"
+    },
+    {
+      "source": "/learn/relational-database/learn/javascript-algorithms-and-data-structures-v8/build-a-pokemon-search-app-project/build-a-pokemon-search-app",
+      "destination": "/learn/javascript-algorithms-and-data-structures-v8/build-an-rpg-creature-search-app-project/build-an-rpg-creature-search-app"
     }
   ]
 }

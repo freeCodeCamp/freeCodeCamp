@@ -1,11 +1,24 @@
 import { flow } from 'lodash-es';
 import i18next, { type i18n } from 'i18next';
 
+import {
+  version as _helperVersion,
+  type FCCTestRunner
+} from '../../../../../tools/client-plugins/browser-scripts/test-runner';
+
 import { format } from '../../../utils/format';
 import type {
   FrameDocument,
   PythonDocument
 } from '../../../../../tools/client-plugins/browser-scripts';
+
+export const helperVersion = _helperVersion;
+
+declare global {
+  interface Window {
+    FCCTestRunner: FCCTestRunner;
+  }
+}
 
 const utilsFormat: <T>(x: T) => string = format;
 
@@ -30,11 +43,8 @@ export interface Context {
   build: string;
   sources: Source;
   hooks?: Hooks;
-  loadEnzyme?: () => void;
-}
-
-export interface TestRunnerConfig {
-  proxyLogger: ProxyLogger;
+  type: 'dom' | 'javascript' | 'python';
+  loadEnzyme?: boolean;
 }
 
 export type ProxyLogger = (msg: string) => void;
@@ -76,10 +86,9 @@ export const scrollManager = new ScrollManager();
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
 export const mainPreviewId = 'fcc-main-frame';
-// the test frame is responsible for running the assert tests
-export const testId = 'fcc-test-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
+const ASSET_PATH = `/js/test-runner/${helperVersion}/`;
 
 const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 
@@ -133,11 +142,7 @@ const createHeader = (id = mainPreviewId) =>
         else if (href.match(/^#.+/)) {
           e.preventDefault();
           const scrollId = href.substring(1);
-          const scrollElem = document.getElementById(scrollId);
-
-          if (scrollElem) {
-            scrollElem.scrollIntoView();
-          }
+          window.location.hash = scrollId;
         }
       }
     }, false);
@@ -152,14 +157,6 @@ const createHeader = (id = mainPreviewId) =>
     }, false);
   </script>
 `;
-
-const createBeforeAllScript = (beforeAll?: string) => {
-  if (!beforeAll) return '';
-
-  return `<script>
-  ${beforeAll};
-</script>`;
-};
 
 type TestResult =
   | { pass: boolean }
@@ -176,20 +173,43 @@ function getContentDocument<T extends Document = FrameDocument>(
 }
 
 export const runTestInTestFrame = async function (
-  document: Document,
   test: string,
-  timeout: number
+  timeout: number,
+  type: 'dom' | 'javascript' | 'python'
 ): Promise<TestResult | undefined> {
-  const contentDocument = getContentDocument(document, testId);
-  if (contentDocument) {
-    return await Promise.race([
-      new Promise<
-        { pass: boolean } | { err: { message: string; stack?: string } }
-        // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
-      >((_, reject) => setTimeout(() => reject('timeout'), timeout)),
-      contentDocument.__runTest(test)
-    ]);
-  }
+  const runner = window?.FCCTestRunner.getRunner(type);
+
+  return await Promise.race([
+    new Promise<
+      { pass: boolean } | { err: { message: string; stack?: string } }
+    >((_, reject) => setTimeout(() => reject(Error('timeout')), timeout)),
+    runner?.runTest(test)
+  ]);
+};
+
+export const prepTestRunner = async ({
+  sources,
+  loadEnzyme,
+  build,
+  hooks,
+  type
+}: {
+  sources: Source;
+  loadEnzyme?: boolean;
+  build: string;
+  hooks?: Hooks;
+  type: 'dom' | 'javascript' | 'python';
+}) => {
+  const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
+  await loadTestRunner(document);
+  await window?.FCCTestRunner.createTestRunner({
+    type,
+    code: sources,
+    source,
+    assetPath: ASSET_PATH,
+    hooks,
+    loadEnzyme
+  });
 };
 
 export const runPythonInFrame = function (
@@ -204,10 +224,49 @@ export const runPythonInFrame = function (
   void contentDocument?.__runPython(code);
 };
 
+const TEST_RUNNER_ID = 'fcc-test-runner';
+const createRunnerScript = (document: Document) => {
+  const script = document.createElement('script');
+  script.src = ASSET_PATH + 'index.js';
+  script.id = TEST_RUNNER_ID;
+  return script;
+};
+
+const loadTestRunner = async (document: Document) => {
+  const done = new Promise<void>((resolve, reject) => {
+    const alreadyLoaded = !!window?.FCCTestRunner;
+
+    if (alreadyLoaded) return resolve();
+
+    const script =
+      document.getElementById(TEST_RUNNER_ID) ?? createRunnerScript(document);
+
+    const errorListener = (err: ErrorEvent) => {
+      console.error(err);
+      reject(new Error('Test runner failed to load'));
+    };
+
+    script.addEventListener(
+      'load',
+      () => {
+        // Since it's loaded, we no longer need to listen for errors
+        script.removeEventListener('error', errorListener);
+        resolve();
+      },
+      { once: true }
+    );
+    script.addEventListener('error', errorListener, { once: true });
+
+    document.head.appendChild(script);
+  });
+  return done;
+};
+
 const createFrame =
   (document: Document, id: string, title?: string) =>
   (frameContext: Context) => {
     const frame = document.createElement('iframe');
+
     frame.srcdoc = createContent(id, frameContext);
     frame.id = id;
     if (typeof title === 'string') {
@@ -220,37 +279,20 @@ const createFrame =
     };
   };
 
-const hiddenFrameClassName = 'hide-test-frame';
-const mountFrame =
-  (document: Document, id: string) => (frameContext: Context) => {
-    const { element }: { element: HTMLIFrameElement } = frameContext;
-    const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
-    if (oldFrame) {
-      element.className = oldFrame.className || hiddenFrameClassName;
-      oldFrame.parentNode!.replaceChild(element, oldFrame);
-      // only test frames can be added (and hidden) here, other frames must be
-      // added by react
-    } else if (id === testId) {
-      element.className = hiddenFrameClassName;
-      document.body.appendChild(element);
-    }
-    return {
-      ...frameContext,
-      element,
-      window: element.contentWindow
-    };
-  };
-
-// Tests should not use functions that directly interact with the user, so
-// they're overridden. If tests need to spy on these functions, they can supply
-// the spy themselves.
-const overrideUserInteractions = (frameContext: Context) => {
-  if (frameContext.window) {
-    frameContext.window.prompt = () => null;
-    frameContext.window.alert = () => {};
-    frameContext.window.confirm = () => false;
+const mountFrame = (document: Document) => (frameContext: Context) => {
+  const { element }: { element: HTMLIFrameElement } = frameContext;
+  const oldFrame = document.getElementById(element.id) as HTMLIFrameElement;
+  if (oldFrame) {
+    element.className = oldFrame.className;
+    oldFrame.parentNode!.replaceChild(element, oldFrame);
+    // only test frames can be added (and hidden) here, other frames must be
+    // added by react
   }
-  return frameContext;
+  return {
+    ...frameContext,
+    element,
+    window: element.contentWindow
+  };
 };
 
 const noop = <T>(x: T) => x;
@@ -311,21 +353,6 @@ const updateWindowI18next = (frameContext: Context) => {
   if (frameContext?.window) {
     frameContext.window.i18nContent = i18next;
   }
-  return frameContext;
-};
-
-const initTestFrame = (frameReady?: () => void) => (frameContext: Context) => {
-  waitForFrame(frameContext)
-    .then(async () => {
-      const { sources, loadEnzyme } = frameContext;
-      await frameContext.window?.document?.__initTestFrame({
-        code: sources,
-        loadEnzyme
-      });
-
-      if (frameReady) frameReady();
-    })
-    .catch(handleDocumentNotFound);
   return frameContext;
 };
 
@@ -390,16 +417,24 @@ const waitForFrame = (frameContext: Context) => {
   });
 };
 
-export const createContent = (
-  id: string,
-  { build, sources, hooks }: { build: string; sources: Source; hooks?: Hooks }
-) => {
+export const prefixDoctype = ({
+  build,
+  sources
+}: {
+  build: string;
+  sources: Source;
+}) => {
   // DOCTYPE should be the first thing written to the frame, so if the user code
   // includes a DOCTYPE declaration, we need to find it and write it first.
   const doctype = sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
-  return (
-    doctype + createBeforeAllScript(hooks?.beforeAll) + createHeader(id) + build
-  );
+  return doctype + build;
+};
+
+const createContent = (
+  id: string,
+  { build, sources }: { build: string; sources: Source; hooks?: Hooks }
+) => {
+  return prefixDoctype({ build: createHeader(id) + build, sources });
 };
 
 const restoreScrollPosition = (frameContext: Context) => {
@@ -437,20 +472,6 @@ export const createProjectPreviewFramer = (
     frameTitle
   });
 
-export const createTestFramer = (
-  document: Document,
-  proxyLogger: ProxyLogger,
-  frameReady: () => void
-): ((args: Context) => void) =>
-  createFramer({
-    document,
-    id: testId,
-    init: initTestFrame,
-    proxyLogger,
-    frameReady,
-    updateWindowFunctions: overrideUserInteractions
-  });
-
 const createFramer = ({
   document,
   id,
@@ -470,7 +491,7 @@ const createFramer = ({
 }) =>
   flow(
     createFrame(document, id, frameTitle),
-    mountFrame(document, id),
+    mountFrame(document),
     updateWindowFunctions ?? noop,
     updateProxyConsole(proxyLogger),
     updateWindowI18next,
