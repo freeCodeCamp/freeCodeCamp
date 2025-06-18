@@ -192,7 +192,7 @@ export type ChallengeNode = {
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
-    hooks?: { beforeAll: string };
+    hooks?: { beforeAll?: string; beforeEach?: string; afterEach?: string };
     id: string;
     instructions: string;
     isComingSoon: boolean;
