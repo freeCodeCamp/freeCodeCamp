@@ -1,0 +1,21 @@
+{
+  "name": "Build a Pin Extractor",
+  "blockLayout": "challenge-grid",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-pin-extractor",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "6852db755c9c1274d75aae9a",
+      "title": "Step 1"
+    },
+    {
+      "id": "6852dd8486c7ee0171322950",
+      "title": "Step 2"
+    }
+  ],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

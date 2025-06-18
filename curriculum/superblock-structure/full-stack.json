@@ -1204,7 +1204,7 @@
           "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-working-with-loops-and-sequences" },
-            { "dashedName": "workshop-placeholder-loops-and-sequences" },
+            { "dashedName": "workshop-pin-extractor" },
             { "dashedName": "lab-number-pattern-generator" },
             { "dashedName": "review-loops-and-sequences" },
             { "dashedName": "quiz-loops-and-sequences" }
