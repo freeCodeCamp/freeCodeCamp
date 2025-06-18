@@ -1865,6 +1865,12 @@
           "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."
         ]
       },
+      "lab-debug-pet-adoption-page": {
+        "title": "Debug a Pet Adoption Page",
+        "intro": [
+          "In this lab, you will find and fix the errors in this pet adoption page."
+        ]
+      },
       "workshop-cat-photo-app": {
         "title": "Build a Cat Photo App",
         "intro": [
