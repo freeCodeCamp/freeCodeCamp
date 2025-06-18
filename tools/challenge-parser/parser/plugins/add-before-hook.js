@@ -4,30 +4,35 @@ function plugin() {
   return transformer;
 
   function transformer(tree, file) {
-    const section = getSection(tree, '--before-all--');
+    const beforeAll = getHook(tree, '--before-all--');
+    const beforeEach = getHook(tree, '--before-each--');
 
-    if (section.length === 0) return;
-    if (section.length > 1)
-      throw Error(
-        '#--before-all-- section must only contain a single code block'
-      );
+    if (!beforeAll && !beforeEach) return;
 
-    const codeNode = section[0];
-
-    if (codeNode.type !== 'code')
-      throw Error('#--before-all-- section must contain a code block');
-    if (codeNode.lang !== 'javascript' && codeNode.lang !== 'js')
-      throw Error('#--before-all-- hook must be written in JavaScript');
-
-    const beforeAll = getBeforeAll(codeNode);
-    file.data.hooks = { beforeAll };
+    file.data.hooks = file.data.hooks = {
+      ...(beforeAll && { beforeAll }),
+      ...(beforeEach && { beforeEach })
+    };
   }
 }
 
-function getBeforeAll(codeNode) {
-  const beforeAll = codeNode.value;
+function getHook(tree, sectionName) {
+  const section = getSection(tree, sectionName);
 
-  return beforeAll;
+  if (section.length === 0) return;
+  if (section.length > 1)
+    throw Error(
+      `#${sectionName} section must only contain a single code block`
+    );
+
+  const codeNode = section[0];
+
+  if (codeNode.type !== 'code')
+    throw Error(`#${sectionName} section must contain a code block`);
+  if (codeNode.lang !== 'javascript' && codeNode.lang !== 'js')
+    throw Error(`#${sectionName} hook must be written in JavaScript`);
+
+  return codeNode.value;
 }
 
 module.exports = plugin;
