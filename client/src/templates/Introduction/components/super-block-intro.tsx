@@ -224,7 +224,10 @@ function SuperBlockIntro({
 
   const showFSDnewIntro = useFeatureIsOn('fsd-new-intro');
 
-  const showIntroTopB = completedChallenges.length === 0 && showFSDnewIntro;
+  const showIntroTopB =
+    completedChallenges.length === 0 &&
+    superBlock === SuperBlocks.FullStackDeveloper &&
+    showFSDnewIntro;
 
   return (
     <>

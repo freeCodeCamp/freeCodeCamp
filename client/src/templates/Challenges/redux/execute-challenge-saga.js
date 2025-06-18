@@ -210,7 +210,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
-      } else if (type) {
+      } else if (type == 'IndentationError' || type == 'SyntaxError') {
         const msgKey =
           type === 'IndentationError'
             ? 'learn.indentation-error'

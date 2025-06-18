@@ -890,7 +890,7 @@
       "learn-special-methods-by-building-a-vector-space": {
         "title": "Learn Special Methods by Building a Vector Space",
         "intro": [
-          "Python special methods are called in response to specific operations and enable you to customize the behaviour of your objects in a detailed and effective way.",
+          "Python special methods are called in response to specific operations and enable you to customize the behavior of your objects in a detailed and effective way.",
           "In this project, you are going to explore some of the most common special methods while learning about vectors by building a vector space."
         ]
       },
@@ -1799,6 +1799,7 @@
       "review-javascript-fundamentals": "JavaScript Fundamentals Review",
       "higher-order-functions-and-callbacks": "Higher Order Functions and Callbacks",
       "dom-manipulation-and-events": "DOM Manipulation and Events",
+      "js-a11y": "JavaScript and Accessibility",
       "debugging-javascript": "Debugging",
       "basic-regex": "Basic Regex",
       "form-validation": "Form Validation",
@@ -3370,6 +3371,19 @@
           "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
         ]
       },
+      "review-js-a11y": {
+        "title": "JavaScript and Accessibility Review",
+        "intro": [
+          "Before you're quizzed on JavaScript and accessibility, you should review what you've learned about it.",
+          "Open up this page to review concepts including how to work with the <code>aria-expanded</code>, <code>aria-live</code>, and <code>aria-controls</code> attributes."
+        ]
+      },
+      "quiz-js-a11y": {
+        "title": "JavaScript and Accessibility Quiz",
+        "intro": [
+          "Test your knowledge of JavaScript and accessibility best practices with this quiz."
+        ]
+      },
       "lecture-debugging-techniques": {
         "title": "Debugging Techniques",
         "intro": [
@@ -4218,7 +4232,12 @@
           "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
         ]
       },
-      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
+      "lab-quicksort": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort a list of integers."
+        ]
+      },
       "lab-selection-sort": {
         "title": "Implement the Selection Sort Algorithm",
         "intro": [
