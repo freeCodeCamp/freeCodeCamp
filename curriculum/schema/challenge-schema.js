@@ -302,7 +302,9 @@ const schema = Joi.object()
     superOrder: Joi.number(),
     suborder: Joi.number(),
     hooks: Joi.object().keys({
-      beforeAll: Joi.string().allow('')
+      beforeAll: Joi.string().allow(''),
+      beforeEach: Joi.string().allow(''),
+      afterEach: Joi.string().allow('')
     }),
     tests: Joi.array()
       .items(
