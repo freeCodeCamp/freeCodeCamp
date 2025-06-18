@@ -4106,9 +4106,11 @@
         "title": "Classes and Objects",
         "intro": ["Learn about Classes and Objects in these lectures."]
       },
-      "workshop-placeholder-classes-and-objects": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "workshop-email-simulator": {
+        "title": "Build an Email Simulator",
+        "intro": [
+          "In this workshop you will implement classes and objects by building an email simulator that simulates sending, receiving, and managing emails between different users."
+        ]
       },
       "lab-budget-app": {
         "title": "Build a Budget App",
