@@ -72,19 +72,19 @@ foo();`);
 
   it('should throw an error if the beforeAll section has more than one child', () => {
     expect(() => plugin(withInvalidHookAST, file)).toThrow(
-      `#--before-all-- section must only contain a single code block`
+      `# --before-all-- section must only contain a single code block`
     );
   });
 
   it('should throw an error if the beforeAll section does not contain a code block', () => {
     expect(() => plugin(withAnotherInvalidHookAST, file)).toThrow(
-      `#--before-all-- section must contain a code block`
+      `# --before-all-- section must contain a code block`
     );
   });
 
   it('should throw an error if the code language is not javascript', () => {
     expect(() => plugin(withNonJSHookAST, file)).toThrow(
-      `#--before-all-- hook must be written in JavaScript`
+      `# --before-all-- hook must be written in JavaScript`
     );
   });
 
@@ -104,19 +104,19 @@ setup();`);
 
   it('should throw an error if the beforeEach section has more than one child', () => {
     expect(() => plugin(withInvalidBeforeEachHookAST, file)).toThrow(
-      `#--before-each-- section must only contain a single code block`
+      `# --before-each-- section must only contain a single code block`
     );
   });
 
   it('should throw an error if the beforeEach section does not contain a code block', () => {
     expect(() => plugin(withAnotherInvalidBeforeEachHookAST, file)).toThrow(
-      `#--before-each-- section must contain a code block`
+      `# --before-each-- section must contain a code block`
     );
   });
 
   it('should throw an error if the beforeEach code language is not javascript', () => {
     expect(() => plugin(withNonJSBeforeEachHookAST, file)).toThrow(
-      `#--before-each-- hook must be written in JavaScript`
+      `# --before-each-- hook must be written in JavaScript`
     );
   });
 
@@ -131,19 +131,19 @@ cleanup();`);
 
   it('should throw an error if the afterEach section has more than one child', () => {
     expect(() => plugin(withInvalidAfterEachHookAST, file)).toThrow(
-      `#--after-each-- section must only contain a single code block`
+      `# --after-each-- section must only contain a single code block`
     );
   });
 
   it('should throw an error if the afterEach section does not contain a code block', () => {
     expect(() => plugin(withAnotherInvalidAfterEachHookAST, file)).toThrow(
-      `#--after-each-- section must contain a code block`
+      `# --after-each-- section must contain a code block`
     );
   });
 
   it('should throw an error if the afterEach code language is not javascript', () => {
     expect(() => plugin(withNonJSAfterEachHookAST, file)).toThrow(
-      `#--after-each-- hook must be written in JavaScript`
+      `# --after-each-- hook must be written in JavaScript`
     );
   });
 });
