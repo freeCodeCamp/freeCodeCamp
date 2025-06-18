@@ -796,7 +796,15 @@
     "iframe-form-submit-alert": "通常这个表单将被提交！工作正常，这将被提交到：{{externalLink}}",
     "document-notfound": "找不到文件",
     "slow-load-msg": "看起来这比平常花费更长时间，请尝试刷新页面。",
-    "navigation-warning": "如果你离开这个页面，你将丢失你的进度。你确定吗？"
+    "navigation-warning": "如果你离开这个页面，你将丢失你的进度。你确定吗？",
+    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
+    "fsd-b-cta": "Start Learning",
+    "fsd-b-benefit-1-title": "100k+ Students",
+    "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
+    "fsd-b-benefit-2-title": "Professional Certification",
+    "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
+    "fsd-b-benefit-3-title": "500+ Exercises",
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
   },
   "icons": {
     "gold-cup": "金奖杯",

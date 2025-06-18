@@ -796,7 +796,15 @@
     "iframe-form-submit-alert": "Kwa kawaida fomu hii ingewasilishwa! Inafanya kazi. Hii itawasilishwa kwa: {{externalLink}}",
     "document-notfound": "hati haijapatikana",
     "slow-load-msg": "Inaonekana hii inachukua muda mrefu kuliko kawaida, tafadhali jaribu pakia upya ukurasa.",
-    "navigation-warning": "Ukiondoka kwenye ukurasa huu, utapoteza maendeleo yako. Una uhakika?"
+    "navigation-warning": "Ukiondoka kwenye ukurasa huu, utapoteza maendeleo yako. Una uhakika?",
+    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
+    "fsd-b-cta": "Start Learning",
+    "fsd-b-benefit-1-title": "100k+ Students",
+    "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
+    "fsd-b-benefit-2-title": "Professional Certification",
+    "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
+    "fsd-b-benefit-3-title": "500+ Exercises",
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
   },
   "icons": {
     "gold-cup": "Kombe la dhahabu",
