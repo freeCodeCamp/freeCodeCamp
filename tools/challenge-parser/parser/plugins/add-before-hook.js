@@ -6,12 +6,14 @@ function plugin() {
   function transformer(tree, file) {
     const beforeAll = getHook(tree, '--before-all--');
     const beforeEach = getHook(tree, '--before-each--');
+    const afterEach = getHook(tree, '--after-each--');
 
-    if (!beforeAll && !beforeEach) return;
+    if (!beforeAll && !beforeEach && !afterEach) return;
 
     file.data.hooks = file.data.hooks = {
       ...(beforeAll && { beforeAll }),
-      ...(beforeEach && { beforeEach })
+      ...(beforeEach && { beforeEach }),
+      ...(afterEach && { afterEach })
     };
   }
 }
