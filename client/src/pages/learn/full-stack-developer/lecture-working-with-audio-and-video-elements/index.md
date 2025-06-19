@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Working with Audio and Video Elements
 
-This is a test for the new project-based curriculum.
+In these lectures, you will learn how to work with the `audio` and `video` elements.
