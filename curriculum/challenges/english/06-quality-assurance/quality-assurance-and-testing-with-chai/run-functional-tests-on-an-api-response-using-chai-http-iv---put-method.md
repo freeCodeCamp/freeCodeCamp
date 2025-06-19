@@ -16,7 +16,7 @@ Now that you know how to test a `PUT` request, it's your turn to do it from scra
 
 # --instructions--
 
-Within `tests/2_functional-tests.js`, alter the `'Send {surname: "da Verrazzano"}'` test (`// #4`) and use the `put` and `send` methods to test the  `'/travellers'` endpoint.
+Within `tests/2_functional-tests.js`, alter the `'Send {surname: "da Verrazzano"}'` test (`// #4`) and use the `put` and `send` methods to test the `'/travellers'` endpoint.
 
 Send the following JSON object with your PUT request:
 
@@ -40,73 +40,87 @@ Follow the assertion order above - we rely on it. Also, be sure to remove `asser
 All tests should pass
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=3').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const params = new URLSearchParams();
+params.append('type', 'functional');
+params.append('n', 3);
+fetch(code + `/_api/get-tests?${params}`)
+  .then(response => response.json())
+  .then(data => {
+    assert.equal(data.state, 'passed');
+  })
+  .catch(error => {
+    throw new Error(error.message);
+  });
 ```
 
 You should test for `res.status` to be 200
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=3').then(
-    (data) => {
-      assert.equal(data.assertions[0].method, 'equal');
-      assert.equal(data.assertions[0].args[0], 'res.status');
-      assert.equal(data.assertions[0].args[1], '200');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const params = new URLSearchParams();
+params.append('type', 'functional');
+params.append('n', 3);
+fetch(code + `/_api/get-tests?${params}`)
+  .then(response => response.json())
+  .then(data => {
+    assert.equal(data.assertions[0].method, 'equal');
+    assert.equal(data.assertions[0].args[0], 'res.status');
+    assert.equal(data.assertions[0].args[1], '200');
+  })
+  .catch(error => {
+    throw new Error(error.message);
+  });
 ```
 
 You should test for `res.type` to be `'application/json'`
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=3').then(
-    (data) => {
-      assert.equal(data.assertions[1].method, 'equal');
-      assert.equal(data.assertions[1].args[0], 'res.type');
-      assert.match(data.assertions[1].args[1], /('|")application\/json\1/);
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const params = new URLSearchParams();
+params.append('type', 'functional');
+params.append('n', 3);
+fetch(code + `/_api/get-tests?${params}`)
+  .then(response => response.json())
+  .then(data => {
+    assert.equal(data.assertions[1].method, 'equal');
+    assert.equal(data.assertions[1].args[0], 'res.type');
+    assert.match(data.assertions[1].args[1], /('|")application\/json\1/);
+  })
+  .catch(error => {
+    throw new Error(error.message);
+  });
 ```
 
 You should test for `res.body.name` to be `'Giovanni'`
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=3').then(
-    (data) => {
-      assert.equal(data.assertions[2].method, 'equal');
-      assert.equal(data.assertions[2].args[0], 'res.body.name');
-      assert.match(data.assertions[2].args[1], /('|")Giovanni\1/);
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const params = new URLSearchParams();
+params.append('type', 'functional');
+params.append('n', 3);
+fetch(code + `/_api/get-tests?${params}`)
+  .then(response => response.json())
+  .then(data => {
+    assert.equal(data.assertions[2].method, 'equal');
+    assert.equal(data.assertions[2].args[0], 'res.body.name');
+    assert.match(data.assertions[2].args[1], /('|")Giovanni\1/);
+  })
+  .catch(error => {
+    throw new Error(error.message);
+  });
 ```
 
 You should test for `res.body.surname` to be `'da Verrazzano'`
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=3').then(
-    (data) => {
-      assert.equal(data.assertions[3].method, 'equal');
-      assert.equal(data.assertions[3].args[0], 'res.body.surname');
-      assert.match(data.assertions[3].args[1], /('|")da Verrazzano\1/);
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const params = new URLSearchParams();
+params.append('type', 'functional');
+params.append('n', 3);
+fetch(code + `/_api/get-tests?${params}`)
+  .then(response => response.json())
+  .then(data => {
+    assert.equal(data.assertions[3].method, 'equal');
+    assert.equal(data.assertions[3].args[0], 'res.body.surname');
+    assert.match(data.assertions[3].args[1], /('|")da Verrazzano\1/);
+  })
+  .catch(error => {
+    throw new Error(error.message);
+  });
 ```
-
