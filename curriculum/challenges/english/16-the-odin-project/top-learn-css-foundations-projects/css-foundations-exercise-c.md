@@ -87,7 +87,7 @@ const classTwo = document.querySelectorAll('button')?.[1].classList?.[0];
 
 function eitherOr() {
   const a = new __helpers.CSSHelp(document)
-  return a.getStyle(`.${classOne}, .${classTwo}`) ?? a.getStyle(`.${classTwo}, .${classOne}`);
+  return a.getStyle(`.${classTwo}, .${classTwo}`) ?? a.getStyle(`.${classTwo}, .${classOne}`);
 }
 
 assert.equal(eitherOr()?.fontFamily, 'Helvetica, "Times New Roman", sans-serif');
