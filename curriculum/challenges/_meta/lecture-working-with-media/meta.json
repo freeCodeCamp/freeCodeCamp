@@ -1,5 +1,5 @@
 {
-  "name": "Working with Media",
+  "name": "Working with the iframe Element",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
@@ -21,10 +21,6 @@
     {
       "id": "6716825aff3434a71fdc3e99",
       "title": "What Are SVGs, and When Should You Use Them?"
-    },
-    {
-      "id": "67168278ac6df6a799555db5",
-      "title": "What Are the Roles of the HTML Audio and Video Elements, and How Do They Work?"
     },
     {
       "id": "671682b3983489a819507553",
