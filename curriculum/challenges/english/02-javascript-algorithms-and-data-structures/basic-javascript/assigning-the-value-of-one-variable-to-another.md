@@ -28,19 +28,22 @@ Assign the contents of `a` to variable `b`.
 You should not change code above the specified comment.
 
 ```js
-assert(/var a;/.test(__helpers.removeJSComments(code)) && /a = 7;/.test(__helpers.removeJSComments(code)) && /var b;/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /var a;/);
+assert.match(__helpers.removeJSComments(code), /a = 7;/);
+assert.match(__helpers.removeJSComments(code), /var b;/);
 ```
 
 `b` should have a value of `7`.
 
 ```js
-assert(typeof b === 'number' && b === 7);
+assert.isNumber(b);
+assert.strictEqual(b, 7); 
 ```
 
 `a` should be assigned to `b` with `=`.
 
 ```js
-assert(/b\s*=\s*a\s*/g.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /b\s*=\s*a\s*/g);
 ```
 
 # --seed--
@@ -54,14 +57,6 @@ if (typeof a != 'undefined') {
 if (typeof b != 'undefined') {
   b = undefined;
 }
-```
-
-## --after-user-code--
-
-```js
-(function(a, b) {
-  return 'a = ' + a + ', b = ' + b;
-})(a, b);
 ```
 
 ## --seed-contents--
