@@ -1856,6 +1856,12 @@
       "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
     },
     "module-intros": {
+      "js-a11y": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will learn how to work with the aria-expanded, aria-live and aria-controls attributes inside of your HTML, CSS and JavaScript applications."
+        ]
+      },
       "css-libraries-and-frameworks": {
         "note": "Coming Fall 2025",
         "intro": [
