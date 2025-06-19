@@ -363,14 +363,10 @@ test.describe('Donation modal appearance logic - Certified user claiming a new m
     );
 
     // Wait for the page content to render
-    // TODO: Change the selector to `getByRole('radiogroup')` when we have migrated the MCQ component to fcc/ui
-    await expect(page.locator("div[class='video-quiz-options']")).toHaveCount(
-      3
-    );
 
-    const radioGroups = await page
-      .locator("div[class='video-quiz-options']")
-      .all();
+    await expect(page.getByRole('radiogroup')).toHaveCount(3);
+
+    const radioGroups = await page.getByRole('radiogroup').all();
 
     await radioGroups[0].getByRole('radio').nth(1).click({ force: true });
     await radioGroups[1].getByRole('radio').nth(2).click({ force: true });
