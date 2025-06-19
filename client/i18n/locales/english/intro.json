@@ -2115,6 +2115,12 @@
           "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> element."
         ]
       },
+      "lecture-working-with-images-and-svgs": {
+        "title": "Working with Images and SVGs",
+        "intro": [
+          "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
+        ]
+      },
       "lecture-working-with-media": {
         "title": "Working with the iframe Element",
         "intro": [
