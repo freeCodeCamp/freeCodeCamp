@@ -12,20 +12,20 @@
       "id": "6823ac607bfdbc46331b2559",
       "title": "Step 1"
     },
-    {
-      "id": "682cd206883fc7b25eb539c5",
+        {
+      "id": "682ba2318000b62f179bdf04",
       "title": "Step 2"
     },
     {
-      "id": "682cd20b883fc7b25eb539c6",
+      "id": "682cd206883fc7b25eb539c5",
       "title": "Step 3"
     },
     {
-      "id": "682ba2318000b62f179bdf04",
+      "id": "6823c1a0bcada44f32bf0bdc",
       "title": "Step 4"
     },
     {
-      "id": "6823c1a0bcada44f32bf0bdc",
+      "id": "682cd20b883fc7b25eb539c6",
       "title": "Step 5"
     },
     {
@@ -45,8 +45,12 @@
       "title": "Step 9"
     },
     {
-      "id": "6823e637c1c0ed56f781b4fc",
+      "id": "683921c4769fd23dbadec2fe",
       "title": "Step 10"
+    },
+    {
+      "id": "6823e637c1c0ed56f781b4fc",
+      "title": "Step 11"
     }
   ],
   "helpCategory": "HTML-CSS"

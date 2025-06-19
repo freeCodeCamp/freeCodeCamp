@@ -584,12 +584,6 @@ pre code {
   border-radius: 4px;
 }
 
-.alert-info {
-  color: #31708f;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-}
-
 .alert .btn,
 [role='alert'] .btn {
   background-color: transparent;

@@ -232,7 +232,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     challengeType === challengeTypes.multifilePythonCertProject ||
     challengeType === challengeTypes.lab ||
     challengeType === challengeTypes.jsLab ||
-    challengeType === challengeTypes.pyLab;
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengeJs ||
+    challengeType === challengeTypes.dailyChallengePy;
   const isProjectStyle = projectBasedChallenge || isMultifileProject;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;

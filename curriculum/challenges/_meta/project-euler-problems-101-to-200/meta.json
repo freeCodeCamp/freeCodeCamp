@@ -238,11 +238,11 @@
     },
     {
       "id": "5900f40a1000cf542c50ff1d",
-      "title": "Problem 158: Exploring strings for which only one character comes lexicographically after its neighbour to the left"
+      "title": "Problem 158: Exploring strings for which only one character comes lexicographically after its neighbor to the left"
     },
     {
       "id": "5900f40c1000cf542c50ff1e",
-      "title": "Problem 159: Digital root sums of factorisations"
+      "title": "Problem 159: Digital root sums of factorizations"
     },
     {
       "id": "5900f40d1000cf542c50ff1f",
@@ -330,7 +330,7 @@
     },
     {
       "id": "5900f4231000cf542c50ff34",
-      "title": "Problem 181: Investigating in how many ways objects of two different colours can be grouped"
+      "title": "Problem 181: Investigating in how many ways objects of two different colors can be grouped"
     },
     {
       "id": "5900f4231000cf542c50ff35",
@@ -362,7 +362,7 @@
     },
     {
       "id": "5900f4291000cf542c50ff3c",
-      "title": "Problem 189: Tri-colouring a triangular grid"
+      "title": "Problem 189: Tri-coloring a triangular grid"
     },
     {
       "id": "5900f42b1000cf542c50ff3d",
@@ -382,7 +382,7 @@
     },
     {
       "id": "5900f42f1000cf542c50ff40",
-      "title": "Problem 194: Coloured Configurations"
+      "title": "Problem 194: Colored Configurations"
     },
     {
       "id": "5900f4311000cf542c50ff43",
@@ -394,7 +394,7 @@
     },
     {
       "id": "5900f4311000cf542c50ff44",
-      "title": "Problem 197: Investigating the behaviour of a recursively defined sequence"
+      "title": "Problem 197: Investigating the behavior of a recursively defined sequence"
     },
     {
       "id": "5900f4331000cf542c50ff45",

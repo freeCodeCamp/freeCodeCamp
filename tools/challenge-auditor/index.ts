@@ -11,7 +11,8 @@ import { availableLangs } from '../../shared/config/i18n';
 import { getChallengesForLang } from '../../curriculum/get-challenges';
 import {
   SuperBlocks,
-  getAuditedSuperBlocks
+  getAuditedSuperBlocks,
+  superBlockToFolderMap
 } from '../../shared/config/curriculum';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
@@ -26,36 +27,6 @@ type ChallengeNode = {
   superBlock: SuperBlocks;
   id: string;
   challengeType: number;
-};
-
-const superBlockFolderMap = {
-  'responsive-web-design': '01-responsive-web-design',
-  'javascript-algorithms-and-data-structures':
-    '02-javascript-algorithms-and-data-structures',
-  'front-end-development-libraries': '03-front-end-development-libraries',
-  'data-visualization': '04-data-visualization',
-  'back-end-development-and-apis': '05-back-end-development-and-apis',
-  'quality-assurance': '06-quality-assurance',
-  'scientific-computing-with-python': '07-scientific-computing-with-python',
-  'data-analysis-with-python': '08-data-analysis-with-python',
-  'information-security': '09-information-security',
-  'machine-learning-with-python': '10-machine-learning-with-python',
-  'coding-interview-prep': '11-coding-interview-prep',
-  'relational-database': '13-relational-database',
-  '2022/responsive-web-design': '14-responsive-web-design-22',
-  'javascript-algorithms-and-data-structures-v8':
-    '15-javascript-algorithms-and-data-structures-22',
-  'the-odin-project': '16-the-odin-project',
-  'college-algebra-with-python': '17-college-algebra-with-python',
-  'project-euler': '18-project-euler',
-  'foundational-c-sharp-with-microsoft':
-    '19-foundational-c-sharp-with-microsoft',
-  'a2-english-for-developers': '21-a2-english-for-developers',
-  'rosetta-code': '22-rosetta-code',
-  'python-for-everybody': '23-python-for-everybody',
-  'b1-english-for-developers': '24-b1-english-for-developers',
-  'full-stack-developer': '25-front-end-development',
-  'a2-professional-spanish': '26-a2-professional-spanish'
 };
 
 // Adding types for getChallengesForLang is possible, but not worth the effort
@@ -130,7 +101,7 @@ void (async () => {
           // we're not ready to audit the new curriculum yet
           (cert !== SuperBlocks.JsAlgoDataStructNew ||
             process.env.SHOW_UPCOMING_CHANGES === 'true') &&
-          file.startsWith(superBlockFolderMap[cert])
+          file.startsWith(superBlockToFolderMap[cert])
       )
     );
     const noMissingFiles = await auditChallengeFiles(auditedFiles, {

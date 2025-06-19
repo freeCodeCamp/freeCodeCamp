@@ -7,13 +7,13 @@ dashedName: learn-to-solve-problems-and-understand-errors-lesson-c
 
 # --description--
 
-## Psuedocode
+## Pseudocode
 
 Pseudocode is writing out the logic for your program in natural language instead of code. It helps you slow down and think through the steps your program will have to go through to solve the problem.
 
 Here’s an example of what the pseudocode for a program that prints all numbers up to an inputted number might look like:
 
-```bash
+```md
 When the user inputs a number
 Initialize a counter variable and set its value to zero
 While counter is smaller than user inputted number increment the counter by one

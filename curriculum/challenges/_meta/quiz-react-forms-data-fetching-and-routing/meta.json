@@ -2,7 +2,7 @@
   "name": "React Forms, Data Fetching and Routing Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-react-forms-data-fetching-and-routing",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

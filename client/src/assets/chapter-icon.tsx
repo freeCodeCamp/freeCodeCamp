@@ -9,6 +9,7 @@ import Html from './icons/html';
 import Css from './icons/css';
 import NodeIcon from './icons/node';
 import Python from './icons/python';
+import Graduation from './icons/graduation';
 
 const iconMap = {
   [FsdChapters.Welcome]: FreeCodeCampIcon,
@@ -18,7 +19,8 @@ const iconMap = {
   [FsdChapters.FrontendLibraries]: ReactIcon,
   [FsdChapters.RelationalDatabases]: DatabaseIcon,
   [FsdChapters.BackendJavascript]: NodeIcon,
-  [FsdChapters.Python]: Python
+  [FsdChapters.Python]: Python,
+  [FsdChapters.Career]: Graduation
 };
 
 type ChapterIconProps = {

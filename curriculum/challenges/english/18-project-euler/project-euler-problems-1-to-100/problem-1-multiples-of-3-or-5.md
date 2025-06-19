@@ -17,7 +17,7 @@ Find the sum of all the multiples of 3 or 5 below the provided parameter value `
 `multiplesOf3Or5(10)` should return a number.
 
 ```js
-assert(typeof multiplesOf3Or5(10) === 'number');
+assert.isNumber(multiplesOf3Or5(10));
 ```
 
 `multiplesOf3Or5(49)` should return 543.

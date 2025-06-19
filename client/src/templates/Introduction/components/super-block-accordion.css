@@ -126,16 +126,70 @@
   top: 1px;
 }
 
-.super-block-accordion .coming-soon {
-  background-color: var(--primary-background);
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  column-gap: 20px;
-  font-size: 1.5em;
-}
-
 .super-block-accordion .coming-soon-module {
   font-size: 1.25rem;
+}
+
+.super-block-accordion .module-intro {
+  margin-left: 17px;
+  margin-top: 16px;
+}
+
+.full-width-container {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
+.super-benefits-container {
+  background-color: var(--gray-75);
+  color: var(--gray-15);
+  padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.super-block-intro-page .btn-cta-big {
+  max-width: 350px;
+}
+
+.super-block-benefits > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.super-block-benefits p {
+  margin: 0;
+}
+
+.super-block-benefits {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.super-block-benefits svg path,
+.super-block-benefits p {
+  fill: var(--gray-15);
+}
+
+.super-block-benefits h3 {
+  color: var(--gray05);
+}
+
+@media screen and (min-width: 700px) {
+  .super-block-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .super-block-benefits svg {
+    margin-top: -10px;
+  }
 }

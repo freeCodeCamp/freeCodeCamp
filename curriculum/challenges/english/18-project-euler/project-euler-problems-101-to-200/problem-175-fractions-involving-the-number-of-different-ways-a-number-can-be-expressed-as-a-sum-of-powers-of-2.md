@@ -34,7 +34,7 @@ Give your answer as a string with comma separated integers, without any whitespa
 `shortenedBinaryExpansionOfNumber()` should return a string.
 
 ```js
-assert(typeof shortenedBinaryExpansionOfNumber() === 'string');
+assert.isString(shortenedBinaryExpansionOfNumber());
 ```
 
 `shortenedBinaryExpansionOfNumber()` should return the string `1,13717420,8`.

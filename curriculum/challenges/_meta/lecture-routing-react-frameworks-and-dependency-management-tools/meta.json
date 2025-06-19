@@ -2,7 +2,7 @@
   "name": "Routing, React Frameworks, and Dependency Management Tools",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-routing-react-frameworks-and-dependency-management-tools",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

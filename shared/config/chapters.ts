@@ -7,9 +7,10 @@ export enum FsdChapters {
   Css = 'css',
   Javascript = 'javascript',
   FrontendLibraries = 'frontend-libraries',
+  Python = 'python',
   RelationalDatabases = 'relational-databases',
   BackendJavascript = 'backend-javascript',
-  Python = 'python'
+  Career = 'career'
 }
 
 export interface Chapter {

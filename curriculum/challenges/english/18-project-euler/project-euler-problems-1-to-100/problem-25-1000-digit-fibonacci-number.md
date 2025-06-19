@@ -25,7 +25,7 @@ What is the index of the first term in the Fibonacci sequence to contain `n` dig
 `digitFibonacci(5)` should return a number.
 
 ```js
-assert(typeof digitFibonacci(5) === 'number');
+assert.isNumber(digitFibonacci(5));
 ```
 
 `digitFibonacci(5)` should return 21.

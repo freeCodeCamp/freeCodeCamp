@@ -11,10 +11,10 @@ Let's build a little off the previous exercise, in which you added multiple clas
 
 1. You should see a black background and white text on the first `button` element.
 1. You should see a yellow background on the second `button` element.
-1. You should set a font size of `28px` using a grouping selector.
-1. You should have a list of fonts containing `Helvetica` and `Times New Roman` with `sans-serif` as a fallback.
+1. You should set a font size of `28px` using a selector list.
+1. You should have a list of fonts containing `Helvetica` and `Times New Roman` with `sans-serif` as a fallback in the selector list.
 1. You should see a unique class name on each element.
-1. You should have a grouping selector for styles that both elements share.
+1. You should have a selector list for styles that both elements share.
 
 # --hints--
 
@@ -41,7 +41,7 @@ assert.equal(style?.color, 'white');
 
 ```
 
-You should set the `font-size` for both elements to `28px` using a grouping selector.
+You should set the `font-size` for both elements to `28px` using a selector list.
 
 ```js
 const classOne = document.querySelectorAll('button')?.[0].classList?.[0];
@@ -54,7 +54,7 @@ function eitherOr() {
 assert.equal(eitherOr()?.fontSize, '28px');
 ```
 
-You have a unique class name on each element.
+You should have a unique class name on each element.
 
 ```js
 const elementOneClasses = document.querySelectorAll('button')?.[0].classList;
@@ -66,7 +66,7 @@ for(let i = 0; i < elementOneClasses.length; i++){
 
 ```
 
-You should have a grouping selector for styles that both elements share.
+You should have a selector list for styles that both elements share.
 
 ```js
 const classOne = document.querySelectorAll('button')?.[0].classList?.[0];
@@ -79,7 +79,7 @@ function eitherOr() {
 assert.exists(eitherOr());
 ```
 
-You should have a list of fonts containing `Helvetica` and `Times New Roman` with `sans-serif` as a fallback.
+You should have a list of fonts containing `Helvetica` and `Times New Roman` with `sans-serif` as a fallback in the selector list.
 
 ```js
 const classOne = document.querySelectorAll('button')?.[0].classList?.[0];

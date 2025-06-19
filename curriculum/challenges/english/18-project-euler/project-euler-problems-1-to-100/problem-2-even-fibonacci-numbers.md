@@ -19,7 +19,7 @@ By considering the terms in the Fibonacci sequence whose values do not exceed `n
 `fiboEvenSum(10)` should return a number.
 
 ```js
-assert(typeof fiboEvenSum(10) === 'number');
+assert.isNumber(fiboEvenSum(10));
 ```
 
 Your function should return an even value.

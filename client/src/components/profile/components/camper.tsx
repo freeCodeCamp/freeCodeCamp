@@ -5,7 +5,7 @@ import type { User } from '../../../redux/prop-types';
 import { FullWidthRow } from '../../helpers';
 import './camper.css';
 import SupporterBadgeEmblem from '../../../assets/icons/supporter-badge-emblem';
-import TopContibutorBadgeEmblem from '../../../assets/icons/top-contributor-badge-emblem';
+import TopContributorBadgeEmblem from '../../../assets/icons/top-contributor-badge-emblem';
 import Bio from './bio';
 
 export type CamperProps = {
@@ -56,7 +56,7 @@ function Camper({
               {isTopContributor && (
                 <div className='badge-card'>
                   <div className='camper-badge'>
-                    <TopContibutorBadgeEmblem />
+                    <TopContributorBadgeEmblem />
                   </div>
                   <div className='badge-card-description'>
                     <h3>{t('profile.contributor')}</h3>

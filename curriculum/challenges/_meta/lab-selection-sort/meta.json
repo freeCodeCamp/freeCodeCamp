@@ -1,0 +1,10 @@
+{
+  "name": "Selection Sort Lab",
+  "isUpcomingChange": true,
+  "dashedName": "lab-selection-sort",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "680b3ef395479b0e449ecb6e", "title": "Build a Selection Sort" }],
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "blockType": "lab"
+}

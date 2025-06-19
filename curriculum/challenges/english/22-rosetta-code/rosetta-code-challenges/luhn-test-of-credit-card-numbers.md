@@ -25,7 +25,7 @@ Those companies using credit card numbers that can be validated by the Luhn test
 
 For example, if the trial number is 49927398716:
 
-```bash
+```md
 Reverse the digits:
   61789372994
 Sum the odd digits:

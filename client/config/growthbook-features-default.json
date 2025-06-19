@@ -5,17 +5,17 @@
   "aa-test-in-component": {
     "defaultValue": false
   },
-  "landing-page-redesign": {
+  "landing-top-skill-focused": {
     "defaultValue": false,
     "rules": [
       {
         "coverage": 1,
         "hashAttribute": "id",
-        "seed": "landing-page-redesign",
+        "seed": "landing-top-skill-focused",
         "hashVersion": 2,
         "variations": [false, true],
         "weights": [0.5, 0.5],
-        "key": "landing-page-redesign",
+        "key": "landing-top-skill-focused",
         "meta": [
           {
             "key": "0",
