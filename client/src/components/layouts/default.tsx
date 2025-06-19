@@ -180,20 +180,21 @@ function DefaultLayout({
 
   if (fetchState.pending) {
     return (
-      <Helmet
-        bodyAttributes={{
-          class: `${theme}-palette`
-        }}
-        meta={[
-          {
-            name: 'description',
-            content: t('metaTags:description')
-          },
-          { name: 'keywords', content: t('metaTags:keywords') }
-        ]}
-      >
+      <div>
+        <Helmet
+          bodyAttributes={{
+            class: `${theme}-palette`
+          }}
+          meta={[
+            {
+              name: 'description',
+              content: t('metaTags:description')
+            },
+            { name: 'keywords', content: t('metaTags:keywords') }
+          ]}
+        ></Helmet>
         <Loader fullScreen={true} messageDelay={5000} />
-      </Helmet>
+      </div>
     );
   } else {
     return (
