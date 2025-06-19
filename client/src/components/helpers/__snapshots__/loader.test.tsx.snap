@@ -1,4 +1,4 @@
-[⚠️ Suspicious Content] // Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Loader /> matches the fullScreen render snapshot 1`] = `
 <div
