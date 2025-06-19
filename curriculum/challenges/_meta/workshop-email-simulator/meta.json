@@ -8,5 +8,102 @@
   "hasEditableBoundaries": true,
   "blockLayout": "challenge-grid",
   "blockType": "workshop",
-  "challengeOrder": [{ "id": "6852ea0c3cadb54e897acdac", "title": "Step 1" }]
+  "challengeOrder": [
+    {
+      "id": "6852ea0c3cadb54e897acdac",
+      "title": "Step 1"
+    },
+    {
+      "id": "6852ef95ccc27660275692cd",
+      "title": "Step 2"
+    },
+    {
+      "id": "6852f01116912861c7d1b0e6",
+      "title": "Step 3"
+    },
+    {
+      "id": "6852f06fdde1b4634a263f03",
+      "title": "Step 4"
+    },
+    {
+      "id": "6852f0c3fcedb964ab959921",
+      "title": "Step 5"
+    },
+    {
+      "id": "6852f11d412c29665985a915",
+      "title": "Step 6"
+    },
+    {
+      "id": "6852f19cdc3a4a67ef06f590",
+      "title": "Step 7"
+    },
+    {
+      "id": "6853f2da9b8ed891e9fdc5fc",
+      "title": "Step 8"
+    },
+    {
+      "id": "6853f34ff93594934f6636d9",
+      "title": "Step 9"
+    },
+    {
+      "id": "6853f3c11a111d947d783ef9",
+      "title": "Step 10"
+    },
+    {
+      "id": "6853f4584f508e95cc7a9f4d",
+      "title": "Step 11"
+    },
+    {
+      "id": "6853f4ded9f84896ff182dd8",
+      "title": "Step 12"
+    },
+    {
+      "id": "6853f553d90a2f9874ff9d0e",
+      "title": "Step 13"
+    },
+    {
+      "id": "6853f68dd3affa9adb2e6d99",
+      "title": "Step 14"
+    },
+    {
+      "id": "6853f70470f45d9c280af659",
+      "title": "Step 15"
+    },
+    {
+      "id": "6853f86850c1fc9e53f95721",
+      "title": "Step 16"
+    },
+    {
+      "id": "6853f90fd03acc9fd75ff860",
+      "title": "Step 17"
+    },
+    {
+      "id": "6853f996671e63a0b4fbf143",
+      "title": "Step 18"
+    },
+    {
+      "id": "6854085b475edfa6800e992c",
+      "title": "Step 19"
+    },
+    {
+      "id": "68540938f7f51fa80721d352",
+      "title": "Step 20"
+    },
+    {
+      "id": "6854098ff9603ba930e7d48e",
+      "title": "Step 21"
+    },
+    {
+      "id": "685409f3f6c765aa4cd44a26",
+      "title": "Step 22"
+    },
+    {
+      "id": "68540a534c56aeabae6afd58",
+      "title": "Step 23"
+    },
+    {
+      "id": "68540aa7dfd449ad074c285c",
+      "title": "Step 24"
+    }
+  ]
 }
