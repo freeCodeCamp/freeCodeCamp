@@ -2,9 +2,8 @@ import fs from 'fs';
 import { setup } from 'jest-json-schema-extended';
 import { availableLangs, LangNames, LangCodes } from '../../shared/config/i18n';
 import {
-  SuperBlocks,
-  SuperBlockStage,
-  superBlockStages
+  catalogSuperBlocks,
+  SuperBlocks
 } from '../../shared/config/curriculum';
 import intro from './locales/english/intro.json';
 
@@ -81,7 +80,7 @@ describe('Intro file structure tests:', () => {
     expect(typeof typedIntro[superBlock].title).toBe('string');
 
     // catalog superblocks should have a summary
-    if (superBlockStages[SuperBlockStage.Catalog].includes(superBlock)) {
+    if (catalogSuperBlocks.includes(superBlock)) {
       expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);
     }
 

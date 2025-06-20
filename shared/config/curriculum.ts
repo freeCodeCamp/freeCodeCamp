@@ -164,6 +164,8 @@ export const superBlockStages: StageMap = {
 
 Object.freeze(superBlockStages);
 
+export const catalogSuperBlocks = superBlockStages[SuperBlockStage.Catalog];
+
 type NotAuditedSuperBlocks = {
   [key in Languages]: SuperBlocks[];
 };
