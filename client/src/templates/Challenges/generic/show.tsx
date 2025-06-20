@@ -7,6 +7,7 @@ import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import { isEqual } from 'lodash';
 import store from 'store';
 import { YouTubeEvent } from 'react-youtube';
+import { useFeatureIsOn } from '@growthbook/growthbook-react';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
@@ -103,6 +104,11 @@ const ShowGeneric = ({
 }: ShowQuizProps) => {
   const { t } = useTranslation();
   const container = useRef<HTMLElement | null>(null);
+
+  // just test on this particular block
+  const onlyShowTranscriptFlagIsOn = useFeatureIsOn('only-show-transcript');
+  const onlyShowTranscript =
+    block === 'lecture-html-fundamentals' && onlyShowTranscriptFlagIsOn;
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -217,7 +223,7 @@ const ShowGeneric = ({
 
             <Spacer size='m' />
 
-            {description && (
+            {description && !onlyShowTranscript && (
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription
                   description={description}
@@ -228,7 +234,13 @@ const ShowGeneric = ({
             )}
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
-              {videoId && (
+              {transcript && onlyShowTranscript && (
+                <ChallengeTranscript
+                  onlyShowTranscript={onlyShowTranscript}
+                  transcript={transcript}
+                />
+              )}
+              {videoId && !onlyShowTranscript && (
                 <>
                   <VideoPlayer
                     bilibiliIds={bilibiliIds}
@@ -246,8 +258,9 @@ const ShowGeneric = ({
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {transcript && <ChallengeTranscript transcript={transcript} />}
-
+              {transcript && !onlyShowTranscript && (
+                <ChallengeTranscript transcript={transcript} />
+              )}
               {instructions && (
                 <>
                   <ChallengeDescription
@@ -257,7 +270,6 @@ const ShowGeneric = ({
                   <Spacer size='m' />
                 </>
               )}
-
               {assignments.length > 0 && (
                 <Assignments
                   assignments={assignments}
@@ -265,7 +277,6 @@ const ShowGeneric = ({
                   handleAssignmentChange={handleAssignmentChange}
                 />
               )}
-
               {questions.length > 0 && (
                 <MultipleChoiceQuestions
                   questions={questions}
@@ -275,15 +286,12 @@ const ShowGeneric = ({
                   showFeedback={showFeedback}
                 />
               )}
-
               {explanation ? (
                 <ChallengeExplanation explanation={explanation} />
               ) : null}
-
               {!hasAnsweredMcqCorrectly && (
                 <p className='text-center'>{t('learn.answered-mcq')}</p>
               )}
-
               <Button block={true} variant='primary' onClick={handleSubmit}>
                 {blockType === BlockTypes.review
                   ? t('buttons.submit')
@@ -293,7 +301,6 @@ const ShowGeneric = ({
               <Button block={true} variant='primary' onClick={openHelpModal}>
                 {t('buttons.ask-for-help')}
               </Button>
-
               <Spacer size='l' />
             </Col>
             <CompletionModal />

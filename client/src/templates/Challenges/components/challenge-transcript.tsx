@@ -8,10 +8,12 @@ import './challenge-transcript.css';
 
 interface ChallengeTranscriptProps {
   transcript: string;
+  onlyShowTranscript?: boolean;
 }
 
 function ChallengeTranscript({
-  transcript
+  transcript,
+  onlyShowTranscript
 }: ChallengeTranscriptProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -25,6 +27,15 @@ function ChallengeTranscript({
     store.set('fcc-transcript-expanded', !isOpen);
     setIsOpen(!isOpen);
   }
+
+  if (onlyShowTranscript)
+    return (
+      <>
+        <Spacer size='m' />
+        <PrismFormatted className={'line-numbers'} text={transcript} />
+        <Spacer size='m' />
+      </>
+    );
 
   return (
     <>
