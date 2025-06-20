@@ -37,11 +37,3 @@ services:
       - HOST=0.0.0.0
     ports:
       - '3000:3000'
-
-  client:
-    restart: unless-stopped
-    depends_on:
-      - api
-    image: fcc-client
-    ports:
-      - '8000:8000'
