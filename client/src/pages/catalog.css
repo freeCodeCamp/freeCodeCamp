@@ -1,0 +1,22 @@
+.catalog-wrap {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.catalog-item {
+  padding: 1rem;
+  background-color: var(--primary-background);
+  width: 400px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.catalog-item-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

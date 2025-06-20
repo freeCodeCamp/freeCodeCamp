@@ -86,6 +86,7 @@
     "click-start-course": "Start the course",
     "click-start-project": "Start the project",
     "click-start-exam": "Start the exam",
+    "go-to-course": "Go to course",
     "change-language": "Change Language",
     "resume-project": "Resume project",
     "start-project": "Start project",
@@ -1239,6 +1240,15 @@
       "submit": "Submit the survey",
       "exit": "Exit the survey",
       "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   }
 }

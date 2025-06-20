@@ -141,7 +141,9 @@ ${result.error.message}`);
       .filter(([key]) => {
         const stage = Number(key) as SuperBlockStage;
         return (
-          stage !== SuperBlockStage.Next && stage !== SuperBlockStage.Upcoming
+          stage !== SuperBlockStage.Next &&
+          stage !== SuperBlockStage.Upcoming &&
+          stage !== SuperBlockStage.Catalog
         );
       })
       .flatMap(([, superBlocks]) => superBlocks);
