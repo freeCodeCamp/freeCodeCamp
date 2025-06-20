@@ -20,8 +20,7 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-        with:
-          submodules: 'recursive'
+      # Note, no submodules because we're just building the English client.
       - name: Create Image
         run: |
           docker build \
@@ -58,8 +57,7 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-        with:
-          submodules: 'recursive'
+      # Note, no submodules because we're just building the English client.
 
       - name: Create Image
         run: |
