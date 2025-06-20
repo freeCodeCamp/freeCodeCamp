@@ -326,8 +326,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
       '@freecodecamp/ui':
-        specifier: 4.1.0
-        version: 4.1.0(@types/react-dom@17.0.19)(@types/react@17.0.83)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+        specifier: 4.2.0
+        version: 4.2.0(@types/react-dom@17.0.19)(@types/react@17.0.83)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@gatsbyjs/reach-router':
         specifier: 1.3.9
         version: 1.3.9(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -2903,8 +2903,8 @@ packages:
   '@freecodecamp/loop-protect@3.0.0':
     resolution: {integrity: sha512-5zIULL5pm7Ylkk2dPq1f/4KJTAV5KQZEAFQg/qFj0t18EBSNO3fjn3HdfE1sPocXhXom3DVvZO3Rl2sqifMFYQ==}
 
-  '@freecodecamp/ui@4.1.0':
-    resolution: {integrity: sha512-9foKzH0Fb2F2GNZ6PTTWiw2G/RYh1+EUPQxN+zqH02720CEQDOTaI1XAUAMhKZbuMBbrq9jTdTRvphnQq+24JQ==}
+  '@freecodecamp/ui@4.2.0':
+    resolution: {integrity: sha512-r2WG/urJLGFOhqxA9YVISuoptWnXApE+cFDSL5dVk9nAHWzdCGA8aC0QlyH/YkDuth3UmsSBojJxYLXsyhrgmA==}
     engines: {node: '>=22', pnpm: '>=10'}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
@@ -17796,7 +17796,7 @@ snapshots:
 
   '@freecodecamp/loop-protect@3.0.0': {}
 
-  '@freecodecamp/ui@4.1.0(@types/react-dom@17.0.19)(@types/react@17.0.83)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@freecodecamp/ui@4.2.0(@types/react-dom@17.0.19)(@types/react@17.0.83)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
       '@fortawesome/fontawesome-svg-core': 6.7.2
       '@fortawesome/free-solid-svg-icons': 6.7.2
