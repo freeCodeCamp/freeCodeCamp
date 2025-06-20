@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   playwright-e2e:
-    name: Build and Run Playwright Tests
+    name: Run Playwright Tests
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false

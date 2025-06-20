@@ -12,22 +12,14 @@ concurrency:
 
 jobs:
   e2e-third-party-tests:
-    name: Build and Run Playwright 3rd Party Donation Tests
+    name: Run Playwright 3rd Party Donation Tests
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
         browsers: [chromium]
         node-version: [22]
-    services:
-      mongodb:
-        image: mongo:8.0
-        ports:
-          - 27017:27017
-      mailhog:
-        image: mailhog/mailhog
-        ports:
-          - 1025:1025
+
     steps:
       - name: Set Action Environment Variables
         run: |
