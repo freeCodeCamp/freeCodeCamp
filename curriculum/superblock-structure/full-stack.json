@@ -1078,6 +1078,9 @@
             },
             { "dashedName": "workshop-fruit-search-app" },
             {
+              "dashedName": "lab-one-time-password-generator"
+            },
+            {
               "dashedName": "review-react-state-and-hooks"
             },
             {
