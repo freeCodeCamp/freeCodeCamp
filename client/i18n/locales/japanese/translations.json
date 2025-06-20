@@ -796,7 +796,15 @@
     "iframe-form-submit-alert": "通常はこれでフォームが送信されます。正しく動作しています。フォームは {{externalLink}} へ送信されます。",
     "document-notfound": "ドキュメントが見つかりませんでした",
     "slow-load-msg": "通常より処理に時間がかかっているようです。ページの再読み込みをお試しください。",
-    "navigation-warning": "このページを離れると、進捗状況が失われます。よろしいですか？"
+    "navigation-warning": "このページを離れると、進捗状況が失われます。よろしいですか？",
+    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
+    "fsd-b-cta": "Start Learning",
+    "fsd-b-benefit-1-title": "100k+ Students",
+    "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
+    "fsd-b-benefit-2-title": "Professional Certification",
+    "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
+    "fsd-b-benefit-3-title": "500+ Exercises",
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
   },
   "icons": {
     "gold-cup": "ゴールドカップ",

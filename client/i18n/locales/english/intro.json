@@ -1856,6 +1856,12 @@
       "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
     },
     "module-intros": {
+      "js-a11y": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will learn how to work with the aria-expanded, aria-live and aria-controls attributes inside of your HTML, CSS and JavaScript applications."
+        ]
+      },
       "css-libraries-and-frameworks": {
         "note": "Coming Fall 2025",
         "intro": [
@@ -4232,7 +4238,12 @@
           "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
         ]
       },
-      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
+      "lab-quicksort": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort a list of integers."
+        ]
+      },
       "lab-selection-sort": {
         "title": "Implement the Selection Sort Algorithm",
         "intro": [

@@ -1283,7 +1283,7 @@
             { "dashedName": "workshop-binary-search" },
             { "dashedName": "lab-bisection-method" },
             { "dashedName": "workshop-merge-sort" },
-            { "dashedName": "lab-quick-sort" },
+            { "dashedName": "lab-quicksort" },
             { "dashedName": "lab-selection-sort" },
             { "dashedName": "lab-luhn-argorithm" },
             { "dashedName": "review-searching-and-sorting-algorithms" },
