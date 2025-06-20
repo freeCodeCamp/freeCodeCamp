@@ -51,6 +51,35 @@ Your application should show different messages depending on the price of the it
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
+# --before-all--
+
+```js
+const _money = [
+  ['ONE HUNDRED', 10000],
+  ['TWENTY', 2000],
+  ['TEN', 1000],
+  ['FIVE', 500],
+  ['ONE', 100],
+  ['QUARTER', 25],
+  ['DIME', 10],
+  ['NICKEL', 5]
+];
+const _denomRegexes = [
+  /PENNY/,
+  /NICKEL/,
+  /DIME/,
+  /QUARTER/,
+  /ONE [^H]/,
+  /FIVE/,
+  /TEN/,
+  /TWENTY/,
+  /ONE HUNDRED/
+];
+function _randomNumber(max) {
+  return Math.floor(Math.random() * (max + 1));
+}
+```
+
 # --hints--
 
 You should have the HTML file link to the JavaScript file.
@@ -95,7 +124,7 @@ const el = document.getElementById('purchase-btn');
 assert.strictEqual(el?.nodeName?.toLowerCase(), 'button');
 ```
 
-When `price` is `20` and the value in the `#cash` element is `10`, an alert should appear with the text `"Customer does not have enough money to purchase the item"`.
+When `price` is `20`, the value in the `#cash` element is `10`, and the `#purchase-btn` element is clicked, an alert should appear with the text `"Customer does not have enough money to purchase the item"`.
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -118,7 +147,7 @@ assert.strictEqual(
 );
 ```
 
-When the value in the `#cash` element is less than `price`, an alert should appear with the text `"Customer does not have enough money to purchase the item"`.
+When the value in the `#cash` element is less than `price`, and the `#purchase-btn` element is clicked, an alert should appear with the text `"Customer does not have enough money to purchase the item"`.
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -155,7 +184,7 @@ assert.strictEqual(
 );
 ```
 
-When `price` is `11.95` and the value in the `#cash` element is `11.95`, the value in the `#change-due` element should be `"No change due - customer paid with exact cash"`.
+When `price` is `11.95`, the value in the `#cash` element is `11.95`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"No change due - customer paid with exact cash"`.
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -177,7 +206,7 @@ assert.strictEqual(
 );
 ```
 
-When the value in the `#cash` element is equal to `price`, the value in the `#change-due` element should be `"No change due - customer paid with exact cash"`.
+When the value in the `#cash` element is equal to `price`, and the `#purchase-btn` element is clicked, the value in the `#change-due` element should be `"No change due - customer paid with exact cash"`.
 
 ```js
 const cashInput = document.getElementById('cash');
@@ -583,35 +612,6 @@ assert.isTrue(!notExpected.some(regex => result.match(new RegExp(regex, 'i'))));
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-const _money = [
-  ['ONE HUNDRED', 10000],
-  ['TWENTY', 2000],
-  ['TEN', 1000],
-  ['FIVE', 500],
-  ['ONE', 100],
-  ['QUARTER', 25],
-  ['DIME', 10],
-  ['NICKEL', 5]
-];
-const _denomRegexes = [
-  /PENNY/,
-  /NICKEL/,
-  /DIME/,
-  /QUARTER/,
-  /ONE [^H]/,
-  /FIVE/,
-  /TEN/,
-  /TWENTY/,
-  /ONE HUNDRED/
-];
-function _randomNumber(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-```
 
 ## --seed-contents--
 

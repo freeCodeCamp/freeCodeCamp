@@ -2,17 +2,15 @@ import TagManager from 'react-gtm-module';
 
 import {
   devAnalyticsId,
-  prodAnalyticsId,
-  prodAnalyticsESId
+  prodAnalyticsId
 } from '../../config/analytics-settings';
 
 import envData from '../../config/env.json';
 
-const { deploymentEnv, clientLocale } = envData;
+const { deploymentEnv } = envData;
 
 const analyticsIDSelector = () => {
   if (deploymentEnv === 'staging') return devAnalyticsId;
-  else if (clientLocale === 'espanol') return prodAnalyticsESId;
   else return prodAnalyticsId;
 };
 

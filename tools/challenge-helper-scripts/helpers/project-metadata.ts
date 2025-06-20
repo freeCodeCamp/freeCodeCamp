@@ -5,6 +5,8 @@ import { getProjectName, getProjectPath } from './get-project-info';
 
 export type Meta = {
   name: string;
+  blockLayout: string;
+  blockType: string;
   isUpcomingChange: boolean;
   dashedName: string;
   helpCategory: string;
@@ -45,7 +47,7 @@ function validateMetaData(): void {
     const filePath = `${getProjectPath()}${id}.md`;
     try {
       fs.accessSync(filePath);
-    } catch (e) {
+    } catch (_e) {
       throw new Error(
         `The file
 ${filePath}

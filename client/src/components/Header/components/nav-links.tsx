@@ -13,14 +13,13 @@ import { openSignoutModal, toggleTheme } from '../../../redux/actions';
 import { Link } from '../../helpers';
 import { LocalStorageThemes } from '../../../redux/types';
 import { themeSelector } from '../../../redux/selectors';
-import { User } from '../../../redux/prop-types';
 import SupporterBadge from '../../../assets/icons/supporter-badge';
 
 export interface NavLinksProps {
   displayMenu: boolean;
   showMenu: () => void;
   hideMenu: () => void;
-  user?: User;
+  user?: { isDonating: boolean; username: string };
   menuButtonRef: React.RefObject<HTMLButtonElement>;
   openSignoutModal: () => void;
   theme: LocalStorageThemes;

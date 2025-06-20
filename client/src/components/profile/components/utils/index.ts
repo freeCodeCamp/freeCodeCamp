@@ -1,1 +1,1 @@
-export { parseDate, formatYears } from './utils';
+export { parseDate } from './utils';

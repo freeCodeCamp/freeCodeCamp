@@ -1,13 +1,9 @@
 {
-  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "$schema": "https://cdn.jsdelivr.net/npm/knip@5/schema.json",
   "ignoreBinaries": ["create:shared", "install-puppeteer", "pm2"],
-  "ignoreWorkspaces": ["api-server"], // Ignored based on https://github.com/freeCodeCamp/freeCodeCamp/pull/52330#issuecomment-1807917235
   "workspaces": {
     ".": {
-      "playwright": [
-        "playwright.config.ts",
-        "playwright-mobile.config.ts" // How/where is this file used?
-      ],
+      "playwright": ["playwright.config.ts"],
       "ignore": ["tools/scripts/redirect-gen.ts"] // Referenced in tools/scripts/redirect-gen.ts
     },
     "api": {

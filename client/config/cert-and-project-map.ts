@@ -35,6 +35,8 @@ const foundationalCSharpBase =
 const fullStackDeveloperBase = '/learn/full-stack-developer';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
+const a2SpanishBase = '/learn/a2-professional-spanish';
+const a2ChineseBase = '/learn/a2-professional-chinese';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -127,8 +129,8 @@ const allStandardCerts = [
       },
       {
         id: '6555c1d3e11a1574434cf8b5',
-        title: 'Build a Pokémon Search App',
-        link: getJavaScriptAlgoPath('build-a-pokemon-search-app'),
+        title: 'Build an RPG Creature Search App',
+        link: getJavaScriptAlgoPath('build-an-rpg-creature-search-app'),
         certSlug: Certification.JsAlgoDataStructNew
       }
     ]
@@ -566,8 +568,8 @@ const allStandardCerts = [
       },
       {
         id: 'bd7158d8c442eddfaeb5bd1c',
-        title: 'Build a Simon Game',
-        link: `${legacyFrontEndTakeHomeBase}/build-a-simon-game`,
+        title: 'Build a Memory Light Game',
+        link: `${legacyFrontEndTakeHomeBase}/build-a-memory-light-game`,
         certSlug: Certification.LegacyFrontEnd
       }
     ]
@@ -833,6 +835,34 @@ const allStandardCerts = [
         title: "Dialogue 1: I'm Tom",
         link: `${b1EnglishBase}/learn-how-to-describe-places-and-events/dialogue-1-im-tom`,
         certSlug: Certification.B1English
+      }
+    ]
+  },
+  {
+    id: '681a6b22e5a782fe3459984a',
+    title: 'A2 Professional Spanish',
+    certSlug: Certification.A2Spanish,
+    projects: [
+      {
+        id: '681a8796e5a782fe3459984b',
+        title: 'Dialogue 1: PLACEHOLDER',
+        link: `${a2SpanishBase}/talk-about-who-you-are-by-using-key-verbs
+/text-1`,
+        certSlug: Certification.A2Spanish
+      }
+    ]
+  },
+  {
+    id: '682c3153086dd7cabe7f48bc',
+    title: 'A2 Professional Chinese',
+    certSlug: Certification.A2Chinese,
+    projects: [
+      {
+        id: '682c2753317b88f1ecdad894',
+        title: 'Dialogue 1: PLACEHOLDER',
+        link: `${a2ChineseBase}/talk-about-what-you-do-by-using-key-verbs
+/text-1`,
+        certSlug: Certification.A2Chinese
       }
     ]
   }

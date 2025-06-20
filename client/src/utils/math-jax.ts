@@ -12,7 +12,8 @@ const superBlocksWithMathJax = [
   SuperBlocks.JsAlgoDataStruct,
   SuperBlocks.ProjectEuler,
   SuperBlocks.RosettaCode,
-  SuperBlocks.SciCompPy
+  SuperBlocks.SciCompPy,
+  SuperBlocks.FullStackDeveloper
 ];
 
 const configure = () => {

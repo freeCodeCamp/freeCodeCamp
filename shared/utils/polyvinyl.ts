@@ -1,24 +1,30 @@
 // originally based off of https://github.com/gulpjs/vinyl
 import invariant from 'invariant';
 
-export type Ext = 'js' | 'html' | 'css' | 'jsx' | 'ts';
+const exts = ['js', 'html', 'css', 'jsx', 'ts', 'py'] as const;
+export type Ext = (typeof exts)[number];
 
-export type ChallengeFile = {
+export interface IncompleteChallengeFile {
   fileKey: string;
   ext: Ext;
   name: string;
+  contents: string;
+  head?: string;
+  tail?: string;
+}
+
+export interface ChallengeFile extends IncompleteChallengeFile {
   editableRegionBoundaries?: number[];
   editableContents?: string;
   usesMultifileEditor?: boolean;
   error?: unknown;
   head: string;
   tail: string;
-  seed: string;
-  contents: string;
-  source?: string | null;
-  id: string;
+  seed?: string;
+  source?: string;
+  path: string;
   history: string[];
-};
+}
 
 type PolyProps = {
   name: string;
@@ -65,52 +71,66 @@ export function createPoly<Rest>({
 }
 
 export function isPoly(poly: unknown): poly is ChallengeFile {
-  return (
-    !!poly &&
-    typeof poly === 'object' &&
-    'contents' in poly &&
+  function hasProperties(poly: unknown): poly is Record<string, unknown> {
+    return (
+      !!poly &&
+      typeof poly === 'object' &&
+      'contents' in poly &&
+      'name' in poly &&
+      'ext' in poly &&
+      'fileKey' in poly &&
+      'head' in poly &&
+      'tail' in poly &&
+      'history' in poly
+    );
+  }
+
+  const hasCorrectTypes = (poly: Record<string, unknown>): boolean =>
     typeof poly.contents === 'string' &&
-    'name' in poly &&
     typeof poly.name === 'string' &&
-    'ext' in poly &&
-    typeof poly.ext === 'string' &&
-    'history' in poly &&
-    Array.isArray(poly.history)
-  );
+    exts.includes(poly.ext as Ext) &&
+    typeof poly.fileKey === 'string' &&
+    typeof poly.head === 'string' &&
+    typeof poly.tail === 'string' &&
+    Array.isArray(poly.history);
+
+  return hasProperties(poly) && hasCorrectTypes(poly);
 }
 
 function checkPoly(poly: ChallengeFile) {
   invariant(
     isPoly(poly),
     'function should receive a PolyVinyl, but got %s',
-    poly
+    JSON.stringify(poly)
   );
 }
 
-// setContent will lose source if set
+// setContent will lose source if not supplied
 export function setContent(
   contents: string,
-  poly: ChallengeFile
+  poly: ChallengeFile,
+  source?: string
 ): ChallengeFile {
   checkPoly(poly);
   return {
     ...poly,
     contents,
-    source: null
+    source
   };
 }
 
 // This is currently only used to add back properties that are not stored in the
 // database.
-export function regeneratePathAndHistory(poly: ChallengeFile) {
-  const newPath = poly.name + '.' + poly.ext;
-  const newPoly = {
-    ...poly,
+export function regenerateMissingProperties(file: IncompleteChallengeFile) {
+  const newPath = file.name + '.' + file.ext;
+  const newFile = {
+    ...file,
     path: newPath,
-    history: [newPath]
+    history: [newPath],
+    head: file.head ?? '',
+    tail: file.tail ?? ''
   };
-  checkPoly(newPoly);
-  return newPoly;
+  return newFile;
 }
 
 async function clearHeadTail(polyP: Promise<ChallengeFile>) {
@@ -142,9 +162,7 @@ export async function transformContents(
   polyP: ChallengeFile | Promise<ChallengeFile>
 ) {
   const poly = await polyP;
-  const newPoly = setContent(await wrap(poly.contents), poly);
-  // if no source exist, set the original contents as source
-  newPoly.source = poly.source || poly.contents;
+  const newPoly = setContent(await wrap(poly.contents), poly, poly.source);
   return newPoly;
 }
 
@@ -164,9 +182,11 @@ export async function transformHeadTailAndContents(
 }
 
 // createSource(poly: PolyVinyl) => PolyVinyl
-export function createSource(poly: Pick<ChallengeFile, 'contents' | 'source'>) {
+export function createSource<Rest>(
+  poly: Pick<ChallengeFile, 'contents' | 'source'> & Rest
+): Rest & { contents: string; source: string } {
   return {
     ...poly,
-    source: poly.source || poly.contents
+    source: poly.source ?? poly.contents
   };
 }

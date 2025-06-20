@@ -16,6 +16,13 @@ const landingPageElements = {
 } as const;
 
 const superBlocks = [
+  intro[SuperBlocks.FullStackDeveloper].title,
+  intro[SuperBlocks.A2English].title,
+  intro[SuperBlocks.B1English].title,
+  intro[SuperBlocks.TheOdinProject].title,
+  intro[SuperBlocks.CodingInterviewPrep].title,
+  intro[SuperBlocks.ProjectEuler].title,
+  intro[SuperBlocks.RosettaCode].title,
   intro[SuperBlocks.RespWebDesignNew].title,
   intro[SuperBlocks.JsAlgoDataStructNew].title,
   intro[SuperBlocks.FrontEndDevLibs].title,
@@ -28,17 +35,10 @@ const superBlocks = [
   intro[SuperBlocks.InfoSec].title,
   intro[SuperBlocks.MachineLearningPy].title,
   intro[SuperBlocks.CollegeAlgebraPy].title,
-  intro[SuperBlocks.FullStackDeveloper].title,
-  intro[SuperBlocks.A2English].title,
-  intro[SuperBlocks.B1English].title,
-  intro[SuperBlocks.FoundationalCSharp].title,
-  intro[SuperBlocks.TheOdinProject].title,
-  intro[SuperBlocks.CodingInterviewPrep].title,
-  intro[SuperBlocks.ProjectEuler].title,
-  intro[SuperBlocks.RosettaCode].title,
   intro[SuperBlocks.RespWebDesign].title,
   intro[SuperBlocks.JsAlgoDataStruct].title,
-  intro[SuperBlocks.PythonForEverybody].title
+  intro[SuperBlocks.PythonForEverybody].title,
+  intro[SuperBlocks.FoundationalCSharp].title
 ];
 
 async function goToLandingPage(page: Page) {
@@ -51,68 +51,30 @@ test.describe('Landing Top - Variation B', () => {
     await goToLandingPage(page);
   });
 
-  test('The supporting copy renders correctly', async ({ page }) => {
-    const landingH2Heading = page.getByTestId('landing-h2-heading-b');
-    await expect(landingH2Heading).toHaveText(
-      translations.landing['h2-heading-b'].replace(/<\/?strong>/g, '')
+  test('Main heading copy renders correctly', async ({ page }) => {
+    const bigHeading = page.getByTestId('big-heading-1-b');
+    await expect(bigHeading).toHaveText(
+      translations.landing['big-heading-1-b']
     );
   });
-});
 
-test.describe('Second section - Variation B', () => {
-  test('The component Why learn with freeCodeCamp renders correctly', async ({
-    context,
-    page
-  }) => {
-    await addGrowthbookCookie({ context, variation: 'C' });
-    await goToLandingPage(page);
-    const h2Element = page.locator(
-      `h2:has-text("${translations.landing.benefits['heading']}")`
+  test('Supporting copy renders correctly', async ({ page }) => {
+    const bigHeading = page.getByTestId('advance-career');
+    await expect(bigHeading).toHaveText(translations.landing['advance-career']);
+  });
+
+  test('Logo row copy renders correctly', async ({ page }) => {
+    const landingH2Heading = page.getByTestId('graduates-work');
+    await expect(landingH2Heading).toHaveText(
+      translations.landing['graduates-work'].replace(/<\/?strong>/g, '')
     );
-
-    await expect(h2Element).toBeVisible();
   });
 });
 
 test.describe('Landing Top - Variation A', () => {
   test.beforeEach(async ({ context, page }) => {
-    await addGrowthbookCookie({ context, variation: 'A' });
+    await addGrowthbookCookie({ context, variation: 'newA' });
     await goToLandingPage(page);
-  });
-
-  test('The supporting copy renders correctly', async ({ page }) => {
-    const landingH2Heading = page.getByTestId('landing-h2-heading');
-    await expect(landingH2Heading).toHaveText(
-      translations.landing['h2-heading']
-    );
-  });
-});
-
-test.describe('Second section - Variation A', () => {
-  test('The component As Seen renders correctly', async ({ context, page }) => {
-    await addGrowthbookCookie({ context, variation: 'E' });
-    await goToLandingPage(page);
-    const h2Element = page.locator(
-      `h2:has-text("${translations.landing['as-seen-in']}")`
-    );
-
-    await expect(h2Element).toBeVisible();
-  });
-});
-
-test.describe('Landing Page', () => {
-  test.beforeEach(async ({ page }) => {
-    await goToLandingPage(page);
-  });
-
-  test('Call to action buttons should render correctly', async ({ page }) => {
-    const ctas = page.getByRole('link', {
-      name: translations.buttons['logged-in-cta-btn']
-    });
-    await expect(ctas).toHaveCount(4);
-    for (const cta of await ctas.all()) {
-      await expect(cta).toBeVisible();
-    }
   });
 
   test('The headline renders correctly', async ({ page }) => {
@@ -130,6 +92,42 @@ test.describe('Landing Page', () => {
     await expect(landingHeading3).toHaveText(
       translations.landing['big-heading-3']
     );
+  });
+
+  test('Logo row copy renders correctly', async ({ page }) => {
+    const landingH2Heading = page.getByTestId('h2-heading');
+    await expect(landingH2Heading).toHaveText(
+      translations.landing['h2-heading'].replace(/<\/?strong>/g, '')
+    );
+  });
+});
+
+test.describe('Landing Page', () => {
+  test.beforeEach(async ({ page }) => {
+    await goToLandingPage(page);
+  });
+
+  test('The component Why learn with freeCodeCamp renders correctly', async ({
+    context,
+    page
+  }) => {
+    await addGrowthbookCookie({ context, variation: 'C' });
+    await goToLandingPage(page);
+    const h2Element = page.locator(
+      `h2:has-text("${translations.landing.benefits['heading']}")`
+    );
+
+    await expect(h2Element).toBeVisible();
+  });
+
+  test('Call to action buttons should render correctly', async ({ page }) => {
+    const ctas = page.getByRole('link', {
+      name: translations.buttons['logged-in-cta-btn']
+    });
+    await expect(ctas).toHaveCount(4);
+    for (const cta of await ctas.all()) {
+      await expect(cta).toBeVisible();
+    }
   });
 
   test('Hero image should have an alt and a description', async ({
@@ -201,12 +199,13 @@ test.describe('Landing Page', () => {
     }
   });
 
-  test('Has links to all curriculum', async ({ page }) => {
+  test('Links to all superblocks in order', async ({ page }) => {
     const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
     await expect(curriculumBtns).toHaveCount(superBlocks.length);
     for (let index = 0; index < superBlocks.length; index++) {
       const btn = curriculumBtns.nth(index);
-      await expect(btn).toContainText(superBlocks[index]);
+      const link = btn.getByRole('link', { name: superBlocks[index] });
+      await expect(link).toBeVisible();
     }
   });
 

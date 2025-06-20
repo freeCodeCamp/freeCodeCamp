@@ -4,18 +4,19 @@ const util = require('util');
 const yaml = require('js-yaml');
 const { findIndex } = require('lodash');
 const readDirP = require('readdirp');
+const stringSimilarity = require('string-similarity');
 
 const { curriculum: curriculumLangs } =
   require('../shared/config/i18n').availableLangs;
 const { parseMD } = require('../tools/challenge-parser/parser');
-/* eslint-disable max-len */
+
 const {
   translateCommentsInChallenge
 } = require('../tools/challenge-parser/translation-parser');
-/* eslint-enable max-len*/
 
 const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
 const { createPoly } = require('../shared/utils/polyvinyl');
+const { chapterBasedSuperBlocks } = require('../shared/config/curriculum');
 const {
   getSuperOrder,
   getSuperBlockFromDir,
@@ -176,7 +177,10 @@ const walk = (root, target, options, cb) => {
   });
 };
 
-exports.getChallengesForLang = async function getChallengesForLang(lang) {
+exports.getChallengesForLang = async function getChallengesForLang(
+  lang,
+  filters
+) {
   const invalidLang = !curriculumLangs.includes(lang);
   if (invalidLang)
     throw Error(`${lang} is not a accepted language.
@@ -192,11 +196,86 @@ Accepted languages are ${curriculumLangs.join(', ')}`);
     { type: 'directories', depth: 0 },
     buildSuperBlocks
   );
-  const cb = (file, curriculum) => buildChallenges(file, curriculum, lang);
+
+  const superBlocks = Object.keys(curriculum);
+  const blocksWithParent = Object.entries(curriculum).flatMap(
+    ([key, superBlock]) => {
+      const blocks = Object.entries(superBlock.blocks);
+      return blocks.map(([block, blockData]) => ({
+        block,
+        blockData,
+        superBlock: key
+      }));
+    }
+  );
+
+  const blocks = blocksWithParent.map(({ block }) => block);
+
+  let filteredCurriculum = curriculum;
+  const updatedFilters = { ...filters };
+  if (filters?.superBlock) {
+    const target = stringSimilarity.findBestMatch(
+      filters.superBlock,
+      superBlocks
+    ).bestMatch.target;
+
+    console.log('superBlock being tested:', target);
+
+    filteredCurriculum = {
+      [target]: curriculum[target]
+    };
+    updatedFilters.superBlock = target;
+  } else if (filters?.block) {
+    const target = stringSimilarity.findBestMatch(filters.block, blocks)
+      .bestMatch.target;
+
+    console.log('block being tested:', target);
+    const targetBlock = blocksWithParent.find(({ block }) => block === target);
+
+    filteredCurriculum = {
+      [targetBlock.superBlock]: {
+        blocks: {
+          [targetBlock.block]: targetBlock.blockData
+        }
+      }
+    };
+    updatedFilters.block = targetBlock.block;
+  } else if (filters?.challengeId) {
+    const blocksWithMeta = blocksWithParent.filter(
+      ({ blockData }) => blockData.meta
+    );
+    const container = blocksWithMeta.filter(({ blockData }) => {
+      return blockData.meta.challengeOrder.some(
+        ({ id }) => id === filters.challengeId
+      );
+    });
+
+    if (container.length === 0) {
+      throw new Error(`No block found with challengeId ${filters.challengeId}`);
+    }
+    if (container.length > 1) {
+      throw new Error(
+        `Multiple blocks found with challengeId ${filters.challengeId}`
+      );
+    }
+    const targetBlock = container[0];
+    filteredCurriculum = {
+      [targetBlock.superBlock]: {
+        blocks: {
+          [targetBlock.block]: targetBlock.blockData
+        }
+      }
+    };
+    updatedFilters.block = targetBlock.block;
+    updatedFilters.superBlock = targetBlock.superBlock;
+  }
+
+  const cb = (file, curriculum) =>
+    buildChallenges(file, curriculum, lang, updatedFilters);
   // fill the scaffold with the challenges
   return walk(
     root,
-    curriculum,
+    filteredCurriculum,
     { type: 'files', fileFilter: ['*.md', '*.yml'] },
     cb
   );
@@ -250,11 +329,17 @@ async function buildSuperBlocks({ path, fullPath }, curriculum) {
   return walk(fullPath, curriculum, { depth: 1, type: 'directories' }, cb);
 }
 
-async function buildChallenges({ path: filePath }, curriculum, lang) {
+async function buildChallenges({ path: filePath }, curriculum, lang, filters) {
   // path is relative to getChallengesDirForLang(lang)
   const block = getBlockNameFromPath(filePath);
+  if (filters?.block && block !== filters.block) {
+    return;
+  }
   const superBlockDir = getBaseDir(filePath);
   const superBlock = getSuperBlockFromDir(superBlockDir);
+  if (filters?.superBlock && superBlock !== filters.superBlock) {
+    return;
+  }
   let challengeBlock;
 
   // TODO: this try block and process exit can all go once errors terminate the
@@ -266,8 +351,8 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
       return;
     }
   } catch (e) {
+    console.error(e);
     console.log(`failed to create superBlock from ${superBlockDir}`);
-    // eslint-disable-next-line no-process-exit
     process.exit(1);
   }
   const { meta } = challengeBlock;
@@ -286,11 +371,10 @@ async function buildChallenges({ path: filePath }, curriculum, lang) {
     ? await parseCert(englishPath)
     : await createChallenge(filePath, meta);
 
+  // this builds the entire block, even if we only want one challenge, which is
+  // inefficient, but finding the next challenge without building the whole
+  // block is fiddly.
   challengeBlock.challenges = [...challengeBlock.challenges, challenge];
-}
-
-function isSuperBlockWithChapters(superBlock) {
-  return superBlock === 'full-stack-developer';
 }
 
 // This is a slightly weird abstraction, but it lets us define helper functions
@@ -298,15 +382,32 @@ function isSuperBlockWithChapters(superBlock) {
 function generateChallengeCreator(lang, englishPath, i18nPath) {
   function addMetaToChallenge(challenge, meta) {
     function addChapterAndModuleToChallenge(challenge) {
-      if (isSuperBlockWithChapters(challenge.superBlock)) {
-        challenge.chapter = getChapterFromBlock(
+      if (chapterBasedSuperBlocks.includes(challenge.superBlock)) {
+        const chapter = getChapterFromBlock(
           challenge.block,
           fullStackSuperBlockStructure
         );
-        challenge.module = getModuleFromBlock(
+
+        if (!meta.isUpcomingChange && chapter.comingSoon) {
+          throw Error(
+            `The '${chapter.dashedName}' chapter is 'comingSoon', but its '${meta.dashedName}' block is not hidden. Set 'isUpcomingChange' to 'true' in the 'meta.json' for the block to hide it.`
+          );
+        }
+
+        challenge.chapter = chapter.dashedName;
+
+        const module = getModuleFromBlock(
           challenge.block,
           fullStackSuperBlockStructure
         );
+
+        if (!meta.isUpcomingChange && module.comingSoon) {
+          throw Error(
+            `The '${chapter.dashedName}' module is 'comingSoon', but its '${meta.dashedName}' block is not hidden. Set 'isUpcomingChange' to 'true' in the 'meta.json' for the block to hide it.`
+          );
+        }
+
+        challenge.module = module.dashedName;
       }
     }
     const challengeOrder = findIndex(
@@ -331,7 +432,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
     challenge.blockType = meta.blockType;
     challenge.blockLayout = meta.blockLayout;
     challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
-    challenge.order = isSuperBlockWithChapters(meta.superBlock)
+    challenge.order = chapterBasedSuperBlocks.includes(meta.superBlock)
       ? getBlockOrder(meta.dashedName, fullStackSuperBlockStructure)
       : meta.order;
 

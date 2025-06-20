@@ -7,7 +7,7 @@ dashedName: quiz-css-positioning
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -17,29 +17,127 @@ To pass the quiz, you must correctly answer at least 17 of the 20 questions belo
 
 #### --text--
 
-What is the main purpose of the `float` property in CSS?
+Which of the following is NOT a valid value for the `position` property?
 
 #### --distractors--
 
-To create rounded corners.
+`fixed`
 
 ---
 
-To control opacity.
+`absolute`
 
 ---
 
-To center vertically.
+`relative`
 
 #### --answer--
 
-To align elements to either the left or the right of their container.
+`above`
 
 ### --question--
 
 #### --text--
 
-Which CSS property is used to set the stack order of an element?
+What is the main purpose of the `float` property in CSS?
+
+#### --distractors--
+
+Floats are used to remove an element from its normal flow on the page and automatically position it in the upper right hand side of the webpage.
+
+---
+
+Floats are used to remove an element from its normal flow on the page and position it to the top of its container.
+
+---
+
+Floats are used to remove an element from its normal flow on the page and automatically position it to the bottom right hand side of webpage.
+
+#### --answer--
+
+Floats are used to remove an element from its normal flow on the page and position it either on the left or right side of its container.
+
+### --question--
+
+#### --text--
+
+Which of the following is an example making a box element float to the left?
+
+#### --distractors--
+
+```css
+.box {
+  left: float;
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+}
+```
+
+---
+
+```css
+.box {
+  position: float-left;
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+}
+```
+
+---
+
+```css
+.box {
+  float: left-side;
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+}
+```
+
+#### --answer--
+
+```css
+.box {
+  float: left;
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+}
+```
+
+### --question--
+
+#### --text--
+
+What is the role of the `clear` property?
+
+#### --distractors--
+
+It is used to determine if an element needs to be moved to the bottom of the page.
+
+---
+
+It is used to determine if an element needs to be completely cleared from the page.
+
+---
+
+It is used to determine if an element needs to be fixed to the top of the page.
+
+#### --answer--
+
+It is used to determine if an element needs to be moved below the floated content.
+
+### --question--
+
+#### --text--
+
+Which CSS property is used to control the vertical stacking order of positioned elements that overlap on the page?
 
 #### --distractors--
 
@@ -61,23 +159,47 @@ Which CSS property is used to set the stack order of an element?
 
 #### --text--
 
-What happens when you apply `position: relative` to an element in CSS?
+Which of the following is the correct syntax for relative positioning?
 
 #### --distractors--
 
-It removes the element from document flow.
+```css
+.relative {
+  position: relative-position;
+  top: 30px;
+  left: 30px;
+}
+```
 
 ---
 
-It only moves the element relative to the viewport.
+```css
+.relative {
+  relative-position: relative;
+  top: 30px;
+  left: 30px;
+}
+```
 
 ---
 
-It positions the element in a fixed position relative to the viewport.
+```css
+.relative {
+  relative: position;
+  top: 30px;
+  left: 30px;
+}
+```
 
 #### --answer--
 
-It moves the element relative to its default position in the document.
+```css
+.relative {
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+```
 
 ### --question--
 
@@ -87,41 +209,143 @@ Which CSS property would you use to fix an element at a certain position on the 
 
 #### --distractors--
 
-`position: absolute`
+`position: no-scroll;`
 
 ---
 
-`position: relative`
+`position: relative;`
 
 ---
 
-`display: block`
+`display: block;`
 
 #### --answer--
 
-`position: fixed`
+`position: fixed;`
 
 ### --question--
 
 #### --text--
 
-If an element has `position: absolute`, what element is it positioned relatively to?
+What does absolute positioning do to an element?
 
 #### --distractors--
 
-The closest ancestor with `position: fixed`.
+Absolute positioning is used to determine if an element needs to be moved below the floated content.
 
 ---
 
-The closest ancestor with `position: absolute`.
+Absolute positioning is used to position the element within the normal document flow.
 
 ---
 
-The `<body>` element.
+Absolute positioning is used to control the vertical stacking order of positioned elements that overlap on the page.
 
 #### --answer--
 
-The closest positioned ancestor with `position` set to `relative`, `absolute`, or `fixed`.
+Absolute positioning allows you to take an element out of the normal document flow, making it behave independently from other elements.
+
+### --question--
+
+#### --text--
+
+Which of the following is NOT a valid property that you can use for absolute positioning?
+
+#### --distractors--
+
+`right`
+
+---
+
+`bottom`
+
+---
+
+`top`
+
+#### --answer--
+
+`side`
+
+### --question--
+
+#### --text--
+
+What is the key difference between relative and absolute positioning?
+
+#### --distractors--
+
+Absolute positioning sets the element in a sticky position while relative positioning takes an element out of the normal document flow.
+
+---
+
+Relative positioning sets the element in a fixed position while absolute positioning takes an element out of the normal document flow.
+
+---
+
+Absolute positioning positions the element within the normal document flow while relative positioning takes an element out of the normal document flow.
+
+#### --answer--
+
+Relative positioning positions the element within the normal document flow while absolute positioning takes an element out of the normal document flow.
+
+### --question--
+
+#### --text--
+
+Which of the following is an example of positioning a box in the upper left hand corner of the page?
+
+#### --distractors--
+
+```css
+.box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: coral;
+  width: 50px;
+  height: 50px;
+}
+```
+
+---
+
+```css
+.box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: coral;
+  width: 50px;
+  height: 50px;
+}
+```
+
+---
+
+```css
+.box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: coral;
+  width: 50px;
+  height: 50px;
+}
+```
+
+#### --answer--
+
+```css
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: coral;
+  width: 50px;
+  height: 50px;
+}
+```
 
 ### --question--
 
@@ -131,324 +355,256 @@ Which positioning method allows an element to stick to a defined position only w
 
 #### --distractors--
 
-`position: float`
+Float positioning.
 
 ---
 
-`position: fixed`
+Fixed positioning.
 
 ---
 
-`position: absolute`
+Absolute positioning.
 
 #### --answer--
 
-`position: sticky`
+Sticky positioning.
 
 ### --question--
 
 #### --text--
 
-Given the following code:
+Which of the following is a correct example of using sticky positioning?
+
+#### --distractors--
 
 ```css
-#box1 {
-  position: relative;
-  z-index: 1;
-}
-
-#box2 {
-  position: relative;
-  z-index: 2;
-}
-
-#box3 {
-  position: relative;
-  z-index: -1;
+.box {
+  sticky: position;
+  top: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
 }
 ```
 
-How will `#box3` be positioned on the page?
+---
 
-#### --distractors--
-
-It will be stacked above all the other elements on the page.
+```css
+.box {
+  position: sticky-fixed;
+  top: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+```
 
 ---
 
-It will disappear from view.
-
----
-
-It will stay at the bottom corner of the page.
+```css
+.box {
+  position: sticky-top;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+```
 
 #### --answer--
 
-It will be stacked below all the other elements on the page.
+```css
+.box {
+  position: sticky;
+  top: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+```
 
 ### --question--
 
 #### --text--
 
-How does a floated element affect the layout of surrounding elements?
+What is the difference between sticky and fixed positioning?
 
 #### --distractors--
 
-Other elements are placed in relation to the floated element.
+Sticky elements can only be used in table layouts while fixed elements can be used in any type of CSS layout.
 
 ---
 
-The surrounding elements ignore the floated element and overlap it.
+Sticky elements will always remain in the same position while fixed elements will stick to a certain point then behave like relative elements.
 
 ---
 
-It will shift surrounding elements behind the floated element.
+Fixed elements will be positioned relative to its normal position while sticky elements will only stick to a certain point then behave like relative elements.
 
 #### --answer--
 
-Block elements surrounding it flow around the floated element.
+Fixed elements will remain in the same position on the screen while sticky elements will only stick to a certain point then behave like relative elements.
 
 ### --question--
 
 #### --text--
 
-What does an element with `position: sticky` require for it to work?
+What problem did the `clearfix` hack solve when working with floats?
 
 #### --distractors--
 
-A `position: relative` parent element.
+The `clearfix` hack helped solve the issue of floated elements being removed from the normal document flow and being placed in a fixed position on the page.
 
 ---
 
-A `z-index` value greater than 1.
+The `clearfix` hack helped solve the issue of floated elements not being responsive in mobile and tablet layouts.
 
 ---
 
-A `z-index` of 0 or greater.
+The `clearfix` hack helped solve the issue of floated elements disappearing from the page.
 
 #### --answer--
 
-A declared `top`, `left`, `right`, or `bottom` property.
+The `clearfix` hack helped solve the issue of overlaps and collapsing in the layouts when multiple floated elements were stacked next to each other.
 
 ### --question--
 
 #### --text--
 
-What happens when setting the `overflow` property of a parent to `auto` and one of its children has the property `position: sticky`?
+Which of the following is a correct example for using the `clearfix` hack?
 
 #### --distractors--
 
-The child element's sticky behavior is not affected by the `overflow` property of the parent.
+```css
+.clearfix::before {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  clear: both;
+}
+```
 
 ---
 
-The sticky element will maintain its behavior regardless of scrolling.
+```css
+.clearfix::after {
+  position: relative;
+  top: 30px;
+  left: 30px;
+  clear: all;
+}
+```
 
 ---
 
-The sticky element will act as if it has `position: fixed` within the parent.
+```css
+.clearfix::before {
+  top: 30px;
+  clear: none;
+}
+```
 
 #### --answer--
 
-The child will lose its sticky behavior when the parent scrolls.
+```css
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+```
 
 ### --question--
 
 #### --text--
 
-Which of the following properties is used to offset a positioned element from its normal position?
+What is static positioning?
 
 #### --distractors--
 
-`float`
+This is used to remove an element from its normal flow on the page and automatically position it in the upper right hand side of the webpage.
 
 ---
 
-`padding-right`
+This allows you to take an element out of the normal document flow, making it behave independently from other elements.
 
 ---
 
-`margin-right`
+This allows an element to stick to a defined position only when you scroll past a certain point.
 
 #### --answer--
 
-`right`
+This is the normal flow for the document. Elements are positioned from top to bottom and left to right one after another.
 
 ### --question--
 
 #### --text--
 
-How does a floated element impact the height of its containing block when the containing block does not have an explicit height defined?
+Which of the following is an example of setting the navbar to the top of the page using fixed positioning?
 
 #### --distractors--
 
-The height of the containing block is automatically expanded to fit the floated element.
+```css
+.navbar {
+  fixed: top;
+  top: 0;
+  width: 100%;
+}
+```
 
 ---
 
-The height will automatically adapt to fit all the floated elements.
+```css
+.navbar {
+  upper: fixed;
+  width: 100%;
+}
+```
 
 ---
 
-The containing block will automatically apply `clear: both` to fit the floated element.
+```css
+.navbar {
+  position: fixed-top;
+  top: 0;
+  width: 100%;
+}
+```
 
 #### --answer--
 
-The containing block will collapse, completely ignoring its floated element height.
+```css
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+```
 
 ### --question--
 
 #### --text--
 
-Which of the following CSS techniques is an accepted method for preventing a parent container from shrinking in size when it contains only floated elements?
+Which of the following is a valid value to use for the `z-index` property?
 
 #### --distractors--
 
-Set `float: none` to the container.
+`12.0`
 
 ---
 
-Add `margin: auto` to the parent container.
+`none`
 
 ---
 
-Use the `position: relative` on the parent container.
+`up`
 
 #### --answer--
 
-Adding the property `overflow: auto` or `overflow: hidden` to the parent container.
-
-### --question--
-
-#### --text--
-
-When a floating element is followed by non-floating inline elements, how will their layout be affected?
-
-#### --distractors--
-
-The inline elements will be positioned below the floated element. 
-
----
-
-Inline elements will always be on top of the floated element.
-
----
-
-The inline elements will overlap the floated element.
-
-#### --answer--
-
-Inline elements will wrap around the floated element if there is enough space.
-
-### --question--
-
-#### --text--
-
-What happens when `clear: both` is applied to an element following two floated elements - one left and one right - in a container?
-
-#### --distractors--
-
-The element will be positioned to the left of the floated elements.
-
----
-
-The element will align between the two floated elements.
-
----
-
-The element will wrap around the floated elements depending on space.
-
-#### --answer--
-
-The element will be underneath both floated elements - the float breaks.
-
-### --question--
-
-#### --text--
-
-When does an element with `z-index: auto` create a new stacking context?
-
-#### --distractors--
-
-When combined with `position: absolute` or `position: relative`.
-
----
-
-When its parent element has `z-index: auto` and `position: fixed`.
-
----
-
-When it is combined with `float: left`, if two sibling elements are of the same `z-index` and absolutely positioned.
-
-#### --answer--
-
-In combination with `position: fixed` or `position: sticky`.
-
-### --question--
-
-#### --text--
-
-If two sibling elements have the same `z-index` and are both positioned absolutely using `position: absolute`, what determines which one is on top?
-
-#### --distractors--
-
-It rearranges the sibling elements in relation to its new position.
-
----
-
-Adding `z-index: auto` to the parent container.
-
----
-
-Using `position: relative` on the parent container.
-
-#### --answer--
-
-The document source order (HTML position).
-
-### --question--
-
-#### --text--
-
-In what way will the property `position: relative` exert an effect on sibling elements in regards to document flow?
-
-#### --distractors--
-
-It removes the element from the normal document flow, which affects the positions of siblings.
-
----
-
-The relative element will move by the parent's top and left properties. 
-
----
-
-It creates a new stacking context which lifts the element in relation to any siblings.
-
-#### --answer--
-
-It allows the element to shift without affecting the document flow of sibling elements.
-
-### --question--
-
-#### --text--
-
-What happens when a `position: relative` element is nested inside of a `position: absolute` parent, with `top` and `left` values set?
-
-#### --distractors--
-
-It moves relative to the parent element's original position.
-
----
-
-It moves with respect to the absolute coordinates of the containing parent element.
-
----
-
-It will never create a new stacking context regardless of the `z-index` value.
-
-#### --answer--
-
-It ignores the positioning of the parent and moves relative to its normal position.
+`1`
 
 ### --question--
 

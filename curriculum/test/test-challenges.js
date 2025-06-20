@@ -8,7 +8,6 @@ const Mocha = require('mocha');
 const mockRequire = require('mock-require');
 const spinner = require('ora')();
 const puppeteer = require('puppeteer');
-const stringSimilarity = require('string-similarity');
 
 // lodash-es can't easily be used in node environments, so we just mock it out
 // for the original lodash in testing.
@@ -24,34 +23,22 @@ require('@babel/register')({
   only: [clientPath]
 });
 const {
-  buildDOMChallenge,
-  buildPythonChallenge,
   buildChallenge,
-  buildFunctions
+  runnerTypes
 } = require('../../client/src/templates/Challenges/utils/build');
-const {
-  WorkerExecutor
-} = require('../../client/src/templates/Challenges/utils/worker-executor');
 const {
   challengeTypes,
   hasNoSolution
 } = require('../../shared/config/challenge-types');
-// the config files are created during the build, but not before linting
-const javaScriptTestEvaluator =
-  require('../../client/config/browser-scripts/test-evaluator.json').filename;
-const pythonTestEvaluator =
-  require('../../client/config/browser-scripts/python-test-evaluator.json').filename;
-
 const { getLines } = require('../../shared/utils/get-lines');
-
 const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
 const {
-  createHeader,
-  testId
+  prefixDoctype,
+  helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
-const { SuperBlocks } = require('../../shared/config/curriculum');
+const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -59,6 +46,28 @@ const createPseudoWorker = require('./utils/pseudo-worker');
 const { sortChallenges } = require('./utils/sort-challenges');
 
 const { flatten, isEmpty, cloneDeep } = lodash;
+
+if (
+  [
+    process.env.FCC_BLOCK,
+    process.env.FCC_CHALLENGE_ID,
+    process.env.FCC_SUPERBLOCK
+  ].filter(Boolean).length > 1
+) {
+  throw new Error(
+    `Please use at most single input from: block, challenge id, superblock.`
+  );
+}
+
+const testFilter = {
+  block: process.env.FCC_BLOCK ? process.env.FCC_BLOCK.trim() : undefined,
+  challengeId: process.env.FCC_CHALLENGE_ID
+    ? process.env.FCC_CHALLENGE_ID.trim()
+    : undefined,
+  superBlock: process.env.FCC_SUPERBLOCK
+    ? process.env.FCC_SUPERBLOCK.trim()
+    : undefined
+};
 
 // rethrow unhandled rejections to make sure the tests exit with non-zero code
 process.on('unhandledRejection', err => handleRejection(err));
@@ -73,6 +82,7 @@ process.on('uncaughtException', err => {
 // some errors *may* not be reported, since cleanup is triggered by the first
 // error and that starts shutting down the browser and the server.
 const handleRejection = err => {
+  console.error('Unhandled rejection:');
   // setting the error code because node does not (yet) exit with a non-zero
   // code on unhandled exceptions.
   process.exitCode = 1;
@@ -113,32 +123,24 @@ spinner.text = 'Populate tests.';
 
 let browser;
 let page;
-// This worker can be reused since it clears its environment between tests.
-let pythonWorker;
 
 setup()
   .then(runTests)
   .catch(err => handleRejection(err));
 
 async function setup() {
-  if (
-    [
-      process.env.FCC_BLOCK,
-      process.env.FCC_CHALLENGE_ID,
-      process.env.FCC_SUPERBLOCK
-    ].filter(Boolean).length > 1
-  ) {
-    throw new Error(
-      `Please use at most single input from: block, challenge id, superblock.`
-    );
-  }
-
   // liveServer starts synchronously
   liveServer.start({
     host: '127.0.0.1',
     port: '8080',
     root: path.resolve(__dirname, 'stubs'),
-    mount: [['/js', path.join(clientPath, 'static/js')]],
+    mount: [
+      [
+        '/dist',
+        path.join(clientPath, `static/js/test-runner/${helperVersion}`)
+      ],
+      ['/js', path.join(clientPath, 'static/js')]
+    ],
     open: false,
     logLevel: 0
   });
@@ -156,65 +158,26 @@ async function setup() {
   });
   global.Worker = createPseudoWorker(await newPageContext(browser));
 
-  pythonWorker = new WorkerExecutor(pythonTestEvaluator, {
-    terminateWorker: false
-  });
   page = await newPageContext(browser);
   await page.setViewport({ width: 300, height: 150 });
 
   const lang = testedLang();
 
-  let challenges = await getChallenges(lang);
+  let challenges = await getChallenges(lang, testFilter);
 
   // the next few statements create a list of all blocks and superblocks
   // as they appear in the list of challenges
-  const blocks = challenges.map(({ block }) => block);
   const superBlocks = challenges.map(({ superBlock }) => superBlock);
-  const targetBlockStrings = [...new Set(blocks.filter(el => Boolean(el)))];
   const targetSuperBlockStrings = [
     ...new Set(superBlocks.filter(el => Boolean(el)))
   ];
 
-  // the next few statements will filter challenges based on command variables
-  if (process.env.FCC_SUPERBLOCK) {
-    const filter = stringSimilarity.findBestMatch(
-      process.env.FCC_SUPERBLOCK,
-      targetSuperBlockStrings
-    ).bestMatch.target;
-
-    console.log(`\nsuperBlock being tested: ${filter}`);
-    challenges = challenges.filter(
-      challenge => challenge.superBlock === filter
-    );
-
-    if (!challenges.length) {
-      throw new Error(`No challenges found with superBlock "${filter}"`);
-    }
-  }
-
-  if (process.env.FCC_BLOCK) {
-    const filter = stringSimilarity.findBestMatch(
-      process.env.FCC_BLOCK,
-      targetBlockStrings
-    ).bestMatch.target;
-
-    console.log(`\nblock being tested: ${filter}`);
-    challenges = challenges.filter(challenge => challenge.block === filter);
-
-    if (!challenges.length) {
-      throw new Error(`No challenges found with block "${filter}"`);
-    }
-  }
-
-  if (process.env.FCC_CHALLENGE_ID) {
-    console.log(`\nChallenge Id being tested: ${process.env.FCC_CHALLENGE_ID}`);
+  if (testFilter.challengeId) {
     const challengeIndex = challenges.findIndex(
-      challenge => challenge.id === process.env.FCC_CHALLENGE_ID
+      challenge => challenge.id === testFilter.challengeId
     );
     if (challengeIndex === -1) {
-      throw new Error(
-        `No challenge found with id "${process.env.FCC_CHALLENGE_ID}"`
-      );
+      throw new Error(`No challenge found with id "${testFilter.challengeId}"`);
     }
     const { solutions = [] } = challenges[challengeIndex];
     if (isEmpty(solutions)) {
@@ -266,16 +229,17 @@ function runTests(challengeData) {
   run();
 }
 
-async function getChallenges(lang) {
-  const challenges = await getChallengesForLang(lang).then(curriculum =>
-    Object.keys(curriculum)
-      .map(key => curriculum[key].blocks)
-      .reduce((challengeArray, superBlock) => {
-        const challengesForBlock = Object.keys(superBlock).map(
-          key => superBlock[key].challenges
-        );
-        return [...challengeArray, ...flatten(challengesForBlock)];
-      }, [])
+async function getChallenges(lang, filters) {
+  const challenges = await getChallengesForLang(lang, filters).then(
+    curriculum =>
+      Object.keys(curriculum)
+        .map(key => curriculum[key].blocks)
+        .reduce((challengeArray, superBlock) => {
+          const challengesForBlock = Object.keys(superBlock).map(
+            key => superBlock[key].challenges
+          );
+          return [...challengeArray, ...flatten(challengesForBlock)];
+        }, [])
   );
   // This matches the order Gatsby uses (via a GraphQL query). Ideally both
   // should be sourced and sorted using a single query, but we're not there yet.
@@ -310,11 +274,11 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
           );
         });
         filteredMeta.forEach((meta, index) => {
-          // Upcoming changes are in developmen so are not required to be in
-          // order. FullStackDeveloper does not use the meta for order.
+          // Upcoming changes are in development so are not required to be in
+          // order. Chapter-based super blocks do not use the meta for order.
           if (
             !meta.isUpcomingChange &&
-            meta.superBlock !== SuperBlocks.FullStackDeveloper
+            !chapterBasedSuperBlocks.includes(meta.superBlock)
           ) {
             it(`${meta.superBlock} ${meta.name} must be in order`, function () {
               assert.equal(meta.order, index);
@@ -426,14 +390,18 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                       challenge.challengeFiles,
                       buildChallenge
                     );
-                  } catch {
+                  } catch (e) {
+                    console.error(
+                      `Error creating test runner for initial contents`
+                    );
+                    console.error(e);
                     fails = true;
                   }
                   if (!fails) {
                     for (const test of tests) {
                       try {
                         await testRunner(test);
-                      } catch (e) {
+                      } catch {
                         fails = true;
                         break;
                       }
@@ -565,20 +533,15 @@ async function createTestRunner(
     { usesTestRunner: true }
   );
 
-  const code = {
-    contents: sources.index,
-    editableContents: sources.editableContents,
-    original: sources.original
-  };
-
-  const buildFunction = buildFunctions[challenge.challengeType];
-
-  const runsInBrowser = buildFunction === buildDOMChallenge;
-  const runsInPythonWorker = buildFunction === buildPythonChallenge;
-
-  const evaluator = await (runsInBrowser
-    ? getContextEvaluator(build, sources, code, loadEnzyme)
-    : getWorkerEvaluator(build, sources, code, runsInPythonWorker));
+  const evaluator = await getContextEvaluator({
+    // passing in challengeId so it's easier to debug timeouts
+    challengeId: challenge.id,
+    build,
+    sources,
+    type: runnerTypes[challenge.challengeType],
+    loadEnzyme,
+    hooks: challenge.hooks
+  });
 
   return async ({ text, testString }) => {
     try {
@@ -587,7 +550,6 @@ async function createTestRunner(
         throw err;
       }
     } catch (err) {
-      // add more info to the error so the failing test can be identified.
       text = 'Test text: ' + text;
       const newMessage = solutionFromNext
         ? 'Check next step for solution!\n' + text
@@ -624,52 +586,61 @@ function replaceChallengeFilesContentsWithSolutions(
   });
 }
 
-async function getContextEvaluator(build, sources, code, loadEnzyme) {
-  await initializeTestRunner(build, sources, code, loadEnzyme);
+async function getContextEvaluator(config) {
+  await initializeTestRunner(config);
 
   return {
     evaluate: async (testString, timeout) =>
       Promise.race([
         new Promise((_, reject) =>
-          setTimeout(() => reject('timeout'), timeout)
+          setTimeout(
+            () =>
+              reject(
+                Error(`timeout in challenge
+${config.challengeId}
+while evaluating test:
+${testString}
+`)
+              ),
+            timeout
+          )
         ),
-        await page.evaluate(async testString => {
-          return await document.__runTest(testString);
-        }, testString)
+        await page.evaluate(
+          async (testString, type) => {
+            return await window.FCCTestRunner.getRunner(type).runTest(
+              testString
+            );
+          },
+          testString,
+          config.type
+        )
       ])
   };
 }
 
-async function getWorkerEvaluator(build, sources, code, runsInPythonWorker) {
-  // The python worker clears the globals between tests, so it should be fine
-  // to use the same evaluator for all tests. TODO: check if this is true for
-  // sys, since sys.modules is not being reset.
-  const testWorker = runsInPythonWorker
-    ? pythonWorker
-    : new WorkerExecutor(javaScriptTestEvaluator, { terminateWorker: true });
-  return {
-    evaluate: async (testString, timeout) =>
-      await testWorker.execute({ testString, build, code, sources }, timeout)
-        .done
-  };
-}
+async function initializeTestRunner({
+  build,
+  sources,
+  type,
+  hooks,
+  loadEnzyme
+}) {
+  const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
 
-async function initializeTestRunner(build, sources, code, loadEnzyme) {
-  await page.reload();
-  await page.setContent(createHeader(testId) + build);
   await page.evaluate(
-    async (code, sources, loadEnzyme) => {
-      const getUserInput = fileName => sources[fileName];
-      // TODO: use frame's functions directly, so it behaves more like the
-      // client.
-      await document.__initTestFrame({
+    async (sources, source, type, hooks, loadEnzyme) => {
+      await window.FCCTestRunner.createTestRunner({
+        source,
+        type,
         code: sources,
-        getUserInput,
+        hooks,
         loadEnzyme
       });
     },
-    code,
     sources,
+    source,
+    type,
+    hooks,
     loadEnzyme
   );
 }

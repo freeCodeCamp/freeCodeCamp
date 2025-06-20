@@ -10,6 +10,7 @@ interface ChallengeOptions {
   title: string;
   dashedName: string;
   challengeType: string;
+  questionCount?: number;
 }
 
 const buildFrontMatter = ({
@@ -76,13 +77,13 @@ const getQuizChallengeTemplate = (
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least ${options.questionCount! == 20 ? '18' : '9'} of the ${options.questionCount!.toString()} questions below.
 
 # --quizzes--
 
 ## --quiz--
 
-### --question--
+${`### --question--
 
 #### --text--
 
@@ -104,6 +105,7 @@ Placeholder distractor 3
 
 Placeholder answer
 
+`.repeat(options.questionCount! - 1)}
 ### --question--
 
 #### --text--
@@ -125,403 +127,6 @@ Placeholder distractor 3
 #### --answer--
 
 Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
-### --question--
-
-#### --text--
-
-Placeholder question
-
-#### --distractors--
-
-Placeholder distractor 1
-
----
-
-Placeholder distractor 2
-
----
-
-Placeholder distractor 3
-
-#### --answer--
-
-Placeholder answer
-
 `;
 
 const getVideoChallengeTemplate = (
@@ -679,6 +284,50 @@ Watch the video below to understand the context of the upcoming lessons.
 # --assignment--
 
 Watch the video.
+
+# --scene--
+
+\`\`\`json
+{
+  "setup": {
+    "background": "chaos.png",
+    "characters": [
+      {
+        "character": "David",
+        "position": {"x":50,"y":80,"z":8},
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "1.1-1.mp3",
+      "startTime": 1,
+      "startTimestamp": 5.7,
+      "finishTimestamp": 6.48
+    }
+  },
+  "commands": [
+    {
+      "character": "David",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "David",
+      "startTime": 1,
+      "finishTime": 0.78,
+      "dialogue": {
+        "text": "I'm Tom.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Tom",
+      "opacity": 0,
+      "startTime": 1.28
+    }
+  ]
+}
+\`\`\`
 `;
 
 type Template = (opts: ChallengeOptions) => string;

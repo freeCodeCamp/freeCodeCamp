@@ -1,11 +1,12 @@
-export { getPublicProfile } from './schemas/api/users/get-public-profile';
-export { userExists } from './schemas/api/users/exists';
+export { getPublicProfile } from './schemas/users/get-public-profile';
+export { userExists } from './schemas/users/exists';
 export { certSlug } from './schemas/certificate/cert-slug';
 export { certificateVerify } from './schemas/certificate/certificate-verify';
 export { backendChallengeCompleted } from './schemas/challenge/backend-challenge-completed';
 export { coderoadChallengeCompleted } from './schemas/challenge/coderoad-challenge-completed';
 export { exam } from './schemas/challenge/exam';
 export { examChallengeCompleted } from './schemas/challenge/exam-challenge-completed';
+export { dailyCodingChallengeCompleted } from './schemas/challenge/daily-coding-challenge-completed';
 export { modernChallengeCompleted } from './schemas/challenge/modern-challenge-completed';
 export { msTrophyChallengeCompleted } from './schemas/challenge/ms-trophy-challenge-completed';
 export { projectCompleted } from './schemas/challenge/project-completed';

@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { useLocation, navigate as reachNavigate } from '@reach/router';
+import { useLocation, navigate as reachNavigate } from '@gatsbyjs/reach-router';
 import {
   Container,
   Col,
@@ -85,6 +85,8 @@ interface ShowQuizProps {
   closeFinishQuizModal: () => void;
 }
 
+const removeParagraphTags = (text: string) => text.replace(/^<p>|<\/p>$/g, '');
+
 const ShowQuiz = ({
   challengeMounted,
   data: {
@@ -128,6 +130,8 @@ const ShowQuiz = ({
 
   const [exitConfirmed, setExitConfirmed] = useState(false);
 
+  const [exitPathname, setExitPathname] = useState(blockHashSlug);
+
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
@@ -141,7 +145,12 @@ const ShowQuiz = ({
       const distractors = question.distractors.map((distractor, index) => {
         return {
           label: (
-            <PrismFormatted className='quiz-answer-label' text={distractor} />
+            <PrismFormatted
+              className='quiz-answer-label'
+              text={removeParagraphTags(distractor)}
+              useSpan
+              noAria
+            />
           ),
           value: index + 1
         };
@@ -151,14 +160,21 @@ const ShowQuiz = ({
         label: (
           <PrismFormatted
             className='quiz-answer-label'
-            text={question.answer}
+            text={removeParagraphTags(question.answer)}
+            useSpan
+            noAria
           />
         ),
         value: 4
       };
 
       return {
-        question: <PrismFormatted text={question.text} />,
+        question: (
+          <PrismFormatted
+            className='quiz-question-label'
+            text={question.text}
+          />
+        ),
         answers: shuffleArray([...distractors, answer]),
         correctAnswer: answer.value
       };
@@ -176,9 +192,10 @@ const ShowQuiz = ({
       correct: t('learn.quiz.correct-answer'),
       incorrect: t('learn.quiz.incorrect-answer')
     },
-    passingGrade: 85,
+    passingPercent: 90,
     onSuccess: () => {
-      openCompletionModal(), setIsPassed(true);
+      openCompletionModal();
+      setIsPassed(true);
     },
     onFailure: () => setIsPassed(false)
   });
@@ -230,7 +247,7 @@ const ShowQuiz = ({
 
   const handleExitQuizModalBtnClick = () => {
     setExitConfirmed(true);
-    void navigate(blockHashSlug);
+    void navigate(exitPathname);
     closeExitQuizModal();
   };
 
@@ -242,21 +259,37 @@ const ShowQuiz = ({
     [t]
   );
 
-  const onHistoryChange = useCallback(() => {
-    // We don't block navigation in the following cases.
-    // - When campers have submitted the quiz:
-    //   - If they don't pass, the Finish Quiz button is disabled, there isn't anything for them to do other than leaving the page
-    //   - If they pass, the Submit-and-go button shows up, and campers should be allowed to leave the page
-    // - When they have clicked the exit button on the exit modal
-    if (hasSubmitted || exitConfirmed) {
-      return;
-    }
+  const onHistoryChange = useCallback(
+    (targetPathname: string) => {
+      // We don't block navigation in the following cases.
+      // - When campers have submitted the quiz:
+      //   - If they don't pass, the Finish Quiz button is disabled, there isn't anything for them to do other than leaving the page
+      //   - If they pass, the Submit-and-go button shows up, and campers should be allowed to leave the page
+      // - When they have clicked the exit button on the exit modal
+      if (hasSubmitted || exitConfirmed) {
+        return;
+      }
 
-    // We need to use Reach Router, because the pathname is already prefixed
-    // with the language and Gatsby's navigate will prefix it again.
-    void reachNavigate(`${curLocation.pathname}`);
-    openExitQuizModal();
-  }, [curLocation.pathname, hasSubmitted, exitConfirmed, openExitQuizModal]);
+      const newPathname = targetPathname.startsWith('/learn')
+        ? blockHashSlug
+        : targetPathname;
+
+      // Save the pathname of the page the user wants to navigate to before we block the navigation.
+      setExitPathname(newPathname);
+
+      // We need to use Reach Router, because the pathname is already prefixed
+      // with the language and Gatsby's navigate will prefix it again.
+      void reachNavigate(`${curLocation.pathname}`);
+      openExitQuizModal();
+    },
+    [
+      curLocation.pathname,
+      hasSubmitted,
+      exitConfirmed,
+      openExitQuizModal,
+      blockHashSlug
+    ]
+  );
 
   usePageLeave({
     onWindowClose,
@@ -319,16 +352,14 @@ const ShowQuiz = ({
               </div>
               <Spacer size='m' />
               {!isPassed ? (
-                <>
-                  <Button
-                    block={true}
-                    variant='primary'
-                    onClick={handleFinishQuiz}
-                    disabled={hasSubmitted}
-                  >
-                    {t('buttons.finish-quiz')}
-                  </Button>
-                </>
+                <Button
+                  block={true}
+                  variant='primary'
+                  onClick={handleFinishQuiz}
+                  disabled={hasSubmitted}
+                >
+                  {t('buttons.finish-quiz')}
+                </Button>
               ) : (
                 <Button
                   block={true}

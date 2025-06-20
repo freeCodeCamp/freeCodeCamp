@@ -24,7 +24,7 @@ function ExamToken(): JSX.Element {
       } = response;
       setExamToken(examEnvironmentAuthorizationToken);
       setExamTokenError('');
-    } catch (e) {
+    } catch (_e) {
       setExamTokenError(t('exam-token.error'));
     }
 

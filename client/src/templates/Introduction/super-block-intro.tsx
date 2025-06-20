@@ -1,4 +1,5 @@
-import { WindowLocation } from '@reach/router';
+import i18next from 'i18next';
+import { WindowLocation } from '@gatsbyjs/reach-router';
 import { graphql } from 'gatsby';
 import { uniq, isEmpty, last } from 'lodash-es';
 import React, { useEffect, memo, useMemo } from 'react';
@@ -10,8 +11,10 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
-import { SuperBlocks } from '../../../../shared/config/curriculum';
-import { getSuperBlockTitleForMap } from '../../utils/superblock-map-titles';
+import {
+  chapterBasedSuperBlocks,
+  SuperBlocks
+} from '../../../../shared/config/curriculum';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
@@ -24,9 +27,10 @@ import {
   userFetchStateSelector,
   signInLoadingSelector
 } from '../../redux/selectors';
-import type { ChallengeNode, User } from '../../redux/prop-types';
+import type { User } from '../../redux/prop-types';
 import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '../../../../shared/config/certification-settings';
+import { BlockLayouts, BlockTypes } from '../../../../shared/config/blocks';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
@@ -41,6 +45,23 @@ type FetchState = {
   pending: boolean;
   complete: boolean;
   errored: boolean;
+};
+
+type ChallengeNode = {
+  challenge: {
+    fields: { slug: string; blockName: string };
+    id: string;
+    block: string;
+    blockType: BlockTypes;
+    challengeType: number;
+    title: string;
+    order: number;
+    superBlock: SuperBlocks;
+    dashedName: string;
+    blockLayout: BlockLayouts;
+    chapter: string;
+    module: string;
+  };
 };
 
 type SuperBlockProps = {
@@ -148,15 +169,13 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     [superBlockChallenges, allCompletedChallenges]
   );
 
-  const i18nTitle = getSuperBlockTitleForMap(superBlock);
+  const i18nTitle = i18next.t(`intro:${superBlock}.title`);
 
   const showCertification = liveCerts.some(
     cert => superBlockToCertMap[superBlock] === cert.certSlug
   );
 
-  const superBlockWithAccordionView = [SuperBlocks.FullStackDeveloper];
-
-  const getChosenBlock = (): string => {
+  const getInitiallyExpandedBlock = (): string => {
     // if coming from breadcrumb click
     if (
       location.state &&
@@ -189,7 +208,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
       if (!isEmpty(completedChallenges)) {
         const lastCompletedChallengeId = last(completedChallenges)?.id;
 
-        const lastCompletedChallenge = allChallenges.find(
+        const lastCompletedChallenge = superBlockChallenges.find(
           ({ id }) => id === lastCompletedChallengeId
         );
 
@@ -204,10 +223,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     const { resetExpansion, toggleBlock } = props;
 
     resetExpansion();
-    return toggleBlock(getChosenBlock());
+    return toggleBlock(getInitiallyExpandedBlock());
   };
 
-  const chosenBlock = getChosenBlock();
+  const initialExpandedBlock = getInitiallyExpandedBlock();
 
   const onCertificationDonationAlertClick = () => {
     callGA({
@@ -240,11 +259,11 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 {t(`intro:misc-text.courses`)}
               </h2>
               <Spacer size='m' />
-              {superBlockWithAccordionView.includes(superBlock) ? (
+              {chapterBasedSuperBlocks.includes(superBlock) ? (
                 <SuperBlockAccordion
                   challenges={superBlockChallenges}
                   superBlock={superBlock}
-                  chosenBlock={chosenBlock}
+                  chosenBlock={initialExpandedBlock}
                   completedChallengeIds={completedChallenges.map(c => c.id)}
                 />
               ) : (
@@ -289,7 +308,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 {t(`intro:misc-text.browse-other`)}
               </h3>
               <Spacer size='m' />
-              <Map allChallenges={allChallenges} />
+              <Map />
               <Spacer size='l' />
             </Col>
           </Row>

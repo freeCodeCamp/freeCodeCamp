@@ -25,7 +25,7 @@ function useIsInViewport(ref: React.RefObject<HTMLDivElement>) {
   );
 
   useEffect(() => {
-    ref.current && observer.observe(ref.current);
+    if (ref.current) observer.observe(ref.current);
     return () => {
       observer.disconnect();
     };

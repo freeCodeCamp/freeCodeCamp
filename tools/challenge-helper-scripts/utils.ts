@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import ObjectID from 'bson-objectid';
 import matter from 'gray-matter';
+import { challengeTypes } from '../../shared/config/challenge-types';
 import { parseMDSync } from '../challenge-parser/parser';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
 import { getProjectPath } from './helpers/get-project-info';
@@ -10,6 +11,7 @@ import {
   isTaskChallenge,
   getTaskNumberFromTitle
 } from './helpers/task-helpers';
+import { getTemplate } from './helpers/get-challenge-template';
 
 interface Options {
   stepNum: number;
@@ -17,6 +19,13 @@ interface Options {
   projectPath?: string;
   challengeSeeds?: Record<string, ChallengeSeed>;
   isFirstChallenge?: boolean;
+}
+
+interface QuizOptions {
+  projectPath?: string;
+  title: string;
+  dashedName: string;
+  questionCount: number;
 }
 
 const createStepFile = ({
@@ -48,6 +57,48 @@ const createChallengeFile = (
   path = getProjectPath()
 ): void => {
   fs.writeFileSync(`${path}${filename}.md`, template);
+};
+
+const createQuizFile = ({
+  projectPath = getProjectPath(),
+  title,
+  dashedName,
+  questionCount
+}: QuizOptions): ObjectID => {
+  const challengeId = new ObjectID();
+  const challengeType = challengeTypes.quiz.toString();
+  const template = getTemplate(challengeType);
+
+  const quizText = template({
+    challengeId,
+    challengeType,
+    title,
+    dashedName,
+    questionCount
+  });
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, quizText);
+  return challengeId;
+};
+
+const createDialogueFile = ({
+  projectPath
+}: {
+  projectPath: string;
+}): ObjectID => {
+  const challengeId = new ObjectID();
+  const challengeType = challengeTypes.dialogue.toString();
+  const template = getTemplate(challengeType);
+
+  const dialogueText = template({
+    challengeId,
+    challengeType,
+    title: "Dialogue 1: I'm Tom",
+    dashedName: 'dialogue-1-im-tom'
+  });
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, dialogueText);
+  return challengeId;
 };
 
 interface InsertOptions {
@@ -216,6 +267,7 @@ const validateBlockName = (block: string): boolean | string => {
 
 export {
   createStepFile,
+  createDialogueFile,
   createChallengeFile,
   updateStepTitles,
   updateTaskMeta,
@@ -225,5 +277,6 @@ export {
   insertStepIntoMeta,
   deleteChallengeFromMeta,
   deleteStepFromMeta,
-  validateBlockName
+  validateBlockName,
+  createQuizFile
 };

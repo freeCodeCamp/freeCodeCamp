@@ -7,7 +7,7 @@ dashedName: quiz-javascript-arrays
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 17 of the 20 questions below.
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
 
 # --quizzes--
 
@@ -17,45 +17,62 @@ To pass the quiz, you must correctly answer at least 17 of the 20 questions belo
 
 #### --text--
 
-What is the correct way to declare a JavaScript array?
+What will be the output for the following code?
+
+```js
+const numbers = [1, 2, 3];
+console.log(numbers[10]);
+```
 
 #### --distractors--
 
-`let arr = array(1, 2, 3);`
+`[1, 2, 3]`
 
 ---
 
-`let arr = "1, 2, 3"; `
+`null`
 
 ---
 
-`let arr = {1, 2, 3};`
+`10`
 
 #### --answer--
 
-`let arr = [1, 2, 3];`
+`undefined`
 
 ### --question--
 
 #### --text--
 
-What is the key difference between primitive and non-primitive data types?
+Which of the following is the correct way access the string `"Jessica"` from the `developers` array?
 
 #### --distractors--
 
-Primitives can store multiple values.
+```js
+const developers = ["Jessica", "Naomi", "Tom"];
+developers[1]
+```
 
 ---
 
-Non-primitives cannot hold references to other objects.
+```js
+const developers = ["Jessica", "Naomi", "Tom"];
+developers[2]
+```
 
 ---
 
-Non-primitives store values directly.
+```js
+const developers = ["Jessica", "Naomi", "Tom"];
+developers[-1]
+```
 
 #### --answer--
 
-Primitives hold direct values, non-primitives hold references.
+```js
+const developers = ["Jessica", "Naomi", "Tom"];
+developers[0]
+```
 
 ### --question--
 
@@ -89,6 +106,50 @@ console.log(index);
 
 #### --text--
 
+What does the rest syntax do?
+
+#### --distractors--
+
+It is used to divide a string into an array of substrings.
+
+---
+
+It is used to add or remove elements from any position in an array.
+
+---
+
+It is used to add elements to the end of the array and will return the new length.
+
+#### --answer--
+
+It captures the remaining elements of an array into a new array.
+
+### --question--
+
+#### --text--
+
+What is array destructuring?
+
+#### --distractors--
+
+It is used to concatenate all of the elements of an array into a single string.
+
+---
+
+It is used to check if an array contains a specific value.
+
+---
+
+It is used to remove the last element from an array and will return that removed element.
+
+#### --answer--
+
+It is used to extract values from arrays and assign them to variables in a more concise and readable way.
+
+### --question--
+
+#### --text--
+
 What value will be assigned to the `arr2` variable?
 
 ```js
@@ -117,29 +178,29 @@ console.log(arr2);
 
 #### --text--
 
-What will this code print to the console?
+What will this code log to the console?
 
 ```js
-const colors = ['red', 'blue', 'green', 'yellow'];
-colors.splice(1, 2, 'purple');
+const colors = ["red", "blue", "green", "yellow"];
+colors.splice(1, 2, "purple");
 console.log(colors);
 ```
 
 #### --distractors--
 
-`['red', 'purple', 'green', 'yellow']`
+`["red", "blue", "green", "yellow"]`
 
 ---
 
-`['red', 'blue', 'yellow']`
+`["red", "blue", "yellow"]`
 
 ---
 
-`['red', 'blue', 'green', 'yellow']`
+`["red", "yellow"]`
 
 #### --answer--
 
-`['red', 'purple', 'yellow']`
+`["red", "purple", "yellow"]`
 
 ### --question--
 
@@ -148,26 +209,26 @@ console.log(colors);
 What value will be assigned to the `slicedArr` variable?
 
 ```js
-const arr = ['apple', 'banana', 'cherry', 'date'];
+const arr = ["apple", "banana", "cherry", "date"];
 const slicedArr = arr.slice(1, 3);
 console.log(slicedArr);
 ```
 
 #### --distractors--
 
-`['apple', 'banana']`
+`["apple", "banana"]`
 
 ---
 
-`['cherry', 'date']`
+`["cherry", "date"]`
 
 ---
 
-`['apple', 'cherry']`
+`["apple", "cherry"]`
 
 #### --answer--
 
-`['banana', 'cherry']`
+`["banana", "cherry"]`
 
 ### --question--
 
@@ -177,15 +238,15 @@ Which method returns the first index of a given element in an array?
 
 #### --distractors--
 
-`findIndex()`
+`firstIndex()`
 
 ---
 
-`lastIndexOf()`
+`lastIndex()`
 
 ---
 
-`slice()`
+`searchIndex()`
 
 #### --answer--
 
@@ -195,7 +256,7 @@ Which method returns the first index of a given element in an array?
 
 #### --text--
 
-Which method removes the first element from an array and shifts all other elements down?
+Which method is used to remove the first element from an array and returns that removed element?
 
 #### --distractors--
 
@@ -217,7 +278,7 @@ Which method removes the first element from an array and shifts all other elemen
 
 #### --text--
 
-What does `Array.prototype.concat()` do?
+What does the `concat()` method do?
 
 #### --distractors--
 
@@ -239,166 +300,97 @@ Merges two arrays into a new array.
 
 #### --text--
 
-What happens if you set an array's length to a value smaller than the current length?
-
-#### --distractors--
-
-It throws a syntax error.
-
----
-
-The extra space is filled with `undefined`.
-
----
-
-Nothing happens; the array remains the same size.
-
-#### --answer--
-
-The array gets truncated, removing elements beyond the new length.
-
-### --question--
-
-#### --text--
-
-What will be the output of this code ?
+What will be the output of this code?
 
 ```js
-const fruits = ['apple', 'banana', 'cherry', 'apple', 'orange'];
-const index = fruits.indexOf('apple');
-if (index !== -1) {
-    fruits.splice(index, 1);
-}
+const fruits = ["apple", "banana", "cherry", "apple", "orange"];
+
+fruits.splice(0, 1);
+
 console.log(fruits);
 ```
 
 #### --distractors--
 
-`['banana', 'cherry', 'orange']`
+`["apple", "banana", "cherry", "apple", "orange"]`
 
 ---
 
-`['apple', 'cherry', 'apple', 'orange']`
+`["apple", "banana", "cherry"]`
 
 ---
 
-`['banana', 'cherry', 'apple']`
+`["cherry", 'apple']`
 
 #### --answer--
 
-`['banana', 'cherry', 'apple', 'orange']`
+`["banana", "cherry", "apple", "orange"]`
 
 ### --question--
 
 #### --text--
 
-What is the final value of `result` in the following code?
-
-```js
-const arr1 = [1, 2];
-const arr2 = [3, 4, 5];
-const combined = arr1.concat(arr2);
-const result = combined.includes(3);
-console.log(result);
-```
+What does the `includes()` method do?
 
 #### --distractors--
 
-`false`
+It is used to divide a string into an array of substrings.
 
 ---
 
-`[1, 2, 3, 4, 5]`
+It is used to concatenate all of the elements of an array into a single string.
 
 ---
 
-`undefined`
+It is used to add or remove elements from any position in an array.
 
 #### --answer--
 
-`true`
+It is used to check if an array contains a specific value.
 
 ### --question--
 
 #### --text--
 
-What does the following code output?
-
-```js
-const nums = [1, 2, 3, 4];
-const doubled = nums.map(n => n * 2);
-console.log(doubled.includes(8));
-```
+Which of the following methods is used to reverse an array in place?
 
 #### --distractors--
 
-`false`
+`reversed()`
 
 ---
 
-`[2, 4, 6, 8]`
+`reverseArr()`
 
 ---
 
-`Error`
+`reversing()`
 
 #### --answer--
 
-`true`
+`reverse()`
 
 ### --question--
 
 #### --text--
 
-What is the output when using `splice()` to remove elements from a 2D array?
-
-```js
-let matrix = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9]
-];
-matrix.splice(1, 1);
-console.log(matrix);
-```
+What is a two dimensional array?
 
 #### --distractors--
 
-`[[1, 2, 3], [4, 5, 6]]`
+An array that only contains object literals.
 
 ---
 
-`[[1, 2], [4, 5], [7, 8]]`
+An array of fixed length.
 
 ---
 
-`[[7, 8, 9]]`
+An array of floating point numbers.
 
 #### --answer--
 
-`[[1, 2, 3], [7, 8, 9]]`
-
-### --question--
-
-#### --text--
-
-Which of the following statements about `.length` is correct?
-
-#### --distractors--
-
-It counts the number of values in a 2D array.
-
----
-
-It returns `undefined` for empty arrays.
-
----
-
-It gives the total number of elements in a 2D array.
-
-#### --answer--
-
-It counts the number of top-level elements in a 2D array.
+An array of arrays.
 
 ### --question--
 
@@ -426,75 +418,73 @@ It returns `-1` if the element is not found.
 
 #### --text--
 
-What is the main difference between `push()` and `concat()` when working with arrays?
+Which of the following is NOT an array method?
 
 #### --distractors--
 
-`push()` adds multiple arrays together, while `concat()` adds a single element.
+`includes()`
 
 ---
 
-`concat()` modifies the original array, while `push()` creates a new array.
+`pop()`
 
 ---
 
-Both `push()` and `concat()` are immutable methods.
+`push()`
 
 #### --answer--
 
-`push()` modifies the original array, while `concat()` creates a new array.
+`keys()`
 
 ### --question--
 
 #### --text--
 
-How does the rest parameter `...rest` work in array destructuring in JavaScript?
-
-#### --distractors--
-
-It is used to add extra elements to the array.
-
----
-
-It allows you to access elements outside the array's bounds.
-
----
-
-It removes the last element of the array.
-
-#### --answer--
-
-It collects the remaining elements into a new array after the initial elements are assigned to variables.
-
-### --question--
-
-#### --text--
-
-What will be the result of this code ?
+What will be the output for the following code?
 
 ```js
-const numbers = [10, 20, 30];
-numbers.push(40);
-numbers.pop();
-const length = numbers.length;
-console.log(length);
+const arr = ["o", "l", "l", "e", "h"];
+console.log(arr.join(""));
 ```
 
 #### --distractors--
 
-2
+`["o", "l", "l", "e", "h"]`
 
 ---
 
-5
+`"hello"`
 
 ---
 
-4
+`undefined`
 
 #### --answer--
 
-3
+`"olleh"`
+
+### --question--
+
+#### --text--
+
+What will be the result of using the `shift()` method on an empty array?
+
+
+#### --distractors--
+
+`TypeError`
+
+---
+
+`[]`
+
+---
+
+`null`
+
+#### --answer--
+
+`undefined`
 
 ### --question--
 
@@ -504,7 +494,7 @@ Which method will return a new array without changing the original array?
 
 #### --distractors--
 
-`splice()`
+`shift()`
 
 ---
 

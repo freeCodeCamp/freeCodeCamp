@@ -192,6 +192,52 @@ assert(telephoneCheck('55 55-55-555-5') === false);
 assert(telephoneCheck('11 555-555-5555') === false);
 ```
 
+`telephoneCheck()`, when called with any valid number, should return `true`.
+
+```js
+
+const validPatterns = [
+  '1 XXX-XXX-XXXX',
+  '1 (XXX) XXX-XXXX',
+  '1(XXX)XXX-XXXX',
+  '1 XXX XXX XXXX',
+  'XXXXXXXXXX',
+  'XXX-XXX-XXXX',
+  '(XXX)XXX-XXXX',
+];
+
+validPatterns.forEach(pattern => {
+  while (pattern.includes('X')) {
+    pattern = pattern.replace('X',  Math.floor(Math.random() * 7) + 2); //While this may seem weird at first, it's required for the CI build to pass
+    //This is apparently because the solution provided for CI purposes actually checks for valid area and exchange codes.
+  }
+  assert.isTrue(telephoneCheck(pattern));
+});
+```
+
+`telephoneCheck()`, when called with an invalid number, should return `false`.
+
+```js
+
+const invalidPatterns = [
+  '10 XXX-XXX-XXXX',
+  '1 (XX)XXX-XXXX',
+  '1!(XXX)XXX-XXXX',
+  '-1 XXX XXX XXXX',
+  'XXXXXXXX',
+  'XXX#XXX-XXXX',
+  '(XXXXXX-XXXX',
+];
+
+invalidPatterns.forEach(pattern => {
+  while (pattern.includes('X')) {
+    pattern = pattern.replace('X',  Math.floor(Math.random() * 10));
+  }
+  assert.isFalse(telephoneCheck(pattern));
+});
+```
+
+
 # --seed--
 
 ## --seed-contents--

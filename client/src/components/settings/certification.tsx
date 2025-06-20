@@ -6,7 +6,7 @@ import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { connect } from 'react-redux';
 import { Table, Button, Spacer } from '@freecodecamp/ui';
 
-import { regeneratePathAndHistory } from '../../../../shared/utils/polyvinyl';
+import { regenerateMissingProperties } from '../../../../shared/utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
@@ -24,7 +24,8 @@ import {
 } from '../../../../shared/config/certification-settings';
 import env from '../../../config/env.json';
 
-import {
+import type {
+  ChallengeData,
   ClaimedCertifications,
   CompletedChallenge,
   GeneratedExamResults,
@@ -90,6 +91,8 @@ const createCertifiedMap = ({
   [Certification.FullStackDeveloper]: false,
   [Certification.A2English]: false,
   [Certification.B1English]: false,
+  [Certification.A2Spanish]: false,
+  [Certification.A2Chinese]: false,
   [Certification.JsAlgoDataStructNew]: isJsAlgoDataStructCertV8
 });
 
@@ -206,7 +209,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
   const [challengeFiles, setChallengeFiles] = useState<
     CompletedChallenge['challengeFiles'] | null
   >(null);
-  const [challengeData, setChallengeData] = useState<CompletedChallenge | null>(
+  const [challengeData, setChallengeData] = useState<ChallengeData | null>(
     null
   );
   const [solution, setSolution] = useState<string | null>();
@@ -245,8 +248,9 @@ function CertificationSettings(props: CertificationSettingsProps) {
       ? {
           ...completedProject,
           challengeFiles:
-            completedProject?.challengeFiles?.map(regeneratePathAndHistory) ??
-            null
+            completedProject?.challengeFiles?.map(
+              regenerateMissingProperties
+            ) ?? null
         }
       : null;
 

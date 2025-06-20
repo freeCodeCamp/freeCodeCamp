@@ -22,19 +22,20 @@ import {
   getSessionChallengeData,
   saveCurrentCount
 } from '../utils/session-storage';
+
 import { actionTypes as appTypes } from './action-types';
 import {
   openDonationModal,
   postChargeComplete,
   postChargeProcessing,
   postChargeError,
-  preventBlockDonationRequests,
+  preventSectionDonationRequests,
   updateCardError,
   updateCardRedirecting
 } from './actions';
 import {
   isDonatingSelector,
-  recentlyClaimedBlockSelector,
+  donatableSectionRecentlyCompletedSelector,
   shouldRequestDonationSelector,
   isSignedInSelector,
   completedChallengesSelector
@@ -45,26 +46,32 @@ const updateCardErrorMessage = i18next.t('donate.error-3');
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
-  const recentlyClaimedBlock = yield select(recentlyClaimedBlockSelector);
   const MODAL_SHOWN_KEY = 'modalShownTimestamp';
   const modalShownTimestamp = sessionStorage.getItem(MODAL_SHOWN_KEY);
-  const isModalRecentlyShown = Date.now() - modalShownTimestamp < 20000;
-  if (
-    shouldRequestDonation &&
-    recentlyClaimedBlock &&
-    recentlyClaimedBlock.superBlock === 'full-stack-developer'
-  ) {
-    yield put(preventBlockDonationRequests());
-  } else if (shouldRequestDonation || isModalRecentlyShown) {
+  // If the modal has been shown in the last 20 seconds, the animation should
+  // still be running:
+  const isAnimationRunning = Date.now() - modalShownTimestamp < 20000;
+  const shouldShowModal = shouldRequestDonation || isAnimationRunning;
+  const donatableSectionRecentlyCompleted = yield select(
+    donatableSectionRecentlyCompletedSelector
+  );
+
+  if (shouldShowModal) {
     yield delay(200);
     yield put(openDonationModal());
-    sessionStorage.setItem(MODAL_SHOWN_KEY, Date.now());
+    if (!donatableSectionRecentlyCompleted) {
+      sessionStorage.setItem(MODAL_SHOWN_KEY, Date.now());
+    }
     yield take(appTypes.closeDonationModal);
-    if (recentlyClaimedBlock) {
-      yield put(preventBlockDonationRequests());
-    } else {
+    if (!donatableSectionRecentlyCompleted) {
       yield call(saveCurrentCount);
     }
+  }
+
+  /* users can complete donatable section but have less than 10 completed challenge
+     to show the donation modal.*/
+  if (donatableSectionRecentlyCompleted) {
+    yield put(preventSectionDonationRequests());
   }
 }
 
@@ -195,7 +202,7 @@ export function* updateCardSaga() {
 
     if (!sessionId) throw new Error('No sessionId');
     (yield stripe).redirectToCheckout({ sessionId });
-  } catch (error) {
+  } catch {
     yield put(updateCardError(updateCardErrorMessage));
   }
 }

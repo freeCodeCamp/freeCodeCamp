@@ -6,7 +6,7 @@ import NoHitsSuggestion from './no-hits-suggestion';
 interface SearchBarFooterProps {
   hasHits: boolean;
   query?: string;
-  selectedIndex: number;
+  isSelected: boolean;
   onMouseEnter: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
   onMouseLeave: (e: React.SyntheticEvent<HTMLElement, Event>) => void;
 }
@@ -14,12 +14,12 @@ interface SearchBarFooterProps {
 const SearchBarFooter = ({
   hasHits,
   query,
-  selectedIndex,
+  isSelected,
   onMouseEnter,
   onMouseLeave
 }: SearchBarFooterProps) => {
   const { t } = useTranslation();
-  const title = t('search.no-tutorials');
+  const title = t('search.no-results');
 
   if (!query) {
     return null;
@@ -27,7 +27,7 @@ const SearchBarFooter = ({
 
   return hasHits ? (
     <li
-      className={`ais-Hits-item ${selectedIndex === 5 ? 'selected' : ''}`}
+      className={`ais-Hits-item ${isSelected ? 'selected' : ''}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

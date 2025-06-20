@@ -1,16 +1,11 @@
-import { first } from 'lodash-es';
+import { isEmpty } from 'lodash-es';
 import React, { useState, useEffect, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import store from 'store';
-import { sortChallengeFiles } from '../../../../utils/sort-challengefiles';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
-import {
-  ChallengeFile,
-  ChallengeFiles,
-  ResizeProps
-} from '../../../redux/prop-types';
+import { ChallengeFiles, ResizeProps } from '../../../redux/prop-types';
 import {
   removePortalWindow,
   setShowPreviewPortal,
@@ -204,12 +199,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     }
   };
 
-  const getChallengeFile = () => {
-    const { challengeFiles } = props;
-    return first(sortChallengeFiles(challengeFiles) as ChallengeFile[]);
-  };
-
   const {
+    challengeFiles,
     challengeType,
     resizeProps,
     instructions,
@@ -233,25 +224,24 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     } else if (!isAdvancing && !showPreviewPane && !showPreviewPortal) {
       togglePane('showPreviewPane');
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
   const isMultifileProject =
     challengeType === challengeTypes.multifileCertProject ||
     challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeType == challengeTypes.lab;
+    challengeType === challengeTypes.lab ||
+    challengeType === challengeTypes.jsLab ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengeJs ||
+    challengeType === challengeTypes.dailyChallengePy;
+  const isProjectStyle = projectBasedChallenge || isMultifileProject;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
   const displayNotes = projectBasedChallenge ? showNotes && !!notes : false;
-  const displayEditorConsole = !(projectBasedChallenge || isMultifileProject)
-    ? true
-    : false;
-  const displayPreviewConsole =
-    (projectBasedChallenge || isMultifileProject) && showConsole;
-  const hasVerticalResizableCodePane =
-    !isMultifileProject && !projectBasedChallenge;
+  const displayEditorConsole = !isProjectStyle;
+  const displayPreviewConsole = !displayEditorConsole && showConsole;
+
   const {
     codePane,
     editorPane,
@@ -266,7 +256,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   return (
     <div className='desktop-layout' data-playwright-test-label='desktop-layout'>
-      {(projectBasedChallenge || isMultifileProject) && (
+      {isProjectStyle && (
         <ActionRow
           hasPreview={hasPreview}
           hasNotes={!!notes}
@@ -304,14 +294,11 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           {...resizeProps}
           data-playwright-test-label='editor-pane'
         >
-          {challengeFile && (
-            <ReflexContainer
-              key={challengeFile.fileKey}
-              orientation='horizontal'
-            >
+          {!isEmpty(challengeFiles) && (
+            <ReflexContainer key='codePane' orientation='horizontal'>
               <ReflexElement
                 name='codePane'
-                {...(hasVerticalResizableCodePane && { flex: codePane.flex })}
+                {...(displayEditorConsole && { flex: codePane.flex })}
                 {...reflexProps}
                 {...resizeProps}
               >
@@ -358,7 +345,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
             data-playwright-test-label='preview-pane'
           >
             <ReflexContainer orientation='horizontal'>
-              {displayPreviewPane && <ReflexElement>{preview}</ReflexElement>}
+              {displayPreviewPane && (
+                <ReflexElement {...reflexProps}>{preview}</ReflexElement>
+              )}
               {displayPreviewPane && displayPreviewConsole && (
                 <ReflexSplitter propagate={true} {...resizeProps} />
               )}

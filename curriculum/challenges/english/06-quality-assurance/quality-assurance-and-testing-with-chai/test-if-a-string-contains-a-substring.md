@@ -8,7 +8,7 @@ dashedName: test-if-a-string-contains-a-substring
 
 # --description--
 
-As a reminder, this project is being built upon the following starter project on <a href="https://gitpod.io/?autostart=true#https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">Gitpod</a>, or cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>. Learn <a href="https://forum.freecodecamp.org/t/how-to-use-gitpod-in-the-curriculum/668669#how-can-i-share-my-workspace-to-get-help-8" target="_blank" rel="noopener noreferrer nofollow">how to share your Gitpod workspace to get help</a>.
+As a reminder, this project is being built upon the following starter project cloned from <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/" target="_blank" rel="noopener noreferrer nofollow">GitHub</a>.
 
 `include()` and `notInclude()` work for strings too! `include()` asserts that the actual string contains the expected substring.
 
@@ -21,8 +21,7 @@ Within `tests/1_unit-tests.js` under the test labeled `#14` in the `Strings` sui
 All tests should pass.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(
+  $.get(code + '/_api/get-tests?type=unit&n=13').then(
     (data) => {
       assert.equal(data.state, 'passed');
     },
@@ -35,8 +34,7 @@ All tests should pass.
 You should choose the correct method for the first assertion - `include` vs. `notInclude`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(
+  $.get(code + '/_api/get-tests?type=unit&n=13').then(
     (data) => {
       assert.equal(
         data.assertions[0].method,
@@ -53,8 +51,7 @@ You should choose the correct method for the first assertion - `include` vs. `no
 You should choose the correct method for the second assertion - `include` vs. `notInclude`.
 
 ```js
-(getUserInput) =>
-  $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=13').then(
+  $.get(code + '/_api/get-tests?type=unit&n=13').then(
     (data) => {
       assert.equal(
         data.assertions[1].method,

@@ -1,0 +1,31 @@
+{
+  "name": "Working with State and Responding to Events in React",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-state-and-responding-to-events-in-react",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67d1a3fea729e274dc33d04d",
+      "title": "How Do Events Work in React?"
+    },
+    {
+      "id": "67d1eaf77f510e15dfed7c14",
+      "title": "What is State, and How Does the useState Hook Work?"
+    },
+    {
+      "id": "67d1eb6929e68117faa6717f",
+      "title": "What Is Rendering in React, and How Are Components Displayed on the Screen?"
+    },
+    {
+      "id": "67d1ebb595f4f619c0e35d1a",
+      "title": "How Do You Update Objects in State?"
+    },
+    {
+      "id": "67d1ebcab4e0521a6654bb64",
+      "title": "How Do You Update Arrays in State?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

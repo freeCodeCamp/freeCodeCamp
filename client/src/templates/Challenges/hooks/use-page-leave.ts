@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import { useLocation, globalHistory } from '@reach/router';
+import { useLocation, globalHistory } from '@gatsbyjs/reach-router';
 
 interface Props {
   onWindowClose: (event: BeforeUnloadEvent) => void;
-  onHistoryChange: () => void;
+  onHistoryChange: (targetPathname: string) => void;
 }
 
 export const usePageLeave = ({ onWindowClose, onHistoryChange }: Props) => {
@@ -12,7 +12,7 @@ export const usePageLeave = ({ onWindowClose, onHistoryChange }: Props) => {
   useEffect(() => {
     window.addEventListener('beforeunload', onWindowClose);
 
-    // This is a workaround as @reach/router doesn't support blocking history change.
+    // This is a workaround as @gatsbyjs/reach-router doesn't support blocking history change.
     // https://github.com/reach/router/issues/464
     const unlistenHistory = globalHistory.listen(({ action, location }) => {
       const isBack = action === 'POP';
@@ -20,7 +20,7 @@ export const usePageLeave = ({ onWindowClose, onHistoryChange }: Props) => {
         action === 'PUSH' && location.pathname !== curLocation.pathname;
 
       if (isBack || isRouteChanged) {
-        onHistoryChange();
+        onHistoryChange(location.pathname);
       }
     });
 

@@ -155,7 +155,7 @@
         "title": "Jifunze Responsive Web Design kwa Kutengeneza Piano",
         "intro": [
           "Responsive Design huambia ukurasa wako wa tovuti jinsi unavyopaswa kuonekana kwenye skrini za ukubwa tofauti.",
-          "Katika kozi hii, utatumia CSS na Muundo Msikivu kutengenza piano. Pia utajifunza zaidi kuhusu media quries na pseudo selectors."
+          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -308,11 +308,11 @@
     ],
     "note": "Note: Some browser extensions, such as ad-blockers and script-blockers can interfere with the tests. If you face issues, we recommend disabling extensions that modify or block the content of pages while taking the course.",
     "blocks": {
-      "build-a-pokemon-search-app-project": {
-        "title": "Build a Pokémon Search App Project",
+      "build-an-rpg-creature-search-app-project": {
+        "title": "Build an RPG Creature Search App Project",
         "intro": [
           "This is one of the required projects to earn your certification.",
-          "For this project, you will build a Pokémon search app."
+          "For this project, you will build an RPG creature search app."
         ]
       },
       "build-a-cash-register-project": {
@@ -672,11 +672,11 @@
           "Katika kozi hii ya masomo 40, utajifunza jinsi ya kuhariri faili katika terminal na Nano wakati wa kujenga ngome."
         ]
       },
-      "learn-relational-databases-by-building-a-mario-database": {
-        "title": "Jifunze Relational Databases kwa Kuunda Mario Database",
+      "learn-relational-databases-by-building-a-database-of-video-game-characters": {
+        "title": "Learn Relational Databases by Building a Database of Video Game Characters",
         "intro": [
-          "Relational database hupanga data katika majedwali ambayo yameunganishwa pamoja kupitia uhusiano.",
-          "Katika kozi hii ya masomo 165, utajifunza misingi ya relational database kwa kuunda PostgreSQL database iliyojaa wahusika wa mchezo wa video."
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
@@ -890,7 +890,7 @@
       "learn-special-methods-by-building-a-vector-space": {
         "title": "Learn Special Methods by Building a Vector Space",
         "intro": [
-          "Python special methods are called in response to specific operations and enable you to customize the behaviour of your objects in a detailed and effective way.",
+          "Python special methods are called in response to specific operations and enable you to customize the behavior of your objects in a detailed and effective way.",
           "In this project, you are going to explore some of the most common special methods while learning about vectors by building a vector space."
         ]
       },
@@ -1167,14 +1167,16 @@
         "title": "Algorithms",
         "intro": [
           "Mazoezi haya ya programu bila malipo yatakufundisha kuhusu algoriti za kawaida ambazo unaweza kukutana nazo katika maisha halisi. Hii ni fursa nzuri ya kuboresha ujuzi wako wa mantiki na programu.",
-          "Algoriti hizi hutumiwa mara kwa mara katika usaili wa kazi ili kupima ujuzi wa mtahiniwa. Tutakupa maelezo wazi na mafupi ya jinsi algoriti hizi tofauti hufanya kazi ili uweze kutekeleza suluhisho kwa kila moja."
+          "Algoriti hizi hutumiwa mara kwa mara katika usaili wa kazi ili kupima ujuzi wa mtahiniwa. Tutakupa maelezo wazi na mafupi ya jinsi algoriti hizi tofauti hufanya kazi ili uweze kutekeleza suluhisho kwa kila moja.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "data-structures": {
         "title": "Data Structures",
         "intro": [
           "Kozi hizi za upangaji bila malipo zinakusudiwa kukusaidia kukabiliana na miundo mikubwa na changamano ya data ambayo huenda bado huifahamu.",
-          "Ukipitia kozi zilizo hapa chini, utajifunza kuhusu kila aina ya muundo wa data, na utekeleze algoriti za kuimarisha uelewa wako kuzihusu."
+          "Ukipitia kozi zilizo hapa chini, utajifunza kuhusu kila aina ya muundo wa data, na utekeleze algoriti za kuimarisha uelewa wako kuzihusu.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "take-home-projects": {
@@ -1192,9 +1194,9 @@
       "The Odin Project was created in 2013 by a lone developer, Erik Trautman. Over the years, an open source community has sprung up to maintain and expand the project.",
       "freeCodeCamp has expanded upon the open source curriculum to make it run interactively in the browser, with tests to evaluate your code and ensure you've understood key concepts.",
       "If you want the original experience of configuring all of The Odin Project to run on your local computer, you can check out the original Odin Project on <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project website</a>. A huge thanks to The Odin Project community for continuing to maintain this valuable learning resource for developers all around the world.",
-      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
+      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
       "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
-      "This course includes content from <a href='javascript.info'>JavaScript.info</a>, which is licenced under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>"
+      "This course includes content from <a href='https://javascript.info/' target='_blank' rel='noopener noreferrer nofollow'>JavaScript.info</a>, which is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>."
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1288,7 +1290,7 @@
         ]
       },
       "top-build-a-rock-paper-scissors-game": {
-        "title": "Build a Rock Paper Scissor Game",
+        "title": "Build a Rock Paper Scissors Game",
         "intro": [
           "Put your JavaScript skills to the test by building a Rock Paper Scissors game."
         ]
@@ -1305,37 +1307,42 @@
       "project-euler-problems-1-to-100": {
         "title": "Mradi wa Euler Matatizo 1 hadi 100",
         "intro": [
-          "Katika seti hii ya kwanza ya changamoto, utatumia dhana za hisabati kama vile mfuatano wa Fibonacci, nadharia ya nambari kuu, na viunganishi kuandika algoriti bora za kutatua matatizo haya."
+          "Katika seti hii ya kwanza ya changamoto, utatumia dhana za hisabati kama vile mfuatano wa Fibonacci, nadharia ya nambari kuu, na viunganishi kuandika algoriti bora za kutatua matatizo haya.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-101-to-200": {
         "title": "Mradi wa Euler Matatizo 101 hadi 200",
         "intro": [
-          "Katika seti hii ya changamoto, utaendeleza ujuzi uliojifunza katika sehemu ya kwanza ya kozi na kutumia dhana za hali ya juu zaidi kama vile ukokotoaji wa vekta, piramidi ya Pascal, na algoriti ya RSA ili kutatua matatizo haya kwa ufanisi."
+          "Katika seti hii ya changamoto, utaendeleza ujuzi uliojifunza katika sehemu ya kwanza ya kozi na kutumia dhana za hali ya juu zaidi kama vile ukokotoaji wa vekta, piramidi ya Pascal, na algoriti ya RSA ili kutatua matatizo haya kwa ufanisi.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-201-to-300": {
         "title": "Mradi wa Euler Matatizo 201 hadi 300",
         "intro": [
-          "Katika kundi hili la changamoto, utaendelea kukuza ujuzi uliojifunza hapo awali na kutumia dhana kama vile nadharia ya binomial, nambari za Hamming, na mfuatano wa Collatz ili kukuza zaidi ujuzi wako wa hesabu na utatuzi wa matatizo."
+          "Katika kundi hili la changamoto, utaendelea kukuza ujuzi uliojifunza hapo awali na kutumia dhana kama vile nadharia ya binomial, nambari za Hamming, na mfuatano wa Collatz ili kukuza zaidi ujuzi wako wa hesabu na utatuzi wa matatizo.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-301-to-400": {
         "title": "Mradi wa Euler Matatizo 301 hadi 400",
         "intro": [
-          "Hapa utaendelea kubadilisha ujuzi wako wa hisabati na algoriti unapotumia dhana kama vile nadharia ya mchezo mseto, utendakazi wa busara kidogo, na mfuatano wa kujieleza wa Golomb ili kutengeneza suluhu bora kwa matatizo haya."
+          "Hapa utaendelea kubadilisha ujuzi wako wa hisabati na algoriti unapotumia dhana kama vile nadharia ya mchezo mseto, utendakazi wa busara kidogo, na mfuatano wa kujieleza wa Golomb ili kutengeneza suluhu bora kwa matatizo haya.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       },
       "project-euler-problems-401-to-480": {
         "title": "Mradi wa Euler Matatizo 401 hadi 480",
         "intro": [
-          "Katika seti hii ya mwisho ya changamoto, utahitaji kutumia kila kitu ulichojifunza hadi kufikia hatua hii na kutumia dhana za hali ya juu kama vile vigawanyiko vya umoja, utaratibu wa Kaprekar, na mengi zaidi kutatua matatizo haya changamano."
+          "Katika seti hii ya mwisho ya changamoto, utahitaji kutumia kila kitu ulichojifunza hadi kufikia hatua hii na kutumia dhana za hali ya juu kama vile vigawanyiko vya umoja, utaratibu wa Kaprekar, na mengi zaidi kutatua matatizo haya changamano.",
+          "NOTE: These challenges support JavaScript only solutions."
         ]
       }
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "(New) Foundational C# with Microsoft",
+    "title": "Free Foundational C# with Microsoft Certification",
     "intro": [
       "Kozi hii inatoa utangulizi wa kina wa utayarishaji wa C#, unaojumuisha dhana zake za msingi, sintaksia, na matumizi ya vitendo katika ukuzaji programu.",
       "Kupitia mazoezi na miradi ya vitendo, utajifunza misingi ya C#, ikijumuisha variables, data types, control structures, na kanuni za object-oriented programming.",
@@ -1388,7 +1395,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers (Beta)",
+    "title": "A2 English for Developers (Beta) Certification",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
@@ -1567,7 +1574,7 @@
     }
   },
   "b1-english-for-developers": {
-    "title": "B1 English for Developers (Beta)",
+    "title": "B1 English for Developers (Beta) Certification",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the B1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "It will help you strengthen your foundational skills while introducing more complex grammar and usage. You'll learn how to describe places and things, share past experiences, and confidently use tenses like Present Perfect and Future. Practical communication strategies are included as well, such as managing conversations, expressing opinions, and building agreement or disagreement in discussions.",
@@ -1613,75 +1620,111 @@
       },
       "learn-how-to-use-conditionals": {
         "title": "Learn How to Use Conditionals",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to use the conditional sentences to describe hypothetical outcomes depending on the fact that certain conditions are met."
+        ]
       },
       "learn-how-to-share-feedback": {
         "title": "Learn How to Share Feedback",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will see ways of telling other people how you feel about their work, highlighting both their strengths and points for improvement."
+        ]
       },
       "learn-how-to-share-your-opinion": {
         "title": "Learn How to Share Your Opinion",
-        "intro": ["", ""]
+        "intro": [
+          "This course will show you how to express your ideas and feeling towards topics in a discussion."
+        ]
       },
       "learn-how-to-express-agreement": {
         "title": "Learn How to Express Agreement",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to express agreement in different professional settings."
+        ]
       },
       "learn-how-to-express-disagreement": {
         "title": "Learn How to Express Disagreement",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to express disagreement in different professional settings."
+        ]
       },
       "learn-how-to-express-concerns": {
         "title": "Learn How to Express Concerns",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn to inform other people that you are worried about things that might happen to your projects and tasks."
+        ]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Learn How to Express Decisions Based on Comparisons",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to compare things like tools or companies using words like better, faster, and the best. You will also practice having friendly conversations to give opinions and make decisions"
+        ]
       },
       "learn-how-to-use-modal-verbs": {
         "title": "Learn How to Use Modal Verbs",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to talk about rules, describe things that are necessary, and what could happen if they aren't. You'll also practice asking and answering questions clearly, and adding helpful details to your ideas."
+        ]
       },
       "learn-how-to-manage-a-conversation": {
         "title": "Learn How to Manage a Conversation",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to manage conversations at work — like how to continue a talk after a break, change topics politely, or interrupt when needed. You'll also practice using useful expressions to keep the conversation clear, friendly, and organized."
+        ]
       },
       "learn-how-to-clarify-misunderstandings": {
         "title": "Learn How to Clarify Misunderstandings",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to ask for and give explanations when something is not clear, using polite questions and helpful responses. You'll also practice guessing the meaning of new words, describing problems, and clearing up misunderstandings in a friendly and professional way."
+        ]
       },
       "learn-about-speculation-and-requests": {
         "title": "Learn About Speculation and Requests",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to talk about things that should or could have happened in the past, and how to give suggestions or make polite requests. You'll also practice using expressions to guess what might have caused a problem and how to work together to solve it in a clear and respectful way."
+        ]
       },
       "learn-about-adverbial-phrases": {
         "title": "Learn About Adverbial Phrases",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use phrases that give more information about when, where, how often, or how much something happens. You'll also practice using these phrases to describe tasks, talk about plans, and explain results more clearly in your daily work."
+        ]
       },
       "learn-how-to-use-adjectives-in-conversations": {
         "title": "Learn How to Use Adjectives in Conversations",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use adjectives to describe things clearly, compare options, and highlight important details in professional conversations. You'll also practice how to make your ideas stronger and more persuasive."
+        ]
       },
       "learn-determiners-and-advanced-use-of-articles": {
         "title": "Learn Determiners and Advanced Use of Articles",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use determiners to give clear information about quantity, choice, and distribution. You will also practice using articles in more advanced ways, especially in professional conversations about planning, tasks, and resources."
+        ]
       },
       "learn-how-to-use-reported-speech": {
         "title": "Learn How to Use Reported Speech",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to report what someone else said in a clear and natural way. You will also practice using the correct verb tenses and sentence structures to share feedback, explain situations, and talk about past events in professional conversations."
+        ]
       },
       "learn-how-to-use-prepositions-according-to-context": {
         "title": "Learn How to Use Prepositions According to Context",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use prepositions to describe time, place, and direction clearly in everyday work situations. You will also practice talking about schedules, giving directions, and explaining where people or things are located using natural and accurate language."
+        ]
       },
       "learn-how-to-talk-about-numbers-with-a-coworker": {
         "title": "Learn How to Talk About Numbers with a Coworker",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use numbers to talk about tasks, schedules, budgets, and resources in the workplace. You will practice using cardinal and ordinal numbers, percentages, and fractions to organize work, explain progress, and share inventory or financial updates clearly with your team."
+        ]
       },
       "learn-common-phrasal-verbs-and-idioms": {
         "title": "Learn Common Phrasal Verbs and Idioms",
-        "intro": ["", ""]
+        "intro": [
+          "In this course, you will learn how to use common phrasal verbs and idioms to sound more natural and confident at work. You will practice using expressions to give opinions, make suggestions, organize meetings, and talk about tasks in everyday professional conversations."
+        ]
       }
     }
   },
@@ -1695,7 +1738,10 @@
     "blocks": {
       "rosetta-code-challenges": {
         "title": "Rosetta Code Challenges",
-        "intro": ["These are the challenges for Rosetta Code."]
+        "intro": [
+          "These are the challenges for Rosetta Code.",
+          "NOTE: These challenges support JavaScript only solutions."
+        ]
       }
     }
   },
@@ -1704,10 +1750,10 @@
     "intro": [
       "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
       "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
-      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer."
+      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer.",
+      "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
     ],
     "chapters": {
-      "freecodecamp": "Welcome",
       "html": "HTML",
       "css": "CSS",
       "javascript": "JavaScript",
@@ -1715,10 +1761,9 @@
       "relational-databases": "Relational Databases",
       "backend-javascript": "Backend JavaScript",
       "python": "Python",
-      "exam-certified-full-stack-developer": "Certified Full Stack Developer Exam"
+      "career": "Career"
     },
     "modules": {
-      "getting-started-with-freecodecamp": "Getting Started with freeCodeCamp",
       "basic-html": "Basic HTML",
       "semantic-html": "Semantic HTML",
       "html-forms-and-tables": "Forms and Tables",
@@ -1742,6 +1787,7 @@
       "css-variables": "Variables",
       "css-grid": "Grid",
       "css-animations": "Animations",
+      "review-css": "CSS Review",
       "exam-css": "CSS Exam",
       "code-editors": "Code Editors",
       "javascript-variables-and-strings": "Variables and Strings",
@@ -1753,6 +1799,7 @@
       "review-javascript-fundamentals": "JavaScript Fundamentals Review",
       "higher-order-functions-and-callbacks": "Higher Order Functions and Callbacks",
       "dom-manipulation-and-events": "DOM Manipulation and Events",
+      "js-a11y": "JavaScript and Accessibility",
       "debugging-javascript": "Debugging",
       "basic-regex": "Basic Regex",
       "form-validation": "Form Validation",
@@ -1764,31 +1811,277 @@
       "recursion": "Recursion",
       "functional-programming": "Functional Programming",
       "asynchronous-javascript": "Asynchronous JavaScript",
+      "review-javascript": "JavaScript Review",
       "exam-javascript": "JavaScript Exam",
       "react-fundamentals": "React Fundamentals",
       "react-state-hooks-and-routing": "React State, Hooks, and Routing",
       "performance": "Performance",
-      "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
       "testing": "Testing",
+      "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
       "typescript-fundamentals": "TypeScript Fundamentals",
       "review-front-end-libraries": "Front End Libraries Review",
       "exam-front-end-libraries": "Front End Libraries Exam",
+      "python-basics": "Python Basics",
+      "python-loops-and-sequences": "Loops and Sequences",
+      "python-dictionaries-and-sets": "Dictionaries and Sets",
+      "python-error-handling": "Error Handling",
+      "python-classes-and-objects": "Classes and Objects",
+      "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
+      "python-linear-data-structures": "Linear Data Structures",
+      "python-algorithms": "Algorithms",
+      "python-graphs-and-trees": "Graphs and Trees",
+      "python-dynamic-programming": "Dynamic Programming",
+      "review-python": "Python Review",
+      "exam-python": "Python Exam",
+      "bash-fundamentals": "Bash Fundamentals",
+      "relational-databases": "Relational Databases",
+      "bash-scripting": "Bash Scripting",
       "sql-and-bash": "SQL and Bash",
       "git": "Git",
-      "security-and-privacy": "Security and Privacy"
+      "introduction-to-nodejs": "Introduction to Node.js",
+      "nodejs-core-libraries": "Node.js Core Libraries",
+      "node-package-manager": "Node Package Manager",
+      "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
+      "rest-api-and-web-services": "REST API and Web Services",
+      "introduction-to-express": "Introduction to Express",
+      "express-middleware": "Express Middleware",
+      "error-handling-in-express": "Error Handling in Express",
+      "websockets": "WebSockets",
+      "node-and-sql": "Node and SQL",
+      "security-and-privacy": "Security and Privacy",
+      "authentication": "Authentication",
+      "tooling-and-deployment": "Tooling and Deployment",
+      "how-to-get-a-developer-job": "How to Get a Developer Job",
+      "capstone-project": "Capstone Project",
+      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+    },
+    "module-intros": {
+      "css-libraries-and-frameworks": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will be introduced to CSS libraries, frameworks, and preprocessors, including Tailwind CSS, Bootstrap, and Sass. You will build out various components using Tailwind CSS and test your knowledge of these tools with a short quiz."
+        ]
+      },
+      "typescript-fundamentals": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
+        ]
+      },
+      "python-basics": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will be introduced to Python, which is used in many fields like data science, machine learning, web development, scripting and automation, embedded systems, IoT, and more. You will build out a workshop and lab to practice Python basics and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-loops-and-sequences": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will learn how to work with lists, tuples, lambda functions, loops, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-dictionaries-and-sets": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will be introduced to dictionaries, sets, and the Python standard library. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-error-handling": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will talk about common error messages, good debugging techniques, and exception handling. You will build a lab to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-classes-and-objects": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn how to work with classes, methods, attributes and properties. Then, you will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-object-oriented-programming": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about Object-oriented programming concepts like encapsulation, inheritance, polymorphism, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-linear-data-structures": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about data structures including stacks, queues, linked lists, and more. You will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-algorithms": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about common algorithms including binary search, merge sort, selection sort, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-graphs-and-trees": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about graphs in computer science as well as adjacency lists, trees, tries, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-dynamic-programming": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about  dynamic programming and practice these concepts by building a fibonacci sequence lab. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "bash-fundamentals": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about  the command line and common Bash commands. Then you will practice your skills with a workshop and take a short quiz to test your knowledge."
+        ]
+      },
+      "relational-databases": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn how to work with relational databases which store data as collections in tables. Some of the concepts you will learn about include inserting and viewing table data, primary and foreign keys in SQL, and more. Then you will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "bash-scripting": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about bash scripting and practice those skills by building five programs. Then you will be able to test your knowledge of these concepts by taking a short quiz."
+        ]
+      },
+      "sql-and-bash": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about normalization, SQL injection, and the N+1 problem. Then you will get to practice working with SQL and Bash by building several workshops and labs. Then you will be able to test your knowledge of these concepts by taking a short quiz."
+        ]
+      },
+      "git": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn how to use Git, Nano, and GitHub. Then you will get to practice working with Git by building several workshops and labs. You will be able to test your knowledge of these concepts by taking a short quiz."
+        ]
+      },
+      "introduction-to-nodejs": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will be introduced to Node.js, which is a JavaScript runtime environment that allows you to build backend applications using JavaScript. You will get to practice fundamental concepts by building a small workshop and test your knowledge with a short quiz."
+        ]
+      },
+      "nodejs-core-libraries": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about common Node.js core libraries including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
+        ]
+      },
+      "node-package-manager": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will be introduced to the Node Package Manager, which developers use to manage project dependencies and scripts. Then you will get to practice what you have learned through workshops and labs and test your knowledge with a short quiz."
+        ]
+      },
+      "http-and-the-web-standards-model": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about HTTP (Hypertext Transfer Protocol) and other important concepts including the request-response model, common response codes, DNS, TCP/IP, and more. Then you will get to practice what you have learned through a build your own web server workshop and test your knowledge with a short quiz."
+        ]
+      },
+      "rest-api-and-web-services": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "introduction-to-express": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
+        ]
+      },
+      "express-middleware": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
+        ]
+      },
+      "error-handling-in-express": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
+        ]
+      },
+      "websockets": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
+        ]
+      },
+      "node-and-sql": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will practice building applications with Node and SQL. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "security-and-privacy": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will learn about the differences between security and privacy as well as other concepts including  CSPs, Permissions-Policies, PII, working with CORS, and more. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "authentication": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
+        ]
+      },
+      "tooling-and-deployment": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about common tools used in the industry for deploying your full stack applications. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "how-to-get-a-developer-job": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, Quincy Larson (Founder and teacher of freeCodeCamp) will talk about strategies you can use to prepare for getting a developer job. Quincy will cover key subjects including résumés, portfolios, researching the market, preparing for technical interviews, and more."
+        ]
+      },
+      "capstone-project": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "This will be your opportunity to build out a full stack application encompassing what you have learned throughout this certification."
+        ]
+      },
+      "certified-full-stack-developer-exam": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "This will be a 90 question exam testing what you have learned throughout this certification."
+        ]
+      }
     },
     "blocks": {
-      "lecture-welcome-to-freecodecamp": {
-        "title": "Welcome to freeCodeCamp",
+      "workshop-curriculum-outline": {
+        "title": "Build a Curriculum Outline",
         "intro": [
-          "Watch these videos to learn what freeCodeCamp is, and how millions of people have learned to code and gotten developer jobs using it."
+          "Welcome to freeCodeCamp!",
+          "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
+        ]
+      },
+      "lecture-welcome-to-freecodecamp": {
+        "title": "Welcome Message from Quincy Larson",
+        "intro": [
+          "Hear from Quincy Larson, the founder and teacher of freeCodeCamp.",
+          "Quincy will welcome you to the platform and talk about how the certification works. Quincy will also provide tips on how to learn effectively."
+        ]
+      },
+      "lab-debug-camperbots-profile-page": {
+        "title": "Debug Camperbot's Profile Page",
+        "intro": [
+          "Camperbot is learning how to code too and needs some help with their HTML.",
+          "In this lab, you will help Camperbot find and fix the errors in their code."
         ]
       },
       "lecture-what-is-html": {
-        "title": "What is HTML?",
+        "title": "Understanding HTML Attributes and the HTML Boilerplate",
         "intro": [
-          "In this lecture video, you will be introduced to HTML (HyperText Markup Language), a markup language for creating web pages.",
-          "You will learn about HTML's role on the web, the basic syntax, and what HTML attributes are."
+          "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."
         ]
       },
       "workshop-cat-photo-app": {
@@ -1844,7 +2137,8 @@
       "quiz-basic-html": {
         "title": "Basic HTML Quiz",
         "intro": [
-          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far."
+          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-importance-of-semantic-html": {
@@ -1875,7 +2169,8 @@
       "quiz-semantic-html": {
         "title": "Semantic HTML Quiz",
         "intro": [
-          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far."
+          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-working-with-forms": {
@@ -1933,7 +2228,8 @@
       "quiz-html-tables-and-forms": {
         "title": "HTML Tables and Forms Quiz",
         "intro": [
-          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools."
+          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "lecture-importance-of-accessibility-and-good-html-structure": {
@@ -1942,11 +2238,43 @@
           "In these lecture videos, you will learn about accessibility and its importance, assistive tools for people with disabilities, HTML attributes that let you create inclusive websites, accessibility best practices, and much more."
         ]
       },
+      "lecture-accessible-tables-forms": {
+        "title": "Working with Accessible Tables and Forms",
+        "intro": [
+          "In these lecture videos, you will learn about how to create accessible tables and forms."
+        ]
+      },
+      "lecture-introduction-to-aria": {
+        "title": "Introduction to ARIA",
+        "intro": [
+          "In these lecture videos, you will learn about working with ARIA roles."
+        ]
+      },
+      "lecture-accessible-media-elements": {
+        "title": "Working with Accessible Media Elements",
+        "intro": [
+          "In these lecture videos, you will learn about how to create accessible links, audio and video content."
+        ]
+      },
       "lab-checkout-page": {
         "title": "Build a Checkout Page",
         "intro": [
           "In this lab, you'll create an accessible checkout page.",
-          "You'll practice concepts like <code>alt</code> attributes and aria roles."
+          "You'll practice concepts like <code>alt</code> attributes and ARIA roles."
+        ]
+      },
+      "lab-movie-review-page": {
+        "title": "Design a Movie Review Page",
+        "intro": [
+          "In this lab, you'll create a movie review page.",
+          "You'll practice concepts like semantic HTML, <code>alt</code> attributes, accessible lists, and hiding decorative content from screen readers using <code>aria-hidden</code>."
+        ]
+      },
+      "lab-multimedia-player": {
+        "title": "Build a Multimedia Player",
+        "intro": [
+          "In this lab, you'll build a multimedia player.",
+          "You will practice working with the <code>audio</code> and <code>video</code> elements, the <code>controls</code> attribute, and the <code>aria-label</code> attribute."
         ]
       },
       "review-html-accessibility": {
@@ -1959,7 +2287,8 @@
       "quiz-html-accessibility": {
         "title": "HTML Accessibility Quiz",
         "intro": [
-          "The following quiz will test your knowledge on the accessibility concepts you have learned so far."
+          "The following quiz will test your knowledge on the accessibility concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       },
       "review-html": {
@@ -2428,7 +2757,7 @@
         "title": "Design a Piano",
         "intro": [
           "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this workshop, you'll use CSS and Responsive Design to code a piano. You'll also practice media queries and pseudo selectors."
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
       "lab-technical-documentation-page": {
@@ -2575,10 +2904,6 @@
           "Open up this page to review concepts around the basics of CSS, responsive web design, animations, accessibility and more."
         ]
       },
-      "wvjx": {
-        "title": "127",
-        "intro": []
-      },
       "lecture-working-with-code-editors-and-ides": {
         "title": "Working with Code Editors and IDEs",
         "intro": [
@@ -2601,14 +2926,13 @@
       "lab-javascript-trivia-bot": {
         "title": "Build a JavaScript Trivia Bot",
         "intro": [
-          "In this lab, you'll practice working with JavaScript variables and strings by building a trivia bot.",
-          "You'll practice how to use variables and basic strings."
+          "In this lab, you'll practice working with JavaScript variables and strings by building a trivia bot."
         ]
       },
       "lab-sentence-maker": {
         "title": "Build a Sentence Maker",
         "intro": [
-          "In this lab, you'll create different stories by assigning different words to different variables."
+          "In this lab, you will continue practicing with strings and concatenation by creating and customizing various stories."
         ]
       },
       "lecture-working-with-data-types": {
@@ -2749,6 +3073,12 @@
           "In this lab you'll use conditional statements and loops to determine if a year is a leap year."
         ]
       },
+      "lab-truncate-string": {
+        "title": "Implement the Truncate String Algorithm",
+        "intro": [
+          "In this lab, you will practice truncating a string at a certain length."
+        ]
+      },
       "review-javascript-functions": {
         "title": "JavaScript Functions Review",
         "intro": [
@@ -2845,6 +3175,18 @@
           "You'll practice using loops and conditionals to calculate the factorial of a number."
         ]
       },
+      "lab-mutations": {
+        "title": "Implement the Mutations Algorithm",
+        "intro": [
+          "In this lab, you will practice iterating over two different strings to compare their characters."
+        ]
+      },
+      "lab-chunky-monkey": {
+        "title": "Implement the Chunky Monkey Algorithm",
+        "intro": [
+          "In this lab, you will practice dividing an array into smaller arrays with the technique of your choice."
+        ]
+      },
       "review-javascript-loops": {
         "title": "JavaScript Loops Review",
         "intro": [
@@ -2860,6 +3202,12 @@
         "title": "Understanding Core JavaScript Fundamentals",
         "intro": [
           "In these lecture videos, you will learn more about the core JavaScript fundamentals. You will learn how a string object differs from a primitive string, the <code>toString()</code> method, conventions and common practices for naming variables, linters and formatters, closures, and much more."
+        ]
+      },
+      "lab-slice-and-splice": {
+        "title": "Implement the Slice and Splice Algorithm",
+        "intro": [
+          "In this lab, you will practice merging an array with another."
         ]
       },
       "lab-pyramid-generator": {
@@ -2901,6 +3249,12 @@
           "In this lab, you'll build a password generator app based on the user's input."
         ]
       },
+      "lab-sum-all-numbers-algorithm": {
+        "title": "Design a Sum All Numbers Algorithm",
+        "intro": [
+          "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
+        ]
+      },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
         "intro": [
@@ -2923,7 +3277,7 @@
       "workshop-library-manager": {
         "title": "Build a Library Manager",
         "intro": [
-          "In this workshop, you will learn higher order array methods by building a library manager"
+          "In this workshop, you will learn higher order array methods by building a library manager."
         ]
       },
       "lab-book-organizer": {
@@ -2948,7 +3302,7 @@
       "lecture-working-with-the-dom-click-events-and-web-apis": {
         "title": "Working with the DOM, Click Events, and Web APIs",
         "intro": [
-          "In these lecture videos, you will learn how to work with the Document Object Model (DOM), the `addEventListener()` method and events, and web APIs."
+          "In these lecture videos, you will learn how to work with the Document Object Model (DOM), the <code>addEventListener()</code> method and events, and web APIs."
         ]
       },
       "workshop-storytelling-app": {
@@ -2961,19 +3315,6 @@
         "title": "Build a Favorite Icon Toggler",
         "intro": [
           "In this lab, you'll build a favorite icon toggler by utilizing JavaScript click events."
-        ]
-      },
-      "review-dom-manipulation-and-click-events-with-javascript": {
-        "title": "DOM Manipulation and Click Events with JavaScript Review",
-        "intro": [
-          "Before you're quizzed on the DOM, you should review what you've learned about it.",
-          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web API's/code>, the <code>addEventListener()</code> method and more."
-        ]
-      },
-      "quiz-dom-manipulation-and-click-event-with-javascript": {
-        "title": "DOM Manipulation and Click Events with JavaScript Quiz",
-        "intro": [
-          "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
         ]
       },
       "lecture-understanding-the-event-object-and-event-delegation": {
@@ -2998,7 +3339,7 @@
       "lab-lightbox-viewer": {
         "title": "Build a Lightbox Viewer",
         "intro": [
-          "In this lab, you'll build a lighbox viewer for viewing images in a focused mode.",
+          "In this lab, you'll build a lightbox viewer for viewing images in a focused mode.",
           "You'll practice click events and toggling classes."
         ]
       },
@@ -3020,16 +3361,31 @@
           "In this lab, you'll use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
         ]
       },
-      "review-javascript-events": {
-        "title": "JavaScript Events Review",
+      "review-dom-manipulation-and-click-events-with-javascript": {
+        "title": "DOM Manipulation and Click Events with JavaScript Review",
         "intro": [
-          "Before you're quizzed on events, you should review what you've learned.",
-          "Open up this page to review concepts like change events, event bubbling, and event delegation."
+          "Before you're quizzed on the DOM, you should review what you've learned about it.",
+          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web APIs</code>, the <code>addEventListener()</code> method, change events, event bubbling and more."
         ]
       },
-      "quiz-javascript-events": {
-        "title": "JavaScript Events Quiz",
-        "intro": ["Test your knowledge of JavaScript events with this quiz."]
+      "quiz-dom-manipulation-and-click-event-with-javascript": {
+        "title": "DOM Manipulation and Click Events with JavaScript Quiz",
+        "intro": [
+          "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
+        ]
+      },
+      "review-js-a11y": {
+        "title": "JavaScript and Accessibility Review",
+        "intro": [
+          "Before you're quizzed on JavaScript and accessibility, you should review what you've learned about it.",
+          "Open up this page to review concepts including how to work with the <code>aria-expanded</code>, <code>aria-live</code>, and <code>aria-controls</code> attributes."
+        ]
+      },
+      "quiz-js-a11y": {
+        "title": "JavaScript and Accessibility Quiz",
+        "intro": [
+          "Test your knowledge of JavaScript and accessibility best practices with this quiz."
+        ]
       },
       "lecture-debugging-techniques": {
         "title": "Debugging Techniques",
@@ -3047,7 +3403,7 @@
         "title": "Debugging JavaScript Review",
         "intro": [
           "Before you're quizzed on common debugging techniques, you should review what you've learned.",
-          "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally/code> and more."
+          "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally</code> and more."
         ]
       },
       "quiz-debugging-javascript": {
@@ -3184,7 +3540,7 @@
       "lecture-working-with-maps-and-sets": {
         "title": "Working with Maps and Sets",
         "intro": [
-          "In these lecture videos, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>"
+          "In these lecture videos, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>."
         ]
       },
       "workshop-plant-nursery-catalog": {
@@ -3282,7 +3638,7 @@
       "quiz-javascript-classes": {
         "title": "JavaScript Classes Quiz",
         "intro": [
-          "Test what you've learned about JavaScript Classes with this quiz."
+          "Test what you've learned about JavaScript classes with this quiz."
         ]
       },
       "lecture-understanding-recursion-and-the-call-stack": {
@@ -3350,7 +3706,7 @@
       "lecture-understanding-asynchronous-programming": {
         "title": "Understanding Asynchronous Programming",
         "intro": [
-          "In these lecture videos, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>asnyc</code> keyword works, the <code>Fetch</code> API, promises, async/await, the <code>Geolocation</code> API, and much more."
+          "In these lecture videos, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>async</code> keyword works, the <code>Fetch</code> API, promises, <code>async/await</code>, the <code>Geolocation</code> API, and much more."
         ]
       },
       "workshop-fcc-authors-page": {
@@ -3364,6 +3720,13 @@
         "title": "Build an fCC Forum Leaderboard",
         "intro": [
           "For this lab you'll practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
+        ]
+      },
+      "lab-weather-app": {
+        "title": "Build a Weather App",
+        "intro": [
+          "In this lab you'll build a Weather App using an API",
+          "You'll practice how to fetch data from the API, store and display it on your app."
         ]
       },
       "review-asynchronous-javascript": {
@@ -3382,7 +3745,7 @@
         "title": "JavaScript Review",
         "intro": [
           "Before you take the JavaScript prep exam, you should review everything you've learned about JavaScript.",
-          "Open up this page, to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
+          "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
       "kagw": {
@@ -3435,89 +3798,135 @@
         "title": "React Basics Quiz",
         "intro": ["Test your knowledge of React basics with this quiz."]
       },
-      "rugw": {
-        "title": "267",
-        "intro": []
+      "lecture-working-with-state-and-responding-to-events-in-react": {
+        "title": "Working with State and Responding to Events in React",
+        "intro": [
+          "In these lecture videos, you will learn about working with state and responding to events with React."
+        ]
       },
-      "rmpy": {
-        "title": "268",
-        "intro": []
+      "workshop-toggle-text-app": {
+        "title": "Toggle Text App",
+        "intro": [
+          "In this workshop, you will continue to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
+        ]
       },
-      "dbta": {
-        "title": "269",
-        "intro": []
+      "lab-color-picker": {
+        "title": "Build a Color Picker App",
+        "intro": [
+          "In this lab you'll build a Color Picker.",
+          "You'll practice using state and hooks to manage the properties of an element."
+        ]
       },
-      "rnfe": {
-        "title": "271",
-        "intro": []
+      "lecture-understanding-effects-and-referencing-values-in-react": {
+        "title": "Understanding Effects and Referencing Values in React",
+        "intro": [
+          "In these lecture videos, you will learn about effects and referencing values with React."
+        ]
       },
-      "xdyh": {
-        "title": "270",
-        "intro": []
+      "workshop-fruit-search-app": {
+        "title": "Build a Fruit Search App",
+        "intro": [
+          "In this workshop, you will continue to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
+        ]
       },
       "vjgg": {
         "title": "272",
         "intro": []
       },
-      "ceds": {
-        "title": "273",
-        "intro": []
+      "review-react-state-and-hooks": {
+        "title": "React State and Hooks Review",
+        "intro": [
+          "Before you're quizzed on React state and hooks, you should review what you've learned.",
+          "Open up this page to review working with state, custom hooks and more."
+        ]
       },
       "quiz-react-state-and-hooks": {
         "title": "React State and Hooks Quiz",
         "intro": [
-          "Test what you've learned about React State and Hooks with this quiz."
+          "Test what you've learned about React's <code>useState</code> and <code>useEffect</code> hooks with this quiz."
         ]
       },
-      "ftmi": {
-        "title": "275",
-        "intro": []
-      },
-      "sgau": {
-        "title": "276",
-        "intro": []
-      },
-      "clak": {
-        "title": "277",
-        "intro": []
-      },
-      "lab-weather-app": {
-        "title": "Build a Weather App",
+      "lecture-working-with-forms-in-react": {
+        "title": "Working with Forms in React",
         "intro": [
-          "In this lab you'll build a Weather App using an API",
-          "You'll practice how to fetch data from the API, store and display it on your app."
+          "In these lecture videos, you will learn about working with forms in React."
         ]
       },
-      "ffpt": {
-        "title": "279",
-        "intro": []
-      },
-      "lrof": {
-        "title": "280",
-        "intro": []
-      },
-      "vyzp": {
-        "title": "281",
-        "intro": []
-      },
-      "zagz": {
-        "title": "282",
-        "intro": []
-      },
-      "quiz-advanced-react": {
-        "title": "Advanced React Quiz",
+      "workshop-superhero-application-form": {
+        "title": "Build a Superhero Application Form",
         "intro": [
-          "Test what you've learned about Advanced React with this quiz."
+          "In this workshop, you will build a superhero application form."
         ]
       },
-      "zdsj": {
-        "title": "284",
-        "intro": []
+      "lab-event-rsvp": {
+        "title": "Build an Event RSVP",
+        "intro": [
+          "In this lab, you'll build an Event RSVP form using React.",
+          "You'll practice using the useState hook to manage form input and display user responses."
+        ]
+      },
+      "lecture-working-with-data-fetching-and-memoization-in-react": {
+        "title": "Working with Data Fetching and Memoization in React",
+        "intro": [
+          "In these lecture videos, you will learn about data fetching and memoization in React."
+        ]
+      },
+      "workshop-shopping-list-app": {
+        "title": "Build a Shopping List App",
+        "intro": [
+          "In this workshop, you'll use the <code>useMemo()</code> and <code>useCallback()</code> hooks in React to build a simple shopping list app. You'll learn more about state and the lifecycle of React components, and how to use memoization to reduce re-renders and make your apps more efficient."
+        ]
+      },
+      "lab-currency-converter": {
+        "title": "Build a Currency Converter",
+        "intro": [
+          "For this lab, you'll build a currency converter app.",
+          "You'll use React state, memoization, and controlled components to convert between currencies."
+        ]
+      },
+      "lecture-routing-react-frameworks-and-dependency-management-tools": {
+        "title": "Routing, React Frameworks, and Dependency Management Tools",
+        "intro": [
+          "In these lecture videos, you will learn about routing in React, React frameworks, and dependency management tools."
+        ]
+      },
+      "lab-tic-tac-toe": {
+        "title": "Build a Tic-Tac-Toe Game",
+        "intro": [
+          "In this lab, you'll build a Tic-Tac-Toe game using React.",
+          "You'll practice managing state, handling user interactions, and updating the UI dynamically."
+        ]
+      },
+      "lecture-react-strategies-and-debugging": {
+        "title": "React Strategies and Debugging",
+        "intro": [
+          "In these lecture videos, you will learn about different strategies and debugging in React."
+        ]
+      },
+      "review-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Review",
+        "intro": [
+          "Before you take the React forms, data fetching and routing quiz, you should review everything you've learned so far.",
+          "Open up this page, to review all of the concepts taught including routing, forms, state management, prop drilling, data fetching and more."
+        ]
+      },
+      "quiz-react-forms-data-fetching-and-routing": {
+        "title": "React Forms, Data Fetching and Routing Quiz",
+        "intro": [
+          "Test what you've learned about routing, forms, and data fetching with this quiz."
+        ]
+      },
+      "lecture-understanding-performance-in-web-applications": {
+        "title": "Understanding Performance in Web Applications",
+        "intro": [
+          "In these lecture videos, you will learn performance in web applications."
+        ]
       },
       "review-web-performance": {
         "title": "Web Performance Review",
         "intro": [
-          "Review the Web Performance concepts to prepare for the upcoming quiz."
+          "Before you take the web performance quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including INP, key metrics for measuring performance, Performance Web APIs and more."
         ]
       },
       "quiz-web-performance": {
@@ -3526,14 +3935,17 @@
           "Test what you've learned about Web Performance with this quiz."
         ]
       },
-      "mbpv": {
-        "title": "287",
-        "intro": []
+      "lecture-working-with-css-libraries-and-frameworks": {
+        "title": "Working with CSS Libraries and Frameworks",
+        "intro": [
+          "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
+        ]
       },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
-          "Review the CSS Libraries and Frameworks concepts to prepare for the upcoming quiz."
+          "Before you take the CSS libraries and frameworks quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including CSS frameworks, CSS preprocessors, Sass and more."
         ]
       },
       "quiz-css-libraries-and-frameworks": {
@@ -3542,17 +3954,28 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
-      "khuu": {
-        "title": "290",
-        "intro": []
+      "lecture-understanding-the-different-types-of-testing": {
+        "title": "Understanding the Different Types of Testing",
+        "intro": [
+          "In these lecture videos, you will learn about the different types of testing."
+        ]
       },
       "review-testing": {
         "title": "Testing Review",
-        "intro": ["Review testing concepts to prepare for the upcoming quiz."]
+        "intro": [
+          "Before you take the testing quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including unit testing, end-to-end testing, functional testing and more."
+        ]
       },
       "quiz-testing": {
         "title": "Testing Quiz",
         "intro": ["Test what you've learned on testing with this quiz."]
+      },
+      "lecture-introduction-to-typescript": {
+        "title": "Introduction to TypeScript",
+        "intro": [
+          "In these lecture videos, you will learn what TypeScript is and how to use it."
+        ]
       },
       "trvf": {
         "title": "293",
@@ -3577,7 +4000,8 @@
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
-          "Review Typescript concepts to prepare for the upcoming quiz."
+          "Before you take the TypeScript quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including data types in TypeScript, generics, type narrowing and more."
         ]
       },
       "quiz-typescript": {
@@ -3597,6 +4021,338 @@
       "vtpz": {
         "title": "302",
         "intro": []
+      },
+      "lecture-introduction-to-python": {
+        "title": "Introduction to Python",
+        "intro": [
+          "In these lecture videos, you will learn the fundamentals of Python. You'll learn about variables, data types, operators, control flow, functions, and more."
+        ]
+      },
+      "workshop-caesar-cipher": {
+        "title": "Build a Caesar Cipher",
+        "intro": [
+          "In this workshop, you'll build a Caesar cipher using basic Python concepts such as strings, conditionals, functions, and more."
+        ]
+      },
+      "lab-rpg-character": {
+        "title": "Build an RPG character",
+        "intro": [
+          "In this lab you will practice basic python by building an RPG character."
+        ]
+      },
+      "review-python-basics": {
+        "title": "Python Basics Review",
+        "intro": [
+          "Before you're quizzed on Python basics, you should review what you've learned about it.",
+          "In this review page, you will review working with strings, functions, comparison operators and more."
+        ]
+      },
+      "quiz-python-basics": {
+        "title": "Python Basics Quiz",
+        "intro": [
+          "Test what you've learned about Python basics with this quiz."
+        ]
+      },
+      "lecture-working-with-loops-and-sequences": {
+        "title": "Working with Loops and Sequences",
+        "intro": [
+          "Learn about Working with Loops and Sequences in these lectures."
+        ]
+      },
+      "workshop-placeholder-loops-and-sequences": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lab-number-pattern-generator": {
+        "title": "Build a Number Pattern Generator",
+        "intro": ["In this lab you will build a number pattern generator."]
+      },
+      "review-loops-and-sequences": {
+        "title": "Loops and Sequences Review",
+        "intro": [
+          "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
+          "Open up this page to review concepts around loops, lists, tuples and some of their common methods."
+        ]
+      },
+      "quiz-loops-and-sequences": {
+        "title": "Loops and Sequences Quiz",
+        "intro": [
+          "Test what you've learned about loops and sequences in Python with this quiz."
+        ]
+      },
+      "lecture-working-with-dictionaries-and-sets": {
+        "title": "Working with Dictionaries and Sets",
+        "intro": [
+          "Learn about Working with Dictionaries and Sets in these lectures."
+        ]
+      },
+      "lecture-working-with-modules": {
+        "title": "Working with Modules",
+        "intro": ["Learn about Working with Modules in these lectures."]
+      },
+      "workshop-placeholder-dictionaries-and-sets": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
+      },
+      "lab-placeholder-dictionaries-and-sets": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
+      },
+      "review-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets review",
+        "intro": [
+          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Quiz",
+        "intro": [
+          "Test what you've learned about dictionaries and sets in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-error-handling": {
+        "title": "Understanding Error Handling",
+        "intro": ["Learn about Understanding Error Handling in these lectures."]
+      },
+      "lab-isbn-validator": {
+        "title": "Debug a ISBN Validator",
+        "intro": [""]
+      },
+      "review-error-handling": {
+        "title": "Error Handling Review",
+        "intro": [
+          "Before you're quizzed on error handling, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-error-handling": {
+        "title": "Error Handling Quiz",
+        "intro": [
+          "Test what you've learned about Error Handling in Python with this quiz."
+        ]
+      },
+      "lecture-classes-and-objects": {
+        "title": "Classes and Objects",
+        "intro": ["Learn about Classes and Objects in these lectures."]
+      },
+      "workshop-placeholder-classes-and-objects": {
+        "title": "Placeholder - waiting for title",
+        "intro": [""]
+      },
+      "lab-budget-app": {
+        "title": "Build a Budget App",
+        "intro": [
+          "In this lab you will build a budget app and practice creating a class and methods for that class."
+        ]
+      },
+      "review-classes-and-objects": {
+        "title": "Classes and Objects Review",
+        "intro": [
+          "Before you're quizzed on classes and objects, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-classes-and-objects": {
+        "title": "Classes and Objects Quiz",
+        "intro": [
+          "Test what you've learned about classes and objects in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-object-oriented-programming-and-encapsulation": {
+        "title": "Understanding Object Oriented Programming and Encapsulation",
+        "intro": [
+          "Learn about Understanding Object Oriented Programming and Encapsulation in these lectures."
+        ]
+      },
+      "workshop-placeholder-oop-1": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lab-placeholder-oop-1": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lecture-understanding-inheritance-and-polymorphism": {
+        "title": "Understanding Inheritance and Polymorphism",
+        "intro": [
+          "Learn about Understanding Inheritance and Polymorphism in these lectures."
+        ]
+      },
+      "workshop-placeholder-oop-2": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lab-polygon-area-calculator": {
+        "title": "Build a Polygon Area Calculator",
+        "intro": [
+          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
+        ]
+      },
+      "lecture-understanding-abstraction": {
+        "title": "Understanding Abstraction",
+        "intro": ["Learn about Understanding Abstraction in these lectures."]
+      },
+      "workshop-placeholder-oop-3": {
+        "title": "Placeholder - Waiting for title",
+        "intro": [""]
+      },
+      "lab-placeholder-oop-3": {
+        "title": "",
+        "intro": [""]
+      },
+      "review-object-oriented-programming": {
+        "title": "Object Oriented Programming Review",
+        "intro": [
+          "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-object-oriented-programming": {
+        "title": "Object Oriented Programming Quiz",
+        "intro": [
+          "Test what you've learned about object oriented programming in python with this quiz."
+        ]
+      },
+      "lecture-working-with-common-data-structures": {
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about Working with Common Data Structures in these lectures."
+        ]
+      },
+      "workshop-linked-list-class": {
+        "title": "Build a Linked List Class",
+        "intro": [""]
+      },
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
+      },
+      "review-data-structures": {
+        "title": "Data Structures Review",
+        "intro": [
+          "Before you're quizzed on data structures, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-data-structures": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in Python with this quiz."
+        ]
+      },
+      "lecture-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms",
+        "intro": [
+          "Learn about Searching and Sorting Algorithms in these lectures."
+        ]
+      },
+      "workshop-binary-search": {
+        "title": "Build a Binary Search",
+        "intro": [""]
+      },
+      "lab-bisection-method": {
+        "title": "Build a Bisection Method",
+        "intro": [""]
+      },
+      "workshop-merge-sort": {
+        "title": "Implement the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
+        ]
+      },
+      "lab-quick-sort": {
+        "title": "Build a Quick Sort",
+        "intro": [""]
+      },
+      "lab-selection-sort": {
+        "title": "Implement the Selection Sort Algorithm",
+        "intro": [
+          "In this lab you will implement the selection sort algorithm."
+        ]
+      },
+      "lab-luhn-argorithm": {
+        "title": "Build a Luhn Algorithm",
+        "intro": [""]
+      },
+      "review-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Review",
+        "intro": [
+          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Quiz",
+        "intro": [
+          "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-graphs-and-trees": {
+        "title": "Understanding Graphs and Trees",
+        "intro": [
+          "Learn about Understanding Graphs and Trees in these lectures."
+        ]
+      },
+      "workshop-shortest-path-algorithm": {
+        "title": "Build a Shortest Path Algorithm",
+        "intro": [""]
+      },
+      "lab-adjacency-list-matrix-converter": {
+        "title": "Build an Adjacency List/Matrix Converter",
+        "intro": [""]
+      },
+      "workshop-breadth-first-search": {
+        "title": "Build a Breadth First Search",
+        "intro": [""]
+      },
+      "lab-depth-first-search": {
+        "title": "Build a Depth First Search",
+        "intro": [""]
+      },
+      "review-graphs-and-trees": {
+        "title": "Graphs and Trees Review",
+        "intro": [
+          "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-graphs-and-trees": {
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Test what you've learned about graphs and trees in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-dynamic-programming": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [
+          "Learn about Understanding Dynamic Programming in these lectures."
+        ]
+      },
+      "lab-nth-fibonacci-number": {
+        "title": "Build an Nth Fibonacci Number Calculator",
+        "intro": [""]
+      },
+      "review-dynamic-programming": {
+        "title": "Dynamic Programming Review",
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
+          "[Add more details]"
+        ]
+      },
+      "quiz-dynamic-programming": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in python with this quiz."
+        ]
+      },
+      "review-python": {
+        "title": "Python Review",
+        "intro": ["Review Python concepts to prepare for the upcoming exam."]
       },
       "workshop-bash-boilerplate": {
         "title": "Build a Boilerplate",
@@ -3619,8 +4375,8 @@
         "title": "306",
         "intro": []
       },
-      "workshop-mario-database": {
-        "title": "Build a Mario Database",
+      "workshop-database-of-video-game-characters": {
+        "title": "Build a Database of Video Game Characters",
         "intro": [
           "A relational database organizes data into tables that are linked together through relationships.",
           "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
@@ -3729,14 +4485,6 @@
           "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
         ]
       },
-      "review-nano": {
-        "title": "Nano Review",
-        "intro": ["Review the Nano concepts to prepare for the upcoming quiz."]
-      },
-      "quiz-nano": {
-        "title": "Nano Quiz",
-        "intro": ["Test what you've learned on Nano with this quiz ."]
-      },
       "rhhl": {
         "title": "328",
         "intro": []
@@ -3774,199 +4522,66 @@
           "Review relational databases concepts to prepare for the upcoming quiz."
         ]
       },
-      "thsj": {
-        "title": "335",
-        "intro": []
-      },
-      "uwum": {
-        "title": "336",
-        "intro": []
-      },
-      "asfv": {
-        "title": "337",
-        "intro": []
-      },
-      "bvfx": {
-        "title": "338",
-        "intro": []
-      },
-      "buzx": {
-        "title": "339",
-        "intro": []
-      },
-      "ynqt": {
-        "title": "340",
-        "intro": []
-      },
-      "prlo": {
-        "title": "341",
-        "intro": []
-      },
-      "jsnd": {
-        "title": "342",
-        "intro": []
-      },
-      "sxdc": {
-        "title": "343",
-        "intro": []
-      },
-      "pegc": {
-        "title": "344",
-        "intro": []
-      },
-      "mzae": {
-        "title": "345",
-        "intro": []
-      },
-      "gjbf": {
-        "title": "346",
-        "intro": []
-      },
-      "hzab": {
-        "title": "347",
-        "intro": []
-      },
-      "ggea": {
-        "title": "348",
-        "intro": []
-      },
-      "vgvz": {
-        "title": "349",
-        "intro": []
-      },
-      "hfwi": {
-        "title": "350",
-        "intro": []
-      },
-      "rnwr": {
-        "title": "351",
-        "intro": []
-      },
-      "zhhp": {
-        "title": "352",
-        "intro": []
-      },
-      "movb": {
-        "title": "353",
-        "intro": []
-      },
-      "ngor": {
-        "title": "354",
-        "intro": []
-      },
-      "gora": {
-        "title": "355",
-        "intro": []
-      },
-      "xdly": {
-        "title": "356",
-        "intro": []
-      },
-      "pzmc": {
-        "title": "357",
-        "intro": []
-      },
-      "oeqv": {
-        "title": "358",
-        "intro": []
-      },
-      "mfwu": {
-        "title": "359",
-        "intro": []
-      },
-      "dfcd": {
-        "title": "360",
-        "intro": []
-      },
-      "dfwl": {
-        "title": "361",
-        "intro": []
-      },
-      "adzm": {
-        "title": "362",
-        "intro": []
-      },
-      "kaui": {
-        "title": "363",
-        "intro": []
-      },
-      "zpjj": {
-        "title": "364",
-        "intro": []
-      },
-      "ghfk": {
-        "title": "365",
-        "intro": []
-      },
-      "ukem": {
-        "title": "366",
-        "intro": []
-      },
-      "sdjg": {
-        "title": "367",
-        "intro": []
-      },
-      "qjov": {
-        "title": "368",
-        "intro": []
-      },
-      "hjku": {
-        "title": "370",
-        "intro": []
-      },
-      "kegi": {
-        "title": "377",
-        "intro": []
-      },
-      "vnfu": {
-        "title": "379",
-        "intro": []
-      },
-      "rlli": {
-        "title": "380",
-        "intro": []
-      },
-      "rjpv": {
-        "title": "381",
-        "intro": []
-      },
-      "xbri": {
-        "title": "382",
-        "intro": []
-      },
-      "xfrd": {
-        "title": "383",
-        "intro": []
-      },
-      "nkjt": {
-        "title": "384",
-        "intro": []
-      },
-      "pgjj": {
-        "title": "385",
-        "intro": []
-      },
-      "exom": {
-        "title": "386",
-        "intro": []
-      },
-      "bvqc": {
-        "title": "387",
-        "intro": []
-      },
-      "xish": {
-        "title": "388",
-        "intro": []
-      },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
       }
     }
   },
+  "a2-professional-spanish": {
+    "title": "A2 Professional Spanish Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "talk-about-who-you-are-by-using-key-verbs": {
+        "title": "Talk About Who You Are by Using Key Verbs",
+        "intro": [
+          "Learn how to introduce yourself in Spanish in a simple and professional way. In this module you'll learn how to say who you are, where you are from, what you do, how you feel, and what you like or don't like."
+        ]
+      },
+      "get-to-know-others-by-asking-simple-questions": {
+        "title": "Get to Know Others by Asking Simple Questions",
+        "intro": [
+          "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
+        ]
+      }
+    }
+  },
+  "a2-professional-chinese": {
+    "title": "A2 Professional Chinese Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "talk-about-what-you-do-by-using-key-verbs": {
+        "title": "Talk About What You Do by Using Key Verbs",
+        "intro": [
+          "Learn how to introduce yourself in Chinese in a simple and professional way. In this module you'll learn how to say who you are, where you are from, what you do, how you feel, and what you like or don't like."
+        ]
+      },
+      "get-to-know-colleagues-by-asking-simple-questions": {
+        "title": "Get to Know Colleagues by Asking Simple Questions",
+        "intro": [
+          "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
+        ]
+      }
+    }
+  },
+  "dev-playground": {
+    "title": "Dev Playground",
+    "intro": ["Playground for creating and testing challenges"],
+    "blocks": {
+      "daily-coding-challenges-javascript": {
+        "title": "Daily Coding Challenges JavaScript",
+        "intro": ["Place to create JavaScript daily coding challenges."]
+      },
+      "daily-coding-challenges-python": {
+        "title": "Daily Coding Challenges Python",
+        "intro": ["Place to create Python daily coding challenges."]
+      }
+    }
+  },
   "misc-text": {
-    "certification": "Uthibitishaji wa {{cert}}",
-    "browse-other": "Vinjari vyeti vyetu vingine vya bila malipo\n(tunapendekeza kufanya haya kwa utaratibu)",
+    "browse-other": "Browse our other free certifications",
     "courses": "Kozi",
     "steps": "Hatua",
     "expand": "Panua kozi",
