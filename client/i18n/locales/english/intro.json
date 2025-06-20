@@ -2115,10 +2115,22 @@
           "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element, and more."
         ]
       },
-      "lecture-working-with-media": {
-        "title": "Working with Media",
+      "lecture-working-with-audio-and-video-elements": {
+        "title": "Working with Audio and Video Elements",
         "intro": [
-          "In these lecture videos, you will learn how to work with media assets like the <code>audio</code> and <code>video</code> elements, SVGs, how to optimize them, and more."
+          "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+        ]
+      },
+      "lecture-working-with-images-and-svgs": {
+        "title": "Working with Images and SVGs",
+        "intro": [
+          "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
+        ]
+      },
+      "lecture-working-with-media": {
+        "title": "Working with the iframe Element",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
         ]
       },
       "lab-video-compilation-page": {
