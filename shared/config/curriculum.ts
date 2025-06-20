@@ -105,8 +105,7 @@ const defaultStageOrder = [
   SuperBlockStage.Extra,
   SuperBlockStage.Legacy,
   SuperBlockStage.Professional,
-  SuperBlockStage.Next,
-  SuperBlockStage.Catalog
+  SuperBlockStage.Next
 ];
 
 export function getStageOrder({
@@ -114,7 +113,9 @@ export function getStageOrder({
 }: Config): SuperBlockStage[] {
   const stageOrder = [...defaultStageOrder];
 
-  if (showUpcomingChanges) stageOrder.push(SuperBlockStage.Upcoming);
+  if (showUpcomingChanges) {
+    stageOrder.push(SuperBlockStage.Upcoming, SuperBlockStage.Catalog);
+  }
   return stageOrder;
 }
 
@@ -156,7 +157,8 @@ export const superBlockStages: StageMap = {
     SuperBlocks.A2Chinese,
     SuperBlocks.DevPlayground
   ],
-  // also add catalog superBlocks to catalog.ts
+  // Catalog is treated like upcoming for now
+  // Add catalog superBlocks to catalog.ts when adding new superBlocks
   [SuperBlockStage.Catalog]: [SuperBlocks.BasicHtml, SuperBlocks.SemanticHtml]
 };
 
