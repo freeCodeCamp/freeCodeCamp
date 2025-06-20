@@ -2,7 +2,7 @@ FROM node:22-bookworm AS builder
 RUN apt-get update && apt-get install -y jq
 # global installs need root permissions, so have to happen before we switch to
 # the node user
-RUN npm i -g pnpm@10
+RUN corepack enable
 # node images create a non-root user that we can use
 USER node
 WORKDIR /home/node/build
@@ -41,7 +41,7 @@ COPY --chown=node:node pnpm*.yaml .
 COPY --chown=node:node package.json .
 COPY --chown=node:node api/ api/
 COPY --chown=node:node shared/ shared/
-RUN npm i -g pnpm@10
+RUN corepack enable
 
 # Weirdly this config does not seem necessary for the new api (the same number
 # of deps are installed in both cases), but I'm including it just for
