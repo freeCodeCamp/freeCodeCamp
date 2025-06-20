@@ -201,7 +201,6 @@ export const build = async (
     // TODO(Post-MVP): add the redirectIfSignedIn hook here, rather than in the
     // mobileAuth0Routes and authRoutes plugins.
     await fastify.register(publicRoutes.mobileAuth0Routes);
-    // TODO: consolidate with LOCAL_MOCK_AUTH
     if (FCC_ENABLE_DEV_LOGIN_MODE) {
       await fastify.register(publicRoutes.devAuthRoutes);
     } else {
