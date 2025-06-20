@@ -1,0 +1,29 @@
+{
+  "name": "Build a Tailwind CTA Component",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-tailwind-cta-component",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "HTML-CSS",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    {
+      "id": "68551b677a5f6898af364b85",
+      "title": "Step 1"
+    },
+    {
+      "id": "685523c05fb41d0848c4b52f",
+      "title": "Step 2"
+    },
+    {
+      "id": "68552464ef378e1051a55c28",
+      "title": "Step 3"
+    },
+    {
+      "id": "6855255d96c1441bd919dc5d",
+      "title": "Step 4"
+    }
+  ],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
