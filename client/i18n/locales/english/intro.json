@@ -4095,9 +4095,11 @@
         "title": "Placeholder - waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-dictionaries-and-sets": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "lab-user-configuration-manager": {
+        "title": "Build a User Configuration Manager",
+        "intro": [
+          "In this lab, you will practice working with dictionaries and sets in Python."
+        ]
       },
       "review-dictionaries-and-sets": {
         "title": "Dictionaries and Sets review",
