@@ -18,71 +18,6 @@ title: Test
 ---
 
 # --description--
-This is a description.
-
-# --instructions--
-Follow these instructions.
-
-# --seed--
-Some seed content.
-
-# --solutions--
-Solution goes here.
-`;
-
-    expect(() => {
-      processor.runSync(processor.parse(file));
-    }).not.toThrow();
-  });
-
-  it('should throw error for a single invalid section marker', () => {
-    const file = `---
-id: test
-title: Test
----
-
-# --description--
-This is a description.
-
-# --instructionss--
-This has a typo.
-`;
-
-    expect(() => {
-      processor.runSync(processor.parse(file));
-    }).toThrow('Invalid section markers: "--instructionss--".');
-  });
-
-  it('should throw error for multiple invalid section markers', () => {
-    const file = `---
-id: test
-title: Test
----
-
-# --descriptio--
-This has a typo.
-
-# --instructionss--
-This also has a typo.
-
-# --seeddd--
-Another typo.
-`;
-
-    expect(() => {
-      processor.runSync(processor.parse(file));
-    }).toThrow(
-      'Invalid section markers: "--descriptio--", "--instructionss--", "--seeddd--".'
-    );
-  });
-
-  it('should pass with all valid section markers from different plugins', () => {
-    const file = `---
-id: test
-title: Test
----
-
-# --description--
 Text content.
 
 # --instructions--
@@ -121,7 +56,7 @@ Answers.
 ## --video-solution--
 Video solution.
 
-## --feedback--
+### --feedback--
 Feedback.
 
 # --quizzes--
@@ -133,14 +68,14 @@ Individual quiz.
 ### --question--
 Quiz question.
 
-### --text--
+#### --text--
 Question text.
 
-### --distractors--
-Distractors.
-
-### --answer--
+#### --answer--
 Correct answer.
+
+#### --distractors--
+Distractors.
 
 # --scene--
 Scene content.
@@ -172,96 +107,30 @@ Transcript.
     }).not.toThrow();
   });
 
-  it('should ignore non-section headings', () => {
+  it('should throw error for invalid marker names', () => {
     const file = `---
 id: test
 title: Test
 ---
 
-# Introduction
-This is not a section marker.
+# --descriptio--
+Typo in marker name.
 
-## What you'll learn
-Regular heading.
+# --instructionss--
+Another typo.
 
-# --instructions--
-Valid section marker.
-
-### Random heading
-Not a marker.
-`;
-
-    expect(() => {
-      processor.runSync(processor.parse(file));
-    }).not.toThrow();
-  });
-
-  it('should handle special fcc-editable-region marker', () => {
-    const file = `---
-id: test
-title: Test
----
-
-# --seed--
-Seed section.
-
-## --seed-contents--
-Some code here
-\`\`\`html
-<!-- --fcc-editable-region-- -->
-<div>Edit this</div>
-<!-- --fcc-editable-region-- -->
-\`\`\`
-`;
-
-    expect(() => {
-      processor.runSync(processor.parse(file));
-    }).not.toThrow();
-  });
-
-  it('should throw for malformed markers that look like section markers', () => {
-    const file = `---
-id: test
-title: Test
----
+# --feedback---
+Another typo.
 
 # --invalid-marker--
-This marker is not in the valid list.
-
-# --another-bad-one--
-Neither is this.
+Completely invalid marker.
 `;
 
     expect(() => {
       processor.runSync(processor.parse(file));
     }).toThrow(
-      'Invalid section markers: "--invalid-marker--", "--another-bad-one--".'
+      'Invalid marker names: "--descriptio--", "--instructionss--", "--feedback---", "--invalid-marker--".'
     );
-  });
-
-  it('should handle empty files without errors', () => {
-    const file = `---
-id: test
-title: Test
----
-
-Some content without any section markers.
-`;
-
-    expect(() => {
-      processor.runSync(processor.parse(file));
-    }).not.toThrow();
-  });
-
-  it('should handle files with only frontmatter', () => {
-    const file = `---
-id: test
-title: Test
----`;
-
-    expect(() => {
-      processor.runSync(processor.parse(file));
-    }).not.toThrow();
   });
 
   it('should validate case-sensitive markers', () => {
@@ -279,32 +148,69 @@ Also wrong case.
 
     expect(() => {
       processor.runSync(processor.parse(file));
-    }).toThrow(
-      'Invalid section markers: "--INSTRUCTIONS--", "--Instructions--".'
-    );
+    }).toThrow('Invalid marker names: "--INSTRUCTIONS--", "--Instructions--".');
   });
 
-  it('should handle markers with different heading levels', () => {
+  it('should throw error for correct marker at wrong heading level', () => {
     const file = `---
 id: test
 title: Test
 ---
 
-# --instructions--
-Level 1 heading.
+## --instructions--
+Instructions should be at level 1, not 2.
 
-## --seed-contents--
-Level 2 heading.
-
-### --feedback--
-Level 3 heading.
-
-#### --wronglevel--
-Invalid marker at level 4.
+### --seed-contents--
+Seed contents should be at level 2, not 3.
 `;
 
     expect(() => {
       processor.runSync(processor.parse(file));
-    }).toThrow('Invalid section markers: "--wronglevel--".');
+    }).toThrow(
+      'Invalid heading levels: "## --instructions--" should be "# --instructions--", "### --seed-contents--" should be "## --seed-contents--".'
+    );
+  });
+
+  it('should throw combined errors for invalid markers and wrong levels', () => {
+    const file = `---
+id: test
+title: Test
+---
+
+## --instructions--
+Wrong level.
+
+# --invalid-marker--
+Invalid marker.
+
+### --seed-contents--
+Wrong level.
+`;
+
+    expect(() => {
+      processor.runSync(processor.parse(file));
+    }).toThrow(
+      'Invalid marker names: "--invalid-marker--".\nInvalid heading levels: "## --instructions--" should be "# --instructions--", "### --seed-contents--" should be "## --seed-contents--".'
+    );
+  });
+
+  it('should reject fcc-editable-region when used as headings', () => {
+    const file = `---
+id: test
+title: Test
+---
+
+# --fcc-editable-region--
+This should not be a heading.
+
+## --fcc-editable-region--
+This should also not be a heading.
+`;
+
+    expect(() => {
+      processor.runSync(processor.parse(file));
+    }).toThrow(
+      'Non-heading markers should not be used as headings: "# --fcc-editable-region--", "## --fcc-editable-region--".'
+    );
   });
 });
