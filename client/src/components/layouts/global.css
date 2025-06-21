@@ -214,9 +214,6 @@ p {
   text-align: center !important;
 }
 
-.green-text {
-  color: var(--secondary-color);
-}
 
 a {
   color: inherit;
