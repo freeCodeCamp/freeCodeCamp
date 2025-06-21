@@ -27,6 +27,15 @@ function PrismFormatted({
     if (instructionsRef.current) {
       Prism.hooks.add('complete', enhancePrismAccessibility);
       Prism.highlightAllUnder(instructionsRef.current);
+
+      const preElements = instructionsRef.current.querySelectorAll('pre');
+      preElements.forEach((pre: HTMLPreElement) => {
+        if (pre.scrollWidth > pre.clientWidth) {
+          pre.setAttribute('tabIndex', '0');
+        } else {
+          pre.removeAttribute('tabIndex');
+        }
+      });
     }
   }, []);
 
