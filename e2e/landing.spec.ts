@@ -100,6 +100,18 @@ test.describe('Landing Top - Variation A', () => {
       translations.landing['h2-heading'].replace(/<\/?strong>/g, '')
     );
   });
+
+  test('Hero image should have  a description', async ({ isMobile, page }) => {
+    const captionText = page.getByText(
+      translations.landing['hero-img-description']
+    );
+
+    if (isMobile) {
+      await expect(captionText).toBeHidden();
+    } else {
+      await expect(captionText).toBeVisible();
+    }
+  });
 });
 
 test.describe('Landing Page', () => {
@@ -130,23 +142,15 @@ test.describe('Landing Page', () => {
     }
   });
 
-  test('Hero image should have an alt and a description', async ({
-    isMobile,
-    page
-  }) => {
+  test('Hero image should have an alt', async ({ isMobile, page }) => {
     const campersImage = page.getByAltText(
       translations.landing['hero-img-alt']
-    );
-    const captionText = page.getByText(
-      translations.landing['hero-img-description']
     );
 
     if (isMobile) {
       await expect(campersImage).toBeHidden();
-      await expect(captionText).toBeHidden();
     } else {
       await expect(campersImage).toBeVisible();
-      await expect(captionText).toBeVisible();
     }
   });
 
