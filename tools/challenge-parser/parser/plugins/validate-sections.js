@@ -44,20 +44,22 @@ const NON_HEADING_MARKERS = ['--fcc-editable-region--'];
 
 function validateSections() {
   function transformer(tree) {
-    // Find all heading nodes that look like section markers
     const allMarkers = findAll(tree, isMarker);
+
+    // Invalid cases
     const invalidMarkerNames = [];
     const invalidHeadingLevels = [];
-    const nonHeadingMarkersInHeadings = [];
+    const nonHeadingMarkersAsHeadings = [];
+
+    const errors = [];
 
     for (const markerNode of allMarkers) {
       const markerValue = markerNode.children[0].value;
       const headingLevel = markerNode.depth;
       const fullMarker = '#'.repeat(headingLevel) + ' ' + markerValue;
 
-      // Check if this is a non-heading marker used as heading (not allowed)
       if (NON_HEADING_MARKERS.includes(markerValue)) {
-        nonHeadingMarkersInHeadings.push(fullMarker);
+        nonHeadingMarkersAsHeadings.push(fullMarker);
         continue;
       }
 
@@ -86,17 +88,15 @@ function validateSections() {
       }
     }
 
-    const errors = [];
-
     if (invalidMarkerNames.length > 0) {
       errors.push(
         `Invalid marker names: ${invalidMarkerNames.map(m => `"${m}"`).join(', ')}.`
       );
     }
 
-    if (nonHeadingMarkersInHeadings.length > 0) {
+    if (nonHeadingMarkersAsHeadings.length > 0) {
       errors.push(
-        `Non-heading markers should not be used as headings: ${nonHeadingMarkersInHeadings.map(m => `"${m}"`).join(', ')}.`
+        `Non-heading markers should not be used as headings: ${nonHeadingMarkersAsHeadings.map(m => `"${m}"`).join(', ')}.`
       );
     }
 

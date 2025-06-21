@@ -100,6 +100,9 @@ Explanation.
 
 # --transcript--
 Transcript.
+
+--fcc-editable-region--
+Editable region.
 `;
 
     expect(() => {
@@ -194,7 +197,7 @@ Wrong level.
     );
   });
 
-  it('should reject fcc-editable-region when used as headings', () => {
+  it('should throw error for fcc-editable-region when used as headings', () => {
     const file = `---
 id: test
 title: Test
