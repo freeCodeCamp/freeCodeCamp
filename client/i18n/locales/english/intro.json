@@ -4275,9 +4275,11 @@
           "In this lab you will implement the selection sort algorithm."
         ]
       },
-      "lab-luhn-argorithm": {
-        "title": "Build a Luhn Algorithm",
-        "intro": [""]
+      "lab-luhn-algorithm": {
+        "title": "Implement the Luhn Algorithm",
+        "intro": [
+          "In this lab, you will implement the Luhn algorithm to validate identification numbers such as credit card numbers."
+        ]
       },
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",

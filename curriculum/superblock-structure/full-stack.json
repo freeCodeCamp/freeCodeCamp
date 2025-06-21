@@ -1297,7 +1297,7 @@
             { "dashedName": "workshop-merge-sort" },
             { "dashedName": "lab-quicksort" },
             { "dashedName": "lab-selection-sort" },
-            { "dashedName": "lab-luhn-argorithm" },
+            { "dashedName": "lab-luhn-algorithm" },
             { "dashedName": "review-searching-and-sorting-algorithms" },
             { "dashedName": "quiz-searching-and-sorting-algorithms" }
           ]
