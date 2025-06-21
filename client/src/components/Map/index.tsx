@@ -42,7 +42,8 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
   [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
   [SuperBlockStage.Next]: 'landing.next-heading',
-  [SuperBlockStage.Upcoming]: 'landing.upcoming-heading'
+  [SuperBlockStage.Upcoming]: 'landing.upcoming-heading',
+  [SuperBlockStage.Catalog]: 'landing.catalog-heading'
 };
 
 const mapStateToProps = createSelector(
