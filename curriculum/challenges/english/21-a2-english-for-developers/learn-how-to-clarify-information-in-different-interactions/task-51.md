@@ -1,0 +1,94 @@
+---
+id: 6857e39bada095079b698b7c
+title: Task 51
+challengeType: 22
+dashedName: task-51
+---
+
+<!-- REVIEW -->
+
+# --description--
+
+This is a review of the entire dialogue you just studied.
+
+# --instructions--
+
+Place the following phrases in the correct spot:
+
+`good at`, `on the right track`, `how about`, `up for`, `Not really`, and `kind of`.
+
+# --fillInTheBlank--
+
+## --sentence--
+
+`Tom: Hey, Alice, want to play a guessing game? I'll name some objects with strange names, and you try to guess what they are.`
+
+`Alice: Sounds fun! I'm BLANK the challenge.`
+
+`Tom: Great! Here's the first one: 'Percolator'.`
+
+`Alice: Hmm, is it some BLANK machine?`
+
+`Tom: You're BLANK! It's a kind of coffee machine.`
+
+`Alice: Ah, got it. Okay, your turn: 'Skeuomorph'.`
+
+`Tom: Hmm, that's a tough one. Is it a type of rare plant?`
+
+`Alice: BLANK. It's a design element. It imitates real-world objects in digital interfaces.`
+
+`Tom: Interesting! Alright, BLANK 'Sphygmomanometer'?`
+
+`Alice: Whoa, that's a mouthful. Is it a medical device?`
+
+`Tom: You're absolutely right! It's the device that doctors use to measure your blood pressure.`
+
+`Alice: Hey, I'm BLANK this!`
+
+## --blanks--
+
+`up for`
+
+### --feedback--
+
+This means ready or willing to do something.
+
+---
+
+`kind of`
+
+### --feedback--
+
+This means "a little" or "somewhat," not 100%.
+
+---
+
+`on the right track`
+
+### --feedback--
+
+This means doing something correctly or moving in the right direction.
+
+---
+
+`Not really`
+
+### --feedback--
+
+A polite way to say "no" or that you don't fully agree. The first letter is capitalized.
+
+---
+
+`how about`
+
+### --feedback--
+
+A way to suggest an idea or ask for someone's opinion.
+
+---
+
+`good at`
+
+### --feedback--
+
+This means you can do something well.
