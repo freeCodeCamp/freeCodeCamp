@@ -52,12 +52,32 @@
       "title": "Step 11"
     },
     {
-      "id": "6855255d96c1441bd919dc5d",
+      "id": "68591755e8cd86d27699d282",
       "title": "Step 12"
     },
     {
-      "id": "6858e6408a0999603b2a4fee",
+      "id": "6855255d96c1441bd919dc5d",
       "title": "Step 13"
+    },
+    {
+      "id": "6858e6408a0999603b2a4fee",
+      "title": "Step 14"
+    },
+    {
+      "id": "68597114730d7c6b8838d204",
+      "title": "Step 15"
+    },
+    {
+      "id": "685972d14c6d8182fbae71f1",
+      "title": "Step 16"
+    },
+    {
+      "id": "685973ca82469e940afcc422",
+      "title": "Step 17"
+    },
+    {
+      "id": "685975c2505e3db255720561",
+      "title": "Step 18"
     }
   ],
   "usesMultifileEditor": true,
