@@ -20,6 +20,7 @@ import type {
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
+  Hooks,
   ResizeProps,
   SavedChallenge,
   SavedChallengeFiles,
@@ -110,11 +111,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;
-  initHooks: (hooks?: {
-    beforeAll?: string;
-    beforeEach?: string;
-    afterEach?: string;
-  }) => void;
+  initHooks: (hooks?: Hooks) => void;
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
   output: string;
