@@ -11,6 +11,7 @@ import type {
   FrameDocument,
   PythonDocument
 } from '../../../../../tools/client-plugins/browser-scripts';
+import { Hooks } from '../../../redux/prop-types';
 
 export const helperVersion = _helperVersion;
 
@@ -26,12 +27,6 @@ export interface Source {
   index: string;
   contents?: string;
   editableContents: string;
-}
-
-interface Hooks {
-  beforeAll?: string;
-  beforeEach?: string;
-  afterEach?: string;
 }
 
 export interface Context {
