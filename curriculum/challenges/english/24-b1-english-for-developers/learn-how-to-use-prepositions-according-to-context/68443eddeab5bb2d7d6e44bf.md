@@ -63,8 +63,8 @@ This two-word phrase refers to a space where employees can relax from work.
     "audio": {
       "filename": "B1_22-1.mp3",
       "startTime": 1,
-      "startTimestamp": 61.24,
-      "finishTimestamp": 63.3
+      "startTimestamp": 61.04,
+      "finishTimestamp": 63.6
     }
   },
   "commands": [
@@ -76,7 +76,7 @@ This two-word phrase refers to a space where employees can relax from work.
     {
       "character": "Bob",
       "startTime": 1,
-      "finishTime": 3.06,
+      "finishTime": 3.56,
       "dialogue": {
         "text": "Last, where should we set up the break room?",
         "align": "center"
@@ -85,7 +85,7 @@ This two-word phrase refers to a space where employees can relax from work.
     {
       "character": "Bob",
       "opacity": 0,
-      "startTime": 3.56
+      "startTime": 4.06
     }
   ]
 }

@@ -76,7 +76,7 @@ He doesn't talk about repairs, cleaning, or problems.
       "filename": "B1_22-1.mp3",
       "startTime": 1,
       "startTimestamp": 16.4,
-      "finishTimestamp": 19.22
+      "finishTimestamp": 19.72
     }
   },
   "commands": [
@@ -88,7 +88,7 @@ He doesn't talk about repairs, cleaning, or problems.
     {
       "character": "Bob",
       "startTime": 1,
-      "finishTime": 3.82,
+      "finishTime": 4.32,
       "dialogue": {
         "text": "Exactly. It's in the back, next to the emergency exit.",
         "align": "center"
@@ -97,7 +97,7 @@ He doesn't talk about repairs, cleaning, or problems.
     {
       "character": "Bob",
       "opacity": 0,
-      "startTime": 4.32
+      "startTime": 4.82
     }
   ]
 }
