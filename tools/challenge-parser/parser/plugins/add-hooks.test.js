@@ -1,6 +1,6 @@
 const parseFixture = require('../__fixtures__/parse-fixture');
 
-const addBeforeHook = require('./add-before-hook');
+const addBeforeHook = require('./add-hooks');
 
 describe('add-before-hook plugin', () => {
   let withBeforeHookAST,
