@@ -434,8 +434,8 @@ importers:
         specifier: 3.3.7
         version: 3.3.7
       normalize-url:
-        specifier: 4.5.1
-        version: 4.5.1
+        specifier: 6.1.0
+        version: 6.1.0
       path-browserify:
         specifier: 1.0.1
         version: 1.0.1
