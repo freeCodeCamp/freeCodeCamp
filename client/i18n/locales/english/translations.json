@@ -1245,6 +1245,7 @@
   },
   "curriculum": {
     "catalog": {
+      "title": "Explore our Catalog",
       "levels": {
         "beginner": "Beginner",
         "intermediate": "Intermediate",

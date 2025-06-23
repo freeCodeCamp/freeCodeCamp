@@ -14,7 +14,7 @@ const CatalogPage = () => {
   return showUpcomingChanges ? (
     <main>
       <Spacer size='l' />
-      <h1 className='text-center'>Explore our Catalog</h1>
+      <h1 className='text-center'>{t('curriculum.catalog.title')}</h1>
       <Spacer size='l' />
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
         <section className='catalog-wrap'>
