@@ -1,7 +1,7 @@
 FROM node:22-bookworm AS builder
 # global installs need root permissions, so have to happen before we switch to
 # the node user
-RUN corepack enable
+RUN npm i -g pnpm@10
 # node images create a non-root user that we can use
 USER node
 WORKDIR /home/node/build
@@ -13,20 +13,21 @@ COPY --chown=node:node tools/ tools/
 COPY --chown=node:node curriculum/ curriculum/
 
 ARG HOME_LOCATION
+ARG API_LOCATION
+ARG FORUM_LOCATION
 ARG NEWS_LOCATION
+ARG RADIO_LOCATION
 ARG CLIENT_LOCALE
 ARG CURRICULUM_LOCALE
-ARG API_LOCATION
-ARG ALGOLIA_API_KEY
 ARG ALGOLIA_APP_ID
-ARG GROWTHBOOK_URI
-ARG FORUM_LOCATION
-ARG PATREON_CLIENT_ID
-ARG PAYPAL_CLIENT_ID
+ARG ALGOLIA_API_KEY
 ARG STRIPE_PUBLIC_KEY
-ARG SHOW_UPCOMING_CHANGES
-ARG FREECODECAMP_NODE_ENV
+ARG PAYPAL_CLIENT_ID
+ARG PATREON_CLIENT_ID
 ARG DEPLOYMENT_ENV
+ARG SHOW_UPCOMING_CHANGES
+ARG GROWTHBOOK_URI
+ARG FREECODECAMP_NODE_ENV
 
 # For simplicity and because node_modules do not make it into the final image,
 # we can just install all dependencies here.
