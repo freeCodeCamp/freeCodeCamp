@@ -6,7 +6,56 @@
   "dashedName": "workshop-planets-tablist",
   "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
-  "challengeOrder": [{ "id": "685976a92ffab8b2dc744b72", "title": "Step 1" }],
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true
+  "hasEditableBoundaries": true,
+  "challengeOrder": [
+    {
+      "id": "685976a92ffab8b2dc744b72",
+      "title": "Step 1"
+    },
+    {
+      "id": "68599633407374c0d574587b",
+      "title": "Step 2"
+    },
+    {
+      "id": "68599af28ead38c22590a89d",
+      "title": "Step 3"
+    },
+    {
+      "id": "68599d0fcd5f6ac313d05908",
+      "title": "Step 4"
+    },
+    {
+      "id": "68599e9259c0eec3e78c52fd",
+      "title": "Step 5"
+    },
+    {
+      "id": "68599f9df77791c4a311cc5f",
+      "title": "Step 6"
+    },
+    {
+      "id": "6859a1270ac255c571352189",
+      "title": "Step 7"
+    },
+    {
+      "id": "6859a484a55387c6543ab2c0",
+      "title": "Step 8"
+    },
+    {
+      "id": "6859a4c514603bc6d95a80da",
+      "title": "Step 9"
+    },
+    {
+      "id": "6859ab9ba7a915c84fa69851",
+      "title": "Step 10"
+    },
+    {
+      "id": "6859acc690736fc911a70967",
+      "title": "Step 11"
+    },
+    {
+      "id": "6859ae3ef795c4c9d4badf9c",
+      "title": "Step 12"
+    }
+  ]
 }
