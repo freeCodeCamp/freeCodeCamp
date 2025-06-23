@@ -1,0 +1,12 @@
+{
+  "name": "Build a Planets Tablist",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-planets-tablist",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [{ "id": "685976a92ffab8b2dc744b72", "title": "Step 1" }],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
