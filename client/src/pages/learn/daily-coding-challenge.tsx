@@ -3,8 +3,9 @@ import store from 'store';
 import ShowClassic from '../../templates/Challenges/classic/show';
 import { Loader } from '../../components/helpers';
 import {
-  ChallengeNode,
-  DailyCodingChallengeLanguages
+  DailyCodingChallengeLanguages,
+  DailyCodingChallengeNode,
+  DailyCodingChallengePageContext
 } from '../../redux/prop-types';
 import DailyCodingChallengeNotFound from '../../components/daily-coding-challenge/not-found';
 import envData from '../../../config/env.json';
@@ -33,27 +34,18 @@ interface ChallengeDataFromDb {
   challengeNumber: number;
   title: string;
   date: string;
-  description?: string;
+  description: string;
   instructions?: string;
   javascript: ChallengeLanguageData;
   python: ChallengeLanguageData;
 }
 
 /* Types for use in the show classic component */
-interface Node {
-  challengeNode: ChallengeNode;
-}
-
 interface Data {
-  data: Node;
-  pageContext: PageContext;
-}
-
-interface ChallengeMeta {
-  id: string;
-}
-interface PageContext {
-  challengeMeta: ChallengeMeta;
+  data: {
+    challengeNode: DailyCodingChallengeNode;
+  };
+  pageContext: DailyCodingChallengePageContext;
 }
 
 interface FormattedChallengeData {
@@ -84,19 +76,39 @@ function formatChallengeData({
     id: _id,
     challengeNumber,
     title,
-    // helpCategory: 'Daily Coding Challenges',
-    description: description && formatDescription(description),
+    description: formatDescription(description),
     instructions: instructions && formatInstructions(instructions),
     superBlock: 'daily-coding-challenge',
     block: 'daily-coding-challenge',
-    usesMultifileEditor: true
+    usesMultifileEditor: true,
+
+    // props to satisfy the show classic component
+    demoType: null,
+    hooks: undefined,
+    hasEditableBoundaries: false,
+    forumTopicId: undefined,
+    notes: '',
+    videoUrl: undefined,
+    translationPending: false
   };
 
   const pageContext = {
     challengeMeta: {
       id: _id,
       superBlock: 'daily-coding-challenge',
-      block: 'daily-coding-challenge'
+      block: 'daily-coding-challenge',
+      disableLoopProtectTests: true,
+
+      // props to satisfy the show classic component
+      isFirstStep: false,
+      nextChallegePath: undefined,
+      prevChallengePath: undefined,
+      disableLoopProtectPreview: false
+    },
+
+    // props to satisfy the show classic component
+    projectPreview: {
+      challengeData: undefined
     }
   };
 
@@ -127,12 +139,7 @@ function formatChallengeData({
           }
         }
       },
-      pageContext: {
-        challengeMeta: {
-          ...pageContext.challengeMeta,
-          disableLoopProtectTests: true
-        }
-      }
+      pageContext
     },
     python: {
       data: {

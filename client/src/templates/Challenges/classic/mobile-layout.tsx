@@ -23,10 +23,10 @@ import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
   editor: JSX.Element | null;
-  hasEditableBoundaries?: boolean;
-  hasPreview?: boolean;
+  hasEditableBoundaries: boolean;
+  hasPreview: boolean;
   instructions: JSX.Element;
-  notes?: string;
+  notes: string;
   preview: JSX.Element;
   onPreviewResize: () => void;
   windowTitle: string;
@@ -39,7 +39,7 @@ interface MobileLayoutProps {
   portalWindow: null | Window;
   updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
-  usesMultifileEditor?: boolean;
+  usesMultifileEditor: boolean;
 }
 
 const tabs = {

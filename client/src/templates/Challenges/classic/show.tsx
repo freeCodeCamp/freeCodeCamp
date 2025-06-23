@@ -16,11 +16,13 @@ import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
 import type {
-  ChallengeData,
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
   DailyCodingChallengeLanguages,
+  DailyCodingChallengeNode,
+  DailyCodingChallengePageContext,
+  PageContext,
   ResizeProps,
   SavedChallenge,
   SavedChallengeFiles,
@@ -107,7 +109,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   challengeMounted: (arg0: string) => void;
   createFiles: (arg0: ChallengeFiles | SavedChallengeFiles) => void;
   dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
-  data: { challengeNode: ChallengeNode };
+  data: { challengeNode: ChallengeNode | DailyCodingChallengeNode };
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
@@ -117,12 +119,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   isChallengeCompleted: boolean;
   isDailyCodingChallenge?: boolean;
   output: string;
-  pageContext: {
-    challengeMeta: ChallengeMeta;
-    projectPreview?: {
-      challengeData?: ChallengeData;
-    };
-  };
+  pageContext: PageContext | DailyCodingChallengePageContext;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
   setDailyCodingChallengeLanguage: (
@@ -200,28 +197,28 @@ function ShowClassic({
       challenge: {
         challengeFiles: seedChallengeFiles,
         block,
-        demoType,
+        demoType = null,
         title,
         description,
         instructions,
-        hooks,
+        hooks = undefined,
         fields: { tests, blockName },
         challengeType,
-        hasEditableBoundaries = undefined,
+        hasEditableBoundaries = false,
         superBlock,
         helpCategory,
         forumTopicId = undefined,
-        usesMultifileEditor = undefined,
-        notes = undefined,
+        usesMultifileEditor,
+        notes = '',
         videoUrl = undefined,
-        translationPending = undefined
+        translationPending = false
       }
     }
   },
   pageContext: {
     challengeMeta,
-    challengeMeta: { isFirstStep, nextChallengePath },
-    projectPreview: { challengeData = undefined } = { challengeData: undefined }
+    challengeMeta: { isFirstStep = false, nextChallengePath = undefined },
+    projectPreview: { challengeData = undefined }
   },
   createFiles,
   cancelTests,

@@ -175,27 +175,27 @@ export interface PrerequisiteChallenge {
 export type ChallengeNode = {
   challenge: {
     block: string;
-    blockType?: BlockTypes;
-    blockLayout?: BlockLayouts;
-    certification?: string;
-    challengeOrder?: number;
+    blockType: BlockTypes;
+    blockLayout: BlockLayouts;
+    certification: string;
+    challengeOrder: number;
     challengeType: number;
-    dashedName?: string;
-    demoType?: 'onClick' | 'onLoad' | null;
+    dashedName: string;
+    demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
-    explanation?: string;
+    explanation: string;
     fields: Fields;
-    fillInTheBlank?: FillInTheBlank;
-    forumTopicId?: number;
-    guideUrl?: string;
-    head?: string[];
+    fillInTheBlank: FillInTheBlank;
+    forumTopicId: number;
+    guideUrl: string;
+    head: string[];
     hasEditableBoundaries?: boolean;
     helpCategory: string;
     hooks?: { beforeAll: string };
     id: string;
-    instructions?: string;
-    isComingSoon?: boolean;
+    instructions: string;
+    isComingSoon: boolean;
     internal?: {
       content: string;
       contentDigest: string;
@@ -206,37 +206,95 @@ export type ChallengeNode = {
       owner: string;
       type: string;
     };
-    msTrophyId?: string;
-    notes?: string;
+    msTrophyId: string;
+    notes: string;
     prerequisites?: PrerequisiteChallenge[];
-    isLocked?: boolean;
-    isPrivate?: boolean;
-    order?: number;
-    questions?: Question[];
-    quizzes?: Quiz[];
-    assignments?: string[];
-    required?: Required[];
-    scene?: FullScene;
-    solutions?: {
+    isLocked: boolean;
+    isPrivate: boolean;
+    order: number;
+    questions: Question[];
+    quizzes: Quiz[];
+    assignments: string[];
+    required: Required[];
+    scene: FullScene;
+    solutions: {
       [T: string]: FileKeyChallenge;
     };
-    sourceInstanceName?: string;
-    superOrder?: number;
-    superBlock: SuperBlocks | 'daily-coding-challenge';
-    tail?: string[];
-    template?: string;
-    tests?: Test[];
+    sourceInstanceName: string;
+    superOrder: number;
+    superBlock: SuperBlocks;
+    tail: string[];
+    template: string;
+    tests: Test[];
     title: string;
-    transcript?: string;
-    translationPending?: boolean;
-    url?: string;
-    usesMultifileEditor?: boolean;
-    videoId?: string;
+    transcript: string;
+    translationPending: boolean;
+    url: string;
+    usesMultifileEditor: boolean;
+    videoId: string;
     videoLocaleIds?: VideoLocaleIds;
     bilibiliIds?: BilibiliIds;
     videoUrl?: string;
     chapter?: string;
     module?: string;
+  };
+};
+
+export type PageContext = {
+  challengeMeta: ChallengeMeta;
+  projectPreview: {
+    challengeData: ChallengeData;
+  };
+};
+
+export type DailyCodingChallengeNode = {
+  challenge: {
+    date: string;
+    id: string;
+    challengeNumber: number;
+    title: string;
+    description: string;
+    instructions?: string;
+    superBlock: 'daily-coding-challenge';
+    block: 'daily-coding-challenge';
+    usesMultifileEditor: true;
+
+    helpCategory: 'JavaScript' | 'Python';
+    challengeType: 28 | 29;
+    fields: {
+      blockName: 'daily-coding-challenge';
+      tests: Test[];
+    };
+    challengeFiles: ChallengeFiles;
+
+    // props to satisfy the show classic component
+    demoType: null;
+    hooks?: { beforeAll: string };
+    hasEditableBoundaries?: false;
+    forumTopicId?: number;
+    notes: string;
+    videoUrl?: string;
+    translationPending: false;
+  };
+};
+
+export type DailyCodingChallengePageContext = {
+  challengeMeta: {
+    block: 'daily-coding-challenge';
+    id: string;
+    superBlock: 'daily-coding-challenge';
+    disableLoopProtectTests: boolean;
+
+    // props to satisfy the show classic component
+    isFirstStep: boolean;
+    nextChallengePath?: string;
+    prevChallengePath?: string;
+    disableLoopProtectPreview: boolean;
+  };
+
+  // props to satisfy the show classic component
+  projectPreview: {
+    challengeData?: null;
   };
 };
 
@@ -412,17 +470,16 @@ export interface ChallengeData extends CompletedChallenge {
 }
 
 export type ChallengeMeta = {
-  block?: string;
+  block: string;
   id: string;
-  introPath?: string;
-  isFirstStep?: boolean;
-  superBlock?: SuperBlocks;
+  isFirstStep: boolean;
+  superBlock: SuperBlocks | 'daily-coding-challenge';
   title?: string;
   challengeType?: number;
   blockType?: BlockTypes;
-  helpCategory?: string;
-  disableLoopProtectTests?: boolean;
-  disableLoopProtectPreview?: boolean;
+  helpCategory: string;
+  disableLoopProtectTests: boolean;
+  disableLoopProtectPreview: boolean;
 } & NavigationPaths;
 
 export type NavigationPaths = {
