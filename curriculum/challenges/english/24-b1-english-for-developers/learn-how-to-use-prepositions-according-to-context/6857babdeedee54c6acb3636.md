@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-135
 ---
 
-<!-- (Audio) Sarah: If you head straight down this corridor and turn left at the break area, you’ll see them stored right across from the coffee machine. -->
+<!-- (Audio) Sarah: If you head straight down this corridor and turn left at the break area, you'll see them stored right across from the coffee machine. -->
 
 # --instructions--
 
@@ -23,7 +23,7 @@ At the end of the parking lot.
 
 ### --feedback--
 
-Sarah doesn’t mention the parking lot.
+Sarah doesn't mention the parking lot.
 
 ---
 

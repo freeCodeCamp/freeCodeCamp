@@ -31,7 +31,7 @@ That the back door needs a new lock.
 
 ### --feedback--
 
-Bob doesn’t mention anything about locks or a back door needing repairs.
+Bob doesn't mention anything about locks or a back door needing repairs.
 
 ---
 
@@ -39,7 +39,7 @@ That the server room needs to be cleaned.
 
 ### --feedback--
 
-There is no mention of cleaning in Bob’s sentence.
+There is no mention of cleaning in Bob's sentence.
 
 ---
 
