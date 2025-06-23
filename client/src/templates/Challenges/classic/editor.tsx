@@ -78,8 +78,8 @@ export interface EditorProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   containerRef?: React.RefObject<HTMLElement>;
-  block?: string;
-  superBlock?: string;
+  block: string;
+  superBlock: string;
   description: string;
   dimensions?: Dimensions;
   editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
