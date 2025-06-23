@@ -207,12 +207,7 @@ const schema = Joi.object()
     forumTopicId: Joi.number(),
     id: Joi.objectId().required(),
     instructions: Joi.string().when('challengeType', {
-      is: [
-        challengeTypes.python,
-        challengeTypes.pythonProject,
-        challengeTypes.codeAllyCert,
-        challengeTypes.fillInTheBlank
-      ],
+      is: [challengeTypes.pythonProject, challengeTypes.codeAllyCert],
       then: Joi.string().min(1).required(),
       otherwise: Joi.string().allow('')
     }),
