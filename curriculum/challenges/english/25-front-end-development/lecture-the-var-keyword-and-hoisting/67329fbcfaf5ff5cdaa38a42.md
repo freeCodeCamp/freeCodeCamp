@@ -36,7 +36,7 @@ if (true){
 console.log(num); // 5
 ```
 
-This behaviour can lead to unintended variable leaks and make your code more prone to bugs.
+This behavior can lead to unintended variable leaks and make your code more prone to bugs.
 
 Due to this issues, modern JavaScript development has largely moved away from `var` in favor of `let` and `const`. These keywords provide block scoping which aligns more closely with how scoping works in many other programming languages.
 

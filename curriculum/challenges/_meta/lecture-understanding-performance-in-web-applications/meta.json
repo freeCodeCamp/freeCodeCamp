@@ -2,7 +2,7 @@
   "name": "Understanding Performance in Web Applications",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-performance-in-web-applications",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

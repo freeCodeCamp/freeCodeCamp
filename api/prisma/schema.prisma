@@ -19,7 +19,7 @@ type File {
 }
 
 type CompletedChallenge {
-  challengeType      Int?         @db.Int // Null | Undefined
+  challengeType      Json? // Null | Undefined | String | Int
   completedDate      Json // DateTime | Float, but not, as far as we know, Null
   files              File[]
   githubLink         String? // Undefined

@@ -25,7 +25,7 @@ Find the difference between the sum of the squares of the first `n` natural numb
 `sumSquareDifference(10)` should return a number.
 
 ```js
-assert(typeof sumSquareDifference(10) === 'number');
+assert.isNumber(sumSquareDifference(10));
 ```
 
 `sumSquareDifference(10)` should return 2640.
