@@ -295,21 +295,59 @@ exports.createSchemaCustomization = ({ actions }) => {
       challenge: Challenge
     }
     type Challenge {
+      block: String
+      blockId: String
       blockType: String
       blockLayout: String
-      challengeFiles: [FileContents]
+      challengeOrder: Int
       chapter: String
+      certification: String
+      challengeType: Int
+      checksum: Int
+      dashedName: String
+      demoType: String
+      description: String
+      disableLoopProtectTests: Boolean
+      disableLoopProtectPreview: Boolean
       explanation: String
-      notes: String
-      url: String
-      assignments: [String]
-      prerequisites: [PrerequisiteChallenge]
+      challengeFiles: [FileContents]
+      guideUrl: String
+      hasEditableBoundaries: Boolean
+      helpCategory: String
+      isLastChallengeInBlock: Boolean
+      videoUrl: String
+      fillInTheBlank: FillInTheBlank
+      forumTopicId: Int
+      id: String
+      instructions: String
+      isComingSoon: Boolean
+      isLocked: Boolean
+      isPrivate: Boolean
       module: String
       msTrophyId: String
-      fillInTheBlank: FillInTheBlank
-      scene: Scene
-      transcript: String
+      notes: String
+      order: Int
+      prerequisites: [PrerequisiteChallenge]
+      videoId: String
+      videoLocaleIds: VideoLocaleIds
+      bilibiliIds: BilibiliIds
+      questions: [Question]
       quizzes: [Quiz]
+      required: [RequiredResource]
+      assignments: [String]
+      scene: Scene
+      solutions: [[FileContents]]
+      superBlock: String
+      superOrder: Int
+      suborder: Int
+      hooks: Hooks
+      tests: [Test]
+      template: String
+      title: String
+      transcript: String
+      translationPending: Boolean
+      url: String
+      usesMultifileEditor: Boolean
     }
     type FileContents {
       fileKey: String
@@ -319,9 +357,48 @@ exports.createSchemaCustomization = ({ actions }) => {
       head: String
       tail: String
       editableRegionBoundaries: [Int]
+      path: String
+      error: String
+      seed: String
+      id: String
+      history: [String]
     }
     type PrerequisiteChallenge {
       id: String
+      title: String
+    }
+    type VideoLocaleIds {
+      espanol: String
+      italian: String
+      portuguese: String
+    }
+    type BilibiliIds {
+      aid: Int
+      bvid: String
+      cid: Int
+    }
+    type Question {
+      text: String
+      answers: [Answer]
+      solution: Int
+    }
+    type Answer {
+      answer: String
+      feedback: String
+    }
+    type RequiredResource {
+      link: String
+      raw: Boolean
+      src: String
+      crossDomain: Boolean
+    }
+    type Hooks {
+      beforeAll: String
+    }
+    type Test {
+      id: String
+      text: String
+      testString: String
       title: String
     }
     type FillInTheBlank {
