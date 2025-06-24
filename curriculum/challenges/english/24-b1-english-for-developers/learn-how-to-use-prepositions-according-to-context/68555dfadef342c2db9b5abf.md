@@ -64,7 +64,7 @@ This word means something happened that was not planned or predicted. It ends wi
       "filename": "B1_22-2.mp3",
       "startTime": 1,
       "startTimestamp": 31.32,
-      "finishTimestamp": 35
+      "finishTimestamp": 35.5
     }
   },
   "commands": [
@@ -76,7 +76,7 @@ This word means something happened that was not planned or predicted. It ends wi
     {
       "character": "David",
       "startTime": 1,
-      "finishTime": 4.68,
+      "finishTime": 5.18,
       "dialogue": {
         "text": "What about testing? The last update brought up some unexpected challenges.",
         "align": "center"
@@ -85,7 +85,7 @@ This word means something happened that was not planned or predicted. It ends wi
     {
       "character": "David",
       "opacity": 0,
-      "startTime": 5.18
+      "startTime": 5.68
     }
   ]
 }
