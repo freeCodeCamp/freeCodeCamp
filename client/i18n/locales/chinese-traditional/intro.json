@@ -1842,6 +1842,12 @@
       "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
     },
     "module-intros": {
+      "js-a11y": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will learn how to work with the aria-expanded, aria-live and aria-controls attributes inside of your HTML, CSS and JavaScript applications."
+        ]
+      },
       "css-libraries-and-frameworks": {
         "note": "Coming Fall 2025",
         "intro": [
@@ -2063,11 +2069,24 @@
           "In this lab, you will help Camperbot find and fix the errors in their code."
         ]
       },
-      "lecture-what-is-html": {
-        "title": "Understanding HTML Attributes and the HTML Boilerplate",
+      "lecture-understanding-html-attributes": {
+        "title": "Understanding HTML Attributes",
         "intro": [
           "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
-          "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."
+          "You will learn about HTML's role on the web, and what HTML attributes are."
+        ]
+      },
+      "lab-debug-pet-adoption-page": {
+        "title": "Debug a Pet Adoption Page",
+        "intro": [
+          "In this lab, you will need to find and fix the errors in this pet adoption page."
+        ]
+      },
+      "lecture-understanding-the-html-boilerplate": {
+        "title": "Understanding the HTML Boilerplate",
+        "intro": [
+          "In these lectures, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
+          "You will learn how to work with the <code>link</code> element, <code>meta</code> element and more."
         ]
       },
       "workshop-cat-photo-app": {
@@ -2095,10 +2114,22 @@
           "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element, and more."
         ]
       },
-      "lecture-working-with-media": {
-        "title": "Working with Media",
+      "lecture-working-with-audio-and-video-elements": {
+        "title": "Working with Audio and Video Elements",
         "intro": [
-          "In these lecture videos, you will learn how to work with media assets like the <code>audio</code> and <code>video</code> elements, SVGs, how to optimize them, and more."
+          "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+        ]
+      },
+      "lecture-working-with-images-and-svgs": {
+        "title": "Working with Images and SVGs",
+        "intro": [
+          "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
+        ]
+      },
+      "lecture-working-with-media": {
+        "title": "Working with the iframe Element",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
         ]
       },
       "lab-video-compilation-page": {
@@ -4251,9 +4282,11 @@
           "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
         ]
       },
-      "lab-quick-sort": {
-        "title": "Build a Quick Sort",
-        "intro": [""]
+      "lab-quicksort": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort a list of integers."
+        ]
       },
       "lab-selection-sort": {
         "title": "Implement the Selection Sort Algorithm",

@@ -1842,200 +1842,206 @@
       "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
     },
     "module-intros": {
-      "css-libraries-and-frameworks": {
+      "js-a11y": {
         "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will learn how to work with the aria-expanded, aria-live and aria-controls attributes inside of your HTML, CSS and JavaScript applications."
+        ]
+      },
+      "css-libraries-and-frameworks": {
+        "note": "Очікуйте цієї осені",
         "intro": [
           "In this module, you will be introduced to CSS libraries, frameworks, and preprocessors, including Tailwind CSS, Bootstrap, and Sass. You will build out various components using Tailwind CSS and test your knowledge of these tools with a short quiz."
         ]
       },
       "typescript-fundamentals": {
-        "note": "Coming Fall 2025",
+        "note": "Очікуйте цієї осені",
         "intro": [
           "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
         ]
       },
       "python-basics": {
-        "note": "Coming Fall 2025",
+        "note": "Очікуйте цієї осені",
         "intro": [
           "In this module, you will be introduced to Python, which is used in many fields like data science, machine learning, web development, scripting and automation, embedded systems, IoT, and more. You will build out a workshop and lab to practice Python basics and take a short quiz to test your knowledge."
         ]
       },
       "python-loops-and-sequences": {
-        "note": "Coming Fall 2025",
+        "note": "Очікуйте цієї осені",
         "intro": [
           "In this module, you will learn how to work with lists, tuples, lambda functions, loops, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
         ]
       },
       "python-dictionaries-and-sets": {
-        "note": "Coming Fall 2025",
+        "note": "Очікуйте цієї осені",
         "intro": [
           "In this module, you will be introduced to dictionaries, sets, and the Python standard library. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
         ]
       },
       "python-error-handling": {
-        "note": "Coming Fall 2025",
+        "note": "Очікуйте цієї осені",
         "intro": [
           "In this module, you will talk about common error messages, good debugging techniques, and exception handling. You will build a lab to practice these concepts and take a short quiz to test your knowledge."
         ]
       },
       "python-classes-and-objects": {
-        "note": "Coming Winter 2025",
+        "note": "Очікуйте цієї зими",
         "intro": [
           "In this module, you will learn how to work with classes, methods, attributes and properties. Then, you will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
         ]
       },
       "python-object-oriented-programming": {
-        "note": "Coming Winter 2025",
+        "note": "Очікуйте цієї зими",
         "intro": [
           "In this module, you will learn about Object-oriented programming concepts like encapsulation, inheritance, polymorphism, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
         ]
       },
       "python-linear-data-structures": {
-        "note": "Coming Winter 2025",
+        "note": "Очікуйте цієї зими",
         "intro": [
           "In this module, you will learn about data structures including stacks, queues, linked lists, and more. You will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
         ]
       },
       "python-algorithms": {
-        "note": "Coming Winter 2025",
+        "note": "Очікуйте цієї зими",
         "intro": [
           "In this module, you will learn about common algorithms including binary search, merge sort, selection sort, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
         ]
       },
       "python-graphs-and-trees": {
-        "note": "Coming Winter 2025",
+        "note": "Очікуйте цієї зими",
         "intro": [
           "In this module, you will learn about graphs in computer science as well as adjacency lists, trees, tries, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
         ]
       },
       "python-dynamic-programming": {
-        "note": "Coming Winter 2025",
+        "note": "Очікуйте цієї зими",
         "intro": [
           "In this module, you will learn about  dynamic programming and practice these concepts by building a fibonacci sequence lab. Then you will take a short quiz to test your knowledge."
         ]
       },
       "bash-fundamentals": {
-        "note": "Coming Winter 2025",
+        "note": "Очікуйте цієї зими",
         "intro": [
           "In this module, you will learn about  the command line and common Bash commands. Then you will practice your skills with a workshop and take a short quiz to test your knowledge."
         ]
       },
       "relational-databases": {
-        "note": "Coming Winter 2025",
+        "note": "Очікуйте цієї зими",
         "intro": [
           "In this module, you will learn how to work with relational databases which store data as collections in tables. Some of the concepts you will learn about include inserting and viewing table data, primary and foreign keys in SQL, and more. Then you will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
         ]
       },
       "bash-scripting": {
-        "note": "Coming Winter 2025",
+        "note": "Очікуйте цієї зими",
         "intro": [
           "In this module, you will learn about bash scripting and practice those skills by building five programs. Then you will be able to test your knowledge of these concepts by taking a short quiz."
         ]
       },
       "sql-and-bash": {
-        "note": "Coming Winter 2025",
+        "note": "Очікуйте цієї зими",
         "intro": [
           "In this module, you will learn about normalization, SQL injection, and the N+1 problem. Then you will get to practice working with SQL and Bash by building several workshops and labs. Then you will be able to test your knowledge of these concepts by taking a short quiz."
         ]
       },
       "git": {
-        "note": "Coming Winter 2025",
+        "note": "Очікуйте цієї зими",
         "intro": [
           "In this module, you will learn how to use Git, Nano, and GitHub. Then you will get to practice working with Git by building several workshops and labs. You will be able to test your knowledge of these concepts by taking a short quiz."
         ]
       },
       "introduction-to-nodejs": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, you will be introduced to Node.js, which is a JavaScript runtime environment that allows you to build backend applications using JavaScript. You will get to practice fundamental concepts by building a small workshop and test your knowledge with a short quiz."
         ]
       },
       "nodejs-core-libraries": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, you will learn about common Node.js core libraries including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
         ]
       },
       "node-package-manager": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, you will be introduced to the Node Package Manager, which developers use to manage project dependencies and scripts. Then you will get to practice what you have learned through workshops and labs and test your knowledge with a short quiz."
         ]
       },
       "http-and-the-web-standards-model": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, you will learn about HTTP (Hypertext Transfer Protocol) and other important concepts including the request-response model, common response codes, DNS, TCP/IP, and more. Then you will get to practice what you have learned through a build your own web server workshop and test your knowledge with a short quiz."
         ]
       },
       "rest-api-and-web-services": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
         ]
       },
       "introduction-to-express": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
         ]
       },
       "express-middleware": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
         ]
       },
       "error-handling-in-express": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
         ]
       },
       "websockets": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
         ]
       },
       "node-and-sql": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, you will practice building applications with Node and SQL. Then you will take a short quiz to test your knowledge."
         ]
       },
       "security-and-privacy": {
-        "note": "Coming Fall 2025",
+        "note": "Очікуйте цієї осені",
         "intro": [
           "In this module, you will learn about the differences between security and privacy as well as other concepts including  CSPs, Permissions-Policies, PII, working with CORS, and more. Then you will take a short quiz to test your knowledge."
         ]
       },
       "authentication": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
         ]
       },
       "tooling-and-deployment": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, you will learn about common tools used in the industry for deploying your full stack applications. Then you will take a short quiz to test your knowledge."
         ]
       },
       "how-to-get-a-developer-job": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "In this module, Quincy Larson (Founder and teacher of freeCodeCamp) will talk about strategies you can use to prepare for getting a developer job. Quincy will cover key subjects including résumés, portfolios, researching the market, preparing for technical interviews, and more."
         ]
       },
       "capstone-project": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "This will be your opportunity to build out a full stack application encompassing what you have learned throughout this certification."
         ]
       },
       "certified-full-stack-developer-exam": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці 2026 року",
         "intro": [
           "This will be a 90 question exam testing what you have learned throughout this certification."
         ]
@@ -2063,11 +2069,24 @@
           "У цій лабораторній роботі ви допоможете Кемперботу знайти і розв’язати помилки в коді."
         ]
       },
-      "lecture-what-is-html": {
-        "title": "Знайомство з атрибутами і шаблонним кодом HTML",
+      "lecture-understanding-html-attributes": {
+        "title": "Understanding HTML Attributes",
         "intro": [
-          "У цих відеолекціях ви ближче познайомитесь з HTML (мовою розмітки гіпертексту) — мовою розмітки для створення вебсторінок.",
-          "Ви дізнаєтесь, яку роль відіграє HTML у мережі, а також про шаблонний код та атрибути HTML."
+          "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, and what HTML attributes are."
+        ]
+      },
+      "lab-debug-pet-adoption-page": {
+        "title": "Debug a Pet Adoption Page",
+        "intro": [
+          "In this lab, you will need to find and fix the errors in this pet adoption page."
+        ]
+      },
+      "lecture-understanding-the-html-boilerplate": {
+        "title": "Understanding the HTML Boilerplate",
+        "intro": [
+          "In these lectures, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
+          "You will learn how to work with the <code>link</code> element, <code>meta</code> element and more."
         ]
       },
       "workshop-cat-photo-app": {
@@ -2095,10 +2114,22 @@
           "У цій лабораторній роботі ви пригадаєте основи HTML, створивши вебсторінку для туристичної агенції. Ви будете працювати із зображеннями, елементом <code>figure</code>, елементом <code>figcaption</code>, елементом <code>anchor</code> тощо."
         ]
       },
-      "lecture-working-with-media": {
-        "title": "Робота з медіа",
+      "lecture-working-with-audio-and-video-elements": {
+        "title": "Working with Audio and Video Elements",
         "intro": [
-          "У цих відеолекціях ви дізнаєтесь, як працювати з цифровими активами (наприклад, елементами <code>audio</code> та <code>video</code>), SVG, як їх оптимізувати тощо."
+          "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+        ]
+      },
+      "lecture-working-with-images-and-svgs": {
+        "title": "Working with Images and SVGs",
+        "intro": [
+          "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
+        ]
+      },
+      "lecture-working-with-media": {
+        "title": "Working with the iframe Element",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
         ]
       },
       "lab-video-compilation-page": {
@@ -4245,9 +4276,11 @@
           "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
         ]
       },
-      "lab-quick-sort": {
-        "title": "Створіть алгоритм швидкого сортування",
-        "intro": [""]
+      "lab-quicksort": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort a list of integers."
+        ]
       },
       "lab-selection-sort": {
         "title": "Implement the Selection Sort Algorithm",
