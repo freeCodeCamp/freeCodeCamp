@@ -19,6 +19,12 @@ const stepMeta = {
   hasEditableBoundaries: true
 };
 
+const fullStackStepMeta = {
+  ...stepMeta,
+  blockType: '',
+  blockLayout: ''
+};
+
 const quizMeta = {
   ...baseMeta,
   blockType: 'quiz',
@@ -30,7 +36,9 @@ const languageMeta = {
   blockLayout: 'dialogue-grid'
 };
 
-export const getBaseMeta = (projectType: 'Step' | 'Quiz' | 'Language') => {
+export const getBaseMeta = (
+  projectType: 'Step' | 'Quiz' | 'Language' | 'FullStack'
+) => {
   switch (projectType) {
     case 'Step':
       return stepMeta;
@@ -38,6 +46,8 @@ export const getBaseMeta = (projectType: 'Step' | 'Quiz' | 'Language') => {
       return quizMeta;
     case 'Language':
       return languageMeta;
+    case 'FullStack':
+      return fullStackStepMeta;
     default:
       return stepMeta;
   }

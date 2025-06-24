@@ -9,11 +9,9 @@ import {
   SuperBlocks,
   superBlockToFolderMap
 } from '../../shared/config/curriculum';
+import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
-import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
-import { getSuperBlockSubPath } from './fs-utils';
-import { Meta } from './helpers/project-metadata';
 
 const helpCategories = [
   'HTML-CSS',
@@ -206,7 +204,7 @@ async function createMetaJson(
   blockLayout?: string
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
-  const newMeta = getBaseMeta('Step');
+  const newMeta = getBaseMeta('FullStack');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
@@ -296,7 +294,7 @@ async function createQuizChallenge(
   title: string,
   questionCount: number
 ): Promise<ObjectID> {
-  const superBlockSubPath = getSuperBlockSubPath(superBlock);
+  const superBlockSubPath = superBlockToFolderMap[superBlock];
   const newChallengeDir = path.resolve(
     __dirname,
     `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
@@ -305,7 +303,6 @@ async function createQuizChallenge(
     await withTrace(fs.mkdir, newChallengeDir);
   }
   return createQuizFile({
-    challengeType: '8',
     projectPath: newChallengeDir + '/',
     title: title,
     dashedName: block,
