@@ -303,7 +303,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       chapter: String
       certification: String
       challengeType: Int
-      checksum: Int
       dashedName: String
       demoType: String
       description: String
@@ -311,7 +310,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       disableLoopProtectPreview: Boolean
       explanation: String
       challengeFiles: [FileContents]
-      guideUrl: String
       hasEditableBoundaries: Boolean
       helpCategory: String
       isLastChallengeInBlock: Boolean
@@ -321,7 +319,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       id: String
       instructions: String
       isComingSoon: Boolean
-      isLocked: Boolean
       isPrivate: Boolean
       module: String
       msTrophyId: String

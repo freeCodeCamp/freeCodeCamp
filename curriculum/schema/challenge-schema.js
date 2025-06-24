@@ -157,7 +157,6 @@ const schema = Joi.object()
     }),
     certification: Joi.string().regex(slugWithSlashRE),
     challengeType: Joi.number().min(0).max(29).required(),
-    checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
     demoType: Joi.string().valid('onClick', 'onLoad'),
@@ -178,7 +177,6 @@ const schema = Joi.object()
       then: Joi.string()
     }),
     challengeFiles: Joi.array().items(fileJoi),
-    guideUrl: Joi.string().uri({ scheme: 'https' }),
     hasEditableBoundaries: Joi.boolean(),
     helpCategory: Joi.valid(
       'JavaScript',
@@ -208,7 +206,6 @@ const schema = Joi.object()
     id: Joi.objectId().required(),
     instructions: Joi.string().allow(''),
     isComingSoon: Joi.bool(),
-    isLocked: Joi.bool(),
     isPrivate: Joi.bool(),
     module: Joi.string().when('superBlock', {
       is: chapterBasedSuperBlocks,
