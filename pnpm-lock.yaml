@@ -11,6 +11,9 @@ importers:
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
+      shell-quote:
+        specifier: ^1.8.3
+        version: 1.8.3
     devDependencies:
       '@babel/eslint-parser':
         specifier: 7.26.5
@@ -12686,6 +12689,10 @@ packages:
   shell-quote@1.8.1:
     resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
 
+  shell-quote@1.8.3:
+    resolution: {integrity: sha512-ObmnIF4hXNg1BqhnHmgbDETF8dLPCggZWBjkQfhZpbszZnYur5DUljTcCHii5LC3J5E0yeO/1LIMyH+UvHQgyw==}
+    engines: {node: '>= 0.4'}
+
   shelljs@0.8.5:
     resolution: {integrity: sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==}
     engines: {node: '>=4'}
@@ -17322,7 +17329,7 @@ snapshots:
       '@babel/parser': 7.26.9
       '@babel/template': 7.26.9
       '@babel/types': 7.26.9
-      debug: 4.4.1
+      debug: 4.3.4(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -28714,7 +28721,7 @@ snapshots:
       minimatch: 3.1.2
       pidtree: 0.5.0
       read-pkg: 5.2.0
-      shell-quote: 1.8.1
+      shell-quote: 1.8.3
 
   npm-run-all@4.1.5:
     dependencies:
@@ -28725,7 +28732,7 @@ snapshots:
       minimatch: 3.1.2
       pidtree: 0.3.1
       read-pkg: 3.0.0
-      shell-quote: 1.8.1
+      shell-quote: 1.8.3
       string.prototype.padend: 3.1.6
 
   npm-run-path@2.0.2:
@@ -30872,6 +30879,8 @@ snapshots:
   shell-quote@1.7.2: {}
 
   shell-quote@1.8.1: {}
+
+  shell-quote@1.8.3: {}
 
   shelljs@0.8.5:
     dependencies:

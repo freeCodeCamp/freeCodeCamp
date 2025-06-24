@@ -83,7 +83,8 @@
     "playwright:watch": "playwright test --ui-port=0"
   },
   "dependencies": {
-    "dotenv": "16.4.5"
+    "dotenv": "16.4.5",
+    "shell-quote": "^1.8.3"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.26.5",
