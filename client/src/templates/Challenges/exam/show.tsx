@@ -333,7 +333,7 @@ function ShowExam(props: ShowExamProps) {
       stopExam
     } = props;
     stopExam();
-    void navigate(blockHashSlug);
+    void navigate(blockHashSlug || '/learn');
   };
 
   let missingPrerequisites: PrerequisiteChallenge[] = [];

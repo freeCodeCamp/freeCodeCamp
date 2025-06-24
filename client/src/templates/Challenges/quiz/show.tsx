@@ -247,7 +247,7 @@ const ShowQuiz = ({
 
   const handleExitQuizModalBtnClick = () => {
     setExitConfirmed(true);
-    void navigate(exitPathname);
+    void navigate(exitPathname || '/learn');
     closeExitQuizModal();
   };
 

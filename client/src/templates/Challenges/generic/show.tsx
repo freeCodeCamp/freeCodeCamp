@@ -51,7 +51,7 @@ import '../video.css';
 
 // Redux Setup
 const mapStateToProps = (state: unknown) => ({
-  isChallengeCompleted: isChallengeCompletedSelector(state) as boolean
+  isChallengeCompleted: isChallengeCompletedSelector(state)
 });
 
 const mapDispatchToProps = {
