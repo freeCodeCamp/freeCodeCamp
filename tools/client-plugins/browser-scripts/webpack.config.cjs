@@ -2,6 +2,9 @@ const { writeFileSync } = require('fs');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
+const {
+  version: helperVersion
+} = require('@freecodecamp/curriculum-helpers/package.json');
 
 module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
@@ -14,11 +17,8 @@ module.exports = (env = {}) => {
     cache: __DEV__ ? { type: 'filesystem' } : false,
     mode: __DEV__ ? 'development' : 'production',
     entry: {
-      'frame-runner': './frame-runner.ts',
       'sass-compile': './sass-compile.ts',
-      'test-evaluator': './test-evaluator.ts',
       'python-worker': './python-worker.ts',
-      'python-test-evaluator': './python-test-evaluator.ts',
       'typescript-worker': './typescript-worker.ts'
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
@@ -71,7 +71,11 @@ module.exports = (env = {}) => {
         patterns: [
           './node_modules/sass.js/dist/sass.sync.js',
           // TODO: copy this into the css folder, not the js folder
-          './node_modules/xterm/css/xterm.css'
+          './node_modules/xterm/css/xterm.css',
+          {
+            from: './node_modules/@freecodecamp/curriculum-helpers/dist/test-runner',
+            to: `test-runner/${helperVersion}/`
+          }
         ]
       }),
       new webpack.ProvidePlugin({
@@ -92,7 +96,7 @@ module.exports = (env = {}) => {
     },
     // To keep the client React version decoupled from the curriculum React
     // version we use externals to stops Webpack from bundling React and
-    // ReactDOM (they're fetched from unpkg when needed by the client or
+    // ReactDOM (they're fetched from the cdn when needed by the client or
     // curriculum tests). react-dom/server and react-dom/test-utils are included
     // separately because enzyme-adapter-react-16 imports them directly.
     externals: {

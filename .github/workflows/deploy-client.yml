@@ -1,0 +1,223 @@
+name: CD - Deploy - Clients
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup-jobs:
+    name: Setup Jobs
+    runs-on: ubuntu-22.04
+    outputs:
+      site_tld: ${{ steps.setup.outputs.site_tld }} # org, dev
+      tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }} # prd, stg
+      tgt_env_long: ${{ steps.setup.outputs.tgt_env_long }} # production, staging
+      tgt_env_branch: ${{ steps.setup.outputs.tgt_env_branch }} # prod-current, prod-staging
+    steps:
+      - name: Setup
+        id: setup
+        run: |
+          BRANCH="${{ github.ref_name }}"
+          echo "Current branch: $BRANCH"
+          case "$BRANCH" in
+            "prod-current")
+              echo "site_tld=org" >> $GITHUB_OUTPUT
+              echo "tgt_env_short=prd" >> $GITHUB_OUTPUT
+              echo "tgt_env_long=production" >> $GITHUB_OUTPUT
+              echo "tgt_env_branch=prod-current" >> $GITHUB_OUTPUT
+              ;;
+            *)
+              echo "site_tld=dev" >> $GITHUB_OUTPUT
+              echo "tgt_env_short=stg" >> $GITHUB_OUTPUT
+              echo "tgt_env_long=staging" >> $GITHUB_OUTPUT
+              echo "tgt_env_branch=prod-staging" >> $GITHUB_OUTPUT
+              ;;
+          esac
+
+  client:
+    name: Clients - [${{ needs.setup-jobs.outputs.tgt_env_short }}] [${{ matrix.lang-name-short }}]
+    needs: [setup-jobs]
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [22]
+        lang-name-full:
+          - english
+          - chinese
+          - espanol
+          - chinese-traditional
+          - italian
+          - portuguese
+          - ukrainian
+          - japanese
+          - german
+          - swahili
+        include:
+          - lang-name-full: english
+            lang-name-short: eng
+          - lang-name-full: chinese
+            lang-name-short: chn
+          - lang-name-full: espanol
+            lang-name-short: esp
+          - lang-name-full: chinese-traditional
+            lang-name-short: cnt
+          - lang-name-full: italian
+            lang-name-short: ita
+          - lang-name-full: portuguese
+            lang-name-short: por
+          - lang-name-full: ukrainian
+            lang-name-short: ukr
+          - lang-name-full: japanese
+            lang-name-short: jpn
+          - lang-name-full: german
+            lang-name-short: ger
+          - lang-name-full: swahili
+            lang-name-short: swa
+    permissions:
+      deployments: write
+      contents: read
+    environment:
+      name: ${{ needs.setup-jobs.outputs.tgt_env_short }}-clients
+    env:
+      TS_USERNAME: ${{ secrets.TS_USERNAME }}
+      TS_MACHINE_NAME_PREFIX: ${{ secrets.TS_MACHINE_NAME_PREFIX }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          submodules: 'recursive'
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Language specific ENV - [${{ matrix.lang-name-full }}]
+        run: |
+          if [ "${{ matrix.lang-name-full }}" = "english" ]; then
+            echo "HOME_LOCATION=https://www.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}" >> $GITHUB_ENV
+            echo "NEWS_LOCATION=https://www.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}/news" >> $GITHUB_ENV
+          else
+            echo "HOME_LOCATION=https://www.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}/${{ matrix.lang-name-full }}" >> $GITHUB_ENV
+            echo "NEWS_LOCATION=https://www.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}/${{ matrix.lang-name-full }}/news" >> $GITHUB_ENV
+          fi
+          echo "CLIENT_LOCALE=${{ matrix.lang-name-full }}" >> $GITHUB_ENV
+          echo "CURRICULUM_LOCALE=${{ matrix.lang-name-full }}" >> $GITHUB_ENV
+
+      - name: Install and Build
+        env:
+          API_LOCATION: 'https://api.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}'
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+          GROWTHBOOK_URI: ${{ secrets.GROWTHBOOK_URI }}
+          FORUM_LOCATION: 'https://forum.freecodecamp.org'
+          PATREON_CLIENT_ID: ${{ secrets.PATREON_CLIENT_ID }}
+          PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
+          STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
+          SHOW_UPCOMING_CHANGES: ${{ vars.SHOW_UPCOMING_CHANGES || 'false' }}
+          FREECODECAMP_NODE_ENV: production
+          # The below is used in ecosystem.config.js file for the API -- to be removed later
+          DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
+          # The above is used in ecosystem.config.js file for the API -- to be removed later
+        run: |
+          pnpm install
+          pnpm run build
+
+      - name: Tar Files
+        run: tar -czf client-${{ matrix.lang-name-short }}.tar client/public
+
+      - name: Setup and connect to Tailscale network
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          hostname: gha-${{needs.setup-jobs.outputs.tgt_env_short}}-clients-ci-${{ github.run_id }}
+          tags: tag:ci
+          version: latest
+
+      - name: Configure SSH & Check Connection
+        run: |
+          mkdir -p ~/.ssh
+          echo "Host *
+            UserKnownHostsFile=/dev/null
+            StrictHostKeyChecking no" > ~/.ssh/config
+          chmod 644 ~/.ssh/config
+          sleep 10
+          for i in {0..1}; do
+            TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-${{ matrix.lang-name-short }}-${i}
+            tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Machine not found"; exit 1; }
+            sleep 1
+            MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
+            ssh $TS_USERNAME@$MACHINE_IP "uptime"
+          done
+
+      - name: Upload and Deploy
+        run: |
+          for i in {0..1}; do
+            TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-${{ matrix.lang-name-short }}-${i}
+            CURRENT_DATE=$(date +%Y%m%d)
+            CLIENT_SRC=client-${{ matrix.lang-name-short }}.tar
+            CLIENT_DST=/tmp/client-${{ matrix.lang-name-short }}-${CURRENT_DATE}-${{ github.run_id }}.tar
+            CLIENT_BINARIES=${{needs.setup-jobs.outputs.tgt_env_short}}-release-$CURRENT_DATE-${{ github.run_id }}
+
+            echo -e "\nLOG:Uploading client archive to $TS_MACHINE_NAME..."
+            MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
+            scp $CLIENT_SRC $TS_USERNAME@$MACHINE_IP:$CLIENT_DST
+
+            REMOTE_SCRIPT="
+              set -e
+              echo -e '\nLOG: Deploying client - $CLIENT_BINARIES to $TS_MACHINE_NAME...'
+
+              echo -e '\nLOG:Extracting client archive...'
+              mkdir -p /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES
+              tar -xzf $CLIENT_DST -C /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES --strip-components=2
+
+              echo -e '\nLOG:Cleaning up client archive...'
+              rm $CLIENT_DST
+
+              echo -e '\nLOG:Checking client archive size...'
+              du -sh /home/$TS_USERNAME/client/releases/$CLIENT_BINARIES
+
+              echo -e '\nLOG:Environment setup...'
+              cd /home/$TS_USERNAME/client
+              export NVM_DIR=\$HOME/.nvm && [ -s "\$NVM_DIR/nvm.sh" ] && source "\$NVM_DIR/nvm.sh"
+              echo -e '\nLOG:Checking available Node.js versions...'
+              nvm ls | grep 'default'
+              echo -e '\nLOG:Checking Node.js version...'
+              node --version
+
+              echo -e '\nLOG:Installing serve...'
+              npm install -g serve@13
+
+              echo -e '\nLOG:Primary client setup...'
+              rm -f client-start-primary.sh
+              echo \"serve -c ../../serve.json releases/$CLIENT_BINARIES -p 50505\" >> client-start-primary.sh
+              chmod +x client-start-primary.sh
+              pm2 delete client-primary || true
+              pm2 start ./client-start-primary.sh --name client-primary
+              echo -e '\nLOG:Primary client setup completed.'
+
+              pm2 ls
+
+              echo -e '\nLOG:Secondary client setup...'
+              rm -f client-start-secondary.sh
+              echo \"serve -c ../../serve.json releases/$CLIENT_BINARIES -p 52525\" >> client-start-secondary.sh
+              chmod +x client-start-secondary.sh
+              pm2 delete client-secondary || true
+              pm2 start ./client-start-secondary.sh --name client-secondary
+              echo -e '\nLOG:Secondary client setup completed.'
+
+              pm2 ls
+              pm2 save
+
+              echo -e '\nLOG:Finished deployment.'
+            "
+            ssh $TS_USERNAME@$MACHINE_IP "$REMOTE_SCRIPT"
+          done

@@ -2,13 +2,13 @@
   "name": "Working with State and Responding to Events in React",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-state-and-responding-to-events-in-react",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "67d1a3fea729e274dc33d04d",
-      "title": "How Do Events Work in React"
+      "title": "How Do Events Work in React?"
     },
     {
       "id": "67d1eaf77f510e15dfed7c14",

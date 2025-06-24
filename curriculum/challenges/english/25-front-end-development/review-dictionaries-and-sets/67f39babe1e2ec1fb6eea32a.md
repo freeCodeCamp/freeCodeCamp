@@ -7,8 +7,6 @@ dashedName: review-dictionaries-and-sets
 
 # --description--
 
-Review the concepts below to prepare for the upcoming quiz.
-
 ## First topic
 
 Describe
@@ -19,4 +17,4 @@ Describe
 
 # --assignment--
 
-Review the Dicionaries and Sets topics and concepts.
+Review the Dictionaries and Sets topics and concepts.

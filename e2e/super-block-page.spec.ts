@@ -142,7 +142,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       await page.addInitScript(() => {
         window.localStorage.setItem(
           'currentChallengeId',
-          '66f6db08d55022680a3cfbc9' // What Is HTML, and What Role Does It Play on the Web?
+          '66f6db08d55022680a3cfbc9' // What Role Does HTML Play on the Web?
         );
       });
 
@@ -160,10 +160,10 @@ test.describe('Super Block Page - Authenticated User', () => {
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
-      // What is HTML block
+      // Understanding HTML Attributes block
       await expect(
         page.getByRole('button', {
-          name: /Lecture What is HTML/
+          name: /Lecture Understanding HTML Attributes/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -175,22 +175,22 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       await page.goto('/learn/full-stack-developer');
 
-      // First chapter
+      // HTML chapter
       await expect(
-        page.getByTestId('chapter-button').filter({ hasText: /Welcome/ })
+        page.getByTestId('chapter-button').filter({ hasText: /HTML/ })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First module
       await expect(
         page.getByRole('button', {
-          name: /Getting Started with freeCodeCamp/
+          name: /Basic HTML \d+ of \d+ steps complete/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First block
       await expect(
         page.getByRole('button', {
-          name: /Lecture Welcome to freeCodeCamp/
+          name: /Build a Curriculum Outline/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
@@ -203,16 +203,6 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       // Go back to the super block page
       await page.goto('/learn/full-stack-developer');
-
-      // The entire first chapter is collapsed
-      await expect(
-        page.getByTestId('chapter-button').filter({ hasText: /Welcome/ })
-      ).toHaveAttribute('aria-expanded', 'false');
-
-      // HTML chapter
-      await expect(
-        page.getByTestId('chapter-button').filter({ hasText: /HTML/ })
-      ).toHaveAttribute('aria-expanded', 'true');
 
       // Semantic HTML module
       await expect(
@@ -262,20 +252,20 @@ test.describe('Super Block Page - Unauthenticated User', () => {
 
       // First chapter
       await expect(
-        page.getByTestId('chapter-button').filter({ hasText: /Welcome/ })
+        page.getByTestId('chapter-button').filter({ hasText: /HTML/ })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First module
       await expect(
         page.getByRole('button', {
-          name: 'Getting Started with freeCodeCamp'
+          name: /Basic HTML \d+ of \d+ steps complete/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First block
       await expect(
         page.getByRole('button', {
-          name: 'Lecture Welcome to freeCodeCamp'
+          name: 'Build a Curriculum Outline'
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });

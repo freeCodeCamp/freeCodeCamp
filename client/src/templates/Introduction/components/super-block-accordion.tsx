@@ -11,6 +11,7 @@ import superBlockStructure from '../../../../../curriculum/superblock-structure/
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
 import { FsdChapters } from '../../../../../shared/config/chapters';
+import { type Module } from '../../../../../shared/config/modules';
 import envData from '../../../../config/env.json';
 import Block from './block';
 import CheckMark from './check-mark';
@@ -22,6 +23,7 @@ const { showUpcomingChanges } = envData;
 interface ChapterProps {
   dashedName: string;
   children: ReactNode;
+  comingSoon?: boolean;
   isExpanded: boolean;
   totalSteps: number;
   completedSteps: number;
@@ -47,21 +49,12 @@ interface Challenge {
   superBlock: SuperBlocks;
 }
 
-interface SuperBlockAccordionPropsViewProps {
+interface SuperBlockAccordionProps {
   challenges: Challenge[];
   superBlock: SuperBlocks;
   chosenBlock: string;
   completedChallengeIds: string[];
 }
-
-type Module = {
-  dashedName: string;
-  comingSoon?: boolean;
-  blocks: {
-    dashedName: string;
-  }[];
-  moduleType?: string;
-};
 
 const modules = superBlockStructure.chapters.flatMap<Module>(
   ({ modules }) => modules
@@ -72,12 +65,6 @@ const isLinkModule = (name: string) => {
   const module = modules.find(module => module.dashedName === name);
 
   return module?.moduleType === 'review';
-};
-
-const isLinkChapter = (name: string) => {
-  const chapter = chapters.find(chapter => chapter.dashedName === name);
-
-  return chapter?.chapterType === 'exam';
 };
 
 const getBlockToChapterMap = () => {
@@ -111,6 +98,7 @@ const Chapter = ({
   dashedName,
   children,
   isExpanded,
+  comingSoon,
   totalSteps,
   completedSteps
 }: ChapterProps) => {
@@ -131,15 +119,19 @@ const Chapter = ({
           {t(`intro:full-stack-developer.chapters.${dashedName}`)}
         </div>
         <div className='chapter-button-right'>
-          <span className='chapter-steps'>
-            {t('learn.steps-completed', {
-              totalSteps,
-              completedSteps
-            })}
-          </span>
-          <span className='checkmark-wrap chapter-checkmark-wrap'>
-            <CheckMark isCompleted={isComplete} />
-          </span>
+          {!comingSoon && (
+            <>
+              <span className='chapter-steps'>
+                {t('learn.steps-completed', {
+                  totalSteps,
+                  completedSteps
+                })}
+              </span>
+              <span className='checkmark-wrap chapter-checkmark-wrap'>
+                <CheckMark isCompleted={isComplete} />
+              </span>
+            </>
+          )}
           <span className='dropdown-wrap'>
             <DropDown />
           </span>
@@ -190,15 +182,6 @@ const Module = ({
   );
 };
 
-const ComingSoon = ({ children }: { children: ReactNode }) => {
-  const { t } = useTranslation();
-  return (
-    <li className='coming-soon'>
-      {children} <span className='badge'>{t('misc.coming-soon')}</span>
-    </li>
-  );
-};
-
 const LinkBlock = ({
   superBlock,
   challenges
@@ -222,7 +205,7 @@ export const SuperBlockAccordion = ({
   superBlock,
   chosenBlock,
   completedChallengeIds
-}: SuperBlockAccordionPropsViewProps) => {
+}: SuperBlockAccordionProps) => {
   const { t } = useTranslation();
   const { allChapters } = useMemo(() => {
     const populateBlocks = (blocks: { dashedName: string }[]) =>
@@ -244,6 +227,7 @@ export const SuperBlockAccordion = ({
       modules: chapter.modules.map((module: Module) => ({
         name: module.dashedName,
         comingSoon: module.comingSoon,
+        moduleType: module.moduleType,
         blocks: populateBlocks(module.blocks)
       }))
     }));
@@ -258,31 +242,6 @@ export const SuperBlockAccordion = ({
   return (
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
-        // show coming soon on production, and all the challenges in dev
-        if (chapter.comingSoon && !showUpcomingChanges) {
-          return (
-            <ComingSoon key={chapter.name}>
-              {Object.values(FsdChapters).includes(chapter.name) && (
-                <ChapterIcon
-                  className='map-icon'
-                  chapter={chapter.name as FsdChapters}
-                />
-              )}
-              {t(`intro:full-stack-developer.chapters.${chapter.name}`)}
-            </ComingSoon>
-          );
-        }
-
-        if (isLinkChapter(chapter.name)) {
-          return (
-            <LinkBlock
-              key={chapter.name}
-              superBlock={superBlock}
-              challenges={chapter.modules[0]?.blocks[0]?.challenges}
-            />
-          );
-        }
-
         const chapterStepIds: string[] = [];
         chapter.modules.forEach(module => {
           const { blocks } = module;
@@ -301,18 +260,51 @@ export const SuperBlockAccordion = ({
             key={chapter.name}
             dashedName={chapter.name}
             isExpanded={expandedChapter === chapter.name}
+            comingSoon={chapter.comingSoon}
             totalSteps={chapterStepIds.length}
             completedSteps={completedStepsInChapter}
           >
             {chapter.modules.map(module => {
-              // show coming soon on production, and all the challenges in dev
               if (module.comingSoon && !showUpcomingChanges) {
+                if (module.moduleType === 'review') {
+                  return null;
+                }
+
+                const { note, intro } = t(
+                  `intro:full-stack-developer.module-intros.${module.name}`,
+                  { returnObjects: true }
+                ) as {
+                  note: string;
+                  intro: string[];
+                };
+
                 return (
-                  <ComingSoon key={chapter.name}>
-                    <span className='coming-soon-module'>
-                      {t(`intro:full-stack-developer.modules.${module.name}`)}
-                    </span>
-                  </ComingSoon>
+                  <Disclosure
+                    key={module.name}
+                    as='li'
+                    defaultOpen={expandedModule === module.name}
+                  >
+                    <Disclosure.Button className='module-button'>
+                      <div className='module-button-left'>
+                        <span className='dropdown-wrap'>
+                          <DropDown />
+                        </span>
+                        {t(`intro:full-stack-developer.modules.${module.name}`)}
+                      </div>
+                    </Disclosure.Button>
+                    <Disclosure.Panel as='ul' className='module-panel'>
+                      <div className='module-intro'>
+                        {note && (
+                          <p>
+                            <b>{note}</b>
+                          </p>
+                        )}
+                        {intro &&
+                          intro.length > 0 &&
+                          intro.map(ntro => <p key={ntro}>{ntro}</p>)}
+                      </div>
+                    </Disclosure.Panel>
+                  </Disclosure>
                 );
               }
 

@@ -114,12 +114,12 @@
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
-    "big-heading-1-b": "Aprende a codificar.",
     "big-heading-2": "Construye proyectos.",
+    "big-heading-1-b": "Build Your Skills for Free.",
     "big-heading-3": "Obtén certificaciones.",
-    "big-heading-4": "Todo de forma gratuita.",
-    "h2-heading": "Desde 2014, más de 40.000 graduados de freeCodeCamp.org han conseguido trabajos en empresas de tecnología, entre las que se incluyen:",
-    "h2-heading-b": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
+    "advance-career": "Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI Engineering, and English for Developers.",
+    "h2-heading": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
+    "graduates-work": "More than <strong>100,000</strong> freeCodeCamp graduates work in companies such as",
     "hero-img-description": "Estudiantes de freeCodeCamp en un grupo de estudio local en Corea del Sur.",
     "hero-img-alt": "Un grupo de personas, incluyendo un hombre blanco, una mujer negra y una mujer asiática, reunidos alrededor de un portátil.",
     "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
@@ -127,16 +127,19 @@
     "testimonials": {
       "heading": "Esto es lo que dicen nuestros alumnos sobre freeCodeCamp:",
       "shawn": {
+        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
         "location": "<strong>Shawn Wang</strong> en Singapur",
         "occupation": "Ingeniero de Software en <strong>Amazon</strong>",
         "testimony": "\"Da miedo cambiar de carrera. Solo gané la confianza de que podía programar trabajando a través de los cientos de horas de lecciones gratuitas en freeCodeCamp. Dentro de un año tuve un trabajo de seis cifras como ingeniero de software. <strong>freeCodeCamp cambió mi vida.</strong>\""
       },
       "sarah": {
+        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
         "location": "<strong>Sarah Chima</strong> en Nigeria",
         "occupation": "Ingeniera de Software en <strong>ChatDesk</strong>",
         "testimony": "\"<strong>freeCodeCamp fue la puerta de entrada a mi carrera</strong> como desarrollador de software. El plan de estudios bien estructurado llevó mis conocimientos de programación de un nivel de principiante total a un nivel muy seguro. Era todo lo que necesitaba para conseguir mi primer trabajo de desarrollador en una empresa increíble.\""
       },
       "emma": {
+        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
         "location": "<strong>Emma Bostian</strong> en Suecia",
         "occupation": "Ingeniera de Software en <strong>Spotify</strong>",
         "testimony": "\"Siempre he tenido problemas para aprender JavaScript. He tomado muchos cursos, pero el curso de freeCodeCamp fue el que se quedó. Estudiar JavaScript, así como estructuras de datos y algoritmos en <strong> freeCodeCamp me dio las habilidades </strong> y la confianza que necesitaba para conseguir el trabajo de mis sueños como ingeniero de software en Spotify.\""
@@ -544,7 +547,7 @@
       "unanswered-questions": "The following questions are unanswered: {{ unansweredQuestions }}. You must answer all questions.",
       "have-n-correct-questions": "You have {{ correctAnswerCount }} out of {{ total }} questions correct.",
       "finish-modal-header": "Finish Quiz",
-      "finish-modal-body": "Are you sure you want to finish the quiz? You will not be able to change any answers.",
+      "finish-modal-body": "Are you sure you want to finish the quiz?",
       "finish-modal-yes": "Yes, I am finished",
       "finish-modal-no": "No, I would like to continue the quiz",
       "exit-modal-header": "Exit Quiz",
@@ -793,7 +796,15 @@
     "iframe-form-submit-alert": "¡Normalmente, se enviaría este formulario! Funciona. Esto se enviará a: {{externalLink}}",
     "document-notfound": "documento no encontrado",
     "slow-load-msg": "Parece que esto está tardando más de lo habitual, por favor intente actualizar la página.",
-    "navigation-warning": "Si abandonas esta página, perderás tu progreso. ¿Estás seguro?"
+    "navigation-warning": "Si abandonas esta página, perderás tu progreso. ¿Estás seguro?",
+    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
+    "fsd-b-cta": "Start Learning",
+    "fsd-b-benefit-1-title": "100k+ Students",
+    "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
+    "fsd-b-benefit-2-title": "Professional Certification",
+    "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
+    "fsd-b-benefit-3-title": "500+ Exercises",
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
   },
   "icons": {
     "gold-cup": "Copa de Oro",
@@ -846,9 +857,11 @@
     "opens-new-window": "Abrir en una nueva ventana",
     "rsa-checkbox": "He probado el método Leer-Buscar-Preguntar",
     "similar-questions-checkbox": "He buscado por preguntas similares que ya han sido contestadas en el foro",
-    "edit-my-profile": "Edit my profile"
+    "edit-my-profile": "Edit my profile",
+    "terminal-output": "Terminal output"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "Para reclamar una certificación, primero debes aceptar nuestra política de honestidad académica",
     "really-weird": "Sucedió algo realmente extraño. Si vuelve a ocurrir, considera hacer un reporte del problema en https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "generic-error": "Algo salió mal. Por favor, inténtelo de nuevo en un momento o pónte en contacto con support@freecodecamp.org si el error persiste.",
@@ -902,6 +915,7 @@
     "unlink-success": "Has desvinculado correctamente tu {{website}}",
     "provide-username": "Comprueba si has proporcionado un nombre de usuario y un reporte",
     "report-sent": "Se envió un informe al equipo con {{email}} en copia",
+    "report-error": "Unable to report this user at this time.",
     "certificate-missing": "La certificación que intentaste ver no existe",
     "create-token-err": "Se ha producido un error al crear su token de usuario",
     "delete-token-err": "Se ha producido un error al eliminar su token de usuario",
@@ -1110,6 +1124,10 @@
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
       "full-stack-developer-v9": "Full Stack Developer",
       "full-stack-developer-v9-cert": "Full Stack Developer Certification",
+      "a2-professional-spanish": "A2 Professional Spanish",
+      "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
+      "a2-professional-chinese": "A2 Professional Chinese",
+      "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
       "legacy-front-end": "Legacy Front End",
       "legacy-front-end-cert": "Legacy Front End Certification",
       "legacy-back-end": "Legacy Back End",

@@ -1,0 +1,221 @@
+---
+id: 67ef8f695db52583424bd118
+title: Design a Movie Review Page
+challengeType: 25
+dashedName: design-a-movie-review-page
+demoType: onClick
+---
+
+# --description--
+
+**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab. 
+
+**User Stories:**
+
+1. You should have a `main` element.
+2. Inside the `main` element, you should have an `h1` element for the movie title.
+3. Below the `h1` element, you should have an `img` element displaying the movie cover. Your `img` element should have a descriptive `alt` text describing the image. You are free to use the following image if you like: `https://cdn.freecodecamp.org/curriculum/labs/rise-beyond-2.png`.
+4. You should have a `p` element containing a brief movie description.
+5. You should have another `p` element to display the movie rating. Within it, you should have these items in the listed order:
+   - A `strong` element with the text `Movie Rating:`.
+   - A `span` element with an `aria-hidden` attribute set to `true` containing a visual representation of the rating using stars `⭐⭐⭐⭐⭐⭐⭐⭐⭐☆`.
+   - A numerical value, representing the rating, in parentheses (e.g. `9.2/10`) after the span.
+6. You should have an `h2` element with the text `Cast Members`.
+7. You should have a `ul` element.
+8. Inside the `ul` element, you should have multiple `li` elements each containing a `strong` element for the actor's name followed by the corresponding character name preceded by the text `as`. (e.g., `James Holloway as Ethan Carter`).
+
+# --hints--
+
+You should have a `main` element.
+
+```js
+assert.isNotNull(document.querySelector("main"));
+```
+
+Inside the `main` element, you should have an `h1` element containing the movie title.
+
+```js
+const h1 = document.querySelector("main > h1");
+assert.isAbove(h1?.innerText.trim().length, 0);
+```
+
+Below the `h1` element, you should have an `img` element with a descriptive `alt` attribute.
+  
+```js
+const img = document.querySelector("main > h1 + img");
+assert.isNotNull(img);
+assert.isNotEmpty(img.getAttribute("alt"));
+```
+
+You should have a `p` element after the image that contains the movie description.
+
+```js
+const description = document.querySelector("main img + p");
+assert.isNotNull(description);
+assert.isNotEmpty(description.innerText.trim());
+```
+
+You should have another `p` element that contains the rating.
+
+```js
+const paragraphs = document.querySelectorAll("main p");
+assert.isAtLeast(paragraphs.length, 2);
+```
+
+Inside the second `p` element, you should have a `strong` element with the text `Movie Rating: `.
+
+```js
+const strongEl = document.querySelector("main p:nth-of-type(2) strong");
+assert.match(strongEl?.innerText.trim(), /^Movie Rating:?$/);
+```
+
+There should be a `span` element inside the rating paragraph.
+
+```js
+const spanEl = document.querySelector("main p:nth-of-type(2) span");
+assert.isNotNull(spanEl);
+```
+
+The `span` element inside the rating paragraph should have ten stars, either filled in (⭐) or empty (☆), followed by a numerical value in parentheses after the `span`.
+
+```js  
+const spanEl = document.querySelector("main p:nth-of-type(2) span");
+const fullRatingText = document.querySelector("main p:nth-of-type(2)")?.textContent.replace(/\s+/g, ' ').trim();
+
+assert.match(spanEl?.innerText.trim(), /^[⭐☆]{10}$/);
+assert.match(fullRatingText, /Movie Rating:?\s*[⭐☆]{10}\s*\(\s*\d+(?:\.\d+)?\s*\/\s*10\s*\)$/);
+```
+
+The `span` element inside the rating paragraph should have an `aria-hidden` attribute set to `true`.
+
+```js
+const spanEl = document.querySelector("main p:nth-of-type(2) span");
+assert.strictEqual(spanEl?.getAttribute("aria-hidden"), "true");
+```
+
+You should have an `h2` element.
+
+```js
+assert.exists(document.querySelector("h2"));
+```
+
+Your `h2` should come after your second `p` element.
+
+```js
+const allParagraphs = document.querySelectorAll("p");
+assert.isAtLeast(allParagraphs.length, 2);
+
+const h2 = document.querySelector("h2");
+const main = document.querySelector("main");
+
+assert.exists(h2);
+assert.exists(main);
+
+const elements = Array.from(main.querySelectorAll("*"));
+const lastPIndex = elements.indexOf(allParagraphs[1]);
+const h2Index = elements.indexOf(h2);
+
+assert.isAbove(h2Index, lastPIndex);
+```
+
+Your `h2` should have the text `Cast Members`.
+
+```js
+const h2 = document.querySelector("h2");
+assert.equal(h2?.textContent.trim(), "Cast Members");
+```
+
+You should have a `ul` element after the `h2`.
+
+```js
+const ul = document.querySelector("main h2 + ul");
+assert.isNotNull(ul);
+```
+
+The `ul` should contain multiple `li` elements.
+
+```js
+const liItems = document.querySelectorAll("main ul li");
+assert.isAbove(liItems.length, 1);
+```
+
+Each `li` should contain a `strong` element for the actor name followed by the corresponding character name preceded by the text `as`. (e.g., `James Holloway as Ethan Carter`).
+
+```js
+const liItems = document.querySelectorAll("main ul li");  
+assert.isNotEmpty(liItems);
+liItems.forEach(li => {
+  const strong = li.querySelector("strong");
+  assert.isNotNull(strong);
+  const fullText = li.textContent.trim();
+  const actorName = strong.textContent.trim();
+  assert.isTrue(fullText.startsWith(actorName));
+  const characterPart = fullText.slice(actorName.length).trim();
+  assert.match(characterPart, /^as\s.+/);
+});
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Movie Review</title>
+ </head>
+
+<body>
+
+</body>
+
+</html>
+```
+
+# --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Review</title>
+  </head>
+  <body>
+    <main class="review">
+      <h1>Movie Review: Rise Beyond</h1>
+      <img
+        src="https://cdn.freecodecamp.org/curriculum/labs/rise-beyond-2.png"
+        alt="The Rise Beyond movie poster, starring Ethan Carter. A portrait of a young boy standing on a stage with his back toward the audience, holding a guitar at his side, staring at a backdrop of a cityscape with the sun rising behind its tall buildings."
+      />
+      <p>
+        Rise Beyond is an uplifting drama that tells the story of Ethan Carter,
+        a young man from a small town who dreams of becoming a world-class
+        musician. Facing financial struggles and self-doubt, Ethan embarks on a
+        journey of resilience, guided by his mentor Professor Adams and
+        childhood friend Lena Mitchell. Through setbacks, failures, and moments
+        of triumph, Rise Beyond reminds us that our greatest potential lies
+        beyond our fears.
+      </p>
+      <p>
+        <strong>Movie Rating:</strong>
+        <span aria-hidden="true">⭐⭐⭐⭐⭐⭐⭐⭐⭐☆</span> (9.2/10)
+      </p>
+
+      <h2>Cast Members</h2>
+      <ul>
+        <li><strong>James Holloway</strong> as Ethan Carter</li>
+        <li><strong>Olivia Sterling</strong> as Lena Mitchell</li>
+        <li><strong>William Lancaster</strong> as Professor Adams</li>
+        <li>
+          <strong>Maria Collins</strong> as Evelyn Carter (Ethan’s Mother)
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
+```

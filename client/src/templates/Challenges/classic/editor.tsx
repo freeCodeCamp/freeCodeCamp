@@ -108,7 +108,7 @@ export interface EditorProps {
   previewOpen: boolean;
   updateFile: (object: {
     fileKey: string;
-    editorValue: string;
+    contents: string;
     editableRegionBoundaries?: number[];
   }) => void;
   usesMultifileEditor: boolean;
@@ -239,7 +239,14 @@ const initialData: EditorProperties = {
 
 const Editor = (props: EditorProps): JSX.Element => {
   const { t } = useTranslation();
-  const { editorRef, initTests, resetAttempts, isMobileLayout } = props;
+  const {
+    editorRef,
+    initTests,
+    resetAttempts,
+    isMobileLayout,
+    challengeFiles,
+    fileKey
+  } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -275,6 +282,12 @@ const Editor = (props: EditorProps): JSX.Element => {
   const attemptsRef = useRef<number>(0);
   attemptsRef.current = props.attempts;
 
+  const challengeFile = challengeFiles?.find(
+    challengeFile => challengeFile.fileKey === fileKey
+  );
+
+  const ariaEditorName = `${challengeFile?.name}.${challengeFile?.ext}`;
+
   const options: editor.IStandaloneEditorConstructionOptions = {
     fontSize: 18,
     fontFamily: 'Hack-ZeroSlash, monospace',
@@ -285,7 +298,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     guides: {
       highlightActiveIndentation:
         props.challengeType === challengeTypes.python ||
-        props.challengeType === challengeTypes.multifilePythonCertProject
+        props.challengeType === challengeTypes.multifilePythonCertProject ||
+        props.challengeType === challengeTypes.pyLab ||
+        props.challengeType === challengeTypes.dailyChallengePy
     },
     minimap: {
       enabled: false
@@ -307,7 +322,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     },
     tabSize:
       props.challengeType !== challengeTypes.python &&
-      props.challengeType !== challengeTypes.multifilePythonCertProject
+      props.challengeType !== challengeTypes.multifilePythonCertProject &&
+      props.challengeType !== challengeTypes.pyLab &&
+      props.challengeType !== challengeTypes.dailyChallengePy
         ? 2
         : 4,
     dragAndDrop: true,
@@ -331,7 +348,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   const editorWillMount = (monaco: typeof monacoEditor) => {
-    const { challengeFiles, fileKey, usesMultifileEditor } = props;
+    const { usesMultifileEditor } = props;
 
     monacoRef.current = monaco;
     defineMonacoThemes(monaco, { usesMultifileEditor });
@@ -340,9 +357,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     // swap and reuse models, we have to create our own models to prevent
     // disposal.
 
-    const challengeFile = challengeFiles?.find(
-      challengeFile => challengeFile.fileKey === fileKey
-    );
     const model =
       dataRef.current.model ||
       monaco.editor.createModel(
@@ -410,15 +424,26 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     const storedAccessibilityMode = () => {
       const accessibility = store.get('accessibilityMode') as boolean;
+
+      const isMacOS = navigator.userAgent.includes('Mac OS');
+      const a11yOffText = isMacOS
+        ? t('aria.editor-a11y-off-macos', { editorName: ariaEditorName })
+        : t('aria.editor-a11y-off-non-macos', { editorName: ariaEditorName });
+      const a11yOnText = isMacOS
+        ? t('aria.editor-a11y-on-macos', { editorName: ariaEditorName })
+        : t('aria.editor-a11y-on-non-macos', { editorName: ariaEditorName });
+
       if (!accessibility) {
         store.set('accessibilityMode', false);
+
+        editor.updateOptions({
+          ariaLabel: a11yOffText
+        });
       }
-      // Only able to set the arialabel when accessibility mode is set to true
-      // Otherwise it gets overwritten by the monaco default aria-label
+
       if (accessibility) {
         editor.updateOptions({
-          ariaLabel:
-            'Accessibility mode set to true. Press Ctrl+e to disable or press Alt+F1 for more options'
+          ariaLabel: a11yOnText
         });
       }
 
@@ -781,7 +806,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(desc);
     desc.innerHTML = description;
     Prism.hooks.add('complete', enhancePrismAccessibility);
-    Prism.hooks.add('complete', makePrismCollapsible);
+
+    // To reduce confusion on the first workshop. Will need to find a better solution.
+    if (props.block !== 'workshop-curriculum-outline') {
+      Prism.hooks.add('complete', makePrismCollapsible);
+    }
     Prism.highlightAllUnder(desc);
 
     // Since the description can be resized without React knowing about it, the
@@ -844,7 +873,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   }
 
-  const onChange = (editorValue: string) => {
+  const onChange = (contents: string) => {
     const { updateFile, fileKey, isResetting } = props;
     if (isResetting) return;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
@@ -871,7 +900,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       });
     }
-    updateFile({ fileKey, editorValue, editableRegionBoundaries });
+    updateFile({ fileKey, contents, editableRegionBoundaries });
   };
 
   function createBreadcrumb(): HTMLElement {

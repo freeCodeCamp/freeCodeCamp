@@ -244,7 +244,7 @@ Accepted languages are ${curriculumLangs.join(', ')}`);
     const blocksWithMeta = blocksWithParent.filter(
       ({ blockData }) => blockData.meta
     );
-    const container = blocksWithMeta.filter(({ block, blockData }) => {
+    const container = blocksWithMeta.filter(({ blockData }) => {
       return blockData.meta.challengeOrder.some(
         ({ id }) => id === filters.challengeId
       );
@@ -383,14 +383,31 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
   function addMetaToChallenge(challenge, meta) {
     function addChapterAndModuleToChallenge(challenge) {
       if (chapterBasedSuperBlocks.includes(challenge.superBlock)) {
-        challenge.chapter = getChapterFromBlock(
+        const chapter = getChapterFromBlock(
           challenge.block,
           fullStackSuperBlockStructure
         );
-        challenge.module = getModuleFromBlock(
+
+        if (!meta.isUpcomingChange && chapter.comingSoon) {
+          throw Error(
+            `The '${chapter.dashedName}' chapter is 'comingSoon', but its '${meta.dashedName}' block is not hidden. Set 'isUpcomingChange' to 'true' in the 'meta.json' for the block to hide it.`
+          );
+        }
+
+        challenge.chapter = chapter.dashedName;
+
+        const module = getModuleFromBlock(
           challenge.block,
           fullStackSuperBlockStructure
         );
+
+        if (!meta.isUpcomingChange && module.comingSoon) {
+          throw Error(
+            `The '${chapter.dashedName}' module is 'comingSoon', but its '${meta.dashedName}' block is not hidden. Set 'isUpcomingChange' to 'true' in the 'meta.json' for the block to hide it.`
+          );
+        }
+
+        challenge.module = module.dashedName;
       }
     }
     const challengeOrder = findIndex(

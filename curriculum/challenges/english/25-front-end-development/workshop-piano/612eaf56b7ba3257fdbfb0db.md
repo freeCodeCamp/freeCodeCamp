@@ -16,41 +16,41 @@ Add an `img` element before your `.keys` element. Give the `img` a `class` of `l
 You should add a new `img` element.
 
 ```js
-assert(document.querySelectorAll('img')?.length === 1);
+assert.lengthOf(document.querySelectorAll('img'), 1);
 ```
 
 Your `img` element should come before your first `.keys` element.
 
 ```js
 const img = document.querySelector('img');
-assert(img?.nextElementSibling?.className === 'keys');
-assert(img?.previousElementSibling === null);
+assert.equal(img?.nextElementSibling?.className, 'keys');
+assert.isNull(img?.previousElementSibling);
 ```
 
 Your `img` element should have a `class` set to `logo`.
 
 ```js
 const img = document.querySelector('img');
-assert(img?.className === 'logo');
+assert.equal(img?.className, 'logo');
 ```
 
 Your `img` element should have a `src` set to `https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg`.
 
 ```js
 const img = document.querySelector('img');
-assert(img?.getAttribute('src') === 'https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg');
+assert.equal(img?.getAttribute('src'), 'https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg');
 ```
 
 Your `img` element should have an `alt` attribute set to `freeCodeCamp Logo`.
 
 ```js
-assert(document.querySelector('img')?.getAttribute('alt')?.toLowerCase() === 'freecodecamp logo');
+assert.equal(document.querySelector('img')?.getAttribute('alt')?.toLowerCase(), 'freecodecamp logo');
 ```
 
 Remember that casing and spelling matter.
 
 ```js
-assert(document.querySelector('img')?.getAttribute('alt') === 'freeCodeCamp Logo');
+assert.equal(document.querySelector('img')?.getAttribute('alt'), 'freeCodeCamp Logo');
 ```
 
 # --seed--
