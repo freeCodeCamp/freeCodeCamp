@@ -50,8 +50,8 @@ export type FillInTheBlank = {
 };
 
 export type Fields = {
-  slug?: string;
-  blockHashSlug?: string;
+  slug: string;
+  blockHashSlug: string;
   blockName: string;
   tests: Test[];
 };
@@ -190,7 +190,7 @@ export type ChallengeNode = {
     forumTopicId: number;
     guideUrl: string;
     head: string[];
-    hasEditableBoundaries?: boolean;
+    hasEditableBoundaries: boolean;
     helpCategory: string;
     hooks?: { beforeAll: string };
     id: string;
@@ -208,7 +208,7 @@ export type ChallengeNode = {
     };
     msTrophyId: string;
     notes: string;
-    prerequisites?: PrerequisiteChallenge[];
+    prerequisites: PrerequisiteChallenge[];
     isLocked: boolean;
     isPrivate: boolean;
     order: number;
@@ -234,7 +234,7 @@ export type ChallengeNode = {
     videoId: string;
     videoLocaleIds?: VideoLocaleIds;
     bilibiliIds?: BilibiliIds;
-    videoUrl?: string;
+    videoUrl: string;
     chapter?: string;
     module?: string;
   };
