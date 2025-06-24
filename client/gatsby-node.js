@@ -306,7 +306,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       challengeOrder: Int
       challengeType: Int
       chapter: String
-      checksum: Int
       dashedName: String
       demoType: String
       description: String
@@ -315,7 +314,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       explanation: String
       fillInTheBlank: FillInTheBlank
       forumTopicId: Int
-      guideUrl: String
       hasEditableBoundaries: Boolean
       helpCategory: String
       hooks: Hooks
@@ -323,7 +321,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       instructions: String
       isComingSoon: Boolean
       isLastChallengeInBlock: Boolean
-      isLocked: Boolean
       isPrivate: Boolean
       module: String
       msTrophyId: String
