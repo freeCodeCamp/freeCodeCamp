@@ -419,6 +419,7 @@
     "answered-mcq": "未回答または不正解の質問があります。",
     "explanation": "解説",
     "transcript": "文字起こし",
+    "video": "Video",
     "solution-link": "回答のリンク",
     "source-code-link": "ソースコードのリンク",
     "ms-link": "Microsoft のリンク",
@@ -858,6 +859,10 @@
     "rsa-checkbox": "Read-Search-Ask (読む - 検索する - 質問する) メソッドを試しました",
     "similar-questions-checkbox": "フォーラムで、解決済みの類似質問を検索しました",
     "edit-my-profile": "プロフィールを編集",
+    "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
+    "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
+    "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
+    "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output"
   },
   "flash": {

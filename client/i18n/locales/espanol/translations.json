@@ -419,6 +419,7 @@
     "answered-mcq": "You have unanswered questions and/or incorrect answers.",
     "explanation": "Explanation",
     "transcript": "Transcript",
+    "video": "Video",
     "solution-link": "Enlace a la solución",
     "source-code-link": "Enlace al código fuente",
     "ms-link": "Link de Microsoft",
@@ -858,6 +859,10 @@
     "rsa-checkbox": "He probado el método Leer-Buscar-Preguntar",
     "similar-questions-checkbox": "He buscado por preguntas similares que ya han sido contestadas en el foro",
     "edit-my-profile": "Edit my profile",
+    "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
+    "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
+    "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
+    "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output"
   },
   "flash": {
