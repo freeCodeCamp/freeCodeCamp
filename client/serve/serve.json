@@ -187,6 +187,42 @@
     {
       "source": "/learn/relational-database/learn/javascript-algorithms-and-data-structures-v8/build-a-pokemon-search-app-project/build-a-pokemon-search-app",
       "destination": "/learn/javascript-algorithms-and-data-structures-v8/build-an-rpg-creature-search-app-project/build-an-rpg-creature-search-app"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-media/what-are-common-ways-to-optimize-media-assets",
+      "destination": "/learn/full-stack-developer/lecture-working-with-images-and-svgs/what-are-common-ways-to-optimize-media-assets"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-media/what-are-the-different-types-of-image-licenses",
+      "destination": "/learn/full-stack-developer/lecture-working-with-images-and-svgs/what-are-the-different-types-of-image-licenses"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-media/what-are-svgs",
+      "destination": "/learn/full-stack-developer/lecture-working-with-images-and-svgs/what-are-svgs"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-media/what-are-the-roles-of-the-html-audio-and-video-elements",
+      "destination": "/learn/full-stack-developer/lecture-working-with-audio-and-video-elements/what-are-the-roles-of-the-html-audio-and-video-elements"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-what-is-html/what-is-html",
+      "destination": "/learn/full-stack-developer/lecture-understanding-html-attributes/what-is-html"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-what-is-html/what-are-attributes",
+      "destination": "/learn/full-stack-developer/lecture-understanding-html-attributes/what-are-attributes"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-what-is-html/what-is-the-role-of-the-link-element-in-html",
+      "destination": "/learn/full-stack-developer/lecture-understanding-the-html-boilerplate/what-is-the-role-of-the-link-element-in-html"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-what-is-html/what-is-an-html-boilerplate",
+      "destination": "/learn/full-stack-developer/lecture-understanding-the-html-boilerplate/what-is-an-html-boilerplate"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-what-is-html/what-is-utf-8-character-encoding",
+      "destination": "/learn/full-stack-developer/lecture-understanding-the-html-boilerplate/what-is-utf-8-character-encoding"
     }
   ]
 }
