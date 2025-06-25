@@ -23,7 +23,7 @@ Listen to the audio and complete the sentence below.
 
 ### --feedback--
 
-This is the first person singular of the verb "estar" and means "I am."
+This is the first person singular of the verb "estar" and means "I am".
 
 ---
 
@@ -35,7 +35,7 @@ This word means "well" and is often used to describe how someone feels.
 
 # --explanation--
 
-`estoy` comes from the verb `estar` and means "I am." It's used to talk about temporary states, like emotions or health. Example:
+`estoy` comes from the verb `estar` and means "I am". It's used to talk about temporary states, like emotions or health. Example:
 
 `Estoy cansado.` – I am tired.
 
@@ -78,7 +78,7 @@ This word means "well" and is often used to describe how someone feels.
       "startTime": 1,
       "finishTime": 3.74,
       "dialogue": {
-        "text": "Hola Mateo, estoy bien, gracias.",
+        "text": "Hola Mateo, estoy bien, gracias".,
         "align": "center"
       }
     },
