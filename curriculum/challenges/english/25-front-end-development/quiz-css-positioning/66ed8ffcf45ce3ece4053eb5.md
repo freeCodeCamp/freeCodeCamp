@@ -758,23 +758,23 @@ It controls the vertical stacking order of positioned elements that overlap.
 
 #### --text--
 
-Which CSS property and value would you use to make an element stay at a fixed position of the page, even when the user scrolls?
+When you apply `top: 10%;` to an element with `position: fixed;`, what is the `10%` calculated in relation to?
 
 #### --distractors--
 
-`position: relative;`
+The height of the element itself.
 
 ---
 
-`position: sticky;`
+The height of its parent container.
 
 ---
 
-`position: static;`
+The width of the viewport.
 
 #### --answer--
 
-`position: fixed;`
+The height of the viewport.
 
 ### --question--
 
@@ -913,7 +913,7 @@ The logo would be removed from its normal flow and placed on the right side of i
 
 #### --text--
 
-Which of the following is an example of making a `.header` element become fixed to the top of the viewport once it is scrolled to?
+Which CSS snippet will keep an element fixed to the top of the viewport once it is scrolled to?
 
 #### --distractors--
 
@@ -1142,7 +1142,7 @@ Both keep an element in the normal document flow, but `relative` allows the elem
 
 #### --text--
 
-Which CSS snippet correctly floats an image to the left, allowing the following paragraph text to wrap around its right side?
+Which CSS snippet correctly floats an image to the left, allowing other content to wrap around it?
 
 #### --distractors--
 
@@ -1203,7 +1203,7 @@ Both are positioned relative to the viewport, but `fixed` elements will scroll w
 
 #### --text--
 
-What is the default `position` value for all HTML elements?
+Which `position` value places an element in the normal document flow and prevents offset properties like `top` and `left` from having any effect?
 
 #### --distractors--
 
