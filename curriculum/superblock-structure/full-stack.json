@@ -16,7 +16,13 @@
               "dashedName": "lab-debug-camperbots-profile-page"
             },
             {
-              "dashedName": "lecture-what-is-html"
+              "dashedName": "lecture-understanding-html-attributes"
+            },
+            {
+              "dashedName": "lab-debug-pet-adoption-page"
+            },
+            {
+              "dashedName": "lecture-understanding-the-html-boilerplate"
             },
             {
               "dashedName": "workshop-cat-photo-app"
@@ -29,6 +35,12 @@
             },
             {
               "dashedName": "lab-travel-agency-page"
+            },
+            {
+              "dashedName": "lecture-working-with-audio-and-video-elements"
+            },
+            {
+              "dashedName": "lecture-working-with-images-and-svgs"
             },
             {
               "dashedName": "lecture-working-with-media"
@@ -1285,7 +1297,7 @@
             { "dashedName": "workshop-merge-sort" },
             { "dashedName": "lab-quicksort" },
             { "dashedName": "lab-selection-sort" },
-            { "dashedName": "lab-luhn-argorithm" },
+            { "dashedName": "lab-luhn-algorithm" },
             { "dashedName": "review-searching-and-sorting-algorithms" },
             { "dashedName": "quiz-searching-and-sorting-algorithms" }
           ]
