@@ -1,57 +1,47 @@
 ---
 id: 6840ad915ebc0fbbb9daf0b4
-title: Task 3
-challengeType: 19
-dashedName: task-3
+title: Task 4
+challengeType: 22
+dashedName: task-4
 ---
 
-<!-- (Audio) Mateo: Hola, Marisol. ¿Cómo estás esta mañana? -->
+<!-- (Audio) Marisol: Hola Mateo, estoy bien, gracias. Un poco cansada. -->
 
 # --instructions--
 
-Listen to the audio and answer the question below.
+Listen to the audio and complete the sentence below.
 
-# --questions--
+# --fillInTheBlank--
 
-## --text--
+## --sentence--
 
-What does Mateo ask Marisol?
+`Hola Mateo, BLANK BLANK, gracias. Un poco cansada.`
 
-## --answers--
+## --blanks--
 
-What time it is
-
-### --feedback--
-
-Mateo is not asking about the time.
-
----
-
-What she is doing
+`estoy`
 
 ### --feedback--
 
-Mateo is not asking about her current activity.
+This is the first person singular of the verb "estar" and means "I am."
 
 ---
 
-How she is doing
-
----
-
-Where she is going
+`bien`
 
 ### --feedback--
 
-Mateo does not ask about her destination.
-
-## --video-solution--
-
-3
+This word means "well" and is often used to describe how someone feels.
 
 # --explanation--
 
-The phrase `¿Cómo estás?` means "How are you?" in English. It is used to ask about someone's emotional or physical state, not about the time, actions, or locations.
+`estoy` comes from the verb `estar` and means "I am." It's used to talk about temporary states, like emotions or health. Example:
+
+`Estoy cansado.` – I am tired.
+
+`bien` means "well" and is commonly used in greetings.Example:
+
+`Estoy bien, gracias.` – I am well, thank you.
 
 # --scene--
 
@@ -61,7 +51,7 @@ The phrase `¿Cómo estás?` means "How are you?" in English. It is used to ask 
     "background": "company1-breakroom.png",
     "characters": [
       {
-        "character": "Mateo",
+        "character": "Marisol",
         "position": {
           "x": 50,
           "y": 0,
@@ -73,38 +63,38 @@ The phrase `¿Cómo estás?` means "How are you?" in English. It is used to ask 
     "audio": {
       "filename": "ES_A2_2.1.mp3",
       "startTime": 1,
-      "startTimestamp": 0,
-      "finishTimestamp": 2.8
+      "startTimestamp": 2.8,
+      "finishTimestamp": 6.98
     }
   },
   "commands": [
     {
-      "character": "Mateo",
+      "character": "Marisol",
       "opacity": 1,
       "startTime": 0
     },
     {
-      "character": "Mateo",
+      "character": "Marisol",
       "startTime": 1,
-      "finishTime": 1.56,
+      "finishTime": 3.74,
       "dialogue": {
-        "text": "Hola Marisol,",
+        "text": "Hola Mateo, estoy bien, gracias.",
         "align": "center"
       }
     },
     {
-      "character": "Mateo",
-      "startTime": 1.72,
-      "finishTime": 3.8,
+      "character": "Marisol",
+      "startTime": 3.8,
+      "finishTime": 5.18,
       "dialogue": {
-        "text": "¿cómo estás esta mañana?",
+        "text": "Un poco cansada,",
         "align": "center"
       }
     },
     {
-      "character": "Mateo",
+      "character": "Marisol",
       "opacity": 0,
-      "startTime": 4.3
+      "startTime": 5.68
     }
   ]
 }
