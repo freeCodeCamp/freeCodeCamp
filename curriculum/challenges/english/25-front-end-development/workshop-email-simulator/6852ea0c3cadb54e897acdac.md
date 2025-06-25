@@ -18,7 +18,7 @@ At the top of your file, import the `datetime` module.
 You should import the `datetime` module at the top of your file.
 
 ```js
-
+assert.match(code, /^import\s+datetime/);
 ```
 
 # --seed--
