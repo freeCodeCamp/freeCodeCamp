@@ -29,35 +29,17 @@ Set `someAdjective` to a string of at least 3 characters and append it to `myStr
 `someAdjective` should be set to a string at least 3 characters long.
 
 ```js
-assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
+assert.exists(someAdjective); 
+assert.isAtLeast(someAdjective.length, 3)
 ```
 
 You should append `someAdjective` to `myStr` using the `+=` operator.
 
 ```js
-assert(__helpers.removeJSComments(code).match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
+assert.match(__helpers.removeJSComments(code), /myStr\s*\+=\s*someAdjective\s*/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(){
-  var output = [];
-  if(typeof someAdjective === 'string') {
-    output.push('someAdjective = "' + someAdjective + '"');
-  } else {
-    output.push('someAdjective is not a string');
-  }
-  if(typeof myStr === 'string') {
-    output.push('myStr = "' + myStr + '"');
-  } else {
-    output.push('myStr is not a string');
-  }
-  return output.join('\n');
-})();
-```
 
 ## --seed-contents--
 

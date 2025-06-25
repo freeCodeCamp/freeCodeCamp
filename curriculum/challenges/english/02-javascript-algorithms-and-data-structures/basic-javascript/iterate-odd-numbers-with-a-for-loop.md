@@ -31,7 +31,7 @@ Push the odd numbers from 1 through 9 to `myArray` using a `for` loop.
 You should be using a `for` loop for this.
 
 ```js
-assert(/for\s*\([^)]+?\)/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /for\s*\([^)]+?\)/);
 ```
 
 `myArray` should equal `[1, 3, 5, 7, 9]`.
@@ -41,12 +41,6 @@ assert.deepEqual(myArray, [1, 3, 5, 7, 9]);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-if(typeof myArray !== "undefined"){(function(){return myArray;})();}
-```
 
 ## --seed-contents--
 
