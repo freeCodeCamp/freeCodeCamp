@@ -419,6 +419,7 @@
     "answered-mcq": "Ви не відповіли на всі запитання та/або допустились помилок.",
     "explanation": "Пояснення",
     "transcript": "Текстова версія",
+    "video": "Video",
     "solution-link": "Посилання на розв’язок",
     "source-code-link": "Посилання на вихідний код",
     "ms-link": "Посилання Microsoft",
@@ -858,6 +859,10 @@
     "rsa-checkbox": "Я спробував(-ла) метод читати-шукати-питати",
     "similar-questions-checkbox": "Я шукав(-ла) схожі запитання на форумі, на які вже є відповідь",
     "edit-my-profile": "Редагувати профіль",
+    "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
+    "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
+    "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
+    "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Вивід терміналу"
   },
   "flash": {
