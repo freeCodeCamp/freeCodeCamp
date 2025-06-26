@@ -3,6 +3,7 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import fastifyMultipart from '@fastify/multipart';
 import { PrismaClientValidationError } from '@prisma/client/runtime/library';
 import { type FastifyInstance, type FastifyReply } from 'fastify';
+import { EnvExamModerationStatus } from '@prisma/client';
 import jwt from 'jsonwebtoken';
 
 import * as schemas from '../schemas';
@@ -279,8 +280,7 @@ async function postExamGeneratedExamHandler(
       this.prisma.envExamModeration.findFirst({
         where: {
           examAttemptId: lastAttempt.id,
-          // Where `approved` is null, meaning it is still pending
-          approved: null
+          status: EnvExamModerationStatus.Pending
         }
       })
     );
@@ -649,7 +649,7 @@ async function postExamAttemptHandler(
     await this.prisma.envExamModeration.create({
       data: {
         examAttemptId: latestAttempt.id,
-        approved: null
+        status: EnvExamModerationStatus.Pending
       }
     });
 
@@ -898,7 +898,7 @@ async function getExamAttemptsHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ user: req.user });
+  logger.info({ userId: req.user?.id });
 
   const user = req.user!;
 
@@ -958,7 +958,7 @@ async function getExamAttemptHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ user: req.user });
+  logger.info({ userId: req.user?.id });
 
   const user = req.user!;
   const { attemptId } = req.params;

@@ -492,21 +492,30 @@ type SurveyResponse {
 // ----------------------
 
 model EnvExamModeration {
-  id             String    @id @default(auto()) @map("_id") @db.ObjectId
-  /// Whether or not the iteam is approved
-  approved       Boolean?
+  id             String                  @id @default(auto()) @map("_id") @db.ObjectId
+  /// Whether or not the item is approved
+  status         EnvExamModerationStatus
   /// Foreign key to exam attempt
-  examAttemptId  String    @unique @db.ObjectId
+  examAttemptId  String                  @unique @db.ObjectId
   /// Optional feedback/note about the moderation decision
   feedback       String?
   /// Date the exam attempt was moderated
   moderationDate DateTime?
   /// Foreign key to moderator. This is `null` until the item is moderated.
-  moderatorId    String?   @db.ObjectId
+  moderatorId    String?                 @db.ObjectId
 
   /// Date the exam attempt was added to the moderation queue
   submissionDate DateTime @default(now()) @db.Date
 
   // Relations
   examAttempt EnvExamAttempt @relation(fields: [examAttemptId], references: [id], onDelete: Cascade)
+}
+
+enum EnvExamModerationStatus {
+  /// Attempt is determined to be valid
+  Approved
+  /// Attempt is determined to be invalid
+  Denied
+  /// Attempt has yet to be moderated
+  Pending
 }

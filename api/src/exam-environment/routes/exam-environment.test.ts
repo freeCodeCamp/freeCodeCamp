@@ -1,3 +1,4 @@
+import { EnvExamModerationStatus } from '@prisma/client';
 import { Static } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 
@@ -205,7 +206,10 @@ describe('/exam-environment/', () => {
         // Database should have moderation record for attempt
         const examModeration =
           await fastifyTestInstance.prisma.envExamModeration.findUnique({
-            where: { examAttemptId: attempt.id, approved: null }
+            where: {
+              examAttemptId: attempt.id,
+              status: EnvExamModerationStatus.Pending
+            }
           });
         expect(examModeration).not.toBeNull();
       });
@@ -756,7 +760,7 @@ describe('/exam-environment/', () => {
         await fastifyTestInstance.prisma.envExamModeration.create({
           data: {
             examAttemptId: attempt.id,
-            approved: null
+            status: EnvExamModerationStatus.Pending
           }
         });
 
@@ -793,7 +797,7 @@ describe('/exam-environment/', () => {
         await fastifyTestInstance.prisma.envExamModeration.create({
           data: {
             examAttemptId: attempt.id,
-            approved: null
+            status: EnvExamModerationStatus.Pending
           }
         });
 
@@ -824,7 +828,7 @@ describe('/exam-environment/', () => {
         await fastifyTestInstance.prisma.envExamModeration.create({
           data: {
             examAttemptId: attempt.id,
-            approved: true
+            status: EnvExamModerationStatus.Approved
           }
         });
 
@@ -879,7 +883,7 @@ describe('/exam-environment/', () => {
         await fastifyTestInstance.prisma.envExamModeration.create({
           data: {
             examAttemptId: attempt.id,
-            approved: null
+            status: EnvExamModerationStatus.Pending
           }
         });
 
@@ -906,7 +910,7 @@ describe('/exam-environment/', () => {
         await fastifyTestInstance.prisma.envExamModeration.create({
           data: {
             examAttemptId: attempt.id,
-            approved: null
+            status: EnvExamModerationStatus.Pending
           }
         });
 
@@ -935,7 +939,7 @@ describe('/exam-environment/', () => {
         await fastifyTestInstance.prisma.envExamModeration.create({
           data: {
             examAttemptId: attempt.id,
-            approved: true
+            status: EnvExamModerationStatus.Approved
           }
         });
 

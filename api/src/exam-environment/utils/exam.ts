@@ -6,8 +6,11 @@ import {
   EnvConfig,
   EnvExam,
   EnvExamAttempt,
+  EnvExamModerationStatus,
   EnvGeneratedExam,
+  EnvGeneratedMultipleChoiceQuestion,
   EnvMultipleChoiceQuestion,
+  EnvMultipleChoiceQuestionAttempt,
   EnvQuestionSet,
   EnvQuestionSetAttempt
 } from '@prisma/client';
@@ -638,25 +641,44 @@ export function calculateScore(
         );
       }
 
-      // NOTE: The answers of an attempt is an array for future-proofing when
-      //       checkbox questions are needed.
-      //       This calculation takes x / y , x < y as wholey incorrect.
-      const isQuestionCorrect = generatedQuestion.answers
-        .filter(generatedAnswer => {
-          return !!examQuestion.answers.find(
-            examAnswer =>
-              examAnswer.isCorrect && examAnswer.id === generatedAnswer
-          );
-        })
-        .every(correctAnswer => {
-          return attemptQuestion.answers.includes(correctAnswer);
-        });
+      const isQuestionCorrect = compareAnswers(
+        examQuestion.answers,
+        generatedQuestion.answers,
+        attemptQuestion.answers
+      );
 
-      correctQuestions += Number(isQuestionCorrect);
+      if (isQuestionCorrect) {
+        correctQuestions += 1;
+      }
     }
   }
 
   return (correctQuestions / totalQuestions) * 100;
+}
+
+/**
+ * NOTE: The answers of an attempt is an array for future-proofing when
+ * checkbox questions are needed.
+ *
+ * This calculation takes x / y , x < y as wholey incorrect.
+ */
+export function compareAnswers(
+  examAnswers: EnvAnswer[],
+  generatedAnswers: EnvGeneratedMultipleChoiceQuestion['answers'],
+  attemptAnswers: EnvMultipleChoiceQuestionAttempt['answers']
+): boolean {
+  const correctGeneratedAnswers = generatedAnswers.filter(generatedAnswer => {
+    return !!examAnswers.find(
+      examAnswer => examAnswer.isCorrect && examAnswer.id === generatedAnswer
+    );
+  });
+  // Check every attempt question answer == every generated question answer
+  const isQuestionCorrect =
+    correctGeneratedAnswers.every(correctAnswer =>
+      attemptAnswers.includes(correctAnswer)
+    ) && correctGeneratedAnswers.length == attemptAnswers.length;
+
+  return isQuestionCorrect;
 }
 
 function isQuestionSetConfigFulfilled(
@@ -824,7 +846,7 @@ export async function constructEnvExamAttempt(
   }
 
   // If attempt is completed, but has not been graded, return without result
-  if (moderation.approved === null) {
+  if (moderation.status === EnvExamModerationStatus.Pending) {
     return {
       envExamAttempt: { ...omitAttemptReferenceIds(attempt), result: null },
       error: null
@@ -833,7 +855,7 @@ export async function constructEnvExamAttempt(
 
   // If attempt is completed, but has been determined to need a retake
   // TODO: Send moderation.feedback?
-  if (moderation.approved === false) {
+  if (moderation.status === EnvExamModerationStatus.Denied) {
     return {
       envExamAttempt: { ...omitAttemptReferenceIds(attempt), result: null },
       error: null
