@@ -204,16 +204,18 @@ async function createMetaJson(
   blockLayout?: string
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
-  const newMeta = getBaseMeta('FullStack');
-  newMeta.name = title;
-  newMeta.dashedName = block;
-  newMeta.helpCategory = helpCategory;
+  let newMeta;
   if (superBlock !== SuperBlocks.FullStackDeveloper) {
+    newMeta = getBaseMeta['Step'];
     newMeta.order = order!;
   } else {
+    newMeta = getBaseMeta['FullStack'];
     newMeta.blockType = blockType!;
     newMeta.blockLayout = blockLayout!;
   }
+  newMeta.name = title;
+  newMeta.dashedName = block;
+  newMeta.helpCategory = helpCategory;
   newMeta.superBlock = superBlock;
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];

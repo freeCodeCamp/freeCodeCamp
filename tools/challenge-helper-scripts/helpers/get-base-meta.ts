@@ -36,19 +36,10 @@ const languageMeta = {
   blockLayout: 'dialogue-grid'
 };
 
-export const getBaseMeta = (
-  projectType: 'Step' | 'Quiz' | 'Language' | 'FullStack'
-) => {
-  switch (projectType) {
-    case 'Step':
-      return stepMeta;
-    case 'Quiz':
-      return quizMeta;
-    case 'Language':
-      return languageMeta;
-    case 'FullStack':
-      return fullStackStepMeta;
-    default:
-      return stepMeta;
-  }
+export const getBaseMeta = {
+  Step: stepMeta,
+  Quiz: quizMeta,
+  Language: languageMeta,
+  FullStack: fullStackStepMeta,
+  Default: stepMeta
 };
