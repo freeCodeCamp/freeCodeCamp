@@ -419,6 +419,7 @@
     "answered-mcq": "你有未回答的問題和/或錯誤的答案。",
     "explanation": "解釋",
     "transcript": "Transcript",
+    "video": "Video",
     "solution-link": "解決方案鏈接",
     "source-code-link": "源代碼鏈接",
     "ms-link": "微軟的鏈接",
@@ -858,6 +859,10 @@
     "rsa-checkbox": "我已經嘗試了 Read-Search-Ask（閱讀-搜索-提問）方法",
     "similar-questions-checkbox": "我已經在論壇上搜索了類似的問題和相應的答案",
     "edit-my-profile": "編輯我的個人資料",
+    "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
+    "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
+    "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
+    "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output"
   },
   "flash": {
