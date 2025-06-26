@@ -10,38 +10,14 @@ import {
 import DailyCodingChallengeNotFound from '../../components/daily-coding-challenge/not-found';
 import envData from '../../../config/env.json';
 import { isValidDateParam } from '../../components/daily-coding-challenge/helpers';
+import {
+  validateDailyCodingChallengeSchema,
+  type ChallengeDataFromDb
+} from '../../utils/daily-coding-challenge-validator';
 
 const { dailyChallengeApiLocation } = envData;
 
-/* Types for data coming from Daily Challenge API */
-interface ChallengeTests {
-  text: string;
-  testString: string;
-}
-
-interface ChallengeFiles {
-  fileKey: string;
-  contents: string;
-}
-interface ChallengeLanguageData {
-  tests: ChallengeTests[];
-  challengeFiles: ChallengeFiles[];
-  disableLoopProtectTests?: boolean;
-}
-
-interface ChallengeDataFromDb {
-  _id: string;
-  challengeNumber: number;
-  title: string;
-  date: string;
-  description: string;
-  instructions?: string;
-  javascript: ChallengeLanguageData;
-  python: ChallengeLanguageData;
-}
-
-/* Types for use in the show classic component */
-interface Data {
+interface ChallengeData {
   data: {
     challengeNode: DailyCodingChallengeNode;
   };
@@ -49,8 +25,8 @@ interface Data {
 }
 
 interface FormattedChallengeData {
-  javascript: Data;
-  python: Data;
+  javascript: ChallengeData;
+  python: ChallengeData;
 }
 
 // These are not included in the data from the DB (Daily Challenge API) - so we add them in
@@ -199,12 +175,21 @@ function DailyCodingChallenge(): JSX.Element {
       );
       const challengeData = await response.json();
 
-      // Todo: validate challenge data
-
       if (challengeData) {
+        const validDailyCodingChallenge = validateDailyCodingChallengeSchema(
+          challengeData as ChallengeDataFromDb
+        );
+
+        if ('error' in validDailyCodingChallenge) {
+          throw new Error(
+            `Challenge data validation failed: ${validDailyCodingChallenge.error?.message || 'Unknown validation error'}`
+          );
+        }
+
         const formattedChallengeData = formatChallengeData(
           challengeData as ChallengeDataFromDb
         );
+
         setChallengeProps(formattedChallengeData as FormattedChallengeData);
         setChallengeFound(true);
       } else {
