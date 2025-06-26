@@ -78,7 +78,7 @@ This word means "well" and is often used to describe how someone feels.
       "startTime": 1,
       "finishTime": 3.74,
       "dialogue": {
-        "text": "Hola Mateo, estoy bien, gracias".,
+        "text": "Hola Mateo, estoy bien, gracias.",
         "align": "center"
       }
     },
