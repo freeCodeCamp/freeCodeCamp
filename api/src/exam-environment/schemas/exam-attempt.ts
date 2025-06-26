@@ -22,11 +22,7 @@ export const examEnvironmentPostExamAttempt = {
     'exam-environment-authorization-token': Type.String()
   }),
   response: {
-    // An empty 200 response cannot be typed 🤷‍♂️
-    400: STANDARD_ERROR,
-    403: STANDARD_ERROR,
-    404: STANDARD_ERROR,
-    500: STANDARD_ERROR
+    default: STANDARD_ERROR
   }
 };
 
@@ -59,10 +55,7 @@ export const examEnvironmentGetExamAttempts = {
   }),
   response: {
     200: Type.Array(examEnvAttempt),
-    400: STANDARD_ERROR,
-    403: STANDARD_ERROR,
-    404: STANDARD_ERROR,
-    500: STANDARD_ERROR
+    default: STANDARD_ERROR
   }
 };
 
@@ -75,9 +68,6 @@ export const examEnvironmentGetExamAttempt = {
   }),
   response: {
     200: examEnvAttempt,
-    400: STANDARD_ERROR,
-    403: STANDARD_ERROR,
-    404: STANDARD_ERROR,
-    500: STANDARD_ERROR
+    default: STANDARD_ERROR
   }
 };
