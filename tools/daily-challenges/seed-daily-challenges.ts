@@ -16,7 +16,7 @@ const { MONGOHQ_URL } = process.env;
 const EXPECTED_CHALLENGE_COUNT = 24;
 
 // Date to set for the first challenge, second challenge will be one day later, etc...
-// **DO NOT CHANGE THIS AFTER RELEASE**
+// **DO NOT CHANGE THIS AFTER RELEASE (if seeding production - okay for local dev)**
 const year = 2025;
 const monthIndex = 5; // 0-indexed -> 5 = June
 const day = 18;

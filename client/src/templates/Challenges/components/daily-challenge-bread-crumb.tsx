@@ -6,8 +6,7 @@ import { Link } from '../../../components/helpers/index';
 import './challenge-title.css';
 import {
   isValidDateParam,
-  formatDate,
-  formatLongDateUTC
+  formatDisplayDate
 } from '../../../components/daily-coding-challenge/helpers';
 
 function DailyChallengeBreadCrumb(): JSX.Element {
@@ -16,14 +15,7 @@ function DailyChallengeBreadCrumb(): JSX.Element {
   let displayDate = '';
 
   if (isValidDateParam(dateParam)) {
-    const [month, day, year] = dateParam.split('-');
-    const date = formatDate({
-      month: parseInt(month, 10),
-      day: parseInt(day, 10),
-      year: parseInt(year, 10)
-    });
-
-    displayDate = formatLongDateUTC(date);
+    displayDate = formatDisplayDate(dateParam);
   }
 
   const { t } = useTranslation();

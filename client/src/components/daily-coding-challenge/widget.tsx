@@ -6,7 +6,7 @@ import { ButtonLink } from '../helpers';
 import DailyCodingChallengeIcon from '../../assets/icons/daily-coding-challenge';
 import LinkButton from '../../assets/icons/link-button';
 import CalendarIcon from '../../assets/icons/calendar';
-import { formatDateUsCentral } from './helpers';
+import { getTodayUsCentral } from './helpers';
 
 import './widget.css';
 
@@ -20,10 +20,6 @@ function DailyCodingChallengeWidget({
 }: DailyCodingChallengeWidgetProps): JSX.Element {
   const { t } = useTranslation();
 
-  // Midnight US Central Time is used to determine the release of new daily challenges
-  const todaysDate = new Date();
-  const usCentralDateForUrl = formatDateUsCentral(todaysDate);
-
   return (
     <>
       <h2 className={forLanding ? 'big-heading' : ''}>
@@ -34,7 +30,7 @@ function DailyCodingChallengeWidget({
           block
           size='large'
           className='map-superblock-link'
-          href={`/learn/daily-coding-challenge?date=${usCentralDateForUrl}`}
+          href={`/learn/daily-coding-challenge?date=${getTodayUsCentral()}`}
         >
           <div className='daily-coding-challenge-button'>
             <DailyCodingChallengeIcon className='map-icon' />
