@@ -305,6 +305,12 @@ function ShowClassic({
 
   // AB testing Pre-fetch in the Spanish locale
   const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
+  const isIndependentLowerJawEnabled = useFeature('independent-lower-jaw').on;
+
+  // Independent lower jaw is only enabled for the urriculum outline workshop
+  const showIndependentLowerJaw =
+    blockName === 'workshop-curriculum-outline' && isIndependentLowerJawEnabled;
+
   useEffect(() => {
     if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
       preloadPage(nextChallengePath);
@@ -415,6 +421,7 @@ function ShowClassic({
         instructionsPanelRef={instructionsPanelRef}
         toolPanel={toolPanel}
         hasDemo={hasDemo}
+        showIndependentLowerJaw={showIndependentLowerJaw}
       />
     );
   };
@@ -439,6 +446,7 @@ function ShowClassic({
           title={title}
           usesMultifileEditor={usesMultifileEditor}
           showProjectPreview={demoType === 'onLoad'}
+          showIndependentLowerJaw={showIndependentLowerJaw}
         />
       )
     );
@@ -520,6 +528,7 @@ function ShowClassic({
             }
             windowTitle={windowTitle}
             startWithConsoleShown={openConsole}
+            showIndependentLowerJaw={showIndependentLowerJaw}
           />
         )}
         <CompletionModal />

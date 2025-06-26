@@ -113,6 +113,7 @@ export interface EditorProps {
   }) => void;
   usesMultifileEditor: boolean;
   isChallengeCompleted: boolean;
+  showIndependentLowerJaw?: boolean;
 }
 
 // TODO: this is grab bag of unrelated properties.  There's no need for them to
@@ -401,7 +402,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     dataRef.current.editor = editor;
 
     if (hasEditableRegion()) {
-      initializeDescriptionAndOutputWidgets();
+      initializeRegions();
+      if (!props.showIndependentLowerJaw) {
+        addWidgetsToRegions();
+      }
       addContentChangeListener();
       resetAttempts();
       showEditableRegion(editor);
@@ -998,14 +1002,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
-  function initializeDescriptionAndOutputWidgets() {
-    const editor = dataRef.current.editor;
-    if (editor) {
-      initializeRegions(getEditableRegionFromRedux());
-      addWidgetsToRegions(editor);
-    }
-  }
-
   // Currently, only practice project parts have editable region markers
   // This function is used to enable multiple editor tabs, jaws, etc.
   function hasEditableRegion() {
@@ -1027,11 +1023,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   }
 
-  function initializeRegions(editableRegion: number[]) {
+  function initializeRegions() {
     const { model, editor } = dataRef.current;
     const monaco = monacoRef.current;
     if (!model || !monaco || !editor) return;
-
+    const editableRegion = getEditableRegionFromRedux();
     const editableRange = positionsToRange(monaco, model, [
       editableRegion[0] + 1,
       editableRegion[1] - 1
@@ -1077,7 +1073,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     };
   };
 
-  function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
+  function addWidgetsToRegions() {
+    const editor = dataRef.current.editor;
+    if (!editor) return;
+
     const descriptionNode = createDescription(editor);
 
     const lowerJawNode = createLowerJawContainer(editor);
@@ -1215,14 +1214,17 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     if (hasEditableRegion() && editor) {
       if (props.isResetting) {
-        initializeDescriptionAndOutputWidgets();
+        initializeRegions();
+        if (!props.showIndependentLowerJaw) {
+          addWidgetsToRegions();
+        }
         updateDescriptionZone();
         showEditableRegion(editor);
         resetMarginDecorations();
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.challengeFiles, props.isResetting]);
+  }, [props.challengeFiles, props.isResetting, props.showIndependentLowerJaw]);
 
   useEffect(() => {
     const { showProjectPreview, previewOpen } = props;
