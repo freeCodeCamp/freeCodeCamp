@@ -64,6 +64,19 @@ function LandingTop(): JSX.Element {
             >
               {t('landing.big-heading-1')}
             </h1>
+
+            {/* 🔥 Custom Subheading Added Below */}
+            <p
+              style={{
+                fontSize: '1.25rem',
+                fontWeight: 400,
+                marginTop: '0.5rem',
+                color: '#ffffffcc'
+              }}
+            >
+              🚀 Empowering 100M+ learners to build the future.
+            </p>
+
             <p
               className='mega-heading'
               data-playwright-test-label='landing-big-heading-2'
