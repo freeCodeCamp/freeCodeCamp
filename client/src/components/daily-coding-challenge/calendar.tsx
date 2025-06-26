@@ -131,8 +131,6 @@ function DailyCodingChallengeCalendar({
       );
       const challenges = (await response.json()) as DailyChallengeFromDb[];
 
-      // todo: validate challenge data?
-
       if (Array.isArray(challenges)) {
         const newDailyChallengesMap = new Map() as DailyChallengesMap;
 
@@ -257,14 +255,27 @@ function DailyCodingChallengeCalendar({
       </div>
       <Spacer size='m' />
       <div className='calendar-weekday-labels'>
-        {/* Todo: use long/short days based on window size */}
-        <div>{t('weekdays.short.sunday')}</div>
-        <div>{t('weekdays.short.monday')}</div>
-        <div>{t('weekdays.short.tuesday')}</div>
-        <div>{t('weekdays.short.wednesday')}</div>
-        <div>{t('weekdays.short.thursday')}</div>
-        <div>{t('weekdays.short.friday')}</div>
-        <div>{t('weekdays.short.saturday')}</div>
+        <div aria-label={t('weekdays.long.sunday')}>
+          {t('weekdays.short.sunday')}
+        </div>
+        <div aria-label={t('weekdays.long.monday')}>
+          {t('weekdays.short.monday')}
+        </div>
+        <div aria-label={t('weekdays.long.tuesday')}>
+          {t('weekdays.short.tuesday')}
+        </div>
+        <div aria-label={t('weekdays.long.wednesday')}>
+          {t('weekdays.short.wednesday')}
+        </div>
+        <div aria-label={t('weekdays.long.thursday')}>
+          {t('weekdays.short.thursday')}
+        </div>
+        <div aria-label={t('weekdays.long.friday')}>
+          {t('weekdays.short.friday')}
+        </div>
+        <div aria-label={t('weekdays.long.saturday')}>
+          {t('weekdays.short.saturday')}
+        </div>
       </div>
       <Spacer size='s' />
       <div className='calendar-grid'>{monthInfo.days}</div>
