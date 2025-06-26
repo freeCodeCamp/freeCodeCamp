@@ -55,6 +55,12 @@ const getMonthInfo = (
     });
 
     const challengeData = dailyChallengesMap.get(formattedDate);
+    console.log('formattedDate');
+    console.log(formattedDate);
+    console.log('dailyChallengesMap');
+    console.log(dailyChallengesMap);
+    console.log('challengeData');
+    console.log(challengeData);
     const isCompleted = challengeData?.isCompleted || false;
     const isAvailable = challengeData !== undefined;
 
@@ -85,13 +91,13 @@ interface DailyCodingChallengeCalendarProps {
   isSignedIn: boolean;
 }
 
-interface DailyChallenge {
-  challengeId: string;
+interface DailyChallengeFromDb {
+  _id: string;
   date: string;
 }
 
 interface DailyChallengeMap {
-  challengeId: string;
+  _id: string;
   date: string;
   isCompleted: boolean;
 }
@@ -129,7 +135,7 @@ function DailyCodingChallengeCalendar({
       const response = await fetch(
         `${dailyChallengeApiLocation}/api/daily-challenge/all`
       );
-      const challenges = (await response.json()) as DailyChallenge[];
+      const challenges = (await response.json()) as DailyChallengeFromDb[];
 
       // todo: validate challenge data?
 
@@ -149,9 +155,7 @@ function DailyCodingChallengeCalendar({
           newDailyChallengesMap.set(date, {
             ...c,
             date,
-            isCompleted: completedDailyCodingChallengeIds.includes(
-              c.challengeId
-            )
+            isCompleted: completedDailyCodingChallengeIds.includes(c._id)
           });
         });
 
