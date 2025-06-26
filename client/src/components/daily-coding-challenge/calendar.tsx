@@ -55,12 +55,6 @@ const getMonthInfo = (
     });
 
     const challengeData = dailyChallengesMap.get(formattedDate);
-    console.log('formattedDate');
-    console.log(formattedDate);
-    console.log('dailyChallengesMap');
-    console.log(dailyChallengesMap);
-    console.log('challengeData');
-    console.log(challengeData);
     const isCompleted = challengeData?.isCompleted || false;
     const isAvailable = challengeData !== undefined;
 
