@@ -1,66 +1,5 @@
-// MM-DD-YYYY - e.g: "4-8-2025" or "10-10-2025"
-export function formatDateUsCentral(dateObj: Date) {
-  return dateObj
-    .toLocaleString('en-US', {
-      timeZone: 'America/Chicago',
-      year: 'numeric',
-      month: 'numeric',
-      day: 'numeric'
-    })
-    .replace(/\//g, '-');
-}
-
-// Mmm D, YYYY - e.g: "Apr 8, 2025"
-export function formatDateUsCentralForDisplay(dateObj: Date) {
-  return dateObj.toLocaleString('en-US', {
-    timeZone: 'America/Chicago',
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric'
-  });
-}
-
-export function getUsCentralMonthIndex(dateObj: Date) {
-  return (
-    parseInt(
-      dateObj.toLocaleString('en-US', {
-        timeZone: 'America/Chicago',
-        month: '2-digit'
-      }),
-      10
-    ) - 1
-  );
-}
-
-export function getUsCentralYear(dateObj: Date) {
-  return parseInt(
-    dateObj.toLocaleString('en-US', {
-      timeZone: 'America/Chicago',
-      year: 'numeric'
-    }),
-    10
-  );
-}
-
-export function formatDateUTC(dateObj: Date) {
-  const year = dateObj.getUTCFullYear();
-  const month = dateObj.getUTCMonth() + 1;
-  const day = dateObj.getUTCDate();
-  return `${month}-${day}-${year}`;
-}
-
-// in the format M-D-YYYY
-export function formatLongDateUTC(dateString: string) {
-  const [month, day, year] = dateString.split('-').map(Number);
-  const date = new Date(Date.UTC(year, month - 1, day));
-
-  return new Intl.DateTimeFormat('en-US', {
-    timeZone: 'UTC',
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric'
-  }).format(date);
-}
+import { parse, isValid, format } from 'date-fns';
+import { toZonedTime } from 'date-fns-tz';
 
 interface formatDateProps {
   month: number;
@@ -68,10 +7,29 @@ interface formatDateProps {
   year: number;
 }
 
+// Format month, day, and year as "M-D-YYYY"
 export function formatDate({ month, day, year }: formatDateProps) {
   return `${month}-${day}-${year}`;
 }
 
+// Returns the current US Central date in M-D-YYYY
+export function getTodayUsCentral(dateObj: Date = new Date()) {
+  const zonedDate = toZonedTime(dateObj, 'America/Chicago');
+  return format(zonedDate, 'M-d-yyyy');
+}
+
+// Validate that dateString is in the format M-D-YYYY
+// Leading zero's are accepted for single digit month/day
 export function isValidDateParam(dateString: string) {
-  return /^\d{1,2}-\d{1,2}-\d{4}$/.test(dateString);
+  const parsedDate = parse(dateString, 'M-d-yyyy', new Date());
+  return isValid(parsedDate);
+}
+
+// Convert M-D-YYYY to display format (e.g: "January 1, 2025")
+export function formatDisplayDate(dateString: string) {
+  const parsedDate = parse(dateString, 'M-d-yyyy', new Date());
+  if (!isValid(parsedDate)) {
+    return 'Invalid date';
+  }
+  return format(parsedDate, 'MMMM d, yyyy');
 }

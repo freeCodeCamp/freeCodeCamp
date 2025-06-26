@@ -11,12 +11,7 @@ import { Loader } from '../helpers';
 import envData from '../../../config/env.json';
 import Login from '../Header/components/login';
 import CalendarDay from './calendar-day';
-import {
-  formatDateUsCentral,
-  getUsCentralMonthIndex,
-  getUsCentralYear,
-  formatDate
-} from './helpers';
+import { getTodayUsCentral, formatDate } from './helpers';
 
 import './calendar.css';
 
@@ -34,16 +29,16 @@ const getMonthInfo = (
   year: number,
   dailyChallengesMap: DailyChallengesMap
 ) => {
-  // date is first of the month for selected month
-  const date = new Date(Date.UTC(year, monthIndex, 1));
-  const firstOfMonthWeekdayIndex = date.getUTCDay();
+  // Create date for first of the month (handles rollover automatically)
+  const firstOfMonth = new Date(Date.UTC(year, monthIndex, 1));
+  const firstOfMonthWeekdayIndex = firstOfMonth.getUTCDay();
+  const utcYear = firstOfMonth.getUTCFullYear();
+  const utcMonthIndex = firstOfMonth.getUTCMonth();
 
-  // year is possibly incorrect since we sometimes pass monthIndex = 12 for example
-  // to roll over to January, so we get the year again
-  const utcYear = date.getUTCFullYear();
-
-  // day number of last day of the month
-  const numberOfDays = new Date(Date.UTC(year, monthIndex + 1, 0)).getUTCDate();
+  // Get number of days in the month (day 0 of next month = last day of current month)
+  const numberOfDays = new Date(
+    Date.UTC(utcYear, utcMonthIndex + 1, 0)
+  ).getUTCDate();
 
   const days: JSX.Element[] = [];
 
@@ -54,7 +49,7 @@ const getMonthInfo = (
 
   for (let day = 1; day <= numberOfDays; day++) {
     const formattedDate = formatDate({
-      month: monthIndex + 1,
+      month: utcMonthIndex + 1, // Convert back to 1-indexed
       day,
       year: utcYear
     });
@@ -76,12 +71,12 @@ const getMonthInfo = (
 
   return {
     days,
-    index: date.getUTCMonth(),
-    name: date.toLocaleString('en-US', {
+    index: utcMonthIndex,
+    name: firstOfMonth.toLocaleString('en-US', {
       timeZone: 'UTC',
       month: 'long'
     }),
-    year: date.getUTCFullYear()
+    year: utcYear
   };
 };
 
@@ -116,8 +111,7 @@ function DailyCodingChallengeCalendar({
 }: DailyCodingChallengeCalendarProps): JSX.Element {
   const { t } = useTranslation();
 
-  const today = new Date();
-  const todayUsCentral = formatDateUsCentral(today);
+  const todayUsCentral = getTodayUsCentral();
 
   const completedDailyCodingChallengeIds = completedDailyCodingChallenges.map(
     c => c.id
@@ -164,13 +158,12 @@ function DailyCodingChallengeCalendar({
         setDailyChallengesMap(newDailyChallengesMap);
 
         // After getting the challenges and creating the map, set the initial month info -
-        // Display the calendar of the current US Central day because challenges are released
+        // Display the month of the current US Central day because challenges are released
         // at midnight US Central - so don't show the local month, show the US Central month
-        const usCentralMonthIndex = getUsCentralMonthIndex(today);
-        const usCentralYear = getUsCentralYear(today);
+        const [month, , year] = todayUsCentral.split('-').map(Number);
         const initialMonthInfo = getMonthInfo(
-          usCentralMonthIndex,
-          usCentralYear,
+          month - 1, // Convert to 0-indexed month
+          year,
           newDailyChallengesMap
         );
 
@@ -205,31 +198,30 @@ function DailyCodingChallengeCalendar({
     );
   };
 
-  // Todo: these are hideous - revisit - maybe use date objects as dailyChallengeMap keys
   const hasOlderChallenges = (
     map: DailyChallengesMap,
     monthInfo: MonthInfo
   ): boolean => {
-    const firstOfMonth = new Date(Date.UTC(monthInfo.year, monthInfo.index, 1));
-    for (const dateStr of map.keys()) {
-      const date = new Date(dateStr);
-      if (date < firstOfMonth) return true;
-    }
-    return false;
+    return Array.from(map.keys()).some(dateStr => {
+      const [month, , year] = dateStr.split('-').map(Number);
+      return (
+        year < monthInfo.year ||
+        (year === monthInfo.year && month - 1 < monthInfo.index)
+      );
+    });
   };
 
   const hasNewerChallenges = (
     map: DailyChallengesMap,
     monthInfo: MonthInfo
   ): boolean => {
-    const lastOfMonth = new Date(
-      Date.UTC(monthInfo.year, monthInfo.index + 1, 0)
-    );
-    for (const dateStr of map.keys()) {
-      const date = new Date(dateStr);
-      if (date > lastOfMonth) return true;
-    }
-    return false;
+    return Array.from(map.keys()).some(dateStr => {
+      const [month, , year] = dateStr.split('-').map(Number);
+      return (
+        year > monthInfo.year ||
+        (year === monthInfo.year && month - 1 > monthInfo.index)
+      );
+    });
   };
 
   const showPrevButton = monthInfo

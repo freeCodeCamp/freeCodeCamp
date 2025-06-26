@@ -17,8 +17,7 @@ import { CertificateNode, ChallengeNode } from '../../redux/prop-types';
 import { getIsDailyCodingChallenge } from '../../../../shared/config/challenge-types';
 import {
   isValidDateParam,
-  formatDate,
-  formatLongDateUTC
+  formatDisplayDate
 } from '../daily-coding-challenge/helpers';
 import ProgressInner from './progress-inner';
 
@@ -77,22 +76,13 @@ function Progress({
     cert.projects?.some((project: { id: string }) => project.id === id)
   );
 
-  if (!getIsDailyCodingChallenge(challengeType)) {
+  // Display the date of the challenge in the completion modal for daily challenges
+  if (getIsDailyCodingChallenge(challengeType)) {
     const dateParam =
       new URLSearchParams(window.location.search).get('date') || '';
-    let displayDate = '';
 
     if (isValidDateParam(dateParam)) {
-      const [month, day, year] = dateParam.split('-');
-      const date = formatDate({
-        month: parseInt(month, 10),
-        day: parseInt(day, 10),
-        year: parseInt(year, 10)
-      });
-
-      displayDate = formatLongDateUTC(date);
-
-      blockTitle += `: ${displayDate}`;
+      blockTitle += `: ${formatDisplayDate(dateParam)}`;
     }
   }
 

@@ -5,15 +5,13 @@ import { Button, Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import { randomQuote } from '../../utils/get-words';
 import { Link } from '../helpers';
 import notFoundLogo from '../../assets/images/freeCodeCamp-404.svg';
-import { formatDateUsCentral } from './helpers';
+import { getTodayUsCentral } from './helpers';
 
 import './not-found.css';
 
 function DailyCodingChallengeNotFound(): JSX.Element {
   const { t } = useTranslation();
   const quote = randomQuote();
-
-  const usCentralDate = formatDateUsCentral(new Date());
 
   return (
     <Container>
@@ -43,7 +41,7 @@ function DailyCodingChallengeNotFound(): JSX.Element {
           <div className='button-wrapper'>
             <Button
               block={true}
-              href={`/learn/daily-coding-challenge?date=${usCentralDate}`}
+              href={`/learn/daily-coding-challenge?date=${getTodayUsCentral()}`}
             >
               {t(`buttons.go-to-today-long`)}
             </Button>

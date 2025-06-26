@@ -53,6 +53,7 @@ interface FormattedChallengeData {
   python: Data;
 }
 
+// These are not included in the data from the DB (Daily Challenge API) - so we add them in
 function formatDescription(str: string) {
   return `<section id="description">\n${str}\n</section>`;
 }
@@ -218,7 +219,7 @@ function DailyCodingChallenge(): JSX.Element {
   };
 
   useEffect(() => {
-    // If the date param is invalid, stop loading/fetching and show the not found page
+    // If dateParam is invalid, stop loading/fetching and show the not found page
     if (!isValidDateParam(dateParam)) {
       setIsLoading(false);
       setChallengeFound(false);
