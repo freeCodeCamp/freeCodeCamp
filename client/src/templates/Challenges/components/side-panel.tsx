@@ -8,7 +8,7 @@ import { Test } from '../../../redux/prop-types';
 import { challengeTestsSelector } from '../redux/selectors';
 import { openModal } from '../redux/actions';
 import TestSuite from './test-suite';
-import IndependentLowerJaw from './independent-rower-jaw';
+import IndependentLowerJaw from './independent-lower-jaw';
 
 import './side-panel.css';
 
