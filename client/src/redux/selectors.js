@@ -34,8 +34,11 @@ export const donatableSectionRecentlyCompletedSelector = state => {
   if (donatableSectionRecentlyCompletedState) {
     const { block, module, superBlock } =
       donatableSectionRecentlyCompletedState;
-    if (module) return { section: 'module', title: module, superBlock };
-    else if (block) return { section: 'block', title: block, superBlock };
+
+    if (superBlock !== 'daily-coding-challenge') {
+      if (module) return { section: 'module', title: module, superBlock };
+      else if (block) return { section: 'block', title: block, superBlock };
+    }
   }
 
   return null;
