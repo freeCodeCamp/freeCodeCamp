@@ -240,6 +240,64 @@ export type ChallengeNode = {
   };
 };
 
+export type PageContext = {
+  challengeMeta: ChallengeMeta;
+  projectPreview: {
+    challengeData: ChallengeData;
+  };
+};
+
+export type DailyCodingChallengeNode = {
+  challenge: {
+    date: string;
+    id: string;
+    challengeNumber: number;
+    title: string;
+    description: string;
+    instructions?: string;
+    superBlock: 'daily-coding-challenge';
+    block: 'daily-coding-challenge';
+    usesMultifileEditor: true;
+
+    helpCategory: 'JavaScript' | 'Python';
+    challengeType: 28 | 29;
+    fields: {
+      blockName: 'daily-coding-challenge';
+      tests: Test[];
+    };
+    challengeFiles: ChallengeFiles;
+
+    // props to satisfy the show classic component
+    demoType: null;
+    hooks?: { beforeAll: string };
+    hasEditableBoundaries?: false;
+    forumTopicId?: number;
+    notes: string;
+    videoUrl?: string;
+    translationPending: false;
+  };
+};
+
+export type DailyCodingChallengePageContext = {
+  challengeMeta: {
+    block: 'daily-coding-challenge';
+    id: string;
+    superBlock: 'daily-coding-challenge';
+    disableLoopProtectTests: boolean;
+
+    // props to satisfy the show classic component
+    isFirstStep: boolean;
+    nextChallengePath?: string;
+    prevChallengePath?: string;
+    disableLoopProtectPreview: boolean;
+  };
+
+  // props to satisfy the show classic component
+  projectPreview: {
+    challengeData?: null;
+  };
+};
+
 type Quiz = {
   questions: QuizQuestion[];
 };
@@ -399,6 +457,14 @@ export interface CompletedChallenge {
   examResults?: GeneratedExamResults;
 }
 
+export type DailyCodingChallengeLanguages = 'javascript' | 'python';
+
+export interface CompletedDailyCodingChallenge {
+  id: string;
+  completedDate: number;
+  completedLanguages: DailyCodingChallengeLanguages[];
+}
+
 export interface ChallengeData extends CompletedChallenge {
   challengeFiles: ChallengeFile[] | null;
 }
@@ -406,9 +472,8 @@ export interface ChallengeData extends CompletedChallenge {
 export type ChallengeMeta = {
   block: string;
   id: string;
-  introPath: string;
   isFirstStep: boolean;
-  superBlock: SuperBlocks;
+  superBlock: SuperBlocks | 'daily-coding-challenge';
   title?: string;
   challengeType?: number;
   blockType?: BlockTypes;
