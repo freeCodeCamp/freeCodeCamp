@@ -170,7 +170,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   }, []);
 
   const togglePane = (pane: string): void => {
-    console.log(`Toggling pane: ${pane}`);
     if (pane === 'showPreviewPane') {
       if (!showPreviewPane && showPreviewPortal) {
         setShowPreviewPortal(false);
