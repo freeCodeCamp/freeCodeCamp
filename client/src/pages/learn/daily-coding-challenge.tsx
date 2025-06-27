@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import store from 'store';
-import { useFeature } from '@growthbook/growthbook-react';
 import ShowClassic from '../../templates/Challenges/classic/show';
 import { Loader } from '../../components/helpers';
 import {
@@ -10,14 +9,15 @@ import {
 } from '../../redux/prop-types';
 import DailyCodingChallengeNotFound from '../../components/daily-coding-challenge/not-found';
 import FourOhFour from '../../components/FourOhFour';
-import envData from '../../../config/env.json';
+import {
+  dailyChallengeApiLocation,
+  showDailyCodingChallenges
+} from '../../../config/env.json';
 import { isValidDateParam } from '../../components/daily-coding-challenge/helpers';
 import {
   validateDailyCodingChallengeSchema,
   type ChallengeDataFromDb
 } from '../../utils/daily-coding-challenge-validator';
-
-const { dailyChallengeApiLocation } = envData;
 
 interface ChallengeData {
   data: {
@@ -166,8 +166,6 @@ function DailyCodingChallenge(): JSX.Element {
     useState<null | FormattedChallengeData>(null);
   const [dailyCodingChallengeLanguage, setDailyCodingChallengeLanguage] =
     useState<DailyCodingChallengeLanguages>(initLanguage);
-
-  const showDailyCodingChallenges = useFeature('daily-coding-challenges').on;
 
   const dateParam =
     new URLSearchParams(window.location.search).get('date') || '';
