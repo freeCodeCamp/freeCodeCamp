@@ -2190,6 +2190,12 @@
           "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
         ]
       },
+      "lecture-working-with-specialized-semantic-elements": {
+        "title": "Working with Specialized Semantic Elements",
+        "intro": [
+          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+        ]
+      },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
