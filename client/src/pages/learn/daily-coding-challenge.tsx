@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import store from 'store';
+import { useFeature } from '@growthbook/growthbook-react';
 import ShowClassic from '../../templates/Challenges/classic/show';
 import { Loader } from '../../components/helpers';
 import {
@@ -8,6 +9,7 @@ import {
   DailyCodingChallengePageContext
 } from '../../redux/prop-types';
 import DailyCodingChallengeNotFound from '../../components/daily-coding-challenge/not-found';
+import FourOhFour from '../../components/FourOhFour';
 import envData from '../../../config/env.json';
 import { isValidDateParam } from '../../components/daily-coding-challenge/helpers';
 import {
@@ -165,6 +167,8 @@ function DailyCodingChallenge(): JSX.Element {
   const [dailyCodingChallengeLanguage, setDailyCodingChallengeLanguage] =
     useState<DailyCodingChallengeLanguages>(initLanguage);
 
+  const showDailyCodingChallenges = useFeature('daily-coding-challenges').on;
+
   const dateParam =
     new URLSearchParams(window.location.search).get('date') || '';
 
@@ -213,6 +217,10 @@ function DailyCodingChallenge(): JSX.Element {
 
     void fetchChallenge(dateParam);
   }, [dateParam]);
+
+  if (!showDailyCodingChallenges) {
+    return <FourOhFour />;
+  }
 
   if (isLoading) return <Loader />;
 
