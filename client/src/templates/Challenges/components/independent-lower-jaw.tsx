@@ -46,7 +46,6 @@ export function IndependentLowerJaw({
   tests,
   isSignedIn
 }: IndependentLowerJawProps): JSX.Element {
-  console.log(isSignedIn, 'isSignedIn in IndependentLowerJaw');
   const { t } = useTranslation();
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
