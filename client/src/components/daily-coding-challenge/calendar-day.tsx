@@ -26,6 +26,7 @@ function DailyCodingChallengeCalendarDay({
     return (
       <div
         className='calendar-day not-available'
+        data-playwright-test-label='calendar-day'
         aria-label={`${date && formatDisplayDate(date)}, ('aria.not-available')`}
       >
         <span className='calendar-day-number' aria-hidden='true'>
@@ -39,6 +40,7 @@ function DailyCodingChallengeCalendarDay({
     <Link
       to={`/learn/daily-coding-challenge?date=${date}`}
       className='calendar-day available'
+      data-playwright-test-label='calendar-day'
       aria-label={`${date && formatDisplayDate(date)}`}
     >
       <span className='calendar-day-number' aria-hidden='true'>
@@ -46,11 +48,17 @@ function DailyCodingChallengeCalendarDay({
       </span>
 
       {isCompleted ? (
-        <span className='completed'>
+        <span
+          className='completed'
+          data-playwright-test-label='calendar-day-completed'
+        >
           <GreenPass />
         </span>
       ) : (
-        <span className='not-completed'>
+        <span
+          className='not-completed'
+          data-playwright-test-label='calendar-day-not-completed'
+        >
           <GreenNotCompleted />
         </span>
       )}

@@ -12281,6 +12281,13 @@ module.exports.fullyCertifiedUser = {
       id: '672d456f4ac35950b300e93f'
     }
   ],
+  completedDailyCodingChallenges: [
+    {
+      id: '6814d8e1516e86b171929de4',
+      completedDate: 1729240849345,
+      languages: ['javascript']
+    }
+  ],
   completedExams: [
     {
       id: '647e22d18acb466c97ccbef8',
