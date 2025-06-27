@@ -14,6 +14,7 @@ import CalendarDay from './calendar-day';
 import { getTodayUsCentral, formatDate } from './helpers';
 
 import './calendar.css';
+import DailyCodingChallengeNotFound from './not-found';
 
 const { dailyChallengeApiLocation } = envData;
 
@@ -229,7 +230,7 @@ function DailyCodingChallengeCalendar({
     : false;
 
   if (isLoading) return <Loader />;
-  if (error || !monthInfo) return <div>ERROR!</div>;
+  if (error || !monthInfo) return <DailyCodingChallengeNotFound />;
 
   return (
     <>
