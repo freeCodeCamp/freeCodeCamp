@@ -65,7 +65,8 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     'curriculumLocale',
     'deploymentEnv',
     'environment',
-    'showUpcomingChanges'
+    'showUpcomingChanges',
+    'showDailyCodingChallenges'
   ];
   const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
   const donationKeys = ['stripePublicKey', 'paypalClientId', 'patreonClientId'];

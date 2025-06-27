@@ -4,7 +4,6 @@ import React, { Fragment } from 'react';
 import { Spacer } from '@freecodecamp/ui';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
-import { useFeature } from '@growthbook/growthbook-react';
 
 import {
   type SuperBlocks,
@@ -15,7 +14,10 @@ import {
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink } from '../helpers';
-import { showUpcomingChanges } from '../../../config/env.json';
+import {
+  showUpcomingChanges,
+  showDailyCodingChallenges
+} from '../../../config/env.json';
 import DailyCodingChallengeWidget from '../daily-coding-challenge/widget';
 
 import './map.css';
@@ -91,8 +93,6 @@ function MapLi({
 
 function Map({ forLanding = false }: MapProps) {
   const { t } = useTranslation();
-
-  const showDailyCodingChallenges = useFeature('daily-coding-challenges').on;
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
