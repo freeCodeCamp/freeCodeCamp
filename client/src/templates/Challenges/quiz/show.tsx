@@ -188,6 +188,7 @@ const ShowQuiz = ({
     correctAnswerCount
   } = useQuiz({
     initialQuestions: initialQuizData,
+    showCorrectAnswersOnSuccess: true,
     validationMessages: {
       correct: t('learn.quiz.correct-answer'),
       incorrect: t('learn.quiz.incorrect-answer')
