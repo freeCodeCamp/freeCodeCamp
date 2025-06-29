@@ -3963,6 +3963,13 @@
           "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
         ]
       },
+      "lab-music-shopping-cart-page": {
+        "title": "Build a Music Shopping Cart Page",
+        "intro": [
+          "In this lab, you will build a music shopping cart page with Tailwind CSS.",
+          "You will practice working with Tailwind CSS utility classes for flexbox layouts, colors, breakpoints and more."
+        ]
+      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
