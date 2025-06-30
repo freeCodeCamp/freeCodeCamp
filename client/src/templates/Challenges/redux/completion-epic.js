@@ -286,6 +286,7 @@ export default function completionEpic(action$, state$) {
         pathToNavigateTo = blockHashSlug;
       }
 
+      // TODO: Navigate to the next daily challenge if it exists - archive if not.
       if (getIsDailyCodingChallenge(challengeType)) {
         pathToNavigateTo = '/learn/daily-coding-challenge/archive';
       }
