@@ -120,9 +120,11 @@ async function updateFullStackJson(
   block: string,
   position: number
 ) {
-  const fullStackData = JSON.parse(
-    '../curriculum/superblock-structure/full-stack.json'
-  ) as FullStackData;
+  const fullStackText = await fs.readFile(
+    '../../curriculum/superblock-structure/full-stack.json',
+    { encoding: 'utf-8' }
+  );
+  const fullStackData = JSON.parse(fullStackText) as FullStackData;
 
   const chapterExists =
     fullStackData['chapters'].findIndex(
@@ -164,9 +166,9 @@ async function updateFullStackJson(
       // Insert the new block into the already present module
     }
     // Write the new changes to the file
-    const newData = JSON.stringify(fullStackData);
+    const newData = JSON.stringify(fullStackData, null, 2);
     await fs.writeFile(
-      '../curriculum/superblock-structure/full-stack.json',
+      '../../curriculum/superblock-structure/full-stack.json',
       newData
     );
   }
@@ -392,7 +394,8 @@ void prompt([
   },
   {
     name: 'chapter',
-    message: 'What chapter should this full stack project go in?',
+    message:
+      'What chapter in full-stack.json should this full stack project go in?',
     filter: (chapter: string) => {
       return chapter.toLowerCase().trim();
     },
@@ -401,7 +404,8 @@ void prompt([
   },
   {
     name: 'module',
-    message: 'What module should this full stack project go in?',
+    message:
+      'What module in full-stack.json should this full stack project go in?',
     filter: (module: string) => {
       return module.toLowerCase().trim();
     },
@@ -410,7 +414,7 @@ void prompt([
   },
   {
     name: 'position',
-    message: 'Which position does this appear in the module?',
+    message: 'Which position in the module does this appear in the module?',
     default: 5,
     validate: (position: string) => {
       return parseInt(position, 10) > 0
