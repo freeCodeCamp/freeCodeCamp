@@ -1,9 +1,9 @@
 {
-  "name": "Working with Semantics for Text and Time",
+  "name": "Working with Text and Time Semantic Elements ",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
-  "dashedName": "lecture-working-with-semantics-for-text-and-time",
+  "dashedName": "lecture-working-with-text-and-time-semantic-elements",
   "superBlock": "full-stack-developer",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

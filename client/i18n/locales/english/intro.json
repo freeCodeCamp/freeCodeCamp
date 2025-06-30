@@ -2184,8 +2184,8 @@
           "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
         ]
       },
-      "lecture-working-with-semantics-for-text-and-time": {
-        "title": "Working with Semantics for Text and Time",
+      "lecture-working-with-text-and-time-semantic-elements": {
+        "title": "Working with Text and Time Semantic Elements ",
         "intro": [
           "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
         ]
