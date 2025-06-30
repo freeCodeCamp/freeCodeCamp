@@ -1,0 +1,29 @@
+{
+  "name": "Implement the Shortest Path Algorithm",
+  "blockLayout": "challenge-grid",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-shortest-path-algorithm",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "Python",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "challengeOrder": [
+    {
+      "id": "6853e58d52ec64349a5760ca",
+      "title": "Step 1"
+    },
+    {
+      "id": "686251fb49ebc489ba60ccb5",
+      "title": "Step 2"
+    },
+    {
+      "id": "686253f1b051998ad4904e3e",
+      "title": "Step 3"
+    },
+    {
+      "id": "68625ad34aa3f58d7f3b9b07",
+      "title": "Step 4"
+    }
+  ]
+}
