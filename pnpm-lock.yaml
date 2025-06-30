@@ -945,8 +945,8 @@ importers:
   tools/client-plugins/browser-scripts:
     dependencies:
       '@freecodecamp/curriculum-helpers':
-        specifier: ^4.4.0
-        version: 4.4.0(typescript@5.8.2)
+        specifier: ^4.5.1
+        version: 4.5.1(typescript@5.8.2)
       react:
         specifier: '16'
         version: 16.14.0
@@ -2914,8 +2914,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6
       react: '>=16.3'
 
-  '@freecodecamp/curriculum-helpers@4.4.0':
-    resolution: {integrity: sha512-TPjPj/Etm/YfFFDdRJUjYketDsbQ4fizrzUYuPpbL4CtAGIrz9gFEdNMpQmgiY4MG18aUAj7eCG05zUmFDdxIQ==}
+  '@freecodecamp/curriculum-helpers@4.5.1':
+    resolution: {integrity: sha512-yv8dzoosMkuedd81z7aJ43qN262F9GHOURtuw8p1Y0bu1zFeYSFch6ZJlxj473d6coFFCbs97xGt/jIY2buXSw==}
     engines: {pnpm: '>= 10'}
 
   '@freecodecamp/loop-protect@3.0.0':
@@ -17791,7 +17791,7 @@ snapshots:
       prop-types: 15.8.1
       react: 17.0.2
 
-  '@freecodecamp/curriculum-helpers@4.4.0(typescript@5.8.2)':
+  '@freecodecamp/curriculum-helpers@4.5.1(typescript@5.8.2)':
     dependencies:
       '@sinonjs/fake-timers': 14.0.0
       '@types/enzyme': 3.10.19
@@ -27516,7 +27516,7 @@ snapshots:
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   lowercase-keys@1.0.1: {}
 
@@ -28614,7 +28614,7 @@ snapshots:
 
   node-abi@3.47.0:
     dependencies:
-      semver: 7.6.0
+      semver: 7.7.2
 
   node-addon-api@4.3.0: {}
 
@@ -29694,7 +29694,7 @@ snapshots:
     dependencies:
       base-64: 1.0.0
       node-fetch: 2.7.0
-      ws: 8.18.0
+      ws: 8.18.2
     transitivePeerDependencies:
       - bufferutil
       - encoding
