@@ -548,3 +548,480 @@ Which of the following is the correct way to use the `minmax()` function?
 }
 ```
 
+## --quiz--
+
+### --question--
+
+#### --text--
+
+How do you position a grid item within a layout defined by `grid-template-areas`?
+
+#### --distractors--
+
+By directly defining the item's size and location within the grid using `grid-template-rows` and `grid-template-columns`.
+
+---
+
+By using the `grid-area` property and specifying both row and column start and end positions.
+
+---
+
+By setting both `grid-area` and explicit pixel coordinates.
+
+#### --answer--
+
+By assigning the named area to the item's `grid-area` property.
+
+### --question--
+
+#### --text--
+
+What does the `grid-auto-rows` property control?
+
+#### --distractors--
+
+The height of explicitly defined rows.
+
+---
+
+The maximum width of grid columns.
+
+---
+
+The spacing between rows.
+
+#### --answer--
+
+The size of implicitly created rows.
+
+### --question--
+
+#### --text--
+
+Which property would you use to make a grid item span multiple rows?
+
+#### --distractors--
+
+`grid-row-span`
+
+---
+
+`row-span`
+
+---
+
+`span-rows`
+
+#### --answer--
+
+`grid-row`
+
+### --question--
+
+#### --text--
+
+What defines an explicit grid?
+
+#### --distractors--
+
+Tracks created automatically to fit content.
+
+---
+
+Tracks defined by the `fr` unit.
+
+---
+
+Tracks added with `grid-auto-flow`.
+
+#### --answer--
+
+Tracks explicitly set by `grid-template-columns` or `grid-template-rows`.
+
+### --question--
+
+#### --text--
+
+Which value for `grid-auto-flow` would make new items fill columns first?
+
+#### --distractors--
+
+`row`
+
+---
+
+`vertical`
+
+---
+
+`row dense`
+
+#### --answer--
+
+`column`
+
+### --question--
+
+#### --text--
+
+What is the purpose of `grid-template-areas`?
+
+#### --distractors--
+
+To auto-generate implicit tracks.
+
+---
+
+To replace the `fr` unit.
+
+---
+
+To set `z-index` values.
+
+#### --answer--
+
+To visually map items to named grid areas.
+
+### --question--
+
+#### --text--
+
+How can you make a grid item start at column line 2 and end at column line 4?
+
+#### --distractors--
+
+`grid-column: 2 / span 2;`
+
+---
+
+`grid-column: start 2 / end 4;`
+
+---
+
+`grid-column: from 2 to 4;`
+
+#### --answer--
+
+`grid-column: 2 / 4;`
+
+### --question--
+
+#### --text--
+
+What is the effect of `grid-template-columns: 1fr 2fr 1fr`?
+
+#### --distractors--
+
+Creates three equal-width columns.
+
+---
+
+Makes the middle column three times as wide as the others.
+
+---
+
+Forces all columns to be exactly `1fr` wide.
+
+#### --answer--
+
+Creates three columns where the middle is twice as wide as the sides.
+
+### --question--
+
+#### --text--
+
+How would you create a grid with 3 equal columns and a `20px` gap between them?
+
+#### --distractors--
+
+```css
+.container {
+  display: grid;
+  grid-template: repeat(3, 1fr) / 20px;
+} 
+```
+
+---
+
+```css
+.container {
+  display: grid;
+  grid: 1fr 1fr 1fr / gap 20px;
+}
+```
+
+---
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 20px 1fr 1fr 1fr;
+}
+```
+
+#### --answer--
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+```
+
+### --question--
+
+#### --text--
+
+What does `repeat(3, minmax(100px, 1fr))` create?
+
+#### --distractors--
+
+Three columns that can't shrink below `100px`.
+
+---
+
+Three fixed `100px` columns.
+
+---
+
+Three rows with maximum height of `1fr`.
+
+#### --answer--
+
+Three columns that grow proportionally but won't shrink below `100px`.
+
+### --question--
+
+#### --text--
+
+Which statement about implicit grids is true?
+
+#### --distractors--
+
+Implicit grids ignore the `gap` property.
+
+---
+
+Implicit tracks must be defined with `grid-template-areas`.
+
+---
+
+Implicit tracks can only be created using the `grid-auto-flow` property.
+
+#### --answer--
+
+Implicit tracks are created when content doesn't fit explicit tracks.
+
+### --question--
+
+#### --text--
+
+What does the `place-items` property do in CSS Grid?
+
+#### --distractors--
+
+It sets the size of grid items automatically based on available space.
+
+---
+
+It controls the grid template's column and row definitions.
+
+---
+
+It adjusts the order of grid items within the container.
+
+#### --answer--
+
+It is a shorthand for aligning grid items in both the block and inline axes.
+
+### --question--
+
+#### --text--
+
+What does this CSS accomplish?
+
+```css
+.container {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+```
+
+#### --distractors--
+
+Creates fixed `150px` columns that overflow the container.
+
+---
+
+Creates columns that are exactly `1fr` wide regardless of content.
+
+---
+
+Creates a maximum of one column per `150px` of available width.
+
+#### --answer--
+
+Creates flexible columns that are at least `150px` and collapse when space is limited.
+
+### --question--
+
+#### --text--
+
+How can you create asymmetric grid layouts?
+
+#### --distractors--
+
+By using only `fr` units.
+
+---
+
+By mixing different length units in `grid-template-columns`.
+
+---
+
+By setting `grid-asymmetric: true`.
+
+#### --answer--
+
+By defining different sizes for each track.
+
+### --question--
+
+#### --text--
+
+What does `grid-column-start: 2` do to a grid item?
+
+#### --distractors--
+
+Makes it span 2 columns.
+
+---
+
+Offsets it by 2 pixels.
+
+---
+
+Positions it starting at the second vertical grid line.
+
+#### --answer--
+
+Makes it start at the second column line.
+
+### --question--
+
+#### --text--
+
+Which property would you use to control overflow behavior in grid tracks?
+
+#### --distractors--
+
+`grid-overflow`
+
+---
+
+`track-sizing`
+
+---
+
+`fit-content`
+
+#### --answer--
+
+`minmax()`
+
+### --question--
+
+#### --text--
+
+What will be the result for the following code?
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 100px 1fr 2fr;
+  grid-template-rows: auto 150px;
+  gap: 10px;
+}
+```
+
+#### --distractors--
+
+The container will have three columns of equal width, and two rows with `150px` height each.
+
+---
+
+The container will have three columns, all with `100px` width, and two rows with `150px` height.
+
+---
+
+The container will have two rows, each with a height of `1fr`.
+
+#### --answer--
+
+The container will have three columns: 100px, `1fr` and `2fr` wide and two rows: one auto and one with `150px` height.
+
+### --question--
+
+#### --text--
+
+How would you make a grid item span all available rows?
+
+#### --distractors--
+
+`grid-row: full;`
+
+---
+
+`grid-row: auto / -1;`
+
+---
+
+`grid-row: 1 / span infinite;`
+
+#### --answer--
+
+`grid-row: 1 / -1;`
+
+### --question--
+
+#### --text--
+
+Which property controls the alignment of grid items along the block axis?
+
+#### --distractors--
+
+`justify-items`
+
+---
+
+`place-items`
+
+---
+
+`align-content`
+
+#### --answer--
+
+`align-items`
+
+### --question--
+
+#### --text--
+
+How can you ensure a grid item stays in the first column regardless of grid changes?
+
+#### --distractors--
+
+`grid-column: fixed;`
+
+---
+
+`grid-column: first;`
+
+---
+
+`grid-lock: column;`
+
+#### --answer--
+
+`grid-column: 1;`

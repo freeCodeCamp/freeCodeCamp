@@ -8,7 +8,7 @@ dashedName: problem-116-red-green-or-blue-tiles
 
 # --description--
 
-A row of five black square tiles is to have a number of its tiles replaced with coloured oblong tiles chosen from red (length two), green (length three), or blue (length four).
+A row of five black square tiles is to have a number of its tiles replaced with colored oblong tiles chosen from red (length two), green (length three), or blue (length four).
 
 If red tiles are chosen there are exactly seven ways this can be done.
 

@@ -172,9 +172,7 @@ const ShowQuiz = ({
         question: (
           <PrismFormatted
             className='quiz-question-label'
-            text={removeParagraphTags(question.text)}
-            useSpan
-            noAria
+            text={question.text}
           />
         ),
         answers: shuffleArray([...distractors, answer]),
@@ -190,6 +188,7 @@ const ShowQuiz = ({
     correctAnswerCount
   } = useQuiz({
     initialQuestions: initialQuizData,
+    showCorrectAnswersOnSuccess: true,
     validationMessages: {
       correct: t('learn.quiz.correct-answer'),
       incorrect: t('learn.quiz.incorrect-answer')
