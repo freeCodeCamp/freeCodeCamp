@@ -9,6 +9,7 @@
     "edit": "编辑",
     "copy": "复制",
     "view": "查看",
+    "submit-continue": "Submit and continue",
     "view-code": "查看代码",
     "view-project": "查看项目",
     "view-cert-title": "查看 {{certTitle}}",
@@ -60,6 +61,8 @@
     "check-code": "检查你的代码",
     "check-code-ctrl": "检查你的代码（Ctrl + Enter）",
     "check-code-cmd": "检查你的代码（Command + Enter）",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "重置",
     "reset-step": "重置此步骤",
     "help": "帮助",
@@ -86,6 +89,7 @@
     "click-start-course": "开始课程",
     "click-start-project": "启动项目",
     "click-start-exam": "开始考试",
+    "go-to-course": "Go to course",
     "change-language": "修改语言",
     "resume-project": "继续项目",
     "start-project": "开始项目",
@@ -175,6 +179,7 @@
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "试试我们的测试版课程：",
     "upcoming-heading": "即将推出的课程：",
+    "catalog-heading": "Explore our Catalog:",
     "faq": "常见问题：",
     "faqs": [
       {
@@ -425,6 +430,7 @@
     "ms-link": "微软的链接",
     "submit-and-go": "提交并访问下一个挑战",
     "congratulations": "恭喜，你的代码已通过。请提交你的代码以继续。",
+    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
     "i-completed": "我已经完成这个挑战",
     "example-code": "示例代码",
     "test-output": "你的测试输出将在这里显示",
@@ -1244,6 +1250,16 @@
       "submit": "提交问卷",
       "exit": "退出调研",
       "two-questions": "恭喜你已经走到了这一步。在你开始考试之前，请回答这两个简短的调研问题。"
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "Explore our Catalog",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   }
 }
