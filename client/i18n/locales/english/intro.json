@@ -4249,8 +4249,11 @@
         ]
       },
       "workshop-binary-search": {
-        "title": "Build a Binary Search",
-        "intro": [""]
+        "title": "Implement the Binary Search Algorithm",
+        "intro": [
+          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
+          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
       },
       "lab-bisection-method": {
         "title": "Build a Bisection Method",
