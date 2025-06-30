@@ -880,7 +880,7 @@
       "learn-special-methods-by-building-a-vector-space": {
         "title": "Вивчіть спеціальні методи, створивши векторний простір",
         "intro": [
-          "Python special methods are called in response to specific operations and enable you to customize the behavior of your objects in a detailed and effective way.",
+          "Спеціальні методи в Python викликаються у відповідь на конкретні операції та дозволяють налаштувати поведінку об’єктів у деталізований й ефективний спосіб.",
           "У цьому проєкті ви дослідите деякі з найпоширеніших спеціальних методів, вивчаючи вектори через створення векторного простору."
         ]
       },
@@ -1282,7 +1282,7 @@
         ]
       },
       "top-build-a-rock-paper-scissors-game": {
-        "title": "Build a Rock Paper Scissors Game",
+        "title": "Створіть гру «Камінь-ножиці-папір»",
         "intro": [
           "Випробуйте свої навички по JavaScript, побудувавши гру «Камінь-ножиці-папір»."
         ]
@@ -1747,7 +1747,7 @@
       "relational-databases": "Реляційні бази даних",
       "backend-javascript": "Back End JavaScript",
       "python": "Python",
-      "career": "Career"
+      "career": "Кар’єра"
     },
     "modules": {
       "basic-html": "Основи HTML",
@@ -1773,7 +1773,7 @@
       "css-variables": "Змінні",
       "css-grid": "Сітка",
       "css-animations": "Анімації",
-      "review-css": "CSS Review",
+      "review-css": "Повторення CSS",
       "exam-css": "Екзамен «CSS»",
       "code-editors": "Редактори коду",
       "javascript-variables-and-strings": "Змінні та рядки",
@@ -1785,7 +1785,7 @@
       "review-javascript-fundamentals": "Повторення основ JavaScript",
       "higher-order-functions-and-callbacks": "Функції вищого порядку та зворотного виклику",
       "dom-manipulation-and-events": "Маніпуляція DOM та події Click в JavaScript",
-      "js-a11y": "JavaScript and Accessibility",
+      "js-a11y": "JavaScript та доступність",
       "debugging-javascript": "Налагодження",
       "basic-regex": "Основи регулярних виразів",
       "form-validation": "Валідація форм",
@@ -1797,7 +1797,7 @@
       "recursion": "Рекурсія",
       "functional-programming": "Функціональне програмування",
       "asynchronous-javascript": "Асинхронний JavaScript",
-      "review-javascript": "JavaScript Review",
+      "review-javascript": "Повторення JavaScript",
       "exam-javascript": "Екзамен «JavaScript»",
       "react-fundamentals": "Основи React",
       "react-state-hooks-and-routing": "Стани, хуки та маршрутизація в React",
@@ -1819,31 +1819,31 @@
       "python-dynamic-programming": "Динамічне програмування",
       "review-python": "Повторення Python",
       "exam-python": "Екзамен «Python»",
-      "bash-fundamentals": "Bash Fundamentals",
-      "relational-databases": "Relational Databases",
-      "bash-scripting": "Bash Scripting",
+      "bash-fundamentals": "Основи Bash",
+      "relational-databases": "Реляційні бази даних",
+      "bash-scripting": "Скрипти Bash",
       "sql-and-bash": "SQL та Bash",
       "git": "Git",
-      "introduction-to-nodejs": "Introduction to Node.js",
-      "nodejs-core-libraries": "Node.js Core Libraries",
+      "introduction-to-nodejs": "Вступ до Node.js",
+      "nodejs-core-libraries": "Основні бібліотеки Node.js",
       "node-package-manager": "Node Package Manager",
-      "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
-      "rest-api-and-web-services": "REST API and Web Services",
-      "introduction-to-express": "Introduction to Express",
-      "express-middleware": "Express Middleware",
-      "error-handling-in-express": "Error Handling in Express",
+      "http-and-the-web-standards-model": "HTTP та модель вебстандартів",
+      "rest-api-and-web-services": "REST API та вебсервіси",
+      "introduction-to-express": "Вступ до Express",
+      "express-middleware": "Проміжне програмне забезпечення Express",
+      "error-handling-in-express": "Обробка помилок в Express",
       "websockets": "WebSockets",
-      "node-and-sql": "Node and SQL",
+      "node-and-sql": "Node та SQL",
       "security-and-privacy": "Безпека та приватність",
-      "authentication": "Authentication",
-      "tooling-and-deployment": "Tooling and Deployment",
-      "how-to-get-a-developer-job": "How to Get a Developer Job",
-      "capstone-project": "Capstone Project",
-      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+      "authentication": "Автентифікація",
+      "tooling-and-deployment": "Інструменти та розгортання",
+      "how-to-get-a-developer-job": "Як знайти роботу розробнику",
+      "capstone-project": "Фінальний проєкт",
+      "certified-full-stack-developer-exam": "Екзамен «Сертифікований Full Stack розробник»"
     },
     "module-intros": {
       "js-a11y": {
-        "note": "Coming Fall 2025",
+        "note": "Очікуйте цієї осені",
         "intro": [
           "In this module, you will learn how to work with the aria-expanded, aria-live and aria-controls attributes inside of your HTML, CSS and JavaScript applications."
         ]
@@ -2043,7 +2043,7 @@
       "certified-full-stack-developer-exam": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "This will be a 90 question exam testing what you have learned throughout this certification."
+          "Екзамен містить 90 запитань, які перевірять ваші знання з вивченого матеріалу."
         ]
       }
     },
@@ -2070,23 +2070,23 @@
         ]
       },
       "lecture-understanding-html-attributes": {
-        "title": "Understanding HTML Attributes",
+        "title": "Знайомство з HTML-атрибутами",
         "intro": [
-          "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
-          "You will learn about HTML's role on the web, and what HTML attributes are."
+          "У цих відеолекціях ви детальніше ознайомитесь з HTML (мовою розмітки гіпертексту) — мовою розмітки для створення вебсторінок.",
+          "Ви дізнаєтесь, яку роль відіграє HTML у мережі, а також ознайомитесь з його атрибутами."
         ]
       },
       "lab-debug-pet-adoption-page": {
-        "title": "Debug a Pet Adoption Page",
+        "title": "Налагодьте сторінку притулку для тварин",
         "intro": [
-          "In this lab, you will need to find and fix the errors in this pet adoption page."
+          "У цій лабораторній роботі вам потрібно знайти і виправити помилки на сторінці притулку для тварин."
         ]
       },
       "lecture-understanding-the-html-boilerplate": {
-        "title": "Understanding the HTML Boilerplate",
+        "title": "Знайомство з шаблонним HTML-кодом",
         "intro": [
-          "In these lectures, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
-          "You will learn how to work with the <code>link</code> element, <code>meta</code> element and more."
+          "У цих відеолекціях ви дізнаєтесь про шаблонний код для HTML.",
+          "Ви навчитесь працювати з елементами <code>link</code>, <code>meta</code> та іншими."
         ]
       },
       "workshop-cat-photo-app": {
@@ -2115,21 +2115,21 @@
         ]
       },
       "lecture-working-with-audio-and-video-elements": {
-        "title": "Working with Audio and Video Elements",
+        "title": "Робота з елементами audio та video",
         "intro": [
-          "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+          "У цих відеолекціях ви дізнаєтесь, як працювати з елементами <code>audio</code> та <code>video</code>."
         ]
       },
       "lecture-working-with-images-and-svgs": {
-        "title": "Working with Images and SVGs",
+        "title": "Робота із зображеннями та SVG",
         "intro": [
-          "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
+          "У цих відеолекціях ви навчитесь працювати з SVG та дізнаєтесь про способи оптимізації зображень."
         ]
       },
       "lecture-working-with-media": {
-        "title": "Working with the iframe Element",
+        "title": "Робота з елементом iframe",
         "intro": [
-          "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
+          "У цих відеолекціях ви навчитесь працювати з елементом <code>iframe</code>, який використовують для додавання зовнішнього сайту на вебсторінку."
         ]
       },
       "lab-video-compilation-page": {
@@ -3095,9 +3095,9 @@
         ]
       },
       "lab-truncate-string": {
-        "title": "Implement the Truncate String Algorithm",
+        "title": "Імплементуйте алгоритм скорочення рядка",
         "intro": [
-          "In this lab, you will practice truncating a string at a certain length."
+          "У цій лабораторній роботі ви навчитесь скорочувати рядок до певної довжини."
         ]
       },
       "review-javascript-functions": {
@@ -3203,15 +3203,15 @@
         ]
       },
       "lab-mutations": {
-        "title": "Implement the Mutations Algorithm",
+        "title": "Імплементуйте алгоритм мутацій",
         "intro": [
-          "In this lab, you will practice iterating over two different strings to compare their characters."
+          "У цій лабораторній роботі ви навчитесь ітерувати над двома різними рядками і порівнювати їхні символи."
         ]
       },
       "lab-chunky-monkey": {
-        "title": "Implement the Chunky Monkey Algorithm",
+        "title": "Імплементуйте алгоритм мавпочки Чанкі",
         "intro": [
-          "In this lab, you will practice dividing an array into smaller arrays with the technique of your choice."
+          "У цій лабораторній роботі ви навчитесь ділити масив на менші частини, використовуючи метод на власний вибір."
         ]
       },
       "review-javascript-loops": {
@@ -3234,10 +3234,8 @@
         ]
       },
       "lab-slice-and-splice": {
-        "title": "Implement the Slice and Splice Algorithm",
-        "intro": [
-          "In this lab, you will practice merging an array with another."
-        ]
+        "title": "Імплементуйте алгоритм розрізання і з’єднання",
+        "intro": ["У цій лабораторній роботі ви навчитесь з’єднувати масиви."]
       },
       "lab-pyramid-generator": {
         "title": "Створіть генератор пірамід",
@@ -3279,9 +3277,9 @@
         ]
       },
       "lab-sum-all-numbers-algorithm": {
-        "title": "Design a Sum All Numbers Algorithm",
+        "title": "Імплементуйте алгоритм суми всіх чисел",
         "intro": [
-          "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
+          "У цій лабораторній роботі ви імплементуєте алгоритм суми всіх чисел. Цей алгоритм приймає два числа і повертає їхню суму, до якої також додається сума всіх чисел між ними."
         ]
       },
       "review-javascript-fundamentals": {
@@ -3368,7 +3366,7 @@
       "lab-lightbox-viewer": {
         "title": "Створіть переглядач Lightbox",
         "intro": [
-          "In this lab, you'll build a lightbox viewer for viewing images in a focused mode.",
+          "У цій лабораторній роботі ви створите переглядач lightbox для перегляду зображень у сфокусованому режимі.",
           "Ви будете практикуватись працювати з подіями натискання та перемиканням класів."
         ]
       },
@@ -3404,16 +3402,16 @@
         ]
       },
       "review-js-a11y": {
-        "title": "JavaScript and Accessibility Review",
+        "title": "Повторення JavaScript та доступності",
         "intro": [
-          "Before you're quizzed on JavaScript and accessibility, you should review what you've learned about it.",
-          "Open up this page to review concepts including how to work with the <code>aria-expanded</code>, <code>aria-live</code>, and <code>aria-controls</code> attributes."
+          "Перш ніж перейти до тесту «JavaScript та доступність», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з атрибутами <code>aria-expanded</code>, <code>aria-live</code> та <code>aria-controls</code>."
         ]
       },
       "quiz-js-a11y": {
-        "title": "JavaScript and Accessibility Quiz",
+        "title": "Тест «JavaScript та доступність»",
         "intro": [
-          "Test your knowledge of JavaScript and accessibility best practices with this quiz."
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «JavaScript та доступність»."
         ]
       },
       "lecture-debugging-techniques": {
@@ -3830,9 +3828,9 @@
         ]
       },
       "workshop-toggle-text-app": {
-        "title": "Toggle Text App",
+        "title": "Перемикач тексту",
         "intro": [
-          "In this workshop, you will continue to learn about the <code>useState()</code> hook by building an application that hides and shows a piece of text on the screen."
+          "У цьому практичному занятті ви продовжите знайомство з хуком <code>useState()</code>, створивши застосунок, який ховає і відтворює частину тексту на екрані."
         ]
       },
       "lab-color-picker": {
@@ -3849,9 +3847,9 @@
         ]
       },
       "workshop-fruit-search-app": {
-        "title": "Build a Fruit Search App",
+        "title": "Створіть застосунок із пошуку фруктів",
         "intro": [
-          "In this workshop, you will continue to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
+          "У цьому практичному занятті ви продовжите знайомство з хуком <code>useEffect()</code>, створивши застосунок, який отримує дані з API на основі введених даних і динамічно показує результат."
         ]
       },
       "vjgg": {
@@ -3878,9 +3876,9 @@
         ]
       },
       "workshop-superhero-application-form": {
-        "title": "Build a Superhero Application Form",
+        "title": "Створіть анкету супергероя",
         "intro": [
-          "In this workshop, you will build a superhero application form."
+          "У цьому практичному занятті ви створите анкету для супергероїв."
         ]
       },
       "lab-event-rsvp": {
@@ -3897,9 +3895,9 @@
         ]
       },
       "workshop-shopping-list-app": {
-        "title": "Build a Shopping List App",
+        "title": "Створіть список покупок",
         "intro": [
-          "In this workshop, you'll use the <code>useMemo()</code> and <code>useCallback()</code> hooks in React to build a simple shopping list app. You'll learn more about state and the lifecycle of React components, and how to use memoization to reduce re-renders and make your apps more efficient."
+          "У цьому практичному занятті ви будете використовувати хуки <code>useMemo()</code> та <code>useCallback()</code> в React, щоб створити простий застосунок зі списком покупок. Ви дізнаєтесь про стани та життєвий цикл компонентів React, а також як застосовувати мемоізацію для зниження ререндерингу і покращення ефективності застосунків."
         ]
       },
       "lab-currency-converter": {
@@ -4046,13 +4044,13 @@
       "lecture-introduction-to-python": {
         "title": "Вступ до Python",
         "intro": [
-          "In these lecture videos, you will learn the fundamentals of Python. You'll learn about variables, data types, operators, control flow, functions, and more."
+          "У цих відеолекціях ви ознайомитесь з основами Python. Ви дізнаєтесь про змінні, типи даних, оператори, потік керування, функції і багато іншого."
         ]
       },
       "workshop-caesar-cipher": {
         "title": "Створіть шифр Цезаря",
         "intro": [
-          "In this workshop, you'll build a Caesar cipher using basic Python concepts such as strings, conditionals, functions, and more."
+          "У цьому практичному занятті ви створите шифр Цезаря, застосовуючи основні поняття з Python (серед яких рядки, умовні інструкції, функції тощо)."
         ]
       },
       "lab-rpg-character": {
@@ -4065,7 +4063,7 @@
         "title": "Повторення основ Python",
         "intro": [
           "Перш ніж перейти до тесту «Основи Python», повторіть основні поняття.",
-          "In this review page, you will review working with strings, functions, comparison operators and more."
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з рядками, функціями, операторами порівняння тощо."
         ]
       },
       "quiz-python-basics": {
@@ -4075,7 +4073,7 @@
       "lecture-working-with-loops-and-sequences": {
         "title": "Робота з циклами та послідовностями",
         "intro": [
-          "Learn about Working with Loops and Sequences in these lectures."
+          "У цих відеолекціях ви дізнаєтесь про цикли та послідовності."
         ]
       },
       "workshop-placeholder-loops-and-sequences": {
@@ -4101,13 +4099,11 @@
       },
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Робота зі словниками та наборами",
-        "intro": [
-          "Learn about Working with Dictionaries and Sets in these lectures."
-        ]
+        "intro": ["У цих відеолекціях ви дізнаєтесь про словники та набори."]
       },
       "lecture-working-with-modules": {
         "title": "Робота з модулями",
-        "intro": ["Learn about Working with Modules in these lectures."]
+        "intro": ["У цих відеолекціях ви дізнаєтесь про модулі."]
       },
       "workshop-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
@@ -4130,7 +4126,7 @@
       },
       "lecture-understanding-error-handling": {
         "title": "Знайомство з обробкою помилок",
-        "intro": ["Learn about Understanding Error Handling in these lectures."]
+        "intro": ["У цих відеолекціях ви дізнаєтесь про обробку помилок."]
       },
       "lab-isbn-validator": {
         "title": "Налагодьте валідатор ISBN",
@@ -4149,7 +4145,7 @@
       },
       "lecture-classes-and-objects": {
         "title": "Класи та об’єкти",
-        "intro": ["Learn about Classes and Objects in these lectures."]
+        "intro": ["У цих відеолекціях ви дізнаєтесь про класи та об’єкти."]
       },
       "workshop-placeholder-classes-and-objects": {
         "title": "Placeholder - waiting for title",
@@ -4175,7 +4171,7 @@
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Знайомство з об’єктноорієнтованим програмуванням та інкапсуляцією",
         "intro": [
-          "Learn about Understanding Object Oriented Programming and Encapsulation in these lectures."
+          "У цих відеолекціях ви дізнаєтесь про об’єктноорієнтоване програмування та інкапсуляцію."
         ]
       },
       "workshop-placeholder-oop-1": {
@@ -4187,9 +4183,9 @@
         "intro": [""]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
-        "title": "Understanding Inheritance and Polymorphism",
+        "title": "Знайомство з успадкуванням та поліморфізмом",
         "intro": [
-          "Learn about Understanding Inheritance and Polymorphism in these lectures."
+          "У цих відеолекціях ви дізнаєтесь про успадкування та поліморфізм."
         ]
       },
       "workshop-placeholder-oop-2": {
@@ -4203,8 +4199,8 @@
         ]
       },
       "lecture-understanding-abstraction": {
-        "title": "Understanding Abstraction",
-        "intro": ["Learn about Understanding Abstraction in these lectures."]
+        "title": "Знайомство з абстракцією",
+        "intro": ["У цих відеолекціях ви дізнаєтесь про абстракцію."]
       },
       "workshop-placeholder-oop-3": {
         "title": "Placeholder - Waiting for title",
@@ -4228,9 +4224,9 @@
         ]
       },
       "lecture-working-with-common-data-structures": {
-        "title": "Working with Common Data Structures",
+        "title": "Робота з поширеними структурами даних",
         "intro": [
-          "Learn about Working with Common Data Structures in these lectures."
+          "У цих відеолекціях ви дізнаєтесь про поширені структури даних."
         ]
       },
       "workshop-linked-list-class": {
@@ -4258,7 +4254,7 @@
       "lecture-searching-and-sorting-algorithms": {
         "title": "Алгоритми пошуку та сортування",
         "intro": [
-          "Learn about Searching and Sorting Algorithms in these lectures."
+          "У цих відеолекціях ви дізнаєтесь про алгоритми пошуку та сортування."
         ]
       },
       "workshop-binary-search": {
@@ -4270,27 +4266,29 @@
         "intro": [""]
       },
       "workshop-merge-sort": {
-        "title": "Implement the Merge Sort Algorithm",
+        "title": "Імплементуйте алгоритм сортування злиттям",
         "intro": [
-          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
-          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
+          "Алгоритм сортування злиттям — це алгоритм сортування, заснований на принципі «розділяй і володарюй».",
+          "У цьому практичному занятті ви імплементуєте алгоритм сортування злиттям, щоб відсортувати список випадкових чисел."
         ]
       },
       "lab-quicksort": {
-        "title": "Implement the Quicksort Algorithm",
+        "title": "Імплементуйте алгоритм швидкого сортування",
         "intro": [
-          "In this lab you will implement the quicksort algorithm to sort a list of integers."
+          "У цій лабораторній роботі ви імплементуєте алгоритм швидкого сортування, щоб відсортувати список цілих чисел."
         ]
       },
       "lab-selection-sort": {
-        "title": "Implement the Selection Sort Algorithm",
+        "title": "Імплементуйте алгоритм сортування вибором",
         "intro": [
-          "In this lab you will implement the selection sort algorithm."
+          "У цій лабораторній роботі ви імплементуєте алгоритм сортування вибором."
         ]
       },
-      "lab-luhn-argorithm": {
-        "title": "Створіть алгоритм Луна",
-        "intro": [""]
+      "lab-luhn-algorithm": {
+        "title": "Імплементуйте алгоритм Луна",
+        "intro": [
+          "У цій лабораторній роботі ви імплементуєте алгоритм Луна, щоб підтвердити ідентифікаційні номери (наприклад, номер кредитної картки)."
+        ]
       },
       "review-searching-and-sorting-algorithms": {
         "title": "Повторення алгоритмів пошуку та сортування",
@@ -4307,9 +4305,7 @@
       },
       "lecture-understanding-graphs-and-trees": {
         "title": "Знайомство з графами та деревами",
-        "intro": [
-          "Learn about Understanding Graphs and Trees in these lectures."
-        ]
+        "intro": ["У цих відеолекціях ви дізнаєтесь про графи та дерева."]
       },
       "workshop-shortest-path-algorithm": {
         "title": "Створіть алгоритм найкоротшого шляху",
@@ -4341,7 +4337,7 @@
       "lecture-understanding-dynamic-programming": {
         "title": "Знайомство з динамічним програмуванням",
         "intro": [
-          "Learn about Understanding Dynamic Programming in these lectures."
+          "У цих відеолекціях ви дізнаєтесь про динамічне програмування."
         ]
       },
       "lab-nth-fibonacci-number": {
@@ -4563,20 +4559,63 @@
     }
   },
   "a2-professional-chinese": {
-    "title": "A2 Professional Chinese Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "title": "Сертифікація «Китайська мова A2 для роботи» (бета)",
+    "note": "Сертифікація знаходиться в стані активної розробки. Наразі для цього розділу немає сертифіката, але він буде доступний найближчим часом. Тим часом ви можете дослідити курси, які ми вже створили.",
     "intro": ["Placeholder intro"],
     "blocks": {
       "talk-about-what-you-do-by-using-key-verbs": {
-        "title": "Talk About What You Do by Using Key Verbs",
+        "title": "Говоріть про себе за допомогою ключових дієслів",
         "intro": [
-          "Learn how to introduce yourself in Chinese in a simple and professional way. In this module you'll learn how to say who you are, where you are from, what you do, how you feel, and what you like or don't like."
+          "Дізнайтесь, як просто і професійно представити себе китайською мовою. У цьому модулі ви навчитесь розповідати про себе, звідки ви, чим займаєтесь, як почуваєтесь і що вам подобається чи не подобається."
         ]
       },
       "get-to-know-colleagues-by-asking-simple-questions": {
-        "title": "Get to Know Colleagues by Asking Simple Questions",
+        "title": "Дізнавайтесь інших, ставлячи прості запитання",
         "intro": [
-          "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
+          "Дізнайтесь, як ставити запитання і відповідати на них. У цих п’яти коротких діалогах ви будете говорити про рутину, почуття, уподобання, роботу і особисту інформацію. Ви також навчитесь ставити ввічливі запитання, давати коротку відповідь та використовувати заперечення."
+        ]
+      }
+    }
+  },
+  "basic-html": {
+    "title": "Основи HTML",
+    "summary": [
+      "Навчіться створювати прості вебсторінки з текстом, зображеннями і посиланнями, доданими за допомогою HTML-тегів."
+    ],
+    "intro": ["Larger intro for the superblock page."],
+    "blocks": {
+      "cat-photo-app": {
+        "title": "Створіть застосунок із фото котів",
+        "intro": [
+          "HTML-теги надають вебсторінці структуру. Їх можна використовувати, щоб додати фотографії, кнопки та інші елементи до вебсторінки.",
+          "Тут ви дізнаєтесь про найпоширеніші HTML-теги, створивши власний застосунок з фотографіями котів."
+        ]
+      },
+      "recipe-page": {
+        "title": "Створіть сторінку з рецептом",
+        "intro": [
+          "У цій лабораторній роботі ви пригадаєте основи HTML, створивши вебсторінку з улюбленим рецептом. Ви створите шаблонний код і будете працювати із заголовками, списками, зображеннями тощо."
+        ]
+      }
+    }
+  },
+  "semantic-html": {
+    "title": "Семантичний HTML",
+    "summary": [
+      "Дізнайтесь, як писати чистіший і змістовніший HTML завдяки семантичним тегам, які покращують структуру, доступність та SEO."
+    ],
+    "intro": ["Larger intro for the superblock page."],
+    "blocks": {
+      "cat-blog-page": {
+        "title": "Створіть сторінку блогу про котів",
+        "intro": [
+          "У цьому практичному занятті ви створите сторінку блогу лише на HTML, використовуючи семантичні елементи, серед яких <code>main</code>, <code>nav</code>, <code>article</code> та <code>footer</code>."
+        ]
+      },
+      "event-hub": {
+        "title": "Створіть хаб для подій",
+        "intro": [
+          "У цій лабораторній роботі ви створите хаб для подій і пригадаєте різні семантичні елементи, серед яких <code>header</code>, <code>nav</code> та <code>article</code>."
         ]
       }
     }

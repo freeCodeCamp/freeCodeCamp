@@ -9,6 +9,7 @@
     "edit": "Bearbeiten",
     "copy": "Copy",
     "view": "Anzeigen",
+    "submit-continue": "Submit and continue",
     "view-code": "Code anschauen",
     "view-project": "Projekt anschauen",
     "view-cert-title": "View {{certTitle}}",
@@ -60,6 +61,8 @@
     "check-code": "Check Your Code",
     "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
     "check-code-cmd": "Check Your Code (Command + Enter)",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "Zurücksetzen",
     "reset-step": "Reset This Step",
     "help": "Hilfe",
@@ -86,6 +89,7 @@
     "click-start-course": "Start den Kurs",
     "click-start-project": "Starte das Projekt",
     "click-start-exam": "Start the exam",
+    "go-to-course": "Go to course",
     "change-language": "Sprache wechseln",
     "resume-project": "Projekt fortsetzen",
     "start-project": "Projekt starten",
@@ -175,6 +179,7 @@
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
+    "catalog-heading": "Explore our Catalog:",
     "faq": "Frequently asked questions:",
     "faqs": [
       {
@@ -419,11 +424,13 @@
     "answered-mcq": "You have unanswered questions and/or incorrect answers.",
     "explanation": "Explanation",
     "transcript": "Transcript",
+    "video": "Video",
     "solution-link": "Lösungs-Link",
     "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
     "submit-and-go": "Absenden und zur nächsten Herausforderung gehen",
     "congratulations": "Glückwunsch, dein Code hat bestanden. Sende deinen Code ein, um fortzufahren.",
+    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
     "i-completed": "Ich habe diese Herausforderung abgeschlossen",
     "example-code": "Example Code",
     "test-output": "Deine Testergebnisse werden hier erscheinen",
@@ -858,6 +865,10 @@
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
     "edit-my-profile": "Edit my profile",
+    "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
+    "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
+    "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
+    "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output"
   },
   "flash": {
@@ -1239,6 +1250,16 @@
       "submit": "Submit the survey",
       "exit": "Exit the survey",
       "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "Explore our Catalog",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   }
 }
