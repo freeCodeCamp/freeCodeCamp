@@ -186,7 +186,7 @@ async function updateIntroJson(
   const newIntro = await parseJson<IntroJson>(introJsonPath);
   newIntro[superBlock].blocks[block] = {
     title,
-    intro: ['', '']
+    intro: [title, '']
   };
   void withTrace(
     fs.writeFile,
@@ -367,8 +367,8 @@ void prompt([
     default: BlockTypes.lab,
     type: 'list',
     choices: Object.values(BlockTypes),
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper
+    when: (answers: CreateProjectArgs) =>
+      answers.superBlock === SuperBlocks.FullStackDeveloper
   },
   {
     name: 'blockLayout',
@@ -380,8 +380,8 @@ void prompt([
         : BlockLayouts.ChallengeList,
     type: 'list',
     choices: Object.values(BlockLayouts),
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper
+    when: (answers: CreateProjectArgs) =>
+      answers.superBlock === SuperBlocks.FullStackDeveloper
   },
   {
     name: 'questionCount',
@@ -389,8 +389,7 @@ void prompt([
     default: 20,
     type: 'list',
     choices: [10, 20],
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    when: answers => answers.blockType === BlockTypes.quiz
+    when: (answers: CreateProjectArgs) => answers.blockType === BlockTypes.quiz
   },
   {
     name: 'chapter',
@@ -399,8 +398,8 @@ void prompt([
     default: 'html',
     type: 'list',
     choices: fullStackJson.chapters.map(x => x.dashedName),
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper
+    when: (answers: CreateProjectArgs) =>
+      answers.superBlock === SuperBlocks.FullStackDeveloper
   },
   {
     name: 'module',
@@ -408,13 +407,12 @@ void prompt([
       'What module in full-stack.json should this full stack project go in?',
     default: 'html',
     type: 'list',
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    choices: answers =>
+    choices: (answers: { chapter: string; superBlock: SuperBlocks }) =>
       fullStackJson.chapters
         .find(x => x.dashedName === answers.chapter)
         ?.modules.map(x => x.dashedName),
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper
+    when: (answers: CreateProjectArgs) =>
+      answers.superBlock === SuperBlocks.FullStackDeveloper
   },
   {
     name: 'position',
@@ -425,8 +423,8 @@ void prompt([
         ? true
         : 'Position must be an number greater than zero.';
     },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper,
+    when: (answers: CreateProjectArgs) =>
+      answers.superBlock === SuperBlocks.FullStackDeveloper,
     filter: (position: string) => {
       return parseInt(position, 10);
     }
@@ -440,8 +438,8 @@ void prompt([
         ? true
         : 'Order must be an number greater than zero.';
     },
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    when: answers => answers.superBlock !== SuperBlocks.FullStackDeveloper,
+    when: (answers: CreateProjectArgs) =>
+      answers.superBlock !== SuperBlocks.FullStackDeveloper,
     filter: (order: string) => {
       return parseInt(order, 10);
     }
