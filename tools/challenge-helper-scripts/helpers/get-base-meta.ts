@@ -19,14 +19,18 @@ const stepMeta = {
   hasEditableBoundaries: true
 };
 
+// Manually extract order from the list of properties for full stack projects
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const { order, ...orderLessStep } = stepMeta;
+
 const fullStackStepMeta = {
-  ...stepMeta,
+  ...orderLessStep,
   blockType: '',
   blockLayout: ''
 };
 
 const quizMeta = {
-  ...baseMeta,
+  ...orderLessStep,
   blockType: 'quiz',
   blockLayout: 'link'
 };
