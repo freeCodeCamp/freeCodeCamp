@@ -407,7 +407,7 @@ void prompt([
       'What module in full-stack.json should this full stack project go in?',
     default: 'html',
     type: 'list',
-    choices: (answers: { chapter: string; superBlock: SuperBlocks }) =>
+    choices: (answers: CreateProjectArgs) =>
       fullStackJson.chapters
         .find(x => x.dashedName === answers.chapter)
         ?.modules.map(x => x.dashedName),
