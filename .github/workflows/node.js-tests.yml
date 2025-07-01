@@ -5,13 +5,29 @@ on:
     branches:
       - 'main'
       - 'prod-**'
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.gitignore'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/PULL_REQUEST_TEMPLATE.md'
+      - 'LICENSE*'
+      - 'docker/**'
   pull_request:
     branches:
       - 'main'
       - 'temp-**' # Temporary branches allowed on Upstream
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.gitignore'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/PULL_REQUEST_TEMPLATE.md'
+      - 'LICENSE*'
+      - 'docker/**'
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: ${{ !contains(github.ref, 'main') && !contains(github.ref, 'prod-') }}
 
 permissions:
@@ -24,7 +40,7 @@ jobs:
     strategy:
       matrix:
         node-version: [22]
-      fail-fast: false
+      fail-fast: true
 
     steps:
       - name: Checkout
@@ -51,10 +67,16 @@ jobs:
         with:
           run_install: false
 
+      - name: Setup pnpm cache
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Set Environment variables
-        run: |
-          cp sample.env .env
-          cat .env
+        run: cp sample.env .env
 
       - name: Install node_modules
         run: pnpm install
@@ -99,6 +121,14 @@ jobs:
         with:
           run_install: false
 
+      - name: Setup pnpm cache
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Set freeCodeCamp Environment Variables
         run: |
           cp sample.env .env
@@ -107,6 +137,18 @@ jobs:
         run: |
           pnpm install
           pnpm run build
+
+      - name: Cache build artifacts
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        with:
+          path: |
+            client/public
+            api/dist
+            shared/dist
+            curriculum/challenges
+          key: ${{ runner.os }}-build-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-build-
 
   test:
     name: Test
@@ -135,6 +177,26 @@ jobs:
         with:
           run_install: false
 
+      - name: Setup pnpm cache
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Restore build artifacts
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        with:
+          path: |
+            client/public
+            api/dist
+            shared/dist
+            curriculum/challenges
+          key: ${{ runner.os }}-build-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+
       - name: Set Environment variables
         run: |
           cp sample.env .env
@@ -152,7 +214,17 @@ jobs:
           echo pnpm version $(pnpm -v)
           pnpm install
 
+      - name: Cache Chrome for Puppeteer
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        id: chrome-cache
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-chrome-${{ hashFiles('curriculum/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-chrome-
+
       - name: Install Chrome for Puppeteer
+        if: steps.chrome-cache.outputs.cache-hit != 'true'
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
@@ -185,6 +257,26 @@ jobs:
         with:
           run_install: false
 
+      - name: Setup pnpm cache
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Restore build artifacts
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        with:
+          path: |
+            client/public
+            api/dist
+            shared/dist
+            curriculum/challenges
+          key: ${{ runner.os }}-build-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+
       - name: Set Environment variables
         run: |
           cp sample.env .env
@@ -203,7 +295,17 @@ jobs:
           echo pnpm version $(pnpm -v)
           pnpm install
 
+      - name: Cache Chrome for Puppeteer
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        id: chrome-cache
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-chrome-${{ hashFiles('curriculum/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-chrome-
+
       - name: Install Chrome for Puppeteer
+        if: steps.chrome-cache.outputs.cache-hit != 'true'
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
@@ -237,6 +339,14 @@ jobs:
         with:
           run_install: false
 
+      - name: Setup pnpm cache
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Set Environment variables
         run: |
           cp sample.env .env
@@ -266,7 +376,17 @@ jobs:
         run: |
           pnpm run build
 
+      - name: Cache Chrome for Puppeteer
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        id: chrome-cache
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-chrome-${{ hashFiles('curriculum/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-chrome-
+
       - name: Install Chrome for Puppeteer
+        if: steps.chrome-cache.outputs.cache-hit != 'true'
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
