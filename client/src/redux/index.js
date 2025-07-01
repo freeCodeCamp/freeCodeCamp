@@ -330,6 +330,7 @@ export const reducer = handleActions(
     [actionTypes.submitComplete]: (state, { payload }) => {
       const {
         examResults = null,
+        completedDailyCodingChallenges = [],
         submittedChallenge,
         savedChallenges
       } = payload;
@@ -340,6 +341,8 @@ export const reducer = handleActions(
       const { appUsername } = state;
 
       // if daily coding challenge, only update completedDailyCodingChallenges
+      // Uses the whole completedDailyCodingChallenges array from the API response
+      // Todo: update with submittedChallenge instead
       if (getIsDailyCodingChallenge(submittedChallenge.challengeType)) {
         return {
           ...state,
@@ -347,13 +350,7 @@ export const reducer = handleActions(
             ...state.user,
             [appUsername]: {
               ...state.user[appUsername],
-              completedDailyCodingChallenges: uniqBy(
-                [
-                  ...submittedchallenges,
-                  ...state.user[appUsername].completedDailyCodingChallenges
-                ],
-                'id'
-              )
+              completedDailyCodingChallenges
             }
           }
         };
