@@ -4515,6 +4515,12 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "workshop-tailwind-pricing-component": {
+        "title": "Build a Tailwind Pricing Component",
+        "intro": [
+          "In this workshop, you will build pricing component using Tailwind CSS."
+        ]
       }
     }
   },
