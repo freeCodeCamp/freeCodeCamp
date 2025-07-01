@@ -107,7 +107,7 @@ function Map({ forLanding = false }: MapProps) {
         return (
           <Fragment key={stage}>
             {
-              /*Show the daily coding challenge before the "extra" curriculum */
+              /* Show the daily coding challenge before the "extra" curriculum */
               showDailyCodingChallenges && stage === SuperBlockStage.Extra && (
                 <>
                   <DailyCodingChallengeWidget forLanding={forLanding} />
