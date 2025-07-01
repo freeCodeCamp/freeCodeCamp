@@ -5,6 +5,17 @@ import { HOST, PORT } from './utils/env';
 
 const start = async () => {
   const fastify = await build(buildOptions);
+
+  const stop = async (signal: NodeJS.Signals) => {
+    console.log(`Received ${signal}, shutting down...`);
+    await fastify.close();
+    console.log('...shutdown complete');
+    process.exit(0);
+  };
+
+  process.on('SIGINT', signal => void stop(signal));
+  process.on('SIGTERM', signal => void stop(signal));
+
   try {
     const port = Number(PORT);
     fastify.log.info(`Starting server on port ${port}`);
