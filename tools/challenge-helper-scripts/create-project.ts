@@ -4,7 +4,7 @@ import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
-
+import * as fullStackJson from '../../curriculum/superblock-structure/full-stack.json';
 import {
   SuperBlocks,
   superBlockToFolderMap
@@ -396,9 +396,9 @@ void prompt([
     name: 'chapter',
     message:
       'What chapter in full-stack.json should this full stack project go in?',
-    filter: (chapter: string) => {
-      return chapter.toLowerCase().trim();
-    },
+    default: 'html',
+    type: 'list',
+    choices: fullStackJson.chapters.map(x => x.dashedName),
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper
   },
@@ -406,9 +406,13 @@ void prompt([
     name: 'module',
     message:
       'What module in full-stack.json should this full stack project go in?',
-    filter: (module: string) => {
-      return module.toLowerCase().trim();
-    },
+    default: 'html',
+    type: 'list',
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    choices: answers =>
+      fullStackJson.chapters
+        .find(x => x.dashedName === answers.chapter)
+        ?.modules.map(x => x.dashedName),
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     when: answers => answers.superBlock === SuperBlocks.FullStackDeveloper
   },
