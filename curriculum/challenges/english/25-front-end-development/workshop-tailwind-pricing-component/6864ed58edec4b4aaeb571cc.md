@@ -1,15 +1,15 @@
 ---
-id: 686386e76197458b7dfd52f9
-title: Step 16
+id: 6864ed58edec4b4aaeb571cc
+title: Step 26
 challengeType: 0
-dashedName: step-16
+dashedName: step-26
 ---
 
 # --description--
 
-Time ti give the HTML elements a pricey look.
+Moving to the inner `div` in the **Listener plan**, give it the classes `grid`, `grid-rows-[auto_auto_auto_1fr]`, and `gap-y-2`.
 
-Begin by giving the whole page a slightly grey background by giving the `body` tag a `bg-gray-100` class.
+These classes will make the inner `div` a grid container, define four rows that stack on top of each other, with the first three set to auto and the last taking up the remaining spaces, and finally add a spacing of `0.5rem` between the rows.
 
 # --hints--
 
@@ -32,13 +32,12 @@ Test 1
     <title>Music App Pricing</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  --fcc-editable-region--
-  <body>
-  --fcc-editable-region--
+  <body class="bg-gray-100">
     <main>
-      <h1>Choose your listening plan</h1>
-      <div>
-        <div>
+      <h1 class="mt-8 and mb-12 text-center text-3xl md:text-5xl font-semibold text-gray-900">Choose your listening plan</h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 max-w-6xl mx-auto gap-8 mt-16">
+        <div class="bg-gray-100 ring-1 ring-gray-300 grid grid-rows-[1fr_auto] rounded-xl p-8 gap-6">
+--fcc-editable-region--
           <div>
             <h2>Listener</h2>
             <p>$0<span>/month</span></p>
@@ -50,6 +49,7 @@ Test 1
               <li><span>&#10003;</span>Curated playlists</li>
             </ul>
           </div>
+--fcc-editable-region--
           <a>Start listening</a>
         </div>
         <div>
