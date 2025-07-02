@@ -541,7 +541,7 @@ function ShowClassic({
         <VideoModal videoUrl={videoUrl} />
         <ResetModal challengeType={challengeType} challengeTitle={title} />
         <ProjectPreviewModal
-          challengeData={demo?.challengeData}
+          challengeData={demo ? demo.challengeData : null}
           closeText={t('buttons.start-coding')}
           previewTitle={
             demoType === 'onClick'

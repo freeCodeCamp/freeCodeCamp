@@ -15,14 +15,14 @@ import Preview from './preview';
 import './project-preview-modal.css';
 
 interface ProjectPreviewMountedPayload {
-  challengeData?: ChallengeData;
+  challengeData: ChallengeData | null;
 }
 
 interface Props {
   closeModal: (arg: string) => void;
   isOpen: boolean;
   projectPreviewMounted: (payload: ProjectPreviewMountedPayload) => void;
-  challengeData?: ChallengeData;
+  challengeData: ChallengeData | null;
   setEditorFocusability: (focusability: boolean) => void;
   previewTitle: string;
   closeText: string;
