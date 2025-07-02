@@ -230,7 +230,7 @@ const schema = Joi.object()
       is: [challengeTypes.exam],
       then: Joi.array().items(prerequisitesJoi)
     }),
-    projectPreview: Joi.object().keys({
+    demo: Joi.object().keys({
       challengeData: Joi.object().keys({
         challengeType: challengeTypeJoi,
         challengeFiles: Joi.array().items(fileJoi)

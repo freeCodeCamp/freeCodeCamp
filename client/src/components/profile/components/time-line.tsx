@@ -82,7 +82,7 @@ function TimelineInner({
     setProjectTitle(
       idToNameMap.get(completedChallenge.id)?.challengeTitle ?? ''
     );
-    openModal('projectPreview');
+    openModal('demo');
   }
 
   function viewExamResults(completedChallenge: CompletedChallenge): void {

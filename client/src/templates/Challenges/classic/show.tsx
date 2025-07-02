@@ -116,7 +116,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   output: string;
   pageContext: {
     challengeMeta: ChallengeMeta;
-    projectPreview: {
+    demo: {
       challengeData: ChallengeData;
     } | null;
   };
@@ -215,7 +215,7 @@ function ShowClassic({
   pageContext: {
     challengeMeta,
     challengeMeta: { isFirstStep, nextChallengePath },
-    projectPreview
+    demo
   },
   createFiles,
   cancelTests,
@@ -379,7 +379,7 @@ function ShowClassic({
     // Typically, this kind of preview only appears on the first step of a
     // project and is shown (once) automatically. In contrast, labs are more
     // freeform, so the preview is shown on demand.
-    if (demoType === 'onLoad') openModal('projectPreview');
+    if (demoType === 'onLoad') openModal('demo');
     const challengePaths = getChallengePaths({
       currentCurriculumPaths: challengeMeta
     });
@@ -541,7 +541,7 @@ function ShowClassic({
         <VideoModal videoUrl={videoUrl} />
         <ResetModal challengeType={challengeType} challengeTitle={title} />
         <ProjectPreviewModal
-          challengeData={projectPreview?.challengeData}
+          challengeData={demo?.challengeData}
           closeText={t('buttons.start-coding')}
           previewTitle={
             demoType === 'onClick'

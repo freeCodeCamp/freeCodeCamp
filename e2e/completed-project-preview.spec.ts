@@ -31,8 +31,8 @@ async function expectPreviewToBeShown(page: Page) {
   });
   await expect(modalHeading).toBeVisible();
 
-  const projectPreview = page.frameLocator('#fcc-project-preview-frame');
-  await expect(projectPreview.getByText('Tribute page text')).toBeVisible();
+  const demo = page.frameLocator('#fcc-project-preview-frame');
+  await expect(demo.getByText('Tribute page text')).toBeVisible();
 }
 
 test.describe('Completed project preview', () => {

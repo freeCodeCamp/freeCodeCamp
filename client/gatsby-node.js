@@ -102,7 +102,7 @@ exports.createPages = async function createPages({
                 history
                 fileKey
               }
-              projectPreview {
+              demo {
                 challengeData {
                   challengeType
                   challengeFiles {

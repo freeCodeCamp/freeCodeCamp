@@ -69,7 +69,7 @@ function addProjectPreviewDataToChallenges(curriculum) {
           const preview = computeProjectPreviewForBlock(block.challenges);
           block.challenges.forEach(challenge => {
             // Add project preview data to each challenge
-            challenge.projectPreview = preview;
+            challenge.demo = preview;
           });
         }
       });

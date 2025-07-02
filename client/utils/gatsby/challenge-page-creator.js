@@ -101,7 +101,7 @@ exports.createChallengePages = function (
       challengeType,
       id,
       isLastChallengeInBlock,
-      projectPreview
+      demo
     } = node.challenge;
     // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
     // should remove one of them.
@@ -128,7 +128,7 @@ exports.createChallengePages = function (
           prevChallengePath: idToPrevPathCurrentCurriculum[node.id],
           id
         },
-        projectPreview,
+        demo,
         id: node.id
       }
     });
