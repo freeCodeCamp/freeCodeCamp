@@ -16,7 +16,6 @@ import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
 import type {
-  ChallengeData,
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
@@ -116,9 +115,6 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   output: string;
   pageContext: {
     challengeMeta: ChallengeMeta;
-    demo: {
-      challengeData: ChallengeData;
-    } | null;
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
@@ -194,6 +190,7 @@ function ShowClassic({
       challenge: {
         challengeFiles: seedChallengeFiles,
         block,
+        demo,
         demoType,
         title,
         description,
@@ -214,8 +211,7 @@ function ShowClassic({
   },
   pageContext: {
     challengeMeta,
-    challengeMeta: { isFirstStep, nextChallengePath },
-    demo
+    challengeMeta: { isFirstStep, nextChallengePath }
   },
   createFiles,
   cancelTests,
@@ -564,6 +560,20 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         block
+        demo {
+          challengeData {
+            challengeType
+            challengeFiles {
+              name
+              ext
+              contents
+              head
+              tail
+              history
+              fileKey
+            }
+          }
+        }
         demoType
         title
         description

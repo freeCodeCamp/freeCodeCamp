@@ -12,10 +12,7 @@ import { getLangCode } from '../../../../../shared/config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
 import { regenerateMissingProperties } from '../../../../../shared/utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
-import type {
-  ChallengeData,
-  CompletedChallenge
-} from '../../../redux/prop-types';
+import type { CompletedChallenge } from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
@@ -163,7 +160,7 @@ function TimelineInner({
     );
   }
 
-  const challengeData: ChallengeData | null = completedChallenge
+  const challengeData = completedChallenge
     ? {
         ...completedChallenge,
         // // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
@@ -174,7 +171,7 @@ function TimelineInner({
       }
     : null;
 
-  const id = challengeData?.id;
+  const id = completedChallenge?.id;
   const startIndex = (pageNo - 1) * ITEMS_PER_PAGE;
   const endIndex = pageNo * ITEMS_PER_PAGE;
 
@@ -211,8 +208,8 @@ function TimelineInner({
             </Modal.Header>
             <Modal.Body alignment='left'>
               <SolutionViewer
-                challengeFiles={challengeData.challengeFiles}
-                solution={challengeData.solution ?? ''}
+                challengeFiles={challengeData?.challengeFiles}
+                solution={challengeData?.solution ?? ''}
               />
             </Modal.Body>
             <Modal.Footer>

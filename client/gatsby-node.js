@@ -102,20 +102,6 @@ exports.createPages = async function createPages({
                 history
                 fileKey
               }
-              demo {
-                challengeData {
-                  challengeType
-                  challengeFiles {
-                    name
-                    ext
-                    contents
-                    head
-                    tail
-                    history
-                    fileKey
-                  }
-                }
-              }
               solutions {
                 contents
                 ext
