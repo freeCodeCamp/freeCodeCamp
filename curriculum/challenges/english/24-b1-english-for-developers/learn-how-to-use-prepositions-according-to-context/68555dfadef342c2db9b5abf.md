@@ -23,7 +23,7 @@ Listen to the audio and complete the sentence below.
 
 ### --feedback--
 
-This two-word phrase means introduced or caused something to appear or become an issue. The first word is its past tense form of `bring`.
+This two-word phrase means introduced or caused something to appear or become an issue. The first word is the past tense form of `bring`.
 
 ---
 

@@ -51,7 +51,7 @@ That something is located near the emergency exit.
 
 # --explanation--
 
-Bob says, `Exactly, it's in the back, next to the emergency exit.` This means he is confirming the location of something - right beside the emergency exit.
+Bob says, `Exactly, it's in the back, next to the emergency exit`. This means he is confirming the location of something - right beside the emergency exit.
 
 He doesn't talk about repairs, cleaning, or problems.
 
