@@ -126,6 +126,8 @@ const quizJoi = Joi.object().keys({
     .required()
 });
 
+const challengeTypeJoi = Joi.number().min(0).max(30).required();
+
 const schema = Joi.object()
   .keys({
     block: Joi.string().regex(slugRE).required(),
@@ -159,7 +161,7 @@ const schema = Joi.object()
       otherwise: Joi.optional()
     }),
     certification: Joi.string().regex(slugWithSlashRE),
-    challengeType: Joi.number().min(0).max(30).required(),
+    challengeType: challengeTypeJoi,
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -227,6 +229,12 @@ const schema = Joi.object()
     prerequisites: Joi.when('challengeType', {
       is: [challengeTypes.exam],
       then: Joi.array().items(prerequisitesJoi)
+    }),
+    projectPreview: Joi.object().keys({
+      challengeData: Joi.object().keys({
+        challengeType: challengeTypeJoi,
+        challengeFiles: Joi.array().items(fileJoi)
+      })
     }),
     // video challenges only:
     videoId: Joi.when('challengeType', {

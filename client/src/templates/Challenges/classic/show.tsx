@@ -118,7 +118,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
     challengeMeta: ChallengeMeta;
     projectPreview: {
       challengeData: ChallengeData;
-    };
+    } | null;
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
@@ -215,7 +215,7 @@ function ShowClassic({
   pageContext: {
     challengeMeta,
     challengeMeta: { isFirstStep, nextChallengePath },
-    projectPreview: { challengeData }
+    projectPreview
   },
   createFiles,
   cancelTests,
@@ -541,7 +541,7 @@ function ShowClassic({
         <VideoModal videoUrl={videoUrl} />
         <ResetModal challengeType={challengeType} challengeTitle={title} />
         <ProjectPreviewModal
-          challengeData={challengeData}
+          challengeData={projectPreview?.challengeData}
           closeText={t('buttons.start-coding')}
           previewTitle={
             demoType === 'onClick'

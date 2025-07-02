@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 const yaml = require('js-yaml');
-const { findIndex } = require('lodash');
+const { findIndex, isEmpty } = require('lodash');
 const readDirP = require('readdirp');
 const stringSimilarity = require('string-similarity');
 
@@ -32,6 +32,50 @@ const {
 const fullStackSuperBlockStructure = require('./superblock-structure/full-stack.json');
 
 assertSuperBlockStructure(fullStackSuperBlockStructure);
+
+// Function to compute project preview data for a block
+function computeProjectPreviewForBlock(challenges) {
+  if (isEmpty(challenges)) return null;
+
+  const lastChallenge = challenges[challenges.length - 1];
+  const solutionFiles = lastChallenge.solutions?.[0] ?? [];
+  const lastChallengeFiles = lastChallenge.challengeFiles ?? [];
+
+  const findFileByKey = (key, files) =>
+    files.find(file => file.fileKey === key);
+
+  const projectPreviewChallengeFiles = lastChallengeFiles.map(file => ({
+    ...file,
+    contents:
+      findFileByKey(file.fileKey, solutionFiles)?.contents ?? file.contents
+  }));
+
+  return {
+    challengeData: {
+      challengeType: lastChallenge.challengeType,
+      challengeFiles: projectPreviewChallengeFiles
+    }
+  };
+}
+
+// Function to add project preview data to all challenges in the curriculum
+function addProjectPreviewDataToChallenges(curriculum) {
+  Object.keys(curriculum).forEach(superBlockName => {
+    const superBlock = curriculum[superBlockName];
+    if (!isEmpty(superBlock.blocks)) {
+      Object.keys(superBlock.blocks).forEach(blockName => {
+        const block = superBlock.blocks[blockName];
+        if (!isEmpty(block.challenges)) {
+          const preview = computeProjectPreviewForBlock(block.challenges);
+          block.challenges.forEach(challenge => {
+            // Add project preview data to each challenge
+            challenge.projectPreview = preview;
+          });
+        }
+      });
+    }
+  });
+}
 
 const access = util.promisify(fs.access);
 
@@ -273,12 +317,21 @@ Accepted languages are ${curriculumLangs.join(', ')}`);
   const cb = (file, curriculum) =>
     buildChallenges(file, curriculum, lang, updatedFilters);
   // fill the scaffold with the challenges
-  return walk(
+  const finalCurriculum = await walk(
     root,
     filteredCurriculum,
     { type: 'files', fileFilter: ['*.md', '*.yml'] },
     cb
   );
+
+  // Add project preview data to each block after all challenges are built
+  //
+  // TODO: This is really a block-level property, but the client doesn't get
+  // blocks from the curriculum. What we really want is to be able to get block
+  // data separately.
+  addProjectPreviewDataToChallenges(finalCurriculum);
+
+  return finalCurriculum;
 };
 
 async function buildBlocks(file, curriculum, superBlock) {
