@@ -36,6 +36,7 @@ In this project, you'll build an app that will search for creatures from an RPG 
 1. When the `#search-input` element contains the value `2` and the `#search-button` element is clicked, two elements should be added within the `#types` element that contain text values `WATER` and `ROCK`, respectively. The `#types` element content should be cleared between searches.
 1. When the `#search-input` element contains an invalid creature name, and the `#search-button` element is clicked, an alert should appear with the text `"Creature not found"`.
 1. When the `#search-input` element contains a valid creature ID and the `#search-button` element is clicked, the UI should be filled with the correct data.
+1. Your app must fetch creature data using the endpoint `https://rpg-creature-api.freecodecamp.rocks/api/creature/{name-or-id}` (where `{name-or-id}` is the user input).
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
 
@@ -379,6 +380,38 @@ async () => {
   } catch (err) {
     throw new Error(err);
   }
+};
+```
+
+When the search button is clicked, the app should send a fetch request to the correct endpoint for the creature name or ID.
+
+```js
+async () => {
+  const spy = __helpers.spyOn(window, 'fetch');
+  const searchInput = document.getElementById('search-input');
+  const searchButton = document.getElementById('search-button');
+
+  searchInput.value = 'Pyrolynx';
+  searchInput.dispatchEvent(new Event('change'));
+  searchButton.click();
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  searchInput.value = '2';
+  searchInput.dispatchEvent(new Event('change'));
+  searchButton.click();
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  // Test with random valid ID
+  const randomValidCreatureId = String(Math.floor(Math.random() * 20) + 1);
+  searchInput.value = randomValidCreatureId;
+  searchInput.dispatchEvent(new Event('change'));
+  searchButton.click();
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  const calls = spy.calls.map((call) => call[0]);
+  assert.isTrue(calls.some((url) => url.toLowerCase() === 'https://rpg-creature-api.freecodecamp.rocks/api/creature/pyrolynx'));
+  assert.isTrue(calls.some((url) => url.toLowerCase() === 'https://rpg-creature-api.freecodecamp.rocks/api/creature/2'));
+  assert.isTrue(calls.some((url) => url.toLowerCase() === `https://rpg-creature-api.freecodecamp.rocks/api/creature/${randomValidCreatureId}`.toLowerCase()));
 };
 ```
 
