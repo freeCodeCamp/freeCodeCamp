@@ -301,6 +301,7 @@ export type User = {
   calendar: Record<string, number>;
   about: string;
   acceptedPrivacyTerms: boolean;
+  bluesky: string; // Bluesky profile URL
   completedChallenges: CompletedChallenge[];
   completedSurveys: SurveyResults[];
   currentChallengeId: string;
