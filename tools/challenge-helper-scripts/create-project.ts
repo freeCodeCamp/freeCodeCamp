@@ -4,7 +4,7 @@ import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
-import * as fullStackJson from '../../curriculum/superblock-structure/full-stack.json';
+import fullStackData from '../../curriculum/superblock-structure/full-stack.json';
 import {
   SuperBlocks,
   superBlockToFolderMap
@@ -49,23 +49,6 @@ interface CreateProjectArgs {
   title?: string;
 }
 
-interface FullStackBlock {
-  dashedName: string;
-}
-
-interface FullStackModule {
-  dashedName: string;
-  blocks: FullStackBlock[];
-}
-
-interface FullStackChapter {
-  dashedName: string;
-  modules: FullStackModule[];
-}
-
-interface FullStackData {
-  chapters: FullStackChapter[];
-}
 
 async function createProject(
   superBlock: SuperBlocks,
@@ -126,15 +109,15 @@ async function updateFullStackJson(
   );
   const fullStackData = JSON.parse(fullStackText) as FullStackData;
 
-  const chapterExists =
-    fullStackData['chapters'].findIndex(
-      (chapter: FullStackChapter) => chapter.dashedName === chapterName
-    ) !== -1;
+  const chapterExists = fullStackData['chapters'].some(
+    (chapter: FullStackChapter) => chapter.dashedName === chapterName
+  );
   if (!chapterExists) {
     // Inserts the chapter, module and block if the chapter is missing
     const newChapter = {
       dashedName: chapterName,
-      modules: [{ dashedName: moduleName, blocks: [{ dashedName: block }] }]
+      modules: [{ dashedName: moduleName, blocks: [{ dashedName: block }] }],
+      comingSoon: true
     };
     fullStackData['chapters'].push(newChapter);
   } else {
@@ -143,10 +126,9 @@ async function updateFullStackJson(
     const chapterIndex = fullStackData['chapters'].findIndex(
       (chapter: FullStackChapter) => chapter.dashedName === chapterName
     );
-    const moduleExists =
-      fullStackData['chapters'][chapterIndex]['modules'].findIndex(
-        (module: FullStackModule) => module.dashedName === moduleName
-      ) !== -1;
+    const moduleExists = fullStackData['chapters'][chapterIndex][
+      'modules'
+    ].some((module: FullStackModule) => module.dashedName === moduleName);
 
     if (!moduleExists) {
       // Insert the new module and block
@@ -397,7 +379,7 @@ void prompt([
       'What chapter in full-stack.json should this full stack project go in?',
     default: 'html',
     type: 'list',
-    choices: fullStackJson.chapters.map(x => x.dashedName),
+    choices: fullStackData.chapters.map(x => x.dashedName),
     when: (answers: CreateProjectArgs) =>
       answers.superBlock === SuperBlocks.FullStackDeveloper
   },
@@ -408,7 +390,7 @@ void prompt([
     default: 'html',
     type: 'list',
     choices: (answers: CreateProjectArgs) =>
-      fullStackJson.chapters
+      fullStackData.chapters
         .find(x => x.dashedName === answers.chapter)
         ?.modules.map(x => x.dashedName),
     when: (answers: CreateProjectArgs) =>
