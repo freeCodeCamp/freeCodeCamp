@@ -5,7 +5,7 @@ challengeType: 24
 dashedName: glossary-this-is-me
 ---
 
-<!-- Glossary -->
+<!-- GLOSSARY -->
 
 # --description--
 
