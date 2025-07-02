@@ -34,7 +34,7 @@ const fullStackSuperBlockStructure = require('./superblock-structure/full-stack.
 assertSuperBlockStructure(fullStackSuperBlockStructure);
 
 // Function to compute project preview data for a block
-function computeProjectPreviewForBlock(challenges) {
+function computeDemoDataForBlock(challenges) {
   if (isEmpty(challenges)) return null;
 
   const lastChallenge = challenges[challenges.length - 1];
@@ -58,7 +58,7 @@ function computeProjectPreviewForBlock(challenges) {
   };
 }
 
-// Function to add project preview data to all challenges in the curriculum
+// Function to add project preview data to all challenges with deom in the curriculum
 function addProjectPreviewDataToChallenges(curriculum) {
   Object.keys(curriculum).forEach(superBlockName => {
     const superBlock = curriculum[superBlockName];
@@ -66,10 +66,10 @@ function addProjectPreviewDataToChallenges(curriculum) {
       Object.keys(superBlock.blocks).forEach(blockName => {
         const block = superBlock.blocks[blockName];
         if (!isEmpty(block.challenges)) {
-          const preview = computeProjectPreviewForBlock(block.challenges);
+          const demo = computeDemoDataForBlock(block.challenges);
           block.challenges.forEach(challenge => {
             // Add project preview data to each challenge
-            challenge.demo = preview;
+            if (challenge.demoType) challenge.demo = demo;
           });
         }
       });
