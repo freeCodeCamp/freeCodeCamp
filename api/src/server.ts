@@ -7,9 +7,9 @@ const start = async () => {
   const fastify = await build(buildOptions);
 
   const stop = async (signal: NodeJS.Signals) => {
-    console.log(`Received ${signal}, shutting down...`);
+    fastify.log.info(`Received ${signal}, shutting down.`);
     await fastify.close();
-    console.log('...shutdown complete');
+    fastify.log.info('Shutdown complete');
     process.exit(0);
   };
 
