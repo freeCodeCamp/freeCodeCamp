@@ -90,7 +90,7 @@ async function createMetaJson(
   challengeId: ObjectID
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
-  const newMeta = getBaseMeta['Quiz'];
+  const newMeta = getBaseMeta('Quiz');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;

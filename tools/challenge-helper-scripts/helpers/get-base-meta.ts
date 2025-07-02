@@ -1,9 +1,25 @@
-const baseMeta = {
+interface Meta {
+  name: string;
+  isUpcomingChange: boolean;
+  dashedName: string;
+  superBlock: string;
+  helpCategory: string;
+  challengeOrder: Array<{
+    id: string;
+    title: string;
+  }>;
+  usesMultifileEditor?: boolean;
+  hasEditableBoundaries?: boolean;
+  blockType?: string;
+  blockLayout?: string;
+  order?: number;
+}
+
+const baseMeta: Meta = {
   name: '',
   isUpcomingChange: true,
   dashedName: '',
   superBlock: '',
-  order: 42,
   helpCategory: '',
   challengeOrder: [
     {
@@ -19,18 +35,14 @@ const stepMeta = {
   hasEditableBoundaries: true
 };
 
-// Manually extract order from the list of properties for full stack projects
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const { order, ...orderLessStep } = stepMeta;
-
 const fullStackStepMeta = {
-  ...orderLessStep,
+  ...baseMeta,
   blockType: '',
   blockLayout: ''
 };
 
 const quizMeta = {
-  ...orderLessStep,
+  ...baseMeta,
   blockType: 'quiz',
   blockLayout: 'link'
 };
@@ -40,10 +52,19 @@ const languageMeta = {
   blockLayout: 'dialogue-grid'
 };
 
-export const getBaseMeta = {
-  Step: stepMeta,
-  Quiz: quizMeta,
-  Language: languageMeta,
-  FullStack: fullStackStepMeta,
-  Default: stepMeta
+export const getBaseMeta = (
+  projectType: 'Step' | 'Quiz' | 'Language' | 'FullStack'
+): Meta => {
+  switch (projectType) {
+    case 'Step':
+      return stepMeta;
+    case 'Quiz':
+      return quizMeta;
+    case 'FullStack':
+      return fullStackStepMeta;
+    case 'Language':
+      return languageMeta;
+    default:
+      return stepMeta;
+  }
 };

@@ -49,51 +49,61 @@ interface CreateProjectArgs {
   title?: string;
 }
 
-
-async function createProject(
-  superBlock: SuperBlocks,
-  block: string,
-  helpCategory: string,
-  blockType?: string,
-  blockLayout?: string,
-  questionCount?: number,
-  title?: string,
-  chapter?: string,
-  module?: string,
-  position?: number,
-  order?: number
-) {
-  if (!title) {
-    title = block;
+async function createProject(projectArgs: CreateProjectArgs) {
+  if (!projectArgs.title) {
+    projectArgs.title = projectArgs.block;
   }
 
-  void updateIntroJson(superBlock, block, title);
+  void updateIntroJson(
+    projectArgs.superBlock,
+    projectArgs.block,
+    projectArgs.title
+  );
 
-  if (blockType === BlockTypes.quiz) {
+  if (projectArgs.blockType === BlockTypes.quiz) {
     const challengeId = await createQuizChallenge(
-      superBlock,
-      block,
-      title,
-      questionCount!
+      projectArgs.superBlock,
+      projectArgs.block,
+      projectArgs.title,
+      projectArgs.questionCount!
     );
-    void createMetaJson(superBlock, block, title, helpCategory, challengeId);
-  } else {
-    const challengeId = await createFirstChallenge(superBlock, block);
     void createMetaJson(
-      superBlock,
-      block,
-      title,
-      helpCategory,
+      projectArgs.superBlock,
+      projectArgs.block,
+      projectArgs.title,
+      projectArgs.helpCategory,
+      challengeId
+    );
+  } else {
+    const challengeId = await createFirstChallenge(
+      projectArgs.superBlock,
+      projectArgs.block
+    );
+    void createMetaJson(
+      projectArgs.superBlock,
+      projectArgs.block,
+      projectArgs.title,
+      projectArgs.helpCategory,
       challengeId,
-      order,
-      blockType,
-      blockLayout
+      projectArgs.order,
+      projectArgs.blockType,
+      projectArgs.blockLayout
     );
     // TODO: remove once we stop relying on markdown in the client.
   }
-  void createIntroMD(superBlock, block, title, blockType!);
-  if (superBlock === SuperBlocks.FullStackDeveloper) {
-    await updateFullStackJson(chapter!, module!, block, position!);
+  void createIntroMD(
+    projectArgs.superBlock,
+    projectArgs.block,
+    projectArgs.title,
+    projectArgs.blockType!
+  );
+  if (projectArgs.superBlock === SuperBlocks.FullStackDeveloper) {
+    await updateFullStackJson(
+      projectArgs.chapter!,
+      projectArgs.module!,
+      projectArgs.block,
+      projectArgs.position!
+    );
   }
 }
 
@@ -103,57 +113,23 @@ async function updateFullStackJson(
   block: string,
   position: number
 ) {
-  const fullStackText = await fs.readFile(
+  // Get the index of the correct chapter
+  const chapterIndex = fullStackData['chapters'].findIndex(
+    chapter => chapter.dashedName === chapterName
+  );
+  const moduleIndex = fullStackData['chapters'][chapterIndex][
+    'modules'
+  ].findIndex(module => module.dashedName === moduleName);
+  fullStackData['chapters'][chapterIndex]['modules'][moduleIndex][
+    'blocks'
+  ].splice(position - 1, 0, { dashedName: block });
+  // Insert the new block into the already present module
+  // Write the new changes to the file
+  const newData = JSON.stringify(fullStackData, null, 2);
+  await fs.writeFile(
     '../../curriculum/superblock-structure/full-stack.json',
-    { encoding: 'utf-8' }
+    newData
   );
-  const fullStackData = JSON.parse(fullStackText) as FullStackData;
-
-  const chapterExists = fullStackData['chapters'].some(
-    (chapter: FullStackChapter) => chapter.dashedName === chapterName
-  );
-  if (!chapterExists) {
-    // Inserts the chapter, module and block if the chapter is missing
-    const newChapter = {
-      dashedName: chapterName,
-      modules: [{ dashedName: moduleName, blocks: [{ dashedName: block }] }],
-      comingSoon: true
-    };
-    fullStackData['chapters'].push(newChapter);
-  } else {
-    // Chapter is present; is module present
-    // Get the index of the correct chapter
-    const chapterIndex = fullStackData['chapters'].findIndex(
-      (chapter: FullStackChapter) => chapter.dashedName === chapterName
-    );
-    const moduleExists = fullStackData['chapters'][chapterIndex][
-      'modules'
-    ].some((module: FullStackModule) => module.dashedName === moduleName);
-
-    if (!moduleExists) {
-      // Insert the new module and block
-      fullStackData['chapters'][chapterIndex]['modules'].push({
-        dashedName: moduleName,
-        blocks: [{ dashedName: block }]
-      });
-    } else {
-      const moduleIndex = fullStackData['chapters'][chapterIndex][
-        'modules'
-      ].findIndex(
-        (module: FullStackModule) => module.dashedName === moduleName
-      );
-      fullStackData['chapters'][chapterIndex]['modules'][moduleIndex][
-        'blocks'
-      ].splice(position - 1, 0, { dashedName: block });
-      // Insert the new block into the already present module
-    }
-    // Write the new changes to the file
-    const newData = JSON.stringify(fullStackData, null, 2);
-    await fs.writeFile(
-      '../../curriculum/superblock-structure/full-stack.json',
-      newData
-    );
-  }
 }
 
 async function updateIntroJson(
@@ -190,12 +166,12 @@ async function createMetaJson(
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
   let newMeta;
   if (superBlock !== SuperBlocks.FullStackDeveloper) {
-    newMeta = getBaseMeta['Step'];
-    newMeta.order = order!;
+    newMeta = getBaseMeta('Step');
+    newMeta.order = order;
   } else {
-    newMeta = getBaseMeta['FullStack'];
-    newMeta.blockType = blockType!;
-    newMeta.blockLayout = blockLayout!;
+    newMeta = getBaseMeta('FullStack');
+    newMeta.blockType = blockType;
+    newMeta.blockLayout = blockLayout;
   }
   newMeta.name = title;
   newMeta.dashedName = block;
@@ -441,7 +417,7 @@ void prompt([
       position,
       order
     }: CreateProjectArgs) =>
-      await createProject(
+      await createProject({
         superBlock,
         block,
         helpCategory,
@@ -453,7 +429,7 @@ void prompt([
         module,
         position,
         order
-      )
+      })
   )
   .then(() =>
     console.log(
