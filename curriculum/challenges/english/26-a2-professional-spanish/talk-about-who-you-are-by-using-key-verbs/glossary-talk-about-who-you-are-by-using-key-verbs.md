@@ -1,0 +1,62 @@
+---
+id: 685e90a319a7d10d8c122138
+title: "Glossary: This Is Me"
+challengeType: 24
+dashedName: glossary-this-is-me
+---
+
+<!-- Glossary -->
+
+# --description--
+
+Review this glossary as a quick reference of the most important words and phrases in the monologue.
+
+## Personal Introduction
+
+- `Hola` - Hello
+- `Me llamo` - My name is.
+- `Persona` - Person
+- `Soy` - I am.
+
+<br>
+
+## Professions
+
+- `Analista` - Analyst
+- `Empresa` - Company
+
+<br>
+
+## Nationalities and Origins
+
+- `Cali` - Cali
+- `Colombiana` / `Colombiano` - Colombian
+
+<br>
+
+## Feelings and States of Being
+
+- `Cansada` / `Cansado` - Tired
+- `Contenta` / `Contento` - Happy
+- `Curiosa` / `Curioso` - Curious
+- `Lista` / `Listo` - Ready
+- `Ordenada` / `Ordenado` - Tidy
+- `Tranquila` / `Tranquilo` - Calm
+
+<br>
+
+## Hobbies and Interests
+
+- `Aficionada` / `Aficionado` - Fond of.
+- `Ciencia ficción` - Science fiction.
+- `Libros` - Books
+
+<br>
+
+## Farewell
+
+- `Nos vemos` - See you.
+
+# --assignment--
+
+Read the glossary.
