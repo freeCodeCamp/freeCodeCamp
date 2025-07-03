@@ -60,13 +60,13 @@ if (
 }
 
 const testFilter = {
-  block: process.env.FCC_BLOCK ? process.env.FCC_BLOCK.trim() : undefined,
+  blocks: process.env.FCC_BLOCK ? [process.env.FCC_BLOCK.trim()] : [],
   challengeId: process.env.FCC_CHALLENGE_ID
     ? process.env.FCC_CHALLENGE_ID.trim()
     : undefined,
-  superBlock: process.env.FCC_SUPERBLOCK
-    ? process.env.FCC_SUPERBLOCK.trim()
-    : undefined
+  superBlocks: process.env.FCC_SUPERBLOCK
+    ? [process.env.FCC_SUPERBLOCK.trim()]
+    : []
 };
 
 // rethrow unhandled rejections to make sure the tests exit with non-zero code
@@ -173,21 +173,33 @@ async function setup() {
   ];
 
   if (testFilter.challengeId) {
-    const challengeIndex = challenges.findIndex(
-      challenge => challenge.id === testFilter.challengeId
-    );
-    if (challengeIndex === -1) {
-      throw new Error(`No challenge found with id "${testFilter.challengeId}"`);
+    const challengeIndices = challenges
+      .map((challenge, index) => ({
+        challenge,
+        index
+      }))
+      .filter(({ challenge }) => challenge.id === testFilter.challengeId)
+      .map(({ index }) => index);
+
+    if (challengeIndices.length === 0) {
+      throw Error(`No challenge found with id "${testFilter.challengeId}"`);
     }
-    const { solutions = [] } = challenges[challengeIndex];
-    if (isEmpty(solutions)) {
-      // Project based curriculum usually has solution for current challenge in
-      // next challenge's seed.
-      challenges = challenges.slice(challengeIndex, challengeIndex + 2);
-    } else {
-      // Only one challenge is tested, but tests assume challenges is an array.
-      challenges = [challenges[challengeIndex]];
+
+    let newChallenges = [];
+    for (const challengeIndex of challengeIndices) {
+      const { solutions = [] } = challenges[challengeIndex];
+      if (isEmpty(solutions)) {
+        // Project based curriculum usually has solution for current challenge in
+        // next challenge's seed.
+        newChallenges = newChallenges.concat(
+          challenges.slice(challengeIndex, challengeIndex + 2)
+        );
+      } else {
+        // Only one challenge is tested, but tests assume challenges is an array.
+        newChallenges.push(challenges[challengeIndex]);
+      }
     }
+    challenges = newChallenges;
   }
 
   const meta = {};

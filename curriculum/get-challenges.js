@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 const yaml = require('js-yaml');
-const { findIndex } = require('lodash');
+const { findIndex, isEmpty } = require('lodash');
 const readDirP = require('readdirp');
 const stringSimilarity = require('string-similarity');
 
@@ -213,9 +213,17 @@ Accepted languages are ${curriculumLangs.join(', ')}`);
 
   let filteredCurriculum = curriculum;
   const updatedFilters = { ...filters };
-  if (filters?.superBlock) {
+  // Even though there could be multiple superBlocks, we at this point we only
+  // support filtering by one superBlock or block at a time.
+  if (!isEmpty(filters?.superBlocks)) {
+    if (filters.superBlocks.length !== 1) {
+      throw Error(
+        `When filtering by superBlocks, only one superBlock can be specified.
+Superblocks found: ${filters.superBlocks.join()}`
+      );
+    }
     const target = stringSimilarity.findBestMatch(
-      filters.superBlock,
+      filters.superBlocks[0],
       superBlocks
     ).bestMatch.target;
 
@@ -224,9 +232,12 @@ Accepted languages are ${curriculumLangs.join(', ')}`);
     filteredCurriculum = {
       [target]: curriculum[target]
     };
-    updatedFilters.superBlock = target;
-  } else if (filters?.block) {
-    const target = stringSimilarity.findBestMatch(filters.block, blocks)
+    updatedFilters.superBlocks = [target];
+  } else if (!isEmpty(filters?.blocks)) {
+    if (filters.blocks.length !== 1) {
+      throw Error('When filtering by blocks, only one block can be specified.');
+    }
+    const target = stringSimilarity.findBestMatch(filters.blocks[0], blocks)
       .bestMatch.target;
 
     console.log('block being tested:', target);
@@ -239,35 +250,38 @@ Accepted languages are ${curriculumLangs.join(', ')}`);
         }
       }
     };
-    updatedFilters.block = targetBlock.block;
+    updatedFilters.blocks = [targetBlock.block];
   } else if (filters?.challengeId) {
     const blocksWithMeta = blocksWithParent.filter(
       ({ blockData }) => blockData.meta
     );
-    const container = blocksWithMeta.filter(({ blockData }) => {
+    const targetBlocks = blocksWithMeta.filter(({ blockData }) => {
       return blockData.meta.challengeOrder.some(
         ({ id }) => id === filters.challengeId
       );
     });
 
-    if (container.length === 0) {
+    if (targetBlocks.length === 0) {
       throw new Error(`No block found with challengeId ${filters.challengeId}`);
     }
-    if (container.length > 1) {
-      throw new Error(
-        `Multiple blocks found with challengeId ${filters.challengeId}`
-      );
-    }
-    const targetBlock = container[0];
-    filteredCurriculum = {
-      [targetBlock.superBlock]: {
-        blocks: {
-          [targetBlock.block]: targetBlock.blockData
-        }
+
+    filteredCurriculum = targetBlocks.reduce((acc, targetBlock) => {
+      if (!acc[targetBlock.superBlock]) {
+        acc[targetBlock.superBlock] = { blocks: {} };
       }
-    };
-    updatedFilters.block = targetBlock.block;
-    updatedFilters.superBlock = targetBlock.superBlock;
+      acc[targetBlock.superBlock].blocks[targetBlock.block] =
+        targetBlock.blockData;
+      return acc;
+    }, {});
+
+    updatedFilters.blocks = targetBlocks.map(({ block }) => block);
+    updatedFilters.superBlocks = targetBlocks.map(
+      ({ superBlock }) => superBlock
+    );
+
+    console.log('challengeId being tested:', filters.challengeId);
+    console.log('blocks being tested:', updatedFilters.blocks);
+    console.log('superBlocks being tested:', updatedFilters.superBlocks);
   }
 
   const cb = (file, curriculum) =>
@@ -332,12 +346,15 @@ async function buildSuperBlocks({ path, fullPath }, curriculum) {
 async function buildChallenges({ path: filePath }, curriculum, lang, filters) {
   // path is relative to getChallengesDirForLang(lang)
   const block = getBlockNameFromPath(filePath);
-  if (filters?.block && block !== filters.block) {
+  if (!isEmpty(filters?.blocks) && !filters?.blocks.includes(block)) {
     return;
   }
   const superBlockDir = getBaseDir(filePath);
   const superBlock = getSuperBlockFromDir(superBlockDir);
-  if (filters?.superBlock && superBlock !== filters.superBlock) {
+  if (
+    !isEmpty(filters?.superBlocks) &&
+    !filters.superBlocks.includes(superBlock)
+  ) {
     return;
   }
   let challengeBlock;
