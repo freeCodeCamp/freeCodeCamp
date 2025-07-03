@@ -262,7 +262,7 @@ Superblocks found: ${filters.superBlocks.join()}`
     });
 
     if (targetBlocks.length === 0) {
-      throw new Error(`No block found with challengeId ${filters.challengeId}`);
+      throw Error(`No block found with challengeId ${filters.challengeId}`);
     }
 
     filteredCurriculum = targetBlocks.reduce((acc, targetBlock) => {
