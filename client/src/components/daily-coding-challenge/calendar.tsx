@@ -234,6 +234,17 @@ function DailyCodingChallengeCalendar({
 
   return (
     <>
+      <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+        <Button
+          block={true}
+          href={`/learn/daily-coding-challenge?date=${todayUsCentral}`}
+        >
+          {t('buttons.go-to-today')}
+        </Button>
+      </Col>
+
+      <Spacer size='l' />
+
       <div className='calendar-head'>
         <Button
           aria-label={t('aria.previous-month')}
@@ -254,7 +265,9 @@ function DailyCodingChallengeCalendar({
           &gt;
         </Button>
       </div>
+
       <Spacer size='m' />
+
       <div className='calendar-weekday-labels'>
         <div aria-label={t('weekdays.long.sunday')}>
           {t('weekdays.short.sunday')}
@@ -278,25 +291,21 @@ function DailyCodingChallengeCalendar({
           {t('weekdays.short.saturday')}
         </div>
       </div>
+
       <Spacer size='s' />
       <div className='calendar-grid'>{monthInfo.days}</div>
       <Spacer size='l' />
       <p className='text-center'>{t('daily-coding-challenges.release-note')}</p>
       <Spacer size='m' />
-      <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-        <Button
-          block={true}
-          href={`/learn/daily-coding-challenge?date=${todayUsCentral}`}
-        >
-          {t('buttons.go-to-today')}
-        </Button>
-        {!isSignedIn && (
+
+      {!isSignedIn && (
+        <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
           <div className='completion-modal-login-btn'>
             <Spacer size='xs' />
             <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
           </div>
-        )}
-      </Col>
+        </Col>
+      )}
     </>
   );
 }

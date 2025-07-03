@@ -24,7 +24,7 @@ function Archive(): JSX.Element {
           </h1>
           <Spacer size='m' />
           <DailyCodingChallengeIcon className='cert-header-icon' />
-          <Spacer size='m' />
+          <Spacer size='l' />
           <DailyCodingChallengeCalendar />
           <Spacer size='l' />
         </Col>
