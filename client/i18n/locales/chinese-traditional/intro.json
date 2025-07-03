@@ -2164,6 +2164,24 @@
           "In these lecture videos, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
         ]
       },
+      "lecture-understanding-nuanced-semantic-elements": {
+        "title": "Understanding Nuanced Semantic Elements",
+        "intro": [
+          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+        ]
+      },
+      "lecture-working-with-text-and-time-semantic-elements": {
+        "title": "Working with Text and Time Semantic Elements ",
+        "intro": [
+          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+        ]
+      },
+      "lecture-working-with-specialized-semantic-elements": {
+        "title": "Working with Specialized Semantic Elements",
+        "intro": [
+          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+        ]
+      },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
@@ -3846,9 +3864,12 @@
           "In this workshop, you will continue to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
         ]
       },
-      "vjgg": {
-        "title": "272",
-        "intro": []
+      "lab-one-time-password-generator": {
+        "title": "Build a One-Time Password Generator",
+        "intro": [
+          "In this lab you'll build a one-time password generator.",
+          "You'll practice using the useEffect hooks to create a timer and generate a random OTP."
+        ]
       },
       "review-react-state-and-hooks": {
         "title": "React State and Hooks Review",
@@ -4268,8 +4289,11 @@
         ]
       },
       "workshop-binary-search": {
-        "title": "Build a Binary Search",
-        "intro": [""]
+        "title": "Implement the Binary Search Algorithm",
+        "intro": [
+          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
+          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
       },
       "lab-bisection-method": {
         "title": "Build a Bisection Method",
@@ -4583,6 +4607,49 @@
         "title": "Get to Know Colleagues by Asking Simple Questions",
         "intro": [
           "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
+        ]
+      }
+    }
+  },
+  "basic-html": {
+    "title": "Basic HTML",
+    "summary": [
+      "Learn how to build simple webpages using HTML tags to add text, images, and links."
+    ],
+    "intro": ["Larger intro for the superblock page."],
+    "blocks": {
+      "cat-photo-app": {
+        "title": "Build a Cat Photo App",
+        "intro": [
+          "HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.",
+          "In this course, you'll learn the most common HTML tags by building your own cat photo app."
+        ]
+      },
+      "recipe-page": {
+        "title": "Build a Recipe Page",
+        "intro": [
+          "In this lab, you'll review HTML basics by creating a web page of your favorite recipe. You'll create an HTML boilerplate and work with headings, lists, images, and more."
+        ]
+      }
+    }
+  },
+  "semantic-html": {
+    "title": "Semantic HTML",
+    "summary": [
+      "Discover how to write cleaner, more meaningful HTML using semantic tags that improve structure, accessibility, and SEO."
+    ],
+    "intro": ["Larger intro for the superblock page."],
+    "blocks": {
+      "cat-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+        ]
+      },
+      "event-hub": {
+        "title": "Build an Event Hub",
+        "intro": [
+          "In this lab, you'll build an event hub and review semantic elements like <code>header</code>, <code>nav</code>, <code>article</code>, and more."
         ]
       }
     }

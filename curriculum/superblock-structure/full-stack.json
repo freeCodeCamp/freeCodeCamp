@@ -66,6 +66,15 @@
               "dashedName": "lecture-importance-of-semantic-html"
             },
             {
+              "dashedName": "lecture-understanding-nuanced-semantic-elements"
+            },
+            {
+              "dashedName": "lecture-working-with-text-and-time-semantic-elements"
+            },
+            {
+              "dashedName": "lecture-working-with-specialized-semantic-elements"
+            },
+            {
               "dashedName": "workshop-blog-page"
             },
             {
@@ -1090,6 +1099,9 @@
             },
             { "dashedName": "workshop-fruit-search-app" },
             {
+              "dashedName": "lab-one-time-password-generator"
+            },
+            {
               "dashedName": "review-react-state-and-hooks"
             },
             {
@@ -1162,6 +1174,9 @@
               "dashedName": "lecture-working-with-css-libraries-and-frameworks"
             },
             {
+              "dashedName": "workshop-error-message-component"
+            },
+            {
               "dashedName": "review-css-libraries-and-frameworks"
             },
             {
@@ -1216,7 +1231,7 @@
           "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-working-with-loops-and-sequences" },
-            { "dashedName": "workshop-placeholder-loops-and-sequences" },
+            { "dashedName": "workshop-pin-extractor" },
             { "dashedName": "lab-number-pattern-generator" },
             { "dashedName": "review-loops-and-sequences" },
             { "dashedName": "quiz-loops-and-sequences" }

@@ -1,0 +1,23 @@
+{
+  "name": "Working with Specialized Semantic Elements",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-specialized-semantic-elements",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "HTML-CSS",
+  "challengeOrder": [
+    {
+      "id": "672995ffdfd2f337f5f215f8",
+      "title": "How Do You Display Mathematical Equations and Chemical Formulas in HTML?"
+    },
+    {
+      "id": "6729960ed6e2ca3825940e97",
+      "title": "How Do You Represent Computer Code in HTML?"
+    },
+    {
+      "id": "6729963b1ab11638753cf082",
+      "title": "What Are the U, S, and Ruby Elements Used For, and How Do They Work?"
+    }
+  ]
+}
