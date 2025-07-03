@@ -26,7 +26,6 @@ function Archive(): JSX.Element {
           <DailyCodingChallengeIcon className='cert-header-icon' />
           <Spacer size='l' />
           <DailyCodingChallengeCalendar />
-          <Spacer size='l' />
         </Col>
         <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer size='l' />
