@@ -70,28 +70,30 @@ Test 1
           <a>Go Premium</a>
         </div>
         <div>
-          <h2>Family</h2>
-          <p>$14.99<span>/month</span></p>
-          <p>
-            Enjoy all of the features with a plan for up to 6 family members.
-          </p>
-          <ul>
-            <li>
-              <span>&#10003;</span>All Premium features
-            </li>
-            <li>
-              <span>&#10003;</span>Up to 6 accounts
-            </li>
-            <li>
-              <span>&#10003;</span>Individual playlists &
-              libraries
-            </li>
-            <li>
-              <span>&#10003;</span>Family Mix playlists
-            </li>
-          </ul>
+          <div>
+            <h2>Family</h2>
+            <p>$14.99<span>/month</span></p>
+            <p>
+              Enjoy all of the features with a plan for up to 6 family members.
+            </p>
+            <ul>
+              <li>
+                <span>&#10003;</span>All Premium features
+              </li>
+              <li>
+                <span>&#10003;</span>Up to 6 accounts
+              </li>
+              <li>
+                <span>&#10003;</span>Individual playlists &
+                libraries
+              </li>
+              <li>
+                <span>&#10003;</span>Family Mix playlists
+              </li>
+            </ul>
+          </div>
+          <a>Start Family Plan</a>
         </div>
-        <a>Start Family Plan</a>
       </div>
     </main>
   </body>
