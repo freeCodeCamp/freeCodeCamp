@@ -68,14 +68,12 @@ export function combineChallenges({
   jsChallenge,
   pyChallenge,
   challengeNumber,
-  date,
-  simpleDate
+  date
 }: {
   jsChallenge: Challenge;
   pyChallenge: Challenge;
   challengeNumber: number;
   date: Date;
-  simpleDate: string;
 }) {
   const {
     id: jsId,
@@ -125,7 +123,6 @@ export function combineChallenges({
     challengeNumber,
     title: jsTitle.replace(`JavaScript Challenge ${challengeNumber}: `, ''),
     date,
-    simpleDate,
     description: removeSection(jsDescription),
     ...(jsInstructions && {
       instructions: removeSection(jsInstructions)

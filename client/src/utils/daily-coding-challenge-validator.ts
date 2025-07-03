@@ -16,7 +16,6 @@ export interface ChallengeDataFromDb {
   challengeNumber: number;
   title: string;
   date: string;
-  simpleDate: string;
   description: string;
   instructions?: string;
   javascript: ChallengeLanguageData;
@@ -48,7 +47,6 @@ const challengeDataFromDbSchema = Joi.object({
   challengeNumber: Joi.number().integer().min(1).required(),
   title: Joi.string().required(),
   date: Joi.string().required(),
-  simpleDate: Joi.string().required(),
   description: Joi.string().required(),
   instructions: Joi.string().optional(),
   javascript: challengeLanguageDataSchema.required(),

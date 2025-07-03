@@ -42,7 +42,6 @@ function formatInstructions(str: string) {
 
 function formatChallengeData({
   date,
-  simpleDate,
   _id,
   challengeNumber,
   title,
@@ -53,7 +52,6 @@ function formatChallengeData({
 }: ChallengeDataFromDb) {
   const baseChallengeProps = {
     date,
-    simpleDate,
     id: _id,
     challengeNumber,
     title,
