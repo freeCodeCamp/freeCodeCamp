@@ -68,12 +68,14 @@ export function combineChallenges({
   jsChallenge,
   pyChallenge,
   challengeNumber,
-  date
+  date,
+  simpleDate
 }: {
   jsChallenge: Challenge;
   pyChallenge: Challenge;
   challengeNumber: number;
   date: Date;
+  simpleDate: string;
 }) {
   const {
     id: jsId,
@@ -118,11 +120,12 @@ export function combineChallenges({
 
   // Use the JS challenge info for the new challenge meta - e.g. id, title, description, etc
   const challengeData = {
-    // **DO NOT CHANEGE THE ID** it's used as the challenge ID - and what gets added to completedDailyCodingChallenges[]
+    // **DO NOT CHANGE THE ID** it's used as the challenge ID - and what gets added to completedDailyCodingChallenges[]
     _id: new ObjectId(`${jsId}`),
     challengeNumber,
     title: jsTitle.replace(`JavaScript Challenge ${challengeNumber}: `, ''),
     date,
+    simpleDate,
     description: removeSection(jsDescription),
     ...(jsInstructions && {
       instructions: removeSection(jsInstructions)

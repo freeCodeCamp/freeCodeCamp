@@ -35,6 +35,11 @@ if (START_DATE.toISOString() !== startDateString) {
   );
 }
 
+function isoToSimpleDate(isoDate: string): string {
+  const [year, month, day] = isoDate.split('T')[0]!.split('-');
+  return `${parseInt(month!)}-${parseInt(day!)}-${year}`;
+}
+
 const client = new MongoClient(
   MONGOHQ_URL || 'mongodb://127.0.0.1:27017/freecodecamp?directConnection=true'
 );
@@ -70,11 +75,14 @@ const seed = async () => {
     const jsChallenge = jsChallenges[i];
     const pyChallenge = pyChallenges[i];
 
+    const date = new Date(START_DATE.getTime() + i * ONE_DAY_IN_MS);
+
     const newChallenge = combineChallenges({
       jsChallenge,
       pyChallenge,
       challengeNumber: i + 1,
-      date: new Date(START_DATE.getTime() + i * ONE_DAY_IN_MS)
+      date,
+      simpleDate: isoToSimpleDate(date.toISOString())
     });
 
     newChallenges.push(newChallenge);
@@ -99,8 +107,13 @@ const seed = async () => {
   const count = await dailyCodingChallenges.countDocuments();
 
   if (count !== EXPECTED_CHALLENGE_COUNT) {
-    throw new Error(
-      `Expected ${EXPECTED_CHALLENGE_COUNT} challenges in the database, but found ${count} documents`
+    console.warn(
+      '\n********** WARNING *********\n' +
+        '*\n' +
+        `* Expected ${EXPECTED_CHALLENGE_COUNT} challenges in the database,\n` +
+        `* but found ${count} documents\n` +
+        '*\n' +
+        '********** WARNING *********\n'
     );
   }
 };

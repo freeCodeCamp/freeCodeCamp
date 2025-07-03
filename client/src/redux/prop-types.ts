@@ -250,6 +250,7 @@ export type PageContext = {
 export type DailyCodingChallengeNode = {
   challenge: {
     date: string;
+    simpleDate: string;
     id: string;
     challengeNumber: number;
     title: string;
