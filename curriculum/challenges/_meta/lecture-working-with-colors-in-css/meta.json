@@ -1,0 +1,35 @@
+{
+  "name": "Working with Colors in CSS",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-colors-in-css",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa7678e05e35d42e33522",
+      "title": "What Is Color Theory in Design?"
+    },
+    {
+      "id": "672bc4ff5e7a4bbdee8ba013",
+      "title": "What Are Named Colors in CSS, and When to Use Them?"
+    },
+    {
+      "id": "672bc51370c789be459186b4",
+      "title": "What Is the RGB Color Model, and How Does the RGB Function Work in CSS?"
+    },
+    {
+      "id": "672bc523324694be91d90d96",
+      "title": "What Is the HSL Color Model, and How Does the HSL Function Work in CSS?"
+    },
+    {
+      "id": "672bc5344330d7bee2f9c2ed",
+      "title": "What Are Hex Codes, and How Do They Work in CSS?"
+    },
+    {
+      "id": "672bc544196a17bf28594e64",
+      "title": "What Are Linear and Radial Gradients, and How Do They Work in CSS?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

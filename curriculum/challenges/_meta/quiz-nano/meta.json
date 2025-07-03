@@ -1,0 +1,12 @@
+{
+  "name": "Nano Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-nano",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "66f1b03b922a53cb231e1c0d", "title": "Nano Quiz" }
+  ],
+  "helpCategory": "Backend Development"
+}

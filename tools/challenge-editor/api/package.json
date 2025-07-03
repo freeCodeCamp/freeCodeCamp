@@ -1,0 +1,24 @@
+{
+  "name": "@freecodecamp/challenge-editor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Editor to help with new challenge structure",
+  "scripts": {
+    "start": "tsx server.ts",
+    "postinstall": "shx cp ./sample.env ./.env"
+  },
+  "author": "freeCodeCamp",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.18.2",
+    "gray-matter": "4.0.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "4.17.21",
+    "dotenv": "16.4.5",
+    "shx": "0.3.4",
+    "typescript": "5.2.2"
+  }
+}

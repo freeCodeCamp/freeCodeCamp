@@ -1,0 +1,11 @@
+{
+  "name": "Build a Drum Machine",
+  "usesMultifileEditor": true,
+  "dashedName": "lab-drum-machine",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "6762ec275cef87635acc4fe3", "title": "Build a Drum Machine" }],
+  "helpCategory": "JavaScript",
+  "isUpcomingChange": false,
+  "blockLayout": "link",
+  "blockType": "lab"
+}

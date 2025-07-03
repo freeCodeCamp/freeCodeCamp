@@ -1,0 +1,16 @@
+{
+  "name": "Build a Newspaper Article",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-newspaper-article",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "66ba762af611169359d9d369",
+      "title": "Build a Newspaper Article"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

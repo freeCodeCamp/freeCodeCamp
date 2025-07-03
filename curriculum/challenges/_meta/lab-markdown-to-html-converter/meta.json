@@ -1,0 +1,11 @@
+{
+  "name": "Build a Markdown to HTML Converter",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "blockType": "lab",
+  "blockLayout": "link",
+  "dashedName": "lab-markdown-to-html-converter",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66f55eac933ff64ce654ca74", "title": "Build a Markdown to HTML Converter" }],
+  "helpCategory": "JavaScript"
+}

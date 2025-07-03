@@ -1,0 +1,10 @@
+{
+  "name": "Debugging CSS",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-debugging-css",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "672aa8c1ad423562a38b484d", "title": "How Can You Use the DevTools Inspection Tool and CSS Validators to Debug Your CSS?" }],
+  "helpCategory": "HTML-CSS"
+}

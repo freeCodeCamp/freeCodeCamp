@@ -1,0 +1,261 @@
+{
+  "name": "Learn Tree Traversal by Building a Binary Search Tree",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-tree-traversal-by-building-a-binary-search-tree",
+  "order": 12,
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "65c4eb814cc977c95cd7df0e",
+      "title": "Step 1"
+    },
+    {
+      "id": "65c4ef8463f869d0eaf87c67",
+      "title": "Step 2"
+    },
+    {
+      "id": "65c4f013851cefd1a4fe4c96",
+      "title": "Step 3"
+    },
+    {
+      "id": "65c4f02dbd3557d23f12db62",
+      "title": "Step 4"
+    },
+    {
+      "id": "65c4f07da204f4d2f325fbd3",
+      "title": "Step 5"
+    },
+    {
+      "id": "65c4f09e074dd8d37830ea00",
+      "title": "Step 6"
+    },
+    {
+      "id": "65c4f0b82db314d3fcc0b8e1",
+      "title": "Step 7"
+    },
+    {
+      "id": "65c4f0d32ca17ad4b1636b0e",
+      "title": "Step 8"
+    },
+    {
+      "id": "65c4f195de7e2ad5932be717",
+      "title": "Step 9"
+    },
+    {
+      "id": "65c4f22498d22ed775ef8efb",
+      "title": "Step 10"
+    },
+    {
+      "id": "65c4f2851645e8d84d14f5d1",
+      "title": "Step 11"
+    },
+    {
+      "id": "65c4f2b7178afed8e88f782f",
+      "title": "Step 12"
+    },
+    {
+      "id": "65c4f2d9fd872fd99ac659dd",
+      "title": "Step 13"
+    },
+    {
+      "id": "65c4f300da28d8da361bfa93",
+      "title": "Step 14"
+    },
+    {
+      "id": "65c4f3258d2e4cdacc919dfd",
+      "title": "Step 15"
+    },
+    {
+      "id": "65c4f33bc3c3d8db7f732787",
+      "title": "Step 16"
+    },
+    {
+      "id": "65c4f37ba6cbcfdc77e24165",
+      "title": "Step 17"
+    },
+    {
+      "id": "65c4f3aee69d11dcfdbcfc00",
+      "title": "Step 18"
+    },
+    {
+      "id": "65c63a4c4da62e9ae18e321a",
+      "title": "Step 19"
+    },
+    {
+      "id": "65c63da2ed6769a10e141341",
+      "title": "Step 20"
+    },
+    {
+      "id": "65c63df529bd15a24c187c62",
+      "title": "Step 21"
+    },
+    {
+      "id": "65c63e6962159fa372ecdbec",
+      "title": "Step 22"
+    },
+    {
+      "id": "65c63eb01b9563a4b8a046b6",
+      "title": "Step 23"
+    },
+    {
+      "id": "65c63fd9b387f0a6c5bf6a72",
+      "title": "Step 24"
+    },
+    {
+      "id": "65c64057a080baa7d60523ed",
+      "title": "Step 25"
+    },
+    {
+      "id": "65c6409418806da8d0636ffc",
+      "title": "Step 26"
+    },
+    {
+      "id": "65f97131a0709033d6911558",
+      "title": "Step 27"
+    },
+    {
+      "id": "65c644829cfb63acf3479d09",
+      "title": "Step 28"
+    },
+    {
+      "id": "65c645b838e7deb080fc25e0",
+      "title": "Step 29"
+    },
+    {
+      "id": "65c646d4148ae3b2d1cbcac4",
+      "title": "Step 30"
+    },
+    {
+      "id": "65c9ddd336596e30a4266a50",
+      "title": "Step 31"
+    },
+    {
+      "id": "65c9de201959f73591b606e6",
+      "title": "Step 32"
+    },
+    {
+      "id": "65ca03bd8eb5faf24b250c56",
+      "title": "Step 33"
+    },
+    {
+      "id": "65ca05f7cba1e6fe70527534",
+      "title": "Step 34"
+    },
+    {
+      "id": "65ca06475e9b8aff8ea5a5f1",
+      "title": "Step 35"
+    },
+    {
+      "id": "65ca06864129380054b55dc0",
+      "title": "Step 36"
+    },
+    {
+      "id": "65ca06c9f918730107c9908d",
+      "title": "Step 37"
+    },
+    {
+      "id": "65ca071d5921760254949f76",
+      "title": "Step 38"
+    },
+    {
+      "id": "65ca075e3184180309f4c1d9",
+      "title": "Step 39"
+    },
+    {
+      "id": "65ca0794ec3ed103bca67ed7",
+      "title": "Step 40"
+    },
+    {
+      "id": "65ca07dd6fa8840491b7a5cd",
+      "title": "Step 41"
+    },
+    {
+      "id": "65cb45d130c97cb459439fac",
+      "title": "Step 42"
+    },
+    {
+      "id": "65ca085a19adaa057302a3d6",
+      "title": "Step 43"
+    },
+    {
+      "id": "65d8b58074495d3f94977dca",
+      "title": "Step 44"
+    },
+    {
+      "id": "65ca089e848eca0672b9cd77",
+      "title": "Step 45"
+    },
+    {
+      "id": "65d8a6fcb15a3a239ba35dfd",
+      "title": "Step 46"
+    },
+    {
+      "id": "65d8a8773c816a273653fd0e",
+      "title": "Step 47"
+    },
+    {
+      "id": "65d8a90640d40c2927ebbd94",
+      "title": "Step 48"
+    },
+    {
+      "id": "65ca0a1f27596a089b0363b9",
+      "title": "Step 49"
+    },
+    {
+      "id": "65ca0d5adf39c410cd1177cc",
+      "title": "Step 50"
+    },
+    {
+      "id": "65ca0dc5dbf42a11c3cf1098",
+      "title": "Step 51"
+    },
+    {
+      "id": "65ca0dfaea3f4112afde6e26",
+      "title": "Step 52"
+    },
+    {
+      "id": "65ca0e2d05557a13a40b1243",
+      "title": "Step 53"
+    },
+    {
+      "id": "65ca0e8eb2c9c215269d6a66",
+      "title": "Step 54"
+    },
+    {
+      "id": "65ca1181e5b9b41c47632127",
+      "title": "Step 55"
+    },
+    {
+      "id": "65ca11a86801bc1d254da83c",
+      "title": "Step 56"
+    },
+    {
+      "id": "65ca11d8f3e8a71de41d0e32",
+      "title": "Step 57"
+    },
+    {
+      "id": "65ca120111bd521ea8b73e75",
+      "title": "Step 58"
+    },
+    {
+      "id": "65ca294e05dc032bf8922dc7",
+      "title": "Step 59"
+    },
+    {
+      "id": "65ca29b3a07d662de018ac13",
+      "title": "Step 60"
+    },
+    {
+      "id": "65ca2a18039c942f04ddde83",
+      "title": "Step 61"
+    },
+    {
+      "id": "65ca2a52d579b22feb89177f",
+      "title": "Step 62"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-grid"
+}

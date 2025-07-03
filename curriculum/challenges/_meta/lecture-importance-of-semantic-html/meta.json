@@ -1,0 +1,63 @@
+{
+  "name": "Importance of Semantic HTML",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-importance-of-semantic-html",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67298243760ae980de5266db",
+      "title": "Why Should You Care About Semantic HTML?"
+    },
+    {
+      "id": "672985445d7da807c6b4f406",
+      "title": "Why is it Important to Have Good Structural Hierarchy?"
+    },
+    {
+      "id": "672990ecf71a852804ababe7",
+      "title": "What Is the Difference Between Presentational and Semantic HTML?"
+    },
+    {
+      "id": "6729959bf9c8e835f46b3f78",
+      "title": "When Should You Use the Emphasis Element Over the Idiomatic Text Element?"
+    },
+    {
+      "id": "672995ac85fd943657c2ede5",
+      "title": "When Should You Use the Strong Element Over the Bring Attention To Element?"
+    },
+    {
+      "id": "672995bda6c67e369aaf8588",
+      "title": "What Are Description Lists, and When Should You Use Them?"
+    },
+    {
+      "id": "672995c9e6f69436dbcccc79",
+      "title": "How Do Block and Inline Quotes Work in HTML?"
+    },
+    {
+      "id": "672995d673bd3237200b9e7c",
+      "title": "How Do You Display Abbreviations and Acronyms in HTML?"
+    },
+    {
+      "id": "672995e43674fb3775b9ec5d",
+      "title": "How Do You Display Addresses in HTML?"
+    },
+    {
+      "id": "672995f16ed97837b365a9f6",
+      "title": "How Do You Display Times and Dates in HTML?"
+    },
+    {
+      "id": "672995ffdfd2f337f5f215f8",
+      "title": "How Do You Display Mathematical Equations and Chemical Formulas in HTML?"
+    },
+    {
+      "id": "6729960ed6e2ca3825940e97",
+      "title": "How Do You Represent Computer Code in HTML?"
+    },
+    {
+      "id": "6729963b1ab11638753cf082",
+      "title": "What Are the U, S, and Ruby Elements Used For, and How Do They Work?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

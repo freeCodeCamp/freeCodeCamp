@@ -1,0 +1,43 @@
+{
+  "name": "Working with Higher Order Functions and Callbacks",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-higher-order-functions-and-callbacks",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67329ffd75010f5ddeb4ea13",
+      "title": "What Is a Callback Function, and How Does It Work with the forEach Method?"
+    },
+    {
+      "id": "67336296a3c1591da81856c2",
+      "title": "What Are Higher-Order Functions?"
+    },
+    {
+      "id": "673362a34edda41dedf87623",
+      "title": "What Is the Map Method, and How Does It Work?"
+    },
+    {
+      "id": "673362b3f763ae1e38e17df7",
+      "title": "What Is the Filter Method, and How Does It Work?"
+    },
+    {
+      "id": "673362be2f70c21e65bc5459",
+      "title": "What Is the Reduce Method, and How Does It Work?"
+    },
+    {
+      "id": "673362cbb475e21eab726506",
+      "title": "What Is Method Chaining, and How Does It Work?"
+    },
+    {
+      "id": "673362d7f94d551edb532d24",
+      "title": "How Does the Sort Method Work?"
+    },
+    {
+      "id": "673362e43d57b51f1ad2d466",
+      "title": "How Do the every() and some() Methods Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

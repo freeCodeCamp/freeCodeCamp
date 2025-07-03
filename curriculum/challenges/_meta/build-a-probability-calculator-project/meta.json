@@ -1,0 +1,16 @@
+{
+  "name": "Build a Probability Calculator Project",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "build-a-probability-calculator-project",
+  "order": 18,
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "5e44414f903586ffb414c950",
+      "title": "Build a Probability Calculator Project"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "legacy-link"
+}

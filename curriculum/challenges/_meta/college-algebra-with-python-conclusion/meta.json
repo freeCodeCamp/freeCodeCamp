@@ -1,0 +1,19 @@
+{
+  "name": "College Algebra with Python: Conclusion",
+  "isUpcomingChange": false,
+  "dashedName": "college-algebra-with-python-conclusion",
+  "helpCategory": "Python",
+  "order": 18,
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    {
+      "id": "6363d2899078df117ce4c407",
+      "title": "Spreadsheets and Additional Resources"
+    },
+    {
+      "id": "6363d2959078df117ce4c408",
+      "title": "More Resources in Colab"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

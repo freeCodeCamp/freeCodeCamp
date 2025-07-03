@@ -1,0 +1,15 @@
+{
+  "name": "CSS Layouts and Effects Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-css-layout-and-effects",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "671a9311a289ae7fff25d88e",
+      "title": "CSS Layouts and Effects Review"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

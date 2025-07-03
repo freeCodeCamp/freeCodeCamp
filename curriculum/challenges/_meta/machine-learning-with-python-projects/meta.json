@@ -1,0 +1,31 @@
+{
+  "name": "Machine Learning with Python Projects",
+  "isUpcomingChange": false,
+  "dashedName": "machine-learning-with-python-projects",
+  "helpCategory": "Python",
+  "order": 2,
+  "superBlock": "machine-learning-with-python",
+  "challengeOrder": [
+    {
+      "id": "5e46f8d6ac417301a38fb92d",
+      "title": "Rock Paper Scissors"
+    },
+    {
+      "id": "5e46f8dcac417301a38fb92e",
+      "title": "Cat and Dog Image Classifier"
+    },
+    {
+      "id": "5e46f8e3ac417301a38fb92f",
+      "title": "Book Recommendation Engine using KNN"
+    },
+    {
+      "id": "5e46f8edac417301a38fb930",
+      "title": "Linear Regression Health Costs Calculator"
+    },
+    {
+      "id": "5e46f8edac417301a38fb931",
+      "title": "Neural Network SMS Text Classifier"
+    }
+  ],
+  "blockLayout": "project-list"
+}

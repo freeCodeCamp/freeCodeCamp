@@ -1,0 +1,12 @@
+{
+  "name": "Nano Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "review-nano",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6724e49b3e568c23436db428", "title": "Nano Review" }
+  ],
+  "helpCategory": "Backend Development"
+}

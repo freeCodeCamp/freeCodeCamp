@@ -1,0 +1,11 @@
+{
+  "name": "Design a Blog Post Card",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-blog-post-card",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66eaddd04a9e533fba689001", "title": "Design a Blog Post Card" }],
+  "helpCategory": "HTML-CSS",
+  "blockType": "lab",
+  "blockLayout": "link"
+}

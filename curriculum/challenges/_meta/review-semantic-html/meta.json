@@ -1,0 +1,12 @@
+{
+  "name": "Semantic HTML Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-semantic-html",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "671a83934b61f64cefe87a61", "title": "Semantic HTML Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

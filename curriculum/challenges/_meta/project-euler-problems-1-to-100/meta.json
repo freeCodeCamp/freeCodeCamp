@@ -1,0 +1,412 @@
+{
+  "name": "Project Euler Problems 1 to 100",
+  "isUpcomingChange": false,
+  "dashedName": "project-euler-problems-1-to-100",
+  "helpCategory": "Euler",
+  "order": 0,
+  "superBlock": "project-euler",
+  "disableLoopProtectTests": true,
+  "challengeOrder": [
+    {
+      "id": "5900f36e1000cf542c50fe80",
+      "title": "Problem 1: Multiples of 3 or 5"
+    },
+    {
+      "id": "5900f36e1000cf542c50fe81",
+      "title": "Problem 2: Even Fibonacci Numbers"
+    },
+    {
+      "id": "5900f36f1000cf542c50fe82",
+      "title": "Problem 3: Largest prime factor"
+    },
+    {
+      "id": "5900f3701000cf542c50fe83",
+      "title": "Problem 4: Largest palindrome product"
+    },
+    {
+      "id": "5900f3711000cf542c50fe84",
+      "title": "Problem 5: Smallest multiple"
+    },
+    {
+      "id": "5900f3721000cf542c50fe85",
+      "title": "Problem 6: Sum square difference"
+    },
+    {
+      "id": "5900f3731000cf542c50fe86",
+      "title": "Problem 7: 10001st prime"
+    },
+    {
+      "id": "5900f3741000cf542c50fe87",
+      "title": "Problem 8: Largest product in a series"
+    },
+    {
+      "id": "5900f3761000cf542c50fe88",
+      "title": "Problem 9: Special Pythagorean triplet"
+    },
+    {
+      "id": "5900f3761000cf542c50fe89",
+      "title": "Problem 10: Summation of primes"
+    },
+    {
+      "id": "5900f3781000cf542c50fe8a",
+      "title": "Problem 11: Largest product in a grid"
+    },
+    {
+      "id": "5900f3781000cf542c50fe8b",
+      "title": "Problem 12: Highly divisible triangular number"
+    },
+    {
+      "id": "5900f37a1000cf542c50fe8c",
+      "title": "Problem 13: Large sum"
+    },
+    {
+      "id": "5900f37a1000cf542c50fe8d",
+      "title": "Problem 14: Longest Collatz sequence"
+    },
+    {
+      "id": "5900f37b1000cf542c50fe8e",
+      "title": "Problem 15: Lattice paths"
+    },
+    {
+      "id": "5900f37d1000cf542c50fe8f",
+      "title": "Problem 16: Power digit sum"
+    },
+    {
+      "id": "5900f37d1000cf542c50fe90",
+      "title": "Problem 17: Number letter counts"
+    },
+    {
+      "id": "5900f37e1000cf542c50fe91",
+      "title": "Problem 18: Maximum path sum I"
+    },
+    {
+      "id": "5900f37f1000cf542c50fe92",
+      "title": "Problem 19: Counting Sundays"
+    },
+    {
+      "id": "5900f3801000cf542c50fe93",
+      "title": "Problem 20: Factorial digit sum"
+    },
+    {
+      "id": "5900f3811000cf542c50fe94",
+      "title": "Problem 21: Amicable numbers"
+    },
+    {
+      "id": "5a51eabcad78bf416f316e2a",
+      "title": "Problem 22: Names scores"
+    },
+    {
+      "id": "5900f3831000cf542c50fe96",
+      "title": "Problem 23: Non-abundant sums"
+    },
+    {
+      "id": "5900f3841000cf542c50fe97",
+      "title": "Problem 24: Lexicographic permutations"
+    },
+    {
+      "id": "5900f3851000cf542c50fe98",
+      "title": "Problem 25: 1000-digit Fibonacci number"
+    },
+    {
+      "id": "5900f3861000cf542c50fe99",
+      "title": "Problem 26: Reciprocal cycles"
+    },
+    {
+      "id": "5900f3871000cf542c50fe9a",
+      "title": "Problem 27: Quadratic primes"
+    },
+    {
+      "id": "5900f3881000cf542c50fe9b",
+      "title": "Problem 28: Number spiral diagonals"
+    },
+    {
+      "id": "5900f3891000cf542c50fe9c",
+      "title": "Problem 29: Distinct powers"
+    },
+    {
+      "id": "5900f38a1000cf542c50fe9d",
+      "title": "Problem 30: Digit n powers"
+    },
+    {
+      "id": "5900f38b1000cf542c50fe9e",
+      "title": "Problem 31: Coin sums"
+    },
+    {
+      "id": "5900f38c1000cf542c50fe9f",
+      "title": "Problem 32: Pandigital products"
+    },
+    {
+      "id": "5900f38d1000cf542c50fea0",
+      "title": "Problem 33: Digit cancelling fractions"
+    },
+    {
+      "id": "5900f38e1000cf542c50fea1",
+      "title": "Problem 34: Digit factorials"
+    },
+    {
+      "id": "5900f38f1000cf542c50fea2",
+      "title": "Problem 35: Circular primes"
+    },
+    {
+      "id": "5900f3901000cf542c50fea3",
+      "title": "Problem 36: Double-base palindromes"
+    },
+    {
+      "id": "5900f3911000cf542c50fea4",
+      "title": "Problem 37: Truncatable primes"
+    },
+    {
+      "id": "5900f3931000cf542c50fea5",
+      "title": "Problem 38: Pandigital multiples"
+    },
+    {
+      "id": "5900f3931000cf542c50fea6",
+      "title": "Problem 39: Integer right triangles"
+    },
+    {
+      "id": "5900f3941000cf542c50fea7",
+      "title": "Problem 40: Champernowne's constant"
+    },
+    {
+      "id": "5900f3951000cf542c50fea8",
+      "title": "Problem 41: Pandigital prime"
+    },
+    {
+      "id": "5900f3961000cf542c50fea9",
+      "title": "Problem 42: Coded triangle numbers"
+    },
+    {
+      "id": "5900f3971000cf542c50feaa",
+      "title": "Problem 43: Sub-string divisibility"
+    },
+    {
+      "id": "5900f3981000cf542c50feab",
+      "title": "Problem 44: Pentagon numbers"
+    },
+    {
+      "id": "5900f3991000cf542c50feac",
+      "title": "Problem 45: Triangular, pentagonal, and hexagonal"
+    },
+    {
+      "id": "5900f39a1000cf542c50fead",
+      "title": "Problem 46: Goldbach's other conjecture"
+    },
+    {
+      "id": "5900f39c1000cf542c50feae",
+      "title": "Problem 47: Distinct primes factors"
+    },
+    {
+      "id": "5900f39c1000cf542c50feaf",
+      "title": "Problem 48: Self powers"
+    },
+    {
+      "id": "5900f39d1000cf542c50feb0",
+      "title": "Problem 49: Prime permutations"
+    },
+    {
+      "id": "5900f39e1000cf542c50feb1",
+      "title": "Problem 50: Consecutive prime sum"
+    },
+    {
+      "id": "5900f39f1000cf542c50feb2",
+      "title": "Problem 51: Prime digit replacements"
+    },
+    {
+      "id": "5900f3a01000cf542c50feb3",
+      "title": "Problem 52: Permuted multiples"
+    },
+    {
+      "id": "5900f3a11000cf542c50feb4",
+      "title": "Problem 53: Combinatoric selections"
+    },
+    {
+      "id": "5900f3a21000cf542c50feb5",
+      "title": "Problem 54: Poker hands"
+    },
+    {
+      "id": "5900f3a31000cf542c50feb6",
+      "title": "Problem 55: Lychrel numbers"
+    },
+    {
+      "id": "5900f3a41000cf542c50feb7",
+      "title": "Problem 56: Powerful digit sum"
+    },
+    {
+      "id": "5900f3a51000cf542c50feb8",
+      "title": "Problem 57: Square root convergents"
+    },
+    {
+      "id": "5900f3a61000cf542c50feb9",
+      "title": "Problem 58: Spiral primes"
+    },
+    {
+      "id": "5900f3a81000cf542c50feba",
+      "title": "Problem 59: XOR decryption"
+    },
+    {
+      "id": "5900f3a81000cf542c50febb",
+      "title": "Problem 60: Prime pair sets"
+    },
+    {
+      "id": "5900f3a91000cf542c50febc",
+      "title": "Problem 61: Cyclical figurate numbers"
+    },
+    {
+      "id": "5900f3aa1000cf542c50febd",
+      "title": "Problem 62: Cubic permutations"
+    },
+    {
+      "id": "5900f3ab1000cf542c50febe",
+      "title": "Problem 63: Powerful digit counts"
+    },
+    {
+      "id": "5900f3ac1000cf542c50febf",
+      "title": "Problem 64: Odd period square roots"
+    },
+    {
+      "id": "5900f3ad1000cf542c50fec0",
+      "title": "Problem 65: Convergents of e"
+    },
+    {
+      "id": "5900f3ae1000cf542c50fec1",
+      "title": "Problem 66: Diophantine equation"
+    },
+    {
+      "id": "5900f3b01000cf542c50fec2",
+      "title": "Problem 67: Maximum path sum II"
+    },
+    {
+      "id": "5900f3b01000cf542c50fec3",
+      "title": "Problem 68: Magic 5-gon ring"
+    },
+    {
+      "id": "5900f3b11000cf542c50fec4",
+      "title": "Problem 69: Totient maximum"
+    },
+    {
+      "id": "5900f3b21000cf542c50fec5",
+      "title": "Problem 70: Totient permutation"
+    },
+    {
+      "id": "5900f3b31000cf542c50fec6",
+      "title": "Problem 71: Ordered fractions"
+    },
+    {
+      "id": "5900f3b41000cf542c50fec7",
+      "title": "Problem 72: Counting fractions"
+    },
+    {
+      "id": "5900f3b61000cf542c50fec8",
+      "title": "Problem 73: Counting fractions in a range"
+    },
+    {
+      "id": "5900f3b61000cf542c50fec9",
+      "title": "Problem 74: Digit factorial chains"
+    },
+    {
+      "id": "5900f3b71000cf542c50feca",
+      "title": "Problem 75: Singular integer right triangles"
+    },
+    {
+      "id": "5900f3b81000cf542c50fecb",
+      "title": "Problem 76: Counting summations"
+    },
+    {
+      "id": "5900f3b91000cf542c50fecc",
+      "title": "Problem 77: Prime summations"
+    },
+    {
+      "id": "5900f3ba1000cf542c50fecd",
+      "title": "Problem 78: Coin partitions"
+    },
+    {
+      "id": "5900f3bb1000cf542c50fece",
+      "title": "Problem 79: Passcode derivation"
+    },
+    {
+      "id": "5900f3bc1000cf542c50fecf",
+      "title": "Problem 80: Square root digital expansion"
+    },
+    {
+      "id": "5900f3bd1000cf542c50fed0",
+      "title": "Problem 81: Path sum: two ways"
+    },
+    {
+      "id": "5900f3be1000cf542c50fed1",
+      "title": "Problem 82: Path sum: three ways"
+    },
+    {
+      "id": "5900f3bf1000cf542c50fed2",
+      "title": "Problem 83: Path sum: four ways"
+    },
+    {
+      "id": "5900f3c11000cf542c50fed3",
+      "title": "Problem 84: Monopoly odds"
+    },
+    {
+      "id": "5900f3c11000cf542c50fed4",
+      "title": "Problem 85: Counting rectangles"
+    },
+    {
+      "id": "5900f3c31000cf542c50fed5",
+      "title": "Problem 86: Cuboid route"
+    },
+    {
+      "id": "5900f3c51000cf542c50fed8",
+      "title": "Problem 87: Prime power triples"
+    },
+    {
+      "id": "5900f3c51000cf542c50fed6",
+      "title": "Problem 88: Product-sum numbers"
+    },
+    {
+      "id": "5900f3c51000cf542c50fed7",
+      "title": "Problem 89: Roman numerals"
+    },
+    {
+      "id": "5900f3c61000cf542c50fed9",
+      "title": "Problem 90: Cube digit pairs"
+    },
+    {
+      "id": "5900f3c71000cf542c50feda",
+      "title": "Problem 91: Right triangles with integer coordinates"
+    },
+    {
+      "id": "5900f3c81000cf542c50fedb",
+      "title": "Problem 92: Square digit chains"
+    },
+    {
+      "id": "5900f3ca1000cf542c50fedc",
+      "title": "Problem 93: Arithmetic expressions"
+    },
+    {
+      "id": "5900f3ca1000cf542c50fedd",
+      "title": "Problem 94: Almost equilateral triangles"
+    },
+    {
+      "id": "5900f3cc1000cf542c50fede",
+      "title": "Problem 95: Amicable chains"
+    },
+    {
+      "id": "5900f3cc1000cf542c50fedf",
+      "title": "Problem 96: Su Doku"
+    },
+    {
+      "id": "5900f3ce1000cf542c50fee0",
+      "title": "Problem 97: Large non-Mersenne prime"
+    },
+    {
+      "id": "5900f3cf1000cf542c50fee1",
+      "title": "Problem 98: Anagramic squares"
+    },
+    {
+      "id": "5900f3d01000cf542c50fee2",
+      "title": "Problem 99: Largest exponential"
+    },
+    {
+      "id": "5900f3d01000cf542c50fee3",
+      "title": "Problem 100: Arranged probability"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

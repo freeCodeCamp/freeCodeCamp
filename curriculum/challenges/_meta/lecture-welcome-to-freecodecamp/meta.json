@@ -1,0 +1,27 @@
+{
+  "name": "Welcome to freeCodeCamp",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-welcome-to-freecodecamp",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6734ddabad59e593a49afafe",
+      "title": "Welcome Message from Quincy"
+    },
+    {
+      "id": "6734e2c5780912abd874e79c",
+      "title": "How Does the Certification Process Work?"
+    },
+    {
+      "id":"6763500bd5a85d5898cc21a9",
+      "title":"How do Most People Learn Effectively?"
+    },
+    {
+      "id": "6734e2dcb965e5ac0ea38e0f",
+      "title": "How Can You Build Effective Learning Habits and Work Smarter?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

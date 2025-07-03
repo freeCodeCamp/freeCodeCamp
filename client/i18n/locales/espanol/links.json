@@ -1,0 +1,34 @@
+{
+  "help-translate-link-url": "https://contribute.freecodecamp.org/getting-started/#translations",
+  "top-contributors": "https://www.freecodecamp.org/news/freecodecamp-top-contributors/",
+  "footer": {
+    "about-url": "https://www.freecodecamp.org/espanol/news/acerca-de-freecodecamp-preguntas-frecuentes/",
+    "shop-url": "https://www.freecodecamp.org/shop/",
+    "support-url": "https://www.freecodecamp.org/espanol/news/preguntas-comunes-de-soporte-tecnico/",
+    "sponsors-url": "https://www.freecodecamp.org/news/sponsors/",
+    "honesty-url": "https://www.freecodecamp.org/espanol/news/politica-de-honestidad-academica/",
+    "coc-url": "https://www.freecodecamp.org/espanol/news/codigo-de-conducta/",
+    "privacy-url": "https://www.freecodecamp.org/news/privacy-policy/",
+    "tos-url": "https://www.freecodecamp.org/news/terms-of-service/",
+    "copyright-url": "https://www.freecodecamp.org/news/copyright-policy/"
+  },
+  "donate": {
+    "other-ways-url": "https://www.freecodecamp.org/news/how-to-donate-to-free-code-camp",
+    "download-irs-url": "https://s3.amazonaws.com/freecodecamp/Free+Code+Camp+Inc+IRS+Determination+Letter.pdf",
+    "download-990-url": "https://freecodecamp.s3.amazonaws.com/freeCodeCamp+2019+f990.pdf",
+    "one-time-url": "https://paypal.me/freecodecamp"
+  },
+  "nav": {
+    "contribute": "https://contribute.freecodecamp.org/#/i18n/espanol/index",
+    "forum": "https://forum.freecodecamp.org/c/espanol/",
+    "news": "https://freecodecamp.org/espanol/news/",
+    "podcast": "https://www.freecodecamp.org/espanol/news/el-podcast-de-freecodecamp-en-espanol/"
+  },
+  "help": {
+    "HTML-CSS": "Espanol/HTML-CSS",
+    "JavaScript": "Espanol/JavaScript",
+    "Python": "Espanol/Python",
+    "Backend Development": "espanol/ayuda-de-programacion",
+    "English": "English"
+  }
+}

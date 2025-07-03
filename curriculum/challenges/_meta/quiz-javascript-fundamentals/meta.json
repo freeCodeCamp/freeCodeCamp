@@ -1,0 +1,15 @@
+{
+  "name": "JavaScript Fundamentals Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-fundamentals",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "66edcd875b0d91de1fbbb492",
+      "title": "JavaScript Fundamentals Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

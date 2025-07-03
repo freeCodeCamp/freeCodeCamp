@@ -1,0 +1,27 @@
+{
+  "name": "@freecodecamp/challenge-editor-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@vitejs/plugin-react": "4.2.1",
+    "codemirror": "5.65.16",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router-dom": "6.18.0",
+    "typescript": "5.2.2",
+    "vite": "4.5.2"
+  },
+  "scripts": {
+    "start": "PORT=3300 vite",
+    "build": "tsc && vite build",
+    "test": "echo \"no tests here yet\"",
+    "postinstall": "shx cp ./sample.env ./.env"
+  },
+  "devDependencies": {
+    "@types/codemirror": "5.60.15",
+    "@types/react": "17.0.83",
+    "@types/react-dom": "17.0.19",
+    "@uiw/react-codemirror": "3.2.10",
+    "shx": "0.3.4"
+  }
+}

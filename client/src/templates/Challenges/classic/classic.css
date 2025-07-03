@@ -1,0 +1,277 @@
+.reflex-element {
+  overflow: hidden !important;
+}
+
+.monaco-menu .action-label {
+  color: var(--highlight-color);
+  letter-spacing: 0.02em;
+}
+
+.monaco-aria-container {
+  top: -999em;
+}
+
+.monaco-menu .monaco-action-bar.vertical .action-item:nth-last-child(n + 5),
+.monaco-menu .monaco-action-bar.vertical .action-item:last-child,
+.monaco-menu .monaco-action-bar.vertical .action-label.separator {
+  display: none !important;
+}
+
+.action-row {
+  padding: 10px;
+  border-bottom: 1px solid var(--quaternary-background);
+}
+
+.monaco-editor-tabs button[aria-expanded='true'],
+.panel-display-tabs button[aria-expanded='true'],
+.tabs-row button[aria-expanded='true'] {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-background);
+}
+
+.monaco-editor-tabs button:hover,
+.panel-display-tabs button:hover,
+.tabs-row button:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-background);
+}
+
+.monaco-editor-tabs button[aria-expanded='true']:hover,
+.panel-display-tabs button[aria-expanded='true']:hover,
+.tabs-row button[aria-expanded='true']:hover {
+  background-color: var(--quaternary-color);
+  color: var(--secondary-background);
+}
+
+.panel-display-tabs button:focus-visible {
+  position: relative;
+  z-index: 20;
+}
+
+.tabs-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tabs-row button,
+.monaco-editor-tabs button {
+  padding: 6px 12px;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.monaco-editor-tabs button + button {
+  margin-inline-start: 3px;
+}
+
+.monaco-editor-tabs {
+  display: flex;
+  margin-inline-end: auto;
+}
+
+.panel-display-tabs button:first-child,
+.tabs-row > button:first-child {
+  margin: 0 10px 0 0;
+}
+
+.panel-display-tabs button:last-of-type {
+  border-inline-start-width: 1px;
+}
+
+.panel-display-tabs button:last-of-type:first-of-type {
+  border-inline-start-width: 3px;
+}
+
+.panel-display-tabs button:nth-last-child(2) {
+  border-inline-end-width: 1px;
+}
+
+.restart-step-tab {
+  margin: 0 auto;
+}
+
+#mobile-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#mobile-layout .nav-lists {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  border-bottom: 1px solid var(--quaternary-color);
+  height: 2rem;
+  flex-shrink: 0;
+}
+
+/* Need to narrow width of tabs to make room for preview toggle button */
+#mobile-layout[data-haspreview='true'] [role='tablist'] {
+  width: calc(100% - 2rem);
+}
+
+#mobile-layout .nav-lists > button {
+  height: 100%;
+  font-size: 0.8em;
+  /* Need to override radix-ui defaults on side padding to allow room for
+     four tabs and a preview toggle button at narrow view ports */
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+#mobile-layout .nav-lists button[data-state='active'] {
+  pointer-events: none;
+}
+
+#mobile-layout
+  .nav-lists
+  > button:is([aria-selected='false'], [aria-expanded='false']) {
+  color: inherit;
+  background-color: inherit;
+}
+
+#mobile-layout .nav-lists > button:hover,
+.portal-button:hover {
+  background: var(--quaternary-background);
+  color: var(--secondary-color);
+}
+
+.portal-button {
+  width: 2rem;
+  border: 0;
+  padding: 0;
+  background-color: inherit;
+  font-size: 0.8rem;
+  height: 100%;
+}
+
+.portal-button[aria-expanded='true'] {
+  border-color: var(--quaternary-color);
+  background-color: var(--quaternary-color);
+  color: var(--secondary-background);
+}
+
+.portal-button:focus-visible {
+  outline-offset: -3px;
+}
+
+#mobile-layout .tab-content {
+  height: 100%;
+  overflow-y: hidden;
+}
+
+#mobile-layout .tab-content[data-state='inactive'] {
+  height: 1px;
+}
+
+#mobile-layout .tab-content[data-state='active'] {
+  padding-block-end: 37px;
+  display: flex;
+  flex-direction: column;
+}
+
+#learn-app-wrapper[data-has-editable-boundaries='true']
+  #mobile-layout
+  .tab-content[data-state='active'] {
+  padding-block-end: 0px;
+}
+
+#mobile-layout .preview-external-window {
+  text-align: center;
+  margin-top: 60px;
+}
+
+#mobile-layout-pane-editor {
+  display: flex;
+  flex-direction: column;
+}
+
+#mobile-layout .portal-button-wrap {
+  position: absolute;
+  top: auto;
+  right: 0;
+  height: 2rem;
+  border-bottom: 1px solid var(--quaternary-color);
+}
+
+#mobile-layout .tab-content[data-state='active'] .portal-button-wrap {
+  transform: translateY(-2rem);
+}
+
+#mobile-layout #mobile-layout-pane-instructions {
+  overflow-y: auto;
+}
+
+#mobile-layout-pane-instructions:focus-visible {
+  outline-offset: -2px;
+}
+
+@supports not selector(:focus-visible) {
+  #mobile-layout-pane-instructions:focus {
+    outline-offset: -2px;
+  }
+}
+
+#mobile-layout .monaco-editor-tabs {
+  padding: 10px;
+  width: 100%;
+}
+
+#mobile-layout .monaco-editor-tabs button {
+  flex: 1;
+  max-width: 50%;
+}
+
+/* Focus indicator for tab panel */
+.nav-lists [role='tab']:focus {
+  outline-offset: -3px;
+}
+
+@media screen and (max-width: 480px) {
+  #mobile-layout .monaco-editor-tabs {
+    padding: 10px 5px;
+  }
+}
+
+@media screen and (max-height: 300px) {
+  #mobile-layout .nav-lists {
+    height: 1.5rem;
+  }
+
+  #mobile-layout .nav-lists > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #mobile-layout .portal-button-wrap {
+    height: 1.5rem;
+  }
+
+  #mobile-layout .tab-content[data-state='active'] .portal-button-wrap {
+    height: 1.52rem;
+    transform: translateY(-1.5rem);
+  }
+
+  #mobile-layout .portal-button-wrap button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.43rem;
+    font-size: initial;
+  }
+
+  #mobile-layout .portal-button-wrap button svg {
+    scale: 0.8;
+  }
+
+  #mobile-layout .monaco-editor-tabs {
+    padding: 5px;
+  }
+
+  .monaco-editor-tabs button {
+    padding: 2px 12px;
+  }
+}

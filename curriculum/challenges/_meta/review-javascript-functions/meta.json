@@ -1,0 +1,12 @@
+{
+  "name": "JavaScript Functions Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-functions",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6723c5b8601a40a100bb59c9", "title": "JavaScript Functions Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

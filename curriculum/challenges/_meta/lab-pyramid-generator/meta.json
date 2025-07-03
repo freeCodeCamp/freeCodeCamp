@@ -1,0 +1,11 @@
+{
+  "name": "Build a Pyramid Generator",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-pyramid-generator",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66f2836c459cfb16ae76f24f", "title": "Build a Pyramid Generator" }],
+  "helpCategory": "JavaScript"
+}

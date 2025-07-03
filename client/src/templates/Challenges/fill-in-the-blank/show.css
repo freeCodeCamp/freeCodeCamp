@@ -1,0 +1,46 @@
+.fill-in-the-blank-wrap {
+  background-color: var(--primary-background);
+  padding: 20px;
+  border: 4px solid var(--tertiary-background);
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.fill-in-the-blank-wrap > p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.fill-in-the-blank-input {
+  font-family: monospace;
+  padding: 0;
+  text-align: center;
+  background-color: var(--primary-background);
+  border-radius: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+  z-index: 1;
+  position: relative;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom-width: 4px;
+  border-bottom-color: var(--gray-45) !important;
+}
+
+.fill-in-the-blank-input:focus {
+  z-index: 2;
+}
+
+.correct-blank-answer {
+  color: var(--background-success) !important;
+  font-weight: bold;
+}
+
+.incorrect-blank-answer {
+  border-bottom-color: var(--background-danger) !important;
+}

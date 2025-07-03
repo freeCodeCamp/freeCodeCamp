@@ -1,0 +1,12 @@
+{
+  "name": "Typescript Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "review-typescript",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6724e296dceca21b82426229", "title": "Typescript Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

@@ -1,0 +1,14 @@
+services:
+  api:
+    restart: unless-stopped
+    image: fcc-api
+    env_file:
+      - ../../.env
+    ports:
+      - '3000:3000'
+    logging:
+      driver: 'local'
+      options:
+        max-size: '10m'
+        max-file: '3'
+        compress: 'true'

@@ -1,0 +1,23 @@
+{
+  "name": "Learn Ratios and Proportions",
+  "isUpcomingChange": false,
+  "dashedName": "learn-ratios-and-proportions",
+  "helpCategory": "Python",
+  "order": 0,
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    {
+      "id": "6331caa1b51aeedd1a2bd644",
+      "title": "Introduction to College Algebra with Python"
+    },
+    {
+      "id": "6331d29fb51aeedd1a2bd653",
+      "title": "Solving Proportions"
+    },
+    {
+      "id": "6331d298b51aeedd1a2bd652",
+      "title": "Ratios and Proportions: Extra"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

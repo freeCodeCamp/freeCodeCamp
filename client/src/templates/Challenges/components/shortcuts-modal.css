@@ -1,0 +1,23 @@
+.shortcuts-modal-table {
+  width: 100%;
+  margin-bottom: 2rem !important;
+}
+
+.shortcuts-modal-table caption {
+  text-align: center;
+}
+
+.shortcuts-modal-table th {
+  font-weight: bold;
+  text-align: center;
+}
+
+.shortcuts-modal-table tbody tr {
+  line-height: 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.shortcuts-modal-table tbody tr td:nth-child(2) {
+  text-align: right;
+  font-weight: bold;
+}

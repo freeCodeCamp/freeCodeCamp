@@ -1,0 +1,15 @@
+{
+  "name": "JavaScript Regular Expressions Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-regular-expressions",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6723cdfa4ae237bf6b7e32eb",
+      "title": "JavaScript Regular Expressions Review"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

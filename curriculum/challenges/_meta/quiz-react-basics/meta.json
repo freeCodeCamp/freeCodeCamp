@@ -1,0 +1,12 @@
+{
+  "name": "React Basics Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-react-basics",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "66f1a2009e65c9a40a26d51e", "title": "React Basics Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

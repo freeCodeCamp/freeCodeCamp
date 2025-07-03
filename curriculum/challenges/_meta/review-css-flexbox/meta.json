@@ -1,0 +1,12 @@
+{
+  "name": "CSS Flexbox Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-css-flexbox",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "671a940c69cdee833d4cc312", "title": "CSS Flexbox Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

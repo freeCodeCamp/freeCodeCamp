@@ -1,0 +1,12 @@
+{
+  "name": "JavaScript Strings Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-strings",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "66edc31c44f1b9c1d5c5ebca", "title": "JavaScript Strings Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

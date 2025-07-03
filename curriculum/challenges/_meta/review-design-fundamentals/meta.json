@@ -1,0 +1,12 @@
+{
+  "name": "Design Fundamentals Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-design-fundamentals",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "671a892927fdba60db05edfe", "title": "Design Fundamentals Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

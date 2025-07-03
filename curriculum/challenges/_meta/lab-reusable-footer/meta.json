@@ -1,0 +1,11 @@
+{
+  "name": "Build a Reusable Footer",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-reusable-footer",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "673b02b03134b04637bf7055", "title": "Build a Reusable Footer" }],
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockType": "lab"
+}

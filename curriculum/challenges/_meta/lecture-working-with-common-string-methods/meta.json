@@ -1,0 +1,39 @@
+{
+  "name": "Working with Common String Methods",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-common-string-methods",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672d266034b5242126271995",
+      "title": "What Is ASCII, and How Does It Work with charCodeAt() and fromCharCode()?"
+    },
+    {
+      "id": "67326c0d7bef01c539120766",
+      "title": "How Can You Test if a String Contains a Substring?"
+    },
+    {
+      "id": "67326c15b3b2f0c5827927cc",
+      "title": "How Can You Extract a Substring from a String?"
+    },
+    {
+      "id": "67326c1fdaf9c0c5ad1a2589",
+      "title": "How Can You Change the Casing for a String?"
+    },
+    {
+      "id": "67326c29dcd98fc5ecc49779",
+      "title": "How Can You Replace Parts of a String with Another?"
+    },
+    {
+      "id": "67326c3392068ec6184a0c95",
+      "title": "How Can You Repeat a String x Number of Times?"
+    },
+    {
+      "id": "67326c3c3ab931c644cea05b",
+      "title": "How Can You Trim Whitespace from a String?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

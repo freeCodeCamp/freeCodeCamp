@@ -1,0 +1,23 @@
+{
+  "name": "Learn Functions and Graphing",
+  "isUpcomingChange": false,
+  "dashedName": "learn-functions-and-graphing",
+  "helpCategory": "Python",
+  "order": 3,
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    {
+      "id": "6331d266b51aeedd1a2bd64b",
+      "title": "Functions"
+    },
+    {
+      "id": "6331d26fb51aeedd1a2bd64c",
+      "title": "Graphing"
+    },
+    {
+      "id": "63e1798f811fda1bc546bba0",
+      "title": "Functions and Graphing: Extra"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

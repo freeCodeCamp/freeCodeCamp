@@ -1,0 +1,91 @@
+{
+  "name": "Basic Data Structures",
+  "isUpcomingChange": false,
+  "dashedName": "basic-data-structures",
+  "helpCategory": "JavaScript",
+  "order": 4,
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "challengeOrder": [
+    {
+      "id": "587d7b7e367417b2b2512b20",
+      "title": "Use an Array to Store a Collection of Data"
+    },
+    {
+      "id": "5a661e0f1068aca922b3ef17",
+      "title": "Access an Array's Contents Using Bracket Notation"
+    },
+    {
+      "id": "587d78b2367417b2b2512b0e",
+      "title": "Add Items to an Array with push() and unshift()"
+    },
+    {
+      "id": "587d78b2367417b2b2512b0f",
+      "title": "Remove Items from an Array with pop() and shift()"
+    },
+    {
+      "id": "587d78b2367417b2b2512b10",
+      "title": "Remove Items Using splice()"
+    },
+    {
+      "id": "587d78b3367417b2b2512b11",
+      "title": "Add Items Using splice()"
+    },
+    {
+      "id": "587d7b7a367417b2b2512b12",
+      "title": "Copy Array Items Using slice()"
+    },
+    {
+      "id": "587d7b7b367417b2b2512b13",
+      "title": "Copy an Array with the Spread Operator"
+    },
+    {
+      "id": "587d7b7b367417b2b2512b17",
+      "title": "Combine Arrays with the Spread Operator"
+    },
+    {
+      "id": "587d7b7b367417b2b2512b14",
+      "title": "Check For The Presence of an Element With indexOf()"
+    },
+    {
+      "id": "587d7b7b367417b2b2512b15",
+      "title": "Iterate Through All an Array's Items Using For Loops"
+    },
+    {
+      "id": "587d7b7b367417b2b2512b16",
+      "title": "Create complex multi-dimensional arrays"
+    },
+    {
+      "id": "587d7b7c367417b2b2512b18",
+      "title": "Add Key-Value Pairs to JavaScript Objects"
+    },
+    {
+      "id": "587d7b7c367417b2b2512b19",
+      "title": "Modify an Object Nested Within an Object"
+    },
+    {
+      "id": "587d7b7c367417b2b2512b1a",
+      "title": "Access Property Names with Bracket Notation"
+    },
+    {
+      "id": "587d7b7c367417b2b2512b1b",
+      "title": "Use the delete Keyword to Remove Object Properties"
+    },
+    {
+      "id": "587d7b7d367417b2b2512b1c",
+      "title": "Check if an Object has a Property"
+    },
+    {
+      "id": "587d7b7d367417b2b2512b1d",
+      "title": "Iterate Through the Keys of an Object with a for...in Statement"
+    },
+    {
+      "id": "587d7b7d367417b2b2512b1e",
+      "title": "Generate an Array of All Object Keys with Object.keys()"
+    },
+    {
+      "id": "587d7b7d367417b2b2512b1f",
+      "title": "Modify an Array Stored in an Object"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "JavaScript Audio and Video Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-audio-and-video",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "66edd3b3096349f06cf688bb",
+      "title": "JavaScript Audio and Video Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

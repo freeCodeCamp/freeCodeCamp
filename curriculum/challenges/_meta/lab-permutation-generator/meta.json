@@ -1,0 +1,11 @@
+{
+  "name": "Build a Permutation Generator",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-permutation-generator",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66fe4f33a2cc9b33f4d5cd9b", "title": "Build a Permutation Generator" }],
+  "helpCategory": "JavaScript",
+  "blockType": "lab",
+  "blockLayout": "link"
+}

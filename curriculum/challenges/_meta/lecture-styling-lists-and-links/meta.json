@@ -1,0 +1,27 @@
+{
+  "name": "Styling Lists and Links",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-styling-lists-and-links",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa6441bcd3758e9f52ae0",
+      "title": "How Do You Space List Items Using margin or line-height?"
+    },
+    {
+      "id": "672b951b1bf78038b1a2a0e7",
+      "title": "How Do the Different list-style Properties Work?"
+    },
+    {
+      "id": "672b952d3a5c603908841971",
+      "title": "Why Are Default Link Styles Important for Usability on the Web?"
+    },
+    {
+      "id": "672b9538c25634394ceb7b8f",
+      "title": "How Do You Style the Different Link States?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "JavaScript Dates Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-dates",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "66edd3711bb9f7efa73aef91", "title": "JavaScript Dates Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

@@ -1,0 +1,23 @@
+name: GitHub - Spam PR
+on:
+  pull_request_target:
+    types:
+      - labeled
+
+jobs:
+  is-spam:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
+        with:
+          github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
+          script: |
+            const isSpam = context.payload.pull_request.labels.find(label => label.name === "spam");
+            if (isSpam) {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: "We are marking this pull request as spam. Please note that if you are participating in Hacktoberfest, two or more PRs marked as spam will result in your permanent disqualification.\n\nIf you are interested in making quality and genuine contributions to our projects, check out our [contributing guidelines](https://contribute.freecodecamp.org)."
+              })
+            }

@@ -1,0 +1,141 @@
+{
+  "name": "Build a Plant Nursery Catalog",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-plant-nursery-catalog",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "673339d96c56d36e963e888e",
+      "title": "Step 1"
+    },
+    {
+      "id": "6733b5632fb854bc6c58dc0d",
+      "title": "Step 2"
+    },
+    {
+      "id": "6733b5e6f210c1bd1afdf8b3",
+      "title": "Step 3"
+    },
+    {
+      "id": "67349ba230cff237c0f2bdf2",
+      "title": "Step 4"
+    },
+    {
+      "id": "67349d6e726b2c3c7f7301e8",
+      "title": "Step 5"
+    },
+    {
+      "id": "6734a13a29acdf47f2b8e161",
+      "title": "Step 6"
+    },
+    {
+      "id": "6734a2385c52c54d916a8b86",
+      "title": "Step 7"
+    },
+    {
+      "id": "6734a606e5968a5a19b77171",
+      "title": "Step 8"
+    },
+    {
+      "id": "6734b36f1a3ce17e73327f24",
+      "title": "Step 9"
+    },
+    {
+      "id": "6734a772196245601e4b80e0",
+      "title": "Step 10"
+    },
+    {
+      "id": "6734ab61e916486c80c490d1",
+      "title": "Step 11"
+    },
+    {
+      "id": "6734bbc0bd741598f942352e",
+      "title": "Step 12"
+    },
+    {
+      "id": "6734c10a327760a665b7d5b9",
+      "title": "Step 13"
+    },
+    {
+      "id": "6734eee1f9498cd90f9ae340",
+      "title": "Step 14"
+    },
+    {
+      "id": "6734f0ae9d1cf4dfd43a7805",
+      "title": "Step 15"
+    },
+    {
+      "id": "6734f6290ebd5cfbc75996af",
+      "title": "Step 16"
+    },
+    {
+      "id": "6734fa225c6667121e589f7e",
+      "title": "Step 17"
+    },
+    {
+      "id": "673762590f4bc1771c3a1e97",
+      "title": "Step 18"
+    },
+    {
+      "id": "67350acfd2006f2777295b96",
+      "title": "Step 19"
+    },
+    {
+      "id": "67351225403acd3d6f70ed6d",
+      "title": "Step 20"
+    },
+    {
+      "id": "6735145b0ee741461bdbaa49",
+      "title": "Step 21"
+    },
+    {
+      "id": "673521668be7905059b2d555",
+      "title": "Step 22"
+    },
+    {
+      "id": "673529d08c0d9c5a4193a465",
+      "title": "Step 23"
+    },
+    {
+      "id": "673788448f390305b34aa814",
+      "title": "Step 24"
+    },
+    {
+      "id": "6737a1a073a0d14c6544d301",
+      "title": "Step 25"
+    },
+    {
+      "id": "6737a5058ff3015829ce3265",
+      "title": "Step 26"
+    },
+    {
+      "id": "6737a95d5b431860f96ca7bb",
+      "title": "Step 27"
+    },
+    {
+      "id": "6737ac8e4fe7ae6b91c806bd",
+      "title": "Step 28"
+    },
+    {
+      "id": "6737c6d5d66b5cc3dac09c7b",
+      "title": "Step 29"
+    },
+    {
+      "id": "6738a5c704680355e29e077c",
+      "title": "Step 30"
+    },
+    {
+      "id": "6738a8035efec45acd8fdbf9",
+      "title": "Step 31"
+    },
+    {
+      "id": "6738ad2fd11775752d23ddc2",
+      "title": "Step 32"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

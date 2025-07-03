@@ -1,0 +1,12 @@
+{
+  "name": "Testing Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-testing",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "66f1aeffc5774ac692112a7e", "title": "Testing Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

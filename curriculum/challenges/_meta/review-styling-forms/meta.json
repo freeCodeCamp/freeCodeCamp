@@ -1,0 +1,12 @@
+{
+  "name": "Styling Forms Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-styling-forms",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "671a915858de057ad84c5dbd", "title": "Styling Forms Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

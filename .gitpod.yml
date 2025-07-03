@@ -1,0 +1,79 @@
+image: ghcr.io/freecodecamp/gitpod:latest
+ports:
+  - port: 27017 # mongodb
+    onOpen: ignore
+  - port: 8000 # client
+    onOpen: notify
+    visibility: public
+  - port: 9228 # node debug
+    onOpen: ignore
+  - port: 3000 # api
+    onOpen: ignore
+    visibility: public
+  - port: 9229 # node debug
+    onOpen: ignore
+  - port: 9230 # client node debug
+    onOpen: ignore
+  - port: 3200 # challenge editor api
+    visibility: public
+  - port: 3300 # challenge editor client
+    visibility: public
+  - port: 8025 # MailHog
+    visibility: public
+    onOpen: ignore
+  - port: 1025 # MailHog
+    onOpen: ignore
+  - port: 9323 # Playwright
+    visibility: public
+    onOpen: ignore
+
+tasks:
+  - before: |
+      echo '
+      export COOKIE_DOMAIN=.gitpod.io
+      export HOME_LOCATION=$(gp url 8000)
+      export API_LOCATION=$(gp url 3000)
+      export CHALLENGE_EDITOR_API_LOCATION=$(gp url 3200)
+      export CHALLENGE_EDITOR_CLIENT_LOCATION=$(gp url 3300)
+      export CHALLENGE_EDITOR_LEARN_CLIENT_LOCATION=$(gp url 8000)
+      ' >> ~/.bashrc;
+      exit;
+
+  - name: db
+    # starting mongod in background, so it doesn't block prebuilds
+    before: >
+      cd api/tools &&
+      docker compose up -d
+
+  - name: server
+    before: export COOKIE_DOMAIN=.gitpod.io && export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
+    # init is not executed for prebuilt workspaces and restarts,
+    # so we should put all the heavy initialization here
+    init: >
+      cp sample.env .env &&
+      pnpm install &&
+      gp sync-done pnpm-install &&
+      pnpm run build:curriculum &&
+      gp ports await 27017
+    command: >
+      pnpm run seed &&
+      mongosh --eval "db.fsyncLock(); db.fsyncUnlock()" &&
+      gp ports await 27017 &&
+      cd api &&
+      pnpm run develop
+
+  - name: client
+    before: export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
+    init: >
+      cd ./client &&
+      gp sync-await pnpm-install &&
+      cd ..
+    command: >
+      gp ports await 3000 &&
+      pnpm run develop:client -- -H '0.0.0.0'
+    openMode: split-right
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - esbenp.prettier-vscode

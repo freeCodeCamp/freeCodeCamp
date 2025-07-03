@@ -1,0 +1,12 @@
+{
+  "name": "React State and Hooks Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-react-state-and-hooks",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "66f1a417757b6ca4eecd89d6", "title": "React State and Hooks Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

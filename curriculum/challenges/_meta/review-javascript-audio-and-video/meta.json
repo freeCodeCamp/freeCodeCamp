@@ -1,0 +1,15 @@
+{
+  "name": "JavaScript Audio and Video Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-audio-and-video",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6723cf27c6e9a0c3f3041385",
+      "title": "JavaScript Audio and Video Review"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

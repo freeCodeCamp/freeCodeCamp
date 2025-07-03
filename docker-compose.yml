@@ -1,0 +1,39 @@
+services:
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+    command: mongod --replSet rs0
+  setup:
+    image: mongo
+    depends_on:
+      - mongo
+    restart: on-failure
+    entrypoint: [
+        'bash',
+        '-c',
+        # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
+        'mongosh --host mongo:27017 --eval ''try {rs.initiate();} catch (err) { if(err.codeName !== "AlreadyInitialized") throw err };'''
+      ]
+  mailhog:
+    restart: unless-stopped
+    image: mailhog/mailhog
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+  api:
+    restart: unless-stopped
+    depends_on:
+      - mongo
+      - mailhog
+    image: fcc-api
+    env_file:
+      - .env
+    environment:
+      # The api cannot connect to mongodb or mailhog via localhost from inside the
+      # container, so we have to override these variables.
+      - MONGOHQ_URL=mongodb://mongo:27017/freecodecamp?directConnection=true
+      - MAILHOG_HOST=mailhog
+      - HOST=0.0.0.0
+    ports:
+      - '3000:3000'

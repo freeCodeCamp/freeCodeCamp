@@ -1,0 +1,91 @@
+{
+  "name": "jQuery",
+  "isUpcomingChange": false,
+  "dashedName": "jquery",
+  "helpCategory": "JavaScript",
+  "order": 1,
+  "required": [
+    {
+      "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"
+    },
+    {
+      "src": "https://code.jquery.com/jquery-3.6.0.min.js"
+    }
+  ],
+  "superBlock": "front-end-development-libraries",
+  "challengeOrder": [
+    {
+      "id": "bad87fee1348bd9acdd08826",
+      "title": "Learn How Script Tags and Document Ready Work"
+    },
+    {
+      "id": "bad87fee1348bd9bedc08826",
+      "title": "Target HTML Elements with Selectors Using jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aedc08826",
+      "title": "Target Elements by Class Using jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aeda08826",
+      "title": "Target Elements by id Using jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aeda08726",
+      "title": "Delete Your jQuery Functions"
+    },
+    {
+      "id": "bad87fee1348bd9aed908626",
+      "title": "Target the Same Element with Multiple jQuery Selectors"
+    },
+    {
+      "id": "bad87fee1348bd9aed918626",
+      "title": "Remove Classes from an Element with jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aed908826",
+      "title": "Change the CSS of an Element Using jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aed808826",
+      "title": "Disable an Element Using jQuery"
+    },
+    {
+      "id": "564944c91be2204b269d51e3",
+      "title": "Change Text Inside an Element Using jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aed708826",
+      "title": "Remove an Element Using jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aed608826",
+      "title": "Use appendTo to Move Elements with jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aed508826",
+      "title": "Clone an Element Using jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aed308826",
+      "title": "Target the Parent of an Element Using jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aed208826",
+      "title": "Target the Children of an Element Using jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aed108826",
+      "title": "Target a Specific Child of an Element Using jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aed008826",
+      "title": "Target Even Elements Using jQuery"
+    },
+    {
+      "id": "bad87fee1348bd9aecb08826",
+      "title": "Use jQuery to Modify the Entire Page"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

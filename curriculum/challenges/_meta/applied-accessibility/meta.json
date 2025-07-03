@@ -1,0 +1,99 @@
+{
+  "name": "Applied Accessibility",
+  "isUpcomingChange": false,
+  "dashedName": "applied-accessibility",
+  "helpCategory": "HTML-CSS",
+  "order": 3,
+  "superBlock": "responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "587d774c367417b2b2512a9c",
+      "title": "Add a Text Alternative to Images for Visually Impaired Accessibility"
+    },
+    {
+      "id": "587d774c367417b2b2512a9d",
+      "title": "Know When Alt Text Should be Left Blank"
+    },
+    {
+      "id": "587d774d367417b2b2512a9e",
+      "title": "Use Headings to Show Hierarchical Relationships of Content"
+    },
+    {
+      "id": "587d774e367417b2b2512a9f",
+      "title": "Jump Straight to the Content Using the main Element"
+    },
+    {
+      "id": "587d774e367417b2b2512aa0",
+      "title": "Wrap Content in the article Element"
+    },
+    {
+      "id": "587d7787367417b2b2512aa1",
+      "title": "Make Screen Reader Navigation Easier with the header Landmark"
+    },
+    {
+      "id": "587d7788367417b2b2512aa2",
+      "title": "Make Screen Reader Navigation Easier with the nav Landmark"
+    },
+    {
+      "id": "587d7788367417b2b2512aa3",
+      "title": "Make Screen Reader Navigation Easier with the footer Landmark"
+    },
+    {
+      "id": "587d7789367417b2b2512aa4",
+      "title": "Improve Accessibility of Audio Content with the audio Element"
+    },
+    {
+      "id": "587d778a367417b2b2512aa5",
+      "title": "Improve Chart Accessibility with the figure Element"
+    },
+    {
+      "id": "587d778a367417b2b2512aa6",
+      "title": "Improve Form Field Accessibility with the label Element"
+    },
+    {
+      "id": "587d778b367417b2b2512aa7",
+      "title": "Wrap Radio Buttons in a fieldset Element for Better Accessibility"
+    },
+    {
+      "id": "587d778b367417b2b2512aa8",
+      "title": "Add an Accessible Date Picker"
+    },
+    {
+      "id": "587d778c367417b2b2512aa9",
+      "title": "Standardize Times with the HTML5 datetime Attribute"
+    },
+    {
+      "id": "587d778d367417b2b2512aaa",
+      "title": "Make Elements Only Visible to a Screen Reader by Using Custom CSS"
+    },
+    {
+      "id": "587d778e367417b2b2512aab",
+      "title": "Improve Readability with High Contrast Text"
+    },
+    {
+      "id": "587d778f367417b2b2512aac",
+      "title": "Avoid Colorblindness Issues by Using Sufficient Contrast"
+    },
+    {
+      "id": "587d778f367417b2b2512aad",
+      "title": "Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information"
+    },
+    {
+      "id": "587d778f367417b2b2512aae",
+      "title": "Give Links Meaning by Using Descriptive Link Text"
+    },
+    {
+      "id": "587d7790367417b2b2512aaf",
+      "title": "Make Links Navigable with HTML Access Keys"
+    },
+    {
+      "id": "587d7790367417b2b2512ab0",
+      "title": "Use tabindex to Add Keyboard Focus to an Element"
+    },
+    {
+      "id": "587d7790367417b2b2512ab1",
+      "title": "Use tabindex to Specify the Order of Keyboard Focus for Several Elements"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

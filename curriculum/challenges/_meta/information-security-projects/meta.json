@@ -1,0 +1,31 @@
+{
+  "name": "Information Security Projects",
+  "isUpcomingChange": false,
+  "dashedName": "information-security-projects",
+  "helpCategory": "JavaScript",
+  "order": 2,
+  "superBlock": "information-security",
+  "challengeOrder": [
+    {
+      "id": "587d824a367417b2b2512c44",
+      "title": "Stock Price Checker"
+    },
+    {
+      "id": "587d824a367417b2b2512c45",
+      "title": "Anonymous Message Board"
+    },
+    {
+      "id": "5e46f979ac417301a38fb932",
+      "title": "Port Scanner"
+    },
+    {
+      "id": "5e46f983ac417301a38fb933",
+      "title": "SHA-1 Password Cracker"
+    },
+    {
+      "id": "5e601c775ac9d0ecd8b94aff",
+      "title": "Secure Real Time Multiplayer Game"
+    }
+  ],
+  "blockLayout": "project-list"
+}

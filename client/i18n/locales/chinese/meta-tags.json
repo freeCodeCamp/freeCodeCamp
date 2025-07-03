@@ -1,0 +1,27 @@
+{
+  "title": "免费学习编程 - Python、JavaScript、Java、Git 等",
+  "description": "freeCodeCamp 是一个免费学习编程的开发者社区，涵盖 Python、HTML、CSS、React、Vue、BootStrap、JSON 教程等，还有活跃的技术论坛和丰富的社区活动，在你学习编程和找工作时为你提供建议和帮助。",
+  "social-description": "免费学习编程",
+  "keywords": [
+    "freecodecamp",
+    "编程",
+    "前端",
+    "后端",
+    "程序员",
+    "python",
+    "javascript",
+    "git",
+    "aws",
+    "json",
+    "html",
+    "css",
+    "bootstrap",
+    "react",
+    "vue",
+    "网站",
+    "web",
+    "开发",
+    "课程"
+  ],
+  "youre-unsubscribed": "你已取消订阅"
+}

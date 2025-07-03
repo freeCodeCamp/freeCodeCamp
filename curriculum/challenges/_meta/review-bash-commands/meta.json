@@ -1,0 +1,12 @@
+{
+  "name": "Bash Commands Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "review-bash-commands",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6724e387ee098d1ef33108ba", "title": "Bash Commands Review" }
+  ],
+  "helpCategory": "Backend Development"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Build a Moon Orbit",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": false,
+  "dashedName": "lab-moon-orbit",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66a37f37ef5823a313de8c26", "title": "Build a Moon Orbit" }],
+  "helpCategory": "HTML-CSS"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Bash Commands Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-bash-commands",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "66f1af4fedf643c78d024c5e", "title": "Bash Commands Quiz" }
+  ],
+  "helpCategory": "Backend Development"
+}

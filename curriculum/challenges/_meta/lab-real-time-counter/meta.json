@@ -1,0 +1,11 @@
+{
+  "name": "Build a Real Time Counter",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-real-time-counter",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66bb3e20d3dc5b6d0a21f5dd", "title": "Build a Real Time Counter" }],
+  "helpCategory": "JavaScript"
+}

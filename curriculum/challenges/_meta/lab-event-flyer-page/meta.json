@@ -1,0 +1,11 @@
+{
+  "name": "Build an Event Flyer Page",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-event-flyer-page",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66e45c8140f9fda5c105ae26", "title": "Build an Event Flyer Page" }],
+  "helpCategory": "HTML-CSS"
+}

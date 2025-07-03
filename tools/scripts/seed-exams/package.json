@@ -1,0 +1,31 @@
+{
+  "name": "@freecodecamp/seed-exams",
+  "version": "0.0.1",
+  "description": "Seed certification exams questions to database",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "main": "none",
+  "devDependencies": {
+    "debug": "4.3.4",
+    "dotenv": "16.4.5",
+    "joi": "17.12.2",
+    "joi-objectid": "3.0.1",
+    "js-yaml": "4.1.0",
+    "mongodb": "6.10.0",
+    "nanoid": "4.0.2"
+  },
+  "type": "module"
+}

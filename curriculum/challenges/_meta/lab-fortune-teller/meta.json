@@ -1,0 +1,11 @@
+{
+  "name": "Build a Fortune Teller App",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-fortune-teller",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66c06d618d075c7f7f1b890a", "title": "Build a Fortune Teller" }],
+  "helpCategory": "JavaScript"
+}

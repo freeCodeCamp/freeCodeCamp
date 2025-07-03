@@ -1,0 +1,12 @@
+{
+  "name": "JavaScript Objects Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-objects",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "66edcd0ecb4b25dc64a34804", "title": "JavaScript Objects Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

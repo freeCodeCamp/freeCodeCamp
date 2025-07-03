@@ -1,0 +1,27 @@
+{
+  "name": "Understanding How to Work with Classes in JavaScript",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-how-to-work-with-classes-in-javascript",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6733affc29df1304e2c97e88",
+      "title": "What Are Classes, and How Do They Work in JavaScript?"
+    },
+    {
+      "id": "673403ca2bb16658309e3632",
+      "title": "How Does the This Keyword Work?"
+    },
+    {
+      "id": "673403d2aa52d8586a14a269",
+      "title": "What Is Class Inheritance, and How Does It Work?"
+    },
+    {
+      "id": "673403dbf5c9835898632c84",
+      "title": "What Are Static Properties and Methods in Classes?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

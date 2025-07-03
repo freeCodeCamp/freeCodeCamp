@@ -1,0 +1,23 @@
+{
+  "name": "Understanding Effects and Referencing Values in React",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-effects-and-referencing-values-in-react",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67d1a82dad69dc95546e5f0d",
+      "title": "How Do You Reference Values Using Refs?"
+    },
+    {
+      "id": "67d1ec6711b62f1cc5cc52e1",
+      "title": "What Are Effects in React, and How Does the useEffect Hook Work?"
+    },
+    {
+      "id": "67d1ec87b34cee1d9219f7e9",
+      "title": "How Can You Create Custom Hooks in React?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Working with Dates",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-dates",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6733aafb9c0802f66cc1e056",
+      "title": "How Does the JavaScript Date Object Work, and What Are Some Common Methods?"
+    },
+    {
+      "id": "6733d608654c17868e01c0a2",
+      "title": "What Are the Different Ways to Format Dates?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

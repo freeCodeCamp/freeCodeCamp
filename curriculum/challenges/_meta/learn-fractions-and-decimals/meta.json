@@ -1,0 +1,19 @@
+{
+  "name": "Learn Fractions and Decimals",
+  "isUpcomingChange": false,
+  "dashedName": "learn-fractions-and-decimals",
+  "helpCategory": "Python",
+  "order": 2,
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    {
+      "id": "6331d258b51aeedd1a2bd649",
+      "title": "Converting Fractions and Decimals"
+    },
+    {
+      "id": "6331d260b51aeedd1a2bd64a",
+      "title": "Fractions and Decimals: Extra"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

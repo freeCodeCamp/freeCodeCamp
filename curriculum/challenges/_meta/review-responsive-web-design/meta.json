@@ -1,0 +1,15 @@
+{
+  "name": "Responsive Web Design Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-responsive-web-design",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "671a98927af7829722697dc2",
+      "title": "Responsive Web Design Review"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

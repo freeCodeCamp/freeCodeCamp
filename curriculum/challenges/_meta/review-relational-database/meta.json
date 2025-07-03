@@ -1,0 +1,12 @@
+{
+  "name": "Relational Database Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "review-relational-database",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6724e3d6e1cb0c1fec3a8e4f", "title": "Relational Database Review" }
+  ],
+  "helpCategory": "Backend Development"
+}

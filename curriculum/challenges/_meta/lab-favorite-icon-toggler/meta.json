@@ -1,0 +1,11 @@
+{
+  "name": "Build a Favorite Icon Toggler",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-favorite-icon-toggler",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66bf6bacf178eac7b96d4f5e", "title": "Build a Favorite Icon Toggler" }],
+  "helpCategory": "JavaScript"
+}

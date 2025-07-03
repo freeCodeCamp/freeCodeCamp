@@ -1,0 +1,12 @@
+{
+  "name": "Bash and SQL Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "review-bash-and-sql",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6724e46581a1742244e45b59", "title": "Bash and SQL Review" }
+  ],
+  "helpCategory": "Backend Development"
+}

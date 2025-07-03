@@ -1,0 +1,57 @@
+{
+  "name": "Build a Reusable Mega Navbar",
+  "isUpcomingChange": false,
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-reusable-mega-navbar",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6740495ba48aa94e5667b436",
+      "title": "Step 1"
+    },
+    {
+      "id": "67457ff2dc531fbed928a0f0",
+      "title": "Step 2"
+    },
+    {
+      "id": "6745c732dbeb7c04f346e6f7",
+      "title": "Step 3"
+    },
+    {
+      "id": "6745c7b06a0b530602cb63fa",
+      "title": "Step 4"
+    },
+    {
+      "id": "6745c89fba004707ded84453",
+      "title": "Step 5"
+    },
+    {
+      "id": "6745cebbf97ef2129f3b9bab",
+      "title": "Step 6"
+    },
+    {
+      "id": "6745d799beeb822076a4da9d",
+      "title": "Step 7"
+    },
+    {
+      "id": "6745d9df333efe2543a1f457",
+      "title": "Step 8"
+    },
+    {
+      "id": "6745dce846995b2a466594be",
+      "title": "Step 9"
+    },
+    {
+      "id": "6745de9ce925b92d72df713a",
+      "title": "Step 10"
+    },
+    {
+      "id": "6745e2aca895c935168e7d91",
+      "title": "Step 11"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

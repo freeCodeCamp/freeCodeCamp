@@ -1,0 +1,15 @@
+{
+  "name": "World Cup Database",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-world-cup-database-project",
+  "helpCategory": "Backend Development",
+  "order": 6,
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    {
+      "id": "5f9771307d4d22b9d2b75a94",
+      "title": "Build a World Cup Database"
+    }
+  ],
+  "blockLayout": "project-list"
+}

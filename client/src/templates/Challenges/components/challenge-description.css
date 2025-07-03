@@ -1,0 +1,17 @@
+.challenge-instructions blockquote {
+  background-color: var(--tertiary-background);
+  color: var(--tertiary-color);
+  padding: 10px;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1.45rem;
+  font-size: 0.9rem;
+}
+
+#description ol li a {
+  word-break: break-all;
+}
+
+#description ol li {
+  line-height: 1.5;
+}

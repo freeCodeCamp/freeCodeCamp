@@ -1,0 +1,12 @@
+{
+  "name": "JavaScript Classes Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-classes",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6723d13d756751caf871d59c", "title": "JavaScript Classes Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

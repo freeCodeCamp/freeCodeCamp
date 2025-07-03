@@ -1,0 +1,24 @@
+{
+  "name": "@freecodecamp/shared",
+  "version": "0.0.1",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "license": "BSD-3-Clause",
+  "description": "Config and utils used in multiple workspaces",
+  "private": false,
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "dependencies": {
+    "@types/invariant": "^2.2.37",
+    "invariant": "2.2.4"
+  }
+}

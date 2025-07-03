@@ -1,0 +1,99 @@
+{
+  "name": "Advanced Node and Express",
+  "isUpcomingChange": false,
+  "dashedName": "advanced-node-and-express",
+  "helpCategory": "JavaScript",
+  "order": 1,
+  "superBlock": "quality-assurance",
+  "challengeOrder": [
+    {
+      "id": "5895f700f9fc0f352b528e63",
+      "title": "Set up a Template Engine"
+    },
+    {
+      "id": "5895f70bf9fc0f352b528e64",
+      "title": "Use a Template Engine's Powers"
+    },
+    {
+      "id": "5895f70cf9fc0f352b528e65",
+      "title": "Set up Passport"
+    },
+    {
+      "id": "5895f70cf9fc0f352b528e66",
+      "title": "Serialization of a User Object"
+    },
+    {
+      "id": "5895f70cf9fc0f352b528e67",
+      "title": "Implement the Serialization of a Passport User"
+    },
+    {
+      "id": "5895f70df9fc0f352b528e68",
+      "title": "Authentication Strategies"
+    },
+    {
+      "id": "5895f70df9fc0f352b528e69",
+      "title": "How to Use Passport Strategies"
+    },
+    {
+      "id": "5895f70df9fc0f352b528e6a",
+      "title": "Create New Middleware"
+    },
+    {
+      "id": "5895f70ef9fc0f352b528e6b",
+      "title": "How to Put a Profile Together"
+    },
+    {
+      "id": "58965611f9fc0f352b528e6c",
+      "title": "Logging a User Out"
+    },
+    {
+      "id": "58966a17f9fc0f352b528e6d",
+      "title": "Registration of New Users"
+    },
+    {
+      "id": "58a25c98f9fc0f352b528e7f",
+      "title": "Hashing Your Passwords"
+    },
+    {
+      "id": "589690e6f9fc0f352b528e6e",
+      "title": "Clean Up Your Project with Modules"
+    },
+    {
+      "id": "589a69f5f9fc0f352b528e70",
+      "title": "Implementation of Social Authentication"
+    },
+    {
+      "id": "589a69f5f9fc0f352b528e71",
+      "title": "Implementation of Social Authentication II"
+    },
+    {
+      "id": "589a8eb3f9fc0f352b528e72",
+      "title": "Implementation of Social Authentication III"
+    },
+    {
+      "id": "589fc830f9fc0f352b528e74",
+      "title": "Set up the Environment"
+    },
+    {
+      "id": "589fc831f9fc0f352b528e75",
+      "title": "Communicate by Emitting"
+    },
+    {
+      "id": "589fc831f9fc0f352b528e76",
+      "title": "Handle a Disconnect"
+    },
+    {
+      "id": "589fc831f9fc0f352b528e77",
+      "title": "Authentication with Socket.IO"
+    },
+    {
+      "id": "589fc832f9fc0f352b528e78",
+      "title": "Announce New Users"
+    },
+    {
+      "id": "589fc832f9fc0f352b528e79",
+      "title": "Send and Display Chat Messages"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

@@ -1,0 +1,348 @@
+/* Monaco editor has its own font-family rule, which overrides ours */
+.monaco-editor {
+  font-family: inherit;
+}
+
+.monaco-editor .margin-view-overlays .line-numbers,
+.monaco-editor .margin-view-overlays .myLineDecoration + .line-numbers {
+  color: var(--primary-color);
+}
+
+.monaco-scrollable-element {
+  overflow: visible !important;
+}
+
+.monaco-editor-background {
+  overflow: visible !important;
+  contain: none !important;
+}
+
+.vs .monaco-scrollable-element > .scrollbar > .slider {
+  z-index: 11;
+}
+
+/* NVDA skips the textarea in browse mode if there is no size */
+textarea.inputarea {
+  width: 1px !important;
+  height: 1px !important;
+}
+
+.editor-container {
+  background: var(--editor-background);
+}
+
+.breadcrumbs-demo {
+  font-size: 16px;
+  margin: 0;
+  padding: 10px;
+  height: var(--breadcrumbs-height);
+}
+
+@media screen and (max-height: 300px) {
+  .default-layout:has(#mobile-layout) .breadcrumbs-demo {
+    height: auto;
+    padding-block: 2px;
+  }
+}
+
+.editor-upper-jaw,
+.editor-lower-jaw {
+  padding-inline: 0 15px;
+  padding-block: 15px;
+}
+
+.editor-upper-jaw {
+  max-width: unset !important;
+}
+
+.editor-upper-jaw code,
+.editor-lower-jaw code {
+  white-space: pre-wrap;
+}
+
+.action-row-container,
+.description-container {
+  background-color: var(--secondary-background);
+  padding: 1rem;
+  border: 2px solid var(--quaternary-background);
+  /* the max-width is set to keep the characters in a line at below ~70 to help
+  with readability */
+  max-width: 600px;
+}
+
+.challenge-description-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0.1em 0 0.6rem;
+}
+
+.description-container .breadcrumbs {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  list-style-type: none;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  padding-inline-start: 0;
+  width: 100%;
+  min-width: 0;
+  color: var(--foreground-quaternary);
+}
+
+.description-container .breadcrumbs li:first-child {
+  position: relative;
+  max-width: 35%;
+}
+
+.description-container .breadcrumbs li:first-child:after {
+  content: ' >';
+  font-size: 17px;
+  position: absolute;
+  top: 0;
+  right: -0.7rem;
+}
+
+.description-container .breadcrumbs li:nth-child(2) {
+  min-width: 0;
+}
+
+.description-container .breadcrumbs a {
+  width: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  border-bottom: 1px solid var(--foreground-quaternary);
+}
+
+.description-container .breadcrumbs a:focus {
+  background-color: inherit;
+}
+
+.description-container h1 {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.description-highlighter {
+  background-color: var(--secondary-background);
+  opacity: 1;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+}
+
+.action-row-container button[aria-hidden='true'] {
+  display: none;
+}
+
+@keyframes example {
+  from {
+    background-color: var(--highlight-background);
+  }
+
+  to {
+    background-color: var(--secondary-background);
+  }
+}
+
+#description p:last-child {
+  margin: 0px;
+}
+
+.myEditableLineDecoration {
+  background-color: var(--gray-45);
+  width: 15px !important;
+  margin-inline: 5px !important;
+}
+
+.myEditableLineDecoration.tests-passed {
+  background-color: #4caf50;
+}
+
+.editable-region {
+  background-color: var(--primary-background);
+  z-index: -1;
+}
+
+/* Unless we increase the z-index the help widget gets obscured by the jaws */
+.accessibilityHelpWidget {
+  z-index: 1;
+}
+
+.test-feedback {
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+}
+
+.test-feedback p {
+  margin: 0.45rem 0 0;
+}
+
+.test-feedback svg {
+  height: 1.5rem;
+  width: auto;
+  margin-top: 0.5rem;
+}
+
+.test-feedback .test-status,
+.test-feedback .hint-status {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+.test-status-description,
+.hint-description {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.fade-in {
+  animation-name: FadeIn;
+  animation-duration: 0.5s;
+  transition-timing-function: linear;
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  /* keep test feedback contents initially hidden for 200ms*/
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.utility-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.utility-bar .utility-bar-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.utility-bar .utility-bar-top a {
+  width: 30%;
+}
+
+.utility-bar .utility-bar-top svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.utility-bar .utility-bar-bottom {
+  width: 100%;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.utility-bar .utility-bar-bottom button {
+  display: flex;
+  width: 50%;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.progress-bar-container {
+  text-align: center;
+}
+
+.editor-lower-jaw .progress-bar-wrap-container {
+  width: 100% !important;
+  margin: 32px 0px;
+}
+
+.editor-lower-jaw .progress-bar-background-container {
+  width: 100% !important;
+}
+
+.hint-status {
+  margin-bottom: 18px;
+}
+
+.code-details {
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.code-details-summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+.editor-upper-jaw pre code {
+  white-space: pre;
+}
+
+/* overwriting default arrow styles for accessibility */
+:root {
+  --monaco-scrollbar-arrow-box-size: 0;
+  --monaco-scrollbar-arrow-icon-top-bottom: 0;
+  --monaco-scrollbar-arrow-icon-left: 0;
+  --monaco-scrollbar-arrow-icon-size: 11px;
+  --monaco-scrollbar-arrow-icon-font-size: 11px;
+}
+
+/* z-index is needed for arrox box and icons because the scrollbar may
+   overlap the arrow buttons when zoomed in */
+
+/* arrow box - by default the width is the same as the scrollbar,
+   so we only need to ajdust the height */
+.vs .monaco-scrollable-element .scrollbar .arrow-background {
+  height: var(--monaco-scrollbar-arrow-box-size) !important;
+  background-color: #666;
+  z-index: 199;
+}
+
+/* arrow icons - includes both up and down */
+.vs .monaco-scrollable-element .scrollbar .scra {
+  top: var(--monaco-scrollbar-arrow-icon-top-bottom) !important;
+  left: var(--monaco-scrollbar-arrow-icon-left) !important;
+  width: var(--monaco-scrollbar-arrow-icon-size) !important;
+  height: var(--monaco-scrollbar-arrow-icon-size) !important;
+  font-size: var(--monaco-scrollbar-arrow-icon-font-size) !important;
+  color: white;
+  z-index: 199;
+}
+
+/* down arrow icon only */
+.vs .monaco-scrollable-element .scrollbar .codicon-scrollbar-button-down {
+  top: unset !important;
+  bottom: var(--monaco-scrollbar-arrow-icon-top-bottom) !important;
+}
+
+/* we can live with no color change for hover state if browser doesn't
+   support :has (the mouse cursor will still change to pointer) */
+@supports (selector(html:has(body))) {
+  .vs .monaco-scrollable-element .scrollbar .arrow-background:hover,
+  .vs
+    .monaco-scrollable-element
+    .scrollbar
+    .arrow-background:has(+ .codicon:hover) {
+    cursor: pointer;
+    background-color: #222 !important;
+  }
+}

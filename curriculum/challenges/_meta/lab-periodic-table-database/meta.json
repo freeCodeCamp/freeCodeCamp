@@ -1,0 +1,10 @@
+{
+  "name": "Build a Periodic Table Database",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "lab-periodic-table-database",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "602d9ff222201c65d2a019f2", "title": "Build a Periodic Table Database" }],
+  "helpCategory": "Backend Development"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Design a Magazine Layout",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-magazine-layout",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "6735a7370e0ae93a4577c689", "title": "Design a Magazine Layout" }],
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "link",
+  "blockType": "lab"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Build a Cash Register Project",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-cash-register-project",
+  "usesMultifileEditor": true,
+  "helpCategory": "JavaScript",
+  "order": 21,
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
+  "challengeOrder": [
+    {
+      "id": "657bdcc3a322aae1eac38392",
+      "title": "Build a Cash Register"
+    }
+  ],
+  "blockLayout": "legacy-link"
+}

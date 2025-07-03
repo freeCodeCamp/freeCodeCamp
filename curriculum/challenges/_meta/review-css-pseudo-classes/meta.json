@@ -1,0 +1,12 @@
+{
+  "name": "CSS Pseudo-classes Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-css-pseudo-classes",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "671a907bad4538752765f2ff", "title": "CSS Pseudo-classes Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

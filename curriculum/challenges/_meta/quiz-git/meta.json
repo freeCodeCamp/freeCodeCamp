@@ -1,0 +1,10 @@
+{
+  "name": "Git Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-git",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66f1b06a5a5d10cc100af620", "title": "Git Quiz" }],
+  "helpCategory": "Backend Development"
+}

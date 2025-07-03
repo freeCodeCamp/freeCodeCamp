@@ -1,0 +1,101 @@
+{
+  "name": "Build a Flexbox Photo Gallery",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-flexbox-photo-gallery",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "61537bb9b1a29430ac15ad38",
+      "title": "Step 1"
+    },
+    {
+      "id": "61537c5f81f0cf325b4a854c",
+      "title": "Step 2"
+    },
+    {
+      "id": "61537c9eecea6a335db6da79",
+      "title": "Step 3"
+    },
+    {
+      "id": "61537d86bdc3dd343688fceb",
+      "title": "Step 4"
+    },
+    {
+      "id": "64dd076a1b33c86d84b4232f",
+      "title": "Step 5"
+    },
+    {
+      "id": "6494da0daf5df5197963671d",
+      "title": "Step 6"
+    },
+    {
+      "id": "6493bc0d99879635209565aa",
+      "title": "Step 7"
+    },
+    {
+      "id": "64dd136e4e8b0894f9c70d86",
+      "title": "Step 8"
+    },
+    {
+      "id": "615380dff67172357fcf0425",
+      "title": "Step 9"
+    },
+    {
+      "id": "615f171d05def3218035dc85",
+      "title": "Step 10"
+    },
+    {
+      "id": "6153893900438b4643590367",
+      "title": "Step 11"
+    },
+    {
+      "id": "6153897c27f6334716ee5abe",
+      "title": "Step 12"
+    },
+    {
+      "id": "6153908a366afb4d57185c8d",
+      "title": "Step 13"
+    },
+    {
+      "id": "615392916d83fa4f02f7e2cf",
+      "title": "Step 14"
+    },
+    {
+      "id": "6153938dce8b294ff8f5a4e9",
+      "title": "Step 15"
+    },
+    {
+      "id": "6153947986535e5117e60615",
+      "title": "Step 16"
+    },
+    {
+      "id": "61539e07e7430b528fbffe21",
+      "title": "Step 17"
+    },
+    {
+      "id": "61539f32a206bd53ec116465",
+      "title": "Step 18"
+    },
+    {
+      "id": "6153a04847abee57a3a406ac",
+      "title": "Step 19"
+    },
+    {
+      "id": "6153a3485f0b20591d26d2a1",
+      "title": "Step 20"
+    },
+    {
+      "id": "6153a3952facd25a83fe8083",
+      "title": "Step 21"
+    },
+    {
+      "id": "6153a3ebb4f7f05b8401b716",
+      "title": "Step 22"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

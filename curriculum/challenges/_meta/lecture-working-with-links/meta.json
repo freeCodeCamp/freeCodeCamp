@@ -1,0 +1,27 @@
+{
+  "name": "Working with Links",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-links",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6716744f7245947a3dd60009",
+      "title": "What Are the Different Target Attribute Types, and How Do They Work?"
+    },
+    {
+      "id": "671682dd88e461a8e2620f38",
+      "title": "What Is the Difference Between Absolute and Relative Paths?"
+    },
+    {
+      "id": "6716830dbaf95da9564f2e3b",
+      "title": "What Is the Difference Between Slashes, a Single Dot, and Double Dot in Path Syntax?"
+    },
+    {
+      "id": "67168323932391a9ee0d3a9e",
+      "title": "What Are the Different Link States, and Why Are They Important?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

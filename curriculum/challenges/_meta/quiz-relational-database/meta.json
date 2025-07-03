@@ -1,0 +1,12 @@
+{
+  "name": "Relational Database Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-relational-database",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "66f1af82732957c895f0b21a", "title": "Relational Database Quiz" }
+  ],
+  "helpCategory": "Backend Development"
+}

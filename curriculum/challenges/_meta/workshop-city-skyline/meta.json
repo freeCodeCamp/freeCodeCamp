@@ -1,0 +1,473 @@
+{
+  "name": "Build a City Skyline",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-city-skyline",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "5d822fd413a79914d39e98cc",
+      "title": "Step 1"
+    },
+    {
+      "id": "5d822fd413a79914d39e98cd",
+      "title": "Step 2"
+    },
+    {
+      "id": "5d822fd413a79914d39e98ce",
+      "title": "Step 3"
+    },
+    {
+      "id": "5d822fd413a79914d39e98cf",
+      "title": "Step 4"
+    },
+    {
+      "id": "5d822fd413a79914d39e98d0",
+      "title": "Step 5"
+    },
+    {
+      "id": "5d822fd413a79914d39e98d1",
+      "title": "Step 6"
+    },
+    {
+      "id": "5d822fd413a79914d39e98d2",
+      "title": "Step 7"
+    },
+    {
+      "id": "5d822fd413a79914d39e98d3",
+      "title": "Step 8"
+    },
+    {
+      "id": "5d822fd413a79914d39e98d4",
+      "title": "Step 9"
+    },
+    {
+      "id": "5d822fd413a79914d39e98d5",
+      "title": "Step 10"
+    },
+    {
+      "id": "5d822fd413a79914d39e98d6",
+      "title": "Step 11"
+    },
+    {
+      "id": "5d822fd413a79914d39e98d7",
+      "title": "Step 12"
+    },
+    {
+      "id": "5d822fd413a79914d39e98d8",
+      "title": "Step 13"
+    },
+    {
+      "id": "5d822fd413a79914d39e98d9",
+      "title": "Step 14"
+    },
+    {
+      "id": "5d822fd413a79914d39e98da",
+      "title": "Step 15"
+    },
+    {
+      "id": "5d822fd413a79914d39e98db",
+      "title": "Step 16"
+    },
+    {
+      "id": "5d822fd413a79914d39e98dc",
+      "title": "Step 17"
+    },
+    {
+      "id": "5d822fd413a79914d39e98dd",
+      "title": "Step 18"
+    },
+    {
+      "id": "5d822fd413a79914d39e98de",
+      "title": "Step 19"
+    },
+    {
+      "id": "5d822fd413a79914d39e98df",
+      "title": "Step 20"
+    },
+    {
+      "id": "5d822fd413a79914d39e98e0",
+      "title": "Step 21"
+    },
+    {
+      "id": "5d822fd413a79914d39e98e1",
+      "title": "Step 22"
+    },
+    {
+      "id": "5d822fd413a79914d39e98e2",
+      "title": "Step 23"
+    },
+    {
+      "id": "5d822fd413a79914d39e98e3",
+      "title": "Step 24"
+    },
+    {
+      "id": "5d822fd413a79914d39e98e4",
+      "title": "Step 25"
+    },
+    {
+      "id": "5d822fd413a79914d39e98e5",
+      "title": "Step 26"
+    },
+    {
+      "id": "5d822fd413a79914d39e98e6",
+      "title": "Step 27"
+    },
+    {
+      "id": "5d822fd413a79914d39e98e7",
+      "title": "Step 28"
+    },
+    {
+      "id": "5d822fd413a79914d39e98e8",
+      "title": "Step 29"
+    },
+    {
+      "id": "5d822fd413a79914d39e98e9",
+      "title": "Step 30"
+    },
+    {
+      "id": "5d822fd413a79914d39e98ea",
+      "title": "Step 31"
+    },
+    {
+      "id": "5d822fd413a79914d39e98eb",
+      "title": "Step 32"
+    },
+    {
+      "id": "5d822fd413a79914d39e98ec",
+      "title": "Step 33"
+    },
+    {
+      "id": "5d822fd413a79914d39e98ed",
+      "title": "Step 34"
+    },
+    {
+      "id": "5d822fd413a79914d39e98ee",
+      "title": "Step 35"
+    },
+    {
+      "id": "5d822fd413a79914d39e98ef",
+      "title": "Step 36"
+    },
+    {
+      "id": "5d822fd413a79914d39e98f0",
+      "title": "Step 37"
+    },
+    {
+      "id": "5d822fd413a79914d39e98f1",
+      "title": "Step 38"
+    },
+    {
+      "id": "5d822fd413a79914d39e98f2",
+      "title": "Step 39"
+    },
+    {
+      "id": "5d822fd413a79914d39e98f3",
+      "title": "Step 40"
+    },
+    {
+      "id": "5d822fd413a79914d39e98f4",
+      "title": "Step 41"
+    },
+    {
+      "id": "5d822fd413a79914d39e98f5",
+      "title": "Step 42"
+    },
+    {
+      "id": "5d822fd413a79914d39e98f6",
+      "title": "Step 43"
+    },
+    {
+      "id": "5d822fd413a79914d39e98f7",
+      "title": "Step 44"
+    },
+    {
+      "id": "5d822fd413a79914d39e98f8",
+      "title": "Step 45"
+    },
+    {
+      "id": "5d822fd413a79914d39e98f9",
+      "title": "Step 46"
+    },
+    {
+      "id": "5d822fd413a79914d39e98fa",
+      "title": "Step 47"
+    },
+    {
+      "id": "5d822fd413a79914d39e98fb",
+      "title": "Step 48"
+    },
+    {
+      "id": "5d822fd413a79914d39e98fc",
+      "title": "Step 49"
+    },
+    {
+      "id": "5d822fd413a79914d39e98fd",
+      "title": "Step 50"
+    },
+    {
+      "id": "5d822fd413a79914d39e98fe",
+      "title": "Step 51"
+    },
+    {
+      "id": "5d822fd413a79914d39e98ff",
+      "title": "Step 52"
+    },
+    {
+      "id": "5d822fd413a79914d39e9900",
+      "title": "Step 53"
+    },
+    {
+      "id": "5d822fd413a79914d39e9901",
+      "title": "Step 54"
+    },
+    {
+      "id": "5d822fd413a79914d39e9902",
+      "title": "Step 55"
+    },
+    {
+      "id": "5d822fd413a79914d39e9903",
+      "title": "Step 56"
+    },
+    {
+      "id": "5d822fd413a79914d39e9904",
+      "title": "Step 57"
+    },
+    {
+      "id": "5d822fd413a79914d39e9905",
+      "title": "Step 58"
+    },
+    {
+      "id": "5d822fd413a79914d39e9906",
+      "title": "Step 59"
+    },
+    {
+      "id": "5d822fd413a79914d39e9907",
+      "title": "Step 60"
+    },
+    {
+      "id": "5d822fd413a79914d39e9908",
+      "title": "Step 61"
+    },
+    {
+      "id": "5d822fd413a79914d39e9909",
+      "title": "Step 62"
+    },
+    {
+      "id": "5d822fd413a79914d39e990a",
+      "title": "Step 63"
+    },
+    {
+      "id": "5d822fd413a79914d39e990b",
+      "title": "Step 64"
+    },
+    {
+      "id": "5d822fd413a79914d39e990c",
+      "title": "Step 65"
+    },
+    {
+      "id": "5d822fd413a79914d39e990d",
+      "title": "Step 66"
+    },
+    {
+      "id": "5d822fd413a79914d39e990e",
+      "title": "Step 67"
+    },
+    {
+      "id": "5d822fd413a79914d39e990f",
+      "title": "Step 68"
+    },
+    {
+      "id": "5d822fd413a79914d39e9910",
+      "title": "Step 69"
+    },
+    {
+      "id": "5d822fd413a79914d39e9911",
+      "title": "Step 70"
+    },
+    {
+      "id": "5d822fd413a79914d39e9912",
+      "title": "Step 71"
+    },
+    {
+      "id": "5d822fd413a79914d39e9913",
+      "title": "Step 72"
+    },
+    {
+      "id": "5d822fd413a79914d39e9914",
+      "title": "Step 73"
+    },
+    {
+      "id": "5d822fd413a79914d39e9916",
+      "title": "Step 74"
+    },
+    {
+      "id": "5d822fd413a79914d39e9917",
+      "title": "Step 75"
+    },
+    {
+      "id": "5d822fd413a79914d39e9918",
+      "title": "Step 76"
+    },
+    {
+      "id": "5d822fd413a79914d39e9919",
+      "title": "Step 77"
+    },
+    {
+      "id": "5d822fd413a79914d39e991a",
+      "title": "Step 78"
+    },
+    {
+      "id": "5d822fd413a79914d39e991b",
+      "title": "Step 79"
+    },
+    {
+      "id": "5d822fd413a79914d39e991c",
+      "title": "Step 80"
+    },
+    {
+      "id": "5d822fd413a79914d39e991d",
+      "title": "Step 81"
+    },
+    {
+      "id": "5d822fd413a79914d39e991e",
+      "title": "Step 82"
+    },
+    {
+      "id": "5d822fd413a79914d39e991f",
+      "title": "Step 83"
+    },
+    {
+      "id": "5d822fd413a79914d39e9920",
+      "title": "Step 84"
+    },
+    {
+      "id": "5d822fd413a79914d39e9921",
+      "title": "Step 85"
+    },
+    {
+      "id": "5d822fd413a79914d39e9922",
+      "title": "Step 86"
+    },
+    {
+      "id": "5d822fd413a79914d39e9923",
+      "title": "Step 87"
+    },
+    {
+      "id": "5d822fd413a79914d39e9924",
+      "title": "Step 88"
+    },
+    {
+      "id": "5d822fd413a79914d39e9925",
+      "title": "Step 89"
+    },
+    {
+      "id": "5d822fd413a79914d39e9926",
+      "title": "Step 90"
+    },
+    {
+      "id": "5d822fd413a79914d39e9927",
+      "title": "Step 91"
+    },
+    {
+      "id": "5d822fd413a79914d39e9928",
+      "title": "Step 92"
+    },
+    {
+      "id": "5d822fd413a79914d39e9929",
+      "title": "Step 93"
+    },
+    {
+      "id": "5d822fd413a79914d39e992a",
+      "title": "Step 94"
+    },
+    {
+      "id": "5d822fd413a79914d39e992b",
+      "title": "Step 95"
+    },
+    {
+      "id": "5d822fd413a79914d39e992c",
+      "title": "Step 96"
+    },
+    {
+      "id": "5d822fd413a79914d39e992d",
+      "title": "Step 97"
+    },
+    {
+      "id": "5d822fd413a79914d39e992e",
+      "title": "Step 98"
+    },
+    {
+      "id": "5d822fd413a79914d39e992f",
+      "title": "Step 99"
+    },
+    {
+      "id": "5d822fd413a79914d39e9930",
+      "title": "Step 100"
+    },
+    {
+      "id": "5d822fd413a79914d39e9932",
+      "title": "Step 101"
+    },
+    {
+      "id": "5d822fd413a79914d39e9933",
+      "title": "Step 102"
+    },
+    {
+      "id": "5d822fd413a79914d39e9915",
+      "title": "Step 103"
+    },
+    {
+      "id": "5d822fd413a79914d39e9934",
+      "title": "Step 104"
+    },
+    {
+      "id": "5d822fd413a79914d39e9935",
+      "title": "Step 105"
+    },
+    {
+      "id": "5d822fd413a79914d39e9931",
+      "title": "Step 106"
+    },
+    {
+      "id": "5d822fd413a79914d39e9936",
+      "title": "Step 107"
+    },
+    {
+      "id": "5d822fd413a79914d39e9937",
+      "title": "Step 108"
+    },
+    {
+      "id": "5d822fd413a79914d39e9938",
+      "title": "Step 109"
+    },
+    {
+      "id": "5d822fd413a79914d39e9939",
+      "title": "Step 110"
+    },
+    {
+      "id": "5d822fd413a79914d39e993a",
+      "title": "Step 111"
+    },
+    {
+      "id": "5d822fd413a79914d39e993b",
+      "title": "Step 112"
+    },
+    {
+      "id": "5d822fd413a79914d39e993c",
+      "title": "Step 113"
+    },
+    {
+      "id": "5d822fd413a79914d39e993d",
+      "title": "Step 114"
+    },
+    {
+      "id": "5d822fd413a79914d39e993e",
+      "title": "Step 115"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Build a Bookmark Manager App",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-bookmark-manager-app",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66def5467aee701733aaf8cc", "title": "Build a Bookmark Manager App" }],
+  "helpCategory": "JavaScript"
+}

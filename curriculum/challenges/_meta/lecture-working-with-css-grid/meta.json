@@ -1,0 +1,43 @@
+{
+  "name": "Working with CSS Grid",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-css-grid",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa8ac4631d1623ec5cd86",
+      "title": "What Is CSS Grid, and How Does It Differ from Flexbox?"
+    },
+    {
+      "id": "673226732b19aa1cacd0a75c",
+      "title": "How Can You Create Flexible Grids with the fr Unit?"
+    },
+    {
+      "id": "6732267ecab2151ced471cd4",
+      "title": "How Can You Create Gaps Between Tracks in a Grid?"
+    },
+    {
+      "id": "6732268d05c3661d32a0fee8",
+      "title": "How Can You Repeat Track Listings in a Grid Layout?"
+    },
+    {
+      "id": "6732269a7aa2ca1d6b6574fe",
+      "title": "What Is the Difference Between an Implicit and Explicit Grid?"
+    },
+    {
+      "id": "673226a62eb2121da41a3d68",
+      "title": "What Is the minmax() Function and How Does It Work?"
+    },
+    {
+      "id": "673226afcd33991dd751937a",
+      "title": "How Do the grid-column and grid-row Properties Work?"
+    },
+    {
+      "id": "673226b97d4a731e0577ae93",
+      "title": "How Can You Position Items on the Grid Using the grid-template-areas Property?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

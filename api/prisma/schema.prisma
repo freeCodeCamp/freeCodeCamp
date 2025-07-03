@@ -1,0 +1,474 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGOHQ_URL")
+}
+
+// USER COLLECTION ---------------------
+
+type File {
+  contents String
+  ext      String
+  key      String
+  name     String
+  path     String? // Undefined | Null
+}
+
+type CompletedChallenge {
+  challengeType      Int?         @db.Int // Null | Undefined
+  completedDate      Float // TODO(Post-MVP): Change to DateTime
+  files              File[]
+  githubLink         String? // Undefined
+  id                 String
+  isManuallyApproved Boolean? // Undefined
+  solution           String? // Null | Undefined
+  examResults        ExamResults? // Undefined
+}
+
+type PartiallyCompletedChallenge {
+  id            String
+  completedDate Float
+}
+
+type Portfolio {
+  description String
+  id          String
+  image       String
+  title       String
+  url         String
+}
+
+type ProfileUI {
+  isLocked      Boolean? // Undefined
+  showAbout     Boolean? // Undefined
+  showCerts     Boolean? // Undefined
+  showDonation  Boolean? // Undefined
+  showHeatMap   Boolean? // Undefined
+  showLocation  Boolean? // Undefined
+  showName      Boolean? // Undefined
+  showPoints    Boolean? // Undefined
+  showPortfolio Boolean? // Undefined
+  showTimeLine  Boolean? // Undefined
+}
+
+type SavedChallengeFile {
+  contents String
+  ext      String
+  history  String[]
+  key      String
+  name     String
+}
+
+type SavedChallenge {
+  files         SavedChallengeFile[]
+  id            String
+  lastSavedDate Float
+}
+
+type QuizAttempt {
+  challengeId String
+  quizId      String
+  timestamp   Float
+}
+
+/// Corresponds to the `user` collection.
+model user {
+  id                           String                        @id @default(auto()) @map("_id") @db.ObjectId
+  about                        String
+  acceptedPrivacyTerms         Boolean
+  completedChallenges          CompletedChallenge[]
+  completedExams               CompletedExam[] // Undefined
+  quizAttempts                 QuizAttempt[] // Undefined
+  currentChallengeId           String?
+  donationEmails               String[] // Undefined | String[] (only possible for built in Types like String)
+  email                        String
+  emailAuthLinkTTL             DateTime? // Null | Undefined
+  emailVerified                Boolean
+  emailVerifyTTL               DateTime? // Null | Undefined
+  externalId                   String
+  githubProfile                String? // Undefined
+  isApisMicroservicesCert      Boolean? // Undefined
+  isBackEndCert                Boolean? // Undefined
+  isBanned                     Boolean? // Undefined
+  isCheater                    Boolean? // Undefined
+  isDataAnalysisPyCertV7       Boolean? // Undefined
+  isDataVisCert                Boolean? // Undefined
+  isDonating                   Boolean
+  isFoundationalCSharpCertV8   Boolean? // Undefined
+  isFrontEndCert               Boolean? // Undefined
+  isFrontEndLibsCert           Boolean? // Undefined
+  isFullStackCert              Boolean? // Undefined
+  isHonest                     Boolean?
+  isInfosecCertV7              Boolean? // Undefined
+  isInfosecQaCert              Boolean? // Undefined
+  isJsAlgoDataStructCert       Boolean? // Undefined
+  isJsAlgoDataStructCertV8     Boolean? // Undefined
+  isMachineLearningPyCertV7    Boolean? // Undefined
+  isQaCertV7                   Boolean? // Undefined
+  isRelationalDatabaseCertV8   Boolean? // Undefined
+  isRespWebDesignCert          Boolean? // Undefined
+  isSciCompPyCertV7            Boolean? // Undefined
+  is2018DataVisCert            Boolean? // Undefined
+  is2018FullStackCert          Boolean? // Undefined
+  isCollegeAlgebraPyCertV8     Boolean? // Undefined
+  // isUpcomingPythonCertV8    Boolean? // Undefined. It is in the db but has never been used.
+  keyboardShortcuts            Boolean? // Undefined
+  linkedin                     String? // Null | Undefined
+  location                     String? // Null
+  name                         String? // Null
+  needsModeration              Boolean? // Undefined
+  newEmail                     String? // Null | Undefined
+  partiallyCompletedChallenges PartiallyCompletedChallenge[] // Undefined | PartiallyCompletedChallenge[]
+  password                     String? // Undefined
+  picture                      String
+  portfolio                    Portfolio[]
+  profileUI                    ProfileUI? // Undefined
+  progressTimestamps           Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE
+  /// A random number between 0 and 1.
+  ///
+  /// Valuable for selectively performing random logic.
+  rand                         Float?
+  savedChallenges              SavedChallenge[] // Undefined | SavedChallenge[]
+  sendQuincyEmail              Boolean
+  theme                        String? // Undefined
+  timezone                     String? // Undefined
+  twitter                      String? // Null | Undefined
+  unsubscribeId                String
+  /// Used to track the number of times the user's record was written to.
+  ///
+  /// This has the main benefit of allowing concurrent ops to check for race conditions.
+  updateCount                  Int?                          @default(0)
+  username                     String // TODO(Post-MVP): make this unique
+  usernameDisplay              String? // Undefined
+  verificationToken            String? // Undefined
+  website                      String? // Undefined
+  yearsTopContributor          String[] // Undefined | String[]
+  isClassroomAccount           Boolean? // Undefined
+
+  // Relations
+  examAttempts                      EnvExamAttempt[]
+  examEnvironmentAuthorizationToken ExamEnvironmentAuthorizationToken?
+}
+
+// -----------------------------------
+
+/// An exam for the Exam Environment App as designed by the examiners
+model EnvExam {
+  /// Globally unique exam id
+  id            String           @id @default(auto()) @map("_id") @db.ObjectId
+  /// All questions for a given exam
+  questionSets  EnvQuestionSet[]
+  /// Configuration for exam metadata
+  config        EnvConfig
+  /// ObjectIds for required challenges/blocks to take the exam
+  prerequisites String[]         @db.ObjectId
+  /// If `deprecated`, the exam should no longer be considered for users
+  deprecated    Boolean
+
+  // Relations
+  generatedExams EnvGeneratedExam[]
+  examAttempts   EnvExamAttempt[]
+}
+
+/// A grouping of one or more questions of a given type
+type EnvQuestionSet {
+  /// Unique question type id
+  id        String                      @db.ObjectId
+  type      EnvQuestionType
+  /// Content related to all questions in set
+  context   String?
+  questions EnvMultipleChoiceQuestion[]
+}
+
+/// A multiple choice question for the Exam Environment App
+type EnvMultipleChoiceQuestion {
+  /// Unique question id
+  id         String      @db.ObjectId
+  /// Main question paragraph
+  text       String
+  /// Zero or more tags given to categorize a question
+  tags       String[]
+  /// Optional audio for a question
+  audio      EnvAudio?
+  /// Available possible answers for an exam
+  answers    EnvAnswer[]
+  /// TODO Possible "deprecated_time" to remove after all exams could possibly have been taken
+  deprecated Boolean
+}
+
+/// Audio for an Exam Environment App multiple choice question
+type EnvAudio {
+  /// Optional text for audio
+  captions String?
+  /// URL to audio file
+  ///
+  /// Expected in the format: `<url>#t=<start_time_in_seconds>,<end_time_in_seconds>`
+  /// Where `start_time_in_seconds` and `end_time_in_seconds` are optional floats.
+  url      String
+}
+
+/// Type of question for the Exam Environment App
+enum EnvQuestionType {
+  /// Single question with one or more answers
+  MultipleChoice
+  /// Mass text
+  Dialogue
+}
+
+/// Answer for an Exam Environment App multiple choice question
+type EnvAnswer {
+  /// Unique answer id
+  id        String  @db.ObjectId
+  /// Whether the answer is correct
+  isCorrect Boolean
+  /// Answer paragraph
+  text      String
+}
+
+/// Configuration for an exam in the Exam Environment App
+type EnvConfig {
+  /// Human-readable exam name
+  name           String
+  /// Notes given about exam
+  note           String
+  /// Category configuration for question selection
+  tags           EnvTagConfig[]
+  /// Total time allocated for exam in milliseconds
+  totalTimeInMS  Int
+  /// Configuration for sets of questions
+  questionSets   EnvQuestionSetConfig[]
+  /// Duration after exam completion before a retake is allowed in milliseconds
+  retakeTimeInMS Int
+}
+
+/// Configuration for a set of questions in the Exam Environment App
+type EnvQuestionSetConfig {
+  type                     EnvQuestionType
+  /// Number of this grouping of questions per exam
+  numberOfSet              Int
+  /// Number of multiple choice questions per grouping matching this set config
+  numberOfQuestions        Int
+  /// Number of correct answers given per multiple choice question
+  numberOfCorrectAnswers   Int
+  /// Number of incorrect answers given per multiple choice question
+  numberOfIncorrectAnswers Int
+}
+
+/// Configuration for tags in the Exam Environment App
+///
+/// This configures the number of questions that should resolve to a given tag set criteria.
+type EnvTagConfig {
+  /// Group of multiple choice question tags
+  group             String[]
+  /// Number of multiple choice questions per exam that should meet the group criteria
+  numberOfQuestions Int
+}
+
+/// An attempt at an exam in the Exam Environment App
+model EnvExamAttempt {
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  /// Foriegn key to user
+  userId          String @db.ObjectId
+  /// Foreign key to exam
+  examId          String @db.ObjectId
+  /// Foreign key to generated exam id
+  generatedExamId String @db.ObjectId
+
+  questionSets  EnvQuestionSetAttempt[]
+  /// Time exam was started as milliseconds since epoch
+  startTimeInMS Int
+  needsRetake   Boolean
+
+  // Relations
+  user          user             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exam          EnvExam          @relation(fields: [examId], references: [id])
+  generatedExam EnvGeneratedExam @relation(fields: [generatedExamId], references: [id])
+}
+
+type EnvQuestionSetAttempt {
+  id        String                             @db.ObjectId
+  questions EnvMultipleChoiceQuestionAttempt[]
+}
+
+type EnvMultipleChoiceQuestionAttempt {
+  /// Foreign key to question
+  id                 String   @db.ObjectId
+  /// An array of foreign keys to answers
+  answers            String[] @db.ObjectId
+  /// Time answers to question were submitted as milliseconds since epoch
+  ///
+  /// If the question is later revisited, this field is updated
+  submissionTimeInMS Int
+}
+
+/// A generated exam for the Exam Environment App
+///
+/// This is the user-facing information for an exam.
+model EnvGeneratedExam {
+  id           String                    @id @default(auto()) @map("_id") @db.ObjectId
+  /// Foreign key to exam
+  examId       String                    @db.ObjectId
+  questionSets EnvGeneratedQuestionSet[]
+  /// If `deprecated`, the generation should not longer be considered for users
+  deprecated   Boolean
+
+  // Relations
+  exam           EnvExam          @relation(fields: [examId], references: [id])
+  EnvExamAttempt EnvExamAttempt[]
+}
+
+type EnvGeneratedQuestionSet {
+  id        String                               @db.ObjectId
+  questions EnvGeneratedMultipleChoiceQuestion[]
+}
+
+type EnvGeneratedMultipleChoiceQuestion {
+  /// Foreign key to question id
+  id      String   @db.ObjectId
+  /// Each item is a foreign key to an answer
+  answers String[] @db.ObjectId
+}
+
+// -----------------------------------
+
+model AccessToken {
+  id      String   @id @map("_id")
+  created DateTime @db.Date
+  ttl     Int
+  userId  String   @db.ObjectId
+
+  @@index([userId], map: "userId_1")
+}
+
+model AuthToken {
+  id      String   @id @map("_id")
+  created DateTime @db.Date
+  ttl     Int
+  userId  String   @db.ObjectId
+}
+
+model Donation {
+  id             String            @id @default(auto()) @map("_id") @db.ObjectId
+  amount         Int               @db.Int
+  customerId     String
+  duration       String?
+  email          String
+  endDate        DonationEndDate?
+  provider       String
+  startDate      DonationStartDate
+  subscriptionId String
+  userId         String            @db.ObjectId
+
+  @@index([email], map: "email_1")
+  @@index([userId], map: "userId_1")
+}
+
+model UserToken {
+  id      String   @id @map("_id")
+  created DateTime @db.Date
+  ttl     Float
+  userId  String   @db.ObjectId
+
+  @@index([userId], map: "userId_1")
+}
+
+model ExamEnvironmentAuthorizationToken {
+  /// An ObjectId is used to provide access to the created timestamp
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  /// Used to set an `expireAt` index to delete documents
+  expireAt DateTime @db.Date
+  userId   String   @unique @db.ObjectId
+
+  // Relations
+  user user @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model sessions {
+  id      String   @id @map("_id")
+  expires DateTime @db.Date
+  session String
+
+  @@index([expires], map: "expires_1")
+}
+
+model MsUsername {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  userId     String @db.ObjectId
+  ttl        Int
+  msUsername String
+
+  @@index([userId, id], map: "userId_1__id_1")
+  @@index([msUsername], map: "msUsername_1")
+}
+
+model Exam {
+  id                      String         @id @map("_id") @db.ObjectId
+  numberOfQuestionsInExam Int            @db.Int
+  passingPercent          Int            @db.Int
+  prerequisites           Prerequisite[] // undefined | Prerequisite[]
+  title                   String
+  questions               Question[]
+}
+
+type CompletedExam {
+  id            String
+  challengeType Int
+  completedDate Float // TODO(Post-MVP): Change to DateTime?
+  examResults   ExamResults
+}
+
+type ExamResults {
+  numberOfCorrectAnswers  Int
+  numberOfQuestionsInExam Int
+  percentCorrect          Float
+  passingPercent          Int
+  passed                  Boolean
+  examTimeInSeconds       Int
+}
+
+type Question {
+  id             String
+  question       String
+  wrongAnswers   Answer[]
+  correctAnswers Answer[]
+  deprecated     Boolean? // undefined
+}
+
+type Answer {
+  id         String
+  answer     String
+  deprecated Boolean? // undefined
+}
+
+type Prerequisite {
+  id    String @db.ObjectId
+  title String
+}
+
+type DonationEndDate {
+  date DateTime @map("_date") @db.Date
+  when String   @map("_when")
+}
+
+type DonationStartDate {
+  date DateTime @map("_date") @db.Date
+  when String   @map("_when")
+}
+
+model Survey {
+  id        String           @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String           @db.ObjectId
+  title     String
+  responses SurveyResponse[]
+
+  @@index([userId], map: "userId_1")
+}
+
+type SurveyResponse {
+  question String
+  response String
+}

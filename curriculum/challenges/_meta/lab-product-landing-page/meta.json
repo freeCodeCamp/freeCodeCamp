@@ -1,0 +1,11 @@
+{
+  "name": "Build a Product Landing Page",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-product-landing-page",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "587d78af367417b2b2512b04", "title": "Build a Product Landing Page" }],
+  "helpCategory": "HTML-CSS"
+}

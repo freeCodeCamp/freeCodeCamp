@@ -1,0 +1,15 @@
+{
+  "name": "Learn Nano by Building a Castle",
+  "isUpcomingChange": false,
+  "dashedName": "learn-nano-by-building-a-castle",
+  "helpCategory": "Backend Development",
+  "order": 10,
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    {
+      "id": "5f32db63eb37f7e17323f459",
+      "title": "Build a Castle"
+    }
+  ],
+  "blockLayout": "project-list"
+}

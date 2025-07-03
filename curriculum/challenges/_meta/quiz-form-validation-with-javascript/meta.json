@@ -1,0 +1,15 @@
+{
+  "name": "Form Validation with JavaScript Quiz",
+  "blockType": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-form-validation-with-javascript",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "66edd3403d7077eece6dc4b6",
+      "title": "Form Validation with JavaScript Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

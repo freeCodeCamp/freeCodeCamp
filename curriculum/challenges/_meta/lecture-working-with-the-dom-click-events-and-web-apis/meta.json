@@ -1,0 +1,91 @@
+{
+  "name": "Working with the DOM, Click Events, and Web APIs",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-the-dom-click-events-and-web-apis",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6732a0472f52015e511f8e58",
+      "title": "What Is an API, and What Are Web APIs?"
+    },
+    {
+      "id": "67336894ae148431a870694d",
+      "title": "What Is the DOM, and How Do You Access Elements?"
+    },
+    {
+      "id": "6733689f9f31dd31e7d9c789",
+      "title": "How Do DOM Nodes Exist Relative to Each Other in the DOM Tree?"
+    },
+    {
+      "id": "673368b1cf26253212a3cfb2",
+      "title": "What Is the querySelectorAll() Method, and When Should You Use It?"
+    },
+    {
+      "id": "673368c0161e6b326a7e03f0",
+      "title": "How Do You Create New Nodes Using innerHTML and createElement()?"
+    },
+    {
+      "id": "673368ccf52205329b729378",
+      "title": "What Is the Difference Between innerText, textContent, and innerHTML?"
+    },
+    {
+      "id": "673368d97e8ce232cdcd6b68",
+      "title": "How Do You Add and Remove Nodes from the DOM with appendChild() and removeChild()?"
+    },
+    {
+      "id": "673368e7bd043f331919514d",
+      "title": "How Do the Navigator, Window, and Document Work?"
+    },
+    {
+      "id": "673368f272706633516e4873",
+      "title": "How Do You Add Attributes with setAttribute()?"
+    },
+    {
+      "id": "673368fbe12a2b337645053d",
+      "title": "What Is the Event Object?"
+    },
+    {
+      "id": "673369067f824d33a90a0534",
+      "title": "How Does the addEventListener Method Work?"
+    },
+    {
+      "id": "673369101e5c4a33db0e8a02",
+      "title": "How Does the removeEventListener Method Work?"
+    },
+    {
+      "id": "6733691d88e3053414689276",
+      "title": "What Are Inline Event Handlers, and Why Is It Best Practice to Use addEventListener Instead?"
+    },
+    {
+      "id": "6733692ffe1da034469f7917",
+      "title": "How Do You Manipulate Styles Using Element.style and Element.classList?"
+    },
+    {
+      "id": "6733693bfce9a43489a355db",
+      "title": "What Is the DOMContentLoaded Event, and How Does It Work?"
+    },
+    {
+      "id": "6733694805a85d34ced08a9b",
+      "title": "How Do the setTimeout and setInterval Methods Work?"
+    },
+    {
+      "id": "67336956340e8a34fbd5d9f3",
+      "title": "What Is the requestAnimationFrame() API, and How Can It Be Used to Set Up an Animation Loop?"
+    },
+    {
+      "id": "6733696567d2273540aa6033",
+      "title": "What Is the Web Animations API, and How Does It Relate to CSS Animation Properties?"
+    },
+    {
+      "id": "6733697661182d357fc643d2",
+      "title": "What Is the Canvas API, and How Does It Work?"
+    },
+    {
+      "id": "673369829e232835c2732656",
+      "title": "How Do You Open and Close Dialog Elements Using JavaScript?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

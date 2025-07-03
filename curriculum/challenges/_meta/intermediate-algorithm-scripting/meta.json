@@ -1,0 +1,95 @@
+{
+  "name": "Intermediate Algorithm Scripting",
+  "isUpcomingChange": false,
+  "dashedName": "intermediate-algorithm-scripting",
+  "helpCategory": "JavaScript",
+  "order": 8,
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "challengeOrder": [
+    {
+      "id": "a3566b1109230028080c9345",
+      "title": "Sum All Numbers in a Range"
+    },
+    {
+      "id": "a5de63ebea8dbee56860f4f2",
+      "title": "Diff Two Arrays"
+    },
+    {
+      "id": "a39963a4c10bc8b4d4f06d7e",
+      "title": "Seek and Destroy"
+    },
+    {
+      "id": "a8e512fbe388ac2f9198f0fa",
+      "title": "Wherefore art thou"
+    },
+    {
+      "id": "a103376db3ba46b2d50db289",
+      "title": "Spinal Tap Case"
+    },
+    {
+      "id": "aa7697ea2477d1316795783b",
+      "title": "Pig Latin"
+    },
+    {
+      "id": "a0b5010f579e69b815e7c5d6",
+      "title": "Search and Replace"
+    },
+    {
+      "id": "afd15382cdfb22c9efe8b7de",
+      "title": "DNA Pairing"
+    },
+    {
+      "id": "af7588ade1100bde429baf20",
+      "title": "Missing letters"
+    },
+    {
+      "id": "a105e963526e7de52b219be9",
+      "title": "Sorted Union"
+    },
+    {
+      "id": "a6b0bb188d873cb2c8729495",
+      "title": "Convert HTML Entities"
+    },
+    {
+      "id": "a5229172f011153519423690",
+      "title": "Sum All Odd Fibonacci Numbers"
+    },
+    {
+      "id": "a3bfc1673c0526e06d3ac698",
+      "title": "Sum All Primes"
+    },
+    {
+      "id": "ae9defd7acaf69703ab432ea",
+      "title": "Smallest Common Multiple"
+    },
+    {
+      "id": "a5deed1811a43193f9f1c841",
+      "title": "Drop it"
+    },
+    {
+      "id": "ab306dbdcc907c7ddfc30830",
+      "title": "Steamroller"
+    },
+    {
+      "id": "a8d97bd4c764e91f9d2bda01",
+      "title": "Binary Agents"
+    },
+    {
+      "id": "a10d2431ad0c6a099a4b8b52",
+      "title": "Everything Be True"
+    },
+    {
+      "id": "a97fd23d9b809dac9921074f",
+      "title": "Arguments Optional"
+    },
+    {
+      "id": "a2f1d72d9b908d0bd72bb9f6",
+      "title": "Make a Person"
+    },
+    {
+      "id": "af4afb223120f7348cdfc9fd",
+      "title": "Map the Debris"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

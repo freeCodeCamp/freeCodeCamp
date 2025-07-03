@@ -1,0 +1,11 @@
+{
+  "name": "Build a Mood Board",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-mood-board",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "673b3d6b7ef7318eef926d5a", "title": "Build a Mood Board" }],
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockType": "lab"
+}

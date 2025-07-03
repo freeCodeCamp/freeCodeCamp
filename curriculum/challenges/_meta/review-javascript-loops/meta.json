@@ -1,0 +1,12 @@
+{
+  "name": "JavaScript Loops Review",
+  "blockType": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-loops",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    { "id": "6723c837cd3276aa73e6da25", "title": "JavaScript Loops Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

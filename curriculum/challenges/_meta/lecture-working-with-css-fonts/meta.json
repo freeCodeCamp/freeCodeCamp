@@ -1,0 +1,39 @@
+{
+  "name": "Working with CSS Fonts",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-css-fonts",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa80bc17f355fabd2e9e8",
+      "title": "What Are the Fundamentals of Typography?"
+    },
+    {
+      "id": "672bd807c49548fc9be66aca",
+      "title": "What Are Some Best Practices for Working with Typography in Your Designs?"
+    },
+    {
+      "id": "672bd814105a0ffcf36f9233",
+      "title": "What Are Font Families and How Do They Work?"
+    },
+    {
+      "id": "672bd81ee07c43fd2070f0fe",
+      "title": "What Are Web Safe Fonts?"
+    },
+    {
+      "id": "672bd834cedccefd5939a913",
+      "title": "What Is the @font-face At-Rule, and How Does It Work?"
+    },
+    {
+      "id": "672bd8453d1371fdb1510fe5",
+      "title": "How Do You Work with External Fonts Like Font Squirrel and Google Fonts?"
+    },
+    {
+      "id": "672bd853c985cdfdeb32f4f9",
+      "title": "What Is the text-shadow Property, and How Does It Work?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

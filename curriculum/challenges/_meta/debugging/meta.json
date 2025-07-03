@@ -1,0 +1,59 @@
+{
+  "name": "Debugging",
+  "isUpcomingChange": false,
+  "dashedName": "debugging",
+  "helpCategory": "JavaScript",
+  "order": 3,
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "challengeOrder": [
+    {
+      "id": "587d7b83367417b2b2512b33",
+      "title": "Use the JavaScript Console to Check the Value of a Variable"
+    },
+    {
+      "id": "587d7b83367417b2b2512b37",
+      "title": "Understanding the Differences between the freeCodeCamp and Browser Console"
+    },
+    {
+      "id": "587d7b84367417b2b2512b34",
+      "title": "Use typeof to Check the Type of a Variable"
+    },
+    {
+      "id": "587d7b84367417b2b2512b35",
+      "title": "Catch Misspelled Variable and Function Names"
+    },
+    {
+      "id": "587d7b84367417b2b2512b36",
+      "title": "Catch Unclosed Parentheses, Brackets, Braces and Quotes"
+    },
+    {
+      "id": "587d7b84367417b2b2512b37",
+      "title": "Catch Mixed Usage of Single and Double Quotes"
+    },
+    {
+      "id": "587d7b85367417b2b2512b38",
+      "title": "Catch Use of Assignment Operator Instead of Equality Operator"
+    },
+    {
+      "id": "587d7b85367417b2b2512b39",
+      "title": "Catch Missing Open and Closing Parenthesis After a Function Call"
+    },
+    {
+      "id": "587d7b85367417b2b2512b3a",
+      "title": "Catch Arguments Passed in the Wrong Order When Calling a Function"
+    },
+    {
+      "id": "587d7b86367417b2b2512b3b",
+      "title": "Catch Off By One Errors When Using Indexing"
+    },
+    {
+      "id": "587d7b86367417b2b2512b3c",
+      "title": "Use Caution When Reinitializing Variables Inside a Loop"
+    },
+    {
+      "id": "587d7b86367417b2b2512b3d",
+      "title": "Prevent Infinite Loops with a Valid Terminal Condition"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

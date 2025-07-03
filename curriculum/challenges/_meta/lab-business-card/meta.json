@@ -1,0 +1,12 @@
+{
+  "name": "Design a Business Card",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-business-card",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "6690e10ebe2181212abc9652", "title": "Design a Business Card" }],
+  "helpCategory": "HTML-CSS"
+}
+

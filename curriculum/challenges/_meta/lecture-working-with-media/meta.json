@@ -1,0 +1,35 @@
+{
+  "name": "Working with Media",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-media",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6716743531fc9a797351c21e",
+      "title": "What Are Replaced Elements, and What Are Some Examples?"
+    },
+    {
+      "id": "67167835def3588873f339c6",
+      "title": "What Are Common Ways to Optimize Media Assets?"
+    },
+    {
+      "id": "6716823876aa22a68ba3e2ec",
+      "title": "What Are the Different Types of Image Licenses, and How Do They Work?"
+    },
+    {
+      "id": "6716825aff3434a71fdc3e99",
+      "title": "What Are SVGs, and When Should You Use Them?"
+    },
+    {
+      "id": "67168278ac6df6a799555db5",
+      "title": "What Are the Roles of the HTML Audio and Video Elements, and How Do They Work?"
+    },
+    {
+      "id": "671682b3983489a819507553",
+      "title": "How Do You Embed Videos onto Your Page Using the iframe Element?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

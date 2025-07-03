@@ -1,0 +1,11 @@
+{
+  "name": "Build a Gradebook App",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-gradebook-app",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "66bb6a9c2dd58b73cd759034", "title": "Build a Gradebook App" }],
+  "helpCategory": "JavaScript"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Working with Audio and Video",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-audio-and-video",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6733ab12b60bd7f6b2b0b0c0",
+      "title": "How Does the Audio Constructor Work, and What Are Some Common Methods?"
+    },
+    {
+      "id": "6733d8203da84a08a0f5eab4",
+      "title": "What Are the Different Types of Video and Audio Formats?"
+    },
+    {
+      "id": "6733d829d983c008d2db41a1",
+      "title": "What Is Codecs and How Does It Work?"
+    },
+    {
+      "id": "6733d83630e76f08ff49e6dc",
+      "title": "What Is the HTMLMediaElement API and How Does It Work?"
+    },
+    {
+      "id": "6733d852175df50937f06061",
+      "title": "How Can You Work with the Media Streams to Capture Video and Audio from a Local Device?"
+    },
+    {
+      "id": "6733d8606fb893099e3d0df3",
+      "title": "What Are Some Other Examples of Video and Audio APIs?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

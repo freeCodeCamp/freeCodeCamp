@@ -1,0 +1,61 @@
+{
+  "name": "@freecodecamp/curriculum",
+  "version": "0.0.0-next.4",
+  "description": "freeCodeCamp's curriculum seed files",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "scripts": {
+    "build": "tsx --tsconfig ../tsconfig.json ../tools/scripts/build/build-curriculum",
+    "create-empty-steps": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-empty-steps",
+    "create-next-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-next-challenge",
+    "create-this-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-this-challenge",
+    "create-next-step": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-next-step",
+    "create-next-task": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-next-task",
+    "insert-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/insert-challenge",
+    "insert-step": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/insert-step",
+    "insert-task": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/insert-task",
+    "install-puppeteer": "puppeteer browsers install chrome",
+    "delete-step": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-step",
+    "delete-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-challenge",
+    "delete-task": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-task",
+    "lint": "tsx --tsconfig ../tsconfig.json lint-localized",
+    "repair-meta": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/repair-meta",
+    "reorder-tasks": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/reorder-tasks",
+    "update-challenge-order": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-challenge-order",
+    "update-step-titles": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
+    "test": "NODE_OPTIONS='--max-old-space-size=7168' tsx ./node_modules/mocha/bin/mocha.js --delay --exit --reporter progress --bail",
+    "test:full-output": "NODE_OPTIONS='--max-old-space-size=7168' FULL_OUTPUT=true tsx ./node_modules/mocha/bin/mocha.js --delay --reporter progress"
+  },
+  "devDependencies": {
+    "@babel/core": "7.23.7",
+    "@babel/register": "7.23.7",
+    "@compodoc/live-server": "^1.2.3",
+    "chai": "4.4.1",
+    "glob": "8.1.0",
+    "invariant": "2.2.4",
+    "joi": "17.12.2",
+    "joi-objectid": "3.0.1",
+    "js-yaml": "4.0.0",
+    "jsdom": "16.7.0",
+    "lodash": "4.17.21",
+    "mocha": "10.3.0",
+    "mock-require": "3.0.3",
+    "ora": "5.4.1",
+    "puppeteer": "22.12.1",
+    "readdirp": "3.6.0",
+    "string-similarity": "4.0.4"
+  }
+}

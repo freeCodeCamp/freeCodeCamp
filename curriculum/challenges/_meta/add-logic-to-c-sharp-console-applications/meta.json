@@ -1,0 +1,43 @@
+{
+  "name": "Add Logic to C# Console Applications",
+  "isUpcomingChange": false,
+  "dashedName": "add-logic-to-c-sharp-console-applications",
+  "helpCategory": "C-Sharp",
+  "order": 2,
+  "superBlock": "foundational-c-sharp-with-microsoft",
+  "challengeOrder": [
+    {
+      "id": "647e21708acb466c97ccbee3",
+      "title": "Evaluate Boolean Expressions to Make Decisions in C#"
+    },
+    {
+      "id": "647e21658acb466c97ccbee2",
+      "title": "Control Variable Scope and Logic Using Code Blocks in C#"
+    },
+    {
+      "id": "647e214b8acb466c97ccbee0",
+      "title": "Branch the Flow of Code Using the switch-case Construct in C#"
+    },
+    {
+      "id": "647e218f8acb466c97ccbee5",
+      "title": "Iterate Through a Code Block Using the for Statement in C#"
+    },
+    {
+      "id": "647e1f4e8acb466c97ccbedf",
+      "title": "Add Looping Logic to Your Code Using the do-while and while Statements in C#"
+    },
+    {
+      "id": "647e217e8acb466c97ccbee4",
+      "title": "Guided Project - Develop Conditional Branching and Looping Structures in C#"
+    },
+    {
+      "id": "647e21598acb466c97ccbee1",
+      "title": "Challenge Project - Develop Branching and Looping Structures in C#"
+    },
+    {
+      "id": "647f882207d29547b3bee1c0",
+      "title": "Trophy - Add Logic to C# Console Applications"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

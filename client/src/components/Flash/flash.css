@@ -1,0 +1,14 @@
+/*
+For some reason this `div` is needed in order to overidde
+the CSS rules of `ui-components`'s Alert.
+*/
+div.flash-message {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  position: fixed;
+  width: 100%;
+  z-index: 150;
+}
