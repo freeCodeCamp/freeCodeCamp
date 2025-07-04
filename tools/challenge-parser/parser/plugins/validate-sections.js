@@ -19,15 +19,16 @@ const VALID_MARKERS = [
   '# --transcript--',
 
   // Level 2
-  '## --after-user-code--',
   '## --answers--',
-  '## --before-user-code--',
   '## --blanks--',
   '## --quiz--',
   '## --seed-contents--',
   '## --sentence--',
   '## --text--',
   '## --video-solution--',
+  // TODO: Remove these two markers when https://github.com/freeCodeCamp/freeCodeCamp/issues/57107 is resolved
+  '## --after-user-code--',
+  '## --before-user-code--',
 
   // Level 3
   '### --feedback--',
@@ -46,7 +47,6 @@ function validateSections() {
   function transformer(tree) {
     const allMarkers = findAll(tree, isMarker);
 
-    // Invalid cases
     const invalidMarkerNames = [];
     const invalidHeadingLevels = [];
     const nonHeadingMarkersAsHeadings = [];
@@ -63,18 +63,15 @@ function validateSections() {
         continue;
       }
 
-      // Check if this exact combination is valid
       if (!VALID_MARKERS.includes(fullMarker)) {
-        // Check if the marker name exists at any level
-        const markerExistsAtAnyLevel = VALID_MARKERS.some(vm =>
-          vm.endsWith(' ' + markerValue)
+        const markerExistsAtAnyLevel = VALID_MARKERS.some(validMarker =>
+          validMarker.endsWith(markerValue)
         );
 
         if (markerExistsAtAnyLevel) {
-          // Valid marker name but wrong heading level
-          const validLevels = VALID_MARKERS.filter(vm =>
-            vm.endsWith(' ' + markerValue)
-          ).map(vm => vm.split(' ')[0]); // Extract the # symbols
+          const validLevels = VALID_MARKERS.filter(validMarker =>
+            validMarker.endsWith(markerValue)
+          ).map(validMarker => validMarker.split(' ')[0]); // Extract the # symbols
 
           invalidHeadingLevels.push({
             fullMarker,
@@ -82,7 +79,6 @@ function validateSections() {
             validLevels
           });
         } else {
-          // Invalid marker name
           invalidMarkerNames.push(markerValue);
         }
       }
@@ -105,9 +101,11 @@ function validateSections() {
         ({ fullMarker, markerValue, validLevels }) => {
           const validText =
             validLevels.length === 1
-              ? validLevels[0]
-              : validLevels.join(' or ');
-          return `"${fullMarker}" should be "${validText} ${markerValue}"`;
+              ? `${validLevels[0]} ${markerValue}`
+              : validLevels
+                  .map(level => `${level} ${markerValue}`)
+                  .join(' or ');
+          return `"${fullMarker}" should be "${validText}"`;
         }
       );
 

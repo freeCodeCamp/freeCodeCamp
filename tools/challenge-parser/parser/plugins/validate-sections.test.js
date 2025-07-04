@@ -122,6 +122,9 @@ Typo in marker name.
 # --instructionss--
 Another typo.
 
+# -- instructions--
+Another typo.
+
 # --feedback---
 Another typo.
 
@@ -132,7 +135,7 @@ Completely invalid marker.
     expect(() => {
       processor.runSync(processor.parse(file));
     }).toThrow(
-      'Invalid marker names: "--descriptio--", "--instructionss--", "--feedback---", "--invalid-marker--".'
+      'Invalid marker names: "--descriptio--", "--instructionss--", "-- instructions--", "--feedback---", "--invalid-marker--".'
     );
   });
 
@@ -214,6 +217,23 @@ This should also not be a heading.
       processor.runSync(processor.parse(file));
     }).toThrow(
       'Non-heading markers should not be used as headings: "# --fcc-editable-region--", "## --fcc-editable-region--".'
+    );
+  });
+
+  it('should throw error for markers valid at multiple levels but used at an invalid level', () => {
+    const file = `---
+id: test
+title: Test
+---
+
+### --text--
+This marker is valid at level 2 or level 4, but not at level 3.
+`;
+
+    expect(() => {
+      processor.runSync(processor.parse(file));
+    }).toThrow(
+      'Invalid heading levels: "### --text--" should be "## --text-- or #### --text--".'
     );
   });
 });
