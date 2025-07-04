@@ -10,7 +10,8 @@ export const updateMySocials = {
     website: urlOrEmptyString,
     twitter: urlOrEmptyString,
     githubProfile: urlOrEmptyString,
-    linkedin: urlOrEmptyString
+    linkedin: urlOrEmptyString,
+    bluesky: urlOrEmptyString // Optional Bluesky profile link
   }),
   response: {
     200: Type.Object({
