@@ -375,7 +375,7 @@ void prompt([
   {
     name: 'position',
     message: 'Which position in the module does this appear in the module?',
-    default: 5,
+    default: 1,
     validate: (position: string) => {
       return parseInt(position, 10) > 0
         ? true
