@@ -61,11 +61,16 @@ async function createProject(projectArgs: CreateProjectArgs) {
   );
 
   if (projectArgs.blockType === BlockTypes.quiz) {
+    if (projectArgs.questionCount == null) {
+      throw new Error(
+        'Property `questionCount` is null when creating new Quiz Challenge'
+      );
+    }
     const challengeId = await createQuizChallenge(
       projectArgs.superBlock,
       projectArgs.block,
       projectArgs.title,
-      projectArgs.questionCount!
+      projectArgs.questionCount
     );
     void createMetaJson(
       projectArgs.superBlock,
@@ -91,18 +96,32 @@ async function createProject(projectArgs: CreateProjectArgs) {
     );
     // TODO: remove once we stop relying on markdown in the client.
   }
+
+  if (projectArgs.blockType == null) {
+    throw new Error('Missing argument: blockType when updating intro markdown');
+  }
+
   void createIntroMD(
     projectArgs.superBlock,
     projectArgs.block,
     projectArgs.title,
-    projectArgs.blockType!
+    projectArgs.blockType
   );
   if (projectArgs.superBlock === SuperBlocks.FullStackDeveloper) {
+    if (
+      projectArgs.chapter == null ||
+      projectArgs.module == null ||
+      projectArgs.position == null
+    ) {
+      throw new Error(
+        'Missing one of the following arguments for updating fullstack.json: chapter,module, position'
+      );
+    }
     await updateFullStackJson(
-      projectArgs.chapter!,
-      projectArgs.module!,
+      projectArgs.chapter,
+      projectArgs.module,
       projectArgs.block,
-      projectArgs.position!
+      projectArgs.position
     );
   }
 }
