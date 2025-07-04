@@ -3833,7 +3833,7 @@
       "lab-user-configuration-manager": {
         "title": "Build a User Configuration Manager",
         "intro": [
-          "In this lab, you will practice working with dictionaries and sets in Python."
+          "In this lab, you will practice working with dictionaries in Python."
         ]
       },
       "review-dictionaries-and-sets": {

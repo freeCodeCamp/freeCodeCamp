@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a User Configuration Manager
 
-In this lab you will practice dictionaries and sets in Python by building a small app that manages user configuration settings.
+In this lab you will practice dictionaries in Python by building a small app that manages user configuration settings.
