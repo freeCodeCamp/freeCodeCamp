@@ -9,6 +9,7 @@
     "edit": "編集",
     "copy": "コピー",
     "view": "表示",
+    "submit-continue": "Submit and continue",
     "view-code": "コードを表示",
     "view-project": "プロジェクトを表示",
     "view-cert-title": "{{certTitle}}を表示",
@@ -60,6 +61,8 @@
     "check-code": "コードをチェック",
     "check-code-ctrl": "コードをチェック (Ctrl + Enter)",
     "check-code-cmd": "コードをチェック (Command + Enter)",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "リセット",
     "reset-step": "ステップをリセット",
     "help": "ヘルプ",
@@ -86,6 +89,7 @@
     "click-start-course": "コースを開始",
     "click-start-project": "プロジェクトを開始",
     "click-start-exam": "試験開始",
+    "go-to-course": "Go to course",
     "change-language": "言語変更",
     "resume-project": "プロジェクト再開",
     "start-project": "プロジェクト開始",
@@ -175,6 +179,7 @@
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "ベータ版カリキュラムを試す:",
     "upcoming-heading": "公開予定カリキュラム:",
+    "catalog-heading": "Explore our Catalog:",
     "faq": "よくある質問:",
     "faqs": [
       {
@@ -425,6 +430,7 @@
     "ms-link": "Microsoft のリンク",
     "submit-and-go": "提出して次のチャレンジに進む",
     "congratulations": "おめでとうございます、合格です。次に進むにはコードを提出してください。",
+    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
     "i-completed": "このチャレンジを完了しました",
     "example-code": "コード例",
     "test-output": "テストの結果はこちらに表示されます",
@@ -1244,6 +1250,16 @@
       "submit": "アンケートを送信",
       "exit": "アンケートを中止",
       "two-questions": "ここまでのコースの完了、おめでとうございます。試験を始める前に、こちらのアンケートにご協力ください。(2 問)"
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "Explore our Catalog",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   }
 }

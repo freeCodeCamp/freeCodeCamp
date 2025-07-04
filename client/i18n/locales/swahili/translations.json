@@ -9,6 +9,7 @@
     "edit": "Hariri",
     "copy": "Copy",
     "view": "Tazama",
+    "submit-continue": "Submit and continue",
     "view-code": "Tazama Code",
     "view-project": "Tazama Mradi",
     "view-cert-title": "Tazama {{certTitle}}",
@@ -60,6 +61,8 @@
     "check-code": "Check Your Code",
     "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
     "check-code-cmd": "Check Your Code (Command + Enter)",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "Anzisha Upya",
     "reset-step": "Weka Upya Hatua Hii",
     "help": "Msaada",
@@ -86,6 +89,7 @@
     "click-start-course": "Anza kozi",
     "click-start-project": "Anza mradi",
     "click-start-exam": "Anza mtihani",
+    "go-to-course": "Go to course",
     "change-language": "Badilisha Lugha",
     "resume-project": "Rejea mradi",
     "start-project": "Anza mradi",
@@ -175,6 +179,7 @@
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
+    "catalog-heading": "Explore our Catalog:",
     "faq": "Maswali yanayoulizwa mara kwa mara:",
     "faqs": [
       {
@@ -425,6 +430,7 @@
     "ms-link": "Kiungo cha Microsoft",
     "submit-and-go": "Wasilisha na uende kwa changamoto inayofuata",
     "congratulations": "Hongera, code yako imepita. Wasilisha code yako ili kuendelea.",
+    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
     "i-completed": "Nimemaliza changamoto hii",
     "example-code": "Example Code",
     "test-output": "Matokeo ya jaribio lako yataenda hapa",
@@ -1244,6 +1250,16 @@
       "submit": "Submit the survey",
       "exit": "Exit the survey",
       "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "Explore our Catalog",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   }
 }

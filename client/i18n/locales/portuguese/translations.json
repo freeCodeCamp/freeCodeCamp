@@ -9,6 +9,7 @@
     "edit": "Editar",
     "copy": "Copiar",
     "view": "Visualizar",
+    "submit-continue": "Submit and continue",
     "view-code": "Ver código",
     "view-project": "Ver o projeto",
     "view-cert-title": "Ver {{certTitle}}",
@@ -60,6 +61,8 @@
     "check-code": "Verifique seu código",
     "check-code-ctrl": "Verifique seu código (Ctrl + Enter)",
     "check-code-cmd": "Verifique seu código (Command + Enter)",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "Redefinir",
     "reset-step": "Reiniciar este passo",
     "help": "Ajuda",
@@ -86,6 +89,7 @@
     "click-start-course": "Iniciar o curso",
     "click-start-project": "Iniciar o projeto",
     "click-start-exam": "Iniciar o exame",
+    "go-to-course": "Go to course",
     "change-language": "Alterar idioma",
     "resume-project": "Retomar projeto",
     "start-project": "Iniciar o projeto",
@@ -175,6 +179,7 @@
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Próximo currículo:",
+    "catalog-heading": "Explore our Catalog:",
     "faq": "Perguntas frequentes:",
     "faqs": [
       {
@@ -425,6 +430,7 @@
     "ms-link": "Link da Microsoft",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
     "congratulations": "Parabéns, o código passou. Envie o código para continuar.",
+    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
     "i-completed": "Já completei este desafio",
     "example-code": "Exemplo de código",
     "test-output": "O resultado do seu código vai aparecer aqui",
@@ -1244,6 +1250,16 @@
       "submit": "Envie a pesquisa",
       "exit": "Saia da pesquisa",
       "two-questions": "Parabéns por chegar até aqui. Antes de começar o teste, responda a estas duas breves perguntas de pesquisa."
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "Explore our Catalog",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   }
 }
