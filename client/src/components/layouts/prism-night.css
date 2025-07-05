@@ -39,13 +39,6 @@
   overflow: auto;
 }
 
-/* Without this, the above selector takes precedence and messes up the answer
-padding in night mode */
-.dark-palette .video-quiz-option > pre {
-  padding: 0;
-  margin: 0;
-}
-
 .dark-palette :not(pre) > code[class*='language-'],
 .dark-palette pre[class*='language-'] {
   background: var(--primary-background);
