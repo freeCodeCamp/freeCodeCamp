@@ -23,68 +23,40 @@ The `nextInLine` function should then return the element that was removed.
 `nextInLine([], 5)` should return a number.
 
 ```js
+testArr = [1,2,3,4,5];
 assert.isNumber(nextInLine([], 5));
 ```
 
 `nextInLine([], 1)` should return `1`
 
 ```js
-assert(nextInLine([], 1) === 1);
+testArr = [1,2,3,4,5];
+assert.strictEqual(nextInLine([], 1), 1);
 ```
 
 `nextInLine([2], 1)` should return `2`
 
 ```js
-assert(nextInLine([2], 1) === 2);
+testArr = [1,2,3,4,5];
+assert.strictEqual(nextInLine([2], 1), 2);
 ```
 
 `nextInLine([5,6,7,8,9], 1)` should return `5`
 
 ```js
-assert(nextInLine([5, 6, 7, 8, 9], 1) === 5);
+testArr = [1,2,3,4,5];
+assert.strictEqual(nextInLine([5, 6, 7, 8, 9], 1), 5);
 ```
 
 After `nextInLine(testArr, 10)`, `testArr[4]` should be `10`
 
 ```js
+testArr = [1,2,3,4,5];
 nextInLine(testArr, 10);
-assert(testArr[4] === 10);
+assert.strictEqual(testArr[4], 10);
 ```
 
 # --seed--
-
-## --before-user-code--
-
-```js
-var logOutput = [];
-var originalConsole = console
-function capture() {
-    var nativeLog = console.log;
-    console.log = function (message) {
-        logOutput.push(message);
-        if(nativeLog.apply) {
-          nativeLog.apply(originalConsole, arguments);
-        } else {
-          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
-          nativeLog(nativeMsg);
-        }
-    };
-}
-
-function uncapture() {
-  console.log = originalConsole.log;
-}
-
-capture();
-```
-
-## --after-user-code--
-
-```js
-uncapture();
-testArr = [1,2,3,4,5];
-(function() { return logOutput.join("\n");})();
-```
 
 ## --seed-contents--
 

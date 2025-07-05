@@ -31,36 +31,28 @@ Change the code to use the `++` operator on `myVar`.
 `myVar` should equal `88`.
 
 ```js
-assert(myVar === 88);
+assert.strictEqual(myVar, 88);
 ```
 
 You should not use the assignment operator.
 
 ```js
-assert(
-  /let\s+myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/.test(__helpers.removeJSComments(code))
-);
+assert.match(__helpers.removeJSComments(code), /let\s+myVar\s*=\s*87;\s*\/*.*\s*([+]{2}\s*myVar|myVar\s*[+]{2})/);
 ```
 
 You should use the `++` operator.
 
 ```js
-assert(/[+]{2}\s*myVar|myVar\s*[+]{2}/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /[+]{2}\s*myVar|myVar\s*[+]{2}/);
 ```
 
 You should not change code above the specified comment.
 
 ```js
-assert(/let myVar = 87;/.test(__helpers.removeJSComments(code)));
+assert.match(__helpers.removeJSComments(code), /let myVar = 87;/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(z){return 'myVar = ' + z;})(myVar);
-```
 
 ## --seed-contents--
 

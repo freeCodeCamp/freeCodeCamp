@@ -46,22 +46,16 @@ Add a `bark` property to `myDog` and set it to a dog sound, such as "woof". You 
 You should add the property `bark` to `myDog`.
 
 ```js
-assert(myDog.bark !== undefined);
+assert.property(myDog, 'bark');
 ```
 
 You should not add `bark` to the initialization of `myDog`.
 
 ```js
-assert(!/bark[^\n]:/.test(__helpers.removeJSComments(code)));
+assert.notMatch(__helpers.removeJSComments(code), /bark[^\n]:/); 
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-(function(z){return z;})(myDog);
-```
 
 ## --seed-contents--
 
