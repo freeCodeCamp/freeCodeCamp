@@ -42,3 +42,20 @@
   font-style: normal;
   color: var(--secondary-color);
 }
+
+.email-sign-up-alert {
+  padding: 20px;
+  border: 1px solid var(--quaternary-color);
+  margin-bottom: 1.5rem;
+}
+
+.email-list-opt {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.message-author {
+  display: block;
+  text-align: center;
+  font-style: italic;
+}
