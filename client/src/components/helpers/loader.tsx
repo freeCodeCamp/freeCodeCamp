@@ -18,6 +18,7 @@ function Loader({
 
   const [showSpinner, setShowSpinner] = useState(!loaderDelay);
   const [showMessage, setShowMessage] = useState(false);
+
   useEffect(() => {
     if (loaderDelay) {
       const timerId = setTimeout(() => setShowSpinner(true), loaderDelay);
@@ -31,7 +32,6 @@ function Loader({
       return () => clearTimeout(timerId);
     }
   }, [messageDelay]);
-
   return (
     <div
       className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''}`}
