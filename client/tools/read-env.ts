@@ -20,6 +20,7 @@ if (error) {
 const {
   HOME_LOCATION: homeLocation,
   API_LOCATION: apiLocation,
+  DAILY_CHALLENGE_API_LOCATION: dailyChallengeApiLocation,
   FORUM_LOCATION: forumLocation,
   NEWS_LOCATION: newsLocation,
   RADIO_LOCATION: radioLocation,
@@ -32,12 +33,14 @@ const {
   PATREON_CLIENT_ID: patreonClientId,
   DEPLOYMENT_ENV: deploymentEnv,
   SHOW_UPCOMING_CHANGES: showUpcomingChanges,
+  SHOW_DAILY_CODING_CHALLENGES: showDailyCodingChallenges,
   GROWTHBOOK_URI: growthbookUri
 } = process.env;
 
 const locations = {
   homeLocation,
   apiLocation,
+  dailyChallengeApiLocation,
   forumLocation,
   newsLocation,
   radioLocation: !radioLocation
@@ -71,6 +74,7 @@ export default Object.assign(locations, {
       ? null
       : patreonClientId,
   showUpcomingChanges: showUpcomingChanges === 'true',
+  showDailyCodingChallenges: showDailyCodingChallenges === 'true',
   growthbookUri:
     !growthbookUri || growthbookUri === 'api_URI_from_Growthbook_dashboard'
       ? null

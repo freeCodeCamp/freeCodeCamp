@@ -41,9 +41,16 @@ function ProgressInner({
   const [shownPercent, setShownPercent] = useState(0);
   const [lastShopwnPercent, setLastShownPercent] = useState(0);
   const progressInnerWrap = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<number | null>(null);
   const isProgressInViewport = useIsInViewport(progressInnerWrap);
 
   const animateProgressInner = (completedPercent: number) => {
+    // Clear any existing interval
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+
     if (completedPercent > 100) completedPercent = 100;
     if (completedPercent < 0) completedPercent = 0;
 
@@ -51,7 +58,7 @@ function ProgressInner({
     const intervalsToFinish = transitionLength / intervalLength;
     const amountPerInterval = completedPercent / intervalsToFinish;
 
-    const myInterval = window.setInterval(() => {
+    intervalRef.current = window.setInterval(() => {
       percent += amountPerInterval;
 
       if (percent > completedPercent) percent = completedPercent;
@@ -61,10 +68,14 @@ function ProgressInner({
       );
       if (percent >= completedPercent) {
         percent = 0;
-        clearInterval(myInterval);
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+          intervalRef.current = null;
+        }
       }
     }, intervalLength);
   };
+
   useEffect(() => {
     if (lastShopwnPercent !== completedPercent && isProgressInViewport) {
       setLastShownPercent(completedPercent);
@@ -72,6 +83,16 @@ function ProgressInner({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isProgressInViewport]);
+
+  // Cleanup interval on unmount
+  useEffect(() => {
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, []);
 
   return (
     <>
