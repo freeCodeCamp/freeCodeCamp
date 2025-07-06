@@ -23,59 +23,34 @@ There should be at least 5 sub-arrays in the list.
 `myList` should be an array.
 
 ```js
-assert(isArray);
+assert.isArray(myList);
 ```
 
 The first elements in each of your sub-arrays should all be strings.
 
 ```js
-assert(hasString);
+for(let i = 0; i < myList.length; i++)
+{
+  assert.isString(myList[i][0]); 
+}
 ```
 
 The second elements in each of your sub-arrays should all be numbers.
 
 ```js
-assert(hasNumber);
+for(let i = 0; i < myList.length; i++)
+{
+  assert.isNumber(myList[i][1]); 
+}
 ```
 
 You should have at least 5 items in your list.
 
 ```js
-assert(count > 4);
+assert.isAtLeast(myList.length, 5);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-var count = 0;
-var isArray = false;
-var hasString = false;
-var hasNumber = false;
-(function(list){
-  if(Array.isArray(myList)) {
-    isArray = true;
-    if(myList.length > 0) {
-      hasString = true;
-      hasNumber = true;
-      for (var elem of myList) {
-        if(!elem || !elem[0] || typeof elem[0] !== 'string') {
-          hasString = false;
-        }
-        if(!elem || typeof elem[1] !== 'number') {
-          hasNumber = false;
-        }
-      }
-    }
-    count = myList.length;
-    return JSON.stringify(myList);
-  } else {
-    return "myList is not an array";
-  }
-
-})(myList);
-```
 
 ## --seed-contents--
 

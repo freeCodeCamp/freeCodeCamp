@@ -55,7 +55,7 @@ Change the `while` loop in the code to a `do...while` loop so the loop will push
 You should be using a `do...while` loop for this exercise.
 
 ```js
-assert(__helpers.removeJSComments(code).match(/do/g));
+assert.match(__helpers.removeJSComments(code), /do/g);
 ```
 
 `myArray` should equal `[10]`.
@@ -71,12 +71,6 @@ assert.equal(i, 11);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-if(typeof myArray !== "undefined"){(function(){return myArray;})();}
-```
 
 ## --seed-contents--
 

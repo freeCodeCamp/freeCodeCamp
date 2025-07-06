@@ -39,22 +39,16 @@ Using bracket notation select an element from `myArray` such that `myData` is eq
 `myData` should be equal to `8`.
 
 ```js
-assert(myData === 8);
+assert.strictEqual(myData, 8);
 ```
 
 You should be using bracket notation to read the correct value from `myArray`.
 
 ```js
-assert(/myData=myArray\[2\]\[1\]/.test(__helpers.removeWhiteSpace(__helpers.removeJSComments(code))));
+assert.match(__helpers.removeWhiteSpace(__helpers.removeJSComments(code)), /myData=myArray\[2\]\[1\]/);
 ```
 
 # --seed--
-
-## --after-user-code--
-
-```js
-if(typeof myArray !== "undefined"){(function(){return "myData: " + myData + " myArray: " + JSON.stringify(myArray);})();}
-```
 
 ## --seed-contents--
 
