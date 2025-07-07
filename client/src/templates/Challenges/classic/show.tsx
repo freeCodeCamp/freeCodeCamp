@@ -16,10 +16,13 @@ import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
 import type {
-  ChallengeData,
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
+  DailyCodingChallengeLanguages,
+  DailyCodingChallengeNode,
+  DailyCodingChallengePageContext,
+  PageContext,
   ResizeProps,
   SavedChallenge,
   SavedChallengeFiles,
@@ -77,7 +80,7 @@ import '../components/test-frame.css';
 const mapStateToProps = (state: unknown) => ({
   challengeFiles: challengeFilesSelector(state) as ChallengeFiles,
   output: consoleOutputSelector(state) as string,
-  isChallengeCompleted: isChallengeCompletedSelector(state) as boolean,
+  isChallengeCompleted: isChallengeCompletedSelector(state),
   savedChallenges: savedChallengesSelector(state) as SavedChallenge[]
 });
 
@@ -105,7 +108,8 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   cancelTests: () => void;
   challengeMounted: (arg0: string) => void;
   createFiles: (arg0: ChallengeFiles | SavedChallengeFiles) => void;
-  data: { challengeNode: ChallengeNode };
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
+  data: { challengeNode: ChallengeNode | DailyCodingChallengeNode };
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
@@ -113,15 +117,14 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   initHooks: (hooks?: { beforeAll: string }) => void;
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
+  isDailyCodingChallenge?: boolean;
   output: string;
-  pageContext: {
-    challengeMeta: ChallengeMeta;
-    projectPreview: {
-      challengeData: ChallengeData;
-    };
-  };
+  pageContext: PageContext | DailyCodingChallengePageContext;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
   setEditorFocusability: (canFocus: boolean) => void;
   setIsAdvancing: (arg: boolean) => void;
   savedChallenges: SavedChallenge[];
@@ -194,28 +197,28 @@ function ShowClassic({
       challenge: {
         challengeFiles: seedChallengeFiles,
         block,
-        demoType,
+        demoType = null,
         title,
         description,
         instructions,
-        hooks,
+        hooks = undefined,
         fields: { tests, blockName },
         challengeType,
-        hasEditableBoundaries,
+        hasEditableBoundaries = false,
         superBlock,
         helpCategory,
-        forumTopicId,
+        forumTopicId = undefined,
         usesMultifileEditor,
-        notes,
-        videoUrl,
-        translationPending
+        notes = '',
+        videoUrl = undefined,
+        translationPending = false
       }
     }
   },
   pageContext: {
     challengeMeta,
-    challengeMeta: { isFirstStep, nextChallengePath },
-    projectPreview: { challengeData }
+    challengeMeta: { isFirstStep = false, nextChallengePath = undefined },
+    projectPreview: { challengeData = undefined }
   },
   createFiles,
   cancelTests,
@@ -224,6 +227,9 @@ function ShowClassic({
   initTests,
   initHooks,
   initVisibleEditors,
+  dailyCodingChallengeLanguage,
+  isDailyCodingChallenge = false,
+  setDailyCodingChallengeLanguage,
   updateChallengeMeta,
   openModal,
   setIsAdvancing,
@@ -358,7 +364,7 @@ function ShowClassic({
       window.removeEventListener('resize', setHtmlHeight);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dailyCodingChallengeLanguage]);
 
   const initializeComponent = (title: string): void => {
     initConsole('');
@@ -511,6 +517,9 @@ function ShowClassic({
               toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
               hasDemo: demoType === 'onClick'
             })}
+            isDailyCodingChallenge={isDailyCodingChallenge}
+            dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+            setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
             isFirstStep={isFirstStep}
             layoutState={layout}
             notes={notes}
