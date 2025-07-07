@@ -4149,8 +4149,8 @@
         "intro": ["Learn about Understanding Error Handling in these lectures."]
       },
       "lab-isbn-validator": {
-        "title": "Debug a ISBN Validator",
-        "intro": [""]
+        "title": "Debug an ISBN Validator",
+        "intro": ["", ""]
       },
       "review-error-handling": {
         "title": "Error Handling Review",
