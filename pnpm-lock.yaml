@@ -945,8 +945,8 @@ importers:
   tools/client-plugins/browser-scripts:
     dependencies:
       '@freecodecamp/curriculum-helpers':
-        specifier: ^5.0.0
-        version: 5.0.0(typescript@5.8.2)
+        specifier: ^5.1.0
+        version: 5.1.0(typescript@5.8.2)
       react:
         specifier: '16'
         version: 16.14.0
@@ -2748,8 +2748,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6
       react: '>=16.3'
 
-  '@freecodecamp/curriculum-helpers@5.0.0':
-    resolution: {integrity: sha512-HS/qFbnOQ3Lgn+dQMrmF8iagK7T+TNpgmbTbBIqIo32/yamKFAqWvmeT3aPucLEuWrC+Abp0w6SwYCrx7DcBXg==}
+  '@freecodecamp/curriculum-helpers@5.1.0':
+    resolution: {integrity: sha512-cw6qwWxX44XHAY3Ek0NV79u6xZQWbojbW49E7HoDP4qAVyeUjzkHOxv8EXF5rBzN1emDiYSl0v3/4nTr8vVs2A==}
     engines: {pnpm: '>= 10'}
 
   '@freecodecamp/loop-protect@3.0.0':
@@ -16887,7 +16887,7 @@ snapshots:
       prop-types: 15.8.1
       react: 17.0.2
 
-  '@freecodecamp/curriculum-helpers@5.0.0(typescript@5.8.2)':
+  '@freecodecamp/curriculum-helpers@5.1.0(typescript@5.8.2)':
     dependencies:
       '@sinonjs/fake-timers': 14.0.0
       '@types/jquery': 3.5.32
