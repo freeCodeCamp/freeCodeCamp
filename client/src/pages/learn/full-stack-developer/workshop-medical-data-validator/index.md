@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Medical Data Validator
 
-This is a test for the new project-based curriculum.
+In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data.

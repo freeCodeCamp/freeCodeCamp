@@ -23,6 +23,8 @@ print(re.search('hello', greeting, re.IGNORECASE))
 
 Add `re.IGNORECASE` as the third argument to your `re.search` call. This will make your regex search case insensitive.
 
+After that, you'll see `None` replaced by the match object `<re.Match object; span=(0, 1), match='P'>`, where `match` indicates the match and `span` indicates its location in the string.
+
 # --hints--
 
 You should add `re.IGNORECASE` as the third argument to your `re.search` call.

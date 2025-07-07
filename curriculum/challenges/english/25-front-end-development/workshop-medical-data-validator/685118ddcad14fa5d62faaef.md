@@ -7,7 +7,7 @@ dashedName: step-33
 
 # --description--
 
-Now add a key `diagnosis` to the `constraints` dictionary. For its value, write an expression that checks that `diagnosis` is a either an instance of `str` or is `None`.
+Now add a key `diagnosis` to the `constraints` dictionary. For its value, write an expression that checks that `diagnosis` is either an instance of `str` or is `None`.
 
 # --hints--
 
