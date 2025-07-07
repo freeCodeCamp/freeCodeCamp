@@ -9,6 +9,7 @@
     "edit": "編輯",
     "copy": "複製",
     "view": "查看",
+    "submit-continue": "Submit and continue",
     "view-code": "查看代碼",
     "view-project": "查看項目",
     "view-cert-title": "查看 {{certTitle}}",
@@ -60,6 +61,8 @@
     "check-code": "檢查你的代碼",
     "check-code-ctrl": "檢查你的代碼（Ctrl + Enter）",
     "check-code-cmd": "檢查你的代碼（Command + Enter）",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "重置",
     "reset-step": "重置此步驟",
     "help": "幫助",
@@ -86,6 +89,7 @@
     "click-start-course": "開始課程",
     "click-start-project": "啓動項目",
     "click-start-exam": "開始考試",
+    "go-to-course": "Go to course",
     "change-language": "修改語言",
     "resume-project": "繼續項目",
     "start-project": "開始項目",
@@ -175,6 +179,7 @@
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "試試我們的測試版課程：",
     "upcoming-heading": "即將推出的課程：",
+    "catalog-heading": "Explore our Catalog:",
     "faq": "常見問題：",
     "faqs": [
       {
@@ -425,6 +430,7 @@
     "ms-link": "微軟的鏈接",
     "submit-and-go": "提交併訪問下一個挑戰",
     "congratulations": "恭喜，你的代碼已通過。請提交你的代碼以繼續。",
+    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
     "i-completed": "我已經完成這個挑戰",
     "example-code": "示例代碼",
     "test-output": "你的測試輸出將在這裏顯示",
@@ -1244,6 +1250,16 @@
       "submit": "提交問卷",
       "exit": "退出調研",
       "two-questions": "恭喜你已經走到了這一步。在你開始考試之前，請回答這兩個簡短的調研問題。"
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "Explore our Catalog",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   }
 }

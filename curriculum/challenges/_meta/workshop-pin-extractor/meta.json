@@ -1,0 +1,89 @@
+{
+  "name": "Build a Pin Extractor",
+  "blockLayout": "challenge-grid",
+  "blockType": "workshop",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-pin-extractor",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "6852db755c9c1274d75aae9a",
+      "title": "Step 1"
+    },
+    {
+      "id": "6852dd8486c7ee0171322950",
+      "title": "Step 2"
+    },
+    {
+      "id": "68530231c05b93324e071104",
+      "title": "Step 3"
+    },
+    {
+      "id": "68531fbb934d735415053274",
+      "title": "Step 4"
+    },
+    {
+      "id": "68553423d775cc60134ac8bb",
+      "title": "Step 5"
+    },
+    {
+      "id": "685535bf527b2c77236b3a9a",
+      "title": "Step 6"
+    },
+    {
+      "id": "685578aae65e4106ad2b4300",
+      "title": "Step 7"
+    },
+    {
+      "id": "68557bd29f7f3c1880f98836",
+      "title": "Step 8"
+    },
+    {
+      "id": "685926db99041c5e619ead41",
+      "title": "Step 9"
+    },
+    {
+      "id": "68592730aaf34b61ae279168",
+      "title": "Step 10"
+    },
+    {
+      "id": "68592807861cfb658c90f70f",
+      "title": "Step 11"
+    },
+    {
+      "id": "6859290fc8e07e6b2a8d8523",
+      "title": "Step 12"
+    },
+    {
+      "id": "685929ee6d500c6f2bce6751",
+      "title": "Step 13"
+    },
+    {
+      "id": "6855918e87c33c6979d21d3f",
+      "title": "Step 14"
+    },
+    {
+      "id": "68592b42b9c7f27cbe123203",
+      "title": "Step 15"
+    },
+    {
+      "id": "68559f3561d7df287586142e",
+      "title": "Step 16"
+    },
+    {
+      "id": "68599f0fc7479410b2269742",
+      "title": "Step 17"
+    },
+    {
+      "id": "6859a037b3d6721c7fbb8055",
+      "title": "Step 18"
+    },
+    {
+      "id": "6859a082915dae1e0eaaf962",
+      "title": "Step 19"
+    }
+  ],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
