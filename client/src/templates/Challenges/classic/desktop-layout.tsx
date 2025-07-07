@@ -53,6 +53,7 @@ interface DesktopLayoutProps {
   setShowPreviewPortal: (arg: boolean) => void;
   setShowPreviewPane: (arg: boolean) => void;
   portalWindow: null | Window;
+  showIndependentLowerJaw: boolean;
 }
 
 const reflexProps = {
@@ -92,7 +93,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     setShowPreviewPane,
     setShowPreviewPortal,
     portalWindow,
-    startWithConsoleShown
+    startWithConsoleShown,
+    showIndependentLowerJaw
   } = props;
 
   const initialShowState = (key: string, defaultValue: boolean): boolean => {
@@ -227,6 +229,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   }, []);
 
   const projectBasedChallenge = hasEditableBoundaries;
+  const areInstructionsDisplayable =
+    !projectBasedChallenge || showIndependentLowerJaw;
   const isMultifileProject =
     challengeType === challengeTypes.multifileCertProject ||
     challengeType === challengeTypes.multifilePythonCertProject ||
@@ -260,7 +264,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         <ActionRow
           hasPreview={hasPreview}
           hasNotes={!!notes}
-          isProjectBasedChallenge={projectBasedChallenge}
+          areInstructionsDisplayable={areInstructionsDisplayable}
           showConsole={showConsole}
           showNotes={showNotes}
           showInstructions={showInstructions}
@@ -274,7 +278,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         orientation='vertical'
         data-playwright-test-label='main-container'
       >
-        {!projectBasedChallenge && showInstructions && (
+        {areInstructionsDisplayable && showInstructions && (
           <ReflexElement
             flex={instructionPane.flex}
             {...resizeProps}
@@ -284,7 +288,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
             {instructions}
           </ReflexElement>
         )}
-        {!projectBasedChallenge && showInstructions && (
+        {areInstructionsDisplayable && showInstructions && (
           <ReflexSplitter propagate={true} {...resizeProps} />
         )}
 

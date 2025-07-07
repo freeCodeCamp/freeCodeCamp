@@ -142,7 +142,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       await page.addInitScript(() => {
         window.localStorage.setItem(
           'currentChallengeId',
-          '66f6db08d55022680a3cfbc9' // What Is HTML, and What Role Does It Play on the Web?
+          '66f6db08d55022680a3cfbc9' // What Role Does HTML Play on the Web?
         );
       });
 
@@ -160,10 +160,10 @@ test.describe('Super Block Page - Authenticated User', () => {
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
-      // What is HTML block
+      // Understanding HTML Attributes block
       await expect(
         page.getByRole('button', {
-          name: /Lecture Understanding HTML Attributes and the HTML Boilerplate/
+          name: /Lecture Understanding HTML Attributes/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
