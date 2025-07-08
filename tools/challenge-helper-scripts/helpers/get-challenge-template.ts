@@ -337,6 +337,10 @@ const getGenericChallengeTemplate = (
 # --description--
 
 Generic challenge description.
+
+# --assignment--
+
+Do the assignment.
 `;
 
 type Template = (opts: ChallengeOptions) => string;
