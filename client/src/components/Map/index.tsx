@@ -107,13 +107,14 @@ function Map({ forLanding = false }: MapProps) {
         return (
           <Fragment key={stage}>
             {
-              /* Show the daily coding challenge before the "extra" curriculum */
-              showDailyCodingChallenges && stage === SuperBlockStage.Extra && (
-                <>
-                  <DailyCodingChallengeWidget forLanding={forLanding} />
-                  <Spacer size='m' />
-                </>
-              )
+              /* Show the daily coding challenge before the "English" curriculum */
+              showDailyCodingChallenges &&
+                stage === SuperBlockStage.English && (
+                  <>
+                    <DailyCodingChallengeWidget forLanding={forLanding} />
+                    <Spacer size='m' />
+                  </>
+                )
             }
             <h2 className={forLanding ? 'big-heading' : ''}>
               {t(superBlockHeadings[stage])}
