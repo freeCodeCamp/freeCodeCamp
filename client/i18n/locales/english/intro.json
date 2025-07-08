@@ -4301,8 +4301,10 @@
         ]
       },
       "lab-bisection-method": {
-        "title": "Build a Bisection Method",
-        "intro": [""]
+        "title": "Implement the Bisection Method",
+        "intro": [
+          "In this lab, you will implement the bisection method to find the square root of a number."
+        ]
       },
       "workshop-merge-sort": {
         "title": "Implement the Merge Sort Algorithm",
