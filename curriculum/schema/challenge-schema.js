@@ -304,7 +304,8 @@ const schema = Joi.object()
     hooks: Joi.object().keys({
       beforeAll: Joi.string().allow(''),
       beforeEach: Joi.string().allow(''),
-      afterEach: Joi.string().allow('')
+      afterEach: Joi.string().allow(''),
+      afterAll: Joi.string().allow('')
     }),
     tests: Joi.array()
       .items(
