@@ -35,11 +35,11 @@ This word means "well" and is often used to describe how someone feels.
 
 # --explanation--
 
-`estoy` comes from the verb `estar` and means "I am". It's used to talk about temporary states, like emotions or health. Example:
+`Estoy` comes from the verb `estar` and it means "I am". It's used to talk about temporary states, like emotions or health. For example:
 
 `Estoy cansado.` – I am tired.
 
-`bien` means "well" and is commonly used in greetings.Example:
+`Bien` means "well" and is commonly used in greetings. For example:
 
 `Estoy bien, gracias.` – I am well, thank you.
 
