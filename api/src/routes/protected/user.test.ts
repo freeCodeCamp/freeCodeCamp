@@ -23,7 +23,7 @@ import {
   seedEnvExam,
   seedEnvExamAttempt,
   seedExamEnvExamAuthToken
-} from '../../../__mocks__/env-exam';
+} from '../../../__mocks__/exan-environment-exam';
 import { getMsTranscriptApiUrl } from './user';
 
 const mockedFetch = jest.fn();
@@ -441,13 +441,13 @@ describe('userRoutes', () => {
         await seedEnvExam();
         await seedEnvExamAttempt();
         const countBefore =
-          await fastifyTestInstance.prisma.envExamAttempt.count();
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
         expect(countBefore).toBe(1);
 
         const res = await superPost('/account/delete');
 
         const countAfter =
-          await fastifyTestInstance.prisma.envExamAttempt.count();
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
         expect(countAfter).toBe(0);
         expect(res.status).toBe(200);
       });

@@ -1,6 +1,10 @@
-import { EnvAnswer } from '@prisma/client';
+import { ExamEnvironmentAnswer } from '@prisma/client';
 import { type Static } from '@fastify/type-provider-typebox';
-import { exam, examAttempt, generatedExam } from '../../../__mocks__/env-exam';
+import {
+  exam,
+  examAttempt,
+  generatedExam
+} from '../../../__mocks__/exan-environment-exam';
 import * as schemas from '../schemas';
 import {
   checkAttemptAgainstGeneratedExam,
@@ -10,7 +14,7 @@ import {
   userAttemptToDatabaseAttemptQuestionSets,
   validateAttempt,
   compareAnswers
-} from './exam';
+} from './exam-environment';
 
 // NOTE: Whilst the tests could be run against a single generation of exam,
 //       it is more useful to run the tests against a new generation each time.
@@ -313,7 +317,7 @@ describe('Exam Environment', () => {
 
   describe('compareAnswers()', () => {
     it('should return true when only all correct answers are attempted', () => {
-      const examAnswers: EnvAnswer[] = [
+      const examAnswers: ExamEnvironmentAnswer[] = [
         {
           id: '0',
           isCorrect: true,
@@ -347,7 +351,7 @@ describe('Exam Environment', () => {
     });
 
     it('should return false when any incorrect answers are attempted', () => {
-      const examAnswers: EnvAnswer[] = [
+      const examAnswers: ExamEnvironmentAnswer[] = [
         {
           id: '0',
           isCorrect: true,

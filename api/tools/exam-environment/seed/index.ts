@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import * as mocks from '../../../__mocks__/env-exam';
+import * as mocks from '../../../__mocks__/exan-environment-exam';
 import { MONGOHQ_URL } from '../../../src/utils/env';
 
 const prisma = new PrismaClient({
@@ -13,12 +13,14 @@ const prisma = new PrismaClient({
 async function main() {
   await prisma.$connect();
 
-  await prisma.envExamAttempt.deleteMany({});
-  await prisma.envGeneratedExam.deleteMany({});
-  await prisma.envExam.deleteMany({});
+  await prisma.examEnvironmentExamAttempt.deleteMany({});
+  await prisma.examEnvironmentGeneratedExam.deleteMany({});
+  await prisma.examEnvironmentExam.deleteMany({});
 
-  await prisma.envExam.create({ data: mocks.exam });
-  await prisma.envGeneratedExam.create({ data: mocks.generatedExam });
+  await prisma.examEnvironmentExam.create({ data: mocks.exam });
+  await prisma.examEnvironmentGeneratedExam.create({
+    data: mocks.generatedExam
+  });
 }
 
 void main();

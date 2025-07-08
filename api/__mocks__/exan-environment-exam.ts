@@ -1,11 +1,11 @@
 import { Static } from '@fastify/type-provider-typebox';
 import {
-  EnvConfig,
-  EnvQuestionType,
-  EnvExamAttempt,
-  EnvExam,
-  EnvGeneratedExam,
-  EnvQuestionSet
+  ExamEnvironmentConfig,
+  ExamEnvironmentQuestionType,
+  ExamEnvironmentExamAttempt,
+  ExamEnvironmentExam,
+  ExamEnvironmentGeneratedExam,
+  ExamEnvironmentQuestionSet
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 // import { defaultUserId } from '../jest.utils';
@@ -18,7 +18,7 @@ const defaultUserId = '64c7810107dd4782d32baee7';
 
 export const examId = oid();
 
-export const config: EnvConfig = {
+export const config: ExamEnvironmentConfig = {
   totalTimeInMS: 2 * 60 * 60 * 1000,
   tags: [],
   name: 'Test Exam',
@@ -26,21 +26,21 @@ export const config: EnvConfig = {
   passingPercent: 80,
   questionSets: [
     {
-      type: EnvQuestionType.MultipleChoice,
+      type: ExamEnvironmentQuestionType.MultipleChoice,
       numberOfSet: 1,
       numberOfQuestions: 1,
       numberOfCorrectAnswers: 1,
       numberOfIncorrectAnswers: 1
     },
     {
-      type: EnvQuestionType.MultipleChoice,
+      type: ExamEnvironmentQuestionType.MultipleChoice,
       numberOfSet: 1,
       numberOfQuestions: 1,
       numberOfCorrectAnswers: 2,
       numberOfIncorrectAnswers: 1
     },
     {
-      type: EnvQuestionType.Dialogue,
+      type: ExamEnvironmentQuestionType.Dialogue,
       numberOfSet: 1,
       numberOfQuestions: 2,
       numberOfCorrectAnswers: 1,
@@ -50,10 +50,10 @@ export const config: EnvConfig = {
   retakeTimeInMS: 24 * 60 * 60 * 1000
 };
 
-export const questionSets: EnvQuestionSet[] = [
+export const questionSets: ExamEnvironmentQuestionSet[] = [
   {
     id: oid(),
-    type: EnvQuestionType.MultipleChoice,
+    type: ExamEnvironmentQuestionType.MultipleChoice,
     context: null,
     questions: [
       {
@@ -84,7 +84,7 @@ export const questionSets: EnvQuestionSet[] = [
   },
   {
     id: oid(),
-    type: EnvQuestionType.MultipleChoice,
+    type: ExamEnvironmentQuestionType.MultipleChoice,
     context: null,
     questions: [
       {
@@ -115,7 +115,7 @@ export const questionSets: EnvQuestionSet[] = [
   },
   {
     id: oid(),
-    type: EnvQuestionType.Dialogue,
+    type: ExamEnvironmentQuestionType.Dialogue,
     context: 'Dialogue 1 context',
     questions: [
       {
@@ -197,7 +197,7 @@ export const questionSets: EnvQuestionSet[] = [
   }
 ];
 
-export const generatedExam: EnvGeneratedExam = {
+export const generatedExam: ExamEnvironmentGeneratedExam = {
   examId,
   id: oid(),
   deprecated: false,
@@ -251,7 +251,7 @@ export const generatedExam: EnvGeneratedExam = {
   ]
 };
 
-export const examAttempt: EnvExamAttempt = {
+export const examAttempt: ExamEnvironmentExamAttempt = {
   examId,
   generatedExamId: generatedExam.id,
   id: oid(),
@@ -335,7 +335,7 @@ export const examAttemptSansSubmissionTimeInMS: Static<
   ]
 };
 
-export const exam: EnvExam = {
+export const exam: ExamEnvironmentExam = {
   id: examId,
   config,
   questionSets,
@@ -346,10 +346,10 @@ export const exam: EnvExam = {
 export async function seedEnvExam() {
   await clearEnvExam();
 
-  await fastifyTestInstance.prisma.envExam.create({
+  await fastifyTestInstance.prisma.examEnvironmentExam.create({
     data: exam
   });
-  await fastifyTestInstance.prisma.envGeneratedExam.create({
+  await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.create({
     data: generatedExam
   });
 
@@ -359,7 +359,7 @@ export async function seedEnvExam() {
   // while (numberOfExamsGenerated < 2) {
   //   try {
   //     const generatedExam = generateExam(exam);
-  //     await fastifyTestInstance.prisma.envGeneratedExam.create({
+  //     await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.create({
   //       data: generatedExam
   //     });
   //     numberOfExamsGenerated++;
@@ -370,13 +370,13 @@ export async function seedEnvExam() {
 }
 
 export async function clearEnvExam() {
-  await fastifyTestInstance.prisma.envExamAttempt.deleteMany({});
-  await fastifyTestInstance.prisma.envGeneratedExam.deleteMany({});
-  await fastifyTestInstance.prisma.envExam.deleteMany({});
+  await fastifyTestInstance.prisma.examEnvironmentExamAttempt.deleteMany({});
+  await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.deleteMany({});
+  await fastifyTestInstance.prisma.examEnvironmentExam.deleteMany({});
 }
 
 export async function seedEnvExamAttempt() {
-  await fastifyTestInstance.prisma.envExamAttempt.create({
+  await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
     data: examAttempt
   });
 }

@@ -3,7 +3,7 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import fastifyMultipart from '@fastify/multipart';
 import { PrismaClientValidationError } from '@prisma/client/runtime/library';
 import { type FastifyInstance, type FastifyReply } from 'fastify';
-import { EnvExamModerationStatus } from '@prisma/client';
+import { ExamEnvironmentExamModerationStatus } from '@prisma/client';
 import jwt from 'jsonwebtoken';
 
 import * as schemas from '../schemas';
@@ -15,7 +15,7 @@ import {
   constructUserExam,
   userAttemptToDatabaseAttemptQuestionSets,
   validateAttempt
-} from '../utils/exam';
+} from '../utils/exam-environment';
 import { ERRORS } from '../utils/errors';
 import { isObjectID } from '../../utils/validation';
 
@@ -197,7 +197,7 @@ async function postExamGeneratedExamHandler(
   // Get exam from DB
   const examId = req.body.examId;
   const maybeExam = await mapErr(
-    this.prisma.envExam.findUnique({
+    this.prisma.examEnvironmentExam.findUnique({
       where: {
         id: examId
       }
@@ -249,7 +249,7 @@ async function postExamGeneratedExamHandler(
   // Check user has not completed exam within cooldown period, and
   // user does not have an existing attempt awaiting grading
   const maybeExamAttempts = await mapErr(
-    this.prisma.envExamAttempt.findMany({
+    this.prisma.examEnvironmentExamAttempt.findMany({
       where: {
         userId: user.id,
         examId: exam.id
@@ -277,10 +277,10 @@ async function postExamGeneratedExamHandler(
   if (lastAttempt) {
     // Camper may not take the exam again, until the previous attempt is graded.
     const maybeMod = await mapErr(
-      this.prisma.envExamModeration.findFirst({
+      this.prisma.examEnvironmentExamModeration.findFirst({
         where: {
           examAttemptId: lastAttempt.id,
-          status: EnvExamModerationStatus.Pending
+          status: ExamEnvironmentExamModerationStatus.Pending
         }
       })
     );
@@ -334,7 +334,7 @@ async function postExamGeneratedExamHandler(
       // This is most likely to happen if the Camper's app closes and is reopened.
       // Send the Camper back to the exam they were working on.
       const generated = await mapErr(
-        this.prisma.envGeneratedExam.findFirst({
+        this.prisma.examEnvironmentGeneratedExam.findFirst({
           where: {
             id: lastAttempt.generatedExamId
           }
@@ -372,7 +372,7 @@ async function postExamGeneratedExamHandler(
 
   // Randomly pick a generated exam for user
   const maybeGeneratedExams = await mapErr(
-    this.prisma.envGeneratedExam.findMany({
+    this.prisma.examEnvironmentGeneratedExam.findMany({
       where: {
         // Find generated exams user has not already seen
         examId: exam.id,
@@ -413,7 +413,7 @@ async function postExamGeneratedExamHandler(
     generatedExams[Math.floor(Math.random() * generatedExams.length)]!;
 
   const maybeGeneratedExam = await mapErr(
-    this.prisma.envGeneratedExam.findFirst({
+    this.prisma.examEnvironmentGeneratedExam.findFirst({
       where: {
         id: randomGeneratedExam.id
       }
@@ -448,7 +448,7 @@ async function postExamGeneratedExamHandler(
 
   // Create exam attempt so, even if user disconnects, their attempt is still recorded:
   const attempt = await mapErr(
-    this.prisma.envExamAttempt.create({
+    this.prisma.examEnvironmentExamAttempt.create({
       data: {
         userId: user.id,
         examId: exam.id,
@@ -478,7 +478,7 @@ async function postExamGeneratedExamHandler(
   if (maybeUserExam.hasError) {
     logger.error(maybeUserExam.error);
     // TODO: Consider handling this failing
-    await this.prisma.envExamAttempt.delete({
+    await this.prisma.examEnvironmentExamAttempt.delete({
       where: {
         id: attempt.data.id
       }
@@ -521,7 +521,7 @@ async function postExamAttemptHandler(
   const user = req.user!;
 
   const maybeAttempts = await mapErr(
-    this.prisma.envExamAttempt.findMany({
+    this.prisma.examEnvironmentExamAttempt.findMany({
       where: {
         examId: attempt.examId,
         userId: user.id
@@ -555,7 +555,7 @@ async function postExamAttemptHandler(
   );
 
   const maybeExam = await mapErr(
-    this.prisma.envExam.findUnique({
+    this.prisma.examEnvironmentExam.findUnique({
       where: {
         id: attempt.examId
       },
@@ -601,7 +601,7 @@ async function postExamAttemptHandler(
 
   // Get generated exam from database
   const maybeGeneratedExam = await mapErr(
-    this.prisma.envGeneratedExam.findUnique({
+    this.prisma.examEnvironmentGeneratedExam.findUnique({
       where: {
         id: latestAttempt.generatedExamId
       }
@@ -646,10 +646,10 @@ async function postExamAttemptHandler(
       'Invalid exam attempt.'
     );
     // As attempt is invalid, create moderation record to investigate
-    await this.prisma.envExamModeration.create({
+    await this.prisma.examEnvironmentExamModeration.create({
       data: {
         examAttemptId: latestAttempt.id,
-        status: EnvExamModerationStatus.Pending
+        status: ExamEnvironmentExamModerationStatus.Pending
       }
     });
 
@@ -663,7 +663,7 @@ async function postExamAttemptHandler(
 
   // Update attempt in database
   const maybeUpdatedAttempt = await mapErr(
-    this.prisma.envExamAttempt.update({
+    this.prisma.examEnvironmentExamAttempt.update({
       where: {
         id: latestAttempt.id
       },
@@ -720,7 +720,7 @@ async function postScreenshotHandler(
   }
 
   const maybeAttempts = await mapErr(
-    this.prisma.envExamAttempt.findMany({
+    this.prisma.examEnvironmentExamAttempt.findMany({
       where: {
         userId: user.id
       }
@@ -753,7 +753,7 @@ async function postScreenshotHandler(
   );
 
   const maybeExam = await mapErr(
-    this.prisma.envExam.findUnique({
+    this.prisma.examEnvironmentExam.findUnique({
       where: {
         id: latestAttempt.examId
       },
@@ -843,7 +843,7 @@ async function getExams(
 
   const user = req.user!;
   const maybeExams = await mapErr(
-    this.prisma.envExam.findMany({
+    this.prisma.examEnvironmentExam.findMany({
       where: {
         deprecated: false
       },
@@ -905,7 +905,7 @@ async function getExamAttemptsHandler(
   // Send all relevant exam attempts
   const envExamAttempts = [];
   const maybeAttempts = await mapErr(
-    this.prisma.envExamAttempt.findMany({
+    this.prisma.examEnvironmentExamAttempt.findMany({
       where: {
         userId: user.id
       }
@@ -932,7 +932,7 @@ async function getExamAttemptsHandler(
   }
 
   for (const attempt of attempts) {
-    const { error, envExamAttempt } = await constructEnvExamAttempt(
+    const { error, examEnvironmentExamAttempt } = await constructEnvExamAttempt(
       this,
       attempt,
       logger
@@ -941,7 +941,7 @@ async function getExamAttemptsHandler(
       void reply.code(error.code);
       return reply.send(error.data);
     }
-    envExamAttempts.push(envExamAttempt);
+    envExamAttempts.push(examEnvironmentExamAttempt);
   }
 
   return reply.send(envExamAttempts);
@@ -965,7 +965,7 @@ async function getExamAttemptHandler(
 
   // If attempt id is given, only return that attempt
   const maybeAttempt = await mapErr(
-    this.prisma.envExamAttempt.findUnique({
+    this.prisma.examEnvironmentExamAttempt.findUnique({
       where: {
         id: attemptId,
         userId: user.id
@@ -992,7 +992,7 @@ async function getExamAttemptHandler(
     );
   }
 
-  const { error, envExamAttempt } = await constructEnvExamAttempt(
+  const { error, examEnvironmentExamAttempt } = await constructEnvExamAttempt(
     this,
     attempt,
     logger
@@ -1003,5 +1003,5 @@ async function getExamAttemptHandler(
     return reply.send(error.data);
   }
 
-  return reply.send(envExamAttempt);
+  return reply.send(examEnvironmentExamAttempt);
 }

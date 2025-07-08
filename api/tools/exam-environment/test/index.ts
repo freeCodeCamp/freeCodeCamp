@@ -17,13 +17,18 @@ const prisma = new PrismaClient({
 async function main() {
   await prisma.$connect();
   try {
-    const envExam = await prisma.envExam.findMany();
-    const envGeneratedExam = await prisma.envGeneratedExam.findMany();
-    const envExamAttempt = await prisma.envExamAttempt.findMany();
+    const examEnvironmentExam = await prisma.examEnvironmentExam.findMany();
+    const examEnvironmentGeneratedExam =
+      await prisma.examEnvironmentGeneratedExam.findMany();
+    const examEnvironmentExamAttempt =
+      await prisma.examEnvironmentExamAttempt.findMany();
 
-    console.log('Number of exams:', envExam.length);
-    console.log('Number of generated exams:', envGeneratedExam.length);
-    console.log('Number of exam attempts:', envExamAttempt.length);
+    console.log('Number of exams:', examEnvironmentExam.length);
+    console.log(
+      'Number of generated exams:',
+      examEnvironmentGeneratedExam.length
+    );
+    console.log('Number of exam attempts:', examEnvironmentExamAttempt.length);
     // NOTE: This is not strictly true. E.g. If a `Boolean` becomes an `Int`, Prisma converts it instead of throwing.
     console.log('\nSUCCESS! The database schema matches the Prisma schema.');
   } catch (error) {

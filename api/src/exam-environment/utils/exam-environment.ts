@@ -2,17 +2,17 @@
 /* eslint-disable @typescript-eslint/only-throw-error */
 /* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import {
-  EnvAnswer,
-  EnvConfig,
-  EnvExam,
-  EnvExamAttempt,
-  EnvExamModerationStatus,
-  EnvGeneratedExam,
-  EnvGeneratedMultipleChoiceQuestion,
-  EnvMultipleChoiceQuestion,
-  EnvMultipleChoiceQuestionAttempt,
-  EnvQuestionSet,
-  EnvQuestionSetAttempt
+  ExamEnvironmentAnswer,
+  ExamEnvironmentConfig,
+  ExamEnvironmentExam,
+  ExamEnvironmentExamAttempt,
+  ExamEnvironmentExamModerationStatus,
+  ExamEnvironmentGeneratedExam,
+  ExamEnvironmentGeneratedMultipleChoiceQuestion,
+  ExamEnvironmentMultipleChoiceQuestion,
+  ExamEnvironmentMultipleChoiceQuestionAttempt,
+  ExamEnvironmentQuestionSet,
+  ExamEnvironmentQuestionSetAttempt
 } from '@prisma/client';
 import type { FastifyBaseLogger, FastifyInstance } from 'fastify';
 import { type Static } from '@fastify/type-provider-typebox';
@@ -32,7 +32,7 @@ interface CompletedChallengeId {
  */
 export function checkPrerequisites(
   user: CompletedChallengeId,
-  prerequisites: EnvExam['prerequisites']
+  prerequisites: ExamEnvironmentExam['prerequisites']
 ) {
   return prerequisites.every(p =>
     user.completedChallenges.some(c => c.id === p)
@@ -40,16 +40,16 @@ export function checkPrerequisites(
 }
 
 export type UserExam = Omit<
-  EnvExam,
+  ExamEnvironmentExam,
   'questionSets' | 'config' | 'id' | 'prerequisites' | 'deprecated'
 > & {
-  config: Omit<EnvExam['config'], 'tags' | 'questionSets'>;
-  questionSets: (Omit<EnvQuestionSet, 'questions'> & {
+  config: Omit<ExamEnvironmentExam['config'], 'tags' | 'questionSets'>;
+  questionSets: (Omit<ExamEnvironmentQuestionSet, 'questions'> & {
     questions: (Omit<
-      EnvMultipleChoiceQuestion,
+      ExamEnvironmentMultipleChoiceQuestion,
       'answers' | 'tags' | 'deprecated'
     > & {
-      answers: Omit<EnvAnswer, 'isCorrect'>[];
+      answers: Omit<ExamEnvironmentAnswer, 'isCorrect'>[];
     })[];
   })[];
 } & { generatedExamId: string; examId: string };
@@ -58,8 +58,8 @@ export type UserExam = Omit<
  * Takes the generated exam and the original exam, and creates the user-facing exam.
  */
 export function constructUserExam(
-  generatedExam: EnvGeneratedExam,
-  exam: EnvExam
+  generatedExam: ExamEnvironmentGeneratedExam,
+  exam: ExamEnvironmentExam
 ): UserExam {
   // Map generated exam to user exam (a.k.a. public exam information for user)
   const userQuestionSets = generatedExam.questionSets.map(gqs => {
@@ -129,8 +129,8 @@ export function constructUserExam(
  * Ensures all questions and answers in the attempt are from the generated exam.
  */
 export function validateAttempt(
-  generatedExam: EnvGeneratedExam,
-  questionSets: EnvExamAttempt['questionSets']
+  generatedExam: ExamEnvironmentGeneratedExam,
+  questionSets: ExamEnvironmentExamAttempt['questionSets']
 ) {
   for (const attemptQuestionSet of questionSets) {
     const generatedQuestionSet = generatedExam.questionSets.find(
@@ -178,8 +178,8 @@ export function validateAttempt(
  * @returns Whether or not the attempt can be considered finished.
  */
 export function checkAttemptAgainstGeneratedExam(
-  questionSets: EnvQuestionSetAttempt[],
-  generatedExam: Pick<EnvGeneratedExam, 'questionSets'>
+  questionSets: ExamEnvironmentQuestionSetAttempt[],
+  generatedExam: Pick<ExamEnvironmentGeneratedExam, 'questionSets'>
 ): boolean {
   // Check all question sets and questions are in generated exam
   for (const generatedQuestionSet of generatedExam.questionSets) {
@@ -223,9 +223,10 @@ export function userAttemptToDatabaseAttemptQuestionSets(
   userAttempt: Static<
     typeof schemas.examEnvironmentPostExamAttempt.body.properties.attempt
   >,
-  latestAttempt: EnvExamAttempt
-): EnvExamAttempt['questionSets'] {
-  const databaseAttemptQuestionSets: EnvExamAttempt['questionSets'] = [];
+  latestAttempt: ExamEnvironmentExamAttempt
+): ExamEnvironmentExamAttempt['questionSets'] {
+  const databaseAttemptQuestionSets: ExamEnvironmentExamAttempt['questionSets'] =
+    [];
 
   for (const questionSet of userAttempt.questionSets) {
     const latestQuestionSet = latestAttempt.questionSets.find(
@@ -274,7 +275,9 @@ export function userAttemptToDatabaseAttemptQuestionSets(
 /**
  * Generates an exam for the user, based on the exam configuration.
  */
-export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
+export function generateExam(
+  exam: ExamEnvironmentExam
+): Omit<ExamEnvironmentGeneratedExam, 'id'> {
   const examCopy = structuredClone(exam);
 
   const TIMEOUT_IN_MS = 5_000;
@@ -306,7 +309,7 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
       acc[typeIndex]?.push(curr) ?? acc.push([curr]);
       return acc;
     },
-    [] as unknown as [EnvConfig['questionSets']]
+    [] as unknown as [ExamEnvironmentConfig['questionSets']]
   );
 
   // Heuristic:
@@ -324,7 +327,7 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
   const questionSetsConfigWithQuestions = sortedQuestionSetsConfig.map(qsc => {
     return {
       ...qsc,
-      questionSets: [] as EnvQuestionSet[]
+      questionSets: [] as ExamEnvironmentQuestionSet[]
     };
   });
 
@@ -588,9 +591,9 @@ export function generateExam(exam: EnvExam): Omit<EnvGeneratedExam, 'id'> {
  * @returns The score of the exam attempt as a percentage.
  */
 export function calculateScore(
-  exam: EnvExam,
-  generatedExam: EnvGeneratedExam,
-  attempt: EnvExamAttempt
+  exam: ExamEnvironmentExam,
+  generatedExam: ExamEnvironmentGeneratedExam,
+  attempt: ExamEnvironmentExamAttempt
 ) {
   const attemptQuestionSets = attempt.questionSets;
   const generatedQuestionSets = generatedExam.questionSets;
@@ -663,9 +666,9 @@ export function calculateScore(
  * This calculation takes x / y , x < y as wholey incorrect.
  */
 export function compareAnswers(
-  examAnswers: EnvAnswer[],
-  generatedAnswers: EnvGeneratedMultipleChoiceQuestion['answers'],
-  attemptAnswers: EnvMultipleChoiceQuestionAttempt['answers']
+  examAnswers: ExamEnvironmentAnswer[],
+  generatedAnswers: ExamEnvironmentGeneratedMultipleChoiceQuestion['answers'],
+  attemptAnswers: ExamEnvironmentMultipleChoiceQuestionAttempt['answers']
 ): boolean {
   const correctGeneratedAnswers = generatedAnswers.filter(generatedAnswer => {
     return examAnswers.some(
@@ -682,8 +685,8 @@ export function compareAnswers(
 }
 
 function isQuestionSetConfigFulfilled(
-  questionSetConfig: EnvConfig['questionSets'][number] & {
-    questionSets: EnvQuestionSet[];
+  questionSetConfig: ExamEnvironmentConfig['questionSets'][number] & {
+    questionSets: ExamEnvironmentQuestionSet[];
   }
 ) {
   return (
@@ -698,9 +701,9 @@ function isQuestionSetConfigFulfilled(
  * Gets random answers for a question.
  */
 function getRandomAnswers(
-  question: EnvMultipleChoiceQuestion,
-  questionSetConfig: EnvConfig['questionSets'][number]
-): EnvMultipleChoiceQuestion['answers'] {
+  question: ExamEnvironmentMultipleChoiceQuestion,
+  questionSetConfig: ExamEnvironmentConfig['questionSets'][number]
+): ExamEnvironmentMultipleChoiceQuestion['answers'] {
   const { numberOfCorrectAnswers, numberOfIncorrectAnswers } =
     questionSetConfig;
 
@@ -758,11 +761,11 @@ function shuffleArray<T>(array: Array<T>) {
  */
 export async function constructEnvExamAttempt(
   fastify: FastifyInstance,
-  attempt: EnvExamAttempt,
+  attempt: ExamEnvironmentExamAttempt,
   logger: FastifyBaseLogger
 ) {
   const maybeExam = await mapErr(
-    fastify.prisma.envExam.findUnique({
+    fastify.prisma.examEnvironmentExam.findUnique({
       where: {
         id: attempt.examId
       }
@@ -803,13 +806,16 @@ export async function constructEnvExamAttempt(
     attempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
   if (!isAttemptExpired) {
     return {
-      envExamAttempt: { ...omitAttemptReferenceIds(attempt), result: null },
+      examEnvironmentExamAttempt: {
+        ...omitAttemptReferenceIds(attempt),
+        result: null
+      },
       error: null
     };
   }
 
   const maybeMod = await mapErr(
-    fastify.prisma.envExamModeration.findFirst({
+    fastify.prisma.examEnvironmentExamModeration.findFirst({
       where: {
         examAttemptId: attempt.id
       }
@@ -846,24 +852,30 @@ export async function constructEnvExamAttempt(
   }
 
   // If attempt is completed, but has not been graded, return without result
-  if (moderation.status === EnvExamModerationStatus.Pending) {
+  if (moderation.status === ExamEnvironmentExamModerationStatus.Pending) {
     return {
-      envExamAttempt: { ...omitAttemptReferenceIds(attempt), result: null },
+      examEnvironmentExamAttempt: {
+        ...omitAttemptReferenceIds(attempt),
+        result: null
+      },
       error: null
     };
   }
 
   // If attempt is completed, but has been determined to need a retake
   // TODO: Send moderation.feedback?
-  if (moderation.status === EnvExamModerationStatus.Denied) {
+  if (moderation.status === ExamEnvironmentExamModerationStatus.Denied) {
     return {
-      envExamAttempt: { ...omitAttemptReferenceIds(attempt), result: null },
+      examEnvironmentExamAttempt: {
+        ...omitAttemptReferenceIds(attempt),
+        result: null
+      },
       error: null
     };
   }
 
   const maybeGeneratedExam = await mapErr(
-    fastify.prisma.envGeneratedExam.findUnique({
+    fastify.prisma.examEnvironmentGeneratedExam.findUnique({
       where: {
         id: attempt.generatedExamId
       }
@@ -908,13 +920,13 @@ export async function constructEnvExamAttempt(
     passingPercent: exam.config.passingPercent
   };
 
-  const envExamAttempt = {
+  const examEnvironmentExamAttempt = {
     ...omitAttemptReferenceIds(attempt),
     result
   };
-  return { error: null, envExamAttempt };
+  return { error: null, examEnvironmentExamAttempt };
 }
 
-function omitAttemptReferenceIds(attempt: EnvExamAttempt) {
+function omitAttemptReferenceIds(attempt: ExamEnvironmentExamAttempt) {
   return omit(attempt, ['examId', 'id', 'generatedExamId', 'userId']);
 }
