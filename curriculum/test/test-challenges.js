@@ -377,7 +377,7 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                   challengeType === challengeTypes.python ? 10000 : 5000;
 
                 let testRunner;
-                it('Must create a test runner', async function () {
+                it('Must create a test runner for the initial conditions', async function () {
                   this.timeout(20000);
                   testRunner = await createTestRunner(
                     challenge,
@@ -486,16 +486,21 @@ seed goes here
 
                 describe('Check tests against solutions', function () {
                   solutions.forEach((solution, index) => {
-                    it(`Solution ${
-                      index + 1
-                    } must pass the tests`, async function () {
-                      this.timeout(timePerTest * tests.length + 2000);
-                      const testRunner = await createTestRunner(
+                    it('Must create a test runner for the solution', async function () {
+                      this.timeout(20000);
+                      testRunner = await createTestRunner(
                         challenge,
                         solution,
                         buildChallenge,
                         solutionFromNext
                       );
+                    });
+
+                    it(`Solution ${
+                      index + 1
+                    } must pass the tests`, async function () {
+                      this.timeout(timePerTest * tests.length + 2000);
+
                       for (const test of tests) {
                         await testRunner(test);
                       }
