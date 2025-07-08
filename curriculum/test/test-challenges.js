@@ -375,6 +375,17 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                 // The python tests are (currently) slow, so we give them more time.
                 const timePerTest =
                   challengeType === challengeTypes.python ? 10000 : 5000;
+
+                let testRunner;
+                it('Must create a test runner', async function () {
+                  this.timeout(10000);
+                  testRunner = await createTestRunner(
+                    challenge,
+                    challenge.challengeFiles,
+                    buildChallenge
+                  );
+                });
+
                 it('Test suite must fail on the initial contents', async function () {
                   // TODO: some tests take a surprisingly long time to setup the
                   // test runner, so this timeout is large while we investigate.
@@ -383,30 +394,16 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                   const oldConsoleError = console.error;
                   console.error = () => {};
                   let fails = false;
-                  let testRunner;
-                  try {
-                    testRunner = await createTestRunner(
-                      challenge,
-                      challenge.challengeFiles,
-                      buildChallenge
-                    );
-                  } catch (e) {
-                    console.error(
-                      `Error creating test runner for initial contents`
-                    );
-                    console.error(e);
-                    fails = true;
-                  }
-                  if (!fails) {
-                    for (const test of tests) {
-                      try {
-                        await testRunner(test);
-                      } catch {
-                        fails = true;
-                        break;
-                      }
+
+                  for (const test of tests) {
+                    try {
+                      await testRunner(test);
+                    } catch {
+                      fails = true;
+                      break;
                     }
                   }
+
                   console.error = oldConsoleError;
                   assert(
                     fails,
