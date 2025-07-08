@@ -668,7 +668,7 @@ export function compareAnswers(
   attemptAnswers: EnvMultipleChoiceQuestionAttempt['answers']
 ): boolean {
   const correctGeneratedAnswers = generatedAnswers.filter(generatedAnswer => {
-    return !!examAnswers.find(
+    return examAnswers.some(
       examAnswer => examAnswer.isCorrect && examAnswer.id === generatedAnswer
     );
   });
