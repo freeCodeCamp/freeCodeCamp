@@ -185,18 +185,17 @@ function* buildChallengeData(challengeData, options) {
 }
 
 function* executeTests(testRunner, tests, testTimeout = 5000) {
+  const testStrings = tests.map(test => test.testString);
+  const rawResults = yield call(testRunner, testStrings, testTimeout);
+
   const testResults = [];
-  for (let i = 0; i < tests.length; i++) {
+  for (let i = 0; i < rawResults.length; i++) {
     const { text, testString } = tests[i];
     const newTest = { text, testString, running: false };
     // only the first test outputs console.logs to avoid log duplication.
     const firstTest = i === 0;
     try {
-      const {
-        pass,
-        err,
-        logs = []
-      } = yield call(testRunner, testString, testTimeout);
+      const { pass, err, logs = [] } = rawResults[i] || {};
 
       const logString = logs.map(log => log.msg).join('\n');
       if (firstTest && logString) {
