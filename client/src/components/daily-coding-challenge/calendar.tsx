@@ -26,8 +26,8 @@ const mapStateToProps = (state: unknown) => ({
 });
 
 const getMonthInfo = (
-  monthIndex: number,
   year: number,
+  monthIndex: number,
   dailyChallengesMap: DailyChallengesMap
 ) => {
   // Create date for first of the month (handles rollover automatically)
@@ -136,14 +136,7 @@ function DailyCodingChallengeCalendar({
         const newDailyChallengesMap = new Map() as DailyChallengesMap;
 
         challenges.forEach(c => {
-          const [year, month, day] = c.date.split('T')[0].split('-');
-
-          // parseInt to remove leading zero's
-          const date = formatDate({
-            month: parseInt(month, 10),
-            day: parseInt(day, 10),
-            year: parseInt(year, 10)
-          });
+          const date = c.date.split('T')[0];
 
           newDailyChallengesMap.set(date, {
             ...c,
@@ -157,10 +150,10 @@ function DailyCodingChallengeCalendar({
         // After getting the challenges and creating the map, set the initial month info -
         // Display the month of the current US Central day because challenges are released
         // at midnight US Central - so don't show the local month, show the US Central month
-        const [month, , year] = todayUsCentral.split('-').map(Number);
+        const [year, month] = todayUsCentral.split('-').map(Number);
         const initialMonthInfo = getMonthInfo(
-          month - 1, // Convert to 0-indexed month
           year,
+          month - 1, // Convert to 0-indexed month
           newDailyChallengesMap
         );
 
@@ -185,13 +178,13 @@ function DailyCodingChallengeCalendar({
   // because it just rolls over, e.g. (index) 12, 2024 will be Jan, 2025
   const nextMonth = () => {
     setMonthInfo(
-      m => m && getMonthInfo(m.index + 1, m.year, dailyChallengesMap)
+      m => m && getMonthInfo(m.year, m.index + 1, dailyChallengesMap)
     );
   };
 
   const prevMonth = () => {
     setMonthInfo(
-      m => m && getMonthInfo(m.index - 1, m.year, dailyChallengesMap)
+      m => m && getMonthInfo(m.year, m.index - 1, dailyChallengesMap)
     );
   };
 
@@ -200,7 +193,7 @@ function DailyCodingChallengeCalendar({
     monthInfo: MonthInfo
   ): boolean => {
     return Array.from(map.keys()).some(dateStr => {
-      const [month, , year] = dateStr.split('-').map(Number);
+      const [year, month] = dateStr.split('-').map(Number);
       return (
         year < monthInfo.year ||
         (year === monthInfo.year && month - 1 < monthInfo.index)
@@ -213,7 +206,7 @@ function DailyCodingChallengeCalendar({
     monthInfo: MonthInfo
   ): boolean => {
     return Array.from(map.keys()).some(dateStr => {
-      const [month, , year] = dateStr.split('-').map(Number);
+      const [year, month] = dateStr.split('-').map(Number);
       return (
         year > monthInfo.year ||
         (year === monthInfo.year && month - 1 > monthInfo.index)

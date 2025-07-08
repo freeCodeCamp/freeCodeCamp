@@ -7,27 +7,27 @@ interface formatDateProps {
   year: number;
 }
 
-// Format month, day, and year as "M-D-YYYY"
-export function formatDate({ month, day, year }: formatDateProps) {
-  return `${month}-${day}-${year}`;
+// Format month, day, and year as "YYYY-MM-DD" with leading zeros
+export function formatDate({ year, month, day }: formatDateProps) {
+  return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
 }
 
-// Returns the current US Central date in M-D-YYYY
+// Returns the current US Central date in yyyy-MM-dd
 export function getTodayUsCentral(dateObj: Date = new Date()) {
   const zonedDate = toZonedTime(dateObj, 'America/Chicago');
-  return format(zonedDate, 'M-d-yyyy');
+  return format(zonedDate, 'yyyy-MM-dd');
 }
 
-// Validate that dateString is in the format M-D-YYYY
+// Validate that dateString is in the format yyyy-MM-dd
 // Leading zero's are accepted for single digit month/day
 export function isValidDateParam(dateString: string) {
-  const parsedDate = parse(dateString, 'M-d-yyyy', new Date());
+  const parsedDate = parse(dateString, 'yyyy-MM-dd', new Date());
   return isValid(parsedDate);
 }
 
-// Convert M-D-YYYY to display format (e.g: "January 1, 2025")
+// Convert yyyy-MM-dd to display format (e.g: "January 1, 2025")
 export function formatDisplayDate(dateString: string) {
-  const parsedDate = parse(dateString, 'M-d-yyyy', new Date());
+  const parsedDate = parse(dateString, 'yyyy-MM-dd', new Date());
   if (!isValid(parsedDate)) {
     return 'Invalid date';
   }

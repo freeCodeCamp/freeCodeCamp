@@ -15,7 +15,9 @@ function DailyChallengeBreadCrumb(): JSX.Element {
   let displayDate = '';
 
   if (isValidDateParam(dateParam)) {
+    console.log(dateParam);
     displayDate = formatDisplayDate(dateParam);
+    console.log(displayDate);
   }
 
   const { t } = useTranslation();
