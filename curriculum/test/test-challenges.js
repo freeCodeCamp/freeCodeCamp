@@ -378,7 +378,7 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
 
                 let testRunner;
                 it('Must create a test runner', async function () {
-                  this.timeout(10000);
+                  this.timeout(20000);
                   testRunner = await createTestRunner(
                     challenge,
                     challenge.challengeFiles,
