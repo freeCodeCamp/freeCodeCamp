@@ -4,7 +4,7 @@ import {
   exam,
   examAttempt,
   generatedExam
-} from '../../../__mocks__/exan-environment-exam';
+} from '../../../__mocks__/exam-environment-exam';
 import * as schemas from '../schemas';
 import {
   checkAttemptAgainstGeneratedExam,

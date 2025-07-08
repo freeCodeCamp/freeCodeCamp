@@ -23,7 +23,7 @@ import {
   seedEnvExam,
   seedEnvExamAttempt,
   seedExamEnvExamAuthToken
-} from '../../../__mocks__/exan-environment-exam';
+} from '../../../__mocks__/exam-environment-exam';
 import { getMsTranscriptApiUrl } from './user';
 
 const mockedFetch = jest.fn();

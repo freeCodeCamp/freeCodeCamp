@@ -13,7 +13,7 @@ import {
   examEnvironmentPostExamAttempt,
   examEnvironmentPostExamGeneratedExam
 } from '../schemas';
-import * as mock from '../../../__mocks__/exan-environment-exam';
+import * as mock from '../../../__mocks__/exam-environment-exam';
 import { constructUserExam } from '../utils/exam-environment';
 import { JWT_SECRET } from '../../utils/env';
 
