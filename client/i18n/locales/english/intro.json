@@ -4547,6 +4547,10 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "workshop-build-a-heart-icon": {
+        "title": "Build a Heart Icon",
+        "intro": ["Build a Heart Icon", ""]
       }
     }
   },

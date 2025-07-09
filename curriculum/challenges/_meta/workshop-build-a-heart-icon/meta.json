@@ -1,0 +1,35 @@
+{
+  "name": "Build a Heart Icon",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-build-a-heart-icon",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "HTML-CSS",
+  "challengeOrder": [
+    {
+      "id": "686d749d6f32f708fdf2b7ad",
+      "title": "Step 1"
+    },
+    {
+      "id": "686daa7ed79ceacd0b264e7d",
+      "title": "Step 2"
+    },
+    {
+      "id": "686daa7ed79ceacd0b264e7e",
+      "title": "Step 3"
+    },
+    {
+      "id": "686daa7ed79ceacd0b264e7f",
+      "title": "Step 4"
+    },
+    {
+      "id": "686daa7ed79ceacd0b264e80",
+      "title": "Step 5"
+    },
+    {
+      "id": "686daa7ed79ceacd0b264e81",
+      "title": "Step 6"
+    }
+  ],
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid"
+}
