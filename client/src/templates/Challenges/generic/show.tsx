@@ -3,17 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import {
-  Container,
-  Col,
-  Row,
-  Button,
-  Spacer,
-  Tabs,
-  TabsContent,
-  TabsTrigger,
-  TabsList
-} from '@freecodecamp/ui';
+import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import { isEqual } from 'lodash';
 import store from 'store';
 import { YouTubeEvent } from 'react-youtube';
@@ -116,8 +106,8 @@ const ShowGeneric = ({
   const container = useRef<HTMLElement | null>(null);
 
   // just test on this particular block
-  const transcriptTabsFlagIsOn = useFeatureIsOn('transcript-tabs');
-  const showTranscriptTabs =
+  const transcriptTabsFlagIsOn = useFeatureIsOn('transcript-only');
+  const showTranscriptOnly =
     block === 'lecture-html-fundamentals' && transcriptTabsFlagIsOn;
 
   const blockNameTitle = `${t(
@@ -142,11 +132,6 @@ const ShowGeneric = ({
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const tabs = {
-    transcript: 'transcript',
-    video: 'video'
-  } as const;
 
   // video
   const [videoIsLoaded, setVideoIsLoaded] = useState(false);
@@ -238,7 +223,7 @@ const ShowGeneric = ({
 
             <Spacer size='m' />
 
-            {description && (
+            {description && !showTranscriptOnly && (
               <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                 <ChallengeDescription
                   description={description}
@@ -249,54 +234,13 @@ const ShowGeneric = ({
             )}
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
-              {showTranscriptTabs && (
-                <Tabs
-                  defaultValue={tabs.transcript}
-                  className='transcript-tabs'
-                >
-                  <TabsList className='nav-lists'>
-                    <TabsTrigger value={tabs.transcript}>
-                      {t('learn.transcript')}
-                    </TabsTrigger>
-                    <TabsTrigger value={tabs.video}>
-                      {t('learn.video')}
-                    </TabsTrigger>
-                  </TabsList>
-                  <TabsContent
-                    tabIndex={-1}
-                    className='tab-content'
-                    value={tabs.transcript}
-                  >
-                    {transcript && (
-                      <ChallengeTranscript
-                        showTranscriptTabs={showTranscriptTabs}
-                        transcript={transcript}
-                      />
-                    )}
-                  </TabsContent>
-
-                  <TabsContent
-                    tabIndex={-1}
-                    className='tab-content'
-                    value={tabs.video}
-                  >
-                    {videoId && (
-                      <>
-                        <VideoPlayer
-                          bilibiliIds={bilibiliIds}
-                          onVideoLoad={handleVideoIsLoaded}
-                          title={title}
-                          videoId={videoId}
-                          videoIsLoaded={videoIsLoaded}
-                          videoLocaleIds={videoLocaleIds}
-                        />
-                        <Spacer size='m' />
-                      </>
-                    )}
-                  </TabsContent>
-                </Tabs>
+              {transcript && showTranscriptOnly && (
+                <ChallengeTranscript
+                  showTranscriptOnly={showTranscriptOnly}
+                  transcript={transcript}
+                />
               )}
-              {videoId && !showTranscriptTabs && (
+              {videoId && !showTranscriptOnly && (
                 <>
                   <VideoPlayer
                     bilibiliIds={bilibiliIds}
@@ -312,9 +256,8 @@ const ShowGeneric = ({
             </Col>
 
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
-
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {transcript && !showTranscriptTabs && (
+              {transcript && !showTranscriptOnly && (
                 <ChallengeTranscript transcript={transcript} />
               )}
               {instructions && (

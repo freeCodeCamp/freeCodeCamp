@@ -8,12 +8,12 @@ import './challenge-transcript.css';
 
 interface ChallengeTranscriptProps {
   transcript: string;
-  showTranscriptTabs?: boolean;
+  showTranscriptOnly?: boolean;
 }
 
 function ChallengeTranscript({
   transcript,
-  showTranscriptTabs
+  showTranscriptOnly
 }: ChallengeTranscriptProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -28,7 +28,7 @@ function ChallengeTranscript({
     setIsOpen(!isOpen);
   }
 
-  if (showTranscriptTabs)
+  if (showTranscriptOnly)
     return (
       <>
         <Spacer size='m' />
