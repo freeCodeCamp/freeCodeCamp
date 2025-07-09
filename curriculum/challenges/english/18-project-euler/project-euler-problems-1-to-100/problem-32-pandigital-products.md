@@ -71,7 +71,7 @@ pandigitalProducts(4);
 
 ```js
 // Check for pandigital number
-function is1toNPandigital(n, digitStr) {
+function isPandigital(digitStr) {
   return digitStr
     .split('')
     .sort()
@@ -89,11 +89,9 @@ function pandigitalProducts(n) {
   let sum = 0;
   const max = Number(Array(n)
     .fill(0)
-    .map((_, i) => (i + 1).toString())
-    .reverse()
+    .map((_, i) => (n - i).toString())
     .join(''));
   const outerLimit = Math.sqrt(max);
-
 
   for (let factor1 = 2; factor1 < outerLimit; factor1++) {
     const innerLimit = max / factor1;
@@ -105,7 +103,7 @@ function pandigitalProducts(n) {
       if (concatenated.length > n) {
         break;
       } else if (concatenated.length == n &&
-        is1toNPandigital(n, concatenated) &&
+        isPandigital(concatenated) &&
         !products.includes(product)
       ) {
         products.push(product);
