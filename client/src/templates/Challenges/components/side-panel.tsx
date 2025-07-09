@@ -8,7 +8,6 @@ import { Test } from '../../../redux/prop-types';
 import { challengeTestsSelector } from '../redux/selectors';
 import { openModal } from '../redux/actions';
 import TestSuite from './test-suite';
-import IndependentLowerJaw from './independent-lower-jaw';
 
 import './side-panel.css';
 
@@ -49,41 +48,38 @@ export function SidePanel({
   showIndependentLowerJaw
 }: SidePanelProps): JSX.Element {
   return (
-    <>
-      <div
-        className='instructions-panel'
-        ref={instructionsPanelRef}
-        tabIndex={-1}
-      >
-        {challengeTitle}
-        {hasDemo && (
-          <p>
-            <Trans i18nKey='learn.example-app'>
-              <span
-                className='example-app-link'
-                onClick={() => openModal('projectPreview')}
-                role='button'
-                tabIndex={0}
-                onKeyDown={e => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    openModal('projectPreview');
-                  }
-                }}
-              ></span>
-            </Trans>
-          </p>
-        )}{' '}
-        {challengeDescription}
-        {!showIndependentLowerJaw && (
-          <>
-            <Spacer size='m' />
-            {toolPanel}
-            <TestSuite tests={tests} />
-          </>
-        )}
-      </div>
-      {showIndependentLowerJaw && <IndependentLowerJaw />}
-    </>
+    <div
+      className='instructions-panel'
+      ref={instructionsPanelRef}
+      tabIndex={-1}
+    >
+      {challengeTitle}
+      {hasDemo && (
+        <p>
+          <Trans i18nKey='learn.example-app'>
+            <span
+              className='example-app-link'
+              onClick={() => openModal('projectPreview')}
+              role='button'
+              tabIndex={0}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  openModal('projectPreview');
+                }
+              }}
+            ></span>
+          </Trans>
+        </p>
+      )}{' '}
+      {challengeDescription}
+      {!showIndependentLowerJaw && (
+        <>
+          <Spacer size='m' />
+          {toolPanel}
+          <TestSuite tests={tests} />
+        </>
+      )}
+    </div>
   );
 }
 
