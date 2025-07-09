@@ -9,12 +9,12 @@ dashedName: review-dictionaries-and-sets
 
 ## Dictionaries
 
-- **Dictionaries**: Dictionaries are built-in data structures that store collections of key-value pairs. This is the general syntax of a Python dictionary:
+- **Dictionaries**: Dictionaries are built-in data structures that store collections of key-value pairs. Keys need to be immutable data types. This is the general syntax of a Python dictionary:
 
 ```python
 dictionary = {
-    'key1': 'value1',
-    'key2': 'value2'
+    key1: value1,
+    key2: value2
 }
 ```
 
