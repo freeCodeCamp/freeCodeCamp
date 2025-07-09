@@ -13,10 +13,28 @@ These classes will make the inner `div` a grid container, define four rows that 
 
 # --hints--
 
-Test 1
+Your inner `div` element should have the class `grid`.
 
 ```js
+const listenerPlanInnerDiv = document.querySelectorAll("div")[2]
 
+assert.isTrue(listenerPlanInnerDiv.classList.contains("grid"))
+```
+
+Your inner `div` element should have the class `grid-rows-[auto_auto_auto_1fr]`.
+
+```js
+const listenerPlanInnerDiv = document.querySelectorAll("div")[2]
+
+assert.isTrue(listenerPlanInnerDiv.classList.contains("grid-rows-[auto_auto_auto_1fr]"))
+```
+
+Your inner `div` element should have the class `gap-y-2`.
+
+```js
+const listenerPlanInnerDiv = document.querySelectorAll("div")[2]
+
+assert.isTrue(listenerPlanInnerDiv.classList.contains("gap-y-2"))
 ```
 
 # --seed--
