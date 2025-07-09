@@ -123,7 +123,7 @@ for product in products:
 
 Output:
 
-```python
+```md
 Laptop
 Smartphone
 Tablet
