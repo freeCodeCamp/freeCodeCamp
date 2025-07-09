@@ -16,7 +16,13 @@
               "dashedName": "lab-debug-camperbots-profile-page"
             },
             {
-              "dashedName": "lecture-what-is-html"
+              "dashedName": "lecture-understanding-html-attributes"
+            },
+            {
+              "dashedName": "lab-debug-pet-adoption-page"
+            },
+            {
+              "dashedName": "lecture-understanding-the-html-boilerplate"
             },
             {
               "dashedName": "workshop-cat-photo-app"
@@ -29,6 +35,12 @@
             },
             {
               "dashedName": "lab-travel-agency-page"
+            },
+            {
+              "dashedName": "lecture-working-with-audio-and-video-elements"
+            },
+            {
+              "dashedName": "lecture-working-with-images-and-svgs"
             },
             {
               "dashedName": "lecture-working-with-media"
@@ -52,6 +64,15 @@
           "blocks": [
             {
               "dashedName": "lecture-importance-of-semantic-html"
+            },
+            {
+              "dashedName": "lecture-understanding-nuanced-semantic-elements"
+            },
+            {
+              "dashedName": "lecture-working-with-text-and-time-semantic-elements"
+            },
+            {
+              "dashedName": "lecture-working-with-specialized-semantic-elements"
             },
             {
               "dashedName": "workshop-blog-page"
@@ -1078,6 +1099,9 @@
             },
             { "dashedName": "workshop-fruit-search-app" },
             {
+              "dashedName": "lab-one-time-password-generator"
+            },
+            {
               "dashedName": "review-react-state-and-hooks"
             },
             {
@@ -1150,6 +1174,9 @@
               "dashedName": "lecture-working-with-css-libraries-and-frameworks"
             },
             {
+              "dashedName": "workshop-error-message-component"
+            },
+            {
               "dashedName": "review-css-libraries-and-frameworks"
             },
             {
@@ -1204,7 +1231,7 @@
           "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-working-with-loops-and-sequences" },
-            { "dashedName": "workshop-placeholder-loops-and-sequences" },
+            { "dashedName": "workshop-pin-extractor" },
             { "dashedName": "lab-number-pattern-generator" },
             { "dashedName": "review-loops-and-sequences" },
             { "dashedName": "quiz-loops-and-sequences" }
@@ -1285,7 +1312,7 @@
             { "dashedName": "workshop-merge-sort" },
             { "dashedName": "lab-quicksort" },
             { "dashedName": "lab-selection-sort" },
-            { "dashedName": "lab-luhn-argorithm" },
+            { "dashedName": "lab-luhn-algorithm" },
             { "dashedName": "review-searching-and-sorting-algorithms" },
             { "dashedName": "quiz-searching-and-sorting-algorithms" }
           ]

@@ -1856,6 +1856,12 @@
       "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
     },
     "module-intros": {
+      "js-a11y": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will learn how to work with the aria-expanded, aria-live and aria-controls attributes inside of your HTML, CSS and JavaScript applications."
+        ]
+      },
       "css-libraries-and-frameworks": {
         "note": "Coming Fall 2025",
         "intro": [
@@ -2077,11 +2083,24 @@
           "In this lab, you will help Camperbot find and fix the errors in their code."
         ]
       },
-      "lecture-what-is-html": {
-        "title": "Understanding HTML Attributes and the HTML Boilerplate",
+      "lecture-understanding-html-attributes": {
+        "title": "Understanding HTML Attributes",
         "intro": [
           "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
-          "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."
+          "You will learn about HTML's role on the web, and what HTML attributes are."
+        ]
+      },
+      "lab-debug-pet-adoption-page": {
+        "title": "Debug a Pet Adoption Page",
+        "intro": [
+          "In this lab, you will need to find and fix the errors in this pet adoption page."
+        ]
+      },
+      "lecture-understanding-the-html-boilerplate": {
+        "title": "Understanding the HTML Boilerplate",
+        "intro": [
+          "In these lectures, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
+          "You will learn how to work with the <code>link</code> element, <code>meta</code> element and more."
         ]
       },
       "workshop-cat-photo-app": {
@@ -2109,10 +2128,22 @@
           "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element, and more."
         ]
       },
-      "lecture-working-with-media": {
-        "title": "Working with Media",
+      "lecture-working-with-audio-and-video-elements": {
+        "title": "Working with Audio and Video Elements",
         "intro": [
-          "In these lecture videos, you will learn how to work with media assets like the <code>audio</code> and <code>video</code> elements, SVGs, how to optimize them, and more."
+          "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+        ]
+      },
+      "lecture-working-with-images-and-svgs": {
+        "title": "Working with Images and SVGs",
+        "intro": [
+          "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
+        ]
+      },
+      "lecture-working-with-media": {
+        "title": "Working with the iframe Element",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
         ]
       },
       "lab-video-compilation-page": {
@@ -2145,6 +2176,24 @@
         "title": "Importance of Semantic HTML",
         "intro": [
           "In these lecture videos, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
+        ]
+      },
+      "lecture-understanding-nuanced-semantic-elements": {
+        "title": "Understanding Nuanced Semantic Elements",
+        "intro": [
+          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+        ]
+      },
+      "lecture-working-with-text-and-time-semantic-elements": {
+        "title": "Working with Text and Time Semantic Elements ",
+        "intro": [
+          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+        ]
+      },
+      "lecture-working-with-specialized-semantic-elements": {
+        "title": "Working with Specialized Semantic Elements",
+        "intro": [
+          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
         ]
       },
       "workshop-blog-page": {
@@ -3829,9 +3878,12 @@
           "In this workshop, you will continue to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
         ]
       },
-      "vjgg": {
-        "title": "272",
-        "intro": []
+      "lab-one-time-password-generator": {
+        "title": "Build a One-Time Password Generator",
+        "intro": [
+          "In this lab you'll build a one-time password generator.",
+          "You'll practice using the useEffect hooks to create a timer and generate a random OTP."
+        ]
       },
       "review-react-state-and-hooks": {
         "title": "React State and Hooks Review",
@@ -3939,6 +3991,12 @@
         "title": "Working with CSS Libraries and Frameworks",
         "intro": [
           "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
+        ]
+      },
+      "workshop-error-message-component": {
+        "title": "Build an Error Message Component",
+        "intro": [
+          "In this workshop, you will learn the basics of Tailwind CSS by building out an error message component."
         ]
       },
       "review-css-libraries-and-frameworks": {
@@ -4059,9 +4117,11 @@
           "Learn about Working with Loops and Sequences in these lectures."
         ]
       },
-      "workshop-placeholder-loops-and-sequences": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-pin-extractor": {
+        "title": "Build a Pin Extractor",
+        "intro": [
+          "In this workshop you will build a function to extract secret pins hidden in poems."
+        ]
       },
       "lab-number-pattern-generator": {
         "title": "Build a Number Pattern Generator",
@@ -4251,8 +4311,11 @@
         ]
       },
       "workshop-binary-search": {
-        "title": "Build a Binary Search",
-        "intro": [""]
+        "title": "Implement the Binary Search Algorithm",
+        "intro": [
+          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
+          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
       },
       "lab-bisection-method": {
         "title": "Build a Bisection Method",
@@ -4265,9 +4328,11 @@
           "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
         ]
       },
-      "lab-quick-sort": {
-        "title": "Build a Quick Sort",
-        "intro": [""]
+      "lab-quicksort": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort a list of integers."
+        ]
       },
       "lab-selection-sort": {
         "title": "Implement the Selection Sort Algorithm",
@@ -4275,9 +4340,11 @@
           "In this lab you will implement the selection sort algorithm."
         ]
       },
-      "lab-luhn-argorithm": {
-        "title": "Build a Luhn Algorithm",
-        "intro": [""]
+      "lab-luhn-algorithm": {
+        "title": "Implement the Luhn Algorithm",
+        "intro": [
+          "In this lab, you will implement the Luhn algorithm to validate identification numbers such as credit card numbers."
+        ]
       },
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
@@ -4562,6 +4629,49 @@
         "title": "Get to Know Colleagues by Asking Simple Questions",
         "intro": [
           "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
+        ]
+      }
+    }
+  },
+  "basic-html": {
+    "title": "Basic HTML",
+    "summary": [
+      "Learn how to build simple webpages using HTML tags to add text, images, and links."
+    ],
+    "intro": ["Larger intro for the superblock page."],
+    "blocks": {
+      "cat-photo-app": {
+        "title": "Build a Cat Photo App",
+        "intro": [
+          "HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.",
+          "In this course, you'll learn the most common HTML tags by building your own cat photo app."
+        ]
+      },
+      "recipe-page": {
+        "title": "Build a Recipe Page",
+        "intro": [
+          "In this lab, you'll review HTML basics by creating a web page of your favorite recipe. You'll create an HTML boilerplate and work with headings, lists, images, and more."
+        ]
+      }
+    }
+  },
+  "semantic-html": {
+    "title": "Semantic HTML",
+    "summary": [
+      "Discover how to write cleaner, more meaningful HTML using semantic tags that improve structure, accessibility, and SEO."
+    ],
+    "intro": ["Larger intro for the superblock page."],
+    "blocks": {
+      "cat-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+        ]
+      },
+      "event-hub": {
+        "title": "Build an Event Hub",
+        "intro": [
+          "In this lab, you'll build an event hub and review semantic elements like <code>header</code>, <code>nav</code>, <code>article</code>, and more."
         ]
       }
     }

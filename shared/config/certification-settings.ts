@@ -281,6 +281,8 @@ export const superBlockToCertMap: {
   [SuperBlocks.ProjectEuler]: null,
   [SuperBlocks.TheOdinProject]: null,
   [SuperBlocks.RosettaCode]: null,
+  [SuperBlocks.BasicHtml]: null,
+  [SuperBlocks.SemanticHtml]: null,
   [SuperBlocks.DevPlayground]: null
 };
 

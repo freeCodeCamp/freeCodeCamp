@@ -68,6 +68,13 @@ import {
 // How long before bailing out of a preview.
 const previewTimeout = 2500;
 
+const LOGS_TO_IGNORE = [
+  // https://cdn.tailwindcss.com
+  'cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation',
+  // https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4
+  'The browser build of Tailwind CSS should not be used in production. To use Tailwind CSS in production, use the Tailwind CLI, Vite plugin, or PostCSS plugin: https://tailwindcss.com/docs/installation'
+];
+
 // when 'run tests' is clicked, do this first
 function* executeCancellableChallengeSaga(payload) {
   const { challengeType, id } = yield select(challengeMetaSelector);
@@ -210,7 +217,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
-      } else if (type == 'IndentationError' || type == 'SyntaxError') {
+      } else if (type === 'IndentationError' || type === 'SyntaxError') {
         const msgKey =
           type === 'IndentationError'
             ? 'learn.indentation-error'
@@ -249,7 +256,11 @@ export function* previewChallengeSaga(action) {
   yield delay(700);
 
   const logProxy = yield channel();
-  const proxyLogger = args => logProxy.put(args);
+  const proxyLogger = args => {
+    if (!LOGS_TO_IGNORE.some(msg => args === msg)) {
+      logProxy.put(args);
+    }
+  };
 
   try {
     yield fork(takeEveryConsole, logProxy);
@@ -292,8 +303,12 @@ export function* previewChallengeSaga(action) {
         // without a testString the testRunner just evaluates the user's code
         const out = yield call(runUserCode, null, previewTimeout);
 
-        if (out)
-          yield put(updateConsole(out.logs?.map(log => log.msg).join('\n')));
+        if (out) {
+          const logs = out.logs?.filter(
+            log => !LOGS_TO_IGNORE.some(msg => log.msg === msg)
+          );
+          yield put(updateConsole(logs?.map(log => log.msg).join('\n')));
+        }
       }
     }
   } catch (err) {

@@ -52,6 +52,18 @@ const duplicatedProjectIds = [
   '5ef9b03c81a63668521804ee',
   '62bb4009e3458a128ff57d5d',
 
+  // Recipe Page
+  '668f08ea07b99b1f4a91acab',
+
+  // Cat Blog
+  '669aff9f5488f1bea056416d',
+  '669fc7e141e4703748c558bf',
+  '669fc938d38e6e38ace9251e',
+  '669fcb06c3034a39f5431a38',
+
+  // Event hub
+  '66ebd4ae2812430bb883c787',
+
   // Survey Form
   '587d78af367417b2b2512b03',
 

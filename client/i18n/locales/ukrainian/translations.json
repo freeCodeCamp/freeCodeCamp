@@ -9,6 +9,7 @@
     "edit": "Редагувати",
     "copy": "Копіювати",
     "view": "Перегляд",
+    "submit-continue": "Надіслати і продовжити",
     "view-code": "Переглянути код",
     "view-project": "Переглянути проєкт",
     "view-cert-title": "Переглянути {{certTitle}}",
@@ -37,6 +38,7 @@
     "news": "Новини",
     "donate": "Зробити донат",
     "supporters": "Донори",
+    "exam-app": "Застосунок для екзаменів",
     "go-to-supporters": "Перейти до сторінки донорів",
     "update-settings": "Змінити налаштування облікового запису",
     "sign-me-out": "Вийти з freeCodeCamp",
@@ -60,6 +62,8 @@
     "check-code": "Перевірити код",
     "check-code-ctrl": "Перевірити код (Ctrl + Enter)",
     "check-code-cmd": "Перевірити код (Command + Enter)",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "Скинути",
     "reset-step": "Скинути цей крок",
     "help": "Допомога",
@@ -86,6 +90,7 @@
     "click-start-course": "Розпочати курс",
     "click-start-project": "Розпочати проєкт",
     "click-start-exam": "Розпочати екзамен",
+    "go-to-course": "Перейти до курсу",
     "change-language": "Змінити мову",
     "resume-project": "Продовжити проєкт",
     "start-project": "Розпочати проєкт",
@@ -110,16 +115,18 @@
     "closed-caption": "Приховані субтитри",
     "share-on-x": "Поділитись на X",
     "share-on-bluesky": "Поділитись на BlueSky",
-    "share-on-threads": "Поділитись на Threads"
+    "share-on-threads": "Поділитись на Threads",
+    "play-scene": "Натисніть «Відтворити»",
+    "download-latest-version": "Завантажити найновішу версію"
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати безоплатно.",
     "big-heading-2": "Створюйте проєкти.",
-    "big-heading-1-b": "Build Your Skills for Free.",
+    "big-heading-1-b": "Здобувайте навички безоплатно.",
     "big-heading-3": "Отримуйте сертифікації.",
-    "advance-career": "Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI Engineering, and English for Developers.",
-    "h2-heading": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
-    "graduates-work": "More than <strong>100,000</strong> freeCodeCamp graduates work in companies such as",
+    "advance-career": "Досягніть нових кар’єрних висот, здобувши знання в програмуванні, DevOps, кібербезпеці, ШІ та англійській мові.",
+    "h2-heading": "Понад <strong>100,000</strong> випускників freeCodeCamp.org отримали <strong>роботу</strong> в ІТ-компаніях, серед яких:",
+    "graduates-work": "Понад <strong>100,000</strong> випускників freeCodeCamp працюють в таких компаніях:",
     "hero-img-description": "Cтуденти місцевої навчальної групи freeCodeCamp в Південній Кореї.",
     "hero-img-alt": "Група людей, серед яких білий чоловік, чорна жінка та азійка, зібрались навколо ноутбука.",
     "hero-img-uis": "Декілька знімків екрану, на яких зображено інтерфейс редактора freeCodeCamp на мобільному і настільному пристроях, а також сертифікацію.",
@@ -175,6 +182,7 @@
     "legacy-curriculum-heading": "Архівовані курси:",
     "next-heading": "Спробуйте бета-версію навчальної програми:",
     "upcoming-heading": "Майбутня навчальна програма:",
+    "catalog-heading": "Ознайомтесь з нашим каталогом:",
     "faq": "Часті питання:",
     "faqs": [
       {
@@ -340,6 +348,14 @@
       "p7": "Як академічна установа, яка надає сертифікації на основі досягнень, ми дуже серйозно ставимося до академічної доброчесності. Якщо у вас є будь-які запитання щодо цієї політики, або ви підозрюєте, що хтось порушив її, можете написати нам <0>{{email}}</0> і ми розглянемо це питання."
     }
   },
+  "exam": {
+    "download-header": "Завантажте застосунок для екзаменів freeCodeCamp",
+    "explanation": "Щоб отримати сертифікацію, потрібно скласти екзамен з метою перевірки отриманих знань. Екзамен абсолютно безоплатний.",
+    "version": "Найновіша версія застосунку: {{version}}.",
+    "download-details": "Завантажте застосунок самостійно",
+    "unable-to-detect-os": "Не вдалося виявити вашу операційну систему. Будь ласка, завантажте застосунок нижче самостійно.",
+    "download-trouble": "Якщо виникли проблеми із завантаженням потрібної версії, зверніться до служби підтримки:"
+  },
   "profile": {
     "you-change-privacy": "Вам потрібно змінити налаштування конфіденційності для того, щоб інші могли побачити ваше портфоліо. Це попередній перегляд того, як ваше портфоліо буде виглядати при відкритому доступі.",
     "username-change-privacy": "{{username}} має змінити налаштування конфіденційності для того, щоб ви могли переглянути портфоліо.",
@@ -419,11 +435,13 @@
     "answered-mcq": "Ви не відповіли на всі запитання та/або допустились помилок.",
     "explanation": "Пояснення",
     "transcript": "Текстова версія",
+    "video": "Відео",
     "solution-link": "Посилання на розв’язок",
     "source-code-link": "Посилання на вихідний код",
     "ms-link": "Посилання Microsoft",
     "submit-and-go": "Відправити та перейти до наступного завдання",
     "congratulations": "Вітаємо, ваш код проходить. Відправте свій код, щоб продовжити.",
+    "congratulations-code-passes": "✔ Вітаємо! Ваш код працює.",
     "i-completed": "Я виконав(-ла) це завдання",
     "example-code": "Приклад коду",
     "test-output": "Результат вашого тесту буде доступний тут",
@@ -797,14 +815,14 @@
     "document-notfound": "документ не знайдено",
     "slow-load-msg": "Схоже, це займає більше часу, ніж зазвичай. Будь ласка, спробуйте оновити сторінку.",
     "navigation-warning": "Ви втратите прогрес, якщо залишите цю сторінку. Ви впевнені?",
-    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
-    "fsd-b-cta": "Start Learning",
-    "fsd-b-benefit-1-title": "100k+ Students",
-    "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
-    "fsd-b-benefit-2-title": "Professional Certification",
-    "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
-    "fsd-b-benefit-3-title": "500+ Exercises",
-    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
+    "fsd-b-description": "Завдяки комплексному курсу ви станете сертифікованим full stack розробником. Ви навчитесь повністю створювати застосунки за допомогою HTML, CSS, JavaScript, React, TypeScript, Node.js, Python і багато іншого.",
+    "fsd-b-cta": "Розпочати навчання",
+    "fsd-b-benefit-1-title": "100,000+ учнів",
+    "fsd-b-benefit-1-description": "Станьте одним з учнів, які отримують сертифікацію.",
+    "fsd-b-benefit-2-title": "Професійний сертифікат",
+    "fsd-b-benefit-2-description": "Доведіть навички офіційним сертифікатом, який підлягає перевірці.",
+    "fsd-b-benefit-3-title": "500+ завдань",
+    "fsd-b-benefit-3-description": "Зміцніть свої знання великою кількістю практики."
   },
   "icons": {
     "gold-cup": "Золотий кубок",
@@ -858,10 +876,14 @@
     "rsa-checkbox": "Я спробував(-ла) метод читати-шукати-питати",
     "similar-questions-checkbox": "Я шукав(-ла) схожі запитання на форумі, на які вже є відповідь",
     "edit-my-profile": "Редагувати профіль",
-    "terminal-output": "Terminal output"
+    "editor-a11y-off-macos": "Вміст редактора {{editorName}}. Щоб перейти до функцій доступності, натисніть Option+F1.",
+    "editor-a11y-off-non-macos": "Вміст редактора {{editorName}}. Щоб перейти до функцій доступності, натисніть Alt+F1.",
+    "editor-a11y-on-macos": "Вміст редактора {{editorName}}. Ввімкнено режим доступності. Натисніть Command+E, щоб вимкнути його, або Option+F1, щоб переглянути більше функцій.",
+    "editor-a11y-on-non-macos": "Вміст редактора {{editorName}}. Ввімкнено режим доступності. Натисніть Ctrl+E, щоб вимкнути його, або Alt+F1, щоб переглянути більше функцій.",
+    "terminal-output": "Вивід терміналу"
   },
   "flash": {
-    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
+    "no-email-in-userinfo": "Не вдалось отримати електронну пошту від вказаного провайдера. Спробуйте іншого провайдера або виберіть опцію «Continue with Email».",
     "honest-first": "Щоб отримати сертифікацію, ви повинні спочатку погодитись з нашою політикою академічної доброчесності",
     "really-weird": "Щось пішло не так. Якщо це повториться, будь ласка, повідомте про це за посиланням: https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "generic-error": "Щось пішло не так. Будь ласка, спробуйте ще раз, або напишіть на support@freecodecamp.org, якщо помилка не зникає.",
@@ -1126,8 +1148,8 @@
       "full-stack-developer-v9-cert": "Сертифікація «Full Stack розробник»",
       "a2-professional-spanish": "Іспанська мова A2 для роботи",
       "a2-professional-spanish-cert": "Сертифікація «Іспанська мова A2 для роботи»",
-      "a2-professional-chinese": "A2 Professional Chinese",
-      "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
+      "a2-professional-chinese": "Китайська мова A2 для роботи",
+      "a2-professional-chinese-cert": "Сертифікація «Китайська мова A2 для роботи»",
       "legacy-front-end": "Front End (стара версія)",
       "legacy-front-end-cert": "Сертифікація «Front End» (стара версія)",
       "legacy-back-end": "Back End (стара версія)",
@@ -1239,6 +1261,16 @@
       "submit": "Надіслати опитування",
       "exit": "Вийти з опитування",
       "two-questions": "Вітаємо з досягненням цієї точки. Перш ніж розпочати екзамен, будь ласка, дайте відповідь на два короткі запитання."
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "Ознайомтесь з нашим каталогом",
+      "levels": {
+        "beginner": "Початковий рівень",
+        "intermediate": "Середній рівень",
+        "advanced": "Високий рівень"
+      }
     }
   }
 }
