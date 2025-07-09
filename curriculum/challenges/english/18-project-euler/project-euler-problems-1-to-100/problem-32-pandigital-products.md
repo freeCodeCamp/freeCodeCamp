@@ -85,12 +85,20 @@ function concatenate3Nums(a, b, c) {
 
 // Find sum of all pandigital products
 function pandigitalProducts(n) {
-  const pandigitalNums = [];
-  const limit = 10 ** Math.floor(n / 2) - 1;
+  const products = [];
   let sum = 0;
+  const max = Number(Array(n)
+    .fill(0)
+    .map((_, i) => (i + 1).toString())
+    .reverse()
+    .join(''));
+  const outerLimit = Math.sqrt(max);
 
-  for (let factor1 = 2; factor1 < limit; factor1++) {
-    for (let factor2 = factor1; factor2 < limit; factor2++) {
+
+  for (let factor1 = 2; factor1 < outerLimit; factor1++) {
+    const innerLimit = max / factor1;
+
+    for (let factor2 = factor1; factor2 < innerLimit; factor2++) {
       const product = factor1 * factor2;
       const concatenated = concatenate3Nums(factor1, factor2, product);
 
@@ -98,9 +106,9 @@ function pandigitalProducts(n) {
         break;
       } else if (concatenated.length == n &&
         is1toNPandigital(n, concatenated) &&
-        !pandigitalNums.includes(product)
+        !products.includes(product)
       ) {
-        pandigitalNums.push(product);
+        products.push(product);
         sum += product;
       }
     }
