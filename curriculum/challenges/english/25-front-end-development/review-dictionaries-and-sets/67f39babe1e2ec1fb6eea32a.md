@@ -67,7 +67,7 @@ pizza.items()
 pizza.clear()
 ```
 
-- **`pop()` Method**: The `pop()` method removes the key-value pair with the key specified as the first argument and returns its value. If the key doesn’t exist, it returns the default value specified as the second argument. If the key doesn’t exist and the default value is not specified, a `KeyError` is raised.
+- **`pop()` Method**: The `pop()` method removes the key-value pair with the key specified as the first argument and returns its value. If the key doesn't exist, it returns the default value specified as the second argument. If the key doesn’t exist and the default value is not specified, a `KeyError` is raised.
 
 ```python
 pizza.pop('price', 10)
@@ -104,7 +104,7 @@ for price in products.values():
 
 Output:
 
-```python
+```md
 990
 600
 250
@@ -139,7 +139,7 @@ for product in products.items():
 
 Output:
 
-```python
+```md
 ('Laptop', 990)
 ('Smartphone', 600)
 ('Tablet', 250)
@@ -173,7 +173,7 @@ for index, product in enumerate(products.items()):
 
 Output:
 
-```python
+```md
 0 ('Laptop', 990)
 1 ('Smartphone', 600)
 2 ('Tablet', 250)
@@ -189,7 +189,7 @@ for index, product in enumerate(products.items(), 1):
 
 Output:
 
-```python
+```md
 1 ('Laptop', 990)
 2 ('Smartphone', 600)
 3 ('Tablet', 250)
@@ -246,7 +246,7 @@ print(your_set.issubset(my_set)) # True
 print(my_set.issuperset(your_set)) # True
 ```
 
-- **`isdisjoint()` Method**: The `isdisjoint()` method checks if two sets are disjoint, if they don’t have elements in common.
+- **`isdisjoint()` Method**: The `isdisjoint()` method checks if two sets are disjoint, if they don't have elements in common.
 
 ```python
 print(my_set.isdisjoint(your_set)) # False
@@ -290,7 +290,7 @@ print(5 in my_set)
 
 - **Import Statement**: To access the elements defined in built-in modules, you use an import statement. Import statements are generally written at the top of the file. Import statements work the same for functions, classes, constants, variables, and any other elements defined in the module.
 
-- **Basic Import Statement**: You can use the `import` statement followed by the name of the module:
+- **Basic Import Statement**: You can use the `import` keyword followed by the name of the module:
 
 ```python
 import module_name
@@ -328,7 +328,7 @@ Then, you can access the elements of the module using the alias:
 m.sqrt(36)
 ```
 
-- **Importing Specific Elements**: If you don’t need everything from a module, you can import specific elements using `from`. In this case, the import statement starts with `from`, followed by the module name, then the `import` keyword, and finally the names of the elements you want to import.
+- **Importing Specific Elements**: If you don't need everything from a module, you can import specific elements using `from`. In this case, the import statement starts with `from`, followed by the module name, then the `import` keyword, and finally the names of the elements you want to import.
 
 ```python
 from module_name import name1, name2
@@ -349,7 +349,7 @@ print(sine_value) # 0.6427876096865393
 print(cos_value)  # 0.766044443118978
 ```
  
- This is helpful, but it can result in naming conflicts if you already have functions or variables with the same name. Keep it in mind when choosing which type of import statement you want to use.
+This is helpful, but it can result in naming conflicts if you already have functions or variables with the same name. Keep it in mind when choosing which type of import statement you want to use.
 
 If you need to assign aliases to these names, you can do so as well, using the `as` keyword followed by the alias.
 
@@ -363,7 +363,7 @@ from module_name import name1 as alias1, name2 as alias2
 from module_name import *
 ```
 
-For example, if you this to import the `math` module, you’ll be able to call any function defined in that module without specifying the name of the module as a prefix.
+For example, if you this to import the `math` module, you'll be able to call any function defined in that module without specifying the name of the module as a prefix.
 
 ```python
 from math import *
@@ -376,7 +376,7 @@ However, this is generally discouraged because it can lead to namespace collisio
 
 - **`__name__` Variable**: `__name__` is a special built-in variable in Python. When a Python file is executed directly, Python sets the value of this variable to the string `"__main__"`. But if the Python file is imported as a module into another Python script, the value of the `__name__` variable is set to the name of that module.
 
-This is why you’ll often find this conditional in Python scripts. It contains the code that you only want to run **only** if the Python script is running as the main program.
+This is why you'll often find this conditional in Python scripts. It contains the code that you only want to run **only** if the Python script is running as the main program.
 
 ```python
 if __name__ == '__main__': 
