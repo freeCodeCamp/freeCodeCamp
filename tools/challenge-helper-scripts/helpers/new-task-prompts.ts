@@ -3,7 +3,8 @@ import { challengeTypes } from '../../../shared/config/challenge-types';
 
 const taskChallenges = [
   challengeTypes.multipleChoice,
-  challengeTypes.fillInTheBlank
+  challengeTypes.fillInTheBlank,
+  challengeTypes.generic
 ];
 
 export const newTaskPrompts = async (): Promise<{
