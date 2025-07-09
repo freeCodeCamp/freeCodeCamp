@@ -2142,7 +2142,9 @@
       },
       "workshop-build-a-heart-icon": {
         "title": "Build a Heart Icon",
-        "intro": ["Build a Heart Icon", ""]
+        "intro": [
+          "In this workshop, you will practice working with SVGs by building a heart icon"
+        ]
       },
       "lecture-working-with-media": {
         "title": "Working with the iframe Element",
