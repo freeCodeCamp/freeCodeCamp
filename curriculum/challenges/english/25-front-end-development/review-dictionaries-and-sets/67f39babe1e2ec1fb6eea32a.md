@@ -67,7 +67,7 @@ pizza.items()
 pizza.clear()
 ```
 
-- **`pop()` Method**: The `pop()` method removes the key-value pair with the key specified as the first argument and returns its value. If the key doesn't exist, it returns the default value specified as the second argument. If the key doesn’t exist and the default value is not specified, a `KeyError` is raised.
+- **`pop()` Method**: The `pop()` method removes the key-value pair with the key specified as the first argument and returns its value. If the key doesn't exist, it returns the default value specified as the second argument. If the key doesn't exist and the default value is not specified, a `KeyError` is raised.
 
 ```python
 pizza.pop('price', 10)
@@ -357,7 +357,7 @@ If you need to assign aliases to these names, you can do so as well, using the 
 from module_name import name1 as alias1, name2 as alias2
 ```
 
-- **Import Statement with Asterisk (`*`)**: The asterisk tells Python that you want to import everything in that module, but you want to import it so that you don’t need to use the name of the module as a prefix.
+- **Import Statement with Asterisk (`*`)**: The asterisk tells Python that you want to import everything in that module, but you want to import it so that you don't need to use the name of the module as a prefix.
 
 ```python
 from module_name import *
