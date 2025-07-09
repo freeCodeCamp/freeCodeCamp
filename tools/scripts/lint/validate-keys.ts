@@ -70,37 +70,34 @@ const readComponentCode = (filePath: string): string => {
 const clientCodebase: string = readComponentCode(
   path.join(process.cwd() + '/src')
 );
-const serverCodebase: string = readComponentCode(
-  path.join(process.cwd() + '/../api-server/src/server')
-);
 
 for (const key of translationKeys) {
-  if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
+  if (!clientCodebase.includes(key)) {
     console.warn(`The translation key '${key}' appears to be unused.`);
   }
 }
 for (const key of motivationKeys) {
-  if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
+  if (!clientCodebase.includes(key)) {
     console.warn(`The motivation key '${key}' appears to be unused.`);
   }
 }
 for (const key of metaKeys) {
-  if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
+  if (!clientCodebase.includes(key)) {
     console.warn(`The meta key '${key}' appears to be unused.`);
   }
 }
 for (const key of introKeys) {
-  if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
+  if (!clientCodebase.includes(key)) {
     console.warn(`The intro key '${key}' appears to be unused.`);
   }
 }
 for (const key of trendingKeys) {
-  if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
+  if (!clientCodebase.includes(key)) {
     console.warn(`The trending key '${key}' appears to be unused.`);
   }
 }
 for (const key of linksKeys) {
-  if (!clientCodebase.includes(key) && !serverCodebase.includes(key)) {
+  if (!clientCodebase.includes(key)) {
     console.warn(`The links key '${key}' appears to be unused.`);
   }
 }

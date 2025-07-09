@@ -96,6 +96,7 @@ interface SceneCommand {
 }
 
 export type Characters =
+  // English
   | 'Alice'
   | 'Amy'
   | 'Anna'
@@ -118,7 +119,26 @@ export type Characters =
   | 'Sarah'
   | 'Second Candidate'
   | 'Sophie'
-  | 'Tom';
+  | 'Tom'
+
+  // Spanish
+  | 'Alex'
+  | 'Ángela'
+  | 'Camila'
+  | 'Carlos'
+  | 'Elena'
+  | 'Esteban'
+  | 'Joaquín'
+  | 'Julieta'
+  | 'Luis'
+  | 'Luna'
+  | 'Marisol'
+  | 'Mateo'
+  | 'Noelia'
+  | 'René'
+  | 'Sebastián'
+  | 'Diego'
+  | 'Valeria';
 
 interface SetupCharacter {
   character: Characters;
@@ -172,7 +192,7 @@ export type ChallengeNode = {
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
-    hooks?: { beforeAll: string };
+    hooks?: Hooks;
     id: string;
     instructions: string;
     isComingSoon: boolean;
@@ -219,6 +239,12 @@ export type ChallengeNode = {
     module?: string;
   };
 };
+
+export interface Hooks {
+  beforeAll?: string;
+  beforeEach?: string;
+  afterEach?: string;
+}
 
 type Quiz = {
   questions: QuizQuestion[];

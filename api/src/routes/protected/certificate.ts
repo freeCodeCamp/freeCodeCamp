@@ -394,8 +394,8 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         }
       });
 
+      const email = updatedUser.email;
       const updatedUserSansNull = removeNulls(updatedUser);
-
       const updatedIsCertMap = getUserIsCertMap(updatedUserSansNull);
 
       // TODO(POST-MVP): Consider sending email based on `user.isEmailVerified` as well
@@ -403,11 +403,11 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         .map(x => certSlugTypeMap[x])
         .every(certType => updatedIsCertMap[certType]);
       const shouldSendCertifiedEmailToCamper =
-        isEmail(updatedUser.email) && hasCompletedAllCerts;
+        email && isEmail(email) && hasCompletedAllCerts;
 
       if (shouldSendCertifiedEmailToCamper) {
         const notifyUser = {
-          to: updatedUser.email,
+          to: email,
           from: 'quincy@freecodecamp.org',
           subject:
             'Congratulations on completing all of the freeCodeCamp certifications!',

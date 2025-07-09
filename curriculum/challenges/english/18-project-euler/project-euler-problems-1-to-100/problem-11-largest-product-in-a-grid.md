@@ -42,7 +42,7 @@ What is the greatest product of four adjacent numbers in the same direction (up,
 `largestGridProduct(testGrid)` should return a number.
 
 ```js
-assert(typeof largestGridProduct(testGrid) === 'number');
+assert.isNumber(largestGridProduct(testGrid));
 ```
 
 `largestGridProduct(testGrid)` should return 14169081.

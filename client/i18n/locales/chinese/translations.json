@@ -9,6 +9,7 @@
     "edit": "编辑",
     "copy": "复制",
     "view": "查看",
+    "submit-continue": "Submit and continue",
     "view-code": "查看代码",
     "view-project": "查看项目",
     "view-cert-title": "查看 {{certTitle}}",
@@ -37,6 +38,7 @@
     "news": "专栏",
     "donate": "捐款",
     "supporters": "支持者",
+    "exam-app": "Exam App",
     "go-to-supporters": "转到支持者页面",
     "update-settings": "更新我的账户设置",
     "sign-me-out": "退出登录 freeCodeCamp",
@@ -60,6 +62,8 @@
     "check-code": "检查你的代码",
     "check-code-ctrl": "检查你的代码（Ctrl + Enter）",
     "check-code-cmd": "检查你的代码（Command + Enter）",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "重置",
     "reset-step": "重置此步骤",
     "help": "帮助",
@@ -86,6 +90,7 @@
     "click-start-course": "开始课程",
     "click-start-project": "启动项目",
     "click-start-exam": "开始考试",
+    "go-to-course": "Go to course",
     "change-language": "修改语言",
     "resume-project": "继续项目",
     "start-project": "开始项目",
@@ -110,16 +115,18 @@
     "closed-caption": "关闭标题",
     "share-on-x": "分享到 X",
     "share-on-bluesky": "分享到 BlueSky",
-    "share-on-threads": "分享到 Threads"
+    "share-on-threads": "分享到 Threads",
+    "play-scene": "Press Play",
+    "download-latest-version": "Download the Latest Version"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
-    "big-heading-1-b": "学习编程",
     "big-heading-2": "构建项目",
+    "big-heading-1-b": "Build Your Skills for Free.",
     "big-heading-3": "获得认证",
-    "big-heading-4": "完全免费",
-    "h2-heading": "自 2014 年以来，已有超过 40,000 名 freeCodeCamp.org 学员入职科技公司，例如：",
-    "h2-heading-b": "已有超过 <strong>100,000</strong> 名 freeCodeCamp.org 学员<strong>入职</strong>科技公司，例如：",
+    "advance-career": "Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI Engineering, and English for Developers.",
+    "h2-heading": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
+    "graduates-work": "More than <strong>100,000</strong> freeCodeCamp graduates work in companies such as",
     "hero-img-description": "韩国的 freeCodeCamp 学员在当地一个学习小组的交流活动上",
     "hero-img-alt": "一群人，包括一名白人男子、一名黑人女子和一名亚裔女子，围在一台笔记本电脑旁。",
     "hero-img-uis": "一组展示在移动设备和桌面设备上的 freeCodeCamp 编辑器界面的截图以及认证。",
@@ -175,6 +182,7 @@
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "试试我们的测试版课程：",
     "upcoming-heading": "即将推出的课程：",
+    "catalog-heading": "Explore our Catalog:",
     "faq": "常见问题：",
     "faqs": [
       {
@@ -340,6 +348,14 @@
       "p7": "作为一个基于成就发布认证的学术机构，我们非常重视学术诚信。如果你对此条例有任何疑问，或者怀疑有人违反了该条例，可以发送邮件至 <0>{{email}}</0>，我们将进行调查。"
     }
   },
+  "exam": {
+    "download-header": "Download the freeCodeCamp Exam Environment App",
+    "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
+    "version": "The latest version of our app is: {{version}}.",
+    "download-details": "Manually download the app",
+    "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+  },
   "profile": {
     "you-change-privacy": "你需要更改你的隐私设置，才能让他人看到你的作品集。这是你的作品集公开时候的预览。",
     "username-change-privacy": "{{username}} 需要修改隐私设置，你才能看到其作品集。",
@@ -419,11 +435,13 @@
     "answered-mcq": "你有未回答的问题和/或错误的答案。",
     "explanation": "解释",
     "transcript": "Transcript",
+    "video": "Video",
     "solution-link": "解决方案链接",
     "source-code-link": "源代码链接",
     "ms-link": "微软的链接",
     "submit-and-go": "提交并访问下一个挑战",
     "congratulations": "恭喜，你的代码已通过。请提交你的代码以继续。",
+    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
     "i-completed": "我已经完成这个挑战",
     "example-code": "示例代码",
     "test-output": "你的测试输出将在这里显示",
@@ -796,7 +814,15 @@
     "iframe-form-submit-alert": "通常这个表单将被提交！工作正常，这将被提交到：{{externalLink}}",
     "document-notfound": "找不到文件",
     "slow-load-msg": "看起来这比平常花费更长时间，请尝试刷新页面。",
-    "navigation-warning": "如果你离开这个页面，你将丢失你的进度。你确定吗？"
+    "navigation-warning": "如果你离开这个页面，你将丢失你的进度。你确定吗？",
+    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
+    "fsd-b-cta": "Start Learning",
+    "fsd-b-benefit-1-title": "100k+ Students",
+    "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
+    "fsd-b-benefit-2-title": "Professional Certification",
+    "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
+    "fsd-b-benefit-3-title": "500+ Exercises",
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
   },
   "icons": {
     "gold-cup": "金奖杯",
@@ -849,9 +875,15 @@
     "opens-new-window": "在新窗口打开",
     "rsa-checkbox": "我已经尝试了 Read-Search-Ask（阅读-搜索-提问）方法",
     "similar-questions-checkbox": "我已经在论坛上搜索了类似的问题和相应的答案",
-    "edit-my-profile": "编辑我的个人资料"
+    "edit-my-profile": "编辑我的个人资料",
+    "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
+    "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
+    "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
+    "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
+    "terminal-output": "Terminal output"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "在申请认证前，你必须先同意我们的《学术诚信条例》",
     "really-weird": "出现了一些奇怪的情况。如果再出现这种情况，请考虑在 https://github.com/freeCodeCamp/freeCodeCamp/issues/new 提交 issue。",
     "generic-error": "出错了，请稍后再试。如果错误仍然存在，请联系 support@freecodecamp.org。",
@@ -1116,6 +1148,8 @@
       "full-stack-developer-v9-cert": "全栈开发者认证",
       "a2-professional-spanish": "A2 Professional Spanish",
       "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
+      "a2-professional-chinese": "A2 Professional Chinese",
+      "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
       "legacy-front-end": "旧版前端",
       "legacy-front-end-cert": "旧版前端认证",
       "legacy-back-end": "旧版后端",
@@ -1227,6 +1261,16 @@
       "submit": "提交问卷",
       "exit": "退出调研",
       "two-questions": "恭喜你已经走到了这一步。在你开始考试之前，请回答这两个简短的调研问题。"
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "Explore our Catalog",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   }
 }

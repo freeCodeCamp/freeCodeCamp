@@ -9,6 +9,7 @@
     "edit": "Hariri",
     "copy": "Copy",
     "view": "Tazama",
+    "submit-continue": "Submit and continue",
     "view-code": "Tazama Code",
     "view-project": "Tazama Mradi",
     "view-cert-title": "Tazama {{certTitle}}",
@@ -37,6 +38,7 @@
     "news": "Habari",
     "donate": "Changia",
     "supporters": "Supporters",
+    "exam-app": "Exam App",
     "go-to-supporters": "Go to Supporters Page",
     "update-settings": "Sasisha mipangilio ya akaunti yangu",
     "sign-me-out": "Niondoe nje ya freeCodeCamp",
@@ -60,6 +62,8 @@
     "check-code": "Check Your Code",
     "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
     "check-code-cmd": "Check Your Code (Command + Enter)",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "Anzisha Upya",
     "reset-step": "Weka Upya Hatua Hii",
     "help": "Msaada",
@@ -86,6 +90,7 @@
     "click-start-course": "Anza kozi",
     "click-start-project": "Anza mradi",
     "click-start-exam": "Anza mtihani",
+    "go-to-course": "Go to course",
     "change-language": "Badilisha Lugha",
     "resume-project": "Rejea mradi",
     "start-project": "Anza mradi",
@@ -110,16 +115,18 @@
     "closed-caption": "Closed caption",
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
-    "share-on-threads": "Share on Threads"
+    "share-on-threads": "Share on Threads",
+    "play-scene": "Press Play",
+    "download-latest-version": "Download the Latest Version"
   },
   "landing": {
     "big-heading-1": "Jifunze kuandika code - bila malipo.",
-    "big-heading-1-b": "Learn to code.",
     "big-heading-2": "Unda miradi.",
+    "big-heading-1-b": "Build Your Skills for Free.",
     "big-heading-3": "Pata vyeti.",
-    "big-heading-4": "All for free.",
-    "h2-heading": "Tangu 2014, zaidi ya wahitimu 40,000 wa freeCodeCamp.org wamepata kazi katika kampuni za teknolojia ikijumuisha:",
-    "h2-heading-b": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
+    "advance-career": "Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI Engineering, and English for Developers.",
+    "h2-heading": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
+    "graduates-work": "More than <strong>100,000</strong> freeCodeCamp graduates work in companies such as",
     "hero-img-description": "wanafunzi wa freeCodeCamp katika kikundi cha mafunzo nchini Korea Kusini.",
     "hero-img-alt": "A group of people, including a White man, a Black woman, and an Asian woman, gathered around a laptop.",
     "hero-img-uis": "A group of screenshots showing the freeCodeCamp editor interface on both a mobile and desktop device and a certification.",
@@ -175,6 +182,7 @@
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
+    "catalog-heading": "Explore our Catalog:",
     "faq": "Maswali yanayoulizwa mara kwa mara:",
     "faqs": [
       {
@@ -340,6 +348,14 @@
       "p7": "Kama taasisi ya kitaaluma ambayo hutoa vyeti kulingana na mafanikio, tunazingatia uaminifu wa kitaaluma. Ikiwa una maswali yoyote kuhusu sera hii au unashuku kuwa kuna mtu ameikiuka, unaweza kutuma barua pepe kwa <0>{{email}}</0> na tutachunguza."
     }
   },
+  "exam": {
+    "download-header": "Download the freeCodeCamp Exam Environment App",
+    "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
+    "version": "The latest version of our app is: {{version}}.",
+    "download-details": "Manually download the app",
+    "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+  },
   "profile": {
     "you-change-privacy": "Unahitaji kubadilisha mpangilio wako wa faragha ili portfolio yako ionekane na wengine. Hili ni onyesho la kukagua jinsi wasifu yako itakavyoonekana ikifanywa kwa umma.",
     "username-change-privacy": "{{username}} anahitaji kubadilisha mipangilio yake ya faragha ili uweze kutazama portfolio yake.",
@@ -419,11 +435,13 @@
     "answered-mcq": "You have unanswered questions and/or incorrect answers.",
     "explanation": "Explanation",
     "transcript": "Transcript",
+    "video": "Video",
     "solution-link": "Kiungo cha Suluhisho",
     "source-code-link": "Source Code Link",
     "ms-link": "Kiungo cha Microsoft",
     "submit-and-go": "Wasilisha na uende kwa changamoto inayofuata",
     "congratulations": "Hongera, code yako imepita. Wasilisha code yako ili kuendelea.",
+    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
     "i-completed": "Nimemaliza changamoto hii",
     "example-code": "Example Code",
     "test-output": "Matokeo ya jaribio lako yataenda hapa",
@@ -796,7 +814,15 @@
     "iframe-form-submit-alert": "Kwa kawaida fomu hii ingewasilishwa! Inafanya kazi. Hii itawasilishwa kwa: {{externalLink}}",
     "document-notfound": "hati haijapatikana",
     "slow-load-msg": "Inaonekana hii inachukua muda mrefu kuliko kawaida, tafadhali jaribu pakia upya ukurasa.",
-    "navigation-warning": "Ukiondoka kwenye ukurasa huu, utapoteza maendeleo yako. Una uhakika?"
+    "navigation-warning": "Ukiondoka kwenye ukurasa huu, utapoteza maendeleo yako. Una uhakika?",
+    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
+    "fsd-b-cta": "Start Learning",
+    "fsd-b-benefit-1-title": "100k+ Students",
+    "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
+    "fsd-b-benefit-2-title": "Professional Certification",
+    "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
+    "fsd-b-benefit-3-title": "500+ Exercises",
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
   },
   "icons": {
     "gold-cup": "Kombe la dhahabu",
@@ -849,9 +875,15 @@
     "opens-new-window": "Inafungua katika kurasa mpya",
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
-    "edit-my-profile": "Edit my profile"
+    "edit-my-profile": "Edit my profile",
+    "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
+    "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
+    "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
+    "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
+    "terminal-output": "Terminal output"
   },
   "flash": {
+    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
     "honest-first": "Ili kudai uthibitisho, lazima kwanza ukubali sera yetu ya uaminifu kitaaluma",
     "really-weird": "Kitu cha ajabu kilifanyika, ikiwa kitatokea tena, tafadhali zingatia kuibua suala kwenye https://github.com/freeCodeCamp/freeCodeCamp/issues/new",
     "generic-error": "Something went wrong. Please try again in a moment or contact support@freecodecamp.org if the error persists.",
@@ -1116,6 +1148,8 @@
       "full-stack-developer-v9-cert": "Full Stack Developer Certification",
       "a2-professional-spanish": "A2 Professional Spanish",
       "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
+      "a2-professional-chinese": "A2 Professional Chinese",
+      "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
       "legacy-front-end": "Legacy Front End",
       "legacy-front-end-cert": "Legacy Front End Certification",
       "legacy-back-end": "Legacy Back End",
@@ -1227,6 +1261,16 @@
       "submit": "Submit the survey",
       "exit": "Exit the survey",
       "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "Explore our Catalog",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   }
 }

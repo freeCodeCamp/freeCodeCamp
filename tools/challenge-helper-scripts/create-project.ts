@@ -5,10 +5,12 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
-import { SuperBlocks } from '../../shared/config/curriculum';
+import {
+  SuperBlocks,
+  superBlockToFolderMap
+} from '../../shared/config/curriculum';
 import { createStepFile, validateBlockName } from './utils';
-import { getSuperBlockSubPath } from './fs-utils';
-import { Meta } from './helpers/project-metadata';
+import { getBaseMeta } from './helpers/get-base-meta';
 
 const helpCategories = [
   'HTML-CSS',
@@ -95,7 +97,7 @@ async function createMetaJson(
   challengeId: ObjectID
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
-  const newMeta = await parseJson<Meta>('./base-meta.json');
+  const newMeta = getBaseMeta('Step');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
@@ -141,7 +143,7 @@ async function createFirstChallenge(
   superBlock: SuperBlocks,
   block: string
 ): Promise<ObjectID> {
-  const superBlockSubPath = getSuperBlockSubPath(superBlock);
+  const superBlockSubPath = superBlockToFolderMap[superBlock];
   const newChallengeDir = path.resolve(
     __dirname,
     `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
@@ -149,6 +151,7 @@ async function createFirstChallenge(
   if (!existsSync(newChallengeDir)) {
     await withTrace(fs.mkdir, newChallengeDir);
   }
+
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
   const challengeSeeds = {

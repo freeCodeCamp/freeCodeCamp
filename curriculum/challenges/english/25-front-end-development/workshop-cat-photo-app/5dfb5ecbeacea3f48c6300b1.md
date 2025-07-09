@@ -40,7 +40,7 @@ You should have three `li` elements with the text `catnip`, `laser pointers` and
 ```js
 assert.deepStrictEqual(
   [...document.querySelectorAll('li')]
-    .map((item) => item.innerText.toLowerCase())
+    .map((item) => item.innerText?.trim().replace(/\s+/g, ' ').toLowerCase())
     .sort((a, b) => a.localeCompare(b)),
   ['catnip', 'lasagna', 'laser pointers']
 );
