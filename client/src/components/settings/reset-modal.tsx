@@ -66,7 +66,6 @@ function ResetModal(props: ResetModalProps): JSX.Element {
           />
         </FormGroup>
         <Spacer size='xs' />
-        {/* @ts-expect-error freecodecamp/ui doesn't allow disable to be false: https://github.com/freeCodeCamp/ui/issues/473 */}
         <Button
           block={true}
           size='large'

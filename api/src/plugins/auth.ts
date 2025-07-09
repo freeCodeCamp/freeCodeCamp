@@ -28,13 +28,26 @@ declare module 'fastify' {
 }
 
 const auth: FastifyPluginCallback = (fastify, _options, done) => {
+  const cookieOpts = {
+    httpOnly: true,
+    secure: true,
+    maxAge: 2592000 // thirty days in seconds
+  };
   fastify.decorateReply('setAccessTokenCookie', function (accessToken: Token) {
     const signedToken = jwt.sign({ accessToken }, JWT_SECRET);
-    void this.setCookie('jwt_access_token', signedToken, {
-      httpOnly: false,
-      secure: false,
-      maxAge: accessToken.ttl
-    });
+    void this.setCookie('jwt_access_token', signedToken, cookieOpts);
+  });
+
+  // update existing jwt_access_token cookie properties
+  fastify.addHook('onRequest', (req, reply, done) => {
+    const rawCookie = req.cookies['jwt_access_token'];
+    if (rawCookie) {
+      const jwtAccessToken = req.unsignCookie(rawCookie);
+      if (jwtAccessToken.valid) {
+        reply.setCookie('jwt_access_token', jwtAccessToken.value, cookieOpts);
+      }
+    }
+    done();
   });
 
   fastify.decorateRequest('accessDeniedMessage', null);

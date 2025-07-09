@@ -291,6 +291,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             type: 'error',
             message: 'That does not appear to be a valid challenge submission.'
           });
+        } else {
           fastify.errorHandler(error, req, reply);
         }
       }

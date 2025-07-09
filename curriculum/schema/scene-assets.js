@@ -13,7 +13,7 @@ const availableCharacters = [
   'James',
   'Jessica',
   'Jim',
-  'Jose',
+  'Josh',
   'Linda',
   'Lisa',
   'Maria',

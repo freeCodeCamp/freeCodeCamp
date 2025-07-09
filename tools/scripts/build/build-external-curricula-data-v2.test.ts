@@ -58,7 +58,9 @@ describe('external curriculum data build', () => {
   test('the available-superblocks file should have the correct structure', async () => {
     const filteredSuperBlockStages: string[] = Object.keys(SuperBlockStage)
       .filter(key => isNaN(Number(key))) // Filter out numeric keys to get only the names
-      .filter(name => name !== 'Upcoming' && name !== 'Next') // Filter out 'Upcoming' and 'Next'
+      .filter(
+        name => name !== 'Upcoming' && name !== 'Next' && name !== 'Catalog'
+      ) // Filter out 'Upcoming', 'Next', and 'Catalog'
       .map(name => name.toLowerCase());
 
     const validateAvailableSuperBlocks = availableSuperBlocksValidator();

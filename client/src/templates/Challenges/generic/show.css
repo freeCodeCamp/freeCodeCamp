@@ -31,3 +31,12 @@ input[type='checkbox']:checked::before {
 audio {
   background-color: aqua;
 }
+
+.transcript-tabs button[aria-selected='false'] {
+  color: var(--secondary-color);
+  background-color: transparent;
+}
+
+.transcript-tabs button[aria-selected='false']:hover {
+  background-color: var(--quaternary-background);
+}

@@ -36,7 +36,7 @@ The memoization process happens this way:
 
 To improve developer experience with memoization, React provides three tools – `React.memo` (or `memo`), `useMemo` and `useCallback`. 
 
-As you might guess, both `useMemo` and `useCallback` are hooks, but `React.memo` is a component wrapper, a higher-order function (HOC).
+As you might guess, both `useMemo` and `useCallback` are hooks, but `React.memo` is a component wrapper, a higher-order component (HOC).
 
 In the next lecture, we will take a look at how the `useCallback` hook and `React.memo` work.
 

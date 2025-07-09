@@ -9,6 +9,7 @@
     "edit": "Editar",
     "copy": "Copiar",
     "view": "Visualizar",
+    "submit-continue": "Submit and continue",
     "view-code": "Ver código",
     "view-project": "Ver o projeto",
     "view-cert-title": "Ver {{certTitle}}",
@@ -37,6 +38,7 @@
     "news": "Notícias",
     "donate": "Doar",
     "supporters": "Apoiadores",
+    "exam-app": "Exam App",
     "go-to-supporters": "Vá para a página de apoiadores",
     "update-settings": "Atualizar as configurações da minha conta",
     "sign-me-out": "Sair do freeCodeCamp",
@@ -60,6 +62,8 @@
     "check-code": "Verifique seu código",
     "check-code-ctrl": "Verifique seu código (Ctrl + Enter)",
     "check-code-cmd": "Verifique seu código (Command + Enter)",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "Redefinir",
     "reset-step": "Reiniciar este passo",
     "help": "Ajuda",
@@ -86,6 +90,7 @@
     "click-start-course": "Iniciar o curso",
     "click-start-project": "Iniciar o projeto",
     "click-start-exam": "Iniciar o exame",
+    "go-to-course": "Go to course",
     "change-language": "Alterar idioma",
     "resume-project": "Retomar projeto",
     "start-project": "Iniciar o projeto",
@@ -110,7 +115,9 @@
     "closed-caption": "Versão legendada",
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
-    "share-on-threads": "Share on Threads"
+    "share-on-threads": "Share on Threads",
+    "play-scene": "Press Play",
+    "download-latest-version": "Download the Latest Version"
   },
   "landing": {
     "big-heading-1": "Aprenda a programar — de graça.",
@@ -175,6 +182,7 @@
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Próximo currículo:",
+    "catalog-heading": "Explore our Catalog:",
     "faq": "Perguntas frequentes:",
     "faqs": [
       {
@@ -340,6 +348,14 @@
       "p7": "Como uma instituição acadêmica que concede certificações baseadas em conquistas, levamos a honestidade acadêmica muito a sério. Se você tiver alguma dúvida sobre esta política, ou suspeitar que alguém a tenha violado, você pode enviar um e-mail para <0>{{email}}</0> e vamos investigar."
     }
   },
+  "exam": {
+    "download-header": "Download the freeCodeCamp Exam Environment App",
+    "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
+    "version": "The latest version of our app is: {{version}}.",
+    "download-details": "Manually download the app",
+    "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+  },
   "profile": {
     "you-change-privacy": "Você precisa alterar sua configuração de privacidade para que seu portfólio seja visto por outros. Esta é uma prévia de como será seu portfólio quando se tornar público.",
     "username-change-privacy": "{{username}} precisa alterar suas configurações de privacidade para que você possa visualizar o portfólio.",
@@ -419,11 +435,13 @@
     "answered-mcq": "You have unanswered questions and/or incorrect answers.",
     "explanation": "Explicação",
     "transcript": "Transcript",
+    "video": "Video",
     "solution-link": "Link da solução",
     "source-code-link": "Link do código-fonte",
     "ms-link": "Link da Microsoft",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
     "congratulations": "Parabéns, o código passou. Envie o código para continuar.",
+    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
     "i-completed": "Já completei este desafio",
     "example-code": "Exemplo de código",
     "test-output": "O resultado do seu código vai aparecer aqui",
@@ -858,6 +876,10 @@
     "rsa-checkbox": "Eu tentei o método Ler-Pesquisar-Perguntar",
     "similar-questions-checkbox": "Eu pesquisei por perguntas semelhantes que já foram respondidas no fórum",
     "edit-my-profile": "Editar meu perfil",
+    "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
+    "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
+    "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
+    "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output"
   },
   "flash": {
@@ -1239,6 +1261,16 @@
       "submit": "Envie a pesquisa",
       "exit": "Saia da pesquisa",
       "two-questions": "Parabéns por chegar até aqui. Antes de começar o teste, responda a estas duas breves perguntas de pesquisa."
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "Explore our Catalog",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   }
 }

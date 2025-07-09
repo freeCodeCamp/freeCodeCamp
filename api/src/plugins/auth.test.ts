@@ -13,6 +13,8 @@ async function setupServer() {
   return fastify;
 }
 
+const THIRTY_DAYS_IN_SECONDS = 2592000;
+
 describe('auth', () => {
   let fastify: FastifyInstance;
 
@@ -51,29 +53,10 @@ describe('auth', () => {
         path: '/',
         sameSite: 'Lax',
         domain: COOKIE_DOMAIN,
-        maxAge: token.ttl
+        maxAge: THIRTY_DAYS_IN_SECONDS,
+        httpOnly: true,
+        secure: true
       });
-    });
-
-    // TODO: Post-MVP sync the cookie max-age with the token ttl (i.e. the
-    // max-age should be the ttl/1000, not ttl)
-    it('should set the max-age of the cookie to match the ttl of the token', async () => {
-      const token = createAccessToken('test-id', 123000);
-      fastify.get('/test', async (req, reply) => {
-        reply.setAccessTokenCookie(token);
-        return { ok: true };
-      });
-
-      const res = await fastify.inject({
-        method: 'GET',
-        url: '/test'
-      });
-
-      expect(res.cookies[0]).toEqual(
-        expect.objectContaining({
-          maxAge: 123000
-        })
-      );
     });
   });
 
@@ -248,6 +231,48 @@ describe('auth', () => {
 
       expect(res.json()).toEqual({ ok: true });
       expect(res.statusCode).toEqual(200);
+    });
+  });
+
+  describe('onRequest Hook', () => {
+    it('should update the jwt_access_token to httpOnly and secure', async () => {
+      const rawValue = 'should-not-change';
+      fastify.get('/test', (req, reply) => {
+        reply.send({ ok: true });
+      });
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: signCookie(rawValue)
+        }
+      });
+
+      expect(res.cookies[0]).toMatchObject({
+        httpOnly: true,
+        secure: true,
+        value: signCookie(rawValue),
+        maxAge: THIRTY_DAYS_IN_SECONDS
+      });
+
+      expect(res.json()).toStrictEqual({ ok: true });
+      expect(res.statusCode).toBe(200);
+    });
+
+    it('should do nothing if there is no jwt_access_token', async () => {
+      fastify.get('/test', (req, reply) => {
+        reply.send({ ok: true });
+      });
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test'
+      });
+
+      expect(res.cookies).toHaveLength(0);
+      expect(res.json()).toStrictEqual({ ok: true });
+      expect(res.statusCode).toBe(200);
     });
   });
 });

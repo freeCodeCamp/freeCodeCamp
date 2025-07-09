@@ -68,7 +68,6 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
           />
         </FormGroup>
         <Spacer size='xs' />
-        {/* @ts-expect-error The UI lib's types don't allow this: https://github.com/freeCodeCamp/ui/issues/473 */}
         <Button
           block={true}
           size='large'

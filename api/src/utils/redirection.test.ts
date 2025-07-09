@@ -182,13 +182,13 @@ describe('redirection', () => {
       expect(result).toEqual(expectedReturn);
     });
 
-    it('should use HOME_LOCATION with missing referer', () => {
+    it('should returnTo the origin if the referer is missing', () => {
       const req = {
         headers: {}
       };
 
       const expectedReturn = {
-        returnTo: `${HOME_LOCATION}/learn`,
+        returnTo: `${HOME_LOCATION}/`,
         origin: HOME_LOCATION,
         pathPrefix: ''
       };
@@ -197,7 +197,7 @@ describe('redirection', () => {
       expect(result).toEqual(expectedReturn);
     });
 
-    it('should use HOME_LOCATION with invalid referrer', () => {
+    it('should returnTo the origin if the referrer is invalid', () => {
       const req = {
         headers: {
           referer: 'invalid-url'
@@ -205,7 +205,7 @@ describe('redirection', () => {
       };
 
       const expectedReturn = {
-        returnTo: `${HOME_LOCATION}/learn`,
+        returnTo: `${HOME_LOCATION}/`,
         origin: HOME_LOCATION,
         pathPrefix: ''
       };
