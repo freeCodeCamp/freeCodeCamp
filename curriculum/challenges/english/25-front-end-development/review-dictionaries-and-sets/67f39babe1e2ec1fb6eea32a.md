@@ -155,7 +155,7 @@ for product, price in products.items():
 
 Output:
 
-```python
+```md
 Laptop 990
 Smartphone 600
 Tablet 250
