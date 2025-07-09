@@ -2140,6 +2140,10 @@
           "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
         ]
       },
+      "workshop-build-a-heart-icon": {
+        "title": "Build a Heart Icon",
+        "intro": ["Build a Heart Icon", ""]
+      },
       "lecture-working-with-media": {
         "title": "Working with the iframe Element",
         "intro": [
@@ -4547,10 +4551,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-build-a-heart-icon": {
-        "title": "Build a Heart Icon",
-        "intro": ["Build a Heart Icon", ""]
       }
     }
   },

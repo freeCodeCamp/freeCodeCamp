@@ -7,7 +7,7 @@ dashedName: step-2
 
 # --description--
 
-The next step is to set the `width` and `height` attributes for the `SVG` element. As we creating an icon, both values should be set small.
+The next step is to set the `width` and `height` attributes for the `svg` element. As we creating an icon, both values should be set small.
 
 Set both values to `24`.
 

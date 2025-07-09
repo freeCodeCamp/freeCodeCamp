@@ -7,7 +7,7 @@ dashedName: step-3
 
 # --description--
 
-You are getting closer. The next thing to do is to set the `viewBox` of the `SVG` element. This will
+You are getting closer. The next thing to do is to set the `viewBox` of the `svg` element. This will
 control how much of the image we actually see. The first two numbers set the center of the image.
 
 The following two numbers set the size of the image can we see; width followed by height.

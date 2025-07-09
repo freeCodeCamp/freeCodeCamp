@@ -7,14 +7,14 @@ dashedName: step-4
 
 # --description--
 
-Before you begin coloring the image in, you should next some `path` elements inside your `SVG`
+Before you begin coloring the image in, you should next some `path` elements inside your `svg`
 element to give the image shape. This icon only needs one.
 
 Create a `path` element.
 
 # --hints--
 
-You should have a `path` element nested inside of your `SVG` element.
+You should have a `path` element nested inside of your `svg` element.
 
 ```js
 const path = document.querySelector('svg path');
