@@ -422,7 +422,7 @@ const shortWords = words.filter(word => word.length <= 5);
 
 ---
 
-`map()` iterates over objects, while `forEach()` iterates over arrays.
+`['pear', 'kiwi']`
 
 ---
 
