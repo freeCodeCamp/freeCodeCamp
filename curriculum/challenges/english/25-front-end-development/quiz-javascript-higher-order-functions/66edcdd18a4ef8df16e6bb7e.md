@@ -409,31 +409,23 @@ filteredArray[0].id = 4;
 
 #### --text--
 
-What would be the output of the following code?
-
-```js
-const multiply = (a) => (b) => a * b;
-const operations = [multiply(2), multiply(3)];
-const result = operations.reduce((acc, fn) => fn(acc), 5);
-
-console.log(result);
-```
+What is the main difference between the `map()` method and the `forEach()` method?
 
 #### --distractors--
 
-`10`
+`map()` is only used for numbers, while `forEach()` works on any data type.
 
 ---
 
-`100`
+`map()` iterates over objects, while `forEach()` iterates over arrays.
 
 ---
 
-`20`
+`forEach()` returns a new array, while `map()` modifies the original array.
 
 #### --answer--
 
-`30`
+`map()` returns a new array, while `forEach()` does not return a value.
 
 ### --question--
 
