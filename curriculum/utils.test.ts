@@ -74,6 +74,7 @@ const mockSuperBlockStructure = {
     },
     {
       dashedName: 'css',
+      comingSoon: true,
       modules: [
         {
           dashedName: 'module-one',
@@ -88,6 +89,7 @@ const mockSuperBlockStructure = {
         },
         {
           dashedName: 'module-two',
+          comingSoon: true,
           blocks: [
             {
               dashedName: 'block-one-m2'
@@ -176,7 +178,7 @@ describe('getSuperBlockFromPath', () => {
     .filter(item => fs.lstatSync(path.join(englishFolder, item)).isDirectory());
 
   it('handles all the directories in ./challenges/english', () => {
-    expect.assertions(25);
+    expect.assertions(29);
 
     for (const directory of directories) {
       expect(() => getSuperBlockFromDir(directory)).not.toThrow();
@@ -184,7 +186,7 @@ describe('getSuperBlockFromPath', () => {
   });
 
   it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
-    expect.assertions(25);
+    expect.assertions(29);
 
     const superBlockPaths = directories.filter(x => x !== '00-certifications');
 
@@ -218,8 +220,8 @@ describe('getSuperBlockFromPath', () => {
 describe('getChapterFromBlock', () => {
   it('returns a chapter if it exists', () => {
     expect(
-      getChapterFromBlock('welcome-to-freecodecamp', mockSuperBlockStructure)
-    ).toEqual('html');
+      getChapterFromBlock('block-one-m1', mockSuperBlockStructure)
+    ).toStrictEqual({ dashedName: 'css', comingSoon: true });
   });
 
   it('throws if a chapter does not exist', () => {
@@ -235,7 +237,10 @@ describe('getModuleFromBlock', () => {
   it('returns a module if it exists', () => {
     expect(
       getModuleFromBlock('welcome-to-freecodecamp', mockSuperBlockStructure)
-    ).toEqual('getting-started-with-freecodecamp');
+    ).toStrictEqual({
+      dashedName: 'getting-started-with-freecodecamp',
+      comingSoon: undefined
+    });
   });
 
   it('throws if a module does not exist', () => {

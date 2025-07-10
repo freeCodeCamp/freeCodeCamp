@@ -43,7 +43,7 @@ Which of the following tools allows you to enter background and foreground color
 
 #### --distractors--
 
-TPGi Color Contrast Analyzer
+TPGi Colour Contrast Analyzer
 
 ---
 
@@ -77,7 +77,7 @@ WebAIM's Color Contrast Checker
 
 #### --answer--
 
-TPGi Color Contrast Analyzer
+TPGi Colour Contrast Analyzer
 
 ### --question--
 

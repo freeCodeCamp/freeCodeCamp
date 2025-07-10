@@ -16,7 +16,13 @@
               "dashedName": "lab-debug-camperbots-profile-page"
             },
             {
-              "dashedName": "lecture-what-is-html"
+              "dashedName": "lecture-understanding-html-attributes"
+            },
+            {
+              "dashedName": "lab-debug-pet-adoption-page"
+            },
+            {
+              "dashedName": "lecture-understanding-the-html-boilerplate"
             },
             {
               "dashedName": "workshop-cat-photo-app"
@@ -29,6 +35,12 @@
             },
             {
               "dashedName": "lab-travel-agency-page"
+            },
+            {
+              "dashedName": "lecture-working-with-audio-and-video-elements"
+            },
+            {
+              "dashedName": "lecture-working-with-images-and-svgs"
             },
             {
               "dashedName": "lecture-working-with-media"
@@ -52,6 +64,15 @@
           "blocks": [
             {
               "dashedName": "lecture-importance-of-semantic-html"
+            },
+            {
+              "dashedName": "lecture-understanding-nuanced-semantic-elements"
+            },
+            {
+              "dashedName": "lecture-working-with-text-and-time-semantic-elements"
+            },
+            {
+              "dashedName": "lecture-working-with-specialized-semantic-elements"
             },
             {
               "dashedName": "workshop-blog-page"
@@ -695,6 +716,9 @@
               "dashedName": "lecture-understanding-core-javascript-fundamentals"
             },
             {
+              "dashedName": "lab-slice-and-splice"
+            },
+            {
               "dashedName": "lab-pyramid-generator"
             },
             {
@@ -778,6 +802,18 @@
             },
             {
               "dashedName": "quiz-dom-manipulation-and-click-event-with-javascript"
+            }
+          ]
+        },
+        {
+          "dashedName": "js-a11y",
+          "comingSoon": true,
+          "blocks": [
+            {
+              "dashedName": "review-js-a11y"
+            },
+            {
+              "dashedName": "quiz-js-a11y"
             }
           ]
         },
@@ -1052,17 +1088,19 @@
         },
         {
           "dashedName": "react-state-hooks-and-routing",
-          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "lecture-working-with-state-and-responding-to-events-in-react"
             },
             { "dashedName": "workshop-toggle-text-app" },
+            { "dashedName": "lab-color-picker" },
             {
               "dashedName": "lecture-understanding-effects-and-referencing-values-in-react"
             },
             { "dashedName": "workshop-fruit-search-app" },
-            { "dashedName": "lab-color-picker" },
+            {
+              "dashedName": "lab-one-time-password-generator"
+            },
             {
               "dashedName": "review-react-state-and-hooks"
             },
@@ -1070,10 +1108,10 @@
               "dashedName": "quiz-react-state-and-hooks"
             },
             {
-              "dashedName": "workshop-superhero-application-form"
+              "dashedName": "lecture-working-with-forms-in-react"
             },
             {
-              "dashedName": "lecture-working-with-forms-in-react"
+              "dashedName": "workshop-superhero-application-form"
             },
             {
               "dashedName": "lab-event-rsvp"
@@ -1106,7 +1144,6 @@
         },
         {
           "dashedName": "performance",
-          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "lecture-understanding-performance-in-web-applications"
@@ -1120,6 +1157,16 @@
           ]
         },
         {
+          "dashedName": "testing",
+          "blocks": [
+            {
+              "dashedName": "lecture-understanding-the-different-types-of-testing"
+            },
+            { "dashedName": "review-testing" },
+            { "dashedName": "quiz-testing" }
+          ]
+        },
+        {
           "dashedName": "css-libraries-and-frameworks",
           "comingSoon": true,
           "blocks": [
@@ -1127,22 +1174,17 @@
               "dashedName": "lecture-working-with-css-libraries-and-frameworks"
             },
             {
+              "dashedName": "workshop-error-message-component"
+            },
+            {
+              "dashedName": "lab-music-shopping-cart-page"
+            },
+            {
               "dashedName": "review-css-libraries-and-frameworks"
             },
             {
               "dashedName": "quiz-css-libraries-and-frameworks"
             }
-          ]
-        },
-        {
-          "dashedName": "testing",
-          "comingSoon": true,
-          "blocks": [
-            {
-              "dashedName": "lecture-understanding-the-different-types-of-testing"
-            },
-            { "dashedName": "review-testing" },
-            { "dashedName": "quiz-testing" }
           ]
         },
         {
@@ -1178,6 +1220,7 @@
       "modules": [
         {
           "dashedName": "python-basics",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-introduction-to-python" },
             { "dashedName": "workshop-caesar-cipher" },
@@ -1188,16 +1231,18 @@
         },
         {
           "dashedName": "python-loops-and-sequences",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-working-with-loops-and-sequences" },
-            { "dashedName": "workshop-placeholder-loops-and-sequences" },
-            { "dashedName": "lab-placeholder-loops-and-sequences" },
+            { "dashedName": "workshop-pin-extractor" },
+            { "dashedName": "lab-number-pattern-generator" },
             { "dashedName": "review-loops-and-sequences" },
             { "dashedName": "quiz-loops-and-sequences" }
           ]
         },
         {
           "dashedName": "python-dictionaries-and-sets",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-working-with-dictionaries-and-sets" },
             { "dashedName": "lecture-working-with-modules" },
@@ -1209,6 +1254,7 @@
         },
         {
           "dashedName": "python-error-handling",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-understanding-error-handling" },
             { "dashedName": "lab-isbn-validator" },
@@ -1218,6 +1264,7 @@
         },
         {
           "dashedName": "python-classes-and-objects",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-classes-and-objects" },
             { "dashedName": "workshop-placeholder-classes-and-objects" },
@@ -1228,6 +1275,7 @@
         },
         {
           "dashedName": "python-object-oriented-programming",
+          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "lecture-understanding-object-oriented-programming-and-encapsulation"
@@ -1248,6 +1296,7 @@
         },
         {
           "dashedName": "python-linear-data-structures",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-working-with-common-data-structures" },
             { "dashedName": "workshop-linked-list-class" },
@@ -1258,20 +1307,22 @@
         },
         {
           "dashedName": "python-algorithms",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-searching-and-sorting-algorithms" },
             { "dashedName": "workshop-binary-search" },
             { "dashedName": "lab-bisection-method" },
             { "dashedName": "workshop-merge-sort" },
-            { "dashedName": "lab-quick-sort" },
+            { "dashedName": "lab-quicksort" },
             { "dashedName": "lab-selection-sort" },
-            { "dashedName": "lab-luhn-argorithm" },
+            { "dashedName": "lab-luhn-algorithm" },
             { "dashedName": "review-searching-and-sorting-algorithms" },
             { "dashedName": "quiz-searching-and-sorting-algorithms" }
           ]
         },
         {
           "dashedName": "python-graphs-and-trees",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-understanding-graphs-and-trees" },
             { "dashedName": "workshop-shortest-path-algorithm" },
@@ -1284,6 +1335,7 @@
         },
         {
           "dashedName": "python-dynamic-programming",
+          "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-understanding-dynamic-programming" },
             { "dashedName": "lab-nth-fibonacci-number" },
@@ -1292,6 +1344,7 @@
           ]
         },
         {
+          "comingSoon": true,
           "moduleType": "review",
           "dashedName": "review-python",
           "blocks": [{ "dashedName": "review-python" }]
@@ -1304,6 +1357,7 @@
       "modules": [
         {
           "dashedName": "bash-fundamentals",
+          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "workshop-bash-boilerplate"
@@ -1318,6 +1372,7 @@
         },
         {
           "dashedName": "relational-databases",
+          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "workshop-database-of-video-game-characters"
@@ -1335,6 +1390,7 @@
         },
         {
           "dashedName": "bash-scripting",
+          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "workshop-bash-five-programs"
@@ -1349,6 +1405,7 @@
         },
         {
           "dashedName": "sql-and-bash",
+          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "workshop-sql-student-database-part-1"
@@ -1377,22 +1434,12 @@
           ]
         },
         {
-          "dashedName": "nano",
+          "dashedName": "git",
+          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "workshop-castle"
             },
-            {
-              "dashedName": "review-nano"
-            },
-            {
-              "dashedName": "quiz-nano"
-            }
-          ]
-        },
-        {
-          "dashedName": "git",
-          "blocks": [
             {
               "dashedName": "workshop-sql-reference-object"
             },
@@ -1412,6 +1459,7 @@
         },
         {
           "moduleType": "review",
+          "comingSoon": true,
           "dashedName": "review-relational-databases",
           "blocks": [
             {
@@ -1424,21 +1472,87 @@
     {
       "dashedName": "backend-javascript",
       "comingSoon": true,
-      "modules": []
-    },
-    {
-      "chapterType": "exam",
-      "comingSoon": true,
-      "dashedName": "exam-certified-full-stack-developer",
       "modules": [
         {
-          "moduleType": "exam",
-          "dashedName": "exam-certified-full-stack-developer",
-          "blocks": [
-            {
-              "dashedName": "exam-certified-full-stack-developer"
-            }
-          ]
+          "dashedName": "nodejs-core-libraries",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "node-package-manager",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "http-and-the-web-standards-model",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "rest-api-and-web-services",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "introduction-to-express",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "express-middleware",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "error-handling-in-express",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "websockets",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "node-and-sql",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "security-and-privacy",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "authentication",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "tooling-and-deployment",
+          "comingSoon": true,
+          "blocks": []
+        }
+      ]
+    },
+    {
+      "dashedName": "career",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "how-to-get-a-developer-job",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "capstone-project",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "certified-full-stack-developer-exam",
+          "comingSoon": true,
+          "blocks": [{ "dashedName": "exam-certified-full-stack-developer" }]
         }
       ]
     }

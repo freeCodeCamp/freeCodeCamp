@@ -9,6 +9,7 @@
     "edit": "編集",
     "copy": "コピー",
     "view": "表示",
+    "submit-continue": "Submit and continue",
     "view-code": "コードを表示",
     "view-project": "プロジェクトを表示",
     "view-cert-title": "{{certTitle}}を表示",
@@ -37,6 +38,7 @@
     "news": "ニュース",
     "donate": "寄付",
     "supporters": "サポーター",
+    "exam-app": "Exam App",
     "go-to-supporters": "サポーターページに移動",
     "update-settings": "アカウント設定を更新",
     "sign-me-out": "freeCodeCampからサインアウト",
@@ -60,6 +62,8 @@
     "check-code": "コードをチェック",
     "check-code-ctrl": "コードをチェック (Ctrl + Enter)",
     "check-code-cmd": "コードをチェック (Command + Enter)",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "リセット",
     "reset-step": "ステップをリセット",
     "help": "ヘルプ",
@@ -86,6 +90,7 @@
     "click-start-course": "コースを開始",
     "click-start-project": "プロジェクトを開始",
     "click-start-exam": "試験開始",
+    "go-to-course": "Go to course",
     "change-language": "言語変更",
     "resume-project": "プロジェクト再開",
     "start-project": "プロジェクト開始",
@@ -110,16 +115,18 @@
     "closed-caption": "クローズドキャプション",
     "share-on-x": "X でシェア",
     "share-on-bluesky": "Bluesky でシェア",
-    "share-on-threads": "Threads でシェア"
+    "share-on-threads": "Threads でシェア",
+    "play-scene": "Press Play",
+    "download-latest-version": "Download the Latest Version"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
-    "big-heading-1-b": "プログラミングを学ぶ。",
     "big-heading-2": "プロジェクトを完成させる。",
+    "big-heading-1-b": "Build Your Skills for Free.",
     "big-heading-3": "認定証を取得する。",
-    "big-heading-4": "すべてが無料です。",
-    "h2-heading": "2014 年以来、4 万人を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業で仕事を得ています。",
-    "h2-heading-b": "<strong>10 万人</strong>を超える freeCodeCamp.org 卒業生が、以下をはじめとする IT 企業に<strong>就職</strong>しました。",
+    "advance-career": "Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI Engineering, and English for Developers.",
+    "h2-heading": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
+    "graduates-work": "More than <strong>100,000</strong> freeCodeCamp graduates work in companies such as",
     "hero-img-description": "韓国のローカル勉強会での freeCodeCamp 受講者",
     "hero-img-alt": "さまざまな人種、性別の人々がノートパソコンの周りに集まっている様子",
     "hero-img-uis": "freeCodeCamp コードエディター (モバイル版およびデスクトップ版) と、認定証のスクリーンショット",
@@ -175,6 +182,7 @@
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "ベータ版カリキュラムを試す:",
     "upcoming-heading": "公開予定カリキュラム:",
+    "catalog-heading": "Explore our Catalog:",
     "faq": "よくある質問:",
     "faqs": [
       {
@@ -340,6 +348,14 @@
       "p7": "成果に基づく認定証を与える学術機関として、私たちは学問的誠実性を重視しています。このポリシーについて質問がある場合、または誰かが違反していると思われる場合には、<0>{{email}}</0> までメールでお問い合わせいただければ調査いたします。"
     }
   },
+  "exam": {
+    "download-header": "Download the freeCodeCamp Exam Environment App",
+    "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
+    "version": "The latest version of our app is: {{version}}.",
+    "download-details": "Manually download the app",
+    "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+  },
   "profile": {
     "you-change-privacy": "他の人がポートフォリオを見られるようにするには、プライバシー設定を変更する必要があります。これはポートフォリオが公開されたときにどのように見えるかのプレビューです。",
     "username-change-privacy": "ポートフォリオを表示するには、{{username}} さんがプライバシー設定を変更する必要があります。",
@@ -419,11 +435,13 @@
     "answered-mcq": "未回答または不正解の質問があります。",
     "explanation": "解説",
     "transcript": "文字起こし",
+    "video": "Video",
     "solution-link": "回答のリンク",
     "source-code-link": "ソースコードのリンク",
     "ms-link": "Microsoft のリンク",
     "submit-and-go": "提出して次のチャレンジに進む",
     "congratulations": "おめでとうございます、合格です。次に進むにはコードを提出してください。",
+    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
     "i-completed": "このチャレンジを完了しました",
     "example-code": "コード例",
     "test-output": "テストの結果はこちらに表示されます",
@@ -796,7 +814,15 @@
     "iframe-form-submit-alert": "通常はこれでフォームが送信されます。正しく動作しています。フォームは {{externalLink}} へ送信されます。",
     "document-notfound": "ドキュメントが見つかりませんでした",
     "slow-load-msg": "通常より処理に時間がかかっているようです。ページの再読み込みをお試しください。",
-    "navigation-warning": "このページを離れると、進捗状況が失われます。よろしいですか？"
+    "navigation-warning": "このページを離れると、進捗状況が失われます。よろしいですか？",
+    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
+    "fsd-b-cta": "Start Learning",
+    "fsd-b-benefit-1-title": "100k+ Students",
+    "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
+    "fsd-b-benefit-2-title": "Professional Certification",
+    "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
+    "fsd-b-benefit-3-title": "500+ Exercises",
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
   },
   "icons": {
     "gold-cup": "ゴールドカップ",
@@ -849,7 +875,12 @@
     "opens-new-window": "新しいウィンドウで開く",
     "rsa-checkbox": "Read-Search-Ask (読む - 検索する - 質問する) メソッドを試しました",
     "similar-questions-checkbox": "フォーラムで、解決済みの類似質問を検索しました",
-    "edit-my-profile": "プロフィールを編集"
+    "edit-my-profile": "プロフィールを編集",
+    "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
+    "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
+    "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
+    "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
+    "terminal-output": "Terminal output"
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -1117,6 +1148,8 @@
       "full-stack-developer-v9-cert": "フルスタック開発者認定証",
       "a2-professional-spanish": "A2 Professional Spanish",
       "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
+      "a2-professional-chinese": "A2 Professional Chinese",
+      "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
       "legacy-front-end": "旧フロントエンド",
       "legacy-front-end-cert": "旧フロントエンド認定証",
       "legacy-back-end": "旧バックエンド",
@@ -1228,6 +1261,16 @@
       "submit": "アンケートを送信",
       "exit": "アンケートを中止",
       "two-questions": "ここまでのコースの完了、おめでとうございます。試験を始める前に、こちらのアンケートにご協力ください。(2 問)"
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "Explore our Catalog",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   }
 }

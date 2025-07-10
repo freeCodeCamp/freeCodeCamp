@@ -890,7 +890,7 @@
       "learn-special-methods-by-building-a-vector-space": {
         "title": "Learn Special Methods by Building a Vector Space",
         "intro": [
-          "Python special methods are called in response to specific operations and enable you to customize the behaviour of your objects in a detailed and effective way.",
+          "Python special methods are called in response to specific operations and enable you to customize the behavior of your objects in a detailed and effective way.",
           "In this project, you are going to explore some of the most common special methods while learning about vectors by building a vector space."
         ]
       },
@@ -1761,7 +1761,7 @@
       "relational-databases": "Relational Databases",
       "backend-javascript": "Backend JavaScript",
       "python": "Python",
-      "exam-certified-full-stack-developer": "Certified Full Stack Developer Exam"
+      "career": "Career"
     },
     "modules": {
       "basic-html": "Basic HTML",
@@ -1799,6 +1799,7 @@
       "review-javascript-fundamentals": "JavaScript Fundamentals Review",
       "higher-order-functions-and-callbacks": "Higher Order Functions and Callbacks",
       "dom-manipulation-and-events": "DOM Manipulation and Events",
+      "js-a11y": "JavaScript and Accessibility",
       "debugging-javascript": "Debugging",
       "basic-regex": "Basic Regex",
       "form-validation": "Form Validation",
@@ -1815,14 +1816,11 @@
       "react-fundamentals": "React Fundamentals",
       "react-state-hooks-and-routing": "React State, Hooks, and Routing",
       "performance": "Performance",
-      "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
       "testing": "Testing",
+      "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
       "typescript-fundamentals": "TypeScript Fundamentals",
       "review-front-end-libraries": "Front End Libraries Review",
       "exam-front-end-libraries": "Front End Libraries Exam",
-      "sql-and-bash": "SQL and Bash",
-      "git": "Git",
-      "security-and-privacy": "Security and Privacy",
       "python-basics": "Python Basics",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
@@ -1834,7 +1832,234 @@
       "python-graphs-and-trees": "Graphs and Trees",
       "python-dynamic-programming": "Dynamic Programming",
       "review-python": "Python Review",
-      "exam-python": "Python Exam"
+      "exam-python": "Python Exam",
+      "bash-fundamentals": "Bash Fundamentals",
+      "relational-databases": "Relational Databases",
+      "bash-scripting": "Bash Scripting",
+      "sql-and-bash": "SQL and Bash",
+      "git": "Git",
+      "introduction-to-nodejs": "Introduction to Node.js",
+      "nodejs-core-libraries": "Node.js Core Libraries",
+      "node-package-manager": "Node Package Manager",
+      "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
+      "rest-api-and-web-services": "REST API and Web Services",
+      "introduction-to-express": "Introduction to Express",
+      "express-middleware": "Express Middleware",
+      "error-handling-in-express": "Error Handling in Express",
+      "websockets": "WebSockets",
+      "node-and-sql": "Node and SQL",
+      "security-and-privacy": "Security and Privacy",
+      "authentication": "Authentication",
+      "tooling-and-deployment": "Tooling and Deployment",
+      "how-to-get-a-developer-job": "How to Get a Developer Job",
+      "capstone-project": "Capstone Project",
+      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+    },
+    "module-intros": {
+      "js-a11y": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will learn how to work with the aria-expanded, aria-live and aria-controls attributes inside of your HTML, CSS and JavaScript applications."
+        ]
+      },
+      "css-libraries-and-frameworks": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will be introduced to CSS libraries, frameworks, and preprocessors, including Tailwind CSS, Bootstrap, and Sass. You will build out various components using Tailwind CSS and test your knowledge of these tools with a short quiz."
+        ]
+      },
+      "typescript-fundamentals": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
+        ]
+      },
+      "python-basics": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will be introduced to Python, which is used in many fields like data science, machine learning, web development, scripting and automation, embedded systems, IoT, and more. You will build out a workshop and lab to practice Python basics and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-loops-and-sequences": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will learn how to work with lists, tuples, lambda functions, loops, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-dictionaries-and-sets": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will be introduced to dictionaries, sets, and the Python standard library. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-error-handling": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will talk about common error messages, good debugging techniques, and exception handling. You will build a lab to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-classes-and-objects": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn how to work with classes, methods, attributes and properties. Then, you will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-object-oriented-programming": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about Object-oriented programming concepts like encapsulation, inheritance, polymorphism, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-linear-data-structures": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about data structures including stacks, queues, linked lists, and more. You will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-algorithms": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about common algorithms including binary search, merge sort, selection sort, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-graphs-and-trees": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about graphs in computer science as well as adjacency lists, trees, tries, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "python-dynamic-programming": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about  dynamic programming and practice these concepts by building a fibonacci sequence lab. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "bash-fundamentals": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about  the command line and common Bash commands. Then you will practice your skills with a workshop and take a short quiz to test your knowledge."
+        ]
+      },
+      "relational-databases": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn how to work with relational databases which store data as collections in tables. Some of the concepts you will learn about include inserting and viewing table data, primary and foreign keys in SQL, and more. Then you will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
+        ]
+      },
+      "bash-scripting": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about bash scripting and practice those skills by building five programs. Then you will be able to test your knowledge of these concepts by taking a short quiz."
+        ]
+      },
+      "sql-and-bash": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn about normalization, SQL injection, and the N+1 problem. Then you will get to practice working with SQL and Bash by building several workshops and labs. Then you will be able to test your knowledge of these concepts by taking a short quiz."
+        ]
+      },
+      "git": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will learn how to use Git, Nano, and GitHub. Then you will get to practice working with Git by building several workshops and labs. You will be able to test your knowledge of these concepts by taking a short quiz."
+        ]
+      },
+      "introduction-to-nodejs": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will be introduced to Node.js, which is a JavaScript runtime environment that allows you to build backend applications using JavaScript. You will get to practice fundamental concepts by building a small workshop and test your knowledge with a short quiz."
+        ]
+      },
+      "nodejs-core-libraries": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about common Node.js core libraries including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
+        ]
+      },
+      "node-package-manager": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will be introduced to the Node Package Manager, which developers use to manage project dependencies and scripts. Then you will get to practice what you have learned through workshops and labs and test your knowledge with a short quiz."
+        ]
+      },
+      "http-and-the-web-standards-model": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about HTTP (Hypertext Transfer Protocol) and other important concepts including the request-response model, common response codes, DNS, TCP/IP, and more. Then you will get to practice what you have learned through a build your own web server workshop and test your knowledge with a short quiz."
+        ]
+      },
+      "rest-api-and-web-services": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "introduction-to-express": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
+        ]
+      },
+      "express-middleware": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
+        ]
+      },
+      "error-handling-in-express": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
+        ]
+      },
+      "websockets": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
+        ]
+      },
+      "node-and-sql": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will practice building applications with Node and SQL. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "security-and-privacy": {
+        "note": "Coming Fall 2025",
+        "intro": [
+          "In this module, you will learn about the differences between security and privacy as well as other concepts including  CSPs, Permissions-Policies, PII, working with CORS, and more. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "authentication": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
+        ]
+      },
+      "tooling-and-deployment": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about common tools used in the industry for deploying your full stack applications. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "how-to-get-a-developer-job": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, Quincy Larson (Founder and teacher of freeCodeCamp) will talk about strategies you can use to prepare for getting a developer job. Quincy will cover key subjects including résumés, portfolios, researching the market, preparing for technical interviews, and more."
+        ]
+      },
+      "capstone-project": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "This will be your opportunity to build out a full stack application encompassing what you have learned throughout this certification."
+        ]
+      },
+      "certified-full-stack-developer-exam": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "This will be a 90 question exam testing what you have learned throughout this certification."
+        ]
+      }
     },
     "blocks": {
       "workshop-curriculum-outline": {
@@ -1858,11 +2083,24 @@
           "In this lab, you will help Camperbot find and fix the errors in their code."
         ]
       },
-      "lecture-what-is-html": {
-        "title": "Understanding HTML Attributes and the HTML Boilerplate",
+      "lecture-understanding-html-attributes": {
+        "title": "Understanding HTML Attributes",
         "intro": [
           "In these lecture videos, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
-          "You will learn about HTML's role on the web, the HTML boilerplate and what HTML attributes are."
+          "You will learn about HTML's role on the web, and what HTML attributes are."
+        ]
+      },
+      "lab-debug-pet-adoption-page": {
+        "title": "Debug a Pet Adoption Page",
+        "intro": [
+          "In this lab, you will need to find and fix the errors in this pet adoption page."
+        ]
+      },
+      "lecture-understanding-the-html-boilerplate": {
+        "title": "Understanding the HTML Boilerplate",
+        "intro": [
+          "In these lectures, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
+          "You will learn how to work with the <code>link</code> element, <code>meta</code> element and more."
         ]
       },
       "workshop-cat-photo-app": {
@@ -1890,10 +2128,22 @@
           "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element, and more."
         ]
       },
-      "lecture-working-with-media": {
-        "title": "Working with Media",
+      "lecture-working-with-audio-and-video-elements": {
+        "title": "Working with Audio and Video Elements",
         "intro": [
-          "In these lecture videos, you will learn how to work with media assets like the <code>audio</code> and <code>video</code> elements, SVGs, how to optimize them, and more."
+          "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+        ]
+      },
+      "lecture-working-with-images-and-svgs": {
+        "title": "Working with Images and SVGs",
+        "intro": [
+          "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
+        ]
+      },
+      "lecture-working-with-media": {
+        "title": "Working with the iframe Element",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
         ]
       },
       "lab-video-compilation-page": {
@@ -1926,6 +2176,24 @@
         "title": "Importance of Semantic HTML",
         "intro": [
           "In these lecture videos, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
+        ]
+      },
+      "lecture-understanding-nuanced-semantic-elements": {
+        "title": "Understanding Nuanced Semantic Elements",
+        "intro": [
+          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+        ]
+      },
+      "lecture-working-with-text-and-time-semantic-elements": {
+        "title": "Working with Text and Time Semantic Elements ",
+        "intro": [
+          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+        ]
+      },
+      "lecture-working-with-specialized-semantic-elements": {
+        "title": "Working with Specialized Semantic Elements",
+        "intro": [
+          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
         ]
       },
       "workshop-blog-page": {
@@ -2982,6 +3250,12 @@
           "In these lecture videos, you will learn more about the core JavaScript fundamentals. You will learn how a string object differs from a primitive string, the <code>toString()</code> method, conventions and common practices for naming variables, linters and formatters, closures, and much more."
         ]
       },
+      "lab-slice-and-splice": {
+        "title": "Implement the Slice and Splice Algorithm",
+        "intro": [
+          "In this lab, you will practice merging an array with another."
+        ]
+      },
       "lab-pyramid-generator": {
         "title": "Build a Pyramid Generator",
         "intro": [
@@ -3111,7 +3385,7 @@
       "lab-lightbox-viewer": {
         "title": "Build a Lightbox Viewer",
         "intro": [
-          "In this lab, you'll build a lighbox viewer for viewing images in a focused mode.",
+          "In this lab, you'll build a lightbox viewer for viewing images in a focused mode.",
           "You'll practice click events and toggling classes."
         ]
       },
@@ -3144,6 +3418,19 @@
         "title": "DOM Manipulation and Click Events with JavaScript Quiz",
         "intro": [
           "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
+        ]
+      },
+      "review-js-a11y": {
+        "title": "JavaScript and Accessibility Review",
+        "intro": [
+          "Before you're quizzed on JavaScript and accessibility, you should review what you've learned about it.",
+          "Open up this page to review concepts including how to work with the <code>aria-expanded</code>, <code>aria-live</code>, and <code>aria-controls</code> attributes."
+        ]
+      },
+      "quiz-js-a11y": {
+        "title": "JavaScript and Accessibility Quiz",
+        "intro": [
+          "Test your knowledge of JavaScript and accessibility best practices with this quiz."
         ]
       },
       "lecture-debugging-techniques": {
@@ -3585,7 +3872,13 @@
           "In this workshop, you will continue to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
         ]
       },
-      "vjgg": { "title": "272", "intro": [] },
+      "lab-one-time-password-generator": {
+        "title": "Build a One-Time Password Generator",
+        "intro": [
+          "In this lab you'll build a one-time password generator.",
+          "You'll practice using the useEffect hooks to create a timer and generate a random OTP."
+        ]
+      },
       "review-react-state-and-hooks": {
         "title": "React State and Hooks Review",
         "intro": [
@@ -3694,6 +3987,19 @@
           "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
         ]
       },
+      "workshop-error-message-component": {
+        "title": "Build an Error Message Component",
+        "intro": [
+          "In this workshop, you will learn the basics of Tailwind CSS by building out an error message component."
+        ]
+      },
+      "lab-music-shopping-cart-page": {
+        "title": "Build a Music Shopping Cart Page",
+        "intro": [
+          "In this lab, you will build a music shopping cart page with Tailwind CSS.",
+          "You will practice working with Tailwind CSS utility classes for flexbox layouts, colors, breakpoints and more."
+        ]
+      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -3756,7 +4062,9 @@
       "vtpz": { "title": "302", "intro": [] },
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
-        "intro": ["Learn about Introduction to Python in these lectures."]
+        "intro": [
+          "In these lecture videos, you will learn the fundamentals of Python. You'll learn about variables, data types, operators, control flow, functions, and more."
+        ]
       },
       "workshop-caesar-cipher": {
         "title": "Build a Caesar Cipher",
@@ -3774,7 +4082,7 @@
         "title": "Python Basics Review",
         "intro": [
           "Before you're quizzed on Python basics, you should review what you've learned about it.",
-          "[Add more details]"
+          "In this review page, you will review working with strings, functions, comparison operators and more."
         ]
       },
       "quiz-python-basics": {
@@ -3785,15 +4093,19 @@
       },
       "lecture-working-with-loops-and-sequences": {
         "title": "Working with Loops and Sequences",
-        "intro": [""]
+        "intro": [
+          "Learn about Working with Loops and Sequences in these lectures."
+        ]
       },
-      "workshop-placeholder-loops-and-sequences": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-pin-extractor": {
+        "title": "Build a Pin Extractor",
+        "intro": [
+          "In this workshop you will build a function to extract secret pins hidden in poems."
+        ]
       },
-      "lab-placeholder-loops-and-sequences": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "lab-number-pattern-generator": {
+        "title": "Build a Number Pattern Generator",
+        "intro": ["In this lab you will build a number pattern generator."]
       },
       "review-loops-and-sequences": {
         "title": "Loops and Sequences Review",
@@ -3810,11 +4122,13 @@
       },
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Working with Dictionaries and Sets",
-        "intro": [""]
+        "intro": [
+          "Learn about working with dictionaries and sets in these lectures."
+        ]
       },
       "lecture-working-with-modules": {
         "title": "Working with Modules",
-        "intro": [""]
+        "intro": ["Learn about working with modules in these lectures."]
       },
       "workshop-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
@@ -3828,7 +4142,7 @@
         "title": "Dictionaries and Sets review",
         "intro": [
           "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
-          "[Add more details]"
+          "Open up this page to review concepts around dictionaries, sets, and how to import modules."
         ]
       },
       "quiz-dictionaries-and-sets": {
@@ -3839,7 +4153,7 @@
       },
       "lecture-understanding-error-handling": {
         "title": "Understanding Error Handling",
-        "intro": [""]
+        "intro": ["Learn about Understanding Error Handling in these lectures."]
       },
       "lab-isbn-validator": {
         "title": "Debug a ISBN Validator",
@@ -3860,7 +4174,7 @@
       },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
-        "intro": [""]
+        "intro": ["Learn about Classes and Objects in these lectures."]
       },
       "workshop-placeholder-classes-and-objects": {
         "title": "Placeholder - waiting for title",
@@ -3887,7 +4201,9 @@
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Understanding Object Oriented Programming and Encapsulation",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Object Oriented Programming and Encapsulation in these lectures."
+        ]
       },
       "workshop-placeholder-oop-1": {
         "title": "Placeholder - Waiting for title",
@@ -3898,8 +4214,10 @@
         "intro": [""]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
-        "title": "Understanding Inheritance and polymorphism",
-        "intro": [""]
+        "title": "Understanding Inheritance and Polymorphism",
+        "intro": [
+          "Learn about Understanding Inheritance and Polymorphism in these lectures."
+        ]
       },
       "workshop-placeholder-oop-2": {
         "title": "Placeholder - Waiting for title",
@@ -3912,8 +4230,8 @@
         ]
       },
       "lecture-understanding-abstraction": {
-        "title": "Understanding abstraction",
-        "intro": [""]
+        "title": "Understanding Abstraction",
+        "intro": ["Learn about Understanding Abstraction in these lectures."]
       },
       "workshop-placeholder-oop-3": {
         "title": "Placeholder - Waiting for title",
@@ -3934,8 +4252,10 @@
         ]
       },
       "lecture-working-with-common-data-structures": {
-        "title": "Working with common data structures",
-        "intro": [""]
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about Working with Common Data Structures in these lectures."
+        ]
       },
       "workshop-linked-list-class": {
         "title": "Build a Linked List Class",
@@ -3963,27 +4283,45 @@
       },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
-        "intro": [""]
+        "intro": [
+          "Learn about Searching and Sorting Algorithms in these lectures."
+        ]
       },
       "workshop-binary-search": {
-        "title": "Build a Binary Search",
-        "intro": [""]
+        "title": "Implement the Binary Search Algorithm",
+        "intro": [
+          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
+          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
       },
       "lab-bisection-method": {
         "title": "Build a Bisection Method",
         "intro": [""]
       },
-      "workshop-merge-sort": { "title": "Build a Merge Sort", "intro": [""] },
-      "lab-quick-sort": { "title": "Build a Quick Sort", "intro": [""] },
+      "workshop-merge-sort": {
+        "title": "Implement the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
+        ]
+      },
+      "lab-quicksort": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort a list of integers."
+        ]
+      },
       "lab-selection-sort": {
         "title": "Implement the Selection Sort Algorithm",
         "intro": [
           "In this lab you will implement the selection sort algorithm."
         ]
       },
-      "lab-luhn-argorithm": {
-        "title": "Build a Luhn Algorithm",
-        "intro": [""]
+      "lab-luhn-algorithm": {
+        "title": "Implement the Luhn Algorithm",
+        "intro": [
+          "In this lab, you will implement the Luhn algorithm to validate identification numbers such as credit card numbers."
+        ]
       },
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
@@ -4000,7 +4338,9 @@
       },
       "lecture-understanding-graphs-and-trees": {
         "title": "Understanding Graphs and Trees",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Graphs and Trees in these lectures."
+        ]
       },
       "workshop-shortest-path-algorithm": {
         "title": "Build a Shortest Path Algorithm",
@@ -4033,7 +4373,9 @@
       },
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
-        "intro": [""]
+        "intro": [
+          "Learn about Understanding Dynamic Programming in these lectures."
+        ]
       },
       "lab-nth-fibonacci-number": {
         "title": "Build an Nth Fibonacci Number Calculator",
@@ -4175,14 +4517,6 @@
           "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
         ]
       },
-      "review-nano": {
-        "title": "Nano Review",
-        "intro": ["Review the Nano concepts to prepare for the upcoming quiz."]
-      },
-      "quiz-nano": {
-        "title": "Nano Quiz",
-        "intro": ["Test what you've learned on Nano with this quiz ."]
-      },
       "rhhl": { "title": "328", "intro": [] },
       "workshop-sql-reference-object": {
         "title": "Build an SQL Reference Object",
@@ -4239,6 +4573,82 @@
         "intro": [
           "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
         ]
+      }
+    }
+  },
+  "a2-professional-chinese": {
+    "title": "A2 Professional Chinese Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "talk-about-what-you-do-by-using-key-verbs": {
+        "title": "Talk About What You Do by Using Key Verbs",
+        "intro": [
+          "Learn how to introduce yourself in Chinese in a simple and professional way. In this module you'll learn how to say who you are, where you are from, what you do, how you feel, and what you like or don't like."
+        ]
+      },
+      "get-to-know-colleagues-by-asking-simple-questions": {
+        "title": "Get to Know Colleagues by Asking Simple Questions",
+        "intro": [
+          "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
+        ]
+      }
+    }
+  },
+  "basic-html": {
+    "title": "Basic HTML",
+    "summary": [
+      "Learn how to build simple webpages using HTML tags to add text, images, and links."
+    ],
+    "intro": ["Larger intro for the superblock page."],
+    "blocks": {
+      "cat-photo-app": {
+        "title": "Build a Cat Photo App",
+        "intro": [
+          "HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.",
+          "In this course, you'll learn the most common HTML tags by building your own cat photo app."
+        ]
+      },
+      "recipe-page": {
+        "title": "Build a Recipe Page",
+        "intro": [
+          "In this lab, you'll review HTML basics by creating a web page of your favorite recipe. You'll create an HTML boilerplate and work with headings, lists, images, and more."
+        ]
+      }
+    }
+  },
+  "semantic-html": {
+    "title": "Semantic HTML",
+    "summary": [
+      "Discover how to write cleaner, more meaningful HTML using semantic tags that improve structure, accessibility, and SEO."
+    ],
+    "intro": ["Larger intro for the superblock page."],
+    "blocks": {
+      "cat-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+        ]
+      },
+      "event-hub": {
+        "title": "Build an Event Hub",
+        "intro": [
+          "In this lab, you'll build an event hub and review semantic elements like <code>header</code>, <code>nav</code>, <code>article</code>, and more."
+        ]
+      }
+    }
+  },
+  "dev-playground": {
+    "title": "Dev Playground",
+    "intro": ["Playground for creating and testing challenges"],
+    "blocks": {
+      "daily-coding-challenges-javascript": {
+        "title": "Daily Coding Challenges JavaScript",
+        "intro": ["Place to create JavaScript daily coding challenges."]
+      },
+      "daily-coding-challenges-python": {
+        "title": "Daily Coding Challenges Python",
+        "intro": ["Place to create Python daily coding challenges."]
       }
     }
   },
