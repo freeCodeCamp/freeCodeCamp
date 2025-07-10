@@ -412,28 +412,33 @@ filteredArray[0].id = 4;
 What would be the output of the following code?
 
 ```js
-const multiply = (a) => (b) => a * b;
-const operations = [multiply(2), multiply(3)];
-const result = operations.reduce((acc, fn) => fn(acc), 5);
+function divideBy(divisor) {
+  return function(number) {
+    return number / divisor;
+  }
+}
 
-console.log(result);
+let halve = divideBy(2);
+let third = divideBy(3);
+
+console.log(halve(20) + third(30));
 ```
 
 #### --distractors--
 
-`10`
+`25`
 
 ---
 
-`100`
+`50`
 
 ---
 
-`20`
+`15`
 
 #### --answer--
 
-`30`
+`20`
 
 ### --question--
 
