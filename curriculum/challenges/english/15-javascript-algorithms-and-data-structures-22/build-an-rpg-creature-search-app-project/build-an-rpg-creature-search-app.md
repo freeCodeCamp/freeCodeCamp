@@ -409,9 +409,9 @@ async () => {
   await new Promise((resolve) => setTimeout(resolve, 500));
 
   const calls = spy.calls.map((call) => call[0]);
-  assert.isTrue(calls.some((url) => url.toLowerCase() === 'https://rpg-creature-api.freecodecamp.rocks/api/creature/pyrolynx'));
-  assert.isTrue(calls.some((url) => url.toLowerCase() === 'https://rpg-creature-api.freecodecamp.rocks/api/creature/2'));
-  assert.isTrue(calls.some((url) => url.toLowerCase() === `https://rpg-creature-api.freecodecamp.rocks/api/creature/${randomValidCreatureId}`.toLowerCase()));
+  assert.strictEqual(calls[0].toLowerCase(), 'https://rpg-creature-api.freecodecamp.rocks/api/creature/pyrolynx');
+  assert.strictEqual(calls[1], 'https://rpg-creature-api.freecodecamp.rocks/api/creature/2');
+  assert.strictEqual(calls[2], `https://rpg-creature-api.freecodecamp.rocks/api/creature/${randomValidCreatureId}`);
 };
 ```
 
