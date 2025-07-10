@@ -41,8 +41,6 @@ function EmailSignUpAlert({
   completedChallengeCount = 0
 }: EmailSignUpAlertProps) {
   const newAccount = isSignedIn && completedChallengeCount < 1;
-  console.log({ acceptedPrivacyTerms, newAccount });
-  console.log(acceptedPrivacyTerms || newAccount);
 
   // Don't show the alert if privacy terms are already accepted
   // change this as we only want to show this to new users

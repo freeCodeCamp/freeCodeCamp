@@ -63,7 +63,6 @@ interface EmailOptionsProps {
 
 function EmailOptions({ isSignedIn, acceptTerms, isPage }: EmailOptionsProps) {
   const { t } = useTranslation();
-  console.log(isPage);
 
   return (
     <>
@@ -88,11 +87,7 @@ function EmailOptions({ isSignedIn, acceptTerms, isPage }: EmailOptionsProps) {
           <Spacer size='m' />
         </Col>
       </Row>
-      <EmailListOptIn
-        isPage={isPage}
-        isSignedIn={isSignedIn}
-        acceptTerms={acceptTerms}
-      />
+      <EmailListOptIn isSignedIn={isSignedIn} acceptTerms={acceptTerms} />
     </>
   );
 }
