@@ -1,8 +1,8 @@
 ---
 id: 60ffe7d8aae62c05bcc9e7eb
-title: Step 53
+title: Step 54
 challengeType: 0
-dashedName: step-53
+dashedName: step-54
 ---
 
 # --description--
@@ -50,8 +50,8 @@ assert.isEmpty(new __helpers.CSSHelp(document).getStyle('input[type="submit"]')?
       </fieldset>
       <fieldset>
         <legend>Account type (required)</legend>
-        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" checked /> Personal</label>
-        <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Business</label>
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" value="personal" class="inline" checked /> Personal</label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type" value="business" class="inline" /> Business</label>
       </fieldset>
       <fieldset>
         <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
