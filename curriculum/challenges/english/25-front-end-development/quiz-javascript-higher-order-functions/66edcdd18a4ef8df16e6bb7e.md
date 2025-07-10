@@ -418,7 +418,7 @@ const shortWords = words.filter(word => word.length <= 5);
 
 #### --distractors--
 
-`map()` is only used for numbers, while `forEach()` works on any data type.
+`[]`
 
 ---
 
