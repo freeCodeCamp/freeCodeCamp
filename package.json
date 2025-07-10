@@ -83,8 +83,7 @@
     "playwright:watch": "playwright test --ui-port=0"
   },
   "dependencies": {
-    "dotenv": "16.4.5",
-    "shell-quote": "^1.8.3"
+    "dotenv": "16.4.5"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.26.5",
@@ -123,7 +122,6 @@
     "lint-staged": "^13.1.0",
     "lodash": "4.17.21",
     "markdownlint": "0.33.0",
-    "npm-run-all": "^4.1.5",
     "npm-run-all2": "5.0.2",
     "prettier": "3.2.5",
     "prismjs": "1.29.0",
@@ -134,7 +132,7 @@
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@10.11.1",
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
