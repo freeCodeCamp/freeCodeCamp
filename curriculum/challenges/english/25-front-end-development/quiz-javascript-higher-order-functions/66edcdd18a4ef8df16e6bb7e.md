@@ -426,7 +426,7 @@ const shortWords = words.filter(word => word.length <= 5);
 
 ---
 
-`forEach()` returns a new array, while `map()` modifies the original array.
+`['apple', 'banana']`
 
 #### --answer--
 
