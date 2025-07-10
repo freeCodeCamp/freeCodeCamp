@@ -409,7 +409,12 @@ filteredArray[0].id = 4;
 
 #### --text--
 
-What is the main difference between the `map()` method and the `forEach()` method?
+What will be the value of `shortWords` after the following code is run?
+
+```js
+const words = ['apple', 'banana', 'pear', 'kiwi'];
+const shortWords = words.filter(word => word.length <= 5);
+```
 
 #### --distractors--
 
