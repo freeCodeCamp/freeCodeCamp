@@ -4150,7 +4150,9 @@
       },
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
-        "intro": ["", ""]
+        "intro": [
+          "In this lab you will start with a bugged app, you will need to debug and fix the bugs until it is working properly."
+        ]
       },
       "review-error-handling": {
         "title": "Error Handling Review",

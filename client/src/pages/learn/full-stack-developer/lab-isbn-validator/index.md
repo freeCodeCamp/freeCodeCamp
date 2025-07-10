@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Debug an ISBN Validator
 
-This is a test for the new project-based curriculum.
+In this lab you will start with a bugged app, you will need to debug and fix the bugs until it is working properly.
