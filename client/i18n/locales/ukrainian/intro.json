@@ -1845,199 +1845,199 @@
       "js-a11y": {
         "note": "Очікуйте цієї осені",
         "intro": [
-          "In this module, you will learn how to work with the aria-expanded, aria-live and aria-controls attributes inside of your HTML, CSS and JavaScript applications."
+          "У цьому модулі ви навчитесь працювати з атрибутами aria-expanded, aria-live та aria-controls в застосунках HTML, CSS і JavaScript."
         ]
       },
       "css-libraries-and-frameworks": {
         "note": "Очікуйте цієї осені",
         "intro": [
-          "In this module, you will be introduced to CSS libraries, frameworks, and preprocessors, including Tailwind CSS, Bootstrap, and Sass. You will build out various components using Tailwind CSS and test your knowledge of these tools with a short quiz."
+          "У цьому модулі ви ознайомитесь з бібліотеками, фреймворками і препроцесорами CSS, включно з Tailwind CSS, Bootstrap та Sass. Ви побудуєте різні компоненти за допомогою Tailwind CSS і перевірите отримані знання, виконавши короткий тест."
         ]
       },
       "typescript-fundamentals": {
         "note": "Очікуйте цієї осені",
         "intro": [
-          "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
+          "У цьому модулі ви ознайомитесь з TypeScript — розширеною версією JavaScript, яка дозволяє додавати статичну типізацію до JavaScript-коду. Ви виконаєте декілька практичних занять і лабораторних робіт, де застосуєте узагальнення, звуження типів, TSX і багато іншого. А потім перевірите отримані знання з основ TypeScript, пройшовши короткий тест."
         ]
       },
       "python-basics": {
         "note": "Очікуйте цієї осені",
         "intro": [
-          "In this module, you will be introduced to Python, which is used in many fields like data science, machine learning, web development, scripting and automation, embedded systems, IoT, and more. You will build out a workshop and lab to practice Python basics and take a short quiz to test your knowledge."
+          "У цьому модулі ви ознайомитесь з мовою Python, яку використовують в багатьох галузях (зокрема в інформатиці, машинному навчанні, веброзробці, скриптуванні й автоматизації, вбудованих системах, IoT тощо). Ви застосуєте основи Python в практичному занятті і лабораторній роботі, а також виконаєте короткий тест."
         ]
       },
       "python-loops-and-sequences": {
         "note": "Очікуйте цієї осені",
         "intro": [
-          "In this module, you will learn how to work with lists, tuples, lambda functions, loops, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "У цьому модулі ви навчитесь працювати зі списками, кортежами, лямбда-функціями, циклами і багато іншим. Ви застосуєте ці поняття в практичних заняттях і лабораторних роботах, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "python-dictionaries-and-sets": {
         "note": "Очікуйте цієї осені",
         "intro": [
-          "In this module, you will be introduced to dictionaries, sets, and the Python standard library. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "У цьому модулі ви ознайомитесь зі словниками, наборами і стандартною бібліотекою Python. Ви застосуєте ці поняття в практичних заняттях і лабораторних роботах, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "python-error-handling": {
         "note": "Очікуйте цієї осені",
         "intro": [
-          "In this module, you will talk about common error messages, good debugging techniques, and exception handling. You will build a lab to practice these concepts and take a short quiz to test your knowledge."
+          "У цьому модулі ви дізнаєтесь про поширені повідомлення з помилками, хороші способи їх налагодження і обробку винятків. Ви застосуєте ці поняття в лабораторній роботі, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "python-classes-and-objects": {
         "note": "Очікуйте цієї зими",
         "intro": [
-          "In this module, you will learn how to work with classes, methods, attributes and properties. Then, you will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "У цьому модулі ви навчитесь працювати з класами, методами, атрибутами і властивостями. Ви застосуєте ці поняття в практичних заняттях і лабораторних роботах, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "python-object-oriented-programming": {
         "note": "Очікуйте цієї зими",
         "intro": [
-          "In this module, you will learn about Object-oriented programming concepts like encapsulation, inheritance, polymorphism, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "У цьому модулі ви дізнаєтесь про деякі поняття об’єктноорієнтованого програмування, серед яких інкапсуляція, успадкування і поліморфізм. Ви застосуєте ці поняття в практичних заняттях і лабораторних роботах, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "python-linear-data-structures": {
         "note": "Очікуйте цієї зими",
         "intro": [
-          "In this module, you will learn about data structures including stacks, queues, linked lists, and more. You will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
+          "У цьому модулі ви дізнаєтесь про структури даних, до яких належать стеки, зв’язані списки і багато іншого. Ви застосуєте ці поняття в практичному занятті і лабораторній роботі, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "python-algorithms": {
         "note": "Очікуйте цієї зими",
         "intro": [
-          "In this module, you will learn about common algorithms including binary search, merge sort, selection sort, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "У цьому модулі ви дізнаєтесь про поширені алгоритми, до яких належать бінарний пошук, сортування злиттям, сортування вибором і багато іншого. Ви застосуєте ці поняття в практичних заняттях і лабораторних роботах, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "python-graphs-and-trees": {
         "note": "Очікуйте цієї зими",
         "intro": [
-          "In this module, you will learn about graphs in computer science as well as adjacency lists, trees, tries, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "У цьому модулі ви дізнаєтесь про графи в інформатиці, а також про списки суміжності, дерева і багато іншого. Ви застосуєте ці поняття в практичних заняттях і лабораторних роботах, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "python-dynamic-programming": {
         "note": "Очікуйте цієї зими",
         "intro": [
-          "In this module, you will learn about  dynamic programming and practice these concepts by building a fibonacci sequence lab. Then you will take a short quiz to test your knowledge."
+          "У цьому модулі ви дізнаєтесь про динамічне програмування і застосуєте ці знання на практиці, виконавши лабораторну роботу із послідовністю Фібоначчі. Потім ви пройдете короткий тест, щоб перевірити отримані знання."
         ]
       },
       "bash-fundamentals": {
         "note": "Очікуйте цієї зими",
         "intro": [
-          "In this module, you will learn about  the command line and common Bash commands. Then you will practice your skills with a workshop and take a short quiz to test your knowledge."
+          "У цьому модулі ви дізнаєтесь про командний рядок та поширені команди Bash. Потім ви виконаєте практичне заняття і перевірите отримані знання завдяки короткому тесту."
         ]
       },
       "relational-databases": {
         "note": "Очікуйте цієї зими",
         "intro": [
-          "In this module, you will learn how to work with relational databases which store data as collections in tables. Some of the concepts you will learn about include inserting and viewing table data, primary and foreign keys in SQL, and more. Then you will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
+          "У цьому модулі ви дізнаєтесь, як працювати з реляційними базами даних, які зберігають дані як колекції в таблицях. Зокрема, ви ознайомитесь з додаванням і переглядом даних таблиці, первинними і зовнішніми ключами в SQL тощо. Потім ви виконаєте практичне заняття і лабораторну роботу, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "bash-scripting": {
         "note": "Очікуйте цієї зими",
         "intro": [
-          "In this module, you will learn about bash scripting and practice those skills by building five programs. Then you will be able to test your knowledge of these concepts by taking a short quiz."
+          "У цьому модулі ви дізнаєтесь про скрипти bash і застосуєте ці навички на практиці, створивши п’ять програм. А завдяки тесту перевірите отримані знання."
         ]
       },
       "sql-and-bash": {
         "note": "Очікуйте цієї зими",
         "intro": [
-          "In this module, you will learn about normalization, SQL injection, and the N+1 problem. Then you will get to practice working with SQL and Bash by building several workshops and labs. Then you will be able to test your knowledge of these concepts by taking a short quiz."
+          "У цьому модулі ви дізнаєтесь про нормалізацію, SQL-ін’єкцію та проблему N+1. Потім ви застосуєте SQL і Bash на практиці, виконавши декілька практичних занять і лабораторних робіт. А завдяки тесту перевірите отримані знання."
         ]
       },
       "git": {
         "note": "Очікуйте цієї зими",
         "intro": [
-          "In this module, you will learn how to use Git, Nano, and GitHub. Then you will get to practice working with Git by building several workshops and labs. You will be able to test your knowledge of these concepts by taking a short quiz."
+          "У цьому модулі ви дізнаєтесь, як використовувати Git, Nano та GitHub. Потім ви перейдете до практичної частини з Git, де виконаєте декілька практичних занять і лабораторних робіт. А завдяки тесту перевірите отримані знання."
         ]
       },
       "introduction-to-nodejs": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, you will be introduced to Node.js, which is a JavaScript runtime environment that allows you to build backend applications using JavaScript. You will get to practice fundamental concepts by building a small workshop and test your knowledge with a short quiz."
+          "У цьому модулі ви ознайомитесь з Node.js — середовищем виконання JavaScript, яке дозволяє створювати бекендні застосунки за допомогою JavaScript. Потім ви виконаєте невеличке практичне заняття і перевірите отримані знання за допомогою тесту."
         ]
       },
       "nodejs-core-libraries": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, you will learn about common Node.js core libraries including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
+          "У цьому модулі ви ознайомитесь з поширеними бібліотеками Node.js, до яких належать fs, os, path та інші. Потім ви перейдете до практичних занять і лабораторних робіт, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "node-package-manager": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, you will be introduced to the Node Package Manager, which developers use to manage project dependencies and scripts. Then you will get to practice what you have learned through workshops and labs and test your knowledge with a short quiz."
+          "У цьому модулі ви ознайомитесь з Node Package Manager, який розробники використовують для керування залежностями і скриптами проєкту. Потім ви перейдете до практичних занять і лабораторних робіт, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "http-and-the-web-standards-model": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, you will learn about HTTP (Hypertext Transfer Protocol) and other important concepts including the request-response model, common response codes, DNS, TCP/IP, and more. Then you will get to practice what you have learned through a build your own web server workshop and test your knowledge with a short quiz."
+          "У цьому модулі ви дізнаєтесь про HTTP та інші важливі поняття (зокрема про модель системи запит-відповідь, поширені коди стану, DNS, TCP/IP тощо). Потім ви застосуєте ці навички на практиці, створивши власний вебсервер, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "rest-api-and-web-services": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
+          "У цьому модулі ви дізнаєтесь про REST API (Representational State Transfer Application Programming Interface) і принципи роботи мікросервісів. А потім пройдете короткий тест, щоб перевірити отримані знання."
         ]
       },
       "introduction-to-express": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
+          "У цьому модулі ви ознайомитесь з Express.js — фреймворком, який використовують для створення RESTful API. Потім ви перейдете до практичних занять і лабораторних робіт, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "express-middleware": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
+          "У цьому модулі ви дізнаєтесь про проміжне програмне забезпечення в Express.js, яке обробляє запити та відповіді між клієнтом і сервером. Потім ви перейдете до практичного заняття і лабораторної роботи, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "error-handling-in-express": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
+          "У цьому модулі ви дізнаєтесь про обробку помилок, налагодження і перевірку справності в Express.js. Потім ви застосуєте ці навички в лабораторній роботі, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "websockets": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
+          "У цьому модулі ви ознайомитесь з Websocket — протоколом, який використовують для спілкування між клієнтом і сервером в режимі реального часу. Потім ви перейдете до практичних занять і лабораторних робіт, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "node-and-sql": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, you will practice building applications with Node and SQL. Then you will take a short quiz to test your knowledge."
+          "У цьому модулі ви застосуєте Node і SQL на практиці, створивши пару застосунків. А потім пройдете короткий тест, щоб перевірити отримані знання."
         ]
       },
       "security-and-privacy": {
         "note": "Очікуйте цієї осені",
         "intro": [
-          "In this module, you will learn about the differences between security and privacy as well as other concepts including  CSPs, Permissions-Policies, PII, working with CORS, and more. Then you will take a short quiz to test your knowledge."
+          "У цьому модулі ви дізнаєтесь про різницю між безпекою і приватністю, а також ознайомитесь з різними поняттями (включно з CSP, Permissions Policy, PII, CORS і багато іншим). Потім ви пройдете короткий тест, щоб перевірити отримані знання."
         ]
       },
       "authentication": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
+          "У цьому модулі ви дізнаєтесь про принципи роботи автентифікації у вебзастосунках та інші важливі поняття (JWT, CSRF, Passport, Helmet, криптографія, шифрування тощо). Потім ви перейдете до практичних занять і лабораторних робіт, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "tooling-and-deployment": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, you will learn about common tools used in the industry for deploying your full stack applications. Then you will take a short quiz to test your knowledge."
+          "У цьому модулі ви дізнаєтесь про поширені інструменти для розгортання фулстекових програм. А потім пройдете короткий тест, щоб перевірити отримані знання."
         ]
       },
       "how-to-get-a-developer-job": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "In this module, Quincy Larson (Founder and teacher of freeCodeCamp) will talk about strategies you can use to prepare for getting a developer job. Quincy will cover key subjects including résumés, portfolios, researching the market, preparing for technical interviews, and more."
+          "У цьому модулі Квінсі Ларсон (засновник і вчитель freeCodeCamp) поділиться тим, як розпочати кар’єру в IT. Квінсі розкаже про резюме, портфоліо, ринок праці, підготовку до співбесіди та багато іншого."
         ]
       },
       "capstone-project": {
         "note": "Очікуйте наприкінці 2026 року",
         "intro": [
-          "This will be your opportunity to build out a full stack application encompassing what you have learned throughout this certification."
+          "Чудова можливість створити повнофункціональний застосунок, використавши всі знання, отримані протягом сертифікації."
         ]
       },
       "certified-full-stack-developer-exam": {
@@ -2162,6 +2162,24 @@
         "title": "Важливість семантичного HTML",
         "intro": [
           "У цих відеолекціях ви дізнаєтесь про семантичний HTML і чому ним варто цікавитись, а також про семантичні елементи, різницю між семантичним і презентаційним HTML та багато іншого."
+        ]
+      },
+      "lecture-understanding-nuanced-semantic-elements": {
+        "title": "Нюанси роботи з семантичними елементами",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, коли варто використовувати семантичні елементи (наприклад, <code>em</code> замість <code>i</code>), а також про списки визначень і багато іншого."
+        ]
+      },
+      "lecture-working-with-text-and-time-semantic-elements": {
+        "title": "Робота з семантичними елементами тексту і часу",
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь про важливість семантики у передачі значення тексту і часу, що включає елементи <code>time</code>, <code>blockquote</code> тощо."
+        ]
+      },
+      "lecture-working-with-specialized-semantic-elements": {
+        "title": "Робота зі спеціальними семантичними елементами",
+        "intro": [
+          "У цих відеолекціях ви ознайомитесь зі спеціальними семантичними елементами, зокрема з <code>u</code>, <code>s</code>, <code>code</code> і багатьма іншими."
         ]
       },
       "workshop-blog-page": {
@@ -3852,9 +3870,12 @@
           "У цьому практичному занятті ви продовжите знайомство з хуком <code>useEffect()</code>, створивши застосунок, який отримує дані з API на основі введених даних і динамічно показує результат."
         ]
       },
-      "vjgg": {
-        "title": "272",
-        "intro": []
+      "lab-one-time-password-generator": {
+        "title": "Створіть генератор одноразових паролів",
+        "intro": [
+          "У цій лабораторній роботі ви створите генератор одноразових паролів.",
+          "Ви застосуєте хуки useEffect на практиці, щоб створити таймер і згенерувати одноразовий пароль."
+        ]
       },
       "review-react-state-and-hooks": {
         "title": "Повторення станів та хуків у React",
@@ -3960,6 +3981,12 @@
         "title": "Робота з бібліотеками та фреймворками CSS",
         "intro": [
           "У цих відеолекціях ви дізнаєтесь, як працювати з бібліотеками та фреймворками CSS."
+        ]
+      },
+      "workshop-error-message-component": {
+        "title": "Створіть компонент ErrorMessage",
+        "intro": [
+          "У цьому практичному занятті ви ознайомитесь з основами Tailwind CSS, створивши компонент ErrorMessage."
         ]
       },
       "review-css-libraries-and-frameworks": {
@@ -4076,13 +4103,17 @@
           "У цих відеолекціях ви дізнаєтесь про цикли та послідовності."
         ]
       },
-      "workshop-placeholder-loops-and-sequences": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-pin-extractor": {
+        "title": "Build a Pin Extractor",
+        "intro": [
+          "In this workshop you will build a function to extract secret pins hidden in poems."
+        ]
       },
       "lab-number-pattern-generator": {
-        "title": "Build a Number Pattern Generator",
-        "intro": ["In this lab you will build a number pattern generator."]
+        "title": "Створіть генератор числових патернів",
+        "intro": [
+          "У цій лабораторній роботі ви створите генератор числових патернів."
+        ]
       },
       "review-loops-and-sequences": {
         "title": "Повторення циклів та послідовностей",
@@ -4234,10 +4265,10 @@
         "intro": [""]
       },
       "lab-hash-table": {
-        "title": "Build a Hash Table",
+        "title": "Створіть хеш-таблицю",
         "intro": [
-          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
-          "In this lab, you will use your knowledge about data structures to build a hash table."
+          "Хеш-таблиця — це структура даних, яку використовують для зберігання пар ключ-значення і оптимізовують для швидкого пошуку.",
+          "У цій лабораторній роботі ви застосуєте знання про структури даних, щоб створити хеш-таблицю."
         ]
       },
       "review-data-structures": {
@@ -4258,8 +4289,11 @@
         ]
       },
       "workshop-binary-search": {
-        "title": "Створіть бінарний пошук",
-        "intro": [""]
+        "title": "Імплементуйте алгоритм бінарного пошуку",
+        "intro": [
+          "Алгоритм бінарного пошуку — це алгоритм пошуку, який використовують для пошуку конкретного елемента у відсортованому списку.",
+          "У цьому практичному занятті ви імплементуєте алгоритм бінарного пошуку і повернете шлях до потрібного елемента або рядок 'Value not found'."
+        ]
       },
       "lab-bisection-method": {
         "title": "Створіть метод бісекції",
@@ -4621,16 +4655,16 @@
     }
   },
   "dev-playground": {
-    "title": "Dev Playground",
-    "intro": ["Playground for creating and testing challenges"],
+    "title": "Ігровий майданчик",
+    "intro": ["Ігровий майданчик для створення і тестування завдань"],
     "blocks": {
       "daily-coding-challenges-javascript": {
-        "title": "Daily Coding Challenges JavaScript",
-        "intro": ["Place to create JavaScript daily coding challenges."]
+        "title": "Щоденні завдання з JavaScript",
+        "intro": ["Місце для створення щоденних завдань з JavaScript."]
       },
       "daily-coding-challenges-python": {
-        "title": "Daily Coding Challenges Python",
-        "intro": ["Place to create Python daily coding challenges."]
+        "title": "Щоденні завдання з Python",
+        "intro": ["Місце для створення щоденних завдань з Python."]
       }
     }
   },

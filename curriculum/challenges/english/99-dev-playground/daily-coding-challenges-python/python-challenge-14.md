@@ -93,7 +93,7 @@ TestCase().assertEqual(battle("Mr. Smith", "Dr. Jones"), "It was a tie")`)
 ## --seed-contents--
 
 ```py
-def battle(my_army, oppoising_army):
+def battle(my_army, opposing_army):
 
     return my_army
 ```

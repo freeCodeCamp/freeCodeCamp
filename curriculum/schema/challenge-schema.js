@@ -159,7 +159,7 @@ const schema = Joi.object()
       otherwise: Joi.optional()
     }),
     certification: Joi.string().regex(slugWithSlashRE),
-    challengeType: Joi.number().min(0).max(29).required(),
+    challengeType: Joi.number().min(0).max(30).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -302,7 +302,9 @@ const schema = Joi.object()
     superOrder: Joi.number(),
     suborder: Joi.number(),
     hooks: Joi.object().keys({
-      beforeAll: Joi.string().allow('')
+      beforeAll: Joi.string().allow(''),
+      beforeEach: Joi.string().allow(''),
+      afterEach: Joi.string().allow('')
     }),
     tests: Joi.array()
       .items(

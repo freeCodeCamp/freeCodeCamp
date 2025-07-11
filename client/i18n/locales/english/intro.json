@@ -2178,6 +2178,24 @@
           "In these lecture videos, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
         ]
       },
+      "lecture-understanding-nuanced-semantic-elements": {
+        "title": "Understanding Nuanced Semantic Elements",
+        "intro": [
+          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+        ]
+      },
+      "lecture-working-with-text-and-time-semantic-elements": {
+        "title": "Working with Text and Time Semantic Elements ",
+        "intro": [
+          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+        ]
+      },
+      "lecture-working-with-specialized-semantic-elements": {
+        "title": "Working with Specialized Semantic Elements",
+        "intro": [
+          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+        ]
+      },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
@@ -3861,7 +3879,13 @@
           "In this workshop, you will continue to learn about the <code>useEffect()</code> hook by building an application that fetches fruit data from an API based on user input and displays the results dynamically."
         ]
       },
-      "vjgg": { "title": "272", "intro": [] },
+      "lab-one-time-password-generator": {
+        "title": "Build a One-Time Password Generator",
+        "intro": [
+          "In this lab you'll build a one-time password generator.",
+          "You'll practice using the useEffect hooks to create a timer and generate a random OTP."
+        ]
+      },
       "review-react-state-and-hooks": {
         "title": "React State and Hooks Review",
         "intro": [
@@ -3970,6 +3994,19 @@
           "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
         ]
       },
+      "workshop-error-message-component": {
+        "title": "Build an Error Message Component",
+        "intro": [
+          "In this workshop, you will learn the basics of Tailwind CSS by building out an error message component."
+        ]
+      },
+      "lab-music-shopping-cart-page": {
+        "title": "Build a Music Shopping Cart Page",
+        "intro": [
+          "In this lab, you will build a music shopping cart page with Tailwind CSS.",
+          "You will practice working with Tailwind CSS utility classes for flexbox layouts, colors, breakpoints and more."
+        ]
+      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -4067,9 +4104,11 @@
           "Learn about Working with Loops and Sequences in these lectures."
         ]
       },
-      "workshop-placeholder-loops-and-sequences": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-pin-extractor": {
+        "title": "Build a Pin Extractor",
+        "intro": [
+          "In this workshop you will build a function to extract secret pins hidden in poems."
+        ]
       },
       "lab-number-pattern-generator": {
         "title": "Build a Number Pattern Generator",
@@ -4091,12 +4130,12 @@
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Working with Dictionaries and Sets",
         "intro": [
-          "Learn about Working with Dictionaries and Sets in these lectures."
+          "Learn about working with dictionaries and sets in these lectures."
         ]
       },
       "lecture-working-with-modules": {
         "title": "Working with Modules",
-        "intro": ["Learn about Working with Modules in these lectures."]
+        "intro": ["Learn about working with modules in these lectures."]
       },
       "workshop-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
@@ -4110,7 +4149,7 @@
         "title": "Dictionaries and Sets review",
         "intro": [
           "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
-          "[Add more details]"
+          "Open up this page to review concepts around dictionaries, sets, and how to import modules."
         ]
       },
       "quiz-dictionaries-and-sets": {
