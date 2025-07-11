@@ -1280,12 +1280,8 @@
             {
               "dashedName": "lecture-understanding-object-oriented-programming-and-encapsulation"
             },
-            {
-              "dashedName": "workshop-placeholder-oop-1"
-            },
-            {
-              "dashedName": "lab-placeholder-oop-1"
-            },
+            { "dashedName": "workshop-placeholder-oop-1" },
+            { "dashedName": "lab-placeholder-oop-1" },
             {
               "dashedName": "lecture-understanding-inheritance-and-polymorphism"
             },
