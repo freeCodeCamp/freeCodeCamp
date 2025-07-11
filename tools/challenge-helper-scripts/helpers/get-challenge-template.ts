@@ -330,6 +330,19 @@ Watch the video.
 \`\`\`
 `;
 
+const getGenericChallengeTemplate = (
+  options: ChallengeOptions
+): string => `${buildFrontMatter(options)}
+
+# --description--
+
+Generic challenge description.
+
+# --assignment--
+
+Do the assignment.
+`;
+
 type Template = (opts: ChallengeOptions) => string;
 
 export const getTemplate = (challengeType: string): Template => {
@@ -375,5 +388,7 @@ const challengeTypeToTemplate: {
   19: getMultipleChoiceChallengeTemplate,
   20: null,
   21: getDialogueChallengeTemplate,
-  22: getFillInTheBlankChallengeTemplate
+  22: getFillInTheBlankChallengeTemplate,
+  23: null,
+  24: getGenericChallengeTemplate
 };
