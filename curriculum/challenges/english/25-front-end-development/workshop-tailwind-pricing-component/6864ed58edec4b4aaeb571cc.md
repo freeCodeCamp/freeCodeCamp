@@ -68,7 +68,7 @@ assert.isTrue(listenerPlanInnerDiv.classList.contains("gap-y-2"))
             </ul>
           </div>
 --fcc-editable-region--
-          <a>Start listening</a>
+          <a href="#">Start listening</a>
         </div>
         <div>
           <div>Most Popular</div>
@@ -85,7 +85,7 @@ assert.isTrue(listenerPlanInnerDiv.classList.contains("gap-y-2"))
               <li><span>&#10003;</span>Unlimited skips</li>
             </ul>
           </div>
-          <a>Go Premium</a>
+          <a href="#">Go Premium</a>
         </div>
         <div>
           <div>
@@ -110,7 +110,7 @@ assert.isTrue(listenerPlanInnerDiv.classList.contains("gap-y-2"))
               </li>
             </ul>
           </div>
-          <a>Start Family Plan</a>
+          <a href="#">Start Family Plan</a>
         </div>
       </div>
     </main>
