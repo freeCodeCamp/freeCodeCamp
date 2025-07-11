@@ -713,7 +713,13 @@
           "dashedName": "review-javascript-fundamentals",
           "blocks": [
             {
-              "dashedName": "lecture-understanding-core-javascript-fundamentals"
+              "dashedName": "lecture-working-with-types-and-objects"
+            },
+            {
+              "dashedName": "lecture-working-with-arrays-variables-and-naming-practices"
+            },
+            {
+              "dashedName": "lecture-working-with-code-quality-and-execution-contepts"
             },
             {
               "dashedName": "lab-slice-and-splice"

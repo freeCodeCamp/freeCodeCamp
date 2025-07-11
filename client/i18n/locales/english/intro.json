@@ -3244,10 +3244,22 @@
         "title": "JavaScript Loops Quiz",
         "intro": ["Test your knowledge of JavaScript loops with this quiz."]
       },
-      "lecture-understanding-core-javascript-fundamentals": {
-        "title": "Understanding Core JavaScript Fundamentals",
+      "lecture-working-with-types-and-objects": {
+        "title": "Working with Types and Objects",
         "intro": [
-          "In these lecture videos, you will learn more about the core JavaScript fundamentals. You will learn how a string object differs from a primitive string, the <code>toString()</code> method, conventions and common practices for naming variables, linters and formatters, closures, and much more."
+          "In these lectures you will learn about string objects, the <code>toString()</code> method, the <code>Number</code> constructor and more."
+        ]
+      },
+      "lecture-working-with-arrays-variables-and-naming-practices": {
+        "title": "Working with Arrays, Variables, and Naming Practices",
+        "intro": [
+          "In these lectures yiou will learn about common practices for naming variables and functions, and how to work with arrays."
+        ]
+      },
+      "lecture-working-with-code-quality-and-execution-concepts": {
+        "title": "Working with Code Quality and Execution Concepts",
+        "intro": [
+          "In these lectures you will learn what are linters and formatters, what is memory management, and closures."
         ]
       },
       "lab-slice-and-splice": {
