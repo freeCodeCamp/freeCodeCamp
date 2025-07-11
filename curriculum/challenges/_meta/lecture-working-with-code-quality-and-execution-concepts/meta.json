@@ -5,6 +5,7 @@
   "dashedName": "lecture-working-with-code-quality-and-execution-concepts",
   "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
+  "isUpcomingChange": false,
   "challengeOrder": [
     {
       "id": "6732c6c72d3738614e1230a2",
