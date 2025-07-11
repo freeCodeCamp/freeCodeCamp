@@ -38,6 +38,7 @@
     "news": "News",
     "donate": "Spenden",
     "supporters": "Supporters",
+    "exam-app": "Exam App",
     "go-to-supporters": "Go to Supporters Page",
     "update-settings": "Meine Kontoeinstellungen ändern",
     "sign-me-out": "Von freeCodeCamp abmelden",
@@ -114,7 +115,9 @@
     "closed-caption": "Closed caption",
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
-    "share-on-threads": "Share on Threads"
+    "share-on-threads": "Share on Threads",
+    "play-scene": "Press Play",
+    "download-latest-version": "Download the Latest Version"
   },
   "landing": {
     "big-heading-1": "Lerne zu programmieren — kostenlos.",
@@ -344,6 +347,14 @@
       "p6": "In den Fällen, in denen wir eindeutige Plagiate entdecken, ersetzen wir die Bescheinigung der betreffenden Person mit der Meldung \"Nach Überprüfung wurde dieses Konto wegen akademischer Unehrlichkeit markiert.\"",
       "p7": "Als akademische Institution, die leistungsbasierte Zertifizierungen vergibt, nehmen wir akademische Ehrlichkeit sehr ernst. Wenn du Fragen zu dieser Richtlinie hast oder vermutest, dass jemand dagegen verstoßen hat, kannst du eine E-Mail an <0>{{email}}</0> schicken und wir werden das untersuchen."
     }
+  },
+  "exam": {
+    "download-header": "Download the freeCodeCamp Exam Environment App",
+    "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
+    "version": "The latest version of our app is: {{version}}.",
+    "download-details": "Manually download the app",
+    "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
   },
   "profile": {
     "you-change-privacy": "Du musst deine Privatsphäre-Einstellung ändern, damit dein Portfolio von anderen gesehen wird. Dies ist eine Vorschau wie dein Portfolio aussehen wird, wenn es veröffentlicht wird.",

@@ -38,6 +38,7 @@
     "news": "Noticias",
     "donate": "Donar",
     "supporters": "Colaboradores",
+    "exam-app": "Exam App",
     "go-to-supporters": "Ir a la Página para Colaboradores",
     "update-settings": "Actualizar los ajustes de mi cuenta",
     "sign-me-out": "Cerrar sesión en freeCodeCamp",
@@ -114,7 +115,9 @@
     "closed-caption": "Subtítulos cerrados",
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
-    "share-on-threads": "Share on Threads"
+    "share-on-threads": "Share on Threads",
+    "play-scene": "Press Play",
+    "download-latest-version": "Download the Latest Version"
   },
   "landing": {
     "big-heading-1": "Aprende a programar gratis.",
@@ -344,6 +347,14 @@
       "p6": "En las situaciones en las que descubramos casos de plagio inequívoco, reemplazaremos la certificación de la persona en cuestión con un mensaje que indique \"Tras la revisión, esta cuenta ha sido marcada por deshonestidad académica.\"",
       "p7": "Como una institución académica que otorga certificaciones basadas en los logros, nos tomamos muy en serio la honestidad académica. Si tienes alguna pregunta sobre esta política o sospechas que alguien la ha violado, puedes enviar un correo electrónico a <0>{{email}}</0> e investigaremos."
     }
+  },
+  "exam": {
+    "download-header": "Download the freeCodeCamp Exam Environment App",
+    "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
+    "version": "The latest version of our app is: {{version}}.",
+    "download-details": "Manually download the app",
+    "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
   },
   "profile": {
     "you-change-privacy": "Debes cambiar tus ajustes de privacidad para que otros puedan ver tu portafolio. Esta es una vista previa de cómo se verá tu portafolio cuando se haga público.",

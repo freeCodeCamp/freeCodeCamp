@@ -20,6 +20,7 @@ import type {
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
+  Hooks,
   ResizeProps,
   SavedChallenge,
   SavedChallengeFiles,
@@ -110,7 +111,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;
-  initHooks: (hooks?: { beforeAll: string }) => void;
+  initHooks: (hooks?: Hooks) => void;
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
   output: string;
@@ -579,6 +580,8 @@ export const query = graphql`
         forumTopicId
         hooks {
           beforeAll
+          beforeEach
+          afterEach
         }
         fields {
           blockName

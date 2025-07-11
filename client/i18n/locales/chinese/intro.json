@@ -3979,6 +3979,12 @@
           "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
         ]
       },
+      "workshop-error-message-component": {
+        "title": "Build an Error Message Component",
+        "intro": [
+          "In this workshop, you will learn the basics of Tailwind CSS by building out an error message component."
+        ]
+      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -4097,9 +4103,11 @@
           "Learn about Working with Loops and Sequences in these lectures."
         ]
       },
-      "workshop-placeholder-loops-and-sequences": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-pin-extractor": {
+        "title": "Build a Pin Extractor",
+        "intro": [
+          "In this workshop you will build a function to extract secret pins hidden in poems."
+        ]
       },
       "lab-number-pattern-generator": {
         "title": "Build a Number Pattern Generator",
