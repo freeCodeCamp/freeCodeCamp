@@ -263,6 +263,38 @@
     {
       "source": "/learn/full-stack-developer/lecture-importance-of-semantic-html/what-are-the-u-s-and-ruby-elements-used-for",
       "destination": "/learn/full-stack-developer/lecture-working-with-specialized-semantic-elements/what-are-the-u-s-and-ruby-elements-used-for"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-is-a-string-object-and-how-does-it-differ-from-string-primitive",
+      "destination": "/learn/full-stack-developer/lecture-working-with-types-and-objects/what-is-a-string-object-and-how-does-it-differ-from-string-primitive"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-is-the-tostring-method-and-how-does-it-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-types-and-objects/what-is-the-tostring-method-and-how-does-it-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-is-the-number-constructor-and-how-does-it-work-for-type-coercion",
+      "destination": "/learn/full-stack-developer/lecture-working-with-types-and-objects/what-is-the-number-constructor-and-how-does-it-work-for-type-coercion"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-are-some-common-practices-for-naming-variables-and-functions",
+      "destination": "/learn/full-stack-developer/lecture-working-with-arrays-variables-and-naming-practices/what-are-some-common-practices-for-naming-variables-and-functions"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/how-do-you-get-the-length-for-an-array-and-how-can-you-create-an-empty-array-of-fixed-length",
+      "destination": "/learn/full-stack-developer/lecture-working-with-arrays-variables-and-naming-practices/how-do-you-get-the-length-for-an-array-and-how-can-you-create-an-empty-array-of-fixed-length"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-are-linters-and-formatters-and-how-can-they-help-you-with-code-consistency",
+      "destination": "/learn/full-stack-developer/lecture-working-with-code-quality-and-execution-concepts/what-are-linters-and-formatters-and-how-can-they-help-you-with-code-consistency"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-is-memory-management-and-how-does-it-work-in-javascript",
+      "destination": "/learn/full-stack-developer/lecture-working-with-code-quality-and-execution-concepts/what-is-memory-management-and-how-does-it-work-in-javascript"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-are-closures-and-how-do-they-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-code-quality-and-execution-concepts/what-are-closures-and-how-do-they-work"
     }
   ]
 }
