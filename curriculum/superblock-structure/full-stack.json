@@ -1326,7 +1326,7 @@
           "blocks": [
             { "dashedName": "lecture-understanding-graphs-and-trees" },
             { "dashedName": "workshop-shortest-path-algorithm" },
-            { "dashedName": "lab-adjacency-list-matrix-converter" },
+            { "dashedName": "lab-adjacency-list-to-matrix-converter" },
             { "dashedName": "workshop-breadth-first-search" },
             { "dashedName": "lab-depth-first-search" },
             { "dashedName": "review-graphs-and-trees" },

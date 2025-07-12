@@ -4346,9 +4346,11 @@
         "title": "Build a Shortest Path Algorithm",
         "intro": [""]
       },
-      "lab-adjacency-list-matrix-converter": {
-        "title": "Build an Adjacency List/Matrix Converter",
-        "intro": [""]
+      "lab-adjacency-list-to-matrix-converter": {
+        "title": "Build an Adjacency List to Matrix Converter",
+        "intro": [
+          "In this lab you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
       },
       "workshop-breadth-first-search": {
         "title": "Build a Breadth First Search",
