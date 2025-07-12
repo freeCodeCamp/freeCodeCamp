@@ -1,0 +1,189 @@
+{
+  "name": "Build a Medical Data Validator",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-medical-data-validator",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "683ecb010f4c6bafd428802c",
+      "title": "Step 1"
+    },
+    {
+      "id": "6842aee5bcaf4ab8883f8191",
+      "title": "Step 2"
+    },
+    {
+      "id": "6842d5b537c64266420faf62",
+      "title": "Step 3"
+    },
+    {
+      "id": "6842d659a4ae7973dabab3b0",
+      "title": "Step 4"
+    },
+    {
+      "id": "6842ba0086201089ea268c92",
+      "title": "Step 5"
+    },
+    {
+      "id": "6842c3eee327042f1da17b89",
+      "title": "Step 6"
+    },
+    {
+      "id": "6842ff2b3c45aa4a89785ecb",
+      "title": "Step 7"
+    },
+    {
+      "id": "6846a1f2805ac73ce671a5d8",
+      "title": "Step 8"
+    },
+    {
+      "id": "6849311be42a0431b8e59109",
+      "title": "Step 9"
+    },
+    {
+      "id": "6846d5b4d1ca2de562d6629c",
+      "title": "Step 10"
+    },
+    {
+      "id": "6849a0d59a98011bb2e46d12",
+      "title": "Step 11"
+    },
+    {
+      "id": "6846a33f665a435203da0ad7",
+      "title": "Step 12"
+    },
+    {
+      "id": "6846a82852dae0bba941a9a1",
+      "title": "Step 13"
+    },
+    {
+      "id": "6846a902bd25bdcdf6bba268",
+      "title": "Step 14"
+    },
+    {
+      "id": "6846a9d1f115c1de0d357778",
+      "title": "Step 15"
+    },
+    {
+      "id": "6846ab64c43448fcc72b3e9e",
+      "title": "Step 16"
+    },
+    {
+      "id": "6846ac424529900e7327d326",
+      "title": "Step 17"
+    },
+    {
+      "id": "6846b0048f71fc4efd786b42",
+      "title": "Step 18"
+    },
+    {
+      "id": "6846ba7ef391f007fcc37688",
+      "title": "Step 19"
+    },
+    {
+      "id": "6846d5043cc341d7fee2412e",
+      "title": "Step 20"
+    },
+    {
+      "id": "6846e3e61271e1f164636b13",
+      "title": "Step 21"
+    },
+    {
+      "id": "684ed67f4c678896445f973f",
+      "title": "Step 22"
+    },
+    {
+      "id": "6846e4482d1a78f9cfd25eed",
+      "title": "Step 23"
+    },
+    {
+      "id": "6846e87cfa1500452def10c0",
+      "title": "Step 24"
+    },
+    {
+      "id": "6846ee2d4d66bda7e22362ab",
+      "title": "Step 25"
+    },
+    {
+      "id": "684fd85424ffdb2edff3afd1",
+      "title": "Step 26"
+    },
+    {
+      "id": "684fdb4386b473631d8e27ca",
+      "title": "Step 27"
+    },
+    {
+      "id": "684fde383e4b1298310927b9",
+      "title": "Step 28"
+    },
+    {
+      "id": "684fe1be09b05ad785832546",
+      "title": "Step 29"
+    },
+    {
+      "id": "685081f42afaba3a60bdf94f",
+      "title": "Step 30"
+    },
+    {
+      "id": "6851051b0da0e34840f3919f",
+      "title": "Step 31"
+    },
+    {
+      "id": "685106fab1f801691d8f58a0",
+      "title": "Step 32"
+    },
+    {
+      "id": "685118ddcad14fa5d62faaef",
+      "title": "Step 33"
+    },
+    {
+      "id": "68511abf14415dc7c27fbea7",
+      "title": "Step 34"
+    },
+    {
+      "id": "68511bdce9282edbef75ca48",
+      "title": "Step 35"
+    },
+    {
+      "id": "68516ab0ba81759b1ff864e3",
+      "title": "Step 36"
+    },
+    {
+      "id": "68516d0c0cb162c7578616ad",
+      "title": "Step 37"
+    },
+    {
+      "id": "68516e3c627b43de8c138ea9",
+      "title": "Step 38"
+    },
+    {
+      "id": "6851719eee78621daa093a00",
+      "title": "Step 39"
+    },
+    {
+      "id": "68517af94b02d6cc2bc08280",
+      "title": "Step 40"
+    },
+    {
+      "id": "68529393dcd6a5c80de570fc",
+      "title": "Step 41"
+    },
+    {
+      "id": "685294b4a1ccb3de0e40410c",
+      "title": "Step 42"
+    },
+    {
+      "id": "6852c7f62711efe79f8a4219",
+      "title": "Step 43"
+    },
+    {
+      "id": "68529fb26c581f13e901de3a",
+      "title": "Step 44"
+    }
+  ],
+  "helpCategory": "Python"
+}
