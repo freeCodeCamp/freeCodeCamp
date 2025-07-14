@@ -1068,6 +1068,9 @@ const duplicatedProjectIds = [
   // Reverse a string
   'a202eed8fc186c8434cb6d61',
 
+  // Profile lookup
+  '5688e62ea601b2482ff8422b',
+
   // Local Storage ToDo App
 
   '64e4e4c4ec263b62ae7bf54d',

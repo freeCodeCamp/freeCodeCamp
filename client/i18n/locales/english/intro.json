@@ -2888,6 +2888,12 @@
           "In this project, you'll build a product landing page to market a product of your choice."
         ]
       },
+      "lab-profile-lookup": {
+        "title": "Build a Profile Lookup",
+        "intro": [
+          "In this lab, you'll create a function that looks up profile information"
+        ]
+      },
       "review-css-grid": {
         "title": "CSS Grid Review",
         "intro": [
