@@ -3250,6 +3250,12 @@
           "In these lecture videos, you will learn more about the core JavaScript fundamentals. You will learn how a string object differs from a primitive string, the <code>toString()</code> method, conventions and common practices for naming variables, linters and formatters, closures, and much more."
         ]
       },
+      "lab-first-element-finder": {
+        "title": "Build a First Element Finder",
+        "intro": [
+          "In this lab, you will create a function that looks through an array and returns the first element in it that passes a 'truth test'."
+        ]
+      },
       "lab-slice-and-splice": {
         "title": "Implement the Slice and Splice Algorithm",
         "intro": [

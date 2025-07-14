@@ -1065,6 +1065,9 @@ const duplicatedProjectIds = [
   // Truncate a string
   'ac6993d51946422351508a41',
 
+  // Finders Keepers
+  'a6e40f1041b06c996f7b2406',
+
   // Local Storage ToDo App
 
   '64e4e4c4ec263b62ae7bf54d',
