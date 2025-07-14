@@ -1068,6 +1068,9 @@ const duplicatedProjectIds = [
   // Reverse a string
   'a202eed8fc186c8434cb6d61',
 
+  // Convert Celsius to Fahrenheit
+  '56533eb9ac21ba0edf2244b3',
+
   // Local Storage ToDo App
 
   '64e4e4c4ec263b62ae7bf54d',

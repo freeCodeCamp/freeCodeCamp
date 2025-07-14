@@ -3113,6 +3113,12 @@
           "You will learn more about <code>if</code> statements, and how to use comparison operators and multiple conditions in an <code>if</code> statement."
         ]
       },
+      "lab-celsius-to-fahrenheit-converter": {
+        "title": "Convert Celsius to Fahrenheit",
+        "intro": [
+          "In this lab you will implement a function that converts the temperature from Celsius to Fahrenheit."
+        ]
+      },
       "lab-leap-year-calculator": {
         "title": "Build a Leap Year Calculator ",
         "intro": [
