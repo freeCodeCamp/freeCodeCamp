@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import { escape } from 'lodash-es';
+import { escape, isEmpty } from 'lodash-es';
 import { channel } from 'redux-saga';
 import {
   call,
@@ -185,6 +185,7 @@ function* buildChallengeData(challengeData, options) {
 }
 
 function* executeTests(testRunner, tests, testTimeout = 5000) {
+  console.log('executeTests', tests);
   const testStrings = tests.map(test => test.testString);
   const rawResults = yield call(testRunner, testStrings, testTimeout);
 
@@ -196,6 +197,8 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
     const firstTest = i === 0;
     try {
       const { pass, err, logs = [] } = rawResults[i] || {};
+
+      console.log('logs', logs);
 
       const logString = logs.map(log => log.msg).join('\n');
       if (firstTest && logString) {
@@ -299,11 +302,13 @@ export function* previewChallengeSaga(action) {
         }
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = yield call(getTestRunner, buildData);
-        // without a testString the testRunner just evaluates the user's code
-        const out = yield call(runUserCode, null, previewTimeout);
 
-        if (out) {
-          const logs = out.logs?.filter(
+        // Without an empty testString the testRunner just evaluates the user's
+        // code allowing us to get the console logs.
+        const results = yield call(runUserCode, [''], previewTimeout);
+
+        if (!isEmpty(results)) {
+          const logs = results[0].logs?.filter(
             log => !LOGS_TO_IGNORE.some(msg => log.msg === msg)
           );
           yield put(updateConsole(logs?.map(log => log.msg).join('\n')));
