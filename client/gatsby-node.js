@@ -300,6 +300,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       challengeFiles: [FileContents]
       chapter: String
       explanation: String
+      hooks: Hooks
       notes: String
       url: String
       assignments: [String]
@@ -378,6 +379,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       text: String
       distractors: [String]
       answer: String
+    }
+    type Hooks {
+      beforeEach: String
+      afterEach: String
+      beforeAll: String
     }
   `;
   createTypes(typeDefs);

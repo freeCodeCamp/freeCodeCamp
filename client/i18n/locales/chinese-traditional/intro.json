@@ -3979,6 +3979,19 @@
           "In these lecture videos, you will learn how to work with CSS libraries and frameworks."
         ]
       },
+      "workshop-error-message-component": {
+        "title": "Build an Error Message Component",
+        "intro": [
+          "In this workshop, you will learn the basics of Tailwind CSS by building out an error message component."
+        ]
+      },
+      "lab-music-shopping-cart-page": {
+        "title": "Build a Music Shopping Cart Page",
+        "intro": [
+          "In this lab, you will build a music shopping cart page with Tailwind CSS.",
+          "You will practice working with Tailwind CSS utility classes for flexbox layouts, colors, breakpoints and more."
+        ]
+      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -4097,9 +4110,11 @@
           "Learn about Working with Loops and Sequences in these lectures."
         ]
       },
-      "workshop-placeholder-loops-and-sequences": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-pin-extractor": {
+        "title": "Build a Pin Extractor",
+        "intro": [
+          "In this workshop you will build a function to extract secret pins hidden in poems."
+        ]
       },
       "lab-number-pattern-generator": {
         "title": "Build a Number Pattern Generator",
@@ -4121,12 +4136,12 @@
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Working with Dictionaries and Sets",
         "intro": [
-          "Learn about Working with Dictionaries and Sets in these lectures."
+          "Learn about working with dictionaries and sets in these lectures."
         ]
       },
       "lecture-working-with-modules": {
         "title": "Working with Modules",
-        "intro": ["Learn about Working with Modules in these lectures."]
+        "intro": ["Learn about working with modules in these lectures."]
       },
       "workshop-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
@@ -4140,7 +4155,7 @@
         "title": "Dictionaries and Sets review",
         "intro": [
           "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
-          "[Add more details]"
+          "Open up this page to review concepts around dictionaries, sets, and how to import modules."
         ]
       },
       "quiz-dictionaries-and-sets": {
