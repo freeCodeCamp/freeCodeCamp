@@ -409,31 +409,28 @@ filteredArray[0].id = 4;
 
 #### --text--
 
-What would be the output of the following code?
+What will be the value of `shortWords` after the following code is run?
 
 ```js
-const multiply = (a) => (b) => a * b;
-const operations = [multiply(2), multiply(3)];
-const result = operations.reduce((acc, fn) => fn(acc), 5);
-
-console.log(result);
+const words = ['apple', 'banana', 'pear', 'kiwi'];
+const shortWords = words.filter(word => word.length <= 5);
 ```
 
 #### --distractors--
 
-`10`
+`[]`
 
 ---
 
-`100`
+`['pear', 'kiwi']`
 
 ---
 
-`20`
+`['apple', 'banana']`
 
 #### --answer--
 
-`30`
+`['apple', 'pear', 'kiwi']`
 
 ### --question--
 
