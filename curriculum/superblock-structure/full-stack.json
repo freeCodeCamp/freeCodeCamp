@@ -697,6 +697,9 @@
               "dashedName": "workshop-sentence-analyzer"
             },
             {
+              "dashedName": "lab-longest-word-in-a-string"
+            },
+            {
               "dashedName": "lab-factorial-calculator"
             },
             { "dashedName": "lab-mutations" },

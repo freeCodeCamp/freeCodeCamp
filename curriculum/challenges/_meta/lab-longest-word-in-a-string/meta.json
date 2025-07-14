@@ -1,0 +1,11 @@
+{
+  "name": "Build a Longest Word Finder App",
+  "isUpcomingChange": false,
+  "dashedName": "lab-longest-word-in-a-string",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [{ "id": "a26cbbe9ad8655a977e1ceb5", "title": "Build a Longest Word Finder App" }],
+  "usesMultifileEditor": true,
+  "blockType": "lab",
+  "blockLayout": "link"
+}
