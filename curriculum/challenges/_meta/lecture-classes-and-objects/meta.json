@@ -5,6 +5,15 @@
   "blockType": "lecture",
   "blockLayout": "challenge-list",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "68420bd261d0d35f61922d4b", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "68420bd261d0d35f61922d4b",
+      "title": "How Do Classes Work and How Do They Differ From Objects?"
+    },
+    {
+      "id": "6874b5fc38f90f25e18093ce",
+      "title": "What Are Methods and Attributes, and How Do They Work?"
+    }
+  ],
   "helpCategory": "Python"
 }
