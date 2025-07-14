@@ -13,6 +13,10 @@
     {
       "id": "6874b5fc38f90f25e18093ce",
       "title": "What Are Methods and Attributes, and How Do They Work?"
+    },
+    {
+      "id": "6874b7d3b286c538b39d0c25",
+      "title": "What Are Special Methods and What Are They Used For?"
     }
   ],
   "helpCategory": "Python"
