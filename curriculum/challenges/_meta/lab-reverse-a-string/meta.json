@@ -1,6 +1,6 @@
 {
   "name": "Build a String Inverter",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "blockType": "lab",
   "blockLayout": "link",
   "dashedName": "lab-reverse-a-string",
