@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a String Inverter
 
-In this lab, you will practice arrays by building a string inverter program.
+In this lab, you create a function that reverses a given string.
