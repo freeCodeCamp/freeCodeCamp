@@ -224,20 +224,24 @@
       "title": "Step 54"
     },
     {
-      "id": "6867caa0dbbeb93570ec0069",
+      "id": "68755a4d49de76991ec3763d",
       "title": "Step 55"
     },
     {
-      "id": "6867cb70e797d142df4b88e5",
+      "id": "6867caa0dbbeb93570ec0069",
       "title": "Step 56"
     },
     {
-      "id": "6867cbfbbb4a9f4bc73b01e6",
+      "id": "6867cb70e797d142df4b88e5",
       "title": "Step 57"
     },
     {
-      "id": "6867cca6236f87573044a39c",
+      "id": "6867cbfbbb4a9f4bc73b01e6",
       "title": "Step 58"
+    },
+    {
+      "id": "6867cca6236f87573044a39c",
+      "title": "Step 59"
     }
   ],
   "usesMultifileEditor": true,
