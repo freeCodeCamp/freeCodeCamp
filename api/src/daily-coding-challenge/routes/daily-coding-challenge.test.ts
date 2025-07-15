@@ -28,7 +28,6 @@ const yesterdaysChallenge = {
   date: yesterdayUtcMidnight,
   title: "Yesterday's Challenge",
   description: "Yesterday's Description",
-  instructions: "Yesterday's Instructions",
   javascript: {
     tests: [{ text: 'JS Test Yesterday', testString: 'jsTestYesterday()' }],
     challengeFiles: [{ contents: 'JS Files Yesterday', fileKey: 'scriptjs' }]
@@ -45,7 +44,6 @@ const todaysChallenge = {
   date: todayUtcMidnight,
   title: "Today's Challenge",
   description: "Today's Description",
-  instructions: "Today's Instructions",
   javascript: {
     tests: [{ text: 'JS Test Today', testString: 'jsTestToday()' }],
     challengeFiles: [{ contents: 'JS Files Today', fileKey: 'scriptjs' }]
@@ -62,7 +60,6 @@ const tomorrowsChallenge = {
   date: tomorrowUtcMidnight,
   title: "Tomorrow's Challenge",
   description: "Tomorrow's Description",
-  instructions: "Tomorrow's Instructions",
   javascript: {
     tests: [{ text: 'JS Test Tomorrow', testString: 'jsTestTomorrow()' }],
     challengeFiles: [{ contents: 'JS Files Tomorrow', fileKey: 'scriptjs' }]
