@@ -164,58 +164,58 @@ model user {
   isClassroomAccount             Boolean? // Undefined
 
   // Relations
-  examAttempts                      EnvExamAttempt[]
+  examAttempts                      ExamEnvironmentExamAttempt[]
   examEnvironmentAuthorizationToken ExamEnvironmentAuthorizationToken?
 }
 
 // -----------------------------------
 
 /// An exam for the Exam Environment App as designed by the examiners
-model EnvExam {
+model ExamEnvironmentExam {
   /// Globally unique exam id
-  id            String           @id @default(auto()) @map("_id") @db.ObjectId
+  id            String                       @id @default(auto()) @map("_id") @db.ObjectId
   /// All questions for a given exam
-  questionSets  EnvQuestionSet[]
+  questionSets  ExamEnvironmentQuestionSet[]
   /// Configuration for exam metadata
-  config        EnvConfig
+  config        ExamEnvironmentConfig
   /// ObjectIds for required challenges/blocks to take the exam
-  prerequisites String[]         @db.ObjectId
+  prerequisites String[]                     @db.ObjectId
   /// If `deprecated`, the exam should no longer be considered for users
   deprecated    Boolean
 
   // Relations
-  generatedExams EnvGeneratedExam[]
-  examAttempts   EnvExamAttempt[]
+  generatedExams ExamEnvironmentGeneratedExam[]
+  examAttempts   ExamEnvironmentExamAttempt[]
 }
 
 /// A grouping of one or more questions of a given type
-type EnvQuestionSet {
+type ExamEnvironmentQuestionSet {
   /// Unique question type id
-  id        String                      @db.ObjectId
-  type      EnvQuestionType
+  id        String                                  @db.ObjectId
+  type      ExamEnvironmentQuestionType
   /// Content related to all questions in set
   context   String?
-  questions EnvMultipleChoiceQuestion[]
+  questions ExamEnvironmentMultipleChoiceQuestion[]
 }
 
 /// A multiple choice question for the Exam Environment App
-type EnvMultipleChoiceQuestion {
+type ExamEnvironmentMultipleChoiceQuestion {
   /// Unique question id
-  id         String      @db.ObjectId
+  id         String                  @db.ObjectId
   /// Main question paragraph
   text       String
   /// Zero or more tags given to categorize a question
   tags       String[]
   /// Optional audio for a question
-  audio      EnvAudio?
+  audio      ExamEnvironmentAudio?
   /// Available possible answers for an exam
-  answers    EnvAnswer[]
+  answers    ExamEnvironmentAnswer[]
   /// TODO Possible "deprecated_time" to remove after all exams could possibly have been taken
   deprecated Boolean
 }
 
 /// Audio for an Exam Environment App multiple choice question
-type EnvAudio {
+type ExamEnvironmentAudio {
   /// Optional text for audio
   captions String?
   /// URL to audio file
@@ -226,7 +226,7 @@ type EnvAudio {
 }
 
 /// Type of question for the Exam Environment App
-enum EnvQuestionType {
+enum ExamEnvironmentQuestionType {
   /// Single question with one or more answers
   MultipleChoice
   /// Mass text
@@ -234,7 +234,7 @@ enum EnvQuestionType {
 }
 
 /// Answer for an Exam Environment App multiple choice question
-type EnvAnswer {
+type ExamEnvironmentAnswer {
   /// Unique answer id
   id        String  @db.ObjectId
   /// Whether the answer is correct
@@ -244,24 +244,26 @@ type EnvAnswer {
 }
 
 /// Configuration for an exam in the Exam Environment App
-type EnvConfig {
+type ExamEnvironmentConfig {
   /// Human-readable exam name
   name           String
   /// Notes given about exam
   note           String
   /// Category configuration for question selection
-  tags           EnvTagConfig[]
+  tags           ExamEnvironmentTagConfig[]
   /// Total time allocated for exam in milliseconds
   totalTimeInMS  Int
   /// Configuration for sets of questions
-  questionSets   EnvQuestionSetConfig[]
+  questionSets   ExamEnvironmentQuestionSetConfig[]
   /// Duration after exam completion before a retake is allowed in milliseconds
   retakeTimeInMS Int
+  /// Passing percent for the exam
+  passingPercent Float
 }
 
 /// Configuration for a set of questions in the Exam Environment App
-type EnvQuestionSetConfig {
-  type                     EnvQuestionType
+type ExamEnvironmentQuestionSetConfig {
+  type                     ExamEnvironmentQuestionType
   /// Number of this grouping of questions per exam
   numberOfSet              Int
   /// Number of multiple choice questions per grouping matching this set config
@@ -275,7 +277,7 @@ type EnvQuestionSetConfig {
 /// Configuration for tags in the Exam Environment App
 ///
 /// This configures the number of questions that should resolve to a given tag set criteria.
-type EnvTagConfig {
+type ExamEnvironmentTagConfig {
   /// Group of multiple choice question tags
   group             String[]
   /// Number of multiple choice questions per exam that should meet the group criteria
@@ -283,7 +285,7 @@ type EnvTagConfig {
 }
 
 /// An attempt at an exam in the Exam Environment App
-model EnvExamAttempt {
+model ExamEnvironmentExamAttempt {
   id              String @id @default(auto()) @map("_id") @db.ObjectId
   /// Foriegn key to user
   userId          String @db.ObjectId
@@ -292,23 +294,23 @@ model EnvExamAttempt {
   /// Foreign key to generated exam id
   generatedExamId String @db.ObjectId
 
-  questionSets  EnvQuestionSetAttempt[]
+  questionSets  ExamEnvironmentQuestionSetAttempt[]
   /// Time exam was started as milliseconds since epoch
   startTimeInMS Int
-  needsRetake   Boolean
 
   // Relations
-  user          user             @relation(fields: [userId], references: [id], onDelete: Cascade)
-  exam          EnvExam          @relation(fields: [examId], references: [id])
-  generatedExam EnvGeneratedExam @relation(fields: [generatedExamId], references: [id])
+  user                          user                            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exam                          ExamEnvironmentExam             @relation(fields: [examId], references: [id], onDelete: Cascade)
+  generatedExam                 ExamEnvironmentGeneratedExam    @relation(fields: [generatedExamId], references: [id])
+  ExamEnvironmentExamModeration ExamEnvironmentExamModeration[]
 }
 
-type EnvQuestionSetAttempt {
-  id        String                             @db.ObjectId
-  questions EnvMultipleChoiceQuestionAttempt[]
+type ExamEnvironmentQuestionSetAttempt {
+  id        String                                         @db.ObjectId
+  questions ExamEnvironmentMultipleChoiceQuestionAttempt[]
 }
 
-type EnvMultipleChoiceQuestionAttempt {
+type ExamEnvironmentMultipleChoiceQuestionAttempt {
   /// Foreign key to question
   id                 String   @db.ObjectId
   /// An array of foreign keys to answers
@@ -322,25 +324,25 @@ type EnvMultipleChoiceQuestionAttempt {
 /// A generated exam for the Exam Environment App
 ///
 /// This is the user-facing information for an exam.
-model EnvGeneratedExam {
-  id           String                    @id @default(auto()) @map("_id") @db.ObjectId
+model ExamEnvironmentGeneratedExam {
+  id           String                                @id @default(auto()) @map("_id") @db.ObjectId
   /// Foreign key to exam
-  examId       String                    @db.ObjectId
-  questionSets EnvGeneratedQuestionSet[]
+  examId       String                                @db.ObjectId
+  questionSets ExamEnvironmentGeneratedQuestionSet[]
   /// If `deprecated`, the generation should not longer be considered for users
   deprecated   Boolean
 
   // Relations
-  exam           EnvExam          @relation(fields: [examId], references: [id])
-  EnvExamAttempt EnvExamAttempt[]
+  exam           ExamEnvironmentExam          @relation(fields: [examId], references: [id], onDelete: Cascade)
+  EnvExamAttempt ExamEnvironmentExamAttempt[]
 }
 
-type EnvGeneratedQuestionSet {
-  id        String                               @db.ObjectId
-  questions EnvGeneratedMultipleChoiceQuestion[]
+type ExamEnvironmentGeneratedQuestionSet {
+  id        String                                           @db.ObjectId
+  questions ExamEnvironmentGeneratedMultipleChoiceQuestion[]
 }
 
-type EnvGeneratedMultipleChoiceQuestion {
+type ExamEnvironmentGeneratedMultipleChoiceQuestion {
   /// Foreign key to question id
   id      String   @db.ObjectId
   /// Each item is a foreign key to an answer
@@ -485,4 +487,35 @@ model Survey {
 type SurveyResponse {
   question String
   response String
+}
+
+// ----------------------
+
+model ExamEnvironmentExamModeration {
+  id             String                              @id @default(auto()) @map("_id") @db.ObjectId
+  /// Whether or not the item is approved
+  status         ExamEnvironmentExamModerationStatus
+  /// Foreign key to exam attempt
+  examAttemptId  String                              @unique @db.ObjectId
+  /// Optional feedback/note about the moderation decision
+  feedback       String?
+  /// Date the exam attempt was moderated
+  moderationDate DateTime?
+  /// Foreign key to moderator. This is `null` until the item is moderated.
+  moderatorId    String?                             @db.ObjectId
+
+  /// Date the exam attempt was added to the moderation queue
+  submissionDate DateTime @default(now()) @db.Date
+
+  // Relations
+  examAttempt ExamEnvironmentExamAttempt @relation(fields: [examAttemptId], references: [id], onDelete: Cascade)
+}
+
+enum ExamEnvironmentExamModerationStatus {
+  /// Attempt is determined to be valid
+  Approved
+  /// Attempt is determined to be invalid
+  Denied
+  /// Attempt has yet to be moderated
+  Pending
 }
