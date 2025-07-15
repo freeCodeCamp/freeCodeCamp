@@ -82,11 +82,14 @@ export function constructUserExam(
         return answer;
       });
 
+      // NOTE: Shuffling here means when saved attempt is re-fetched, answers will be in different order.
+      const shuffledAnswers = shuffleArray(answers);
+
       return {
         id: examQuestion.id,
         audio: examQuestion.audio,
         text: examQuestion.text,
-        answers
+        answers: shuffledAnswers
       };
     });
 
