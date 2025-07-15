@@ -546,6 +546,8 @@ describe('/exam-environment/', () => {
       });
 
       it('should return the user exam with the exam attempt', async () => {
+        // Mock Math.random for `shuffleArray` to be equivalent between `/generated-exam` and `constructUserExam`
+        jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
         const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
           examId: mock.examId
         };
@@ -576,12 +578,9 @@ describe('/exam-environment/', () => {
 
         const userExam = constructUserExam(generatedExam!, mock.exam);
 
-        expect(res).toMatchObject({
-          status: 200,
-          body: {
-            examAttempt,
-            exam: userExam
-          }
+        expect(res.body).toMatchObject({
+          examAttempt,
+          exam: userExam
         });
       });
     });

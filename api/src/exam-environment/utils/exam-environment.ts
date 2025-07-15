@@ -734,8 +734,9 @@ function getRandomAnswers(
  *
  * https://bost.ocks.org/mike/shuffle/
  */
-function shuffleArray<T>(array: Array<T>) {
-  let m = array.length;
+export function shuffleArray<T>(array: Array<T>) {
+  const arr = structuredClone(array);
+  let m = arr.length;
   let t;
   let i;
 
@@ -745,12 +746,12 @@ function shuffleArray<T>(array: Array<T>) {
     i = Math.floor(Math.random() * m--);
 
     // And swap it with the current element.
-    t = array[m]!;
-    array[m] = array[i]!;
-    array[i] = t;
+    t = arr[m]!;
+    arr[m] = arr[i]!;
+    arr[i] = t;
   }
 
-  return array;
+  return arr;
 }
 /* eslint-enable jsdoc/require-description-complete-sentence */
 

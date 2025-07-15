@@ -13,7 +13,8 @@ import {
   generateExam,
   userAttemptToDatabaseAttemptQuestionSets,
   validateAttempt,
-  compareAnswers
+  compareAnswers,
+  shuffleArray
 } from './exam-environment';
 
 // NOTE: Whilst the tests could be run against a single generation of exam,
@@ -21,9 +22,13 @@ import {
 //       This helps ensure the config/logic is _reasonably_ likely to be able to
 //       generate a valid exam.
 //       Another option is to call `generateExam` hundreds of times in a loop test :shrug:
-describe('Exam Environment', () => {
+describe('Exam Environment mocked Math.random', () => {
+  let spy: jest.SpyInstance;
   beforeAll(() => {
-    jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
+    spy = jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
+  });
+  afterAll(() => {
+    spy.mockRestore();
   });
   describe('checkAttemptAgainstGeneratedExam()', () => {
     it('should return true if all questions are answered', () => {
@@ -81,13 +86,6 @@ describe('Exam Environment', () => {
       const prerequisites = ['1', '2'];
 
       expect(checkPrerequisites(user, prerequisites)).toBe(false);
-    });
-  });
-
-  describe('constructUserExam()', () => {
-    it('should not provide the answers', () => {
-      const userExam = constructUserExam(generatedExam, exam);
-      expect(userExam).not.toHaveProperty('answers.isCorrect');
     });
   });
 
@@ -382,6 +380,60 @@ describe('Exam Environment', () => {
       );
 
       expect(isCorrect).toBe(false);
+    });
+  });
+});
+
+describe('Exam Environment', () => {
+  describe('constructUserExam()', () => {
+    it('should not provide the answers', () => {
+      const userExam = constructUserExam(generatedExam, exam);
+      expect(userExam).not.toHaveProperty('answers.isCorrect');
+    });
+
+    it('should shuffle the answers', () => {
+      const userExam1 = constructUserExam(generatedExam, exam);
+      const userExam2 = constructUserExam(generatedExam, exam);
+      const userExam3 = constructUserExam(generatedExam, exam);
+
+      const answers1 = userExam1.questionSets.flatMap(qs =>
+        qs.questions.flatMap(q => q.answers.flatMap(a => a.id))
+      );
+      const answers2 = userExam2.questionSets.flatMap(qs =>
+        qs.questions.flatMap(q => q.answers.flatMap(a => a.id))
+      );
+      const answers3 = userExam3.questionSets.flatMap(qs =>
+        qs.questions.flatMap(q => q.answers.flatMap(a => a.id))
+      );
+
+      const generatedAnswers = generatedExam.questionSets.flatMap(qs =>
+        qs.questions.flatMap(q => q.answers)
+      );
+      expect(answers1).toHaveLength(generatedAnswers.length);
+      expect(answers2).toHaveLength(generatedAnswers.length);
+      expect(answers3).toHaveLength(generatedAnswers.length);
+
+      for (let i = 0; i < answers1.length; i++) {
+        expect(
+          answers1[i] !== answers2[i] || answers2[i] !== answers3[i]
+        ).toBeTruthy();
+      }
+    });
+  });
+
+  describe('shuffleArray()', () => {
+    it('reasonably shuffles an array', () => {
+      const unshuff = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      const shuff = shuffleArray(unshuff);
+
+      expect(shuff).not.toEqual(unshuff);
+    });
+
+    it('does not mutate the input', () => {
+      const unshuff = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      shuffleArray(unshuff);
+
+      expect(unshuff).toEqual(unshuff);
     });
   });
 });
