@@ -497,7 +497,6 @@ model DailyCodingChallenges {
   date              DateTime
   title             String
   description       String
-  instructions      String?
   javascript        DailyCodingChallengeApiLanguage
   python            DailyCodingChallengeApiLanguage
 }
