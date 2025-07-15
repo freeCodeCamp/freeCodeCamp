@@ -30,11 +30,9 @@
     "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
     "@types/copy-webpack-plugin": "^8.0.1",
-    "@types/lodash-es": "4.17.12",
     "@typescript/vfs": "^1.6.0",
     "babel-loader": "8.3.0",
     "copy-webpack-plugin": "9.1.0",
-    "lodash-es": "4.17.21",
     "process": "0.11.10",
     "pyodide": "^0.23.3",
     "sass.js": "0.11.1",
@@ -44,8 +42,6 @@
   },
   "dependencies": {
     "@freecodecamp/curriculum-helpers": "^5.3.0",
-    "react": "16",
-    "react-dom": "16",
     "xterm": "^5.2.1"
   }
 }
