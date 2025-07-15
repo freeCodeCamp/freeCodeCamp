@@ -16,28 +16,25 @@ Given an integer from zero to 20, return the factorial of that number. The facto
 `factorial(0)` should return `1`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(factorial(0), 1)`)
-}})
 ```
 
 `factorial(5)` should return `120`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(factorial(5), 120)`)
-}})
 ```
 
 `factorial(20)` should return `2432902008176640000`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(factorial(20), 2432902008176640000)`)
-}})
 ```
 
 # --seed--

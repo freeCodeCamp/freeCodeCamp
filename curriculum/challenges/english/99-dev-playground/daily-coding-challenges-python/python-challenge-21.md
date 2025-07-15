@@ -25,37 +25,34 @@ Given a named CSS color string, generate a random hexadecimal (hex) color code t
 `generate_hex("yellow")` should return `"Invalid color"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(generate_hex("yellow"), "Invalid color")`);
-}})
 ```
 
 `generate_hex("red")` should return a six-character string.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(len(generate_hex("red")), 6)`);
-}})
 ```
 
 `generate_hex("red")` should return a valid six-character hex color code.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 
 hex = generate_hex("red").upper()
 is_valid_hex = len(hex) == 6 and all(c in "0123456789ABCDEF" for c in hex)
 TestCase().assertTrue(is_valid_hex)`)
-}})
 ```
 
 `generate_hex("red")` should return a valid hex color with a higher red value than other colors.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 
 hex = generate_hex("red").upper()
@@ -68,13 +65,12 @@ b = int(hex[4:], 16)
 
 TestCase().assertGreater(r, g)
 TestCase().assertGreater(r, b)`)
-}})
 ```
 
 Calling `generate_hex("red")` twice should return two different hex color values where red is dominant.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 
 hex1 = generate_hex("red").upper()
@@ -99,13 +95,12 @@ b2 = int(hex2[4:], 16)
 TestCase().assertGreater(r2, g2)
 TestCase().assertGreater(r2, b2)
 TestCase().assertNotEqual(hex1, hex2)`);
-}})
 ```
 
 Calling `generate_hex("green")` twice should return two different hex color values where green is dominant.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 
 hex1 = generate_hex("green").upper()
@@ -130,13 +125,12 @@ b2 = int(hex2[4:], 16)
 TestCase().assertGreater(g2, r2)
 TestCase().assertGreater(g2, b2)
 TestCase().assertNotEqual(hex1, hex2)`);
-}})
 ```
 
 Calling `generate_hex("blue")` twice should return two different hex color values where blue is dominant.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 
 hex1 = generate_hex("blue").upper()
@@ -161,7 +155,6 @@ b2 = int(hex2[4:], 16)
 TestCase().assertGreater(b2, r2)
 TestCase().assertGreater(b2, g2)
 TestCase().assertNotEqual(hex1, hex2)`);
-}})
 ```
 
 # --seed--

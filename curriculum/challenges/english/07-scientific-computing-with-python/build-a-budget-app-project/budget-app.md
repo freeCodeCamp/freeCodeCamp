@@ -84,9 +84,7 @@ Note: open the browser console with F12 to see a more verbose output of the test
 The `deposit` method should create a specific object in the ledger instance variable.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -115,16 +113,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 Calling the `deposit` method with no description should create a blank description.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -153,16 +147,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `withdraw` method should create a specific object in the `ledger` instance variable.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -192,16 +182,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 Calling the `withdraw` method with no description should create a blank description.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -231,16 +217,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `withdraw` method should return `True` if the withdrawal took place.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -268,16 +250,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 Calling `food.deposit(900, 'deposit')` and `food.withdraw(45.67, 'milk, cereal, eggs, bacon, bread')` should return a balance of `854.33`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -307,16 +285,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 Calling the `transfer` method on a category object should create a specific ledger item in that category object.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -349,16 +323,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `transfer` method should return `True` if the transfer took place. 
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -389,16 +359,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 Calling `transfer` on a category object should reduce the balance in the category object.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -431,16 +397,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `transfer` method should increase the balance of the category object passed as its argument.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -473,16 +435,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `transfer` method should create a specific ledger item in the category object passed as its argument.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -515,16 +473,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `check_funds` method should return `False` if the amount passed to the method is greater than the category balance.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -553,16 +507,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `check_funds` method should return `True` if the amount passed to the method is not greater than the category balance.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -591,16 +541,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `withdraw` method should return `False` if the withdrawal didn't take place.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -628,16 +574,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `transfer` method should return `False` if the transfer didn't take place.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -666,16 +608,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 Printing a `Category` instance should give a different string representation of the object.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -707,16 +645,12 @@ t.result.wasSuccessful()
 `
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 Title at the top of `create_spend_chart` chart should say `Percentage spent by category`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -746,16 +680,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `create_spend_chart` chart should have correct percentages down the left side.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -786,16 +716,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The height of each bar on the `create_spend_chart` chart should be rounded down to the nearest 10.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -863,16 +789,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 Each line in `create_spend_chart` chart should have the same length. Bars for different categories should be separated by two spaces, with additional two spaces after the final bar.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -916,16 +838,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `create_spend_chart` should correctly show horizontal line below the bars. Using three `-` characters for each category, and in total going two characters past the final bar.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -963,16 +881,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `create_spend_chart` chart should not have new line character at the end.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -1007,16 +921,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `create_spend_chart` chart should have each category name written vertically below the bar. Each line should have the same length, each category should be separated by two spaces, with additional two spaces after the final category.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -1059,16 +969,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `create_spend_chart` should print a different chart representation. Check that all spacing is exact. Open your browser console with F12 for more details.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/budget.py', code);
+pyodide.FS.writeFile('/home/pyodide/budget.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import budget
@@ -1104,8 +1010,6 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 # --seed--

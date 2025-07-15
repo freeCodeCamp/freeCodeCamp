@@ -25,73 +25,73 @@ Fulfill the user stories below and get all the tests to pass to complete the lab
 You should have a function named `quick_sort`.
 
 ```js
-({ test: () => runPython(`assert _Node(_code).has_function("quick_sort")`) })
+runPython(`assert _Node(_code).has_function("quick_sort")`)
 ```
 
 Your `quick_sort` function should take a single parameter.
 
 ```js
-({ test: () => runPython(`
+runPython(`
 from inspect import signature
 sig = signature(quick_sort)
 assert len(sig.parameters) == 1
-`) })
+`)
 ```
 
 `quick_sort([])` should return an empty list.
 
 ```js
-({ test: () => runPython(`assert quick_sort([]) == []`) })
+runPython(`assert quick_sort([]) == []`)
 ```
 
 Your `quick_sort` function should not modify the list passed to it as the argument.
 
 ```js
-({ test: () => runPython(`
+runPython(`
 _test_list = [20, 3, 14, 1, 5]
 quick_sort(_test_list)
 assert _test_list == [20, 3, 14, 1, 5]
-`) })
+`)
 ```
 
 `quick_sort([20, 3, 14, 1, 5])` should return `[1, 3, 5, 14, 20]`.
 
 ```js
-({ test: () => runPython(`assert quick_sort([20, 3, 14, 1, 5]) == [1, 3, 5, 14, 20]`) })
+runPython(`assert quick_sort([20, 3, 14, 1, 5]) == [1, 3, 5, 14, 20]`)
 ```
 
 `quick_sort([83, 4, 24, 2])` should return `[2, 4, 24, 83]`.
 
 ```js
-({ test: () => runPython(`assert quick_sort([83, 4, 24, 2]) == [2, 4, 24, 83]`) })
+runPython(`assert quick_sort([83, 4, 24, 2]) == [2, 4, 24, 83]`)
 ```
 
 `quick_sort([4, 42, 16, 23, 15, 8])` should return `[4, 8, 15, 16, 23, 42]`.
 
 ```js
-({ test: () => runPython(`assert quick_sort([4, 42, 16, 23, 15, 8]) == [4, 8, 15, 16, 23, 42]`) })
+runPython(`assert quick_sort([4, 42, 16, 23, 15, 8]) == [4, 8, 15, 16, 23, 42]`)
 ```
 
 `quick_sort([87, 11, 23, 18, 18, 23, 11, 56, 87, 56])` should return `[11, 11, 18, 18, 23, 23, 56, 56, 87, 87]`.
 
 ```js
-({ test: () => runPython(`assert quick_sort([87, 11, 23, 18, 18, 23, 11, 56, 87, 56]) == [11, 11, 18, 18, 23, 23, 56, 56, 87, 87]`) })
+runPython(`assert quick_sort([87, 11, 23, 18, 18, 23, 11, 56, 87, 56]) == [11, 11, 18, 18, 23, 23, 56, 56, 87, 87]`)
 ```
 
 You should not use the built-in `sorted()` function in your code.
 
 ```js
-({ test: () => runPython(`
+runPython(`
 assert not _Node(_code).block_has_call("sorted")
-`) })
+`)
 ```
 
 You should not use the `sort()` method in your code.
 
 ```js
-({ test: () => runPython(`
+runPython(`
 assert not _Node(_code).block_has_call("sort")
-`) })
+`)
 ```
 
 # --seed--

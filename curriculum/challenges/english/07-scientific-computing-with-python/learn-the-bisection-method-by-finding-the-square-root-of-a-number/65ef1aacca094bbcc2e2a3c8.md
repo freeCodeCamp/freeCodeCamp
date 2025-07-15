@@ -22,22 +22,13 @@ Inside the `else` clause, initialize the `low` variable to `0` and the `high` va
 You should remove the `pass` keyword.
 
 ```js
-({
-    test: () => 
-    {
-        assert.isFalse(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].has_pass()`))
-    }
-})
+assert.isFalse(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].has_pass()`))
 ```
 
 You should declare a variable `low` and assign it `0`.
 
 ```js
-({
-    test: () => 
-    {
-        assert(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].find_variable("low").is_equivalent("low = 0")`));    }
-})
+assert(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].find_variable("low").is_equivalent("low = 0")`));
 
 ```
 
@@ -45,11 +36,11 @@ You should declare a variable `high` and use the `max()` function to assign it t
 
 ```js
 
-({ test: () => assert(runPython(`
+assert(runPython(`
 node = _Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].find_variable("high")
 values = ["high = max(1, square_target)", "high = max(square_target, 1)"]
 any(node.is_equivalent(val) for val in values)
-`)) })
+`))
 ```
 
 # --seed--

@@ -16,46 +16,41 @@ Given a string, remove all spaces from the string, insert two spaces between eve
 `space_jam("freeCodeCamp")` should return `"F  R  E  E  C  O  D  E  C  A  M  P"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(space_jam("freeCodeCamp"), "F  R  E  E  C  O  D  E  C  A  M  P")`)
-}})
 ```
 
 `space_jam("   free   Code   Camp   ")` should return `"F  R  E  E  C  O  D  E  C  A  M  P"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(space_jam("   free   Code   Camp   "), "F  R  E  E  C  O  D  E  C  A  M  P")`)
-}})
 ```
 
 `space_jam("Hello World?!")` should return `"H  E  L  L  O  W  O  R  L  D  ?  !"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(space_jam("Hello World?!"), "H  E  L  L  O  W  O  R  L  D  ?  !")`)
-}})
 ```
 
 `space_jam("C@t$ & D0g$")` should return `"C  @  T  $  &  D  0  G  $"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(space_jam("C@t$ & D0g$"), "C  @  T  $  &  D  0  G  $")`)
-}})
 ```
 
 `space_jam("allyourbase")` should return `"A  L  L  Y  O  U  R  B  A  S  E"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(space_jam("all your base"), "A  L  L  Y  O  U  R  B  A  S  E")`)
-}})
 ```
 
 # --seed--

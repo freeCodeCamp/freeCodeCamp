@@ -28,64 +28,57 @@ For each battle, the stronger character wins. The army with more victories, wins
 `battle("Hello", "World")` should return `"We lost"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(battle("Hello", "World"), "We lost")`)
-}})
 ```
 
 `battle("pizza", "salad")` should return `"We won"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(battle("pizza", "salad"), "We won")`)
-}})
 ```
 
 `battle("C@T5", "D0G$")` should return `"We won"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(battle("C@T5", "D0G$"), "We won")`)
-}})
 ```
 
 `battle("kn!ght", "orc")` should return `"Opponent retreated"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(battle("kn!ght", "orc"), "Opponent retreated")`)
-}})
 ```
 
 `battle("PC", "Mac")` should return `"We retreated"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(battle("PC", "Mac"), "We retreated")`)
-}})
 ```
 
 `battle("Wizards", "Dragons")` should return `"It was a tie"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(battle("Wizards", "Dragons"), "It was a tie")`)
-}})
 ```
 
 `battle("Mr. Smith", "Dr. Jones")` should return `"It was a tie"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(battle("Mr. Smith", "Dr. Jones"), "It was a tie")`)
-}})
 ```
 
 # --seed--

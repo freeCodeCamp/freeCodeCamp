@@ -20,18 +20,16 @@ Currently, the `move()` function does not take any parameters. Change the functi
 Your `move()` function should have `n`, `source`, `auxiliary`, and `target` as the parameters. The order matters.
 
 ```js
-({ test: () => assert(runPython(`
+assert(runPython(`
       import inspect
       str(inspect.signature(move)) == '(n, source, auxiliary, target)'    
   `))
-})
 ```
 
 You should pass `NUMBER_OF_DISKS` and the strings `'A'`, `'B'`, and `'C'` to `move()`. The order matters.
 
 ```js
-({test: () => assert.match(code, /^move\(\s*NUMBER_OF_DISKS\s*,\s*('|")A\1\s*,\s*('|")B\2\s*,\s*('|")C\3\s*\)/m)
-})
+assert.match(code, /^move\(\s*NUMBER_OF_DISKS\s*,\s*('|")A\1\s*,\s*('|")B\2\s*,\s*('|")C\3\s*\)/m)
 ```
 
 # --seed--

@@ -82,9 +82,7 @@ Note: open the browser console with F12 to see a more verbose output of the test
 The `Square` class should be a subclass of the `Rectangle` class.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -108,16 +106,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `Square` class should be a distinct class from the `Rectangle` class.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -141,16 +135,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 A square object should be an instance of the `Square` class and the `Rectangle` class.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -176,16 +166,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The string representation of `Rectangle(3, 6)` should be `'Rectangle(width=3, height=6)'`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -211,16 +197,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The string representation of `Square(5)` should be `'Square(side=5)'`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -246,16 +228,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `Rectangle(3, 6).get_area()` should return `18`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -281,16 +259,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `Square(5).get_area()` should return `25`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -316,16 +290,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `Rectangle(3, 6).get_perimeter()` should return `18`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -351,16 +321,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `Square(5).get_perimeter()` should return `20`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -386,16 +352,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `Rectangle(3, 6).get_diagonal()` should return `6.708203932499369`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -421,16 +383,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `Square(5).get_diagonal()` should return `7.0710678118654755`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -456,16 +414,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 An instance of the `Rectangle` class should have a different string representation after setting new values.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -493,16 +447,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 An instance of the `Square` class should have a different string representation after setting new values by using `.set_side()`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -529,16 +479,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 An instance of the `Square` class should have a different string representation after setting new values by using `.set_width()` or `set_height()`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -569,16 +515,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `.get_picture()` method should return a different string representation of a `Rectangle` instance.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -606,16 +548,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `.get_picture()` method should return a different string representation of a `Square` instance.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -642,16 +580,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 The `.get_picture()` method should return the string `'Too big for picture.'` if the `width` or `height` attributes are larger than `50`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -679,16 +613,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `Rectangle(15,10).get_amount_inside(Square(5))` should return `6`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -717,16 +647,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `Rectangle(4,8).get_amount_inside(Rectangle(3, 6))` should return `1`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -753,16 +679,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 `Rectangle(2,3).get_amount_inside(Rectangle(3, 6))` should return `0`.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
+pyodide.FS.writeFile('/home/pyodide/shape_calculator.py', code);
     pyodide.FS.writeFile('/home/pyodide/test_module.py',`
 import unittest
 import shape_calculator
@@ -789,8 +711,6 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  }
-})
 ```
 
 # --seed--

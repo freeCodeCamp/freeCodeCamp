@@ -14,24 +14,14 @@ If the `square_target` is equal to  `1`, declare a variable `root` and assign it
 You should remove the `pass` keyword.
 
 ```js
-({
-     test: () => 
-     {
-        assert.isFalse(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[0].has_pass()`))
-    }
-})
+assert.isFalse(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[0].has_pass()`))
 ```
 
 You should assign the value `1` to the `root` variable and print the message `'The square root of {square_target} is 1'` inside the `if` body.
 
 ```js
 
-({
-    test: () => 
-    {        
-        assert(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[0].is_equivalent("root = 1\\nprint(f'The square root of {square_target} is 1')")`));
-    }
-})
+assert(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[0].is_equivalent("root = 1\\nprint(f'The square root of {square_target} is 1')")`));
 
 ```
 

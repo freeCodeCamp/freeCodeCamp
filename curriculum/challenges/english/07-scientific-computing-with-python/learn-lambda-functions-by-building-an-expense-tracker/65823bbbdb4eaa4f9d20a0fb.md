@@ -16,13 +16,13 @@ In the `total_expenses` function, you'll now integrate a lambda function. Replac
 You should create a `lambda` function that uses the parameter `expense` and returns `expense['amount']` in your `total_expenses` function.
 
 ```js
-({ test: () => assert(runPython(`_Node(_code).find_function("total_expenses").has_stmt("lambda expense: expense['amount']")`)) })
+assert(runPython(`_Node(_code).find_function("total_expenses").has_stmt("lambda expense: expense['amount']")`))
 ```
 
 You should not have `pass` in your `total_expenses` function.
 
 ```js
-({ test: () => assert.isFalse(runPython(`_Node(_code).find_function("total_expenses").has_pass()`)) })
+assert.isFalse(runPython(`_Node(_code).find_function("total_expenses").has_pass()`))
 ```
 
 # --seed--

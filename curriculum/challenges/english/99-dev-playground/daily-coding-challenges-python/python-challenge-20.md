@@ -16,28 +16,25 @@ Given an array of integers, return an array of integers that appear more than on
 `find_duplicates([1, 2, 3, 4, 5])` should return `[]`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(find_duplicates([1, 2, 3, 4, 5]), [])`)
-}})
 ```
 
 `find_duplicates([1, 2, 3, 4, 1, 2])` should return `[1, 2]`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(find_duplicates([1, 2, 3, 4, 1, 2]), [1, 2])`)
-}})
 ```
 
 `find_duplicates([2, 34, 0, 1, -6, 23, 5, 3, 2, 5, 67, -6, 23, 2, 43, 2, 12, 0, 2, 4, 4])` should return `[-6, 0, 2, 4, 5, 23]`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(find_duplicates([2, 34, 0, 1, -6, 23, 5, 3, 2, 5, 67, -6, 23, 2, 43, 2, 12, 0, 2, 4, 4]), [-6, 0, 2, 4, 5, 23])`)
-}})
 ```
 
 # --seed--

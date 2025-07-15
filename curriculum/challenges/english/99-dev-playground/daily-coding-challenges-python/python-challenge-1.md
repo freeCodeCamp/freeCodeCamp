@@ -18,64 +18,57 @@ Given a string, determine whether the number of vowels in the first half of the 
 `is_balanced("racecar")` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_balanced("racecar"))`)
-}})
 ```
 
 `is_balanced("Lorem Ipsum")` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_balanced("Lorem Ipsum"))`)
-}})
 ```
 
 `is_balanced("Kitty Ipsum")` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_balanced("Kitty Ipsum"))`)
-}})
 ```
 
 `is_balanced("string")` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_balanced("string"))`)
-}})
 ```
 
 `is_balanced(" ")` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_balanced(" "))`)
-}})
 ```
 
 `is_balanced("abcdefghijklmnopqrstuvwxyz")` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_balanced("abcdefghijklmnopqrstuvwxyz"))`)
-}})
 ```
 
 `is_balanced("123A#b!E&#x26;*456-o.U")` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_balanced("123A#b!E&*456-o.U"))`)
-}})
 ```
 
 # --seed--

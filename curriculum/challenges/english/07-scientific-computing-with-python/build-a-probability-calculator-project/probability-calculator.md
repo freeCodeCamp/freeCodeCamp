@@ -62,9 +62,7 @@ Note: open the browser console with F12 to see a more verbose output of the test
 Creation of `hat` object should add correct contents.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
+pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
     pyodide.FS.writeFile(
       "/home/pyodide/test_module.py",
       `
@@ -95,17 +93,13 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  },
-});
 ```
 
 The `draw` method in `hat` class should reduce number of items in contents.
 
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
+pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
     pyodide.FS.writeFile(
       "/home/pyodide/test_module.py",
       `
@@ -140,16 +134,12 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  },
-});
 ```
 
 The `draw` method should behave correctly when the number of balls to extract is bigger than the number of balls in the hat.
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
+pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
     pyodide.FS.writeFile(
       "/home/pyodide/test_module.py",
       `
@@ -183,17 +173,13 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  },
-});
 ```
 
 The `experiment` method should return a different probability.
 
 
 ```js
-({
-  test: () => {
-    pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
+pyodide.FS.writeFile("/home/pyodide/probability_calculator.py", code);
     pyodide.FS.writeFile(
       "/home/pyodide/test_module.py",
       `
@@ -230,8 +216,6 @@ t.result.wasSuccessful()
 `;
     const out = runPython(testCode);
     assert(out);
-  },
-});
 ```
 
 # --seed--

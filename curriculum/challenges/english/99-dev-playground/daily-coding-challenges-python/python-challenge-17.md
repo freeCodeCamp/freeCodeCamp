@@ -18,46 +18,41 @@ For example, given `[1, 2, 3, 4, 5]` and `['+', '*']`, return the result of eval
 `evaluate([5, 6, 7, 8, 9], ['+', '-'])` should return `3`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(evaluate([5, 6, 7, 8, 9], ['+', '-']), 3)`)
-}})
 ```
 
 `evaluate([17, 61, 40, 24, 38, 14], ['+', '%'])` should return `38`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(evaluate([17, 61, 40, 24, 38, 14], ['+', '%']), 38)`)
-}})
 ```
 
 `evaluate([20, 2, 4, 24, 12, 3], ['*', '/'])` should return `60`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(evaluate([20, 2, 4, 24, 12, 3], ['*', '/']), 60)`)
-}})
 ```
 
 `evaluate([11, 4, 10, 17, 2], ['*', '*', '%'])` should return `30`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(evaluate([11, 4, 10, 17, 2], ['*', '*', '%']), 30)`)
-}})
 ```
 
 `evaluate([33, 11, 29, 13], ['/', '-'])` should return `-2`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(evaluate([33, 11, 29, 13], ['/', '-']), -2)`)
-}})
 ```
 
 # --seed--

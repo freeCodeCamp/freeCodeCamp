@@ -20,46 +20,41 @@ Given an array of integers representing the price of different laptops, and an i
 `get_laptop_cost([1500, 2000, 1800, 1400], 1900)` should return `1800`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(get_laptop_cost([1500, 2000, 1800, 1400], 1900), 1800)`)
-}})
 ```
 
 `get_laptop_cost([1500, 2000, 2000, 1800, 1400], 1900)` should return `1800`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(get_laptop_cost([1500, 2000, 2000, 1800, 1400], 1900), 1800)`)
-}})
 ```
 
 `get_laptop_cost([2099, 1599, 1899, 1499], 2200)` should return `1899`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(get_laptop_cost([2099, 1599, 1899, 1499], 2200), 1899)`)
-}})
 ```
 
 `get_laptop_cost([2099, 1599, 1899, 1499], 1000)` should return `0`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(get_laptop_cost([2099, 1599, 1899, 1499], 1000), 0)`)
-}})
 ```
 
 `get_laptop_cost([1200, 1500, 1600, 1800, 1400, 2000], 1450)` should return `1400`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(get_laptop_cost([1200, 1500, 1600, 1800, 1400, 2000], 1450), 1400)`)
-}})
 ```
 
 # --seed--

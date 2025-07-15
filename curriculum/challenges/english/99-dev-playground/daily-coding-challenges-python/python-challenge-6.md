@@ -16,55 +16,49 @@ Given two strings, determine if they are anagrams of each other (contain the sam
 `are_anagrams("listen", "silent")` should return `true`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(are_anagrams("listen", "silent"))`)
-}})
 ```
 
 `are_anagrams("School master", "The classroom")` should return `true`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(are_anagrams("School master", "The classroom"))`)
-}})
 ```
 
 `are_anagrams("A gentleman", "Elegant man")` should return `true`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(are_anagrams("A gentleman", "Elegant man"))`)
-}})
 ```
 
 `are_anagrams("Hello", "World")` should return `false`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(are_anagrams("Hello", "World"))`)
-}})
 ```
 
 `are_anagrams("apple", "banana")` should return `false`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(are_anagrams("apple", "banana"))`)
-}})
 ```
 
 `are_anagrams("cat", "dog")` should return `false`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(are_anagrams("cat", "dog"))`)
-}})
 ```
 
 # --seed--

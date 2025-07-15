@@ -20,55 +20,49 @@ Given an array containing the first three numbers of a Tribonacci sequence, and 
 `tribonacci_sequence([0, 0, 1], 20)` should return `[0, 0, 1, 1, 2, 4, 7, 13, 24, 44, 81, 149, 274, 504, 927, 1705, 3136, 5768, 10609, 19513]`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(tribonacci_sequence([0, 0, 1], 20), [0, 0, 1, 1, 2, 4, 7, 13, 24, 44, 81, 149, 274, 504, 927, 1705, 3136, 5768, 10609, 19513])`)
-}})
 ```
 
 `tribonacci_sequence([21, 32, 43], 1)` should return `[21]`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(tribonacci_sequence([21, 32, 43], 1), [21])`)
-}})
 ```
 
 `tribonacci_sequence([0, 0, 1], 0)` should return `[]`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(tribonacci_sequence([0, 0, 1], 0), [])`)
-}})
 ```
 
 `tribonacci_sequence([10, 20, 30], 2)` should return `[10, 20]`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(tribonacci_sequence([10, 20, 30], 2), [10, 20])`)
-}})
 ```
 
 `tribonacci_sequence([10, 20, 30], 3)` should return `[10, 20, 30]`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(tribonacci_sequence([10, 20, 30], 3), [10, 20, 30])`)
-}})
 ```
 
 `tribonacci_sequence([123, 456, 789], 8)` should return `[123, 456, 789, 1368, 2613, 4770, 8751, 16134]`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(tribonacci_sequence([123, 456, 789], 8), [123, 456, 789, 1368, 2613, 4770, 8751, 16134])`)
-}})
 ```
 
 # --seed--

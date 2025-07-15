@@ -22,55 +22,39 @@ Note that:
 You should remove the `pass` keyword from the `insert` method.
 
 ```js
-({
-  test: () => {
-    assert.isFalse(
+assert.isFalse(
       runPython(
         `_Node(_code).find_class("BinarySearchTree").find_function("insert").has_pass()`
       )
     );
-  },
-});
 
 ```
 
 You should recursively call the `_insert()` method using `self._insert()`
 
 ```js
-({ test: () =>
-  {
-    const transformedCode = code.replace(/\r/g, "");        
+const transformedCode = code.replace(/\r/g, "");        
     const ins = __helpers.python.getDef("\n"+transformedCode, "insert");
     const {function_body} = ins;    
     assert(function_body.match(/self\._insert\s*\([^(]*\)/));
-  }
-})
 ```
 
 You should pass `self.root` and `key` to your `_insert()` call.
 
 ```js
-({ test: () =>
-  {
-    const transformedCode = code.replace(/\r/g, "");        
+const transformedCode = code.replace(/\r/g, "");        
     const ins = __helpers.python.getDef("\n"+transformedCode, "insert");
     const {function_body} = ins;    
     assert(function_body.match(/self\._insert\s*\(\s*self\.root\s*,\s*key\s*\)/));
-  }
-})
 ```
 
 You should assign the return value of your `_insert()` call to `self.root`.
 
 ```js
-({ test: () =>
-  {
-    const transformedCode = code.replace(/\r/g, "");        
+const transformedCode = code.replace(/\r/g, "");        
     const ins = __helpers.python.getDef("\n"+transformedCode, "insert");
     const {function_body} = ins;    
     assert(function_body.match(/^\s{8}self\.root\s*=\s*self\._insert\s*\(\s*self\.root\s*,\s*key\s*\)/m));
-  }
-})
 ```
 
 # --seed--

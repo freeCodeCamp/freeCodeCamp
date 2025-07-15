@@ -25,145 +25,129 @@ Given a string representing a number, and an integer base from 2 to 36, determin
 `is_valid_number("10101", 2)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("10101", 2))`);
-}})
 ```
 
 `is_valid_number("10201", 2)` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_valid_number("10201", 2))`)
-}})
 ```
 
 `is_valid_number("76543210", 8)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("76543210", 8))`)
-}})
 ```
 
 `is_valid_number("9876543210", 8)` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_valid_number("9876543210", 8))`)
-}})
 ```
 
 `is_valid_number("9876543210", 10)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("9876543210", 10))`)
-}})
 ```
 
 `is_valid_number("ABC", 10)` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_valid_number("ABC", 10))`)
-}})
 ```
 
 `is_valid_number("ABC", 16)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("ABC", 16))`)
-}})
 ```
 
 `is_valid_number("Z", 36)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("Z", 36))`)
-}})
 ```
 
 `is_valid_number("ABC", 20)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("ABC", 20))`)
-}})
 ```
 
 `is_valid_number("4B4BA9", 16)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("4B4BA9", 16))`)
-}})
 ```
 
 `is_valid_number("5G3F8F", 16)` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_valid_number("5G3F8F", 16))`)
-}})
 ```
 
 `is_valid_number("5G3F8F", 17)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("5G3F8F", 17))`)
-}})
 ```
 
 `is_valid_number("abc", 10)` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_valid_number("abc", 10))`)
-}})
 ```
 
 `is_valid_number("abc", 16)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("abc", 16))`)
-}})
 ```
 
 `is_valid_number("AbC", 16)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("AbC", 16))`)
-}})
 ```
 
 `is_valid_number("z", 36)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_valid_number("z", 36))`)
-}})
 ```
 
 # --seed--

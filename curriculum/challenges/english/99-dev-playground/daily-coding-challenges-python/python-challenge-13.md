@@ -18,82 +18,73 @@ Given an integer, determine if that number is a prime number or a negative prime
 `is_unnatural_prime(1)` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_unnatural_prime(1))`)
-}})
 ```
 
 `is_unnatural_prime(-1)` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_unnatural_prime(-1))`)
-}})
 ```
 
 `is_unnatural_prime(19)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_unnatural_prime(19))`)
-}})
 ```
 
 `is_unnatural_prime(-23)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_unnatural_prime(-23))`)
-}})
 ```
 
 `is_unnatural_prime(0)` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_unnatural_prime(0))`)
-}})
 ```
 
 `is_unnatural_prime(97)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_unnatural_prime(97))`)
-}})
 ```
 
 `is_unnatural_prime(-61)` should return `True`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_unnatural_prime(-61))`)
-}})
 ```
 
 `is_unnatural_prime(99)` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_unnatural_prime(99))`)
-}})
 ```
 
 `is_unnatural_prime(-44)` should return `False`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_unnatural_prime(-44))`)
-}})
 ```
 
 # --seed--

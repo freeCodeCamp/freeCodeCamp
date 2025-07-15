@@ -14,12 +14,7 @@ Set the value of `root` to `None` as at this point, you don't have an approximat
 The value of `root` should be `None`.
 
 ```js
-({
-    test: () => 
-    {
-        assert(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].is_equivalent("low = 0\\nhigh = max(1, square_target)\\nroot = None")`));
-    }
-})
+assert(runPython(`_Node(_code).find_function("square_root_bisection").find_ifs()[1].find_bodies()[2].is_equivalent("low = 0\\nhigh = max(1, square_target)\\nroot = None")`));
 
 ```
 

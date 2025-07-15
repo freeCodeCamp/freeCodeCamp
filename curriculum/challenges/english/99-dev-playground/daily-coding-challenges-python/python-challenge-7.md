@@ -16,38 +16,34 @@ Given an array of numbers and an integer target, find two unique numbers in the 
 `find_target([2, 7, 11, 15], 9)` should return `[0, 1]`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(find_target([2, 7, 11, 15], 9), [0, 1])`)
-}})
 ```
 
 `find_target([3, 2, 4, 5], 6)` should return `[1, 2]`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(find_target([3, 2, 4, 5], 6), [1, 2])`)
-}})
 ```
 
 `find_target([1, 3, 5, 6, 7, 8], 15)` should return `[4, 5]`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(find_target([1, 3, 5, 6, 7, 8], 15), [4, 5])`)
-}})
 ```
 
 `find_target([1, 3, 5, 7], 14)` should return `'Target not found'`.
 
 ```js
 
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(find_target([1, 3, 5, 7], 14), "Target not found")`)
-}})
 ```
 
 # --seed--

@@ -26,46 +26,41 @@ You will have burned 13 total candles in the example.
 `burn_candles(7, 2)` should return `13`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(burn_candles(7, 2), 13)`)
-}})
 ```
 
 `burn_candles(10, 5)` should return `12`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(burn_candles(10, 5), 12)`)
-}})
 ```
 
 `burn_candles(20, 3)` should return `29`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(burn_candles(20, 3), 29)`)
-}})
 ```
 
 `burn_candles(17, 4)` should return `22`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(burn_candles(17, 4), 22)`)
-}})
 ```
 
 `burn_candles(2345, 3)` should return `3517`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(burn_candles(2345, 3), 3517)`)
-}})
 ```
 
 # --seed--

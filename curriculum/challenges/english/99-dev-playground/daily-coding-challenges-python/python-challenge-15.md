@@ -19,46 +19,41 @@ Given a string, return its camel case version using the following rules:
 `to_camel_case("hello world")` should return `"helloWorld"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(to_camel_case("hello world"), "helloWorld")`)
-}})
 ```
 
 `to_camel_case("HELLO WORLD")` should return `"helloWorld"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(to_camel_case("HELLO WORLD"), "helloWorld")`)
-}})
 ```
 
 `to_camel_case("secret agent-X")` should return `"secretAgentX"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(to_camel_case("secret agent-X"), "secretAgentX")`)
-}})
 ```
 
 `to_camel_case("FREE cODE cAMP")` should return `"freeCodeCamp"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(to_camel_case("FREE cODE cAMP"), "freeCodeCamp")`)
-}})
 ```
 
 `to_camel_case("ye old-_-sea  faring_buccaneer_-_with a - peg__leg----and a_parrot_ _named- _squawk")` should return `"yeOldSeaFaringBuccaneerWithAPegLegAndAParrotNamedSquawk"`.
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertEqual(to_camel_case("ye old-_-sea  faring_buccaneer_-_with a - peg__leg----and a_parrot_ _named- _squawk"), "yeOldSeaFaringBuccaneerWithAPegLegAndAParrotNamedSquawk")`)
-}})
 ```
 
 # --seed--

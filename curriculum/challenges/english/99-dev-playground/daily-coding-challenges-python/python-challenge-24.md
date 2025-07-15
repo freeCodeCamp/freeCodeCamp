@@ -17,73 +17,65 @@ Given a word or sentence and a string of lowercase letters, determine if the wor
 `is_pangram("hello", "helo")` should return `True`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_pangram("hello", "helo"))`)
-}})
 ```
 
 `is_pangram("hello", "hel")` should return `False`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_pangram("hello", "hel"))`)
-}})
 ```
 
 `is_pangram("hello", "helow")` should return `False`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_pangram("hello", "helow"))`)
-}})
 ```
 
 `is_pangram("hello world", "helowrd")` should return `True`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_pangram("hello world", "helowrd"))`)
-}})
 ```
 
 `is_pangram("Hello World!", "helowrd")` should return `True`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_pangram("Hello World!", "helowrd"))`)
-}})
 ```
 
 `is_pangram("Hello World!", "heliowrd")` should return `False`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_pangram("Hello World!", "heliowrd"))`)
-}})
 ```
 
 `is_pangram("freeCodeCamp", "frcdmp")` should return `False`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertFalse(is_pangram("freeCodeCamp", "frcdmp"))`)
-}})
 ```
 
 `is_pangram("The quick brown fox jumps over the lazy dog.", "abcdefghijklmnopqrstuvwxyz")` should return `True`
 
 ```js
-({test: () => { runPython(`
+runPython(`
 from unittest import TestCase
 TestCase().assertTrue(is_pangram("The quick brown fox jumps over the lazy dog.", "abcdefghijklmnopqrstuvwxyz"))`)
-}})
 ```
 
 # --seed--
