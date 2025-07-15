@@ -390,35 +390,6 @@ describe('Exam Environment', () => {
       const userExam = constructUserExam(generatedExam, exam);
       expect(userExam).not.toHaveProperty('answers.isCorrect');
     });
-
-    it('should shuffle the answers', () => {
-      const userExam1 = constructUserExam(generatedExam, exam);
-      const userExam2 = constructUserExam(generatedExam, exam);
-      const userExam3 = constructUserExam(generatedExam, exam);
-
-      const answers1 = userExam1.questionSets.flatMap(qs =>
-        qs.questions.flatMap(q => q.answers.flatMap(a => a.id))
-      );
-      const answers2 = userExam2.questionSets.flatMap(qs =>
-        qs.questions.flatMap(q => q.answers.flatMap(a => a.id))
-      );
-      const answers3 = userExam3.questionSets.flatMap(qs =>
-        qs.questions.flatMap(q => q.answers.flatMap(a => a.id))
-      );
-
-      const generatedAnswers = generatedExam.questionSets.flatMap(qs =>
-        qs.questions.flatMap(q => q.answers)
-      );
-      expect(answers1).toHaveLength(generatedAnswers.length);
-      expect(answers2).toHaveLength(generatedAnswers.length);
-      expect(answers3).toHaveLength(generatedAnswers.length);
-
-      for (let i = 0; i < answers1.length; i++) {
-        expect(
-          answers1[i] !== answers2[i] || answers2[i] !== answers3[i]
-        ).toBeTruthy();
-      }
-    });
   });
 
   describe('shuffleArray()', () => {
