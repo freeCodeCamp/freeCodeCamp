@@ -65,7 +65,6 @@
     "bezier-easing": "2.1.0",
     "browser-cookies": "1.2.0",
     "canvas-confetti": "^1.6.0",
-    "crypto-browserify": "3.12.1",
     "date-fns": "4.1.0",
     "date-fns-tz": "3.2.0",
     "final-form": "4.20.10",
