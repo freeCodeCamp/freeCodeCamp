@@ -242,11 +242,11 @@ export interface Attempt {
 }
 
 export function getExams(): Promise<ResponseWithData<{ exams: Exam[] }>> {
-  return get('/exam-environment/exams');
+  return get('/user/exam-environment/exams');
 }
 
 export function getExamAttempts(): Promise<ResponseWithData<Attempt[]>> {
-  return get('/exam-environment/exam/attempts');
+  return get('/user/exam-environment/exam/attempts');
 }
 
 /** POST **/
