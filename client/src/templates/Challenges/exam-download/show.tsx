@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Spacer } from '@freecodecamp/ui';
+import { Button, Spacer, Table } from '@freecodecamp/ui';
 import { isEmpty } from 'lodash';
 import { useTranslation } from 'react-i18next';
 import { FullWidthRow } from '../../../components/helpers';
 import useDetectOS from '../utils/use-detect-os';
+import { getExamAttempts } from '../../../utils/ajax';
+import type { Attempt } from '../../../utils/ajax';
 
 interface GitProps {
   tag_name: string;
@@ -17,12 +19,13 @@ function ShowExamDownload(): JSX.Element {
 
   const [downloadLink, setDownloadLink] = useState<string | undefined>('');
   const [downloadLinks, setDownloadLinks] = useState<string[]>([]);
+  const [attempts, setAttempts] = useState<Attempt[]>([]);
 
   const os = useDetectOS();
 
   const { t } = useTranslation();
 
-  const handleDownloadLink = (downloadLinks: string[]) => {
+  function handleDownloadLink(downloadLinks: string[]) {
     const win = downloadLinks.find(link => link.match(/\.msi/));
     const macARM = downloadLinks.find(
       link => link.match(/aarch64/) && link.match(/\.dmg/)
@@ -70,35 +73,44 @@ function ShowExamDownload(): JSX.Element {
     }
 
     return '';
-  };
+  }
 
   useEffect(() => {
-    const checkLatestVersion = async () => {
-      return await fetch(
-        'https://api.github.com/repos/freeCodeCamp/exam-env/releases/latest'
-      );
-    };
-    checkLatestVersion()
-      .then(response => {
+    async function checkLatestVersion() {
+      try {
+        const response = await fetch(
+          'https://api.github.com/repos/freeCodeCamp/exam-env/releases/latest'
+        );
         if (response.ok) {
-          void response.json().then(data => {
-            const { tag_name, assets } = data as GitProps;
-            setLatestVersion(tag_name);
-
-            setDownloadLink(
-              handleDownloadLink(
-                assets.map(links => links.browser_download_url)
-              )
-            );
-
-            setDownloadLinks(assets.map(links => links.browser_download_url));
-          });
+          const data = (await response.json()) as GitProps;
+          const { tag_name, assets } = data;
+          setLatestVersion(tag_name);
+          const urls = assets.map(link => link.browser_download_url);
+          setDownloadLink(handleDownloadLink(urls));
+          setDownloadLinks(urls);
         }
-      })
-      .catch(() => {
+      } catch {
         setLatestVersion('...');
-      });
-  });
+      }
+    }
+
+    async function fetchExamsAndAttempts() {
+      try {
+        const attemptsRes = await getExamAttempts();
+
+        if (attemptsRes.response.ok) {
+          setAttempts(attemptsRes.data);
+        } else if (attemptsRes.response.status === 404) {
+          setAttempts([]);
+        }
+      } catch (error) {
+        console.error('Error fetching exam data:', error);
+      }
+    }
+
+    void checkLatestVersion();
+    void fetchExamsAndAttempts();
+  }, [os]);
 
   return (
     <FullWidthRow>
@@ -120,6 +132,38 @@ function ShowExamDownload(): JSX.Element {
       </Button>
       {!downloadLink && <strong>{t('exam.unable-to-detect-os')}</strong>}
       <Spacer size='l' />
+      <h2>Attempts</h2>
+      {attempts.length > 0 ? (
+        <Table striped>
+          <thead>
+            <tr>
+              <th>Date Taken</th>
+              <th>Score [%]</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {attempts.map(attempt => (
+              <tr key={attempt.startTimeInMS}>
+                <td>{new Date(attempt.startTimeInMS).toTimeString()}</td>
+                <td>
+                  {attempt.result ? `${attempt.result.percent}%` : 'Pending'}
+                </td>
+                <td>
+                  {attempt.result
+                    ? attempt.result.passed
+                      ? 'Passed'
+                      : 'Failed'
+                    : 'Pending'}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      ) : (
+        <p>No attempts yet</p>
+      )}
+      <Spacer size='l' />
       <details>
         <summary>{t('exam.download-details')}</summary>
         <ul>
@@ -137,7 +181,7 @@ function ShowExamDownload(): JSX.Element {
         </ul>
       </details>
       <Spacer size='l' />
-      <strong>{t('exam.download-trouble')}</strong>
+      <strong>{t('exam.download-trouble')}</strong>{' '}
       <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
     </FullWidthRow>
   );

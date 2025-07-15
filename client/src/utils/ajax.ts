@@ -225,6 +225,30 @@ export function getGenerateExam(
   return get(`/exam/${challengeId}`);
 }
 
+export interface Exam {
+  id: string;
+  config: {
+    name: string;
+  };
+}
+
+export interface Attempt {
+  startTimeInMS: number;
+  questionSets: unknown[];
+  result?: {
+    passed: boolean;
+    percent: number;
+  };
+}
+
+export function getExams(): Promise<ResponseWithData<{ exams: Exam[] }>> {
+  return get('/exam-environment/exams');
+}
+
+export function getExamAttempts(): Promise<ResponseWithData<Attempt[]>> {
+  return get('/exam-environment/exam/attempts');
+}
+
 /** POST **/
 
 interface Donation {
