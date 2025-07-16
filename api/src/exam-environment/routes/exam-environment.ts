@@ -805,7 +805,7 @@ async function getExams(
  *
  * If an attempt is completed, the result is included.
  */
-async function getExamAttemptsHandler(
+export async function getExamAttemptsHandler(
   this: FastifyInstance,
   req: UpdateReqType<typeof schemas.examEnvironmentGetExamAttempts>,
   reply: FastifyReply
@@ -865,7 +865,7 @@ async function getExamAttemptsHandler(
  *
  * If the attempt is completed, the result is included.
  */
-async function getExamAttemptHandler(
+export async function getExamAttemptHandler(
   this: FastifyInstance,
   req: UpdateReqType<typeof schemas.examEnvironmentGetExamAttempt>,
   reply: FastifyReply
