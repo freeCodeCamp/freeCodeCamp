@@ -17,7 +17,7 @@ const challengeLanguage = Type.Object({
 
 const singleChallenge = Type.Object({
   id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
-  date: Type.String(),
+  date: Type.String({ format: 'date-time' }),
   challengeNumber: Type.Number(),
   title: Type.String(),
   description: Type.String(),
@@ -65,7 +65,7 @@ const all = {
     200: Type.Array(
       Type.Object({
         id: Type.String(),
-        date: Type.String(),
+        date: Type.String({ format: 'date-time' }),
         challengeNumber: Type.Number(),
         title: Type.String()
       })

@@ -8,7 +8,7 @@ export function getNowUsCentral() {
 }
 
 /**
- * Returns a function which optionally takes arguments to format an error message.
+ * Returns a Date object set to UTC midnight of the given date.
  * @param date - Date Object.
  * @returns UTC midnight of the given date.
  */
