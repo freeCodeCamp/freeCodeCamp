@@ -51,7 +51,7 @@
     "@freecodecamp/loop-protect": "3.0.0",
     "@freecodecamp/ui": "4.2.0",
     "@gatsbyjs/reach-router": "1.3.9",
-    "@growthbook/growthbook-react": "0.20.0",
+    "@growthbook/growthbook-react": "1.6.0",
     "@headlessui/react": "1.7.19",
     "@loadable/component": "5.16.3",
     "@redux-devtools/extension": "3.3.0",
