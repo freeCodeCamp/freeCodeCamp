@@ -813,6 +813,9 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "workshop-planets-tablist"
+            },
+            {
               "dashedName": "review-js-a11y"
             },
             {
