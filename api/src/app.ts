@@ -232,28 +232,7 @@ export const build = async (
   void fastify.register(publicRoutes.deprecatedEndpoints);
   void fastify.register(publicRoutes.statusRoute);
   void fastify.register(publicRoutes.unsubscribeDeprecated);
-
-  void fastify.register(async function (fastify, _opts) {
-    if (process.env.NODE_ENV === 'production') {
-      fastify.addHook('onRequest', async (request, reply) => {
-        const origin = request.headers.origin;
-
-        const allowedOrigins = [
-          'https://www.freecodecamp.org',
-          'https://www.freecodecamp.dev'
-        ];
-
-        if (!origin || !allowedOrigins.includes(origin)) {
-          await reply.status(403).send({
-            type: 'error',
-            message: 'Access denied from this origin'
-          });
-        }
-      });
-    }
-
-    await fastify.register(dailyCodingChallengeRoutes);
-  });
+  void fastify.register(dailyCodingChallengeRoutes);
 
   return fastify;
 };
