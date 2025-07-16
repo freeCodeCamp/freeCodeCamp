@@ -4329,6 +4329,12 @@
           "In this lab, you will implement the Luhn algorithm to validate identification numbers such as credit card numbers."
         ]
       },
+      "lab-tower-of-hanoi": {
+        "title": "Implement the Tower of Hanoi Algorithm",
+        "intro": [
+          "In this lab, you will implement an algorithm to solve the Tower of Hanoi puzzle."
+        ]
+      },
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
         "intro": [
