@@ -1,5 +1,10 @@
+import { ExamEnvironmentAnswer } from '@prisma/client';
 import { type Static } from '@fastify/type-provider-typebox';
-import { exam, examAttempt, generatedExam } from '../../../__mocks__/env-exam';
+import {
+  exam,
+  examAttempt,
+  generatedExam
+} from '../../../__mocks__/exam-environment-exam';
 import * as schemas from '../schemas';
 import {
   checkAttemptAgainstGeneratedExam,
@@ -7,17 +12,23 @@ import {
   constructUserExam,
   generateExam,
   userAttemptToDatabaseAttemptQuestionSets,
-  validateAttempt
-} from './exam';
+  validateAttempt,
+  compareAnswers,
+  shuffleArray
+} from './exam-environment';
 
 // NOTE: Whilst the tests could be run against a single generation of exam,
 //       it is more useful to run the tests against a new generation each time.
 //       This helps ensure the config/logic is _reasonably_ likely to be able to
 //       generate a valid exam.
 //       Another option is to call `generateExam` hundreds of times in a loop test :shrug:
-describe('Exam Environment', () => {
+describe('Exam Environment mocked Math.random', () => {
+  let spy: jest.SpyInstance;
   beforeAll(() => {
-    jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
+    spy = jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
+  });
+  afterAll(() => {
+    spy.mockRestore();
   });
   describe('checkAttemptAgainstGeneratedExam()', () => {
     it('should return true if all questions are answered', () => {
@@ -75,13 +86,6 @@ describe('Exam Environment', () => {
       const prerequisites = ['1', '2'];
 
       expect(checkPrerequisites(user, prerequisites)).toBe(false);
-    });
-  });
-
-  describe('constructUserExam()', () => {
-    it('should not provide the answers', () => {
-      const userExam = constructUserExam(generatedExam, exam);
-      expect(userExam).not.toHaveProperty('answers.isCorrect');
     });
   });
 
@@ -306,6 +310,101 @@ describe('Exam Environment', () => {
       ).not.toEqual(
         databaseAttemptQuestionSets[0]?.questions[0]?.submissionTimeInMS
       );
+    });
+  });
+
+  describe('compareAnswers()', () => {
+    it('should return true when only all correct answers are attempted', () => {
+      const examAnswers: ExamEnvironmentAnswer[] = [
+        {
+          id: '0',
+          isCorrect: true,
+          text: ''
+        },
+        {
+          id: '1',
+          isCorrect: true,
+          text: ''
+        },
+        {
+          id: '2',
+          isCorrect: false,
+          text: ''
+        },
+        {
+          id: '3',
+          isCorrect: false,
+          text: ''
+        }
+      ];
+      const generatedAnswers = ['0', '1', '2', '3'];
+      const attemptAnswers = ['0', '1'];
+      const isCorrect = compareAnswers(
+        examAnswers,
+        generatedAnswers,
+        attemptAnswers
+      );
+
+      expect(isCorrect).toBe(true);
+    });
+
+    it('should return false when any incorrect answers are attempted', () => {
+      const examAnswers: ExamEnvironmentAnswer[] = [
+        {
+          id: '0',
+          isCorrect: true,
+          text: ''
+        },
+        {
+          id: '1',
+          isCorrect: true,
+          text: ''
+        },
+        {
+          id: '2',
+          isCorrect: false,
+          text: ''
+        },
+        {
+          id: '3',
+          isCorrect: false,
+          text: ''
+        }
+      ];
+      const generatedAnswers = ['0', '1', '2', '3'];
+      const attemptAnswers = ['0', '2'];
+      const isCorrect = compareAnswers(
+        examAnswers,
+        generatedAnswers,
+        attemptAnswers
+      );
+
+      expect(isCorrect).toBe(false);
+    });
+  });
+});
+
+describe('Exam Environment', () => {
+  describe('constructUserExam()', () => {
+    it('should not provide the answers', () => {
+      const userExam = constructUserExam(generatedExam, exam);
+      expect(userExam).not.toHaveProperty('answers.isCorrect');
+    });
+  });
+
+  describe('shuffleArray()', () => {
+    it('reasonably shuffles an array', () => {
+      const unshuff = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      const shuff = shuffleArray(unshuff);
+
+      expect(shuff).not.toEqual(unshuff);
+    });
+
+    it('does not mutate the input', () => {
+      const unshuff = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      shuffleArray(unshuff);
+
+      expect(unshuff).toEqual(unshuff);
     });
   });
 });
