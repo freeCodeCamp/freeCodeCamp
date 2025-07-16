@@ -1317,9 +1317,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     return challengeIsComplete();
   };
 
-  const challengeFile = props.challengeFiles?.find(
-    challengeFile => challengeFile.fileKey === props.fileKey
-  );
   const showFileName = challengeFile && props.challengeFiles!.length > 1;
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
