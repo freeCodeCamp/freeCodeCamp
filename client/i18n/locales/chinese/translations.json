@@ -1234,7 +1234,7 @@
     "heading": "警告：这是一个早期访问测试环境",
     "p1": "我们欢迎你以仅限测试的模式尝试此平台，并尽早使用即将推出的功能。有时，这些更改被交替称为 next、beta、staging 等。",
     "p2": "我们感谢你报告所遇到的错误，并帮助我们改进 freeCodeCamp.org。",
-    "p3": "下次访问时，你的进度可能不会被保存，在此部署中申请的任何认证均无效。请<0>点击此链接</0>了解更多信息。",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid.",
     "certain": "接受并清除"
   },
   "survey": {
