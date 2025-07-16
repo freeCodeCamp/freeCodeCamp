@@ -3217,7 +3217,7 @@
       "lab-longest-word-in-a-string": {
         "title": "Build a Longest Word Finder App",
         "intro": [
-          "In this lab you will implement JavaScript loops to the length of the longest word in the provided sentence."
+          "In this lab, you will use JavaScript loops to find the length of the longest word in the given sentence."
         ]
       },
       "lab-factorial-calculator": {
