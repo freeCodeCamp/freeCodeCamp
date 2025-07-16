@@ -3999,6 +3999,12 @@
           "In this workshop, you will learn the basics of Tailwind CSS by building out an error message component."
         ]
       },
+      "workshop-tailwind-cta-component": {
+        "title": "Build a Taiwlind CTA Compoent",
+        "intro": [
+          "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
+        ]
+      },
       "lab-music-shopping-cart-page": {
         "title": "Build a Music Shopping Cart Page",
         "intro": [
@@ -4560,12 +4566,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-tailwind-cta-component": {
-        "title": "Build a Taiwlind CTA Compoent",
-        "intro": [
-          "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
-        ]
       }
     }
   },
