@@ -3114,7 +3114,7 @@
         ]
       },
       "lab-celsius-to-fahrenheit-converter": {
-        "title": "Convert Celsius to Fahrenheit",
+        "title": "Build a Celsius to Fahrenheit Converter",
         "intro": [
           "In this lab you will implement a function that converts the temperature from Celsius to Fahrenheit."
         ]
