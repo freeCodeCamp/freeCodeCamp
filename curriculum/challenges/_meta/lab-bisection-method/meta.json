@@ -6,6 +6,6 @@
   "blockLayout": "link",
   "blockType": "lab",
   "helpCategory": "Python",
-  "challengeOrder": [{ "id": "686ccc2c8b967e17ab18d593", "title": "Step 1" }],
+  "challengeOrder": [{ "id": "686ccc2c8b967e17ab18d593", "title": "Implement the Bisection Method" }],
   "usesMultifileEditor": true
 }
