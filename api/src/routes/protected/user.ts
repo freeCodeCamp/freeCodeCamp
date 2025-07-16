@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 import * as schemas from '../../schemas';
+import * as examEnvironmentSchemas from '../../exam-environment/schemas';
 import { createResetProperties } from '../../utils/create-user';
 import { customNanoid } from '../../utils/ids';
 import { encodeUserToken } from '../../utils/tokens';
@@ -27,6 +28,10 @@ import {
   ProgressTimestamp
 } from '../../utils/progress';
 import { JWT_SECRET } from '../../utils/env';
+import {
+  getExamAttemptHandler,
+  getExamAttemptsHandler
+} from '../../exam-environment/routes/exam-environment';
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -473,6 +478,21 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.userExamEnvironmentToken
     },
     examEnvironmentTokenHandler
+  );
+
+  fastify.get(
+    '/user/exam-environment/exam/attempts',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentGetExamAttempts
+    },
+    getExamAttemptsHandler
+  );
+  fastify.get(
+    '/user/exam-environment/exam/attempt/:attemptId',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentGetExamAttempt
+    },
+    getExamAttemptHandler
   );
 
   done();
