@@ -12,12 +12,11 @@ interface ChallengeLanguageData {
 }
 
 export interface ChallengeDataFromDb {
-  _id: string;
+  id: string;
   challengeNumber: number;
   title: string;
   date: string;
   description: string;
-  instructions?: string;
   javascript: ChallengeLanguageData;
   python: ChallengeLanguageData;
 }
@@ -43,12 +42,11 @@ const challengeLanguageDataSchema = Joi.object({
 });
 
 const challengeDataFromDbSchema = Joi.object({
-  _id: Joi.string().required(),
+  id: Joi.string().required(),
   challengeNumber: Joi.number().integer().min(1).required(),
   title: Joi.string().required(),
   date: Joi.string().required(),
   description: Joi.string().required(),
-  instructions: Joi.string().optional(),
   javascript: challengeLanguageDataSchema.required(),
   python: challengeLanguageDataSchema.required()
 });

@@ -198,28 +198,28 @@ function ShowClassic({
       challenge: {
         challengeFiles: seedChallengeFiles,
         block,
-        demoType = null,
+        demoType,
         title,
         description,
         instructions,
-        hooks = undefined,
+        hooks,
         fields: { tests, blockName },
         challengeType,
         hasEditableBoundaries = false,
         superBlock,
         helpCategory,
-        forumTopicId = undefined,
+        forumTopicId,
         usesMultifileEditor,
-        notes = '',
-        videoUrl = undefined,
-        translationPending = false
+        notes,
+        videoUrl,
+        translationPending
       }
     }
   },
   pageContext: {
     challengeMeta,
-    challengeMeta: { isFirstStep = false, nextChallengePath = undefined },
-    projectPreview: { challengeData = undefined }
+    challengeMeta: { isFirstStep, nextChallengePath },
+    projectPreview: { challengeData }
   },
   createFiles,
   cancelTests,

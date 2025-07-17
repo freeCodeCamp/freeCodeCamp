@@ -16,7 +16,7 @@ import { getTodayUsCentral, formatDate } from './helpers';
 import './calendar.css';
 import DailyCodingChallengeNotFound from './not-found';
 
-const { dailyChallengeApiLocation } = envData;
+const { apiLocation } = envData;
 
 const mapStateToProps = (state: unknown) => ({
   completedDailyCodingChallenges: completedDailyCodingChallengesSelector(
@@ -86,15 +86,19 @@ interface DailyCodingChallengeCalendarProps {
   isSignedIn: boolean;
 }
 
-interface DailyChallengeFromDb {
-  _id: string;
+interface AllDailyChallengeFromDb {
+  id: string;
   date: string;
+  challengeNumber: number;
+  title: string;
 }
 
 interface DailyChallengeMap {
-  _id: string;
+  id: string;
   date: string;
   isCompleted: boolean;
+  challengeNumber: number;
+  title: string;
 }
 
 type DailyChallengesMap = Map<string, DailyChallengeMap>;
@@ -127,10 +131,8 @@ function DailyCodingChallengeCalendar({
 
   const fetchChallenges = async () => {
     try {
-      const response = await fetch(
-        `${dailyChallengeApiLocation}/api/daily-challenge/all`
-      );
-      const challenges = (await response.json()) as DailyChallengeFromDb[];
+      const response = await fetch(`${apiLocation}/daily-coding-challenge/all`);
+      const challenges = (await response.json()) as AllDailyChallengeFromDb[];
 
       if (Array.isArray(challenges)) {
         const newDailyChallengesMap = new Map() as DailyChallengesMap;
@@ -141,7 +143,7 @@ function DailyCodingChallengeCalendar({
           newDailyChallengesMap.set(date, {
             ...c,
             date,
-            isCompleted: completedDailyCodingChallengeIds.includes(c._id)
+            isCompleted: completedDailyCodingChallengeIds.includes(c.id)
           });
         });
 

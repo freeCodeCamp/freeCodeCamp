@@ -10,7 +10,7 @@ import {
 import DailyCodingChallengeNotFound from '../../components/daily-coding-challenge/not-found';
 import FourOhFour from '../../components/FourOhFour';
 import {
-  dailyChallengeApiLocation,
+  apiLocation,
   showDailyCodingChallenges
 } from '../../../config/env.json';
 import { isValidDateParam } from '../../components/daily-coding-challenge/helpers';
@@ -36,32 +36,27 @@ function formatDescription(str: string) {
   return `<section id="description">\n${str}\n</section>`;
 }
 
-function formatInstructions(str: string) {
-  return `<section id="instructions">\n<p>${str}</p>\n</section>`;
-}
-
 function formatChallengeData({
   date,
-  _id,
+  id,
   challengeNumber,
   title,
   description,
-  instructions,
   javascript,
   python
 }: ChallengeDataFromDb) {
   const baseChallengeProps = {
     date,
-    id: _id,
+    id,
     challengeNumber,
     title,
     description: formatDescription(description),
-    instructions: instructions && formatInstructions(instructions),
     superBlock: 'daily-coding-challenge',
     block: 'daily-coding-challenge',
     usesMultifileEditor: true,
 
     // props to satisfy the show classic component
+    instructions: '',
     demoType: null,
     hooks: undefined,
     hasEditableBoundaries: false,
@@ -73,7 +68,7 @@ function formatChallengeData({
 
   const pageContext = {
     challengeMeta: {
-      id: _id,
+      id,
       superBlock: 'daily-coding-challenge',
       block: 'daily-coding-challenge',
       disableLoopProtectTests: true,
@@ -173,7 +168,7 @@ function DailyCodingChallenge(): JSX.Element {
   const fetchChallenge = async (date: string) => {
     try {
       const response = await fetch(
-        `${dailyChallengeApiLocation}/api/daily-challenge/date/${date}`
+        `${apiLocation}/daily-coding-challenge/date/${date}`
       );
       const challengeData = await response.json();
 
@@ -190,9 +185,9 @@ function DailyCodingChallenge(): JSX.Element {
 
         const formattedChallengeData = formatChallengeData(
           challengeData as ChallengeDataFromDb
-        );
+        ) as FormattedChallengeData;
 
-        setChallengeProps(formattedChallengeData as FormattedChallengeData);
+        setChallengeProps(formattedChallengeData);
         setChallengeFound(true);
       } else {
         setChallengeFound(false);

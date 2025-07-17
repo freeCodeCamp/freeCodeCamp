@@ -260,7 +260,6 @@ export type DailyCodingChallengeNode = {
     challengeNumber: number;
     title: string;
     description: string;
-    instructions?: string;
     superBlock: 'daily-coding-challenge';
     block: 'daily-coding-challenge';
     usesMultifileEditor: true;
@@ -274,6 +273,7 @@ export type DailyCodingChallengeNode = {
     challengeFiles: ChallengeFiles;
 
     // props to satisfy the show classic component
+    instructions: string;
     demoType: null;
     hooks?: { beforeAll: string };
     hasEditableBoundaries?: false;
