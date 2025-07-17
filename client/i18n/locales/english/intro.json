@@ -3239,6 +3239,12 @@
           "In this lab, you will practice dividing an array into smaller arrays with the technique of your choice."
         ]
       },
+      "lab-repeat-a-string": {
+        "title": "Build a String Repeating Function",
+        "intro": [
+          "In this lab, you will implement loops to repeat a string a specified number of times."
+        ]
+      },
       "review-javascript-loops": {
         "title": "JavaScript Loops Review",
         "intro": [
