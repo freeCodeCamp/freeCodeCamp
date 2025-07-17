@@ -1,6 +1,6 @@
 import Joi from 'joi';
 
-interface ChallengeLanguageData {
+interface DailyCodingChallengeLanguageFromDb {
   tests: {
     text: string;
     testString: string;
@@ -11,14 +11,14 @@ interface ChallengeLanguageData {
   }[];
 }
 
-export interface ChallengeDataFromDb {
+export interface DailyCodingChallengeFromDb {
   id: string;
   challengeNumber: number;
   title: string;
   date: string;
   description: string;
-  javascript: ChallengeLanguageData;
-  python: ChallengeLanguageData;
+  javascript: DailyCodingChallengeLanguageFromDb;
+  python: DailyCodingChallengeLanguageFromDb;
 }
 
 const challengeLanguageDataSchema = Joi.object({
@@ -52,7 +52,7 @@ const challengeDataFromDbSchema = Joi.object({
 });
 
 export const validateDailyCodingChallengeSchema = (
-  challenge: ChallengeDataFromDb
+  challenge: DailyCodingChallengeFromDb
 ) => {
   return challengeDataFromDbSchema.validate(challenge);
 };

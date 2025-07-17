@@ -304,6 +304,14 @@ export type DailyCodingChallengePageContext = {
   };
 };
 
+export type DailyCodingChallengeLanguages = 'javascript' | 'python';
+
+export interface CompletedDailyCodingChallenge {
+  id: string;
+  completedDate: number;
+  completedLanguages: DailyCodingChallengeLanguages[];
+}
+
 type Quiz = {
   questions: QuizQuestion[];
 };
@@ -461,14 +469,6 @@ export interface CompletedChallenge {
     | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
     | null;
   examResults?: GeneratedExamResults;
-}
-
-export type DailyCodingChallengeLanguages = 'javascript' | 'python';
-
-export interface CompletedDailyCodingChallenge {
-  id: string;
-  completedDate: number;
-  completedLanguages: DailyCodingChallengeLanguages[];
 }
 
 export interface ChallengeData extends CompletedChallenge {

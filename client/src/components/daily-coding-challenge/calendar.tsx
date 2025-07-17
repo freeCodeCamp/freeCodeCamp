@@ -25,6 +25,35 @@ const mapStateToProps = (state: unknown) => ({
   isSignedIn: isSignedInSelector(state)
 });
 
+interface DailyCodingChallengeCalendarProps {
+  completedDailyCodingChallenges: CompletedDailyCodingChallenge[];
+  isSignedIn: boolean;
+}
+
+interface AllDailyChallengeFromDb {
+  id: string;
+  date: string;
+  challengeNumber: number;
+  title: string;
+}
+
+interface DailyChallengeMap {
+  id: string;
+  date: string;
+  isCompleted: boolean;
+  challengeNumber: number;
+  title: string;
+}
+
+type DailyChallengesMap = Map<string, DailyChallengeMap>;
+
+interface MonthInfo {
+  days: JSX.Element[];
+  index: number;
+  name: string;
+  year: number;
+}
+
 const getMonthInfo = (
   year: number,
   monthIndex: number,
@@ -81,35 +110,6 @@ const getMonthInfo = (
   };
 };
 
-interface DailyCodingChallengeCalendarProps {
-  completedDailyCodingChallenges: CompletedDailyCodingChallenge[];
-  isSignedIn: boolean;
-}
-
-interface AllDailyChallengeFromDb {
-  id: string;
-  date: string;
-  challengeNumber: number;
-  title: string;
-}
-
-interface DailyChallengeMap {
-  id: string;
-  date: string;
-  isCompleted: boolean;
-  challengeNumber: number;
-  title: string;
-}
-
-type DailyChallengesMap = Map<string, DailyChallengeMap>;
-
-interface MonthInfo {
-  days: JSX.Element[];
-  index: number;
-  name: string;
-  year: number;
-}
-
 function DailyCodingChallengeCalendar({
   completedDailyCodingChallenges,
   isSignedIn
@@ -133,6 +133,8 @@ function DailyCodingChallengeCalendar({
     try {
       const response = await fetch(`${apiLocation}/daily-coding-challenge/all`);
       const challenges = (await response.json()) as AllDailyChallengeFromDb[];
+
+      // Todo: validate shape of challenges
 
       if (Array.isArray(challenges)) {
         const newDailyChallengesMap = new Map() as DailyChallengesMap;

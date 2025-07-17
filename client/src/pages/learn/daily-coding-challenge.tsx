@@ -16,19 +16,19 @@ import {
 import { isValidDateParam } from '../../components/daily-coding-challenge/helpers';
 import {
   validateDailyCodingChallengeSchema,
-  type ChallengeDataFromDb
+  type DailyCodingChallengeFromDb
 } from '../../utils/daily-coding-challenge-validator';
 
-interface ChallengeData {
+interface DailyCodingChallengeLanguageData {
   data: {
     challengeNode: DailyCodingChallengeNode;
   };
   pageContext: DailyCodingChallengePageContext;
 }
 
-interface FormattedChallengeData {
-  javascript: ChallengeData;
-  python: ChallengeData;
+interface DailyCodingChallengeDataFormatted {
+  javascript: DailyCodingChallengeLanguageData;
+  python: DailyCodingChallengeLanguageData;
 }
 
 // These are not included in the data from the DB (Daily Challenge API) - so we add them in
@@ -44,7 +44,7 @@ function formatChallengeData({
   description,
   javascript,
   python
-}: ChallengeDataFromDb) {
+}: DailyCodingChallengeFromDb) {
   const baseChallengeProps = {
     date,
     id,
@@ -158,7 +158,7 @@ function DailyCodingChallenge(): JSX.Element {
   const [isLoading, setIsLoading] = useState(true);
   const [challengeFound, setChallengeFound] = useState(false);
   const [challengeProps, setChallengeProps] =
-    useState<null | FormattedChallengeData>(null);
+    useState<null | DailyCodingChallengeDataFormatted>(null);
   const [dailyCodingChallengeLanguage, setDailyCodingChallengeLanguage] =
     useState<DailyCodingChallengeLanguages>(initLanguage);
 
@@ -174,7 +174,7 @@ function DailyCodingChallenge(): JSX.Element {
 
       if (challengeData) {
         const validDailyCodingChallenge = validateDailyCodingChallengeSchema(
-          challengeData as ChallengeDataFromDb
+          challengeData as DailyCodingChallengeFromDb
         );
 
         if ('error' in validDailyCodingChallenge) {
@@ -184,8 +184,8 @@ function DailyCodingChallenge(): JSX.Element {
         }
 
         const formattedChallengeData = formatChallengeData(
-          challengeData as ChallengeDataFromDb
-        ) as FormattedChallengeData;
+          challengeData as DailyCodingChallengeFromDb
+        ) as DailyCodingChallengeDataFormatted;
 
         setChallengeProps(formattedChallengeData);
         setChallengeFound(true);
