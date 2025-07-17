@@ -23,8 +23,7 @@ Log the message `'Now I know React and Redux!'` to the console.
 The message `Now I know React and Redux!` should be logged to the console.
 
 ```js
-() =>
-  assert(
+assert(
     /console\s*\.\s*log\s*\(\s*('|"|`)Now I know React and Redux!\1\s*\)/.test(
       code)
   );
