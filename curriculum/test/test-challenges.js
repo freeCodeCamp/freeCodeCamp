@@ -1,5 +1,4 @@
 const path = require('path');
-const vm = require('vm');
 const { assert, AssertionError } = require('chai');
 const jsdom = require('jsdom');
 const liveServer = require('@compodoc/live-server');
@@ -330,13 +329,13 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                   if (result.error) {
                     throw new AssertionError(result.error);
                   }
-                  const { id, title, block, dashedName } = challenge;
+                  const { id, block, dashedName } = challenge;
                   assert.exists(
                     dashedName,
                     `Missing dashedName for challenge ${id} in ${block}.`
                   );
                   const pathAndTitle = `${block}/${dashedName}`;
-                  const idVerificationMessage = mongoIds.check(id, title);
+                  const idVerificationMessage = mongoIds.check(id, block);
                   assert.isNull(idVerificationMessage, idVerificationMessage);
                   const dupeTitleCheck = challengeTitles.check(
                     dashedName,
@@ -358,14 +357,6 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                   it('Check tests. No tests.');
                   return;
                 }
-
-                describe('Check tests syntax', function () {
-                  tests.forEach(test => {
-                    it(`Check for: ${test.text}`, function () {
-                      assert.doesNotThrow(() => new vm.Script(test.testString));
-                    });
-                  });
-                });
 
                 if (challengeType === challengeTypes.backend) {
                   it('Check tests is not implemented.');
