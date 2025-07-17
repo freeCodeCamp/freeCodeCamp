@@ -21,40 +21,23 @@ Opening tags look like this:
 
 ```html
 <h1>
-```
-
 Closing tags look like this:
 
-```html
 </h1>
-```
-
 The only difference between opening and closing tags is the forward slash after the opening bracket of a closing tag.
 
 Each challenge has tests you can run at any time by clicking the "Run tests" button. When you pass all tests, you'll be prompted to submit your solution and go to the next coding challenge.
 
-# --instructions--
+--instructions--
+To pass the test on this challenge, change your h1 element's text to say Hello World.
 
-To pass the test on this challenge, change your `h1` element's text to say `Hello World`.
+--hints--
+Your h1 element should have the text Hello World.
 
-# --hints--
-
-Your `h1` element should have the text `Hello World`.
-
-```js
-assert.match(document.querySelector('h1').textContent,/hello(\s)+world/gi);
-```
-
-# --seed--
-
-## --seed-contents--
-
-```html
+assert.match(document.querySelector('h1').textContent, /hello(\s)+world/gi);
+--seed--
+--seed-contents--
 <h1>Hello</h1>
-```
-
-# --solutions--
-
-```html
+--solutions--
 <h1>Hello World</h1>
-```
+
