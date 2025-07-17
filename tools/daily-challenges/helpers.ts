@@ -37,7 +37,6 @@ query {
           id
           title
           description
-          instructions
           fields {
             tests {
               testString
@@ -79,7 +78,6 @@ export function combineChallenges({
     id: jsId,
     title: jsTitle,
     description: jsDescription,
-    instructions: jsInstructions,
     fields: { tests: jsTests },
     challengeFiles: jsChallengeFiles
   } = jsChallenge;
@@ -87,7 +85,6 @@ export function combineChallenges({
   const {
     title: pyTitle,
     description: pyDescription,
-    instructions: pyInstructions,
     fields: { tests: pyTests },
     challengeFiles: pyChallengeFiles
   } = pyChallenge;
@@ -101,12 +98,6 @@ export function combineChallenges({
   if (jsDescription !== pyDescription) {
     throw new Error(
       `JavaScript and Python descriptions do not match for challenge ${challengeNumber}`
-    );
-  }
-
-  if (jsInstructions !== pyInstructions) {
-    throw new Error(
-      `JavaScript and Python instructions do not match for challenge ${challengeNumber}`
     );
   }
 
@@ -124,9 +115,6 @@ export function combineChallenges({
     title: jsTitle.replace(`JavaScript Challenge ${challengeNumber}: `, ''),
     date,
     description: removeSection(jsDescription),
-    ...(jsInstructions && {
-      instructions: removeSection(jsInstructions)
-    }),
     javascript: {
       tests: jsTests,
       challengeFiles: jsChallengeFiles
@@ -154,9 +142,9 @@ export function handleError(err: Error, client: MongoClient) {
   }
 }
 
-// Remove the <section id="description/instructions"> that our parser adds.
+// Remove the <section id="description"> that our parser adds.
 export function removeSection(str: string) {
   return str
-    .replace(/^<section id="(description|instructions)">\n?/, '')
+    .replace(/^<section id="description">\n?/, '')
     .replace(/\n?<\/section>$/, '');
 }

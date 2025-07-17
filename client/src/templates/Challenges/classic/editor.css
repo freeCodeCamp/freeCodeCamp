@@ -60,6 +60,14 @@ textarea.inputarea {
   white-space: pre-wrap;
 }
 
+.editor-file-name {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--quaternary-background);
+  padding-left: 11px;
+  overflow: hidden;
+}
+
 .action-row-container,
 .description-container {
   background-color: var(--secondary-background);

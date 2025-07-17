@@ -192,7 +192,7 @@ export type ChallengeNode = {
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
-    hooks?: { beforeAll: string };
+    hooks?: Hooks;
     id: string;
     instructions: string;
     isComingSoon: boolean;
@@ -239,6 +239,12 @@ export type ChallengeNode = {
     module?: string;
   };
 };
+
+export interface Hooks {
+  beforeAll?: string;
+  beforeEach?: string;
+  afterEach?: string;
+}
 
 export type PageContext = {
   challengeMeta: ChallengeMeta;

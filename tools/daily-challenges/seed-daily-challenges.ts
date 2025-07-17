@@ -18,14 +18,14 @@ const EXPECTED_CHALLENGE_COUNT = 24;
 // Date to set for the first challenge, second challenge will be one day later, etc...
 // **DO NOT CHANGE THIS AFTER RELEASE (if seeding production - okay for local dev)**
 const year = 2025;
-const monthIndex = 5; // 0-indexed -> 5 = June
-const day = 18;
+const monthIndex = 6; // 0-indexed -> 5 = June
+const day = 15;
 const START_DATE = new Date(Date.UTC(year, monthIndex, day));
 const ONE_DAY_IN_MS = 24 * 60 * 60 * 1000;
 
 // Sanity check to make sure the start date hasn't unintentionally changed
 // **IT SHOULD NOT CHANGE AFTER RELEASE**
-const startDateString = '2025-06-18T00:00:00.000Z';
+const startDateString = '2025-07-15T00:00:00.000Z';
 if (START_DATE.toISOString() !== startDateString) {
   throw new Error(
     `It appears the start date has changed from "${startDateString}".

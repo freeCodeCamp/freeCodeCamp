@@ -3,6 +3,7 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import fastifyMultipart from '@fastify/multipart';
 import { PrismaClientValidationError } from '@prisma/client/runtime/library';
 import { type FastifyInstance, type FastifyReply } from 'fastify';
+import { ExamEnvironmentExamModerationStatus } from '@prisma/client';
 import jwt from 'jsonwebtoken';
 
 import * as schemas from '../schemas';
@@ -10,10 +11,11 @@ import { mapErr, syncMapErr, UpdateReqType } from '../../utils';
 import { JWT_SECRET, SCREENSHOT_SERVICE_LOCATION } from '../../utils/env';
 import {
   checkPrerequisites,
+  constructEnvExamAttempt,
   constructUserExam,
   userAttemptToDatabaseAttemptQuestionSets,
   validateAttempt
-} from '../utils/exam';
+} from '../utils/exam-environment';
 import { ERRORS } from '../utils/errors';
 import { isObjectID } from '../../utils/validation';
 
@@ -45,6 +47,21 @@ export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
       },
       postExamAttemptHandler
     );
+    fastify.get(
+      '/exam-environment/exam/attempts',
+      {
+        schema: schemas.examEnvironmentGetExamAttempts
+      },
+      getExamAttemptsHandler
+    );
+    fastify.get(
+      '/exam-environment/exam/attempt/:attemptId',
+      {
+        schema: schemas.examEnvironmentGetExamAttempt
+      },
+      getExamAttemptHandler
+    );
+
     done();
   };
 
@@ -180,7 +197,7 @@ async function postExamGeneratedExamHandler(
   // Get exam from DB
   const examId = req.body.examId;
   const maybeExam = await mapErr(
-    this.prisma.envExam.findUnique({
+    this.prisma.examEnvironmentExam.findUnique({
       where: {
         id: examId
       }
@@ -188,12 +205,13 @@ async function postExamGeneratedExamHandler(
   );
   if (maybeExam.hasError) {
     if (maybeExam.error instanceof PrismaClientValidationError) {
-      logger.warn({ examError: maybeExam.error }, 'Invalid exam id given.');
+      logger.warn(maybeExam.error, 'Invalid exam id given.');
       void reply.code(400);
       return reply.send(ERRORS.FCC_EINVAL_EXAM_ID(maybeExam.error.message));
     }
 
-    logger.error({ examError: maybeExam.error });
+    logger.error(maybeExam.error);
+    this.Sentry.captureException(maybeExam.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
@@ -228,9 +246,10 @@ async function postExamGeneratedExamHandler(
     );
   }
 
-  // Check user has not completed exam in last 24 hours
+  // Check user has not completed exam within cooldown period, and
+  // user does not have an existing attempt awaiting grading
   const maybeExamAttempts = await mapErr(
-    this.prisma.envExamAttempt.findMany({
+    this.prisma.examEnvironmentExamAttempt.findMany({
       where: {
         userId: user.id,
         examId: exam.id
@@ -239,10 +258,8 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeExamAttempts.hasError) {
-    logger.error(
-      { examAttemptsError: maybeExamAttempts.error },
-      'Unable to query exam attempts.'
-    );
+    logger.error(maybeExamAttempts.error, 'Unable to query exam attempts.');
+    this.Sentry.captureException(maybeExamAttempts.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExamAttempts.error))
@@ -258,6 +275,41 @@ async function postExamGeneratedExamHandler(
     : null;
 
   if (lastAttempt) {
+    // Camper may not take the exam again, until the previous attempt is graded.
+    const maybeMod = await mapErr(
+      this.prisma.examEnvironmentExamModeration.findFirst({
+        where: {
+          examAttemptId: lastAttempt.id,
+          status: ExamEnvironmentExamModerationStatus.Pending
+        }
+      })
+    );
+
+    if (maybeMod.hasError) {
+      logger.error(maybeMod.error);
+      this.Sentry.captureException(maybeMod.error);
+      void reply.code(500);
+      return reply.send(
+        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeMod.error))
+      );
+    }
+
+    const moderation = maybeMod.data;
+
+    if (moderation !== null) {
+      logger.warn(
+        { examAttemptId: lastAttempt.id },
+        'User has an exam attempt awaiting grading.'
+      );
+      void reply.code(403);
+      return reply.send(
+        // TODO: Better error type
+        ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
+          'User has an exam attempt awaiting grading.'
+        )
+      );
+    }
+
     const examExpirationTime =
       lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
     if (examExpirationTime < Date.now()) {
@@ -282,7 +334,7 @@ async function postExamGeneratedExamHandler(
       // This is most likely to happen if the Camper's app closes and is reopened.
       // Send the Camper back to the exam they were working on.
       const generated = await mapErr(
-        this.prisma.envGeneratedExam.findFirst({
+        this.prisma.examEnvironmentGeneratedExam.findFirst({
           where: {
             id: lastAttempt.generatedExamId
           }
@@ -290,10 +342,8 @@ async function postExamGeneratedExamHandler(
       );
 
       if (generated.hasError) {
-        logger.error(
-          { generatedError: generated.error },
-          'Unable to query generated exam.'
-        );
+        logger.error(generated.error, 'Unable to query generated exam.');
+        this.Sentry.captureException(generated.error);
         void reply.code(500);
         return reply.send(
           ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(generated.error))
@@ -301,16 +351,14 @@ async function postExamGeneratedExamHandler(
       }
 
       if (generated.data === null) {
-        logger.error(
-          { generatedExamId: lastAttempt.generatedExamId },
-          'Generated exam not found.'
-        );
+        const error = {
+          data: { generatedExamId: lastAttempt.generatedExamId },
+          message: 'Unreachable. Generated exam not found.'
+        };
+        logger.error(error.data, error.message);
+        this.Sentry.captureException(error.data);
         void reply.code(500);
-        return reply.send(
-          ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
-            'Unreachable. Generated exam not found.'
-          )
-        );
+        return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message));
       }
 
       const userExam = constructUserExam(generated.data, exam);
@@ -324,7 +372,7 @@ async function postExamGeneratedExamHandler(
 
   // Randomly pick a generated exam for user
   const maybeGeneratedExams = await mapErr(
-    this.prisma.envGeneratedExam.findMany({
+    this.prisma.examEnvironmentGeneratedExam.findMany({
       where: {
         // Find generated exams user has not already seen
         examId: exam.id,
@@ -340,7 +388,8 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeGeneratedExams.hasError) {
-    logger.error({ generatedExamsError: maybeGeneratedExams.error });
+    logger.error(maybeGeneratedExams.error);
+    this.Sentry.captureException(maybeGeneratedExams.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(maybeGeneratedExams.error)
@@ -350,17 +399,21 @@ async function postExamGeneratedExamHandler(
   const generatedExams = maybeGeneratedExams.data;
 
   if (generatedExams.length === 0) {
-    const errMessage = `Unable to provide a generated exam. Either all generated exams have been exhausted, or all generated exams are deprecated.`;
-    logger.error({ examId: exam.id }, errMessage);
+    const error = {
+      data: { examId: exam.id },
+      message: `Unable to provide a generated exam. Either all generated exams have been exhausted, or all generated exams are deprecated.`
+    };
+    logger.error(error.data, error.message);
+    this.Sentry.captureException(error);
     void reply.code(500);
-    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(errMessage));
+    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message));
   }
 
   const randomGeneratedExam =
     generatedExams[Math.floor(Math.random() * generatedExams.length)]!;
 
   const maybeGeneratedExam = await mapErr(
-    this.prisma.envGeneratedExam.findFirst({
+    this.prisma.examEnvironmentGeneratedExam.findFirst({
       where: {
         id: randomGeneratedExam.id
       }
@@ -368,7 +421,8 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeGeneratedExam.hasError) {
-    logger.error({ generatedExamError: maybeGeneratedExam.error });
+    logger.error(maybeGeneratedExam.error);
+    this.Sentry.captureException(maybeGeneratedExam.error);
     void reply.code(500);
     return reply.send(
       // TODO: Consider more specific code
@@ -382,32 +436,32 @@ async function postExamGeneratedExamHandler(
   const generatedExam = maybeGeneratedExam.data;
 
   if (generatedExam === null) {
-    logger.error(
-      { generatedExamId: randomGeneratedExam.id },
-      'Generated exam not found.'
-    );
+    const error = {
+      data: { generatedExamId: randomGeneratedExam.id },
+      message: 'Unreachable. Generated exam not found.'
+    };
+    logger.error(error.data, 'Unreachable. Generated exam not found.');
+    this.Sentry.captureException(error);
     void reply.code(500);
-    return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(`Unable to locate generated exam.`)
-    );
+    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message));
   }
 
   // Create exam attempt so, even if user disconnects, their attempt is still recorded:
   const attempt = await mapErr(
-    this.prisma.envExamAttempt.create({
+    this.prisma.examEnvironmentExamAttempt.create({
       data: {
         userId: user.id,
         examId: exam.id,
         generatedExamId: generatedExam.id,
         startTimeInMS: Date.now(),
-        questionSets: [],
-        needsRetake: false
+        questionSets: []
       }
     })
   );
 
   if (attempt.hasError) {
-    logger.error({ attemptError: attempt.error });
+    logger.error(attempt.error);
+    this.Sentry.captureException(attempt.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT_CREATE_EXAM_ATTEMPT(
@@ -422,12 +476,14 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeUserExam.hasError) {
-    logger.error({ userExamError: maybeUserExam.error });
-    await this.prisma.envExamAttempt.delete({
+    logger.error(maybeUserExam.error);
+    // TODO: Consider handling this failing
+    await this.prisma.examEnvironmentExamAttempt.delete({
       where: {
         id: attempt.data.id
       }
     });
+    this.Sentry.captureException(maybeUserExam.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUserExam.error))
@@ -465,7 +521,7 @@ async function postExamAttemptHandler(
   const user = req.user!;
 
   const maybeAttempts = await mapErr(
-    this.prisma.envExamAttempt.findMany({
+    this.prisma.examEnvironmentExamAttempt.findMany({
       where: {
         examId: attempt.examId,
         userId: user.id
@@ -474,10 +530,8 @@ async function postExamAttemptHandler(
   );
 
   if (maybeAttempts.hasError) {
-    logger.error(
-      { error: maybeAttempts.error },
-      'User attempt cannot be linked to an exam attempt.'
-    );
+    logger.error(maybeAttempts.error);
+    this.Sentry.captureException(maybeAttempts.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
@@ -501,15 +555,18 @@ async function postExamAttemptHandler(
   );
 
   const maybeExam = await mapErr(
-    this.prisma.envExam.findUnique({
+    this.prisma.examEnvironmentExam.findUnique({
       where: {
         id: attempt.examId
+      },
+      select: {
+        config: true
       }
     })
   );
 
   if (maybeExam.hasError) {
-    logger.error({ examError: maybeExam.error });
+    logger.error(maybeExam.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
@@ -544,7 +601,7 @@ async function postExamAttemptHandler(
 
   // Get generated exam from database
   const maybeGeneratedExam = await mapErr(
-    this.prisma.envGeneratedExam.findUnique({
+    this.prisma.examEnvironmentGeneratedExam.findUnique({
       where: {
         id: latestAttempt.generatedExamId
       }
@@ -552,7 +609,7 @@ async function postExamAttemptHandler(
   );
 
   if (maybeGeneratedExam.hasError) {
-    logger.error({ generatedExamError: maybeGeneratedExam.error });
+    logger.error(maybeGeneratedExam.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeGeneratedExam.error))
@@ -583,26 +640,19 @@ async function postExamAttemptHandler(
     validateAttempt(generatedExam, databaseAttemptQuestionSets)
   );
 
-  // Update attempt in database
-  const maybeUpdatedAttempt = await mapErr(
-    this.prisma.envExamAttempt.update({
-      where: {
-        id: latestAttempt.id
-      },
-      data: {
-        questionSets: databaseAttemptQuestionSets,
-        // If attempt is not valid, immediately flag attempt as needing retake
-        // TODO: If `needsRetake`, prevent further submissions?
-        needsRetake: maybeValidExamAttempt.hasError ? true : undefined
-      }
-    })
-  );
-
   if (maybeValidExamAttempt.hasError) {
     logger.warn(
       { validExamAttemptError: maybeValidExamAttempt.error },
       'Invalid exam attempt.'
     );
+    // As attempt is invalid, create moderation record to investigate
+    await this.prisma.examEnvironmentExamModeration.create({
+      data: {
+        examAttemptId: latestAttempt.id,
+        status: ExamEnvironmentExamModerationStatus.Pending
+      }
+    });
+
     void reply.code(400);
     const message =
       maybeValidExamAttempt.error instanceof Error
@@ -610,6 +660,18 @@ async function postExamAttemptHandler(
         : 'Unknown attempt validation error';
     return reply.send(ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(message));
   }
+
+  // Update attempt in database
+  const maybeUpdatedAttempt = await mapErr(
+    this.prisma.examEnvironmentExamAttempt.update({
+      where: {
+        id: latestAttempt.id
+      },
+      data: {
+        questionSets: databaseAttemptQuestionSets
+      }
+    })
+  );
 
   if (maybeUpdatedAttempt.hasError) {
     logger.error({ updatedAttemptError: maybeUpdatedAttempt.error });
@@ -657,33 +719,89 @@ async function postScreenshotHandler(
     );
   }
 
-  const maybeAttempt = await mapErr(
-    this.prisma.envExamAttempt.findMany({
+  const maybeAttempts = await mapErr(
+    this.prisma.examEnvironmentExamAttempt.findMany({
       where: {
         userId: user.id
       }
     })
   );
 
-  if (maybeAttempt.hasError) {
-    logger.error(
-      { error: maybeAttempt.error },
-      'User screenshot cannot be linked to an exam attempt.'
-    );
+  if (maybeAttempts.hasError) {
+    logger.error(maybeAttempts.error);
+    this.Sentry.captureException(maybeAttempts.error);
     void reply.code(500);
     return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempt.error))
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
     );
   }
 
-  const attempt = maybeAttempt.data;
+  const attempts = maybeAttempts.data;
 
-  if (attempt.length === 0) {
+  if (attempts.length === 0) {
     logger.warn('No exam attempts found for user.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
         `No exam attempts found for user '${user.id}'.`
+      )
+    );
+  }
+
+  const latestAttempt = attempts.reduce((latest, current) =>
+    latest.startTimeInMS > current.startTimeInMS ? latest : current
+  );
+
+  const maybeExam = await mapErr(
+    this.prisma.examEnvironmentExam.findUnique({
+      where: {
+        id: latestAttempt.examId
+      },
+      select: {
+        id: true,
+        config: true
+      }
+    })
+  );
+
+  if (maybeExam.hasError) {
+    logger.error(maybeExam.error);
+    this.Sentry.captureException(maybeExam.error);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
+    );
+  }
+
+  const exam = maybeExam.data;
+
+  if (exam === null) {
+    const error = {
+      data: {
+        examId: latestAttempt.examId,
+        attemptId: latestAttempt.id
+      },
+      message: 'Unreachable. Attempt could not be related to an exam.'
+    };
+    logger.error(error.data, error.message);
+    this.Sentry.captureException(error.data);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(error.message)
+    );
+  }
+
+  const isAttemptExpired =
+    latestAttempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
+  if (isAttemptExpired) {
+    logger.warn(
+      { examAttemptId: latestAttempt.id },
+      'Attempt has exceeded submission time.'
+    );
+    void reply.code(403);
+    return reply.send(
+      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
+        'Attempt has exceeded submission time.'
       )
     );
   }
@@ -703,7 +821,7 @@ async function postScreenshotHandler(
 
   const uploadData = {
     image: imgBinary.toString('base64'),
-    examAttemptId: attempt[0]?.id
+    examAttemptId: latestAttempt.id
   };
 
   await fetch(`${SCREENSHOT_SERVICE_LOCATION}/upload`, {
@@ -724,16 +842,29 @@ async function getExams(
   logger.info({ user: req.user });
 
   const user = req.user!;
-  const exams = await this.prisma.envExam.findMany({
-    where: {
-      deprecated: false
-    },
-    select: {
-      id: true,
-      config: true,
-      prerequisites: true
-    }
-  });
+  const maybeExams = await mapErr(
+    this.prisma.examEnvironmentExam.findMany({
+      where: {
+        deprecated: false
+      },
+      select: {
+        id: true,
+        config: true,
+        prerequisites: true
+      }
+    })
+  );
+
+  if (maybeExams.hasError) {
+    logger.error(maybeExams.error);
+    this.Sentry.captureException(maybeExams.error);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExams.error))
+    );
+  }
+
+  const exams = maybeExams.data;
 
   const availableExams = exams.map(exam => {
     const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
@@ -744,7 +875,8 @@ async function getExams(
         name: exam.config.name,
         note: exam.config.note,
         totalTimeInMS: exam.config.totalTimeInMS,
-        retakeTimeInMS: exam.config.retakeTimeInMS
+        retakeTimeInMS: exam.config.retakeTimeInMS,
+        passingPercent: exam.config.passingPercent
       },
       canTake: isExamPrerequisitesMet
     };
@@ -753,4 +885,123 @@ async function getExams(
   return reply.send({
     exams: availableExams
   });
+}
+
+/**
+ * Gets all exam attempts owned by authz user.
+ *
+ * If an attempt is completed, the result is included.
+ */
+async function getExamAttemptsHandler(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.examEnvironmentGetExamAttempts>,
+  reply: FastifyReply
+) {
+  const logger = this.log.child({ req });
+  logger.info({ userId: req.user?.id });
+
+  const user = req.user!;
+
+  // Send all relevant exam attempts
+  const envExamAttempts = [];
+  const maybeAttempts = await mapErr(
+    this.prisma.examEnvironmentExamAttempt.findMany({
+      where: {
+        userId: user.id
+      }
+    })
+  );
+
+  if (maybeAttempts.hasError) {
+    logger.error(maybeAttempts.error);
+    this.Sentry.captureException(maybeAttempts.error);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
+    );
+  }
+
+  const attempts = maybeAttempts.data;
+
+  if (!attempts.length) {
+    logger.warn({ userId: user.id }, 'No exam attempts found.');
+    void reply.code(404);
+    return reply.send(
+      ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT('No exam attempt found.')
+    );
+  }
+
+  for (const attempt of attempts) {
+    const { error, examEnvironmentExamAttempt } = await constructEnvExamAttempt(
+      this,
+      attempt,
+      logger
+    );
+    if (error) {
+      void reply.code(error.code);
+      return reply.send(error.data);
+    }
+    envExamAttempts.push(examEnvironmentExamAttempt);
+  }
+
+  return reply.send(envExamAttempts);
+}
+
+/**
+ * Gets the requested exam attempt by id owned by authz user.
+ *
+ * If the attempt is completed, the result is included.
+ */
+async function getExamAttemptHandler(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.examEnvironmentGetExamAttempt>,
+  reply: FastifyReply
+) {
+  const logger = this.log.child({ req });
+  logger.info({ userId: req.user?.id });
+
+  const user = req.user!;
+  const { attemptId } = req.params;
+
+  // If attempt id is given, only return that attempt
+  const maybeAttempt = await mapErr(
+    this.prisma.examEnvironmentExamAttempt.findUnique({
+      where: {
+        id: attemptId,
+        userId: user.id
+      }
+    })
+  );
+
+  if (maybeAttempt.hasError) {
+    logger.error(maybeAttempt.error);
+    this.Sentry.captureException(maybeAttempt.error);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempt.error))
+    );
+  }
+
+  const attempt = maybeAttempt.data;
+
+  if (!attempt) {
+    logger.warn({ attemptId }, 'No exam attempt found.');
+    void reply.code(404);
+    return reply.send(
+      ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT('No exam attempt found.')
+    );
+  }
+
+  const { error, examEnvironmentExamAttempt } = await constructEnvExamAttempt(
+    this,
+    attempt,
+    logger
+  );
+
+  if (error) {
+    void reply.code(error.code);
+    return reply.send(error.data);
+  }
+
+  return reply.send(examEnvironmentExamAttempt);
 }

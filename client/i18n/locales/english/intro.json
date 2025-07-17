@@ -3155,6 +3155,12 @@
           "In this lab, you'll review working with arrays and random numbers by building a lunch picker program."
         ]
       },
+      "lab-reverse-a-string": {
+        "title": "Build a String Inverter",
+        "intro": [
+          "In this lab, you create a function that reverses a given string."
+        ]
+      },
       "lecture-working-with-common-array-methods": {
         "title": "Working with Common Array Methods",
         "intro": [
@@ -3418,6 +3424,12 @@
         "title": "DOM Manipulation and Click Events with JavaScript Quiz",
         "intro": [
           "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
+        ]
+      },
+      "workshop-planets-tablist": {
+        "title": "Build a Planets Tablist",
+        "intro": [
+          "In this workshop, you will build a dynamic tabbed interface that showcases facts about the planets in the solar system."
         ]
       },
       "review-js-a11y": {
@@ -3993,6 +4005,19 @@
           "In this workshop, you will learn the basics of Tailwind CSS by building out an error message component."
         ]
       },
+      "workshop-tailwind-cta-component": {
+        "title": "Build a Taiwlind CTA Compoent",
+        "intro": [
+          "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
+        ]
+      },
+      "lab-music-shopping-cart-page": {
+        "title": "Build a Music Shopping Cart Page",
+        "intro": [
+          "In this lab, you will build a music shopping cart page with Tailwind CSS.",
+          "You will practice working with Tailwind CSS utility classes for flexbox layouts, colors, breakpoints and more."
+        ]
+      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -4116,12 +4141,12 @@
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Working with Dictionaries and Sets",
         "intro": [
-          "Learn about Working with Dictionaries and Sets in these lectures."
+          "Learn about working with dictionaries and sets in these lectures."
         ]
       },
       "lecture-working-with-modules": {
         "title": "Working with Modules",
-        "intro": ["Learn about Working with Modules in these lectures."]
+        "intro": ["Learn about working with modules in these lectures."]
       },
       "workshop-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
@@ -4135,7 +4160,7 @@
         "title": "Dictionaries and Sets review",
         "intro": [
           "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
-          "[Add more details]"
+          "Open up this page to review concepts around dictionaries, sets, and how to import modules."
         ]
       },
       "quiz-dictionaries-and-sets": {
@@ -4314,6 +4339,12 @@
         "title": "Implement the Luhn Algorithm",
         "intro": [
           "In this lab, you will implement the Luhn algorithm to validate identification numbers such as credit card numbers."
+        ]
+      },
+      "lab-tower-of-hanoi": {
+        "title": "Implement the Tower of Hanoi Algorithm",
+        "intro": [
+          "In this lab, you will implement an algorithm to solve the Tower of Hanoi puzzle."
         ]
       },
       "review-searching-and-sorting-algorithms": {

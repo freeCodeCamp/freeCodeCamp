@@ -2165,21 +2165,21 @@
         ]
       },
       "lecture-understanding-nuanced-semantic-elements": {
-        "title": "Understanding Nuanced Semantic Elements",
+        "title": "Нюанси роботи з семантичними елементами",
         "intro": [
-          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+          "У цих відеолекціях ви дізнаєтесь, коли варто використовувати семантичні елементи (наприклад, <code>em</code> замість <code>i</code>), а також про списки визначень і багато іншого."
         ]
       },
       "lecture-working-with-text-and-time-semantic-elements": {
-        "title": "Working with Text and Time Semantic Elements ",
+        "title": "Робота з семантичними елементами тексту і часу",
         "intro": [
-          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+          "У цих відеолекціях ви дізнаєтесь про важливість семантики у передачі значення тексту і часу, що включає елементи <code>time</code>, <code>blockquote</code> тощо."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
-        "title": "Working with Specialized Semantic Elements",
+        "title": "Робота зі спеціальними семантичними елементами",
         "intro": [
-          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+          "У цих відеолекціях ви ознайомитесь зі спеціальними семантичними елементами, зокрема з <code>u</code>, <code>s</code>, <code>code</code> і багатьма іншими."
         ]
       },
       "workshop-blog-page": {
@@ -3150,6 +3150,12 @@
           "У цій лабораторній роботі ви пригадаєте, як працювати з масивами й випадковими числами, створивши програму для вибору перекусу."
         ]
       },
+      "lab-reverse-a-string": {
+        "title": "Build a String Inverter",
+        "intro": [
+          "In this lab, you create a function that reverses a given string."
+        ]
+      },
       "lecture-working-with-common-array-methods": {
         "title": "Поширені методи роботи з масивами",
         "intro": [
@@ -3871,10 +3877,10 @@
         ]
       },
       "lab-one-time-password-generator": {
-        "title": "Build a One-Time Password Generator",
+        "title": "Створіть генератор одноразових паролів",
         "intro": [
-          "In this lab you'll build a one-time password generator.",
-          "You'll practice using the useEffect hooks to create a timer and generate a random OTP."
+          "У цій лабораторній роботі ви створите генератор одноразових паролів.",
+          "Ви застосуєте хуки useEffect на практиці, щоб створити таймер і згенерувати одноразовий пароль."
         ]
       },
       "review-react-state-and-hooks": {
@@ -3981,6 +3987,19 @@
         "title": "Робота з бібліотеками та фреймворками CSS",
         "intro": [
           "У цих відеолекціях ви дізнаєтесь, як працювати з бібліотеками та фреймворками CSS."
+        ]
+      },
+      "workshop-error-message-component": {
+        "title": "Створіть компонент ErrorMessage",
+        "intro": [
+          "У цьому практичному занятті ви ознайомитесь з основами Tailwind CSS, створивши компонент ErrorMessage."
+        ]
+      },
+      "lab-music-shopping-cart-page": {
+        "title": "Створіть кошик з покупками",
+        "intro": [
+          "У цій лабораторній роботі ви створите кошик з покупками за допомогою Tailwind CSS.",
+          "Ви будете використовувати класи-утиліти для макетів, кольорів, точок зупинок і багато іншого."
         ]
       },
       "review-css-libraries-and-frameworks": {
@@ -4097,9 +4116,11 @@
           "У цих відеолекціях ви дізнаєтесь про цикли та послідовності."
         ]
       },
-      "workshop-placeholder-loops-and-sequences": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-pin-extractor": {
+        "title": "Build a Pin Extractor",
+        "intro": [
+          "In this workshop you will build a function to extract secret pins hidden in poems."
+        ]
       },
       "lab-number-pattern-generator": {
         "title": "Створіть генератор числових патернів",
@@ -4122,11 +4143,13 @@
       },
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Робота зі словниками та наборами",
-        "intro": ["У цих відеолекціях ви дізнаєтесь про словники та набори."]
+        "intro": [
+          "У цих відеолекціях ви дізнаєтесь, як працювати зі словниками і наборами."
+        ]
       },
       "lecture-working-with-modules": {
         "title": "Робота з модулями",
-        "intro": ["У цих відеолекціях ви дізнаєтесь про модулі."]
+        "intro": ["У цих відеолекціях ви дізнаєтесь, як працювати з модулями."]
       },
       "workshop-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
@@ -4140,7 +4163,7 @@
         "title": "Повторення словників та наборів",
         "intro": [
           "Перш ніж перейти до тесту «Словники та набори», повторіть основні поняття.",
-          "[Add more details]"
+          "Відкрийте цю сторінку, щоб пригадати поняття, які стосуються словників і наборів, а також імпорту модулів."
         ]
       },
       "quiz-dictionaries-and-sets": {
