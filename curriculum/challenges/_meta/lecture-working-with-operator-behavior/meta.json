@@ -1,0 +1,24 @@
+{
+  "name": "Working with Operator Behaviour",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-operator-behavior",
+  "superBlock": "full-stack-developer",
+  "order": 42,
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "6732719e2e3ad4d947410b65",
+      "title": "How Does Operator Precedence Work?"
+    },
+    {
+      "id": "673271a8998ddfd97578d095",
+      "title": "How Do the Increment and Decrement Operators Work?"
+    },
+    {
+      "id": "673271b4213033d9b661c70e",
+      "title": "What Are Compound Assignment Operators in JavaScript, and How Do They Work?"
+    }
+  ]
+}

@@ -587,7 +587,19 @@
           "dashedName": "javascript-booleans-and-numbers",
           "blocks": [
             {
-              "dashedName": "lecture-working-with-numbers-booleans-and-the-math-object"
+              "dashedName": "lecture-working-with-numbers-and-arithmetic-operators"
+            },
+            {
+              "dashedName": "lecture-working-with-operator-behavior"
+            },
+            {
+              "dashedName": "lecture-working-with-comparisons-and-boolean-operators"
+            },
+            {
+              "dashedName": "lecture-working-with-unary-and-bitwise-operators"
+            },
+            {
+              "dashedName": "lecture-working-with-conditional-logic-and-math-methods"
             },
             {
               "dashedName": "workshop-mathbot"

@@ -1,0 +1,23 @@
+{
+  "name": "Working with Conditional Logic and Math Methods",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-conditional-logic-and-math-methods",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "673271fd11d063daf0cf8d20",
+      "title": "What Are Conditional Statements, and How Do If/Else If/Else Statements Work?"
+    },
+    {
+      "id": "6732720e95f6a0db526a2e4d",
+      "title": "What Are Binary Logical Operators, and How Do They Work?"
+    },
+    {
+      "id": "67327217e70ee0db7913b255",
+      "title": "What Is the Math Object in JavaScript, and What Are Some Common Methods?"
+    }
+  ]
+}

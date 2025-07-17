@@ -1,0 +1,23 @@
+{
+  "name": "Working with Numbers and Arithmetic Operators",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-numbers-and-arithmetic-operators",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "672d266e014ef8216df987d2",
+      "title": "What Is the Number Type in JavaScript, and What Are the Different Types of Numbers Available?"
+    },
+    {
+      "id": "673271884bf678d8b9c64f56",
+      "title": "What Are the Different Arithmetic Operators in JavaScript?"
+    },
+    {
+      "id": "67327195e77b1bd90bdd49d7",
+      "title": "What Happens When You Try to Do Calculations with Numbers and Strings?"
+    }
+  ]
+}
