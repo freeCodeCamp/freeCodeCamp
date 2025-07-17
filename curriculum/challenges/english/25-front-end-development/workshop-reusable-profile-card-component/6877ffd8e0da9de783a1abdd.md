@@ -1,25 +1,34 @@
 ---
-id: 6870dd38187258b547f82d76
-title: Step 8
+id: 6877ffd8e0da9de783a1abdd
+title: Step 10
 challengeType: 0
-dashedName: step-8
+dashedName: step-10
 ---
 
 # --description--
 
-Now, remove all three `<Card />` components from your `App` component.
-
-Currently, you're manually writing each card. However, imagine if you had 100 cards; writing them individually would be highly inefficient and time-consuming.
-
-Instead, we will use the `map()` function, a more efficient way to render lists in React.
+Now that we have our `profiles` array, let's use the `map()` function to display only the `name` from each profile.
 
 # --hints--
 
-Remove all three `<Card />` components.
+You should use the `map()` method on the `profiles` array.
 
 ```js
-const cards = document.querySelectorAll('.card');
-assert.lengthOf(cards, 0, 'You should remove all hardcoded Card components first');
+assert.match(code, /\{\s*profiles\s*\.\s*map\s*\(/);
+```
+
+You should pass `profile` as the `map()` method's parameter.
+
+```js
+assert.match(code, /map\s*\(\s*(profile|\(\s*profile\s*\))\s*=>/);
+```
+
+You should render a `div` containing the `name` property from the `profile` object.
+
+```js
+const div = document.querySelector('.flex-container > div');
+assert.exists(div, 'Missing rendered div element');
+assert.equal(div.textContent, 'Mark');
 ```
 
 # --seed--
@@ -111,26 +120,13 @@ export function Card({ name, title, bio }) {
 }
 
 export function App() {
+  const profiles = [
+  	{ id: '1', name: "Mark", title: "Frontend developer", bio: "I like to work with different frontend technologies and play video games." }
+	];
   return (
     <div className="flex-container">
-      --fcc-editable-region--
-      <Card
-        name="Mark"
-        title="Frontend developer"
-        bio="I like to work with different frontend technologies and play video games."
-      />
-
-      <Card
-        name="Tiffany"
-        title="Engineering manager"
-        bio="I have worked in tech for 15 years and love to help people grow in this industry."
-      />
-
-      <Card
-        name="Doug"
-        title="Backend developer"
-        bio="I have been a software developer for over 20 years and I love working with Go and Rust."
-      />
+    	--fcc-editable-region--
+      
       --fcc-editable-region--
     </div>
   );
