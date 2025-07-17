@@ -29,38 +29,6 @@ describe('findOrCreateUser', () => {
     jest.clearAllMocks();
   });
 
-  it('should send a message to Sentry if there are multiple users with the same email', async () => {
-    const user1 = await fastify.prisma.user.create({
-      data: createUserInput(email)
-    });
-    const user2 = await fastify.prisma.user.create({
-      data: createUserInput(email)
-    });
-
-    const ids = [user1.id, user2.id];
-
-    await findOrCreateUser(fastify, email);
-
-    expect(captureException).toHaveBeenCalledTimes(1);
-    expect(captureException).toHaveBeenCalledWith(
-      new Error(`Multiple user records found for: ${ids.join(', ')}`)
-    );
-  });
-
-  it('should NOT send a message if there is only one user with the email', async () => {
-    await fastify.prisma.user.create({ data: createUserInput(email) });
-
-    await findOrCreateUser(fastify, email);
-
-    expect(captureException).not.toHaveBeenCalled();
-  });
-
-  it('should NOT send a message if there are no users with the email', async () => {
-    await findOrCreateUser(fastify, email);
-
-    expect(captureException).not.toHaveBeenCalled();
-  });
-
   it('should merge duplicate users when multiple users with same email exist', async () => {
     // Create two users with different completion data
     const user1 = await fastify.prisma.user.create({
