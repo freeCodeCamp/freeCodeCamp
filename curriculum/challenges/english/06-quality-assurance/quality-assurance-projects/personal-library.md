@@ -34,7 +34,6 @@ You can provide your own project, not the example URL.
 You can send a <b>POST</b> request to `/api/books` with `title` as part of the form data to add a book.  The returned response will be an object with the `title` and a unique `_id` as keys.  If `title` is not included in the request, the returned response should be the string `missing required field title`.
 
 ```js
-async () => {
   try {
     let data1 = await $.post(code + '/api/books', {
       title: 'Faux Book 1'
@@ -49,13 +48,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 You can send a <b>GET</b> request to `/api/books` and receive a JSON response representing all the books. The JSON response will be an array of objects with each object (book) containing `title`, `_id`, and `commentcount` properties.
 
 ```js
-async () => {
   try {
     let url = code + '/api/books';
     let a = $.post(url, { title: 'Faux Book A' });
@@ -77,13 +74,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 You can send a <b>GET</b> request to `/api/books/{_id}` to retrieve a single object of a book containing the properties `title`, `_id`, and a `comments` array (empty array if no comments present). If no book is found, return the string `no book exists`.
 
 ```js
-async () => {
   try {
     let url = code + '/api/books';
     let noBook = await $.get(url + '/5f665eb46e296f6b9b6a504d');
@@ -101,13 +96,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 You can send a <b>POST</b> request containing `comment` as the form body data to `/api/books/{_id}` to add a comment to a book. The returned response will be the books object similar to <b>GET</b> `/api/books/{_id}` request in an earlier test. If `comment` is not included in the request, return the string `missing required field comment`. If no book is found, return the string `no book exists`.
 
 ```js
-async () => {
   try {
     let url = code + '/api/books';
     let commentTarget = await $.post(url, { title: 'Notable Book' });
@@ -139,13 +132,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 You can send a <b>DELETE</b> request to `/api/books/{_id}` to delete a book from the collection. The returned response will be the string `delete successful` if successful. If no book is found, return the string `no book exists`.
 
 ```js
-async () => {
   try {
     let url = code + '/api/books';
     let deleteTarget = await $.post(url, { title: 'Deletable Book' });
@@ -163,13 +154,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 You can send a <b>DELETE</b> request to `/api/books` to delete all books in the database. The returned response will be the string `complete delete successful` if successful.
 
 ```js
-async () => {
   try {
     const deleteAll = await $.ajax({
       url: code + '/api/books',
@@ -180,13 +169,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 All 10 functional tests required are complete and passing.
 
 ```js
-async () => {
   try {
     const getTests = await $.get(code + '/_api/get-tests');
     assert.isArray(getTests);
@@ -202,5 +189,4 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```

@@ -38,7 +38,6 @@ Submit your page when you think you've got it right. If you're running into erro
 `passport-github` dependency should be added.
 
 ```js
-async () => {
   const url = new URL("/_api/package.json", code);
   const res = await fetch(url);
   const packJson = await res.json();
@@ -47,13 +46,11 @@ async () => {
     'passport-github',
     'Your project should list "passport-github" as a dependency'
   );
-}
 ```
 
 `passport-github` should be required.
 
 ```js
-async () => {
   const url = new URL("/_api/auth.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -62,13 +59,11 @@ async () => {
     /require.*("|')passport-github("|')/gi,
     'You should have required passport-github'
   );
-}
 ```
 
 GitHub strategy should be setup correctly thus far.
 
 ```js
-async () => {
   const url = new URL("/_api/auth.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -92,5 +87,4 @@ async () => {
     /process\.env(\.GITHUB_CLIENT_ID|\[(?<q>"|')GITHUB_CLIENT_ID\k<q>\])/g,
     'You should use process.env.GITHUB_CLIENT_ID'
   );
-}
 ```

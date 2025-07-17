@@ -35,7 +35,6 @@ Submit your page when you think you've got it right. If you're running into erro
 Server should listen for `'chat message'` and then emit it properly.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -44,13 +43,11 @@ async () => {
     /socket.on.*('|")chat message('|")[^]*io.emit.*('|")chat message('|").*username.*message/s,
     'Your server should listen to the socket for "chat message" then emit to all users "chat message" with name and message in the data object'
   );
-}
 ```
 
 Client should properly handle and display the new data from event `'chat message'`.
 
 ```js
-async () => {
   const url = new URL("/public/client.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -59,6 +56,5 @@ async () => {
     /socket.on.*('|")chat message('|")[^]*messages.*li/s,
     'You should append a list item to #messages on your client within the "chat message" event listener to display the new message'
   );
-}
 ```
 

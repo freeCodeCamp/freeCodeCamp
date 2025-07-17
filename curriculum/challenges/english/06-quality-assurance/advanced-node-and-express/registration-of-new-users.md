@@ -65,7 +65,6 @@ Submit your page when you think you've got it right. If you're running into erro
 You should have a `/register` route and display a registration form on the home page.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -79,13 +78,11 @@ async () => {
     /register[^]*post[^]*findOne[^]*username:( |)req.body.username/gi,
     'You should have a route that accepts a POST request on /register that queries the db with findOne and the query being username: req.body.username'
   );
-}
 ```
 
 Registering should work.
 
 ```js
-async () => {
   const url = code;
   const user = `freeCodeCampTester${Date.now()}`;
   const xhttp = new XMLHttpRequest();
@@ -107,13 +104,11 @@ async () => {
       'Register should work, and redirect successfully to the profile.'
     );
   }
-};
 ```
 
 Login should work.
 
 ```js
-async () => {
   const url = code;
   const user = `freeCodeCampTester${Date.now()}`;
   const xhttpReg = new XMLHttpRequest();
@@ -156,7 +151,6 @@ async () => {
       'The profile should properly display the welcome to the user logged in'
     );
   }
-};
 ```
 
 Logout should work.

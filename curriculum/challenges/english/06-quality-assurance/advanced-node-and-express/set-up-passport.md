@@ -36,7 +36,6 @@ Submit your page when you think you've got it right. If you're running into erro
 Passport and Express-session should be dependencies.
 
 ```js
-async () => {
   const url = new URL("/_api/package.json", code);
   const res = await fetch(url);
   const packJson = await res.json();
@@ -50,13 +49,11 @@ async () => {
     'express-session',
     'Your project should list "express-session" as a dependency'
   );
-}
 ```
 
 Dependencies should be correctly required.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -70,25 +67,21 @@ async () => {
     /require.*("|')express-session("|')/,
     'You should have required express-session'
   );
-}
 ```
 
 Express app should use new dependencies.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
   assert.match(data, /passport\.initialize/, 'Your express app should use "passport.initialize()"');
   assert.match(data, /passport\.session/, 'Your express app should use "passport.session()"');
-}
 ```
 
 Session and session secret should be correctly set up.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -97,6 +90,5 @@ async () => {
     /secret *:\s*process\.env(\.SESSION_SECRET|\[(?<q>"|')SESSION_SECRET\k<q>\])/,
     'Your express app should have express-session set up with your secret as process.env.SESSION_SECRET'
   );
-}
 ```
 

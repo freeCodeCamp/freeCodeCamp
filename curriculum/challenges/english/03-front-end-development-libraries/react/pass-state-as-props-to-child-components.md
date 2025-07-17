@@ -37,7 +37,6 @@ assert(
 The `Navbar` component should receive the `MyApp` state property `name` as props.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(MyApp));
@@ -47,13 +46,11 @@ async () => {
   };
   const navProps = await setState();
   assert(navProps.name === 'TestName');
-};
 ```
 
 The `h1` element in `Navbar` should render the `name` prop.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(MyApp));
@@ -64,7 +61,6 @@ async () => {
   };
   const navH1After = await setState();
   assert(new RegExp('TestName').test(navH1After) && navH1After !== navH1Before);
-};
 ```
 
 # --seed--

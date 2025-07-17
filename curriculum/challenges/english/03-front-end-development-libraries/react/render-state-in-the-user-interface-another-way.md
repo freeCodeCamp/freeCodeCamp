@@ -46,7 +46,6 @@ assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(code));
 The rendered `h1` heading element should contain text rendered from the component's state.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
@@ -56,7 +55,6 @@ async () => {
   };
   const firstValue = await first();
   assert(firstValue === '<div><h1>TestName</h1></div>');
-};
 ```
 
 # --seed--
