@@ -134,9 +134,9 @@ function DailyCodingChallengeCalendar({
       const response = await fetch(`${apiLocation}/daily-coding-challenge/all`);
       const challenges = (await response.json()) as AllDailyChallengeFromDb[];
 
-      // Todo: validate shape of challenges
-
       if (Array.isArray(challenges)) {
+        // Todo: validate shape of challenges
+
         const newDailyChallengesMap = new Map() as DailyChallengesMap;
 
         challenges.forEach(c => {
