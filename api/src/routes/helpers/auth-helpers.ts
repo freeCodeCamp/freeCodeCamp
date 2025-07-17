@@ -1,7 +1,10 @@
 import { FastifyInstance } from 'fastify';
 import { ObjectId } from 'mongodb';
 import { type user } from '@prisma/client';
+import { omit } from 'lodash';
+
 import { createUserInput } from '../../utils/create-user';
+import { removeNulls } from '../../utils/normalize';
 
 /**
  * Finds an existing user with the given email or creates a new user if none exists.
@@ -36,12 +39,14 @@ export const findOrCreateUser = async (
       });
       // Merge the duplicate users
       const mergedData = mergeDuplicateUsers(users);
-      const oldestUserId = mergedData.id!;
+      const oldestUserId = mergedData.id;
+
+      const userWithoutId = omit(mergedData, ['id']);
 
       // Update the oldest user with merged data
       await fastify.prisma.user.update({
         where: { id: oldestUserId },
-        data: mergedData as Parameters<
+        data: removeNulls(userWithoutId) as Parameters<
           typeof fastify.prisma.user.update
         >[0]['data']
       });
@@ -94,7 +99,7 @@ export const findOrCreateUser = async (
  * @param users - Array of duplicate user records to merge.
  * @returns The merged user data that should be used to update the oldest record.
  */
-export const mergeDuplicateUsers = (users: user[]): Partial<user> => {
+export const mergeDuplicateUsers = (users: user[]): user => {
   if (users.length <= 1) {
     throw new Error('At least two users are required for merging');
   }
@@ -110,7 +115,7 @@ export const mergeDuplicateUsers = (users: user[]): Partial<user> => {
   const newestUser = sortedUsers[sortedUsers.length - 1]!;
 
   // Start with a partial merge object
-  const mergedData: Partial<user> = {};
+  const mergedData = structuredClone(oldestUser);
 
   // Certification fields - if any user has true, keep true
   const certificationFields: (keyof user)[] = [
