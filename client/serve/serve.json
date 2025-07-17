@@ -295,6 +295,58 @@
     {
       "source": "/learn/full-stack-developer/lecture-understanding-core-javascript-fundamentals/what-are-closures-and-how-do-they-work",
       "destination": "/learn/full-stack-developer/lecture-working-with-code-quality-and-execution-concepts/what-are-closures-and-how-do-they-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-is-the-number-type-in-javascript-and-what-are-the-different-types-of-numbers-available",
+      "destination": "/learn/full-stack-developer/lecture-working-with-numbers-and-arithmetic-operators/what-is-the-number-type-in-javascript-and-what-are-the-different-types-of-numbers-available"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-the-different-arithmetic-operators-in-javascript",
+      "destination": "/learn/full-stack-developer/lecture-working-with-numbers-and-arithmetic-operators/what-are-the-different-arithmetic-operators-in-javascript"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-happens-when-you-try-to-do-calculations-with-numbers-and-strings",
+      "destination": "/learn/full-stack-developer/lecture-working-with-numbers-and-arithmetic-operators/what-happens-when-you-try-to-do-calculations-with-numbers-and-strings"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/how-does-operator-precedence-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-operator-behavior/how-does-operator-precedence-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/how-do-the-increment-and-decrement-operators-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-operator-behavior/how-do-the-increment-and-decrement-operators-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-compound-assignment-operators-in-javascript-and-how-do-they-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-operator-behavior/what-are-compound-assignment-operators-in-javascript-and-how-do-they-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-booleans-and-how-do-they-work-with-equality-and-inequality-operators",
+      "destination": "/learn/full-stack-developer/lecture-working-with-comparisons-and-boolean-operators/what-are-booleans-and-how-do-they-work-with-equality-and-inequality-operators"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-comparison-operators-and-how-do-they-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-comparisons-and-boolean-operators/what-are-comparison-operators-and-how-do-they-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-unary-operators-and-how-do-they-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-unary-and-bitwise-operators/what-are-unary-operators-and-how-do-they-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-bitwise-operators-and-how-do-they-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-unary-and-bitwise-operators/what-are-bitwise-operators-and-how-do-they-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-conditional-statements-and-how-do-if-else-if-else-statements-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-conditional-logic-and-math-methods/what-are-conditional-statements-and-how-do-if-else-if-else-statements-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-are-binary-logical-operators-and-how-do-they-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-conditional-logic-and-math-methods/what-are-binary-logical-operators-and-how-do-they-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-is-the-math-object-in-javascript-and-what-are-some-common-methods",
+      "destination": "/learn/full-stack-developer/lecture-working-with-conditional-logic-and-math-methods/what-is-the-math-object-in-javascript-and-what-are-some-common-methods"
     }
   ]
 }
