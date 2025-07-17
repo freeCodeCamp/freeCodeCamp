@@ -1,0 +1,11 @@
+{
+  "name": "Implement a String Ending Checker Function",
+  "isUpcomingChange": false,
+  "dashedName": "lab-string-ending-checker",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [{ "id": "6878d00d701b922699f96f06", "title": "Implement a String Ending Checker Function" }],
+  "blockType": "lab",
+  "blockLayout": "link",
+  "usesMultifileEditor": true
+}

@@ -3125,6 +3125,12 @@
           "In this lab, you will practice truncating a string at a certain length."
         ]
       },
+      "lab-string-ending-checker": {
+        "title": "Implement a String Ending Checker Function",
+        "intro": [
+          "In this lab, you will implement a function that checks if a given string ends with a specified target string."
+        ]
+      },
       "review-javascript-functions": {
         "title": "JavaScript Functions Review",
         "intro": [
