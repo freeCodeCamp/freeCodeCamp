@@ -704,6 +704,7 @@
             },
             { "dashedName": "lab-mutations" },
             { "dashedName": "lab-chunky-monkey" },
+            { "dashedName": "lab-repeat-a-string" },
             {
               "dashedName": "lab-profile-lookup"
             },
