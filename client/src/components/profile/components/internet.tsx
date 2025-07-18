@@ -21,9 +21,11 @@ import SectionHeader from '../../settings/section-header';
 import { User } from '../../../redux/prop-types';
 import { updateMySocials } from '../../../redux/settings/actions';
 
+// Added Bluesky to supported social links
 export interface Socials {
   githubProfile: string;
   linkedin: string;
+  bluesky: string; // new field
   twitter: string;
   website: string;
 }
@@ -50,6 +52,7 @@ const mapDispatchToProps: {
   updateMySocials
 };
 
+// Destructure user prop to get initial value for Bluesky
 const InternetSettings = ({
   user,
   t,
@@ -60,12 +63,15 @@ const InternetSettings = ({
     githubProfile = '',
     linkedin = '',
     twitter = '',
+    bluesky = '', // new field
     website = ''
   } = user;
 
+// Added Bluesky to the form state
   const [formValues, setFormValues] = useState<Socials>({
     githubProfile,
     linkedin,
+    bluesky, // new field
     twitter,
     website
   });
@@ -99,7 +105,8 @@ const InternetSettings = ({
     };
 
   const isFormPristine = () => {
-    const originalValues = { githubProfile, linkedin, twitter, website };
+    // Added Bluesky to original values for comparison
+    const originalValues = { githubProfile, linkedin, bluesky, twitter, website };
 
     return (Object.keys(originalValues) as Array<keyof Socials>).every(
       key => originalValues[key] === formValues[key]
@@ -127,6 +134,10 @@ const InternetSettings = ({
 
   const { state: linkedinValidation, message: linkedinValidationMessage } =
     getValidationStateFor(formValues.linkedin);
+
+// Validate the Bluesky input
+  const { state: blueskyValidation, message: blueskyValidationMessage } =
+    getValidationStateFor(formValues.bluesky);
 
   const { state: twitterValidation, message: twitterValidationMessage } =
     getValidationStateFor(formValues.twitter);
@@ -188,6 +199,28 @@ const InternetSettings = ({
               />
               <Info message={linkedinValidationMessage} />
             </FormGroup>
+            {/* Bluesky social link field */}
+          <FormGroup
+            controlId='internet-bluesky'
+            validationState={blueskyValidation}
+          >
+            <ControlLabel htmlFor='internet-bluesky-input'>
+              Bluesky
+            </ControlLabel>
+            <FormControl
+              onChange={createHandleChange('bluesky')}
+              placeholder='https://bsky.app/profile/your-handle.bsky.social'
+              type='url'
+              value={formValues.bluesky}
+              id='internet-bluesky-input'
+            />
+            <Check
+              url={formValues.bluesky}
+              validation={blueskyValidation}
+              dataPlaywrightTestLabel='internet-bluesky-check'
+            />
+            <Info message={blueskyValidationMessage} />
+          </FormGroup>
             <FormGroup
               controlId='internet-twitter'
               validationState={twitterValidation}
