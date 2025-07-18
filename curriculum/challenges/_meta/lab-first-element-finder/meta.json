@@ -1,0 +1,11 @@
+{
+  "name": "Build a First Element Finder",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "lab-first-element-finder",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [{ "id": "a6e40f1041b06c996f7b2406", "title": "Build a First Element Finder" }],
+  "usesMultifileEditor": true
+}
