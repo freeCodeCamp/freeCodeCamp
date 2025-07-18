@@ -109,10 +109,6 @@ describe('/daily-coding-challenge', () => {
           }
         ).send({});
 
-        if (res.status !== 400) {
-          console.error(`Expected 400 for ${invalidFormat}, got ${res.status}`);
-          console.error(res.body);
-        }
         expect(res.status).toBe(400);
         expect(res.body).toEqual({
           type: 'error',
