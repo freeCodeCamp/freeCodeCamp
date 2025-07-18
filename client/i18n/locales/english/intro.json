@@ -3450,6 +3450,12 @@
           "In this workshop, you will build a dynamic tabbed interface that showcases facts about the planets in the solar system."
         ]
       },
+      "lab-theme-switcher": {
+        "title": "Build a Theme Switcher",
+        "intro": [
+          "In this lab, you will build a theme switcher and practice working with the <code>aria-haspopup</code>, <code>aria-expanded</code>, and <code>aria-controls</code> attributes."
+        ]
+      },
       "review-js-a11y": {
         "title": "JavaScript and Accessibility Review",
         "intro": [

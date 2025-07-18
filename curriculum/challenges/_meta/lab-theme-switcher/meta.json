@@ -1,0 +1,11 @@
+{
+  "name": "Build a Theme Switcher",
+  "isUpcomingChange": true,
+  "blockType": "lab",
+  "blockLayout": "link",
+  "dashedName": "lab-theme-switcher",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [{ "id": "687ad7be1ff45032ccf1d92f", "title": "Build a Theme Switcher" }],
+  "usesMultifileEditor": true
+}
