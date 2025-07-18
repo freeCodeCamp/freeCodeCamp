@@ -3262,6 +3262,12 @@
           "In these lecture videos, you will learn more about the core JavaScript fundamentals. You will learn how a string object differs from a primitive string, the <code>toString()</code> method, conventions and common practices for naming variables, linters and formatters, closures, and much more."
         ]
       },
+      "lab-largest-number-finder": {
+        "title": "Build the Largest Number Finder",
+        "intro": [
+          "In this lab, you will use JavaScript fundamentals to create a function that finds the largest number in each sub-array of a given array."
+        ]
+      },
       "lab-slice-and-splice": {
         "title": "Implement the Slice and Splice Algorithm",
         "intro": [
