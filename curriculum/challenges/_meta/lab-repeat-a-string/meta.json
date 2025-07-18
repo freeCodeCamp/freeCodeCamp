@@ -1,6 +1,6 @@
 {
   "name": "Build a String Repeating Function",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-repeat-a-string",
   "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
