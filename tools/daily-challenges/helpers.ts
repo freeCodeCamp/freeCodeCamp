@@ -37,7 +37,6 @@ query {
           id
           title
           description
-          instructions
           fields {
             tests {
               testString
@@ -79,7 +78,6 @@ export function combineChallenges({
     id: jsId,
     title: jsTitle,
     description: jsDescription,
-    instructions: jsInstructions,
     fields: { tests: jsTests },
     challengeFiles: jsChallengeFiles
   } = jsChallenge;
@@ -87,7 +85,6 @@ export function combineChallenges({
   const {
     title: pyTitle,
     description: pyDescription,
-    instructions: pyInstructions,
     fields: { tests: pyTests },
     challengeFiles: pyChallengeFiles
   } = pyChallenge;
@@ -104,12 +101,6 @@ export function combineChallenges({
     );
   }
 
-  if (jsInstructions !== pyInstructions) {
-    throw new Error(
-      `JavaScript and Python instructions do not match for challenge ${challengeNumber}`
-    );
-  }
-
   if (jsTests.length !== pyTests.length) {
     throw new Error(
       `JavaScript and Python do not have the same number of tests for challenge ${challengeNumber}: ${jsTests.length} JavaScript vs ${pyTests.length} Python tests`
@@ -118,15 +109,12 @@ export function combineChallenges({
 
   // Use the JS challenge info for the new challenge meta - e.g. id, title, description, etc
   const challengeData = {
-    // **DO NOT CHANEGE THE ID** it's used as the challenge ID - and what gets added to completedDailyCodingChallenges[]
+    // **DO NOT CHANGE THE ID** it's used as the challenge ID - and what gets added to completedDailyCodingChallenges[]
     _id: new ObjectId(`${jsId}`),
     challengeNumber,
     title: jsTitle.replace(`JavaScript Challenge ${challengeNumber}: `, ''),
     date,
     description: removeSection(jsDescription),
-    ...(jsInstructions && {
-      instructions: removeSection(jsInstructions)
-    }),
     javascript: {
       tests: jsTests,
       challengeFiles: jsChallengeFiles
@@ -154,9 +142,9 @@ export function handleError(err: Error, client: MongoClient) {
   }
 }
 
-// Remove the <section id="description/instructions"> that our parser adds.
+// Remove the <section id="description"> that our parser adds.
 export function removeSection(str: string) {
   return str
-    .replace(/^<section id="(description|instructions)">\n?/, '')
+    .replace(/^<section id="description">\n?/, '')
     .replace(/\n?<\/section>$/, '');
 }

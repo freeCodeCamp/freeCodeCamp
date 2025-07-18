@@ -705,6 +705,9 @@
             { "dashedName": "lab-mutations" },
             { "dashedName": "lab-chunky-monkey" },
             {
+              "dashedName": "lab-profile-lookup"
+            },
+            {
               "dashedName": "review-javascript-loops"
             },
             {

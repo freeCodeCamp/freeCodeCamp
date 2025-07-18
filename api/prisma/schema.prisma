@@ -491,6 +491,33 @@ type SurveyResponse {
 
 // ----------------------
 
+model DailyCodingChallenges {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  challengeNumber   Int
+  date              DateTime
+  title             String
+  description       String
+  javascript        DailyCodingChallengeApiLanguage
+  python            DailyCodingChallengeApiLanguage
+}
+
+type DailyCodingChallengeApiLanguage {
+  tests           DailyCodingChallengeApiLanguageTests[]
+  challengeFiles  DailyCodingChallengeApiLanguageChallengeFiles[]
+}
+
+type DailyCodingChallengeApiLanguageTests {
+  text        String
+  testString  String
+}
+
+type DailyCodingChallengeApiLanguageChallengeFiles {
+  contents  String
+  fileKey   String
+}
+
+// ----------------------
+
 model ExamEnvironmentExamModeration {
   id             String                              @id @default(auto()) @map("_id") @db.ObjectId
   /// Whether or not the item is approved
