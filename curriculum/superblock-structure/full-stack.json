@@ -637,6 +637,9 @@
               "dashedName": "lab-truncate-string"
             },
             {
+              "dashedName": "lab-string-ending-checker"
+            },
+            {
               "dashedName": "review-javascript-functions"
             },
             {
