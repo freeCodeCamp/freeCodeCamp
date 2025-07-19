@@ -1,0 +1,19 @@
+{
+  "name": "Working with Unary and Bitwise Operators",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-unary-and-bitwise-operators",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "673271e8e3d43bda89f723b3",
+      "title": "What Are Unary Operators, and How Do They Work?"
+    },
+    {
+      "id": "673271f39f124ddac28866d5",
+      "title": "What Are Bitwise Operators, and How Do They Work?"
+    }
+  ]
+}
