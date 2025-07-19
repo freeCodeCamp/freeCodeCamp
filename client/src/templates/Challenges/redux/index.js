@@ -47,7 +47,7 @@ const initialState = {
     finishQuiz: false,
     examResults: false,
     survey: false,
-    projectPreview: false,
+    demo: false,
     shortcuts: false
   },
   portalWindow: null,

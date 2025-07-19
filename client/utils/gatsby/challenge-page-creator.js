@@ -127,45 +127,11 @@ exports.createChallengePages = function (
           prevChallengePath: idToPrevPathCurrentCurriculum[node.id],
           id
         },
-        projectPreview: getProjectPreviewConfig(
-          node.challenge,
-          allChallengeEdges
-        ),
         id: node.id
       }
     });
   };
 };
-
-// TODO: figure out a cleaner way to get the last challenge in a block. Create
-// it during the curriculum build process and attach it to the first challenge?
-// That would remove the need to analyse allChallengeEdges.
-function getProjectPreviewConfig(challenge, allChallengeEdges) {
-  const { block } = challenge;
-
-  const challengesInBlock = allChallengeEdges
-    .filter(({ node: { challenge } }) => challenge.block === block)
-    .map(({ node: { challenge } }) => challenge);
-  const lastChallenge = challengesInBlock[challengesInBlock.length - 1];
-  const solutionFiles = lastChallenge.solutions[0] ?? [];
-  const lastChallengeFiles = lastChallenge.challengeFiles ?? [];
-
-  const findFileByKey = (key, files) =>
-    files.find(file => file.fileKey === key);
-
-  const projectPreviewChallengeFiles = lastChallengeFiles.map(file => ({
-    ...file,
-    contents:
-      findFileByKey(file.fileKey, solutionFiles)?.contents ?? file.contents
-  }));
-
-  return {
-    challengeData: {
-      challengeType: lastChallenge.challengeType,
-      challengeFiles: projectPreviewChallengeFiles
-    }
-  };
-}
 
 exports.createBlockIntroPages = function (createPage) {
   return function (edge) {

@@ -257,7 +257,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     const showProjectPreview = () => {
       setProjectTitle(projectTitle);
       setChallengeData(challengeData);
-      openModal('projectPreview');
+      openModal('demo');
     };
 
     const showExamResults = () => {

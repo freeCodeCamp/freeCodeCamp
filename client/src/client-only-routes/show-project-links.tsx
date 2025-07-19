@@ -79,7 +79,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         completedChallenge: completedProject,
         showCode: false
       });
-      openModal('projectPreview');
+      openModal('demo');
     };
 
     const showExamResults = () => {
