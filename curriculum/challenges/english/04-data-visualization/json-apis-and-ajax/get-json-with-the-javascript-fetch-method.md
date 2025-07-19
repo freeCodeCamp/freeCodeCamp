@@ -44,7 +44,7 @@ Your code should use the fetched data to replace the inner HTML
 const catData = 'dummy data';
 const ref = fetch;
 fetch = () => Promise.resolve({ json: () => catData });
-async () => {
+
   try {
     document.getElementById('getMessage').click();
     await new Promise((resolve, reject) => setTimeout(() => resolve(), 250));
@@ -57,7 +57,7 @@ async () => {
       JSON.stringify(catData)
     );
   }
-};
+
 ```
 
 Your code should make a `GET` request with `fetch`.
