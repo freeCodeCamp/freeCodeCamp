@@ -19,6 +19,7 @@ import {
 } from '../redux/selectors';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
+import IndependentLowerJaw from '../components/independent-lower-jaw';
 import ActionRow from './action-row';
 
 type Pane = { flex: number };
@@ -322,6 +323,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               )}
             </ReflexContainer>
           )}
+          {showIndependentLowerJaw && <IndependentLowerJaw />}
         </ReflexElement>
         {displayNotes && <ReflexSplitter propagate={true} {...resizeProps} />}
         {displayNotes && (
