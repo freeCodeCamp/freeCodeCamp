@@ -153,10 +153,6 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   );
 }
 
-if (process.env.FCC_ENABLE_EXAM_ENVIRONMENT === 'true') {
-  assert.ok(process.env.SCREENSHOT_SERVICE_LOCATION);
-}
-
 export const HOME_LOCATION = process.env.HOME_LOCATION;
 // Mailhog is used in development and test environments, hence the localhost
 // default.
@@ -224,6 +220,4 @@ function undefinedOrBool(val: string | undefined): undefined | boolean {
 
   return val === 'true';
 }
-export const SCREENSHOT_SERVICE_LOCATION =
-  process.env.SCREENSHOT_SERVICE_LOCATION;
 export const DEPLOYMENT_VERSION = process.env.DEPLOYMENT_VERSION || 'unknown';
