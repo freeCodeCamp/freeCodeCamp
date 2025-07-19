@@ -15,7 +15,6 @@ export type Challenge = {
   title: string;
   date: Date;
   description: string;
-  instructions?: string;
   fields: {
     tests: {
       testString: string;

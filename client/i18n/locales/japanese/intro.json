@@ -3158,6 +3158,12 @@
           "In this lab, you'll review working with arrays and random numbers by building a lunch picker program."
         ]
       },
+      "lab-reverse-a-string": {
+        "title": "Build a String Inverter",
+        "intro": [
+          "In this lab, you create a function that reverses a given string."
+        ]
+      },
       "lecture-working-with-common-array-methods": {
         "title": "Working with Common Array Methods",
         "intro": [

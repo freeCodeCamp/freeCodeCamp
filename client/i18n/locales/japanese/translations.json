@@ -1234,7 +1234,7 @@
     "heading": "注意: これは早期アクセス用のテストデプロイです。",
     "p1": "このプラットフォームは新機能を早期に試すためのテスト用としてご利用いただけます。これらの変更予定は next, beta, staging などと呼ばれます。",
     "p2": "発見したバグを報告することで、freeCodeCamp.org の改善にご協力いただけますと幸いです。",
-    "p3": "進捗状況は長期的に保存されない可能性があります。また、このデプロイで取得した認定証は無効です。詳しくは<0>こちらのリンクをご確認ください</0>。",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid.",
     "certain": "同意して閉じる"
   },
   "survey": {

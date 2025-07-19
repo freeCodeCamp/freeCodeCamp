@@ -13,7 +13,7 @@ This is a review of the entire dialogue you just studied.
 
 # --instructions--
 
-Place the following phrases in the correct spot:  
+Write the following words or phrases in the correct spot:  
 
 `more`, `easier`, `better`, `as flexible`, `nicer`, `as easily`, and `slightly`.
 

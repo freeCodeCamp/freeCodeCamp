@@ -39,7 +39,7 @@ describe('StagingWarningModal', () => {
     expect(modalContent).toHaveTextContent('staging-warning.heading');
     expect(modalContent).toHaveTextContent('staging-warning.p1');
     expect(modalContent).toHaveTextContent('staging-warning.p2');
-    expect(modalContent).toHaveTextContent('link');
+    expect(modalContent).toHaveTextContent('staging-warning.p3');
   });
 
   it('accepts Warning, stores acceptance key in local storage, and closes the modal', () => {

@@ -41,7 +41,7 @@
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
-    "@freecodecamp/curriculum-helpers": "^5.3.0",
+    "@freecodecamp/curriculum-helpers": "^5.4.0",
     "xterm": "^5.2.1"
   }
 }
