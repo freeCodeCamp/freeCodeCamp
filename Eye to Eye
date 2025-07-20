@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Business Site</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+    .hero {
+      background: #007bff;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+    .navbar-nav .nav-link {
+      margin-right: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+    }
+    footer {
+      background: #f8f9fa;
+      text-align: center;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">BizName</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero/Home -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Welcome to Our Business</h1>
+      <p class="lead">Professional solutions tailored for you.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="py-5" id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        We are a team of professionals dedicated to delivering high-quality services and solutions
+        for businesses of all sizes. Our mission is to drive your success through innovation and
+        expertise.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="py-5 bg-light" id="gallery">
+    <div class="container">
+      <h2 class="mb-4">Gallery</h2>
+      <div class="row g-3">
+        <div class="col-sm-6 col-md-4"><img src="https://via.placeholder.com/400x300" class="img-fluid" alt="Gallery Image 1" /></div>
+        <div class="col-sm-6 col-md-4"><img src="https://via.placeholder.com/400x300" class="img-fluid" alt="Gallery Image 2" /></div>
+        <div class="col-sm-6 col-md-4"><img src="https://via.placeholder.com/400x300" class="img-fluid" alt="Gallery Image 3" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-5" id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Your name" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Your email" required />
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="4" placeholder="Your message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 BizName. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
