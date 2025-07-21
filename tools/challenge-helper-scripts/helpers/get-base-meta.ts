@@ -1,5 +1,7 @@
 const baseMeta = {
   name: '',
+  blockType: 'lecture',
+  blockLayout: 'challenge-list',
   isUpcomingChange: true,
   dashedName: '',
   superBlock: '',
