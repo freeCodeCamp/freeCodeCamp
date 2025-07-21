@@ -125,6 +125,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
       const { month } = req.params;
 
       try {
+        // Month is guaranteed YYYY-MM format from schema validation
         const parts = month.split('-');
         const parsedYear = parseInt(parts[0]!, 10);
         const parsedMonth = parseInt(parts[1]!, 10);
