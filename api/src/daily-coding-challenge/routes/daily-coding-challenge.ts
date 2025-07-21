@@ -125,15 +125,6 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
       const { month } = req.params;
 
       try {
-        const monthRegex = /^\d{4}-\d{2}$/;
-        if (!monthRegex.test(month)) {
-          logger.warn('Invalid month format requested', { month });
-          return reply.status(400).send({
-            type: 'error',
-            message: 'Invalid date format. Please use YYYY-MM.'
-          });
-        }
-
         const parts = month.split('-');
         const parsedYear = parseInt(parts[0]!, 10);
         const parsedMonth = parseInt(parts[1]!, 10);
