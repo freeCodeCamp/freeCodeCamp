@@ -1,0 +1,41 @@
+{
+  "name": "Build a Linked List",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-linked-list-class",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "Python",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockLayout": "challenge-grid",
+  "blockType": "workshop",
+  "challengeOrder": [
+    {
+      "id": "687d7deea6a2a22fa8816a73",
+      "title": "Step 1"
+    },
+    {
+      "id": "687d8c6f066877768f7ee441",
+      "title": "Step 2"
+    },
+    {
+      "id": "687d8e05a529a4838f1c961c",
+      "title": "Step 3"
+    },
+    {
+      "id": "687e344cc1993f7316af030c",
+      "title": "Step 4"
+    },
+    {
+      "id": "687e366b3004a9831e4cbd41",
+      "title": "Step 5"
+    },
+    {
+      "id": "687e3970088c9097de03ef3b",
+      "title": "Step 6"
+    },
+    {
+      "id": "687e3be72b1efea97b704c1a",
+      "title": "Step 7"
+    }
+  ]
+}
