@@ -17,59 +17,89 @@ id: test
 title: Test
 ---
 
-# --description--
-Text content.
+# --after-all--
+After all hook.
 
-# --instructions--
-More text.
+# --after-each--
+After each hook.
 
-# --seed--
-Seed section.
-
-## --seed-contents--
-Contents here.
-
-## --before-user-code--
-Before code.
-
-## --after-user-code--
-After code.
-
-# --solutions--
-Solutions.
-
-# --hints--
-Hints.
+# --assignment--
+Assignment.
 
 # --before-all--
 Before all hook.
 
+# --before-each--
+Before each hook.
+
+# --description--
+Text content.
+
+# --explanation--
+Explanation.
+
+# --fillInTheBlank--
+Fill in blank.
+
+# --hints--
+Hints.
+
+# --instructions--
+More text.
+
+# --notes--
+Notes.
+
 # --questions--
 Video questions.
-
-## --text--
-Question text.
-
-## --answers--
-Answers.
-
-## --video-solution--
-Video solution.
-
-### --feedback--
-Feedback.
 
 # --quizzes--
 Quiz section.
 
+# --scene--
+Scene content.
+
+# --seed--
+Seed section.
+
+# --solutions--
+Solutions.
+
+# --transcript--
+Transcript.
+
+## --answers--
+Answers.
+
+## --blanks--
+Blanks.
+
 ## --quiz--
 Individual quiz.
 
+## --seed-contents--
+Contents here.
+
+## --sentence--
+Sentence.
+
+## --text--
+Question text.
+
+## --video-solution--
+Video solution.
+
+## --after-user-code--
+After code.
+
+## --before-user-code--
+Before code.
+
+### --feedback--
+Feedback.
+
 ### --question--
 Quiz question.
-
-#### --text--
-Question text.
 
 #### --answer--
 Correct answer.
@@ -77,29 +107,8 @@ Correct answer.
 #### --distractors--
 Distractors.
 
-# --scene--
-Scene content.
-
-# --assignment--
-Assignment.
-
-# --fillInTheBlank--
-Fill in blank.
-
-## --sentence--
-Sentence.
-
-## --blanks--
-Blanks.
-
-# --notes--
-Notes.
-
-# --explanation--
-Explanation.
-
-# --transcript--
-Transcript.
+#### --text--
+Question text.
 
 --fcc-editable-region--
 Editable region.

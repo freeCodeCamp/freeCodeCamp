@@ -3,8 +3,11 @@ const { isMarker } = require('./utils/get-section');
 
 const VALID_MARKERS = [
   // Level 1
+  '# --after-all--',
+  '# --after-each--',
   '# --assignment--',
   '# --before-all--',
+  '# --before-each--',
   '# --description--',
   '# --explanation--',
   '# --fillInTheBlank--',
