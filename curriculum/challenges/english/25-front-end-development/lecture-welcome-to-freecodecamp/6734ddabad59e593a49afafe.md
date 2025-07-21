@@ -1,16 +1,11 @@
 ---
 id: 6734ddabad59e593a49afafe
 title: Welcome Message from Quincy
-challengeType: 24
-videoId: KwZkXwDUc1o
+challengeType: 19
 dashedName: welcome-message-from-quincy
 ---
 
 # --description--
-
-Watch the video or read the transcript and complete the assignment below.
-
-# --transcript--
 
 I'm Quincy Larson, teacher and founder of freeCodeCamp.org.
 
@@ -30,4 +25,4 @@ In the next lecture, I'll explain how the freeCodeCamp curriculum and how the ce
 
 # --assignment--
 
-Check this box to indicate you have watched the video.
+Check this box to indicate you have read the lecture.
