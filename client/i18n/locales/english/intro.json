@@ -4446,6 +4446,12 @@
         "title": "Python Review",
         "intro": ["Review Python concepts to prepare for the upcoming exam."]
       },
+      "lecture-understanding-the-command-line-and-working-with-bash": {
+        "title": "Understanding the Command Line and Working with Bash",
+        "intro": [
+          "Learn about the Command Line and Working with Bash in these lectures."
+        ]
+      },
       "workshop-bash-boilerplate": {
         "title": "Build a Boilerplate",
         "intro": [

@@ -1,0 +1,10 @@
+{
+  "name": "Understanding the Command Line and Working with Bash",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-the-command-line-and-working-with-bash",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [{ "id": "687e910842f3322350bc8d93", "title": "What Is the Terminal, and How Does It Differ from the Command Line?" }]
+}
