@@ -3150,6 +3150,12 @@
           "У цій лабораторній роботі ви пригадаєте, як працювати з масивами й випадковими числами, створивши програму для вибору перекусу."
         ]
       },
+      "lab-reverse-a-string": {
+        "title": "Build a String Inverter",
+        "intro": [
+          "In this lab, you create a function that reverses a given string."
+        ]
+      },
       "lecture-working-with-common-array-methods": {
         "title": "Поширені методи роботи з масивами",
         "intro": [
