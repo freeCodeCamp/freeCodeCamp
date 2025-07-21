@@ -3033,11 +3033,11 @@
       "lecture-working-with-numbers-and-arithmetic-operators": {
         "title": "Working with Numbers and Arithmetic Operators",
         "intro": [
-          "In these lectures you will learn about the number tupe, arithmetic operators, and using them with numbers and strings."
+          "In these lectures you will learn about the number type, arithmetic operators, and using them with numbers and strings."
         ]
       },
       "lecture-working-with-operator-behavior": {
-        "title": "Working with Operator Behaviour",
+        "title": "Working with Operator Behavior",
         "intro": [
           "In these lectures you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
         ]
@@ -3045,7 +3045,7 @@
       "lecture-working-with-comparison-and-boolean-operators": {
         "title": "Working with Comparison and Boolean Operators",
         "intro": [
-          "In these lectures you will learn about booleans, and equality and inequality operators, and other comparison openrators."
+          "In these lectures you will learn about booleans, and equality and inequality operators, and other comparison operators."
         ]
       },
       "lecture-working-with-unary-and-bitwise-operators": {
