@@ -6,5 +6,38 @@
   "dashedName": "lecture-working-with-relational-databases",
   "superBlock": "full-stack-developer",
   "helpCategory": "Backend Development",
-  "challengeOrder": [{ "id": "687ea6c021dd5913cf8fd8dd", "title": "What Are Relational Databases, and How Do They Differ from Non-Relational Databases?" }]
+  "challengeOrder": [
+    {
+      "id": "687ea6c021dd5913cf8fd8dd",
+      "title": "What Are Relational Databases, and How Do They Differ from Non-Relational Databases?"
+    },
+    {
+      "id": "687ea86615674e19296a78ce",
+      "title": "What Are Some Common Relational Databases, and How Do You Install and Use Postgres?"
+    },
+    {
+      "id": "687ea8757080091969f07122",
+      "title": "What Is SQL, and How Can You Create a Database with Tables?"
+    },
+    {
+      "id": "687ea899461e37199cf03cf9",
+      "title": "What Are the Basic Data Types in SQL?"
+    },
+    {
+      "id": "687ea8a88c9e9419af7cd8c3",
+      "title": "How Do You Insert and View Data in a Table?"
+    },
+    {
+      "id": "687ea8bb2b781b19c790d00e",
+      "title": "What Are Primary and Foreign Keys in SQL, and How Do They Work?"
+    },
+    {
+      "id": "687ea8e0cab41019dc8a728a",
+      "title": "What Are the Different Types of Relationships in a Relational Database?"
+    },
+    {
+      "id": "687ea8eba2a8b119f2ad9f8c",
+      "title": "What Are the Different Ways to Join Tables?"
+    }
+  ]
 }
