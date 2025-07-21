@@ -4721,7 +4721,6 @@
     "run-locally": "For now, we recommend running the courses locally on your computer. You can learn how at <0>https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad</0>.",
     "progress-wont-save": "Your progress will not be saved to your freeCodeCamp account when running them locally.",
     "go-back-to-learn": "Go back to the stable version of the curriculum.",
-    "read-database-cert-article": "Please read this forum post before proceeding.",
     "enable-cookies": "You must enable third-party cookies before starting.",
     "english-only": "The courses in this section are only available in English. We are only able to translate the titles and introductions at the moment, not the lessons themselves.",
     "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."

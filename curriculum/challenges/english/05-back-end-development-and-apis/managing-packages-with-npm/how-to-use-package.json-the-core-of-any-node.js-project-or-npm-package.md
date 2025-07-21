@@ -10,7 +10,7 @@ dashedName: how-to-use-package-json-the-core-of-any-node-js-project-or-npm-packa
 
 Working on these challenges will involve you writing your code using one of the following methods:
 
-- Clone <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally.
+- Clone <a href="https://github.com/freeCodeCamp/boilerplate-npm/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete these challenges locally. Refer to <a href="https://www.freecodecamp.org/news/how-to-run-the-freecodecamp-backend-challenges-locally/" target="_blank" rel="noopener noreferrer nofollow">this article</a> for instructions.
 - Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
 
 The `package.json` file is the center of any Node.js project or npm package. It stores information about your project. It consists of a single JSON object where information is stored in key-value pairs. There are only two required fields; `name` and `version`, but it’s good practice to provide additional information.
