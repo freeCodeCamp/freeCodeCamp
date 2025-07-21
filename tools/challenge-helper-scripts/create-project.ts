@@ -38,7 +38,7 @@ interface CreateProjectArgs {
   superBlock: SuperBlocks;
   block: string;
   helpCategory: string;
-  // order: number;
+  order: number;
   title?: string;
 }
 
@@ -46,7 +46,7 @@ async function createProject(
   superBlock: SuperBlocks,
   block: string,
   helpCategory: string,
-  // order: number,
+  order: number,
   title?: string
 ) {
   if (!title) {
@@ -54,13 +54,13 @@ async function createProject(
   }
   void updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createFirstChallenge(superBlock, block, title);
+  const challengeId = await createFirstChallenge(superBlock, block);
   void createMetaJson(
     superBlock,
     block,
     title,
     helpCategory,
-    // order,
+    order,
     challengeId
   );
   // TODO: remove once we stop relying on markdown in the client.
@@ -79,7 +79,7 @@ async function updateIntroJson(
   const newIntro = await parseJson<IntroJson>(introJsonPath);
   newIntro[superBlock].blocks[block] = {
     title,
-    intro: [`Learn about ${title} in these lectures.`]
+    intro: ['', '']
   };
   void withTrace(
     fs.writeFile,
@@ -93,7 +93,7 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  // order: number,
+  order: number,
   challengeId: ObjectID
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
@@ -101,7 +101,7 @@ async function createMetaJson(
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  // newMeta.order = order;
+  newMeta.order = order;
   newMeta.superBlock = superBlock;
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
@@ -119,14 +119,14 @@ async function createMetaJson(
 
 async function createIntroMD(superBlock: string, block: string, title: string) {
   const introMD = `---
-title: Introduction to ${title}
+title: Introduction to the ${title}
 block: ${block}
 superBlock: ${superBlock}
 ---
 
-## Introduction to ${title}
+## Introduction to the ${title}
 
-Learn about ${title} in these lectures.
+This is a test for the new project-based curriculum.
 `;
   const dirPath = path.resolve(
     __dirname,
@@ -141,8 +141,7 @@ Learn about ${title} in these lectures.
 
 async function createFirstChallenge(
   superBlock: SuperBlocks,
-  block: string,
-  title: string
+  block: string
 ): Promise<ObjectID> {
   const superBlockSubPath = superBlockToFolderMap[superBlock];
   const newChallengeDir = path.resolve(
@@ -165,8 +164,6 @@ async function createFirstChallenge(
   // including trailing slash for compatibility with createStepFile
   return createStepFile({
     projectPath: newChallengeDir + '/',
-    dashedName: block,
-    title,
     stepNum: 1,
     challengeType: 0,
     challengeSeeds,
@@ -195,13 +192,13 @@ function withTrace<Args extends unknown[], Result>(
 }
 
 void prompt([
-  // {
-  //   name: 'superBlock',
-  //   message: 'Which certification does this belong to?',
-  //   default: SuperBlocks.RespWebDesign,
-  //   type: 'list',
-  //   choices: Object.values(SuperBlocks)
-  // },
+  {
+    name: 'superBlock',
+    message: 'Which certification does this belong to?',
+    default: SuperBlocks.RespWebDesign,
+    type: 'list',
+    choices: Object.values(SuperBlocks)
+  },
   {
     name: 'block',
     message: 'What is the dashed name (in kebab-case) for this project?',
@@ -220,35 +217,30 @@ void prompt([
     default: 'HTML-CSS',
     type: 'list',
     choices: helpCategories
+  },
+  {
+    name: 'order',
+    message: 'Which position does this appear in the certificate?',
+    default: 42,
+    validate: (order: string) => {
+      return parseInt(order, 10) > 0
+        ? true
+        : 'Order must be an number greater than zero.';
+    },
+    filter: (order: string) => {
+      return parseInt(order, 10);
+    }
   }
-  // {
-  //   name: 'order',
-  //   message: 'Which position does this appear in the certificate?',
-  //   default: 42,
-  //   validate: (order: string) => {
-  //     return parseInt(order, 10) > 0
-  //       ? true
-  //       : 'Order must be an number greater than zero.';
-  //   },
-  //   filter: (order: string) => {
-  //     return parseInt(order, 10);
-  //   }
-  // }
 ])
   .then(
     async ({
-      // superBlock,
+      superBlock,
       block,
       title,
-      helpCategory
-      // order
+      helpCategory,
+      order
     }: CreateProjectArgs) =>
-      await createProject(
-        SuperBlocks.FullStackDeveloper,
-        block,
-        helpCategory,
-        title
-      ) // , order, title)
+      await createProject(superBlock, block, helpCategory, order, title)
   )
   .then(() =>
     console.log(
