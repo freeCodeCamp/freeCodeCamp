@@ -201,7 +201,7 @@ const getMultipleChoiceChallengeTemplate = (
 
 # --description--
 
-${options.title} description.
+Read the lecture and answer the questions below.
 
 # --questions--
 
