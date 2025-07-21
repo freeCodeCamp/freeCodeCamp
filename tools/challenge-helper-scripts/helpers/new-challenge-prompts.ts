@@ -7,15 +7,15 @@ export const newChallengePrompts = async (): Promise<{
   dashedName: string;
   challengeType: string;
 }> => {
-  const challengeType = await prompt<{ value: string }>({
-    name: 'value',
-    message: 'What type of challenge is this?',
-    type: 'list',
-    choices: Object.entries(challengeTypes).map(([key, value]) => ({
-      name: key,
-      value
-    }))
-  });
+  // const challengeType = await prompt<{ value: string }>({
+  //   name: 'value',
+  //   message: 'What type of challenge is this?',
+  //   type: 'list',
+  //   choices: Object.entries(challengeTypes).map(([key, value]) => ({
+  //     name: key,
+  //     value
+  //   }))
+  // });
 
   const lastStep = getLastStep().stepNum;
   const defaultTitle = `Step ${lastStep + 1}`;
@@ -47,6 +47,6 @@ export const newChallengePrompts = async (): Promise<{
   return {
     title: title.value,
     dashedName: dashedName.value,
-    challengeType: challengeType.value
+    challengeType: challengeTypes.video.toString()
   };
 };
