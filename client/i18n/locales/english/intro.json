@@ -4463,7 +4463,12 @@
         "title": "Bash Commands Quiz",
         "intro": ["Test what you've learned bash commands with this quiz."]
       },
-      "voks": { "title": "306", "intro": [] },
+      "lecture-working-with-relational-databases": {
+        "title": "Working with Relational Databases",
+        "intro": [
+          "Learn how to work with Relational Databases in these lectures."
+        ]
+      },
       "workshop-database-of-video-game-characters": {
         "title": "Build a Database of Video Game Characters",
         "intro": [

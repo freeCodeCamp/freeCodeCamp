@@ -1398,6 +1398,9 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "lecture-working-with-relational-databases"
+            },
+            {
               "dashedName": "workshop-database-of-video-game-characters"
             },
             {
