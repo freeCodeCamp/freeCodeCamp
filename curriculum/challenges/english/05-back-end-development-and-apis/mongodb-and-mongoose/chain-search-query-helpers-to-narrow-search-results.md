@@ -19,48 +19,47 @@ Modify the `queryChain` function to find people who like the food specified by t
 Chaining query helpers should succeed
 
 ```js
-  $.ajax({
-    url: code + '/_api/query-tools',
-    type: 'POST',
-    contentType: 'application/json',
-    data: JSON.stringify([
+  const response = await fetch(code + '/_api/query-tools', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify([
       { name: 'Pablo', age: 26, favoriteFoods: ['burrito', 'hot-dog'] },
       { name: 'Bob', age: 23, favoriteFoods: ['pizza', 'nachos'] },
       { name: 'Ashley', age: 32, favoriteFoods: ['steak', 'burrito'] },
       { name: 'Mario', age: 51, favoriteFoods: ['burrito', 'prosciutto'] }
     ])
-  }).then(
-    (data) => {
-      assert.isArray(data, 'the response should be an Array');
-      assert.equal(
-        data.length,
-        2,
-        'the data array length is not what expected'
-      );
-      assert.notProperty(
-        data[0],
-        'age',
-        'The returned first item has too many properties'
-      );
-      assert.equal(
-        data[0].name,
-        'Ashley',
-        'The returned first item name is not what expected'
-      );
-      assert.notProperty(
-        data[1],
-        'age',
-        'The returned second item has too many properties'
-      );
-      assert.equal(
-        data[1].name,
-        'Mario',
-        'The returned second item name is not what expected'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  });
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.isArray(data, 'the response should be an Array');
+  assert.equal(
+    data.length,
+    2,
+    'the data array length is not what expected'
+  );
+  assert.notProperty(
+    data[0],
+    'age',
+    'The returned first item has too many properties'
+  );
+  assert.equal(
+    data[0].name,
+    'Ashley',
+    'The returned first item name is not what expected'
+  );
+  assert.notProperty(
+    data[1],
+    'age',
+    'The returned second item has too many properties'
+  );
+  assert.equal(
+    data[1].name,
+    'Mario',
+    'The returned second item name is not what expected'
   );
 ```
 

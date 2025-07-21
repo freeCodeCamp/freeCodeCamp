@@ -35,22 +35,20 @@ Submit your page when you think you've got it right.
 Sync hash should be generated and correctly compared.
 
 ```js
-  $.get(code + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /START_SYNC[^]*hash.*=.*bcrypt.hashSync.*myPlaintextPassword( |),( |)saltRounds[^]*END_SYNC/gi,
-        'You should call bcrypt.hashSync on myPlaintextPassword with saltRounds'
-      );
-      assert.match(
-        data,
-        /START_SYNC[^]*result.*=.*bcrypt.compareSync.*myPlaintextPassword( |),( |)hash[^]*END_SYNC/gi,
-        'You should call bcrypt.compareSync on myPlaintextPassword with the hash generated in the last line'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
-  );
+const response = await fetch(code + '/_api/server.js');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.text();
+assert.match(
+  data,
+  /START_SYNC[^]*hash.*=.*bcrypt.hashSync.*myPlaintextPassword( |),( |)saltRounds[^]*END_SYNC/gi,
+  'You should call bcrypt.hashSync on myPlaintextPassword with saltRounds'
+);
+assert.match(
+  data,
+  /START_SYNC[^]*result.*=.*bcrypt.compareSync.*myPlaintextPassword( |),( |)hash[^]*END_SYNC/gi,
+  'You should call bcrypt.compareSync on myPlaintextPassword with the hash generated in the last line'
+);
 ```
 

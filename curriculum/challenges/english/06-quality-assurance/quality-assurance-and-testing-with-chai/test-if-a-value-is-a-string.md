@@ -21,60 +21,52 @@ Within `tests/1_unit-tests.js` under the test labeled `#13` in the `Strings` sui
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=12').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=12');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.state, 'passed');
 ```
 
 You should choose the correct method for the first assertion - `isString` vs. `isNotString`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=12').then(
-    (data) => {
-      assert.equal(
-        data.assertions[0].method,
-        'isNotString',
-        'A float number is not a string'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=12');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(
+  data.assertions[0].method,
+  'isNotString',
+  'A float number is not a string'
+);
 ```
 
 You should choose the correct method for the second assertion - `isString` vs. `isNotString`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=12').then(
-    (data) => {
-      assert.equal(
-        data.assertions[1].method,
-        'isString',
-        'environment vars are strings (or undefined)'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=12');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(
+  data.assertions[1].method,
+  'isString',
+  'environment vars are strings (or undefined)'
+);
 ```
 
 You should choose the correct method for the third assertion - `isString` vs. `isNotString`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=12').then(
-    (data) => {
-      assert.equal(data.assertions[2].method, 'isString', 'A JSON is a string');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=12');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.assertions[2].method, 'isString', 'A JSON is a string');
 ```
 
