@@ -38,6 +38,7 @@
     "news": "专栏",
     "donate": "捐款",
     "supporters": "支持者",
+    "exam-app": "Exam App",
     "go-to-supporters": "转到支持者页面",
     "update-settings": "更新我的账户设置",
     "sign-me-out": "退出登录 freeCodeCamp",
@@ -114,7 +115,9 @@
     "closed-caption": "关闭标题",
     "share-on-x": "分享到 X",
     "share-on-bluesky": "分享到 BlueSky",
-    "share-on-threads": "分享到 Threads"
+    "share-on-threads": "分享到 Threads",
+    "play-scene": "Press Play",
+    "download-latest-version": "Download the Latest Version"
   },
   "landing": {
     "big-heading-1": "免费学习编程",
@@ -344,6 +347,14 @@
       "p6": "如果我们发现某学员的某部分课程项目有明显的剽窃现象，我们将不会发布该项目的认证，并注明“经过审核，该帐户已被标记为违反学术诚信条例。”",
       "p7": "作为一个基于成就发布认证的学术机构，我们非常重视学术诚信。如果你对此条例有任何疑问，或者怀疑有人违反了该条例，可以发送邮件至 <0>{{email}}</0>，我们将进行调查。"
     }
+  },
+  "exam": {
+    "download-header": "Download the freeCodeCamp Exam Environment App",
+    "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
+    "version": "The latest version of our app is: {{version}}.",
+    "download-details": "Manually download the app",
+    "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
   },
   "profile": {
     "you-change-privacy": "你需要更改你的隐私设置，才能让他人看到你的作品集。这是你的作品集公开时候的预览。",
@@ -1223,7 +1234,7 @@
     "heading": "警告：这是一个早期访问测试环境",
     "p1": "我们欢迎你以仅限测试的模式尝试此平台，并尽早使用即将推出的功能。有时，这些更改被交替称为 next、beta、staging 等。",
     "p2": "我们感谢你报告所遇到的错误，并帮助我们改进 freeCodeCamp.org。",
-    "p3": "下次访问时，你的进度可能不会被保存，在此部署中申请的任何认证均无效。请<0>点击此链接</0>了解更多信息。",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid.",
     "certain": "接受并清除"
   },
   "survey": {

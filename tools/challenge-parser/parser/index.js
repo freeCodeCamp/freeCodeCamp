@@ -8,7 +8,7 @@ const addFrontmatter = require('./plugins/add-frontmatter');
 const validateSections = require('./plugins/validate-sections');
 const addSeed = require('./plugins/add-seed');
 const addSolution = require('./plugins/add-solution');
-const addBeforeHook = require('./plugins/add-before-hook');
+const addHooks = require('./plugins/add-hooks');
 const addTests = require('./plugins/add-tests');
 const addText = require('./plugins/add-text');
 const addVideoQuestion = require('./plugins/add-video-question');
@@ -56,7 +56,7 @@ const processor = unified()
   .use(addAssignment)
   .use(addScene)
   .use(addQuizzes)
-  .use(addBeforeHook)
+  .use(addHooks)
   .use(addTests)
   .use(addText, [
     'description',

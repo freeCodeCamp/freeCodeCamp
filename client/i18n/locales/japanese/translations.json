@@ -38,6 +38,7 @@
     "news": "ニュース",
     "donate": "寄付",
     "supporters": "サポーター",
+    "exam-app": "Exam App",
     "go-to-supporters": "サポーターページに移動",
     "update-settings": "アカウント設定を更新",
     "sign-me-out": "freeCodeCampからサインアウト",
@@ -114,7 +115,9 @@
     "closed-caption": "クローズドキャプション",
     "share-on-x": "X でシェア",
     "share-on-bluesky": "Bluesky でシェア",
-    "share-on-threads": "Threads でシェア"
+    "share-on-threads": "Threads でシェア",
+    "play-scene": "Press Play",
+    "download-latest-version": "Download the Latest Version"
   },
   "landing": {
     "big-heading-1": "プログラミングを無料で学ぶ。",
@@ -344,6 +347,14 @@
       "p6": "明確な盗作の事例を発見した場合、該当者の認定証を「審査により、このアカウントは学問的不正行為のフラグが立てられました」というメッセージに置き換えます。",
       "p7": "成果に基づく認定証を与える学術機関として、私たちは学問的誠実性を重視しています。このポリシーについて質問がある場合、または誰かが違反していると思われる場合には、<0>{{email}}</0> までメールでお問い合わせいただければ調査いたします。"
     }
+  },
+  "exam": {
+    "download-header": "Download the freeCodeCamp Exam Environment App",
+    "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
+    "version": "The latest version of our app is: {{version}}.",
+    "download-details": "Manually download the app",
+    "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
   },
   "profile": {
     "you-change-privacy": "他の人がポートフォリオを見られるようにするには、プライバシー設定を変更する必要があります。これはポートフォリオが公開されたときにどのように見えるかのプレビューです。",
@@ -1223,7 +1234,7 @@
     "heading": "注意: これは早期アクセス用のテストデプロイです。",
     "p1": "このプラットフォームは新機能を早期に試すためのテスト用としてご利用いただけます。これらの変更予定は next, beta, staging などと呼ばれます。",
     "p2": "発見したバグを報告することで、freeCodeCamp.org の改善にご協力いただけますと幸いです。",
-    "p3": "進捗状況は長期的に保存されない可能性があります。また、このデプロイで取得した認定証は無効です。詳しくは<0>こちらのリンクをご確認ください</0>。",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid.",
     "certain": "同意して閉じる"
   },
   "survey": {
