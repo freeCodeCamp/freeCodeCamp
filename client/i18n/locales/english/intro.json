@@ -2888,6 +2888,12 @@
           "In this project, you'll build a product landing page to market a product of your choice."
         ]
       },
+      "lab-profile-lookup": {
+        "title": "Build a Profile Lookup",
+        "intro": [
+          "In this lab, you'll create a function that looks up profile information."
+        ]
+      },
       "review-css-grid": {
         "title": "CSS Grid Review",
         "intro": [
@@ -3113,6 +3119,12 @@
           "You will learn more about <code>if</code> statements, and how to use comparison operators and multiple conditions in an <code>if</code> statement."
         ]
       },
+      "lab-celsius-to-fahrenheit-converter": {
+        "title": "Build a Celsius to Fahrenheit Converter",
+        "intro": [
+          "In this lab you will implement a function that converts the temperature from Celsius to Fahrenheit."
+        ]
+      },
       "lab-leap-year-calculator": {
         "title": "Build a Leap Year Calculator ",
         "intro": [
@@ -3239,6 +3251,12 @@
           "In this lab, you will practice dividing an array into smaller arrays with the technique of your choice."
         ]
       },
+      "lab-repeat-a-string": {
+        "title": "Build a String Repeating Function",
+        "intro": [
+          "In this lab, you will implement loops to repeat a string a specified number of times."
+        ]
+      },
       "review-javascript-loops": {
         "title": "JavaScript Loops Review",
         "intro": [
@@ -3254,6 +3272,12 @@
         "title": "Understanding Core JavaScript Fundamentals",
         "intro": [
           "In these lecture videos, you will learn more about the core JavaScript fundamentals. You will learn how a string object differs from a primitive string, the <code>toString()</code> method, conventions and common practices for naming variables, linters and formatters, closures, and much more."
+        ]
+      },
+      "lab-largest-number-finder": {
+        "title": "Build the Largest Number Finder",
+        "intro": [
+          "In this lab, you will use JavaScript fundamentals to create a function that finds the largest number in each sub-array of a given array."
         ]
       },
       "lab-slice-and-splice": {
@@ -4005,6 +4029,12 @@
           "In this workshop, you will learn the basics of Tailwind CSS by building out an error message component."
         ]
       },
+      "workshop-tailwind-cta-component": {
+        "title": "Build a Taiwlind CTA Compoent",
+        "intro": [
+          "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
+        ]
+      },
       "lab-music-shopping-cart-page": {
         "title": "Build a Music Shopping Cart Page",
         "intro": [
@@ -4335,6 +4365,12 @@
           "In this lab, you will implement the Luhn algorithm to validate identification numbers such as credit card numbers."
         ]
       },
+      "lab-tower-of-hanoi": {
+        "title": "Implement the Tower of Hanoi Algorithm",
+        "intro": [
+          "In this lab, you will implement an algorithm to solve the Tower of Hanoi puzzle."
+        ]
+      },
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
         "intro": [
@@ -4566,6 +4602,12 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "lab-record-collection": {
+        "title": "Build a Record Collection",
+        "intro": [
+          "In this lab you will build a function to manage a record collection."
+        ]
       }
     }
   },

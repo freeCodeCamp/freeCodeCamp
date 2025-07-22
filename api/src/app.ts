@@ -51,6 +51,7 @@ import {
   examEnvironmentOpenRoutes,
   examEnvironmentValidatedTokenRoutes
 } from './exam-environment/routes/exam-environment';
+import { dailyCodingChallengeRoutes } from './daily-coding-challenge/routes/daily-coding-challenge';
 
 type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -229,6 +230,7 @@ export const build = async (
   void fastify.register(publicRoutes.deprecatedEndpoints);
   void fastify.register(publicRoutes.statusRoute);
   void fastify.register(publicRoutes.unsubscribeDeprecated);
+  void fastify.register(dailyCodingChallengeRoutes);
 
   return fastify;
 };

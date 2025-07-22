@@ -2877,6 +2877,12 @@
           "У цьому проєкті ви створите посадкову сторінку продукту, щоб прорекламувати продукт за власним вибором."
         ]
       },
+      "lab-profile-lookup": {
+        "title": "Build a Profile Lookup",
+        "intro": [
+          "In this lab, you'll create a function that looks up profile information."
+        ]
+      },
       "review-css-grid": {
         "title": "Повторення сітки в CSS",
         "intro": [
@@ -3238,6 +3244,12 @@
           "У цій лабораторній роботі ви навчитесь ділити масив на менші частини, використовуючи метод на власний вибір."
         ]
       },
+      "lab-repeat-a-string": {
+        "title": "Build a String Repeating Function",
+        "intro": [
+          "In this lab, you will implement loops to repeat a string a specified number of times."
+        ]
+      },
       "review-javascript-loops": {
         "title": "Повторення циклів у JavaScript",
         "intro": [
@@ -3255,6 +3267,12 @@
         "title": "Знайомство з основами JavaScript",
         "intro": [
           "У цих відеолекціях ви детальніше розглянете основи JavaScript. Ви дізнаєтесь про різницю між об’єктом-рядком і примітивним рядком, метод <code>toString()</code>, конвенції й загальноприйняті практики найменування змінних, лінтери і форматувальники, замикання та багато іншого."
+        ]
+      },
+      "lab-largest-number-finder": {
+        "title": "Build the Largest Number Finder",
+        "intro": [
+          "In this lab, you will use JavaScript fundamentals to create a function that finds the largest number in each sub-array of a given array."
         ]
       },
       "lab-slice-and-splice": {
@@ -3423,6 +3441,12 @@
         "title": "Тест «Маніпуляція DOM та події Click в JavaScript»",
         "intro": [
           "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Маніпуляція DOM та події Click в JavaScript»."
+        ]
+      },
+      "workshop-planets-tablist": {
+        "title": "Build a Planets Tablist",
+        "intro": [
+          "In this workshop, you will build a dynamic tabbed interface that showcases facts about the planets in the solar system."
         ]
       },
       "review-js-a11y": {
@@ -3995,6 +4019,12 @@
           "У цьому практичному занятті ви ознайомитесь з основами Tailwind CSS, створивши компонент ErrorMessage."
         ]
       },
+      "workshop-tailwind-cta-component": {
+        "title": "Build a Taiwlind CTA Compoent",
+        "intro": [
+          "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
+        ]
+      },
       "lab-music-shopping-cart-page": {
         "title": "Створіть кошик з покупками",
         "intro": [
@@ -4339,6 +4369,12 @@
           "У цій лабораторній роботі ви імплементуєте алгоритм Луна, щоб підтвердити ідентифікаційні номери (наприклад, номер кредитної картки)."
         ]
       },
+      "lab-tower-of-hanoi": {
+        "title": "Implement the Tower of Hanoi Algorithm",
+        "intro": [
+          "In this lab, you will implement an algorithm to solve the Tower of Hanoi puzzle."
+        ]
+      },
       "review-searching-and-sorting-algorithms": {
         "title": "Повторення алгоритмів пошуку та сортування",
         "intro": [
@@ -4584,6 +4620,12 @@
         "title": "Екзамен «Сертифікований Full Stack розробник»",
         "intro": [
           "Складіть цей екзамен, щоб стати сертифікованим Full Stack розробником."
+        ]
+      },
+      "lab-record-collection": {
+        "title": "Build a Record Collection",
+        "intro": [
+          "In this lab you will build a function to manage a record collection."
         ]
       }
     }
