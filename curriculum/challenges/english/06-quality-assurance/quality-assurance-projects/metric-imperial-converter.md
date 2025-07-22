@@ -233,7 +233,7 @@ async () => {
     if (!response.ok) {
       throw Error(await response.text());
     }
-    const data = await response.json();
+    const data = await response.text();
     assert(data.error === 'invalid unit' || data === 'invalid unit');
   } catch (xhr) {
     throw new Error(xhr.responseText || xhr.message);
@@ -252,7 +252,7 @@ async () => {
     if (!response.ok) {
       throw Error(await response.text());
     }
-    const data = await response.json();
+    const data = await response.text();
     assert(data.error === 'invalid number' || data === 'invalid number');
   } catch (xhr) {
     throw new Error(xhr.responseText || xhr.message);
@@ -271,7 +271,7 @@ async () => {
     if (!response.ok) {
       throw Error(await response.text());
     }
-    const data = await response.json();
+    const data = await response.text();
     assert(
       data.error === 'invalid number and unit' ||
         data === 'invalid number and unit'
