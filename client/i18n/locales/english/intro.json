@@ -3105,6 +3105,12 @@
           "In this workshop, you will review your knowledge of functions by building a calculator."
         ]
       },
+      "lab-boolean-check": {
+        "title": "Implement a Boolean Check Function",
+        "intro": [
+          "In this lab, you'll implement a function that checks if a value is a boolean."
+        ]
+      },
       "lab-email-masker": {
         "title": "Build an Email Masker",
         "intro": [
