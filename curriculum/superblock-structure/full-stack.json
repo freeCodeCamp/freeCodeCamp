@@ -657,6 +657,9 @@
               "dashedName": "lab-lunch-picker-program"
             },
             {
+              "dashedName": "lab-reverse-a-string"
+            },
+            {
               "dashedName": "lecture-working-with-common-array-methods"
             },
             {
@@ -809,6 +812,9 @@
           "dashedName": "js-a11y",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "workshop-planets-tablist"
+            },
             {
               "dashedName": "review-js-a11y"
             },
@@ -1175,6 +1181,9 @@
             },
             {
               "dashedName": "workshop-error-message-component"
+            },
+            {
+              "dashedName": "lab-music-shopping-cart-page"
             },
             {
               "dashedName": "review-css-libraries-and-frameworks"
