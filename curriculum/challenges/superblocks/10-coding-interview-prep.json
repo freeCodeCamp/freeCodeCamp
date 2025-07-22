@@ -1,1 +1,7 @@
-[]
+{
+  "blocks": [
+    "algorithms",
+    "data-structures",
+    "take-home-projects"
+  ]
+}
