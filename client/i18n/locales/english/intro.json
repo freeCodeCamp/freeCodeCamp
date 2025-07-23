@@ -4569,7 +4569,10 @@
         "title": "Bash and SQL Quiz",
         "intro": ["Test what you've learned in this quiz on Bash and SQL."]
       },
-      "eeez": { "title": "324", "intro": [] },
+      "lecture-working-with-nano": {
+        "title": "Working With Nano",
+        "intro": ["Learn about Nano in this lecture."]
+      },
       "workshop-castle": {
         "title": "Build a Castle",
         "intro": [
