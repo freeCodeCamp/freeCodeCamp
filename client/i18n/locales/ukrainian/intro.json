@@ -3112,6 +3112,12 @@
           "Ви детальніше дізнаєтесь про інструкції <code>if</code> та як використовувати оператори порівняння і декілька умов в інструкції <code>if</code>."
         ]
       },
+      "lab-celsius-to-fahrenheit-converter": {
+        "title": "Build a Celsius to Fahrenheit Converter",
+        "intro": [
+          "In this lab you will implement a function that converts the temperature from Celsius to Fahrenheit."
+        ]
+      },
       "lab-leap-year-calculator": {
         "title": "Створіть калькулятор високосних років ",
         "intro": [
