@@ -84,7 +84,6 @@ function TwitterIcon({ href, username }: IconProps): JSX.Element {
   );
 }
 
-// Bluesky social icon component
 function BlueskyIcon({ href, username }: IconProps): JSX.Element {
   const { t } = useTranslation();
   return (
@@ -100,7 +99,6 @@ function BlueskyIcon({ href, username }: IconProps): JSX.Element {
 }
 
 function SocialIcons(props: SocialIconsProps): JSX.Element | null {
-  // Destructure Bluesky from props
   const { githubProfile, linkedin, bluesky, twitter, username, website } =
     props;
   const show = linkedin || githubProfile || website || twitter || bluesky;

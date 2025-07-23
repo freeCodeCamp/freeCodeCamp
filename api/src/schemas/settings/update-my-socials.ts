@@ -11,7 +11,7 @@ export const updateMySocials = {
     twitter: urlOrEmptyString,
     githubProfile: urlOrEmptyString,
     linkedin: urlOrEmptyString,
-    bluesky: urlOrEmptyString // Optional Bluesky profile link
+    bluesky: urlOrEmptyString
   }),
   response: {
     200: Type.Object({
