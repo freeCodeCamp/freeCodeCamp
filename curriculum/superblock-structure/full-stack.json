@@ -1449,6 +1449,9 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "lecture-working-with-sql"
+            },
+            {
               "dashedName": "workshop-sql-student-database-part-1"
             },
             {
