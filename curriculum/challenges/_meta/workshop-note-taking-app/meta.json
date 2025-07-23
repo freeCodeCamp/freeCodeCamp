@@ -6,7 +6,60 @@
   "dashedName": "workshop-note-taking-app",
   "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
-  "challengeOrder": [{ "id": "68813c1b28ec3fd41838daf6", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "68813c1b28ec3fd41838daf6",
+      "title": "Step 1"
+    },
+    {
+      "id": "68813f8b1b11bbdda98c6214",
+      "title": "Step 2"
+    },
+    {
+      "id": "68813fbfc9f56dde3f21da08",
+      "title": "Step 3"
+    },
+    {
+      "id": "688140eac18479dee90553e5",
+      "title": "Step 4"
+    },
+    {
+      "id": "6881417fdb4032df98134a89",
+      "title": "Step 5"
+    },
+    {
+      "id": "688141a8be6e6be03af945ea",
+      "title": "Step 6"
+    },
+    {
+      "id": "688141e05e367de0e3ef7635",
+      "title": "Step 7"
+    },
+    {
+      "id": "68814221fc4752e17b9696bd",
+      "title": "Step 8"
+    },
+    {
+      "id": "6881424b87c826e21247645b",
+      "title": "Step 9"
+    },
+    {
+      "id": "688142a607d1dce2aa82da77",
+      "title": "Step 10"
+    },
+    {
+      "id": "6881431e481bf6e352a33969",
+      "title": "Step 11"
+    },
+    {
+      "id": "6881436e1e2afae400e8b4fe",
+      "title": "Step 12"
+    },
+    {
+      "id": "688143c66d5665e4b3409977",
+      "title": "Step 13"
+    }
+  ],
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
 }
