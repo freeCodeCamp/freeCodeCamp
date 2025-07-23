@@ -1,0 +1,260 @@
+import pygame
+import math
+import random
+import sys
+
+# --- Constants ---
+WIDTH, HEIGHT = 1200, 800
+FPS = 60
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GRAY = (120, 120, 120)
+RED = (220, 40, 40)
+GREEN = (40, 220, 40)
+BLUE = (40, 40, 220)
+YELLOW = (255, 255, 0)
+ORANGE = (255, 140, 0)
+SKY = (30, 30, 60)
+EARTH = (60, 120, 60)
+
+# --- Game Settings ---
+ARM_LENGTH = 300
+ARM_CENTER = (WIDTH // 2, HEIGHT - 100)
+ROCKET_LENGTH = 80
+ROCKET_WIDTH = 20
+MAX_SPIN_SPEED = 0.15  # radians/frame
+BREAK_ANGLE = 1.8  # radians
+FUEL_MAX = 100
+THRUST = 0.12
+ROTATE_SPEED = 0.04
+GRAVITY = 0.008
+ATMOSPHERE_HEIGHT = 300
+ORBIT_ALTITUDE = 600
+
+pygame.init()
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Spin Launch Rocket Game")
+clock = pygame.time.Clock()
+font = pygame.font.SysFont("consolas", 24)
+
+# --- Helper Functions ---
+def draw_text(surf, text, pos, color=WHITE, size=24):
+    f = pygame.font.SysFont("consolas", size)
+    surf.blit(f.render(text, True, color), pos)
+
+def rotate_point(origin, point, angle):
+    ox, oy = origin
+    px, py = point
+    qx = ox + math.cos(angle) * (px - ox) - math.sin(angle) * (py - oy)
+    qy = oy + math.sin(angle) * (px - ox) + math.cos(angle) * (py - oy)
+    return qx, qy
+
+# --- Classes ---
+class RocketPart:
+    def __init__(self, rel_pos, color, break_chance):
+        self.rel_pos = rel_pos  # (x, y) relative to rocket center
+        self.color = color
+        self.broken = False
+        self.break_chance = break_chance
+
+    def maybe_break(self, force):
+        if not self.broken and random.random() < self.break_chance * force:
+            self.broken = True
+
+class Rocket:
+    def __init__(self):
+        self.x, self.y = ARM_CENTER
+        self.angle = -math.pi / 2
+        self.vel_x = 0
+        self.vel_y = 0
+        self.angular_vel = 0
+        self.launched = False
+        self.fuel = FUEL_MAX
+        self.parts = [
+            RocketPart((0, -ROCKET_LENGTH//2), RED, 0.2),    # Nose cone
+            RocketPart((0, 0), GRAY, 0.1),                   # Body
+            RocketPart((-ROCKET_WIDTH, ROCKET_LENGTH//2), ORANGE, 0.3),  # Left fin
+            RocketPart((ROCKET_WIDTH, ROCKET_LENGTH//2), ORANGE, 0.3),   # Right fin
+            RocketPart((0, ROCKET_LENGTH//2), YELLOW, 0.15), # Engine
+        ]
+        self.broken = False
+        self.break_reason = ""
+        self.trail = []
+
+    def draw(self, surf, cam_x, cam_y):
+        # Draw rocket parts
+        for part in self.parts:
+            if part.broken:
+                continue
+            px, py = rotate_point((0, 0), part.rel_pos, self.angle)
+            rx = int(self.x + px - cam_x)
+            ry = int(self.y + py - cam_y)
+            pygame.draw.circle(surf, part.color, (rx, ry), 12)
+        # Draw main body
+        if not self.parts[1].broken:
+            p1 = rotate_point((0, 0), (0, -ROCKET_LENGTH//2), self.angle)
+            p2 = rotate_point((0, 0), (0, ROCKET_LENGTH//2), self.angle)
+            pygame.draw.line(surf, GRAY, (self.x + p1[0] - cam_x, self.y + p1[1] - cam_y),
+                             (self.x + p2[0] - cam_x, self.y + p2[1] - cam_y), ROCKET_WIDTH)
+        # Draw trail
+        if self.launched:
+            for tx, ty in self.trail:
+                pygame.draw.circle(surf, YELLOW, (int(tx - cam_x), int(ty - cam_y)), 2)
+
+    def update(self, keys, dt):
+        if self.launched and not self.broken:
+            # Controls
+            if self.fuel > 0:
+                if keys[pygame.K_UP]:
+                    self.vel_x += math.cos(self.angle) * THRUST * dt
+                    self.vel_y += math.sin(self.angle) * THRUST * dt
+                    self.fuel -= 0.3 * dt
+                    # Add to trail
+                    self.trail.append((self.x, self.y))
+                    if len(self.trail) > 300:
+                        self.trail.pop(0)
+                if keys[pygame.K_LEFT]:
+                    self.angle -= ROTATE_SPEED * dt
+                if keys[pygame.K_RIGHT]:
+                    self.angle += ROTATE_SPEED * dt
+            # Gravity
+            if self.y < HEIGHT - 50:
+                self.vel_y += GRAVITY * dt
+            # Move
+            self.x += self.vel_x * dt
+            self.y += self.vel_y * dt
+            # Break if too fast or too much spin
+            speed = math.hypot(self.vel_x, self.vel_y)
+            if speed > 18:
+                self.broken = True
+                self.break_reason = "Rocket broke up from excessive speed!"
+                for part in self.parts:
+                    part.broken = True
+            # Random breakage
+            for part in self.parts:
+                part.maybe_break(speed / 10)
+                if part.broken and not self.broken:
+                    self.broken = True
+                    self.break_reason = "A rocket part broke off!"
+        elif not self.launched:
+            # Spinning on arm
+            pass
+
+    def launch(self, spin_speed, arm_angle):
+        # Calculate initial velocity
+        self.launched = True
+        self.vel_x = math.cos(arm_angle) * spin_speed * ARM_LENGTH * 1.2
+        self.vel_y = math.sin(arm_angle) * spin_speed * ARM_LENGTH * 1.2
+        self.angle = arm_angle
+        # Break if released at bad angle
+        if abs(arm_angle + math.pi/2) > BREAK_ANGLE:
+            self.broken = True
+            self.break_reason = "Rocket broke apart from bad release angle!"
+            for part in self.parts:
+                part.broken = True
+
+    def is_in_orbit(self):
+        # Simple orbit check: high enough and moving fast enough horizontally
+        return self.y < HEIGHT - ORBIT_ALTITUDE and abs(self.vel_x) > 7
+
+# --- Main Game Loop ---
+def main():
+    running = True
+    phase = "spin"  # "spin", "flight", "end"
+    spin_speed = 0.01
+    arm_angle = -math.pi / 2
+    rocket = Rocket()
+    cam_x, cam_y = 0, 0
+    message = ""
+    orbit_achieved = False
+
+    while running:
+        dt = clock.tick(FPS) / (1000 / 60)  # Normalize to 60 FPS
+        keys = pygame.key.get_pressed()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+        # --- Game Logic ---
+        if phase == "spin":
+            # Increase spin speed
+            if keys[pygame.K_SPACE]:
+                spin_speed += 0.002 * dt
+                if spin_speed > MAX_SPIN_SPEED:
+                    spin_speed = MAX_SPIN_SPEED
+            else:
+                spin_speed -= 0.001 * dt
+                if spin_speed < 0.01:
+                    spin_speed = 0.01
+            arm_angle += spin_speed * dt
+            # Draw arm and rocket
+            rocket.x = ARM_CENTER[0] + math.cos(arm_angle) * ARM_LENGTH
+            rocket.y = ARM_CENTER[1] + math.sin(arm_angle) * ARM_LENGTH
+            rocket.angle = arm_angle
+            # Launch
+            if not keys[pygame.K_SPACE] and spin_speed > 0.02:
+                rocket.launch(spin_speed, arm_angle)
+                phase = "flight"
+                message = "Rocket Launched!"
+        elif phase == "flight":
+            rocket.update(keys, dt)
+            cam_x = rocket.x - WIDTH // 2
+            cam_y = rocket.y - HEIGHT // 2
+            if rocket.broken:
+                phase = "end"
+                message = rocket.break_reason
+            elif rocket.is_in_orbit() and not orbit_achieved:
+                orbit_achieved = True
+                message = "You reached orbit! Congratulations!"
+        elif phase == "end":
+            if keys[pygame.K_r]:
+                # Restart
+                rocket = Rocket()
+                phase = "spin"
+                spin_speed = 0.01
+                arm_angle = -math.pi / 2
+                cam_x, cam_y = 0, 0
+                orbit_achieved = False
+                message = ""
+
+        # --- Drawing ---
+        screen.fill(SKY)
+        # Draw earth
+        pygame.draw.rect(screen, EARTH, (0, HEIGHT - 50 - cam_y, WIDTH, 200))
+        # Draw launch arm
+        if phase == "spin":
+            ax = ARM_CENTER[0] - cam_x
+            ay = ARM_CENTER[1] - cam_y
+            ex = ax + math.cos(arm_angle) * ARM_LENGTH
+            ey = ay + math.sin(arm_angle) * ARM_LENGTH
+            pygame.draw.line(screen, BLUE, (ax, ay), (ex, ey), 8)
+            pygame.draw.circle(screen, BLUE, (int(ax), int(ay)), 18)
+        # Draw rocket
+        rocket.draw(screen, cam_x, cam_y)
+        # Draw UI
+        if phase == "spin":
+            draw_text(screen, "Hold SPACE to spin up, release to launch!", (30, 30), YELLOW)
+            draw_text(screen, f"Spin Speed: {spin_speed:.3f}", (30, 60), WHITE)
+        elif phase == "flight":
+            draw_text(screen, "Arrow keys: UP=Thrust, LEFT/RIGHT=Rotate", (30, 30), YELLOW)
+            draw_text(screen, f"Fuel: {int(rocket.fuel)}", (30, 60), GREEN)
+            draw_text(screen, f"Altitude: {int(HEIGHT - rocket.y)}", (30, 90), WHITE)
+            if orbit_achieved:
+                draw_text(screen, "ORBIT ACHIEVED!", (WIDTH//2 - 120, 60), GREEN, 36)
+        elif phase == "end":
+            draw_text(screen, message, (WIDTH//2 - 200, HEIGHT//2 - 40), RED, 32)
+            draw_text(screen, "Press R to restart", (WIDTH//2 - 120, HEIGHT//2 + 10), WHITE, 28)
+        # Draw breakage
+        for part in rocket.parts:
+            if part.broken:
+                px, py = rotate_point((0, 0), part.rel_pos, rocket.angle)
+                rx = int(rocket.x + px - cam_x + random.randint(-20, 20))
+                ry = int(rocket.y + py - cam_y + random.randint(-20, 20))
+                pygame.draw.circle(screen, RED, (rx, ry), 14)
+        pygame.display.flip()
+
+    pygame.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    main()
