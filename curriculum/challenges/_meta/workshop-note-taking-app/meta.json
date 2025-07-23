@@ -1,0 +1,12 @@
+{
+  "name": "Build a Note Taking App",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-note-taking-app",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [{ "id": "68813c1b28ec3fd41838daf6", "title": "Step 1" }],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

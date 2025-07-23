@@ -3462,6 +3462,13 @@
           "In this workshop, you will build a dynamic tabbed interface that showcases facts about the planets in the solar system."
         ]
       },
+      "workshop-note-taking-app": {
+        "title": "Build a Note Taking App",
+        "intro": [
+          "In this workshop, you are going to build an accessible note taking app.",
+          "This will provide you with the opportunity to practice working with <code>aria-live</code> attribute."
+        ]
+      },
       "review-js-a11y": {
         "title": "JavaScript and Accessibility Review",
         "intro": [
