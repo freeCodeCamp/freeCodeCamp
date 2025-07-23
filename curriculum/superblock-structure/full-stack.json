@@ -1386,6 +1386,9 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "lecture-understanding-the-command-line-and-working-with-bash"
+            },
+            {
               "dashedName": "workshop-bash-boilerplate"
             },
             {

@@ -1,0 +1,27 @@
+{
+  "name": "Understanding the Command Line and Working with Bash",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-the-command-line-and-working-with-bash",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "687e910842f3322350bc8d93",
+      "title": "What Is the Terminal, and How Does It Differ from the Command Line?"
+    },
+    {
+      "id": "687e9437536d762823fefab3",
+      "title": "What Are Some Shortcuts You Can Use in the Command Line to Speed Up Productivity?"
+    },
+    {
+      "id": "687e944b821130283dc83b2e",
+      "title": "What Is Bash, and What Are Some Basic Commands?"
+    },
+    {
+      "id": "687e947ae3ea7d2867c3d0e1",
+      "title": "What Are Some Command Options and Flags?"
+    }
+  ]
+}
