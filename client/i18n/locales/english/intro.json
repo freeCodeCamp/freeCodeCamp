@@ -4495,7 +4495,10 @@
           "Test what you've learned on relational databases with this quiz."
         ]
       },
-      "pexz": { "title": "311", "intro": [] },
+      "lecture-understanding-bash-scripting": {
+        "title": "Understanding Bash Scripting",
+        "intro": ["Learn about Bash Scripting in these lectures."]
+      },
       "workshop-bash-five-programs": {
         "title": "Build Five Programs",
         "intro": [
