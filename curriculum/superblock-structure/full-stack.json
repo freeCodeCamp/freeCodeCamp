@@ -631,6 +631,9 @@
               "dashedName": "workshop-loan-qualification-checker"
             },
             {
+              "dashedName": "lab-celsius-to-fahrenheit-converter"
+            },
+            {
               "dashedName": "lab-leap-year-calculator"
             },
             {
@@ -657,6 +660,9 @@
               "dashedName": "lab-lunch-picker-program"
             },
             {
+              "dashedName": "lab-reverse-a-string"
+            },
+            {
               "dashedName": "lecture-working-with-common-array-methods"
             },
             {
@@ -680,6 +686,9 @@
               "dashedName": "lab-quiz-game"
             },
             {
+              "dashedName": "lab-record-collection"
+            },
+            {
               "dashedName": "review-javascript-objects"
             },
             {
@@ -701,6 +710,10 @@
             },
             { "dashedName": "lab-mutations" },
             { "dashedName": "lab-chunky-monkey" },
+            { "dashedName": "lab-repeat-a-string" },
+            {
+              "dashedName": "lab-profile-lookup"
+            },
             {
               "dashedName": "review-javascript-loops"
             },
@@ -714,6 +727,12 @@
           "blocks": [
             {
               "dashedName": "lecture-understanding-core-javascript-fundamentals"
+            },
+            {
+              "dashedName": "lab-largest-number-finder"
+            },
+            {
+              "dashedName": "lab-first-element-finder"
             },
             {
               "dashedName": "lab-slice-and-splice"
@@ -809,6 +828,9 @@
           "dashedName": "js-a11y",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "workshop-planets-tablist"
+            },
             {
               "dashedName": "workshop-note-taking-app"
             },
@@ -1180,6 +1202,9 @@
               "dashedName": "workshop-error-message-component"
             },
             {
+              "dashedName": "workshop-tailwind-cta-component"
+            },
+            {
               "dashedName": "lab-music-shopping-cart-page"
             },
             {
@@ -1319,6 +1344,7 @@
             { "dashedName": "lab-quicksort" },
             { "dashedName": "lab-selection-sort" },
             { "dashedName": "lab-luhn-algorithm" },
+            { "dashedName": "lab-tower-of-hanoi" },
             { "dashedName": "review-searching-and-sorting-algorithms" },
             { "dashedName": "quiz-searching-and-sorting-algorithms" }
           ]
