@@ -256,6 +256,42 @@ describe('parseSuperblock pure functions', () => {
         'Duplicate challenges found in found challenges with id(s): 1'
       );
     });
+
+    test('should throw if there are duplicate titles in the meta', () => {
+      const foundChallenges = [
+        { id: '1', title: 'Challenge 1' },
+        { id: '2', title: 'Challenge 2' }
+      ];
+
+      const meta = {
+        challengeOrder: [
+          { id: '1', title: 'Challenge 1' },
+          { id: '2', title: 'Challenge 1' } // Duplicate title
+        ]
+      };
+
+      expect(() => validateChallenges(foundChallenges, meta)).toThrow(
+        'Duplicate titles found in meta with title(s): Challenge 1'
+      );
+    });
+
+    test('should throw if there are duplicate titles in the found challenges', () => {
+      const foundChallenges = [
+        { id: '1', title: 'Challenge 1' },
+        { id: '2', title: 'Challenge 1' } // Duplicate title
+      ];
+
+      const meta = {
+        challengeOrder: [
+          { id: '1', title: 'Challenge 1' },
+          { id: '2', title: 'Challenge 2' }
+        ]
+      };
+
+      expect(() => validateChallenges(foundChallenges, meta)).toThrow(
+        'Duplicate titles found in found challenges with title(s): Challenge 1'
+      );
+    });
   });
 
   describe('buildBlock', () => {
