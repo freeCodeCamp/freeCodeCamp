@@ -14,6 +14,8 @@ const {
   translateCommentsInChallenge
 } = require('../tools/challenge-parser/translation-parser');
 
+const { parseCurriculum } = require('../parse-curriculum');
+
 const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
 const { createPoly } = require('../shared/utils/polyvinyl');
 const { chapterBasedSuperBlocks } = require('../shared/config/curriculum');
@@ -190,12 +192,7 @@ Accepted languages are ${curriculumLangs.join(', ')}`);
   const root = getChallengesDirForLang('english');
   // scaffold the curriculum, first set up the superblocks, then recurse into
   // the blocks
-  const curriculum = await walk(
-    root,
-    {},
-    { type: 'directories', depth: 0 },
-    buildSuperBlocks
-  );
+  const curriculum = await parseCurriculum();
 
   const superBlocks = Object.keys(curriculum);
   const blocksWithParent = Object.entries(curriculum).flatMap(
@@ -211,74 +208,75 @@ Accepted languages are ${curriculumLangs.join(', ')}`);
 
   const blocks = blocksWithParent.map(({ block }) => block);
 
-  let filteredCurriculum = curriculum;
-  const updatedFilters = { ...filters };
-  if (filters?.superBlock) {
-    const target = stringSimilarity.findBestMatch(
-      filters.superBlock,
-      superBlocks
-    ).bestMatch.target;
+  // let filteredCurriculum = curriculum;
+  // const updatedFilters = { ...filters };
+  // if (filters?.superBlock) {
+  //   const target = stringSimilarity.findBestMatch(
+  //     filters.superBlock,
+  //     superBlocks
+  //   ).bestMatch.target;
 
-    console.log('superBlock being tested:', target);
+  //   console.log('superBlock being tested:', target);
 
-    filteredCurriculum = {
-      [target]: curriculum[target]
-    };
-    updatedFilters.superBlock = target;
-  } else if (filters?.block) {
-    const target = stringSimilarity.findBestMatch(filters.block, blocks)
-      .bestMatch.target;
+  //   filteredCurriculum = {
+  //     [target]: curriculum[target]
+  //   };
+  //   updatedFilters.superBlock = target;
+  // } else if (filters?.block) {
+  //   const target = stringSimilarity.findBestMatch(filters.block, blocks)
+  //     .bestMatch.target;
 
-    console.log('block being tested:', target);
-    const targetBlock = blocksWithParent.find(({ block }) => block === target);
+  //   console.log('block being tested:', target);
+  //   const targetBlock = blocksWithParent.find(({ block }) => block === target);
 
-    filteredCurriculum = {
-      [targetBlock.superBlock]: {
-        blocks: {
-          [targetBlock.block]: targetBlock.blockData
-        }
-      }
-    };
-    updatedFilters.block = targetBlock.block;
-  } else if (filters?.challengeId) {
-    const blocksWithMeta = blocksWithParent.filter(
-      ({ blockData }) => blockData.meta
-    );
-    const container = blocksWithMeta.filter(({ blockData }) => {
-      return blockData.meta.challengeOrder.some(
-        ({ id }) => id === filters.challengeId
-      );
-    });
+  //   filteredCurriculum = {
+  //     [targetBlock.superBlock]: {
+  //       blocks: {
+  //         [targetBlock.block]: targetBlock.blockData
+  //       }
+  //     }
+  //   };
+  //   updatedFilters.block = targetBlock.block;
+  // } else if (filters?.challengeId) {
+  //   const blocksWithMeta = blocksWithParent.filter(
+  //     ({ blockData }) => blockData.meta
+  //   );
+  //   const container = blocksWithMeta.filter(({ blockData }) => {
+  //     return blockData.meta.challengeOrder.some(
+  //       ({ id }) => id === filters.challengeId
+  //     );
+  //   });
 
-    if (container.length === 0) {
-      throw new Error(`No block found with challengeId ${filters.challengeId}`);
-    }
-    if (container.length > 1) {
-      throw new Error(
-        `Multiple blocks found with challengeId ${filters.challengeId}`
-      );
-    }
-    const targetBlock = container[0];
-    filteredCurriculum = {
-      [targetBlock.superBlock]: {
-        blocks: {
-          [targetBlock.block]: targetBlock.blockData
-        }
-      }
-    };
-    updatedFilters.block = targetBlock.block;
-    updatedFilters.superBlock = targetBlock.superBlock;
-  }
+  //   if (container.length === 0) {
+  //     throw new Error(`No block found with challengeId ${filters.challengeId}`);
+  //   }
+  //   if (container.length > 1) {
+  //     throw new Error(
+  //       `Multiple blocks found with challengeId ${filters.challengeId}`
+  //     );
+  //   }
+  //   const targetBlock = container[0];
+  //   filteredCurriculum = {
+  //     [targetBlock.superBlock]: {
+  //       blocks: {
+  //         [targetBlock.block]: targetBlock.blockData
+  //       }
+  //     }
+  //   };
+  //   updatedFilters.block = targetBlock.block;
+  //   updatedFilters.superBlock = targetBlock.superBlock;
+  // }
 
-  const cb = (file, curriculum) =>
-    buildChallenges(file, curriculum, lang, updatedFilters);
-  // fill the scaffold with the challenges
-  return walk(
-    root,
-    filteredCurriculum,
-    { type: 'files', fileFilter: ['*.md', '*.yml'] },
-    cb
-  );
+  // const cb = (file, curriculum) =>
+  //   buildChallenges(file, curriculum, lang, updatedFilters);
+  // // fill the scaffold with the challenges
+  // return walk(
+  //   root,
+  //   filteredCurriculum,
+  //   { type: 'files', fileFilter: ['*.md', '*.yml'] },
+  //   cb
+  // );
+  return curriculum;
 };
 
 async function buildBlocks(file, curriculum, superBlock) {
