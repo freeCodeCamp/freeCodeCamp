@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
+const { inspect } = require('util');
 const path = require('path');
 const { parseSuperblock } = require('./parse-superblock');
 
@@ -43,72 +44,65 @@ const superBlockNames = {
  * Main function to parse all superblocks and create parsed-curriculum.json
  */
 async function main() {
-  try {
-    console.log('Reading curriculum.json...');
+  console.log('Reading curriculum.json...');
 
-    // Read the curriculum.json file
-    const curriculumPath = path.resolve(
-      __dirname,
-      'curriculum/challenges/curriculum.json'
-    );
-    if (!fs.existsSync(curriculumPath)) {
-      throw new Error(`Curriculum file not found: ${curriculumPath}`);
-    }
-
-    const curriculum = JSON.parse(fs.readFileSync(curriculumPath, 'utf8'));
-    const superblocks = curriculum.superblocks;
-
-    console.log(`Found ${superblocks.length} superblocks to parse`);
-
-    const parsedCurriculum = {};
-
-    // Parse each superblock
-    for (const superblockFolder of superblocks) {
-      console.log(`\n=== Processing ${superblockFolder} ===`);
-
-      const superblockPath = path.resolve(
-        __dirname,
-        'curriculum/challenges/superblocks',
-        `${superblockFolder}.json`
-      );
-
-      if (!fs.existsSync(superblockPath)) {
-        console.warn(`⚠️  Superblock file not found: ${superblockPath}`);
-        continue;
-      }
-
-      // Parse the superblock
-      const parsedSuperblock = await parseSuperblock(superblockPath);
-
-      // Use the display name as the key, or fall back to the folder name
-      const superblockName =
-        superBlockNames[superblockFolder] || superblockFolder;
-      parsedCurriculum[superblockName] = parsedSuperblock;
-
-      console.log(`✅ Successfully parsed ${superblockName}`);
-    }
-
-    // Write the parsed curriculum to file
-    const outputPath = path.resolve(__dirname, 'parsed-curriculum.json');
-    fs.writeFileSync(
-      outputPath,
-      JSON.stringify(parsedCurriculum, null, 2),
-      'utf8'
-    );
-
-    console.log(`\n🎉 Parsing complete! Results written to: ${outputPath}`);
-    console.log(
-      `Total superblocks parsed: ${Object.keys(parsedCurriculum).length}`
-    );
-  } catch (error) {
-    console.error('❌ Error:', error.message);
-    process.exit(1);
+  // Read the curriculum.json file
+  const curriculumPath = path.resolve(
+    __dirname,
+    'curriculum/challenges/curriculum.json'
+  );
+  if (!fs.existsSync(curriculumPath)) {
+    throw new Error(`Curriculum file not found: ${curriculumPath}`);
   }
+
+  const curriculum = JSON.parse(fs.readFileSync(curriculumPath, 'utf8'));
+  const superblocks = curriculum.superblocks;
+
+  console.log(`Found ${superblocks.length} superblocks to parse`);
+
+  const parsedCurriculum = {};
+
+  // Parse each superblock
+  for (const superblockFolder of superblocks) {
+    console.log(`\n=== Processing ${superblockFolder} ===`);
+
+    const superBlockName = superBlockNames[superblockFolder];
+
+    const superblockPath = path.resolve(
+      __dirname,
+      'curriculum/challenges/superblocks',
+      `${superblockFolder}.json`
+    );
+
+    if (!fs.existsSync(superblockPath)) {
+      throw Error(`Superblock file not found: ${superblockPath}`);
+    }
+
+    // Parse the superblock
+    const parsedSuperblock = await parseSuperblock(
+      superblockPath,
+      superBlockName
+    );
+
+    // Use the display name as the key, or fall back to the folder name
+
+    parsedCurriculum[superBlockName] = parsedSuperblock;
+
+    console.log(`✅ Successfully parsed ${superBlockName}`);
+  }
+
+  console.log(
+    `Total superblocks parsed: ${Object.keys(parsedCurriculum).length}`
+  );
+
+  return parsedCurriculum;
 }
 
 // Run if called directly
 if (require.main === module) {
-  main().catch(console.error);
+  main()
+    .catch(console.error)
+    .then(x => console.log(inspect(x, { depth: null })));
 }
 
 module.exports = { main };
