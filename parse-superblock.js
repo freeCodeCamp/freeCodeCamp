@@ -32,7 +32,7 @@ function validateChallenges(foundChallenges, meta) {
   const missingFromMeta = Array.from(foundChallengeIds).filter(
     id => !metaChallengeIds.has(id)
   );
-  const missingFiles = Array.from(metaChallengeIds).filter(
+  const missingFromFiles = Array.from(metaChallengeIds).filter(
     id => !foundChallengeIds.has(id)
   );
 
@@ -42,9 +42,28 @@ function validateChallenges(foundChallenges, meta) {
     );
   }
 
-  if (missingFiles.length > 0) {
+  if (missingFromFiles.length > 0) {
     throw Error(
-      `Challenges in meta but missing files: ${missingFiles.join(', ')}`
+      `Challenges in meta but missing files with id(s): ${missingFromFiles.join(', ')}`
+    );
+  }
+
+  const duplicateIds = foundChallenges
+    .map(c => c.id)
+    .filter((id, index, self) => self.indexOf(id) !== index);
+
+  if (duplicateIds.length > 0) {
+    throw Error(
+      `Duplicate challenges found in found challenges with id(s): ${duplicateIds.join(', ')}`
+    );
+  }
+
+  const duplicateMetaIds = meta.challengeOrder
+    .map(c => c.id)
+    .filter((id, index, self) => self.indexOf(id) !== index);
+  if (duplicateMetaIds.length > 0) {
+    throw Error(
+      `Duplicate challenges found in meta with id(s): ${duplicateMetaIds.join(', ')}`
     );
   }
 }
