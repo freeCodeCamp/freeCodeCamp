@@ -666,7 +666,7 @@ async function getExams(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ user: req.user });
+  logger.info({ userId: req.user?.id });
 
   const user = req.user!;
   const maybeExams = await mapErr(
@@ -733,6 +733,9 @@ async function getExams(
     };
 
     const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
+    logger.info(
+      `Prerequisites for exam ${exam.id} ${isExamPrerequisitesMet ? 'met' : 'unmet'}.`
+    );
 
     if (!isExamPrerequisitesMet) {
       availableExam.canTake = false;
@@ -742,25 +745,29 @@ async function getExams(
     // Latest attempt must be:
     // a) Moderated
     // b) Past exam config retake time
-    const lastAttempt = attempts.length
+    const attemptsForExam = attempts.filter(a => a.examId === exam.id);
+
+    const lastAttempt = attemptsForExam.length
       ? attempts.reduce((latest, current) =>
           latest.startTimeInMS > current.startTimeInMS ? latest : current
         )
       : null;
 
     if (!lastAttempt) {
+      logger.info(`No prior attempts for exam ${exam.id}`);
       availableExam.canTake = true;
       availableExams.push(availableExam);
       continue;
     }
 
-    const isRetakeTimePassed =
-      Date.now() >
+    const retakeDateInMS =
       lastAttempt.startTimeInMS +
-        exam.config.totalTimeInMS +
-        exam.config.retakeTimeInMS;
+      exam.config.totalTimeInMS +
+      exam.config.retakeTimeInMS;
+    const isRetakeTimePassed = Date.now() > retakeDateInMS;
 
     if (!isRetakeTimePassed) {
+      logger.info(`Time until retake: ${retakeDateInMS - Date.now()} [ms]`);
       availableExam.canTake = false;
       availableExams.push(availableExam);
       continue;
@@ -770,7 +777,7 @@ async function getExams(
       this.prisma.examEnvironmentExamModeration.findMany({
         where: {
           examAttemptId: lastAttempt.id,
-          NOT: { status: ExamEnvironmentExamModerationStatus.Pending }
+          status: ExamEnvironmentExamModerationStatus.Pending
         }
       })
     );
@@ -787,6 +794,7 @@ async function getExams(
     const moderations = maybeModerations.data;
 
     if (moderations.length > 0) {
+      logger.info(`Exam Moderation records found: ${moderations.length}`);
       availableExam.canTake = false;
       availableExams.push(availableExam);
       continue;
