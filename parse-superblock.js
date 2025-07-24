@@ -277,9 +277,8 @@ async function processBlock(
   // Read meta.json for this block
   const metaPath = path.resolve(
     baseDir,
-    'curriculum/challenges/_meta',
-    blockName,
-    'meta.json'
+    'curriculum/challenges/blocks',
+    `${blockName}.json`
   );
   if (!fs.existsSync(metaPath)) {
     throw new Error(`Meta file not found for block ${blockName}: ${metaPath}`);
