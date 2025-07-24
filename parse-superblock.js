@@ -6,6 +6,8 @@ const { isEmpty } = require('lodash');
 const debug = require('debug')('fcc:parse-superblock');
 
 const { parseMD } = require('./tools/challenge-parser/parser');
+const { getSuperOrder } = require('./curriculum/utils');
+const { createPoly } = require('./shared/utils/polyvinyl');
 
 /**
  * Script to parse a superblock file and gather all challenges from blocks
@@ -19,13 +21,13 @@ const { parseMD } = require('./tools/challenge-parser/parser');
 
 /**
  * Validates challenges against meta.json challengeOrder
- * @param {Map<string, object>} foundChallenges - Map of challenge ID to challenge data
+ * @param {Array<object>} foundChallenges - Array of challenge objects
  * @param {object} meta - Meta object with challengeOrder array
  * @returns {object} Validation result with missing challenges info
  */
 function validateChallenges(foundChallenges, meta) {
   const metaChallengeIds = new Set(meta.challengeOrder.map(c => c.id));
-  const foundChallengeIds = new Set(foundChallenges.keys());
+  const foundChallengeIds = new Set(foundChallenges.map(c => c.id));
 
   const missingFromMeta = Array.from(foundChallengeIds).filter(
     id => !metaChallengeIds.has(id)
@@ -49,29 +51,146 @@ function validateChallenges(foundChallenges, meta) {
 
 /**
  * Builds a block object from challenges and meta data
- * @param {Map<string, object>} foundChallenges - Map of challenge ID to challenge data
+ * @param {Array<object>} foundChallenges - Array of challenge objects
  * @param {object} meta - Meta object with name, dashedName, and challengeOrder
  * @returns {object} Block object with ordered challenges
  */
 function buildBlock(foundChallenges, meta) {
-  const blockResult = {
-    name: meta.name,
-    dashedName: meta.dashedName,
-    challenges: []
-  };
-
-  // Add challenges in the order specified by challengeOrder
-  for (const challengeInfo of meta.challengeOrder) {
-    if (foundChallenges.has(challengeInfo.id)) {
-      blockResult.challenges.push(foundChallenges.get(challengeInfo.id));
-    } else {
+  const challenges = meta.challengeOrder.map(challengeInfo => {
+    const challenge = foundChallenges.find(c => c.id === challengeInfo.id);
+    if (!challenge) {
       throw Error(
         `Challenge ${challengeInfo.id} (${challengeInfo.title}) not found in block`
       );
     }
+    // TODO: Update this once we're handling translations properly
+    challenge.translationPending = false;
+
+    return addMetaToChallenge(fixChallengeProperties(challenge), meta);
+  });
+
+  return {
+    name: meta.name,
+    dashedName: meta.dashedName,
+    challenges
+  };
+}
+
+/**
+ * Adds the meta information to a challenge
+ * @param {object} challenge - The challenge object
+ * @param {object} meta - The meta information object
+ * @returns {object} The challenge object with added meta information
+ */
+function addMetaToChallenge(challenge, meta) {
+  const challengeOrderIndex = meta.challengeOrder.findIndex(
+    ({ id }) => id === challenge.id
+  );
+
+  const isLastChallengeInBlock =
+    meta.challengeOrder.length - 1 === challengeOrderIndex;
+
+  // Add basic meta properties
+  challenge.block = meta.dashedName;
+  challenge.blockType = meta.blockType;
+  challenge.blockLayout = meta.blockLayout;
+  challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
+  challenge.order = meta.order;
+
+  // Ensure required properties exist
+  if (!challenge.description) challenge.description = '';
+  if (!challenge.instructions) challenge.instructions = '';
+  if (!challenge.questions) challenge.questions = [];
+
+  // Set superblock-related properties
+  challenge.superBlock = meta.superBlock;
+  challenge.superOrder = meta.superOrder;
+  challenge.challengeOrder = challengeOrderIndex;
+  challenge.isLastChallengeInBlock = isLastChallengeInBlock;
+  challenge.isPrivate = challenge.isPrivate || meta.isPrivate;
+  challenge.required = (meta.required || []).concat(challenge.required || []);
+  challenge.template = meta.template;
+  challenge.helpCategory = challenge.helpCategory || meta.helpCategory;
+  challenge.usesMultifileEditor = !!meta.usesMultifileEditor;
+  challenge.disableLoopProtectTests = !!meta.disableLoopProtectTests;
+  challenge.disableLoopProtectPreview = !!meta.disableLoopProtectPreview;
+
+  // Add chapter and module if present in meta
+  if (meta.chapter) challenge.chapter = meta.chapter;
+  if (meta.module) challenge.module = meta.module;
+
+  // Handle certification field for legacy support
+  const dupeCertifications = [
+    {
+      certification: 'responsive-web-design',
+      dupe: '2022/responsive-web-design'
+    }
+  ];
+  const hasDupe = dupeCertifications.find(
+    cert => cert.dupe === meta.superBlock
+  );
+  challenge.certification = hasDupe ? hasDupe.certification : meta.superBlock;
+
+  return challenge;
+}
+
+function challengeFilesToPolys(files) {
+  return files.reduce((challengeFiles, challengeFile) => {
+    return [
+      ...challengeFiles,
+      {
+        ...createPoly(challengeFile),
+        seed: challengeFile.contents.slice(0)
+      }
+    ];
+  }, []);
+}
+
+function fixChallengeProperties(challenge) {
+  const fixedChallenge = {
+    ...challenge
+  };
+
+  if (challenge.challengeFiles) {
+    fixedChallenge.challengeFiles = challengeFilesToPolys(
+      challenge.challengeFiles
+    );
+  }
+  if (challenge.solutions?.length) {
+    // The test runner needs the solutions to be arrays of polyvinyls so it
+    // can sort them correctly.
+    fixedChallenge.solutions = challenge.solutions.map(challengeFilesToPolys);
+  }
+  return fixedChallenge;
+}
+
+/**
+ * Processes blocks array and returns result object
+ * @param {function} processBlockFn - Function to process individual blocks
+ * @param {object[]} blocks - Array of block objects with dashedName property
+ * @returns {Promise<object>} Result object with processed blocks
+ */
+async function processSuperblock(processBlockFn, blocks, superBlockName) {
+  const superBlock = { blocks: {} };
+
+  // Process each block
+  for (let i = 0; i < blocks.length; i++) {
+    const blockInfo = blocks[i];
+    const blockResult = await processBlockFn(blockInfo, __dirname, {
+      superBlock: superBlockName,
+      order: i,
+      ...(blockInfo.chapter && { chapter: blockInfo.chapter }),
+      ...(blockInfo.module && { module: blockInfo.module })
+    });
+    if (blockResult) {
+      superBlock.blocks[blockInfo.dashedName] = blockResult;
+    }
   }
 
-  return blockResult;
+  debug(
+    `Completed parsing superblock. Total blocks: ${Object.keys(superBlock.blocks).length}`
+  );
+  return superBlock;
 }
 
 // ===== I/O FUNCTIONS =====
@@ -80,19 +199,19 @@ function buildBlock(foundChallenges, meta) {
  * Reads and parses all challenges from a block directory
  * @param {string} blockDir - Path to the block directory
  * @param {function} parser - Parser function (async)
- * @returns {Promise<Map<string, object>>} Map of challenge ID to challenge data
+ * @returns {Promise<Array<object>>} Array of challenge objects
  */
 async function readBlockChallenges(blockDir, parser) {
   const challengeFiles = fs
     .readdirSync(blockDir)
     .filter(file => file.endsWith('.md'));
 
-  const foundChallenges = new Map();
+  const foundChallenges = [];
 
   for (const file of challengeFiles) {
     const filePath = path.join(blockDir, file);
     const challenge = await parser(filePath);
-    foundChallenges.set(challenge.id, challenge);
+    foundChallenges.push(challenge);
   }
 
   return foundChallenges;
@@ -102,9 +221,14 @@ async function readBlockChallenges(blockDir, parser) {
  * Processes a single block: reads challenges, validates, and builds block object
  * @param {object} blockInfo - Block info object with dashedName property
  * @param {string} baseDir - Base directory path
+ * @param {object} options - Options object with superBlock and order properties
  * @returns {Promise<object|null>} Block object or null if processing failed
  */
-async function processBlock(blockInfo, baseDir) {
+async function processBlock(
+  blockInfo,
+  baseDir,
+  { superBlock, order, chapter, module }
+) {
   const blockName = blockInfo.dashedName;
   debug(`Processing block: ${blockName}`);
 
@@ -120,7 +244,7 @@ async function processBlock(blockInfo, baseDir) {
 
   // Read challenges from directory
   const foundChallenges = await readBlockChallenges(blockDir, parseMD);
-  debug(`Found ${foundChallenges.size} challenge files in directory`);
+  debug(`Found ${foundChallenges.length} challenge files in directory`);
 
   // Log found challenges
   foundChallenges.forEach(challenge => {
@@ -138,10 +262,21 @@ async function processBlock(blockInfo, baseDir) {
     throw new Error(`Meta file not found for block ${blockName}: ${metaPath}`);
   }
 
-  const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+  // Not all "meta information" can be found in the meta.json.
+  const rawMeta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
   debug(
-    `Meta file indicates ${meta.challengeOrder.length} challenges should exist`
+    `Meta file indicates ${rawMeta.challengeOrder.length} challenges should exist`
   );
+
+  const superOrder = getSuperOrder(superBlock);
+  const meta = {
+    ...rawMeta,
+    superOrder,
+    superBlock,
+    order,
+    ...(chapter && { chapter }),
+    ...(module && { module })
+  };
 
   // Validate challenges against meta
   validateChallenges(foundChallenges, meta);
@@ -209,34 +344,11 @@ function transformSuperBlock(superblockData) {
 }
 
 /**
- * Processes blocks array and returns result object
- * @param {function} processBlockFn - Function to process individual blocks
- * @param {object[]} blocks - Array of block objects with dashedName property
- * @returns {Promise<object>} Result object with processed blocks
- */
-async function processSuperblock(processBlockFn, blocks) {
-  const result = {
-    blocks: []
-  };
-
-  // Process each block
-  for (const blockInfo of blocks) {
-    const blockResult = await processBlockFn(blockInfo, __dirname);
-    if (blockResult) {
-      result.blocks.push(blockResult);
-    }
-  }
-
-  debug(`Completed parsing superblock. Total blocks: ${result.blocks.length}`);
-  return result;
-}
-
-/**
  * Main parsing function for superblock
  * @param {string} superblockPath - Path to superblock JSON file
  * @returns {Promise<object>} Parsed superblock data
  */
-async function parseSuperblock(superblockPath) {
+async function parseSuperblock(superblockPath, superBlockName) {
   debug(`Parsing superblock: ${superblockPath}`);
 
   // Read the superblock file
@@ -246,7 +358,7 @@ async function parseSuperblock(superblockPath) {
   const blocks = transformSuperBlock(superblockData);
 
   // Process the blocks and return result
-  return await processSuperblock(processBlock, blocks);
+  return await processSuperblock(processBlock, blocks, superBlockName);
 }
 
 // Main execution
@@ -278,9 +390,11 @@ if (require.main === module) {
 // Export both pure functions (for testing) and I/O functions (for CLI usage)
 module.exports = {
   // Pure functions (no I/O, no dependencies)
+  addMetaToChallenge,
   validateChallenges,
   buildBlock,
   transformSuperBlock,
+  fixChallengeProperties,
   // I/O functions (for CLI usage)
   parseSuperblock,
   processSuperblock,

@@ -1,10 +1,14 @@
 const {
   validateChallenges,
   buildBlock,
-  transformSuperBlock
+  transformSuperBlock,
+  addMetaToChallenge,
+  fixChallengeProperties,
+  processSuperblock
 } = require('./parse-superblock');
+const { isPoly } = require('./shared/utils/polyvinyl');
 
-const fullStackSuperBlock = {
+const dummyFullStackSuperBlock = {
   chapters: [
     {
       dashedName: 'chapter-1',
@@ -32,7 +36,7 @@ const fullStackSuperBlock = {
 };
 
 // Includes "comingSoon" modules and chapters
-const unfinishedSuperBlock = {
+const dummyUnfinishedSuperBlock = {
   chapters: [
     {
       dashedName: 'chapter-1',
@@ -61,13 +65,87 @@ const unfinishedSuperBlock = {
   ]
 };
 
+const dummyBlockMeta = {
+  name: 'Test Block',
+  blockLayout: 'challenge-list',
+  blockType: 'workshop',
+  isUpcomingChange: false,
+  dashedName: 'test-block',
+  superBlock: 'responsive-web-design',
+  order: 1,
+  superOrder: 2,
+  usesMultifileEditor: true,
+  hasEditableBoundaries: false,
+  disableLoopProtectTests: true,
+  template: 'html/css',
+  required: [
+    {
+      link: 'https://example.com/style.css',
+      raw: false,
+      src: 'style.css'
+    }
+  ],
+  challengeOrder: [
+    { id: '1', title: 'Challenge 1' },
+    { id: '2', title: 'Challenge 2' }
+  ],
+  helpCategory: 'HTML-CSS'
+};
+
+const dummyChallenge = {
+  challengeFiles: [
+    {
+      spuriousProp: '1',
+      name: 'file1',
+      ext: 'js',
+      history: [],
+      contents: 'console.log("Hello")',
+      // head and tail should not be required, but they currently are
+      head: '',
+      tail: ''
+    },
+    {
+      spuriousProp: '2',
+      name: 'file2',
+      ext: 'css',
+      history: [],
+      contents: 'body { background: red; }',
+      head: '',
+      tail: ''
+    }
+  ]
+};
+
+const expectedChallengeProperties = {
+  id: expect.any(String),
+  challengeOrder: expect.any(Number),
+  isLastChallengeInBlock: expect.any(Boolean),
+  block: dummyBlockMeta.dashedName,
+  blockLayout: dummyBlockMeta.blockLayout,
+  blockType: dummyBlockMeta.blockType,
+  hasEditableBoundaries: dummyBlockMeta.hasEditableBoundaries,
+  order: dummyBlockMeta.order,
+  description: '',
+  instructions: '',
+  questions: [],
+  superOrder: dummyBlockMeta.superOrder,
+  certification: dummyBlockMeta.superBlock,
+  superBlock: dummyBlockMeta.superBlock,
+  required: dummyBlockMeta.required,
+  template: dummyBlockMeta.template,
+  helpCategory: dummyBlockMeta.helpCategory,
+  usesMultifileEditor: dummyBlockMeta.usesMultifileEditor,
+  disableLoopProtectTests: dummyBlockMeta.disableLoopProtectTests,
+  disableLoopProtectPreview: false
+};
+
 describe('parseSuperblock pure functions', () => {
   describe('validateChallenges', () => {
     test('should not throw when all challenges match meta', () => {
-      const foundChallenges = new Map([
-        ['1', { id: '1', title: 'Challenge 1' }],
-        ['2', { id: '2', title: 'Challenge 2' }]
-      ]);
+      const foundChallenges = [
+        { id: '1', title: 'Challenge 1' },
+        { id: '2', title: 'Challenge 2' }
+      ];
 
       const meta = {
         challengeOrder: [
@@ -80,11 +158,11 @@ describe('parseSuperblock pure functions', () => {
     });
 
     test('should throw when challenges are missing from meta', () => {
-      const foundChallenges = new Map([
-        ['1', { id: '1', title: 'Challenge 1' }],
-        ['2', { id: '2', title: 'Challenge 2' }],
-        ['3', { id: '3', title: 'Challenge 3' }] // Extra challenge
-      ]);
+      const foundChallenges = [
+        { id: '1', title: 'Challenge 1' },
+        { id: '2', title: 'Challenge 2' },
+        { id: '3', title: 'Challenge 3' } // Extra challenge
+      ];
 
       const meta = {
         challengeOrder: [
@@ -99,9 +177,7 @@ describe('parseSuperblock pure functions', () => {
     });
 
     test('should throw when challenge files are missing', () => {
-      const foundChallenges = new Map([
-        ['1', { id: '1', title: 'Challenge 1' }]
-      ]);
+      const foundChallenges = [{ id: '1', title: 'Challenge 1' }];
 
       const meta = {
         challengeOrder: [
@@ -116,12 +192,12 @@ describe('parseSuperblock pure functions', () => {
     });
 
     test('should throw when multiple challenges are missing from meta', () => {
-      const foundChallenges = new Map([
-        ['1', { id: '1', title: 'Challenge 1' }],
-        ['2', { id: '2', title: 'Challenge 2' }],
-        ['3', { id: '3', title: 'Challenge 3' }],
-        ['4', { id: '4', title: 'Challenge 4' }]
-      ]);
+      const foundChallenges = [
+        { id: '1', title: 'Challenge 1' },
+        { id: '2', title: 'Challenge 2' },
+        { id: '3', title: 'Challenge 3' },
+        { id: '4', title: 'Challenge 4' }
+      ];
 
       const meta = {
         challengeOrder: [
@@ -136,9 +212,7 @@ describe('parseSuperblock pure functions', () => {
     });
 
     test('should throw when multiple challenge files are missing', () => {
-      const foundChallenges = new Map([
-        ['1', { id: '1', title: 'Challenge 1' }]
-      ]);
+      const foundChallenges = [{ id: '1', title: 'Challenge 1' }];
 
       const meta = {
         challengeOrder: [
@@ -156,10 +230,10 @@ describe('parseSuperblock pure functions', () => {
 
   describe('buildBlock', () => {
     test('should build block with ordered challenges', () => {
-      const foundChallenges = new Map([
-        ['2', { id: '2', title: 'Challenge 2' }],
-        ['1', { id: '1', title: 'Challenge 1' }]
-      ]);
+      const foundChallenges = [
+        { id: '2', title: 'Challenge 2' },
+        { id: '1', title: 'Challenge 1' }
+      ];
 
       const meta = {
         name: 'Test Block',
@@ -180,9 +254,7 @@ describe('parseSuperblock pure functions', () => {
     });
 
     test('should throw if challenges are missing', () => {
-      const foundChallenges = new Map([
-        ['2', { id: '2', title: 'Challenge 2' }]
-      ]);
+      const foundChallenges = [{ id: '2', title: 'Challenge 2' }];
 
       const meta = {
         name: 'Test Block',
@@ -196,6 +268,87 @@ describe('parseSuperblock pure functions', () => {
       expect(() => buildBlock(foundChallenges, meta)).toThrow(
         'Challenge 1 (Challenge 1) not found in block'
       );
+    });
+
+    test('should add the meta to the challenges when building the block', () => {
+      const foundChallenges = [{ id: '1' }, { id: '2' }];
+
+      const { challenges } = buildBlock(foundChallenges, dummyBlockMeta);
+
+      // Verify challenge meta properties. This is not exhaustive, since
+      // addMetaToChallenge is tested separately.
+      expect(challenges[0]).toMatchObject({
+        id: '1',
+        challengeOrder: 0,
+        isLastChallengeInBlock: false,
+        helpCategory: dummyBlockMeta.helpCategory
+      });
+
+      expect(challenges[1]).toMatchObject({
+        id: '2',
+        challengeOrder: 1,
+        isLastChallengeInBlock: true,
+        helpCategory: dummyBlockMeta.helpCategory
+      });
+    });
+  });
+
+  describe('addMetaToChallenge', () => {
+    test('should add meta properties to challenge', () => {
+      const challenge = { id: '1' };
+
+      addMetaToChallenge(challenge, dummyBlockMeta);
+
+      expect(challenge).toEqual(expectedChallengeProperties);
+    });
+
+    test('should add chapter and module properties when present in meta', () => {
+      const challenge = { id: '1' };
+      const metaWithChapterAndModule = {
+        ...dummyBlockMeta,
+        chapter: 'chapter-1',
+        module: 'module-1'
+      };
+
+      addMetaToChallenge(challenge, metaWithChapterAndModule);
+
+      expect(challenge).toMatchObject({
+        ...expectedChallengeProperties,
+        chapter: 'chapter-1',
+        module: 'module-1'
+      });
+    });
+  });
+
+  describe('fixChallengeProperties', () => {
+    test("should ensure all challengeFiles are 'polyvinyls'", () => {
+      dummyChallenge.challengeFiles.forEach(file => {
+        expect(isPoly(file)).toBe(false);
+      });
+
+      const fixedChallenge = fixChallengeProperties(dummyChallenge);
+      expect(fixedChallenge.challengeFiles).toHaveLength(2);
+      fixedChallenge.challengeFiles.forEach(file =>
+        expect(isPoly(file)).toBe(true)
+      );
+
+      const seeds = fixedChallenge.challengeFiles.map(file => file.seed);
+      expect(seeds[0]).toBe(dummyChallenge.challengeFiles[0].contents);
+      expect(seeds[1]).toBe(dummyChallenge.challengeFiles[1].contents);
+    });
+
+    test("should ensure all the solutions are arrays of 'polyvinyls'", () => {
+      const challengeWithSolutions = {
+        ...dummyChallenge,
+        solutions: [dummyChallenge.challengeFiles]
+      };
+
+      const fixedChallenge = fixChallengeProperties(challengeWithSolutions);
+      expect(fixedChallenge.solutions).toHaveLength(1);
+      fixedChallenge.solutions.forEach(solution => {
+        expect(Array.isArray(solution)).toBe(true);
+        solution.forEach(file => expect(isPoly(file)).toBe(true));
+      });
     });
   });
 
@@ -255,7 +408,7 @@ describe('parseSuperblock pure functions', () => {
     });
 
     test('should transform superblocks with nested chapters and modules', () => {
-      const result = transformSuperBlock(fullStackSuperBlock);
+      const result = transformSuperBlock(dummyFullStackSuperBlock);
 
       expect(result).toEqual([
         { dashedName: 'block-1', chapter: 'chapter-1', module: 'module-1' },
@@ -269,13 +422,44 @@ describe('parseSuperblock pure functions', () => {
     });
 
     test("should omit 'comingSoon' modules and chapters", () => {
-      const result = transformSuperBlock(unfinishedSuperBlock);
+      const result = transformSuperBlock(dummyUnfinishedSuperBlock);
 
       expect(result).toEqual([
         { dashedName: 'block-3', chapter: 'chapter-1', module: 'module-2' },
         { dashedName: 'block-4', chapter: 'chapter-1', module: 'module-2' }
       ]);
       expect(result).toHaveLength(2);
+    });
+  });
+
+  describe('processSuperblock', () => {
+    test('should process blocks using the provided processing function', async () => {
+      const mockProcessBlockFn = jest
+        .fn()
+        .mockResolvedValueOnce('Block 1')
+        .mockResolvedValueOnce('Block 2')
+        .mockResolvedValueOnce(null);
+
+      const blocks = [
+        { dashedName: 'block-1' },
+        { dashedName: 'block-2' },
+        { dashedName: 'block-3' }
+      ];
+
+      const result = await processSuperblock(
+        mockProcessBlockFn,
+        blocks,
+        'test-superblock'
+      );
+
+      expect(mockProcessBlockFn).toHaveBeenCalledTimes(3);
+
+      expect(result).toEqual({
+        blocks: {
+          'block-1': 'Block 1',
+          'block-2': 'Block 2'
+        }
+      });
     });
   });
 });
