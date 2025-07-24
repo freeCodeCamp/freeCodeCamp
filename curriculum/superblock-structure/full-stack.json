@@ -631,6 +631,9 @@
               "dashedName": "workshop-loan-qualification-checker"
             },
             {
+              "dashedName": "lab-celsius-to-fahrenheit-converter"
+            },
+            {
               "dashedName": "lab-leap-year-calculator"
             },
             {
@@ -727,6 +730,9 @@
             },
             {
               "dashedName": "lab-largest-number-finder"
+            },
+            {
+              "dashedName": "lab-first-element-finder"
             },
             {
               "dashedName": "lab-slice-and-splice"
@@ -1379,6 +1385,9 @@
           "dashedName": "bash-fundamentals",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-the-command-line-and-working-with-bash"
+            },
             {
               "dashedName": "workshop-bash-boilerplate"
             },
