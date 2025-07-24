@@ -17,7 +17,9 @@ const { createPoly } = require('./shared/utils/polyvinyl');
  * Example: node parse-superblock.js ./curriculum/challenges/superblocks/01-responsive-web-design.json
  */
 
-// ===== PURE FUNCTIONS (NO I/O, NO DEPENDENCIES) =====
+const duplicates = xs => xs.filter((x, i) => xs.indexOf(x) !== i);
+
+// ===== PURE FUNCTIONS (NO I/O) =====
 
 /**
  * Validates challenges against meta.json challengeOrder
@@ -32,40 +34,42 @@ function validateChallenges(foundChallenges, meta) {
   const missingFromMeta = Array.from(foundChallengeIds).filter(
     id => !metaChallengeIds.has(id)
   );
-  const missingFromFiles = Array.from(metaChallengeIds).filter(
-    id => !foundChallengeIds.has(id)
-  );
-
-  if (missingFromMeta.length > 0) {
+  if (missingFromMeta.length > 0)
     throw Error(
       `Challenges found in directory but missing from meta: ${missingFromMeta.join(', ')}`
     );
-  }
 
-  if (missingFromFiles.length > 0) {
+  const missingFromFiles = Array.from(metaChallengeIds).filter(
+    id => !foundChallengeIds.has(id)
+  );
+  if (missingFromFiles.length > 0)
     throw Error(
       `Challenges in meta but missing files with id(s): ${missingFromFiles.join(', ')}`
     );
-  }
 
-  const duplicateIds = foundChallenges
-    .map(c => c.id)
-    .filter((id, index, self) => self.indexOf(id) !== index);
-
-  if (duplicateIds.length > 0) {
+  const duplicateIds = duplicates(foundChallenges.map(c => c.id));
+  if (duplicateIds.length > 0)
     throw Error(
       `Duplicate challenges found in found challenges with id(s): ${duplicateIds.join(', ')}`
     );
-  }
 
-  const duplicateMetaIds = meta.challengeOrder
-    .map(c => c.id)
-    .filter((id, index, self) => self.indexOf(id) !== index);
-  if (duplicateMetaIds.length > 0) {
+  const duplicateMetaIds = duplicates(meta.challengeOrder.map(c => c.id));
+  if (duplicateMetaIds.length > 0)
     throw Error(
       `Duplicate challenges found in meta with id(s): ${duplicateMetaIds.join(', ')}`
     );
-  }
+
+  const duplicateTitles = duplicates(foundChallenges.map(c => c.title));
+  if (duplicateTitles.length > 0)
+    throw Error(
+      `Duplicate titles found in found challenges with title(s): ${duplicateTitles.join(', ')}`
+    );
+
+  const duplicateMetaTitles = duplicates(meta.challengeOrder.map(c => c.title));
+  if (duplicateMetaTitles.length > 0)
+    throw Error(
+      `Duplicate titles found in meta with title(s): ${duplicateMetaTitles.join(', ')}`
+    );
 }
 
 /**
