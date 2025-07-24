@@ -187,7 +187,7 @@ describe('parseSuperblock pure functions', () => {
       };
 
       expect(() => validateChallenges(foundChallenges, meta)).toThrow(
-        'Challenges in meta but missing files: 2'
+        'Challenges in meta but missing files with id(s): 2'
       );
     });
 
@@ -223,7 +223,37 @@ describe('parseSuperblock pure functions', () => {
       };
 
       expect(() => validateChallenges(foundChallenges, meta)).toThrow(
-        'Challenges in meta but missing files: 2, 3'
+        'Challenges in meta but missing files with id(s): 2, 3'
+      );
+    });
+
+    test('should throw if there are duplicate challenges in the meta', () => {
+      const foundChallenges = [{ id: '1', title: 'Challenge 1' }];
+
+      const meta = {
+        challengeOrder: [
+          { id: '1', title: 'Challenge 1' },
+          { id: '1', title: 'Challenge 2' }
+        ]
+      };
+
+      expect(() => validateChallenges(foundChallenges, meta)).toThrow(
+        'Duplicate challenges found in meta with id(s): 1'
+      );
+    });
+
+    test('should throw if there are duplicate found challenges', () => {
+      const foundChallenges = [
+        { id: '1', title: 'Challenge 1' },
+        { id: '1', title: 'Challenge 2' }
+      ];
+
+      const meta = {
+        challengeOrder: [{ id: '1', title: 'Challenge 1' }]
+      };
+
+      expect(() => validateChallenges(foundChallenges, meta)).toThrow(
+        'Duplicate challenges found in found challenges with id(s): 1'
       );
     });
   });
