@@ -748,7 +748,7 @@ async function getExams(
     const attemptsForExam = attempts.filter(a => a.examId === exam.id);
 
     const lastAttempt = attemptsForExam.length
-      ? attempts.reduce((latest, current) =>
+      ? attemptsForExam.reduce((latest, current) =>
           latest.startTimeInMS > current.startTimeInMS ? latest : current
         )
       : null;
@@ -776,7 +776,7 @@ async function getExams(
     const maybeModerations = await mapErr(
       this.prisma.examEnvironmentExamModeration.findMany({
         where: {
-          examAttemptId: lastAttempt.id,
+          examAttemptId: { in: attemptsForExam.map(a => a.id) },
           status: ExamEnvironmentExamModerationStatus.Pending
         }
       })
@@ -800,12 +800,11 @@ async function getExams(
       continue;
     }
 
+    availableExam.canTake = true;
     availableExams.push(availableExam);
   }
 
-  return reply.send({
-    exams: availableExams
-  });
+  return reply.send(availableExams);
 }
 
 /**
