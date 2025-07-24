@@ -3,7 +3,10 @@
 const fs = require('fs');
 const { inspect } = require('util');
 const path = require('path');
+const { isEmpty } = require('lodash');
+
 const { parseSuperblock } = require('./parse-superblock');
+const { parseCertification } = require('./parse-certification');
 
 // Map of superblock folder names to their SuperBlocks enum values
 const superBlockNames = {
@@ -43,7 +46,7 @@ const superBlockNames = {
 /**
  * Main function to parse all superblocks and create parsed-curriculum.json
  */
-async function main() {
+async function parseCurriculum() {
   console.log('Reading curriculum.json...');
 
   // Read the curriculum.json file
@@ -56,11 +59,15 @@ async function main() {
   }
 
   const curriculum = JSON.parse(fs.readFileSync(curriculumPath, 'utf8'));
-  const superblocks = curriculum.superblocks;
+  const { superblocks, certifications } = curriculum;
+  if (isEmpty(superblocks))
+    throw Error('No superblocks found in curriculum.json');
+  if (isEmpty(certifications))
+    throw Error('No certifications found in curriculum.json');
 
   console.log(`Found ${superblocks.length} superblocks to parse`);
 
-  const parsedCurriculum = {};
+  const parsedCurriculum = { certifications: { blocks: {} } };
 
   // Parse each superblock
   for (const superblockFolder of superblocks) {
@@ -95,14 +102,35 @@ async function main() {
     `Total superblocks parsed: ${Object.keys(parsedCurriculum).length}`
   );
 
+  // Parse certifications
+  for (const cert of certifications) {
+    const certPath = path.resolve(
+      __dirname,
+      'curriculum/challenges/english/certifications',
+      `${cert}.yml`
+    );
+
+    if (!fs.existsSync(certPath)) {
+      throw Error(`Certification file not found: ${certPath}`);
+    }
+
+    console.log(`\n=== Processing certification ${cert} ===`);
+
+    const parsedCert = parseCertification(certPath);
+
+    parsedCurriculum.certifications.blocks[cert] = { challenges: [parsedCert] };
+
+    console.log(`✅ Successfully parsed certification ${cert}`);
+  }
+
   return parsedCurriculum;
 }
 
 // Run if called directly
 if (require.main === module) {
-  main()
+  parseCurriculum()
     .catch(console.error)
     .then(x => console.log(inspect(x, { depth: null })));
 }
 
-module.exports = { main };
+module.exports = { parseCurriculum };
