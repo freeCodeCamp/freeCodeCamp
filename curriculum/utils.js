@@ -51,7 +51,7 @@ const superOrder = createSuperOrder(flatSuperBlockMap);
 // gets the superOrder of a superBlock from the object created above
 function getSuperOrder(superblock) {
   if (typeof superblock !== 'string')
-    throw Error('superblock must be a string');
+    throw Error(`superblock ${JSON.stringify(superblock)} must be a string`);
   const order = superOrder[superblock];
   if (typeof order === 'undefined')
     throw Error(`${superblock} is not a valid superblock`);
