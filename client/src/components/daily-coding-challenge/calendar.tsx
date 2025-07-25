@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { Button, Col, Spacer } from '@freecodecamp/ui';
+import { Button, Callout, Col, Spacer } from '@freecodecamp/ui';
 import {
   completedDailyCodingChallengesSelector,
   isSignedInSelector
@@ -232,6 +232,10 @@ function DailyCodingChallengeCalendar({
   return (
     <>
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+        <Callout variant='info'>
+          {t('daily-coding-challenges.release-note')}
+        </Callout>
+
         <Button
           block={true}
           href={`/learn/daily-coding-challenge?date=${todayUsCentral}`}
@@ -292,7 +296,6 @@ function DailyCodingChallengeCalendar({
       <Spacer size='s' />
       <div className='calendar-grid'>{monthInfo.days}</div>
       <Spacer size='l' />
-      <p className='text-center'>{t('daily-coding-challenges.release-note')}</p>
 
       {!isSignedIn && (
         <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
