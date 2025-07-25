@@ -2,7 +2,7 @@
   "name": "Working with State and Responding to Events in React",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-state-and-responding-to-events-in-react",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

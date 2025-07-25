@@ -1,0 +1,11 @@
+{
+  "name": "Build a Music Shopping Cart Page",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "blockType": "lab",
+  "blockLayout": "link",
+  "dashedName": "lab-music-shopping-cart-page",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "HTML-CSS",
+  "challengeOrder": [{ "id": "685dbd19200ad656d48b77ff", "title": "Build a Music Shopping Cart Page" }]
+}

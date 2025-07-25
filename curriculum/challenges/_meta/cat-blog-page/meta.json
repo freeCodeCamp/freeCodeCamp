@@ -1,0 +1,30 @@
+{
+  "name": "Build a Cat Blog Page",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "cat-blog-page",
+  "superBlock": "semantic-html",
+  "order": 0,
+  "challengeOrder": [
+    {
+      "id": "669aff9f5488f1bea056416d",
+      "title": "Step 1"
+    },
+    {
+      "id": "669fc7e141e4703748c558bf",
+      "title": "Step 2"
+    },
+    {
+      "id": "669fc938d38e6e38ace9251e",
+      "title": "Step 3"
+    },
+    {
+      "id": "669fcb06c3034a39f5431a38",
+      "title": "Step 4"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

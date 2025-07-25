@@ -1,0 +1,11 @@
+{
+  "name": "Build a One-Time Password Generator",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-one-time-password-generator",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "67c562286b29447da020d407", "title": "Build a One-Time Password Generator" }],
+  "blockType": "lab",
+  "blockLayout": "link",
+  "helpCategory": "JavaScript"
+}

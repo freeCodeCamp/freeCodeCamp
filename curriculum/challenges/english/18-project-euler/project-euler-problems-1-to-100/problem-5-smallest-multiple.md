@@ -17,7 +17,7 @@ What is the smallest positive number that is evenly divisible by all of the numb
 `smallestMult(5)` should return a number.
 
 ```js
-assert(typeof smallestMult(5) === 'number');
+assert.isNumber(smallestMult(5));
 ```
 
 `smallestMult(5)` should return 60.

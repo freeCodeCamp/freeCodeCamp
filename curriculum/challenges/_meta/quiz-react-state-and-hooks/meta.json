@@ -2,7 +2,7 @@
   "name": "React State and Hooks Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-react-state-and-hooks",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

@@ -44,7 +44,7 @@ Find the maximum total from top to bottom of the triangle below:
 `maximumPathSumI([[3, 0, 0, 0], [7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` should return a number.
 
 ```js
-assert(typeof maximumPathSumI(_testTriangle) === 'number');
+assert.isNumber(maximumPathSumI(_testTriangle));
 ```
 
 `maximumPathSumI([[3, 0, 0, 0], [7, 4, 0, 0],[2, 4, 6, 0],[8, 5, 9, 3]])` should return 23.

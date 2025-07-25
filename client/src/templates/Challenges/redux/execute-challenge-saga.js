@@ -68,6 +68,13 @@ import {
 // How long before bailing out of a preview.
 const previewTimeout = 2500;
 
+const LOGS_TO_IGNORE = [
+  // https://cdn.tailwindcss.com
+  'cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation',
+  // https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4
+  'The browser build of Tailwind CSS should not be used in production. To use Tailwind CSS in production, use the Tailwind CLI, Vite plugin, or PostCSS plugin: https://tailwindcss.com/docs/installation'
+];
+
 // when 'run tests' is clicked, do this first
 function* executeCancellableChallengeSaga(payload) {
   const { challengeType, id } = yield select(challengeMetaSelector);
@@ -114,9 +121,6 @@ export function* executeChallengeSaga({ payload }) {
     const hooks = yield select(challengeHooksSelector);
     yield put(updateTests(tests));
 
-    yield fork(takeEveryLog, consoleProxy);
-    const proxyLogger = args => consoleProxy.put(args);
-
     const challengeData = yield select(challengeDataSelector);
     const challengeMeta = yield select(challengeMetaSelector);
     // The buildData is used even if there are build errors, so that lessons
@@ -127,13 +131,7 @@ export function* executeChallengeSaga({ payload }) {
       disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview,
       usesTestRunner: true
     });
-    const document = yield getContext('document');
-    const testRunner = yield call(
-      getTestRunner,
-      { ...buildData, hooks },
-      { proxyLogger },
-      document
-    );
+    const testRunner = yield call(getTestRunner, { ...buildData, hooks });
     const testResults = yield executeTests(testRunner, tests);
     yield put(updateTests(testResults));
 
@@ -169,14 +167,6 @@ export function* executeChallengeSaga({ payload }) {
   }
 }
 
-function* takeEveryLog(channel) {
-  // TODO: move all stringifying and escaping into the reducer so there is a
-  // single place responsible for formatting the logs.
-  yield takeEvery(channel, function* (args) {
-    yield put(updateLogs(escape(args)));
-  });
-}
-
 function* takeEveryConsole(channel) {
   // TODO: move all stringifying and escaping into the reducer so there is a
   // single place responsible for formatting the console output.
@@ -199,22 +189,27 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
   for (let i = 0; i < tests.length; i++) {
     const { text, testString } = tests[i];
     const newTest = { text, testString, running: false };
-    // only the last test outputs console.logs to avoid log duplication.
-    const firstTest = i === 1;
+    // only the first test outputs console.logs to avoid log duplication.
+    const firstTest = i === 0;
     try {
-      const { pass, err } = yield call(
-        testRunner,
-        testString,
-        testTimeout,
-        firstTest
-      );
+      const {
+        pass,
+        err,
+        logs = []
+      } = yield call(testRunner, testString, testTimeout);
+
+      const logString = logs.map(log => log.msg).join('\n');
+      if (firstTest && logString) {
+        yield put(updateLogs(logString));
+      }
+
       if (pass) {
         newTest.pass = true;
       } else {
         throw err;
       }
     } catch (err) {
-      const { actual, expected, errorType } = err;
+      const { actual, expected, type } = err;
 
       newTest.message = text
         .replace('--fcc-expected--', expected)
@@ -222,9 +217,9 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
-      } else if (errorType) {
+      } else if (type === 'IndentationError' || type === 'SyntaxError') {
         const msgKey =
-          errorType === 'indentation'
+          type === 'IndentationError'
             ? 'learn.indentation-error'
             : 'learn.syntax-error';
         newTest.message = `<p>${i18next.t(msgKey)}</p>`;
@@ -261,7 +256,11 @@ export function* previewChallengeSaga(action) {
   yield delay(700);
 
   const logProxy = yield channel();
-  const proxyLogger = args => logProxy.put(args);
+  const proxyLogger = args => {
+    if (!LOGS_TO_IGNORE.some(msg => args === msg)) {
+      logProxy.put(args);
+    }
+  };
 
   try {
     yield fork(takeEveryConsole, logProxy);
@@ -292,18 +291,24 @@ export function* previewChallengeSaga(action) {
           challengeData.challengeType === challengeTypes.python ||
           challengeData.challengeType ===
             challengeTypes.multifilePythonCertProject ||
-          challengeData.challengeType === challengeTypes.pyLab
+          challengeData.challengeType === challengeTypes.pyLab ||
+          challengeData.challengeType === challengeTypes.dailyChallengePy
         ) {
           yield updatePython(challengeData);
         } else {
           yield call(updatePreview, buildData, finalDocument, proxyLogger);
         }
       } else if (isJavaScriptChallenge(challengeData)) {
-        const runUserCode = getTestRunner(buildData, {
-          proxyLogger
-        });
+        const runUserCode = yield call(getTestRunner, buildData);
         // without a testString the testRunner just evaluates the user's code
-        yield call(runUserCode, null, previewTimeout);
+        const out = yield call(runUserCode, null, previewTimeout);
+
+        if (out) {
+          const logs = out.logs?.filter(
+            log => !LOGS_TO_IGNORE.some(msg => log.msg === msg)
+          );
+          yield put(updateConsole(logs?.map(log => log.msg).join('\n')));
+        }
       }
     }
   } catch (err) {
@@ -326,7 +331,8 @@ function* updatePreviewSaga(action) {
   if (
     challengeData.challengeType === challengeTypes.python ||
     challengeData.challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeData.challengeType === challengeTypes.pyLab
+    challengeData.challengeType === challengeTypes.pyLab ||
+    challengeData.challengeType === challengeTypes.dailyChallengePy
   ) {
     yield updatePython(challengeData);
   } else {

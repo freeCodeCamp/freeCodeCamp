@@ -2,7 +2,7 @@
   "name": "Working with Forms in React",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-forms-in-react",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

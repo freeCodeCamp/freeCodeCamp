@@ -26,9 +26,9 @@ assert.lengthOf(document.querySelectorAll('strong'),1);
 The `strong` tag should be inside the `p` tag.
 
 ```js
-const pargraphElement = document.querySelector('p');
-const pargraphChildren = pargraphElement?.querySelectorAll(`:scope ${'strong'}`);
-assert.lengthOf(pargraphChildren, 1);
+const paragraphElement = document.querySelector('p');
+const paragraphChildren = paragraphElement?.querySelectorAll(`:scope ${'strong'}`);
+assert.lengthOf(paragraphChildren, 1);
 ```
 
 The `strong` tag should wrap around the words `Stanford University`.

@@ -29,7 +29,7 @@ Which starting number, under the given `limit`, produces the longest chain?
 `longestCollatzSequence(14)` should return a number.
 
 ```js
-assert(typeof longestCollatzSequence(14) === 'number');
+assert.isNumber(longestCollatzSequence(14));
 ```
 
 `longestCollatzSequence(14)` should return 9.

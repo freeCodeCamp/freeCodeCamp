@@ -1,8 +1,8 @@
 ---
 id: 661bd3fc29debe22a71eedb5
-title: Task 66
+title: Task 69
 challengeType: 19
-dashedName: task-66
+dashedName: task-69
 ---
 
 # --description--

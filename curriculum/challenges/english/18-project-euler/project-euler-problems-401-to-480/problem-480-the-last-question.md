@@ -71,7 +71,7 @@ Give your answer using lowercase characters (no punctuation or space).
 `euler480()` should return a string.
 
 ```js
-assert(typeof euler480() === 'string');
+assert.isString(euler480());
 ```
 
 `euler480()` should return the string `turnthestarson`.

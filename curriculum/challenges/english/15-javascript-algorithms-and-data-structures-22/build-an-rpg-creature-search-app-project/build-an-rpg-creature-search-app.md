@@ -382,6 +382,38 @@ async () => {
 };
 ```
 
+When the search button is clicked, the app should send a fetch request to the correct endpoint for the creature name or ID.
+
+```js
+async () => {
+  const spy = __helpers.spyOn(window, 'fetch');
+  const searchInput = document.getElementById('search-input');
+  const searchButton = document.getElementById('search-button');
+
+  searchInput.value = 'Pyrolynx';
+  searchInput.dispatchEvent(new Event('change'));
+  searchButton.click();
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  searchInput.value = '2';
+  searchInput.dispatchEvent(new Event('change'));
+  searchButton.click();
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  // Test with random valid ID
+  const randomValidCreatureId = String(Math.floor(Math.random() * 20) + 1);
+  searchInput.value = randomValidCreatureId;
+  searchInput.dispatchEvent(new Event('change'));
+  searchButton.click();
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  const calls = spy.calls.map((call) => call[0]);
+  assert.strictEqual(calls[0].toLowerCase(), 'https://rpg-creature-api.freecodecamp.rocks/api/creature/pyrolynx');
+  assert.strictEqual(calls[1], 'https://rpg-creature-api.freecodecamp.rocks/api/creature/2');
+  assert.strictEqual(calls[2], `https://rpg-creature-api.freecodecamp.rocks/api/creature/${randomValidCreatureId}`);
+};
+```
+
 # --seed--
 
 ## --seed-contents--

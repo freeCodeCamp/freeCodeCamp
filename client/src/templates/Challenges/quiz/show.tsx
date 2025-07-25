@@ -85,6 +85,8 @@ interface ShowQuizProps {
   closeFinishQuizModal: () => void;
 }
 
+const removeParagraphTags = (text: string) => text.replace(/^<p>|<\/p>$/g, '');
+
 const ShowQuiz = ({
   challengeMounted,
   data: {
@@ -143,7 +145,12 @@ const ShowQuiz = ({
       const distractors = question.distractors.map((distractor, index) => {
         return {
           label: (
-            <PrismFormatted className='quiz-answer-label' text={distractor} />
+            <PrismFormatted
+              className='quiz-answer-label'
+              text={removeParagraphTags(distractor)}
+              useSpan
+              noAria
+            />
           ),
           value: index + 1
         };
@@ -153,14 +160,21 @@ const ShowQuiz = ({
         label: (
           <PrismFormatted
             className='quiz-answer-label'
-            text={question.answer}
+            text={removeParagraphTags(question.answer)}
+            useSpan
+            noAria
           />
         ),
         value: 4
       };
 
       return {
-        question: <PrismFormatted text={question.text} />,
+        question: (
+          <PrismFormatted
+            className='quiz-question-label'
+            text={question.text}
+          />
+        ),
         answers: shuffleArray([...distractors, answer]),
         correctAnswer: answer.value
       };
@@ -174,6 +188,7 @@ const ShowQuiz = ({
     correctAnswerCount
   } = useQuiz({
     initialQuestions: initialQuizData,
+    showCorrectAnswersOnSuccess: true,
     validationMessages: {
       correct: t('learn.quiz.correct-answer'),
       incorrect: t('learn.quiz.incorrect-answer')

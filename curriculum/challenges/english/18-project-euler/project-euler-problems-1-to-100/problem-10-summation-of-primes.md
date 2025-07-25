@@ -17,7 +17,7 @@ Find the sum of all the primes below `n`.
 `primeSummation(17)` should return a number.
 
 ```js
-assert(typeof primeSummation(17) === 'number');
+assert.isNumber(primeSummation(17));
 ```
 
 `primeSummation(17)` should return 41.

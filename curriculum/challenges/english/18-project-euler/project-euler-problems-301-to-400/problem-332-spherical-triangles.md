@@ -12,7 +12,7 @@ A spherical triangle is a figure formed on the surface of a sphere by three grea
 
 <img alt="spherical triangle formed on the surface of a sphere" src="https://cdn.freecodecamp.org/curriculum/project-euler/spherical-triangles.jpg" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
-Let $C(r)$ be the sphere with the centre (0,0,0) and radius $r$.
+Let $C(r)$ be the sphere with the center (0,0,0) and radius $r$.
 
 Let $Z(r)$ be the set of points on the surface of $C(r)$ with integer coordinates.
 

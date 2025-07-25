@@ -7,7 +7,7 @@ import EditorTabs from './editor-tabs';
 interface ActionRowProps {
   hasNotes: boolean;
   hasPreview: boolean;
-  isProjectBasedChallenge: boolean;
+  areInstructionsDisplayable: boolean;
   showConsole: boolean;
   showNotes: boolean;
   showInstructions: boolean;
@@ -25,7 +25,7 @@ const ActionRow = ({
   showPreviewPortal,
   showConsole,
   showInstructions,
-  isProjectBasedChallenge
+  areInstructionsDisplayable
 }: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
 
@@ -54,7 +54,7 @@ const ActionRow = ({
   return (
     <div className='action-row' data-playwright-test-label='action-row'>
       <div className='tabs-row' data-playwright-test-label='tabs-row'>
-        {!isProjectBasedChallenge && (
+        {areInstructionsDisplayable && (
           <button
             data-playwright-test-label='instructions-button'
             aria-expanded={!!showInstructions}

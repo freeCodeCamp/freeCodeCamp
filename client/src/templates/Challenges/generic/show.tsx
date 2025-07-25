@@ -3,10 +3,21 @@ import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
+import {
+  Container,
+  Col,
+  Row,
+  Button,
+  Spacer,
+  Tabs,
+  TabsContent,
+  TabsTrigger,
+  TabsList
+} from '@freecodecamp/ui';
 import { isEqual } from 'lodash';
 import store from 'store';
 import { YouTubeEvent } from 'react-youtube';
+import { useFeatureIsOn } from '@growthbook/growthbook-react';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
@@ -104,6 +115,11 @@ const ShowGeneric = ({
   const { t } = useTranslation();
   const container = useRef<HTMLElement | null>(null);
 
+  // just test on this particular block
+  const transcriptTabsFlagIsOn = useFeatureIsOn('transcript-tabs');
+  const showTranscriptTabs =
+    block === 'lecture-html-fundamentals' && transcriptTabsFlagIsOn;
+
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
@@ -126,6 +142,11 @@ const ShowGeneric = ({
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const tabs = {
+    transcript: 'transcript',
+    video: 'video'
+  } as const;
 
   // video
   const [videoIsLoaded, setVideoIsLoaded] = useState(false);
@@ -228,7 +249,54 @@ const ShowGeneric = ({
             )}
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
-              {videoId && (
+              {showTranscriptTabs && (
+                <Tabs
+                  defaultValue={tabs.transcript}
+                  className='transcript-tabs'
+                >
+                  <TabsList className='nav-lists'>
+                    <TabsTrigger value={tabs.transcript}>
+                      {t('learn.transcript')}
+                    </TabsTrigger>
+                    <TabsTrigger value={tabs.video}>
+                      {t('learn.video')}
+                    </TabsTrigger>
+                  </TabsList>
+                  <TabsContent
+                    tabIndex={-1}
+                    className='tab-content'
+                    value={tabs.transcript}
+                  >
+                    {transcript && (
+                      <ChallengeTranscript
+                        showTranscriptTabs={showTranscriptTabs}
+                        transcript={transcript}
+                      />
+                    )}
+                  </TabsContent>
+
+                  <TabsContent
+                    tabIndex={-1}
+                    className='tab-content'
+                    value={tabs.video}
+                  >
+                    {videoId && (
+                      <>
+                        <VideoPlayer
+                          bilibiliIds={bilibiliIds}
+                          onVideoLoad={handleVideoIsLoaded}
+                          title={title}
+                          videoId={videoId}
+                          videoIsLoaded={videoIsLoaded}
+                          videoLocaleIds={videoLocaleIds}
+                        />
+                        <Spacer size='m' />
+                      </>
+                    )}
+                  </TabsContent>
+                </Tabs>
+              )}
+              {videoId && !showTranscriptTabs && (
                 <>
                   <VideoPlayer
                     bilibiliIds={bilibiliIds}
@@ -246,8 +314,9 @@ const ShowGeneric = ({
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {transcript && <ChallengeTranscript transcript={transcript} />}
-
+              {transcript && !showTranscriptTabs && (
+                <ChallengeTranscript transcript={transcript} />
+              )}
               {instructions && (
                 <>
                   <ChallengeDescription
@@ -257,7 +326,6 @@ const ShowGeneric = ({
                   <Spacer size='m' />
                 </>
               )}
-
               {assignments.length > 0 && (
                 <Assignments
                   assignments={assignments}
@@ -265,7 +333,6 @@ const ShowGeneric = ({
                   handleAssignmentChange={handleAssignmentChange}
                 />
               )}
-
               {questions.length > 0 && (
                 <MultipleChoiceQuestions
                   questions={questions}
@@ -275,15 +342,12 @@ const ShowGeneric = ({
                   showFeedback={showFeedback}
                 />
               )}
-
               {explanation ? (
                 <ChallengeExplanation explanation={explanation} />
               ) : null}
-
               {!hasAnsweredMcqCorrectly && (
                 <p className='text-center'>{t('learn.answered-mcq')}</p>
               )}
-
               <Button block={true} variant='primary' onClick={handleSubmit}>
                 {blockType === BlockTypes.review
                   ? t('buttons.submit')
@@ -293,7 +357,6 @@ const ShowGeneric = ({
               <Button block={true} variant='primary' onClick={openHelpModal}>
                 {t('buttons.ask-for-help')}
               </Button>
-
               <Spacer size='l' />
             </Col>
             <CompletionModal />

@@ -1,0 +1,11 @@
+{
+  "name": "Build the Largest Number Finder",
+  "isUpcomingChange": false,
+  "dashedName": "lab-largest-number-finder",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [{ "id": "a789b3483989747d63b0e427", "title": "Build the Largest Number Finder" }],
+  "usesMultifileEditor": true,
+  "blockType": "lab",
+  "blockLayout": "link"
+}

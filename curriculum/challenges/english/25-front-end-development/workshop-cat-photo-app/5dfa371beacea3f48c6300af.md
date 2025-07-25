@@ -43,7 +43,7 @@ The `h3` element right above the second `section` element's closing tag should h
 assert.equal(
   document
     .querySelectorAll('main > section')[1]
-    ?.lastElementChild.innerText.toLowerCase()
+    ?.lastElementChild.innerText?.trim().toLowerCase()
     .replace(/\s+/g, ' '), 'things cats love:'
 );
 ```
@@ -55,7 +55,7 @@ const secondSectionLastElemNode = document.querySelectorAll('main > section')[1]
   ?.lastElementChild;
 assert.equal( secondSectionLastElemNode?.nodeName, 'H3');
 assert.equal(
- secondSectionLastElemNode?.previousElementSibling.innerText
+ secondSectionLastElemNode?.previousElementSibling.innerText?.trim()
       .toLowerCase()
       .replace(/\s+/g, ' '), 'cat lists'
 );

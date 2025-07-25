@@ -1,0 +1,27 @@
+{
+  "name": "Working with Text and Time Semantic Elements ",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-text-and-time-semantic-elements",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "HTML-CSS",
+  "challengeOrder": [
+    {
+      "id": "672995c9e6f69436dbcccc79",
+      "title": "How Do Block and Inline Quotes Work in HTML?"
+    },
+    {
+      "id": "672995d673bd3237200b9e7c",
+      "title": "How Do You Display Abbreviations and Acronyms in HTML?"
+    },
+    {
+      "id": "672995e43674fb3775b9ec5d",
+      "title": "How Do You Display Addresses in HTML?"
+    },
+    {
+      "id": "672995f16ed97837b365a9f6",
+      "title": "How Do You Display Times and Dates in HTML?"
+    }
+  ]
+}

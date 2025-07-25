@@ -10,7 +10,7 @@ dashedName: problem-185-number-mind
 
 The game Number Mind is a variant of the well known game Master Mind.
 
-Instead of coloured pegs, you have to guess a secret sequence of digits. After each guess you're only told in how many places you've guessed the correct digit. So, if the sequence was 1234 and you guessed 2036, you'd be told that you have one correct digit; however, you would NOT be told that you also have another digit in the wrong place.
+Instead of colored pegs, you have to guess a secret sequence of digits. After each guess you're only told in how many places you've guessed the correct digit. So, if the sequence was 1234 and you guessed 2036, you'd be told that you have one correct digit; however, you would NOT be told that you also have another digit in the wrong place.
 
 For instance, given the following guesses for a 5-digit secret sequence,
 

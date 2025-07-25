@@ -1,0 +1,11 @@
+{
+  "name": "Implement the Tower of Hanoi Algorithm",
+  "isUpcomingChange": true,
+  "dashedName": "lab-tower-of-hanoi",
+  "superBlock": "full-stack-developer",
+  "blockLayout": "link",
+  "blockType": "lab",
+  "helpCategory": "Python",
+  "challengeOrder": [{ "id": "68773ee26f332a80bc0295db", "title": "Implement the Tower of Hanoi Algorithm" }],
+  "usesMultifileEditor": true
+}

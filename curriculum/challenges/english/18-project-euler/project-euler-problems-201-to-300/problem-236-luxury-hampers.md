@@ -36,7 +36,7 @@ What's the largest possible value of $m$? Give your answer as a string with frac
 `luxuryHampers()` should return a string.
 
 ```js
-assert(typeof luxuryHampers() === 'string');
+assert.isString(luxuryHampers());
 ```
 
 `luxuryHampers()` should return the string `123/59`.

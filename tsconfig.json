@@ -5,7 +5,8 @@
     "tools/challenge-auditor/index.ts",
     "tools/challenge-editor/**/*",
     "tools/challenge-helper-scripts/**/*.ts",
-    "tools/scripts/**/*.ts"
+    "tools/scripts/**/*.ts",
+    "tools/daily-challenges/**/*.ts"
   ],
   "extends": "./tsconfig-base.json"
 }

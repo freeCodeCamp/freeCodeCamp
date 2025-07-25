@@ -1,0 +1,11 @@
+{
+  "name": "Build a Celsius to Fahrenheit Converter",
+  "isUpcomingChange": false,
+  "dashedName": "lab-celsius-to-fahrenheit-converter",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [{ "id": "56533eb9ac21ba0edf2244b3", "title": "Build a Celsius to Fahrenheit Converter" }],
+  "usesMultifileEditor": true,
+  "blockType": "lab",
+  "blockLayout": "link"
+}

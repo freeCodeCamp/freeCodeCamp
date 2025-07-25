@@ -23,7 +23,7 @@ import {
   seedEnvExam,
   seedEnvExamAttempt,
   seedExamEnvExamAuthToken
-} from '../../../__mocks__/env-exam';
+} from '../../../__mocks__/exam-environment-exam';
 import { getMsTranscriptApiUrl } from './user';
 
 const mockedFetch = jest.fn();
@@ -420,17 +420,17 @@ describe('userRoutes', () => {
       test("POST deletes all the user's cookies", async () => {
         const res = await superPost('/account/delete');
 
-        const setCookie = res.headers['set-cookie'];
+        const setCookie = res.headers['set-cookie'] as string[];
         expect(setCookie).toEqual(
           expect.arrayContaining([
             expect.stringMatching(
-              /^jwt_access_token=; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+              /^_csrf=; Max-Age=0; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
             ),
             expect.stringMatching(
-              /^csrf_token=; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+              /^csrf_token=; Max-Age=0; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
             ),
             expect.stringMatching(
-              /^_csrf=; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+              /^jwt_access_token=; Max-Age=0; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
             )
           ])
         );
@@ -441,13 +441,13 @@ describe('userRoutes', () => {
         await seedEnvExam();
         await seedEnvExamAttempt();
         const countBefore =
-          await fastifyTestInstance.prisma.envExamAttempt.count();
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
         expect(countBefore).toBe(1);
 
         const res = await superPost('/account/delete');
 
         const countAfter =
-          await fastifyTestInstance.prisma.envExamAttempt.count();
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
         expect(countAfter).toBe(0);
         expect(res.status).toBe(200);
       });

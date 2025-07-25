@@ -1,0 +1,109 @@
+{
+  "name": "Daily Coding Challenges JavaScript",
+  "isUpcomingChange": true,
+  "dashedName": "daily-coding-challenges-javascript",
+  "usesMultifileEditor": true,
+  "helpCategory": "JavaScript",
+  "order": 0,
+  "disableLoopProtectTests": true,
+  "superBlock": "dev-playground",
+  "blockLayout": "legacy-challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6814d8e1516e86b171929de4",
+      "title": "JavaScript Challenge 1"
+    },
+    {
+      "id": "681cb05adab50c87ddb2e513",
+      "title": "JavaScript Challenge 2"
+    },
+    {
+      "id": "681cb1a2dab50c87ddb2e514",
+      "title": "JavaScript Challenge 3"
+    },
+    {
+      "id": "681cb1afdab50c87ddb2e515",
+      "title": "JavaScript Challenge 4"
+    },
+    {
+      "id": "681cb1afdab50c87ddb2e516",
+      "title": "JavaScript Challenge 5"
+    },
+    {
+      "id": "681cb1afdab50c87ddb2e517",
+      "title": "JavaScript Challenge 6"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e518",
+      "title": "JavaScript Challenge 7"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e519",
+      "title": "JavaScript Challenge 8"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e51a",
+      "title": "JavaScript Challenge 9"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e51b",
+      "title": "JavaScript Challenge 10"
+    },
+    {
+      "id": "68216eb60f957572e7c340c4",
+      "title": "JavaScript Challenge 11"
+    },
+    {
+      "id": "68216ef80f957572e7c340c5",
+      "title": "JavaScript Challenge 12"
+    },
+    {
+      "id": "6821ebc9237de8297eaee78f",
+      "title": "JavaScript Challenge 13"
+    },
+    {
+      "id": "6821ebce237de8297eaee790",
+      "title": "JavaScript Challenge 14"
+    },
+    {
+      "id": "6821ebd4237de8297eaee791",
+      "title": "JavaScript Challenge 15"
+    },
+    {
+      "id": "6821ebda237de8297eaee792",
+      "title": "JavaScript Challenge 16"
+    },
+    {
+      "id": "6821ebdf237de8297eaee793",
+      "title": "JavaScript Challenge 17"
+    },
+    {
+      "id": "6821ebe4237de8297eaee794",
+      "title": "JavaScript Challenge 18"
+    },
+    {
+      "id": "6821ebea237de8297eaee795",
+      "title": "JavaScript Challenge 19"
+    },
+    {
+      "id": "6821ebee237de8297eaee796",
+      "title": "JavaScript Challenge 20"
+    },
+    {
+      "id": "6821ebf3237de8297eaee797",
+      "title": "JavaScript Challenge 21"
+    },
+    {
+      "id": "6821ebf8237de8297eaee798",
+      "title": "JavaScript Challenge 22"
+    },
+    {
+      "id": "6821ebfd237de8297eaee799",
+      "title": "JavaScript Challenge 23"
+    },
+    {
+      "id": "6821ec02237de8297eaee79a",
+      "title": "JavaScript Challenge 24"
+    }
+  ]
+}

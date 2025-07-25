@@ -1,0 +1,23 @@
+{
+  "name": "Understanding Nuanced Semantic Elements",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-nuanced-semantic-elements",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "HTML-CSS",
+  "challengeOrder": [
+    {
+      "id": "6729959bf9c8e835f46b3f78",
+      "title": "When Should You Use the Emphasis Element Over the Idiomatic Text Element?"
+    },
+    {
+      "id": "672995ac85fd943657c2ede5",
+      "title": "When Should You Use the Strong Element Over the Bring Attention To Element?"
+    },
+    {
+      "id": "672995bda6c67e369aaf8588",
+      "title": "What Are Description Lists, and When Should You Use Them?"
+    }
+  ]
+}

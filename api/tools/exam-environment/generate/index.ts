@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { generateExam } from '../../../src/exam-environment/utils/exam';
+import { generateExam } from '../../../src/exam-environment/utils/exam-environment';
 import { MONGOHQ_URL } from '../../../src/utils/env';
 
 const args = process.argv.slice(2);
@@ -28,7 +28,7 @@ async function main() {
   await prisma.$connect();
   console.info('Connected.');
 
-  const exam = await prisma.envExam.findUnique({
+  const exam = await prisma.examEnvironmentExam.findUnique({
     where: {
       id: ENV_EXAM_ID
     }
@@ -46,7 +46,7 @@ async function main() {
   while (numberOfExamsGenerated < NUMBER_OF_EXAMS_TO_GENERATE) {
     try {
       const generatedExam = generateExam(exam);
-      await prisma.envGeneratedExam.create({
+      await prisma.examEnvironmentGeneratedExam.create({
         data: generatedExam
       });
       numberOfExamsGenerated++;

@@ -1,6 +1,6 @@
 import Fastify, { FastifyInstance } from 'fastify';
 
-import { defaultUserEmail } from '../../jest.utils';
+import { checkCanConnectToDb, defaultUserEmail } from '../../jest.utils';
 import { HOME_LOCATION } from '../utils/env';
 import { devAuth } from '../plugins/auth-dev';
 import prismaPlugin from '../db/prisma';
@@ -19,6 +19,7 @@ describe('dev login', () => {
     await fastify.register(auth);
     await fastify.register(devAuth);
     await fastify.register(prismaPlugin);
+    await checkCanConnectToDb(fastify.prisma);
   });
 
   beforeEach(async () => {

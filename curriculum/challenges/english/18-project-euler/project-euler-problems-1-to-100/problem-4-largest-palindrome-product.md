@@ -17,7 +17,7 @@ Find the largest palindrome made from the product of two `n`-digit numbers.
 `largestPalindromeProduct(2)` should return a number.
 
 ```js
-assert(typeof largestPalindromeProduct(2) === 'number');
+assert.isNumber(largestPalindromeProduct(2));
 ```
 
 `largestPalindromeProduct(2)` should return 9009.

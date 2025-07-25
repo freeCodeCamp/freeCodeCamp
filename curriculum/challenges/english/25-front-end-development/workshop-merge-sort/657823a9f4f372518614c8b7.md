@@ -1,0 +1,53 @@
+---
+id: 657823a9f4f372518614c8b7
+title: Step 13
+challengeType: 20
+dashedName: step-13
+---
+
+# --description--
+
+Still within the `else` block, increment `right_array_index` by `1`.
+
+# --hints--
+
+You should add `1` to the current value of `right_array_index` after inserting the element into the sorted array.
+
+```js
+({ test: () => assert(runPython(`
+    cond= _Node(_code).find_function("merge_sort").find_whiles()[0].find_ifs()[0].find_bodies()[1].find_body()[1]
+
+    cond.is_equivalent("right_array_index += 1") or cond.is_equivalent("right_array_index = right_array_index + 1") or cond.is_equivalent("right_array_index = 1 + right_array_index")
+    `)) 
+}) 
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+def merge_sort(array):
+    
+    middle_point = len(array) // 2
+    left_part = array[:middle_point]
+    right_part = array[middle_point:]
+
+    merge_sort(left_part)
+    merge_sort(right_part)
+
+    left_array_index = 0
+    right_array_index = 0
+    sorted_index = 0
+
+    while left_array_index < len(left_part) and right_array_index < len(right_part):
+        if left_part[left_array_index] < right_part[right_array_index]:
+            array[sorted_index] = left_part[left_array_index]
+            left_array_index += 1
+        
+--fcc-editable-region--
+        else:
+            array[sorted_index] = right_part[right_array_index]
+
+--fcc-editable-region--
+```

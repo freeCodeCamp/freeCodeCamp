@@ -13,7 +13,7 @@ This is a review of the entire dialogue you just studied.
 
 # --instructions--
 
-Place the following phrases in the correct spot:
+Write the following words or phrases in the correct spot:
 
 `deadlines`, `debating`, `disagreement`, `healthy`, `keeping things on track`, `lose motivation`, `make progress`, `perspectives`, and `strong opinions`.
 

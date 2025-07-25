@@ -12,8 +12,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('MultifileEditor Component', () => {
   test('Multiple editors should be selected and able to insert text into', async ({
-    page,
-    isMobile
+    page
   }) => {
     // Spawn second editor to test MultifileEditor component
     const stylesEditor = page.getByRole('button', {
@@ -31,13 +30,7 @@ test.describe('MultifileEditor Component', () => {
     const test_string = 'TestString';
     let index = 0;
     for (const editor of await editors.all()) {
-      // For some reason the click event doesn't work on mobile
-      if (isMobile) {
-        await editor.focus();
-      } else {
-        await editor.click();
-      }
-
+      await editor.focus();
       await page.keyboard.insertText(test_string + index.toString());
       const text = page.getByText(test_string + index.toString());
       await expect(text).toBeVisible();

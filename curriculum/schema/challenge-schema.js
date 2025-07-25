@@ -2,7 +2,10 @@ const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
 const { challengeTypes } = require('../../shared/config/challenge-types');
-const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
+const {
+  chapterBasedSuperBlocks,
+  catalogSuperBlocks
+} = require('../../shared/config/curriculum');
 const {
   availableCharacters,
   availableBackgrounds,
@@ -128,7 +131,7 @@ const schema = Joi.object()
     block: Joi.string().regex(slugRE).required(),
     blockId: Joi.objectId(),
     blockType: Joi.when('superBlock', {
-      is: chapterBasedSuperBlocks,
+      is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
       then: Joi.valid(
         'workshop',
         'lab',
@@ -156,7 +159,7 @@ const schema = Joi.object()
       otherwise: Joi.optional()
     }),
     certification: Joi.string().regex(slugWithSlashRE),
-    challengeType: Joi.number().min(0).max(27).required(),
+    challengeType: Joi.number().min(0).max(30).required(),
     checksum: Joi.number(),
     // TODO: require this only for normal challenges, not certs
     dashedName: Joi.string().regex(slugRE),
@@ -299,7 +302,9 @@ const schema = Joi.object()
     superOrder: Joi.number(),
     suborder: Joi.number(),
     hooks: Joi.object().keys({
-      beforeAll: Joi.string().allow('')
+      beforeAll: Joi.string().allow(''),
+      beforeEach: Joi.string().allow(''),
+      afterEach: Joi.string().allow('')
     }),
     tests: Joi.array()
       .items(

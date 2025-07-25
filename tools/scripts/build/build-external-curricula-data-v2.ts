@@ -2,10 +2,7 @@ import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { submitTypes } from '../../../shared/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
-import {
-  SuperBlocks,
-  SuperBlockStage
-} from '../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../shared/config/curriculum';
 import fullStackSuperBlockStructure from '../../../curriculum/superblock-structure/full-stack.json';
 import type { Chapter } from '../../../shared/config/chapters';
 
@@ -85,6 +82,21 @@ interface GeneratedBlock {
   meta: Record<string, unknown>;
 }
 
+// This enum is based on the `SuperBlockStage` enum in shared/config,
+// but with string value instead of number.
+enum SuperBlockStage {
+  Core = 'core',
+  English = 'english',
+  Professional = 'professional',
+  Extra = 'extra',
+  Legacy = 'legacy'
+}
+
+export type OrderedSuperBlocks = Record<
+  string,
+  Array<{ dashedName: SuperBlocks; public: boolean; title: string }>
+>;
+
 const ver = 'v2';
 
 const staticFolderPath = resolve(__dirname, '../../../client/static');
@@ -97,10 +109,7 @@ const intros = JSON.parse(
   readFileSync(blockIntroPath, 'utf-8')
 ) as CurriculumIntros;
 
-export const orderedSuperBlockInfo: Record<
-  string,
-  Array<{ dashedName: SuperBlocks; public: boolean; title: string }>
-> = {
+export const orderedSuperBlockInfo: OrderedSuperBlocks = {
   [SuperBlockStage.Core]: [
     {
       dashedName: SuperBlocks.FullStackDeveloper,
@@ -296,13 +305,17 @@ export function buildExtCurriculumDataV2(
             moduleType: module.moduleType,
             blocks: module.comingSoon
               ? []
-              : module.blocks.map(block => {
-                  const blockData = blocksWithData[block.dashedName];
-                  return {
-                    intro: superBlockIntros.blocks[block.dashedName].intro,
-                    meta: blockData.meta
-                  };
-                })
+              : module.blocks
+                  // Upcoming blocks aren't included in blocksWithData
+                  // and thus they have no metadata and need to be filtered out.
+                  .filter(block => blocksWithData[block.dashedName])
+                  .map(block => {
+                    const blockData = blocksWithData[block.dashedName];
+                    return {
+                      intro: superBlockIntros.blocks[block.dashedName].intro,
+                      meta: blockData.meta
+                    };
+                  })
           }))
     }));
 

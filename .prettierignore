@@ -1,6 +1,5 @@
 **/.cache
 **/*fixtures*
-api-server/lib
 client/**/trending.json
 client/**/search-bar.json
 client/config/*.json
