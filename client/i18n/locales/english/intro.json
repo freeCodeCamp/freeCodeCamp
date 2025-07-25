@@ -3106,7 +3106,7 @@
         ]
       },
       "lab-boolean-check": {
-        "title": "Implement a Boolean Check Function",
+        "title": "Build a Boolean Check Function",
         "intro": [
           "In this lab, you'll implement a function that checks if a value is a boolean."
         ]
