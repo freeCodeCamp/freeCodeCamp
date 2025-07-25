@@ -1431,6 +1431,9 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "lecture-understanding-bash-scripting"
+            },
+            {
               "dashedName": "workshop-bash-five-programs"
             },
             {
