@@ -99,6 +99,9 @@ importers:
       globals:
         specifier: ^15.14.0
         version: 15.15.0
+      gray-matter:
+        specifier: 4.0.3
+        version: 4.0.3
       husky:
         specifier: 9.0.11
         version: 9.0.11
