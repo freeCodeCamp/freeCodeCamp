@@ -14,8 +14,7 @@ const createNextChallenge = async () => {
   const challengeId = new ObjectID();
   const challengeText = template({ ...options, challengeId });
 
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  createChallengeFile(challengeId.toString(), challengeText, path);
+  createChallengeFile(options.dashedName, challengeText, path);
 
   const meta = getMetaData();
   meta.challengeOrder.push({

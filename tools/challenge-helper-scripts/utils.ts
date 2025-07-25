@@ -14,8 +14,6 @@ import {
 import { getTemplate } from './helpers/get-challenge-template';
 
 interface Options {
-  dashedName: string;
-  title: string;
   stepNum: number;
   challengeType: number;
   projectPath?: string;
@@ -31,8 +29,6 @@ interface QuizOptions {
 }
 
 const createStepFile = ({
-  dashedName,
-  title,
   stepNum,
   challengeType,
   projectPath = getProjectPath(),
@@ -43,8 +39,6 @@ const createStepFile = ({
 
   const template = getStepTemplate({
     challengeId,
-    dashedName,
-    title,
     challengeSeeds,
     stepNum,
     challengeType,
