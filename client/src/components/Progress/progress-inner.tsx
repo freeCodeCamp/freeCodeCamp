@@ -39,7 +39,7 @@ function ProgressInner({
   meta
 }: ProgressInnerProps): JSX.Element {
   const [shownPercent, setShownPercent] = useState(0);
-  const [lastShopwnPercent, setLastShownPercent] = useState(0);
+  const [lastShownPercent, setLastShownPercent] = useState(0);
   const progressInnerWrap = useRef<HTMLDivElement>(null);
   const isProgressInViewport = useIsInViewport(progressInnerWrap);
 
@@ -66,7 +66,7 @@ function ProgressInner({
     }, intervalLength);
   };
   useEffect(() => {
-    if (lastShopwnPercent !== completedPercent && isProgressInViewport) {
+    if (lastShownPercent !== completedPercent && isProgressInViewport) {
       setLastShownPercent(completedPercent);
       animateProgressInner(completedPercent);
     }

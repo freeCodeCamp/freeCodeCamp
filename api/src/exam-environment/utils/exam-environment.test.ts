@@ -1,5 +1,10 @@
+import { ExamEnvironmentAnswer } from '@prisma/client';
 import { type Static } from '@fastify/type-provider-typebox';
-import { exam, examAttempt, generatedExam } from '../../../__mocks__/env-exam';
+import {
+  exam,
+  examAttempt,
+  generatedExam
+} from '../../../__mocks__/exam-environment-exam';
 import * as schemas from '../schemas';
 import {
   checkAttemptAgainstGeneratedExam,
@@ -7,8 +12,9 @@ import {
   constructUserExam,
   generateExam,
   userAttemptToDatabaseAttemptQuestionSets,
-  validateAttempt
-} from './exam';
+  validateAttempt,
+  compareAnswers
+} from './exam-environment';
 
 // NOTE: Whilst the tests could be run against a single generation of exam,
 //       it is more useful to run the tests against a new generation each time.
@@ -306,6 +312,76 @@ describe('Exam Environment', () => {
       ).not.toEqual(
         databaseAttemptQuestionSets[0]?.questions[0]?.submissionTimeInMS
       );
+    });
+  });
+
+  describe('compareAnswers()', () => {
+    it('should return true when only all correct answers are attempted', () => {
+      const examAnswers: ExamEnvironmentAnswer[] = [
+        {
+          id: '0',
+          isCorrect: true,
+          text: ''
+        },
+        {
+          id: '1',
+          isCorrect: true,
+          text: ''
+        },
+        {
+          id: '2',
+          isCorrect: false,
+          text: ''
+        },
+        {
+          id: '3',
+          isCorrect: false,
+          text: ''
+        }
+      ];
+      const generatedAnswers = ['0', '1', '2', '3'];
+      const attemptAnswers = ['0', '1'];
+      const isCorrect = compareAnswers(
+        examAnswers,
+        generatedAnswers,
+        attemptAnswers
+      );
+
+      expect(isCorrect).toBe(true);
+    });
+
+    it('should return false when any incorrect answers are attempted', () => {
+      const examAnswers: ExamEnvironmentAnswer[] = [
+        {
+          id: '0',
+          isCorrect: true,
+          text: ''
+        },
+        {
+          id: '1',
+          isCorrect: true,
+          text: ''
+        },
+        {
+          id: '2',
+          isCorrect: false,
+          text: ''
+        },
+        {
+          id: '3',
+          isCorrect: false,
+          text: ''
+        }
+      ];
+      const generatedAnswers = ['0', '1', '2', '3'];
+      const attemptAnswers = ['0', '2'];
+      const isCorrect = compareAnswers(
+        examAnswers,
+        generatedAnswers,
+        attemptAnswers
+      );
+
+      expect(isCorrect).toBe(false);
     });
   });
 });

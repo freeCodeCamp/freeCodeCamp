@@ -329,13 +329,13 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                   if (result.error) {
                     throw new AssertionError(result.error);
                   }
-                  const { id, title, block, dashedName } = challenge;
+                  const { id, block, dashedName } = challenge;
                   assert.exists(
                     dashedName,
                     `Missing dashedName for challenge ${id} in ${block}.`
                   );
                   const pathAndTitle = `${block}/${dashedName}`;
-                  const idVerificationMessage = mongoIds.check(id, title);
+                  const idVerificationMessage = mongoIds.check(id, block);
                   assert.isNull(idVerificationMessage, idVerificationMessage);
                   const dupeTitleCheck = challengeTitles.check(
                     dashedName,
