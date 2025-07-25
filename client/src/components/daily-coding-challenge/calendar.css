@@ -35,6 +35,12 @@
 .not-available:hover,
 .not-available:active {
   cursor: not-allowed;
+  background-color: var(--primary-background);
+}
+
+.not-available:hover .calendar-day-number,
+.not-available:active .calendar-day-number {
+  color: var(--primary-color);
 }
 
 .available:hover,

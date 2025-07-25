@@ -26,14 +26,14 @@ function DailyCodingChallengeCalendarDay({
 
   if (!isAvailable)
     return (
-      <div
+      <button
         className='calendar-day not-available'
         aria-label={`${date && formatDisplayDate(date)}, (${t('aria.not-available')})`}
       >
         <span className='calendar-day-number' aria-hidden='true'>
           {dayNumber}
         </span>
-      </div>
+      </button>
     );
 
   // isAvailable -> render link to challenge
