@@ -182,6 +182,9 @@ export type ChallengeNode = {
     challengeType: number;
     dashedName: string;
     demoType: 'onClick' | 'onLoad' | null;
+    demo: {
+      challengeData: ChallengeData | null;
+    } | null;
     description: string;
     challengeFiles: ChallengeFiles;
     explanation: string;
@@ -405,8 +408,9 @@ export interface CompletedChallenge {
   examResults?: GeneratedExamResults;
 }
 
-export interface ChallengeData extends CompletedChallenge {
+export interface ChallengeData {
   challengeFiles: ChallengeFile[] | null;
+  challengeType?: number;
 }
 
 export type ChallengeMeta = {

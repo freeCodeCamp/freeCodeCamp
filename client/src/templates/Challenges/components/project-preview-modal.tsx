@@ -54,7 +54,7 @@ function ProjectPreviewModal({
     <Modal
       size='large'
       onClose={() => {
-        closeModal('projectPreview');
+        closeModal('demo');
         setEditorFocusability(true);
       }}
       open={isOpen}
@@ -72,7 +72,7 @@ function ProjectPreviewModal({
           size='large'
           variant='primary'
           onClick={() => {
-            closeModal('projectPreview');
+            closeModal('demo');
             setEditorFocusability(true);
           }}
         >
