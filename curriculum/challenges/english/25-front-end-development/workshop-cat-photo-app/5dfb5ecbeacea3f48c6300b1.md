@@ -32,7 +32,7 @@ You should have three `li` elements. Each `li` element should have its own openi
 
 ```js
 assert.lengthOf(document.querySelectorAll('li'), 3);
-assert.lengthOf(code.match(/<\/li\>/g), 3);
+assert.lengthOf(code.match(/<\/li\>/gi), 3);
 ```
 
 You should have three `li` elements with the text `catnip`, `laser pointers` and `lasagna` in any order. You have either omitted some text or have a typo.

@@ -19,7 +19,7 @@ The second `section` element appears to be missing or does not have both an open
 
 ```js
 assert.exists(document.querySelectorAll('main > section')[1]);
-assert.lengthOf(code.match(/\<\/section>/g), 2);
+assert.lengthOf(code.match(/\<\/section>/gi), 2);
 ```
 
 There should be an `h3` element right above the second `section` element's closing tag.
@@ -34,7 +34,7 @@ assert.equal(
 Your `h3` element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
 ```js
-assert.lengthOf(code.match(/<\/h3>/g), 1);
+assert.lengthOf(code.match(/<\/h3>/gi), 1);
 ```
 
 The `h3` element right above the second `section` element's closing tag should have the text `Things cats love:`. Make sure to include the colon at the end of the text.
