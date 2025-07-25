@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from '../helpers';
 import GreenPass from '../../assets/icons/green-pass';
 import GreenNotCompleted from '../../assets/icons/green-not-completed';
@@ -19,6 +20,7 @@ function DailyCodingChallengeCalendarDay({
   isCompleted = false,
   isAvailable = false
 }: CalendarDayProps): JSX.Element {
+  const { t } = useTranslation();
   // dayNumber = 0 -> render nothing
   if (dayNumber === 0) return <div></div>;
 
@@ -26,7 +28,7 @@ function DailyCodingChallengeCalendarDay({
     return (
       <div
         className='calendar-day not-available'
-        aria-label={`${date && formatDisplayDate(date)}, ('aria.not-available')`}
+        aria-label={`${date && formatDisplayDate(date)}, (${t('aria.not-available')})`}
       >
         <span className='calendar-day-number' aria-hidden='true'>
           {dayNumber}
