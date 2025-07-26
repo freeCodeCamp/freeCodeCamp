@@ -23,52 +23,44 @@ Within `tests/1_unit-tests.js` under the test labeled `#3` in the `Basic Asserti
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=2').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=2');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(data.state, 'passed');
 ```
 
 You should choose the correct method for the first assertion - `isOk` vs. `isNotOk`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=2').then(
-    (data) => {
-      assert.equal(data.assertions[0].method, 'isNotOk', 'Null is falsy');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=2');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(data.assertions[0].method, 'isNotOk', 'Null is falsy');
 ```
 
 You should choose the correct method for the second assertion - `isOk` vs. `isNotOk`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=2').then(
-    (data) => {
-      assert.equal(data.assertions[1].method, 'isOk', 'A string is truthy');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=2');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(data.assertions[1].method, 'isOk', 'A string is truthy');
 ```
 
 You should choose the correct method for the third assertion - `isOk` vs. `isNotOk`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=2').then(
-    (data) => {
-      assert.equal(data.assertions[2].method, 'isOk', 'true is truthy');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=2');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(data.assertions[2].method, 'isOk', 'true is truthy');
 ```
 

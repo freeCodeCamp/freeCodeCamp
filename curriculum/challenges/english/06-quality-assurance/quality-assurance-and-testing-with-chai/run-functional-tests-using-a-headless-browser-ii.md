@@ -31,71 +31,61 @@ Do not forget to remove the `assert.fail()` call.
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=6').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=functional&n=6');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.state, 'passed');
 ```
 
 You should assert that the headless browser request succeeded.
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=6').then(
-    (data) => {
-      assert.equal(data.assertions[0].method, 'browser.success');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=functional&n=6');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.assertions[0].method, 'browser.success');
 ```
 
 You should assert that the text inside the element `span#name` is `'Amerigo'`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=6').then(
-    (data) => {
-      assert.equal(data.assertions[1].method, 'browser.text');
-      assert.match(data.assertions[1].args[0], /('|")span#name\1/);
-      assert.match(data.assertions[1].args[1], /('|")Amerigo\1/);
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=functional&n=6');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.assertions[1].method, 'browser.text');
+assert.match(data.assertions[1].args[0], /('|")span#name\1/);
+assert.match(data.assertions[1].args[1], /('|")Amerigo\1/);
 ```
 
 You should assert that the text inside the element `span#surname` is `'Vespucci'`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=6').then(
-    (data) => {
-      assert.equal(data.assertions[2].method, 'browser.text');
-      assert.match(data.assertions[2].args[0], /('|")span#surname\1/);
-      assert.match(data.assertions[2].args[1], /('|")Vespucci\1/);
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=functional&n=6');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.assertions[2].method, 'browser.text');
+assert.match(data.assertions[2].args[0], /('|")span#surname\1/);
+assert.match(data.assertions[2].args[1], /('|")Vespucci\1/);
 ```
 
 You should assert that the element `span#dates` exist and its count is 1.
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=6').then(
-    (data) => {
-      assert.equal(data.assertions[3].method, 'browser.elements');
-      assert.match(data.assertions[3].args[0], /('|")span#dates\1/);
-      assert.equal(data.assertions[3].args[1], 1);
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=functional&n=6');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.assertions[3].method, 'browser.elements');
+assert.match(data.assertions[3].args[0], /('|")span#dates\1/);
+assert.equal(data.assertions[3].args[1], 1);
 ```
 
