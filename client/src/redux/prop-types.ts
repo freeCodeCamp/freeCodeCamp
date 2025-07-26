@@ -244,6 +244,7 @@ export interface Hooks {
   beforeAll?: string;
   beforeEach?: string;
   afterEach?: string;
+  afterAll?: string;
 }
 
 type Quiz = {
