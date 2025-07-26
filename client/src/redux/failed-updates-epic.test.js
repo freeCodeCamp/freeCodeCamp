@@ -28,7 +28,7 @@ const initialState = {
   app: {
     isOnline: true,
     isServerOnline: true,
-    appUsername: 'developmentuser'
+    user: { sessionUser: {} }
   }
 };
 
