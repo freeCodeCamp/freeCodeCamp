@@ -35,6 +35,12 @@ export const XtermTerminal = ({
       const disposables: IDisposable[] = [];
       const { Terminal } = await import('xterm');
       const { FitAddon } = await import('xterm-addon-fit');
+
+      // Create a style element to ensure the terminal takes up the full viewport height.
+      const terminalHeight = document.createElement('style');
+      terminalHeight.innerHTML = `.xterm-screen { height: 100vh !important; }`;
+      document.head.appendChild(terminalHeight);
+
       // Setting convertEol so that \n is converted to \r\n. Otherwise the terminal
       // will interpret \n as line feed and just move the cursor to the next line.
       // convertEol makes every \n a \r\n.
