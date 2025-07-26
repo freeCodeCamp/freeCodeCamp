@@ -1,8 +1,8 @@
 ---
 id: 60fad6dfcc0d930a59becf12
-title: Step 38
+title: Step 39
 challengeType: 0
-dashedName: step-38
+dashedName: step-39
 ---
 
 # --description--
@@ -55,8 +55,8 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
       </fieldset>
       <fieldset>
         <legend>Account type (required)</legend>
-        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" checked /> Personal</label>
-        <label for="business-account"><input id="business-account" type="radio" name="account-type" /> Business</label>
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type"  value="personal" checked /> Personal</label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type"  value="business" /> Business</label>
       </fieldset>
       <fieldset>
         <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
