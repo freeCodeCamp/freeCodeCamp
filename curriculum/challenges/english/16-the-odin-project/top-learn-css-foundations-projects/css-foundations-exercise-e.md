@@ -159,7 +159,13 @@ assert(getCorrectStyle()?.textAlign === 'center');
 ```
 
 ```css
-.container .text {
+div p {
+  background-color: yellow;
+  color: red;
+  font-size: 20px;
+  text-align: center;
+}
+div .text {
   background-color: yellow;
   color: red;
   font-size: 20px;
