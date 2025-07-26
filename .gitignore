@@ -206,3 +206,8 @@ curriculum/build
 
 ### Shadow Testing Log Files Folder ###
 api/logs/
+
+
+## Exclude secret files ##
+
+.env
