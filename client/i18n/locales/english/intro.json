@@ -4097,6 +4097,12 @@
           "You will practice working with Tailwind CSS utility classes for flexbox layouts, colors, breakpoints and more."
         ]
       },
+      "lab-photography-exhibit": {
+        "title": "Design a Photography Exhibit",
+        "intro": [
+          "In this lab, you will practice working with Tailwind CSS by designing a photography exhibit webpage."
+        ]
+      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
