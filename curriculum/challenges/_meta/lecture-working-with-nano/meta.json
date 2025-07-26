@@ -1,0 +1,10 @@
+{
+  "name": "Working With Nano",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-nano",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [{ "id": "688170ebc58d8d3b1ae493a2", "title": "What Is Nano?" }]
+}
