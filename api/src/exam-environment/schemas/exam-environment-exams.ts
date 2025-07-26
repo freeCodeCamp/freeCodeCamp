@@ -5,21 +5,19 @@ export const examEnvironmentExams = {
     'exam-environment-authorization-token': Type.String()
   }),
   response: {
-    200: Type.Object({
-      exams: Type.Array(
-        Type.Object({
-          id: Type.String(),
-          config: Type.Object({
-            name: Type.String(),
-            note: Type.String(),
-            totalTimeInMS: Type.Number(),
-            retakeTimeInMS: Type.Number(),
-            passingPercent: Type.Number()
-          }),
-          canTake: Type.Boolean()
-        })
-      )
-    }),
+    200: Type.Array(
+      Type.Object({
+        id: Type.String(),
+        config: Type.Object({
+          name: Type.String(),
+          note: Type.String(),
+          totalTimeInMS: Type.Number(),
+          retakeTimeInMS: Type.Number(),
+          passingPercent: Type.Number()
+        }),
+        canTake: Type.Boolean()
+      })
+    ),
     500: STANDARD_ERROR
   }
 };
