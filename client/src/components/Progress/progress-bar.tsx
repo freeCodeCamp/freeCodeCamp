@@ -9,6 +9,7 @@ export function ProgressBar({ now }: { now: number }) {
         data-testid='fcc-progress-bar-percent'
         style={{ width: `${now}%` }}
       ></div>
+      cd landing
     </>
   );
 }
