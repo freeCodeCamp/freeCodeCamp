@@ -7,10 +7,7 @@ const { isEmpty } = require('lodash');
 const { SuperblockParser } = require('./parse-superblock');
 const { parseCertification } = require('./parse-certification');
 
-const blocksDirectory = path.resolve(
-  __dirname,
-  'curriculum/challenges/english/blocks'
-);
+const STRUCTURE_DIR = path.resolve(__dirname, 'curriculum/structure');
 
 // Map of superblock folder names to their SuperBlocks enum values
 const superBlockNames = {
@@ -50,15 +47,14 @@ const superBlockNames = {
 /**
  * Main function to parse all superblocks and create parsed-curriculum.json
  */
-async function parseCurriculum() {
-  const parser = new SuperblockParser(blocksDirectory);
+async function parseCurriculum(contentDir) {
+  const blockContentDir = path.resolve(contentDir, 'blocks');
+  const blockStructureDir = path.resolve(STRUCTURE_DIR, 'blocks');
+  const parser = new SuperblockParser({ blockContentDir, blockStructureDir });
   console.log('Reading curriculum.json...');
 
   // Read the curriculum.json file
-  const curriculumPath = path.resolve(
-    __dirname,
-    'curriculum/challenges/curriculum.json'
-  );
+  const curriculumPath = path.resolve(STRUCTURE_DIR, 'curriculum.json');
   if (!fs.existsSync(curriculumPath)) {
     throw new Error(`Curriculum file not found: ${curriculumPath}`);
   }
@@ -81,8 +77,8 @@ async function parseCurriculum() {
     const superBlockName = superBlockNames[superblockFolder];
 
     const superblockPath = path.resolve(
-      __dirname,
-      'curriculum/challenges/superblocks',
+      STRUCTURE_DIR,
+      'superblocks',
       `${superblockFolder}.json`
     );
 
@@ -109,11 +105,7 @@ async function parseCurriculum() {
 
   // Parse certifications
   for (const cert of certifications) {
-    const certPath = path.resolve(
-      __dirname,
-      'curriculum/challenges/english/certifications',
-      `${cert}.yml`
-    );
+    const certPath = path.resolve(contentDir, 'certifications', `${cert}.yml`);
 
     if (!fs.existsSync(certPath)) {
       throw Error(`Certification file not found: ${certPath}`);
