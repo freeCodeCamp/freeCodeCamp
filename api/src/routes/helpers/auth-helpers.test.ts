@@ -24,7 +24,13 @@ describe('findOrCreateUser', () => {
   });
 
   afterEach(async () => {
-    await fastify.prisma.user.deleteMany({ where: { email } });
+    await fastify.prisma.user.deleteMany({
+      where: {
+        email: {
+          in: [email, email.toUpperCase()]
+        }
+      }
+    });
     await fastify.close();
     jest.clearAllMocks();
   });
@@ -59,5 +65,30 @@ describe('findOrCreateUser', () => {
     await findOrCreateUser(fastify, email);
 
     expect(captureException).not.toHaveBeenCalled();
+  });
+
+  it('should NOT create a user if there is an account with case-insensitive email matches', async () => {
+    const upperCaseEmail = email.toUpperCase();
+
+    // Create a user with uppercase email
+    const existingUser = await fastify.prisma.user.create({
+      data: createUserInput(email)
+    });
+
+    // Try to find or create with lowercase email
+    const result = await findOrCreateUser(fastify, upperCaseEmail);
+
+    // Should return the existing user, not create a new one
+    expect(result.id).toBe(existingUser.id);
+
+    // Verify only one user exists in the database
+    const allUsers = await fastify.prisma.user.findMany({
+      where: {
+        email: {
+          in: [upperCaseEmail, email]
+        }
+      }
+    });
+    expect(allUsers).toHaveLength(1);
   });
 });
