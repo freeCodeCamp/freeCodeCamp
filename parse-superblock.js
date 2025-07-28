@@ -9,6 +9,8 @@ const { parseMD } = require('./tools/challenge-parser/parser');
 const { getSuperOrder } = require('./curriculum/utils');
 const { createPoly } = require('./shared/utils/polyvinyl');
 
+const META_DIR = path.resolve(__dirname, 'curriculum/challenges/blocks');
+
 /**
  * Script to parse a superblock file and gather all challenges from blocks
  *
@@ -214,6 +216,130 @@ async function processSuperblock(processBlockFn, blocks, superBlockName) {
   return superBlock;
 }
 
+/**
+ * SuperblockParser class for parsing superblocks with a configured base directory
+ */
+class SuperblockParser {
+  /**
+   * @param {string} blocksDirectory - The directory containing the curriculum blocks
+   */
+  constructor(blocksDirectory) {
+    this.blocksDirectory = blocksDirectory;
+  }
+
+  /**
+   * Processes a single block: reads challenges, validates, and builds block object
+   * @param {object} blockInfo - Block info object with dashedName property
+   * @param {object} options - Options object with superBlock and order properties
+   * @returns {Promise<object|null>} Block object or null if processing failed
+   */
+  async processBlock(blockInfo, { superBlock, order, chapter, module }) {
+    const blockName = blockInfo.dashedName;
+    debug(`Processing block: ${blockName}`);
+
+    // Check if block directory exists
+    const blockDir = path.resolve(this.blocksDirectory, blockName);
+    if (!fs.existsSync(blockDir)) {
+      throw Error(`Block directory not found: ${blockDir}`);
+    }
+
+    // Read meta.json for this block
+    const metaPath = path.resolve(META_DIR, `${blockName}.json`);
+    if (!fs.existsSync(metaPath)) {
+      throw new Error(
+        `Meta file not found for block ${blockName}: ${metaPath}`
+      );
+    }
+
+    // Not all "meta information" can be found in the meta.json.
+    const rawMeta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+    debug(
+      `Meta file indicates ${rawMeta.challengeOrder.length} challenges should exist`
+    );
+
+    if (
+      rawMeta.isUpcomingChange &&
+      process.env.SHOW_UPCOMING_CHANGES !== 'true'
+    ) {
+      debug(`Ignoring upcoming block ${blockName}`);
+      return null;
+    }
+
+    const superOrder = getSuperOrder(superBlock);
+    const meta = {
+      ...rawMeta,
+      superOrder,
+      superBlock,
+      order,
+      ...(chapter && { chapter }),
+      ...(module && { module })
+    };
+
+    // Read challenges from directory
+    const foundChallenges = await readBlockChallenges(
+      blockDir,
+      createChallenge,
+      meta
+    );
+    debug(`Found ${foundChallenges.length} challenge files in directory`);
+
+    // Log found challenges
+    foundChallenges.forEach(challenge => {
+      debug(`Found challenge: ${challenge.title} (${challenge.id})`);
+    });
+
+    // Validate challenges against meta
+    validateChallenges(foundChallenges, meta);
+
+    // Build the block object
+    const blockResult = buildBlock(foundChallenges, meta);
+
+    debug(
+      `Completed block "${meta.name}" with ${blockResult.challenges.length} challenges (${blockResult.challenges.filter(c => !c.missing).length} parsed successfully)`
+    );
+
+    return blockResult;
+  }
+
+  /**
+   * Main parsing function for superblock
+   * @param {string} superblockPath - Path to superblock JSON file
+   * @param {string} superBlockName - Name of the superblock
+   * @returns {Promise<object>} Parsed superblock data
+   */
+  async parseSuperblock(superblockPath, superBlockName) {
+    debug(`Parsing superblock: ${superblockPath}`);
+
+    // Read the superblock file
+    const superblockData = JSON.parse(fs.readFileSync(superblockPath, 'utf8'));
+
+    // Transform superblock data to get blocks array
+    const blocks = transformSuperBlock(superblockData);
+
+    // Process the blocks and return result
+    const superBlock = { blocks: {} };
+
+    // Process each block
+    for (let i = 0; i < blocks.length; i++) {
+      const blockInfo = blocks[i];
+      const blockResult = await this.processBlock(blockInfo, {
+        superBlock: superBlockName,
+        order: i,
+        ...(blockInfo.chapter && { chapter: blockInfo.chapter }),
+        ...(blockInfo.module && { module: blockInfo.module })
+      });
+      if (blockResult) {
+        superBlock.blocks[blockInfo.dashedName] = blockResult;
+      }
+    }
+
+    debug(
+      `Completed parsing superblock. Total blocks: ${Object.keys(superBlock.blocks).length}`
+    );
+    return superBlock;
+  }
+}
+
 // ===== I/O FUNCTIONS =====
 
 /**
@@ -246,92 +372,6 @@ async function createChallenge(filePath, meta, parser = parseMD) {
   challenge.translationPending = false;
 
   return addMetaToChallenge(fixChallengeProperties(challenge), meta);
-}
-
-/**
- * Processes a single block: reads challenges, validates, and builds block object
- * @param {object} blockInfo - Block info object with dashedName property
- * @param {string} baseDir - Base directory path
- * @param {object} options - Options object with superBlock and order properties
- * @returns {Promise<object|null>} Block object or null if processing failed
- */
-async function processBlock(
-  blockInfo,
-  baseDir,
-  { superBlock, order, chapter, module }
-) {
-  const blockName = blockInfo.dashedName;
-  debug(`Processing block: ${blockName}`);
-
-  // Check if block directory exists
-  const blockDir = path.resolve(
-    baseDir,
-    'curriculum/challenges/english/blocks',
-    blockName
-  );
-  if (!fs.existsSync(blockDir)) {
-    throw Error(`Block directory not found: ${blockDir}`);
-  }
-
-  // Read meta.json for this block
-  const metaPath = path.resolve(
-    baseDir,
-    'curriculum/challenges/_meta',
-    blockName,
-    'meta.json'
-  );
-  if (!fs.existsSync(metaPath)) {
-    throw new Error(`Meta file not found for block ${blockName}: ${metaPath}`);
-  }
-
-  // Not all "meta information" can be found in the meta.json.
-  const rawMeta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-  debug(
-    `Meta file indicates ${rawMeta.challengeOrder.length} challenges should exist`
-  );
-
-  if (
-    rawMeta.isUpcomingChange &&
-    process.env.SHOW_UPCOMING_CHANGES !== 'true'
-  ) {
-    debug(`Ignoring upcoming block ${blockName}`);
-    return null;
-  }
-
-  const superOrder = getSuperOrder(superBlock);
-  const meta = {
-    ...rawMeta,
-    superOrder,
-    superBlock,
-    order,
-    ...(chapter && { chapter }),
-    ...(module && { module })
-  };
-
-  // Read challenges from directory
-  const foundChallenges = await readBlockChallenges(
-    blockDir,
-    createChallenge,
-    meta
-  );
-  debug(`Found ${foundChallenges.length} challenge files in directory`);
-
-  // Log found challenges
-  foundChallenges.forEach(challenge => {
-    debug(`Found challenge: ${challenge.title} (${challenge.id})`);
-  });
-
-  // Validate challenges against meta
-  validateChallenges(foundChallenges, meta);
-
-  // Build the block object
-  const blockResult = buildBlock(foundChallenges, meta);
-
-  debug(
-    `Completed block "${meta.name}" with ${blockResult.challenges.length} challenges (${blockResult.challenges.filter(c => !c.missing).length} parsed successfully)`
-  );
-
-  return blockResult;
 }
 
 /**
@@ -387,59 +427,37 @@ function transformSuperBlock(superblockData) {
 }
 
 /**
- * Main parsing function for superblock
- * @param {string} superblockPath - Path to superblock JSON file
- * @returns {Promise<object>} Parsed superblock data
+ * Legacy standalone processBlock function for backward compatibility
+ * @param {object} blockInfo - Block info object with dashedName property
+ * @param {string} baseDir - Base directory path
+ * @param {object} options - Options object with superBlock and order properties
+ * @returns {Promise<object|null>} Block object or null if processing failed
  */
-async function parseSuperblock(superblockPath, superBlockName) {
-  debug(`Parsing superblock: ${superblockPath}`);
-
-  // Read the superblock file
-  const superblockData = JSON.parse(fs.readFileSync(superblockPath, 'utf8'));
-
-  // Transform superblock data to get blocks array
-  const blocks = transformSuperBlock(superblockData);
-
-  // Process the blocks and return result
-  return await processSuperblock(processBlock, blocks, superBlockName);
-}
-
-// Main execution
-async function main() {
-  const superblockPath =
-    process.argv[2] ||
-    './curriculum/challenges/superblocks/01-responsive-web-design.json';
-
-  if (!fs.existsSync(superblockPath)) {
-    console.error(`Superblock file not found: ${superblockPath}`);
-    process.exit(1);
-  }
-
-  try {
-    const result = await parseSuperblock(superblockPath);
-
-    debug('Parsed superblock result:', JSON.stringify(result, null, 2));
-  } catch (error) {
-    console.error('Error:', error.message);
-    process.exit(1);
-  }
-}
-
-// Run if called directly
-if (require.main === module) {
-  main().catch(console.error);
+async function processBlock(
+  blockInfo,
+  baseDir,
+  { superBlock, order, chapter, module }
+) {
+  const parser = new SuperblockParser(baseDir);
+  return await parser.processBlock(blockInfo, {
+    superBlock,
+    order,
+    chapter,
+    module
+  });
 }
 
 // Export both pure functions (for testing) and I/O functions (for CLI usage)
 module.exports = {
+  // SuperblockParser class
+  SuperblockParser,
   // Pure functions (no I/O, no dependencies)
   addMetaToChallenge,
   validateChallenges,
   buildBlock,
   transformSuperBlock,
   fixChallengeProperties,
-  // I/O functions (for CLI usage)
-  parseSuperblock,
+  // I/O functions (for CLI usage and backward compatibility)
   processSuperblock,
   processBlock,
   readBlockChallenges,
