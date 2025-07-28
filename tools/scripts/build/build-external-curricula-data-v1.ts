@@ -110,8 +110,15 @@ export function buildExtCurriculumDataV1(
           Block<Record<string, unknown>>
         >{};
 
-        superBlock[superBlockKey]['blocks'][blockName]['desc'] =
-          intros[superBlockKey]['blocks'][blockName]['intro'];
+        const block = intros[superBlockKey]['blocks'][blockName];
+
+        if (!block) {
+          throw Error(
+            `Block ${blockName} not found in intros for ${superBlockKey}`
+          );
+        }
+
+        superBlock[superBlockKey]['blocks'][blockName]['desc'] = block['intro'];
 
         superBlock[superBlockKey]['blocks'][blockName]['challenges'] =
           curriculum[superBlockKey]['blocks'][blockName]['meta'];
