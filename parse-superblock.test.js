@@ -4,7 +4,8 @@ const {
   transformSuperBlock,
   addMetaToChallenge,
   fixChallengeProperties,
-  processSuperblock
+  processSuperblock,
+  createChallenge
 } = require('./parse-superblock');
 const { isPoly } = require('./shared/utils/polyvinyl');
 
@@ -335,28 +336,6 @@ describe('parseSuperblock pure functions', () => {
         'Challenge 1 (Challenge 1) not found in block'
       );
     });
-
-    test('should add the meta to the challenges when building the block', () => {
-      const foundChallenges = [{ id: '1' }, { id: '2' }];
-
-      const { challenges } = buildBlock(foundChallenges, dummyBlockMeta);
-
-      // Verify challenge meta properties. This is not exhaustive, since
-      // addMetaToChallenge is tested separately.
-      expect(challenges[0]).toMatchObject({
-        id: '1',
-        challengeOrder: 0,
-        isLastChallengeInBlock: false,
-        helpCategory: dummyBlockMeta.helpCategory
-      });
-
-      expect(challenges[1]).toMatchObject({
-        id: '2',
-        challengeOrder: 1,
-        isLastChallengeInBlock: true,
-        helpCategory: dummyBlockMeta.helpCategory
-      });
-    });
   });
 
   describe('addMetaToChallenge', () => {
@@ -382,6 +361,20 @@ describe('parseSuperblock pure functions', () => {
         ...expectedChallengeProperties,
         chapter: 'chapter-1',
         module: 'module-1'
+      });
+    });
+  });
+
+  describe('createChallenge', () => {
+    it('should add meta properties', async () => {
+      const challenge = await createChallenge(
+        'filePath',
+        { challengeOrder: [{ id: '1' }] },
+        () => ({ id: '1' })
+      );
+      expect(challenge).toMatchObject({
+        id: '1',
+        isLastChallengeInBlock: true
       });
     });
   });
