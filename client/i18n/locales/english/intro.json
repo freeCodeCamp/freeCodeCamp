@@ -4543,7 +4543,9 @@
       },
       "lecture-working-with-sql": {
         "title": "Working With SQL",
-        "intro": ["In these lectures, you will learn about SQL injection, normalization,  and the N+1 problem."]
+        "intro": [
+          "In these lectures, you will learn about SQL injection, normalization, and the N+1 problem."
+        ]
       },
       "workshop-sql-student-database-part-1": {
         "title": "Build a Student Database: Part 1",
