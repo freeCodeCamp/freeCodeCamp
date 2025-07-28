@@ -1,16 +1,11 @@
 ---
 id: 672ab82c1a9bbd0e3aabc39d
 title: How Can You Effectively Work With Your Keyboard, Mouse, and Other Pointing Devices
-challengeType: 11
-videoId: AcTxNEVccxc
+challengeType: 19
 dashedName: how-to-effectively-work-with-your-keyboard-mouse-and-other-pointing-devices
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
 
 How can you effectively work with your keyboard, mouse, and other pointing devices?
 
@@ -18,7 +13,7 @@ Many of you have been used to working with your keyboard and mouse for years on 
 
 But prolonged misuse of these devices can lead to serious health problems down the road.
 
-In this lecture video, we will cover ways to work with your computer’s keyboard and mouse in healthy ways.
+In this lecture, we will cover ways to work with your computer’s keyboard and mouse in healthy ways.
 
 The first tip is to be mindful of the mouse grip. When working on serious tasks for work or during intense gaming moments, you may tend to grip the mouse too hard. However, this can lead to serious hand and wrist issues. To prevent this, you want to make sure to hold the mouse gently and keep your fingers nice and relaxed.
 
@@ -46,7 +41,7 @@ It can improve your accuracy in gaming.
 
 ### --feedback--
 
-Pay attention to the advice about mouse grip in the video.
+Pay attention to the advice about mouse grip at the beginning of the lecture.
 
 ---
 
@@ -54,7 +49,7 @@ It helps you complete tasks faster.
 
 ### --feedback--
 
-Pay attention to the advice about mouse grip in the video.
+Pay attention to the advice about mouse grip at the beginning of the lecture.
 
 ---
 
@@ -66,7 +61,7 @@ It improves your overall performance.
 
 ### --feedback--
 
-Pay attention to the advice about mouse grip in the video.
+Pay attention to the advice about mouse grip at the beginning of the lecture.
 
 ## --video-solution--
 
@@ -82,7 +77,7 @@ They help you type faster.
 
 ### --feedback--
 
-The video mentions ergonomic devices as a way to protect your hands and wrists.
+The second tip in the lecture mentions ergonomic devices as a way to protect your hands and wrists.
 
 ---
 
@@ -90,7 +85,7 @@ They are designed for gaming performance.
 
 ### --feedback--
 
-The video mentions ergonomic devices as a way to protect your hands and wrists.
+The second tip in the lecture mentions ergonomic devices as a way to protect your hands and wrists.
 
 ---
 
@@ -102,7 +97,7 @@ They increase screen resolution.
 
 ### --feedback--
 
-The video mentions ergonomic devices as a way to protect your hands and wrists.
+The second tip in the lecture mentions ergonomic devices as a way to protect your hands and wrists.
 
 ## --video-solution--
 
