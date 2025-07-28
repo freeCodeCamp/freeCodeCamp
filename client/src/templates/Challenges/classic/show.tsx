@@ -16,7 +16,6 @@ import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
 import type {
-  ChallengeData,
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
@@ -117,9 +116,6 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   output: string;
   pageContext: {
     challengeMeta: ChallengeMeta;
-    projectPreview: {
-      challengeData: ChallengeData;
-    };
   };
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
@@ -195,6 +191,7 @@ function ShowClassic({
       challenge: {
         challengeFiles: seedChallengeFiles,
         block,
+        demo,
         demoType,
         title,
         description,
@@ -215,8 +212,7 @@ function ShowClassic({
   },
   pageContext: {
     challengeMeta,
-    challengeMeta: { isFirstStep, nextChallengePath },
-    projectPreview: { challengeData }
+    challengeMeta: { isFirstStep, nextChallengePath }
   },
   createFiles,
   cancelTests,
@@ -380,7 +376,7 @@ function ShowClassic({
     // Typically, this kind of preview only appears on the first step of a
     // project and is shown (once) automatically. In contrast, labs are more
     // freeform, so the preview is shown on demand.
-    if (demoType === 'onLoad') openModal('projectPreview');
+    if (demoType === 'onLoad') openModal('demo');
     const challengePaths = getChallengePaths({
       currentCurriculumPaths: challengeMeta
     });
@@ -542,7 +538,7 @@ function ShowClassic({
         <VideoModal videoUrl={videoUrl} />
         <ResetModal challengeType={challengeType} challengeTitle={title} />
         <ProjectPreviewModal
-          challengeData={challengeData}
+          challengeData={demo ? demo.challengeData : null}
           closeText={t('buttons.start-coding')}
           previewTitle={
             demoType === 'onClick'
@@ -565,6 +561,20 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         block
+        demo {
+          challengeData {
+            challengeType
+            challengeFiles {
+              name
+              ext
+              contents
+              head
+              tail
+              history
+              fileKey
+            }
+          }
+        }
         demoType
         title
         description

@@ -5,7 +5,7 @@ import { Panel } from '@freecodecamp/ui';
 import type { ChallengeFile } from '../../redux/prop-types';
 
 type Props = {
-  challengeFiles: Solution[] | null;
+  challengeFiles?: Solution[] | null;
   solution?: string;
 };
 type Solution = Pick<ChallengeFile, 'ext' | 'contents' | 'fileKey'>;

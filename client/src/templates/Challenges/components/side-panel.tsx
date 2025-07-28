@@ -61,12 +61,12 @@ export function SidePanel({
             <Trans i18nKey='learn.example-app'>
               <span
                 className='example-app-link'
-                onClick={() => openModal('projectPreview')}
+                onClick={() => openModal('demo')}
                 role='button'
                 tabIndex={0}
                 onKeyDown={e => {
                   if (e.key === 'Enter' || e.key === ' ') {
-                    openModal('projectPreview');
+                    openModal('demo');
                   }
                 }}
               ></span>
