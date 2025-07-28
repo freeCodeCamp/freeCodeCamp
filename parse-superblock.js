@@ -86,10 +86,8 @@ function buildBlock(foundChallenges, meta) {
         `Challenge ${challengeInfo.id} (${challengeInfo.title}) not found in block`
       );
     }
-    // TODO: Update this once we're handling translations properly
-    challenge.translationPending = false;
 
-    return addMetaToChallenge(fixChallengeProperties(challenge), meta);
+    return challenge;
   });
 
   return {
@@ -221,10 +219,11 @@ async function processSuperblock(processBlockFn, blocks, superBlockName) {
 /**
  * Reads and parses all challenges from a block directory
  * @param {string} blockDir - Path to the block directory
- * @param {function} parser - Parser function (async)
+ * @param {function} createChallenge - Parser function (async)
+ * @param {object} meta - Meta object for the block
  * @returns {Promise<Array<object>>} Array of challenge objects
  */
-async function readBlockChallenges(blockDir, parser) {
+async function readBlockChallenges(blockDir, createChallenge, meta) {
   const challengeFiles = fs
     .readdirSync(blockDir)
     .filter(file => file.endsWith('.md'));
@@ -233,11 +232,20 @@ async function readBlockChallenges(blockDir, parser) {
 
   for (const file of challengeFiles) {
     const filePath = path.join(blockDir, file);
-    const challenge = await parser(filePath);
+    const challenge = await createChallenge(filePath, meta);
     foundChallenges.push(challenge);
   }
 
   return foundChallenges;
+}
+
+async function createChallenge(filePath, meta, parser = parseMD) {
+  const challenge = await parser(filePath);
+
+  // TODO: Update this once we're handling translations properly
+  challenge.translationPending = false;
+
+  return addMetaToChallenge(fixChallengeProperties(challenge), meta);
 }
 
 /**
@@ -290,15 +298,6 @@ async function processBlock(
     return null;
   }
 
-  // Read challenges from directory
-  const foundChallenges = await readBlockChallenges(blockDir, parseMD);
-  debug(`Found ${foundChallenges.length} challenge files in directory`);
-
-  // Log found challenges
-  foundChallenges.forEach(challenge => {
-    debug(`Found challenge: ${challenge.title} (${challenge.id})`);
-  });
-
   const superOrder = getSuperOrder(superBlock);
   const meta = {
     ...rawMeta,
@@ -308,6 +307,19 @@ async function processBlock(
     ...(chapter && { chapter }),
     ...(module && { module })
   };
+
+  // Read challenges from directory
+  const foundChallenges = await readBlockChallenges(
+    blockDir,
+    createChallenge,
+    meta
+  );
+  debug(`Found ${foundChallenges.length} challenge files in directory`);
+
+  // Log found challenges
+  foundChallenges.forEach(challenge => {
+    debug(`Found challenge: ${challenge.title} (${challenge.id})`);
+  });
 
   // Validate challenges against meta
   validateChallenges(foundChallenges, meta);
@@ -430,5 +442,6 @@ module.exports = {
   parseSuperblock,
   processSuperblock,
   processBlock,
-  readBlockChallenges
+  readBlockChallenges,
+  createChallenge
 };

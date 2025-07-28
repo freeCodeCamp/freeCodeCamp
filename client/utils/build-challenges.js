@@ -5,12 +5,13 @@ const _ = require('lodash');
 const envData = require('../config/env.json');
 const {
   getChallengesForLang,
-  generateChallengeCreator,
   ENGLISH_CHALLENGES_DIR,
-  META_DIR,
-  I18N_CHALLENGES_DIR,
+  BLOCKS_DIR,
+  // I18N_CHALLENGES_DIR,
   getChallengesDirForLang
 } = require('../../curriculum/get-challenges');
+
+const { createChallenge } = require('../../parse-superblock');
 
 const { curriculumLocale } = envData;
 
@@ -18,11 +19,13 @@ exports.localeChallengesRootDir = getChallengesDirForLang(curriculumLocale);
 
 exports.replaceChallengeNode = () => {
   return async function replaceChallengeNode(filePath) {
-    // get the meta so that challengeOrder is accurate
-    const blockNameRe = /\d\d-[-\w]+\/([^/]+)\//;
-    const posix = path.normalize(filePath).split(path.sep).join(path.posix.sep);
-    const blockName = posix.match(blockNameRe)[1];
-    const metaPath = path.resolve(META_DIR, `${blockName}/meta.json`);
+    const parentDir = path.dirname(filePath);
+    const blockName = path.basename(parentDir);
+
+    const metaPath = path.resolve(BLOCKS_DIR, `${blockName}.json`);
+    console.log(
+      `Replacing challenge node for ${filePath} with meta from ${metaPath}`
+    );
     delete require.cache[require.resolve(metaPath)];
     const meta = require(metaPath);
     const englishPath = path.resolve(
@@ -30,18 +33,13 @@ exports.replaceChallengeNode = () => {
       'english',
       filePath
     );
-    const i18nPath = path.resolve(
-      I18N_CHALLENGES_DIR,
-      curriculumLocale,
-      filePath
-    );
-    // TODO: reimplement hot-reloading of certifications
-    const createChallenge = generateChallengeCreator(
-      curriculumLocale,
-      englishPath,
-      i18nPath
-    );
-    return await createChallenge(filePath, meta);
+    // const i18nPath = path.resolve(
+    //   I18N_CHALLENGES_DIR,
+    //   curriculumLocale,
+    //   filePath
+    // );
+
+    return await createChallenge(englishPath, meta);
   };
 };
 
