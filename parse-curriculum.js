@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const { inspect } = require('util');
 const path = require('path');
 const { isEmpty } = require('lodash');
 
-const { parseSuperblock } = require('./parse-superblock');
+const { SuperblockParser } = require('./parse-superblock');
 const { parseCertification } = require('./parse-certification');
+
+const blocksDirectory = path.resolve(
+  __dirname,
+  'curriculum/challenges/english/blocks'
+);
 
 // Map of superblock folder names to their SuperBlocks enum values
 const superBlockNames = {
@@ -47,6 +51,7 @@ const superBlockNames = {
  * Main function to parse all superblocks and create parsed-curriculum.json
  */
 async function parseCurriculum() {
+  const parser = new SuperblockParser(blocksDirectory);
   console.log('Reading curriculum.json...');
 
   // Read the curriculum.json file
@@ -86,7 +91,7 @@ async function parseCurriculum() {
     }
 
     // Parse the superblock
-    const parsedSuperblock = await parseSuperblock(
+    const parsedSuperblock = await parser.parseSuperblock(
       superblockPath,
       superBlockName
     );
@@ -124,13 +129,6 @@ async function parseCurriculum() {
   }
 
   return parsedCurriculum;
-}
-
-// Run if called directly
-if (require.main === module) {
-  parseCurriculum()
-    .catch(console.error)
-    .then(x => console.log(inspect(x, { depth: null })));
 }
 
 module.exports = { parseCurriculum };
