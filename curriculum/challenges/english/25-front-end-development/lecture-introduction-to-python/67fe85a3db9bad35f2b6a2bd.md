@@ -9,10 +9,6 @@ dashedName: how-do-conditional-statements-and-logical-operators-work
 
 # --description--
 
-The video for this lecture isn't available yet, one will be available soon. Here is a transcript of the lecture for now:
-
-# --transcript--
-
 Conditional statements, or conditionals, let you control the flow of your program based on whether certain conditions are true or false.
 
 But before we get into all that, let's go over the basic building blocks of conditional statements, starting with comparison operators. Comparison operators are operators that let you compare two or more values, and return a boolean value.

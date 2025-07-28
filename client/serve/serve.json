@@ -223,6 +223,46 @@
     {
       "source": "/learn/full-stack-developer/lecture-what-is-html/what-is-utf-8-character-encoding",
       "destination": "/learn/full-stack-developer/lecture-understanding-the-html-boilerplate/what-is-utf-8-character-encoding"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-importance-of-semantic-html/when-should-you-use-the-emphasis-element-over-the-idiomatic-text-element",
+      "destination": "/learn/full-stack-developer/lecture-understanding-nuanced-semantic-elements/when-should-you-use-the-emphasis-element-over-the-idiomatic-text-element"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-importance-of-semantic-html/when-should-you-use-the-strong-element-over-the-bring-attention-to-element",
+      "destination": "/learn/full-stack-developer/lecture-understanding-nuanced-semantic-elements/when-should-you-use-the-strong-element-over-the-bring-attention-to-element"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-importance-of-semantic-html/what-are-description-lists",
+      "destination": "/learn/full-stack-developer/lecture-understanding-nuanced-semantic-elements/what-are-description-lists"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-importance-of-semantic-html/how-do-block-and-inline-quotes-work-in-html",
+      "destination": "/learn/full-stack-developer/lecture-working-with-text-and-time-semantic-elements/how-do-block-and-inline-quotes-work-in-html"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-importance-of-semantic-html/how-do-you-display-abbreviations-and-acronyms-in-html",
+      "destination": "/learn/full-stack-developer/lecture-working-with-text-and-time-semantic-elements/how-do-you-display-abbreviations-and-acronyms-in-html"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-importance-of-semantic-html/how-do-you-display-addresses-in-html",
+      "destination": "/learn/full-stack-developer/lecture-working-with-text-and-time-semantic-elements/how-do-you-display-addresses-in-html"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-importance-of-semantic-html/how-do-you-display-times-and-dates-in-html",
+      "destination": "/learn/full-stack-developer/lecture-working-with-text-and-time-semantic-elements/how-do-you-display-times-and-dates-in-html"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-importance-of-semantic-html/how-do-you-display-mathematical-equations-and-chemical-formulas-in-html",
+      "destination": "/learn/full-stack-developer/lecture-working-with-specialized-semantic-elements/how-do-you-display-mathematical-equations-and-chemical-formulas-in-html"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-importance-of-semantic-html/how-do-you-represent-computer-code-in-html",
+      "destination": "/learn/full-stack-developer/lecture-working-with-specialized-semantic-elements/how-do-you-represent-computer-code-in-html"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-importance-of-semantic-html/what-are-the-u-s-and-ruby-elements-used-for",
+      "destination": "/learn/full-stack-developer/lecture-working-with-specialized-semantic-elements/what-are-the-u-s-and-ruby-elements-used-for"
     }
   ]
 }

@@ -1234,7 +1234,7 @@
     "heading": "Advertencia: Este es un despliegue de pruebas de acceso temprano",
     "p1": "Le damos la bienvenida a probar esta plataforma en modo test-only y obtener acceso temprano a las próximas características. A veces estos cambios se denominan siguiente, beta, etapa, etc. intercambiablemente.",
     "p2": "Te agradecemos por reportar los errores que encuentres y ayudar a mejorar freeCodeCamp.org.",
-    "p3": "Su progreso NO se guardará en su próxima visita y cualquier certificado reclamado en este desarrollo no será válido. Aprende más <0>siguiendo este enlace</0>.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid.",
     "certain": "Aceptar y descartar"
   },
   "survey": {
