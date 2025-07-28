@@ -6,7 +6,7 @@ const envData = require('../config/env.json');
 const {
   getChallengesForLang,
   ENGLISH_CHALLENGES_DIR,
-  BLOCKS_DIR,
+  BLOCK_STRUCTURE_DIR,
   // I18N_CHALLENGES_DIR,
   getChallengesDirForLang
 } = require('../../curriculum/get-challenges');
@@ -22,12 +22,15 @@ exports.replaceChallengeNode = () => {
     const parentDir = path.dirname(filePath);
     const blockName = path.basename(parentDir);
 
-    const metaPath = path.resolve(BLOCKS_DIR, `${blockName}.json`);
-    console.log(
-      `Replacing challenge node for ${filePath} with meta from ${metaPath}`
+    const blockStructurePath = path.resolve(
+      BLOCK_STRUCTURE_DIR,
+      `${blockName}.json`
     );
-    delete require.cache[require.resolve(metaPath)];
-    const meta = require(metaPath);
+    console.log(
+      `Replacing challenge node for ${filePath} with structure from ${blockStructurePath}`
+    );
+    delete require.cache[require.resolve(blockStructurePath)];
+    const meta = require(blockStructurePath);
     const englishPath = path.resolve(
       ENGLISH_CHALLENGES_DIR,
       'english',
