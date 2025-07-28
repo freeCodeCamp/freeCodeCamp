@@ -374,6 +374,7 @@ export type User = {
   about: string;
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
+  completedChallengeCount: number;
   completedSurveys: SurveyResults[];
   currentChallengeId: string;
   email: string;

@@ -1,6 +1,5 @@
 /* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import fastifyMultipart from '@fastify/multipart';
 import { PrismaClientValidationError } from '@prisma/client/runtime/library';
 import { type FastifyInstance, type FastifyReply } from 'fastify';
 import { ExamEnvironmentExamModerationStatus } from '@prisma/client';
@@ -8,7 +7,7 @@ import jwt from 'jsonwebtoken';
 
 import * as schemas from '../schemas';
 import { mapErr, syncMapErr, UpdateReqType } from '../../utils';
-import { JWT_SECRET, SCREENSHOT_SERVICE_LOCATION } from '../../utils/env';
+import { JWT_SECRET } from '../../utils/env';
 import {
   checkPrerequisites,
   constructEnvExamAttempt,
@@ -64,29 +63,6 @@ export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
 
     done();
   };
-
-/**
- * Wrapper for endpoints related to the exam environment desktop app.
- *
- * Requires multipart form data to be supported.
- */
-export const examEnvironmentMultipartRoutes: FastifyPluginCallbackTypebox = (
-  fastify,
-  _options,
-  done
-) => {
-  void fastify.register(fastifyMultipart);
-
-  fastify.post(
-    '/exam-environment/screenshot',
-    {
-      schema: schemas.examEnvironmentPostScreenshot
-      // bodyLimit: 1024 * 1024 * 5 // 5MiB
-    },
-    postScreenshotHandler
-  );
-  done();
-};
 
 /**
  * Wrapper for endpoints related to the exam environment desktop app.
@@ -684,162 +660,13 @@ async function postExamAttemptHandler(
   return reply.code(200).send();
 }
 
-/**
- * Handles screenshots, sending them to the screenshot service for storage.
- *
- * Requires token to be validated.
- */
-async function postScreenshotHandler(
-  this: FastifyInstance,
-  req: UpdateReqType<typeof schemas.examEnvironmentPostScreenshot>,
-  reply: FastifyReply
-) {
-  const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
-  const isMultipart = req.isMultipart();
-
-  if (!isMultipart) {
-    logger.warn('Request is not multipart form data.');
-    void reply.code(400);
-    return reply.send(
-      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_SCREENSHOT(
-        'Request is not multipart form data.'
-      )
-    );
-  }
-
-  const user = req.user!;
-  const imgData = await req.file();
-
-  if (!imgData) {
-    logger.warn('No image provided.');
-    void reply.code(400);
-    return reply.send(
-      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_SCREENSHOT('No image provided.')
-    );
-  }
-
-  const maybeAttempts = await mapErr(
-    this.prisma.examEnvironmentExamAttempt.findMany({
-      where: {
-        userId: user.id
-      }
-    })
-  );
-
-  if (maybeAttempts.hasError) {
-    logger.error(maybeAttempts.error);
-    this.Sentry.captureException(maybeAttempts.error);
-    void reply.code(500);
-    return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
-    );
-  }
-
-  const attempts = maybeAttempts.data;
-
-  if (attempts.length === 0) {
-    logger.warn('No exam attempts found for user.');
-    void reply.code(404);
-    return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
-        `No exam attempts found for user '${user.id}'.`
-      )
-    );
-  }
-
-  const latestAttempt = attempts.reduce((latest, current) =>
-    latest.startTimeInMS > current.startTimeInMS ? latest : current
-  );
-
-  const maybeExam = await mapErr(
-    this.prisma.examEnvironmentExam.findUnique({
-      where: {
-        id: latestAttempt.examId
-      },
-      select: {
-        id: true,
-        config: true
-      }
-    })
-  );
-
-  if (maybeExam.hasError) {
-    logger.error(maybeExam.error);
-    this.Sentry.captureException(maybeExam.error);
-    void reply.code(500);
-    return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
-    );
-  }
-
-  const exam = maybeExam.data;
-
-  if (exam === null) {
-    const error = {
-      data: {
-        examId: latestAttempt.examId,
-        attemptId: latestAttempt.id
-      },
-      message: 'Unreachable. Attempt could not be related to an exam.'
-    };
-    logger.error(error.data, error.message);
-    this.Sentry.captureException(error.data);
-    void reply.code(500);
-    return reply.send(
-      ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(error.message)
-    );
-  }
-
-  const isAttemptExpired =
-    latestAttempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
-  if (isAttemptExpired) {
-    logger.warn(
-      { examAttemptId: latestAttempt.id },
-      'Attempt has exceeded submission time.'
-    );
-    void reply.code(403);
-    return reply.send(
-      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
-        'Attempt has exceeded submission time.'
-      )
-    );
-  }
-
-  const imgBinary = await imgData.toBuffer();
-
-  // Verify image is JPG using magic number
-  if (imgBinary[0] !== 0xff || imgBinary[1] !== 0xd8 || imgBinary[2] !== 0xff) {
-    logger.warn('Invalid image format');
-    void reply.code(400);
-    return reply.send(
-      ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_SCREENSHOT('Invalid image format.')
-    );
-  }
-
-  void reply.code(200).send();
-
-  const uploadData = {
-    image: imgBinary.toString('base64'),
-    examAttemptId: latestAttempt.id
-  };
-
-  await fetch(`${SCREENSHOT_SERVICE_LOCATION}/upload`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(uploadData)
-  });
-}
-
 async function getExams(
   this: FastifyInstance,
   req: UpdateReqType<typeof schemas.examEnvironmentExams>,
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ user: req.user });
+  logger.info({ userId: req.user?.id });
 
   const user = req.user!;
   const maybeExams = await mapErr(
@@ -866,10 +693,34 @@ async function getExams(
 
   const exams = maybeExams.data;
 
-  const availableExams = exams.map(exam => {
-    const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
+  const maybeAttempts = await mapErr(
+    this.prisma.examEnvironmentExamAttempt.findMany({
+      where: {
+        userId: user.id
+      },
+      select: {
+        id: true,
+        examId: true,
+        startTimeInMS: true
+      }
+    })
+  );
 
-    return {
+  if (maybeAttempts.hasError) {
+    logger.error(maybeAttempts.error);
+    this.Sentry.captureException(maybeAttempts.error);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
+    );
+  }
+
+  const attempts = maybeAttempts.data;
+
+  const availableExams = [];
+
+  for (const exam of exams) {
+    const availableExam = {
       id: exam.id,
       config: {
         name: exam.config.name,
@@ -878,13 +729,82 @@ async function getExams(
         retakeTimeInMS: exam.config.retakeTimeInMS,
         passingPercent: exam.config.passingPercent
       },
-      canTake: isExamPrerequisitesMet
+      canTake: false
     };
-  });
 
-  return reply.send({
-    exams: availableExams
-  });
+    const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
+    logger.info(
+      `Prerequisites for exam ${exam.id} ${isExamPrerequisitesMet ? 'met' : 'unmet'}.`
+    );
+
+    if (!isExamPrerequisitesMet) {
+      availableExam.canTake = false;
+      availableExams.push(availableExam);
+      continue;
+    }
+    // Latest attempt must be:
+    // a) Moderated
+    // b) Past exam config retake time
+    const attemptsForExam = attempts.filter(a => a.examId === exam.id);
+
+    const lastAttempt = attemptsForExam.length
+      ? attemptsForExam.reduce((latest, current) =>
+          latest.startTimeInMS > current.startTimeInMS ? latest : current
+        )
+      : null;
+
+    if (!lastAttempt) {
+      logger.info(`No prior attempts for exam ${exam.id}`);
+      availableExam.canTake = true;
+      availableExams.push(availableExam);
+      continue;
+    }
+
+    const retakeDateInMS =
+      lastAttempt.startTimeInMS +
+      exam.config.totalTimeInMS +
+      exam.config.retakeTimeInMS;
+    const isRetakeTimePassed = Date.now() > retakeDateInMS;
+
+    if (!isRetakeTimePassed) {
+      logger.info(`Time until retake: ${retakeDateInMS - Date.now()} [ms]`);
+      availableExam.canTake = false;
+      availableExams.push(availableExam);
+      continue;
+    }
+
+    const maybeModerations = await mapErr(
+      this.prisma.examEnvironmentExamModeration.findMany({
+        where: {
+          examAttemptId: { in: attemptsForExam.map(a => a.id) },
+          status: ExamEnvironmentExamModerationStatus.Pending
+        }
+      })
+    );
+
+    if (maybeModerations.hasError) {
+      logger.error(maybeModerations.error);
+      this.Sentry.captureException(maybeModerations.error);
+      void reply.code(500);
+      return reply.send(
+        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeModerations.error))
+      );
+    }
+
+    const moderations = maybeModerations.data;
+
+    if (moderations.length > 0) {
+      logger.info(`Exam Moderation records found: ${moderations.length}`);
+      availableExam.canTake = false;
+      availableExams.push(availableExam);
+      continue;
+    }
+
+    availableExam.canTake = true;
+    availableExams.push(availableExam);
+  }
+
+  return reply.send(availableExams);
 }
 
 /**
