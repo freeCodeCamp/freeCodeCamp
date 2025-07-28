@@ -666,7 +666,7 @@ async function getExams(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ user: req.user });
+  logger.info({ userId: req.user?.id });
 
   const user = req.user!;
   const maybeExams = await mapErr(
@@ -693,10 +693,34 @@ async function getExams(
 
   const exams = maybeExams.data;
 
-  const availableExams = exams.map(exam => {
-    const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
+  const maybeAttempts = await mapErr(
+    this.prisma.examEnvironmentExamAttempt.findMany({
+      where: {
+        userId: user.id
+      },
+      select: {
+        id: true,
+        examId: true,
+        startTimeInMS: true
+      }
+    })
+  );
 
-    return {
+  if (maybeAttempts.hasError) {
+    logger.error(maybeAttempts.error);
+    this.Sentry.captureException(maybeAttempts.error);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
+    );
+  }
+
+  const attempts = maybeAttempts.data;
+
+  const availableExams = [];
+
+  for (const exam of exams) {
+    const availableExam = {
       id: exam.id,
       config: {
         name: exam.config.name,
@@ -705,13 +729,82 @@ async function getExams(
         retakeTimeInMS: exam.config.retakeTimeInMS,
         passingPercent: exam.config.passingPercent
       },
-      canTake: isExamPrerequisitesMet
+      canTake: false
     };
-  });
 
-  return reply.send({
-    exams: availableExams
-  });
+    const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
+    logger.info(
+      `Prerequisites for exam ${exam.id} ${isExamPrerequisitesMet ? 'met' : 'unmet'}.`
+    );
+
+    if (!isExamPrerequisitesMet) {
+      availableExam.canTake = false;
+      availableExams.push(availableExam);
+      continue;
+    }
+    // Latest attempt must be:
+    // a) Moderated
+    // b) Past exam config retake time
+    const attemptsForExam = attempts.filter(a => a.examId === exam.id);
+
+    const lastAttempt = attemptsForExam.length
+      ? attemptsForExam.reduce((latest, current) =>
+          latest.startTimeInMS > current.startTimeInMS ? latest : current
+        )
+      : null;
+
+    if (!lastAttempt) {
+      logger.info(`No prior attempts for exam ${exam.id}`);
+      availableExam.canTake = true;
+      availableExams.push(availableExam);
+      continue;
+    }
+
+    const retakeDateInMS =
+      lastAttempt.startTimeInMS +
+      exam.config.totalTimeInMS +
+      exam.config.retakeTimeInMS;
+    const isRetakeTimePassed = Date.now() > retakeDateInMS;
+
+    if (!isRetakeTimePassed) {
+      logger.info(`Time until retake: ${retakeDateInMS - Date.now()} [ms]`);
+      availableExam.canTake = false;
+      availableExams.push(availableExam);
+      continue;
+    }
+
+    const maybeModerations = await mapErr(
+      this.prisma.examEnvironmentExamModeration.findMany({
+        where: {
+          examAttemptId: { in: attemptsForExam.map(a => a.id) },
+          status: ExamEnvironmentExamModerationStatus.Pending
+        }
+      })
+    );
+
+    if (maybeModerations.hasError) {
+      logger.error(maybeModerations.error);
+      this.Sentry.captureException(maybeModerations.error);
+      void reply.code(500);
+      return reply.send(
+        ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeModerations.error))
+      );
+    }
+
+    const moderations = maybeModerations.data;
+
+    if (moderations.length > 0) {
+      logger.info(`Exam Moderation records found: ${moderations.length}`);
+      availableExam.canTake = false;
+      availableExams.push(availableExam);
+      continue;
+    }
+
+    availableExam.canTake = true;
+    availableExams.push(availableExam);
+  }
+
+  return reply.send(availableExams);
 }
 
 /**
