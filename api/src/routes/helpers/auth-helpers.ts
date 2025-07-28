@@ -16,23 +16,10 @@ export const findOrCreateUser = async (
   // e.g. use findMany and throw an error if more than one is found.
   const existingUser = await fastify.prisma.user.findMany({
     where: {
-      OR: [
-        {
-          email: email
-        },
-        {
-          email: lowerCaseEmail
-        }
-      ]
-      // Assumption that this is less efficient
-      // email: {
-      //   in: [email, lowerCaseEmail]
-      // },
-      // Might not be ideal, because it uses RegEx: https://www.prisma.io/docs/orm/prisma-client/queries/case-sensitivity#mongodb-provider
-      // email: {
-      //   mode: "insensitive",
-      //   equals: email
-      // }
+      // https://www.mongodb.com/docs/manual/reference/operator/query/or/#-or-versus--in
+      email: {
+        in: [email, lowerCaseEmail]
+      }
     },
     select: { id: true, acceptedPrivacyTerms: true }
   });
