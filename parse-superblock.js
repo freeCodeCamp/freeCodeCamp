@@ -265,15 +265,6 @@ async function processBlock(
     throw Error(`Block directory not found: ${blockDir}`);
   }
 
-  // Read challenges from directory
-  const foundChallenges = await readBlockChallenges(blockDir, parseMD);
-  debug(`Found ${foundChallenges.length} challenge files in directory`);
-
-  // Log found challenges
-  foundChallenges.forEach(challenge => {
-    debug(`Found challenge: ${challenge.title} (${challenge.id})`);
-  });
-
   // Read meta.json for this block
   const metaPath = path.resolve(
     baseDir,
@@ -290,6 +281,23 @@ async function processBlock(
   debug(
     `Meta file indicates ${rawMeta.challengeOrder.length} challenges should exist`
   );
+
+  if (
+    rawMeta.isUpcomingChange &&
+    process.env.SHOW_UPCOMING_CHANGES !== 'true'
+  ) {
+    debug(`Ignoring upcoming block ${blockName}`);
+    return null;
+  }
+
+  // Read challenges from directory
+  const foundChallenges = await readBlockChallenges(blockDir, parseMD);
+  debug(`Found ${foundChallenges.length} challenge files in directory`);
+
+  // Log found challenges
+  foundChallenges.forEach(challenge => {
+    debug(`Found challenge: ${challenge.title} (${challenge.id})`);
+  });
 
   const superOrder = getSuperOrder(superBlock);
   const meta = {
