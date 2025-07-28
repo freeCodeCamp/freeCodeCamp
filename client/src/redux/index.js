@@ -6,6 +6,7 @@ import {
   actionTypes as challengeTypes,
   CURRENT_CHALLENGE_KEY
 } from '../templates/Challenges/redux/action-types';
+import { getIsDailyCodingChallenge } from '../../../shared/config/challenge-types';
 import { createAcceptTermsSaga } from './accept-terms-saga';
 import { actionTypes, ns as MainApp } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
@@ -319,43 +320,64 @@ export const reducer = handleActions(
     [actionTypes.submitComplete]: (state, { payload }) => {
       const {
         examResults = null,
+        completedDailyCodingChallenges = [],
         submittedChallenge,
         savedChallenges
       } = payload;
+
       let submittedchallenges = [
         { ...submittedChallenge, completedDate: Date.now() }
       ];
 
-      return examResults && !examResults.passed
-        ? {
-            ...state,
-            user: {
-              ...state.user,
-              sessionUser: {
-                ...state.user.sessionUser,
-                examResults
-              }
+      // if daily coding challenge, only update completedDailyCodingChallenges
+      // Uses the whole completedDailyCodingChallenges array from the API response
+      // Todo: update with submittedChallenge instead
+      if (getIsDailyCodingChallenge(submittedChallenge.challengeType)) {
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            sessionUser: {
+              ...state.user.sessionUser,
+              completedDailyCodingChallenges
             }
           }
-        : {
-            ...state,
-            user: {
-              ...state.user,
-              sessionUser: {
-                ...state.user.sessionUser,
-                completedChallenges: uniqBy(
-                  [
-                    ...submittedchallenges,
-                    ...state.user.sessionUser.completedChallenges
-                  ],
-                  'id'
-                ),
-                savedChallenges:
-                  savedChallenges ?? savedChallengesSelector(state[MainApp]),
-                examResults
-              }
+        };
+      }
+
+      // if exam not passed, don't update completedChallenges - only update the results
+      if (examResults && !examResults.passed) {
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            sessionUser: {
+              ...state.user.sessionUser,
+              examResults
             }
-          };
+          }
+        };
+      }
+
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          sessionUser: {
+            ...state.user.sessionUser,
+            completedChallenges: uniqBy(
+              [
+                ...submittedchallenges,
+                ...state.user.sessionUser.completedChallenges
+              ],
+              'id'
+            ),
+            savedChallenges:
+              savedChallenges ?? savedChallengesSelector(state[MainApp]),
+            examResults
+          }
+        }
+      };
     },
     [actionTypes.setMsUsername]: (state, { payload }) => {
       return {

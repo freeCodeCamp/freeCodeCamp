@@ -12,7 +12,11 @@ import {
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink } from '../helpers';
-import { showUpcomingChanges } from '../../../config/env.json';
+import {
+  showUpcomingChanges,
+  showDailyCodingChallenges
+} from '../../../config/env.json';
+import DailyCodingChallengeWidget from '../daily-coding-challenge/widget';
 
 import './map.css';
 interface MapProps {
@@ -82,6 +86,16 @@ function Map({ forLanding = false }: MapProps) {
 
         return (
           <Fragment key={stage}>
+            {
+              /* Show the daily coding challenge before the "English" curriculum */
+              showDailyCodingChallenges &&
+                stage === SuperBlockStage.English && (
+                  <>
+                    <DailyCodingChallengeWidget forLanding={forLanding} />
+                    <Spacer size='m' />
+                  </>
+                )
+            }
             <h2 className={forLanding ? 'big-heading' : ''}>
               {t(superBlockHeadings[stage])}
             </h2>
