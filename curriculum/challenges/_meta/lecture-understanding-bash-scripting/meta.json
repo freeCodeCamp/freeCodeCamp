@@ -1,0 +1,10 @@
+{
+  "name": "Understanding Bash Scripting",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-bash-scripting",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [{ "id": "688166750663c22e2b1c8e80", "title": "What Is Bash Scripting, and What Are Some Advantages to Using It?" }]
+}
