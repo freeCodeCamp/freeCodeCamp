@@ -7,6 +7,8 @@ dashedName: welcome-message-from-quincy
 
 # --description--
 
+<img src="https://cdn.freecodecamp.org/curriculum/lecture-transcripts/freeCodeCamp_team.jpeg" alt="the freeCodeCamp team">
+
 I'm Quincy Larson, teacher and founder of freeCodeCamp.org.
 
 Our charity's mission is to create free learning resources to help people learn math, programming, and computer science. And that's precisely what we've done for you here.
