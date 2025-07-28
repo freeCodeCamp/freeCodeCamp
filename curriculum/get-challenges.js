@@ -35,6 +35,7 @@ const access = util.promisify(fs.access);
 const ENGLISH_CHALLENGES_DIR = path.resolve(__dirname, 'challenges');
 const ENGLISH_DICTIONARIES_DIR = path.resolve(__dirname, 'dictionaries');
 const META_DIR = path.resolve(ENGLISH_CHALLENGES_DIR, '_meta');
+const BLOCKS_DIR = path.resolve(ENGLISH_CHALLENGES_DIR, 'blocks');
 
 // This is to allow English to build without having to download the i18n files.
 // It fails when trying to resolve the i18n-curriculum path if they don't exist.
@@ -49,6 +50,7 @@ const I18N_DICTIONARIES_DIR = path.resolve(I18N_CURRICULUM_DIR, 'dictionaries');
 
 exports.ENGLISH_CHALLENGES_DIR = ENGLISH_CHALLENGES_DIR;
 exports.META_DIR = META_DIR;
+exports.BLOCKS_DIR = BLOCKS_DIR;
 exports.I18N_CHALLENGES_DIR = I18N_CHALLENGES_DIR;
 
 const COMMENT_TRANSLATIONS = createCommentMap(
