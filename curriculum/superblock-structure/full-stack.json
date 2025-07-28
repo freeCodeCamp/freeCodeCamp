@@ -587,7 +587,19 @@
           "dashedName": "javascript-booleans-and-numbers",
           "blocks": [
             {
-              "dashedName": "lecture-working-with-numbers-booleans-and-the-math-object"
+              "dashedName": "lecture-working-with-numbers-and-arithmetic-operators"
+            },
+            {
+              "dashedName": "lecture-working-with-operator-behavior"
+            },
+            {
+              "dashedName": "lecture-working-with-comparison-and-boolean-operators"
+            },
+            {
+              "dashedName": "lecture-working-with-unary-and-bitwise-operators"
+            },
+            {
+              "dashedName": "lecture-working-with-conditional-logic-and-math-methods"
             },
             {
               "dashedName": "workshop-mathbot"
@@ -625,16 +637,25 @@
               "dashedName": "workshop-calculator"
             },
             {
+              "dashedName": "lab-boolean-check"
+            },
+            {
               "dashedName": "lab-email-masker"
             },
             {
               "dashedName": "workshop-loan-qualification-checker"
             },
             {
+              "dashedName": "lab-celsius-to-fahrenheit-converter"
+            },
+            {
               "dashedName": "lab-leap-year-calculator"
             },
             {
               "dashedName": "lab-truncate-string"
+            },
+            {
+              "dashedName": "lab-string-ending-checker"
             },
             {
               "dashedName": "review-javascript-functions"
@@ -703,6 +724,9 @@
               "dashedName": "workshop-sentence-analyzer"
             },
             {
+              "dashedName": "lab-longest-word-in-a-string"
+            },
+            {
               "dashedName": "lab-factorial-calculator"
             },
             { "dashedName": "lab-mutations" },
@@ -727,6 +751,9 @@
             },
             {
               "dashedName": "lab-largest-number-finder"
+            },
+            {
+              "dashedName": "lab-first-element-finder"
             },
             {
               "dashedName": "lab-slice-and-splice"
@@ -824,6 +851,9 @@
           "blocks": [
             {
               "dashedName": "workshop-planets-tablist"
+            },
+            {
+              "dashedName": "workshop-note-taking-app"
             },
             {
               "dashedName": "lab-theme-switcher"
@@ -1383,6 +1413,9 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "lecture-understanding-the-command-line-and-working-with-bash"
+            },
+            {
               "dashedName": "workshop-bash-boilerplate"
             },
             {
@@ -1415,6 +1448,9 @@
           "dashedName": "bash-scripting",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-bash-scripting"
+            },
             {
               "dashedName": "workshop-bash-five-programs"
             },
