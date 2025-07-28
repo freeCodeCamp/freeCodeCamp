@@ -67,15 +67,15 @@ describe('findOrCreateUser', () => {
     expect(captureException).not.toHaveBeenCalled();
   });
 
-  it('should NOT create a user if there is an account with case-insensitive email matches', async () => {
+  it("should NOT create a user if there is already an account with the lowercase version of the user's email", async () => {
     const upperCaseEmail = email.toUpperCase();
 
-    // Create a user with uppercase email
+    // Create a user with lowercase email
     const existingUser = await fastify.prisma.user.create({
       data: createUserInput(email)
     });
 
-    // Try to find or create with lowercase email
+    // Try to find or create with uppercase email
     const result = await findOrCreateUser(fastify, upperCaseEmail);
 
     // Should return the existing user, not create a new one
