@@ -38,14 +38,17 @@ type ChallengeNode = {
 
 const getChallenges = async (lang: string) => {
   const curriculum = await getChallengesForLang(lang);
-  return Object.keys(curriculum)
-    .map(key => curriculum[key].blocks)
-    .reduce((challengeArray, superBlock) => {
-      const challengesForBlock = Object.keys(superBlock).map(
-        key => superBlock[key].challenges
-      );
-      return [...challengeArray, ...flatten(challengesForBlock)];
-    }, []) as unknown as ChallengeNode[];
+  return (
+    Object.keys(curriculum)
+      // @ts-expect-error - curriculum comes from a JS file.
+      .map(key => curriculum[key].blocks)
+      .reduce((challengeArray, superBlock) => {
+        const challengesForBlock = Object.keys(superBlock).map(
+          key => superBlock[key].challenges
+        );
+        return [...challengeArray, ...flatten(challengesForBlock)];
+      }, []) as unknown as ChallengeNode[]
+  );
 };
 
 /* eslint-enable @typescript-eslint/no-unsafe-return */
