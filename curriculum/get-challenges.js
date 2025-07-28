@@ -160,7 +160,7 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
 Accepted languages are ${curriculumLangs.join(', ')}`);
   // scaffold the curriculum, first set up the superblocks, then recurse into
   // the blocks
-  const curriculum = await parseCurriculum();
+  const curriculum = await parseCurriculum(getChallengesDirForLang(lang));
 
   return curriculum;
 };

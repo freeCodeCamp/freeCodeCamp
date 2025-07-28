@@ -9,8 +9,6 @@ const { parseMD } = require('./tools/challenge-parser/parser');
 const { getSuperOrder } = require('./curriculum/utils');
 const { createPoly } = require('./shared/utils/polyvinyl');
 
-const META_DIR = path.resolve(__dirname, 'curriculum/challenges/blocks');
-
 /**
  * Script to parse a superblock file and gather all challenges from blocks
  *
@@ -221,10 +219,12 @@ async function processSuperblock(processBlockFn, blocks, superBlockName) {
  */
 class SuperblockParser {
   /**
-   * @param {string} blocksDirectory - The directory containing the curriculum blocks
+   * @param {string} blockContentDir - The directory containing the curriculum blocks
+   * @param {string} blockStructureDir - The directory containing the block structure files
    */
-  constructor(blocksDirectory) {
-    this.blocksDirectory = blocksDirectory;
+  constructor({ blockContentDir, blockStructureDir }) {
+    this.blockContentDir = blockContentDir;
+    this.blockStructureDir = blockStructureDir;
   }
 
   /**
@@ -238,13 +238,13 @@ class SuperblockParser {
     debug(`Processing block: ${blockName}`);
 
     // Check if block directory exists
-    const blockDir = path.resolve(this.blocksDirectory, blockName);
-    if (!fs.existsSync(blockDir)) {
-      throw Error(`Block directory not found: ${blockDir}`);
+    const blockContentDir = path.resolve(this.blockContentDir, blockName);
+    if (!fs.existsSync(blockContentDir)) {
+      throw Error(`Block directory not found: ${blockContentDir}`);
     }
 
     // Read meta.json for this block
-    const metaPath = path.resolve(META_DIR, `${blockName}.json`);
+    const metaPath = path.resolve(this.blockStructureDir, `${blockName}.json`);
     if (!fs.existsSync(metaPath)) {
       throw new Error(
         `Meta file not found for block ${blockName}: ${metaPath}`
@@ -277,7 +277,7 @@ class SuperblockParser {
 
     // Read challenges from directory
     const foundChallenges = await readBlockChallenges(
-      blockDir,
+      blockContentDir,
       createChallenge,
       meta
     );
