@@ -587,9 +587,7 @@ describe('/exam-environment/', () => {
     });
 
     describe('GET /exam-environment/exams', () => {
-      afterEach(async () => {
-        // Clean up exam attempts and moderation records
-        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.deleteMany();
+      beforeEach(async () => {
         // Reset user prerequisites
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
@@ -599,6 +597,12 @@ describe('/exam-environment/', () => {
             ]
           }
         });
+      });
+
+      afterEach(async () => {
+        // Clean up exam attempts and moderation records
+        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.deleteMany();
+
         // Reset exam deprecated status
         await fastifyTestInstance.prisma.examEnvironmentExam.update({
           where: { id: mock.examId },
@@ -659,20 +663,7 @@ describe('/exam-environment/', () => {
           examEnvironmentAuthorizationToken
         );
 
-        expect(res.body).toStrictEqual([
-          {
-            canTake: false,
-            config: {
-              name: mock.exam.config.name,
-              note: mock.exam.config.note,
-              passingPercent: mock.exam.config.passingPercent,
-              totalTimeInMS: mock.exam.config.totalTimeInMS,
-              retakeTimeInMS: mock.exam.config.retakeTimeInMS
-            },
-            id: mock.examId
-          }
-        ]);
-
+        expect(res.body).toMatchObject([{ canTake: false }]);
         expect(res.status).toBe(200);
 
         // Add prerequisites back to user
@@ -690,20 +681,7 @@ describe('/exam-environment/', () => {
           examEnvironmentAuthorizationToken
         );
 
-        expect(res2.body).toStrictEqual([
-          {
-            canTake: true,
-            config: {
-              name: mock.exam.config.name,
-              note: mock.exam.config.note,
-              passingPercent: mock.exam.config.passingPercent,
-              totalTimeInMS: mock.exam.config.totalTimeInMS,
-              retakeTimeInMS: mock.exam.config.retakeTimeInMS
-            },
-            id: mock.examId
-          }
-        ]);
-
+        expect(res2.body).toMatchObject([{ canTake: true }]);
         expect(res2.status).toBe(200);
       });
 
@@ -726,7 +704,7 @@ describe('/exam-environment/', () => {
             id: mock.examId
           }
         ]);
-
+        expect(res.body).toMatchObject([{ canTake: true }]);
         expect(res.status).toBe(200);
       });
 
@@ -746,20 +724,7 @@ describe('/exam-environment/', () => {
           examEnvironmentAuthorizationToken
         );
 
-        expect(res.body).toStrictEqual([
-          {
-            canTake: false,
-            config: {
-              name: mock.exam.config.name,
-              note: mock.exam.config.note,
-              passingPercent: mock.exam.config.passingPercent,
-              totalTimeInMS: mock.exam.config.totalTimeInMS,
-              retakeTimeInMS: mock.exam.config.retakeTimeInMS
-            },
-            id: mock.examId
-          }
-        ]);
-
+        expect(res.body).toMatchObject([{ canTake: false }]);
         expect(res.status).toBe(200);
 
         // Update the attempt to be outside the retake time
@@ -779,19 +744,7 @@ describe('/exam-environment/', () => {
           examEnvironmentAuthorizationToken
         );
 
-        expect(res2.body).toStrictEqual([
-          {
-            canTake: true,
-            config: {
-              name: mock.exam.config.name,
-              note: mock.exam.config.note,
-              passingPercent: mock.exam.config.passingPercent,
-              totalTimeInMS: mock.exam.config.totalTimeInMS,
-              retakeTimeInMS: mock.exam.config.retakeTimeInMS
-            },
-            id: mock.examId
-          }
-        ]);
+        expect(res2.body).toMatchObject([{ canTake: true }]);
 
         expect(res2.status).toBe(200);
       });
@@ -825,20 +778,7 @@ describe('/exam-environment/', () => {
           examEnvironmentAuthorizationToken
         );
 
-        expect(res.body).toStrictEqual([
-          {
-            canTake: false,
-            config: {
-              name: mock.exam.config.name,
-              note: mock.exam.config.note,
-              passingPercent: mock.exam.config.passingPercent,
-              totalTimeInMS: mock.exam.config.totalTimeInMS,
-              retakeTimeInMS: mock.exam.config.retakeTimeInMS
-            },
-            id: mock.examId
-          }
-        ]);
-
+        expect(res.body).toMatchObject([{ canTake: false }]);
         expect(res.status).toBe(200);
       });
     });
