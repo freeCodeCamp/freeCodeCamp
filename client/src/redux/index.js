@@ -338,7 +338,7 @@ export const reducer = handleActions(
           user: {
             ...state.user,
             sessionUser: {
-              ...state.usersessionUser,
+              ...state.user.sessionUser,
               completedDailyCodingChallenges
             }
           }
@@ -352,7 +352,7 @@ export const reducer = handleActions(
           user: {
             ...state.user,
             sessionUser: {
-              ...state.usersessionUser,
+              ...state.user.sessionUser,
               examResults
             }
           }
@@ -364,11 +364,11 @@ export const reducer = handleActions(
         user: {
           ...state.user,
           sessionUser: {
-            ...state.usersessionUser,
+            ...state.user.sessionUser,
             completedChallenges: uniqBy(
               [
                 ...submittedchallenges,
-                ...state.usersessionUser.completedChallenges
+                ...state.user.sessionUser.completedChallenges
               ],
               'id'
             ),
