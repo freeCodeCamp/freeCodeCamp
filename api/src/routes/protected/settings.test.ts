@@ -759,7 +759,8 @@ Happy coding!
           website: 'https://www.freecodecamp.org/',
           twitter: 'https://twitter.com/ossia',
           linkedin: 'https://www.linkedin.com/in/quincylarson',
-          githubProfile: 'https://github.com/QuincyLarson'
+          githubProfile: 'https://github.com/QuincyLarson',
+          bluesky: 'https://bsky.app/profile/testuser.bsky.social'
         });
 
         expect(response.body).toEqual({
@@ -774,7 +775,8 @@ Happy coding!
           website: 'https://www.freecodecamp.org/',
           twitter: '',
           linkedin: '',
-          githubProfile: ''
+          githubProfile: '',
+          bluesky: ''
         });
 
         expect(response.body).toEqual({
@@ -789,7 +791,8 @@ Happy coding!
           website: 'invalid',
           twitter: '',
           linkedin: '',
-          githubProfile: ''
+          githubProfile: '',
+          bluesky: ''
         });
 
         expect(response.body).toEqual(updateErrorResponse);
@@ -801,7 +804,8 @@ Happy coding!
           website: '',
           twitter: '',
           linkedin: '',
-          githubProfile: 'https://x.com/should-be-github'
+          githubProfile: 'https://x.com/should-be-github',
+          bluesky: ''
         });
 
         expect(response.body).toEqual(updateErrorResponse);
