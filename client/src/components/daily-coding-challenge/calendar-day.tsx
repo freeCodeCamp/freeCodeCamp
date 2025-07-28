@@ -27,6 +27,7 @@ function DailyCodingChallengeCalendarDay({
   if (!isAvailable)
     return (
       <button
+        disabled
         className='calendar-day not-available'
         aria-label={`${date && formatDisplayDate(date)}, (${t('aria.not-available')})`}
       >
