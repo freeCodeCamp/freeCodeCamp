@@ -1,18 +1,11 @@
 ---
 id: 67329fbcfaf5ff5cdaa38a42
 title: What Is the var Keyword, and Why Is It No Longer Suggested to Use It?
-challengeType: 11
-videoId: Ae4bq5IcDfI
+challengeType: 19
 dashedName: what-is-the-var-keyword-and-why-is-it-no-longer-suggested-to-use-it
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
-
-What is the `var` keyword and why is it no longer suggested to use it?
 
 The `var` keyword in JavaScript is one of the original ways to declare variables. It has been part of the language since its inception and for many years it remained the primary method for creating variables. However as JavaScript evolved and developers gained more experience with the language, certain drawbacks of using `var` became apparent leading to the introduction of `let` and `const` in 2015.
 
