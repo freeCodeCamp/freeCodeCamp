@@ -7,8 +7,6 @@ dashedName: what-is-prop-drilling
 
 # --description--
 
-What is prop drilling?
-
 Prop drilling is the most basic approach to state management in React applications. It looks simple, but can get messy quickly, and is very hard to scale.
 
 Let's look at what prop drilling is, why it's a problem, and a good replacement for it as an application grows.

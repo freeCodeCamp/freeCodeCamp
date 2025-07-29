@@ -7,8 +7,6 @@ dashedName: what-is-the-useoptimistic-hook-and-how-does-it-work
 
 # --description--
 
-What is the `useOptimistic` hook and how does it work?
-
 Recent versions of React introduced server components and server actions to shift some of the rendering and logic responsibilities to the server.
 
 Along with those updates, React added a new hook called `useOptimistic` to keep UIs responsive while waiting for an async action to complete in the background.

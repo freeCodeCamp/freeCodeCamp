@@ -7,8 +7,6 @@ dashedName: what-is-memoization-and-how-does-the-usememo-hook-work
 
 # --description--
 
-What is memoization and how does the `useMemo` hook work?
-
 As your React app gets larger, unnecessary re-renders and expensive calculations can slow down performance, leading to slow UI updates and increased resource usage.
 
 This can be especially problematic in apps with complex state management, large lists, functions that require heavy computations, and many components with a single parent.
