@@ -161,7 +161,7 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
     throw Error(`${lang} is not a accepted language.
 Accepted languages are ${curriculumLangs.join(', ')}`);
 
-  const curriculum = await parseCurriculum(getChallengesDirForLang(lang));
+  const curriculum = await parseCurriculum(__dirname, '', lang);
 
   return curriculum;
 };
