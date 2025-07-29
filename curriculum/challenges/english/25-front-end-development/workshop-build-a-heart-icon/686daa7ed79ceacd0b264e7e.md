@@ -7,12 +7,12 @@ dashedName: step-3
 
 # --description--
 
-You are getting closer. The next thing to do is to set the `viewBox` of the `svg` element. This will
-control how much of the image we actually see. The first two numbers set the center of the image.
+You are getting closer. The next thing to do is to set the `viewBox` attribute of the `svg` element. This will
+control how much of the image is visible. The first two numbers set the center of the image.
 
 The following two numbers set the size of the image can we see; width followed by height.
 
-Since we want to see the entirety of the icon, you should set the `viewBox` to `0 0 24 24`.
+Since here the entirety of the icon should be visible, you should set the `viewBox` attribute to `0 0 24 24`.
 
 # --hints--
 
@@ -74,7 +74,6 @@ assert.strictEqual(height, '24');
   <body>
     --fcc-editable-region--
     <svg width="24" height="24">
-
     </svg>
     --fcc-editable-region--
   </body>

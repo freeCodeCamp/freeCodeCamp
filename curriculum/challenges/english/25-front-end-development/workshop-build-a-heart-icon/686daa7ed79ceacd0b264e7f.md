@@ -7,8 +7,8 @@ dashedName: step-4
 
 # --description--
 
-Before you begin coloring the image in, you should next some `path` elements inside your `svg`
-element to give the image shape. This icon only needs one.
+Before you begin coloring the image in, you should nest one `path` element inside your `svg`
+element to give the image shape.
 
 Create a `path` element.
 
@@ -35,8 +35,7 @@ assert.exists(path);
   <body>
     --fcc-editable-region--
     <svg width="24" height="24" viewBox="0 0 24 24">
-
-
+      
     </svg>
     --fcc-editable-region--
   </body>

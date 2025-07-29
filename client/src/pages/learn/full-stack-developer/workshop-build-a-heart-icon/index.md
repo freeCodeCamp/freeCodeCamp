@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Heart Icon
 
-This workshop will cover how to work with SVG icons.
+In this workshop, you will practice working with SVGs by building a heart icon
