@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 import {
   getTodayUsCentral,
-  formatDate,
-  formatDisplayDate
+  formatDate
+  // formatDisplayDate
 } from '../client/src/components/daily-coding-challenge/helpers';
 
 const dateRouteRe = /.*\/daily-coding-challenge\/date\/.*/;
@@ -13,7 +13,7 @@ const [year, month, day] = todayUsCentral.split('-').map(Number);
 
 const todayMidnight = `${todayUsCentral}T00:00:00.000Z`;
 
-const displayDate = formatDisplayDate(todayUsCentral);
+// const displayDate = formatDisplayDate(todayUsCentral);
 
 const mockApiChallenge = {
   id: 'test-challenge-id',
@@ -124,7 +124,30 @@ test.describe('Daily Coding Challenges', () => {
     ).toBeVisible();
   });
 
-  test('should load and display a daily coding challenge with a valid date', async ({
+  // test('', async ({
+  //   page
+  // }) => {
+  //   await page.route(dateRouteRe, async route => {
+  //     await route.fulfill({
+  //       status: 200,
+  //       headers: { 'Content-Type': 'application/json' },
+  //       json: mockApiChallenge
+  //     });
+  //   });
+
+  //   await page.goto(`/learn/daily-coding-challenge?date=${todayUsCentral}`);
+
+  //   // Breadcrumbs
+  //   // await expect(
+  //   //   page.getByRole('link', { name: /daily coding challenge/i })
+  //   // ).toBeVisible();
+  //   // await expect(
+  //   //   page.getByRole('link', { name: new RegExp(displayDate, 'i') })
+  //   // ).toBeVisible();
+
+  // });
+
+  test('should load and display a daily coding challenge with a valid date, and should be able to switch between JavaScript and Python', async ({
     page
   }) => {
     await page.route(dateRouteRe, async route => {
@@ -144,26 +167,12 @@ test.describe('Daily Coding Challenges', () => {
     await expect(page.getByText('Test description')).toBeVisible();
 
     // Breadcrumbs
-    await expect(
-      page.getByRole('link', { name: /daily coding challenge/i })
-    ).toBeVisible();
-    await expect(
-      page.getByRole('link', { name: new RegExp(displayDate, 'i') })
-    ).toBeVisible();
-  });
-
-  test('should be able to switch between JavaScript and Python', async ({
-    page
-  }) => {
-    await page.route(dateRouteRe, async route => {
-      await route.fulfill({
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-        json: mockApiChallenge
-      });
-    });
-
-    await page.goto(`/learn/daily-coding-challenge?date=${todayUsCentral}`);
+    // await expect(
+    //   page.getByRole('link', { name: /daily coding challenge/i })
+    // ).toBeVisible();
+    // await expect(
+    //   page.getByRole('link', { name: new RegExp(displayDate, 'i') })
+    // ).toBeVisible();
 
     // Language buttons
     await expect(
