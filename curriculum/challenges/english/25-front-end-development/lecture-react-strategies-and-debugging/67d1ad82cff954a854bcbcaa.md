@@ -1,16 +1,11 @@
 ---
 id: 67d1ad82cff954a854bcbcaa
 title: What Is Prop Drilling?
-challengeType: 11
-videoId: 83LkOesFkWI
+challengeType: 19
 dashedName: what-is-prop-drilling
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
 
 What is prop drilling?
 
@@ -149,7 +144,7 @@ By using the `useState` hook in the grandchild.
 
 The prop must go through the child before reaching grandchild.
 
-## --video-solution--
+## --solution--
 
 2
 
@@ -185,7 +180,7 @@ Drilling down into component state using hooks.
 
 It happens when props are passed through multiple levels unnecessarily.
 
-## --video-solution--
+## --solution--
 
 3
 
@@ -221,6 +216,6 @@ It eliminates the need for state management libraries.
 
 Too many props passing through multiple components can make the code messy.
 
-## --video-solution--
+## --solution--
 
 3
