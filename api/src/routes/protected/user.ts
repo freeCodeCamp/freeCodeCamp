@@ -683,7 +683,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               theme: theme ?? 'default',
               twitter: normalizeTwitter(twitter),
               username,
-              usernameDisplay,
+              usernameDisplay: usernameDisplay || username,
               userToken: encodedToken,
               completedSurveys: normalizeSurveys(completedSurveys),
               msUsername: msUsername?.msUsername
