@@ -81,6 +81,7 @@ test.describe('Daily Coding Challenges', () => {
     await page.route(dateRouteRe, async route => {
       await route.fulfill({
         status: 404,
+        headers: { 'Content-Type': 'application/json' },
         json: { type: 'error', message: 'Challenge not found.' }
       });
     });
@@ -95,6 +96,7 @@ test.describe('Daily Coding Challenges', () => {
     await page.route(dateRouteRe, async route => {
       await route.fulfill({
         status: 500,
+        headers: { 'Content-Type': 'application/json' },
         json: { type: 'error', message: 'Internal server error.' }
       });
     });
@@ -110,8 +112,9 @@ test.describe('Daily Coding Challenges', () => {
   }) => {
     await page.route(dateRouteRe, async route => {
       await route.fulfill({
-        json: { invalid: 'data structure' },
-        status: 200
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+        json: { invalid: 'data structure' }
       });
     });
 
@@ -126,8 +129,9 @@ test.describe('Daily Coding Challenges', () => {
   }) => {
     await page.route(dateRouteRe, async route => {
       await route.fulfill({
-        json: mockApiChallenge,
-        status: 200
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+        json: mockApiChallenge
       });
     });
 
@@ -153,8 +157,9 @@ test.describe('Daily Coding Challenges', () => {
   }) => {
     await page.route(dateRouteRe, async route => {
       await route.fulfill({
-        json: mockApiChallenge,
-        status: 200
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+        json: mockApiChallenge
       });
     });
 
@@ -213,8 +218,9 @@ test.describe('Daily Coding Challenge Archive', () => {
   test('should load and display the calendar', async ({ page }) => {
     await page.route(allRouteRe, async route => {
       await route.fulfill({
-        json: mockApiAllChallenges,
-        status: 200
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+        json: mockApiAllChallenges
       });
     });
 
