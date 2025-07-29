@@ -124,29 +124,6 @@ test.describe('Daily Coding Challenges', () => {
     ).toBeVisible();
   });
 
-  // test('', async ({
-  //   page
-  // }) => {
-  //   await page.route(dateRouteRe, async route => {
-  //     await route.fulfill({
-  //       status: 200,
-  //       headers: { 'Content-Type': 'application/json' },
-  //       json: mockApiChallenge
-  //     });
-  //   });
-
-  //   await page.goto(`/learn/daily-coding-challenge?date=${todayUsCentral}`);
-
-  //   // Breadcrumbs
-  //   // await expect(
-  //   //   page.getByRole('link', { name: /daily coding challenge/i })
-  //   // ).toBeVisible();
-  //   // await expect(
-  //   //   page.getByRole('link', { name: new RegExp(displayDate, 'i') })
-  //   // ).toBeVisible();
-
-  // });
-
   test('should load and display a daily coding challenge with a valid date, and should be able to switch between JavaScript and Python', async ({
     page
   }) => {
@@ -167,11 +144,12 @@ test.describe('Daily Coding Challenges', () => {
     await expect(page.getByText('Test description')).toBeVisible();
 
     // Breadcrumbs
+    const breadcrumb = page.getByTestId('breadcrumb-desktop');
     await expect(
-      page.getByRole('link', { name: /daily coding challenge/i })
+      breadcrumb.getByRole('link', { name: /daily coding challenge/i })
     ).toBeVisible();
     await expect(
-      page.getByRole('link', { name: new RegExp(displayDate, 'i') })
+      breadcrumb.getByRole('link', { name: new RegExp(displayDate, 'i') })
     ).toBeVisible();
 
     // Language buttons
