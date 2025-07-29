@@ -144,13 +144,8 @@ test.describe('Daily Coding Challenges', () => {
     await expect(page.getByText('Test description')).toBeVisible();
 
     // Breadcrumbs
-    const breadcrumb = page.getByTestId('breadcrumb-desktop');
-    await expect(
-      breadcrumb.getByRole('link', { name: /daily coding challenge/i })
-    ).toBeVisible();
-    await expect(
-      breadcrumb.getByRole('link', { name: new RegExp(displayDate, 'i') })
-    ).toBeVisible();
+    await expect(page.getByText('Daily coding challenge')).toBeVisible();
+    await expect(page.getByText(displayDate)).toBeVisible();
 
     // Language buttons
     await expect(
