@@ -140,6 +140,7 @@ const minimalUserData: Prisma.userCreateInput = {
   picture: 'https://www.freecodecamp.org/cat.png',
   sendQuincyEmail: true,
   username: 'testuser',
+  usernameDisplay: 'testuser',
   unsubscribeId: '1234567890'
 };
 
@@ -276,7 +277,8 @@ const publicUserData = {
   profileUI: testUserData.profileUI,
   savedChallenges: testUserData.savedChallenges,
   twitter: 'https://twitter.com/foobar',
-  username: testUserData.usernameDisplay, // It defaults to usernameDisplay
+  username: testUserData.username,
+  usernameDisplay: testUserData.usernameDisplay,
   website: testUserData.website,
   yearsTopContributor: testUserData.yearsTopContributor
 };
