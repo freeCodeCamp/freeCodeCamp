@@ -144,10 +144,6 @@ By using the `useState` hook in the grandchild.
 
 The prop must go through the child before reaching grandchild.
 
-## --solution--
-
-2
-
 ## --text--
 
 What is prop drilling in React?
@@ -180,10 +176,6 @@ Drilling down into component state using hooks.
 
 It happens when props are passed through multiple levels unnecessarily.
 
-## --solution--
-
-3
-
 ## --text--
 
 Why is prop drilling considered a problem in larger applications?
@@ -215,7 +207,3 @@ It eliminates the need for state management libraries.
 ### --feedback--
 
 Too many props passing through multiple components can make the code messy.
-
-## --solution--
-
-3
