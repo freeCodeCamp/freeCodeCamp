@@ -5,22 +5,27 @@ const _ = require('lodash');
 const envData = require('../config/env.json');
 const {
   getChallengesForLang,
-  ENGLISH_CHALLENGES_DIR,
   BLOCK_STRUCTURE_DIR,
   // I18N_CHALLENGES_DIR,
   getChallengesDirForLang
 } = require('../../curriculum/get-challenges');
 
-const { createChallenge } = require('../../parse-superblock');
+const { BlockCreator } = require('../../parse-superblock');
 
 const { curriculumLocale } = envData;
 
 exports.localeChallengesRootDir = getChallengesDirForLang(curriculumLocale);
+const blockContentDir = path.resolve(exports.localeChallengesRootDir, 'blocks');
 
 exports.replaceChallengeNode = () => {
+  const blockCreator = new BlockCreator({
+    blockContentDir,
+    blockStructureDir: BLOCK_STRUCTURE_DIR
+  });
   return async function replaceChallengeNode(filePath) {
     const parentDir = path.dirname(filePath);
     const blockName = path.basename(parentDir);
+    const filename = path.basename(filePath);
 
     const blockStructurePath = path.resolve(
       BLOCK_STRUCTURE_DIR,
@@ -31,18 +36,8 @@ exports.replaceChallengeNode = () => {
     );
     delete require.cache[require.resolve(blockStructurePath)];
     const meta = require(blockStructurePath);
-    const englishPath = path.resolve(
-      ENGLISH_CHALLENGES_DIR,
-      'english',
-      filePath
-    );
-    // const i18nPath = path.resolve(
-    //   I18N_CHALLENGES_DIR,
-    //   curriculumLocale,
-    //   filePath
-    // );
 
-    return await createChallenge(englishPath, meta);
+    return await blockCreator.createChallenge(filename, blockName, meta);
   };
 };
 

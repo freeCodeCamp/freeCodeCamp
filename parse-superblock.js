@@ -195,6 +195,16 @@ class BlockCreator {
     this.blockStructureDir = blockStructureDir;
   }
 
+  async createChallenge(filename, block, meta, parser = parseMD) {
+    const filePath = path.resolve(this.blockContentDir, block, filename);
+    const challenge = await parser(filePath);
+
+    // TODO: Update this once we're handling translations properly
+    challenge.translationPending = false;
+
+    return addMetaToChallenge(fixChallengeProperties(challenge), meta);
+  }
+
   /**
    * Reads and parses all challenges from a block directory
    * @param {string} blockDir - Path to the block directory
@@ -202,7 +212,8 @@ class BlockCreator {
    * @param {object} meta - Meta object for the block
    * @returns {Promise<Array<object>>} Array of challenge objects
    */
-  async readBlockChallenges(blockDir, createChallenge, meta) {
+  async readBlockChallenges(block, meta) {
+    const blockDir = path.resolve(this.blockContentDir, block);
     const challengeFiles = fs
       .readdirSync(blockDir)
       .filter(file => file.endsWith('.md'));
@@ -210,8 +221,7 @@ class BlockCreator {
     const foundChallenges = [];
 
     for (const file of challengeFiles) {
-      const filePath = path.join(blockDir, file);
-      const challenge = await createChallenge(filePath, meta);
+      const challenge = await this.createChallenge(file, block, meta);
       foundChallenges.push(challenge);
     }
 
@@ -267,11 +277,7 @@ class BlockCreator {
     };
 
     // Read challenges from directory
-    const foundChallenges = await this.readBlockChallenges(
-      blockContentDir,
-      createChallenge,
-      meta
-    );
+    const foundChallenges = await this.readBlockChallenges(blockName, meta);
     debug(`Found ${foundChallenges.length} challenge files in directory`);
 
     // Log found challenges
@@ -350,15 +356,6 @@ class SuperblockCreator {
 
 // ===== I/O FUNCTIONS =====
 
-async function createChallenge(filePath, meta, parser = parseMD) {
-  const challenge = await parser(filePath);
-
-  // TODO: Update this once we're handling translations properly
-  challenge.translationPending = false;
-
-  return addMetaToChallenge(fixChallengeProperties(challenge), meta);
-}
-
 /**
  * Transforms superblock data to extract blocks array
  * @param {object} superblockData - The superblock data object
@@ -420,7 +417,5 @@ module.exports = {
   validateChallenges,
   buildBlock,
   transformSuperBlock,
-  fixChallengeProperties,
-  // I/O functions (for CLI usage and backward compatibility)
-  createChallenge
+  fixChallengeProperties
 };

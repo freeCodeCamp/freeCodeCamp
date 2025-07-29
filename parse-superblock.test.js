@@ -4,8 +4,8 @@ const {
   transformSuperBlock,
   addMetaToChallenge,
   fixChallengeProperties,
-  createChallenge,
-  SuperblockCreator
+  SuperblockCreator,
+  BlockCreator
 } = require('./parse-superblock');
 const { isPoly } = require('./shared/utils/polyvinyl');
 
@@ -367,8 +367,13 @@ describe('parseSuperblock pure functions', () => {
 
   describe('createChallenge', () => {
     it('should add meta properties', async () => {
-      const challenge = await createChallenge(
-        'filePath',
+      const blockCreator = new BlockCreator({
+        blockContentDir: '',
+        blockStructureDir: ''
+      });
+      const challenge = await blockCreator.createChallenge(
+        'file1.md',
+        'test-block',
         { challengeOrder: [{ id: '1' }] },
         () => ({ id: '1' })
       );
