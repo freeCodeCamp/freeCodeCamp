@@ -4,7 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const { isEmpty } = require('lodash');
 
-const { SuperblockParser } = require('./parse-superblock');
+const { SuperblockCreator, BlockCreator } = require('./parse-superblock');
+
 const { parseCertification } = require('./parse-certification');
 
 const STRUCTURE_DIR = path.resolve(__dirname, 'curriculum/structure');
@@ -50,7 +51,13 @@ const superBlockNames = {
 async function parseCurriculum(contentDir) {
   const blockContentDir = path.resolve(contentDir, 'blocks');
   const blockStructureDir = path.resolve(STRUCTURE_DIR, 'blocks');
-  const parser = new SuperblockParser({ blockContentDir, blockStructureDir });
+
+  const parser = new SuperblockCreator({
+    blockCreator: new BlockCreator({
+      blockContentDir,
+      blockStructureDir
+    })
+  });
   console.log('Reading curriculum.json...');
 
   // Read the curriculum.json file
