@@ -4227,9 +4227,11 @@
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lectures."]
       },
-      "workshop-placeholder-dictionaries-and-sets": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "workshop-medical-data-validator": {
+        "title": "Build a Medical Data Validator",
+        "intro": [
+          "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
+        ]
       },
       "lab-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
