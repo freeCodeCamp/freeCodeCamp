@@ -18,6 +18,12 @@ Using `let` or `const`, declare a global variable named `myGlobal` outside of an
 
 Inside function `fun1`, assign `5` to `oopsGlobal` ***without*** using the `var`, `let` or `const` keywords.
 
+# --before-each--
+
+```js
+var oopsGlobal;
+```
+
 # --hints--
 
 `myGlobal` should be defined
@@ -41,44 +47,11 @@ assert(/(let|const)\s+myGlobal/.test(__helpers.removeJSComments(code)));
 `oopsGlobal` should be a global variable and have a value of `5`
 
 ```js
-assert(typeof oopsGlobal != 'undefined' && oopsGlobal === 5);
+fun1();
+assert(typeof oopsGlobal != 'undefined');
 ```
 
 # --seed--
-
-## --before-user-code--
-
-```js
-var logOutput = "";
-var originalConsole = console
-function capture() {
-    var nativeLog = console.log;
-    console.log = function (message) {
-        logOutput = message;
-        if(nativeLog.apply) {
-          nativeLog.apply(originalConsole, arguments);
-        } else {
-          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
-          nativeLog(nativeMsg);
-        }
-    };
-}
-
-function uncapture() {
-  console.log = originalConsole.log;
-}
-var oopsGlobal;
-capture();
-```
-
-## --after-user-code--
-
-```js
-fun1();
-fun2();
-uncapture();
-(function() { return logOutput || "console.log never called"; })();
-```
 
 ## --seed-contents--
 

@@ -690,7 +690,7 @@ How can you make a grid item start at column line 2 and end at column line 4?
 
 #### --distractors--
 
-`grid-column: 2 / span 2;`
+`grid-column: 2 / span 4;`
 
 ---
 

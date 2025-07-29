@@ -16,7 +16,13 @@
               "dashedName": "lab-debug-camperbots-profile-page"
             },
             {
-              "dashedName": "lecture-what-is-html"
+              "dashedName": "lecture-understanding-html-attributes"
+            },
+            {
+              "dashedName": "lab-debug-pet-adoption-page"
+            },
+            {
+              "dashedName": "lecture-understanding-the-html-boilerplate"
             },
             {
               "dashedName": "workshop-cat-photo-app"
@@ -29,6 +35,12 @@
             },
             {
               "dashedName": "lab-travel-agency-page"
+            },
+            {
+              "dashedName": "lecture-working-with-audio-and-video-elements"
+            },
+            {
+              "dashedName": "lecture-working-with-images-and-svgs"
             },
             {
               "dashedName": "lecture-working-with-media"
@@ -52,6 +64,15 @@
           "blocks": [
             {
               "dashedName": "lecture-importance-of-semantic-html"
+            },
+            {
+              "dashedName": "lecture-understanding-nuanced-semantic-elements"
+            },
+            {
+              "dashedName": "lecture-working-with-text-and-time-semantic-elements"
+            },
+            {
+              "dashedName": "lecture-working-with-specialized-semantic-elements"
             },
             {
               "dashedName": "workshop-blog-page"
@@ -566,7 +587,19 @@
           "dashedName": "javascript-booleans-and-numbers",
           "blocks": [
             {
-              "dashedName": "lecture-working-with-numbers-booleans-and-the-math-object"
+              "dashedName": "lecture-working-with-numbers-and-arithmetic-operators"
+            },
+            {
+              "dashedName": "lecture-working-with-operator-behavior"
+            },
+            {
+              "dashedName": "lecture-working-with-comparison-and-boolean-operators"
+            },
+            {
+              "dashedName": "lecture-working-with-unary-and-bitwise-operators"
+            },
+            {
+              "dashedName": "lecture-working-with-conditional-logic-and-math-methods"
             },
             {
               "dashedName": "workshop-mathbot"
@@ -604,16 +637,25 @@
               "dashedName": "workshop-calculator"
             },
             {
+              "dashedName": "lab-boolean-check"
+            },
+            {
               "dashedName": "lab-email-masker"
             },
             {
               "dashedName": "workshop-loan-qualification-checker"
             },
             {
+              "dashedName": "lab-celsius-to-fahrenheit-converter"
+            },
+            {
               "dashedName": "lab-leap-year-calculator"
             },
             {
               "dashedName": "lab-truncate-string"
+            },
+            {
+              "dashedName": "lab-string-ending-checker"
             },
             {
               "dashedName": "review-javascript-functions"
@@ -634,6 +676,9 @@
             },
             {
               "dashedName": "lab-lunch-picker-program"
+            },
+            {
+              "dashedName": "lab-reverse-a-string"
             },
             {
               "dashedName": "lecture-working-with-common-array-methods"
@@ -659,6 +704,9 @@
               "dashedName": "lab-quiz-game"
             },
             {
+              "dashedName": "lab-record-collection"
+            },
+            {
               "dashedName": "review-javascript-objects"
             },
             {
@@ -676,10 +724,17 @@
               "dashedName": "workshop-sentence-analyzer"
             },
             {
+              "dashedName": "lab-longest-word-in-a-string"
+            },
+            {
               "dashedName": "lab-factorial-calculator"
             },
             { "dashedName": "lab-mutations" },
             { "dashedName": "lab-chunky-monkey" },
+            { "dashedName": "lab-repeat-a-string" },
+            {
+              "dashedName": "lab-profile-lookup"
+            },
             {
               "dashedName": "review-javascript-loops"
             },
@@ -693,6 +748,12 @@
           "blocks": [
             {
               "dashedName": "lecture-understanding-core-javascript-fundamentals"
+            },
+            {
+              "dashedName": "lab-largest-number-finder"
+            },
+            {
+              "dashedName": "lab-first-element-finder"
             },
             {
               "dashedName": "lab-slice-and-splice"
@@ -788,6 +849,12 @@
           "dashedName": "js-a11y",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "workshop-planets-tablist"
+            },
+            {
+              "dashedName": "workshop-note-taking-app"
+            },
             {
               "dashedName": "review-js-a11y"
             },
@@ -1078,6 +1145,9 @@
             },
             { "dashedName": "workshop-fruit-search-app" },
             {
+              "dashedName": "lab-one-time-password-generator"
+            },
+            {
               "dashedName": "review-react-state-and-hooks"
             },
             {
@@ -1150,6 +1220,15 @@
               "dashedName": "lecture-working-with-css-libraries-and-frameworks"
             },
             {
+              "dashedName": "workshop-error-message-component"
+            },
+            {
+              "dashedName": "workshop-tailwind-cta-component"
+            },
+            {
+              "dashedName": "lab-music-shopping-cart-page"
+            },
+            {
               "dashedName": "review-css-libraries-and-frameworks"
             },
             {
@@ -1204,7 +1283,7 @@
           "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-working-with-loops-and-sequences" },
-            { "dashedName": "workshop-placeholder-loops-and-sequences" },
+            { "dashedName": "workshop-pin-extractor" },
             { "dashedName": "lab-number-pattern-generator" },
             { "dashedName": "review-loops-and-sequences" },
             { "dashedName": "quiz-loops-and-sequences" }
@@ -1285,7 +1364,8 @@
             { "dashedName": "workshop-merge-sort" },
             { "dashedName": "lab-quicksort" },
             { "dashedName": "lab-selection-sort" },
-            { "dashedName": "lab-luhn-argorithm" },
+            { "dashedName": "lab-luhn-algorithm" },
+            { "dashedName": "lab-tower-of-hanoi" },
             { "dashedName": "review-searching-and-sorting-algorithms" },
             { "dashedName": "quiz-searching-and-sorting-algorithms" }
           ]
@@ -1330,6 +1410,9 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "lecture-understanding-the-command-line-and-working-with-bash"
+            },
+            {
               "dashedName": "workshop-bash-boilerplate"
             },
             {
@@ -1362,6 +1445,9 @@
           "dashedName": "bash-scripting",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "lecture-understanding-bash-scripting"
+            },
             {
               "dashedName": "workshop-bash-five-programs"
             },

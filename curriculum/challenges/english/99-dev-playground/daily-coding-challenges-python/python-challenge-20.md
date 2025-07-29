@@ -7,7 +7,9 @@ dashedName: python-challenge-20
 
 # --description--
 
-Given an array of integers, return an array of integers that appear more than once in the initial array, in the same order that they appear in the initial array. If no values appear more than once, return an empty array.
+Given an array of integers, return an array of integers that appear more than once in the initial array, sorted in ascending order. If no values appear more than once, return an empty array.
+
+- Only include one instance of each value in the returned array.
 
 # --hints--
 

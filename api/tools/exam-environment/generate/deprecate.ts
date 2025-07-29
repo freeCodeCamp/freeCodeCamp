@@ -22,7 +22,7 @@ async function main() {
   console.info('Connected.');
 
   try {
-    await prisma.envExam.update({
+    await prisma.examEnvironmentExam.update({
       where: {
         id: ENV_EXAM_ID
       },
@@ -31,7 +31,7 @@ async function main() {
       }
     });
     console.info(`Exam "${ENV_EXAM_ID}" deprecated...`);
-    const res = await prisma.envGeneratedExam.updateMany({
+    const res = await prisma.examEnvironmentGeneratedExam.updateMany({
       where: {
         examId: ENV_EXAM_ID
       },

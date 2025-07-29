@@ -107,7 +107,7 @@ describe('auth0 plugin', () => {
       });
 
       expect(res.headers.location).toMatch(
-        `${HOME_LOCATION}/learn?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+        `${HOME_LOCATION}/?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
       );
       expect(res.statusCode).toBe(302);
     });
@@ -119,7 +119,7 @@ describe('auth0 plugin', () => {
       });
 
       expect(res.headers.location).toMatch(
-        `${HOME_LOCATION}/learn?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+        `${HOME_LOCATION}/?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
       );
       expect(res.statusCode).toBe(302);
     });

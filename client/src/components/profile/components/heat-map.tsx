@@ -1,18 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import CalendarHeatMap from 'react-calendar-heatmap';
-// TODO: Check if we can import { addDays, addMonths ... } from 'date-fns'
-// without bundling all of the package then we can remove the disable-next-line
-// comments.
 
-// eslint-disable-next-line import/no-duplicates
-import addDays from 'date-fns/addDays';
-// eslint-disable-next-line import/no-duplicates
-import addMonths from 'date-fns/addMonths';
-// eslint-disable-next-line import/no-duplicates
-import isEqual from 'date-fns/isEqual';
-// eslint-disable-next-line import/no-duplicates
-import startOfDay from 'date-fns/startOfDay';
+import { addDays, addMonths, isEqual, startOfDay } from 'date-fns';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -22,8 +12,6 @@ import { Row, Spacer } from '@freecodecamp/ui';
 import 'react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import envData from '../../../../config/env.json';
 import { getLangCode } from '../../../../../shared/config/i18n';
 import { User } from '../../../redux/prop-types';
