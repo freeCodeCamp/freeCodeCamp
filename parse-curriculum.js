@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { isEmpty } = require('lodash');
+const debug = require('debug')('fcc:parse-curriculum');
 
 const { SuperblockCreator, BlockCreator } = require('./parse-superblock');
 
@@ -48,14 +49,24 @@ const superBlockNames = {
 /**
  * Main function to parse all superblocks and create parsed-curriculum.json
  */
-async function parseCurriculum(contentDir) {
+async function parseCurriculum(baseDir, i18nBaseDir, lang) {
+  const contentDir = path.resolve(baseDir, 'challenges', 'english');
+  const i18nContentDir = path.resolve(i18nBaseDir, 'challenges', lang);
   const blockContentDir = path.resolve(contentDir, 'blocks');
+  const i18nBlockContentDir = path.resolve(i18nContentDir, 'blocks');
   const blockStructureDir = path.resolve(STRUCTURE_DIR, 'blocks');
+
+  debug(`Using content directory: ${contentDir}`);
+  debug(`Using i18n content directory: ${i18nContentDir}`);
+  debug(`Using block content directory: ${blockContentDir}`);
+  debug(`Using i18n block content directory: ${i18nBlockContentDir}`);
 
   const parser = new SuperblockCreator({
     blockCreator: new BlockCreator({
       blockContentDir,
-      blockStructureDir
+      blockStructureDir,
+      i18nBlockContentDir,
+      lang
     })
   });
   console.log('Reading curriculum.json...');
