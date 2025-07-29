@@ -218,14 +218,9 @@ class BlockCreator {
       .readdirSync(blockDir)
       .filter(file => file.endsWith('.md'));
 
-    const foundChallenges = [];
-
-    for (const file of challengeFiles) {
-      const challenge = await this.createChallenge(file, block, meta);
-      foundChallenges.push(challenge);
-    }
-
-    return foundChallenges;
+    return await Promise.all(
+      challengeFiles.map(file => this.createChallenge(file, block, meta))
+    );
   }
 
   /**
