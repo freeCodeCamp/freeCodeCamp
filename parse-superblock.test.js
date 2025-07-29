@@ -4,8 +4,8 @@ const {
   transformSuperBlock,
   addMetaToChallenge,
   fixChallengeProperties,
-  processSuperblock,
-  createChallenge
+  createChallenge,
+  SuperblockCreator
 } = require('./parse-superblock');
 const { isPoly } = require('./shared/utils/polyvinyl');
 
@@ -490,7 +490,9 @@ describe('parseSuperblock pure functions', () => {
       expect(result).toHaveLength(2);
     });
   });
+});
 
+describe('SuperblockCreator class', () => {
   describe('processSuperblock', () => {
     test('should process blocks using the provided processing function', async () => {
       const mockProcessBlockFn = jest
@@ -499,17 +501,21 @@ describe('parseSuperblock pure functions', () => {
         .mockResolvedValueOnce('Block 2')
         .mockResolvedValueOnce(null);
 
+      const mockBlockCreator = {
+        processBlock: mockProcessBlockFn
+      };
+
       const blocks = [
         { dashedName: 'block-1' },
         { dashedName: 'block-2' },
         { dashedName: 'block-3' }
       ];
 
-      const result = await processSuperblock(
-        mockProcessBlockFn,
-        blocks,
-        'test-superblock'
-      );
+      const parser = new SuperblockCreator({
+        blockCreator: mockBlockCreator
+      });
+
+      const result = await parser.processSuperblock(blocks, 'test-superblock');
 
       expect(mockProcessBlockFn).toHaveBeenCalledTimes(3);
 
