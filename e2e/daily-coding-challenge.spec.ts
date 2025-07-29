@@ -203,12 +203,8 @@ test.describe('Daily Coding Challenges', () => {
       '# Python seed code'
     );
 
-    // Should stay on Python UI after reload
-    const reloadApiPromise = page.waitForResponse(dateRouteRe);
+    await page.goto(`/learn/daily-coding-challenge?date=${todayUsCentral}`);
 
-    await page.reload();
-    // Wait for the API call to complete so we know page it loaded
-    await reloadApiPromise;
     await expect(page.getByRole('button', { name: /main.py/i })).toBeVisible();
   });
 });
