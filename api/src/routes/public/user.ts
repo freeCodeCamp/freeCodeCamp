@@ -166,7 +166,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
                 isLocked: true,
                 profileUI: normalizedProfileUI,
                 username: user.username,
-                usernameDisplay: user.usernameDisplay
+                usernameDisplay: user.usernameDisplay || user.username,
               }
             }
           },

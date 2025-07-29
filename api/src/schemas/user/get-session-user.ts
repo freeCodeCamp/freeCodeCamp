@@ -117,7 +117,7 @@ export const getSessionUser = {
           joinDate: Type.String(),
           savedChallenges: Type.Optional(Type.Array(savedChallenge)),
           username: Type.String(),
-          usernameDisplay: Type.Union([Type.String(), Type.Null()]),
+          usernameDisplay: Type.String(),
           userToken: Type.Optional(Type.String()),
           completedSurveys: Type.Array(
             Type.Object({
