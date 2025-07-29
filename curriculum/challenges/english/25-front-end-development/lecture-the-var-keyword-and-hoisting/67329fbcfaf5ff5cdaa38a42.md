@@ -23,7 +23,7 @@ var num = 10;
 The most significant issue with `var` is its lack of block scoping. Variables declared with `var` inside a block like an `if` statement or a `for` loop are still accessible outside that block. 
 
 ```js
-if (true){
+if (true) {
   var num = 5;
 }
 console.log(num); // 5
