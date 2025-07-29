@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 import {
   getTodayUsCentral,
-  formatDate
-  // formatDisplayDate
+  formatDate,
+  formatDisplayDate
 } from '../client/src/components/daily-coding-challenge/helpers';
 
 const dateRouteRe = /.*\/daily-coding-challenge\/date\/.*/;
@@ -13,7 +13,7 @@ const [year, month, day] = todayUsCentral.split('-').map(Number);
 
 const todayMidnight = `${todayUsCentral}T00:00:00.000Z`;
 
-// const displayDate = formatDisplayDate(todayUsCentral);
+const displayDate = formatDisplayDate(todayUsCentral);
 
 const mockApiChallenge = {
   id: 'test-challenge-id',
@@ -167,12 +167,12 @@ test.describe('Daily Coding Challenges', () => {
     await expect(page.getByText('Test description')).toBeVisible();
 
     // Breadcrumbs
-    // await expect(
-    //   page.getByRole('link', { name: /daily coding challenge/i })
-    // ).toBeVisible();
-    // await expect(
-    //   page.getByRole('link', { name: new RegExp(displayDate, 'i') })
-    // ).toBeVisible();
+    await expect(
+      page.getByRole('link', { name: /daily coding challenge/i })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('link', { name: new RegExp(displayDate, 'i') })
+    ).toBeVisible();
 
     // Language buttons
     await expect(
