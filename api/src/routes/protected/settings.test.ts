@@ -759,8 +759,8 @@ Happy coding!
           website: 'https://www.freecodecamp.org/',
           twitter: 'https://twitter.com/ossia',
           linkedin: 'https://www.linkedin.com/in/quincylarson',
-          githubProfile: 'https://bsky.app/profile/quincy.bsky.social',
-          bluesky: ''
+          githubProfile: 'https://github.com/QuincyLarson',
+          bluesky: 'https://bsky.app/profile/quincy.bsky.social'
         });
 
         expect(response.body).toEqual({
