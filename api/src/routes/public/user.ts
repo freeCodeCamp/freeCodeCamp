@@ -150,7 +150,6 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         'unsubscribeId',
         'donationEmails',
         'externalId',
-        'usernameDisplay',
         'isBanned'
       ]);
 
@@ -166,7 +165,8 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
               [user.username]: {
                 isLocked: true,
                 profileUI: normalizedProfileUI,
-                username: user.username
+                username: user.username,
+                usernameDisplay: user.usernameDisplay
               }
             }
           },

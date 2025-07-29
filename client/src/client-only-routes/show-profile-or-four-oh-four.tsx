@@ -29,8 +29,7 @@ interface ShowProfileOrFourOhFourProps {
 const makeMapStateToProps =
   () =>
   (state: unknown, { maybeUser = '' }) => {
-    // const username = maybeUser.toLowerCase();
-    const username = maybeUser;
+    const username = maybeUser.toLowerCase();
     const requestedUser = (
       createUserByNameSelector as (
         maybeUser: string
