@@ -185,39 +185,7 @@ function fixChallengeProperties(challenge) {
   return fixedChallenge;
 }
 
-/**
- * Processes blocks array and returns result object
- * @param {function} processBlockFn - Function to process individual blocks
- * @param {object[]} blocks - Array of block objects with dashedName property
- * @returns {Promise<object>} Result object with processed blocks
- */
-async function processSuperblock(processBlockFn, blocks, superBlockName) {
-  const superBlock = { blocks: {} };
-
-  // Process each block
-  for (let i = 0; i < blocks.length; i++) {
-    const blockInfo = blocks[i];
-    const blockResult = await processBlockFn(blockInfo, __dirname, {
-      superBlock: superBlockName,
-      order: i,
-      ...(blockInfo.chapter && { chapter: blockInfo.chapter }),
-      ...(blockInfo.module && { module: blockInfo.module })
-    });
-    if (blockResult) {
-      superBlock.blocks[blockInfo.dashedName] = blockResult;
-    }
-  }
-
-  debug(
-    `Completed parsing superblock. Total blocks: ${Object.keys(superBlock.blocks).length}`
-  );
-  return superBlock;
-}
-
-/**
- * SuperblockParser class for parsing superblocks with a configured base directory
- */
-class SuperblockParser {
+class BlockCreator {
   /**
    * @param {string} blockContentDir - The directory containing the curriculum blocks
    * @param {string} blockStructureDir - The directory containing the block structure files
@@ -228,6 +196,29 @@ class SuperblockParser {
   }
 
   /**
+   * Reads and parses all challenges from a block directory
+   * @param {string} blockDir - Path to the block directory
+   * @param {function} createChallenge - Parser function (async)
+   * @param {object} meta - Meta object for the block
+   * @returns {Promise<Array<object>>} Array of challenge objects
+   */
+  async readBlockChallenges(blockDir, createChallenge, meta) {
+    const challengeFiles = fs
+      .readdirSync(blockDir)
+      .filter(file => file.endsWith('.md'));
+
+    const foundChallenges = [];
+
+    for (const file of challengeFiles) {
+      const filePath = path.join(blockDir, file);
+      const challenge = await createChallenge(filePath, meta);
+      foundChallenges.push(challenge);
+    }
+
+    return foundChallenges;
+  }
+
+  /**
    * Processes a single block: reads challenges, validates, and builds block object
    * @param {object} blockInfo - Block info object with dashedName property
    * @param {object} options - Options object with superBlock and order properties
@@ -235,7 +226,7 @@ class SuperblockParser {
    */
   async processBlock(blockInfo, { superBlock, order, chapter, module }) {
     const blockName = blockInfo.dashedName;
-    debug(`Processing block: ${blockName}`);
+    debug(`Processing block ${blockName} in superblock ${superBlock}`);
 
     // Check if block directory exists
     const blockContentDir = path.resolve(this.blockContentDir, blockName);
@@ -276,7 +267,7 @@ class SuperblockParser {
     };
 
     // Read challenges from directory
-    const foundChallenges = await readBlockChallenges(
+    const foundChallenges = await this.readBlockChallenges(
       blockContentDir,
       createChallenge,
       meta
@@ -300,6 +291,15 @@ class SuperblockParser {
 
     return blockResult;
   }
+}
+
+class SuperblockCreator {
+  /**
+   * @param {BlockCreator} blockCreator - Instance of BlockCreator
+   */
+  constructor({ blockCreator }) {
+    this.blockCreator = blockCreator;
+  }
 
   /**
    * Main parsing function for superblock
@@ -316,13 +316,21 @@ class SuperblockParser {
     // Transform superblock data to get blocks array
     const blocks = transformSuperBlock(superblockData);
 
-    // Process the blocks and return result
+    return this.processSuperblock(blocks, superBlockName);
+  }
+
+  /**
+   * Processes blocks array and returns result object
+   * @param {object[]} blocks - Array of block objects with dashedName property
+   * @returns {Promise<object>} Result object with processed blocks
+   */
+  async processSuperblock(blocks, superBlockName) {
     const superBlock = { blocks: {} };
 
     // Process each block
     for (let i = 0; i < blocks.length; i++) {
       const blockInfo = blocks[i];
-      const blockResult = await this.processBlock(blockInfo, {
+      const blockResult = await this.blockCreator.processBlock(blockInfo, {
         superBlock: superBlockName,
         order: i,
         ...(blockInfo.chapter && { chapter: blockInfo.chapter }),
@@ -341,29 +349,6 @@ class SuperblockParser {
 }
 
 // ===== I/O FUNCTIONS =====
-
-/**
- * Reads and parses all challenges from a block directory
- * @param {string} blockDir - Path to the block directory
- * @param {function} createChallenge - Parser function (async)
- * @param {object} meta - Meta object for the block
- * @returns {Promise<Array<object>>} Array of challenge objects
- */
-async function readBlockChallenges(blockDir, createChallenge, meta) {
-  const challengeFiles = fs
-    .readdirSync(blockDir)
-    .filter(file => file.endsWith('.md'));
-
-  const foundChallenges = [];
-
-  for (const file of challengeFiles) {
-    const filePath = path.join(blockDir, file);
-    const challenge = await createChallenge(filePath, meta);
-    foundChallenges.push(challenge);
-  }
-
-  return foundChallenges;
-}
 
 async function createChallenge(filePath, meta, parser = parseMD) {
   const challenge = await parser(filePath);
@@ -426,31 +411,10 @@ function transformSuperBlock(superblockData) {
   return blocks;
 }
 
-/**
- * Legacy standalone processBlock function for backward compatibility
- * @param {object} blockInfo - Block info object with dashedName property
- * @param {string} baseDir - Base directory path
- * @param {object} options - Options object with superBlock and order properties
- * @returns {Promise<object|null>} Block object or null if processing failed
- */
-async function processBlock(
-  blockInfo,
-  baseDir,
-  { superBlock, order, chapter, module }
-) {
-  const parser = new SuperblockParser(baseDir);
-  return await parser.processBlock(blockInfo, {
-    superBlock,
-    order,
-    chapter,
-    module
-  });
-}
-
 // Export both pure functions (for testing) and I/O functions (for CLI usage)
 module.exports = {
-  // SuperblockParser class
-  SuperblockParser,
+  SuperblockCreator,
+  BlockCreator,
   // Pure functions (no I/O, no dependencies)
   addMetaToChallenge,
   validateChallenges,
@@ -458,8 +422,5 @@ module.exports = {
   transformSuperBlock,
   fixChallengeProperties,
   // I/O functions (for CLI usage and backward compatibility)
-  processSuperblock,
-  processBlock,
-  readBlockChallenges,
   createChallenge
 };
