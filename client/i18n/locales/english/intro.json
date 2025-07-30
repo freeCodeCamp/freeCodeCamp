@@ -2879,7 +2879,7 @@
       "lecture-debugging-css": {
         "title": "Debugging CSS",
         "intro": [
-          "In this lecture video, you'll learn how to debug CSS using your browser's developer tools and CSS validators."
+          "In this lecture, you'll learn how to debug CSS using your browser's developer tools and CSS validators."
         ]
       },
       "lab-product-landing-page": {
@@ -3376,7 +3376,7 @@
       "lecture-understanding-modules-imports-and-exports": {
         "title": "Understanding Modules, Imports, and Exports",
         "intro": [
-          "In this lecture video, you will learn about modules, imports, and exports in JavaScript."
+          "In this lecture, you will learn about modules, imports, and exports in JavaScript."
         ]
       },
       "lab-password-generator": {
@@ -3793,7 +3793,7 @@
       "lecture-understanding-recursion-and-the-call-stack": {
         "title": "Understanding Recursion and the Call Stack",
         "intro": [
-          "In this lecture video, you will learn about recursion and the call stack."
+          "In this lecture, you will learn about recursion and the call stack."
         ]
       },
       "workshop-decimal-to-binary-converter": {
