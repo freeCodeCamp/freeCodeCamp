@@ -102,6 +102,7 @@ export const getPublicProfile = {
               joinDate: Type.String(),
               savedChallenges: Type.Array(savedChallenge),
               username: Type.String(),
+              usernameDisplay: Type.String(),
               msUsername: Type.Optional(Type.String())
             })
           ])
