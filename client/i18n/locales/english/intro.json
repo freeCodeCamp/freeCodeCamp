@@ -4584,7 +4584,12 @@
         "title": "Bash Scripting Quiz",
         "intro": ["Test what you've learned on bash scripting in this quiz."]
       },
-      "tkgg": { "title": "315", "intro": [] },
+      "lecture-working-with-sql": {
+        "title": "Working With SQL",
+        "intro": [
+          "In these lectures, you will learn about SQL injection, normalization, and the N+1 problem."
+        ]
+      },
       "workshop-sql-student-database-part-1": {
         "title": "Build a Student Database: Part 1",
         "intro": [
