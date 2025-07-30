@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Working with Arrays, Variables, and Naming Practices Lectures
 
-In these lectures, you will learn more about orking with arrays, variables, and naming practices.
+In these lectures, you will learn more about working with arrays, variables, and naming practices.
