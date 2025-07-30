@@ -5,14 +5,10 @@ import { createUserInput } from '../../utils/create-user';
 import { checkCanConnectToDb } from '../../../jest.utils';
 import { findOrCreateUser } from './auth-helpers';
 
-const captureException = jest.fn();
-
 async function setupServer() {
   const fastify = Fastify();
   await fastify.register(db);
   await checkCanConnectToDb(fastify.prisma);
-  // @ts-expect-error we're mocking the Sentry plugin
-  fastify.Sentry = { captureException };
   return fastify;
 }
 
@@ -33,38 +29,6 @@ describe('findOrCreateUser', () => {
     });
     await fastify.close();
     jest.clearAllMocks();
-  });
-
-  it('should send a message to Sentry if there are multiple users with the same email', async () => {
-    const user1 = await fastify.prisma.user.create({
-      data: createUserInput(email)
-    });
-    const user2 = await fastify.prisma.user.create({
-      data: createUserInput(email)
-    });
-
-    const ids = [user1.id, user2.id];
-
-    await findOrCreateUser(fastify, email);
-
-    expect(captureException).toHaveBeenCalledTimes(1);
-    expect(captureException).toHaveBeenCalledWith(
-      new Error(`Multiple user records found for: ${ids.join(', ')}`)
-    );
-  });
-
-  it('should NOT send a message if there is only one user with the email', async () => {
-    await fastify.prisma.user.create({ data: createUserInput(email) });
-
-    await findOrCreateUser(fastify, email);
-
-    expect(captureException).not.toHaveBeenCalled();
-  });
-
-  it('should NOT send a message if there are no users with the email', async () => {
-    await findOrCreateUser(fastify, email);
-
-    expect(captureException).not.toHaveBeenCalled();
   });
 
   it("should NOT create a user if there is already an account with the lowercase version of the user's email", async () => {
@@ -90,5 +54,64 @@ describe('findOrCreateUser', () => {
       }
     });
     expect(allUsers).toHaveLength(1);
+  });
+
+  it('should merge duplicate users when multiple users with same email exist', async () => {
+    // Create two users with different completion data
+    const user1 = await fastify.prisma.user.create({
+      data: {
+        ...createUserInput(email),
+        name: 'User One',
+        completedChallenges: [
+          {
+            id: 'challenge1',
+            completedDate: new Date('2023-01-01'),
+            files: []
+          }
+        ],
+        isFrontEndCert: true,
+        progressTimestamps: [123456789]
+      }
+    });
+
+    await fastify.prisma.user.create({
+      data: {
+        ...createUserInput(email),
+        name: 'User Two Updated',
+        completedChallenges: [
+          {
+            id: 'challenge2',
+            completedDate: new Date('2023-01-02'),
+            files: []
+          }
+        ],
+        isBackEndCert: true,
+        progressTimestamps: [987654321]
+      }
+    });
+
+    const result = await findOrCreateUser(fastify, email);
+
+    // Should return the oldest user's ID
+    expect(result.id).toBe(user1.id);
+
+    // Verify that only one user exists now
+    const remainingUsers = await fastify.prisma.user.findMany({
+      where: { email }
+    });
+    expect(remainingUsers).toHaveLength(1);
+
+    // Verify merged data
+    const mergedUser = remainingUsers[0]!;
+    expect(mergedUser.id).toBe(user1.id);
+    expect(mergedUser.name).toBe('User Two Updated'); // Should be newest name
+    expect(mergedUser.isFrontEndCert).toBe(true); // From user1
+    expect(mergedUser.isBackEndCert).toBe(true); // From user2
+    expect(mergedUser.completedChallenges).toHaveLength(2); // Combined
+    expect(Array.isArray(mergedUser.progressTimestamps)).toBe(true);
+
+    const progressTimestamps = mergedUser.progressTimestamps as number[];
+    expect(progressTimestamps).toContain(123456789);
+    expect(progressTimestamps).toContain(987654321);
   });
 });
