@@ -9,6 +9,9 @@ const { parseMD } = require('./tools/challenge-parser/parser');
 const { getSuperOrder } = require('./curriculum/utils');
 const { createPoly } = require('./shared/utils/polyvinyl');
 const { isAuditedSuperBlock } = require('./shared/utils/is-audited');
+const {
+  translateCommentsInChallenge
+} = require('./tools/challenge-parser/translation-parser');
 
 /**
  * Script to parse a superblock file and gather all challenges from blocks
@@ -195,6 +198,9 @@ class BlockCreator {
    * @param {string} options.blockContentDir - Directory containing block content files
    * @param {string} options.blockStructureDir - Directory containing block structure files (meta
    * .json)
+   * @param {string} options.i18nBlockContentDir - Directory containing i18n block content files
+   * @param {string} options.lang - Language code for the block content
+   * @param {object} options.commentTranslations - Translations for comments in challenges
    * @constructor
    * @description Initializes the BlockCreator with directories for block content and structure.
    * This class is responsible for reading block directories, parsing challenges, and validating them
@@ -204,12 +210,14 @@ class BlockCreator {
     blockContentDir,
     blockStructureDir,
     i18nBlockContentDir,
-    lang
+    lang,
+    commentTranslations
   }) {
     this.blockContentDir = blockContentDir;
     this.blockStructureDir = blockStructureDir;
     this.i18nBlockContentDir = i18nBlockContentDir;
     this.lang = lang;
+    this.commentTranslations = commentTranslations;
   }
 
   async createChallenge(
@@ -228,7 +236,11 @@ class BlockCreator {
 
     const challengePath = langUsed === 'english' ? englishPath : i18nPath;
 
-    const challenge = await parser(challengePath);
+    const challenge = translateCommentsInChallenge(
+      await parser(challengePath),
+      langUsed,
+      this.commentTranslations
+    );
 
     challenge.translationPending = this.lang !== 'english' && !isAudited;
 
