@@ -4093,6 +4093,12 @@
           "Ви будете використовувати класи-утиліти для макетів, кольорів, точок зупинок і багато іншого."
         ]
       },
+      "lab-photography-exhibit": {
+        "title": "Design a Photography Exhibit",
+        "intro": [
+          "In this lab, you will practice working with Tailwind CSS by designing a photography exhibit webpage."
+        ]
+      },
       "review-css-libraries-and-frameworks": {
         "title": "Повторення бібліотек та фреймворків CSS",
         "intro": [
@@ -4242,9 +4248,11 @@
         "title": "Робота з модулями",
         "intro": ["У цих відеолекціях ви дізнаєтесь, як працювати з модулями."]
       },
-      "workshop-placeholder-dictionaries-and-sets": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "workshop-medical-data-validator": {
+        "title": "Build a Medical Data Validator",
+        "intro": [
+          "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
+        ]
       },
       "lab-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
@@ -4532,9 +4540,11 @@
         "title": "Тест «Команди Bash»",
         "intro": ["Перевірте, що ви дізнались про команди bash."]
       },
-      "voks": {
-        "title": "306",
-        "intro": []
+      "lecture-working-with-relational-databases": {
+        "title": "Working with Relational Databases",
+        "intro": [
+          "Learn how to work with Relational Databases in these lectures."
+        ]
       },
       "workshop-database-of-video-game-characters": {
         "title": "Створіть базу даних з персонажами відеоігор",
@@ -4633,9 +4643,9 @@
         "title": "Тест «Bash та SQL»",
         "intro": ["Перевірте, що ви дізнались про Bash та SQL."]
       },
-      "eeez": {
-        "title": "324",
-        "intro": []
+      "lecture-working-with-nano": {
+        "title": "Working With Nano",
+        "intro": ["Learn about Nano in this lecture."]
       },
       "workshop-castle": {
         "title": "Створіть замок",
@@ -4789,6 +4799,14 @@
       "daily-coding-challenges-python": {
         "title": "Щоденні завдання з Python",
         "intro": ["Місце для створення щоденних завдань з Python."]
+      }
+    }
+  },
+  "daily-coding-challenge": {
+    "title": "Daily Coding Challenge",
+    "blocks": {
+      "daily-coding-challenge": {
+        "title": "Daily Coding Challenge"
       }
     }
   },
