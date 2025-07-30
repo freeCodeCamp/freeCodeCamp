@@ -2,6 +2,8 @@
 
 const fs = require('fs');
 const path = require('path');
+const assert = require('assert');
+
 const { isEmpty } = require('lodash');
 const debug = require('debug')('fcc:parse-curriculum');
 
@@ -55,6 +57,17 @@ async function parseCurriculum(baseDir, i18nBaseDir, lang) {
   const blockContentDir = path.resolve(contentDir, 'blocks');
   const i18nBlockContentDir = path.resolve(i18nContentDir, 'blocks');
   const blockStructureDir = path.resolve(STRUCTURE_DIR, 'blocks');
+
+  if (lang !== 'english') {
+    assert(
+      fs.existsSync(i18nContentDir),
+      `i18n content directory does not exist: ${i18nContentDir}`
+    );
+    assert(
+      fs.existsSync(i18nBlockContentDir),
+      `i18n block content directory does not exist: ${i18nBlockContentDir}`
+    );
+  }
 
   debug(`Using content directory: ${contentDir}`);
   debug(`Using i18n content directory: ${i18nContentDir}`);
