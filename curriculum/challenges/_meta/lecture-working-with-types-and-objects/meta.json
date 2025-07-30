@@ -1,0 +1,23 @@
+{
+  "name": "Working with Types and Objects",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-types-and-objects",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "67329f9e9eb84e5c6a5e4366",
+      "title": "What Is a String Object, and How Does It Differ from a String Primitive?"
+    },
+    {
+      "id": "6732c68f4520d160584a6fd2",
+      "title": "What Is the toString() Method, and How Does It Work?"
+    },
+    {
+      "id": "6732c69d82814160951b1aa7",
+      "title": "What Is the Number Constructor, and How Does It Work for Type Coercion?"
+    }
+  ]
+}
