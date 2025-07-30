@@ -765,9 +765,7 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
-      const email = Buffer.from(req.query.email, 'base64')
-        .toString()
-        .toLowerCase();
+      const email = Buffer.from(req.query.email, 'base64').toString();
 
       const { origin } = getRedirectParams(req);
       if (!isEmail(email)) {
@@ -793,12 +791,9 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       // TODO(Post-MVP): should this fail if it's not the currently signed in
       // user?
       const targetUser = await fastify.prisma.user.findUnique({
-        where: { id: authToken.userId },
-        select: { id: true, newEmail: true }
+        where: { id: authToken.userId }
       });
 
-      // TODO: update redirect message to be specific about issue
-      //       Most likely cause being user tampered callback url
       if (targetUser?.newEmail !== email) {
         return reply.redirectWithMessage(origin, redirectMessage);
       }
