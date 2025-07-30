@@ -13,6 +13,82 @@ const { parseCertification } = require('./parse-certification');
 
 const STRUCTURE_DIR = path.resolve(__dirname, 'curriculum/structure');
 
+function getTranslationEntry(dicts, { engId, text }) {
+  return Object.keys(dicts).reduce((acc, lang) => {
+    const entry = dicts[lang][engId];
+    if (entry) {
+      return { ...acc, [lang]: entry };
+    } else {
+      // default to english
+      return { ...acc, [lang]: text };
+    }
+  }, {});
+}
+
+function createCommentMap(dictionariesDir, englishDictionariesDir) {
+  const languages = fs.readdirSync(dictionariesDir);
+
+  // get all their dictionaries
+  const dictionaries = languages.reduce(
+    (acc, lang) => ({
+      ...acc,
+      [lang]: require(path.resolve(dictionariesDir, lang, 'comments.json'))
+    }),
+    {}
+  );
+
+  // get the english dicts
+  const COMMENTS_TO_TRANSLATE = require(
+    path.resolve(englishDictionariesDir, 'english', 'comments.json')
+  );
+
+  const COMMENTS_TO_NOT_TRANSLATE = require(
+    path.resolve(
+      englishDictionariesDir,
+      'english',
+      'comments-to-not-translate.json'
+    )
+  );
+
+  // map from english comment text to translations
+  const translatedCommentMap = Object.entries(COMMENTS_TO_TRANSLATE).reduce(
+    (acc, [id, text]) => {
+      return {
+        ...acc,
+        [text]: getTranslationEntry(dictionaries, { engId: id, text })
+      };
+    },
+    {}
+  );
+
+  // map from english comment text to itself
+  const untranslatableCommentMap = Object.values(
+    COMMENTS_TO_NOT_TRANSLATE
+  ).reduce((acc, text) => {
+    const englishEntry = languages.reduce(
+      (acc, lang) => ({
+        ...acc,
+        [lang]: text
+      }),
+      {}
+    );
+    return {
+      ...acc,
+      [text]: englishEntry
+    };
+  }, {});
+
+  const allComments = { ...translatedCommentMap, ...untranslatableCommentMap };
+
+  // the english entries need to be added here, because english is not in
+  // languages
+  Object.keys(allComments).forEach(comment => {
+    allComments[comment].english = comment;
+  });
+
+  return allComments;
+}
+
 // Map of superblock folder names to their SuperBlocks enum values
 const superBlockNames = {
   '01-responsive-web-design': 'responsive-web-design',
@@ -57,6 +133,8 @@ async function parseCurriculum(baseDir, i18nBaseDir, lang) {
   const blockContentDir = path.resolve(contentDir, 'blocks');
   const i18nBlockContentDir = path.resolve(i18nContentDir, 'blocks');
   const blockStructureDir = path.resolve(STRUCTURE_DIR, 'blocks');
+  const dictionariesDir = path.resolve(baseDir, 'dictionaries');
+  const i18nDictionariesDir = path.resolve(i18nBaseDir, 'dictionaries');
 
   if (lang !== 'english') {
     assert(
@@ -67,19 +145,31 @@ async function parseCurriculum(baseDir, i18nBaseDir, lang) {
       fs.existsSync(i18nBlockContentDir),
       `i18n block content directory does not exist: ${i18nBlockContentDir}`
     );
+    assert(
+      fs.existsSync(i18nDictionariesDir),
+      `i18n dictionaries directory does not exist: ${i18nDictionariesDir}`
+    );
   }
 
   debug(`Using content directory: ${contentDir}`);
   debug(`Using i18n content directory: ${i18nContentDir}`);
   debug(`Using block content directory: ${blockContentDir}`);
   debug(`Using i18n block content directory: ${i18nBlockContentDir}`);
+  debug(`Using dictionaries directory: ${dictionariesDir}`);
+  debug(`Using i18n dictionaries directory: ${i18nDictionariesDir}`);
+
+  const commentTranslations = createCommentMap(
+    i18nDictionariesDir,
+    dictionariesDir
+  );
 
   const parser = new SuperblockCreator({
     blockCreator: new BlockCreator({
       blockContentDir,
       blockStructureDir,
       i18nBlockContentDir,
-      lang
+      lang,
+      commentTranslations
     })
   });
   console.log('Reading curriculum.json...');
