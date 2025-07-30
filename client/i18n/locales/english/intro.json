@@ -4227,9 +4227,11 @@
         "title": "Working with Modules",
         "intro": ["Learn about working with modules in these lectures."]
       },
-      "workshop-placeholder-dictionaries-and-sets": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "workshop-medical-data-validator": {
+        "title": "Build a Medical Data Validator",
+        "intro": [
+          "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
+        ]
       },
       "lab-placeholder-dictionaries-and-sets": {
         "title": "Placeholder - waiting for title",
@@ -4526,7 +4528,12 @@
         "title": "Bash Commands Quiz",
         "intro": ["Test what you've learned bash commands with this quiz."]
       },
-      "voks": { "title": "306", "intro": [] },
+      "lecture-working-with-relational-databases": {
+        "title": "Working with Relational Databases",
+        "intro": [
+          "Learn how to work with Relational Databases in these lectures."
+        ]
+      },
       "workshop-database-of-video-game-characters": {
         "title": "Build a Database of Video Game Characters",
         "intro": [
@@ -4769,6 +4776,14 @@
       "daily-coding-challenges-python": {
         "title": "Daily Coding Challenges Python",
         "intro": ["Place to create Python daily coding challenges."]
+      }
+    }
+  },
+  "daily-coding-challenge": {
+    "title": "Daily Coding Challenge",
+    "blocks": {
+      "daily-coding-challenge": {
+        "title": "Daily Coding Challenge"
       }
     }
   },

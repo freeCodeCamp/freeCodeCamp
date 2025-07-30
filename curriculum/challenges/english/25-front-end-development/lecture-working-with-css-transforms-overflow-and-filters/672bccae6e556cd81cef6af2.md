@@ -1,18 +1,11 @@
 ---
 id: 672bccae6e556cd81cef6af2
 title: What Is Margin Collapsing, and How Does It Work?
-challengeType: 11
-videoId: MMWBC8duT_0
+challengeType: 19
 dashedName: what-is-margin-collapsing
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
-
-What is margin collapsing, and how does it work?
 
 Margin collapsing is a fundamental concept in CSS that often confuses newcomers to web development.
 

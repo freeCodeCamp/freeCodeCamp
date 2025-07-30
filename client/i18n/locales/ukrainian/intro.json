@@ -3029,10 +3029,34 @@
           "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Рядки в JavaScript»."
         ]
       },
-      "lecture-working-with-numbers-booleans-and-the-math-object": {
-        "title": "Робота з числами, булевими значеннями й об’єктом math",
+      "lecture-working-with-numbers-and-arithmetic-operators": {
+        "title": "Working with Numbers and Arithmetic Operators",
         "intro": [
-          "У цих відеолекціях ви поринете в основи JavaScript. Сюди належать числа, булеві значення і об’єкт <code>Math</code>. Ви дізнаєтесь про різні типи чисел, як працюють арифметичні й порівняльні оператори, як поводиться JavaScript під час обчислень із поєднанням рядків і чисел та багато іншого."
+          "In these lectures you will learn about the number type, arithmetic operators, and using them with numbers and strings."
+        ]
+      },
+      "lecture-working-with-operator-behavior": {
+        "title": "Working with Operator Behavior",
+        "intro": [
+          "In these lectures you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
+        ]
+      },
+      "lecture-working-with-comparison-and-boolean-operators": {
+        "title": "Working with Comparison and Boolean Operators",
+        "intro": [
+          "In these lectures you will learn about booleans, and equality and inequality operators, and other comparison operators."
+        ]
+      },
+      "lecture-working-with-unary-and-bitwise-operators": {
+        "title": "Working with Unary and Bitwise Operators",
+        "intro": [
+          "In these lectures you will learn about unary and bitwise operators."
+        ]
+      },
+      "lecture-working-with-conditional-logic-and-math-methods": {
+        "title": "Working with Conditional Logic and Math Methods",
+        "intro": [
+          "In these lectures you will learn about conditional statements, binary logical operators, and the <code>Math</code> object."
         ]
       },
       "workshop-mathbot": {
@@ -3098,6 +3122,12 @@
           "У цьому практичному занятті ви пригадаєте, як працювати з функціями, створивши калькулятор."
         ]
       },
+      "lab-boolean-check": {
+        "title": "Build a Boolean Check Function",
+        "intro": [
+          "In this lab, you'll implement a function that checks if a value is a boolean."
+        ]
+      },
       "lab-email-masker": {
         "title": "Створіть маскування електронної пошти",
         "intro": [
@@ -3128,6 +3158,12 @@
         "title": "Імплементуйте алгоритм скорочення рядка",
         "intro": [
           "У цій лабораторній роботі ви навчитесь скорочувати рядок до певної довжини."
+        ]
+      },
+      "lab-string-ending-checker": {
+        "title": "Build a Confirm the Ending Tool",
+        "intro": [
+          "In this lab, you will implement a function that checks if a given string ends with a specified target string."
         ]
       },
       "review-javascript-functions": {
@@ -3231,6 +3267,12 @@
           "У цьому практичному занятті ви пригадаєте, як працювати з циклами в JavaScript, створивши аналізатор речень."
         ]
       },
+      "lab-longest-word-in-a-string": {
+        "title": "Build a Longest Word Finder App",
+        "intro": [
+          "In this lab, you will use JavaScript loops to find the length of the longest word in the given sentence."
+        ]
+      },
       "lab-factorial-calculator": {
         "title": "Створіть калькулятор факторіалів ",
         "intro": [
@@ -3279,6 +3321,12 @@
         "title": "Build the Largest Number Finder",
         "intro": [
           "In this lab, you will use JavaScript fundamentals to create a function that finds the largest number in each sub-array of a given array."
+        ]
+      },
+      "lab-first-element-finder": {
+        "title": "Build a First Element Finder",
+        "intro": [
+          "In this lab, you will create a function that looks through an array and returns the first element in it that passes a \"truth test\"."
         ]
       },
       "lab-slice-and-splice": {
@@ -3453,6 +3501,13 @@
         "title": "Build a Planets Tablist",
         "intro": [
           "In this workshop, you will build a dynamic tabbed interface that showcases facts about the planets in the solar system."
+        ]
+      },
+      "workshop-note-taking-app": {
+        "title": "Build a Note Taking App",
+        "intro": [
+          "In this workshop, you are going to build an accessible note taking app.",
+          "This will provide you with the opportunity to practice working with <code>aria-live</code> attribute."
         ]
       },
       "review-js-a11y": {
@@ -4243,7 +4298,7 @@
         "title": "Повторення класів та об’єктів",
         "intro": [
           "Перш ніж перейти до тесту «Класи та об’єкти», повторіть основні поняття.",
-          "[Add more details]"
+          "Open up this page to review concepts like how classes work, what are objects, methods, attributes, special methods and more."
         ]
       },
       "quiz-classes-and-objects": {
@@ -4454,6 +4509,12 @@
           "Пригадайте поняття з теми «Python», щоб підготуватись до екзамену."
         ]
       },
+      "lecture-understanding-the-command-line-and-working-with-bash": {
+        "title": "Understanding the Command Line and Working with Bash",
+        "intro": [
+          "Learn about the Command Line and Working with Bash in these lectures."
+        ]
+      },
       "workshop-bash-boilerplate": {
         "title": "Створіть шаблонний код",
         "intro": [
@@ -4498,9 +4559,9 @@
         "title": "Тест «Реляційні бази даних»",
         "intro": ["Перевірте, що ви дізнались про реляційні бази даних."]
       },
-      "pexz": {
-        "title": "311",
-        "intro": []
+      "lecture-understanding-bash-scripting": {
+        "title": "Understanding Bash Scripting",
+        "intro": ["Learn about Bash Scripting in these lectures."]
       },
       "workshop-bash-five-programs": {
         "title": "Створіть п’ять програм",

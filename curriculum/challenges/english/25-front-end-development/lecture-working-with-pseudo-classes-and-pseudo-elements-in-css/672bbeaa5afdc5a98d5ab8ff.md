@@ -1,18 +1,11 @@
 ---
 id: 672bbeaa5afdc5a98d5ab8ff
 title: What Are Examples of Location Pseudo-classes?
-challengeType: 11
-videoId: i-J4xVUGY5c
+challengeType: 19
 dashedName: what-are-examples-of-location-pseudo-classes
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
-
-What are examples of location pseudo-classes?
 
 Location pseudo-classes are used for styling links and elements that are targeted within the current document. They offer a way to apply styles based on whether a link is visited or whether an element is currently in focus.
 

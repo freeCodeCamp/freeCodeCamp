@@ -11,10 +11,16 @@ export const findOrCreateUser = async (
   fastify: FastifyInstance,
   email: string
 ): Promise<{ id: string; acceptedPrivacyTerms: boolean }> => {
+  const lowerCaseEmail = email.toLowerCase();
   // TODO: handle the case where there are multiple users with the same email.
   // e.g. use findMany and throw an error if more than one is found.
   const existingUser = await fastify.prisma.user.findMany({
-    where: { email },
+    where: {
+      // https://www.mongodb.com/docs/manual/reference/operator/query/or/#-or-versus--in
+      email: {
+        in: [email, lowerCaseEmail]
+      }
+    },
     select: { id: true, acceptedPrivacyTerms: true }
   });
   if (existingUser.length > 1) {
@@ -28,7 +34,7 @@ export const findOrCreateUser = async (
   return (
     existingUser[0] ??
     (await fastify.prisma.user.create({
-      data: createUserInput(email),
+      data: createUserInput(lowerCaseEmail),
       select: { id: true, acceptedPrivacyTerms: true }
     }))
   );

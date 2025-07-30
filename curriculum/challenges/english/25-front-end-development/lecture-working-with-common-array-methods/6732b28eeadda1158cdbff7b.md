@@ -1,18 +1,11 @@
 ---
 id: 6732b28eeadda1158cdbff7b
 title: How Can You Check if an Array Contains a Certain Value?
-challengeType: 11
-videoId: NjZI_TlIiXk
+challengeType: 19
 dashedName: how-can-you-check-if-an-array-contains-a-certain-value
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
-
-How can you check if an array contains a certain value?
 
 In JavaScript, the `includes()` method is a simple and efficient way to check if an array contains a specific value. This method returns a boolean value: `true` if the array contains the specified element, and `false` otherwise. 
 

@@ -1,18 +1,11 @@
 ---
 id: 672bbe9171a5cca90f2edeea
 title: What Are Examples of Element User Action Pseudo-classes?
-challengeType: 11
-videoId: M80PYgBglmY
+challengeType: 19
 dashedName: what-are-examples-of-element-user-action-pseudo-classes
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
-
-What are examples of element user action pseudo-classes?
 
 User feedback is a crucial element of web design. For instance, it's important for users to receive visual cues when they interact with elements on a website, such as hovering over a button or clicking a link. This feedback helps users understand the state of interactive elements, like indicating whether a link has been visited or not.
 

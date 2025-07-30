@@ -8,7 +8,7 @@ import './challenge-title.css';
 interface ChallengeTitleProps {
   children: string;
   isCompleted: boolean;
-  translationPending: boolean;
+  translationPending?: boolean;
 }
 
 function ChallengeTitle({

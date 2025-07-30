@@ -1,18 +1,11 @@
 ---
 id: 672bbeb6eefd7ca9c003ea00
 title: What Are Examples of Tree-structural Pseudo-classes?
-challengeType: 11
-videoId: 7lQACnY4opw
+challengeType: 19
 dashedName: what-are-examples-of-tree-structural-pseudo-classes
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
-
-What are examples of tree-structural pseudo-classes?
 
 Tree-structural pseudo-classes allow you to target and style elements based on their position within the document tree. The document tree refers to the hierarchical structure of elements in an HTML document.
 
