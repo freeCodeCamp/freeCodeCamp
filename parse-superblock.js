@@ -8,6 +8,7 @@ const debug = require('debug')('fcc:parse-superblock');
 const { parseMD } = require('./tools/challenge-parser/parser');
 const { getSuperOrder } = require('./curriculum/utils');
 const { createPoly } = require('./shared/utils/polyvinyl');
+const { isAuditedSuperBlock } = require('./shared/utils/is-audited');
 
 /**
  * Script to parse a superblock file and gather all challenges from blocks
@@ -62,7 +63,7 @@ function validateChallenges(foundChallenges, meta) {
   const duplicateTitles = duplicates(foundChallenges.map(c => c.title));
   if (duplicateTitles.length > 0)
     throw Error(
-      `Duplicate titles found in found challenges with title(s): ${duplicateTitles.join(', ')}`
+      `Duplicate titles found in found challenges with title(s): ${duplicateTitles.join(', ')} in block ${meta.dashedName}`
     );
 
   const duplicateMetaTitles = duplicates(meta.challengeOrder.map(c => c.title));
@@ -185,41 +186,71 @@ function fixChallengeProperties(challenge) {
   return fixedChallenge;
 }
 
+function finalizeChallenge(challenge, meta) {
+  return addMetaToChallenge(fixChallengeProperties(challenge), meta);
+}
 class BlockCreator {
   /**
-   * @param {string} blockContentDir - The directory containing the curriculum blocks
-   * @param {string} blockStructureDir - The directory containing the block structure files
+   * @param {object} options - Options object
+   * @param {string} options.blockContentDir - Directory containing block content files
+   * @param {string} options.blockStructureDir - Directory containing block structure files (meta
+   * .json)
+   * @constructor
+   * @description Initializes the BlockCreator with directories for block content and structure.
+   * This class is responsible for reading block directories, parsing challenges, and validating them
+   * against the meta information.
    */
-  constructor({ blockContentDir, blockStructureDir }) {
+  constructor({
+    blockContentDir,
+    blockStructureDir,
+    i18nBlockContentDir,
+    lang
+  }) {
     this.blockContentDir = blockContentDir;
     this.blockStructureDir = blockStructureDir;
+    this.i18nBlockContentDir = i18nBlockContentDir;
+    this.lang = lang;
   }
 
-  async createChallenge(filename, block, meta, parser = parseMD) {
-    const filePath = path.resolve(this.blockContentDir, block, filename);
-    const challenge = await parser(filePath);
+  async createChallenge(
+    { filename, block, meta, isAudited },
+    parser = parseMD
+  ) {
+    debug(
+      `Creating challenge from file: ${filename} in block: ${block}, using lang: ${this.lang}`
+    );
 
-    // TODO: Update this once we're handling translations properly
-    challenge.translationPending = false;
+    const englishPath = path.resolve(this.blockContentDir, block, filename);
+    const i18nPath = path.resolve(this.i18nBlockContentDir, block, filename);
 
-    return addMetaToChallenge(fixChallengeProperties(challenge), meta);
+    const langUsed =
+      isAudited && fs.existsSync(i18nPath) ? this.lang : 'english';
+
+    const challengePath = langUsed === 'english' ? englishPath : i18nPath;
+
+    const challenge = await parser(challengePath);
+
+    challenge.translationPending = this.lang !== 'english' && !isAudited;
+
+    return finalizeChallenge(challenge, meta);
   }
 
   /**
    * Reads and parses all challenges from a block directory
    * @param {string} blockDir - Path to the block directory
-   * @param {function} createChallenge - Parser function (async)
    * @param {object} meta - Meta object for the block
    * @returns {Promise<Array<object>>} Array of challenge objects
    */
-  async readBlockChallenges(block, meta) {
+  async readBlockChallenges(block, meta, isAudited) {
     const blockDir = path.resolve(this.blockContentDir, block);
     const challengeFiles = fs
       .readdirSync(blockDir)
       .filter(file => file.endsWith('.md'));
 
     return await Promise.all(
-      challengeFiles.map(file => this.createChallenge(file, block, meta))
+      challengeFiles.map(filename =>
+        this.createChallenge({ filename, block, meta, isAudited })
+      )
     );
   }
 
@@ -270,9 +301,14 @@ class BlockCreator {
       ...(chapter && { chapter }),
       ...(module && { module })
     };
+    const isAudited = isAuditedSuperBlock(this.lang, superBlock);
 
     // Read challenges from directory
-    const foundChallenges = await this.readBlockChallenges(blockName, meta);
+    const foundChallenges = await this.readBlockChallenges(
+      blockName,
+      meta,
+      isAudited
+    );
     debug(`Found ${foundChallenges.length} challenge files in directory`);
 
     // Log found challenges
@@ -411,6 +447,7 @@ module.exports = {
   addMetaToChallenge,
   validateChallenges,
   buildBlock,
+  finalizeChallenge,
   transformSuperBlock,
   fixChallengeProperties
 };
