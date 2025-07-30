@@ -1497,6 +1497,9 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "lecture-working-with-nano"
+            },
+            {
               "dashedName": "workshop-castle"
             },
             {
