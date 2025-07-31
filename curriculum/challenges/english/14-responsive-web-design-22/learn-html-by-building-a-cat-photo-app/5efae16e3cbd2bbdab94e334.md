@@ -112,7 +112,7 @@ assert(
         </ol>
 --fcc-editable-region--
         <figure>
-          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Two tabby kittens sleeping together on a couch.">
 
         </figure>
 --fcc-editable-region--
