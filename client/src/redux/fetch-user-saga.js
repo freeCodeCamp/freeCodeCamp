@@ -18,7 +18,8 @@ function* fetchSessionUser() {
       throw new Error('Request timed out after 5 seconds');
     }
 
-    if (!res.response.ok) {
+    const isSignedOut = res.response.status === 401;
+    if (!res.response.ok && !isSignedOut) {
       throw new Error(
         `HTTP Error: ${res.response.status} ${res.response.statusText}`
       );
