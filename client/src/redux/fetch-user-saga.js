@@ -8,14 +8,8 @@ import {
 } from './actions';
 
 function* fetchSessionUser() {
-  let timeoutId;
   try {
-    const abortController = new AbortController();
-    timeoutId = setTimeout(() => {
-      abortController.abort(Error('Request timed out after 5 seconds'));
-    }, 5000);
-
-    const res = yield call(getSessionUser, abortController.signal);
+    const res = yield call(getSessionUser, AbortSignal.timeout(5000));
 
     const isSignedOut = res.response.status === 401;
     if (!res.response.ok && !isSignedOut) {
@@ -29,8 +23,6 @@ function* fetchSessionUser() {
   } catch (e) {
     console.log('failed to fetch user', e);
     yield put(fetchUserError(e));
-  } finally {
-    clearTimeout(timeoutId);
   }
 }
 
