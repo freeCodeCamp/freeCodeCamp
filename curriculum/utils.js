@@ -1,8 +1,7 @@
 const path = require('path');
 const {
   generateSuperBlockList,
-  SuperBlocks,
-  folderToSuperBlockMap
+  SuperBlocks
 } = require('../shared/config/curriculum');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
@@ -58,68 +57,5 @@ function getSuperOrder(superblock) {
   return order;
 }
 
-const directoryToSuperblock = {
-  '00-certifications': 'certifications', // treating certifications as a superblock for simplicity
-  ...folderToSuperBlockMap
-};
-
-function getSuperBlockFromDir(dir) {
-  const superBlock = directoryToSuperblock[dir];
-  if (!superBlock) throw Error(`${dir} does not map to a superblock`);
-  return directoryToSuperblock[dir];
-}
-
-function getChapterFromBlock(blockName, superBlockStructure) {
-  const chapters = superBlockStructure.chapters;
-  const chaptersWithBlocks = chapters.map(chapter => ({
-    ...chapter,
-    blocks: chapter.modules.flatMap(module => module.blocks)
-  }));
-
-  const chapter = chaptersWithBlocks.find(chapter =>
-    chapter.blocks.some(b => b.dashedName === blockName)
-  );
-
-  if (!chapter) {
-    throw Error(
-      `There is no chapter corresponding to block "${blockName}". It's possible that the block is missing in the superblock structure.`
-    );
-  }
-  return { dashedName: chapter.dashedName, comingSoon: chapter.comingSoon };
-}
-
-function getModuleFromBlock(blockName, superBlockStructure) {
-  const modules = superBlockStructure.chapters.flatMap(
-    chapter => chapter.modules
-  );
-  const module = modules.find(module =>
-    module.blocks.some(b => b.dashedName === blockName)
-  );
-  if (!module) {
-    throw Error(
-      `There is no module corresponding to block "${blockName}". It's possible that the block is missing in the superblock structure.`
-    );
-  }
-  return { dashedName: module.dashedName, comingSoon: module.comingSoon };
-}
-
-function getBlockOrder(blockName, superBlockStructure) {
-  const blocks = superBlockStructure.chapters
-    .flatMap(chapter => chapter.modules)
-    .flatMap(module => module.blocks);
-
-  const index = blocks.findIndex(block => block.dashedName === blockName);
-
-  if (index === -1)
-    throw Error(
-      `The block "${blockName}" does not appear in the superblock structure.`
-    );
-
-  return index;
-}
 exports.createSuperOrder = createSuperOrder;
 exports.getSuperOrder = getSuperOrder;
-exports.getSuperBlockFromDir = getSuperBlockFromDir;
-exports.getChapterFromBlock = getChapterFromBlock;
-exports.getModuleFromBlock = getModuleFromBlock;
-exports.getBlockOrder = getBlockOrder;
