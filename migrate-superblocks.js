@@ -6,10 +6,8 @@ const path = require('path');
 const CURRICULUM_ROOT = path.join(
   __dirname,
   'curriculum',
-  'i18n-curriculum',
-  'curriculum',
   'challenges',
-  'espanol'
+  'english'
 );
 const BLOCKS_DIR = path.join(CURRICULUM_ROOT, 'blocks');
 const IGNORED_DIRS = ['00-certifications', 'blocks', 'certifications'];
