@@ -222,7 +222,7 @@ export const reducer = handleActions(
       ...state,
       userFetchState: {
         pending: false,
-        complete: false,
+        complete: true,
         errored: true,
         error: payload
       }

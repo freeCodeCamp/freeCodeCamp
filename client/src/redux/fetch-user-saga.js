@@ -1,4 +1,4 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put, takeEvery, race, delay } from 'redux-saga/effects';
 import { getSessionUser, getUserProfile } from '../utils/ajax';
 import {
   fetchProfileForUserComplete,
@@ -9,8 +9,22 @@ import {
 
 function* fetchSessionUser() {
   try {
-    const { data: user } = yield call(getSessionUser);
+    const { res, timeout } = yield race({
+      res: call(getSessionUser),
+      timeout: delay(5000)
+    });
 
+    if (timeout) {
+      throw new Error('Request timed out after 5 seconds');
+    }
+
+    if (!res.response.ok) {
+      throw new Error(
+        `HTTP Error: ${res.response.status} ${res.response.statusText}`
+      );
+    }
+
+    const { data: user } = res;
     yield put(fetchUserComplete({ user }));
   } catch (e) {
     console.log('failed to fetch user', e);
