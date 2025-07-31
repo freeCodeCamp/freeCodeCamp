@@ -1,0 +1,11 @@
+{
+  "name": "Design a Photography Exhibit",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "lab-photography-exhibit",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "HTML-CSS",
+  "challengeOrder": [{ "id": "686e64be3cd9db25282a956d", "title": "Design a Photography Exhibit" }],
+  "usesMultifileEditor": true
+}

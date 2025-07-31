@@ -1,18 +1,11 @@
 ---
 id: 672bc4ff5e7a4bbdee8ba013
 title: What Are Named Colors in CSS, and When to Use Them?
-challengeType: 11
-videoId: YD7ndioXOyM
+challengeType: 19
 dashedName: what-are-named-colors-in-css
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
-
-What are named colors in CSS, and when to use them?
 
 In CSS, colors play a crucial role in designing web pages, enhancing readability, setting the mood, and improving user experience. One of the simplest ways to define colors in CSS is by using named colors. Named colors are predefined color names recognized by browsers. Here is an example of using a named color for a paragraph element:
 
@@ -41,7 +34,7 @@ Named colors in CSS are convenient but limited, with only 140 available options.
 
 Named colors in CSS are a great way to apply colors quickly and descriptively. While they are useful for basic designs, prototyping, and improving code readability, their limited range makes them less suitable for complex designs requiring precise color control.
 
-By understanding the strengths and limitations of named colors, you can determine when it’s best to use them over more detailed color models like RGB or HSL, which you will learn about in future videos.
+By understanding the strengths and limitations of named colors, you can determine when it’s best to use them over more detailed color models like RGB or HSL, which you will learn about in future lectures.
 
 # --questions--
 

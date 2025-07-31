@@ -586,27 +586,48 @@ describe('/exam-environment/', () => {
     });
 
     describe('GET /exam-environment/exams', () => {
+      beforeEach(async () => {
+        // Reset user prerequisites
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            completedChallenges: [
+              { id: mock.exam.prerequisites.at(0)!, completedDate: Date.now() }
+            ]
+          }
+        });
+      });
+
+      afterEach(async () => {
+        // Clean up exam attempts and moderation records
+        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.deleteMany();
+
+        // Reset exam deprecated status
+        await fastifyTestInstance.prisma.examEnvironmentExam.update({
+          where: { id: mock.examId },
+          data: { deprecated: false }
+        });
+      });
+
       it('should return 200', async () => {
         const res = await superGet('/exam-environment/exams').set(
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
         );
 
-        expect(res.body).toStrictEqual({
-          exams: [
-            {
-              canTake: true,
-              config: {
-                name: mock.exam.config.name,
-                note: mock.exam.config.note,
-                passingPercent: mock.exam.config.passingPercent,
-                totalTimeInMS: mock.exam.config.totalTimeInMS,
-                retakeTimeInMS: mock.exam.config.retakeTimeInMS
-              },
-              id: mock.examId
-            }
-          ]
-        });
+        expect(res.body).toStrictEqual([
+          {
+            canTake: true,
+            config: {
+              name: mock.exam.config.name,
+              note: mock.exam.config.note,
+              passingPercent: mock.exam.config.passingPercent,
+              totalTimeInMS: mock.exam.config.totalTimeInMS,
+              retakeTimeInMS: mock.exam.config.retakeTimeInMS
+            },
+            id: mock.examId
+          }
+        ]);
 
         expect(res.status).toBe(200);
       });
@@ -622,10 +643,405 @@ describe('/exam-environment/', () => {
           examEnvironmentAuthorizationToken
         );
 
-        expect(res.body).toStrictEqual({
-          exams: []
+        expect(res.body).toStrictEqual([]);
+
+        expect(res.status).toBe(200);
+      });
+
+      it("should indicate an exam's availability based on prerequisites", async () => {
+        // Remove prerequisites from user
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            completedChallenges: []
+          }
         });
 
+        const res = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toMatchObject([{ canTake: false }]);
+        expect(res.status).toBe(200);
+
+        // Add prerequisites back to user
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            completedChallenges: [
+              { id: mock.exam.prerequisites.at(0)!, completedDate: Date.now() }
+            ]
+          }
+        });
+
+        const res2 = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res2.body).toMatchObject([{ canTake: true }]);
+        expect(res2.status).toBe(200);
+      });
+
+      it('should indicate an exam may be taken if the user has no prior attempts', async () => {
+        const res = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toStrictEqual([
+          {
+            canTake: true,
+            config: {
+              name: mock.exam.config.name,
+              note: mock.exam.config.note,
+              passingPercent: mock.exam.config.passingPercent,
+              totalTimeInMS: mock.exam.config.totalTimeInMS,
+              retakeTimeInMS: mock.exam.config.retakeTimeInMS
+            },
+            id: mock.examId
+          }
+        ]);
+        expect(res.body).toMatchObject([{ canTake: true }]);
+        expect(res.status).toBe(200);
+      });
+
+      it("should indicate an exam's availability based on the last attempt's start time, and the exam retake time", async () => {
+        // Create a recent exam attempt that's within the retake time
+        const recentExamAttempt = {
+          ...mock.examAttempt,
+          userId: defaultUserId,
+          startTimeInMS: Date.now() - mock.exam.config.totalTimeInMS
+        };
+        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+          data: recentExamAttempt
+        });
+
+        const res = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toMatchObject([{ canTake: false }]);
+        expect(res.status).toBe(200);
+
+        // Update the attempt to be outside the retake time
+        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.update({
+          where: { id: recentExamAttempt.id },
+          data: {
+            startTimeInMS:
+              Date.now() -
+              (mock.exam.config.totalTimeInMS +
+                mock.exam.config.retakeTimeInMS +
+                1000)
+          }
+        });
+
+        const res2 = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res2.body).toMatchObject([{ canTake: true }]);
+
+        expect(res2.status).toBe(200);
+      });
+
+      it('should indicate an exam is unavailable if there are any pending moderation records for the exam attempts', async () => {
+        // Create an exam attempt that's outside the retake time
+        const examAttempt = {
+          ...mock.examAttempt,
+          userId: defaultUserId,
+          startTimeInMS:
+            Date.now() -
+            (mock.exam.config.totalTimeInMS +
+              mock.exam.config.retakeTimeInMS +
+              1000)
+        };
+        const createdAttempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: examAttempt
+          });
+
+        // Create a pending moderation record for the attempt
+        await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
+          data: {
+            examAttemptId: createdAttempt.id,
+            status: ExamEnvironmentExamModerationStatus.Pending
+          }
+        });
+
+        const res = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toMatchObject([{ canTake: false }]);
+        expect(res.status).toBe(200);
+      });
+    });
+
+    describe('GET /exam-environment/exam/attempt/:attemptId', () => {
+      afterEach(async () => {
+        // If attempt is deleted, moderation record should cascade
+        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.deleteMany();
+        const moderationRecords =
+          await fastifyTestInstance.prisma.examEnvironmentExamModeration.findMany(
+            {}
+          );
+        expect(moderationRecords).toHaveLength(0);
+      });
+
+      it('should return 404 if the attempt does not exist', async () => {
+        const attemptId = mock.oid();
+        const res = await superGet(
+          `/exam-environment/exam/attempt/${attemptId}`
+        ).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toStrictEqual({
+          code: 'FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
+        });
+        expect(res.status).toBe(404);
+      });
+
+      it('should return 404 if the attempt belongs to another user', async () => {
+        const otherUserAttempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: { ...mock.examAttempt, userId: mock.oid() }
+          });
+        const res = await superGet(
+          `/exam-environment/exam/attempt/${otherUserAttempt.id}`
+        ).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toStrictEqual({
+          code: 'FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT', // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
+        });
+        expect(res.status).toBe(404);
+      });
+
+      it('should return 200 with the examEnvironmentExamAttempt if the attempt exists and belongs to the user', async () => {
+        const attempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: { ...mock.examAttempt, userId: defaultUserId }
+          });
+        await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            status: ExamEnvironmentExamModerationStatus.Pending
+          }
+        });
+
+        const res = await superGet(
+          `/exam-environment/exam/attempt/${attempt.id}`
+        ).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        const examEnvironmentExamAttempt = {
+          result: null,
+          startTimeInMS: attempt.startTimeInMS,
+          questionSets: attempt.questionSets
+        };
+
+        expect(res.body).toEqual(examEnvironmentExamAttempt);
+        expect(res.status).toBe(200);
+      });
+
+      xit('TODO: (once serialization is serializable) should return 400 if no attempt id is given', async () => {
+        const res = await superGet('/exam-environment/exam/attempt/').set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.status).toBe(400);
+      });
+
+      it('should return the attempt without results, if the attempt has not been moderated', async () => {
+        const attempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: { ...mock.examAttempt, userId: defaultUserId }
+          });
+        await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            status: ExamEnvironmentExamModerationStatus.Pending
+          }
+        });
+
+        const res = await superGet(
+          `/exam-environment/exam/attempt/${attempt.id}`
+        ).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        const examEnvironmentExamAttempt = {
+          result: null,
+          startTimeInMS: attempt.startTimeInMS,
+          questionSets: attempt.questionSets
+        };
+
+        expect(res.body).toEqual(examEnvironmentExamAttempt);
+        expect(res.status).toBe(200);
+      });
+
+      it('should return the attempt with results, if the attempt has been moderated', async () => {
+        const examAttempt = structuredClone(mock.examAttempt);
+        examAttempt.startTimeInMS = Date.now() - mock.exam.config.totalTimeInMS;
+        const attempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: examAttempt
+          });
+
+        await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            status: ExamEnvironmentExamModerationStatus.Approved
+          }
+        });
+
+        const res = await superGet(
+          `/exam-environment/exam/attempt/${attempt.id}`
+        ).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        const examEnvironmentExamAttempt = {
+          result: {
+            score: 25,
+            passingPercent: 80
+          },
+          startTimeInMS: attempt.startTimeInMS,
+          questionSets: attempt.questionSets
+        };
+
+        expect(res.body).toEqual(examEnvironmentExamAttempt);
+        expect(res.status).toBe(200);
+      });
+    });
+
+    describe('GET /exam-environment/exam/attempts', () => {
+      afterEach(async () => {
+        // If attempt is deleted, moderation record should cascade
+        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.deleteMany();
+        const moderationRecords =
+          await fastifyTestInstance.prisma.examEnvironmentExamModeration.findMany(
+            {}
+          );
+        expect(moderationRecords).toHaveLength(0);
+      });
+
+      it('should return 404 if no attempts exist', async () => {
+        const res = await superGet(`/exam-environment/exam/attempts`).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toStrictEqual({
+          code: 'FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
+        });
+        expect(res.status).toBe(404);
+      });
+
+      it('should return 200 with the attempts if they exist and belong to the user', async () => {
+        const attempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: { ...mock.examAttempt, userId: defaultUserId }
+          });
+        await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            status: ExamEnvironmentExamModerationStatus.Pending
+          }
+        });
+
+        const res = await superGet(`/exam-environment/exam/attempts`).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        const examEnvironmentExamAttempt = {
+          result: null,
+          startTimeInMS: attempt.startTimeInMS,
+          questionSets: attempt.questionSets
+        };
+
+        expect(res.body).toEqual([examEnvironmentExamAttempt]);
+        expect(res.status).toBe(200);
+      });
+
+      it('should return the attempts without results, if they have not been moderated', async () => {
+        const attempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: { ...mock.examAttempt, userId: defaultUserId }
+          });
+
+        await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            status: ExamEnvironmentExamModerationStatus.Pending
+          }
+        });
+
+        const res = await superGet(`/exam-environment/exam/attempts`).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        const examEnvironmentExamAttempt = {
+          result: null,
+          startTimeInMS: attempt.startTimeInMS,
+          questionSets: attempt.questionSets
+        };
+
+        expect(res.body).toEqual([examEnvironmentExamAttempt]);
+        expect(res.status).toBe(200);
+      });
+
+      it('should return the attempts with results, if they have been moderated', async () => {
+        const examAttempt = structuredClone(mock.examAttempt);
+        examAttempt.startTimeInMS = Date.now() - mock.exam.config.totalTimeInMS;
+        const attempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: examAttempt
+          });
+
+        await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            status: ExamEnvironmentExamModerationStatus.Approved
+          }
+        });
+
+        const res = await superGet(`/exam-environment/exam/attempts`).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        const examEnvironmentExamAttempt = {
+          result: {
+            score: 25,
+            passingPercent: 80
+          },
+          startTimeInMS: attempt.startTimeInMS,
+          questionSets: attempt.questionSets
+        };
+
+        expect(res.body).toEqual([examEnvironmentExamAttempt]);
         expect(res.status).toBe(200);
       });
     });

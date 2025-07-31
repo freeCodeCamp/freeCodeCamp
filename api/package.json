@@ -20,6 +20,7 @@
     "ajv": "8.12.0",
     "ajv-formats": "2.1.1",
     "date-fns": "4.1.0",
+    "date-fns-tz": "3.2.0",
     "dotenv": "16.4.5",
     "fast-uri": "2.3.0",
     "fastify": "5.2.0",
