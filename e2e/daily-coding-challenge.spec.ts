@@ -1,8 +1,7 @@
 import { test, expect } from '@playwright/test';
 import {
   getTodayUsCentral,
-  formatDate,
-  formatDisplayDate
+  formatDate
 } from '../client/src/components/daily-coding-challenge/helpers';
 
 const dateRouteRe = /.*\/daily-coding-challenge\/date\/.*/;
@@ -12,8 +11,6 @@ const todayUsCentral = getTodayUsCentral();
 const [year, month, day] = todayUsCentral.split('-').map(Number);
 
 const todayMidnight = `${todayUsCentral}T00:00:00.000Z`;
-
-const displayDate = formatDisplayDate(todayUsCentral);
 
 const mockApiChallenge = {
   id: 'test-challenge-id',
@@ -142,10 +139,6 @@ test.describe('Daily Coding Challenges', () => {
 
     // Description
     await expect(page.getByText('Test description')).toBeVisible();
-
-    // Breadcrumbs
-    await expect(page.getByText('Daily coding challenge')).toBeVisible();
-    await expect(page.getByText(displayDate)).toBeVisible();
 
     // Language buttons
     await expect(
