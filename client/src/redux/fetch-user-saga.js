@@ -1,4 +1,4 @@
-import { call, put, takeEvery, race, delay } from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import { getSessionUser, getUserProfile } from '../utils/ajax';
 import {
   fetchProfileForUserComplete,
@@ -8,15 +8,14 @@ import {
 } from './actions';
 
 function* fetchSessionUser() {
+  let timeoutId;
   try {
-    const { res, timeout } = yield race({
-      res: call(getSessionUser),
-      timeout: delay(5000)
-    });
+    const abortController = new AbortController();
+    timeoutId = setTimeout(() => {
+      abortController.abort(Error('Request timed out after 5 seconds'));
+    }, 5000);
 
-    if (timeout) {
-      throw new Error('Request timed out after 5 seconds');
-    }
+    const res = yield call(getSessionUser, abortController.signal);
 
     const isSignedOut = res.response.status === 401;
     if (!res.response.ok && !isSignedOut) {
@@ -30,6 +29,8 @@ function* fetchSessionUser() {
   } catch (e) {
     console.log('failed to fetch user', e);
     yield put(fetchUserError(e));
+  } finally {
+    clearTimeout(timeoutId);
   }
 }
 
