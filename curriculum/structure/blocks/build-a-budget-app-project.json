@@ -1,0 +1,16 @@
+{
+  "name": "Build a Budget App Project",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "build-a-budget-app-project",
+  "order": 13,
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "5e44413e903586ffb414c94e",
+      "title": "Build a Budget App Project"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "legacy-link"
+}

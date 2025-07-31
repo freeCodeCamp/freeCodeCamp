@@ -1,0 +1,77 @@
+{
+  "name": "Implement the Binary Search Algorithm",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-binary-search",
+  "superBlock": "full-stack-developer",
+  "blockLayout": "challenge-grid",
+  "blockType": "workshop",
+  "challengeOrder": [
+    {
+      "id": "683ec39565dbc7e3375263b1",
+      "title": "Step 1"
+    },
+    {
+      "id": "683ec95f2f8781355556ff7a",
+      "title": "Step 2"
+    },
+    {
+      "id": "683ec95f2f8781355556ff7b",
+      "title": "Step 3"
+    },
+    {
+      "id": "683ec95f2f8781355556ff7c",
+      "title": "Step 4"
+    },
+    {
+      "id": "683ec95f2f8781355556ff7d",
+      "title": "Step 5"
+    },
+    {
+      "id": "683ec95f2f8781355556ff7e",
+      "title": "Step 6"
+    },
+    {
+      "id": "683ec95f2f8781355556ff7f",
+      "title": "Step 7"
+    },
+    {
+      "id": "683ec95f2f8781355556ff80",
+      "title": "Step 8"
+    },
+    {
+      "id": "683ec95f2f8781355556ff81",
+      "title": "Step 9"
+    },
+    {
+      "id": "683ec95f2f8781355556ff82",
+      "title": "Step 10"
+    },
+    {
+      "id": "683ec95f2f8781355556ff83",
+      "title": "Step 11"
+    },
+    {
+      "id": "683ec95f2f8781355556ff84",
+      "title": "Step 12"
+    },
+    {
+      "id": "684165a72e33e26a40904f8b",
+      "title": "Step 13"
+    },
+    {
+      "id": "684169b00a073c9b9f0a703c",
+      "title": "Step 14"
+    },
+    {
+      "id": "68416aab85dd00a7852cdeb6",
+      "title": "Step 15"
+    },
+    {
+      "id": "68416d66013635cb6325eb6d",
+      "title": "Step 16"
+    }
+  ],
+  "helpCategory": "Python"
+}

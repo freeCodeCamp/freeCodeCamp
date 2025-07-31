@@ -1,0 +1,77 @@
+{
+  "name": "Build a Storytelling App",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "dashedName": "workshop-storytelling-app",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "671f99a5dc221afb86fa2dc0",
+      "title": "Step 1"
+    },
+    {
+      "id": "671fa1717ba9ea1a5fa028e0",
+      "title": "Step 2"
+    },
+    {
+      "id": "671fa22e99042b1e91fe9d2e",
+      "title": "Step 3"
+    },
+    {
+      "id": "671fa3adf532d9231b2c25b8",
+      "title": "Step 4"
+    },
+    {
+      "id": "671fa47e415d88263d349a10",
+      "title": "Step 5"
+    },
+    {
+      "id": "671fa537114e412950b62089",
+      "title": "Step 6"
+    },
+    {
+      "id": "671fa769540d152e53327f4b",
+      "title": "Step 7"
+    },
+    {
+      "id": "671fa7ed8364b130b5c55d2e",
+      "title": "Step 8"
+    },
+    {
+      "id": "671fa82dc39e4c320352f371",
+      "title": "Step 9"
+    },
+    {
+      "id": "671fa93b5eee8737af8bafde",
+      "title": "Step 10"
+    },
+    {
+      "id": "671fae2d8e402a405a930e44",
+      "title": "Step 11"
+    },
+    {
+      "id": "671faec4b3733242b2c10989",
+      "title": "Step 12"
+    },
+    {
+      "id": "671faf18fd8b7b448a308bf3",
+      "title": "Step 13"
+    },
+    {
+      "id": "671faf4ac1e19245df4db7f5",
+      "title": "Step 14"
+    },
+    {
+      "id": "6724da4a41a727b89d2541c3",
+      "title": "Step 15"
+    },
+    {
+      "id": "671fafbae959c048d82bac8d",
+      "title": "Step 16"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

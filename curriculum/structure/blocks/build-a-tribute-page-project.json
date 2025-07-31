@@ -1,0 +1,16 @@
+{
+  "name": "Tribute Page",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-tribute-page-project",
+  "usesMultifileEditor": true,
+  "helpCategory": "HTML-CSS",
+  "order": 9,
+  "superBlock": "2022/responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "bd7158d8c442eddfaeb5bd18",
+      "title": "Build a Tribute Page"
+    }
+  ],
+  "blockLayout": "legacy-link"
+}

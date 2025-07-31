@@ -1,0 +1,97 @@
+{
+  "name": "Learn the Bisection Method by Finding the Square Root of a Number",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-the-bisection-method-by-finding-the-square-root-of-a-number",
+  "order": 4,
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "65ef181dad3d96b14a21a03e",
+      "title": "Step 1"
+    },
+    {
+      "id": "65ef190c6b51e9b5a5f7ed29",
+      "title": "Step 2"
+    },
+    {
+      "id": "65ef19425d1b27b6c930bae6",
+      "title": "Step 3"
+    },
+    {
+      "id": "65ef198fde24dfb7ff675b42",
+      "title": "Step 4"
+    },
+    {
+      "id": "65ef19ec318e2fb9066381e3",
+      "title": "Step 5"
+    },
+    {
+      "id": "65ef1a1fcb527bba0ca82ccf",
+      "title": "Step 6"
+    },
+    {
+      "id": "65ef1a50049cf9bada13266f",
+      "title": "Step 7"
+    },
+    {
+      "id": "65ef1a720d6e65bbb0d22463",
+      "title": "Step 8"
+    },
+    {
+      "id": "65ef1aacca094bbcc2e2a3c8",
+      "title": "Step 9"
+    },
+    {
+      "id": "65ef1afca9a8f6be0d4150ba",
+      "title": "Step 10"
+    },
+    {
+      "id": "65ef1be2b958cabf712296cd",
+      "title": "Step 11"
+    },
+    {
+      "id": "65ef1c0a03fcabc04ded7e69",
+      "title": "Step 12"
+    },
+    {
+      "id": "65ef1c34a541afc12dbb849d",
+      "title": "Step 13"
+    },
+    {
+      "id": "65ef1cb031de30c2cde64c12",
+      "title": "Step 14"
+    },
+    {
+      "id": "65ef1cda150a59c3b8306944",
+      "title": "Step 15"
+    },
+    {
+      "id": "65ef1d104c2be9c4d8e22075",
+      "title": "Step 16"
+    },
+    {
+      "id": "65ef1d5e3d2927c5e0f4997b",
+      "title": "Step 17"
+    },
+    {
+      "id": "65ef1d924ff2e5c7031c6ce8",
+      "title": "Step 18"
+    },
+    {
+      "id": "65ef1dd722f6e7c8294eeec4",
+      "title": "Step 19"
+    },
+    {
+      "id": "65ef1e10268f8ec9121446d1",
+      "title": "Step 20"
+    },
+    {
+      "id": "65ef1eac497754cafa12a26c",
+      "title": "Step 21"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-grid"
+}

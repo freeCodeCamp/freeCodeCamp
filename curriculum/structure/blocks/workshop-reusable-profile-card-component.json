@@ -1,0 +1,41 @@
+{
+  "name": "Build a Reusable Profile Card Component",
+  "isUpcomingChange": false,
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-reusable-profile-card-component",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "674ef11f75254548672d998c",
+      "title": "Step 1"
+    },
+    {
+      "id": "674ef2d357676e50e4691658",
+      "title": "Step 2"
+    },
+    {
+      "id": "674ef2d357676e50e4691659",
+      "title": "Step 3"
+    },
+    {
+      "id": "674ef2d357676e50e469165a",
+      "title": "Step 4"
+    },
+    {
+      "id": "674ef2d357676e50e469165b",
+      "title": "Step 5"
+    },
+    {
+      "id": "674ef2d357676e50e469165c",
+      "title": "Step 6"
+    },
+    {
+      "id": "674ef2d357676e50e469165d",
+      "title": "Step 7"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
