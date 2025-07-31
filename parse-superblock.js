@@ -266,6 +266,23 @@ class BlockCreator {
     );
   }
 
+  getMetaForBlock(blockName) {
+    // Read meta.json for this block
+    const metaPath = path.resolve(this.blockStructureDir, `${blockName}.json`);
+    if (!fs.existsSync(metaPath)) {
+      throw new Error(
+        `Meta file not found for block ${blockName}: ${metaPath}`
+      );
+    }
+
+    // Not all "meta information" can be found in the meta.json.
+    const rawMeta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+    debug(
+      `Meta file indicates ${rawMeta.challengeOrder.length} challenges should exist`
+    );
+    return rawMeta;
+  }
+
   /**
    * Processes a single block: reads challenges, validates, and builds block object
    * @param {object} blockInfo - Block info object with dashedName property
@@ -282,19 +299,7 @@ class BlockCreator {
       throw Error(`Block directory not found: ${blockContentDir}`);
     }
 
-    // Read meta.json for this block
-    const metaPath = path.resolve(this.blockStructureDir, `${blockName}.json`);
-    if (!fs.existsSync(metaPath)) {
-      throw new Error(
-        `Meta file not found for block ${blockName}: ${metaPath}`
-      );
-    }
-
-    // Not all "meta information" can be found in the meta.json.
-    const rawMeta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-    debug(
-      `Meta file indicates ${rawMeta.challengeOrder.length} challenges should exist`
-    );
+    const rawMeta = this.getMetaForBlock(blockName);
 
     if (
       rawMeta.isUpcomingChange &&
@@ -396,8 +401,6 @@ class SuperblockCreator {
     return superBlock;
   }
 }
-
-// ===== I/O FUNCTIONS =====
 
 /**
  * Transforms superblock data to extract blocks array

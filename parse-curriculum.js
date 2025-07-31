@@ -11,7 +11,34 @@ const { SuperblockCreator, BlockCreator } = require('./parse-superblock');
 
 const { parseCertification } = require('./parse-certification');
 
-const STRUCTURE_DIR = path.resolve(__dirname, 'curriculum/structure');
+const CURRICULUM_DIR = path.resolve(__dirname, 'curriculum');
+const I18N_CURRICULUM_DIR = path.resolve(
+  CURRICULUM_DIR,
+  'i18n-curriculum',
+  'curriculum'
+);
+const STRUCTURE_DIR = path.resolve(__dirname, 'curriculum', 'structure');
+
+const getBlockCreator = (lang, opts) => {
+  const {
+    blockContentDir,
+    blockStructureDir,
+    i18nBlockContentDir,
+    dictionariesDir,
+    i18nDictionariesDir
+  } = getLanguageConfig(lang, opts);
+
+  const secondDictionaryDir =
+    lang === 'english' ? dictionariesDir : i18nDictionariesDir;
+
+  return new BlockCreator({
+    lang,
+    blockContentDir,
+    blockStructureDir,
+    i18nBlockContentDir,
+    commentTranslations: createCommentMap(dictionariesDir, secondDictionaryDir)
+  });
+};
 
 function getTranslationEntry(dicts, { engId, text }) {
   return Object.keys(dicts).reduce((acc, lang) => {
@@ -26,6 +53,9 @@ function getTranslationEntry(dicts, { engId, text }) {
 }
 
 function createCommentMap(dictionariesDir, englishDictionariesDir) {
+  debug(
+    `Creating comment map from ${dictionariesDir} and ${englishDictionariesDir}`
+  );
   const languages = fs.readdirSync(dictionariesDir);
 
   // get all their dictionaries
@@ -124,15 +154,19 @@ const superBlockNames = {
   '99-dev-playground': 'dev-playground'
 };
 
-/**
- * Main function to parse all superblocks and create parsed-curriculum.json
- */
-async function parseCurriculum(baseDir, i18nBaseDir, lang) {
+function getLanguageConfig(
+  lang,
+  { baseDir, i18nBaseDir, structureDir } = {
+    baseDir: CURRICULUM_DIR,
+    i18nBaseDir: I18N_CURRICULUM_DIR,
+    structureDir: STRUCTURE_DIR
+  }
+) {
   const contentDir = path.resolve(baseDir, 'challenges', 'english');
   const i18nContentDir = path.resolve(i18nBaseDir, 'challenges', lang);
   const blockContentDir = path.resolve(contentDir, 'blocks');
   const i18nBlockContentDir = path.resolve(i18nContentDir, 'blocks');
-  const blockStructureDir = path.resolve(STRUCTURE_DIR, 'blocks');
+  const blockStructureDir = path.resolve(structureDir, 'blocks');
   const dictionariesDir = path.resolve(baseDir, 'dictionaries');
   const i18nDictionariesDir = path.resolve(i18nBaseDir, 'dictionaries');
 
@@ -158,19 +192,29 @@ async function parseCurriculum(baseDir, i18nBaseDir, lang) {
   debug(`Using dictionaries directory: ${dictionariesDir}`);
   debug(`Using i18n dictionaries directory: ${i18nDictionariesDir}`);
 
-  const commentTranslations = createCommentMap(
-    i18nDictionariesDir,
-    dictionariesDir
-  );
+  return {
+    contentDir,
+    i18nContentDir,
+    blockContentDir,
+    i18nBlockContentDir,
+    blockStructureDir,
+    dictionariesDir,
+    i18nDictionariesDir
+  };
+}
 
+function getContentDir(lang) {
+  const { contentDir, i18nContentDir } = getLanguageConfig(lang);
+
+  return lang === 'english' ? contentDir : i18nContentDir;
+}
+/**
+ * Main function to parse all superblocks and create parsed-curriculum.json
+ */
+async function parseCurriculum(lang) {
+  const contentDir = getContentDir(lang);
   const parser = new SuperblockCreator({
-    blockCreator: new BlockCreator({
-      blockContentDir,
-      blockStructureDir,
-      i18nBlockContentDir,
-      lang,
-      commentTranslations
-    })
+    blockCreator: getBlockCreator(lang)
   });
   console.log('Reading curriculum.json...');
 
@@ -244,4 +288,9 @@ async function parseCurriculum(baseDir, i18nBaseDir, lang) {
   return parsedCurriculum;
 }
 
-module.exports = { parseCurriculum };
+module.exports = {
+  parseCurriculum,
+  getContentDir,
+  getBlockCreator,
+  createCommentMap
+};
