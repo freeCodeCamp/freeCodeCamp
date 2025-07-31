@@ -30,7 +30,7 @@ const {
   hasNoSolution
 } = require('../../shared/config/challenge-types');
 const { getLines } = require('../../shared/utils/get-lines');
-const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
+const { getChallengesForLang } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
 const {
@@ -38,6 +38,8 @@ const {
   helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
 const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
+const { getMetaForBlock } = require('../../parse-superblock');
+const { STRUCTURE_DIR } = require('../../parse-curriculum');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -196,7 +198,10 @@ async function setup() {
     // we can skip them.
     // TODO: omit certifications from the list of challenges
     if (dashedBlockName && !meta[dashedBlockName]) {
-      meta[dashedBlockName] = await getMetaForBlock(dashedBlockName);
+      meta[dashedBlockName] = await getMetaForBlock(
+        dashedBlockName,
+        STRUCTURE_DIR
+      );
     }
   }
   return {
