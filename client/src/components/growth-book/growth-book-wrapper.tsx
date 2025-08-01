@@ -1,9 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
-import {
-  FeatureDefinition,
-  GrowthBook,
-  GrowthBookProvider
-} from '@growthbook/growthbook-react';
+import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { userSelector, userFetchStateSelector } from '../../redux/selectors';
@@ -56,6 +52,7 @@ const GrowthBookWrapper = ({
   const growthbook = useMemo(
     () =>
       new GrowthBook({
+        ...(growthbookUri && { url: growthbookUri }),
         trackingCallback: (experiment, result) => {
           callGA({
             event: 'experiment_viewed',
@@ -70,21 +67,23 @@ const GrowthBookWrapper = ({
   );
 
   useEffect(() => {
-    async function setGrowthBookFeatures() {
+    void growthbook
+      .init({ timeout: 1000 })
+      .then(res => {
+        console.log('GrowthBook initialized', res);
+        // TODO: handle error responses.
+      })
+      .catch(error => {
+        console.error('Error initializing GrowthBook:', error);
+        growthbook.setFeatures(defaultGrowthBookFeatures);
+      });
+  }, [growthbook]);
+
+  useEffect(() => {
+    function setGrowthBookFeatures() {
       if (!growthbookUri) {
         // Defaults are added to facilitate testing, and avoid passing the related env
         growthbook.setFeatures(defaultGrowthBookFeatures);
-      } else {
-        try {
-          const res = await fetch(growthbookUri);
-          const data = (await res.json()) as {
-            features: Record<string, FeatureDefinition>;
-          };
-          growthbook.setFeatures(data.features);
-        } catch (e) {
-          // TODO: report to sentry when it's enabled
-          console.error(e);
-        }
       }
     }
 
@@ -107,7 +106,7 @@ const GrowthBookWrapper = ({
           signedIn: true
         };
       }
-      growthbook.setAttributes(userAttributes);
+      void growthbook.setAttributes(userAttributes);
     }
   }, [user, userFetchState, growthbook]);
 
