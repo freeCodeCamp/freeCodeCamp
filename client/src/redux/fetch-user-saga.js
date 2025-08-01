@@ -1,15 +1,26 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, cancel, delay, fork, put, takeEvery } from 'redux-saga/effects';
 import { getSessionUser, getUserProfile } from '../utils/ajax';
 import {
   fetchProfileForUserComplete,
   fetchProfileForUserError,
   fetchUserComplete,
-  fetchUserError
+  fetchUserError,
+  fetchUserTimeout
 } from './actions';
 
 function* fetchSessionUser() {
+  const timeoutTask = yield fork(function* () {
+    // The server should not take anywhere near 2 seconds to respond. If it
+    // does, we assume the request has failed and dispatch a timeout action to
+    // dismiss the loading state.
+    yield delay(2000);
+    yield put(fetchUserTimeout());
+  });
+
   try {
-    const res = yield call(getSessionUser, AbortSignal.timeout(5000));
+    // This is on a longer timeout to make sure that users with slow connections
+    // do, eventually, get signed in.
+    const res = yield call(getSessionUser, AbortSignal.timeout(10000));
 
     const isSignedOut = res.response.status === 401;
     if (!res.response.ok && !isSignedOut) {
@@ -23,6 +34,8 @@ function* fetchSessionUser() {
   } catch (e) {
     console.log('failed to fetch user', e);
     yield put(fetchUserError(e));
+  } finally {
+    yield cancel(timeoutTask);
   }
 }
 

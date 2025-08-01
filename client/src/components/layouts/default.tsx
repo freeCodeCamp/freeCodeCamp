@@ -181,7 +181,7 @@ function DefaultLayout({
 
   const isJapanese = clientLocale === 'japanese';
 
-  if (fetchState.pending) {
+  if (!fetchState.complete) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
     return (
