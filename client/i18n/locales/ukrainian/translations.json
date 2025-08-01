@@ -117,7 +117,38 @@
     "share-on-bluesky": "Поділитись на BlueSky",
     "share-on-threads": "Поділитись на Threads",
     "play-scene": "Натисніть «Відтворити»",
-    "download-latest-version": "Завантажити найновішу версію"
+    "download-latest-version": "Завантажити найновішу версію",
+    "start": "Start",
+    "go-to-today": "Go to Today's Challenge",
+    "go-to-today-long": "Go to Today's Coding Challenge",
+    "go-to-archive": "Go to Archive",
+    "go-to-archive-long": "Go to Daily Coding Challenge Archive"
+  },
+  "daily-coding-challenges": {
+    "title": "Daily Coding Challenges",
+    "map-title": "Try the coding challenge of the day:",
+    "not-found": "Daily Coding Challenge Not Found.",
+    "release-note": "New challenges are released at midnight US Central time."
+  },
+  "weekdays": {
+    "short": {
+      "sunday": "S",
+      "monday": "M",
+      "tuesday": "T",
+      "wednesday": "W",
+      "thursday": "T",
+      "friday": "F",
+      "saturday": "S"
+    },
+    "long": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    }
   },
   "landing": {
     "big-heading-1": "Вчіться програмувати безоплатно.",
@@ -851,6 +882,8 @@
     "github": "Посилання на сторінку GitHub {{username}}",
     "website": "Посилання на вебсайт {{username}}",
     "twitter": "Посилання на сторінку Twitter {{username}}",
+    "next-month": "Go to next month",
+    "previous-month": "Go to previous month",
     "first-page": "Перейти на першу сторінку",
     "previous-page": "Перейти на попередню сторінку",
     "next-page": "Перейти на наступну сторінку",
@@ -880,7 +913,8 @@
     "editor-a11y-off-non-macos": "Вміст редактора {{editorName}}. Щоб перейти до функцій доступності, натисніть Alt+F1.",
     "editor-a11y-on-macos": "Вміст редактора {{editorName}}. Ввімкнено режим доступності. Натисніть Command+E, щоб вимкнути його, або Option+F1, щоб переглянути більше функцій.",
     "editor-a11y-on-non-macos": "Вміст редактора {{editorName}}. Ввімкнено режим доступності. Натисніть Ctrl+E, щоб вимкнути його, або Alt+F1, щоб переглянути більше функцій.",
-    "terminal-output": "Вивід терміналу"
+    "terminal-output": "Вивід терміналу",
+    "not-available": "Not available"
   },
   "flash": {
     "no-email-in-userinfo": "Не вдалось отримати електронну пошту від вказаного провайдера. Спробуйте іншого провайдера або виберіть опцію «Continue with Email».",
@@ -1234,7 +1268,7 @@
     "heading": "Увага: це ранній доступ (тестове розгортання)",
     "p1": "Ви можете використовувати цю платформу лише в тестовому режимі та отримати ранній доступ до майбутніх функціональностей. Іноді ці зміни також називають наступними, бета, проміжними тощо.",
     "p2": "Ми вдячні за повідомлення про помилки, з якими ви стикаєтесь. Це допомагає покращити freeCodeCamp.org.",
-    "p3": "Ваш прогрес МОЖЛИВО не буде збережним при наступному відвідуванні, а будь-які здобуті сертифікації не будуть дійсними. Дізнайтесь більше <0>тут</0>.",
+    "p3": "Ваш прогрес МОЖЛИВО не буде збережним при наступному відвідуванні, а будь-які здобуті сертифікації не будуть дійсними.",
     "certain": "Прийняти і відхилити"
   },
   "survey": {

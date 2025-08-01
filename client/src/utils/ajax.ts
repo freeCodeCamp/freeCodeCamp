@@ -93,10 +93,6 @@ async function request<T>(
 
 /** GET **/
 
-interface SessionUser {
-  user?: { [username: string]: User };
-}
-
 type CompleteChallengeFromApi = {
   files: Array<Omit<ChallengeFile, 'fileKey'> & { key: string }>;
 } & Omit<CompletedChallenge, 'challengeFiles'>;
@@ -105,26 +101,19 @@ type SavedChallengeFromApi = {
   files: Array<Omit<SavedChallengeFile, 'fileKey'> & { key: string }>;
 } & Omit<SavedChallenge, 'challengeFiles'>;
 
-type ApiSessionResponse = Omit<SessionUser, 'user'>;
-type ApiUser = {
+type ApiUser = Omit<User, 'completedChallenges' & 'savedChallenges'> & {
+  completedChallenges?: CompleteChallengeFromApi[];
+  savedChallenges?: SavedChallengeFromApi[];
+};
+
+type ApiUserResponse = {
   user: {
-    [username: string]: Omit<
-      User,
-      'completedChallenges' & 'savedChallenges'
-    > & {
-      completedChallenges?: CompleteChallengeFromApi[];
-      savedChallenges?: SavedChallengeFromApi[];
-    };
+    [username: string]: ApiUser;
   };
   result?: string;
 };
 
-type UserResponse = {
-  user: { [username: string]: User } | Record<string, never>;
-  result: string | undefined;
-};
-
-function parseApiResponseToClientUser(data: ApiUser): UserResponse {
+function parseApiResponseToClientUser(data: ApiUserResponse): User | null {
   const userData = data.user?.[data?.result ?? ''];
   let completedChallenges: CompletedChallenge[] = [];
   let savedChallenges: SavedChallenge[] = [];
@@ -134,12 +123,9 @@ function parseApiResponseToClientUser(data: ApiUser): UserResponse {
     );
     savedChallenges = mapFilesToChallengeFiles(userData.savedChallenges);
   }
-  return {
-    user: {
-      [data.result ?? '']: { ...userData, completedChallenges, savedChallenges }
-    },
-    result: data.result
-  };
+  return data.result
+    ? { ...userData, completedChallenges, savedChallenges }
+    : null;
 }
 
 // TODO: this at least needs a few aliases so it's human readable
@@ -158,44 +144,38 @@ function mapKeyToFileKey<K>(
   return files.map(({ key, ...rest }) => ({ ...rest, fileKey: key }));
 }
 
-export function getSessionUser(): Promise<ResponseWithData<SessionUser>> {
-  const responseWithData: Promise<
-    ResponseWithData<ApiUser & ApiSessionResponse>
-  > = get('/user/get-session-user');
+export function getSessionUser(): Promise<ResponseWithData<User | null>> {
+  const responseWithData: Promise<ResponseWithData<ApiUserResponse>> = get(
+    '/user/get-session-user'
+  );
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
   return responseWithData.then(({ response, data }) => {
-    const { result, user } = parseApiResponseToClientUser(data);
+    const user = parseApiResponseToClientUser(data);
     return {
       response,
-      data: {
-        result,
-        user
-      }
+      data: user
     };
   });
 }
 
 type UserProfileResponse = {
-  entities: Omit<UserResponse, 'result'>;
+  entities: Omit<ApiUserResponse, 'result'>;
   result: string | undefined;
 };
 export function getUserProfile(
   username: string
-): Promise<ResponseWithData<UserProfileResponse>> {
-  const responseWithData = get<{ entities?: ApiUser; result?: string }>(
+): Promise<ResponseWithData<User | null>> {
+  const responseWithData = get<UserProfileResponse>(
     `/users/get-public-profile?username=${username}`
   );
   return responseWithData.then(({ response, data }) => {
-    const { result, user } = parseApiResponseToClientUser({
+    const user = parseApiResponseToClientUser({
       user: data.entities?.user ?? {},
       result: data.result
     });
     return {
       response,
-      data: {
-        entities: { user },
-        result
-      }
+      data: user
     };
   });
 }

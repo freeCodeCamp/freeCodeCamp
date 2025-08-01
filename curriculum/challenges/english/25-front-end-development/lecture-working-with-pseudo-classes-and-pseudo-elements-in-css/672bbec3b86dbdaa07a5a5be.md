@@ -1,18 +1,11 @@
 ---
 id: 672bbec3b86dbdaa07a5a5be
 title: What Are Examples of Functional Pseudo-classes?
-challengeType: 11
-videoId: eQwf6Y3N_kY
+challengeType: 19
 dashedName: what-are-examples-of-functional-pseudo-classes
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
-
-What are examples of functional pseudo-classes?
 
 Functional pseudo-classes allow you to select elements based on more complex conditions or relationships. Unlike regular pseudo-classes which target elements based on a state, for example, `:hover`, `:focus`, functional pseudo-classes accept arguments within parentheses, hence the name "functional pseudo-classes".
 

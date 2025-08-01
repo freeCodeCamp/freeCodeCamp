@@ -28,7 +28,10 @@ import {
   ProgressTimestamp
 } from '../../utils/progress';
 import { JWT_SECRET } from '../../utils/env';
-import { getExamAttemptsHandler } from '../../exam-environment/routes/exam-environment';
+import {
+  getExamAttemptHandler,
+  getExamAttemptsHandler
+} from '../../exam-environment/routes/exam-environment';
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -484,6 +487,13 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     },
     getExamAttemptsHandler
   );
+  fastify.get(
+    '/user/exam-environment/exam/attempt/:attemptId',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentGetExamAttempt
+    },
+    getExamAttemptHandler
+  );
 
   done();
 };
@@ -692,7 +702,8 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               name: name ?? '',
               theme: theme ?? 'default',
               twitter: normalizeTwitter(twitter),
-              username: usernameDisplay || username,
+              username,
+              usernameDisplay: usernameDisplay || username,
               userToken: encodedToken,
               completedSurveys: normalizeSurveys(completedSurveys),
               msUsername: msUsername?.msUsername
