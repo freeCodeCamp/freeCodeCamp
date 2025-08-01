@@ -3,13 +3,13 @@ const path = require('path');
 const { isEmpty } = require('lodash');
 const debug = require('debug')('fcc:parse-superblock');
 
-const { parseMD } = require('./tools/challenge-parser/parser');
-const { getSuperOrder } = require('./curriculum/utils');
-const { createPoly } = require('./shared/utils/polyvinyl');
-const { isAuditedSuperBlock } = require('./shared/utils/is-audited');
+const { parseMD } = require('../tools/challenge-parser/parser');
+const { createPoly } = require('../shared/utils/polyvinyl');
+const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
 const {
   translateCommentsInChallenge
-} = require('./tools/challenge-parser/translation-parser');
+} = require('../tools/challenge-parser/translation-parser');
+const { getSuperOrder } = require('./utils');
 
 const duplicates = xs => xs.filter((x, i) => xs.indexOf(x) !== i);
 
