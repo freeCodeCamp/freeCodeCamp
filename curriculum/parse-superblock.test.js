@@ -1,3 +1,4 @@
+const { isPoly } = require('../shared/utils/polyvinyl');
 const {
   validateChallenges,
   buildBlock,
@@ -7,7 +8,6 @@ const {
   SuperblockCreator,
   finalizeChallenge
 } = require('./parse-superblock');
-const { isPoly } = require('./shared/utils/polyvinyl');
 
 const dummyFullStackSuperBlock = {
   chapters: [
