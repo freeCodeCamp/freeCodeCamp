@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const fs = require('fs');
 const path = require('path');
 const assert = require('assert');
@@ -19,6 +17,15 @@ const I18N_CURRICULUM_DIR = path.resolve(
 );
 const STRUCTURE_DIR = path.resolve(__dirname, 'curriculum', 'structure');
 
+/**
+ * Creates a BlockCreator instance for a specific language with appropriate configuration
+ * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
+ * @param {Object} [opts] - Optional configuration object
+ * @param {string} [opts.baseDir] - Base directory for curriculum content
+ * @param {string} [opts.i18nBaseDir] - Base directory for i18n curriculum content
+ * @param {string} [opts.structureDir] - Directory containing curriculum structure
+ * @returns {BlockCreator} A configured BlockCreator instance
+ */
 const getBlockCreator = (lang, opts) => {
   const {
     blockContentDir,
@@ -40,6 +47,14 @@ const getBlockCreator = (lang, opts) => {
   });
 };
 
+/**
+ * Gets a translation entry for a specific English ID and text across all languages
+ * @param {Object} dicts - Dictionary object containing translations for each language
+ * @param {Object} params - Parameters object
+ * @param {string} params.engId - The English ID to look up in dictionaries
+ * @param {string} params.text - The fallback English text to use if translation not found
+ * @returns {Object} Object mapping language codes to translated text or fallback English text
+ */
 function getTranslationEntry(dicts, { engId, text }) {
   return Object.keys(dicts).reduce((acc, lang) => {
     const entry = dicts[lang][engId];
@@ -52,13 +67,18 @@ function getTranslationEntry(dicts, { engId, text }) {
   }, {});
 }
 
+/**
+ * Creates a mapping of English comments to their translations across all supported languages
+ * @param {string} dictionariesDir - Path to the main dictionaries directory
+ * @param {string} englishDictionariesDir - Path to the English dictionaries directory
+ * @returns {Object} Object mapping English comment text to translations in all languages
+ */
 function createCommentMap(dictionariesDir, englishDictionariesDir) {
   debug(
     `Creating comment map from ${dictionariesDir} and ${englishDictionariesDir}`
   );
   const languages = fs.readdirSync(dictionariesDir);
 
-  // get all their dictionaries
   const dictionaries = languages.reduce(
     (acc, lang) => ({
       ...acc,
@@ -67,7 +87,6 @@ function createCommentMap(dictionariesDir, englishDictionariesDir) {
     {}
   );
 
-  // get the english dicts
   const COMMENTS_TO_TRANSLATE = require(
     path.resolve(englishDictionariesDir, 'english', 'comments.json')
   );
@@ -154,6 +173,16 @@ const superBlockNames = {
   '99-dev-playground': 'dev-playground'
 };
 
+/**
+ * Gets language-specific configuration paths for curriculum content
+ * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
+ * @param {Object} [options] - Optional configuration object with directory overrides
+ * @param {string} [options.baseDir] - Base directory for curriculum content (defaults to CURRICULUM_DIR)
+ * @param {string} [options.i18nBaseDir] - Base directory for i18n content (defaults to I18N_CURRICULUM_DIR)
+ * @param {string} [options.structureDir] - Directory for curriculum structure (defaults to STRUCTURE_DIR)
+ * @returns {Object} Object containing all relevant directory paths for the language
+ * @throws {AssertionError} When required i18n directories don't exist for non-English languages
+ */
 function getLanguageConfig(
   lang,
   { baseDir, i18nBaseDir, structureDir } = {
@@ -203,12 +232,24 @@ function getLanguageConfig(
   };
 }
 
+/**
+ * Gets the appropriate content directory path for a given language
+ * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
+ * @returns {string} Path to the content directory for the specified language
+ */
 function getContentDir(lang) {
   const { contentDir, i18nContentDir } = getLanguageConfig(lang);
 
   return lang === 'english' ? contentDir : i18nContentDir;
 }
 
+/**
+ * Processes a single superblock by parsing its structure and content
+ * @param {string} superblockFolder - The folder name of the superblock to process
+ * @param {SuperblockCreator} parser - The parser instance to use for processing
+ * @returns {Promise<Object>} Promise resolving to the parsed superblock data
+ * @throws {Error} When the superblock file is not found
+ */
 async function processSuperblock(superblockFolder, parser) {
   debug(`\n=== Processing ${superblockFolder} ===`);
 
@@ -226,6 +267,12 @@ async function processSuperblock(superblockFolder, parser) {
   return parser.parseSuperblock(superblockPath, superBlockName);
 }
 
+/**
+ * Parses the entire curriculum for a specific language
+ * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
+ * @returns {Promise<Object>} Promise resolving to the complete parsed curriculum data
+ * @throws {Error} When curriculum files are not found or superblocks/certifications are empty
+ */
 async function parseCurriculum(lang) {
   const contentDir = getContentDir(lang);
   const parser = new SuperblockCreator({
