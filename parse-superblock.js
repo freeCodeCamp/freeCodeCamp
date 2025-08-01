@@ -95,8 +95,6 @@ function buildBlock(foundChallenges, meta) {
   });
 
   return {
-    name: meta.name,
-    dashedName: meta.dashedName,
     challenges
   };
 }
