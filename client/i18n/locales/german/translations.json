@@ -9,6 +9,7 @@
     "edit": "Bearbeiten",
     "copy": "Copy",
     "view": "Anzeigen",
+    "submit-continue": "Submit and continue",
     "view-code": "Code anschauen",
     "view-project": "Projekt anschauen",
     "view-cert-title": "View {{certTitle}}",
@@ -37,6 +38,7 @@
     "news": "News",
     "donate": "Spenden",
     "supporters": "Supporters",
+    "exam-app": "Exam App",
     "go-to-supporters": "Go to Supporters Page",
     "update-settings": "Meine Kontoeinstellungen ändern",
     "sign-me-out": "Von freeCodeCamp abmelden",
@@ -60,6 +62,8 @@
     "check-code": "Check Your Code",
     "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
     "check-code-cmd": "Check Your Code (Command + Enter)",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "Zurücksetzen",
     "reset-step": "Reset This Step",
     "help": "Hilfe",
@@ -86,6 +90,7 @@
     "click-start-course": "Start den Kurs",
     "click-start-project": "Starte das Projekt",
     "click-start-exam": "Start the exam",
+    "go-to-course": "Go to course",
     "change-language": "Sprache wechseln",
     "resume-project": "Projekt fortsetzen",
     "start-project": "Projekt starten",
@@ -110,7 +115,40 @@
     "closed-caption": "Closed caption",
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
-    "share-on-threads": "Share on Threads"
+    "share-on-threads": "Share on Threads",
+    "play-scene": "Press Play",
+    "download-latest-version": "Download the Latest Version",
+    "start": "Start",
+    "go-to-today": "Go to Today's Challenge",
+    "go-to-today-long": "Go to Today's Coding Challenge",
+    "go-to-archive": "Go to Archive",
+    "go-to-archive-long": "Go to Daily Coding Challenge Archive"
+  },
+  "daily-coding-challenges": {
+    "title": "Daily Coding Challenges",
+    "map-title": "Try the coding challenge of the day:",
+    "not-found": "Daily Coding Challenge Not Found.",
+    "release-note": "New challenges are released at midnight US Central time."
+  },
+  "weekdays": {
+    "short": {
+      "sunday": "S",
+      "monday": "M",
+      "tuesday": "T",
+      "wednesday": "W",
+      "thursday": "T",
+      "friday": "F",
+      "saturday": "S"
+    },
+    "long": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    }
   },
   "landing": {
     "big-heading-1": "Lerne zu programmieren — kostenlos.",
@@ -175,6 +213,7 @@
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
+    "catalog-heading": "Explore our Catalog:",
     "faq": "Frequently asked questions:",
     "faqs": [
       {
@@ -340,6 +379,14 @@
       "p7": "Als akademische Institution, die leistungsbasierte Zertifizierungen vergibt, nehmen wir akademische Ehrlichkeit sehr ernst. Wenn du Fragen zu dieser Richtlinie hast oder vermutest, dass jemand dagegen verstoßen hat, kannst du eine E-Mail an <0>{{email}}</0> schicken und wir werden das untersuchen."
     }
   },
+  "exam": {
+    "download-header": "Download the freeCodeCamp Exam Environment App",
+    "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
+    "version": "The latest version of our app is: {{version}}.",
+    "download-details": "Manually download the app",
+    "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+  },
   "profile": {
     "you-change-privacy": "Du musst deine Privatsphäre-Einstellung ändern, damit dein Portfolio von anderen gesehen wird. Dies ist eine Vorschau wie dein Portfolio aussehen wird, wenn es veröffentlicht wird.",
     "username-change-privacy": "{{username}} muss seine Privatsphäre-Einstellung ändern, damit du sein Portfolio ansehen kannst.",
@@ -419,11 +466,13 @@
     "answered-mcq": "You have unanswered questions and/or incorrect answers.",
     "explanation": "Explanation",
     "transcript": "Transcript",
+    "video": "Video",
     "solution-link": "Lösungs-Link",
     "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
     "submit-and-go": "Absenden und zur nächsten Herausforderung gehen",
     "congratulations": "Glückwunsch, dein Code hat bestanden. Sende deinen Code ein, um fortzufahren.",
+    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
     "i-completed": "Ich habe diese Herausforderung abgeschlossen",
     "example-code": "Example Code",
     "test-output": "Deine Testergebnisse werden hier erscheinen",
@@ -796,7 +845,15 @@
     "iframe-form-submit-alert": "Normalerweise würde dieses Formular übermittelt werden! Es funktioniert. Dies wird übermittelt an: {{externalLink}}",
     "document-notfound": "Dokument wurde nicht gefunden",
     "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page.",
-    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?"
+    "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?",
+    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
+    "fsd-b-cta": "Start Learning",
+    "fsd-b-benefit-1-title": "100k+ Students",
+    "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
+    "fsd-b-benefit-2-title": "Professional Certification",
+    "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
+    "fsd-b-benefit-3-title": "500+ Exercises",
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
   },
   "icons": {
     "gold-cup": "Goldpokal",
@@ -825,6 +882,8 @@
     "github": "Link zu {{username}}'s GitHub-Account",
     "website": "Link zu {{username}}'s Website",
     "twitter": "Link zu {{username}}'s Twitter-Account",
+    "next-month": "Go to next month",
+    "previous-month": "Go to previous month",
     "first-page": "Zur ersten Seite gehen",
     "previous-page": "Zur vorherigen Seite gehen",
     "next-page": "Zur nächsten Seite gehen",
@@ -850,7 +909,12 @@
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
     "edit-my-profile": "Edit my profile",
-    "terminal-output": "Terminal output"
+    "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
+    "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
+    "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
+    "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
+    "terminal-output": "Terminal output",
+    "not-available": "Not available"
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -1204,7 +1268,7 @@
     "heading": "Warning: This is an early access test deployment",
     "p1": "We welcome you to try this platform in a test-only mode and get early access to upcoming features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
     "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
-    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid.",
     "certain": "Accept and Dismiss"
   },
   "survey": {
@@ -1231,6 +1295,16 @@
       "submit": "Submit the survey",
       "exit": "Exit the survey",
       "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "Explore our Catalog",
+      "levels": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced"
+      }
     }
   }
 }

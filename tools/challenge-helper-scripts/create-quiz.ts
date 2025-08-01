@@ -10,7 +10,7 @@ import {
   superBlockToFolderMap
 } from '../../shared/config/curriculum';
 import { createQuizFile, validateBlockName } from './utils';
-import { Meta } from './helpers/project-metadata';
+import { getBaseMeta } from './helpers/get-base-meta';
 
 const helpCategories = [
   'HTML-CSS',
@@ -90,7 +90,7 @@ async function createMetaJson(
   challengeId: ObjectID
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
-  const newMeta = await parseJson<Meta>('./quiz-meta.json');
+  const newMeta = getBaseMeta('Quiz');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
@@ -146,14 +146,12 @@ async function createQuizChallenge(
     await withTrace(fs.mkdir, newChallengeDir);
   }
   return createQuizFile({
-    challengeType: '8',
     projectPath: newChallengeDir + '/',
     title: title,
     dashedName: block,
     questionCount: questionCount
   });
 }
-
 function parseJson<JsonSchema>(filePath: string) {
   return withTrace(fs.readFile, filePath, 'utf8').then(
     // unfortunately, withTrace does not correctly infer that the third argument

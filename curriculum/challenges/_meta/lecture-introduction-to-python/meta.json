@@ -53,6 +53,10 @@
     {
       "id": "67fe85a3db9bad35f2b6a2bd",
       "title": "How Do Conditional Statements and Logical Operators Work?"
+    },
+    {
+      "id": "68480f431e8568b2056b140b",
+      "title": "What Are Truthy and Falsy Values, and How Do Boolean Operators and Short-Circuiting Work?"
     }
   ],
   "helpCategory": "Python"

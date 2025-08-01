@@ -48,10 +48,10 @@ import {
 import { isObjectID } from './utils/validation';
 import { getLogger } from './utils/logger';
 import {
-  examEnvironmentMultipartRoutes,
   examEnvironmentOpenRoutes,
   examEnvironmentValidatedTokenRoutes
 } from './exam-environment/routes/exam-environment';
+import { dailyCodingChallengeRoutes } from './daily-coding-challenge/routes/daily-coding-challenge';
 
 type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -201,7 +201,6 @@ export const build = async (
     // TODO(Post-MVP): add the redirectIfSignedIn hook here, rather than in the
     // mobileAuth0Routes and authRoutes plugins.
     await fastify.register(publicRoutes.mobileAuth0Routes);
-    // TODO: consolidate with LOCAL_MOCK_AUTH
     if (FCC_ENABLE_DEV_LOGIN_MODE) {
       await fastify.register(publicRoutes.devAuthRoutes);
     } else {
@@ -214,7 +213,6 @@ export const build = async (
       fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
 
       void fastify.register(examEnvironmentValidatedTokenRoutes);
-      void fastify.register(examEnvironmentMultipartRoutes);
       done();
     });
     void fastify.register(examEnvironmentOpenRoutes);
@@ -232,6 +230,7 @@ export const build = async (
   void fastify.register(publicRoutes.deprecatedEndpoints);
   void fastify.register(publicRoutes.statusRoute);
   void fastify.register(publicRoutes.unsubscribeDeprecated);
+  void fastify.register(dailyCodingChallengeRoutes);
 
   return fastify;
 };

@@ -42,7 +42,7 @@ It produces the thinned output:
 
 ## Algorithm
 
-Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
+Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes. The algorithm operates on all black pixels P1 that can have eight neighbors. The neighbors are, in order, arranged as:
 
 $$\begin{array}{|c|c|c|}
   \\hline
@@ -51,16 +51,16 @@ $$\begin{array}{|c|c|c|}
   P7 & P6              & P5\\\\ \\hline
 \end{array}$$
 
-Obviously the boundary pixels of the image cannot have the full eight neighbours.
+Obviously the boundary pixels of the image cannot have the full eight neighbors.
 
 - Define $A(P1)$ = the number of transitions from white to black, ($0 \to 1$) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).
-- Define $B(P1)$ = the number of black pixel neighbours of P1. ($= \\sum(P2 \ldots P9)$)
+- Define $B(P1)$ = the number of black pixel neighbors of P1. ($= \\sum(P2 \ldots P9)$)
 
 **Step 1:**
 
 All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
 
-1. The pixel is black and has eight neighbours
+1. The pixel is black and has eight neighbors
 2. $2 \le B(P1) \le 6$
 3. $A(P1) = 1$
 4. At least one of $P2$, $P4$ and $P6$ is white
@@ -72,7 +72,7 @@ After iterating over the image and collecting all the pixels satisfying all step
 
 All pixels are again tested and pixels satisfying all the following conditions are just noted at this stage.
 
-1. The pixel is black and has eight neighbours
+1. The pixel is black and has eight neighbors
 2. $2 \le B(P1) \le 6$
 3. $A(P1) = 1$
 4. At least one of $P2$, $P4$ and $P8$ is white
