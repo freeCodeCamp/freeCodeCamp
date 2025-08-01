@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding Error Handling
 
-Learn about Understanding Error Handling in these lectures.
+Learn about error handling in Python.
