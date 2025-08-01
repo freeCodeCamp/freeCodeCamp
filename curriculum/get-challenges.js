@@ -4,7 +4,7 @@ const util = require('util');
 
 const { curriculum: curriculumLangs } =
   require('../shared/config/i18n').availableLangs;
-const { parseCurriculum } = require('../parse-curriculum');
+const { parseCurriculum } = require('./parse-curriculum');
 const {
   assertSuperBlockStructure
 } = require('./schema/superblock-structure-schema');
