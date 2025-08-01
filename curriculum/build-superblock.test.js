@@ -7,7 +7,7 @@ const {
   fixChallengeProperties,
   SuperblockCreator,
   finalizeChallenge
-} = require('./parse-superblock');
+} = require('./build-superblock');
 
 const dummyFullStackSuperBlock = {
   chapters: [
@@ -140,7 +140,7 @@ const expectedChallengeProperties = {
   disableLoopProtectPreview: false
 };
 
-describe('parseSuperblock pure functions', () => {
+describe('buildSuperblock pure functions', () => {
   describe('validateChallenges', () => {
     test('should not throw when all challenges match meta', () => {
       const foundChallenges = [
