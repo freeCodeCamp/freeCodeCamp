@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { graphql } from 'gatsby';
 import { Button, Spacer, Table } from '@freecodecamp/ui';
 import { isEmpty } from 'lodash';
 import { useTranslation } from 'react-i18next';
+
 import { FullWidthRow } from '../../../components/helpers';
 import useDetectOS from '../utils/use-detect-os';
 import { getExamAttempts } from '../../../utils/ajax';
 import type { Attempt } from '../../../utils/ajax';
+import { ChallengeNode } from '../../../redux/prop-types';
 
 interface GitProps {
   tag_name: string;
@@ -14,7 +17,17 @@ interface GitProps {
   }[];
 }
 
-function ShowExamDownload(): JSX.Element {
+interface ShowExamDownloadProps {
+  data: { challengeNode: ChallengeNode };
+}
+
+function ShowExamDownload({
+  data: {
+    challengeNode: {
+      challenge: { id }
+    }
+  }
+}: ShowExamDownloadProps): JSX.Element {
   const [latestVersion, setLatestVersion] = useState<string | null>(null);
 
   const [downloadLink, setDownloadLink] = useState<string | undefined>('');
@@ -99,7 +112,10 @@ function ShowExamDownload(): JSX.Element {
         const attemptsRes = await getExamAttempts();
 
         if (attemptsRes.response.ok) {
-          setAttempts(attemptsRes.data);
+          const filteredAttempts = attemptsRes.data.filter(
+            a => a.examId === id
+          );
+          setAttempts(filteredAttempts);
         } else if (attemptsRes.response.status === 404) {
           setAttempts([]);
         }
@@ -110,6 +126,7 @@ function ShowExamDownload(): JSX.Element {
 
     void checkLatestVersion();
     void fetchExamsAndAttempts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [os]);
 
   return (
@@ -188,3 +205,14 @@ function ShowExamDownload(): JSX.Element {
 }
 
 export default ShowExamDownload;
+
+// GraphQL
+export const query = graphql`
+  query ExamEnvironmentExam($id: String!) {
+    challengeNode(id: { eq: $id }) {
+      challenge {
+        id
+      }
+    }
+  }
+`;

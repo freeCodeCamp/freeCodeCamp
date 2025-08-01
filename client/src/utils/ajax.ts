@@ -213,6 +213,8 @@ export interface Exam {
 }
 
 export interface Attempt {
+  id: string;
+  examId: string;
   startTimeInMS: number;
   questionSets: unknown[];
   result?: {
