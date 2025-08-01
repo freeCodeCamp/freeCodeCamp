@@ -21,60 +21,79 @@ Within `tests/1_unit-tests.js` under the test labeled `#13` in the `Strings` sui
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=12').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",12);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(data.state, 'passed');
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct method for the first assertion - `isString` vs. `isNotString`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=12').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",12);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(
         data.assertions[0].method,
         'isNotString',
         'A float number is not a string'
       );
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct method for the second assertion - `isString` vs. `isNotString`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=12').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",12);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(
         data.assertions[1].method,
         'isString',
         'environment vars are strings (or undefined)'
       );
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct method for the third assertion - `isString` vs. `isNotString`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=12').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",12);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(data.assertions[2].method, 'isString', 'A JSON is a string');
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
-
