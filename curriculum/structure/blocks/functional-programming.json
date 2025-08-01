@@ -1,0 +1,107 @@
+{
+  "name": "Functional Programming",
+  "isUpcomingChange": false,
+  "dashedName": "functional-programming",
+  "helpCategory": "JavaScript",
+  "order": 7,
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "challengeOrder": [
+    {
+      "id": "587d7b8d367417b2b2512b5b",
+      "title": "Learn About Functional Programming"
+    },
+    {
+      "id": "587d7b8e367417b2b2512b5c",
+      "title": "Understand Functional Programming Terminology"
+    },
+    {
+      "id": "587d7b8e367417b2b2512b5d",
+      "title": "Understand the Hazards of Using Imperative Code"
+    },
+    {
+      "id": "587d7b8e367417b2b2512b5e",
+      "title": "Avoid Mutations and Side Effects Using Functional Programming"
+    },
+    {
+      "id": "587d7b8e367417b2b2512b5f",
+      "title": "Pass Arguments to Avoid External Dependence in a Function"
+    },
+    {
+      "id": "587d7b8f367417b2b2512b60",
+      "title": "Refactor Global Variables Out of Functions"
+    },
+    {
+      "id": "587d7b8f367417b2b2512b61",
+      "title": "Use the map Method to Extract Data from an Array"
+    },
+    {
+      "id": "587d7b8f367417b2b2512b62",
+      "title": "Implement map on a Prototype"
+    },
+    {
+      "id": "587d7b8f367417b2b2512b63",
+      "title": "Use the filter Method to Extract Data from an Array"
+    },
+    {
+      "id": "587d7b8f367417b2b2512b64",
+      "title": "Implement the filter Method on a Prototype"
+    },
+    {
+      "id": "587d7b90367417b2b2512b65",
+      "title": "Return Part of an Array Using the slice Method"
+    },
+    {
+      "id": "9d7123c8c441eeafaeb5bdef",
+      "title": "Remove Elements from an Array Using slice Instead of splice"
+    },
+    {
+      "id": "587d7da9367417b2b2512b66",
+      "title": "Combine Two Arrays Using the concat Method"
+    },
+    {
+      "id": "587d7da9367417b2b2512b67",
+      "title": "Add Elements to the End of an Array Using concat Instead of push"
+    },
+    {
+      "id": "587d7da9367417b2b2512b68",
+      "title": "Use the reduce Method to Analyze Data"
+    },
+    {
+      "id": "587d7b88367417b2b2512b45",
+      "title": "Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem"
+    },
+    {
+      "id": "587d7da9367417b2b2512b69",
+      "title": "Sort an Array Alphabetically using the sort Method"
+    },
+    {
+      "id": "587d7da9367417b2b2512b6a",
+      "title": "Return a Sorted Array Without Changing the Original Array"
+    },
+    {
+      "id": "587d7daa367417b2b2512b6b",
+      "title": "Split a String into an Array Using the split Method"
+    },
+    {
+      "id": "587d7daa367417b2b2512b6c",
+      "title": "Combine an Array into a String Using the join Method"
+    },
+    {
+      "id": "587d7dab367417b2b2512b6d",
+      "title": "Apply Functional Programming to Convert Strings to URL Slugs"
+    },
+    {
+      "id": "587d7dab367417b2b2512b6e",
+      "title": "Use the every Method to Check that Every Element in an Array Meets a Criteria"
+    },
+    {
+      "id": "587d7dab367417b2b2512b6f",
+      "title": "Use the some Method to Check that Any Elements in an Array Meet a Criteria"
+    },
+    {
+      "id": "587d7dab367417b2b2512b70",
+      "title": "Introduction to Currying and Partial Application"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

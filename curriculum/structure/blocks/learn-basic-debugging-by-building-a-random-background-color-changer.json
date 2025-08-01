@@ -1,0 +1,45 @@
+{
+  "name": "Learn Basic Debugging by Building a Random Background Color Changer",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-basic-debugging-by-building-a-random-background-color-changer",
+  "order": 3,
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
+  "challengeOrder": [
+    {
+      "id": "6650c9a94d6e13d14a043a69",
+      "title": "Step 1"
+    },
+    {
+      "id": "66323433f931ca32305a11f5",
+      "title": "Step 2"
+    },
+    {
+      "id": "663250b42513ef5975599c49",
+      "title": "Step 3"
+    },
+    {
+      "id": "663255f28c59315db74d137b",
+      "title": "Step 4"
+    },
+    {
+      "id": "66325a250690a3612c1db0f6",
+      "title": "Step 5"
+    },
+    {
+      "id": "663260de72634166b0800fe9",
+      "title": "Step 6"
+    },
+    {
+      "id": "66326637df347d6ae9928853",
+      "title": "Step 7"
+    },
+    {
+      "id": "66326913b729e16dd0127a36",
+      "title": "Step 8"
+    }
+  ],
+  "helpCategory": "JavaScript",
+  "blockLayout": "legacy-challenge-grid"
+}

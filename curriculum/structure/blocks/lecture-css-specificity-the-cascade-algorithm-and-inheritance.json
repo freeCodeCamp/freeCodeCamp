@@ -1,0 +1,43 @@
+{
+  "name": "CSS Specificity, the Cascade Algorithm, and Inheritance",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-css-specificity-the-cascade-algorithm-and-inheritance",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa62178d5ff57fe4f98e0",
+      "title": "What Is CSS Specificity, and the Specificity for Inline, Internal, and External CSS?"
+    },
+    {
+      "id": "672b8e7eca8a4322306d15f8",
+      "title": "What Is the Universal Selector, and What Is Its Specificity?"
+    },
+    {
+      "id": "672b8e8adcc27e235a154231",
+      "title": "What Is the Specificity for Type Selectors?"
+    },
+    {
+      "id": "672b8e9892eafe238d6513a5",
+      "title": "What Is the Specificity for Class Selectors?"
+    },
+    {
+      "id": "672b8ea434ceac23cc90f337",
+      "title": "What Is the Specificity for ID Selectors?"
+    },
+    {
+      "id": "672b8f1399cabc2406c3227f",
+      "title": "What Is the important Keyword, and What Are the Best Practices for Using It?"
+    },
+    {
+      "id": "672b8f23511adf25646b4236",
+      "title": "How Does the Cascade Algorithm Work at a High Level?"
+    },
+    {
+      "id": "672b8f382370e025aadd3f4e",
+      "title": "How Does Inheritance Work with CSS at a High Level?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

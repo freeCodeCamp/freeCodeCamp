@@ -1,0 +1,19 @@
+{
+  "name": "Working with CSS Flexbox",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-css-flexbox",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa7f7284b235f46f7d4e9",
+      "title": "What Is CSS Flexbox, and When Should You Use It?"
+    },
+    {
+      "id": "672bd658c0e190f674a5e057",
+      "title": "What Are Some Common Flex Properties, and How Do They Work?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

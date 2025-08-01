@@ -1,0 +1,21 @@
+{
+  "blocks": [
+    "top-learn-html-foundations",
+    "top-working-with-text",
+    "top-links-and-images",
+    "top-build-a-recipe-project",
+    "top-learn-css-foundations",
+    "top-learn-css-foundations-projects",
+    "top-learn-css-specificity",
+    "top-the-box-model",
+    "top-learn-block-and-inline",
+    "top-introduction-to-flexbox",
+    "top-learn-variables-and-operators",
+    "top-learn-data-types-and-conditionals",
+    "top-learn-function-basics",
+    "top-basic-function-projects",
+    "top-learn-arrays-and-loops",
+    "top-learn-to-solve-problems-and-understand-errors",
+    "top-build-a-rock-paper-scissors-game"
+  ]
+}

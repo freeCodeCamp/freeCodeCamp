@@ -1,0 +1,143 @@
+{
+  "name": "Regular Expressions",
+  "isUpcomingChange": false,
+  "dashedName": "regular-expressions",
+  "helpCategory": "JavaScript",
+  "order": 2,
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "challengeOrder": [
+    {
+      "id": "587d7db3367417b2b2512b8e",
+      "title": "Using the Test Method"
+    },
+    {
+      "id": "587d7db3367417b2b2512b8f",
+      "title": "Match Literal Strings"
+    },
+    {
+      "id": "587d7db4367417b2b2512b90",
+      "title": "Match a Literal String with Different Possibilities"
+    },
+    {
+      "id": "587d7db4367417b2b2512b91",
+      "title": "Ignore Case While Matching"
+    },
+    {
+      "id": "587d7db4367417b2b2512b92",
+      "title": "Extract Matches"
+    },
+    {
+      "id": "587d7db4367417b2b2512b93",
+      "title": "Find More Than the First Match"
+    },
+    {
+      "id": "587d7db5367417b2b2512b94",
+      "title": "Match Anything with Wildcard Period"
+    },
+    {
+      "id": "587d7db5367417b2b2512b95",
+      "title": "Match Single Character with Multiple Possibilities"
+    },
+    {
+      "id": "587d7db5367417b2b2512b96",
+      "title": "Match Letters of the Alphabet"
+    },
+    {
+      "id": "587d7db5367417b2b2512b97",
+      "title": "Match Numbers and Letters of the Alphabet"
+    },
+    {
+      "id": "587d7db6367417b2b2512b98",
+      "title": "Match Single Characters Not Specified"
+    },
+    {
+      "id": "587d7db6367417b2b2512b99",
+      "title": "Match Characters that Occur One or More Times"
+    },
+    {
+      "id": "587d7db6367417b2b2512b9a",
+      "title": "Match Characters that Occur Zero or More Times"
+    },
+    {
+      "id": "587d7db6367417b2b2512b9b",
+      "title": "Find Characters with Lazy Matching"
+    },
+    {
+      "id": "587d7db7367417b2b2512b9c",
+      "title": "Find One or More Criminals in a Hunt"
+    },
+    {
+      "id": "587d7db7367417b2b2512b9d",
+      "title": "Match Beginning String Patterns"
+    },
+    {
+      "id": "587d7db7367417b2b2512b9e",
+      "title": "Match Ending String Patterns"
+    },
+    {
+      "id": "587d7db7367417b2b2512b9f",
+      "title": "Match All Letters and Numbers"
+    },
+    {
+      "id": "587d7db8367417b2b2512ba0",
+      "title": "Match Everything But Letters and Numbers"
+    },
+    {
+      "id": "5d712346c441eddfaeb5bdef",
+      "title": "Match All Numbers"
+    },
+    {
+      "id": "587d7db8367417b2b2512ba1",
+      "title": "Match All Non-Numbers"
+    },
+    {
+      "id": "587d7db8367417b2b2512ba2",
+      "title": "Restrict Possible Usernames"
+    },
+    {
+      "id": "587d7db8367417b2b2512ba3",
+      "title": "Match Whitespace"
+    },
+    {
+      "id": "587d7db9367417b2b2512ba4",
+      "title": "Match Non-Whitespace Characters"
+    },
+    {
+      "id": "587d7db9367417b2b2512ba5",
+      "title": "Specify Upper and Lower Number of Matches"
+    },
+    {
+      "id": "587d7db9367417b2b2512ba6",
+      "title": "Specify Only the Lower Number of Matches"
+    },
+    {
+      "id": "587d7db9367417b2b2512ba7",
+      "title": "Specify Exact Number of Matches"
+    },
+    {
+      "id": "587d7dba367417b2b2512ba8",
+      "title": "Check for All or None"
+    },
+    {
+      "id": "587d7dba367417b2b2512ba9",
+      "title": "Positive and Negative Lookahead"
+    },
+    {
+      "id": "5c3dda8b4d8df89bea71600f",
+      "title": "Check For Mixed Grouping of Characters"
+    },
+    {
+      "id": "587d7dbb367417b2b2512baa",
+      "title": "Reuse Patterns Using Capture Groups"
+    },
+    {
+      "id": "587d7dbb367417b2b2512bab",
+      "title": "Use Capture Groups to Search and Replace"
+    },
+    {
+      "id": "587d7dbb367417b2b2512bac",
+      "title": "Remove Whitespace from Start and End"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}
