@@ -208,17 +208,31 @@ function getContentDir(lang) {
 
   return lang === 'english' ? contentDir : i18nContentDir;
 }
-/**
- * Main function to parse all superblocks and create parsed-curriculum.json
- */
+
+async function processSuperblock(superblockFolder, parser) {
+  debug(`\n=== Processing ${superblockFolder} ===`);
+
+  const superBlockName = superBlockNames[superblockFolder];
+  const superblockPath = path.resolve(
+    STRUCTURE_DIR,
+    'superblocks',
+    `${superblockFolder}.json`
+  );
+
+  if (!fs.existsSync(superblockPath)) {
+    throw Error(`Superblock file not found: ${superblockPath}`);
+  }
+
+  return parser.parseSuperblock(superblockPath, superBlockName);
+}
+
 async function parseCurriculum(lang) {
   const contentDir = getContentDir(lang);
   const parser = new SuperblockCreator({
     blockCreator: getBlockCreator(lang)
   });
-  console.log('Reading curriculum.json...');
+  debug('Reading curriculum.json...');
 
-  // Read the curriculum.json file
   const curriculumPath = path.resolve(STRUCTURE_DIR, 'curriculum.json');
   if (!fs.existsSync(curriculumPath)) {
     throw new Error(`Curriculum file not found: ${curriculumPath}`);
@@ -231,58 +245,34 @@ async function parseCurriculum(lang) {
   if (isEmpty(certifications))
     throw Error('No certifications found in curriculum.json');
 
-  console.log(`Found ${superblocks.length} superblocks to parse`);
+  debug(`Found ${superblocks.length} superblocks to parse`);
 
   const parsedCurriculum = { certifications: { blocks: {} } };
 
-  // Parse each superblock
   for (const superblockFolder of superblocks) {
-    console.log(`\n=== Processing ${superblockFolder} ===`);
-
-    const superBlockName = superBlockNames[superblockFolder];
-
-    const superblockPath = path.resolve(
-      STRUCTURE_DIR,
-      'superblocks',
-      `${superblockFolder}.json`
+    const superblockName = superBlockNames[superblockFolder];
+    parsedCurriculum[superblockName] = await processSuperblock(
+      superblockFolder,
+      parser
     );
 
-    if (!fs.existsSync(superblockPath)) {
-      throw Error(`Superblock file not found: ${superblockPath}`);
-    }
-
-    // Parse the superblock
-    const parsedSuperblock = await parser.parseSuperblock(
-      superblockPath,
-      superBlockName
-    );
-
-    // Use the display name as the key, or fall back to the folder name
-
-    parsedCurriculum[superBlockName] = parsedSuperblock;
-
-    console.log(`✅ Successfully parsed ${superBlockName}`);
+    debug(`Successfully parsed ${superblockName}`);
   }
 
-  console.log(
-    `Total superblocks parsed: ${Object.keys(parsedCurriculum).length}`
-  );
+  debug(`Total superblocks parsed: ${Object.keys(parsedCurriculum).length}`);
 
   // Parse certifications
   for (const cert of certifications) {
     const certPath = path.resolve(contentDir, 'certifications', `${cert}.yml`);
-
     if (!fs.existsSync(certPath)) {
       throw Error(`Certification file not found: ${certPath}`);
     }
 
-    console.log(`\n=== Processing certification ${cert} ===`);
+    debug(`\n=== Processing certification ${cert} ===`);
 
-    const parsedCert = parseCertification(certPath);
+    parsedCurriculum.certifications.blocks[cert] = parseCertification(certPath);
 
-    parsedCurriculum.certifications.blocks[cert] = { challenges: [parsedCert] };
-
-    console.log(`✅ Successfully parsed certification ${cert}`);
+    debug(`Successfully parsed certification ${cert}`);
   }
 
   return parsedCurriculum;
