@@ -38,8 +38,7 @@ const {
   helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
 const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
-const { getMetaForBlock } = require('../../parse-superblock');
-const { STRUCTURE_DIR } = require('../../parse-curriculum');
+const { STRUCTURE_DIR, getBlockCreator } = require('../../parse-curriculum');
 const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
@@ -199,7 +198,7 @@ async function setup() {
     // we can skip them.
     // TODO: omit certifications from the list of challenges
     if (dashedBlockName && !meta[dashedBlockName]) {
-      meta[dashedBlockName] = await getMetaForBlock(
+      meta[dashedBlockName] = await getBlockCreator(lang).getMetaForBlock(
         dashedBlockName,
         STRUCTURE_DIR
       );
