@@ -85,6 +85,6 @@ const schema = Joi.object()
   // this makes sure there is no unknown key in the object
   .unknown(false);
 
-exports.metaSchemaValidator = meta => {
+exports.validateMetaSchema = meta => {
   return schema.validate(meta, { abortEarly: false });
 };
