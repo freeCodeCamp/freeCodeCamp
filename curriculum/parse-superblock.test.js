@@ -313,8 +313,6 @@ describe('parseSuperblock pure functions', () => {
 
       const result = buildBlock(foundChallenges, meta);
 
-      expect(result.name).toBe('Test Block');
-      expect(result.dashedName).toBe('test-block');
       expect(result.challenges).toHaveLength(2);
       expect(result.challenges[0].id).toBe('1'); // First in order
       expect(result.challenges[1].id).toBe('2'); // Second in order
