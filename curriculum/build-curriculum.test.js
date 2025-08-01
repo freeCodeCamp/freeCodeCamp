@@ -1,6 +1,6 @@
 const path = require('node:path');
 
-const { createCommentMap } = require('./parse-curriculum');
+const { createCommentMap } = require('./build-curriculum');
 
 describe('createCommentMap', () => {
   const dictionaryDir = path.resolve(__dirname, '__fixtures__', 'dictionaries');

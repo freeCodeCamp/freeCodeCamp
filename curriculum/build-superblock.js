@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { isEmpty } = require('lodash');
-const debug = require('debug')('fcc:parse-superblock');
+const debug = require('debug')('fcc:build-superblock');
 
 const { parseMD } = require('../tools/challenge-parser/parser');
 const { createPoly } = require('../shared/utils/polyvinyl');
@@ -260,7 +260,7 @@ class BlockCreator {
   }
 
   /**
-   * Reads and parses all challenges from a block directory
+   * Reads and builds all challenges from a block directory
    * @param {string} block - Name of the block
    * @param {object} meta - Meta object for the block
    * @param {boolean} isAudited - Whether the block is audited for i18n
@@ -363,7 +363,7 @@ class BlockCreator {
     const blockResult = buildBlock(foundChallenges, meta);
 
     debug(
-      `Completed block "${meta.name}" with ${blockResult.challenges.length} challenges (${blockResult.challenges.filter(c => !c.missing).length} parsed successfully)`
+      `Completed block "${meta.name}" with ${blockResult.challenges.length} challenges (${blockResult.challenges.filter(c => !c.missing).length} built successfully)`
     );
 
     return blockResult;
@@ -383,10 +383,10 @@ class SuperblockCreator {
    * Main parsing function for superblock
    * @param {string} superblockPath - Path to superblock JSON file
    * @param {string} superBlockName - Name of the superblock
-   * @returns {Promise<object>} Parsed superblock data
+   * @returns {Promise<object>} Built superblock data
    */
-  async parseSuperblock(superblockPath, superBlockName) {
-    debug(`Parsing superblock: ${superblockPath}`);
+  async buildSuperblock(superblockPath, superBlockName) {
+    debug(`Building superblock: ${superblockPath}`);
     const superblockData = JSON.parse(fs.readFileSync(superblockPath, 'utf8'));
     const blocks = transformSuperBlock(superblockData);
 

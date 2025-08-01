@@ -5,7 +5,10 @@ const _ = require('lodash');
 const envData = require('../config/env.json');
 const { getChallengesForLang } = require('../../curriculum/get-challenges');
 
-const { getContentDir, getBlockCreator } = require('../../parse-curriculum');
+const {
+  getContentDir,
+  getBlockCreator
+} = require('../../curriculum/build-curriculum');
 
 const { curriculumLocale } = envData;
 
