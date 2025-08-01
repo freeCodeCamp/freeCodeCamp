@@ -3,11 +3,11 @@ const path = require('path');
 const assert = require('assert');
 
 const { isEmpty } = require('lodash');
-const debug = require('debug')('fcc:parse-curriculum');
+const debug = require('debug')('fcc:build-curriculum');
 
-const { SuperblockCreator, BlockCreator } = require('./parse-superblock');
+const { SuperblockCreator, BlockCreator } = require('./build-superblock');
 
-const { parseCertification } = require('./parse-certification');
+const { buildCertification } = require('./build-certification');
 
 const CURRICULUM_DIR = __dirname;
 const I18N_CURRICULUM_DIR = path.resolve(
@@ -244,13 +244,13 @@ function getContentDir(lang) {
 }
 
 /**
- * Processes a single superblock by parsing its structure and content
+ * Processes a single superblock by building its structure and content
  * @param {string} superblockFolder - The folder name of the superblock to process
- * @param {SuperblockCreator} parser - The parser instance to use for processing
- * @returns {Promise<Object>} Promise resolving to the parsed superblock data
+ * @param {SuperblockCreator} builder - The builder instance to use for processing
+ * @returns {Promise<Object>} Promise resolving to the built superblock data
  * @throws {Error} When the superblock file is not found
  */
-async function processSuperblock(superblockFolder, parser) {
+async function processSuperblock(superblockFolder, builder) {
   debug(`\n=== Processing ${superblockFolder} ===`);
 
   const superBlockName = superBlockNames[superblockFolder];
@@ -264,18 +264,18 @@ async function processSuperblock(superblockFolder, parser) {
     throw Error(`Superblock file not found: ${superblockPath}`);
   }
 
-  return parser.parseSuperblock(superblockPath, superBlockName);
+  return builder.buildSuperblock(superblockPath, superBlockName);
 }
 
 /**
- * Parses the entire curriculum for a specific language
+ * Builds the entire curriculum for a specific language
  * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
- * @returns {Promise<Object>} Promise resolving to the complete parsed curriculum data
+ * @returns {Promise<Object>} Promise resolving to the complete built curriculum data
  * @throws {Error} When curriculum files are not found or superblocks/certifications are empty
  */
-async function parseCurriculum(lang) {
+async function buildCurriculum(lang) {
   const contentDir = getContentDir(lang);
-  const parser = new SuperblockCreator({
+  const builder = new SuperblockCreator({
     blockCreator: getBlockCreator(lang)
   });
   debug('Reading curriculum.json...');
@@ -292,21 +292,21 @@ async function parseCurriculum(lang) {
   if (isEmpty(certifications))
     throw Error('No certifications found in curriculum.json');
 
-  debug(`Found ${superblocks.length} superblocks to parse`);
+  debug(`Found ${superblocks.length} superblocks to build`);
 
-  const parsedCurriculum = { certifications: { blocks: {} } };
+  const builtCurriculum = { certifications: { blocks: {} } };
 
   for (const superblockFolder of superblocks) {
     const superblockName = superBlockNames[superblockFolder];
-    parsedCurriculum[superblockName] = await processSuperblock(
+    builtCurriculum[superblockName] = await processSuperblock(
       superblockFolder,
-      parser
+      builder
     );
 
-    debug(`Successfully parsed ${superblockName}`);
+    debug(`Successfully built ${superblockName}`);
   }
 
-  debug(`Total superblocks parsed: ${Object.keys(parsedCurriculum).length}`);
+  debug(`Total superblocks built: ${Object.keys(builtCurriculum).length}`);
 
   // Parse certifications
   for (const cert of certifications) {
@@ -317,16 +317,16 @@ async function parseCurriculum(lang) {
 
     debug(`\n=== Processing certification ${cert} ===`);
 
-    parsedCurriculum.certifications.blocks[cert] = parseCertification(certPath);
+    builtCurriculum.certifications.blocks[cert] = buildCertification(certPath);
 
-    debug(`Successfully parsed certification ${cert}`);
+    debug(`Successfully built certification ${cert}`);
   }
 
-  return parsedCurriculum;
+  return builtCurriculum;
 }
 
 module.exports = {
-  parseCurriculum,
+  buildCurriculum,
   getContentDir,
   getBlockCreator,
   createCommentMap

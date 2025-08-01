@@ -38,7 +38,7 @@ const {
   helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
 const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
-const { STRUCTURE_DIR, getBlockCreator } = require('../parse-curriculum');
+const { STRUCTURE_DIR, getBlockCreator } = require('../build-curriculum');
 const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
 const { validateMetaSchema } = require('../schema/meta-schema');
 const ChallengeTitles = require('./utils/challenge-titles');
