@@ -849,6 +849,8 @@ describe('/exam-environment/', () => {
         );
 
         const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
           result: null,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
@@ -887,6 +889,8 @@ describe('/exam-environment/', () => {
         );
 
         const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
           result: null,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
@@ -919,6 +923,8 @@ describe('/exam-environment/', () => {
         );
 
         const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
           result: {
             score: 25,
             passingPercent: 80
@@ -975,6 +981,8 @@ describe('/exam-environment/', () => {
         );
 
         const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
           result: null,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
@@ -1003,6 +1011,8 @@ describe('/exam-environment/', () => {
         );
 
         const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
           result: null,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
@@ -1033,6 +1043,8 @@ describe('/exam-environment/', () => {
         );
 
         const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
           result: {
             score: 25,
             passingPercent: 80
