@@ -40,6 +40,7 @@ const {
 const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
 const { getMetaForBlock } = require('../../parse-superblock');
 const { STRUCTURE_DIR } = require('../../parse-curriculum');
+const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -235,15 +236,22 @@ function runTests(challengeData) {
 
 async function getChallenges(lang, filters) {
   const challenges = await getChallengesForLang(lang, filters).then(
-    curriculum =>
-      Object.keys(curriculum)
+    curriculum => {
+      const result = curriculumSchemaValidator(curriculum);
+      if (result.error) {
+        throw new Error(
+          `Curriculum validation failed: ${result.error.message}`
+        );
+      }
+      return Object.keys(curriculum)
         .map(key => curriculum[key].blocks)
         .reduce((challengeArray, superBlock) => {
           const challengesForBlock = Object.keys(superBlock).map(
             key => superBlock[key].challenges
           );
           return [...challengeArray, ...flatten(challengesForBlock)];
-        }, [])
+        }, []);
+    }
   );
   // This matches the order Gatsby uses (via a GraphQL query). Ideally both
   // should be sourced and sorted using a single query, but we're not there yet.
