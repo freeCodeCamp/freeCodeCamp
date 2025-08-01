@@ -40,6 +40,7 @@ const {
 const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
 const { STRUCTURE_DIR, getBlockCreator } = require('../../parse-curriculum');
 const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
+const { validateMetaSchema } = require('../schema/meta-schema');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -202,6 +203,11 @@ async function setup() {
         dashedBlockName,
         STRUCTURE_DIR
       );
+      const result = validateMetaSchema(meta[dashedBlockName]);
+
+      if (result.error) {
+        throw new AssertionError(result.error);
+      }
     }
   }
   return {
