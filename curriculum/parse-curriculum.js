@@ -9,13 +9,13 @@ const { SuperblockCreator, BlockCreator } = require('./parse-superblock');
 
 const { parseCertification } = require('./parse-certification');
 
-const CURRICULUM_DIR = path.resolve(__dirname, 'curriculum');
+const CURRICULUM_DIR = __dirname;
 const I18N_CURRICULUM_DIR = path.resolve(
   CURRICULUM_DIR,
   'i18n-curriculum',
   'curriculum'
 );
-const STRUCTURE_DIR = path.resolve(__dirname, 'curriculum', 'structure');
+const STRUCTURE_DIR = path.resolve(CURRICULUM_DIR, 'structure');
 
 /**
  * Creates a BlockCreator instance for a specific language with appropriate configuration
