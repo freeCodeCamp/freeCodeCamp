@@ -3,15 +3,9 @@ const path = require('node:path');
 const { createCommentMap } = require('./parse-curriculum');
 
 describe('createCommentMap', () => {
-  const dictionaryDir = path.resolve(
-    __dirname,
-    'curriculum',
-    '__fixtures__',
-    'dictionaries'
-  );
+  const dictionaryDir = path.resolve(__dirname, '__fixtures__', 'dictionaries');
   const incompleteDictDir = path.resolve(
     __dirname,
-    'curriculum',
     '__fixtures__',
     'incomplete-dicts'
   );
