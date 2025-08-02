@@ -4108,6 +4108,12 @@
           "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
         ]
       },
+      "workshop-tailwind-pricing-component": {
+        "title": "Build a Tailwind Pricing Component",
+        "intro": [
+          "In this workshop, you will build pricing component using Tailwind CSS."
+        ]
+      },
       "lab-music-shopping-cart-page": {
         "title": "Build a Music Shopping Cart Page",
         "intro": [

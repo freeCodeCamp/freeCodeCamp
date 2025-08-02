@@ -1232,6 +1232,9 @@
               "dashedName": "workshop-error-message-component"
             },
             {
+              "dashedName": "workshop-tailwind-pricing-component"
+            },
+            {
               "dashedName": "workshop-tailwind-cta-component"
             },
             {
