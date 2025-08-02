@@ -37,7 +37,6 @@ Submit your page when you think you've got it right. If you're running into erro
 `req.logout()` should be called in your `/logout` route.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -46,13 +45,11 @@ async () => {
     /req.logout/gi,
     'You should be calling req.logout() in your /logout route'
   );
-}
 ```
 
 `/logout` should redirect to the home page.
 
 ```js
-async () => {
   const url = new URL("/logout", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -61,6 +58,5 @@ async () => {
     /Home page/gi,
     'When a user logs out they should be redirected to the homepage'
   );
-}
 ```
 
