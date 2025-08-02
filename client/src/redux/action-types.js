@@ -46,7 +46,8 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('showCert'),
     ...createAsyncTypes('reportUser'),
     ...createAsyncTypes('deleteUserToken'),
-    ...createAsyncTypes('saveChallenge')
+    ...createAsyncTypes('saveChallenge'),
+    'fetchUserTimeout'
   ],
   ns
 );

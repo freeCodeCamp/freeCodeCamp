@@ -218,11 +218,22 @@ export const reducer = handleActions(
         error: null
       }
     }),
+    [actionTypes.fetchUserTimeout]: state => ({
+      ...state,
+      userFetchState: {
+        // Pending because the fetch may still complete. This allows the UI to
+        // render what it can while waiting for the fetch to complete.
+        pending: true,
+        complete: true,
+        errored: false,
+        error: null
+      }
+    }),
     [actionTypes.fetchUserError]: (state, { payload }) => ({
       ...state,
       userFetchState: {
         pending: false,
-        complete: false,
+        complete: true,
         errored: true,
         error: payload
       }
