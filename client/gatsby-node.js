@@ -384,6 +384,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       beforeEach: String
       afterEach: String
       beforeAll: String
+      afterAll: String
     }
   `;
   createTypes(typeDefs);

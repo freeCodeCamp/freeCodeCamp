@@ -9,7 +9,7 @@ import {
   getMultifileJSXTransformers
 } from '../rechallenge/transformers';
 import {
-  runTestInTestFrame,
+  runTestsInTestFrame,
   createMainPreviewFramer,
   createProjectPreviewFramer,
   ProxyLogger,
@@ -158,8 +158,8 @@ export async function getTestRunner(buildData: BuildChallengeData) {
   }
   await prepTestRunner({ ...buildData, type });
 
-  return (testString: string, testTimeout: number) =>
-    runTestInTestFrame(testString, testTimeout, type);
+  return (testStrings: string[], testTimeout: number) =>
+    runTestsInTestFrame(testStrings, testTimeout, type);
 }
 
 type BuildResult = {
