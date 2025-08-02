@@ -134,10 +134,8 @@ test.describe('Daily Coding Challenges', () => {
 
     await page.goto(`/learn/daily-coding-challenge?date=${todayUsCentral}`);
 
-    // Title
     await expect(page.getByText('Test title')).toBeVisible();
 
-    // Description
     await expect(page.getByText('Test description')).toBeVisible();
 
     // Language buttons
@@ -148,19 +146,14 @@ test.describe('Daily Coding Challenges', () => {
 
     // Should show JS UI by default
 
-    // script.js button
     await expect(
       page.getByRole('button', { name: /script.js/i })
     ).toBeVisible();
-    // No main.py button
     await expect(
       page.getByRole('button', { name: /main.py/i })
     ).not.toBeVisible();
-    // Console Button
     await expect(page.getByRole('button', { name: /console/i })).toBeVisible();
-    // No Preview button
     await expect(page.getByTestId('preview-pane-button')).not.toBeVisible();
-    // Should have JS seed code
     await expect(page.locator("div[role='code'].monaco-editor")).toContainText(
       '// JavaScript seed code'
     );
@@ -168,17 +161,12 @@ test.describe('Daily Coding Challenges', () => {
     // Show show Python UI after changing language
     await page.getByRole('button', { name: /python/i }).click();
 
-    // main.py button
     await expect(page.getByRole('button', { name: /main.py/i })).toBeVisible();
-    // No script.js button
     await expect(
       page.getByRole('button', { name: /script.js/i })
     ).not.toBeVisible();
-    // Console Button
     await expect(page.getByRole('button', { name: /console/i })).toBeVisible();
-    // Preview button
     await expect(page.getByTestId('preview-pane-button')).toBeVisible();
-    // Should have Python seed code
     await expect(page.locator("div[role='code'].monaco-editor")).toContainText(
       '# Python seed code'
     );
@@ -203,7 +191,6 @@ test.describe('Daily Coding Challenge Archive', () => {
 
     await expect(page.getByText('Daily Coding Challenges')).toBeVisible();
 
-    // Navigation buttons
     await expect(
       page.getByRole('button', { name: /previous month/i })
     ).toBeVisible();
@@ -211,19 +198,15 @@ test.describe('Daily Coding Challenge Archive', () => {
       page.getByRole('button', { name: /next month/i })
     ).toBeVisible();
 
-    // Go to today button
     await expect(
       page.getByRole('link', { name: /go to today/i })
     ).toBeVisible();
 
-    // Calendar should render a day for each day in the month
     const totalCalendarDays = await page.getByTestId('calendar-day').count();
     expect(totalCalendarDays).toBe(mockDaysInMonth);
 
-    // Completed days
     await expect(page.getByTestId('calendar-day-completed')).toHaveCount(1);
 
-    // Not completed days
     await expect(page.getByTestId('calendar-day-not-completed')).toHaveCount(1);
   });
 });
