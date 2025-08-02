@@ -4715,6 +4715,10 @@
         "intro": [
           "In this lab you will build a function to manage a record collection."
         ]
+      },
+      "workshop-emoji-reactor": {
+        "title": "Build an Emoji Reactor",
+        "intro": ["", ""]
       }
     }
   },
@@ -4816,9 +4820,7 @@
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {
-      "daily-coding-challenge": {
-        "title": "Daily Coding Challenge"
-      }
+      "daily-coding-challenge": { "title": "Daily Coding Challenge" }
     }
   },
   "misc-text": {
