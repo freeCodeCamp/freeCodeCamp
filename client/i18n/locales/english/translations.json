@@ -590,6 +590,12 @@
       "heading": "Fill in the blank",
       "blank": "blank"
     },
+    "classic": {
+      "exit-modal-header": "Exit",
+      "exit-modal-body": "Are you sure you want to leave? You will lose any unsaved progress you have made.",
+      "exit-modal-yes": "Yes, I want to leave",
+      "exit-modal-no": "No, I would like to continue"
+    },
     "quiz": {
       "correct-answer": "Correct!",
       "incorrect-answer": "Incorrect.",

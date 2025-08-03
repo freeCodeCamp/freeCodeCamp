@@ -43,6 +43,7 @@ const initialState = {
     reset: false,
     exitExam: false,
     finishExam: false,
+    exitClassic: false,
     exitQuiz: false,
     finishQuiz: false,
     examResults: false,
