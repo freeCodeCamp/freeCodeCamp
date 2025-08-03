@@ -178,7 +178,7 @@ describe('getSuperBlockFromPath', () => {
     .filter(item => fs.lstatSync(path.join(englishFolder, item)).isDirectory());
 
   it('handles all the directories in ./challenges/english', () => {
-    expect.assertions(29);
+    expect.assertions(30);
 
     for (const directory of directories) {
       expect(() => getSuperBlockFromDir(directory)).not.toThrow();

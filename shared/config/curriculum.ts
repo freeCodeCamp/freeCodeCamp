@@ -27,6 +27,7 @@ export enum SuperBlocks {
   B1English = 'b1-english-for-developers',
   A2Spanish = 'a2-professional-spanish',
   A2Chinese = 'a2-professional-chinese',
+  A1Chinese = 'a1-professional-chinese',
   RosettaCode = 'rosetta-code',
   PythonForEverybody = 'python-for-everybody',
   BasicHtml = 'basic-html',
@@ -65,7 +66,8 @@ export const superBlockToFolderMap = {
   [SuperBlocks.A2Chinese]: '27-a2-professional-chinese',
   [SuperBlocks.BasicHtml]: '28-basic-html',
   [SuperBlocks.SemanticHtml]: '29-semantic-html',
-  [SuperBlocks.DevPlayground]: '99-dev-playground'
+  [SuperBlocks.DevPlayground]: '99-dev-playground',
+  [SuperBlocks.A1Chinese]: '30-a1-professional-chinese'
 };
 
 // Same as superBlockToFolderMap but with the keys and values reversed
@@ -155,6 +157,7 @@ export const superBlockStages: StageMap = {
   [SuperBlockStage.Upcoming]: [
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.DevPlayground
   ],
   // Catalog is treated like upcoming for now
@@ -188,6 +191,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -202,6 +206,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -216,6 +221,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -230,6 +236,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -242,6 +249,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -254,6 +262,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground
@@ -266,6 +275,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground
@@ -286,6 +296,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -314,6 +325,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -340,6 +352,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.DataVis,
     SuperBlocks.RelationalDb,
