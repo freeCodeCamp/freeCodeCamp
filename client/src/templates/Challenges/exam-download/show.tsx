@@ -3,12 +3,14 @@ import { graphql } from 'gatsby';
 import { Button, Spacer, Table } from '@freecodecamp/ui';
 import { isEmpty } from 'lodash';
 import { useTranslation } from 'react-i18next';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 import { FullWidthRow } from '../../../components/helpers';
 import useDetectOS from '../utils/use-detect-os';
 import { getExamAttempts } from '../../../utils/ajax';
 import type { Attempt } from '../../../utils/ajax';
 import { ChallengeNode } from '../../../redux/prop-types';
+import envData from '../../../../config/env.json';
 
 interface GitProps {
   tag_name: string;
@@ -20,6 +22,16 @@ interface GitProps {
 interface ShowExamDownloadProps {
   data: { challengeNode: ChallengeNode };
 }
+
+export const examAttempts = createApi({
+  reducerPath: 'exam-attempts',
+  baseQuery: fetchBaseQuery({ baseUrl: envData.apiLocation }),
+  endpoints: build => ({
+    getExamAttemptsByExamId: build.query({
+      query: examId => `/exam-environment/exams/${examId}/attempts`
+    })
+  })
+});
 
 function ShowExamDownload({
   data: {
@@ -37,6 +49,9 @@ function ShowExamDownload({
   const os = useDetectOS();
 
   const { t } = useTranslation();
+
+  const { data, error, isLoading } =
+    examAttempts.useGetExamAttemptsByExamIdQuery(id);
 
   function handleDownloadLink(downloadLinks: string[]) {
     const win = downloadLinks.find(link => link.match(/\.msi/));
@@ -134,20 +149,6 @@ function ShowExamDownload({
       <Spacer size='l' />
       <h2>{t('exam.download-header')}</h2>
       <p>{t('exam.explanation')}</p>
-      <p>
-        {t('exam.version', {
-          version: latestVersion || '...'
-        })}
-      </p>
-      <Button
-        disabled={!downloadLink}
-        aria-disabled={!downloadLink}
-        href={downloadLink}
-        download={downloadLink}
-      >
-        {t('buttons.download-latest-version')}
-      </Button>
-      {!downloadLink && <strong>{t('exam.unable-to-detect-os')}</strong>}
       <Spacer size='l' />
       <h2>Attempts</h2>
       {attempts.length > 0 ? (
@@ -198,6 +199,20 @@ function ShowExamDownload({
         </ul>
       </details>
       <Spacer size='l' />
+      <p>
+        {t('exam.version', {
+          version: latestVersion || '...'
+        })}
+      </p>
+      <Button
+        disabled={!downloadLink}
+        aria-disabled={!downloadLink}
+        href={downloadLink}
+        download={downloadLink}
+      >
+        {t('buttons.download-latest-version')}
+      </Button>
+      {!downloadLink && <strong>{t('exam.unable-to-detect-os')}</strong>}
       <strong>{t('exam.download-trouble')}</strong>{' '}
       <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
     </FullWidthRow>

@@ -5,6 +5,7 @@ import createSagaMiddleware from 'redux-saga';
 
 import envData from '../../config/env.json';
 import { isBrowser } from '../../utils';
+import { examAttempts } from '../templates/Challenges/exam-download/show';
 import rootEpic from './root-epic';
 import rootReducer from './root-reducer';
 import rootSaga from './root-saga';
@@ -42,7 +43,8 @@ export const createStore = (preloadedState = {}) => {
     store = reduxCreateStore(
       rootReducer,
       preloadedState,
-      applyMiddleware(sagaMiddleware, epicMiddleware)
+      // @ts-expect-error RTK uses unknown, Redux uses any
+      applyMiddleware(sagaMiddleware, epicMiddleware, examAttempts.middleware)
     );
   } else {
     store = reduxCreateStore(

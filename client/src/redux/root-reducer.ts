@@ -13,6 +13,7 @@ import {
   ns as curriculumMapNameSpace,
   reducer as curriculumMap
 } from '../templates/Introduction/redux';
+import { examAttempts } from '../templates/Challenges/exam-download/show';
 import { ns as appNameSpace } from './action-types';
 import { ns as settingsNameSpace, reducer as settings } from './settings';
 import { FlashApp as flashNameSpace } from './types';
@@ -24,5 +25,6 @@ export default combineReducers({
   [curriculumMapNameSpace]: curriculumMap,
   [flashNameSpace]: flash,
   [searchNameSpace]: search,
-  [settingsNameSpace]: settings
+  [settingsNameSpace]: settings,
+  [examAttempts.reducerPath]: examAttempts.reducer
 });
