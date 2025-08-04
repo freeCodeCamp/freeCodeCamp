@@ -186,7 +186,7 @@ describe('getSuperBlockFromPath', () => {
   });
 
   it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
-    expect.assertions(29);
+    expect.assertions(30);
 
     const superBlockPaths = directories.filter(x => x !== '00-certifications');
 
