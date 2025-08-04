@@ -79,23 +79,30 @@ function createCommentMap(dictionariesDir, englishDictionariesDir) {
   );
   const languages = fs.readdirSync(dictionariesDir);
 
-  const dictionaries = languages.reduce(
-    (acc, lang) => ({
+  const dictionaries = languages.reduce((acc, lang) => {
+    const commentsPath = path.resolve(dictionariesDir, lang, 'comments.json');
+    const commentsData = JSON.parse(fs.readFileSync(commentsPath, 'utf8'));
+    return {
       ...acc,
-      [lang]: require(path.resolve(dictionariesDir, lang, 'comments.json'))
-    }),
-    {}
+      [lang]: commentsData
+    };
+  }, {});
+
+  const COMMENTS_TO_TRANSLATE = JSON.parse(
+    fs.readFileSync(
+      path.resolve(englishDictionariesDir, 'english', 'comments.json'),
+      'utf8'
+    )
   );
 
-  const COMMENTS_TO_TRANSLATE = require(
-    path.resolve(englishDictionariesDir, 'english', 'comments.json')
-  );
-
-  const COMMENTS_TO_NOT_TRANSLATE = require(
-    path.resolve(
-      englishDictionariesDir,
-      'english',
-      'comments-to-not-translate.json'
+  const COMMENTS_TO_NOT_TRANSLATE = JSON.parse(
+    fs.readFileSync(
+      path.resolve(
+        englishDictionariesDir,
+        'english',
+        'comments-to-not-translate.json'
+      ),
+      'utf8'
     )
   );
 
