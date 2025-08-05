@@ -4103,7 +4103,7 @@
         ]
       },
       "workshop-tailwind-cta-component": {
-        "title": "Build a Taiwlind CTA Compoent",
+        "title": "Build a CTA Component",
         "intro": [
           "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
         ]
