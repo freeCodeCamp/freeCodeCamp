@@ -35,7 +35,7 @@ const getBlockCreator = (lang, opts) => {
     i18nDictionariesDir
   } = getLanguageConfig(lang, opts);
 
-  const secondDictionaryDir =
+  const targetDictionariesDir =
     lang === 'english' ? dictionariesDir : i18nDictionariesDir;
 
   return new BlockCreator({
@@ -43,7 +43,10 @@ const getBlockCreator = (lang, opts) => {
     blockContentDir,
     blockStructureDir,
     i18nBlockContentDir,
-    commentTranslations: createCommentMap(dictionariesDir, secondDictionaryDir)
+    commentTranslations: createCommentMap(
+      dictionariesDir,
+      targetDictionariesDir
+    )
   });
 };
 
@@ -69,18 +72,22 @@ function getTranslationEntry(dicts, { engId, text }) {
 
 /**
  * Creates a mapping of English comments to their translations across all supported languages
- * @param {string} dictionariesDir - Path to the main dictionaries directory
- * @param {string} englishDictionariesDir - Path to the English dictionaries directory
+ * @param {string} dictionariesDir - Path to the main (english) dictionaries directory
+ * @param {string} targetDictionariesDir - Path to the target (i18n or english) dictionaries directory
  * @returns {Object} Object mapping English comment text to translations in all languages
  */
-function createCommentMap(dictionariesDir, englishDictionariesDir) {
+function createCommentMap(dictionariesDir, targetDictionariesDir) {
   debug(
-    `Creating comment map from ${dictionariesDir} and ${englishDictionariesDir}`
+    `Creating comment map from ${dictionariesDir} and ${targetDictionariesDir}`
   );
-  const languages = fs.readdirSync(dictionariesDir);
+  const languages = fs.readdirSync(targetDictionariesDir);
 
   const dictionaries = languages.reduce((acc, lang) => {
-    const commentsPath = path.resolve(dictionariesDir, lang, 'comments.json');
+    const commentsPath = path.resolve(
+      targetDictionariesDir,
+      lang,
+      'comments.json'
+    );
     const commentsData = JSON.parse(fs.readFileSync(commentsPath, 'utf8'));
     return {
       ...acc,
@@ -90,7 +97,7 @@ function createCommentMap(dictionariesDir, englishDictionariesDir) {
 
   const COMMENTS_TO_TRANSLATE = JSON.parse(
     fs.readFileSync(
-      path.resolve(englishDictionariesDir, 'english', 'comments.json'),
+      path.resolve(dictionariesDir, 'english', 'comments.json'),
       'utf8'
     )
   );
@@ -98,7 +105,7 @@ function createCommentMap(dictionariesDir, englishDictionariesDir) {
   const COMMENTS_TO_NOT_TRANSLATE = JSON.parse(
     fs.readFileSync(
       path.resolve(
-        englishDictionariesDir,
+        dictionariesDir,
         'english',
         'comments-to-not-translate.json'
       ),
