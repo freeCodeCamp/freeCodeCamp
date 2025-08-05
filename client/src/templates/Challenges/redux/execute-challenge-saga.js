@@ -185,7 +185,6 @@ function* buildChallengeData(challengeData, options) {
 }
 
 function* executeTests(testRunner, tests, testTimeout = 5000) {
-  console.log('executeTests', tests);
   const testStrings = tests.map(test => test.testString);
   const rawResults = yield call(testRunner, testStrings, testTimeout);
 
@@ -197,8 +196,6 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
     const firstTest = i === 0;
     try {
       const { pass, err, logs = [] } = rawResults[i] || {};
-
-      console.log('logs', logs);
 
       const logString = logs.map(log => log.msg).join('\n');
       if (firstTest && logString) {
