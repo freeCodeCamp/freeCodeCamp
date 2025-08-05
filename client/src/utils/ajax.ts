@@ -1,6 +1,7 @@
 import cookies from 'browser-cookies';
-import envData from '../../config/env.json';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+import envData from '../../config/env.json';
 import type {
   ChallengeFile,
   ChallengeFiles,
@@ -418,3 +419,25 @@ export function deleteUserToken(): Promise<ResponseWithData<void>> {
 export function deleteMsUsername(): Promise<ResponseWithData<void>> {
   return deleteRequest('/user/ms-username', {});
 }
+
+/** RTK */
+
+export const examAttempts = createApi({
+  reducerPath: 'exam-attempts',
+  baseQuery: fetchBaseQuery({
+    baseUrl: apiLocation,
+    headers: {
+      'CSRF-Token': getCSRFToken()
+    },
+    credentials: 'include'
+  }),
+  endpoints: build => ({
+    getExamAttemptsByExamId: build.mutation<Attempt[], string>({
+      query: examId => `/user/exam-environment/exams/${examId}/attempts`
+    }),
+    getExamIdsByChallengeId: build.query<Attempt[], string>({
+      query: challengeId =>
+        `/user/exam-environment/challenges/${challengeId}/exams`
+    })
+  })
+});

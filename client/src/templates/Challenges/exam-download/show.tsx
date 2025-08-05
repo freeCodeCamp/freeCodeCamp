@@ -3,14 +3,11 @@ import { graphql } from 'gatsby';
 import { Button, Spacer, Table } from '@freecodecamp/ui';
 import { isEmpty } from 'lodash';
 import { useTranslation } from 'react-i18next';
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 import { FullWidthRow, Loader } from '../../../components/helpers';
 import useDetectOS from '../utils/use-detect-os';
-// import { getExamAttempts } from '../../../utils/ajax';
-import type { Attempt } from '../../../utils/ajax';
 import { ChallengeNode } from '../../../redux/prop-types';
-import envData from '../../../../config/env.json';
+import { examAttempts } from '../../../utils/ajax';
 
 interface GitProps {
   tag_name: string;
@@ -22,16 +19,6 @@ interface GitProps {
 interface ShowExamDownloadProps {
   data: { challengeNode: ChallengeNode };
 }
-
-export const examAttempts = createApi({
-  reducerPath: 'exam-attempts',
-  baseQuery: fetchBaseQuery({ baseUrl: envData.apiLocation }),
-  endpoints: build => ({
-    getExamAttemptsByExamId: build.query<Attempt[], string>({
-      query: examId => `/user/exam-environment/exams/${examId}/attempts`
-    })
-  })
-});
 
 function ShowExamDownload({
   data: {
@@ -50,11 +37,9 @@ function ShowExamDownload({
 
   const { t } = useTranslation();
 
-  const {
-    data: attempts,
-    error,
-    isLoading
-  } = examAttempts.useGetExamAttemptsByExamIdQuery(id);
+  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id);
+  const [getAttempts, attemptsMutation] =
+    examAttempts.useGetExamAttemptsByExamIdMutation();
 
   function handleDownloadLink(downloadLinks: string[]) {
     const win = downloadLinks.find(link => link.match(/\.msi/));
@@ -129,12 +114,31 @@ function ShowExamDownload({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [os]);
 
+  useEffect(() => {
+    if (!examIdsQuery.data) {
+      return;
+    }
+
+    const examId = examIdsQuery.data.at(0)!.examId;
+    void getAttempts(examId);
+  }, [examIdsQuery.data, getAttempts]);
+
   function renderAttempts() {
-    if (isLoading) {
+    if (examIdsQuery.isLoading || attemptsMutation.isLoading) {
       return <Loader />;
     }
-    if (error || !attempts) {
-      return <p>{error}</p>;
+    if (examIdsQuery.error || !examIdsQuery.data) {
+      return <p>{JSON.stringify(examIdsQuery.error)}</p>;
+    }
+
+    if (attemptsMutation.error) {
+      return <p>{JSON.stringify(attemptsMutation.error)}</p>;
+    }
+
+    const attempts = attemptsMutation.data;
+
+    if (!attempts) {
+      return <Loader />;
     }
 
     if (attempts.length === 0) {
@@ -180,6 +184,26 @@ function ShowExamDownload({
       <h2>Attempts</h2>
       {renderAttempts()}
       <Spacer size='l' />
+      <p>
+        {t('exam.version', {
+          version: latestVersion || '...'
+        })}
+      </p>
+      <Button
+        disabled={!downloadLink}
+        aria-disabled={!downloadLink}
+        href={downloadLink}
+        download={downloadLink}
+      >
+        {t('buttons.download-latest-version')}
+      </Button>
+      {!downloadLink && (
+        <>
+          <Spacer size='m' />
+          <strong>{t('exam.unable-to-detect-os')}</strong>
+        </>
+      )}
+      <Spacer size='m' />
       <details>
         <summary>{t('exam.download-details')}</summary>
         <ul>
@@ -197,20 +221,6 @@ function ShowExamDownload({
         </ul>
       </details>
       <Spacer size='l' />
-      <p>
-        {t('exam.version', {
-          version: latestVersion || '...'
-        })}
-      </p>
-      <Button
-        disabled={!downloadLink}
-        aria-disabled={!downloadLink}
-        href={downloadLink}
-        download={downloadLink}
-      >
-        {t('buttons.download-latest-version')}
-      </Button>
-      {!downloadLink && <strong>{t('exam.unable-to-detect-os')}</strong>}
       <strong>{t('exam.download-trouble')}</strong>{' '}
       <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
     </FullWidthRow>

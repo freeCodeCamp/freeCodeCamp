@@ -13,7 +13,7 @@ import {
   ns as curriculumMapNameSpace,
   reducer as curriculumMap
 } from '../templates/Introduction/redux';
-import { examAttempts } from '../templates/Challenges/exam-download/show';
+import { examAttempts } from '../utils/ajax';
 import { ns as appNameSpace } from './action-types';
 import { ns as settingsNameSpace, reducer as settings } from './settings';
 import { FlashApp as flashNameSpace } from './types';

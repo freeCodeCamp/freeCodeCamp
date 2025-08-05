@@ -1,11 +1,12 @@
 import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
-import { composeWithDevTools } from '@redux-devtools/extension';
+// import { composeWithDevTools } from '@redux-devtools/extension';
 import { createEpicMiddleware } from 'redux-observable';
 import createSagaMiddleware from 'redux-saga';
+import { configureStore } from '@reduxjs/toolkit';
 
 import envData from '../../config/env.json';
 import { isBrowser } from '../../utils';
-import { examAttempts } from '../templates/Challenges/exam-download/show';
+import { examAttempts } from '../utils/ajax';
 import rootEpic from './root-epic';
 import rootReducer from './root-reducer';
 import rootSaga from './root-saga';
@@ -33,9 +34,9 @@ const epicMiddleware = createEpicMiddleware({
   }
 });
 
-const composeEnhancers = composeWithDevTools({
-  // options like actionSanitizer, stateSanitizer
-});
+// const composeEnhancers = composeWithDevTools({
+//   // options like actionSanitizer, stateSanitizer
+// });
 
 export const createStore = (preloadedState = {}) => {
   let store;
@@ -47,11 +48,26 @@ export const createStore = (preloadedState = {}) => {
       applyMiddleware(sagaMiddleware, epicMiddleware, examAttempts.middleware)
     );
   } else {
-    store = reduxCreateStore(
-      rootReducer,
-      preloadedState,
-      composeEnhancers(applyMiddleware(sagaMiddleware, epicMiddleware))
-    );
+    // store = reduxCreateStore(
+    //   rootReducer,
+    //   preloadedState,
+    //   composeEnhancers(
+    //     // @ts-expect-error RTK uses unknown, Redux uses any
+    //     applyMiddleware(sagaMiddleware, epicMiddleware, examAttempts.middleware)
+    //   )
+    // );
+    store = configureStore({
+      // @ts-expect-error RTK uses unknown, Redux uses any
+      reducer: rootReducer,
+      // @ts-expect-error RTK uses unknown, Redux uses any
+      middleware: getDefaultMiddleware => {
+        return getDefaultMiddleware()
+          .concat(examAttempts.middleware)
+          .concat(sagaMiddleware)
+          .concat(epicMiddleware);
+      },
+      preloadedState
+    });
   }
   sagaMiddleware.run(rootSaga);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
