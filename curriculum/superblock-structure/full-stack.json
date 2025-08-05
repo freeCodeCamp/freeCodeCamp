@@ -43,6 +43,9 @@
               "dashedName": "lecture-working-with-images-and-svgs"
             },
             {
+              "dashedName": "workshop-build-a-heart-icon"
+            },
+            {
               "dashedName": "lecture-working-with-media"
             },
             {
@@ -747,7 +750,13 @@
           "dashedName": "review-javascript-fundamentals",
           "blocks": [
             {
-              "dashedName": "lecture-understanding-core-javascript-fundamentals"
+              "dashedName": "lecture-working-with-types-and-objects"
+            },
+            {
+              "dashedName": "lecture-working-with-arrays-variables-and-naming-practices"
+            },
+            {
+              "dashedName": "lecture-working-with-code-quality-and-execution-concepts"
             },
             {
               "dashedName": "lab-largest-number-finder"
@@ -1229,6 +1238,9 @@
               "dashedName": "lab-music-shopping-cart-page"
             },
             {
+              "dashedName": "lab-photography-exhibit"
+            },
+            {
               "dashedName": "review-css-libraries-and-frameworks"
             },
             {
@@ -1295,8 +1307,8 @@
           "blocks": [
             { "dashedName": "lecture-working-with-dictionaries-and-sets" },
             { "dashedName": "lecture-working-with-modules" },
-            { "dashedName": "workshop-placeholder-dictionaries-and-sets" },
-            { "dashedName": "lab-placeholder-dictionaries-and-sets" },
+            { "dashedName": "workshop-medical-data-validator" },
+            { "dashedName": "lab-user-configuration-manager" },
             { "dashedName": "review-dictionaries-and-sets" },
             { "dashedName": "quiz-dictionaries-and-sets" }
           ]
@@ -1428,6 +1440,9 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "lecture-working-with-relational-databases"
+            },
+            {
               "dashedName": "workshop-database-of-video-game-characters"
             },
             {
@@ -1464,6 +1479,9 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "lecture-working-with-sql"
+            },
+            {
               "dashedName": "workshop-sql-student-database-part-1"
             },
             {
@@ -1493,6 +1511,9 @@
           "dashedName": "git",
           "comingSoon": true,
           "blocks": [
+            {
+              "dashedName": "lecture-working-with-nano"
+            },
             {
               "dashedName": "workshop-castle"
             },
