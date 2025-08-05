@@ -5,9 +5,9 @@ import { isEmpty } from 'lodash';
 import { useTranslation } from 'react-i18next';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { FullWidthRow } from '../../../components/helpers';
+import { FullWidthRow, Loader } from '../../../components/helpers';
 import useDetectOS from '../utils/use-detect-os';
-import { getExamAttempts } from '../../../utils/ajax';
+// import { getExamAttempts } from '../../../utils/ajax';
 import type { Attempt } from '../../../utils/ajax';
 import { ChallengeNode } from '../../../redux/prop-types';
 import envData from '../../../../config/env.json';
@@ -27,8 +27,8 @@ export const examAttempts = createApi({
   reducerPath: 'exam-attempts',
   baseQuery: fetchBaseQuery({ baseUrl: envData.apiLocation }),
   endpoints: build => ({
-    getExamAttemptsByExamId: build.query({
-      query: examId => `/exam-environment/exams/${examId}/attempts`
+    getExamAttemptsByExamId: build.query<Attempt[], string>({
+      query: examId => `/user/exam-environment/exams/${examId}/attempts`
     })
   })
 });
@@ -44,14 +44,17 @@ function ShowExamDownload({
 
   const [downloadLink, setDownloadLink] = useState<string | undefined>('');
   const [downloadLinks, setDownloadLinks] = useState<string[]>([]);
-  const [attempts, setAttempts] = useState<Attempt[]>([]);
+  // const [attempts, setAttempts] = useState<Attempt[]>([]);
 
   const os = useDetectOS();
 
   const { t } = useTranslation();
 
-  const { data, error, isLoading } =
-    examAttempts.useGetExamAttemptsByExamIdQuery(id);
+  const {
+    data: attempts,
+    error,
+    isLoading
+  } = examAttempts.useGetExamAttemptsByExamIdQuery(id);
 
   function handleDownloadLink(downloadLinks: string[]) {
     const win = downloadLinks.find(link => link.match(/\.msi/));
@@ -122,27 +125,51 @@ function ShowExamDownload({
       }
     }
 
-    async function fetchExamsAndAttempts() {
-      try {
-        const attemptsRes = await getExamAttempts();
-
-        if (attemptsRes.response.ok) {
-          const filteredAttempts = attemptsRes.data.filter(
-            a => a.examId === id
-          );
-          setAttempts(filteredAttempts);
-        } else if (attemptsRes.response.status === 404) {
-          setAttempts([]);
-        }
-      } catch (error) {
-        console.error('Error fetching exam data:', error);
-      }
-    }
-
     void checkLatestVersion();
-    void fetchExamsAndAttempts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [os]);
+
+  function renderAttempts() {
+    if (isLoading) {
+      return <Loader />;
+    }
+    if (error || !attempts) {
+      return <p>{error}</p>;
+    }
+
+    if (attempts.length === 0) {
+      return <p>No attempts yet</p>;
+    }
+
+    return (
+      <Table striped>
+        <thead>
+          <tr>
+            <th>Date Taken</th>
+            <th>Score [%]</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {attempts.map(attempt => (
+            <tr key={attempt.startTimeInMS}>
+              <td>{new Date(attempt.startTimeInMS).toTimeString()}</td>
+              <td>
+                {attempt.result ? `${attempt.result.percent}%` : 'Pending'}
+              </td>
+              <td>
+                {attempt.result
+                  ? attempt.result.passed
+                    ? 'Passed'
+                    : 'Failed'
+                  : 'Pending'}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    );
+  }
 
   return (
     <FullWidthRow>
@@ -151,36 +178,7 @@ function ShowExamDownload({
       <p>{t('exam.explanation')}</p>
       <Spacer size='l' />
       <h2>Attempts</h2>
-      {attempts.length > 0 ? (
-        <Table striped>
-          <thead>
-            <tr>
-              <th>Date Taken</th>
-              <th>Score [%]</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {attempts.map(attempt => (
-              <tr key={attempt.startTimeInMS}>
-                <td>{new Date(attempt.startTimeInMS).toTimeString()}</td>
-                <td>
-                  {attempt.result ? `${attempt.result.percent}%` : 'Pending'}
-                </td>
-                <td>
-                  {attempt.result
-                    ? attempt.result.passed
-                      ? 'Passed'
-                      : 'Failed'
-                    : 'Pending'}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      ) : (
-        <p>No attempts yet</p>
-      )}
+      {renderAttempts()}
       <Spacer size='l' />
       <details>
         <summary>{t('exam.download-details')}</summary>
