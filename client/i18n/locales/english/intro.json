@@ -3529,6 +3529,12 @@
           "This will provide you with the opportunity to practice working with <code>aria-live</code> attribute."
         ]
       },
+      "lab-theme-switcher": {
+        "title": "Build a Theme Switcher",
+        "intro": [
+          "In this lab, you will build a theme switcher and practice working with the <code>aria-haspopup</code>, <code>aria-expanded</code>, and <code>aria-controls</code> attributes."
+        ]
+      },
       "review-js-a11y": {
         "title": "JavaScript and Accessibility Review",
         "intro": [
