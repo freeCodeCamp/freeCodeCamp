@@ -1,5 +1,5 @@
 ---
-title: Build a CTA Component
+title: Introduction to Build a CTA Component
 block: workshop-tailwind-cta-component
 superBlock: full-stack-developer
 ---
