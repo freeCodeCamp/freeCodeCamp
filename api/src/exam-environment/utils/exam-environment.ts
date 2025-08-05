@@ -932,5 +932,5 @@ export async function constructEnvExamAttempt(
 }
 
 function omitAttemptReferenceIds(attempt: ExamEnvironmentExamAttempt) {
-  return omit(attempt, ['examId', 'id', 'generatedExamId', 'userId']);
+  return omit(attempt, ['generatedExamId', 'userId']);
 }

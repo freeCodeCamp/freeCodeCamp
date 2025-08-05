@@ -4257,9 +4257,11 @@
           "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
         ]
       },
-      "lab-placeholder-dictionaries-and-sets": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "lab-user-configuration-manager": {
+        "title": "Build a User Configuration Manager",
+        "intro": [
+          "In this lab, you will practice working with dictionaries in Python."
+        ]
       },
       "review-dictionaries-and-sets": {
         "title": "Dictionaries and Sets review",
@@ -4279,8 +4281,10 @@
         "intro": ["Learn about Understanding Error Handling in these lectures."]
       },
       "lab-isbn-validator": {
-        "title": "Debug a ISBN Validator",
-        "intro": [""]
+        "title": "Debug an ISBN Validator",
+        "intro": [
+          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+        ]
       },
       "review-error-handling": {
         "title": "Error Handling Review",
@@ -4418,8 +4422,10 @@
         ]
       },
       "lab-bisection-method": {
-        "title": "Build a Bisection Method",
-        "intro": [""]
+        "title": "Implement the Bisection Method",
+        "intro": [
+          "In this lab, you will implement the bisection method to find the square root of a number."
+        ]
       },
       "workshop-merge-sort": {
         "title": "Implement the Merge Sort Algorithm",
