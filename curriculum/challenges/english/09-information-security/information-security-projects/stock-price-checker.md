@@ -47,7 +47,6 @@ You can provide your own project, not the example URL.
 You should set the content security policies to only allow loading of scripts and CSS from your server.
 
 ```js
-async () => {
   const data = await fetch(code + '/_api/app-info');
   const parsed = await data.json();
   assert.isTrue(
@@ -56,25 +55,21 @@ async () => {
   assert.isTrue(
     parsed.headers['content-security-policy'].includes("style-src 'self'")
   );
-};
 ```
 
 You can send a `GET` request to `/api/stock-prices`, passing a NASDAQ stock symbol to a `stock` query parameter. The returned object will contain a property named `stockData`.
 
 ```js
-async () => {
   const data = await fetch(
     code + '/api/stock-prices?stock=GOOG'
   );
   const parsed = await data.json();
   assert.property(parsed, 'stockData');
-};
 ```
 
 The `stockData` property includes the `stock` symbol as a string, the `price` as a number, and `likes` as a number.
 
 ```js
-async () => {
   const data = await fetch(
     code + '/api/stock-prices?stock=GOOG'
   );
@@ -83,7 +78,6 @@ async () => {
   assert.typeOf(ticker.price, 'number');
   assert.typeOf(ticker.likes, 'number');
   assert.typeOf(ticker.stock, 'string');
-};
 ```
 
 You can also pass along a `like` field as `true` (boolean) to have your like added to the stock(s). Only 1 like per IP should be accepted.
@@ -95,7 +89,6 @@ You can also pass along a `like` field as `true` (boolean) to have your like add
 If you pass along 2 stocks, the returned value will be an array with information about both stocks. Instead of `likes`, it will display `rel_likes` (the difference between the likes on both stocks) for both `stockData` objects.
 
 ```js
-async () => {
   const data = await fetch(
     code + '/api/stock-prices?stock=GOOG&stock=MSFT'
   );
@@ -104,19 +97,16 @@ async () => {
   assert.typeOf(ticker, 'array');
   assert.property(ticker[0], 'rel_likes');
   assert.property(ticker[1], 'rel_likes');
-};
 ```
 
 All 5 functional tests are complete and passing.
 
 ```js
-async () => {
   const tests = await fetch(code + '/_api/get-tests');
   const parsed = await tests.json();
   assert.isTrue(parsed.length >= 5);
   parsed.forEach((test) => {
     assert.equal(test.state, 'passed');
   });
-};
 ```
 

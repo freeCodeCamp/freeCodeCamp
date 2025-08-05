@@ -43,7 +43,6 @@ Submit your page when you think you've got it right. If you're running into erro
 Passport-local should be a dependency.
 
 ```js
-async () => {
   const url = new URL("/_api/package.json", code);
   const res = await fetch(url);
   const packJson = await res.json();
@@ -52,13 +51,11 @@ async () => {
     'passport-local',
     'Your project should list "passport-local " as a dependency'
   );
-}
 ```
 
 Passport-local should be correctly required and set up.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -77,6 +74,5 @@ async () => {
     /findOne/,
     'Your new local strategy should use the findOne query to find a username based on the inputs'
   );
-}
 ```
 

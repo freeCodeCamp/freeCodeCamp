@@ -138,7 +138,6 @@ assert.exists(el);
 When the `#search-input` element contains the value `Red` and the `#search-button` element is clicked, an alert should appear with the text `"Creature not found"`.
 
 ```js
-async () => {
   try {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
@@ -160,13 +159,11 @@ async () => {
   } catch (err) {
     throw new Error(err);
   }
-};
 ```
 
 When the `#search-input` element contains the value `Pyrolynx` and the `#search-button` element is clicked, the values in the `#creature-name`, `#creature-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, `#special-defense`, and `#speed` elements should be `PYROLYNX`, `#1` or `1`, `Weight: 42` or `42`, `Height: 32` or `32`, `65`, `80`, `50`, `90`, `55`, and `100`, respectively.
 
 ```js
-async () => {
   try {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
@@ -206,13 +203,11 @@ async () => {
   } catch (err) {
     throw new Error(err);
   }
-};
 ```
 
 When the `#search-input` element contains the value `Pyrolynx` and the `#search-button` element is clicked, a single element should be added within the `#types` element that contains the text `FIRE`. The `#types` element content should be cleared between searches.
 
 ```js
-async () => {
   try {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
@@ -235,13 +230,11 @@ async () => {
   } catch (err) {
     throw new Error(err);
   }
-};
 ```
 
 When the `#search-input` element contains the value `2` and the `#search-button` element is clicked, the values in the `#creature-name`, `#creature-id`, `#weight`, `#height`, `#hp`, `#attack`, `#defense`, `#special-attack`, `#special-defense`, and `#speed` elements should be `AQUOROC`, `#2` or `2`, `Weight: 220` or `220`, `Height: 53` or `53`, `85`, `90`, `120`, `60`, `70`, and `40`, respectively.
 
 ```js
-async () => {
   try {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
@@ -281,13 +274,11 @@ async () => {
   } catch (err) {
     throw new Error(err);
   }
-};
 ```
 
 When the `#search-input` element contains the value `2` and the `#search-button` element is clicked, two elements should be added within the `#types` element that contain text values `WATER` and `ROCK`, respectively. The `#types` element content should be cleared between searches.
 
 ```js
-async () => {
   try {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
@@ -311,13 +302,11 @@ async () => {
   } catch (err) {
     throw new Error(err);
   }
-};
 ```
 
 When the `#search-input` element contains an invalid creature name and the `#search-button` element is clicked, an alert should appear with the text `"Creature not found"`.
 
 ```js
-async () => {
   try {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
@@ -342,14 +331,12 @@ async () => {
   } catch (err) {
     throw new Error(err);
   }
-};
 ```
 
 
 When the `#search-input` element contains a valid creature ID and the `#search-button` element is clicked, the UI should be filled with the correct data.
 
 ```js
-async () => {
   try {
     const searchInput = document.getElementById('search-input');
     const searchButton = document.getElementById('search-button');
@@ -379,13 +366,11 @@ async () => {
   } catch (err) {
     throw new Error(err);
   }
-};
 ```
 
 When the search button is clicked, the app should send a fetch request to the correct endpoint for the creature name or ID.
 
 ```js
-async () => {
   const spy = __helpers.spyOn(window, 'fetch');
   const searchInput = document.getElementById('search-input');
   const searchButton = document.getElementById('search-button');
@@ -411,7 +396,6 @@ async () => {
   assert.strictEqual(calls[0].toLowerCase(), 'https://rpg-creature-api.freecodecamp.rocks/api/creature/pyrolynx');
   assert.strictEqual(calls[1], 'https://rpg-creature-api.freecodecamp.rocks/api/creature/2');
   assert.strictEqual(calls[2], `https://rpg-creature-api.freecodecamp.rocks/api/creature/${randomValidCreatureId}`);
-};
 ```
 
 # --seed--

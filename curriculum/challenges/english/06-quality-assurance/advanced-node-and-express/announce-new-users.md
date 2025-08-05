@@ -41,7 +41,6 @@ Submit your page when you think you've got it right. If you're running into erro
 Event `'user'` should be emitted with `username`, `currentUsers`, and `connected`.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -51,13 +50,11 @@ async () => {
     /io.emit.*('|")user\1.*name.*currentUsers.*connected/s,
     'You should have an event emitted named user sending name, currentUsers, and connected'
   );
-}
 ```
 
 Client should properly handle and display the new data from event `'user'`.
 
 ```js
-async () => {
   const url = new URL("/public/client.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -71,6 +68,5 @@ async () => {
     /socket.on.*('|")user\1[^]*messages.*li/s,
     'You should append a list item to "#messages" on your client within the "user" event listener to announce a user came or went'
   );
-}
 ```
 
