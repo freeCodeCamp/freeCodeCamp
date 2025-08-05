@@ -21,60 +21,79 @@ Within `tests/1_unit-tests.js` under the test labeled `#16` in the `Objects` sui
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=15').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",15);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(data.state, 'passed');
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct method for the first assertion - `property` vs. `notProperty`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=15').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",15);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(
         data.assertions[0].method,
         'notProperty',
         'A car has not wings'
       );
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct method for the second assertion - `property` vs. `notProperty`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=15').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",15);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(
         data.assertions[1].method,
         'property',
         'planes have engines'
       );
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct method for the third assertion - `property` vs. `notProperty`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=15').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",15);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(data.assertions[2].method, 'property', 'Cars have wheels');
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
-
