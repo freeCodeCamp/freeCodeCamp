@@ -1,18 +1,11 @@
 ---
 id: 67d2f4ddb4a4306fdf5bbaee
 title: What Is Memoization, and How Does the useMemo Hook Work?
-challengeType: 11
-videoId: 2X7LD_6P4eI
+challengeType: 19
 dashedName: what-is-memoization-and-how-does-the-usememo-hook-work
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
-
-What is memoization and how does the `useMemo` hook work?
 
 As your React app gets larger, unnecessary re-renders and expensive calculations can slow down performance, leading to slow UI updates and increased resource usage.
 

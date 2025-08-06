@@ -7,7 +7,7 @@ dashedName: step-11
 
 # --description--
 
-In the lecture videos, you learned that the `Math.round()` method rounds the value to the nearest whole integer.
+In the lectures, you learned that the `Math.round()` method rounds the value to the nearest whole integer.
 
 Here are some examples:
 

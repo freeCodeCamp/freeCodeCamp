@@ -37,10 +37,14 @@ export interface ResponseWithData<T> {
 
 // TODO: Might want to handle flash messages as close to the request as possible
 // to make use of the Response object (message, status, etc)
-async function get<T>(path: string): Promise<ResponseWithData<T>> {
+async function get<T>(
+  path: string,
+  signal?: AbortSignal
+): Promise<ResponseWithData<T>> {
   const response = await fetch(`${base}${path}`, {
     ...defaultOptions,
-    headers: { 'CSRF-Token': getCSRFToken() }
+    headers: { 'CSRF-Token': getCSRFToken() },
+    signal
   });
 
   return combineDataWithResponse(response);
@@ -144,9 +148,12 @@ function mapKeyToFileKey<K>(
   return files.map(({ key, ...rest }) => ({ ...rest, fileKey: key }));
 }
 
-export function getSessionUser(): Promise<ResponseWithData<User | null>> {
+export function getSessionUser(
+  signal?: AbortSignal
+): Promise<ResponseWithData<User | null>> {
   const responseWithData: Promise<ResponseWithData<ApiUserResponse>> = get(
-    '/user/get-session-user'
+    '/user/get-session-user',
+    signal
   );
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
   return responseWithData.then(({ response, data }) => {
