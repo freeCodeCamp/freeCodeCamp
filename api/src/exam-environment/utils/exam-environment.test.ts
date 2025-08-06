@@ -421,7 +421,7 @@ describe('Exam Environment Schema', () => {
       await fastifyTestInstance.prisma.examEnvironmentExam.deleteMany({});
     });
 
-    it('If this test fails and you've deliberately altered the schema, then increment the `version` field by 1', async () => {
+    it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
       const configQuestionSets = [
         {
           numberOfCorrectAnswers: 0,
@@ -481,6 +481,7 @@ describe('Exam Environment Schema', () => {
       await fastifyTestInstance.prisma.examEnvironmentExam.create({
         data
       });
+    });
   });
   describe('ExamEnvironmentGeneratedExam', () => {
     afterAll(async () => {
@@ -488,7 +489,7 @@ describe('Exam Environment Schema', () => {
         {}
       );
     });
-    it('If this test fails and you've deliberately altered the schema, then increment the `version` field by 1', async () => {
+    it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
       await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.create({
         data: {
           deprecated: false,
@@ -506,7 +507,7 @@ describe('Exam Environment Schema', () => {
         {}
       );
     });
-    it('If this test fails and you've deliberately altered the schema, then increment the `version` field by 1', async () => {
+    it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
       await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
         data: {
           examId: oid(),
