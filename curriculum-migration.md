@@ -19,7 +19,8 @@
 - [x] remove meta from curriculum output
 - [x] make sure all the validation is done against curriculum output, not input ("meta" gets validated as a sanity check)
 - [x] strip the certification postfix from the certification yml files.
-- [ ] rename challenge files by their ids, otherwise it's a pain to look them up.
+- [x] rename challenge files by their ids, otherwise it's a pain to look them up.
+- [ ] validate that challenge filenames match their ids
 
 ## Nice to have
 
