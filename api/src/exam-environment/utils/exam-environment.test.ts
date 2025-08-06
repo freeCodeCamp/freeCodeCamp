@@ -421,7 +421,7 @@ describe('Exam Environment Schema', () => {
       await fastifyTestInstance.prisma.examEnvironmentExam.deleteMany({});
     });
 
-    it('should throw if the schema changes, and remind to increment the `version` field by 1', () => {
+    it('If this test fails and you've deliberately altered the schema, then increment the `version` field by 1', async () => {
       const configQuestionSets = [
         {
           numberOfCorrectAnswers: 0,
@@ -478,12 +478,9 @@ describe('Exam Environment Schema', () => {
         questionSets
       };
 
-      expect(async () => {
-        await fastifyTestInstance.prisma.examEnvironmentExam.create({
-          data
-        });
-      }).not.toThrow();
-    });
+      await fastifyTestInstance.prisma.examEnvironmentExam.create({
+        data
+      });
   });
   describe('ExamEnvironmentGeneratedExam', () => {
     afterAll(async () => {
@@ -491,18 +488,16 @@ describe('Exam Environment Schema', () => {
         {}
       );
     });
-    it('should throw if the schema changes, and remind to increment the `version` field by 1', () => {
-      expect(async () => {
-        await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.create({
-          data: {
-            deprecated: false,
-            examId: oid(),
-            questionSets: [
-              { id: oid(), questions: [{ answers: [oid()], id: oid() }] }
-            ]
-          }
-        });
-      }).not.toThrow();
+    it('If this test fails and you've deliberately altered the schema, then increment the `version` field by 1', async () => {
+      await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.create({
+        data: {
+          deprecated: false,
+          examId: oid(),
+          questionSets: [
+            { id: oid(), questions: [{ answers: [oid()], id: oid() }] }
+          ]
+        }
+      });
     });
   });
   describe('ExamEnvironmentExamAttempt', () => {
@@ -511,25 +506,23 @@ describe('Exam Environment Schema', () => {
         {}
       );
     });
-    it('should throw if the schema changes, and remind to increment the `version` field by 1', () => {
-      expect(async () => {
-        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
-          data: {
-            examId: oid(),
-            generatedExamId: oid(),
-            questionSets: [
-              {
-                id: oid(),
-                questions: [
-                  { answers: [oid()], id: oid(), submissionTimeInMS: 0 }
-                ]
-              }
-            ],
-            startTimeInMS: 0,
-            userId: oid()
-          }
-        });
-      }).not.toThrow();
+    it('If this test fails and you've deliberately altered the schema, then increment the `version` field by 1', async () => {
+      await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+        data: {
+          examId: oid(),
+          generatedExamId: oid(),
+          questionSets: [
+            {
+              id: oid(),
+              questions: [
+                { answers: [oid()], id: oid(), submissionTimeInMS: 0 }
+              ]
+            }
+          ],
+          startTimeInMS: 0,
+          userId: oid()
+        }
+      });
     });
   });
 });
