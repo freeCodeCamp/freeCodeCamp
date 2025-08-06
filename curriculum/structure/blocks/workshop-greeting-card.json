@@ -1,0 +1,121 @@
+{
+  "name": "Design a Greeting Card",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-greeting-card",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6720b1f2680ec706ed534acf",
+      "title": "Step 1"
+    },
+    {
+      "id": "6720b3191bbafd269bae0ae8",
+      "title": "Step 2"
+    },
+    {
+      "id": "6720b7f3155a9278d6b6a8b8",
+      "title": "Step 3"
+    },
+    {
+      "id": "6720bbb38f697e2364f41c0e",
+      "title": "Step 4"
+    },
+    {
+      "id": "6728fda085006772a247e779",
+      "title": "Step 5"
+    },
+    {
+      "id": "6729005c87b6320356ac1140",
+      "title": "Step 6"
+    },
+    {
+      "id": "672b42241c0c6515f26786f4",
+      "title": "Step 7"
+    },
+    {
+      "id": "672b4434dd6d6a1edc405419",
+      "title": "Step 8"
+    },
+    {
+      "id": "672e410ddd98b409594890b6",
+      "title": "Step 9"
+    },
+    {
+      "id": "672e44e811e610232fead333",
+      "title": "Step 10"
+    },
+    {
+      "id": "67332db0f793bf08f2a18528",
+      "title": "Step 11"
+    },
+    {
+      "id": "67332e9debcc820d18e3e169",
+      "title": "Step 12"
+    },
+    {
+      "id": "67332fff82eb28128f08ec2c",
+      "title": "Step 13"
+    },
+    {
+      "id": "67333082ab35e414eb4ea70d",
+      "title": "Step 14"
+    },
+    {
+      "id": "6733319f1d586b1923e029e3",
+      "title": "Step 15"
+    },
+    {
+      "id": "673332a6b63f9f1e1f81ba9b",
+      "title": "Step 16"
+    },
+    {
+      "id": "673333130a2c40204162f0c7",
+      "title": "Step 17"
+    },
+    {
+      "id": "6733352ce2a5642827b4f7f0",
+      "title": "Step 18"
+    },
+    {
+      "id": "673337337f794d3025ded433",
+      "title": "Step 19"
+    },
+    {
+      "id": "673338ebd152d736d1bd2aa4",
+      "title": "Step 20"
+    },
+    {
+      "id": "67333a3a400b0a3c68854bcc",
+      "title": "Step 21"
+    },
+    {
+      "id": "67333aa0e231d43e7556c644",
+      "title": "Step 22"
+    },
+    {
+      "id": "67333b1d5f4a7340a121973a",
+      "title": "Step 23"
+    },
+    {
+      "id": "67333ba820f99c43904c9eff",
+      "title": "Step 24"
+    },
+    {
+      "id": "67333c34e357d34620217615",
+      "title": "Step 25"
+    },
+    {
+      "id": "67333d70431f8a4b02596f3c",
+      "title": "Step 26"
+    },
+    {
+      "id": "67333f5462f7aa53fc47bb2f",
+      "title": "Step 27"
+    }
+  ],
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "blockType": "workshop"
+}

@@ -1,0 +1,233 @@
+{
+  "name": "Learn Asynchronous Programming by Building an fCC Forum Leaderboard",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard",
+  "helpCategory": "JavaScript",
+  "order": 23,
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
+  "challengeOrder": [
+    {
+      "id": "657386f11fb8265660bfac75",
+      "title": "Step 1"
+    },
+    {
+      "id": "65738cc6cba1825b14806b3d",
+      "title": "Step 2"
+    },
+    {
+      "id": "6573d962423e118f6d851e6b",
+      "title": "Step 3"
+    },
+    {
+      "id": "64388945b59341057e955fbb",
+      "title": "Step 4"
+    },
+    {
+      "id": "653f173100e7791a72a8a4c8",
+      "title": "Step 5"
+    },
+    {
+      "id": "643c0ab6779047014ca69b4f",
+      "title": "Step 6"
+    },
+    {
+      "id": "643c14c8027369027334e802",
+      "title": "Step 7"
+    },
+    {
+      "id": "643c337176a83407d0cd915c",
+      "title": "Step 8"
+    },
+    {
+      "id": "65739e21dbdf776ccfbf2df5",
+      "title": "Step 9"
+    },
+    {
+      "id": "643c359312d030093352fe41",
+      "title": "Step 10"
+    },
+    {
+      "id": "643c565936a10109b3f59326",
+      "title": "Step 11"
+    },
+    {
+      "id": "643c56790fac5409eb5ec6f9",
+      "title": "Step 12"
+    },
+    {
+      "id": "643c8d9a73965c0a26d7f634",
+      "title": "Step 13"
+    },
+    {
+      "id": "643c90830bbeb40ab15148a6",
+      "title": "Step 14"
+    },
+    {
+      "id": "643c95001ff61f0b3c39ce71",
+      "title": "Step 15"
+    },
+    {
+      "id": "643e99a35a2cde013489176c",
+      "title": "Step 16"
+    },
+    {
+      "id": "655f16b6fc793f6f13ba1a6f",
+      "title": "Step 17"
+    },
+    {
+      "id": "643e9ee64efc77016fa3397c",
+      "title": "Step 18"
+    },
+    {
+      "id": "643e9f727a93d80198228d57",
+      "title": "Step 19"
+    },
+    {
+      "id": "643ec3040ee13201ff1c35bf",
+      "title": "Step 20"
+    },
+    {
+      "id": "643ee71edd2ec2014c0ff0e0",
+      "title": "Step 21"
+    },
+    {
+      "id": "643ee973c162ae017b3d30db",
+      "title": "Step 22"
+    },
+    {
+      "id": "6443c98ac169e501eba36d04",
+      "title": "Step 23"
+    },
+    {
+      "id": "6444062a33ab4c03d0c2e9f5",
+      "title": "Step 24"
+    },
+    {
+      "id": "64440a50d076c204051f2cc0",
+      "title": "Step 25"
+    },
+    {
+      "id": "6444f324c287170220eee013",
+      "title": "Step 26"
+    },
+    {
+      "id": "6576076879130f6cf7426e82",
+      "title": "Step 27"
+    },
+    {
+      "id": "65760954561c726e832a0cc8",
+      "title": "Step 28"
+    },
+    {
+      "id": "65760ce115eb06716baeb361",
+      "title": "Step 29"
+    },
+    {
+      "id": "65760de70283687288fe70cf",
+      "title": "Step 30"
+    },
+    {
+      "id": "6446d8f9fce0fa0172473964",
+      "title": "Step 31"
+    },
+    {
+      "id": "644b6d20eabd7e0149383254",
+      "title": "Step 32"
+    },
+    {
+      "id": "644b736c83c5250181633899",
+      "title": "Step 33"
+    },
+    {
+      "id": "644b97360868a301bf9ba463",
+      "title": "Step 34"
+    },
+    {
+      "id": "644ba3c43bb57f020ca57834",
+      "title": "Step 35"
+    },
+    {
+      "id": "644baae059c58402a31e815a",
+      "title": "Step 36"
+    },
+    {
+      "id": "644f360e888420013dbe705f",
+      "title": "Step 37"
+    },
+    {
+      "id": "644f4bcf1c2afd0211cd945e",
+      "title": "Step 38"
+    },
+    {
+      "id": "644f848af645ce012bd1a2bc",
+      "title": "Step 39"
+    },
+    {
+      "id": "644fa585a5f9970173ca3cff",
+      "title": "Step 40"
+    },
+    {
+      "id": "644fb1d7f0257702a0c935cf",
+      "title": "Step 41"
+    },
+    {
+      "id": "644fba64caf60303c9540d14",
+      "title": "Step 42"
+    },
+    {
+      "id": "645763874fd6d901c273db29",
+      "title": "Step 43"
+    },
+    {
+      "id": "645f06144bc0dc0143a5a3a2",
+      "title": "Step 44"
+    },
+    {
+      "id": "645f1cffc7f95e01db009f32",
+      "title": "Step 45"
+    },
+    {
+      "id": "645f34e7925b68021ce0bcaa",
+      "title": "Step 46"
+    },
+    {
+      "id": "645f7231271ab1012bc659b8",
+      "title": "Step 47"
+    },
+    {
+      "id": "645f764c37de33015ded1273",
+      "title": "Step 48"
+    },
+    {
+      "id": "645f7879ebbdb201892e55e1",
+      "title": "Step 49"
+    },
+    {
+      "id": "645f8615fa144d01c476b22c",
+      "title": "Step 50"
+    },
+    {
+      "id": "645f958584305d02bf48fe5b",
+      "title": "Step 51"
+    },
+    {
+      "id": "646474a88d0d4a016f895ba8",
+      "title": "Step 52"
+    },
+    {
+      "id": "64648c3254e52901e36e7703",
+      "title": "Step 53"
+    },
+    {
+      "id": "646494e11d0cab03caee204c",
+      "title": "Step 54"
+    },
+    {
+      "id": "64649b108df035051cb2ba2d",
+      "title": "Step 55"
+    }
+  ],
+  "blockLayout": "legacy-challenge-grid"
+}

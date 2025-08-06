@@ -30,7 +30,7 @@ const {
   hasNoSolution
 } = require('../../shared/config/challenge-types');
 const { getLines } = require('../../shared/utils/get-lines');
-const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
+const { getChallengesForLang } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang, getSuperOrder } = require('../utils');
 const {
@@ -38,6 +38,9 @@ const {
   helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
 const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
+const { STRUCTURE_DIR, getBlockCreator } = require('../build-curriculum');
+const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
+const { validateMetaSchema } = require('../schema/meta-schema');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -196,7 +199,15 @@ async function setup() {
     // we can skip them.
     // TODO: omit certifications from the list of challenges
     if (dashedBlockName && !meta[dashedBlockName]) {
-      meta[dashedBlockName] = await getMetaForBlock(dashedBlockName);
+      meta[dashedBlockName] = await getBlockCreator(lang).getMetaForBlock(
+        dashedBlockName,
+        STRUCTURE_DIR
+      );
+      const result = validateMetaSchema(meta[dashedBlockName]);
+
+      if (result.error) {
+        throw new AssertionError(result.error);
+      }
     }
   }
   return {
@@ -230,15 +241,22 @@ function runTests(challengeData) {
 
 async function getChallenges(lang, filters) {
   const challenges = await getChallengesForLang(lang, filters).then(
-    curriculum =>
-      Object.keys(curriculum)
+    curriculum => {
+      const result = curriculumSchemaValidator(curriculum);
+      if (result.error) {
+        throw new Error(
+          `Curriculum validation failed: ${result.error.message}`
+        );
+      }
+      return Object.keys(curriculum)
         .map(key => curriculum[key].blocks)
         .reduce((challengeArray, superBlock) => {
           const challengesForBlock = Object.keys(superBlock).map(
             key => superBlock[key].challenges
           );
           return [...challengeArray, ...flatten(challengesForBlock)];
-        }, [])
+        }, []);
+    }
   );
   // This matches the order Gatsby uses (via a GraphQL query). Ideally both
   // should be sourced and sorted using a single query, but we're not there yet.

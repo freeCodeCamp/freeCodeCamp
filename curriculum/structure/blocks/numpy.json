@@ -1,0 +1,47 @@
+{
+  "name": "Numpy",
+  "isUpcomingChange": false,
+  "dashedName": "numpy",
+  "helpCategory": "Python",
+  "order": 1,
+  "superBlock": "data-analysis-with-python",
+  "challengeOrder": [
+    {
+      "id": "5e9a0a8e09c5df3cc3600ed2",
+      "title": "What is NumPy"
+    },
+    {
+      "id": "5e9a0a8e09c5df3cc3600ed3",
+      "title": "Basics of Numpy"
+    },
+    {
+      "id": "5e9a0a8e09c5df3cc3600ed4",
+      "title": "Accessing and Changing Elements, Rows, Columns"
+    },
+    {
+      "id": "5e9a0a8e09c5df3cc3600ed5",
+      "title": "Initializing Different Arrays"
+    },
+    {
+      "id": "5e9a0a8e09c5df3cc3600ed6",
+      "title": "Initialize Array Problem"
+    },
+    {
+      "id": "5e9a0a8e09c5df3cc3600ed7",
+      "title": "Copying Arrays Warning"
+    },
+    {
+      "id": "5e9a0a8e09c5df3cc3600ed8",
+      "title": "Mathematics"
+    },
+    {
+      "id": "5e9a0a8e09c5df3cc3600ed9",
+      "title": "Reorganizing Arrays"
+    },
+    {
+      "id": "5e9a0a8e09c5df3cc3600eda",
+      "title": "Loading Data and Advanced Indexing"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}
