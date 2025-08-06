@@ -14,7 +14,7 @@
 - [x] separate challenge parsing and "fixing" (i.e. challenge creation) from block creation - it should be possible to export the challenge creation function
 - [ ] rename things to reflect the disappearance of meta in favour of blocks data.
 - [x] figure out the terminology. Blocks vs meta.
-- [ ] don't fail if i18n titles are duplicated in a block OR add a build step to CI to ensure all language curricula can build
+- [x] don't fail if i18n titles are duplicated in a block OR add a build step to CI to ensure all language curricula can build
 - [x] check if assertHasEnglishSource or hasEnglishSource should be recreated (they were used in buildChallenges and possibly elsewhere). The assertion is handled by validating that the meta and directory match up.
 - [x] remove meta from curriculum output
 - [x] make sure all the validation is done against curriculum output, not input ("meta" gets validated as a sanity check)
