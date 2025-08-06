@@ -3,20 +3,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const CURRICULUM_ROOT = path.join(
-  __dirname,
-  'curriculum',
-  'challenges',
-  'english'
-);
-const BLOCKS_DIR = path.join(CURRICULUM_ROOT, 'blocks');
+const CURRICULUM_ROOT = path.join(__dirname, 'curriculum');
 const IGNORED_DIRS = ['00-certifications', 'blocks', 'certifications'];
 
-// Ensure blocks directory exists
-if (!fs.existsSync(BLOCKS_DIR)) {
-  fs.mkdirSync(BLOCKS_DIR, { recursive: true });
-  console.log('Created blocks directory');
-}
+const LANGUAGE = process.argv[2] || 'english';
 
 /**
  * Get all directories in a given path
@@ -69,17 +59,37 @@ function moveDirectory(sourcePath, destPath) {
   }
 }
 
+const getChallengesPath = language => {
+  const challengesPath =
+    language === 'english'
+      ? 'challenges'
+      : 'i18n-curriculum/curriculum/challenges/';
+
+  return path.join(CURRICULUM_ROOT, challengesPath, language);
+};
+
 /**
  * Main migration function
  */
-function moveBlocks() {
+function moveBlocks(language) {
   console.log('Starting block migration...');
-  console.log(`Source: ${CURRICULUM_ROOT}`);
-  console.log(`Destination: ${BLOCKS_DIR}`);
+
+  const fullChallengesPath = getChallengesPath(language);
+
+  const blocksDir = path.join(fullChallengesPath, 'blocks');
+
+  // Ensure blocks directory exists
+  if (!fs.existsSync(blocksDir)) {
+    fs.mkdirSync(blocksDir, { recursive: true });
+    console.log('Created blocks directory');
+  }
+
+  console.log(`Source: ${fullChallengesPath}`);
+  console.log(`Destination: ${blocksDir}`);
   console.log(`Ignoring: ${IGNORED_DIRS.join(', ')}`);
   console.log('');
 
-  const superblockDirs = getDirectories(CURRICULUM_ROOT);
+  const superblockDirs = getDirectories(fullChallengesPath);
   let totalMoved = 0;
   let totalSkipped = 0;
 
@@ -90,7 +100,7 @@ function moveBlocks() {
       continue;
     }
 
-    const superblockPath = path.join(CURRICULUM_ROOT, superblockDir);
+    const superblockPath = path.join(fullChallengesPath, superblockDir);
     const blockDirs = getDirectories(superblockPath);
 
     if (blockDirs.length === 0) {
@@ -104,7 +114,7 @@ function moveBlocks() {
 
     for (const blockDir of blockDirs) {
       const sourcePath = path.join(superblockPath, blockDir);
-      const destPath = path.join(BLOCKS_DIR, blockDir);
+      const destPath = path.join(blocksDir, blockDir);
 
       if (moveDirectory(sourcePath, destPath)) {
         totalMoved++;
@@ -127,24 +137,25 @@ function moveBlocks() {
       continue;
     }
 
-    const superblockPath = path.join(CURRICULUM_ROOT, superblockDir);
-    const remainingItems = getDirectories(superblockPath);
+    const superblockPath = path.join(fullChallengesPath, superblockDir);
+    const remainingDirs = getDirectories(superblockPath);
+    const remainingFiles = getFiles(superblockPath);
 
-    if (remainingItems.length === 0) {
+    if (remainingDirs.length === 0 && remainingFiles.length === 0) {
       console.log(`Empty superblock directory: ${superblockDir}`);
       fs.rmdirSync(superblockPath);
     } else {
       console.error(
-        `Superblock ${superblockDir} still contains: ${remainingItems.join(', ')}`
+        `Superblock ${superblockDir} still contains directories: ${remainingDirs.join(', ')} and files: ${remainingFiles.join(', ')}`
       );
     }
   }
 }
 
-function moveCertificates() {
-  // TODO: create CURRICULUM_ROOT based off language.
-  const baseCertPath = path.join(CURRICULUM_ROOT, '00-certifications');
-  const destPath = path.join(CURRICULUM_ROOT, 'certifications');
+function moveCertificates(language) {
+  const fullChallengesPath = getChallengesPath(language);
+  const baseCertPath = path.join(fullChallengesPath, '00-certifications');
+  const destPath = path.join(fullChallengesPath, 'certifications');
 
   fs.mkdirSync(destPath, { recursive: true });
 
@@ -165,5 +176,5 @@ function moveCertificates() {
   }
 }
 
-moveBlocks();
-moveCertificates();
+moveBlocks(LANGUAGE);
+moveCertificates(LANGUAGE);
