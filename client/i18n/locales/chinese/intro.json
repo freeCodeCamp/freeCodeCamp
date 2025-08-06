@@ -3518,6 +3518,12 @@
           "This will provide you with the opportunity to practice working with <code>aria-live</code> attribute."
         ]
       },
+      "lab-theme-switcher": {
+        "title": "Build a Theme Switcher",
+        "intro": [
+          "In this lab, you will build a theme switcher and practice working with the <code>aria-haspopup</code>, <code>aria-expanded</code>, and <code>aria-controls</code> attributes."
+        ]
+      },
       "review-js-a11y": {
         "title": "JavaScript and Accessibility Review",
         "intro": [
@@ -4095,7 +4101,7 @@
         ]
       },
       "workshop-tailwind-cta-component": {
-        "title": "Build a Taiwlind CTA Compoent",
+        "title": "Build a CTA Component",
         "intro": [
           "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
         ]
@@ -4294,8 +4300,10 @@
         "intro": ["Learn about Understanding Error Handling in these lectures."]
       },
       "lab-isbn-validator": {
-        "title": "Debug a ISBN Validator",
-        "intro": [""]
+        "title": "Debug an ISBN Validator",
+        "intro": [
+          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+        ]
       },
       "review-error-handling": {
         "title": "Error Handling Review",
