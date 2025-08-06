@@ -28,3 +28,4 @@
 - [ ] consider separating and simplifying the "certifications" superblock since it's not really a superblock, it doesn't have blocks and the format is different.
 - [ ] try to find out how to avoid using the slugs as keys/filenames. The worst one being "2022/responsive-web-design", since that can't be used as a filename.
 - [ ] consider regularizing the curriculum structure. i.e. `[{ blocks: [ { name: "<blockName>", challenges: []}]  }]`. So, we'd not need the various order properties. First, check that we can sort the entire curriculum like we currently do.
+- [ ] rename the files to \<challengeId\>.md
