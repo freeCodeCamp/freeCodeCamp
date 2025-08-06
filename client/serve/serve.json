@@ -347,6 +347,22 @@
     {
       "source": "/learn/full-stack-developer/lecture-working-with-numbers-booleans-and-the-math-object/what-is-the-math-object-in-javascript-and-what-are-some-common-methods",
       "destination": "/learn/full-stack-developer/lecture-working-with-conditional-logic-and-math-methods/what-is-the-math-object-in-javascript-and-what-are-some-common-methods"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-aria-expanded-attribute",
+      "destination": "/learn/full-stack-developer/lecture-understanding-aria-expanded-aria-live-and-common-aria-states/what-is-the-aria-expanded-attribute"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-aria-live-attribute",
+      "destination": "/learn/full-stack-developer/lecture-understanding-aria-expanded-aria-live-and-common-aria-states/what-is-the-aria-live-attribute"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-introduction-to-aria/what-are-some-common-aria-states-used-on-custom-control-elements",
+      "destination": "/learn/full-stack-developer/lecture-understanding-aria-expanded-aria-live-and-common-aria-states/what-are-some-common-aria-states-used-on-custom-control-elements"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-aria-controls-attribute",
+      "destination": "/learn/full-stack-developer/lecture-understanding-aria-expanded-aria-live-and-common-aria-states/what-is-the-aria-controls-attribute"
     }
   ]
 }
