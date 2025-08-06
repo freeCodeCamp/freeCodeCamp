@@ -67,20 +67,6 @@ export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
       },
       getExamAttemptsByExamIdHandler
     );
-    fastify.get(
-      '/exam-environment/challenges/:challengeId',
-      {
-        schema: schemas.examEnvironmentGetChallengeById
-      },
-      getChallengeById
-    );
-    fastify.get(
-      '/exam-environment/challenges/:challengeId/exams',
-      {
-        schema: schemas.examEnvironmentGetExamsByChallengeId
-      },
-      getExamsByChallengeId
-    );
 
     done();
   };
@@ -101,6 +87,13 @@ export const examEnvironmentOpenRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.examEnvironmentTokenMeta
     },
     tokenMetaHandler
+  );
+  fastify.get(
+    '/exam-environment/challenges/:challengeId/exam-mappings',
+    {
+      schema: schemas.examEnvironmentGetExamMappingsByChallengeId
+    },
+    getExamMappingsByChallengeId
   );
   done();
 };
@@ -1008,53 +1001,14 @@ export async function getExamAttemptsByExamIdHandler(
 /**
  * Gets all the relations for a given challenge and exam(s).
  */
-export async function getChallengeById(
+export async function getExamMappingsByChallengeId(
   this: FastifyInstance,
-  req: UpdateReqType<typeof schemas.examEnvironmentGetChallengeById>,
+  req: UpdateReqType<
+    typeof schemas.examEnvironmentGetExamMappingsByChallengeId
+  >,
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
-
-  // const user = req.user!;
-  const { challengeId } = req.params;
-
-  logger.info({ challengeId });
-
-  const maybeChallenges = await mapErr(
-    this.prisma.examEnvironmentChallenge.findMany({
-      where: {
-        challengeId
-      }
-    })
-  );
-
-  if (maybeChallenges.hasError) {
-    logger.error(maybeChallenges.error);
-    this.Sentry.captureException(maybeChallenges.error);
-    void reply.code(500);
-    return reply.send(
-      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeChallenges.error))
-    );
-  }
-
-  const challenges = maybeChallenges.data;
-
-  return reply.send(challenges);
-}
-
-/**
- * Gets all the relations for a given challenge and exam(s).
- */
-export async function getExamsByChallengeId(
-  this: FastifyInstance,
-  req: UpdateReqType<typeof schemas.examEnvironmentGetExamsByChallengeId>,
-  reply: FastifyReply
-) {
-  const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
-
-  // const user = req.user!;
   const { challengeId } = req.params;
 
   logger.info({ challengeId });
