@@ -155,7 +155,9 @@ describe('buildSuperblock pure functions', () => {
         ]
       };
 
-      expect(() => validateChallenges(foundChallenges, meta)).not.toThrow();
+      expect(() =>
+        validateChallenges(foundChallenges, meta, true)
+      ).not.toThrow();
     });
 
     test('should throw when challenges are missing from meta', () => {
@@ -172,7 +174,7 @@ describe('buildSuperblock pure functions', () => {
         ]
       };
 
-      expect(() => validateChallenges(foundChallenges, meta)).toThrow(
+      expect(() => validateChallenges(foundChallenges, meta, true)).toThrow(
         'Challenges found in directory but missing from meta: 3'
       );
     });
@@ -187,7 +189,7 @@ describe('buildSuperblock pure functions', () => {
         ]
       };
 
-      expect(() => validateChallenges(foundChallenges, meta)).toThrow(
+      expect(() => validateChallenges(foundChallenges, meta, true)).toThrow(
         'Challenges in meta but missing files with id(s): 2'
       );
     });
@@ -207,7 +209,7 @@ describe('buildSuperblock pure functions', () => {
         ]
       };
 
-      expect(() => validateChallenges(foundChallenges, meta)).toThrow(
+      expect(() => validateChallenges(foundChallenges, meta, true)).toThrow(
         'Challenges found in directory but missing from meta: 3, 4'
       );
     });
@@ -223,7 +225,7 @@ describe('buildSuperblock pure functions', () => {
         ]
       };
 
-      expect(() => validateChallenges(foundChallenges, meta)).toThrow(
+      expect(() => validateChallenges(foundChallenges, meta, true)).toThrow(
         'Challenges in meta but missing files with id(s): 2, 3'
       );
     });
@@ -238,7 +240,7 @@ describe('buildSuperblock pure functions', () => {
         ]
       };
 
-      expect(() => validateChallenges(foundChallenges, meta)).toThrow(
+      expect(() => validateChallenges(foundChallenges, meta, true)).toThrow(
         'Duplicate challenges found in meta with id(s): 1'
       );
     });
@@ -253,7 +255,7 @@ describe('buildSuperblock pure functions', () => {
         challengeOrder: [{ id: '1', title: 'Challenge 1' }]
       };
 
-      expect(() => validateChallenges(foundChallenges, meta)).toThrow(
+      expect(() => validateChallenges(foundChallenges, meta, true)).toThrow(
         'Duplicate challenges found in found challenges with id(s): 1'
       );
     });
@@ -271,7 +273,7 @@ describe('buildSuperblock pure functions', () => {
         ]
       };
 
-      expect(() => validateChallenges(foundChallenges, meta)).toThrow(
+      expect(() => validateChallenges(foundChallenges, meta, true)).toThrow(
         'Duplicate titles found in meta with title(s): Challenge 1'
       );
     });
@@ -289,8 +291,29 @@ describe('buildSuperblock pure functions', () => {
         ]
       };
 
-      expect(() => validateChallenges(foundChallenges, meta)).toThrow(
+      expect(() => validateChallenges(foundChallenges, meta, true)).toThrow(
         'Duplicate titles found in found challenges with title(s): Challenge 1'
+      );
+    });
+
+    test('should log errors for duplicate titles in meta if shouldThrow is false', () => {
+      jest.spyOn(console, 'error');
+      const foundChallenges = [
+        { id: '1', title: 'Challenge 1' },
+        { id: '2', title: 'Challenge 2' }
+      ];
+
+      const meta = {
+        challengeOrder: [
+          { id: '1', title: 'Challenge 1' },
+          { id: '2', title: 'Challenge 1' } // Duplicate title
+        ]
+      };
+
+      validateChallenges(foundChallenges, meta, false);
+
+      expect(console.error).toHaveBeenCalledWith(
+        'Duplicate titles found in meta with title(s): Challenge 1'
       );
     });
   });
