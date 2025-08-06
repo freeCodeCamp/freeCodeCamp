@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
+const matter = require('gray-matter');
 const CURRICULUM_ROOT = path.join(__dirname, 'curriculum');
 const IGNORED_DIRS = ['00-certifications', 'blocks', 'certifications'];
 
@@ -176,5 +177,26 @@ function moveCertificates(language) {
   }
 }
 
+function renameChallenges(language) {
+  const fullChallengesPath = getChallengesPath(language);
+  const blocksPath = path.join(fullChallengesPath, 'blocks');
+  const blockDirs = getDirectories(blocksPath);
+
+  for (const block of blockDirs) {
+    const blockPath = path.join(blocksPath, block);
+    const challengeFiles = getFiles(blockPath);
+
+    // rename each challenge based on its id
+    for (const file of challengeFiles) {
+      const filePath = path.join(blockPath, file);
+      const content = fs.readFileSync(filePath, 'utf8');
+      const { id } = matter(content).data;
+      const newFilename = `${path.join(blockPath, id)}.md`;
+      fs.renameSync(filePath, newFilename);
+    }
+  }
+}
+
 moveBlocks(LANGUAGE);
 moveCertificates(LANGUAGE);
+renameChallenges(LANGUAGE);
