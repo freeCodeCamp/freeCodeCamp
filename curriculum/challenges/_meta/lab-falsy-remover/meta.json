@@ -5,7 +5,7 @@
   "superBlock": "full-stack-developer",
   "order": 42,
   "helpCategory": "JavaScript",
-  "challengeOrder": [{ "id": "68936531a97cf17a270baf4b", "title": "Step 1" }],
+  "challengeOrder": [{ "id": "adf08ec01beb4f99fc7a68f2", "title": "Implement a Falsy Remover" }],
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
 }
