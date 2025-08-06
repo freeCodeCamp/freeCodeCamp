@@ -4283,7 +4283,9 @@
       },
       "workshop-linked-list-class": {
         "title": "Build a Linked List",
-        "intro": ["Build a linked list class."]
+        "intro": [
+          "In this workshop, you'll practice working with data structures by building a linked list."
+        ]
       },
       "lab-hash-table": {
         "title": "Build a Hash Table",
