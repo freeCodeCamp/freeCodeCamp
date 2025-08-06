@@ -152,7 +152,7 @@ function createCommentMap(dictionariesDir, targetDictionariesDir) {
   return allComments;
 }
 
-// Map of superblock folder names to their SuperBlocks enum values
+// Map of superblock filenames to their SuperBlocks enum values
 const superBlockNames = {
   '01-responsive-web-design': 'responsive-web-design',
   '02-javascript-algorithms-and-data-structures':
@@ -259,19 +259,19 @@ function getContentDir(lang) {
 
 /**
  * Processes a single superblock by building its structure and content
- * @param {string} superblockFolder - The folder name of the superblock to process
+ * @param {string} superblockFilename - The folder name of the superblock to process
  * @param {SuperblockCreator} builder - The builder instance to use for processing
  * @returns {Promise<Object>} Promise resolving to the built superblock data
  * @throws {Error} When the superblock file is not found
  */
-async function processSuperblock(superblockFolder, builder) {
-  debug(`\n=== Processing ${superblockFolder} ===`);
+async function processSuperblock(superblockFilename, builder) {
+  debug(`\n=== Processing ${superblockFilename} ===`);
 
-  const superBlockName = superBlockNames[superblockFolder];
+  const superBlockName = superBlockNames[superblockFilename];
   const superblockPath = path.resolve(
     STRUCTURE_DIR,
     'superblocks',
-    `${superblockFolder}.json`
+    `${superblockFilename}.json`
   );
 
   if (!fs.existsSync(superblockPath)) {
@@ -310,10 +310,10 @@ async function buildCurriculum(lang) {
 
   const builtCurriculum = { certifications: { blocks: {} } };
 
-  for (const superblockFolder of superblocks) {
-    const superblockName = superBlockNames[superblockFolder];
+  for (const superblockFilename of superblocks) {
+    const superblockName = superBlockNames[superblockFilename];
     builtCurriculum[superblockName] = await processSuperblock(
-      superblockFolder,
+      superblockFilename,
       builder
     );
 
