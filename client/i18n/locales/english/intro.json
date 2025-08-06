@@ -3516,6 +3516,12 @@
           "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
         ]
       },
+      "lecture-understanding-aria-expanded-aria-live-and-common-aria-states": {
+        "title": "Understanding aria-expanded, aria-live, and Common ARIA States",
+        "intro": [
+          "In these lectures you will learn more about ARIA attributes like <code>aria-expanded</code>, <code>aria-live</code>, and common ARIA states."
+        ]
+      },
       "workshop-planets-tablist": {
         "title": "Build a Planets Tablist",
         "intro": [

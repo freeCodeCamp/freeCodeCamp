@@ -859,6 +859,9 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "lecture-understanding-aria-expanded-aria-live-and-common-aria-states"
+            },
+            {
               "dashedName": "workshop-planets-tablist"
             },
             {
