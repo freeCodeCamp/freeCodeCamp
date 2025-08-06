@@ -1,0 +1,11 @@
+{
+  "name": "Implement a Falsy Remover",
+  "isUpcomingChange": true,
+  "dashedName": "lab-falsy-remover",
+  "superBlock": "full-stack-developer",
+  "order": 42,
+  "helpCategory": "JavaScript",
+  "challengeOrder": [{ "id": "68936531a97cf17a270baf4b", "title": "Step 1" }],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

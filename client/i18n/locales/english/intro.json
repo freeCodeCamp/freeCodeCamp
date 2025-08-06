@@ -4723,6 +4723,10 @@
         "intro": [
           "In this lab you will build a function to manage a record collection."
         ]
+      },
+      "lab-falsy-remover": {
+        "title": "Implement a Falsy Remover",
+        "intro": ["", ""]
       }
     }
   },
@@ -4824,9 +4828,7 @@
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {
-      "daily-coding-challenge": {
-        "title": "Daily Coding Challenge"
-      }
+      "daily-coding-challenge": { "title": "Daily Coding Challenge" }
     }
   },
   "misc-text": {
