@@ -1,0 +1,652 @@
+{
+  "name": "Rosetta Code Challenges",
+  "isUpcomingChange": false,
+  "dashedName": "rosetta-code-challenges",
+  "helpCategory": "Rosetta",
+  "order": 0,
+  "superBlock": "rosetta-code",
+  "disableLoopProtectTests": true,
+  "challengeOrder": [
+    {
+      "id": "594810f028c0303b75339acb",
+      "title": "100 doors"
+    },
+    {
+      "id": "5951e88f64ebf159166a1176",
+      "title": "24 game"
+    },
+    {
+      "id": "5949b579404977fbaefcd736",
+      "title": "9 billion names of God the integer"
+    },
+    {
+      "id": "594810f028c0303b75339acc",
+      "title": "ABC Problem"
+    },
+    {
+      "id": "594810f028c0303b75339acd",
+      "title": "Abundant, deficient and perfect number classifications"
+    },
+    {
+      "id": "594810f028c0303b75339ace",
+      "title": "Accumulator factory"
+    },
+    {
+      "id": "594810f028c0303b75339acf",
+      "title": "Ackermann function"
+    },
+    {
+      "id": "594810f028c0303b75339ad0",
+      "title": "Align columns"
+    },
+    {
+      "id": "5949b579404977fbaefcd737",
+      "title": "Amicable pairs"
+    },
+    {
+      "id": "594d8d0ab97724821379b1e6",
+      "title": "Averages/Mode"
+    },
+    {
+      "id": "594d966a1467eb84194f0086",
+      "title": "Averages/Pythagorean means"
+    },
+    {
+      "id": "594da033de4190850b893874",
+      "title": "Averages/Root mean square"
+    },
+    {
+      "id": "594db4d0dedb4c06a2a4cefd",
+      "title": "Babbage problem"
+    },
+    {
+      "id": "594dc6c729e5700999302b45",
+      "title": "Balanced brackets"
+    },
+    {
+      "id": "5951815dd895584b06884620",
+      "title": "Circles of given radius through two points"
+    },
+    {
+      "id": "5951a53863c8a34f02bf1bdc",
+      "title": "Closest-pair problem"
+    },
+    {
+      "id": "5958469238c0d8d2632f46db",
+      "title": "Combinations"
+    },
+    {
+      "id": "596e414344c3b2872167f0fe",
+      "title": "Comma quibbling"
+    },
+    {
+      "id": "596e457071c35c882915b3e4",
+      "title": "Compare a list of strings"
+    },
+    {
+      "id": "596fd036dc1ab896c5db98b1",
+      "title": "Convert seconds to compound duration"
+    },
+    {
+      "id": "596fda99c69f779975a1b67d",
+      "title": "Count occurrences of a substring"
+    },
+    {
+      "id": "59713bd26bdeb8a594fb9413",
+      "title": "Count the coins"
+    },
+    {
+      "id": "59713da0a428c1a62d7db430",
+      "title": "Cramer's rule"
+    },
+    {
+      "id": "5a23c84252665b21eecc7e03",
+      "title": "Cumulative standard deviation"
+    },
+    {
+      "id": "5a23c84252665b21eecc7e05",
+      "title": "CUSIP"
+    },
+    {
+      "id": "5a23c84252665b21eecc7e06",
+      "title": "Cut a rectangle"
+    },
+    {
+      "id": "59669d08d75b60482359409f",
+      "title": "Date format"
+    },
+    {
+      "id": "5966c21cf732a95f1b67dd28",
+      "title": "Date manipulation"
+    },
+    {
+      "id": "5966f99c45e8976909a85575",
+      "title": "Day of the week"
+    },
+    {
+      "id": "59694356a6e7011f7f1c5f4e",
+      "title": "Deal cards for FreeCell"
+    },
+    {
+      "id": "596a8888ab7c01048de257d5",
+      "title": "Deepcopy"
+    },
+    {
+      "id": "597089c87eec450c68aa1643",
+      "title": "Define a primitive data type"
+    },
+    {
+      "id": "59f40b17e79dbf1ab720ed7a",
+      "title": "Department Numbers"
+    },
+    {
+      "id": "59f4eafba0343628bb682785",
+      "title": "Discordian date"
+    },
+    {
+      "id": "5a23c84252665b21eecc7e1e",
+      "title": "Dot product"
+    },
+    {
+      "id": "599c333915e0ea32d04d4bec",
+      "title": "Element-wise operations"
+    },
+    {
+      "id": "599d0ba974141b0f508b37d5",
+      "title": "Emirp primes"
+    },
+    {
+      "id": "599d15309e88c813a40baf58",
+      "title": "Entropy"
+    },
+    {
+      "id": "5987fd532b954e0f21b5d3f6",
+      "title": "Equilibrium index"
+    },
+    {
+      "id": "599d1566a02b571412643b84",
+      "title": "Ethiopian multiplication"
+    },
+    {
+      "id": "59880443fb36441083c6c20e",
+      "title": "Euler method"
+    },
+    {
+      "id": "598de241872ef8353c58a7a2",
+      "title": "Evaluate binomial coefficients"
+    },
+    {
+      "id": "59e09e6d412c5939baa02d16",
+      "title": "Execute a Markov algorithm"
+    },
+    {
+      "id": "59e0a8df964e4540d5abe599",
+      "title": "Execute Brain****"
+    },
+    {
+      "id": "598ee8b91b410510ae82efef",
+      "title": "Extensible prime generator"
+    },
+    {
+      "id": "597b2b2a2702b44414742771",
+      "title": "Factorial"
+    },
+    {
+      "id": "598eea87e5cf4b116c3ff81a",
+      "title": "Factors of a Mersenne number"
+    },
+    {
+      "id": "597f1e7fbc206f0e9ba95dc4",
+      "title": "Factors of an integer"
+    },
+    {
+      "id": "59c3ec9f15068017c96eb8a3",
+      "title": "Farey sequence"
+    },
+    {
+      "id": "598eef80ba501f1268170e1e",
+      "title": "Fibonacci n-step number sequences"
+    },
+    {
+      "id": "597f24c1dda4e70f53c79c81",
+      "title": "Fibonacci sequence"
+    },
+    {
+      "id": "5992e222d397f00d21122931",
+      "title": "Fibonacci word"
+    },
+    {
+      "id": "5e9ddb06ec35240f39657419",
+      "title": "FizzBuzz"
+    },
+    {
+      "id": "5a7dad05be01840e1778a0d1",
+      "title": "Fractran"
+    },
+    {
+      "id": "5a23c84252665b21eecc7e76",
+      "title": "Gamma function"
+    },
+    {
+      "id": "5a23c84252665b21eecc7e77",
+      "title": "Gaussian elimination"
+    },
+    {
+      "id": "5a23c84252665b21eecc7e78",
+      "title": "General FizzBuzz"
+    },
+    {
+      "id": "5a23c84252665b21eecc7e7a",
+      "title": "Generate lower case ASCII alphabet"
+    },
+    {
+      "id": "5a23c84252665b21eecc7e7b",
+      "title": "Generator/Exponential"
+    },
+    {
+      "id": "5a23c84252665b21eecc7e80",
+      "title": "Gray code"
+    },
+    {
+      "id": "5a23c84252665b21eecc7e82",
+      "title": "Greatest common divisor"
+    },
+    {
+      "id": "5a23c84252665b21eecc7e84",
+      "title": "Greatest subsequential sum"
+    },
+    {
+      "id": "595608ff8bcd7a50bd490181",
+      "title": "Hailstone sequence"
+    },
+    {
+      "id": "594810f028c0303b75339ad1",
+      "title": "Happy numbers"
+    },
+    {
+      "id": "595668ca4cfe1af2fb9818d4",
+      "title": "Harshad or Niven series"
+    },
+    {
+      "id": "595671d4d2cdc305f0d5b36f",
+      "title": "Hash from two arrays"
+    },
+    {
+      "id": "5956795bc9e2c415eb244de1",
+      "title": "Hash join"
+    },
+    {
+      "id": "595b98f8b5a2245e243aa831",
+      "title": "Heronian triangles"
+    },
+    {
+      "id": "59622f89e4e137560018a40e",
+      "title": "Hofstadter Figure-Figure sequences"
+    },
+    {
+      "id": "59637c4d89f6786115efd814",
+      "title": "Hofstadter Q sequence"
+    },
+    {
+      "id": "5a23c84252665b21eecc7eb0",
+      "title": "I before E except after C"
+    },
+    {
+      "id": "5a23c84252665b21eecc7eaf",
+      "title": "IBAN"
+    },
+    {
+      "id": "5a23c84252665b21eecc7eb1",
+      "title": "Identity matrix"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ec1",
+      "title": "Iterated digits squaring"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ec2",
+      "title": "Jaro distance"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ec4",
+      "title": "JortSort"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ec5",
+      "title": "Josephus problem"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ecb",
+      "title": "K-d tree"
+    },
+    {
+      "id": "5a23c84252665b21eecc7eca",
+      "title": "Kaprekar numbers"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ed1",
+      "title": "Knapsack problem/0-1"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ed2",
+      "title": "Knapsack problem/Bounded"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ed3",
+      "title": "Knapsack problem/Continuous"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ed4",
+      "title": "Knapsack problem/Unbounded"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ed5",
+      "title": "Knight's tour"
+    },
+    {
+      "id": "5a23c84252665b21eecc7edb",
+      "title": "Largest int from concatenated ints"
+    },
+    {
+      "id": "5e4ce2b6ac708cc68c1df25e",
+      "title": "Last letter-first letter"
+    },
+    {
+      "id": "5a23c84252665b21eecc7edc",
+      "title": "Last Friday of each month"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ede",
+      "title": "Leap year"
+    },
+    {
+      "id": "5a23c84252665b21eecc7edf",
+      "title": "Least common multiple"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ee0",
+      "title": "Left factorials"
+    },
+    {
+      "id": "5e4ce2bbac708cc68c1df25f",
+      "title": "Letter frequency"
+    },
+    {
+      "id": "5e4ce2eaac708cc68c1df260",
+      "title": "Levenshtein distance"
+    },
+    {
+      "id": "5e4ce2f5ac708cc68c1df261",
+      "title": "Linear congruential generator"
+    },
+    {
+      "id": "5e4ce2a1ac708cc68c1df25d",
+      "title": "Long multiplication"
+    },
+    {
+      "id": "5e6dd1278e6ca105cde40ea9",
+      "title": "Longest common subsequence"
+    },
+    {
+      "id": "5e6dd139859c290b6ab80292",
+      "title": "Longest increasing subsequence"
+    },
+    {
+      "id": "5e6dd14192286d95fc43046e",
+      "title": "Longest string challenge"
+    },
+    {
+      "id": "5e6dd14797f5ce267c2f19d0",
+      "title": "Look-and-say sequence"
+    },
+    {
+      "id": "5e6dd15004c88cf00d2a78b3",
+      "title": "Loop over multiple arrays simultaneously"
+    },
+    {
+      "id": "5e6decd8ec8d7db960950d1c",
+      "title": "LU decomposition"
+    },
+    {
+      "id": "5e6dee7749a0b85a3f1fc7d5",
+      "title": "Lucas-Lehmer test"
+    },
+    {
+      "id": "5ea281203167d2b0bdefca00",
+      "title": "Ludic numbers"
+    },
+    {
+      "id": "5ea28156e79528a9ab248f27",
+      "title": "Luhn test of credit card numbers"
+    },
+    {
+      "id": "5ea2815a8640bcc6cb7dab3c",
+      "title": "Lychrel numbers"
+    },
+    {
+      "id": "5ea2815e364d9a2222ea55f8",
+      "title": "LZW compression"
+    },
+    {
+      "id": "59667989bf71cf555dd5d2ff",
+      "title": "S-Expressions"
+    },
+    {
+      "id": "59da22823d04c95919d46269",
+      "title": "Sailors, coconuts and a monkey problem"
+    },
+    {
+      "id": "5eb3e497b8d6d7f63c5517ea",
+      "title": "Search a list of records"
+    },
+    {
+      "id": "59d9c6bc214c613ba73ff012",
+      "title": "SEDOLs"
+    },
+    {
+      "id": "5eaf48389ee512d4d103684b",
+      "title": "Self Describing Numbers"
+    },
+    {
+      "id": "5eb3e4a21f462f409d656c73",
+      "title": "Self-referential sequence"
+    },
+    {
+      "id": "5eb3e4aa847216613aa81983",
+      "title": "Semiprime"
+    },
+    {
+      "id": "5eb3e4af7d0e7b760b46cedc",
+      "title": "Set consolidation"
+    },
+    {
+      "id": "5eb3e4b20aa93c437f9e9717",
+      "title": "Set of real numbers"
+    },
+    {
+      "id": "5eb3e4b5f629b9a07429a5d2",
+      "title": "SHA-1"
+    },
+    {
+      "id": "5eb3e4c3a894c333d2811a3f",
+      "title": "SHA-256"
+    },
+    {
+      "id": "5a23c84252665b21eecc7ffe",
+      "title": "Sort an array of composite structures"
+    },
+    {
+      "id": "5a23c84252665b21eecc8000",
+      "title": "Sort disjoint sublist"
+    },
+    {
+      "id": "5a23c84252665b21eecc8014",
+      "title": "Sort stability"
+    },
+    {
+      "id": "5a23c84252665b21eecc8016",
+      "title": "Sort using a custom comparator"
+    },
+    {
+      "id": "5a23c84252665b21eecc8001",
+      "title": "Sorting algorithms/Bead sort"
+    },
+    {
+      "id": "5a23c84252665b21eecc8002",
+      "title": "Sorting algorithms/Bogosort"
+    },
+    {
+      "id": "5a23c84252665b21eecc8004",
+      "title": "Sorting algorithms/Cocktail sort"
+    },
+    {
+      "id": "5a23c84252665b21eecc8005",
+      "title": "Sorting algorithms/Comb sort"
+    },
+    {
+      "id": "5a23c84252665b21eecc8007",
+      "title": "Sorting algorithms/Gnome sort"
+    },
+    {
+      "id": "5a23c84252665b21eecc800b",
+      "title": "Sorting algorithms/Pancake sort"
+    },
+    {
+      "id": "5a23c84252665b21eecc800c",
+      "title": "Sorting algorithms/Permutation sort"
+    },
+    {
+      "id": "5a23c84252665b21eecc8010",
+      "title": "Sorting algorithms/Shell sort"
+    },
+    {
+      "id": "5a23c84252665b21eecc8012",
+      "title": "Sorting algorithms/Stooge sort"
+    },
+    {
+      "id": "5a23c84252665b21eecc8013",
+      "title": "Sorting algorithms/Strand sort"
+    },
+    {
+      "id": "5a23c84252665b21eecc8017",
+      "title": "Soundex"
+    },
+    {
+      "id": "5a23c84252665b21eecc801c",
+      "title": "Spiral matrix"
+    },
+    {
+      "id": "5a23c84252665b21eecc801d",
+      "title": "Split a character string based on change of character"
+    },
+    {
+      "id": "5a23c84252665b21eecc8024",
+      "title": "State name puzzle"
+    },
+    {
+      "id": "5a23c84252665b21eecc8028",
+      "title": "Stern-Brocot sequence"
+    },
+    {
+      "id": "5a23c84252665b21eecc8029",
+      "title": "Straddling checkerboard"
+    },
+    {
+      "id": "5a23c84252665b21eecc802a",
+      "title": "Stream Merge"
+    },
+    {
+      "id": "5a23c84252665b21eecc8036",
+      "title": "Strip control codes and extended characters from a string"
+    },
+    {
+      "id": "5a23c84252665b21eecc8038",
+      "title": "Subleq"
+    },
+    {
+      "id": "5a23c84252665b21eecc803c",
+      "title": "Sudoku"
+    },
+    {
+      "id": "5a23c84252665b21eecc803f",
+      "title": "Sum digits of an integer"
+    },
+    {
+      "id": "5a23c84252665b21eecc8040",
+      "title": "Sum multiples of 3 and 5"
+    },
+    {
+      "id": "5a23c84252665b21eecc8041",
+      "title": "Sum of a series"
+    },
+    {
+      "id": "5a23c84252665b21eecc8042",
+      "title": "Sum of squares"
+    },
+    {
+      "id": "5a23c84252665b21eecc8043",
+      "title": "Sum to 100"
+    },
+    {
+      "id": "5a23c84252665b21eecc8045",
+      "title": "Sutherland-Hodgman polygon clipping"
+    },
+    {
+      "id": "5a23c84252665b21eecc8046",
+      "title": "Symmetric difference"
+    },
+    {
+      "id": "594ecc0d9a8cf816e3340187",
+      "title": "Taxicab numbers"
+    },
+    {
+      "id": "594faaab4e2a8626833e9c3d",
+      "title": "Tokenize a string with escaping"
+    },
+    {
+      "id": "594fa2746886f41f7d8bf225",
+      "title": "Topological sort"
+    },
+    {
+      "id": "595011cba5a81735713873bd",
+      "title": "Top rank per group"
+    },
+    {
+      "id": "5951ed8945deab770972ae56",
+      "title": "Towers of Hanoi"
+    },
+    {
+      "id": "594810f028c0303b75339ad2",
+      "title": "Vector cross product"
+    },
+    {
+      "id": "594810f028c0303b75339ad3",
+      "title": "Vector dot product"
+    },
+    {
+      "id": "5e94a54cc7b022105bf0fd2c",
+      "title": "Word frequency"
+    },
+    {
+      "id": "594810f028c0303b75339ad4",
+      "title": "Word wrap"
+    },
+    {
+      "id": "594810f028c0303b75339ad5",
+      "title": "Y combinator"
+    },
+    {
+      "id": "594810f028c0303b75339ad6",
+      "title": "Zeckendorf number representation"
+    },
+    {
+      "id": "594810f028c0303b75339ad7",
+      "title": "Zhang-Suen thinning algorithm"
+    },
+    {
+      "id": "594810f028c0303b75339ad8",
+      "title": "Zig-zag matrix"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

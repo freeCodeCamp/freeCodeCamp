@@ -1,0 +1,75 @@
+{
+  "name": "Basic Algorithm Scripting",
+  "isUpcomingChange": false,
+  "dashedName": "basic-algorithm-scripting",
+  "helpCategory": "JavaScript",
+  "order": 5,
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "challengeOrder": [
+    {
+      "id": "56533eb9ac21ba0edf2244b3",
+      "title": "Convert Celsius to Fahrenheit"
+    },
+    {
+      "id": "a202eed8fc186c8434cb6d61",
+      "title": "Reverse a String"
+    },
+    {
+      "id": "a302f7aae1aa3152a5b413bc",
+      "title": "Factorialize a Number"
+    },
+    {
+      "id": "a26cbbe9ad8655a977e1ceb5",
+      "title": "Find the Longest Word in a String"
+    },
+    {
+      "id": "a789b3483989747d63b0e427",
+      "title": "Return Largest Numbers in Arrays"
+    },
+    {
+      "id": "acda2fb1324d9b0fa741e6b5",
+      "title": "Confirm the Ending"
+    },
+    {
+      "id": "afcc8d540bea9ea2669306b6",
+      "title": "Repeat a String Repeat a String"
+    },
+    {
+      "id": "ac6993d51946422351508a41",
+      "title": "Truncate a String"
+    },
+    {
+      "id": "a6e40f1041b06c996f7b2406",
+      "title": "Finders Keepers"
+    },
+    {
+      "id": "a77dbc43c33f39daa4429b4f",
+      "title": "Boo who"
+    },
+    {
+      "id": "ab6137d4e35944e21037b769",
+      "title": "Title Case a Sentence"
+    },
+    {
+      "id": "579e2a2c335b9d72dd32e05c",
+      "title": "Slice and Splice"
+    },
+    {
+      "id": "adf08ec01beb4f99fc7a68f2",
+      "title": "Falsy Bouncer"
+    },
+    {
+      "id": "a24c1a4622e3c05097f71d67",
+      "title": "Where do I Belong"
+    },
+    {
+      "id": "af2170cad53daa0770fabdea",
+      "title": "Mutations"
+    },
+    {
+      "id": "a9bd25c716030ec90084d8a1",
+      "title": "Chunky Monkey"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Understanding How to Work with Floats and Positioning in CSS",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-how-to-work-with-floats-and-positioning-in-css",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa86da9937560d3dfe3d6",
+      "title": "What Are Common Use Cases for Using Floats, and How Do They Work?"
+    },
+    {
+      "id": "672c3a84fb8d4613776cc99e",
+      "title": "What Is Relative Positioning, and How Does This Differ from the Default Static Positioning?"
+    },
+    {
+      "id": "672c3a8fac7c5613b4bb75de",
+      "title": "What Is Absolute Positioning, and How Does It Work?"
+    },
+    {
+      "id": "672c3a9d32c56113fcaedf24",
+      "title": "What Is Fixed and Sticky Positioning, and How Does It Differ from Absolute Positioning?"
+    },
+    {
+      "id": "672c3aa9bc3a481425cb52b3",
+      "title": "What Is the Z-Index Property, and How Does It Work to Control the Stacking of Positioned Elements?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

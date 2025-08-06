@@ -1,0 +1,19 @@
+{
+  "name": "Understanding Comparisons and Conditionals",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-comparisons-and-conditionals",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672d26917a8ab3220c038a42",
+      "title": "How Do Comparisons Work with Null and Undefined Data Types?"
+    },
+    {
+      "id": "673282bea35dbf129efb63d6",
+      "title": "What Are Switch Statements and How Do They Differ from If/Else Chains?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
