@@ -29,11 +29,9 @@ import {
 } from '../../utils/progress';
 import { JWT_SECRET } from '../../utils/env';
 import {
-  getChallengeById,
   getExamAttemptHandler,
   getExamAttemptsByExamIdHandler,
-  getExamAttemptsHandler,
-  getExamsByChallengeId
+  getExamAttemptsHandler
 } from '../../exam-environment/routes/exam-environment';
 
 /**
@@ -503,20 +501,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: examEnvironmentSchemas.examEnvironmentGetExamAttemptsByExamId
     },
     getExamAttemptsByExamIdHandler
-  );
-  fastify.get(
-    '/user/exam-environment/challenges/:challengeId',
-    {
-      schema: examEnvironmentSchemas.examEnvironmentGetChallengeById
-    },
-    getChallengeById
-  );
-  fastify.get(
-    '/user/exam-environment/challenges/:challengeId/exams',
-    {
-      schema: examEnvironmentSchemas.examEnvironmentGetExamsByChallengeId
-    },
-    getExamsByChallengeId
   );
 
   done();
