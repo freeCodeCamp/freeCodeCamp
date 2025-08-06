@@ -13,55 +13,83 @@ const { getSuperOrder } = require('./utils');
 
 const duplicates = xs => xs.filter((x, i) => xs.indexOf(x) !== i);
 
+const createValidator = throwOnError => fn => {
+  try {
+    fn();
+  } catch (error) {
+    if (throwOnError) {
+      throw error;
+    } else {
+      console.error(error.message);
+    }
+  }
+};
+
 /**
  * Validates challenges against meta.json challengeOrder
  * @param {Array<object>} foundChallenges - Array of challenge objects
  * @param {object} meta - Meta object with challengeOrder array
  * @throws {Error} If validation fails (missing challenges, duplicates, etc.)
  */
-function validateChallenges(foundChallenges, meta) {
+function validateChallenges(foundChallenges, meta, throwOnError) {
   const metaChallengeIds = new Set(meta.challengeOrder.map(c => c.id));
   const foundChallengeIds = new Set(foundChallenges.map(c => c.id));
 
-  const missingFromMeta = Array.from(foundChallengeIds).filter(
-    id => !metaChallengeIds.has(id)
-  );
-  if (missingFromMeta.length > 0)
-    throw Error(
-      `Challenges found in directory but missing from meta: ${missingFromMeta.join(', ')}`
-    );
+  const throwOrLog = createValidator(throwOnError);
 
-  const missingFromFiles = Array.from(metaChallengeIds).filter(
-    id => !foundChallengeIds.has(id)
-  );
-  if (missingFromFiles.length > 0)
-    throw Error(
-      `Challenges in meta but missing files with id(s): ${missingFromFiles.join(', ')}`
+  throwOrLog(() => {
+    const missingFromMeta = Array.from(foundChallengeIds).filter(
+      id => !metaChallengeIds.has(id)
     );
+    if (missingFromMeta.length > 0)
+      throw Error(
+        `Challenges found in directory but missing from meta: ${missingFromMeta.join(', ')}`
+      );
+  });
 
-  const duplicateIds = duplicates(foundChallenges.map(c => c.id));
-  if (duplicateIds.length > 0)
-    throw Error(
-      `Duplicate challenges found in found challenges with id(s): ${duplicateIds.join(', ')}`
+  throwOrLog(() => {
+    const missingFromFiles = Array.from(metaChallengeIds).filter(
+      id => !foundChallengeIds.has(id)
     );
+    if (missingFromFiles.length > 0)
+      throw Error(
+        `Challenges in meta but missing files with id(s): ${missingFromFiles.join(', ')}`
+      );
+  });
 
-  const duplicateMetaIds = duplicates(meta.challengeOrder.map(c => c.id));
-  if (duplicateMetaIds.length > 0)
-    throw Error(
-      `Duplicate challenges found in meta with id(s): ${duplicateMetaIds.join(', ')}`
-    );
+  throwOrLog(() => {
+    const duplicateIds = duplicates(foundChallenges.map(c => c.id));
+    if (duplicateIds.length > 0)
+      throw Error(
+        `Duplicate challenges found in found challenges with id(s): ${duplicateIds.join(', ')}`
+      );
+  });
 
-  const duplicateTitles = duplicates(foundChallenges.map(c => c.title));
-  if (duplicateTitles.length > 0)
-    throw Error(
-      `Duplicate titles found in found challenges with title(s): ${duplicateTitles.join(', ')} in block ${meta.dashedName}`
-    );
+  throwOrLog(() => {
+    const duplicateMetaIds = duplicates(meta.challengeOrder.map(c => c.id));
+    if (duplicateMetaIds.length > 0)
+      throw Error(
+        `Duplicate challenges found in meta with id(s): ${duplicateMetaIds.join(', ')}`
+      );
+  });
 
-  const duplicateMetaTitles = duplicates(meta.challengeOrder.map(c => c.title));
-  if (duplicateMetaTitles.length > 0)
-    throw Error(
-      `Duplicate titles found in meta with title(s): ${duplicateMetaTitles.join(', ')}`
+  throwOrLog(() => {
+    const duplicateTitles = duplicates(foundChallenges.map(c => c.title));
+    if (duplicateTitles.length > 0)
+      throw Error(
+        `Duplicate titles found in found challenges with title(s): ${duplicateTitles.join(', ')} in block ${meta.dashedName}`
+      );
+  });
+
+  throwOrLog(() => {
+    const duplicateMetaTitles = duplicates(
+      meta.challengeOrder.map(c => c.title)
     );
+    if (duplicateMetaTitles.length > 0)
+      throw Error(
+        `Duplicate titles found in meta with title(s): ${duplicateMetaTitles.join(', ')}`
+      );
+  });
 }
 
 /**
@@ -356,8 +384,9 @@ class BlockCreator {
       debug(`Found challenge: ${challenge.title} (${challenge.id})`);
     });
 
+    const throwOnError = this.lang === 'english';
     // Validate challenges against meta
-    validateChallenges(foundChallenges, meta);
+    validateChallenges(foundChallenges, meta, throwOnError);
 
     // Build the block object
     const blockResult = buildBlock(foundChallenges, meta);
