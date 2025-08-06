@@ -4417,7 +4417,8 @@
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
         "intro": [
-          "Learn about Searching and Sorting Algorithms in these lectures."
+          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
+          "These lectures cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
         ]
       },
       "workshop-binary-search": {
