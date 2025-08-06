@@ -1,0 +1,20 @@
+{
+  "name": "prisma-generator-schema",
+  "version": "1.0.0",
+  "main": "./index.js",
+  "bin": "./index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "dependencies": {
+    "@prisma/generator-helper": "5.11.0"
+  },
+  "devDependencies": {
+    "@prisma/client": "5.18.0",
+    "@types/node": "22.4.1",
+    "prisma": "^5.2.0",
+    "source-map-support": "^0.5.21",
+    "typescript": "5.5.4"
+  }
+}
