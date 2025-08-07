@@ -1,0 +1,11 @@
+{
+  "name": "Build an Emoji Reactor",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-emoji-reactor",
+  "superBlock": "full-stack-developer",
+  "order": 42,
+  "helpCategory": "JavaScript",
+  "challengeOrder": [{ "id": "688c90634eb5ae69845ac35d", "title": "Step 1" }],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
