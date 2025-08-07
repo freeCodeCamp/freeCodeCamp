@@ -1,0 +1,26 @@
+name: SCANOSS
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - 'main'
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+  actions: read
+
+jobs:
+  scanoss-code-scan:
+    name: SCANOSS Code Scan
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run SCANOSS Code Scan
+        id: scanoss-code-scan-step
+        uses: scanoss/code-scan-action@v1
