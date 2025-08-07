@@ -3400,7 +3400,7 @@
       "lab-html-entitiy-converter": {
         "title": "Implement an HTML Entity Converter",
         "intro": [
-          "In this lab you will convert special characters in a string to their corresponding HTML entities."
+          "In this lab, you will convert special characters in a string to their corresponding HTML entities."
         ]
       },
       "review-javascript-fundamentals": {
