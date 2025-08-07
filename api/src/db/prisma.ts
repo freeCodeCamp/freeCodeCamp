@@ -40,17 +40,21 @@ function extendClient(prisma: PrismaClient) {
     query: {
       user: {
         async update({ args, query }) {
-          args.data.updateCount = { increment: 1 };
+          args.data.lastUpdatedAtInMS = Date.now();
           return query(args);
         },
+
         async updateMany({ args, query }) {
-          args.data.updateCount = { increment: 1 };
+          args.data.lastUpdatedAtInMS = Date.now();
           return query(args);
         },
+
         async upsert({ args, query }) {
-          args.update.updateCount = { increment: 1 };
+          args.update.lastUpdatedAtInMS = Date.now();
+          args.create.lastUpdatedAtInMS = Date.now();
           return query(args);
         }
+
         // NOTE: raw ops are untouched, as it is meant to be a direct passthrough to mongodb
         // async findRaw({ model, operation, args, query }) {}
         // async aggregateRaw({ model, operation, args, query }) {}
