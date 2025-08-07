@@ -4,7 +4,7 @@ const util = require('util');
 
 const { curriculum: curriculumLangs } =
   require('../shared/config/i18n').availableLangs;
-const { buildCurriculumV2 } = require('./build-curriculum');
+const { buildCurriculum } = require('./build-curriculum');
 const {
   assertSuperBlockStructure
 } = require('./schema/superblock-structure-schema');
@@ -21,9 +21,7 @@ exports.getChallengesForLang = async function getChallengesForLang(lang) {
     throw Error(`${lang} is not a accepted language.
 Accepted languages are ${curriculumLangs.join(', ')}`);
 
-  const curriculum = await buildCurriculumV2(lang);
-
-  return curriculum;
+  return buildCurriculum(lang);
 };
 
 async function hasEnglishSource(basePath, translationPath) {
