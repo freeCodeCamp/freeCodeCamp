@@ -1,0 +1,23 @@
+{
+  "name": "Learn How to Read and Type Pinyin",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-read-and-type-pinyin",
+  "order": 1,
+  "superBlock": "a1-professional-chinese",
+  "challengeOrder": [
+    {
+      "id": "6891d764096b545a9b6b140b",
+      "title": "Dialogue 1: PLACEHOLDER"
+    },
+    {
+      "id": "6892cce895423e0cc58b3006",
+      "title": "Task 1"
+    },
+    {
+      "id": "6892cfd88659631495266084",
+      "title": "Task 2"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid"
+}

@@ -880,6 +880,20 @@ const allStandardCerts = [
         certSlug: Certification.A1Chinese
       }
     ]
+  },
+  {
+    id: '682c3153086dd7cabe7f48bc',
+    title: 'A1 Professional Chinese',
+    certSlug: Certification.A1Chinese,
+    projects: [
+      {
+        id: '6891d764096b545a9b6b140b',
+        title: 'Dialogue 1: PLACEHOLDER',
+        link: `${a1ChineseBase}/learn-how-to-read-and-type-pinyin
+/text-1`,
+        certSlug: Certification.A1Chinese
+      }
+    ]
   }
 ] as const;
 
