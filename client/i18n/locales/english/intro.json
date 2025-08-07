@@ -3516,6 +3516,12 @@
           "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
         ]
       },
+      "lecture-understanding-aria-expanded-aria-live-and-common-aria-states": {
+        "title": "Understanding aria-expanded, aria-live, and Common ARIA States",
+        "intro": [
+          "In these lectures you will learn more about ARIA attributes like <code>aria-expanded</code>, <code>aria-live</code>, and common ARIA states."
+        ]
+      },
       "workshop-planets-tablist": {
         "title": "Build a Planets Tablist",
         "intro": [
@@ -3527,6 +3533,12 @@
         "intro": [
           "In this workshop, you are going to build an accessible note taking app.",
           "This will provide you with the opportunity to practice working with <code>aria-live</code> attribute."
+        ]
+      },
+      "lab-theme-switcher": {
+        "title": "Build a Theme Switcher",
+        "intro": [
+          "In this lab, you will build a theme switcher and practice working with the <code>aria-haspopup</code>, <code>aria-expanded</code>, and <code>aria-controls</code> attributes."
         ]
       },
       "review-js-a11y": {
@@ -4103,7 +4115,7 @@
         ]
       },
       "workshop-tailwind-cta-component": {
-        "title": "Build a Taiwlind CTA Compoent",
+        "title": "Build a CTA Component",
         "intro": [
           "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
         ]
@@ -4411,7 +4423,8 @@
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
         "intro": [
-          "Learn about Searching and Sorting Algorithms in these lectures."
+          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
+          "These lectures cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
         ]
       },
       "workshop-binary-search": {
