@@ -66,11 +66,7 @@ assert.deepEqual(arr, ['a', false, 0, 'Naomi']);
 ## --seed-contents--
 
 ```js
-function bouncer(arr) {
-  return arr;
-}
 
-bouncer([7, 'ate', '', false, 9]);
 ```
 
 # --solutions--
@@ -79,6 +75,4 @@ bouncer([7, 'ate', '', false, 9]);
 function bouncer(arr) {
   return arr.filter(e => e);
 }
-
-bouncer([7, 'ate', '', false, 9]);
 ```
