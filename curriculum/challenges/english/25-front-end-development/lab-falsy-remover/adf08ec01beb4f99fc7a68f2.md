@@ -1,8 +1,8 @@
 ---
 id: adf08ec01beb4f99fc7a68f2
-title: Falsy Bouncer
+title: Implement a Falsy Remover
 challengeType: 26
-dashedName: falsy-bouncer
+dashedName: implement-a-falsy-remover
 ---
 
 # --description--
