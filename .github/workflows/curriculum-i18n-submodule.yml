@@ -1,0 +1,70 @@
+name: CI - Node.js - i18n - Submodule
+
+on:
+  # Run on push events, but only for the below branches
+  push:
+    branches:
+      - 'chore/update-i18n-curriculum-submodule'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-curriculum:
+    name: Test Curriculum
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [22]
+        # Exclude the languages that we currently run in the full CI suite.
+        locale:
+          - 'chinese'
+          - 'espanol'
+          - 'ukrainian'
+          - 'japanese'
+          - 'german'
+          - 'swahili'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          submodules: 'recursive'
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Set Environment variables
+        run: |
+          cp sample.env .env
+
+      - name: Install node_modules
+        run: pnpm install
+
+      # DONT REMOVE THIS STEP.
+      # TODO: Refactor and use re-usable workflow and shared artifacts
+      - name: Build Client in ${{ matrix.locale }}
+        env:
+          CURRICULUM_LOCALE: ${{ matrix.locale }}
+          CLIENT_LOCALE: ${{ matrix.locale }}
+        run: |
+          pnpm run build
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm -F=curriculum install-puppeteer
+
+      - name: Run Tests
+        env:
+          CURRICULUM_LOCALE: ${{ matrix.locale }}
+          CLIENT_LOCALE: ${{ matrix.locale }}
+        run: pnpm test:curriculum

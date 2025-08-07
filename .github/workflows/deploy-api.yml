@@ -1,0 +1,225 @@
+name: CD - Deploy - API
+
+on:
+  workflow_dispatch:
+    inputs:
+      api_log_lvl:
+        description: 'Log level for the API'
+        type: choice
+        options:
+          - debug
+          - info
+          - warn
+        default: info
+
+jobs:
+  setup-jobs:
+    name: Setup Jobs
+    runs-on: ubuntu-22.04
+    outputs:
+      site_tld: ${{ steps.setup.outputs.site_tld }}
+      tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }}
+      tgt_env_long: ${{ steps.setup.outputs.tgt_env_long }}
+      api_log_lvl: ${{ steps.setup.outputs.api_log_lvl }}
+    steps:
+      - name: Setup
+        id: setup
+        run: |
+          BRANCH="${{ github.ref_name }}"
+          echo "Current branch: $BRANCH"
+          case "$BRANCH" in
+            "prod-current")
+              echo "site_tld=org" >> $GITHUB_OUTPUT
+              echo "tgt_env_short=prd" >> $GITHUB_OUTPUT
+              echo "tgt_env_long=production" >> $GITHUB_OUTPUT
+              echo "api_log_lvl=${{ inputs.api_log_lvl || 'info' }}" >> $GITHUB_OUTPUT
+              ;;
+            *)
+              echo "site_tld=dev" >> $GITHUB_OUTPUT
+              echo "tgt_env_short=stg" >> $GITHUB_OUTPUT
+              echo "tgt_env_long=staging" >> $GITHUB_OUTPUT
+              echo "api_log_lvl=${{ inputs.api_log_lvl || 'info' }}" >> $GITHUB_OUTPUT
+              ;;
+          esac
+
+  build:
+    name: Build & Push
+    needs: setup-jobs
+    uses: ./.github/workflows/docker-docr.yml
+    with:
+      site_tld: ${{ needs.setup-jobs.outputs.site_tld }}
+      app: api
+    secrets: inherit
+
+  deploy:
+    name: Deploy to Docker Swarm -- ${{ needs.setup-jobs.outputs.tgt_env_short }}
+    runs-on: ubuntu-22.04
+    needs: [setup-jobs, build]
+    env:
+      TS_USERNAME: ${{ secrets.TS_USERNAME }}
+      TS_MACHINE_NAME: ${{ secrets.TS_MACHINE_NAME }}
+    permissions:
+      deployments: write
+    environment:
+      name: ${{ needs.setup-jobs.outputs.tgt_env_short }}-api
+
+    steps:
+      - name: Setup and connect to Tailscale network
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          hostname: gha-${{needs.setup-jobs.outputs.tgt_env_short}}-api-ci-${{ github.run_id }}
+          tags: tag:ci
+          version: latest
+
+      - name: Configure SSH & Check Connection
+        run: |
+          mkdir -p ~/.ssh
+          echo "Host *
+            UserKnownHostsFile=/dev/null
+            StrictHostKeyChecking no" > ~/.ssh/config
+          chmod 644 ~/.ssh/config
+          sleep 10
+          tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Error: Machine not found"; exit 1; }
+          sleep 1
+          MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
+          echo -e "\nLOG:Checking connection to $TS_MACHINE_NAME..."
+          ssh $TS_USERNAME@$MACHINE_IP "uptime"
+
+      - name: Deploy with Docker Stack
+        env:
+          AGE_ENCRYPTED_ASC_SECRETS: ${{ secrets.AGE_ENCRYPTED_ASC_SECRETS }}
+          AGE_SECRET_KEY: ${{ secrets.AGE_SECRET_KEY }}
+          # Variable set from GitHub "Environment" secrets (AGE encrypted)
+          # DOCKER_REGISTRY
+          # MONGOHQ_URL
+          # SENTRY_DSN
+          # SENTRY_ENVIRONMENT
+          # AUTH0_CLIENT_ID
+          # AUTH0_CLIENT_SECRET
+          # AUTH0_DOMAIN
+          # JWT_SECRET
+          # COOKIE_SECRET
+          # COOKIE_DOMAIN
+          # SES_ID
+          # SES_SECRET
+          # GROWTHBOOK_FASTIFY_API_HOST
+          # GROWTHBOOK_FASTIFY_CLIENT_KEY
+          # HOME_LOCATION
+          # API_LOCATION
+          # STRIPE_SECRET_KEY
+          # LOKI_URL
+          # Variables set from SetupJob
+          DEPLOYMENT_VERSION: ${{ needs.build.outputs.tagname }}
+          DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.site_tld }}
+          FCC_API_LOG_LEVEL: ${{ needs.setup-jobs.outputs.api_log_lvl }}
+          # Stack name
+          STACK_NAME: ${{ needs.setup-jobs.outputs.tgt_env_short }}-api
+        run: |
+          REMOTE_SCRIPT="
+            set -e
+            echo -e '\nLOG:Deploying API to $TS_MACHINE_NAME...'
+            cd /home/$TS_USERNAME/docker-swarm-config/stacks/api
+
+            echo -e '\nLOG:Checking if age is installed...'
+            which age > /dev/null
+
+            echo -e '\nLOG:Decrypting secrets...'
+            echo \"$AGE_ENCRYPTED_ASC_SECRETS\" > secrets.age.asc
+            echo \"$AGE_SECRET_KEY\" > age.key && chmod 600 age.key
+            age --identity age.key --decrypt secrets.age.asc > .env
+            rm -f age.key secrets.age.asc
+
+            echo -e '\nLOG:Cleaning up .env file...'
+            touch .env.tmp
+            while IFS= read -r line; do
+              if [[ \$line =~ ^[A-Za-z0-9_]+=.*$ ]]; then
+                # Extract the key (part before the first =)
+                key=\${line%%=*}
+                # Remove any previous line with this key
+                sed -i \"/^\${key}=/d\" .env.tmp
+              fi
+              # Append the current line
+              echo \"\$line\" >> .env.tmp
+            done < .env
+            mv .env.tmp .env
+
+            echo -e '\nLOG:Adding deployment variables...'
+            {
+              echo \"DEPLOYMENT_VERSION=$DEPLOYMENT_VERSION\"
+              echo \"DEPLOYMENT_ENV=$DEPLOYMENT_ENV\"
+              echo \"FCC_API_LOG_LEVEL=$FCC_API_LOG_LEVEL\"
+            } >> .env
+
+            echo -e '\nLOG:Sourcing environment...'
+            REQUIRED_VARS=(
+              \"DOCKER_REGISTRY\"
+              \"MONGOHQ_URL\"
+              \"SENTRY_DSN\"
+              \"SENTRY_ENVIRONMENT\"
+              \"AUTH0_CLIENT_ID\"
+              \"AUTH0_CLIENT_SECRET\"
+              \"AUTH0_DOMAIN\"
+              \"JWT_SECRET\"
+              \"COOKIE_SECRET\"
+              \"COOKIE_DOMAIN\"
+              \"SES_ID\"
+              \"SES_SECRET\"
+              \"GROWTHBOOK_FASTIFY_API_HOST\"
+              \"GROWTHBOOK_FASTIFY_CLIENT_KEY\"
+              \"HOME_LOCATION\"
+              \"API_LOCATION\"
+              \"STRIPE_SECRET_KEY\"
+              \"LOKI_URL\"
+              \"DEPLOYMENT_VERSION\"
+              \"DEPLOYMENT_ENV\"
+              \"FCC_API_LOG_LEVEL\"
+            )
+
+            while IFS='=' read -r key value; do
+              if [[ -n \"\$key\" && ! \"\$key\" =~ ^# ]]; then
+                export \"\${key}=\${value}\"
+              fi
+            done < .env
+
+            MISSING_VARS=()
+            for var in \"\${REQUIRED_VARS[@]}\"; do
+              if [[ -z \"\${!var}\" ]]; then
+                MISSING_VARS+=(\"\$var\")
+              fi
+            done
+
+            if [[ \${#MISSING_VARS[@]} -gt 0 ]]; then
+              echo \"ERROR: The following required environment variables are missing or empty:\"
+              for var in \"\${MISSING_VARS[@]}\"; do
+                echo \"  - \$var\"
+              done
+              exit 1
+            fi
+
+            rm -rf .env
+
+            echo -e '\nLOG:Validating deployment version...'
+            if [[ \"\$DEPLOYMENT_VERSION\" != \"$DEPLOYMENT_VERSION\" ]]; then
+              echo \"Error: Version mismatch. Expected: $DEPLOYMENT_VERSION, Got: \$DEPLOYMENT_VERSION\"
+              exit 1
+            fi
+            env | grep -E 'DEPLOYMENT_VERSION'
+
+            echo -e '\nLOG:Checking stack configuration...'
+            CONFIG_OUTPUT=\"/dev/null\"
+            if [[ \"\$FCC_API_LOG_LEVEL\" == \"debug\" ]]; then
+              CONFIG_FILENAME=\"debug-docker-stack-config-\${DEPLOYMENT_VERSION}.yml\"
+              echo -e '\nLOG:Saving stack configuration for debugging...'
+              CONFIG_OUTPUT=\"\$CONFIG_FILENAME\"
+            fi
+            docker stack config -c stack-api.yml > \$CONFIG_OUTPUT
+
+            echo -e '\nLOG:Deploying stack...'
+            docker stack deploy -c stack-api.yml --prune --with-registry-auth --detach=false $STACK_NAME
+
+            echo -e '\nLOG:Finished deployment.'
+          "
+          MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
+          ssh $TS_USERNAME@$MACHINE_IP "$REMOTE_SCRIPT"
