@@ -1,0 +1,17 @@
+name: Demo Workflow - Tayyiba Kiran
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Print Hello
+        run: echo "Hello from Tayyiba Kiran!"
