@@ -1334,7 +1334,7 @@
           "comingSoon": true,
           "blocks": [
             { "dashedName": "lecture-classes-and-objects" },
-            { "dashedName": "workshop-placeholder-classes-and-objects" },
+            { "dashedName": "workshop-musical-instrument-inventory" },
             { "dashedName": "lab-budget-app" },
             { "dashedName": "review-classes-and-objects" },
             { "dashedName": "quiz-classes-and-objects" }

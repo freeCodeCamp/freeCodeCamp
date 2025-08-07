@@ -1,0 +1,12 @@
+{
+  "name": "Build a Musical Instrument Inventory",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-musical-instrument-inventory",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "Python",
+  "challengeOrder": [{ "id": "6894c1b715b8d18a18ef3203", "title": "Build a Musical Instrument Inventory" }],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockLayout": "challenge-grid",
+  "blockType": "workshop"
+}
