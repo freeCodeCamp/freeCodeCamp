@@ -261,83 +261,6 @@ function getContentDir(lang) {
   return lang === 'english' ? contentDir : i18nContentDir;
 }
 
-/**
- * Processes a single superblock by building its structure and content
- * @param {string} superblockFilename - The folder name of the superblock to process
- * @param {SuperblockCreator} builder - The builder instance to use for processing
- * @returns {Promise<Object>} Promise resolving to the built superblock data
- * @throws {Error} When the superblock file is not found
- */
-async function processSuperblock(superblockFilename, builder) {
-  debug(`\n=== Processing ${superblockFilename} ===`);
-
-  const superBlockName = superBlockNames[superblockFilename];
-  const superblockPath = path.resolve(
-    STRUCTURE_DIR,
-    'superblocks',
-    `${superblockFilename}.json`
-  );
-
-  if (!fs.existsSync(superblockPath)) {
-    throw Error(`Superblock file not found: ${superblockPath}`);
-  }
-
-  return builder.buildSuperblock(superblockPath, superBlockName);
-}
-
-/**
- * Builds the entire curriculum for a specific language
- * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
- * @returns {Promise<Object>} Promise resolving to the complete built curriculum data
- * @throws {Error} When curriculum files are not found or superblocks/certifications are empty
- */
-async function buildCurriculum(lang) {
-  const contentDir = getContentDir(lang);
-  const builder = new SuperblockCreator({
-    blockCreator: getBlockCreator(lang)
-  });
-  debug('Reading curriculum.json...');
-
-  const curriculum = readCurriculum();
-  const { superblocks, certifications } = curriculum;
-  if (isEmpty(superblocks))
-    throw Error('No superblocks found in curriculum.json');
-  if (isEmpty(certifications))
-    throw Error('No certifications found in curriculum.json');
-
-  debug(`Found ${superblocks.length} superblocks to build`);
-
-  const builtCurriculum = { certifications: { blocks: {} } };
-
-  for (const superblockFilename of superblocks) {
-    const superblockName = superBlockNames[superblockFilename];
-    builtCurriculum[superblockName] = await processSuperblock(
-      superblockFilename,
-      builder
-    );
-
-    debug(`Successfully built ${superblockName}`);
-  }
-
-  debug(`Total superblocks built: ${Object.keys(builtCurriculum).length}`);
-
-  // Parse certifications
-  for (const cert of certifications) {
-    const certPath = path.resolve(contentDir, 'certifications', `${cert}.yml`);
-    if (!fs.existsSync(certPath)) {
-      throw Error(`Certification file not found: ${certPath}`);
-    }
-
-    debug(`\n=== Processing certification ${cert} ===`);
-
-    builtCurriculum.certifications.blocks[cert] = buildCertification(certPath);
-
-    debug(`Successfully built certification ${cert}`);
-  }
-
-  return builtCurriculum;
-}
-
 const readCurriculum = () => {
   const curriculumPath = path.resolve(STRUCTURE_DIR, 'curriculum.json');
   if (!fs.existsSync(curriculumPath)) {
@@ -407,20 +330,25 @@ function addBlocks(superblocks) {
   }));
 }
 
-async function buildCurriculumV2(lang) {
+async function buildCurriculum(lang) {
   const contentDir = getContentDir(lang);
   const builder = new SuperblockCreator({
     blockCreator: getBlockCreator(lang)
   });
 
   const curriculum = readCurriculum();
+  if (isEmpty(curriculum.superblocks))
+    throw Error('No superblocks found in curriculum.json');
+  if (isEmpty(curriculum.certifications))
+    throw Error('No certifications found in curriculum.json');
+  debug(`Found ${curriculum.superblocks.length} superblocks to build`);
+  debug(`Found ${curriculum.certifications.length} certifications to build`);
+
   const superblockList = buildSuperblockStructure(curriculum);
   const fullSuperblockList = addBlocks(superblockList);
-
   const fullCurriculum = { certifications: { blocks: {} } };
 
   for (const superblock of fullSuperblockList) {
-    console.log('superblock', superblock);
     fullCurriculum[superblock.name] =
       await builder.processSuperblockV2(superblock);
   }
@@ -442,6 +370,5 @@ module.exports = {
   getContentDir,
   getBlockCreator,
   createCommentMap,
-  buildSuperblockStructure,
-  buildCurriculumV2
+  buildSuperblockStructure
 };
