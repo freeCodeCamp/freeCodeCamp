@@ -1,18 +1,11 @@
 ---
 id: 672bccc8ea33bad87abb3c56
 title: What Is the Difference Between content-box and border-box?
-challengeType: 11
-videoId: znOuWo58jgY
+challengeType: 19
 dashedName: what-is-the-difference-between-content-box-and-border-box
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
-
-What is the difference between `content-box` and `border-box` in CSS?
 
 The `box-sizing` property can be set to either `content-box` or `border-box` to control how the width and height of elements are calculated. Here you can see the `box-sizing` property and the two possible values: 
 

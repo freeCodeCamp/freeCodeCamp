@@ -23,7 +23,7 @@ import {
   seedEnvExam,
   seedEnvExamAttempt,
   seedExamEnvExamAuthToken
-} from '../../../__mocks__/env-exam';
+} from '../../../__mocks__/exam-environment-exam';
 import { getMsTranscriptApiUrl } from './user';
 
 const mockedFetch = jest.fn();
@@ -140,6 +140,7 @@ const minimalUserData: Prisma.userCreateInput = {
   picture: 'https://www.freecodecamp.org/cat.png',
   sendQuincyEmail: true,
   username: 'testuser',
+  usernameDisplay: 'testuser',
   unsubscribeId: '1234567890'
 };
 
@@ -276,7 +277,8 @@ const publicUserData = {
   profileUI: testUserData.profileUI,
   savedChallenges: testUserData.savedChallenges,
   twitter: 'https://twitter.com/foobar',
-  username: testUserData.usernameDisplay, // It defaults to usernameDisplay
+  username: testUserData.username,
+  usernameDisplay: testUserData.usernameDisplay,
   website: testUserData.website,
   yearsTopContributor: testUserData.yearsTopContributor
 };
@@ -441,13 +443,13 @@ describe('userRoutes', () => {
         await seedEnvExam();
         await seedEnvExamAttempt();
         const countBefore =
-          await fastifyTestInstance.prisma.envExamAttempt.count();
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
         expect(countBefore).toBe(1);
 
         const res = await superPost('/account/delete');
 
         const countAfter =
-          await fastifyTestInstance.prisma.envExamAttempt.count();
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
         expect(countAfter).toBe(0);
         expect(res.status).toBe(200);
       });
