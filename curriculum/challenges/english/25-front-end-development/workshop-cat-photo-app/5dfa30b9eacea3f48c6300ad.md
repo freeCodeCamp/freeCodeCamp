@@ -45,13 +45,13 @@ assert.lengthOf(document.querySelectorAll('a'), 3);
 Your anchor (`a`) element should have a closing tag. Closing tags have a `/` just after the `<` character.
 
 ```js
-assert.isAtLeast(code.match(/<\/a>/g)?.length, 3);
+assert.isAtLeast(code.match(/<\/a>/gi)?.length, 3);
 ```
 
 You should only add one closing anchor (`a`) tag. Please remove any extras.
 
 ```js
-assert.lengthOf(code.match(/<\/a>/g), 3);
+assert.lengthOf(code.match(/<\/a>/gi), 3);
 ```
 
 Your anchor (`a`) element does not have an `href` attribute. Check that there is a space after the opening tag's name and/or there are spaces before all attribute names.
