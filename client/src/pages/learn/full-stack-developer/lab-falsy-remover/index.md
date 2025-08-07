@@ -1,9 +1,9 @@
 ---
-title: Introduction to the Implement a Falsy Remover
+title: Introduction to Implement a Falsy Remover
 block: lab-falsy-remover
 superBlock: full-stack-developer
 ---
 
-## Introduction to the Implement a Falsy Remover
+## Introduction to Implement a Falsy Remover
 
-This is a test for the new project-based curriculum.
+In this lab, you will create a function that removes all falsy values from an array.
