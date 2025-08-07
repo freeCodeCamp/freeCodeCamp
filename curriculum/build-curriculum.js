@@ -5,7 +5,11 @@ const assert = require('assert');
 const { isEmpty } = require('lodash');
 const debug = require('debug')('fcc:build-curriculum');
 
-const { SuperblockCreator, BlockCreator } = require('./build-superblock');
+const {
+  SuperblockCreator,
+  BlockCreator,
+  transformSuperBlock
+} = require('./build-superblock');
 
 const { buildCertification } = require('./build-certification');
 
@@ -294,12 +298,7 @@ async function buildCurriculum(lang) {
   });
   debug('Reading curriculum.json...');
 
-  const curriculumPath = path.resolve(STRUCTURE_DIR, 'curriculum.json');
-  if (!fs.existsSync(curriculumPath)) {
-    throw new Error(`Curriculum file not found: ${curriculumPath}`);
-  }
-
-  const curriculum = JSON.parse(fs.readFileSync(curriculumPath, 'utf8'));
+  const curriculum = readCurriculum();
   const { superblocks, certifications } = curriculum;
   if (isEmpty(superblocks))
     throw Error('No superblocks found in curriculum.json');
@@ -339,9 +338,110 @@ async function buildCurriculum(lang) {
   return builtCurriculum;
 }
 
+const readCurriculum = () => {
+  const curriculumPath = path.resolve(STRUCTURE_DIR, 'curriculum.json');
+  if (!fs.existsSync(curriculumPath)) {
+    throw new Error(`Curriculum file not found: ${curriculumPath}`);
+  }
+
+  return JSON.parse(fs.readFileSync(curriculumPath, 'utf8'));
+};
+
+/**
+ * Builds an array of superblock structures from a curriculum object
+ * @param {Object} curriculum - The curriculum object containing superblocks array
+ * @param {string[]} curriculum.superblocks - Array of superblock filename strings
+ * @returns {Array<Object>} Array of superblock structure objects with filename, name, and blocks
+ * @throws {Error} When a superblock file is not found
+ */
+function buildSuperblockStructure(curriculum) {
+  const { superblocks } = curriculum;
+
+  if (isEmpty(superblocks)) {
+    throw new Error('No superblocks found in curriculum object');
+  }
+
+  debug(`Building structure for ${superblocks.length} superblocks`);
+
+  const superblockStructures = superblocks.map(superblockFilename => {
+    debug(`Reading structure for ${superblockFilename}`);
+
+    const superblockName = superBlockNames[superblockFilename];
+    const superblockPath = path.resolve(
+      STRUCTURE_DIR,
+      'superblocks',
+      `${superblockFilename}.json`
+    );
+
+    if (!fs.existsSync(superblockPath)) {
+      throw Error(`Superblock file not found: ${superblockPath}`);
+    }
+
+    const superblockData = JSON.parse(fs.readFileSync(superblockPath, 'utf8'));
+
+    return {
+      name: superblockName,
+      blocks: transformSuperBlock(superblockData)
+    };
+  });
+
+  debug(
+    `Successfully built ${superblockStructures.length} superblock structures`
+  );
+
+  return superblockStructures;
+}
+
+function getBlockStructure(block) {
+  const blockPath = path.resolve(STRUCTURE_DIR, 'blocks', `${block}.json`);
+  if (!fs.existsSync(blockPath))
+    throw Error(`Structure file not found for block ${block}: ${blockPath}`);
+
+  return JSON.parse(fs.readFileSync(blockPath, 'utf8'));
+}
+
+function addBlocks(superblocks) {
+  return superblocks.map(superblock => ({
+    ...superblock,
+    blocks: superblock.blocks.map(block => getBlockStructure(block.dashedName))
+  }));
+}
+
+async function buildCurriculumV2(lang) {
+  const contentDir = getContentDir(lang);
+  const builder = new SuperblockCreator({
+    blockCreator: getBlockCreator(lang)
+  });
+
+  const curriculum = readCurriculum();
+  const superblockList = buildSuperblockStructure(curriculum);
+  const fullSuperblockList = addBlocks(superblockList);
+
+  const fullCurriculum = { certifications: { blocks: {} } };
+
+  for (const superblock of fullSuperblockList) {
+    console.log('superblock', superblock);
+    fullCurriculum[superblock.name] =
+      await builder.processSuperblockV2(superblock);
+  }
+
+  for (const cert of curriculum.certifications) {
+    const certPath = path.resolve(contentDir, 'certifications', `${cert}.yml`);
+    if (!fs.existsSync(certPath)) {
+      throw Error(`Certification file not found: ${certPath}`);
+    }
+    debug(`=== Processing certification ${cert} ===`);
+    fullCurriculum.certifications.blocks[cert] = buildCertification(certPath);
+  }
+
+  return fullCurriculum;
+}
+
 module.exports = {
   buildCurriculum,
   getContentDir,
   getBlockCreator,
-  createCommentMap
+  createCommentMap,
+  buildSuperblockStructure,
+  buildCurriculumV2
 };
