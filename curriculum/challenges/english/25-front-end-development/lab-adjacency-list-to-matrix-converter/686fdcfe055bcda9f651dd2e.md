@@ -107,7 +107,7 @@ The function should correctly determine the number of nodes from the adjacency l
 })
 ```
 
-The function should correctly set matrix values to 1 for existing edges.
+The function should correctly set matrix values to `1` for existing edges.
 
 ```js
 ({ 
