@@ -46,7 +46,6 @@ console.log(numbers[10]);
 
 Which of the following is the correct way to access the string `"Jessica"` from the `developers` array?
 
-
 #### --distractors--
 
 ```js
