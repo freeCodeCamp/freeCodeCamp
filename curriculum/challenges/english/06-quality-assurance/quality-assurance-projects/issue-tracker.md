@@ -56,10 +56,15 @@ async () => {
       issue_text: 'Functional Test - Required Fields Only',
       created_by: 'fCC'
     };
-    const data = await $.post(
-      code + '/api/issues/fcc-project',
-      test_data
-    );
+    const response = await fetch(code + '/api/issues/fcc-project', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(test_data)
+    });
+    if (!response.ok) {
+      throw Error(await response.text());
+    }
+    const data = await response.json();
     assert.isObject(data);
     assert.nestedInclude(data, test_data);
   } catch (err) {
@@ -79,10 +84,15 @@ async () => {
       created_by: 'fCC',
       assigned_to: 'Chai and Mocha'
     };
-    const data = await $.post(
-      code + '/api/issues/fcc-project',
-      test_data
-    );
+    const response = await fetch(code + '/api/issues/fcc-project', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(test_data)
+    });
+    if (!response.ok) {
+      throw Error(await response.text());
+    }
+    const data = await response.json();
     assert.isObject(data);
     assert.nestedInclude(data, test_data);
     assert.property(data, 'created_on');
@@ -108,9 +118,15 @@ If you send a `POST` request to `/api/issues/{projectname}` without the required
 async () => {
   try {
     let test_data = { created_by: 'fCC' };
-    const data = await $.post(code + '/api/issues/fcc-project', {
-      created_by: 'fCC'
+    const response = await fetch(code + '/api/issues/fcc-project', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ created_by: 'fCC' })
     });
+    if (!response.ok) {
+      throw Error(await response.text());
+    }
+    const data = await response.json();
     assert.isObject(data);
     assert.property(data, 'error');
     assert.equal(data.error, 'required field(s) missing');
@@ -130,22 +146,41 @@ async () => {
       code +
       '/api/issues/get_issues_test_' +
       Date.now().toString().substring(7);
-    const data1 = await $.post(
-      url,
-      Object.assign(test_data, { issue_title: 'Faux Issue 1' })
-    );
+    const response1 = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.assign(test_data, { issue_title: 'Faux Issue 1' }))
+    });
+    if (!response1.ok) {
+      throw Error(await response1.text());
+    }
+    const data1 = await response1.json();
     assert.isObject(data1);
-    const data2 = await $.post(
-      url,
-      Object.assign(test_data, { issue_title: 'Faux Issue 2' })
-    );
+    const response2 = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.assign(test_data, { issue_title: 'Faux Issue 2' }))
+    });
+    if (!response2.ok) {
+      throw Error(await response2.text());
+    }
+    const data2 = await response2.json();
     assert.isObject(data2);
-    const data3 = await $.post(
-      url,
-      Object.assign(test_data, { issue_title: 'Faux Issue 3' })
-    );
+    const response3 = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.assign(test_data, { issue_title: 'Faux Issue 3' }))
+    });
+    if (!response3.ok) {
+      throw Error(await response3.text());
+    }
+    const data3 = await response3.json();
     assert.isObject(data3);
-    const getIssues = await $.get(url);
+    const getResponse = await fetch(url);
+    if (!getResponse.ok) {
+      throw Error(await getResponse.text());
+    }
+    const getIssues = await getResponse.json();
     assert.isArray(getIssues);
     assert.lengthOf(getIssues, 3);
     let re = new RegExp('Faux Issue \\d');
@@ -180,30 +215,62 @@ async () => {
       code +
       '/api/issues/get_issues_test_' +
       Date.now().toString().substring(7);
-    const data1 = await $.post(
-      url,
-      Object.assign(test_data, { created_by: 'Alice', assigned_to: 'Bob' })
-    );
-    const data2 = await $.post(
-      url,
-      Object.assign(test_data, { created_by: 'Alice', assigned_to: 'Bob' })
-    );
-    const data3 = await $.post(
-      url,
-      Object.assign(test_data, { created_by: 'Alice', assigned_to: 'Eric' })
-    );
-    const data4 = await $.post(
-      url,
-      Object.assign(test_data, { created_by: 'Carol', assigned_to: 'Eric' })
-    );
-    const getSingle = await $.get(url + '?created_by=Alice');
+    const response1 = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.assign(test_data, { created_by: 'Alice', assigned_to: 'Bob' }))
+    });
+    if (!response1.ok) {
+      throw Error(await response1.text());
+    }
+    const data1 = await response1.json();
+    const response2 = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.assign(test_data, { created_by: 'Alice', assigned_to: 'Bob' }))
+    });
+    if (!response2.ok) {
+      throw Error(await response2.text());
+    }
+    const data2 = await response2.json();
+    const response3 = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.assign(test_data, { created_by: 'Alice', assigned_to: 'Eric' }))
+    });
+    if (!response3.ok) {
+      throw Error(await response3.text());
+    }
+    const data3 = await response3.json();
+    const response4 = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.assign(test_data, { created_by: 'Carol', assigned_to: 'Eric' }))
+    });
+    if (!response4.ok) {
+      throw Error(await response4.text());
+    }
+    const data4 = await response4.json();
+    const getSingleResponse = await fetch(url + '?created_by=Alice');
+    if (!getSingleResponse.ok) {
+      throw Error(await getSingleResponse.text());
+    }
+    const getSingle = await getSingleResponse.json();
     assert.isArray(getSingle);
     assert.lengthOf(getSingle, 3);
-    const getMultiple = await $.get(url + '?created_by=Alice&assigned_to=Bob');
+    const getMultipleResponse = await fetch(url + '?created_by=Alice&assigned_to=Bob');
+    if (!getMultipleResponse.ok) {
+      throw Error(await getMultipleResponse.text());
+    }
+    const getMultiple = await getMultipleResponse.json();
     assert.isArray(getMultiple);
     assert.lengthOf(getMultiple, 2);
     const copyId = getMultiple[0]._id;
-    const getById = await $.get(url + `?_id=${copyId}`);
+    const getByIdResponse = await fetch(url + `?_id=${copyId}`);
+    if (!getByIdResponse.ok) {
+      throw Error(await getByIdResponse.text());
+    }
+    const getById = await getByIdResponse.json();
     assert.isArray(getById);
     assert.lengthOf(getById, 1);
     assert.equal(getById[0]._id, copyId, 'should be able to query a document by _id')
@@ -224,18 +291,34 @@ async () => {
       created_by: 'fCC'
     };
     const url = code + '/api/issues/fcc-project';
-    const itemToUpdate = await $.post(url, initialData);
-    const updateSuccess = await $.ajax({
-      url: url,
-      type: 'PUT',
-      data: { _id: itemToUpdate._id, issue_text: 'New Issue Text' }
+    const createResponse = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(initialData)
     });
+    if (!createResponse.ok) {
+      throw Error(await createResponse.text());
+    }
+    const itemToUpdate = await createResponse.json();
+    const updateResponse = await fetch(url, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ _id: itemToUpdate._id, issue_text: 'New Issue Text' })
+    });
+    if (!updateResponse.ok) {
+      throw Error(await updateResponse.text());
+    }
+    const updateSuccess = await updateResponse.json();
     assert.isObject(updateSuccess);
     assert.deepEqual(updateSuccess, {
       result: 'successfully updated',
       _id: itemToUpdate._id
     });
-    const getUpdatedId = await $.get(url + '?_id=' + itemToUpdate._id);
+    const getUpdatedResponse = await fetch(url + '?_id=' + itemToUpdate._id);
+    if (!getUpdatedResponse.ok) {
+      throw Error(await getUpdatedResponse.text());
+    }
+    const getUpdatedId = await getUpdatedResponse.json();
     assert.isArray(getUpdatedId);
     assert.isObject(getUpdatedId[0]);
     assert.isAbove(
@@ -254,7 +337,11 @@ When the `PUT` request sent to `/api/issues/{projectname}` does not include an `
 async () => {
   try {
     const url = code + '/api/issues/fcc-project';
-    const badUpdate = await $.ajax({ url: url, type: 'PUT' });
+    const response = await fetch(url, { method: 'PUT' });
+    if (!response.ok) {
+      throw Error(await response.text());
+    }
+    const badUpdate = await response.json();
     assert.isObject(badUpdate);
     assert.property(badUpdate, 'error');
     assert.equal(badUpdate.error, 'missing _id');
@@ -270,20 +357,28 @@ When the `PUT` request sent to `/api/issues/{projectname}` does not include upda
 async () => {
   try {
     const url = code + '/api/issues/fcc-project';
-    const badUpdate = await $.ajax({
-      url: url,
-      type: 'PUT',
-      data: { _id: '5f665eb46e296f6b9b6a504d' }
+    const response1 = await fetch(url, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ _id: '5f665eb46e296f6b9b6a504d' })
     });
+    if (!response1.ok) {
+      throw Error(await response1.text());
+    }
+    const badUpdate = await response1.json();
     assert.deepEqual(badUpdate, {
       error: 'no update field(s) sent',
       _id: '5f665eb46e296f6b9b6a504d'
     });
-    const badIdUpdate = await $.ajax({
-      url: url,
-      type: 'PUT',
-      data: { _id: '5f665eb46e296f6b9b6a504d', issue_text: 'New Issue Text' }
+    const response2 = await fetch(url, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ _id: '5f665eb46e296f6b9b6a504d', issue_text: 'New Issue Text' })
     });
+    if (!response2.ok) {
+      throw Error(await response2.text());
+    }
+    const badIdUpdate = await response2.json();
     assert.deepEqual(badIdUpdate, {
       error: 'could not update',
       _id: '5f665eb46e296f6b9b6a504d'
@@ -305,26 +400,46 @@ async () => {
       created_by: 'fCC'
     };
     const url = code + '/api/issues/fcc-project';
-    const itemToDelete = await $.post(url, initialData);
-    assert.isObject(itemToDelete);
-    const deleteSuccess = await $.ajax({
-      url: url,
-      type: 'DELETE',
-      data: { _id: itemToDelete._id }
+    const createResponse = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(initialData)
     });
+    if (!createResponse.ok) {
+      throw Error(await createResponse.text());
+    }
+    const itemToDelete = await createResponse.json();
+    assert.isObject(itemToDelete);
+    const deleteResponse = await fetch(url, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ _id: itemToDelete._id })
+    });
+    if (!deleteResponse.ok) {
+      throw Error(await deleteResponse.text());
+    }
+    const deleteSuccess = await deleteResponse.json();
     assert.isObject(deleteSuccess);
     assert.deepEqual(deleteSuccess, {
       result: 'successfully deleted',
       _id: itemToDelete._id
     });
-    const noId = await $.ajax({ url: url, type: 'DELETE' });
+    const noIdResponse = await fetch(url, { method: 'DELETE' });
+    if (!noIdResponse.ok) {
+      throw Error(await noIdResponse.text());
+    }
+    const noId = await noIdResponse.json();
     assert.isObject(noId);
     assert.deepEqual(noId, { error: 'missing _id' });
-    const badIdDelete = await $.ajax({
-      url: url,
-      type: 'DELETE',
-      data: { _id: '5f665eb46e296f6b9b6a504d', issue_text: 'New Issue Text' }
+    const badIdDeleteResponse = await fetch(url, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ _id: '5f665eb46e296f6b9b6a504d', issue_text: 'New Issue Text' })
     });
+    if (!badIdDeleteResponse.ok) {
+      throw Error(await badIdDeleteResponse.text());
+    }
+    const badIdDelete = await badIdDeleteResponse.json();
     assert.isObject(badIdDelete);
     assert.deepEqual(badIdDelete, {
       error: 'could not delete',
@@ -341,7 +456,11 @@ All 14 functional tests are complete and passing.
 ```js
 async () => {
   try {
-    const getTests = await $.get(code + '/_api/get-tests');
+    const response = await fetch(code + '/_api/get-tests');
+    if (!response.ok) {
+      throw Error(await response.text());
+    }
+    const getTests = await response.json();
     assert.isArray(getTests);
     assert.isAtLeast(getTests.length, 14, 'At least 14 tests passed');
     getTests.forEach((test) => {
