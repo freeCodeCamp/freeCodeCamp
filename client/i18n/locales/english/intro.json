@@ -3397,6 +3397,12 @@
           "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
         ]
       },
+      "lab-html-entitiy-converter": {
+        "title": "Implement an HTML Entity Converter",
+        "intro": [
+          "In this lab, you will convert special characters in a string to their corresponding HTML entities."
+        ]
+      },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
         "intro": [
@@ -4767,6 +4773,19 @@
         "title": "Get to Know Colleagues by Asking Simple Questions",
         "intro": [
           "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
+        ]
+      }
+    }
+  },
+  "a1-professional-chinese": {
+    "title": "A1 Professional Chinese Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "learn-essential-courtesies-at-the-office": {
+        "title": "Learn Essential Courtesies at the Office",
+        "intro": [
+          "Learn simple and polite ways to communicate at work. In this module, you'll learn essential phrases for greeting colleagues, expressing thanks, apologizing, and saying goodbye."
         ]
       }
     }

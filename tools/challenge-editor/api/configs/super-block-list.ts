@@ -106,5 +106,9 @@ export const superBlockList = [
   {
     name: 'Semantic HTML',
     path: '29-semantic-html'
+  },
+  {
+    name: 'A1 Professional Chinese (Beta)',
+    path: '30-a1-professional-chinese'
   }
 ];

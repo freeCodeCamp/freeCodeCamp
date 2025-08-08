@@ -26,5 +26,6 @@ export const superBlockNameMap: { [key: string]: string } = {
   '24-b1-english-for-developers': 'b1-english-for-developers',
   '25-front-end-development': 'full-stack-developer',
   '26-a2-professional-spanish': 'a2-professional-spanish',
-  '27-a2-professional-chinese': 'a2-professional-chinese'
+  '27-a2-professional-chinese': 'a2-professional-chinese',
+  '30-a1-professional-chinese': 'a1-professional-chinese'
 };

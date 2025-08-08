@@ -57,6 +57,7 @@ export const ConditionalDonationAlert = ({
     SuperBlocks.B1English,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.FullStackDeveloper
   ];
 
