@@ -948,8 +948,8 @@ importers:
   tools/client-plugins/browser-scripts:
     dependencies:
       '@freecodecamp/curriculum-helpers':
-        specifier: ^6.0.0
-        version: 6.0.0(typescript@5.8.2)
+        specifier: ^6.0.1
+        version: 6.0.1(typescript@5.8.2)
       xterm:
         specifier: ^5.2.1
         version: 5.3.0
@@ -2739,8 +2739,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6
       react: '>=16.3'
 
-  '@freecodecamp/curriculum-helpers@6.0.0':
-    resolution: {integrity: sha512-/BddOMTqLFZ4Rm3khy7wK3bvYTLAQg/iecHV1raHp/l2dOd/9pRIUCk3Me/bALYyvbXq/39pDXhfaDL0XMW26w==}
+  '@freecodecamp/curriculum-helpers@6.0.1':
+    resolution: {integrity: sha512-mbqbN1Q2la4ovDHCPqbltRBGenOANO/nhxiC4Kz3CWIhjFVNZL5bvicKKSJnQqDWfl8+1ss32AIc2jTPKtZRtw==}
     engines: {pnpm: '>= 10'}
 
   '@freecodecamp/loop-protect@3.0.0':
@@ -11334,6 +11334,7 @@ packages:
   puppeteer@22.12.1:
     resolution: {integrity: sha512-1GxY8dnEnHr1SLzdSDr0FCjM6JQfAh2E2I/EqzeF8a58DbGVk9oVjj4lFdqNoVbpgFSpAbz7VER9St7S1wDpNg==}
     engines: {node: '>=18'}
+    deprecated: < 24.9.0 is no longer supported
     hasBin: true
 
   puppeteer@24.10.0:
@@ -16866,7 +16867,7 @@ snapshots:
       prop-types: 15.8.1
       react: 17.0.2
 
-  '@freecodecamp/curriculum-helpers@6.0.0(typescript@5.8.2)':
+  '@freecodecamp/curriculum-helpers@6.0.1(typescript@5.8.2)':
     dependencies:
       '@sinonjs/fake-timers': 14.0.0
       '@types/jquery': 3.5.32
