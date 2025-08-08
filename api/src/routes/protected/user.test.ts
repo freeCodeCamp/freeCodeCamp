@@ -685,8 +685,6 @@ describe('userRoutes', () => {
 
         await Promise.all(deletePromises);
 
-        // Allow additional warnings from other operations; ensure at least one
-        // is about the missing user deletion.
         const messages = spy.mock.calls.flat().map(String);
         expect(
           messages.some(m =>
