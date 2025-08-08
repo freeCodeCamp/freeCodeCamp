@@ -115,6 +115,47 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
+  fastify.delete(
+    '/account',
+    {
+      schema: schemas.deleteMyAccount
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+      logger.info(`User ${req.user?.id} requested account deletion`);
+      await fastify.prisma.userToken.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.msUsername.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.survey.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      try {
+        await fastify.prisma.user.delete({
+          where: { id: req.user!.id }
+        });
+      } catch (err) {
+        if (
+          err instanceof PrismaClientKnownRequestError &&
+          err.code === 'P2025'
+        ) {
+          logger.warn(
+            err,
+            `User with id ${req.user?.id} not found for deletion.`
+          );
+        } else {
+          logger.error(err, 'Error deleting user account');
+          throw err;
+        }
+      }
+      reply.clearOurCookies();
+
+      return {};
+    }
+  );
+
   fastify.post(
     '/account/reset-progress',
     {

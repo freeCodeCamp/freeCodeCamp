@@ -548,6 +548,154 @@ describe('userRoutes', () => {
       });
     });
 
+    describe('/account', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.userToken.deleteMany({
+          where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
+        });
+        await fastifyTestInstance.prisma.msUsername.deleteMany({
+          where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
+        });
+        await clearEnvExam();
+      });
+
+      test('DELETE returns 200 status code with empty object', async () => {
+        const response = await superDelete('/account');
+        const userCount = await fastifyTestInstance.prisma.user.count({
+          where: { email: testUserData.email }
+        });
+
+        expect(response.body).toStrictEqual({});
+        expect(response.status).toBe(200);
+        expect(userCount).toBe(0);
+      });
+
+      test('DELETE deletes Microsoft usernames associated with the user', async () => {
+        await fastifyTestInstance.prisma.msUsername.createMany({
+          data: msUsernameData
+        });
+
+        await superDelete('/account');
+        expect(await fastifyTestInstance.prisma.msUsername.count()).toBe(1);
+      });
+
+      test('DELETE deletes userTokens associated with the user', async () => {
+        await fastifyTestInstance.prisma.userToken.createMany({
+          data: tokenData
+        });
+
+        await superDelete('/account');
+
+        const userTokens =
+          await fastifyTestInstance.prisma.userToken.findMany();
+        expect(userTokens).toHaveLength(1);
+        expect(userTokens[0]?.userId).toBe(otherUserId);
+      });
+
+      test("DELETE deletes all the user's cookies", async () => {
+        const res = await superDelete('/account');
+
+        const setCookie = res.headers['set-cookie'] as string[];
+        expect(setCookie).toEqual(
+          expect.arrayContaining([
+            expect.stringMatching(
+              /^_csrf=; Max-Age=0; Path=\/:?; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+            ),
+            expect.stringMatching(
+              /^csrf_token=; Max-Age=0; Path=\/:?; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+            ),
+            expect.stringMatching(
+              /^jwt_access_token=; Max-Age=0; Path=\/:?; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+            )
+          ])
+        );
+        expect(setCookie).toHaveLength(3);
+      });
+
+      test("DELETE deletes all the user's exam attempts", async () => {
+        await seedEnvExam();
+        await seedEnvExamAttempt();
+        const countBefore =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
+        expect(countBefore).toBe(1);
+
+        const res = await superDelete('/account');
+
+        const countAfter =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
+        expect(countAfter).toBe(0);
+        expect(res.status).toBe(200);
+      });
+
+      test("DELETE deletes all the user's exam tokens", async () => {
+        await seedExamEnvExamAuthToken();
+        const countBefore =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
+        expect(countBefore).toBe(1);
+
+        const res = await superDelete('/account');
+
+        const countAfter =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
+        expect(countAfter).toBe(0);
+        expect(res.status).toBe(200);
+      });
+
+      test('handles concurrent requests to delete the same user', async () => {
+        const deletePromises = Array.from({ length: 2 }, () =>
+          superDelete('/account')
+        );
+
+        const responses = await Promise.all(deletePromises);
+
+        const userCount = await fastifyTestInstance.prisma.user.count({
+          where: { email: testUserData.email }
+        });
+        responses.forEach(response => {
+          expect(response.status).toBe(200);
+          expect(response.body).toStrictEqual({});
+        });
+        expect(userCount).toBe(0);
+      });
+
+      test("only deletes the logged in user's data", async () => {
+        const initialCount = await fastifyTestInstance.prisma.user.count();
+        await fastifyTestInstance.prisma.user.create({
+          data: {
+            ...testUserData,
+            email: 'an.random@user'
+          }
+        });
+        expect(await fastifyTestInstance.prisma.user.count()).toBe(
+          initialCount + 1
+        );
+
+        await superDelete('/account');
+
+        const userCount = await fastifyTestInstance.prisma.user.count();
+        expect(userCount).toBe(initialCount);
+      });
+
+      test('logs if it is asked to delete a non-existent user', async () => {
+        const spy = jest.spyOn(fastifyTestInstance.log, 'warn');
+
+        const deletePromises = Array.from({ length: 2 }, () =>
+          superDelete('/account')
+        );
+
+        await Promise.all(deletePromises);
+
+        // Allow additional warnings from other operations; ensure at least one
+        // is about the missing user deletion.
+        const messages = spy.mock.calls.flat().map(String);
+        expect(
+          messages.some(m =>
+            m.includes(`User with id ${defaultUserId} not found for deletion.`)
+          )
+        ).toBe(true);
+      });
+    });
+
     describe('/account/reset-progress', () => {
       afterEach(async () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
@@ -1425,6 +1573,7 @@ Thanks and regards,
     });
 
     const endpoints: { path: string; method: 'GET' | 'POST' | 'DELETE' }[] = [
+      { path: '/account', method: 'DELETE' },
       { path: '/account/delete', method: 'POST' },
       { path: '/account/reset-progress', method: 'POST' },
       { path: '/user/get-session-user', method: 'GET' },
