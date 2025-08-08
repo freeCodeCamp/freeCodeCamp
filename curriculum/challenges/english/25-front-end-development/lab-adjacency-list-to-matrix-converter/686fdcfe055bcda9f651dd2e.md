@@ -7,7 +7,7 @@ dashedName: build-an-adjacency-list-to-matrix-converter
 
 # --description--
 
-In this lab, you will build a function that converts an adjacency list representation of a graph into an adjacency matrix. An adjacency list is a dictionary where each key represents a node, and the corresponding value is a list of nodes that the key node is connected to. An adjacency matrix is a 2D array where the entry at position `[i][j]` is 1 if there's an edge from node `i` to node `j`, and 0 otherwise.
+In this lab, you will build a function that converts an adjacency list representation of a graph into an adjacency matrix. An adjacency list is a dictionary where each key represents a node, and the corresponding value is a list of nodes that the key node is connected to. An adjacency matrix is a 2D array where the entry at position `[i][j]` is `1` if there's an edge from node `i` to node `j`, and `0` otherwise.
 
 For example, given the adjacency list:
 
@@ -66,7 +66,7 @@ You should define a function named `adjacency_list_to_matrix`.
 })
 ```
 
-The `adjacency_list_to_matrix` function should take one parameter.
+The `adjacency_list_to_matrix` function should have one parameter.
 
 ```js
 ({ test: () => assert(runPython(`
@@ -74,23 +74,6 @@ The `adjacency_list_to_matrix` function should take one parameter.
     sig = inspect.signature(adjacency_list_to_matrix)
     len(sig.parameters) == 1
   `))
-})
-```
-
-The function should take a dictionary as its argument.
-
-```js
-({ 
-    test: () => runPython(`
-        adj_list = {0: [1], 1: [0]}
-        result = adjacency_list_to_matrix(adj_list)
-        assert isinstance(result, list)
-        
-        # Test with different dictionary structures
-        adj_list2 = {0: [], 1: [], 2: []}
-        result2 = adjacency_list_to_matrix(adj_list2)
-        assert isinstance(result2, list)
-    `) 
 })
 ```
 
