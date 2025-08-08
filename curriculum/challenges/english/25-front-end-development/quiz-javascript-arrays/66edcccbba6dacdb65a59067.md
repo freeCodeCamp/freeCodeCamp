@@ -44,7 +44,7 @@ console.log(numbers[10]);
 
 #### --text--
 
-Which of the following is the correct way access the string `"Jessica"` from the `developers` array?
+Which of the following is the correct way to access the string `"Jessica"` from the `developers` array?
 
 #### --distractors--
 
@@ -118,7 +118,7 @@ It is used to add or remove elements from any position in an array.
 
 ---
 
-It is used to add elements to the end of the array and will return the new length.
+It is used to add elements to the end of an array and will return the new length.
 
 #### --answer--
 
@@ -256,7 +256,7 @@ Which method returns the first index of a given element in an array?
 
 #### --text--
 
-Which method is used to remove the first element from an array and returns that removed element?
+Which method is used to remove the first element from an array and then return that removed element?
 
 #### --distractors--
 
@@ -290,7 +290,7 @@ Adds an element to the beginning of an array.
 
 ---
 
-Removes an element from the array.
+Removes an element from an array.
 
 #### --answer--
 
