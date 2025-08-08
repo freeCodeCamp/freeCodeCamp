@@ -518,7 +518,7 @@ describe('userRoutes', () => {
       });
     });
 
-    describe('/account', () => {
+    describe('/users/:userId', () => {
       afterEach(async () => {
         await fastifyTestInstance.prisma.userToken.deleteMany({
           where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
@@ -530,7 +530,7 @@ describe('userRoutes', () => {
       });
 
       test('DELETE returns 200 status code with empty object', async () => {
-        const response = await superDelete('/account');
+        const response = await superDelete(`/users/${defaultUserId}`);
         const userCount = await fastifyTestInstance.prisma.user.count({
           where: { email: testUserData.email }
         });
@@ -545,7 +545,7 @@ describe('userRoutes', () => {
           data: msUsernameData
         });
 
-        await superDelete('/account');
+        await superDelete(`/users/${defaultUserId}`);
         expect(await fastifyTestInstance.prisma.msUsername.count()).toBe(1);
       });
 
@@ -554,7 +554,7 @@ describe('userRoutes', () => {
           data: tokenData
         });
 
-        await superDelete('/account');
+        await superDelete(`/users/${defaultUserId}`);
 
         const userTokens =
           await fastifyTestInstance.prisma.userToken.findMany();
@@ -563,7 +563,7 @@ describe('userRoutes', () => {
       });
 
       test("DELETE deletes all the user's cookies", async () => {
-        const res = await superDelete('/account');
+        const res = await superDelete(`/users/${defaultUserId}`);
 
         const setCookie = res.headers['set-cookie'] as string[];
         expect(setCookie).toEqual(
@@ -589,7 +589,7 @@ describe('userRoutes', () => {
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
         expect(countBefore).toBe(1);
 
-        const res = await superDelete('/account');
+        const res = await superDelete(`/users/${defaultUserId}`);
 
         const countAfter =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
@@ -603,7 +603,7 @@ describe('userRoutes', () => {
           await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
         expect(countBefore).toBe(1);
 
-        const res = await superDelete('/account');
+        const res = await superDelete(`/users/${defaultUserId}`);
 
         const countAfter =
           await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
@@ -613,7 +613,7 @@ describe('userRoutes', () => {
 
       test('handles concurrent requests to delete the same user', async () => {
         const deletePromises = Array.from({ length: 2 }, () =>
-          superDelete('/account')
+          superDelete(`/users/${defaultUserId}`)
         );
 
         const responses = await Promise.all(deletePromises);
@@ -640,7 +640,7 @@ describe('userRoutes', () => {
           initialCount + 1
         );
 
-        await superDelete('/account');
+        await superDelete(`/users/${defaultUserId}`);
 
         const userCount = await fastifyTestInstance.prisma.user.count();
         expect(userCount).toBe(initialCount);
@@ -650,7 +650,7 @@ describe('userRoutes', () => {
         const spy = jest.spyOn(fastifyTestInstance.log, 'warn');
 
         const deletePromises = Array.from({ length: 2 }, () =>
-          superDelete('/account')
+          superDelete(`/users/${defaultUserId}`)
         );
 
         await Promise.all(deletePromises);
@@ -661,6 +661,11 @@ describe('userRoutes', () => {
             m.includes(`User with id ${defaultUserId} not found for deletion.`)
           )
         ).toBe(true);
+      });
+
+      test('returns 403 if attempting to delete a different user', async () => {
+        const res = await superDelete(`/users/${otherUserId}`);
+        expect(res.status).toBe(403);
       });
     });
 
@@ -1493,7 +1498,7 @@ Thanks and regards,
     });
 
     const endpoints: { path: string; method: 'GET' | 'POST' | 'DELETE' }[] = [
-      { path: '/account', method: 'DELETE' },
+      { path: `/users/${otherUserId}`, method: 'DELETE' },
       { path: '/account/delete', method: 'POST' },
       { path: '/account/reset-progress', method: 'POST' },
       { path: '/user/get-session-user', method: 'GET' },
