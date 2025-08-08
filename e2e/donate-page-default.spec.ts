@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 const pageElements = {
@@ -34,110 +34,38 @@ const donationFormStrings = {
   donate: translations.buttons.donate
 };
 
-let page: Page;
-test.beforeAll(async ({ browser }) => {
-  page = await browser.newPage();
-  await page.goto('/donate');
-});
-
 test.describe('Donate Page', () => {
-  test('should display the correct title', async () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/donate');
+  });
+  test('should render correctly', async ({ page }) => {
+    // Should display the correct title
     await expect(page).toHaveTitle(
       `${translations.donate.title} | freeCodeCamp.org`
     );
-  });
 
-  test('should select $20 tier by default', async () => {
-    await expect(
-      page.getByText(donationFormStrings.conformTwentyDollar)
-    ).toBeVisible();
-
-    const tabs = await page.$$('[role="tab"]');
-    expect(tabs.length).toBe(4);
-
-    for (const tab of tabs) {
-      const tabText = await tab.innerText();
-      expect(['$5', '$10', '$20', '$40']).toContain(tabText);
-
-      if (tabText === '$20') {
-        const isActive = await tab.getAttribute('data-state');
-        expect(isActive).toBe('active');
-      } else {
-        const isActive = await tab.getAttribute('data-state');
-        expect(isActive).not.toBe('active');
-      }
-    }
-    await expect(
-      page.getByText(donationFormStrings.twentyDollarsLearningContribution)
-    ).toBeVisible();
-  });
-
-  test('should make $5 tier selectable', async () => {
-    await page.click('[role="tab"]:has-text("$5")');
-
-    await expect(
-      page.getByText(donationFormStrings.confirmFiveDollars)
-    ).toBeVisible();
-
-    await expect(
-      page.getByText(donationFormStrings.fiveDollarsLearningContribution)
-    ).toBeVisible();
-  });
-
-  test('should switch between tier selection and payment options', async () => {
-    // Tier selection
-    await page.click('[role="tab"]:has-text("$5")');
-    await expect(
-      page.getByText(donationFormStrings.confirmFiveDollars)
-    ).toBeVisible();
-    await expect(
-      page.getByText(donationFormStrings.fiveDollarsLearningContribution)
-    ).toBeVisible();
-    await page.click(`button:has-text("${donationFormStrings.donate}")`);
-
-    // Donation form
-    const isEditButtonVisible = await page.isVisible(
-      `button:has-text("${donationFormStrings.editAmount}")`
-    );
-    expect(isEditButtonVisible).toBeTruthy();
-    await expect(page.getByTestId('donation-form')).toBeVisible();
-    await page.click(`button:has-text("${donationFormStrings.editAmount}")`);
-
-    // Tier selection
-    await expect(
-      page.getByText(donationFormStrings.confirmFiveDollars)
-    ).toBeVisible();
-    await expect(
-      page.getByText(donationFormStrings.fiveDollarsLearningContribution)
-    ).toBeVisible();
-  });
-
-  test('should display the main heading', async () => {
+    // Should display the main heading
     const mainHeading = page.getByTestId(pageElements.mainHeading);
     await expect(mainHeading).toHaveText(translations.donate['help-more']);
-  });
 
-  test('should display donation page upper text 1', async () => {
+    // Should display donation page upper text 1
     const donateText1 = page.getByTestId(pageElements.donateText1);
     await expect(donateText1).toHaveText(translations.donate.efficiency);
-  });
 
-  test('should display donation page benefit 2', async () => {
+    // Should display donation page benefit 2
     const donateText2 = page.getByTestId(pageElements.donateText2);
     await expect(donateText2).toHaveText(translations.donate['why-donate-1']);
-  });
 
-  test('should display donation page benefit 3', async () => {
+    // Should display donation page benefit 3
     const donateText3 = page.getByTestId(pageElements.donateText3);
     await expect(donateText3).toHaveText(translations.donate['why-donate-2']);
-  });
 
-  test('should display the faq heading', async () => {
+    // Should display the faq heading
     const faqHead = page.getByTestId(pageElements.faqHeading);
     await expect(faqHead).toHaveText(translations.donate.faq);
   });
 
-  test('should display the faq list with buttons', async () => {
+  test('should display the faq list with buttons', async ({ page }) => {
     const faq1 = page.getByRole('button', {
       name: translations.donate['get-help']
     });
@@ -292,5 +220,72 @@ test.describe('Donate Page', () => {
       page.getByText(translations.donate['other-support'])
     ).toBeVisible();
     await faq12.click();
+  });
+
+  test('should select $20 tier by default', async ({ page }) => {
+    await expect(
+      page.getByText(donationFormStrings.conformTwentyDollar)
+    ).toBeVisible();
+
+    const tabs = await page.$$('[role="tab"]');
+    expect(tabs.length).toBe(4);
+
+    for (const tab of tabs) {
+      const tabText = await tab.innerText();
+      expect(['$5', '$10', '$20', '$40']).toContain(tabText);
+
+      if (tabText === '$20') {
+        const isActive = await tab.getAttribute('data-state');
+        expect(isActive).toBe('active');
+      } else {
+        const isActive = await tab.getAttribute('data-state');
+        expect(isActive).not.toBe('active');
+      }
+    }
+    await expect(
+      page.getByText(donationFormStrings.twentyDollarsLearningContribution)
+    ).toBeVisible();
+  });
+
+  test('should make $5 tier selectable', async ({ page }) => {
+    await page.click('[role="tab"]:has-text("$5")');
+
+    await expect(
+      page.getByText(donationFormStrings.confirmFiveDollars)
+    ).toBeVisible();
+
+    await expect(
+      page.getByText(donationFormStrings.fiveDollarsLearningContribution)
+    ).toBeVisible();
+  });
+
+  test('should switch between tier selection and payment options', async ({
+    page
+  }) => {
+    // Tier selection
+    await page.click('[role="tab"]:has-text("$5")');
+    await expect(
+      page.getByText(donationFormStrings.confirmFiveDollars)
+    ).toBeVisible();
+    await expect(
+      page.getByText(donationFormStrings.fiveDollarsLearningContribution)
+    ).toBeVisible();
+    await page.click(`button:has-text("${donationFormStrings.donate}")`);
+
+    // Donation form
+    const isEditButtonVisible = await page.isVisible(
+      `button:has-text("${donationFormStrings.editAmount}")`
+    );
+    expect(isEditButtonVisible).toBeTruthy();
+    await expect(page.getByTestId('donation-form')).toBeVisible();
+    await page.click(`button:has-text("${donationFormStrings.editAmount}")`);
+
+    // Tier selection
+    await expect(
+      page.getByText(donationFormStrings.confirmFiveDollars)
+    ).toBeVisible();
+    await expect(
+      page.getByText(donationFormStrings.fiveDollarsLearningContribution)
+    ).toBeVisible();
   });
 });
