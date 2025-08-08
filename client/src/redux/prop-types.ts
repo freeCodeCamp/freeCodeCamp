@@ -373,6 +373,7 @@ export type User = {
   calendar: Record<string, number>;
   about: string;
   acceptedPrivacyTerms: boolean;
+  bluesky: string; // Bluesky profile URL
   completedChallenges: CompletedChallenge[];
   completedChallengeCount: number;
   completedSurveys: SurveyResults[];
