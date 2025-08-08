@@ -243,7 +243,9 @@ async function getChallenges(lang, filters) {
   const challenges = await getChallengesForLang(lang, filters).then(
     curriculum => {
       const result = curriculumSchemaValidator(curriculum);
-      if (result.error) {
+      // If there are filters, we're testing a single challenge or block, so we
+      // can skip the validation.
+      if (result.error && isEmpty(filters)) {
         throw new Error(
           `Curriculum validation failed: ${result.error.message}`
         );
