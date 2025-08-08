@@ -34,33 +34,24 @@ const donationFormStrings = {
   donate: translations.buttons.donate
 };
 
-test.describe('Donate Page', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('/donate');
-  });
+function donatePageTests() {
   test('should render correctly', async ({ page }) => {
-    // Should display the correct title
     await expect(page).toHaveTitle(
       `${translations.donate.title} | freeCodeCamp.org`
     );
 
-    // Should display the main heading
     const mainHeading = page.getByTestId(pageElements.mainHeading);
     await expect(mainHeading).toHaveText(translations.donate['help-more']);
 
-    // Should display donation page upper text 1
     const donateText1 = page.getByTestId(pageElements.donateText1);
     await expect(donateText1).toHaveText(translations.donate.efficiency);
 
-    // Should display donation page benefit 2
     const donateText2 = page.getByTestId(pageElements.donateText2);
     await expect(donateText2).toHaveText(translations.donate['why-donate-1']);
 
-    // Should display donation page benefit 3
     const donateText3 = page.getByTestId(pageElements.donateText3);
     await expect(donateText3).toHaveText(translations.donate['why-donate-2']);
 
-    // Should display the faq heading
     const faqHead = page.getByTestId(pageElements.faqHeading);
     await expect(faqHead).toHaveText(translations.donate.faq);
   });
@@ -288,4 +279,19 @@ test.describe('Donate Page', () => {
       page.getByText(donationFormStrings.fiveDollarsLearningContribution)
     ).toBeVisible();
   });
+}
+
+test.describe('Authenticated User', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/donate');
+  });
+  donatePageTests();
+});
+
+test.describe('Unauthenticated User', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/donate');
+  });
+  donatePageTests();
 });
