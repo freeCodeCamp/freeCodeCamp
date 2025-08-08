@@ -116,25 +116,36 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   );
 
   fastify.delete(
-    '/account',
+    '/users/:userId',
     {
       schema: schemas.deleteMyAccount
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
+      const { userId } = req.params as { userId: string };
+
+      if (userId !== req.user?.id) {
+        logger.warn(
+          { requestedUserId: userId, authUserId: req.user?.id },
+          'User attempted to delete a different account.'
+        );
+        void reply.code(403);
+        return { type: 'error', message: 'forbidden' } as const;
+      }
+
       logger.info(`User ${req.user?.id} requested account deletion`);
       await fastify.prisma.userToken.deleteMany({
-        where: { userId: req.user!.id }
+        where: { userId: req.user.id }
       });
       await fastify.prisma.msUsername.deleteMany({
-        where: { userId: req.user!.id }
+        where: { userId: req.user.id }
       });
       await fastify.prisma.survey.deleteMany({
-        where: { userId: req.user!.id }
+        where: { userId: req.user.id }
       });
       try {
         await fastify.prisma.user.delete({
-          where: { id: req.user!.id }
+          where: { id: req.user.id }
         });
       } catch (err) {
         if (
