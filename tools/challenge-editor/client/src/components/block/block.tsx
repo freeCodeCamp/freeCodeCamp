@@ -15,7 +15,8 @@ const taskBasedSuperblocks = [
   '21-a2-english-for-developers',
   '24-b1-english-for-developers',
   '26-a2-professional-spanish',
-  '27-a2-professional-chinese'
+  '27-a2-professional-chinese',
+  '30-a1-professional-chinese'
 ];
 
 const Block = () => {
