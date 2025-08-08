@@ -15,13 +15,16 @@ assertSuperBlockStructure(fullStackSuperBlockStructure);
 
 const access = util.promisify(fs.access);
 
-exports.getChallengesForLang = async function getChallengesForLang(lang) {
+exports.getChallengesForLang = async function getChallengesForLang(
+  lang,
+  filters
+) {
   const invalidLang = !curriculumLangs.includes(lang);
   if (invalidLang)
     throw Error(`${lang} is not a accepted language.
 Accepted languages are ${curriculumLangs.join(', ')}`);
 
-  return buildCurriculum(lang);
+  return buildCurriculum(lang, filters);
 };
 
 async function hasEnglishSource(basePath, translationPath) {

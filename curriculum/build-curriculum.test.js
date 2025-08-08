@@ -1,6 +1,9 @@
 const path = require('node:path');
 
-const { createCommentMap } = require('./build-curriculum');
+const {
+  createCommentMap,
+  filterChallengesById
+} = require('./build-curriculum');
 
 describe('createCommentMap', () => {
   const dictionaryDir = path.resolve(__dirname, '__fixtures__', 'dictionaries');
@@ -77,5 +80,87 @@ describe('createCommentMap', () => {
 
     expect(untranslatedTwo.chinese).toBe('Not translated two');
     expect(untranslatedTwo.spanish).toBe('Not translated two');
+  });
+});
+
+describe('filterChallengesById', () => {
+  it('returns the same superblocks if no challengeId is provided', () => {
+    const superblocks = [
+      {
+        name: 'Superblock 1',
+        blocks: [{ name: 'Block 1', challengeOrder: [{ id: '1' }] }]
+      },
+      {
+        name: 'Superblock 2',
+        blocks: [{ name: 'Block 2', challengeOrder: [{ id: '2' }] }]
+      }
+    ];
+    expect(filterChallengesById(superblocks)).toEqual(superblocks);
+  });
+
+  it('ignores blocks without the specified challengeId', () => {
+    const superblocks = [
+      {
+        name: 'Superblock 1',
+        blocks: [
+          { name: 'Block 1', challengeOrder: [{ id: '1' }] },
+          { name: 'Block 2', challengeOrder: [{ id: '2' }] }
+        ]
+      }
+    ];
+    const filtered = filterChallengesById(superblocks, '2');
+    expect(filtered).toEqual([
+      {
+        name: 'Superblock 1',
+        blocks: [{ name: 'Block 2', challengeOrder: [{ id: '2' }] }]
+      }
+    ]);
+  });
+
+  it('returns only the specified challenge and its solution challenge', () => {
+    const superblocks = [
+      {
+        name: 'Superblock 1',
+        blocks: [
+          {
+            name: 'Block 1',
+            challengeOrder: [{ id: '1' }, { id: '2' }, { id: '3' }]
+          },
+          { name: 'Block 2', challengeOrder: [{ id: '4' }] }
+        ]
+      }
+    ];
+    const filtered = filterChallengesById(superblocks, '1');
+    expect(filtered).toEqual([
+      {
+        name: 'Superblock 1',
+        blocks: [
+          { name: 'Block 1', challengeOrder: [{ id: '1' }, { id: '2' }] }
+        ]
+      }
+    ]);
+  });
+
+  it('returns only superblocks containing the specified challenge', () => {
+    const superblocks = [
+      {
+        name: 'Superblock 1',
+        blocks: [
+          { name: 'Block 1', challengeOrder: [{ id: '1' }] },
+          { name: 'Block 2', challengeOrder: [{ id: '2' }] }
+        ]
+      },
+      {
+        name: 'Superblock 2',
+        blocks: [{ name: 'Block 3', challengeOrder: [{ id: '3' }] }]
+      }
+    ];
+    const filtered = filterChallengesById(superblocks, '2');
+    expect(filtered).toEqual([
+      {
+        name: 'Superblock 1',
+        blocks: [{ name: 'Block 2', challengeOrder: [{ id: '2' }] }]
+      }
+    ]);
   });
 });

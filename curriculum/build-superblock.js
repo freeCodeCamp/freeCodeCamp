@@ -241,13 +241,15 @@ class BlockCreator {
     blockStructureDir,
     i18nBlockContentDir,
     lang,
-    commentTranslations
+    commentTranslations,
+    skipValidation
   }) {
     this.blockContentDir = blockContentDir;
     this.blockStructureDir = blockStructureDir;
     this.i18nBlockContentDir = i18nBlockContentDir;
     this.lang = lang;
     this.commentTranslations = commentTranslations;
+    this.skipValidation = skipValidation;
   }
 
   /**
@@ -439,7 +441,8 @@ class BlockCreator {
 
     const throwOnError = this.lang === 'english';
     // Validate challenges against meta
-    validateChallenges(foundChallenges, meta, throwOnError);
+    if (!this.skipValidation)
+      validateChallenges(foundChallenges, meta, throwOnError);
 
     // Build the block object
     const blockResult = buildBlock(foundChallenges, meta);

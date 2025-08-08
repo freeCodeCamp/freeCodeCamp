@@ -24,13 +24,14 @@ const STRUCTURE_DIR = path.resolve(CURRICULUM_DIR, 'structure');
 /**
  * Creates a BlockCreator instance for a specific language with appropriate configuration
  * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
+ * @param {boolean} [skipValidation=false] - Whether to skip validation of challenges
  * @param {Object} [opts] - Optional configuration object
  * @param {string} [opts.baseDir] - Base directory for curriculum content
  * @param {string} [opts.i18nBaseDir] - Base directory for i18n curriculum content
  * @param {string} [opts.structureDir] - Directory containing curriculum structure
  * @returns {BlockCreator} A configured BlockCreator instance
  */
-const getBlockCreator = (lang, opts) => {
+const getBlockCreator = (lang, skipValidation, opts) => {
   const {
     blockContentDir,
     blockStructureDir,
@@ -50,7 +51,8 @@ const getBlockCreator = (lang, opts) => {
     commentTranslations: createCommentMap(
       dictionariesDir,
       targetDictionariesDir
-    )
+    ),
+    skipValidation: skipValidation ?? false
   });
 };
 
@@ -330,10 +332,49 @@ function addBlocks(superblocks) {
   }));
 }
 
-async function buildCurriculum(lang) {
+/**
+ * Filters challenges in superblocks to only include those matching the given challenge id and their solution challenges (i.e. the next challenge, if it exists)
+ * @param {Array<Object>} superblocks - Array of superblock objects with blocks containing challenges
+ * @param {string} challengeId - The specific challenge id to filter for
+ * @returns {Array<Object>} Filtered superblocks containing only the matching challenge
+ */
+function filterChallengesById(superblocks, challengeId) {
+  if (!challengeId) {
+    return superblocks;
+  }
+
+  const findChallengeIndex = (challengeOrder, id) =>
+    challengeOrder.findIndex(challenge => challenge.id === id);
+
+  const filterChallengeOrder = (challengeOrder, id) => {
+    const index = findChallengeIndex(challengeOrder, id);
+    if (index === -1) return [];
+
+    return challengeOrder.slice(index, index + 2);
+  };
+
+  return superblocks
+    .map(superblock => ({
+      ...superblock,
+      blocks: superblock.blocks
+        .map(block => ({
+          ...block,
+          challengeOrder: filterChallengeOrder(
+            block.challengeOrder,
+            challengeId
+          )
+        }))
+        .filter(
+          block => block.challengeOrder && block.challengeOrder.length > 0
+        )
+    }))
+    .filter(superblock => superblock.blocks.length > 0);
+}
+
+async function buildCurriculum(lang, filters) {
   const contentDir = getContentDir(lang);
   const builder = new SuperblockCreator({
-    blockCreator: getBlockCreator(lang)
+    blockCreator: getBlockCreator(lang, !isEmpty(filters))
   });
 
   const curriculum = readCurriculum();
@@ -345,7 +386,10 @@ async function buildCurriculum(lang) {
   debug(`Found ${curriculum.certifications.length} certifications to build`);
 
   const superblockList = buildSuperblockStructure(curriculum);
-  const fullSuperblockList = addBlocks(superblockList);
+  const fullSuperblockList = filterChallengesById(
+    addBlocks(superblockList),
+    filters?.challengeId
+  );
   const fullCurriculum = { certifications: { blocks: {} } };
 
   for (const superblock of fullSuperblockList) {
@@ -370,5 +414,6 @@ module.exports = {
   getContentDir,
   getBlockCreator,
   createCommentMap,
-  buildSuperblockStructure
+  buildSuperblockStructure,
+  filterChallengesById
 };
