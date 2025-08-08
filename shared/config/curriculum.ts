@@ -66,8 +66,8 @@ export const superBlockToFolderMap = {
   [SuperBlocks.A2Chinese]: '27-a2-professional-chinese',
   [SuperBlocks.BasicHtml]: '28-basic-html',
   [SuperBlocks.SemanticHtml]: '29-semantic-html',
-  [SuperBlocks.DevPlayground]: '99-dev-playground',
-  [SuperBlocks.A1Chinese]: '30-a1-professional-chinese'
+  [SuperBlocks.A1Chinese]: '30-a1-professional-chinese',
+  [SuperBlocks.DevPlayground]: '99-dev-playground'
 };
 
 // Same as superBlockToFolderMap but with the keys and values reversed
