@@ -15,7 +15,7 @@ permissions:
 jobs:
   scanoss-code-scan:
     name: SCANOSS Code Scan
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout code
@@ -25,4 +25,5 @@ jobs:
         id: scanoss-code-scan-step
         uses: scanoss/code-scan-action@v1
         with:
+          github.token: ${{ secrets.GITHUB_TOKEN }}
           policies: copyleft
