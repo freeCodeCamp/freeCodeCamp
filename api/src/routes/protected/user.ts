@@ -30,6 +30,7 @@ import {
 import { JWT_SECRET } from '../../utils/env';
 import {
   getExamAttemptHandler,
+  getExamAttemptsByExamIdHandler,
   getExamAttemptsHandler
 } from '../../exam-environment/routes/exam-environment';
 
@@ -493,6 +494,13 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: examEnvironmentSchemas.examEnvironmentGetExamAttempt
     },
     getExamAttemptHandler
+  );
+  fastify.get(
+    '/user/exam-environment/exams/:examId/attempts',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentGetExamAttemptsByExamId
+    },
+    getExamAttemptsByExamIdHandler
   );
 
   done();
