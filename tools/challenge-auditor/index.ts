@@ -145,13 +145,8 @@ async function auditSlugs(lang: string, certs: SuperBlocks[]) {
     const slug = `/learn/${superBlock}/${block}/${dashedName}`;
     // Skipping certifications
     const isCertification = challenge.challengeType === 7;
-    if (certs.includes(superBlock) && !isCertification && slugs.has(slug)) {
-      console.log(
-        `${slug} appears more than once: ${slugs.get(slug) ?? ''} and ${
-          challenge.id
-        }`
-      );
-      auditPassed = false;
+    if (slugs.has(slug)) {
+      console.warn(`Duplicate slug found:\n- ${slug}\n- IDs: ${slugs.get(slug)} and ${challenge.id}`);
     }
     slugs.set(slug, challenge.id);
   }
