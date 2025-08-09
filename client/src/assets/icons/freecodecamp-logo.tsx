@@ -75,35 +75,35 @@ function FreeCodeCampLogo(
           id='d'
         />
       </defs>
-      <use fill='#ffffff' xlinkHref='#k' />
+      <use fill='currentColor' xlinkHref='#k' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#k' />
-      <use fill='#ffffff' xlinkHref='#j' />
+      <use fill='currentColor' xlinkHref='#j' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#j' />
-      <use fill='#ffffff' xlinkHref='#b' />
+      <use fill='currentColor' xlinkHref='#b' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#b' />
-      <use fill='#ffffff' xlinkHref='#n' />
+      <use fill='currentColor' xlinkHref='#n' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#n' />
-      <use fill='#ffffff' xlinkHref='#l' />
+      <use fill='currentColor' xlinkHref='#l' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#l' />
-      <use fill='#ffffff' xlinkHref='#c' />
+      <use fill='currentColor' xlinkHref='#c' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#c' />
-      <use fill='#ffffff' xlinkHref='#e' />
+      <use fill='currentColor' xlinkHref='#e' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#e' />
-      <use fill='#ffffff' xlinkHref='#m' />
+      <use fill='currentColor' xlinkHref='#m' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#m' />
-      <use fill='#ffffff' xlinkHref='#a' />
+      <use fill='currentColor' xlinkHref='#a' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#a' />
-      <use fill='#ffffff' xlinkHref='#i' />
+      <use fill='currentColor' xlinkHref='#i' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#i' />
-      <use fill='#ffffff' xlinkHref='#f' />
+      <use fill='currentColor' xlinkHref='#f' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#f' />
-      <use fill='#ffffff' xlinkHref='#g' />
+      <use fill='currentColor' xlinkHref='#g' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#g' />
-      <use fill='#ffffff' xlinkHref='#h' />
+      <use fill='currentColor' xlinkHref='#h' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#h' />
-      <use fill='#ffffff' xlinkHref='#o' />
+      <use fill='currentColor' xlinkHref='#o' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#o' />
-      <use fill='#ffffff' xlinkHref='#d' />
+      <use fill='currentColor' xlinkHref='#d' />
       <use fillOpacity={0} stroke='#000000' strokeOpacity={0} xlinkHref='#d' />
     </svg>
   );
