@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby';
-import React, { useState, useEffect, useRef } from 'react';
+import { graphql, navigate } from 'gatsby';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -9,6 +9,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import store from 'store';
 import { editor } from 'monaco-editor';
 import type { FitAddon } from 'xterm-addon-fit';
+import { useLocation, navigate as reachNavigate } from '@gatsbyjs/reach-router';
 
 import { useFeature } from '@growthbook/growthbook-react';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
@@ -54,6 +55,7 @@ import {
   previewMounted,
   updateChallengeMeta,
   openModal,
+  closeModal,
   setEditorFocusability,
   setIsAdvancing
 } from '../redux/actions';
@@ -62,6 +64,7 @@ import {
   consoleOutputSelector,
   isChallengeCompletedSelector
 } from '../redux/selectors';
+import { usePageLeave } from '../hooks';
 import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import { preloadPage } from '../../../../utils/gatsby/page-loading';
@@ -69,6 +72,7 @@ import envData from '../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
+import ExitClassicModal from './exit-classic-modal';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -99,6 +103,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       cancelTests,
       previewMounted,
       openModal,
+      openExitClassicModal: () => openModal('exitClassic'),
+      closeExitClassicModal: () => closeModal('exitClassic'),
       setEditorFocusability,
       setIsAdvancing
     },
@@ -126,6 +132,8 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   setDailyCodingChallengeLanguage: (
     language: DailyCodingChallengeLanguages
   ) => void;
+  openExitClassicModal: () => void;
+  closeExitClassicModal: () => void;
   setEditorFocusability: (canFocus: boolean) => void;
   setIsAdvancing: (arg: boolean) => void;
   savedChallenges: SavedChallenge[];
@@ -203,7 +211,7 @@ function ShowClassic({
         description,
         instructions,
         hooks,
-        fields: { tests, blockName },
+        fields: { tests, blockName, blockHashSlug },
         challengeType,
         hasEditableBoundaries = false,
         superBlock,
@@ -233,6 +241,8 @@ function ShowClassic({
   setDailyCodingChallengeLanguage,
   updateChallengeMeta,
   openModal,
+  openExitClassicModal,
+  closeExitClassicModal,
   setIsAdvancing,
   savedChallenges,
   isChallengeCompleted,
@@ -241,8 +251,11 @@ function ShowClassic({
   previewMounted
 }: ShowClassicProps) {
   const { t } = useTranslation();
+  const curLocation = useLocation();
   const [resizing, setResizing] = useState(false);
   const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
+  const [exitConfirmed, setExitConfirmed] = useState(false);
+  const [exitPathname, setExitPathname] = useState(blockHashSlug);
   const containerRef = useRef<HTMLElement>(null);
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const instructionsPanelRef = useRef<HTMLDivElement>(null);
@@ -460,6 +473,44 @@ function ShowClassic({
     );
   };
 
+  const handleExitClassicModalBtnClick = () => {
+    setExitConfirmed(true);
+    void navigate(exitPathname);
+    closeExitClassicModal();
+  };
+
+  const onWindowClose = useCallback(
+    (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      event.returnvalue = t('misc.navigation-warning');
+    },
+    [t]
+  );
+
+  const onHistoryChange = useCallback(
+    (targetPathname: string) => {
+      if (exitConfirmed) return;
+
+      const newPathname = targetPathname.startsWith('/learn')
+        ? blockHashSlug
+        : targetPathname;
+
+      // Save the pathname of the page the user wants to navigate to before we block the navigation.
+      setExitPathname(newPathname);
+
+      // We need to use Reach Router, because the pathname is already prefixed
+      // with the language and Gatsby's navigate will prefix it again.
+      void reachNavigate(`${curLocation.pathname}`);
+      openExitClassicModal();
+    },
+    [curLocation.pathname, exitConfirmed, openExitClassicModal, blockHashSlug]
+  );
+
+  usePageLeave({
+    onWindowClose,
+    onHistoryChange
+  });
+
   return (
     <Hotkeys
       challengeType={challengeType}
@@ -543,6 +594,7 @@ function ShowClassic({
           />
         )}
         <CompletionModal />
+        <ExitClassicModal onExit={handleExitClassicModalBtnClick} />
         <HelpModal
           challengeTitle={title}
           challengeBlock={blockName}
@@ -593,6 +645,7 @@ export const query = graphql`
           afterEach
         }
         fields {
+          blockHashSlug
           blockName
           slug
           tests {
