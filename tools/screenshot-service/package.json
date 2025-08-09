@@ -1,0 +1,17 @@
+{
+  "name": "@freecodecamp/exam-screenshot-service",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/express": "5.0.1",
+    "tsx": "4.19.1",
+    "typescript": "5.8.2"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.777.0",
+    "express": "5.0.1"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch index.ts"
+  }
+}
