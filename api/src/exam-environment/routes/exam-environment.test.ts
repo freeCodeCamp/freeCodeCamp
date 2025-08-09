@@ -512,7 +512,9 @@ describe('/exam-environment/', () => {
           generatedExamId: generatedExam!.id,
           questionSets: [],
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          startTimeInMS: expect.any(Number)
+          startTimeInMS: expect.any(Number),
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number)
         });
       });
 

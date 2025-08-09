@@ -41,7 +41,7 @@ export function checkPrerequisites(
 
 export type UserExam = Omit<
   ExamEnvironmentExam,
-  'questionSets' | 'config' | 'id' | 'prerequisites' | 'deprecated'
+  'questionSets' | 'config' | 'id' | 'prerequisites' | 'deprecated' | 'version'
 > & {
   config: Omit<ExamEnvironmentExam['config'], 'tags' | 'questionSets'>;
   questionSets: (Omit<ExamEnvironmentQuestionSet, 'questions'> & {
@@ -280,7 +280,7 @@ export function userAttemptToDatabaseAttemptQuestionSets(
  */
 export function generateExam(
   exam: ExamEnvironmentExam
-): Omit<ExamEnvironmentGeneratedExam, 'id'> {
+): Omit<ExamEnvironmentGeneratedExam, 'id' | 'version'> {
   const examCopy = structuredClone(exam);
 
   const TIMEOUT_IN_MS = 5_000;

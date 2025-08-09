@@ -248,7 +248,8 @@ export const generatedExam: ExamEnvironmentGeneratedExam = {
         }
       ]
     }
-  ]
+  ],
+  version: 1
 };
 
 export const examAttempt: ExamEnvironmentExamAttempt = {
@@ -293,7 +294,8 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
     }
   ],
   startTimeInMS: Date.now(),
-  userId: defaultUserId
+  userId: defaultUserId,
+  version: 1
 };
 
 export const examAttemptSansSubmissionTimeInMS: Static<
@@ -340,7 +342,8 @@ export const exam: ExamEnvironmentExam = {
   config,
   questionSets,
   prerequisites: ['67112fe1c994faa2c26d0b1d'],
-  deprecated: false
+  deprecated: false,
+  version: 1
 };
 
 export async function seedEnvExam() {
