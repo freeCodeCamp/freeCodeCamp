@@ -325,10 +325,13 @@ function getBlockStructure(block) {
   return JSON.parse(fs.readFileSync(blockPath, 'utf8'));
 }
 
-function addBlocks(superblocks) {
+function addBlockStructure(superblocks) {
   return superblocks.map(superblock => ({
     ...superblock,
-    blocks: superblock.blocks.map(block => getBlockStructure(block.dashedName))
+    blocks: superblock.blocks.map(block => ({
+      ...block,
+      ...getBlockStructure(block.dashedName)
+    }))
   }));
 }
 
@@ -429,7 +432,9 @@ async function buildCurriculum(lang, filters) {
   debug(`Found ${curriculum.superblocks.length} superblocks to build`);
   debug(`Found ${curriculum.certifications.length} certifications to build`);
 
-  const superblockList = addBlocks(buildSuperblockStructure(curriculum));
+  const superblockList = addBlockStructure(
+    buildSuperblockStructure(curriculum)
+  );
   const fullSuperblockList = applyFilters(superblockList, filters);
   const fullCurriculum = { certifications: { blocks: {} } };
 

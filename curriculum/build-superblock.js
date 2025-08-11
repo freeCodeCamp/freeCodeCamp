@@ -332,73 +332,6 @@ class BlockCreator {
     return rawMeta;
   }
 
-  /**
-   * Processes a single block: reads challenges, validates, and builds block object
-   * @param {string} blockName - Block info object with dashedName property
-   * @param {object} options - Options object with superBlock, order, chapter, and module properties
-   * @param {string} options.superBlock - Name of the superblock
-   * @param {number} options.order - Order of the block within the superblock
-   * @param {string} [options.chapter] - Chapter name (optional)
-   * @param {string} [options.module] - Module name (optional)
-   * @returns {Promise<object|null>} Block object or null if processing failed
-   */
-  async processBlock(blockName, { superBlock, order, chapter, module }) {
-    debug(`Processing block ${blockName} in superblock ${superBlock}`);
-
-    // Check if block directory exists
-    const blockContentDir = path.resolve(this.blockContentDir, blockName);
-    if (!fs.existsSync(blockContentDir)) {
-      throw Error(`Block directory not found: ${blockContentDir}`);
-    }
-
-    const rawMeta = this.getMetaForBlock(blockName);
-
-    if (
-      rawMeta.isUpcomingChange &&
-      process.env.SHOW_UPCOMING_CHANGES !== 'true'
-    ) {
-      debug(`Ignoring upcoming block ${blockName}`);
-      return null;
-    }
-
-    const superOrder = getSuperOrder(superBlock);
-    const meta = {
-      ...rawMeta,
-      superOrder,
-      superBlock,
-      order,
-      ...(chapter && { chapter }),
-      ...(module && { module })
-    };
-    const isAudited = isAuditedSuperBlock(this.lang, superBlock);
-
-    // Read challenges from directory
-    const foundChallenges = await this.readBlockChallenges(
-      blockName,
-      meta,
-      isAudited
-    );
-    debug(`Found ${foundChallenges.length} challenge files in directory`);
-
-    // Log found challenges
-    foundChallenges.forEach(challenge => {
-      debug(`Found challenge: ${challenge.title} (${challenge.id})`);
-    });
-
-    const throwOnError = this.lang === 'english';
-    // Validate challenges against meta
-    validateChallenges(foundChallenges, meta, throwOnError);
-
-    // Build the block object
-    const blockResult = buildBlock(foundChallenges, meta);
-
-    debug(
-      `Completed block "${meta.name}" with ${blockResult.challenges.length} challenges (${blockResult.challenges.filter(c => !c.missing).length} built successfully)`
-    );
-
-    return blockResult;
-  }
-
   async processBlockV2(block, { superBlock, order }) {
     const blockName = block.dashedName;
     debug(`Processing block ${blockName} in superblock ${superBlock}`);
@@ -422,7 +355,9 @@ class BlockCreator {
       ...block,
       superOrder,
       superBlock,
-      order
+      order,
+      ...(block.chapter && { chapter: block.chapter }),
+      ...(block.module && { module: block.module })
     };
     const isAudited = isAuditedSuperBlock(this.lang, superBlock);
 
@@ -464,51 +399,6 @@ class SuperblockCreator {
     this.blockCreator = blockCreator;
   }
 
-  /**
-   * Main parsing function for superblock
-   * @param {string} superblockPath - Path to superblock JSON file
-   * @param {string} superBlockName - Name of the superblock
-   * @returns {Promise<object>} Built superblock data
-   */
-  async buildSuperblock(superblockPath, superBlockName) {
-    debug(`Building superblock: ${superblockPath}`);
-    const superblockData = JSON.parse(fs.readFileSync(superblockPath, 'utf8'));
-    const blocks = transformSuperBlock(superblockData);
-
-    return this.processSuperblock(blocks, superBlockName);
-  }
-
-  /**
-   * Processes blocks array and returns result object
-   * @param {object[]} blocks - Array of block objects with dashedName property
-   * @param {string} superBlockName - Name of the superblock being processed
-   * @returns {Promise<object>} Result object with processed blocks
-   */
-  async processSuperblock(blocks, superBlockName) {
-    const superBlock = { blocks: {} };
-
-    for (let i = 0; i < blocks.length; i++) {
-      const blockInfo = blocks[i];
-      const blockResult = await this.blockCreator.processBlock(
-        blockInfo.dashedName,
-        {
-          superBlock: superBlockName,
-          order: i,
-          ...(blockInfo.chapter && { chapter: blockInfo.chapter }),
-          ...(blockInfo.module && { module: blockInfo.module })
-        }
-      );
-      if (blockResult) {
-        superBlock.blocks[blockInfo.dashedName] = blockResult;
-      }
-    }
-
-    debug(
-      `Completed parsing superblock. Total blocks: ${Object.keys(superBlock.blocks).length}`
-    );
-    return superBlock;
-  }
-
   async processSuperblockV2({ blocks, name }) {
     const superBlock = { blocks: {} };
 
@@ -516,9 +406,7 @@ class SuperblockCreator {
       const block = blocks[i];
       const blockResult = await this.blockCreator.processBlockV2(block, {
         superBlock: name,
-        order: i,
-        ...(block.chapter && { chapter: block.chapter }),
-        ...(block.module && { module: block.module })
+        order: i
       });
       if (blockResult) {
         superBlock.blocks[block.dashedName] = blockResult;
