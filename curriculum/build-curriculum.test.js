@@ -2,7 +2,9 @@ const path = require('node:path');
 
 const {
   createCommentMap,
-  filterChallengesById
+  filterByChallengeId,
+  filterByBlock,
+  filterBySuperblock
 } = require('./build-curriculum');
 
 describe('createCommentMap', () => {
@@ -83,36 +85,36 @@ describe('createCommentMap', () => {
   });
 });
 
-describe('filterChallengesById', () => {
+describe('filterByChallengeId', () => {
   it('returns the same superblocks if no challengeId is provided', () => {
     const superblocks = [
       {
-        name: 'Superblock 1',
-        blocks: [{ name: 'Block 1', challengeOrder: [{ id: '1' }] }]
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1', challengeOrder: [{ id: '1' }] }]
       },
       {
-        name: 'Superblock 2',
-        blocks: [{ name: 'Block 2', challengeOrder: [{ id: '2' }] }]
+        name: 'superblock-2',
+        blocks: [{ dashedName: 'block-2', challengeOrder: [{ id: '2' }] }]
       }
     ];
-    expect(filterChallengesById(superblocks)).toEqual(superblocks);
+    expect(filterByChallengeId(superblocks)).toEqual(superblocks);
   });
 
   it('ignores blocks without the specified challengeId', () => {
     const superblocks = [
       {
-        name: 'Superblock 1',
+        name: 'superblock-1',
         blocks: [
-          { name: 'Block 1', challengeOrder: [{ id: '1' }] },
-          { name: 'Block 2', challengeOrder: [{ id: '2' }] }
+          { dashedName: 'block-1', challengeOrder: [{ id: '1' }] },
+          { dashedName: 'block-2', challengeOrder: [{ id: '2' }] }
         ]
       }
     ];
-    const filtered = filterChallengesById(superblocks, '2');
+    const filtered = filterByChallengeId(superblocks, { challengeId: '2' });
     expect(filtered).toEqual([
       {
-        name: 'Superblock 1',
-        blocks: [{ name: 'Block 2', challengeOrder: [{ id: '2' }] }]
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-2', challengeOrder: [{ id: '2' }] }]
       }
     ]);
   });
@@ -120,22 +122,22 @@ describe('filterChallengesById', () => {
   it('returns only the specified challenge and its solution challenge', () => {
     const superblocks = [
       {
-        name: 'Superblock 1',
+        name: 'superblock-1',
         blocks: [
           {
-            name: 'Block 1',
+            dashedName: 'block-1',
             challengeOrder: [{ id: '1' }, { id: '2' }, { id: '3' }]
           },
-          { name: 'Block 2', challengeOrder: [{ id: '4' }] }
+          { dashedName: 'block-2', challengeOrder: [{ id: '4' }] }
         ]
       }
     ];
-    const filtered = filterChallengesById(superblocks, '1');
+    const filtered = filterByChallengeId(superblocks, { challengeId: '1' });
     expect(filtered).toEqual([
       {
-        name: 'Superblock 1',
+        name: 'superblock-1',
         blocks: [
-          { name: 'Block 1', challengeOrder: [{ id: '1' }, { id: '2' }] }
+          { dashedName: 'block-1', challengeOrder: [{ id: '1' }, { id: '2' }] }
         ]
       }
     ]);
@@ -144,22 +146,95 @@ describe('filterChallengesById', () => {
   it('returns only superblocks containing the specified challenge', () => {
     const superblocks = [
       {
-        name: 'Superblock 1',
+        name: 'superblock-1',
         blocks: [
-          { name: 'Block 1', challengeOrder: [{ id: '1' }] },
-          { name: 'Block 2', challengeOrder: [{ id: '2' }] }
+          { dashedName: 'block-1', challengeOrder: [{ id: '1' }] },
+          { dashedName: 'block-2', challengeOrder: [{ id: '2' }] }
         ]
       },
       {
-        name: 'Superblock 2',
-        blocks: [{ name: 'Block 3', challengeOrder: [{ id: '3' }] }]
+        name: 'superblock-2',
+        blocks: [{ dashedName: 'block-3', challengeOrder: [{ id: '3' }] }]
       }
     ];
-    const filtered = filterChallengesById(superblocks, '2');
+    const filtered = filterByChallengeId(superblocks, { challengeId: '2' });
     expect(filtered).toEqual([
       {
-        name: 'Superblock 1',
-        blocks: [{ name: 'Block 2', challengeOrder: [{ id: '2' }] }]
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-2', challengeOrder: [{ id: '2' }] }]
+      }
+    ]);
+  });
+});
+
+describe('filterByBlock', () => {
+  it('returns the same superblocks if no block is provided', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    expect(filterByBlock(superblocks)).toEqual(superblocks);
+  });
+
+  it('returns only the specified block', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    const filtered = filterByBlock(superblocks, { block: 'block-1' });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }]
+      }
+    ]);
+  });
+
+  it('returns an empty array if no blocks match the specified block', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    const filtered = filterByBlock(superblocks, { block: 'nonexistent-block' });
+    expect(filtered).toEqual([]);
+  });
+});
+
+describe('filterBySuperblock', () => {
+  it('returns the same superblocks if no superBlock is provided', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    expect(filterBySuperblock(superblocks)).toEqual(superblocks);
+  });
+
+  it('returns only the specified superblock', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      },
+      {
+        name: 'superblock-2',
+        blocks: [{ dashedName: 'block-3' }]
+      }
+    ];
+    const filtered = filterBySuperblock(superblocks, {
+      superBlock: 'superblock-1'
+    });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
       }
     ]);
   });

@@ -49,18 +49,6 @@ const { sortChallenges } = require('./utils/sort-challenges');
 
 const { flatten, isEmpty, cloneDeep } = lodash;
 
-if (
-  [
-    process.env.FCC_BLOCK,
-    process.env.FCC_CHALLENGE_ID,
-    process.env.FCC_SUPERBLOCK
-  ].filter(Boolean).length > 1
-) {
-  throw new Error(
-    `Please use at most single input from: block, challenge id, superblock.`
-  );
-}
-
 const testFilter = {
   block: process.env.FCC_BLOCK ? process.env.FCC_BLOCK.trim() : undefined,
   challengeId: process.env.FCC_CHALLENGE_ID
@@ -173,24 +161,6 @@ async function setup() {
   const targetSuperBlockStrings = [
     ...new Set(superBlocks.filter(el => Boolean(el)))
   ];
-
-  if (testFilter.challengeId) {
-    const challengeIndex = challenges.findIndex(
-      challenge => challenge.id === testFilter.challengeId
-    );
-    if (challengeIndex === -1) {
-      throw new Error(`No challenge found with id "${testFilter.challengeId}"`);
-    }
-    const { solutions = [] } = challenges[challengeIndex];
-    if (isEmpty(solutions)) {
-      // Project based curriculum usually has solution for current challenge in
-      // next challenge's seed.
-      challenges = challenges.slice(challengeIndex, challengeIndex + 2);
-    } else {
-      // Only one challenge is tested, but tests assume challenges is an array.
-      challenges = [challenges[challengeIndex]];
-    }
-  }
 
   const meta = {};
   for (const challenge of challenges) {
