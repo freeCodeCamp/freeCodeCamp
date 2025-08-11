@@ -41,7 +41,7 @@ function DailyCodingChallengeCalendarDay({
   // isAvailable -> render link to challenge
   return (
     <Link
-      to={`/learn/daily-coding-challenge?date=${date}`}
+      to={`/learn/daily-coding-challenge/${date}`}
       className='calendar-day available'
       data-playwright-test-label='calendar-day'
       aria-label={`${date && formatDisplayDate(date)}`}

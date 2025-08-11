@@ -66,7 +66,7 @@ const mockDaysInMonth = new Date(year, month, 0).getDate();
 
 test.describe('Daily Coding Challenges', () => {
   test('should show not found page for invalid date', async ({ page }) => {
-    await page.goto('/learn/daily-coding-challenge?date=invalid-date');
+    await page.goto('/learn/daily-coding-challenge/invalid-date');
     await expect(
       page.getByText(/daily coding challenge not found\./i)
     ).toBeVisible();
@@ -83,7 +83,7 @@ test.describe('Daily Coding Challenges', () => {
       });
     });
 
-    await page.goto('/learn/daily-coding-challenge?date=2025-01-01');
+    await page.goto('/learn/daily-coding-challenge/2025-01-01');
     await expect(
       page.getByText(/daily coding challenge not found\./i)
     ).toBeVisible();
@@ -98,7 +98,7 @@ test.describe('Daily Coding Challenges', () => {
       });
     });
 
-    await page.goto('/learn/daily-coding-challenge?date=2025-01-01');
+    await page.goto('/learn/daily-coding-challenge/2025-01-01');
     await expect(
       page.getByText(/daily coding challenge not found\./i)
     ).toBeVisible();
@@ -115,7 +115,7 @@ test.describe('Daily Coding Challenges', () => {
       });
     });
 
-    await page.goto('/learn/daily-coding-challenge?date=2025-06-27');
+    await page.goto('/learn/daily-coding-challenge/2025-06-27');
     await expect(
       page.getByText(/daily coding challenge not found\./i)
     ).toBeVisible();
@@ -132,7 +132,7 @@ test.describe('Daily Coding Challenges', () => {
       });
     });
 
-    await page.goto(`/learn/daily-coding-challenge?date=${todayUsCentral}`);
+    await page.goto(`/learn/daily-coding-challenge/${todayUsCentral}`);
 
     await expect(page.getByText('Test title')).toBeVisible();
 
@@ -171,7 +171,7 @@ test.describe('Daily Coding Challenges', () => {
       '# Python seed code'
     );
 
-    await page.goto(`/learn/daily-coding-challenge?date=${todayUsCentral}`);
+    await page.goto(`/learn/daily-coding-challenge/${todayUsCentral}`);
 
     await expect(page.getByRole('button', { name: /main.py/i })).toBeVisible();
   });
