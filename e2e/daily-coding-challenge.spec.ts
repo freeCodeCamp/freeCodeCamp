@@ -178,7 +178,28 @@ test.describe('Daily Coding Challenges', () => {
 });
 
 test.describe('Daily Coding Challenge Archive', () => {
-  test('should load and display the calendar', async ({ page }) => {
+  test('/learn/daily-coding-challenge should redirect to archive', async ({
+    page
+  }) => {
+    await page.goto('/learn/daily-coding-challenge');
+    await expect(page).toHaveURL('/learn/daily-coding-challenge/archive');
+  });
+
+  test('/learn/daily-coding-challenge/ should redirect to archive', async ({
+    page
+  }) => {
+    await page.goto('/learn/daily-coding-challenge/');
+    await expect(page).toHaveURL('/learn/daily-coding-challenge/archive');
+  });
+
+  test('/learn/daily-coding-challenge/path-1/path2 should redirect to archive', async ({
+    page
+  }) => {
+    await page.goto('/learn/daily-coding-challenge/path-1/path2');
+    await expect(page).toHaveURL('/learn/daily-coding-challenge/archive');
+  });
+
+  test('archive should load and display the calendar', async ({ page }) => {
     await page.route(allRouteRe, async route => {
       await route.fulfill({
         status: 200,
