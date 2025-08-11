@@ -1,7 +1,13 @@
 import path from 'path';
 import { config } from 'dotenv';
 import { SuperBlocks } from '../shared/config/curriculum';
-import { createSuperOrder, getSuperOrder } from './utils';
+import {
+  createSuperOrder,
+  filterByBlock,
+  filterByChallengeId,
+  filterBySuperblock,
+  getSuperOrder
+} from './utils';
 
 config({ path: path.resolve(__dirname, '../.env') });
 
@@ -113,5 +119,160 @@ describe('getSuperOrder', () => {
       expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
       expect(getSuperOrder(SuperBlocks.FullStackDeveloper)).toBe(18);
     }
+  });
+});
+
+describe('filterByChallengeId', () => {
+  it('returns the same superblocks if no challengeId is provided', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1', challengeOrder: [{ id: '1' }] }]
+      },
+      {
+        name: 'superblock-2',
+        blocks: [{ dashedName: 'block-2', challengeOrder: [{ id: '2' }] }]
+      }
+    ];
+    expect(filterByChallengeId(superblocks)).toEqual(superblocks);
+  });
+
+  it('ignores blocks without the specified challengeId', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [
+          { dashedName: 'block-1', challengeOrder: [{ id: '1' }] },
+          { dashedName: 'block-2', challengeOrder: [{ id: '2' }] }
+        ]
+      }
+    ];
+    const filtered = filterByChallengeId(superblocks, { challengeId: '2' });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-2', challengeOrder: [{ id: '2' }] }]
+      }
+    ]);
+  });
+
+  it('returns only the specified challenge and its solution challenge', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [
+          {
+            dashedName: 'block-1',
+            challengeOrder: [{ id: '1' }, { id: '2' }, { id: '3' }]
+          },
+          { dashedName: 'block-2', challengeOrder: [{ id: '4' }] }
+        ]
+      }
+    ];
+    const filtered = filterByChallengeId(superblocks, { challengeId: '1' });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [
+          { dashedName: 'block-1', challengeOrder: [{ id: '1' }, { id: '2' }] }
+        ]
+      }
+    ]);
+  });
+
+  it('returns only superblocks containing the specified challenge', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [
+          { dashedName: 'block-1', challengeOrder: [{ id: '1' }] },
+          { dashedName: 'block-2', challengeOrder: [{ id: '2' }] }
+        ]
+      },
+      {
+        name: 'superblock-2',
+        blocks: [{ dashedName: 'block-3', challengeOrder: [{ id: '3' }] }]
+      }
+    ];
+    const filtered = filterByChallengeId(superblocks, { challengeId: '2' });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-2', challengeOrder: [{ id: '2' }] }]
+      }
+    ]);
+  });
+});
+
+describe('filterByBlock', () => {
+  it('returns the same superblocks if no block is provided', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    expect(filterByBlock(superblocks)).toEqual(superblocks);
+  });
+
+  it('returns only the specified block', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    const filtered = filterByBlock(superblocks, { block: 'block-1' });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }]
+      }
+    ]);
+  });
+
+  it('returns an empty array if no blocks match the specified block', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    const filtered = filterByBlock(superblocks, { block: 'nonexistent-block' });
+    expect(filtered).toEqual([]);
+  });
+});
+
+describe('filterBySuperblock', () => {
+  it('returns the same superblocks if no superBlock is provided', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    expect(filterBySuperblock(superblocks)).toEqual(superblocks);
+  });
+
+  it('returns only the specified superblock', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      },
+      {
+        name: 'superblock-2',
+        blocks: [{ dashedName: 'block-3' }]
+      }
+    ];
+    const filtered = filterBySuperblock(superblocks, {
+      superBlock: 'superblock-1'
+    });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ]);
   });
 });
