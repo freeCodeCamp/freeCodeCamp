@@ -1,0 +1,19 @@
+{
+  "name": "Learn Simple and Compound Interest",
+  "isUpcomingChange": false,
+  "dashedName": "learn-simple-and-compound-interest",
+  "helpCategory": "Python",
+  "order": 15,
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    {
+      "id": "6363d26c9078df117ce4c405",
+      "title": "Simple and Compound Interest"
+    },
+    {
+      "id": "63dbd1335d93712ff177d96a",
+      "title": "Simple and Compound Interest: Extra"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

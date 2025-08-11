@@ -1,0 +1,39 @@
+{
+  "name": "Working with Regular Expressions",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-regular-expressions",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6733aad43b3ebff588a26fb5",
+      "title": "What Are Regular Expressions, and What Are Some Common Methods?"
+    },
+    {
+      "id": "6733c5ba834ded4bb067e67c",
+      "title": "What Are Some Common Regular Expression Modifiers Used for Searching?"
+    },
+    {
+      "id": "6733c5c549775c4be710237c",
+      "title": "How Can You Match and Replace All Occurrences in a String?"
+    },
+    {
+      "id": "6733c5d0048bb74c18431296",
+      "title": "What Are Character Classes, and What Are Some Common Examples?"
+    },
+    {
+      "id": "6733c5dc74176e4c496d09e6",
+      "title": "What Are Lookahead and Lookbehind Assertions, and How Do They Work?"
+    },
+    {
+      "id": "6733c5e54e3a154c8078ed48",
+      "title": "What Are Regex Quantifiers, and How Do They Work?"
+    },
+    {
+      "id": "6733c5f20cc9584cada942a4",
+      "title": "What Are Capturing Groups and Backreferences, and How Do They Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

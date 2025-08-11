@@ -1,0 +1,23 @@
+{
+  "name": "Working With SQL",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-sql",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "68816f386bc30d36f59e9563",
+      "title": "What Is Normalization in SQL?"
+    },
+    {
+      "id": "68817041f57ce139bef36541",
+      "title": "What Is SQL Injection, and What Are Some Ways to Prevent It?"
+    },
+    {
+      "id": "6881705cd9860639e98d639d",
+      "title": "What Is the N+1 Problem?"
+    }
+  ]
+}

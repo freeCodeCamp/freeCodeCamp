@@ -1,0 +1,15 @@
+{
+  "name": "Multi-Function Calculator",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-multi-function-calculator-project",
+  "order": 6,
+  "helpCategory": "Python",
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    {
+      "id": "63d83ff239c73468b059cd3f",
+      "title": "Build a Multi-Function Calculator"
+    }
+  ],
+  "blockLayout": "project-list"
+}

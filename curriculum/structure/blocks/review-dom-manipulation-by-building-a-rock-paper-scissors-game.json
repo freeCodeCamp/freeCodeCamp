@@ -1,0 +1,37 @@
+{
+  "name": "Review DOM Manipulation by Building a Rock, Paper, Scissors Game",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "review-dom-manipulation-by-building-a-rock-paper-scissors-game",
+  "order": 5,
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
+  "challengeOrder": [
+    {
+      "id": "663d0ab797cb716189ffcc0a",
+      "title": "Step 1"
+    },
+    {
+      "id": "663d18c574456976d11b6e87",
+      "title": "Step 2"
+    },
+    {
+      "id": "663d2f8056542a8066fd6cc6",
+      "title": "Step 3"
+    },
+    {
+      "id": "663d4008cee64e05dfb08f0d",
+      "title": "Step 4"
+    },
+    {
+      "id": "663d5697d80fef0eea026672",
+      "title": "Step 5"
+    },
+    {
+      "id": "663d5bebe2eef6128a0b1e75",
+      "title": "Step 6"
+    }
+  ],
+  "helpCategory": "JavaScript",
+  "blockLayout": "legacy-challenge-grid"
+}
