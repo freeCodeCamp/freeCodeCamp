@@ -1,0 +1,105 @@
+{
+  "name": "Learn Python List Comprehension by Building a Case Converter Program",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-list-comprehension-by-building-a-case-converter-program",
+  "order": 3,
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "657e928716b77b2277980276",
+      "title": "Step 1"
+    },
+    {
+      "id": "657ed53c19461d4b95c4757a",
+      "title": "Step 2"
+    },
+    {
+      "id": "657ee28cefc4945568287673",
+      "title": "Step 3"
+    },
+    {
+      "id": "657ef2a86d4e545cec9a85fb",
+      "title": "Step 4"
+    },
+    {
+      "id": "657efa642593c5746acc5c81",
+      "title": "Step 5"
+    },
+    {
+      "id": "657efce98e958b75df86b305",
+      "title": "Step 6"
+    },
+    {
+      "id": "657efdcf7fe23b76c0cff9ec",
+      "title": "Step 7"
+    },
+    {
+      "id": "657effaa2a5e0277d71f9cbe",
+      "title": "Step 8"
+    },
+    {
+      "id": "657f0044be09db790b1eb1c5",
+      "title": "Step 9"
+    },
+    {
+      "id": "657f01ae9aea647b27402d3e",
+      "title": "Step 10"
+    },
+    {
+      "id": "657f025ec86c3d7c4177b6be",
+      "title": "Step 11"
+    },
+    {
+      "id": "657f0353c9523d7d896873ea",
+      "title": "Step 12"
+    },
+    {
+      "id": "657f04ed0035f47ed04d0f1f",
+      "title": "Step 13"
+    },
+    {
+      "id": "657f425dbab54e11993c80f0",
+      "title": "Step 14"
+    },
+    {
+      "id": "657f4345abe7f2161f99f1ad",
+      "title": "Step 15"
+    },
+    {
+      "id": "657f43d341a0dd17120cdb08",
+      "title": "Step 16"
+    },
+    {
+      "id": "663b10c10a4c0a0e095137ee",
+      "title": "Step 17"
+    },
+    {
+      "id": "663b16e62fee463b4caf46e9",
+      "title": "Step 18"
+    },
+    {
+      "id": "657f456223b8c1187b461987",
+      "title": "Step 19"
+    },
+    {
+      "id": "657f465f8e718b19c5105ae5",
+      "title": "Step 20"
+    },
+    {
+      "id": "657f47b12c51e41b3149e584",
+      "title": "Step 21"
+    },
+    {
+      "id": "657f4a4a5828a01de04b652f",
+      "title": "Step 22"
+    },
+    {
+      "id": "657f4add33ea4b1f61ba3dc8",
+      "title": "Step 23"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-grid"
+}

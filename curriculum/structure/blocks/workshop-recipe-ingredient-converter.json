@@ -1,0 +1,85 @@
+{
+  "name": "Build a Recipe Ingredient Converter",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-recipe-ingredient-converter",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67351754cc06dc00d4661745",
+      "title": "Step 1"
+    },
+    {
+      "id": "67351e8fc8a4824a6dbc2b6c",
+      "title": "Step 2"
+    },
+    {
+      "id": "67352456df2b0d43e5e3a606",
+      "title": "Step 3"
+    },
+    {
+      "id": "6735248efd793950983b4be1",
+      "title": "Step 4"
+    },
+    {
+      "id": "6735255d6a71fd7674cad360",
+      "title": "Step 5"
+    },
+    {
+      "id": "673526a283dd0daf53047ec9",
+      "title": "Step 6"
+    },
+    {
+      "id": "67352acc50468d683805c23c",
+      "title": "Step 7"
+    },
+    {
+      "id": "67352b06917ae5747566934c",
+      "title": "Step 8"
+    },
+    {
+      "id": "67353792a505df8dac33d522",
+      "title": "Step 9"
+    },
+    {
+      "id": "67353880ed1f52ba28c8eb56",
+      "title": "Step 10"
+    },
+    {
+      "id": "67353950c86fe2dfd84bc2f3",
+      "title": "Step 11"
+    },
+    {
+      "id": "673539dddfa1affd12c80a18",
+      "title": "Step 12"
+    },
+    {
+      "id": "67353ab907569125112caffa",
+      "title": "Step 13"
+    },
+    {
+      "id": "67353fb237ffbd01af3be1cc",
+      "title": "Step 14"
+    },
+    {
+      "id": "673540f6e49ae33d6a235c20",
+      "title": "Step 15"
+    },
+    {
+      "id": "673542088e459b6def5d6e56",
+      "title": "Step 16"
+    },
+    {
+      "id": "6735424ecfeb557d81dcc9d1",
+      "title": "Step 17"
+    },
+    {
+      "id": "673543d867b44ac7580610a2",
+      "title": "Step 18"
+    }
+  ],
+  "helpCategory": "JavaScript",
+  "blockType": "workshop"
+}
