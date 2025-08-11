@@ -485,6 +485,12 @@ ${isLinkSentWithinLimitTTL}`
       const logger = fastify.log.child({ req, res: reply });
       const hasProtocol = isPictureWithProtocol(req.body.picture);
 
+      if (!hasProtocol && req.body.picture) {
+        logger.warn(`Invalid picture URL: ${req.body.picture}`);
+        void reply.code(400);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -492,7 +498,7 @@ ${isLinkSentWithinLimitTTL}`
             about: req.body.about,
             name: req.body.name,
             location: req.body.location,
-            picture: hasProtocol ? req.body.picture : ''
+            picture: req.body.picture
           }
         });
 
