@@ -19,8 +19,12 @@ const globalConfigPath = path.resolve(__dirname, '../../../shared/config');
 // across all languages.
 void getChallengesForLang('english')
   .then(result => {
-    buildExtCurriculumDataV1(result as CurriculumV1<CurriculumPropsV1>);
-    buildExtCurriculumDataV2(result as CurriculumV2<CurriculumPropsV2>);
+    buildExtCurriculumDataV1(
+      result as unknown as CurriculumV1<CurriculumPropsV1>
+    );
+    buildExtCurriculumDataV2(
+      result as unknown as CurriculumV2<CurriculumPropsV2>
+    );
     return result;
   })
   .then(JSON.stringify)
