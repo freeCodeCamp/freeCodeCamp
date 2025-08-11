@@ -7,7 +7,7 @@ dashedName: implement-a-falsy-remover
 
 # --description--
 
-In this lab you will create a function that remove all falsy values from an array.
+In this lab you will create a function that removes all falsy values from an array.
 
 Falsy values in JavaScript are `false`, `null`, `0`, `""`, `undefined`, and `NaN`.
 
@@ -17,7 +17,7 @@ Falsy values in JavaScript are `false`, `null`, `0`, `""`, `undefined`, and `NaN
 
 1. You should have a `bouncer` function that takes an array as argument.
 1. The `bouncer` function should return a new array that contains the same elements as the array passed in as argument with the falsy elements removed.
-1. The `bouncer` function should not change the array passed in as argument.
+1. The `bouncer` function should not change the array passed in as an argument.
 
 Hint: Try converting each value to a Boolean.
 
@@ -60,6 +60,12 @@ const arr = ['a', false, 0, 'Naomi'];
 bouncer(arr);
 assert.deepEqual(arr, ['a', false, 0, 'Naomi']);
 ```
+
+`bouncer([])` should return `[]`.  
+
+```js  
+assert.deepEqual(bouncer([]), []);  
+```  
 
 # --seed--
 
