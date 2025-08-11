@@ -1,0 +1,140 @@
+{
+  "name": "Bootstrap",
+  "isUpcomingChange": false,
+  "dashedName": "bootstrap",
+  "helpCategory": "HTML-CSS",
+  "order": 0,
+  "required": [
+    {
+      "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"
+    }
+  ],
+  "superBlock": "front-end-development-libraries",
+  "challengeOrder": [
+    {
+      "id": "bad87fee1348bd9acde08712",
+      "title": "Use Responsive Design with Bootstrap Fluid Containers"
+    },
+    {
+      "id": "bad87fee1348bd9acde08812",
+      "title": "Make Images Mobile Responsive"
+    },
+    {
+      "id": "bad87fee1348bd8acde08812",
+      "title": "Center Text with Bootstrap"
+    },
+    {
+      "id": "bad87fee1348cd8acdf08812",
+      "title": "Create a Bootstrap Button"
+    },
+    {
+      "id": "bad87fee1348cd8acef08812",
+      "title": "Create a Block Element Bootstrap Button"
+    },
+    {
+      "id": "bad87fee1348cd8acef08811",
+      "title": "Taste the Bootstrap Button Color Rainbow"
+    },
+    {
+      "id": "bad87fee1348cd8acef08813",
+      "title": "Call out Optional Actions with btn-info"
+    },
+    {
+      "id": "bad87fee1348ce8acef08814",
+      "title": "Warn Your Users of a Dangerous Action with btn-danger"
+    },
+    {
+      "id": "bad88fee1348ce8acef08815",
+      "title": "Use the Bootstrap Grid to Put Elements Side By Side"
+    },
+    {
+      "id": "bad87fee1347bd9aedf08845",
+      "title": "Ditch Custom CSS for Bootstrap"
+    },
+    {
+      "id": "bad87fee1348bd9aedf08845",
+      "title": "Use a span to Target Inline Elements"
+    },
+    {
+      "id": "bad87fee1348bd9aede08845",
+      "title": "Create a Custom Heading"
+    },
+    {
+      "id": "bad87fee1348bd9aedd08845",
+      "title": "Add Font Awesome Icons to our Buttons"
+    },
+    {
+      "id": "bad87fee1348bd9aedc08845",
+      "title": "Add Font Awesome Icons to all of our Buttons"
+    },
+    {
+      "id": "bad87fee1348bd9aedb08845",
+      "title": "Responsively Style Radio Buttons"
+    },
+    {
+      "id": "bad87fee1348bd9aeda08845",
+      "title": "Responsively Style Checkboxes"
+    },
+    {
+      "id": "bad87fee1348bd9aed908845",
+      "title": "Style Text Inputs as Form Controls"
+    },
+    {
+      "id": "bad87fee1348bd9aec908845",
+      "title": "Line up Form Elements Responsively with Bootstrap"
+    },
+    {
+      "id": "bad87fee1348bd9aec908846",
+      "title": "Create a Bootstrap Headline"
+    },
+    {
+      "id": "bad87fee1348bd9aec908746",
+      "title": "House our page within a Bootstrap container-fluid div"
+    },
+    {
+      "id": "bad87fee1348bd9bec908846",
+      "title": "Create a Bootstrap Row"
+    },
+    {
+      "id": "bad87fee1348bd9aec908847",
+      "title": "Split Your Bootstrap Row"
+    },
+    {
+      "id": "bad87fee1348bd9aec908848",
+      "title": "Create Bootstrap Wells"
+    },
+    {
+      "id": "bad87fee1348bd9aec908849",
+      "title": "Add Elements within Your Bootstrap Wells"
+    },
+    {
+      "id": "bad87fee1348bd9aec908850",
+      "title": "Apply the Default Bootstrap Button Style"
+    },
+    {
+      "id": "bad87fee1348bd9aec908852",
+      "title": "Create a Class to Target with jQuery Selectors"
+    },
+    {
+      "id": "bad87fee1348bd9aec908853",
+      "title": "Add id Attributes to Bootstrap Elements"
+    },
+    {
+      "id": "bad87fee1348bd9aec908854",
+      "title": "Label Bootstrap Wells"
+    },
+    {
+      "id": "bad87fee1348bd9aec908855",
+      "title": "Give Each Element a Unique id"
+    },
+    {
+      "id": "bad87fee1348bd9aec908856",
+      "title": "Label Bootstrap Buttons"
+    },
+    {
+      "id": "bad87fee1348bd9aec908857",
+      "title": "Use Comments to Clarify Code"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

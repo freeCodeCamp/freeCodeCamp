@@ -1,0 +1,27 @@
+{
+  "name": "Working with Data Fetching and Memoization in React",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-data-fetching-and-memoization-in-react",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67d1a99d10fd509c88faf3bf",
+      "title": "How Does Data Fetching Work in React?"
+    },
+    {
+      "id": "67e2a513dbffdc8dcf1700af",
+      "title": "What Is the useOptimistic Hook, and How Does It Work?"
+    },
+    {
+      "id": "67d2f4ddb4a4306fdf5bbaee",
+      "title": "What Is Memoization, and How Does the useMemo Hook Work?"
+    },
+    {
+      "id": "67d2f51ff2c927713caa24fa",
+      "title": "How Do the useCallback Hook and React.memo Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

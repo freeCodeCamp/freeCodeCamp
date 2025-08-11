@@ -1,0 +1,23 @@
+{
+  "name": "Understanding Form Validation",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-form-validation",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6733aae9d25004f60d1e86f2",
+      "title": "What Are Some Ways to Validate Forms Using JavaScript?"
+    },
+    {
+      "id": "6733d3a33abdd27cd562bdf2",
+      "title": "What Is the Purpose of e.preventDefault?"
+    },
+    {
+      "id": "6733d3ab69e94b7df7ee91b0",
+      "title": "How Does the Submit Event Work with Forms?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
