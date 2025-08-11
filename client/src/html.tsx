@@ -36,9 +36,16 @@ export default function HTML({
           content='width=device-width, initial-scale=1.0, shrink-to-fit=no'
           name='viewport'
         />
+               
         {headComponents}
+         
+        
       </head>
       <body {...bodyAttributes}>
+  <a href="#__gatsby" className="skip-link">Skip to content</a>
+        
+        
+        
         {preBodyComponents}
         <div
           className='tex2jax_ignore'
