@@ -12,6 +12,7 @@ const {
 } = require('./build-superblock');
 
 const { buildCertification } = require('./build-certification');
+const { applyFilters } = require('./utils');
 
 const CURRICULUM_DIR = __dirname;
 const I18N_CURRICULUM_DIR = path.resolve(
@@ -335,89 +336,6 @@ function addBlockStructure(superblocks) {
   }));
 }
 
-/**
- * Filters challenges in superblocks to only include those matching the given challenge id and their solution challenges (i.e. the next challenge, if it exists)
- * @param {Array<Object>} superblocks - Array of superblock objects with blocks containing challenges
- * @param {Object} [options] - Options object
- * @param {string} [options.challengeId] - The specific challenge id to filter for
- * @returns {Array<Object>} Filtered superblocks containing only the matching challenge
- */
-function filterByChallengeId(superblocks, { challengeId } = {}) {
-  if (!challengeId) {
-    return superblocks;
-  }
-
-  const findChallengeIndex = (challengeOrder, id) =>
-    challengeOrder.findIndex(challenge => challenge.id === id);
-
-  const filterChallengeOrder = (challengeOrder, id) => {
-    const index = findChallengeIndex(challengeOrder, id);
-    if (index === -1) return [];
-
-    return challengeOrder.slice(index, index + 2);
-  };
-
-  return superblocks
-    .map(superblock => ({
-      ...superblock,
-      blocks: superblock.blocks
-        .map(block => ({
-          ...block,
-          challengeOrder: filterChallengeOrder(
-            block.challengeOrder,
-            challengeId
-          )
-        }))
-        .filter(
-          block => block.challengeOrder && block.challengeOrder.length > 0
-        )
-    }))
-    .filter(superblock => superblock.blocks.length > 0);
-}
-
-/**
- * Filters the superblocks array to only include blocks with the specified dashedName (block).
- * If no block is provided, returns the original superblocks array.
- *
- * @param {Array<Object>} superblocks - Array of superblock objects, each containing a blocks array.
- * @param {Object} [options] - Options object
- * @param {string} [options.block] - The dashedName of the block to filter for (in kebab case).
- * @returns {Array<Object>} Filtered array of superblocks containing only the specified block, or the original array if block is not provided.
- */
-function filterByBlock(superblocks, { block } = {}) {
-  if (!block) return superblocks;
-
-  return superblocks
-    .map(superblock => ({
-      ...superblock,
-      blocks: superblock.blocks.filter(({ dashedName }) => dashedName === block)
-    }))
-    .filter(superblock => superblock.blocks.length > 0);
-}
-
-/**
- * Filters the superblocks array to only include the superblock with the specified name.
- * If no superBlock is provided, returns the original superblocks array.
- *
- * @param {Array<Object>} superblocks - Array of superblock objects.
- * @param {Object} [options] - Options object
- * @param {string} [options.superBlock] - The name of the superblock to filter for.
- * @returns {Array<Object>} Filtered array of superblocks containing only the specified superblock, or the original array if superBlock is not provided.
- */
-function filterBySuperblock(superblocks, { superBlock } = {}) {
-  if (!superBlock) return superblocks;
-  return superblocks.filter(({ name }) => name === superBlock);
-}
-
-const createFilterPipeline = filterFunctions => (data, filters) =>
-  filterFunctions.reduce((acc, filterFn) => filterFn(acc, filters), data);
-
-const applyFilters = createFilterPipeline([
-  filterBySuperblock,
-  filterByBlock,
-  filterByChallengeId
-]);
-
 async function buildCurriculum(lang, filters) {
   const contentDir = getContentDir(lang);
   const builder = new SuperblockCreator({
@@ -460,8 +378,5 @@ module.exports = {
   getContentDir,
   getBlockCreator,
   createCommentMap,
-  buildSuperblockStructure,
-  filterByChallengeId,
-  filterByBlock,
-  filterBySuperblock
+  buildSuperblockStructure
 };
