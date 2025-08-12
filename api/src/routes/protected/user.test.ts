@@ -29,6 +29,14 @@ import { getMsTranscriptApiUrl } from './user';
 const mockedFetch = jest.fn();
 jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 
+jest.mock('../../utils/env', () => {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  return {
+    ...jest.requireActual('../../utils/env'),
+    DEPLOYMENT_ENV: 'production'
+  };
+});
+
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
   ...createUserInput(defaultUserEmail),
@@ -1334,6 +1342,13 @@ Thanks and regards,
             }
           );
         expect(tokens).toHaveLength(1);
+      });
+
+      xtest('TODO: POST does not generate a new token in non-production environments', async () => {
+        // TODO: How to change environment variable mid-test?
+        const response = await superPost('/user/exam-environment/token');
+
+        expect(response.status).toBe(403);
       });
     });
   });

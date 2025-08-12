@@ -529,7 +529,7 @@ async function examEnvironmentTokenHandler(
     void reply.code(403);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
-        'User not allowed to generate authorization token in this environment.'
+        `User not allowed to generate authorization token in ${DEPLOYMENT_ENV} environment.`
       )
     );
   }
