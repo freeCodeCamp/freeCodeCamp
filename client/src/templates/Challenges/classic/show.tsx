@@ -1,4 +1,4 @@
-import { graphql, navigate } from 'gatsby';
+import { graphql } from 'gatsby';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -254,8 +254,10 @@ function ShowClassic({
   const curLocation = useLocation();
   const [resizing, setResizing] = useState(false);
   const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
-  const [exitConfirmed, setExitConfirmed] = useState(false);
-  const [exitPathname, setExitPathname] = useState(blockHashSlug);
+  const exitConfirmed = useRef<boolean>(false);
+  const [exitPathname, setExitPathname] = useState<string>(
+    typeof blockHashSlug === 'string' ? blockHashSlug : ''
+  );
   const containerRef = useRef<HTMLElement>(null);
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const instructionsPanelRef = useRef<HTMLDivElement>(null);
@@ -474,26 +476,23 @@ function ShowClassic({
   };
 
   const handleExitClassicModalBtnClick = () => {
-    setExitConfirmed(true);
-    void navigate(exitPathname);
+    exitConfirmed.current = true;
+    void reachNavigate(exitPathname);
     closeExitClassicModal();
   };
 
-  const onWindowClose = useCallback(
-    (event: BeforeUnloadEvent) => {
-      event.preventDefault();
-      event.returnvalue = t('misc.navigation-warning');
-    },
-    [t]
-  );
+  const onWindowClose = useCallback((event: BeforeUnloadEvent) => {
+    event.preventDefault();
+  }, []);
 
   const onHistoryChange = useCallback(
     (targetPathname: string) => {
-      if (exitConfirmed) return;
+      if (exitConfirmed.current) return;
 
-      const newPathname = targetPathname.startsWith('/learn')
-        ? blockHashSlug
-        : targetPathname;
+      const newPathname =
+        targetPathname.startsWith('/learn') && typeof blockHashSlug === 'string'
+          ? blockHashSlug
+          : targetPathname;
 
       // Save the pathname of the page the user wants to navigate to before we block the navigation.
       setExitPathname(newPathname);

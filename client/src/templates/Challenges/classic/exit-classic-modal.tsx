@@ -13,8 +13,7 @@ interface ExitClassicModalProps {
 }
 
 const mapStateToProps = (state: unknown) => ({
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  isExitClassicModalOpen: isExitClassicModalOpenSelector(state)
+  isExitClassicModalOpen: isExitClassicModalOpenSelector(state) as boolean
 });
 
 const mapDispatchToProps = {
