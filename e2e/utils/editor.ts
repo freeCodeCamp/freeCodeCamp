@@ -1,9 +1,7 @@
 import { type Page } from '@playwright/test';
 
 export const getEditors = (page: Page) => {
-  return page.getByLabel(
-    'Editor content;Press Alt+F1 for Accessibility Options'
-  );
+  return page.getByRole('textbox', { name: /editor content/i });
 };
 
 export const focusEditor = async ({

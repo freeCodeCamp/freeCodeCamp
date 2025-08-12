@@ -186,7 +186,7 @@ Happy coding!
         }
       });
       const newEmail = req.body.email.toLowerCase();
-      const currentEmailFormatted = user.email.toLowerCase();
+      const currentEmailFormatted = user.email ? user.email.toLowerCase() : '';
       const isVerifiedEmail = user.emailVerified;
       const isOwnEmail = newEmail === currentEmailFormatted;
       if (isOwnEmail && isVerifiedEmail) {

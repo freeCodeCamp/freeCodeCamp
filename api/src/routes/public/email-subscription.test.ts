@@ -101,7 +101,7 @@ describe('Email Subscription endpoints', () => {
 
       expect(users).toHaveLength(4);
       users.forEach(user => {
-        if (['user1@freecodecamp.org'].includes(user.email)) {
+        if (['user1@freecodecamp.org'].includes(user.email!)) {
           expect(user.sendQuincyEmail).toBe(false);
         } else {
           expect(user.sendQuincyEmail).toBe(true);
@@ -148,7 +148,7 @@ describe('Email Subscription endpoints', () => {
       users.forEach(user => {
         if (
           ['user1@freecodecamp.org', 'user2@freecodecamp.org'].includes(
-            user.email
+            user.email!
           )
         ) {
           expect(user.sendQuincyEmail).toBe(false);

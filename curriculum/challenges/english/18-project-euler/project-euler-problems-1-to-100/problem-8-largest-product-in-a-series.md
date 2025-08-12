@@ -38,7 +38,7 @@ Find the `n` adjacent digits in the 1000-digit number that have the greatest pro
 `largestProductinaSeries(4)` should return a number.
 
 ```js
-assert(typeof largestProductinaSeries(4) === 'number');
+assert.isNumber(largestProductinaSeries(4));
 ```
 
 `largestProductinaSeries(4)` should return 5832.

@@ -48,10 +48,10 @@ import {
 import { isObjectID } from './utils/validation';
 import { getLogger } from './utils/logger';
 import {
-  examEnvironmentMultipartRoutes,
   examEnvironmentOpenRoutes,
   examEnvironmentValidatedTokenRoutes
 } from './exam-environment/routes/exam-environment';
+import { dailyCodingChallengeRoutes } from './daily-coding-challenge/routes/daily-coding-challenge';
 
 type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -81,7 +81,7 @@ ajv.addFormat('objectid', {
 });
 
 export const buildOptions = {
-  logger: getLogger(),
+  loggerInstance: process.env.NODE_ENV === 'test' ? undefined : getLogger(),
   genReqId: () => randomBytes(8).toString('hex'),
   disableRequestLogging: true
 };
@@ -166,7 +166,6 @@ export const build = async (
       // TODO: bounce unauthed requests before checking CSRF token. This will
       // mean moving csrfProtection into custom plugin and testing separately,
       // because it's a pain to mess around with other cookies/hook order.
-      // @ts-expect-error - @fastify/csrf-protection needs to update their types
       // eslint-disable-next-line @typescript-eslint/unbound-method
       fastify.addHook('onRequest', fastify.csrfProtection);
       fastify.addHook('onRequest', fastify.send401IfNoUser);
@@ -192,13 +191,16 @@ export const build = async (
       await fastify.register(protectedRoutes.settingRedirectRoutes);
     });
   });
+
+  // TODO: The route should not handle its own AuthZ
+  await fastify.register(protectedRoutes.challengeTokenRoutes);
+
   // Routes for signed out users:
   void fastify.register(async function (fastify) {
     fastify.addHook('onRequest', fastify.authorize);
     // TODO(Post-MVP): add the redirectIfSignedIn hook here, rather than in the
     // mobileAuth0Routes and authRoutes plugins.
     await fastify.register(publicRoutes.mobileAuth0Routes);
-    // TODO: consolidate with LOCAL_MOCK_AUTH
     if (FCC_ENABLE_DEV_LOGIN_MODE) {
       await fastify.register(publicRoutes.devAuthRoutes);
     } else {
@@ -211,7 +213,6 @@ export const build = async (
       fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
 
       void fastify.register(examEnvironmentValidatedTokenRoutes);
-      void fastify.register(examEnvironmentMultipartRoutes);
       done();
     });
     void fastify.register(examEnvironmentOpenRoutes);
@@ -229,6 +230,7 @@ export const build = async (
   void fastify.register(publicRoutes.deprecatedEndpoints);
   void fastify.register(publicRoutes.statusRoute);
   void fastify.register(publicRoutes.unsubscribeDeprecated);
+  void fastify.register(dailyCodingChallengeRoutes);
 
   return fastify;
 };

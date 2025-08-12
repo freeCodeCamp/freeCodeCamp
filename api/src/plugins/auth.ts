@@ -28,13 +28,26 @@ declare module 'fastify' {
 }
 
 const auth: FastifyPluginCallback = (fastify, _options, done) => {
+  const cookieOpts = {
+    httpOnly: true,
+    secure: true,
+    maxAge: 2592000 // thirty days in seconds
+  };
   fastify.decorateReply('setAccessTokenCookie', function (accessToken: Token) {
     const signedToken = jwt.sign({ accessToken }, JWT_SECRET);
-    void this.setCookie('jwt_access_token', signedToken, {
-      httpOnly: false,
-      secure: false,
-      maxAge: accessToken.ttl
-    });
+    void this.setCookie('jwt_access_token', signedToken, cookieOpts);
+  });
+
+  // update existing jwt_access_token cookie properties
+  fastify.addHook('onRequest', (req, reply, done) => {
+    const rawCookie = req.cookies['jwt_access_token'];
+    if (rawCookie) {
+      const jwtAccessToken = req.unsignCookie(rawCookie);
+      if (jwtAccessToken.valid) {
+        reply.setCookie('jwt_access_token', jwtAccessToken.value, cookieOpts);
+      }
+    }
+    done();
   });
 
   fastify.decorateRequest('accessDeniedMessage', null);
@@ -67,6 +80,11 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     };
 
     if (isExpired(accessToken)) return setAccessDenied(req, TOKEN_EXPIRED);
+    // We're using token.userId since it's possible for the user record to be
+    // malformed and for prisma to throw while trying to find the user.
+    fastify.Sentry?.setUser({
+      id: accessToken.userId
+    });
 
     const user = await fastify.prisma.user.findUnique({
       where: { id: accessToken.userId }
@@ -142,6 +160,12 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
         message: 'Token not found'
       };
     }
+    // We're using token.userId since it's possible for the user record to be
+    // malformed and for prisma to throw while trying to find the user.
+
+    fastify.Sentry?.setUser({
+      id: token.userId
+    });
 
     const user = await fastify.prisma.user.findUnique({
       where: { id: token.userId }

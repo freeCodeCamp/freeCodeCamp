@@ -2,7 +2,7 @@
   "name": "Testing Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-testing",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

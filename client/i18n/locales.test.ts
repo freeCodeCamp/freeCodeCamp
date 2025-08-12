@@ -1,7 +1,10 @@
 import fs from 'fs';
 import { setup } from 'jest-json-schema-extended';
 import { availableLangs, LangNames, LangCodes } from '../../shared/config/i18n';
-import { SuperBlocks } from '../../shared/config/curriculum';
+import {
+  catalogSuperBlocks,
+  SuperBlocks
+} from '../../shared/config/curriculum';
 import intro from './locales/english/intro.json';
 
 setup();
@@ -9,6 +12,7 @@ setup();
 interface Intro {
   [key: string]: {
     title: string;
+    summary?: string[];
     intro: string[];
     blocks: {
       [block: string]: {
@@ -74,6 +78,12 @@ describe('Intro file structure tests:', () => {
   const superblocks = Object.values(SuperBlocks);
   for (const superBlock of superblocks) {
     expect(typeof typedIntro[superBlock].title).toBe('string');
+
+    // catalog superblocks should have a summary
+    if (catalogSuperBlocks.includes(superBlock)) {
+      expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);
+    }
+
     expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);
     expect(typedIntro[superBlock].blocks).toBeInstanceOf(Object);
     const blocks = Object.keys(typedIntro[superBlock].blocks);

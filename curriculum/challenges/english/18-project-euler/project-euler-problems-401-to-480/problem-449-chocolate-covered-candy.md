@@ -8,9 +8,9 @@ dashedName: problem-449-chocolate-covered-candy
 
 # --description--
 
-Phil the confectioner is making a new batch of chocolate covered candy. Each candy centre is shaped like an ellipsoid of revolution defined by the equation: $b^2x^2 + b^2y^2 + a^2z^2 = a^2b^2$.
+Phil the confectioner is making a new batch of chocolate covered candy. Each candy center is shaped like an ellipsoid of revolution defined by the equation: $b^2x^2 + b^2y^2 + a^2z^2 = a^2b^2$.
 
-Phil wants to know how much chocolate is needed to cover one candy centre with a uniform coat of chocolate one millimeter thick.
+Phil wants to know how much chocolate is needed to cover one candy center with a uniform coat of chocolate one millimeter thick.
 
 If $a = 1$ mm and $b = 1$ mm, the amount of chocolate required is $\frac{28}{3} \pi$ mm<sup>3</sup>
 

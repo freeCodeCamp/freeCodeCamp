@@ -48,11 +48,7 @@ export const getSessionUser = {
           ),
           quizAttempts: Type.Array(
             Type.Object({
-              challengeId: Type.String({
-                format: 'objectid',
-                maxLength: 24,
-                minLength: 24
-              }),
+              challengeId: Type.String(),
               quizId: Type.String(),
               timestamp: Type.Number()
             })
@@ -100,7 +96,7 @@ export const getSessionUser = {
           partiallyCompletedChallenges: Type.Array(
             Type.Object({ id: Type.String(), completedDate: Type.Number() })
           ),
-          picture: Type.String(), // TODO(Post-MVP): format as url/uri?
+          picture: Type.String(),
           points: Type.Number(),
           portfolio: Type.Array(
             Type.Object({
@@ -121,6 +117,7 @@ export const getSessionUser = {
           joinDate: Type.String(),
           savedChallenges: Type.Optional(Type.Array(savedChallenge)),
           username: Type.String(),
+          usernameDisplay: Type.String(),
           userToken: Type.Optional(Type.String()),
           completedSurveys: Type.Array(
             Type.Object({

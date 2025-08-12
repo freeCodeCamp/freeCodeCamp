@@ -155,6 +155,19 @@ const indexData: IndexData[] = [
   }
 ];
 
+export async function checkCanConnectToDb(
+  prisma: FastifyTestInstance['prisma']
+): Promise<void> {
+  const countP = prisma.user.count();
+  const delayedRejection = new Promise((_resolve, reject) =>
+    setTimeout(
+      () => reject(Error('unable to connect to Mongodb (timeout)')),
+      1000
+    )
+  );
+  await Promise.race([countP, delayedRejection]);
+}
+
 export function setupServer(): void {
   let fastify: FastifyTestInstance;
   beforeAll(async () => {
@@ -164,6 +177,8 @@ export function setupServer(): void {
     }
     fastify = await build(buildOptions);
     await fastify.ready();
+
+    await checkCanConnectToDb(fastify.prisma);
 
     // Prisma does not support TTL indexes in the schema yet, so, to avoid
     // conflicts with the TTL index in the sessions collection, we need to
@@ -206,6 +221,10 @@ export const resetDefaultUser = async (): Promise<void> => {
       where: { userId: defaultUserId }
     }
   );
+  await fastifyTestInstance.prisma.user.deleteMany({
+    where: { id: defaultUserId }
+  });
+
   await fastifyTestInstance.prisma.user.deleteMany({
     where: { email: defaultUserEmail }
   });

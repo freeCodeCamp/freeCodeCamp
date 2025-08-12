@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TopContibutorBadgeEmblem(
+function TopContributorBadgeEmblem(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   return (
@@ -419,6 +419,6 @@ function TopContibutorBadgeEmblem(
   );
 }
 
-TopContibutorBadgeEmblem.displayName = 'TopContibutorBadgeEmblem';
+TopContributorBadgeEmblem.displayName = 'TopContributorBadgeEmblem';
 
-export default TopContibutorBadgeEmblem;
+export default TopContributorBadgeEmblem;

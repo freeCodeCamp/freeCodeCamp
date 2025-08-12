@@ -30,6 +30,8 @@ export enum Certification {
   A2English = 'a2-english-for-developers-v8',
   B1English = 'b1-english-for-developers-v8',
   A2Spanish = 'a2-professional-spanish-v8',
+  A2Chinese = 'a2-professional-chinese-v8',
+  A1Chinese = 'a1-professional-chinese-v8',
   // Legacy certifications
   LegacyFrontEnd = 'legacy-front-end',
   JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
@@ -79,7 +81,9 @@ export const upcomingCertifications = [
   Certification.FullStackDeveloper,
   Certification.A2English,
   Certification.B1English,
-  Certification.A2Spanish
+  Certification.A2Spanish,
+  Certification.A2Chinese,
+  Certification.A1Chinese
 ] as const;
 
 export const certTypes = {
@@ -273,11 +277,16 @@ export const superBlockToCertMap: {
   [SuperBlocks.A2English]: Certification.A2English,
   [SuperBlocks.B1English]: Certification.B1English,
   [SuperBlocks.A2Spanish]: Certification.A2Spanish,
+  [SuperBlocks.A2Chinese]: Certification.A2Chinese,
+  [SuperBlocks.A1Chinese]: Certification.A1Chinese,
   [SuperBlocks.PythonForEverybody]: null,
   [SuperBlocks.CodingInterviewPrep]: null,
   [SuperBlocks.ProjectEuler]: null,
   [SuperBlocks.TheOdinProject]: null,
-  [SuperBlocks.RosettaCode]: null
+  [SuperBlocks.RosettaCode]: null,
+  [SuperBlocks.BasicHtml]: null,
+  [SuperBlocks.SemanticHtml]: null,
+  [SuperBlocks.DevPlayground]: null
 };
 
 export type CertSlug = (typeof Certification)[keyof typeof Certification];
@@ -305,7 +314,9 @@ export const linkedInCredentialIds = {
   [Certification.JsAlgoDataStructNew]: 'jaads',
   [Certification.A2English]: 'a2efd',
   [Certification.B1English]: 'b1efd',
-  [Certification.A2Spanish]: 'a2ps'
+  [Certification.A2Spanish]: 'a2ps',
+  [Certification.A2Chinese]: 'a2pc',
+  [Certification.A1Chinese]: 'a1pc'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';

@@ -107,7 +107,7 @@ describe('auth0 plugin', () => {
       });
 
       expect(res.headers.location).toMatch(
-        `${HOME_LOCATION}/learn?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+        `${HOME_LOCATION}/?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
       );
       expect(res.statusCode).toBe(302);
     });
@@ -119,7 +119,7 @@ describe('auth0 plugin', () => {
       });
 
       expect(res.headers.location).toMatch(
-        `${HOME_LOCATION}/learn?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+        `${HOME_LOCATION}/?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
       );
       expect(res.statusCode).toBe(302);
     });
@@ -134,6 +134,33 @@ describe('auth0 plugin', () => {
       expect(fastify.log.error).toHaveBeenCalledWith(
         'Auth failed: invalid state'
       );
+      expect(res.statusCode).toBe(302);
+    });
+
+    it('should log expected Auth0 errors', async () => {
+      jest.spyOn(fastify.log, 'error');
+      const auth0Error = Error('Response Error: 403 Forbidden');
+      // @ts-expect-error - mocking a hapi/boom error
+      auth0Error.data = {
+        payload: {
+          error: 'invalid_grant'
+        }
+      };
+
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
+        auth0Error
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=invalid'
+      });
+
+      expect(fastify.log.error).toHaveBeenCalledWith(
+        auth0Error,
+        'Auth failed: invalid_grant'
+      );
+
       expect(res.statusCode).toBe(302);
     });
 
@@ -181,13 +208,18 @@ describe('auth0 plugin', () => {
         token: 'any token'
       });
       userinfoSpy.mockResolvedValueOnce(Promise.reject(Error('any error')));
+      const returnTo = 'https://www.freecodecamp.org/espanol/learn';
 
       const res = await fastify.inject({
         method: 'GET',
-        url: '/auth/auth0/callback?state=valid'
+        url: '/auth/auth0/callback?state=valid',
+        cookies: { 'login-returnto': sign(returnTo) }
       });
 
-      expect(res.headers.location).toMatch('/signin');
+      expect(res.headers.location).toMatch(
+        returnTo +
+          `?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+      );
       expect(res.statusCode).toBe(302);
       expect(await fastify.prisma.user.count()).toBe(0);
     });
@@ -197,13 +229,18 @@ describe('auth0 plugin', () => {
         token: 'any token'
       });
       userinfoSpy.mockResolvedValueOnce(Promise.resolve({}));
+      const returnTo = 'https://www.freecodecamp.org/espanol/learn';
 
       const res = await fastify.inject({
         method: 'GET',
-        url: '/auth/auth0/callback?state=valid'
+        url: '/auth/auth0/callback?state=valid',
+        cookies: { 'login-returnto': sign(returnTo) }
       });
 
-      expect(res.headers.location).toMatch('/signin');
+      expect(res.headers.location).toMatch(
+        returnTo +
+          `?${formatMessage({ type: 'danger', content: 'flash.no-email-in-userinfo' })}`
+      );
       expect(res.statusCode).toBe(302);
       expect(await fastify.prisma.user.count()).toBe(0);
     });

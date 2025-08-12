@@ -25,6 +25,7 @@ interface InsertTextParameters {
   containerId?: string;
   isMobile: boolean;
   text: string;
+  updatesConsole?: boolean;
 }
 
 const replaceTextInCodeEditor = async ({
@@ -32,12 +33,20 @@ const replaceTextInCodeEditor = async ({
   browserName,
   isMobile,
   text,
-  containerId = 'editor-container-indexhtml'
+  containerId = 'editor-container-indexhtml',
+  updatesConsole = false
 }: InsertTextParameters) => {
   await expect(async () => {
     await clearEditor({ page, browserName, isMobile });
     await getEditors(page).fill(text);
     await expect(page.getByTestId(containerId)).toContainText(text);
+    if (updatesConsole) {
+      await expect(
+        page.getByRole('region', {
+          name: translations.learn['editor-tabs'].console
+        })
+      ).not.toContainText('Your test output will go here');
+    }
   }).toPass();
 };
 
@@ -151,7 +160,8 @@ test.describe('Challenge Output Component Tests', () => {
       page,
       isMobile,
       text: 'var',
-      containerId: 'editor-container-scriptjs'
+      containerId: 'editor-container-scriptjs',
+      updatesConsole: true
     });
 
     if (isMobile) {
@@ -165,20 +175,19 @@ test.describe('Challenge Output Component Tests', () => {
     ).toHaveText(outputTexts.syntaxError);
   });
 
-  test('should contain reference error output when var is entered in editor', async ({
+  test('should contain a reference error when an undefined var is entered in editor', async ({
     browserName,
     page,
     isMobile
   }) => {
-    const referenceErrorRegex =
-      /ReferenceError: (myName is not defined|Can't find variable: myName)/;
     await focusEditor({ page, isMobile });
     await replaceTextInCodeEditor({
       browserName,
       page,
       isMobile,
       text: 'myName',
-      containerId: 'editor-container-scriptjs'
+      containerId: 'editor-container-scriptjs',
+      updatesConsole: true
     });
 
     if (isMobile) {
@@ -189,7 +198,7 @@ test.describe('Challenge Output Component Tests', () => {
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
       })
-    ).toHaveText(referenceErrorRegex);
+    ).toContainText('ReferenceError: myName is not defined');
   });
 
   test('should contain final output after test fail', async ({
@@ -216,7 +225,8 @@ test.describe('Challenge Output Component Tests', () => {
       page,
       isMobile,
       text: 'var myName;',
-      containerId: 'editor-container-scriptjs'
+      containerId: 'editor-container-scriptjs',
+      updatesConsole: true
     });
     await runChallengeTest(page, isMobile);
     await closeButton.click();
@@ -284,7 +294,7 @@ test.describe('Custom output for Set and Map', () => {
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
       })
-    ).toContainText('Set(3) {1, set, 10}');
+    ).toContainText(`Set(3) {1, 'set', 10}`);
 
     await focusEditor({ page, isMobile });
     await replaceTextInCodeEditor({
@@ -303,6 +313,6 @@ test.describe('Custom output for Set and Map', () => {
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
       })
-    ).toContainText('Map(2) {1 => one, two => 2}');
+    ).toContainText(`Map(2) {1 => 'one', 'two' => 2}`);
   });
 });

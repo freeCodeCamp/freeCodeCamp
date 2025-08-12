@@ -29,7 +29,7 @@ Find the ${2011}^{\text{th}}$ lexicographic maximix arrangement for eleven carri
 `maximixArrangements()` should return a string.
 
 ```js
-assert(typeof maximixArrangements() === 'string');
+asset.isString(maximixArrangements());
 ```
 
 `maximixArrangements()` should return the string `CAGBIHEFJDK`.

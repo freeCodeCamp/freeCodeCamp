@@ -1,6 +1,6 @@
 ---
 id: 5900f4751000cf542c50ff87
-title: 'Problem 264: Triangle Centres'
+title: 'Problem 264: Triangle Centers'
 challengeType: 1
 forumTopicId: 301913
 dashedName: problem-264-triangle-centres
@@ -11,8 +11,8 @@ dashedName: problem-264-triangle-centres
 Consider all the triangles having:
 
 - All their vertices on lattice points.
-- Circumcentre at the origin O.
-- Orthocentre at the point H(5, 0).
+- Circumcenter at the origin O.
+- Orthocenter at the point H(5, 0).
 
 There are nine such triangles having a $\text{perimeter} ≤ 50$.
 
@@ -45,10 +45,10 @@ Find all such triangles with a $\text{perimeter} ≤ {10}^5$. Enter as your answ
 
 # --hints--
 
-`triangleCentres()` should return `2816417.1055`.
+`triangleCenters()` should return `2816417.1055`.
 
 ```js
-assert.strictEqual(triangleCentres(), 2816417.1055);
+assert.strictEqual(triangleCenters(), 2816417.1055);
 ```
 
 # --seed--
@@ -56,12 +56,12 @@ assert.strictEqual(triangleCentres(), 2816417.1055);
 ## --seed-contents--
 
 ```js
-function triangleCentres() {
+function triangleCenters() {
 
   return true;
 }
 
-triangleCentres();
+triangleCenters();
 ```
 
 # --solutions--

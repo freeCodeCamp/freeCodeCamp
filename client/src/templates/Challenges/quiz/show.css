@@ -9,3 +9,15 @@
 .quiz-challenge-container div[role='radiogroup'] label p:last-child {
   margin-bottom: 0;
 }
+
+/* Quiz question text and option text have the <p> tag removed
+   so the HTML can be semantically correct. 
+   This also removes the `p` styles that the text should have,
+   so we need to clone the CSS of the `p` element here. */
+.quiz-question-label,
+.quiz-answer-label {
+  line-height: 1.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 0 0 1.2rem;
+}

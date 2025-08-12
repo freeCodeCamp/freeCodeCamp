@@ -150,7 +150,6 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         'unsubscribeId',
         'donationEmails',
         'externalId',
-        'usernameDisplay',
         'isBanned'
       ]);
 
@@ -166,7 +165,8 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
               [user.username]: {
                 isLocked: true,
                 profileUI: normalizedProfileUI,
-                username: user.username
+                username: user.username,
+                usernameDisplay: user.usernameDisplay || user.username
               }
             }
           },
@@ -191,12 +191,14 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           ...removeNulls(publicUser),
           ...normalizeFlags(flags),
           ...sharedUser,
+          picture: user.picture ?? '',
           profileUI: normalizedProfileUI,
           // TODO: should this always be returned? Shouldn't some privacy
           // setting control it? Same applies to website, githubProfile,
           // and linkedin.
           twitter: normalizeTwitter(user.twitter),
-          yearsTopContributor: user.yearsTopContributor
+          yearsTopContributor: user.yearsTopContributor,
+          usernameDisplay: user.usernameDisplay || user.username
         };
         return reply.send({
           // TODO(Post-MVP): just return a user object (i.e. returnedUser) and

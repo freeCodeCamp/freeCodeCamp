@@ -8,7 +8,7 @@ import { join } from 'path';
 
 const CURRICULUM_PATH = '../../../shared/config/curriculum.json';
 
-// Curriculum is read using fs, because it is too large for VSCode's LSP to handle type inference which causes anoying behaviour.
+// Curriculum is read using fs, because it is too large for VSCode's LSP to handle type inference which causes annoying behavior.
 const curriculum = JSON.parse(
   readFileSync(join(__dirname, CURRICULUM_PATH), 'utf-8')
 ) as Curriculum;

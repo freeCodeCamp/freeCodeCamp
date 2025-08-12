@@ -71,8 +71,8 @@ The `figcaption` element should have the text `Cats hate other cats.` You have o
 assert.match(
   document
     .querySelectorAll('figcaption')[1]
-    ?.innerText.toLowerCase(),
-    /Cats hate other cats\.?$/i
+    ?.innerText?.trim().replace(/\s+/g, ' ').toLowerCase(),
+    /^Cats hate other cats\.?$/i
 );
 ```
 

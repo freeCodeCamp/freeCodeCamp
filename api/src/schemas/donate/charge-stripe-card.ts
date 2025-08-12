@@ -30,6 +30,12 @@ export const chargeStripeCard = {
         client_secret: Type.Optional(Type.String())
       })
     }),
+    403: Type.Object({
+      error: Type.Object({
+        message: Type.String(),
+        type: Type.Literal('EmailRequiredError')
+      })
+    }),
     500: Type.Object({
       error: Type.Literal('Donation failed due to a server error.')
     })

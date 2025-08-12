@@ -1,18 +1,11 @@
 ---
 id: 67329fbcfaf5ff5cdaa38a42
 title: What Is the var Keyword, and Why Is It No Longer Suggested to Use It?
-challengeType: 11
-videoId: Ae4bq5IcDfI
+challengeType: 19
 dashedName: what-is-the-var-keyword-and-why-is-it-no-longer-suggested-to-use-it
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
-
-What is the `var` keyword and why is it no longer suggested to use it?
 
 The `var` keyword in JavaScript is one of the original ways to declare variables. It has been part of the language since its inception and for many years it remained the primary method for creating variables. However as JavaScript evolved and developers gained more experience with the language, certain drawbacks of using `var` became apparent leading to the introduction of `let` and `const` in 2015.
 
@@ -30,13 +23,13 @@ var num = 10;
 The most significant issue with `var` is its lack of block scoping. Variables declared with `var` inside a block like an `if` statement or a `for` loop are still accessible outside that block. 
 
 ```js
-if (true){
+if (true) {
   var num = 5;
 }
 console.log(num); // 5
 ```
 
-This behaviour can lead to unintended variable leaks and make your code more prone to bugs.
+This behavior can lead to unintended variable leaks and make your code more prone to bugs.
 
 Due to this issues, modern JavaScript development has largely moved away from `var` in favor of `let` and `const`. These keywords provide block scoping which aligns more closely with how scoping works in many other programming languages.
 

@@ -1,0 +1,11 @@
+{
+  "name": "Design a Sum All Numbers Algorithm",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "blockType": "lab",
+  "blockLayout": "link",
+  "dashedName": "lab-sum-all-numbers-algorithm",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "a3566b1109230028080c9345", "title": "Design a Sum All Numbers Algorithm" }],
+  "helpCategory": "JavaScript"
+}

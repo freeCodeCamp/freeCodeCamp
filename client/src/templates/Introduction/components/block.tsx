@@ -1,5 +1,5 @@
 import React, { Component, ReactNode } from 'react';
-import type { DefaultTFuncReturn, TFunction } from 'i18next';
+import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -121,12 +121,9 @@ class Block extends Component<BlockProps> {
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock);
 
     const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
-    // the real type of TFunction is the type below, because intro can be an array of strings
-    // type RealTypeOFTFunction = TFunction & ((key: string) => string[]);
-    // But changing the type will require refactoring that isn't worth it for a wrong type.
-    const blockIntroArr = t<string, DefaultTFuncReturn & string[]>(
-      `intro:${superBlock}.blocks.${block}.intro`
-    );
+    const blockIntroArr = t(`intro:${superBlock}.blocks.${block}.intro`, {
+      returnObjects: true
+    }) as string[];
     const expandText = t('intro:misc-text.expand');
     const collapseText = t('intro:misc-text.collapse');
 

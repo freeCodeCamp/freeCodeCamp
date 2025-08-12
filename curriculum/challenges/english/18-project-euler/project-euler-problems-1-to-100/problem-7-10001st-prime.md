@@ -17,7 +17,7 @@ What is the `n`th prime number?
 `nthPrime(6)` should return a number.
 
 ```js
-assert(typeof nthPrime(6) === 'number');
+assert.isNumber(nthPrime(6));
 ```
 
 `nthPrime(6)` should return 13.

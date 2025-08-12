@@ -2,7 +2,7 @@
   "name": "Web Performance Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-web-performance",
   "superBlock": "full-stack-developer",
   "challengeOrder": [
