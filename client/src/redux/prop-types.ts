@@ -184,6 +184,7 @@ export type ChallengeNode = {
     demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
+    interactiveFiles?: ChallengeFiles;
     explanation: string;
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
