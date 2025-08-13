@@ -4417,7 +4417,7 @@
         "title": "Data Structures Review",
         "intro": [
           "Before you're quizzed on data structures, you should review what you've learned about them.",
-          "[Add more details]"
+          "Open up this page to review concepts like the different data structures, algorithms, time and space complexity, and big O notation."
         ]
       },
       "quiz-data-structures": {
