@@ -97,7 +97,10 @@ async function createProject(projectArgs: CreateProjectArgs) {
     // TODO: remove once we stop relying on markdown in the client.
   }
 
-  if (projectArgs.blockType == null) {
+  if (
+    (projectArgs.superBlock === SuperBlocks.FullStackDeveloper &&
+      projectArgs.blockType) == null
+  ) {
     throw new Error('Missing argument: blockType when updating intro markdown');
   }
 
@@ -214,7 +217,7 @@ async function createIntroMD(
   superBlock: string,
   block: string,
   title: string,
-  blockType: string
+  blockType?: string
 ) {
   const introMD = `---
 title: Introduction to the ${title}
