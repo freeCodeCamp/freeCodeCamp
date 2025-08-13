@@ -1290,6 +1290,10 @@ Thanks and regards,
         mockDeploymentEnv = 'production';
       });
 
+      afterAll(() => {
+        mockDeploymentEnv = 'staging';
+      });
+
       afterEach(async () => {
         await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.deleteMany(
           {
