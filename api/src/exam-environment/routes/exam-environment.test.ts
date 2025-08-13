@@ -20,7 +20,8 @@ jest.mock('../../utils/env', () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
     ...jest.requireActual('../../utils/env'),
-    FCC_ENABLE_EXAM_ENVIRONMENT: 'true'
+    FCC_ENABLE_EXAM_ENVIRONMENT: 'true',
+    DEPLOYMENT_ENV: 'production'
   };
 });
 

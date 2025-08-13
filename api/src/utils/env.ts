@@ -47,6 +47,7 @@ If so, ensure that the environment variable JEST_WORKER_ID is set.`
 
 assert.ok(process.env.HOME_LOCATION);
 assert.ok(isAllowedEnv(_FREECODECAMP_NODE_ENV));
+assert.ok(process.env.DEPLOYMENT_ENV);
 assert.ok(isAllowedProvider(_EMAIL_PROVIDER));
 assert.ok(process.env.AUTH0_CLIENT_ID);
 assert.ok(process.env.AUTH0_CLIENT_SECRET);
@@ -191,6 +192,7 @@ export const FCC_ENABLE_SENTRY_ROUTES = undefinedOrBool(
   process.env.FCC_ENABLE_SENTRY_ROUTES
 );
 export const FREECODECAMP_NODE_ENV = _FREECODECAMP_NODE_ENV;
+export const DEPLOYMENT_ENV = process.env.DEPLOYMENT_ENV;
 export const SENTRY_DSN =
   process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
     ? ''
