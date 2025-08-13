@@ -29,11 +29,16 @@ import { getMsTranscriptApiUrl } from './user';
 const mockedFetch = jest.fn();
 jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 
+let mockDeploymentEnv = 'staging';
 jest.mock('../../utils/env', () => {
+  const actualEnv = jest.requireActual('../../utils/env');
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
-    ...jest.requireActual('../../utils/env'),
-    DEPLOYMENT_ENV: 'production'
+    ...actualEnv,
+    get DEPLOYMENT_ENV() {
+      return mockDeploymentEnv;
+    },
+    JWT_SECRET: actualEnv.JWT_SECRET
   };
 });
 
@@ -1281,6 +1286,10 @@ Thanks and regards,
     });
 
     describe('/user/exam-environment/token', () => {
+      beforeEach(() => {
+        mockDeploymentEnv = 'production';
+      });
+
       afterEach(async () => {
         await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.deleteMany(
           {
@@ -1344,11 +1353,42 @@ Thanks and regards,
         expect(tokens).toHaveLength(1);
       });
 
-      xtest('TODO: POST does not generate a new token in non-production environments', async () => {
-        // TODO: How to change environment variable mid-test?
+      test('POST does not generate a new token in non-production environments for non-staff', async () => {
+        // Override deployment environment for this test
+        mockDeploymentEnv = 'development';
         const response = await superPost('/user/exam-environment/token');
-
         expect(response.status).toBe(403);
+      });
+
+      test('POST does generate a new token in non-production environments for staff', async () => {
+        // Override deployment environment for this test
+        mockDeploymentEnv = 'staging';
+        await fastifyTestInstance.prisma.user.update({
+          where: {
+            id: defaultUserId
+          },
+          data: { email: 'camperbot@freecodecamp.org' }
+        });
+
+        const response = await superPost('/user/exam-environment/token');
+        const { examEnvironmentAuthorizationToken } = response.body;
+
+        const decodedToken = jwt.decode(examEnvironmentAuthorizationToken);
+
+        expect(decodedToken).toStrictEqual({
+          examEnvironmentAuthorizationToken:
+            expect.stringMatching(/^[a-z0-9]{24}$/),
+          iat: expect.any(Number)
+        });
+
+        expect(() =>
+          jwt.verify(examEnvironmentAuthorizationToken, 'wrong-secret')
+        ).toThrow();
+        expect(() =>
+          jwt.verify(examEnvironmentAuthorizationToken, JWT_SECRET)
+        ).not.toThrow();
+
+        expect(response.status).toBe(201);
       });
     });
   });
