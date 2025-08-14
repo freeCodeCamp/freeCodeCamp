@@ -434,7 +434,7 @@ Which of the following is NOT an array method?
 
 #### --answer--
 
-`keys()`
+`trim()`
 
 ### --question--
 
