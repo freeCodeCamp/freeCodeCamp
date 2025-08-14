@@ -12,12 +12,14 @@ type FlashProps = {
   removeFlashMessage: typeof removeFlashMessage;
 };
 
-function pathToAccessor(path: string): ($: { [x: string]: unknown }) => string;
-function pathToAccessor(path: string): unknown {
+function pathToAccessor(path: string) {
   return ($: unknown) =>
     path
       .split('.')
-      .reduce((acc, cur) => (acc as { [x: string]: unknown })[cur], $);
+      .reduce(
+        (acc, cur) => (acc as { [x: string]: unknown })[cur],
+        $
+      ) as string;
 }
 
 function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
