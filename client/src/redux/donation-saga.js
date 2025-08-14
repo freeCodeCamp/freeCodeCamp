@@ -179,17 +179,14 @@ function* stripeCardErrorHandler(
   }
 }
 
-export function* setDonationCookie() {
-  if (document?.cookie) {
-    const isDonating = yield select(isDonatingSelector);
-    const isDonorCookieSet = document.cookie
-      .split(';')
-      .some(item => item.trim().startsWith('isDonor=true'));
-    if (isDonating) {
-      if (!isDonorCookieSet) {
-        document.cookie = 'isDonor=true';
-      }
-    }
+export function* setDonationCookieIfDonating() {
+  const isDonating = yield select(isDonatingSelector);
+  if (isDonating) setDonationCookie();
+}
+
+export function setDonationCookie() {
+  if (document) {
+    document.cookie = 'isDonor=true';
   }
 }
 
@@ -211,7 +208,7 @@ export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
     takeLeading(types.postCharge, postChargeSaga),
-    takeEvery(types.fetchUserComplete, setDonationCookie),
+    takeEvery(types.fetchUserComplete, setDonationCookieIfDonating),
     takeLeading(types.updateCard, updateCardSaga)
   ];
 }
