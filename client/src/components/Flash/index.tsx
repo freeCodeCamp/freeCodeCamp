@@ -12,8 +12,12 @@ type FlashProps = {
   removeFlashMessage: typeof removeFlashMessage;
 };
 
-function pathToAccessor(path: string) {
-  return ($: any) => path.split('.').reduce((acc, cur) => acc[cur], $)
+function pathToAccessor(path: string): ($: { [x: string]: unknown }) => string;
+function pathToAccessor(path: string): unknown {
+  return ($: unknown) =>
+    path
+      .split('.')
+      .reduce((acc, cur) => (acc as { [x: string]: unknown })[cur], $);
 }
 
 function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
@@ -39,8 +43,8 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
           data-playwright-test-label='flash-message'
         >
           {/**
-            * TODO: @ahrjarrett add a test for this
-            */}
+           * TODO: @ahrjarrett add a test for this
+           */}
           {t(pathToAccessor(message), variables)}
           <CloseButton
             onClick={handleClose}
