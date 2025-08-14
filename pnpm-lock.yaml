@@ -482,8 +482,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(react@17.0.2)
       react-i18next:
-        specifier: github:i18next/react-i18next#d62bd88
-        version: https://codeload.github.com/i18next/react-i18next/tar.gz/d62bd88(i18next@https://codeload.github.com/i18next/i18next/tar.gz/1180100(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)
+        specifier: github:i18next/react-i18next#56331b7
+        version: https://codeload.github.com/i18next/react-i18next/tar.gz/56331b7(i18next@https://codeload.github.com/i18next/i18next/tar.gz/1180100(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)
       react-instantsearch:
         specifier: 7.13.6
         version: 7.13.6(algoliasearch@4.22.1)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -11474,8 +11474,8 @@ packages:
     peerDependencies:
       react: '>= 0.14.0'
 
-  react-i18next@https://codeload.github.com/i18next/react-i18next/tar.gz/d62bd88:
-    resolution: {tarball: https://codeload.github.com/i18next/react-i18next/tar.gz/d62bd88}
+  react-i18next@https://codeload.github.com/i18next/react-i18next/tar.gz/56331b7:
+    resolution: {tarball: https://codeload.github.com/i18next/react-i18next/tar.gz/56331b7}
     version: 15.6.1
     peerDependencies:
       i18next: '>= 23.2.3'
@@ -28497,7 +28497,7 @@ snapshots:
       prop-types: 15.8.1
       react: 17.0.2
 
-  react-i18next@https://codeload.github.com/i18next/react-i18next/tar.gz/d62bd88(i18next@https://codeload.github.com/i18next/i18next/tar.gz/1180100(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2):
+  react-i18next@https://codeload.github.com/i18next/react-i18next/tar.gz/56331b7(i18next@https://codeload.github.com/i18next/i18next/tar.gz/1180100(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2):
     dependencies:
       '@babel/runtime': 7.28.2
       html-parse-stringify: 3.0.1

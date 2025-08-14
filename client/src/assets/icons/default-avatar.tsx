@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 function DefaultAvatar(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
-  const { t } = useTranslation();
+  const { t } = useTranslation('translations');
 
   return (
     <svg
@@ -18,7 +18,7 @@ function DefaultAvatar(
       {...props}
     >
       <title>{t($ => $.icons.avatar)}</title>
-      <desc>{t($ => $.icons["avatar-2"])}</desc>
+      <desc>{t($ => $.icons['avatar-2'])}</desc>
       <g fill='none' fillRule='evenodd'>
         <g id='g'>
           <rect fill='#D0D0D5' height='500' width='500' />
