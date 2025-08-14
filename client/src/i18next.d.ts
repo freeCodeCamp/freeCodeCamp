@@ -15,7 +15,7 @@ declare module 'i18next' {
     returnNull: false;
     resources: {
       intro: typeof intro;
-      lints: typeof links;
+      links: typeof links;
       metaTags: typeof metaTags;
       motivation: typeof motivation;
       searchBar: typeof searchBar;
