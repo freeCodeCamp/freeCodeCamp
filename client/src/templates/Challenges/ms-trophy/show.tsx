@@ -153,15 +153,15 @@ function MsTrophy(props: MsTrophyProps) {
     t
   } = props;
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
+  const blockNameTitle = `${t($ =>
+    $[superBlock].blocks[block].title, { ns: 'intro' }
   )} - ${title}`;
 
   return (
     <Hotkeys containerRef={container}>
       <LearnLayout>
         <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          title={`${blockNameTitle} | ${t($ => $.learn.learn)} | freeCodeCamp.org`}
         />
         <Container>
           <Row>
@@ -187,7 +187,7 @@ function MsTrophy(props: MsTrophyProps) {
                 disabled={!msUsername || isProcessing}
                 onClick={handleSubmit}
               >
-                {t('buttons.verify-trophy')}
+                {t($ => $.buttons['verify-trophy'])}
               </Button>
               <Spacer size='xxs' />
               <Button
@@ -196,7 +196,7 @@ function MsTrophy(props: MsTrophyProps) {
                 data-playwright-test-label='ask-for-help-button'
                 onClick={openHelpModal}
               >
-                {t('buttons.ask-for-help')}
+                {t($ => $.buttons['ask-for-help'])}
               </Button>
               <br />
               <Spacer size='m' />

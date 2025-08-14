@@ -19,7 +19,7 @@ const SearchBarFooter = ({
   onMouseLeave
 }: SearchBarFooterProps) => {
   const { t } = useTranslation();
-  const title = t('search.no-results');
+  const title = t($ => $.search["no-results"]);
 
   if (!query) {
     return null;
@@ -38,7 +38,7 @@ const SearchBarFooter = ({
         target='_blank'
       >
         <span className='hit-name'>
-          {t('search.see-results', { searchQuery: query })}
+          {t($ => $.search["see-results"], { searchQuery: query })}
         </span>
       </a>
     </li>

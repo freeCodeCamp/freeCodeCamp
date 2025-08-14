@@ -17,7 +17,7 @@ const iconsList = [CommunityIcon, FreeIcon, CapIcon, CurriculumIcon];
 
 const Benefits = (): JSX.Element => {
   const { t } = useTranslation();
-  const benefitItems = t('landing.benefits.list', {
+  const benefitItems = t($ => $.landing.benefits.list, {
     returnObjects: true
   }) as BenefitsItem[];
 
@@ -27,7 +27,7 @@ const Benefits = (): JSX.Element => {
         <Row>
           <Col xs={12}>
             <h2 className='big-heading text-center'>
-              {t('landing.benefits.heading')}
+              {t($ => $.landing.benefits.heading)}
             </h2>
           </Col>
         </Row>
@@ -54,7 +54,7 @@ const Benefits = (): JSX.Element => {
         <Row>
           <Col xs={12}>
             <Spacer size='m' />
-            <BigCallToAction text={t('landing.benefits.cta')} />
+            <BigCallToAction text={t($ => $.landing.benefits.cta)} />
           </Col>
         </Row>
       </Container>

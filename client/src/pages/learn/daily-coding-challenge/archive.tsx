@@ -20,7 +20,7 @@ function Archive(): JSX.Element {
         <Col md={12} sm={12} xs={12}>
           <Spacer size='l' />
           <h1 className='text-center big-heading'>
-            {t('daily-coding-challenges.title')}
+            {t($ => $["daily-coding-challenges"].title)}
           </h1>
           <Spacer size='m' />
           <DailyCodingChallengeIcon className='cert-header-icon' />

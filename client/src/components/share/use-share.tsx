@@ -34,7 +34,7 @@ export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
   const { t } = useTranslation();
   const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomainURL}/${superBlock}/${hastag}${block}`;
 
-  const i18nSupportedBlock = t(`intro:${superBlock}.blocks.${block}.title`);
+  const i18nSupportedBlock = t($ => $[superBlock].blocks[block].title, { ns: "intro" });
 
   const tweetMessage = `I${space}have${space}completed${space}${i18nSupportedBlock}${space}${hastag}freecodecamp`;
   const xRedirectURL = `https://${twitterData.domain}/${twitterData.action}?original_referer=${twitterData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;

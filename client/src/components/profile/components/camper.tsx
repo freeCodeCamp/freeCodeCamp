@@ -40,7 +40,7 @@ function Camper({
       {((isDonating && showDonation) || isTopContributor) && (
         <FullWidthRow>
           <section className='card'>
-            <h2>{t('profile.badges')}</h2>
+            <h2>{t($ => $.profile.badges)}</h2>
             <div className='badge-card-container'>
               {isDonating && (
                 <div className='badge-card'>
@@ -48,8 +48,8 @@ function Camper({
                     <SupporterBadgeEmblem />
                   </div>
                   <div className='badge-card-description'>
-                    <h3>{t('profile.supporter')}</h3>
-                    <p>{t('profile.donated')}</p>
+                    <h3>{t($ => $.profile.supporter)}</h3>
+                    <p>{t($ => $.profile.donated)}</p>
                   </div>
                 </div>
               )}
@@ -59,9 +59,9 @@ function Camper({
                     <TopContributorBadgeEmblem />
                   </div>
                   <div className='badge-card-description'>
-                    <h3>{t('profile.contributor')}</h3>
+                    <h3>{t($ => $.profile.contributor)}</h3>
                     <p>
-                      {t('profile.contributor-prolific', {
+                      {t($ => $.profile["contributor-prolific"], {
                         year: yearsTopContributor.join(', ')
                       })}
                     </p>

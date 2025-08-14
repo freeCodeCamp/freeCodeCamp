@@ -59,12 +59,12 @@ const GridChallenge = ({ challenge }: { challenge: ChallengeInfo }) => {
     >
       <span className='sr-only'>
         {challenge.superBlock === SuperBlocks.A2English
-          ? t('aria.task')
-          : t('aria.step')}
+          ? t($ => $.aria.task)
+          : t($ => $.aria.step)}
       </span>
       <span>{challenge.stepNumber}</span>
       <span className='sr-only'>
-        {challenge.isCompleted ? t('icons.passed') : t('icons.not-passed')}
+        {challenge.isCompleted ? t($ => $.icons.passed) : t($ => $.icons["not-passed"])}
       </span>
     </Link>
   );
@@ -92,8 +92,8 @@ function Challenges({
         <div className='challenge-jump-link'>
           <ButtonLink size='small' href={firstIncompleteChallenge.fields.slug}>
             {!isChallengeStarted
-              ? t('buttons.start-project')
-              : t('buttons.resume-project')}{' '}
+              ? t($ => $.buttons["start-project"])
+              : t($ => $.buttons["resume-project"])}{' '}
             {blockTitle && <span className='sr-only'>{blockTitle}</span>}
           </ButtonLink>
         </div>
@@ -102,9 +102,9 @@ function Challenges({
         aria-label={
           blockTitle
             ? challenges[0].superBlock === SuperBlocks.A2English
-              ? t('aria.dialogues-and-tasks-for', { blockTitle })
-              : t('aria.steps-for', { blockTitle })
-            : t('aria.steps')
+              ? t($ => $.aria["dialogues-and-tasks-for"], { blockTitle })
+              : t($ => $.aria["steps-for"], { blockTitle })
+            : t($ => $.aria.steps)
         }
       >
         <ul className={`map-challenges-ul map-challenges-grid`}>

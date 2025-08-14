@@ -34,10 +34,10 @@ function LandingTop(): JSX.Element {
               data-test-label='landing-header'
               data-playwright-test-label='big-heading-1-b'
             >
-              {t('landing.big-heading-1-b')}
+              {t($ => $.landing["big-heading-1-b"])}
             </h1>
             <p data-playwright-test-label='advance-career'>
-              {t('landing.advance-career')}
+              {t($ => $.landing["advance-career"])}
             </p>
             <Spacer size='m' />
 

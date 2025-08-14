@@ -87,22 +87,22 @@ function LinkMsUser({
 
   return !isSignedIn ? (
     <>
-      <ChallengeHeading heading={t('learn.ms.link-header')} />
+      <ChallengeHeading heading={t($ => $.learn.ms["link-header"])} />
       <Spacer size='xs' />
 
-      <p>{t('learn.ms.link-signin')}</p>
+      <p>{t($ => $.learn.ms["link-signin"])}</p>
       <Login />
     </>
   ) : msUsername ? (
     <>
-      <p>{t('learn.ms.linked', { msUsername })}</p>
+      <p>{t($ => $.learn.ms.linked, { msUsername: msUsername })}</p>
       <Button
         block={true}
         variant='primary'
         disabled={isProcessing}
         onClick={unlinkMsUsername}
       >
-        {t('buttons.unlink-account')}
+        {t($ => $.buttons["unlink-account"])}
       </Button>
     </>
   ) : (
@@ -110,10 +110,10 @@ function LinkMsUser({
       <ChallengeHeading heading={'learn.ms.link-header'} />
       <Spacer size='xs' />
 
-      <p>{t('learn.ms.unlinked')}</p>
+      <p>{t($ => $.learn.ms.unlinked)}</p>
       <ol className='link-ms-user-ol'>
         <li>
-          <Trans i18nKey='learn.ms.link-li-1'>
+          <Trans i18nKey={$ => $.learn.ms["link-li-1"]}>
             <a
               href='https://learn.microsoft.com/users/me/transcript'
               rel='noreferrer'
@@ -123,22 +123,22 @@ function LinkMsUser({
             </a>
           </Trans>
         </li>
-        <li>{t('learn.ms.link-li-2')}</li>
-        <li>{t('learn.ms.link-li-3')}</li>
-        <li>{t('learn.ms.link-li-4')}</li>
+        <li>{t($ => $.learn.ms["link-li-2"])}</li>
+        <li>{t($ => $.learn.ms["link-li-3"])}</li>
+        <li>{t($ => $.learn.ms["link-li-4"])}</li>
         <li>
-          <Trans i18nKey='learn.ms.link-li-5'>
+          <Trans i18nKey={$ => $.learn.ms["link-li-5"]}>
             <pre className='language-html'>placeholder</pre>
           </Trans>
         </li>
-        <li>{t('learn.ms.link-li-6')}</li>
+        <li>{t($ => $.learn.ms["link-li-6"])}</li>
       </ol>
 
       <Spacer size='m' />
       <form onSubmit={handleLinkUsername}>
         <FormGroup validationState={isValid ? 'success' : 'error'}>
           <ControlLabel htmlFor='transcript-link'>
-            <strong>{t('learn.ms.transcript-label')}</strong>
+            <strong>{t($ => $.learn.ms["transcript-label"])}</strong>
           </ControlLabel>
           <FormControl
             id='transcript-link'
@@ -153,11 +153,11 @@ function LinkMsUser({
           variant='primary'
           onClick={handleLinkUsername}
         >
-          {t('buttons.link-account')}
+          {t($ => $.buttons["link-account"])}
         </Button>
         {showWarning && (
           <HelpBlock>
-            <Trans i18nKey='learn.ms.invalid-transcript'>
+            <Trans i18nKey={$ => $.learn.ms["invalid-transcript"]}>
               placeholder <code>placeholder</code> placeholder
             </Trans>
           </HelpBlock>

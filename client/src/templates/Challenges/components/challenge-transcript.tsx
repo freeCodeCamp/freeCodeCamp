@@ -45,7 +45,7 @@ function ChallengeTranscript({
           aria-expanded={isOpen}
           className='challenge-transcript-heading'
         >
-          {t('learn.transcript')}
+          {t($ => $.learn.transcript)}
         </summary>
         <Spacer size='m' />
         <PrismFormatted className={'line-numbers'} text={transcript} />

@@ -34,18 +34,18 @@ const ExitQuizModal = ({
       variant='danger'
     >
       <Modal.Header closeButtonClassNames='close'>
-        {t('learn.quiz.exit-modal-header')}
+        {t($ => $.learn.quiz["exit-modal-header"])}
       </Modal.Header>
       <Modal.Body alignment='center'>
-        {t('learn.quiz.exit-modal-body')}
+        {t($ => $.learn.quiz["exit-modal-body"])}
       </Modal.Body>
       <Modal.Footer>
         <Button block variant='primary' onClick={closeExitQuizModal}>
-          {t('learn.quiz.exit-modal-no')}
+          {t($ => $.learn.quiz["exit-modal-no"])}
         </Button>
         <Spacer size='xxs' />
         <Button block variant='danger' onClick={onExit}>
-          {t('learn.quiz.exit-modal-yes')}
+          {t($ => $.learn.quiz["exit-modal-yes"])}
         </Button>
       </Modal.Footer>
     </Modal>

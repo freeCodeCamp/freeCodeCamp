@@ -95,7 +95,7 @@ function EmailSettings({
     if (newEmail === currentEmail) {
       return {
         state: 'error',
-        message: t('validation.same-email')
+        message: t($ => $.validation['same-email'])
       };
     }
     if (isEmail(newEmail)) {
@@ -103,7 +103,7 @@ function EmailSettings({
     } else {
       return {
         state: 'error',
-        message: t('validation.invalid-email')
+        message: t($ => $.validation['invalid-email'])
       };
     }
   }
@@ -120,7 +120,7 @@ function EmailSettings({
     if (maybeEmailRE.test(confirmNewEmail)) {
       return {
         state: isMatch ? 'success' : 'error',
-        message: isMatch ? '' : t('validation.email-mismatch')
+        message: isMatch ? '' : t($ => $.validation['email-mismatch'])
       };
     } else {
       return {
@@ -147,7 +147,7 @@ function EmailSettings({
     return (
       <div>
         <FullWidthRow>
-          <p className='large-p text-center'>{t('settings.email.missing')}</p>
+          <p className='large-p text-center'>{t($ => $.settings.email.missing)}</p>
         </FullWidthRow>
         <FullWidthRow>
           <Button
@@ -156,7 +156,7 @@ function EmailSettings({
             variant='primary'
             href='/update-email'
           >
-            {t('buttons.edit')}
+            {t($ => $.buttons.edit)}
           </Button>
         </FullWidthRow>
       </div>
@@ -164,7 +164,7 @@ function EmailSettings({
   }
   return (
     <div className='email-settings'>
-      <SectionHeader>{t('settings.email.heading')}</SectionHeader>
+      <SectionHeader>{t($ => $.settings.email.heading)}</SectionHeader>
       {isEmailVerified ? null : (
         <FullWidthRow>
           <HelpBlock>
@@ -173,9 +173,9 @@ function EmailSettings({
               className='text-center'
               data-playwright-test-label='email-verification-alert'
             >
-              {t('settings.email.not-verified')}
+              {t($ => $.settings.email['not-verified'])}
               <br />
-              <Trans i18nKey='settings.email.check'>
+              <Trans i18nKey={$ => $.settings.email.check}>
                 <Link
                   data-playwright-test-label='email-verification-link'
                   to='/update-email'
@@ -193,16 +193,16 @@ function EmailSettings({
             : { onSubmit: e => e.preventDefault() })}
         >
           <FormGroup controlId='current-email'>
-            <ControlLabel>{t('settings.email.current')}</ControlLabel>
+            <ControlLabel>{t($ => $.settings.email.current)}</ControlLabel>
             <FormControl.Static>{currentEmail}</FormControl.Static>
           </FormGroup>
-          <div role='group' aria-label={t('settings.email.heading')}>
+          <div role='group' aria-label={t($ => $.settings.email.heading)}>
             <FormGroup
               controlId='new-email'
               validationState={newEmailValidation}
             >
               <ControlLabel htmlFor='new-email-input'>
-                {t('settings.email.new')}
+                {t($ => $.settings.email.new)}
               </ControlLabel>
               <FormControl
                 onChange={createHandleEmailFormChange('newEmail')}
@@ -221,7 +221,7 @@ function EmailSettings({
               validationState={confirmEmailValidation}
             >
               <ControlLabel htmlFor='confirm-email-input'>
-                {t('settings.email.confirm')}
+                {t($ => $.settings.email.confirm)}
               </ControlLabel>
               <FormControl
                 onChange={createHandleEmailFormChange('confirmNewEmail')}
@@ -241,19 +241,19 @@ function EmailSettings({
             bgSize='large'
             {...(isDisabled && { tabIndex: -1 })}
           >
-            {t('buttons.save')}{' '}
-            <span className='sr-only'>{t('settings.email.heading')}</span>
+            {t($ => $.buttons.save)}{' '}
+            <span className='sr-only'>{t($ => $.settings.email.heading)}</span>
           </BlockSaveButton>
         </form>
       </FullWidthRow>
       <Spacer size='m' />
       <FullWidthRow>
         <ToggleButtonSetting
-          action={t('settings.email.weekly')}
+          action={t($ => $.settings.email.weekly)}
           flag={sendQuincyEmail}
           flagName='sendQuincyEmail'
-          offLabel={t('buttons.no-thanks')}
-          onLabel={t('buttons.yes-please')}
+          offLabel={t($ => $.buttons['no-thanks'])}
+          onLabel={t($ => $.buttons['yes-please'])}
           toggleFlag={() => updateQuincyEmail(!sendQuincyEmail)}
         />
       </FullWidthRow>

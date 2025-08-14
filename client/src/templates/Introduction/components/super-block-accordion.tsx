@@ -116,13 +116,13 @@ const Chapter = ({
             className='map-icon'
             chapter={dashedName as FsdChapters}
           />
-          {t(`intro:full-stack-developer.chapters.${dashedName}`)}
+          {t($ => $["full-stack-developer"].chapters[dashedName], { ns: "intro" })}
         </div>
         <div className='chapter-button-right'>
           {!comingSoon && (
             <>
               <span className='chapter-steps'>
-                {t('learn.steps-completed', {
+                {t($ => $.learn["steps-completed"], {
                   totalSteps,
                   completedSteps
                 })}
@@ -161,11 +161,11 @@ const Module = ({
           <span className='dropdown-wrap'>
             <DropDown />
           </span>
-          {t(`intro:full-stack-developer.modules.${dashedName}`)}
+          {t($ => $["full-stack-developer"].modules[dashedName], { ns: "intro" })}
         </div>
         <div className='module-button-right'>
           <span className='module-steps'>
-            {t('learn.steps-completed', {
+            {t($ => $.learn["steps-completed"], {
               totalSteps,
               completedSteps
             })}
@@ -271,8 +271,11 @@ export const SuperBlockAccordion = ({
                 }
 
                 const { note, intro } = t(
-                  `intro:full-stack-developer.module-intros.${module.name}`,
-                  { returnObjects: true }
+                  /**
+                   * TODO: @ahrjarrett manually test
+                   */
+                  $ => $["full-stack-developer"]["module-intros"][module.name],
+                  { ns: "intro", returnObjects: true }
                 ) as {
                   note: string;
                   intro: string[];
@@ -289,7 +292,10 @@ export const SuperBlockAccordion = ({
                         <span className='dropdown-wrap'>
                           <DropDown />
                         </span>
-                        {t(`intro:full-stack-developer.modules.${module.name}`)}
+                        {/**
+                          * TODO: @ahrjarrett manually test
+                          */}
+                        {t($ => $["full-stack-developer"].modules[module.name], { ns: "intro" })}
                       </div>
                     </Disclosure.Button>
                     <Disclosure.Panel as='ul' className='module-panel'>

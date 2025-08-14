@@ -45,7 +45,7 @@ function Preview({
       <iframe
         className={'challenge-preview-frame'}
         id={id}
-        title={t('learn.chal-preview')}
+        title={t($ => $.learn["chal-preview"])}
       />
     </div>
   );

@@ -32,7 +32,7 @@ function SearchHits({
 
   return (
     <div className='ais-Hits'>
-      <ul className='ais-Hits-list' aria-label={t('search.result-list')}>
+      <ul className='ais-Hits-list' aria-label={t($ => $.search["result-list"])}>
         {allHits.map((hit: Hit, i: number) => (
           <li
             className={

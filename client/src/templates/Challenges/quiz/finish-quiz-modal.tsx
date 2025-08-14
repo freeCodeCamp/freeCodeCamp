@@ -30,14 +30,14 @@ const FinishQuizModal = ({
   return (
     <Modal onClose={closeFinishQuizModal} open={isFinishQuizModalOpen}>
       <Modal.Header closeButtonClassNames='close'>
-        {t('learn.quiz.finish-modal-header')}
+        {t($ => $.learn.quiz["finish-modal-header"])}
       </Modal.Header>
       <Modal.Body alignment='center'>
-        {t('learn.quiz.finish-modal-body')}
+        {t($ => $.learn.quiz["finish-modal-body"])}
       </Modal.Body>
       <Modal.Footer>
         <Button block size='medium' variant='primary' onClick={onFinish}>
-          {t('learn.quiz.finish-modal-yes')}
+          {t($ => $.learn.quiz["finish-modal-yes"])}
         </Button>
         <Spacer size='xxs' />
         <Button
@@ -46,7 +46,7 @@ const FinishQuizModal = ({
           variant='primary'
           onClick={closeFinishQuizModal}
         >
-          {t('learn.quiz.finish-modal-no')}
+          {t($ => $.learn.quiz["finish-modal-no"])}
         </Button>
       </Modal.Footer>
     </Modal>

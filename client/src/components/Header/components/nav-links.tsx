@@ -61,11 +61,11 @@ const DonateButton = ({
       >
         {isUserDonating ? (
           <>
-            {t('buttons.supporters')}
+            {t($ => $.buttons.supporters)}
             <SupporterBadge />
           </>
         ) : (
-          <>{t('buttons.donate')}</>
+          <>{t($ => $.buttons.donate)}</>
         )}
       </Link>
     </li>
@@ -149,7 +149,7 @@ function NavLinks({
       />
       <li key='learn'>
         <Link className='nav-link' onKeyDown={handleMenuKeyDown} to='/learn'>
-          {t('buttons.curriculum')}
+          {t($ => $.buttons.curriculum)}
         </Link>
       </li>
       {currentUserName && (
@@ -161,7 +161,7 @@ function NavLinks({
               sameTab={false}
               to={`/${currentUserName}`}
             >
-              {t('buttons.profile')}
+              {t($ => $.buttons.profile)}
             </Link>
           </li>
           <li key='settings'>
@@ -171,7 +171,7 @@ function NavLinks({
               sameTab={false}
               to={`/settings`}
             >
-              {t('buttons.settings')}
+              {t($ => $.buttons.settings)}
             </Link>
           </li>
         </>
@@ -182,10 +182,10 @@ function NavLinks({
           external={true}
           onKeyDown={handleMenuKeyDown}
           sameTab={false}
-          to={t('links:nav.forum')}
+          to={t($ => $.nav.forum, { ns: "links" })}
         >
-          <span>{t('buttons.forum')}</span>
-          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+          <span>{t($ => $.buttons.forum)}</span>
+          <span className='sr-only'>, {t($ => $.aria["opens-new-window"])}</span>
 
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
@@ -196,10 +196,10 @@ function NavLinks({
           external={true}
           onKeyDown={handleMenuKeyDown}
           sameTab={false}
-          to={t('links:nav.news')}
+          to={t($ => $.nav.news, { ns: "links" })}
         >
-          <span>{t('buttons.news')}</span>
-          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+          <span>{t($ => $.buttons.news)}</span>
+          <span className='sr-only'>, {t($ => $.aria["opens-new-window"])}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>
@@ -211,8 +211,8 @@ function NavLinks({
           sameTab={false}
           to={radioLocation}
         >
-          <span>{t('buttons.radio')}</span>
-          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+          <span>{t($ => $.buttons.radio)}</span>
+          <span className='sr-only'>, {t($ => $.aria["opens-new-window"])}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>
@@ -222,10 +222,10 @@ function NavLinks({
           external={true}
           onKeyDown={handleMenuKeyDown}
           sameTab={false}
-          to={t('links:nav.contribute')}
+          to={t($ => $.nav.contribute, { ns: "links" })}
         >
-          <span>{t('buttons.contribute')}</span>
-          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+          <span>{t($ => $.buttons.contribute)}</span>
+          <span className='sr-only'>, {t($ => $.aria["opens-new-window"])}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>
@@ -235,10 +235,10 @@ function NavLinks({
           external={true}
           onKeyDown={handleMenuKeyDown}
           sameTab={false}
-          to={t('links:nav.podcast')}
+          to={t($ => $.nav.podcast, { ns: "links" })}
         >
-          <span>{t('buttons.podcast')}</span>
-          <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+          <span>{t($ => $.buttons.podcast)}</span>
+          <span className='sr-only'>, {t($ => $.aria["opens-new-window"])}</span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </Link>
       </li>
@@ -249,7 +249,7 @@ function NavLinks({
           onClick={toggleTheme}
           onKeyDown={currentUserName ? handleMenuKeyDown : handleSignOutKeys}
         >
-          <span>{t('settings.labels.night-mode')}</span>
+          <span>{t($ => $.settings.labels["night-mode"])}</span>
           {theme === LocalStorageThemes.Dark ? (
             <FontAwesomeIcon icon={faCheckSquare} />
           ) : (
@@ -265,7 +265,7 @@ function NavLinks({
             onClick={handleSignOutClick}
             onKeyDown={handleSignOutKeys}
           >
-            {t('buttons.sign-out')}
+            {t($ => $.buttons["sign-out"])}
           </button>
         </li>
       )}

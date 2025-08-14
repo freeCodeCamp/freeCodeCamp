@@ -27,7 +27,7 @@ function TestSuite({ tests }: TestSuiteProps): JSX.Element {
   return (
     <>
       <h2 className='challenge-test-suite-heading'>
-        {t('learn.editor-tabs.tests')}
+        {t($ => $.learn["editor-tabs"].tests)}
       </h2>
       <ul className='challenge-test-suite'>
         {testSuiteTests.map(
@@ -40,9 +40,9 @@ function TestSuite({ tests }: TestSuiteProps): JSX.Element {
             ) : (
               <Fail />
             );
-            const initialText = t('icons.waiting');
+            const initialText = t($ => $.icons.waiting);
             const statusText =
-              pass && !err ? t('icons.passed') : t('icons.failed');
+              pass && !err ? t($ => $.icons.passed) : t($ => $.icons.failed);
             // Remove opening/closing <p> so screen reader will read both
             // status message and test text as one block.
             text = `${index + 1}. ${text.replace(/^<p>|<\/p>$/g, '')}`;

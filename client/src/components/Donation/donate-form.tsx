@@ -209,7 +209,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     const donationAmount: DonationAmount =
       selectedDonationAmount || defaultAmount;
     const priorityTheme = defaultTheme ? defaultTheme : theme;
-    const walletlabel = `${t('donate.wallet-label-1', {
+    const walletlabel = `${t($ => $.donate['wallet-label-1'], {
       usd: donationAmount / CENTS_IN_DOLLAR
     })}:`;
 
@@ -221,7 +221,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     const confirmationWithEditAmount = (
       <>
         <b>
-          {t('donate.confirm-multitier', {
+          {t($ => $.donate['confirm-multitier'], {
             usd: formattedAmountLabel(donationAmount)
           })}
         </b>
@@ -231,7 +231,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
           className='edit-amount-button'
           onClick={editAmount}
         >
-          {t('donate.edit-amount')}
+          {t($ => $.donate['edit-amount'])}
         </button>
       </>
     );
@@ -251,7 +251,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
         >
           <legend>
             <SecurityLockIcon />
-            {t('donate.secure-donation')}
+            {t($ => $.donate['secure-donation'])}
           </legend>
 
           {loading.stripe && loading.paypal && <PaymentButtonsLoader />}
@@ -282,12 +282,15 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
           )}
           {showMinimalPayments && (
             <>
-              <div className='separator'>{t('donate.or-card')}</div>
+              <div className='separator'>{t($ => $.donate['or-card'])}</div>
               <StripeCardForm
                 onDonationStateChange={this.onDonationStateChange}
                 postPayment={this.postPayment}
                 processing={processing}
-                t={t}
+                /**
+                 * TODO: @ahrjarrett
+                 */
+                t={t as never}
                 theme={priorityTheme}
               />
             </>

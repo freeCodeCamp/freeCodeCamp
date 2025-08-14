@@ -30,13 +30,13 @@ function ExamResults({
 
   // keep this formatting
   const downloadContent = `${title}: ${
-    passed ? t('learn.exam.passed') : t('learn.exam.not-passed')
+    passed ? t($ => $.learn.exam.passed) : t($ => $.learn.exam["not-passed"])
   }
 
-${t('learn.exam.number-of-questions', { n: numberOfQuestionsInExam })}
-${t('learn.exam.correct-answers', { n: numberOfCorrectAnswers })}
-${t('learn.exam.percent-correct', { n: percentCorrect })}
-${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
+${t($ => $.learn.exam["number-of-questions"], { n: numberOfQuestionsInExam })}
+${t($ => $.learn.exam["correct-answers"], { n: numberOfCorrectAnswers })}
+${t($ => $.learn.exam["percent-correct"], { n: percentCorrect })}
+${t($ => $.learn.exam.time, { t: formatSecondsToTime(examTimeInSeconds) })}
 `;
 
   const blob = new Blob([downloadContent], {
@@ -52,8 +52,8 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
   }, []);
 
   const examResultsMessage = passed
-    ? t('learn.exam.passed-message')
-    : t('learn.exam.not-passed-message');
+    ? t($ => $.learn.exam["passed-message"])
+    : t($ => $.learn.exam["not-passed-message"]);
 
   // TODO: Add share button
   return (
@@ -62,11 +62,10 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
         className='exam-results-header'
         data-playwright-test-label='exam-results-header'
       >
-        {t('learn.exam.results-header', { title })}
+        {t($ => $.learn.exam["results-header"], { title: title })}
       </div>
       <hr />
       <Spacer size='m' />
-
       <div
         className='exam-results-message'
         data-playwright-test-label='exam-results-message'
@@ -76,20 +75,20 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
       <Spacer size='m' />
       <div className='exam-results'>
         <div data-playwright-test-label='exam-results-question-results'>
-          {t('learn.exam.question-results', {
+          {t($ => $.learn.exam["question-results"], {
             n: numberOfCorrectAnswers,
             q: numberOfQuestionsInExam
           })}
         </div>
         <div>|</div>
         <div data-playwright-test-label='exam-results-percent-results'>
-          {t('learn.exam.percent-results', {
+          {t($ => $.learn.exam["percent-results"], {
             p: percentCorrect
           })}
         </div>
         <div>|</div>
         <div data-playwright-test-label='exam-time'>
-          {t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
+          {t($ => $.learn.exam.time, { t: formatSecondsToTime(examTimeInSeconds) })}
         </div>
       </div>
       <Spacer size='m' />
@@ -102,7 +101,7 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
           download={`${dashedName}.txt`}
           href={downloadURL}
         >
-          {t('learn.download-results')}
+          {t($ => $.learn["download-results"])}
         </Button>
         <Spacer size='xxs' />
         <Button
@@ -111,7 +110,7 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
           data-playwright-test-label='exit-exam'
           onClick={exitExam}
         >
-          {t('buttons.exit')}
+          {t($ => $.buttons.exit)}
         </Button>
       </div>
     </div>

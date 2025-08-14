@@ -14,11 +14,11 @@ function Footer(): JSX.Element {
     <footer className='site-footer'>
       <div className='footer-top'>
         <div className='footer-desc-col'>
-          <p>{t('footer.tax-exempt-status')}</p>
-          <p>{t('footer.mission-statement')}</p>
-          <p>{t('footer.donation-initiatives')}</p>
+          <p>{t($ => $.footer["tax-exempt-status"])}</p>
+          <p>{t($ => $.footer["mission-statement"])}</p>
+          <p>{t($ => $.footer["donation-initiatives"])}</p>
           <p className='footer-donation'>
-            <Trans i18nKey='footer.donate-text'>
+            <Trans i18nKey={$ => $.footer["donate-text"]}>
               You can
               <Link className='inline' to='/donate'>
                 make a tax-deductible donation here
@@ -29,160 +29,160 @@ function Footer(): JSX.Element {
         </div>
         <div className='trending-guides'>
           <h2 id='trending-guides' className='col-header'>
-            {t('footer.trending-guides')}
+            {t($ => $.footer["trending-guides"])}
           </h2>
           <ul
             aria-labelledby='trending-guides'
             className='trending-guides-articles'
           >
             <li>
-              <Link external={false} to={t('trending:article0link')}>
-                {t('trending:article0title')}
+              <Link external={false} to={t($ => $.article0link, { ns: "trending" })}>
+                {t($ => $.article0title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article1link')}>
-                {t('trending:article1title')}
+              <Link external={false} to={t($ => $.article1link, { ns: "trending" })}>
+                {t($ => $.article1title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article2link')}>
-                {t('trending:article2title')}
+              <Link external={false} to={t($ => $.article2link, { ns: "trending" })}>
+                {t($ => $.article2title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article3link')}>
-                {t('trending:article3title')}
+              <Link external={false} to={t($ => $.article3link, { ns: "trending" })}>
+                {t($ => $.article3title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article4link')}>
-                {t('trending:article4title')}
+              <Link external={false} to={t($ => $.article4link, { ns: "trending" })}>
+                {t($ => $.article4title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article5link')}>
-                {t('trending:article5title')}
+              <Link external={false} to={t($ => $.article5link, { ns: "trending" })}>
+                {t($ => $.article5title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article6link')}>
-                {t('trending:article6title')}
+              <Link external={false} to={t($ => $.article6link, { ns: "trending" })}>
+                {t($ => $.article6title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article7link')}>
-                {t('trending:article7title')}
+              <Link external={false} to={t($ => $.article7link, { ns: "trending" })}>
+                {t($ => $.article7title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article8link')}>
-                {t('trending:article8title')}
+              <Link external={false} to={t($ => $.article8link, { ns: "trending" })}>
+                {t($ => $.article8title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article9link')}>
-                {t('trending:article9title')}
+              <Link external={false} to={t($ => $.article9link, { ns: "trending" })}>
+                {t($ => $.article9title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article10link')}>
-                {t('trending:article10title')}
+              <Link external={false} to={t($ => $.article10link, { ns: "trending" })}>
+                {t($ => $.article10title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article11link')}>
-                {t('trending:article11title')}
+              <Link external={false} to={t($ => $.article11link, { ns: "trending" })}>
+                {t($ => $.article11title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article12link')}>
-                {t('trending:article12title')}
+              <Link external={false} to={t($ => $.article12link, { ns: "trending" })}>
+                {t($ => $.article12title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article13link')}>
-                {t('trending:article13title')}
+              <Link external={false} to={t($ => $.article13link, { ns: "trending" })}>
+                {t($ => $.article13title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article14link')}>
-                {t('trending:article14title')}
+              <Link external={false} to={t($ => $.article14link, { ns: "trending" })}>
+                {t($ => $.article14title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article15link')}>
-                {t('trending:article15title')}
+              <Link external={false} to={t($ => $.article15link, { ns: "trending" })}>
+                {t($ => $.article15title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article16link')}>
-                {t('trending:article16title')}
+              <Link external={false} to={t($ => $.article16link, { ns: "trending" })}>
+                {t($ => $.article16title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article17link')}>
-                {t('trending:article17title')}
+              <Link external={false} to={t($ => $.article17link, { ns: "trending" })}>
+                {t($ => $.article17title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article18link')}>
-                {t('trending:article18title')}
+              <Link external={false} to={t($ => $.article18link, { ns: "trending" })}>
+                {t($ => $.article18title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article19link')}>
-                {t('trending:article19title')}
+              <Link external={false} to={t($ => $.article19link, { ns: "trending" })}>
+                {t($ => $.article19title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article20link')}>
-                {t('trending:article20title')}
+              <Link external={false} to={t($ => $.article20link, { ns: "trending" })}>
+                {t($ => $.article20title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article21link')}>
-                {t('trending:article21title')}
+              <Link external={false} to={t($ => $.article21link, { ns: "trending" })}>
+                {t($ => $.article21title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article22link')}>
-                {t('trending:article22title')}
+              <Link external={false} to={t($ => $.article22link, { ns: "trending" })}>
+                {t($ => $.article22title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article23link')}>
-                {t('trending:article23title')}
+              <Link external={false} to={t($ => $.article23link, { ns: "trending" })}>
+                {t($ => $.article23title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article24link')}>
-                {t('trending:article24title')}
+              <Link external={false} to={t($ => $.article24link, { ns: "trending" })}>
+                {t($ => $.article24title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article25link')}>
-                {t('trending:article25title')}
+              <Link external={false} to={t($ => $.article25link, { ns: "trending" })}>
+                {t($ => $.article25title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article26link')}>
-                {t('trending:article26title')}
+              <Link external={false} to={t($ => $.article26link, { ns: "trending" })}>
+                {t($ => $.article26title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article27link')}>
-                {t('trending:article27title')}
+              <Link external={false} to={t($ => $.article27link, { ns: "trending" })}>
+                {t($ => $.article27title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article28link')}>
-                {t('trending:article28title')}
+              <Link external={false} to={t($ => $.article28link, { ns: "trending" })}>
+                {t($ => $.article28title, { ns: "trending" })}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article29link')}>
-                {t('trending:article29title')}
+              <Link external={false} to={t($ => $.article29link, { ns: "trending" })}>
+                {t($ => $.article29title, { ns: "trending" })}
               </Link>
             </li>
           </ul>
@@ -191,7 +191,7 @@ function Footer(): JSX.Element {
 
           <div>
             <h2 id='mobile-app' className='col-header'>
-              {t('footer.mobile-app')}
+              {t($ => $.footer["mobile-app"])}
             </h2>
             <Col sm={8} smOffset={2}>
               <ul aria-labelledby='mobile-app' className='mobile-app-container'>
@@ -219,48 +219,48 @@ function Footer(): JSX.Element {
         </div>
       </div>
       <div className='footer-bottom'>
-        <h2 className='col-header'>{t('footer.our-nonprofit')}</h2>
+        <h2 className='col-header'>{t($ => $.footer["our-nonprofit"])}</h2>
         <div className='our-nonprofit'>
-          <Link external={false} to={t('links:footer.about-url')}>
-            {t('footer.links.about')}
+          <Link external={false} to={t($ => $.footer["about-url"], { ns: "links" })}>
+            {t($ => $.footer.links.about)}
           </Link>
           <Link
             external={false}
             sameTab={false}
             to={'https://www.linkedin.com/school/free-code-camp/people/'}
           >
-            {t('footer.links.alumni')}
+            {t($ => $.footer.links.alumni)}
           </Link>
           <Link external={false} to={'https://github.com/freeCodeCamp/'}>
-            {t('footer.links.open-source')}
+            {t($ => $.footer.links["open-source"])}
           </Link>
           <Link
             external={false}
             sameTab={false}
-            to={t('links:footer.shop-url')}
+            to={t($ => $.footer["shop-url"], { ns: "links"})}
           >
-            {t('footer.links.shop')}
+            {t($ => $.footer.links.shop)}
           </Link>
-          <Link external={false} to={t('links:footer.support-url')}>
-            {t('footer.links.support')}
+          <Link external={false} to={t($ => $.footer["support-url"], { ns: "links" })}>
+            {t($ => $.footer.links.support)}
           </Link>
-          <Link external={false} to={t('links:footer.sponsors-url')}>
-            {t('footer.links.sponsors')}
+          <Link external={false} to={t($ => $.footer["sponsors-url"], { ns: "links" })}>
+            {t($ => $.footer.links.sponsors)}
           </Link>
-          <Link external={false} to={t('links:footer.honesty-url')}>
-            {t('footer.links.honesty')}
+          <Link external={false} to={t($ => $.footer["honesty-url"], { ns: "links" })}>
+            {t($ => $.footer.links.honesty)}
           </Link>
-          <Link external={false} to={t('links:footer.coc-url')}>
-            {t('footer.links.coc')}
+          <Link external={false} to={t($ => $.footer["coc-url"], { ns: "links" })}>
+            {t($ => $.footer.links.coc)}
           </Link>
-          <Link external={false} to={t('links:footer.privacy-url')}>
-            {t('footer.links.privacy')}
+          <Link external={false} to={t($ => $.footer["privacy-url"], { ns: "links" })}>
+            {t($ => $.footer.links.privacy)}
           </Link>
-          <Link external={false} to={t('links:footer.tos-url')}>
-            {t('footer.links.tos')}
+          <Link external={false} to={t($ => $.footer["tos-url"], { ns: "links" })}>
+            {t($ => $.footer.links.tos)}
           </Link>
-          <Link external={false} to={t('links:footer.copyright-url')}>
-            {t('footer.links.copyright')}
+          <Link external={false} to={t($ => $.footer["copyright-url"], { ns: "links" })}>
+            {t($ => $.footer.links.copyright)}
           </Link>
         </div>
       </div>

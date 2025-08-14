@@ -181,20 +181,20 @@ function TimelineInner({
   return (
     <FullWidthRow>
       <section className='card'>
-        <h2>{t('profile.timeline')}</h2>
+        <h2>{t($ => $.profile.timeline)}</h2>
         <Spacer size='s' />
         {completedMap.length === 0 ? (
           <p className='text-center'>
-            {t('profile.none-completed')}&nbsp;
-            <Link to='/learn'>{t('profile.get-started')}</Link>
+            {t($ => $.profile['none-completed'])}&nbsp;
+            <Link to='/learn'>{t($ => $.profile['get-started'])}</Link>
           </p>
         ) : (
           <Table condensed={true} striped={true}>
             <thead>
               <tr>
-                <th>{t('profile.challenge')}</th>
-                <th>{t('settings.labels.solution')}</th>
-                <th className='text-center'>{t('profile.completed')}</th>
+                <th>{t($ => $.profile.challenge)}</th>
+                <th>{t($ => $.settings.labels.solution)}</th>
+                <th className='text-center'>{t($ => $.profile.completed)}</th>
               </tr>
             </thead>
             <tbody>
@@ -216,7 +216,7 @@ function TimelineInner({
               />
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={closeSolution}>{t('buttons.close')}</Button>
+              <Button onClick={closeSolution}>{t($ => $.buttons.close)}</Button>
             </Modal.Footer>
           </Modal>
         )}
@@ -232,7 +232,7 @@ function TimelineInner({
         )}
         <ProjectPreviewModal
           challengeData={challengeData}
-          closeText={t('buttons.close')}
+          closeText={t($ => $.buttons.close)}
           previewTitle={projectTitle}
         />
         <ExamResultsModal
@@ -271,7 +271,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   const idToNameMap = new Map();
   for (const id of getCertIds()) {
     const certPath = getPathFromID(id);
-    const certName = t(`certification.title.${certPath}-cert`);
+    const certName = t($ => $.certification.title[`${certPath}-cert`]);
     idToNameMap.set(id, {
       challengeTitle: certName,
       certPath: certPath
@@ -294,7 +294,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
         }
       }
     }) => {
-      const blockNameTitle = t(`intro:${superBlock}.blocks.${blockName}.title`);
+      const blockNameTitle = t($ => $[superBlock].blocks[blockName].title, { ns: 'intro' });
       const shouldAppendBlockNameToTitle =
         hasEditableBoundaries || superBlock === SuperBlocks.A2English;
       idToNameMap.set(id, {

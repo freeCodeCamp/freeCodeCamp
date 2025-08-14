@@ -20,12 +20,12 @@ export default function KeyboardShortcutsSettings({
   return (
     <>
       <ToggleButtonSetting
-        action={t('settings.labels.keyboard-shortcuts')}
+        action={t($ => $.settings.labels["keyboard-shortcuts"])}
         explain={explain}
         flag={keyboardShortcuts}
         flagName='keyboard-shortcuts'
-        offLabel={t('buttons.off')}
-        onLabel={t('buttons.on')}
+        offLabel={t($ => $.buttons.off)}
+        onLabel={t($ => $.buttons.on)}
         toggleFlag={() => {
           toggleKeyboardShortcuts(keyboardShortcuts ? false : true);
         }}

@@ -19,7 +19,7 @@ export const PortfolioProjects = ({
   return (
     <FullWidthRow>
       <section className='card'>
-        <h2>{t('profile.projects')}</h2>
+        <h2>{t($ => $.profile.projects)}</h2>
         <Spacer size='s' />
         {portfolioProjects.map(
           ({ title, url, image, description, id }, index) => (
@@ -46,7 +46,7 @@ export const PortfolioProjects = ({
                     <h3>
                       {title}
                       <span className='sr-only'>
-                        , {t('aria.opens-new-window')}
+                        , {t($ => $.aria["opens-new-window"])}
                       </span>
                     </h3>
                     <p>{description}</p>

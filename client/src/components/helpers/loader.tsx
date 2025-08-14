@@ -41,7 +41,7 @@ function Loader({
       {showMessage && fullScreen && (
         <>
           <br />
-          <p className='text-center'>{t('misc.slow-load-msg')}</p>
+          <p className='text-center'>{t($ => $.misc["slow-load-msg"])}</p>
         </>
       )}
     </div>

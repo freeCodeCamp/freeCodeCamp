@@ -23,7 +23,7 @@ function DailyCodingChallengeWidget({
   return (
     <>
       <h2 className={forLanding ? 'big-heading' : ''}>
-        {t('daily-coding-challenges.map-title')}
+        {t($ => $["daily-coding-challenges"]["map-title"])}
       </h2>
       <div className='daily-coding-challenge-wrap'>
         <ButtonLink
@@ -34,7 +34,7 @@ function DailyCodingChallengeWidget({
         >
           <div className='daily-coding-challenge-button'>
             <DailyCodingChallengeIcon className='map-icon' />
-            {t(`buttons.start`)}
+            {t($ => $.buttons.start)}
           </div>
           {forLanding && <LinkButton />}
         </ButtonLink>
@@ -51,7 +51,7 @@ function DailyCodingChallengeWidget({
             >
               <div className='daily-coding-challenge-button'>
                 <CalendarIcon className='map-icon' />
-                {t(`buttons.go-to-archive`)}
+                {t($ => $.buttons["go-to-archive"])}
               </div>
             </ButtonLink>
           </>

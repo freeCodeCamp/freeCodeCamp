@@ -12,6 +12,10 @@ type FlashProps = {
   removeFlashMessage: typeof removeFlashMessage;
 };
 
+function pathToAccessor(path: string) {
+  return ($: any) => path.split('.').reduce((acc, cur) => acc[cur], $)
+}
+
 function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   const { type, message, id, variables = {} } = flashMessage;
   const { t } = useTranslation();
@@ -34,10 +38,13 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
           className='flash-message'
           data-playwright-test-label='flash-message'
         >
-          {t(message, variables)}
+          {/**
+            * TODO: @ahrjarrett add a test for this
+            */}
+          {t(pathToAccessor(message), variables)}
           <CloseButton
             onClick={handleClose}
-            label={t('buttons.close')}
+            label={t($ => $.buttons.close)}
             className='close'
           />
         </Alert>

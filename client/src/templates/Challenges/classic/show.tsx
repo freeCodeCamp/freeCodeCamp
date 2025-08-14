@@ -253,9 +253,9 @@ function ShowClassic({
 
   const guideUrl = getGuideUrl({ forumTopicId, title });
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )}: ${title}`;
+  const blockNameTitle = `${t($ => $[superBlock].blocks[block].title, {
+    ns: "intro"
+  })}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
   const openConsole = isJavaScriptChallenge({ challengeType });
   const hasPreview = challengeHasPreview({ challengeType });
@@ -552,11 +552,11 @@ function ShowClassic({
         <ResetModal challengeType={challengeType} challengeTitle={title} />
         <ProjectPreviewModal
           challengeData={challengeData}
-          closeText={t('buttons.start-coding')}
+          closeText={t($ => $.buttons["start-coding"])}
           previewTitle={
             demoType === 'onClick'
-              ? t('learn.demo-project-title')
-              : t('learn.project-preview-title')
+              ? t($ => $.learn["demo-project-title"])
+              : t($ => $.learn["project-preview-title"])
           }
         />
         <ShortcutsModal />

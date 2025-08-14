@@ -10,7 +10,7 @@ export function getheadTagComponents(): JSX.Element[] {
   const headTags = [
     <meta content='freeCodeCamp.org' key='og:title' name='og:title' />,
     <meta
-      content={i18next.t('metaTags:social-description')}
+      content={i18next.t($ => $["social-description"], { ns: "metaTags" })}
       key='og:description'
       name='og:description'
     />,
@@ -31,7 +31,7 @@ export function getheadTagComponents(): JSX.Element[] {
       name='twitter:title'
     />,
     <meta
-      content={i18next.t('metaTags:social-description')}
+      content={i18next.t($ => $["social-description"], { ns: "metaTags" })}
       key='twitter:description'
       name='twitter:description'
     />,

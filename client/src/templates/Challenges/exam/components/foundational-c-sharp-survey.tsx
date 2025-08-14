@@ -49,25 +49,25 @@ function FoundationalCSharpSurvey({
   const { t } = useTranslation();
 
   // submit English values to server and save those to database
-  const englishTitle = t('survey.foundational-c-sharp.title', { lng: 'en' });
+  const englishTitle = t($ => $.survey["foundational-c-sharp"].title, { lng: 'en' });
   const englishSurvey = [
     {
-      question: t('survey.foundational-c-sharp.q1.q', { lng: 'en' }),
+      question: t($ => $.survey["foundational-c-sharp"].q1.q, { lng: 'en' }),
       options: [
-        t('survey.foundational-c-sharp.q1.o1', { lng: 'en' }),
-        t('survey.foundational-c-sharp.q1.o2', { lng: 'en' }),
-        t('survey.foundational-c-sharp.q1.o3', { lng: 'en' }),
-        t('survey.foundational-c-sharp.q1.o4', { lng: 'en' })
+        t($ => $.survey["foundational-c-sharp"].q1.o1, { lng: 'en' }),
+        t($ => $.survey["foundational-c-sharp"].q1.o2, { lng: 'en' }),
+        t($ => $.survey["foundational-c-sharp"].q1.o3, { lng: 'en' }),
+        t($ => $.survey["foundational-c-sharp"].q1.o4, { lng: 'en' })
       ]
     },
     {
-      question: t('survey.foundational-c-sharp.q2.q', { lng: 'en' }),
+      question: t($ => $.survey["foundational-c-sharp"].q2.q, { lng: 'en' }),
       options: [
-        t('survey.foundational-c-sharp.q2.o1', { lng: 'en' }),
-        t('survey.foundational-c-sharp.q2.o2', { lng: 'en' }),
-        t('survey.foundational-c-sharp.q2.o3', { lng: 'en' }),
-        t('survey.foundational-c-sharp.q2.o4', { lng: 'en' }),
-        t('survey.foundational-c-sharp.q2.o5', { lng: 'en' })
+        t($ => $.survey["foundational-c-sharp"].q2.o1, { lng: 'en' }),
+        t($ => $.survey["foundational-c-sharp"].q2.o2, { lng: 'en' }),
+        t($ => $.survey["foundational-c-sharp"].q2.o3, { lng: 'en' }),
+        t($ => $.survey["foundational-c-sharp"].q2.o4, { lng: 'en' }),
+        t($ => $.survey["foundational-c-sharp"].q2.o5, { lng: 'en' })
       ]
     }
   ];
@@ -75,22 +75,22 @@ function FoundationalCSharpSurvey({
   // display survey in i18n
   const i18nSurvey = [
     {
-      question: t('survey.foundational-c-sharp.q1.q'),
+      question: t($ => $.survey["foundational-c-sharp"].q1.q),
       options: [
-        t('survey.foundational-c-sharp.q1.o1'),
-        t('survey.foundational-c-sharp.q1.o2'),
-        t('survey.foundational-c-sharp.q1.o3'),
-        t('survey.foundational-c-sharp.q1.o4')
+        t($ => $.survey["foundational-c-sharp"].q1.o1),
+        t($ => $.survey["foundational-c-sharp"].q1.o2),
+        t($ => $.survey["foundational-c-sharp"].q1.o3),
+        t($ => $.survey["foundational-c-sharp"].q1.o4)
       ]
     },
     {
-      question: t('survey.foundational-c-sharp.q2.q'),
+      question: t($ => $.survey["foundational-c-sharp"].q2.q),
       options: [
-        t('survey.foundational-c-sharp.q2.o1'),
-        t('survey.foundational-c-sharp.q2.o2'),
-        t('survey.foundational-c-sharp.q2.o3'),
-        t('survey.foundational-c-sharp.q2.o4'),
-        t('survey.foundational-c-sharp.q2.o5')
+        t($ => $.survey["foundational-c-sharp"].q2.o1),
+        t($ => $.survey["foundational-c-sharp"].q2.o2),
+        t($ => $.survey["foundational-c-sharp"].q2.o3),
+        t($ => $.survey["foundational-c-sharp"].q2.o4),
+        t($ => $.survey["foundational-c-sharp"].q2.o5)
       ]
     }
   ];
@@ -131,7 +131,7 @@ function FoundationalCSharpSurvey({
   return (
     <>
       <Modal.Header closeButtonClassNames='close'>
-        {t('survey.foundational-c-sharp.title')}
+        {t($ => $.survey["foundational-c-sharp"].title)}
       </Modal.Header>
       <Modal.Body>
         {i18nSurvey.map((question, i) => (
@@ -170,7 +170,7 @@ function FoundationalCSharpSurvey({
           disabled={cantSubmitSurvey || isProcessing}
           onClick={createSurveyResults}
         >
-          {t('survey.misc.submit')}
+          {t($ => $.survey.misc.submit)}
         </Button>
         <Spacer size='xxs' />
         <Button
@@ -180,7 +180,7 @@ function FoundationalCSharpSurvey({
           disabled={isProcessing}
           onClick={closeSurveyModal}
         >
-          {t('survey.misc.exit')}
+          {t($ => $.survey.misc.exit)}
         </Button>
       </Modal.Footer>
     </>

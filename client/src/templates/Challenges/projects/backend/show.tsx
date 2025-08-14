@@ -162,15 +162,15 @@ const ShowBackEnd = (props: BackEndProps) => {
     updateSolutionFormValues
   } = props;
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
+  const blockNameTitle = `${t($ => $[superBlock].blocks[block].title, {
+    ns: "intro"
+  })} - ${title}`;
 
   return (
     <Hotkeys containerRef={container}>
       <LearnLayout>
         <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          title={`${blockNameTitle} | ${t($ => $.learn.learn)} | freeCodeCamp.org`}
         />
         <Container>
           <Row>
@@ -200,7 +200,7 @@ const ShowBackEnd = (props: BackEndProps) => {
               <Output
                 defaultOutput={`/**
 *
-* ${t('learn.test-output')}
+* ${t($ => $.learn["test-output"])}
 *
 *
 */`}

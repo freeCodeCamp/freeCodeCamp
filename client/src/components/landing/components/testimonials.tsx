@@ -16,7 +16,7 @@ const Testimonials = (): JSX.Element => {
         className='big-heading text-center'
         data-playwright-test-label='testimonials-section-header'
       >
-        {t('landing.testimonials.heading')}
+        {t($ => $.landing.testimonials.heading)}
       </h2>
       <div className='testimonials-row' data-test-label='testimonial-cards'>
         <div
@@ -28,7 +28,7 @@ const Testimonials = (): JSX.Element => {
             data-playwright-test-label='testimonials-endorser-image-container'
           >
             <LazyImage
-              alt={t('landing.testimonials.shawn.img-alt')}
+              alt={t($ => $.landing.testimonials.shawn["img-alt"])}
               className='testimonial-image'
               src={shawnImg}
             />
@@ -62,7 +62,7 @@ const Testimonials = (): JSX.Element => {
             data-playwright-test-label='testimonials-endorser-image-container'
           >
             <LazyImage
-              alt={t('landing.testimonials.sarah.img-alt')}
+              alt={t($ => $.landing.testimonials.sarah["img-alt"])}
               className='testimonial-image'
               src={sarahImg}
             />
@@ -96,7 +96,7 @@ const Testimonials = (): JSX.Element => {
             data-playwright-test-label='testimonials-endorser-image-container'
           >
             <LazyImage
-              alt={t('landing.testimonials.emma.img-alt')}
+              alt={t($ => $.landing.testimonials.emma["img-alt"])}
               className='testimonial-image'
               src={emmaImg}
             />

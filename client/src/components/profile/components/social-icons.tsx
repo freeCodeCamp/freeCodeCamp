@@ -30,7 +30,7 @@ function LinkedInIcon({ href, username }: IconProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <a
-      aria-label={t('aria.linkedin', { username })}
+      aria-label={t($ => $.aria.linkedin, { username: username })}
       href={href}
       rel='noopener noreferrer'
       target='_blank'
@@ -44,7 +44,7 @@ function GitHubIcon({ href, username }: IconProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <a
-      aria-label={t('aria.github', { username })}
+      aria-label={t($ => $.aria.github, { username: username })}
       href={href}
       rel='noopener noreferrer'
       target='_blank'
@@ -58,7 +58,7 @@ function WebsiteIcon({ href, username }: IconProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <a
-      aria-label={t('aria.website', { username })}
+      aria-label={t($ => $.aria.website, { username: username })}
       href={href}
       rel='noopener noreferrer'
       target='_blank'
@@ -72,7 +72,7 @@ function TwitterIcon({ href, username }: IconProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <a
-      aria-label={t('aria.twitter', { username })}
+      aria-label={t($ => $.aria.twitter, { username: username })}
       href={href}
       rel='noopener noreferrer'
       target='_blank'

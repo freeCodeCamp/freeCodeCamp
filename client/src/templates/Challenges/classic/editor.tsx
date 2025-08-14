@@ -431,11 +431,11 @@ const Editor = (props: EditorProps): JSX.Element => {
 
       const isMacOS = navigator.userAgent.includes('Mac OS');
       const a11yOffText = isMacOS
-        ? t('aria.editor-a11y-off-macos', { editorName: ariaEditorName })
-        : t('aria.editor-a11y-off-non-macos', { editorName: ariaEditorName });
+        ? t($ => $.aria["editor-a11y-off-macos"], { editorName: ariaEditorName })
+        : t($ => $.aria["editor-a11y-off-non-macos"], { editorName: ariaEditorName });
       const a11yOnText = isMacOS
-        ? t('aria.editor-a11y-on-macos', { editorName: ariaEditorName })
-        : t('aria.editor-a11y-on-non-macos', { editorName: ariaEditorName });
+        ? t($ => $.aria["editor-a11y-on-macos"], { editorName: ariaEditorName })
+        : t($ => $.aria["editor-a11y-on-non-macos"], { editorName: ariaEditorName });
 
       if (!accessibility) {
         store.set('accessibilityMode', false);
@@ -464,8 +464,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         ariaAlert(
           `${
             trapped
-              ? t('learn.editor-alerts.tab-trapped')
-              : t('learn.editor-alerts.tab-free')
+              ? t($ => $.learn["editor-alerts"]["tab-trapped"])
+              : t($ => $.learn["editor-alerts"]["tab-free"])
           }`
         );
       }
@@ -784,7 +784,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       jawHeading.classList.add('challenge-description-header');
       const challengeTitle = document.createElement('h1');
       challengeTitle.innerHTML = `${title} <span class='sr-only'>${t(
-        'icons.passed'
+        $ => $.icons.passed
       )}</span>`;
       jawHeading.appendChild(challengeTitle);
       const checkmark = ReactDOMServer.renderToStaticMarkup(
@@ -910,16 +910,14 @@ const Editor = (props: EditorProps): JSX.Element => {
   function createBreadcrumb(): HTMLElement {
     const { block, superBlock } = props;
     const breadcrumb = document.createElement('nav');
-    breadcrumb.setAttribute('aria-label', `${t('aria.breadcrumb-nav')}`);
+    breadcrumb.setAttribute('aria-label', `${t($ => $.aria["breadcrumb-nav"])}`);
     const breadcrumbList = document.createElement('ol'),
       breadcrumbLeft = document.createElement('li'),
       breadcrumbLeftLink = document.createElement('a'),
       breadcrumbRight = document.createElement('li'),
       breadcrumbRightLink = document.createElement('a');
-    breadcrumbLeftLink.innerHTML = t(`intro:${superBlock}.title`);
-    breadcrumbRightLink.innerHTML = t(
-      `intro:${superBlock}.blocks.${block}.title`
-    );
+    breadcrumbLeftLink.innerHTML = t($ => $[superBlock].title, { ns: "intro" });
+    breadcrumbRightLink.innerHTML = t($ => $[superBlock].blocks[block].title, { ns: "intro" });
     breadcrumbLeftLink.setAttribute('href', `/learn/${superBlock}`);
     breadcrumbRightLink.setAttribute('href', `/learn/${superBlock}/#${block}`);
     breadcrumbLeft.appendChild(breadcrumbLeftLink);

@@ -25,7 +25,7 @@ function Assignments({
   return (
     <>
       <ChallengeHeading
-        heading={t('learn.assignments', { count: assignments.length })}
+        heading={t($ => $.learn.assignments, { count: assignments.length })}
       />
       <div className='video-quiz-options'>
         {assignments.map((assignment, index) => (
@@ -46,7 +46,7 @@ function Assignments({
         <>
           <Spacer size='m' />
           <div className='assignments-not-complete'>
-            {t('learn.assignment-not-complete', { count: assignments.length })}
+            {t($ => $.learn["assignment-not-complete"], { count: assignments.length })}
           </div>
         </>
       )}

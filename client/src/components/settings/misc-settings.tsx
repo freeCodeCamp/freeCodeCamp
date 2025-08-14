@@ -34,11 +34,11 @@ const MiscSettings = ({
         <KeyboardShortcutsSettings
           keyboardShortcuts={keyboardShortcuts}
           toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-          explain={t('settings.shortcuts-explained')?.toString()}
+          explain={t($ => $.settings["shortcuts-explained"])?.toString()}
         />
         <ScrollbarWidthSettings />
         <label htmlFor='reset-layout-btn'>
-          {t('settings.reset-editor-layout-tooltip')}
+          {t($ => $.settings["reset-editor-layout-tooltip"])}
         </label>
         <Spacer size='xs' />
         <Button
@@ -48,7 +48,7 @@ const MiscSettings = ({
           disabled={!editorLayout}
           aria-disabled={!editorLayout}
         >
-          {t('settings.reset-editor-layout')}
+          {t($ => $.settings["reset-editor-layout"])}
         </Button>
       </FullWidthRow>
     </>

@@ -24,13 +24,13 @@ function DailyCodingChallengeNotFound(): JSX.Element {
           xs={12}
           className='not-found-wrapper'
         >
-          <Helmet title={t('404.page-not-found') + ' | freeCodeCamp.org'} />
-          <img alt={t('404.not-found')} src={notFoundLogo} />
+          <Helmet title={t($ => $[404]["page-not-found"]) + ' | freeCodeCamp.org'} />
+          <img alt={t($ => $[404]["not-found"])} src={notFoundLogo} />
           <Spacer size='m' />
-          <h1 id='content-start'>{t('daily-coding-challenges.not-found')}</h1>
+          <h1 id='content-start'>{t($ => $["daily-coding-challenges"]["not-found"])}</h1>
           <Spacer size='m' />
           <div>
-            <p>{t('404.heres-a-quote')}</p>
+            <p>{t($ => $[404]["heres-a-quote"])}</p>
             <Spacer size='m' />
             <blockquote className='quote-wrapper'>
               <p className='quote'>{quote.quote}</p>
@@ -43,16 +43,16 @@ function DailyCodingChallengeNotFound(): JSX.Element {
               block={true}
               href={`/learn/daily-coding-challenge/${getTodayUsCentral()}`}
             >
-              {t(`buttons.go-to-today-long`)}
+              {t($ => $.buttons["go-to-today-long"])}
             </Button>
             <Spacer size='xs' />
             <Button block={true} href='/learn/daily-coding-challenge/archive'>
-              {t(`buttons.go-to-archive-long`)}
+              {t($ => $.buttons["go-to-archive-long"])}
             </Button>
           </div>
           <Spacer size='l' />
           <Link className='btn btn-cta' to='/learn'>
-            {t('buttons.view-curriculum')}
+            {t($ => $.buttons["view-curriculum"])}
           </Link>
         </Col>
       </Row>

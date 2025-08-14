@@ -23,15 +23,15 @@ export const CtaText = (): JSX.Element => {
   return (
     <>
       <h1 data-playwright-test-label='main-head' id='content-start'>
-        {t('donate.help-more')}
+        {t($ => $.donate["help-more"])}
       </h1>
       <Spacer size='m' />
-      <p data-playwright-test-label='donate-text-1'>{t('donate.efficiency')}</p>
+      <p data-playwright-test-label='donate-text-1'>{t($ => $.donate.efficiency)}</p>
       <p data-playwright-test-label='donate-text-2'>
-        {t('donate.why-donate-1')}
+        {t($ => $.donate["why-donate-1"])}
       </p>
       <p data-playwright-test-label='donate-text-3'>
-        {t('donate.why-donate-2')}
+        {t($ => $.donate["why-donate-2"])}
       </p>
     </>
   );
@@ -48,12 +48,12 @@ export const ThankYouMessage = ({
   return (
     <>
       <h1 data-playwright-test-label='main-head'>
-        {t('donate.thank-you-continued')}
+        {t($ => $.donate["thank-you-continued"])}
       </h1>
       {(askForDonation || thankContributon) && (
         <>
           <Spacer size='m' />
-          <p>{t('donate.crucial-contribution')}</p>
+          <p>{t($ => $.donate["crucial-contribution"])}</p>
         </>
       )}
       {askForDonation && <OtherWaysToSupport />}
@@ -65,10 +65,16 @@ const OtherWaysToSupport = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <p>
-      <Trans i18nKey='donate.if-support-further'>
-        <a href={t('links:donate.one-time-external-url')}>placeholder</a>
-        <a href={t('links:donate.mail-check-url')}>placeholder</a>
-        <a href={t('links:donate.other-ways-url')}>placeholder</a>
+      <Trans i18nKey={$ => $.donate["if-support-further"]}>
+        <a href={t($ => $.donate["one-time-external-url"], {
+          ns: "links"
+        })}>placeholder</a>
+        <a href={t($ => $.donate["mail-check-url"], {
+          ns: "links"
+        })}>placeholder</a>
+        <a href={t($ => $.donate["other-ways-url"], {
+          ns: "links"
+        })}>placeholder</a>
       </Trans>
     </p>
   );
@@ -103,96 +109,102 @@ const FaqItem = (
 export const DonationFaqText = (): JSX.Element => {
   const { t } = useTranslation();
   const faqItems = [
-    { Q: t('donate.get-help'), A: <p>{t('donate.forward-receipt')}</p> },
+    { Q: t($ => $.donate["get-help"]), A: <p>{t($ => $.donate["forward-receipt"])}</p> },
     {
-      Q: t('donate.how-transparent'),
+      Q: t($ => $.donate["how-transparent"]),
       A: (
         <>
-          <p>{t('donate.very-transparent')}</p>
+          <p>{t($ => $.donate["very-transparent"])}</p>
           <p>
-            <Trans i18nKey='donate.download-irs'>
-              <a href={t('links:donate.download-irs-url')}>placeholder</a>
+            <Trans i18nKey={$ => $.donate["download-irs"]}>
+              <a href={t($ => $.donate["download-irs-url"], {
+                ns: "links"
+              })}>placeholder</a>
             </Trans>
           </p>
           <p>
-            <Trans i18nKey='donate.download-990'>
-              <a href={t('links:donate.download-990-url')}>placeholder</a>
+            <Trans i18nKey={$ => $.donate["download-990"]}>
+              <a href={t($ => $.donate["download-990-url"], {
+                ns: "links"
+              })}>placeholder</a>
             </Trans>
           </p>
         </>
       )
     },
     {
-      Q: t('donate.how-efficient'),
+      Q: t($ => $.donate["how-efficient"]),
       A: (
         <>
-          <p>{t('donate.fcc-budget')}</p>
-          <p>{t('donate.help-millions')}</p>
+          <p>{t($ => $.donate["fcc-budget"])}</p>
+          <p>{t($ => $.donate["help-millions"])}</p>
         </>
       )
     },
     {
-      Q: t('donate.how-one-time'),
+      Q: t($ => $.donate["how-one-time"]),
       A: (
         <>
           <p>
-            <Trans i18nKey='donate.one-time'>
-              <a href={t('links:donate.one-time-url')}>placeholder</a>
+            <Trans i18nKey={$ => $.donate["one-time"]}>
+              <a href={t($ => $.donate["one-time-url"], {
+                ns: "links"
+              })}>placeholder</a>
             </Trans>
           </p>
-          <p>{t('donate.wire-transfer')}</p>
+          <p>{t($ => $.donate["wire-transfer"])}</p>
         </>
       )
     },
     {
-      Q: t('donate.does-crypto'),
-      A: <p>{t('donate.yes-cryptocurrency')}</p>
+      Q: t($ => $.donate["does-crypto"]),
+      A: <p>{t($ => $.donate["yes-cryptocurrency"])}</p>
     },
 
     {
-      Q: t('donate.can-check'),
+      Q: t($ => $.donate["can-check"]),
       A: (
         <>
-          <p>{t('donate.yes-check')}</p>
+          <p>{t($ => $.donate["yes-check"])}</p>
           <p>{POBOX}</p>
         </>
       )
     },
     {
-      Q: t('donate.how-matching-gift'),
+      Q: t($ => $.donate["how-matching-gift"]),
       A: (
         <>
-          <p>{t('donate.employers-vary')}</p>
-          <p>{t('donate.some-volunteer')}</p>
-          <p>{t('donate.help-matching-gift')}</p>
+          <p>{t($ => $.donate["employers-vary"])}</p>
+          <p>{t($ => $.donate["some-volunteer"])}</p>
+          <p>{t($ => $.donate["help-matching-gift"])}</p>
         </>
       )
     },
-    { Q: t('donate.how-endowment'), A: <p>{t('donate.endowment')}</p> },
+    { Q: t($ => $.donate["how-endowment"]), A: <p>{t($ => $.donate.endowment)}</p> },
     {
-      Q: t('donate.how-legacy'),
+      Q: t($ => $.donate["how-legacy"]),
       A: (
         <>
-          <p>{t('donate.we-honored')}</p>
+          <p>{t($ => $.donate["we-honored"])}</p>
           <blockquote>
-            <p>{t('donate.legacy-gift-message')}</p>
+            <p>{t($ => $.donate["legacy-gift-message"])}</p>
           </blockquote>
-          <p>{t('donate.thank-wikimedia')}</p>
-          <p>{t('donate.legacy-gift-questions')}</p>
+          <p>{t($ => $.donate["thank-wikimedia"])}</p>
+          <p>{t($ => $.donate["legacy-gift-questions"])}</p>
         </>
       )
     },
-    { Q: t('donate.how-stock'), A: <p>{t('donate.welcome-stock')}</p> },
-    { Q: t('donate.how-update'), A: <p>{t('donate.forward-receipt')}</p> },
+    { Q: t($ => $.donate["how-stock"]), A: <p>{t($ => $.donate["welcome-stock"])}</p> },
+    { Q: t($ => $.donate["how-update"]), A: <p>{t($ => $.donate["forward-receipt"])}</p> },
     {
-      Q: t('donate.anything-else'),
-      A: <p>{t('donate.other-support')}</p>
+      Q: t($ => $.donate["anything-else"]),
+      A: <p>{t($ => $.donate["other-support"])}</p>
     }
   ];
 
   return (
     <>
-      <h2 data-playwright-test-label='faq-head'>{t('donate.faq')}</h2>
+      <h2 data-playwright-test-label='faq-head'>{t($ => $.donate.faq)}</h2>
       <Spacer size='xs' />
       {faqItems.map((item, iterator) => FaqItem(item.Q, item.A, iterator))}
     </>
@@ -209,8 +221,8 @@ export const SupportBenefitsText = ({
     <>
       <h2>
         {isSupportersPage
-          ? t('donate.exclusive-features')
-          : t('donate.support-benefits-title')}
+          ? t($ => $.donate["exclusive-features"])
+          : t($ => $.donate["support-benefits-title"])}
       </h2>
       <BenefitsList />
     </>
@@ -221,11 +233,11 @@ const BenefitsList = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <ul>
-      <li>{t('donate.support-benefits-1')}</li>
-      <li>{t('donate.support-benefits-2')}</li>
-      <li>{t('donate.support-benefits-3')}</li>
+      <li>{t($ => $.donate["support-benefits-1"])}</li>
+      <li>{t($ => $.donate["support-benefits-2"])}</li>
+      <li>{t($ => $.donate["support-benefits-3"])}</li>
       <li>
-        <Trans i18nKey='donate.support-benefits-4'>
+        <Trans i18nKey={$ => $.donate["support-benefits-4"]}>
           <a
             href='https://discord.gg/KVUmVXA'
             target='_blank'
@@ -236,7 +248,7 @@ const BenefitsList = (): JSX.Element => {
           <code>placeholder</code>
         </Trans>
       </li>
-      <li>{t('donate.support-benefits-5')}</li>
+      <li>{t($ => $.donate["support-benefits-5"])}</li>
     </ul>
   );
 };
@@ -251,14 +263,14 @@ export const CurrentInitiativesText = ({
     <>
       <h2>
         {isSupportersPage
-          ? t('donate.your-donation-helps-followings')
-          : t('donate.current-initiatives-title')}
+          ? t($ => $.donate["your-donation-helps-followings"])
+          : t($ => $.donate["current-initiatives-title"])}
       </h2>
       <ul>
-        <li>{t('donate.current-initiatives-1')}</li>
-        <li>{t('donate.current-initiatives-2')}</li>
-        <li>{t('donate.current-initiatives-3')}</li>
-        <li>{t('donate.current-initiatives-4')}</li>
+        <li>{t($ => $.donate["current-initiatives-1"])}</li>
+        <li>{t($ => $.donate["current-initiatives-2"])}</li>
+        <li>{t($ => $.donate["current-initiatives-3"])}</li>
+        <li>{t($ => $.donate["current-initiatives-4"])}</li>
       </ul>
     </>
   );
@@ -268,25 +280,25 @@ export const CommunityAchievementsText = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
-      <h2>{t('donate.community-achivements-title')}</h2>
+      <h2>{t($ => $.donate["community-achivements-title"])}</h2>
       <ul>
         <li>
-          <Trans i18nKey='donate.community-achivements-1'>
+          <Trans i18nKey={$ => $.donate["community-achivements-1"]}>
             <b>placeholder</b>
           </Trans>
         </li>
         <li>
-          <Trans i18nKey='donate.community-achivements-2'>
+          <Trans i18nKey={$ => $.donate["community-achivements-2"]}>
             <b>placeholder</b>
           </Trans>
         </li>
         <li>
-          <Trans i18nKey='donate.community-achivements-3'>
+          <Trans i18nKey={$ => $.donate["community-achivements-3"]}>
             <b>placeholder</b>
           </Trans>
         </li>
         <li>
-          <Trans i18nKey='donate.community-achivements-4'>
+          <Trans i18nKey={$ => $.donate["community-achivements-4"]}>
             <b>placeholder</b>
           </Trans>
         </li>
@@ -304,8 +316,8 @@ export const GetSupporterBenefitsText = ({
   return (
     <>
       <Spacer size='l' />
-      <p>{t('donate.as-you-see')}</p>
-      {!isDonating ? <p>{t('donate.get-benefits')}</p> : null}
+      <p>{t($ => $.donate["as-you-see"])}</p>
+      {!isDonating ? <p>{t($ => $.donate["get-benefits"])}</p> : null}
     </>
   );
 };
@@ -319,15 +331,15 @@ export const ModalBenefitList = () => {
     <ul {...(isA11yFeatureEnabled && { tabIndex: -1 })}>
       <li>
         <GreenPass aria-hidden={true} />
-        {t('donate.help-us-more-certifications')}
+        {t($ => $.donate["help-us-more-certifications"])}
       </li>
       <li>
         <GreenPass aria-hidden={true} />
-        {t('donate.remove-donation-popups')}
+        {t($ => $.donate["remove-donation-popups"])}
       </li>
       <li>
         <GreenPass aria-hidden={true} />
-        {t('donate.help-millions-learn')}
+        {t($ => $.donate["help-millions-learn"])}
       </li>
     </ul>
   );

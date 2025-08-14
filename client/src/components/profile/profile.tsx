@@ -38,7 +38,7 @@ interface MessageProps {
 const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
     <FullWidthRow>
-      <Alert variant='info'>{t('profile.you-change-privacy')}</Alert>
+      <Alert variant='info'>{t($ => $.profile["you-change-privacy"])}</Alert>
       <Spacer size='xl' />
     </FullWidthRow>
   );
@@ -49,7 +49,7 @@ const EditModal = ({ user, isEditing, setIsEditing }: EditModalProps) => {
   const { t } = useTranslation();
   return (
     <Modal onClose={() => setIsEditing(false)} open={isEditing} size='large'>
-      <Modal.Header>{t('profile.edit-my-profile')}</Modal.Header>
+      <Modal.Header>{t($ => $.profile["edit-my-profile"])}</Modal.Header>
       <Modal.Body alignment='left'>
         <UsernameSettings username={username} setIsEditing={setIsEditing} />
         <Spacer size='m' />
@@ -70,7 +70,7 @@ const VisitorMessage = ({
   return (
     <FullWidthRow>
       <Alert variant='info'>
-        {t('profile.username-change-privacy', { username })}
+        {t($ => $.profile["username-change-privacy"], { username })}
       </Alert>
       <Spacer size='m' />
     </FullWidthRow>
@@ -143,7 +143,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
   return (
     <>
       <Helmet>
-        <title>{t('buttons.profile')} | freeCodeCamp.org</title>
+        <title>{t($ => $.buttons.profile)} | freeCodeCamp.org</title>
       </Helmet>
       <Spacer size='m' />
       <Container>
@@ -157,7 +157,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
         {!isSessionUser && (
           <Row className='text-center'>
             <Link to={`/user/${username}/report-user`}>
-              {t('buttons.flag-user')}
+              {t($ => $.buttons["flag-user"])}
             </Link>
           </Row>
         )}

@@ -30,7 +30,7 @@ function DailyCodingChallengeCalendarDay({
         disabled
         className='calendar-day not-available'
         data-playwright-test-label='calendar-day'
-        aria-label={`${date && formatDisplayDate(date)}, (${t('aria.not-available')})`}
+        aria-label={`${date && formatDisplayDate(date)}, (${t($ => $.aria["not-available"])})`}
       >
         <span className='calendar-day-number' aria-hidden='true'>
           {dayNumber}

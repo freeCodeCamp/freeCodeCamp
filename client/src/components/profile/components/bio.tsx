@@ -58,7 +58,7 @@ const Bio = ({ user, setIsEditing, isSessionUser }: BioProps) => {
               onClick={() => setIsEditing(true)}
               size='small'
               className='button-fit'
-              aria-label={t('aria.edit-my-profile')}
+              aria-label={t($ => $.aria["edit-my-profile"])}
             >
               <FontAwesomeIcon icon={faPen} />
             </Button>
@@ -77,7 +77,7 @@ const Bio = ({ user, setIsEditing, isSessionUser }: BioProps) => {
           {location && showLocation && (
             <div>
               <FontAwesomeIcon icon={faLocationDot} />
-              <span>{t('profile.from', { location })}</span>
+              <span>{t($ => $.profile.from, { location })}</span>
             </div>
           )}
         </div>

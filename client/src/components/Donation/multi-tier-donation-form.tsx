@@ -70,7 +70,7 @@ function SelectionTabs({
     >
       <Col xs={12}>
         <b>
-          {t('donate.confirm-monthly', {
+          {t($ => $.donate["confirm-monthly"], {
             usd: formattedAmountLabel(donationAmount)
           })}
         </b>
@@ -95,7 +95,7 @@ function SelectionTabs({
           {subscriptionAmounts.map(value => {
             const usd = formattedAmountLabel(donationAmount);
             const hours = convertToTimeContributed(donationAmount);
-            const donationDescription = t('donate.your-donation-2', {
+            const donationDescription = t($ => $.donate["your-donation-2"], {
               usd,
               hours
             });
@@ -117,8 +117,8 @@ function SelectionTabs({
           onClick={handleAmountConfirmationClick}
         >
           {isAnimationEnabled
-            ? t('buttons.confirm-amount')
-            : t('buttons.donate')}
+            ? t($ => $.buttons["confirm-amount"])
+            : t($ => $.buttons.donate)}
         </button>
         <Spacer size='m' />
       </Col>

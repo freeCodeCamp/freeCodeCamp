@@ -34,8 +34,8 @@ const Illustration = ({
     <img
       alt={
         showNewBearIllustration
-          ? t('bear-completion-alt')
-          : t('donate.flying-bear')
+          ? t($ => $["bear-completion-alt"])
+          : t($ => $.donate["flying-bear"])
       }
       id={'supporter-bear'}
       src={showNewBearIllustration ? supporterBearBlock : supporterBear}
@@ -66,18 +66,24 @@ function ModalHeader({
           {donatableSectionRecentlyCompleted && (
             <>
               <b>
-                {t('donate.nicely-done', {
-                  block:
-                    section === 'module'
-                      ? t(`intro:${superBlock}.${section}s.${title}`)
-                      : t(`intro:${superBlock}.${section}s.${title}.title`)
+                {/**
+                  * TODO: @ahrjarrett
+                  */}
+                {t($ => $.donate["nicely-done"], {
+                  block: section === 'module'
+                    ? t($ => $[superBlock!][section].s[title!], {
+                    ns: "intro"
+                  })
+                    : t($ => $[superBlock!][section!].s[title!].title, {
+                    ns: "intro"
+                  })
                 })}
               </b>
               <Spacer size='xs' />
             </>
           )}
           <Modal.Header showCloseButton={false} borderless>
-            {t('donate.modal-benefits-title')}
+            {t($ => $.donate["modal-benefits-title"])}
           </Modal.Header>
         </Col>
       </Row>
@@ -103,7 +109,7 @@ function CloseButtonRow({
           type='button'
           onClick={closeDonationModal}
         >
-          {donationAttempted ? t('buttons.close') : t('buttons.ask-later')}
+          {donationAttempted ? t($ => $.buttons.close) : t($ => $.buttons["ask-later"])}
         </button>
       </Col>
     </Row>
@@ -129,7 +135,7 @@ const Benefits = ({ setShowForm }: { setShowForm: (arg: boolean) => void }) => {
           type='submit'
           onClick={handleBecomeSupporterClick}
         >
-          {t('donate.become-supporter')}
+          {t($ => $.donate["become-supporter"])}
         </button>
         <Spacer size='m' />
       </Col>
@@ -149,9 +155,11 @@ const AnimationContainer = ({
   return (
     <>
       <div style={{ opacity: 0, position: 'absolute' }}>
-        <p>{t('donate.animation-description')}</p>
+        <p>{t($ => $.donate["animation-description"])}</p>
         <span aria-live='polite'>
-          {t('donate.animation-countdown', { secondsRemaining })}
+          {t($ => $.donate["animation-countdown"], {
+            secondsRemaining
+          })}
         </span>
       </div>
       <div className='donation-animation-container' aria-hidden='true'>
@@ -159,31 +167,31 @@ const AnimationContainer = ({
           {newBearAnimation ? (
             <>
               <p className='donation-animation-bullet-1-b'>
-                {t('donate.become-supporter')}
+                {t($ => $.donate["become-supporter"])}
               </p>
               <p className='donation-animation-bullet-2-b'>
-                {t('donate.remove-interruptions')}
+                {t($ => $.donate["remove-interruptions"])}
               </p>
               <p className='donation-animation-bullet-3-b'>
-                {t('donate.acquire-skills-faster')}
+                {t($ => $.donate["acquire-skills-faster"])}
               </p>
               <p className='donation-animation-bullet-4-b'>
-                {t('donate.help-millions-learn')}
+                {t($ => $.donate["help-millions-learn"])}
               </p>
             </>
           ) : (
             <>
               <p className='donation-animation-bullet-1'>
-                {t('donate.become-supporter')}
+                {t($ => $.donate["become-supporter"])}
               </p>
               <p className='donation-animation-bullet-2'>
-                {t('donate.remove-distractions')}
+                {t($ => $.donate["remove-distractions"])}
               </p>
               <p className='donation-animation-bullet-3'>
-                {t('donate.reach-goals-faster')}
+                {t($ => $.donate["reach-goals-faster"])}
               </p>
               <p className='donation-animation-bullet-4'>
-                {t('donate.help-millions-learn')}
+                {t($ => $.donate["help-millions-learn"])}
               </p>
             </>
           )}

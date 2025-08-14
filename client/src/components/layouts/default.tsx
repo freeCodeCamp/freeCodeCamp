@@ -197,9 +197,9 @@ function DefaultLayout({
           meta={[
             {
               name: 'description',
-              content: t('metaTags:description')
+              content: t($ => $.description, { ns: "metaTags" })
             },
-            { name: 'keywords', content: t('metaTags:keywords') }
+            { name: 'keywords', content: t($ => $.keywords, { ns: "metaTags" }) }
           ]}
         >
           <link
@@ -278,7 +278,7 @@ function DefaultLayout({
             fetchState={fetchState}
             user={user}
             pathname={pathname}
-            skipButtonText={t('learn.skip-to-content')}
+            skipButtonText={t($ => $.learn["skip-to-content"])}
           />
           <OfflineWarning
             isOnline={isOnline}

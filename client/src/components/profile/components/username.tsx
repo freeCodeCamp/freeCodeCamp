@@ -156,7 +156,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
       return (
         <FullWidthRow>
           <Alert variant='danger'>
-            {t(`settings.username.${error}`, {
+            {t($ => $.settings.username[error], {
               username: this.state.formValue
             })}
           </Alert>
@@ -166,28 +166,28 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
     if (!validating && !isValidUsername) {
       return (
         <FullWidthRow>
-          <Alert variant='warning'>{t('settings.username.unavailable')}</Alert>
+          <Alert variant='warning'>{t($ => $.settings.username.unavailable)}</Alert>
         </FullWidthRow>
       );
     }
     if (validating) {
       return (
         <FullWidthRow>
-          <Alert variant='info'>{t('settings.username.validating')}</Alert>
+          <Alert variant='info'>{t($ => $.settings.username.validating)}</Alert>
         </FullWidthRow>
       );
     }
     if (!validating && isValidUsername && this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert variant='success'>{t('settings.username.available')}</Alert>
+          <Alert variant='success'>{t($ => $.settings.username.available)}</Alert>
         </FullWidthRow>
       );
     } else if (!validating && isValidUsername && !this.state.isUserNew) {
       return (
         <FullWidthRow>
-          <Alert variant='success'>{t('settings.username.available')}</Alert>
-          <Alert variant='info'>{t('settings.username.change')}</Alert>
+          <Alert variant='success'>{t($ => $.settings.username.available)}</Alert>
+          <Alert variant='info'>{t($ => $.settings.username.change)}</Alert>
         </FullWidthRow>
       );
     }
@@ -209,7 +209,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
         <FullWidthRow>
           <FormGroup>
             <ControlLabel htmlFor='username-settings'>
-              <strong>{t('settings.labels.username')}</strong>
+              <strong>{t($ => $.settings.labels.username)}</strong>
             </ControlLabel>
             <FormControl
               name='username-settings'
@@ -227,8 +227,8 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
             bgSize='large'
             {...(isDisabled && { tabIndex: -1 })}
           >
-            {t('buttons.save')}{' '}
-            <span className='sr-only'>{t('settings.labels.username')}</span>
+            {t($ => $.buttons.save)}{' '}
+            <span className='sr-only'>{t($ => $.settings.labels.username)}</span>
           </BlockSaveButton>
         </FullWidthRow>
       </form>

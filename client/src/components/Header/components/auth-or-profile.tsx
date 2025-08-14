@@ -19,9 +19,7 @@ const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
     user && user.yearsTopContributor && user.yearsTopContributor.length > 0;
 
   if (!isUserSignedIn) {
-    return (
-      <Login data-test-label='landing-small-cta'>{t('buttons.sign-in')}</Login>
-    );
+    return (<Login data-test-label='landing-small-cta'>{t($ => $.buttons["sign-in"])}</Login>);
   } else {
     return (
       <Link className='avatar-nav-link' to={`/${user.username}`}>

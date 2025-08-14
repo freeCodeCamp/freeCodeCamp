@@ -87,7 +87,7 @@ export function SearchBar({
     document.addEventListener('click', handleFocus);
     const searchInput = document.querySelector('.ais-SearchBox-input');
     if (searchInput) {
-      searchInput.setAttribute('aria-label', t('search.label'));
+      searchInput.setAttribute('aria-label', t($ => $.search.label));
     }
     return () => {
       document.removeEventListener('click', handleFocus);
@@ -168,11 +168,11 @@ export function SearchBar({
     }
   };
 
-  const searchPlaceholder = t('search-bar:placeholder').startsWith(
+  const searchPlaceholder = t($ => $.placeholder, { ns: "search-bar" }).startsWith(
     'search.placeholder.'
   )
-    ? t('search.placeholder')
-    : t('search-bar:placeholder');
+    ? t($ => $.search.placeholder)
+    : t($ => $.placeholder, { ns: "search-bar" });
 
   return (
     <WithInstantSearch>
@@ -187,8 +187,8 @@ export function SearchBar({
                 }}
                 onInput={handleChange}
                 translations={{
-                  submitButtonTitle: t('icons.input-search'),
-                  resetButtonTitle: t('icons.input-reset')
+                  submitButtonTitle: t($ => $.icons["input-search"]),
+                  resetButtonTitle: t($ => $.icons["input-reset"])
                 }}
                 placeholder={searchPlaceholder}
                 onFocus={handleFocus}

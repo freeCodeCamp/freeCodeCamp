@@ -120,9 +120,9 @@ const ShowGeneric = ({
   const showTranscriptTabs =
     block === 'lecture-html-fundamentals' && transcriptTabsFlagIsOn;
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
+  const blockNameTitle = `${t($ => $[superBlock].blocks[block].title, {
+    ns: "intro"
+  })} - ${title}`;
 
   useEffect(() => {
     initTests(tests);
@@ -224,7 +224,7 @@ const ShowGeneric = ({
     >
       <LearnLayout>
         <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          title={`${blockNameTitle} | ${t($ => $.learn.learn)} | freeCodeCamp.org`}
         />
         <Container>
           <Row>
@@ -256,10 +256,10 @@ const ShowGeneric = ({
                 >
                   <TabsList className='nav-lists'>
                     <TabsTrigger value={tabs.transcript}>
-                      {t('learn.transcript')}
+                      {t($ => $.learn.transcript)}
                     </TabsTrigger>
                     <TabsTrigger value={tabs.video}>
-                      {t('learn.video')}
+                      {t($ => $.learn.video)}
                     </TabsTrigger>
                   </TabsList>
                   <TabsContent
@@ -346,16 +346,16 @@ const ShowGeneric = ({
                 <ChallengeExplanation explanation={explanation} />
               ) : null}
               {!hasAnsweredMcqCorrectly && (
-                <p className='text-center'>{t('learn.answered-mcq')}</p>
+                <p className='text-center'>{t($ => $.learn["answered-mcq"])}</p>
               )}
               <Button block={true} variant='primary' onClick={handleSubmit}>
                 {blockType === BlockTypes.review
-                  ? t('buttons.submit')
-                  : t('buttons.check-answer')}
+                  ? t($ => $.buttons.submit)
+                  : t($ => $.buttons["check-answer"])}
               </Button>
               <Spacer size='xxs' />
               <Button block={true} variant='primary' onClick={openHelpModal}>
-                {t('buttons.ask-for-help')}
+                {t($ => $.buttons["ask-for-help"])}
               </Button>
               <Spacer size='l' />
             </Col>

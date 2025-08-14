@@ -165,17 +165,17 @@ class CompletionModal extends Component<
     if (isDesktop) {
       if (isMacOS) {
         buttonText = isSignedIn
-          ? t('buttons.submit-and-go-cmd')
-          : t('buttons.go-to-next-cmd');
+          ? t($ => $.buttons["submit-and-go-cmd"])
+          : t($ => $.buttons["go-to-next-cmd"]);
       } else {
         buttonText = isSignedIn
-          ? t('buttons.submit-and-go-ctrl')
-          : t('buttons.go-to-next-ctrl');
+          ? t($ => $.buttons["submit-and-go-ctrl"])
+          : t($ => $.buttons["go-to-next-ctrl"]);
       }
     } else {
       buttonText = isSignedIn
-        ? t('buttons.submit-and-go')
-        : t('buttons.go-to-next');
+        ? t($ => $.buttons["submit-and-go"])
+        : t($ => $.buttons["go-to-next"]);
     }
 
     return (
@@ -200,7 +200,7 @@ class CompletionModal extends Component<
         <Modal.Footer>
           {isSignedIn ? null : (
             <div className='completion-modal-login-btn'>
-              <Login block={true}>{t('learn.sign-in-save')}</Login>
+              <Login block={true}>{t($ => $.learn["sign-in-save"])}</Login>
               <Spacer size='xxs' />
             </div>
           )}
@@ -222,7 +222,7 @@ class CompletionModal extends Component<
               download={`${dashedName}.txt`}
               href={this.state.downloadURL}
             >
-              {t('learn.download-solution')}
+              {t($ => $.learn["download-solution"])}
             </Button>
           ) : null}
         </Modal.Footer>

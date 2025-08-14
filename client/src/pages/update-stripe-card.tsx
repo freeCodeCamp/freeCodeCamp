@@ -60,9 +60,9 @@ function ConditionalContent({
   if (isSignedIn && !isDonating) {
     return (
       <>
-        <h1 className='text-center'>{t('learn.donation-record-not-found')}</h1>
+        <h1 className='text-center'>{t($ => $.learn["donation-record-not-found"])}</h1>
         <Spacer size='m' />
-        <p className='text-center'>{t('learn.contact-support-mistake')}</p>
+        <p className='text-center'>{t($ => $.learn["contact-support-mistake"])}</p>
       </>
     );
   } else if (isSignedIn && isDonating) {
@@ -81,16 +81,16 @@ function ConditionalContent({
         <>
           <Spacer size='m' />
           <Button block={true} onClick={handleClick}>
-            {t('buttons.update-card')}
+            {t($ => $.buttons["update-card"])}
           </Button>
         </>
       );
   } else
     return (
       <>
-        <h1 className='text-center'>{t('learn.sign-in-card-update')}</h1>
+        <h1 className='text-center'>{t($ => $.learn["sign-in-card-update"])}</h1>
         <Spacer size='m' />
-        <BigCallToAction text={t('buttons.sign-in')} />
+        <BigCallToAction text={t($ => $.buttons["sign-in"])} />
       </>
     );
 }
@@ -120,7 +120,7 @@ function UpdateStripeCard({
   return (
     <>
       <Helmet>
-        <title>{t('misc.update-your-card')} | freeCodeCamp.org</title>
+        <title>{t($ => $.misc["update-your-card"])} | freeCodeCamp.org</title>
       </Helmet>
       <Container className='page-wrapper-80'>
         <Row>

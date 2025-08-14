@@ -37,7 +37,7 @@ function MissingPrerequisites({
 
   return (
     <Alert variant='danger'>
-      <p>{t('learn.exam.not-qualified')}</p>
+      <p>{t($ => $.learn.exam["not-qualified"])}</p>
       <Spacer size='xs' />
       <ul>
         {newMissingPrerequisites.map(({ title, id, slug }) =>

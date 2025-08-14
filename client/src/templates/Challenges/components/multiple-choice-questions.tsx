@@ -31,7 +31,7 @@ function MultipleChoiceQuestions({
     <>
       <ChallengeHeading
         heading={
-          questions.length > 1 ? t('learn.questions') : t('learn.question')
+          questions.length > 1 ? t($ => $.learn.questions) : t($ => $.learn.question)
         }
       />
       {questions.map((question, questionIndex) => (
@@ -87,8 +87,8 @@ function MultipleChoiceQuestions({
                     >
                       <p>
                         {isCorrect
-                          ? t('learn.quiz.correct-answer')
-                          : t('learn.quiz.incorrect-answer')}
+                          ? t($ => $.learn.quiz["correct-answer"])
+                          : t($ => $.learn.quiz["incorrect-answer"])}
                       </p>
                       {feedback && (
                         <p>

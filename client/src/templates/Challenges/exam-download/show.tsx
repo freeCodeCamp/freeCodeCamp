@@ -103,10 +103,10 @@ function ShowExamDownload(): JSX.Element {
   return (
     <FullWidthRow>
       <Spacer size='l' />
-      <h2>{t('exam.download-header')}</h2>
-      <p>{t('exam.explanation')}</p>
+      <h2>{t($ => $.exam["download-header"])}</h2>
+      <p>{t($ => $.exam.explanation)}</p>
       <p>
-        {t('exam.version', {
+        {t($ => $.exam.version, {
           version: latestVersion || '...'
         })}
       </p>
@@ -116,12 +116,12 @@ function ShowExamDownload(): JSX.Element {
         href={downloadLink}
         download={downloadLink}
       >
-        {t('buttons.download-latest-version')}
+        {t($ => $.buttons["download-latest-version"])}
       </Button>
-      {!downloadLink && <strong>{t('exam.unable-to-detect-os')}</strong>}
+      {!downloadLink && <strong>{t($ => $.exam["unable-to-detect-os"])}</strong>}
       <Spacer size='l' />
       <details>
-        <summary>{t('exam.download-details')}</summary>
+        <summary>{t($ => $.exam["download-details"])}</summary>
         <ul>
           {downloadLinks
             .filter(link => !link.match(/\.sig|\.json/))
@@ -137,7 +137,7 @@ function ShowExamDownload(): JSX.Element {
         </ul>
       </details>
       <Spacer size='l' />
-      <strong>{t('exam.download-trouble')}</strong>
+      <strong>{t($ => $.exam["download-trouble"])}</strong>
       <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
     </FullWidthRow>
   );

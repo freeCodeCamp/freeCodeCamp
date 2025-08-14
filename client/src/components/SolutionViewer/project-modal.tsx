@@ -24,13 +24,13 @@ const ProjectModal = ({
   return (
     <Modal onClose={handleSolutionModalHide} open={isOpen} size='large'>
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
-        {t('settings.labels.solution-for', { projectTitle })}
+        {t($ => $.settings.labels["solution-for"], { projectTitle })}
       </Modal.Header>
       <Modal.Body alignment='left'>
         <SolutionViewer challengeFiles={challengeFiles} solution={solution} />
       </Modal.Body>
       <Modal.Footer alignment='end'>
-        <Button onClick={handleSolutionModalHide}>{t('buttons.close')}</Button>
+        <Button onClick={handleSolutionModalHide}>{t($ => $.buttons.close)}</Button>
       </Modal.Footer>
     </Modal>
   );

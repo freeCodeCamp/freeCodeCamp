@@ -132,9 +132,9 @@ const ShowQuiz = ({
 
   const [exitPathname, setExitPathname] = useState(blockHashSlug);
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
+  const blockNameTitle = `${t($ => $[superBlock].blocks[block].title, {
+    ns: "intro"
+  })} - ${title}`;
 
   const [quizId] = useState(Math.floor(Math.random() * quizzes.length));
   const quiz = quizzes[quizId].questions;
@@ -190,8 +190,8 @@ const ShowQuiz = ({
     initialQuestions: initialQuizData,
     showCorrectAnswersOnSuccess: true,
     validationMessages: {
-      correct: t('learn.quiz.correct-answer'),
-      incorrect: t('learn.quiz.incorrect-answer')
+      correct: t($ => $.learn.quiz["correct-answer"]),
+      incorrect: t($ => $.learn.quiz["incorrect-answer"])
     },
     passingPercent: 90,
     onSuccess: () => {
@@ -255,7 +255,7 @@ const ShowQuiz = ({
   const onWindowClose = useCallback(
     (event: BeforeUnloadEvent) => {
       event.preventDefault();
-      window.confirm(t('misc.navigation-warning'));
+      window.confirm(t($ => $.misc["navigation-warning"]));
     },
     [t]
   );
@@ -299,7 +299,7 @@ const ShowQuiz = ({
 
   function getErrorMessage() {
     if (showUnanswered && unanswered.length > 0) {
-      return t('learn.quiz.unanswered-questions', {
+      return t($ => $.learn.quiz["unanswered-questions"], {
         unansweredQuestions: unanswered.join(', ')
       });
     }
@@ -307,7 +307,7 @@ const ShowQuiz = ({
     if (validated) {
       // TODO: Update the message to include link(s) to the review materials
       // if campers didn't pass the quiz.
-      return t('learn.quiz.have-n-correct-questions', {
+      return t($ => $.learn.quiz["have-n-correct-questions"], {
         correctAnswerCount,
         total: quiz.length
       });
@@ -325,7 +325,7 @@ const ShowQuiz = ({
     >
       <LearnLayout>
         <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          title={`${blockNameTitle} | ${t($ => $.learn.learn)} | freeCodeCamp.org`}
         />
         <Container className='quiz-challenge-container'>
           <Row>
@@ -359,7 +359,7 @@ const ShowQuiz = ({
                   onClick={handleFinishQuiz}
                   disabled={hasSubmitted}
                 >
-                  {t('buttons.finish-quiz')}
+                  {t($ => $.buttons["finish-quiz"])}
                 </Button>
               ) : (
                 <Button
@@ -367,12 +367,12 @@ const ShowQuiz = ({
                   variant='primary'
                   onClick={handleSubmitAndGo}
                 >
-                  {t('buttons.submit-and-go')}
+                  {t($ => $.buttons["submit-and-go"])}
                 </Button>
               )}
               <Spacer size='xxs' />
               <Button block={true} variant='primary' onClick={handleExitQuiz}>
-                {t('buttons.exit-quiz')}
+                {t($ => $.buttons["exit-quiz"])}
               </Button>
               <Spacer size='l' />
             </Col>

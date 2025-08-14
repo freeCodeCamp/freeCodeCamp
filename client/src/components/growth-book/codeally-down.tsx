@@ -8,7 +8,7 @@ const Down = () => {
   return (
     <Alert variant='danger'>
       <p>
-        <Trans i18nKey='intro:misc-text.course-maintenance'>
+        <Trans i18nKey={$ => $["misc-text"]["course-maintenance"]} ns="intro">
           <a
             href='https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad'
             rel='noreferrer'
@@ -19,7 +19,7 @@ const Down = () => {
         </Trans>
       </p>
       <Spacer size='xs' />
-      <p>{t('intro:misc-text.progress-wont-save')}</p>
+      <p>{t($ => $["misc-text"]["progress-wont-save"], { ns: "intro" })}</p>
     </Alert>
   );
 };
@@ -29,7 +29,7 @@ const Disabled = () => {
   return (
     <Alert variant='danger'>
       <p>
-        <Trans i18nKey='intro:misc-text.course-disabled'>
+        <Trans i18nKey={$ => $["misc-text"]["course-disabled"]} ns="intro">
           <a
             href='https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad'
             rel='noreferrer'
@@ -40,7 +40,7 @@ const Disabled = () => {
         </Trans>
       </p>
       <Spacer size='xs' />
-      <p>{t('intro:misc-text.progress-wont-save')}</p>
+      <p>{t($ => $["misc-text"]["progress-wont-save"], { ns: "intro" })}</p>
     </Alert>
   );
 };

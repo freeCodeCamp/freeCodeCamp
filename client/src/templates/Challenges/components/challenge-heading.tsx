@@ -17,7 +17,10 @@ function ChallengeHeading({
 
   return (
     <div className='challenge-heading-wrap'>
-      <h2 className='challenge-heading'>{t(heading)}</h2>
+      {/**
+        * TODO: @ahrjarrett manually test
+        */}
+      <h2 className='challenge-heading'>{t($ => $[heading])}</h2>
       {isCompleted && <GreenPass />}
     </div>
   );
