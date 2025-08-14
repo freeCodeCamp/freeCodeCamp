@@ -37,9 +37,10 @@ const {
   prefixDoctype,
   helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
-const { STRUCTURE_DIR, getBlockCreator } = require('../build-curriculum');
+
 const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
 const { validateMetaSchema } = require('../schema/meta-schema');
+const { getBlockStructure } = require('../file-handler');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -168,10 +169,7 @@ async function setup() {
     // we can skip them.
     // TODO: omit certifications from the list of challenges
     if (dashedBlockName && !meta[dashedBlockName]) {
-      meta[dashedBlockName] = await getBlockCreator(lang).getMetaForBlock(
-        dashedBlockName,
-        STRUCTURE_DIR
-      );
+      meta[dashedBlockName] = getBlockStructure(dashedBlockName);
       const result = validateMetaSchema(meta[dashedBlockName]);
 
       if (result.error) {
