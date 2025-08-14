@@ -576,7 +576,16 @@
               "dashedName": "workshop-teacher-chatbot"
             },
             {
-              "dashedName": "lecture-working-with-common-string-methods"
+              "dashedName": "lecture-working-with-string-character-methods"
+            },
+            {
+              "dashedName": "lecture-working-with-string-search-and-slice-methods"
+            },
+            {
+              "dashedName": "lecture-working-with-string-formatting-methods"
+            },
+            {
+              "dashedName": "lecture-working-with-string-modification-methods"
             },
             {
               "dashedName": "review-javascript-strings"
@@ -787,6 +796,9 @@
             },
             {
               "dashedName": "lab-sum-all-numbers-algorithm"
+            },
+            {
+              "dashedName": "lab-html-entitiy-converter"
             },
             {
               "dashedName": "review-javascript-fundamentals"
@@ -1394,7 +1406,7 @@
           "blocks": [
             { "dashedName": "lecture-understanding-graphs-and-trees" },
             { "dashedName": "workshop-shortest-path-algorithm" },
-            { "dashedName": "lab-adjacency-list-matrix-converter" },
+            { "dashedName": "lab-adjacency-list-to-matrix-converter" },
             { "dashedName": "workshop-breadth-first-search" },
             { "dashedName": "lab-depth-first-search" },
             { "dashedName": "review-graphs-and-trees" },

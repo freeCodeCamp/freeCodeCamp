@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from '@gatsbyjs/reach-router';
 import store from 'store';
-import ShowClassic from '../../templates/Challenges/classic/show';
-import { Loader } from '../../components/helpers';
+import ShowClassic from '../templates/Challenges/classic/show';
+import { Loader } from '../components/helpers';
 import {
   DailyCodingChallengeLanguages,
   DailyCodingChallengeNode,
   DailyCodingChallengePageContext
-} from '../../redux/prop-types';
-import DailyCodingChallengeNotFound from '../../components/daily-coding-challenge/not-found';
-import FourOhFour from '../../components/FourOhFour';
-import {
-  apiLocation,
-  showDailyCodingChallenges
-} from '../../../config/env.json';
-import { isValidDateParam } from '../../components/daily-coding-challenge/helpers';
+} from '../redux/prop-types';
+import DailyCodingChallengeNotFound from '../components/daily-coding-challenge/not-found';
+import FourOhFour from '../components/FourOhFour';
+import { apiLocation, showDailyCodingChallenges } from '../../config/env.json';
+import { isValidDateString } from '../components/daily-coding-challenge/helpers';
 import {
   validateDailyCodingChallengeSchema,
   type DailyCodingChallengeFromDb
-} from '../../utils/daily-coding-challenge-validator';
+} from '../utils/daily-coding-challenge-validator';
 
 interface DailyCodingChallengeLanguageData {
   data: {
@@ -31,7 +29,7 @@ interface DailyCodingChallengeDataFormatted {
   python: DailyCodingChallengeLanguageData;
 }
 
-// These are not included in the data from the DB (Daily Challenge API) - so we add them in
+// This is not included in the data from the DB (Daily Challenge API) - so we add it in
 function formatDescription(str: string) {
   return `<section id="description">\n${str}\n</section>`;
 }
@@ -149,7 +147,9 @@ function formatChallengeData({
   return props;
 }
 
-function DailyCodingChallenge(): JSX.Element {
+function ShowDailyCodingChallenge(): JSX.Element {
+  const { date } = useParams<{ date?: string }>();
+
   const initLanguage =
     (store.get(
       'dailyCodingChallengeLanguage'
@@ -161,9 +161,6 @@ function DailyCodingChallenge(): JSX.Element {
     useState<null | DailyCodingChallengeDataFormatted>(null);
   const [dailyCodingChallengeLanguage, setDailyCodingChallengeLanguage] =
     useState<DailyCodingChallengeLanguages>(initLanguage);
-
-  const dateParam =
-    new URLSearchParams(window.location.search).get('date') || '';
 
   const fetchChallenge = async (date: string) => {
     try {
@@ -201,15 +198,15 @@ function DailyCodingChallenge(): JSX.Element {
   };
 
   useEffect(() => {
-    // If dateParam is invalid, stop loading/fetching and show the not found page
-    if (!isValidDateParam(dateParam)) {
+    // If date is invalid, stop loading/fetching and show the not found page
+    if (!date || !isValidDateString(date)) {
       setIsLoading(false);
       setChallengeFound(false);
       return;
     }
 
-    void fetchChallenge(dateParam);
-  }, [dateParam]);
+    void fetchChallenge(date);
+  }, [date]);
 
   if (!showDailyCodingChallenges) {
     return <FourOhFour />;
@@ -230,6 +227,6 @@ function DailyCodingChallenge(): JSX.Element {
   );
 }
 
-DailyCodingChallenge.displayName = 'DailyCodingChallenge';
+ShowDailyCodingChallenge.displayName = 'ShowDailyCodingChallenge';
 
-export default DailyCodingChallenge;
+export default ShowDailyCodingChallenge;
