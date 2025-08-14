@@ -1,0 +1,10 @@
+{
+  "name": "Build an Optional Arguments Sum Function",
+  "isUpcomingChange": false,
+  "dashedName": "lab-optional-arguments-sum-function",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [{ "id": "a97fd23d9b809dac9921074f", "title": "Step 1" }],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
