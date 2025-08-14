@@ -6,16 +6,16 @@
   "superBlock": "a1-professional-chinese",
   "challengeOrder": [
     {
-      "id": "6891d764096b545a9b6b140b",
-      "title": "Dialogue 1: PLACEHOLDER"
-    },
-    {
       "id": "6892cce895423e0cc58b3006",
       "title": "Task 1"
     },
     {
       "id": "6892cfd88659631495266084",
       "title": "Task 2"
+    },
+     {
+      "id": "6899bf65b128f566294f135b",
+      "title": "Simple Finals"
     },
     {
       "id": "6899c2a91ad86075d374c1c7",
@@ -34,8 +34,12 @@
       "title": "Task 6"
     },
     {
-      "id": "6899bf65b128f566294f135b",
-      "title": "Initial"
+      "id": "689df1964c3f998224e917a0",
+      "title": "Task 7"
+    },
+    {
+      "id": "689df24ea62ad285a7afcdc2",
+      "title": "Task 8"
     }
   ],
   "helpCategory": "English",
