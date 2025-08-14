@@ -430,8 +430,8 @@ function transformSuperBlock(superblockData) {
 
   // Handle simple blocks array format
   if (superblockData.blocks) {
-    blocks = superblockData.blocks.map(blockName => ({
-      dashedName: blockName
+    blocks = superblockData.blocks.map(dashedName => ({
+      dashedName
     }));
   }
   // Handle nested chapters/modules/blocks format
@@ -450,7 +450,7 @@ function transformSuperBlock(superblockData) {
           if (module.blocks) {
             for (const block of module.blocks) {
               blocks.push({
-                dashedName: block.dashedName,
+                dashedName: block,
                 chapter: chapter.dashedName,
                 module: module.dashedName
               });

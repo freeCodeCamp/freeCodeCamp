@@ -16,11 +16,11 @@ const dummyFullStackSuperBlock = {
       modules: [
         {
           dashedName: 'module-1',
-          blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+          blocks: ['block-1', 'block-2']
         },
         {
           dashedName: 'module-2',
-          blocks: [{ dashedName: 'block-3' }, { dashedName: 'block-4' }]
+          blocks: ['block-3', 'block-4']
         }
       ]
     },
@@ -29,7 +29,7 @@ const dummyFullStackSuperBlock = {
       modules: [
         {
           dashedName: 'module-3',
-          blocks: [{ dashedName: 'block-5' }, { dashedName: 'block-6' }]
+          blocks: ['block-5', 'block-6']
         }
       ]
     }
@@ -45,11 +45,11 @@ const dummyUnfinishedSuperBlock = {
         {
           comingSoon: true,
           dashedName: 'module-1',
-          blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+          blocks: ['block-1', 'block-2']
         },
         {
           dashedName: 'module-2',
-          blocks: [{ dashedName: 'block-3' }, { dashedName: 'block-4' }]
+          blocks: ['block-3', 'block-4']
         }
       ]
     },
@@ -59,7 +59,7 @@ const dummyUnfinishedSuperBlock = {
       modules: [
         {
           dashedName: 'module-3',
-          blocks: [{ dashedName: 'block-5' }, { dashedName: 'block-6' }]
+          blocks: ['block-5', 'block-6']
         }
       ]
     }
