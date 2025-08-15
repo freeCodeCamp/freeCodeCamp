@@ -75,7 +75,7 @@ assert.equal(code.match(/<\/button>/g).length ,code.match(/<button/g).length);
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="A ginger cat walking on grass in sunlight.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Tuxedo cats running on dirt ground.">
 
   <p>Things cats love:</p>
   <ul>
@@ -142,7 +142,7 @@ assert.equal(code.match(/<\/button>/g).length ,code.match(/<button/g).length);
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="A ginger cat walking on grass in sunlight.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Tuxedo cats running on dirt ground.">
 
    <!-- ADD Bootstrap Styled Button -->
   <button class="btn btn-default">Like</button> 
