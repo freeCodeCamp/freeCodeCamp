@@ -20,7 +20,8 @@ jest.mock('../../utils/env', () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
     ...jest.requireActual('../../utils/env'),
-    FCC_ENABLE_EXAM_ENVIRONMENT: 'true'
+    FCC_ENABLE_EXAM_ENVIRONMENT: 'true',
+    DEPLOYMENT_ENV: 'production'
   };
 });
 
@@ -512,7 +513,9 @@ describe('/exam-environment/', () => {
           generatedExamId: generatedExam!.id,
           questionSets: [],
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          startTimeInMS: expect.any(Number)
+          startTimeInMS: expect.any(Number),
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number)
         });
       });
 
@@ -546,6 +549,8 @@ describe('/exam-environment/', () => {
       });
 
       it('should return the user exam with the exam attempt', async () => {
+        // Mock Math.random for `shuffleArray` to be equivalent between `/generated-exam` and `constructUserExam`
+        jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
         const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
           examId: mock.examId
         };
@@ -576,12 +581,9 @@ describe('/exam-environment/', () => {
 
         const userExam = constructUserExam(generatedExam!, mock.exam);
 
-        expect(res).toMatchObject({
-          status: 200,
-          body: {
-            examAttempt,
-            exam: userExam
-          }
+        expect(res.body).toMatchObject({
+          examAttempt,
+          exam: userExam
         });
       });
     });
@@ -850,6 +852,8 @@ describe('/exam-environment/', () => {
         );
 
         const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
           result: null,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
@@ -888,6 +892,8 @@ describe('/exam-environment/', () => {
         );
 
         const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
           result: null,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
@@ -920,6 +926,8 @@ describe('/exam-environment/', () => {
         );
 
         const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
           result: {
             score: 25,
             passingPercent: 80
@@ -976,6 +984,8 @@ describe('/exam-environment/', () => {
         );
 
         const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
           result: null,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
@@ -1004,6 +1014,8 @@ describe('/exam-environment/', () => {
         );
 
         const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
           result: null,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
@@ -1034,6 +1046,8 @@ describe('/exam-environment/', () => {
         );
 
         const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
           result: {
             score: 25,
             passingPercent: 80

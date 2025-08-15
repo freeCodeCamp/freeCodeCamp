@@ -43,6 +43,9 @@
               "dashedName": "lecture-working-with-images-and-svgs"
             },
             {
+              "dashedName": "workshop-build-a-heart-icon"
+            },
+            {
               "dashedName": "lecture-working-with-media"
             },
             {
@@ -573,7 +576,16 @@
               "dashedName": "workshop-teacher-chatbot"
             },
             {
-              "dashedName": "lecture-working-with-common-string-methods"
+              "dashedName": "lecture-working-with-string-character-methods"
+            },
+            {
+              "dashedName": "lecture-working-with-string-search-and-slice-methods"
+            },
+            {
+              "dashedName": "lecture-working-with-string-formatting-methods"
+            },
+            {
+              "dashedName": "lecture-working-with-string-modification-methods"
             },
             {
               "dashedName": "review-javascript-strings"
@@ -786,6 +798,9 @@
               "dashedName": "lab-sum-all-numbers-algorithm"
             },
             {
+              "dashedName": "lab-html-entitiy-converter"
+            },
+            {
               "dashedName": "review-javascript-fundamentals"
             },
             {
@@ -856,10 +871,16 @@
           "comingSoon": true,
           "blocks": [
             {
+              "dashedName": "lecture-understanding-aria-expanded-aria-live-and-common-aria-states"
+            },
+            {
               "dashedName": "workshop-planets-tablist"
             },
             {
               "dashedName": "workshop-note-taking-app"
+            },
+            {
+              "dashedName": "lab-theme-switcher"
             },
             {
               "dashedName": "review-js-a11y"
@@ -1305,7 +1326,7 @@
             { "dashedName": "lecture-working-with-dictionaries-and-sets" },
             { "dashedName": "lecture-working-with-modules" },
             { "dashedName": "workshop-medical-data-validator" },
-            { "dashedName": "lab-placeholder-dictionaries-and-sets" },
+            { "dashedName": "lab-user-configuration-manager" },
             { "dashedName": "review-dictionaries-and-sets" },
             { "dashedName": "quiz-dictionaries-and-sets" }
           ]
@@ -1385,7 +1406,7 @@
           "blocks": [
             { "dashedName": "lecture-understanding-graphs-and-trees" },
             { "dashedName": "workshop-shortest-path-algorithm" },
-            { "dashedName": "lab-adjacency-list-matrix-converter" },
+            { "dashedName": "lab-adjacency-list-to-matrix-converter" },
             { "dashedName": "workshop-breadth-first-search" },
             { "dashedName": "lab-depth-first-search" },
             { "dashedName": "review-graphs-and-trees" },

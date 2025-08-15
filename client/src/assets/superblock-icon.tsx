@@ -45,6 +45,7 @@ const iconMap = {
   [SuperBlocks.B1English]: B1EnglishIcon,
   [SuperBlocks.A2Spanish]: A2EnglishIcon,
   [SuperBlocks.A2Chinese]: A2EnglishIcon,
+  [SuperBlocks.A1Chinese]: A2EnglishIcon,
   [SuperBlocks.RosettaCode]: RosettaCodeIcon,
   [SuperBlocks.PythonForEverybody]: PythonIcon,
   [SuperBlocks.BasicHtml]: Code,

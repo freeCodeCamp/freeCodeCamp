@@ -1,11 +1,16 @@
-import { ExamEnvironmentAnswer } from '@prisma/client';
+import {
+  ExamEnvironmentAnswer,
+  ExamEnvironmentQuestionType
+} from '@prisma/client';
 import { type Static } from '@fastify/type-provider-typebox';
 import {
   exam,
   examAttempt,
-  generatedExam
+  generatedExam,
+  oid
 } from '../../../__mocks__/exam-environment-exam';
 import * as schemas from '../schemas';
+import { setupServer } from '../../../jest.utils';
 import {
   checkAttemptAgainstGeneratedExam,
   checkPrerequisites,
@@ -13,7 +18,8 @@ import {
   generateExam,
   userAttemptToDatabaseAttemptQuestionSets,
   validateAttempt,
-  compareAnswers
+  compareAnswers,
+  shuffleArray
 } from './exam-environment';
 
 // NOTE: Whilst the tests could be run against a single generation of exam,
@@ -21,9 +27,13 @@ import {
 //       This helps ensure the config/logic is _reasonably_ likely to be able to
 //       generate a valid exam.
 //       Another option is to call `generateExam` hundreds of times in a loop test :shrug:
-describe('Exam Environment', () => {
+describe('Exam Environment mocked Math.random', () => {
+  let spy: jest.SpyInstance;
   beforeAll(() => {
-    jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
+    spy = jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
+  });
+  afterAll(() => {
+    spy.mockRestore();
   });
   describe('checkAttemptAgainstGeneratedExam()', () => {
     it('should return true if all questions are answered', () => {
@@ -81,13 +91,6 @@ describe('Exam Environment', () => {
       const prerequisites = ['1', '2'];
 
       expect(checkPrerequisites(user, prerequisites)).toBe(false);
-    });
-  });
-
-  describe('constructUserExam()', () => {
-    it('should not provide the answers', () => {
-      const userExam = constructUserExam(generatedExam, exam);
-      expect(userExam).not.toHaveProperty('answers.isCorrect');
     });
   });
 
@@ -382,6 +385,145 @@ describe('Exam Environment', () => {
       );
 
       expect(isCorrect).toBe(false);
+    });
+  });
+});
+
+describe('Exam Environment', () => {
+  describe('constructUserExam()', () => {
+    it('should not provide the answers', () => {
+      const userExam = constructUserExam(generatedExam, exam);
+      expect(userExam).not.toHaveProperty('answers.isCorrect');
+    });
+  });
+
+  describe('shuffleArray()', () => {
+    it('reasonably shuffles an array', () => {
+      const unshuff = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      const shuff = shuffleArray(unshuff);
+
+      expect(shuff).not.toEqual(unshuff);
+    });
+
+    it('does not mutate the input', () => {
+      const unshuff = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      shuffleArray(unshuff);
+
+      expect(unshuff).toEqual(unshuff);
+    });
+  });
+});
+
+describe('Exam Environment Schema', () => {
+  setupServer();
+  describe('ExamEnvironmentExam', () => {
+    afterAll(async () => {
+      await fastifyTestInstance.prisma.examEnvironmentExam.deleteMany({});
+    });
+
+    it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
+      const configQuestionSets = [
+        {
+          numberOfCorrectAnswers: 0,
+          numberOfIncorrectAnswers: 0,
+          numberOfQuestions: 0,
+          numberOfSet: 0,
+          type: ExamEnvironmentQuestionType.MultipleChoice
+        }
+      ];
+      const tags = [
+        {
+          group: [''],
+          numberOfQuestions: 0
+        }
+      ];
+      const config = {
+        name: '',
+        note: '',
+        passingPercent: 0.0,
+        questionSets: configQuestionSets,
+        retakeTimeInMS: 0,
+        tags,
+        totalTimeInMS: 0
+      };
+
+      const questions = [
+        {
+          answers: [
+            {
+              id: oid(),
+              isCorrect: false,
+              text: ''
+            }
+          ],
+          audio: { captions: '', url: '' },
+          deprecated: false,
+          id: oid(),
+          tags: [''],
+          text: ''
+        }
+      ];
+      const questionSets = [
+        {
+          context: '',
+          id: oid(),
+          questions,
+          type: ExamEnvironmentQuestionType.MultipleChoice
+        }
+      ];
+      const data = {
+        config,
+        deprecated: false,
+        prerequisites: [oid()],
+        questionSets
+      };
+
+      await fastifyTestInstance.prisma.examEnvironmentExam.create({
+        data
+      });
+    });
+  });
+  describe('ExamEnvironmentGeneratedExam', () => {
+    afterAll(async () => {
+      await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.deleteMany(
+        {}
+      );
+    });
+    it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
+      await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.create({
+        data: {
+          deprecated: false,
+          examId: oid(),
+          questionSets: [
+            { id: oid(), questions: [{ answers: [oid()], id: oid() }] }
+          ]
+        }
+      });
+    });
+  });
+  describe('ExamEnvironmentExamAttempt', () => {
+    afterAll(async () => {
+      await fastifyTestInstance.prisma.examEnvironmentExamAttempt.deleteMany(
+        {}
+      );
+    });
+    it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
+      await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+        data: {
+          examId: oid(),
+          generatedExamId: oid(),
+          questionSets: [
+            {
+              id: oid(),
+              questions: [
+                { answers: [oid()], id: oid(), submissionTimeInMS: 0 }
+              ]
+            }
+          ],
+          startTimeInMS: 0,
+          userId: oid()
+        }
+      });
     });
   });
 });

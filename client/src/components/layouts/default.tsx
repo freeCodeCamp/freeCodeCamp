@@ -114,6 +114,7 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   showFooter?: boolean;
   isChallenge?: boolean;
   isDailyChallenge?: boolean;
+  dailyChallengeParam?: string;
   usesMultifileEditor?: boolean;
   block?: string;
   examInProgress: boolean;
@@ -133,6 +134,7 @@ function DefaultLayout({
   showFooter = true,
   isChallenge = false,
   isDailyChallenge = false,
+  dailyChallengeParam,
   usesMultifileEditor,
   block,
   superBlock,
@@ -181,7 +183,7 @@ function DefaultLayout({
 
   const isJapanese = clientLocale === 'japanese';
 
-  if (fetchState.pending) {
+  if (!fetchState.complete) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
     return (
@@ -292,7 +294,9 @@ function DefaultLayout({
           <SignoutModal />
           {isDailyChallenge ? (
             <div className='breadcrumbs-demo'>
-              <DailyChallengeBreadCrumb />
+              <DailyChallengeBreadCrumb
+                dailyChallengeParam={dailyChallengeParam}
+              />
             </div>
           ) : (
             isChallenge &&

@@ -2140,6 +2140,12 @@
           "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
         ]
       },
+      "workshop-build-a-heart-icon": {
+        "title": "Build a Heart Icon",
+        "intro": [
+          "In this workshop, you will practice working with SVGs by building a heart icon"
+        ]
+      },
       "lecture-working-with-media": {
         "title": "Working with the iframe Element",
         "intro": [
@@ -3019,10 +3025,28 @@
           "You will learn how to work with template literals, and the <code>indexOf</code> method."
         ]
       },
-      "lecture-working-with-common-string-methods": {
-        "title": "Working with Common String Methods",
+      "lecture-working-with-string-character-methods": {
+        "title": "Working with String Character Methods",
         "intro": [
-          "In these lectures, you will learn about the common string methods available in JavaScript. The string methods will let you do things like extracting a part of a string, changing the casing for a string, replacing a part of a string, trimming whitespace from a string, and much more."
+          "In this lecture you will learn about ASCII character encoding and how to use JavaScript's <code>charCodeAt()</code> and <code>fromCharCode()</code> methods to convert between characters and their numerical ASCII values."
+        ]
+      },
+      "lecture-working-with-string-search-and-slice-methods": {
+        "title": "Working with String Search and Slice Methods",
+        "intro": [
+          "In this lecture you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
+        ]
+      },
+      "lecture-working-with-string-formatting-methods": {
+        "title": "Working with String Formatting Methods",
+        "intro": [
+          "In this lecture you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
+        ]
+      },
+      "lecture-working-with-string-modification-methods": {
+        "title": "Working with String Modification Methods",
+        "intro": [
+          "In this lecture you will learn how to modify strings by replacing parts of them using the <code>replace()</code> method and how to repeat strings multiple times using the <code>repeat()</code> method."
         ]
       },
       "review-javascript-strings": {
@@ -3391,6 +3415,12 @@
           "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
         ]
       },
+      "lab-html-entitiy-converter": {
+        "title": "Implement an HTML Entity Converter",
+        "intro": [
+          "In this lab, you will convert special characters in a string to their corresponding HTML entities."
+        ]
+      },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
         "intro": [
@@ -3510,6 +3540,12 @@
           "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
         ]
       },
+      "lecture-understanding-aria-expanded-aria-live-and-common-aria-states": {
+        "title": "Understanding aria-expanded, aria-live, and Common ARIA States",
+        "intro": [
+          "In these lectures you will learn more about ARIA attributes like <code>aria-expanded</code>, <code>aria-live</code>, and common ARIA states."
+        ]
+      },
       "workshop-planets-tablist": {
         "title": "Build a Planets Tablist",
         "intro": [
@@ -3521,6 +3557,12 @@
         "intro": [
           "In this workshop, you are going to build an accessible note taking app.",
           "This will provide you with the opportunity to practice working with <code>aria-live</code> attribute."
+        ]
+      },
+      "lab-theme-switcher": {
+        "title": "Build a Theme Switcher",
+        "intro": [
+          "In this lab, you will build a theme switcher and practice working with the <code>aria-haspopup</code>, <code>aria-expanded</code>, and <code>aria-controls</code> attributes."
         ]
       },
       "review-js-a11y": {
@@ -4097,7 +4139,7 @@
         ]
       },
       "workshop-tailwind-cta-component": {
-        "title": "Build a Taiwlind CTA Compoent",
+        "title": "Build a CTA Component",
         "intro": [
           "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
         ]
@@ -4251,9 +4293,11 @@
           "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
         ]
       },
-      "lab-placeholder-dictionaries-and-sets": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "lab-user-configuration-manager": {
+        "title": "Build a User Configuration Manager",
+        "intro": [
+          "In this lab, you will practice working with dictionaries in Python."
+        ]
       },
       "review-dictionaries-and-sets": {
         "title": "Dictionaries and Sets review",
@@ -4273,8 +4317,10 @@
         "intro": ["Learn about Understanding Error Handling in these lectures."]
       },
       "lab-isbn-validator": {
-        "title": "Debug a ISBN Validator",
-        "intro": [""]
+        "title": "Debug an ISBN Validator",
+        "intro": [
+          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+        ]
       },
       "review-error-handling": {
         "title": "Error Handling Review",
@@ -4389,7 +4435,7 @@
         "title": "Data Structures Review",
         "intro": [
           "Before you're quizzed on data structures, you should review what you've learned about them.",
-          "[Add more details]"
+          "Open up this page to review concepts like the different data structures, algorithms, time and space complexity, and big O notation."
         ]
       },
       "quiz-data-structures": {
@@ -4401,7 +4447,8 @@
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
         "intro": [
-          "Learn about Searching and Sorting Algorithms in these lectures."
+          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
+          "These lectures cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
         ]
       },
       "workshop-binary-search": {
@@ -4412,8 +4459,10 @@
         ]
       },
       "lab-bisection-method": {
-        "title": "Build a Bisection Method",
-        "intro": [""]
+        "title": "Implement the Bisection Method",
+        "intro": [
+          "In this lab, you will implement the bisection method to find the square root of a number."
+        ]
       },
       "workshop-merge-sort": {
         "title": "Implement the Merge Sort Algorithm",
@@ -4469,9 +4518,11 @@
         "title": "Build a Shortest Path Algorithm",
         "intro": [""]
       },
-      "lab-adjacency-list-matrix-converter": {
-        "title": "Build an Adjacency List/Matrix Converter",
-        "intro": [""]
+      "lab-adjacency-list-to-matrix-converter": {
+        "title": "Build an Adjacency List to Matrix Converter",
+        "intro": [
+          "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
       },
       "workshop-breadth-first-search": {
         "title": "Build a Breadth First Search",
@@ -4746,6 +4797,19 @@
       }
     }
   },
+  "a1-professional-chinese": {
+    "title": "A1 Professional Chinese Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "learn-essential-courtesies-at-the-office": {
+        "title": "Learn Essential Courtesies at the Office",
+        "intro": [
+          "Learn simple and polite ways to communicate at work. In this module, you'll learn essential phrases for greeting colleagues, expressing thanks, apologizing, and saying goodbye."
+        ]
+      }
+    }
+  },
   "basic-html": {
     "title": "Basic HTML",
     "summary": [
@@ -4806,9 +4870,7 @@
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {
-      "daily-coding-challenge": {
-        "title": "Daily Coding Challenge"
-      }
+      "daily-coding-challenge": { "title": "Daily Coding Challenge" }
     }
   },
   "misc-text": {
