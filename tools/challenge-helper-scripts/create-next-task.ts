@@ -40,10 +40,10 @@ const createNextTask = async () => {
     id: challengeIdString,
     title: options.title
   });
-  updateMetaData(meta);
+  await updateMetaData(meta);
   console.log(`Finished inserting task into 'meta.json' file.`);
 
-  updateTaskMeta();
+  await updateTaskMeta();
   console.log("Finished updating tasks in 'meta.json'.");
 
   updateTaskMarkdownFiles();

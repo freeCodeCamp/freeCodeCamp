@@ -49,7 +49,7 @@ const updateChallengeOrder = async () => {
 
   const meta = getMetaData();
   meta.challengeOrder = newChallengeOrder;
-  updateMetaData(meta);
+  await updateMetaData(meta);
 };
 
 void (async () => await updateChallengeOrder())();

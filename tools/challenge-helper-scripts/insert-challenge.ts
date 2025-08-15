@@ -38,7 +38,7 @@ const insertChallenge = async () => {
     id: challengeId.toString(),
     title: options.title
   });
-  updateMetaData(meta);
+  await updateMetaData(meta);
 };
 
 void insertChallenge();
