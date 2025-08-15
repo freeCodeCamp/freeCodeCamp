@@ -263,7 +263,7 @@ function getContentDir(lang) {
   return lang === 'english' ? contentDir : i18nContentDir;
 }
 
-const readCurriculum = () => {
+const getCurriculumStructure = () => {
   const curriculumPath = path.resolve(STRUCTURE_DIR, 'curriculum.json');
   if (!fs.existsSync(curriculumPath)) {
     throw new Error(`Curriculum file not found: ${curriculumPath}`);
@@ -274,18 +274,12 @@ const readCurriculum = () => {
 
 /**
  * Builds an array of superblock structures from a curriculum object
- * @param {Object} curriculum - The curriculum object containing superblocks array
- * @param {string[]} curriculum.superblocks - Array of superblock filename strings
+
+ * @param {string[]} superblocks - Array of superblock filename strings
  * @returns {Array<Object>} Array of superblock structure objects with filename, name, and blocks
  * @throws {Error} When a superblock file is not found
  */
-function buildSuperblockStructure(curriculum) {
-  const { superblocks } = curriculum;
-
-  if (isEmpty(superblocks)) {
-    throw new Error('No superblocks found in curriculum object');
-  }
-
+function addSuperblockStructure(superblocks) {
   debug(`Building structure for ${superblocks.length} superblocks`);
 
   const superblockStructures = superblocks.map(superblockFilename => {
@@ -341,7 +335,7 @@ async function buildCurriculum(lang, filters) {
     blockCreator: getBlockCreator(lang, !isEmpty(filters))
   });
 
-  const curriculum = readCurriculum();
+  const curriculum = getCurriculumStructure();
   if (isEmpty(curriculum.superblocks))
     throw Error('No superblocks found in curriculum.json');
   if (isEmpty(curriculum.certifications))
@@ -350,14 +344,14 @@ async function buildCurriculum(lang, filters) {
   debug(`Found ${curriculum.certifications.length} certifications to build`);
 
   const superblockList = addBlockStructure(
-    buildSuperblockStructure(curriculum)
+    addSuperblockStructure(curriculum.superblocks)
   );
   const fullSuperblockList = applyFilters(superblockList, filters);
   const fullCurriculum = { certifications: { blocks: {} } };
 
   for (const superblock of fullSuperblockList) {
     fullCurriculum[superblock.name] =
-      await builder.processSuperblockV2(superblock);
+      await builder.processSuperblock(superblock);
   }
 
   for (const cert of curriculum.certifications) {
@@ -373,9 +367,10 @@ async function buildCurriculum(lang, filters) {
 }
 
 module.exports = {
+  addBlockStructure,
   buildCurriculum,
   getContentDir,
   getBlockCreator,
   createCommentMap,
-  buildSuperblockStructure
+  buildSuperblockStructure: addSuperblockStructure
 };

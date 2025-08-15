@@ -332,7 +332,7 @@ class BlockCreator {
     return rawMeta;
   }
 
-  async processBlockV2(block, { superBlock, order }) {
+  async processBlock(block, { superBlock, order }) {
     const blockName = block.dashedName;
     debug(`Processing block ${blockName} in superblock ${superBlock}`);
 
@@ -399,12 +399,12 @@ class SuperblockCreator {
     this.blockCreator = blockCreator;
   }
 
-  async processSuperblockV2({ blocks, name }) {
+  async processSuperblock({ blocks, name }) {
     const superBlock = { blocks: {} };
 
     for (let i = 0; i < blocks.length; i++) {
       const block = blocks[i];
-      const blockResult = await this.blockCreator.processBlockV2(block, {
+      const blockResult = await this.blockCreator.processBlock(block, {
         superBlock: name,
         order: i
       });

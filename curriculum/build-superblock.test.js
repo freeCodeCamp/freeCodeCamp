@@ -525,7 +525,7 @@ describe('SuperblockCreator class', () => {
         .mockResolvedValueOnce(null);
 
       const mockBlockCreator = {
-        processBlockV2: mockProcessBlockFn
+        processBlock: mockProcessBlockFn
       };
 
       const blocks = [
@@ -538,7 +538,7 @@ describe('SuperblockCreator class', () => {
         blockCreator: mockBlockCreator
       });
 
-      const result = await parser.processSuperblockV2({
+      const result = await parser.processSuperblock({
         blocks,
         name: 'test-superblock'
       });
