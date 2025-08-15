@@ -5,13 +5,6 @@ const util = require('util');
 const { curriculum: curriculumLangs } =
   require('../shared/config/i18n').availableLangs;
 const { buildCurriculum } = require('./build-curriculum');
-const {
-  assertSuperBlockStructure
-} = require('./schema/superblock-structure-schema');
-
-const fullStackSuperBlockStructure = require('./superblock-structure/full-stack.json');
-
-assertSuperBlockStructure(fullStackSuperBlockStructure);
 
 const access = util.promisify(fs.access);
 
