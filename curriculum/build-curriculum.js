@@ -286,21 +286,10 @@ function addSuperblockStructure(superblocks) {
     debug(`Reading structure for ${superblockFilename}`);
 
     const superblockName = superBlockNames[superblockFilename];
-    const superblockPath = path.resolve(
-      STRUCTURE_DIR,
-      'superblocks',
-      `${superblockFilename}.json`
-    );
-
-    if (!fs.existsSync(superblockPath)) {
-      throw Error(`Superblock file not found: ${superblockPath}`);
-    }
-
-    const superblockData = JSON.parse(fs.readFileSync(superblockPath, 'utf8'));
 
     return {
       name: superblockName,
-      blocks: transformSuperBlock(superblockData)
+      blocks: transformSuperBlock(getSuperblockStructure(superblockFilename))
     };
   });
 
@@ -311,20 +300,33 @@ function addSuperblockStructure(superblocks) {
   return superblockStructures;
 }
 
+function getSuperblockStructure(superblock) {
+  const superblockPath = path.resolve(
+    STRUCTURE_DIR,
+    'superblocks',
+    `${superblock}.json`
+  );
+
+  return JSON.parse(fs.readFileSync(superblockPath, 'utf8'));
+}
+
 function getBlockStructure(block) {
   const blockPath = path.resolve(STRUCTURE_DIR, 'blocks', `${block}.json`);
-  if (!fs.existsSync(blockPath))
-    throw Error(`Structure file not found for block ${block}: ${blockPath}`);
 
   return JSON.parse(fs.readFileSync(blockPath, 'utf8'));
 }
 
-function addBlockStructure(superblocks) {
+function addBlockStructure(
+  superblocks,
+  _getBlockStructure = getBlockStructure
+) {
   return superblocks.map(superblock => ({
     ...superblock,
-    blocks: superblock.blocks.map(block => ({
+    blocks: superblock.blocks.map((block, index) => ({
       ...block,
-      ...getBlockStructure(block.dashedName)
+      ..._getBlockStructure(block.dashedName),
+      order: index,
+      superBlock: superblock.name
     }))
   }));
 }
@@ -371,6 +373,5 @@ module.exports = {
   buildCurriculum,
   getContentDir,
   getBlockCreator,
-  createCommentMap,
-  buildSuperblockStructure: addSuperblockStructure
+  createCommentMap
 };

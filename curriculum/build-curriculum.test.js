@@ -1,6 +1,6 @@
 const path = require('node:path');
 
-const { createCommentMap } = require('./build-curriculum');
+const { createCommentMap, addBlockStructure } = require('./build-curriculum');
 
 describe('createCommentMap', () => {
   const dictionaryDir = path.resolve(__dirname, '__fixtures__', 'dictionaries');
@@ -77,5 +77,29 @@ describe('createCommentMap', () => {
 
     expect(untranslatedTwo.chinese).toBe('Not translated two');
     expect(untranslatedTwo.spanish).toBe('Not translated two');
+  });
+});
+
+describe('addBlockStructure', () => {
+  it('should override the order and superblock coming from getBlockStructure', () => {
+    const mockGetBlockStructure = () => ({
+      order: 5,
+      superBlock: 'no'
+    });
+
+    const result = addBlockStructure(
+      [{ name: 'yes', blocks: [{ a: 1 }, { b: 1 }] }],
+      mockGetBlockStructure
+    );
+
+    expect(result).toEqual([
+      {
+        name: 'yes',
+        blocks: [
+          { a: 1, order: 0, superBlock: 'yes' },
+          { b: 1, order: 1, superBlock: 'yes' }
+        ]
+      }
+    ]);
   });
 });
