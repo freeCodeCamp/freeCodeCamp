@@ -1,6 +1,9 @@
 const path = require('node:path');
 const assert = require('node:assert');
 const fs = require('node:fs');
+const fsP = require('node:fs/promises');
+
+const prettier = require('prettier');
 
 const debug = require('debug')('fcc:file-handler');
 
@@ -11,6 +14,7 @@ const I18N_CURRICULUM_DIR = path.resolve(
   'curriculum'
 );
 const STRUCTURE_DIR = path.resolve(CURRICULUM_DIR, 'structure');
+const BLOCK_STRUCTURE_DIR = path.resolve(STRUCTURE_DIR, 'blocks');
 
 /**
  * Gets language-specific configuration paths for curriculum content
@@ -22,7 +26,7 @@ const STRUCTURE_DIR = path.resolve(CURRICULUM_DIR, 'structure');
  * @returns {Object} Object containing all relevant directory paths for the language
  * @throws {AssertionError} When required i18n directories don't exist for non-English languages
  */
-function getLanguageConfig(
+function getContentConfig(
   lang,
   { baseDir, i18nBaseDir } = {
     baseDir: CURRICULUM_DIR,
@@ -74,7 +78,7 @@ function getLanguageConfig(
  * @returns {string} Path to the content directory for the specified language
  */
 function getContentDir(lang) {
-  const { contentDir, i18nContentDir } = getLanguageConfig(lang);
+  const { contentDir, i18nContentDir } = getContentConfig(lang);
 
   return lang === 'english' ? contentDir : i18nContentDir;
 }
@@ -88,12 +92,19 @@ function getCurriculumStructure() {
   return JSON.parse(fs.readFileSync(curriculumPath, 'utf8'));
 }
 
-function getBlockStructure(block) {
-  const blockPath = path.resolve(STRUCTURE_DIR, 'blocks', `${block}.json`);
-  if (!fs.existsSync(blockPath))
-    throw Error(`Structure file not found for block ${block}: ${blockPath}`);
+function getBlockStructurePath(block) {
+  return path.resolve(BLOCK_STRUCTURE_DIR, `${block}.json`);
+}
 
-  return JSON.parse(fs.readFileSync(blockPath, 'utf8'));
+function getBlockStructure(block) {
+  return JSON.parse(fs.readFileSync(getBlockStructurePath(block), 'utf8'));
+}
+
+async function writeBlockStructure(block, structure) {
+  const content = await prettier.format(JSON.stringify(structure), {
+    parser: 'json'
+  });
+  await fsP.writeFile(getBlockStructurePath(block), content, 'utf8');
 }
 
 function getSuperblockStructure(superblockFilename) {
@@ -110,8 +121,9 @@ function getSuperblockStructure(superblockFilename) {
   return JSON.parse(fs.readFileSync(superblockPath, 'utf8'));
 }
 
-exports.getLanguageConfig = getLanguageConfig;
+exports.getContentConfig = getContentConfig;
 exports.getContentDir = getContentDir;
 exports.getBlockStructure = getBlockStructure;
 exports.getSuperblockStructure = getSuperblockStructure;
 exports.getCurriculumStructure = getCurriculumStructure;
+exports.writeBlockStructure = writeBlockStructure;
