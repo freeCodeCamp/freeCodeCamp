@@ -292,7 +292,13 @@ function CertificationSettings(props: CertificationSettingsProps) {
           <FullWidthRow>
             <Spacer size='m' />
             <h3 className='text-center'>
+              {/** 
+               * Property 'a2-english-for-developers-v8' does not exist on type 
+               * '{ "responsive-web-design": string; "responsive-web-design-cert": string; "javascript-algorithms-and-data-structures": string; "javascript-algorithms-and-data-structures-cert": string; ... 45 more ...; "full-stack-cert": string; }'. 
+               * Did you mean 'a2-english-for-developers'?
+               */}
               {t($ => $.certification.title[certSlug], { defaultValue: certSlug })}
+              {/*                           𐙘______𐙘 */}
             </h3>
             <Table>
               <thead>

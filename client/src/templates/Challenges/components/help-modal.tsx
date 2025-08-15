@@ -40,7 +40,12 @@ export const generateSearchLink = (
   block: string,
   superBlock: string
 ) => {
+  /**
+   * Type 'string' can't be used to index type 
+   * '{ "responsive-web-design": { title: string; intro: string[]; note: string; blocks: { "basic-html-and-html5": { title: string; intro: string[]; }; "basic-css": { title: string; intro: string[]; }; "applied-visual-design": { ...; }; "applied-accessibility": { ...; }; "responsive-web-design-principles": { ...; }; "css-...'
+   */
   const titleText = t($ => $[superBlock].blocks[block].title, { ns: "intro" });
+  //                         𐙘________𐙘
   const selector = 'in:title';
   const query = encodeURIComponent(`${titleText} - ${title} ${selector}`);
 

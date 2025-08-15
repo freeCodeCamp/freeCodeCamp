@@ -14,7 +14,11 @@ const SearchBarOptimized = ({
   const searchPlaceholder = t($ => $.placeholder, { ns: "search-bar" }).startsWith(
     'search.placeholder.'
   )
+  /**
+   * Type { default: string; numbered: string; }' is not assignable to type 'string'
+   */
     ? t($ => $.search.placeholder)
+    //                𐙘_________𐙘
     : t($ => $.placeholder, { ns: "search-bar" });
   const searchUrl = searchPageUrl;
   const [value, setValue] = useState('');

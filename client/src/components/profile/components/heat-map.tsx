@@ -124,10 +124,10 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
                 return { 'data-tip': '' };
               }
               return {
-                'data-tip': t($ => $.profile.points, {
-                  count: value.count,
-                  date: dateFormatted
-                })
+                'data-tip': t(
+                  $ => value.count === 1 ? $.profile.points_one : $.profile.points_other, 
+                  { date: dateFormatted }
+                )
               };
             }}
             values={dataToDisplay}

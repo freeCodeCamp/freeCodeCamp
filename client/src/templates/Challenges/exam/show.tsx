@@ -350,7 +350,12 @@ function ShowExam(props: ShowExamProps) {
   const prerequisitesComplete = missingPrerequisites.length === 0;
   const qualifiedForExam = prerequisitesComplete && surveyCompleted;
 
+  /**
+   * Type 'string' can't be used to index type 
+   * '{ "basic-html-and-html5": { title: string; intro: string[]; }; "basic-css": { title: string; intro: string[]; }; "applied-visual-design": { title: string; intro: string[]; }; "applied-accessibility": { title: string; intro: string[]; }; "responsive-web-design-principles": { ...; }; "css-flexbox": { ...; }; "css-grid...'
+   */
   const blockNameTitle = `${t($ => $[superBlock].blocks[block].title, {
+    //                                                  𐙘___𐙘
     ns: "intro"
   })}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;

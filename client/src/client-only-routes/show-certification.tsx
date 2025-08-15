@@ -445,7 +445,11 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                     : 'fulltext'
                   ]
                 }
+                // Property 'a2-english-for-developers-v8' does not exist on type 
+                // '{ "responsive-web-design": string; "responsive-web-design-cert": string; "javascript-algorithms-and-data-structures": string; "javascript-algorithms-and-data-structures-cert": string; ... 45 more ...; "full-stack-cert": string; }'. 
+                // Did you mean 'a2-english-for-developers'?
                 title={t($ => $.certification.title[certSlug], { defaultValue: certTitle })}
+                //                                  𐙘______𐙘
               >
                 <h3>placeholder</h3>
                 <h1>
@@ -457,7 +461,11 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <h1 data-playwright-test-label='certification-title'>
                   <strong>
                     {{
+                      // Property 'a2-english-for-developers-v8' does not exist on type 
+                      // '{ "responsive-web-design": string; "responsive-web-design-cert": string; "javascript-algorithms-and-data-structures": string; "javascript-algorithms-and-data-structures-cert": string; ... 45 more ...; "full-stack-cert": string; }'. 
+                      // Did you mean 'a2-english-for-developers'?
                       title: t($ => $.certification.title[certSlug], { defaultValue: certTitle })
+                      //                                  𐙘______𐙘
                     }}
                   </strong>
                 </h1>

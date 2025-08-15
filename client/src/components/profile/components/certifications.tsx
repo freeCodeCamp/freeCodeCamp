@@ -27,7 +27,11 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
         href={`/certification/${username}/${cert.certSlug}`}
       >
         {t($ => $.buttons["view-cert-title"], {
-          certTitle: t($ => $.certification.title[cert.certSlug]["-cert"])
+          /**
+           * `${string}-cert}`' can't be used to index type 
+           * '{ "responsive-web-design": string; "responsive-web-design-cert": string; "javascript-algorithms-and-data-structures": string; "javascript-algorithms-and-data-structures-cert": string; ... 45 more ...; "full-stack-cert": string; }
+           */
+          certTitle: t($ => $.certification.title[`${cert.certSlug}-cert}`])
         })}
       </ButtonLink>
       <Spacer size='xs' />

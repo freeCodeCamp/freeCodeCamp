@@ -156,7 +156,12 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
       return (
         <FullWidthRow>
           <Alert variant='danger'>
+            {/** 
+             * 'string' can't be used to index type 
+             * '{ "contains invalid characters": string; "is too short": string; "is a reserved error code": string; "must be lowercase": string; unavailable: string; validating: string; available: string; change: string; }
+             */}
             {t($ => $.settings.username[error], {
+             //                         𐙘___𐙘
               username: this.state.formValue
             })}
           </Alert>

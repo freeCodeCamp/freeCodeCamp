@@ -140,6 +140,11 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
           <tr key={id}>
             <td className='col-xs-8'>
               <Link to={link}>
+              {/**
+                * Property 'projects' does not exist on type 
+                * '{ executive: string; "ms-president": string; verify: string; issued: string; fulltext: string; fulltextNoHours: string; "quincy-larson-signature": string; "julia-liuson-signature": string; project: { ...; }; title: { ...; }; }'. 
+                * Did you mean 'project'? 
+                */}
                 {t($ => $.certification.projects.title[title], { defaultValue: title })}
               </Link>
             </td>

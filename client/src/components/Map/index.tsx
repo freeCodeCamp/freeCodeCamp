@@ -30,16 +30,16 @@ const linkSpacingStyle = {
   gap: '15px'
 };
 
-const superBlockHeadings: { [key in SuperBlockStage]: string } = {
-  [SuperBlockStage.Core]: 'landing.core-certs-heading',
-  [SuperBlockStage.English]: 'landing.learn-english-heading',
-  [SuperBlockStage.Professional]: 'landing.professional-certs-heading',
-  [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
-  [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
-  [SuperBlockStage.Next]: 'landing.next-heading',
-  [SuperBlockStage.Upcoming]: 'landing.upcoming-heading',
-  [SuperBlockStage.Catalog]: 'landing.catalog-heading'
-};
+const superBlockHeadings = {
+  [SuperBlockStage.Core]: 'core-certs-heading',
+  [SuperBlockStage.English]: 'learn-english-heading',
+  [SuperBlockStage.Professional]: 'professional-certs-heading',
+  [SuperBlockStage.Extra]: 'interview-prep-heading',
+  [SuperBlockStage.Legacy]: 'legacy-curriculum-heading',
+  [SuperBlockStage.Next]: 'next-heading',
+  [SuperBlockStage.Upcoming]: 'upcoming-heading',
+  [SuperBlockStage.Catalog]: 'catalog-heading'
+} as const;
 
 function MapLi({
   superBlock,
@@ -97,7 +97,7 @@ function Map({ forLanding = false }: MapProps) {
                 )
             }
             <h2 className={forLanding ? 'big-heading' : ''}>
-              {t($ => $[superBlockHeadings[stage]])}
+              {t($ => $.landing[superBlockHeadings[stage]])}
             </h2>
             <ul key={stage}>
               {superblocks.map(superblock => (

@@ -199,7 +199,9 @@ function DefaultLayout({
               name: 'description',
               content: t($ => $.description, { ns: "metaTags" })
             },
+            // $.keywords: Type 'string[]' is not assignable to type 'string'
             { name: 'keywords', content: t($ => $.keywords, { ns: "metaTags" }) }
+            //                                  𐙘________𐙘
           ]}
         >
           <link

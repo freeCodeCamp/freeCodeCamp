@@ -34,7 +34,12 @@ export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
   const { t } = useTranslation();
   const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomainURL}/${superBlock}/${hastag}${block}`;
 
+  /**
+   * Type 'string' can't be used to index type 
+   * '{ "responsive-web-design": { title: string; intro: string[]; note: string; blocks: { "basic-html-and-html5": { title: string; intro: string[]; }; "basic-css": { title: string; intro: string[]; }; "applied-visual-design": { ...; }; "applied-accessibility": { ...; }; "responsive-web-design-principles": { ...; }; "css-...'
+   */
   const i18nSupportedBlock = t($ => $[superBlock].blocks[block].title, { ns: "intro" });
+  //                                  𐙘________𐙘
 
   const tweetMessage = `I${space}have${space}completed${space}${i18nSupportedBlock}${space}${hastag}freecodecamp`;
   const xRedirectURL = `https://${twitterData.domain}/${twitterData.action}?original_referer=${twitterData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;

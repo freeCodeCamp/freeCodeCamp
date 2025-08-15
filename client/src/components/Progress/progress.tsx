@@ -70,7 +70,13 @@ function Progress({
   t,
   updateAllChallengesInfo
 }: ProgressProps): JSX.Element {
+  /**
+   * Type 'string' can't be used to index type 
+   * '{ "responsive-web-design": { title: string; intro: string[]; note: string; blocks: { "basic-html-and-html5": { title: string; intro: string[]; }; "basic-css": { title: string; intro: string[]; }; "applied-visual-design": { ...; }; "applied-accessibility": { ...; }; "responsive-web-design-principles": { ...; }; "css-...'
+   */
   let blockTitle = t($ => $[superBlock].blocks[block].title, { ns: 'intro' });
+  //                        𐙘________𐙘
+
   // Always false for legacy full stack, since it has no projects.
   const isCertificationProject = liveCerts.some(cert =>
     cert.projects?.some((project: { id: string }) => project.id === id)

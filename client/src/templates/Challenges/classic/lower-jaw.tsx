@@ -76,7 +76,7 @@ const sentenceArray = [
   'sorry-getting-there',
   'sorry-hang-in-there',
   'sorry-dont-giveup'
-];
+] as const;
 
 const sentencePicker = (shownAttempts: number) => {
   return sentenceArray[shownAttempts % sentenceArray.length];

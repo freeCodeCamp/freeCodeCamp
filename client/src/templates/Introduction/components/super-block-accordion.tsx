@@ -116,7 +116,12 @@ const Chapter = ({
             className='map-icon'
             chapter={dashedName as FsdChapters}
           />
+          {/** 
+            * Type 'string' can't be used to index type 
+            * '{ html: string; css: string; javascript: string; "frontend-libraries": string; "relational-databases": string; "backend-javascript": string; python: string; career: string; }'
+            */}
           {t($ => $["full-stack-developer"].chapters[dashedName], { ns: "intro" })}
+          {/*                                        𐙘________𐙘 */}
         </div>
         <div className='chapter-button-right'>
           {!comingSoon && (
@@ -161,7 +166,12 @@ const Module = ({
           <span className='dropdown-wrap'>
             <DropDown />
           </span>
+          {/**
+            * Type 'string' can't be used to index type 
+            * { "basic-html": string; "semantic-html": string; "html-forms-and-tables": string; "html-and-accessibility": string; "review-html": string; "exam-html": string; "computer-basics": string; "basic-css": string; ... 81 more ...; "certified-full-stack-developer-exam": string; } 
+            */}
           {t($ => $["full-stack-developer"].modules[dashedName], { ns: "intro" })}
+          {/*                                       𐙘________𐙘 */}
         </div>
         <div className='module-button-right'>
           <span className='module-steps'>
@@ -272,9 +282,11 @@ export const SuperBlockAccordion = ({
 
                 const { note, intro } = t(
                   /**
-                   * TODO: @ahrjarrett manually test
+                   * Type 'string' can't be used to index type 
+                   * { "basic-html-and-html5": { title: string; intro: string[]; }; "basic-css": { title: string; intro: string[]; }; "applied-visual-design": { title: string; intro: string[]; }; "applied-accessibility": { title: string; intro: string[]; }; "responsive-web-design-principles": { ...; }; "css-flexbox": { ...; }; "css-grid...
                    */
                   $ => $["full-stack-developer"]["module-intros"][module.name],
+                  //                                                     𐙘__𐙘
                   { ns: "intro", returnObjects: true }
                 ) as {
                   note: string;
@@ -295,7 +307,12 @@ export const SuperBlockAccordion = ({
                         {/**
                           * TODO: @ahrjarrett manually test
                           */}
+                          {/**
+                            * Type 'string' can't be used to index type 
+                            * { "basic-html": string; "semantic-html": string; "html-forms-and-tables": string; "html-and-accessibility": string; "review-html": string; "exam-html": string; "computer-basics": string; "basic-css": string; ... 81 more ...; "certified-full-stack-developer-exam": string; }
+                            */}
                         {t($ => $["full-stack-developer"].modules[module.name], { ns: "intro" })}
+                        {/*                                              𐙘__𐙘 */}
                       </div>
                     </Disclosure.Button>
                     <Disclosure.Panel as='ul' className='module-panel'>

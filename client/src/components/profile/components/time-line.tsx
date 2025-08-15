@@ -271,6 +271,10 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   const idToNameMap = new Map();
   for (const id of getCertIds()) {
     const certPath = getPathFromID(id);
+    /**
+     * `${string}-cert`' can't be used to index type 
+     * '{ "responsive-web-design": string; "responsive-web-design-cert": string; "javascript-algorithms-and-data-structures": string; "javascript-algorithms-and-data-structures-cert": string; ... 45 more ...; "full-stack-cert": string; }
+     */
     const certName = t($ => $.certification.title[`${certPath}-cert`]);
     idToNameMap.set(id, {
       challengeTitle: certName,

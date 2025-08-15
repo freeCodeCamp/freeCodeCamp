@@ -20,7 +20,12 @@ test('useShare testing', () => {
   });
 
   const freecodecampLearnDomain = 'www.freecodecamp.org/learn';
+  /**
+   * Type '"testSuperBlock"' can't be used to index type 
+   * '{ "responsive-web-design": { title: string; intro: string[]; note: string; blocks: { "basic-html-and-html5": { title: string; intro: string[]; }; "basic-css": { title: string; intro: string[]; }; "applied-visual-design": { ...; }; "applied-accessibility": { ...; }; "responsive-web-design-principles": { ...; }; "css-...'
+   */
   const i18nSupportedBlock = t($ => $[superBlock].blocks[block].title, { ns: "intro" });
+  //                                  𐙘________𐙘
   const tweetMessage = `I${space}have${space}completed${space}${i18nSupportedBlock}${space}%23freecodecamp`;
   const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomain}/${superBlock}/${hastag}${block}`;
   expect(redirectURL.xUrl).toBe(

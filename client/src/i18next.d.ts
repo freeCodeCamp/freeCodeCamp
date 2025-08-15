@@ -18,7 +18,7 @@ declare module 'i18next' {
       links: typeof links;
       metaTags: typeof metaTags;
       motivation: typeof motivation;
-      searchBar: typeof searchBar;
+      'search-bar': typeof searchBar;
       translations: typeof translations;
       trending: typeof trending;
     };

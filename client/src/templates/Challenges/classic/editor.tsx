@@ -916,8 +916,19 @@ const Editor = (props: EditorProps): JSX.Element => {
       breadcrumbLeftLink = document.createElement('a'),
       breadcrumbRight = document.createElement('li'),
       breadcrumbRightLink = document.createElement('a');
+
+    /**
+     * Type 'string' can't be used to index type 
+     * '{ "responsive-web-design": { title: string; intro: string[]; note: string; blocks: { "basic-html-and-html5": { title: string; intro: string[]; }; "basic-css": { title: string; intro: string[]; }; "applied-visual-design": { ...; }; "applied-accessibility": { ...; }; "responsive-web-design-principles": { ...; }; "css-...'
+     */
     breadcrumbLeftLink.innerHTML = t($ => $[superBlock].title, { ns: "intro" });
+    //                                      𐙘________𐙘
+    /**
+     * Type 'string' can't be used to index type 
+     * '{ "responsive-web-design": { title: string; intro: string[]; note: string; blocks: { "basic-html-and-html5": { title: string; intro: string[]; }; "basic-css": { title: string; intro: string[]; }; "applied-visual-design": { ...; }; "applied-accessibility": { ...; }; "responsive-web-design-principles": { ...; }; "css-...'
+     */
     breadcrumbRightLink.innerHTML = t($ => $[superBlock].blocks[block].title, { ns: "intro" });
+    //                                      𐙘________𐙘
     breadcrumbLeftLink.setAttribute('href', `/learn/${superBlock}`);
     breadcrumbRightLink.setAttribute('href', `/learn/${superBlock}/#${block}`);
     breadcrumbLeft.appendChild(breadcrumbLeftLink);

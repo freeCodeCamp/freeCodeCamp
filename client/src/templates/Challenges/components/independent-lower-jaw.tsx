@@ -59,7 +59,13 @@ export function IndependentLowerJaw({
   }, [hint]);
 
   const isMacOS = navigator.userAgent.includes('Mac OS');
-  const checkButtonText = isMacOS ? t($ => $["command-enter"]) : t($ => $["ctrl-enter"]);
+  /**
+   * Might be:
+   * 
+   * @example
+   * const checkButtonText = isMacOS ? t($ => $.buttons['command-enter']) : t($ => $.buttons["ctrl-enter"]);
+   */
+  const checkButtonText = isMacOS ? t($ => $['command-enter']) : t($ => $["ctrl-enter"]);
 
   return (
     <div className='independent-lower-jaw' tabIndex={-1}>

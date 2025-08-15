@@ -30,7 +30,12 @@ function IntroductionPage({
     ? firstLesson.fields.slug
     : '/strange-place';
   const blockTitle =
+    /**
+     * Type 'string' can't be used to index type 
+     * { "basic-html-and-html5": { title: string; intro: string[]; }; "basic-css": { title: string; intro: string[]; }; "applied-visual-design": { title: string; intro: string[]; }; "applied-accessibility": { title: string; intro: string[]; }; "responsive-web-design-principles": { ...; }; "css-flexbox": { ...; }; "css-grid...
+     */
     t($ => $[superBlock].blocks[block].title, { ns: "intro" }) + ' | freeCodeCamp.org';
+    //                          𐙘___𐙘
   return (
     <LearnLayout>
       <Helmet>

@@ -27,14 +27,19 @@ const Illustration = ({
   donatableSectionRecentlyCompleted: DonatableSectionRecentlyCompleted;
   useShortDonationBlocks: boolean;
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('translations');
   const showNewBearIllustration =
     useShortDonationBlocks && donatableSectionRecentlyCompleted;
   return (
     <img
       alt={
         showNewBearIllustration
-          ? t($ => $["bear-completion-alt"])
+        /**
+         * "bear-completion-alt"' can't be used to index type 
+         * '{ buttons: { "logged-in-cta-btn": string; "get-started": string; "logged-out-cta-btn": string; "view-curriculum": string; "first-lesson": string; close: string; edit: string; copy: string; view: string; ... 113 more ...; "go-to-archive-long": string; }; ... 26 more ...; curriculum: { ...; }; }
+         */
+          // ? t($ => $["bear-completion-alt"])
+          ? t($ => $.donate["bear-completion-alt"])
           : t($ => $.donate["flying-bear"])
       }
       id={'supporter-bear'}
@@ -71,12 +76,22 @@ function ModalHeader({
                   */}
                 {t($ => $.donate["nicely-done"], {
                   block: section === 'module'
+                    /**
+                     * Type '"module"' can't be used to index type 
+                     * '{ title: string; intro: string[]; note: string; blocks: { "basic-html-and-html5": { title: string; intro: string[]; }; "basic-css": { title: string; intro: string[]; }; "applied-visual-design": { title: string; intro: string[]; }; "applied-accessibility": { ...; }; "responsive-web-design-principles": { ...; }; "css-...'
+                     */
                     ? t($ => $[superBlock!][section].s[title!], {
-                    ns: "intro"
-                  })
+                      //                    𐙘_____𐙘
+                      ns: "intro"
+                    })
+                    /**
+                     * Type '"module"' can't be used to index type 
+                     * '{ title: string; intro: string[]; note: string; blocks: { "basic-html-and-html5": { title: string; intro: string[]; }; "basic-css": { title: string; intro: string[]; }; "applied-visual-design": { title: string; intro: string[]; }; "applied-accessibility": { ...; }; "responsive-web-design-principles": { ...; }; "css-...'
+                     */
                     : t($ => $[superBlock!][section!].s[title!].title, {
-                    ns: "intro"
-                  })
+                      //                    𐙘_____𐙘
+                      ns: "intro"
+                    })
                 })}
               </b>
               <Spacer size='xs' />

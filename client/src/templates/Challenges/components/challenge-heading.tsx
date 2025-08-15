@@ -18,9 +18,11 @@ function ChallengeHeading({
   return (
     <div className='challenge-heading-wrap'>
       {/**
-        * TODO: @ahrjarrett manually test
+        * Type 'string' can't be used to index type 
+        * '{ buttons: { "logged-in-cta-btn": string; "get-started": string; "logged-out-cta-btn": string; "view-curriculum": string; "first-lesson": string; close: string; edit: string; copy: string; view: string; ... 113 more ...; "go-to-archive-long": string; }; ... 26 more ...; curriculum: { ...; }; }
         */}
       <h2 className='challenge-heading'>{t($ => $[heading])}</h2>
+      {/*                                         𐙘_____𐙘 */}
       {isCompleted && <GreenPass />}
     </div>
   );

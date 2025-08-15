@@ -154,7 +154,12 @@ function MsTrophy(props: MsTrophyProps) {
   } = props;
 
   const blockNameTitle = `${t($ =>
+    /**
+     * Type 'string' can't be used to index type 
+     * '{ "basic-html-and-html5": { title: string; intro: string[]; }; "basic-css": { title: string; intro: string[]; }; "applied-visual-design": { title: string; intro: string[]; }; "applied-accessibility": { title: string; intro: string[]; }; "responsive-web-design-principles": { ...; }; "css-flexbox": { ...; }; "css-grid...'
+     */
     $[superBlock].blocks[block].title, { ns: 'intro' }
+    //                   𐙘___𐙘
   )} - ${title}`;
 
   return (
