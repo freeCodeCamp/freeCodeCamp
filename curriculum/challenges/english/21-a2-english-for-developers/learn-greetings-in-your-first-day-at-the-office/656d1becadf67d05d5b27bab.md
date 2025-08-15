@@ -5,15 +5,21 @@ challengeType: 19
 dashedName: task-149
 ---
 
+<!--
+AUDIO REFERENCE:
+Sophie: Oh, come on, Brian.
+Brian: But it's true. She's the person to go to if you need help.
+-->
+
 # --description--
 
 Just like when you learned about the pronoun `he`, pronouns like `she` are used to refer to female individuals. They help avoid repetition in conversation. Look at this part of the dialogue:
 
-Sophie: `Oh, come on, Brian!`
+- Sophie: `Oh, come on, Brian.`
 
-Brian: `But it is true. She's the person to go to if you need help!`
+- Brian: `But it's true. She's the person to go to if you need help.`
 
-Here, `She` is used by Brian to refer to Sophie. Instead of repeating Sophie's name, Brian uses the pronoun `she` to make the conversation smoother and avoid redundancy.
+Here, `she` is used by Brian to refer to Sophie. Instead of repeating Sophie's name, Brian uses the pronoun `she` to make the conversation smoother and avoid repetition.
 
 # --questions--
 
@@ -48,10 +54,6 @@ In the dialogue, which word does Brian use to refer to Sophie without repeating 
 ---
 
 `she`
-
-### --feedback--
-
-`She` refers to a female person.
 
 ## --video-solution--
 
