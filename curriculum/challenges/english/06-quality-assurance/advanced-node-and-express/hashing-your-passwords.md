@@ -31,7 +31,6 @@ Submit your page when you think you've got it right. If you're running into erro
 BCrypt should be a dependency.
 
 ```js
-async () => {
   const url = new URL("/_api/package.json", code);
   const res = await fetch(url);
   const packJson = await res.json()
@@ -40,13 +39,11 @@ async () => {
     'bcrypt',
     'Your project should list "bcrypt" as a dependency'
   );
-}
 ```
 
 BCrypt should be correctly required and implemented.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -65,6 +62,5 @@ async () => {
     /bcrypt.compareSync/gi,
     'You should compare the password to the hash in your strategy'
   );
-}
 ```
 
