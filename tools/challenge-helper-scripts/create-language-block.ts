@@ -1,4 +1,3 @@
-import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
@@ -7,12 +6,15 @@ import ObjectID from 'bson-objectid';
 
 import {
   SuperBlocks,
-  languageSuperBlocks,
-  superBlockToFolderMap
+  languageSuperBlocks
 } from '../../shared/config/curriculum';
-import { createDialogueFile, validateBlockName } from './utils';
+import {
+  getContentConfig,
+  writeBlockStructure
+} from '../../curriculum/file-handler';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
+import { createDialogueFile, validateBlockName } from './utils';
 
 const helpCategories = ['English'] as const;
 
@@ -79,7 +81,6 @@ async function createMetaJson(
   helpCategory: string,
   challengeId: ObjectID
 ) {
-  const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
   const newMeta = getBaseMeta('Language');
   newMeta.name = title;
   newMeta.dashedName = block;
@@ -89,30 +90,21 @@ async function createMetaJson(
     // eslint-disable-next-line @typescript-eslint/no-base-to-string
     { id: challengeId.toString(), title: "Dialogue 1: I'm Tom" }
   ];
-  const newMetaDir = path.resolve(metaDir, block);
-  if (!existsSync(newMetaDir)) {
-    await withTrace(fs.mkdir, newMetaDir);
-  }
 
-  void withTrace(
-    fs.writeFile,
-    path.resolve(metaDir, `${block}/meta.json`),
-    await format(JSON.stringify(newMeta), { parser: 'json' })
-  );
+  await writeBlockStructure(block, newMeta);
 }
 
 async function createDialogueChallenge(
   superBlock: SuperBlocks,
   block: string
 ): Promise<ObjectID> {
-  const superBlockSubPath = superBlockToFolderMap[superBlock];
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
-  );
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
+  const { blockContentDir } = getContentConfig('english') as {
+    blockContentDir: string;
+  };
+
+  const newChallengeDir = path.resolve(blockContentDir, block);
+  await fs.mkdir(newChallengeDir, { recursive: true });
+
   return createDialogueFile({
     projectPath: newChallengeDir + '/'
   });

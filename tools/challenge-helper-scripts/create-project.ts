@@ -5,10 +5,11 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
+import { SuperBlocks } from '../../shared/config/curriculum';
 import {
-  SuperBlocks,
-  superBlockToFolderMap
-} from '../../shared/config/curriculum';
+  getContentConfig,
+  writeBlockStructure
+} from '../../curriculum/file-handler';
 import { createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
@@ -97,7 +98,6 @@ async function createMetaJson(
   order: number,
   challengeId: ObjectID
 ) {
-  const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
   const newMeta = getBaseMeta('Step');
   newMeta.name = title;
   newMeta.dashedName = block;
@@ -106,30 +106,20 @@ async function createMetaJson(
   newMeta.superBlock = superBlock;
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
-  const newMetaDir = path.resolve(metaDir, block);
-  if (!existsSync(newMetaDir)) {
-    await withTrace(fs.mkdir, newMetaDir);
-  }
 
-  void withTrace(
-    fs.writeFile,
-    path.resolve(metaDir, `${block}/meta.json`),
-    await format(JSON.stringify(newMeta), { parser: 'json' })
-  );
+  await writeBlockStructure(block, newMeta);
 }
 
 async function createFirstChallenge(
   superBlock: SuperBlocks,
   block: string
 ): Promise<ObjectID> {
-  const superBlockSubPath = superBlockToFolderMap[superBlock];
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
-  );
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
+  const { blockContentDir } = getContentConfig('english') as {
+    blockContentDir: string;
+  };
+
+  const newChallengeDir = path.resolve(blockContentDir, block);
+  await fs.mkdir(newChallengeDir, { recursive: true });
 
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
