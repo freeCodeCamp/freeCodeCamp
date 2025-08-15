@@ -39,11 +39,11 @@ const deleteTask = async () => {
   await unlink(`${path}${fileToDelete}`);
   console.log(`Finished deleting file: '${fileToDelete}'.`);
 
-  deleteChallengeFromMeta(indexToDelete);
+  await deleteChallengeFromMeta(indexToDelete);
   console.log(`Finished removing challenge from 'meta.json'.`);
 
   if (isTaskChallenge(challenges[indexToDelete].title)) {
-    updateTaskMeta();
+    await updateTaskMeta();
     console.log("Finished updating tasks in 'meta.json'.");
 
     updateTaskMarkdownFiles();

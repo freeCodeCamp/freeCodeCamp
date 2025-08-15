@@ -112,20 +112,20 @@ interface InsertChallengeOptions {
   title: string;
 }
 
-function insertChallengeIntoMeta({
+async function insertChallengeIntoMeta({
   index,
   id,
   title
-}: InsertChallengeOptions): void {
+}: InsertChallengeOptions) {
   const existingMeta = getMetaData();
   const challengeOrder = [...existingMeta.challengeOrder];
 
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   challengeOrder.splice(index, 0, { id: id.toString(), title });
-  updateMetaData({ ...existingMeta, challengeOrder });
+  await updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-function insertStepIntoMeta({ stepNum, stepId }: InsertOptions): void {
+async function insertStepIntoMeta({ stepNum, stepId }: InsertOptions) {
   const existingMeta = getMetaData();
   const oldOrder = [...existingMeta.challengeOrder];
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
@@ -136,10 +136,10 @@ function insertStepIntoMeta({ stepNum, stepId }: InsertOptions): void {
     title: `Step ${index + 1}`
   }));
 
-  updateMetaData({ ...existingMeta, challengeOrder });
+  await updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-function deleteStepFromMeta({ stepNum }: { stepNum: number }): void {
+async function deleteStepFromMeta({ stepNum }: { stepNum: number }) {
   const existingMeta = getMetaData();
   const oldOrder = [...existingMeta.challengeOrder];
   oldOrder.splice(stepNum - 1, 1);
@@ -149,17 +149,17 @@ function deleteStepFromMeta({ stepNum }: { stepNum: number }): void {
     title: `Step ${index + 1}`
   }));
 
-  updateMetaData({ ...existingMeta, challengeOrder });
+  await updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-function deleteChallengeFromMeta(challengeIndex: number): void {
+async function deleteChallengeFromMeta(challengeIndex: number) {
   const existingMeta = getMetaData();
   const challengeOrder = [...existingMeta.challengeOrder];
   challengeOrder.splice(challengeIndex, 1);
-  updateMetaData({ ...existingMeta, challengeOrder });
+  await updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-function updateTaskMeta() {
+async function updateTaskMeta() {
   const existingMeta = getMetaData();
   const oldOrder = [...existingMeta.challengeOrder];
 
@@ -176,7 +176,7 @@ function updateTaskMeta() {
     }
   });
 
-  updateMetaData({ ...existingMeta, challengeOrder });
+  await updateMetaData({ ...existingMeta, challengeOrder });
 }
 
 const updateStepTitles = (): void => {

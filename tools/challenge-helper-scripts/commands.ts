@@ -12,7 +12,7 @@ import {
   updateStepTitles
 } from './utils';
 
-function deleteStep(stepNum: number): void {
+async function deleteStep(stepNum: number): Promise<void> {
   if (stepNum < 1) {
     throw Error('Step not deleted. Step num must be a number greater than 0.');
   }
@@ -27,13 +27,13 @@ function deleteStep(stepNum: number): void {
   const stepId = challengeOrder[stepNum - 1].id;
 
   fs.unlinkSync(`${getProjectPath()}${stepId}.md`);
-  deleteStepFromMeta({ stepNum });
+  await deleteStepFromMeta({ stepNum });
   updateStepTitles();
 
   console.log(`Successfully deleted step #${stepNum}`);
 }
 
-function insertStep(stepNum: number): void {
+async function insertStep(stepNum: number): Promise<void> {
   if (stepNum < 1) {
     throw Error('Step not inserted. New step number must be greater than 0.');
   }
@@ -64,12 +64,12 @@ function insertStep(stepNum: number): void {
     challengeSeeds
   });
 
-  insertStepIntoMeta({ stepNum, stepId });
+  await insertStepIntoMeta({ stepNum, stepId });
   updateStepTitles();
   console.log(`Successfully inserted new step #${stepNum}`);
 }
 
-function createEmptySteps(num: number): void {
+async function createEmptySteps(num: number): Promise<void> {
   if (num < 1 || num > 1000) {
     throw Error(
       `No steps created. arg 'num' must be between 1 and 1000 inclusive`
@@ -85,7 +85,7 @@ function createEmptySteps(num: number): void {
 
   for (let stepNum = nextStepNum; stepNum < nextStepNum + num; stepNum++) {
     const stepId = createStepFile({ stepNum, challengeType });
-    insertStepIntoMeta({ stepNum, stepId });
+    await insertStepIntoMeta({ stepNum, stepId });
   }
   console.log(`Successfully added ${num} steps`);
 }
@@ -105,7 +105,7 @@ const repairMeta = async () => {
   );
   const meta = getMetaData();
   meta.challengeOrder = sortedChallengeOrder;
-  updateMetaData(meta);
+  await updateMetaData(meta);
 };
 
 export { deleteStep, insertStep, createEmptySteps, repairMeta };

@@ -1,6 +1,11 @@
 import fs from 'fs';
 import path from 'path';
 import glob from 'glob';
+
+import {
+  getBlockStructure,
+  writeBlockStructure
+} from '../../../curriculum/file-handler';
 import { getProjectName, getProjectPath } from './get-project-info';
 
 export type Meta = {
@@ -18,13 +23,18 @@ export type Meta = {
   challengeOrder: { id: string; title: string }[];
 };
 
-function getMetaData(): Meta {
-  const metaData = fs.readFileSync(getProjectMetaPath(), 'utf-8');
-  return JSON.parse(metaData) as Meta;
+function getMetaData() {
+  const block = getBlock(getProjectPath());
+  return getBlockStructure(block) as Meta;
 }
 
-function updateMetaData(newMetaData: Record<string, unknown>): void {
-  fs.writeFileSync(getProjectMetaPath(), JSON.stringify(newMetaData, null, 2));
+function getBlock(filePath: string) {
+  return path.basename(filePath);
+}
+
+async function updateMetaData(newMetaData: Record<string, unknown>) {
+  const block = getBlock(getProjectPath());
+  await writeBlockStructure(block, newMetaData);
 }
 
 function getProjectMetaPath(): string {
@@ -40,7 +50,8 @@ function getProjectMetaPath(): string {
 // This (and everything else) should be async, but it's fast enough
 // for the moment.
 function validateMetaData(): void {
-  const { challengeOrder } = getMetaData();
+  const block = getBlock(getProjectPath());
+  const { challengeOrder } = getBlockStructure(block) as Meta;
 
   // each step in the challengeOrder should correspond to a file
   challengeOrder.forEach(({ id }) => {
@@ -71,4 +82,10 @@ If there is no file for this id, then either the challengeOrder needs to be upda
   });
 }
 
-export { getMetaData, updateMetaData, getProjectMetaPath, validateMetaData };
+export {
+  getMetaData,
+  updateMetaData,
+  getProjectMetaPath,
+  validateMetaData,
+  getBlock
+};

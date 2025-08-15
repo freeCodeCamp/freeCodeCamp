@@ -32,7 +32,7 @@ const deleteChallenge = async () => {
 
   const meta = getMetaData();
   meta.challengeOrder.splice(indexToDelete, 1);
-  updateMetaData(meta);
+  await updateMetaData(meta);
 };
 
 void deleteChallenge();

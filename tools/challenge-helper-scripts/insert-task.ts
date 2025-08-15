@@ -50,14 +50,14 @@ const insertChallenge = async () => {
   createChallengeFile(challengeIdString, challengeText, path);
   console.log('Finished creating new task markdown file.');
 
-  insertChallengeIntoMeta({
+  await insertChallengeIntoMeta({
     index: indexToInsert,
     id: challengeId,
     title: newTaskTitle
   });
   console.log(`Finished inserting task into 'meta.json' file.`);
 
-  updateTaskMeta();
+  await updateTaskMeta();
   console.log("Finished updating tasks in 'meta.json'.");
 
   updateTaskMarkdownFiles();
