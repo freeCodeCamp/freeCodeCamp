@@ -16,8 +16,8 @@ const email = 'support@freecodecamp.org';
 const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
   const { t } = useTranslation();
   const buttonText = isHonest
-    ? t($ => $.buttons["accepted-honesty"])
-    : t($ => $.buttons["agree-honesty"]);
+    ? t($ => $.buttons['accepted-honesty'])
+    : t($ => $.buttons['agree-honesty']);
 
   return (
     <section id='honesty-policy'>

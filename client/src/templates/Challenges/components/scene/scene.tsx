@@ -419,7 +419,7 @@ export function Scene({
         ) : (
           <button
             className='scene-btn scene-a11y-btn'
-            aria-label={t($ => $.buttons["closed-caption"])}
+            aria-label={t($ => $.buttons['closed-caption'])}
             aria-pressed={accessibilityOn}
             onClick={() => setAccessibilityOn(!accessibilityOn)}
           >

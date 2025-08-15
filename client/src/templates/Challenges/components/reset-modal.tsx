@@ -57,13 +57,13 @@ function ResetModal({
       <Modal.Body alignment='center'>
         <p>
           {canSaveToDB(challengeType)
-            ? t($ => $.learn["revert-warn"])
-            : t($ => $.learn["reset-warn"], {
-            title: challengeTitle
-          })}
+            ? t($ => $.learn['revert-warn'])
+            : t($ => $.learn['reset-warn'], {
+                title: challengeTitle
+              })}
         </p>
         <p>
-          <em>{t($ => $.learn["reset-warn-2"])}</em>
+          <em>{t($ => $.learn['reset-warn-2'])}</em>
         </p>
       </Modal.Body>
       <Modal.Footer>
@@ -74,8 +74,8 @@ function ResetModal({
           onClick={withActions(reset, close)}
         >
           {canSaveToDB(challengeType)
-            ? t($ => $.buttons["revert-to-saved-code"])
-            : t($ => $.buttons["reset-lesson"])}
+            ? t($ => $.buttons['revert-to-saved-code'])
+            : t($ => $.buttons['reset-lesson'])}
         </Button>
       </Modal.Footer>
     </Modal>

@@ -58,7 +58,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
         <form onSubmit={submitNewProfileSettings}>
           <div role='group' aria-label={t($ => $.settings.headings.privacy)}>
             <ToggleRadioSetting
-              action={t($ => $.settings.labels["my-profile"])}
+              action={t($ => $.settings.labels['my-profile'])}
               explain={t($ => $.settings.disabled)}
               flag={privacyValues['isLocked']}
               flagName='isLocked'
@@ -67,8 +67,8 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
               toggleFlag={toggleFlag('isLocked')}
             />
             <ToggleRadioSetting
-              action={t($ => $.settings.labels["my-name"])}
-              explain={t($ => $.settings["private-name"])}
+              action={t($ => $.settings.labels['my-name'])}
+              explain={t($ => $.settings['private-name'])}
               flag={!privacyValues['showName']}
               flagName='name'
               offLabel={t($ => $.buttons.public)}
@@ -76,7 +76,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
               toggleFlag={toggleFlag('showName')}
             />
             <ToggleRadioSetting
-              action={t($ => $.settings.labels["my-location"])}
+              action={t($ => $.settings.labels['my-location'])}
               flag={!privacyValues['showLocation']}
               flagName='showLocation'
               offLabel={t($ => $.buttons.public)}
@@ -84,7 +84,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
               toggleFlag={toggleFlag('showLocation')}
             />
             <ToggleRadioSetting
-              action={t($ => $.settings.labels["my-about"])}
+              action={t($ => $.settings.labels['my-about'])}
               flag={!privacyValues['showAbout']}
               flagName='showAbout'
               offLabel={t($ => $.buttons.public)}
@@ -92,7 +92,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
               toggleFlag={toggleFlag('showAbout')}
             />
             <ToggleRadioSetting
-              action={t($ => $.settings.labels["my-points"])}
+              action={t($ => $.settings.labels['my-points'])}
               flag={!privacyValues['showPoints']}
               flagName='showPoints'
               offLabel={t($ => $.buttons.public)}
@@ -100,7 +100,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
               toggleFlag={toggleFlag('showPoints')}
             />
             <ToggleRadioSetting
-              action={t($ => $.settings.labels["my-heatmap"])}
+              action={t($ => $.settings.labels['my-heatmap'])}
               flag={!privacyValues['showHeatMap']}
               flagName='showHeatMap'
               offLabel={t($ => $.buttons.public)}
@@ -108,7 +108,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
               toggleFlag={toggleFlag('showHeatMap')}
             />
             <ToggleRadioSetting
-              action={t($ => $.settings.labels["my-certs"])}
+              action={t($ => $.settings.labels['my-certs'])}
               explain={t($ => $.settings.disabled)}
               flag={!privacyValues['showCerts']}
               flagName='showCerts'
@@ -117,7 +117,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
               toggleFlag={toggleFlag('showCerts')}
             />
             <ToggleRadioSetting
-              action={t($ => $.settings.labels["my-portfolio"])}
+              action={t($ => $.settings.labels['my-portfolio'])}
               flag={!privacyValues['showPortfolio']}
               flagName='showPortfolio'
               offLabel={t($ => $.buttons.public)}
@@ -125,7 +125,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
               toggleFlag={toggleFlag('showPortfolio')}
             />
             <ToggleRadioSetting
-              action={t($ => $.settings.labels["my-timeline"])}
+              action={t($ => $.settings.labels['my-timeline'])}
               explain={t($ => $.settings.disabled)}
               flag={!privacyValues['showTimeLine']}
               flagName='showTimeLine'
@@ -134,7 +134,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
               toggleFlag={toggleFlag('showTimeLine')}
             />
             <ToggleRadioSetting
-              action={t($ => $.settings.labels["my-donations"])}
+              action={t($ => $.settings.labels['my-donations'])}
               flag={!privacyValues['showDonation']}
               flagName='showDonation'
               offLabel={t($ => $.buttons.public)}
@@ -151,7 +151,9 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
             {...(!madeChanges && { tabIndex: -1 })}
           >
             {t($ => $.buttons.save)}{' '}
-            <span className='sr-only'>{t($ => $.settings.headings.privacy)}</span>
+            <span className='sr-only'>
+              {t($ => $.settings.headings.privacy)}
+            </span>
           </Button>
         </form>
       </FullWidthRow>
@@ -167,7 +169,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
             JSON.stringify(user)
           )}`}
         >
-          {t($ => $.buttons["download-data"])}
+          {t($ => $.buttons['download-data'])}
         </Button>
       </FullWidthRow>
     </div>

@@ -16,7 +16,7 @@ const TimelinePagination = (props: TimelinePaginationProps): JSX.Element => {
   const { t } = useTranslation();
 
   return (
-    <nav aria-label={t($ => $.aria["timeline-pagination-nav"])}>
+    <nav aria-label={t($ => $.aria['timeline-pagination-nav'])}>
       <ul aria-hidden='true' className='timeline-pagination_list'>
         {totalPages > 10 && (
           <li
@@ -26,7 +26,7 @@ const TimelinePagination = (props: TimelinePaginationProps): JSX.Element => {
             }}
           >
             <button
-              aria-label={t($ => $.aria["first-page"])}
+              aria-label={t($ => $.aria['first-page'])}
               disabled={pageNo === 1}
               onClick={firstPage}
             >
@@ -41,7 +41,7 @@ const TimelinePagination = (props: TimelinePaginationProps): JSX.Element => {
           }}
         >
           <button
-            aria-label={t($ => $.aria["previous-page"])}
+            aria-label={t($ => $.aria['previous-page'])}
             disabled={pageNo === 1}
             onClick={prevPage}
           >
@@ -49,7 +49,7 @@ const TimelinePagination = (props: TimelinePaginationProps): JSX.Element => {
           </button>
         </li>
         <li className='timeline-pagination_list_item'>
-          {t($ => $.profile["page-number"], {
+          {t($ => $.profile['page-number'], {
             pageNumber: pageNo,
             totalPages: totalPages
           })}
@@ -61,7 +61,7 @@ const TimelinePagination = (props: TimelinePaginationProps): JSX.Element => {
           }}
         >
           <button
-            aria-label={t($ => $.aria["next-page"])}
+            aria-label={t($ => $.aria['next-page'])}
             disabled={pageNo === totalPages}
             onClick={nextPage}
           >
@@ -76,7 +76,7 @@ const TimelinePagination = (props: TimelinePaginationProps): JSX.Element => {
             }}
           >
             <button
-              aria-label={t($ => $.aria["last-page"])}
+              aria-label={t($ => $.aria['last-page'])}
               disabled={pageNo === totalPages}
               onClick={lastPage}
             >

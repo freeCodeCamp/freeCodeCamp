@@ -116,7 +116,7 @@ function ShowUser({
       <Row className='overflow-fix'>
         <Col sm={6} smOffset={3} xs={12}>
           <p>
-            <Trans i18nKey={$ => $.report["notify-1"]}>
+            <Trans i18nKey={$ => $.report['notify-1']}>
               <strong>{{ email }}</strong>
             </Trans>
           </p>

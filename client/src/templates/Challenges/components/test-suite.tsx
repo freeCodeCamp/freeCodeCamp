@@ -27,7 +27,7 @@ function TestSuite({ tests }: TestSuiteProps): JSX.Element {
   return (
     <>
       <h2 className='challenge-test-suite-heading'>
-        {t($ => $.learn["editor-tabs"].tests)}
+        {t($ => $.learn['editor-tabs'].tests)}
       </h2>
       <ul className='challenge-test-suite'>
         {testSuiteTests.map(

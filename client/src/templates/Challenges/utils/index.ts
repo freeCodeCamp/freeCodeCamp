@@ -71,7 +71,7 @@ export function enhancePrismAccessibility(
   const codeName = langs[codeType] || '';
   parent.setAttribute(
     'aria-label',
-    i18next.t($ => $.aria["code-example"], { codeName })
+    i18next.t($ => $.aria['code-example'], { codeName })
   );
 }
 
@@ -96,7 +96,7 @@ export function makePrismCollapsible(
 
   const summary = document.createElement('summary');
   summary.classList.add('code-details-summary');
-  summary.innerHTML = i18next.t($ => $.learn["example-code"]);
+  summary.innerHTML = i18next.t($ => $.learn['example-code']);
 
   details.appendChild(summary);
   details.appendChild(preElem.cloneNode(true));

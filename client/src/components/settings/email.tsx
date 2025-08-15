@@ -147,7 +147,9 @@ function EmailSettings({
     return (
       <div>
         <FullWidthRow>
-          <p className='large-p text-center'>{t($ => $.settings.email.missing)}</p>
+          <p className='large-p text-center'>
+            {t($ => $.settings.email.missing)}
+          </p>
         </FullWidthRow>
         <FullWidthRow>
           <Button

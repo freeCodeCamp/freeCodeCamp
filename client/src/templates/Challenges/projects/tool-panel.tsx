@@ -38,13 +38,13 @@ function ToolPanel({
             href={guideUrl}
             target='_blank'
           >
-            {t($ => $.buttons["get-hint"])}
+            {t($ => $.buttons['get-hint'])}
           </Button>
           <Spacer size='xxs' />
         </>
       )}
       <Button block={true} variant='primary' onClick={openHelpModal}>
-        {t($ => $.buttons["ask-for-help"])}
+        {t($ => $.buttons['ask-for-help'])}
       </Button>
     </div>
   );

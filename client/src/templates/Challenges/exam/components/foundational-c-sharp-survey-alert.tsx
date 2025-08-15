@@ -25,9 +25,11 @@ function FoundationalCSharpSurveyAlert({
 
   return (
     <Panel variant='info' data-playwright-test-label='c-sharp-survey-alert'>
-      <Panel.Heading>{t($ => $.survey["foundational-c-sharp"].title)}</Panel.Heading>
+      <Panel.Heading>
+        {t($ => $.survey['foundational-c-sharp'].title)}
+      </Panel.Heading>
       <Panel.Body className='text-center'>
-        <p>{t($ => $.survey.misc["two-questions"])}</p>
+        <p>{t($ => $.survey.misc['two-questions'])}</p>
         <Spacer size='xs' />
         <Button
           block={true}

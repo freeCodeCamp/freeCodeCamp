@@ -27,8 +27,8 @@ export function SolutionDisplayWidget({
   const { id, solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
   const viewText = t($ => $.buttons.view);
-  const viewCode = t($ => $.buttons["view-code"]);
-  const viewProject = t($ => $.buttons["view-project"]);
+  const viewCode = t($ => $.buttons['view-code']);
+  const viewProject = t($ => $.buttons['view-project']);
   // We need to add a random number for dropdown button id's since there may be
   // two dropdowns for the same project on the page.
   const randomIdSuffix = Math.floor(Math.random() * 1_000_000);
@@ -36,7 +36,7 @@ export function SolutionDisplayWidget({
     <Button block={true} onClick={showUserCode}>
       {viewText}{' '}
       <span className='sr-only'>
-        {t($ => $.settings.labels["solution-for"], { projectTitle })}
+        {t($ => $.settings.labels['solution-for'], { projectTitle })}
       </span>
     </Button>
   );
@@ -45,7 +45,7 @@ export function SolutionDisplayWidget({
       <Dropdown.Toggle>
         {viewText}{' '}
         <span className='sr-only'>
-          {t($ => $.settings.labels["solution-for"], { projectTitle })}
+          {t($ => $.settings.labels['solution-for'], { projectTitle })}
         </span>
       </Dropdown.Toggle>
       <Dropdown.Menu>
@@ -59,7 +59,9 @@ export function SolutionDisplayWidget({
           target='_blank'
         >
           {t($ => $.certification.project.solution)}{' '}
-          <span className='sr-only'>({t($ => $.aria["opens-new-window"])})</span>
+          <span className='sr-only'>
+            ({t($ => $.aria['opens-new-window'])})
+          </span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </MenuItem>
         <MenuItem
@@ -69,7 +71,9 @@ export function SolutionDisplayWidget({
           target='_blank'
         >
           {t($ => $.certification.project.source)}{' '}
-          <span className='sr-only'>({t($ => $.aria["opens-new-window"])})</span>
+          <span className='sr-only'>
+            ({t($ => $.aria['opens-new-window'])})
+          </span>
           <FontAwesomeIcon icon={faExternalLinkAlt} />
         </MenuItem>
       </Dropdown.Menu>
@@ -87,20 +91,20 @@ export function SolutionDisplayWidget({
     >
       {viewText}{' '}
       <span className='sr-only'>
-        {t($ => $.settings.labels["solution-for"], { projectTitle })} (
-        {t($ => $.aria["opens-new-window"])})
+        {t($ => $.settings.labels['solution-for'], { projectTitle })} (
+        {t($ => $.aria['opens-new-window'])})
       </span>
       <FontAwesomeIcon icon={faExternalLinkAlt} />
     </Button>
   );
   const MissingSolutionComponentForCertification = (
-    <>{t($ => $.certification.project["no-solution"])}</>
+    <>{t($ => $.certification.project['no-solution'])}</>
   );
   const ShowUserCode = (
     <Button block={true} variant='primary' onClick={showUserCode}>
       {viewText}{' '}
       <span className='sr-only'>
-        {t($ => $.settings.labels["solution-for"], { projectTitle })}
+        {t($ => $.settings.labels['solution-for'], { projectTitle })}
       </span>
     </Button>
   );
@@ -110,7 +114,7 @@ export function SolutionDisplayWidget({
         <Dropdown.Toggle>
           {viewText}{' '}
           <span className='sr-only'>
-            {t($ => $.settings.labels["solution-for"], { projectTitle })}
+            {t($ => $.settings.labels['solution-for'], { projectTitle })}
           </span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
@@ -131,7 +135,7 @@ export function SolutionDisplayWidget({
         <Dropdown.Toggle>
           {viewText}{' '}
           <span className='sr-only'>
-            {t($ => $.settings.labels["solution-for"], { projectTitle })}
+            {t($ => $.settings.labels['solution-for'], { projectTitle })}
           </span>
         </Dropdown.Toggle>
         <Dropdown.Menu>
@@ -145,7 +149,9 @@ export function SolutionDisplayWidget({
             target='_blank'
           >
             {t($ => $.certification.project.solution)}{' '}
-            <span className='sr-only'>({t($ => $.aria["opens-new-window"])})</span>
+            <span className='sr-only'>
+              ({t($ => $.aria['opens-new-window'])})
+            </span>
             <FontAwesomeIcon icon={faExternalLinkAlt} />
           </MenuItem>
           <MenuItem
@@ -155,7 +161,9 @@ export function SolutionDisplayWidget({
             target='_blank'
           >
             {t($ => $.certification.project.source)}{' '}
-            <span className='sr-only'>({t($ => $.aria["opens-new-window"])})</span>
+            <span className='sr-only'>
+              ({t($ => $.aria['opens-new-window'])})
+            </span>
             <FontAwesomeIcon icon={faExternalLinkAlt} />
           </MenuItem>
         </Dropdown.Menu>
@@ -175,8 +183,8 @@ export function SolutionDisplayWidget({
     >
       {viewText}{' '}
       <span className='sr-only'>
-        {t($ => $.settings.labels["solution-for"], { projectTitle })} (
-        {t($ => $.aria["opens-new-window"])})
+        {t($ => $.settings.labels['solution-for'], { projectTitle })} (
+        {t($ => $.aria['opens-new-window'])})
       </span>
       <FontAwesomeIcon icon={faExternalLinkAlt} />
     </Button>
@@ -185,13 +193,13 @@ export function SolutionDisplayWidget({
     <Button block={true} variant='primary' onClick={showExamResults}>
       {viewText}{' '}
       <span className='sr-only'>
-        {t($ => $.settings.labels["results-for"], { projectTitle })}
+        {t($ => $.settings.labels['results-for'], { projectTitle })}
       </span>
     </Button>
   );
   const MissingSolutionComponent =
     displayContext === 'settings' ? (
-      <>{t($ => $.certification.project["no-solution"])}</>
+      <>{t($ => $.certification.project['no-solution'])}</>
     ) : null;
 
   const displayComponents =

@@ -163,14 +163,19 @@ const AboutSettings = ({
 
   return (
     <>
-      <SectionHeader>{t($ => $.settings.headings['personal-info'])}</SectionHeader>
+      <SectionHeader>
+        {t($ => $.settings.headings['personal-info'])}
+      </SectionHeader>
       <FullWidthRow>
         <form
           id='camper-identity'
           onSubmit={handleSubmit}
           data-playwright-test-label='camper-identity'
         >
-          <div role='group' aria-label={t($ => $.settings.headings['personal-info'])}>
+          <div
+            role='group'
+            aria-label={t($ => $.settings.headings['personal-info'])}
+          >
             <FormGroup controlId='about-name'>
               <ControlLabel htmlFor='about-name-input'>
                 <strong>{t($ => $.settings.labels.name)}</strong>

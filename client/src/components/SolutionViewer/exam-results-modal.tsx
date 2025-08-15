@@ -56,22 +56,28 @@ const ExamResultsModal = ({
       size='large'
     >
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
-        {t($ => $.settings.labels["results-for"], { projectTitle: projectTitle })}
+        {t($ => $.settings.labels['results-for'], {
+          projectTitle: projectTitle
+        })}
       </Modal.Header>
       <Modal.Body alignment='start'>
         <Spacer size='m' />
         <div style={{ paddingLeft: '30px' }}>
           <Row>
-            {t($ => $.learn.exam["number-of-questions"], {
+            {t($ => $.learn.exam['number-of-questions'], {
               n: numberOfQuestionsInExam
             })}
           </Row>{' '}
           <Spacer size='m' />
           <Row>
-            {t($ => $.learn.exam["correct-answers"], { n: numberOfCorrectAnswers })}
+            {t($ => $.learn.exam['correct-answers'], {
+              n: numberOfCorrectAnswers
+            })}
           </Row>{' '}
           <Spacer size='m' />
-          <Row>{t($ => $.learn.exam["percent-correct"], { n: percentCorrect })}</Row>
+          <Row>
+            {t($ => $.learn.exam['percent-correct'], { n: percentCorrect })}
+          </Row>
           <Spacer size='m' />{' '}
           <Row>
             {t($ => $.learn.exam.time, {

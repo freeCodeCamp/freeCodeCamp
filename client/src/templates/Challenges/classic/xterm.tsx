@@ -57,7 +57,7 @@ export const XtermTerminal = ({
       outputForScreenReader.setAttribute('role', 'region');
       outputForScreenReader.setAttribute(
         'aria-label',
-        t($ => $.aria["terminal-output"])
+        t($ => $.aria['terminal-output'])
       );
       outputForScreenReader.classList.add('sr-only');
       termContainerDiv?.appendChild(outputForScreenReader);

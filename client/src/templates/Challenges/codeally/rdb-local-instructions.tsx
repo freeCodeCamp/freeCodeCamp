@@ -108,7 +108,7 @@ function RdbLocalInstructions({
           </Link>
         </li>
         <li>
-          <Trans i18nKey={$ => $.learn.local["download-vscode"]}>
+          <Trans i18nKey={$ => $.learn.local['download-vscode']}>
             <Link external={true} to='https://code.visualstudio.com/download'>
               placeholder
             </Link>
@@ -130,12 +130,12 @@ function RdbLocalInstructions({
       <p>{t($ => $.learn.local.heading)}</p>
       <ol>
         <li>
-          <Trans i18nKey={$ => $.learn.local["step-1"]}>
+          <Trans i18nKey={$ => $.learn.local['step-1']}>
             <code>placeholder</code>
           </Trans>
         </li>
         <li>
-          <Trans i18nKey={$ => $.learn.local["step-2"]}>
+          <Trans i18nKey={$ => $.learn.local['step-2']}>
             <code>placeholder</code>
             <code>placeholder</code>
             <code>placeholder</code>
@@ -144,30 +144,30 @@ function RdbLocalInstructions({
         {isSignedIn && (
           <>
             <Spacer size='s' />
-            <p>{t($ => $.learn.local["sub-step-heading"])}</p>
+            <p>{t($ => $.learn.local['sub-step-heading'])}</p>
             <ol>
-              <li>{t($ => $.learn.local["sub-step-1"])}</li>
+              <li>{t($ => $.learn.local['sub-step-1'])}</li>
               <Spacer size='xxs' />
               <Button
                 disabled={!!userToken}
                 block={true}
                 onClick={() => void generateUserToken()}
               >
-                {t($ => $.learn.local["generate-token-btn"])}
+                {t($ => $.learn.local['generate-token-btn'])}
               </Button>
               <Spacer size='xs' />
-              <li>{t($ => $.learn.local["sub-step-2"])}</li>
+              <li>{t($ => $.learn.local['sub-step-2'])}</li>
               <Spacer size='xxs' />
               <Button
                 disabled={!userToken}
                 block={true}
                 onClick={copyUserToken}
               >
-                {t($ => $.learn.local["copy-token-btn"])}
+                {t($ => $.learn.local['copy-token-btn'])}
               </Button>
               <Spacer size='xs' />
               <li>
-                <Trans i18nKey={$ => $.learn.local["sub-step-3"]}>
+                <Trans i18nKey={$ => $.learn.local['sub-step-3']}>
                   <code>placeholder</code>
                   <code>placeholder</code>
                   <code>placeholder</code>
@@ -180,25 +180,25 @@ function RdbLocalInstructions({
           </>
         )}
         <li>
-          <Trans i18nKey={$ => $.learn.local["step-3"]}>
+          <Trans i18nKey={$ => $.learn.local['step-3']}>
             <code>placeholder</code>
           </Trans>
         </li>
-        <li>{t($ => $.learn.local["step-4"])}</li>
+        <li>{t($ => $.learn.local['step-4'])}</li>
         <li>
-          <Trans i18nKey={$ => $.learn.local["step-5"]}>
+          <Trans i18nKey={$ => $.learn.local['step-5']}>
             <code>placeholder</code>
           </Trans>
         </li>
-        <li>{t($ => $.learn.local["step-6"])}</li>
-        <li>{t($ => $.learn.local["step-7"])}</li>
+        <li>{t($ => $.learn.local['step-6'])}</li>
+        <li>{t($ => $.learn.local['step-7'])}</li>
         <Spacer size='xxs' />
         <Button block={true} onClick={copyUrl}>
-          {t($ => $.learn.local["copy-url"])}
+          {t($ => $.learn.local['copy-url'])}
         </Button>
         <Spacer size='xs' />
-        <li>{t($ => $.learn.local["step-8"])}</li>
-        <li>{t($ => $.learn.local["step-9"])}</li>
+        <li>{t($ => $.learn.local['step-8'])}</li>
+        <li>{t($ => $.learn.local['step-9'])}</li>
       </ol>
     </div>
   );

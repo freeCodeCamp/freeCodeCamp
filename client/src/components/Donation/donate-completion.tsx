@@ -31,7 +31,7 @@ function DonateCompletion({
     : processing
       ? `${t($ => $.donate.processing)}`
       : success
-        ? `${t($ => $.donate["thank-you"])}`
+        ? `${t($ => $.donate['thank-you'])}`
         : `${t($ => $.donate.error)}`;
 
   return (
@@ -49,10 +49,10 @@ function DonateCompletion({
         )}
         {success && (
           <>
-            <p>{t($ => $.donate["free-tech"])}</p>
+            <p>{t($ => $.donate['free-tech'])}</p>
             {isSignedIn && (
               <>
-                <p>{t($ => $.donate["visit-supporters"])}</p>
+                <p>{t($ => $.donate['visit-supporters'])}</p>
 
                 <Link
                   className='btn complete-button'
@@ -60,7 +60,7 @@ function DonateCompletion({
                   sameTab={false}
                   to='/supporters'
                 >
-                  {t($ => $.buttons["go-to-supporters"])}
+                  {t($ => $.buttons['go-to-supporters'])}
                 </Link>
               </>
             )}
@@ -71,7 +71,7 @@ function DonateCompletion({
       <div className='donation-completion-buttons'>
         {error && (
           <button type='button' className='try-again-button' onClick={reset}>
-            {t($ => $.buttons["try-again"])}
+            {t($ => $.buttons['try-again'])}
           </button>
         )}
       </div>

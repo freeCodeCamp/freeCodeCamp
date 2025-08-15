@@ -68,19 +68,23 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
         <dl className='stats'>
           <div>
             <dt>
-              <b data-testid='current-streak'>{t($ => $.profile["current-streak"])}</b>
+              <b data-testid='current-streak'>
+                {t($ => $.profile['current-streak'])}
+              </b>
             </dt>
             <dd>{currentStreak || 0}</dd>
           </div>
           <div data-testid='total-points'>
             <dt>
-              <b>{t($ => $.profile["total-points"])}</b>
+              <b>{t($ => $.profile['total-points'])}</b>
             </dt>
             <dd>{points}</dd>
           </div>
           <div>
             <dt>
-              <b data-testid='longest-streak'>{t($ => $.profile["longest-streak"])}</b>
+              <b data-testid='longest-streak'>
+                {t($ => $.profile['longest-streak'])}
+              </b>
             </dt>
             <dd>{longestStreak || 0}</dd>
           </div>

@@ -86,7 +86,7 @@ const WalletsButton = ({
 
       if (error) {
         event.complete('fail');
-        displayError(t($ => $.donate["try-another-method"]));
+        displayError(t($ => $.donate['try-another-method']));
       } else if (clientSecret) {
         // confirm payment intent
         const { paymentIntent, error: confirmError } =
@@ -98,13 +98,13 @@ const WalletsButton = ({
 
         if (confirmError) {
           event.complete('fail');
-          displayError(t($ => $.donate["try-another-method"]));
+          displayError(t($ => $.donate['try-another-method']));
         } else {
           event.complete('success');
           if (paymentIntent.status === 'requires_action') {
             const { error } = await stripe.confirmCardPayment(clientSecret);
             if (error) {
-              return displayError(t($ => $.donate["try-another-method"]));
+              return displayError(t($ => $.donate['try-another-method']));
             }
           }
           postPayment({

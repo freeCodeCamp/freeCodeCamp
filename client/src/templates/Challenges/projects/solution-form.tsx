@@ -47,14 +47,14 @@ export class SolutionForm extends Component<SolutionFormProps> {
 
     // back end challenges and front end projects use a single form field
     const solutionField = [
-      { name: 'solution', label: t($ => $.learn["solution-link"]) }
+      { name: 'solution', label: t($ => $.learn['solution-link']) }
     ];
     const backEndProjectFields = [
-      { name: 'solution', label: t($ => $.learn["solution-link"]) },
-      { name: 'githubLink', label: t($ => $.learn["source-code-link"]) }
+      { name: 'solution', label: t($ => $.learn['solution-link']) },
+      { name: 'githubLink', label: t($ => $.learn['source-code-link']) }
     ];
 
-    const buttonCopy = t($ => $.learn["i-completed"]);
+    const buttonCopy = t($ => $.learn['i-completed']);
 
     const options = {
       types: {

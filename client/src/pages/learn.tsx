@@ -85,7 +85,7 @@ function LearnPage({
   };
   return (
     <LearnLayout>
-      <Helmet title={t($ => $.title, { ns: "metaTags" })} />
+      <Helmet title={t($ => $.title, { ns: 'metaTags' })} />
       <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>

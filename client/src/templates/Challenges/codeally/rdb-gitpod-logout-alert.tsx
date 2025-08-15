@@ -13,7 +13,7 @@ function RdbGitpodLogoutAlert({
 
   return (
     <Alert variant='danger'>
-      {t($ => $.learn.gitpod["logout-warning"], { course: course })}
+      {t($ => $.learn.gitpod['logout-warning'], { course: course })}
     </Alert>
   );
 }

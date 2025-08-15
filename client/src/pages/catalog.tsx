@@ -22,7 +22,7 @@ const CatalogPage = () => {
             const { superBlock, level, hours } = course;
 
             const { title, summary } = t($ => $[superBlock], {
-              ns: "intro",
+              ns: 'intro',
               returnObjects: true
             }) as {
               title: string;
@@ -44,7 +44,7 @@ const CatalogPage = () => {
                     hours
                   </div>
                   <ButtonLink href={`/learn/${superBlock}`}>
-                    {t($ => $.buttons["go-to-course"])}
+                    {t($ => $.buttons['go-to-course'])}
                   </ButtonLink>
                 </div>
               </div>

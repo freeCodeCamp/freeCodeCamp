@@ -30,13 +30,13 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
   return (
     <Modal onClose={onHide} open={show} variant='danger' size='large'>
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
-        {t($ => $.settings.danger["delete-title"])}
+        {t($ => $.settings.danger['delete-title'])}
       </Modal.Header>
       <Modal.Body>
-        <p>{t($ => $.settings.danger["delete-p1"])}</p>
-        <p>{t($ => $.settings.danger["delete-p2"])}</p>
+        <p>{t($ => $.settings.danger['delete-p1'])}</p>
+        <p>{t($ => $.settings.danger['delete-p2'])}</p>
         <p>
-          <Trans i18nKey={$ => $.settings.danger["delete-p3"]}>
+          <Trans i18nKey={$ => $.settings.danger['delete-p3']}>
             <a href={`mailto:${email}`} title={email}>
               {{ email }}
             </a>
@@ -56,8 +56,8 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
         <Spacer size='xs' />
         <FormGroup controlId='verify-delete'>
           <ControlLabel htmlFor='verify-delete-input'>
-            {t($ => $.settings.danger["verify-text"], {
-              verifyText: t($ => $.settings.danger["verify-delete-text"])
+            {t($ => $.settings.danger['verify-text'], {
+              verifyText: t($ => $.settings.danger['verify-delete-text'])
             })}
           </ControlLabel>
           <Spacer size='xs' />
@@ -73,7 +73,9 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
           size='large'
           variant='danger'
           onClick={props.delete}
-          disabled={verifyText !== t($ => $.settings.danger["verify-delete-text"])}
+          disabled={
+            verifyText !== t($ => $.settings.danger['verify-delete-text'])
+          }
           type='button'
         >
           {t($ => $.settings.danger.certain)}

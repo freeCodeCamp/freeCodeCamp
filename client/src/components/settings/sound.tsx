@@ -41,8 +41,8 @@ export default function SoundSettings({
   return (
     <>
       <ToggleButtonSetting
-        action={t($ => $.settings.labels["sound-mode"])}
-        explain={t($ => $.settings["sound-mode"])}
+        action={t($ => $.settings.labels['sound-mode'])}
+        explain={t($ => $.settings['sound-mode'])}
         flag={sound}
         flagName='sound'
         offLabel={t($ => $.buttons.off)}
@@ -52,7 +52,7 @@ export default function SoundSettings({
         }}
       />
       <label htmlFor='volumeslider'>
-        {t($ => $.settings["sound-volume"])}{' '}
+        {t($ => $.settings['sound-volume'])}{' '}
         <span aria-hidden='true'>{volumeDisplay}</span>
       </label>
       <input

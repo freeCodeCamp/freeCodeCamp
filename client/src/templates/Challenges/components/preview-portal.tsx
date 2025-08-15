@@ -107,7 +107,7 @@ class PreviewPortal extends Component<PreviewPortalProps> {
     }
 
     this.titleEl.innerText = `${t(
-      $ => $.learn["editor-tabs"].preview
+      $ => $.learn['editor-tabs'].preview
     )} | ${windowTitle}`;
 
     this.styleEl.innerHTML = `

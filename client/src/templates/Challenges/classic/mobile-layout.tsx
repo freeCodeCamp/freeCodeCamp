@@ -196,11 +196,15 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     // sets screen reader text for the portal button
     function getPortalBtnSrText() {
       // preview open in main window
-      let portalBtnSrText = i18next.t($ => $.aria["move-preview-to-new-window"]);
+      let portalBtnSrText = i18next.t(
+        $ => $.aria['move-preview-to-new-window']
+      );
 
       // preview open in external window
       if (showPreviewPortal && !showPreviewPane) {
-        portalBtnSrText = i18next.t($ => $.aria["close-external-preview-window"]);
+        portalBtnSrText = i18next.t(
+          $ => $.aria['close-external-preview-window']
+        );
       }
 
       return portalBtnSrText;
@@ -223,23 +227,23 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           <TabsList className='nav-lists'>
             {!hasEditableBoundaries && (
               <TabsTrigger value={tabs.instructions}>
-                {i18next.t($ => $.learn["editor-tabs"].instructions)}
+                {i18next.t($ => $.learn['editor-tabs'].instructions)}
               </TabsTrigger>
             )}
             <TabsTrigger value={tabs.editor}>
-              {i18next.t($ => $.learn["editor-tabs"].code)}
+              {i18next.t($ => $.learn['editor-tabs'].code)}
             </TabsTrigger>
             {!!notes && usesMultifileEditor && (
               <TabsTrigger value={tabs.notes}>
-                {i18next.t($ => $.learn["editor-tabs"].notes)}
+                {i18next.t($ => $.learn['editor-tabs'].notes)}
               </TabsTrigger>
             )}
             <TabsTrigger value={tabs.console}>
-              {i18next.t($ => $.learn["editor-tabs"].console)}
+              {i18next.t($ => $.learn['editor-tabs'].console)}
             </TabsTrigger>
             {hasPreview && (
               <TabsTrigger value={tabs.preview}>
-                {i18next.t($ => $.learn["editor-tabs"].preview)}
+                {i18next.t($ => $.learn['editor-tabs'].preview)}
               </TabsTrigger>
             )}
           </TabsList>
@@ -301,7 +305,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               {displayPreviewPane && preview}
               {showPreviewPortal && (
                 <p className='preview-external-window'>
-                  {i18next.t($ => $.learn["preview-external-window"])}
+                  {i18next.t($ => $.learn['preview-external-window'])}
                 </p>
               )}
             </TabsContent>

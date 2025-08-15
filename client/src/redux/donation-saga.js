@@ -41,8 +41,8 @@ import {
   completedChallengesSelector
 } from './selectors';
 
-const defaultDonationErrorMessage = i18next.t($ => $.donate["error-2"]);
-const updateCardErrorMessage = i18next.t($ => $.donate["error-3"]);
+const defaultDonationErrorMessage = i18next.t($ => $.donate['error-2']);
+const updateCardErrorMessage = i18next.t($ => $.donate['error-3']);
 
 function* showDonateModalSaga() {
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);

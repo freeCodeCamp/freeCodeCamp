@@ -16,7 +16,7 @@ const AsSeenIn = (): JSX.Element => {
         className='big-heading'
         data-playwright-test-label='landing-as-seen-in-text'
       >
-        {t($ => $.landing["as-seen-in"])}
+        {t($ => $.landing['as-seen-in'])}
       </h2>
       <AsSeenInText fill='light' />
     </Container>

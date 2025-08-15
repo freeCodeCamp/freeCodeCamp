@@ -21,9 +21,9 @@ function ChallengeTitle({
       {translationPending && (
         <Link
           className='title-translation-cta'
-          to={i18next.t($ => $["help-translate-link-url"], { ns: "links" })}
+          to={i18next.t($ => $['help-translate-link-url'], { ns: 'links' })}
         >
-          {i18next.t($ => $.misc["translation-pending"])}
+          {i18next.t($ => $.misc['translation-pending'])}
         </Link>
       )}
       <div className='challenge-title'>

@@ -25,7 +25,9 @@ export function GitpodNote({
           sameTab={false}
           to='https://forum.freecodecamp.org/t/using-gitpod-in-the-curriculum/668669'
         >
-          {t($ => $["misc-text"]["read-database-cert-article"], { ns: "intro" })}
+          {t($ => $['misc-text']['read-database-cert-article'], {
+            ns: 'intro'
+          })}
         </Link>
       </p>
     </Alert>

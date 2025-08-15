@@ -239,7 +239,9 @@ const InternetSettings = ({
             {...(isDisabled && { tabIndex: -1 })}
           >
             {t($ => $.buttons.save)}{' '}
-            <span className='sr-only'>{t($ => $.settings.headings.internet)}</span>
+            <span className='sr-only'>
+              {t($ => $.settings.headings.internet)}
+            </span>
           </BlockSaveButton>
         </form>
       </FullWidthRow>

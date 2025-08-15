@@ -168,7 +168,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     [superBlockChallenges, user?.completedChallenges]
   );
 
-  const i18nTitle = i18next.t($ => $[superBlock].title, { ns: "intro" });
+  const i18nTitle = i18next.t($ => $[superBlock].title, { ns: 'intro' });
 
   const showCertification = liveCerts.some(
     cert => superBlockToCertMap[superBlock] === cert.certSlug
@@ -255,7 +255,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
               <HelpTranslate superBlock={superBlock} />
               <Spacer size='l' />
               <h2 className='text-center big-subheading'>
-                {t($ => $["misc-text"].courses, { ns: "intro" })}
+                {t($ => $['misc-text'].courses, { ns: 'intro' })}
               </h2>
               <Spacer size='m' />
               {chapterBasedSuperBlocks.includes(superBlock) ? (
@@ -296,7 +296,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
               {!isSignedIn && !signInLoading && (
                 <>
                   <Spacer size='l' />
-                  <Login block={true}>{t($ => $.buttons["logged-out-cta-btn"])}</Login>
+                  <Login block={true}>
+                    {t($ => $.buttons['logged-out-cta-btn'])}
+                  </Login>
                 </>
               )}
               <Spacer size='l' />
@@ -304,7 +306,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 className='text-center big-block-title'
                 style={{ whiteSpace: 'pre-line' }}
               >
-                {t($ => $["misc-text"]["browse-other"], { ns: "intro" })}
+                {t($ => $['misc-text']['browse-other'], { ns: 'intro' })}
               </h3>
               <Spacer size='m' />
               <Map />

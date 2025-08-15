@@ -76,7 +76,10 @@ const PortfolioSettings = (props: PortfolioProps) => {
 
     return new Promise(resolve => {
       img.onerror = () =>
-        resolve({ state: 'error', message: t($ => $.validation['url-not-image']) });
+        resolve({
+          state: 'error',
+          message: t($ => $.validation['url-not-image'])
+        });
       img.onload = () => resolve({ state: 'success', message: '' });
       img.src = url;
     });
@@ -162,7 +165,10 @@ const PortfolioSettings = (props: PortfolioProps) => {
 
   const getTitleValidation = (title: string): ProfileValidation => {
     if (!title) {
-      return { state: 'error', message: t($ => $.validation['title-required']) };
+      return {
+        state: 'error',
+        message: t($ => $.validation['title-required'])
+      };
     }
     const len = title.length;
     if (len < 2) {
@@ -182,7 +188,10 @@ const PortfolioSettings = (props: PortfolioProps) => {
       return { state: 'success', message: '' };
     }
     if (len >= 4 && !hasProtocolRE.test(url)) {
-      return { state: 'error', message: t($ => $.validation['invalid-protocol']) };
+      return {
+        state: 'error',
+        message: t($ => $.validation['invalid-protocol'])
+      };
     }
     return isURL(url)
       ? { state: 'success', message: '' }

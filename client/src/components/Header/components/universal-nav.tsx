@@ -56,7 +56,7 @@ const UniversalNav = ({
   );
   return (
     <nav
-      aria-label={t($ => $.aria["primary-nav"])}
+      aria-label={t($ => $.aria['primary-nav'])}
       className='universal-nav'
       id='universal-nav'
       data-playwright-test-label='header-universal-nav'
@@ -71,7 +71,7 @@ const UniversalNav = ({
         data-playwright-test-label='header-universal-nav-logo'
       >
         <FreeCodeCampLogo
-          aria-label={t($ => $.aria["fcc-curriculum"])}
+          aria-label={t($ => $.aria['fcc-curriculum'])}
           data-playwright-test-label='header-logo'
         />
       </Link>

@@ -41,7 +41,9 @@ function FillInTheBlanks({
 
   return (
     <>
-      <ChallengeHeading heading={t($ => $.learn["fill-in-the-blank"].heading)} />
+      <ChallengeHeading
+        heading={t($ => $.learn['fill-in-the-blank'].heading)}
+      />
       <Spacer size='xs' />
       <div className='fill-in-the-blank-wrap'>
         {paragraphs.map((p, i) => {
@@ -74,7 +76,7 @@ function FillInTheBlanks({
                     data-index={node.value}
                     size={blankAnswers[value].length}
                     autoComplete='off'
-                    aria-label={t($ => $.learn["fill-in-the-blank"].blank)}
+                    aria-label={t($ => $.learn['fill-in-the-blank'].blank)}
                     {...(answersCorrect[value] === false
                       ? { 'aria-invalid': 'true' }
                       : {})}
@@ -89,7 +91,7 @@ function FillInTheBlanks({
       <div aria-live='polite'>
         {showWrong && (
           <div className='text-center'>
-            <span>{t($ => $.learn["wrong-answer"])}</span>
+            <span>{t($ => $.learn['wrong-answer'])}</span>
             <Spacer size='m' />
           </div>
         )}

@@ -48,18 +48,18 @@ function ExitExamModal({
       variant='danger'
     >
       <Modal.Header closeButtonClassNames='close'>
-        {t($ => $.learn.exam["exit-header"])}
+        {t($ => $.learn.exam['exit-header'])}
       </Modal.Header>
       <Modal.Body>
         <div className='text-center'>{t($ => $.learn.exam.exit)}</div>
       </Modal.Body>
       <Modal.Footer>
         <Button block={true} variant='primary' onClick={closeExitExamModal}>
-          {t($ => $.learn.exam["exit-no"])}
+          {t($ => $.learn.exam['exit-no'])}
         </Button>
         <Spacer size='xxs' />
         <Button block={true} variant='danger' onClick={exitExam}>
-          {t($ => $.learn.exam["exit-yes"])}
+          {t($ => $.learn.exam['exit-yes'])}
         </Button>
       </Modal.Footer>
     </Modal>

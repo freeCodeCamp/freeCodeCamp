@@ -62,19 +62,19 @@ function LandingTop(): JSX.Element {
               data-test-label='landing-header'
               data-playwright-test-label='landing-big-heading-1'
             >
-              {t($ => $.landing["big-heading-1"])}
+              {t($ => $.landing['big-heading-1'])}
             </h1>
             <p
               className='mega-heading'
               data-playwright-test-label='landing-big-heading-2'
             >
-              {t($ => $.landing["big-heading-2"])}
+              {t($ => $.landing['big-heading-2'])}
             </p>
             <p
               className='mega-heading'
               data-playwright-test-label='landing-big-heading-3'
             >
-              {t($ => $.landing["big-heading-3"])}
+              {t($ => $.landing['big-heading-3'])}
             </p>
             <LogoRow />
             <Spacer size='m' />

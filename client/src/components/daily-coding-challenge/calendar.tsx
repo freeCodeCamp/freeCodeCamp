@@ -233,20 +233,20 @@ function DailyCodingChallengeCalendar({
     <>
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
         <Callout variant='info'>
-          {t($ => $["daily-coding-challenges"]["release-note"])}
+          {t($ => $['daily-coding-challenges']['release-note'])}
         </Callout>
 
         <Button
           block={true}
           href={`/learn/daily-coding-challenge/${todayUsCentral}`}
         >
-          {t($ => $.buttons["go-to-today"])}
+          {t($ => $.buttons['go-to-today'])}
         </Button>
       </Col>
       <Spacer size='l' />
       <div className='calendar-head'>
         <Button
-          aria-label={t($ => $.aria["previous-month"])}
+          aria-label={t($ => $.aria['previous-month'])}
           disabled={!showPrevButton}
           onClick={prevMonth}
         >
@@ -257,7 +257,7 @@ function DailyCodingChallengeCalendar({
           {monthInfo.name} {monthInfo.year}
         </h2>
         <Button
-          aria-label={t($ => $.aria["next-month"])}
+          aria-label={t($ => $.aria['next-month'])}
           disabled={!showNextButton}
           onClick={nextMonth}
         >
@@ -295,7 +295,9 @@ function DailyCodingChallengeCalendar({
         <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer size='m' />
           <div className='completion-modal-login-btn'>
-            <Login block={true}>{t($ => $.buttons["logged-out-cta-btn"])}</Login>
+            <Login block={true}>
+              {t($ => $.buttons['logged-out-cta-btn'])}
+            </Login>
           </div>
         </Col>
       )}

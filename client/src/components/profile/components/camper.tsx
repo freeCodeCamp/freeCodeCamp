@@ -61,7 +61,7 @@ function Camper({
                   <div className='badge-card-description'>
                     <h3>{t($ => $.profile.contributor)}</h3>
                     <p>
-                      {t($ => $.profile["contributor-prolific"], {
+                      {t($ => $.profile['contributor-prolific'], {
                         year: yearsTopContributor.join(', ')
                       })}
                     </p>

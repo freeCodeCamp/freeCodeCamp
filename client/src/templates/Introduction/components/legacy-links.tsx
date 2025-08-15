@@ -26,9 +26,9 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
     return (
       <Alert variant='info'>
         <p>
-          {t($ => $["misc-text"]["legacy-desc"], { ns: "intro" })}{' '}
+          {t($ => $['misc-text']['legacy-desc'], { ns: 'intro' })}{' '}
           <Link sameTab={false} to={`/learn/2022/responsive-web-design`}>
-            {t($ => $["misc-text"]["legacy-go-back"], { ns: "intro" })}
+            {t($ => $['misc-text']['legacy-go-back'], { ns: 'intro' })}
           </Link>
         </p>
       </Alert>
@@ -39,7 +39,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
         <CodeAllyDown />
         {clientLocale != 'english' && (
           <Alert variant='info'>
-            <p>{t($ => $["misc-text"]["english-only"], { ns: "intro" })}</p>
+            <p>{t($ => $['misc-text']['english-only'], { ns: 'intro' })}</p>
           </Alert>
         )}
       </>
@@ -47,7 +47,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
   } else if (isExamCert(superBlock) && clientLocale != 'english') {
     return (
       <Alert variant='info'>
-        <p>{t($ => $["misc-text"]["exam-english-only"], { ns: "intro" })}</p>
+        <p>{t($ => $['misc-text']['exam-english-only'], { ns: 'intro' })}</p>
       </Alert>
     );
   } else {

@@ -23,7 +23,7 @@ const LearnAlert = ({
       {value && (
         <>
           <div className='text-center'>
-            <h2>{t($ => $.learn["donation-heading"])}</h2>
+            <h2>{t($ => $.learn['donation-heading'])}</h2>
             <Spacer size='xs' />
             <b className='m-0 progress-percent-value'>{`${value}%`}</b>
           </div>
@@ -53,9 +53,9 @@ const LearnAlert = ({
   const seasonalAlertFlagAlert = (
     <Alert variant='info' className='annual-donation-alert'>
       <p>
-        <b>{t($ => $.learn["season-greetings-fcc"])}</b>
+        <b>{t($ => $.learn['season-greetings-fcc'])}</b>
       </p>
-      <p>{t($ => $.learn["if-getting-value"])}</p>
+      <p>{t($ => $.learn['if-getting-value'])}</p>
       <hr />
       <p className='btn-container'>
         <Link
@@ -72,16 +72,16 @@ const LearnAlert = ({
   );
 
   const progressAlert2024 = progressAlertDefault(
-    t($ => $.donate["help-us-reach-20k"]),
+    t($ => $.donate['help-us-reach-20k']),
     Number(progressAlertFlag2024.value)
   );
 
   const universityAlert = (
     <Alert variant='info' className='university-alert'>
       <p>
-        <b>{t($ => $.learn["building-a-university"])}</b>
+        <b>{t($ => $.learn['building-a-university'])}</b>
       </p>
-      <p>{t($ => $.learn["if-help-university"])}</p>
+      <p>{t($ => $.learn['if-help-university'])}</p>
       <Spacer size='m' />
       <p className={'text-center'}>
         <Link

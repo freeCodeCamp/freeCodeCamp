@@ -62,7 +62,7 @@ function EmailListOptIn({
               variant='primary'
               onClick={() => acceptTerms(true)}
             >
-              {t($ => $.buttons["yes-please"])}
+              {t($ => $.buttons['yes-please'])}
             </Button>
             <Spacer size='xs' />
           </Col>
@@ -73,7 +73,7 @@ function EmailListOptIn({
               variant='primary'
               onClick={() => acceptTerms(false)}
             >
-              {t($ => $.buttons["no-thanks"])}
+              {t($ => $.buttons['no-thanks'])}
             </Button>
             <Spacer size='xs' />
           </Col>
@@ -90,7 +90,7 @@ function EmailListOptIn({
           variant='primary'
           href={`${apiLocation}/signin`}
         >
-          {t($ => $.buttons["sign-up-email-list"])}
+          {t($ => $.buttons['sign-up-email-list'])}
         </Button>
         <Spacer size='xs' />
       </Col>
@@ -121,7 +121,7 @@ function AcceptPrivacyTerms({
   ) : (
     <>
       <Helmet>
-        <title>{t($ => $.misc["email-signup"])} | freeCodeCamp.org</title>
+        <title>{t($ => $.misc['email-signup'])} | freeCodeCamp.org</title>
       </Helmet>
       <Container>
         <Row>
@@ -129,8 +129,8 @@ function AcceptPrivacyTerms({
             <Spacer size='l' />
             <h1 className='text-center'>
               {newAccount
-                ? t($ => $.misc["brand-new-account"])
-                : t($ => $.misc["email-signup"])}
+                ? t($ => $.misc['brand-new-account'])
+                : t($ => $.misc['email-signup'])}
             </h1>
             <Spacer size='xs' />
           </Col>
@@ -139,7 +139,7 @@ function AcceptPrivacyTerms({
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <p>
-                <Trans i18nKey={$ => $.misc["duplicate-account-warning"]}>
+                <Trans i18nKey={$ => $.misc['duplicate-account-warning']}>
                   <Link className='inline' to='/settings#danger-zone' />
                 </Trans>
               </p>
@@ -150,7 +150,7 @@ function AcceptPrivacyTerms({
         <Row className='email-sign-up'>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size='xs' />
-            <p>{t($ => $.misc["email-blast"])}</p>
+            <p>{t($ => $.misc['email-blast'])}</p>
             <Spacer size='xs' />
           </Col>
           {showLoading ? (

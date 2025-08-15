@@ -20,9 +20,12 @@ function ShowUnsubscribed({
   return (
     <>
       <Helmet>
-        <title>{t($ => $["youre-unsubscribed"], {
-          ns: "metaTags"
-        })} | freeCodeCamp.org</title>
+        <title>
+          {t($ => $['youre-unsubscribed'], {
+            ns: 'metaTags'
+          })}{' '}
+          | freeCodeCamp.org
+        </title>
       </Helmet>
       <Container>
         <main>
@@ -34,7 +37,7 @@ function ShowUnsubscribed({
                 {t($ => $.misc.unsubscribed)}
               </h2>
               <p data-playwright-test-label='motivation-text'>
-                {t($ => $.misc["keep-coding"])}
+                {t($ => $.misc['keep-coding'])}
               </p>
             </Panel>
           </FullWidthRow>

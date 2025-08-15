@@ -58,7 +58,7 @@ const Bio = ({ user, setIsEditing, isSessionUser }: BioProps) => {
               onClick={() => setIsEditing(true)}
               size='small'
               className='button-fit'
-              aria-label={t($ => $.aria["edit-my-profile"])}
+              aria-label={t($ => $.aria['edit-my-profile'])}
             >
               <FontAwesomeIcon icon={faPen} />
             </Button>
