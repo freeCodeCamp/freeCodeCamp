@@ -4751,6 +4751,12 @@
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
       },
+      "lab-golf-score-translator": {
+        "title": "Build a Golf Score Translator",
+        "intro": [
+          "For this lab, you will use array methods to translate golf scores into their nickname."
+        ]
+      },
       "lab-record-collection": {
         "title": "Build a Record Collection",
         "intro": [
