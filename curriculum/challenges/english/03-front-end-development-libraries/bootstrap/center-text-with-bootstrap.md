@@ -69,7 +69,7 @@ assert.isTrue(document.querySelector('h2')?.classList?.contains('red-text'));
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Tuxedo cats running on dirt ground.">
   <p>Things cats love:</p>
   <ul>
     <li>catnip</li>
@@ -131,7 +131,7 @@ assert.isTrue(document.querySelector('h2')?.classList?.contains('red-text'));
 
   <a href="#"><img class="smaller-image thick-green-border" src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
 
-  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Three kittens running towards the camera.">
+  <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" class="img-responsive" alt="Tuxedo cats running on dirt ground.">
   <p>Things cats love:</p>
   <ul>
     <li>catnip</li>
