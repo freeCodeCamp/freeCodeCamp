@@ -1,0 +1,16 @@
+{
+  "name": "Build an Optional Arguments Sum Function",
+  "isUpcomingChange": false,
+  "blockType": "lab",
+  "blockLayout": "link",
+  "dashedName": "lab-optional-arguments-sum-function",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "a97fd23d9b809dac9921074f",
+      "title": "Build an Optional Arguments Sum Function"
+    }
+  ],
+  "usesMultifileEditor": true
+}
