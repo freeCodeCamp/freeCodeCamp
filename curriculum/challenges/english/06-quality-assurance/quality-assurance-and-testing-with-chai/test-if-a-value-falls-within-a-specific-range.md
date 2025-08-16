@@ -27,21 +27,30 @@ Choose the minimum range (3rd parameter) to make the test always pass. It should
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=9').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",9);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(data.state, 'passed');
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct range for the first assertion - `approximately(actual, expected, range)`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=9').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",9);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(data.assertions[0].method, 'approximately');
       assert.equal(
         data.assertions[0].args[2],
@@ -49,17 +58,22 @@ You should choose the correct range for the first assertion - `approximately(act
         "weirdNumbers(0.5) is in the range (0.5, 1.5]. It's within 1 +/- 0.5"
       );
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
 
 You should choose the correct range for the second assertion - `approximately(actual, expected, range)`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=9').then(
-    (data) => {
+  const params = new URLSearchParams();
+  params.append("type","unit");
+  params.append("n",9);
+  fetch(code + `/_api/get-tests?${params}`)
+	.then((response) => response.json())
+  .then((data) => {
       assert.equal(data.assertions[1].method, 'approximately');
       assert.equal(
         data.assertions[1].args[2],
@@ -67,9 +81,9 @@ You should choose the correct range for the second assertion - `approximately(ac
         "weirdNumbers(0.2) is in the range (0.2, 1.2]. It's within 1 +/- 0.8"
       );
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  .catch((error) =>
+  {
+    throw new Error(error.message)
+  });
   );
 ```
-
