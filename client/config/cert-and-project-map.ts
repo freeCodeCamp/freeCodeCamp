@@ -875,7 +875,7 @@ const allStandardCerts = [
       {
         id: '682c2753317b88f1ecdad894',
         title: 'Dialogue 1: PLACEHOLDER',
-        link: `${a1ChineseBase}/learn-essential-courtesies-at-the-office
+        link: `${a1ChineseBase}/learn-how-to-read-and-type-pinyin
 /text-1`,
         certSlug: Certification.A1Chinese
       }

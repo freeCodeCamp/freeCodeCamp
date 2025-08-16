@@ -1,6 +1,6 @@
 ---
 title: Introduction to Learn Essential Courtesies at the Office
-block: get-to-know-colleagues-by-asking-simple-questions
+block: learn-essential-courtesies-at-the-office
 superBlock: a1-professional-chinese
 ---
 

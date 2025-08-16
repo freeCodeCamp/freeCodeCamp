@@ -1,0 +1,263 @@
+{
+  "name": "Learn How to Read and Type Pinyin",
+  "isUpcomingChange": true,
+  "dashedName": "learn-how-to-read-and-type-pinyin",
+  "order": 1,
+  "superBlock": "a1-professional-chinese",
+  "challengeOrder": [
+    {
+      "id": "6892cce895423e0cc58b3006",
+      "title": "Task 1"
+    },
+    {
+      "id": "6892cfd88659631495266084",
+      "title": "Task 2"
+    },
+    {
+      "id": "6899bf65b128f566294f135b",
+      "title": "Simple Finals"
+    },
+    {
+      "id": "6899c2a91ad86075d374c1c7",
+      "title": "Task 3"
+    },
+    {
+      "id": "6899cec5e02fdd88f91905c5",
+      "title": "Task 4"
+    },
+    {
+      "id": "68989072a47f67d030c68a4a",
+      "title": "Task 5"
+    },
+    {
+      "id": "6898944bd8d0f9dcebeb3fc6",
+      "title": "Task 6"
+    },
+    {
+      "id": "689df1964c3f998224e917a0",
+      "title": "Task 7"
+    },
+    {
+      "id": "689df24ea62ad285a7afcdc2",
+      "title": "Task 8"
+    },
+    {
+      "id": "689e033b5450143006c0da50",
+      "title": "Task 9"
+    },
+    {
+      "id": "689ecfa9cab0c141fd1479ce",
+      "title": "Task 10"
+    },
+    {
+      "id": "689ef65c56826144d5fa6180",
+      "title": "Task 11"
+    },
+    {
+      "id": "689ef6767ef4c0456132cffd",
+      "title": "Task 12"
+    },
+    {
+      "id": "689ef8ced9b35e46e87050e6",
+      "title": "Task 13"
+    },
+    {
+      "id": "689ef9b51b72f54813818413",
+      "title": "Task 14"
+    },
+    {
+      "id": "689ef9d9a82dfb48be5a3565",
+      "title": "Task 15"
+    },
+    {
+      "id": "689f1feede61a65f455112ae",
+      "title": "Compound Finals"
+    },
+    {
+      "id": "689f00692ff8194c73be8037",
+      "title": "Task 16"
+    },
+    {
+      "id": "689f0455976c3b4e80224ac4",
+      "title": "Task 17"
+    },
+    {
+      "id": "689f05f06417104f5a1eb85f",
+      "title": "Task 18"
+    },
+    {
+      "id": "689f06f45252e65074c3c1e4",
+      "title": "Task 19"
+    },
+    {
+      "id": "689f070fbec24150ee6b945e",
+      "title": "Task 20"
+    },
+    {
+      "id": "689f07be56515c51fd53d4d2",
+      "title": "Task 21"
+    },
+    {
+      "id": "689f08fe9f8acf52da4ffa22",
+      "title": "Task 22"
+    },
+    {
+      "id": "689f0a22c84cd754ac885595",
+      "title": "Task 23"
+    },
+    {
+      "id": "689f0a890ed0b955549da52d",
+      "title": "Task 24"
+    },
+    {
+      "id": "689f0b9850b2fb56abc5e972",
+      "title": "Task 25"
+    },
+    {
+      "id": "689ffafb16bde46f9f9f634a",
+      "title": "Task 26"
+    },
+    {
+      "id": "689ffc50576be57120f4e757",
+      "title": "Task 27"
+    },
+    {
+      "id": "689f0b7cf0ce0a56244beffe",
+      "title": "Task 28"
+    },
+    {
+      "id": "689f0c283bc4f95a45b48884",
+      "title": "Task 29"
+    },
+    {
+      "id": "689f0c570b92805ae707a1dd",
+      "title": "Task 30"
+    },
+    {
+      "id": "689f0cadebd93b5b625faadd",
+      "title": "Task 31"
+    },
+    {
+      "id": "689f1ea59ca7295df1e92201",
+      "title": "Task 32"
+    },
+    {
+      "id": "689ffdb5994c747211b493a3",
+      "title": "Task 33"
+    },
+    {
+      "id": "689ffe3a80927e730f856cae",
+      "title": "Task 34"
+    },
+    {
+      "id": "68a00013dd35267417722e30",
+      "title": "Task 35"
+    },
+    {
+      "id": "68a001baee3f897555ce8c11",
+      "title": "Task 36"
+    },
+    {
+      "id": "68a0022713e1a4763070e640",
+      "title": "Task 37"
+    },
+    {
+      "id": "68a0045957bdd677d80973eb",
+      "title": "Task 38"
+    },
+    {
+      "id": "68a004ecf952ca78b53deb7c",
+      "title": "Task 39"
+    },
+    {
+      "id": "68a00530eebd0a796887b25a",
+      "title": "Task 40"
+    },
+    {
+      "id": "68a00565e163d279ed72d880",
+      "title": "Task 41"
+    },
+    {
+      "id": "68a005a3fb31847adb836fb5",
+      "title": "Task 42"
+    },
+    {
+      "id": "68a0483f137849823a54ebfb",
+      "title": "Task 43"
+    },
+    {
+      "id": "68a04ab795081284079d64d0",
+      "title": "Task 44"
+    },
+    {
+      "id": "68a04bb24e8f6685003981a0",
+      "title": "Nasal Finals"
+    },
+    {
+      "id": "68a04c2b07698a86a62dceb1",
+      "title": "Task 45"
+    },
+    {
+      "id": "68a0509aa17189893fb11780",
+      "title": "Task 46"
+    },
+    {
+      "id": "68a05117ffd6e889d14a9da7",
+      "title": "Task 47"
+    },
+    {
+      "id": "68a0522905643b8b1a6d75b1",
+      "title": "Task 48"
+    },
+    {
+      "id": "68a0529167951d8bd522fa91",
+      "title": "Task 49"
+    },
+    {
+      "id": "68a053114376fd8c93ca160a",
+      "title": "Task 50"
+    },
+    {
+      "id": "68a0570a0222cc8e02506a05",
+      "title": "Task 51"
+    },
+    {
+      "id": "68a05b058270a78f80f9866c",
+      "title": "Task 52"
+    },
+    {
+      "id": "68a05bc102210291beb124a1",
+      "title": "Task 53"
+    },
+    {
+      "id": "68a05c9e31d7ee936cdd6844",
+      "title": "Task 54"
+    },
+    {
+      "id": "68a05c690f81e292d4c63649",
+      "title": "Task 55"
+    },
+    {
+      "id": "68a05d4bedb09594ca24c9c2",
+      "title": "Task 56"
+    },
+    {
+      "id": "68a05d71f87cac9563cafa33",
+      "title": "Task 57"
+    },
+    {
+      "id": "68a05ea1db82c696f3da8922",
+      "title": "Task 58"
+    },
+    {
+      "id": "68a05f303694df97ce45670b",
+      "title": "Task 59"
+    },
+    {
+      "id": "68a0607d6870f8996f70b4fd",
+      "title": "Task 60"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid"
+}
