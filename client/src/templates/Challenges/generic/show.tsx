@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
+import { createPortal } from 'react-dom';
 import { connect } from 'react-redux';
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import { isEqual } from 'lodash';
@@ -12,6 +13,7 @@ import { YouTubeEvent } from 'react-youtube';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
+import InteractiveEditor from '../components/interactive-editor';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import VideoPlayer from '../components/video-player';
@@ -78,6 +80,7 @@ const ShowGeneric = ({
         block,
         blockType,
         description,
+        interactiveFiles,
         explanation,
         challengeType,
         fields: { blockName, tests },
@@ -195,6 +198,17 @@ const ShowGeneric = ({
 
   const sceneSubject = new SceneSubject();
 
+  const [interactiveRoot, setInteractiveRoot] = useState<HTMLElement | null>(
+    null
+  );
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      setInteractiveRoot(
+        document.getElementById('interactive-editor-root') as HTMLElement
+      );
+    }
+  }, [description]);
+
   return (
     <Hotkeys
       executeChallenge={handleSubmit}
@@ -226,6 +240,13 @@ const ShowGeneric = ({
                 <Spacer size='m' />
               </Col>
             )}
+            {interactiveFiles &&
+              interactiveFiles.length > 0 &&
+              interactiveRoot &&
+              createPortal(
+                <InteractiveEditor files={interactiveFiles} />,
+                interactiveRoot
+              )}
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
               {videoId && (
@@ -327,6 +348,14 @@ export const query = graphql`
         blockType
         challengeType
         description
+        interactiveFiles {
+          ext
+          name
+          contents
+          head
+          tail
+          fileKey
+        }
         explanation
         helpCategory
         instructions
