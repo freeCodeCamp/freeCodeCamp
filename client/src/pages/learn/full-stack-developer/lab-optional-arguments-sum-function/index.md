@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build an Optional Arguments Sum Function
 
-This is a test for the new project-based curriculum.
+In this lab you will build a function that sum its arguments, where the arguments can be optional.
