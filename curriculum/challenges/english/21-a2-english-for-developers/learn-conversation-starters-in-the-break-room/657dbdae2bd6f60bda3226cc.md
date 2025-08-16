@@ -5,8 +5,8 @@ challengeType: 22
 dashedName: task-81
 ---
 
-<!-- (audio) Tom: Tell me about our team meetings, Sophie. Do they happen every week? -->
-<!-- Sophie: Yes, they do. We have meetings on Monday mornings. -->
+<!-- (audio) Tom: Tell me about our team meetings, Sophie. Do they happen every week?
+Sophie: Yes, they do. We have meetings on Monday mornings. -->
 
 
 # --description--
