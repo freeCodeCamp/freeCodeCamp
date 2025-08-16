@@ -8,6 +8,10 @@
   "helpCategory": "JavaScript",
   "challengeOrder": [
     {
+      "id": "689b189ab38ff6d72cee593f",
+      "title": "How Do You Make Dynamic and Interactive Content Accessible?"
+    },
+    {
       "id": "672a54ce90c19e9038f481d7",
       "title": "What Is the aria-expanded Attribute, and How Does It Work?"
     },
