@@ -1,6 +1,26 @@
-// Yes, putting this above the imports is a hack to get around the fact that
-// jest.mock() must be called at the top level of the file.
-const mockVerifyTrophyWithMicrosoft = jest.fn();
+import {
+  describe,
+  test,
+  expect,
+  beforeAll,
+  afterEach,
+  beforeEach,
+  afterAll,
+  vi
+} from 'vitest';
+
+vi.mock('../helpers/challenge-helpers', async () => {
+  const originalModule = await vi.importActual<
+    typeof import('../helpers/challenge-helpers')
+  >('../helpers/challenge-helpers');
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    verifyTrophyWithMicrosoft: vi.fn()
+  };
+});
+
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash';
@@ -18,7 +38,7 @@ import {
   defaultUserEmail,
   createSuperRequest,
   defaultUsername
-} from '../../../jest.utils';
+} from '../../../vitest.utils';
 import {
   completedExamChallengeOneCorrect,
   completedExamChallengeTwoCorrect,
@@ -36,21 +56,12 @@ import {
 } from '../../../__mocks__/exam';
 import { Answer } from '../../utils/exam-types';
 import type { getSessionUser } from '../../schemas/user/get-session-user';
+import { verifyTrophyWithMicrosoft } from '../helpers/challenge-helpers';
+
+const mockVerifyTrophyWithMicrosoft = vi.mocked(verifyTrophyWithMicrosoft);
 
 const EXISTING_COMPLETED_DATE = new Date('2024-11-08').getTime();
 const DATE_NOW = Date.now();
-
-jest.mock('../helpers/challenge-helpers', () => {
-  const originalModule = jest.requireActual<
-    typeof import('../helpers/challenge-helpers')
-  >('../helpers/challenge-helpers');
-
-  return {
-    __esModule: true,
-    ...originalModule,
-    verifyTrophyWithMicrosoft: mockVerifyTrophyWithMicrosoft
-  };
-});
 
 const isValidChallengeCompletionErrorMsg = {
   type: 'error',
@@ -276,11 +287,12 @@ describe('challengeRoutes', () => {
       });
 
       test('Should return an error response if something goes wrong', async () => {
-        jest
-          .spyOn(fastifyTestInstance.prisma.userToken, 'findUnique')
-          .mockImplementationOnce(() => {
-            throw new Error('Database error');
-          });
+        vi.spyOn(
+          fastifyTestInstance.prisma.userToken,
+          'findUnique'
+        ).mockImplementationOnce(() => {
+          throw new Error('Database error');
+        });
         const tokenResponse = await superPost('/user/user-token');
         const token = (tokenResponse.body as { userToken: string }).userToken;
 
@@ -336,7 +348,7 @@ describe('challengeRoutes', () => {
     });
     describe('/project-completed', () => {
       describe('validation', () => {
-        it('POST rejects requests without ids', async () => {
+        test('POST rejects requests without ids', async () => {
           const response = await superPost('/project-completed').send({});
 
           expect(response.body).toStrictEqual(
@@ -345,7 +357,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(400);
         });
 
-        it('POST rejects requests without valid ObjectIDs', async () => {
+        test('POST rejects requests without valid ObjectIDs', async () => {
           const response = await superPost(
             '/project-completed'
             // This is a departure from api-server, which does not require a
@@ -359,7 +371,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(400);
         });
 
-        it('POST rejects requests with invalid challengeTypes', async () => {
+        test('POST rejects requests with invalid challengeTypes', async () => {
           const response = await superPost('/project-completed').send({
             id: id1,
             challengeType: 'not-a-valid-challenge-type',
@@ -378,7 +390,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(400);
         });
 
-        it('POST rejects requests without solutions', async () => {
+        test('POST rejects requests without solutions', async () => {
           const response = await superPost('/project-completed').send({
             id: id1,
             challengeType: 3
@@ -392,7 +404,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(400);
         });
 
-        it('POST rejects requests with solutions that are not urls', async () => {
+        test('POST rejects requests with solutions that are not urls', async () => {
           const response = await superPost('/project-completed').send({
             id: id1,
             challengeType: 3,
@@ -405,7 +417,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(403);
         });
 
-        it('POST rejects backendProject requests without URL githubLinks', async () => {
+        test('POST rejects backendProject requests without URL githubLinks', async () => {
           const response = await superPost('/project-completed').send({
             id: id1,
             challengeType: challengeTypes.backEndProject,
@@ -431,7 +443,7 @@ describe('challengeRoutes', () => {
           expect(response_2.statusCode).toBe(403);
         });
 
-        it('POST rejects CodeRoad/CodeAlly projects when the user has not completed the required challenges', async () => {
+        test('POST rejects CodeRoad/CodeAlly projects when the user has not completed the required challenges', async () => {
           const response = await superPost('/project-completed').send({
             id: id1, // not a codeally challenge id, but does not matter
             challengeType: 13, // this does matter, however, since there's special logic for that challenge type
@@ -472,7 +484,7 @@ describe('challengeRoutes', () => {
           });
         });
 
-        it('POST accepts CodeRoad/CodeAlly projects when the user has completed the required challenges', async () => {
+        test('POST accepts CodeRoad/CodeAlly projects when the user has completed the required challenges', async () => {
           const now = Date.now();
           const response =
             await superPost('/project-completed').send(codeallyProject);
@@ -506,7 +518,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(200);
         });
 
-        it('POST accepts backend projects', async () => {
+        test('POST accepts backend projects', async () => {
           const now = Date.now();
 
           const response =
@@ -541,7 +553,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(200);
         });
 
-        it('POST correctly handles multiple requests', async () => {
+        test('POST correctly handles multiple requests', async () => {
           const resOriginal =
             await superPost('/project-completed').send(codeallyProject);
 
@@ -1392,8 +1404,8 @@ describe('challengeRoutes', () => {
             // that, the details do not matter, since whatever
             // verifyTrophyWithMicrosoft returns will be returned by the route.
             const verifyError = {
-              type: 'error',
-              message: 'flash.ms.profile.err',
+              type: 'error' as const,
+              message: 'flash.ms.profile.err' as const,
               variables: {
                 msUsername
               }
@@ -1467,7 +1479,7 @@ describe('challengeRoutes', () => {
             });
           });
 
-          it('POST correctly handles multiple requests', async () => {
+          test('POST correctly handles multiple requests', async () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
@@ -1972,14 +1984,14 @@ describe('challengeRoutes', () => {
 
       describe('handling', () => {
         beforeAll(() => {
-          jest.useFakeTimers({
-            doNotFake: ['nextTick']
+          vi.useFakeTimers({
+            toFake: ['Date']
           });
-          jest.setSystemTime(DATE_NOW);
+          vi.setSystemTime(DATE_NOW);
         });
 
         afterAll(() => {
-          jest.useRealTimers();
+          vi.useRealTimers();
         });
 
         afterEach(async () => {

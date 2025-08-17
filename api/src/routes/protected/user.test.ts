@@ -1,6 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import {
+  describe,
+  test,
+  expect,
+  beforeEach,
+  afterEach,
+  beforeAll,
+  afterAll,
+  vi
+} from 'vitest';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { DailyCodingChallengeLanguage, type Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
@@ -16,7 +26,7 @@ import {
   createSuperRequest,
   defaultUsername,
   resetDefaultUser
-} from '../../../jest.utils';
+} from '../../../vitest.utils';
 import { JWT_SECRET } from '../../utils/env';
 import {
   clearEnvExam,
@@ -26,13 +36,13 @@ import {
 } from '../../../__mocks__/exam-environment-exam';
 import { getMsTranscriptApiUrl } from './user';
 
-const mockedFetch = jest.fn();
-jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
+const mockedFetch = vi.fn();
+vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 
 let mockDeploymentEnv = 'dev';
-jest.mock('../../utils/env', () => {
-  const actualEnv = jest.requireActual('../../utils/env');
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+vi.mock('../../utils/env', async () => {
+  const actualEnv =
+    await vi.importActual<typeof import('../../utils/env')>('../../utils/env');
   return {
     ...actualEnv,
     get DEPLOYMENT_ENV() {
@@ -514,13 +524,14 @@ describe('userRoutes', () => {
       });
 
       test('logs if it is asked to delete a non-existent user', async () => {
-        const spy = jest.spyOn(fastifyTestInstance.log, 'warn');
+        const spy = vi.spyOn(fastifyTestInstance.log, 'warn');
 
-        const deletePromises = Array.from({ length: 2 }, () =>
-          superPost('/account/delete')
-        );
+        // Execute deletions sequentially to ensure one succeeds before the other tries
+        const firstDelete = await superPost('/account/delete');
+        expect(firstDelete.status).toBe(200);
 
-        await Promise.all(deletePromises);
+        const secondDelete = await superPost('/account/delete');
+        expect(secondDelete.status).toBe(200); // Route still returns 200 even when user not found
 
         expect(spy).toHaveBeenCalledTimes(1);
         expect(spy.mock.calls[0]).toEqual(
@@ -873,16 +884,17 @@ describe('userRoutes', () => {
     });
 
     describe('/user/report-user', () => {
-      let sendEmailSpy: jest.SpyInstance;
+      let sendEmailSpy: ReturnType<typeof vi.spyOn>;
       beforeEach(() => {
-        sendEmailSpy = jest
+        // @ts-expect-error - simplified mock implementation
+        sendEmailSpy = vi
           .spyOn(fastifyTestInstance, 'sendEmail')
-          .mockImplementation(jest.fn());
+          .mockImplementation(vi.fn());
       });
 
       afterEach(async () => {
         await resetDefaultUser();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
       });
 
       test('POST returns 400 for empty username', async () => {
@@ -1046,7 +1058,7 @@ Thanks and regards,
           });
         });
 
-        it('handles missing transcript urls', async () => {
+        test('handles missing transcript urls', async () => {
           const response = await superPost('/user/ms-username');
 
           expect(response.body).toStrictEqual({
@@ -1056,7 +1068,7 @@ Thanks and regards,
           expect(response.statusCode).toBe(400);
         });
 
-        it('handles invalid transcript urls', async () => {
+        test('handles invalid transcript urls', async () => {
           const response = await superPost('/user/ms-username').send({
             msTranscriptUrl: 'https://www.example.com'
           });
@@ -1068,7 +1080,7 @@ Thanks and regards,
           expect(response.statusCode).toBe(400);
         });
 
-        it('handles the case that MS does not return a username', async () => {
+        test('handles the case that MS does not return a username', async () => {
           mockedFetch.mockImplementationOnce(() =>
             Promise.resolve({
               ok: true,
@@ -1088,7 +1100,7 @@ Thanks and regards,
           expect(response.statusCode).toBe(500);
         });
 
-        it('handles duplicate Microsoft usernames', async () => {
+        test('handles duplicate Microsoft usernames', async () => {
           mockedFetch.mockImplementationOnce(() =>
             Promise.resolve({
               ok: true,
@@ -1120,7 +1132,7 @@ Thanks and regards,
           expect(response.statusCode).toBe(403);
         });
 
-        it('returns the username on success', async () => {
+        test('returns the username on success', async () => {
           const msUsername = 'ms-user';
           mockedFetch.mockImplementationOnce(() =>
             Promise.resolve({
@@ -1142,7 +1154,7 @@ Thanks and regards,
           expect(response.statusCode).toBe(200);
         });
 
-        it('creates a record of the linked account', async () => {
+        test('creates a record of the linked account', async () => {
           const msUsername = 'super-user';
           mockedFetch.mockImplementationOnce(() =>
             Promise.resolve({
@@ -1172,7 +1184,7 @@ Thanks and regards,
           });
         });
 
-        it('removes any other accounts linked to the same user', async () => {
+        test('removes any other accounts linked to the same user', async () => {
           const msUsernameOne = 'super-user';
           const msUsernameTwo = 'super-user-2';
           mockedFetch
@@ -1219,7 +1231,7 @@ Thanks and regards,
           expect(linkedAccounts[1]?.msUsername).toBe(msUsernameTwo);
         });
 
-        it('calls the Microsoft API with the correct url', async () => {
+        test('calls the Microsoft API with the correct url', async () => {
           const msTranscriptUrl =
             'https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo';
 
@@ -1440,21 +1452,21 @@ describe('Microsoft helpers', () => {
     const urlWithQueryParams = `${urlWithoutSlash}?foo=bar`;
     const urlWithQueryParamsAndSlash = `${urlWithSlash}?foo=bar`;
 
-    it('should extract the transcript id from the url', () => {
+    test('should extract the transcript id from the url', () => {
       expect(getMsTranscriptApiUrl(urlWithoutSlash)).toEqual({
         error: null,
         data: expectedUrl
       });
     });
 
-    it('should handle trailing slashes', () => {
+    test('should handle trailing slashes', () => {
       expect(getMsTranscriptApiUrl(urlWithSlash)).toEqual({
         error: null,
         data: expectedUrl
       });
     });
 
-    it('should ignore query params', () => {
+    test('should ignore query params', () => {
       expect(getMsTranscriptApiUrl(urlWithQueryParams)).toEqual({
         error: null,
         data: expectedUrl
@@ -1465,7 +1477,7 @@ describe('Microsoft helpers', () => {
       });
     });
 
-    it('should return an error for invalid URLs', () => {
+    test('should return an error for invalid URLs', () => {
       const validBadUrl = 'https://www.example.com/invalid-url';
       expect(getMsTranscriptApiUrl(validBadUrl)).toEqual({
         error: expect.any(String),

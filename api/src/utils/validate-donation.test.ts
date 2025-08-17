@@ -1,12 +1,13 @@
+import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
 import { inLastFiveMinutes } from './validate-donation';
 
 describe('inLastFiveMinutes', () => {
   beforeAll(() => {
-    jest.useFakeTimers();
+    vi.useFakeTimers();
   });
 
   afterAll(() => {
-    jest.useRealTimers();
+    vi.useRealTimers();
   });
 
   it('should return true if the timestamp is within the last five minutes', () => {
