@@ -1,10 +1,11 @@
 {
   "name": "Build a Golf Score Translator",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-golf-score-translator",
   "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
   "challengeOrder": [{ "id": "689f7996426c1534fa5bea66", "title": "Build a Golf Score Translator" }],
   "blockType": "lab",
-  "blockLayout": "link"
+  "blockLayout": "link",
+  "usesMultifileEditor": true
 }
