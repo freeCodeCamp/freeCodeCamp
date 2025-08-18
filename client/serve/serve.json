@@ -391,6 +391,50 @@
     {
       "source": "/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-repeat-a-string-x-number-of-times",
       "destination": "/learn/full-stack-developer/lecture-working-with-string-modification-methods/how-can-you-repeat-a-string-x-number-of-times"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-objects/what-is-an-object-in-javascript-and-how-can-you-access-properties-from-an-object",
+      "destination": "/learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/what-is-an-object-in-javascript-and-how-can-you-access-properties-from-an-object"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-objects/how-can-you-remove-properties-from-an-object",
+      "destination": "/learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/how-can-you-remove-properties-from-an-object"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-objects/how-to-check-if-an-object-has-a-property",
+      "destination": "/learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/how-to-check-if-an-object-has-a-property"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-objects/how-do-you-work-with-accessing-properties-from-nested-objects-and-arrays-in-objects",
+      "destination": "/learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/how-do-you-work-with-accessing-properties-from-nested-objects-and-arrays-in-objects"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-objects/what-is-the-difference-between-primitive-and-non-primitive-data-types",
+      "destination": "/learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/what-is-the-difference-between-primitive-and-non-primitive-data-types"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-objects/what-is-the-difference-between-functions-and-object-methods",
+      "destination": "/learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/what-is-the-difference-between-functions-and-object-methods"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-objects/what-is-the-object-constructor-and-when-should-you-use-it",
+      "destination": "/learn/full-stack-developer/lecture-introduction-to-javascript-objects-and-their-properties/what-is-the-object-constructor-and-when-should-you-use-it"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-objects/what-is-the-optional-chaining-operator-and-how-does-it-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-optional-chaining-and-object-destructuring/what-is-the-optional-chaining-operator-and-how-does-it-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-objects/what-is-object-destructuring-and-how-does-it-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-optional-chaining-and-object-destructuring/what-is-object-destructuring-and-how-does-it-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-objects/what-is-json-and-how-do-you-access-values-using-bracket-and-dot-notation",
+      "destination": "/learn/full-stack-developer/lecture-working-with-json/what-is-json-and-how-do-you-access-values-using-bracket-and-dot-notation"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-objects/how-do-json-parse-and-json-stringify-work",
+      "destination": "/learn/full-stack-developer/lecture-working-with-json/how-do-json-parse-and-json-stringify-work"
     }
   ]
 }
