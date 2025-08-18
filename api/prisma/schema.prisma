@@ -194,7 +194,7 @@ model ExamEnvironmentExam {
 /// A copy of `ExamEnvironmentExam` used as a staging collection for updates to the curriculum.
 ///
 /// This collection schema must be kept in sync with `ExamEnvironmentExam`.
-model ExamEnvironmentTempExam {
+model ExamCreatorExam {
   /// Globally unique exam id
   id            String                       @id @default(auto()) @map("_id") @db.ObjectId
   /// All questions for a given exam
