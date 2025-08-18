@@ -20,7 +20,8 @@ jest.mock('../../utils/env', () => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return {
     ...jest.requireActual('../../utils/env'),
-    FCC_ENABLE_EXAM_ENVIRONMENT: 'true'
+    FCC_ENABLE_EXAM_ENVIRONMENT: 'true',
+    DEPLOYMENT_ENV: 'production'
   };
 });
 
@@ -512,7 +513,9 @@ describe('/exam-environment/', () => {
           generatedExamId: generatedExam!.id,
           questionSets: [],
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          startTimeInMS: expect.any(Number)
+          startTimeInMS: expect.any(Number),
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number)
         });
       });
 

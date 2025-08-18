@@ -613,7 +613,7 @@ Which of the following types is commonly used for image files?
 
 #### --text--
 
-Microsoft Edge is supported by which operating system?
+Microsoft Edge is the default web browser of which operating system?
 
 #### --distractors--
 

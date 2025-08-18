@@ -114,6 +114,7 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   showFooter?: boolean;
   isChallenge?: boolean;
   isDailyChallenge?: boolean;
+  dailyChallengeParam?: string;
   usesMultifileEditor?: boolean;
   block?: string;
   examInProgress: boolean;
@@ -133,6 +134,7 @@ function DefaultLayout({
   showFooter = true,
   isChallenge = false,
   isDailyChallenge = false,
+  dailyChallengeParam,
   usesMultifileEditor,
   block,
   superBlock,
@@ -292,7 +294,9 @@ function DefaultLayout({
           <SignoutModal />
           {isDailyChallenge ? (
             <div className='breadcrumbs-demo'>
-              <DailyChallengeBreadCrumb />
+              <DailyChallengeBreadCrumb
+                dailyChallengeParam={dailyChallengeParam}
+              />
             </div>
           ) : (
             isChallenge &&
