@@ -4756,6 +4756,10 @@
         "intro": [
           "In this lab you will build a function to manage a record collection."
         ]
+      },
+      "lab-counting-cards": {
+        "title": "Build a Card Counting Assistant",
+        "intro": ["In this lab you will use Javascript to count dealt cards."]
       }
     }
   },
