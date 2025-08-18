@@ -205,6 +205,9 @@ model ExamCreatorExam {
   prerequisites String[]                     @db.ObjectId
   /// If `deprecated`, the exam should no longer be considered for users
   deprecated    Boolean
+  /// Version of the record
+  /// The default must be incremented by 1, if anything in the schema changes
+  version       Int                          @default(1)
 }
 
 /// A grouping of one or more questions of a given type
