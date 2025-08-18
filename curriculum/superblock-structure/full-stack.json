@@ -707,7 +707,13 @@
           "dashedName": "javascript-objects",
           "blocks": [
             {
-              "dashedName": "lecture-working-with-objects"
+              "dashedName": "lecture-introduction-to-javascript-objects-and-their-properties"
+            },
+            {
+              "dashedName": "lecture-working-with-optional-chaining-and-object-destructuring"
+            },
+            {
+              "dashedName": "lecture-working-with-json"
             },
             {
               "dashedName": "workshop-recipe-tracker"
