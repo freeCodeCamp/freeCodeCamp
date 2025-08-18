@@ -22,7 +22,10 @@ interface Props {
 const InteractiveEditor = ({ files }: Props) => {
   // Build Sandpack files object
   const spFiles = useMemo(() => {
-    const obj = {} as Record<string, { code: string; active?: boolean }>;
+    const obj = {} as Record<
+      string,
+      { code: string; active?: boolean; hidden?: boolean }
+    >;
     files.forEach(file => {
       const ext = file.ext;
       let path = '';
@@ -42,6 +45,15 @@ const InteractiveEditor = ({ files }: Props) => {
         active: true
       };
     }
+
+    // Add empty index.js for JS/TS entry point
+    obj['/index.js'] = {
+      code: `
+          import './styles.css';
+          import './script.js';`,
+      hidden: true
+    };
+
     return obj;
   }, [files]);
 
