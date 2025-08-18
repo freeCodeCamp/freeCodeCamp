@@ -235,6 +235,11 @@ Our community also has:
 
 > #### [Join the community here](https://www.freecodecamp.org/signin).
 
+## Beginner Resources
+
+- [Python Official Documentation](https://docs.python.org/3/) – The official documentation for Python programming language.
+
+
 ### Reporting Bugs and Issues
 
 If you think you've found a bug, first read the [how to report a bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
