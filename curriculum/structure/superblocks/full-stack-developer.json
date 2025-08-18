@@ -674,7 +674,6 @@
           "comingSoon": true,
           "blocks": [
             "lecture-classes-and-objects",
-            "workshop-placeholder-classes-and-objects",
             "lab-budget-app",
             "review-classes-and-objects",
             "quiz-classes-and-objects"
@@ -685,14 +684,9 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
-            "workshop-placeholder-oop-1",
-            "lab-placeholder-oop-1",
             "lecture-understanding-inheritance-and-polymorphism",
-            "workshop-placeholder-oop-2",
             "lab-polygon-area-calculator",
             "lecture-understanding-abstraction",
-            "workshop-placeholder-oop-3",
-            "lab-placeholder-oop-3",
             "review-object-oriented-programming",
             "quiz-object-oriented-programming"
           ]
@@ -702,7 +696,6 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures",
-            "workshop-linked-list-class",
             "lab-hash-table",
             "review-data-structures",
             "quiz-data-structures"
@@ -729,10 +722,6 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-graphs-and-trees",
-            "workshop-shortest-path-algorithm",
-            "lab-adjacency-list-matrix-converter",
-            "workshop-breadth-first-search",
-            "lab-depth-first-search",
             "review-graphs-and-trees",
             "quiz-graphs-and-trees"
           ]
@@ -742,7 +731,6 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-dynamic-programming",
-            "lab-nth-fibonacci-number",
             "review-dynamic-programming",
             "quiz-dynamic-programming"
           ]

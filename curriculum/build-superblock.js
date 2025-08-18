@@ -425,7 +425,10 @@ class SuperblockCreator {
  * @param {object} superblockData - The superblock data object
  * @returns {object[]} Array of block objects with dashedName, chapter, and module properties
  */
-function transformSuperBlock(superblockData) {
+function transformSuperBlock(
+  superblockData,
+  { showComingSoon } = { showComingSoon: false }
+) {
   let blocks = [];
 
   // Handle simple blocks array format
@@ -437,13 +440,13 @@ function transformSuperBlock(superblockData) {
   // Handle nested chapters/modules/blocks format
   else if (superblockData.chapters) {
     for (const chapter of superblockData.chapters) {
-      if (chapter.comingSoon) {
+      if (chapter.comingSoon && !showComingSoon) {
         continue;
       }
 
       if (chapter.modules) {
         for (const module of chapter.modules) {
-          if (module.comingSoon) {
+          if (module.comingSoon && !showComingSoon) {
             continue;
           }
 

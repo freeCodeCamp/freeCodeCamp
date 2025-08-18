@@ -512,6 +512,22 @@ describe('buildSuperblock pure functions', () => {
       ]);
       expect(result).toHaveLength(2);
     });
+
+    test("should NOT omit 'comingSoon' modules and chapters if showComingSoon is true", () => {
+      const result = transformSuperBlock(dummyUnfinishedSuperBlock, {
+        showComingSoon: true
+      });
+
+      expect(result).toEqual([
+        { dashedName: 'block-1', chapter: 'chapter-1', module: 'module-1' },
+        { dashedName: 'block-2', chapter: 'chapter-1', module: 'module-1' },
+        { dashedName: 'block-3', chapter: 'chapter-1', module: 'module-2' },
+        { dashedName: 'block-4', chapter: 'chapter-1', module: 'module-2' },
+        { dashedName: 'block-5', chapter: 'chapter-2', module: 'module-3' },
+        { dashedName: 'block-6', chapter: 'chapter-2', module: 'module-3' }
+      ]);
+      expect(result).toHaveLength(6);
+    });
   });
 });
 

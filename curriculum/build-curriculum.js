@@ -289,7 +289,9 @@ function addSuperblockStructure(superblocks) {
 
     return {
       name: superblockName,
-      blocks: transformSuperBlock(getSuperblockStructure(superblockFilename))
+      blocks: transformSuperBlock(getSuperblockStructure(superblockFilename), {
+        showComingSoon: process.env.SHOW_UPCOMING_CHANGES === 'true'
+      })
     };
   });
 
@@ -313,7 +315,11 @@ function getSuperblockStructure(superblock) {
 function getBlockStructure(block) {
   const blockPath = path.resolve(STRUCTURE_DIR, 'blocks', `${block}.json`);
 
-  return JSON.parse(fs.readFileSync(blockPath, 'utf8'));
+  try {
+    return JSON.parse(fs.readFileSync(blockPath, 'utf8'));
+  } catch {
+    console.warn('block missing', block);
+  }
 }
 
 function addBlockStructure(
