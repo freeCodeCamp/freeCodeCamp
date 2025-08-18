@@ -6,5 +6,6 @@
   "helpCategory": "JavaScript",
   "challengeOrder": [{ "id": "68a23004e96a105df3a21fc4", "title": "Build a Card Counting Assistant" }],
   "blockType": "lab",
-  "blockLayout": "link"
+  "blockLayout": "link",
+  "usesMultifileEditor": true
 }
