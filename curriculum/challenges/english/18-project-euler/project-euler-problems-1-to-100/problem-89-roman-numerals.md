@@ -48,10 +48,10 @@ Find the number of characters saved by writing each of these in their minimal fo
 assert(typeof romanNumerals(_testNumerals1) === 'number');
 ```
 
-`romanNumerals(testNumerals1)` should return `19`.
+`romanNumerals(testNumerals1)` should return `21`.
 
 ```js
-assert.strictEqual(romanNumerals(_testNumerals1), 19);
+assert.strictEqual(romanNumerals(_testNumerals1), 21);
 ```
 
 `romanNumerals(testNumerals2)` should return `743`.
@@ -93,23 +93,103 @@ romanNumerals(testNumerals1);
 # --solutions--
 
 ```js
+const romanArabicPairs = [
+  [1000, "M"],
+  [900, "CM"],
+  [500, "D"],
+  [400, "CD"],
+  [100, "C"],
+  [90, "XC"],
+  [50, "L"],
+  [40, "XL"],
+  [10, "X"],
+  [9, "IX"],
+  [5, "V"],
+  [4, "IV"],
+  [1, "I"],
+].sort((a, b) => b[0] - a[0]);
+
+
+function romanToArabic(num) {
+  let arabic = 0;
+
+  for (let i = 0; i < num.length; i++) {
+    switch (num[i]) {
+      case 'M':
+        arabic += 1000;
+        break;
+      case 'D':
+        arabic += 500;
+        break;
+      case 'L':
+        arabic += 50;
+        break;
+      case 'V':
+        arabic += 5;
+        break;
+      case 'C':
+        if (num[i + 1] === 'M') {
+          arabic += 900;
+          i++;
+        } else if (num[i + 1] === 'D') {
+          arabic += 400;
+          i++
+        } else {
+          arabic += 100;
+        }
+        break;
+      case 'X':
+        if (num[i + 1] === 'C') {
+          arabic += 90;
+          i++;
+        } else if (num[i + 1] === 'L') {
+          arabic += 40;
+          i++
+        } else {
+          arabic += 10;
+        }
+        break;
+      case 'I':
+        if (num[i + 1] === 'X') {
+          arabic += 9;
+          i++;
+        } else if (num[i + 1] === 'V') {
+          arabic += 4;
+          i++
+        } else {
+          arabic += 1;
+        }
+        break;
+    }
+  }
+  return arabic;
+}
+
+function arabicToRoman(num) {
+  return romanArabicPairs
+    .reduce((romanNum, pair) => {
+      const arabic = pair[0];
+      const roman = pair[1];
+
+      while (num >= arabic) {
+        num -= arabic;
+        romanNum += roman;
+      }
+      return romanNum;
+    },
+      "");
+}
+
 function romanNumerals(roman) {
   const numerals = [...roman];
-  const replaces = [
-    ['VIIII', 'IX'],
-    ['IIII', 'IV'],
-    ['LXXXX', 'XC'],
-    ['XXXX', 'XL'],
-    ['DCCCC', 'CM'],
-    ['CCCC', 'CD']
-  ];
   let savedChars = 0;
+
   for (let i = 0; i < numerals.length; i++) {
     const charsBefore = numerals[i].length;
-    for (let j = 0; j < replaces.length; j++) {
-      numerals[i] = numerals[i].replace(...replaces[j]);
-    }
+
+    numerals[i] = arabicToRoman(romanToArabic(numerals[i]));
     const charsAfter = numerals[i].length;
+
     savedChars += charsBefore - charsAfter;
   }
   return savedChars;
