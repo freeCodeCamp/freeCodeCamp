@@ -10,9 +10,9 @@ import {
   mockResultsOneCorrect,
   mockResultsTwoCorrect,
   mockResultsAllCorrect
-} from '../../__mocks__/exam';
-import { generateRandomExam, createExamResults } from './exam';
-import { GeneratedExam } from './exam-types';
+} from '../../__mocks__/exam.js';
+import { generateRandomExam, createExamResults } from './exam.js';
+import { GeneratedExam } from './exam-types.js';
 
 describe('Exam helpers', () => {
   describe('generateRandomExam()', () => {

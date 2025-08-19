@@ -1,6 +1,6 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import { DEPLOYMENT_VERSION } from '../../utils/env';
+import { DEPLOYMENT_VERSION } from '../../utils/env.js';
 
 /**
  * Plugin for the health check endpoint.

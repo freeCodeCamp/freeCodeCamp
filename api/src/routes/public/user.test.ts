@@ -1,6 +1,6 @@
 import type { Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-import _ from 'lodash';
+import _ from 'lodash-es';
 import {
   describe,
   it,
@@ -12,13 +12,13 @@ import {
   vi
 } from 'vitest';
 
-import { createUserInput } from '../../utils/create-user';
+import { createUserInput } from '../../utils/create-user.js';
 import {
   defaultUserEmail,
   setupServer,
   createSuperRequest
-} from '../../../vitest.utils';
-import { replacePrivateData } from './user';
+} from '../../../vitest.utils.js';
+import { replacePrivateData } from './user.js';
 
 const mockedFetch = vi.fn();
 vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);

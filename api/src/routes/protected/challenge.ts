@@ -1,12 +1,13 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
-import { uniqBy, matches } from 'lodash';
 import { CompletedExam, ExamResults, SavedChallengeFile } from '@prisma/client';
-import isURL from 'validator/lib/isURL';
 import type { FastifyBaseLogger, FastifyInstance, FastifyReply } from 'fastify';
+import { uniqBy, matches } from 'lodash-es';
 
-import { challengeTypes } from '../../../../shared/config/challenge-types';
-import * as schemas from '../../schemas';
+import validator from 'validator';
+
+import { challengeTypes } from '../../../../shared/config/challenge-types.js';
+import * as schemas from '../../schemas.js';
 import {
   jsCertProjectIds,
   multifileCertProjectIds,
@@ -15,28 +16,31 @@ import {
   type CompletedChallenge,
   saveUserChallengeData,
   msTrophyChallenges
-} from '../../utils/common-challenge-functions';
-import { JWT_SECRET } from '../../utils/env';
+} from '../../utils/common-challenge-functions.js';
+import { JWT_SECRET } from '../../utils/env.js';
 import {
   formatCoderoadChallengeCompletedValidation,
   formatProjectCompletedValidation
-} from '../../utils/error-formatting';
-import { getChallenges } from '../../utils/get-challenges';
-import { ProgressTimestamp, getPoints } from '../../utils/progress';
+} from '../../utils/error-formatting.js';
+import { getChallenges } from '../../utils/get-challenges.js';
+import { ProgressTimestamp, getPoints } from '../../utils/progress.js';
 import {
   validateExamFromDbSchema,
   validateGeneratedExamSchema,
   validateUserCompletedExamSchema,
   validateExamResultsSchema
-} from '../../utils/exam-schemas';
-import { generateRandomExam, createExamResults } from '../../utils/exam';
+} from '../../utils/exam-schemas.js';
+import { generateRandomExam, createExamResults } from '../../utils/exam.js';
 import {
   canSubmitCodeRoadCertProject,
   decodeFiles,
   verifyTrophyWithMicrosoft
-} from '../helpers/challenge-helpers';
-import { UpdateReqType } from '../../utils';
-import { normalizeChallengeType, normalizeDate } from '../../utils/normalize';
+} from '../helpers/challenge-helpers.js';
+import { UpdateReqType } from '../../utils/index.js';
+import {
+  normalizeChallengeType,
+  normalizeDate
+} from '../../utils/normalize.js';
 
 interface JwtPayload {
   userToken: string;
@@ -94,7 +98,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       // - `solution` needs to exist, but does not have to be valid URL
       // - `githubLink` needs to exist and be valid URL
       if (challengeType === challengeTypes.backEndProject) {
-        if (!solution || !isURL(githubLink + '')) {
+        if (!solution || !validator.default.isURL(githubLink + '')) {
           logger.warn(
             { solution, githubLink },
             'Invalid backEndProject submission'
@@ -104,7 +108,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             message: 'That does not appear to be a valid challenge submission.'
           });
         }
-      } else if (solution && !isURL(solution + '')) {
+      } else if (solution && !validator.default.isURL(solution + '')) {
         logger.warn({ solution }, 'Invalid solution URL');
         return void reply.code(403).send({
           type: 'error',
