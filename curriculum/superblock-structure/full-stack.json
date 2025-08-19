@@ -576,7 +576,16 @@
               "dashedName": "workshop-teacher-chatbot"
             },
             {
-              "dashedName": "lecture-working-with-common-string-methods"
+              "dashedName": "lecture-working-with-string-character-methods"
+            },
+            {
+              "dashedName": "lecture-working-with-string-search-and-slice-methods"
+            },
+            {
+              "dashedName": "lecture-working-with-string-formatting-methods"
+            },
+            {
+              "dashedName": "lecture-working-with-string-modification-methods"
             },
             {
               "dashedName": "review-javascript-strings"
