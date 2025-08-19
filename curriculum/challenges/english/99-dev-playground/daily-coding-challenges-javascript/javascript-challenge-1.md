@@ -51,7 +51,7 @@ assert.isTrue(isBalanced(" "));
 assert.isFalse(isBalanced("abcdefghijklmnopqrstuvwxyz"));
 ```
 
-`isBalanced("123A#b!E&#x26;*456-o.U")` should return `true`.
+`isBalanced("123A#b!E&*456-o.U")` should return `true`.
 
 ```js
 assert.isTrue(isBalanced("123A#b!E&*456-o.U"));
