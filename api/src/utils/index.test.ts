@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { base64URLEncode, challenge, verifier } from '.';
+import { base64URLEncode, challenge, verifier } from './index.js';
 
 describe('utils', () => {
   test('base64URLEncode', () => {

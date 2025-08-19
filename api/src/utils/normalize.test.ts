@@ -6,7 +6,7 @@ import {
   normalizeFlags,
   normalizeDate,
   normalizeChallengeType
-} from './normalize';
+} from './normalize.js';
 
 describe('normalize', () => {
   describe('normalizeTwitter', () => {

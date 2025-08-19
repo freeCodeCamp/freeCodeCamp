@@ -1,9 +1,10 @@
 import { describe, test, expect } from 'vitest';
-import Ajv from 'ajv';
-import secureSchema from 'ajv/lib/refs/json-schema-secure.json';
+import secureSchema from 'ajv/lib/refs/json-schema-secure.json' with { type: 'json' };
 
-import * as schemas from './schemas';
+import * as schemas from './schemas.js';
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const Ajv = require('ajv') as any;
 // it's not strict, but that's okay - we're not using it to validate data
 const ajv = new Ajv({ strictTypes: false });
 const isSchemaSecure = ajv.compile(secureSchema);

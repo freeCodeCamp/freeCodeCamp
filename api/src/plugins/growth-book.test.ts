@@ -1,6 +1,6 @@
 import { describe, test, expect, beforeAll, afterAll, vi } from 'vitest';
 import Fastify, { type FastifyInstance } from 'fastify';
-import growthBook from './growth-book';
+import growthBook from './growth-book.js';
 
 vi.mock('../utils/env', async importOriginal => {
   const actual = await importOriginal<typeof import('../utils/env')>();

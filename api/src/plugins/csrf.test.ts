@@ -1,9 +1,9 @@
 import { describe, test, expect, beforeEach, vi } from 'vitest';
 import Fastify, { type FastifyInstance } from 'fastify';
 
-import { COOKIE_DOMAIN } from '../utils/env';
-import cookies from './cookies';
-import csrf, { CSRF_COOKIE, CSRF_SECRET_COOKIE } from './csrf';
+import { COOKIE_DOMAIN } from '../utils/env.js';
+import cookies from './cookies.js';
+import csrf, { CSRF_COOKIE, CSRF_SECRET_COOKIE } from './csrf.js';
 
 vi.mock('../utils/env', async importOriginal => {
   const actual = await importOriginal<typeof import('../utils/env')>();

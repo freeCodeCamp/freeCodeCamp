@@ -1,6 +1,6 @@
 import { expect } from 'vitest';
 
-import { nanoidCharSet } from '../../utils/create-user';
+import { nanoidCharSet } from '../../utils/create-user.js';
 
 const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
 const fccUuidRe = /^fcc-[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;

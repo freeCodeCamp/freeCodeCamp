@@ -11,15 +11,15 @@ import {
 } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 
-import { createUserInput } from '../utils/create-user';
-import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
-import prismaPlugin from '../db/prisma';
-import cookies, { sign, unsign } from './cookies';
-import { auth0Client } from './auth0';
-import redirectWithMessage, { formatMessage } from './redirect-with-message';
-import auth from './auth';
-import bouncer from './bouncer';
-import { newUser } from './__fixtures__/user';
+import { createUserInput } from '../utils/create-user.js';
+import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env.js';
+import prismaPlugin from '../db/prisma.js';
+import cookies, { sign, unsign } from './cookies.js';
+import { auth0Client } from './auth0.js';
+import redirectWithMessage, { formatMessage } from './redirect-with-message.js';
+import auth from './auth.js';
+import bouncer from './bouncer.js';
+import { newUser } from './__fixtures__/user.js';
 
 const COOKIE_DOMAIN = 'test.com';
 

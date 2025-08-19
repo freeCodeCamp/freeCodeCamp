@@ -17,17 +17,17 @@ import {
   defaultUserId,
   devLogin,
   setupServer
-} from '../../../vitest.utils';
+} from '../../../vitest.utils.js';
 import {
   examEnvironmentPostExamAttempt,
   examEnvironmentPostExamGeneratedExam
-} from '../schemas';
-import * as mock from '../../../__mocks__/exam-environment-exam';
-import { constructUserExam } from '../utils/exam-environment';
-import { JWT_SECRET } from '../../utils/env';
+} from '../schemas/index.js';
+import * as mock from '../../../__mocks__/exam-environment-exam.js';
+import { constructUserExam } from '../utils/exam-environment.js';
+import { JWT_SECRET } from '../../utils/env.js';
 
 vi.mock('../../utils/env', async importOriginal => {
-  const actual = await importOriginal<typeof import('../../utils/env')>();
+  const actual = await importOriginal<typeof import('../../utils/env.js')>();
   return {
     ...actual,
     FCC_ENABLE_EXAM_ENVIRONMENT: 'true',
@@ -531,7 +531,7 @@ describe('/exam-environment/', () => {
 
       it('should unwind (delete) the exam attempt if the user exam cannot be constructed', async () => {
         const _mockConstructUserExam = vi
-          .spyOn(await import('../utils/exam-environment'), 'constructUserExam')
+          .spyOn(await import('../utils/exam-environment.js'), 'constructUserExam')
           .mockImplementationOnce(() => {
             throw new Error('Test error');
           });

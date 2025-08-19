@@ -1,6 +1,6 @@
 import { Exam, Question } from '@prisma/client';
-import { shuffleArray } from './../../../shared/utils/shuffle-array';
-import { UserExam, GeneratedExam } from './exam-types';
+import { shuffleArray } from './../../../shared/utils/shuffle-array.js';
+import { UserExam, GeneratedExam } from './exam-types.js';
 
 /**
  * Remove objects from array with deprecated: true.

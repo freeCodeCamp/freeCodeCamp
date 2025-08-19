@@ -2,10 +2,10 @@ import { describe, test, expect, beforeEach, afterEach } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 import jwt from 'jsonwebtoken';
 
-import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
-import { type Token, createAccessToken } from '../utils/tokens';
-import cookies, { sign as signCookie, unsign as unsignCookie } from './cookies';
-import auth from './auth';
+import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env.js';
+import { type Token, createAccessToken } from '../utils/tokens.js';
+import cookies, { sign as signCookie, unsign as unsignCookie } from './cookies.js';
+import auth from './auth.js';
 
 async function setupServer() {
   const fastify = Fastify();

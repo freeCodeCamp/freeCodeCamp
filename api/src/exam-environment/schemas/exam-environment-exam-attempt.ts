@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { STANDARD_ERROR } from '../utils/errors';
+import { STANDARD_ERROR } from '../utils/errors.js';
 
 export const examEnvironmentPostExamAttempt = {
   body: Type.Object({
