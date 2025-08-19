@@ -260,10 +260,7 @@ const ShowGeneric = ({
               )}
 
               {assignments.length > 0 && (
-                <ObserveKeys
-                  only={['ctrl', 'cmd', 'enter']}
-                  onKeyUp={handleSubmit}
-                >
+                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
                   <Assignments
                     assignments={assignments}
                     allAssignmentsCompleted={allAssignmentsCompleted}
@@ -273,10 +270,7 @@ const ShowGeneric = ({
               )}
 
               {questions.length > 0 && (
-                <ObserveKeys
-                  only={['ctrl', 'cmd', 'enter']}
-                  onKeyUp={handleSubmit}
-                >
+                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
                   <MultipleChoiceQuestions
                     questions={questions}
                     selectedOptions={selectedMcqOptions}
