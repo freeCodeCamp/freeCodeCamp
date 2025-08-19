@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { genericError, savedChallenge } from '../types';
+import { genericError, savedChallenge } from '../types.js';
 
 export const modernChallengeCompleted = {
   body: Type.Object({

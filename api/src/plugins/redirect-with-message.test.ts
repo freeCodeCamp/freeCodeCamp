@@ -2,7 +2,7 @@ import { describe, test, expect, beforeEach } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 import qs from 'query-string';
 
-import redirectWithMessage from './redirect-with-message';
+import redirectWithMessage from './redirect-with-message.js';
 
 async function setupServer() {
   const fastify = Fastify();

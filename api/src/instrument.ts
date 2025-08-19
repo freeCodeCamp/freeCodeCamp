@@ -5,7 +5,7 @@ import {
   DEPLOYMENT_VERSION,
   SENTRY_DSN,
   SENTRY_ENVIRONMENT
-} from './utils/env';
+} from './utils/env.js';
 
 const shouldIgnoreError = (error: FastifyError): boolean => {
   return !!error.statusCode && error.statusCode < 500;

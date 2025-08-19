@@ -9,9 +9,8 @@ import {
   examAttempt,
   generatedExam,
   oid
-} from '../../../__mocks__/exam-environment-exam';
-import * as schemas from '../schemas';
-import { setupServer } from '../../../vitest.utils';
+} from '../../../__mocks__/exam-environment-exam.js';
+import * as schemas from '../schemas/index.js';
 import {
   checkAttemptAgainstGeneratedExam,
   checkPrerequisites,
@@ -21,7 +20,7 @@ import {
   validateAttempt,
   compareAnswers,
   shuffleArray
-} from './exam-environment';
+} from './exam-environment.js';
 
 // NOTE: Whilst the tests could be run against a single generation of exam,
 //       it is more useful to run the tests against a new generation each time.

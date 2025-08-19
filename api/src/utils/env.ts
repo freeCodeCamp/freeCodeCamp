@@ -1,8 +1,10 @@
 import assert from 'node:assert';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { config } from 'dotenv';
 import { LogLevel } from 'fastify';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, '../../../.env');
 const { error } = config({ path: envPath });
 

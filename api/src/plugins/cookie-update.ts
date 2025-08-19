@@ -1,6 +1,6 @@
 import { FastifyPluginCallback } from 'fastify';
 
-import type { CookieSerializeOptions } from './cookies';
+import type { CookieSerializeOptions } from './cookies.js';
 
 type Options = { cookies: string[]; attributes: CookieSerializeOptions };
 

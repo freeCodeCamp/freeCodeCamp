@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify';
-import { createUserInput } from '../../utils/create-user';
+import { createUserInput } from '../../utils/create-user.js';
 
 /**
  * Finds an existing user with the given email or creates a new user if none exists.

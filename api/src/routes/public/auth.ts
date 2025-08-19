@@ -1,10 +1,10 @@
 import type { FastifyPluginCallback, FastifyRequest } from 'fastify';
-import isEmail from 'validator/lib/isEmail';
+import validator from 'validator';
 
-import { AUTH0_DOMAIN } from '../../utils/env';
-import { auth0Client } from '../../plugins/auth0';
-import { createAccessToken } from '../../utils/tokens';
-import { findOrCreateUser } from '../helpers/auth-helpers';
+import { AUTH0_DOMAIN } from '../../utils/env.js';
+import { auth0Client } from '../../plugins/auth0.js';
+import { createAccessToken } from '../../utils/tokens.js';
+import { findOrCreateUser } from '../helpers/auth-helpers.js';
 
 const getEmailFromAuth0 = async (
   req: FastifyRequest
@@ -55,7 +55,7 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
         type: 'danger'
       });
     }
-    if (!isEmail(email)) {
+    if (!validator.default.isEmail(email)) {
       logger.error('Email is incorrectly formatted for login');
 
       return reply.status(400).send({
