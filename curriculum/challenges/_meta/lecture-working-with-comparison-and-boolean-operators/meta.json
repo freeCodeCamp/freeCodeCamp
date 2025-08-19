@@ -1,0 +1,19 @@
+{
+  "name": "Working with Comparison and Boolean Operators",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-comparison-and-boolean-operators",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "673271c7581a27d9dd78f6d6",
+      "title": "What Are Booleans, and How Do They Work with Equality and Inequality Operators?"
+    },
+    {
+      "id": "673271dffbc34fda31da9515",
+      "title": "What Are Comparison Operators, and How Do They Work?"
+    }
+  ]
+}

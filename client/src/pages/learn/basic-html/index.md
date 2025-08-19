@@ -6,4 +6,4 @@ certification: basic-html
 
 ## Introduction to Basic HTML
 
-Intoduction to Basic HTML.
+Introduction to Basic HTML.

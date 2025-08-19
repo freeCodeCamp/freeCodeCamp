@@ -13,7 +13,7 @@ This is a review of the entire dialogue you just studied.
 
 # --instructions--
 
-Place the following phrases in the correct spot:
+Write the following words or phrases in the correct spot:
 
 `let's get started`, `She works in`, `He's responsible for`, `I'm responsible for`, `We're excited`, and `She and I`.
 

@@ -305,13 +305,17 @@ export function buildExtCurriculumDataV2(
             moduleType: module.moduleType,
             blocks: module.comingSoon
               ? []
-              : module.blocks.map(block => {
-                  const blockData = blocksWithData[block.dashedName];
-                  return {
-                    intro: superBlockIntros.blocks[block.dashedName].intro,
-                    meta: blockData.meta
-                  };
-                })
+              : module.blocks
+                  // Upcoming blocks aren't included in blocksWithData
+                  // and thus they have no metadata and need to be filtered out.
+                  .filter(block => blocksWithData[block.dashedName])
+                  .map(block => {
+                    const blockData = blocksWithData[block.dashedName];
+                    return {
+                      intro: superBlockIntros.blocks[block.dashedName].intro,
+                      meta: blockData.meta
+                    };
+                  })
           }))
     }));
 

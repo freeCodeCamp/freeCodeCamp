@@ -44,7 +44,7 @@ console.log(numbers[10]);
 
 #### --text--
 
-Which of the following is the correct way access the string `"Jessica"` from the `developers` array?
+Which of the following is the correct way to access the string `"Jessica"` from the `developers` array?
 
 #### --distractors--
 
@@ -434,7 +434,7 @@ Which of the following is NOT an array method?
 
 #### --answer--
 
-`keys()`
+`trim()`
 
 ### --question--
 

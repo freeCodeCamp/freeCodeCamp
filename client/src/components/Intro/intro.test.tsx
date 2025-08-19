@@ -27,6 +27,7 @@ describe('<Intro />', () => {
 
 const loggedInProps = {
   complete: true,
+  completedChallengeCount: 0,
   isSignedIn: true,
   name: 'Development User',
   navigate: () => jest.fn(),
@@ -39,6 +40,7 @@ const loggedInProps = {
 
 const loggedOutProps = {
   complete: true,
+  completedChallengeCount: 0,
   isSignedIn: false,
   name: '',
   navigate: () => jest.fn(),

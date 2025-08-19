@@ -1,8 +1,6 @@
 import i18next from 'i18next';
-import { connect } from 'react-redux';
 import React, { Fragment } from 'react';
 import { Spacer } from '@freecodecamp/ui';
-import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -14,16 +12,13 @@ import {
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink } from '../helpers';
-import { showUpcomingChanges } from '../../../config/env.json';
+import {
+  showUpcomingChanges,
+  showDailyCodingChallenges
+} from '../../../config/env.json';
+import DailyCodingChallengeWidget from '../daily-coding-challenge/widget';
 
 import './map.css';
-
-import {
-  isSignedInSelector,
-  currentCertsSelector,
-  completedChallengesIdsSelector
-} from '../../redux/selectors';
-
 interface MapProps {
   forLanding?: boolean;
 }
@@ -45,17 +40,6 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Upcoming]: 'landing.upcoming-heading',
   [SuperBlockStage.Catalog]: 'landing.catalog-heading'
 };
-
-const mapStateToProps = createSelector(
-  isSignedInSelector,
-  currentCertsSelector,
-  completedChallengesIdsSelector,
-  (isSignedIn: boolean, currentCerts, completedChallengeIds: string[]) => ({
-    isSignedIn,
-    currentCerts,
-    completedChallengeIds
-  })
-);
 
 function MapLi({
   superBlock,
@@ -102,6 +86,16 @@ function Map({ forLanding = false }: MapProps) {
 
         return (
           <Fragment key={stage}>
+            {
+              /* Show the daily coding challenge before the "English" curriculum */
+              showDailyCodingChallenges &&
+                stage === SuperBlockStage.English && (
+                  <>
+                    <DailyCodingChallengeWidget forLanding={forLanding} />
+                    <Spacer size='m' />
+                  </>
+                )
+            }
             <h2 className={forLanding ? 'big-heading' : ''}>
               {t(superBlockHeadings[stage])}
             </h2>
@@ -124,4 +118,4 @@ function Map({ forLanding = false }: MapProps) {
 
 Map.displayName = 'Map';
 
-export default connect(mapStateToProps)(Map);
+export default Map;
