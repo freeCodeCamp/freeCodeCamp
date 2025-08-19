@@ -1,12 +1,15 @@
-import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
-import Fastify, {
-  type FastifyInstance,
-  type FastifyRequest,
-  type FastifyReply
-} from 'fastify';
+/* eslint-disable @typescript-eslint/require-await */
+import {
+  describe,
+  test,
+  expect,
+  beforeEach,
+  afterEach,
+  vi,
+  MockInstance
+} from 'vitest';
+import Fastify, { type FastifyInstance } from 'fastify';
 import { type user } from '@prisma/client';
-
-type DoneFunction = (err?: Error) => void;
 
 import { HOME_LOCATION } from '../utils/env';
 import bouncer from './bouncer';
@@ -14,7 +17,7 @@ import auth from './auth';
 import cookies from './cookies';
 import redirectWithMessage, { formatMessage } from './redirect-with-message';
 
-let authorizeSpy: ReturnType<typeof vi.spyOn>;
+let authorizeSpy: MockInstance<FastifyInstance['authorize']>;
 
 async function setupServer() {
   const fastify = Fastify();
@@ -51,12 +54,9 @@ describe('bouncer', () => {
         type: 'info' as const,
         content: 'Something undesirable occurred'
       };
-      authorizeSpy.mockImplementationOnce(
-        (req: FastifyRequest, _reply: FastifyReply, done: DoneFunction) => {
-          req.accessDeniedMessage = message;
-          done();
-        }
-      );
+      authorizeSpy.mockImplementationOnce(async req => {
+        req.accessDeniedMessage = message;
+      });
       const res = await fastify.inject({
         method: 'GET',
         url: '/'
@@ -70,12 +70,9 @@ describe('bouncer', () => {
     });
 
     test('should not alter the response if a user is present', async () => {
-      authorizeSpy.mockImplementationOnce(
-        (req: FastifyRequest, _reply: FastifyReply, done: DoneFunction) => {
-          req.user = { id: '123' } as user;
-          done();
-        }
-      );
+      authorizeSpy.mockImplementationOnce(async req => {
+        req.user = { id: '123' } as user;
+      });
 
       const res = await fastify.inject({
         method: 'GET',
@@ -101,12 +98,9 @@ describe('bouncer', () => {
         type: 'info' as const,
         content: 'At the moment, content is ignored'
       };
-      authorizeSpy.mockImplementationOnce(
-        (req: FastifyRequest, _reply: FastifyReply, done: DoneFunction) => {
-          req.accessDeniedMessage = message;
-          done();
-        }
-      );
+      authorizeSpy.mockImplementationOnce(async req => {
+        req.accessDeniedMessage = message;
+      });
       const res = await fastify.inject({
         method: 'GET',
         url: '/'
@@ -117,12 +111,9 @@ describe('bouncer', () => {
     });
 
     test('should not alter the response if a user is present', async () => {
-      authorizeSpy.mockImplementationOnce(
-        (req: FastifyRequest, _reply: FastifyReply, done: DoneFunction) => {
-          req.user = { id: '123' } as user;
-          done();
-        }
-      );
+      authorizeSpy.mockImplementationOnce(async req => {
+        req.user = { id: '123' } as user;
+      });
 
       const res = await fastify.inject({
         method: 'GET',
@@ -140,12 +131,9 @@ describe('bouncer', () => {
     });
 
     test('should redirect to the referer if a user is present', async () => {
-      authorizeSpy.mockImplementationOnce(
-        (req: FastifyRequest, _reply: FastifyReply, done: DoneFunction) => {
-          req.user = { id: '123' } as user;
-          done();
-        }
-      );
+      authorizeSpy.mockImplementationOnce(async req => {
+        req.user = { id: '123' } as user;
+      });
       const res = await fastify.inject({
         method: 'GET',
         url: '/',
@@ -165,12 +153,9 @@ describe('bouncer', () => {
         type: 'info' as const,
         content: 'At the moment, content is ignored'
       };
-      authorizeSpy.mockImplementationOnce(
-        (req: FastifyRequest, _reply: FastifyReply, done: DoneFunction) => {
-          req.accessDeniedMessage = message;
-          done();
-        }
-      );
+      authorizeSpy.mockImplementationOnce(async req => {
+        req.accessDeniedMessage = message;
+      });
       const res = await fastify.inject({
         method: 'GET',
         url: '/'
