@@ -162,7 +162,7 @@ export const MONGOHQ_URL =
   process.env.NODE_ENV === 'test'
     ? createTestConnectionURL(
         process.env.MONGOHQ_URL,
-        process.env.JEST_WORKER_ID
+        process.env.VITEST_WORKER_ID
       )
     : process.env.MONGOHQ_URL;
 
