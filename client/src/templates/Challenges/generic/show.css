@@ -31,3 +31,14 @@ input[type='checkbox']:checked::before {
 audio {
   background-color: aqua;
 }
+
+.quiz-answer-label {
+  font-weight: normal;
+}
+
+/* Override the bottom margin set in global.css */
+.quiz-question-label p:last-child,
+.quiz-answer-label p:last-child,
+.quiz-feedback-label p:last-child {
+  margin-bottom: 0;
+}
