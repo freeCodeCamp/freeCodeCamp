@@ -325,13 +325,15 @@ describe('challengeRoutes', () => {
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
         });
-
         const projectCompleted = user?.partiallyCompletedChallenges.some(
           project => {
             return project.id === '5f1a4ef5d5d6b5ab580fc6ae';
           }
         );
-
+        expect(response.body).toEqual({
+          msg: 'Successfully submitted challenge',
+          type: 'success'
+        });
         expect(projectCompleted).toBe(true);
         expect(response.status).toBe(200);
       });
@@ -467,7 +469,10 @@ describe('challengeRoutes', () => {
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
             data: {
-              partiallyCompletedChallenges: [{ id: id1, completedDate: 1 }]
+              partiallyCompletedChallenges: [{ id: id1, completedDate: 1 }],
+              completedChallenges: [],
+              savedChallenges: [],
+              progressTimestamps: []
             }
           });
         });
@@ -1985,7 +1990,7 @@ describe('challengeRoutes', () => {
       describe('handling', () => {
         beforeAll(() => {
           vi.useFakeTimers({
-            toFake: ['Date']
+            // toFake: ['Date']
           });
           vi.setSystemTime(DATE_NOW);
         });

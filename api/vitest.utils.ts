@@ -1,4 +1,4 @@
-import { beforeAll, afterAll, beforeEach, expect, vi } from 'vitest';
+import { beforeAll, afterAll, expect, vi } from 'vitest';
 import request from 'supertest';
 
 import { build, buildOptions } from './src/app';
@@ -221,11 +221,6 @@ export function setupServer(): void {
     global.fastifyTestInstance = fastify;
     // allow a little time to setup the db
   }, 15000); // Increased timeout to account for retries
-
-  // Reset database between each test for isolation
-  beforeEach(async () => {
-    await resetDefaultUser();
-  });
 
   afterAll(async () => {
     if (!global.fastifyTestInstance)
