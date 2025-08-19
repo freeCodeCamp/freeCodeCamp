@@ -1,6 +1,6 @@
 import { describe, test, expect, vi } from 'vitest';
-import { setupServer, superRequest } from '../vitest.utils';
-import { HOME_LOCATION } from './utils/env';
+import { setupServer, superRequest } from '../vitest.utils.js';
+import { HOME_LOCATION } from './utils/env.js';
 
 vi.mock('./utils/env', async importOriginal => {
   const actual = await importOriginal<typeof import('./utils/env')>();

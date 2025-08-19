@@ -1,7 +1,7 @@
 import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
-import cookies, { type CookieSerializeOptions, sign } from './cookies';
-import { cookieUpdate } from './cookie-update';
+import cookies, { type CookieSerializeOptions, sign } from './cookies.js';
+import { cookieUpdate } from './cookie-update.js';
 
 vi.mock('../utils/env', async importOriginal => {
   const actual = await importOriginal<typeof import('../utils/env')>();

@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { getCsrfToken, getCookies } from './vitest.utils';
+import { getCsrfToken, getCookies } from './vitest.utils.js';
 
 const fakeCookies = [
   '_csrf=123; Path=/; HttpOnly; SameSite=Strict',
