@@ -50,6 +50,7 @@ export const acceptTermsError = createAction(actionTypes.acceptTermsError);
 
 export const fetchUser = createAction(actionTypes.fetchUser);
 export const fetchUserComplete = createAction(actionTypes.fetchUserComplete);
+export const fetchUserTimeout = createAction(actionTypes.fetchUserTimeout);
 export const fetchUserError = createAction(actionTypes.fetchUserError);
 
 export const toggleTheme = createAction(actionTypes.toggleTheme);

@@ -69,7 +69,7 @@ TestCase().assertFalse(is_balanced("abcdefghijklmnopqrstuvwxyz"))`)
 }})
 ```
 
-`is_balanced("123A#b!E&#x26;*456-o.U")` should return `True`.
+`is_balanced("123A#b!E&*456-o.U")` should return `True`.
 
 ```js
 ({test: () => { runPython(`

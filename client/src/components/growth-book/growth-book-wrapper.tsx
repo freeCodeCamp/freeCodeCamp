@@ -6,14 +6,10 @@ import {
 } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import {
-  isSignedInSelector,
-  userSelector,
-  userFetchStateSelector
-} from '../../redux/selectors';
+import { userSelector, userFetchStateSelector } from '../../redux/selectors';
 import envData from '../../../config/env.json';
 import defaultGrowthBookFeatures from '../../../config/growthbook-features-default.json';
-import { User, UserFetchState } from '../../redux/prop-types';
+import type { User, UserFetchState } from '../../redux/prop-types';
 import { getUUID } from '../../utils/growthbook-cookie';
 import callGA from '../../analytics/call-ga';
 import GrowthBookReduxConnector from './growth-book-redux-connector';
@@ -30,11 +26,9 @@ declare global {
 }
 
 const mapStateToProps = createSelector(
-  isSignedInSelector,
   userSelector,
   userFetchStateSelector,
-  (isSignedIn, user: User, userFetchState: UserFetchState) => ({
-    isSignedIn,
+  (user: User | null, userFetchState: UserFetchState) => ({
     user,
     userFetchState
   })
@@ -56,7 +50,6 @@ interface UserAttributes {
 
 const GrowthBookWrapper = ({
   children,
-  isSignedIn,
   user,
   userFetchState
 }: GrowthBookWrapper) => {
@@ -105,6 +98,10 @@ const GrowthBookWrapper = ({
         clientLocal: clientLocale
       };
 
+      // Needs more checks as the user object is not empty but user is not signed in
+      const isSignedIn =
+        user && user.completedChallenges && user.email && user.joinDate;
+
       if (isSignedIn) {
         userAttributes = {
           ...userAttributes,
@@ -116,7 +113,7 @@ const GrowthBookWrapper = ({
       }
       growthbook.setAttributes(userAttributes);
     }
-  }, [isSignedIn, user, userFetchState, growthbook]);
+  }, [user, userFetchState, growthbook]);
 
   return (
     <GrowthBookProvider growthbook={growthbook}>
