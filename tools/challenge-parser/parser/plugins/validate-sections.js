@@ -29,6 +29,7 @@ const VALID_MARKERS = [
   '## --sentence--',
   '## --text--',
   '## --video-solution--',
+  '## --interactive--',
   // TODO: Remove these two markers when https://github.com/freeCodeCamp/freeCodeCamp/issues/57107 is resolved
   '## --after-user-code--',
   '## --before-user-code--',
