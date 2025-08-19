@@ -18,42 +18,71 @@ function addText(sectionIds) {
     for (const sectionId of sectionIds) {
       let textNodes = getSection(tree, `--${sectionId}--`);
 
-      // Special handling for interactive subsection inside description.
+      // Handle interactive markers inside description.
       if (sectionId === 'description') {
-        // find the interactive marker heading amongst description nodes
-        const interactiveIndex = textNodes.findIndex(
-          node =>
-            node.type === 'heading' &&
-            node.children?.[0]?.value === '--interactive--'
-        );
-        if (interactiveIndex !== -1) {
-          // nodes after the interactive heading
-          const after = textNodes.slice(interactiveIndex + 1);
+        const markerPredicate = node =>
+          node.type === 'paragraph' &&
+          node.children?.length === 1 &&
+          node.children[0].type === 'text' &&
+          node.children[0].value === '--interactive--';
+
+        const longToShortLanguages = {
+          javascript: 'js',
+          typescript: 'ts',
+          python: 'py'
+        };
+        const filenameFor = lang => {
+          const map = { js: 'script', css: 'styles', py: 'main' };
+          return map[lang] || 'index';
+        };
+        const supported = ['js', 'css', 'html', 'jsx', 'py', 'ts'];
+
+        const newTextNodes = [];
+        let interactiveIndexCounter = 0;
+        for (let i = 0; i < textNodes.length; i++) {
+          const node = textNodes[i];
+          if (!markerPredicate(node)) {
+            newTextNodes.push(node);
+            continue;
+          }
+
+          // Find matching end marker
+          let end = i + 1;
+          while (end < textNodes.length && !markerPredicate(textNodes[end])) {
+            end++;
+          }
+          if (end >= textNodes.length) {
+            throw Error('Unmatched --interactive-- marker');
+          }
+          // Section nodes between start and end markers
+          const sectionNodes = textNodes.slice(i + 1, end);
+
           let cursor = 0;
           let introParagraph = null;
-          if (after[cursor] && after[cursor].type === 'paragraph') {
-            introParagraph = after[cursor];
+          if (
+            sectionNodes[cursor] &&
+            sectionNodes[cursor].type === 'paragraph'
+          ) {
+            introParagraph = sectionNodes[cursor];
             cursor += 1;
           }
           const codeBlocks = [];
-          while (after[cursor] && is(after[cursor], 'code')) {
-            codeBlocks.push(after[cursor]);
+          while (sectionNodes[cursor] && is(sectionNodes[cursor], 'code')) {
+            codeBlocks.push(sectionNodes[cursor]);
             cursor += 1;
           }
-          // only treat as interactive if there is at least one code block
-          if (codeBlocks.length) {
-            // Build interactiveFiles similar to challengeFiles
-            const longToShortLanguages = {
-              javascript: 'js',
-              typescript: 'ts',
-              python: 'py'
-            };
-            const filenameFor = lang => {
-              const map = { js: 'script', css: 'styles', py: 'main' };
-              return map[lang] || 'index';
-            };
-            const supported = ['js', 'css', 'html', 'jsx', 'py', 'ts'];
-            const interactiveFiles = codeBlocks.map(block => {
+
+          if (cursor < sectionNodes.length) {
+            throw Error(
+              'Interactive section may only contain an optional paragraph followed by one or more code blocks'
+            );
+          }
+          if (!codeBlocks.length) {
+            // No code blocks -> not an interactive section; re-insert original nodes.
+            newTextNodes.push(...sectionNodes);
+          } else {
+            const groupIdx = interactiveIndexCounter;
+            const interactiveFiles = codeBlocks.map((block, fileIdx) => {
               const raw = block.lang || '';
               const ext = longToShortLanguages[raw] || raw;
               if (!supported.includes(ext)) {
@@ -69,34 +98,31 @@ function addText(sectionIds) {
                 contents: block.value,
                 head: '',
                 tail: '',
-                fileKey: `interactive-${ext}`
+                // Unique filekey is needed, because more than 1 file (e.g.`index.html`) file can exist per page
+                fileKey: `interactive-${groupIdx}-${fileIdx}-${ext}`
               };
             });
-
+            // Append files to overall list for backwards compatibility
+            const prev = file.data?.interactiveFiles || [];
+            file.data = {
+              ...file.data,
+              interactiveFiles: [...prev, ...interactiveFiles]
+            };
             const introHtml = introParagraph
               ? nodesToHtml([introParagraph])
               : '';
-
-            // Create placeholder section to be included in description HTML.
-            const placeholder = {
+            newTextNodes.push({
               type: 'html',
-              value: `<section id="interactive">${introHtml}<div id="interactive-editor-root"></div></section>`
-            };
-
-            // Reconstruct textNodes excluding interactive heading + consumed nodes, but
-            // including placeholder element node so mdastToHTML will keep ordering.
-            textNodes = [
-              ...textNodes.slice(0, interactiveIndex),
-              placeholder,
-              ...after.slice(cursor) // remaining description nodes
-            ];
-
-            file.data = {
-              ...file.data,
-              interactiveFiles
-            };
+              value: `<section id="interactive" data-interactive-index="${groupIdx}">${introHtml}<div id="interactive-editor-root-${groupIdx}" data-interactive-file-keys="${interactiveFiles
+                .map(f => f.fileKey)
+                .join(',')}"></div></section>`
+            });
+            interactiveIndexCounter += 1;
           }
+          // Advance iterator past the end marker
+          i = end;
         }
+        textNodes = newTextNodes;
       }
 
       const subSection = find(root(textNodes), isMarker);

@@ -70,6 +70,11 @@ interface ShowQuizProps {
   updateSolutionFormValues: () => void;
 }
 
+interface InteractiveRootMeta {
+  root: HTMLElement;
+  fileKeys: string[];
+}
+
 const ShowGeneric = ({
   challengeMounted,
   data: {
@@ -198,14 +203,21 @@ const ShowGeneric = ({
 
   const sceneSubject = new SceneSubject();
 
-  const [interactiveRoot, setInteractiveRoot] = useState<HTMLElement | null>(
-    null
-  );
+  const [interactiveEditors, setInteractiveEditors] = useState<
+    InteractiveRootMeta[]
+  >([]);
   useEffect(() => {
     if (typeof document !== 'undefined') {
-      setInteractiveRoot(
-        document.getElementById('interactive-editor-root') as HTMLElement
+      const nodes = Array.from(
+        document.querySelectorAll('[id^="interactive-editor-root"]')
       );
+      const metas: InteractiveRootMeta[] = nodes.map(node => {
+        const el = node as HTMLElement;
+        const data = el.getAttribute('data-interactive-file-keys') || '';
+        const fileKeys = data.split(',').filter(Boolean);
+        return { root: el, fileKeys };
+      });
+      setInteractiveEditors(metas);
     }
   }, [description]);
 
@@ -241,12 +253,21 @@ const ShowGeneric = ({
               </Col>
             )}
             {interactiveFiles &&
-              interactiveFiles.length > 0 &&
-              interactiveRoot &&
-              createPortal(
-                <InteractiveEditor files={interactiveFiles} />,
-                interactiveRoot
-              )}
+              Array.isArray(interactiveFiles) &&
+              interactiveEditors.map(({ root, fileKeys }, i) => {
+                const files = interactiveFiles.filter(f =>
+                  fileKeys.includes(f.fileKey)
+                );
+
+                if (!files.length) {
+                  return null;
+                }
+
+                return createPortal(
+                  <InteractiveEditor key={i} files={files} />,
+                  root
+                );
+              })}
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
               {videoId && (
