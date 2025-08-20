@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Spacer } from '@freecodecamp/ui';
@@ -12,6 +12,7 @@ type MultipleChoiceQuestionsProps = {
   handleOptionChange: (questionIndex: number, answerIndex: number) => void;
   submittedMcqAnswers: (number | null)[];
   showFeedback: boolean;
+  showSpeakingButton?: boolean;
 };
 
 function removeParagraphTags(text: string): string {
@@ -23,9 +24,22 @@ function MultipleChoiceQuestions({
   selectedOptions,
   handleOptionChange,
   submittedMcqAnswers,
-  showFeedback
+  showFeedback,
+  showSpeakingButton
 }: MultipleChoiceQuestionsProps): JSX.Element {
   const { t } = useTranslation();
+
+  // Modal state
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalText, setModalText] = useState('');
+
+  // Helper to strip code tags from answer text
+  function stripCodeTags(text: string): string {
+    return text.replace(/<code>(.*?)<\/code>/g, '$1');
+  }
+
+  // Use CSS for responsive modal/input width
+  // ...existing code...
 
   return (
     <>
@@ -51,36 +65,77 @@ function MultipleChoiceQuestions({
                 questions[questionIndex].solution - 1;
 
               return (
-                <React.Fragment key={answerIndex}>
-                  <label
-                    className={`video-quiz-option-label 
-                      ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''} 
-                      ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
-                    htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
+                <div
+                  key={answerIndex}
+                  style={{
+                    marginBottom: '1rem',
+                    display: 'flex',
+                    justifyContent: 'flex-end'
+                  }}
+                >
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '1rem',
+                      width: '100%'
+                    }}
                   >
-                    <input
-                      name={`mc-question-${questionIndex}`}
-                      checked={selectedOptions[questionIndex] === answerIndex}
-                      className='sr-only'
-                      onChange={() =>
-                        handleOptionChange(questionIndex, answerIndex)
-                      }
-                      type='radio'
-                      value={answerIndex}
-                      id={`mc-question-${questionIndex}-answer-${answerIndex}`}
-                    />{' '}
-                    <span className='video-quiz-input-visible'>
-                      {selectedOptions[questionIndex] === answerIndex ? (
-                        <span className='video-quiz-selected-input' />
-                      ) : null}
-                    </span>
-                    <PrismFormatted
-                      className={'video-quiz-option'}
-                      text={removeParagraphTags(answer)}
-                      useSpan
-                      noAria
-                    />
-                  </label>
+                    <label
+                      className={`video-quiz-option-label 
+                        ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''} 
+                        ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
+                      htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
+                      style={{ flex: 1 }}
+                    >
+                      <input
+                        name={`mc-question-${questionIndex}`}
+                        checked={selectedOptions[questionIndex] === answerIndex}
+                        className='sr-only'
+                        onChange={() =>
+                          handleOptionChange(questionIndex, answerIndex)
+                        }
+                        type='radio'
+                        value={answerIndex}
+                        id={`mc-question-${questionIndex}-answer-${answerIndex}`}
+                      />{' '}
+                      <span className='video-quiz-input-visible'>
+                        {selectedOptions[questionIndex] === answerIndex ? (
+                          <span className='video-quiz-selected-input' />
+                        ) : null}
+                      </span>
+                      <PrismFormatted
+                        className={'video-quiz-option'}
+                        text={removeParagraphTags(answer)}
+                        useSpan
+                        noAria
+                      />
+                    </label>
+                    {/* Speaking button right-aligned, only if showSpeakingButton is true */}
+                    {showSpeakingButton && (
+                      <div
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'flex-end'
+                        }}
+                      >
+                        <button
+                          type='button'
+                          className='btn btn-info'
+                          style={{ marginBottom: 0, minWidth: '120px' }}
+                          onClick={() => {
+                            setModalText(
+                              stripCodeTags(removeParagraphTags(answer))
+                            );
+                            setModalOpen(true);
+                          }}
+                        >
+                          Speaking
+                        </button>
+                      </div>
+                    )}
+                  </div>
                   {showFeedback && isSubmittedAnswer && (
                     <div
                       className={`video-quiz-option-label mcq-feedback ${isCorrect ? 'mcq-correct' : 'mcq-incorrect'}`}
@@ -99,14 +154,12 @@ function MultipleChoiceQuestions({
                                 : 'mcq-prism-incorrect'
                             }
                             text={removeParagraphTags(feedback)}
-                            useSpan
-                            noAria
                           />
                         </p>
                       )}
                     </div>
                   )}
-                </React.Fragment>
+                </div>
               );
             })}
           </div>
@@ -114,6 +167,88 @@ function MultipleChoiceQuestions({
         </fieldset>
       ))}
       <Spacer size='m' />
+      {/* Modal for Speaking button */}
+      {modalOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            background: 'rgba(10,10,35,0.95)', // #0a0a23 with opacity
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000
+          }}
+        >
+          <div
+            style={{
+              background: '#1b1b32',
+              borderRadius: '8px',
+              padding: '2rem',
+              minWidth: '350px',
+              maxWidth: '900px',
+              width: '100%',
+              position: 'relative',
+              boxShadow: '0 2px 16px rgba(0,0,0,0.2)',
+              color: 'white',
+              boxSizing: 'border-box'
+            }}
+          >
+            <button
+              onClick={() => setModalOpen(false)}
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                background: 'transparent',
+                border: 'none',
+                fontSize: '1.5rem',
+                cursor: 'pointer'
+              }}
+              aria-label='Close'
+            >
+              ×
+            </button>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '1rem'
+              }}
+            >
+              <label
+                htmlFor='speaking-input'
+                style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}
+              >
+                Practice Speaking:
+              </label>
+              <input
+                id='speaking-input'
+                type='text'
+                value={modalText}
+                readOnly
+                style={{
+                  width: '100%',
+                  minWidth: '350px',
+                  maxWidth: '900px',
+                  padding: '0.5rem 1.5rem',
+                  fontSize: '1rem',
+                  textAlign: 'center',
+                  background: '#0a0a23',
+                  color: 'white',
+                  border: '1px solid #444',
+                  borderRadius: '4px',
+                  boxSizing: 'border-box'
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

@@ -70,31 +70,7 @@ interface ShowQuizProps {
 }
 
 const ShowGeneric = ({
-  challengeMounted,
-  data: {
-    challengeNode: {
-      challenge: {
-        assignments,
-        bilibiliIds,
-        block,
-        blockType,
-        description,
-        explanation,
-        challengeType,
-        fields: { blockName, tests },
-        helpCategory,
-        instructions,
-        questions,
-        title,
-        transcript,
-        translationPending,
-        scene,
-        superBlock,
-        videoId,
-        videoLocaleIds
-      }
-    }
-  },
+  data,
   pageContext: { challengeMeta },
   initTests,
   updateChallengeMeta,
@@ -104,6 +80,38 @@ const ShowGeneric = ({
 }: ShowQuizProps) => {
   const { t } = useTranslation();
   const container = useRef<HTMLElement | null>(null);
+
+  // Destructure challenge properties from data.challengeNode.challenge
+  const challenge = data.challengeNode.challenge;
+  const {
+    assignments,
+    bilibiliIds,
+    block,
+    blockType,
+    description,
+    explanation,
+    challengeType,
+    fields: { blockName, tests },
+    helpCategory,
+    instructions,
+    questions,
+    title,
+    transcript,
+    translationPending,
+    scene,
+    superBlock,
+    videoId,
+    videoLocaleIds,
+    showSpeakingButton
+  } = challenge;
+
+  // Debug: log showSpeakingButton and challengeType at runtime
+  console.log(
+    'DEBUG: challengeType',
+    challengeType,
+    'showSpeakingButton',
+    showSpeakingButton
+  );
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -259,6 +267,8 @@ const ShowGeneric = ({
                 </>
               )}
 
+              {/* Optional Speaking Practice button for challengeType 19 */}
+
               {assignments.length > 0 && (
                 <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
                   <Assignments
@@ -271,13 +281,14 @@ const ShowGeneric = ({
 
               {questions.length > 0 && (
                 <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
-                  <MultipleChoiceQuestions
-                    questions={questions}
-                    selectedOptions={selectedMcqOptions}
-                    handleOptionChange={handleMcqOptionChange}
-                    submittedMcqAnswers={submittedMcqAnswers}
-                    showFeedback={showFeedback}
-                  />
+                <MultipleChoiceQuestions
+                  questions={questions}
+                  selectedOptions={selectedMcqOptions}
+                  handleOptionChange={handleMcqOptionChange}
+                  submittedMcqAnswers={submittedMcqAnswers}
+                  showFeedback={showFeedback}
+                  showSpeakingButton={showSpeakingButton}
+                />
                 </ObserveKeys>
               )}
 
@@ -394,6 +405,7 @@ export const query = graphql`
         translationPending
         videoId
         videoId
+        showSpeakingButton
         videoLocaleIds {
           espanol
           italian
