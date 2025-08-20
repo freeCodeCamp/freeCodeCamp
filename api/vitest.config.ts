@@ -9,14 +9,6 @@ export default defineConfig({
     setupFiles: ['./vitest.setup.ts'],
     testTimeout: 10000,
     hookTimeout: 10000,
-    // Force sequential execution to prevent database race conditions
-    pool: 'forks',
-    poolOptions: {
-      forks: {
-        singleFork: true
-      }
-    },
-    // Disable file-level parallelism as fallback
-    fileParallelism: false
+    pool: 'forks'
   }
 });
