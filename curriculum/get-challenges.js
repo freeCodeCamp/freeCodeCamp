@@ -503,6 +503,11 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
       COMMENT_TRANSLATIONS
     );
     challenge.translationPending = lang !== 'english' && !isAudited;
+    // Ensure showSpeakingButton is always present
+    challenge.showSpeakingButton =
+      typeof challenge.showSpeakingButton === 'boolean'
+        ? challenge.showSpeakingButton
+        : false;
     addMetaToChallenge(challenge, meta);
     fixChallengeProperties(challenge);
 

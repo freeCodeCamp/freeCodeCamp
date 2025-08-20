@@ -229,6 +229,7 @@ export type ChallengeNode = {
     title: string;
     transcript: string;
     translationPending: boolean;
+    showSpeakingButton?: boolean;
     url: string;
     usesMultifileEditor: boolean;
     videoId: string;
