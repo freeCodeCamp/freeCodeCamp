@@ -526,12 +526,13 @@ describe('userRoutes', () => {
       test('logs if it is asked to delete a non-existent user', async () => {
         const spy = vi.spyOn(fastifyTestInstance.log, 'warn');
 
-        // Execute deletions sequentially to ensure one succeeds before the other tries
-        const firstDelete = await superPost('/account/delete');
-        expect(firstDelete.status).toBe(200);
-
-        const secondDelete = await superPost('/account/delete');
-        expect(secondDelete.status).toBe(200); // Route still returns 200 even when user not found
+        // Note: this could be flaky since the log is generated if the two
+        // requests are concurrent. If they're sequential the second request
+        // will be not be authed and hence not log anything.
+        const deletePromises = Array.from({ length: 2 }, () =>
+          superPost('/account/delete')
+        );
+        await Promise.all(deletePromises);
 
         expect(spy).toHaveBeenCalledTimes(1);
         expect(spy.mock.calls[0]).toEqual(

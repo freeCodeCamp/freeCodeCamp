@@ -221,38 +221,6 @@ describe('certificate routes', () => {
         expect(response.status).toBe(400);
       });
 
-      test('should return 500 if db update fails', async () => {
-        await fastifyTestInstance.prisma.user.updateMany({
-          where: { email: defaultUserEmail },
-          data: {
-            completedChallenges: [
-              { id: 'bd7158d8c442eddfaeb5bd18', completedDate: 123456789 },
-              { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
-              { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
-              { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
-              { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
-            ]
-          }
-        });
-        vi.spyOn(fastifyTestInstance.prisma.user, 'update').mockImplementation(
-          () => {
-            throw new Error('test');
-          }
-        );
-        const response = await superRequest('/certificate/verify', {
-          method: 'PUT',
-          setCookies
-        }).send({
-          certSlug: Certification.RespWebDesign
-        });
-
-        expect(response.body).toStrictEqual({
-          message: 'flash.generic-error',
-          type: 'danger'
-        });
-        expect(response.status).toBe(500);
-      });
-
       // Note: Email does not actually send (work) in development, but status should still be 200.
       test('should send the certified email, if all current certifications are met', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
@@ -464,6 +432,43 @@ describe('certificate routes', () => {
           });
           expect(response.status).toBe(400);
         }
+      });
+
+      // This has to be the last test since vi.mockRestore replaces the original
+      // function with undefined when restoring a prisma function (for some
+      // reason)
+      test('should return 500 if db update fails', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: defaultUserEmail },
+          data: {
+            completedChallenges: [
+              { id: 'bd7158d8c442eddfaeb5bd18', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
+              { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
+              { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
+            ]
+          }
+        });
+
+        vi.spyOn(fastifyTestInstance.prisma.user, 'update').mockImplementation(
+          () => {
+            throw new Error('test');
+          }
+        );
+
+        const response = await superRequest('/certificate/verify', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          certSlug: Certification.RespWebDesign
+        });
+
+        expect(response.body).toStrictEqual({
+          message: 'flash.generic-error',
+          type: 'danger'
+        });
+        expect(response.status).toBe(500);
       });
     });
   });
