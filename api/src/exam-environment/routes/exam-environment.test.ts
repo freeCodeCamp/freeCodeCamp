@@ -21,7 +21,7 @@ jest.mock('../../utils/env', () => {
   return {
     ...jest.requireActual('../../utils/env'),
     FCC_ENABLE_EXAM_ENVIRONMENT: 'true',
-    DEPLOYMENT_ENV: 'production'
+    DEPLOYMENT_ENV: 'org'
   };
 });
 
