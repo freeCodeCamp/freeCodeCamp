@@ -157,3 +157,76 @@ input:focus-visible + .video-quiz-input-visible {
   color: var(--primary-color);
   margin: 0;
 }
+
+/* New full-width toolbar with chips on left and actions on right */
+.mcq-toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+  background: var(--primary-background);
+  border-top: 1px solid var(--tertiary-background);
+  z-index: 1000;
+}
+
+.mcq-toolbar-left {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mcq-toolbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.mcq-toolbar-gap {
+  width: 0.5rem;
+  display: inline-block;
+}
+
+.mcq-status-item {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  border: 2px solid var(--tertiary-background);
+  background: var(--secondary-background);
+  color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mcq-status-item.correct {
+  border-color: var(--success-background);
+  color: #fff;
+  background: var(--success-background);
+}
+
+.mcq-status-item.incorrect {
+  border-color: var(--danger-background);
+  color: #fff;
+  background: var(--danger-background);
+}
+
+.mcq-status-item.unanswered {
+  opacity: 0.6;
+}
+
+.mcq-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--tertiary-background);
+  display: inline-block;
+}
+
+.mcq-status-item:focus-visible {
+  outline: 3px solid var(--focus-outline-color);
+  outline-offset: 3px;
+}

@@ -163,6 +163,13 @@ const ShowGeneric = ({
 
   const [showFeedback, setShowFeedback] = useState(false);
 
+  const scrollToQuestion = (questionIndex: number) => {
+    const el = document.getElementById(`mcq-question-${questionIndex}`);
+    el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // attempt to move focus for accessibility if possible
+    el?.focus();
+  };
+
   const handleMcqOptionChange = (
     questionIndex: number,
     answerIndex: number
@@ -284,18 +291,86 @@ const ShowGeneric = ({
                 <p className='text-center'>{t('learn.answered-mcq')}</p>
               )}
 
-              <Button block={true} variant='primary' onClick={handleSubmit}>
-                {blockType === BlockTypes.review
-                  ? t('buttons.submit')
-                  : t('buttons.check-answer')}
-              </Button>
-              <Spacer size='xxs' />
-              <Button block={true} variant='primary' onClick={openHelpModal}>
-                {t('buttons.ask-for-help')}
-              </Button>
-
               <Spacer size='l' />
             </Col>
+            {questions.length > 0 && (
+              <div
+                className='mcq-toolbar'
+                role='region'
+                aria-label='Answer status and actions'
+              >
+                <div
+                  className='mcq-toolbar-left'
+                  role='status'
+                  aria-live='polite'
+                >
+                  {questions.map((q, i) => {
+                    const submitted = submittedMcqAnswers[i];
+                    const correctIndex = q.solution - 1;
+                    const status =
+                      !showFeedback || submitted === null
+                        ? 'unanswered'
+                        : submitted === correctIndex
+                          ? 'correct'
+                          : 'incorrect';
+                    return (
+                      <button
+                        key={i}
+                        type='button'
+                        className={`mcq-status-item ${status}`}
+                        onClick={() => scrollToQuestion(i)}
+                        aria-label={`Question ${i + 1}: ${status}`}
+                        title={`Question ${i + 1}: ${status}`}
+                      >
+                        {status === 'correct' ? (
+                          // check icon
+                          <svg
+                            width='18'
+                            height='18'
+                            viewBox='0 0 24 24'
+                            aria-hidden='true'
+                            focusable='false'
+                          >
+                            <path
+                              fill='currentColor'
+                              d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'
+                            />
+                          </svg>
+                        ) : status === 'incorrect' ? (
+                          // cross icon
+                          <svg
+                            width='18'
+                            height='18'
+                            viewBox='0 0 24 24'
+                            aria-hidden='true'
+                            focusable='false'
+                          >
+                            <path
+                              fill='currentColor'
+                              d='M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z'
+                            />
+                          </svg>
+                        ) : (
+                          // empty placeholder
+                          <span className='mcq-status-dot' aria-hidden='true' />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+                <div className='mcq-toolbar-right'>
+                  <Button variant='primary' onClick={openHelpModal}>
+                    {t('buttons.ask-for-help')}
+                  </Button>
+                  <span className='mcq-toolbar-gap' />
+                  <Button variant='primary' onClick={handleSubmit}>
+                    {blockType === BlockTypes.review
+                      ? t('buttons.submit')
+                      : t('buttons.check-answer')}
+                  </Button>
+                </div>
+              </div>
+            )}
             <CompletionModal />
             <HelpModal
               challengeTitle={title}

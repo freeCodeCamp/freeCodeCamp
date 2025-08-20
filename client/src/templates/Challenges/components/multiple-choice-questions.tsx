@@ -35,7 +35,11 @@ function MultipleChoiceQuestions({
         }
       />
       {questions.map((question, questionIndex) => (
-        <fieldset key={questionIndex}>
+        <fieldset
+          key={questionIndex}
+          id={`mcq-question-${questionIndex}`}
+          tabIndex={-1}
+        >
           <legend className='mcq-question-text'>
             <PrismFormatted className={'line-numbers'} text={question.text} />
           </legend>
