@@ -1,12 +1,5 @@
 import React, { useMemo } from 'react';
-import {
-  SandpackProvider,
-  SandpackLayout,
-  SandpackCodeEditor,
-  SandpackPreview,
-  SandpackThemeProvider,
-  SandpackConsole
-} from '@codesandbox/sandpack-react';
+import { Sandpack } from '@codesandbox/sandpack-react';
 import './interactive-editor.css';
 
 export interface InteractiveFile {
@@ -49,9 +42,11 @@ const InteractiveEditor = ({ files }: Props) => {
     return files.some(f => f.ext === ext);
   }
 
+  const showConsole = got('js') || got('ts');
+
   return (
     <div className='interactive-editor-wrapper'>
-      <SandpackProvider
+      <Sandpack
         template={
           got('tsx')
             ? 'react-ts'
@@ -64,27 +59,14 @@ const InteractiveEditor = ({ files }: Props) => {
                   : 'vanilla'
         }
         files={spFiles}
-        style={{ width: '100%' }}
-      >
-        <SandpackThemeProvider theme={'dark'}>
-          <SandpackLayout>
-            <SandpackCodeEditor
-              style={{ minHeight: 300 }}
-              showTabs={true}
-              showLineNumbers={true}
-            />
-            {got('html') ? (
-              <SandpackPreview
-                style={{ height: 300 }}
-                showOpenInCodeSandbox={false}
-              />
-            ) : null}
-            {got('js') || got('ts') ? (
-              <SandpackConsole standalone={!got('html')} />
-            ) : null}
-          </SandpackLayout>
-        </SandpackThemeProvider>
-      </SandpackProvider>
+        theme={'dark'}
+        options={{
+          showConsole: showConsole,
+          showConsoleButton: showConsole,
+          layout: got('html') ? 'preview' : 'console',
+          showLineNumbers: true
+        }}
+      />
     </div>
   );
 };
