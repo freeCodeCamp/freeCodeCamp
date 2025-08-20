@@ -12,7 +12,7 @@ import Fastify, {
   RawRequestDefaultExpression,
   RawServerDefault
 } from 'fastify';
-import Ajv from 'ajv';
+import { Ajv } from 'ajv';
 import addFormats from 'ajv-formats';
 
 import prismaPlugin from './db/prisma.js';
@@ -74,7 +74,7 @@ const ajv = new Ajv({
 });
 
 // add the default formatters from avj-formats
-addFormats(ajv);
+addFormats.default(ajv);
 ajv.addFormat('objectid', {
   type: 'string',
   validate: (str: string) => isObjectID(str)
