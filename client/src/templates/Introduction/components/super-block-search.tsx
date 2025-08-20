@@ -65,45 +65,40 @@ const SuperBlockSearch = ({
 
   return (
     <>
-      <Col
-        xs={12}
-        sm={8}
-        smOffset={2}
-        md={8}
-        mdOffset={2}
-        className='super-block-search-container'
-      >
-        <span className='super-block-search-magnifier'>
-          <Magnifier />
-        </span>
+      <Col xs={12} sm={8} smOffset={2} md={8} mdOffset={2}>
+        <div className='super-block-search-container'>
+          <span className='super-block-search-magnifier'>
+            <Magnifier />
+          </span>
 
-        <ControlLabel htmlFor='super-block-search-input' srOnly>
-          {t('learn.search-challenges')}
-        </ControlLabel>
-        <FormControl
-          id='super-block-search-input'
-          type='search'
-          value={searchTerm}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setSearchTerm(e.target.value);
-            handleInputChange(e.target.value);
-          }}
-          placeholder={t('learn.search-challenges')}
-        />
-
-        {searchTerm && (
-          <button
-            type='button'
-            aria-label={t('learn.clear-search')}
-            onClick={() => {
-              setSearchTerm('');
-              handleInputChange('');
+          <ControlLabel htmlFor='super-block-search-input' srOnly>
+            {t('learn.search-challenges')}
+          </ControlLabel>
+          <FormControl
+            id='super-block-search-input'
+            type='search'
+            value={searchTerm}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setSearchTerm(e.target.value);
+              handleInputChange(e.target.value);
             }}
-            className='super-block-search-reset-btn'
-          >
-            <InputReset />
-          </button>
-        )}
+            placeholder={t('learn.search-challenges')}
+          />
+
+          {searchTerm && (
+            <button
+              type='button'
+              aria-label={t('learn.clear-search')}
+              onClick={() => {
+                setSearchTerm('');
+                handleInputChange('');
+              }}
+              className='super-block-search-reset-btn'
+            >
+              <InputReset />
+            </button>
+          )}
+        </div>
       </Col>
 
       {isEmpty(filteredChallenges) && searchTerm && (
