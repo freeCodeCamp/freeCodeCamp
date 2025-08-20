@@ -286,29 +286,6 @@ describe('challengeRoutes', () => {
         expect(response.status).toBe(200);
       });
 
-      test('Should return an error response if something goes wrong', async () => {
-        vi.spyOn(
-          fastifyTestInstance.prisma.userToken,
-          'findUnique'
-        ).mockImplementationOnce(() => {
-          throw new Error('Database error');
-        });
-        const tokenResponse = await superPost('/user/user-token');
-        const token = (tokenResponse.body as { userToken: string }).userToken;
-
-        const response = await superPost('/coderoad-challenge-completed')
-          .set('coderoad-user-token', token)
-          .send({
-            tutorialId: 'freeCodeCamp/learn-celestial-bodies-database:v1.0.0'
-          });
-
-        expect(response.body).toEqual({
-          msg: 'An error occurred trying to submit the challenge',
-          type: 'error'
-        });
-        expect(response.status).toBe(500);
-      });
-
       test('Should complete project with code 200', async () => {
         const tokenResponse = await superPost('/user/user-token');
         expect(tokenResponse.body).toHaveProperty('userToken');
@@ -336,6 +313,32 @@ describe('challengeRoutes', () => {
         });
         expect(projectCompleted).toBe(true);
         expect(response.status).toBe(200);
+      });
+
+      // This has to be the last test since vi.mockRestore replaces the original
+      // function with undefined when restoring a prisma function (for some
+      // reason)
+      test('Should return an error response if something goes wrong', async () => {
+        vi.spyOn(
+          fastifyTestInstance.prisma.userToken,
+          'findUnique'
+        ).mockImplementationOnce(() => {
+          throw new Error('Database error');
+        });
+        const tokenResponse = await superPost('/user/user-token');
+        const token = (tokenResponse.body as { userToken: string }).userToken;
+
+        const response = await superPost('/coderoad-challenge-completed')
+          .set('coderoad-user-token', token)
+          .send({
+            tutorialId: 'freeCodeCamp/learn-celestial-bodies-database:v1.0.0'
+          });
+
+        expect(response.body).toEqual({
+          msg: 'An error occurred trying to submit the challenge',
+          type: 'error'
+        });
+        expect(response.status).toBe(500);
       });
 
       afterAll(async () => {

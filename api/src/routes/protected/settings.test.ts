@@ -513,38 +513,6 @@ Please wait 5 minutes to resend an authentication link.`
         });
       });
 
-      test('PUT sends an email to the new email address', async () => {
-        vi.spyOn(
-          fastifyTestInstance.prisma.authToken,
-          'create'
-        ).mockImplementationOnce(() =>
-          // @ts-expect-error This is a mock implementation, all we're
-          // interested in is the id.
-          Promise.resolve({
-            id: '123'
-          })
-        );
-        await superPut('/update-my-email').send({
-          email: unusedEmailOne
-        });
-
-        const expectedLink = `${API_LOCATION}/confirm-email?email=${Buffer.from(unusedEmailOne).toString('base64')}&token=123&emailChange=true`;
-        expect(sendEmailSpy).toHaveBeenCalledWith({
-          from: 'team@freecodecamp.org',
-          to: unusedEmailOne,
-          subject:
-            'Please confirm your updated email address for freeCodeCamp.org',
-          text: `Please confirm this email address for freeCodeCamp.org:
-
-${expectedLink}
-
-Happy coding!
-
-- The freeCodeCamp.org Team
-`
-        });
-      });
-
       test('PUT creates an auth token record for the requesting user', async () => {
         // Reset user state to avoid rate limiting from previous tests
         await fastifyTestInstance.prisma.user.update({
@@ -575,6 +543,41 @@ Happy coding!
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           id: expect.any(String),
           userId: defaultUserId
+        });
+      });
+
+      // This has to be the last test since vi.mockRestore replaces the original
+      // function with undefined when restoring a prisma function (for some
+      // reason)
+      test('PUT sends an email to the new email address', async () => {
+        vi.spyOn(
+          fastifyTestInstance.prisma.authToken,
+          'create'
+        ).mockImplementationOnce(() =>
+          // @ts-expect-error This is a mock implementation, all we're
+          // interested in is the id.
+          Promise.resolve({
+            id: '123'
+          })
+        );
+        await superPut('/update-my-email').send({
+          email: unusedEmailOne
+        });
+
+        const expectedLink = `${API_LOCATION}/confirm-email?email=${Buffer.from(unusedEmailOne).toString('base64')}&token=123&emailChange=true`;
+        expect(sendEmailSpy).toHaveBeenCalledWith({
+          from: 'team@freecodecamp.org',
+          to: unusedEmailOne,
+          subject:
+            'Please confirm your updated email address for freeCodeCamp.org',
+          text: `Please confirm this email address for freeCodeCamp.org:
+
+${expectedLink}
+
+Happy coding!
+
+- The freeCodeCamp.org Team
+`
         });
       });
     });
