@@ -165,10 +165,18 @@ const SuperBlockIntroductionPage = ({
           .toLowerCase()
           .replace(/\s+/g, ' ');
 
+        const blockDescription = t(
+          `intro:${superBlock}.blocks.${challenge.block}.intro`,
+          { joinArrays: ' ' }
+        )
+          .toLowerCase()
+          .replace(/\s+/g, ' ');
+
         const challengeTitle = challenge.title.toLowerCase();
 
         return (
           blockTitle.includes(trimmed.toLowerCase()) ||
+          blockDescription.includes(trimmed.toLowerCase()) ||
           challengeTitle.includes(trimmed.toLowerCase())
         );
       });
