@@ -1,119 +1,81 @@
 import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FormControl, ControlLabel, Col, Spacer } from '@freecodecamp/ui';
-import { debounce, isEmpty } from 'lodash-es';
+import { debounce } from 'lodash-es';
 
 import Magnifier from '../../../assets/icons/magnifier';
 import InputReset from '../../../assets/icons/input-reset';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
-import type { ChallengeNode } from '../../../redux/prop-types';
+
 import './super-block-search.css';
 
 interface SuperBlockSearchProps {
-  superBlockChallenges: ChallengeNode['challenge'][];
-  superBlock: SuperBlocks;
-  onFilter: (filtered: ChallengeNode['challenge'][]) => void;
+  onSearch: (term: string) => void;
+  filteredCount: number;
 }
 
 const SuperBlockSearch = ({
-  superBlockChallenges,
-  superBlock,
-  onFilter
+  onSearch,
+  filteredCount
 }: SuperBlockSearchProps) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredChallenges, setFilteredChallenges] =
-    useState(superBlockChallenges);
 
   const { t } = useTranslation();
 
-  const searchResultsMessage = isEmpty(filteredChallenges)
-    ? t('learn.super-block-search-results', {
-        term: searchTerm,
-        resultCount: filteredChallenges.length
-      })
-    : t('learn.super-block-search-no-results', { term: searchTerm });
-
-  const handleInputChange = useMemo(
-    () =>
-      debounce((term: string) => {
-        if (term.trim() === '') {
-          return superBlockChallenges;
-        }
-
-        const filtered = superBlockChallenges.filter(challenge => {
-          const blockTitle = t(
-            `intro:${superBlock}.blocks.${challenge.block}.title`,
-            challenge.title
-          ).toLowerCase();
-          const challengeTitle = challenge.title.toLowerCase();
-
-          if (
-            blockTitle.includes(term.toLowerCase()) ||
-            challengeTitle.includes(term.toLowerCase())
-          ) {
-            return true;
-          }
-
-          return false;
+  const searchResultsMessage =
+    filteredCount === 0
+      ? t('learn.super-block-search-no-results', { term: searchTerm })
+      : t('learn.super-block-search-results', {
+          term: searchTerm,
+          resultCount: filteredCount
         });
 
-        setFilteredChallenges(filtered);
-        onFilter(filtered);
-      }, 300),
-    [superBlockChallenges, t, superBlock, onFilter]
+  const handleInputChange = useMemo(
+    () => debounce((term: string) => onSearch(term), 300),
+    [onSearch]
   );
 
   return (
-    <>
-      <Col xs={12} sm={8} smOffset={2} md={8} mdOffset={2}>
-        <div className='super-block-search-container'>
-          <span className='super-block-search-magnifier'>
-            <Magnifier />
-          </span>
+    <Col xs={12} sm={8} smOffset={2} md={8} mdOffset={2}>
+      <div className='super-block-search-container'>
+        <span className='super-block-search-magnifier'>
+          <Magnifier />
+        </span>
 
-          <ControlLabel htmlFor='super-block-search-input' srOnly>
-            {t('learn.search-challenges')}
-          </ControlLabel>
-          <FormControl
-            id='super-block-search-input'
-            type='search'
-            value={searchTerm}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              setSearchTerm(e.target.value);
-              handleInputChange(e.target.value);
+        <ControlLabel htmlFor='super-block-search-input' srOnly>
+          {t('learn.search-challenges')}
+        </ControlLabel>
+        <FormControl
+          id='super-block-search-input'
+          type='search'
+          value={searchTerm}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            setSearchTerm(e.target.value);
+            handleInputChange(e.target.value);
+          }}
+          placeholder={t('learn.search-challenges')}
+        />
+
+        {searchTerm && (
+          <button
+            type='button'
+            aria-label={t('learn.clear-search')}
+            onClick={() => {
+              setSearchTerm('');
+              handleInputChange('');
             }}
-            placeholder={t('learn.search-challenges')}
-          />
+            className='super-block-search-reset-btn'
+          >
+            <InputReset />
+          </button>
+        )}
+      </div>
 
-          {searchTerm && (
-            <button
-              type='button'
-              aria-label={t('learn.clear-search')}
-              onClick={() => {
-                setSearchTerm('');
-                handleInputChange('');
-              }}
-              className='super-block-search-reset-btn'
-            >
-              <InputReset />
-            </button>
-          )}
-        </div>
-      </Col>
+      <Spacer size='xs' />
 
-      {isEmpty(filteredChallenges) && searchTerm && (
-        <>
-          <Spacer size='m' />
-          <p className='text-center'>
-            {t('learn.super-block-search-no-results', { term: searchTerm })}
-          </p>
-        </>
-      )}
-
-      <div aria-live='polite' aria-atomic='true' className='sr-only'>
+      <div aria-live='polite' aria-atomic='true'>
         {searchTerm ? searchResultsMessage : ''}
       </div>
-    </>
+    </Col>
   );
 };
 

@@ -2,7 +2,7 @@ import i18next from 'i18next';
 import { WindowLocation } from '@gatsbyjs/reach-router';
 import { graphql } from 'gatsby';
 import { uniq, isEmpty, last } from 'lodash-es';
-import React, { useEffect, memo, useMemo, useState } from 'react';
+import React, { useEffect, memo, useMemo, useState, useCallback } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -148,6 +148,36 @@ const SuperBlockIntroductionPage = ({
   const [filteredSuperBlockChallenges, setFilteredSuperBlockChallenges] =
     useState<ChallengeNode['challenge'][]>(superBlockChallenges);
 
+  const handleSuperBlockSearch = useCallback(
+    (term: string) => {
+      const trimmed = term.trim();
+
+      if (trimmed === '') {
+        setFilteredSuperBlockChallenges(superBlockChallenges);
+        return;
+      }
+
+      const filtered = superBlockChallenges.filter(challenge => {
+        const blockTitle = t(
+          `intro:${superBlock}.blocks.${challenge.block}.title`,
+          challenge.title
+        )
+          .toLowerCase()
+          .replace(/\s+/g, ' ');
+
+        const challengeTitle = challenge.title.toLowerCase();
+
+        return (
+          blockTitle.includes(trimmed.toLowerCase()) ||
+          challengeTitle.includes(trimmed.toLowerCase())
+        );
+      });
+
+      setFilteredSuperBlockChallenges(filtered);
+    },
+    [superBlockChallenges, setFilteredSuperBlockChallenges, superBlock, t]
+  );
+
   const blocks = uniq(superBlockChallenges.map(({ block }) => block));
 
   const completedChallenges = useMemo(
@@ -248,9 +278,8 @@ const SuperBlockIntroductionPage = ({
               <Spacer size='m' />
 
               <SuperBlockSearch
-                superBlockChallenges={superBlockChallenges}
-                superBlock={superBlock}
-                onFilter={setFilteredSuperBlockChallenges}
+                onSearch={handleSuperBlockSearch}
+                filteredCount={filteredSuperBlockChallenges.length}
               />
 
               <Spacer size='m' />
