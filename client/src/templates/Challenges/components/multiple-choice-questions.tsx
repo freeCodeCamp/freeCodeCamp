@@ -65,28 +65,21 @@ function MultipleChoiceQuestions({
                 questions[questionIndex].solution - 1;
 
               return (
-                <div
-                  key={answerIndex}
-                  style={{
-                    marginBottom: '1rem',
-                    display: 'flex',
-                    justifyContent: 'flex-end'
-                  }}
-                >
-                  <div
+                <React.Fragment key={answerIndex}>
+                  <label
+                    className={`video-quiz-option-label 
+                      ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''} 
+                      ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
+                    htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
                     style={{
+                      margin: 0,
                       display: 'flex',
-                      alignItems: 'center',
-                      gap: '1rem',
-                      width: '100%'
+                      justifyContent: 'space-between',
+                      alignItems: 'center'
                     }}
                   >
-                    <label
-                      className={`video-quiz-option-label 
-                        ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''} 
-                        ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
-                      htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
-                      style={{ flex: 1 }}
+                    <span
+                      style={{ flex: 1, display: 'flex', alignItems: 'center' }}
                     >
                       <input
                         name={`mc-question-${questionIndex}`}
@@ -110,20 +103,20 @@ function MultipleChoiceQuestions({
                         useSpan
                         noAria
                       />
-                    </label>
+                    </span>
                     {/* Speaking button right-aligned, only if showSpeakingButton is true */}
                     {showSpeakingButton && (
-                      <div
+                      <span
                         style={{
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'flex-end'
+                          marginRight: '8px',
+                          marginTop: '2px',
+                          marginBottom: '2px'
                         }}
                       >
                         <button
                           type='button'
                           className='btn btn-info'
-                          style={{ marginBottom: 0, minWidth: '120px' }}
+                          style={{ minWidth: '120px' }}
                           onClick={() => {
                             setModalText(
                               stripCodeTags(removeParagraphTags(answer))
@@ -133,9 +126,9 @@ function MultipleChoiceQuestions({
                         >
                           Speaking
                         </button>
-                      </div>
+                      </span>
                     )}
-                  </div>
+                  </label>
                   {showFeedback && isSubmittedAnswer && (
                     <div
                       className={`video-quiz-option-label mcq-feedback ${isCorrect ? 'mcq-correct' : 'mcq-incorrect'}`}
@@ -159,7 +152,7 @@ function MultipleChoiceQuestions({
                       )}
                     </div>
                   )}
-                </div>
+                </React.Fragment>
               );
             })}
           </div>
