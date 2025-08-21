@@ -111,7 +111,8 @@ function buildBlock(foundChallenges, meta) {
   });
 
   return {
-    challenges
+    challenges,
+    meta
   };
 }
 

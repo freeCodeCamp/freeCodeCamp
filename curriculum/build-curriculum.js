@@ -379,6 +379,7 @@ module.exports = {
   buildCurriculum,
   getContentDir,
   getBlockCreator,
+  getBlockStructure,
   getSuperblockStructure,
   createCommentMap
 };

@@ -357,6 +357,20 @@ describe('buildSuperblock pure functions', () => {
         'Challenge 1 (Challenge 1) not found in block'
       );
     });
+
+    test('should return the passed in meta', () => {
+      const foundChallenges = [{ id: '1', title: 'Challenge 1' }];
+
+      const meta = {
+        name: 'Test Block',
+        dashedName: 'test-block',
+        challengeOrder: [{ id: '1', title: 'Challenge 1' }]
+      };
+
+      const result = buildBlock(foundChallenges, meta);
+
+      expect(result.meta).toEqual(meta);
+    });
   });
 
   describe('addMetaToChallenge', () => {

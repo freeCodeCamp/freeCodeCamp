@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
+import { omit } from 'lodash';
 import { submitTypes } from '../../../shared/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared/config/curriculum';
@@ -315,7 +316,7 @@ export function buildExtCurriculumDataV2(
                     const blockData = blocksWithData[block];
                     return {
                       intro: superBlockIntros.blocks[block].intro,
-                      meta: blockData.meta
+                      meta: omit(blockData.meta, ['chapter', 'module'])
                     };
                   })
           }))
