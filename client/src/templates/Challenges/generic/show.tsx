@@ -9,6 +9,7 @@ import store from 'store';
 import { YouTubeEvent } from 'react-youtube';
 
 // Local Utilities
+import { ObserveKeys } from 'react-hotkeys';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -267,19 +268,21 @@ const ShowGeneric = ({
               )}
 
               {questions.length > 0 && (
-                <MultipleChoiceQuestions
-                  questions={questions}
-                  selectedOptions={selectedMcqOptions}
-                  handleOptionChange={handleMcqOptionChange}
-                  submittedMcqAnswers={submittedMcqAnswers}
-                  showFeedback={showFeedback}
-                  showSpeakingButton={showSpeakingButton}
-                  challengeData={{
-                    audio: {
-                      filename: scene?.setup?.audio?.filename
-                    }
-                  }}
-                />
+                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                  <MultipleChoiceQuestions
+                    questions={questions}
+                    selectedOptions={selectedMcqOptions}
+                    handleOptionChange={handleMcqOptionChange}
+                    submittedMcqAnswers={submittedMcqAnswers}
+                    showFeedback={showFeedback}
+                    showSpeakingButton={showSpeakingButton}
+                    challengeData={{
+                      audio: {
+                        filename: scene?.setup?.audio?.filename
+                      }
+                    }}
+                  />
+                </ObserveKeys>
               )}
 
               {explanation ? (

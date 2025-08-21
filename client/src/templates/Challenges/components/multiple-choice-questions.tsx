@@ -38,6 +38,7 @@ function MultipleChoiceQuestions({
 
   const [modalOpen, setModalOpen] = useState(false);
   const [modalText, setModalText] = useState('');
+  const [modalAnswerIndex, setModalAnswerIndex] = useState<number>(0);
 
   function stripCodeTags(text: string): string {
     return text.replace(/<code>(.*?)<\/code>/g, '$1');
@@ -130,6 +131,7 @@ function MultipleChoiceQuestions({
                             setModalText(
                               stripCodeTags(removeParagraphTags(answer))
                             );
+                            setModalAnswerIndex(answerIndex);
                             setModalOpen(true);
                           }}
                         >
@@ -174,6 +176,7 @@ function MultipleChoiceQuestions({
         onClose={() => setModalOpen(false)}
         sentence={modalText}
         audioUrl={audioUrl}
+        answerIndex={modalAnswerIndex}
       />
     </>
   );

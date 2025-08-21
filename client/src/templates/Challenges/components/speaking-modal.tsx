@@ -6,6 +6,7 @@ interface SpeakingModalProps {
   onClose: () => void;
   sentence: string;
   audioUrl?: string;
+  answerIndex?: number;
 }
 
 interface ComparisonWord {
@@ -58,7 +59,8 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
   open,
   onClose,
   sentence,
-  audioUrl
+  audioUrl,
+  answerIndex
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
@@ -211,6 +213,13 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
       return;
     }
 
+    // Construct the modified audio URL with SP + answer number
+    let modifiedAudioUrl = audioUrl;
+    if (answerIndex !== undefined) {
+      const answerNumber = answerIndex + 1; // Convert 0-based index to 1-based
+      modifiedAudioUrl = audioUrl.replace(/\.mp3$/, `SP${answerNumber}.mp3`);
+    }
+
     try {
       setIsPlaying(true);
       setAudioError('');
@@ -220,25 +229,16 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
         audioRef.current.pause();
       }
 
-      const audio = new Audio(audioUrl);
+      const audio = new Audio(modifiedAudioUrl);
       audioRef.current = audio;
 
       audio.addEventListener('loadeddata', () => {
         setFeedback('Playing audio...');
-        audio.currentTime = 37; // Start at 37 seconds
       });
 
       audio.addEventListener('ended', () => {
         setIsPlaying(false);
         setFeedback('Audio finished playing.');
-      });
-
-      audio.addEventListener('timeupdate', () => {
-        if (audio.currentTime >= 39) {
-          audio.pause();
-          setIsPlaying(false);
-          setFeedback('Audio finished playing (37-39 seconds).');
-        }
       });
 
       audio.addEventListener('error', e => {
