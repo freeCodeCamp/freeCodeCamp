@@ -4759,7 +4759,7 @@
       },
       "lab-counting-cards": {
         "title": "Build a Card Counting Assistant",
-        "intro": ["In this lab you will use Javascript to count dealt cards."]
+        "intro": ["In this lab you will use JavaScript to count dealt cards."]
       }
     }
   },
