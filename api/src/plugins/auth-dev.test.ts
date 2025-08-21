@@ -8,7 +8,7 @@ import {
 } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 
-import { checkCanConnectToDb, defaultUserEmail } from '../../jest.utils';
+import { checkCanConnectToDb, defaultUserEmail } from '../../vitest.utils';
 import { HOME_LOCATION } from '../utils/env';
 import { devAuth } from '../plugins/auth-dev';
 import prismaPlugin from '../db/prisma';
