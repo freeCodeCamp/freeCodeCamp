@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Spacer } from '@freecodecamp/ui';
 import { Question } from '../../../redux/prop-types';
+import SpeakingModal from './speaking-modal';
 import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';
 
@@ -32,6 +33,15 @@ function MultipleChoiceQuestions({
   // Modal state
   const [modalOpen, setModalOpen] = useState(false);
   const [modalText, setModalText] = useState('');
+  // Placeholder handlers for Play and Record
+  const handlePlay = () => {
+    // TODO: Play sentence logic
+  };
+  const handleRecord = () => {
+    // TODO: Record/Stop logic
+  };
+  // Placeholder feedback
+  const [feedback, _setFeedback] = useState<string>('');
 
   // Helper to strip code tags from answer text
   function stripCodeTags(text: string): string {
@@ -160,143 +170,14 @@ function MultipleChoiceQuestions({
         </fieldset>
       ))}
       <Spacer size='m' />
-      {/* Modal for Speaking button */}
-      {modalOpen && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            background: 'rgba(10,10,35,0.95)', // #0a0a23 with opacity
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 1000
-          }}
-        >
-          <div
-            style={{
-              background: '#1b1b32',
-              borderRadius: '8px',
-              padding: '2rem',
-              minWidth: '350px',
-              maxWidth: '900px',
-              width: '100%',
-              position: 'relative',
-              boxShadow: '0 2px 16px rgba(0,0,0,0.2)',
-              color: 'white',
-              boxSizing: 'border-box'
-            }}
-          >
-            <button
-              onClick={() => setModalOpen(false)}
-              style={{
-                position: 'absolute',
-                top: '1rem',
-                right: '1rem',
-                background: 'transparent',
-                border: 'none',
-                fontSize: '1.5rem',
-                cursor: 'pointer'
-              }}
-              aria-label='Close'
-            >
-              ×
-            </button>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '1rem',
-                width: '100%'
-              }}
-            >
-              <label
-                htmlFor='speaking-input'
-                style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}
-              >
-                Practice Speaking:
-              </label>
-              <div
-                style={{ display: 'flex', alignItems: 'center', width: '100%' }}
-              >
-                <input
-                  id='speaking-input'
-                  type='text'
-                  value={modalText}
-                  readOnly
-                  style={{
-                    width: '100%',
-                    minWidth: '350px',
-                    maxWidth: '900px',
-                    padding: '0.5rem 1.5rem',
-                    fontSize: '1rem',
-                    textAlign: 'center',
-                    background: '#0a0a23',
-                    color: 'white',
-                    border: '1px solid #444',
-                    borderRadius: '4px',
-                    boxSizing: 'border-box'
-                  }}
-                />
-                <button
-                  type='button'
-                  className='btn btn-secondary'
-                  style={{
-                    marginLeft: '1rem',
-                    minWidth: '80px',
-                    height: '40px'
-                  }}
-                  onClick={() => {
-                    /* TODO: Play sentence logic */
-                  }}
-                >
-                  Play
-                </button>
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  width: '100%',
-                  marginTop: '1.5rem'
-                }}
-              >
-                <button
-                  type='button'
-                  className='btn btn-danger'
-                  style={{
-                    minWidth: '120px',
-                    height: '48px',
-                    fontSize: '1.1rem'
-                  }}
-                  onClick={() => {
-                    /* TODO: Record/Stop logic */
-                  }}
-                >
-                  Record / Stop
-                </button>
-              </div>
-              <div
-                style={{
-                  width: '100%',
-                  marginTop: '2rem',
-                  minHeight: '2.5rem',
-                  textAlign: 'center',
-                  color: '#ffd700',
-                  fontSize: '1.1rem'
-                }}
-              >
-                {/* TODO: Show feedback after utterance analysis */}
-                Feedback will appear here.
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <SpeakingModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        sentence={modalText}
+        onPlay={handlePlay}
+        onRecord={handleRecord}
+        feedback={feedback || 'Feedback will appear here.'}
+      />
     </>
   );
 }
