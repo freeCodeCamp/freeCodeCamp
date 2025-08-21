@@ -9,7 +9,8 @@ import {
   afterEach,
   beforeAll,
   afterAll,
-  vi
+  vi,
+  MockInstance
 } from 'vitest';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { DailyCodingChallengeLanguage, type Prisma } from '@prisma/client';
@@ -885,9 +886,8 @@ describe('userRoutes', () => {
     });
 
     describe('/user/report-user', () => {
-      let sendEmailSpy: ReturnType<typeof vi.spyOn>;
+      let sendEmailSpy: MockInstance;
       beforeEach(() => {
-        // @ts-expect-error - simplified mock implementation
         sendEmailSpy = vi
           .spyOn(fastifyTestInstance, 'sendEmail')
           .mockImplementation(vi.fn());

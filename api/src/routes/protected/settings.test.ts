@@ -6,7 +6,8 @@ import {
   beforeAll,
   afterEach,
   beforeEach,
-  vi
+  vi,
+  MockInstance
 } from 'vitest';
 import {
   devLogin,
@@ -355,7 +356,7 @@ describe('settingRoutes', () => {
     });
 
     describe('/update-my-email', () => {
-      let sendEmailSpy: ReturnType<typeof vi.spyOn>;
+      let sendEmailSpy: MockInstance;
       beforeEach(async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: developerUserEmail },
@@ -367,7 +368,6 @@ describe('settingRoutes', () => {
           }
         });
 
-        // @ts-expect-error - simplified mock implementation
         sendEmailSpy = vi
           .spyOn(fastifyTestInstance, 'sendEmail')
           .mockImplementationOnce(vi.fn());

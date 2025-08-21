@@ -6,7 +6,8 @@ import {
   afterAll,
   beforeEach,
   afterEach,
-  vi
+  vi,
+  MockInstance
 } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 
@@ -81,8 +82,8 @@ describe('auth0 plugin', () => {
 
   describe('GET /auth/auth0/callback', () => {
     const email = 'new@user.com';
-    let getAccessTokenFromAuthorizationCodeFlowSpy: ReturnType<typeof vi.spyOn>;
-    let userinfoSpy: ReturnType<typeof vi.spyOn>;
+    let getAccessTokenFromAuthorizationCodeFlowSpy: MockInstance;
+    let userinfoSpy: MockInstance;
 
     const mockAuthSuccess = () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
@@ -92,12 +93,10 @@ describe('auth0 plugin', () => {
     };
 
     beforeEach(() => {
-      // @ts-expect-error - spy type doesn't match exact function signature
       getAccessTokenFromAuthorizationCodeFlowSpy = vi.spyOn(
         fastify.auth0OAuth,
         'getAccessTokenFromAuthorizationCodeFlow'
       );
-      // @ts-expect-error - spy type doesn't match exact function signature
       userinfoSpy = vi.spyOn(fastify.auth0OAuth, 'userinfo');
       // @ts-expect-error - Only mocks part of the Sentry object.
       fastify.Sentry = { captureException: () => '' };
