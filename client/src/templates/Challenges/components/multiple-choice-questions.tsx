@@ -30,26 +30,12 @@ function MultipleChoiceQuestions({
 }: MultipleChoiceQuestionsProps): JSX.Element {
   const { t } = useTranslation();
 
-  // Modal state
   const [modalOpen, setModalOpen] = useState(false);
   const [modalText, setModalText] = useState('');
-  // Placeholder handlers for Play and Record
-  const handlePlay = () => {
-    // TODO: Play sentence logic
-  };
-  const handleRecord = () => {
-    // TODO: Record/Stop logic
-  };
-  // Placeholder feedback
-  const [feedback, _setFeedback] = useState<string>('');
 
-  // Helper to strip code tags from answer text
   function stripCodeTags(text: string): string {
     return text.replace(/<code>(.*?)<\/code>/g, '$1');
   }
-
-  // Use CSS for responsive modal/input width
-  // ...existing code...
 
   return (
     <>
@@ -114,7 +100,6 @@ function MultipleChoiceQuestions({
                         noAria
                       />
                     </span>
-                    {/* Speaking button right-aligned, only if showSpeakingButton is true */}
                     {showSpeakingButton && (
                       <span
                         style={{
@@ -174,9 +159,6 @@ function MultipleChoiceQuestions({
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         sentence={modalText}
-        onPlay={handlePlay}
-        onRecord={handleRecord}
-        feedback={feedback || 'Feedback will appear here.'}
       />
     </>
   );
