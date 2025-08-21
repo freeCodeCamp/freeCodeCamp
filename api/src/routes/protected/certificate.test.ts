@@ -182,14 +182,6 @@ describe('certificate routes', () => {
         });
 
         expect(response.status).toBe(200);
-
-        // Clean up state for subsequent tests
-        await fastifyTestInstance.prisma.user.updateMany({
-          where: { email: defaultUserEmail },
-          data: {
-            isRespWebDesignCert: false
-          }
-        });
       });
 
       test('should return 400 if not all requirements have been met to claim', async () => {
@@ -249,16 +241,6 @@ describe('certificate routes', () => {
           }
         });
 
-        // Force complete reset to ensure clean state
-        await fastifyTestInstance.prisma.user.updateMany({
-          where: { email: defaultUserEmail },
-          data: {
-            name: 'Test User',
-            email: defaultUserEmail,
-            emailVerified: true
-          }
-        });
-
         const spy = vi.spyOn(fastifyTestInstance, 'sendEmail');
 
         const response = await superRequest('/certificate/verify', {
@@ -284,16 +266,6 @@ describe('certificate routes', () => {
               { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
             ],
             isRespWebDesignCert: false
-          }
-        });
-
-        // Force complete reset to ensure clean state
-        await fastifyTestInstance.prisma.user.updateMany({
-          where: { email: defaultUserEmail },
-          data: {
-            name: 'Test User',
-            email: defaultUserEmail,
-            emailVerified: true
           }
         });
 
