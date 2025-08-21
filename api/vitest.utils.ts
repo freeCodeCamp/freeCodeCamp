@@ -187,48 +187,27 @@ export function setupServer(): void {
     // to save time, we create all other indexes so we don't need to invoke
     // `prisma db push` (which is relatively slow).
 
-    // Create indexes with retry logic to handle database conflicts
-    for (const { collection, indexes } of indexData) {
-      let retryCount = 0;
-      const maxRetries = 3;
-
-      while (retryCount < maxRetries) {
-        try {
-          await fastify.prisma.$runCommandRaw({
-            createIndexes: collection,
-            indexes
-          });
-          break; // Success, exit retry loop
-        } catch (error) {
-          retryCount++;
-
-          if (
-            error instanceof Error &&
-            error.message.includes('DatabaseDropPending') &&
-            retryCount < maxRetries
-          ) {
-            // Wait for database drop to complete
-            await new Promise(resolve => setTimeout(resolve, 100 * retryCount));
-            continue;
-          }
-
-          // For non-retryable errors or if we're out of retries, throw
-          throw error;
-        }
-      }
-    }
+    await Promise.all(
+      indexData.map(async ({ collection, indexes }) => {
+        await fastify.prisma.$runCommandRaw({
+          createIndexes: collection,
+          indexes
+        });
+      })
+    );
 
     global.fastifyTestInstance = fastify;
     // allow a little time to setup the db
-  }, 15000); // Increased timeout to account for retries
+  }, 10000);
 
   afterAll(async () => {
     if (!global.fastifyTestInstance)
       throw Error(`fastifyTestInstance was not created. Typically this means that something went wrong when building the fastify instance.
 If you are seeing this error, the root cause is likely an error thrown in the beforeAll hook.`);
-
     await fastifyTestInstance.prisma.$runCommandRaw({ dropDatabase: 1 });
 
+    // Due to a prisma bug, this is not enough, we need to --force-exit jest:
+    // https://github.com/prisma/prisma/issues/18146
     await fastifyTestInstance.close();
   });
 }
@@ -237,60 +216,27 @@ export const defaultUserId = '64c7810107dd4782d32baee7';
 export const defaultUserEmail = 'foo@bar.com';
 export const defaultUsername = 'fcc-test-user';
 
-/**
- * Comprehensive database reset for test isolation
- * Clears all tables and recreates default test user
- */
 export const resetDefaultUser = async (): Promise<void> => {
-  const maxRetries = 3;
-  let retryCount = 0;
-
-  while (retryCount < maxRetries) {
-    try {
-      // Comprehensive database cleanup in transaction
-      await fastifyTestInstance.prisma.$transaction([
-        // Clear all tables in dependency order (child tables first)
-        fastifyTestInstance.prisma.authToken.deleteMany(),
-        fastifyTestInstance.prisma.userToken.deleteMany(),
-        fastifyTestInstance.prisma.msUsername.deleteMany(),
-        fastifyTestInstance.prisma.survey.deleteMany(),
-        fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.deleteMany(),
-        fastifyTestInstance.prisma.user.deleteMany()
-      ]);
-
-      // Small delay to ensure deletion is complete
-      await new Promise(resolve => setTimeout(resolve, 10));
-
-      // Create the default user
-      await fastifyTestInstance.prisma.user.create({
-        data: {
-          ...createUserInput(defaultUserEmail),
-          id: defaultUserId,
-          username: defaultUsername
-        }
-      });
-
-      // If we get here, the operation succeeded
-      return;
-    } catch (error) {
-      retryCount++;
-
-      // If it's a unique constraint error and we have retries left, wait and try again
-      if (
-        error instanceof Error &&
-        error.message.includes('Unique constraint failed') &&
-        retryCount < maxRetries
-      ) {
-        // Exponential backoff: 50ms, 100ms, 200ms
-        const delay = 50 * Math.pow(2, retryCount - 1);
-        await new Promise(resolve => setTimeout(resolve, delay));
-        continue;
-      }
-
-      // If it's not a retryable error or we're out of retries, throw
-      throw error;
+  await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.deleteMany(
+    {
+      where: { userId: defaultUserId }
     }
-  }
+  );
+  await fastifyTestInstance.prisma.user.deleteMany({
+    where: { id: defaultUserId }
+  });
+
+  await fastifyTestInstance.prisma.user.deleteMany({
+    where: { email: defaultUserEmail }
+  });
+
+  await fastifyTestInstance.prisma.user.create({
+    data: {
+      ...createUserInput(defaultUserEmail),
+      id: defaultUserId,
+      username: defaultUsername
+    }
+  });
 };
 
 export async function devLogin(): Promise<string[]> {
