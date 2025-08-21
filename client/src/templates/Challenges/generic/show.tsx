@@ -271,19 +271,19 @@ const ShowGeneric = ({
 
               {questions.length > 0 && (
                 <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
-                <MultipleChoiceQuestions
-                  questions={questions}
-                  selectedOptions={selectedMcqOptions}
-                  handleOptionChange={handleMcqOptionChange}
-                  submittedMcqAnswers={submittedMcqAnswers}
-                  showFeedback={showFeedback}
-                  showSpeakingButton={showSpeakingButton}
-                  challengeData={{
-                    audio: {
-                      filename: scene?.setup?.audio?.filename
-                    }
-                  }}
-                />
+                  <MultipleChoiceQuestions
+                    questions={questions}
+                    selectedOptions={selectedMcqOptions}
+                    handleOptionChange={handleMcqOptionChange}
+                    submittedMcqAnswers={submittedMcqAnswers}
+                    showFeedback={showFeedback}
+                    showSpeakingButton={showSpeakingButton}
+                    challengeData={{
+                      audio: {
+                        filename: scene?.setup?.audio?.filename
+                      }
+                    }}
+                  />
                 </ObserveKeys>
               )}
 
