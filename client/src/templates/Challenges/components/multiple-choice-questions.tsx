@@ -210,7 +210,8 @@ function MultipleChoiceQuestions({
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: '1rem'
+                gap: '1rem',
+                width: '100%'
               }}
             >
               <label
@@ -219,25 +220,79 @@ function MultipleChoiceQuestions({
               >
                 Practice Speaking:
               </label>
-              <input
-                id='speaking-input'
-                type='text'
-                value={modalText}
-                readOnly
+              <div
+                style={{ display: 'flex', alignItems: 'center', width: '100%' }}
+              >
+                <input
+                  id='speaking-input'
+                  type='text'
+                  value={modalText}
+                  readOnly
+                  style={{
+                    width: '100%',
+                    minWidth: '350px',
+                    maxWidth: '900px',
+                    padding: '0.5rem 1.5rem',
+                    fontSize: '1rem',
+                    textAlign: 'center',
+                    background: '#0a0a23',
+                    color: 'white',
+                    border: '1px solid #444',
+                    borderRadius: '4px',
+                    boxSizing: 'border-box'
+                  }}
+                />
+                <button
+                  type='button'
+                  className='btn btn-secondary'
+                  style={{
+                    marginLeft: '1rem',
+                    minWidth: '80px',
+                    height: '40px'
+                  }}
+                  onClick={() => {
+                    /* TODO: Play sentence logic */
+                  }}
+                >
+                  Play
+                </button>
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  width: '100%',
+                  marginTop: '1.5rem'
+                }}
+              >
+                <button
+                  type='button'
+                  className='btn btn-danger'
+                  style={{
+                    minWidth: '120px',
+                    height: '48px',
+                    fontSize: '1.1rem'
+                  }}
+                  onClick={() => {
+                    /* TODO: Record/Stop logic */
+                  }}
+                >
+                  Record / Stop
+                </button>
+              </div>
+              <div
                 style={{
                   width: '100%',
-                  minWidth: '350px',
-                  maxWidth: '900px',
-                  padding: '0.5rem 1.5rem',
-                  fontSize: '1rem',
+                  marginTop: '2rem',
+                  minHeight: '2.5rem',
                   textAlign: 'center',
-                  background: '#0a0a23',
-                  color: 'white',
-                  border: '1px solid #444',
-                  borderRadius: '4px',
-                  boxSizing: 'border-box'
+                  color: '#ffd700',
+                  fontSize: '1.1rem'
                 }}
-              />
+              >
+                {/* TODO: Show feedback after utterance analysis */}
+                Feedback will appear here.
+              </div>
             </div>
           </div>
         </div>
