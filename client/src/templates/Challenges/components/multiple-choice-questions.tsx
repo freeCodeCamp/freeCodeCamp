@@ -14,6 +14,11 @@ type MultipleChoiceQuestionsProps = {
   submittedMcqAnswers: (number | null)[];
   showFeedback: boolean;
   showSpeakingButton?: boolean;
+  challengeData?: {
+    audio?: {
+      filename?: string;
+    };
+  };
 };
 
 function removeParagraphTags(text: string): string {
@@ -26,7 +31,8 @@ function MultipleChoiceQuestions({
   handleOptionChange,
   submittedMcqAnswers,
   showFeedback,
-  showSpeakingButton
+  showSpeakingButton,
+  challengeData
 }: MultipleChoiceQuestionsProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -36,6 +42,14 @@ function MultipleChoiceQuestions({
   function stripCodeTags(text: string): string {
     return text.replace(/<code>(.*?)<\/code>/g, '$1');
   }
+
+  // Construct audio URL from challenge data
+  const constructAudioUrl = (filename?: string): string | undefined => {
+    if (!filename) return undefined;
+    return `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${filename}`;
+  };
+
+  const audioUrl = constructAudioUrl(challengeData?.audio?.filename);
 
   return (
     <>
@@ -159,7 +173,7 @@ function MultipleChoiceQuestions({
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         sentence={modalText}
-        audioUrl='https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/B1_18-1.mp3'
+        audioUrl={audioUrl}
       />
     </>
   );
