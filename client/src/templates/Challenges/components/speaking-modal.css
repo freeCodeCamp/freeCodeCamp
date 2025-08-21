@@ -10,6 +10,7 @@
   justify-content: center;
   z-index: 1000;
 }
+
 .speaking-modal-content {
   background: #1b1b32;
   border-radius: 8px;
@@ -22,6 +23,7 @@
   color: white;
   box-sizing: border-box;
 }
+
 .speaking-modal-close {
   position: absolute;
   top: 1rem;
@@ -32,9 +34,11 @@
   cursor: pointer;
   color: #fff;
 }
+
 .speaking-modal-close:hover {
   color: #1b1b32;
 }
+
 .speaking-modal-body {
   display: flex;
   flex-direction: column;
@@ -42,15 +46,18 @@
   gap: 1rem;
   width: 100%;
 }
+
 .speaking-modal-label {
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
+
 .speaking-modal-input-row {
   display: flex;
   align-items: center;
   width: 100%;
 }
+
 .speaking-modal-input {
   width: 100%;
   min-width: 350px;
@@ -64,23 +71,27 @@
   border-radius: 4px;
   box-sizing: border-box;
 }
+
 .speaking-modal-play {
   margin-left: 1rem;
   min-width: 80px;
   height: 40px;
 }
+
 .speaking-modal-record-row {
   display: flex;
   justify-content: center;
   width: 100%;
   margin-top: 1.5rem;
 }
+
 .speaking-modal-record {
   min-width: 120px;
   height: 48px;
   font-size: 1.1rem;
   padding: 0.5rem 1.5rem;
 }
+
 .speaking-modal-feedback {
   width: 100%;
   margin-top: 2rem;
