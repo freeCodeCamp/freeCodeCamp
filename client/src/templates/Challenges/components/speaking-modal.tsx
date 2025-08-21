@@ -1,24 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './speaking-modal.css';
 
 interface SpeakingModalProps {
   open: boolean;
   onClose: () => void;
   sentence: string;
-  onPlay: () => void;
-  onRecord: () => void;
-  feedback?: string;
 }
 
 const SpeakingModal: React.FC<SpeakingModalProps> = ({
   open,
   onClose,
-  sentence,
-  onPlay,
-  onRecord,
-  feedback
+  sentence
 }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isRecording, setIsRecording] = useState(false);
+  const [feedback, setFeedback] = useState('');
+
   if (!open) return null;
+
+  // Play audio logic (stub)
+  const handlePlay = () => {
+    // TODO: Implement audio playback logic
+    setIsPlaying(true);
+    setTimeout(() => setIsPlaying(false), 2000);
+  };
+
+  // Record logic (stub)
+  const handleRecord = () => {
+    // TODO: Implement recording and speech-to-text logic
+    setIsRecording(!isRecording);
+    setFeedback(isRecording ? 'Recording stopped.' : 'Recording...');
+  };
+
   return (
     <div className='speaking-modal-overlay'>
       <div className='speaking-modal-content'>
@@ -44,18 +57,20 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
             <button
               type='button'
               className='btn btn-secondary speaking-modal-play'
-              onClick={onPlay}
+              onClick={handlePlay}
+              disabled={isPlaying}
             >
-              Play
+              {isPlaying ? 'Playing...' : 'Play'}
             </button>
           </div>
           <div className='speaking-modal-record-row'>
             <button
               type='button'
               className='btn btn-danger speaking-modal-record'
-              onClick={onRecord}
+              onClick={handleRecord}
+              disabled={isPlaying}
             >
-              Record / Stop
+              {isRecording ? 'Stop' : 'Record'}
             </button>
           </div>
           <div className='speaking-modal-feedback'>
