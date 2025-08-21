@@ -9,6 +9,7 @@
     "node": ">=16",
     "pnpm": ">=10"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"

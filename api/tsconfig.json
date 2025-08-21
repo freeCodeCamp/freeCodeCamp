@@ -1,9 +1,5 @@
 {
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.js",
-    "../shared/**/*.ts",
-  ],
+  "include": ["src"],
   "compilerOptions": {
     "target": "es2022",
     "module": "nodenext",
