@@ -105,14 +105,6 @@ const ShowGeneric = ({
     showSpeakingButton
   } = challenge;
 
-  // Debug: log showSpeakingButton and challengeType at runtime
-  console.log(
-    'DEBUG: challengeType',
-    challengeType,
-    'showSpeakingButton',
-    showSpeakingButton
-  );
-
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
@@ -266,8 +258,6 @@ const ShowGeneric = ({
                   <Spacer size='m' />
                 </>
               )}
-
-              {/* Optional Speaking Practice button for challengeType 19 */}
 
               {assignments.length > 0 && (
                 <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
