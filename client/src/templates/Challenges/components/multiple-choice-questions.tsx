@@ -159,6 +159,7 @@ function MultipleChoiceQuestions({
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         sentence={modalText}
+        audioUrl='https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/B1_18-1.mp3'
       />
     </>
   );
