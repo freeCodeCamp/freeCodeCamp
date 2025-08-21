@@ -310,7 +310,7 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
             setComparisonResult(result);
 
             if (result.isExact) {
-              setFeedback(`${sentence} ${result.message}`);
+              setFeedback(result.message);
             } else {
               setFeedback(`${formattedUtterance} ${result.message}`);
             }
@@ -392,9 +392,16 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
             </button>
           </div>
           <div className='speaking-modal-feedback'>
-            {comparisonResult &&
-            !comparisonResult.isExact &&
-            comparisonResult.comparison ? (
+            {comparisonResult && comparisonResult.isExact ? (
+              <div>
+                <div style={{ color: 'green' }}>{sentence}</div>
+                <div style={{ marginTop: '8px' }}>
+                  {comparisonResult.message}
+                </div>
+              </div>
+            ) : comparisonResult &&
+              !comparisonResult.isExact &&
+              comparisonResult.comparison ? (
               <div>
                 <div>
                   {comparisonResult.comparison.map(

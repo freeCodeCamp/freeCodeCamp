@@ -274,6 +274,11 @@ const ShowGeneric = ({
                   submittedMcqAnswers={submittedMcqAnswers}
                   showFeedback={showFeedback}
                   showSpeakingButton={showSpeakingButton}
+                  challengeData={{
+                    audio: {
+                      filename: scene?.setup?.audio?.filename
+                    }
+                  }}
                 />
               )}
 
