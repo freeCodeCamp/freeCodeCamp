@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(10,10,35,0.95);
+  background: rgba(10, 10, 35, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@
   max-width: 900px;
   width: 100%;
   position: relative;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
   color: white;
   box-sizing: border-box;
 }
