@@ -9,7 +9,7 @@ dashedName: step-17
 
 Moving to the inner `div` in the **Listener plan**, give it the classes `grid`, `grid-rows-[auto_auto_auto_1fr]`, and `gap-y-2`.
 
-These classes will make the inner `div` a grid container, define four rows that stack on top of each other, with the first three set to auto and the last taking up the remaining spaces, and finally add a spacing of `0.5rem` between the rows.
+These classes will make the inner `div` a grid container, define four rows that stack on top of each other, with the first three set to `auto` and the last taking up the remaining spaces, and finally add a spacing of `0.5rem` between the rows.
 
 # --hints--
 
