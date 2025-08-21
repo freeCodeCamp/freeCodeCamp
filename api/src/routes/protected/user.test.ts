@@ -15,7 +15,7 @@ import {
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { DailyCodingChallengeLanguage, type Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-import _ from 'lodash-es';
+import { omit } from 'lodash-es';
 
 import { createUserInput } from '../../utils/create-user.js';
 import {
@@ -828,7 +828,7 @@ describe('userRoutes', () => {
         const setCookies = res.get('Set-Cookie');
 
         const publicUser = {
-          ..._.omit(minimalUserData, ['externalId', 'unsubscribeId']),
+          ...omit(minimalUserData, ['externalId', 'unsubscribeId']),
           ...computedProperties,
           id: testUser.id,
           joinDate: new ObjectId(testUser.id).getTimestamp().toISOString(),

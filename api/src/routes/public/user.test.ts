@@ -1,6 +1,6 @@
 import type { Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-import _ from 'lodash-es';
+import { omit } from 'lodash-es';
 import {
   describe,
   it,
@@ -378,7 +378,7 @@ describe('userRoutes', () => {
           // it should contain the entire body.
           const publicUser = {
             // TODO(Post-MVP, maybe): return completedSurveys?
-            ..._.omit(publicUserData, 'completedSurveys'),
+            ...omit(publicUserData, 'completedSurveys'),
             username: publicUsername,
             joinDate: new ObjectId(testUser.id).getTimestamp().toISOString(),
             profileUI: unlockedUserProfileUI
@@ -592,9 +592,7 @@ describe('get-public-profile helpers', () => {
     });
 
     test('returns the expected public user object if all showX flags are true', () => {
-      expect(replacePrivateData(user)).toEqual(
-        _.omit(user, ['id', 'profileUI'])
-      );
+      expect(replacePrivateData(user)).toEqual(omit(user, ['id', 'profileUI']));
     });
   });
 });
