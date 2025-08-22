@@ -24,7 +24,7 @@ import { newUser } from './__fixtures__/user.js';
 const COOKIE_DOMAIN = 'test.com';
 
 vi.mock('../utils/env', async importOriginal => ({
-  ...(await importOriginal<typeof import('../utils/env')>()),
+  ...(await importOriginal<typeof import('../utils/env.js')>()),
   COOKIE_DOMAIN: 'test.com'
 }));
 

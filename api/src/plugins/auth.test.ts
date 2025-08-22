@@ -4,7 +4,10 @@ import jwt from 'jsonwebtoken';
 
 import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env.js';
 import { type Token, createAccessToken } from '../utils/tokens.js';
-import cookies, { sign as signCookie, unsign as unsignCookie } from './cookies.js';
+import cookies, {
+  sign as signCookie,
+  unsign as unsignCookie
+} from './cookies.js';
 import auth from './auth.js';
 
 async function setupServer() {

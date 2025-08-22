@@ -531,7 +531,10 @@ describe('/exam-environment/', () => {
 
       it('should unwind (delete) the exam attempt if the user exam cannot be constructed', async () => {
         const _mockConstructUserExam = vi
-          .spyOn(await import('../utils/exam-environment.js'), 'constructUserExam')
+          .spyOn(
+            await import('../utils/exam-environment.js'),
+            'constructUserExam'
+          )
           .mockImplementationOnce(() => {
             throw new Error('Test error');
           });

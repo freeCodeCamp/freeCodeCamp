@@ -7,7 +7,6 @@ const fccUuidRe = /^fcc-[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
 const unsubscribeIdRe = new RegExp(`^[${nanoidCharSet}]{21}$`);
 const mongodbIdRe = /^[a-f0-9]{24}$/;
 
-
 // eslint-disable-next-line jsdoc/require-jsdoc
 export const newUser = (email: string) => ({
   about: '',
@@ -91,5 +90,4 @@ export const newUser = (email: string) => ({
   verificationToken: null,
   website: null,
   yearsTopContributor: []
-}
-)
+});

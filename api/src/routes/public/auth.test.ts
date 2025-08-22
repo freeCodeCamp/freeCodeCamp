@@ -28,7 +28,9 @@ const mockAuth0ValidEmail = () => ({
 
 vi.mock('../../utils/env', async () => {
   const actual =
-    await vi.importActual<typeof import('../../utils/env')>('../../utils/env');
+    await vi.importActual<typeof import('../../utils/env.js')>(
+      '../../utils/env'
+    );
   return {
     ...actual,
     FCC_ENABLE_DEV_LOGIN_MODE: false

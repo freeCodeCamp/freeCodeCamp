@@ -3,7 +3,7 @@ import { setupServer, superRequest } from '../vitest.utils.js';
 import { HOME_LOCATION } from './utils/env.js';
 
 vi.mock('./utils/env', async importOriginal => {
-  const actual = await importOriginal<typeof import('./utils/env')>();
+  const actual = await importOriginal<typeof import('./utils/env.js')>();
   return {
     ...actual,
     COOKIE_DOMAIN: 'freecodecamp.org'

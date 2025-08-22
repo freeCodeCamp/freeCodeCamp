@@ -1,7 +1,11 @@
 import { randomUUID } from 'crypto';
 import { appendFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
-import type { FastifyPluginCallback, FastifyReply, FastifyRequest } from 'fastify';
+import type {
+  FastifyPluginCallback,
+  FastifyReply,
+  FastifyRequest
+} from 'fastify';
 
 import fp from 'fastify-plugin';
 

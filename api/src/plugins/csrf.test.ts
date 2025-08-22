@@ -6,7 +6,7 @@ import cookies from './cookies.js';
 import csrf, { CSRF_COOKIE, CSRF_SECRET_COOKIE } from './csrf.js';
 
 vi.mock('../utils/env', async importOriginal => {
-  const actual = await importOriginal<typeof import('../utils/env')>();
+  const actual = await importOriginal<typeof import('../utils/env.js')>();
   return {
     ...actual,
     COOKIE_DOMAIN: 'www.example.com',

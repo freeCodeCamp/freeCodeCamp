@@ -43,7 +43,9 @@ vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 let mockDeploymentEnv = 'staging';
 vi.mock('../../utils/env', async () => {
   const actualEnv =
-    await vi.importActual<typeof import('../../utils/env')>('../../utils/env');
+    await vi.importActual<typeof import('../../utils/env.js')>(
+      '../../utils/env'
+    );
   return {
     ...actualEnv,
     get DEPLOYMENT_ENV() {

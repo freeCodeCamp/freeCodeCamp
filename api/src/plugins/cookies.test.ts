@@ -6,7 +6,7 @@ import { COOKIE_SECRET } from '../utils/env.js';
 import cookies from './cookies.js';
 
 vi.mock('../utils/env', async importOriginal => {
-  const actual = await importOriginal<typeof import('../utils/env')>();
+  const actual = await importOriginal<typeof import('../utils/env.js')>();
   return {
     ...actual,
     COOKIE_DOMAIN: 'www.example.com',
