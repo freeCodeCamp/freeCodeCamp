@@ -860,20 +860,19 @@ Happy coding!
         expect(response.statusCode).toEqual(200);
       });
 
-      test('PUT updates the values in about settings without image', async () => {
+      test('PUT returns 400 if the URL is invalid', async () => {
         const response = await superPut('/update-my-about').send({
           about: 'Teacher at freeCodeCamp',
           name: 'Quincy Larson',
           location: 'USA',
-          // `new URL` throws if the image isn't a URL, this checks if it doesn't throw.
           picture: 'invalid'
         });
 
         expect(response.body).toEqual({
-          message: 'flash.updated-about-me',
-          type: 'success'
+          message: 'flash.wrong-updating',
+          type: 'danger'
         });
-        expect(response.statusCode).toEqual(200);
+        expect(response.statusCode).toEqual(400);
       });
 
       test('PUT with empty strings clears the values in about settings ', async () => {
