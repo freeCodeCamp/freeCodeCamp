@@ -26,7 +26,7 @@ import {
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
-import { BlockTypes } from '../../../../../shared/config/blocks';
+import { BlockTypes } from '../../../../../shared-dist/config/blocks';
 import { getChallengePaths } from '../utils/challenge-paths';
 import Scene from '../components/scene/scene';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';

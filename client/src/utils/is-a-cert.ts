@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 
 export function isOldRespCert(superBlock: string): boolean {
   return superBlock === String(SuperBlocks.RespWebDesign);
