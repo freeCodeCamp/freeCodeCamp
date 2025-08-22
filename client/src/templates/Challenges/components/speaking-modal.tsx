@@ -1,12 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './speaking-modal.css';
+import {
+  formatUtterance,
+  calculateAverageVolume,
+  checkSilenceDetection,
+  compareTexts
+} from './speaking-modal-helpers';
 
 interface SpeakingModalProps {
   open: boolean;
   onClose: () => void;
   sentence: string;
   audioUrl?: string;
-  answerIndex?: number;
+  answerIndex: number;
 }
 
 interface ComparisonWord {
@@ -86,26 +92,6 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
 
   if (!open) return null;
 
-  // Helper function to normalize text (remove punctuation, convert to lowercase)
-  const normalizeText = (text: string): string[] => {
-    return text
-      .toLowerCase()
-      .replace(/[^\w\s]/g, '') // Remove punctuation
-      .trim()
-      .split(/\s+/)
-      .filter(word => word.length > 0);
-  };
-
-  // Helper function to format utterance (capitalize first word, add period)
-  const formatUtterance = (text: string): string => {
-    const cleaned = text.trim();
-    if (!cleaned) return cleaned;
-
-    return (
-      cleaned.charAt(0).toUpperCase() + cleaned.slice(1).toLowerCase() + '.'
-    );
-  };
-
   // Monitor audio levels for silence detection
   const monitorAudioLevels = (stream: MediaStream) => {
     try {
@@ -129,23 +115,18 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
 
         analyser.getByteFrequencyData(dataArray);
 
-        // Calculate average volume level
-        const average =
-          dataArray.reduce((sum, value) => sum + value, 0) / dataArray.length;
-        const threshold = 20; // Silence threshold
+        const averageVolume = calculateAverageVolume(dataArray);
+        const silenceResult = checkSilenceDetection(
+          averageVolume,
+          lastSpeechTimeRef.current
+        );
 
-        if (average > threshold) {
-          // Speech detected, reset timer
-          lastSpeechTimeRef.current = Date.now();
-        } else {
-          // Check if silence has lasted longer than 2 seconds
-          const silenceDuration = Date.now() - lastSpeechTimeRef.current;
-          if (silenceDuration > 2000) {
-            // Stop recording due to silence
-            void handleRecord();
-            setFeedback('Recording stopped due to silence.');
-            return;
-          }
+        if (silenceResult.isSpeechDetected) {
+          lastSpeechTimeRef.current = silenceResult.newLastSpeechTime as number;
+        } else if (silenceResult.shouldStopRecording) {
+          stopRecording();
+          setFeedback('Recording stopped due to silence.');
+          return;
         }
 
         // Continue monitoring if still recording
@@ -159,52 +140,6 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
     } catch (error) {
       console.error('Error setting up audio monitoring:', error);
     }
-  };
-
-  // Compare utterance with original sentence
-  const compareTexts = (original: string, utterance: string) => {
-    const originalWords = normalizeText(original);
-    const utteranceWords = normalizeText(utterance);
-
-    // Check for perfect match
-    if (originalWords.join(' ') === utteranceWords.join(' ')) {
-      return {
-        isExact: true,
-        accuracy: 100,
-        highlightedText: original,
-        message: "That's correct! Congratulations!"
-      };
-    }
-
-    // Word-by-word comparison for highlighting
-    const maxLength = Math.max(originalWords.length, utteranceWords.length);
-    const comparison = [];
-    let correctWords = 0;
-
-    for (let i = 0; i < maxLength; i++) {
-      const originalWord = originalWords[i] || '';
-      const utteranceWord = utteranceWords[i] || '';
-
-      if (originalWord === utteranceWord && originalWord !== '') {
-        comparison.push({ word: utteranceWord, isCorrect: true });
-        correctWords++;
-      } else if (utteranceWord !== '') {
-        comparison.push({ word: utteranceWord, isCorrect: false });
-      }
-    }
-
-    const accuracy =
-      originalWords.length > 0
-        ? (correctWords / originalWords.length) * 100
-        : 0;
-    const isGoodEnough = accuracy >= 80;
-
-    return {
-      isExact: false,
-      accuracy: Math.round(accuracy),
-      comparison,
-      message: isGoodEnough ? 'Very good!' : 'Try again.'
-    };
   };
 
   const handlePlay = async () => {
@@ -257,96 +192,116 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
     }
   };
 
-  const handleRecord = async () => {
-    if (isRecording) {
-      // Stop recording
-      if (mediaRecorderRef.current) {
-        mediaRecorderRef.current.stop();
+  const stopRecording = () => {
+    if (mediaRecorderRef.current) {
+      mediaRecorderRef.current.stop();
+    }
+    if (recognitionRef.current) {
+      recognitionRef.current.stop();
+    }
+    if (audioContextRef.current) {
+      void audioContextRef.current.close();
+      audioContextRef.current = null;
+    }
+    if (silenceTimeoutRef.current) {
+      clearTimeout(silenceTimeoutRef.current);
+      silenceTimeoutRef.current = null;
+    }
+    setIsRecording(false);
+    setFeedback('Recording stopped. Processing...');
+  };
+
+  const isSpeechRecognitionSupported = () => {
+    return !!(window.SpeechRecognition || window.webkitSpeechRecognition);
+  };
+
+  const setupSpeechRecognition = () => {
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      throw new Error('Speech recognition not supported');
+    }
+
+    const recognition = new SpeechRecognition();
+    recognitionRef.current = recognition;
+
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = 'en-US';
+
+    recognition.onresult = (event: SpeechRecognitionEvent) => {
+      const transcript = event.results[0][0].transcript;
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      const formattedUtterance = formatUtterance(transcript);
+      const result = compareTexts(sentence, transcript);
+
+      setComparisonResult(result);
+
+      if (result.isExact) {
+        setFeedback(result.message);
+      } else {
+        setFeedback(`${formattedUtterance} ${result.message}`);
       }
-      if (recognitionRef.current) {
-        recognitionRef.current.stop();
-      }
-      if (audioContextRef.current) {
-        void audioContextRef.current.close();
-        audioContextRef.current = null;
-      }
-      if (silenceTimeoutRef.current) {
-        clearTimeout(silenceTimeoutRef.current);
-        silenceTimeoutRef.current = null;
-      }
+    };
+
+    recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
+      setFeedback(`Speech recognition error: ${event.error}`);
+    };
+
+    recognition.onend = () => {
       setIsRecording(false);
-      setFeedback('Recording stopped. Processing...');
-    } else {
-      // Start recording
-      try {
-        setFeedback('Requesting microphone access...');
-
-        // Request microphone access
-        const stream = await navigator.mediaDevices.getUserMedia({
-          audio: true
-        });
-
-        setIsRecording(true);
-        setFeedback('Recording... Speak now.');
-        setComparisonResult(null);
-
-        // Set up Web Speech API for speech-to-text
-        const SpeechRecognition =
-          window.SpeechRecognition || window.webkitSpeechRecognition;
-
-        if (SpeechRecognition) {
-          const recognition = new SpeechRecognition();
-          recognitionRef.current = recognition;
-
-          recognition.continuous = false;
-          recognition.interimResults = false;
-          recognition.lang = 'en-US';
-
-          recognition.onresult = (event: SpeechRecognitionEvent) => {
-            const transcript = event.results[0][0].transcript;
-            const formattedUtterance = formatUtterance(transcript);
-            const result = compareTexts(sentence, transcript);
-
-            setComparisonResult(result);
-
-            if (result.isExact) {
-              setFeedback(result.message);
-            } else {
-              setFeedback(`${formattedUtterance} ${result.message}`);
-            }
-          };
-
-          recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
-            setFeedback(`Speech recognition error: ${event.error}`);
-            setIsRecording(false);
-          };
-
-          recognition.onend = () => {
-            setIsRecording(false);
-            if (feedback === 'Recording... Speak now.') {
-              setFeedback('Recording stopped. No speech detected.');
-            }
-          };
-
-          recognition.start();
-        } else {
-          setFeedback('Speech recognition not supported in this browser.');
-          setIsRecording(false);
-        }
-
-        // Set up MediaRecorder for audio recording (backup)
-        const mediaRecorder = new MediaRecorder(stream);
-        mediaRecorderRef.current = mediaRecorder;
-
-        mediaRecorder.start();
-
-        // Start silence monitoring
-        monitorAudioLevels(stream);
-      } catch (error) {
-        console.error('Error accessing microphone:', error);
-        setFeedback('Error: Could not access microphone.');
-        setIsRecording(false);
+      if (feedback === 'Recording... Speak now.') {
+        setFeedback('Recording stopped. No speech detected.');
       }
+    };
+
+    return recognition;
+  };
+
+  const startRecording = async () => {
+    // Check speech recognition support first
+    if (!isSpeechRecognitionSupported()) {
+      setFeedback('Speech recognition not supported in this browser.');
+      return;
+    }
+
+    try {
+      setFeedback('Requesting microphone access...');
+
+      // Request microphone access
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: true
+      });
+
+      setIsRecording(true);
+      setFeedback('Recording... Speak now.');
+      setComparisonResult(null);
+
+      // Set up and start speech recognition
+      const recognition = setupSpeechRecognition();
+      recognition.start();
+
+      // Set up MediaRecorder for audio recording (backup)
+      const mediaRecorder = new MediaRecorder(stream);
+      mediaRecorderRef.current = mediaRecorder;
+
+      mediaRecorder.start();
+
+      // Start silence monitoring
+      monitorAudioLevels(stream);
+    } catch (error) {
+      console.error('Error accessing microphone:', error);
+      setFeedback('Error: Could not access microphone.');
+      setIsRecording(false);
+    }
+  };
+
+  const handleRecord = () => {
+    if (isRecording) {
+      stopRecording();
+    } else {
+      void startRecording();
     }
   };
 

@@ -242,15 +242,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
       COMMENT_TRANSLATIONS
     );
     challenge.translationPending = lang !== 'english' && !isAudited;
-    // Only add showSpeakingButton for multipleChoice challenges
-    const MULTIPLE_CHOICE_TYPE = require('../shared/config/challenge-types')
-      .challengeTypes.multipleChoice;
-    if (challenge.challengeType === MULTIPLE_CHOICE_TYPE) {
-      challenge.showSpeakingButton =
-        typeof challenge.showSpeakingButton === 'boolean'
-          ? challenge.showSpeakingButton
-          : false;
-    }
+
     addMetaToChallenge(challenge, meta);
     fixChallengeProperties(challenge);
 
