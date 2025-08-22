@@ -2,7 +2,7 @@
   "name": "CSS Libraries and Frameworks Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-css-libraries-and-frameworks",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

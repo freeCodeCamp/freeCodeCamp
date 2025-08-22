@@ -1,6 +1,6 @@
 {
   "name": "Build an Error Message Component",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
   "usesMultifileEditor": true,
