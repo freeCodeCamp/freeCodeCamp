@@ -313,6 +313,9 @@ importers:
       '@codesandbox/sandpack-react':
         specifier: 2.6.9
         version: 2.6.9(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      '@codesandbox/sandpack-themes':
+        specifier: ^2.0.21
+        version: 2.0.21
       '@fortawesome/fontawesome-svg-core':
         specifier: 6.7.1
         version: 6.7.1
@@ -2292,6 +2295,9 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
       react-dom: ^16.8.0 || ^17 || ^18
+
+  '@codesandbox/sandpack-themes@2.0.21':
+    resolution: {integrity: sha512-CMH/MO/dh6foPYb/3eSn2Cu/J3+1+/81Fsaj7VggICkCrmRk0qG5dmgjGAearPTnRkOGORIPHuRqwNXgw0E6YQ==}
 
   '@compodoc/live-server@1.2.3':
     resolution: {integrity: sha512-hDmntVCyjjaxuJzPzBx68orNZ7TW4BtHWMnXlIVn5dqhK7vuFF/11hspO1cMmc+2QTYgqde1TBcb3127S7Zrow==}
@@ -11416,6 +11422,7 @@ packages:
   puppeteer@22.12.1:
     resolution: {integrity: sha512-1GxY8dnEnHr1SLzdSDr0FCjM6JQfAh2E2I/EqzeF8a58DbGVk9oVjj4lFdqNoVbpgFSpAbz7VER9St7S1wDpNg==}
     engines: {node: '>=18'}
+    deprecated: < 24.9.0 is no longer supported
     hasBin: true
 
   puppeteer@24.10.0:
@@ -12779,11 +12786,12 @@ packages:
   superagent@8.1.2:
     resolution: {integrity: sha512-6WTxW1EB6yCxV5VFOIPQruWGHqc3yI7hEmZK6h+pyk69Lk/Ut7rLUY6W/ONF2MjBuGjvmMiIpsrVJ2vjrHlslA==}
     engines: {node: '>=6.4.0 <13 || >=14'}
-    deprecated: Please upgrade to v9.0.0+ as we have fixed a public vulnerability with formidable dependency. Note that v9.0.0+ requires Node.js v14.18.0+. See https://github.com/ladjs/superagent/pull/1800 for insight. This project is supported and maintained by the team at Forward Email @ https://forwardemail.net
+    deprecated: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
 
   supertest@6.3.3:
     resolution: {integrity: sha512-EMCG6G8gDu5qEqRQ3JjjPs6+FYT1a7Hv5ApHvtSghmOFJYtsU5S+pSb6Y2EUeCEY3CmEL3mmQ8YWlPOzQomabA==}
     engines: {node: '>=6.4.0'}
+    deprecated: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
 
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -16656,6 +16664,8 @@ snapshots:
       react-devtools-inline: 4.4.0
       react-dom: 17.0.2(react@17.0.2)
       react-is: 17.0.2
+
+  '@codesandbox/sandpack-themes@2.0.21': {}
 
   '@compodoc/live-server@1.2.3':
     dependencies:

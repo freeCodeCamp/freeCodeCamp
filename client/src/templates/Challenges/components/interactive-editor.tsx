@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { Sandpack } from '@codesandbox/sandpack-react';
+import { freeCodeCampDark } from '@codesandbox/sandpack-themes';
 import './interactive-editor.css';
 
 export interface InteractiveFile {
@@ -43,6 +44,12 @@ const InteractiveEditor = ({ files }: Props) => {
   }
 
   const showConsole = got('js') || got('ts');
+  const freeCodeCampDarkSyntax = {
+    ...freeCodeCampDark.syntax,
+    punctuation: '#ffff00',
+    definition: '#e2777a',
+    keyword: '#569cd6'
+  };
 
   return (
     <div className='interactive-editor-wrapper'>
@@ -59,8 +66,18 @@ const InteractiveEditor = ({ files }: Props) => {
                   : 'vanilla'
         }
         files={spFiles}
-        theme={'dark'}
+        theme={{
+          colors: {
+            surface1: '#0a0a23',
+            surface2: '#3b3b4f',
+            surface3: '#2a2a40',
+            hover: '#3b3b4f'
+          },
+          syntax: freeCodeCampDarkSyntax
+        }}
         options={{
+          editorHeight: 450,
+          editorWidthPercentage: 60,
           showConsole: showConsole,
           showConsoleButton: showConsole,
           layout: got('html') ? 'preview' : 'console',

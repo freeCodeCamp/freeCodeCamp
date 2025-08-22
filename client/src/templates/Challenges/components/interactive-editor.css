@@ -1,54 +1,13 @@
 .interactive-editor-wrapper {
-  border: 1px solid var(--primary-color, #ccc);
-  margin-top: 1rem;
-  padding: 0.5rem;
+  margin-bottom: 1rem;
   border-radius: 4px;
 }
 
-.interactive-editor-tabs {
-  display: flex;
-  gap: 0.25rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.5rem;
+.sp-cm .cm-gutters {
+  color: var(--gray-45);
 }
 
-.interactive-editor-tabs button {
-  background: var(--secondary-background, #eee);
-  border: 1px solid #999;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-  font-size: 0.85rem;
-  border-radius: 3px;
-}
-
-.interactive-editor-tabs button.active {
-  background: var(--primary-color, #0969da);
-  color: #fff;
-}
-
-.interactive-editor-tabs .run-btn {
-  background: #198754;
-  color: #fff;
-  border-color: #0f5132;
-}
-
-.interactive-editor-tabs .grow {
-  flex-grow: 1;
-}
-
-.interactive-editor-textarea {
-  width: 100%;
-  min-height: 180px;
-  font-family: monospace;
-  font-size: 0.85rem;
-  line-height: 1.3;
-  box-sizing: border-box;
-  margin-bottom: 0.5rem;
-}
-
-.interactive-editor-preview iframe {
-  width: 100%;
-  height: 260px;
-  border: 1px solid #999;
-  border-radius: 3px;
+.sp-tab-button:hover {
+  background-color: var(--gray-10);
+  color: var(--gray-90);
 }
