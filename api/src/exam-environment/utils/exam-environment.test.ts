@@ -11,6 +11,7 @@ import {
   oid
 } from '../../../__mocks__/exam-environment-exam.js';
 import * as schemas from '../schemas/index.js';
+import { setupServer } from '../../../vitest.utils.js';
 import {
   checkAttemptAgainstGeneratedExam,
   checkPrerequisites,
