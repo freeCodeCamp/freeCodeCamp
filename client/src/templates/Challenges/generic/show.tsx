@@ -279,9 +279,7 @@ const ShowGeneric = ({
                     showFeedback={showFeedback}
                     showSpeakingButton={showSpeakingButton}
                     challengeData={{
-                      audio: {
-                        filename: scene?.setup?.audio?.filename
-                      }
+                      challengeId: challengeMeta.id
                     }}
                   />
                 </ObserveKeys>
