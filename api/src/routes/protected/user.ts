@@ -163,7 +163,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
       reply.clearOurCookies();
 
-      return {};
+      return reply.code(204).send();
     }
   );
 
