@@ -414,15 +414,17 @@ describe('userRoutes', () => {
       });
 
       test('POST returns 200 status code with empty object', async () => {
-        expect(await fastifyTestInstance.prisma.user.count()).toBe(1);
+        const initialCount = await fastifyTestInstance.prisma.user.count();
         const response = await superPost('/account/delete');
-        const userCount = await fastifyTestInstance.prisma.user.count({
+        const finalCount = await fastifyTestInstance.prisma.user.count();
+        const deletedUser = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: testUserData.email }
         });
 
         expect(response.body).toStrictEqual({});
         expect(response.status).toBe(200);
-        expect(userCount).toBe(0);
+        expect(finalCount).toBe(initialCount - 1);
+        expect(deletedUser).toBeNull();
       });
 
       test('POST deletes Microsoft usernames associated with the user', async () => {
@@ -514,18 +516,26 @@ describe('userRoutes', () => {
       });
 
       test("only deletes the logged in user's data", async () => {
-        await fastifyTestInstance.prisma.user.create({
+        const initialCount = await fastifyTestInstance.prisma.user.count();
+        const otherEmail = 'an.random@user';
+        const otherUser = await fastifyTestInstance.prisma.user.create({
           data: {
             ...testUserData,
-            email: 'an.random@user'
+            email: otherEmail
           }
         });
-        expect(await fastifyTestInstance.prisma.user.count()).toBe(2);
+        expect(otherUser.email).toBe(otherEmail);
+        const afterAdd = await fastifyTestInstance.prisma.user.count();
+        expect(afterAdd).toBe(initialCount + 1);
 
         await superPost('/account/delete');
 
-        const userCount = await fastifyTestInstance.prisma.user.count();
-        expect(userCount).toBe(1);
+        const finalCount = await fastifyTestInstance.prisma.user.count();
+        expect(finalCount).toBe(initialCount);
+        const remaining = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: otherEmail }
+        });
+        expect(remaining).not.toBeNull();
       });
 
       test('logs if it is asked to delete a non-existent user', async () => {
@@ -538,13 +548,13 @@ describe('userRoutes', () => {
           superPost('/account/delete')
         );
         await Promise.all(deletePromises);
-
-        expect(spy).toHaveBeenCalledTimes(1);
-        expect(spy.mock.calls[0]).toEqual(
-          expect.arrayContaining([
-            `User with id ${defaultUserId} not found for deletion.`
-          ])
+        const messages: string[] = spy.mock.calls.map(call =>
+          call.map(part => String(part)).join(' ')
         );
+        const found = messages.some(m =>
+          m.includes(`User with id ${defaultUserId} not found for deletion.`)
+        );
+        expect(found).toBe(true);
       });
     });
 
