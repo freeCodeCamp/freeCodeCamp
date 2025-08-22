@@ -31,17 +31,16 @@ export const checkSilenceDetection = (
 ) => {
   const currentTime = Date.now();
   const isSpeechDetected = averageVolume > silenceThreshold;
+  const silenceDuration = currentTime - lastSpeechTime;
+  const shouldStopRecording = silenceDuration > silenceTimeoutMs;
 
   if (isSpeechDetected) {
     return {
       isSpeechDetected: true,
-      shouldStopRecording: false,
+      shouldStopRecording,
       newLastSpeechTime: currentTime
     };
   }
-
-  const silenceDuration = currentTime - lastSpeechTime;
-  const shouldStopRecording = silenceDuration > silenceTimeoutMs;
 
   return {
     isSpeechDetected: false,
@@ -66,10 +65,24 @@ export const compareTexts = (original, utterance) => {
     };
   }
 
-  // Word-by-word comparison for highlighting
+  // Calculate accuracy using flexible word matching
+  let correctWords = 0;
+  const utteranceWordsCopy = [...utteranceWords];
+
+  for (const originalWord of originalWords) {
+    const index = utteranceWordsCopy.indexOf(originalWord);
+    if (index !== -1) {
+      correctWords++;
+      utteranceWordsCopy.splice(index, 1); // Remove to prevent double counting
+    }
+  }
+
+  const accuracy =
+    originalWords.length > 0 ? (correctWords / originalWords.length) * 100 : 0;
+
+  // Build comparison array for UI highlighting using position-based matching
   const maxLength = Math.max(originalWords.length, utteranceWords.length);
   const comparison = [];
-  let correctWords = 0;
 
   for (let i = 0; i < maxLength; i++) {
     const originalWord = originalWords[i] || '';
@@ -77,14 +90,10 @@ export const compareTexts = (original, utterance) => {
 
     if (originalWord === utteranceWord && originalWord !== '') {
       comparison.push({ word: utteranceWord, isCorrect: true });
-      correctWords++;
     } else if (utteranceWord !== '') {
       comparison.push({ word: utteranceWord, isCorrect: false });
     }
   }
-
-  const accuracy =
-    originalWords.length > 0 ? (correctWords / originalWords.length) * 100 : 0;
   const isGoodEnough = accuracy >= 80;
 
   return {

@@ -234,7 +234,7 @@ describe('speaking-modal-helpers', () => {
 
       it('should handle longer utterance', () => {
         const result = compareTexts('Hello world', 'Hello beautiful world');
-        expect(result.accuracy).toBe(50); // 1 out of 2 words correct ('Hello' matches, 'beautiful' does not match 'world', 'world' has no match)
+        expect(result.accuracy).toBe(100); // 2 out of 2 words correct ('Hello' and 'world' both appear in utterance)
         expect(result.comparison).toEqual([
           { word: 'hello', isCorrect: true },
           { word: 'beautiful', isCorrect: false },
@@ -296,8 +296,8 @@ describe('speaking-modal-helpers', () => {
 
     describe('accuracy calculations', () => {
       it('should round accuracy to nearest integer', () => {
-        const result = compareTexts('Hello beautiful world', 'Hello world'); // 1 out of 3 = 33.33%
-        expect(result.accuracy).toBe(33);
+        const result = compareTexts('Hello beautiful world', 'Hello world'); // 2 out of 3 = 66.67%
+        expect(result.accuracy).toBe(67);
       });
 
       it('should handle zero division when original is empty after normalization', () => {
