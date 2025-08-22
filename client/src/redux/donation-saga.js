@@ -17,7 +17,7 @@ import {
 } from '../utils/ajax';
 import { stringifyDonationEvents } from '../utils/analytics-strings';
 import { stripe } from '../utils/stripe';
-import { PaymentProvider } from '../../../shared/config/donation-settings';
+import { PaymentProvider } from '../../../shared-dist/config/donation-settings';
 import {
   getSessionChallengeData,
   saveCurrentCount

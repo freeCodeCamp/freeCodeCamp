@@ -13,7 +13,7 @@ import { navigate } from 'gatsby';
 import {
   certTypeIdMap,
   certTypes
-} from '../../../../shared/config/certification-settings';
+} from '../../../../shared-dist/config/certification-settings';
 import { createFlashMessage } from '../../components/Flash/redux';
 import { liveCerts } from '../../../config/cert-and-project-map';
 import {

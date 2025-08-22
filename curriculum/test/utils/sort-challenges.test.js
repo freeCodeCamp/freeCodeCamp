@@ -1,4 +1,4 @@
-const { shuffleArray } = require('../../../shared/utils/shuffle-array');
+const { shuffleArray } = require('../../../shared-dist/utils/shuffle-array');
 const { sortChallenges } = require('./sort-challenges');
 
 const challenges = [

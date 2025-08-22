@@ -9,7 +9,7 @@ import {
   PaymentProvider,
   type DonationDuration,
   type DonationAmount
-} from '../../../../shared/config/donation-settings';
+} from '../../../../shared-dist/config/donation-settings';
 import envData from '../../../config/env.json';
 import { userSelector, signInLoadingSelector } from '../../redux/selectors';
 import { LocalStorageThemes } from '../../redux/types';
