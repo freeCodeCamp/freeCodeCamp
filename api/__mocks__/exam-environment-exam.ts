@@ -10,7 +10,6 @@ import {
 import { ObjectId } from 'mongodb';
 import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas/index.js';
 
-
 export const oid = () => new ObjectId().toString();
 
 const defaultUserId = '64c7810107dd4782d32baee7';
