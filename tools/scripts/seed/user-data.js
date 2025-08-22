@@ -242,6 +242,151 @@ module.exports.fullyCertifiedUser = {
   isFoundationalCSharpCertV8: true,
   completedChallenges: [
     {
+      id: '63d8402e39c73468b059cd43',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '63d8401e39c73468b059cd42',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '63d8401039c73468b059cd41',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '63d83ffd39c73468b059cd40',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '63d83ff239c73468b059cd3f',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e46f8edac417301a38fb931',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e46f8edac417301a38fb930',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e46f8e3ac417301a38fb92f',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e46f8dcac417301a38fb92e',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e46f8d6ac417301a38fb92d',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e601c775ac9d0ecd8b94aff',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e46f983ac417301a38fb933',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e46f979ac417301a38fb932',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e4f5c4b570f7e3a4949899f',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e46f802ac417301a38fb92b',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e46f7f8ac417301a38fb92a',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e46f7e5ac417301a38fb929',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e46f7e5ac417301a38fb928',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e44414f903586ffb414c950',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e444147903586ffb414c94f',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e44413e903586ffb414c94e',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e444136903586ffb414c94d',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e44412c903586ffb414c94c',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '5e601c0d5ac9d0ecd8b94afe',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '6555c1d3e11a1574434cf8b5',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '657bdcc3a322aae1eac38392',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '657bdcb9a322aae1eac38391',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '657bdc8ba322aae1eac38390',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
+      id: '657bdc55a322aae1eac3838f',
+      completedDate: 1475094716730,
+      files: []
+    },
+    {
       id: 'bd7123c8c441eddfaeb5bdef',
       completedDate: 1475094716730,
       files: []
