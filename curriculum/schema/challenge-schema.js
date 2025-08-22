@@ -262,11 +262,7 @@ const schema = Joi.object()
       then: Joi.array().items(questionJoi).min(1).required(),
       otherwise: Joi.array().length(0)
     }),
-    showSpeakingButton: Joi.when('challengeType', {
-      is: [challengeTypes.multipleChoice],
-      then: Joi.boolean(),
-      otherwise: Joi.forbidden()
-    }),
+    showSpeakingButton: Joi.boolean(),
     quizzes: Joi.when('challengeType', {
       is: challengeTypes.quiz,
       then: Joi.array().items(quizJoi).min(1).required(),

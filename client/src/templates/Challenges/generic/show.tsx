@@ -70,7 +70,31 @@ interface ShowQuizProps {
 }
 
 const ShowGeneric = ({
-  data,
+  data: {
+    challengeNode: {
+      challenge: {
+        assignments,
+        bilibiliIds,
+        block,
+        blockType,
+        description,
+        explanation,
+        challengeType,
+        fields: { blockName, tests },
+        helpCategory,
+        instructions,
+        questions,
+        title,
+        transcript,
+        translationPending,
+        scene,
+        superBlock,
+        videoId,
+        videoLocaleIds,
+        showSpeakingButton
+      }
+    }
+  },
   pageContext: { challengeMeta },
   initTests,
   updateChallengeMeta,
@@ -80,30 +104,6 @@ const ShowGeneric = ({
 }: ShowQuizProps) => {
   const { t } = useTranslation();
   const container = useRef<HTMLElement | null>(null);
-
-  // Destructure challenge properties from data.challengeNode.challenge
-  const challenge = data.challengeNode.challenge;
-  const {
-    assignments,
-    bilibiliIds,
-    block,
-    blockType,
-    description,
-    explanation,
-    challengeType,
-    fields: { blockName, tests },
-    helpCategory,
-    instructions,
-    questions,
-    title,
-    transcript,
-    translationPending,
-    scene,
-    superBlock,
-    videoId,
-    videoLocaleIds,
-    showSpeakingButton
-  } = challenge;
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
