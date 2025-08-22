@@ -539,14 +539,14 @@ describe('userRoutes', () => {
         await clearEnvExam();
       });
 
-      test('DELETE returns 200 status code with empty object', async () => {
+      test('DELETE returns 204 status code with empty object', async () => {
         const response = await superDelete(`/users/${defaultUserId}`);
         const userCount = await fastifyTestInstance.prisma.user.count({
           where: { email: testUserData.email }
         });
 
         expect(response.body).toStrictEqual({});
-        expect(response.status).toBe(200);
+        expect(response.status).toBe(204);
         expect(userCount).toBe(0);
       });
 
@@ -604,7 +604,7 @@ describe('userRoutes', () => {
         const countAfter =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
         expect(countAfter).toBe(0);
-        expect(res.status).toBe(200);
+        expect(res.status).toBe(204);
       });
 
       test("DELETE deletes all the user's exam tokens", async () => {
@@ -618,7 +618,7 @@ describe('userRoutes', () => {
         const countAfter =
           await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
         expect(countAfter).toBe(0);
-        expect(res.status).toBe(200);
+        expect(res.status).toBe(204);
       });
 
       test('handles concurrent requests to delete the same user', async () => {
@@ -632,7 +632,7 @@ describe('userRoutes', () => {
           where: { email: testUserData.email }
         });
         responses.forEach(response => {
-          expect(response.status).toBe(200);
+          expect(response.status).toBe(204);
           expect(response.body).toStrictEqual({});
         });
         expect(userCount).toBe(0);
