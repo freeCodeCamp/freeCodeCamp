@@ -148,11 +148,11 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
       return;
     }
 
-    // Construct the modified audio URL with SP + answer number
+    // Construct the modified audio URL with -SP + answer number
     let modifiedAudioUrl = audioUrl;
     if (answerIndex !== undefined) {
       const answerNumber = answerIndex + 1; // Convert 0-based index to 1-based
-      modifiedAudioUrl = audioUrl.replace(/\.mp3$/, `SP${answerNumber}.mp3`);
+      modifiedAudioUrl = `${audioUrl}-SP${answerNumber}.mp3`;
     }
 
     try {

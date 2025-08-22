@@ -15,9 +15,7 @@ type MultipleChoiceQuestionsProps = {
   showFeedback: boolean;
   showSpeakingButton?: boolean;
   challengeData?: {
-    audio?: {
-      filename?: string;
-    };
+    challengeId?: string;
   };
 };
 
@@ -44,13 +42,14 @@ function MultipleChoiceQuestions({
     return text.replace(/<code>(.*?)<\/code>/g, '$1');
   }
 
-  // Construct audio URL from challenge data
-  const constructAudioUrl = (filename?: string): string | undefined => {
-    if (!filename) return undefined;
-    return `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${filename}`;
+  // Construct audio URL from challenge ID (first 6 digits)
+  const constructAudioUrl = (challengeId?: string): string | undefined => {
+    if (!challengeId) return undefined;
+    const first6Digits = challengeId.slice(0, 6);
+    return `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${first6Digits}`;
   };
 
-  const audioUrl = constructAudioUrl(challengeData?.audio?.filename);
+  const audioUrl = constructAudioUrl(challengeData?.challengeId);
 
   return (
     <>

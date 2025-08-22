@@ -7,9 +7,9 @@ import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import { isEqual } from 'lodash';
 import store from 'store';
 import { YouTubeEvent } from 'react-youtube';
+import { ObserveKeys } from 'react-hotkeys';
 
 // Local Utilities
-import { ObserveKeys } from 'react-hotkeys';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -277,9 +277,7 @@ const ShowGeneric = ({
                     showFeedback={showFeedback}
                     showSpeakingButton={showSpeakingButton}
                     challengeData={{
-                      audio: {
-                        filename: scene?.setup?.audio?.filename
-                      }
+                      challengeId: challengeMeta.id
                     }}
                   />
                 </ObserveKeys>
