@@ -871,7 +871,6 @@
         },
         {
           "dashedName": "js-a11y",
-          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "lecture-understanding-aria-expanded-aria-live-and-common-aria-states"
