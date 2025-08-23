@@ -29,6 +29,7 @@ const Bio = ({ user, setIsEditing, isSessionUser }: BioProps) => {
     linkedin,
     twitter,
     website,
+    bluesky,
     isDonating,
     yearsTopContributor,
     picture,
@@ -87,6 +88,7 @@ const Bio = ({ user, setIsEditing, isSessionUser }: BioProps) => {
           twitter={twitter}
           username={username}
           website={website}
+          bluesky={bluesky}
         />
       </section>
     </FullWidthRow>
