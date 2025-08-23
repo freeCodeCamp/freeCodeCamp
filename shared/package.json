@@ -20,5 +20,9 @@
   "dependencies": {
     "@types/invariant": "^2.2.37",
     "invariant": "2.2.4"
+  },
+  "devDependencies": {
+    "mongodb": "5.9.2",
+    "@prisma/client": "5.18.0"
   }
 }
