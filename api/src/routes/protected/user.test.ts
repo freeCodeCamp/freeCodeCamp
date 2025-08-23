@@ -29,7 +29,7 @@ import { getMsTranscriptApiUrl } from './user';
 const mockedFetch = jest.fn();
 jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 
-let mockDeploymentEnv = 'staging';
+let mockDeploymentEnv = 'dev';
 jest.mock('../../utils/env', () => {
   const actualEnv = jest.requireActual('../../utils/env');
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
@@ -1287,11 +1287,11 @@ Thanks and regards,
 
     describe('/user/exam-environment/token', () => {
       beforeEach(() => {
-        mockDeploymentEnv = 'production';
+        mockDeploymentEnv = 'org';
       });
 
       afterAll(() => {
-        mockDeploymentEnv = 'staging';
+        mockDeploymentEnv = 'dev';
       });
 
       afterEach(async () => {
@@ -1359,14 +1359,14 @@ Thanks and regards,
 
       test('POST does not generate a new token in non-production environments for non-staff', async () => {
         // Override deployment environment for this test
-        mockDeploymentEnv = 'development';
+        mockDeploymentEnv = 'dev';
         const response = await superPost('/user/exam-environment/token');
         expect(response.status).toBe(403);
       });
 
       test('POST does generate a new token in non-production environments for staff', async () => {
         // Override deployment environment for this test
-        mockDeploymentEnv = 'staging';
+        mockDeploymentEnv = 'dev';
         await fastifyTestInstance.prisma.user.update({
           where: {
             id: defaultUserId

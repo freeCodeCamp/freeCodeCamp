@@ -2,7 +2,7 @@
   "name": "Build a Planets Tablist",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-planets-tablist",
   "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",

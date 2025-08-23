@@ -1,6 +1,6 @@
 {
   "name": "JavaScript and Accessibility Review",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "blockType": "review",
   "blockLayout": "link",
   "dashedName": "review-js-a11y",

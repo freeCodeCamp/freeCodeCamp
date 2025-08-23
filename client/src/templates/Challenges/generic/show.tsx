@@ -260,11 +260,13 @@ const ShowGeneric = ({
               )}
 
               {assignments.length > 0 && (
-                <Assignments
-                  assignments={assignments}
-                  allAssignmentsCompleted={allAssignmentsCompleted}
-                  handleAssignmentChange={handleAssignmentChange}
-                />
+                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                  <Assignments
+                    assignments={assignments}
+                    allAssignmentsCompleted={allAssignmentsCompleted}
+                    handleAssignmentChange={handleAssignmentChange}
+                  />
+                </ObserveKeys>
               )}
 
               {questions.length > 0 && (
