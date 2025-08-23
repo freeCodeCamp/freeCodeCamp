@@ -76,19 +76,100 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
     useState<ComparisonResult | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const mediaStreamRef = useRef<MediaStream | null>(null);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
+  const microphoneRef = useRef<MediaStreamAudioSourceNode | null>(null);
   const silenceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const maxRecordingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const lastSpeechTimeRef = useRef<number>(0);
+  const hasRecognitionResultRef = useRef<boolean>(false);
 
-  // Reset feedback when modal is closed
+  // Cleanup function to stop all media resources
+  const cleanupMediaResources = () => {
+    // Stop MediaRecorder first
+    try {
+      if (mediaRecorderRef.current) {
+        if (mediaRecorderRef.current.state === 'recording') {
+          mediaRecorderRef.current.stop();
+        }
+        mediaRecorderRef.current = null;
+      }
+    } catch (error) {
+      console.warn('Error stopping media recorder:', error);
+    }
+
+    // Stop speech recognition
+    try {
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
+    } catch (error) {
+      console.warn('Error stopping speech recognition:', error);
+    }
+
+    // Disconnect audio processing
+    try {
+      if (microphoneRef.current) {
+        microphoneRef.current.disconnect();
+        microphoneRef.current = null;
+      }
+    } catch (error) {
+      console.warn('Error disconnecting microphone:', error);
+    }
+
+    try {
+      if (audioContextRef.current) {
+        void audioContextRef.current.close();
+        audioContextRef.current = null;
+      }
+    } catch (error) {
+      console.warn('Error closing audio context:', error);
+    }
+
+    // Stop media tracks last
+    try {
+      if (mediaStreamRef.current) {
+        mediaStreamRef.current.getTracks().forEach(track => {
+          try {
+            track.stop();
+          } catch (error) {
+            console.warn('Error stopping media track:', error);
+          }
+        });
+        mediaStreamRef.current = null;
+      }
+    } catch (error) {
+      console.warn('Error stopping media stream:', error);
+    }
+
+    if (silenceTimeoutRef.current) {
+      clearTimeout(silenceTimeoutRef.current);
+      silenceTimeoutRef.current = null;
+    }
+    if (maxRecordingTimeoutRef.current) {
+      clearTimeout(maxRecordingTimeoutRef.current);
+      maxRecordingTimeoutRef.current = null;
+    }
+  };
+
+  // Reset feedback and cleanup media when modal is closed
   useEffect(() => {
     if (!open) {
       setFeedback('');
       setComparisonResult(null);
+      setIsRecording(false);
+      cleanupMediaResources();
     }
   }, [open]);
+
+  // Cleanup media resources on component unmount
+  useEffect(() => {
+    return () => {
+      cleanupMediaResources();
+    };
+  }, []);
 
   if (!open) return null;
 
@@ -106,6 +187,7 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
 
       audioContextRef.current = audioContext;
       analyserRef.current = analyser;
+      microphoneRef.current = microphone;
 
       const dataArray = new Uint8Array(analyser.frequencyBinCount);
       lastSpeechTimeRef.current = Date.now();
@@ -203,9 +285,17 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
       void audioContextRef.current.close();
       audioContextRef.current = null;
     }
+    if (mediaStreamRef.current) {
+      mediaStreamRef.current.getTracks().forEach(track => track.stop());
+      mediaStreamRef.current = null;
+    }
     if (silenceTimeoutRef.current) {
       clearTimeout(silenceTimeoutRef.current);
       silenceTimeoutRef.current = null;
+    }
+    if (maxRecordingTimeoutRef.current) {
+      clearTimeout(maxRecordingTimeoutRef.current);
+      maxRecordingTimeoutRef.current = null;
     }
     setIsRecording(false);
     setFeedback('Recording stopped. Processing...');
@@ -231,6 +321,7 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
     recognition.lang = 'en-US';
 
     recognition.onresult = (event: SpeechRecognitionEvent) => {
+      hasRecognitionResultRef.current = true;
       const transcript = event.results[0][0].transcript;
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const formattedUtterance = formatUtterance(transcript);
@@ -246,12 +337,17 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
     };
 
     recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
-      setFeedback(`Speech recognition error: ${event.error}`);
+      hasRecognitionResultRef.current = true;
+      if (event.error === 'no-speech') {
+        setFeedback('Recording stopped. No speech detected.');
+      } else {
+        setFeedback(`Speech recognition error: ${event.error}`);
+      }
     };
 
     recognition.onend = () => {
       setIsRecording(false);
-      if (feedback === 'Recording... Speak now.') {
+      if (!hasRecognitionResultRef.current) {
         setFeedback('Recording stopped. No speech detected.');
       }
     };
@@ -274,9 +370,11 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
         audio: true
       });
 
+      mediaStreamRef.current = stream;
       setIsRecording(true);
       setFeedback('Recording... Speak now.');
       setComparisonResult(null);
+      hasRecognitionResultRef.current = false;
 
       // Set up and start speech recognition
       const recognition = setupSpeechRecognition();
@@ -290,6 +388,14 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
 
       // Start silence monitoring
       monitorAudioLevels(stream);
+
+      // Set maximum recording duration (30 seconds) to prevent infinite recording
+      maxRecordingTimeoutRef.current = setTimeout(() => {
+        if (isRecording) {
+          stopRecording();
+          setFeedback('Recording stopped. Maximum recording time reached.');
+        }
+      }, 30000);
     } catch (error) {
       console.error('Error accessing microphone:', error);
       setFeedback('Error: Could not access microphone.');

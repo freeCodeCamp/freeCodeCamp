@@ -17,11 +17,13 @@
   padding: 2rem;
   min-width: 350px;
   max-width: 900px;
+  max-height: 90vh;
   width: 100%;
   position: relative;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
   color: white;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .speaking-modal-close {
@@ -96,7 +98,13 @@
   width: 100%;
   margin-top: 2rem;
   min-height: 2.5rem;
+  max-height: 200px;
   text-align: center;
   color: #ffd700;
   font-size: 1.1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
