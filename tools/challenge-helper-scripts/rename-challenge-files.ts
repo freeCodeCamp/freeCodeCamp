@@ -4,7 +4,7 @@ import { join } from 'path';
 import { promisify } from 'util';
 
 import gray from 'gray-matter';
-import { prompt } from 'inquirer';
+import { select } from '@inquirer/prompts';
 
 const asyncExec = promisify(exec);
 
@@ -13,23 +13,19 @@ void (async () => {
     join(process.cwd(), 'curriculum', 'challenges', 'english')
   );
 
-  const { superblock } = (await prompt({
-    name: 'superblock',
+  const superblock = await select({
     message: 'Select target superblock:',
-    type: 'list',
     choices: superblocks.map(e => ({ name: e, value: e }))
-  })) as { superblock: string };
+  });
 
   const blocks = await readdir(
     join(process.cwd(), 'curriculum', 'challenges', 'english', superblock)
   );
 
-  const { block } = (await prompt({
-    name: 'block',
+  const block = await select({
     message: 'Select target block:',
-    type: 'list',
     choices: blocks.map(e => ({ name: e, value: e }))
-  })) as { block: string };
+  });
 
   const files = await readdir(
     join(

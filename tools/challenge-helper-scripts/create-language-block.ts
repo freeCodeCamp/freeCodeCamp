@@ -1,7 +1,7 @@
 import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
-import { prompt } from 'inquirer';
+import { input, select } from '@inquirer/prompts';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
@@ -138,40 +138,46 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
-void prompt([
-  {
-    name: 'superBlock',
-    message: 'Which certification does this belong to?',
-    default: SuperBlocks.A2English,
-    type: 'list',
-    choices: Object.values(languageSuperBlocks)
-  },
-  {
-    name: 'block',
-    message: 'What is the dashed name (in kebab-case) for this block?',
-    validate: validateBlockName,
-    filter: (block: string) => {
-      return block.toLowerCase().trim();
-    }
-  },
-  {
-    name: 'title',
-    default: ({ block }: { block: string }) => block
-  },
-  {
-    name: 'helpCategory',
-    message: 'Choose a help category',
-    default: 'English',
-    type: 'list',
-    choices: helpCategories
-  }
-])
-  .then(
-    async ({ superBlock, block, helpCategory, title }: CreateBlockArgs) =>
-      await createLanguageBlock(superBlock, block, helpCategory, title)
-  )
-  .then(() =>
+void (async () => {
+  try {
+    const answers: CreateBlockArgs = {
+      superBlock: await select({
+        message: 'Which certification does this belong to?',
+        choices: Object.values(languageSuperBlocks),
+        default: SuperBlocks.A2English
+      }),
+
+      block: await input({
+        message: 'What is the dashed name (in kebab-case) for this block?',
+        validate: validateBlockName,
+        transformer: (b: string) => b.toLowerCase().trim()
+      }),
+
+      title: undefined, // will set below
+      helpCategory: await select({
+        message: 'Choose a help category',
+        choices: helpCategories,
+        default: 'English'
+      })
+    };
+
+    // Set title after block is known
+    answers.title = await input({
+      message: 'What is the title of the block?',
+      default: answers.block
+    });
+
+    await createLanguageBlock(
+      answers.superBlock,
+      answers.block,
+      answers.helpCategory,
+      answers.title
+    );
+
     console.log(
-      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
-    )
-  );
+      'All set. Now use pnpm run clean:client in the root and it should be good to go.'
+    );
+  } catch (err) {
+    console.error('Error creating language block:', err);
+  }
+})();

@@ -1,7 +1,7 @@
 import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
-import { prompt } from 'inquirer';
+import { input, select } from '@inquirer/prompts';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
@@ -151,53 +151,57 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
-void prompt([
-  {
-    name: 'superBlock',
-    message: 'Which certification does this belong to?',
-    default: SuperBlocks.FullStackDeveloper,
-    type: 'list',
-    choices: Object.values(SuperBlocks)
-  },
-  {
-    name: 'block',
-    message: 'What is the dashed name (in kebab-case) for this quiz?',
-    validate: validateBlockName,
-    filter: (block: string) => {
-      return block.toLowerCase().trim();
-    }
-  },
-  {
-    name: 'title',
-    default: ({ block }: { block: string }) => block
-  },
-  {
-    name: 'helpCategory',
-    message: 'Choose a help category',
-    default: 'HTML-CSS',
-    type: 'list',
-    choices: helpCategories
-  },
-  {
-    name: 'questionCount',
-    message: 'Should this quiz have either ten or twenty questions?',
-    default: 20,
-    type: 'list',
-    choices: [20, 10]
-  }
-])
-  .then(
-    async ({
-      superBlock,
-      block,
-      title,
-      helpCategory,
-      questionCount
-    }: CreateQuizArgs) =>
-      await createQuiz(superBlock, block, helpCategory, questionCount, title)
-  )
-  .then(() =>
+void (async () => {
+  try {
+    const answers: CreateQuizArgs = {
+      superBlock: await select({
+        message: 'Which certification does this belong to?',
+        choices: Object.values(SuperBlocks),
+        default: SuperBlocks.FullStackDeveloper
+      }),
+
+      block: await input({
+        message: 'What is the dashed name (in kebab-case) for this quiz?',
+        validate: validateBlockName,
+        transformer: (b: string) => b.toLowerCase().trim()
+      }),
+
+      title: undefined, // will set after block
+      helpCategory: await select({
+        message: 'Choose a help category',
+        choices: helpCategories,
+        default: 'HTML-CSS'
+      }),
+
+      questionCount: 0 // temporary, will set below
+    };
+
+    // Set title after block is known
+    answers.title = await input({
+      message: 'What is the title of the quiz?',
+      default: answers.block
+    });
+
+    // Prompt question count as string, convert to number
+    const questionCountStr = await select({
+      message: 'Should this quiz have either ten or twenty questions?',
+      choices: ['20', '10'],
+      default: '20'
+    });
+    answers.questionCount = Number(questionCountStr);
+
+    await createQuiz(
+      answers.superBlock,
+      answers.block,
+      answers.helpCategory,
+      answers.questionCount,
+      answers.title
+    );
+
     console.log(
-      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
-    )
-  );
+      'All set. Now use pnpm run clean:client in the root and it should be good to go.'
+    );
+  } catch (err) {
+    console.error('Error creating quiz:', err);
+  }
+})();
