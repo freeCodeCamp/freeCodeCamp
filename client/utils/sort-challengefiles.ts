@@ -12,6 +12,8 @@ export function sortChallengeFiles<File extends { fileKey: string }>(
     if (b.fileKey === 'scriptjs') return 1;
     if (a.fileKey === 'indexts') return -1;
     if (b.fileKey === 'indexts') return 1;
+    if (a.fileKey === 'indextsx') return -1;
+    if (b.fileKey === 'indextsx') return 1;
     return 0;
   });
 }
