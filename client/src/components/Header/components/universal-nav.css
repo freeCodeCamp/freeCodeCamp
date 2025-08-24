@@ -7,6 +7,15 @@
   height: var(--header-height);
   justify-content: space-between;
   padding: 0 5px;
+  forced-color-adjust: none;
+}
+
+@media (forced-colors: active) {
+  .universal-nav {
+    background-color: Canvas;
+    color: CanvasText;
+    border-bottom: 1px solid CanvasText;
+  }
 }
 
 @media (min-width: 401px) {
@@ -75,6 +84,13 @@
   width: 100%;
 }
 
+@media (forced-colors: active) {
+  .nav-list {
+    background-color: Canvas;
+    border: 1px solid CanvasText;
+  }
+}
+
 @media (min-width: 980px) {
   .nav-list {
     max-width: 15rem;
@@ -122,6 +138,34 @@
   fill: var(--gray-00);
 }
 
+@media (forced-colors: active) {
+  .exposed-button-nav:is(
+      :hover,
+      :hover:focus,
+      [aria-expanded='true'],
+      [aria-expanded='true']:hover
+    ),
+  .lang-button-nav:is(
+      :hover,
+      :hover:focus,
+      [aria-expanded='true'],
+      [aria-expanded='false'].force-show
+    ) {
+    background-color: Highlight;
+    color: HighlightText;
+    border: 1px solid CanvasText;
+  }
+  
+  .lang-button-nav:is(
+      :hover,
+      :hover:focus,
+      [aria-expanded='true'],
+      [aria-expanded='false'].force-show
+    ) {
+    fill: HighlightText;
+  }
+}
+
 /**
  * Site header sub menu items
  */
@@ -151,6 +195,21 @@
 .nav-link:focus-visible {
   color: var(--gray-90);
   background-color: var(--gray-10);
+}
+
+@media (forced-colors: active) {
+  .nav-link {
+    color: CanvasText;
+    background-color: Canvas;
+    border: 1px solid transparent;
+  }
+  
+  .nav-link:not([aria-disabled='true']):hover,
+  .nav-link:focus-visible {
+    color: HighlightText;
+    background-color: Highlight;
+    border-color: CanvasText;
+  }
 }
 
 .nav-link:not([aria-disabled='true']):hover {
@@ -246,6 +305,15 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   padding: 0 4px;
 }
 
+@media (forced-colors: active) {
+  .exposed-button-nav,
+  .lang-button-nav {
+    background-color: Canvas;
+    border-color: CanvasText;
+    color: CanvasText;
+  }
+}
+
 @media (min-width: 601px) {
   .exposed-button-nav {
     padding-inline: 12px;
@@ -281,6 +349,28 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 .avatar-container {
   border: 2px solid var(--gray-15); /* default border */
   height: 100%;
+}
+
+@media (forced-colors: active) {
+  .avatar-container {
+    border-color: CanvasText;
+  }
+  
+  .gold-border {
+    border-color: Highlight;
+  }
+  
+  .blue-border {
+    border-color: Highlight;
+  }
+  
+  .purple-border {
+    border-color: Highlight;
+  }
+  
+  .default-border {
+    border-color: CanvasText;
+  }
 }
 
 /**
@@ -332,6 +422,12 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   border-top: 0.0625rem solid var(--gray-45);
 }
 
+@media (forced-colors: active) {
+  .nav-line {
+    border-top-color: CanvasText;
+  }
+}
+
 /**
  * Sign up CTA
  */
@@ -343,6 +439,21 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   min-width: var(--header-element-size);
   padding: 0 4px;
   text-decoration: none;
+}
+
+@media (forced-colors: active) {
+  .signup-btn {
+    background-color: Highlight;
+    color: HighlightText;
+    border: 1px solid CanvasText;
+  }
+  
+  .signup-btn:hover,
+  .signup-btn:focus {
+    background-color: HighlightText;
+    color: Highlight;
+    border-color: CanvasText;
+  }
 }
 
 @media (min-width: 601px) {
@@ -360,6 +471,13 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   left: 0;
   position: absolute;
   top: var(--header-height);
+}
+
+@media (forced-colors: active) {
+  .universal-nav-right .fcc_searchBar {
+    background-color: Canvas;
+    border: 1px solid CanvasText;
+  }
 }
 
 /* In mobile layout, prevent search input from hanging around if the
