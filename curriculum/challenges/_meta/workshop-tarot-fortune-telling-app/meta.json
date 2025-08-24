@@ -1,0 +1,11 @@
+{
+  "name": "Fortune Telling App",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-tarot-fortune-telling-app",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [{ "id": "68ab8a452498ad1559d88a27", "title": "Step 1" }],
+  "blockType": "workshop",
+  "blockLayout": "challenge-list",
+  "usesMultifileEditor": true
+}

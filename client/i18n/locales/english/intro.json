@@ -4769,6 +4769,10 @@
         "intro": [
           "In this lab you will build a function to manage a record collection."
         ]
+      },
+      "workshop-tarot-fortune-telling-app": {
+        "title": "Tarot fortune Telling App",
+        "intro": ["In this workshop you build a Tarot Card Fortune App"]
       }
     }
   },
