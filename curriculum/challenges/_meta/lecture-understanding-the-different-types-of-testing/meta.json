@@ -2,7 +2,7 @@
   "name": "Understanding the Different Types of Testing",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-the-different-types-of-testing",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

@@ -5,10 +5,13 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
-import { SuperBlocks } from '../../shared/config/curriculum';
+import {
+  SuperBlocks,
+  superBlockToFolderMap
+} from '../../shared/config/curriculum';
 import { createQuizFile, validateBlockName } from './utils';
-import { getSuperBlockSubPath } from './fs-utils';
-import { Meta } from './helpers/project-metadata';
+import { getBaseMeta } from './helpers/get-base-meta';
+import { createIntroMD } from './helpers/create-intro';
 
 const helpCategories = [
   'HTML-CSS',
@@ -46,7 +49,7 @@ async function createQuiz(
   if (!title) {
     title = block;
   }
-  void updateIntroJson(superBlock, block, title);
+  await updateIntroJson(superBlock, block, title);
 
   const challengeId = await createQuizChallenge(
     superBlock,
@@ -54,9 +57,9 @@ async function createQuiz(
     title,
     questionCount
   );
-  void createMetaJson(superBlock, block, title, helpCategory, challengeId);
+  await createMetaJson(superBlock, block, title, helpCategory, challengeId);
   // TODO: remove once we stop relying on markdown in the client.
-  void createIntroMD(superBlock, block, title);
+  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson(
@@ -88,7 +91,7 @@ async function createMetaJson(
   challengeId: ObjectID
 ) {
   const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
-  const newMeta = await parseJson<Meta>('./quiz-meta.json');
+  const newMeta = getBaseMeta('Quiz');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
@@ -107,35 +110,13 @@ async function createMetaJson(
   );
 }
 
-async function createIntroMD(superBlock: string, block: string, title: string) {
-  const introMD = `---
-title: Introduction to the ${title}
-block: ${block}
-superBlock: ${superBlock}
----
-
-## Introduction to the ${title}
-
-This page is for the ${title}
-`;
-  const dirPath = path.resolve(
-    __dirname,
-    `../../client/src/pages/learn/${superBlock}/${block}/`
-  );
-  const filePath = path.resolve(dirPath, 'index.md');
-  if (!existsSync(dirPath)) {
-    await withTrace(fs.mkdir, dirPath);
-  }
-  void withTrace(fs.writeFile, filePath, introMD, { encoding: 'utf8' });
-}
-
 async function createQuizChallenge(
   superBlock: SuperBlocks,
   block: string,
   title: string,
   questionCount: number
 ): Promise<ObjectID> {
-  const superBlockSubPath = getSuperBlockSubPath(superBlock);
+  const superBlockSubPath = superBlockToFolderMap[superBlock];
   const newChallengeDir = path.resolve(
     __dirname,
     `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
@@ -144,14 +125,12 @@ async function createQuizChallenge(
     await withTrace(fs.mkdir, newChallengeDir);
   }
   return createQuizFile({
-    challengeType: '8',
     projectPath: newChallengeDir + '/',
     title: title,
     dashedName: block,
     questionCount: questionCount
   });
 }
-
 function parseJson<JsonSchema>(filePath: string) {
   return withTrace(fs.readFile, filePath, 'utf8').then(
     // unfortunately, withTrace does not correctly infer that the third argument

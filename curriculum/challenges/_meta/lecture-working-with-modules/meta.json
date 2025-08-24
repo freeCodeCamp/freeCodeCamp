@@ -1,0 +1,10 @@
+{
+  "name": "Working with Modules",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-modules",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "683ec7b778993c6971b56c83", "title": "What Is the Python Standard Library, and How Do You Import a Module?" }],
+  "helpCategory": "Python"
+}

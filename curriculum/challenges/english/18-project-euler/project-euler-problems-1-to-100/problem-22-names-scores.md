@@ -19,7 +19,7 @@ What is the total of all the name scores in the array?
 `namesScores(test1)` should return a number.
 
 ```js
-assert(typeof namesScores(test1) === 'number');
+assert.isNumber(namesScores(test1));
 ```
 
 `namesScores(test1)` should return 791.

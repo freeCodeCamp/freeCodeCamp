@@ -2,7 +2,7 @@
   "name": "React Strategies and Debugging",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-react-strategies-and-debugging",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

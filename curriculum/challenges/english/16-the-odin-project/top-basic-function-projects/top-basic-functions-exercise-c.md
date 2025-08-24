@@ -38,7 +38,7 @@ assert.strictEqual(capitalize('sem'), 'Sem');
 
 ```
 
-## --solutions--
+# --solutions--
 
 ```js
 function capitalize(str) {

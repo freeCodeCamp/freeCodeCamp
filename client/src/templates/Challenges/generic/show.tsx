@@ -7,6 +7,7 @@ import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import { isEqual } from 'lodash';
 import store from 'store';
 import { YouTubeEvent } from 'react-youtube';
+import { ObserveKeys } from 'react-hotkeys';
 
 // Local Utilities
 import LearnLayout from '../../../components/layouts/learn';
@@ -40,7 +41,7 @@ import '../video.css';
 
 // Redux Setup
 const mapStateToProps = (state: unknown) => ({
-  isChallengeCompleted: isChallengeCompletedSelector(state) as boolean
+  isChallengeCompleted: isChallengeCompletedSelector(state)
 });
 
 const mapDispatchToProps = {
@@ -259,21 +260,25 @@ const ShowGeneric = ({
               )}
 
               {assignments.length > 0 && (
-                <Assignments
-                  assignments={assignments}
-                  allAssignmentsCompleted={allAssignmentsCompleted}
-                  handleAssignmentChange={handleAssignmentChange}
-                />
+                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                  <Assignments
+                    assignments={assignments}
+                    allAssignmentsCompleted={allAssignmentsCompleted}
+                    handleAssignmentChange={handleAssignmentChange}
+                  />
+                </ObserveKeys>
               )}
 
               {questions.length > 0 && (
-                <MultipleChoiceQuestions
-                  questions={questions}
-                  selectedOptions={selectedMcqOptions}
-                  handleOptionChange={handleMcqOptionChange}
-                  submittedMcqAnswers={submittedMcqAnswers}
-                  showFeedback={showFeedback}
-                />
+                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                  <MultipleChoiceQuestions
+                    questions={questions}
+                    selectedOptions={selectedMcqOptions}
+                    handleOptionChange={handleMcqOptionChange}
+                    submittedMcqAnswers={submittedMcqAnswers}
+                    showFeedback={showFeedback}
+                  />
+                </ObserveKeys>
               )}
 
               {explanation ? (

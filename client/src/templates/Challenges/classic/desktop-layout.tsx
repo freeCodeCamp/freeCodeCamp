@@ -5,7 +5,11 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import store from 'store';
 import { challengeTypes } from '../../../../../shared/config/challenge-types';
-import { ChallengeFiles, ResizeProps } from '../../../redux/prop-types';
+import {
+  ChallengeFiles,
+  DailyCodingChallengeLanguages,
+  ResizeProps
+} from '../../../redux/prop-types';
 import {
   removePortalWindow,
   setShowPreviewPortal,
@@ -27,11 +31,16 @@ interface DesktopLayoutProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   editor: ReactElement | null;
-  hasEditableBoundaries: boolean;
+  hasEditableBoundaries?: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
-  isFirstStep: boolean;
+  isDailyCodingChallenge: boolean;
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
+  isFirstStep?: boolean;
   layoutState: {
     codePane: Pane;
     editorPane: Pane;
@@ -40,7 +49,7 @@ interface DesktopLayoutProps {
     previewPane: Pane;
     testsPane: Pane;
   };
-  notes: string;
+  notes?: string;
   onPreviewResize: () => void;
   preview: ReactElement;
   resizeProps: ResizeProps;
@@ -53,6 +62,7 @@ interface DesktopLayoutProps {
   setShowPreviewPortal: (arg: boolean) => void;
   setShowPreviewPane: (arg: boolean) => void;
   portalWindow: null | Window;
+  showIndependentLowerJaw: boolean;
 }
 
 const reflexProps = {
@@ -92,7 +102,11 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     setShowPreviewPane,
     setShowPreviewPortal,
     portalWindow,
-    startWithConsoleShown
+    startWithConsoleShown,
+    showIndependentLowerJaw,
+    isDailyCodingChallenge,
+    dailyCodingChallengeLanguage,
+    setDailyCodingChallengeLanguage
   } = props;
 
   const initialShowState = (key: string, defaultValue: boolean): boolean => {
@@ -227,6 +241,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   }, []);
 
   const projectBasedChallenge = hasEditableBoundaries;
+  const areInstructionsDisplayable =
+    !projectBasedChallenge || showIndependentLowerJaw;
   const isMultifileProject =
     challengeType === challengeTypes.multifileCertProject ||
     challengeType === challengeTypes.multifilePythonCertProject ||
@@ -260,7 +276,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         <ActionRow
           hasPreview={hasPreview}
           hasNotes={!!notes}
-          isProjectBasedChallenge={projectBasedChallenge}
+          areInstructionsDisplayable={areInstructionsDisplayable}
+          isDailyCodingChallenge={isDailyCodingChallenge}
+          dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+          setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
           showConsole={showConsole}
           showNotes={showNotes}
           showInstructions={showInstructions}
@@ -274,7 +293,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         orientation='vertical'
         data-playwright-test-label='main-container'
       >
-        {!projectBasedChallenge && showInstructions && (
+        {areInstructionsDisplayable && showInstructions && (
           <ReflexElement
             flex={instructionPane.flex}
             {...resizeProps}
@@ -284,7 +303,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
             {instructions}
           </ReflexElement>
         )}
-        {!projectBasedChallenge && showInstructions && (
+        {areInstructionsDisplayable && showInstructions && (
           <ReflexSplitter propagate={true} {...resizeProps} />
         )}
 

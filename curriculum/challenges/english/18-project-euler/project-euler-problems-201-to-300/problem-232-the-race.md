@@ -16,7 +16,7 @@ On Player 2's turn, she chooses a positive integer $T$ and tosses the coin $T$ t
 
 Player 1 goes first. The winner is the first to 100 or more points.
 
-On each turn Player 2 selects the number, $T$, of coin tosses that maximises the probability of her winning.
+On each turn Player 2 selects the number, $T$, of coin tosses that maximizes the probability of her winning.
 
 What is the probability that Player 2 wins?
 

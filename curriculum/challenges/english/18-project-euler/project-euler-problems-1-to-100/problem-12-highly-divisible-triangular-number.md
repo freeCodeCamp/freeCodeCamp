@@ -31,7 +31,7 @@ What is the value of the first triangle number to have over `n` divisors?
 `divisibleTriangleNumber(5)` should return a number.
 
 ```js
-assert(typeof divisibleTriangleNumber(5) === 'number');
+assert.isNumber(divisibleTriangleNumber(5));
 ```
 
 `divisibleTriangleNumber(5)` should return 28.

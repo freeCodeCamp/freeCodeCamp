@@ -1,8 +1,8 @@
 ---
 id: 65d86af6cdfed1fcab11abbe
-title: Task 68
+title: Task 70
 challengeType: 22
-dashedName: task-68
+dashedName: task-70
 ---
 
 <!-- (Audio) Maria: He also ensures that everyone follows security procedures. -->

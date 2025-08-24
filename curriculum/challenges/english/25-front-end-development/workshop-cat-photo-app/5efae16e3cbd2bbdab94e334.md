@@ -71,8 +71,8 @@ The `figcaption` element should have the text `Cats hate other cats.` You have o
 assert.match(
   document
     .querySelectorAll('figcaption')[1]
-    ?.innerText.toLowerCase(),
-    /Cats hate other cats\.?$/i
+    ?.innerText?.trim().replace(/\s+/g, ' ').toLowerCase(),
+    /^Cats hate other cats\.?$/i
 );
 ```
 
@@ -111,7 +111,7 @@ assert.match(
         </ol>
 --fcc-editable-region--
         <figure>
-          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Two tabby kittens sleeping together on a couch.">
 
         </figure>
 --fcc-editable-region--

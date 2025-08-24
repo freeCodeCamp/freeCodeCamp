@@ -47,6 +47,7 @@ If so, ensure that the environment variable JEST_WORKER_ID is set.`
 
 assert.ok(process.env.HOME_LOCATION);
 assert.ok(isAllowedEnv(_FREECODECAMP_NODE_ENV));
+assert.ok(process.env.DEPLOYMENT_ENV);
 assert.ok(isAllowedProvider(_EMAIL_PROVIDER));
 assert.ok(process.env.AUTH0_CLIENT_ID);
 assert.ok(process.env.AUTH0_CLIENT_SECRET);
@@ -153,10 +154,6 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   );
 }
 
-if (process.env.FCC_ENABLE_EXAM_ENVIRONMENT === 'true') {
-  assert.ok(process.env.SCREENSHOT_SERVICE_LOCATION);
-}
-
 export const HOME_LOCATION = process.env.HOME_LOCATION;
 // Mailhog is used in development and test environments, hence the localhost
 // default.
@@ -195,6 +192,7 @@ export const FCC_ENABLE_SENTRY_ROUTES = undefinedOrBool(
   process.env.FCC_ENABLE_SENTRY_ROUTES
 );
 export const FREECODECAMP_NODE_ENV = _FREECODECAMP_NODE_ENV;
+export const DEPLOYMENT_ENV = process.env.DEPLOYMENT_ENV;
 export const SENTRY_DSN =
   process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
     ? ''
@@ -224,6 +222,4 @@ function undefinedOrBool(val: string | undefined): undefined | boolean {
 
   return val === 'true';
 }
-export const SCREENSHOT_SERVICE_LOCATION =
-  process.env.SCREENSHOT_SERVICE_LOCATION;
 export const DEPLOYMENT_VERSION = process.env.DEPLOYMENT_VERSION || 'unknown';

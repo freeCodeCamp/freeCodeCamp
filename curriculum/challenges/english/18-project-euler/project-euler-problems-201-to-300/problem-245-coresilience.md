@@ -8,7 +8,7 @@ dashedName: problem-245-coresilience
 
 # --description--
 
-We shall call a fraction that cannot be cancelled down a resilient fraction.
+We shall call a fraction that cannot be canceled down a resilient fraction.
 
 Furthermore we shall define the resilience of a denominator, $R(d)$, to be the ratio of its proper fractions that are resilient; for example, $R(12) = \frac{4}{11}$.
 

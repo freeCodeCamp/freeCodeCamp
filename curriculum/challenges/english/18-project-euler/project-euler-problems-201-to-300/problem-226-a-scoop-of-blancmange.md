@@ -14,7 +14,7 @@ The area under the blancmange curve is equal to $\frac{1}{2}$, shown in pink in 
 
 <img alt="diagram of blancmange curve, with circle C shown on diagram" src="https://cdn.freecodecamp.org/curriculum/project-euler/a-scoop-of-blancmange.gif" style="background-color: white; padding: 10px; display: block; margin-right: auto; margin-left: auto; margin-bottom: 1.2rem;">
 
-Let $C$ be the circle with centre ($\frac{1}{4}$,$\frac{1}{2}$) and radius $\frac{1}{4}$, shown in black in the diagram.
+Let $C$ be the circle with center ($\frac{1}{4}$,$\frac{1}{2}$) and radius $\frac{1}{4}$, shown in black in the diagram.
 
 What area under the blancmange curve is enclosed by $C$? Give your answer rounded to eight decimal places in the form 0.abcdefgh
 

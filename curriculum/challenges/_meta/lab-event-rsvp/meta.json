@@ -10,7 +10,7 @@
     }
   ],
   "helpCategory": "JavaScript",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "blockLayout": "link",
   "blockType": "lab"
 }

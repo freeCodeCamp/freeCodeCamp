@@ -1,0 +1,16 @@
+{
+  "name": "Build a Profile Lookup",
+  "isUpcomingChange": false,
+  "blockType": "lab",
+  "blockLayout": "link",
+  "dashedName": "lab-profile-lookup",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "5688e62ea601b2482ff8422b",
+      "title": "Build a Profile Lookup"
+    }
+  ],
+  "usesMultifileEditor": true
+}
