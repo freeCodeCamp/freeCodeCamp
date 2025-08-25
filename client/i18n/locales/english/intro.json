@@ -4769,6 +4769,12 @@
         "intro": [
           "In this lab you will build a function to manage a record collection."
         ]
+      },
+      "workshop-build-a-video-display-using-an-iframe": {
+        "title": "Build a Video Display Using an iframe",
+        "intro": [
+          "In this workshop, you'll learn how to work with the <code>iframe</code> element by building a video display."
+        ]
       }
     }
   },
