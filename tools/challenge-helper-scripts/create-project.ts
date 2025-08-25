@@ -108,8 +108,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
   void createIntroMD(
     projectArgs.superBlock,
     projectArgs.block,
-    projectArgs.title,
-    projectArgs.blockType
+    projectArgs.title
   );
   if (projectArgs.superBlock === SuperBlocks.FullStackDeveloper) {
     if (
@@ -213,7 +212,6 @@ async function createMetaJson(
     await format(JSON.stringify(newMeta), { parser: 'json' })
   );
 }
-
 
 async function createFirstChallenge(
   superBlock: SuperBlocks,

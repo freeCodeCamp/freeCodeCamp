@@ -38,7 +38,8 @@ const stepMeta = {
 const fullStackStepMeta = {
   ...baseMeta,
   blockType: '',
-  blockLayout: ''
+  blockLayout: '',
+  usesMultifileEditor: true
 };
 
 const quizMeta = {
