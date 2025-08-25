@@ -38,8 +38,6 @@ The array, `roman`, will contain numbers written with valid, but not necessarily
 
 Find the number of characters saved by writing each of these in their minimal form.
 
-**Note:** You can assume that all the Roman numerals in the array contain no more than four consecutive identical units.
-
 # --hints--
 
 `romanNumerals(testNumerals1)` should return a number.
