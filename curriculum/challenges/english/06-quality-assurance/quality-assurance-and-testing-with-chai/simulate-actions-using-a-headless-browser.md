@@ -40,7 +40,7 @@ const browser = new Browser();
 And use the `suiteSetup` hook to direct the `browser` to the `/` route with the following code. **Note**: `done` is passed as a callback to `browser.visit`, you should not invoke it.
 
 ```js
-suiteSetup(function(done) {
+suiteSetup(function (done) {
   return browser.visit('/', done);
 });
 ```
@@ -50,13 +50,15 @@ suiteSetup(function(done) {
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=4').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const params = new URLSearchParams();
+params.append('type', 'functional');
+params.append('n', 4);
+fetch(code + `/_api/get-tests?${params}`)
+  .then(response => response.json())
+  .then(data => {
+    assert.equal(data.state, 'passed');
+  })
+  .catch(error => {
+    throw new Error(error.message);
+  });
 ```
-
