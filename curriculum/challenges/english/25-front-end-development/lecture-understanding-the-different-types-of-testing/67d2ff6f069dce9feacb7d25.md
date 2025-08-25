@@ -1,18 +1,11 @@
 ---
 id: 67d2ff6f069dce9feacb7d25
 title: What Is Compatibility Testing?
-challengeType: 11
-videoId: 583-W-c4WNI
+challengeType: 19
 dashedName: what-is-compatibility-testing
 ---
 
 # --description--
-
-Watch the video or read the transcript and answer the questions below.
-
-# --transcript--
-
-What is compatibility testing?
 
 When you build out web applications at scale, you will need to think beyond your personal computing environment. How will these applications work on a variety of devices, operating systems, and browsers? Well, this is where compatibility testing comes in.
 
@@ -22,7 +15,7 @@ Different types of compatibility testing include backwards and forwards compatib
 
 Let's take a look at each of the types in more detail by starting with backwards and forwards compatibility. Backwards compatibility refers to when current software is compatible with earlier versions. Forwards compatibility is when software and systems will work with future versions of itself.
 
-The next type of testing is for hardware. Hardware compatibility testing focuses on the software's ability to work properly in different hardware configurations. This includes components like processors, memory, different storage types, and graphics cards.
+The next type of testing is for hardware. Hardware compatibility testing focuses on the software's ability to work properly in different hardware configurations. This includes different types of processors, memory, storage, and graphics cards.
 
 Another type of compatibility testing is for operating systems. You don't want to design software that works smoothly on Mac devices but has bugs on Windows or vice versa. You also need to consider Linux distributions like Ubuntu and Fedora.
 
@@ -46,7 +39,7 @@ To ensure that your applications have no accessibility errors.
 
 ### --feedback--
 
-Refer to the beginning of the video where this was discussed.
+Refer to the beginning of the lecture where this was discussed.
 
 ---
 
@@ -54,7 +47,7 @@ To ensure that your applications are free from linting and formatting errors.
 
 ### --feedback--
 
-Refer to the beginning of the video where this was discussed.
+Refer to the beginning of the lecture where this was discussed.
 
 ---
 
@@ -66,7 +59,7 @@ To ensure that your applications only work for different Linux distributions.
 
 ### --feedback--
 
-Refer to the beginning of the video where this was discussed.
+Refer to the beginning of the lecture where this was discussed.
 
 ## --video-solution--
 

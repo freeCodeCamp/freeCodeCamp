@@ -5,9 +5,10 @@ const { readSync } = require('to-vfile');
 const unified = require('unified');
 const addFillInTheBlank = require('./plugins/add-fill-in-the-blank');
 const addFrontmatter = require('./plugins/add-frontmatter');
+const validateSections = require('./plugins/validate-sections');
 const addSeed = require('./plugins/add-seed');
 const addSolution = require('./plugins/add-solution');
-const addBeforeHook = require('./plugins/add-before-hook');
+const addHooks = require('./plugins/add-hooks');
 const addTests = require('./plugins/add-tests');
 const addText = require('./plugins/add-text');
 const addVideoQuestion = require('./plugins/add-video-question');
@@ -32,6 +33,8 @@ const processor = unified()
   .use(frontmatter, ['yaml'])
   // extract the content from that 'yaml' node
   .use(addFrontmatter)
+  // validate all section markers before any plugin tries to extract sections
+  .use(validateSections)
   // Any imports will be replaced (in the tree) with
   // the sub-tree of the target file. e.g.
   // ::import{component="Script" from="./file.path" }
@@ -53,7 +56,7 @@ const processor = unified()
   .use(addAssignment)
   .use(addScene)
   .use(addQuizzes)
-  .use(addBeforeHook)
+  .use(addHooks)
   .use(addTests)
   .use(addText, [
     'description',

@@ -12,7 +12,7 @@ For this project, you will build a database of celestial bodies using PostgreSQL
 
 # --instructions--
 
-**Important:** After you pass all the project tests, save a dump of your database into a `universe.sql` file so you can complete step 2. There will be instructions how to do that within the virtual machine.
+**Important:** After you pass all the project tests, save a dump of your database into a `universe.sql` file so you can complete step 2. There will be instructions on how to do that within the virtual machine.
 
 # --notes--
 

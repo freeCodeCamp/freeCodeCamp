@@ -9,6 +9,7 @@
     "edit": "編輯",
     "copy": "複製",
     "view": "查看",
+    "submit-continue": "提交併繼續",
     "view-code": "查看代碼",
     "view-project": "查看項目",
     "view-cert-title": "查看 {{certTitle}}",
@@ -37,6 +38,7 @@
     "news": "專欄",
     "donate": "捐款",
     "supporters": "支持者",
+    "exam-app": "考試應用程序",
     "go-to-supporters": "轉到支持者頁面",
     "update-settings": "更新我的賬戶設置",
     "sign-me-out": "退出登錄 freeCodeCamp",
@@ -60,6 +62,8 @@
     "check-code": "檢查你的代碼",
     "check-code-ctrl": "檢查你的代碼（Ctrl + Enter）",
     "check-code-cmd": "檢查你的代碼（Command + Enter）",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "重置",
     "reset-step": "重置此步驟",
     "help": "幫助",
@@ -86,6 +90,7 @@
     "click-start-course": "開始課程",
     "click-start-project": "啓動項目",
     "click-start-exam": "開始考試",
+    "go-to-course": "進入課程",
     "change-language": "修改語言",
     "resume-project": "繼續項目",
     "start-project": "開始項目",
@@ -105,21 +110,54 @@
     "update-card": "更新你的卡片",
     "donate-now": "立即捐款",
     "confirm-amount": "確認金額",
-    "play": "Play Video",
-    "pause": "Pause Video",
+    "play": "播放視頻",
+    "pause": "暫停視頻",
     "closed-caption": "關閉標題",
     "share-on-x": "分享到 X",
     "share-on-bluesky": "分享到 BlueSky",
-    "share-on-threads": "分享到 Threads"
+    "share-on-threads": "分享到 Threads",
+    "play-scene": "按播放鍵",
+    "download-latest-version": "下載最新版本",
+    "start": "開始",
+    "go-to-today": "訪問今天的挑戰",
+    "go-to-today-long": "訪問今天的編程挑戰",
+    "go-to-archive": "訪問存檔",
+    "go-to-archive-long": "訪問每日編程挑戰存檔"
+  },
+  "daily-coding-challenges": {
+    "title": "每日編程挑戰",
+    "map-title": "嘗試今日編程挑戰：",
+    "not-found": "未找到每日編程挑戰。",
+    "release-note": "新挑戰在美國中部時間午夜發佈。"
+  },
+  "weekdays": {
+    "short": {
+      "sunday": "S",
+      "monday": "M",
+      "tuesday": "T",
+      "wednesday": "W",
+      "thursday": "T",
+      "friday": "F",
+      "saturday": "S"
+    },
+    "long": {
+      "sunday": "星期日",
+      "monday": "星期一",
+      "tuesday": "星期二",
+      "wednesday": "星期三",
+      "thursday": "星期四",
+      "friday": "星期五",
+      "saturday": "星期六"
+    }
   },
   "landing": {
     "big-heading-1": "免費學習編程",
     "big-heading-2": "構建項目",
-    "big-heading-1-b": "Build Your Skills for Free.",
+    "big-heading-1-b": "免費提升你的技能。",
     "big-heading-3": "獲得認證",
-    "advance-career": "Advance your career by learning in-demand skills in Programming, DevOps, Cybersecurity, AI Engineering, and English for Developers.",
-    "h2-heading": "More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:",
-    "graduates-work": "More than <strong>100,000</strong> freeCodeCamp graduates work in companies such as",
+    "advance-career": "學習編程、 DevOps、 網絡安全、 AI 工程和開發者英語，提升你的職業能力。",
+    "h2-heading": "已有超過 <strong>100,000</strong> 名 freeCodeCamp.org 畢業生<strong>入職</strong>科技公司，例如：",
+    "graduates-work": "超過 <strong>100,000</strong> freeCodeCamp 畢業生就職於如下企業",
     "hero-img-description": "韓國的 freeCodeCamp 學員在當地一個學習小組的交流活動上",
     "hero-img-alt": "一羣人，包括一名白人男子、一名黑人女子和一名亞裔女子，圍在一臺筆記本電腦旁。",
     "hero-img-uis": "一組展示在移動設備和桌面設備上的 freeCodeCamp 編輯器界面的截圖以及認證。",
@@ -127,19 +165,19 @@
     "testimonials": {
       "heading": "freeCodeCamp 校友感言：",
       "shawn": {
-        "img-alt": "Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.",
+        "img-alt": "Shawn Wang，一位年輕的亞洲男子，正對着鏡頭微笑並自拍，背景中是一座白雪皚皚的山脈。",
         "location": "<strong>Shawn Wang</strong> 新加坡",
         "occupation": "<strong>亞馬遜</strong>軟件工程師",
         "testimony": "\"轉行挺困難的。我在學習了 freeCodeCamp 的數百個小時的免費課程之後，纔對自己轉行成爲開發者有了信心。在一年內，我成爲了一名年薪 6 位數的軟件工程師。<strong>freeCodeCamp 改變了我的生活。</strong>\""
       },
       "sarah": {
-        "img-alt": "Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.",
+        "img-alt": "Sarah Chima, 一位年輕的黑人女性，正坐在椅子上對着鏡頭微笑。",
         "location": "<strong>Sarah Chima</strong> 尼日利亞",
         "occupation": "<strong>ChatDesk</strong> 軟件工程師",
         "testimony": "\"<strong>通過在 freeCodeCamp 學習，我轉行成爲一名軟件工程師。</strong>它的精心設計的課程幫助我從一個完全的新手成長爲非常自信的開發者。正是因爲 freeCodeCamp 的學習資源和社區的幫助，我在一家很棒的公司獲得了第一份開發工作。\""
       },
       "emma": {
-        "img-alt": "Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.",
+        "img-alt": "Emma Bostian, 一位年輕的白人女性，正面帶微笑站在綠色植被前對着鏡頭拍照。",
         "location": "<strong>Emma Bostian</strong> 瑞典",
         "occupation": "<strong>Spotify</strong> 軟件工程師",
         "testimony": "\"我一直努力學習 JavaScript，嘗試了許多課程，最後是 freeCodeCamp 的課程吸引了我。在 freeCodeCamp 學習 JavaScript、數據結構和算法，<strong>我不僅掌握了技能，</strong>還變得更自信，所以才能獲得理想中的工作，成爲 Spotify 的一名軟件工程師。\""
@@ -168,13 +206,14 @@
       "cta": "立即開始學習（免費）"
     },
     "certification-heading": "獲得以下免費認證：",
-    "core-certs-heading": "Recommended curriculum (still in beta):",
+    "core-certs-heading": "推薦課程（測試版）：",
     "learn-english-heading": "學習面向開發者的英語課程：",
-    "professional-certs-heading": "Professional certifications:",
+    "professional-certs-heading": "專業認證：",
     "interview-prep-heading": "爲開發人員面試求職做好準備：",
-    "legacy-curriculum-heading": "Our archived coursework:",
+    "legacy-curriculum-heading": "我們已存檔的課程：",
     "next-heading": "試試我們的測試版課程：",
     "upcoming-heading": "即將推出的課程：",
+    "catalog-heading": "探索我們的目錄：",
     "faq": "常見問題：",
     "faqs": [
       {
@@ -340,6 +379,14 @@
       "p7": "作爲一個基於成就發佈認證的學術機構，我們非常重視學術誠信。如果你對此條例有任何疑問，或者懷疑有人違反了該條例，可以發送郵件至 <0>{{email}}</0>，我們將進行調查。"
     }
   },
+  "exam": {
+    "download-header": "下載 freeCodeCamp 考試環境應用程序",
+    "explanation": "要獲得認證，你必須參加考試以檢驗對所學知識的掌握程度。參加考試完全免費。",
+    "version": "我們的應用程序的最新版本是：{{version}}。",
+    "download-details": "手動下載此應用",
+    "unable-to-detect-os": "我們無法檢測到你的操作系統。請手動下載下面的應用程序。",
+    "download-trouble": "如果在下載正確版本時遇到問題，請隨時聯繫支持團隊："
+  },
   "profile": {
     "you-change-privacy": "你需要更改你的隱私設置，才能讓他人看到你的作品集。這是你的作品集公開時候的預覽。",
     "username-change-privacy": "{{username}} 需要修改隱私設置，你才能看到其作品集。",
@@ -368,8 +415,8 @@
     "joined": "於 {{date}} 加入",
     "from": "來自 {{location}}",
     "total-points": "總分：",
-    "points_one": "{{count}} point on {{date}}",
-    "points_other": "{{count}} points on {{date}}",
+    "points_one": "{{date}} 獲得 {{count}} 分",
+    "points_other": "{{date}} 獲得 {{count}} 分",
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁",
     "edit-my-profile": "編輯我的個人資料",
     "add-bluesky": "將此認證分享到 BlueSky",
@@ -404,26 +451,27 @@
     "welcome-1": "歡迎回來，{{name}}。",
     "welcome-2": "歡迎來到 freeCodeCamp.org",
     "start-at-beginning": "如果你剛開始學習編程，我們建議你<0>從頭開始</0>。",
-    "happy-coding": "Happy coding!",
+    "happy-coding": "編程愉快！",
     "upcoming-lessons": "即將上線的課程",
     "learn": "學習",
     "add-subtitles": "幫助我們完善或添加字幕",
     "wrong-answer": "抱歉，這個答案不正確。再試一次？",
     "check-answer": "點擊下方按鈕，查看你的答案。",
-    "assignment-not-complete_one": "Please complete the assignment",
-    "assignment-not-complete_other": "Please complete the assignments",
-    "assignments_one": "Assignment",
-    "assignments_other": "Assignments",
+    "assignment-not-complete_one": "請完成任務",
+    "assignment-not-complete_other": "請完成任務",
+    "assignments_one": "任務",
+    "assignments_other": "任務",
     "question": "問題",
     "questions": "問題",
     "answered-mcq": "你有未回答的問題和/或錯誤的答案。",
     "explanation": "解釋",
-    "transcript": "Transcript",
+    "transcript": "文字記錄",
     "solution-link": "解決方案鏈接",
     "source-code-link": "源代碼鏈接",
     "ms-link": "微軟的鏈接",
     "submit-and-go": "提交併訪問下一個挑戰",
     "congratulations": "恭喜，你的代碼已通過。請提交你的代碼以繼續。",
+    "congratulations-code-passes": "✔ 恭喜。你的代碼通過了。",
     "i-completed": "我已經完成這個挑戰",
     "example-code": "示例代碼",
     "test-output": "你的測試輸出將在這裏顯示",
@@ -448,7 +496,7 @@
     "rsa": "閱讀，搜索，提問",
     "rsa-forum": "<strong>在發佈新帖子之前</strong> ，請<0>查看你的問題是否已經在論壇上被回答過</0>。",
     "reset": "重置這一節課程？",
-    "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
+    "reset-warn": "你確定要重置此課程（{{title}}）嗎？代碼編輯器和測試都將被重置。",
     "reset-warn-2": "這個操作不可撤銷。",
     "revert-warn": "你確定要還原這個課程嗎？你的最新更改將被撤銷，代碼將恢復到最近保存的版本。",
     "scrimba-tip": "注意：如果這個小瀏覽器窗口覆蓋了代碼，點擊拖動它。同時，你可以隨時暫停，在視頻中編輯代碼。",
@@ -495,26 +543,26 @@
       "logout-warning": "如果你在完成整個 {{course}} 課程之前退出 freeCodeCamp，你的進度將不會被保存到你的 freeCodeCamp 賬戶中。"
     },
     "local": {
-      "intro": "This course runs in a virtual Linux machine on your computer. To run the course, you first need to download each of the following if you don't already have them:",
-      "download-vscode": "<0>VS Code</0> and the <1>Dev Containers</1> extension",
-      "heading": "Then, follow these instructions to start the course:",
-      "step-1": "Open a terminal and clone the RDB Alpha repo if you don't already have it with <0>git clone https://github.com/freeCodeCamp/rdb-alpha</0>",
-      "step-2": "Navigate to the <0>rdb-alpha</0> directory in the terminal with <1>cd rdb-alpha</1>, and open VS Code with <2>code .</2>",
-      "sub-step-heading": "If you want to save your progress to your freeCodeCamp account, do the following:",
-      "sub-step-1": "Generate a user token if you don't already have one:",
-      "generate-token-btn": "Generate User Token",
-      "sub-step-2": "Copy your user token:",
-      "copy-token-btn": "Copy User Token",
-      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your user token will be deleted and your progress will not be saved to your freeCodeCamp account.",
-      "sub-step-3": "In the VS Code that opened, find and open the file named <0>Dockerfile</0>. At the bottom of the file, paste your token in as the value for the <1>CODEROAD_WEBHOOK_TOKEN</1> variable. It should look like this: <2>ENV CODEROAD_WEBHOOK_TOKEN=your-token-here</2>",
-      "step-3": "Open the command palette in VS Code by expanding the \"View\" menu and clicking \"Command Palette...\" and enter <0>Dev Containers: Rebuild and Reopen in Container</0> in the input.",
-      "step-4": "A new VS Code window will open and begin building the Docker image. It will take several minutes the first time.",
-      "step-5": "Once it is finished building, open the command palette again and enter <0>CodeRoad: Start</0> to open CodeRoad.",
-      "step-6": "In the CodeRoad window, click \"Start New Tutorial\" and then the \"URL\" tab at the top.",
-      "step-7": "Copy the course URL below, paste it in the URL input, and click \"Load\".",
-      "copy-url": "Copy Course URL",
-      "step-8": "Click \"Start\" to begin.",
-      "step-9": "Follow the instructions in CodeRoad to complete the course. Note: You may need to restart the terminal once for terminal settings to take effect and the tests to pass."
+      "intro": "本課程將在你電腦上的虛擬 Linux 環境中運行。要開始學習，你需要先下載以下必備軟件（如尚未安裝）：",
+      "download-vscode": "<0>VS Code</0> 和 <1>Dev Containers</1> 擴展",
+      "heading": "然後，按照這些指示開始課程：",
+      "step-1": "打開終端，如果尚未獲取 RDB Alpha 代碼庫，使用以下命令進行克隆：<0>git clone https://github.com/freeCodeCamp/rdb-alpha</0>",
+      "step-2": "在終端中使用 <1>cd rdb-alpha</1> 命令導航至 <0>rdb-alpha</0> 目錄，然後使用 <2>code .</2> 命令打開 VS Code。",
+      "sub-step-heading": "如果你想將你的進度保存至 freeCodeCamp 賬戶，執行以下操作：",
+      "sub-step-1": "如果你還沒有用戶令牌，生成一個：",
+      "generate-token-btn": "生成用戶令牌",
+      "sub-step-2": "複製你的用戶令牌：",
+      "copy-token-btn": "複製用戶令牌",
+      "logout-warning": "如果你在完成整個 {{course}} 課程之前退出 freeCodeCamp，你的用戶令牌將會被刪除，你的學習進度也將不會保存到你的 freeCodeCamp 賬戶中。",
+      "sub-step-3": "在打開的 VS Code 中，找到並打開名爲 <0>Dockerfile</0> 的文件。在文件底部，將你的令牌作爲 <1>CODEROAD_WEBHOOK_TOKEN</1> 變量的值進行粘貼。其應呈現爲：<2>ENV CODEROAD_WEBHOOK_TOKEN=your-token-here</2>",
+      "step-3": "在 VS Code 中打開命令面板的操作是：先展開“視圖”菜單，然後點擊“命令面板...”，接着輸入框中輸入 <0>ev Containers: Rebuild and Reopen in Containe</0> 。",
+      "step-4": "將會打開一個新的 VS Code 窗口，並開始構建 Docker 鏡像。第一次操作可能需要幾分鐘的時間。",
+      "step-5": "一旦構建完成，再次打開命令面板，並輸入 <0>CodeRoad: Start</0> 即可打開 CodeRoad。",
+      "step-6": "在 CodeRoad 窗口中，點擊 “Start New Tutorial”（開始新教程），然後在頂部點擊 “URL” 選項卡。",
+      "step-7": "複製下面的課程 URL，將其粘貼到網址輸入框中，然後點擊 “Load”（加載）。",
+      "copy-url": "複製課程 URL",
+      "step-8": "點擊 “Start”（開始）以開始。",
+      "step-9": "按照 CodeRoad 中的說明完成課程。注意：你可能需要將終端重啓一次，以便終端設置生效並通過測試。"
     },
     "step-1": "步驟 1：完成項目",
     "step-2": "步驟 2：提交你的代碼",
@@ -547,7 +595,7 @@
       "unanswered-questions": "以下問題尚未回答：{{ unansweredQuestions }}。你必須回答所有問題。",
       "have-n-correct-questions": "你答對了 {{ total }} 個問題中的 {{ correctAnswerCount }} 個。",
       "finish-modal-header": "完成測驗",
-      "finish-modal-body": "Are you sure you want to finish the quiz?",
+      "finish-modal-body": "你確定要完成這個測驗嗎？",
       "finish-modal-yes": "是的，我已經完成了",
       "finish-modal-no": "不，我想繼續測驗",
       "exit-modal-header": "退出測驗",
@@ -763,12 +811,12 @@
   "search": {
     "label": "搜索",
     "placeholder": {
-      "default": "Search our news articles, tutorials, and books",
-      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
+      "default": "搜索我們的文章、教程和書籍",
+      "numbered": "搜索 {{ roundedTotalRecords }}+ 文章、教程和書籍"
     },
     "see-results": "查看 {{searchQuery}} 的所有結果",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",
-    "no-results": "No results found",
+    "no-results": "未找到結果",
     "result-list": "搜索結果"
   },
   "misc": {
@@ -781,7 +829,7 @@
     "brand-new-account": "歡迎來到你全新的 freeCodeCamp 賬戶。讓我們開始吧。",
     "duplicate-account-warning": "如果你想登錄一個現有的賬戶，而不是創建這個賬戶，<0>點擊這裏刪除這個賬戶</0>並嘗試另一個電子郵件地址。",
     "quincy": "- Quincy Larson，freeCodeCamp.org 創始人、老師",
-    "email-blast": "Each Friday I send an email with 5 links about programming and computer science. I send these to about 6 million people. Would you like me to send this to you, too?",
+    "email-blast": "每週五我都會給大約 600 萬人發送一封電子郵件，裏面有 5 個關於編程和計算機科學的鏈接。你也想收到我的郵件嗎？",
     "update-email-1": "更新你的郵件地址",
     "update-email-2": "在這裏更新你的郵件地址：",
     "email": "郵箱",
@@ -797,14 +845,14 @@
     "document-notfound": "找不到文件",
     "slow-load-msg": "看起來這比平常花費更長時間，請嘗試刷新頁面。",
     "navigation-warning": "如果你離開這個頁面，你將丟失你的進度。你確定嗎？",
-    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
-    "fsd-b-cta": "Start Learning",
-    "fsd-b-benefit-1-title": "100k+ Students",
-    "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
-    "fsd-b-benefit-2-title": "Professional Certification",
-    "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
-    "fsd-b-benefit-3-title": "500+ Exercises",
-    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
+    "fsd-b-description": "這個全面的課程使你準備好成爲一名認證全棧開發者。你將會學習用 HTML、CSS、JavaScript、React、TypeScript、Node.js、Python 以及其他技術構建完整的 Web 應用。",
+    "fsd-b-cta": "開始學習",
+    "fsd-b-benefit-1-title": "10 萬+ 學生",
+    "fsd-b-benefit-1-description": "和 10 萬+ 學員一起學習這個認證。",
+    "fsd-b-benefit-2-title": "專業認證",
+    "fsd-b-benefit-2-description": "通過一個官方的可驗證的認證證明你的技能。",
+    "fsd-b-benefit-3-title": "500+ 練習",
+    "fsd-b-benefit-3-description": "通過大量實踐鞏固你的知識。"
   },
   "icons": {
     "gold-cup": "金獎盃",
@@ -833,6 +881,8 @@
     "github": "鏈接到 {{username}} 的 GitHub",
     "website": "鏈接到 {{username}} 的網站",
     "twitter": "鏈接到 {{username}} 的 Twitter",
+    "next-month": "訪問下個月",
+    "previous-month": "訪問上個月",
     "first-page": "訪問第一頁",
     "previous-page": "訪問上一頁",
     "next-page": "訪問下一頁",
@@ -858,10 +908,15 @@
     "rsa-checkbox": "我已經嘗試了 Read-Search-Ask（閱讀-搜索-提問）方法",
     "similar-questions-checkbox": "我已經在論壇上搜索了類似的問題和相應的答案",
     "edit-my-profile": "編輯我的個人資料",
-    "terminal-output": "Terminal output"
+    "editor-a11y-off-macos": "{{editorName}} 編輯器內容。按 Option+F1 設置無障礙選項。",
+    "editor-a11y-off-non-macos": "{{editorName}} 編輯器內容。按 Alt+F1 設置無障礙選項。",
+    "editor-a11y-on-macos": "{{editorName}} 編輯器模式。無障礙模式被設置爲 “on”。按 Command+E 關閉或按 Option+F1 查看更多選項。",
+    "editor-a11y-on-non-macos": "{{editorName}} 編輯器內容。無障礙模式被設置爲 “on”。按 Ctrl+E 關閉或者按 Alt+F1 查看更多選項。",
+    "terminal-output": "終端輸出",
+    "not-available": "不可用"
   },
   "flash": {
-    "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
+    "no-email-in-userinfo": "我們無法從你所選的供應商處獲取該電子郵件。請嘗試其他供應商，或者使用“繼續使用電子郵件”選項。",
     "honest-first": "在申請認證前，你必須先同意我們的《學術誠信條例》",
     "really-weird": "出現了一些奇怪的情況。如果再出現這種情況，請考慮在 https://github.com/freeCodeCamp/freeCodeCamp/issues/new 提交 issue。",
     "generic-error": "出錯了，請稍後再試。如果錯誤仍然存在，請聯繫 support@freecodecamp.org。",
@@ -915,7 +970,7 @@
     "unlink-success": "你已成功取消 {{website}} 鏈接",
     "provide-username": "檢查你是否提供用戶名和報告",
     "report-sent": "已通過 {{email}} 向團隊發送副本報告",
-    "report-error": "Unable to report this user at this time.",
+    "report-error": "目前無法報告該用戶。",
     "certificate-missing": "你嘗試查看的認證不存在",
     "create-token-err": "創建用戶令牌時出錯",
     "delete-token-err": "刪除用戶令牌時出錯",
@@ -935,12 +990,12 @@
     "generate-exam-error": "生成考試時發生錯誤。",
     "cert-not-found": "認證 {{certSlug}} 不存在。",
     "reset-editor-layout": "你的編輯器佈局已被重置。",
-    "user-token-generated": "A user token was created for you.",
-    "user-token-generate-error": "Something went wrong trying to generate a user token for you.",
-    "user-token-copied": "User token copied to clipboard.",
-    "user-token-copy-error": "Something went wrong trying to copy your token.",
-    "course-url-copied": "Course URL copied to clipboard.",
-    "course-url-copy-error": "Something went wrong trying to copy the course URL.",
+    "user-token-generated": "爲你生成了一個用戶令牌。",
+    "user-token-generate-error": "爲你生成用戶令牌時出現了錯誤。",
+    "user-token-copied": "用戶令牌已複製到剪貼板。",
+    "user-token-copy-error": "在複製你的令牌時出現了錯誤。",
+    "course-url-copied": "課程 URL 已複製到剪貼板。",
+    "course-url-copy-error": "在複製課程 URL 時出現了錯誤。",
     "ms": {
       "transcript": {
         "link-err-1": "請在請求中包含一個 Microsoft 成績單的 URL。",
@@ -993,7 +1048,7 @@
     "ms-learn-link": "請使用有效的 Microsoft Learn 獎盃鏈接。",
     "path-url": "你可能想要提交根路徑，即 https://example.com，而不是 https://example.com/path。",
     "source-code-link-required": "記得提交源代碼鏈接。",
-    "source-code-link-public": "Source code link must be publicly visible."
+    "source-code-link-public": "源代碼鏈接必須是公開可見的。"
   },
   "certification": {
     "executive": "執行董事，freeCodeCamp.org",
@@ -1124,10 +1179,12 @@
       "b1-english-for-developers-cert": "開發者 B1 英語認證",
       "full-stack-developer-v9": "全棧開發者",
       "full-stack-developer-v9-cert": "全棧開發者認證",
-      "a2-professional-spanish": "A2 Professional Spanish",
-      "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
-      "a2-professional-chinese": "A2 Professional Chinese",
-      "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
+      "a2-professional-spanish": "A2 專業西班牙語",
+      "a2-professional-spanish-cert": "A2 專業西班牙語認證",
+      "a2-professional-chinese": "A2 專業中文",
+      "a2-professional-chinese-cert": "A2 專業中文認證",
+      "a1-professional-chinese": "A1 Professional Chinese",
+      "a1-professional-chinese-cert": "A1 Professional Chinese Certification",
       "legacy-front-end": "舊版前端",
       "legacy-front-end-cert": "舊版前端認證",
       "legacy-back-end": "舊版後端",
@@ -1199,7 +1256,7 @@
     "focus-instructions-panel": "聚焦指示面板",
     "navigate-previous": "跳轉至上一個練習",
     "navigate-next": "跳轉至下一個練習",
-    "play-video": "Play Video"
+    "play-video": "播放視頻"
   },
   "signout": {
     "heading": "註銷你的賬戶",
@@ -1212,7 +1269,7 @@
     "heading": "警告：這是一個早期訪問測試環境",
     "p1": "我們歡迎你以僅限測試的模式嘗試此平臺，並儘早使用即將推出的功能。有時，這些更改被交替稱爲 next、beta、staging 等。",
     "p2": "我們感謝你報告所遇到的錯誤，並幫助我們改進 freeCodeCamp.org。",
-    "p3": "下次訪問時，你的進度可能不會被保存，在此部署中申請的任何認證均無效。請<0>點擊此鏈接</0>瞭解更多信息。",
+    "p3": "下次訪問時，你的進度可能不會被保存，在此部署中申請的任何認證均無效。",
     "certain": "接受並清除"
   },
   "survey": {
@@ -1239,6 +1296,16 @@
       "submit": "提交問卷",
       "exit": "退出調研",
       "two-questions": "恭喜你已經走到了這一步。在你開始考試之前，請回答這兩個簡短的調研問題。"
+    }
+  },
+  "curriculum": {
+    "catalog": {
+      "title": "探索我們的目錄",
+      "levels": {
+        "beginner": "初級",
+        "intermediate": "中級",
+        "advanced": "高級"
+      }
     }
   }
 }

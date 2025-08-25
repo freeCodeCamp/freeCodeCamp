@@ -7,7 +7,7 @@ dashedName: implement-the-quicksort-algorithm
 
 # --description--
 
-Fulfill the user stories below and get all the tests to pass to complete the lab.
+**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab.
 
 **User Stories:**
 

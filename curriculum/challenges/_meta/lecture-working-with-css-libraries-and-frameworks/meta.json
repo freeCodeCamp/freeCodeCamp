@@ -2,7 +2,7 @@
   "name": "Working with CSS Libraries and Frameworks",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-css-libraries-and-frameworks",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

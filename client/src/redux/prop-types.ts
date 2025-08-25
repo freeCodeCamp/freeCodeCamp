@@ -192,7 +192,7 @@ export type ChallengeNode = {
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
-    hooks?: { beforeAll: string };
+    hooks?: Hooks;
     id: string;
     instructions: string;
     isComingSoon: boolean;
@@ -239,6 +239,78 @@ export type ChallengeNode = {
     module?: string;
   };
 };
+
+export interface Hooks {
+  beforeAll?: string;
+  beforeEach?: string;
+  afterEach?: string;
+}
+
+export type PageContext = {
+  challengeMeta: ChallengeMeta;
+  projectPreview: {
+    challengeData: ChallengeData;
+  };
+};
+
+export type DailyCodingChallengeNode = {
+  challenge: {
+    date: string;
+    id: string;
+    challengeNumber: number;
+    title: string;
+    description: string;
+    superBlock: 'daily-coding-challenge';
+    block: 'daily-coding-challenge';
+    usesMultifileEditor: true;
+
+    helpCategory: 'JavaScript' | 'Python';
+    challengeType: 28 | 29;
+    fields: {
+      blockName: 'daily-coding-challenge';
+      tests: Test[];
+    };
+    challengeFiles: ChallengeFiles;
+
+    // props to satisfy the show classic component
+    instructions: string;
+    demoType: null;
+    hooks?: { beforeAll: string };
+    hasEditableBoundaries?: false;
+    forumTopicId?: number;
+    notes: string;
+    videoUrl?: string;
+    translationPending: false;
+  };
+};
+
+export type DailyCodingChallengePageContext = {
+  challengeMeta: {
+    block: 'daily-coding-challenge';
+    id: string;
+    superBlock: 'daily-coding-challenge';
+    disableLoopProtectTests: boolean;
+
+    // props to satisfy the show classic component
+    isFirstStep: boolean;
+    nextChallengePath?: string;
+    prevChallengePath?: string;
+    disableLoopProtectPreview: boolean;
+  };
+
+  // props to satisfy the show classic component
+  projectPreview: {
+    challengeData?: null;
+  };
+};
+
+export type DailyCodingChallengeLanguages = 'javascript' | 'python';
+
+export interface CompletedDailyCodingChallenge {
+  id: string;
+  completedDate: number;
+  completedLanguages: DailyCodingChallengeLanguages[];
+}
 
 type Quiz = {
   questions: QuizQuestion[];
@@ -302,6 +374,7 @@ export type User = {
   about: string;
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
+  completedChallengeCount: number;
   completedSurveys: SurveyResults[];
   currentChallengeId: string;
   email: string;
@@ -406,9 +479,8 @@ export interface ChallengeData extends CompletedChallenge {
 export type ChallengeMeta = {
   block: string;
   id: string;
-  introPath: string;
   isFirstStep: boolean;
-  superBlock: SuperBlocks;
+  superBlock: SuperBlocks | 'daily-coding-challenge';
   title?: string;
   challengeType?: number;
   blockType?: BlockTypes;
