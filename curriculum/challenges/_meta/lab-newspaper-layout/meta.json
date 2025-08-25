@@ -1,10 +1,10 @@
 {
-  "name": "Design a Magazine Layout",
+  "name": "Design a Newspaper Layout",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "dashedName": "lab-magazine-layout",
+  "dashedName": "lab-newspaper-layout",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "6735a7370e0ae93a4577c689", "title": "Design a Magazine Layout" }],
+  "challengeOrder": [{ "id": "6735a7370e0ae93a4577c689", "title": "Design a Newspaper Layout" }],
   "helpCategory": "HTML-CSS",
   "blockLayout": "link",
   "blockType": "lab"
