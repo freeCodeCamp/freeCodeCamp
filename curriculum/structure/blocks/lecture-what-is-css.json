@@ -1,0 +1,51 @@
+{
+  "name": "What Is CSS?",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-what-is-css",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa5e1f8b935577acfb2b9",
+      "title": "What Is CSS, and What Is Its Role on the Web?"
+    },
+    {
+      "id": "672acbbe2891564c4e316164",
+      "title": "What Is the Basic Anatomy of a CSS Rule?"
+    },
+    {
+      "id": "672acbce8163374c903253c9",
+      "title": "What Is the Meta Viewport Element Used For?"
+    },
+    {
+      "id": "672acbdd06b44c4cd3bf8713",
+      "title": "What Are Some Default Browser Styles Applied to HTML?"
+    },
+    {
+      "id": "672acbf7490c054d213a8c1f",
+      "title": "What Are Inline, Internal, and External CSS, and When Should You Use Each One?"
+    },
+    {
+      "id": "672acc03c257524d6a5151e8",
+      "title": "How Do Width and Height Work?"
+    },
+    {
+      "id": "672acc100d59d24da7b4e09c",
+      "title": "What Are the Different Types of CSS Combinators?"
+    },
+    {
+      "id": "672acc1e24c1e54df5ad89bd",
+      "title": "What Is the Difference Between Inline and Block-Level Elements in CSS?"
+    },
+    {
+      "id": "672acc3f6f3e3c4e31ec3e12",
+      "title": "How Does Inline-Block Work, and How Does It Differ from Inline and Block Elements?"
+    },
+    {
+      "id": "672acc538e6ef24e9dd3c94f",
+      "title": "What Are Margins and Padding, and How Do They Work?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

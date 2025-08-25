@@ -5,9 +5,9 @@ import { Disclosure } from '@headlessui/react';
 
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
-// TODO: See if there's a nice way to incorporate the structure into data Gatsby
-// sources from the curriculum, rather than importing it directly.
-import superBlockStructure from '../../../../../curriculum/superblock-structure/full-stack.json';
+// TODO: source the superblock structure via a GQL query, rather than directly
+// from the curriculum
+import superBlockStructure from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
 import { FsdChapters } from '../../../../../shared/config/chapters';
@@ -74,7 +74,7 @@ const getBlockToChapterMap = () => {
   chapters.forEach(chapter => {
     chapter.modules.forEach(module => {
       module.blocks.forEach(block => {
-        blockToChapterMap.set(block.dashedName, chapter.dashedName);
+        blockToChapterMap.set(block, chapter.dashedName);
       });
     });
   });
@@ -86,7 +86,7 @@ const getBlockToModuleMap = () => {
   const blockToModuleMap = new Map<string, string>();
   modules.forEach(module => {
     module.blocks.forEach(block => {
-      blockToModuleMap.set(block.dashedName, module.dashedName);
+      blockToModuleMap.set(block, module.dashedName);
     });
   });
 
@@ -212,14 +212,14 @@ export const SuperBlockAccordion = ({
 }: SuperBlockAccordionProps) => {
   const { t } = useTranslation();
   const { allChapters } = useMemo(() => {
-    const populateBlocks = (blocks: { dashedName: string }[]) =>
+    const populateBlocks = (blocks: string[]) =>
       blocks.map(block => {
         const blockChallenges = challenges.filter(
-          ({ block: blockName }) => blockName === block.dashedName
+          ({ block: blockName }) => blockName === block
         );
 
         return {
-          name: block.dashedName,
+          name: block,
           blockType: blockChallenges[0]?.blockType ?? null,
           challenges: blockChallenges
         };

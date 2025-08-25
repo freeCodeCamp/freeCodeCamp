@@ -20,11 +20,7 @@ const blockSchema = Joi.object({}).keys({
         'Euler',
         'Rosetta'
       ).required(),
-      order: Joi.number().when('superBlock', {
-        is: 'full-stack-developer',
-        then: Joi.forbidden(),
-        otherwise: Joi.required()
-      }),
+      order: Joi.number().required(),
       template: Joi.string().allow(''),
       required: Joi.array(),
       superBlock: Joi.string().required(),
