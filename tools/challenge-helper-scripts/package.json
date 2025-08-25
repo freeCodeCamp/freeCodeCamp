@@ -26,12 +26,13 @@
   },
   "devDependencies": {
     "@types/glob": "^8.0.1",
-    "@types/inquirer": "^8.2.5",
     "bson-objectid": "2.0.4",
     "glob": "^8.1.0",
     "gray-matter": "4.0.3",
-    "inquirer": "8.2.6",
     "prettier": "3.2.5",
     "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.8.3"
   }
 }
