@@ -21,81 +21,71 @@ Within `tests/1_unit-tests.js` under the test labeled `#18` in the `Objects` sui
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=17').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=17');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.state, 'passed');
 ```
 
 You should choose the correct method for the first assertion - `instanceOf` vs. `notInstanceOf`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=17').then(
-    (data) => {
-      assert.equal(
-        data.assertions[0].method,
-        'notInstanceOf',
-        'myCar is not an instance of Plane'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=17');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(
+  data.assertions[0].method,
+  'notInstanceOf',
+  'myCar is not an instance of Plane'
+);
 ```
 
 You should choose the correct method for the second assertion - `instanceOf` vs. `notInstanceOf`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=17').then(
-    (data) => {
-      assert.equal(
-        data.assertions[1].method,
-        'instanceOf',
-        'airlinePlane is an instance of Plane'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=17');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(
+  data.assertions[1].method,
+  'instanceOf',
+  'airlinePlane is an instance of Plane'
+);
 ```
 
 You should choose the correct method for the third assertion - `instanceOf` vs. `notInstanceOf`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=17').then(
-    (data) => {
-      assert.equal(
-        data.assertions[2].method,
-        'instanceOf',
-        'everything is an Object in JavaScript...'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=17');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(
+  data.assertions[2].method,
+  'instanceOf',
+  'everything is an Object in JavaScript...'
+);
 ```
 
 You should choose the correct method for the fourth assertion - `instanceOf` vs. `notInstanceOf`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=17').then(
-    (data) => {
-      assert.equal(
-        data.assertions[3].method,
-        'notInstanceOf',
-        'myCar.wheels is not an instance of String'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=17');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(
+  data.assertions[3].method,
+  'notInstanceOf',
+  'myCar.wheels is not an instance of String'
+);
 ```
 
