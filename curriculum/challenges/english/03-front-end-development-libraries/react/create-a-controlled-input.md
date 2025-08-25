@@ -51,7 +51,6 @@ assert.strictEqual(
 Typing in the input element should update the state and the value of the input, and the `p` element should render this state as you type.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(ControlledInput));
@@ -77,7 +76,6 @@ async () => {
       after.text === 'TestInput' &&
       after.inputVal === 'TestInput'
   );
-};
 ```
 
 # --seed--
