@@ -1,6 +1,6 @@
 ---
 title: Introduction to Implement a Sorted Index Finder
-block: lab-implement-a-sorted-index-finder
+block: lab-sorted-index-finder
 superBlock: full-stack-developer
 ---
 
