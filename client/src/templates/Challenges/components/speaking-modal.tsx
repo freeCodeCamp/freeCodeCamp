@@ -12,7 +12,7 @@ interface SpeakingModalProps {
   onClose: () => void;
   sentence: string;
   audioUrl?: string;
-  answerIndex: number;
+  answerIndex?: number;
 }
 
 interface ComparisonWord {
@@ -38,8 +38,7 @@ const SpeakingModal = ({
   open,
   onClose,
   sentence,
-  audioUrl,
-  answerIndex
+  audioUrl
 }: SpeakingModalProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
@@ -202,12 +201,10 @@ const SpeakingModal = ({
       return;
     }
 
-    // Construct the modified audio URL with -SP + answer number
-    let modifiedAudioUrl = audioUrl;
-    if (answerIndex !== undefined) {
-      const answerNumber = answerIndex + 1; // Convert 0-based index to 1-based
-      modifiedAudioUrl = `${audioUrl}-SP${answerNumber}.mp3`;
-    }
+    // Use the audio URL directly (now includes .mp3 extension from audioId)
+    const modifiedAudioUrl = audioUrl.endsWith('.mp3')
+      ? audioUrl
+      : `${audioUrl}.mp3`;
 
     try {
       setIsPlaying(true);

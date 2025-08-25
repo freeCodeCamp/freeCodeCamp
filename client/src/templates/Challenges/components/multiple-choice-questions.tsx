@@ -16,6 +16,7 @@ type MultipleChoiceQuestionsProps = {
   showSpeakingButton?: boolean;
   challengeData?: {
     challengeId?: string;
+    audioIds?: string[] | null;
   };
 };
 
@@ -42,14 +43,21 @@ function MultipleChoiceQuestions({
     return text.replace(/<code>(.*?)<\/code>/g, '$1');
   }
 
-  // Construct audio URL from challenge ID (first 6 digits)
-  const constructAudioUrl = (challengeId?: string): string | undefined => {
-    if (!challengeId) return undefined;
-    const first6Digits = challengeId.slice(0, 6);
-    return `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${first6Digits}`;
+  // Construct audio URL from audioId
+  const constructAudioUrl = (audioId?: string): string | undefined => {
+    if (audioId) {
+      return `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${audioId}`;
+    }
+    return undefined;
   };
 
-  const audioUrl = constructAudioUrl(challengeData?.challengeId);
+  const getAudioUrl = (answerIndex: number): string | undefined => {
+    const audioIds = challengeData?.audioIds;
+    if (audioIds && audioIds[answerIndex]) {
+      return constructAudioUrl(audioIds[answerIndex]);
+    }
+    return undefined;
+  };
 
   return (
     <>
@@ -174,7 +182,7 @@ function MultipleChoiceQuestions({
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         sentence={modalText}
-        audioUrl={audioUrl}
+        audioUrl={getAudioUrl(modalAnswerIndex)}
         answerIndex={modalAnswerIndex}
       />
     </>

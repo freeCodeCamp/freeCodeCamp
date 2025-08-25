@@ -295,6 +295,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       challenge: Challenge
     }
     type Challenge {
+      audioIds: [String]
       blockType: String
       blockLayout: String
       challengeFiles: [FileContents]

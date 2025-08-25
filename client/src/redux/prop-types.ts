@@ -214,6 +214,7 @@ export type ChallengeNode = {
     questions: Question[];
     quizzes: Quiz[];
     assignments: string[];
+    audioIds?: string[] | null;
     required: Required[];
     scene: FullScene;
     solutions: {
