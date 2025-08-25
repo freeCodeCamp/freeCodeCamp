@@ -1,3 +1,4 @@
+import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
 import {
   ExamEnvironmentAnswer,
   ExamEnvironmentQuestionType
@@ -8,9 +9,9 @@ import {
   examAttempt,
   generatedExam,
   oid
-} from '../../../__mocks__/exam-environment-exam';
-import * as schemas from '../schemas';
-import { setupServer } from '../../../jest.utils';
+} from '../../../__mocks__/exam-environment-exam.js';
+import * as schemas from '../schemas/index.js';
+import { setupServer } from '../../../vitest.utils.js';
 import {
   checkAttemptAgainstGeneratedExam,
   checkPrerequisites,
@@ -20,7 +21,7 @@ import {
   validateAttempt,
   compareAnswers,
   shuffleArray
-} from './exam-environment';
+} from './exam-environment.js';
 
 // NOTE: Whilst the tests could be run against a single generation of exam,
 //       it is more useful to run the tests against a new generation each time.
@@ -28,9 +29,9 @@ import {
 //       generate a valid exam.
 //       Another option is to call `generateExam` hundreds of times in a loop test :shrug:
 describe('Exam Environment mocked Math.random', () => {
-  let spy: jest.SpyInstance;
+  let spy: ReturnType<typeof vi.spyOn>;
   beforeAll(() => {
-    spy = jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
+    spy = vi.spyOn(Math, 'random').mockReturnValue(0.123456789);
   });
   afterAll(() => {
     spy.mockRestore();

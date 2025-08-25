@@ -1,5 +1,6 @@
-import { devLogin, setupServer, superRequest } from '../../../jest.utils';
-import { HOME_LOCATION } from '../../utils/env';
+import { describe, it, expect, beforeEach } from 'vitest';
+import { devLogin, setupServer, superRequest } from '../../../vitest.utils.js';
+import { HOME_LOCATION } from '../../utils/env.js';
 
 describe('GET /signout', () => {
   setupServer();

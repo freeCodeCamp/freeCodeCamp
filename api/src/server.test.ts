@@ -1,10 +1,11 @@
-import { setupServer, superRequest } from '../jest.utils';
-import { HOME_LOCATION } from './utils/env';
+import { describe, test, expect, vi } from 'vitest';
+import { setupServer, superRequest } from '../vitest.utils.js';
+import { HOME_LOCATION } from './utils/env.js';
 
-jest.mock('./utils/env', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+vi.mock('./utils/env', async importOriginal => {
+  const actual = await importOriginal<typeof import('./utils/env.js')>();
   return {
-    ...jest.requireActual('./utils/env'),
+    ...actual,
     COOKIE_DOMAIN: 'freecodecamp.org'
   };
 });

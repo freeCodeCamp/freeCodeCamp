@@ -1,8 +1,10 @@
 import assert from 'node:assert';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { config } from 'dotenv';
 import { LogLevel } from 'fastify';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, '../../../.env');
 const { error } = config({ path: envPath });
 
@@ -40,7 +42,7 @@ function createTestConnectionURL(url: string, dbId?: string) {
   assert.ok(
     dbId,
     `dbId is required for test connection URL. Is this running in a test environment?
-If so, ensure that the environment variable JEST_WORKER_ID is set.`
+If so, ensure that the environment variable VITEST_WORKER_ID is set.`
   );
   return url.replace(/(.*)(\?.*)/, `$1${dbId}$2`);
 }
@@ -162,7 +164,7 @@ export const MONGOHQ_URL =
   process.env.NODE_ENV === 'test'
     ? createTestConnectionURL(
         process.env.MONGOHQ_URL,
-        process.env.JEST_WORKER_ID
+        process.env.VITEST_WORKER_ID
       )
     : process.env.MONGOHQ_URL;
 

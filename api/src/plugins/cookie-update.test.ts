@@ -1,13 +1,16 @@
+import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
-import cookies, { type CookieSerializeOptions, sign } from './cookies';
-import { cookieUpdate } from './cookie-update';
+import cookies, { type CookieSerializeOptions, sign } from './cookies.js';
+import { cookieUpdate } from './cookie-update.js';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-return
-jest.mock('../utils/env', () => ({
-  ...jest.requireActual('../utils/env'),
-  COOKIE_DOMAIN: 'www.example.com',
-  FREECODECAMP_NODE_ENV: 'not-development'
-}));
+vi.mock('../utils/env', async importOriginal => {
+  const actual = await importOriginal<typeof import('../utils/env.js')>();
+  return {
+    ...actual,
+    COOKIE_DOMAIN: 'www.example.com',
+    FREECODECAMP_NODE_ENV: 'not-development'
+  };
+});
 
 describe('Cookie updates', () => {
   let fastify: FastifyInstance;
@@ -36,7 +39,7 @@ describe('Cookie updates', () => {
     await fastify.close();
   });
 
-  it('should not set cookies that are not in the request', async () => {
+  test('should not set cookies that are not in the request', async () => {
     await setup({});
 
     const res = await fastify.inject({
@@ -50,7 +53,7 @@ describe('Cookie updates', () => {
     expect(res.headers['set-cookie']).toBeUndefined();
   });
 
-  it("should update the cookie's attributes without changing the value", async () => {
+  test("should update the cookie's attributes without changing the value", async () => {
     await setup({ sameSite: 'strict' });
     const signedCookie = sign('cookie_value');
     const encodedCookie = encodeURIComponent(signedCookie);
@@ -70,7 +73,7 @@ describe('Cookie updates', () => {
     expect(updatedCookie).toEqual(expect.stringContaining('SameSite=Strict'));
   });
 
-  it('should unsign the cookie if required', async () => {
+  test('should unsign the cookie if required', async () => {
     await setup({ signed: false });
     const signedCookie = sign('cookie_value');
 
@@ -88,7 +91,7 @@ describe('Cookie updates', () => {
     );
   });
 
-  it('should respect the default cookie config if not overriden', async () => {
+  test('should respect the default cookie config if not overriden', async () => {
     await setup({});
 
     const res = await fastify.inject({

@@ -4,9 +4,9 @@ import {
   getRedirectParams,
   getPrefixedLandingPath,
   haveSamePath
-} from '../utils/redirection';
-import { findOrCreateUser } from '../routes/helpers/auth-helpers';
-import { createAccessToken } from '../utils/tokens';
+} from '../utils/redirection.js';
+import { findOrCreateUser } from '../routes/helpers/auth-helpers.js';
+import { createAccessToken } from '../utils/tokens.js';
 
 const trimTrailingSlash = (str: string) =>
   str.endsWith('/') ? str.slice(0, -1) : str;
