@@ -2,7 +2,7 @@
   "name": "CSS Libraries and Frameworks Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-css-libraries-and-frameworks",
   "superBlock": "full-stack-developer",
   "challengeOrder": [

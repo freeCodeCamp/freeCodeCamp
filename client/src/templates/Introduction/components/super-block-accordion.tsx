@@ -27,6 +27,7 @@ interface ChapterProps {
   isExpanded: boolean;
   totalSteps: number;
   completedSteps: number;
+  superBlock: SuperBlocks;
 }
 
 interface ModuleProps {
@@ -35,6 +36,7 @@ interface ModuleProps {
   isExpanded: boolean;
   totalSteps: number;
   completedSteps: number;
+  superBlock: SuperBlocks;
 }
 
 interface Challenge {
@@ -100,7 +102,8 @@ const Chapter = ({
   isExpanded,
   comingSoon,
   totalSteps,
-  completedSteps
+  completedSteps,
+  superBlock
 }: ChapterProps) => {
   const { t } = useTranslation();
   const isComplete = completedSteps === totalSteps;
@@ -116,7 +119,7 @@ const Chapter = ({
             className='map-icon'
             chapter={dashedName as FsdChapters}
           />
-          {t(`intro:full-stack-developer.chapters.${dashedName}`)}
+          {t(`intro:${superBlock}.chapters.${dashedName}`)}
         </div>
         <div className='chapter-button-right'>
           {!comingSoon && (
@@ -149,7 +152,8 @@ const Module = ({
   children,
   isExpanded,
   totalSteps,
-  completedSteps
+  completedSteps,
+  superBlock
 }: ModuleProps) => {
   const { t } = useTranslation();
   const isComplete = completedSteps === totalSteps;
@@ -161,7 +165,7 @@ const Module = ({
           <span className='dropdown-wrap'>
             <DropDown />
           </span>
-          {t(`intro:full-stack-developer.modules.${dashedName}`)}
+          {t(`intro:${superBlock}.modules.${dashedName}`)}
         </div>
         <div className='module-button-right'>
           <span className='module-steps'>
@@ -263,6 +267,7 @@ export const SuperBlockAccordion = ({
             comingSoon={chapter.comingSoon}
             totalSteps={chapterStepIds.length}
             completedSteps={completedStepsInChapter}
+            superBlock={superBlock}
           >
             {chapter.modules.map(module => {
               if (module.comingSoon && !showUpcomingChanges) {
@@ -271,7 +276,7 @@ export const SuperBlockAccordion = ({
                 }
 
                 const { note, intro } = t(
-                  `intro:full-stack-developer.module-intros.${module.name}`,
+                  `intro:${superBlock}.module-intros.${module.name}`,
                   { returnObjects: true }
                 ) as {
                   note: string;
@@ -289,7 +294,7 @@ export const SuperBlockAccordion = ({
                         <span className='dropdown-wrap'>
                           <DropDown />
                         </span>
-                        {t(`intro:full-stack-developer.modules.${module.name}`)}
+                        {t(`intro:${superBlock}.modules.${module.name}`)}
                       </div>
                     </Disclosure.Button>
                     <Disclosure.Panel as='ul' className='module-panel'>
@@ -335,6 +340,7 @@ export const SuperBlockAccordion = ({
                   isExpanded={expandedModule === module.name}
                   totalSteps={moduleStepIds.length}
                   completedSteps={completedStepsInModule}
+                  superBlock={superBlock}
                 >
                   {module.blocks.map(block => (
                     // maybe TODO: allow blocks to be "coming soon"

@@ -824,6 +824,9 @@
               "dashedName": "lab-book-organizer"
             },
             {
+              "dashedName": "lab-sorted-index-finder"
+            },
+            {
               "dashedName": "review-javascript-higher-order-functions"
             },
             {
@@ -871,7 +874,6 @@
         },
         {
           "dashedName": "js-a11y",
-          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "lecture-understanding-aria-expanded-aria-live-and-common-aria-states"
@@ -1244,7 +1246,6 @@
         },
         {
           "dashedName": "css-libraries-and-frameworks",
-          "comingSoon": true,
           "blocks": [
             {
               "dashedName": "lecture-working-with-css-libraries-and-frameworks"
@@ -1254,6 +1255,9 @@
             },
             {
               "dashedName": "workshop-tailwind-cta-component"
+            },
+            {
+              "dashedName": "workshop-tailwind-pricing-component"
             },
             {
               "dashedName": "lab-music-shopping-cart-page"
