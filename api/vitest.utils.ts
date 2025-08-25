@@ -173,8 +173,7 @@ export function setupServer(): void {
   let fastify: FastifyTestInstance;
   beforeAll(async () => {
     if (process.env.FCC_ENABLE_TEST_LOGGING !== 'true') {
-      // @ts-expect-error Disable logging by unsetting logger
-      buildOptions.logger = undefined;
+      delete buildOptions.loggerInstance;
     }
     fastify = await build(buildOptions);
     await fastify.ready();
