@@ -38,7 +38,7 @@ The array, `roman`, will contain numbers written with valid, but not necessarily
 
 Find the number of characters saved by writing each of these in their minimal form.
 
-**Note:** You can assume that all the Roman numerals in the array contain no more than four consecutive identical units.
+**Note:** The Roman numerals in the array may contain more than four consecutive identical units, but your solution should convert them into their minimal form.
 
 # --hints--
 
