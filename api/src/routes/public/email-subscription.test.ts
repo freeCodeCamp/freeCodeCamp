@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import type { Prisma } from '@prisma/client';
-import { setupServer, superRequest } from '../../../jest.utils';
+import { describe, test, expect } from 'vitest';
+import { setupServer, superRequest } from '../../../vitest.utils';
 import { HOME_LOCATION } from '../../utils/env';
 import { createUserInput } from '../../utils/create-user';
 

@@ -71,7 +71,7 @@
     "start": "npm-run-all create:shared -p develop:server serve:client",
     "test": "NODE_OPTIONS='--max-old-space-size=7168' run-s create:shared build:curriculum build-workers test:*",
     "test:source": "jest",
-    "test:api": "cd api && jest --force-exit",
+    "test:api": "cd api && pnpm test",
     "test:curriculum": "cd ./curriculum && pnpm test",
     "test-curriculum-full-output": "cd ./curriculum && pnpm run test:full-output",
     "test-client": "jest client",

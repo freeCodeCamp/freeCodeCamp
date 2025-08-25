@@ -1,3 +1,5 @@
+import { expect } from 'vitest';
+
 export const examChallengeId = '647e22d18acb466c97ccbef8';
 
 export const examJson = {

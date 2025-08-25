@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest';
 import Ajv from 'ajv';
 import secureSchema from 'ajv/lib/refs/json-schema-secure.json';
 
