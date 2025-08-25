@@ -1,0 +1,53 @@
+{
+  "name": "Build a Video Display Using an iframe",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockLayout": "challenge-grid",
+  "blockType": "workshop",
+  "dashedName": "workshop-build-a-video-display-using-an-iframe",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "HTML-CSS",
+  "challengeOrder": [
+    {
+      "id": "68ac4b456afc2449ecb985f2",
+      "title": "Step 1"
+    },
+    {
+      "id": "68ac59317dc447091af5675a",
+      "title": "Step 2"
+    },
+    {
+      "id": "68ac59317dc447091af5675b",
+      "title": "Step 3"
+    },
+    {
+      "id": "68ac59317dc447091af5675c",
+      "title": "Step 4"
+    },
+    {
+      "id": "68ac59317dc447091af5675d",
+      "title": "Step 5"
+    },
+    {
+      "id": "68ac59317dc447091af5675e",
+      "title": "Step 6"
+    },
+    {
+      "id": "68ac59317dc447091af5675f",
+      "title": "Step 7"
+    },
+    {
+      "id": "68ac59317dc447091af56760",
+      "title": "Step 8"
+    },
+    {
+      "id": "68ac59317dc447091af56761",
+      "title": "Step 9"
+    },
+    {
+      "id": "68ac59317dc447091af56762",
+      "title": "Step 10"
+    }
+  ]
+}
