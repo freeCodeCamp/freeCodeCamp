@@ -27,6 +27,7 @@
     "a2-professional-chinese",
     "basic-html",
     "semantic-html",
+    "a1-professional-chinese",
     "dev-playground"
   ],
   "certifications": [
@@ -53,6 +54,7 @@
     "quality-assurance",
     "relational-database",
     "responsive-web-design",
-    "scientific-computing-with-python"
+    "scientific-computing-with-python",
+    "a1-professional-chinese"
   ]
 }
