@@ -6,6 +6,8 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-pyramid-generator",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "66f2836c459cfb16ae76f24f", "title": "Build a Pyramid Generator" }],
+  "challengeOrder": [
+    { "id": "66f2836c459cfb16ae76f24f", "title": "Build a Pyramid Generator" }
+  ],
   "helpCategory": "JavaScript"
 }

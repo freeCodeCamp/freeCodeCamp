@@ -6,6 +6,11 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-chunky-monkey",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "a9bd25c716030ec90084d8a1", "title": "Implement the Chunky Monkey Algorithm" }],
+  "challengeOrder": [
+    {
+      "id": "a9bd25c716030ec90084d8a1",
+      "title": "Implement the Chunky Monkey Algorithm"
+    }
+  ],
   "helpCategory": "JavaScript"
 }

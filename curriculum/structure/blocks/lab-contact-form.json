@@ -6,6 +6,8 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-contact-form",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "66f26c32ec6f90df01a44f60", "title": "Design a Contact Form" }],
+  "challengeOrder": [
+    { "id": "66f26c32ec6f90df01a44f60", "title": "Design a Contact Form" }
+  ],
   "helpCategory": "HTML-CSS"
 }

@@ -4,7 +4,9 @@
   "dashedName": "lab-isbn-validator",
   "superBlock": "full-stack-developer",
   "helpCategory": "Python",
-  "challengeOrder": [{ "id": "686b9720ee1d032bd77a480a", "title": "Debug an ISBN Validator" }],
+  "challengeOrder": [
+    { "id": "686b9720ee1d032bd77a480a", "title": "Debug an ISBN Validator" }
+  ],
   "blockLayout": "link",
   "blockType": "lab"
 }

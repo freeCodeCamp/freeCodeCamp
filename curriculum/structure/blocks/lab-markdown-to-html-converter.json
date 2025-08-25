@@ -6,6 +6,11 @@
   "blockLayout": "link",
   "dashedName": "lab-markdown-to-html-converter",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "66f55eac933ff64ce654ca74", "title": "Build a Markdown to HTML Converter" }],
+  "challengeOrder": [
+    {
+      "id": "66f55eac933ff64ce654ca74",
+      "title": "Build a Markdown to HTML Converter"
+    }
+  ],
   "helpCategory": "JavaScript"
 }

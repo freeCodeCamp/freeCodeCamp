@@ -4,7 +4,9 @@
   "dashedName": "lab-record-collection",
   "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
-  "challengeOrder": [{ "id": "56533eb9ac21ba0edf2244cf", "title": "Build a Record Collection" }],
+  "challengeOrder": [
+    { "id": "56533eb9ac21ba0edf2244cf", "title": "Build a Record Collection" }
+  ],
   "usesMultifileEditor": true,
   "blockType": "lab",
   "blockLayout": "link"

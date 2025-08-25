@@ -6,6 +6,11 @@
   "blockLayout": "link",
   "blockType": "lab",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "681dbcca65bbda5f286dc0ca", "title": "Implement the Quicksort Algorithm" }],
+  "challengeOrder": [
+    {
+      "id": "681dbcca65bbda5f286dc0ca",
+      "title": "Implement the Quicksort Algorithm"
+    }
+  ],
   "helpCategory": "Python"
 }

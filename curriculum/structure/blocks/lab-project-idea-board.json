@@ -4,7 +4,9 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-project-idea-board",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "67051431a73f1ca25d9a6f25", "title": "Build a Project Idea Board" }],
+  "challengeOrder": [
+    { "id": "67051431a73f1ca25d9a6f25", "title": "Build a Project Idea Board" }
+  ],
   "helpCategory": "JavaScript",
   "blockType": "lab",
   "blockLayout": "link"

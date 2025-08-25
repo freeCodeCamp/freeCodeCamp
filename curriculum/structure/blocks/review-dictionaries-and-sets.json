@@ -3,7 +3,12 @@
   "isUpcomingChange": true,
   "dashedName": "review-dictionaries-and-sets",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "67f39babe1e2ec1fb6eea32a", "title": "Dictionaries and Sets Review" }],
+  "challengeOrder": [
+    {
+      "id": "67f39babe1e2ec1fb6eea32a",
+      "title": "Dictionaries and Sets Review"
+    }
+  ],
   "helpCategory": "Python",
   "blockType": "review",
   "blockLayout": "link"

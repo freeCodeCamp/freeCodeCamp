@@ -6,6 +6,11 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-random-background-color-changer",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "66b62d0ad68488dd76228d6c", "title": "Debug a Random Background Color Changer" }],
+  "challengeOrder": [
+    {
+      "id": "66b62d0ad68488dd76228d6c",
+      "title": "Debug a Random Background Color Changer"
+    }
+  ],
   "helpCategory": "JavaScript"
 }

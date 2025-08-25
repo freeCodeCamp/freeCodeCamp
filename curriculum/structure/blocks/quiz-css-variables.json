@@ -5,6 +5,8 @@
   "isUpcomingChange": false,
   "dashedName": "quiz-css-variables",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "66ed9018f45ce3ece4053eb9", "title": "CSS Variables Quiz" }],
+  "challengeOrder": [
+    { "id": "66ed9018f45ce3ece4053eb9", "title": "CSS Variables Quiz" }
+  ],
   "helpCategory": "HTML-CSS"
 }

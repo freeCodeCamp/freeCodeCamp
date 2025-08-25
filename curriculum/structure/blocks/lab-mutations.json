@@ -6,6 +6,11 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-mutations",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "af2170cad53daa0770fabdea", "title": "Implement the Mutations Algorithm" }],
+  "challengeOrder": [
+    {
+      "id": "af2170cad53daa0770fabdea",
+      "title": "Implement the Mutations Algorithm"
+    }
+  ],
   "helpCategory": "JavaScript"
 }

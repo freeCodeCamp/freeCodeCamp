@@ -7,6 +7,11 @@
   "hasEditableBoundaries": false,
   "dashedName": "workshop-database-of-video-game-characters",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "5f2c289f164c29556da632fd", "title": "Build a Database of Video Game Characters" }],
+  "challengeOrder": [
+    {
+      "id": "5f2c289f164c29556da632fd",
+      "title": "Build a Database of Video Game Characters"
+    }
+  ],
   "helpCategory": "Backend Development"
 }

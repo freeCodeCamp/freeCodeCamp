@@ -6,6 +6,8 @@
   "dashedName": "lab-debug-pet-adoption-page",
   "superBlock": "full-stack-developer",
   "helpCategory": "HTML-CSS",
-  "challengeOrder": [{ "id": "685239f0cad43c7a909cbd98", "title": "Debug a Pet Adoption Page" }],
+  "challengeOrder": [
+    { "id": "685239f0cad43c7a909cbd98", "title": "Debug a Pet Adoption Page" }
+  ],
   "usesMultifileEditor": true
 }

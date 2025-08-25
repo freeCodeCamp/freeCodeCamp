@@ -4,7 +4,9 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-book-organizer",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "67172b43f84bcd2dec238a3d", "title": "Build a Book Organizer" }],
+  "challengeOrder": [
+    { "id": "67172b43f84bcd2dec238a3d", "title": "Build a Book Organizer" }
+  ],
   "helpCategory": "JavaScript",
   "blockType": "lab",
   "blockLayout": "link"

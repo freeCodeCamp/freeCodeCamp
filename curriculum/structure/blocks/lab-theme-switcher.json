@@ -6,6 +6,8 @@
   "dashedName": "lab-theme-switcher",
   "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
-  "challengeOrder": [{ "id": "687ad7be1ff45032ccf1d92f", "title": "Build a Theme Switcher" }],
+  "challengeOrder": [
+    { "id": "687ad7be1ff45032ccf1d92f", "title": "Build a Theme Switcher" }
+  ],
   "usesMultifileEditor": true
 }

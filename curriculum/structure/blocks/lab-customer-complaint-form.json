@@ -6,6 +6,11 @@
   "blockLayout": "link",
   "dashedName": "lab-customer-complaint-form",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "67279fe50237291f80eed8b8", "title": "Build a Customer Complaint Form" }],
+  "challengeOrder": [
+    {
+      "id": "67279fe50237291f80eed8b8",
+      "title": "Build a Customer Complaint Form"
+    }
+  ],
   "helpCategory": "JavaScript"
 }

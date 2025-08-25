@@ -6,6 +6,11 @@
   "dashedName": "lab-photography-exhibit",
   "superBlock": "full-stack-developer",
   "helpCategory": "HTML-CSS",
-  "challengeOrder": [{ "id": "686e64be3cd9db25282a956d", "title": "Design a Photography Exhibit" }],
+  "challengeOrder": [
+    {
+      "id": "686e64be3cd9db25282a956d",
+      "title": "Design a Photography Exhibit"
+    }
+  ],
   "usesMultifileEditor": true
 }

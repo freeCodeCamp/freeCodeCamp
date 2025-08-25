@@ -6,6 +6,8 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-sentence-maker",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "66c057041df6394ca796bf33", "title": "Build a Sentence Maker" }],
+  "challengeOrder": [
+    { "id": "66c057041df6394ca796bf33", "title": "Build a Sentence Maker" }
+  ],
   "helpCategory": "JavaScript"
 }

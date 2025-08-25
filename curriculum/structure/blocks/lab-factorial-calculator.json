@@ -6,6 +6,11 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-factorial-calculator",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "66c07238b01053abaf812065", "title": "Build a Factorial Calculator" }],
+  "challengeOrder": [
+    {
+      "id": "66c07238b01053abaf812065",
+      "title": "Build a Factorial Calculator"
+    }
+  ],
   "helpCategory": "JavaScript"
 }
