@@ -283,7 +283,10 @@
             "quiz-javascript-variables-and-data-types",
             "lecture-working-with-strings-in-javascript",
             "workshop-teacher-chatbot",
-            "lecture-working-with-common-string-methods",
+            "lecture-working-with-string-character-methods",
+            "lecture-working-with-string-search-and-slice-methods",
+            "lecture-working-with-string-formatting-methods",
+            "lecture-working-with-string-modification-methods",
             "review-javascript-strings",
             "quiz-javascript-strings"
           ]
@@ -328,6 +331,7 @@
             "lecture-working-with-arrays",
             "workshop-shopping-list",
             "lab-lunch-picker-program",
+            "lab-golf-score-translator",
             "lab-reverse-a-string",
             "lecture-working-with-common-array-methods",
             "review-javascript-arrays",
@@ -376,6 +380,7 @@
             "lecture-understanding-modules-imports-and-exports",
             "lab-password-generator",
             "lab-sum-all-numbers-algorithm",
+            "lab-html-entitiy-converter",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
           ]
@@ -386,6 +391,7 @@
             "lecture-working-with-higher-order-functions-and-callbacks",
             "workshop-library-manager",
             "lab-book-organizer",
+            "lab-sorted-index-finder",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
@@ -408,10 +414,11 @@
         },
         {
           "dashedName": "js-a11y",
-          "comingSoon": true,
           "blocks": [
+            "lecture-understanding-aria-expanded-aria-live-and-common-aria-states",
             "workshop-planets-tablist",
             "workshop-note-taking-app",
+            "lab-theme-switcher",
             "review-js-a11y",
             "quiz-js-a11y"
           ]
@@ -593,11 +600,11 @@
         },
         {
           "dashedName": "css-libraries-and-frameworks",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-css-libraries-and-frameworks",
             "workshop-error-message-component",
             "workshop-tailwind-cta-component",
+            "workshop-tailwind-pricing-component",
             "lab-music-shopping-cart-page",
             "lab-photography-exhibit",
             "review-css-libraries-and-frameworks",
@@ -696,6 +703,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures",
+            "workshop-linked-list-class",
             "lab-hash-table",
             "review-data-structures",
             "quiz-data-structures"
@@ -722,6 +730,10 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-graphs-and-trees",
+            "workshop-shortest-path-algorithm",
+            "lab-adjacency-list-to-matrix-converter",
+            "workshop-breadth-first-search",
+            "lab-depth-first-search",
             "review-graphs-and-trees",
             "quiz-graphs-and-trees"
           ]
@@ -731,6 +743,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-dynamic-programming",
+            "lab-nth-fibonacci-number",
             "review-dynamic-programming",
             "quiz-dynamic-programming"
           ]
