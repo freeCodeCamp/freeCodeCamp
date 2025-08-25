@@ -3,7 +3,7 @@ import './speaking-modal.css';
 import {
   formatUtterance,
   calculateAverageVolume,
-  checkSilenceDetection,
+  analyzeSilence,
   compareTexts
 } from './speaking-modal-helpers';
 
@@ -28,50 +28,22 @@ interface ComparisonResult {
   message: string;
 }
 
-interface SpeechRecognitionEvent {
-  results: {
-    [index: number]: {
-      [index: number]: {
-        transcript: string;
-      };
-    };
-  };
-}
-
-interface SpeechRecognitionErrorEvent {
-  error: string;
-}
-
-interface SpeechRecognition {
-  continuous: boolean;
-  interimResults: boolean;
-  lang: string;
-  onresult: (event: SpeechRecognitionEvent) => void;
-  onerror: (event: SpeechRecognitionErrorEvent) => void;
-  onend: () => void;
-  start: () => void;
-  stop: () => void;
-}
-
 declare global {
   interface Window {
-    SpeechRecognition?: new () => SpeechRecognition;
-    webkitSpeechRecognition?: new () => SpeechRecognition;
     webkitAudioContext?: typeof AudioContext;
   }
 }
 
-const SpeakingModal: React.FC<SpeakingModalProps> = ({
+const SpeakingModal = ({
   open,
   onClose,
   sentence,
   audioUrl,
   answerIndex
-}) => {
+}: SpeakingModalProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
   const [feedback, setFeedback] = useState('');
-  const [_audioError, setAudioError] = useState('');
   const [comparisonResult, setComparisonResult] =
     useState<ComparisonResult | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -198,14 +170,14 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
         analyser.getByteFrequencyData(dataArray);
 
         const averageVolume = calculateAverageVolume(dataArray);
-        const silenceResult = checkSilenceDetection(
+        const silenceResult = analyzeSilence(
           averageVolume,
           lastSpeechTimeRef.current
         );
 
         if (silenceResult.isSpeechDetected) {
-          lastSpeechTimeRef.current = silenceResult.newLastSpeechTime as number;
-        } else if (silenceResult.shouldStopRecording) {
+          lastSpeechTimeRef.current = silenceResult.newLastSpeechTime;
+        } else if (silenceResult.hasLongSilence) {
           stopRecording();
           setFeedback('Recording stopped due to silence.');
           return;
@@ -239,7 +211,6 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
 
     try {
       setIsPlaying(true);
-      setAudioError('');
       setFeedback('Loading audio...');
 
       if (audioRef.current) {
@@ -260,7 +231,6 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
 
       audio.addEventListener('error', e => {
         setIsPlaying(false);
-        setAudioError('Failed to load or play audio file.');
         setFeedback('Error: Unable to play audio.');
         console.error('Audio playback error:', e);
       });
@@ -268,7 +238,6 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
       await audio.play();
     } catch (error) {
       setIsPlaying(false);
-      setAudioError('Failed to play audio.');
       setFeedback('Error: Unable to play audio.');
       console.error('Audio playback error:', error);
     }
@@ -298,22 +267,12 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
       maxRecordingTimeoutRef.current = null;
     }
     setIsRecording(false);
-    setFeedback('Recording stopped. Processing...');
   };
 
-  const isSpeechRecognitionSupported = () => {
-    return !!(window.SpeechRecognition || window.webkitSpeechRecognition);
-  };
-
-  const setupSpeechRecognition = () => {
-    const SpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
-
-    if (!SpeechRecognition) {
-      throw new Error('Speech recognition not supported');
-    }
-
-    const recognition = new SpeechRecognition();
+  const setupSpeechRecognition = (SupportedSpeechRecognition: {
+    new (): SpeechRecognition;
+  }) => {
+    const recognition = new SupportedSpeechRecognition();
     recognitionRef.current = recognition;
 
     recognition.continuous = false;
@@ -323,7 +282,7 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
     recognition.onresult = (event: SpeechRecognitionEvent) => {
       hasRecognitionResultRef.current = true;
       const transcript = event.results[0][0].transcript;
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
       const formattedUtterance = formatUtterance(transcript);
       const result = compareTexts(sentence, transcript);
 
@@ -357,13 +316,18 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
 
   const startRecording = async () => {
     // Check speech recognition support first
-    if (!isSpeechRecognitionSupported()) {
+    const SupportedSpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SupportedSpeechRecognition) {
       setFeedback('Speech recognition not supported in this browser.');
       return;
     }
 
     try {
-      setFeedback('Requesting microphone access...');
+      const { state } = await navigator.permissions.query({
+        name: 'microphone' as PermissionName
+      });
+      if (state === 'prompt') setFeedback('Requesting microphone access...');
 
       // Request microphone access
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -371,41 +335,31 @@ const SpeakingModal: React.FC<SpeakingModalProps> = ({
       });
 
       mediaStreamRef.current = stream;
-      setIsRecording(true);
-      setFeedback('Recording... Speak now.');
+
       setComparisonResult(null);
       hasRecognitionResultRef.current = false;
 
       // Set up and start speech recognition
-      const recognition = setupSpeechRecognition();
+      const recognition = setupSpeechRecognition(SupportedSpeechRecognition);
       recognition.start();
 
-      // Set up MediaRecorder for audio recording (backup)
-      const mediaRecorder = new MediaRecorder(stream);
-      mediaRecorderRef.current = mediaRecorder;
-
-      mediaRecorder.start();
-
-      // Start silence monitoring
       monitorAudioLevels(stream);
 
-      // Set maximum recording duration (30 seconds) to prevent infinite recording
       maxRecordingTimeoutRef.current = setTimeout(() => {
-        if (isRecording) {
-          stopRecording();
-          setFeedback('Recording stopped. Maximum recording time reached.');
-        }
+        stopRecording();
       }, 30000);
+      setIsRecording(true);
+      setFeedback('Recording... Speak now.');
     } catch (error) {
       console.error('Error accessing microphone:', error);
       setFeedback('Error: Could not access microphone.');
-      setIsRecording(false);
     }
   };
 
   const handleRecord = () => {
     if (isRecording) {
       stopRecording();
+      setFeedback('Recording stopped. Processing...');
     } else {
       void startRecording();
     }

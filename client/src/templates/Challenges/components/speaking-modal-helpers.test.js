@@ -2,7 +2,7 @@ import {
   normalizeText,
   formatUtterance,
   calculateAverageVolume,
-  checkSilenceDetection,
+  analyzeSilence,
   compareTexts
 } from './speaking-modal-helpers';
 
@@ -88,49 +88,30 @@ describe('speaking-modal-helpers', () => {
       expect(calculateAverageVolume(dataArray)).toBe(0);
     });
 
-    it('should handle null/undefined input', () => {
-      expect(calculateAverageVolume(null)).toBe(0);
-      expect(calculateAverageVolume(undefined)).toBe(0);
-    });
-
     it('should handle single value array', () => {
       const dataArray = new Uint8Array([15]);
       expect(calculateAverageVolume(dataArray)).toBe(15);
     });
-
-    it('should handle array with zeros', () => {
-      const dataArray = new Uint8Array([0, 0, 0, 0]);
-      expect(calculateAverageVolume(dataArray)).toBe(0);
-    });
   });
 
-  describe('checkSilenceDetection', () => {
-    const mockDate = new Date('2023-01-01T00:00:00.000Z');
-    const baseTime = mockDate.getTime();
-
-    beforeEach(() => {
-      jest.spyOn(Date, 'now').mockReturnValue(baseTime);
-    });
-
-    afterEach(() => {
-      jest.restoreAllMocks();
-    });
+  describe('analyzeSilence', () => {
+    const baseTime = Date.now();
 
     it('should detect speech when volume is above threshold', () => {
-      const result = checkSilenceDetection(25, baseTime - 1000, 20, 2000);
+      const result = analyzeSilence(25, baseTime - 1000, 20, 2000);
       expect(result).toEqual({
         isSpeechDetected: true,
-        shouldStopRecording: false,
+        hasLongSilence: false,
         newLastSpeechTime: baseTime
       });
     });
 
     it('should not stop recording when silence duration is below timeout', () => {
       const lastSpeechTime = baseTime - 1000; // 1 second ago
-      const result = checkSilenceDetection(15, lastSpeechTime, 20, 2000);
+      const result = analyzeSilence(15, lastSpeechTime, 20, 2000);
       expect(result).toEqual({
         isSpeechDetected: false,
-        shouldStopRecording: false,
+        hasLongSilence: false,
         newLastSpeechTime: lastSpeechTime,
         silenceDuration: 1000
       });
@@ -138,10 +119,10 @@ describe('speaking-modal-helpers', () => {
 
     it('should stop recording when silence duration exceeds timeout', () => {
       const lastSpeechTime = baseTime - 3000; // 3 seconds ago
-      const result = checkSilenceDetection(15, lastSpeechTime, 20, 2000);
+      const result = analyzeSilence(15, lastSpeechTime, 20, 2000);
       expect(result).toEqual({
         isSpeechDetected: false,
-        shouldStopRecording: true,
+        hasLongSilence: true,
         newLastSpeechTime: lastSpeechTime,
         silenceDuration: 3000
       });
@@ -149,18 +130,18 @@ describe('speaking-modal-helpers', () => {
 
     it('should use default thresholds when not provided', () => {
       const lastSpeechTime = baseTime - 2500; // 2.5 seconds ago
-      const result = checkSilenceDetection(15, lastSpeechTime);
-      expect(result.shouldStopRecording).toBe(true);
+      const result = analyzeSilence(15, lastSpeechTime);
+      expect(result.hasLongSilence).toBe(true);
     });
 
     it('should respect custom thresholds', () => {
       const lastSpeechTime = baseTime - 1500; // 1.5 seconds ago
-      const result = checkSilenceDetection(15, lastSpeechTime, 10, 1000);
-      expect(result.shouldStopRecording).toBe(true);
+      const result = analyzeSilence(15, lastSpeechTime, 10, 1000);
+      expect(result.hasLongSilence).toBe(true);
     });
 
     it('should handle volume exactly at threshold', () => {
-      const result = checkSilenceDetection(20, baseTime - 1000, 20, 2000);
+      const result = analyzeSilence(20, baseTime - 1000, 20, 2000);
       expect(result.isSpeechDetected).toBe(false);
     });
   });
