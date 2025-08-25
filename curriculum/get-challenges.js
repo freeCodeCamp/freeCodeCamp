@@ -503,6 +503,7 @@ function generateChallengeCreator(lang, englishPath, i18nPath) {
       COMMENT_TRANSLATIONS
     );
     challenge.translationPending = lang !== 'english' && !isAudited;
+
     addMetaToChallenge(challenge, meta);
     fixChallengeProperties(challenge);
 
