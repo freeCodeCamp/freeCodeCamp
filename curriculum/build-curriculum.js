@@ -190,6 +190,7 @@ const superBlockNames = {
   'a2-professional-chinese': 'a2-professional-chinese',
   'basic-html': 'basic-html',
   'semantic-html': 'semantic-html',
+  'a1-professional-chinese': 'a1-professional-chinese',
   'dev-playground': 'dev-playground'
 };
 
@@ -283,9 +284,10 @@ function addSuperblockStructure(superblocks) {
   debug(`Building structure for ${superblocks.length} superblocks`);
 
   const superblockStructures = superblocks.map(superblockFilename => {
-    debug(`Reading structure for ${superblockFilename}`);
-
     const superblockName = superBlockNames[superblockFilename];
+    if (!superblockName) {
+      throw new Error(`Superblock name not found for ${superblockFilename}`);
+    }
 
     return {
       name: superblockName,
