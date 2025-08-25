@@ -4775,6 +4775,10 @@
         "intro": [
           "In this lab you will build a function to manage a record collection."
         ]
+      },
+      "workshop-emoji-reactor": {
+        "title": "Build an Emoji Reactor",
+        "intro": ["", ""]
       }
     }
   },
