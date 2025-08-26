@@ -27,7 +27,6 @@ Submit your page when you think you've got it right. If you're running into erro
 All steps should be correctly implemented in `server.js`.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -46,13 +45,11 @@ async () => {
     /login[^]*post[^]*local/,
     'You should have a route for login which accepts a POST and passport.authenticates local'
   );
-}
 ```
 
 A POST request to `/login` should correctly redirect to `/`.
 
 ```js
-async () => {
   const url = new URL("/login", code);
   const res = await fetch(url, { method: 'POST' });
   const data = await res.text();
@@ -61,6 +58,5 @@ async () => {
     /Looks like this page is being rendered from Pug into HTML!/,
     'A login attempt at this point should redirect to the homepage since we do not have any registered users'
   );
-}
 ```
 

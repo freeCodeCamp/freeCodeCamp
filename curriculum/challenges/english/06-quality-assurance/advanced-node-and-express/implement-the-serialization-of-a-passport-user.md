@@ -47,7 +47,6 @@ Submit your page when you think you've got it right. If you're running into erro
 Database connection should be present.
 
 ```js
-async () => {
   const url = new URL("/", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -56,13 +55,11 @@ async () => {
     /Connected to Database/gi,
     'You successfully connected to the database!'
   );
-}
 ```
 
 Deserialization should now be correctly using the DB and `done(null, null)` should be called with the `doc`.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -71,6 +68,5 @@ async () => {
     /null,\s*doc/gi,
     'The callback in deserializeUser of (null, null) should be altered to (null, doc)'
   );
-}
 ```
 
