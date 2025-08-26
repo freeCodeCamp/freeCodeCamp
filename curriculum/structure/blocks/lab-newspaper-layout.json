@@ -4,7 +4,9 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-newspaper-layout",
   "superBlock": "full-stack-developer",
-  "challengeOrder": [{ "id": "6735a7370e0ae93a4577c689", "title": "Design a Newspaper Layout" }],
+  "challengeOrder": [
+    { "id": "6735a7370e0ae93a4577c689", "title": "Design a Newspaper Layout" }
+  ],
   "helpCategory": "HTML-CSS",
   "blockLayout": "link",
   "blockType": "lab"
