@@ -4775,6 +4775,12 @@
         "intro": [
           "In this lab you will build a function to manage a record collection."
         ]
+      },
+      "lab-optional-arguments-sum-function": {
+        "title": "Build an Optional Arguments Sum Function",
+        "intro": [
+          "In this lab you will build a function that accepts up to two arguments, and sum them, but if there is only one argument returns a function that waits for the second number to sum."
+        ]
       }
     }
   },
