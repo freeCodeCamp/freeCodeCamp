@@ -1,0 +1,27 @@
+{
+  "name": "How Neural Networks Work",
+  "isUpcomingChange": false,
+  "dashedName": "how-neural-networks-work",
+  "helpCategory": "Python",
+  "order": 1,
+  "superBlock": "machine-learning-with-python",
+  "challengeOrder": [
+    {
+      "id": "5e9a0e9ef99a403d019610ca",
+      "title": "How Deep Neural Networks Work"
+    },
+    {
+      "id": "5e9a0e9ef99a403d019610cb",
+      "title": "Recurrent Neural Networks RNN and Long Short Term Memory LSTM"
+    },
+    {
+      "id": "5e9a0e9ef99a403d019610cc",
+      "title": "Deep Learning Demystified"
+    },
+    {
+      "id": "5e9a0e9ef99a403d019610cd",
+      "title": "How Convolutional Neural Networks work"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

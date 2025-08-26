@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest';
 import { getChallenges } from './get-challenges';
 import { isObjectID } from './validation';
 

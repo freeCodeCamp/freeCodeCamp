@@ -1,10 +1,11 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
+import { omit } from 'lodash';
 import { submitTypes } from '../../../shared/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared/config/curriculum';
-import fullStackSuperBlockStructure from '../../../curriculum/superblock-structure/full-stack.json';
 import type { Chapter } from '../../../shared/config/chapters';
+import { getSuperblockStructure } from '../../../curriculum/build-curriculum';
 
 export type CurriculumIntros =
   | BlockBasedCurriculumIntros
@@ -282,7 +283,9 @@ export function buildExtCurriculumDataV2(
   }
 
   function buildChapterBasedCurriculum(superBlockKey: SuperBlocks) {
-    const chapters: Chapter[] = fullStackSuperBlockStructure.chapters;
+    const { chapters } = getSuperblockStructure('full-stack-developer') as {
+      chapters: Chapter[];
+    };
     const blocksWithData = curriculum[superBlockKey].blocks;
 
     const superBlockIntros = intros[
@@ -308,12 +311,12 @@ export function buildExtCurriculumDataV2(
               : module.blocks
                   // Upcoming blocks aren't included in blocksWithData
                   // and thus they have no metadata and need to be filtered out.
-                  .filter(block => blocksWithData[block.dashedName])
+                  .filter(block => blocksWithData[block])
                   .map(block => {
-                    const blockData = blocksWithData[block.dashedName];
+                    const blockData = blocksWithData[block];
                     return {
-                      intro: superBlockIntros.blocks[block.dashedName].intro,
-                      meta: blockData.meta
+                      intro: superBlockIntros.blocks[block].intro,
+                      meta: omit(blockData.meta, ['chapter', 'module'])
                     };
                   })
           }))
