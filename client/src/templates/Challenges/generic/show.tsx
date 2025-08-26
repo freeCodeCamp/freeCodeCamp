@@ -281,7 +281,7 @@ const ShowGeneric = ({
                     showSpeakingButton={showSpeakingButton}
                     challengeData={{
                       challengeId: challengeMeta.id,
-                      audioIds: audioIds
+                      audioIds: showSpeakingButton ? audioIds : undefined
                     }}
                   />
                 </ObserveKeys>

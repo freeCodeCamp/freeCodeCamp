@@ -37,8 +37,27 @@ function plugin() {
       });
 
       if (audioIds.length > 0) {
-        // Flatten the array if there's only one question, otherwise keep nested structure
-        file.data.audioIds = audioIds.length === 1 ? audioIds[0] : audioIds;
+        // Filter out null values to prevent GraphQL serialization errors
+        const validAudioIds = audioIds
+          .filter(questionAudioIds =>
+            Array.isArray(questionAudioIds)
+              ? questionAudioIds.some(id => id !== null && id !== undefined)
+              : questionAudioIds !== null && questionAudioIds !== undefined
+          )
+          .map(questionAudioIds =>
+            Array.isArray(questionAudioIds)
+              ? questionAudioIds.filter(id => id !== null && id !== undefined)
+              : questionAudioIds
+          );
+
+        if (
+          validAudioIds.length > 0 &&
+          validAudioIds.some(arr => arr.length > 0)
+        ) {
+          // Flatten the array if there's only one question, otherwise keep nested structure
+          file.data.audioIds =
+            validAudioIds.length === 1 ? validAudioIds[0] : validAudioIds;
+        }
       }
     }
   }
