@@ -3458,6 +3458,12 @@
           "In this lab, you will create a function that finds the index at which a given number should be inserted into a sorted array to maintain the array's sorted order."
         ]
       },
+      "lab-symmetric-difference": {
+        "title": "Build a Symmetric Difference Finder",
+        "intro": [
+          "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
+        ]
+      },
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
