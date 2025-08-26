@@ -21,47 +21,47 @@ Within `tests/1_unit-tests.js` under the test labeled `#7` in the `Equality` sui
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=6').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+(async () => {
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=6');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(data.state, 'passed');
+})();
 ```
 
 You should choose the correct method for the first assertion - `deepEqual` vs. `notDeepEqual`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=6').then(
-    (data) => {
-      assert.equal(
-        data.assertions[0].method,
-        'deepEqual',
-        'The order of the keys does not matter'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+(async () => {
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=6');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.assertions[0].method,
+    'deepEqual',
+    'The order of the keys does not matter'
   );
+})();
 ```
 
 You should choose the correct method for the second assertion - `deepEqual` vs. `notDeepEqual`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=6').then(
-    (data) => {
-      assert.equal(
-        data.assertions[1].method,
-        'notDeepEqual',
-        'The position of elements within an array does matter'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+(async () => {
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=6');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.assertions[1].method,
+    'notDeepEqual',
+    'The position of elements within an array does matter'
   );
+})();
 ```
 
