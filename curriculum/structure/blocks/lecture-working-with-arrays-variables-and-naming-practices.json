@@ -1,0 +1,19 @@
+{
+  "name": "Working with Arrays, Variables, and Naming Practices",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-arrays-variables-and-naming-practices",
+  "superBlock": "full-stack-developer",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "6732c6ab21031b60d2b0c999",
+      "title": "What Are Some Common Practices for Naming Variables and Functions?"
+    },
+    {
+      "id": "6732c6ba2ea42b610b9f9ce1",
+      "title": "How Do You Get the Length for an Array, and How Can You Create an Empty Array of Fixed Length?"
+    }
+  ]
+}

@@ -4150,6 +4150,13 @@
           "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
         ]
       },
+      "workshop-tailwind-pricing-component": {
+        "title": "Build a Pricing Component",
+        "intro": [
+          "In this workshop, you will build a pricing component using Tailwind CSS.",
+          "You will practice working with Tailwind CSS grid utility classes."
+        ]
+      },
       "lab-music-shopping-cart-page": {
         "title": "Build a Music Shopping Cart Page",
         "intro": [
@@ -4783,6 +4790,12 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "lab-golf-score-translator": {
+        "title": "Build a Golf Score Translator",
+        "intro": [
+          "For this lab, you will use array methods to translate golf scores into their nickname."
+        ]
       },
       "lab-record-collection": {
         "title": "Build a Record Collection",
