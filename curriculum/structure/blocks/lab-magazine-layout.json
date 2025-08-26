@@ -4,13 +4,9 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-newspaper-layout",
   "superBlock": "full-stack-developer",
-<<<<<<<< HEAD:curriculum/challenges/_meta/lab-newspaper-layout/meta.json
-  "challengeOrder": [{ "id": "6735a7370e0ae93a4577c689", "title": "Design a Newspaper Layout" }],
-========
   "challengeOrder": [
-    { "id": "6735a7370e0ae93a4577c689", "title": "Design a Magazine Layout" }
+    { "id": "6735a7370e0ae93a4577c689", "title": "Design a Newspaper Layout" }
   ],
->>>>>>>> 64dcea96dda37dde6a0d7a1c133655662071fa1f:curriculum/structure/blocks/lab-magazine-layout.json
   "helpCategory": "HTML-CSS",
   "blockLayout": "link",
   "blockType": "lab"
