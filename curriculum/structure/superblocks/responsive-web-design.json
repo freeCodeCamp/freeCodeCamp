@@ -1,0 +1,11 @@
+{
+  "blocks": [
+    "basic-html-and-html5",
+    "basic-css",
+    "applied-visual-design",
+    "applied-accessibility",
+    "responsive-web-design-principles",
+    "css-flexbox",
+    "css-grid"
+  ]
+}

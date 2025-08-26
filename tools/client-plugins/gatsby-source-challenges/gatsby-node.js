@@ -52,6 +52,7 @@ File changed at ${filePath}, replacing challengeNode id ${challenge.id}
   attempting to replace ${filePath}
 
   ${e.message}
+  ${e.stack}
 
   `)
           )

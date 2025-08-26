@@ -1,0 +1,16 @@
+{
+  "name": "Build a Time Calculator Project",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "build-a-time-calculator-project",
+  "order": 10,
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "5e444136903586ffb414c94d",
+      "title": "Build a Time Calculator Project"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "legacy-link"
+}

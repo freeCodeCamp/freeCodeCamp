@@ -1,0 +1,27 @@
+{
+  "name": "Responsive Web Design Principles",
+  "isUpcomingChange": false,
+  "dashedName": "responsive-web-design-principles",
+  "helpCategory": "HTML-CSS",
+  "order": 4,
+  "superBlock": "responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "587d78b0367417b2b2512b08",
+      "title": "Create a Media Query"
+    },
+    {
+      "id": "587d78b1367417b2b2512b09",
+      "title": "Make an Image Responsive"
+    },
+    {
+      "id": "587d78b1367417b2b2512b0a",
+      "title": "Use a Retina Image for Higher Resolution Displays"
+    },
+    {
+      "id": "587d78b1367417b2b2512b0c",
+      "title": "Make Typography Responsive"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}
