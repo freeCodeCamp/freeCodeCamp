@@ -1,0 +1,15 @@
+{
+  "name": "Periodic Table Database",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-periodic-table-database-project",
+  "order": 12,
+  "helpCategory": "Backend Development",
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    {
+      "id": "602d9ff222201c65d2a019f2",
+      "title": "Build a Periodic Table Database"
+    }
+  ],
+  "blockLayout": "project-list"
+}

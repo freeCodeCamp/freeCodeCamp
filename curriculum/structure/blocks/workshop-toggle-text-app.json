@@ -1,0 +1,65 @@
+{
+  "name": "Toggle Text App",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-toggle-text-app",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67cd33334277c108f5e0cb21",
+      "title": "Step 1"
+    },
+    {
+      "id": "67cd45eb92c40b176d987d10",
+      "title": "Step 2"
+    },
+    {
+      "id": "67cd46ec4ec904186ad52ba5",
+      "title": "Step 3"
+    },
+    {
+      "id": "67cd49e05693111a41771f29",
+      "title": "Step 4"
+    },
+    {
+      "id": "67cd4cf8b5fe391b324ad11f",
+      "title": "Step 5"
+    },
+    {
+      "id": "67cd4fe67813f71c3479e64a",
+      "title": "Step 6"
+    },
+    {
+      "id": "67cd50e3d32a311cfced03e2",
+      "title": "Step 7"
+    },
+    {
+      "id": "67cd51b36a4e711da29a8622",
+      "title": "Step 8"
+    },
+    {
+      "id": "67cd525b0e575b1e5abf4c03",
+      "title": "Step 9"
+    },
+    {
+      "id": "67cd57e96257ed1fabbe4879",
+      "title": "Step 10"
+    },
+    {
+      "id": "67cd59f6581d3a20c9cc6460",
+      "title": "Step 11"
+    },
+    {
+      "id": "67cd5bace629fa219a70aa6d",
+      "title": "Step 12"
+    },
+    {
+      "id": "67cd61c24bfc0a240132fd2f",
+      "title": "Step 13"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

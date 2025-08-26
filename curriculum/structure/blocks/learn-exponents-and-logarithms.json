@@ -1,0 +1,15 @@
+{
+  "name": "Learn Exponents and Logarithms",
+  "isUpcomingChange": false,
+  "dashedName": "learn-exponents-and-logarithms",
+  "helpCategory": "Python",
+  "order": 16,
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    {
+      "id": "6363d2769078df117ce4c406",
+      "title": "Exponents and Logarithms"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}
