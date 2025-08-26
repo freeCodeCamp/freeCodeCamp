@@ -372,6 +372,8 @@ assert.isTrue(true);
 
 # --seed--
 
+## --seed-contents--
+
 \`\`\`js
 function placeholder(arg) {
 
@@ -415,6 +417,8 @@ TestCase().assertTrue(True)\`)
 \`\`\`
 
 # --seed--
+
+## --seed-contents--
 
 \`\`\`js
 def placeholder(arg):
