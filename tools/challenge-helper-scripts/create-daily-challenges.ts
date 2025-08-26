@@ -96,7 +96,8 @@ function createDailyJsChallenge({
 
   const jsChallengePath = join(
     jsChallengesPath,
-    `javascript-challenge-${challengeNumber}.md`
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+    `${challengeId.toString()}.md`
   );
 
   writeFileSync(jsChallengePath, jsTemplate);
@@ -129,7 +130,8 @@ function createDailyPyChallenge({
 
   const pyChallengePath = join(
     pyChallengesPath,
-    `python-challenge-${challengeNumber}.md`
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+    `${challengeId.toString()}.md`
   );
 
   writeFileSync(pyChallengePath, pyTemplate);
