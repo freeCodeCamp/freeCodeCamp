@@ -1,6 +1,8 @@
 import { createSelector } from 'reselect';
 
-import superBlockStructure from '../../../curriculum/superblock-structure/full-stack.json';
+// TODO: source the superblock structure via a GQL query, rather than directly
+// from the curriculum
+import superBlockStructure from '../../../curriculum/structure/superblocks/full-stack-developer.json';
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
 import { ns as MainApp } from './action-types';
@@ -144,7 +146,7 @@ export const completionStateSelector = createSelector(
       const populateBlocks = blocks =>
         blocks.map(block => {
           const blockChallenges = challenges.filter(
-            ({ block: blockName }) => blockName === block.dashedName
+            ({ block: blockName }) => blockName === block
           );
 
           const completedBlockChallenges = blockChallenges.every(({ id }) =>
@@ -152,7 +154,7 @@ export const completionStateSelector = createSelector(
           );
 
           return {
-            name: block.dashedName,
+            name: block,
             isCompleted:
               completedBlockChallenges.length === blockChallenges.length
           };

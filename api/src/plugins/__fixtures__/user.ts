@@ -1,3 +1,5 @@
+import { expect } from 'vitest';
+
 import { nanoidCharSet } from '../../utils/create-user';
 
 const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
