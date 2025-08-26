@@ -24,18 +24,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const curriculumPath = join(__dirname, '../../curriculum');
-const challengeBlocksPath = join(curriculumPath, '/challenges/english/blocks');
+
 const structureBlocksPath = join(curriculumPath, '/structure/blocks');
-
-const jsChallengesPath = join(
-  challengeBlocksPath,
-  '/daily-coding-challenges-javascript'
-);
-const pyChallengesPath = join(
-  challengeBlocksPath,
-  '/daily-coding-challenges-python'
-);
-
 const jsStructurePath = join(
   structureBlocksPath,
   '/daily-coding-challenges-javascript.json'
@@ -43,6 +33,16 @@ const jsStructurePath = join(
 const pyStructurePath = join(
   structureBlocksPath,
   '/daily-coding-challenges-python.json'
+);
+
+const challengeBlocksPath = join(curriculumPath, '/challenges/english/blocks');
+const jsChallengesPath = join(
+  challengeBlocksPath,
+  '/daily-coding-challenges-javascript'
+);
+const pyChallengesPath = join(
+  challengeBlocksPath,
+  '/daily-coding-challenges-python'
 );
 
 for (let i = 0; i < numberOfChallengesToCreate; i++) {
@@ -94,7 +94,12 @@ function createDailyJsChallenge({
     challengeNumber
   });
 
-  writeFileSync(jsChallengesPath, jsTemplate);
+  const jsChallengePath = join(
+    jsChallengesPath,
+    `javascript-challenge-${challengeNumber}.md`
+  );
+
+  writeFileSync(jsChallengePath, jsTemplate);
 }
 
 function createDailyPyChallenge({
@@ -122,5 +127,10 @@ function createDailyPyChallenge({
     challengeNumber
   });
 
-  writeFileSync(pyChallengesPath, pyTemplate);
+  const pyChallengePath = join(
+    pyChallengesPath,
+    `python-challenge-${challengeNumber}.md`
+  );
+
+  writeFileSync(pyChallengePath, pyTemplate);
 }
