@@ -1,0 +1,31 @@
+{
+  "name": "Working with Loops",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-loops",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "67329f7f3d1bd75c17896c66",
+      "title": "How Do Loops and Iteration Work in JavaScript?"
+    },
+    {
+      "id": "6732c04638420641dcca2e6e",
+      "title": "How Does the For...of Loop Work, and When Should You Use It?"
+    },
+    {
+      "id": "6732c05595ca7d422b9e55ff",
+      "title": "What Is the For...in Loop, and When Should You Use It?"
+    },
+    {
+      "id": "6732c06654ea3442724284fe",
+      "title": "What Is a While Loop, and How Does It Differ from the Do...while Loop?"
+    },
+    {
+      "id": "6732c07238355642a9781dfb",
+      "title": "What Are the Break and Continue Statements Used for in Loops?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

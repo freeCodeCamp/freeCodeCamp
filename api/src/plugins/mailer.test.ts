@@ -1,11 +1,12 @@
+import { describe, test, expect, vi } from 'vitest';
 import Fastify from 'fastify';
 
 import mailer from './mailer';
 
 describe('mailer', () => {
-  it('should send an email via the provider', async () => {
+  test('should send an email via the provider', async () => {
     const fastify = Fastify();
-    const send = jest.fn();
+    const send = vi.fn();
     await fastify.register(mailer, { provider: { send } });
 
     const data = {

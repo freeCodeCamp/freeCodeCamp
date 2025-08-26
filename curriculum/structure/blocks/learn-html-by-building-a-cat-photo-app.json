@@ -1,0 +1,297 @@
+{
+  "name": "Learn HTML by Building a Cat Photo App",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-html-by-building-a-cat-photo-app",
+  "helpCategory": "HTML-CSS",
+  "order": 0,
+  "superBlock": "2022/responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "5dc174fcf86c76b9248c6eb2",
+      "title": "Step 1"
+    },
+    {
+      "id": "5dc1798ff86c76b9248c6eb3",
+      "title": "Step 2"
+    },
+    {
+      "id": "5dc17d3bf86c76b9248c6eb4",
+      "title": "Step 3"
+    },
+    {
+      "id": "5dc17dc8f86c76b9248c6eb5",
+      "title": "Step 4"
+    },
+    {
+      "id": "5dc2385ff86c76b9248c6eb7",
+      "title": "Step 5"
+    },
+    {
+      "id": "5dc23991f86c76b9248c6eb8",
+      "title": "Step 6"
+    },
+    {
+      "id": "5dc23f9bf86c76b9248c6eba",
+      "title": "Step 7"
+    },
+    {
+      "id": "5dc24073f86c76b9248c6ebb",
+      "title": "Step 8"
+    },
+    {
+      "id": "5dc24165f86c76b9248c6ebc",
+      "title": "Step 9"
+    },
+    {
+      "id": "5dc24614f86c76b9248c6ebd",
+      "title": "Step 10"
+    },
+    {
+      "id": "5ddbd81294d8ddc1510a8e56",
+      "title": "Step 11"
+    },
+    {
+      "id": "671141d8e32fe934c26fa1be",
+      "title": "Step 12"
+    },
+    {
+      "id": "671141f948cbab359e74cc93",
+      "title": "Step 13"
+    },
+    {
+      "id": "671141feba228a35cefba82d",
+      "title": "Step 14"
+    },
+    {
+      "id": "5dfa2407b521be39a3de7be1",
+      "title": "Step 15"
+    },
+    {
+      "id": "671144cdcc01d73f7dd79dc9",
+      "title": "Step 16"
+    },
+    {
+      "id": "5dfa30b9eacea3f48c6300ad",
+      "title": "Step 17"
+    },
+    {
+      "id": "5f07be6ef7412fbad0c5626b",
+      "title": "Step 18"
+    },
+    {
+      "id": "5f07c98cdb9413cbd4b16750",
+      "title": "Step 19"
+    },
+    {
+      "id": "5dfa3589eacea3f48c6300ae",
+      "title": "Step 20"
+    },
+    {
+      "id": "5dfa371beacea3f48c6300af",
+      "title": "Step 21"
+    },
+    {
+      "id": "5dfa37b9eacea3f48c6300b0",
+      "title": "Step 22"
+    },
+    {
+      "id": "5dfb5ecbeacea3f48c6300b1",
+      "title": "Step 23"
+    },
+    {
+      "id": "5dfb6250eacea3f48c6300b2",
+      "title": "Step 24"
+    },
+    {
+      "id": "5dfb655eeacea3f48c6300b3",
+      "title": "Step 25"
+    },
+    {
+      "id": "5dfb6a35eacea3f48c6300b4",
+      "title": "Step 26"
+    },
+    {
+      "id": "5ef9b03c81a63668521804d0",
+      "title": "Step 27"
+    },
+    {
+      "id": "5ef9b03c81a63668521804d1",
+      "title": "Step 28"
+    },
+    {
+      "id": "5ef9b03c81a63668521804d2",
+      "title": "Step 29"
+    },
+    {
+      "id": "5ef9b03c81a63668521804d3",
+      "title": "Step 30"
+    },
+    {
+      "id": "5efada803cbd2bbdab94e332",
+      "title": "Step 31"
+    },
+    {
+      "id": "5efae0543cbd2bbdab94e333",
+      "title": "Step 32"
+    },
+    {
+      "id": "5efae16e3cbd2bbdab94e334",
+      "title": "Step 33"
+    },
+    {
+      "id": "5ef9b03c81a63668521804d4",
+      "title": "Step 34"
+    },
+    {
+      "id": "5f07fb1579dc934717801375",
+      "title": "Step 35"
+    },
+    {
+      "id": "5ef9b03c81a63668521804d5",
+      "title": "Step 36"
+    },
+    {
+      "id": "5ef9b03c81a63668521804d6",
+      "title": "Step 37"
+    },
+    {
+      "id": "5ef9b03c81a63668521804d7",
+      "title": "Step 38"
+    },
+    {
+      "id": "5ef9b03c81a63668521804d8",
+      "title": "Step 39"
+    },
+    {
+      "id": "5efb23e70dc218d6c85f89b1",
+      "title": "Step 40"
+    },
+    {
+      "id": "7cf9b03d81a65668421804c3",
+      "title": "Step 41"
+    },
+    {
+      "id": "5ef9b03c81a63668521804d9",
+      "title": "Step 42"
+    },
+    {
+      "id": "5ef9b03c81a63668521804db",
+      "title": "Step 43"
+    },
+    {
+      "id": "5ef9b03c81a63668521804da",
+      "title": "Step 44"
+    },
+    {
+      "id": "5efb2c990dc218d6c85f89b2",
+      "title": "Step 45"
+    },
+    {
+      "id": "5ef9b03c81a63668521804dc",
+      "title": "Step 46"
+    },
+    {
+      "id": "5ef9b03c81a63668521804dd",
+      "title": "Step 47"
+    },
+    {
+      "id": "5ef9b03c81a63668521804df",
+      "title": "Step 48"
+    },
+    {
+      "id": "5f05a1d8e233dff4a68508d8",
+      "title": "Step 49"
+    },
+    {
+      "id": "5ef9b03c81a63668521804de",
+      "title": "Step 50"
+    },
+    {
+      "id": "5f1a80975fc4bcae0edb3497",
+      "title": "Step 51"
+    },
+    {
+      "id": "5ef9b03c81a63668521804e1",
+      "title": "Step 52"
+    },
+    {
+      "id": "5f0d48e7b435f13ab6550051",
+      "title": "Step 53"
+    },
+    {
+      "id": "5f0d4ab1b435f13ab6550052",
+      "title": "Step 54"
+    },
+    {
+      "id": "5f0d4d04b435f13ab6550053",
+      "title": "Step 55"
+    },
+    {
+      "id": "5ef9b03c81a63668521804e2",
+      "title": "Step 56"
+    },
+    {
+      "id": "5efc54138d6a74d05e68af76",
+      "title": "Step 57"
+    },
+    {
+      "id": "5efc4f528d6a74d05e68af74",
+      "title": "Step 58"
+    },
+    {
+      "id": "5efc518e8d6a74d05e68af75",
+      "title": "Step 59"
+    },
+    {
+      "id": "5ef9b03c81a63668521804e3",
+      "title": "Step 60"
+    },
+    {
+      "id": "5efc575c8d6a74d05e68af77",
+      "title": "Step 61"
+    },
+    {
+      "id": "5f1a89f1190aff21ae42105a",
+      "title": "Step 62"
+    },
+    {
+      "id": "5ef9b03c81a63668521804e5",
+      "title": "Step 63"
+    },
+    {
+      "id": "5ef9b03c81a63668521804e7",
+      "title": "Step 64"
+    },
+    {
+      "id": "5ef9b03c81a63668521804e8",
+      "title": "Step 65"
+    },
+    {
+      "id": "5ef9b03c81a63668521804e9",
+      "title": "Step 66"
+    },
+    {
+      "id": "5ef9b03c81a63668521804ea",
+      "title": "Step 67"
+    },
+    {
+      "id": "5ef9b03c81a63668521804eb",
+      "title": "Step 68"
+    },
+    {
+      "id": "5ef9b03c81a63668521804ec",
+      "title": "Step 69"
+    },
+    {
+      "id": "5ef9b03c81a63668521804ee",
+      "title": "Step 70"
+    },
+    {
+      "id": "62bb4009e3458a128ff57d5d",
+      "title": "Step 71"
+    }
+  ],
+  "blockLayout": "legacy-challenge-grid"
+}

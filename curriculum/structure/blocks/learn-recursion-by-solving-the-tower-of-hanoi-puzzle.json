@@ -1,0 +1,233 @@
+{
+  "name": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-recursion-by-solving-the-tower-of-hanoi-puzzle",
+  "order": 8,
+  "superBlock": "scientific-computing-with-python",
+  "challengeOrder": [
+    {
+      "id": "64dc8b1faf9c60304ca8a9b6",
+      "title": "Step 1"
+    },
+    {
+      "id": "64de1469fccce61940f498c4",
+      "title": "Step 2"
+    },
+    {
+      "id": "64dc8ea01436383a88256d7f",
+      "title": "Step 3"
+    },
+    {
+      "id": "64dc9004f658183afa85f4f1",
+      "title": "Step 4"
+    },
+    {
+      "id": "64dc90949ff85e3b37be40d0",
+      "title": "Step 5"
+    },
+    {
+      "id": "64dc90e837670a3ba26a1e61",
+      "title": "Step 6"
+    },
+    {
+      "id": "64dc916138dbe03bdfe6cec6",
+      "title": "Step 7"
+    },
+    {
+      "id": "64dc922df2919e3c38cead61",
+      "title": "Step 8"
+    },
+    {
+      "id": "64dc92a9718fb53ca3d1bad7",
+      "title": "Step 9"
+    },
+    {
+      "id": "64dc963d866fff3dd0329993",
+      "title": "Step 10"
+    },
+    {
+      "id": "64dc97005bc7943e2978df0a",
+      "title": "Step 11"
+    },
+    {
+      "id": "64dc976bf864693e668d67e8",
+      "title": "Step 12"
+    },
+    {
+      "id": "64de4bccf5becb208a48ca97",
+      "title": "Step 13"
+    },
+    {
+      "id": "64df72c6e0183a191fcd72dc",
+      "title": "Step 14"
+    },
+    {
+      "id": "64e33a488b4a2717fa22ebf3",
+      "title": "Step 15"
+    },
+    {
+      "id": "64dc97ab25730b3e9de86ea5",
+      "title": "Step 16"
+    },
+    {
+      "id": "64dc985e6720a23edac63b51",
+      "title": "Step 17"
+    },
+    {
+      "id": "65782342850feb3b8d62f936",
+      "title": "Step 18"
+    },
+    {
+      "id": "6578273de26b6e5965a9107d",
+      "title": "Step 19"
+    },
+    {
+      "id": "64dcd3d61c448e2676501f43",
+      "title": "Step 20"
+    },
+    {
+      "id": "64dcd9bbc2268127e7898d77",
+      "title": "Step 21"
+    },
+    {
+      "id": "64dcdee07a14f0299ec30559",
+      "title": "Step 22"
+    },
+    {
+      "id": "64dce5f6ff907c2b2c47bb05",
+      "title": "Step 23"
+    },
+    {
+      "id": "64dce7ee2494e82bf4205a3f",
+      "title": "Step 24"
+    },
+    {
+      "id": "64dceadec3c9cf2ca7b56de6",
+      "title": "Step 25"
+    },
+    {
+      "id": "64ddcc2ee182e0164c3539f8",
+      "title": "Step 26"
+    },
+    {
+      "id": "64ddce6f6e8066173208235b",
+      "title": "Step 27"
+    },
+    {
+      "id": "64ddd02838f36117cd9738eb",
+      "title": "Step 28"
+    },
+    {
+      "id": "64ddd280d69fa818ca782d50",
+      "title": "Step 29"
+    },
+    {
+      "id": "64ddd4fbb4b598199acf5ec5",
+      "title": "Step 30"
+    },
+    {
+      "id": "64ddd65848a12919d7e1c7d0",
+      "title": "Step 31"
+    },
+    {
+      "id": "64de6c8a5305d8173a3a9e09",
+      "title": "Step 32"
+    },
+    {
+      "id": "64de7357cc75bd18bdced920",
+      "title": "Step 33"
+    },
+    {
+      "id": "64de73f6c2486518e3064fec",
+      "title": "Step 34"
+    },
+    {
+      "id": "64de7662244db513d7b673ec",
+      "title": "Step 35"
+    },
+    {
+      "id": "64de773f81facd14653f49c8",
+      "title": "Step 36"
+    },
+    {
+      "id": "64de79de2fac6b1536ebcfdd",
+      "title": "Step 37"
+    },
+    {
+      "id": "64de7be06eb689161dd63cf0",
+      "title": "Step 38"
+    },
+    {
+      "id": "64df202aa1342114cd077920",
+      "title": "Step 39"
+    },
+    {
+      "id": "64df332162988b13c35b7f7d",
+      "title": "Step 40"
+    },
+    {
+      "id": "64df346f4c86461419974c1e",
+      "title": "Step 41"
+    },
+    {
+      "id": "64df353d7ae6dc148fd64f53",
+      "title": "Step 42"
+    },
+    {
+      "id": "64df3e2fac34d813d048f3f9",
+      "title": "Step 43"
+    },
+    {
+      "id": "64df3f1011888113fbd3d81b",
+      "title": "Step 44"
+    },
+    {
+      "id": "64e337e3096b7c1739d934e6",
+      "title": "Step 45"
+    },
+    {
+      "id": "64df45a3ad4f8719e5355244",
+      "title": "Step 46"
+    },
+    {
+      "id": "64e3392996b41d17a1375643",
+      "title": "Step 47"
+    },
+    {
+      "id": "64e340302bd28513f3e73740",
+      "title": "Step 48"
+    },
+    {
+      "id": "64df47b32b92301a815d5ef8",
+      "title": "Step 49"
+    },
+    {
+      "id": "64df496c6a8ddf1b38db1ed6",
+      "title": "Step 50"
+    },
+    {
+      "id": "64e340ecee18af1430939018",
+      "title": "Step 51"
+    },
+    {
+      "id": "650c6082e5586f9e3acfcd3b",
+      "title": "Step 52"
+    },
+    {
+      "id": "64e34146860065146733883b",
+      "title": "Step 53"
+    },
+    {
+      "id": "657b667a772ed53e82962c81",
+      "title": "Step 54"
+    },
+    {
+      "id": "657b6a4a49faec5c600287ba",
+      "title": "Step 55"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-grid"
+}
