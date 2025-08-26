@@ -428,7 +428,6 @@ def placeholder(arg):
 def placeholder(arg):
 
     return arg
-}
 \`\`\`
 `;
 

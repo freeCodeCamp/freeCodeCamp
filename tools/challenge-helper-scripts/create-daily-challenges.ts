@@ -23,19 +23,31 @@ if (numberOfChallengesToCreate > 10) {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const challengesPath = join(__dirname, '../../curriculum/challenges');
-const metaPath = join(challengesPath, '_meta');
-const devPlaygroundPath = join(challengesPath, 'english/99-dev-playground');
+const curriculumPath = join(__dirname, '../../curriculum');
+const challengeBlocksPath = join(curriculumPath, '/challenges/english/blocks');
+const structureBlocksPath = join(curriculumPath, '/structure/blocks');
 
-const jsMetaPath = join(
-  metaPath,
-  'daily-coding-challenges-javascript/meta.json'
+const jsChallengesPath = join(
+  challengeBlocksPath,
+  '/daily-coding-challenges-javascript'
 );
-const pyMetaPath = join(metaPath, 'daily-coding-challenges-python/meta.json');
+const pyChallengesPath = join(
+  challengeBlocksPath,
+  '/daily-coding-challenges-python'
+);
+
+const jsStructurePath = join(
+  structureBlocksPath,
+  '/daily-coding-challenges-javascript.json'
+);
+const pyStructurePath = join(
+  structureBlocksPath,
+  '/daily-coding-challenges-python.json'
+);
 
 for (let i = 0; i < numberOfChallengesToCreate; i++) {
-  const jsMeta = JSON.parse(readFileSync(jsMetaPath, 'utf-8')) as Meta;
-  const pyMeta = JSON.parse(readFileSync(pyMetaPath, 'utf-8')) as Meta;
+  const jsMeta = JSON.parse(readFileSync(jsStructurePath, 'utf-8')) as Meta;
+  const pyMeta = JSON.parse(readFileSync(pyStructurePath, 'utf-8')) as Meta;
 
   const numberOfJsChallenges = jsMeta.challengeOrder.length;
   const numberOfPyChallenges = pyMeta.challengeOrder.length;
@@ -75,19 +87,14 @@ function createDailyJsChallenge({
     ]
   };
 
-  writeFileSync(jsMetaPath, JSON.stringify(newMeta, null, 2));
+  writeFileSync(jsStructurePath, JSON.stringify(newMeta, null, 2));
 
   const jsTemplate = getDailyJavascriptChallengeTemplate({
     challengeId,
     challengeNumber
   });
 
-  const jsChallengePath = join(
-    devPlaygroundPath,
-    `daily-coding-challenges-javascript/javascript-challenge-${challengeNumber}.md`
-  );
-
-  writeFileSync(jsChallengePath, jsTemplate);
+  writeFileSync(jsChallengesPath, jsTemplate);
 }
 
 function createDailyPyChallenge({
@@ -108,17 +115,12 @@ function createDailyPyChallenge({
     ]
   };
 
-  writeFileSync(pyMetaPath, JSON.stringify(newMeta, null, 2));
+  writeFileSync(pyStructurePath, JSON.stringify(newMeta, null, 2));
 
   const pyTemplate = getDailyPythonChallengeTemplate({
     challengeId,
     challengeNumber
   });
 
-  const pyChallengePath = join(
-    devPlaygroundPath,
-    `daily-coding-challenges-python/python-challenge-${challengeNumber}.md`
-  );
-
-  writeFileSync(pyChallengePath, pyTemplate);
+  writeFileSync(pyChallengesPath, pyTemplate);
 }
