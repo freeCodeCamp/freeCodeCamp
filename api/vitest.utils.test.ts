@@ -1,4 +1,5 @@
-import { getCsrfToken, getCookies } from './jest.utils';
+import { describe, test, expect } from 'vitest';
+import { getCsrfToken, getCookies } from './vitest.utils';
 
 const fakeCookies = [
   '_csrf=123; Path=/; HttpOnly; SameSite=Strict',

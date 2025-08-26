@@ -1,3 +1,4 @@
+import { beforeAll, afterAll, expect, vi } from 'vitest';
 import request from 'supertest';
 
 import { build, buildOptions } from './src/app';
@@ -172,8 +173,7 @@ export function setupServer(): void {
   let fastify: FastifyTestInstance;
   beforeAll(async () => {
     if (process.env.FCC_ENABLE_TEST_LOGGING !== 'true') {
-      // @ts-expect-error Disable logging by unsetting logger
-      buildOptions.logger = undefined;
+      delete buildOptions.loggerInstance;
     }
     fastify = await build(buildOptions);
     await fastify.ready();
@@ -216,17 +216,8 @@ export const defaultUserEmail = 'foo@bar.com';
 export const defaultUsername = 'fcc-test-user';
 
 export const resetDefaultUser = async (): Promise<void> => {
-  await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.deleteMany(
-    {
-      where: { userId: defaultUserId }
-    }
-  );
   await fastifyTestInstance.prisma.user.deleteMany({
-    where: { id: defaultUserId }
-  });
-
-  await fastifyTestInstance.prisma.user.deleteMany({
-    where: { email: defaultUserEmail }
+    where: { OR: [{ id: defaultUserId }, { email: defaultUserEmail }] }
   });
 
   await fastifyTestInstance.prisma.user.create({
@@ -262,7 +253,7 @@ export async function seedExam(): Promise<void> {
 }
 
 export function createFetchMock({ ok = true, body = {} } = {}) {
-  return jest.fn().mockResolvedValue(
+  return vi.fn().mockResolvedValue(
     Promise.resolve({
       ok,
       json: () => Promise.resolve(body)
