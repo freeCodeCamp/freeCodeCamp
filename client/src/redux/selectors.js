@@ -146,7 +146,7 @@ export const completionStateSelector = createSelector(
       const populateBlocks = blocks =>
         blocks.map(block => {
           const blockChallenges = challenges.filter(
-            ({ block: blockName }) => blockName === block.dashedName
+            ({ block: blockName }) => blockName === block
           );
 
           const completedBlockChallenges = blockChallenges.every(({ id }) =>
@@ -154,7 +154,7 @@ export const completionStateSelector = createSelector(
           );
 
           return {
-            name: block.dashedName,
+            name: block,
             isCompleted:
               completedBlockChallenges.length === blockChallenges.length
           };
