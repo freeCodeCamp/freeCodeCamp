@@ -1,0 +1,23 @@
+{
+  "name": "Working with Numbers and Common Number Methods",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-numbers-and-common-number-methods",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672d26809d388621ad1ecd43",
+      "title": "How Does isNaN Work?"
+    },
+    {
+      "id": "6732808f3221720adc833e81",
+      "title": "How Do the parseFloat() and parseInt() Methods Work?"
+    },
+    {
+      "id": "673280a1c29d0a0b17316e56",
+      "title": "What Is the toFixed() Method, and How Does It Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
