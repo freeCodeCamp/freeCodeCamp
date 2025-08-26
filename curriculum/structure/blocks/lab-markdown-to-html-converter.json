@@ -5,6 +5,10 @@
   "blockType": "lab",
   "blockLayout": "link",
   "dashedName": "lab-markdown-to-html-converter",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     {
       "id": "66f55eac933ff64ce654ca74",

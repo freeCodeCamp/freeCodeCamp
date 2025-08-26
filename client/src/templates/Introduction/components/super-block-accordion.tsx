@@ -7,9 +7,13 @@ import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
 // TODO: source the superblock structure via a GQL query, rather than directly
 // from the curriculum
+<<<<<<< HEAD
 import fullStackCert from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
 import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-stack-open.json';
 
+=======
+import superBlockStructure from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
 import { FsdChapters } from '../../../../../shared/config/chapters';
@@ -60,6 +64,47 @@ interface SuperBlockAccordionProps {
   completedChallengeIds: string[];
 }
 
+<<<<<<< HEAD
+=======
+const modules = superBlockStructure.chapters.flatMap<Module>(
+  ({ modules }) => modules
+);
+const chapters = superBlockStructure.chapters;
+
+const isLinkModule = (name: string) => {
+  const module = modules.find(module => module.dashedName === name);
+
+  return module?.moduleType === 'review';
+};
+
+const getBlockToChapterMap = () => {
+  const blockToChapterMap = new Map<string, string>();
+  chapters.forEach(chapter => {
+    chapter.modules.forEach(module => {
+      module.blocks.forEach(block => {
+        blockToChapterMap.set(block, chapter.dashedName);
+      });
+    });
+  });
+
+  return blockToChapterMap;
+};
+
+const getBlockToModuleMap = () => {
+  const blockToModuleMap = new Map<string, string>();
+  modules.forEach(module => {
+    module.blocks.forEach(block => {
+      blockToModuleMap.set(block, module.dashedName);
+    });
+  });
+
+  return blockToModuleMap;
+};
+
+const blockToChapterMap = getBlockToChapterMap();
+const blockToModuleMap = getBlockToModuleMap();
+
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
 const Chapter = ({
   dashedName,
   children,
@@ -226,7 +271,10 @@ export const SuperBlockAccordion = ({
 
   const { t } = useTranslation();
   const { allChapters } = useMemo(() => {
+<<<<<<< HEAD
     const chapters = superBlockStructure.chapters;
+=======
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
     const populateBlocks = (blocks: string[]) =>
       blocks.map(block => {
         const blockChallenges = challenges.filter(

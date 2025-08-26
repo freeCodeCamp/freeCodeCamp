@@ -6,6 +6,10 @@
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-sql-reference-object",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     {
       "id": "5fa323cdaf6a73463d590659",

@@ -3,6 +3,10 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-blog-post-card",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "66eaddd04a9e533fba689001", "title": "Design a Blog Post Card" }
   ],

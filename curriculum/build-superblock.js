@@ -147,6 +147,10 @@ function addMetaToChallenge(challenge, meta) {
   challenge.superOrder = meta.superOrder;
   challenge.challengeOrder = challengeOrderIndex;
   challenge.isLastChallengeInBlock = isLastChallengeInBlock;
+<<<<<<< HEAD
+=======
+  challenge.isPrivate = challenge.isPrivate || meta.isPrivate;
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   challenge.required = (meta.required || []).concat(challenge.required || []);
   challenge.template = meta.template;
   challenge.helpCategory = challenge.helpCategory || meta.helpCategory;
@@ -226,6 +230,11 @@ class BlockCreator {
   /**
    * @param {object} options - Options object
    * @param {string} options.blockContentDir - Directory containing block content files
+<<<<<<< HEAD
+=======
+   * @param {string} options.blockStructureDir - Directory containing block structure files (meta
+   * .json)
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
    * @param {string} options.i18nBlockContentDir - Directory containing i18n block content files
    * @param {string} options.lang - Language code for the block content
    * @param {object} options.commentTranslations - Translations for comments in challenges
@@ -236,12 +245,20 @@ class BlockCreator {
    */
   constructor({
     blockContentDir,
+<<<<<<< HEAD
+=======
+    blockStructureDir,
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
     i18nBlockContentDir,
     lang,
     commentTranslations,
     skipValidation
   }) {
     this.blockContentDir = blockContentDir;
+<<<<<<< HEAD
+=======
+    this.blockStructureDir = blockStructureDir;
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
     this.i18nBlockContentDir = i18nBlockContentDir;
     this.lang = lang;
     this.commentTranslations = commentTranslations;
@@ -305,6 +322,32 @@ class BlockCreator {
     );
   }
 
+<<<<<<< HEAD
+=======
+  /**
+   * Gets meta information for a block from its JSON file
+   * @param {string} blockName - Name of the block
+   * @returns {object} The meta information object for the block
+   * @throws {Error} If meta file is not found
+   */
+  getMetaForBlock(blockName) {
+    // Read meta.json for this block
+    const metaPath = path.resolve(this.blockStructureDir, `${blockName}.json`);
+    if (!fs.existsSync(metaPath)) {
+      throw new Error(
+        `Meta file not found for block ${blockName}: ${metaPath}`
+      );
+    }
+
+    // Not all "meta information" can be found in the meta.json.
+    const rawMeta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+    debug(
+      `Meta file indicates ${rawMeta.challengeOrder.length} challenges should exist`
+    );
+    return rawMeta;
+  }
+
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   async processBlock(block, { superBlock, order }) {
     const blockName = block.dashedName;
     debug(`Processing block ${blockName} in superblock ${superBlock}`);

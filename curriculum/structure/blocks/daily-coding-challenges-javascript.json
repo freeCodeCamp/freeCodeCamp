@@ -4,7 +4,13 @@
   "dashedName": "daily-coding-challenges-javascript",
   "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
+<<<<<<< HEAD
   "disableLoopProtectTests": true,
+=======
+  "order": 0,
+  "disableLoopProtectTests": true,
+  "superBlock": "dev-playground",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "blockLayout": "legacy-challenge-list",
   "challengeOrder": [
     {
@@ -102,6 +108,7 @@
     {
       "id": "6821ec02237de8297eaee79a",
       "title": "JavaScript Challenge 24"
+<<<<<<< HEAD
     },
     {
       "id": "68adce01c0e1144d0a902956",
@@ -222,6 +229,8 @@
     {
       "id": "68b7cadffed0e75a517da677",
       "title": "JavaScript Challenge 54"
+=======
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
     }
   ]
 }

@@ -4,6 +4,10 @@
   "blockType": "review",
   "blockLayout": "link",
   "dashedName": "review-js-a11y",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     {
       "id": "683766860f71d4a96e429f3a",

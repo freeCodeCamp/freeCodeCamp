@@ -5,6 +5,10 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-personal-portfolio",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "bd7158d8c242eddfaeb5bd13", "title": "Build a Personal Portfolio" }
   ],

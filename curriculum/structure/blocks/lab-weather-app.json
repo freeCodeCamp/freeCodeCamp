@@ -3,6 +3,10 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-weather-app",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "66f12a88741aeb16b9246c59", "title": "Build a Weather App" }
   ],

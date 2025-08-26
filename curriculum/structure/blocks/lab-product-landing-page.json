@@ -5,6 +5,10 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-product-landing-page",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     {
       "id": "587d78af367417b2b2512b04",

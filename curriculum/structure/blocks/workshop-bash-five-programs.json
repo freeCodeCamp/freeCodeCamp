@@ -6,6 +6,10 @@
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-bash-five-programs",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "5f5904ac738bc2fa9efecf5a", "title": "Build Five Programs" }
   ],

@@ -4,6 +4,10 @@
   "blockType": "lecture",
   "blockLayout": "challenge-list",
   "dashedName": "lecture-accessible-tables-forms",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     {
       "id": "672a539b887ec68c593cdc4b",

@@ -2,6 +2,10 @@
   "name": "Selection Sort Lab",
   "isUpcomingChange": true,
   "dashedName": "lab-selection-sort",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "680b3ef395479b0e449ecb6e", "title": "Build a Selection Sort" }
   ],

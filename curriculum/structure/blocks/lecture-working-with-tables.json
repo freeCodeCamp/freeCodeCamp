@@ -4,6 +4,10 @@
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-working-with-tables",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     {
       "id": "672a4e04a24858778f57ebfe",

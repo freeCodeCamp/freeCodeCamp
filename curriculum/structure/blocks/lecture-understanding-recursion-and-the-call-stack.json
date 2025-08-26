@@ -4,6 +4,10 @@
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-recursion-and-the-call-stack",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     {
       "id": "6733b02d1e556005a544c5e3",

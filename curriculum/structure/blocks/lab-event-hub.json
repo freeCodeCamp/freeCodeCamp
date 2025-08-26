@@ -5,6 +5,10 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-event-hub",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "66ebd4ae2812430bb883c787", "title": "Build an Event Hub" }
   ],

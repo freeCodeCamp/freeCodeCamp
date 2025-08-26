@@ -1,7 +1,13 @@
 {
   "name": "Error Handling Review",
+<<<<<<< HEAD
   "isUpcomingChange": false,
   "dashedName": "review-error-handling",
+=======
+  "isUpcomingChange": true,
+  "dashedName": "review-error-handling",
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "67f39bcb48373420f4f12d62", "title": "Error Handling Review" }
   ],

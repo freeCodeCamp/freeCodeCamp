@@ -2,6 +2,10 @@
   "name": "Build a Polygon Area Calculator",
   "isUpcomingChange": true,
   "dashedName": "lab-polygon-area-calculator",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     {
       "id": "5e444147903586ffb414c94f",

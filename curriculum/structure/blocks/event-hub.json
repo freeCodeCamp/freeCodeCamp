@@ -5,6 +5,11 @@
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
   "dashedName": "event-hub",
+<<<<<<< HEAD
+=======
+  "superBlock": "semantic-html",
+  "order": 1,
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "66ebd4ae2812430bb883c787", "title": "Build an Event Hub" }
   ],

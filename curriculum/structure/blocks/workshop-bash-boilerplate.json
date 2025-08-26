@@ -6,6 +6,10 @@
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-bash-boilerplate",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "5ea8adfab628f68d805bfc5e", "title": "Build a Boilerplate" }
   ],

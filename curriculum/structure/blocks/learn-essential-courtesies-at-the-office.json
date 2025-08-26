@@ -2,6 +2,11 @@
   "name": "Learn Essential Courtesies at the Office",
   "isUpcomingChange": true,
   "dashedName": "learn-essential-courtesies-at-the-office",
+<<<<<<< HEAD
+=======
+  "order": 0,
+  "superBlock": "a1-professional-chinese",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     {
       "id": "688f1daf0133dbe2a36b140b",

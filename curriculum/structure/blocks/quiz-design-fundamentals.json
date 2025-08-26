@@ -4,6 +4,10 @@
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-design-fundamentals",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "66ed901ff45ce3ece4053eba", "title": "Design Fundamentals Quiz" }
   ],

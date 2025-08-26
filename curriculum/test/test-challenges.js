@@ -37,10 +37,17 @@ const {
   prefixDoctype,
   helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
+<<<<<<< HEAD
 
 const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
 const { validateMetaSchema } = require('../schema/meta-schema');
 const { getBlockStructure } = require('../file-handler');
+=======
+const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
+const { STRUCTURE_DIR, getBlockCreator } = require('../build-curriculum');
+const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
+const { validateMetaSchema } = require('../schema/meta-schema');
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -179,7 +186,14 @@ If the challenge file exists, try running 'build:curriculum' for more informatio
     // we can skip them.
     // TODO: omit certifications from the list of challenges
     if (dashedBlockName && !meta[dashedBlockName]) {
+<<<<<<< HEAD
       meta[dashedBlockName] = getBlockStructure(dashedBlockName);
+=======
+      meta[dashedBlockName] = await getBlockCreator(lang).getMetaForBlock(
+        dashedBlockName,
+        STRUCTURE_DIR
+      );
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
       const result = validateMetaSchema(meta[dashedBlockName]);
 
       if (result.error) {

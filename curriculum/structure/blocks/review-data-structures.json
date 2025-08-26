@@ -2,6 +2,10 @@
   "name": "Data Structures Review",
   "isUpcomingChange": true,
   "dashedName": "review-data-structures",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "67f39dc7129b092b27099d8c", "title": "Data Structures Review" }
   ],

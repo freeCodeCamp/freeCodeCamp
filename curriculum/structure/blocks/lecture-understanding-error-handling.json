@@ -1,5 +1,6 @@
 {
   "name": "Understanding Error Handling",
+<<<<<<< HEAD
   "blockType": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
@@ -23,4 +24,13 @@
       "title": "What Is the Raise Statement and How Does It Work?"
     }
   ]
+=======
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-error-handling",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [{ "id": "68420bacf395f15cd73f8118", "title": "Step 1" }],
+  "helpCategory": "Python"
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
 }

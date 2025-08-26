@@ -1,7 +1,13 @@
 {
   "name": "Debug an ISBN Validator",
+<<<<<<< HEAD
   "isUpcomingChange": false,
   "dashedName": "lab-isbn-validator",
+=======
+  "isUpcomingChange": true,
+  "dashedName": "lab-isbn-validator",
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "helpCategory": "Python",
   "challengeOrder": [
     { "id": "686b9720ee1d032bd77a480a", "title": "Debug an ISBN Validator" }

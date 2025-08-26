@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 jest.mock('./file-handler');
 
 const path = require('node:path');
@@ -10,6 +11,11 @@ const {
 const { getCurriculumStructure } = require('./file-handler');
 
 const mockGetCurriculumStructure = getCurriculumStructure;
+=======
+const path = require('node:path');
+
+const { createCommentMap, addBlockStructure } = require('./build-curriculum');
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
 
 describe('createCommentMap', () => {
   const dictionaryDir = path.resolve(__dirname, '__fixtures__', 'dictionaries');
@@ -112,6 +118,7 @@ describe('addBlockStructure', () => {
     ]);
   });
 });
+<<<<<<< HEAD
 
 describe('getSuperblocks', () => {
   it('returns an empty array if no superblocks contain the given block', () => {
@@ -167,3 +174,5 @@ describe('getSuperblocks', () => {
     ]);
   });
 });
+=======
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))

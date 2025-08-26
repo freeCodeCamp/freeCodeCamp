@@ -6,6 +6,10 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "lab-world-cup-database",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "5f9771307d4d22b9d2b75a94", "title": "Build a World Cup Database" }
   ],

@@ -2,6 +2,10 @@
   "name": "Searching and Sorting Algorithms Review",
   "isUpcomingChange": true,
   "dashedName": "review-searching-and-sorting-algorithms",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     {
       "id": "67f39de5ff88202c94798189",

@@ -1,7 +1,13 @@
 {
   "name": "Build an RPG Character",
+<<<<<<< HEAD
   "isUpcomingChange": false,
   "dashedName": "lab-rpg-character",
+=======
+  "isUpcomingChange": true,
+  "dashedName": "lab-rpg-character",
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "67d83df6f82eda3868dd2a84", "title": "Build an RPG Character" }
   ],

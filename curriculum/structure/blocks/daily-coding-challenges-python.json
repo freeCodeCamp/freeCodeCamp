@@ -4,6 +4,11 @@
   "dashedName": "daily-coding-challenges-python",
   "usesMultifileEditor": true,
   "helpCategory": "Python",
+<<<<<<< HEAD
+=======
+  "order": 1,
+  "superBlock": "dev-playground",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "blockLayout": "legacy-challenge-list",
   "challengeOrder": [
     {
@@ -101,6 +106,7 @@
     {
       "id": "6821eccb237de8297eaee7a6",
       "title": "Python Challenge 24"
+<<<<<<< HEAD
     },
     {
       "id": "68adce01c0e1144d0a902957",
@@ -221,6 +227,8 @@
     {
       "id": "68b7cadffed0e75a517da678",
       "title": "Python Challenge 54"
+=======
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
     }
   ]
 }

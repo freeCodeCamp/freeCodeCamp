@@ -3,6 +3,10 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-colored-boxes",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "66f3f6eb66ea9dc41cdc30df", "title": "Design a Set Colored Boxes" }
   ],

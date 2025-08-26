@@ -2,6 +2,10 @@
   "name": "Build a Drum Machine",
   "usesMultifileEditor": true,
   "dashedName": "lab-drum-machine",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "6762ec275cef87635acc4fe3", "title": "Build a Drum Machine" }
   ],

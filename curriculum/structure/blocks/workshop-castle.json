@@ -6,6 +6,10 @@
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-castle",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     { "id": "5f32db63eb37f7e17323f459", "title": "Build a Castle" }
   ],

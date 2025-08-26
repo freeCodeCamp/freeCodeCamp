@@ -4,6 +4,10 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "lab-periodic-table-database",
+<<<<<<< HEAD
+=======
+  "superBlock": "full-stack-developer",
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   "challengeOrder": [
     {
       "id": "602d9ff222201c65d2a019f2",

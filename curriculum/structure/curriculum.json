@@ -28,8 +28,12 @@
     "basic-html",
     "semantic-html",
     "a1-professional-chinese",
+<<<<<<< HEAD
     "dev-playground",
     "full-stack-open"
+=======
+    "dev-playground"
+>>>>>>> ce8d6ef092 (refactor: top-down curriculum build (#61459))
   ],
   "certifications": [
     "a2-english-for-developers",
