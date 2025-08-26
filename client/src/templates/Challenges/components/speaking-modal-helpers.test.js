@@ -95,7 +95,15 @@ describe('speaking-modal-helpers', () => {
   });
 
   describe('analyzeSilence', () => {
-    const baseTime = Date.now();
+    const baseTime = 1000000;
+
+    beforeEach(() => {
+      jest.spyOn(Date, 'now').mockReturnValue(baseTime);
+    });
+
+    afterEach(() => {
+      jest.restoreAllMocks();
+    });
 
     it('should detect speech when volume is above threshold', () => {
       const result = analyzeSilence(25, baseTime - 1000, 20, 2000);
