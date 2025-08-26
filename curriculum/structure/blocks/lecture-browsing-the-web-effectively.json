@@ -1,0 +1,23 @@
+{
+  "name": "Browsing the Web Effectively",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-browsing-the-web-effectively",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa5bd69657d56ab49ec8a",
+      "title": "What Are Some of the Common Web Browsers Available Today and How Do You Install One?"
+    },
+    {
+      "id": "672ac96491845f43ea9a26d7",
+      "title": "What Is the Difference Between a Web Browser, a Website, and a Search Engine?"
+    },
+    {
+      "id": "672ac9705b07a64439b73b59",
+      "title": "How to Use a Search Engine Effectively to Achieve Optimal Results"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

@@ -21,7 +21,11 @@ const links = {
   video1:
     '/learn/python-for-everybody/python-for-everybody/introduction-why-program',
   video2:
-    '/learn/python-for-everybody/python-for-everybody/introduction-hardware-architecture'
+    '/learn/python-for-everybody/python-for-everybody/introduction-hardware-architecture',
+  multipleChoiceQuestion:
+    '/learn/a2-english-for-developers/learn-greetings-in-your-first-day-at-the-office/task-7',
+  assignment:
+    '/learn/full-stack-developer/review-semantic-html/review-semantic-html'
 };
 
 const titles = {
@@ -142,4 +146,72 @@ test('User can use shortcuts to navigate between video-based challenges', async 
   await waitUntilHydrated(page, 'video2');
   await page.keyboard.press('p');
   await page.waitForURL(links.video1);
+});
+
+test('User can use Ctrl+Enter to submit their answer in a multiple-choice question challenge', async ({
+  page
+}) => {
+  await page.goto(links.multipleChoiceQuestion);
+
+  // Wait for page load
+  await expect(page.getByRole('heading', { name: 'Task 7' })).toBeVisible();
+
+  await page.keyboard.press('Control+Enter');
+
+  await expect(
+    page.getByText('You have unanswered questions and/or incorrect answers.')
+  ).toBeVisible();
+});
+
+test('User can use Cmd+Enter to submit their answer in a multiple-choice question challenge', async ({
+  page
+}) => {
+  await page.goto(links.multipleChoiceQuestion);
+
+  // Wait for page load
+  await expect(page.getByRole('heading', { name: 'Task 7' })).toBeVisible();
+
+  await page.keyboard.press('Meta+Enter');
+
+  await expect(
+    page.getByText('You have unanswered questions and/or incorrect answers.')
+  ).toBeVisible();
+});
+
+test('User can use Ctrl+Enter to submit their answer in an assignment-type challenge', async ({
+  page
+}) => {
+  await page.goto(links.assignment);
+
+  // Wait for page load
+  await expect(
+    page.getByRole('heading', { name: 'Semantic HTML Review' })
+  ).toBeVisible();
+
+  // Check the assignment checkbox
+  await page.getByRole('checkbox').check();
+
+  await page.keyboard.press('Control+Enter');
+
+  // Completion modal shows up
+  await expect(page.getByRole('dialog')).toBeVisible();
+});
+
+test('User can use Cmd+Enter to submit their answer in an assignment-type challenge', async ({
+  page
+}) => {
+  await page.goto(links.assignment);
+
+  // Wait for page load
+  await expect(
+    page.getByRole('heading', { name: 'Semantic HTML Review' })
+  ).toBeVisible();
+
+  // Check the assignment checkbox
+  await page.getByRole('checkbox').check();
+
+  await page.keyboard.press('Meta+Enter');
+
+  // Completion modal shows up
+  await expect(page.getByRole('dialog')).toBeVisible();
 });

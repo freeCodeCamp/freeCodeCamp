@@ -1,0 +1,87 @@
+{
+  "name": "Redux",
+  "isUpcomingChange": false,
+  "dashedName": "redux",
+  "helpCategory": "JavaScript",
+  "order": 4,
+  "required": [
+    {
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js"
+    },
+    {
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/redux-thunk/2.2.0/redux-thunk.min.js"
+    }
+  ],
+  "superBlock": "front-end-development-libraries",
+  "challengeOrder": [
+    {
+      "id": "5a24c314108439a4d403614b",
+      "title": "Create a Redux Store"
+    },
+    {
+      "id": "5a24c314108439a4d403614c",
+      "title": "Get State from the Redux Store"
+    },
+    {
+      "id": "5a24c314108439a4d403614d",
+      "title": "Define a Redux Action"
+    },
+    {
+      "id": "5a24c314108439a4d403614e",
+      "title": "Define an Action Creator"
+    },
+    {
+      "id": "5a24c314108439a4d403614f",
+      "title": "Dispatch an Action Event"
+    },
+    {
+      "id": "5a24c314108439a4d4036150",
+      "title": "Handle an Action in the Store"
+    },
+    {
+      "id": "5a24c314108439a4d4036151",
+      "title": "Use a Switch Statement to Handle Multiple Actions"
+    },
+    {
+      "id": "5a24c314108439a4d4036152",
+      "title": "Use const for Action Types"
+    },
+    {
+      "id": "5a24c314108439a4d4036153",
+      "title": "Register a Store Listener"
+    },
+    {
+      "id": "5a24c314108439a4d4036154",
+      "title": "Combine Multiple Reducers"
+    },
+    {
+      "id": "5a24c314108439a4d4036155",
+      "title": "Send Action Data to the Store"
+    },
+    {
+      "id": "5a24c314108439a4d4036156",
+      "title": "Use Middleware to Handle Asynchronous Actions"
+    },
+    {
+      "id": "5a24c314108439a4d4036157",
+      "title": "Write a Counter with Redux"
+    },
+    {
+      "id": "5a24c314108439a4d4036158",
+      "title": "Never Mutate State"
+    },
+    {
+      "id": "5a24c314108439a4d4036159",
+      "title": "Use the Spread Operator on Arrays"
+    },
+    {
+      "id": "5a24c314108439a4d403615a",
+      "title": "Remove an Item from an Array"
+    },
+    {
+      "id": "5a24c314108439a4d403615b",
+      "title": "Copy an Object with Object.assign"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

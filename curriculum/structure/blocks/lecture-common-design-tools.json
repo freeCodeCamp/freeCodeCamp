@@ -1,0 +1,19 @@
+{
+  "name": "Common Design Tools",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-common-design-tools",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa7005c24e45bbd53b20d",
+      "title": "What Are Design Briefs and How Do Developers Work with Them?"
+    },
+    {
+      "id": "672bb619f0d4538d0528760d",
+      "title": "What Are Some Common Tools Developers Should Know About That Are Used by Designers in the Industry?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

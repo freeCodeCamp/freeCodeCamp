@@ -1,0 +1,55 @@
+{
+  "name": "Introduction to Flexbox",
+  "isUpcomingChange": false,
+  "dashedName": "top-introduction-to-flexbox",
+  "helpCategory": "Odin",
+  "order": 9,
+  "superBlock": "the-odin-project",
+  "challengeOrder": [
+    {
+      "id": "6571b2fccc1de61d7b4dd37f",
+      "title": "Introduction to Flexbox Lesson A"
+    },
+    {
+      "id": "6571b2fecc1de61d7b4dd380",
+      "title": "Introduction to Flexbox Question B"
+    },
+    {
+      "id": "6571b2fecc1de61d7b4dd381",
+      "title": "Introduction to Flexbox Question C"
+    },
+    {
+      "id": "6571b2ffcc1de61d7b4dd382",
+      "title": "Introduction to Flexbox Question D"
+    },
+    {
+      "id": "6571b300cc1de61d7b4dd383",
+      "title": "Introduction to Flexbox Question E"
+    },
+    {
+      "id": "6571b300cc1de61d7b4dd384",
+      "title": "Introduction to Flexbox Question F"
+    },
+    {
+      "id": "6571c34568e4b3b17d3957f8",
+      "title": "Introduction to Flexbox Question G"
+    },
+    {
+      "id": "6571c34668e4b3b17d3957f9",
+      "title": "Introduction to Flexbox Question H"
+    },
+    {
+      "id": "6571c34768e4b3b17d3957fa",
+      "title": "Introduction to Flexbox Question I"
+    },
+    {
+      "id": "6571c34868e4b3b17d3957fb",
+      "title": "Introduction to Flexbox Question J"
+    },
+    {
+      "id": "6597b43d854b3fa8e35d66d7",
+      "title": "Introduction to Flexbox Question K"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}
