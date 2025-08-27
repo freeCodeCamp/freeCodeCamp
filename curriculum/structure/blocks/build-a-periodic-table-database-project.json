@@ -2,7 +2,6 @@
   "name": "Periodic Table Database",
   "isUpcomingChange": false,
   "dashedName": "build-a-periodic-table-database-project",
-  "order": 12,
   "helpCategory": "Backend Development",
   "superBlock": "relational-database",
   "challengeOrder": [

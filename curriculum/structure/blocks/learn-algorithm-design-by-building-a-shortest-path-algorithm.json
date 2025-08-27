@@ -4,7 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-algorithm-design-by-building-a-shortest-path-algorithm",
-  "order": 7,
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {

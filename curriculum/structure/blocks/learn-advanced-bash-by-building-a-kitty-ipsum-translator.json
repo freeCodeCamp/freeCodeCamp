@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "learn-advanced-bash-by-building-a-kitty-ipsum-translator",
   "helpCategory": "Backend Development",
-  "order": 7,
   "superBlock": "relational-database",
   "challengeOrder": [
     {

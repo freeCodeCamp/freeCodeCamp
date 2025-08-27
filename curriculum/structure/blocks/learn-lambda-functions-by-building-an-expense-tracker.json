@@ -4,7 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-lambda-functions-by-building-an-expense-tracker",
-  "order": 2,
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {

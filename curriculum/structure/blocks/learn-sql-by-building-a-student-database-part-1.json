@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "learn-sql-by-building-a-student-database-part-1",
   "helpCategory": "Backend Development",
-  "order": 4,
   "superBlock": "relational-database",
   "challengeOrder": [
     {

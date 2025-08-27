@@ -4,7 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-interfaces-by-building-an-equation-solver",
-  "order": 15,
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {

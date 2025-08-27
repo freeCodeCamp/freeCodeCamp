@@ -4,7 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-tree-traversal-by-building-a-binary-search-tree",
-  "order": 12,
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {

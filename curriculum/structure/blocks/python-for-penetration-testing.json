@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "python-for-penetration-testing",
   "helpCategory": "Python",
-  "order": 1,
   "superBlock": "information-security",
   "challengeOrder": [
     {

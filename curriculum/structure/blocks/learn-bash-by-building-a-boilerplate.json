@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "learn-bash-by-building-a-boilerplate",
   "helpCategory": "Backend Development",
-  "order": 0,
   "superBlock": "relational-database",
   "challengeOrder": [
     {

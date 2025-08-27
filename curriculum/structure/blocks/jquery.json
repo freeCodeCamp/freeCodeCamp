@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "jquery",
   "helpCategory": "JavaScript",
-  "order": 1,
   "required": [
     {
       "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"

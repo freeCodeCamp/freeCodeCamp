@@ -4,7 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-the-bisection-method-by-finding-the-square-root-of-a-number",
-  "order": 4,
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {

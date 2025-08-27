@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "managing-packages-with-npm",
   "helpCategory": "JavaScript",
-  "order": 0,
   "superBlock": "back-end-development-and-apis",
   "challengeOrder": [
     {

@@ -4,7 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "review-js-fundamentals-by-building-a-gradebook-app",
-  "order": 1,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

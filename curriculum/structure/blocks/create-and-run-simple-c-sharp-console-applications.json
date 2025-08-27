@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "create-and-run-simple-c-sharp-console-applications",
   "helpCategory": "C-Sharp",
-  "order": 1,
   "superBlock": "foundational-c-sharp-with-microsoft",
   "challengeOrder": [
     {

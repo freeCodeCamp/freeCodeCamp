@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "learn-bash-scripting-by-building-five-programs",
   "helpCategory": "Backend Development",
-  "order": 3,
   "superBlock": "relational-database",
   "challengeOrder": [
     {

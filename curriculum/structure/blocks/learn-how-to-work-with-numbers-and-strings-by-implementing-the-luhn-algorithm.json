@@ -4,7 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm",
-  "order": 1,
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {

@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "basic-algorithm-scripting",
   "helpCategory": "JavaScript",
-  "order": 5,
   "superBlock": "javascript-algorithms-and-data-structures",
   "challengeOrder": [
     {

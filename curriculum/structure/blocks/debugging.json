@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "debugging",
   "helpCategory": "JavaScript",
-  "order": 3,
   "superBlock": "javascript-algorithms-and-data-structures",
   "challengeOrder": [
     {

@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "object-oriented-programming",
   "helpCategory": "JavaScript",
-  "order": 6,
   "superBlock": "javascript-algorithms-and-data-structures",
   "challengeOrder": [
     {

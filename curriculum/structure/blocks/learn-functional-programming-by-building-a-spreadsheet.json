@@ -5,7 +5,6 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-functional-programming-by-building-a-spreadsheet",
   "helpCategory": "JavaScript",
-  "order": 16,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

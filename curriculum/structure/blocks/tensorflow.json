@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "tensorflow",
   "helpCategory": "Python",
-  "order": 0,
   "superBlock": "machine-learning-with-python",
   "challengeOrder": [
     {

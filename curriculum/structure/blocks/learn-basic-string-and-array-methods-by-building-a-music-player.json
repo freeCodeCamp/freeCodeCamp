@@ -4,7 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-basic-string-and-array-methods-by-building-a-music-player",
-  "order": 6,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

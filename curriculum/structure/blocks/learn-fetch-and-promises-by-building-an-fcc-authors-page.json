@@ -5,7 +5,6 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-fetch-and-promises-by-building-an-fcc-authors-page",
   "helpCategory": "JavaScript",
-  "order": 22,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

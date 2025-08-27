@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "react-and-redux",
   "helpCategory": "JavaScript",
-  "order": 5,
   "template": "<body><div id='root'></div>${ source || '' }</body>",
   "required": [
     {

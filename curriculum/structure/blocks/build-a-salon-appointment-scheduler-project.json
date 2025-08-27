@@ -2,7 +2,6 @@
   "name": "Salon Appointment Scheduler",
   "isUpcomingChange": false,
   "dashedName": "build-a-salon-appointment-scheduler-project",
-  "order": 9,
   "helpCategory": "Backend Development",
   "superBlock": "relational-database",
   "challengeOrder": [

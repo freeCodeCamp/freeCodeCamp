@@ -4,7 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-special-methods-by-building-a-vector-space",
-  "order": 14,
   "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {

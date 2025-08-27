@@ -4,7 +4,6 @@
   "dashedName": "build-a-cash-register-project",
   "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
-  "order": 21,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {

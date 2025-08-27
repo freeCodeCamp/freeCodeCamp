@@ -4,7 +4,6 @@
   "dashedName": "daily-coding-challenges-python",
   "usesMultifileEditor": true,
   "helpCategory": "Python",
-  "order": 1,
   "superBlock": "dev-playground",
   "blockLayout": "legacy-challenge-list",
   "challengeOrder": [

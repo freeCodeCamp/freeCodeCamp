@@ -5,7 +5,6 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard",
   "helpCategory": "JavaScript",
-  "order": 23,
   "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {
