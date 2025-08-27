@@ -4230,9 +4230,7 @@
       },
       "workshop-tarot-fortune-telling-app": {
         "title": "Tarot fortune Telling App",
-        "intro": [
-          "In this workshop you build a Tarot Card Fortune App"
-        ]
+        "intro": ["In this workshop you build a Tarot Card Fortune App"]
       },
       "trvf": { "title": "293", "intro": [] },
       "kwmg": { "title": "294", "intro": [] },

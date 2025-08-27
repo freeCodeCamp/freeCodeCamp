@@ -618,6 +618,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-typescript",
+            "workshop-tarot-fortune-telling-app",
             "review-typescript",
             "quiz-typescript"
           ]
