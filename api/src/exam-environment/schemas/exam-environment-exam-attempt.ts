@@ -27,6 +27,8 @@ export const examEnvironmentPostExamAttempt = {
 };
 
 const examEnvAttempt = Type.Object({
+  id: Type.String(),
+  examId: Type.String(),
   startTimeInMS: Type.Number(),
   questionSets: Type.Array(
     Type.Object({
@@ -51,7 +53,9 @@ const examEnvAttempt = Type.Object({
 
 export const examEnvironmentGetExamAttempts = {
   headers: Type.Object({
-    'exam-environment-authorization-token': Type.String()
+    // Optional, because the handler is used in both the `/user/` base and `/exam-environment/` base
+    // If it is missing, auth will catch.
+    'exam-environment-authorization-token': Type.Optional(Type.String())
   }),
   response: {
     200: Type.Array(examEnvAttempt),
@@ -64,7 +68,9 @@ export const examEnvironmentGetExamAttempt = {
     attemptId: Type.String({ format: 'objectid' })
   }),
   headers: Type.Object({
-    'exam-environment-authorization-token': Type.String()
+    // Optional, because the handler is used in both the `/user/` base and `/exam-environment/` base.
+    // If it is missing, auth will catch.
+    'exam-environment-authorization-token': Type.Optional(Type.String())
   }),
   response: {
     200: examEnvAttempt,

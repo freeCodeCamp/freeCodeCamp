@@ -44,7 +44,7 @@ function IntroductionPage({
           />
         </FullWidthRow>
         <FullWidthRow>
-          <ButtonLink block size='large' href={firstLessonPath}>
+          <ButtonLink block size='large' href={firstLessonPath || '/learn'}>
             {t('buttons.first-lesson')}
           </ButtonLink>
           <Spacer size='xs' />

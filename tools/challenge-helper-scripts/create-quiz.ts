@@ -11,6 +11,7 @@ import {
 } from '../../shared/config/curriculum';
 import { createQuizFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
+import { createIntroMD } from './helpers/create-intro';
 
 const helpCategories = [
   'HTML-CSS',
@@ -48,7 +49,7 @@ async function createQuiz(
   if (!title) {
     title = block;
   }
-  void updateIntroJson(superBlock, block, title);
+  await updateIntroJson(superBlock, block, title);
 
   const challengeId = await createQuizChallenge(
     superBlock,
@@ -56,9 +57,9 @@ async function createQuiz(
     title,
     questionCount
   );
-  void createMetaJson(superBlock, block, title, helpCategory, challengeId);
+  await createMetaJson(superBlock, block, title, helpCategory, challengeId);
   // TODO: remove once we stop relying on markdown in the client.
-  void createIntroMD(superBlock, block, title);
+  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson(
@@ -107,28 +108,6 @@ async function createMetaJson(
     path.resolve(metaDir, `${block}/meta.json`),
     await format(JSON.stringify(newMeta), { parser: 'json' })
   );
-}
-
-async function createIntroMD(superBlock: string, block: string, title: string) {
-  const introMD = `---
-title: Introduction to the ${title}
-block: ${block}
-superBlock: ${superBlock}
----
-
-## Introduction to the ${title}
-
-This page is for the ${title}
-`;
-  const dirPath = path.resolve(
-    __dirname,
-    `../../client/src/pages/learn/${superBlock}/${block}/`
-  );
-  const filePath = path.resolve(dirPath, 'index.md');
-  if (!existsSync(dirPath)) {
-    await withTrace(fs.mkdir, dirPath);
-  }
-  void withTrace(fs.writeFile, filePath, introMD, { encoding: 'utf8' });
 }
 
 async function createQuizChallenge(

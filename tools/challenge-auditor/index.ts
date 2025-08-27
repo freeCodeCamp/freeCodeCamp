@@ -38,14 +38,17 @@ type ChallengeNode = {
 
 const getChallenges = async (lang: string) => {
   const curriculum = await getChallengesForLang(lang);
-  return Object.keys(curriculum)
-    .map(key => curriculum[key].blocks)
-    .reduce((challengeArray, superBlock) => {
-      const challengesForBlock = Object.keys(superBlock).map(
-        key => superBlock[key].challenges
-      );
-      return [...challengeArray, ...flatten(challengesForBlock)];
-    }, []) as unknown as ChallengeNode[];
+  return (
+    Object.keys(curriculum)
+      // @ts-expect-error - curriculum comes from a JS file.
+      .map(key => curriculum[key].blocks)
+      .reduce((challengeArray, superBlock) => {
+        const challengesForBlock = Object.keys(superBlock).map(
+          key => superBlock[key].challenges
+        );
+        return [...challengeArray, ...flatten(challengesForBlock)];
+      }, []) as unknown as ChallengeNode[]
+  );
 };
 
 /* eslint-enable @typescript-eslint/no-unsafe-return */
@@ -62,23 +65,16 @@ void (async () => {
     'english'
   );
   const englishFilePaths: string[] = [];
-  const englishSuperblocks = await readdir(englishCurriculumDirectory);
-  for (const englishSuperblock of englishSuperblocks) {
-    const englishBlocks = await readdir(
-      join(englishCurriculumDirectory, englishSuperblock)
+  const englishBlocks = await readdir(englishCurriculumDirectory);
+  for (const englishBlock of englishBlocks) {
+    if (englishBlock.endsWith('.txt')) {
+      continue;
+    }
+    const englishChallenges = await readdir(
+      join(englishCurriculumDirectory, englishBlock)
     );
-    for (const englishBlock of englishBlocks) {
-      if (englishBlock.endsWith('.txt')) {
-        continue;
-      }
-      const englishChallenges = await readdir(
-        join(englishCurriculumDirectory, englishSuperblock, englishBlock)
-      );
-      for (const englishChallenge of englishChallenges) {
-        englishFilePaths.push(
-          join(englishSuperblock, englishBlock, englishChallenge)
-        );
-      }
+    for (const englishChallenge of englishChallenges) {
+      englishFilePaths.push(join(englishBlock, englishChallenge));
     }
   }
   const langsToCheck = availableLangs.curriculum.filter(

@@ -35,7 +35,9 @@ function getComponentNameAndProps(
       location: {
         pathname
       },
-      pageContext
+      pageContext,
+      params: { '*': '' },
+      path: ''
     }
   });
   utils.render(<Provider store={store}>{LayoutReactComponent}</Provider>);

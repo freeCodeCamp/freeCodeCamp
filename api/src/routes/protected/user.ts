@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 import * as schemas from '../../schemas';
+import * as examEnvironmentSchemas from '../../exam-environment/schemas';
 import { createResetProperties } from '../../utils/create-user';
 import { customNanoid } from '../../utils/ids';
 import { encodeUserToken } from '../../utils/tokens';
@@ -26,7 +27,12 @@ import {
   getPoints,
   ProgressTimestamp
 } from '../../utils/progress';
-import { JWT_SECRET } from '../../utils/env';
+import { DEPLOYMENT_ENV, JWT_SECRET } from '../../utils/env';
+import {
+  getExamAttemptHandler,
+  getExamAttemptsHandler
+} from '../../exam-environment/routes/exam-environment';
+import { ERRORS } from '../../exam-environment/utils/errors';
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -475,10 +481,25 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     examEnvironmentTokenHandler
   );
 
+  fastify.get(
+    '/user/exam-environment/exam/attempts',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentGetExamAttempts
+    },
+    getExamAttemptsHandler
+  );
+  fastify.get(
+    '/user/exam-environment/exam/attempt/:attemptId',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentGetExamAttempt
+    },
+    getExamAttemptHandler
+  );
+
   done();
 };
 
-// eslint-disable-next-line jsdoc/require-param
+// eslint-disable-next-line jsdoc/require-param, jsdoc/require-returns
 /**
  * Generate a new authorization token for the given user, and invalidates any existing tokens.
  *
@@ -495,6 +516,24 @@ async function examEnvironmentTokenHandler(
   if (!userId) {
     throw new Error('Unreachable. User should be authenticated.');
   }
+
+  // In non-production environments, only staff are allowed to generate a token
+  if (
+    DEPLOYMENT_ENV !== 'org' &&
+    (!req.user?.email?.endsWith('@freecodecamp.org') ||
+      !req.user?.emailVerified)
+  ) {
+    logger.info(
+      `User not allowed to generate authorization token on ${DEPLOYMENT_ENV}.`
+    );
+    void reply.code(403);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+        `User not allowed to generate authorization token in ${DEPLOYMENT_ENV} environment.`
+      )
+    );
+  }
+
   // Delete (invalidate) any existing tokens for the user.
   await this.prisma.examEnvironmentAuthorizationToken.deleteMany({
     where: {
@@ -682,7 +721,8 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               name: name ?? '',
               theme: theme ?? 'default',
               twitter: normalizeTwitter(twitter),
-              username: usernameDisplay || username,
+              username,
+              usernameDisplay: usernameDisplay || username,
               userToken: encodedToken,
               completedSurveys: normalizeSurveys(completedSurveys),
               msUsername: msUsername?.msUsername

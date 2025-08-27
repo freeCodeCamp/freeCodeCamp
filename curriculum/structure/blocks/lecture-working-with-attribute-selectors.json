@@ -1,0 +1,23 @@
+{
+  "name": "Working with Attribute Selectors",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-attribute-selectors",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa840de72b3607bba4bed",
+      "title": "What Is the Attribute Selector, and How Can It Be Used to Target Links with the href and title Attributes?"
+    },
+    {
+      "id": "672c37498952920879c43de9",
+      "title": "How to Use the Attribute Selector to Target Elements with the lang and data-lang Attributes?"
+    },
+    {
+      "id": "672c375857128708d04d0e22",
+      "title": "How to Use the Attribute Selector to Target Ordered List Elements with the type Attribute?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
