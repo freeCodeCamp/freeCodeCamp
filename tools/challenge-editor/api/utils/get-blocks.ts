@@ -17,7 +17,7 @@ export const getBlocks = async (sup: string): Promise<Block[]> => {
   const superBlockMeta = JSON.parse(superBlockMetaFile) as SuperBlockMeta;
   let blocks: { name: string; path: string }[] = [];
 
-  if (sup.includes('full-stack')) {
+  if (sup === 'full-stack-developer') {
     const moduleBlockData = await Promise.all(
       superBlockMeta.chapters!.flatMap(async chapter => {
         return await Promise.all(
