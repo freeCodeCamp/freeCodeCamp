@@ -4,6 +4,7 @@ import { Type } from '@sinclair/typebox';
 import { Value } from '@sinclair/typebox/value';
 import fp from 'fastify-plugin';
 
+import { isError } from 'lodash';
 import {
   API_LOCATION,
   AUTH0_CLIENT_ID,
@@ -151,7 +152,14 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         }
       } catch (error) {
         logger.error(error, 'Failed to get userinfo from Auth0');
-        fastify.Sentry.captureException(error);
+        if (isError(error) && 'innerError' in error) {
+          // This is a specific error from the @fastify/oauth2 plugin.
+          const innerError = error.innerError as Error;
+          innerError.message = `Auth0 userinfo error: ${innerError.message}`;
+          fastify.Sentry.captureException(error.innerError);
+        } else {
+          fastify.Sentry.captureException(error);
+        }
         return reply.redirectWithMessage(returnTo, {
           type: 'danger',
           content: 'flash.generic-error'

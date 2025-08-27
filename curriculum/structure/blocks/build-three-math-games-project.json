@@ -1,0 +1,15 @@
+{
+  "name": "Three Math Games",
+  "isUpcomingChange": false,
+  "dashedName": "build-three-math-games-project",
+  "helpCategory": "Python",
+  "order": 13,
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    {
+      "id": "63d8401039c73468b059cd41",
+      "title": "Build Three Math Games"
+    }
+  ],
+  "blockLayout": "project-list"
+}

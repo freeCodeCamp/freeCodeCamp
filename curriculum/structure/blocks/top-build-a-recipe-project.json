@@ -1,0 +1,15 @@
+{
+  "name": "Learn HTML Foundations by Building a Recipe Page",
+  "isUpcomingChange": false,
+  "dashedName": "top-build-a-recipe-project",
+  "helpCategory": "Odin",
+  "order": 3,
+  "superBlock": "the-odin-project",
+  "challengeOrder": [
+    {
+      "id": "6391d1a4f7ac71efd0621380",
+      "title": "Build a Recipe Page Project"
+    }
+  ],
+  "blockLayout": "project-list"
+}
