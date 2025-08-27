@@ -3,7 +3,6 @@ id: 61531b20cc9dfa2741a5b800
 title: College Algebra with Python Certification
 certification: college-algebra-with-python
 challengeType: 7
-isPrivate: true
 tests:
   - id: 63d83ff239c73468b059cd3f
     title: Build a Multi-Function Calculator
