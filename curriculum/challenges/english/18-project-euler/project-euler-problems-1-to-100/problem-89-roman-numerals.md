@@ -23,14 +23,14 @@ In addition to the three rules given above, if subtractive combinations are used
 
 For example, it would appear that there are at least six ways of writing the number sixteen:
 
-<div style="margin-left: 4em; font-family: 'courier new', monospace;">
-  IIIIIIIIIIIIIIII<br>
-  VIIIIIIIIIII<br>
-  VVIIIIII<br>
-  XIIIIII<br>
-  VVVI<br>
-  XVI<br><br>
-</div>
+```md
+IIIIIIIIIIIIIIII
+VIIIIIIIIIII
+VVIIIIII
+XIIIIII
+VVVI
+XVI
+```
 
 However, according to the rules only XIIIIII and XVI are valid, and the last example is considered to be the most efficient, as it uses the least number of numerals.
 
