@@ -56,14 +56,7 @@ async function createProject(
   void updateIntroJson(superBlock, block, title);
 
   const challengeId = await createFirstChallenge(superBlock, block);
-  void createMetaJson(
-    superBlock,
-    block,
-    title,
-    helpCategory,
-    order,
-    challengeId
-  );
+  void createMetaJson(block, title, helpCategory, challengeId);
   // TODO: remove once we stop relying on markdown in the client.
   void createIntroMD(superBlock, block, title);
 }
@@ -90,19 +83,15 @@ async function updateIntroJson(
 }
 
 async function createMetaJson(
-  superBlock: SuperBlocks,
   block: string,
   title: string,
   helpCategory: string,
-  order: number,
   challengeId: ObjectID
 ) {
   const newMeta = getBaseMeta('Step');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  newMeta.order = order;
-  newMeta.superBlock = superBlock;
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
 

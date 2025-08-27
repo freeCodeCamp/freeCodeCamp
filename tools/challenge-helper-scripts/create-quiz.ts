@@ -57,7 +57,7 @@ async function createQuiz(
     title,
     questionCount
   );
-  await createMetaJson(superBlock, block, title, helpCategory, challengeId);
+  await createMetaJson(block, title, helpCategory, challengeId);
   // TODO: remove once we stop relying on markdown in the client.
   await createIntroMD(superBlock, block, title);
 }
@@ -84,7 +84,6 @@ async function updateIntroJson(
 }
 
 async function createMetaJson(
-  superBlock: SuperBlocks,
   block: string,
   title: string,
   helpCategory: string,
@@ -94,7 +93,6 @@ async function createMetaJson(
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  newMeta.superBlock = superBlock;
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: title }];
 

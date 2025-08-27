@@ -48,7 +48,7 @@ async function createLanguageBlock(
   await updateIntroJson(superBlock, block, title);
 
   const challengeId = await createDialogueChallenge(superBlock, block);
-  await createMetaJson(superBlock, block, title, helpCategory, challengeId);
+  await createMetaJson(block, title, helpCategory, challengeId);
   // TODO: remove once we stop relying on markdown in the client.
   await createIntroMD(superBlock, block, title);
 }
@@ -75,7 +75,6 @@ async function updateIntroJson(
 }
 
 async function createMetaJson(
-  superBlock: SuperBlocks,
   block: string,
   title: string,
   helpCategory: string,
@@ -85,7 +84,6 @@ async function createMetaJson(
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  newMeta.superBlock = superBlock;
   newMeta.challengeOrder = [
     // eslint-disable-next-line @typescript-eslint/no-base-to-string
     { id: challengeId.toString(), title: "Dialogue 1: I'm Tom" }
