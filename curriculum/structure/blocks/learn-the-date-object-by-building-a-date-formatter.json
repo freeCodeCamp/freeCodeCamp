@@ -1,0 +1,121 @@
+{
+  "name": "Learn the Date Object by Building a Date Formatter",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-the-date-object-by-building-a-date-formatter",
+  "order": 8,
+  "superBlock": "javascript-algorithms-and-data-structures-v8",
+  "challengeOrder": [
+    {
+      "id": "65386e889dd615940cb3e042",
+      "title": "Step 1"
+    },
+    {
+      "id": "653879d87bc55fa624280c77",
+      "title": "Step 2"
+    },
+    {
+      "id": "65387b440b5cb1aa35585820",
+      "title": "Step 3"
+    },
+    {
+      "id": "6538830e01ab66ade75b869e",
+      "title": "Step 4"
+    },
+    {
+      "id": "653883da4a1fabaeb5f1f5e7",
+      "title": "Step 5"
+    },
+    {
+      "id": "65388475abfb4faf8dd5e347",
+      "title": "Step 6"
+    },
+    {
+      "id": "653884e09dfb4eb01f1622ed",
+      "title": "Step 7"
+    },
+    {
+      "id": "6538855514cb16b10204e712",
+      "title": "Step 8"
+    },
+    {
+      "id": "653885c61ede29b1a99554a2",
+      "title": "Step 9"
+    },
+    {
+      "id": "65388659a72663b27cde0699",
+      "title": "Step 10"
+    },
+    {
+      "id": "653887098bdc39b3684a51c8",
+      "title": "Step 11"
+    },
+    {
+      "id": "65388762f61f44b3fd490a4a",
+      "title": "Step 12"
+    },
+    {
+      "id": "6538886c61a414b4e34496fe",
+      "title": "Step 13"
+    },
+    {
+      "id": "65388ac7154e44b72c74d616",
+      "title": "Step 14"
+    },
+    {
+      "id": "65388bbcbf6928b83fc424d1",
+      "title": "Step 15"
+    },
+    {
+      "id": "65388d61a57a00b9ad0d0817",
+      "title": "Step 16"
+    },
+    {
+      "id": "65388edfdf364fbb04e426f2",
+      "title": "Step 17"
+    },
+    {
+      "id": "6607343c7909e562a2e3d94c",
+      "title": "Step 18"
+    },
+    {
+      "id": "660736bde759eb64c3bd15c3",
+      "title": "Step 19"
+    },
+    {
+      "id": "66074463e8cc156e18142dbe",
+      "title": "Step 20"
+    },
+    {
+      "id": "660746a665a61c7075a0f457",
+      "title": "Step 21"
+    },
+    {
+      "id": "66074af5d2b4f373cb140d6a",
+      "title": "Step 22"
+    },
+    {
+      "id": "6538935e2ab721beedb137c4",
+      "title": "Step 23"
+    },
+    {
+      "id": "653898fa7eee37c57b960e35",
+      "title": "Step 24"
+    },
+    {
+      "id": "65389a63d3b1d6c764c0e10e",
+      "title": "Step 25"
+    },
+    {
+      "id": "65389de504d0f2ca10e92a57",
+      "title": "Step 26"
+    },
+    {
+      "id": "65389eff4893facbbe6eae67",
+      "title": "Step 27"
+    }
+  ],
+  "helpCategory": "JavaScript",
+  "blockLayout": "legacy-challenge-grid"
+}

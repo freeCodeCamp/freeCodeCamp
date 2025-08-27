@@ -10,6 +10,8 @@ interface LayoutSelectorProps {
     data: { challengeNode?: { challenge?: { usesMultifileEditor?: boolean } } };
     location: { pathname: string };
     pageContext?: { challengeMeta?: { block?: string; superBlock?: string } };
+    params: { '*'?: string };
+    path: string;
   };
 }
 export default function layoutSelector({
@@ -20,8 +22,8 @@ export default function layoutSelector({
     location: { pathname }
   } = props;
 
-  const isDailyChallenge =
-    props.location.pathname === '/learn/daily-coding-challenge';
+  const isDailyChallenge = props.path === '/learn/daily-coding-challenge/*';
+  const dailyChallengeParam = props.params['*'];
 
   const isChallenge = !!props.pageContext?.challengeMeta || isDailyChallenge;
 
@@ -42,6 +44,7 @@ export default function layoutSelector({
         showFooter={false}
         isChallenge={true}
         isDailyChallenge={isDailyChallenge}
+        dailyChallengeParam={dailyChallengeParam}
         usesMultifileEditor={
           props.data?.challengeNode?.challenge?.usesMultifileEditor
         }
