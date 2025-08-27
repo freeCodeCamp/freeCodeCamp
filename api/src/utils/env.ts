@@ -40,7 +40,7 @@ function createTestConnectionURL(url: string, dbId?: string) {
   assert.ok(
     dbId,
     `dbId is required for test connection URL. Is this running in a test environment?
-If so, ensure that the environment variable JEST_WORKER_ID is set.`
+If so, ensure that the environment variable VITEST_WORKER_ID is set.`
   );
   return url.replace(/(.*)(\?.*)/, `$1${dbId}$2`);
 }
@@ -162,7 +162,7 @@ export const MONGOHQ_URL =
   process.env.NODE_ENV === 'test'
     ? createTestConnectionURL(
         process.env.MONGOHQ_URL,
-        process.env.JEST_WORKER_ID
+        process.env.VITEST_WORKER_ID
       )
     : process.env.MONGOHQ_URL;
 

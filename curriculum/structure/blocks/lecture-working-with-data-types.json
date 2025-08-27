@@ -1,0 +1,19 @@
+{
+  "name": "Working with Data Types",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-data-types",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672d264645e289208e562f10",
+      "title": "What Is Dynamic Typing in JavaScript, and How Does It Differ from Statically Typed Languages?"
+    },
+    {
+      "id": "6732518a8627876f4fcd18a4",
+      "title": "How Does the typeof Operator Work, and What Is the typeof null Bug in JavaScript?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
