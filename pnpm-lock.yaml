@@ -422,8 +422,8 @@ importers:
         specifier: 5.25.1
         version: 5.25.1(gatsby@3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2))
       i18next:
-        specifier: 25.2.1
-        version: 25.2.1(typescript@5.2.2)
+        specifier: 25.4.2
+        version: 25.4.2(typescript@5.2.2)
       instantsearch.js:
         specifier: 4.75.3
         version: 4.75.3(algoliasearch@4.22.1)
@@ -489,7 +489,7 @@ importers:
         version: 2.0.0(react@17.0.2)
       react-i18next:
         specifier: 15.5.2
-        version: 15.5.2(i18next@25.2.1(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)
+        version: 15.5.2(i18next@25.4.2(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)
       react-instantsearch:
         specifier: 7.13.6
         version: 7.13.6(algoliasearch@4.22.1)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -819,7 +819,7 @@ importers:
         version: 17.0.19
       '@uiw/react-codemirror':
         specifier: 3.2.10
-        version: 3.2.10(@babel/runtime@7.27.3)(codemirror@5.65.16)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+        version: 3.2.10(@babel/runtime@7.28.3)(codemirror@5.65.16)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       shx:
         specifier: 0.3.4
         version: 0.3.4
@@ -2176,16 +2176,16 @@ packages:
   '@babel/regjsgen@0.8.0':
     resolution: {integrity: sha512-x/rqGMdzj+fWZvCOYForTghzbtqPDZ5gPwaoNGHdgDfF2QA/XZbCBp4Moo5scrkAMPhB7z26XM/AaHuIJdgauA==}
 
-  '@babel/runtime@7.23.1':
-    resolution: {integrity: sha512-hC2v6p8ZSI/W0HUzh3V8C5g+NwSKzKPtJwSpTjwl0o297GP9+ZLQSkdvHz46CM3LqyoXxq+5G9komY+eSqSO0g==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/runtime@7.23.9':
     resolution: {integrity: sha512-0CX6F+BI2s9dkUqr08KFrAIZgNFj75rdBU/DjCyYLIaV/quFjkk6T+EJ2LkZHyZTbEV4L5p97mNkUsHl2wLFAw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/runtime@7.27.3':
     resolution: {integrity: sha512-7EYtGezsdiDMyY80+65EzwiGmcJqpmcZCojSXaRgdrBaGtWTgDZKq69cPIVped6MkIM78cTQ2GOiEYjwOlG4xw==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/runtime@7.28.3':
+    resolution: {integrity: sha512-9uIQ10o0WGdpP6GDhXcdOJPJuDgFtIDtN/9+ArJQ2NAfAmiuhTQdzkaTGR33v43GYS2UrSA0eX2pPPHoFVvpxA==}
     engines: {node: '>=6.9.0'}
 
   '@babel/standalone@7.23.7':
@@ -8758,8 +8758,8 @@ packages:
   i18next-fs-backend@2.6.0:
     resolution: {integrity: sha512-3ZlhNoF9yxnM8pa8bWp5120/Ob6t4lVl1l/tbLmkml/ei3ud8IWySCHt2lrY5xWRlSU5D9IV2sm5bEbGuTqwTw==}
 
-  i18next@25.2.1:
-    resolution: {integrity: sha512-+UoXK5wh+VlE1Zy5p6MjcvctHXAhRwQKCxiJD8noKZzIXmnAX8gdHX5fLPA3MEVxEN4vbZkQFy8N0LyD9tUqPw==}
+  i18next@25.4.2:
+    resolution: {integrity: sha512-gD4T25a6ovNXsfXY1TwHXXXLnD/K2t99jyYMCSimSCBnBRJVQr5j+VAaU83RJCPzrTGhVQ6dqIga66xO2rtd5g==}
     peerDependencies:
       typescript: ^5
     peerDependenciesMeta:
@@ -16857,15 +16857,13 @@ snapshots:
 
   '@babel/regjsgen@0.8.0': {}
 
-  '@babel/runtime@7.23.1':
-    dependencies:
-      regenerator-runtime: 0.14.0
-
   '@babel/runtime@7.23.9':
     dependencies:
       regenerator-runtime: 0.14.0
 
   '@babel/runtime@7.27.3': {}
+
+  '@babel/runtime@7.28.3': {}
 
   '@babel/standalone@7.23.7': {}
 
@@ -20276,9 +20274,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@uiw/react-codemirror@3.2.10(@babel/runtime@7.27.3)(codemirror@5.65.16)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@uiw/react-codemirror@3.2.10(@babel/runtime@7.28.3)(codemirror@5.65.16)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
-      '@babel/runtime': 7.27.3
+      '@babel/runtime': 7.28.3
       codemirror: 5.65.16
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
@@ -20903,7 +20901,7 @@ snapshots:
 
   automation-events@6.0.10:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       tslib: 2.6.2
 
   autoprefixer@10.4.17(postcss@8.4.35):
@@ -21037,7 +21035,7 @@ snapshots:
 
   babel-plugin-macros@2.8.0:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       cosmiconfig: 6.0.0
       resolve: 1.22.10
 
@@ -21131,7 +21129,7 @@ snapshots:
   babel-plugin-remove-graphql-queries@3.15.0(@babel/core@7.23.0)(gatsby@3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)):
     dependencies:
       '@babel/core': 7.23.0
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       '@babel/types': 7.23.9
       gatsby: 3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)
       gatsby-core-utils: 2.15.0
@@ -21139,7 +21137,7 @@ snapshots:
   babel-plugin-remove-graphql-queries@3.15.0(@babel/core@7.23.7)(gatsby@3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)):
     dependencies:
       '@babel/core': 7.23.7
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       '@babel/types': 7.23.9
       gatsby: 3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)
       gatsby-core-utils: 2.15.0
@@ -21174,7 +21172,7 @@ snapshots:
       '@babel/plugin-transform-spread': 7.23.3(@babel/core@7.23.0)
       '@babel/preset-env': 7.23.7(@babel/core@7.23.0)
       '@babel/preset-react': 7.26.3(@babel/core@7.23.0)
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       babel-plugin-dynamic-import-node: 2.3.3
       babel-plugin-macros: 2.8.0
       babel-plugin-transform-react-remove-prop-types: 0.4.24
@@ -22146,7 +22144,7 @@ snapshots:
 
   create-gatsby@1.15.0:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
 
   create-hash@1.2.0:
     dependencies:
@@ -22407,7 +22405,7 @@ snapshots:
 
   date-fns@2.30.0:
     dependencies:
-      '@babel/runtime': 7.23.1
+      '@babel/runtime': 7.27.3
 
   date-fns@4.1.0: {}
 
@@ -22685,7 +22683,7 @@ snapshots:
 
   dom-helpers@5.2.1:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       csstype: 3.1.3
 
   dom-mutator@0.6.0: {}
@@ -23272,7 +23270,7 @@ snapshots:
 
   eslint-plugin-graphql@4.0.0(@types/node@20.12.8)(graphql@15.8.0)(typescript@5.2.2):
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       graphql: 15.8.0
       graphql-config: 3.4.1(@types/node@20.12.8)(graphql@15.8.0)(typescript@5.2.2)
       lodash.flatten: 4.4.0
@@ -23384,7 +23382,7 @@ snapshots:
 
   eslint-plugin-jsx-a11y@6.7.1(eslint@7.32.0):
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       aria-query: 5.3.0
       array-includes: 3.1.7
       array.prototype.flatmap: 1.3.2
@@ -24275,7 +24273,7 @@ snapshots:
 
   gatsby-core-utils@2.15.0:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       ci-info: 2.0.0
       configstore: 5.0.1
       file-type: 16.5.4
@@ -24288,7 +24286,7 @@ snapshots:
 
   gatsby-core-utils@3.25.0:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       ci-info: 2.0.0
       configstore: 5.0.1
       fastq: 1.17.1
@@ -24306,16 +24304,16 @@ snapshots:
 
   gatsby-graphiql-explorer@1.15.0:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
 
   gatsby-legacy-polyfills@1.15.0:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       core-js-compat: 3.9.0
 
   gatsby-link@3.15.0(@gatsbyjs/reach-router@1.3.9(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       '@gatsbyjs/reach-router': 1.3.9(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@types/reach__router': 1.3.15
       prop-types: 15.8.1
@@ -24324,7 +24322,7 @@ snapshots:
 
   gatsby-page-utils@1.15.0:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       bluebird: 3.7.2
       chokidar: 3.6.0
       fs-exists-cached: 1.0.0
@@ -24351,7 +24349,7 @@ snapshots:
 
   gatsby-plugin-page-creator@3.15.0(gatsby@3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2))(graphql@15.8.0):
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       '@babel/traverse': 7.23.7
       '@sindresorhus/slugify': 1.1.2
       chokidar: 3.6.0
@@ -24399,7 +24397,7 @@ snapshots:
       '@babel/plugin-proposal-numeric-separator': 7.18.6(@babel/core@7.23.7)
       '@babel/plugin-proposal-optional-chaining': 7.17.12(@babel/core@7.23.7)
       '@babel/preset-typescript': 7.23.3(@babel/core@7.23.7)
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       babel-plugin-remove-graphql-queries: 3.15.0(@babel/core@7.23.7)(gatsby@3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2))
       gatsby: 3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)
     transitivePeerDependencies:
@@ -24407,7 +24405,7 @@ snapshots:
 
   gatsby-plugin-utils@1.15.0(gatsby@3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2))(graphql@15.8.0):
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       fastq: 1.17.1
       gatsby: 3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)
       graphql: 15.8.0
@@ -24424,7 +24422,7 @@ snapshots:
 
   gatsby-react-router-scroll@4.15.0(@gatsbyjs/reach-router@1.3.9(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       '@gatsbyjs/reach-router': 1.3.9(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       prop-types: 15.8.1
       react: 17.0.2
@@ -24437,7 +24435,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.27.1
       '@babel/plugin-proposal-optional-chaining': 7.17.12(@babel/core@7.23.7)
       '@babel/plugin-transform-react-jsx': 7.22.15(@babel/core@7.23.7)
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       '@babel/standalone': 7.23.7
       '@babel/template': 7.22.15
       '@babel/types': 7.23.9
@@ -24517,7 +24515,7 @@ snapshots:
   gatsby-telemetry@2.15.0:
     dependencies:
       '@babel/code-frame': 7.24.7
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       '@turist/fetch': 7.2.0(node-fetch@2.7.0)
       '@turist/time': 0.0.2
       async-retry-ng: 2.0.1
@@ -24564,7 +24562,7 @@ snapshots:
   gatsby-worker@0.6.0:
     dependencies:
       '@babel/core': 7.23.7
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
     transitivePeerDependencies:
       - supports-color
 
@@ -25438,9 +25436,9 @@ snapshots:
 
   i18next-fs-backend@2.6.0: {}
 
-  i18next@25.2.1(typescript@5.2.2):
+  i18next@25.4.2(typescript@5.2.2):
     dependencies:
-      '@babel/runtime': 7.27.3
+      '@babel/runtime': 7.28.3
     optionalDependencies:
       typescript: 5.2.2
 
@@ -25573,7 +25571,7 @@ snapshots:
 
   instantsearch-ui-components@0.9.0:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
 
   instantsearch.js@4.75.3(algoliasearch@4.22.1):
     dependencies:
@@ -29277,11 +29275,11 @@ snapshots:
       prop-types: 15.8.1
       react: 17.0.2
 
-  react-i18next@15.5.2(i18next@25.2.1(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2):
+  react-i18next@15.5.2(i18next@25.4.2(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2):
     dependencies:
       '@babel/runtime': 7.27.3
       html-parse-stringify: 3.0.1
-      i18next: 25.2.1(typescript@5.2.2)
+      i18next: 25.4.2(typescript@5.2.2)
       react: 17.0.2
     optionalDependencies:
       react-dom: 17.0.2(react@17.0.2)
@@ -29316,7 +29314,7 @@ snapshots:
 
   react-measure@2.5.2(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       get-node-dimensions: 1.2.1
       prop-types: 15.8.1
       react: 17.0.2
@@ -29577,7 +29575,7 @@ snapshots:
 
   regenerator-transform@0.15.2:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
 
   regex-not@1.0.2:
     dependencies:
@@ -30543,7 +30541,7 @@ snapshots:
 
   standardized-audio-context@25.3.57:
     dependencies:
-      '@babel/runtime': 7.23.9
+      '@babel/runtime': 7.27.3
       automation-events: 6.0.10
       tslib: 2.6.2
 
