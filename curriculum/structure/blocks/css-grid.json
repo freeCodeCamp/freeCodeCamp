@@ -1,0 +1,99 @@
+{
+  "name": "CSS Grid",
+  "isUpcomingChange": false,
+  "dashedName": "css-grid",
+  "helpCategory": "HTML-CSS",
+  "order": 6,
+  "superBlock": "responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "5a858944d96184f06fd60d61",
+      "title": "Create Your First CSS Grid"
+    },
+    {
+      "id": "5a9036d038fddaf9a66b5d32",
+      "title": "Add Columns with grid-template-columns"
+    },
+    {
+      "id": "5a9036e138fddaf9a66b5d33",
+      "title": "Add Rows with grid-template-rows"
+    },
+    {
+      "id": "5a9036ee38fddaf9a66b5d34",
+      "title": "Use CSS Grid units to Change the Size of Columns and Rows"
+    },
+    {
+      "id": "5a9036ee38fddaf9a66b5d35",
+      "title": "Create a Column Gap Using grid-column-gap"
+    },
+    {
+      "id": "5a9036ee38fddaf9a66b5d36",
+      "title": "Create a Row Gap using grid-row-gap"
+    },
+    {
+      "id": "5a9036ee38fddaf9a66b5d37",
+      "title": "Add Gaps Faster with grid-gap"
+    },
+    {
+      "id": "5a90372638fddaf9a66b5d38",
+      "title": "Use grid-column to Control Spacing"
+    },
+    {
+      "id": "5a90373638fddaf9a66b5d39",
+      "title": "Use grid-row to Control Spacing"
+    },
+    {
+      "id": "5a90374338fddaf9a66b5d3a",
+      "title": "Align an Item Horizontally using justify-self"
+    },
+    {
+      "id": "5a90375238fddaf9a66b5d3b",
+      "title": "Align an Item Vertically using align-self"
+    },
+    {
+      "id": "5a90376038fddaf9a66b5d3c",
+      "title": "Align All Items Horizontally using justify-items"
+    },
+    {
+      "id": "5a94fdf869fb03452672e45b",
+      "title": "Align All Items Vertically using align-items"
+    },
+    {
+      "id": "5a94fe0569fb03452672e45c",
+      "title": "Divide the Grid Into an Area Template"
+    },
+    {
+      "id": "5a94fe1369fb03452672e45d",
+      "title": "Place Items in Grid Areas Using the grid-area Property"
+    },
+    {
+      "id": "5a94fe2669fb03452672e45e",
+      "title": "Use grid-area Without Creating an Areas Template"
+    },
+    {
+      "id": "5a94fe3669fb03452672e45f",
+      "title": "Reduce Repetition Using the repeat Function"
+    },
+    {
+      "id": "5a94fe4469fb03452672e460",
+      "title": "Limit Item Size Using the minmax Function"
+    },
+    {
+      "id": "5a94fe5469fb03452672e461",
+      "title": "Create Flexible Layouts Using auto-fill"
+    },
+    {
+      "id": "5a94fe6269fb03452672e462",
+      "title": "Create Flexible Layouts Using auto-fit"
+    },
+    {
+      "id": "5a94fe7769fb03452672e463",
+      "title": "Use Media Queries to Create Responsive Layouts"
+    },
+    {
+      "id": "5a94fe8569fb03452672e464",
+      "title": "Create Grids within Grids"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

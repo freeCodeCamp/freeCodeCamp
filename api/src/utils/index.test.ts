@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest';
 import { base64URLEncode, challenge, verifier } from '.';
 
 describe('utils', () => {

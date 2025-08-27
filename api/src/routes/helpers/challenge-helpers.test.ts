@@ -1,9 +1,10 @@
+import { describe, test, expect, afterEach, vi } from 'vitest';
 import type {
   PartiallyCompletedChallenge,
   CompletedChallenge
 } from '@prisma/client';
 
-import { createFetchMock } from '../../../jest.utils';
+import { createFetchMock } from '../../../vitest.utils';
 import {
   canSubmitCodeRoadCertProject,
   verifyTrophyWithMicrosoft
@@ -32,7 +33,7 @@ const completedChallenges: CompletedChallenge[] = [
 
 describe('Challenge Helpers', () => {
   describe('canSubmitCodeRoadCertProject', () => {
-    it('returns true if the user has completed the required challenges or partially completed them', () => {
+    test('returns true if the user has completed the required challenges or partially completed them', () => {
       expect(
         canSubmitCodeRoadCertProject(id, {
           partiallyCompletedChallenges,
@@ -55,7 +56,7 @@ describe('Challenge Helpers', () => {
       ).toBe(true);
     });
 
-    it('returns false if the user has not completed the required challenges', () => {
+    test('returns false if the user has not completed the required challenges', () => {
       expect(
         canSubmitCodeRoadCertProject(id, {
           partiallyCompletedChallenges: [],
@@ -64,7 +65,7 @@ describe('Challenge Helpers', () => {
       ).toBe(false);
     });
 
-    it('returns false if the id is undefined', () => {
+    test('returns false if the id is undefined', () => {
       expect(
         canSubmitCodeRoadCertProject(undefined, {
           partiallyCompletedChallenges,
@@ -81,11 +82,11 @@ describe('Challenge Helpers', () => {
     const verifyData = { msUsername, msTrophyId };
     const achievementsUrl = `https://learn.microsoft.com/api/achievements/user/${userId}`;
 
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     test("handles failure to reach Microsoft's profile api", async () => {
       const notOk = createFetchMock({ ok: false });
-      jest.spyOn(globalThis, 'fetch').mockImplementation(notOk);
+      vi.spyOn(globalThis, 'fetch').mockImplementation(notOk);
 
       const verification = await verifyTrophyWithMicrosoft(verifyData);
 
@@ -101,8 +102,7 @@ describe('Challenge Helpers', () => {
     test("handles failure to reach Microsoft's achievements api", async () => {
       const fetchProfile = createFetchMock({ body: { userId } });
       const fetchAchievements = createFetchMock({ ok: false });
-      jest
-        .spyOn(globalThis, 'fetch')
+      vi.spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)
         .mockImplementationOnce(fetchAchievements);
 
@@ -117,8 +117,7 @@ describe('Challenge Helpers', () => {
     test('handles the case where the user has no achievements', async () => {
       const fetchProfile = createFetchMock({ body: { userId } });
       const fetchAchievements = createFetchMock({ body: { achievements: [] } });
-      jest
-        .spyOn(globalThis, 'fetch')
+      vi.spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)
         .mockImplementationOnce(fetchAchievements);
 
@@ -135,8 +134,7 @@ describe('Challenge Helpers', () => {
       const fetchAchievements = createFetchMock({
         body: { achievements: [{ typeId: 'fake-id' }] }
       });
-      jest
-        .spyOn(globalThis, 'fetch')
+      vi.spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)
         .mockImplementationOnce(fetchAchievements);
 
@@ -156,8 +154,7 @@ describe('Challenge Helpers', () => {
       const fetchAchievements = createFetchMock({
         body: { achievements: [{ typeId: msTrophyId }] }
       });
-      jest
-        .spyOn(globalThis, 'fetch')
+      vi.spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)
         .mockImplementationOnce(fetchAchievements);
 

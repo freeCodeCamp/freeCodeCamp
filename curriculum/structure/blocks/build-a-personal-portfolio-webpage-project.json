@@ -1,0 +1,16 @@
+{
+  "name": "Personal Portfolio Webpage",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-personal-portfolio-webpage-project",
+  "usesMultifileEditor": true,
+  "helpCategory": "HTML-CSS",
+  "order": 19,
+  "superBlock": "2022/responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "bd7158d8c242eddfaeb5bd13",
+      "title": "Build a Personal Portfolio Webpage"
+    }
+  ],
+  "blockLayout": "legacy-link"
+}

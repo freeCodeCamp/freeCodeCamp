@@ -1,4 +1,5 @@
-import { defaultUserEmail, setupServer } from '../../jest.utils';
+import { describe, it, expect, beforeEach, afterAll } from 'vitest';
+import { defaultUserEmail, setupServer } from '../../vitest.utils';
 import { createUserInput } from '../utils/create-user';
 
 describe('prisma client extensions', () => {

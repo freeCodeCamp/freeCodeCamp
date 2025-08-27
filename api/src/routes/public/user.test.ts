@@ -1,17 +1,27 @@
 import type { Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
+import {
+  describe,
+  it,
+  test,
+  expect,
+  beforeAll,
+  beforeEach,
+  afterAll,
+  vi
+} from 'vitest';
 
 import { createUserInput } from '../../utils/create-user';
 import {
   defaultUserEmail,
   setupServer,
   createSuperRequest
-} from '../../../jest.utils';
+} from '../../../vitest.utils';
 import { replacePrivateData } from './user';
 
-const mockedFetch = jest.fn();
-jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
+const mockedFetch = vi.fn();
+vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {

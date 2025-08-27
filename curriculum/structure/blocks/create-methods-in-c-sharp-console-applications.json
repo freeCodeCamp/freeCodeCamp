@@ -1,0 +1,35 @@
+{
+  "name": "Create Methods in C# Console Applications",
+  "isUpcomingChange": false,
+  "dashedName": "create-methods-in-c-sharp-console-applications",
+  "helpCategory": "C-Sharp",
+  "order": 4,
+  "superBlock": "foundational-c-sharp-with-microsoft",
+  "challengeOrder": [
+    {
+      "id": "647e226a8acb466c97ccbef1",
+      "title": "Write Your First C# Method"
+    },
+    {
+      "id": "647e224b8acb466c97ccbeef",
+      "title": "Create C# Methods with Parameters"
+    },
+    {
+      "id": "647e223c8acb466c97ccbeee",
+      "title": "Create C# Methods that Return Values"
+    },
+    {
+      "id": "647e225e8acb466c97ccbef0",
+      "title": "Guided Project - Plan a Petting Zoo Visit"
+    },
+    {
+      "id": "647e22338acb466c97ccbeed",
+      "title": "Challenge Project - Create a Mini-Game"
+    },
+    {
+      "id": "647f877f07d29547b3bee1be",
+      "title": "Trophy - Create Methods in C# Console Applications"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

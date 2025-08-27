@@ -1,0 +1,23 @@
+{
+  "name": "Learn Linear Functions",
+  "isUpcomingChange": false,
+  "dashedName": "learn-linear-functions",
+  "helpCategory": "Python",
+  "order": 4,
+  "superBlock": "college-algebra-with-python",
+  "challengeOrder": [
+    {
+      "id": "6331d291b51aeedd1a2bd651",
+      "title": "Slope"
+    },
+    {
+      "id": "6331d28ab51aeedd1a2bd650",
+      "title": "Linear Equations"
+    },
+    {
+      "id": "6331d283b51aeedd1a2bd64f",
+      "title": "Linear Functions: Extra"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

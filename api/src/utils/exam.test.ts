@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { Exam, Question } from '@prisma/client';
 import {
   examJson,

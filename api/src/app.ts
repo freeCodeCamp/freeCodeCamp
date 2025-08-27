@@ -80,8 +80,11 @@ ajv.addFormat('objectid', {
   validate: (str: string) => isObjectID(str)
 });
 
-export const buildOptions = {
-  loggerInstance: process.env.NODE_ENV === 'test' ? undefined : getLogger(),
+export const buildOptions: FastifyHttpOptions<
+  RawServerDefault,
+  FastifyBaseLogger
+> = {
+  loggerInstance: getLogger(),
   genReqId: () => randomBytes(8).toString('hex'),
   disableRequestLogging: true
 };
