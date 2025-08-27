@@ -2,10 +2,7 @@ import ObjectID from 'bson-objectid';
 import { getTemplate } from './helpers/get-challenge-template';
 import { newTaskPrompts } from './helpers/new-task-prompts';
 import { getProjectPath } from './helpers/get-project-info';
-import {
-  getMetaData,
-  updateMetaData,
-} from './helpers/project-metadata';
+import { getMetaData, updateMetaData } from './helpers/project-metadata';
 import {
   createChallengeFile,
   updateTaskMeta,
