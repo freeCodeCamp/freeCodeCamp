@@ -1,0 +1,47 @@
+{
+  "name": "Working with Client-Side Storage and CRUD Operations",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-client-side-storage-and-crud-operations",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "6733ab64775d35f78f5238fe",
+      "title": "What Does CRUD Stand For, and How Do the Basic Operations Work?"
+    },
+    {
+      "id": "6733ff4a9319c8486750886c",
+      "title": "What Is localStorage, and What Are Some Common Methods?"
+    },
+    {
+      "id": "6733ff5814129c48b4fca88e",
+      "title": "What Is sessionStorage, and What Are Some Common Methods?"
+    },
+    {
+      "id": "6733ff6f02dde548ebe4a6d5",
+      "title": "What Are Cookies, and How Do They Work?"
+    },
+    {
+      "id": "6733ff8d06376149474a0c0d",
+      "title": "What Is the Cache API, and How Does It Work?"
+    },
+    {
+      "id": "6733ff9d2fb9c449af68ad99",
+      "title": "What Are Some Negative Patterns Associated with Client-Side Storage?"
+    },
+    {
+      "id": "6733ffacd0ad1e49ec2af051",
+      "title": "How Can You Use Cookies to Store Arbitrary Data, Normally Controlled by HTTP Headers?"
+    },
+    {
+      "id": "6733ffb59c62ee4a23522efe",
+      "title": "What Is IndexedDB, and How Does It Work?"
+    },
+    {
+      "id": "6733ffc7353af34a61ed683a",
+      "title": "What Are Cache and Service Workers, and How Do They Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

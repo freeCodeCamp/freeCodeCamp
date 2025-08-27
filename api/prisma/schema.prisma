@@ -182,6 +182,9 @@ model ExamEnvironmentExam {
   prerequisites String[]                     @db.ObjectId
   /// If `deprecated`, the exam should no longer be considered for users
   deprecated    Boolean
+  /// Version of the record
+  /// The default must be incremented by 1, if anything in the schema changes
+  version       Int                          @default(1)
 
   // Relations
   generatedExams ExamEnvironmentGeneratedExam[]
@@ -191,7 +194,7 @@ model ExamEnvironmentExam {
 /// A copy of `ExamEnvironmentExam` used as a staging collection for updates to the curriculum.
 ///
 /// This collection schema must be kept in sync with `ExamEnvironmentExam`.
-model ExamEnvironmentTempExam {
+model ExamCreatorExam {
   /// Globally unique exam id
   id            String                       @id @default(auto()) @map("_id") @db.ObjectId
   /// All questions for a given exam
@@ -202,6 +205,9 @@ model ExamEnvironmentTempExam {
   prerequisites String[]                     @db.ObjectId
   /// If `deprecated`, the exam should no longer be considered for users
   deprecated    Boolean
+  /// Version of the record
+  /// The default must be incremented by 1, if anything in the schema changes
+  version       Int                          @default(1)
 }
 
 /// A grouping of one or more questions of a given type
@@ -313,6 +319,9 @@ model ExamEnvironmentExamAttempt {
   questionSets  ExamEnvironmentQuestionSetAttempt[]
   /// Time exam was started as milliseconds since epoch
   startTimeInMS Int
+  /// Version of the record
+  /// The default must be incremented by 1, if anything in the schema changes
+  version       Int                                 @default(1)
 
   // Relations
   user                          user                            @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -347,6 +356,9 @@ model ExamEnvironmentGeneratedExam {
   questionSets ExamEnvironmentGeneratedQuestionSet[]
   /// If `deprecated`, the generation should not longer be considered for users
   deprecated   Boolean
+  /// Version of the record
+  /// The default must be incremented by 1, if anything in the schema changes
+  version      Int                                   @default(1)
 
   // Relations
   exam           ExamEnvironmentExam          @relation(fields: [examId], references: [id], onDelete: Cascade)
@@ -549,6 +561,9 @@ model ExamEnvironmentExamModeration {
 
   /// Date the exam attempt was added to the moderation queue
   submissionDate DateTime @default(now()) @db.Date
+  /// Version of the record
+  /// The default must be incremented by 1, if anything in the schema changes
+  version        Int      @default(1)
 
   // Relations
   examAttempt ExamEnvironmentExamAttempt @relation(fields: [examAttemptId], references: [id], onDelete: Cascade)
