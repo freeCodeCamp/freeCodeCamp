@@ -2122,6 +2122,12 @@
           "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
+      "lecture-understanding-how-html-affects-seo": {
+        "title": "Understanding How HTML Affects SEO",
+        "intro": [
+          "In these lectures, you will learn how your HTML code impacts search engine optimization."
+        ]
+      },
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
         "intro": [
