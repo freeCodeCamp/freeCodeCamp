@@ -1,0 +1,19 @@
+{
+  "name": "Animations and Accessibility",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-animations-and-accessibility",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa8d65995be62ef1c7515",
+      "title": "What Are CSS Animations, and How Do They Work?"
+    },
+    {
+      "id": "672cf764cf55a70433590def",
+      "title": "What Are Accessibility Concerns Around Using Animations, and How Can prefers-reduced-motion Help?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
