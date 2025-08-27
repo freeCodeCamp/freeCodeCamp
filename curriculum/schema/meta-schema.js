@@ -1,9 +1,6 @@
 const Joi = require('joi');
 
-const { SuperBlocks } = require('../../shared/config/curriculum');
-
 const slugRE = new RegExp('^[a-z0-9-]+$');
-const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
 
 const schema = Joi.object()
   .keys({
@@ -25,17 +22,9 @@ const schema = Joi.object()
       'review',
       'quiz',
       'exam'
-    ).when('superBlock', {
-      is: 'full-stack-developer',
-      then: Joi.required(),
-      otherwise: Joi.optional()
-    }),
+    ),
     isUpcomingChange: Joi.boolean().required(),
     dashedName: Joi.string().regex(slugRE).required(),
-    superBlock: Joi.string()
-      .regex(slugWithSlashRE)
-      .valid(...Object.values(SuperBlocks))
-      .required(),
     usesMultifileEditor: Joi.boolean(),
     hasEditableBoundaries: Joi.boolean(),
     disableLoopProtectTests: Joi.boolean(),
