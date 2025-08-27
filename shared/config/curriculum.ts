@@ -70,11 +70,6 @@ export const superBlockToFolderMap = {
   [SuperBlocks.DevPlayground]: '99-dev-playground'
 };
 
-// Same as superBlockToFolderMap but with the keys and values reversed
-export const folderToSuperBlockMap = Object.fromEntries(
-  Object.entries(superBlockToFolderMap).map(([key, value]) => [value, key])
-);
-
 export const languageSuperBlocks = [
   SuperBlocks.A2English,
   SuperBlocks.B1English,
