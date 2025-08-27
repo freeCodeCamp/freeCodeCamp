@@ -1,10 +1,9 @@
 import { prompt } from 'inquirer';
 
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
-import { getChallengeOrderFromMeta } from './helpers/get-challenge-order';
 
 const updateChallengeOrder = async () => {
-  const oldChallengeOrder = getChallengeOrderFromMeta();
+  const oldChallengeOrder = getMetaData().challengeOrder;
   console.log('Current challenge order is: ');
   console.table(oldChallengeOrder.map(({ title }) => ({ title })));
 

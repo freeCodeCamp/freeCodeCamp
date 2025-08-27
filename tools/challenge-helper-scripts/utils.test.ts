@@ -1,8 +1,21 @@
 import fs from 'fs';
-import { join } from 'path';
-import ObjectID from 'bson-objectid';
-import glob from 'glob';
+import path, { join } from 'path';
 import matter from 'gray-matter';
+import ObjectID from 'bson-objectid';
+
+jest.mock('fs', () => {
+  return {
+    writeFileSync: jest.fn(),
+    readdirSync: jest.fn()
+  };
+});
+
+jest.mock('gray-matter', () => {
+  return {
+    read: jest.fn(),
+    stringify: jest.fn()
+  };
+});
 
 jest.mock('bson-objectid', () => {
   return jest.fn(() => ({ toString: () => mockChallengeId }));
@@ -10,9 +23,19 @@ jest.mock('bson-objectid', () => {
 
 jest.mock('./helpers/get-step-template', () => {
   return {
-    getStepTemplate: jest.fn(() => 'Mock template...')
+    getStepTemplate: jest.fn()
   };
 });
+
+const mockMeta = {
+  challengeOrder: [{ id: 'abc', title: 'mock title' }]
+};
+
+jest.mock('./helpers/project-metadata', () => ({
+  // ...jest.requireActual('./helpers/project-metadata'),
+  getMetaData: jest.fn(() => mockMeta),
+  updateMetaData: jest.fn()
+}));
 
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template';
@@ -23,37 +46,26 @@ import {
   updateStepTitles,
   validateBlockName
 } from './utils';
+import { updateMetaData } from './helpers/project-metadata';
 
 const basePath = join(
   process.cwd(),
   '__fixtures__' + process.env.JEST_WORKER_ID
 );
-const commonPath = join(basePath, 'curriculum', 'challenges');
+const commonPath = join(basePath, 'curriculum');
 
 const block = 'utils-project';
-const metaPath = join(commonPath, '_meta', block);
-const superBlockPath = join(commonPath, 'english', 'utils-superblock');
-const projectPath = join(superBlockPath, block);
+const projectPath = join(commonPath, 'challenges', 'english', 'blocks', block);
 
 describe('Challenge utils helper scripts', () => {
-  beforeEach(() => {
-    fs.mkdirSync(superBlockPath, { recursive: true });
-    fs.mkdirSync(projectPath, { recursive: true });
-    fs.mkdirSync(metaPath, { recursive: true });
+  afterEach(() => {
+    jest.clearAllMocks();
   });
   describe('createStepFile util', () => {
     it('should create next step and return its identifier', () => {
-      fs.writeFileSync(
-        join(projectPath, 'step-001.md'),
-        'Lorem ipsum...',
-        'utf-8'
-      );
-      fs.writeFileSync(
-        join(projectPath, 'step-002.md'),
-        'Lorem ipsum...',
-        'utf-8'
-      );
       process.env.CALLING_DIR = projectPath;
+      const mockTemplate = 'Mock template...';
+      (getStepTemplate as jest.Mock).mockReturnValue(mockTemplate);
       const step = createStepFile({
         stepNum: 3,
         challengeType: 0
@@ -66,15 +78,10 @@ describe('Challenge utils helper scripts', () => {
       // Internal tasks
       // - Should generate a template for the step that is being created
       expect(getStepTemplate).toHaveBeenCalledTimes(1);
-
-      // - Should write a file with a given name and template
-      const files = glob.sync(`${projectPath}/*.md`);
-
-      expect(files).toEqual([
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
         `${projectPath}/${mockChallengeId}.md`,
-        `${projectPath}/step-001.md`,
-        `${projectPath}/step-002.md`
-      ]);
+        mockTemplate
+      );
     });
   });
 
@@ -104,78 +111,31 @@ describe('Challenge utils helper scripts', () => {
 
   describe('createChallengeFile util', () => {
     it('should create the challenge', () => {
-      fs.writeFileSync(
-        join(projectPath, 'fake-challenge.md'),
-        'Lorem ipsum...',
-        'utf-8'
-      );
-      fs.writeFileSync(
-        join(projectPath, 'so-many-fakes.md'),
-        'Lorem ipsum...',
-        'utf-8'
-      );
-
       process.env.CALLING_DIR = projectPath;
+      const template = 'pretend this is a template';
 
-      createChallengeFile('hi', 'pretend this is a template');
+      createChallengeFile('hi', template);
       // - Should write a file with a given name and template
-      const files = glob.sync(`${projectPath}/*.md`);
-
-      expect(files).toEqual([
-        `${projectPath}/fake-challenge.md`,
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
         `${projectPath}/hi.md`,
-        `${projectPath}/so-many-fakes.md`
-      ]);
+        template
+      );
     });
   });
 
   describe('insertStepIntoMeta util', () => {
-    it('should update the meta with a new file id and name', () => {
-      fs.writeFileSync(
-        join(metaPath, 'meta.json'),
-        `{"id": "mock-id",
-        "challengeOrder": [
-          {
-            "id": "id-1",
-            "title": "Step 1"
-          },
-          {
-            "id": "id-2",
-            "title": "Step 2"
-          },
-          {
-            "id": "id-3",
-            "title": "Step 3"
-          }
-        ]}`,
-        'utf-8'
-      );
+    it('should call updateMetaData with a new file id and name', async () => {
       process.env.CALLING_DIR = projectPath;
 
-      insertStepIntoMeta({ stepNum: 3, stepId: new ObjectID(mockChallengeId) });
+      await insertStepIntoMeta({
+        stepNum: 3,
+        stepId: new ObjectID(mockChallengeId)
+      });
 
-      const meta = JSON.parse(
-        fs.readFileSync(join(metaPath, 'meta.json'), 'utf-8')
-      );
-      expect(meta).toEqual({
-        id: 'mock-id',
+      expect(updateMetaData).toHaveBeenCalledWith({
         challengeOrder: [
-          {
-            id: 'id-1',
-            title: 'Step 1'
-          },
-          {
-            id: 'id-2',
-            title: 'Step 2'
-          },
-          {
-            id: mockChallengeId,
-            title: 'Step 3'
-          },
-          {
-            id: 'id-3',
-            title: 'Step 4'
-          }
+          { id: 'abc', title: 'Step 1' }, // title gets overwritten
+          { id: mockChallengeId, title: 'Step 2' }
         ]
       });
     });
@@ -183,76 +143,36 @@ describe('Challenge utils helper scripts', () => {
 
   describe('updateStepTitles util', () => {
     it('should apply meta.challengeOrder to step files', () => {
-      fs.writeFileSync(
-        join(metaPath, 'meta.json'),
-        `{"id": "mock-id", "challengeOrder": [{"id": "id-1", "title": "Step 1"}, {"id": "id-3", "title": "Step 2"}, {"id": "id-2", "title": "Step 3"}]}`,
-        'utf-8'
-      );
-      fs.writeFileSync(
-        join(projectPath, 'id-1.md'),
-        `---
-id: id-1
-title: Step 2
-challengeType: a
-dashedName: step-2
----
-`,
-        'utf-8'
-      );
-      fs.writeFileSync(
-        join(projectPath, 'id-2.md'),
-        `---
-id: id-2
-title: Step 1
-challengeType: b
-dashedName: step-1
----
-`,
-        'utf-8'
-      );
-      fs.writeFileSync(
-        join(projectPath, 'id-3.md'),
-        `---
-id: id-3
-title: Step 3
-challengeType: c
-dashedName: step-3
----
-`,
-        'utf-8'
-      );
-
       process.env.CALLING_DIR = projectPath;
+      (getStepTemplate as jest.Mock).mockReturnValue('Mock template...');
+      (fs.readdirSync as jest.Mock).mockReturnValue([
+        'name.md',
+        'another-name.md'
+      ]);
+      (matter.read as jest.Mock).mockReturnValue({
+        data: { id: 'abc' },
+        content: 'goes here'
+      });
 
       updateStepTitles();
 
-      expect(matter.read(join(projectPath, 'id-1.md')).data).toEqual({
-        id: 'id-1',
-        title: 'Step 1',
-        challengeType: 'a',
-        dashedName: 'step-1'
-      });
-      expect(matter.read(join(projectPath, 'id-2.md')).data).toEqual({
-        id: 'id-2',
-        title: 'Step 3',
-        challengeType: 'b',
-        dashedName: 'step-3'
-      });
-      expect(matter.read(join(projectPath, 'id-3.md')).data).toEqual({
-        id: 'id-3',
-        title: 'Step 2',
-        challengeType: 'c',
-        dashedName: 'step-2'
+      expect(fs.readdirSync).toHaveBeenCalledWith(projectPath + '/');
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        path.join(projectPath, 'name.md'),
+        undefined
+      );
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        path.join(projectPath, 'another-name.md'),
+        undefined
+      );
+      expect(matter.stringify).toHaveBeenCalledWith('goes here', {
+        dashedName: 'step-1',
+        id: 'abc',
+        title: 'Step 1'
       });
     });
   });
   afterEach(() => {
     delete process.env.CALLING_DIR;
-    try {
-      fs.rmSync(basePath, { recursive: true });
-    } catch (err) {
-      console.log(err);
-      console.log('Could not remove fixtures folder.');
-    }
   });
 });

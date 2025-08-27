@@ -5,7 +5,6 @@ import { getProjectPath } from './helpers/get-project-info';
 import {
   getMetaData,
   updateMetaData,
-  validateMetaData
 } from './helpers/project-metadata';
 import {
   createChallengeFile,
@@ -14,8 +13,6 @@ import {
 } from './utils';
 
 const createNextTask = async () => {
-  validateMetaData();
-
   const { challengeType } = await newTaskPrompts();
 
   // Placeholder title, to be replaced by updateTaskMarkdownFiles

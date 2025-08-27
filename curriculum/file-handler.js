@@ -3,7 +3,7 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const fsP = require('node:fs/promises');
 
-const prettier = require('prettier');
+// const prettier = require('prettier');
 
 const debug = require('debug')('fcc:file-handler');
 
@@ -101,9 +101,9 @@ function getBlockStructure(block) {
 }
 
 async function writeBlockStructure(block, structure) {
-  const content = await prettier.format(JSON.stringify(structure), {
-    parser: 'json'
-  });
+  // TODO: format with prettier (jest, at least this version, is not compatible
+  // with prettier)
+  const content = await JSON.stringify(structure);
   await fsP.writeFile(getBlockStructurePath(block), content, 'utf8');
 }
 

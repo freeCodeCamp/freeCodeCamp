@@ -1,21 +1,18 @@
 import { unlink } from 'fs/promises';
 import { prompt } from 'inquirer';
 import { getProjectPath } from './helpers/get-project-info';
-import { getChallengeOrderFromMeta } from './helpers/get-challenge-order';
 import { getFileName } from './helpers/get-file-name';
-import { validateMetaData } from './helpers/project-metadata';
 import {
   deleteChallengeFromMeta,
   updateTaskMarkdownFiles,
   updateTaskMeta
 } from './utils';
 import { isTaskChallenge } from './helpers/task-helpers';
+import { getMetaData } from './helpers/project-metadata';
 
 const deleteTask = async () => {
-  validateMetaData();
-
   const path = getProjectPath();
-  const challenges = getChallengeOrderFromMeta();
+  const challenges = getMetaData().challengeOrder;
 
   const challengeToDelete = (await prompt({
     name: 'id',
