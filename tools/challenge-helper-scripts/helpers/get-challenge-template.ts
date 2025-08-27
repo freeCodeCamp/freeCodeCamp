@@ -420,7 +420,7 @@ TestCase().assertTrue(True)\`)
 
 ## --seed-contents--
 
-\`\`\`js
+\`\`\`py
 def placeholder(arg):
 
     return arg
@@ -428,7 +428,7 @@ def placeholder(arg):
 
 # --solutions--
 
-\`\`\`js
+\`\`\`py
 def placeholder(arg):
 
     return arg
