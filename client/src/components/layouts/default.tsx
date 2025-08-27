@@ -59,6 +59,7 @@ import './global.css';
 import './variables.css';
 import './rtl-layout.css';
 import { LocalStorageThemes } from '../../redux/types';
+import DailyChallengeBreadCrumb from '../../templates/Challenges/components/daily-challenge-bread-crumb';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -112,6 +113,8 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   pathname: string;
   showFooter?: boolean;
   isChallenge?: boolean;
+  isDailyChallenge?: boolean;
+  dailyChallengeParam?: string;
   usesMultifileEditor?: boolean;
   block?: string;
   examInProgress: boolean;
@@ -130,6 +133,8 @@ function DefaultLayout({
   removeFlashMessage,
   showFooter = true,
   isChallenge = false,
+  isDailyChallenge = false,
+  dailyChallengeParam,
   usesMultifileEditor,
   block,
   superBlock,
@@ -178,7 +183,7 @@ function DefaultLayout({
 
   const isJapanese = clientLocale === 'japanese';
 
-  if (fetchState.pending) {
+  if (!fetchState.complete) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
     return (
@@ -287,7 +292,15 @@ function DefaultLayout({
             />
           ) : null}
           <SignoutModal />
-          {isChallenge &&
+          {isDailyChallenge ? (
+            <div className='breadcrumbs-demo'>
+              <DailyChallengeBreadCrumb
+                dailyChallengeParam={dailyChallengeParam}
+              />
+            </div>
+          ) : (
+            isChallenge &&
+            !isDailyChallenge &&
             !examInProgress &&
             (isRenderBreadcrumb ? (
               <div className='breadcrumbs-demo'>
@@ -298,7 +311,8 @@ function DefaultLayout({
               </div>
             ) : (
               <Spacer size={isExSmallViewportHeight ? 'xxs' : 'xs'} />
-            ))}
+            ))
+          )}
           {fetchState.complete && children}
         </div>
         {showFooter && <Footer />}
