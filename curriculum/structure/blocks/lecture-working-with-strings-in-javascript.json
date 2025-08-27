@@ -1,0 +1,31 @@
+{
+  "name": "Working with Strings in JavaScript",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-strings-in-javascript",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672d2654f78cbf20e0ba4501",
+      "title": "What Is Bracket Notation, and How Do You Access Characters from a String?"
+    },
+    {
+      "id": "673263df0eb568a7b450f2fc",
+      "title": "How Do You Create a Newline in Strings and Escape Strings?"
+    },
+    {
+      "id": "673263d58da27ea7809963bf",
+      "title": "What Are Template Literals, and What Is String Interpolation?"
+    },
+    {
+      "id": "673263e80dd43da7df3ae565",
+      "title": "How Can You Find the Position of a Substring in a String?"
+    },
+    {
+      "id": "673263f4a5899da8124542fd",
+      "title": "What Is the Prompt Method, and How Does It Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
