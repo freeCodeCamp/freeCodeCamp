@@ -1,0 +1,11 @@
+{
+  "blocks": [
+    "bootstrap",
+    "jquery",
+    "sass",
+    "react",
+    "redux",
+    "react-and-redux",
+    "front-end-development-libraries-projects"
+  ]
+}

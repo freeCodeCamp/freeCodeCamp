@@ -1,0 +1,129 @@
+{
+  "name": "Learn CSS Animation by Building a Ferris Wheel",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-css-animation-by-building-a-ferris-wheel",
+  "helpCategory": "HTML-CSS",
+  "order": 17,
+  "superBlock": "2022/responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "6140c7e645d8e905819f1dd4",
+      "title": "Step 1"
+    },
+    {
+      "id": "6140c9d35015ae0ba0c250e8",
+      "title": "Step 2"
+    },
+    {
+      "id": "6140cbeec34e970dfe75e710",
+      "title": "Step 3"
+    },
+    {
+      "id": "6140cd32d018ed0f600eefce",
+      "title": "Step 4"
+    },
+    {
+      "id": "617ace7d831f9c16a569b38a",
+      "title": "Step 5"
+    },
+    {
+      "id": "6140cdebd39d6a101e747529",
+      "title": "Step 6"
+    },
+    {
+      "id": "6140cfc08ca9c5128c3e6478",
+      "title": "Step 7"
+    },
+    {
+      "id": "6140d0069049f5139d78da40",
+      "title": "Step 8"
+    },
+    {
+      "id": "6140d10d50636e14695013b2",
+      "title": "Step 9"
+    },
+    {
+      "id": "6140d1a351e88f159ed54fca",
+      "title": "Step 10"
+    },
+    {
+      "id": "6140d263016325162fd076fe",
+      "title": "Step 11"
+    },
+    {
+      "id": "6140d2b687a2cd17bac5730c",
+      "title": "Step 12"
+    },
+    {
+      "id": "6140d36b8b747718b50d4b7a",
+      "title": "Step 13"
+    },
+    {
+      "id": "6140d3dc359b371b1a21d783",
+      "title": "Step 14"
+    },
+    {
+      "id": "6140d4bc9db3c81c51a09ab7",
+      "title": "Step 15"
+    },
+    {
+      "id": "6140d94b5fab7f1d73c9bedb",
+      "title": "Step 16"
+    },
+    {
+      "id": "6140dc5e13d0c81e7496f182",
+      "title": "Step 17"
+    },
+    {
+      "id": "6140dd77e0bc5a1f70bd7466",
+      "title": "Step 18"
+    },
+    {
+      "id": "6140de31b1f5b420410728ff",
+      "title": "Step 19"
+    },
+    {
+      "id": "6140df547f09402144e40b92",
+      "title": "Step 20"
+    },
+    {
+      "id": "6140e0d875ec16262f26432b",
+      "title": "Step 21"
+    },
+    {
+      "id": "6140f4b5c1555a2960de1e5f",
+      "title": "Step 22"
+    },
+    {
+      "id": "614100d7d335bb2a5ff74f1f",
+      "title": "Step 23"
+    },
+    {
+      "id": "61410126fa3a6d2b3cda502e",
+      "title": "Step 24"
+    },
+    {
+      "id": "6141019eadec6d2c6c6f007b",
+      "title": "Step 25"
+    },
+    {
+      "id": "6141026ec9882f2d39dcf2b8",
+      "title": "Step 26"
+    },
+    {
+      "id": "6169ab1aaeb4cd1174def700",
+      "title": "Step 27"
+    },
+    {
+      "id": "6169b1357fcb701bb5efc619",
+      "title": "Step 28"
+    },
+    {
+      "id": "6169b284950e171d8d0bb16a",
+      "title": "Step 29"
+    }
+  ],
+  "blockLayout": "legacy-challenge-grid"
+}
