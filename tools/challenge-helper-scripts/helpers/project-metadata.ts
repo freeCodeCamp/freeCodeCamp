@@ -13,11 +13,9 @@ export type Meta = {
   isUpcomingChange: boolean;
   dashedName: string;
   helpCategory: string;
-  order: number;
   time: string;
   template: string;
   required: string[];
-  superBlock: string;
   challengeOrder: { id: string; title: string }[];
 };
 

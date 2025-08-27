@@ -2,8 +2,6 @@ const baseMeta = {
   name: '',
   isUpcomingChange: true,
   dashedName: '',
-  superBlock: '',
-  order: 42,
   helpCategory: '',
   challengeOrder: [
     {
