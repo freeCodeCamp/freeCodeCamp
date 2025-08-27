@@ -4,7 +4,6 @@
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-recursion-and-the-call-stack",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "6733b02d1e556005a544c5e3",

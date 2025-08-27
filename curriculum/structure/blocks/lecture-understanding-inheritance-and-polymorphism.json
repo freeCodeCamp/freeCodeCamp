@@ -4,7 +4,6 @@
   "dashedName": "lecture-understanding-inheritance-and-polymorphism",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "68420c0610b61d64fe2cfd12", "title": "Step 1" }],
   "helpCategory": "Python"
 }

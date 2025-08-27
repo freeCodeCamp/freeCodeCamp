@@ -18,7 +18,6 @@
       "src": "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom-server.browser.production.min.js"
     }
   ],
-  "superBlock": "front-end-development-libraries",
   "challengeOrder": [
     {
       "id": "587d7dbc367417b2b2512bb1",

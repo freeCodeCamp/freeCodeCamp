@@ -8,7 +8,6 @@
       "src": "https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"
     }
   ],
-  "superBlock": "data-visualization",
   "challengeOrder": [
     {
       "id": "587d7fa6367417b2b2512bc2",

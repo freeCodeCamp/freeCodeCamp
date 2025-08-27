@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "cat-photo-app",
-  "superBlock": "basic-html",
   "challengeOrder": [
     {
       "id": "5dc174fcf86c76b9248c6eb2",
