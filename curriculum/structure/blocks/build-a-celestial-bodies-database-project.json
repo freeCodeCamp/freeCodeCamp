@@ -1,0 +1,15 @@
+{
+  "name": "Celestial Bodies Database",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-celestial-bodies-database-project",
+  "order": 2,
+  "helpCategory": "Backend Development",
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    {
+      "id": "5f1a4ef5d5d6b5ab580fc6ae",
+      "title": "Build a Celestial Bodies Database"
+    }
+  ],
+  "blockLayout": "project-list"
+}

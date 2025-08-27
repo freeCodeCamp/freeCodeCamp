@@ -1,0 +1,39 @@
+{
+  "name": "Working with Pseudo-Classes and Pseudo-Elements in CSS",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa74f761c065c9828a95e",
+      "title": "What Are Pseudo-classes, and How Do They Work?"
+    },
+    {
+      "id": "672bbe9171a5cca90f2edeea",
+      "title": "What Are Examples of Element User Action Pseudo-classes?"
+    },
+    {
+      "id": "672bbe9d6ec03ea954d92ff7",
+      "title": "What Are Examples of Input Pseudo-classes?"
+    },
+    {
+      "id": "672bbeaa5afdc5a98d5ab8ff",
+      "title": "What Are Examples of Location Pseudo-classes?"
+    },
+    {
+      "id": "672bbeb6eefd7ca9c003ea00",
+      "title": "What Are Examples of Tree-structural Pseudo-classes?"
+    },
+    {
+      "id": "672bbec3b86dbdaa07a5a5be",
+      "title": "What Are Examples of Functional Pseudo-classes?"
+    },
+    {
+      "id": "672bbed37c6f51aa3a15e78c",
+      "title": "What Are Pseudo-elements, and How Do They Work?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

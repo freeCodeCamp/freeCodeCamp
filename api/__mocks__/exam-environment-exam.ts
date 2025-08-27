@@ -8,9 +8,7 @@ import {
   ExamEnvironmentQuestionSet
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-// import { defaultUserId } from '../jest.utils';
 import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas';
-// import { generateExam } from '../src/exam-environment/utils/exam';
 
 export const oid = () => new ObjectId().toString();
 
