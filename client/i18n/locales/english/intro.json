@@ -3025,10 +3025,28 @@
           "You will learn how to work with template literals, and the <code>indexOf</code> method."
         ]
       },
-      "lecture-working-with-common-string-methods": {
-        "title": "Working with Common String Methods",
+      "lecture-working-with-string-character-methods": {
+        "title": "Working with String Character Methods",
         "intro": [
-          "In these lectures, you will learn about the common string methods available in JavaScript. The string methods will let you do things like extracting a part of a string, changing the casing for a string, replacing a part of a string, trimming whitespace from a string, and much more."
+          "In this lecture you will learn about ASCII character encoding and how to use JavaScript's <code>charCodeAt()</code> and <code>fromCharCode()</code> methods to convert between characters and their numerical ASCII values."
+        ]
+      },
+      "lecture-working-with-string-search-and-slice-methods": {
+        "title": "Working with String Search and Slice Methods",
+        "intro": [
+          "In this lecture you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
+        ]
+      },
+      "lecture-working-with-string-formatting-methods": {
+        "title": "Working with String Formatting Methods",
+        "intro": [
+          "In this lecture you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
+        ]
+      },
+      "lecture-working-with-string-modification-methods": {
+        "title": "Working with String Modification Methods",
+        "intro": [
+          "In this lecture you will learn how to modify strings by replacing parts of them using the <code>replace()</code> method and how to repeat strings multiple times using the <code>repeat()</code> method."
         ]
       },
       "review-javascript-strings": {
@@ -3161,6 +3179,10 @@
           "In this lab you will implement a function that converts the temperature from Celsius to Fahrenheit."
         ]
       },
+      "lab-counting-cards": {
+        "title": "Build a Card Counting Assistant",
+        "intro": ["In this lab you will use JavaScript to count dealt cards."]
+      },
       "lab-leap-year-calculator": {
         "title": "Build a Leap Year Calculator ",
         "intro": [
@@ -3209,6 +3231,12 @@
           "In this lab, you'll review working with arrays and random numbers by building a lunch picker program."
         ]
       },
+      "lab-golf-score-translator": {
+        "title": "Build a Golf Score Translator",
+        "intro": [
+          "For this lab, you will use array methods to translate golf scores into their nickname."
+        ]
+      },
       "lab-reverse-a-string": {
         "title": "Build a String Inverter",
         "intro": [
@@ -3249,6 +3277,12 @@
         "intro": [
           "In this lab, you'll build a quiz game using JavaScript arrays and objects.",
           "You'll also practice using functions to randomly select a question and an answer from an array and compare them."
+        ]
+      },
+      "lab-record-collection": {
+        "title": "Build a Record Collection",
+        "intro": [
+          "In this lab you will build a function to manage a record collection."
         ]
       },
       "review-javascript-objects": {
@@ -3403,6 +3437,12 @@
           "In this lab, you will convert special characters in a string to their corresponding HTML entities."
         ]
       },
+      "lab-optional-arguments-sum-function": {
+        "title": "Build an Optional Arguments Sum Function",
+        "intro": [
+          "In this lab you will build a function that accepts up to two arguments, and sum them, but if there is only one argument returns a function that waits for the second number to sum."
+        ]
+      },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
         "intro": [
@@ -3432,6 +3472,12 @@
         "title": "Build a Book Organizer",
         "intro": [
           "In this lab, you'll build a book organizer using higher order functions in JavaScript."
+        ]
+      },
+      "lab-sorted-index-finder": {
+        "title": "Implement a Sorted Index Finder",
+        "intro": [
+          "In this lab, you will create a function that finds the index at which a given number should be inserted into a sorted array to maintain the array's sorted order."
         ]
       },
       "review-javascript-higher-order-functions": {
@@ -4126,6 +4172,13 @@
           "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
         ]
       },
+      "workshop-tailwind-pricing-component": {
+        "title": "Build a Pricing Component",
+        "intro": [
+          "In this workshop, you will build a pricing component using Tailwind CSS.",
+          "You will practice working with Tailwind CSS grid utility classes."
+        ]
+      },
       "lab-music-shopping-cart-page": {
         "title": "Build a Music Shopping Cart Page",
         "intro": [
@@ -4296,7 +4349,9 @@
       },
       "lecture-understanding-error-handling": {
         "title": "Understanding Error Handling",
-        "intro": ["Learn about Understanding Error Handling in these lectures."]
+        "intro": [
+          "In these lectures, you will learn about error handling in Python. You will learn about the different types of errors, some good debugging practices, what exceptions are, and how to handle them."
+        ]
       },
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
@@ -4417,7 +4472,7 @@
         "title": "Data Structures Review",
         "intro": [
           "Before you're quizzed on data structures, you should review what you've learned about them.",
-          "[Add more details]"
+          "Open up this page to review concepts like the different data structures, algorithms, time and space complexity, and big O notation."
         ]
       },
       "quiz-data-structures": {
@@ -4732,12 +4787,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "lab-record-collection": {
-        "title": "Build a Record Collection",
-        "intro": [
-          "In this lab you will build a function to manage a record collection."
-        ]
       }
     }
   },
@@ -4852,9 +4901,7 @@
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {
-      "daily-coding-challenge": {
-        "title": "Daily Coding Challenge"
-      }
+      "daily-coding-challenge": { "title": "Daily Coding Challenge" }
     }
   },
   "misc-text": {

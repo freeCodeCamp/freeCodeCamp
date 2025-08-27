@@ -1,0 +1,59 @@
+{
+  "name": "MongoDB and Mongoose",
+  "isUpcomingChange": false,
+  "dashedName": "mongodb-and-mongoose",
+  "helpCategory": "JavaScript",
+  "order": 2,
+  "superBlock": "back-end-development-and-apis",
+  "challengeOrder": [
+    {
+      "id": "587d7fb6367417b2b2512c06",
+      "title": "Install and Set Up Mongoose"
+    },
+    {
+      "id": "587d7fb6367417b2b2512c07",
+      "title": "Create a Model"
+    },
+    {
+      "id": "587d7fb6367417b2b2512c09",
+      "title": "Create and Save a Record of a Model"
+    },
+    {
+      "id": "587d7fb7367417b2b2512c0a",
+      "title": "Create Many Records with model.create()"
+    },
+    {
+      "id": "587d7fb7367417b2b2512c0b",
+      "title": "Use model.find() to Search Your Database"
+    },
+    {
+      "id": "587d7fb7367417b2b2512c0c",
+      "title": "Use model.findOne() to Return a Single Matching Document from Your Database"
+    },
+    {
+      "id": "587d7fb7367417b2b2512c0d",
+      "title": "Use model.findById() to Search Your Database By _id"
+    },
+    {
+      "id": "587d7fb8367417b2b2512c0e",
+      "title": "Perform Classic Updates by Running Find, Edit, then Save"
+    },
+    {
+      "id": "587d7fb8367417b2b2512c0f",
+      "title": "Perform New Updates on a Document Using model.findOneAndUpdate()"
+    },
+    {
+      "id": "587d7fb8367417b2b2512c10",
+      "title": "Delete One Document Using model.findByIdAndRemove"
+    },
+    {
+      "id": "587d7fb8367417b2b2512c11",
+      "title": "Delete Many Documents with model.remove()"
+    },
+    {
+      "id": "587d7fb9367417b2b2512c12",
+      "title": "Chain Search Query Helpers to Narrow Search Results"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

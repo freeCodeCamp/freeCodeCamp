@@ -11,6 +11,7 @@ import {
 } from '../../shared/config/curriculum';
 import { createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
+import { createIntroMD } from './helpers/create-intro';
 
 const helpCategories = [
   'HTML-CSS',
@@ -115,28 +116,6 @@ async function createMetaJson(
     path.resolve(metaDir, `${block}/meta.json`),
     await format(JSON.stringify(newMeta), { parser: 'json' })
   );
-}
-
-async function createIntroMD(superBlock: string, block: string, title: string) {
-  const introMD = `---
-title: Introduction to the ${title}
-block: ${block}
-superBlock: ${superBlock}
----
-
-## Introduction to the ${title}
-
-This is a test for the new project-based curriculum.
-`;
-  const dirPath = path.resolve(
-    __dirname,
-    `../../client/src/pages/learn/${superBlock}/${block}/`
-  );
-  const filePath = path.resolve(dirPath, 'index.md');
-  if (!existsSync(dirPath)) {
-    await withTrace(fs.mkdir, dirPath);
-  }
-  void withTrace(fs.writeFile, filePath, introMD, { encoding: 'utf8' });
 }
 
 async function createFirstChallenge(

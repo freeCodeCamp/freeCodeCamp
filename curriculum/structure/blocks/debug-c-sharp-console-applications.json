@@ -1,0 +1,39 @@
+{
+  "name": "Debug C# Console Applications",
+  "isUpcomingChange": false,
+  "dashedName": "debug-c-sharp-console-applications",
+  "helpCategory": "C-Sharp",
+  "order": 5,
+  "superBlock": "foundational-c-sharp-with-microsoft",
+  "challengeOrder": [
+    {
+      "id": "647e22c08acb466c97ccbef7",
+      "title": "Review the Principles of Code Debugging and Exception Handling"
+    },
+    {
+      "id": "647e22b38acb466c97ccbef6",
+      "title": "Implement the Visual Studio Code Debugging Tools for C#"
+    },
+    {
+      "id": "647e22a08acb466c97ccbef5",
+      "title": "Implement Exception Handling in C# Console Applications"
+    },
+    {
+      "id": "647e228a8acb466c97ccbef3",
+      "title": "Create and Throw Exceptions in C# Console Applications"
+    },
+    {
+      "id": "647e22958acb466c97ccbef4",
+      "title": "Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code"
+    },
+    {
+      "id": "647e22778acb466c97ccbef2",
+      "title": "Challenge Project - Debug a C# Console Application Using Visual Studio Code"
+    },
+    {
+      "id": "647f86ff07d29547b3bee1bd",
+      "title": "Trophy - Debug C# Console Applications"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}

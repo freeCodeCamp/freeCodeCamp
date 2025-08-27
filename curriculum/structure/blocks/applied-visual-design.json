@@ -1,0 +1,219 @@
+{
+  "name": "Applied Visual Design",
+  "isUpcomingChange": false,
+  "dashedName": "applied-visual-design",
+  "helpCategory": "HTML-CSS",
+  "order": 2,
+  "superBlock": "responsive-web-design",
+  "challengeOrder": [
+    {
+      "id": "587d7791367417b2b2512ab3",
+      "title": "Create Visual Balance Using the text-align Property"
+    },
+    {
+      "id": "587d7791367417b2b2512ab4",
+      "title": "Adjust the Width of an Element Using the width Property"
+    },
+    {
+      "id": "587d7791367417b2b2512ab5",
+      "title": "Adjust the Height of an Element Using the height Property"
+    },
+    {
+      "id": "587d781a367417b2b2512ab7",
+      "title": "Use the strong Tag to Make Text Bold"
+    },
+    {
+      "id": "587d781a367417b2b2512ab8",
+      "title": "Use the u Tag to Underline Text"
+    },
+    {
+      "id": "587d781a367417b2b2512ab9",
+      "title": "Use the em Tag to Italicize Text"
+    },
+    {
+      "id": "587d781b367417b2b2512aba",
+      "title": "Use the s Tag to Strikethrough Text"
+    },
+    {
+      "id": "587d781b367417b2b2512abb",
+      "title": "Create a Horizontal Line Using the hr Element"
+    },
+    {
+      "id": "587d781b367417b2b2512abc",
+      "title": "Adjust the background-color Property of Text"
+    },
+    {
+      "id": "587d781b367417b2b2512abd",
+      "title": "Adjust the Size of a Heading Element Versus a Paragraph Element"
+    },
+    {
+      "id": "587d781b367417b2b2512abe",
+      "title": "Add a box-shadow to a Card-like Element"
+    },
+    {
+      "id": "587d781c367417b2b2512abf",
+      "title": "Decrease the Opacity of an Element"
+    },
+    {
+      "id": "587d781c367417b2b2512ac0",
+      "title": "Use the text-transform Property to Make Text Uppercase"
+    },
+    {
+      "id": "587d781c367417b2b2512ac2",
+      "title": "Set the font-size for Multiple Heading Elements"
+    },
+    {
+      "id": "587d781c367417b2b2512ac3",
+      "title": "Set the font-weight for Multiple Heading Elements"
+    },
+    {
+      "id": "587d781c367417b2b2512ac4",
+      "title": "Set the font-size of Paragraph Text"
+    },
+    {
+      "id": "587d781d367417b2b2512ac5",
+      "title": "Set the line-height of Paragraphs"
+    },
+    {
+      "id": "587d781d367417b2b2512ac8",
+      "title": "Adjust the Hover State of an Anchor Tag"
+    },
+    {
+      "id": "587d781e367417b2b2512ac9",
+      "title": "Change an Element's Relative Position"
+    },
+    {
+      "id": "587d781e367417b2b2512aca",
+      "title": "Move a Relatively Positioned Element with CSS Offsets"
+    },
+    {
+      "id": "587d781e367417b2b2512acb",
+      "title": "Lock an Element to its Parent with Absolute Positioning"
+    },
+    {
+      "id": "587d781e367417b2b2512acc",
+      "title": "Lock an Element to the Browser Window with Fixed Positioning"
+    },
+    {
+      "id": "587d78a3367417b2b2512ace",
+      "title": "Push Elements Left or Right with the float Property"
+    },
+    {
+      "id": "587d78a3367417b2b2512acf",
+      "title": "Change the Position of Overlapping Elements with the z-index Property"
+    },
+    {
+      "id": "587d78a3367417b2b2512ad0",
+      "title": "Center an Element Horizontally Using the margin Property"
+    },
+    {
+      "id": "587d78a3367417b2b2512ad1",
+      "title": "Learn about Complementary Colors"
+    },
+    {
+      "id": "587d78a4367417b2b2512ad2",
+      "title": "Learn about Tertiary Colors"
+    },
+    {
+      "id": "587d78a4367417b2b2512ad3",
+      "title": "Adjust the Color of Various Elements to Complementary Colors"
+    },
+    {
+      "id": "587d78a4367417b2b2512ad4",
+      "title": "Adjust the Hue of a Color"
+    },
+    {
+      "id": "587d78a4367417b2b2512ad5",
+      "title": "Adjust the Tone of a Color"
+    },
+    {
+      "id": "587d78a5367417b2b2512ad6",
+      "title": "Create a Gradual CSS Linear Gradient"
+    },
+    {
+      "id": "587d78a5367417b2b2512ad7",
+      "title": "Use a CSS Linear Gradient to Create a Striped Element"
+    },
+    {
+      "id": "587d78a5367417b2b2512ad8",
+      "title": "Create Texture by Adding a Subtle Pattern as a Background Image"
+    },
+    {
+      "id": "587d78a5367417b2b2512ad9",
+      "title": "Use the CSS Transform scale Property to Change the Size of an Element"
+    },
+    {
+      "id": "587d78a5367417b2b2512ada",
+      "title": "Use the CSS Transform scale Property to Scale an Element on Hover"
+    },
+    {
+      "id": "587d78a6367417b2b2512adb",
+      "title": "Use the CSS Transform Property skewX to Skew an Element Along the X-Axis"
+    },
+    {
+      "id": "587d78a6367417b2b2512adc",
+      "title": "Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis"
+    },
+    {
+      "id": "587d78a6367417b2b2512add",
+      "title": "Create a Graphic Using CSS"
+    },
+    {
+      "id": "587d78a6367417b2b2512ade",
+      "title": "Create a More Complex Shape Using CSS and HTML"
+    },
+    {
+      "id": "587d78a7367417b2b2512adf",
+      "title": "Learn How the CSS @keyframes and animation Properties Work"
+    },
+    {
+      "id": "587d78a7367417b2b2512ae0",
+      "title": "Use CSS Animation to Change the Hover State of a Button"
+    },
+    {
+      "id": "58a7a6ebf9a6318348e2d5aa",
+      "title": "Modify Fill Mode of an Animation"
+    },
+    {
+      "id": "587d78a7367417b2b2512ae1",
+      "title": "Create Movement Using CSS Animation"
+    },
+    {
+      "id": "587d78a7367417b2b2512ae2",
+      "title": "Create Visual Direction by Fading an Element from Left to Right"
+    },
+    {
+      "id": "587d78a8367417b2b2512ae3",
+      "title": "Animate Elements Continually Using an Infinite Animation Count"
+    },
+    {
+      "id": "587d78a8367417b2b2512ae4",
+      "title": "Make a CSS Heartbeat using an Infinite Animation Count"
+    },
+    {
+      "id": "587d78a8367417b2b2512ae5",
+      "title": "Animate Elements at Variable Rates"
+    },
+    {
+      "id": "587d78a8367417b2b2512ae6",
+      "title": "Animate Multiple Elements at Variable Rates"
+    },
+    {
+      "id": "587d78a8367417b2b2512ae7",
+      "title": "Change Animation Timing with Keywords"
+    },
+    {
+      "id": "587d78a9367417b2b2512ae8",
+      "title": "Learn How Bezier Curves Work"
+    },
+    {
+      "id": "587d78a9367417b2b2512ae9",
+      "title": "Use a Bezier Curve to Move a Graphic"
+    },
+    {
+      "id": "587d78a9367417b2b2512aea",
+      "title": "Make Motion More Natural Using a Bezier Curve"
+    }
+  ],
+  "blockLayout": "legacy-challenge-list"
+}
