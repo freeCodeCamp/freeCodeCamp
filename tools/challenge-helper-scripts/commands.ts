@@ -2,8 +2,7 @@ import fs from 'fs';
 import { SuperBlocks } from '../../shared/config/curriculum';
 import { challengeTypes } from '../../shared/config/challenge-types';
 import { getProjectPath } from './helpers/get-project-info';
-import { getMetaData, updateMetaData } from './helpers/project-metadata';
-import { getChallengeOrderFromFileTree } from './helpers/get-challenge-order';
+import { getMetaData } from './helpers/project-metadata';
 import {
   createStepFile,
   deleteStepFromMeta,
@@ -90,22 +89,4 @@ async function createEmptySteps(num: number): Promise<void> {
   console.log(`Successfully added ${num} steps`);
 }
 
-const repairMeta = async () => {
-  const sortByStepNum = (a: string, b: string) =>
-    parseInt(a.split(' ')[1]) - parseInt(b.split(' ')[1]);
-
-  const challengeOrder = await getChallengeOrderFromFileTree();
-  if (!challengeOrder.every(({ title }) => /Step \d+/.test(title))) {
-    throw new Error(
-      'You can only run this command on project-based blocks with step files.'
-    );
-  }
-  const sortedChallengeOrder = challengeOrder.sort((a, b) =>
-    sortByStepNum(a.title, b.title)
-  );
-  const meta = getMetaData();
-  meta.challengeOrder = sortedChallengeOrder;
-  await updateMetaData(meta);
-};
-
-export { deleteStep, insertStep, createEmptySteps, repairMeta };
+export { deleteStep, insertStep, createEmptySteps };
