@@ -1,0 +1,27 @@
+{
+  "name": "Best Practices for Responsive Web Design",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-best-practices-for-responsive-web-design",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa8873d4e25618870764f",
+      "title": "What Is Responsive Web Design, and What Is Its Relationship to Tools Like CSS Grid and Flexbox?"
+    },
+    {
+      "id": "672cf05c3ad533eabe1e8197",
+      "title": "How Do Media Queries Work, and What Are Some Common Media Types and Features?"
+    },
+    {
+      "id": "672cf07a2b9796eb49719e03",
+      "title": "What Are Media Breakpoints, and What Are Common Breakpoints in Modern Design?"
+    },
+    {
+      "id": "672cf06c8f46f9eb04db9832",
+      "title": "What Is the Mobile First Approach in Responsive Web Design?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

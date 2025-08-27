@@ -1,0 +1,15 @@
+{
+  "name": "Learn SQL by Building a Student Database: Part 2",
+  "isUpcomingChange": false,
+  "dashedName": "learn-sql-by-building-a-student-database-part-2",
+  "helpCategory": "Backend Development",
+  "order": 5,
+  "superBlock": "relational-database",
+  "challengeOrder": [
+    {
+      "id": "618590adb0730ca724e37672",
+      "title": "Build a Student Database: Part 2"
+    }
+  ],
+  "blockLayout": "project-list"
+}

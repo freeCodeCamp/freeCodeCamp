@@ -72,13 +72,17 @@ ${result.error.message}`
       await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
         directoryFilter: ['!challenges'],
         fileFilter: entry => {
+          // path without extension:
+          const filePath = entry.path.replace(/\.json$/, '');
           // The directory contains super block files and other curriculum-related files.
           // We're only interested in super block ones.
           const superBlocks = Object.values(SuperBlocks);
-          return superBlocks.includes(entry.basename);
+          return superBlocks.includes(filePath);
         }
       })
     ).map(file => file.path);
+
+    expect(fileArray.length).toBeGreaterThan(0);
 
     fileArray.forEach(fileInArray => {
       const fileContent = fs.readFileSync(
@@ -100,13 +104,17 @@ ${result.error.message}`);
       await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
         directoryFilter: ['!challenges'],
         fileFilter: entry => {
+          // path without extension:
+          const filePath = entry.path.replace(/\.json$/, '');
           // The directory contains super block files and other curriculum-related files.
           // We're only interested in super block ones.
           const superBlocks = Object.values(SuperBlocks);
-          return superBlocks.includes(entry.basename);
+          return superBlocks.includes(filePath);
         }
       })
     ).map(file => file.path);
+
+    expect(superBlockFiles.length).toBeGreaterThan(0);
 
     superBlockFiles.forEach(file => {
       const fileContentJson = fs.readFileSync(
