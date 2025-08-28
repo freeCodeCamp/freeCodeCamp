@@ -190,6 +190,13 @@ const superBlockNames = {
   'dev-playground': 'dev-playground'
 };
 
+const superBlockToFilename = Object.entries(superBlockNames).reduce(
+  (map, entry) => {
+    return { ...map, [entry[1]]: entry[0] };
+  },
+  {}
+);
+
 /**
  * Builds an array of superblock structures from a curriculum object
 
@@ -280,5 +287,6 @@ module.exports = {
   getBlockCreator,
   getBlockStructure,
   getSuperblockStructure,
-  createCommentMap
+  createCommentMap,
+  superBlockToFilename
 };
