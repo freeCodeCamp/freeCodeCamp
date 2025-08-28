@@ -35,6 +35,7 @@
 .super-block-accordion .chapter-button .chapter-button-left {
   display: flex;
   align-items: center;
+  text-align: left;
   column-gap: 10px;
   font-size: 1.5em;
 }
