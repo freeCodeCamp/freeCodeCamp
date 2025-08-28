@@ -278,10 +278,14 @@ export const SuperBlockAccordion = ({
                 }
 
                 // TODO: convert to selector #61969
-                const { note, intro } = t(
+                const translation = t(
                   `intro:${superBlock}.module-intros.${module.name}` as never,
                   { returnObjects: true }
-                ) as { note: string, intro: string[] };
+                );
+                const { note, intro } = translation as never as {
+                  note: string;
+                  intro: string[];
+                };
 
                 return (
                   <Disclosure
