@@ -1,8 +1,8 @@
 ---
 id: 689f0cadebd93b5b625faadd
-title: Task 31
+title: Task 34
 challengeType: 19
-dashedName: task-31
+dashedName: task-34
 ---
 
 <!-- (Audio) A: uó -->
