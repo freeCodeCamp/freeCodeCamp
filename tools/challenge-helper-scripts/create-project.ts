@@ -7,11 +7,15 @@ import ObjectID from 'bson-objectid';
 import { SuperBlocks } from '../../shared/config/curriculum';
 import {
   getContentConfig,
-  writeBlockStructure
+  getSuperblockStructure,
+  writeBlockStructure,
+  writeSuperblockStructure
 } from '../../curriculum/file-handler';
+import { superBlockToFilename } from '../../curriculum/build-curriculum';
 import { createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
+import { insertInto } from './helpers/utils';
 
 const helpCategories = [
   'HTML-CSS',
@@ -57,6 +61,10 @@ async function createProject(
 
   const challengeId = await createFirstChallenge(superBlock, block);
   void createMetaJson(block, title, helpCategory, challengeId);
+  const superblockFilename = (
+    superBlockToFilename as Record<SuperBlocks, string>
+  )[superBlock];
+  void updateSimpleSuperblockStructure(block, order, superblockFilename);
   // TODO: remove once we stop relying on markdown in the client.
   void createIntroMD(superBlock, block, title);
 }
@@ -80,6 +88,20 @@ async function updateIntroJson(
     introJsonPath,
     await format(JSON.stringify(newIntro), { parser: 'json' })
   );
+}
+
+async function updateSimpleSuperblockStructure(
+  block: string,
+  order: number,
+  superblockFilename: string
+) {
+  const existing = getSuperblockStructure(superblockFilename) as {
+    blocks: string[];
+  };
+  const updated = {
+    blocks: insertInto(existing.blocks, order, block)
+  };
+  await writeSuperblockStructure(superblockFilename, updated);
 }
 
 async function createMetaJson(

@@ -103,22 +103,31 @@ function getBlockStructure(block) {
 async function writeBlockStructure(block, structure) {
   // TODO: format with prettier (jest, at least this version, is not compatible
   // with prettier)
-  const content = await JSON.stringify(structure);
+  const content = JSON.stringify(structure);
   await fsP.writeFile(getBlockStructurePath(block), content, 'utf8');
 }
 
+async function writeSuperblockStructure(superblock, structure) {
+  const content = JSON.stringify(structure);
+  await fsP.writeFile(getSuperblockStructurePath(superblock), content);
+}
+
 function getSuperblockStructure(superblockFilename) {
-  const superblockPath = path.resolve(
-    STRUCTURE_DIR,
-    'superblocks',
-    `${superblockFilename}.json`
-  );
+  const superblockPath = getSuperblockStructurePath(superblockFilename);
 
   if (!fs.existsSync(superblockPath)) {
     throw Error(`Superblock file not found: ${superblockPath}`);
   }
 
   return JSON.parse(fs.readFileSync(superblockPath, 'utf8'));
+}
+
+function getSuperblockStructurePath(superblockFilename) {
+  return path.resolve(
+    STRUCTURE_DIR,
+    'superblocks',
+    `${superblockFilename}.json`
+  );
 }
 
 /**
@@ -186,4 +195,5 @@ exports.getBlockStructure = getBlockStructure;
 exports.getSuperblockStructure = getSuperblockStructure;
 exports.getCurriculumStructure = getCurriculumStructure;
 exports.writeBlockStructure = writeBlockStructure;
+exports.writeSuperblockStructure = writeSuperblockStructure;
 exports.getLanguageConfig = getLanguageConfig;
