@@ -7,8 +7,11 @@ import Intro from '.';
 
 jest.mock('../../analytics');
 
-function renderWithRedux(ui: JSX.Element) {
-  return render(<Provider store={createStore()}>{ui}</Provider>);
+function renderWithRedux(
+  ui: JSX.Element,
+  preloadedState: Record<string, unknown> = {}
+) {
+  return render(<Provider store={createStore(preloadedState)}>{ui}</Provider>);
 }
 
 describe('<Intro />', () => {
@@ -19,7 +22,19 @@ describe('<Intro />', () => {
   });
 
   it('has a blockquote when loggedIn', () => {
-    renderWithRedux(<Intro {...loggedInProps} />);
+    // Provide a minimal preloaded state so connected components expecting a
+    // sessionUser (e.g. EmailSignUpAlert) do not receive null.
+    const preloadedState = {
+      app: {
+        user: {
+          sessionUser: {
+            acceptedPrivacyTerms: true,
+            completedChallengeCount: 0
+          }
+        }
+      }
+    };
+    renderWithRedux(<Intro {...loggedInProps} />, preloadedState);
     expect(screen.getByTestId('quote-block')).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
@@ -35,7 +50,8 @@ const loggedInProps = {
   slug: '/',
   username: 'DevelopmentUser',
   isDonating: false,
-  onLearnDonationAlertClick: () => jest.fn()
+  onLearnDonationAlertClick: () => jest.fn(),
+  acceptedPrivacyTerms: true
 };
 
 const loggedOutProps = {
