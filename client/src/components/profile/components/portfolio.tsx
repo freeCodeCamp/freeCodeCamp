@@ -76,7 +76,10 @@ const PortfolioSettings = (props: PortfolioProps) => {
 
     return new Promise(resolve => {
       img.onerror = () =>
-        resolve({ state: 'error', message: t('validation.url-not-image') });
+        resolve({
+          state: 'error',
+          message: t($ => $.validation['url-not-image'])
+        });
       img.onload = () => resolve({ state: 'success', message: '' });
       img.src = url;
     });
@@ -145,13 +148,13 @@ const PortfolioSettings = (props: PortfolioProps) => {
     if (charsLeft < 0) {
       return {
         state: 'error',
-        message: t('validation.max-characters', { charsLeft: 0 })
+        message: t($ => $.validation['max-characters'], { charsLeft: 0 })
       };
     }
     if (charsLeft < 41 && charsLeft > 0) {
       return {
         state: 'warning',
-        message: t('validation.max-characters', { charsLeft })
+        message: t($ => $.validation['max-characters'], { charsLeft })
       };
     }
     if (charsLeft === 288) {
@@ -162,14 +165,17 @@ const PortfolioSettings = (props: PortfolioProps) => {
 
   const getTitleValidation = (title: string): ProfileValidation => {
     if (!title) {
-      return { state: 'error', message: t('validation.title-required') };
+      return {
+        state: 'error',
+        message: t($ => $.validation['title-required'])
+      };
     }
     const len = title.length;
     if (len < 2) {
-      return { state: 'error', message: t('validation.title-short') };
+      return { state: 'error', message: t($ => $.validation['title-short']) };
     }
     if (len > 144) {
-      return { state: 'error', message: t('validation.title-long') };
+      return { state: 'error', message: t($ => $.validation['title-long']) };
     }
     return { state: 'success', message: '' };
   };
@@ -182,11 +188,14 @@ const PortfolioSettings = (props: PortfolioProps) => {
       return { state: 'success', message: '' };
     }
     if (len >= 4 && !hasProtocolRE.test(url)) {
-      return { state: 'error', message: t('validation.invalid-protocol') };
+      return {
+        state: 'error',
+        message: t($ => $.validation['invalid-protocol'])
+      };
     }
     return isURL(url)
       ? { state: 'success', message: '' }
-      : { state: 'warning', message: t('validation.use-valid-url') };
+      : { state: 'warning', message: t($ => $.validation['use-valid-url']) };
   };
 
   const formCorrect = (portfolioItem: PortfolioProjectData) => {
@@ -260,7 +269,7 @@ const PortfolioSettings = (props: PortfolioProps) => {
             }
           >
             <ControlLabel htmlFor={`${id}-title-input`}>
-              {t('settings.labels.title')}
+              {t($ => $.settings.labels.title)}
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'title')}
@@ -281,7 +290,7 @@ const PortfolioSettings = (props: PortfolioProps) => {
             validationState={pristine || (!pristine && !url) ? null : urlState}
           >
             <ControlLabel htmlFor={`${id}-url-input`}>
-              {t('settings.labels.url')}
+              {t($ => $.settings.labels.url)}
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'url')}
@@ -302,7 +311,7 @@ const PortfolioSettings = (props: PortfolioProps) => {
             validationState={pristine ? null : combineImageStatus}
           >
             <ControlLabel htmlFor={`${id}-image-input`}>
-              {t('settings.labels.image')}
+              {t($ => $.settings.labels.image)}
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'image')}
@@ -322,7 +331,7 @@ const PortfolioSettings = (props: PortfolioProps) => {
             validationState={pristine ? null : descriptionState}
           >
             <ControlLabel htmlFor={`${id}-description-input`}>
-              {t('settings.labels.description')}
+              {t($ => $.settings.labels.description)}
             </ControlLabel>
             <FormControl
               componentClass='textarea'
@@ -343,7 +352,7 @@ const PortfolioSettings = (props: PortfolioProps) => {
             data-playwright-test-label='save-portfolio'
             {...(isButtonDisabled && { tabIndex: -1 })}
           >
-            {t('buttons.save-portfolio')}
+            {t($ => $.buttons['save-portfolio'])}
           </BlockSaveButton>
           <Spacer size='xs' />
           <Button
@@ -353,7 +362,7 @@ const PortfolioSettings = (props: PortfolioProps) => {
             onClick={() => handleRemoveItem(id)}
             type='button'
           >
-            {t('buttons.remove-portfolio')}
+            {t($ => $.buttons['remove-portfolio'])}
           </Button>
         </form>
         {index + 1 !== arr.length && (
@@ -369,9 +378,9 @@ const PortfolioSettings = (props: PortfolioProps) => {
 
   return (
     <section id='portfolio-settings'>
-      <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>
+      <SectionHeader>{t($ => $.settings.headings.portfolio)}</SectionHeader>
       <FullWidthRow>
-        <p>{t('settings.share-projects')}</p>
+        <p>{t($ => $.settings['share-projects'])}</p>
         <Spacer size='xs' />
         <Button
           block
@@ -381,7 +390,7 @@ const PortfolioSettings = (props: PortfolioProps) => {
           onClick={handleAdd}
           type='button'
         >
-          {t('buttons.add-portfolio')}
+          {t($ => $.buttons['add-portfolio'])}
         </Button>
       </FullWidthRow>
       <Spacer size='l' />

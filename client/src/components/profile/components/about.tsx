@@ -163,17 +163,22 @@ const AboutSettings = ({
 
   return (
     <>
-      <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
+      <SectionHeader>
+        {t($ => $.settings.headings['personal-info'])}
+      </SectionHeader>
       <FullWidthRow>
         <form
           id='camper-identity'
           onSubmit={handleSubmit}
           data-playwright-test-label='camper-identity'
         >
-          <div role='group' aria-label={t('settings.headings.personal-info')}>
+          <div
+            role='group'
+            aria-label={t($ => $.settings.headings['personal-info'])}
+          >
             <FormGroup controlId='about-name'>
               <ControlLabel htmlFor='about-name-input'>
-                <strong>{t('settings.labels.name')}</strong>
+                <strong>{t($ => $.settings.labels.name)}</strong>
               </ControlLabel>
               <FormControl
                 onChange={handleNameChange}
@@ -184,7 +189,7 @@ const AboutSettings = ({
             </FormGroup>
             <FormGroup controlId='about-location'>
               <ControlLabel htmlFor='about-location-input'>
-                <strong>{t('settings.labels.location')}</strong>
+                <strong>{t($ => $.settings.labels.location)}</strong>
               </ControlLabel>
               <FormControl
                 onChange={handleLocationChange}
@@ -195,7 +200,7 @@ const AboutSettings = ({
             </FormGroup>
             <FormGroup controlId='about-picture'>
               <ControlLabel htmlFor='about-picture-input'>
-                <strong>{t('settings.labels.picture')}</strong>
+                <strong>{t($ => $.settings.labels.picture)}</strong>
               </ControlLabel>
               <FormControl
                 onChange={handlePictureChange}
@@ -205,13 +210,13 @@ const AboutSettings = ({
               />
               {!isPictureUrlValid && (
                 <ShowImageValidationWarning
-                  alertContent={t('validation.url-not-image')}
+                  alertContent={t($ => $.validation['url-not-image'])}
                 />
               )}
             </FormGroup>
             <FormGroup controlId='about-about'>
               <ControlLabel htmlFor='about-about-input'>
-                <strong>{t('settings.labels.about')}</strong>
+                <strong>{t($ => $.settings.labels.about)}</strong>
               </ControlLabel>
               <FormControl
                 componentClass='textarea'
@@ -226,9 +231,9 @@ const AboutSettings = ({
             bgSize='large'
             {...(isFormPristine() && { tabIndex: -1 })}
           >
-            {t('buttons.save')}{' '}
+            {t($ => $.buttons.save)}{' '}
             <span className='sr-only'>
-              {t('settings.headings.personal-info')}
+              {t($ => $.settings.headings['personal-info'])}
             </span>
           </BlockSaveButton>
         </form>

@@ -65,7 +65,7 @@ function DonatePage({
     <Loader fullScreen={true} />
   ) : (
     <>
-      <Helmet title={`${t('donate.title')} | freeCodeCamp.org`} />
+      <Helmet title={`${t($ => $.donate.title)} | freeCodeCamp.org`} />
       <Container fluid={true} className='gradient-container'>
         <Container className='donate-supporter-page-section'>
           <main>
