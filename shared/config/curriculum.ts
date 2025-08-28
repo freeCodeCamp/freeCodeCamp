@@ -32,7 +32,8 @@ export enum SuperBlocks {
   PythonForEverybody = 'python-for-everybody',
   BasicHtml = 'basic-html',
   SemanticHtml = 'semantic-html',
-  DevPlayground = 'dev-playground'
+  DevPlayground = 'dev-playground',
+  FullStackOpen = 'full-stack-open'
 }
 
 // Note that this object is used to create folderToSuperBlockMap object
@@ -150,6 +151,7 @@ export const superBlockStages: StageMap = {
   ],
   [SuperBlockStage.Next]: [],
   [SuperBlockStage.Upcoming]: [
+    SuperBlocks.FullStackOpen,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -360,7 +362,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 
 Object.freeze(notAuditedSuperBlocks);
 
-export const chapterBasedSuperBlocks = [SuperBlocks.FullStackDeveloper];
+export const chapterBasedSuperBlocks = [
+  SuperBlocks.FullStackDeveloper,
+  SuperBlocks.FullStackOpen
+];
 Object.freeze(chapterBasedSuperBlocks);
 
 type Config = {
